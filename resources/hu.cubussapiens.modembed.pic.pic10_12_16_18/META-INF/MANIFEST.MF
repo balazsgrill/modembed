@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: 8 bit PIC definitions
+Bundle-SymbolicName: hu.cubussapiens.modembed.pic.pic8bit;singleton:=true
+Bundle-Version: 0.1.0.qualifier
+Require-Bundle: hu.cubussapiens.modembed.pic;bundle-version="0.1.0"

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ASCII" standalone="yes" ?><sim:sim xmlns:sim="http://crownking/sim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/sim sim/sim.xsd">
+  <sim:peripheral sim:key="GPIO" sim:sfrs="GPIO TRIS" sim:type="port">
+    <sim:iopin sim:dir="inout" sim:key="GP0">
+      <sim:cnpin sim:key="GPIO0CN" sim:notify="CORE"/>
+      </sim:iopin>
+    <sim:iopin sim:dir="inout" sim:key="GP1">
+      <sim:cnpin sim:key="GPIO1CN" sim:notify="CORE"/>
+      </sim:iopin>
+    <sim:iopin sim:dir="inout" sim:key="GP2"/>
+    <sim:iopin sim:dir="in" sim:key="GP3">
+      <sim:cnpin sim:key="GPIO3CN" sim:notify="CORE"/>
+      </sim:iopin>
+    <sim:iopin sim:dir="inout" sim:key="GP4"/>
+    <sim:iopin sim:dir="inout" sim:key="GP5">
+      <!-- ________________________________________________________________________________ -->
+      <!--  				TIMERs -->
+      <!-- ________________________________________________________________________________ -->
+      </sim:iopin>
+    </sim:peripheral>
+  <sim:peripheral sim:key="TMR0" sim:sfrs="TMR0">
+    <sim:pinfunc sim:dir="in" sim:key="T0CKI" sim:port="GP2">
+      <!-- ________________________________________________________________________________ -->
+      <!--  				OSC -->
+      <!-- ________________________________________________________________________________ -->
+      </sim:pinfunc>
+    </sim:peripheral>
+  <sim:peripheral sim:key="OSC">
+    <sim:pinfunc sim:dir="out" sim:key="OSC2" sim:port="GP4"/>
+    <sim:pinfunc sim:dir="in" sim:key="OSC1" sim:port="GP5">
+      <!-- ________________________________________________________________________________ -->
+      <!--  				MCLR -->
+      <!-- ________________________________________________________________________________ -->
+      </sim:pinfunc>
+    </sim:peripheral>
+  <sim:peripheral sim:key="MCLR">
+    <sim:pinfunc sim:dir="in" sim:key="MCLR" sim:port="GP3"/>
+    </sim:peripheral>
+  </sim:sim>

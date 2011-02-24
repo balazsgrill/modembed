@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="ASCII"?>
+<pic:PicCPUType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:configscheme="http://gb.hu/embedded/configuration/scheme" xmlns:pic="http://gb.hu/embedded/pic" name="PIC16F726">
+  <configuration wordsize="16">
+    <scheme>
+      <subsets name="CONFIG">
+        <parameters xsi:type="configscheme:EnumParam" name="Oscillator">
+          <literals name="External RC Clockout" value="7"/>
+          <literals name="External RC No Clock" value="6"/>
+          <literals name="Internal RC Clockout" value="5"/>
+          <literals name="Internal RC No Clock" value="4"/>
+          <literals name="EC" value="3"/>
+          <literals name="HS" value="2"/>
+          <literals name="XT" value="1"/>
+          <literals name="LP"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Watchdog Timer">
+          <literals name="On" value="1"/>
+          <literals name="Off"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Power Up Timer">
+          <literals name="Off" value="1"/>
+          <literals name="On"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Master Clear Enable">
+          <literals name="RE3 is digital input"/>
+          <literals name="/MCLR is external" value="1"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Code Protect">
+          <literals name="Off" value="1"/>
+          <literals name="On"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Watchdog Timer Clock Select">
+          <literals name="Low Power WDT" value="1"/>
+          <literals name="Standard WDT"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Brown Out Reset Enable">
+          <literals name="BOR disabled"/>
+          <literals name="BOR disabled" value="1"/>
+          <literals name="BOR enabled in run, disabled in sleep" value="2"/>
+          <literals name="BOR Enabled" value="3"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Brown-out Reset Voltage Selection">
+          <literals name="1.9V" value="1"/>
+          <literals name="2.5V"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Voltage Regulator Enable Bit">
+          <literals name="Enabled" value="1"/>
+          <literals name="Disabled"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="INTOSC PLLEN Enable Bit">
+          <literals name="16MHz" value="1"/>
+          <literals name="500KHz"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Background Debug">
+          <literals name="Disabled" value="1"/>
+          <literals name="Enabled"/>
+        </parameters>
+      </subsets>
+    </scheme>
+    <words address="8199">
+      <fields parameter="//@configuration/@scheme/@subsets.0/@parameters.0" length="3"/>
+      <fields parameter="//@configuration/@scheme/@subsets.0/@parameters.1" startBit="3" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.0/@parameters.2" startBit="4" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.0/@parameters.3" startBit="5" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.0/@parameters.4" startBit="6" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.0/@parameters.5" startBit="7" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.0/@parameters.6" startBit="8" length="2"/>
+      <fields parameter="//@configuration/@scheme/@subsets.0/@parameters.7" startBit="10" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.0/@parameters.8" startBit="11" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.0/@parameters.9" startBit="12" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.0/@parameters.10" startBit="13" length="1"/>
+    </words>
+  </configuration>
+</pic:PicCPUType>

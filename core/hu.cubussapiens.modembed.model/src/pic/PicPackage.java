@@ -41,7 +41,7 @@ public interface PicPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://gb.hu/embedded/pic";
+	String eNS_URI = "http://cubussapiens.hu/modembed/pic";
 
 	/**
 	 * The package namespace name.

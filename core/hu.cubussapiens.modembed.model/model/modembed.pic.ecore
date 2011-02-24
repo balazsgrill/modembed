@@ -2,7 +2,7 @@
 <ecore:EPackage xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="pic"
-    nsURI="http://gb.hu/embedded/pic" nsPrefix="pic">
+    nsURI="http://cubussapiens.hu/modembed/pic" nsPrefix="pic">
   <eClassifiers xsi:type="ecore:EClass" name="ConfigurationBits">
     <eStructuralFeatures xsi:type="ecore:EReference" name="scheme" eType="ecore:EClass ../../hu.cubussapiens.modembed.configuration.model/model/modembed.configuration.ecore#//Scheme"
         containment="true"/>

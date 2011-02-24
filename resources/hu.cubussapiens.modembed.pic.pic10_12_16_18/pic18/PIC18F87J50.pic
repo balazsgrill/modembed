@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="ASCII"?>
+<pic:PicCPUType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:configscheme="http://gb.hu/embedded/configuration/scheme" xmlns:pic="http://gb.hu/embedded/pic" name="PIC18F87J50">
+  <configuration wordsize="8">
+    <scheme>
+      <subsets name="CONFIG1L">
+        <parameters xsi:type="configscheme:EnumParam" name="Watchdog Timer">
+          <literals name="Enabled" value="1"/>
+          <literals name="Disabled-Controlled by SWDTEN bit"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="PLL DIV">
+          <literals name="No Divide (4MHz input)" value="7"/>
+          <literals name="Divide by 2 (8MHz input)" value="6"/>
+          <literals name="Divide by 3 (12MHz input)" value="5"/>
+          <literals name="Divide by 4 (16MHz input)" value="4"/>
+          <literals name="Divide by 5 (20MHz input)" value="3"/>
+          <literals name="Divide by 6 (24MHz input)" value="2"/>
+          <literals name="Divide by 10 (40MHz input)" value="1"/>
+          <literals name="Divide by 12 (48MHz input)"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Stack Overflow Reset">
+          <literals name="Enabled" value="1"/>
+          <literals name="Disabled"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Extended CPU Enable">
+          <literals name="Enabled" value="1"/>
+          <literals name="Disabled"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Background Debug">
+          <literals name="Disabled" value="1"/>
+          <literals name="Enabled"/>
+        </parameters>
+      </subsets>
+      <subsets name="CONFIG1H">
+        <parameters xsi:type="configscheme:EnumParam" name="CPU DIV">
+          <literals name="No CPU system clock divide" value="3"/>
+          <literals name="CPU system clock divide by 2" value="2"/>
+          <literals name="CPU system clock divide by 3" value="1"/>
+          <literals name="CPU system clock divide by 6"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Code Protect 000000-01FFF7">
+          <literals name="Disabled" value="1"/>
+          <literals name="Enabled"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Config Word Signature Bit">
+          <literals name="Bulk erase of memory not conducated" value="1"/>
+          <literals name="Bulk erase of memory area complete"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="RESERVED">
+          <literals name="RESERVED" value="15"/>
+        </parameters>
+      </subsets>
+      <subsets name="CONFIG2L">
+        <parameters xsi:type="configscheme:EnumParam" name="Oscillator">
+          <literals name="EC+PLL(CLKO-RA6),USB-EC+PLL" value="7"/>
+          <literals name="EC(CLKO-RA6),USB-EC" value="6"/>
+          <literals name="HS+PLL,USB-HS+PLL" value="5"/>
+          <literals name="HS,USB-HS" value="4"/>
+          <literals name="INTOSCPLLO(CLKO-RA6)" value="3"/>
+          <literals name="INTOSCPLL" value="2"/>
+          <literals name="INTOSCO(CLKO-RA6)" value="1"/>
+          <literals name="INTOSC"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Fail-Safe Clock Monitor Enable">
+          <literals name="Disabled"/>
+          <literals name="Enabled" value="1"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Internal External Switch Over Mode">
+          <literals name="Disabled"/>
+          <literals name="Enabled" value="1"/>
+        </parameters>
+      </subsets>
+      <subsets name="CONFIG2H">
+        <parameters xsi:type="configscheme:EnumParam" name="Watchdog Postscaler">
+          <literals name="1:32768" value="15"/>
+          <literals name="1:16384" value="14"/>
+          <literals name="1:8192" value="13"/>
+          <literals name="1:4096" value="12"/>
+          <literals name="1:2048" value="11"/>
+          <literals name="1:1024" value="10"/>
+          <literals name="1:512" value="9"/>
+          <literals name="1:256" value="8"/>
+          <literals name="1:128" value="7"/>
+          <literals name="1:64" value="6"/>
+          <literals name="1:32" value="5"/>
+          <literals name="1:16" value="4"/>
+          <literals name="1:8" value="3"/>
+          <literals name="1:4" value="2"/>
+          <literals name="1:2" value="1"/>
+          <literals name="1:1"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="RESERVED">
+          <literals name="RESERVED" value="15"/>
+        </parameters>
+      </subsets>
+      <subsets name="CONFIG3L">
+        <parameters xsi:type="configscheme:EnumParam" name="External Address Bus Shift">
+          <literals name="Enabled" value="1"/>
+          <literals name="Disabled"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="External Memory Bus">
+          <literals name="Microcontroller" value="3"/>
+          <literals name="Ext Microcontroller 12-bit" value="2"/>
+          <literals name="Ext Microcontroller 16-bit" value="1"/>
+          <literals name="Ext Microcontroller 20-bit"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Data Bus Width">
+          <literals name="16-bit external bus mode" value="1"/>
+          <literals name="8-bit external bus mode"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="External Bus Wait">
+          <literals name="Disabled" value="1"/>
+          <literals name="Enabled"/>
+        </parameters>
+      </subsets>
+      <subsets name="CONFIG3H">
+        <parameters xsi:type="configscheme:EnumParam" name="CCP2 Mux">
+          <literals name="RC1" value="1"/>
+          <literals name="RE7 &lt;Microcontroller> / RB3"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="ECCP Mux">
+          <literals name="Enhanced CCP1/3 [P1B/P1C/P3B/P3C] muxed with RE6/RE5/RE4/RE3" value="1"/>
+          <literals name="Enhanced CCP1/3 [P1B/P1C/P3B/P3C] muxed with RH7/RH6/RH5/RH4"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="PMP MUX">
+          <literals name="PMP ports on PORTD and PORTE" value="1"/>
+          <literals name="PMP ports on PORTA,PORTF and PORTH"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="MSSP address masking">
+          <literals name="7 bit address masking mode" value="1"/>
+          <literals name="5 bit address masking mode"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="RESERVED">
+          <literals name="RESERVED" value="15"/>
+        </parameters>
+      </subsets>
+    </scheme>
+    <words address="131064">
+      <fields parameter="//@configuration/@scheme/@subsets.0/@parameters.0" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.0/@parameters.1" startBit="1" length="3"/>
+      <fields parameter="//@configuration/@scheme/@subsets.0/@parameters.2" startBit="5" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.0/@parameters.3" startBit="6" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.0/@parameters.4" startBit="7" length="1"/>
+    </words>
+    <words address="131065">
+      <fields parameter="//@configuration/@scheme/@subsets.1/@parameters.0" length="2"/>
+      <fields parameter="//@configuration/@scheme/@subsets.1/@parameters.1" startBit="2" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.1/@parameters.2" startBit="3" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.1/@parameters.3" startBit="4" length="4"/>
+    </words>
+    <words address="131066">
+      <fields parameter="//@configuration/@scheme/@subsets.2/@parameters.0" length="3"/>
+      <fields parameter="//@configuration/@scheme/@subsets.2/@parameters.1" startBit="6" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.2/@parameters.2" startBit="7" length="1"/>
+    </words>
+    <words address="131067">
+      <fields parameter="//@configuration/@scheme/@subsets.3/@parameters.0" length="4"/>
+      <fields parameter="//@configuration/@scheme/@subsets.3/@parameters.1" startBit="4" length="4"/>
+    </words>
+    <words address="131068">
+      <fields parameter="//@configuration/@scheme/@subsets.4/@parameters.0" startBit="3" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.4/@parameters.1" startBit="4" length="2"/>
+      <fields parameter="//@configuration/@scheme/@subsets.4/@parameters.2" startBit="6" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.4/@parameters.3" startBit="7" length="1"/>
+    </words>
+    <words address="131069">
+      <fields parameter="//@configuration/@scheme/@subsets.5/@parameters.0" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.5/@parameters.1" startBit="1" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.5/@parameters.2" startBit="2" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.5/@parameters.3" startBit="3" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.5/@parameters.4" startBit="4" length="4"/>
+    </words>
+  </configuration>
+</pic:PicCPUType>

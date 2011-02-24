@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="ASCII"?>
+<pic:PicCPUType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:configscheme="http://gb.hu/embedded/configuration/scheme" xmlns:pic="http://gb.hu/embedded/pic" name="PIC16F87">
+  <configuration wordsize="16">
+    <scheme>
+      <subsets name="CONFIG">
+        <parameters xsi:type="configscheme:EnumParam" name="Oscillator">
+          <literals name="EXTRC-OSC2 as Clock Out" value="19"/>
+          <literals name="EXTRC-OSC2 as RA6" value="18"/>
+          <literals name="INTRC-OSC2 as Clock Out" value="17"/>
+          <literals name="INTRC-OSC2 as RA6" value="16"/>
+          <literals name="EXTCLK as Port IO" value="3"/>
+          <literals name="LP"/>
+          <literals name="XT" value="1"/>
+          <literals name="HS" value="2"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Watchdog Timer">
+          <literals name="On" value="1"/>
+          <literals name="Off"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Power Up Timer">
+          <literals name="Off" value="1"/>
+          <literals name="On"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="RA5/MCLR Pin Function Select">
+          <literals name="MCLR" value="1"/>
+          <literals name="RA5"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Brown Out Detect">
+          <literals name="On" value="1"/>
+          <literals name="Off"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Low Voltage Program">
+          <literals name="Enabled" value="1"/>
+          <literals name="Disabled"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Data EE Read Protect">
+          <literals name="Off" value="1"/>
+          <literals name="On"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Flash Program Write">
+          <literals name="Write Protect Off" value="3"/>
+          <literals name="0000 to 00FF write protected" value="2"/>
+          <literals name="0000 to 07FF write protected" value="1"/>
+          <literals name="0000 to 0FFF write protected"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Background Debug">
+          <literals name="Disabled" value="1"/>
+          <literals name="Enabled"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="CCP1 Mux">
+          <literals name="RB0" value="1"/>
+          <literals name="RB3"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Code Protect">
+          <literals name="Off" value="1"/>
+          <literals name="All"/>
+        </parameters>
+      </subsets>
+      <subsets name="CONFIG2">
+        <parameters xsi:type="configscheme:EnumParam" name="Fail-Safe Clock Monitor Enable">
+          <literals name="Enabled" value="1"/>
+          <literals name="Disabled"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Internal External Switch Over Mode">
+          <literals name="Enabled" value="1"/>
+          <literals name="Disabled"/>
+        </parameters>
+      </subsets>
+    </scheme>
+    <words address="8199">
+      <fields parameter="//@configuration/@scheme/@subsets.0/@parameters.0" length="2"/>
+      <fields parameter="//@configuration/@scheme/@subsets.0/@parameters.1" startBit="2" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.0/@parameters.2" startBit="3" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.0/@parameters.3" startBit="5" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.0/@parameters.4" startBit="6" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.0/@parameters.5" startBit="7" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.0/@parameters.6" startBit="8" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.0/@parameters.7" startBit="9" length="2"/>
+      <fields parameter="//@configuration/@scheme/@subsets.0/@parameters.8" startBit="11" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.0/@parameters.9" startBit="12" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.0/@parameters.10" startBit="13" length="1"/>
+    </words>
+    <words address="8200">
+      <fields parameter="//@configuration/@scheme/@subsets.1/@parameters.0" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.1/@parameters.1" startBit="1" length="1"/>
+    </words>
+  </configuration>
+</pic:PicCPUType>

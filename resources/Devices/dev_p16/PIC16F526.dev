@@ -1,0 +1,164 @@
+# Device file info: $Id: PIC16F526.dev,v 1.10 2007/09/20 17:22:50 asplune Exp $
+# Macro file info: $Id: 16macro.dev,v 1.4 2006/08/04 20:16:11 nairnj Exp $
+format=0.1
+
+# device=PIC12F519
+# DOS: DOS-00923a
+# PS:  
+# DS:  
+
+#Based on PIC16F506 device file
+
+vpp (range=10.000-12.000  dflt=11.000)
+vdd (range=2.000-5.500 dfltrange=3.000-5.500 nominal=5.000)
+
+pgming (memtech=ee tries=1 lvpthresh=0)
+    wait (pgm=3000 lvpgm=2000 eedata=2000 cfg=2000 userid=2000 erase=10000)
+    latches(pgm=1 eedata=1 userid=1 cfg=1)
+
+pgmmem (region=0x00-0x3FF)
+cfgmem (region=0xFFF-0xFFF)
+testmem (region=0x440-0x49F)
+calmem (region=0x3ff-0x3ff)
+userid (region=0x440-0x443)
+flashdata (region=0x00-0x3F)
+
+NumBanks=4
+
+MirrorRegs (0x00-0x00 0x20-0x20 0x40-0x40 0x60-0x60)
+MirrorRegs (0x01-0x01 0x41-0x41)
+MirrorRegs (0x21-0x21 0x61-0x61)
+MirrorRegs (0x05-0x06 0x45-0x46)
+MirrorRegs (0x25-0x26 0x65-0x66)
+MirrorRegs (0x02-0x04 0x22-0x24 0x42-0x44 0x62-0x64)
+MirrorRegs (0x07-0x0f 0x27-0x2f 0x47-0x4f 0x67-0x6f)
+
+
+
+                               #------#
+#------------------------------# SFRs #------------------------------#
+                               #------#
+
+sfr (key=INDF addr=0x0 size=1 flags=i access='u u u u u u u u')
+    reset (por='--------' mclr='--------')
+    bit (names='INDF' width='8')
+sfr (key=TMR0 addr=0x1 size=1 access='rw rw rw rw rw rw rw rw')
+    reset (por='xxxxxxxx' mclr='uuuuuuuu')
+    bit (names='TMR0' width='8')
+    stimulus (scl=rwb type=int regfiles=w pcfiles=w)
+sfr (key=PCL addr=0x2 size=1 access='rw rw rw rw rw rw rw rw')
+    reset (por='11111111' mclr='11111111')
+    bit (names='PCL' width='8')
+    stimulus (scl=rwb regfiles=w pcfiles=rw)
+sfr (key=STATUS addr=0x3 size=1 access='rw u rw r r rw rw rw')
+    reset (por='00011xxx' mclr='00011uuu')
+    bit (names='RBWUF - PA0 nTO nPD Z DC C' width='1 1 1 1 1 1 1 1')
+sfr (key=FSR addr=0x4 size=1 access='r rw rw rw rw rw rw rw')
+    reset (por='110xxxxx' mclr='110uuuuu')
+    bit (names='FSR' width='8')
+    stimulus (scl=rwb regfiles=w pcfiles=rw)
+sfr (key=OSCCAL addr=0x5 size=1 access='rw rw rw rw rw rw rw u')
+    reset (por='1111111-' mclr='1111111-')
+    bit (names='CAL -' width='7 1')
+sfr (key=PORTB addr=0x6 size=1 access='u u rw rw r rw rw rw')
+    reset (por='--xxxxxx' mclr='--uuuuuu')
+    bit (names='- - RB' width='1 1 6')
+    stimulus (scl=rwb regfiles=rw pcfiles=rw)
+ sfr (key=PORTC addr=0x7 size=1 access='u u rw rw rw rw rw rw')
+    reset (por='--xxxxxx' mclr='--uuuuuu')
+    bit (names='- - RC' width='1 1 6')
+    stimulus (scl=rwb regfiles=rw pcfiles=rw)
+sfr (key=CM1CON0 addr=0x8 size=1 access='r rw rw rw rw rw rw rw')
+    reset (por='11111111' mclr='11111111')
+    bit (names='C1OUT nC1OUTEN C1POL nC1T0CS C1ON C1NREF C1PREF nC1WU' width='1 1 1 1 1 1 1 1')
+    stimulus (scl=rwb regfiles=w)
+sfr (key=ADCON0 addr=0x9 size=1 access='rw rw rw rw rw rw rw rw')
+    reset (por='11111100' mclr='11111100')
+    bit (names='ANS ADCS CHS GO/nDONE ADON' width='2 2 2 1 1')
+    bit (tag=scl names='ANS ADCS CHS GO_nDONE ADON' width='2 2 2 1 1')
+    stimulus (scl=rwb regfiles=w)
+sfr (key=ADRES addr=0xa size=1 access='rw rw rw rw rw rw rw rw')
+    reset (por='xxxxxxxxx' mclr='uuuuuuuu')
+    bit (names='ADRES' width='8')
+    stimulus (scl=rwb type=int regfiles=r)
+sfr (key=CM2CON0 addr=0xb size=1 access='r rw rw rw rw rw rw rw')
+    reset (por='11111111' mclr='11111111')
+    bit (names='C2OUT nC2OUTEN C2POL C2PREF2 C2ON C2NREF C2PREF1 nC2WU' width='1 1 1 1 1 1 1 1')
+    stimulus (scl=rwb regfiles=w)
+sfr (key=VRCON addr=0xc size=1 access='rw rw rw u rw rw rw rw')
+    reset (por='000-0000' mclr='000-0000')
+    bit (names='VREN VROE VRR - VR' width='1 1 1 1 4')
+    stimulus (scl=rwb regfiles=w)
+    
+sfr (key=EECON addr=0x21 size=1 access='u u u rw rw rw rs rs')
+    reset (por='---00000' mclr='---00000')
+    bit (names='- - - FREE WRERR WREN WR RD')
+    stimulus (scl=rwb regfiles=w pcfiles=rw)
+    
+   # UnusedRegs (0x22-0x24)
+    
+sfr (key=EEDATA addr=0x25 size=1 access='rw rw rw rw rw rw rw rw')
+    reset (por='xxxxxxxx' mclr='uuuuuuuu')
+    bit (names='EEDATA' width='8')
+    stimulus (scl=rwb regfiles=rw pcfiles=rw)
+sfr (key=EEADR addr=0x26 size=1 access='u u rw rw rw rw rw rw')
+    reset (por='--xxxxxx' mclr='--uuuuuu')
+    bit (names='EEADR' width='8')
+    stimulus (scl=rwb regfiles=w pcfiles=rw)
+
+
+
+                        #--------------------#
+#-----------------------# Configuration Bits #-----------------------#
+                        #--------------------#
+
+# TODO: Find the address of this configuration word.
+cfgbits (key=CONFIG addr=0xFFF unused=0x0000)
+    field (key=FOSC mask=0x0007 desc="Oscillator")
+        setting (req=0x0007 value=0x0000 desc="LP oscillator and 18 ms DRT")
+        setting (req=0x0007 value=0x0001 desc="XT oscillator and 18 ms DRT")
+        setting (req=0x0007 value=0x0002 desc="HS oscillator and 18 ms DRT")
+        setting (req=0x0007 value=0x0003 desc="EC oscillator with RB4 function on RB4/OSC2/CLKOUT and 1 ms DRT")
+        setting (req=0x0007 value=0x0004 desc="INTRC with RB4 function on RB4/OSC2/CLKOUT and 1 ms DRT")
+        setting (req=0x0007 value=0x0005 desc="INTRC with CLKOUT function on RB4/OSC2/CLKOUT and 1 ms DRT")
+        setting (req=0x0007 value=0x0006 desc="EXTRC with RB4 function on RB4/OSC2/CLKOUT and 1 ms DRT")
+        setting (req=0x0007 value=0x0007 desc="EXTRC with CLKOUT function on RB4/OSC2/CLKOUT and 1 ms DRT")
+    field (key=WDTE mask=0x0008 desc="Watchdog Timer Enable")
+        setting (req=0x0008 value=0x0008 desc="Enabled")
+        setting (req=0x0008 value=0x0000 desc="Disabled")
+    field (key=CP mask=0x0010 desc="Code Protect")
+        setting (req=0x0010 value=0x0010 desc="Off")
+            checksum (type=0x0 protregion=0x00-0x00)
+        setting (req=0x0010 value=0x0000 desc="On")
+            checksum (type=0x20 protregion=0x00-0x3FF)
+    field (key=MCLRE mask=0x0020 desc="Master Clear Enable")
+        setting (req=0x0020 value=0x0020 desc="RB3/MCLR functions as MCLR")
+        setting (req=0x0020 value=0x0000 desc="RB3/MCLR functions as RB3, MCLR internally tied to Vdd")
+    field (key=IOSCFS mask=0x0040 desc="Internal Oscillator Frequency Select")
+        setting (req=0x0040 value=0x0040 desc="8 MHz INTOSC Speed")
+        setting (req=0x0040 value=0x0000 desc="4 MHz INTOSC Speed")
+    field (key=CPDF mask=0x00080 desc="Code Protect bit - Flash Data Memory")
+        setting (req=0x0080 value=0x0080 desc="Off")
+        setting (req=0x0080 value=0x0000 desc="On")
+         
+                               #----------------------------#
+#------------------------------# Nonmemory-Mapped Registers #------------------------------------#
+                               #----------------------------#
+
+nmmr (key=WREG addr=0x0 size=1 access='rw rw rw rw rw rw rw rw')
+    reset (por='qqqqqqqq' mclr='qqqqqqqq')
+    bit (names='WREG' width='8')
+nmmr (key=STKPTR addr=0x1 size=1 flags=h access='rw rw rw rw rw rw rw rw')
+    reset (por='00000000' mclr='00000000')
+    bit (names='STKPTR' width='8')
+nmmr (key=TRISB addr=0x3 size=1 access='u u rw rw rw rw rw rw')
+    reset (por='--111111' mclr='--111111')
+    bit (names='- - TRISB5 TRISB4 TRISB3 TRISB2 TRISB1 TRISB0')
+nmmr (key=TRISC addr=0x4 size=1 access='u u rw rw rw rw rw rw')
+    reset (por='--111111' mclr='--111111')
+    bit (names='- - TRISC5 TRISC4 TRISC3 TRISC2 TRISC1 TRISC0')
+nmmr (key=OPTION_REG addr=0x5 size=1 access='rw rw rw rw rw rw rw rw')
+    reset (por='11111111' mclr='11111111')
+    bit (names='nRBWU nRBPU T0CS T0SE PSA PS' width='1 1 1 1 1 3')
+
+                               #-------------#

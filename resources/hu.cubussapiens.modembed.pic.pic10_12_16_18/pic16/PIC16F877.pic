@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="ASCII"?>
+<pic:PicCPUType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:configscheme="http://gb.hu/embedded/configuration/scheme" xmlns:pic="http://gb.hu/embedded/pic" name="PIC16F877">
+  <configuration wordsize="16">
+    <scheme>
+      <subsets name="CONFIG">
+        <parameters xsi:type="configscheme:EnumParam" name="Oscillator">
+          <literals name="RC" value="3"/>
+          <literals name="LP"/>
+          <literals name="XT" value="1"/>
+          <literals name="HS" value="2"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Watchdog Timer">
+          <literals name="On" value="1"/>
+          <literals name="Off"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Power Up Timer">
+          <literals name="Off" value="1"/>
+          <literals name="On"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Code Protect">
+          <literals name="Off" value="771"/>
+          <literals name="1F00:1FFF" value="514"/>
+          <literals name="1000:1FFF" value="257"/>
+          <literals name="All"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Brown Out Detect">
+          <literals name="On" value="1"/>
+          <literals name="Off"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Low Voltage Program">
+          <literals name="Enabled" value="1"/>
+          <literals name="Disabled"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Data EE Read Protect">
+          <literals name="Off" value="1"/>
+          <literals name="On"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Flash Program Write">
+          <literals name="Enabled" value="1"/>
+          <literals name="Disabled"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Background Debug">
+          <literals name="Disabled" value="1"/>
+          <literals name="Enabled"/>
+        </parameters>
+      </subsets>
+    </scheme>
+    <words address="8199">
+      <fields parameter="//@configuration/@scheme/@subsets.0/@parameters.0" length="2"/>
+      <fields parameter="//@configuration/@scheme/@subsets.0/@parameters.1" startBit="2" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.0/@parameters.2" startBit="3" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.0/@parameters.3" startBit="4" length="2"/>
+      <fields parameter="//@configuration/@scheme/@subsets.0/@parameters.4" startBit="6" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.0/@parameters.5" startBit="7" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.0/@parameters.6" startBit="8" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.0/@parameters.7" startBit="9" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.0/@parameters.8" startBit="11" length="1"/>
+    </words>
+  </configuration>
+</pic:PicCPUType>

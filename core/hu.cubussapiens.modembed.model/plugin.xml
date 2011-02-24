@@ -12,9 +12,9 @@
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
-            uri="http://gb.hu/embedded/pic"
+            uri="http://cubussapiens.hu/modembed/pic"
             class="pic.PicPackage"
-            genModel="model/embedded.pic.genmodel"/>
+            genModel="model/modembed.pic.genmodel"/>
    </extension>
 
 </plugin>

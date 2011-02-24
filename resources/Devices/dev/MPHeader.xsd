@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="MPLAB_Header_Database">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Information" minOccurs="1" maxOccurs="1"/>
+        <xs:element ref="ICD" minOccurs="1" maxOccurs="1" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Information">
+    <xs:complexType>
+      <xs:attribute name="file" type="xs:string" use="required" />
+      <xs:attribute name="version" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="ICD">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Header" minOccurs="1" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Header">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Device" minOccurs="1" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute name="name" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Device">
+    <xs:complexType>
+      <xs:attribute name="name" type="xs:string" use="required" />
+      <xs:attribute name="hdruse" type="use-select" use="required" />
+      <xs:attribute name="hdrstate" type="state-select" use="required" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:simpleType name="use-select">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="required" />
+      <xs:enumeration value="optional" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="state-select">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="red" />
+      <xs:enumeration value="yellow" />
+      <xs:enumeration value="green" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

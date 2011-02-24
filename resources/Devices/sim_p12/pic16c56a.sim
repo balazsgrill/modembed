@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ASCII" standalone="yes" ?><sim:sim xmlns:sim="http://crownking/sim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/sim sim/sim.xsd">
+  <sim:peripheral sim:key="PORTA" sim:sfrs="TRISA PORTA" sim:type="port">
+    <sim:iopin sim:dir="inout" sim:key="RA0"/>
+    <sim:iopin sim:dir="inout" sim:key="RA1"/>
+    <sim:iopin sim:dir="inout" sim:key="RA2"/>
+    <sim:iopin sim:dir="inout" sim:key="RA3"/>
+    <sim:iopin sim:dir="in" sim:key="RA4">
+      <!-- ________________________________________________________________________________ -->
+      <!--  				PORTB -->
+      <!-- ________________________________________________________________________________ -->
+      </sim:iopin>
+    </sim:peripheral>
+  <sim:peripheral sim:key="PORTB" sim:sfrs="TRISB PORTB" sim:type="port">
+    <sim:iopin sim:dir="inout" sim:key="RB0"/>
+    <sim:iopin sim:dir="inout" sim:key="RB1"/>
+    <sim:iopin sim:dir="inout" sim:key="RB2"/>
+    <sim:iopin sim:dir="inout" sim:key="RB3"/>
+    <sim:iopin sim:dir="inout" sim:key="RB4"/>
+    <sim:iopin sim:dir="inout" sim:key="RB5"/>
+    <sim:iopin sim:dir="inout" sim:key="RB6"/>
+    <sim:iopin sim:dir="inout" sim:key="RB7">
+      <!-- ________________________________________________________________________________ -->
+      <!--  				TIMERs -->
+      <!-- ________________________________________________________________________________ -->
+      </sim:iopin>
+    </sim:peripheral>
+  <sim:peripheral sim:key="TMR0" sim:sfrs="TMR0">
+    <sim:pinfunc sim:dir="in" sim:key="T0CKI" sim:port="RA4"/>
+    </sim:peripheral>
+  </sim:sim>

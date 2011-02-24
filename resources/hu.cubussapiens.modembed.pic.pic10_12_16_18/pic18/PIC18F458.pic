@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="ASCII"?>
+<pic:PicCPUType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:configscheme="http://gb.hu/embedded/configuration/scheme" xmlns:pic="http://gb.hu/embedded/pic" name="PIC18F458">
+  <configuration wordsize="8">
+    <scheme>
+      <subsets name="CONFIG1H">
+        <parameters xsi:type="configscheme:EnumParam" name="Oscillator">
+          <literals name="RC-OSC2 as RA6" value="7"/>
+          <literals name="HS-PLL Enabled" value="6"/>
+          <literals name="EC-OSC2 as RA6" value="5"/>
+          <literals name="EC-OSC2 as Clock Out" value="4"/>
+          <literals name="RC" value="3"/>
+          <literals name="HS" value="2"/>
+          <literals name="XT" value="1"/>
+          <literals name="LP"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Osc. Switch Enable">
+          <literals name="Disabled" value="1"/>
+          <literals name="Enabled"/>
+        </parameters>
+      </subsets>
+      <subsets name="CONFIG2L">
+        <parameters xsi:type="configscheme:EnumParam" name="Power Up Timer">
+          <literals name="Disabled" value="1"/>
+          <literals name="Enabled"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Brown Out Detect">
+          <literals name="Enabled" value="1"/>
+          <literals name="Disabled"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Brown Out Voltage">
+          <literals name="2.0V" value="3"/>
+          <literals name="2.7V" value="2"/>
+          <literals name="4.2V" value="1"/>
+          <literals name="4.5V"/>
+        </parameters>
+      </subsets>
+      <subsets name="CONFIG2H">
+        <parameters xsi:type="configscheme:EnumParam" name="Watchdog Timer">
+          <literals name="Enabled" value="1"/>
+          <literals name="Disabled-Controlled by SWDTEN bit"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Watchdog Postscaler">
+          <literals name="1:128" value="7"/>
+          <literals name="1:64" value="6"/>
+          <literals name="1:32" value="5"/>
+          <literals name="1:16" value="4"/>
+          <literals name="1:8" value="3"/>
+          <literals name="1:4" value="2"/>
+          <literals name="1:2" value="1"/>
+          <literals name="1:1"/>
+        </parameters>
+      </subsets>
+      <subsets name="CONFIG4L">
+        <parameters xsi:type="configscheme:EnumParam" name="Stack Overflow Reset">
+          <literals name="Enabled" value="1"/>
+          <literals name="Disabled"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Low Voltage Program">
+          <literals name="Enabled" value="1"/>
+          <literals name="Disabled"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Background Debug">
+          <literals name="Disabled" value="1"/>
+          <literals name="Enabled"/>
+        </parameters>
+      </subsets>
+      <subsets name="CONFIG5L">
+        <parameters xsi:type="configscheme:EnumParam" name="Code Protect 00200-01FFF">
+          <literals name="Disabled" value="1"/>
+          <literals name="Enabled"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Code Protect 02000-03FFF">
+          <literals name="Disabled" value="1"/>
+          <literals name="Enabled"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Code Protect 04000-05FFF">
+          <literals name="Disabled" value="1"/>
+          <literals name="Enabled"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Code Protect 06000-07FFF">
+          <literals name="Disabled" value="1"/>
+          <literals name="Enabled"/>
+        </parameters>
+      </subsets>
+      <subsets name="CONFIG5H">
+        <parameters xsi:type="configscheme:EnumParam" name="Code Protect Boot">
+          <literals name="Disabled" value="1"/>
+          <literals name="Enabled"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Data EE Read Protect">
+          <literals name="Disabled" value="1"/>
+          <literals name="Enabled"/>
+        </parameters>
+      </subsets>
+      <subsets name="CONFIG6L">
+        <parameters xsi:type="configscheme:EnumParam" name="Table Write Protect 00200-01FFF">
+          <literals name="Disabled" value="1"/>
+          <literals name="Enabled"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Table Write Protect 02000-03FFF">
+          <literals name="Disabled" value="1"/>
+          <literals name="Enabled"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Table Write Protect 04000-05FFF">
+          <literals name="Disabled" value="1"/>
+          <literals name="Enabled"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Table Write Protect 06000-07FFF">
+          <literals name="Disabled" value="1"/>
+          <literals name="Enabled"/>
+        </parameters>
+      </subsets>
+      <subsets name="CONFIG6H">
+        <parameters xsi:type="configscheme:EnumParam" name="Config. Write Protect">
+          <literals name="Disabled" value="1"/>
+          <literals name="Enabled"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Table Write Protect Boot">
+          <literals name="Disabled" value="1"/>
+          <literals name="Enabled"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Data EE Write Protect">
+          <literals name="Disabled" value="1"/>
+          <literals name="Enabled"/>
+        </parameters>
+      </subsets>
+      <subsets name="CONFIG7L">
+        <parameters xsi:type="configscheme:EnumParam" name="Table Read Protect 00200-01FFF">
+          <literals name="Disabled" value="1"/>
+          <literals name="Enabled"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Table Read Protect 02000-03FFF">
+          <literals name="Disabled" value="1"/>
+          <literals name="Enabled"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Table Read Protect 04000-05FFF">
+          <literals name="Disabled" value="1"/>
+          <literals name="Enabled"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Table Read Protect 06000-07FFF">
+          <literals name="Disabled" value="1"/>
+          <literals name="Enabled"/>
+        </parameters>
+      </subsets>
+      <subsets name="CONFIG7H">
+        <parameters xsi:type="configscheme:EnumParam" name="Table Read Protect Boot">
+          <literals name="Disabled" value="1"/>
+          <literals name="Enabled"/>
+        </parameters>
+      </subsets>
+    </scheme>
+    <words address="3145729">
+      <fields parameter="//@configuration/@scheme/@subsets.0/@parameters.0" length="3"/>
+      <fields parameter="//@configuration/@scheme/@subsets.0/@parameters.1" startBit="5" length="1"/>
+    </words>
+    <words address="3145730">
+      <fields parameter="//@configuration/@scheme/@subsets.1/@parameters.0" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.1/@parameters.1" startBit="1" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.1/@parameters.2" startBit="2" length="2"/>
+    </words>
+    <words address="3145731">
+      <fields parameter="//@configuration/@scheme/@subsets.2/@parameters.0" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.2/@parameters.1" startBit="1" length="3"/>
+    </words>
+    <words address="3145734">
+      <fields parameter="//@configuration/@scheme/@subsets.3/@parameters.0" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.3/@parameters.1" startBit="2" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.3/@parameters.2" startBit="7" length="1"/>
+    </words>
+    <words address="3145736">
+      <fields parameter="//@configuration/@scheme/@subsets.4/@parameters.0" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.4/@parameters.1" startBit="1" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.4/@parameters.2" startBit="2" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.4/@parameters.3" startBit="3" length="1"/>
+    </words>
+    <words address="3145737">
+      <fields parameter="//@configuration/@scheme/@subsets.5/@parameters.0" startBit="6" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.5/@parameters.1" startBit="7" length="1"/>
+    </words>
+    <words address="3145738">
+      <fields parameter="//@configuration/@scheme/@subsets.6/@parameters.0" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.6/@parameters.1" startBit="1" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.6/@parameters.2" startBit="2" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.6/@parameters.3" startBit="3" length="1"/>
+    </words>
+    <words address="3145739">
+      <fields parameter="//@configuration/@scheme/@subsets.7/@parameters.0" startBit="5" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.7/@parameters.1" startBit="6" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.7/@parameters.2" startBit="7" length="1"/>
+    </words>
+    <words address="3145740">
+      <fields parameter="//@configuration/@scheme/@subsets.8/@parameters.0" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.8/@parameters.1" startBit="1" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.8/@parameters.2" startBit="2" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.8/@parameters.3" startBit="3" length="1"/>
+    </words>
+    <words address="3145741">
+      <fields parameter="//@configuration/@scheme/@subsets.9/@parameters.0" startBit="6" length="1"/>
+    </words>
+  </configuration>
+</pic:PicCPUType>

@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pic:PicCPUType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:configscheme="http://gb.hu/embedded/configuration/scheme" xmlns:pic="http://gb.hu/embedded/pic" name="Pic18F14K50">
+  <configuration wordsize="8">
+    <scheme name="p18F14K50_Config">
+      <subsets name="Config1L">
+        <parameters xsi:type="configscheme:EnumParam" name="USB Clock Selection">
+          <literals name="USB clock comes directly from the OSC1/OSC2 Oscillator block; no divide"/>
+          <literals name="USB clock comes from the OSC1/OSC2 divided by 2" value="1"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="CPU System Clock Selection">
+          <literals name="No CPU system clock divide"/>
+          <literals name="CPU system clock divided by 2" value="1"/>
+          <literals name="CPU system clock divided by 3" value="2"/>
+          <literals name="CPU system clock divided by 4" value="3"/>
+        </parameters>
+      </subsets>
+      <subsets name="Config1H">
+        <parameters xsi:type="configscheme:EnumParam" name="Oscillator Switchover">
+          <literals name="Disabled"/>
+          <literals name="Enabled" value="1"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Fail-Safe Clock Monitor">
+          <literals name="Disabled"/>
+          <literals name="Enabled" value="1"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Primary Clock" default="1">
+          <literals name="Disabled"/>
+          <literals name="Enabled" value="1"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="PLL">
+          <literals name="Disabled"/>
+          <literals name="Enabled" value="1"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Oscillator Selection" default="7">
+          <literals name="LP oscillator"/>
+          <literals name="XT oscillator" value="1"/>
+          <literals name="HS oscillator" value="2"/>
+          <literals name="External RC oscillator, CLKOUT function on OSC2" value="3"/>
+          <literals name="EC, CLKOUT function on OSC2 (high)" value="4"/>
+          <literals name="EC (high)" value="5"/>
+          <literals name="External RC oscillator, CLKOUT function on OSC2" value="6"/>
+          <literals name="External RC oscillator" value="7"/>
+          <literals name="Internal RC oscillator" value="8"/>
+          <literals name="Internal RC oscillator, CLKOUT function on OSC2" value="9"/>
+          <literals name="EC, CLKOUT function on OSC2 (medium)" value="10"/>
+          <literals name="EC (medium)" value="11"/>
+          <literals name="EC, CLKOUT function on OSC2 (low)" value="12"/>
+          <literals name="EC (low)" value="13"/>
+          <literals name="External RC oscillator, CLKOUT function on OSC2" value="14"/>
+          <literals name="External RC oscillator, CLKOUT function on OSC2" value="15"/>
+        </parameters>
+      </subsets>
+      <subsets name="Config2L">
+        <parameters xsi:type="configscheme:EnumParam" name="Brown-out Reset Voltage" default="3">
+          <literals name="VBOR set to 3.0V nominal"/>
+          <literals name="VBOR set to 2.7V nominal" value="1"/>
+          <literals name="VBOR set to 2.2V nominal" value="2"/>
+          <literals name="VBOR set to 1.9V nominal" value="3"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Brown-out Reset Enable" default="3">
+          <literals name="Brown-out Reset disabled in hardware and software"/>
+          <literals name="Brown-out Reset enabled and controlled by software (SBOREN is enabled)" value="1"/>
+          <literals name="Brown-out Reset enabled in hardware only and disabled in Sleep mode (SBOREN is disabled)" value="2"/>
+          <literals name="Brown-out Reset enabled in hardware only (SBOREN is disabled)" value="3"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Power-up Timer Enable" default="1">
+          <literals name="Disabled" value="1"/>
+          <literals name="Enabled"/>
+        </parameters>
+      </subsets>
+      <subsets name="Config2H">
+        <parameters xsi:type="configscheme:EnumParam" name="Watchdog Timer Postscale Select" default="15">
+          <literals name="1:1"/>
+          <literals name="1:2" value="1"/>
+          <literals name="1:4" value="2"/>
+          <literals name="1:8" value="3"/>
+          <literals name="1:16" value="4"/>
+          <literals name="1:32" value="5"/>
+          <literals name="1:64" value="6"/>
+          <literals name="1:128" value="7"/>
+          <literals name="1:256" value="8"/>
+          <literals name="1:512" value="9"/>
+          <literals name="1:1024" value="10"/>
+          <literals name="1:2048" value="11"/>
+          <literals name="1:4096" value="12"/>
+          <literals name="1:8192" value="13"/>
+          <literals name="1:16384" value="14"/>
+          <literals name="1:32768" value="15"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Watchdog Timer Enable" default="1">
+          <literals name="is controlled by SWDTEN bit of the WDTCON register"/>
+          <literals name="WDT is always enabled. SWDTEN bit has no effect" value="1"/>
+        </parameters>
+      </subsets>
+      <subsets name="Config3H">
+        <parameters xsi:type="configscheme:EnumParam" name="MCLR Pin Enable" default="1">
+          <literals name="RA3 input pin enabled; MCLR disabled"/>
+          <literals name="MCLR pin enabled; RA3 input pin disabled" value="1"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="HFINTOSC Fast Start-up" default="1">
+          <literals name="The system clock is held off until the HFINTOSC is stable."/>
+          <literals name="HFINTOSC starts clocking the CPU without waiting for the oscillator to stabilize" value="1"/>
+        </parameters>
+      </subsets>
+      <subsets name="Config4L">
+        <parameters xsi:type="configscheme:EnumParam" name="Stack Full/Underflow Reset Enable" default="1">
+          <literals name="Stack full/underflow will not cause Reset"/>
+          <literals name="Stack full/underflow will cause Reset" value="1"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Single-Supply ICSP™ Enable" default="1">
+          <literals name="Disabled"/>
+          <literals name="Enabled" value="1"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Boot Block Size Select">
+          <literals name="1 kW boot block"/>
+          <literals name="2 kW boot block" value="1"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Enhanced CPU Enable">
+          <literals name="Disabled"/>
+          <literals name="Enabled" value="1"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Background Debugger Enable" default="1">
+          <literals name="Disabled" value="1"/>
+          <literals name="Enabled"/>
+        </parameters>
+      </subsets>
+      <subsets name="Config5L">
+        <parameters xsi:type="configscheme:EnumParam" name="Code Protection bit 0" default="1">
+          <literals name="Block 0 code-protected"/>
+          <literals name="Block 0 not code-protected" value="1"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Code Protection bit 1" default="1">
+          <literals name="Block 1 code-protected"/>
+          <literals name="Block 1 not code-protected" value="1"/>
+        </parameters>
+      </subsets>
+      <subsets name="Config5H">
+        <parameters xsi:type="configscheme:EnumParam" name="Boot Block Code Protection" default="1">
+          <literals name="Boot block code-protected"/>
+          <literals name="Boot block not code-protected" value="1"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Data EEPROM Code Protection" default="1">
+          <literals name="Data EEPROM code-protected"/>
+          <literals name="Data EEPROM not code-protected" value="1"/>
+        </parameters>
+      </subsets>
+      <subsets name="Config6L">
+        <parameters xsi:type="configscheme:EnumParam" name="Block 0 Write Protection" default="1">
+          <literals name="Block 0 write-protected"/>
+          <literals name="Block 0 not write-protected" value="1"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Block 1 Write Protection" default="1">
+          <literals name="Block 1 write-protected"/>
+          <literals name="Block 1 not write-protected" value="1"/>
+        </parameters>
+      </subsets>
+      <subsets name="Config6H">
+        <parameters xsi:type="configscheme:EnumParam" name="Data EEPROM Write Protection" default="1">
+          <literals name="Data EEPROM write-protected"/>
+          <literals name="Data EEPROM not write-protected" value="1"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Boot Block Write Protection" default="1">
+          <literals name="Boot block write-protected"/>
+          <literals name="Boot block not write-protected" value="1"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Configuration Register Write Protection" default="1">
+          <literals name="Configuration registers write-protected"/>
+          <literals name="Configuration registers not write-protected" value="1"/>
+        </parameters>
+      </subsets>
+      <subsets name="Config7L">
+        <parameters xsi:type="configscheme:EnumParam" name="Block 0 Table Read Protection" default="1">
+          <literals name="Block 0 protected from table reads executed in other blocks"/>
+          <literals name="Block 0 not protected from table reads executed in other blocks" value="1"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Block 1 Table Read Protection" default="1">
+          <literals name="Block 1 protected from table reads executed in other blocks"/>
+          <literals name="Block 1 not protected from table reads executed in other blocks" value="1"/>
+        </parameters>
+      </subsets>
+      <subsets name="Config7H">
+        <parameters xsi:type="configscheme:EnumParam" name="Boot Block Table Read Protection" default="1">
+          <literals name="Boot block protected from table reads executed in other blocks"/>
+          <literals name="Boot block not protected from table reads executed in other blocks" value="1"/>
+        </parameters>
+      </subsets>
+    </scheme>
+    <words address="3145728">
+      <fields parameter="//@configuration/@scheme/@subsets.0/@parameters.0" startBit="5" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.0/@parameters.1" startBit="3" length="2"/>
+    </words>
+    <words address="3145729">
+      <fields parameter="//@configuration/@scheme/@subsets.1/@parameters.0" startBit="7" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.1/@parameters.1" startBit="6" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.1/@parameters.2" startBit="5" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.1/@parameters.3" startBit="4" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.1/@parameters.4" length="4"/>
+    </words>
+    <words address="3145730">
+      <fields parameter="//@configuration/@scheme/@subsets.2/@parameters.2" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.2/@parameters.1" startBit="1" length="2"/>
+      <fields parameter="//@configuration/@scheme/@subsets.2/@parameters.0" startBit="3" length="2"/>
+    </words>
+    <words address="3145731">
+      <fields parameter="//@configuration/@scheme/@subsets.3/@parameters.1" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.3/@parameters.0" startBit="1" length="4"/>
+    </words>
+    <words address="3145732"/>
+    <words address="3145733">
+      <fields parameter="//@configuration/@scheme/@subsets.4/@parameters.1" startBit="3" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.4/@parameters.0" startBit="7" length="1"/>
+    </words>
+    <words address="3145734">
+      <fields parameter="//@configuration/@scheme/@subsets.5/@parameters.0" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.5/@parameters.1" startBit="2" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.5/@parameters.2" startBit="3" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.5/@parameters.3" startBit="6" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.5/@parameters.4" startBit="7" length="1"/>
+    </words>
+    <words address="3145735"/>
+    <words address="3145736">
+      <fields parameter="//@configuration/@scheme/@subsets.6/@parameters.0" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.6/@parameters.1" startBit="1" length="1"/>
+    </words>
+    <words address="3145737">
+      <fields parameter="//@configuration/@scheme/@subsets.7/@parameters.0" startBit="6" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.7/@parameters.1" startBit="7" length="1"/>
+    </words>
+    <words address="3145738">
+      <fields parameter="//@configuration/@scheme/@subsets.8/@parameters.0" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.8/@parameters.1" startBit="1" length="1"/>
+    </words>
+    <words address="3145739">
+      <fields parameter="//@configuration/@scheme/@subsets.9/@parameters.2" startBit="5" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.9/@parameters.1" startBit="6" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.7/@parameters.1" startBit="7" length="1"/>
+    </words>
+    <words address="3145740">
+      <fields parameter="//@configuration/@scheme/@subsets.10/@parameters.0" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.10/@parameters.1" startBit="1" length="1"/>
+    </words>
+    <words address="3145741">
+      <fields parameter="//@configuration/@scheme/@subsets.11/@parameters.0" startBit="6" length="1"/>
+    </words>
+  </configuration>
+</pic:PicCPUType>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="ASCII" standalone="yes" ?><sim:sim xmlns:sim="http://crownking/sim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/sim sim/sim.xsd">
+  <sim:peripheral sim:key="GPIO" sim:sfrs="TRISIO GPIO IOC" sim:type="port">
+    <sim:iopin sim:dir="inout" sim:key="GP0">
+      <sim:cnint sim:cnkey="IOCPIN0" sim:enmask="0x08" sim:enreg="INTCON" sim:flgmask="0x01" sim:flgreg="INTCON" sim:key="PORTIRQ" sim:primask="0x00" sim:prireg="NONE"/>
+      <sim:cnpin sim:key="C1INP" sim:notify="CMMUL"/>
+      </sim:iopin>
+    <sim:iopin sim:dir="inout" sim:key="GP1">
+      <sim:cnint sim:cnkey="IOCPIN1" sim:enmask="0x08" sim:enreg="INTCON" sim:flgmask="0x01" sim:flgreg="INTCON" sim:key="PORTIRQ" sim:primask="0x00" sim:prireg="NONE"/>
+      <sim:cnpin sim:key="C1INN0" sim:notify="CMMUL"/>
+      </sim:iopin>
+    <sim:iopin sim:dir="inout" sim:key="GP2">
+      <sim:cnint sim:cnkey="IOCPIN2" sim:enmask="0x08" sim:enreg="INTCON" sim:flgmask="0x01" sim:flgreg="INTCON" sim:key="PORTIRQ" sim:primask="0x00" sim:prireg="NONE"/>
+      <sim:cnpin sim:key="ECCP1CN" sim:notify="ECCP1"/>
+      <sim:extint sim:enmask="0x10" sim:enreg="INTCON" sim:flgmask="0x02" sim:flgreg="INTCON" sim:key="INT0" sim:primask="0x00" sim:prireg="NONE"/>
+      </sim:iopin>
+    <sim:iopin sim:dir="inout" sim:key="GP3">
+      <sim:cnint sim:cnkey="IOCPIN3" sim:enmask="0x08" sim:enreg="INTCON" sim:flgmask="0x01" sim:flgreg="INTCON" sim:key="PORTIRQ" sim:primask="0x00" sim:prireg="NONE"/>
+      </sim:iopin>
+    <sim:iopin sim:dir="inout" sim:key="GP4">
+      <sim:cnint sim:cnkey="IOCPIN4" sim:enmask="0x08" sim:enreg="INTCON" sim:flgmask="0x01" sim:flgreg="INTCON" sim:key="PORTIRQ" sim:primask="0x00" sim:prireg="NONE"/>
+      <sim:cnpin sim:key="T1G" sim:notify="TMR1"/>
+      <sim:cnpin sim:key="C1INN1" sim:notify="CMMUL"/>
+      </sim:iopin>
+    <sim:iopin sim:dir="inout" sim:key="GP5">
+      <sim:cnint sim:cnkey="IOCPIN5" sim:enmask="0x08" sim:enreg="INTCON" sim:flgmask="0x01" sim:flgreg="INTCON" sim:key="PORTIRQ" sim:primask="0x00" sim:prireg="NONE">
+        <!-- ________________________________________________________________________________ -->
+        <!--  				ADC -->
+        <!-- ________________________________________________________________________________ -->
+        </sim:cnint>
+      </sim:iopin>
+    </sim:peripheral>
+  <sim:peripheral sim:key="ADC10" sim:sfrs="ADCON0 ANSEL ADRESL ADRESH">
+    <sim:pinfunc sim:dir="in" sim:key="AN0" sim:port="GP0"/>
+    <sim:pinfunc sim:dir="in" sim:key="AN1" sim:port="GP1"/>
+    <sim:pinfunc sim:dir="in" sim:key="AN2" sim:port="GP2"/>
+    <sim:pinfunc sim:dir="in" sim:key="AN3" sim:port="GP4"/>
+    <sim:access sim:key="ADCON0" sim:mode="AD_ADCON0_ADCS_ANSEL"/>
+    <sim:adgodone sim:key="ADCON0" sim:mask="0x02"/>
+    <sim:interrupt sim:enmask="0x40" sim:enreg="PIE1" sim:flgmask="0x40" sim:flgreg="PIR1" sim:name="ADC" sim:primask="0x00" sim:prireg="NONE">
+      <!-- ________________________________________________________________________________ -->
+      <!--  				TIMERs -->
+      <!-- ________________________________________________________________________________ -->
+      </sim:interrupt>
+    </sim:peripheral>
+  <sim:peripheral sim:key="TMR0" sim:sfrs="TMR0">
+    <sim:pinfunc sim:dir="in" sim:key="T0CKI" sim:port="GP2">
+      <sim:nextp sim:nextperiph="CMMUL" sim:nextpin="C1OUT"/>
+      </sim:pinfunc>
+    <sim:interrupt sim:enmask="0x20" sim:enreg="INTCON" sim:flgmask="0x04" sim:flgreg="INTCON" sim:name="TMR0INT" sim:primask="0x00" sim:prireg="NONE"/>
+    </sim:peripheral>
+  <sim:peripheral sim:key="TMR1" sim:sfrs="TMR1H TMR1L T1CON">
+    <sim:pinfunc sim:dir="in" sim:key="T1CKI" sim:port="GP5"/>
+    <sim:pinfunc sim:dir="in" sim:key="T1G" sim:port="GP4"/>
+    <sim:interrupt sim:enmask="0x01" sim:enreg="PIE1" sim:flgmask="0x01" sim:flgreg="PIR1" sim:name="TMR1INT" sim:primask="0x00" sim:prireg="NONE"/>
+    </sim:peripheral>
+  <sim:peripheral sim:key="TMR2" sim:sfrs="TMR2 PR2 T2CON">
+    <sim:interrupt sim:enmask="0x02" sim:enreg="PIE1" sim:flgmask="0x02" sim:flgreg="PIR1" sim:name="TMR2INT" sim:primask="0x00" sim:prireg="NONE">
+      <!-- ________________________________________________________________________________ -->
+      <!--  				CCP -->
+      <!-- ________________________________________________________________________________ -->
+      </sim:interrupt>
+    </sim:peripheral>
+  <sim:peripheral sim:key="ECCP1" sim:sfrs="CCP1CON CCPR1L CCPR1H ECCPAS PWM1CON">
+    <sim:pinfunc sim:dir="inout" sim:key="ECCPA" sim:port="GP2"/>
+    <sim:pinfunc sim:dir="inout" sim:key="ECCPB" sim:port="GP0"/>
+    <sim:interrupt sim:enmask="0x20" sim:enreg="PIE1" sim:flgmask="0x20" sim:flgreg="PIR1" sim:name="ECCP1INT" sim:primask="0x20" sim:prireg="IPR1"/>
+    <sim:timers sim:addr="0x00" sim:mask="0x00">
+      <sim:setting sim:cc="TMR1" sim:pwm="TMR2" sim:val="0x00"/>
+      <sim:setting sim:cc="TMR1" sim:pwm="TMR2" sim:val="0x00"/>
+      <sim:setting sim:cc="TMR1" sim:pwm="TMR2" sim:val="0x00"/>
+      <sim:setting sim:cc="TMR1" sim:pwm="TMR2" sim:val="0x00">
+        <!-- ________________________________________________________________________________ -->
+        <!--  				CMMUL -->
+        <!-- ________________________________________________________________________________ -->
+        </sim:setting>
+      </sim:timers>
+    </sim:peripheral>
+  <sim:peripheral sim:key="CMMUL" sim:sfrs="CMCON0 CMCON1 VRCON">
+    <sim:pinfunc sim:dir="inout" sim:key="C1OUT" sim:port="GP2"/>
+    <sim:pinfunc sim:dir="in" sim:key="C1INP" sim:port="GP0"/>
+    <sim:pinfunc sim:dir="inout" sim:key="C1INN" sim:port="multi">
+      <sim:portpins sim:muxaddr="0x1A" sim:muxmask="0x01">
+        <sim:setting sim:dir="in" sim:muxval="0x0" sim:port="GP1"/>
+        <sim:setting sim:dir="in" sim:muxval="0x1" sim:port="GP4"/>
+        </sim:portpins>
+      </sim:pinfunc>
+    <sim:interrupt sim:enmask="0x08" sim:enreg="PIE1" sim:flgmask="0x08" sim:flgreg="PIR1" sim:name="CMINT" sim:primask="0x00" sim:prireg="NONE"/>
+    <sim:access sim:key="CMCON1" sim:mode="TMR1_ACS">
+      <!-- ________________________________________________________________________________ -->
+      <!--  				OSC -->
+      <!-- ________________________________________________________________________________ -->
+      </sim:access>
+    </sim:peripheral>
+  <sim:peripheral sim:key="OSC">
+    <sim:pinfunc sim:dir="out" sim:key="OSC2" sim:port="GP4">
+      <sim:nextp sim:nextperiph="TMR1" sim:nextpin="T1G"/>
+      </sim:pinfunc>
+    <sim:pinfunc sim:dir="in" sim:key="OSC1" sim:port="GP5">
+      <sim:nextp sim:nextperiph="TMR1" sim:nextpin="T1CKI">
+        <!-- ________________________________________________________________________________ -->
+        <!--  				MCLR -->
+        <!-- ________________________________________________________________________________ -->
+        </sim:nextp>
+      </sim:pinfunc>
+    </sim:peripheral>
+  <sim:peripheral sim:key="MCLR">
+    <sim:pinfunc sim:dir="in" sim:key="MCLR" sim:port="GP3">
+      <!-- ________________________________________________________________________________ -->
+      <!--  				CORE -->
+      <!-- ________________________________________________________________________________ -->
+      <!-- peripheral (key=CORE sfrs='PCON WDTCON') -->
+      <!--     interrupt (name=EEINT enreg=PIE1 enmask=0x80 flgreg=PIR1 flgmask=0x80 prireg=NONE primask=0x00) -->
+      </sim:pinfunc>
+    </sim:peripheral>
+  </sim:sim>

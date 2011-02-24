@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ASCII"?>
+<pic:PicCPUType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:configscheme="http://gb.hu/embedded/configuration/scheme" xmlns:pic="http://gb.hu/embedded/pic" name="PIC16F505">
+  <configuration wordsize="8">
+    <scheme>
+      <subsets name="CONFIG">
+        <parameters xsi:type="configscheme:EnumParam" name="Oscillator">
+          <literals name="External RC Clockout" value="7"/>
+          <literals name="External RC w/ RB4 on OSC2" value="6"/>
+          <literals name="INTOSC RC Clockout" value="5"/>
+          <literals name="INTOSC w/ RB4 on OSC2" value="4"/>
+          <literals name="EC w/ RB4 on OSC2" value="3"/>
+          <literals name="HS" value="2"/>
+          <literals name="XT" value="1"/>
+          <literals name="LP"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Watchdog Timer">
+          <literals name="On" value="1"/>
+          <literals name="Off"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Code Protect">
+          <literals name="Off" value="1"/>
+          <literals name="On"/>
+        </parameters>
+        <parameters xsi:type="configscheme:EnumParam" name="Master Clear Enable">
+          <literals name="External" value="1"/>
+          <literals name="Internal"/>
+        </parameters>
+      </subsets>
+    </scheme>
+    <words address="4095">
+      <fields parameter="//@configuration/@scheme/@subsets.0/@parameters.0" length="3"/>
+      <fields parameter="//@configuration/@scheme/@subsets.0/@parameters.1" startBit="3" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.0/@parameters.2" startBit="4" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.0/@parameters.3" startBit="5" length="1"/>
+    </words>
+  </configuration>
+</pic:PicCPUType>

@@ -1,0 +1,1401 @@
+# Device file info: $Id: PIC32MX320F064H.DEV,v 1.31 2007/10/04 17:38:01 sheardv Exp $
+# Macro file info: $Id: 32macro.dev,v 1.4 2007/08/24 16:24:06 kirschm Exp $
+format=0.3
+
+# device=PIC32MX320F064H
+# rev=B1
+
+#IsChecksumless=1
+
+# These macros may not be necessary. Will leave them here. Am not sure they
+# are accurate (please refer to the 32MACRO.DEV file).
+vpp (range=2.500-3.600  dflt=3.300)
+vdd (range=2.500-3.600  dfltrange=2.500-3.600  nominal=3.300)
+
+# ---------------------------------------------------------------------------
+# The following represents the memory map of the PIC32MX core as of
+# 15 Aug 2007, using .H and .DVS files.
+
+                             # ---------------#
+#----------------------------# Memory Regions #-----------------------------#
+                             # ---------------#
+
+# SuperMemory (Overall Description)
+supermem (region=0x00000000-0x00003FFF kuseg=0x0 kseg0=0x80000000 kseg1=0xA0000000 kseg2_3=0x0 ksegdef=2 attribs=0x222)
+supermem (region=0x1D000000-0x1D00FFFF kuseg=0x0 kseg0=0x80000000 kseg1=0xA0000000 kseg2_3=0x0 attribs=0x25)
+supermem (region=0x1FC00000-0x1FC02FEF kuseg=0x0 kseg0=0x80000000 kseg1=0xA0000000 kseg2_3=0x0 attribs=0x29)
+supermem (region=0x1FC02FF0-0x1FC02FFF kuseg=0x0 kseg0=0x80000000 kseg1=0xA0000000 kseg2_3=0x0 attribs=0x31)
+# NOTE: If you enable the User Partitions via the following entries, you will need to adjust
+# ====  the ending addresses of the Internal RAM and Internal Program Flash entries above
+#       (the regions beginning at 0x00000000 and 0x1D000000). This is due to the fact that
+#       there is a set amount of actual flash and ram and the internal (kernel) and user
+#       partitions are both drawn from that amount.
+# User RAM Partition:
+# supermem (region=0xBF000000-0xBF00???? kuseg=0x0 kseg0=0x80000000 kseg1=0xA0000000 kseg2_3=0x0 attribs=0x282)
+# User Program Memory Partition:
+# supermem (region=0xBD000000-0xBD00???? kuseg=0x0 kseg0=0x80000000 kseg1=0xA0000000 kseg2_3=0x0 attribs=0x85)
+
+segmap (regname=supermem ksegmask=0xE0000000)
+segmap (regname=supermem ksegval=0xA0000000 vtopop=XOR vtopval=0xA0000000 ptovop=XOR ptovval=0xA0000000)
+segmap (regname=supermem ksegval=0x80000000 vtopop=XOR vtopval=0x80000000 ptovop=XOR ptovval=0x80000000)
+segmap (regname=supermem ksegval=0x60000000 vtopop=ADD vtopval=0x40000000 ptovop=SUB ptovval=0x40000000)
+segmap (regname=supermem ksegval=0x00000000 vtopop=ADD vtopval=0x40000000 ptovop=SUB ptovval=0x40000000)
+segmap (regname=supermem ksegval=0xC0000000 vtopop=NONE ptovop=NONE)
+
+# Internal Program Memory (64K bytes)
+pgmmem (region=0x1D000000-0x1D00FFFF kuseg=0x0 kseg0=0x80000000 kseg1=0xA0000000 kseg2_3=0x0)
+
+# Internal Boot Config Memory (12K bytes minus 16 bytes)
+bootcfgmem (region=0x1FC00000-0x1FC02FEF kuseg=0x0 kseg0=0x80000000 kseg1=0xA0000000 kseg2_3=0x0)
+
+# Location of "configuration bits" (16 bytes)
+cfgmem (region=0x1FC02FF0-0x1FC02FFF kuseg=0x0 kseg0=0x80000000 kseg1=0xA0000000 kseg2_3=0x0)
+
+# Internal Data RAM or File Register Memory (16K bytes)
+filereg (region=0x00000000-0x00003FFF kuseg=0x0 kseg0=0x80000000 kseg1=0xA0000000 kseg2_3=0x0 ksegdef=2)
+# This next region is an alias for the file register region (it is currently recognized by
+# the database but is NOT recognized by the hardware memory handler within MPLAB):
+# intrammem (region=0x00000000-0x00007FFF kuseg=0x0 kseg0=0x80000000 kseg1=0xA0000000 kseg2_3=0x0 ksegdef=2)
+
+# Internal Peripheral Memory Area (or SFRs)
+# The SFRs are equivalent to the Peripherals. As such, the SFRs described in the SFR
+# area below have corresponding addresses in these regions.
+# #### Multiple Ranges ####
+periphmem (region=0x1F800000-0x1F80A3FF kuseg=0x0 kseg0=0x0 kseg1=0xA0000000 kseg2_3=0x0 ksegdef=2)
+periphmem (region=0x1F80F000-0x1F80F7FF kuseg=0x0 kseg0=0x0 kseg1=0xA0000000 kseg2_3=0x0 ksegdef=2)
+periphmem (region=0x1F880000-0x1F8861FF kuseg=0x0 kseg0=0x0 kseg1=0xA0000000 kseg2_3=0x0 ksegdef=2)
+# #### Single Range #######
+# periphmem (region=0x1F800000-0x1F885FFF kuseg=0x0 kseg0=0x0 kseg1=0xA0000000 kseg2_3=0x0 ksegdef=2)
+
+# Currently unused or undefined regions:
+# xymem       (region=0x????????-0x???????? ymem=0x????????-0x????????)
+# eedata      (region=0x????????-0x????????)
+# extpgmmem   (region=0x????????-0x????????)
+# testmem     (region=0x????????-0x???????? appregion=0x????????-0x????????)
+# bkbgvectmem (region=0x????????-0x????????)
+# emulreg     (region=0x????????-0x????????)
+# userid      (region=0x????????-0x????????)
+# devid       (region=0x????????-0x???????? idmask=0x???????? id=0x????????)
+
+# OK there really isn't any device ID memory, but there is a device ID.  So we'll
+# define a ficticious range for the purpose of getting a device ID into the device file
+#
+# Device ID Break up:
+# Version |  Mask   | Device Id | Manufactured ID | Fixed 
+# (21:28) | (27:20) |  (19:12)  |    (11:1)       |   ‘1’
+# Version: Version of the device
+# Mask : Mask set. Currently 0x9
+# Device ID: Search for "Device Options" in DOS-00868 <-- This is unique for each device
+# Manufactured ID: Always 0x29
+
+##### THIS IS A CORRECT DEVICE ID!!!!! Contact Mark before changing
+devid (region=0xFFFFFFFF-0xFFFFFFFF idmask=0x000FFFFF id=0x00006053)
+
+# ---------------------------------------------------------------------------
+
+NumBanks=0
+
+#this number applies to only instruction breakpoints, not data breakpoints
+NumHWBP=6
+
+                           # -------------------#
+#--------------------------# Peripherals (SFRs) #---------------------------#
+                           # -------------------#
+
+#:::: Peripheral Memory Region Range 1 ::::::::::::::::::::::::::::::::::::::
+
+#:::: WDT ::::::::::::::::::::::::::: @ 0x1F80_0000 (RESETS)
+
+sfr (key=WDTCON grp="WDT" addr=0x1F800000 size=4 access='u u u u u u u u u u u u u u u u rw u u u u u u u u rw rw rw rw rw rw rw')
+    reset (por='----------------0--------0000000' mclr='----------------x--------xxxxxxx')
+    bit (names='- ON - SWDTPS - WDTCLR' width='16 1 8 5 1 1')
+
+#:::: RTCC :::::::::::::::::::::::::: @ 0x1F80_0200
+
+sfr (key=RTCCON grp="RTCC" addr=0x1F800200 size=4 access='u u u u u u rw rw rw rw rw rw rw rw rw rw rw rw rw u u u u u rw rw u u rw r r rw')
+    reset (por='------0000000000000-----00--0000' mclr='------xxxxxxxxxxxxx-----xx--xxxx')
+    bit (names='- CAL ON FRZ SIDL - RTSECSEL RTCCLKON - RTCWREN RTCSYNC HALFSEC RTCOE' width='6 10 1 1 1 5 1 1 2 1 1 1 1')
+    freeze (bit=14 polarity=1 name='REAL TIME CLOCK')
+
+sfr (key=RTCALRM grp="RTCC" addr=0x1F800210 size=4 access='u u u u u u u u u u u u u u u u rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='----------------0000000000000000' mclr='----------------0000000000000000')
+    bit (names='- ALRMEN CHIME PIV ALRMSYNC AMASK ARPT' width='16 1 1 1 1 4 8')
+
+sfr (key=RTCTIME grp="RTCC" addr=0x1F800220 size=4 access='r r r rw rw rw rw rw rw rw rw rw rw rw rw rw r rw rw rw rw rw rw rw u u u u u u u u')
+    reset (por='000xxxxxxxxxxxxx0xxxxxxx--------' mclr='000xxxxxxxxxxxxx0xxxxxxx--------')
+    bit (names='HR10 HR01 MIN10 MIN01 SEC10 SEC01 -' width='4 4 4 4 4 4 8')
+
+sfr (key=RTCDATE grp="RTCC" addr=0x1F800230 size=4 access='rw rw rw rw rw rw rw rw r r r rw rw rw rw rw r r rw rw rw rw rw rw u u u u r rw rw rw')
+    reset (por='xxxxxxxx000xxxxx00xxxxxx----0xxx' mclr='xxxxxxxx000xxxxx00xxxxxx----0xxx')
+    bit (names='YEAR10 YEAR01 MONTH10 MONTH01 DAY10 DAY01 - WDAY01' width='4 4 4 4 4 4 4 4')
+
+sfr (key=ALRMTIME grp="RTCC" addr=0x1F800240 size=4 access='r r r rw rw rw rw rw r rw rw rw rw rw rw rw r rw rw rw rw rw rw rw u u u u u u u u')
+    reset (por='000xxxxx0xxxxxxx0xxxxxxx--------' mclr='000xxxxx0xxxxxxx0xxxxxxx--------')
+    bit (names='HR10 HR01 MIN10 MIN01 SEC10 SEC01 -' width='4 4 4 4 4 4 8')
+
+sfr (key=ALRMDATE grp="RTCC" addr=0x1F800250 size=4 access='u u u u u u u u r r r rw rw rw rw rw r r rw rw rw rw rw rw u u u u r rw rw rw')
+    reset (por='--------000xxxxx00xxxxxx----0xxx' mclr='--------000xxxxx00xxxxxx----0xxx')
+    bit (names='- MONTH10 MONTH01 DAY10 DAY01 - WDAY01' width='8 4 4 4 4 4 4')
+
+#:::: Reserved :::::::::::::::::::::: @ 0x1F80_0400
+
+#:::: TMR1 :::::::::::::::::::::::::: @ 0x1F80_0600
+
+sfr (key=T1CON grp="TIMER" addr=0x1F800600 size=4 access='u u u u u u u u u u u u u u u u rw u rw rw rw u u u rw u rw rw u rw rw u')
+    reset (por='----------------00000---0-00-00-' mclr='----------------00000---0-00-00-')
+    bit (names='- ON FRZ SIDL TWDIS TWIP - TGATE - TCKPS - TSYNC TCS -' width='16 1 1 1 1 1 3 1 1 2 1 1 1 1')
+    stimulus (scl=rwb)
+    freeze (bit=14 polarity=1 name='TIMER1')
+
+sfr (key=TMR1 grp="TIMER" addr=0x1F800610 size=4 access='u u u u u u u u u u u u u u u u rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='TMR1' width='32')
+
+sfr (key=PR1 grp="TIMER" addr=0x1F800620 size=4 access='u u u u u u u u u u u u u u u u rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='PR1' width='32')
+
+#:::: TMR2 :::::::::::::::::::::::::: @ 0x1F80_0800
+
+sfr (key=T2CON grp="TIMER" addr=0x1F800800 size=4 access='u u u u u u u u u u u u u u u u rw u rw u u u u u u rw rw rw rw u u u')
+    reset (por='----------------000------0000---' mclr='----------------000-------0000---')
+    bit (names='- ON FRZ SIDL - - TCKPS T32 - - -' width='16 1 1 1 5 1 3 1 1 1 1')
+    stimulus (scl=rwb)
+    freeze (bit=14 polarity=1 name='TIMER2')
+
+sfr (key=TMR2 grp="TIMER" addr=0x1F800810 size=4 access='u u u u u u u u u u u u u u u u rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='TMR2' width='32')
+
+sfr (key=PR2 grp="TIMER" addr=0x1F800820 size=4 access='u u u u u u u u u u u u u u u u rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='PR2' width='32')
+
+#:::: TMR3 :::::::::::::::::::::::::: @ 0x1F80_0A00
+
+sfr (key=T3CON grp="TIMER" addr=0x1F800A00 size=4 access='u u u u u u u u u u u u u u u u rw u rw u u u u u u rw rw rw u u u u')
+    reset (por='----------------000------000----' mclr='----------------000------000----')
+    bit (names='- ON FRZ SIDL - - TCKPS - - -' width='16 1 1 1 5 1 3 2 1 1')
+    stimulus (scl=rwb)
+    freeze (bit=14 polarity=1 name='TIMER3')
+
+sfr (key=TMR3 grp="TIMER" addr=0x1F800A10 size=4 access='u u u u u u u u u u u u u u u u rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='TMR3' width='32')
+
+sfr (key=PR3 grp="TIMER" addr=0x1F800A20 size=4 access='u u u u u u u u u u u u u u u u rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='PR3' width='32')
+
+#:::: TMR4 :::::::::::::::::::::::::: @ 0x1F80_0C00
+
+sfr (key=T4CON grp="TIMER" addr=0x1F800C00 size=4 access='u u u u u u u u u u u u u u u u rw u rw u u u u u u rw rw rw rw u u u')
+    reset (por='----------------000------0000---' mclr='----------------000------0000---')
+    bit (names='- ON FRZ SIDL - - TCKPS T32 - - -' width='16 1 1 1 5 1 3 1 1 1 1')
+    stimulus (scl=rwb)
+    freeze (bit=14 polarity=1 name='TIMER4')
+
+sfr (key=TMR4 grp="TIMER" addr=0x1F800C10 size=4 access='u u u u u u u u u u u u u u u u rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='TMR4' width='32')
+
+sfr (key=PR4 grp="TIMER" addr=0x1F800C20 size=4 access='u u u u u u u u u u u u u u u u rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='PR4' width='32')
+
+#:::: TMR5 :::::::::::::::::::::::::: @ 0x1F80_0E00
+
+sfr (key=T5CON grp="TIMER" addr=0x1F800E00 size=4 access='u u u u u u u u u u u u u u u u rw u rw u u u u u u rw rw rw u u u u')
+    reset (por='----------------000------000----' mclr='----------------000------000----')
+    bit (names='- ON FRZ SIDL - - TCKPS - - -' width='16 1 1 1 5 1 3 2 1 1')
+    stimulus (scl=rwb)
+    freeze (bit=14 polarity=1 name='TIMER5')
+
+sfr (key=TMR5 grp="TIMER" addr=0x1F800E10 size=4 access='u u u u u u u u u u u u u u u u rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='TMR5' width='32')
+
+sfr (key=PR5 grp="TIMER" addr=0x1F800E20 size=4 access='u u u u u u u u u u u u u u u u rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='PR5' width='32')
+
+#:::: Reserved :::::::::::::::::::::: @ 0x1F80_1000
+
+#:::: ICAP1 ::::::::::::::::::::::::: @ 0x1F80_2000
+
+sfr (key=IC1CON grp="ICAP" addr=0x1F802000 size=4 access='u u u u u u u u u u u u u u u u rw u rw u u u rw rw rw rw rw r r rw rw rw')
+    reset (por='----------------000---0000000000' mclr='----------------000---0000000000')
+    bit (names='- ON FRZ SIDL - FEDGE C32 ICTMR ICI ICOV ICBNE ICM' width='16 1 1 1 3 1 1 1 2 1 1 3')
+    freeze (bit=14 polarity=1 name='INPUT CAPTURE 1')
+
+sfr (key=IC1BUF grp="ICAP" addr=0x1F802010 size=4 access='r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r')
+    reset (por='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' mclr='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+    bit (names='IC1BUF' width='32')
+
+#:::: ICAP2 ::::::::::::::::::::::::: @ 0x1F80_2200
+
+sfr (key=IC2CON grp="ICAP" addr=0x1F802200 size=4 access='u u u u u u u u u u u u u u u u rw u rw u u u rw rw rw rw rw r r rw rw rw')
+    reset (por='----------------000---0000000000' mclr='----------------000---0000000000')
+    bit (names='- ON FRZ SIDL - FEDGE C32 ICTMR ICI ICOV ICBNE ICM' width='16 1 1 1 3 1 1 1 2 1 1 3')
+    freeze (bit=14 polarity=1 name='INPUT CAPTURE 2')
+
+sfr (key=IC2BUF grp="ICAP" addr=0x1F802210 size=4 access='r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r')
+    reset (por='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' mclr='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+    bit (names='IC2BUF' width='32')
+
+#:::: ICAP3 ::::::::::::::::::::::::: @ 0x1F80_2400
+
+sfr (key=IC3CON grp="ICAP" addr=0x1F802400 size=4 access='u u u u u u u u u u u u u u u u rw u rw u u u rw rw rw rw rw r r rw rw rw')
+    reset (por='----------------000---0000000000' mclr='----------------000---0000000000')
+    bit (names='- ON FRZ SIDL - FEDGE C32 ICTMR ICI ICOV ICBNE ICM' width='16 1 1 1 3 1 1 1 2 1 1 3')
+    freeze (bit=14 polarity=1 name='INPUT CAPTURE 3')
+
+sfr (key=IC3BUF grp="ICAP" addr=0x1F802410 size=4 access='r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r')
+    reset (por='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' mclr='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+    bit (names='IC3BUF' width='32')
+
+#:::: ICAP4 ::::::::::::::::::::::::: @ 0x1F80_2600
+
+sfr (key=IC4CON grp="ICAP" addr=0x1F802600 size=4 access='u u u u u u u u u u u u u u u u rw rw rw u u u rw rw rw rw rw r r rw rw rw')
+    reset (por='----------------000---0000000000' mclr='----------------000---0000000000')
+    bit (names='- ON FRZ SIDL - FEDGE C32 ICTMR ICI ICOV ICBNE ICM' width='16 1 1 1 3 1 1 1 2 1 1 3')
+    freeze (bit=14 polarity=1 name='INPUT CAPTURE 4')
+
+sfr (key=IC4BUF grp="ICAP" addr=0x1F802610 size=4 access='r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r')
+    reset (por='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' mclr='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+    bit (names='IC4BUF' width='32')
+
+#:::: ICAP5 ::::::::::::::::::::::::: @ 0x1F80_2800
+
+sfr (key=IC5CON grp="ICAP" addr=0x1F802800 size=4 access='u u u u u u u u u u u u u u u u rw u rw u u u rw rw rw rw rw r r rw rw rw')
+    reset (por='----------------000---0000000000' mclr='----------------000---0000000000')
+    bit (names='- ON FRZ SIDL - FEDGE C32 ICTMR ICI ICOV ICBNE ICM' width='16 1 1 1 3 1 1 1 2 1 1 3')
+    freeze (bit=14 polarity=1 name='INPUT CAPTURE 5')
+
+sfr (key=IC5BUF grp="ICAP" addr=0x1F802810 size=4 access='r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r')
+    reset (por='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' mclr='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+    bit (names='IC5BUF' width='32')
+
+#:::: Reserved :::::::::::::::::::::: @ 0x1F80_2A00
+
+#:::: OCMP1 ::::::::::::::::::::::::: @ 0x1F80_3000
+
+sfr (key=OC1CON grp="OCMP" addr=0x1F803000 size=4 access='u u u u u u u u u u u u u u u u rw u rw u u u u u u u rw r rw rw rw rw')
+    reset (por='----------------000-------000000' mclr='----------------000-------000000')
+    bit (names='- ON FRZ SIDL - OC32 OCFLT OCTSEL OCM' width='16 1 1 1 7 1 1 1 3')
+    freeze (bit=14 polarity=1 name='OUTPUT COMPARE 1')
+
+sfr (key=OC1R grp="OCMP" addr=0x1F803010 size=4 access='rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' mclr='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+    bit (names='OC1R' width='32')
+
+sfr (key=OC1RS grp="OCMP" addr=0x1F803020 size=4 access='rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' mclr='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+    bit (names='OC1RS' width='32')
+
+#:::: OCMP2 ::::::::::::::::::::::::: @ 0x1F80_3200
+
+sfr (key=OC2CON grp="OCMP" addr=0x1F803200 size=4 access='u u u u u u u u u u u u u u u u rw u rw u u u u u u u rw r rw rw rw rw')
+    reset (por='----------------000-------000000' mclr='----------------000-------000000')
+    bit (names='- ON FRZ SIDL - OC32 OCFLT OCTSEL OCM' width='16 1 1 1 7 1 1 1 3')
+    freeze (bit=14 polarity=1 name='OUTPUT COMPARE 2')
+
+sfr (key=OC2R grp="OCMP" addr=0x1F803210 size=4 access='rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' mclr='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+    bit (names='OC2R' width='32')
+
+sfr (key=OC2RS grp="OCMP" addr=0x1F803220 size=4 access='rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' mclr='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+    bit (names='OC2RS' width='32')
+
+#:::: OCMP3 ::::::::::::::::::::::::: @ 0x1F80_3400
+
+sfr (key=OC3CON grp="OCMP" addr=0x1F803400 size=4 access='u u u u u u u u u u u u u u u u rw u rw u u u u u u u rw r rw rw rw rw')
+    reset (por='----------------000-------000000' mclr='----------------000-------000000')
+    bit (names='- ON FRZ SIDL - OC32 OCFLT OCTSEL OCM' width='16 1 1 1 7 1 1 1 3')
+    freeze (bit=14 polarity=1 name='OUTPUT COMPARE 3')
+
+sfr (key=OC3R grp="OCMP" addr=0x1F803410 size=4 access='rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' mclr='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+    bit (names='OC3R' width='32')
+
+sfr (key=OC3RS grp="OCMP" addr=0x1F803420 size=4 access='rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' mclr='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+    bit (names='OC3RS' width='32')
+
+#:::: OCMP4 ::::::::::::::::::::::::: @ 0x1F80_3600
+
+sfr (key=OC4CON grp="OCMP" addr=0x1F803600 size=4 access='u u u u u u u u u u u u u u u u rw u rw u u u u u u u rw r rw rw rw rw')
+    reset (por='----------------000-------000000' mclr='----------------000-------000000')
+    bit (names='- ON FRZ SIDL - OC32 OCFLT OCTSEL OCM' width='16 1 1 1 7 1 1 1 3')
+    freeze (bit=14 polarity=1 name='OUTPUT COMPARE 4')
+
+sfr (key=OC4R grp="OCMP" addr=0x1F803610 size=4 access='rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' mclr='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+    bit (names='OC4R' width='32')
+
+sfr (key=OC4RS grp="OCMP" addr=0x1F803620 size=4 access='rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' mclr='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+    bit (names='OC4RS' width='32')
+
+#:::: OCMP5 ::::::::::::::::::::::::: @ 0x1F80_3800
+
+sfr (key=OC5CON grp="OCMP" addr=0x1F803800 size=4 access='u u u u u u u u u u u u u u u u rw u rw u u u u u u u rw r rw rw rw rw')
+    reset (por='----------------000-------000000' mclr='----------------000-------000000')
+    bit (names='- ON FRZ SIDL - OC32 OCFLT OCTSEL OCM' width='16 1 1 1 7 1 1 1 3')
+    freeze (bit=14 polarity=1 name='OUTPUT COMPARE 5')
+
+sfr (key=OC5R grp="OCMP" addr=0x1F803810 size=4 access='rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' mclr='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+    bit (names='OC5R' width='32')
+
+sfr (key=OC5RS grp="OCMP" addr=0x1F803820 size=4 access='rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' mclr='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+    bit (names='OC5RS' width='32')
+
+#:::: Reserved :::::::::::::::::::::: @ 0x1F80_3A00
+
+#:::: I2C1 :::::::::::::::::::::::::: @ 0x1F80_5000
+
+sfr (key=I2C1CON grp="I2C" addr=0x1F805000 size=4 access='u u u u u u u u u u u u u u u u rw u rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='----------------0001000000000000' mclr='----------------0001000000000000')
+    bit (names='- ON FRZ SIDL SCLREL STRICT A10M DISSLW SMEN GCEN STREN ACKDT ACKEN RCEN PEN RSEN SEN' width='16 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1')
+    freeze (bit=14 polarity=1 name='I2C1')
+
+sfr (key=I2C1STAT grp="I2C" addr=0x1F805010 size=4 access='u u u u u u u u u u u u u u u u r r u u u rc r r rc rc r rc rc r r r')
+    reset (por='----------------00---00000000000' mclr='----------------00---00000000000')
+    bit (names='- ACKSTAT TRSTAT - BCL GCSTAT ADD10 IWCOL I2COV DA P S RW RBF TBF' width='16 1 1 3 1 1 1 1 1 1 1 1 1 1 1')
+
+sfr (key=I2C1ADD grp="I2C" addr=0x1F805020 size=4 access='u u u u u u u u u u u u u u u u u u u u u u rw rw rw rw rw rw rw rw rw rw')
+    reset (por='----------------------0000000000' mclr='----------------------0000000000')
+    bit (names='- ADD' width='22 10')
+
+sfr (key=I2C1MSK grp="I2C" addr=0x1F805030 size=4 access='u u u u u u u u u u u u u u u u u u u u u u rw rw rw rw rw rw rw rw rw rw')
+    reset (por='----------------------0000000000' mclr='----------------------0000000000')
+    bit (names='- MSK' width='22 10')
+
+sfr (key=I2C1BRG grp="I2C" addr=0x1F805040 size=4 access='u u u u u u u u u u u u u u u u u u u u rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='--------------------000000000000' mclr='--------------------000000000000')
+    bit (names='- I2C1BRG' width='20 12')
+
+sfr (key=I2C1TRN grp="I2C" addr=0x1F805050 size=4 access='u u u u u u u u u u u u u u u u u u u u u u u u rw rw rw rw rw rw rw rw')
+    reset (por='------------------------00000000' mclr='------------------------00000000')
+    bit (names='- I2CT1DATA' width='24 8')
+
+sfr (key=I2C1RCV grp="I2C" addr=0x1F805060 size=4 access='u u u u u u u u u u u u u u u u u u u u u u u u rw rw rw rw rw rw rw rw')
+    reset (por='------------------------00000000' mclr='------------------------00000000')
+    bit (names='- I2CR1DATA' width='24 8')
+
+#:::: I2C2 :::::::::::::::::::::::::: @ 0x1F80_5200
+
+sfr (key=I2C2CON grp="I2C" addr=0x1F805200 size=4 access='u u u u u u u u u u u u u u u u rw u rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='----------------0001000000000000' mclr='----------------0001000000000000')
+    bit (names='- ON FRZ SIDL SCLREL STRICT A10M DISSLW SMEN GCEN STREN ACKDT ACKEN RCEN PEN RSEN SEN' width='16 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1')
+    freeze (bit=14 polarity=1 name='I2C2')
+
+sfr (key=I2C2STAT grp="I2C" addr=0x1F805210 size=4 access='u u u u u u u u u u u u u u u u r r u u u rc r r rc rc r rc rc r r r')
+    reset (por='----------------00---00000000000' mclr='----------------00---00000000000')
+    bit (names='- ACKSTAT TRSTAT - BCL GCSTAT ADD10 IWCOL I2COV DA P S RW RBF TBF' width='16 1 1 3 1 1 1 1 1 1 1 1 1 1 1')
+
+sfr (key=I2C2ADD grp="I2C" addr=0x1F805220 size=4 access='u u u u u u u u u u u u u u u u u u u u u u rw rw rw rw rw rw rw rw rw rw')
+    reset (por='----------------------0000000000' mclr='----------------------0000000000')
+    bit (names='- ADD' width='22 10')
+
+sfr (key=I2C2MSK grp="I2C" addr=0x1F805230 size=4 access='u u u u u u u u u u u u u u u u u u u u u u rw rw rw rw rw rw rw rw rw rw')
+    reset (por='----------------------0000000000' mclr='----------------------0000000000')
+    bit (names='- MSK' width='22 10')
+
+sfr (key=I2C2BRG grp="I2C" addr=0x1F805240 size=4 access='u u u u u u u u u u u u u u u u u u u u rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='--------------------000000000000' mclr='--------------------000000000000')
+    bit (names='- I2C2BRG' width='20 12')
+
+sfr (key=I2C2TRN grp="I2C" addr=0x1F805250 size=4 access='u u u u u u u u u u u u u u u u u u u u u u u u rw rw rw rw rw rw rw rw')
+    reset (por='------------------------00000000' mclr='------------------------00000000')
+    bit (names='- I2C2TXDATA' width='24 8')
+
+sfr (key=I2C2RCV grp="I2C" addr=0x1F805260 size=4 access='u u u u u u u u u u u u u u u u u u u u u u u u rw rw rw rw rw rw rw rw')
+    reset (por='------------------------00000000' mclr='------------------------00000000')
+    bit (names='- I2C2RXDATA' width='24 8')
+
+#:::: Reserved :::::::::::::::::::::: @ 0x1F80_5400
+
+#:::: SPI1 :::::::::::::::::::::::::: @ 0x1F80_5800
+
+sfr (key=SPI1CON grp="SPI" addr=0x1F805800 size=4 access='rw rw rw u u u u u u u u u u u rw u rw rw rw rw rw rw rw rw rw rw rw u u u u u')
+    reset (por='000-----------0-00000000000-----' mclr='000-----------0-00000000000-----')
+    bit (names='FRMEN FRMSYNC FRMPOL - SPIFE - ON FRZ SIDL DISSDO MODE32 MODE16 SMP CKE SSEN CKP MSTEN -' width='1 1 1 11 1 1 1 1 1 1 1 1 1 1 1 1 1 5')
+    stimulus (scl=rwb)
+    freeze (bit=14 polarity=1 name='SPI 1')
+
+sfr (key=SPI1STAT grp="SPI" addr=0x1F805810 size=4 access='u u u u u u u u u u u u u u u u u u u u rw u u u u rw u u rw u u rw')
+    reset (por='--------------------0----0--0--0' mclr='--------------------0----0--0--0')
+    bit (names='- SPIBUSY - SPIROV - SPITBE - SPIRBF' width='20 1 4 1 2 1 2 1')
+    stimulus (scl=rwb)
+
+sfr (key=SPI1BUF grp="SPI" addr=0x1F805820 size=4 access='rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='DATA' width='32')
+    stimulus (scl=rwb pcfiles=rw regfiles=rw type=int)
+
+sfr (key=SPI1BRG grp="SPI" addr=0x1F805830 size=4 access='u u u u u u u u u u u u u u u u u u u u u u u rw rw rw rw rw rw rw rw rw')
+    reset (por='-----------------------000000000' mclr='-----------------------000000000')
+    bit (names='- BRG' width='23 9')
+    stimulus (scl=rwb)
+
+#:::: SPI2 :::::::::::::::::::::::::: @ 0x1F80_5A00
+
+sfr (key=SPI2CON grp="SPI" addr=0x1F805A00 size=4 access='rw rw rw u u u u u u u u u u u rw u rw rw rw rw rw rw rw rw rw rw rw u u u u u')
+    reset (por='000-----------0-00000000000-----' mclr='000-----------0-00000000000-----')
+    bit (names='FRMEN FRMSYNC FRMPOL - SPIFE - ON FRZ SIDL DISSDO MODE32 MODE16 SMP CKE SSEN CKP MSTEN -' width='1 1 1 11 1 1 1 1 1 1 1 1 1 1 1 1 1 5')
+    stimulus (scl=rwb)
+    freeze (bit=14 polarity=1 name='SPI 2')
+
+sfr (key=SPI2STAT grp="SPI" addr=0x1F805A10 size=4 access='u u u u u u u u u u u u u u u u u u u u rw u u u u rw u u rw u u rw')
+    reset (por='--------------------0----0--0--0' mclr='--------------------0----0--0--0')
+    bit (names='- SPIBUSY - SPIROV - SPITBE - SPIRBF' width='20 1 4 1 2 1 2 1')
+    stimulus (scl=rwb)
+
+sfr (key=SPI2BUF grp="SPI" addr=0x1F805A20 size=4 access='rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='DATA' width='32')
+    stimulus (scl=rwb pcfiles=rw regfiles=rw type=int)
+
+sfr (key=SPI2BRG grp="SPI" addr=0x1F805A30 size=4 access='u u u u u u u u u u u u u u u u u u u u u u u rw rw rw rw rw rw rw rw rw')
+    reset (por='-----------------------000000000' mclr='-----------------------000000000')
+    bit (names='- BRG' width='23 9')
+    stimulus (scl=rwb)
+
+#:::: Reserved :::::::::::::::::::::: @ 0x1F80_5C00
+
+#:::: UART1 ::::::::::::::::::::::::: @ 0x1F80_6000
+
+sfr (key=U1MODE grp="UART1" addr=0x1F806000 size=4 access='u u u u u u u u u u u u u u u u rw u rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='----------------0000000000000000' mclr='----------------0000000000000000')
+    bit (names='- ON FRZ SIDL IREN RTSMD ALTIO UEN WAKE LPBACK ABAUD RXINV BRGH PDSEL STSEL' width='16 1 1 1 1 1 1 2 1 1 1 1 1 2 1')
+    stimulus (scl=rwb)
+    freeze (bit=14 polarity=1 name='UART 1')
+
+sfr (key=U1STA grp="UART1" addr=0x1F806010 size=4 access='u u u u u u u rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw r r rw rw rw r r r rc r')
+    reset (por='-------0000000000000000100010000' mclr='-------0000000000000000100010000')
+    bit (names='- ADMEN ADMADDR UTXISEL UTXINV URXEN UTXBRK UTXEN UTXBF TRMT URXISEL ADDEN RIDLE PERR FERR OERR URXDA' width='7 1 8 2 1 1 1 1 1 1 2 1 1 1 1 1 1')
+    stimulus (scl=rwb)
+
+sfr (key=U1TXREG grp="UART1" addr=0x1F806020 size=4 access='u u u u u u u u u u u u u u u u u u u u u u u rw rw rw rw rw rw rw rw rw')
+    reset (por='-----------------------xxxxxxxxx' mclr='-----------------------000000000')
+    bit (names='- TX' width='23 9')
+    stimulus (scl=rwb regfiles=w)
+
+sfr (key=U1RXREG grp="UART1" addr=0x1F806030 size=4 access='u u u u u u u u u u u u u u u u u u u u u u u r r r r r r r r r')
+    reset (por='-----------------------000000000' mclr='-----------------------000000000')
+    bit (names='- RX' width='23 9')
+    stimulus (scl=rb regfiles=rp)
+
+sfr (key=U1BRG grp="UART1" addr=0x1F806040 size=4 access='u u u u u u u u u u u u u u u u rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='----------------0000000000000000' mclr='----------------0000000000000000')
+    bit (names='- BRG' width='16 16')
+
+#:::: UART2 ::::::::::::::::::::::::: @ 0x1F80_6200
+
+sfr (key=U2MODE grp="UART2" addr=0x1F806200 size=4 access='u u u u u u u u u u u u u u u u rw u rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='----------------0000000000000000' mclr='----------------0000000000000000')
+    bit (names='- ON FRZ SIDL IREN RTSMD ALTIO UEN WAKE LPBACK ABAUD RXINV BRGH PDSEL STSEL' width='16 1 1 1 1 1 1 2 1 1 1 1 1 2 1')
+    stimulus (scl=rwb)
+    freeze (bit=14 polarity=1 name='UART 2')
+
+sfr (key=U2STA grp="UART2" addr=0x1F806210 size=4 access='u u u u u u u rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw r r rw rw rw r r r rc r')
+    reset (por='-------0000000000000000100010000' mclr='-------0000000000000000100010000')
+    bit (names='- ADMEN ADMADDR UTXISEL UTXINV URXEN UTXBRK UTXEN UTXBF TRMT URXISEL ADDEN RIDLE PERR FERR OERR URXDA' width='7 1 8 2 1 1 1 1 1 1 2 1 1 1 1 1 1')
+    stimulus (scl=rwb)
+
+sfr (key=U2TXREG grp="UART2" addr=0x1F806220 size=4 access='u u u u u u u u u u u u u u u u u u u u u u u rw rw rw rw rw rw rw rw rw')
+    reset (por='-----------------------xxxxxxxxx' mclr='-----------------------000000000')
+    bit (names='- TX' width='23 9')
+    stimulus (scl=rwb regfiles=w)
+
+sfr (key=U2RXREG grp="UART2" addr=0x1F806230 size=4 access='u u u u u u u u u u u u u u u u u u u u u u u r r r r r r r r r')
+    reset (por='-----------------------000000000' mclr='-----------------------000000000')
+    bit (names='- RX' width='23 9')
+    stimulus (scl=rb regfiles=rp)
+
+sfr (key=U2BRG grp="UART2" addr=0x1F806240 size=4 access='u u u u u u u u u u u u u u u u rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='----------------0000000000000000' mclr='----------------0000000000000000')
+    bit (names='- BRG' width='16 16')
+
+#:::: Reserved :::::::::::::::::::::: @ 0x1F80_6400
+
+#:::: PMP ::::::::::::::::::::::::::: @ 0x1F80_7000
+
+sfr (key=PMCON grp="PMP" addr=0x1F807000 size=4 access='u u u u u u u u u u u u u u u u rw u rw rw rw rw rw rw rw rw rw rw rw u rw rw')
+    reset (por='----------------00000-0000000-00' mclr='----------------00000-0000000-00')
+    bit (names='- ON FRZ SIDL ADRMUX PMPTTL PTWREN PTRDEN CSF ALP CS2P CS1P - WRSP RDSP' width='16 1 1 1 2 1 1 1 2 1 1 1 1 1 1')
+    freeze (bit=14 polarity=1 name='PARALLEL MASTER/SLAVE PORT')
+
+sfr (key=PMMODE grp="PMP" addr=0x1F807010 size=4 access='u u u u u u u u u u u u u u u u rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='----------------00000-0000000000' mclr='----------------00000-0000000000')
+    bit (names='- BUSY IRQM INCM MODE16 MODE WAITB WAITM WAITE' width='16 1 2 2 1 2 2 4 2')
+
+sfr (key=PMADDR grp="PMP" addr=0x1F807020 size=4 access='u u u u u u u u u u u u u u u u rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='----------------0000000000000000' mclr='----------------0000000000000000')
+    bit (names='- CS2 CS1 ADDR' width='16 1 1 14')
+
+sfr (key=PMDOUT grp="PMP" addr=0x1F807030 size=4 access='rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='DATAOUT' width='32')
+
+sfr (key=PMDIN grp="PMP" addr=0x1F807040 size=4 access='rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='DATAIN' width='32')
+
+sfr (key=PMAEN grp="PMP" addr=0x1F807050 size=4 access='u u u u u u u u u u u u u u u u rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='----------------0000000000000000' mclr='----------------0000000000000000')
+    bit (names='- PTEN' width='16 16')
+
+sfr (key=PMSTAT grp="PMP" addr=0x1F807060 size=4 access='u u u u u u u u u u u u u u u u r rw u u r r r r r rw u u r r r r')
+    reset (por='----------------00--000010--1111' mclr='----------------00--000010--1111')
+    bit (names='- IBF IBOV - IB3F IB2F IB1F IB0F OBE OBUF - OB3E OB2E OB1E OB0E' width='16 1 1 2 1 1 1 1 1 1 2 1 1 1 1')
+
+#:::: Reserved :::::::::::::::::::::: @ 0x1F80_7200
+
+#:::: Reserved :::::::::::::::::::::: @ 0x1F80_8200
+
+#:::: ADC ::::::::::::::::::::::::::: @ 0x1F80_9000
+
+sfr (key=AD1CON1 grp='ADC' addr=0x1F809000 size=4 access='u u u u u u u u u u u u u u u u rw u rw rw rw rw rw rw rw rw rw rw u rw rw rw')
+    reset (por='----------------000--0000000-000' mclr='----------------000--0000000-000')
+    bit (names='- ON FRZ SIDL - FORM SSRC CLRASAM - ASAM SAMP DONE' width='16 1 1 1 2 3 3 1 1 1 1 1')
+    freeze (bit=14 polarity=1 name='ADC 1')
+
+sfr (key=AD1CON2 grp='ADC' addr=0x1F809010 size=4 access='u u u u u u u u u u u u u u u u rw rw rw rw u rw u u r u rw rw rw rw rw rw')
+    reset (por='----------------0000-0--0-000000' mclr='----------------0000-0--0-000000')
+    bit (names='- VCFG OFFCAL - CSCNA - BUFS - SMPI BUFM ALTS' width='16 3 1 1 1 2 1 1 4 1 1')
+
+sfr (key=AD1CON3 grp='ADC' addr=0x1F809020 size=4 access='u u u u u u u u u u u u u u u u rw u u rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='----------------0--0000000000000' mclr='----------------0--0000000000000')
+    bit (names='- ADRC - SAMC ADCS' width='16 1 2 5 8')
+
+sfr (key=AD1CHS grp='ADC' addr=0x1F809040 size=4 access='rw u u u rw rw rw rw rw u u u rw rw rw rw u u u u u u u u u u u u u u u u')
+    reset (por='0---00000---0000----------------' mclr='0---00000---0000----------------')
+    bit (names='CH0NB - CH0SB CH0NA - CH0SA -' width='1 3 4 1 3 4 16')
+
+sfr (key=AD1CSSL grp='ADC' addr=0x1F809050 size=4 access='u u u u u u u u u u u u u u u u rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='- CSSL' width='16 16')
+
+sfr (key=AD1PCFG grp='ADC' addr=0x1F809060 size=4 access='u u u u u u u u u u u u u u u u rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='- PCFG' width='16 16')
+
+#.... Buffer Support .............
+
+sfr (key=ADC1BUF0 grp='ADC' addr=0x1F809070 size=4 access='r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='ADC1BUF0' width='32')
+    stimulus (scl=rwb regfiles=r)
+
+sfr (key=ADC1BUF1 grp='ADC' addr=0x1F809080 size=4 access='r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='ADC1BUF1' width='32')
+
+sfr (key=ADC1BUF2 grp='ADC' addr=0x1F809090 size=4 access='r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='ADC1BUF2' width='32')
+
+sfr (key=ADC1BUF3 grp='ADC' addr=0x1F8090A0 size=4 access='r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='ADC1BUF3' width='32')
+
+sfr (key=ADC1BUF4 grp='ADC' addr=0x1F8090B0 size=4 access='r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='ADC1BUF4' width='32')
+
+sfr (key=ADC1BUF5 grp='ADC' addr=0x1F8090C0 size=4 access='r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='ADC1BUF5' width='32')
+
+sfr (key=ADC1BUF6 grp='ADC' addr=0x1F8090D0 size=4 access='r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='ADC1BUF6' width='32')
+
+sfr (key=ADC1BUF7 grp='ADC' addr=0x1F8090E0 size=4 access='r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='ADC1BUF7' width='32')
+
+sfr (key=ADC1BUF8 grp='ADC' addr=0x1F8090F0 size=4 access='r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='ADC1BUF8' width='32')
+
+sfr (key=ADC1BUF9 grp='ADC' addr=0x1F809100 size=4 access='r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='ADC1BUF9' width='32')
+
+sfr (key=ADC1BUFA grp='ADC' addr=0x1F809110 size=4 access='r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='ADC1BUFA' width='32')
+
+sfr (key=ADC1BUFB grp='ADC' addr=0x1F809120 size=4 access='r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='ADC1BUFB' width='32')
+
+sfr (key=ADC1BUFC grp='ADC' addr=0x1F809130 size=4 access='r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='ADC1BUFC' width='32')
+
+sfr (key=ADC1BUFD grp='ADC' addr=0x1F809140 size=4 access='r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='ADC1BUFD' width='32')
+
+sfr (key=ADC1BUFE grp='ADC' addr=0x1F809150 size=4 access='r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='ADC1BUFE' width='32')
+
+sfr (key=ADC1BUFF grp='ADC' addr=0x1F809160 size=4 access='r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='ADC1BUFF' width='32')
+
+#:::: Reserved :::::::::::::::::::::: @ 0x1F80_9200
+
+#:::: DAC4 :::::::::::::::::::::::::: @ 0x1F80_9800
+
+sfr (key=CVRCON grp='DAC4' addr=0x1F809800 size=4 access='u u u u u u u u u u u u u u u u u u u u u u u u u rw rw rw rw rw rw rw')
+    reset (por='-------------------------0000000' mclr='-------------------------0000000')
+    bit (names='- ON - CVROE CVRR CVRSS CVR' width='16 1 8 1 1 1 4')
+
+#:::: Reserved :::::::::::::::::::::: @ 0x1F80_9A00
+
+#:::: ACMP :::::::::::::::::::::::::: @ 0x1F80_A000
+
+sfr (key=CM1CON grp='CMP' addr=0x1F80A000 size=4 access='u u u u u u u u u u u u u u u u rw rw rw u u u u rw rw rw u rw u u rw rw')
+    reset (por='----------------000----011-0--11' mclr='----------------000----011-0--11')
+    bit (names='- ON COE CPOL - COUT EVPOL - CREF - CCH' width='16 1 1 1 4 1 2 1 1 2 2')
+
+sfr (key=CM2CON grp='CMP' addr=0x1F80A010 size=4 access='u u u u u u u u u u u u u u u u rw rw rw u u u u rw rw rw u rw u u rw rw')
+    reset (por='----------------000----011-0--11' mclr='----------------000----011-0--11')
+    bit (names='- ON COE CPOL - COUT EVPOL - CREF - CCH' width='16 1 1 1 4 1 2 1 1 2 2')
+
+sfr (key=CMSTAT grp='CMP' addr=0x1F80A060 size=4 access='u u u u u u u u u u u u u u u u u u rw u u u u u u u u u u u r r')
+    reset (por='------------------------00000000' mclr='------------------------00000000')
+    bit (names='- FRZ SIDL - C2OUT C1OUT' width='17 1 1 11 1 1')
+    freeze (bit=14 polarity=1 name='COMPARATOR')
+
+#:::: Reserved :::::::::::::::::::::: @ 0x1F80_A400
+
+#:::: Peripheral Memory Region Range 2 ::::::::::::::::::::::::::::::::::::::
+
+#:::: OSCCON :::::::::::::::::::::::: @ 0x1F80_F000 (CLKCON)
+
+sfr (key=OSCCON grp='OSC' addr=0x1F80F000 size=4 access='u u rw rw rw rw rw rw rw rw u rw rw rw rw rw u rw rw rw u rw rw rw rw rw rw rw rw u rw rw')
+    reset (por='--00000000-00000-000-00000000-11' mclr='--00000000-00000-000-00000000-11')
+    bit (names='- PLLODIV FRCDIV DRMEN SOSCRDY - PBDIV PLLMULT - COSC - NOSC CLKLOCK ULOCK LOCK SLPEN CF - SOSCEN OSWEN' width='2 3 3 1 1 1 2 3 1 3 1 3 1 1 1 1 1 1 1 1')
+
+sfr (key=OSCTUN grp='OSC' addr=0x1F80F010 size=4 access='u u u u u u u u u u u u u u u u u u u u u u u u u u rw rw rw rw rw rw')
+    reset (por='--------------------------000000' mclr='--------------------------000000')
+    bit (names='- TUN' width='26 6')
+
+#:::: CFG ::::::::::::::::::::::::::: @ 0x1F80_F200 (CFG)
+
+sfr (key=DDPCON grp='CFG' addr=0x1F80F200 size=4 access='u u u u u u u u u u u u u u u u u u u u u u u u u rw rw rw rw u u u')
+    reset (por='-------------------------0000---' mclr='-------------------------0000---')
+    bit (names='- DDPU1 DDPU2 DDPSPI1 JTAGEN -' width='25 1 1 1 1 3')
+
+#sfr (key=CFGCON grp='CFG' addr=0x1F80F200 size=4 access='u u u u u u u u u u u u u u u u u u u u u u u rw u rw rw rw rw rw rw rw')
+#    reset (por='-----------------------0-0000111' mclr='-----------------------0-0000111')
+#    bit (names='- RPFA - DCCU1 DCCU2 DCCSPI1 JTAGEN TROEN FAEN TDOEN' width='23 1 1 1 1 1 1 1 1 1')
+
+#:::: DEVID and SYSKEY :::::::::::::: @ 0x1F80_F220
+
+sfr (key=DEVID grp='CFG' addr=0x1F80F220 size=4 access='r r r r u u u u u u u u r r r r r r r r u u u u u u u u u u u r')
+    reset (por='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' mclr='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+    bit (names='DEVID' width='32')
+#   reset (por='xxxx--------xxxxxxxx-----------1' mclr='xxxx--------xxxxxxxx-----------1')
+#   bit (names='VER - DEVID - -' width='4 8 8 11 1')
+
+sfr (key=SYSKEY grp='CFG' addr=0x1F80F230 size=4 access='r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r u r')
+    reset (por='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' mclr='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+    bit (names='SYSKEY' width='32')
+
+#:::: NVM ::::::::::::::::::::::::::: @ 0x1F80_F400 (FLASHCON)
+
+sfr (key=NVMCON grp='FLASH' addr=0x1F80F400 size=4 access='u u u u u u u u u u u u u u u u rw rw rw rw rw u u u u u u u rw rw rw rw')
+    reset (por='----------------00000-------0000' mclr='----------------00000-------0000')
+    bit (names='- WR WREN WRERR LVDERR LVDSTAT - NVMOP' width='16 1 1 1 1 1 7 4')
+
+sfr (key=NVMKEY grp='FLASH' addr=0x1F80F410 size=4 access='w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='NVMKEY' width='32')
+
+sfr (key=NVMADDR grp='FLASH' addr=0x1F80F420 size=4 access='rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='NVMADDR' width='32')
+
+sfr (key=NVMDATA grp='FLASH' addr=0x1F80F430 size=4 access='rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='NVMDATA' width='32')
+
+sfr (key=NVMSRCADDR grp='FLASH' addr=0x1F80F440 size=4 access='rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='NVMSRCADDR' width='32')
+
+#:::: RCON :::::::::::::::::::::::::: @ 0x1F80_F600
+
+sfr (key=RCON grp='RESET' addr=0x1F80F600 size=4 access='u u u u u u u u u u u u u u u u u u u u u u rw rw rw rw u rw rw rw rw rw')
+    reset (por='----------------------0000-00000' mclr='----------------------0000-00000')
+    bit (names='- CMR VREGS EXTR SWR - WDTO SLEEP IDLE BOR POR' width='22 1 1 1 1 1 1 1 1 1 1')
+
+sfr (key=RSWRST grp='RESET' addr=0x1F80F610 size=4 access='u u u u u u u u u u u u u u u u u u u u u u u u u u u u u u u rw')
+    reset (por='-------------------------------0' mclr='-------------------------------0')
+    bit (names='- SWRST' width='31 1')
+
+#:::: Reserved :::::::::::::::::::::: @ 0x1F80_F800
+
+#:::: Peripheral Memory Region Range 3 ::::::::::::::::::::::::::::::::::::::
+
+#:::: ICD ::::::::::::::::::::::::::: @ 0x1F88_0000
+
+#sfr (key=CPCON1 grp='ICD' addr=0x1F880000 size=4 access='u u u u u u u u u u u u u u u u u u u u u u u u rw rw u u rw rw rw rw')
+#    reset (por='------------------------00--0000' mclr='------------------------00--0000')
+#    bit (names='- CPWEN CPREN - BAI' width='24 1 1 2 4')
+
+#sfr (key=CPCON2 grp='ICD' addr=0x1F880010 size=4 access='u u u u u u u u u u u u u u u u u u u u u u u u rw rw u u rw rw rw rw')
+#    reset (por='------------------------00--0000' mclr='------------------------00--0000')
+#    bit (names='- CPWEN CPREN - BAI' width='24 1 1 2 4')
+
+#sfr (key=CPCON3 grp='ICD' addr=0x1F880020 size=4 access='u u u u u u u u u u u u u u u u u u u u u u u u rw rw u u rw rw rw rw')
+#    reset (por='------------------------00--0000' mclr='------------------------00--0000')
+#    bit (names='- CPWEN CPREN - BAI' width='24 1 1 2 4')
+
+#sfr (key=CPCON4 grp='ICD' addr=0x1F880030 size=4 access='u u u u u u u u u u u u u u u u u u u u u u u u rw rw u u rw rw rw rw')
+#    reset (por='------------------------00--0000' mclr='------------------------00--0000')
+#    bit (names='- CPWEN CPREN - BAI' width='24 1 1 2 4')
+
+#sfr (key=CPCON5 grp='ICD' addr=0x1F880040 size=4 access='u u u u u u u u u u u u u u u u u u u u u u u u rw rw u u rw rw rw rw')
+#    reset (por='------------------------00--0000' mclr='------------------------00--0000')
+#    bit (names='- CPWEN CPREN - BAI' width='24 1 1 2 4')
+
+#sfr (key=CPCON6 grp='ICD' addr=0x1F880050 size=4 access='u u u u u u u u u u u u u u u u u u u u u u u u rw rw u u rw rw rw rw')
+#    reset (por='------------------------00--0000' mclr='------------------------00--0000')
+#    bit (names='- CPWEN CPREN - BAI' width='24 1 1 2 4')
+
+#..................................
+
+#sfr (key=CPSTAT grp='ICD' addr=0x1F880060 size=4 access='u u u u u u u u u u u u u u u u u u rc rc rc rc rc rc u u r r r r r r')
+#    reset (por='------------------000000--000000' mclr='------------------000000--000000')
+#    bit (names='- DOV - DSTAT' width='18 6 2 6')
+
+#..................................
+
+#sfr (key=CPDV1 grp='ICD' addr=0x1F880070 size=4 access='r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r')
+#    reset (por='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' mclr='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+#    bit (names='CPDV1' width='32')
+
+#sfr (key=CPDV2 grp='ICD' addr=0x1F880080 size=4 access='r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r')
+#    reset (por='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' mclr='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+#    bit (names='CPDV2' width='32')
+
+#sfr (key=CPDV3 grp='ICD' addr=0x1F880090 size=4 access='r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r')
+#    reset (por='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' mclr='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+#    bit (names='CPDV3' width='32')
+
+#sfr (key=CPDV4 grp='ICD' addr=0x1F8800A0 size=4 access='r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r')
+#    reset (por='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' mclr='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+#    bit (names='CPDV4' width='32')
+
+#sfr (key=CPDV5 grp='ICD' addr=0x1F8800B0 size=4 access='r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r')
+#    reset (por='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' mclr='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+#    bit (names='CPDV5' width='32')
+
+#sfr (key=CPDV6 grp='ICD' addr=0x1F8800C0 size=4 access='r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r')
+#    reset (por='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' mclr='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+#    bit (names='CPDV6' width='32')
+
+#..................................
+
+#sfr (key=CPDA1 grp='ICD' addr=0x1F8800D0 size=4 access='rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+#    reset (por='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' mclr='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+#    bit (names='CPDA1' width='32')
+
+#sfr (key=CPDA2 grp='ICD' addr=0x1F8800E0 size=4 access='rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+#    reset (por='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' mclr='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+#    bit (names='CPDA2' width='32')
+
+#sfr (key=CPDA3 grp='ICD' addr=0x1F8800F0 size=4 access='rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+#    reset (por='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' mclr='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+#    bit (names='CPDA3' width='32')
+
+#sfr (key=CPDA4 grp='ICD' addr=0x1F880100 size=4 access='rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+#    reset (por='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' mclr='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+#    bit (names='CPDA4' width='32')
+
+#sfr (key=CPDA5 grp='ICD' addr=0x1F880110 size=4 access='rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+#    reset (por='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' mclr='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+#    bit (names='CPDA5' width='32')
+
+#sfr (key=CPDA6 grp='ICD' addr=0x1F880120 size=4 access='rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+#    reset (por='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' mclr='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+#    bit (names='CPDA6' width='32')
+
+#..................................
+
+#sfr (key=ICDCON grp='ICD' addr=0x1F880130 size=4 access='u u u u u u u u u u u u u u u u u u u u u u u u u rw rw rw rw rw rw rw')
+#    reset (por='-----------------0-------0100000' mclr='-----------------0-------0100000')
+#    bit (names='- FRZ - SSM_BUG RSTBUG WDT_EN WDT_BE SSM_CLK SLP_BE CKSW_BE' width='17 1 7 1 1 1 1 1 1 1')
+
+#sfr (key=DDPSTAT grp='ICD' addr=0x1F880140 size=4 access='rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc u u u u u rc rc u u u u u r r r u')
+#    reset (por='0000000000000000-----00-----000-' mclr='0000000000000000-----00-----000-')
+#    bit (names='STOV - APOOV APIOV - STRFUL APOFUL APIFUL -' width='16 5 1 1 5 1 1 1 1')
+
+#sfr (key=ICDSTAT grp='ICD' addr=0x1F880140 size=4 access='rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc u u rc r r r u r r r r r r')
+#    reset (por='0000000000000000000--0000-000000' mclr='0000000000000000000--0000-000000')
+#    bit (names='STOV SLP_BF WDT_BF CKS_BF - APOOV APIOV DBIOV INBUG - QRY ICDRPY STRFUL APOFUL APIFUL DBIFUL' width='16 1 1 1 2 1 1 1 1 1 1 1 1 1 1 1')
+
+#sfr (key=SPBRG grp='ICD' addr=0x1F880150 size=4 access='u u u u u u u u u u u u u u u u u u u u u u u u rw rw rw rw rw rw rw rw')
+#    reset (por='------------------------00011000' mclr='------------------------00011000')
+#    bit (names='- BRG' width='24 8')
+
+#sfr (key=QTMR grp='ICD' addr=0x1F880160 size=4 access='u u u u u u u u u u u u u u u u rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+#    reset (por='----------------0000000111111111' mclr='----------------0000000111111111')
+#    bit (names='- QTMR' width='16 16')
+
+#sfr (key=STRO grp='ICD' addr=0x1F880170 size=4 access='rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+#    reset (por='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' mclr='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+#    bit (names='STRO' width='32')
+
+#sfr (key=APPO grp='ICD' addr=0x1F880180 size=4 access='rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+#    reset (por='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' mclr='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+#    bit (names='APPO' width='32')
+
+#sfr (key=APPI grp='ICD' addr=0x1F880190 size=4 access='r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r')
+#    reset (por='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' mclr='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+#    bit (names='APPI' width='32')
+
+#sfr (key=DBGI grp='ICD' addr=0x1F8801A0 size=4 access='r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r')
+#    reset (por='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' mclr='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+#    bit (names='DBGI' width='32')
+
+#:::: EVIC :::::::::::::::::::::::::: @ 0x1F88_1000
+
+sfr (key=INTCON grp='EVIC' addr=0x1F881000 size=4 access='u u u u u u u u u u u u u u u rw u u u rw u rw rw rw u u u rw rw rw rw rw')
+    reset (por='---------------0-0-0-000---00000' mclr='---------------0-0-0-000---00000')
+    bit (names='- SS0 - FRZ - MVEC - TPC - INT4EP INT3EP INT2EP INT1EP INT0EP' width='15 1 1 1 1 1 1 3 3 1 1 1 1 1')
+    freeze (bit=14 polarity=1 name='INTERRUPT CONTROL')
+
+#..................................
+
+sfr (key=INTSTAT grp='EVIC' addr=0x1F881010 size=4 access='u u u u u u u u u u u u u u u u u u u u u rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='---------------------00000000000' mclr='---------------------00000000000')
+    bit (names='- SRIPL VEC' width='21 3 8')
+
+sfr (key=IPTMR grp='EVIC' addr=0x1F881020 size=4 access='rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='IPTMR' width='32')
+
+#..................................
+
+sfr (key=IFS0 grp='EVIC' addr=0x1F881030 size=4 access='rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='I2C1MIF I2C1SIF I2C1BIF U1TXIF U1RXIF U1EIF SPI1RXIF SPI1TXIF SPI1EIF OC51F IC5IF T5IF INT4IF OC4IF IC4IF T4IF INT3IF OC3IF IC3IF T3IF INT2IF OC2IF IC2IF T2IF INT1IF OC1IF IC1IF T1IF INT0IF CS1IF CS0IF CTIF' width='1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1')
+    stimulus (scl=rwb)
+
+sfr (key=IFS1 grp='EVIC' addr=0x1F881040 size=4 access='u u u u u u u rw u u u u u u u u rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='-------0--------0000000000000000' mclr='-------0--------0000000000000000')
+    bit (names='- FCEIF - RTCCIF FSCMIF I2C2MIF I2C2SIF I2C2BIF U2TXIF U2RXIF U2EIF SPI2RXIF SPI2TXIF SPI2EIF CMP2IF CMP1IF PMPIF AD1IF CNIF' width='7 1 8 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1')
+    stimulus (scl=rwb)
+
+#sfr (key=IFS2 grp='EVIC' addr=0x1F881050 size=4 access='rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+#    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+#    bit (names='IFS2' width='32')
+#    stimulus (scl=rwb)
+
+#..................................
+
+sfr (key=IEC0 grp='EVIC' addr=0x1F881060 size=4 access='rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='I2C1MIE I2C1SIE I2C1BIE U1TXIE U1RXIE U1EIE SPI1RXIE SPI1TXIE SPI1EIE OC51E IC5IE T5IE INT4IE OC4IE IC4IE T4IE INT3IE OC3IE IC3IE T3IE INT2IE OC2IE IC2IE T2IE INT1IE OC1IE IC1IE T1IE INT0IE CS1IE CS0IE CTIE' width='1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1')
+    stimulus (scl=rwb)
+
+sfr (key=IEC1 grp='EVIC' addr=0x1F881070 size=4 access='u u u u u u u rw u u u u u u u u rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='--------0--------000000000000000' mclr='--------0--------000000000000000')
+    bit (names='- FCEIE - RTCCIE FSCMIE I2C2MIE I2C2SIE I2C2BIE U2TXIE U2RXIE U2EIE SPI2RXIE SPI2TXIE SPI2EIE CMP2IE CMP1IE PMPIE AD1IE CNIE' width='7 1 8 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1')
+    stimulus (scl=rwb)
+
+#sfr (key=IEC2 grp='EVIC' addr=0x1F881080 size=4 access='rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+#    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+#    bit (names='IEC2' width='32')
+#    stimulus (scl=rwb)
+
+#..................................
+
+sfr (key=IPC0 grp='EVIC' addr=0x1F881090 size=4 access='u u u rw rw rw rw rw u u u rw rw rw rw rw u u u rw rw rw rw rw u u u rw rw rw rw rw')
+    reset (por='---00000---00000---00000---00000' mclr='---00000---00000---00000---00000')
+    bit (names='- INT0IP INT0IS - CS1IP CS1IS - CS0IP CS0IS - CTIP CTIS' width='3 3 2 3 3 2 3 3 2 3 3 2')
+
+sfr (key=IPC1 grp='EVIC' addr=0x1F8810A0 size=4 access='u u u rw rw rw rw rw u u u rw rw rw rw rw u u u rw rw rw rw rw u u u rw rw rw rw rw')
+    reset (por='---00000---00000---00000---00000' mclr='---00000---00000---00000---00000')
+    bit (names='- INT1IP INT1IS - OC1IP OC1IS - IC1IP IC1IS - T1IP T1IS' width='3 3 2 3 3 2 3 3 2 3 3 2')
+
+sfr (key=IPC2 grp='EVIC' addr=0x1F8810B0 size=4 access='u u u rw rw rw rw rw u u u rw rw rw rw rw u u u rw rw rw rw rw u u u rw rw rw rw rw')
+    reset (por='---00000---00000---00000---00000' mclr='---00000---00000---00000---00000')
+    bit (names='- INT2IP INT2IS - OC2IP OC2IS - IC2IP IC2IS - T2IP T2IS' width='3 3 2 3 3 2 3 3 2 3 3 2')
+
+sfr (key=IPC3 grp='EVIC' addr=0x1F8810C0 size=4 access='u u u rw rw rw rw rw u u u rw rw rw rw rw u u u rw rw rw rw rw u u u rw rw rw rw rw')
+    reset (por='---00000---00000---00000---00000' mclr='---00000---00000---00000---00000')
+    bit (names='- INT3IP INT3IS - OC3IP OC3IS - IC3IP IC3IS - T3IP T3IS' width='3 3 2 3 3 2 3 3 2 3 3 2')
+
+sfr (key=IPC4 grp='EVIC' addr=0x1F8810D0 size=4 access='u u u rw rw rw rw rw u u u rw rw rw rw rw u u u rw rw rw rw rw u u u rw rw rw rw rw')
+    reset (por='---00000---00000---00000---00000' mclr='---00000---00000---00000---00000')
+    bit (names='- INT4IP INT4IS - OC4IP OC4IS - IC4IP IC4IS - T4IP T4IS' width='3 3 2 3 3 2 3 3 2 3 3 2')
+
+sfr (key=IPC5 grp='EVIC' addr=0x1F8810E0 size=4 access='u u u rw rw rw rw rw u u u rw rw rw rw rw u u u rw rw rw rw rw u u u rw rw rw rw rw')
+    reset (por='---00000---00000---00000---00000' mclr='---00000---00000---00000---00000')
+    bit (names='- SPI1IP SPI1IS - OC5IP OC5IS - IC5IP IC5IS - T5IP T5IS' width='3 3 2 3 3 2 3 3 2 3 3 2')
+
+sfr (key=IPC6 grp='EVIC' addr=0x1F8810F0 size=4 access='u u u rw rw rw rw rw u u u rw rw rw rw rw u u u rw rw rw rw rw u u u rw rw rw rw rw')
+    reset (por='---00000---00000---00000---00000' mclr='---00000---00000---00000---00000')
+    bit (names='- AD1IP AD1IS - CNIP CNIS - I2C1IP I2C1IS - U1IP U1IS' width='3 3 2 3 3 2 3 3 2 3 3 2')
+
+sfr (key=IPC7 grp='EVIC' addr=0x1F881100 size=4 access='u u u rw rw rw rw rw u u u rw rw rw rw rw u u u rw rw rw rw rw u u u rw rw rw rw rw')
+    reset (por='---00000---00000---00000---00000' mclr='---00000---00000---00000---00000')
+    bit (names='- SPI2IP SPI2IS - CMP2IP CMP2IS - CMP1IP CMP1IS - PMPIP PMPIS' width='3 3 2 3 3 2 3 3 2 3 3 2')
+
+sfr (key=IPC8 grp='EVIC' addr=0x1F881110 size=4 access='u u u rw rw rw rw rw u u u rw rw rw rw rw u u u rw rw rw rw rw u u u rw rw rw rw rw')
+    reset (por='---00000---00000---00000---00000' mclr='---00000---00000---00000---00000')
+    bit (names='- RTCCIP RTCCIS - FSCMIP FSCMIS - I2C2IP I2C2IS - U2IP U2IS' width='3 3 2 3 3 2 3 3 2 3 3 2')
+
+#sfr (key=IPC9 grp='EVIC' addr=0x1F881120 size=4 access='u u u u u u u u u u u u u u u u u u u u u u u u u u u rw rw rw rw rw')
+#    reset (por='---------------------------00000' mclr='---------------------------00000')
+#    bit (names='- DMA0IP DMA0IS' width='27 3 2')
+
+#sfr (key=IPC10 grp='EVIC' addr=0x1F881130 size=4 access='u u u u u u u u u u u u u u u u u u u u u u u u u u u rw rw rw rw rw')
+#    reset (por='---------------------------00000' mclr='---------------------------00000')
+#    bit (names='- DMA4IP DMA4IS' width='27 3 2')
+
+sfr (key=IPC11 grp='EVIC' addr=0x1F881140 size=4 access='u u u u u u u u u u u u u u u u u u u u u u u u u u u rw rw rw rw rw')
+    reset (por='---------------------------00000' mclr='---------------------------00000')
+    bit (names='- FCEIP FCEIS' width='27 3 2')
+
+sfr (key=IPC12 grp='EVIC' addr=0x1F881150 size=4 access='rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='IPC12' width='32')
+
+sfr (key=IPC13 grp='EVIC' addr=0x1F881160 size=4 access='rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='IPC13' width='32')
+
+sfr (key=IPC14 grp='EVIC' addr=0x1F881170 size=4 access='rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='IPC14' width='32')
+
+sfr (key=IPC15 grp='EVIC' addr=0x1F881180 size=4 access='rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='IPC15' width='32')
+
+#:::: BMX ::::::::::::::::::::::::::: @ 0x1F88_2000
+
+sfr (key=BMXCON grp='BMX' addr=0x1F882000 size=4 access='u u u u u u u u u u u rw rw u rw rw u u u u u u u u u rw u u u rw rw rw')
+    reset (por='-----------00-00---------0---000' mclr='-----------00-00---------0---000')
+    bit (names='- BMXERRIXI BMXERRICD - BMXERRDS BMXERRIS - BMXWSDRM - BMXARB' width='11 1 1 1 1 1 9 1 3 3')
+
+sfr (key=BMXDKPBA grp='BMX' addr=0x1F882010 size=4 access='rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='BMXDKPBA' width='32')
+
+sfr (key=BMXDUDBA grp='BMX' addr=0x1F882020 size=4 access='rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='BMXDUDBA' width='32')
+
+sfr (key=BMXDUPBA grp='BMX' addr=0x1F882030 size=4 access='rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='BMXDUPBA' width='32')
+
+sfr (key=BMXDRMSZ grp='BMX' addr=0x1F882040 size=4 access='r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r')
+    reset (por='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' mclr='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+    bit (names='BMXDRMSZ' width='32')
+
+sfr (key=BMXPUPBA grp='BMX' addr=0x1F882050 size=4 access='rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='BMXPUPBA' width='32')
+
+sfr (key=BMXPFMSZ grp='BMX' addr=0x1F882060 size=4 access='r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r')
+    reset (por='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' mclr='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+    bit (names='BMXPFMSZ' width='32')
+
+sfr (key=BMXBOOTSZ grp='BMX' addr=0x1F882070 size=4 access='r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r')
+    reset (por='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' mclr='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+    bit (names='BMXBOOTSZ' width='32')
+
+#:::: DMA ::::::::::::::::::::::::::: @ 0x1F88_3000
+
+#:::: CHE ::::::::::::::::::::::::::: @ 0x1F88_4000
+
+sfr (key=CHECON grp='CACHE' addr=0x1F884000 size=4 access='u u u u u u u u u u u u u u u rw u u u u u u rw rw u u rw rw u rw rw rw')
+    reset (por='---------------0------00--00-111' mclr='---------------0------00--00-111')
+    bit (names='- CHECOH - DCSZ - PREFEN - PFMWS' width='15 1 6 2 2 2 1 3')
+
+sfr (key=CHEACC grp='CACHE' addr=0x1F884010 size=4 access='rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='CHEACC' width='32')
+
+sfr (key=CHETAG grp='CACHE' addr=0x1F884020 size=4 access='u u u u u u u u rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='--------xxxxxxxxxxxxxxxxxxxx001x' mclr='--------xxxxxxxxxxxxxxxxxxxx001x')
+    bit (names='- LTAG LVALID LLOCK LTYPE -' width='8 20 1 1 1 1')
+
+sfr (key=CHEMSK grp='CACHE' addr=0x1F884030 size=4 access='rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='CHEMSK' width='32')
+
+sfr (key=CHEW0 grp='CACHE' addr=0x1F884040 size=4 access='rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' mclr='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+    bit (names='CHEW0' width='32')
+
+sfr (key=CHEW1 grp='CACHE' addr=0x1F884050 size=4 access='rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' mclr='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+    bit (names='CHEW1' width='32')
+
+sfr (key=CHEW2 grp='CACHE' addr=0x1F884060 size=4 access='rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' mclr='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+    bit (names='CHEW2' width='32')
+
+sfr (key=CHEW3 grp='CACHE' addr=0x1F884070 size=4 access='rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' mclr='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+    bit (names='CHEW3' width='32')
+
+sfr (key=CHELRU grp='CACHE' addr=0x1F884080 size=4 access='rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='00000000000000000000000000000000' mclr='0000000000000000000000000000000')
+    bit (names='CHELRU' width='32')
+
+#sfr (key=CHEHIT grp='CACHE' addr=0x1F884090 size=4 access='rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc')
+#    reset (por='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' mclr='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+#    bit (names='CHEHIT' width='32')
+
+sfr (key=CHEMIS grp='CACHE' addr=0x1F8840A0 size=4 access='rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc')
+    reset (por='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' mclr='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+    bit (names='CHEMIS' width='32')
+
+sfr (key=CHEBTHIT grp='CACHE' addr=0x1F8840B0 size=4 access='rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc')
+    reset (por='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' mclr='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+    bit (names='CHEBTHIT' width='32')
+
+sfr (key=CHEBFABT grp='CACHE' addr=0x1F8840C0 size=4 access='rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc rc')
+    reset (por='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' mclr='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+    bit (names='CHEBFABT' width='32')
+
+#:::: PORTS ::::::::::::::::::::::::: @ 0x1F88_6000
+
+#.... PORTA .........................
+
+#sfr (key=TRISA grp='PORTS' addr=0x1F886000 size=4 access='u u u u u u u u u u u u u u u u rw rw u u u rw rw u rw rw rw rw rw rw rw rw')
+#    reset (por='00000000000000001100011011111111' mclr='00000000000000001100011011111111')
+#    bit (names='- TRISA15 TRISA14 - TRISA10 TRISA9 - TRISA7 TRISA6 TRISA5 TRISA4 TRISA3 TRISA2 TRISA1 TRISA0' width='16 1 1 3 1 1 1 1 1 1 1 1 1 1 1')
+#    bit (tag=scl names='TRISA' width='32')
+#    stimulus (scl=rwb)
+#
+#sfr (key=PORTA grp='PORTS' addr=0x1F886010 size=4 access='u u u u u u u u u u u u u u u u rw rw u u u rw rw u rw rw rw rw rw rw rw rw')
+#    reset (por='----------------xx---xx-xxxxxxxx' mclr='----------------uu---uu-uuuuuuuu')
+#    bit (names='- RA15 RA14 - RA10 RA9 - RA7 RA6 RA5 RA4 RA3 RA2 RA1 RA0' width='16 1 1 3 1 1 1 1 1 1 1 1 1 1 1')
+#    bit (tag=scl names='RA' width='32')
+#    stimulus (scl=rwb)
+#
+#sfr (key=LATA grp='PORTS' addr=0x1F886020 size=4 access='u u u u u u u u u u u u u u u u rw rw u u u rw rw u rw rw rw rw rw rw rw rw')
+#    reset (por='----------------xx---xx-xxxxxxxx' mclr='----------------uu---uu-uuuuuuuu')
+#    bit (names='- LATA15 LATA14 - LATA10 LATA9 - LATA7 LATA6 LATA5 LATA4 LATA3 LATA2 LATA1 LATA0' width='16 1 1 3 1 1 1 1 1 1 1 1 1 1 1')
+#    bit (tag=scl names='LATA' width='32')
+#    stimulus (scl=rwb)
+#
+#sfr (key=ODCA grp='PORTS' addr=0x1F886030 size=4 access='u u u u u u u u u u u u u u u u rw rw u u u rw rw u rw rw rw rw rw rw rw rw')
+#    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+#    bit (names='- ODCA15 ODCA14 - ODCA10 ODCA9 - ODCA7 ODCA6 ODCA5 ODCA4 ODCA3 ODCA2 ODCA1 ODCA0' width='16 1 1 3 1 1 1 1 1 1 1 1 1 1 1')
+
+#.... PORTB .........................
+
+sfr (key=TRISB grp='PORTS' addr=0x1F886040 size=4 access='u u u u u u u u u u u u u u u u rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='----------------1111111111111111' mclr='----------------1111111111111111')
+    bit (names='- TRISB15 TRISB14 TRISB13 TRISB12 TRISB11 TRISB10 TRISB9 TRISB8 TRISB7 TRISB6 TRISB5 TRISB4 TRISB3 TRISB2 TRISB1 TRISB0' width='16 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1')
+    bit (tag=scl names='TRISB' width='32')
+    stimulus (scl=rwb)
+
+sfr (key=PORTB grp='PORTS' addr=0x1F886050 size=4 access='u u u u u u u u u u u u u u u u rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='----------------xxxxxxxxxxxxxxxx' mclr='----------------uuuuuuuuuuuuuuuu')
+    bit (names='- RB15 RB14 RB13 RB12 RB11 RB10 RB9 RB8 RB7 RB6 RB5 RB4 RB3 RB2 RB1 RB0' width='16 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1')
+    bit (tag=scl names='RB' width='32')
+    stimulus (scl=rwb)
+
+sfr (key=LATB grp='PORTS' addr=0x1F886060 size=4 access='u u u u u u u u u u u u u u u u rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='----------------xxxxxxxxxxxxxxxx' mclr='----------------uuuuuuuuuuuuuuuu')
+    bit (names='- LATB15 LATB14 LATB13 LATB12 LATB11 LATB10 LATB9 LATB8 LATB7 LATB6 LATB5 LATB4 LATB3 LATB2 LATB1 LATB0' width='16 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1')
+    bit (tag=scl names='LATB' width='32')
+    stimulus (scl=rwb)
+
+sfr (key=ODCB grp='PORTS' addr=0x1F886070 size=4 access='u u u u u u u u u u u u u u u u rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='- ODCB15 ODCB14 ODCB13 ODCB12 ODCB11 ODCB10 ODCB9 ODCB8 ODCB7 ODCB6 ODCB5 ODCB4 ODCB3 ODCB2 ODCB1 ODCB0' width='16 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1')
+
+#.... PORTC .........................
+
+sfr (key=TRISC grp='PORTS' addr=0x1F886080 size=4 access='u u u u u u u u u u u u u u u u rw rw rw rw u u u u u u u u u u u u')
+    reset (por='----------------1111------------' mclr='----------------1111------------')
+    bit (names='- TRISC15 TRISC14 TRISC13 TRISC12 -' width='16 1 1 1 1 12')
+    bit (tag=scl names='TRISC' width='32')
+    stimulus (scl=rwb)
+
+sfr (key=PORTC grp='PORTS' addr=0x1F886090 size=4 access='u u u u u u u u u u u u u u u u rw rw rw rw u u u u u u u u u u u u')
+    reset (por='----------------xxxx------------' mclr='----------------uuuu------------')
+    bit (names='- RC15 RC14 RC13 RC12 -' width='16 1 1 1 1 12')
+    bit (tag=scl names='RC' width='32')
+    stimulus (scl=rwb)
+
+sfr (key=LATC grp='PORTS' addr=0x1F8860A0 size=4 access='u u u u u u u u u u u u u u u u rw rw rw rw u u u u u u u u u u u u')
+    reset (por='----------------xxxx------------' mclr='----------------uuuu------------')
+    bit (names='- LATC15 LATC14 LATC13 LATC12 -' width='16 1 1 1 1 12')
+    bit (tag=scl names='LATC' width='32')
+    stimulus (scl=rwb)
+
+sfr (key=ODCC grp='PORTS' addr=0x1F8860B0 size=4 access='u u u u u u u u u u u u u u u u rw rw rw rw u u u u u u u u u u u u')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='- ODCC15 ODCC14 ODCC13 ODCC12 -' width='16 1 1 1 1 12')
+
+#.... PORTD .........................
+
+sfr (key=TRISD grp='PORTS' addr=0x1F8860C0 size=4 access='u u u u u u u u u u u u u u u u u u u u rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='--------------------111111111111' mclr='--------------------111111111111')
+    bit (names='- TRISD11 TRISD10 TRISD9 TRISD8 TRISD7 TRISD6 TRISD5 TRISD4 TRISD3 TRISD2 TRISD1 TRISD0' width='20 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1')
+    bit (tag=scl names='TRISD' width='32')
+    stimulus (scl=rwb)
+
+sfr (key=PORTD grp='PORTS' addr=0x1F8860D0 size=4 access='u u u u u u u u u u u u u u u u u u u u rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='--------------------xxxxxxxxxxxx' mclr='--------------------uuuuuuuuuuuu')
+    bit (names='- RD11 RD10 RD9 RD8 RD7 RD6 RD5 RD4 RD3 RD2 RD1 RD0' width='20 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1')
+    bit (tag=scl names='RD' width='32')
+    stimulus (scl=rwb)
+
+sfr (key=LATD grp='PORTS' addr=0x1F8860E0 size=4 access='u u u u u u u u u u u u u u u u u u u u rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='--------------------xxxxxxxxxxxx' mclr='--------------------uuuuuuuuuuuu')
+    bit (names='- LATD11 LATD10 LATD9 LATD8 LATD7 LATD6 LATD5 LATD4 LATD3 LATD2 LATD1 LATD0' width='20 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1')
+    bit (tag=scl names='LATD' width='32')
+    stimulus (scl=rwb)
+
+sfr (key=ODCD grp='PORTS' addr=0x1F8860F0 size=4 access='u u u u u u u u u u u u u u u u u u u u rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='- ODCD11 ODCD10 ODCD9 ODCD8 ODCD7 ODCD6 ODCD5 ODCD4 ODCD3 ODCD2 ODCD1 ODCD0' width='20 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1')
+
+#.... PORTE .........................
+
+sfr (key=TRISE grp='PORTS' addr=0x1F886100 size=4 access='u u u u u u u u u u u u u u u u u u u u u u u u rw rw rw rw rw rw rw rw')
+    reset (por='------------------------11111111' mclr='------------------------11111111')
+    bit (names='- TRISE7 TRISE6 TRISE5 TRISE4 TRISE3 TRISE2 TRISE1 TRISE0' width='24 1 1 1 1 1 1 1 1 1 1')
+    bit (tag=scl names='TRISE' width='32')
+    stimulus (scl=rwb)
+
+sfr (key=PORTE grp='PORTS' addr=0x1F886110 size=4 access='u u u u u u u u u u u u u u u u u u u u u u u u rw rw rw rw rw rw rw rw')
+    reset (por='------------------------xxxxxxxx' mclr='------------------------uuuuuuuu')
+    bit (names='- RE7 RE6 RE5 RE4 RE3 RE2 RE1 RE0' width='24 1 1 1 1 1 1 1 1 1 1')
+    bit (tag=scl names='RE' width='32')
+    stimulus (scl=rwb)
+
+sfr (key=LATE grp='PORTS' addr=0x1F886120 size=4  access='u u u u u u u u u u u u u u u u u u u u u u u u rw rw rw rw rw rw rw rw')
+    reset (por='------------------------xxxxxxxx' mclr='------------------------uuuuuuuu')
+    bit (names='- LATE7 LATE6 LATE5 LATE4 LATE3 LATE2 LATE1 LATE0' width='24 1 1 1 1 1 1 1 1 1 1')
+    bit (tag=scl names='LATE' width='32')
+    stimulus (scl=rwb)
+
+sfr (key=ODCE grp='PORTS' addr=0x1F886130 size=4 access='u u u u u u u u u u u u u u u u u u u u u u u u rw rw rw rw rw rw rw rw')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='- ODCE7 ODCE6 ODCE5 ODCE4 ODCE3 ODCE2 ODCE1 ODCE0' width='24 1 1 1 1 1 1 1 1 1 1')
+
+#.... PORTF .........................
+
+sfr (key=TRISF grp='PORTS' addr=0x1F886140 size=4 access='u u u u u u u u u u u u u u u u u u u u u u u u u rw rw rw rw rw rw rw')
+    reset (por='-------------------------1111111' mclr='-------------------------1111111')
+    bit (names='- TRISF6 TRISF5 TRISF4 TRISF3 TRISF2 TRISF1 TRISF0' width='25 1 1 1 1 1 1 1')
+    bit (tag=scl names='TRISF' width='32')
+    stimulus (scl=rwb)
+
+sfr (key=PORTF grp='PORTS' addr=0x1F886150 size=4 access='u u u u u u u u u u u u u u u u u u u u u u u u u rw rw rw rw rw rw rw')
+    reset (por='-------------------------xxxxxxx' mclr='-------------------------uuuuuuu')
+    bit (names='- RF6 RF5 RF4 RF3 RF2 RF1 RF0' width='25 1 1 1 1 1 1 1')
+    bit (tag=scl names='RF' width='32')
+    stimulus (scl=rwb)
+
+sfr (key=LATF grp='PORTS' addr=0x1F886160 size=4 access='u u u u u u u u u u u u u u u u u u u u u u u u u rw rw rw rw rw rw rw')
+    reset (por='-------------------------xxxxxxx' mclr='-------------------------uuuuuuu')
+    bit (names='- LATF6 LATF5 LATF4 LATF3 LATF2 LATF1 LATF0' width='25 1 1 1 1 1 1 1')
+    bit (tag=scl names='LATF' width='32')
+    stimulus (scl=rwb)
+
+sfr (key=ODCF grp='PORTS' addr=0x1F886170 size=4 access='u u u u u u u u u u u u u u u u u u u u u u u u u rw rw rw rw rw rw rw')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='- ODCF6 ODCF5 ODCF4 ODCF3 ODCF2 ODCF1 ODCF0' width='25 1 1 1 1 1 1 1')
+
+#.... PORTG .........................
+
+sfr (key=TRISG grp='PORTS' addr=0x1F886180 size=4 access='u u u u u u u u u u u u u u u u u u u u u u rw rw rw rw u u rw rw u u')
+    reset (por='----------------------1111--11--' mclr='----------------------1111--11--')
+    bit (names='- TRISG9 TRISG8 TRISG7 TRISG6 - TRISG3 TRISG2 -' width='22 1 1 1 1 2 1 1 2')
+    bit (tag=scl names='TRISG' width='32')
+    stimulus (scl=rwb)
+
+sfr (key=PORTG grp='PORTS' addr=0x1F886190 size=4 access='u u u u u u u u u u u u u u u u u u u u u u rw rw rw rw u u rw rw u u')
+    reset (por='----------------------xxxx--xx--' mclr='----------------------uuuu--uu--')
+    bit (names='- RG9 RG8 RG7 RG6 - RG3 RG2 -' width='22 1 1 1 1 2 1 1 2')
+    bit (tag=scl names='RG' width='32')
+    stimulus (scl=rwb)
+
+sfr (key=LATG grp='PORTS' addr=0x1F8861A0 size=4 access='u u u u u u u u u u u u u u u u u u u u u u rw rw rw rw u u rw rw u u')
+    reset (por='----------------------xxxx--xx--' mclr='----------------------uuuu--uu--')
+    bit (names='- LATG9 LATG8 LATG7 LATG6 - LATG3 LATG2 -' width='22 1 1 1 1 2 1 1 2')
+    bit (tag=scl names='LATG' width='32')
+    stimulus (scl=rwb)
+
+sfr (key=ODCG grp='PORTS' addr=0x1F8861B0 size=4 access='u u u u u u u u u u u u u u u u u u u u u u rw rw rw rw u u rw rw u u')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='- ODCG9 ODCG8 ODCG7 ODCG6 - ODCG3 ODCG2 -' width='22 1 1 1 1 2 1 1 2')
+
+#.... ICN ...........................
+
+sfr (key=CNCON grp='PORTS' addr=0x1F8861C0 size=4 access='u u u u u u u u u u u u u u u u rw u rw u u u u u u u u u u u u u')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='- ON FRZ SIDL -' width='16 1 1 1 13')
+    freeze (bit=14 polarity=1 name='CNCON')
+
+sfr (key=CNEN grp='PORTS' addr=0x1F8861D0 size=4 access='u u u u u u u u u u u u u rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='- CNEN18 CNEN17 CNEN16 CNEN15 CNEN14 CNEN13 CNEN12 CNEN11 CNEN10 CNEN9 CNEN8 CNEN7 CNEN6 CNEN5 CNEN4 CNEN3 CNEN2 CNEN1 CNEN0' width='13 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1')
+
+sfr (key=CNPUE grp='PORTS' addr=0x1F8861E0 size=4 access='u u u u u u u u u u u u u rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw rw')
+    reset (por='00000000000000000000000000000000' mclr='00000000000000000000000000000000')
+    bit (names='- CNPUE18 CNPUE17 CNPUE16 CNPUE15 CNPUE14 CNPUE13 CNPUE12 CNPUE11 CNPUE10 CNPUE9 CNPUE8 CNPUE7 CNPUE6 CNPUE5 CNPUE4 CNPUE3 CNPUE2 CNPUE1 CNPUE0' width='13 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1')
+
+
+                            # -------------------#
+#---------------------------# Configuration Bits #--------------------------#
+                            # -------------------#
+
+cfgbits (key=DEVCFG0 addr=0x1FC02FFC unused=0x0)
+    field (key=Debug mask=0x0001 desc="Background Debugger Enable" init=0x1 flags=h)
+        setting (req=0x1 value=0x0 desc="REAL ICE / ICD2 Debugger Enabled")
+        setting (req=0x1 value=0x1 desc="Debugger Disabled")
+    field (key=RESERVED mask=0x0002 desc="Reserved" init=0x2 flags=h)
+       setting (req=0x2 value=0x2 desc="REAL ICE Debugger Enabled")
+    field (key=ICESEL mask=0x0008 desc="ICE/ICD Comm Channel Select" init=0x8)
+        setting (req=0x8 value=0x0 desc="ICE EMUC1/EMUD1 pins shared with PGC1/PGD1")
+        setting (req=0x8 value=0x8 desc="ICE EMUC2/EMUD2 pins shared with PGC2/PGD2")
+    field (key=PWP mask=0x00FFF000 desc="Program Flash Write Protect" init=0x00FFF000 flags=xh)
+        setting (req=0x00FFF000 value=0x00FFF000 desc="Default Value")
+    field (key=BWP mask=0x01000000 desc="Boot Flash Write Protect" init=0x01000000)
+        setting (req=0x01000000 value=0x0 desc="Boot Flash is not writable")
+        setting (req=0x01000000 value=0x01000000 desc="Boot Flash is writable")
+    field (key=CP mask=0x10000000 desc="Code Protect" init=0x10000000)
+        setting (req=0x10000000 value=0x0 desc="Protection Enabled")
+        setting (req=0x10000000 value=0x10000000 desc="Protection Disabled")
+#   field (key=UNUSED0 mask=0x6E000FF4 desc="Unused" init=0x6E000FF4 flags=h)
+#      setting (req=0x6E000FF4 value=0x6E000FF4 desc="Unimplemented")
+
+cfgbits (key=DEVCFG1 addr=0x1FC02FF8 unused=0x0)
+    field (key=FNOSC mask=0x0007 desc="Oscillator Selection Bits" init=0x7)
+        setting (req=0x7 value=0x0 desc="Fast RC Osc (FRC)")
+        setting (req=0x7 value=0x1 desc="Fast RC Osc w/Div-by-N PLL (FRCDIV+PLL)")
+        setting (req=0x7 value=0x2 desc="Primary Osc (XT,HS,EC)")
+        setting (req=0x7 value=0x3 desc="Primary Osc w/PLL (XT+,HS+,EC+PLL)")
+        setting (req=0x7 value=0x4 desc="Low Power Secondary Osc (SOSC)")
+        setting (req=0x7 value=0x5 desc="Low Power RC Osc (LPRC)")
+        setting (req=0x7 value=0x6 desc="Fast RC Osc w/Div-by-16 (FRC/16)")
+        setting (req=0x7 value=0x7 desc="Fast RC Osc w/Div-by-N (FRCDIV)")
+    field (key=FOSCEN mask=0x20 desc="Secondary Oscillator Enable" init=0x0)
+        setting (req=0x20 value=0x0 desc="Disabled")
+        setting (req=0x20 value=0x20 desc="Enabled")
+    field (key=IESO mask=0x80 desc="Internal/External Switch Over" init=0x80)
+        setting (req=0x80 value=0x0 desc="Disabled")
+        setting (req=0x80 value=0x80 desc="Enabled")
+    field (key=POSCMD mask=0x300 desc="Primary Oscillator Configuration" init=0x300)
+        setting (req=0x300 value=0x0 desc="External clock mode")
+        setting (req=0x300 value=0x100 desc="XT osc mode")
+        setting (req=0x300 value=0x200 desc="HS osc mode")
+        setting (req=0x300 value=0x300 desc="Primary osc disabled")
+    field (key=OSCIOFNC mask=0x400 desc="CLKO Output Signal Active on the OSCO Pin" init=0x400)
+        setting (req=0x400 value=0x0 desc="Disabled")
+        setting (req=0x400 value=0x400 desc="Enabled")
+    field (key=FPBDIV mask=0x3000 desc="Peripheral Clock Divisor" init=0x3000)
+        setting (req=0x3000 value=0x0000 desc="Pb_Clk is Sys_Clk/1")
+        setting (req=0x3000 value=0x1000 desc="Pb_Clk is Sys_Clk/2")
+        setting (req=0x3000 value=0x2000 desc="Pb_Clk is Sys_Clk/4")
+        setting (req=0x3000 value=0x3000 desc="Pb_Clk is Sys_Clk/8")
+    field (key=FCKSM mask=0xC000 desc="Clock Switching and Monitor Selection" init=0xC000)
+        setting (req=0xC000 value=0x0 desc="Clock switching enabled; fail safe clock monitor enabled")
+        setting (req=0xC000 value=0x4000 desc="Clock switching enabled; fail safe clock monitor disabled")
+        setting (req=0x8000 value=0x8000 desc="Clock switching disabled; fail safe clock monitor disabled")
+    field (key=WDTPS mask=0x1F0000 desc="Watchdog Timer Postscaler" init=0x1F0000)
+        setting (req=0x1F0000 value=0x00000 desc="1:1")
+        setting (req=0x1F0000 value=0x10000 desc="1:2")
+        setting (req=0x1F0000 value=0x20000 desc="1:4")
+        setting (req=0x1F0000 value=0x30000 desc="1:8")
+        setting (req=0x1F0000 value=0x40000 desc="1:16")
+        setting (req=0x1F0000 value=0x50000 desc="1:32")
+        setting (req=0x1F0000 value=0x60000 desc="1:64")
+        setting (req=0x1F0000 value=0x70000 desc="1:128")
+        setting (req=0x1F0000 value=0x80000 desc="1:256")
+        setting (req=0x1F0000 value=0x90000 desc="1:512")
+        setting (req=0x1F0000 value=0xA0000 desc="1:1024")
+        setting (req=0x1F0000 value=0xB0000 desc="1:2048")
+        setting (req=0x1F0000 value=0xC0000 desc="1:4096")
+        setting (req=0x1F0000 value=0xD0000 desc="1:8192")
+        setting (req=0x1F0000 value=0xE0000 desc="1:16384")
+        setting (req=0x1F0000 value=0xF0000 desc="1:32768")
+        setting (req=0x170000 value=0x100000 desc="1:65536")
+        setting (req=0x170000 value=0x110000 desc="1:131072")
+        setting (req=0x170000 value=0x120000 desc="1:262144")
+        setting (req=0x170000 value=0x130000 desc="1:524288")
+        setting (req=0x140000 value=0x140000 desc="1:1048576")
+#       setting (req=0x170000 value=0x140000 desc="1:1048576")
+#       setting (req=0x170000 value=0x170000 desc="1:1048576")
+    field (key=WINDIS mask=0x400000 desc="Windowed Watchdog Timer" init=0x400000 flags=xh)
+        setting (req=0x400000 value=0x0 desc="Enabled")
+        setting (req=0x400000 value=0x400000 desc="Disabled")
+    field (key=FWDTEN mask=0x800000 desc="Watchdog Timer Enable" init=0x800000)
+        setting (req=0x800000 value=0x0 desc="WDT Disabled (SWDTEN Bit Controls)")
+        setting (req=0x800000 value=0x800000 desc="WDT Enabled")
+#   field (key=PWRTEN mask=0x10000000 desc="Power-up Timer Enable" init=0x10000000)
+#       setting (req=0x10000000 value=0x0 desc="Disabled")
+#       setting (req=0x10000000 value=0x10000000 desc="Enabled")
+#   field (key=UNUSED1 mask=0xFF200858 desc="Unused" init=0xFF200858 flags=h)
+#      setting (req=0xFF200858 value=0xFF200858 desc="Unimplemented")
+
+cfgbits (key=DEVCFG2 addr=0x1FC02FF4 unused=0x0)
+    field (key=FPLLIDIV mask=0x0007 desc="PLL Input Divider" init=0x7)
+        setting (req=0x7 value=0x0 desc="1x Divider")
+        setting (req=0x7 value=0x1 desc="2x Divider")
+        setting (req=0x7 value=0x2 desc="3x Divider")
+        setting (req=0x7 value=0x3 desc="4x Divider")
+        setting (req=0x7 value=0x4 desc="5x Divider")
+        setting (req=0x7 value=0x5 desc="6x Divider")
+        setting (req=0x7 value=0x6 desc="10x Divider")
+        setting (req=0x7 value=0x7 desc="12x Divider")
+    field (key=FPLLMUL mask=0x0070 desc="PLL Multiplier" init=0x0070)
+        setting (req=0x70 value=0x00 desc="15x Multiplier")
+        setting (req=0x70 value=0x10 desc="16x Multiplier")
+        setting (req=0x70 value=0x20 desc="17x Multiplier")
+        setting (req=0x70 value=0x30 desc="18x Multiplier")
+        setting (req=0x70 value=0x40 desc="19x Multiplier")
+        setting (req=0x70 value=0x50 desc="20x Multiplier")
+        setting (req=0x70 value=0x60 desc="21x Multiplier")
+        setting (req=0x70 value=0x70 desc="24x Multiplier")
+#   field (key=UPLLIDIV mask=0x0700 desc="USB PLL Input Divider" init=0x0700)
+#       setting (req=0x700 value=0x000 desc="1x Divider")
+#       setting (req=0x700 value=0x100 desc="2x Divider")
+#       setting (req=0x700 value=0x200 desc="3x Divider")
+#       setting (req=0x700 value=0x300 desc="4x Divider")
+#       setting (req=0x700 value=0x400 desc="5x Divider")
+#       setting (req=0x700 value=0x500 desc="6x Divider")
+#       setting (req=0x700 value=0x600 desc="10x Divider")
+#       setting (req=0x700 value=0x700 desc="12x Divider")
+#   field (key=UPLLEN mask=0x8000 desc="USB PLL Enable" init=0x8000)
+#       setting (req=0x8000 value=0x0 desc="Enabled")
+#       setting (req=0x8000 value=0x8000 desc="Disabled and Bypassed")
+    field (key=FPLLODIV mask=0x00070000 desc="System PLL Output Clock Divider" init=0x00070000)
+        setting (req=0x70000 value=0x00000 desc="PLL Divide by 1")
+        setting (req=0x70000 value=0x10000 desc="PLL Divide by 2")
+        setting (req=0x70000 value=0x20000 desc="PLL Divide by 4")
+        setting (req=0x70000 value=0x30000 desc="PLL Divide by 8")
+        setting (req=0x70000 value=0x40000 desc="PLL Divide by 16")
+        setting (req=0x70000 value=0x50000 desc="PLL Divide by 32")
+        setting (req=0x70000 value=0x60000 desc="PLL Divide by 64")
+        setting (req=0x70000 value=0x70000 desc="PLL Divide by 256")
+#   field (key=UNUSED2 mask=0xFFF8FF88 desc="Unused" init=0xFFF8FF88 flags=h)
+#      setting (req=0xFFF8FF88 value=0xFFF8FF88 desc="Unimplemented")
