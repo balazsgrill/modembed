@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/hu.cubussapiens.modembed.pic.model/src"
+    modelPluginID="hu.cubussapiens.modembed.pic.model" modelName="Modembed" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false" usedGenPackages="../../hu.cubussapiens.modembed.configuration.model/model/modembed.configuration.genmodel#//modembedconfig">
+  <foreignModel>modembed.pic.ecore</foreignModel>
+  <genPackages prefix="Pic" disposableProviderFactory="true" ecorePackage="modembed.pic.ecore#/">
+    <genClasses ecoreClass="modembed.pic.ecore#//ConfigurationBits">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.pic.ecore#//ConfigurationBits/scheme"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.pic.ecore#//ConfigurationBits/words"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.pic.ecore#//ConfigurationBits/wordsize"/>
+    </genClasses>
+    <genClasses ecoreClass="modembed.pic.ecore#//ConfigurationWord">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.pic.ecore#//ConfigurationWord/address"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.pic.ecore#//ConfigurationWord/fields"/>
+    </genClasses>
+    <genClasses ecoreClass="modembed.pic.ecore#//ConfigurationField">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference modembed.pic.ecore#//ConfigurationField/parameter"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.pic.ecore#//ConfigurationField/startBit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.pic.ecore#//ConfigurationField/length"/>
+    </genClasses>
+    <genClasses ecoreClass="modembed.pic.ecore#//PicCPUType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.pic.ecore#//PicCPUType/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.pic.ecore#//PicCPUType/configuration"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

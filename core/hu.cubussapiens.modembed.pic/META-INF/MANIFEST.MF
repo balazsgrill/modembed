@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Pic core plugin
+Bundle-SymbolicName: hu.cubussapiens.modembed.pic;singleton:=true
+Bundle-Version: 0.1.0.qualifier
+Bundle-Activator: hu.cubussapiens.modembed.pic.PICPlugin
+Require-Bundle: org.eclipse.core.runtime,
+ hu.cubussapiens.modembed.hexfile.model;bundle-version="0.1.0",
+ hu.cubussapiens.modembed.pic.model;bundle-version="0.1.0",
+ hu.cubussapiens.modembed.hexfile.persistence;bundle-version="0.1.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: hu.cubussapiens.modembed.pic

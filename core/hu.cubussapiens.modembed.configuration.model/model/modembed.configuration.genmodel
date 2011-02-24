@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/hu.cubussapiens.modembed.configuration.model/src"
+    modelPluginID="hu.cubussapiens.modembed.configuration.model" modelName="Modembed"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false">
+  <foreignModel>modembed.configuration.ecore</foreignModel>
+  <genPackages prefix="Modembedconfig" disposableProviderFactory="true" ecorePackage="modembed.configuration.ecore#/">
+    <genClasses ecoreClass="modembed.configuration.ecore#//Scheme"/>
+    <genClasses image="false" ecoreClass="modembed.configuration.ecore#//Parameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.configuration.ecore#//Parameter/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.configuration.ecore#//Parameter/default"/>
+    </genClasses>
+    <genClasses ecoreClass="modembed.configuration.ecore#//EnumParam">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.configuration.ecore#//EnumParam/literals"/>
+    </genClasses>
+    <genClasses ecoreClass="modembed.configuration.ecore#//EnumParamLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.configuration.ecore#//EnumParamLiteral/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.configuration.ecore#//EnumParamLiteral/value"/>
+    </genClasses>
+    <genClasses ecoreClass="modembed.configuration.ecore#//ParameterSet">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.configuration.ecore#//ParameterSet/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.configuration.ecore#//ParameterSet/parameters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.configuration.ecore#//ParameterSet/subsets"/>
+    </genClasses>
+    <nestedGenPackages prefix="Instance" disposableProviderFactory="true" ecorePackage="modembed.configuration.ecore#//instance">
+      <genClasses ecoreClass="modembed.configuration.ecore#//instance/Configuration">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference modembed.configuration.ecore#//instance/Configuration/scheme"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.configuration.ecore#//instance/Configuration/name"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.configuration.ecore#//instance/Configuration/values"/>
+      </genClasses>
+      <genClasses ecoreClass="modembed.configuration.ecore#//instance/Value">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference modembed.configuration.ecore#//instance/Value/parameter"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.configuration.ecore#//instance/Value/value"/>
+      </genClasses>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

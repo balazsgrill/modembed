@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="embedded"
+    nsURI="http://gb.hu/embedded" nsPrefix="embedded">
+  <eSubpackages name="assembly" nsURI="http://hu.gb/embedded/assembly" nsPrefix="asm">
+    <eClassifiers xsi:type="ecore:EClass" name="InstructionSet">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="instructions" upperBound="-1"
+          eType="#//assembly/Instruction" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="FieldType">
+      <eLiterals name="Literal" literal="Literal"/>
+      <eLiterals name="CodeAddress" value="1"/>
+      <eLiterals name="RelativeCodeAddress" value="2"/>
+      <eLiterals name="MemAddress" value="3"/>
+      <eLiterals name="BitSelect" value="4" literal="BitSelect"/>
+      <eLiterals name="DontCare" value="5"/>
+      <eLiterals name="Other" value="6" literal="Other"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Instruction">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sections" upperBound="-1"
+          eType="#//assembly/Section" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Field" eSuperTypes="#//assembly/Section">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//assembly/FieldType"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Section">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="start" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="length" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Code" eSuperTypes="#//assembly/Section">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+  </eSubpackages>
+</ecore:EPackage>
