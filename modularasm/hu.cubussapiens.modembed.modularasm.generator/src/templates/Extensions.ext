@@ -1,0 +1,4 @@
+import hu::cubussapiens::modembed::modularasm::modularASM;
+
+sortedGreetings(Model this) :
+	this.greetings.sortBy(g|g.name.toLowerCase());
