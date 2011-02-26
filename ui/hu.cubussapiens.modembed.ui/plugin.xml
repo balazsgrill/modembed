@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         id="nature"
+         point="org.eclipse.core.resources.natures">
+      <runtime>
+         <run
+               class="hu.cubussapiens.modembed.ui.ProjectNature">
+         </run>
+      </runtime>
+   </extension>
+   <extension
+         point="org.eclipse.ui.ide.projectNatureImages">
+      <image
+            icon="icons/chip.png"
+            id="hu.cubussapiens.modembed.ui.nature.icon"
+            natureId="hu.cubussapiens.modembed.ui.nature">
+      </image>
+   </extension>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            category="hu.cubussapiens.modembed.ui.wizards"
+            class="hu.cubussapiens.modembed.ui.wizards.NewMODembedProjectWizard"
+            id="hu.cubussapiens.modembed.ui.newProject"
+            name="New MODembed project"
+            project="true">
+      </wizard>
+      <category
+            id="hu.cubussapiens.modembed.ui.wizards"
+            name="MODembed">
+      </category>
+   </extension>
+
+</plugin>
