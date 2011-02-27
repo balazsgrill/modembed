@@ -20,16 +20,16 @@ public class InstructionsetRegistry {
 
 	public static final String EPID = "hu.cubussapiens.modembed.instructionsets";
 	
-	public final Map<URL, String> models;
+	public final Map<String, URL> models;
 	
 	public InstructionsetRegistry() {
-		Map<URL, String> models = new HashMap<URL, String>();
+		Map<String, URL> models = new HashMap<String, URL>();
 		for(IConfigurationElement ce : Platform.getExtensionRegistry().getConfigurationElementsFor(EPID)){
 			try{
-				String name = ce.getAttribute("name");
+				String id = ce.getAttribute("id");
 				Bundle b = Platform.getBundle(ce.getContributor().getName());
 				URL url = new URL("platform:/plugin/"+b.getSymbolicName()+"/"+ce.getAttribute("model"));//b.getEntry(ce.getAttribute("model"));
-				models.put(url, name);
+				models.put(id, url);
 			}catch(Exception e){
 				
 			}

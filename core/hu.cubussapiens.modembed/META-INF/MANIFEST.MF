@@ -7,3 +7,4 @@ Bundle-Activator: hu.cubussapiens.modembed.MODembedCore
 Require-Bundle: org.eclipse.core.runtime
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: hu.cubussapiens.modembed
