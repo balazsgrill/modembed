@@ -1,7 +1,6 @@
 package hu.cubussapiens.modembed.pic;
 
 import hu.cubussapiens.modembed.pic.internal.DefinitionsRegistry;
-import hu.cubussapiens.modembed.pic.internal.InstructionsetRegistry;
 
 import java.io.IOException;
 import java.net.URL;
@@ -31,8 +30,6 @@ public class PICPlugin extends Plugin {
 	private static PICPlugin plugin;
 	
 	private DefinitionsRegistry defsreg = null;
-	
-	private InstructionsetRegistry inssetreg = null;
 	
 	/**
 	 * The constructor
@@ -72,13 +69,6 @@ public class PICPlugin extends Plugin {
 			defsreg = new DefinitionsRegistry();
 		}
 		return defsreg.models;
-	}
-	
-	public Map<URL, String> getInstructionSets(){
-		if (inssetreg == null){
-			inssetreg = new InstructionsetRegistry();
-		}
-		return inssetreg.models;
 	}
 	
 	public Resource loadSharedResource(ResourceSet rs, URL modelurl) throws IOException{

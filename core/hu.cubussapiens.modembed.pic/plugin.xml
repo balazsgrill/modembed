@@ -2,6 +2,5 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension-point id="hu.cubussapiens.modembed.pic.definitions" name="PIC definitions" schema="schema/hu.cubussapiens.modembed.pic.definitions.exsd"/>
-   <extension-point id="hu.cubussapiens.modembed.pic.instructionsets" name="PIC instruction sets" schema="schema/hu.cubussapiens.modembed.pic.instructionsets.exsd"/>
 
 </plugin>

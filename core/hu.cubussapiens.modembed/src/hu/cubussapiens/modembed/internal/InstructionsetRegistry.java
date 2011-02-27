@@ -1,7 +1,7 @@
 /**
  * 
  */
-package hu.cubussapiens.modembed.pic.internal;
+package hu.cubussapiens.modembed.internal;
 
 import java.net.URL;
 import java.util.Collections;
@@ -18,7 +18,7 @@ import org.osgi.framework.Bundle;
  */
 public class InstructionsetRegistry {
 
-	public static final String EPID = "hu.cubussapiens.modembed.pic.instructionsets";
+	public static final String EPID = "hu.cubussapiens.modembed.instructionsets";
 	
 	public final Map<URL, String> models;
 	
