@@ -4,9 +4,12 @@
 package hu.cubussapiens.modembed.modularasm.builder.internal;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import hu.cubussapiens.modembed.modularasm.builder.internal.symbols.ISymbol;
+import hu.cubussapiens.modembed.modularasm.builder.internal.symbols.RelativeSymbol;
 import hu.cubussapiens.modembed.modularasm.modularASM.Function;
 import hu.cubussapiens.modembed.modularasm.modularASM.Instruction;
 import hu.cubussapiens.modembed.modularasm.modularASM.Label;
@@ -18,7 +21,7 @@ import hu.cubussapiens.modembed.modularasm.modularASM.Step;
  */
 public class FunctionInstance {
 
-	public int[] rawbytes;
+	public long[] rawwords;
 	
 	public class SymbolRef {
 		
@@ -44,21 +47,42 @@ public class FunctionInstance {
 	
 	public ISymbol rootSymbol;
 	
+	public final Map<String, ISymbol> labels = new HashMap<String, ISymbol>();
+	
 	public void prepare(){
-		rawbytes = new int[0];
+		rawwords = new long[0];
 		symbolrefs.clear();
+		int length = 0;
+		/*
+		 * Get labels
+		 */
 		for(Step step : function.getStep()){
 			if (step instanceof Label){
-				
+				Label l = (Label)step;
+				RelativeSymbol rl = new RelativeSymbol(rootSymbol, length);
+				labels.put(l.getName(), rl);
 			}else
 			if (step instanceof Instruction){
+				Instruction inst = (Instruction)step;
+				length += minstance.manager.insManager.getInstructionNumOfWords(inst.getIns());
+			}
+		}
+		
+		/*
+		 * Calculate words
+		 */
+		for(Step step : function.getStep()){
+			if (step instanceof Instruction){
+				Instruction inst = (Instruction)step;
+				length += minstance.manager.insManager.getInstructionNumOfWords(inst.getIns());
 				
 			}
-			
 		}
 	}
 	
-	public int[] calculateBytes(int baseAddr){
+	
+	
+	public long[] calculateBytes(){
 		return null;
 	}
 	

@@ -3,19 +3,15 @@
  */
 package hu.cubussapiens.modembed.modularasm.builder.internal;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.core.runtime.SubProgressMonitor;
-
 import hexfile.HexFile;
 import hu.cubussapiens.modembed.modularasm.builder.CompilerException;
 import hu.cubussapiens.modembed.modularasm.builder.IArchitectureResolver;
 import hu.cubussapiens.modembed.modularasm.builder.ICompiler;
 import hu.cubussapiens.modembed.modularasm.builder.IModuleResolver;
 import hu.cubussapiens.modembed.modularasm.modularASM.Module;
+
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.SubProgressMonitor;
 
 /**
  * @author balage
