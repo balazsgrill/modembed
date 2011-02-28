@@ -9,4 +9,5 @@ import hu.cubussapiens.modembed.modularasm.ui.contentassist.AbstractModularASMPr
  */
 public class ModularASMProposalProvider extends AbstractModularASMProposalProvider {
 
+	
 }
