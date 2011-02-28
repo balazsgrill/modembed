@@ -1,26 +1,26 @@
 package hu.cubussapiens.modembed;
 
-import java.net.URL;
-import java.util.Collection;
-
 import hu.cubussapiens.modembed.internal.ArchitectureRegistry;
 import hu.cubussapiens.modembed.internal.InstructionsetRegistry;
 
-import org.osgi.framework.BundleActivator;
+import java.net.URL;
+import java.util.Collection;
+
+import org.eclipse.core.runtime.Plugin;
 import org.osgi.framework.BundleContext;
 
-public class MODembedCore implements BundleActivator {
-
-	private static BundleContext context;
+public class MODembedCore extends Plugin {
 
 	private ArchitectureRegistry areg;
 	
 	private InstructionsetRegistry ireg;
 	
-	static BundleContext getContext() {
-		return context;
-	}
+	private static MODembedCore plugin = null;
 
+	public static MODembedCore getDefault(){
+		return plugin;
+	}
+	
 	private ArchitectureRegistry getAReg(){
 		if (areg == null){
 			areg = new ArchitectureRegistry();
@@ -56,7 +56,8 @@ public class MODembedCore implements BundleActivator {
 	 * @see org.osgi.framework.BundleActivator#start(org.osgi.framework.BundleContext)
 	 */
 	public void start(BundleContext bundleContext) throws Exception {
-		MODembedCore.context = bundleContext;
+		super.start(bundleContext);
+		plugin = this;
 	}
 
 	/*
@@ -64,7 +65,7 @@ public class MODembedCore implements BundleActivator {
 	 * @see org.osgi.framework.BundleActivator#stop(org.osgi.framework.BundleContext)
 	 */
 	public void stop(BundleContext bundleContext) throws Exception {
-		MODembedCore.context = null;
+		super.stop(bundleContext);
 	}
 
 }
