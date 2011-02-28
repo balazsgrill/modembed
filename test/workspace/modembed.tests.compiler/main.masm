@@ -1,0 +1,11 @@
+module main target microchip.pic18{
+
+var counter;
+
+func main{
+	label start;
+	incf counter;
+	goto start;
+}
+
+}
