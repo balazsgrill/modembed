@@ -7,6 +7,9 @@ Bundle-Activator: hu.cubussapiens.modembed.modularasm.builder.MASMCompilerPlugin
 Require-Bundle: org.eclipse.core.runtime,
  hu.cubussapiens.modembed.assembly.model;bundle-version="1.0.0",
  hu.cubussapiens.modembed.modularasm;bundle-version="1.0.0",
- hu.cubussapiens.modembed.hexfile.model;bundle-version="0.1.0"
+ hu.cubussapiens.modembed.hexfile.model;bundle-version="0.1.0",
+ hu.cubussapiens.modembed;bundle-version="0.1.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: hu.cubussapiens.modembed.modularasm.builder,
+ hu.cubussapiens.modembed.modularasm.builder.resolvers
