@@ -165,6 +165,15 @@ public class AssemblyPackageImpl extends EPackageImpl implements AssemblyPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getInstructionSet_Wordsize() {
+		return (EAttribute)instructionSetEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getInstruction() {
 		return instructionEClass;
 	}
@@ -290,6 +299,7 @@ public class AssemblyPackageImpl extends EPackageImpl implements AssemblyPackage
 		instructionSetEClass = createEClass(INSTRUCTION_SET);
 		createEAttribute(instructionSetEClass, INSTRUCTION_SET__NAME);
 		createEReference(instructionSetEClass, INSTRUCTION_SET__INSTRUCTIONS);
+		createEAttribute(instructionSetEClass, INSTRUCTION_SET__WORDSIZE);
 
 		instructionEClass = createEClass(INSTRUCTION);
 		createEAttribute(instructionEClass, INSTRUCTION__NAME);
@@ -344,6 +354,7 @@ public class AssemblyPackageImpl extends EPackageImpl implements AssemblyPackage
 		initEClass(instructionSetEClass, InstructionSet.class, "InstructionSet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getInstructionSet_Name(), ecorePackage.getEString(), "name", null, 0, 1, InstructionSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getInstructionSet_Instructions(), this.getInstruction(), null, "instructions", null, 0, -1, InstructionSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getInstructionSet_Wordsize(), ecorePackage.getEInt(), "wordsize", null, 0, 1, InstructionSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(instructionEClass, Instruction.class, "Instruction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getInstruction_Name(), ecorePackage.getEString(), "name", null, 0, 1, Instruction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

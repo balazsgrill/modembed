@@ -1,4 +1,5 @@
 \name Pic18
+\wsize 16
 ADDWF	0010 01 	d1 a1 f8
 ADDWFC	0010 00 	d1 a1 f8
 ANDWF	0001 01 	d1 a1 f8

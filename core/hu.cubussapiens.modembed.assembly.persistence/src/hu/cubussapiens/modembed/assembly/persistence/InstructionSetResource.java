@@ -108,7 +108,12 @@ public class InstructionSetResource extends ResourceImpl {
 			if (line.startsWith("\\")){
 				
 				if (line.startsWith("\\name ")){
-					iset.setName(line.substring("\\name ".length()));
+					iset.setName(line.substring("\\name ".length()).trim());
+				}
+				
+				if (line.startsWith("\\wsize ")){
+					String ws = line.substring("\\wsize ".length()).trim();
+					iset.setWordsize(Integer.getInteger(ws));
 				}
 				
 			}else{

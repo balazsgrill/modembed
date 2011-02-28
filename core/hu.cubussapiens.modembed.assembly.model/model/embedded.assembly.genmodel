@@ -1,21 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/hu.gb.embedded.assembly.model/src"
-    modelPluginID="hu.gb.embedded.assembly.model" modelName="Embedded" importerID="org.eclipse.emf.importer.ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/hu.cubussapiens.modembed.assembly.model/src"
+    modelPluginID="hu.cubussapiens.modembed.assembly.model" modelName="Embedded" importerID="org.eclipse.emf.importer.ecore"
     complianceLevel="6.0" copyrightFields="false">
   <foreignModel>embedded.assembly.ecore</foreignModel>
   <genPackages prefix="Embedded" disposableProviderFactory="true" ecorePackage="embedded.assembly.ecore#/">
     <nestedGenPackages prefix="Assembly" disposableProviderFactory="true" ecorePackage="embedded.assembly.ecore#//assembly">
-      <genEnums typeSafeEnumCompatible="false" ecoreEnum="embedded.assembly.ecore#//assembly/FieldType"/>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="embedded.assembly.ecore#//assembly/FieldType">
+        <genEnumLiterals ecoreEnumLiteral="embedded.assembly.ecore#//assembly/FieldType/Literal"/>
+        <genEnumLiterals ecoreEnumLiteral="embedded.assembly.ecore#//assembly/FieldType/CodeAddress"/>
+        <genEnumLiterals ecoreEnumLiteral="embedded.assembly.ecore#//assembly/FieldType/RelativeCodeAddress"/>
+        <genEnumLiterals ecoreEnumLiteral="embedded.assembly.ecore#//assembly/FieldType/MemAddress"/>
+        <genEnumLiterals ecoreEnumLiteral="embedded.assembly.ecore#//assembly/FieldType/BitSelect"/>
+        <genEnumLiterals ecoreEnumLiteral="embedded.assembly.ecore#//assembly/FieldType/DontCare"/>
+        <genEnumLiterals ecoreEnumLiteral="embedded.assembly.ecore#//assembly/FieldType/Other"/>
+      </genEnums>
       <genClasses ecoreClass="embedded.assembly.ecore#//assembly/InstructionSet">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute embedded.assembly.ecore#//assembly/InstructionSet/name"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference embedded.assembly.ecore#//assembly/InstructionSet/instructions"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute embedded.assembly.ecore#//assembly/InstructionSet/wordsize"/>
       </genClasses>
       <genClasses ecoreClass="embedded.assembly.ecore#//assembly/Instruction">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute embedded.assembly.ecore#//assembly/Instruction/name"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference embedded.assembly.ecore#//assembly/Instruction/sections"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference embedded.assembly.ecore#//assembly/Instruction/sections"/>
       </genClasses>
       <genClasses ecoreClass="embedded.assembly.ecore#//assembly/Field">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute embedded.assembly.ecore#//assembly/Field/type"/>

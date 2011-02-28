@@ -35,6 +35,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link embedded.assembly.impl.InstructionSetImpl#getName <em>Name</em>}</li>
  *   <li>{@link embedded.assembly.impl.InstructionSetImpl#getInstructions <em>Instructions</em>}</li>
+ *   <li>{@link embedded.assembly.impl.InstructionSetImpl#getWordsize <em>Wordsize</em>}</li>
  * </ul>
  * </p>
  *
@@ -70,6 +71,26 @@ public class InstructionSetImpl extends EObjectImpl implements InstructionSet {
 	 * @ordered
 	 */
 	protected EList<Instruction> instructions;
+
+	/**
+	 * The default value of the '{@link #getWordsize() <em>Wordsize</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getWordsize()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int WORDSIZE_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getWordsize() <em>Wordsize</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getWordsize()
+	 * @generated
+	 * @ordered
+	 */
+	protected int wordsize = WORDSIZE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -128,6 +149,27 @@ public class InstructionSetImpl extends EObjectImpl implements InstructionSet {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getWordsize() {
+		return wordsize;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setWordsize(int newWordsize) {
+		int oldWordsize = wordsize;
+		wordsize = newWordsize;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AssemblyPackage.INSTRUCTION_SET__WORDSIZE, oldWordsize, wordsize));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -149,6 +191,8 @@ public class InstructionSetImpl extends EObjectImpl implements InstructionSet {
 				return getName();
 			case AssemblyPackage.INSTRUCTION_SET__INSTRUCTIONS:
 				return getInstructions();
+			case AssemblyPackage.INSTRUCTION_SET__WORDSIZE:
+				return getWordsize();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -169,6 +213,9 @@ public class InstructionSetImpl extends EObjectImpl implements InstructionSet {
 				getInstructions().clear();
 				getInstructions().addAll((Collection<? extends Instruction>)newValue);
 				return;
+			case AssemblyPackage.INSTRUCTION_SET__WORDSIZE:
+				setWordsize((Integer)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -187,6 +234,9 @@ public class InstructionSetImpl extends EObjectImpl implements InstructionSet {
 			case AssemblyPackage.INSTRUCTION_SET__INSTRUCTIONS:
 				getInstructions().clear();
 				return;
+			case AssemblyPackage.INSTRUCTION_SET__WORDSIZE:
+				setWordsize(WORDSIZE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -203,6 +253,8 @@ public class InstructionSetImpl extends EObjectImpl implements InstructionSet {
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case AssemblyPackage.INSTRUCTION_SET__INSTRUCTIONS:
 				return instructions != null && !instructions.isEmpty();
+			case AssemblyPackage.INSTRUCTION_SET__WORDSIZE:
+				return wordsize != WORDSIZE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -219,6 +271,8 @@ public class InstructionSetImpl extends EObjectImpl implements InstructionSet {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
+		result.append(", wordsize: ");
+		result.append(wordsize);
 		result.append(')');
 		return result.toString();
 	}

@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link embedded.assembly.InstructionSet#getName <em>Name</em>}</li>
  *   <li>{@link embedded.assembly.InstructionSet#getInstructions <em>Instructions</em>}</li>
+ *   <li>{@link embedded.assembly.InstructionSet#getWordsize <em>Wordsize</em>}</li>
  * </ul>
  * </p>
  *
@@ -69,5 +70,31 @@ public interface InstructionSet extends EObject {
 	 * @generated
 	 */
 	EList<Instruction> getInstructions();
+
+	/**
+	 * Returns the value of the '<em><b>Wordsize</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Wordsize</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Wordsize</em>' attribute.
+	 * @see #setWordsize(int)
+	 * @see embedded.assembly.AssemblyPackage#getInstructionSet_Wordsize()
+	 * @model
+	 * @generated
+	 */
+	int getWordsize();
+
+	/**
+	 * Sets the value of the '{@link embedded.assembly.InstructionSet#getWordsize <em>Wordsize</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Wordsize</em>' attribute.
+	 * @see #getWordsize()
+	 * @generated
+	 */
+	void setWordsize(int value);
 
 } // InstructionSet

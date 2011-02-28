@@ -89,13 +89,22 @@ public interface AssemblyPackage extends EPackage {
 	int INSTRUCTION_SET__INSTRUCTIONS = 1;
 
 	/**
+	 * The feature id for the '<em><b>Wordsize</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION_SET__WORDSIZE = 2;
+
+	/**
 	 * The number of structural features of the '<em>Instruction Set</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INSTRUCTION_SET_FEATURE_COUNT = 2;
+	int INSTRUCTION_SET_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link embedded.assembly.impl.InstructionImpl <em>Instruction</em>}' class.
@@ -307,6 +316,17 @@ public interface AssemblyPackage extends EPackage {
 	EReference getInstructionSet_Instructions();
 
 	/**
+	 * Returns the meta object for the attribute '{@link embedded.assembly.InstructionSet#getWordsize <em>Wordsize</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Wordsize</em>'.
+	 * @see embedded.assembly.InstructionSet#getWordsize()
+	 * @see #getInstructionSet()
+	 * @generated
+	 */
+	EAttribute getInstructionSet_Wordsize();
+
+	/**
 	 * Returns the meta object for class '{@link embedded.assembly.Instruction <em>Instruction</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -469,6 +489,14 @@ public interface AssemblyPackage extends EPackage {
 		 * @generated
 		 */
 		EReference INSTRUCTION_SET__INSTRUCTIONS = eINSTANCE.getInstructionSet_Instructions();
+
+		/**
+		 * The meta object literal for the '<em><b>Wordsize</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INSTRUCTION_SET__WORDSIZE = eINSTANCE.getInstructionSet_Wordsize();
 
 		/**
 		 * The meta object literal for the '{@link embedded.assembly.impl.InstructionImpl <em>Instruction</em>}' class.
