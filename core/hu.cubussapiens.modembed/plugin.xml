@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="hu.cubussapiens.modembed.architectures" name="MODembed architecture definitions" schema="schema/hu.cubussapiens.modembed.architectures.exsd"/>
+   <extension-point id="hu.cubussapiens.modembed.instructionsets" name="Instruction Set" schema="schema/hu.cubussapiens.modembed.instructionsets.exsd"/>
+
+</plugin>
