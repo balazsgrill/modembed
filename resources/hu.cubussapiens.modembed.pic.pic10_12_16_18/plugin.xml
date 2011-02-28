@@ -369,10 +369,18 @@
 		<cputype model="pic16/PIC16C66.pic" typename="PIC16C66"></cputype>
 	</extension>
  <extension
-       point="hu.cubussapiens.modembed.pic.instructionsets">
+       point="hu.cubussapiens.modembed.instructionsets">
     <instructionset
-          model="pic18.instructionset"
-          name="Pic18">
+          id="microchip.pic18.iset"
+          model="pic18.instructionset">
     </instructionset>
+ </extension>
+ <extension
+       point="hu.cubussapiens.modembed.architectures">
+    <architecture
+          id="microchip.pic18"
+          instructionSet="microchip.pic18.iset"
+          name="Microchip PIC18">
+    </architecture>
  </extension>
 </plugin>
