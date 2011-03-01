@@ -64,10 +64,29 @@ public class InstructionSetResource extends ResourceImpl {
 		}
 		
 		Field field = AssemblyFactory.eINSTANCE.createField();
-		int length = Integer.parseInt(v.substring(1));
+		String fs = v.substring(1);
+		int i  = fs.indexOf(':');
+		if (i != -1){
+			String ps = fs.substring(i+1);
+			parseSectionParam(field, ps);
+			fs = fs.substring(0,i);
+		}
+		int length = Integer.parseInt(fs);
 		field.setLength(length);
 		field.setType(parseFieldType(v.charAt(0)));
 		return field;
+	}
+	
+	private void parseSectionParam(Field field, String ps){
+		String n = "";
+		char c = 0;
+		int i = 0;
+		while(Character.isLetter(c = n.charAt(i))){
+			n += c;
+			i++;
+		}
+		field.setParameter(n);
+		field.setParamshift(Integer.parseInt(ps.substring(n.length())));
 	}
 	
 	private String[] split(String line){
@@ -113,7 +132,7 @@ public class InstructionSetResource extends ResourceImpl {
 				
 				if (line.startsWith("\\wsize ")){
 					String ws = line.substring("\\wsize ".length()).trim();
-					iset.setWordsize(Integer.getInteger(ws));
+					iset.setWordsize(Integer.parseInt(ws));
 				}
 				
 			}else{

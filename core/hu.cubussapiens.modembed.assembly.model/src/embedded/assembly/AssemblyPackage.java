@@ -218,13 +218,31 @@ public interface AssemblyPackage extends EPackage {
 	int FIELD__TYPE = SECTION_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Parameter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIELD__PARAMETER = SECTION_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Paramshift</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIELD__PARAMSHIFT = SECTION_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Field</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD_FEATURE_COUNT = SECTION_FEATURE_COUNT + 1;
+	int FIELD_FEATURE_COUNT = SECTION_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link embedded.assembly.impl.CodeImpl <em>Code</em>}' class.
@@ -378,6 +396,28 @@ public interface AssemblyPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getField_Type();
+
+	/**
+	 * Returns the meta object for the attribute '{@link embedded.assembly.Field#getParameter <em>Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Parameter</em>'.
+	 * @see embedded.assembly.Field#getParameter()
+	 * @see #getField()
+	 * @generated
+	 */
+	EAttribute getField_Parameter();
+
+	/**
+	 * Returns the meta object for the attribute '{@link embedded.assembly.Field#getParamshift <em>Paramshift</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Paramshift</em>'.
+	 * @see embedded.assembly.Field#getParamshift()
+	 * @see #getField()
+	 * @generated
+	 */
+	EAttribute getField_Paramshift();
 
 	/**
 	 * Returns the meta object for class '{@link embedded.assembly.Section <em>Section</em>}'.
@@ -541,6 +581,22 @@ public interface AssemblyPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute FIELD__TYPE = eINSTANCE.getField_Type();
+
+		/**
+		 * The meta object literal for the '<em><b>Parameter</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FIELD__PARAMETER = eINSTANCE.getField_Parameter();
+
+		/**
+		 * The meta object literal for the '<em><b>Paramshift</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FIELD__PARAMSHIFT = eINSTANCE.getField_Paramshift();
 
 		/**
 		 * The meta object literal for the '{@link embedded.assembly.impl.SectionImpl <em>Section</em>}' class.

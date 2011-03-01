@@ -3,7 +3,6 @@
  */
 package hu.cubussapiens.modembed.modularasm.builder.internal;
 
-import hu.cubussapiens.modembed.MODembedCore;
 import hu.cubussapiens.modembed.modularasm.builder.CompilerException;
 import hu.cubussapiens.modembed.modularasm.builder.MASMCompilerPlugin;
 import hu.cubussapiens.modembed.modularasm.modularASM.Module;
@@ -15,8 +14,6 @@ import java.util.Map;
 
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-
-import embedded.assembly.InstructionSet;
 
 /**
  * @author balazs.grill
