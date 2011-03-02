@@ -383,4 +383,11 @@
           name="Microchip PIC18">
     </architecture>
  </extension>
+ <extension
+       point="hu.cubussapiens.modembed.modularasm.sharedLibrary">
+    <library
+          folder="microchip"
+          rootname="microchip">
+    </library>
+ </extension>
 </plugin>

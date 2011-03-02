@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: ModularASM Compiler
-Bundle-SymbolicName: hu.cubussapiens.modembed.modularasm.compiler
+Bundle-SymbolicName: hu.cubussapiens.modembed.modularasm.compiler;singleton:=true
 Bundle-Version: 0.1.0.qualifier
 Bundle-Activator: hu.cubussapiens.modembed.modularasm.compiler.MASMCompilerPlugin
 Require-Bundle: org.eclipse.core.runtime,

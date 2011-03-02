@@ -14,7 +14,9 @@ import hu.cubussapiens.modembed.modularasm.compiler.IArchitectureResolver;
 import hu.cubussapiens.modembed.modularasm.compiler.ICompiler;
 import hu.cubussapiens.modembed.modularasm.compiler.MASMCompilerPlugin;
 import hu.cubussapiens.modembed.modularasm.compiler.resolvers.ExtensionArchitectureResolver;
+import hu.cubussapiens.modembed.modularasm.compiler.resolvers.ExtensionPointModuleResolver;
 import hu.cubussapiens.modembed.modularasm.compiler.resolvers.FolderModuleResolver;
+import hu.cubussapiens.modembed.modularasm.compiler.resolvers.MultipleModuleResolver;
 import hu.cubussapiens.modembed.modularasm.modularASM.Module;
 import memory.MemSegment;
 import memory.MemoryFactory;
@@ -122,7 +124,9 @@ public class CompilerBasicTest {
 		compiler.setArchResolver(new ExtensionArchitectureResolver());
 		parsingMASM(); //Parses main module
 		compiler.setMain(module);
-		compiler.setModuleResolver(new FolderModuleResolver(rs, project));
+		compiler.setModuleResolver(new MultipleModuleResolver(
+				new ExtensionPointModuleResolver(),
+				new FolderModuleResolver(rs, project)));
 		
 		HexFile hf = compiler.compile(new NullProgressMonitor());
 		assertNotNull(hf);

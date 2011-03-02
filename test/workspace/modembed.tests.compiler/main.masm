@@ -4,7 +4,7 @@ var counter;
 
 instance other other1;
 
-instance pic18f14k50 symbols;
+instance microchip.pic.pic18f14k50 symbols;
 
 func main{
 	label start;
