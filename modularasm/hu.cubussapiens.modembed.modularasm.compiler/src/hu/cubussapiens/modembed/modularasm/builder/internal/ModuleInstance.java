@@ -6,11 +6,13 @@ package hu.cubussapiens.modembed.modularasm.builder.internal;
 import hu.cubussapiens.modembed.modularasm.builder.CompilerException;
 import hu.cubussapiens.modembed.modularasm.builder.MASMCompilerPlugin;
 import hu.cubussapiens.modembed.modularasm.builder.internal.symbols.ISymbol;
+import hu.cubussapiens.modembed.modularasm.builder.internal.symbols.LiteralSymbol;
 import hu.cubussapiens.modembed.modularasm.modularASM.Function;
 import hu.cubussapiens.modembed.modularasm.modularASM.Instance;
 import hu.cubussapiens.modembed.modularasm.modularASM.Module;
 import hu.cubussapiens.modembed.modularasm.modularASM.ModuleItem;
 import hu.cubussapiens.modembed.modularasm.modularASM.QualifiedID;
+import hu.cubussapiens.modembed.modularasm.modularASM.Symbol;
 import hu.cubussapiens.modembed.modularasm.modularASM.Variable;
 
 import java.util.HashMap;
@@ -30,6 +32,8 @@ public class ModuleInstance {
 	
 	public final Map<String, ISymbol> functions = new HashMap<String, ISymbol>();
 	
+	public final Map<String, ISymbol> symbols = new HashMap<String, ISymbol>();
+	
 	public final Map<String, ModuleInstance> instances = new HashMap<String, ModuleInstance>();
 	
 	private ModuleInstance parent = null;
@@ -45,6 +49,9 @@ public class ModuleInstance {
 		}
 		ISymbol s = null;
 		String last = qid.getSegments().get(qid.getSegments().size()-1);
+		
+		s = namespace.symbols.get(last);
+		if (s != null) return s;
 		
 		s = namespace.variables.get(last);
 		if (s != null) return s;
@@ -80,6 +87,11 @@ public class ModuleInstance {
 				FunctionInstance fi = new FunctionInstance(this, f);
 				ISymbol fs = manager.symbolManager.createFunctionSymbol(fi);
 				functions.put(f.getName(), fs);
+			}
+			if (item instanceof Symbol){
+				Symbol s = (Symbol)item;
+				ISymbol sy = new LiteralSymbol(s.getValue());
+				symbols.put(s.getName(), sy);
 			}
 		}
 	}

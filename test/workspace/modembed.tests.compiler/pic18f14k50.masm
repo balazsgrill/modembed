@@ -1,0 +1,5 @@
+module pic18f14k50 target microchip.pic18{
+
+symbol PORTA 0xf23;
+
+}
