@@ -109,7 +109,7 @@ public class FunctionInstance {
 	
 	public int address = -1;
 	
-	public long[] calculateWords(){
+	public long[] calculateWords() throws CompilerException{
 		long[] result = new long[length];
 		int i = 0;
 		for(InstructionWord iw : words){
@@ -118,6 +118,11 @@ public class FunctionInstance {
 			i += w.length;
 		}
 		return result;
+	}
+	
+	public String getRootReference(){
+		String r = minstance.getRootReference(); 
+		return (r.isEmpty() ? "" : r+".")+function.getName();
 	}
 	
 }

@@ -4,6 +4,8 @@
 package hu.cubussapiens.modembed.modularasm.builder.internal;
 
 import java.util.Collections;
+import java.util.Map;
+import java.util.TreeMap;
 
 import hexfile.AddressType;
 import hexfile.Entry;
@@ -71,7 +73,10 @@ public class Compiler implements ICompiler {
 		 * of the full software architecture
 		 */
 		CompilationManager cmanager = new CompilationManager(this);
-		cmanager.instantiate(main);
+		ModuleInstance mainInstance = cmanager.instantiate(main);
+		if (mainInstance != null){
+			cmanager.symbolManager.setMainModuleInstance(mainInstance);
+		}
 		monitor.worked(1);
 		
 		/*
@@ -146,13 +151,31 @@ public class Compiler implements ICompiler {
 		}
 		program.setData(bytes);
 		
+		lastSymbolManager = cmanager.symbolManager;
+		
 		monitor.done();
 		return hf;
 	}
-
+	
 	@Override
 	public void setMemoryModel(MemoryModel memmodel) {
 		this.memmodel = memmodel;
+	}
+
+	private SymbolManager lastSymbolManager = null;
+	
+	@Override
+	public Map<String, Long> getSymbolMapping() {
+		Map<String, Long> result = new TreeMap<String, Long>();
+		if (lastSymbolManager != null){
+			for(VariableInstance vi : lastSymbolManager.variables){
+				result.put(vi.getRootReference(), Long.valueOf(vi.address));
+			}
+			for(FunctionInstance fi : lastSymbolManager.functions){
+				result.put(fi.getRootReference(), Long.valueOf(fi.address));
+			}
+		}
+		return result;
 	}
 
 }

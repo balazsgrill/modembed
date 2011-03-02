@@ -32,4 +32,23 @@ public class SymbolManager {
 		return fs;
 	}
 	
+	public void setMainModuleInstance(ModuleInstance minstance){
+		/*
+		 * Search for main function
+		 */
+		FunctionInstance main = null;
+		for(FunctionInstance fi : functions){
+			if (minstance.equals(fi.minstance)){
+				if ("main".equals(fi.function.getName())){
+					main = fi;
+				}
+			}
+		}
+		
+		if (main != null){
+			functions.remove(main);
+			functions.add(0, main);
+		}
+	}
+	
 }

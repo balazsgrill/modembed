@@ -3,6 +3,8 @@
  */
 package hu.cubussapiens.modembed.modularasm.builder;
 
+import java.util.Map;
+
 import memory.MemoryModel;
 
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -27,5 +29,7 @@ public interface ICompiler {
 	public void setMemoryModel(MemoryModel memmodel);
 	
 	public HexFile compile(IProgressMonitor monitor) throws CompilerException;
+	
+	public Map<String, Long> getSymbolMapping();
 	
 }

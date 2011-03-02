@@ -4,6 +4,7 @@
 package hu.cubussapiens.modembed.modularasm.builder.internal;
 
 import hu.cubussapiens.modembed.modularasm.builder.CompilerException;
+import hu.cubussapiens.modembed.modularasm.builder.MASMCompilerPlugin;
 import hu.cubussapiens.modembed.modularasm.builder.internal.symbols.ISymbol;
 import hu.cubussapiens.modembed.modularasm.modularASM.Function;
 import hu.cubussapiens.modembed.modularasm.modularASM.Instance;
@@ -30,13 +31,18 @@ public class ModuleInstance {
 	
 	public final Map<String, ISymbol> functions = new HashMap<String, ISymbol>();
 	
+	public final Map<String, ModuleInstance> instances = new HashMap<String, ModuleInstance>();
+	
+	private ModuleInstance parent = null;
+	private String nameInParent = null;
+	
 	public ISymbol resolveReference(QualifiedID qid) throws CompilerException{
 		ModuleInstance namespace = this;
 		for (int i = 0;i<qid.getSegments().size()-1;i++){
-			/*
-			 * TODO resolve namespace
-			 */
-			throw new CompilerException("Could not resolve namespace: "+qid.getSegments().get(i));
+			String n = qid.getSegments().get(i);
+			namespace = instances.get(n);
+			if (namespace == null)
+				throw new CompilerException("Could not resolve namespace: "+MASMCompilerPlugin.qualIDtoString(qid));
 		}
 		ISymbol s = null;
 		String last = qid.getSegments().get(qid.getSegments().size()-1);
@@ -50,7 +56,7 @@ public class ModuleInstance {
 		throw new CompilerException("Could not resolve symbol: "+last);
 	}
 	
-	public ModuleInstance(Module module, CompilationManager manager) {
+	public ModuleInstance(Module module, CompilationManager manager) throws CompilerException {
 		this.type = module;
 		this.manager = manager;
 		
@@ -63,7 +69,12 @@ public class ModuleInstance {
 			}
 			if (item instanceof Instance){
 				Instance i = (Instance)item;
-				//instances.put(i.getName(), i);
+				Module m = manager.getModuleDef(i.getType());
+				if (m == null) throw new CompilerException("Can't resolve module: "+MASMCompilerPlugin.qualIDtoString(i.getType()));
+				ModuleInstance mi = manager.instantiate(m);
+				mi.parent = this;
+				mi.nameInParent = i.getName();
+				instances.put(i.getName(), mi);
 			}
 			if (item instanceof Function){
 				Function f = (Function)item;
@@ -74,6 +85,14 @@ public class ModuleInstance {
 		}
 		
 		//for(Variable v)
+	}
+	
+	public String getRootReference(){
+		if (parent != null){
+			String r = parent.getRootReference(); 
+			return (r.isEmpty() ? "" : r+".")+nameInParent;
+		}
+		return "";
 	}
 	
 }

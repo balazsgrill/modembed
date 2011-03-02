@@ -24,4 +24,9 @@ public class VariableInstance {
 
 	public int address = -1;
 	
+	public String getRootReference(){
+		String r = mi.getRootReference(); 
+		return (r.isEmpty() ? "" : r+".")+v.getName();
+	}
+	
 }

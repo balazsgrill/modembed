@@ -3,6 +3,7 @@
  */
 package hu.cubussapiens.modembed.modularasm.builder.internal;
 
+import hu.cubussapiens.modembed.modularasm.builder.CompilerException;
 import hu.cubussapiens.modembed.modularasm.builder.internal.symbols.ISymbol;
 
 import java.util.ArrayList;
@@ -66,7 +67,7 @@ public class InstructionManager {
 			return params.toArray(new String[params.size()]);
 		}
 		
-		public long[] getWords(){
+		public long[] getWords() throws CompilerException{
 			int ws = instructionSet.getWordsize();
 			int w = getInstructionNumOfWords(instruction);
 			long[] result = new long[w];
@@ -80,16 +81,20 @@ public class InstructionManager {
 			return result;
 		}
 		
-		private ISymbol getSymbol(String param){
+		private ISymbol getSymbol(String param) throws CompilerException{
 			String[] ps = getParams();
 			for(int i=0;i<ps.length;i++){
-				if (param.equalsIgnoreCase(ps[i]))
+				if (param.equalsIgnoreCase(ps[i])){
+					if (symbols == null || symbols.length <= i){
+						throw new CompilerException("Invalid number of parameter of "+instruction.getName());
+					}
 					return symbols[i];
+				}
 			}
 			return null;
 		}
 		
-		private long getSectionValue(Section s){
+		private long getSectionValue(Section s) throws CompilerException{
 			long value = 0;
 			if (s instanceof Code){
 				return ((Code) s).getCode();

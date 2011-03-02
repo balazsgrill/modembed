@@ -4,6 +4,7 @@
 package hu.cubussapiens.modembed.modularasm.builder;
 
 import hu.cubussapiens.modembed.modularasm.modularASM.Module;
+import hu.cubussapiens.modembed.modularasm.modularASM.QualifiedID;
 
 /**
  * Implementors of this interface are responsible for resolving
@@ -21,6 +22,6 @@ public interface IModuleResolver {
 	 * @param moduleID
 	 * @return
 	 */
-	public Module resolveModule(String moduleID);
+	public Module resolveModule(QualifiedID moduleID);
 	
 }

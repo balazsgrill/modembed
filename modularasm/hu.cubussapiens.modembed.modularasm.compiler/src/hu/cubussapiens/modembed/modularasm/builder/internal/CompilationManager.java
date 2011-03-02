@@ -6,6 +6,7 @@ package hu.cubussapiens.modembed.modularasm.builder.internal;
 import hu.cubussapiens.modembed.modularasm.builder.CompilerException;
 import hu.cubussapiens.modembed.modularasm.builder.MASMCompilerPlugin;
 import hu.cubussapiens.modembed.modularasm.modularASM.Module;
+import hu.cubussapiens.modembed.modularasm.modularASM.QualifiedID;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -29,16 +30,28 @@ public class CompilationManager {
 	
 	public final SymbolManager symbolManager = new SymbolManager();
 	
-	//private final Compiler compiler;
+	private final Compiler compiler;
 	
 	public final InstructionManager insManager;
 	
 	public CompilationManager(Compiler compiler) {
-		//this.compiler = compiler;
+		this.compiler = compiler;
 		
 		insManager = new InstructionManager(
 				compiler.archresolver.getInstructionSet(MASMCompilerPlugin.qualIDtoString(compiler.main.getTarget()), 
 				resourceSet));
+	}
+	
+	public Module getModuleDef(QualifiedID moduleID){
+		String name = MASMCompilerPlugin.qualIDtoString(moduleID);
+		Module m = modules.get(name);
+		if (m == null){
+			m = compiler.modresolver.resolveModule(moduleID);
+			if (m != null){
+				modules.put(name, m);
+			}
+		}
+		return m;
 	}
 	
 	public ModuleInstance instantiate(Module module) throws CompilerException{
