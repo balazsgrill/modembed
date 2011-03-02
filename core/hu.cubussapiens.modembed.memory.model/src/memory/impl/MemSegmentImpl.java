@@ -6,7 +6,7 @@
  */
 package memory.impl;
 
-import memory.GenericRAMSegment;
+import memory.MemSegment;
 import memory.MemoryPackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -18,19 +18,19 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Generic RAM Segment</b></em>'.
+ * An implementation of the model object '<em><b>Mem Segment</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link memory.impl.GenericRAMSegmentImpl#getStartAddr <em>Start Addr</em>}</li>
- *   <li>{@link memory.impl.GenericRAMSegmentImpl#getSize <em>Size</em>}</li>
+ *   <li>{@link memory.impl.MemSegmentImpl#getStartAddr <em>Start Addr</em>}</li>
+ *   <li>{@link memory.impl.MemSegmentImpl#getSize <em>Size</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class GenericRAMSegmentImpl extends EObjectImpl implements GenericRAMSegment {
+public class MemSegmentImpl extends EObjectImpl implements MemSegment {
 	/**
 	 * The default value of the '{@link #getStartAddr() <em>Start Addr</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -76,7 +76,7 @@ public class GenericRAMSegmentImpl extends EObjectImpl implements GenericRAMSegm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected GenericRAMSegmentImpl() {
+	protected MemSegmentImpl() {
 		super();
 	}
 
@@ -87,7 +87,7 @@ public class GenericRAMSegmentImpl extends EObjectImpl implements GenericRAMSegm
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return MemoryPackage.Literals.GENERIC_RAM_SEGMENT;
+		return MemoryPackage.Literals.MEM_SEGMENT;
 	}
 
 	/**
@@ -108,7 +108,7 @@ public class GenericRAMSegmentImpl extends EObjectImpl implements GenericRAMSegm
 		long oldStartAddr = startAddr;
 		startAddr = newStartAddr;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MemoryPackage.GENERIC_RAM_SEGMENT__START_ADDR, oldStartAddr, startAddr));
+			eNotify(new ENotificationImpl(this, Notification.SET, MemoryPackage.MEM_SEGMENT__START_ADDR, oldStartAddr, startAddr));
 	}
 
 	/**
@@ -129,7 +129,7 @@ public class GenericRAMSegmentImpl extends EObjectImpl implements GenericRAMSegm
 		long oldSize = size;
 		size = newSize;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MemoryPackage.GENERIC_RAM_SEGMENT__SIZE, oldSize, size));
+			eNotify(new ENotificationImpl(this, Notification.SET, MemoryPackage.MEM_SEGMENT__SIZE, oldSize, size));
 	}
 
 	/**
@@ -140,9 +140,9 @@ public class GenericRAMSegmentImpl extends EObjectImpl implements GenericRAMSegm
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case MemoryPackage.GENERIC_RAM_SEGMENT__START_ADDR:
+			case MemoryPackage.MEM_SEGMENT__START_ADDR:
 				return getStartAddr();
-			case MemoryPackage.GENERIC_RAM_SEGMENT__SIZE:
+			case MemoryPackage.MEM_SEGMENT__SIZE:
 				return getSize();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -156,10 +156,10 @@ public class GenericRAMSegmentImpl extends EObjectImpl implements GenericRAMSegm
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case MemoryPackage.GENERIC_RAM_SEGMENT__START_ADDR:
+			case MemoryPackage.MEM_SEGMENT__START_ADDR:
 				setStartAddr((Long)newValue);
 				return;
-			case MemoryPackage.GENERIC_RAM_SEGMENT__SIZE:
+			case MemoryPackage.MEM_SEGMENT__SIZE:
 				setSize((Long)newValue);
 				return;
 		}
@@ -174,10 +174,10 @@ public class GenericRAMSegmentImpl extends EObjectImpl implements GenericRAMSegm
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case MemoryPackage.GENERIC_RAM_SEGMENT__START_ADDR:
+			case MemoryPackage.MEM_SEGMENT__START_ADDR:
 				setStartAddr(START_ADDR_EDEFAULT);
 				return;
-			case MemoryPackage.GENERIC_RAM_SEGMENT__SIZE:
+			case MemoryPackage.MEM_SEGMENT__SIZE:
 				setSize(SIZE_EDEFAULT);
 				return;
 		}
@@ -192,9 +192,9 @@ public class GenericRAMSegmentImpl extends EObjectImpl implements GenericRAMSegm
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case MemoryPackage.GENERIC_RAM_SEGMENT__START_ADDR:
+			case MemoryPackage.MEM_SEGMENT__START_ADDR:
 				return startAddr != START_ADDR_EDEFAULT;
-			case MemoryPackage.GENERIC_RAM_SEGMENT__SIZE:
+			case MemoryPackage.MEM_SEGMENT__SIZE:
 				return size != SIZE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
@@ -218,4 +218,4 @@ public class GenericRAMSegmentImpl extends EObjectImpl implements GenericRAMSegm
 		return result.toString();
 	}
 
-} //GenericRAMSegmentImpl
+} //MemSegmentImpl

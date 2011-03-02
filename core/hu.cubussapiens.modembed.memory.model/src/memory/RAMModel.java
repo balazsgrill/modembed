@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.EObject;
 public interface RAMModel extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Segments</b></em>' containment reference list.
-	 * The list contents are of type {@link memory.GenericRAMSegment}.
+	 * The list contents are of type {@link memory.MemSegment}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Segments</em>' containment reference list isn't clear,
@@ -41,6 +41,6 @@ public interface RAMModel extends EObject {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<GenericRAMSegment> getSegments();
+	EList<MemSegment> getSegments();
 
 } // RAMModel

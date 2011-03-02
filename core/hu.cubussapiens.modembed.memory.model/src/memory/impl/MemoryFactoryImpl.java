@@ -62,7 +62,7 @@ public class MemoryFactoryImpl extends EFactoryImpl implements MemoryFactory {
 		switch (eClass.getClassifierID()) {
 			case MemoryPackage.RAM_MODEL: return createRAMModel();
 			case MemoryPackage.MEMORY_MODEL: return createMemoryModel();
-			case MemoryPackage.GENERIC_RAM_SEGMENT: return createGenericRAMSegment();
+			case MemoryPackage.MEM_SEGMENT: return createMemSegment();
 			case MemoryPackage.PROG_MODEL: return createProgModel();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -94,9 +94,9 @@ public class MemoryFactoryImpl extends EFactoryImpl implements MemoryFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public GenericRAMSegment createGenericRAMSegment() {
-		GenericRAMSegmentImpl genericRAMSegment = new GenericRAMSegmentImpl();
-		return genericRAMSegment;
+	public MemSegment createMemSegment() {
+		MemSegmentImpl memSegment = new MemSegmentImpl();
+		return memSegment;
 	}
 
 	/**

@@ -8,7 +8,7 @@ package memory.impl;
 
 import java.util.Collection;
 
-import memory.GenericRAMSegment;
+import memory.MemSegment;
 import memory.MemoryPackage;
 import memory.RAMModel;
 
@@ -46,7 +46,7 @@ public class RAMModelImpl extends EObjectImpl implements RAMModel {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<GenericRAMSegment> segments;
+	protected EList<MemSegment> segments;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -72,9 +72,9 @@ public class RAMModelImpl extends EObjectImpl implements RAMModel {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<GenericRAMSegment> getSegments() {
+	public EList<MemSegment> getSegments() {
 		if (segments == null) {
-			segments = new EObjectContainmentEList<GenericRAMSegment>(GenericRAMSegment.class, this, MemoryPackage.RAM_MODEL__SEGMENTS);
+			segments = new EObjectContainmentEList<MemSegment>(MemSegment.class, this, MemoryPackage.RAM_MODEL__SEGMENTS);
 		}
 		return segments;
 	}
@@ -118,7 +118,7 @@ public class RAMModelImpl extends EObjectImpl implements RAMModel {
 		switch (featureID) {
 			case MemoryPackage.RAM_MODEL__SEGMENTS:
 				getSegments().clear();
-				getSegments().addAll((Collection<? extends GenericRAMSegment>)newValue);
+				getSegments().addAll((Collection<? extends MemSegment>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

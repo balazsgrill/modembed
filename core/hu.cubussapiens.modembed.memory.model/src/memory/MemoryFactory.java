@@ -44,13 +44,13 @@ public interface MemoryFactory extends EFactory {
 	MemoryModel createMemoryModel();
 
 	/**
-	 * Returns a new object of class '<em>Generic RAM Segment</em>'.
+	 * Returns a new object of class '<em>Mem Segment</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Generic RAM Segment</em>'.
+	 * @return a new object of class '<em>Mem Segment</em>'.
 	 * @generated
 	 */
-	GenericRAMSegment createGenericRAMSegment();
+	MemSegment createMemSegment();
 
 	/**
 	 * Returns a new object of class '<em>Prog Model</em>'.

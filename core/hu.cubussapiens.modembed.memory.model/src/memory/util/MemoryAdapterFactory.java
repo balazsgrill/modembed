@@ -80,8 +80,8 @@ public class MemoryAdapterFactory extends AdapterFactoryImpl {
 				return createMemoryModelAdapter();
 			}
 			@Override
-			public Adapter caseGenericRAMSegment(GenericRAMSegment object) {
-				return createGenericRAMSegmentAdapter();
+			public Adapter caseMemSegment(MemSegment object) {
+				return createMemSegmentAdapter();
 			}
 			@Override
 			public Adapter caseProgModel(ProgModel object) {
@@ -136,16 +136,16 @@ public class MemoryAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link memory.GenericRAMSegment <em>Generic RAM Segment</em>}'.
+	 * Creates a new adapter for an object of class '{@link memory.MemSegment <em>Mem Segment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see memory.GenericRAMSegment
+	 * @see memory.MemSegment
 	 * @generated
 	 */
-	public Adapter createGenericRAMSegmentAdapter() {
+	public Adapter createMemSegmentAdapter() {
 		return null;
 	}
 

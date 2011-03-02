@@ -125,14 +125,14 @@ public interface MemoryPackage extends EPackage {
 	int MEMORY_MODEL_FEATURE_COUNT = 2;
 
 	/**
-	 * The meta object id for the '{@link memory.impl.GenericRAMSegmentImpl <em>Generic RAM Segment</em>}' class.
+	 * The meta object id for the '{@link memory.impl.MemSegmentImpl <em>Mem Segment</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see memory.impl.GenericRAMSegmentImpl
-	 * @see memory.impl.MemoryPackageImpl#getGenericRAMSegment()
+	 * @see memory.impl.MemSegmentImpl
+	 * @see memory.impl.MemoryPackageImpl#getMemSegment()
 	 * @generated
 	 */
-	int GENERIC_RAM_SEGMENT = 2;
+	int MEM_SEGMENT = 2;
 
 	/**
 	 * The feature id for the '<em><b>Start Addr</b></em>' attribute.
@@ -141,7 +141,7 @@ public interface MemoryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GENERIC_RAM_SEGMENT__START_ADDR = 0;
+	int MEM_SEGMENT__START_ADDR = 0;
 
 	/**
 	 * The feature id for the '<em><b>Size</b></em>' attribute.
@@ -150,16 +150,16 @@ public interface MemoryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GENERIC_RAM_SEGMENT__SIZE = 1;
+	int MEM_SEGMENT__SIZE = 1;
 
 	/**
-	 * The number of structural features of the '<em>Generic RAM Segment</em>' class.
+	 * The number of structural features of the '<em>Mem Segment</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GENERIC_RAM_SEGMENT_FEATURE_COUNT = 2;
+	int MEM_SEGMENT_FEATURE_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link memory.impl.ProgModelImpl <em>Prog Model</em>}' class.
@@ -178,7 +178,7 @@ public interface MemoryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROG_MODEL__START_ADDR = 0;
+	int PROG_MODEL__START_ADDR = MEM_SEGMENT__START_ADDR;
 
 	/**
 	 * The feature id for the '<em><b>Size</b></em>' attribute.
@@ -187,7 +187,7 @@ public interface MemoryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROG_MODEL__SIZE = 1;
+	int PROG_MODEL__SIZE = MEM_SEGMENT__SIZE;
 
 	/**
 	 * The feature id for the '<em><b>Reset Vector</b></em>' attribute.
@@ -196,7 +196,7 @@ public interface MemoryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROG_MODEL__RESET_VECTOR = 2;
+	int PROG_MODEL__RESET_VECTOR = MEM_SEGMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Prog Model</em>' class.
@@ -205,7 +205,7 @@ public interface MemoryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROG_MODEL_FEATURE_COUNT = 3;
+	int PROG_MODEL_FEATURE_COUNT = MEM_SEGMENT_FEATURE_COUNT + 1;
 
 
 	/**
@@ -262,36 +262,36 @@ public interface MemoryPackage extends EPackage {
 	EReference getMemoryModel_Prog();
 
 	/**
-	 * Returns the meta object for class '{@link memory.GenericRAMSegment <em>Generic RAM Segment</em>}'.
+	 * Returns the meta object for class '{@link memory.MemSegment <em>Mem Segment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Generic RAM Segment</em>'.
-	 * @see memory.GenericRAMSegment
+	 * @return the meta object for class '<em>Mem Segment</em>'.
+	 * @see memory.MemSegment
 	 * @generated
 	 */
-	EClass getGenericRAMSegment();
+	EClass getMemSegment();
 
 	/**
-	 * Returns the meta object for the attribute '{@link memory.GenericRAMSegment#getStartAddr <em>Start Addr</em>}'.
+	 * Returns the meta object for the attribute '{@link memory.MemSegment#getStartAddr <em>Start Addr</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Start Addr</em>'.
-	 * @see memory.GenericRAMSegment#getStartAddr()
-	 * @see #getGenericRAMSegment()
+	 * @see memory.MemSegment#getStartAddr()
+	 * @see #getMemSegment()
 	 * @generated
 	 */
-	EAttribute getGenericRAMSegment_StartAddr();
+	EAttribute getMemSegment_StartAddr();
 
 	/**
-	 * Returns the meta object for the attribute '{@link memory.GenericRAMSegment#getSize <em>Size</em>}'.
+	 * Returns the meta object for the attribute '{@link memory.MemSegment#getSize <em>Size</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Size</em>'.
-	 * @see memory.GenericRAMSegment#getSize()
-	 * @see #getGenericRAMSegment()
+	 * @see memory.MemSegment#getSize()
+	 * @see #getMemSegment()
 	 * @generated
 	 */
-	EAttribute getGenericRAMSegment_Size();
+	EAttribute getMemSegment_Size();
 
 	/**
 	 * Returns the meta object for class '{@link memory.ProgModel <em>Prog Model</em>}'.
@@ -302,28 +302,6 @@ public interface MemoryPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getProgModel();
-
-	/**
-	 * Returns the meta object for the attribute '{@link memory.ProgModel#getStartAddr <em>Start Addr</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Start Addr</em>'.
-	 * @see memory.ProgModel#getStartAddr()
-	 * @see #getProgModel()
-	 * @generated
-	 */
-	EAttribute getProgModel_StartAddr();
-
-	/**
-	 * Returns the meta object for the attribute '{@link memory.ProgModel#getSize <em>Size</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Size</em>'.
-	 * @see memory.ProgModel#getSize()
-	 * @see #getProgModel()
-	 * @generated
-	 */
-	EAttribute getProgModel_Size();
 
 	/**
 	 * Returns the meta object for the attribute '{@link memory.ProgModel#getResetVector <em>Reset Vector</em>}'.
@@ -403,14 +381,14 @@ public interface MemoryPackage extends EPackage {
 		EReference MEMORY_MODEL__PROG = eINSTANCE.getMemoryModel_Prog();
 
 		/**
-		 * The meta object literal for the '{@link memory.impl.GenericRAMSegmentImpl <em>Generic RAM Segment</em>}' class.
+		 * The meta object literal for the '{@link memory.impl.MemSegmentImpl <em>Mem Segment</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see memory.impl.GenericRAMSegmentImpl
-		 * @see memory.impl.MemoryPackageImpl#getGenericRAMSegment()
+		 * @see memory.impl.MemSegmentImpl
+		 * @see memory.impl.MemoryPackageImpl#getMemSegment()
 		 * @generated
 		 */
-		EClass GENERIC_RAM_SEGMENT = eINSTANCE.getGenericRAMSegment();
+		EClass MEM_SEGMENT = eINSTANCE.getMemSegment();
 
 		/**
 		 * The meta object literal for the '<em><b>Start Addr</b></em>' attribute feature.
@@ -418,7 +396,7 @@ public interface MemoryPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute GENERIC_RAM_SEGMENT__START_ADDR = eINSTANCE.getGenericRAMSegment_StartAddr();
+		EAttribute MEM_SEGMENT__START_ADDR = eINSTANCE.getMemSegment_StartAddr();
 
 		/**
 		 * The meta object literal for the '<em><b>Size</b></em>' attribute feature.
@@ -426,7 +404,7 @@ public interface MemoryPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute GENERIC_RAM_SEGMENT__SIZE = eINSTANCE.getGenericRAMSegment_Size();
+		EAttribute MEM_SEGMENT__SIZE = eINSTANCE.getMemSegment_Size();
 
 		/**
 		 * The meta object literal for the '{@link memory.impl.ProgModelImpl <em>Prog Model</em>}' class.
@@ -437,22 +415,6 @@ public interface MemoryPackage extends EPackage {
 		 * @generated
 		 */
 		EClass PROG_MODEL = eINSTANCE.getProgModel();
-
-		/**
-		 * The meta object literal for the '<em><b>Start Addr</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PROG_MODEL__START_ADDR = eINSTANCE.getProgModel_StartAddr();
-
-		/**
-		 * The meta object literal for the '<em><b>Size</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PROG_MODEL__SIZE = eINSTANCE.getProgModel_Size();
 
 		/**
 		 * The meta object literal for the '<em><b>Reset Vector</b></em>' attribute feature.

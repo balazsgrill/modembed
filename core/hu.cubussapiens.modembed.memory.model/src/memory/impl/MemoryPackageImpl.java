@@ -6,7 +6,7 @@
  */
 package memory.impl;
 
-import memory.GenericRAMSegment;
+import memory.MemSegment;
 import memory.MemoryFactory;
 import memory.MemoryModel;
 import memory.MemoryPackage;
@@ -46,7 +46,7 @@ public class MemoryPackageImpl extends EPackageImpl implements MemoryPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass genericRAMSegmentEClass = null;
+	private EClass memSegmentEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -166,8 +166,8 @@ public class MemoryPackageImpl extends EPackageImpl implements MemoryPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getGenericRAMSegment() {
-		return genericRAMSegmentEClass;
+	public EClass getMemSegment() {
+		return memSegmentEClass;
 	}
 
 	/**
@@ -175,8 +175,8 @@ public class MemoryPackageImpl extends EPackageImpl implements MemoryPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getGenericRAMSegment_StartAddr() {
-		return (EAttribute)genericRAMSegmentEClass.getEStructuralFeatures().get(0);
+	public EAttribute getMemSegment_StartAddr() {
+		return (EAttribute)memSegmentEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -184,8 +184,8 @@ public class MemoryPackageImpl extends EPackageImpl implements MemoryPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getGenericRAMSegment_Size() {
-		return (EAttribute)genericRAMSegmentEClass.getEStructuralFeatures().get(1);
+	public EAttribute getMemSegment_Size() {
+		return (EAttribute)memSegmentEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -202,26 +202,8 @@ public class MemoryPackageImpl extends EPackageImpl implements MemoryPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getProgModel_StartAddr() {
-		return (EAttribute)progModelEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getProgModel_Size() {
-		return (EAttribute)progModelEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getProgModel_ResetVector() {
-		return (EAttribute)progModelEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)progModelEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -259,13 +241,11 @@ public class MemoryPackageImpl extends EPackageImpl implements MemoryPackage {
 		createEReference(memoryModelEClass, MEMORY_MODEL__RAM);
 		createEReference(memoryModelEClass, MEMORY_MODEL__PROG);
 
-		genericRAMSegmentEClass = createEClass(GENERIC_RAM_SEGMENT);
-		createEAttribute(genericRAMSegmentEClass, GENERIC_RAM_SEGMENT__START_ADDR);
-		createEAttribute(genericRAMSegmentEClass, GENERIC_RAM_SEGMENT__SIZE);
+		memSegmentEClass = createEClass(MEM_SEGMENT);
+		createEAttribute(memSegmentEClass, MEM_SEGMENT__START_ADDR);
+		createEAttribute(memSegmentEClass, MEM_SEGMENT__SIZE);
 
 		progModelEClass = createEClass(PROG_MODEL);
-		createEAttribute(progModelEClass, PROG_MODEL__START_ADDR);
-		createEAttribute(progModelEClass, PROG_MODEL__SIZE);
 		createEAttribute(progModelEClass, PROG_MODEL__RESET_VECTOR);
 	}
 
@@ -297,22 +277,21 @@ public class MemoryPackageImpl extends EPackageImpl implements MemoryPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		progModelEClass.getESuperTypes().add(this.getMemSegment());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(ramModelEClass, RAMModel.class, "RAMModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRAMModel_Segments(), this.getGenericRAMSegment(), null, "segments", null, 0, -1, RAMModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRAMModel_Segments(), this.getMemSegment(), null, "segments", null, 0, -1, RAMModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(memoryModelEClass, MemoryModel.class, "MemoryModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMemoryModel_Ram(), this.getRAMModel(), null, "ram", null, 0, 1, MemoryModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMemoryModel_Prog(), this.getProgModel(), null, "prog", null, 0, 1, MemoryModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(genericRAMSegmentEClass, GenericRAMSegment.class, "GenericRAMSegment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getGenericRAMSegment_StartAddr(), ecorePackage.getELong(), "startAddr", null, 0, 1, GenericRAMSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getGenericRAMSegment_Size(), ecorePackage.getELong(), "size", null, 0, 1, GenericRAMSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(memSegmentEClass, MemSegment.class, "MemSegment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getMemSegment_StartAddr(), ecorePackage.getELong(), "startAddr", null, 0, 1, MemSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMemSegment_Size(), ecorePackage.getELong(), "size", null, 0, 1, MemSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(progModelEClass, ProgModel.class, "ProgModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getProgModel_StartAddr(), ecorePackage.getELong(), "startAddr", null, 0, 1, ProgModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProgModel_Size(), ecorePackage.getELong(), "size", null, 0, 1, ProgModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProgModel_ResetVector(), ecorePackage.getELong(), "resetVector", null, 0, 1, ProgModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource

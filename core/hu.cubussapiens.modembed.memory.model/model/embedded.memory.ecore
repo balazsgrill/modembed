@@ -5,20 +5,18 @@
     nsURI="http://gb.hu/embedded/memory" nsPrefix="mem">
   <eClassifiers xsi:type="ecore:EClass" name="RAMModel">
     <eStructuralFeatures xsi:type="ecore:EReference" name="segments" upperBound="-1"
-        eType="#//GenericRAMSegment" containment="true"/>
+        eType="#//MemSegment" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MemoryModel">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ram" eType="#//RAMModel"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="prog" eType="#//ProgModel"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="GenericRAMSegment">
+  <eClassifiers xsi:type="ecore:EClass" name="MemSegment">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="startAddr" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ProgModel">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="startAddr" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ProgModel" eSuperTypes="#//MemSegment">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="resetVector" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -99,15 +99,16 @@ public class MemorySwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case MemoryPackage.GENERIC_RAM_SEGMENT: {
-				GenericRAMSegment genericRAMSegment = (GenericRAMSegment)theEObject;
-				T result = caseGenericRAMSegment(genericRAMSegment);
+			case MemoryPackage.MEM_SEGMENT: {
+				MemSegment memSegment = (MemSegment)theEObject;
+				T result = caseMemSegment(memSegment);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case MemoryPackage.PROG_MODEL: {
 				ProgModel progModel = (ProgModel)theEObject;
 				T result = caseProgModel(progModel);
+				if (result == null) result = caseMemSegment(progModel);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -146,17 +147,17 @@ public class MemorySwitch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Generic RAM Segment</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Mem Segment</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Generic RAM Segment</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Mem Segment</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseGenericRAMSegment(GenericRAMSegment object) {
+	public T caseMemSegment(MemSegment object) {
 		return null;
 	}
 
