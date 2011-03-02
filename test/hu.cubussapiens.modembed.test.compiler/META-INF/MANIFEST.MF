@@ -10,4 +10,5 @@ Require-Bundle: org.junit,
  org.eclipse.core.runtime,
  hu.cubussapiens.modembed.assembly.model;bundle-version="1.0.0",
  hu.cubussapiens.modembed.hexfile.model;bundle-version="0.1.0",
- hu.cubussapiens.modembed.modularasm.compiler;bundle-version="0.1.0"
+ hu.cubussapiens.modembed.modularasm.compiler;bundle-version="0.1.0",
+ hu.cubussapiens.modembed.memory.model;bundle-version="1.0.0"

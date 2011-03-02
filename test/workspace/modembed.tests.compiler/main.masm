@@ -4,7 +4,7 @@ var counter;
 
 func main{
 	label start;
-	incf counter;
+	incf 0 0 counter;
 	goto start;
 }
 

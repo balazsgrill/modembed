@@ -12,6 +12,10 @@ import hu.cubussapiens.modembed.modularasm.builder.MASMCompilerPlugin;
 import hu.cubussapiens.modembed.modularasm.builder.resolvers.ExtensionArchitectureResolver;
 import hu.cubussapiens.modembed.modularasm.modularASM.Module;
 
+import memory.MemSegment;
+import memory.MemoryFactory;
+import memory.MemoryModel;
+
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
@@ -38,6 +42,8 @@ public class CompilerBasicTest {
 	private static final String projectName = "modembed.tests.compiler";
 	
 	private static final String Main = "main.masm";
+	
+	private static final String Result = "output.hex";
 	
 	/**
 	 * @throws java.lang.Exception
@@ -85,9 +91,28 @@ public class CompilerBasicTest {
 		
 	}
 	
+	MemoryModel memmodel;
+	
+	@Test
+	public void memModel(){
+		memmodel = MemoryFactory.eINSTANCE.createMemoryModel();
+		memmodel.setRam(MemoryFactory.eINSTANCE.createRAMModel());
+		MemSegment segment = MemoryFactory.eINSTANCE.createMemSegment();
+		segment.setStartAddr(0x000);
+		segment.setSize(0x300);
+		memmodel.getRam().getSegments().add(segment);
+		memmodel.setProg(MemoryFactory.eINSTANCE.createProgModel());
+		memmodel.getProg().setResetVector(0);
+		memmodel.getProg().setStartAddr(0);
+		memmodel.getProg().setSize(0x4000);
+	}
+	
 	@Test
 	public void compile() throws Exception{
 		ICompiler compiler = MASMCompilerPlugin.getDefault().createCompiler();
+		
+		memModel();
+		compiler.setMemoryModel(memmodel);
 		
 		compiler.setArchResolver(new ExtensionArchitectureResolver());
 		parsingMASM(); //Parses main module
@@ -102,7 +127,14 @@ public class CompilerBasicTest {
 		});
 		
 		HexFile hf = compiler.compile(new NullProgressMonitor());
-		//assertNotNull(hf);
+		assertNotNull(hf);
+		
+		IFile result = project.getFile(Result);
+		URI uri = URI.createPlatformResourceURI(result.getFullPath().toString(),true);
+		Resource r = rs.createResource(uri);
+		r.getContents().add(hf);
+		
+		r.save(null);
 	}
 	
 	/**
