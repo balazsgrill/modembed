@@ -20,7 +20,6 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
-import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
@@ -46,6 +45,7 @@ public class HexfileTest {
 	}
 	
 	@Test
+	@Ignore
 	public void readInstructionSet() throws Exception{
 		IProject p = ResourcesPlugin.getWorkspace().getRoot().getProject("test");
 		if (!p.exists()){
@@ -71,7 +71,7 @@ public class HexfileTest {
 	}
 	
 	@Test
-	@Ignore
+	//@Ignore
 	public void transformAll()throws Throwable{
 		IProject p = ResourcesPlugin.getWorkspace().getRoot().getProject("test");
 		if (!p.exists()){
@@ -98,11 +98,15 @@ public class HexfileTest {
 		folders.put("dev_p16", "pic16");
 		folders.put("dev_p18", "pic18");
 		
+		IFolder microchip = p.getFolder("microchip");
+		IFolder mcp;
+		
 		for(String key : folders.keySet()){
 			dev = p.getFolder(key);
 			pic = p.getFolder(folders.get(key));
+			mcp = microchip.getFolder(folders.get(key));
 		
-			d = DeviceTranformationPlugin.getDefault().transformAllDevices(dev, pic);
+			d = DeviceTranformationPlugin.getDefault().transformAllDevices(dev, pic, mcp, folders.get(key));
 		
 			for(String k : d.keySet()){
 				sb.append("\t\t<cputype model=\"");
@@ -122,40 +126,6 @@ public class HexfileTest {
 		}
 	}
 	
-	@Test
-	@Ignore
-	public void testDevFile() throws Throwable{
-		IProject p = ResourcesPlugin.getWorkspace().getRoot().getProject("test");
-		if (!p.exists()){
-			p.create(new NullProgressMonitor());
-		}
-		p.close(new NullProgressMonitor());
-		p.open(new NullProgressMonitor());
-		p.refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
-		
-		IFile f = p.getFile("PIC16F690.dev");
-		Assert.assertTrue(f.exists());
-		
-		URI furi = URI.createPlatformResourceURI(f.getFullPath().toString(), true);
-		
-		ResourceSet rs = new ResourceSetImpl();
-		
-		Resource res = rs.createResource(furi);
-		res.load(null);
-		
-		for(EObject o : res.getContents()){
-			printE(o,0);
-		}
-		
-		IFile tfile = p.getFile("PIC16F690.pic");
-		URI turi = URI.createPlatformResourceURI(tfile.getFullPath().toString(), true);
-		
-		IStatus s = DeviceTranformationPlugin.getDefault().transformDeviceDescription(furi, turi);
-		System.out.println("Result: "+s.toString());
-		if (s.getException() != null)
-			throw s.getException();
-		Assert.assertTrue(s.isOK());
-	}
 	
 	@Test
 	@Ignore

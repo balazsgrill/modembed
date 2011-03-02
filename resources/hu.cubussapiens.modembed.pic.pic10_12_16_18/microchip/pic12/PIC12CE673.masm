@@ -1,0 +1,19 @@
+module pic12ce673 target microchip.pic12{
+symbol INDF 0x0;
+symbol TMR0 0x1;
+symbol PCL 0x2;
+symbol STATUS 0x3;
+symbol FSR 0x4;
+symbol GPIO 0x5;
+symbol PCLATH 0xa;
+symbol INTCON 0xb;
+symbol PIR1 0xc;
+symbol ADRES 0x1e;
+symbol ADCON0 0x1f;
+symbol OPTION_REG 0x81;
+symbol TRIS 0x85;
+symbol PIE1 0x8c;
+symbol PCON 0x8e;
+symbol OSCCAL 0x8f;
+symbol ADCON1 0x9f;
+}

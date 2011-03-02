@@ -1,0 +1,9 @@
+module pic16f54 target microchip.pic16{
+symbol INDF 0x0;
+symbol TMR0 0x1;
+symbol PCL 0x2;
+symbol STATUS 0x3;
+symbol FSR 0x4;
+symbol PORTA 0x5;
+symbol PORTB 0x6;
+}

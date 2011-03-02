@@ -1,16 +1,22 @@
 package hu.cubussapiens.modembed.pic.device.tranformation;
 
 
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import microchip.Device;
+import microchip.device.memory.SFR;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Plugin;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.BasicDiagnostic;
@@ -79,7 +85,7 @@ public class DeviceTranformationPlugin extends Plugin {
 
 	
 	
-	public Map<String, String> transformAllDevices(IFolder source, IFolder target) throws CoreException{
+	public Map<String, String> transformAllDevices(IFolder source, IFolder target, IFolder symboltarget, String arch) throws CoreException{
 		Map<String, String> result = new HashMap<String, String>();
 		
 		for(IResource r : source.members()){
@@ -92,7 +98,9 @@ public class DeviceTranformationPlugin extends Plugin {
 				
 				System.out.println("Transforming: "+suri);
 				
-				transformDeviceDescription(suri, turi);
+				IFile symbol = symboltarget.getFile(name+".masm");
+				
+				transformDeviceDescription(suri, turi, symbol, arch);
 				
 				result.put(tf.getName(), name);
 			}
@@ -102,7 +110,34 @@ public class DeviceTranformationPlugin extends Plugin {
 		return result;
 	}
 	
-	public IStatus transformDeviceDescription(URI source, URI target){
+	private void generateMASMSymbols(Resource device, IFile symbols, String arch) throws CoreException{
+		StringBuilder sb = new StringBuilder();
+		
+		for(EObject eo : device.getContents()){
+			if (eo instanceof Device){
+				Device dev = (Device)eo;
+				sb.append("module ");
+				sb.append(symbols.getName().replace(".masm", "").toLowerCase());
+				sb.append(" target microchip.");sb.append(arch);
+				sb.append("{\n");
+				for(SFR sfr : dev.getSfrs()){
+					sb.append("symbol ");
+					sb.append(sfr.getKey());
+					sb.append(" 0x");sb.append(Integer.toHexString(sfr.getAddr()));sb.append(";\n");
+				}
+				sb.append("}\n");
+			}
+		}
+		
+		InputStream source = new ByteArrayInputStream(sb.toString().getBytes());
+		if (symbols.exists()){
+			symbols.setContents(source , IResource.KEEP_HISTORY, new NullProgressMonitor());
+		}else{
+			symbols.create(source, true, new NullProgressMonitor());
+		}
+	}
+	
+	public IStatus transformDeviceDescription(URI source, URI target, IFile symbols, String arch){
 		try{
 
 			String name = source.trimFileExtension().lastSegment();
@@ -158,6 +193,8 @@ public class DeviceTranformationPlugin extends Plugin {
 			// Remark: variable arguments count is supported
 			ExecutionDiagnostic result = executor.execute(context, input, output);
 
+			generateMASMSymbols(inResource, symbols, arch);
+			
 			// check the result for success
 			if(result.getSeverity() == Diagnostic.OK) {
 				// the output objects got captured in the output extent
