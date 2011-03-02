@@ -107,8 +107,17 @@ public class FunctionInstance {
 		return length;
 	}
 	
+	public int address = -1;
+	
 	public long[] calculateWords(){
-		return null;
+		long[] result = new long[length];
+		int i = 0;
+		for(InstructionWord iw : words){
+			long[] w = iw.getWords();
+			System.arraycopy(w, 0, result, i, w.length);
+			i += w.length;
+		}
+		return result;
 	}
 	
 }

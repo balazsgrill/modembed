@@ -3,6 +3,8 @@
  */
 package hu.cubussapiens.modembed.modularasm.builder;
 
+import memory.MemoryModel;
+
 import org.eclipse.core.runtime.IProgressMonitor;
 
 import hexfile.HexFile;
@@ -21,6 +23,8 @@ public interface ICompiler {
 	public void setArchResolver(IArchitectureResolver resolver);
 	
 	public void setModuleResolver(IModuleResolver resolver);
+	
+	public void setMemoryModel(MemoryModel memmodel);
 	
 	public HexFile compile(IProgressMonitor monitor) throws CompilerException;
 	

@@ -13,14 +13,14 @@ import hu.cubussapiens.modembed.modularasm.builder.internal.VariableInstance;
 public class VariableSymbol implements ISymbol {
 
 	private final VariableInstance v;
-	private final SymbolManager smanager;
+	//private final SymbolManager smanager;
 	
 	/**
 	 * 
 	 */
 	public VariableSymbol(VariableInstance v, SymbolManager smanager) {
 		this.v = v;
-		this.smanager = smanager;
+		//this.smanager = smanager;
 	}
 
 	/* (non-Javadoc)
@@ -28,8 +28,7 @@ public class VariableSymbol implements ISymbol {
 	 */
 	@Override
 	public int getValue() {
-		// TODO Auto-generated method stub
-		return 0;
+		return v.address;
 	}
 
 }

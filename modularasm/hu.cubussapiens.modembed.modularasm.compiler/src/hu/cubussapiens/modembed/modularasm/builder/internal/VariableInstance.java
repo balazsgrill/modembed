@@ -22,4 +22,6 @@ public class VariableInstance {
 		this.v = v;
 	}
 
+	public int address = -1;
+	
 }

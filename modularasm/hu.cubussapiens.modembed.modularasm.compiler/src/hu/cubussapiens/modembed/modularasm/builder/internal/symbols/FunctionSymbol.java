@@ -13,14 +13,14 @@ import hu.cubussapiens.modembed.modularasm.builder.internal.SymbolManager;
 public class FunctionSymbol implements ISymbol {
 
 	private final FunctionInstance f;
-	private final SymbolManager smanager;
+	//private final SymbolManager smanager;
 	
 	/**
 	 * 
 	 */
 	public FunctionSymbol(FunctionInstance f, SymbolManager smanager) {
 		this.f = f;
-		this.smanager = smanager;
+		//this.smanager = smanager;
 	}
 
 	/* (non-Javadoc)
@@ -28,8 +28,7 @@ public class FunctionSymbol implements ISymbol {
 	 */
 	@Override
 	public int getValue() {
-		// TODO Auto-generated method stub
-		return 0;
+		return f.address;
 	}
 
 }
