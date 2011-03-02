@@ -408,7 +408,7 @@ ruleQualifiedID returns [EObject current=null]
 	    }
 
 )
-))?)
+))*)
 ;
 
 

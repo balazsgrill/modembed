@@ -152,10 +152,10 @@ public class ModularASMGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cSegmentsIDTerminalRuleCall_1_1_0 = (RuleCall)cSegmentsAssignment_1_1.eContents().get(0);
 		
 		//QualifiedID:
-		//	segments+=ID ("." segments+=ID)?;
+		//	segments+=ID ("." segments+=ID)*;
 		public ParserRule getRule() { return rule; }
 
-		//segments+=ID ("." segments+=ID)?
+		//segments+=ID ("." segments+=ID)*
 		public Group getGroup() { return cGroup; }
 
 		//segments+=ID
@@ -164,7 +164,7 @@ public class ModularASMGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getSegmentsIDTerminalRuleCall_0_0() { return cSegmentsIDTerminalRuleCall_0_0; }
 
-		//("." segments+=ID)?
+		//("." segments+=ID)*
 		public Group getGroup_1() { return cGroup_1; }
 
 		//"."
@@ -629,7 +629,7 @@ public class ModularASMGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//QualifiedID:
-	//	segments+=ID ("." segments+=ID)?;
+	//	segments+=ID ("." segments+=ID)*;
 	public QualifiedIDElements getQualifiedIDAccess() {
 		return (pQualifiedID != null) ? pQualifiedID : (pQualifiedID = new QualifiedIDElements());
 	}

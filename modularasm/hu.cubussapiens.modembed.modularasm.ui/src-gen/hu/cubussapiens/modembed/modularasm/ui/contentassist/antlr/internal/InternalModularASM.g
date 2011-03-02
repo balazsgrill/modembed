@@ -1135,7 +1135,7 @@ rule__QualifiedID__Group__1__Impl
 :
 (
 { before(grammarAccess.getQualifiedIDAccess().getGroup_1()); }
-(rule__QualifiedID__Group_1__0)?
+(rule__QualifiedID__Group_1__0)*
 { after(grammarAccess.getQualifiedIDAccess().getGroup_1()); }
 )
 

@@ -17,7 +17,7 @@ ModuleParamType:
 	'literal' | 'callback' | 'address';	
 	
 QualifiedID:
-	segments+=ID ('.' segments+=ID)?;	
+	segments+=ID ('.' segments+=ID)*;	
 	
 ModuleItem:
 	(Variable | Instance | Function | Symbol) ';';

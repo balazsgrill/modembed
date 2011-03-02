@@ -2979,39 +2979,46 @@ public class InternalModularASMParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start rule__QualifiedID__Group__1__Impl
-    // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:1131:1: rule__QualifiedID__Group__1__Impl : ( ( rule__QualifiedID__Group_1__0 )? ) ;
+    // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:1131:1: rule__QualifiedID__Group__1__Impl : ( ( rule__QualifiedID__Group_1__0 )* ) ;
     public final void rule__QualifiedID__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:1135:1: ( ( ( rule__QualifiedID__Group_1__0 )? ) )
-            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:1136:1: ( ( rule__QualifiedID__Group_1__0 )? )
+            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:1135:1: ( ( ( rule__QualifiedID__Group_1__0 )* ) )
+            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:1136:1: ( ( rule__QualifiedID__Group_1__0 )* )
             {
-            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:1136:1: ( ( rule__QualifiedID__Group_1__0 )? )
-            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:1137:1: ( rule__QualifiedID__Group_1__0 )?
+            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:1136:1: ( ( rule__QualifiedID__Group_1__0 )* )
+            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:1137:1: ( rule__QualifiedID__Group_1__0 )*
             {
              before(grammarAccess.getQualifiedIDAccess().getGroup_1()); 
-            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:1138:1: ( rule__QualifiedID__Group_1__0 )?
-            int alt10=2;
-            int LA10_0 = input.LA(1);
+            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:1138:1: ( rule__QualifiedID__Group_1__0 )*
+            loop10:
+            do {
+                int alt10=2;
+                int LA10_0 = input.LA(1);
 
-            if ( (LA10_0==22) ) {
-                alt10=1;
-            }
-            switch (alt10) {
-                case 1 :
-                    // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:1138:2: rule__QualifiedID__Group_1__0
-                    {
-                    pushFollow(FOLLOW_rule__QualifiedID__Group_1__0_in_rule__QualifiedID__Group__1__Impl2298);
-                    rule__QualifiedID__Group_1__0();
-                    _fsp--;
+                if ( (LA10_0==22) ) {
+                    alt10=1;
+                }
 
 
-                    }
-                    break;
+                switch (alt10) {
+            	case 1 :
+            	    // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:1138:2: rule__QualifiedID__Group_1__0
+            	    {
+            	    pushFollow(FOLLOW_rule__QualifiedID__Group_1__0_in_rule__QualifiedID__Group__1__Impl2298);
+            	    rule__QualifiedID__Group_1__0();
+            	    _fsp--;
 
-            }
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop10;
+                }
+            } while (true);
 
              after(grammarAccess.getQualifiedIDAccess().getGroup_1()); 
 
@@ -6149,7 +6156,7 @@ public class InternalModularASMParser extends AbstractInternalContentAssistParse
     public static final BitSet FOLLOW_rule__QualifiedID__Group__1_in_rule__QualifiedID__Group__02214 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__QualifiedID__SegmentsAssignment_0_in_rule__QualifiedID__Group__0__Impl2241 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__QualifiedID__Group__1__Impl_in_rule__QualifiedID__Group__12271 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__QualifiedID__Group_1__0_in_rule__QualifiedID__Group__1__Impl2298 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__QualifiedID__Group_1__0_in_rule__QualifiedID__Group__1__Impl2298 = new BitSet(new long[]{0x0000000000400002L});
     public static final BitSet FOLLOW_rule__QualifiedID__Group_1__0__Impl_in_rule__QualifiedID__Group_1__02333 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_rule__QualifiedID__Group_1__1_in_rule__QualifiedID__Group_1__02336 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_22_in_rule__QualifiedID__Group_1__0__Impl2364 = new BitSet(new long[]{0x0000000000000002L});

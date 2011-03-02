@@ -534,11 +534,11 @@ protected class ModuleParam_NameAssignment_1 extends AssignmentToken  {
 /************ begin Rule QualifiedID ****************
  *
  * QualifiedID:
- * 	segments+=ID ("." segments+=ID)?;
+ * 	segments+=ID ("." segments+=ID)*;
  *
  **/
 
-// segments+=ID ("." segments+=ID)?
+// segments+=ID ("." segments+=ID)*
 protected class QualifiedID_Group extends GroupToken {
 	
 	public QualifiedID_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -601,7 +601,7 @@ protected class QualifiedID_SegmentsAssignment_0 extends AssignmentToken  {
 
 }
 
-// ("." segments+=ID)?
+// ("." segments+=ID)*
 protected class QualifiedID_Group_1 extends GroupToken {
 	
 	public QualifiedID_Group_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -638,7 +638,8 @@ protected class QualifiedID_FullStopKeyword_1_0 extends KeywordToken  {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new QualifiedID_SegmentsAssignment_0(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new QualifiedID_Group_1(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new QualifiedID_SegmentsAssignment_0(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
 	}
