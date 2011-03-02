@@ -1,12 +1,12 @@
 /**
  * 
  */
-package hu.cubussapiens.modembed.modularasm.builder.internal;
+package hu.cubussapiens.modembed.modularasm.compiler.internal;
 
-import hu.cubussapiens.modembed.modularasm.builder.CompilerException;
-import hu.cubussapiens.modembed.modularasm.builder.MASMCompilerPlugin;
-import hu.cubussapiens.modembed.modularasm.builder.internal.symbols.ISymbol;
-import hu.cubussapiens.modembed.modularasm.builder.internal.symbols.LiteralSymbol;
+import hu.cubussapiens.modembed.modularasm.compiler.CompilerException;
+import hu.cubussapiens.modembed.modularasm.compiler.MASMCompilerPlugin;
+import hu.cubussapiens.modembed.modularasm.compiler.internal.symbols.ISymbol;
+import hu.cubussapiens.modembed.modularasm.compiler.internal.symbols.LiteralSymbol;
 import hu.cubussapiens.modembed.modularasm.modularASM.Function;
 import hu.cubussapiens.modembed.modularasm.modularASM.Instance;
 import hu.cubussapiens.modembed.modularasm.modularASM.Module;

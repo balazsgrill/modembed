@@ -1,7 +1,7 @@
 /**
  * 
  */
-package hu.cubussapiens.modembed.modularasm.builder;
+package hu.cubussapiens.modembed.modularasm.compiler;
 
 import hu.cubussapiens.modembed.modularasm.modularASM.Module;
 import hu.cubussapiens.modembed.modularasm.modularASM.QualifiedID;

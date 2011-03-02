@@ -1,7 +1,7 @@
 /**
  * 
  */
-package hu.cubussapiens.modembed.modularasm.builder.resolvers;
+package hu.cubussapiens.modembed.modularasm.compiler.resolvers;
 
 import java.net.URL;
 
@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 
 import embedded.assembly.InstructionSet;
 import hu.cubussapiens.modembed.MODembedCore;
-import hu.cubussapiens.modembed.modularasm.builder.IArchitectureResolver;
+import hu.cubussapiens.modembed.modularasm.compiler.IArchitectureResolver;
 
 /**
  * @author balazs.grill

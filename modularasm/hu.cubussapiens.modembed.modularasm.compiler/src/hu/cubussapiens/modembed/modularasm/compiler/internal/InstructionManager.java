@@ -1,10 +1,10 @@
 /**
  * 
  */
-package hu.cubussapiens.modembed.modularasm.builder.internal;
+package hu.cubussapiens.modembed.modularasm.compiler.internal;
 
-import hu.cubussapiens.modembed.modularasm.builder.CompilerException;
-import hu.cubussapiens.modembed.modularasm.builder.internal.symbols.ISymbol;
+import hu.cubussapiens.modembed.modularasm.compiler.CompilerException;
+import hu.cubussapiens.modembed.modularasm.compiler.internal.symbols.ISymbol;
 
 import java.util.ArrayList;
 import java.util.HashMap;

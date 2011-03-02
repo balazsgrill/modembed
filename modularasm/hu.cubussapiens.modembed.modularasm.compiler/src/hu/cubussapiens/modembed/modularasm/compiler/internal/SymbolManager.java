@@ -1,11 +1,11 @@
 /**
  * 
  */
-package hu.cubussapiens.modembed.modularasm.builder.internal;
+package hu.cubussapiens.modembed.modularasm.compiler.internal;
 
-import hu.cubussapiens.modembed.modularasm.builder.internal.symbols.FunctionSymbol;
-import hu.cubussapiens.modembed.modularasm.builder.internal.symbols.ISymbol;
-import hu.cubussapiens.modembed.modularasm.builder.internal.symbols.VariableSymbol;
+import hu.cubussapiens.modembed.modularasm.compiler.internal.symbols.FunctionSymbol;
+import hu.cubussapiens.modembed.modularasm.compiler.internal.symbols.ISymbol;
+import hu.cubussapiens.modembed.modularasm.compiler.internal.symbols.VariableSymbol;
 
 import java.util.ArrayList;
 import java.util.List;

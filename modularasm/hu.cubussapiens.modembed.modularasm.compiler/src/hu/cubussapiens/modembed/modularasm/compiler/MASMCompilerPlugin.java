@@ -1,6 +1,6 @@
-package hu.cubussapiens.modembed.modularasm.builder;
+package hu.cubussapiens.modembed.modularasm.compiler;
 
-import hu.cubussapiens.modembed.modularasm.builder.internal.Compiler;
+import hu.cubussapiens.modembed.modularasm.compiler.internal.Compiler;
 import hu.cubussapiens.modembed.modularasm.modularASM.QualifiedID;
 
 import org.eclipse.core.runtime.Plugin;

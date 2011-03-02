@@ -1,7 +1,7 @@
 /**
  * 
  */
-package hu.cubussapiens.modembed.modularasm.builder.internal.symbols;
+package hu.cubussapiens.modembed.modularasm.compiler.internal.symbols;
 
 /**
  * @author balazs.grill

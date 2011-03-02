@@ -1,7 +1,7 @@
 /**
  * 
  */
-package hu.cubussapiens.modembed.modularasm.builder.internal;
+package hu.cubussapiens.modembed.modularasm.compiler.internal;
 
 import java.util.ArrayList;
 import java.util.List;

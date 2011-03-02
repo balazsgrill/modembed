@@ -10,11 +10,11 @@ import java.io.ByteArrayInputStream;
 import java.util.Map;
 
 import hexfile.HexFile;
-import hu.cubussapiens.modembed.modularasm.builder.IArchitectureResolver;
-import hu.cubussapiens.modembed.modularasm.builder.ICompiler;
-import hu.cubussapiens.modembed.modularasm.builder.MASMCompilerPlugin;
-import hu.cubussapiens.modembed.modularasm.builder.resolvers.ExtensionArchitectureResolver;
-import hu.cubussapiens.modembed.modularasm.builder.resolvers.FolderModuleResolver;
+import hu.cubussapiens.modembed.modularasm.compiler.IArchitectureResolver;
+import hu.cubussapiens.modembed.modularasm.compiler.ICompiler;
+import hu.cubussapiens.modembed.modularasm.compiler.MASMCompilerPlugin;
+import hu.cubussapiens.modembed.modularasm.compiler.resolvers.ExtensionArchitectureResolver;
+import hu.cubussapiens.modembed.modularasm.compiler.resolvers.FolderModuleResolver;
 import hu.cubussapiens.modembed.modularasm.modularASM.Module;
 import memory.MemSegment;
 import memory.MemoryFactory;

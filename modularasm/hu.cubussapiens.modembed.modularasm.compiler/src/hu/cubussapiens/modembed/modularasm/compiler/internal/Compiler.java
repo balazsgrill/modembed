@@ -1,7 +1,7 @@
 /**
  * 
  */
-package hu.cubussapiens.modembed.modularasm.builder.internal;
+package hu.cubussapiens.modembed.modularasm.compiler.internal;
 
 import java.util.Collections;
 import java.util.Map;
@@ -12,10 +12,10 @@ import hexfile.Entry;
 import hexfile.HexFile;
 import hexfile.HexfileFactory;
 import hu.cubussapiens.modembed.hexfile.persistence.HexFileResource;
-import hu.cubussapiens.modembed.modularasm.builder.CompilerException;
-import hu.cubussapiens.modembed.modularasm.builder.IArchitectureResolver;
-import hu.cubussapiens.modembed.modularasm.builder.ICompiler;
-import hu.cubussapiens.modembed.modularasm.builder.IModuleResolver;
+import hu.cubussapiens.modembed.modularasm.compiler.CompilerException;
+import hu.cubussapiens.modembed.modularasm.compiler.IArchitectureResolver;
+import hu.cubussapiens.modembed.modularasm.compiler.ICompiler;
+import hu.cubussapiens.modembed.modularasm.compiler.IModuleResolver;
 import hu.cubussapiens.modembed.modularasm.modularASM.Module;
 
 import memory.MemoryModel;

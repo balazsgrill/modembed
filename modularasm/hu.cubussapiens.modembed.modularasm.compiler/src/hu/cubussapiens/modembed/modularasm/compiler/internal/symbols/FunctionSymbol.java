@@ -1,10 +1,10 @@
 /**
  * 
  */
-package hu.cubussapiens.modembed.modularasm.builder.internal.symbols;
+package hu.cubussapiens.modembed.modularasm.compiler.internal.symbols;
 
-import hu.cubussapiens.modembed.modularasm.builder.internal.FunctionInstance;
-import hu.cubussapiens.modembed.modularasm.builder.internal.SymbolManager;
+import hu.cubussapiens.modembed.modularasm.compiler.internal.FunctionInstance;
+import hu.cubussapiens.modembed.modularasm.compiler.internal.SymbolManager;
 
 /**
  * @author balazs.grill
