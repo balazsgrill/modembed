@@ -3,21 +3,26 @@
  */
 package hu.cubussapiens.modembed.test.compiler;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+
+import java.io.ByteArrayInputStream;
+import java.util.Map;
+
 import hexfile.HexFile;
 import hu.cubussapiens.modembed.modularasm.builder.IArchitectureResolver;
 import hu.cubussapiens.modembed.modularasm.builder.ICompiler;
-import hu.cubussapiens.modembed.modularasm.builder.IModuleResolver;
 import hu.cubussapiens.modembed.modularasm.builder.MASMCompilerPlugin;
 import hu.cubussapiens.modembed.modularasm.builder.resolvers.ExtensionArchitectureResolver;
+import hu.cubussapiens.modembed.modularasm.builder.resolvers.FolderModuleResolver;
 import hu.cubussapiens.modembed.modularasm.modularASM.Module;
-
 import memory.MemSegment;
 import memory.MemoryFactory;
 import memory.MemoryModel;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.URI;
@@ -117,14 +122,7 @@ public class CompilerBasicTest {
 		compiler.setArchResolver(new ExtensionArchitectureResolver());
 		parsingMASM(); //Parses main module
 		compiler.setMain(module);
-		compiler.setModuleResolver(new IModuleResolver() {
-			
-			@Override
-			public Module resolveModule(String moduleID) {
-				// dummy resolver
-				return null;
-			}
-		});
+		compiler.setModuleResolver(new FolderModuleResolver(rs, project));
 		
 		HexFile hf = compiler.compile(new NullProgressMonitor());
 		assertNotNull(hf);
@@ -135,6 +133,20 @@ public class CompilerBasicTest {
 		r.getContents().add(hf);
 		
 		r.save(null);
+		
+		
+		StringBuilder sb = new StringBuilder();
+		Map<String, Long> mapping = compiler.getSymbolMapping();
+		for(Map.Entry<String, Long> e : mapping.entrySet()){
+			sb.append(e.getKey()+"\t0x"+Long.toString(e.getValue(), 16)+"\n");
+		}
+		
+		IFile map = project.getFile("output.map");
+		if (map.exists()){
+			map.setContents(new ByteArrayInputStream(sb.toString().getBytes()), IResource.KEEP_HISTORY, new NullProgressMonitor());
+		}else{
+			map.create(new ByteArrayInputStream(sb.toString().getBytes()), true, new NullProgressMonitor());
+		}
 	}
 	
 	/**

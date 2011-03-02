@@ -2,9 +2,12 @@ module main target microchip.pic18{
 
 var counter;
 
+instance other other1;
+
 func main{
 	label start;
 	incf 0 0 counter;
+	call 0 other1.count;
 	goto start;
 }
 
