@@ -31,7 +31,8 @@ public class ExtensionPointModuleResolver implements IModuleResolver {
 		for(IConfigurationElement ce : Platform.getExtensionRegistry().getConfigurationElementsFor(EPID)){
 			String bundleID = ce.getContributor().getName();
 			String folder = ce.getAttribute("folder");
-			resolvers.add(new SharedLibraryExtensionModuleResolver(rs, bundleID, folder));
+			String namespace = ce.getAttribute("rootname");
+			resolvers.add(new SharedLibraryExtensionModuleResolver(rs, bundleID, folder, namespace));
 		}
 	}
 	

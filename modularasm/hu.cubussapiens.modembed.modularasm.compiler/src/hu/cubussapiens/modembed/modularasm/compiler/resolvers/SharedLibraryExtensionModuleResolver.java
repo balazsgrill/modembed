@@ -7,7 +7,6 @@ import hu.cubussapiens.modembed.modularasm.compiler.IModuleResolver;
 import hu.cubussapiens.modembed.modularasm.modularASM.Module;
 import hu.cubussapiens.modembed.modularasm.modularASM.QualifiedID;
 
-import java.net.MalformedURLException;
 import java.net.URL;
 
 import org.eclipse.emf.common.util.URI;
@@ -24,14 +23,16 @@ public class SharedLibraryExtensionModuleResolver implements IModuleResolver {
 	private final ResourceSet rs;
 	private final String bundle;
 	private final String folder;
+	private final String[] namespace;
 	
 	/**
 	 * 
 	 */
-	public SharedLibraryExtensionModuleResolver(ResourceSet rs, String bundle, String folder) {
+	public SharedLibraryExtensionModuleResolver(ResourceSet rs, String bundle, String folder, String namespace) {
 		this.rs = rs;
 		this.bundle = bundle;
 		this.folder = folder;
+		this.namespace = namespace.split(".");
 	}
 
 	/* (non-Javadoc)
@@ -40,8 +41,18 @@ public class SharedLibraryExtensionModuleResolver implements IModuleResolver {
 	@Override
 	public Module resolveModule(QualifiedID moduleID) {
 		String path = "";
+		int i=0;
 		for(String s : moduleID.getSegments()){
-			path += "/"+s;
+			if (i<namespace.length){
+				if (s.equals(namespace[i])){
+					i++;
+					if (i == namespace.length) path = "/"+folder;
+				}else{
+					return null;
+				}
+			}else{
+				path += "/"+s;
+			}
 		}
 		try {
 			URL url = new URL("platform:/plugin/"+bundle+path+".masm");
