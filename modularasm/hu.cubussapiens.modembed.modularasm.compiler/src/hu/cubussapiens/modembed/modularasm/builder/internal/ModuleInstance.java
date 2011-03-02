@@ -12,7 +12,6 @@ import hu.cubussapiens.modembed.modularasm.modularASM.Module;
 import hu.cubussapiens.modembed.modularasm.modularASM.ModuleItem;
 import hu.cubussapiens.modembed.modularasm.modularASM.QualifiedID;
 import hu.cubussapiens.modembed.modularasm.modularASM.Variable;
-import hu.cubussapiens.modembed.modularasm.modularASM.VariableDecl;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -61,8 +60,8 @@ public class ModuleInstance {
 		this.manager = manager;
 		
 		for(ModuleItem item : module.getItems()){
-			if (item instanceof VariableDecl){
-				Variable v = ((VariableDecl) item).getVariable();
+			if (item instanceof Variable){
+				Variable v = ((Variable) item);
 				VariableInstance vi = new VariableInstance(this, v);
 				ISymbol vs = manager.symbolManager.createVariableSymbol(vi);
 				variables.put(v.getName(), vs);
@@ -83,8 +82,6 @@ public class ModuleInstance {
 				functions.put(f.getName(), fs);
 			}
 		}
-		
-		//for(Variable v)
 	}
 	
 	public String getRootReference(){

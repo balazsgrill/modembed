@@ -6,53 +6,56 @@
  */
 package hu.cubussapiens.modembed.modularasm.modularASM.impl;
 
-import hu.cubussapiens.modembed.modularasm.modularASM.Function;
 import hu.cubussapiens.modembed.modularasm.modularASM.ModularASMPackage;
-import hu.cubussapiens.modembed.modularasm.modularASM.Step;
+import hu.cubussapiens.modembed.modularasm.modularASM.Symbol;
 
-import java.util.Collection;
-
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Function</b></em>'.
+ * An implementation of the model object '<em><b>Symbol</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.cubussapiens.modembed.modularasm.modularASM.impl.FunctionImpl#getStep <em>Step</em>}</li>
+ *   <li>{@link hu.cubussapiens.modembed.modularasm.modularASM.impl.SymbolImpl#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class FunctionImpl extends ModuleItemImpl implements Function
+public class SymbolImpl extends ModuleItemImpl implements Symbol
 {
   /**
-   * The cached value of the '{@link #getStep() <em>Step</em>}' containment reference list.
+   * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getStep()
+   * @see #getValue()
    * @generated
    * @ordered
    */
-  protected EList<Step> step;
+  protected static final int VALUE_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getValue()
+   * @generated
+   * @ordered
+   */
+  protected int value = VALUE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected FunctionImpl()
+  protected SymbolImpl()
   {
     super();
   }
@@ -65,7 +68,7 @@ public class FunctionImpl extends ModuleItemImpl implements Function
   @Override
   protected EClass eStaticClass()
   {
-    return ModularASMPackage.Literals.FUNCTION;
+    return ModularASMPackage.Literals.SYMBOL;
   }
 
   /**
@@ -73,13 +76,9 @@ public class FunctionImpl extends ModuleItemImpl implements Function
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Step> getStep()
+  public int getValue()
   {
-    if (step == null)
-    {
-      step = new EObjectContainmentEList<Step>(Step.class, this, ModularASMPackage.FUNCTION__STEP);
-    }
-    return step;
+    return value;
   }
 
   /**
@@ -87,15 +86,12 @@ public class FunctionImpl extends ModuleItemImpl implements Function
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  public void setValue(int newValue)
   {
-    switch (featureID)
-    {
-      case ModularASMPackage.FUNCTION__STEP:
-        return ((InternalEList<?>)getStep()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+    int oldValue = value;
+    value = newValue;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ModularASMPackage.SYMBOL__VALUE, oldValue, value));
   }
 
   /**
@@ -108,8 +104,8 @@ public class FunctionImpl extends ModuleItemImpl implements Function
   {
     switch (featureID)
     {
-      case ModularASMPackage.FUNCTION__STEP:
-        return getStep();
+      case ModularASMPackage.SYMBOL__VALUE:
+        return getValue();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -119,15 +115,13 @@ public class FunctionImpl extends ModuleItemImpl implements Function
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case ModularASMPackage.FUNCTION__STEP:
-        getStep().clear();
-        getStep().addAll((Collection<? extends Step>)newValue);
+      case ModularASMPackage.SYMBOL__VALUE:
+        setValue((Integer)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -143,8 +137,8 @@ public class FunctionImpl extends ModuleItemImpl implements Function
   {
     switch (featureID)
     {
-      case ModularASMPackage.FUNCTION__STEP:
-        getStep().clear();
+      case ModularASMPackage.SYMBOL__VALUE:
+        setValue(VALUE_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -160,10 +154,27 @@ public class FunctionImpl extends ModuleItemImpl implements Function
   {
     switch (featureID)
     {
-      case ModularASMPackage.FUNCTION__STEP:
-        return step != null && !step.isEmpty();
+      case ModularASMPackage.SYMBOL__VALUE:
+        return value != VALUE_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
 
-} //FunctionImpl
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (value: ");
+    result.append(value);
+    result.append(')');
+    return result.toString();
+  }
+
+} //SymbolImpl

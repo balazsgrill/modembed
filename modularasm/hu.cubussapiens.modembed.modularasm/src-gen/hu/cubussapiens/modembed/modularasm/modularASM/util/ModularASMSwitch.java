@@ -128,7 +128,14 @@ public class ModularASMSwitch<T>
       {
         VariableDecl variableDecl = (VariableDecl)theEObject;
         T result = caseVariableDecl(variableDecl);
-        if (result == null) result = caseModuleItem(variableDecl);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModularASMPackage.SYMBOL:
+      {
+        Symbol symbol = (Symbol)theEObject;
+        T result = caseSymbol(symbol);
+        if (result == null) result = caseModuleItem(symbol);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -136,6 +143,7 @@ public class ModularASMSwitch<T>
       {
         Variable variable = (Variable)theEObject;
         T result = caseVariable(variable);
+        if (result == null) result = caseModuleItem(variable);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -281,6 +289,22 @@ public class ModularASMSwitch<T>
    * @generated
    */
   public T caseVariableDecl(VariableDecl object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Symbol</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Symbol</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSymbol(Symbol object)
   {
     return null;
   }

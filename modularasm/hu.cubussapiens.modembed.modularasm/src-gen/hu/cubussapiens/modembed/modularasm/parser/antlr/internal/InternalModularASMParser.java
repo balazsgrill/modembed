@@ -24,7 +24,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalModularASMParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_HEXINT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'module'", "'target'", "'{'", "'('", "')'", "'}'", "'literal'", "'callback'", "'address'", "'.'", "';'", "'public'", "'var'", "'instance'", "'func'", "'label'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_HEXINT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'module'", "'target'", "'{'", "'('", "')'", "'}'", "'literal'", "'callback'", "'address'", "'.'", "';'", "'public'", "'symbol'", "'var'", "'instance'", "'func'", "'label'"
     };
     public static final int RULE_ID=4;
     public static final int RULE_STRING=7;
@@ -224,7 +224,7 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( ((LA1_0>=23 && LA1_0<=26)) ) {
+                if ( ((LA1_0>=24 && LA1_0<=27)) ) {
                     alt1=1;
                 }
 
@@ -853,65 +853,71 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start ruleModuleItem
-    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:428:1: ruleModuleItem returns [EObject current=null] : ( (this_VariableDecl_0= ruleVariableDecl | this_Instance_1= ruleInstance | this_Function_2= ruleFunction ) ';' ) ;
+    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:428:1: ruleModuleItem returns [EObject current=null] : ( (this_Variable_0= ruleVariable | this_Instance_1= ruleInstance | this_Function_2= ruleFunction | this_Symbol_3= ruleSymbol ) ';' ) ;
     public final EObject ruleModuleItem() throws RecognitionException {
         EObject current = null;
 
-        EObject this_VariableDecl_0 = null;
+        EObject this_Variable_0 = null;
 
         EObject this_Instance_1 = null;
 
         EObject this_Function_2 = null;
 
+        EObject this_Symbol_3 = null;
+
 
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:433:6: ( ( (this_VariableDecl_0= ruleVariableDecl | this_Instance_1= ruleInstance | this_Function_2= ruleFunction ) ';' ) )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:434:1: ( (this_VariableDecl_0= ruleVariableDecl | this_Instance_1= ruleInstance | this_Function_2= ruleFunction ) ';' )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:433:6: ( ( (this_Variable_0= ruleVariable | this_Instance_1= ruleInstance | this_Function_2= ruleFunction | this_Symbol_3= ruleSymbol ) ';' ) )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:434:1: ( (this_Variable_0= ruleVariable | this_Instance_1= ruleInstance | this_Function_2= ruleFunction | this_Symbol_3= ruleSymbol ) ';' )
             {
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:434:1: ( (this_VariableDecl_0= ruleVariableDecl | this_Instance_1= ruleInstance | this_Function_2= ruleFunction ) ';' )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:434:2: (this_VariableDecl_0= ruleVariableDecl | this_Instance_1= ruleInstance | this_Function_2= ruleFunction ) ';'
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:434:1: ( (this_Variable_0= ruleVariable | this_Instance_1= ruleInstance | this_Function_2= ruleFunction | this_Symbol_3= ruleSymbol ) ';' )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:434:2: (this_Variable_0= ruleVariable | this_Instance_1= ruleInstance | this_Function_2= ruleFunction | this_Symbol_3= ruleSymbol ) ';'
             {
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:434:2: (this_VariableDecl_0= ruleVariableDecl | this_Instance_1= ruleInstance | this_Function_2= ruleFunction )
-            int alt6=3;
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:434:2: (this_Variable_0= ruleVariable | this_Instance_1= ruleInstance | this_Function_2= ruleFunction | this_Symbol_3= ruleSymbol )
+            int alt6=4;
             switch ( input.LA(1) ) {
-            case 23:
-            case 24:
+            case 25:
                 {
                 alt6=1;
                 }
                 break;
-            case 25:
+            case 26:
                 {
                 alt6=2;
                 }
                 break;
-            case 26:
+            case 27:
                 {
                 alt6=3;
                 }
                 break;
+            case 24:
+                {
+                alt6=4;
+                }
+                break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("434:2: (this_VariableDecl_0= ruleVariableDecl | this_Instance_1= ruleInstance | this_Function_2= ruleFunction )", 6, 0, input);
+                    new NoViableAltException("434:2: (this_Variable_0= ruleVariable | this_Instance_1= ruleInstance | this_Function_2= ruleFunction | this_Symbol_3= ruleSymbol )", 6, 0, input);
 
                 throw nvae;
             }
 
             switch (alt6) {
                 case 1 :
-                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:435:5: this_VariableDecl_0= ruleVariableDecl
+                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:435:5: this_Variable_0= ruleVariable
                     {
                      
-                            currentNode=createCompositeNode(grammarAccess.getModuleItemAccess().getVariableDeclParserRuleCall_0_0(), currentNode); 
+                            currentNode=createCompositeNode(grammarAccess.getModuleItemAccess().getVariableParserRuleCall_0_0(), currentNode); 
                         
-                    pushFollow(FOLLOW_ruleVariableDecl_in_ruleModuleItem738);
-                    this_VariableDecl_0=ruleVariableDecl();
+                    pushFollow(FOLLOW_ruleVariable_in_ruleModuleItem738);
+                    this_Variable_0=ruleVariable();
                     _fsp--;
 
                      
-                            current = this_VariableDecl_0; 
+                            current = this_Variable_0; 
                             currentNode = currentNode.getParent();
                         
 
@@ -951,10 +957,27 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
+                case 4 :
+                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:465:5: this_Symbol_3= ruleSymbol
+                    {
+                     
+                            currentNode=createCompositeNode(grammarAccess.getModuleItemAccess().getSymbolParserRuleCall_0_3(), currentNode); 
+                        
+                    pushFollow(FOLLOW_ruleSymbol_in_ruleModuleItem819);
+                    this_Symbol_3=ruleSymbol();
+                    _fsp--;
+
+                     
+                            current = this_Symbol_3; 
+                            currentNode = currentNode.getParent();
+                        
+
+                    }
+                    break;
 
             }
 
-            match(input,22,FOLLOW_22_in_ruleModuleItem802); 
+            match(input,22,FOLLOW_22_in_ruleModuleItem829); 
 
                     createLeafNode(grammarAccess.getModuleItemAccess().getSemicolonKeyword_1(), null); 
                 
@@ -981,7 +1004,7 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start entryRuleModifier
-    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:475:1: entryRuleModifier returns [String current=null] : iv_ruleModifier= ruleModifier EOF ;
+    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:485:1: entryRuleModifier returns [String current=null] : iv_ruleModifier= ruleModifier EOF ;
     public final String entryRuleModifier() throws RecognitionException {
         String current = null;
 
@@ -989,16 +1012,16 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:476:2: (iv_ruleModifier= ruleModifier EOF )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:477:2: iv_ruleModifier= ruleModifier EOF
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:486:2: (iv_ruleModifier= ruleModifier EOF )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:487:2: iv_ruleModifier= ruleModifier EOF
             {
              currentNode = createCompositeNode(grammarAccess.getModifierRule(), currentNode); 
-            pushFollow(FOLLOW_ruleModifier_in_entryRuleModifier839);
+            pushFollow(FOLLOW_ruleModifier_in_entryRuleModifier866);
             iv_ruleModifier=ruleModifier();
             _fsp--;
 
              current =iv_ruleModifier.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleModifier850); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleModifier877); 
 
             }
 
@@ -1016,7 +1039,7 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start ruleModifier
-    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:484:1: ruleModifier returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'public' ;
+    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:494:1: ruleModifier returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'public' ;
     public final AntlrDatatypeRuleToken ruleModifier() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -1025,11 +1048,11 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
          setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:489:6: (kw= 'public' )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:491:2: kw= 'public'
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:499:6: (kw= 'public' )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:501:2: kw= 'public'
             {
             kw=(Token)input.LT(1);
-            match(input,23,FOLLOW_23_in_ruleModifier887); 
+            match(input,23,FOLLOW_23_in_ruleModifier914); 
 
                     current.merge(kw);
                     createLeafNode(grammarAccess.getModifierAccess().getPublicKeyword(), null); 
@@ -1053,25 +1076,25 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
     // $ANTLR end ruleModifier
 
 
-    // $ANTLR start entryRuleVariableDecl
-    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:504:1: entryRuleVariableDecl returns [EObject current=null] : iv_ruleVariableDecl= ruleVariableDecl EOF ;
-    public final EObject entryRuleVariableDecl() throws RecognitionException {
+    // $ANTLR start entryRuleSymbol
+    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:516:1: entryRuleSymbol returns [EObject current=null] : iv_ruleSymbol= ruleSymbol EOF ;
+    public final EObject entryRuleSymbol() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleVariableDecl = null;
+        EObject iv_ruleSymbol = null;
 
 
         try {
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:505:2: (iv_ruleVariableDecl= ruleVariableDecl EOF )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:506:2: iv_ruleVariableDecl= ruleVariableDecl EOF
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:517:2: (iv_ruleSymbol= ruleSymbol EOF )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:518:2: iv_ruleSymbol= ruleSymbol EOF
             {
-             currentNode = createCompositeNode(grammarAccess.getVariableDeclRule(), currentNode); 
-            pushFollow(FOLLOW_ruleVariableDecl_in_entryRuleVariableDecl926);
-            iv_ruleVariableDecl=ruleVariableDecl();
+             currentNode = createCompositeNode(grammarAccess.getSymbolRule(), currentNode); 
+            pushFollow(FOLLOW_ruleSymbol_in_entryRuleSymbol955);
+            iv_ruleSymbol=ruleSymbol();
             _fsp--;
 
-             current =iv_ruleVariableDecl; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleVariableDecl936); 
+             current =iv_ruleSymbol; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSymbol965); 
 
             }
 
@@ -1085,115 +1108,159 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end entryRuleVariableDecl
+    // $ANTLR end entryRuleSymbol
 
 
-    // $ANTLR start ruleVariableDecl
-    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:513:1: ruleVariableDecl returns [EObject current=null] : ( ( (lv_modifier_0_0= ruleModifier ) )* ( (lv_variable_1_0= ruleVariable ) ) ) ;
-    public final EObject ruleVariableDecl() throws RecognitionException {
+    // $ANTLR start ruleSymbol
+    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:525:1: ruleSymbol returns [EObject current=null] : ( 'symbol' ( (lv_name_1_0= RULE_ID ) ) ( ( (lv_value_2_0= RULE_INT ) ) | ( (lv_value_3_0= RULE_HEXINT ) ) ) ) ;
+    public final EObject ruleSymbol() throws RecognitionException {
         EObject current = null;
 
-        AntlrDatatypeRuleToken lv_modifier_0_0 = null;
-
-        EObject lv_variable_1_0 = null;
-
+        Token lv_name_1_0=null;
+        Token lv_value_2_0=null;
+        Token lv_value_3_0=null;
 
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:518:6: ( ( ( (lv_modifier_0_0= ruleModifier ) )* ( (lv_variable_1_0= ruleVariable ) ) ) )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:519:1: ( ( (lv_modifier_0_0= ruleModifier ) )* ( (lv_variable_1_0= ruleVariable ) ) )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:530:6: ( ( 'symbol' ( (lv_name_1_0= RULE_ID ) ) ( ( (lv_value_2_0= RULE_INT ) ) | ( (lv_value_3_0= RULE_HEXINT ) ) ) ) )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:531:1: ( 'symbol' ( (lv_name_1_0= RULE_ID ) ) ( ( (lv_value_2_0= RULE_INT ) ) | ( (lv_value_3_0= RULE_HEXINT ) ) ) )
             {
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:519:1: ( ( (lv_modifier_0_0= ruleModifier ) )* ( (lv_variable_1_0= ruleVariable ) ) )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:519:2: ( (lv_modifier_0_0= ruleModifier ) )* ( (lv_variable_1_0= ruleVariable ) )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:531:1: ( 'symbol' ( (lv_name_1_0= RULE_ID ) ) ( ( (lv_value_2_0= RULE_INT ) ) | ( (lv_value_3_0= RULE_HEXINT ) ) ) )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:531:3: 'symbol' ( (lv_name_1_0= RULE_ID ) ) ( ( (lv_value_2_0= RULE_INT ) ) | ( (lv_value_3_0= RULE_HEXINT ) ) )
             {
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:519:2: ( (lv_modifier_0_0= ruleModifier ) )*
-            loop7:
-            do {
-                int alt7=2;
-                int LA7_0 = input.LA(1);
+            match(input,24,FOLLOW_24_in_ruleSymbol1000); 
 
-                if ( (LA7_0==23) ) {
-                    alt7=1;
-                }
-
-
-                switch (alt7) {
-            	case 1 :
-            	    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:520:1: (lv_modifier_0_0= ruleModifier )
-            	    {
-            	    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:520:1: (lv_modifier_0_0= ruleModifier )
-            	    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:521:3: lv_modifier_0_0= ruleModifier
-            	    {
-            	     
-            	    	        currentNode=createCompositeNode(grammarAccess.getVariableDeclAccess().getModifierModifierParserRuleCall_0_0(), currentNode); 
-            	    	    
-            	    pushFollow(FOLLOW_ruleModifier_in_ruleVariableDecl982);
-            	    lv_modifier_0_0=ruleModifier();
-            	    _fsp--;
-
-
-            	    	        if (current==null) {
-            	    	            current = factory.create(grammarAccess.getVariableDeclRule().getType().getClassifier());
-            	    	            associateNodeWithAstElement(currentNode.getParent(), current);
-            	    	        }
-            	    	        try {
-            	    	       		add(
-            	    	       			current, 
-            	    	       			"modifier",
-            	    	        		lv_modifier_0_0, 
-            	    	        		"Modifier", 
-            	    	        		currentNode);
-            	    	        } catch (ValueConverterException vce) {
-            	    				handleValueConverterException(vce);
-            	    	        }
-            	    	        currentNode = currentNode.getParent();
-            	    	    
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop7;
-                }
-            } while (true);
-
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:543:3: ( (lv_variable_1_0= ruleVariable ) )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:544:1: (lv_variable_1_0= ruleVariable )
+                    createLeafNode(grammarAccess.getSymbolAccess().getSymbolKeyword_0(), null); 
+                
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:535:1: ( (lv_name_1_0= RULE_ID ) )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:536:1: (lv_name_1_0= RULE_ID )
             {
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:544:1: (lv_variable_1_0= ruleVariable )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:545:3: lv_variable_1_0= ruleVariable
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:536:1: (lv_name_1_0= RULE_ID )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:537:3: lv_name_1_0= RULE_ID
             {
-             
-            	        currentNode=createCompositeNode(grammarAccess.getVariableDeclAccess().getVariableVariableParserRuleCall_1_0(), currentNode); 
-            	    
-            pushFollow(FOLLOW_ruleVariable_in_ruleVariableDecl1004);
-            lv_variable_1_0=ruleVariable();
-            _fsp--;
+            lv_name_1_0=(Token)input.LT(1);
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleSymbol1017); 
 
+            			createLeafNode(grammarAccess.getSymbolAccess().getNameIDTerminalRuleCall_1_0(), "name"); 
+            		
 
             	        if (current==null) {
-            	            current = factory.create(grammarAccess.getVariableDeclRule().getType().getClassifier());
-            	            associateNodeWithAstElement(currentNode.getParent(), current);
+            	            current = factory.create(grammarAccess.getSymbolRule().getType().getClassifier());
+            	            associateNodeWithAstElement(currentNode, current);
             	        }
             	        try {
             	       		set(
             	       			current, 
-            	       			"variable",
-            	        		lv_variable_1_0, 
-            	        		"Variable", 
-            	        		currentNode);
+            	       			"name",
+            	        		lv_name_1_0, 
+            	        		"ID", 
+            	        		lastConsumedNode);
             	        } catch (ValueConverterException vce) {
             				handleValueConverterException(vce);
             	        }
-            	        currentNode = currentNode.getParent();
             	    
 
             }
 
+
+            }
+
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:559:2: ( ( (lv_value_2_0= RULE_INT ) ) | ( (lv_value_3_0= RULE_HEXINT ) ) )
+            int alt7=2;
+            int LA7_0 = input.LA(1);
+
+            if ( (LA7_0==RULE_INT) ) {
+                alt7=1;
+            }
+            else if ( (LA7_0==RULE_HEXINT) ) {
+                alt7=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("559:2: ( ( (lv_value_2_0= RULE_INT ) ) | ( (lv_value_3_0= RULE_HEXINT ) ) )", 7, 0, input);
+
+                throw nvae;
+            }
+            switch (alt7) {
+                case 1 :
+                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:559:3: ( (lv_value_2_0= RULE_INT ) )
+                    {
+                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:559:3: ( (lv_value_2_0= RULE_INT ) )
+                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:560:1: (lv_value_2_0= RULE_INT )
+                    {
+                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:560:1: (lv_value_2_0= RULE_INT )
+                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:561:3: lv_value_2_0= RULE_INT
+                    {
+                    lv_value_2_0=(Token)input.LT(1);
+                    match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleSymbol1040); 
+
+                    			createLeafNode(grammarAccess.getSymbolAccess().getValueINTTerminalRuleCall_2_0_0(), "value"); 
+                    		
+
+                    	        if (current==null) {
+                    	            current = factory.create(grammarAccess.getSymbolRule().getType().getClassifier());
+                    	            associateNodeWithAstElement(currentNode, current);
+                    	        }
+                    	        try {
+                    	       		set(
+                    	       			current, 
+                    	       			"value",
+                    	        		lv_value_2_0, 
+                    	        		"INT", 
+                    	        		lastConsumedNode);
+                    	        } catch (ValueConverterException vce) {
+                    				handleValueConverterException(vce);
+                    	        }
+                    	    
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:584:6: ( (lv_value_3_0= RULE_HEXINT ) )
+                    {
+                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:584:6: ( (lv_value_3_0= RULE_HEXINT ) )
+                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:585:1: (lv_value_3_0= RULE_HEXINT )
+                    {
+                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:585:1: (lv_value_3_0= RULE_HEXINT )
+                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:586:3: lv_value_3_0= RULE_HEXINT
+                    {
+                    lv_value_3_0=(Token)input.LT(1);
+                    match(input,RULE_HEXINT,FOLLOW_RULE_HEXINT_in_ruleSymbol1068); 
+
+                    			createLeafNode(grammarAccess.getSymbolAccess().getValueHEXINTTerminalRuleCall_2_1_0(), "value"); 
+                    		
+
+                    	        if (current==null) {
+                    	            current = factory.create(grammarAccess.getSymbolRule().getType().getClassifier());
+                    	            associateNodeWithAstElement(currentNode, current);
+                    	        }
+                    	        try {
+                    	       		set(
+                    	       			current, 
+                    	       			"value",
+                    	        		lv_value_3_0, 
+                    	        		"HEXINT", 
+                    	        		lastConsumedNode);
+                    	        } catch (ValueConverterException vce) {
+                    				handleValueConverterException(vce);
+                    	        }
+                    	    
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
 
             }
 
@@ -1216,11 +1283,11 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end ruleVariableDecl
+    // $ANTLR end ruleSymbol
 
 
     // $ANTLR start entryRuleVariable
-    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:575:1: entryRuleVariable returns [EObject current=null] : iv_ruleVariable= ruleVariable EOF ;
+    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:616:1: entryRuleVariable returns [EObject current=null] : iv_ruleVariable= ruleVariable EOF ;
     public final EObject entryRuleVariable() throws RecognitionException {
         EObject current = null;
 
@@ -1228,16 +1295,16 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:576:2: (iv_ruleVariable= ruleVariable EOF )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:577:2: iv_ruleVariable= ruleVariable EOF
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:617:2: (iv_ruleVariable= ruleVariable EOF )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:618:2: iv_ruleVariable= ruleVariable EOF
             {
              currentNode = createCompositeNode(grammarAccess.getVariableRule(), currentNode); 
-            pushFollow(FOLLOW_ruleVariable_in_entryRuleVariable1040);
+            pushFollow(FOLLOW_ruleVariable_in_entryRuleVariable1110);
             iv_ruleVariable=ruleVariable();
             _fsp--;
 
              current =iv_ruleVariable; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleVariable1050); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleVariable1120); 
 
             }
 
@@ -1255,7 +1322,7 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start ruleVariable
-    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:584:1: ruleVariable returns [EObject current=null] : ( 'var' ( (lv_name_1_0= RULE_ID ) ) ) ;
+    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:625:1: ruleVariable returns [EObject current=null] : ( 'var' ( (lv_name_1_0= RULE_ID ) ) ) ;
     public final EObject ruleVariable() throws RecognitionException {
         EObject current = null;
 
@@ -1264,24 +1331,24 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:589:6: ( ( 'var' ( (lv_name_1_0= RULE_ID ) ) ) )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:590:1: ( 'var' ( (lv_name_1_0= RULE_ID ) ) )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:630:6: ( ( 'var' ( (lv_name_1_0= RULE_ID ) ) ) )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:631:1: ( 'var' ( (lv_name_1_0= RULE_ID ) ) )
             {
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:590:1: ( 'var' ( (lv_name_1_0= RULE_ID ) ) )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:590:3: 'var' ( (lv_name_1_0= RULE_ID ) )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:631:1: ( 'var' ( (lv_name_1_0= RULE_ID ) ) )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:631:3: 'var' ( (lv_name_1_0= RULE_ID ) )
             {
-            match(input,24,FOLLOW_24_in_ruleVariable1085); 
+            match(input,25,FOLLOW_25_in_ruleVariable1155); 
 
                     createLeafNode(grammarAccess.getVariableAccess().getVarKeyword_0(), null); 
                 
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:594:1: ( (lv_name_1_0= RULE_ID ) )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:595:1: (lv_name_1_0= RULE_ID )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:635:1: ( (lv_name_1_0= RULE_ID ) )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:636:1: (lv_name_1_0= RULE_ID )
             {
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:595:1: (lv_name_1_0= RULE_ID )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:596:3: lv_name_1_0= RULE_ID
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:636:1: (lv_name_1_0= RULE_ID )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:637:3: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)input.LT(1);
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleVariable1102); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleVariable1172); 
 
             			createLeafNode(grammarAccess.getVariableAccess().getNameIDTerminalRuleCall_1_0(), "name"); 
             		
@@ -1330,7 +1397,7 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start entryRuleInstance
-    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:626:1: entryRuleInstance returns [EObject current=null] : iv_ruleInstance= ruleInstance EOF ;
+    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:667:1: entryRuleInstance returns [EObject current=null] : iv_ruleInstance= ruleInstance EOF ;
     public final EObject entryRuleInstance() throws RecognitionException {
         EObject current = null;
 
@@ -1338,16 +1405,16 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:627:2: (iv_ruleInstance= ruleInstance EOF )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:628:2: iv_ruleInstance= ruleInstance EOF
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:668:2: (iv_ruleInstance= ruleInstance EOF )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:669:2: iv_ruleInstance= ruleInstance EOF
             {
              currentNode = createCompositeNode(grammarAccess.getInstanceRule(), currentNode); 
-            pushFollow(FOLLOW_ruleInstance_in_entryRuleInstance1143);
+            pushFollow(FOLLOW_ruleInstance_in_entryRuleInstance1213);
             iv_ruleInstance=ruleInstance();
             _fsp--;
 
              current =iv_ruleInstance; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleInstance1153); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleInstance1223); 
 
             }
 
@@ -1365,7 +1432,7 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start ruleInstance
-    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:635:1: ruleInstance returns [EObject current=null] : ( 'instance' ( (lv_type_1_0= ruleQualifiedID ) ) ( (lv_name_2_0= RULE_ID ) ) ( '(' ( (lv_params_4_0= ruleModuleParam ) )* ')' )? ) ;
+    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:676:1: ruleInstance returns [EObject current=null] : ( 'instance' ( (lv_type_1_0= ruleQualifiedID ) ) ( (lv_name_2_0= RULE_ID ) ) ( '(' ( (lv_params_4_0= ruleModuleParam ) )* ')' )? ) ;
     public final EObject ruleInstance() throws RecognitionException {
         EObject current = null;
 
@@ -1378,26 +1445,26 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:640:6: ( ( 'instance' ( (lv_type_1_0= ruleQualifiedID ) ) ( (lv_name_2_0= RULE_ID ) ) ( '(' ( (lv_params_4_0= ruleModuleParam ) )* ')' )? ) )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:641:1: ( 'instance' ( (lv_type_1_0= ruleQualifiedID ) ) ( (lv_name_2_0= RULE_ID ) ) ( '(' ( (lv_params_4_0= ruleModuleParam ) )* ')' )? )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:681:6: ( ( 'instance' ( (lv_type_1_0= ruleQualifiedID ) ) ( (lv_name_2_0= RULE_ID ) ) ( '(' ( (lv_params_4_0= ruleModuleParam ) )* ')' )? ) )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:682:1: ( 'instance' ( (lv_type_1_0= ruleQualifiedID ) ) ( (lv_name_2_0= RULE_ID ) ) ( '(' ( (lv_params_4_0= ruleModuleParam ) )* ')' )? )
             {
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:641:1: ( 'instance' ( (lv_type_1_0= ruleQualifiedID ) ) ( (lv_name_2_0= RULE_ID ) ) ( '(' ( (lv_params_4_0= ruleModuleParam ) )* ')' )? )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:641:3: 'instance' ( (lv_type_1_0= ruleQualifiedID ) ) ( (lv_name_2_0= RULE_ID ) ) ( '(' ( (lv_params_4_0= ruleModuleParam ) )* ')' )?
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:682:1: ( 'instance' ( (lv_type_1_0= ruleQualifiedID ) ) ( (lv_name_2_0= RULE_ID ) ) ( '(' ( (lv_params_4_0= ruleModuleParam ) )* ')' )? )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:682:3: 'instance' ( (lv_type_1_0= ruleQualifiedID ) ) ( (lv_name_2_0= RULE_ID ) ) ( '(' ( (lv_params_4_0= ruleModuleParam ) )* ')' )?
             {
-            match(input,25,FOLLOW_25_in_ruleInstance1188); 
+            match(input,26,FOLLOW_26_in_ruleInstance1258); 
 
                     createLeafNode(grammarAccess.getInstanceAccess().getInstanceKeyword_0(), null); 
                 
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:645:1: ( (lv_type_1_0= ruleQualifiedID ) )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:646:1: (lv_type_1_0= ruleQualifiedID )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:686:1: ( (lv_type_1_0= ruleQualifiedID ) )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:687:1: (lv_type_1_0= ruleQualifiedID )
             {
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:646:1: (lv_type_1_0= ruleQualifiedID )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:647:3: lv_type_1_0= ruleQualifiedID
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:687:1: (lv_type_1_0= ruleQualifiedID )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:688:3: lv_type_1_0= ruleQualifiedID
             {
              
             	        currentNode=createCompositeNode(grammarAccess.getInstanceAccess().getTypeQualifiedIDParserRuleCall_1_0(), currentNode); 
             	    
-            pushFollow(FOLLOW_ruleQualifiedID_in_ruleInstance1209);
+            pushFollow(FOLLOW_ruleQualifiedID_in_ruleInstance1279);
             lv_type_1_0=ruleQualifiedID();
             _fsp--;
 
@@ -1424,14 +1491,14 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:669:2: ( (lv_name_2_0= RULE_ID ) )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:670:1: (lv_name_2_0= RULE_ID )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:710:2: ( (lv_name_2_0= RULE_ID ) )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:711:1: (lv_name_2_0= RULE_ID )
             {
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:670:1: (lv_name_2_0= RULE_ID )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:671:3: lv_name_2_0= RULE_ID
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:711:1: (lv_name_2_0= RULE_ID )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:712:3: lv_name_2_0= RULE_ID
             {
             lv_name_2_0=(Token)input.LT(1);
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleInstance1226); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleInstance1296); 
 
             			createLeafNode(grammarAccess.getInstanceAccess().getNameIDTerminalRuleCall_2_0(), "name"); 
             		
@@ -1457,7 +1524,7 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:693:2: ( '(' ( (lv_params_4_0= ruleModuleParam ) )* ')' )?
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:734:2: ( '(' ( (lv_params_4_0= ruleModuleParam ) )* ')' )?
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -1466,13 +1533,13 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
             }
             switch (alt9) {
                 case 1 :
-                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:693:4: '(' ( (lv_params_4_0= ruleModuleParam ) )* ')'
+                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:734:4: '(' ( (lv_params_4_0= ruleModuleParam ) )* ')'
                     {
-                    match(input,15,FOLLOW_15_in_ruleInstance1242); 
+                    match(input,15,FOLLOW_15_in_ruleInstance1312); 
 
                             createLeafNode(grammarAccess.getInstanceAccess().getLeftParenthesisKeyword_3_0(), null); 
                         
-                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:697:1: ( (lv_params_4_0= ruleModuleParam ) )*
+                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:738:1: ( (lv_params_4_0= ruleModuleParam ) )*
                     loop8:
                     do {
                         int alt8=2;
@@ -1485,15 +1552,15 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
 
                         switch (alt8) {
                     	case 1 :
-                    	    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:698:1: (lv_params_4_0= ruleModuleParam )
+                    	    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:739:1: (lv_params_4_0= ruleModuleParam )
                     	    {
-                    	    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:698:1: (lv_params_4_0= ruleModuleParam )
-                    	    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:699:3: lv_params_4_0= ruleModuleParam
+                    	    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:739:1: (lv_params_4_0= ruleModuleParam )
+                    	    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:740:3: lv_params_4_0= ruleModuleParam
                     	    {
                     	     
                     	    	        currentNode=createCompositeNode(grammarAccess.getInstanceAccess().getParamsModuleParamParserRuleCall_3_1_0(), currentNode); 
                     	    	    
-                    	    pushFollow(FOLLOW_ruleModuleParam_in_ruleInstance1263);
+                    	    pushFollow(FOLLOW_ruleModuleParam_in_ruleInstance1333);
                     	    lv_params_4_0=ruleModuleParam();
                     	    _fsp--;
 
@@ -1526,7 +1593,7 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    match(input,16,FOLLOW_16_in_ruleInstance1274); 
+                    match(input,16,FOLLOW_16_in_ruleInstance1344); 
 
                             createLeafNode(grammarAccess.getInstanceAccess().getRightParenthesisKeyword_3_2(), null); 
                         
@@ -1559,7 +1626,7 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start entryRuleFunction
-    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:733:1: entryRuleFunction returns [EObject current=null] : iv_ruleFunction= ruleFunction EOF ;
+    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:774:1: entryRuleFunction returns [EObject current=null] : iv_ruleFunction= ruleFunction EOF ;
     public final EObject entryRuleFunction() throws RecognitionException {
         EObject current = null;
 
@@ -1567,16 +1634,16 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:734:2: (iv_ruleFunction= ruleFunction EOF )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:735:2: iv_ruleFunction= ruleFunction EOF
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:775:2: (iv_ruleFunction= ruleFunction EOF )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:776:2: iv_ruleFunction= ruleFunction EOF
             {
              currentNode = createCompositeNode(grammarAccess.getFunctionRule(), currentNode); 
-            pushFollow(FOLLOW_ruleFunction_in_entryRuleFunction1312);
+            pushFollow(FOLLOW_ruleFunction_in_entryRuleFunction1382);
             iv_ruleFunction=ruleFunction();
             _fsp--;
 
              current =iv_ruleFunction; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFunction1322); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFunction1392); 
 
             }
 
@@ -1594,7 +1661,7 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start ruleFunction
-    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:742:1: ruleFunction returns [EObject current=null] : ( 'func' ( (lv_name_1_0= RULE_ID ) ) '{' ( ( (lv_step_3_0= ruleStep ) ) ';' )* '}' ) ;
+    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:783:1: ruleFunction returns [EObject current=null] : ( 'func' ( (lv_name_1_0= RULE_ID ) ) '{' ( ( (lv_step_3_0= ruleStep ) ) ';' )* '}' ) ;
     public final EObject ruleFunction() throws RecognitionException {
         EObject current = null;
 
@@ -1605,24 +1672,24 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:747:6: ( ( 'func' ( (lv_name_1_0= RULE_ID ) ) '{' ( ( (lv_step_3_0= ruleStep ) ) ';' )* '}' ) )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:748:1: ( 'func' ( (lv_name_1_0= RULE_ID ) ) '{' ( ( (lv_step_3_0= ruleStep ) ) ';' )* '}' )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:788:6: ( ( 'func' ( (lv_name_1_0= RULE_ID ) ) '{' ( ( (lv_step_3_0= ruleStep ) ) ';' )* '}' ) )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:789:1: ( 'func' ( (lv_name_1_0= RULE_ID ) ) '{' ( ( (lv_step_3_0= ruleStep ) ) ';' )* '}' )
             {
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:748:1: ( 'func' ( (lv_name_1_0= RULE_ID ) ) '{' ( ( (lv_step_3_0= ruleStep ) ) ';' )* '}' )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:748:3: 'func' ( (lv_name_1_0= RULE_ID ) ) '{' ( ( (lv_step_3_0= ruleStep ) ) ';' )* '}'
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:789:1: ( 'func' ( (lv_name_1_0= RULE_ID ) ) '{' ( ( (lv_step_3_0= ruleStep ) ) ';' )* '}' )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:789:3: 'func' ( (lv_name_1_0= RULE_ID ) ) '{' ( ( (lv_step_3_0= ruleStep ) ) ';' )* '}'
             {
-            match(input,26,FOLLOW_26_in_ruleFunction1357); 
+            match(input,27,FOLLOW_27_in_ruleFunction1427); 
 
                     createLeafNode(grammarAccess.getFunctionAccess().getFuncKeyword_0(), null); 
                 
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:752:1: ( (lv_name_1_0= RULE_ID ) )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:753:1: (lv_name_1_0= RULE_ID )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:793:1: ( (lv_name_1_0= RULE_ID ) )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:794:1: (lv_name_1_0= RULE_ID )
             {
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:753:1: (lv_name_1_0= RULE_ID )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:754:3: lv_name_1_0= RULE_ID
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:794:1: (lv_name_1_0= RULE_ID )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:795:3: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)input.LT(1);
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleFunction1374); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleFunction1444); 
 
             			createLeafNode(grammarAccess.getFunctionAccess().getNameIDTerminalRuleCall_1_0(), "name"); 
             		
@@ -1648,35 +1715,35 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
 
             }
 
-            match(input,14,FOLLOW_14_in_ruleFunction1389); 
+            match(input,14,FOLLOW_14_in_ruleFunction1459); 
 
                     createLeafNode(grammarAccess.getFunctionAccess().getLeftCurlyBracketKeyword_2(), null); 
                 
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:780:1: ( ( (lv_step_3_0= ruleStep ) ) ';' )*
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:821:1: ( ( (lv_step_3_0= ruleStep ) ) ';' )*
             loop10:
             do {
                 int alt10=2;
                 int LA10_0 = input.LA(1);
 
-                if ( (LA10_0==RULE_ID||LA10_0==27) ) {
+                if ( (LA10_0==RULE_ID||LA10_0==28) ) {
                     alt10=1;
                 }
 
 
                 switch (alt10) {
             	case 1 :
-            	    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:780:2: ( (lv_step_3_0= ruleStep ) ) ';'
+            	    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:821:2: ( (lv_step_3_0= ruleStep ) ) ';'
             	    {
-            	    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:780:2: ( (lv_step_3_0= ruleStep ) )
-            	    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:781:1: (lv_step_3_0= ruleStep )
+            	    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:821:2: ( (lv_step_3_0= ruleStep ) )
+            	    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:822:1: (lv_step_3_0= ruleStep )
             	    {
-            	    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:781:1: (lv_step_3_0= ruleStep )
-            	    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:782:3: lv_step_3_0= ruleStep
+            	    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:822:1: (lv_step_3_0= ruleStep )
+            	    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:823:3: lv_step_3_0= ruleStep
             	    {
             	     
             	    	        currentNode=createCompositeNode(grammarAccess.getFunctionAccess().getStepStepParserRuleCall_3_0_0(), currentNode); 
             	    	    
-            	    pushFollow(FOLLOW_ruleStep_in_ruleFunction1411);
+            	    pushFollow(FOLLOW_ruleStep_in_ruleFunction1481);
             	    lv_step_3_0=ruleStep();
             	    _fsp--;
 
@@ -1703,7 +1770,7 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    match(input,22,FOLLOW_22_in_ruleFunction1421); 
+            	    match(input,22,FOLLOW_22_in_ruleFunction1491); 
 
             	            createLeafNode(grammarAccess.getFunctionAccess().getSemicolonKeyword_3_1(), null); 
             	        
@@ -1716,7 +1783,7 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            match(input,17,FOLLOW_17_in_ruleFunction1433); 
+            match(input,17,FOLLOW_17_in_ruleFunction1503); 
 
                     createLeafNode(grammarAccess.getFunctionAccess().getRightCurlyBracketKeyword_4(), null); 
                 
@@ -1743,7 +1810,7 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start entryRuleStep
-    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:820:1: entryRuleStep returns [EObject current=null] : iv_ruleStep= ruleStep EOF ;
+    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:861:1: entryRuleStep returns [EObject current=null] : iv_ruleStep= ruleStep EOF ;
     public final EObject entryRuleStep() throws RecognitionException {
         EObject current = null;
 
@@ -1751,16 +1818,16 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:821:2: (iv_ruleStep= ruleStep EOF )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:822:2: iv_ruleStep= ruleStep EOF
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:862:2: (iv_ruleStep= ruleStep EOF )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:863:2: iv_ruleStep= ruleStep EOF
             {
              currentNode = createCompositeNode(grammarAccess.getStepRule(), currentNode); 
-            pushFollow(FOLLOW_ruleStep_in_entryRuleStep1469);
+            pushFollow(FOLLOW_ruleStep_in_entryRuleStep1539);
             iv_ruleStep=ruleStep();
             _fsp--;
 
              current =iv_ruleStep; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleStep1479); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleStep1549); 
 
             }
 
@@ -1778,7 +1845,7 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start ruleStep
-    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:829:1: ruleStep returns [EObject current=null] : (this_Instruction_0= ruleInstruction | this_Label_1= ruleLabel ) ;
+    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:870:1: ruleStep returns [EObject current=null] : (this_Instruction_0= ruleInstruction | this_Label_1= ruleLabel ) ;
     public final EObject ruleStep() throws RecognitionException {
         EObject current = null;
 
@@ -1790,33 +1857,33 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:834:6: ( (this_Instruction_0= ruleInstruction | this_Label_1= ruleLabel ) )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:835:1: (this_Instruction_0= ruleInstruction | this_Label_1= ruleLabel )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:875:6: ( (this_Instruction_0= ruleInstruction | this_Label_1= ruleLabel ) )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:876:1: (this_Instruction_0= ruleInstruction | this_Label_1= ruleLabel )
             {
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:835:1: (this_Instruction_0= ruleInstruction | this_Label_1= ruleLabel )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:876:1: (this_Instruction_0= ruleInstruction | this_Label_1= ruleLabel )
             int alt11=2;
             int LA11_0 = input.LA(1);
 
             if ( (LA11_0==RULE_ID) ) {
                 alt11=1;
             }
-            else if ( (LA11_0==27) ) {
+            else if ( (LA11_0==28) ) {
                 alt11=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("835:1: (this_Instruction_0= ruleInstruction | this_Label_1= ruleLabel )", 11, 0, input);
+                    new NoViableAltException("876:1: (this_Instruction_0= ruleInstruction | this_Label_1= ruleLabel )", 11, 0, input);
 
                 throw nvae;
             }
             switch (alt11) {
                 case 1 :
-                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:836:5: this_Instruction_0= ruleInstruction
+                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:877:5: this_Instruction_0= ruleInstruction
                     {
                      
                             currentNode=createCompositeNode(grammarAccess.getStepAccess().getInstructionParserRuleCall_0(), currentNode); 
                         
-                    pushFollow(FOLLOW_ruleInstruction_in_ruleStep1526);
+                    pushFollow(FOLLOW_ruleInstruction_in_ruleStep1596);
                     this_Instruction_0=ruleInstruction();
                     _fsp--;
 
@@ -1828,12 +1895,12 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:846:5: this_Label_1= ruleLabel
+                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:887:5: this_Label_1= ruleLabel
                     {
                      
                             currentNode=createCompositeNode(grammarAccess.getStepAccess().getLabelParserRuleCall_1(), currentNode); 
                         
-                    pushFollow(FOLLOW_ruleLabel_in_ruleStep1553);
+                    pushFollow(FOLLOW_ruleLabel_in_ruleStep1623);
                     this_Label_1=ruleLabel();
                     _fsp--;
 
@@ -1867,7 +1934,7 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start entryRuleLabel
-    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:862:1: entryRuleLabel returns [EObject current=null] : iv_ruleLabel= ruleLabel EOF ;
+    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:903:1: entryRuleLabel returns [EObject current=null] : iv_ruleLabel= ruleLabel EOF ;
     public final EObject entryRuleLabel() throws RecognitionException {
         EObject current = null;
 
@@ -1875,16 +1942,16 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:863:2: (iv_ruleLabel= ruleLabel EOF )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:864:2: iv_ruleLabel= ruleLabel EOF
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:904:2: (iv_ruleLabel= ruleLabel EOF )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:905:2: iv_ruleLabel= ruleLabel EOF
             {
              currentNode = createCompositeNode(grammarAccess.getLabelRule(), currentNode); 
-            pushFollow(FOLLOW_ruleLabel_in_entryRuleLabel1588);
+            pushFollow(FOLLOW_ruleLabel_in_entryRuleLabel1658);
             iv_ruleLabel=ruleLabel();
             _fsp--;
 
              current =iv_ruleLabel; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleLabel1598); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleLabel1668); 
 
             }
 
@@ -1902,7 +1969,7 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start ruleLabel
-    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:871:1: ruleLabel returns [EObject current=null] : ( 'label' ( (lv_name_1_0= RULE_ID ) ) ) ;
+    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:912:1: ruleLabel returns [EObject current=null] : ( 'label' ( (lv_name_1_0= RULE_ID ) ) ) ;
     public final EObject ruleLabel() throws RecognitionException {
         EObject current = null;
 
@@ -1911,24 +1978,24 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:876:6: ( ( 'label' ( (lv_name_1_0= RULE_ID ) ) ) )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:877:1: ( 'label' ( (lv_name_1_0= RULE_ID ) ) )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:917:6: ( ( 'label' ( (lv_name_1_0= RULE_ID ) ) ) )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:918:1: ( 'label' ( (lv_name_1_0= RULE_ID ) ) )
             {
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:877:1: ( 'label' ( (lv_name_1_0= RULE_ID ) ) )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:877:3: 'label' ( (lv_name_1_0= RULE_ID ) )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:918:1: ( 'label' ( (lv_name_1_0= RULE_ID ) ) )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:918:3: 'label' ( (lv_name_1_0= RULE_ID ) )
             {
-            match(input,27,FOLLOW_27_in_ruleLabel1633); 
+            match(input,28,FOLLOW_28_in_ruleLabel1703); 
 
                     createLeafNode(grammarAccess.getLabelAccess().getLabelKeyword_0(), null); 
                 
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:881:1: ( (lv_name_1_0= RULE_ID ) )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:882:1: (lv_name_1_0= RULE_ID )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:922:1: ( (lv_name_1_0= RULE_ID ) )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:923:1: (lv_name_1_0= RULE_ID )
             {
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:882:1: (lv_name_1_0= RULE_ID )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:883:3: lv_name_1_0= RULE_ID
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:923:1: (lv_name_1_0= RULE_ID )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:924:3: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)input.LT(1);
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleLabel1650); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleLabel1720); 
 
             			createLeafNode(grammarAccess.getLabelAccess().getNameIDTerminalRuleCall_1_0(), "name"); 
             		
@@ -1977,7 +2044,7 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start entryRuleInstruction
-    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:913:1: entryRuleInstruction returns [EObject current=null] : iv_ruleInstruction= ruleInstruction EOF ;
+    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:954:1: entryRuleInstruction returns [EObject current=null] : iv_ruleInstruction= ruleInstruction EOF ;
     public final EObject entryRuleInstruction() throws RecognitionException {
         EObject current = null;
 
@@ -1985,16 +2052,16 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:914:2: (iv_ruleInstruction= ruleInstruction EOF )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:915:2: iv_ruleInstruction= ruleInstruction EOF
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:955:2: (iv_ruleInstruction= ruleInstruction EOF )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:956:2: iv_ruleInstruction= ruleInstruction EOF
             {
              currentNode = createCompositeNode(grammarAccess.getInstructionRule(), currentNode); 
-            pushFollow(FOLLOW_ruleInstruction_in_entryRuleInstruction1691);
+            pushFollow(FOLLOW_ruleInstruction_in_entryRuleInstruction1761);
             iv_ruleInstruction=ruleInstruction();
             _fsp--;
 
              current =iv_ruleInstruction; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleInstruction1701); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleInstruction1771); 
 
             }
 
@@ -2012,7 +2079,7 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start ruleInstruction
-    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:922:1: ruleInstruction returns [EObject current=null] : ( ( (lv_ins_0_0= RULE_ID ) ) ( (lv_params_1_0= ruleParam ) )* ) ;
+    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:963:1: ruleInstruction returns [EObject current=null] : ( ( (lv_ins_0_0= RULE_ID ) ) ( (lv_params_1_0= ruleParam ) )* ) ;
     public final EObject ruleInstruction() throws RecognitionException {
         EObject current = null;
 
@@ -2023,20 +2090,20 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:927:6: ( ( ( (lv_ins_0_0= RULE_ID ) ) ( (lv_params_1_0= ruleParam ) )* ) )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:928:1: ( ( (lv_ins_0_0= RULE_ID ) ) ( (lv_params_1_0= ruleParam ) )* )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:968:6: ( ( ( (lv_ins_0_0= RULE_ID ) ) ( (lv_params_1_0= ruleParam ) )* ) )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:969:1: ( ( (lv_ins_0_0= RULE_ID ) ) ( (lv_params_1_0= ruleParam ) )* )
             {
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:928:1: ( ( (lv_ins_0_0= RULE_ID ) ) ( (lv_params_1_0= ruleParam ) )* )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:928:2: ( (lv_ins_0_0= RULE_ID ) ) ( (lv_params_1_0= ruleParam ) )*
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:969:1: ( ( (lv_ins_0_0= RULE_ID ) ) ( (lv_params_1_0= ruleParam ) )* )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:969:2: ( (lv_ins_0_0= RULE_ID ) ) ( (lv_params_1_0= ruleParam ) )*
             {
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:928:2: ( (lv_ins_0_0= RULE_ID ) )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:929:1: (lv_ins_0_0= RULE_ID )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:969:2: ( (lv_ins_0_0= RULE_ID ) )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:970:1: (lv_ins_0_0= RULE_ID )
             {
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:929:1: (lv_ins_0_0= RULE_ID )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:930:3: lv_ins_0_0= RULE_ID
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:970:1: (lv_ins_0_0= RULE_ID )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:971:3: lv_ins_0_0= RULE_ID
             {
             lv_ins_0_0=(Token)input.LT(1);
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleInstruction1743); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleInstruction1813); 
 
             			createLeafNode(grammarAccess.getInstructionAccess().getInsIDTerminalRuleCall_0_0(), "ins"); 
             		
@@ -2062,7 +2129,7 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:952:2: ( (lv_params_1_0= ruleParam ) )*
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:993:2: ( (lv_params_1_0= ruleParam ) )*
             loop12:
             do {
                 int alt12=2;
@@ -2075,15 +2142,15 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
 
                 switch (alt12) {
             	case 1 :
-            	    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:953:1: (lv_params_1_0= ruleParam )
+            	    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:994:1: (lv_params_1_0= ruleParam )
             	    {
-            	    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:953:1: (lv_params_1_0= ruleParam )
-            	    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:954:3: lv_params_1_0= ruleParam
+            	    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:994:1: (lv_params_1_0= ruleParam )
+            	    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:995:3: lv_params_1_0= ruleParam
             	    {
             	     
             	    	        currentNode=createCompositeNode(grammarAccess.getInstructionAccess().getParamsParamParserRuleCall_1_0(), currentNode); 
             	    	    
-            	    pushFollow(FOLLOW_ruleParam_in_ruleInstruction1769);
+            	    pushFollow(FOLLOW_ruleParam_in_ruleInstruction1839);
             	    lv_params_1_0=ruleParam();
             	    _fsp--;
 
@@ -2139,7 +2206,7 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start entryRuleParam
-    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:984:1: entryRuleParam returns [EObject current=null] : iv_ruleParam= ruleParam EOF ;
+    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1025:1: entryRuleParam returns [EObject current=null] : iv_ruleParam= ruleParam EOF ;
     public final EObject entryRuleParam() throws RecognitionException {
         EObject current = null;
 
@@ -2147,16 +2214,16 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:985:2: (iv_ruleParam= ruleParam EOF )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:986:2: iv_ruleParam= ruleParam EOF
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1026:2: (iv_ruleParam= ruleParam EOF )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1027:2: iv_ruleParam= ruleParam EOF
             {
              currentNode = createCompositeNode(grammarAccess.getParamRule(), currentNode); 
-            pushFollow(FOLLOW_ruleParam_in_entryRuleParam1806);
+            pushFollow(FOLLOW_ruleParam_in_entryRuleParam1876);
             iv_ruleParam=ruleParam();
             _fsp--;
 
              current =iv_ruleParam; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleParam1816); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleParam1886); 
 
             }
 
@@ -2174,7 +2241,7 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start ruleParam
-    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:993:1: ruleParam returns [EObject current=null] : (this_LiteralParam_0= ruleLiteralParam | this_RefParam_1= ruleRefParam ) ;
+    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1034:1: ruleParam returns [EObject current=null] : (this_LiteralParam_0= ruleLiteralParam | this_RefParam_1= ruleRefParam ) ;
     public final EObject ruleParam() throws RecognitionException {
         EObject current = null;
 
@@ -2186,10 +2253,10 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:998:6: ( (this_LiteralParam_0= ruleLiteralParam | this_RefParam_1= ruleRefParam ) )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:999:1: (this_LiteralParam_0= ruleLiteralParam | this_RefParam_1= ruleRefParam )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1039:6: ( (this_LiteralParam_0= ruleLiteralParam | this_RefParam_1= ruleRefParam ) )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1040:1: (this_LiteralParam_0= ruleLiteralParam | this_RefParam_1= ruleRefParam )
             {
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:999:1: (this_LiteralParam_0= ruleLiteralParam | this_RefParam_1= ruleRefParam )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1040:1: (this_LiteralParam_0= ruleLiteralParam | this_RefParam_1= ruleRefParam )
             int alt13=2;
             int LA13_0 = input.LA(1);
 
@@ -2201,18 +2268,18 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("999:1: (this_LiteralParam_0= ruleLiteralParam | this_RefParam_1= ruleRefParam )", 13, 0, input);
+                    new NoViableAltException("1040:1: (this_LiteralParam_0= ruleLiteralParam | this_RefParam_1= ruleRefParam )", 13, 0, input);
 
                 throw nvae;
             }
             switch (alt13) {
                 case 1 :
-                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1000:5: this_LiteralParam_0= ruleLiteralParam
+                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1041:5: this_LiteralParam_0= ruleLiteralParam
                     {
                      
                             currentNode=createCompositeNode(grammarAccess.getParamAccess().getLiteralParamParserRuleCall_0(), currentNode); 
                         
-                    pushFollow(FOLLOW_ruleLiteralParam_in_ruleParam1863);
+                    pushFollow(FOLLOW_ruleLiteralParam_in_ruleParam1933);
                     this_LiteralParam_0=ruleLiteralParam();
                     _fsp--;
 
@@ -2224,12 +2291,12 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1010:5: this_RefParam_1= ruleRefParam
+                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1051:5: this_RefParam_1= ruleRefParam
                     {
                      
                             currentNode=createCompositeNode(grammarAccess.getParamAccess().getRefParamParserRuleCall_1(), currentNode); 
                         
-                    pushFollow(FOLLOW_ruleRefParam_in_ruleParam1890);
+                    pushFollow(FOLLOW_ruleRefParam_in_ruleParam1960);
                     this_RefParam_1=ruleRefParam();
                     _fsp--;
 
@@ -2263,7 +2330,7 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start entryRuleLiteralParam
-    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1026:1: entryRuleLiteralParam returns [EObject current=null] : iv_ruleLiteralParam= ruleLiteralParam EOF ;
+    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1067:1: entryRuleLiteralParam returns [EObject current=null] : iv_ruleLiteralParam= ruleLiteralParam EOF ;
     public final EObject entryRuleLiteralParam() throws RecognitionException {
         EObject current = null;
 
@@ -2271,16 +2338,16 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1027:2: (iv_ruleLiteralParam= ruleLiteralParam EOF )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1028:2: iv_ruleLiteralParam= ruleLiteralParam EOF
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1068:2: (iv_ruleLiteralParam= ruleLiteralParam EOF )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1069:2: iv_ruleLiteralParam= ruleLiteralParam EOF
             {
              currentNode = createCompositeNode(grammarAccess.getLiteralParamRule(), currentNode); 
-            pushFollow(FOLLOW_ruleLiteralParam_in_entryRuleLiteralParam1925);
+            pushFollow(FOLLOW_ruleLiteralParam_in_entryRuleLiteralParam1995);
             iv_ruleLiteralParam=ruleLiteralParam();
             _fsp--;
 
              current =iv_ruleLiteralParam; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleLiteralParam1935); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleLiteralParam2005); 
 
             }
 
@@ -2298,7 +2365,7 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start ruleLiteralParam
-    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1035:1: ruleLiteralParam returns [EObject current=null] : ( ( (lv_value_0_0= RULE_INT ) ) | ( (lv_value_1_0= RULE_HEXINT ) ) ) ;
+    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1076:1: ruleLiteralParam returns [EObject current=null] : ( ( (lv_value_0_0= RULE_INT ) ) | ( (lv_value_1_0= RULE_HEXINT ) ) ) ;
     public final EObject ruleLiteralParam() throws RecognitionException {
         EObject current = null;
 
@@ -2308,10 +2375,10 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1040:6: ( ( ( (lv_value_0_0= RULE_INT ) ) | ( (lv_value_1_0= RULE_HEXINT ) ) ) )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1041:1: ( ( (lv_value_0_0= RULE_INT ) ) | ( (lv_value_1_0= RULE_HEXINT ) ) )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1081:6: ( ( ( (lv_value_0_0= RULE_INT ) ) | ( (lv_value_1_0= RULE_HEXINT ) ) ) )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1082:1: ( ( (lv_value_0_0= RULE_INT ) ) | ( (lv_value_1_0= RULE_HEXINT ) ) )
             {
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1041:1: ( ( (lv_value_0_0= RULE_INT ) ) | ( (lv_value_1_0= RULE_HEXINT ) ) )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1082:1: ( ( (lv_value_0_0= RULE_INT ) ) | ( (lv_value_1_0= RULE_HEXINT ) ) )
             int alt14=2;
             int LA14_0 = input.LA(1);
 
@@ -2323,22 +2390,22 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("1041:1: ( ( (lv_value_0_0= RULE_INT ) ) | ( (lv_value_1_0= RULE_HEXINT ) ) )", 14, 0, input);
+                    new NoViableAltException("1082:1: ( ( (lv_value_0_0= RULE_INT ) ) | ( (lv_value_1_0= RULE_HEXINT ) ) )", 14, 0, input);
 
                 throw nvae;
             }
             switch (alt14) {
                 case 1 :
-                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1041:2: ( (lv_value_0_0= RULE_INT ) )
+                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1082:2: ( (lv_value_0_0= RULE_INT ) )
                     {
-                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1041:2: ( (lv_value_0_0= RULE_INT ) )
-                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1042:1: (lv_value_0_0= RULE_INT )
+                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1082:2: ( (lv_value_0_0= RULE_INT ) )
+                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1083:1: (lv_value_0_0= RULE_INT )
                     {
-                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1042:1: (lv_value_0_0= RULE_INT )
-                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1043:3: lv_value_0_0= RULE_INT
+                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1083:1: (lv_value_0_0= RULE_INT )
+                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1084:3: lv_value_0_0= RULE_INT
                     {
                     lv_value_0_0=(Token)input.LT(1);
-                    match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleLiteralParam1977); 
+                    match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleLiteralParam2047); 
 
                     			createLeafNode(grammarAccess.getLiteralParamAccess().getValueINTTerminalRuleCall_0_0(), "value"); 
                     		
@@ -2368,16 +2435,16 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1066:6: ( (lv_value_1_0= RULE_HEXINT ) )
+                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1107:6: ( (lv_value_1_0= RULE_HEXINT ) )
                     {
-                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1066:6: ( (lv_value_1_0= RULE_HEXINT ) )
-                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1067:1: (lv_value_1_0= RULE_HEXINT )
+                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1107:6: ( (lv_value_1_0= RULE_HEXINT ) )
+                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1108:1: (lv_value_1_0= RULE_HEXINT )
                     {
-                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1067:1: (lv_value_1_0= RULE_HEXINT )
-                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1068:3: lv_value_1_0= RULE_HEXINT
+                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1108:1: (lv_value_1_0= RULE_HEXINT )
+                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1109:3: lv_value_1_0= RULE_HEXINT
                     {
                     lv_value_1_0=(Token)input.LT(1);
-                    match(input,RULE_HEXINT,FOLLOW_RULE_HEXINT_in_ruleLiteralParam2005); 
+                    match(input,RULE_HEXINT,FOLLOW_RULE_HEXINT_in_ruleLiteralParam2075); 
 
                     			createLeafNode(grammarAccess.getLiteralParamAccess().getValueHEXINTTerminalRuleCall_1_0(), "value"); 
                     		
@@ -2429,7 +2496,7 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start entryRuleRefParam
-    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1098:1: entryRuleRefParam returns [EObject current=null] : iv_ruleRefParam= ruleRefParam EOF ;
+    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1139:1: entryRuleRefParam returns [EObject current=null] : iv_ruleRefParam= ruleRefParam EOF ;
     public final EObject entryRuleRefParam() throws RecognitionException {
         EObject current = null;
 
@@ -2437,16 +2504,16 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1099:2: (iv_ruleRefParam= ruleRefParam EOF )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1100:2: iv_ruleRefParam= ruleRefParam EOF
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1140:2: (iv_ruleRefParam= ruleRefParam EOF )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1141:2: iv_ruleRefParam= ruleRefParam EOF
             {
              currentNode = createCompositeNode(grammarAccess.getRefParamRule(), currentNode); 
-            pushFollow(FOLLOW_ruleRefParam_in_entryRuleRefParam2046);
+            pushFollow(FOLLOW_ruleRefParam_in_entryRuleRefParam2116);
             iv_ruleRefParam=ruleRefParam();
             _fsp--;
 
              current =iv_ruleRefParam; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleRefParam2056); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleRefParam2126); 
 
             }
 
@@ -2464,7 +2531,7 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start ruleRefParam
-    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1107:1: ruleRefParam returns [EObject current=null] : ( (lv_ref_0_0= ruleQualifiedID ) ) ;
+    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1148:1: ruleRefParam returns [EObject current=null] : ( (lv_ref_0_0= ruleQualifiedID ) ) ;
     public final EObject ruleRefParam() throws RecognitionException {
         EObject current = null;
 
@@ -2474,19 +2541,19 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1112:6: ( ( (lv_ref_0_0= ruleQualifiedID ) ) )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1113:1: ( (lv_ref_0_0= ruleQualifiedID ) )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1153:6: ( ( (lv_ref_0_0= ruleQualifiedID ) ) )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1154:1: ( (lv_ref_0_0= ruleQualifiedID ) )
             {
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1113:1: ( (lv_ref_0_0= ruleQualifiedID ) )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1114:1: (lv_ref_0_0= ruleQualifiedID )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1154:1: ( (lv_ref_0_0= ruleQualifiedID ) )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1155:1: (lv_ref_0_0= ruleQualifiedID )
             {
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1114:1: (lv_ref_0_0= ruleQualifiedID )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1115:3: lv_ref_0_0= ruleQualifiedID
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1155:1: (lv_ref_0_0= ruleQualifiedID )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1156:3: lv_ref_0_0= ruleQualifiedID
             {
              
             	        currentNode=createCompositeNode(grammarAccess.getRefParamAccess().getRefQualifiedIDParserRuleCall_0(), currentNode); 
             	    
-            pushFollow(FOLLOW_ruleQualifiedID_in_ruleRefParam2101);
+            pushFollow(FOLLOW_ruleQualifiedID_in_ruleRefParam2171);
             lv_ref_0_0=ruleQualifiedID();
             _fsp--;
 
@@ -2540,8 +2607,8 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_RULE_ID_in_ruleModule147 = new BitSet(new long[]{0x0000000000002000L});
     public static final BitSet FOLLOW_13_in_ruleModule162 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_ruleQualifiedID_in_ruleModule183 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ruleModule193 = new BitSet(new long[]{0x0000000007828000L});
-    public static final BitSet FOLLOW_ruleModuleItem_in_ruleModule214 = new BitSet(new long[]{0x0000000007828000L});
+    public static final BitSet FOLLOW_14_in_ruleModule193 = new BitSet(new long[]{0x000000000F028000L});
+    public static final BitSet FOLLOW_ruleModuleItem_in_ruleModule214 = new BitSet(new long[]{0x000000000F028000L});
     public static final BitSet FOLLOW_15_in_ruleModule226 = new BitSet(new long[]{0x00000000001D0000L});
     public static final BitSet FOLLOW_ruleModuleParam_in_ruleModule247 = new BitSet(new long[]{0x00000000001D0000L});
     public static final BitSet FOLLOW_16_in_ruleModule258 = new BitSet(new long[]{0x0000000000020000L});
@@ -2562,59 +2629,62 @@ public class InternalModularASMParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_RULE_ID_in_ruleQualifiedID637 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleModuleItem_in_entryRuleModuleItem680 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleModuleItem690 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleVariableDecl_in_ruleModuleItem738 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_ruleVariable_in_ruleModuleItem738 = new BitSet(new long[]{0x0000000000400000L});
     public static final BitSet FOLLOW_ruleInstance_in_ruleModuleItem765 = new BitSet(new long[]{0x0000000000400000L});
     public static final BitSet FOLLOW_ruleFunction_in_ruleModuleItem792 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_22_in_ruleModuleItem802 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleModifier_in_entryRuleModifier839 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleModifier850 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_ruleModifier887 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleVariableDecl_in_entryRuleVariableDecl926 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleVariableDecl936 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleModifier_in_ruleVariableDecl982 = new BitSet(new long[]{0x0000000001800000L});
-    public static final BitSet FOLLOW_ruleVariable_in_ruleVariableDecl1004 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleVariable_in_entryRuleVariable1040 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleVariable1050 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_ruleVariable1085 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleVariable1102 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInstance_in_entryRuleInstance1143 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleInstance1153 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_ruleInstance1188 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleQualifiedID_in_ruleInstance1209 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleInstance1226 = new BitSet(new long[]{0x0000000000008002L});
-    public static final BitSet FOLLOW_15_in_ruleInstance1242 = new BitSet(new long[]{0x00000000001D0000L});
-    public static final BitSet FOLLOW_ruleModuleParam_in_ruleInstance1263 = new BitSet(new long[]{0x00000000001D0000L});
-    public static final BitSet FOLLOW_16_in_ruleInstance1274 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFunction_in_entryRuleFunction1312 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFunction1322 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_ruleFunction1357 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleFunction1374 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ruleFunction1389 = new BitSet(new long[]{0x0000000008020010L});
-    public static final BitSet FOLLOW_ruleStep_in_ruleFunction1411 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_22_in_ruleFunction1421 = new BitSet(new long[]{0x0000000008020010L});
-    public static final BitSet FOLLOW_17_in_ruleFunction1433 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStep_in_entryRuleStep1469 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleStep1479 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInstruction_in_ruleStep1526 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLabel_in_ruleStep1553 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLabel_in_entryRuleLabel1588 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleLabel1598 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_27_in_ruleLabel1633 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleLabel1650 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInstruction_in_entryRuleInstruction1691 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleInstruction1701 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleInstruction1743 = new BitSet(new long[]{0x0000000000000072L});
-    public static final BitSet FOLLOW_ruleParam_in_ruleInstruction1769 = new BitSet(new long[]{0x0000000000000072L});
-    public static final BitSet FOLLOW_ruleParam_in_entryRuleParam1806 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleParam1816 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLiteralParam_in_ruleParam1863 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRefParam_in_ruleParam1890 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLiteralParam_in_entryRuleLiteralParam1925 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleLiteralParam1935 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleLiteralParam1977 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_HEXINT_in_ruleLiteralParam2005 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRefParam_in_entryRuleRefParam2046 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleRefParam2056 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedID_in_ruleRefParam2101 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSymbol_in_ruleModuleItem819 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_22_in_ruleModuleItem829 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleModifier_in_entryRuleModifier866 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleModifier877 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_ruleModifier914 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSymbol_in_entryRuleSymbol955 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSymbol965 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_ruleSymbol1000 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleSymbol1017 = new BitSet(new long[]{0x0000000000000060L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleSymbol1040 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_HEXINT_in_ruleSymbol1068 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleVariable_in_entryRuleVariable1110 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleVariable1120 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_ruleVariable1155 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleVariable1172 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInstance_in_entryRuleInstance1213 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleInstance1223 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_ruleInstance1258 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleQualifiedID_in_ruleInstance1279 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleInstance1296 = new BitSet(new long[]{0x0000000000008002L});
+    public static final BitSet FOLLOW_15_in_ruleInstance1312 = new BitSet(new long[]{0x00000000001D0000L});
+    public static final BitSet FOLLOW_ruleModuleParam_in_ruleInstance1333 = new BitSet(new long[]{0x00000000001D0000L});
+    public static final BitSet FOLLOW_16_in_ruleInstance1344 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFunction_in_entryRuleFunction1382 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFunction1392 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_ruleFunction1427 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleFunction1444 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_14_in_ruleFunction1459 = new BitSet(new long[]{0x0000000010020010L});
+    public static final BitSet FOLLOW_ruleStep_in_ruleFunction1481 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_22_in_ruleFunction1491 = new BitSet(new long[]{0x0000000010020010L});
+    public static final BitSet FOLLOW_17_in_ruleFunction1503 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStep_in_entryRuleStep1539 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleStep1549 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInstruction_in_ruleStep1596 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLabel_in_ruleStep1623 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLabel_in_entryRuleLabel1658 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleLabel1668 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_28_in_ruleLabel1703 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleLabel1720 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInstruction_in_entryRuleInstruction1761 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleInstruction1771 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleInstruction1813 = new BitSet(new long[]{0x0000000000000072L});
+    public static final BitSet FOLLOW_ruleParam_in_ruleInstruction1839 = new BitSet(new long[]{0x0000000000000072L});
+    public static final BitSet FOLLOW_ruleParam_in_entryRuleParam1876 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleParam1886 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLiteralParam_in_ruleParam1933 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRefParam_in_ruleParam1960 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLiteralParam_in_entryRuleLiteralParam1995 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleLiteralParam2005 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleLiteralParam2047 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_HEXINT_in_ruleLiteralParam2075 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRefParam_in_entryRuleRefParam2116 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleRefParam2126 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedID_in_ruleRefParam2171 = new BitSet(new long[]{0x0000000000000002L});
 
 }

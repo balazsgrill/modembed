@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeEList;
 
@@ -38,7 +39,7 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  *
  * @generated
  */
-public class VariableDeclImpl extends ModuleItemImpl implements VariableDecl
+public class VariableDeclImpl extends MinimalEObjectImpl.Container implements VariableDecl
 {
   /**
    * The cached value of the '{@link #getModifier() <em>Modifier</em>}' attribute list.

@@ -72,6 +72,15 @@ public interface ModularASMFactory extends EFactory
   VariableDecl createVariableDecl();
 
   /**
+   * Returns a new object of class '<em>Symbol</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Symbol</em>'.
+   * @generated
+   */
+  Symbol createSymbol();
+
+  /**
    * Returns a new object of class '<em>Variable</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

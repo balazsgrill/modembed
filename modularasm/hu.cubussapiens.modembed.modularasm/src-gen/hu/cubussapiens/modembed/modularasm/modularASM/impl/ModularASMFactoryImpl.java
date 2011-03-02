@@ -73,6 +73,7 @@ public class ModularASMFactoryImpl extends EFactoryImpl implements ModularASMFac
       case ModularASMPackage.QUALIFIED_ID: return createQualifiedID();
       case ModularASMPackage.MODULE_ITEM: return createModuleItem();
       case ModularASMPackage.VARIABLE_DECL: return createVariableDecl();
+      case ModularASMPackage.SYMBOL: return createSymbol();
       case ModularASMPackage.VARIABLE: return createVariable();
       case ModularASMPackage.INSTANCE: return createInstance();
       case ModularASMPackage.FUNCTION: return createFunction();
@@ -140,6 +141,17 @@ public class ModularASMFactoryImpl extends EFactoryImpl implements ModularASMFac
   {
     VariableDeclImpl variableDecl = new VariableDeclImpl();
     return variableDecl;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Symbol createSymbol()
+  {
+    SymbolImpl symbol = new SymbolImpl();
+    return symbol;
   }
 
   /**

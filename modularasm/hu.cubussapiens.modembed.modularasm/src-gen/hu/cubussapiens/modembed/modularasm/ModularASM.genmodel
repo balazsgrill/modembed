@@ -22,21 +22,22 @@
     <genClasses ecoreClass="ModularASM.ecore#//QualifiedID">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ModularASM.ecore#//QualifiedID/segments"/>
     </genClasses>
-    <genClasses ecoreClass="ModularASM.ecore#//ModuleItem"/>
+    <genClasses ecoreClass="ModularASM.ecore#//ModuleItem">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ModularASM.ecore#//ModuleItem/name"/>
+    </genClasses>
     <genClasses ecoreClass="ModularASM.ecore#//VariableDecl">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ModularASM.ecore#//VariableDecl/modifier"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ModularASM.ecore#//VariableDecl/variable"/>
     </genClasses>
-    <genClasses ecoreClass="ModularASM.ecore#//Variable">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ModularASM.ecore#//Variable/name"/>
+    <genClasses ecoreClass="ModularASM.ecore#//Symbol">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ModularASM.ecore#//Symbol/value"/>
     </genClasses>
+    <genClasses ecoreClass="ModularASM.ecore#//Variable"/>
     <genClasses ecoreClass="ModularASM.ecore#//Instance">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ModularASM.ecore#//Instance/type"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ModularASM.ecore#//Instance/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ModularASM.ecore#//Instance/params"/>
     </genClasses>
     <genClasses ecoreClass="ModularASM.ecore#//Function">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ModularASM.ecore#//Function/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ModularASM.ecore#//Function/step"/>
     </genClasses>
     <genClasses ecoreClass="ModularASM.ecore#//Step"/>

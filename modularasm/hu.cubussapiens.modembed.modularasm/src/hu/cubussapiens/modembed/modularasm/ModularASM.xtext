@@ -20,13 +20,17 @@ QualifiedID:
 	segments+=ID ('.' segments+=ID)?;	
 	
 ModuleItem:
-	(VariableDecl | Instance | Function) ';';
+	(Variable | Instance | Function | Symbol) ';';
 	
 Modifier:
 	'public';	
 	
 VariableDecl:
 	modifier+=Modifier* variable=Variable;	
+	
+Symbol:
+	'symbol' name=ID (value=INT | value=HEXINT)
+	;	
 	
 Variable:
 	'var' name=ID

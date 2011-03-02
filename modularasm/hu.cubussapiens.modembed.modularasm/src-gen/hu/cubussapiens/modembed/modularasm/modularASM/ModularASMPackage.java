@@ -191,13 +191,22 @@ public interface ModularASMPackage extends EPackage
   int MODULE_ITEM = 3;
 
   /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODULE_ITEM__NAME = 0;
+
+  /**
    * The number of structural features of the '<em>Module Item</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODULE_ITEM_FEATURE_COUNT = 0;
+  int MODULE_ITEM_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link hu.cubussapiens.modembed.modularasm.modularASM.impl.VariableDeclImpl <em>Variable Decl</em>}' class.
@@ -216,7 +225,7 @@ public interface ModularASMPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VARIABLE_DECL__MODIFIER = MODULE_ITEM_FEATURE_COUNT + 0;
+  int VARIABLE_DECL__MODIFIER = 0;
 
   /**
    * The feature id for the '<em><b>Variable</b></em>' containment reference.
@@ -225,7 +234,7 @@ public interface ModularASMPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VARIABLE_DECL__VARIABLE = MODULE_ITEM_FEATURE_COUNT + 1;
+  int VARIABLE_DECL__VARIABLE = 1;
 
   /**
    * The number of structural features of the '<em>Variable Decl</em>' class.
@@ -234,7 +243,44 @@ public interface ModularASMPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VARIABLE_DECL_FEATURE_COUNT = MODULE_ITEM_FEATURE_COUNT + 2;
+  int VARIABLE_DECL_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link hu.cubussapiens.modembed.modularasm.modularASM.impl.SymbolImpl <em>Symbol</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.SymbolImpl
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ModularASMPackageImpl#getSymbol()
+   * @generated
+   */
+  int SYMBOL = 5;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SYMBOL__NAME = MODULE_ITEM__NAME;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SYMBOL__VALUE = MODULE_ITEM_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Symbol</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SYMBOL_FEATURE_COUNT = MODULE_ITEM_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link hu.cubussapiens.modembed.modularasm.modularASM.impl.VariableImpl <em>Variable</em>}' class.
@@ -244,7 +290,7 @@ public interface ModularASMPackage extends EPackage
    * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ModularASMPackageImpl#getVariable()
    * @generated
    */
-  int VARIABLE = 5;
+  int VARIABLE = 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -253,7 +299,7 @@ public interface ModularASMPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VARIABLE__NAME = 0;
+  int VARIABLE__NAME = MODULE_ITEM__NAME;
 
   /**
    * The number of structural features of the '<em>Variable</em>' class.
@@ -262,7 +308,7 @@ public interface ModularASMPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VARIABLE_FEATURE_COUNT = 1;
+  int VARIABLE_FEATURE_COUNT = MODULE_ITEM_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link hu.cubussapiens.modembed.modularasm.modularASM.impl.InstanceImpl <em>Instance</em>}' class.
@@ -272,7 +318,16 @@ public interface ModularASMPackage extends EPackage
    * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ModularASMPackageImpl#getInstance()
    * @generated
    */
-  int INSTANCE = 6;
+  int INSTANCE = 7;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INSTANCE__NAME = MODULE_ITEM__NAME;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -284,22 +339,13 @@ public interface ModularASMPackage extends EPackage
   int INSTANCE__TYPE = MODULE_ITEM_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INSTANCE__NAME = MODULE_ITEM_FEATURE_COUNT + 1;
-
-  /**
    * The feature id for the '<em><b>Params</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INSTANCE__PARAMS = MODULE_ITEM_FEATURE_COUNT + 2;
+  int INSTANCE__PARAMS = MODULE_ITEM_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Instance</em>' class.
@@ -308,7 +354,7 @@ public interface ModularASMPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INSTANCE_FEATURE_COUNT = MODULE_ITEM_FEATURE_COUNT + 3;
+  int INSTANCE_FEATURE_COUNT = MODULE_ITEM_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link hu.cubussapiens.modembed.modularasm.modularASM.impl.FunctionImpl <em>Function</em>}' class.
@@ -318,7 +364,7 @@ public interface ModularASMPackage extends EPackage
    * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ModularASMPackageImpl#getFunction()
    * @generated
    */
-  int FUNCTION = 7;
+  int FUNCTION = 8;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -327,7 +373,7 @@ public interface ModularASMPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FUNCTION__NAME = MODULE_ITEM_FEATURE_COUNT + 0;
+  int FUNCTION__NAME = MODULE_ITEM__NAME;
 
   /**
    * The feature id for the '<em><b>Step</b></em>' containment reference list.
@@ -336,7 +382,7 @@ public interface ModularASMPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FUNCTION__STEP = MODULE_ITEM_FEATURE_COUNT + 1;
+  int FUNCTION__STEP = MODULE_ITEM_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Function</em>' class.
@@ -345,7 +391,7 @@ public interface ModularASMPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FUNCTION_FEATURE_COUNT = MODULE_ITEM_FEATURE_COUNT + 2;
+  int FUNCTION_FEATURE_COUNT = MODULE_ITEM_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link hu.cubussapiens.modembed.modularasm.modularASM.impl.StepImpl <em>Step</em>}' class.
@@ -355,7 +401,7 @@ public interface ModularASMPackage extends EPackage
    * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ModularASMPackageImpl#getStep()
    * @generated
    */
-  int STEP = 8;
+  int STEP = 9;
 
   /**
    * The number of structural features of the '<em>Step</em>' class.
@@ -374,7 +420,7 @@ public interface ModularASMPackage extends EPackage
    * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ModularASMPackageImpl#getLabel()
    * @generated
    */
-  int LABEL = 9;
+  int LABEL = 10;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -402,7 +448,7 @@ public interface ModularASMPackage extends EPackage
    * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ModularASMPackageImpl#getInstruction()
    * @generated
    */
-  int INSTRUCTION = 10;
+  int INSTRUCTION = 11;
 
   /**
    * The feature id for the '<em><b>Ins</b></em>' attribute.
@@ -439,7 +485,7 @@ public interface ModularASMPackage extends EPackage
    * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ModularASMPackageImpl#getParam()
    * @generated
    */
-  int PARAM = 11;
+  int PARAM = 12;
 
   /**
    * The number of structural features of the '<em>Param</em>' class.
@@ -458,7 +504,7 @@ public interface ModularASMPackage extends EPackage
    * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ModularASMPackageImpl#getLiteralParam()
    * @generated
    */
-  int LITERAL_PARAM = 12;
+  int LITERAL_PARAM = 13;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -486,7 +532,7 @@ public interface ModularASMPackage extends EPackage
    * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ModularASMPackageImpl#getRefParam()
    * @generated
    */
-  int REF_PARAM = 13;
+  int REF_PARAM = 14;
 
   /**
    * The feature id for the '<em><b>Ref</b></em>' containment reference.
@@ -625,6 +671,17 @@ public interface ModularASMPackage extends EPackage
   EClass getModuleItem();
 
   /**
+   * Returns the meta object for the attribute '{@link hu.cubussapiens.modembed.modularasm.modularASM.ModuleItem#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.ModuleItem#getName()
+   * @see #getModuleItem()
+   * @generated
+   */
+  EAttribute getModuleItem_Name();
+
+  /**
    * Returns the meta object for class '{@link hu.cubussapiens.modembed.modularasm.modularASM.VariableDecl <em>Variable Decl</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -657,6 +714,27 @@ public interface ModularASMPackage extends EPackage
   EReference getVariableDecl_Variable();
 
   /**
+   * Returns the meta object for class '{@link hu.cubussapiens.modembed.modularasm.modularASM.Symbol <em>Symbol</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Symbol</em>'.
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.Symbol
+   * @generated
+   */
+  EClass getSymbol();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.cubussapiens.modembed.modularasm.modularASM.Symbol#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.Symbol#getValue()
+   * @see #getSymbol()
+   * @generated
+   */
+  EAttribute getSymbol_Value();
+
+  /**
    * Returns the meta object for class '{@link hu.cubussapiens.modembed.modularasm.modularASM.Variable <em>Variable</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -665,17 +743,6 @@ public interface ModularASMPackage extends EPackage
    * @generated
    */
   EClass getVariable();
-
-  /**
-   * Returns the meta object for the attribute '{@link hu.cubussapiens.modembed.modularasm.modularASM.Variable#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see hu.cubussapiens.modembed.modularasm.modularASM.Variable#getName()
-   * @see #getVariable()
-   * @generated
-   */
-  EAttribute getVariable_Name();
 
   /**
    * Returns the meta object for class '{@link hu.cubussapiens.modembed.modularasm.modularASM.Instance <em>Instance</em>}'.
@@ -699,17 +766,6 @@ public interface ModularASMPackage extends EPackage
   EReference getInstance_Type();
 
   /**
-   * Returns the meta object for the attribute '{@link hu.cubussapiens.modembed.modularasm.modularASM.Instance#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see hu.cubussapiens.modembed.modularasm.modularASM.Instance#getName()
-   * @see #getInstance()
-   * @generated
-   */
-  EAttribute getInstance_Name();
-
-  /**
    * Returns the meta object for the containment reference list '{@link hu.cubussapiens.modembed.modularasm.modularASM.Instance#getParams <em>Params</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -729,17 +785,6 @@ public interface ModularASMPackage extends EPackage
    * @generated
    */
   EClass getFunction();
-
-  /**
-   * Returns the meta object for the attribute '{@link hu.cubussapiens.modembed.modularasm.modularASM.Function#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see hu.cubussapiens.modembed.modularasm.modularASM.Function#getName()
-   * @see #getFunction()
-   * @generated
-   */
-  EAttribute getFunction_Name();
 
   /**
    * Returns the meta object for the containment reference list '{@link hu.cubussapiens.modembed.modularasm.modularASM.Function#getStep <em>Step</em>}'.
@@ -987,6 +1032,14 @@ public interface ModularASMPackage extends EPackage
     EClass MODULE_ITEM = eINSTANCE.getModuleItem();
 
     /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MODULE_ITEM__NAME = eINSTANCE.getModuleItem_Name();
+
+    /**
      * The meta object literal for the '{@link hu.cubussapiens.modembed.modularasm.modularASM.impl.VariableDeclImpl <em>Variable Decl</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1013,6 +1066,24 @@ public interface ModularASMPackage extends EPackage
     EReference VARIABLE_DECL__VARIABLE = eINSTANCE.getVariableDecl_Variable();
 
     /**
+     * The meta object literal for the '{@link hu.cubussapiens.modembed.modularasm.modularASM.impl.SymbolImpl <em>Symbol</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.SymbolImpl
+     * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ModularASMPackageImpl#getSymbol()
+     * @generated
+     */
+    EClass SYMBOL = eINSTANCE.getSymbol();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SYMBOL__VALUE = eINSTANCE.getSymbol_Value();
+
+    /**
      * The meta object literal for the '{@link hu.cubussapiens.modembed.modularasm.modularASM.impl.VariableImpl <em>Variable</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1021,14 +1092,6 @@ public interface ModularASMPackage extends EPackage
      * @generated
      */
     EClass VARIABLE = eINSTANCE.getVariable();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute VARIABLE__NAME = eINSTANCE.getVariable_Name();
 
     /**
      * The meta object literal for the '{@link hu.cubussapiens.modembed.modularasm.modularASM.impl.InstanceImpl <em>Instance</em>}' class.
@@ -1049,14 +1112,6 @@ public interface ModularASMPackage extends EPackage
     EReference INSTANCE__TYPE = eINSTANCE.getInstance_Type();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute INSTANCE__NAME = eINSTANCE.getInstance_Name();
-
-    /**
      * The meta object literal for the '<em><b>Params</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1073,14 +1128,6 @@ public interface ModularASMPackage extends EPackage
      * @generated
      */
     EClass FUNCTION = eINSTANCE.getFunction();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FUNCTION__NAME = eINSTANCE.getFunction_Name();
 
     /**
      * The meta object literal for the '<em><b>Step</b></em>' containment reference list feature.

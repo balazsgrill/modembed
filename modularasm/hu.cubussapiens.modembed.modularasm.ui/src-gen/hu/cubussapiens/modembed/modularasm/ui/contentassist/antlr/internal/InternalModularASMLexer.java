@@ -14,10 +14,11 @@ import java.util.ArrayList;
 public class InternalModularASMLexer extends Lexer {
     public static final int RULE_ID=4;
     public static final int RULE_ANY_OTHER=11;
+    public static final int T28=28;
     public static final int T27=27;
     public static final int T26=26;
     public static final int T25=25;
-    public static final int Tokens=28;
+    public static final int Tokens=29;
     public static final int T24=24;
     public static final int EOF=-1;
     public static final int RULE_SL_COMMENT=9;
@@ -270,10 +271,10 @@ public class InternalModularASMLexer extends Lexer {
     public final void mT24() throws RecognitionException {
         try {
             int _type = T24;
-            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:22:5: ( 'var' )
-            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:22:7: 'var'
+            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:22:5: ( 'symbol' )
+            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:22:7: 'symbol'
             {
-            match("var"); 
+            match("symbol"); 
 
 
             }
@@ -289,10 +290,10 @@ public class InternalModularASMLexer extends Lexer {
     public final void mT25() throws RecognitionException {
         try {
             int _type = T25;
-            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:23:5: ( 'instance' )
-            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:23:7: 'instance'
+            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:23:5: ( 'var' )
+            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:23:7: 'var'
             {
-            match("instance"); 
+            match("var"); 
 
 
             }
@@ -308,10 +309,10 @@ public class InternalModularASMLexer extends Lexer {
     public final void mT26() throws RecognitionException {
         try {
             int _type = T26;
-            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:24:5: ( 'func' )
-            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:24:7: 'func'
+            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:24:5: ( 'instance' )
+            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:24:7: 'instance'
             {
-            match("func"); 
+            match("instance"); 
 
 
             }
@@ -327,10 +328,10 @@ public class InternalModularASMLexer extends Lexer {
     public final void mT27() throws RecognitionException {
         try {
             int _type = T27;
-            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:25:5: ( 'label' )
-            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:25:7: 'label'
+            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:25:5: ( 'func' )
+            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:25:7: 'func'
             {
-            match("label"); 
+            match("func"); 
 
 
             }
@@ -342,16 +343,35 @@ public class InternalModularASMLexer extends Lexer {
     }
     // $ANTLR end T27
 
+    // $ANTLR start T28
+    public final void mT28() throws RecognitionException {
+        try {
+            int _type = T28;
+            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:26:5: ( 'label' )
+            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:26:7: 'label'
+            {
+            match("label"); 
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end T28
+
     // $ANTLR start RULE_HEXINT
     public final void mRULE_HEXINT() throws RecognitionException {
         try {
             int _type = RULE_HEXINT;
-            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2272:13: ( '0x' ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' )+ )
-            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2272:15: '0x' ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' )+
+            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2353:13: ( '0x' ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' )+ )
+            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2353:15: '0x' ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' )+
             {
             match("0x"); 
 
-            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2272:20: ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' )+
+            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2353:20: ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' )+
             int cnt1=0;
             loop1:
             do {
@@ -404,10 +424,10 @@ public class InternalModularASMLexer extends Lexer {
     public final void mRULE_ID() throws RecognitionException {
         try {
             int _type = RULE_ID;
-            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2274:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2274:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2355:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2355:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2274:11: ( '^' )?
+            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2355:11: ( '^' )?
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -416,7 +436,7 @@ public class InternalModularASMLexer extends Lexer {
             }
             switch (alt2) {
                 case 1 :
-                    // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2274:11: '^'
+                    // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2355:11: '^'
                     {
                     match('^'); 
 
@@ -435,7 +455,7 @@ public class InternalModularASMLexer extends Lexer {
                 recover(mse);    throw mse;
             }
 
-            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2274:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2355:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop3:
             do {
                 int alt3=2;
@@ -483,10 +503,10 @@ public class InternalModularASMLexer extends Lexer {
     public final void mRULE_INT() throws RecognitionException {
         try {
             int _type = RULE_INT;
-            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2276:10: ( ( '0' .. '9' )+ )
-            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2276:12: ( '0' .. '9' )+
+            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2357:10: ( ( '0' .. '9' )+ )
+            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2357:12: ( '0' .. '9' )+
             {
-            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2276:12: ( '0' .. '9' )+
+            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2357:12: ( '0' .. '9' )+
             int cnt4=0;
             loop4:
             do {
@@ -500,7 +520,7 @@ public class InternalModularASMLexer extends Lexer {
 
                 switch (alt4) {
             	case 1 :
-            	    // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2276:13: '0' .. '9'
+            	    // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2357:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -530,10 +550,10 @@ public class InternalModularASMLexer extends Lexer {
     public final void mRULE_STRING() throws RecognitionException {
         try {
             int _type = RULE_STRING;
-            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2278:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2278:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2359:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2359:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2278:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2359:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -545,16 +565,16 @@ public class InternalModularASMLexer extends Lexer {
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("2278:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )", 7, 0, input);
+                    new NoViableAltException("2359:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )", 7, 0, input);
 
                 throw nvae;
             }
             switch (alt7) {
                 case 1 :
-                    // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2278:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2359:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2278:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2359:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -570,7 +590,7 @@ public class InternalModularASMLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2278:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' )
+                    	    // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2359:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||input.LA(1)=='t' ) {
@@ -587,7 +607,7 @@ public class InternalModularASMLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2278:62: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2359:62: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFE') ) {
                     	        input.consume();
@@ -613,10 +633,10 @@ public class InternalModularASMLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2278:82: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2359:82: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2278:87: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2359:87: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop6:
                     do {
                         int alt6=3;
@@ -632,7 +652,7 @@ public class InternalModularASMLexer extends Lexer {
 
                         switch (alt6) {
                     	case 1 :
-                    	    // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2278:88: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' )
+                    	    // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2359:88: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||input.LA(1)=='t' ) {
@@ -649,7 +669,7 @@ public class InternalModularASMLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2278:129: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2359:129: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFE') ) {
                     	        input.consume();
@@ -691,12 +711,12 @@ public class InternalModularASMLexer extends Lexer {
     public final void mRULE_ML_COMMENT() throws RecognitionException {
         try {
             int _type = RULE_ML_COMMENT;
-            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2280:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2280:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2361:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2361:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2280:24: ( options {greedy=false; } : . )*
+            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2361:24: ( options {greedy=false; } : . )*
             loop8:
             do {
                 int alt8=2;
@@ -721,7 +741,7 @@ public class InternalModularASMLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2280:52: .
+            	    // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2361:52: .
             	    {
             	    matchAny(); 
 
@@ -749,12 +769,12 @@ public class InternalModularASMLexer extends Lexer {
     public final void mRULE_SL_COMMENT() throws RecognitionException {
         try {
             int _type = RULE_SL_COMMENT;
-            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2282:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2282:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2363:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2363:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2282:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2363:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop9:
             do {
                 int alt9=2;
@@ -767,7 +787,7 @@ public class InternalModularASMLexer extends Lexer {
 
                 switch (alt9) {
             	case 1 :
-            	    // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2282:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2363:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFE') ) {
             	        input.consume();
@@ -788,7 +808,7 @@ public class InternalModularASMLexer extends Lexer {
                 }
             } while (true);
 
-            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2282:40: ( ( '\\r' )? '\\n' )?
+            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2363:40: ( ( '\\r' )? '\\n' )?
             int alt11=2;
             int LA11_0 = input.LA(1);
 
@@ -797,9 +817,9 @@ public class InternalModularASMLexer extends Lexer {
             }
             switch (alt11) {
                 case 1 :
-                    // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2282:41: ( '\\r' )? '\\n'
+                    // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2363:41: ( '\\r' )? '\\n'
                     {
-                    // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2282:41: ( '\\r' )?
+                    // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2363:41: ( '\\r' )?
                     int alt10=2;
                     int LA10_0 = input.LA(1);
 
@@ -808,7 +828,7 @@ public class InternalModularASMLexer extends Lexer {
                     }
                     switch (alt10) {
                         case 1 :
-                            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2282:41: '\\r'
+                            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2363:41: '\\r'
                             {
                             match('\r'); 
 
@@ -838,10 +858,10 @@ public class InternalModularASMLexer extends Lexer {
     public final void mRULE_WS() throws RecognitionException {
         try {
             int _type = RULE_WS;
-            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2284:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2284:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2365:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2365:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2284:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2365:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt12=0;
             loop12:
             do {
@@ -894,8 +914,8 @@ public class InternalModularASMLexer extends Lexer {
     public final void mRULE_ANY_OTHER() throws RecognitionException {
         try {
             int _type = RULE_ANY_OTHER;
-            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2286:16: ( . )
-            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2286:18: .
+            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2367:16: ( . )
+            // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:2367:18: .
             {
             matchAny(); 
 
@@ -909,298 +929,298 @@ public class InternalModularASMLexer extends Lexer {
     // $ANTLR end RULE_ANY_OTHER
 
     public void mTokens() throws RecognitionException {
-        // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:1:8: ( T12 | T13 | T14 | T15 | T16 | T17 | T18 | T19 | T20 | T21 | T22 | T23 | T24 | T25 | T26 | T27 | RULE_HEXINT | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt13=24;
+        // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:1:8: ( T12 | T13 | T14 | T15 | T16 | T17 | T18 | T19 | T20 | T21 | T22 | T23 | T24 | T25 | T26 | T27 | T28 | RULE_HEXINT | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt13=25;
         int LA13_0 = input.LA(1);
 
         if ( (LA13_0=='p') ) {
             int LA13_1 = input.LA(2);
 
             if ( (LA13_1=='u') ) {
-                int LA13_25 = input.LA(3);
+                int LA13_26 = input.LA(3);
 
-                if ( (LA13_25=='b') ) {
-                    int LA13_48 = input.LA(4);
+                if ( (LA13_26=='b') ) {
+                    int LA13_50 = input.LA(4);
 
-                    if ( (LA13_48=='l') ) {
-                        int LA13_58 = input.LA(5);
+                    if ( (LA13_50=='l') ) {
+                        int LA13_61 = input.LA(5);
 
-                        if ( (LA13_58=='i') ) {
-                            int LA13_68 = input.LA(6);
+                        if ( (LA13_61=='i') ) {
+                            int LA13_72 = input.LA(6);
 
-                            if ( (LA13_68=='c') ) {
-                                int LA13_77 = input.LA(7);
+                            if ( (LA13_72=='c') ) {
+                                int LA13_82 = input.LA(7);
 
-                                if ( ((LA13_77>='0' && LA13_77<='9')||(LA13_77>='A' && LA13_77<='Z')||LA13_77=='_'||(LA13_77>='a' && LA13_77<='z')) ) {
-                                    alt13=18;
+                                if ( ((LA13_82>='0' && LA13_82<='9')||(LA13_82>='A' && LA13_82<='Z')||LA13_82=='_'||(LA13_82>='a' && LA13_82<='z')) ) {
+                                    alt13=19;
                                 }
                                 else {
                                     alt13=1;}
                             }
                             else {
-                                alt13=18;}
+                                alt13=19;}
                         }
                         else {
-                            alt13=18;}
+                            alt13=19;}
                     }
                     else {
-                        alt13=18;}
+                        alt13=19;}
                 }
                 else {
-                    alt13=18;}
+                    alt13=19;}
             }
             else {
-                alt13=18;}
+                alt13=19;}
         }
         else if ( (LA13_0=='l') ) {
             switch ( input.LA(2) ) {
             case 'i':
                 {
-                int LA13_27 = input.LA(3);
+                int LA13_28 = input.LA(3);
 
-                if ( (LA13_27=='t') ) {
-                    int LA13_49 = input.LA(4);
+                if ( (LA13_28=='t') ) {
+                    int LA13_51 = input.LA(4);
 
-                    if ( (LA13_49=='e') ) {
-                        int LA13_59 = input.LA(5);
+                    if ( (LA13_51=='e') ) {
+                        int LA13_62 = input.LA(5);
 
-                        if ( (LA13_59=='r') ) {
-                            int LA13_69 = input.LA(6);
+                        if ( (LA13_62=='r') ) {
+                            int LA13_73 = input.LA(6);
 
-                            if ( (LA13_69=='a') ) {
-                                int LA13_78 = input.LA(7);
+                            if ( (LA13_73=='a') ) {
+                                int LA13_83 = input.LA(7);
 
-                                if ( (LA13_78=='l') ) {
-                                    int LA13_86 = input.LA(8);
+                                if ( (LA13_83=='l') ) {
+                                    int LA13_92 = input.LA(8);
 
-                                    if ( ((LA13_86>='0' && LA13_86<='9')||(LA13_86>='A' && LA13_86<='Z')||LA13_86=='_'||(LA13_86>='a' && LA13_86<='z')) ) {
-                                        alt13=18;
+                                    if ( ((LA13_92>='0' && LA13_92<='9')||(LA13_92>='A' && LA13_92<='Z')||LA13_92=='_'||(LA13_92>='a' && LA13_92<='z')) ) {
+                                        alt13=19;
                                     }
                                     else {
                                         alt13=2;}
                                 }
                                 else {
-                                    alt13=18;}
+                                    alt13=19;}
                             }
                             else {
-                                alt13=18;}
+                                alt13=19;}
                         }
                         else {
-                            alt13=18;}
+                            alt13=19;}
                     }
                     else {
-                        alt13=18;}
+                        alt13=19;}
                 }
                 else {
-                    alt13=18;}
+                    alt13=19;}
                 }
                 break;
             case 'a':
                 {
-                int LA13_28 = input.LA(3);
+                int LA13_29 = input.LA(3);
 
-                if ( (LA13_28=='b') ) {
-                    int LA13_50 = input.LA(4);
+                if ( (LA13_29=='b') ) {
+                    int LA13_52 = input.LA(4);
 
-                    if ( (LA13_50=='e') ) {
-                        int LA13_60 = input.LA(5);
+                    if ( (LA13_52=='e') ) {
+                        int LA13_63 = input.LA(5);
 
-                        if ( (LA13_60=='l') ) {
-                            int LA13_70 = input.LA(6);
+                        if ( (LA13_63=='l') ) {
+                            int LA13_74 = input.LA(6);
 
-                            if ( ((LA13_70>='0' && LA13_70<='9')||(LA13_70>='A' && LA13_70<='Z')||LA13_70=='_'||(LA13_70>='a' && LA13_70<='z')) ) {
-                                alt13=18;
+                            if ( ((LA13_74>='0' && LA13_74<='9')||(LA13_74>='A' && LA13_74<='Z')||LA13_74=='_'||(LA13_74>='a' && LA13_74<='z')) ) {
+                                alt13=19;
                             }
                             else {
-                                alt13=16;}
+                                alt13=17;}
                         }
                         else {
-                            alt13=18;}
+                            alt13=19;}
                     }
                     else {
-                        alt13=18;}
+                        alt13=19;}
                 }
                 else {
-                    alt13=18;}
+                    alt13=19;}
                 }
                 break;
             default:
-                alt13=18;}
+                alt13=19;}
 
         }
         else if ( (LA13_0=='c') ) {
             int LA13_3 = input.LA(2);
 
             if ( (LA13_3=='a') ) {
-                int LA13_29 = input.LA(3);
+                int LA13_30 = input.LA(3);
 
-                if ( (LA13_29=='l') ) {
-                    int LA13_51 = input.LA(4);
+                if ( (LA13_30=='l') ) {
+                    int LA13_53 = input.LA(4);
 
-                    if ( (LA13_51=='l') ) {
-                        int LA13_61 = input.LA(5);
+                    if ( (LA13_53=='l') ) {
+                        int LA13_64 = input.LA(5);
 
-                        if ( (LA13_61=='b') ) {
-                            int LA13_71 = input.LA(6);
+                        if ( (LA13_64=='b') ) {
+                            int LA13_75 = input.LA(6);
 
-                            if ( (LA13_71=='a') ) {
-                                int LA13_80 = input.LA(7);
+                            if ( (LA13_75=='a') ) {
+                                int LA13_85 = input.LA(7);
 
-                                if ( (LA13_80=='c') ) {
-                                    int LA13_87 = input.LA(8);
+                                if ( (LA13_85=='c') ) {
+                                    int LA13_93 = input.LA(8);
 
-                                    if ( (LA13_87=='k') ) {
-                                        int LA13_93 = input.LA(9);
+                                    if ( (LA13_93=='k') ) {
+                                        int LA13_100 = input.LA(9);
 
-                                        if ( ((LA13_93>='0' && LA13_93<='9')||(LA13_93>='A' && LA13_93<='Z')||LA13_93=='_'||(LA13_93>='a' && LA13_93<='z')) ) {
-                                            alt13=18;
+                                        if ( ((LA13_100>='0' && LA13_100<='9')||(LA13_100>='A' && LA13_100<='Z')||LA13_100=='_'||(LA13_100>='a' && LA13_100<='z')) ) {
+                                            alt13=19;
                                         }
                                         else {
                                             alt13=3;}
                                     }
                                     else {
-                                        alt13=18;}
+                                        alt13=19;}
                                 }
                                 else {
-                                    alt13=18;}
+                                    alt13=19;}
                             }
                             else {
-                                alt13=18;}
+                                alt13=19;}
                         }
                         else {
-                            alt13=18;}
+                            alt13=19;}
                     }
                     else {
-                        alt13=18;}
+                        alt13=19;}
                 }
                 else {
-                    alt13=18;}
+                    alt13=19;}
             }
             else {
-                alt13=18;}
+                alt13=19;}
         }
         else if ( (LA13_0=='a') ) {
             int LA13_4 = input.LA(2);
 
             if ( (LA13_4=='d') ) {
-                int LA13_30 = input.LA(3);
+                int LA13_31 = input.LA(3);
 
-                if ( (LA13_30=='d') ) {
-                    int LA13_52 = input.LA(4);
+                if ( (LA13_31=='d') ) {
+                    int LA13_54 = input.LA(4);
 
-                    if ( (LA13_52=='r') ) {
-                        int LA13_62 = input.LA(5);
+                    if ( (LA13_54=='r') ) {
+                        int LA13_65 = input.LA(5);
 
-                        if ( (LA13_62=='e') ) {
-                            int LA13_72 = input.LA(6);
+                        if ( (LA13_65=='e') ) {
+                            int LA13_76 = input.LA(6);
 
-                            if ( (LA13_72=='s') ) {
-                                int LA13_81 = input.LA(7);
+                            if ( (LA13_76=='s') ) {
+                                int LA13_86 = input.LA(7);
 
-                                if ( (LA13_81=='s') ) {
-                                    int LA13_88 = input.LA(8);
+                                if ( (LA13_86=='s') ) {
+                                    int LA13_94 = input.LA(8);
 
-                                    if ( ((LA13_88>='0' && LA13_88<='9')||(LA13_88>='A' && LA13_88<='Z')||LA13_88=='_'||(LA13_88>='a' && LA13_88<='z')) ) {
-                                        alt13=18;
+                                    if ( ((LA13_94>='0' && LA13_94<='9')||(LA13_94>='A' && LA13_94<='Z')||LA13_94=='_'||(LA13_94>='a' && LA13_94<='z')) ) {
+                                        alt13=19;
                                     }
                                     else {
                                         alt13=4;}
                                 }
                                 else {
-                                    alt13=18;}
+                                    alt13=19;}
                             }
                             else {
-                                alt13=18;}
+                                alt13=19;}
                         }
                         else {
-                            alt13=18;}
+                            alt13=19;}
                     }
                     else {
-                        alt13=18;}
+                        alt13=19;}
                 }
                 else {
-                    alt13=18;}
+                    alt13=19;}
             }
             else {
-                alt13=18;}
+                alt13=19;}
         }
         else if ( (LA13_0=='m') ) {
             int LA13_5 = input.LA(2);
 
             if ( (LA13_5=='o') ) {
-                int LA13_31 = input.LA(3);
+                int LA13_32 = input.LA(3);
 
-                if ( (LA13_31=='d') ) {
-                    int LA13_53 = input.LA(4);
+                if ( (LA13_32=='d') ) {
+                    int LA13_55 = input.LA(4);
 
-                    if ( (LA13_53=='u') ) {
-                        int LA13_63 = input.LA(5);
+                    if ( (LA13_55=='u') ) {
+                        int LA13_66 = input.LA(5);
 
-                        if ( (LA13_63=='l') ) {
-                            int LA13_73 = input.LA(6);
+                        if ( (LA13_66=='l') ) {
+                            int LA13_77 = input.LA(6);
 
-                            if ( (LA13_73=='e') ) {
-                                int LA13_82 = input.LA(7);
+                            if ( (LA13_77=='e') ) {
+                                int LA13_87 = input.LA(7);
 
-                                if ( ((LA13_82>='0' && LA13_82<='9')||(LA13_82>='A' && LA13_82<='Z')||LA13_82=='_'||(LA13_82>='a' && LA13_82<='z')) ) {
-                                    alt13=18;
+                                if ( ((LA13_87>='0' && LA13_87<='9')||(LA13_87>='A' && LA13_87<='Z')||LA13_87=='_'||(LA13_87>='a' && LA13_87<='z')) ) {
+                                    alt13=19;
                                 }
                                 else {
                                     alt13=5;}
                             }
                             else {
-                                alt13=18;}
+                                alt13=19;}
                         }
                         else {
-                            alt13=18;}
+                            alt13=19;}
                     }
                     else {
-                        alt13=18;}
+                        alt13=19;}
                 }
                 else {
-                    alt13=18;}
+                    alt13=19;}
             }
             else {
-                alt13=18;}
+                alt13=19;}
         }
         else if ( (LA13_0=='t') ) {
             int LA13_6 = input.LA(2);
 
             if ( (LA13_6=='a') ) {
-                int LA13_32 = input.LA(3);
+                int LA13_33 = input.LA(3);
 
-                if ( (LA13_32=='r') ) {
-                    int LA13_54 = input.LA(4);
+                if ( (LA13_33=='r') ) {
+                    int LA13_56 = input.LA(4);
 
-                    if ( (LA13_54=='g') ) {
-                        int LA13_64 = input.LA(5);
+                    if ( (LA13_56=='g') ) {
+                        int LA13_67 = input.LA(5);
 
-                        if ( (LA13_64=='e') ) {
-                            int LA13_74 = input.LA(6);
+                        if ( (LA13_67=='e') ) {
+                            int LA13_78 = input.LA(6);
 
-                            if ( (LA13_74=='t') ) {
-                                int LA13_83 = input.LA(7);
+                            if ( (LA13_78=='t') ) {
+                                int LA13_88 = input.LA(7);
 
-                                if ( ((LA13_83>='0' && LA13_83<='9')||(LA13_83>='A' && LA13_83<='Z')||LA13_83=='_'||(LA13_83>='a' && LA13_83<='z')) ) {
-                                    alt13=18;
+                                if ( ((LA13_88>='0' && LA13_88<='9')||(LA13_88>='A' && LA13_88<='Z')||LA13_88=='_'||(LA13_88>='a' && LA13_88<='z')) ) {
+                                    alt13=19;
                                 }
                                 else {
                                     alt13=6;}
                             }
                             else {
-                                alt13=18;}
+                                alt13=19;}
                         }
                         else {
-                            alt13=18;}
+                            alt13=19;}
                     }
                     else {
-                        alt13=18;}
+                        alt13=19;}
                 }
                 else {
-                    alt13=18;}
+                    alt13=19;}
             }
             else {
-                alt13=18;}
+                alt13=19;}
         }
         else if ( (LA13_0=='{') ) {
             alt13=7;
@@ -1220,172 +1240,211 @@ public class InternalModularASMLexer extends Lexer {
         else if ( (LA13_0==';') ) {
             alt13=12;
         }
-        else if ( (LA13_0=='v') ) {
+        else if ( (LA13_0=='s') ) {
             int LA13_13 = input.LA(2);
 
-            if ( (LA13_13=='a') ) {
-                int LA13_39 = input.LA(3);
-
-                if ( (LA13_39=='r') ) {
-                    int LA13_55 = input.LA(4);
-
-                    if ( ((LA13_55>='0' && LA13_55<='9')||(LA13_55>='A' && LA13_55<='Z')||LA13_55=='_'||(LA13_55>='a' && LA13_55<='z')) ) {
-                        alt13=18;
-                    }
-                    else {
-                        alt13=13;}
-                }
-                else {
-                    alt13=18;}
-            }
-            else {
-                alt13=18;}
-        }
-        else if ( (LA13_0=='i') ) {
-            int LA13_14 = input.LA(2);
-
-            if ( (LA13_14=='n') ) {
+            if ( (LA13_13=='y') ) {
                 int LA13_40 = input.LA(3);
 
-                if ( (LA13_40=='s') ) {
-                    int LA13_56 = input.LA(4);
-
-                    if ( (LA13_56=='t') ) {
-                        int LA13_66 = input.LA(5);
-
-                        if ( (LA13_66=='a') ) {
-                            int LA13_75 = input.LA(6);
-
-                            if ( (LA13_75=='n') ) {
-                                int LA13_84 = input.LA(7);
-
-                                if ( (LA13_84=='c') ) {
-                                    int LA13_91 = input.LA(8);
-
-                                    if ( (LA13_91=='e') ) {
-                                        int LA13_95 = input.LA(9);
-
-                                        if ( ((LA13_95>='0' && LA13_95<='9')||(LA13_95>='A' && LA13_95<='Z')||LA13_95=='_'||(LA13_95>='a' && LA13_95<='z')) ) {
-                                            alt13=18;
-                                        }
-                                        else {
-                                            alt13=14;}
-                                    }
-                                    else {
-                                        alt13=18;}
-                                }
-                                else {
-                                    alt13=18;}
-                            }
-                            else {
-                                alt13=18;}
-                        }
-                        else {
-                            alt13=18;}
-                    }
-                    else {
-                        alt13=18;}
-                }
-                else {
-                    alt13=18;}
-            }
-            else {
-                alt13=18;}
-        }
-        else if ( (LA13_0=='f') ) {
-            int LA13_15 = input.LA(2);
-
-            if ( (LA13_15=='u') ) {
-                int LA13_41 = input.LA(3);
-
-                if ( (LA13_41=='n') ) {
+                if ( (LA13_40=='m') ) {
                     int LA13_57 = input.LA(4);
 
-                    if ( (LA13_57=='c') ) {
-                        int LA13_67 = input.LA(5);
+                    if ( (LA13_57=='b') ) {
+                        int LA13_68 = input.LA(5);
 
-                        if ( ((LA13_67>='0' && LA13_67<='9')||(LA13_67>='A' && LA13_67<='Z')||LA13_67=='_'||(LA13_67>='a' && LA13_67<='z')) ) {
-                            alt13=18;
+                        if ( (LA13_68=='o') ) {
+                            int LA13_79 = input.LA(6);
+
+                            if ( (LA13_79=='l') ) {
+                                int LA13_89 = input.LA(7);
+
+                                if ( ((LA13_89>='0' && LA13_89<='9')||(LA13_89>='A' && LA13_89<='Z')||LA13_89=='_'||(LA13_89>='a' && LA13_89<='z')) ) {
+                                    alt13=19;
+                                }
+                                else {
+                                    alt13=13;}
+                            }
+                            else {
+                                alt13=19;}
                         }
                         else {
-                            alt13=15;}
+                            alt13=19;}
                     }
                     else {
-                        alt13=18;}
+                        alt13=19;}
                 }
                 else {
-                    alt13=18;}
-            }
-            else {
-                alt13=18;}
-        }
-        else if ( (LA13_0=='0') ) {
-            int LA13_16 = input.LA(2);
-
-            if ( (LA13_16=='x') ) {
-                alt13=17;
+                    alt13=19;}
             }
             else {
                 alt13=19;}
         }
-        else if ( (LA13_0=='^') ) {
+        else if ( (LA13_0=='v') ) {
+            int LA13_14 = input.LA(2);
+
+            if ( (LA13_14=='a') ) {
+                int LA13_41 = input.LA(3);
+
+                if ( (LA13_41=='r') ) {
+                    int LA13_58 = input.LA(4);
+
+                    if ( ((LA13_58>='0' && LA13_58<='9')||(LA13_58>='A' && LA13_58<='Z')||LA13_58=='_'||(LA13_58>='a' && LA13_58<='z')) ) {
+                        alt13=19;
+                    }
+                    else {
+                        alt13=14;}
+                }
+                else {
+                    alt13=19;}
+            }
+            else {
+                alt13=19;}
+        }
+        else if ( (LA13_0=='i') ) {
+            int LA13_15 = input.LA(2);
+
+            if ( (LA13_15=='n') ) {
+                int LA13_42 = input.LA(3);
+
+                if ( (LA13_42=='s') ) {
+                    int LA13_59 = input.LA(4);
+
+                    if ( (LA13_59=='t') ) {
+                        int LA13_70 = input.LA(5);
+
+                        if ( (LA13_70=='a') ) {
+                            int LA13_80 = input.LA(6);
+
+                            if ( (LA13_80=='n') ) {
+                                int LA13_90 = input.LA(7);
+
+                                if ( (LA13_90=='c') ) {
+                                    int LA13_98 = input.LA(8);
+
+                                    if ( (LA13_98=='e') ) {
+                                        int LA13_102 = input.LA(9);
+
+                                        if ( ((LA13_102>='0' && LA13_102<='9')||(LA13_102>='A' && LA13_102<='Z')||LA13_102=='_'||(LA13_102>='a' && LA13_102<='z')) ) {
+                                            alt13=19;
+                                        }
+                                        else {
+                                            alt13=15;}
+                                    }
+                                    else {
+                                        alt13=19;}
+                                }
+                                else {
+                                    alt13=19;}
+                            }
+                            else {
+                                alt13=19;}
+                        }
+                        else {
+                            alt13=19;}
+                    }
+                    else {
+                        alt13=19;}
+                }
+                else {
+                    alt13=19;}
+            }
+            else {
+                alt13=19;}
+        }
+        else if ( (LA13_0=='f') ) {
+            int LA13_16 = input.LA(2);
+
+            if ( (LA13_16=='u') ) {
+                int LA13_43 = input.LA(3);
+
+                if ( (LA13_43=='n') ) {
+                    int LA13_60 = input.LA(4);
+
+                    if ( (LA13_60=='c') ) {
+                        int LA13_71 = input.LA(5);
+
+                        if ( ((LA13_71>='0' && LA13_71<='9')||(LA13_71>='A' && LA13_71<='Z')||LA13_71=='_'||(LA13_71>='a' && LA13_71<='z')) ) {
+                            alt13=19;
+                        }
+                        else {
+                            alt13=16;}
+                    }
+                    else {
+                        alt13=19;}
+                }
+                else {
+                    alt13=19;}
+            }
+            else {
+                alt13=19;}
+        }
+        else if ( (LA13_0=='0') ) {
             int LA13_17 = input.LA(2);
 
-            if ( ((LA13_17>='A' && LA13_17<='Z')||LA13_17=='_'||(LA13_17>='a' && LA13_17<='z')) ) {
+            if ( (LA13_17=='x') ) {
                 alt13=18;
             }
             else {
-                alt13=24;}
+                alt13=20;}
         }
-        else if ( ((LA13_0>='A' && LA13_0<='Z')||LA13_0=='_'||LA13_0=='b'||(LA13_0>='d' && LA13_0<='e')||(LA13_0>='g' && LA13_0<='h')||(LA13_0>='j' && LA13_0<='k')||(LA13_0>='n' && LA13_0<='o')||(LA13_0>='q' && LA13_0<='s')||LA13_0=='u'||(LA13_0>='w' && LA13_0<='z')) ) {
-            alt13=18;
-        }
-        else if ( ((LA13_0>='1' && LA13_0<='9')) ) {
-            alt13=19;
-        }
-        else if ( (LA13_0=='\"') ) {
-            int LA13_20 = input.LA(2);
+        else if ( (LA13_0=='^') ) {
+            int LA13_18 = input.LA(2);
 
-            if ( ((LA13_20>='\u0000' && LA13_20<='\uFFFE')) ) {
-                alt13=20;
+            if ( ((LA13_18>='A' && LA13_18<='Z')||LA13_18=='_'||(LA13_18>='a' && LA13_18<='z')) ) {
+                alt13=19;
             }
             else {
-                alt13=24;}
+                alt13=25;}
         }
-        else if ( (LA13_0=='\'') ) {
+        else if ( ((LA13_0>='A' && LA13_0<='Z')||LA13_0=='_'||LA13_0=='b'||(LA13_0>='d' && LA13_0<='e')||(LA13_0>='g' && LA13_0<='h')||(LA13_0>='j' && LA13_0<='k')||(LA13_0>='n' && LA13_0<='o')||(LA13_0>='q' && LA13_0<='r')||LA13_0=='u'||(LA13_0>='w' && LA13_0<='z')) ) {
+            alt13=19;
+        }
+        else if ( ((LA13_0>='1' && LA13_0<='9')) ) {
+            alt13=20;
+        }
+        else if ( (LA13_0=='\"') ) {
             int LA13_21 = input.LA(2);
 
             if ( ((LA13_21>='\u0000' && LA13_21<='\uFFFE')) ) {
-                alt13=20;
+                alt13=21;
             }
             else {
-                alt13=24;}
+                alt13=25;}
+        }
+        else if ( (LA13_0=='\'') ) {
+            int LA13_22 = input.LA(2);
+
+            if ( ((LA13_22>='\u0000' && LA13_22<='\uFFFE')) ) {
+                alt13=21;
+            }
+            else {
+                alt13=25;}
         }
         else if ( (LA13_0=='/') ) {
             switch ( input.LA(2) ) {
             case '*':
                 {
-                alt13=21;
+                alt13=22;
                 }
                 break;
             case '/':
                 {
-                alt13=22;
+                alt13=23;
                 }
                 break;
             default:
-                alt13=24;}
+                alt13=25;}
 
         }
         else if ( ((LA13_0>='\t' && LA13_0<='\n')||LA13_0=='\r'||LA13_0==' ') ) {
-            alt13=23;
+            alt13=24;
         }
         else if ( ((LA13_0>='\u0000' && LA13_0<='\b')||(LA13_0>='\u000B' && LA13_0<='\f')||(LA13_0>='\u000E' && LA13_0<='\u001F')||LA13_0=='!'||(LA13_0>='#' && LA13_0<='&')||(LA13_0>='*' && LA13_0<='-')||LA13_0==':'||(LA13_0>='<' && LA13_0<='@')||(LA13_0>='[' && LA13_0<=']')||LA13_0=='`'||LA13_0=='|'||(LA13_0>='~' && LA13_0<='\uFFFE')) ) {
-            alt13=24;
+            alt13=25;
         }
         else {
             NoViableAltException nvae =
-                new NoViableAltException("1:1: Tokens : ( T12 | T13 | T14 | T15 | T16 | T17 | T18 | T19 | T20 | T21 | T22 | T23 | T24 | T25 | T26 | T27 | RULE_HEXINT | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );", 13, 0, input);
+                new NoViableAltException("1:1: Tokens : ( T12 | T13 | T14 | T15 | T16 | T17 | T18 | T19 | T20 | T21 | T22 | T23 | T24 | T25 | T26 | T27 | T28 | RULE_HEXINT | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );", 13, 0, input);
 
             throw nvae;
         }
@@ -1503,56 +1562,63 @@ public class InternalModularASMLexer extends Lexer {
                 }
                 break;
             case 17 :
-                // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:1:74: RULE_HEXINT
+                // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:1:74: T28
+                {
+                mT28(); 
+
+                }
+                break;
+            case 18 :
+                // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:1:78: RULE_HEXINT
                 {
                 mRULE_HEXINT(); 
 
                 }
                 break;
-            case 18 :
-                // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:1:86: RULE_ID
+            case 19 :
+                // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:1:90: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 19 :
-                // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:1:94: RULE_INT
+            case 20 :
+                // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:1:98: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 20 :
-                // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:1:103: RULE_STRING
+            case 21 :
+                // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:1:107: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 21 :
-                // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:1:115: RULE_ML_COMMENT
+            case 22 :
+                // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:1:119: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 22 :
-                // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:1:131: RULE_SL_COMMENT
+            case 23 :
+                // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:1:135: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 23 :
-                // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:1:147: RULE_WS
+            case 24 :
+                // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:1:151: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 24 :
-                // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:1:155: RULE_ANY_OTHER
+            case 25 :
+                // ../hu.cubussapiens.modembed.modularasm.ui/src-gen/hu/cubussapiens/modembed/modularasm/ui/contentassist/antlr/internal/InternalModularASM.g:1:159: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 

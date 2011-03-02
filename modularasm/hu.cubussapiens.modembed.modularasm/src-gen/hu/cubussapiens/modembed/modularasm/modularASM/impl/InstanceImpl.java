@@ -34,7 +34,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link hu.cubussapiens.modembed.modularasm.modularASM.impl.InstanceImpl#getType <em>Type</em>}</li>
- *   <li>{@link hu.cubussapiens.modembed.modularasm.modularASM.impl.InstanceImpl#getName <em>Name</em>}</li>
  *   <li>{@link hu.cubussapiens.modembed.modularasm.modularASM.impl.InstanceImpl#getParams <em>Params</em>}</li>
  * </ul>
  * </p>
@@ -52,26 +51,6 @@ public class InstanceImpl extends ModuleItemImpl implements Instance
    * @ordered
    */
   protected QualifiedID type;
-
-  /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getParams() <em>Params</em>}' containment reference list.
@@ -157,29 +136,6 @@ public class InstanceImpl extends ModuleItemImpl implements Instance
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ModularASMPackage.INSTANCE__NAME, oldName, name));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EList<ModuleParam> getParams()
   {
     if (params == null)
@@ -219,8 +175,6 @@ public class InstanceImpl extends ModuleItemImpl implements Instance
     {
       case ModularASMPackage.INSTANCE__TYPE:
         return getType();
-      case ModularASMPackage.INSTANCE__NAME:
-        return getName();
       case ModularASMPackage.INSTANCE__PARAMS:
         return getParams();
     }
@@ -240,9 +194,6 @@ public class InstanceImpl extends ModuleItemImpl implements Instance
     {
       case ModularASMPackage.INSTANCE__TYPE:
         setType((QualifiedID)newValue);
-        return;
-      case ModularASMPackage.INSTANCE__NAME:
-        setName((String)newValue);
         return;
       case ModularASMPackage.INSTANCE__PARAMS:
         getParams().clear();
@@ -265,9 +216,6 @@ public class InstanceImpl extends ModuleItemImpl implements Instance
       case ModularASMPackage.INSTANCE__TYPE:
         setType((QualifiedID)null);
         return;
-      case ModularASMPackage.INSTANCE__NAME:
-        setName(NAME_EDEFAULT);
-        return;
       case ModularASMPackage.INSTANCE__PARAMS:
         getParams().clear();
         return;
@@ -287,29 +235,10 @@ public class InstanceImpl extends ModuleItemImpl implements Instance
     {
       case ModularASMPackage.INSTANCE__TYPE:
         return type != null;
-      case ModularASMPackage.INSTANCE__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case ModularASMPackage.INSTANCE__PARAMS:
         return params != null && !params.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(')');
-    return result.toString();
   }
 
 } //InstanceImpl

@@ -8,6 +8,8 @@ package hu.cubussapiens.modembed.modularasm.modularASM;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.ecore.EObject;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Variable Decl</b></em>'.
@@ -25,7 +27,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface VariableDecl extends ModuleItem
+public interface VariableDecl extends EObject
 {
   /**
    * Returns the value of the '<em><b>Modifier</b></em>' attribute list.

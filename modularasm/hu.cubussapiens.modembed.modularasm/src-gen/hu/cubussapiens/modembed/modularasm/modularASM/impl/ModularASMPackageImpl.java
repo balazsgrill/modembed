@@ -20,6 +20,7 @@ import hu.cubussapiens.modembed.modularasm.modularASM.Param;
 import hu.cubussapiens.modembed.modularasm.modularASM.QualifiedID;
 import hu.cubussapiens.modembed.modularasm.modularASM.RefParam;
 import hu.cubussapiens.modembed.modularasm.modularASM.Step;
+import hu.cubussapiens.modembed.modularasm.modularASM.Symbol;
 import hu.cubussapiens.modembed.modularasm.modularASM.Variable;
 import hu.cubussapiens.modembed.modularasm.modularASM.VariableDecl;
 
@@ -72,6 +73,13 @@ public class ModularASMPackageImpl extends EPackageImpl implements ModularASMPac
    * @generated
    */
   private EClass variableDeclEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass symbolEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -314,6 +322,16 @@ public class ModularASMPackageImpl extends EPackageImpl implements ModularASMPac
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getModuleItem_Name()
+  {
+    return (EAttribute)moduleItemEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getVariableDecl()
   {
     return variableDeclEClass;
@@ -344,9 +362,9 @@ public class ModularASMPackageImpl extends EPackageImpl implements ModularASMPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getVariable()
+  public EClass getSymbol()
   {
-    return variableEClass;
+    return symbolEClass;
   }
 
   /**
@@ -354,9 +372,19 @@ public class ModularASMPackageImpl extends EPackageImpl implements ModularASMPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getVariable_Name()
+  public EAttribute getSymbol_Value()
   {
-    return (EAttribute)variableEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)symbolEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getVariable()
+  {
+    return variableEClass;
   }
 
   /**
@@ -384,19 +412,9 @@ public class ModularASMPackageImpl extends EPackageImpl implements ModularASMPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getInstance_Name()
-  {
-    return (EAttribute)instanceEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getInstance_Params()
   {
-    return (EReference)instanceEClass.getEStructuralFeatures().get(2);
+    return (EReference)instanceEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -414,19 +432,9 @@ public class ModularASMPackageImpl extends EPackageImpl implements ModularASMPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getFunction_Name()
-  {
-    return (EAttribute)functionEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getFunction_Step()
   {
-    return (EReference)functionEClass.getEStructuralFeatures().get(1);
+    return (EReference)functionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -583,21 +591,22 @@ public class ModularASMPackageImpl extends EPackageImpl implements ModularASMPac
     createEAttribute(qualifiedIDEClass, QUALIFIED_ID__SEGMENTS);
 
     moduleItemEClass = createEClass(MODULE_ITEM);
+    createEAttribute(moduleItemEClass, MODULE_ITEM__NAME);
 
     variableDeclEClass = createEClass(VARIABLE_DECL);
     createEAttribute(variableDeclEClass, VARIABLE_DECL__MODIFIER);
     createEReference(variableDeclEClass, VARIABLE_DECL__VARIABLE);
 
+    symbolEClass = createEClass(SYMBOL);
+    createEAttribute(symbolEClass, SYMBOL__VALUE);
+
     variableEClass = createEClass(VARIABLE);
-    createEAttribute(variableEClass, VARIABLE__NAME);
 
     instanceEClass = createEClass(INSTANCE);
     createEReference(instanceEClass, INSTANCE__TYPE);
-    createEAttribute(instanceEClass, INSTANCE__NAME);
     createEReference(instanceEClass, INSTANCE__PARAMS);
 
     functionEClass = createEClass(FUNCTION);
-    createEAttribute(functionEClass, FUNCTION__NAME);
     createEReference(functionEClass, FUNCTION__STEP);
 
     stepEClass = createEClass(STEP);
@@ -647,7 +656,8 @@ public class ModularASMPackageImpl extends EPackageImpl implements ModularASMPac
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    variableDeclEClass.getESuperTypes().add(this.getModuleItem());
+    symbolEClass.getESuperTypes().add(this.getModuleItem());
+    variableEClass.getESuperTypes().add(this.getModuleItem());
     instanceEClass.getESuperTypes().add(this.getModuleItem());
     functionEClass.getESuperTypes().add(this.getModuleItem());
     labelEClass.getESuperTypes().add(this.getStep());
@@ -670,21 +680,22 @@ public class ModularASMPackageImpl extends EPackageImpl implements ModularASMPac
     initEAttribute(getQualifiedID_Segments(), ecorePackage.getEString(), "segments", null, 0, -1, QualifiedID.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(moduleItemEClass, ModuleItem.class, "ModuleItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getModuleItem_Name(), ecorePackage.getEString(), "name", null, 0, 1, ModuleItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(variableDeclEClass, VariableDecl.class, "VariableDecl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getVariableDecl_Modifier(), ecorePackage.getEString(), "modifier", null, 0, -1, VariableDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getVariableDecl_Variable(), this.getVariable(), null, "variable", null, 0, 1, VariableDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(symbolEClass, Symbol.class, "Symbol", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSymbol_Value(), ecorePackage.getEInt(), "value", null, 0, 1, Symbol.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(variableEClass, Variable.class, "Variable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getVariable_Name(), ecorePackage.getEString(), "name", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(instanceEClass, Instance.class, "Instance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getInstance_Type(), this.getQualifiedID(), null, "type", null, 0, 1, Instance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getInstance_Name(), ecorePackage.getEString(), "name", null, 0, 1, Instance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getInstance_Params(), this.getModuleParam(), null, "params", null, 0, -1, Instance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(functionEClass, Function.class, "Function", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getFunction_Name(), ecorePackage.getEString(), "name", null, 0, 1, Function.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFunction_Step(), this.getStep(), null, "step", null, 0, -1, Function.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(stepEClass, Step.class, "Step", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

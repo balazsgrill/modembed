@@ -181,29 +181,33 @@ public class ModularASMGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ModuleItem");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
-		private final RuleCall cVariableDeclParserRuleCall_0_0 = (RuleCall)cAlternatives_0.eContents().get(0);
+		private final RuleCall cVariableParserRuleCall_0_0 = (RuleCall)cAlternatives_0.eContents().get(0);
 		private final RuleCall cInstanceParserRuleCall_0_1 = (RuleCall)cAlternatives_0.eContents().get(1);
 		private final RuleCall cFunctionParserRuleCall_0_2 = (RuleCall)cAlternatives_0.eContents().get(2);
+		private final RuleCall cSymbolParserRuleCall_0_3 = (RuleCall)cAlternatives_0.eContents().get(3);
 		private final Keyword cSemicolonKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		
 		//ModuleItem:
-		//	(VariableDecl | Instance | Function) ";";
+		//	(Variable | Instance | Function | Symbol) ";";
 		public ParserRule getRule() { return rule; }
 
-		//(VariableDecl | Instance | Function) ";"
+		//(Variable | Instance | Function | Symbol) ";"
 		public Group getGroup() { return cGroup; }
 
-		//VariableDecl | Instance | Function
+		//Variable | Instance | Function | Symbol
 		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 
-		//VariableDecl
-		public RuleCall getVariableDeclParserRuleCall_0_0() { return cVariableDeclParserRuleCall_0_0; }
+		//Variable
+		public RuleCall getVariableParserRuleCall_0_0() { return cVariableParserRuleCall_0_0; }
 
 		//Instance
 		public RuleCall getInstanceParserRuleCall_0_1() { return cInstanceParserRuleCall_0_1; }
 
 		//Function
 		public RuleCall getFunctionParserRuleCall_0_2() { return cFunctionParserRuleCall_0_2; }
+
+		//Symbol
+		public RuleCall getSymbolParserRuleCall_0_3() { return cSymbolParserRuleCall_0_3; }
 
 		//";"
 		public Keyword getSemicolonKeyword_1() { return cSemicolonKeyword_1; }
@@ -247,6 +251,50 @@ public class ModularASMGrammarAccess extends AbstractGrammarElementFinder {
 
 		//Variable
 		public RuleCall getVariableVariableParserRuleCall_1_0() { return cVariableVariableParserRuleCall_1_0; }
+	}
+
+	public class SymbolElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Symbol");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cSymbolKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
+		private final Assignment cValueAssignment_2_0 = (Assignment)cAlternatives_2.eContents().get(0);
+		private final RuleCall cValueINTTerminalRuleCall_2_0_0 = (RuleCall)cValueAssignment_2_0.eContents().get(0);
+		private final Assignment cValueAssignment_2_1 = (Assignment)cAlternatives_2.eContents().get(1);
+		private final RuleCall cValueHEXINTTerminalRuleCall_2_1_0 = (RuleCall)cValueAssignment_2_1.eContents().get(0);
+		
+		//Symbol:
+		//	"symbol" name=ID (value=INT | value=HEXINT);
+		public ParserRule getRule() { return rule; }
+
+		//"symbol" name=ID (value=INT | value=HEXINT)
+		public Group getGroup() { return cGroup; }
+
+		//"symbol"
+		public Keyword getSymbolKeyword_0() { return cSymbolKeyword_0; }
+
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+
+		//value=INT | value=HEXINT
+		public Alternatives getAlternatives_2() { return cAlternatives_2; }
+
+		//value=INT
+		public Assignment getValueAssignment_2_0() { return cValueAssignment_2_0; }
+
+		//INT
+		public RuleCall getValueINTTerminalRuleCall_2_0_0() { return cValueINTTerminalRuleCall_2_0_0; }
+
+		//value=HEXINT
+		public Assignment getValueAssignment_2_1() { return cValueAssignment_2_1; }
+
+		//HEXINT
+		public RuleCall getValueHEXINTTerminalRuleCall_2_1_0() { return cValueHEXINTTerminalRuleCall_2_1_0; }
 	}
 
 	public class VariableElements extends AbstractParserRuleElementFinder {
@@ -517,6 +565,7 @@ public class ModularASMGrammarAccess extends AbstractGrammarElementFinder {
 	private ModuleItemElements pModuleItem;
 	private ModifierElements pModifier;
 	private VariableDeclElements pVariableDecl;
+	private SymbolElements pSymbol;
 	private VariableElements pVariable;
 	private InstanceElements pInstance;
 	private FunctionElements pFunction;
@@ -590,7 +639,7 @@ public class ModularASMGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ModuleItem:
-	//	(VariableDecl | Instance | Function) ";";
+	//	(Variable | Instance | Function | Symbol) ";";
 	public ModuleItemElements getModuleItemAccess() {
 		return (pModuleItem != null) ? pModuleItem : (pModuleItem = new ModuleItemElements());
 	}
@@ -617,6 +666,16 @@ public class ModularASMGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getVariableDeclRule() {
 		return getVariableDeclAccess().getRule();
+	}
+
+	//Symbol:
+	//	"symbol" name=ID (value=INT | value=HEXINT);
+	public SymbolElements getSymbolAccess() {
+		return (pSymbol != null) ? pSymbol : (pSymbol = new SymbolElements());
+	}
+	
+	public ParserRule getSymbolRule() {
+		return getSymbolAccess().getRule();
 	}
 
 	//Variable:
