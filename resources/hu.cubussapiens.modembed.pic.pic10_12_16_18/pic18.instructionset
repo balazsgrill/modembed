@@ -1,6 +1,6 @@
 \name Pic18
 \wsize 16
-ADDWF	0010 01 	d1:d0 a1:a0 f8:f0:f0
+ADDWF	0010 01 	d1:d0 a1:a0 f8:f0
 ADDWFC	0010 00 	d1:d0 a1:a0 f8:f0
 ANDWF	0001 01 	d1:d0 a1:a0 f8:f0
 CLRF	0110 101	a1:a0 f8:f0

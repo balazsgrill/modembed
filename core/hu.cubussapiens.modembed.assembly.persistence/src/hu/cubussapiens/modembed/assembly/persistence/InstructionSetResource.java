@@ -81,7 +81,7 @@ public class InstructionSetResource extends ResourceImpl {
 		String n = "";
 		char c = 0;
 		int i = 0;
-		while(Character.isLetter(c = n.charAt(i))){
+		while(Character.isLetter(c = ps.charAt(i))){
 			n += c;
 			i++;
 		}
@@ -96,7 +96,7 @@ public class InstructionSetResource extends ResourceImpl {
 		while(line.length() > 0){
 			char c = line.charAt(0);
 			line = line.substring(1);
-			if (Character.isLetterOrDigit(c)){
+			if (c==':' || Character.isLetterOrDigit(c)){
 				current += c;
 			}else{
 				if (current.length() > 0){
