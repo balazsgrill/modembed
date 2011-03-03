@@ -19,6 +19,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link project.ProjectConfig#getSourcedirs <em>Sourcedirs</em>}</li>
+ *   <li>{@link project.ProjectConfig#getBuilds <em>Builds</em>}</li>
+ *   <li>{@link project.ProjectConfig#getExtensions <em>Extensions</em>}</li>
  * </ul>
  * </p>
  *
@@ -28,19 +30,51 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface ProjectConfig extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Sourcedirs</b></em>' reference list.
-	 * The list contents are of type {@link project.SourceDir}.
+	 * Returns the value of the '<em><b>Sourcedirs</b></em>' containment reference list.
+	 * The list contents are of type {@link project.Directory}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Sourcedirs</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Sourcedirs</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Sourcedirs</em>' reference list.
+	 * @return the value of the '<em>Sourcedirs</em>' containment reference list.
 	 * @see project.ProjectPackage#getProjectConfig_Sourcedirs()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
-	EList<SourceDir> getSourcedirs();
+	EList<Directory> getSourcedirs();
+
+	/**
+	 * Returns the value of the '<em><b>Builds</b></em>' containment reference list.
+	 * The list contents are of type {@link project.MainModule}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Builds</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Builds</em>' containment reference list.
+	 * @see project.ProjectPackage#getProjectConfig_Builds()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<MainModule> getBuilds();
+
+	/**
+	 * Returns the value of the '<em><b>Extensions</b></em>' containment reference list.
+	 * The list contents are of type {@link project.SettingsExtension}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Extensions</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Extensions</em>' containment reference list.
+	 * @see project.ProjectPackage#getProjectConfig_Extensions()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<SettingsExtension> getExtensions();
 
 } // ProjectConfig

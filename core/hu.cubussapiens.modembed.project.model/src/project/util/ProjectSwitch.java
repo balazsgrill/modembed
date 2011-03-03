@@ -93,9 +93,28 @@ public class ProjectSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ProjectPackage.SOURCE_DIR: {
-				SourceDir sourceDir = (SourceDir)theEObject;
-				T result = caseSourceDir(sourceDir);
+			case ProjectPackage.DIRECTORY: {
+				Directory directory = (Directory)theEObject;
+				T result = caseDirectory(directory);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ProjectPackage.MAIN_MODULE: {
+				MainModule mainModule = (MainModule)theEObject;
+				T result = caseMainModule(mainModule);
+				if (result == null) result = caseModule(mainModule);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ProjectPackage.MODULE: {
+				Module module = (Module)theEObject;
+				T result = caseModule(module);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ProjectPackage.SETTINGS_EXTENSION: {
+				SettingsExtension settingsExtension = (SettingsExtension)theEObject;
+				T result = caseSettingsExtension(settingsExtension);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -119,17 +138,62 @@ public class ProjectSwitch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Source Dir</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Directory</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Source Dir</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Directory</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseSourceDir(SourceDir object) {
+	public T caseDirectory(Directory object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Main Module</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Main Module</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMainModule(MainModule object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Module</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Module</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseModule(Module object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Settings Extension</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Settings Extension</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSettingsExtension(SettingsExtension object) {
 		return null;
 	}
 

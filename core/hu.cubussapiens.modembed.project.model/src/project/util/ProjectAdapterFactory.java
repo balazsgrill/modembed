@@ -76,8 +76,20 @@ public class ProjectAdapterFactory extends AdapterFactoryImpl {
 				return createProjectConfigAdapter();
 			}
 			@Override
-			public Adapter caseSourceDir(SourceDir object) {
-				return createSourceDirAdapter();
+			public Adapter caseDirectory(Directory object) {
+				return createDirectoryAdapter();
+			}
+			@Override
+			public Adapter caseMainModule(MainModule object) {
+				return createMainModuleAdapter();
+			}
+			@Override
+			public Adapter caseModule(Module object) {
+				return createModuleAdapter();
+			}
+			@Override
+			public Adapter caseSettingsExtension(SettingsExtension object) {
+				return createSettingsExtensionAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -114,16 +126,58 @@ public class ProjectAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link project.SourceDir <em>Source Dir</em>}'.
+	 * Creates a new adapter for an object of class '{@link project.Directory <em>Directory</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see project.SourceDir
+	 * @see project.Directory
 	 * @generated
 	 */
-	public Adapter createSourceDirAdapter() {
+	public Adapter createDirectoryAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link project.MainModule <em>Main Module</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see project.MainModule
+	 * @generated
+	 */
+	public Adapter createMainModuleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link project.Module <em>Module</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see project.Module
+	 * @generated
+	 */
+	public Adapter createModuleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link project.SettingsExtension <em>Settings Extension</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see project.SettingsExtension
+	 * @generated
+	 */
+	public Adapter createSettingsExtensionAdapter() {
 		return null;
 	}
 

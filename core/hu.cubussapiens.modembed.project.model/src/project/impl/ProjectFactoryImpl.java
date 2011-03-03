@@ -61,7 +61,9 @@ public class ProjectFactoryImpl extends EFactoryImpl implements ProjectFactory {
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case ProjectPackage.PROJECT_CONFIG: return createProjectConfig();
-			case ProjectPackage.SOURCE_DIR: return createSourceDir();
+			case ProjectPackage.DIRECTORY: return createDirectory();
+			case ProjectPackage.MAIN_MODULE: return createMainModule();
+			case ProjectPackage.MODULE: return createModule();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -82,9 +84,29 @@ public class ProjectFactoryImpl extends EFactoryImpl implements ProjectFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SourceDir createSourceDir() {
-		SourceDirImpl sourceDir = new SourceDirImpl();
-		return sourceDir;
+	public Directory createDirectory() {
+		DirectoryImpl directory = new DirectoryImpl();
+		return directory;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MainModule createMainModule() {
+		MainModuleImpl mainModule = new MainModuleImpl();
+		return mainModule;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Module createModule() {
+		ModuleImpl module = new ModuleImpl();
+		return module;
 	}
 
 	/**

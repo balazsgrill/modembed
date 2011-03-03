@@ -13,10 +13,13 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import project.Directory;
+import project.MainModule;
+import project.Module;
 import project.ProjectConfig;
 import project.ProjectFactory;
 import project.ProjectPackage;
-import project.SourceDir;
+import project.SettingsExtension;
 
 /**
  * <!-- begin-user-doc -->
@@ -37,7 +40,28 @@ public class ProjectPackageImpl extends EPackageImpl implements ProjectPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass sourceDirEClass = null;
+	private EClass directoryEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass mainModuleEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass moduleEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass settingsExtensionEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -123,8 +147,8 @@ public class ProjectPackageImpl extends EPackageImpl implements ProjectPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getSourceDir() {
-		return sourceDirEClass;
+	public EReference getProjectConfig_Builds() {
+		return (EReference)projectConfigEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -132,8 +156,80 @@ public class ProjectPackageImpl extends EPackageImpl implements ProjectPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSourceDir_Path() {
-		return (EAttribute)sourceDirEClass.getEStructuralFeatures().get(0);
+	public EReference getProjectConfig_Extensions() {
+		return (EReference)projectConfigEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getDirectory() {
+		return directoryEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDirectory_Path() {
+		return (EAttribute)directoryEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getMainModule() {
+		return mainModuleEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getMainModule_Output() {
+		return (EReference)mainModuleEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getMainModule_Target() {
+		return (EAttribute)mainModuleEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getModule() {
+		return moduleEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getModule_QualifiedID() {
+		return (EAttribute)moduleEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getSettingsExtension() {
+		return settingsExtensionEClass;
 	}
 
 	/**
@@ -166,9 +262,20 @@ public class ProjectPackageImpl extends EPackageImpl implements ProjectPackage {
 		// Create classes and their features
 		projectConfigEClass = createEClass(PROJECT_CONFIG);
 		createEReference(projectConfigEClass, PROJECT_CONFIG__SOURCEDIRS);
+		createEReference(projectConfigEClass, PROJECT_CONFIG__BUILDS);
+		createEReference(projectConfigEClass, PROJECT_CONFIG__EXTENSIONS);
 
-		sourceDirEClass = createEClass(SOURCE_DIR);
-		createEAttribute(sourceDirEClass, SOURCE_DIR__PATH);
+		directoryEClass = createEClass(DIRECTORY);
+		createEAttribute(directoryEClass, DIRECTORY__PATH);
+
+		mainModuleEClass = createEClass(MAIN_MODULE);
+		createEReference(mainModuleEClass, MAIN_MODULE__OUTPUT);
+		createEAttribute(mainModuleEClass, MAIN_MODULE__TARGET);
+
+		moduleEClass = createEClass(MODULE);
+		createEAttribute(moduleEClass, MODULE__QUALIFIED_ID);
+
+		settingsExtensionEClass = createEClass(SETTINGS_EXTENSION);
 	}
 
 	/**
@@ -199,13 +306,25 @@ public class ProjectPackageImpl extends EPackageImpl implements ProjectPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		mainModuleEClass.getESuperTypes().add(this.getModule());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(projectConfigEClass, ProjectConfig.class, "ProjectConfig", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getProjectConfig_Sourcedirs(), this.getSourceDir(), null, "sourcedirs", null, 0, -1, ProjectConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProjectConfig_Sourcedirs(), this.getDirectory(), null, "sourcedirs", null, 0, -1, ProjectConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProjectConfig_Builds(), this.getMainModule(), null, "builds", null, 0, -1, ProjectConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProjectConfig_Extensions(), this.getSettingsExtension(), null, "extensions", null, 0, -1, ProjectConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(sourceDirEClass, SourceDir.class, "SourceDir", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSourceDir_Path(), ecorePackage.getEString(), "path", null, 0, 1, SourceDir.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(directoryEClass, Directory.class, "Directory", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDirectory_Path(), ecorePackage.getEString(), "path", null, 0, 1, Directory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(mainModuleEClass, MainModule.class, "MainModule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMainModule_Output(), this.getDirectory(), null, "Output", null, 0, 1, MainModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMainModule_Target(), ecorePackage.getEString(), "target", null, 0, 1, MainModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(moduleEClass, Module.class, "Module", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getModule_QualifiedID(), ecorePackage.getEString(), "qualifiedID", null, 0, 1, Module.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(settingsExtensionEClass, SettingsExtension.class, "SettingsExtension", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

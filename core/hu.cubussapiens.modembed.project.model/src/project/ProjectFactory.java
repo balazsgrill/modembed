@@ -35,13 +35,31 @@ public interface ProjectFactory extends EFactory {
 	ProjectConfig createProjectConfig();
 
 	/**
-	 * Returns a new object of class '<em>Source Dir</em>'.
+	 * Returns a new object of class '<em>Directory</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Source Dir</em>'.
+	 * @return a new object of class '<em>Directory</em>'.
 	 * @generated
 	 */
-	SourceDir createSourceDir();
+	Directory createDirectory();
+
+	/**
+	 * Returns a new object of class '<em>Main Module</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Main Module</em>'.
+	 * @generated
+	 */
+	MainModule createMainModule();
+
+	/**
+	 * Returns a new object of class '<em>Module</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Module</em>'.
+	 * @generated
+	 */
+	Module createModule();
 
 	/**
 	 * Returns the package supported by this factory.
