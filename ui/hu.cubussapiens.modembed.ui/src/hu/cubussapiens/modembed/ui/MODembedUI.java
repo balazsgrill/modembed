@@ -16,6 +16,8 @@ public class MODembedUI extends AbstractUIPlugin {
 	
 	public static String NatureID = "hu.cubussapiens.modembed.ui.nature";
 	
+	public static String SettingsFile = "modembed.project";
+	
 	/**
 	 * The constructor
 	 */

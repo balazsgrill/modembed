@@ -32,5 +32,16 @@
             name="MODembed">
       </category>
    </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="hu.cubussapiens.modembed.ui.project.settingsEditor.ProjectSettingsEditorPart"
+            default="true"
+            filenames="modembed.project"
+            icon="icons/chip.png"
+            id="hu.cubussapiens.modembed.ui.project.settingsEditor"
+            name="ProjectSettingsEditor">
+      </editor>
+   </extension>
 
 </plugin>
