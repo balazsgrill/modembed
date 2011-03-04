@@ -6,8 +6,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="ProjectConfig">
     <eStructuralFeatures xsi:type="ecore:EReference" name="sourcedirs" upperBound="-1"
         eType="#//Directory" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="builds" upperBound="-1"
-        eType="#//MainModule" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="build" eType="#//MainModule"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="extensions" upperBound="-1"
         eType="#//SettingsExtension" containment="true"/>
   </eClassifiers>

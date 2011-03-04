@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link project.ProjectConfig#getSourcedirs <em>Sourcedirs</em>}</li>
- *   <li>{@link project.ProjectConfig#getBuilds <em>Builds</em>}</li>
+ *   <li>{@link project.ProjectConfig#getBuild <em>Build</em>}</li>
  *   <li>{@link project.ProjectConfig#getExtensions <em>Extensions</em>}</li>
  * </ul>
  * </p>
@@ -46,20 +46,30 @@ public interface ProjectConfig extends EObject {
 	EList<Directory> getSourcedirs();
 
 	/**
-	 * Returns the value of the '<em><b>Builds</b></em>' containment reference list.
-	 * The list contents are of type {@link project.MainModule}.
+	 * Returns the value of the '<em><b>Build</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Builds</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Build</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Builds</em>' containment reference list.
-	 * @see project.ProjectPackage#getProjectConfig_Builds()
+	 * @return the value of the '<em>Build</em>' containment reference.
+	 * @see #setBuild(MainModule)
+	 * @see project.ProjectPackage#getProjectConfig_Build()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<MainModule> getBuilds();
+	MainModule getBuild();
+
+	/**
+	 * Sets the value of the '{@link project.ProjectConfig#getBuild <em>Build</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Build</em>' containment reference.
+	 * @see #getBuild()
+	 * @generated
+	 */
+	void setBuild(MainModule value);
 
 	/**
 	 * Returns the value of the '<em><b>Extensions</b></em>' containment reference list.

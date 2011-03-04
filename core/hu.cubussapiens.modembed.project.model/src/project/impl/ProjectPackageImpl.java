@@ -147,7 +147,7 @@ public class ProjectPackageImpl extends EPackageImpl implements ProjectPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getProjectConfig_Builds() {
+	public EReference getProjectConfig_Build() {
 		return (EReference)projectConfigEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -262,7 +262,7 @@ public class ProjectPackageImpl extends EPackageImpl implements ProjectPackage {
 		// Create classes and their features
 		projectConfigEClass = createEClass(PROJECT_CONFIG);
 		createEReference(projectConfigEClass, PROJECT_CONFIG__SOURCEDIRS);
-		createEReference(projectConfigEClass, PROJECT_CONFIG__BUILDS);
+		createEReference(projectConfigEClass, PROJECT_CONFIG__BUILD);
 		createEReference(projectConfigEClass, PROJECT_CONFIG__EXTENSIONS);
 
 		directoryEClass = createEClass(DIRECTORY);
@@ -311,7 +311,7 @@ public class ProjectPackageImpl extends EPackageImpl implements ProjectPackage {
 		// Initialize classes and features; add operations and parameters
 		initEClass(projectConfigEClass, ProjectConfig.class, "ProjectConfig", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getProjectConfig_Sourcedirs(), this.getDirectory(), null, "sourcedirs", null, 0, -1, ProjectConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getProjectConfig_Builds(), this.getMainModule(), null, "builds", null, 0, -1, ProjectConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProjectConfig_Build(), this.getMainModule(), null, "build", null, 0, 1, ProjectConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProjectConfig_Extensions(), this.getSettingsExtension(), null, "extensions", null, 0, -1, ProjectConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(directoryEClass, Directory.class, "Directory", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

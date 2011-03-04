@@ -8,6 +8,7 @@ package project.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -15,6 +16,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -34,7 +36,7 @@ import project.SettingsExtension;
  * The following features are implemented:
  * <ul>
  *   <li>{@link project.impl.ProjectConfigImpl#getSourcedirs <em>Sourcedirs</em>}</li>
- *   <li>{@link project.impl.ProjectConfigImpl#getBuilds <em>Builds</em>}</li>
+ *   <li>{@link project.impl.ProjectConfigImpl#getBuild <em>Build</em>}</li>
  *   <li>{@link project.impl.ProjectConfigImpl#getExtensions <em>Extensions</em>}</li>
  * </ul>
  * </p>
@@ -53,14 +55,14 @@ public class ProjectConfigImpl extends EObjectImpl implements ProjectConfig {
 	protected EList<Directory> sourcedirs;
 
 	/**
-	 * The cached value of the '{@link #getBuilds() <em>Builds</em>}' containment reference list.
+	 * The cached value of the '{@link #getBuild() <em>Build</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getBuilds()
+	 * @see #getBuild()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<MainModule> builds;
+	protected MainModule build;
 
 	/**
 	 * The cached value of the '{@link #getExtensions() <em>Extensions</em>}' containment reference list.
@@ -108,11 +110,42 @@ public class ProjectConfigImpl extends EObjectImpl implements ProjectConfig {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<MainModule> getBuilds() {
-		if (builds == null) {
-			builds = new EObjectContainmentEList<MainModule>(MainModule.class, this, ProjectPackage.PROJECT_CONFIG__BUILDS);
+	public MainModule getBuild() {
+		return build;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetBuild(MainModule newBuild, NotificationChain msgs) {
+		MainModule oldBuild = build;
+		build = newBuild;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ProjectPackage.PROJECT_CONFIG__BUILD, oldBuild, newBuild);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
-		return builds;
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setBuild(MainModule newBuild) {
+		if (newBuild != build) {
+			NotificationChain msgs = null;
+			if (build != null)
+				msgs = ((InternalEObject)build).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ProjectPackage.PROJECT_CONFIG__BUILD, null, msgs);
+			if (newBuild != null)
+				msgs = ((InternalEObject)newBuild).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ProjectPackage.PROJECT_CONFIG__BUILD, null, msgs);
+			msgs = basicSetBuild(newBuild, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProjectPackage.PROJECT_CONFIG__BUILD, newBuild, newBuild));
 	}
 
 	/**
@@ -137,8 +170,8 @@ public class ProjectConfigImpl extends EObjectImpl implements ProjectConfig {
 		switch (featureID) {
 			case ProjectPackage.PROJECT_CONFIG__SOURCEDIRS:
 				return ((InternalEList<?>)getSourcedirs()).basicRemove(otherEnd, msgs);
-			case ProjectPackage.PROJECT_CONFIG__BUILDS:
-				return ((InternalEList<?>)getBuilds()).basicRemove(otherEnd, msgs);
+			case ProjectPackage.PROJECT_CONFIG__BUILD:
+				return basicSetBuild(null, msgs);
 			case ProjectPackage.PROJECT_CONFIG__EXTENSIONS:
 				return ((InternalEList<?>)getExtensions()).basicRemove(otherEnd, msgs);
 		}
@@ -155,8 +188,8 @@ public class ProjectConfigImpl extends EObjectImpl implements ProjectConfig {
 		switch (featureID) {
 			case ProjectPackage.PROJECT_CONFIG__SOURCEDIRS:
 				return getSourcedirs();
-			case ProjectPackage.PROJECT_CONFIG__BUILDS:
-				return getBuilds();
+			case ProjectPackage.PROJECT_CONFIG__BUILD:
+				return getBuild();
 			case ProjectPackage.PROJECT_CONFIG__EXTENSIONS:
 				return getExtensions();
 		}
@@ -176,9 +209,8 @@ public class ProjectConfigImpl extends EObjectImpl implements ProjectConfig {
 				getSourcedirs().clear();
 				getSourcedirs().addAll((Collection<? extends Directory>)newValue);
 				return;
-			case ProjectPackage.PROJECT_CONFIG__BUILDS:
-				getBuilds().clear();
-				getBuilds().addAll((Collection<? extends MainModule>)newValue);
+			case ProjectPackage.PROJECT_CONFIG__BUILD:
+				setBuild((MainModule)newValue);
 				return;
 			case ProjectPackage.PROJECT_CONFIG__EXTENSIONS:
 				getExtensions().clear();
@@ -199,8 +231,8 @@ public class ProjectConfigImpl extends EObjectImpl implements ProjectConfig {
 			case ProjectPackage.PROJECT_CONFIG__SOURCEDIRS:
 				getSourcedirs().clear();
 				return;
-			case ProjectPackage.PROJECT_CONFIG__BUILDS:
-				getBuilds().clear();
+			case ProjectPackage.PROJECT_CONFIG__BUILD:
+				setBuild((MainModule)null);
 				return;
 			case ProjectPackage.PROJECT_CONFIG__EXTENSIONS:
 				getExtensions().clear();
@@ -219,8 +251,8 @@ public class ProjectConfigImpl extends EObjectImpl implements ProjectConfig {
 		switch (featureID) {
 			case ProjectPackage.PROJECT_CONFIG__SOURCEDIRS:
 				return sourcedirs != null && !sourcedirs.isEmpty();
-			case ProjectPackage.PROJECT_CONFIG__BUILDS:
-				return builds != null && !builds.isEmpty();
+			case ProjectPackage.PROJECT_CONFIG__BUILD:
+				return build != null;
 			case ProjectPackage.PROJECT_CONFIG__EXTENSIONS:
 				return extensions != null && !extensions.isEmpty();
 		}

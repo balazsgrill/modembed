@@ -79,13 +79,13 @@ public interface ProjectPackage extends EPackage {
 	int PROJECT_CONFIG__SOURCEDIRS = 0;
 
 	/**
-	 * The feature id for the '<em><b>Builds</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Build</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROJECT_CONFIG__BUILDS = 1;
+	int PROJECT_CONFIG__BUILD = 1;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -249,15 +249,15 @@ public interface ProjectPackage extends EPackage {
 	EReference getProjectConfig_Sourcedirs();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link project.ProjectConfig#getBuilds <em>Builds</em>}'.
+	 * Returns the meta object for the containment reference '{@link project.ProjectConfig#getBuild <em>Build</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Builds</em>'.
-	 * @see project.ProjectConfig#getBuilds()
+	 * @return the meta object for the containment reference '<em>Build</em>'.
+	 * @see project.ProjectConfig#getBuild()
 	 * @see #getProjectConfig()
 	 * @generated
 	 */
-	EReference getProjectConfig_Builds();
+	EReference getProjectConfig_Build();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link project.ProjectConfig#getExtensions <em>Extensions</em>}'.
@@ -395,12 +395,12 @@ public interface ProjectPackage extends EPackage {
 		EReference PROJECT_CONFIG__SOURCEDIRS = eINSTANCE.getProjectConfig_Sourcedirs();
 
 		/**
-		 * The meta object literal for the '<em><b>Builds</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Build</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PROJECT_CONFIG__BUILDS = eINSTANCE.getProjectConfig_Builds();
+		EReference PROJECT_CONFIG__BUILD = eINSTANCE.getProjectConfig_Build();
 
 		/**
 		 * The meta object literal for the '<em><b>Extensions</b></em>' containment reference list feature.
