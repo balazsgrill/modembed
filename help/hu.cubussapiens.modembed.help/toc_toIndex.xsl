@@ -6,10 +6,10 @@
 		<body>
 		<h1>Table of contents</h1>
 		<xsl:for-each select="toc">
-		<a>
-			<xsl:attribute name="href"><xsl:value-of select="@topic" /></xsl:attribute>
+		<h2>
+			<!-- xsl:attribute name="href"><xsl:value-of select="@topic" /></xsl:attribute-->
 			<xsl:value-of select="@label" />
-		</a><br/>
+		</h2><br/>
 			<ul>
 			<xsl:for-each select="topic">
 				<li><a>

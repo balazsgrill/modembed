@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Modular Assembler</title>
+</head>
+<body>
+
+<h1>Modular ASM</h1>
+
+<p>As the main programming language for 8-bit microcontrollers is the 
+assembler, MODembed introduces a new assembly language which meets
+modern requirements.</p>
+
+<h2>What does modular ASM offers, what traditional ASM don't?</h2>
+
+<p>
+First of all, a cleaner syntax. Every CPU has it's own assembler language 
+with specific keywords, macro language and program structure. In MASM, 
+the only difference between CPUs is the instruction set. Other architecture
+specific features are handled by architecture specific models, according to
+the model-driven approach.
+</p>
+
+<p>
+No macros and no global namespace. Every compilation unit (so-called module)
+can be viewed as a single and closed unit, and can be interpreted alone 
+without reading any other module. Modules can interact with other modules 
+through their exported interface which consists of variables and functions.
+There is no way to change the internal behavior of a module from the outside
+as a macro could do. Therefore you can be sure that your module will behave
+as you think it will when you write it.
+</p>
+
+<h2>Syntax</h2>
+
+<p>An MASM program is distributed across *.masm files, every file contains 
+exactly one module and has the following structure:</p>
+
+<pre>
+/*
+ * This defines a module, called modulename
+ * The target is PIC18, which determines the
+ * instruction set it uses.
+ */
+module modulename target microchip.pic18{
+
+  /*
+   * Here comes the definitions of variables and functions
+   * inside this module
+   */
+  
+  // You can use one-line comments as well
+}
+</pre>
+
+<p>Variables are simple symbols, which are mapped to a memory address
+by the linker. For special purpose registers, which should be mapped to
+fix addresses, you can define symbols:</p>
+
+<pre>
+
+	var variablename;
+	symbol symbolname 0x123;
+
+</pre>
+
+<p>Like the variables, functions are simply symbols, but mapped to the 
+program memory space. They're called functions, but no support 
+for parameters, return variables or inner variables. For flow control you
+can use labels, which will be mapped to the program space relatively to
+the function start address. These labels are inaccessible from the
+outside of a function.</p>
+
+<pre>
+func main{
+	label start;
+	incf 0 0 counter;
+	call 0 other1.count;
+	movlw 0xFF;
+	movwf 0 symbols.PORTA;
+	goto start;
+}
+</pre>
+
+</body>
+</html>
