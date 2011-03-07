@@ -5,6 +5,6 @@ module proba target mirochip.pic18{
 
 
 	func main{
-	}
+	};
 
 }

@@ -1,0 +1,18 @@
+«IMPORT project»
+
+«DEFINE mainmodule FOR ProjectConfig»
+
+«FILE this.build.qualifiedID + ".masm"»
+module «this.build.qualifiedID» target «this.build.target»{
+
+	/*
+	 * This is the main function, the starting point
+	 * of the program
+	 */
+	 func main{
+	 };
+
+}
+«ENDFILE»
+
+«ENDDEFINE»

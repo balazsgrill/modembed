@@ -12,7 +12,6 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
-import org.eclipse.ui.dialogs.WizardNewProjectCreationPage;
 
 /**
  * @author balage
@@ -20,16 +19,15 @@ import org.eclipse.ui.dialogs.WizardNewProjectCreationPage;
  */
 public class NewMODembedProjectWizard extends Wizard implements INewWizard {
 
-	WizardNewProjectCreationPage page1;
+	NewMODembedProjectWizardPage page1;
 	
 	/* (non-Javadoc)
 	 * @see org.eclipse.ui.IWorkbenchWizard#init(org.eclipse.ui.IWorkbench, org.eclipse.jface.viewers.IStructuredSelection)
 	 */
 	@Override
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
-		page1 = new WizardNewProjectCreationPage("page1");
-		
-
+		page1 = new NewMODembedProjectWizardPage("page1");
+		setWindowTitle("MODembed project creation");
 	}
 
 	@Override
@@ -47,6 +45,10 @@ public class NewMODembedProjectWizard extends Wizard implements INewWizard {
 		try {
 			CreateProjectTask task = new CreateProjectTask();
 			task.setProject(project);
+			task.setArchID(page1.getArchID());
+			task.setMainModule(page1.getMainModule());
+			task.setOutDirName(page1.getOutDirName());
+			task.setSrcDirName(page1.getSrcDirName());
 			getContainer().run(true, false, task);
 		} catch (InvocationTargetException e) {
 			e.printStackTrace();
@@ -55,7 +57,6 @@ public class NewMODembedProjectWizard extends Wizard implements INewWizard {
 			e.printStackTrace();
 			return false;
 		}
-		
 		
 		return true;
 	}

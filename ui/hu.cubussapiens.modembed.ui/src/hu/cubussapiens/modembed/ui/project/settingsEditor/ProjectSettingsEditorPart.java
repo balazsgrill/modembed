@@ -101,11 +101,8 @@ public class ProjectSettingsEditorPart extends SharedHeaderFormEditor {
 
 	@Override
 	protected void createHeaderContents(IManagedForm headerForm) {
-		headerForm.setInput(config);
-		
 		headerForm.getForm().setText("Project Configuration");
 		
-		//headerForm.getForm().s
 	}
 	
 }
