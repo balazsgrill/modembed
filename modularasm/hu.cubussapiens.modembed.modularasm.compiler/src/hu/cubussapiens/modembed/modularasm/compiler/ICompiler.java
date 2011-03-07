@@ -28,6 +28,8 @@ public interface ICompiler {
 	
 	public void setMemoryModel(MemoryModel memmodel);
 	
+	public void addPostBuildProcess(IPostBuildProcess process);
+	
 	public HexFile compile(IProgressMonitor monitor) throws CompilerException;
 	
 	public Map<String, Long> getSymbolMapping();

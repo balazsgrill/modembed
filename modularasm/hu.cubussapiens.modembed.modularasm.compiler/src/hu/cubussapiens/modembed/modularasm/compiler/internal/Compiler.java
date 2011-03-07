@@ -3,7 +3,9 @@
  */
 package hu.cubussapiens.modembed.modularasm.compiler.internal;
 
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -16,6 +18,7 @@ import hu.cubussapiens.modembed.modularasm.compiler.CompilerException;
 import hu.cubussapiens.modembed.modularasm.compiler.IArchitectureResolver;
 import hu.cubussapiens.modembed.modularasm.compiler.ICompiler;
 import hu.cubussapiens.modembed.modularasm.compiler.IModuleResolver;
+import hu.cubussapiens.modembed.modularasm.compiler.IPostBuildProcess;
 import hu.cubussapiens.modembed.modularasm.modularASM.Module;
 
 import memory.MemoryModel;
@@ -34,6 +37,7 @@ public class Compiler implements ICompiler {
 	public IModuleResolver modresolver;
 	public MemoryModel memmodel;
 	
+	private final List<IPostBuildProcess> postBuilds = new ArrayList<IPostBuildProcess>();
 	
 	/* (non-Javadoc)
 	 * @see hu.cubussapiens.modembed.modularasm.builder.ICompiler#setMain(hu.cubussapiens.modembed.modularasm.modularASM.Module)
@@ -66,7 +70,7 @@ public class Compiler implements ICompiler {
 	@Override
 	public HexFile compile(IProgressMonitor monitor) throws CompilerException{
 		
-		monitor.beginTask("Compiling..", 100);
+		monitor.beginTask("Compiling..", 100+(postBuilds.size()*10));
 		
 		/*
 		 * Instantiate main module, which will trigger the preparation
@@ -151,6 +155,10 @@ public class Compiler implements ICompiler {
 		}
 		program.setData(bytes);
 		
+		for(IPostBuildProcess bp : postBuilds){
+			bp.execute(hf, new SubProgressMonitor(monitor, 10));
+		}
+		
 		lastSymbolManager = cmanager.symbolManager;
 		
 		monitor.done();
@@ -176,6 +184,11 @@ public class Compiler implements ICompiler {
 			}
 		}
 		return result;
+	}
+
+	@Override
+	public void addPostBuildProcess(IPostBuildProcess process) {
+		postBuilds.add(process);
 	}
 
 }
