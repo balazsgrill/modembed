@@ -10,6 +10,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.ui.ide,
  org.eclipse.ui.forms,
  hu.cubussapiens.modembed.project.model;bundle-version="1.0.0",
- hu.cubussapiens.modembed;bundle-version="0.1.0"
+ hu.cubussapiens.modembed;bundle-version="0.1.0",
+ hu.cubussapiens.modembed.modularasm.compiler;bundle-version="0.1.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
