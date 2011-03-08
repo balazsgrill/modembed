@@ -3,6 +3,7 @@
  */
 package hu.cubussapiens.modembed.ui.project;
 
+import hu.cubussapiens.modembed.ui.IProjectWizardExtension;
 import hu.cubussapiens.modembed.ui.MODembedUI;
 
 import java.io.ByteArrayInputStream;
@@ -39,6 +40,12 @@ public class CreateProjectTask implements IRunnableWithProgress {
 	private String outDirName = "out";
 	private String mainModule = "main";
 	private String archID = "";
+	
+	private IProjectWizardExtension[] wextensions;
+
+	public void setWextensions(IProjectWizardExtension[] wextensions) {
+		this.wextensions = wextensions;
+	}
 	
 	public void setSrcDirName(String srcDirName) {
 		this.srcDirName = srcDirName;
@@ -81,7 +88,11 @@ public class CreateProjectTask implements IRunnableWithProgress {
 	@Override
 	public void run(IProgressMonitor monitor) throws InvocationTargetException,
 			InterruptedException {
-		monitor.beginTask("Creating project", 7);
+		int l = 0;
+		if (wextensions != null){
+			l = wextensions.length;
+		}
+		monitor.beginTask("Creating project", 7+l);
 		
 		try {
 			project.create(new SubProgressMonitor(monitor, 1));
@@ -119,6 +130,13 @@ public class CreateProjectTask implements IRunnableWithProgress {
 			main.setTarget(archID);
 			main.setOutput(outdir);
 			pc.setBuild(main);
+			
+			if (wextensions != null){
+				for(IProjectWizardExtension we : wextensions){
+					we.includeData(pc);
+					monitor.worked(1);
+				}
+			}
 			
 			settings.save(null);
 			monitor.worked(1);

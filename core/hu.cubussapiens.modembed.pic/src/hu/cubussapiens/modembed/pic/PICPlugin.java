@@ -77,6 +77,18 @@ public class PICPlugin extends Plugin {
 		return model;
 	}
 	
+	public PicCPUType getCPUType(ResourceSet rs, URL modelurl) throws IOException{
+		Resource model = loadSharedResource(rs, modelurl);
+		
+		for(EObject eo : model.getContents()){
+			if (eo instanceof PicCPUType){
+				return ((PicCPUType) eo);
+			}
+		}
+		
+		return null;
+	}
+	
 	public Scheme getConfigurationScheme(ResourceSet rs, URL modelurl) throws IOException{
 		Resource model = loadSharedResource(rs, modelurl);
 		

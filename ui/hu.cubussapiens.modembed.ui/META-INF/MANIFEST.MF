@@ -14,4 +14,5 @@ Require-Bundle: org.eclipse.ui,
  hu.cubussapiens.modembed.modularasm.compiler;bundle-version="0.1.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: hu.cubussapiens.modembed.ui
+Export-Package: hu.cubussapiens.modembed.ui,
+ hu.cubussapiens.modembed.ui.widgets

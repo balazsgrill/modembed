@@ -3,19 +3,19 @@
  */
 package hu.cubussapiens.modembed.ui.wizards;
 
-import hu.cubussapiens.modembed.ui.widgets.ArchitectureSelectorCombo;
+import hu.cubussapiens.modembed.ui.IProjectExtension;
+import hu.cubussapiens.modembed.ui.IProjectWizardExtension;
+import hu.cubussapiens.modembed.ui.MODembedUI;
+import hu.cubussapiens.modembed.ui.widgets.IDataListener;
+import hu.cubussapiens.modembed.ui.widgets.WizardPageUtil;
 
-import org.eclipse.jface.viewers.ISelectionChangedListener;
-import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.events.ModifyEvent;
-import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Group;
-import org.eclipse.swt.widgets.Label;
-import org.eclipse.swt.widgets.Text;
+import org.eclipse.ui.IPropertyListener;
 import org.eclipse.ui.dialogs.WizardNewProjectCreationPage;
 
 /**
@@ -42,40 +42,9 @@ public class NewMODembedProjectWizardPage extends WizardNewProjectCreationPage {
 		return result;
 	}
 	
-	private void createTextField(Composite parent, String label, String def, final IDataListener listener){
-		Label l = new Label(parent, SWT.NONE);
-		l.setLayoutData(new GridData(SWT.LEFT, SWT.CENTER, false, false));
-		final Text t = new Text(parent, SWT.BORDER);
-		t.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
-		
-		l.setText(label);
-		t.setText(def);
-		t.addModifyListener(new ModifyListener() {
-			
-			@Override
-			public void modifyText(ModifyEvent e) {
-				listener.dataChanged(t.getText());
-				updatePage();
-			}
-		});
-	}
-	
-	private void createArchSelectorField(Composite parent, String label, final IDataListener listener){
-		Label l = new Label(parent, SWT.NONE);
-		l.setLayoutData(new GridData(SWT.LEFT, SWT.CENTER, false, false));
-		final ArchitectureSelectorCombo c = new ArchitectureSelectorCombo(parent, SWT.BORDER);
-		c.getControl().setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
-		
-		l.setText(label);
-		c.addSelectionChangedListener(new ISelectionChangedListener() {
-			
-			@Override
-			public void selectionChanged(SelectionChangedEvent event) {
-				listener.dataChanged(c.getArchSelection());
-				updatePage();
-			}
-		});
-	}
+	private String oldArchID = null;
+	private Control[] extensions = null;
+	private IProjectWizardExtension[] wextensions = null;
 	
 	private String srcDirName = "src";
 	private String outDirName = "out";
@@ -125,8 +94,53 @@ public class NewMODembedProjectWizardPage extends WizardNewProjectCreationPage {
 				setMessage("Please select a target architecture");
 				return false;
 			}
+			
+			if (wextensions != null){
+				for(int i=0;i<wextensions.length;i++){
+					boolean v = wextensions[i].validate(this);
+					if (!v) return false;
+				}
+			}
 		}
 		return r;
+	}
+	
+	public IProjectWizardExtension[] getWextensions() {
+		return wextensions;
+	}
+	
+	private void updateExtension(){
+		if (oldArchID != null && (!oldArchID.equals(archID))){
+			for(Control c : extensions){
+				c.dispose();
+			}
+			extensions = null;
+			wextensions = null;
+			oldArchID = null;
+		}
+		
+		Composite c = (Composite)getControl();
+		
+		if (archID != null && (!archID.equals(oldArchID))){
+			IProjectExtension[] pes = MODembedUI.getDefault().getExtensions(archID);
+			extensions = new Control[pes.length];
+			wextensions = new IProjectWizardExtension[pes.length];
+			for(int i =0;i<pes.length;i++){
+				wextensions[i] = pes[i].createWizardExtension();
+				extensions[i] = wextensions[i].createControls(c);
+				extensions[i].setLayoutData(new GridData(SWT.FILL, SWT.TOP, true, false));
+				wextensions[i].addPropertyListener(new IPropertyListener() {
+					
+					@Override
+					public void propertyChanged(Object source, int propId) {
+						updatePage();
+					}
+				});
+			}
+			oldArchID = archID;
+		}
+		
+		c.layout();
 	}
 	
 	@Override
@@ -136,32 +150,36 @@ public class NewMODembedProjectWizardPage extends WizardNewProjectCreationPage {
 		Composite c = (Composite)getControl();
 		
 		Group dirs = createGroup(c, "Directories");
-		createTextField(dirs, "Source directory", srcDirName, new IDataListener() {
+		WizardPageUtil.createTextField(dirs, "Source directory", srcDirName, new IDataListener() {
 			@Override
 			public void dataChanged(String data) {
 				srcDirName = data;
-				
+				updatePage();
 			}
 		});
-		createTextField(dirs, "Output directory", outDirName, new IDataListener() {
+		WizardPageUtil.createTextField(dirs, "Output directory", outDirName, new IDataListener() {
 			@Override
 			public void dataChanged(String data) {
 				outDirName = data;
+				updatePage();
 			}
 		});
 		
 		Group buildopts = createGroup(c, "Build options");
-		createArchSelectorField(buildopts, "Target architecture", new IDataListener() {
+		WizardPageUtil.createArchSelectorField(buildopts, "Target architecture", new IDataListener() {
 			
 			@Override
 			public void dataChanged(String data) {
 				archID = data;
+				updateExtension();
+				updatePage();
 			}
 		});
-		createTextField(buildopts, "Main module name", mainModule, new IDataListener() {
+		WizardPageUtil.createTextField(buildopts, "Main module name", mainModule, new IDataListener() {
 			@Override
 			public void dataChanged(String data) {
 				mainModule = data;
+				updatePage();
 			}
 		});
 	}

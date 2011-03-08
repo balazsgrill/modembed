@@ -49,6 +49,7 @@ public class NewMODembedProjectWizard extends Wizard implements INewWizard {
 			task.setMainModule(page1.getMainModule());
 			task.setOutDirName(page1.getOutDirName());
 			task.setSrcDirName(page1.getSrcDirName());
+			task.setWextensions(page1.getWextensions());
 			getContainer().run(true, false, task);
 		} catch (InvocationTargetException e) {
 			e.printStackTrace();

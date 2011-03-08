@@ -1,7 +1,7 @@
 /**
  * 
  */
-package hu.cubussapiens.modembed.ui.wizards;
+package hu.cubussapiens.modembed.ui.widgets;
 
 /**
  * @author balazs.grill

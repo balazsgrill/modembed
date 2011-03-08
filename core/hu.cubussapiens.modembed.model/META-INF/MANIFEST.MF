@@ -9,7 +9,10 @@ Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: pic,
  pic.impl,
- pic.util
+ pic.util,
+ picproject,
+ picproject.impl,
+ picproject.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  hu.cubussapiens.modembed.configuration.model;visibility:=reexport,

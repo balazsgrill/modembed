@@ -1,5 +1,7 @@
 package hu.cubussapiens.modembed.ui;
 
+import hu.cubussapiens.modembed.ui.internal.ProjectExtensionRegistry;
+
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
@@ -18,12 +20,21 @@ public class MODembedUI extends AbstractUIPlugin {
 	
 	public static String SettingsFile = "modembed.project";
 	
+	private ProjectExtensionRegistry pereg;
+	
 	/**
 	 * The constructor
 	 */
 	public MODembedUI() {
 	}
 
+	public IProjectExtension[] getExtensions(String archID){
+		if (pereg == null){
+			pereg = new ProjectExtensionRegistry();
+		}
+		return pereg.getExtensions(archID);
+	}
+	
 	/*
 	 * (non-Javadoc)
 	 * @see org.eclipse.ui.plugin.AbstractUIPlugin#start(org.osgi.framework.BundleContext)

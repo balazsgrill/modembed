@@ -19,8 +19,7 @@ public class PicProjectExtension implements IProjectExtension {
 	 */
 	@Override
 	public IProjectWizardExtension createWizardExtension() {
-		// TODO Auto-generated method stub
-		return null;
+		return new PicProjectWizardExtension();
 	}
 
 	@Override
