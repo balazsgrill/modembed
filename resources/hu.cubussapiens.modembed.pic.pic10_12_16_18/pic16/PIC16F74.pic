@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="ASCII"?>
-<pic:PicCPUType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:configscheme="http://gb.hu/embedded/configuration/scheme" xmlns:pic="http://gb.hu/embedded/pic" name="PIC16F74">
+<pic:PicCPUType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mbconf="http://cubussapiens.hu/modembed/config" xmlns:pic="http://cubussapiens.hu/modembed/pic" name="PIC16F74">
   <configuration wordsize="8">
     <scheme>
       <subsets name="CONFIG">
-        <parameters xsi:type="configscheme:EnumParam" name="Oscillator">
+        <parameters xsi:type="mbconf:EnumParam" name="Oscillator">
           <literals name="RC" value="3"/>
           <literals name="LP"/>
           <literals name="XT" value="1"/>
           <literals name="HS" value="2"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Watchdog Timer">
+        <parameters xsi:type="mbconf:EnumParam" name="Watchdog Timer">
           <literals name="On" value="1"/>
           <literals name="Off"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Power Up Timer">
+        <parameters xsi:type="mbconf:EnumParam" name="Power Up Timer">
           <literals name="Off" value="1"/>
           <literals name="On"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Code Protect">
+        <parameters xsi:type="mbconf:EnumParam" name="Code Protect">
           <literals name="Off" value="1"/>
           <literals name="On"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Brown Out Detect">
+        <parameters xsi:type="mbconf:EnumParam" name="Brown Out Detect">
           <literals name="On" value="1"/>
           <literals name="Off"/>
         </parameters>

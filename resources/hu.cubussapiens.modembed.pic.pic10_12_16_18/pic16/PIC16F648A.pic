@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="ASCII"?>
-<pic:PicCPUType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:configscheme="http://gb.hu/embedded/configuration/scheme" xmlns:pic="http://gb.hu/embedded/pic" name="PIC16F648A">
+<pic:PicCPUType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mbconf="http://cubussapiens.hu/modembed/config" xmlns:pic="http://cubussapiens.hu/modembed/pic" name="PIC16F648A">
   <configuration wordsize="16">
     <scheme>
       <subsets name="CONFIG">
-        <parameters xsi:type="configscheme:EnumParam" name="Oscillator">
+        <parameters xsi:type="mbconf:EnumParam" name="Oscillator">
           <literals name="RC: CLKOUT on RA6/OSC2/CLKOUT, RC on RA7/OSC1/CLKIN" value="19"/>
           <literals name="RC: I/O on RA6/OSC2/CLKOUT, RC on RA7/OSC1/CLKIN" value="18"/>
           <literals name="INTOSC: CLKOUT on RA6/OSC2/CLKOUT, I/O on RA7/OSC1/CLKIN" value="17"/>
@@ -13,31 +13,31 @@
           <literals name="XT" value="1"/>
           <literals name="LP"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Watchdog Timer">
+        <parameters xsi:type="mbconf:EnumParam" name="Watchdog Timer">
           <literals name="On" value="1"/>
           <literals name="Off"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Power Up Timer">
+        <parameters xsi:type="mbconf:EnumParam" name="Power Up Timer">
           <literals name="Disabled" value="1"/>
           <literals name="Enabled"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Master Clear Enable">
+        <parameters xsi:type="mbconf:EnumParam" name="Master Clear Enable">
           <literals name="Enabled" value="1"/>
           <literals name="Disabled"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Brown Out Detect">
+        <parameters xsi:type="mbconf:EnumParam" name="Brown Out Detect">
           <literals name="Enabled" value="1"/>
           <literals name="Disabled"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Low Voltage Program">
+        <parameters xsi:type="mbconf:EnumParam" name="Low Voltage Program">
           <literals name="Enabled" value="1"/>
           <literals name="Disabled"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Data EE Read Protect">
+        <parameters xsi:type="mbconf:EnumParam" name="Data EE Read Protect">
           <literals name="Disabled" value="1"/>
           <literals name="Enabled"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Code Protect">
+        <parameters xsi:type="mbconf:EnumParam" name="Code Protect">
           <literals name="Off" value="1"/>
           <literals name="On"/>
         </parameters>

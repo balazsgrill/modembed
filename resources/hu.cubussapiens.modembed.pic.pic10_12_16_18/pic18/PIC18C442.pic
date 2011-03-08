@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="ASCII"?>
-<pic:PicCPUType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:configscheme="http://gb.hu/embedded/configuration/scheme" xmlns:pic="http://gb.hu/embedded/pic" name="PIC18C442">
+<pic:PicCPUType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mbconf="http://cubussapiens.hu/modembed/config" xmlns:pic="http://cubussapiens.hu/modembed/pic" name="PIC18C442">
   <configuration wordsize="8">
     <scheme>
       <subsets name="CONFIG1L">
-        <parameters xsi:type="configscheme:EnumParam" name="Code Protect">
+        <parameters xsi:type="mbconf:EnumParam" name="Code Protect">
           <literals name="Disabled" value="255"/>
           <literals name="Enabled"/>
         </parameters>
       </subsets>
       <subsets name="CONFIG1H">
-        <parameters xsi:type="configscheme:EnumParam" name="Oscillator">
+        <parameters xsi:type="mbconf:EnumParam" name="Oscillator">
           <literals name="RC-OSC2 as RA6" value="7"/>
           <literals name="HS-PLL Enabled" value="6"/>
           <literals name="EC-OSC2 as RA6" value="5"/>
@@ -19,21 +19,21 @@
           <literals name="XT" value="1"/>
           <literals name="LP"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Osc. Switch Enable">
+        <parameters xsi:type="mbconf:EnumParam" name="Osc. Switch Enable">
           <literals name="Disabled" value="1"/>
           <literals name="Enabled"/>
         </parameters>
       </subsets>
       <subsets name="CONFIG2L">
-        <parameters xsi:type="configscheme:EnumParam" name="Power Up Timer">
+        <parameters xsi:type="mbconf:EnumParam" name="Power Up Timer">
           <literals name="Disabled" value="1"/>
           <literals name="Enabled"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Brown Out Detect">
+        <parameters xsi:type="mbconf:EnumParam" name="Brown Out Detect">
           <literals name="Enabled" value="1"/>
           <literals name="Disabled"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Brown Out Voltage">
+        <parameters xsi:type="mbconf:EnumParam" name="Brown Out Voltage">
           <literals name="2.5V" value="3"/>
           <literals name="2.7V" value="2"/>
           <literals name="4.2V" value="1"/>
@@ -41,11 +41,11 @@
         </parameters>
       </subsets>
       <subsets name="CONFIG2H">
-        <parameters xsi:type="configscheme:EnumParam" name="Watchdog Timer">
+        <parameters xsi:type="mbconf:EnumParam" name="Watchdog Timer">
           <literals name="Enabled" value="1"/>
           <literals name="Disabled"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Watchdog Postscaler">
+        <parameters xsi:type="mbconf:EnumParam" name="Watchdog Postscaler">
           <literals name="1:128" value="7"/>
           <literals name="1:64" value="6"/>
           <literals name="1:32" value="5"/>
@@ -57,13 +57,13 @@
         </parameters>
       </subsets>
       <subsets name="CONFIG3H">
-        <parameters xsi:type="configscheme:EnumParam" name="CCP2 Mux">
+        <parameters xsi:type="mbconf:EnumParam" name="CCP2 Mux">
           <literals name="RC1" value="1"/>
           <literals name="RB3"/>
         </parameters>
       </subsets>
       <subsets name="CONFIG4L">
-        <parameters xsi:type="configscheme:EnumParam" name="Stack Overflow Reset">
+        <parameters xsi:type="mbconf:EnumParam" name="Stack Overflow Reset">
           <literals name="Enabled" value="1"/>
           <literals name="Disabled"/>
         </parameters>

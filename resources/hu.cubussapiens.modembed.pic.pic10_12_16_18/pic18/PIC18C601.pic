@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="ASCII"?>
-<pic:PicCPUType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:configscheme="http://gb.hu/embedded/configuration/scheme" xmlns:pic="http://gb.hu/embedded/pic" name="PIC18C601">
+<pic:PicCPUType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mbconf="http://cubussapiens.hu/modembed/config" xmlns:pic="http://cubussapiens.hu/modembed/pic" name="PIC18C601">
   <configuration wordsize="8">
     <scheme>
       <subsets name="CONFIG1H">
-        <parameters xsi:type="configscheme:EnumParam" name="Oscillator">
+        <parameters xsi:type="mbconf:EnumParam" name="Oscillator">
           <literals name="RC" value="3"/>
           <literals name="HS" value="2"/>
           <literals name="EC" value="1"/>
@@ -11,21 +11,21 @@
         </parameters>
       </subsets>
       <subsets name="CONFIG2L">
-        <parameters xsi:type="configscheme:EnumParam" name="Power Up Timer">
+        <parameters xsi:type="mbconf:EnumParam" name="Power Up Timer">
           <literals name="Disabled" value="1"/>
           <literals name="Enabled"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Bus Width">
+        <parameters xsi:type="mbconf:EnumParam" name="Bus Width">
           <literals name="16 Bit" value="1"/>
           <literals name="8 Bit"/>
         </parameters>
       </subsets>
       <subsets name="CONFIG2H">
-        <parameters xsi:type="configscheme:EnumParam" name="Watchdog Timer">
+        <parameters xsi:type="mbconf:EnumParam" name="Watchdog Timer">
           <literals name="Enabled" value="1"/>
           <literals name="Disabled"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Watchdog Postscaler">
+        <parameters xsi:type="mbconf:EnumParam" name="Watchdog Postscaler">
           <literals name="1:128" value="7"/>
           <literals name="1:64" value="6"/>
           <literals name="1:32" value="5"/>
@@ -37,11 +37,11 @@
         </parameters>
       </subsets>
       <subsets name="CONFIG4L">
-        <parameters xsi:type="configscheme:EnumParam" name="Stack Overflow Reset">
+        <parameters xsi:type="mbconf:EnumParam" name="Stack Overflow Reset">
           <literals name="Enabled" value="1"/>
           <literals name="Disabled"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Background Debug">
+        <parameters xsi:type="mbconf:EnumParam" name="Background Debug">
           <literals name="Disabled" value="1"/>
           <literals name="Enabled"/>
         </parameters>

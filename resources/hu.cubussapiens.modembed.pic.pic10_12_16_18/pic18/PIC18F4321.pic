@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="ASCII"?>
-<pic:PicCPUType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:configscheme="http://gb.hu/embedded/configuration/scheme" xmlns:pic="http://gb.hu/embedded/pic" name="PIC18F4321">
+<pic:PicCPUType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mbconf="http://cubussapiens.hu/modembed/config" xmlns:pic="http://cubussapiens.hu/modembed/pic" name="PIC18F4321">
   <configuration wordsize="8">
     <scheme>
       <subsets name="CONFIG1H">
-        <parameters xsi:type="configscheme:EnumParam" name="Oscillator">
+        <parameters xsi:type="mbconf:EnumParam" name="Oscillator">
           <literals name="11XX EXT RC-CLKOUT on RA6" value="12"/>
           <literals name="101X EXT RC-CLKOUT on RA6" value="10"/>
           <literals name="INT RC-CLKOUT on RA6,Port on RA7" value="9"/>
@@ -17,27 +17,27 @@
           <literals name="XT" value="1"/>
           <literals name="LP"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Fail Safe Monitor Clock Enable">
+        <parameters xsi:type="mbconf:EnumParam" name="Fail Safe Monitor Clock Enable">
           <literals name="Enabled" value="1"/>
           <literals name="Disabled"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Internal External Switch Over Enable">
+        <parameters xsi:type="mbconf:EnumParam" name="Internal External Switch Over Enable">
           <literals name="Enabled" value="1"/>
           <literals name="Disabled"/>
         </parameters>
       </subsets>
       <subsets name="CONFIG2L">
-        <parameters xsi:type="configscheme:EnumParam" name="Power-up Timer Enable">
+        <parameters xsi:type="mbconf:EnumParam" name="Power-up Timer Enable">
           <literals name="Disabled" value="1"/>
           <literals name="Enabled"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Brown-out Reset Enable">
+        <parameters xsi:type="mbconf:EnumParam" name="Brown-out Reset Enable">
           <literals name="Enabled In Hardware, SBOREN Ignored" value="3"/>
           <literals name="Enabled When Not In SLEEP, SBOREN Ignored" value="2"/>
           <literals name="Controlled By SBOREN" value="1"/>
           <literals name="Disabled, SBOREN Ignored"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Brown-out Reset Voltage">
+        <parameters xsi:type="mbconf:EnumParam" name="Brown-out Reset Voltage">
           <literals name="2.0V" value="3"/>
           <literals name="2.7V" value="2"/>
           <literals name="4.2V" value="1"/>
@@ -45,11 +45,11 @@
         </parameters>
       </subsets>
       <subsets name="CONFIG2H">
-        <parameters xsi:type="configscheme:EnumParam" name="Watchdog Timer">
+        <parameters xsi:type="mbconf:EnumParam" name="Watchdog Timer">
           <literals name="Enabled" value="1"/>
           <literals name="Disabled-Controlled by SWDTEN bit"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Watchdog Timer Postscale">
+        <parameters xsi:type="mbconf:EnumParam" name="Watchdog Timer Postscale">
           <literals name="1:32,768" value="15"/>
           <literals name="1:16,384" value="14"/>
           <literals name="1:8,192" value="13"/>
@@ -69,106 +69,106 @@
         </parameters>
       </subsets>
       <subsets name="CONFIG3H">
-        <parameters xsi:type="configscheme:EnumParam" name="CCP2 Mux">
+        <parameters xsi:type="mbconf:EnumParam" name="CCP2 Mux">
           <literals name="CCP2 I/O Muxed With RC1" value="1"/>
           <literals name="CCP2 I/O Muxed With RB3"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Port B A/D Enable">
+        <parameters xsi:type="mbconf:EnumParam" name="Port B A/D Enable">
           <literals name="Port B[4:0] Are Analog Inputs on Reset" value="1"/>
           <literals name="Port B[4:0] Are Digital I/O on Reset"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Low Power Timer1 Osc Enable">
+        <parameters xsi:type="mbconf:EnumParam" name="Low Power Timer1 Osc Enable">
           <literals name="Low Power Consumption, Low Noise Immunity" value="1"/>
           <literals name="High Power Consumption, High Noise Immunity"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="MCLR Pin Enable">
+        <parameters xsi:type="mbconf:EnumParam" name="MCLR Pin Enable">
           <literals name="MCLR Enabled, RE3 Disabled" value="1"/>
           <literals name="MCLR Disabled, RE3 Enabled"/>
         </parameters>
       </subsets>
       <subsets name="CONFIG4L">
-        <parameters xsi:type="configscheme:EnumParam" name="Stack Overflow Reset Enable">
+        <parameters xsi:type="mbconf:EnumParam" name="Stack Overflow Reset Enable">
           <literals name="Enabled" value="1"/>
           <literals name="Disabled"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Low Voltage Programming Enable">
+        <parameters xsi:type="mbconf:EnumParam" name="Low Voltage Programming Enable">
           <literals name="Enabled" value="1"/>
           <literals name="Disabled"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Dedicated In-Circuit PORT Enable">
+        <parameters xsi:type="mbconf:EnumParam" name="Dedicated In-Circuit PORT Enable">
           <literals name="Disabled"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Boot Block Size Select">
+        <parameters xsi:type="mbconf:EnumParam" name="Boot Block Size Select">
           <literals name="1 KW (1K W)" value="3"/>
           <literals name="1 KW (1K W)" value="2"/>
           <literals name="512 W (512 W)" value="1"/>
           <literals name="256 W (256 W)"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Extended CPU Enable">
+        <parameters xsi:type="mbconf:EnumParam" name="Extended CPU Enable">
           <literals name="Enabled" value="1"/>
           <literals name="Disabled"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Background Debug">
+        <parameters xsi:type="mbconf:EnumParam" name="Background Debug">
           <literals name="Disabled" value="1"/>
           <literals name="Enabled"/>
         </parameters>
       </subsets>
       <subsets name="CONFIG5L">
-        <parameters xsi:type="configscheme:EnumParam" name="Code Protect Block 0">
+        <parameters xsi:type="mbconf:EnumParam" name="Code Protect Block 0">
           <literals name="Disabled" value="1"/>
           <literals name="Enabled"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Code Protect Block 1">
+        <parameters xsi:type="mbconf:EnumParam" name="Code Protect Block 1">
           <literals name="Disabled" value="1"/>
           <literals name="Enabled"/>
         </parameters>
       </subsets>
       <subsets name="CONFIG5H">
-        <parameters xsi:type="configscheme:EnumParam" name="Code Protect Boot">
+        <parameters xsi:type="mbconf:EnumParam" name="Code Protect Boot">
           <literals name="Disabled" value="1"/>
           <literals name="Enabled"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Code Protect Data EEPROM">
+        <parameters xsi:type="mbconf:EnumParam" name="Code Protect Data EEPROM">
           <literals name="Disabled" value="1"/>
           <literals name="Enabled"/>
         </parameters>
       </subsets>
       <subsets name="CONFIG6L">
-        <parameters xsi:type="configscheme:EnumParam" name="Write Protect Block 0">
+        <parameters xsi:type="mbconf:EnumParam" name="Write Protect Block 0">
           <literals name="Disabled" value="1"/>
           <literals name="Enabled"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Write Protect Block 1">
+        <parameters xsi:type="mbconf:EnumParam" name="Write Protect Block 1">
           <literals name="Disabled" value="1"/>
           <literals name="Enabled"/>
         </parameters>
       </subsets>
       <subsets name="CONFIG6H">
-        <parameters xsi:type="configscheme:EnumParam" name="Write Protect Config Bits">
+        <parameters xsi:type="mbconf:EnumParam" name="Write Protect Config Bits">
           <literals name="Disabled" value="1"/>
           <literals name="Enabled"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Write Protect Boot Block">
+        <parameters xsi:type="mbconf:EnumParam" name="Write Protect Boot Block">
           <literals name="Disabled" value="1"/>
           <literals name="Enabled"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Write Protect Data EEPROM">
+        <parameters xsi:type="mbconf:EnumParam" name="Write Protect Data EEPROM">
           <literals name="Disabled" value="1"/>
           <literals name="Enabled"/>
         </parameters>
       </subsets>
       <subsets name="CONFIG7L">
-        <parameters xsi:type="configscheme:EnumParam" name="Table Read Protect Block 0">
+        <parameters xsi:type="mbconf:EnumParam" name="Table Read Protect Block 0">
           <literals name="Disabled" value="1"/>
           <literals name="Enabled"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Table Read Protect Block 1">
+        <parameters xsi:type="mbconf:EnumParam" name="Table Read Protect Block 1">
           <literals name="Disabled" value="1"/>
           <literals name="Enabled"/>
         </parameters>
       </subsets>
       <subsets name="CONFIG7H">
-        <parameters xsi:type="configscheme:EnumParam" name="Table Read Protect Boot Block">
+        <parameters xsi:type="mbconf:EnumParam" name="Table Read Protect Boot Block">
           <literals name="Disabled" value="1"/>
           <literals name="Enabled"/>
         </parameters>

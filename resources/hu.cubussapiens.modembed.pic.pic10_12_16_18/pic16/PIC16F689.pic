@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="ASCII"?>
-<pic:PicCPUType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:configscheme="http://gb.hu/embedded/configuration/scheme" xmlns:pic="http://gb.hu/embedded/pic" name="PIC16F689">
+<pic:PicCPUType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mbconf="http://cubussapiens.hu/modembed/config" xmlns:pic="http://cubussapiens.hu/modembed/pic" name="PIC16F689">
   <configuration wordsize="16">
     <scheme>
       <subsets name="CONFIG">
-        <parameters xsi:type="configscheme:EnumParam" name="Oscillator">
+        <parameters xsi:type="mbconf:EnumParam" name="Oscillator">
           <literals name="External RC Clockout" value="7"/>
           <literals name="External RC No Clock" value="6"/>
           <literals name="Internal RC Clockout" value="5"/>
@@ -13,37 +13,37 @@
           <literals name="XT" value="1"/>
           <literals name="LP"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Watchdog Timer">
+        <parameters xsi:type="mbconf:EnumParam" name="Watchdog Timer">
           <literals name="On" value="1"/>
           <literals name="Off"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Power Up Timer">
+        <parameters xsi:type="mbconf:EnumParam" name="Power Up Timer">
           <literals name="Off" value="1"/>
           <literals name="On"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Master Clear Enable">
+        <parameters xsi:type="mbconf:EnumParam" name="Master Clear Enable">
           <literals name="External" value="1"/>
           <literals name="Internal"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Code Protect">
+        <parameters xsi:type="mbconf:EnumParam" name="Code Protect">
           <literals name="Off" value="1"/>
           <literals name="On"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Data EE Read Protect">
+        <parameters xsi:type="mbconf:EnumParam" name="Data EE Read Protect">
           <literals name="Off" value="1"/>
           <literals name="On"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Brown Out Detect">
+        <parameters xsi:type="mbconf:EnumParam" name="Brown Out Detect">
           <literals name="BOD and SBOREN disabled"/>
           <literals name="SBOREN controls BOR function" value="1"/>
           <literals name="BOD enabled in run, disabled in sleep, SBOREN disabled" value="2"/>
           <literals name="BOD Enabled, SBOREN Disabled" value="3"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Internal External Switch Over Mode">
+        <parameters xsi:type="mbconf:EnumParam" name="Internal External Switch Over Mode">
           <literals name="Enabled" value="1"/>
           <literals name="Disabled"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Monitor Clock Fail-safe">
+        <parameters xsi:type="mbconf:EnumParam" name="Monitor Clock Fail-safe">
           <literals name="Enabled" value="1"/>
           <literals name="Disabled"/>
         </parameters>

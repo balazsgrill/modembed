@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="ASCII"?>
-<pic:PicCPUType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:configscheme="http://gb.hu/embedded/configuration/scheme" xmlns:pic="http://gb.hu/embedded/pic" name="PIC18F86J65">
+<pic:PicCPUType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mbconf="http://cubussapiens.hu/modembed/config" xmlns:pic="http://cubussapiens.hu/modembed/pic" name="PIC18F86J65">
   <configuration wordsize="8">
     <scheme>
       <subsets name="CONFIG1L">
-        <parameters xsi:type="configscheme:EnumParam" name="Watchdog Timer Enable">
+        <parameters xsi:type="mbconf:EnumParam" name="Watchdog Timer Enable">
           <literals name="Enabled" value="1"/>
           <literals name="Disabled"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Stack Overflow Reset Enable">
+        <parameters xsi:type="mbconf:EnumParam" name="Stack Overflow Reset Enable">
           <literals name="Enabled" value="1"/>
           <literals name="Disabled"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Extended CPU Enable">
+        <parameters xsi:type="mbconf:EnumParam" name="Extended CPU Enable">
           <literals name="Enabled" value="1"/>
           <literals name="Disabled"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Background Debug">
+        <parameters xsi:type="mbconf:EnumParam" name="Background Debug">
           <literals name="Disabled" value="1"/>
           <literals name="Enabled"/>
         </parameters>
       </subsets>
       <subsets name="CONFIG1H">
-        <parameters xsi:type="configscheme:EnumParam" name="Code Protect 000000-017FFF">
+        <parameters xsi:type="mbconf:EnumParam" name="Code Protect 000000-017FFF">
           <literals name="Disabled" value="1"/>
           <literals name="Enabled"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="RESERVED">
+        <parameters xsi:type="mbconf:EnumParam" name="RESERVED">
           <literals name="RESERVED"/>
         </parameters>
       </subsets>
       <subsets name="CONFIG2L">
-        <parameters xsi:type="configscheme:EnumParam" name="Oscillator">
+        <parameters xsi:type="mbconf:EnumParam" name="Oscillator">
           <literals name="OSC1/OSC2 as Primary, EC+PLL Osc with CLKOUT Function" value="7"/>
           <literals name="OSC1/OSC2 as Primary, EC Osc with CLKOUT Function" value="6"/>
           <literals name="OSC1/OSC2 as primary, HS+PLL Osc" value="5"/>
@@ -40,17 +40,17 @@
           <literals name="INTOSC as Primary, HS+PLL Osc" value="1"/>
           <literals name="INTOSC as Primary, HS Osc"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Fail Safe Monitor Clock Enable">
+        <parameters xsi:type="mbconf:EnumParam" name="Fail Safe Monitor Clock Enable">
           <literals name="Enabled" value="1"/>
           <literals name="Disabled"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Internal External Switch Over Enable">
+        <parameters xsi:type="mbconf:EnumParam" name="Internal External Switch Over Enable">
           <literals name="Enabled" value="1"/>
           <literals name="Disabled"/>
         </parameters>
       </subsets>
       <subsets name="CONFIG2H">
-        <parameters xsi:type="configscheme:EnumParam" name="Watchdog Timer Postscale">
+        <parameters xsi:type="mbconf:EnumParam" name="Watchdog Timer Postscale">
           <literals name="1:32,768" value="15"/>
           <literals name="1:16,384" value="14"/>
           <literals name="1:8,192" value="13"/>
@@ -68,24 +68,24 @@
           <literals name="1:2" value="1"/>
           <literals name="1:1"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="RESERVED">
+        <parameters xsi:type="mbconf:EnumParam" name="RESERVED">
           <literals name="RESERVED"/>
         </parameters>
       </subsets>
       <subsets name="CONFIG3H">
-        <parameters xsi:type="configscheme:EnumParam" name="CCP2 Mux">
+        <parameters xsi:type="mbconf:EnumParam" name="CCP2 Mux">
           <literals name="ECCP2 I/O Muxed With RC1" value="1"/>
           <literals name="ECCP2 IP Muxed With RE7"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="ECCP Mux">
+        <parameters xsi:type="mbconf:EnumParam" name="ECCP Mux">
           <literals name="P1B/P1C On RE6/RE5, P3B/P3C On RE4/RE3" value="1"/>
           <literals name="P1B/P1C On RH7/RH6, P3B/P3C Onto RH5/RH4"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Ethernet LED Enable">
+        <parameters xsi:type="mbconf:EnumParam" name="Ethernet LED Enable">
           <literals name="LEDA/LEDB On RA0/RA1 With Ethernet, RA0/AN0 Without" value="1"/>
           <literals name="RA0 On RA0/AN0), RA1 On RA1/AN1"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="RESERVED">
+        <parameters xsi:type="mbconf:EnumParam" name="RESERVED">
           <literals name="RESERVED"/>
         </parameters>
       </subsets>

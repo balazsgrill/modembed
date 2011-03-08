@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="ASCII"?>
-<pic:PicCPUType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:configscheme="http://gb.hu/embedded/configuration/scheme" xmlns:pic="http://gb.hu/embedded/pic" name="PIC16F818">
+<pic:PicCPUType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mbconf="http://cubussapiens.hu/modembed/config" xmlns:pic="http://cubussapiens.hu/modembed/pic" name="PIC16F818">
   <configuration wordsize="16">
     <scheme>
       <subsets name="CONFIG">
-        <parameters xsi:type="configscheme:EnumParam" name="Oscillator">
+        <parameters xsi:type="mbconf:EnumParam" name="Oscillator">
           <literals name="EXTRC-RA6 is CLKOUT" value="19"/>
           <literals name="EXTRC-RA6 is Port I/O" value="18"/>
           <literals name="INTRC-RA6 is CLKOUT" value="17"/>
@@ -13,44 +13,44 @@
           <literals name="XT" value="1"/>
           <literals name="LP"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Watchdog Timer">
+        <parameters xsi:type="mbconf:EnumParam" name="Watchdog Timer">
           <literals name="On" value="1"/>
           <literals name="Off"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Power Up Timer">
+        <parameters xsi:type="mbconf:EnumParam" name="Power Up Timer">
           <literals name="Off" value="1"/>
           <literals name="On"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="MCLR Select Bit">
+        <parameters xsi:type="mbconf:EnumParam" name="MCLR Select Bit">
           <literals name="RA5 is MCLR" value="1"/>
           <literals name="RA5 is digital I/O, MCLR tied to VDD"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Brown Out Detect">
+        <parameters xsi:type="mbconf:EnumParam" name="Brown Out Detect">
           <literals name="On" value="1"/>
           <literals name="Off"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Low Voltage Program">
+        <parameters xsi:type="mbconf:EnumParam" name="Low Voltage Program">
           <literals name="Enabled" value="1"/>
           <literals name="Disabled"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Data EE Read Protect">
+        <parameters xsi:type="mbconf:EnumParam" name="Data EE Read Protect">
           <literals name="Disabled" value="1"/>
           <literals name="Enabled"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Flash Program Write">
+        <parameters xsi:type="mbconf:EnumParam" name="Flash Program Write">
           <literals name="Write Protection Disabled" value="3"/>
           <literals name="0x0000-0x1FF Write Protected, 0x200-0x3FF may be modified by EECON" value="2"/>
           <literals name="0x0000-0x3FF Write Protected" value="1"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Background Debug">
+        <parameters xsi:type="mbconf:EnumParam" name="Background Debug">
           <literals name="Disabled" value="1"/>
           <literals name="Enabled"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="CCP1 Mux">
+        <parameters xsi:type="mbconf:EnumParam" name="CCP1 Mux">
           <literals name="RB2" value="1"/>
           <literals name="RB3"/>
         </parameters>
-        <parameters xsi:type="configscheme:EnumParam" name="Code Protect">
+        <parameters xsi:type="mbconf:EnumParam" name="Code Protect">
           <literals name="Disabled" value="1"/>
           <literals name="Enabled - All protected"/>
         </parameters>
