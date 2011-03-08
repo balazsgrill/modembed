@@ -6,12 +6,13 @@
     <extension
             point="org.eclipse.ui.editors">
         <editor
-            class="hu.cubussapiens.modembed.modularasm.ui.ModularASMExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
-            contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
-            default="true"
-            extensions="masm"
-            id="hu.cubussapiens.modembed.modularasm.ModularASM"
-            name="ModularASM Editor">
+              class="hu.cubussapiens.modembed.modularasm.ui.ModularASMExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
+              contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
+              default="true"
+              extensions="masm"
+              icon="icons/masm_file.png"
+              id="hu.cubussapiens.modembed.modularasm.ModularASM"
+              name="ModularASM Editor">
         </editor>
     </extension>
     <extension
