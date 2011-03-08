@@ -6,7 +6,10 @@ Bundle-Version: 0.1.0.qualifier
 Bundle-Activator: hu.cubussapiens.modembed.pic.ui.PicUIPlugin
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
- hu.cubussapiens.modembed.pic;bundle-version="0.1.0"
+ hu.cubussapiens.modembed.pic;bundle-version="0.1.0",
+ hu.cubussapiens.modembed.ui;bundle-version="0.1.0",
+ hu.cubussapiens.modembed.modularasm.compiler;bundle-version="0.1.0",
+ hu.cubussapiens.modembed.project.model;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: hu.cubussapiens.modembed.pic.ui

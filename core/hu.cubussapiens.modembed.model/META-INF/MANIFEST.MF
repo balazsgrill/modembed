@@ -12,5 +12,6 @@ Export-Package: pic,
  pic.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
- hu.cubussapiens.modembed.configuration.model;visibility:=reexport
+ hu.cubussapiens.modembed.configuration.model;visibility:=reexport,
+ hu.cubussapiens.modembed.project.model;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy
