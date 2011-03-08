@@ -24,8 +24,7 @@ public class PicProjectExtension implements IProjectExtension {
 
 	@Override
 	public ICompilerExtension createCompilerExtension(ProjectConfig config) {
-		// TODO Auto-generated method stub
-		return null;
+		return new PicCompilerExtension(config);
 	}
 
 }

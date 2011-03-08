@@ -1,0 +1,46 @@
+/**
+ * 
+ */
+package hu.cubussapiens.modembed.pic.ui.wizard;
+
+import memory.MemSegment;
+import memory.MemoryFactory;
+import memory.MemoryModel;
+import memory.ProgModel;
+import memory.RAMModel;
+import project.ProjectConfig;
+import hu.cubussapiens.modembed.modularasm.compiler.ICompiler;
+import hu.cubussapiens.modembed.modularasm.compiler.ICompilerExtension;
+
+/**
+ * @author balazs.grill
+ *
+ */
+public class PicCompilerExtension implements ICompilerExtension {
+
+	public PicCompilerExtension(ProjectConfig config) {
+		
+	}
+	
+	/* (non-Javadoc)
+	 * @see hu.cubussapiens.modembed.modularasm.compiler.ICompilerExtension#configure(hu.cubussapiens.modembed.modularasm.compiler.ICompiler)
+	 */
+	@Override
+	public void configure(ICompiler compiler) {
+		MemoryModel memory = MemoryFactory.eINSTANCE.createMemoryModel();
+		ProgModel pm = MemoryFactory.eINSTANCE.createProgModel();
+		pm.setSize(0x3000);
+		pm.setStartAddr(0);
+		pm.setResetVector(0);
+		memory.setProg(pm);
+		RAMModel rm = MemoryFactory.eINSTANCE.createRAMModel();
+		MemSegment ms = MemoryFactory.eINSTANCE.createMemSegment();
+		ms.setSize(0xf00);
+		ms.setStartAddr(0);
+		rm.getSegments().add(ms);
+		memory.setRam(rm);
+		compiler.setMemoryModel(memory);
+
+	}
+
+}

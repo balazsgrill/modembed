@@ -15,6 +15,11 @@
             uri="http://cubussapiens.hu/modembed/pic"
             class="pic.PicPackage"
             genModel="model/modembed.pic.genmodel"/>
+      <package
+            class="picproject.PicprojectPackage"
+            genModel="model/pic.project.genmodel"
+            uri="http://cubussapiens.hu/modembed/pic/project">
+      </package>
    </extension>
 
 </plugin>

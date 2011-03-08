@@ -2,8 +2,16 @@ package hu.cubussapiens.modembed.ui;
 
 import hu.cubussapiens.modembed.ui.internal.ProjectExtensionRegistry;
 
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IProject;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
+
+import project.ProjectConfig;
 
 /**
  * The activator class controls the plug-in life cycle
@@ -33,6 +41,19 @@ public class MODembedUI extends AbstractUIPlugin {
 			pereg = new ProjectExtensionRegistry();
 		}
 		return pereg.getExtensions(archID);
+	}
+	
+	public ProjectConfig getProjectConfig(ResourceSet rs, IProject project){
+		IFile f = project.getFile(SettingsFile);
+		if (f.exists()){
+			Resource r = rs.getResource(URI.createPlatformResourceURI(f.getFullPath().toString(), true), true);
+			for(EObject eo : r.getContents()){
+				if (eo instanceof ProjectConfig){
+					return (ProjectConfig)eo;
+				}
+			}
+		}
+		return null;
 	}
 	
 	/*

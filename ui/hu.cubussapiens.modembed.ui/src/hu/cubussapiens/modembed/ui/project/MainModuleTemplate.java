@@ -28,8 +28,8 @@ public class MainModuleTemplate {
 		sb.append("\t * Main function\n");
 		sb.append("\t */\n");
 		sb.append("\tfunc main{\n");
-		sb.append("\t}\n");
-		sb.append("};\n");
+		sb.append("\t};\n");
+		sb.append("}\n");
 		
 		return sb;
 	}

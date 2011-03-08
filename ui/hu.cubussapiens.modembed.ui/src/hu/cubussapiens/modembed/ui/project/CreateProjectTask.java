@@ -106,6 +106,7 @@ public class CreateProjectTask implements IRunnableWithProgress {
 			nids2[nids.length] = MODembedUI.NatureID;
 			
 			pd.setNatureIds(nids2);
+			
 			project.setDescription(pd, new SubProgressMonitor(monitor, 1));
 			
 			ResourceSet rs = new ResourceSetImpl();

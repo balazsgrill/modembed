@@ -13,6 +13,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.eclipse.core.runtime.Assert;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 
@@ -36,6 +37,11 @@ public class CompilationManager {
 	
 	public CompilationManager(Compiler compiler) {
 		this.compiler = compiler;
+		
+		Assert.isNotNull(compiler.archresolver, "Architecture resolver not set!");
+		Assert.isNotNull(compiler.modresolver,"Module resolver is not set!");
+		Assert.isNotNull(compiler.memmodel,"Memory model is not set!");
+		Assert.isNotNull(compiler.main, "Main model is not set!");
 		
 		insManager = new InstructionManager(
 				compiler.archresolver.getInstructionSet(MASMCompilerPlugin.qualIDtoString(compiler.main.getTarget()), 

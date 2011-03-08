@@ -67,6 +67,7 @@ public class FunctionInstance {
 			if (step instanceof Instruction){
 				Instruction inst = (Instruction)step;
 				InstructionWord iw = minstance.manager.insManager.createInstructionWord(inst.getIns());
+				if (iw == null) throw new CompilerException("Unknown instruction: "+inst.getIns());
 				words.add(iw);
 				List<Param> params = inst.getParams();
 				iw.setParamSymbols(resolveParams(params));
