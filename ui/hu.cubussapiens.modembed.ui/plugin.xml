@@ -27,6 +27,7 @@
       <wizard
             category="hu.cubussapiens.modembed.ui.wizards"
             class="hu.cubussapiens.modembed.ui.wizards.NewMODembedProjectWizard"
+            icon="icons/project_chip.png"
             id="hu.cubussapiens.modembed.ui.newProject"
             name="New MODembed project"
             project="true">
@@ -42,7 +43,7 @@
             class="hu.cubussapiens.modembed.ui.project.settingsEditor.ProjectSettingsEditorPart"
             default="true"
             filenames="modembed.project"
-            icon="icons/chip.png"
+            icon="icons/project_settings.png"
             id="hu.cubussapiens.modembed.ui.project.settingsEditor"
             name="ProjectSettingsEditor">
       </editor>

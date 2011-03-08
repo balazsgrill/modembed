@@ -3,12 +3,8 @@
 <plugin>
    <extension
          point="org.eclipse.ui.newWizards">
-      <category
-            id="hu.gb.embedded.pic.ui"
-            name="PIC embedded">
-      </category>
       <wizard
-            category="hu.gb.embedded.pic.ui"
+            category="hu.cubussapiens.modembed.ui.wizards"
             class="hu.cubussapiens.modembed.pic.ui.config.editor.wizards.NewPICConfiguration"
             icon="icons/chip_config.png"
             id="hu.gb.embedded.pic.ui.config.editor.wizards.NewPICConfiguration"
