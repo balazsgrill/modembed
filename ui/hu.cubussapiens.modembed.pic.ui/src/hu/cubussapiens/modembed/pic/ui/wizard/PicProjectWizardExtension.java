@@ -97,6 +97,7 @@ public class PicProjectWizardExtension implements IProjectWizardExtension {
 				PicCPUType cpu = PICPlugin.getDefault().getCPUType(config.eResource().getResourceSet(), (URL)selection);
 				PICSettings pc = PicprojectFactory.eINSTANCE.createPICSettings();
 				pc.setCpu(cpu);
+				pc.setConfiguration("default.config");
 				config.getExtensions().add(pc);
 			} catch (IOException e) {
 				e.printStackTrace();

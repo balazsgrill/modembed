@@ -6,6 +6,7 @@
  */
 package picproject;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -80,13 +81,22 @@ public interface PicprojectPackage extends EPackage {
 	int PIC_SETTINGS__CPU = ProjectPackage.SETTINGS_EXTENSION_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Configuration</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIC_SETTINGS__CONFIGURATION = ProjectPackage.SETTINGS_EXTENSION_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>PIC Settings</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PIC_SETTINGS_FEATURE_COUNT = ProjectPackage.SETTINGS_EXTENSION_FEATURE_COUNT + 1;
+	int PIC_SETTINGS_FEATURE_COUNT = ProjectPackage.SETTINGS_EXTENSION_FEATURE_COUNT + 2;
 
 
 	/**
@@ -109,6 +119,17 @@ public interface PicprojectPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getPICSettings_Cpu();
+
+	/**
+	 * Returns the meta object for the attribute '{@link picproject.PICSettings#getConfiguration <em>Configuration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Configuration</em>'.
+	 * @see picproject.PICSettings#getConfiguration()
+	 * @see #getPICSettings()
+	 * @generated
+	 */
+	EAttribute getPICSettings_Configuration();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -149,6 +170,14 @@ public interface PicprojectPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PIC_SETTINGS__CPU = eINSTANCE.getPICSettings_Cpu();
+
+		/**
+		 * The meta object literal for the '<em><b>Configuration</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PIC_SETTINGS__CONFIGURATION = eINSTANCE.getPICSettings_Configuration();
 
 	}
 

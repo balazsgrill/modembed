@@ -3,6 +3,8 @@
  */
 package hu.cubussapiens.modembed.pic.ui.wizard;
 
+import org.eclipse.core.resources.IProject;
+
 import hu.cubussapiens.modembed.modularasm.compiler.ICompilerExtension;
 import hu.cubussapiens.modembed.ui.IProjectExtension;
 import hu.cubussapiens.modembed.ui.IProjectWizardExtension;
@@ -23,8 +25,8 @@ public class PicProjectExtension implements IProjectExtension {
 	}
 
 	@Override
-	public ICompilerExtension createCompilerExtension(ProjectConfig config) {
-		return new PicCompilerExtension(config);
+	public ICompilerExtension createCompilerExtension(IProject project, ProjectConfig config) {
+		return new PicCompilerExtension(project, config);
 	}
 
 }

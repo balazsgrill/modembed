@@ -28,6 +28,7 @@ import project.impl.SettingsExtensionImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link picproject.impl.PICSettingsImpl#getCpu <em>Cpu</em>}</li>
+ *   <li>{@link picproject.impl.PICSettingsImpl#getConfiguration <em>Configuration</em>}</li>
  * </ul>
  * </p>
  *
@@ -43,6 +44,25 @@ public class PICSettingsImpl extends SettingsExtensionImpl implements PICSetting
 	 * @ordered
 	 */
 	protected PicCPUType cpu;
+
+	/**
+	 * The default value of the '{@link #getConfiguration() <em>Configuration</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getConfiguration()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String CONFIGURATION_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getConfiguration() <em>Configuration</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getConfiguration()
+	 * @generated
+	 * @ordered
+	 */
+	protected String configuration = CONFIGURATION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -106,12 +126,35 @@ public class PICSettingsImpl extends SettingsExtensionImpl implements PICSetting
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getConfiguration() {
+		return configuration;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setConfiguration(String newConfiguration) {
+		String oldConfiguration = configuration;
+		configuration = newConfiguration;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PicprojectPackage.PIC_SETTINGS__CONFIGURATION, oldConfiguration, configuration));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case PicprojectPackage.PIC_SETTINGS__CPU:
 				if (resolve) return getCpu();
 				return basicGetCpu();
+			case PicprojectPackage.PIC_SETTINGS__CONFIGURATION:
+				return getConfiguration();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -126,6 +169,9 @@ public class PICSettingsImpl extends SettingsExtensionImpl implements PICSetting
 		switch (featureID) {
 			case PicprojectPackage.PIC_SETTINGS__CPU:
 				setCpu((PicCPUType)newValue);
+				return;
+			case PicprojectPackage.PIC_SETTINGS__CONFIGURATION:
+				setConfiguration((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -142,6 +188,9 @@ public class PICSettingsImpl extends SettingsExtensionImpl implements PICSetting
 			case PicprojectPackage.PIC_SETTINGS__CPU:
 				setCpu((PicCPUType)null);
 				return;
+			case PicprojectPackage.PIC_SETTINGS__CONFIGURATION:
+				setConfiguration(CONFIGURATION_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -156,8 +205,26 @@ public class PICSettingsImpl extends SettingsExtensionImpl implements PICSetting
 		switch (featureID) {
 			case PicprojectPackage.PIC_SETTINGS__CPU:
 				return cpu != null;
+			case PicprojectPackage.PIC_SETTINGS__CONFIGURATION:
+				return CONFIGURATION_EDEFAULT == null ? configuration != null : !CONFIGURATION_EDEFAULT.equals(configuration);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (configuration: ");
+		result.append(configuration);
+		result.append(')');
+		return result.toString();
 	}
 
 } //PICSettingsImpl

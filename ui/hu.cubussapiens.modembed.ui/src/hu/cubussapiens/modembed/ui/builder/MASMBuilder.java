@@ -109,7 +109,7 @@ public class MASMBuilder extends IncrementalProjectBuilder {
 		
 		IProjectExtension[] pes = MODembedUI.getDefault().getExtensions(pc.getBuild().getTarget());
 		for(IProjectExtension pe : pes){
-			ICompilerExtension ce = pe.createCompilerExtension(pc);
+			ICompilerExtension ce = pe.createCompilerExtension(project, pc);
 			if (ce != null){
 				ce.configure(compiler);
 			}

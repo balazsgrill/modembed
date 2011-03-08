@@ -5,5 +5,6 @@
     nsURI="http://cubussapiens.hu/modembed/pic/project" nsPrefix="picproject">
   <eClassifiers xsi:type="ecore:EClass" name="PICSettings" eSuperTypes="../../hu.cubussapiens.modembed.project.model/model/modembed.project.ecore#//SettingsExtension">
     <eStructuralFeatures xsi:type="ecore:EReference" name="cpu" eType="ecore:EClass modembed.pic.ecore#//PicCPUType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="configuration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

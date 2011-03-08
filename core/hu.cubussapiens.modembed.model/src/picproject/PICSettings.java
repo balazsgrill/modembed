@@ -19,6 +19,7 @@ import project.SettingsExtension;
  * The following features are supported:
  * <ul>
  *   <li>{@link picproject.PICSettings#getCpu <em>Cpu</em>}</li>
+ *   <li>{@link picproject.PICSettings#getConfiguration <em>Configuration</em>}</li>
  * </ul>
  * </p>
  *
@@ -52,5 +53,31 @@ public interface PICSettings extends SettingsExtension {
 	 * @generated
 	 */
 	void setCpu(PicCPUType value);
+
+	/**
+	 * Returns the value of the '<em><b>Configuration</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Configuration</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Configuration</em>' attribute.
+	 * @see #setConfiguration(String)
+	 * @see picproject.PicprojectPackage#getPICSettings_Configuration()
+	 * @model
+	 * @generated
+	 */
+	String getConfiguration();
+
+	/**
+	 * Sets the value of the '{@link picproject.PICSettings#getConfiguration <em>Configuration</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Configuration</em>' attribute.
+	 * @see #getConfiguration()
+	 * @generated
+	 */
+	void setConfiguration(String value);
 
 } // PICSettings

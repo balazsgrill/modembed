@@ -6,6 +6,7 @@
  */
 package picproject.impl;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -122,6 +123,15 @@ public class PicprojectPackageImpl extends EPackageImpl implements PicprojectPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getPICSettings_Configuration() {
+		return (EAttribute)picSettingsEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public PicprojectFactory getPicprojectFactory() {
 		return (PicprojectFactory)getEFactoryInstance();
 	}
@@ -147,6 +157,7 @@ public class PicprojectPackageImpl extends EPackageImpl implements PicprojectPac
 		// Create classes and their features
 		picSettingsEClass = createEClass(PIC_SETTINGS);
 		createEReference(picSettingsEClass, PIC_SETTINGS__CPU);
+		createEAttribute(picSettingsEClass, PIC_SETTINGS__CONFIGURATION);
 	}
 
 	/**
@@ -186,6 +197,7 @@ public class PicprojectPackageImpl extends EPackageImpl implements PicprojectPac
 		// Initialize classes and features; add operations and parameters
 		initEClass(picSettingsEClass, PICSettings.class, "PICSettings", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPICSettings_Cpu(), thePicPackage.getPicCPUType(), null, "cpu", null, 0, 1, PICSettings.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPICSettings_Configuration(), ecorePackage.getEString(), "configuration", null, 0, 1, PICSettings.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
