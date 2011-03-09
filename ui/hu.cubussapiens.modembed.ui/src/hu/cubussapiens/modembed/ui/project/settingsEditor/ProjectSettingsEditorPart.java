@@ -57,7 +57,7 @@ public class ProjectSettingsEditorPart extends SharedHeaderFormEditor {
 					throw new IllegalArgumentException("Invalid project config");
 				}
 				
-				generalsettings = new GeneralSettingsPage(this, config);
+				generalsettings = new GeneralSettingsPage(this, new ProjectConfigInput(config, file.getProject()));
 				
 				setPartName(file.getProject().getName());
 			}

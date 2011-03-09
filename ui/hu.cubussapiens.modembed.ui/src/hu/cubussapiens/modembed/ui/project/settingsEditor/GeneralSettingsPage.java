@@ -11,29 +11,27 @@ import org.eclipse.ui.forms.editor.FormEditor;
 import org.eclipse.ui.forms.editor.FormPage;
 import org.eclipse.ui.forms.widgets.Section;
 
-import project.ProjectConfig;
-
 /**
  * @author balazs.grill
  *
  */
 public class GeneralSettingsPage extends FormPage {
 
-	private final ProjectConfig config;
+	private final ProjectConfigInput input;
 	
 	/**
 	 * @param editor
 	 * @param id
 	 * @param title
 	 */
-	public GeneralSettingsPage(FormEditor editor, ProjectConfig config) {
+	public GeneralSettingsPage(FormEditor editor, ProjectConfigInput input) {
 		super(editor, "generalpage", "General");
-		this.config = config;
+		this.input = input;
 	}
 
 	@Override
 	protected void createFormContent(IManagedForm managedForm) {
-		managedForm.setInput(config);
+		managedForm.setInput(input);
 		
 		managedForm.getForm().getBody().setLayout(new GridLayout(2, true));
 		SourceDirsFormPart sdirs = new SourceDirsFormPart(managedForm.getForm().getBody(), managedForm.getToolkit(), Section.TITLE_BAR);
@@ -41,5 +39,9 @@ public class GeneralSettingsPage extends FormPage {
 		sdirs.getSection().setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));		
 		sdirs.initialize(managedForm);
 
+		BuildOptionsFormPart bopts = new BuildOptionsFormPart(managedForm.getForm().getBody(), managedForm.getToolkit(), Section.TITLE_BAR);
+		bopts.getSection().setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+		bopts.initialize(managedForm);
+		
 	}
 }

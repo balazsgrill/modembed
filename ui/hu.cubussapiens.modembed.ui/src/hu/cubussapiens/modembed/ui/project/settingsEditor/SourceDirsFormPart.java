@@ -20,7 +20,6 @@ import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.Section;
 
 import project.Directory;
-import project.ProjectConfig;
 
 /**
  * @author balazs.grill
@@ -42,8 +41,8 @@ public class SourceDirsFormPart extends SectionPart {
 
 		@Override
 		public Object[] getElements(Object inputElement) {
-			if (inputElement instanceof ProjectConfig){
-				return ((ProjectConfig) inputElement).getSourcedirs().toArray();
+			if (inputElement instanceof ProjectConfigInput){
+				return ((ProjectConfigInput) inputElement).config.getSourcedirs().toArray();
 			}
 			return new Object[0];
 		}
@@ -122,7 +121,7 @@ public class SourceDirsFormPart extends SectionPart {
 		super.initialize(form);
 		
 		Object input = form.getInput();
-		if (input instanceof ProjectConfig){
+		if (input instanceof ProjectConfigInput){
 			tv.setInput(input);
 		}
 	}
