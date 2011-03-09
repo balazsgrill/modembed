@@ -6,6 +6,8 @@ package hu.cubussapiens.modembed.modularasm.ui.internal;
 
 import org.apache.log4j.Logger;
 
+import org.eclipse.jface.resource.ImageDescriptor;
+import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
@@ -25,6 +27,13 @@ public class ModularASMActivator extends AbstractUIPlugin {
 	private Map<String,Injector> injectors = new HashMap<String,Injector>();
 	private static ModularASMActivator INSTANCE;
 
+	public static String IMAGE_INSTRUCTION = "instruction";
+	
+	@Override
+	protected void initializeImageRegistry(ImageRegistry reg) {
+		reg.put(IMAGE_INSTRUCTION, ImageDescriptor.createFromURL(getBundle().getEntry("icons/instruction_obj.gif")));
+	}
+	
 	public Injector getInjector(String languageName) {
 		return injectors.get(languageName);
 	}

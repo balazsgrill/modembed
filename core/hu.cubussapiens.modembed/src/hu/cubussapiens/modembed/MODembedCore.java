@@ -17,6 +17,15 @@ public class MODembedCore extends Plugin {
 	
 	private static MODembedCore plugin = null;
 
+	private InstructionSetCache isetcache = null;
+	
+	public InstructionSetCache getInstructionSetCache() {
+		if (isetcache == null){
+			isetcache = new InstructionSetCache();
+		}
+		return isetcache;
+	}
+	
 	public static MODembedCore getDefault(){
 		return plugin;
 	}

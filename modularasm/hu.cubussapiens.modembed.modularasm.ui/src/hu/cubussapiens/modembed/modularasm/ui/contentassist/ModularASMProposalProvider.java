@@ -3,11 +3,79 @@
 */
 package hu.cubussapiens.modembed.modularasm.ui.contentassist;
 
-import hu.cubussapiens.modembed.modularasm.ui.contentassist.AbstractModularASMProposalProvider;
+import java.util.HashSet;
+import java.util.Set;
+
+import hu.cubussapiens.modembed.InstructionSetCache;
+import hu.cubussapiens.modembed.MODembedCore;
+import hu.cubussapiens.modembed.modularasm.modularASM.Function;
+import hu.cubussapiens.modembed.modularasm.modularASM.Module;
+import hu.cubussapiens.modembed.modularasm.ui.internal.ModularASMActivator;
+
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.jface.text.contentassist.ICompletionProposal;
+import org.eclipse.swt.graphics.Image;
+import org.eclipse.xtext.RuleCall;
+import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
+import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
+
+import embedded.assembly.Field;
+import embedded.assembly.Instruction;
+import embedded.assembly.InstructionSet;
+import embedded.assembly.Section;
 /**
  * see http://www.eclipse.org/Xtext/documentation/latest/xtext.html#contentAssist on how to customize content assistant
  */
 public class ModularASMProposalProvider extends AbstractModularASMProposalProvider {
 
+	@Override
+	public void complete_Instruction(EObject model, RuleCall ruleCall,
+			ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		
+		if (model instanceof Function){
+			InstructionSetCache cache = MODembedCore.getDefault().getInstructionSetCache();
+			InstructionSet iset = cache.getCachedInstructionSet(((Module)(((Function)model).eContainer())).getTarget().getSegments());
+			String prefix = context.getPrefix().toLowerCase();
+			if (iset != null){
+				for(embedded.assembly.Instruction i : iset.getInstructions()){
+					if (i.getName().toLowerCase().startsWith(prefix)){
+						ICompletionProposal cp = propose(i, context);
+						acceptor.accept(cp);
+					}
+				}
+			}
+		}
+		
+		super.complete_Instruction(model, ruleCall, context, acceptor);
+	}
+	
+	@Override
+	public void complete_Param(EObject model, RuleCall ruleCall,
+			ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		// TODO Auto-generated method stub
+		super.complete_Param(model, ruleCall, context, acceptor);
+	}
+	
+	private ICompletionProposal propose(Instruction instruction, ContentAssistContext context){
+		StringBuilder sb = new StringBuilder();
+		sb.append(instruction.getName());
+		Set<String> params = new HashSet<String>();
+		for(Section s : instruction.getSections()){
+			if (s instanceof Field){
+				Field f = (Field)s;
+				String p = f.getParameter();
+				if (p != null && !p.isEmpty() && !params.contains(p)){
+					params.add(p);
+					sb.append(" ");
+					sb.append(p);
+				}
+			}
+		}
+		return createCompletionProposal(instruction.getName(), sb.toString(), getImage(ModularASMActivator.IMAGE_INSTRUCTION), context);
+	}
+	
+	private Image getImage(String ID){
+		return ModularASMActivator.getInstance().getImageRegistry().get(ID);
+	}
 	
 }
