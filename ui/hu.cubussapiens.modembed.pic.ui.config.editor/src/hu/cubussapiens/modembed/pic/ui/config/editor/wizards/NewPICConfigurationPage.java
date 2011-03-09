@@ -4,6 +4,7 @@ import hu.cubussapiens.modembed.pic.PICPlugin;
 import hu.cubussapiens.modembed.pic.ui.ContentProposedTextViewer;
 import hu.cubussapiens.modembed.pic.ui.PicTargetContentProvider;
 import hu.cubussapiens.modembed.pic.ui.PicTargetLabelProvider;
+import hu.cubussapiens.modembed.pic.ui.config.editor.Activator;
 
 import java.net.URL;
 
@@ -54,6 +55,7 @@ public class NewPICConfigurationPage extends WizardPage {
 		super("wizardPage");
 		setTitle("PIC Configuration File");
 		setDescription("This wizard creates a new file with *.config extension that a configuration for a PIC processor.");
+		setImageDescriptor(Activator.getDefault().getImageRegistry().getDescriptor(Activator.IMAGE_WIZARD));
 		this.selection = selection;
 	}
 

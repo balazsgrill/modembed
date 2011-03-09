@@ -31,6 +31,7 @@ public class NewMODembedProjectWizardPage extends WizardNewProjectCreationPage {
 		super(pageName);
 		setTitle("New MODembed project");
 		setDescription("Create a new model based embedded project");
+		setImageDescriptor(MODembedUI.getDefault().getImageRegistry().getDescriptor(MODembedUI.IMAGE_NEWPROJWZRD));
 	}
 
 	private Group createGroup(Composite parent, String label){

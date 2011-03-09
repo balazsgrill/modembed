@@ -8,6 +8,8 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.jface.resource.ImageDescriptor;
+import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
@@ -30,12 +32,13 @@ public class MODembedUI extends AbstractUIPlugin {
 	
 	private ProjectExtensionRegistry pereg;
 	
-	/**
-	 * The constructor
-	 */
-	public MODembedUI() {
-	}
+	public static String IMAGE_NEWPROJWZRD = PLUGIN_ID+".image.newprojectwizard";
 
+	@Override
+	protected void initializeImageRegistry(ImageRegistry reg) {
+		reg.put(IMAGE_NEWPROJWZRD, ImageDescriptor.createFromURL(getBundle().getEntry("icons/newprj_modembed_wiz.png")));
+	}
+	
 	public IProjectExtension[] getExtensions(String archID){
 		if (pereg == null){
 			pereg = new ProjectExtensionRegistry();

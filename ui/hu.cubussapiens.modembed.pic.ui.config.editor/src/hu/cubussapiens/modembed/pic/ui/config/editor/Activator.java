@@ -1,5 +1,7 @@
 package hu.cubussapiens.modembed.pic.ui.config.editor;
 
+import org.eclipse.jface.resource.ImageDescriptor;
+import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
@@ -14,12 +16,19 @@ public class Activator extends AbstractUIPlugin {
 	// The shared instance
 	private static Activator plugin;
 	
+	public static String IMAGE_WIZARD = PLUGIN_ID+".configwizard";
+	
 	/**
 	 * The constructor
 	 */
 	public Activator() {
 	}
 
+	@Override
+	protected void initializeImageRegistry(ImageRegistry reg) {
+		reg.put(IMAGE_WIZARD, ImageDescriptor.createFromURL(getBundle().getEntry("icons/newfile_modembed_wiz.png")));
+	}
+	
 	/*
 	 * (non-Javadoc)
 	 * @see org.eclipse.ui.plugin.AbstractUIPlugin#start(org.osgi.framework.BundleContext)
