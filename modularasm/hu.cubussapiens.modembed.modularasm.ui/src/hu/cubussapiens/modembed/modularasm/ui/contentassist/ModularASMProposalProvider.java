@@ -3,18 +3,19 @@
 */
 package hu.cubussapiens.modembed.modularasm.ui.contentassist;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import hu.cubussapiens.modembed.InstructionSetCache;
 import hu.cubussapiens.modembed.MODembedCore;
 import hu.cubussapiens.modembed.modularasm.modularASM.Function;
 import hu.cubussapiens.modembed.modularasm.modularASM.Module;
 import hu.cubussapiens.modembed.modularasm.ui.internal.ModularASMActivator;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.text.contentassist.ICompletionProposal;
 import org.eclipse.swt.graphics.Image;
+import org.eclipse.xtext.Assignment;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
@@ -47,6 +48,23 @@ public class ModularASMProposalProvider extends AbstractModularASMProposalProvid
 		}
 		
 		super.complete_Instruction(model, ruleCall, context, acceptor);
+	}
+	
+	@Override
+	public void completeModule_Target(EObject model, Assignment assignment,
+			ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		
+		if (model instanceof Module){
+			String prefix = context.getPrefix();
+			for(String s : MODembedCore.getDefault().getArchitectures()){
+				if (s.startsWith(prefix)){
+					String name = MODembedCore.getDefault().getArchName(s);
+					acceptor.accept(createCompletionProposal(s, s+" - "+name, getImage(ModularASMActivator.IMAGE_ARCHITECTURE), context));
+				}
+			}
+		}
+		
+		super.completeModule_Target(model, assignment, context, acceptor);
 	}
 	
 	@Override

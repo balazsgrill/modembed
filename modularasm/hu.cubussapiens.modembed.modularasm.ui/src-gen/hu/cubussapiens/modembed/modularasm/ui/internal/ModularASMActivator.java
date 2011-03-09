@@ -28,10 +28,12 @@ public class ModularASMActivator extends AbstractUIPlugin {
 	private static ModularASMActivator INSTANCE;
 
 	public static String IMAGE_INSTRUCTION = "instruction";
+	public static String IMAGE_ARCHITECTURE = "architecture";
 	
 	@Override
 	protected void initializeImageRegistry(ImageRegistry reg) {
 		reg.put(IMAGE_INSTRUCTION, ImageDescriptor.createFromURL(getBundle().getEntry("icons/instruction_obj.gif")));
+		reg.put(IMAGE_ARCHITECTURE, ImageDescriptor.createFromURL(getBundle().getEntry("icons/arch.png")));
 	}
 	
 	public Injector getInjector(String languageName) {
