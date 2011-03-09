@@ -5,11 +5,11 @@ Bundle-SymbolicName: hu.cubussapiens.modembed.modularasm.compiler;singleton:=tru
 Bundle-Version: 0.1.0.qualifier
 Bundle-Activator: hu.cubussapiens.modembed.modularasm.compiler.MASMCompilerPlugin
 Require-Bundle: org.eclipse.core.runtime,
- hu.cubussapiens.modembed.assembly.model;bundle-version="1.0.0",
- hu.cubussapiens.modembed.modularasm;bundle-version="1.0.0",
+ hu.cubussapiens.modembed.assembly.model;bundle-version="0.1.0",
+ hu.cubussapiens.modembed.modularasm;bundle-version="0.1.0",
  hu.cubussapiens.modembed.hexfile.model;bundle-version="0.1.0",
  hu.cubussapiens.modembed;bundle-version="0.1.0",
- hu.cubussapiens.modembed.memory.model;bundle-version="1.0.0",
+ hu.cubussapiens.modembed.memory.model;bundle-version="0.1.0",
  hu.cubussapiens.modembed.hexfile.persistence;bundle-version="0.1.0",
  org.eclipse.core.resources
 Bundle-ActivationPolicy: lazy

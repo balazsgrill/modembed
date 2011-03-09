@@ -12,7 +12,7 @@ Require-Bundle: org.eclipse.core.runtime,
  hu.cubussapiens.modembed.pic.device.model;bundle-version="0.1.0",
  hu.cubussapiens.modembed.pic.device.persistence;bundle-version="0.1.0",
  hu.cubussapiens.modembed.pic.device.tranformation;bundle-version="0.1.0",
- hu.cubussapiens.modembed.assembly.model;bundle-version="1.0.0",
- hu.cubussapiens.modembed.assembly.persistence;bundle-version="1.0.0"
+ hu.cubussapiens.modembed.assembly.model;bundle-version="0.1.0",
+ hu.cubussapiens.modembed.assembly.persistence;bundle-version="0.1.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

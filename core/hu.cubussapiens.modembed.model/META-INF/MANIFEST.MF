@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: hu.cubussapiens.modembed.pic.model;singleton:=true
-Bundle-Version: 1.0.0
+Bundle-Version: 0.1.0
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
@@ -16,5 +16,5 @@ Export-Package: pic,
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  hu.cubussapiens.modembed.configuration.model;visibility:=reexport,
- hu.cubussapiens.modembed.project.model;bundle-version="1.0.0"
+ hu.cubussapiens.modembed.project.model;bundle-version="0.1.0"
 Bundle-ActivationPolicy: lazy
