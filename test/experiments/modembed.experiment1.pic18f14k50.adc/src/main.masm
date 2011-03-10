@@ -1,0 +1,15 @@
+module main target microchip.pic18{
+
+	instance adcdriver adc;
+
+	/*
+	 * Main function
+	 */
+	func main{
+		call 0 adc.init;
+		label refresh;
+		call 0 adc.read;
+		goto refresh;
+		return 0;
+	};
+}
