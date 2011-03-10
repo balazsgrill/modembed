@@ -8,6 +8,9 @@ import hu.cubussapiens.modembed.ui.MODembedUI;
 
 import java.io.ByteArrayInputStream;
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
@@ -99,13 +102,13 @@ public class CreateProjectTask implements IRunnableWithProgress {
 			project.open(new SubProgressMonitor(monitor, 1));
 			
 			IProjectDescription pd = project.getDescription();
-			String[] nids = pd.getNatureIds();
 			
-			String[] nids2 = new String[nids.length+1];
-			System.arraycopy(nids, 0, nids2, 0, nids.length);
-			nids2[nids.length] = MODembedUI.NatureID;
+			List<String> nids = new ArrayList<String>(Arrays.asList(pd.getNatureIds())); 
 			
-			pd.setNatureIds(nids2);
+			nids.add("org.eclipse.xtext.ui.shared.xtextNature");
+			nids.add(MODembedUI.NatureID);
+			
+			pd.setNatureIds(nids.toArray(new String[nids.size()]));
 			
 			project.setDescription(pd, new SubProgressMonitor(monitor, 1));
 			

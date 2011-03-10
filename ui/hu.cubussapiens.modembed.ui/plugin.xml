@@ -13,6 +13,9 @@
       <builder
             id="hu.cubussapiens.modembed.ui.masmbuilder">
       </builder>
+      <requires-nature
+            id="org.eclipse.xtext.ui.shared.xtextNature">
+      </requires-nature>
    </extension>
    <extension
          point="org.eclipse.ui.ide.projectNatureImages">
