@@ -66,7 +66,7 @@ public class ExtensionPointModuleResolver implements IModuleResolver {
 	public String[] getModules(List<String> sections) {
 		List<String> result = new ArrayList<String>();
 		for(SharedLibraryExtensionModuleResolver r : resolvers){
-			result.addAll(Arrays.asList(r.getSubPackages(sections)));
+			result.addAll(Arrays.asList(r.getModules(sections)));
 		}
 		return result.toArray(new String[result.size()]);
 	}

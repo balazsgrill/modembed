@@ -36,9 +36,9 @@ public class FolderModuleResolver implements IModuleResolver {
 	}
 	
 	private IContainer resolveFolder(List<String> ss){
-		if (ss.isEmpty()) return null;
+		if (ss.isEmpty()) return folder;
 		IContainer current = folder;
-		for(int i=0;i<ss.size()-1;i++){
+		for(int i=0;i<ss.size();i++){
 			if (current instanceof IProject){
 				current = ((IProject)current).getFolder(ss.get(i)) ;
 			}else
@@ -48,6 +48,7 @@ public class FolderModuleResolver implements IModuleResolver {
 				return null;
 			}
 		}
+		if (!current.exists()) return null;
 		return current;
 	}
 	
@@ -58,7 +59,7 @@ public class FolderModuleResolver implements IModuleResolver {
 	public Module resolveModule(QualifiedID moduleID) {
 		List<String> ss = moduleID.getSegments();
 		if (ss.isEmpty()) return null;
-		IContainer current = resolveFolder(ss);
+		IContainer current = resolveFolder(ss.subList(0, ss.size()-1));
 		
 		String last = ss.get(ss.size()-1);
 		IFile file = null;
@@ -87,14 +88,16 @@ public class FolderModuleResolver implements IModuleResolver {
 		IContainer current = resolveFolder(sections);
 		List<String> result = new ArrayList<String>();
 		
-		try {
-			for(IResource r : current.members()){
-				if (r instanceof IFolder){
-					result.add(r.getName());
+		if (current != null){
+			try {
+				for(IResource r : current.members()){
+					if (r instanceof IFolder){
+						result.add(r.getName());
+					}
 				}
+			} catch (CoreException e) {
+				e.printStackTrace();
 			}
-		} catch (CoreException e) {
-			e.printStackTrace();
 		}
 		
 		return result.toArray(new String[result.size()]);
@@ -105,15 +108,17 @@ public class FolderModuleResolver implements IModuleResolver {
 		IContainer current = resolveFolder(sections);
 		List<String> result = new ArrayList<String>();
 		
-		try {
-			for(IResource r : current.members()){
-				if (r instanceof IFile){
-					r.getName().endsWith(".masm");
-					result.add(r.getName().replace(".masm", ""));
+		if (current != null){
+			try {
+				for(IResource r : current.members()){
+					if (r instanceof IFile){
+						r.getName().endsWith(".masm");
+						result.add(r.getName().replace(".masm", ""));
+					}
 				}
+			} catch (CoreException e) {
+				e.printStackTrace();
 			}
-		} catch (CoreException e) {
-			e.printStackTrace();
 		}
 		
 		return result.toArray(new String[result.size()]);

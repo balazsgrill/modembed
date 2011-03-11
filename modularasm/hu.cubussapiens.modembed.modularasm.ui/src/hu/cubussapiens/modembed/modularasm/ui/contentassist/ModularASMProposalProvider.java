@@ -5,13 +5,21 @@ package hu.cubussapiens.modembed.modularasm.ui.contentassist;
 
 import hu.cubussapiens.modembed.InstructionSetCache;
 import hu.cubussapiens.modembed.MODembedCore;
+import hu.cubussapiens.modembed.modularasm.indexer.IModuleIndexer;
+import hu.cubussapiens.modembed.modularasm.indexer.IndexerPlugin;
 import hu.cubussapiens.modembed.modularasm.modularASM.Function;
+import hu.cubussapiens.modembed.modularasm.modularASM.Instance;
 import hu.cubussapiens.modembed.modularasm.modularASM.Module;
+import hu.cubussapiens.modembed.modularasm.modularASM.QualifiedID;
 import hu.cubussapiens.modembed.modularasm.ui.internal.ModularASMActivator;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
+import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.text.contentassist.ICompletionProposal;
 import org.eclipse.swt.graphics.Image;
@@ -67,11 +75,60 @@ public class ModularASMProposalProvider extends AbstractModularASMProposalProvid
 		super.completeModule_Target(model, assignment, context, acceptor);
 	}
 	
+	private IModuleIndexer getIndexer(EObject model){
+		String ps = model.eResource().getURI().toPlatformString(true);
+		if (ps.startsWith("/")) ps=ps.substring(1);
+		int i = ps.indexOf('/');
+		if (i != -1){
+			ps = ps.substring(0,i);
+		}
+		IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(ps);
+		return IndexerPlugin.getDefault().getProjectIndexer(project);
+	}
+	
 	@Override
-	public void complete_Param(EObject model, RuleCall ruleCall,
-			ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		// TODO Auto-generated method stub
-		super.complete_Param(model, ruleCall, context, acceptor);
+	public void completeQualifiedID_Segments(EObject model,
+			Assignment assignment, ContentAssistContext context,
+			ICompletionProposalAcceptor acceptor) {
+		
+		Instance instance = null;
+		List<String> segments = new ArrayList<String>();
+		String prefix = context.getPrefix();
+		String prefixlc = prefix.toLowerCase();
+		if (model instanceof Instance){
+			instance = (Instance)model;
+		}
+		if (model instanceof QualifiedID){
+			QualifiedID qid = (QualifiedID)model;
+			for(int i=0;i<qid.getSegments().size()-1;i++){
+				segments.add(qid.getSegments().get(i));
+			}
+			if (segments.size() > 0){
+				if (prefix.equals(segments.get(segments.size()-1))){
+					segments.remove(segments.size()-1);
+				}
+			}
+			if (qid.eContainer() instanceof Instance){
+				instance = (Instance)qid.eContainer();
+			}
+		}
+		
+		if (instance != null){
+			IModuleIndexer indexer = getIndexer(model);
+			
+			for(String s : indexer.getModules(segments)){
+				if (s.toLowerCase().startsWith(prefixlc)){
+					acceptor.accept(createCompletionProposal(s, context));
+				}
+			}
+			for(String s : indexer.getSubPackages(segments)){
+				if (s.toLowerCase().startsWith(prefixlc)){
+					acceptor.accept(createCompletionProposal(s, context));
+				}
+			}
+		}
+		
+		super.completeQualifiedID_Segments(model, assignment, context, acceptor);
 	}
 	
 	private ICompletionProposal propose(Instruction instruction, ContentAssistContext context){

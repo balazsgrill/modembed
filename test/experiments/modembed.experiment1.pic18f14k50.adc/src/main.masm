@@ -2,6 +2,8 @@ module main target microchip.pic18{
 
 	instance adcdriver adc;
 
+	instance microchip.pic18.PIC18F14K50 cpu;
+
 	/*
 	 * Main function
 	 */

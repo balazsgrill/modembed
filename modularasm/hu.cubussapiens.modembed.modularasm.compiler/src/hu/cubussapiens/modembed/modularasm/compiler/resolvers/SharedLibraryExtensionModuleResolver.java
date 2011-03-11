@@ -38,7 +38,7 @@ public class SharedLibraryExtensionModuleResolver implements IModuleResolver {
 		this.rs = rs;
 		this.bundle = bundle;
 		this.folder = folder;
-		this.namespace = namespace.split(".");
+		this.namespace = namespace.split("\\.");
 		this.b = Platform.getBundle(bundle);
 	}
 
@@ -92,6 +92,12 @@ public class SharedLibraryExtensionModuleResolver implements IModuleResolver {
 
 	@Override
 	public String[] getSubPackages(List<String> sections) {
+		if (sections.size() < namespace.length){
+			for(int i=0;i<sections.size();i++){
+				if (!namespace[i].equals(sections.get(i))) return new String[0];
+			}
+			return new String[]{namespace[sections.size()]};
+		}
 		String path = getPath(sections);
 		List<String> result = new ArrayList<String>();
 		Enumeration<?> e = b.findEntries(path, "*", false);
@@ -99,8 +105,9 @@ public class SharedLibraryExtensionModuleResolver implements IModuleResolver {
 			while(e.hasMoreElements()){
 				Object o = e.nextElement();
 				if (o instanceof URL){
-					if (!((URL) o).getFile().contains(".masm")){
-						result.add(((URL) o).getFile());
+					String name = getLastSegment((URL)o);
+					if (!name.contains(".masm")){
+						result.add(name);
 					}
 				}
 			}
@@ -108,16 +115,27 @@ public class SharedLibraryExtensionModuleResolver implements IModuleResolver {
 		return result.toArray(new String[result.size()]);
 	}
 
+	public String getLastSegment(URL url){
+		String[] ss = url.getPath().split("\\/");
+		int i = ss.length-1;
+		while (i >= 0 && ss[i].isEmpty()) i--;
+		if (i < 0) return null;
+		return ss[i];
+	}
+	
 	@Override
 	public String[] getModules(List<String> sections) {
+		if (sections.size() < namespace.length){
+			return new String[0];
+		}
 		String path = getPath(sections);
 		List<String> result = new ArrayList<String>();
-		Enumeration<?> e = b.findEntries(path, "*.masm", false);
+		Enumeration<?> e = b.findEntries(path, "*", false);
 		if (e != null){
 			while(e.hasMoreElements()){
 				Object o = e.nextElement();
 				if (o instanceof URL){
-					result.add(((URL) o).getFile().replace(".masm", ""));
+					result.add(getLastSegment((URL) o).replace(".masm", ""));
 				}
 			}
 		}
