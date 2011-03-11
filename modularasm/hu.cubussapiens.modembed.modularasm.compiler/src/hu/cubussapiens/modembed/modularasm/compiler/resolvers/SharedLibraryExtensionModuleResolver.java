@@ -135,7 +135,10 @@ public class SharedLibraryExtensionModuleResolver implements IModuleResolver {
 			while(e.hasMoreElements()){
 				Object o = e.nextElement();
 				if (o instanceof URL){
-					result.add(getLastSegment((URL) o).replace(".masm", ""));
+					String name = getLastSegment((URL) o);
+					if (name.contains(".masm")){
+						result.add(name.replace(".masm", ""));
+					}
 				}
 			}
 		}

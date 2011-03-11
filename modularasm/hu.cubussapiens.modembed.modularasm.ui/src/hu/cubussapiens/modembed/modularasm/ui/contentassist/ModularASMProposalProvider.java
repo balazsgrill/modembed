@@ -118,12 +118,12 @@ public class ModularASMProposalProvider extends AbstractModularASMProposalProvid
 			
 			for(String s : indexer.getModules(segments)){
 				if (s.toLowerCase().startsWith(prefixlc)){
-					acceptor.accept(createCompletionProposal(s, context));
+					acceptor.accept(createCompletionProposal(s,s,getImage(ModularASMActivator.IMAGE_MODULE), context));
 				}
 			}
 			for(String s : indexer.getSubPackages(segments)){
 				if (s.toLowerCase().startsWith(prefixlc)){
-					acceptor.accept(createCompletionProposal(s, context));
+					acceptor.accept(createCompletionProposal(s,s,getImage(ModularASMActivator.IMAGE_FOLDER), context));
 				}
 			}
 		}
