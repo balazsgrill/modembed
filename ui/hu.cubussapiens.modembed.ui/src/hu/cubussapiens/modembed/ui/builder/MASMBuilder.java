@@ -7,12 +7,10 @@ import hexfile.HexFile;
 import hu.cubussapiens.modembed.modularasm.compiler.CompilerException;
 import hu.cubussapiens.modembed.modularasm.compiler.ICompiler;
 import hu.cubussapiens.modembed.modularasm.compiler.ICompilerExtension;
-import hu.cubussapiens.modembed.modularasm.compiler.IModuleResolver;
 import hu.cubussapiens.modembed.modularasm.compiler.MASMCompilerPlugin;
 import hu.cubussapiens.modembed.modularasm.compiler.resolvers.ExtensionArchitectureResolver;
-import hu.cubussapiens.modembed.modularasm.compiler.resolvers.ExtensionPointModuleResolver;
-import hu.cubussapiens.modembed.modularasm.compiler.resolvers.FolderModuleResolver;
-import hu.cubussapiens.modembed.modularasm.compiler.resolvers.MultipleModuleResolver;
+import hu.cubussapiens.modembed.modularasm.indexer.IProjectIndexer;
+import hu.cubussapiens.modembed.modularasm.indexer.IndexerPlugin;
 import hu.cubussapiens.modembed.modularasm.modularASM.ModularASMFactory;
 import hu.cubussapiens.modembed.modularasm.modularASM.QualifiedID;
 import hu.cubussapiens.modembed.ui.IProjectExtension;
@@ -21,8 +19,6 @@ import hu.cubussapiens.modembed.ui.MODembedUI;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Properties;
@@ -41,7 +37,6 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 
-import project.Directory;
 import project.ProjectConfig;
 
 /**
@@ -88,22 +83,16 @@ public class MASMBuilder extends IncrementalProjectBuilder {
 		
 		ICompiler compiler = MASMCompilerPlugin.getDefault().createCompiler();
 		compiler.setArchResolver(new ExtensionArchitectureResolver());
-		List<IModuleResolver> resolvers = new ArrayList<IModuleResolver>();
-		for(Directory src : pc.getSourcedirs()){
-			IFolder srcf = project.getFolder(src.getPath());
-			if (srcf.exists()){
-				resolvers.add(new FolderModuleResolver(rs, srcf));
-			}
-		}
-		resolvers.add(new ExtensionPointModuleResolver());
-		IModuleResolver rootModuleResolver = new MultipleModuleResolver(resolvers.toArray(new IModuleResolver[resolvers.size()])); 
-		compiler.setModuleResolver(rootModuleResolver);
+		
+		IProjectIndexer indexer = IndexerPlugin.getDefault().getProjectIndexer(getProject());
+		indexer.update();
+		compiler.setModuleResolver(indexer);
 		QualifiedID moduleID = ModularASMFactory.eINSTANCE.createQualifiedID();
 		String[] ss = pc.getBuild().getQualifiedID().split("\\.");
 		for(String s : ss){
 			moduleID.getSegments().add(s);
 		}
-		compiler.setMain(rootModuleResolver.resolveModule(moduleID));
+		compiler.setMain(indexer.resolveModule(moduleID));
 		
 		monitor.worked(1);
 		

@@ -3,52 +3,89 @@
  */
 package hu.cubussapiens.modembed.modularasm.indexer.internal;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import hu.cubussapiens.modembed.modularasm.compiler.IModuleResolver;
+import hu.cubussapiens.modembed.modularasm.compiler.resolvers.FolderModuleResolver;
+import hu.cubussapiens.modembed.modularasm.compiler.resolvers.MultipleModuleResolver;
+import hu.cubussapiens.modembed.modularasm.indexer.IProjectIndexer;
+import hu.cubussapiens.modembed.modularasm.indexer.IndexerPlugin;
+
+import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
+import org.eclipse.core.resources.IProject;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 
-import hu.cubussapiens.modembed.modularasm.indexer.IProjectIndexer;
-import hu.cubussapiens.modembed.modularasm.modularASM.Module;
+import project.Directory;
+import project.ProjectConfig;
 
 /**
  * @author balazs.grill
  *
  */
-public class ProjectIndexer implements IProjectIndexer {
+public class ProjectIndexer extends MultipleModuleResolver implements IProjectIndexer {
 
-	private final ResourceSet resourceSet = new ResourceSetImpl();
+	private ResourceSet resourceSet;
 	
-	/* (non-Javadoc)
-	 * @see hu.cubussapiens.modembed.modularasm.indexer.IModuleIndexer#getIndexedModule(java.lang.String)
-	 */
+	private final IProject project;
+	
+	public ResourceSet getResourceSet() {
+		if (resourceSet == null){
+			resourceSet = new ResourceSetImpl();
+		}
+		return resourceSet;
+	}
+	
+	private ProjectConfig config = null;
+	
 	@Override
-	public Module getIndexedModule(String ID) {
-		// TODO Auto-generated method stub
-		return null;
+	public void update() {
+		config = null;
+		for(Resource r : getResourceSet().getResources()){
+			r.unload();
+		}
+	}
+	
+	private ProjectConfig getConfig(){
+		if (config == null){
+			IFile f = project.getFile(PROJECT_CONFIG);
+			Resource r = getResourceSet().getResource(URI.createPlatformResourceURI(f.getFullPath().toString(), true), true);
+			for(EObject eo : r.getContents()){
+				if (eo instanceof ProjectConfig){
+					config = (ProjectConfig)eo;
+				}
+			}
+		}
+		return config;
+	}
+	
+	private static final String PROJECT_CONFIG = "modembed.project";
+	
+	private void refreshResolvers(){
+		List<IModuleResolver> resolvers = new ArrayList<IModuleResolver>();
+		for(Directory d : getConfig().getSourcedirs()){
+			IFolder f = project.getFolder(d.getPath());
+			if (f.exists()){
+				resolvers.add(new FolderModuleResolver(getResourceSet(), f));
+			}
+		}
+		resolvers.add(IndexerPlugin.getDefault().getSharedLibraryIndexer());
+		setResolvers(resolvers.toArray(new IModuleResolver[resolvers.size()]));
+	}
+	
+	public ProjectIndexer(IProject project) {
+		this.project = project;
+		refreshResolvers();
 	}
 
-	/* (non-Javadoc)
-	 * @see hu.cubussapiens.modembed.modularasm.indexer.IProjectIndexer#refresh(org.eclipse.core.resources.IFolder[])
-	 */
 	@Override
-	public void refresh(IFolder[] sourcefolders) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public List<String> listSubPackages() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<String> listModules() {
-		// TODO Auto-generated method stub
-		return null;
-
+	public IProject getProject() {
+		return project;
 	}
 
 }

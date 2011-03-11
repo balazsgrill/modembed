@@ -7,12 +7,15 @@ import hu.cubussapiens.modembed.modularasm.compiler.IModuleResolver;
 import hu.cubussapiens.modembed.modularasm.modularASM.Module;
 import hu.cubussapiens.modembed.modularasm.modularASM.QualifiedID;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IResource;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -32,12 +35,7 @@ public class FolderModuleResolver implements IModuleResolver {
 		this.folder = folder;
 	}
 	
-	/* (non-Javadoc)
-	 * @see hu.cubussapiens.modembed.modularasm.builder.IModuleResolver#resolveModule(java.lang.String)
-	 */
-	@Override
-	public Module resolveModule(QualifiedID moduleID) {
-		List<String> ss = moduleID.getSegments();
+	private IContainer resolveFolder(List<String> ss){
 		if (ss.isEmpty()) return null;
 		IContainer current = folder;
 		for(int i=0;i<ss.size()-1;i++){
@@ -50,6 +48,18 @@ public class FolderModuleResolver implements IModuleResolver {
 				return null;
 			}
 		}
+		return current;
+	}
+	
+	/* (non-Javadoc)
+	 * @see hu.cubussapiens.modembed.modularasm.builder.IModuleResolver#resolveModule(java.lang.String)
+	 */
+	@Override
+	public Module resolveModule(QualifiedID moduleID) {
+		List<String> ss = moduleID.getSegments();
+		if (ss.isEmpty()) return null;
+		IContainer current = resolveFolder(ss);
+		
 		String last = ss.get(ss.size()-1);
 		IFile file = null;
 		if (current instanceof IProject){
@@ -70,6 +80,43 @@ public class FolderModuleResolver implements IModuleResolver {
 		}
 		
 		return null;
+	}
+
+	@Override
+	public String[] getSubPackages(List<String> sections) {
+		IContainer current = resolveFolder(sections);
+		List<String> result = new ArrayList<String>();
+		
+		try {
+			for(IResource r : current.members()){
+				if (r instanceof IFolder){
+					result.add(r.getName());
+				}
+			}
+		} catch (CoreException e) {
+			e.printStackTrace();
+		}
+		
+		return result.toArray(new String[result.size()]);
+	}
+
+	@Override
+	public String[] getModules(List<String> sections) {
+		IContainer current = resolveFolder(sections);
+		List<String> result = new ArrayList<String>();
+		
+		try {
+			for(IResource r : current.members()){
+				if (r instanceof IFile){
+					r.getName().endsWith(".masm");
+					result.add(r.getName().replace(".masm", ""));
+				}
+			}
+		} catch (CoreException e) {
+			e.printStackTrace();
+		}
+		
+		return result.toArray(new String[result.size()]);
 	}
 
 }

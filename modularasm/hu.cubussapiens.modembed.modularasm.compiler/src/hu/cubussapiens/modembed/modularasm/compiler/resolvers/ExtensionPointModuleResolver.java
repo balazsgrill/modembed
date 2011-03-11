@@ -4,7 +4,10 @@
 package hu.cubussapiens.modembed.modularasm.compiler.resolvers;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.Platform;
@@ -48,6 +51,24 @@ public class ExtensionPointModuleResolver implements IModuleResolver {
 			}
 		}
 		return null;
+	}
+
+	@Override
+	public String[] getSubPackages(List<String> sections) {
+		Set<String> result = new HashSet<String>();
+		for(SharedLibraryExtensionModuleResolver r : resolvers){
+			result.addAll(Arrays.asList(r.getSubPackages(sections)));
+		}
+		return result.toArray(new String[result.size()]);
+	}
+
+	@Override
+	public String[] getModules(List<String> sections) {
+		List<String> result = new ArrayList<String>();
+		for(SharedLibraryExtensionModuleResolver r : resolvers){
+			result.addAll(Arrays.asList(r.getSubPackages(sections)));
+		}
+		return result.toArray(new String[result.size()]);
 	}
 
 }

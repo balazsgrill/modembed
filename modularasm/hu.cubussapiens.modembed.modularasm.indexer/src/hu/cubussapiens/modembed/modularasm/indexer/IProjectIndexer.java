@@ -3,7 +3,7 @@
  */
 package hu.cubussapiens.modembed.modularasm.indexer;
 
-import org.eclipse.core.resources.IFolder;
+import org.eclipse.core.resources.IProject;
 
 /**
  * @author balazs.grill
@@ -11,6 +11,8 @@ import org.eclipse.core.resources.IFolder;
  */
 public interface IProjectIndexer extends IModuleIndexer{
 
-	public void refresh(IFolder[] sourcefolders);
+	public IProject getProject();
+	
+	public void update();
 	
 }
