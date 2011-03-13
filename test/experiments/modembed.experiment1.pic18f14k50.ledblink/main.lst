@@ -1,0 +1,39 @@
+gpasm-0.13.7 beta               main.asm    3-13-2011  15:30:04          PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+ 
+               00001         LIST    P=18F14K50, R=HEX
+               00002 
+0000           00003         ORG     0
+               00004 
+0000 010F      00005                 MOVLB 0xF
+0002 6B94      00006                 CLRF 0x94
+0004 6982      00007                 SETF 0x82
+0006 00008 start
+0006 EF03 F000 00009                 GOTO start
+               00010 
+gpasm-0.13.7 beta               main.asm    3-13-2011  15:30:04          PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+__18F14K50                        00000001
+start                             00000006
+
+
+MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
+
+00000000 : XXXXXXXXXX------ ---------------- ---------------- ----------------
+
+All other memory blocks unused.
+
+Program Memory Words Used: 5
+
+
+Errors   :       0
+Warnings :       0 reported,       0 suppressed
+Messages :       0 reported,       0 suppressed
+
