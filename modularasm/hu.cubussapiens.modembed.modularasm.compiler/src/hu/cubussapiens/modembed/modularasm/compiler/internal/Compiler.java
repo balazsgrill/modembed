@@ -149,7 +149,10 @@ public class Compiler implements ICompiler {
 			for(int j=0;j<wordbytes;j++){
 				int b = (int)(d&0xFF);
 				d = d>>8;
-				int index = i*wordbytes + (wordbytes-1-j);
+				//Reversed byte order (for now, it seems that 
+				// forward byte order should be used)
+				//int index = i*wordbytes + (wordbytes-1-j);
+				int index = i*wordbytes + j;
 				bytes[index] = HexFileResource.intToByte(b);
 			}
 		}
