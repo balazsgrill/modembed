@@ -1,7 +1,7 @@
 /**
  * 
  */
-package hu.cubussapiens.modembed.pic.ui.configt;
+package hu.cubussapiens.modembed.pic.ui.config;
 
 /**
  * @author balazs.grill

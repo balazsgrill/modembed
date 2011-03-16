@@ -1,4 +1,4 @@
-package hu.cubussapiens.modembed.pic.ui.configt;
+package hu.cubussapiens.modembed.pic.ui.config;
 
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
@@ -18,6 +18,7 @@ public class Activator extends AbstractUIPlugin {
 	
 	public static final String IMAGE_EXTRACT = PLUGIN_ID+".image.extract";
 	public static final String IMAGE_INSERT = PLUGIN_ID+".image.insert";
+	public static final String IMAGE_WIZARD = PLUGIN_ID+".image.wizard";
 	
 	/**
 	 * The constructor
@@ -29,6 +30,7 @@ public class Activator extends AbstractUIPlugin {
 	protected void initializeImageRegistry(ImageRegistry reg) {
 		reg.put(IMAGE_EXTRACT, ImageDescriptor.createFromURL(getBundle().getEntry("icons/extract.png")));
 		reg.put(IMAGE_INSERT, ImageDescriptor.createFromURL(getBundle().getEntry("icons/insert.png")));
+		reg.put(IMAGE_WIZARD, ImageDescriptor.createFromURL(getBundle().getEntry("icons/newfile_modembed_wiz.png")));
 	}
 	
 	/*

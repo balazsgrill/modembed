@@ -1,7 +1,7 @@
 /**
  * 
  */
-package hu.cubussapiens.modembed.pic.ui.configt;
+package hu.cubussapiens.modembed.pic.ui.config;
 
 import org.eclipse.core.resources.IProject;
 import org.eclipse.jface.dialogs.IDialogConstants;

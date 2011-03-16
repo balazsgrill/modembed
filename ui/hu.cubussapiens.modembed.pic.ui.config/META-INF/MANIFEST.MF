@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Configurator Plugin
 Bundle-SymbolicName: hu.cubussapiens.modembed.pic.ui.config;singleton:=true
 Bundle-Version: 0.1.0.qualifier
-Bundle-Activator: hu.cubussapiens.modembed.pic.ui.configt.Activator
+Bundle-Activator: hu.cubussapiens.modembed.pic.ui.config.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  hu.cubussapiens.modembed.pic;bundle-version="0.1.0",
@@ -12,6 +12,8 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.ui.forms,
  hu.cubussapiens.modembed.pic.model;bundle-version="0.1.0",
  hu.cubussapiens.modembed.hexfile.model;bundle-version="0.1.0",
- hu.cubussapiens.modembed.pic.ui;bundle-version="0.1.0"
+ hu.cubussapiens.modembed.pic.ui;bundle-version="0.1.0",
+ hu.cubussapiens.modembed.ui;bundle-version="0.1.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: hu.cubussapiens.modembed.pic.ui.config.wizard
