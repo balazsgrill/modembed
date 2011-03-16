@@ -46,7 +46,7 @@ public class FolderConfigHandler implements IModuleConfigurationHandler {
 			
 			Configuration instance = InstanceFactory.eINSTANCE.createConfiguration();
 			instance.setScheme(scheme);
-			instance.setName(moduleInstance);
+			instance.setName("Module: "+moduleInstance);
 			r.getContents().add(instance);
 			try {
 				r.save(null);

@@ -12,16 +12,5 @@
             project="false">
       </wizard>
    </extension>
-   <extension
-         point="org.eclipse.ui.editors">
-      <editor
-            class="hu.cubussapiens.modembed.pic.ui.config.editor.PICConfigEditorPart"
-            default="true"
-            extensions="config"
-            icon="icons/chip_config.png"
-            id="hu.gb.embedded.pic.ui.config.editor"
-            name="PIC configuration editor">
-      </editor>
-   </extension>
 
 </plugin>

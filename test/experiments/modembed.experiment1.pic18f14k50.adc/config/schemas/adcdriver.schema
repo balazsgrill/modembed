@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mbconf:Scheme xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mbconf="http://cubussapiens.hu/modembed/config" name="adcdriver">
+  <subsets name="ADCConfig0">
+    <parameters xsi:type="mbconf:EnumParam" name="Channel">
+      <literals name="AN0"/>
+      <literals name="AN1" value="1"/>
+    </parameters>
+  </subsets>
+</mbconf:Scheme>

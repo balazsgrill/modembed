@@ -50,6 +50,14 @@
             id="hu.cubussapiens.modembed.ui.project.settingsEditor"
             name="ProjectSettingsEditor">
       </editor>
+      <editor
+            class="hu.cubussapiens.modembed.ui.config.editor.ConfigEditorPart"
+            default="true"
+            extensions="config"
+            icon="icons/chip_config.png"
+            id="hu.cubussapiens.modembed.ui.config.editor"
+            name="Configuration editor">
+      </editor>
    </extension>
    <extension
          id="masmbuilder"

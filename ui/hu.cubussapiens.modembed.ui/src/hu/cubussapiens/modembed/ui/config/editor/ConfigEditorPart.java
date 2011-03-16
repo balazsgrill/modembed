@@ -1,7 +1,7 @@
 /**
  * 
  */
-package hu.cubussapiens.modembed.pic.ui.config.editor;
+package hu.cubussapiens.modembed.ui.config.editor;
 
 import java.io.IOException;
 
@@ -28,13 +28,11 @@ import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.ScrolledForm;
 import org.eclipse.ui.part.EditorPart;
 
-import pic.PicCPUType;
-
 /**
  * @author balage
  *
  */
-public class PICConfigEditorPart extends EditorPart {
+public class ConfigEditorPart extends EditorPart {
 
 	/* (non-Javadoc)
 	 * @see org.eclipse.ui.part.EditorPart#doSave(org.eclipse.core.runtime.IProgressMonitor)
@@ -123,16 +121,14 @@ public class PICConfigEditorPart extends EditorPart {
 		parent.setLayout(new FillLayout());
 		ScrolledForm form = tk.createScrolledForm(parent);
 
-		form.setText("PIC configuration");
+		form.setText(configscheme.getName()+" Configuration");
 		
 		Label head = new Label(form.getForm().getHead(), SWT.None);
-		if (configscheme.eContainer() != null && configscheme.eContainer().eContainer() instanceof PicCPUType){
-			head.setText("Target: "+((PicCPUType)configscheme.eContainer().eContainer()).getName());
-		}else{
+
 			String name = configuration.getName();
 			if (name == null) name = "";
 			head.setText(name);
-		}
+
 		form.setHeadClient(head);
 		
 		form.getBody().setLayout(new FillLayout());

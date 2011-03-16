@@ -4,7 +4,8 @@ module adcdriver target microchip.pic18{
 	
 	config ADCConfig0{
 		0 at 0 enum Channel {
-			
+			AN0 = 0;
+			AN1 = 1;
 		};
 	};
 	

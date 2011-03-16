@@ -37,6 +37,8 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.ide.IDE;
 
+import pic.PicCPUType;
+
 
 /**
  * This is a sample new wizard. Its role is to create a new file 
@@ -133,7 +135,7 @@ public class NewPICConfiguration extends Wizard implements INewWizard {
 			Scheme configscheme = PICPlugin.getDefault().getConfigurationScheme(rs, model);
 			
 			Configuration configinstance = InstanceFactory.eINSTANCE.createConfiguration();
-			configinstance.setName("New configuration");
+			configinstance.setName("Target: "+((PicCPUType)configscheme.eContainer().eContainer()).getName());
 			configinstance.setScheme(configscheme);
 			
 			fr.getContents().add(configinstance);

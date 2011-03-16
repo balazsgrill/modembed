@@ -1,7 +1,7 @@
 /**
  * 
  */
-package hu.cubussapiens.modembed.pic.ui.config.editor;
+package hu.cubussapiens.modembed.ui.config.editor;
 
 import modembedconfig.Parameter;
 
