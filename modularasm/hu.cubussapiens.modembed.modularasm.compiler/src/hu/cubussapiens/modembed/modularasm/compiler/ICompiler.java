@@ -28,6 +28,8 @@ public interface ICompiler {
 	
 	public void setMemoryModel(MemoryModel memmodel);
 	
+	public void setConfigurationHandler(IModuleConfigurationHandler handler);
+	
 	public void addPostBuildProcess(IPostBuildProcess process);
 	
 	public HexFile compile(IProgressMonitor monitor) throws CompilerException;

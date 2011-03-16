@@ -87,6 +87,7 @@ public class MASMBuilder extends IncrementalProjectBuilder {
 		IProjectIndexer indexer = IndexerPlugin.getDefault().getProjectIndexer(getProject());
 		indexer.update();
 		compiler.setModuleResolver(indexer);
+		compiler.setConfigurationHandler(indexer.getConfigHandler());
 		QualifiedID moduleID = ModularASMFactory.eINSTANCE.createQualifiedID();
 		String[] ss = pc.getBuild().getQualifiedID().split("\\.");
 		for(String s : ss){

@@ -126,7 +126,13 @@ public class PICConfigEditorPart extends EditorPart {
 		form.setText("PIC configuration");
 		
 		Label head = new Label(form.getForm().getHead(), SWT.None);
-		head.setText("Target: "+((PicCPUType)configscheme.eContainer().eContainer()).getName());
+		if (configscheme.eContainer() != null && configscheme.eContainer().eContainer() instanceof PicCPUType){
+			head.setText("Target: "+((PicCPUType)configscheme.eContainer().eContainer()).getName());
+		}else{
+			String name = configuration.getName();
+			if (name == null) name = "";
+			head.setText(name);
+		}
 		form.setHeadClient(head);
 		
 		form.getBody().setLayout(new FillLayout());

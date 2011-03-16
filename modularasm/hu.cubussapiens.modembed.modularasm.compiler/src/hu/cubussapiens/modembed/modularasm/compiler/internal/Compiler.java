@@ -17,6 +17,7 @@ import hu.cubussapiens.modembed.hexfile.persistence.HexFileResource;
 import hu.cubussapiens.modembed.modularasm.compiler.CompilerException;
 import hu.cubussapiens.modembed.modularasm.compiler.IArchitectureResolver;
 import hu.cubussapiens.modembed.modularasm.compiler.ICompiler;
+import hu.cubussapiens.modembed.modularasm.compiler.IModuleConfigurationHandler;
 import hu.cubussapiens.modembed.modularasm.compiler.IModuleResolver;
 import hu.cubussapiens.modembed.modularasm.compiler.IPostBuildProcess;
 import hu.cubussapiens.modembed.modularasm.modularASM.Module;
@@ -36,6 +37,7 @@ public class Compiler implements ICompiler {
 	public IArchitectureResolver archresolver;
 	public IModuleResolver modresolver;
 	public MemoryModel memmodel;
+	public IModuleConfigurationHandler confighandler;
 	
 	private final List<IPostBuildProcess> postBuilds = new ArrayList<IPostBuildProcess>();
 	
@@ -84,9 +86,20 @@ public class Compiler implements ICompiler {
 		monitor.worked(1);
 		
 		/*
+		 * Preparing instances
+		 */
+		IProgressMonitor sm = new SubProgressMonitor(monitor, 20);
+		sm.beginTask("Preparing modules..", cmanager.instances.size());
+		for(ModuleInstance mi : cmanager.instances){
+			mi.prepare();
+			sm.worked(1);
+		}
+		sm.done();
+		
+		/*
 		 * Preparing function instances
 		 */
-		IProgressMonitor sm = new SubProgressMonitor(monitor, 49);
+		sm = new SubProgressMonitor(monitor, 29);
 		sm.beginTask("Compiling functions..", cmanager.symbolManager.functions.size());
 		for(FunctionInstance fi : cmanager.symbolManager.functions){
 			fi.prepare();
@@ -192,6 +205,11 @@ public class Compiler implements ICompiler {
 	@Override
 	public void addPostBuildProcess(IPostBuildProcess process) {
 		postBuilds.add(process);
+	}
+
+	@Override
+	public void setConfigurationHandler(IModuleConfigurationHandler handler) {
+		confighandler = handler;
 	}
 
 }

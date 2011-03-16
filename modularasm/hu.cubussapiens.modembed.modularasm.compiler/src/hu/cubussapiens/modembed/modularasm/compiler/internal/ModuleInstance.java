@@ -7,6 +7,7 @@ import hu.cubussapiens.modembed.modularasm.compiler.CompilerException;
 import hu.cubussapiens.modembed.modularasm.compiler.MASMCompilerPlugin;
 import hu.cubussapiens.modembed.modularasm.compiler.internal.symbols.ISymbol;
 import hu.cubussapiens.modembed.modularasm.compiler.internal.symbols.LiteralSymbol;
+import hu.cubussapiens.modembed.modularasm.modularASM.ConfigurationWord;
 import hu.cubussapiens.modembed.modularasm.modularASM.Function;
 import hu.cubussapiens.modembed.modularasm.modularASM.Instance;
 import hu.cubussapiens.modembed.modularasm.modularASM.Module;
@@ -34,10 +35,46 @@ public class ModuleInstance {
 	
 	public final Map<String, ISymbol> symbols = new HashMap<String, ISymbol>();
 	
+	public final Map<String, ISymbol> configurationWords = new HashMap<String, ISymbol>();
+	
 	public final Map<String, ModuleInstance> instances = new HashMap<String, ModuleInstance>();
 	
 	private ModuleInstance parent = null;
 	private String nameInParent = null;
+	private ConfigurationWordManager cwManager;
+	
+	public void prepare() throws CompilerException{
+		this.cwManager = new ConfigurationWordManager(this);
+		
+		for(ModuleItem item : type.getItems()){
+			if (item instanceof Variable){
+				Variable v = ((Variable) item);
+				VariableInstance vi = new VariableInstance(this, v);
+				ISymbol vs = manager.symbolManager.createVariableSymbol(vi);
+				variables.put(v.getName(), vs);
+			}
+			
+			if (item instanceof Function){
+				Function f = (Function)item;
+				FunctionInstance fi = new FunctionInstance(this, f);
+				ISymbol fs = manager.symbolManager.createFunctionSymbol(fi);
+				functions.put(f.getName(), fs);
+			}
+			if (item instanceof Symbol){
+				Symbol s = (Symbol)item;
+				ISymbol sy = new LiteralSymbol(s.getValue());
+				symbols.put(s.getName(), sy);
+			}
+			
+			if (item instanceof ConfigurationWord){
+				ConfigurationWord cw = (ConfigurationWord)item;
+				ISymbol cwsymbol = cwManager.createSymbol(cw);
+				if (cwsymbol != null){
+					configurationWords.put(cw.getName(), cwsymbol);
+				}
+			}
+		}
+	}
 	
 	public ISymbol resolveReference(QualifiedID qid) throws CompilerException{
 		ModuleInstance namespace = this;
@@ -53,6 +90,9 @@ public class ModuleInstance {
 		s = namespace.symbols.get(last);
 		if (s != null) return s;
 		
+		s = namespace.configurationWords.get(last);
+		if (s != null) return s;
+		
 		s = namespace.variables.get(last);
 		if (s != null) return s;
 		
@@ -66,13 +106,7 @@ public class ModuleInstance {
 		this.type = module;
 		this.manager = manager;
 		
-		for(ModuleItem item : module.getItems()){
-			if (item instanceof Variable){
-				Variable v = ((Variable) item);
-				VariableInstance vi = new VariableInstance(this, v);
-				ISymbol vs = manager.symbolManager.createVariableSymbol(vi);
-				variables.put(v.getName(), vs);
-			}
+		for(ModuleItem item : type.getItems()){
 			if (item instanceof Instance){
 				Instance i = (Instance)item;
 				Module m = manager.getModuleDef(i.getType());
@@ -81,17 +115,6 @@ public class ModuleInstance {
 				mi.parent = this;
 				mi.nameInParent = i.getName();
 				instances.put(i.getName(), mi);
-			}
-			if (item instanceof Function){
-				Function f = (Function)item;
-				FunctionInstance fi = new FunctionInstance(this, f);
-				ISymbol fs = manager.symbolManager.createFunctionSymbol(fi);
-				functions.put(f.getName(), fs);
-			}
-			if (item instanceof Symbol){
-				Symbol s = (Symbol)item;
-				ISymbol sy = new LiteralSymbol(s.getValue());
-				symbols.put(s.getName(), sy);
 			}
 		}
 	}

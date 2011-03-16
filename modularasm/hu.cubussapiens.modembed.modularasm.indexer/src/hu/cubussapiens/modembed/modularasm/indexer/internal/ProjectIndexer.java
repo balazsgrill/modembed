@@ -6,6 +6,7 @@ package hu.cubussapiens.modembed.modularasm.indexer.internal;
 import java.util.ArrayList;
 import java.util.List;
 
+import hu.cubussapiens.modembed.modularasm.compiler.IModuleConfigurationHandler;
 import hu.cubussapiens.modembed.modularasm.compiler.IModuleResolver;
 import hu.cubussapiens.modembed.modularasm.compiler.resolvers.FolderModuleResolver;
 import hu.cubussapiens.modembed.modularasm.compiler.resolvers.MultipleModuleResolver;
@@ -86,6 +87,16 @@ public class ProjectIndexer extends MultipleModuleResolver implements IProjectIn
 	@Override
 	public IProject getProject() {
 		return project;
+	}
+
+	FolderConfigHandler confighandler = null;
+	
+	@Override
+	public IModuleConfigurationHandler getConfigHandler() {
+		if (confighandler == null){
+			confighandler = new FolderConfigHandler(project.getFolder("config"), getResourceSet());
+		}
+		return confighandler;
 	}
 
 }

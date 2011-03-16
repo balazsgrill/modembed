@@ -27,11 +27,13 @@ public class CompilationManager {
 	
 	public final Map<String, Module> modules = new HashMap<String, Module>();
 	
+	public final Map<Module, String> moduleTypes = new HashMap<Module, String>();
+	
 	public final List<ModuleInstance> instances = new ArrayList<ModuleInstance>();
 	
 	public final SymbolManager symbolManager = new SymbolManager();
 	
-	private final Compiler compiler;
+	public final Compiler compiler;
 	
 	public final InstructionManager insManager;
 	
@@ -55,6 +57,7 @@ public class CompilationManager {
 			m = compiler.modresolver.resolveModule(moduleID);
 			if (m != null){
 				modules.put(name, m);
+				moduleTypes.put(m, name);
 			}
 		}
 		return m;
