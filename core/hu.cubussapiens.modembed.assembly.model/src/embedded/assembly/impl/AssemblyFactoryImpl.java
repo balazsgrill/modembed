@@ -66,6 +66,7 @@ public class AssemblyFactoryImpl extends EFactoryImpl implements AssemblyFactory
 			case AssemblyPackage.FIELD: return createField();
 			case AssemblyPackage.SECTION: return createSection();
 			case AssemblyPackage.CODE: return createCode();
+			case AssemblyPackage.PARAMETER: return createParameter();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -149,6 +150,16 @@ public class AssemblyFactoryImpl extends EFactoryImpl implements AssemblyFactory
 	public Code createCode() {
 		CodeImpl code = new CodeImpl();
 		return code;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Parameter createParameter() {
+		ParameterImpl parameter = new ParameterImpl();
+		return parameter;
 	}
 
 	/**

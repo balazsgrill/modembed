@@ -5,6 +5,7 @@ package hu.cubussapiens.modembed.modularasm.compiler.internal;
 
 import hu.cubussapiens.modembed.modularasm.compiler.CompilerException;
 import hu.cubussapiens.modembed.modularasm.compiler.internal.symbols.ISymbol;
+import hu.cubussapiens.modembed.modularasm.compiler.internal.symbols.LiteralSymbol;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -15,6 +16,7 @@ import embedded.assembly.Code;
 import embedded.assembly.Field;
 import embedded.assembly.Instruction;
 import embedded.assembly.InstructionSet;
+import embedded.assembly.Parameter;
 import embedded.assembly.Section;
 
 /**
@@ -43,25 +45,36 @@ public class InstructionManager {
 			this.instruction = instruction;
 		}
 		
-		private ISymbol[] symbols;
+		private final Map<String, ISymbol> symbols = new HashMap<String, ISymbol>();
 		
-		public void setParamSymbols(ISymbol[] symbols){
-			this.symbols = symbols;
+		public void setParamSymbols(ISymbol[] symbols) throws CompilerException{
+			String[] params = getParams();
+			if (params.length < symbols.length) throw new CompilerException("Too many arguments at "+instruction.getName());
+			for(int i=0;i<params.length;i++){
+				if (i<symbols.length){
+					//Symbol was given
+					this.symbols.put(params[i], symbols[i]);
+				}else{
+					//Has default value?
+					int value = getDefaultValue(params[i]);
+					if (value == -1) throw new CompilerException("Not enough arguments for "+instruction.getName());
+					this.symbols.put(params[i], new LiteralSymbol(value));
+				}
+			}
+		}
+		
+		private int getDefaultValue(String param){
+			for (Parameter p : instruction.getParameters()){
+				if (param.equals(p.getName())) return p.getValue();
+			}
+			return -1;
 		}
 		
 		public String[] getParams(){
 			List<String> params = new ArrayList<String>();
 			
-			for (Section s : instruction.getSections()){
-				if (s instanceof Field){
-					Field f = (Field)s;
-					if (f.getParameter() != null && f.getParameter().length()>0){
-						String p = f.getParameter().trim();
-						if (!params.contains(p)){
-							params.add(p);
-						}
-					}
-				}
+			for (Parameter p : instruction.getParameters()){
+				params.add(p.getName());
 			}
 			
 			return params.toArray(new String[params.size()]);
@@ -82,16 +95,7 @@ public class InstructionManager {
 		}
 		
 		private ISymbol getSymbol(String param) throws CompilerException{
-			String[] ps = getParams();
-			for(int i=0;i<ps.length;i++){
-				if (param.equalsIgnoreCase(ps[i])){
-					if (symbols == null || symbols.length <= i){
-						throw new CompilerException("Invalid number of parameter of "+instruction.getName());
-					}
-					return symbols[i];
-				}
-			}
-			return null;
+			return symbols.get(param);
 		}
 		
 		private long getSectionValue(Section s) throws CompilerException{

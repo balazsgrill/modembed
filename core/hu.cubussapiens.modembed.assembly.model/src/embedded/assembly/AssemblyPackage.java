@@ -135,13 +135,22 @@ public interface AssemblyPackage extends EPackage {
 	int INSTRUCTION__SECTIONS = 1;
 
 	/**
+	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION__PARAMETERS = 2;
+
+	/**
 	 * The number of structural features of the '<em>Instruction</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INSTRUCTION_FEATURE_COUNT = 2;
+	int INSTRUCTION_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link embedded.assembly.impl.SectionImpl <em>Section</em>}' class.
@@ -291,6 +300,43 @@ public interface AssemblyPackage extends EPackage {
 	int CODE_FEATURE_COUNT = SECTION_FEATURE_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link embedded.assembly.impl.ParameterImpl <em>Parameter</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see embedded.assembly.impl.ParameterImpl
+	 * @see embedded.assembly.impl.AssemblyPackageImpl#getParameter()
+	 * @generated
+	 */
+	int PARAMETER = 5;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__VALUE = 1;
+
+	/**
+	 * The number of structural features of the '<em>Parameter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_FEATURE_COUNT = 2;
+
+	/**
 	 * The meta object id for the '{@link embedded.assembly.FieldType <em>Field Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -298,7 +344,7 @@ public interface AssemblyPackage extends EPackage {
 	 * @see embedded.assembly.impl.AssemblyPackageImpl#getFieldType()
 	 * @generated
 	 */
-	int FIELD_TYPE = 5;
+	int FIELD_TYPE = 6;
 
 
 	/**
@@ -375,6 +421,17 @@ public interface AssemblyPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getInstruction_Sections();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link embedded.assembly.Instruction#getParameters <em>Parameters</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Parameters</em>'.
+	 * @see embedded.assembly.Instruction#getParameters()
+	 * @see #getInstruction()
+	 * @generated
+	 */
+	EReference getInstruction_Parameters();
 
 	/**
 	 * Returns the meta object for class '{@link embedded.assembly.Field <em>Field</em>}'.
@@ -473,6 +530,38 @@ public interface AssemblyPackage extends EPackage {
 	EAttribute getCode_Code();
 
 	/**
+	 * Returns the meta object for class '{@link embedded.assembly.Parameter <em>Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Parameter</em>'.
+	 * @see embedded.assembly.Parameter
+	 * @generated
+	 */
+	EClass getParameter();
+
+	/**
+	 * Returns the meta object for the attribute '{@link embedded.assembly.Parameter#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see embedded.assembly.Parameter#getName()
+	 * @see #getParameter()
+	 * @generated
+	 */
+	EAttribute getParameter_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link embedded.assembly.Parameter#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see embedded.assembly.Parameter#getValue()
+	 * @see #getParameter()
+	 * @generated
+	 */
+	EAttribute getParameter_Value();
+
+	/**
 	 * Returns the meta object for enum '{@link embedded.assembly.FieldType <em>Field Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -565,6 +654,14 @@ public interface AssemblyPackage extends EPackage {
 		EReference INSTRUCTION__SECTIONS = eINSTANCE.getInstruction_Sections();
 
 		/**
+		 * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INSTRUCTION__PARAMETERS = eINSTANCE.getInstruction_Parameters();
+
+		/**
 		 * The meta object literal for the '{@link embedded.assembly.impl.FieldImpl <em>Field</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -641,6 +738,32 @@ public interface AssemblyPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CODE__CODE = eINSTANCE.getCode_Code();
+
+		/**
+		 * The meta object literal for the '{@link embedded.assembly.impl.ParameterImpl <em>Parameter</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see embedded.assembly.impl.ParameterImpl
+		 * @see embedded.assembly.impl.AssemblyPackageImpl#getParameter()
+		 * @generated
+		 */
+		EClass PARAMETER = eINSTANCE.getParameter();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PARAMETER__NAME = eINSTANCE.getParameter_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PARAMETER__VALUE = eINSTANCE.getParameter_Value();
 
 		/**
 		 * The meta object literal for the '{@link embedded.assembly.FieldType <em>Field Type</em>}' enum.

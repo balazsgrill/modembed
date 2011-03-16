@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import embedded.assembly.AssemblyPackage;
 import embedded.assembly.Instruction;
+import embedded.assembly.Parameter;
 import embedded.assembly.Section;
 
 /**
@@ -31,6 +32,7 @@ import embedded.assembly.Section;
  * <ul>
  *   <li>{@link embedded.assembly.impl.InstructionImpl#getName <em>Name</em>}</li>
  *   <li>{@link embedded.assembly.impl.InstructionImpl#getSections <em>Sections</em>}</li>
+ *   <li>{@link embedded.assembly.impl.InstructionImpl#getParameters <em>Parameters</em>}</li>
  * </ul>
  * </p>
  *
@@ -66,6 +68,16 @@ public class InstructionImpl extends EObjectImpl implements Instruction {
 	 * @ordered
 	 */
 	protected EList<Section> sections;
+
+	/**
+	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getParameters()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Parameter> parameters;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -124,11 +136,25 @@ public class InstructionImpl extends EObjectImpl implements Instruction {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Parameter> getParameters() {
+		if (parameters == null) {
+			parameters = new EObjectContainmentEList<Parameter>(Parameter.class, this, AssemblyPackage.INSTRUCTION__PARAMETERS);
+		}
+		return parameters;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case AssemblyPackage.INSTRUCTION__SECTIONS:
 				return ((InternalEList<?>)getSections()).basicRemove(otherEnd, msgs);
+			case AssemblyPackage.INSTRUCTION__PARAMETERS:
+				return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -145,6 +171,8 @@ public class InstructionImpl extends EObjectImpl implements Instruction {
 				return getName();
 			case AssemblyPackage.INSTRUCTION__SECTIONS:
 				return getSections();
+			case AssemblyPackage.INSTRUCTION__PARAMETERS:
+				return getParameters();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -165,6 +193,10 @@ public class InstructionImpl extends EObjectImpl implements Instruction {
 				getSections().clear();
 				getSections().addAll((Collection<? extends Section>)newValue);
 				return;
+			case AssemblyPackage.INSTRUCTION__PARAMETERS:
+				getParameters().clear();
+				getParameters().addAll((Collection<? extends Parameter>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -183,6 +215,9 @@ public class InstructionImpl extends EObjectImpl implements Instruction {
 			case AssemblyPackage.INSTRUCTION__SECTIONS:
 				getSections().clear();
 				return;
+			case AssemblyPackage.INSTRUCTION__PARAMETERS:
+				getParameters().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -199,6 +234,8 @@ public class InstructionImpl extends EObjectImpl implements Instruction {
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case AssemblyPackage.INSTRUCTION__SECTIONS:
 				return sections != null && !sections.isEmpty();
+			case AssemblyPackage.INSTRUCTION__PARAMETERS:
+				return parameters != null && !parameters.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

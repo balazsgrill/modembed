@@ -8,10 +8,10 @@ module main target microchip.pic18{
 	 * Main function
 	 */
 	func main{
-		call 0 adc.init;
+		call adc.init;
 		label refresh;
-		call 0 adc.read;
+		call adc.read;
 		goto refresh;
-		return 0;
+		return;
 	};
 }

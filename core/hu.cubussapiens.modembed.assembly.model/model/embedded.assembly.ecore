@@ -23,6 +23,8 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="sections" upperBound="-1"
           eType="#//assembly/Section" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+          eType="#//assembly/Parameter" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Field" eSuperTypes="#//assembly/Section">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//assembly/FieldType"/>
@@ -36,6 +38,11 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Code" eSuperTypes="#//assembly/Section">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Parameter">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+          defaultValueLiteral="-1"/>
     </eClassifiers>
   </eSubpackages>
 </ecore:EPackage>

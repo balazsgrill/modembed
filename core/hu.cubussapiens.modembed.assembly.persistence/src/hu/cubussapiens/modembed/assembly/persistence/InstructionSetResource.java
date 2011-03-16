@@ -21,6 +21,7 @@ import embedded.assembly.Field;
 import embedded.assembly.FieldType;
 import embedded.assembly.Instruction;
 import embedded.assembly.InstructionSet;
+import embedded.assembly.Parameter;
 import embedded.assembly.Section;
 
 /**
@@ -55,6 +56,24 @@ public class InstructionSetResource extends ResourceImpl {
 		}
 	}
 
+	private Parameter parseParameter(String v){
+		if (v.startsWith("#")) v = v.substring(1);
+		
+		int i = v.indexOf('=');
+		int value = -1;
+		if (i != -1){
+			String df = v.substring(i+1);
+			value = Integer.parseInt(df);
+			v = v.substring(0, i);
+		}
+		
+		Parameter p = AssemblyFactory.eINSTANCE.createParameter();
+		p.setName(v);
+		p.setValue(value);
+		
+		return p;
+	}
+	
 	private Section parseSection(String v){
 		if (v.startsWith("0") || v.startsWith("1")){
 			Code code = AssemblyFactory.eINSTANCE.createCode();
@@ -96,7 +115,7 @@ public class InstructionSetResource extends ResourceImpl {
 		while(line.length() > 0){
 			char c = line.charAt(0);
 			line = line.substring(1);
-			if (c==':' || Character.isLetterOrDigit(c)){
+			if (c==':' || Character.isLetterOrDigit(c) || c=='#' || c=='='){
 				current += c;
 			}else{
 				if (current.length() > 0){
@@ -143,9 +162,17 @@ public class InstructionSetResource extends ResourceImpl {
 
 					ins.setName(v[0].trim());
 					for(int i=1;i<v.length;i++){
-						Section s = parseSection(v[i]);
-						if (s != null){
-							ins.getSections().add(s);
+						if (v[i].startsWith("#")){
+							//parameters
+							Parameter p = parseParameter(v[i]);
+							if (p != null){
+								ins.getParameters().add(p);
+							}
+						}else{
+							Section s = parseSection(v[i]);
+							if (s != null){
+								ins.getSections().add(s);
+							}
 						}
 					}
 					EList<Section> ss = ins.getSections();

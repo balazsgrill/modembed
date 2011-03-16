@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link embedded.assembly.Instruction#getName <em>Name</em>}</li>
  *   <li>{@link embedded.assembly.Instruction#getSections <em>Sections</em>}</li>
+ *   <li>{@link embedded.assembly.Instruction#getParameters <em>Parameters</em>}</li>
  * </ul>
  * </p>
  *
@@ -69,5 +70,21 @@ public interface Instruction extends EObject {
 	 * @generated
 	 */
 	EList<Section> getSections();
+
+	/**
+	 * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
+	 * The list contents are of type {@link embedded.assembly.Parameter}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Parameters</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Parameters</em>' containment reference list.
+	 * @see embedded.assembly.AssemblyPackage#getInstruction_Parameters()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Parameter> getParameters();
 
 } // Instruction
