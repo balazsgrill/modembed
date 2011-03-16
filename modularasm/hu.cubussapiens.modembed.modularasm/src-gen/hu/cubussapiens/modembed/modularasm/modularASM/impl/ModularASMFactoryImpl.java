@@ -2,6 +2,7 @@
  * <copyright>
  * </copyright>
  *
+
  */
 package hu.cubussapiens.modembed.modularasm.modularASM.impl;
 
@@ -71,7 +72,11 @@ public class ModularASMFactoryImpl extends EFactoryImpl implements ModularASMFac
       case ModularASMPackage.MODULE_PARAM: return createModuleParam();
       case ModularASMPackage.QUALIFIED_ID: return createQualifiedID();
       case ModularASMPackage.MODULE_ITEM: return createModuleItem();
-      case ModularASMPackage.VARIABLE_DECL: return createVariableDecl();
+      case ModularASMPackage.CONFIGURATION_WORD: return createConfigurationWord();
+      case ModularASMPackage.CONFIGURATION_FIELD_PLACE: return createConfigurationFieldPlace();
+      case ModularASMPackage.CONFIGURATION_FIELD: return createConfigurationField();
+      case ModularASMPackage.ENUM_CONFIGURATION_FIELD: return createEnumConfigurationField();
+      case ModularASMPackage.ENUM_CONFIGURATION_FIELD_LITERAL: return createEnumConfigurationFieldLiteral();
       case ModularASMPackage.SYMBOL: return createSymbol();
       case ModularASMPackage.VARIABLE: return createVariable();
       case ModularASMPackage.INSTANCE: return createInstance();
@@ -136,10 +141,54 @@ public class ModularASMFactoryImpl extends EFactoryImpl implements ModularASMFac
    * <!-- end-user-doc -->
    * @generated
    */
-  public VariableDecl createVariableDecl()
+  public ConfigurationWord createConfigurationWord()
   {
-    VariableDeclImpl variableDecl = new VariableDeclImpl();
-    return variableDecl;
+    ConfigurationWordImpl configurationWord = new ConfigurationWordImpl();
+    return configurationWord;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ConfigurationFieldPlace createConfigurationFieldPlace()
+  {
+    ConfigurationFieldPlaceImpl configurationFieldPlace = new ConfigurationFieldPlaceImpl();
+    return configurationFieldPlace;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ConfigurationField createConfigurationField()
+  {
+    ConfigurationFieldImpl configurationField = new ConfigurationFieldImpl();
+    return configurationField;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EnumConfigurationField createEnumConfigurationField()
+  {
+    EnumConfigurationFieldImpl enumConfigurationField = new EnumConfigurationFieldImpl();
+    return enumConfigurationField;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EnumConfigurationFieldLiteral createEnumConfigurationFieldLiteral()
+  {
+    EnumConfigurationFieldLiteralImpl enumConfigurationFieldLiteral = new EnumConfigurationFieldLiteralImpl();
+    return enumConfigurationFieldLiteral;
   }
 
   /**

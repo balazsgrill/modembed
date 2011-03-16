@@ -34,9 +34,18 @@ public class MODembedUI extends AbstractUIPlugin {
 	
 	public static String IMAGE_NEWPROJWZRD = PLUGIN_ID+".image.newprojectwizard";
 
+	public static String IMAGE_ELEMENT_ARCH = PLUGIN_ID+".elements.image.arch";
+	public static String IMAGE_ELEMENT_FOLDER = PLUGIN_ID+".elements.image.folder";
+	public static String IMAGE_ELEMENT_INSTRUCTION = PLUGIN_ID+".elements.image.instruction";
+	public static String IMAGE_ELEMENT_MODULE = PLUGIN_ID+".elements.image.module";
+	
 	@Override
 	protected void initializeImageRegistry(ImageRegistry reg) {
 		reg.put(IMAGE_NEWPROJWZRD, ImageDescriptor.createFromURL(getBundle().getEntry("icons/newprj_modembed_wiz.png")));
+		reg.put(IMAGE_ELEMENT_ARCH, ImageDescriptor.createFromURL(getBundle().getEntry("icons/elements/arch.png")));
+		reg.put(IMAGE_ELEMENT_FOLDER, ImageDescriptor.createFromURL(getBundle().getEntry("icons/elements/folder.gif")));
+		reg.put(IMAGE_ELEMENT_INSTRUCTION, ImageDescriptor.createFromURL(getBundle().getEntry("icons/elements/instruction_obj.gif")));
+		reg.put(IMAGE_ELEMENT_MODULE, ImageDescriptor.createFromURL(getBundle().getEntry("icons/elements/module.png")));
 	}
 	
 	public IProjectExtension[] getExtensions(String archID){

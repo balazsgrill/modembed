@@ -6,8 +6,8 @@
  */
 package hu.cubussapiens.modembed.modularasm.modularASM.impl;
 
+import hu.cubussapiens.modembed.modularasm.modularASM.ConfigurationField;
 import hu.cubussapiens.modembed.modularasm.modularASM.ModularASMPackage;
-import hu.cubussapiens.modembed.modularasm.modularASM.Param;
 
 import org.eclipse.emf.ecore.EClass;
 
@@ -15,21 +15,21 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Param</b></em>'.
+ * An implementation of the model object '<em><b>Configuration Field</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class ParamImpl extends MinimalEObjectImpl.Container implements Param
+public class ConfigurationFieldImpl extends MinimalEObjectImpl.Container implements ConfigurationField
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ParamImpl()
+  protected ConfigurationFieldImpl()
   {
     super();
   }
@@ -42,7 +42,7 @@ public class ParamImpl extends MinimalEObjectImpl.Container implements Param
   @Override
   protected EClass eStaticClass()
   {
-    return ModularASMPackage.Literals.PARAM;
+    return ModularASMPackage.Literals.CONFIGURATION_FIELD;
   }
 
-} //ParamImpl
+} //ConfigurationFieldImpl

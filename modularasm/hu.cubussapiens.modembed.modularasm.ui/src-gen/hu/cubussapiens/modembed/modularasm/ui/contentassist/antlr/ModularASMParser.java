@@ -37,7 +37,6 @@ public class ModularASMParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
-					put(grammarAccess.getModuleParamTypeAccess().getAlternatives(), "rule__ModuleParamType__Alternatives");
 					put(grammarAccess.getModuleItemAccess().getAlternatives_0(), "rule__ModuleItem__Alternatives_0");
 					put(grammarAccess.getSymbolAccess().getAlternatives_2(), "rule__Symbol__Alternatives_2");
 					put(grammarAccess.getStepAccess().getAlternatives(), "rule__Step__Alternatives");
@@ -49,7 +48,12 @@ public class ModularASMParser extends AbstractContentAssistParser {
 					put(grammarAccess.getQualifiedIDAccess().getGroup(), "rule__QualifiedID__Group__0");
 					put(grammarAccess.getQualifiedIDAccess().getGroup_1(), "rule__QualifiedID__Group_1__0");
 					put(grammarAccess.getModuleItemAccess().getGroup(), "rule__ModuleItem__Group__0");
-					put(grammarAccess.getVariableDeclAccess().getGroup(), "rule__VariableDecl__Group__0");
+					put(grammarAccess.getConfigurationWordAccess().getGroup(), "rule__ConfigurationWord__Group__0");
+					put(grammarAccess.getConfigurationWordAccess().getGroup_4(), "rule__ConfigurationWord__Group_4__0");
+					put(grammarAccess.getConfigurationFieldPlaceAccess().getGroup(), "rule__ConfigurationFieldPlace__Group__0");
+					put(grammarAccess.getEnumConfigurationFieldAccess().getGroup(), "rule__EnumConfigurationField__Group__0");
+					put(grammarAccess.getEnumConfigurationFieldAccess().getGroup_3(), "rule__EnumConfigurationField__Group_3__0");
+					put(grammarAccess.getEnumConfigurationFieldLiteralAccess().getGroup(), "rule__EnumConfigurationFieldLiteral__Group__0");
 					put(grammarAccess.getSymbolAccess().getGroup(), "rule__Symbol__Group__0");
 					put(grammarAccess.getVariableAccess().getGroup(), "rule__Variable__Group__0");
 					put(grammarAccess.getInstanceAccess().getGroup(), "rule__Instance__Group__0");
@@ -66,8 +70,16 @@ public class ModularASMParser extends AbstractContentAssistParser {
 					put(grammarAccess.getModuleParamAccess().getNameAssignment_1(), "rule__ModuleParam__NameAssignment_1");
 					put(grammarAccess.getQualifiedIDAccess().getSegmentsAssignment_0(), "rule__QualifiedID__SegmentsAssignment_0");
 					put(grammarAccess.getQualifiedIDAccess().getSegmentsAssignment_1_1(), "rule__QualifiedID__SegmentsAssignment_1_1");
-					put(grammarAccess.getVariableDeclAccess().getModifierAssignment_0(), "rule__VariableDecl__ModifierAssignment_0");
-					put(grammarAccess.getVariableDeclAccess().getVariableAssignment_1(), "rule__VariableDecl__VariableAssignment_1");
+					put(grammarAccess.getConfigurationWordAccess().getNameAssignment_1(), "rule__ConfigurationWord__NameAssignment_1");
+					put(grammarAccess.getConfigurationWordAccess().getDefaultAssignment_2(), "rule__ConfigurationWord__DefaultAssignment_2");
+					put(grammarAccess.getConfigurationWordAccess().getFieldsAssignment_4_0(), "rule__ConfigurationWord__FieldsAssignment_4_0");
+					put(grammarAccess.getConfigurationFieldPlaceAccess().getBitNumAssignment_0(), "rule__ConfigurationFieldPlace__BitNumAssignment_0");
+					put(grammarAccess.getConfigurationFieldPlaceAccess().getStartBitAssignment_2(), "rule__ConfigurationFieldPlace__StartBitAssignment_2");
+					put(grammarAccess.getConfigurationFieldPlaceAccess().getFieldAssignment_3(), "rule__ConfigurationFieldPlace__FieldAssignment_3");
+					put(grammarAccess.getEnumConfigurationFieldAccess().getNameAssignment_1(), "rule__EnumConfigurationField__NameAssignment_1");
+					put(grammarAccess.getEnumConfigurationFieldAccess().getLiteralsAssignment_3_0(), "rule__EnumConfigurationField__LiteralsAssignment_3_0");
+					put(grammarAccess.getEnumConfigurationFieldLiteralAccess().getNameAssignment_0(), "rule__EnumConfigurationFieldLiteral__NameAssignment_0");
+					put(grammarAccess.getEnumConfigurationFieldLiteralAccess().getValueAssignment_2(), "rule__EnumConfigurationFieldLiteral__ValueAssignment_2");
 					put(grammarAccess.getSymbolAccess().getNameAssignment_1(), "rule__Symbol__NameAssignment_1");
 					put(grammarAccess.getSymbolAccess().getValueAssignment_2_0(), "rule__Symbol__ValueAssignment_2_0");
 					put(grammarAccess.getSymbolAccess().getValueAssignment_2_1(), "rule__Symbol__ValueAssignment_2_1");

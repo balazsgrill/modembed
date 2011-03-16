@@ -11,7 +11,7 @@ import hu.cubussapiens.modembed.modularasm.modularASM.Function;
 import hu.cubussapiens.modembed.modularasm.modularASM.Instance;
 import hu.cubussapiens.modembed.modularasm.modularASM.Module;
 import hu.cubussapiens.modembed.modularasm.modularASM.QualifiedID;
-import hu.cubussapiens.modembed.modularasm.ui.internal.ModularASMActivator;
+import hu.cubussapiens.modembed.ui.MODembedUI;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -67,7 +67,7 @@ public class ModularASMProposalProvider extends AbstractModularASMProposalProvid
 			for(String s : MODembedCore.getDefault().getArchitectures()){
 				if (s.startsWith(prefix)){
 					String name = MODembedCore.getDefault().getArchName(s);
-					acceptor.accept(createCompletionProposal(s, s+" - "+name, getImage(ModularASMActivator.IMAGE_ARCHITECTURE), context));
+					acceptor.accept(createCompletionProposal(s, s+" - "+name, getImage(MODembedUI.IMAGE_ELEMENT_ARCH), context));
 				}
 			}
 		}
@@ -118,12 +118,12 @@ public class ModularASMProposalProvider extends AbstractModularASMProposalProvid
 			
 			for(String s : indexer.getModules(segments)){
 				if (s.toLowerCase().startsWith(prefixlc)){
-					acceptor.accept(createCompletionProposal(s,s,getImage(ModularASMActivator.IMAGE_MODULE), context));
+					acceptor.accept(createCompletionProposal(s,s,getImage(MODembedUI.IMAGE_ELEMENT_MODULE), context));
 				}
 			}
 			for(String s : indexer.getSubPackages(segments)){
 				if (s.toLowerCase().startsWith(prefixlc)){
-					acceptor.accept(createCompletionProposal(s,s,getImage(ModularASMActivator.IMAGE_FOLDER), context));
+					acceptor.accept(createCompletionProposal(s,s,getImage(MODembedUI.IMAGE_ELEMENT_FOLDER), context));
 				}
 			}
 		}
@@ -146,11 +146,11 @@ public class ModularASMProposalProvider extends AbstractModularASMProposalProvid
 				}
 			}
 		}
-		return createCompletionProposal(instruction.getName(), sb.toString(), getImage(ModularASMActivator.IMAGE_INSTRUCTION), context);
+		return createCompletionProposal(instruction.getName(), sb.toString(), getImage(MODembedUI.IMAGE_ELEMENT_INSTRUCTION), context);
 	}
 	
 	private Image getImage(String ID){
-		return ModularASMActivator.getInstance().getImageRegistry().get(ID);
+		return MODembedUI.getDefault().getImageRegistry().get(ID);
 	}
 	
 }

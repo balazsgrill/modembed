@@ -2,6 +2,7 @@
  * <copyright>
  * </copyright>
  *
+
  */
 package hu.cubussapiens.modembed.modularasm.modularASM.util;
 
@@ -98,9 +99,29 @@ public class ModularASMAdapterFactory extends AdapterFactoryImpl
         return createModuleItemAdapter();
       }
       @Override
-      public Adapter caseVariableDecl(VariableDecl object)
+      public Adapter caseConfigurationWord(ConfigurationWord object)
       {
-        return createVariableDeclAdapter();
+        return createConfigurationWordAdapter();
+      }
+      @Override
+      public Adapter caseConfigurationFieldPlace(ConfigurationFieldPlace object)
+      {
+        return createConfigurationFieldPlaceAdapter();
+      }
+      @Override
+      public Adapter caseConfigurationField(ConfigurationField object)
+      {
+        return createConfigurationFieldAdapter();
+      }
+      @Override
+      public Adapter caseEnumConfigurationField(EnumConfigurationField object)
+      {
+        return createEnumConfigurationFieldAdapter();
+      }
+      @Override
+      public Adapter caseEnumConfigurationFieldLiteral(EnumConfigurationFieldLiteral object)
+      {
+        return createEnumConfigurationFieldLiteralAdapter();
       }
       @Override
       public Adapter caseSymbol(Symbol object)
@@ -235,16 +256,76 @@ public class ModularASMAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link hu.cubussapiens.modembed.modularasm.modularASM.VariableDecl <em>Variable Decl</em>}'.
+   * Creates a new adapter for an object of class '{@link hu.cubussapiens.modembed.modularasm.modularASM.ConfigurationWord <em>Configuration Word</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see hu.cubussapiens.modembed.modularasm.modularASM.VariableDecl
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.ConfigurationWord
    * @generated
    */
-  public Adapter createVariableDeclAdapter()
+  public Adapter createConfigurationWordAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.cubussapiens.modembed.modularasm.modularASM.ConfigurationFieldPlace <em>Configuration Field Place</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.ConfigurationFieldPlace
+   * @generated
+   */
+  public Adapter createConfigurationFieldPlaceAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.cubussapiens.modembed.modularasm.modularASM.ConfigurationField <em>Configuration Field</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.ConfigurationField
+   * @generated
+   */
+  public Adapter createConfigurationFieldAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.cubussapiens.modembed.modularasm.modularASM.EnumConfigurationField <em>Enum Configuration Field</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.EnumConfigurationField
+   * @generated
+   */
+  public Adapter createEnumConfigurationFieldAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.cubussapiens.modembed.modularasm.modularASM.EnumConfigurationFieldLiteral <em>Enum Configuration Field Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.EnumConfigurationFieldLiteral
+   * @generated
+   */
+  public Adapter createEnumConfigurationFieldLiteralAdapter()
   {
     return null;
   }

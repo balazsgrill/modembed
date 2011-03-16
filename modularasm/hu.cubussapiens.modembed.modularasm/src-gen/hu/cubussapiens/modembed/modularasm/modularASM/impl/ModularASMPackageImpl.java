@@ -2,9 +2,15 @@
  * <copyright>
  * </copyright>
  *
+
  */
 package hu.cubussapiens.modembed.modularasm.modularASM.impl;
 
+import hu.cubussapiens.modembed.modularasm.modularASM.ConfigurationField;
+import hu.cubussapiens.modembed.modularasm.modularASM.ConfigurationFieldPlace;
+import hu.cubussapiens.modembed.modularasm.modularASM.ConfigurationWord;
+import hu.cubussapiens.modembed.modularasm.modularASM.EnumConfigurationField;
+import hu.cubussapiens.modembed.modularasm.modularASM.EnumConfigurationFieldLiteral;
 import hu.cubussapiens.modembed.modularasm.modularASM.Function;
 import hu.cubussapiens.modembed.modularasm.modularASM.Instance;
 import hu.cubussapiens.modembed.modularasm.modularASM.Instruction;
@@ -21,7 +27,6 @@ import hu.cubussapiens.modembed.modularasm.modularASM.RefParam;
 import hu.cubussapiens.modembed.modularasm.modularASM.Step;
 import hu.cubussapiens.modembed.modularasm.modularASM.Symbol;
 import hu.cubussapiens.modembed.modularasm.modularASM.Variable;
-import hu.cubussapiens.modembed.modularasm.modularASM.VariableDecl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -71,7 +76,35 @@ public class ModularASMPackageImpl extends EPackageImpl implements ModularASMPac
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass variableDeclEClass = null;
+  private EClass configurationWordEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass configurationFieldPlaceEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass configurationFieldEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass enumConfigurationFieldEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass enumConfigurationFieldLiteralEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -271,9 +304,9 @@ public class ModularASMPackageImpl extends EPackageImpl implements ModularASMPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getModuleParam_Type()
+  public EReference getModuleParam_Type()
   {
-    return (EAttribute)moduleParamEClass.getEStructuralFeatures().get(0);
+    return (EReference)moduleParamEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -331,9 +364,9 @@ public class ModularASMPackageImpl extends EPackageImpl implements ModularASMPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getVariableDecl()
+  public EClass getConfigurationWord()
   {
-    return variableDeclEClass;
+    return configurationWordEClass;
   }
 
   /**
@@ -341,9 +374,9 @@ public class ModularASMPackageImpl extends EPackageImpl implements ModularASMPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getVariableDecl_Modifier()
+  public EReference getConfigurationWord_Default()
   {
-    return (EAttribute)variableDeclEClass.getEStructuralFeatures().get(0);
+    return (EReference)configurationWordEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -351,9 +384,119 @@ public class ModularASMPackageImpl extends EPackageImpl implements ModularASMPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getVariableDecl_Variable()
+  public EReference getConfigurationWord_Fields()
   {
-    return (EReference)variableDeclEClass.getEStructuralFeatures().get(1);
+    return (EReference)configurationWordEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getConfigurationFieldPlace()
+  {
+    return configurationFieldPlaceEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getConfigurationFieldPlace_BitNum()
+  {
+    return (EReference)configurationFieldPlaceEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getConfigurationFieldPlace_StartBit()
+  {
+    return (EReference)configurationFieldPlaceEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getConfigurationFieldPlace_Field()
+  {
+    return (EReference)configurationFieldPlaceEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getConfigurationField()
+  {
+    return configurationFieldEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getEnumConfigurationField()
+  {
+    return enumConfigurationFieldEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getEnumConfigurationField_Name()
+  {
+    return (EAttribute)enumConfigurationFieldEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEnumConfigurationField_Literals()
+  {
+    return (EReference)enumConfigurationFieldEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getEnumConfigurationFieldLiteral()
+  {
+    return enumConfigurationFieldLiteralEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getEnumConfigurationFieldLiteral_Name()
+  {
+    return (EAttribute)enumConfigurationFieldLiteralEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEnumConfigurationFieldLiteral_Value()
+  {
+    return (EReference)enumConfigurationFieldLiteralEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -583,7 +726,7 @@ public class ModularASMPackageImpl extends EPackageImpl implements ModularASMPac
     createEReference(moduleEClass, MODULE__PARAMS);
 
     moduleParamEClass = createEClass(MODULE_PARAM);
-    createEAttribute(moduleParamEClass, MODULE_PARAM__TYPE);
+    createEReference(moduleParamEClass, MODULE_PARAM__TYPE);
     createEAttribute(moduleParamEClass, MODULE_PARAM__NAME);
 
     qualifiedIDEClass = createEClass(QUALIFIED_ID);
@@ -592,9 +735,24 @@ public class ModularASMPackageImpl extends EPackageImpl implements ModularASMPac
     moduleItemEClass = createEClass(MODULE_ITEM);
     createEAttribute(moduleItemEClass, MODULE_ITEM__NAME);
 
-    variableDeclEClass = createEClass(VARIABLE_DECL);
-    createEAttribute(variableDeclEClass, VARIABLE_DECL__MODIFIER);
-    createEReference(variableDeclEClass, VARIABLE_DECL__VARIABLE);
+    configurationWordEClass = createEClass(CONFIGURATION_WORD);
+    createEReference(configurationWordEClass, CONFIGURATION_WORD__DEFAULT);
+    createEReference(configurationWordEClass, CONFIGURATION_WORD__FIELDS);
+
+    configurationFieldPlaceEClass = createEClass(CONFIGURATION_FIELD_PLACE);
+    createEReference(configurationFieldPlaceEClass, CONFIGURATION_FIELD_PLACE__BIT_NUM);
+    createEReference(configurationFieldPlaceEClass, CONFIGURATION_FIELD_PLACE__START_BIT);
+    createEReference(configurationFieldPlaceEClass, CONFIGURATION_FIELD_PLACE__FIELD);
+
+    configurationFieldEClass = createEClass(CONFIGURATION_FIELD);
+
+    enumConfigurationFieldEClass = createEClass(ENUM_CONFIGURATION_FIELD);
+    createEAttribute(enumConfigurationFieldEClass, ENUM_CONFIGURATION_FIELD__NAME);
+    createEReference(enumConfigurationFieldEClass, ENUM_CONFIGURATION_FIELD__LITERALS);
+
+    enumConfigurationFieldLiteralEClass = createEClass(ENUM_CONFIGURATION_FIELD_LITERAL);
+    createEAttribute(enumConfigurationFieldLiteralEClass, ENUM_CONFIGURATION_FIELD_LITERAL__NAME);
+    createEReference(enumConfigurationFieldLiteralEClass, ENUM_CONFIGURATION_FIELD_LITERAL__VALUE);
 
     symbolEClass = createEClass(SYMBOL);
     createEAttribute(symbolEClass, SYMBOL__VALUE);
@@ -655,6 +813,8 @@ public class ModularASMPackageImpl extends EPackageImpl implements ModularASMPac
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    configurationWordEClass.getESuperTypes().add(this.getModuleItem());
+    enumConfigurationFieldEClass.getESuperTypes().add(this.getConfigurationField());
     symbolEClass.getESuperTypes().add(this.getModuleItem());
     variableEClass.getESuperTypes().add(this.getModuleItem());
     instanceEClass.getESuperTypes().add(this.getModuleItem());
@@ -672,7 +832,7 @@ public class ModularASMPackageImpl extends EPackageImpl implements ModularASMPac
     initEReference(getModule_Params(), this.getModuleParam(), null, "params", null, 0, -1, Module.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(moduleParamEClass, ModuleParam.class, "ModuleParam", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getModuleParam_Type(), ecorePackage.getEString(), "type", null, 0, 1, ModuleParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModuleParam_Type(), this.getQualifiedID(), null, "type", null, 0, 1, ModuleParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getModuleParam_Name(), ecorePackage.getEString(), "name", null, 0, 1, ModuleParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(qualifiedIDEClass, QualifiedID.class, "QualifiedID", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -681,9 +841,24 @@ public class ModularASMPackageImpl extends EPackageImpl implements ModularASMPac
     initEClass(moduleItemEClass, ModuleItem.class, "ModuleItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getModuleItem_Name(), ecorePackage.getEString(), "name", null, 0, 1, ModuleItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(variableDeclEClass, VariableDecl.class, "VariableDecl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getVariableDecl_Modifier(), ecorePackage.getEString(), "modifier", null, 0, -1, VariableDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getVariableDecl_Variable(), this.getVariable(), null, "variable", null, 0, 1, VariableDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(configurationWordEClass, ConfigurationWord.class, "ConfigurationWord", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getConfigurationWord_Default(), this.getLiteralParam(), null, "default", null, 0, 1, ConfigurationWord.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getConfigurationWord_Fields(), this.getConfigurationFieldPlace(), null, "fields", null, 0, -1, ConfigurationWord.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(configurationFieldPlaceEClass, ConfigurationFieldPlace.class, "ConfigurationFieldPlace", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getConfigurationFieldPlace_BitNum(), this.getLiteralParam(), null, "bitNum", null, 0, 1, ConfigurationFieldPlace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getConfigurationFieldPlace_StartBit(), this.getLiteralParam(), null, "startBit", null, 0, 1, ConfigurationFieldPlace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getConfigurationFieldPlace_Field(), this.getConfigurationField(), null, "field", null, 0, 1, ConfigurationFieldPlace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(configurationFieldEClass, ConfigurationField.class, "ConfigurationField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(enumConfigurationFieldEClass, EnumConfigurationField.class, "EnumConfigurationField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getEnumConfigurationField_Name(), ecorePackage.getEString(), "name", null, 0, 1, EnumConfigurationField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEnumConfigurationField_Literals(), this.getEnumConfigurationFieldLiteral(), null, "literals", null, 0, -1, EnumConfigurationField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(enumConfigurationFieldLiteralEClass, EnumConfigurationFieldLiteral.class, "EnumConfigurationFieldLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getEnumConfigurationFieldLiteral_Name(), ecorePackage.getEString(), "name", null, 0, 1, EnumConfigurationFieldLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEnumConfigurationFieldLiteral_Value(), this.getLiteralParam(), null, "value", null, 0, 1, EnumConfigurationFieldLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(symbolEClass, Symbol.class, "Symbol", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSymbol_Value(), ecorePackage.getEInt(), "value", null, 0, 1, Symbol.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

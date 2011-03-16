@@ -93,52 +93,28 @@ public class ModularASMGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ModuleParam");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cTypeAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cTypeModuleParamTypeParserRuleCall_0_0 = (RuleCall)cTypeAssignment_0.eContents().get(0);
+		private final RuleCall cTypeQualifiedIDParserRuleCall_0_0 = (RuleCall)cTypeAssignment_0.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		
 		//ModuleParam:
-		//	type=ModuleParamType name=ID;
+		//	type=QualifiedID name=ID;
 		public ParserRule getRule() { return rule; }
 
-		//type=ModuleParamType name=ID
+		//type=QualifiedID name=ID
 		public Group getGroup() { return cGroup; }
 
-		//type=ModuleParamType
+		//type=QualifiedID
 		public Assignment getTypeAssignment_0() { return cTypeAssignment_0; }
 
-		//ModuleParamType
-		public RuleCall getTypeModuleParamTypeParserRuleCall_0_0() { return cTypeModuleParamTypeParserRuleCall_0_0; }
+		//QualifiedID
+		public RuleCall getTypeQualifiedIDParserRuleCall_0_0() { return cTypeQualifiedIDParserRuleCall_0_0; }
 
 		//name=ID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
-	}
-
-	public class ModuleParamTypeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ModuleParamType");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Keyword cLiteralKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
-		private final Keyword cCallbackKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
-		private final Keyword cAddressKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
-		
-		//ModuleParamType returns ecore::EString:
-		//	"literal" | "callback" | "address";
-		public ParserRule getRule() { return rule; }
-
-		//"literal" | "callback" | "address"
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//"literal"
-		public Keyword getLiteralKeyword_0() { return cLiteralKeyword_0; }
-
-		//"callback"
-		public Keyword getCallbackKeyword_1() { return cCallbackKeyword_1; }
-
-		//"address"
-		public Keyword getAddressKeyword_2() { return cAddressKeyword_2; }
 	}
 
 	public class QualifiedIDElements extends AbstractParserRuleElementFinder {
@@ -185,16 +161,17 @@ public class ModularASMGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cInstanceParserRuleCall_0_1 = (RuleCall)cAlternatives_0.eContents().get(1);
 		private final RuleCall cFunctionParserRuleCall_0_2 = (RuleCall)cAlternatives_0.eContents().get(2);
 		private final RuleCall cSymbolParserRuleCall_0_3 = (RuleCall)cAlternatives_0.eContents().get(3);
+		private final RuleCall cConfigurationWordParserRuleCall_0_4 = (RuleCall)cAlternatives_0.eContents().get(4);
 		private final Keyword cSemicolonKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		
 		//ModuleItem:
-		//	(Variable | Instance | Function | Symbol) ";";
+		//	(Variable | Instance | Function | Symbol | ConfigurationWord) ";";
 		public ParserRule getRule() { return rule; }
 
-		//(Variable | Instance | Function | Symbol) ";"
+		//(Variable | Instance | Function | Symbol | ConfigurationWord) ";"
 		public Group getGroup() { return cGroup; }
 
-		//Variable | Instance | Function | Symbol
+		//Variable | Instance | Function | Symbol | ConfigurationWord
 		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 
 		//Variable
@@ -209,48 +186,199 @@ public class ModularASMGrammarAccess extends AbstractGrammarElementFinder {
 		//Symbol
 		public RuleCall getSymbolParserRuleCall_0_3() { return cSymbolParserRuleCall_0_3; }
 
+		//ConfigurationWord
+		public RuleCall getConfigurationWordParserRuleCall_0_4() { return cConfigurationWordParserRuleCall_0_4; }
+
 		//";"
 		public Keyword getSemicolonKeyword_1() { return cSemicolonKeyword_1; }
 	}
 
-	public class ModifierElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Modifier");
-		private final Keyword cPublicKeyword = (Keyword)rule.eContents().get(1);
-		
-		//Modifier returns ecore::EString:
-		//	"public";
-		public ParserRule getRule() { return rule; }
-
-		//"public"
-		public Keyword getPublicKeyword() { return cPublicKeyword; }
-	}
-
-	public class VariableDeclElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "VariableDecl");
+	public class ConfigurationWordElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ConfigurationWord");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cModifierAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cModifierModifierParserRuleCall_0_0 = (RuleCall)cModifierAssignment_0.eContents().get(0);
-		private final Assignment cVariableAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cVariableVariableParserRuleCall_1_0 = (RuleCall)cVariableAssignment_1.eContents().get(0);
+		private final Keyword cConfigKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cDefaultAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cDefaultLiteralParamParserRuleCall_2_0 = (RuleCall)cDefaultAssignment_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Assignment cFieldsAssignment_4_0 = (Assignment)cGroup_4.eContents().get(0);
+		private final RuleCall cFieldsConfigurationFieldPlaceParserRuleCall_4_0_0 = (RuleCall)cFieldsAssignment_4_0.eContents().get(0);
+		private final Keyword cSemicolonKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
-		//VariableDecl:
-		//	modifier+=Modifier* variable=Variable;
+		//ConfigurationWord:
+		//	"config" name=ID default=LiteralParam? "{" (fields+=ConfigurationFieldPlace ";")* "}";
 		public ParserRule getRule() { return rule; }
 
-		//modifier+=Modifier* variable=Variable
+		//"config" name=ID default=LiteralParam? "{" (fields+=ConfigurationFieldPlace ";")* "}"
 		public Group getGroup() { return cGroup; }
 
-		//modifier+=Modifier*
-		public Assignment getModifierAssignment_0() { return cModifierAssignment_0; }
+		//"config"
+		public Keyword getConfigKeyword_0() { return cConfigKeyword_0; }
 
-		//Modifier
-		public RuleCall getModifierModifierParserRuleCall_0_0() { return cModifierModifierParserRuleCall_0_0; }
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 
-		//variable=Variable
-		public Assignment getVariableAssignment_1() { return cVariableAssignment_1; }
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 
-		//Variable
-		public RuleCall getVariableVariableParserRuleCall_1_0() { return cVariableVariableParserRuleCall_1_0; }
+		//default=LiteralParam?
+		public Assignment getDefaultAssignment_2() { return cDefaultAssignment_2; }
+
+		//LiteralParam
+		public RuleCall getDefaultLiteralParamParserRuleCall_2_0() { return cDefaultLiteralParamParserRuleCall_2_0; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
+
+		//(fields+=ConfigurationFieldPlace ";")*
+		public Group getGroup_4() { return cGroup_4; }
+
+		//fields+=ConfigurationFieldPlace
+		public Assignment getFieldsAssignment_4_0() { return cFieldsAssignment_4_0; }
+
+		//ConfigurationFieldPlace
+		public RuleCall getFieldsConfigurationFieldPlaceParserRuleCall_4_0_0() { return cFieldsConfigurationFieldPlaceParserRuleCall_4_0_0; }
+
+		//";"
+		public Keyword getSemicolonKeyword_4_1() { return cSemicolonKeyword_4_1; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+	}
+
+	public class ConfigurationFieldPlaceElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ConfigurationFieldPlace");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cBitNumAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cBitNumLiteralParamParserRuleCall_0_0 = (RuleCall)cBitNumAssignment_0.eContents().get(0);
+		private final Keyword cAtKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cStartBitAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cStartBitLiteralParamParserRuleCall_2_0 = (RuleCall)cStartBitAssignment_2.eContents().get(0);
+		private final Assignment cFieldAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cFieldConfigurationFieldParserRuleCall_3_0 = (RuleCall)cFieldAssignment_3.eContents().get(0);
+		
+		//ConfigurationFieldPlace:
+		//	bitNum=LiteralParam "at" startBit=LiteralParam field=ConfigurationField;
+		public ParserRule getRule() { return rule; }
+
+		//bitNum=LiteralParam "at" startBit=LiteralParam field=ConfigurationField
+		public Group getGroup() { return cGroup; }
+
+		//bitNum=LiteralParam
+		public Assignment getBitNumAssignment_0() { return cBitNumAssignment_0; }
+
+		//LiteralParam
+		public RuleCall getBitNumLiteralParamParserRuleCall_0_0() { return cBitNumLiteralParamParserRuleCall_0_0; }
+
+		//"at"
+		public Keyword getAtKeyword_1() { return cAtKeyword_1; }
+
+		//startBit=LiteralParam
+		public Assignment getStartBitAssignment_2() { return cStartBitAssignment_2; }
+
+		//LiteralParam
+		public RuleCall getStartBitLiteralParamParserRuleCall_2_0() { return cStartBitLiteralParamParserRuleCall_2_0; }
+
+		//field=ConfigurationField
+		public Assignment getFieldAssignment_3() { return cFieldAssignment_3; }
+
+		//ConfigurationField
+		public RuleCall getFieldConfigurationFieldParserRuleCall_3_0() { return cFieldConfigurationFieldParserRuleCall_3_0; }
+	}
+
+	public class ConfigurationFieldElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ConfigurationField");
+		private final RuleCall cEnumConfigurationFieldParserRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		//ConfigurationField:
+		//	EnumConfigurationField;
+		public ParserRule getRule() { return rule; }
+
+		//EnumConfigurationField
+		public RuleCall getEnumConfigurationFieldParserRuleCall() { return cEnumConfigurationFieldParserRuleCall; }
+	}
+
+	public class EnumConfigurationFieldElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "EnumConfigurationField");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cEnumKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Assignment cLiteralsAssignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
+		private final RuleCall cLiteralsEnumConfigurationFieldLiteralParserRuleCall_3_0_0 = (RuleCall)cLiteralsAssignment_3_0.eContents().get(0);
+		private final Keyword cSemicolonKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//EnumConfigurationField:
+		//	"enum" name=ID "{" (literals+=EnumConfigurationFieldLiteral ";")* "}";
+		public ParserRule getRule() { return rule; }
+
+		//"enum" name=ID "{" (literals+=EnumConfigurationFieldLiteral ";")* "}"
+		public Group getGroup() { return cGroup; }
+
+		//"enum"
+		public Keyword getEnumKeyword_0() { return cEnumKeyword_0; }
+
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+
+		//(literals+=EnumConfigurationFieldLiteral ";")*
+		public Group getGroup_3() { return cGroup_3; }
+
+		//literals+=EnumConfigurationFieldLiteral
+		public Assignment getLiteralsAssignment_3_0() { return cLiteralsAssignment_3_0; }
+
+		//EnumConfigurationFieldLiteral
+		public RuleCall getLiteralsEnumConfigurationFieldLiteralParserRuleCall_3_0_0() { return cLiteralsEnumConfigurationFieldLiteralParserRuleCall_3_0_0; }
+
+		//";"
+		public Keyword getSemicolonKeyword_3_1() { return cSemicolonKeyword_3_1; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+	}
+
+	public class EnumConfigurationFieldLiteralElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "EnumConfigurationFieldLiteral");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cValueLiteralParamParserRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
+		
+		//EnumConfigurationFieldLiteral:
+		//	name=ID "=" value=LiteralParam;
+		public ParserRule getRule() { return rule; }
+
+		//name=ID "=" value=LiteralParam
+		public Group getGroup() { return cGroup; }
+
+		//name=ID
+		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
+
+		//"="
+		public Keyword getEqualsSignKeyword_1() { return cEqualsSignKeyword_1; }
+
+		//value=LiteralParam
+		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
+
+		//LiteralParam
+		public RuleCall getValueLiteralParamParserRuleCall_2_0() { return cValueLiteralParamParserRuleCall_2_0; }
 	}
 
 	public class SymbolElements extends AbstractParserRuleElementFinder {
@@ -560,11 +688,13 @@ public class ModularASMGrammarAccess extends AbstractGrammarElementFinder {
 	
 	private ModuleElements pModule;
 	private ModuleParamElements pModuleParam;
-	private ModuleParamTypeElements pModuleParamType;
 	private QualifiedIDElements pQualifiedID;
 	private ModuleItemElements pModuleItem;
-	private ModifierElements pModifier;
-	private VariableDeclElements pVariableDecl;
+	private ConfigurationWordElements pConfigurationWord;
+	private ConfigurationFieldPlaceElements pConfigurationFieldPlace;
+	private ConfigurationFieldElements pConfigurationField;
+	private EnumConfigurationFieldElements pEnumConfigurationField;
+	private EnumConfigurationFieldLiteralElements pEnumConfigurationFieldLiteral;
 	private SymbolElements pSymbol;
 	private VariableElements pVariable;
 	private InstanceElements pInstance;
@@ -609,23 +739,13 @@ public class ModularASMGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ModuleParam:
-	//	type=ModuleParamType name=ID;
+	//	type=QualifiedID name=ID;
 	public ModuleParamElements getModuleParamAccess() {
 		return (pModuleParam != null) ? pModuleParam : (pModuleParam = new ModuleParamElements());
 	}
 	
 	public ParserRule getModuleParamRule() {
 		return getModuleParamAccess().getRule();
-	}
-
-	//ModuleParamType returns ecore::EString:
-	//	"literal" | "callback" | "address";
-	public ModuleParamTypeElements getModuleParamTypeAccess() {
-		return (pModuleParamType != null) ? pModuleParamType : (pModuleParamType = new ModuleParamTypeElements());
-	}
-	
-	public ParserRule getModuleParamTypeRule() {
-		return getModuleParamTypeAccess().getRule();
 	}
 
 	//QualifiedID:
@@ -639,7 +759,7 @@ public class ModularASMGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ModuleItem:
-	//	(Variable | Instance | Function | Symbol) ";";
+	//	(Variable | Instance | Function | Symbol | ConfigurationWord) ";";
 	public ModuleItemElements getModuleItemAccess() {
 		return (pModuleItem != null) ? pModuleItem : (pModuleItem = new ModuleItemElements());
 	}
@@ -648,24 +768,54 @@ public class ModularASMGrammarAccess extends AbstractGrammarElementFinder {
 		return getModuleItemAccess().getRule();
 	}
 
-	//Modifier returns ecore::EString:
-	//	"public";
-	public ModifierElements getModifierAccess() {
-		return (pModifier != null) ? pModifier : (pModifier = new ModifierElements());
+	//ConfigurationWord:
+	//	"config" name=ID default=LiteralParam? "{" (fields+=ConfigurationFieldPlace ";")* "}";
+	public ConfigurationWordElements getConfigurationWordAccess() {
+		return (pConfigurationWord != null) ? pConfigurationWord : (pConfigurationWord = new ConfigurationWordElements());
 	}
 	
-	public ParserRule getModifierRule() {
-		return getModifierAccess().getRule();
+	public ParserRule getConfigurationWordRule() {
+		return getConfigurationWordAccess().getRule();
 	}
 
-	//VariableDecl:
-	//	modifier+=Modifier* variable=Variable;
-	public VariableDeclElements getVariableDeclAccess() {
-		return (pVariableDecl != null) ? pVariableDecl : (pVariableDecl = new VariableDeclElements());
+	//ConfigurationFieldPlace:
+	//	bitNum=LiteralParam "at" startBit=LiteralParam field=ConfigurationField;
+	public ConfigurationFieldPlaceElements getConfigurationFieldPlaceAccess() {
+		return (pConfigurationFieldPlace != null) ? pConfigurationFieldPlace : (pConfigurationFieldPlace = new ConfigurationFieldPlaceElements());
 	}
 	
-	public ParserRule getVariableDeclRule() {
-		return getVariableDeclAccess().getRule();
+	public ParserRule getConfigurationFieldPlaceRule() {
+		return getConfigurationFieldPlaceAccess().getRule();
+	}
+
+	//ConfigurationField:
+	//	EnumConfigurationField;
+	public ConfigurationFieldElements getConfigurationFieldAccess() {
+		return (pConfigurationField != null) ? pConfigurationField : (pConfigurationField = new ConfigurationFieldElements());
+	}
+	
+	public ParserRule getConfigurationFieldRule() {
+		return getConfigurationFieldAccess().getRule();
+	}
+
+	//EnumConfigurationField:
+	//	"enum" name=ID "{" (literals+=EnumConfigurationFieldLiteral ";")* "}";
+	public EnumConfigurationFieldElements getEnumConfigurationFieldAccess() {
+		return (pEnumConfigurationField != null) ? pEnumConfigurationField : (pEnumConfigurationField = new EnumConfigurationFieldElements());
+	}
+	
+	public ParserRule getEnumConfigurationFieldRule() {
+		return getEnumConfigurationFieldAccess().getRule();
+	}
+
+	//EnumConfigurationFieldLiteral:
+	//	name=ID "=" value=LiteralParam;
+	public EnumConfigurationFieldLiteralElements getEnumConfigurationFieldLiteralAccess() {
+		return (pEnumConfigurationFieldLiteral != null) ? pEnumConfigurationFieldLiteral : (pEnumConfigurationFieldLiteral = new EnumConfigurationFieldLiteralElements());
+	}
+	
+	public ParserRule getEnumConfigurationFieldLiteralRule() {
+		return getEnumConfigurationFieldLiteralAccess().getRule();
 	}
 
 	//Symbol:

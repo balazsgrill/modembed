@@ -6,9 +6,9 @@
  */
 package hu.cubussapiens.modembed.modularasm.modularASM.impl;
 
+import hu.cubussapiens.modembed.modularasm.modularASM.EnumConfigurationFieldLiteral;
+import hu.cubussapiens.modembed.modularasm.modularASM.LiteralParam;
 import hu.cubussapiens.modembed.modularasm.modularASM.ModularASMPackage;
-import hu.cubussapiens.modembed.modularasm.modularASM.ModuleParam;
-import hu.cubussapiens.modembed.modularasm.modularASM.QualifiedID;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -21,30 +21,20 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Module Param</b></em>'.
+ * An implementation of the model object '<em><b>Enum Configuration Field Literal</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.cubussapiens.modembed.modularasm.modularASM.impl.ModuleParamImpl#getType <em>Type</em>}</li>
- *   <li>{@link hu.cubussapiens.modembed.modularasm.modularASM.impl.ModuleParamImpl#getName <em>Name</em>}</li>
+ *   <li>{@link hu.cubussapiens.modembed.modularasm.modularASM.impl.EnumConfigurationFieldLiteralImpl#getName <em>Name</em>}</li>
+ *   <li>{@link hu.cubussapiens.modembed.modularasm.modularASM.impl.EnumConfigurationFieldLiteralImpl#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ModuleParamImpl extends MinimalEObjectImpl.Container implements ModuleParam
+public class EnumConfigurationFieldLiteralImpl extends MinimalEObjectImpl.Container implements EnumConfigurationFieldLiteral
 {
-  /**
-   * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getType()
-   * @generated
-   * @ordered
-   */
-  protected QualifiedID type;
-
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -66,11 +56,21 @@ public class ModuleParamImpl extends MinimalEObjectImpl.Container implements Mod
   protected String name = NAME_EDEFAULT;
 
   /**
+   * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getValue()
+   * @generated
+   * @ordered
+   */
+  protected LiteralParam value;
+
+  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ModuleParamImpl()
+  protected EnumConfigurationFieldLiteralImpl()
   {
     super();
   }
@@ -83,55 +83,7 @@ public class ModuleParamImpl extends MinimalEObjectImpl.Container implements Mod
   @Override
   protected EClass eStaticClass()
   {
-    return ModularASMPackage.Literals.MODULE_PARAM;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public QualifiedID getType()
-  {
-    return type;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetType(QualifiedID newType, NotificationChain msgs)
-  {
-    QualifiedID oldType = type;
-    type = newType;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ModularASMPackage.MODULE_PARAM__TYPE, oldType, newType);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setType(QualifiedID newType)
-  {
-    if (newType != type)
-    {
-      NotificationChain msgs = null;
-      if (type != null)
-        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ModularASMPackage.MODULE_PARAM__TYPE, null, msgs);
-      if (newType != null)
-        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ModularASMPackage.MODULE_PARAM__TYPE, null, msgs);
-      msgs = basicSetType(newType, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ModularASMPackage.MODULE_PARAM__TYPE, newType, newType));
+    return ModularASMPackage.Literals.ENUM_CONFIGURATION_FIELD_LITERAL;
   }
 
   /**
@@ -154,7 +106,55 @@ public class ModuleParamImpl extends MinimalEObjectImpl.Container implements Mod
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ModularASMPackage.MODULE_PARAM__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, ModularASMPackage.ENUM_CONFIGURATION_FIELD_LITERAL__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public LiteralParam getValue()
+  {
+    return value;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetValue(LiteralParam newValue, NotificationChain msgs)
+  {
+    LiteralParam oldValue = value;
+    value = newValue;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ModularASMPackage.ENUM_CONFIGURATION_FIELD_LITERAL__VALUE, oldValue, newValue);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setValue(LiteralParam newValue)
+  {
+    if (newValue != value)
+    {
+      NotificationChain msgs = null;
+      if (value != null)
+        msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ModularASMPackage.ENUM_CONFIGURATION_FIELD_LITERAL__VALUE, null, msgs);
+      if (newValue != null)
+        msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ModularASMPackage.ENUM_CONFIGURATION_FIELD_LITERAL__VALUE, null, msgs);
+      msgs = basicSetValue(newValue, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ModularASMPackage.ENUM_CONFIGURATION_FIELD_LITERAL__VALUE, newValue, newValue));
   }
 
   /**
@@ -167,8 +167,8 @@ public class ModuleParamImpl extends MinimalEObjectImpl.Container implements Mod
   {
     switch (featureID)
     {
-      case ModularASMPackage.MODULE_PARAM__TYPE:
-        return basicSetType(null, msgs);
+      case ModularASMPackage.ENUM_CONFIGURATION_FIELD_LITERAL__VALUE:
+        return basicSetValue(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -183,10 +183,10 @@ public class ModuleParamImpl extends MinimalEObjectImpl.Container implements Mod
   {
     switch (featureID)
     {
-      case ModularASMPackage.MODULE_PARAM__TYPE:
-        return getType();
-      case ModularASMPackage.MODULE_PARAM__NAME:
+      case ModularASMPackage.ENUM_CONFIGURATION_FIELD_LITERAL__NAME:
         return getName();
+      case ModularASMPackage.ENUM_CONFIGURATION_FIELD_LITERAL__VALUE:
+        return getValue();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -201,11 +201,11 @@ public class ModuleParamImpl extends MinimalEObjectImpl.Container implements Mod
   {
     switch (featureID)
     {
-      case ModularASMPackage.MODULE_PARAM__TYPE:
-        setType((QualifiedID)newValue);
-        return;
-      case ModularASMPackage.MODULE_PARAM__NAME:
+      case ModularASMPackage.ENUM_CONFIGURATION_FIELD_LITERAL__NAME:
         setName((String)newValue);
+        return;
+      case ModularASMPackage.ENUM_CONFIGURATION_FIELD_LITERAL__VALUE:
+        setValue((LiteralParam)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -221,11 +221,11 @@ public class ModuleParamImpl extends MinimalEObjectImpl.Container implements Mod
   {
     switch (featureID)
     {
-      case ModularASMPackage.MODULE_PARAM__TYPE:
-        setType((QualifiedID)null);
-        return;
-      case ModularASMPackage.MODULE_PARAM__NAME:
+      case ModularASMPackage.ENUM_CONFIGURATION_FIELD_LITERAL__NAME:
         setName(NAME_EDEFAULT);
+        return;
+      case ModularASMPackage.ENUM_CONFIGURATION_FIELD_LITERAL__VALUE:
+        setValue((LiteralParam)null);
         return;
     }
     super.eUnset(featureID);
@@ -241,10 +241,10 @@ public class ModuleParamImpl extends MinimalEObjectImpl.Container implements Mod
   {
     switch (featureID)
     {
-      case ModularASMPackage.MODULE_PARAM__TYPE:
-        return type != null;
-      case ModularASMPackage.MODULE_PARAM__NAME:
+      case ModularASMPackage.ENUM_CONFIGURATION_FIELD_LITERAL__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case ModularASMPackage.ENUM_CONFIGURATION_FIELD_LITERAL__VALUE:
+        return value != null;
     }
     return super.eIsSet(featureID);
   }
@@ -266,4 +266,4 @@ public class ModuleParamImpl extends MinimalEObjectImpl.Container implements Mod
     return result.toString();
   }
 
-} //ModuleParamImpl
+} //EnumConfigurationFieldLiteralImpl

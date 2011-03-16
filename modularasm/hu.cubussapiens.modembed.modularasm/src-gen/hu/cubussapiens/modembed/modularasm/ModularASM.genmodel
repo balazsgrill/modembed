@@ -16,7 +16,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ModularASM.ecore#//Module/params"/>
     </genClasses>
     <genClasses ecoreClass="ModularASM.ecore#//ModuleParam">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ModularASM.ecore#//ModuleParam/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ModularASM.ecore#//ModuleParam/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ModularASM.ecore#//ModuleParam/name"/>
     </genClasses>
     <genClasses ecoreClass="ModularASM.ecore#//QualifiedID">
@@ -25,9 +25,23 @@
     <genClasses ecoreClass="ModularASM.ecore#//ModuleItem">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ModularASM.ecore#//ModuleItem/name"/>
     </genClasses>
-    <genClasses ecoreClass="ModularASM.ecore#//VariableDecl">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ModularASM.ecore#//VariableDecl/modifier"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ModularASM.ecore#//VariableDecl/variable"/>
+    <genClasses ecoreClass="ModularASM.ecore#//ConfigurationWord">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ModularASM.ecore#//ConfigurationWord/default"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ModularASM.ecore#//ConfigurationWord/fields"/>
+    </genClasses>
+    <genClasses ecoreClass="ModularASM.ecore#//ConfigurationFieldPlace">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ModularASM.ecore#//ConfigurationFieldPlace/bitNum"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ModularASM.ecore#//ConfigurationFieldPlace/startBit"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ModularASM.ecore#//ConfigurationFieldPlace/field"/>
+    </genClasses>
+    <genClasses ecoreClass="ModularASM.ecore#//ConfigurationField"/>
+    <genClasses ecoreClass="ModularASM.ecore#//EnumConfigurationField">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ModularASM.ecore#//EnumConfigurationField/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ModularASM.ecore#//EnumConfigurationField/literals"/>
+    </genClasses>
+    <genClasses ecoreClass="ModularASM.ecore#//EnumConfigurationFieldLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ModularASM.ecore#//EnumConfigurationFieldLiteral/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ModularASM.ecore#//EnumConfigurationFieldLiteral/value"/>
     </genClasses>
     <genClasses ecoreClass="ModularASM.ecore#//Symbol">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ModularASM.ecore#//Symbol/value"/>

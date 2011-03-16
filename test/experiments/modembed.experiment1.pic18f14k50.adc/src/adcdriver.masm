@@ -2,6 +2,12 @@ module adcdriver target microchip.pic18{
 	
 	instance microchip.pic18.pic18f14k50 cpu;
 	
+	config ADCConfig0{
+		0 at 0 enum Channel {
+			
+		};
+	};
+	
 	/*
 	 * ANSEL is missing from CPU config!
 	 */

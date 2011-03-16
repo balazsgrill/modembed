@@ -2,6 +2,7 @@
  * <copyright>
  * </copyright>
  *
+
  */
 package hu.cubussapiens.modembed.modularasm.modularASM;
 
@@ -125,7 +126,7 @@ public interface ModularASMPackage extends EPackage
   int MODULE_PARAM = 1;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -208,41 +209,189 @@ public interface ModularASMPackage extends EPackage
   int MODULE_ITEM_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link hu.cubussapiens.modembed.modularasm.modularASM.impl.VariableDeclImpl <em>Variable Decl</em>}' class.
+   * The meta object id for the '{@link hu.cubussapiens.modembed.modularasm.modularASM.impl.ConfigurationWordImpl <em>Configuration Word</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.VariableDeclImpl
-   * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ModularASMPackageImpl#getVariableDecl()
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ConfigurationWordImpl
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ModularASMPackageImpl#getConfigurationWord()
    * @generated
    */
-  int VARIABLE_DECL = 4;
+  int CONFIGURATION_WORD = 4;
 
   /**
-   * The feature id for the '<em><b>Modifier</b></em>' attribute list.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VARIABLE_DECL__MODIFIER = 0;
+  int CONFIGURATION_WORD__NAME = MODULE_ITEM__NAME;
 
   /**
-   * The feature id for the '<em><b>Variable</b></em>' containment reference.
+   * The feature id for the '<em><b>Default</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VARIABLE_DECL__VARIABLE = 1;
+  int CONFIGURATION_WORD__DEFAULT = MODULE_ITEM_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Variable Decl</em>' class.
+   * The feature id for the '<em><b>Fields</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VARIABLE_DECL_FEATURE_COUNT = 2;
+  int CONFIGURATION_WORD__FIELDS = MODULE_ITEM_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Configuration Word</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONFIGURATION_WORD_FEATURE_COUNT = MODULE_ITEM_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link hu.cubussapiens.modembed.modularasm.modularASM.impl.ConfigurationFieldPlaceImpl <em>Configuration Field Place</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ConfigurationFieldPlaceImpl
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ModularASMPackageImpl#getConfigurationFieldPlace()
+   * @generated
+   */
+  int CONFIGURATION_FIELD_PLACE = 5;
+
+  /**
+   * The feature id for the '<em><b>Bit Num</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONFIGURATION_FIELD_PLACE__BIT_NUM = 0;
+
+  /**
+   * The feature id for the '<em><b>Start Bit</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONFIGURATION_FIELD_PLACE__START_BIT = 1;
+
+  /**
+   * The feature id for the '<em><b>Field</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONFIGURATION_FIELD_PLACE__FIELD = 2;
+
+  /**
+   * The number of structural features of the '<em>Configuration Field Place</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONFIGURATION_FIELD_PLACE_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link hu.cubussapiens.modembed.modularasm.modularASM.impl.ConfigurationFieldImpl <em>Configuration Field</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ConfigurationFieldImpl
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ModularASMPackageImpl#getConfigurationField()
+   * @generated
+   */
+  int CONFIGURATION_FIELD = 6;
+
+  /**
+   * The number of structural features of the '<em>Configuration Field</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONFIGURATION_FIELD_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link hu.cubussapiens.modembed.modularasm.modularASM.impl.EnumConfigurationFieldImpl <em>Enum Configuration Field</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.EnumConfigurationFieldImpl
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ModularASMPackageImpl#getEnumConfigurationField()
+   * @generated
+   */
+  int ENUM_CONFIGURATION_FIELD = 7;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENUM_CONFIGURATION_FIELD__NAME = CONFIGURATION_FIELD_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Literals</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENUM_CONFIGURATION_FIELD__LITERALS = CONFIGURATION_FIELD_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Enum Configuration Field</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENUM_CONFIGURATION_FIELD_FEATURE_COUNT = CONFIGURATION_FIELD_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link hu.cubussapiens.modembed.modularasm.modularASM.impl.EnumConfigurationFieldLiteralImpl <em>Enum Configuration Field Literal</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.EnumConfigurationFieldLiteralImpl
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ModularASMPackageImpl#getEnumConfigurationFieldLiteral()
+   * @generated
+   */
+  int ENUM_CONFIGURATION_FIELD_LITERAL = 8;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENUM_CONFIGURATION_FIELD_LITERAL__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENUM_CONFIGURATION_FIELD_LITERAL__VALUE = 1;
+
+  /**
+   * The number of structural features of the '<em>Enum Configuration Field Literal</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENUM_CONFIGURATION_FIELD_LITERAL_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link hu.cubussapiens.modembed.modularasm.modularASM.impl.SymbolImpl <em>Symbol</em>}' class.
@@ -252,7 +401,7 @@ public interface ModularASMPackage extends EPackage
    * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ModularASMPackageImpl#getSymbol()
    * @generated
    */
-  int SYMBOL = 5;
+  int SYMBOL = 9;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -289,7 +438,7 @@ public interface ModularASMPackage extends EPackage
    * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ModularASMPackageImpl#getVariable()
    * @generated
    */
-  int VARIABLE = 6;
+  int VARIABLE = 10;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -317,7 +466,7 @@ public interface ModularASMPackage extends EPackage
    * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ModularASMPackageImpl#getInstance()
    * @generated
    */
-  int INSTANCE = 7;
+  int INSTANCE = 11;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -363,7 +512,7 @@ public interface ModularASMPackage extends EPackage
    * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ModularASMPackageImpl#getFunction()
    * @generated
    */
-  int FUNCTION = 8;
+  int FUNCTION = 12;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -400,7 +549,7 @@ public interface ModularASMPackage extends EPackage
    * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ModularASMPackageImpl#getStep()
    * @generated
    */
-  int STEP = 9;
+  int STEP = 13;
 
   /**
    * The number of structural features of the '<em>Step</em>' class.
@@ -419,7 +568,7 @@ public interface ModularASMPackage extends EPackage
    * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ModularASMPackageImpl#getLabel()
    * @generated
    */
-  int LABEL = 10;
+  int LABEL = 14;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -447,7 +596,7 @@ public interface ModularASMPackage extends EPackage
    * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ModularASMPackageImpl#getInstruction()
    * @generated
    */
-  int INSTRUCTION = 11;
+  int INSTRUCTION = 15;
 
   /**
    * The feature id for the '<em><b>Ins</b></em>' attribute.
@@ -484,7 +633,7 @@ public interface ModularASMPackage extends EPackage
    * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ModularASMPackageImpl#getParam()
    * @generated
    */
-  int PARAM = 12;
+  int PARAM = 16;
 
   /**
    * The number of structural features of the '<em>Param</em>' class.
@@ -503,7 +652,7 @@ public interface ModularASMPackage extends EPackage
    * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ModularASMPackageImpl#getLiteralParam()
    * @generated
    */
-  int LITERAL_PARAM = 13;
+  int LITERAL_PARAM = 17;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -531,7 +680,7 @@ public interface ModularASMPackage extends EPackage
    * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ModularASMPackageImpl#getRefParam()
    * @generated
    */
-  int REF_PARAM = 14;
+  int REF_PARAM = 18;
 
   /**
    * The feature id for the '<em><b>Ref</b></em>' containment reference.
@@ -617,15 +766,15 @@ public interface ModularASMPackage extends EPackage
   EClass getModuleParam();
 
   /**
-   * Returns the meta object for the attribute '{@link hu.cubussapiens.modembed.modularasm.modularASM.ModuleParam#getType <em>Type</em>}'.
+   * Returns the meta object for the containment reference '{@link hu.cubussapiens.modembed.modularasm.modularASM.ModuleParam#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Type</em>'.
+   * @return the meta object for the containment reference '<em>Type</em>'.
    * @see hu.cubussapiens.modembed.modularasm.modularASM.ModuleParam#getType()
    * @see #getModuleParam()
    * @generated
    */
-  EAttribute getModuleParam_Type();
+  EReference getModuleParam_Type();
 
   /**
    * Returns the meta object for the attribute '{@link hu.cubussapiens.modembed.modularasm.modularASM.ModuleParam#getName <em>Name</em>}'.
@@ -681,36 +830,153 @@ public interface ModularASMPackage extends EPackage
   EAttribute getModuleItem_Name();
 
   /**
-   * Returns the meta object for class '{@link hu.cubussapiens.modembed.modularasm.modularASM.VariableDecl <em>Variable Decl</em>}'.
+   * Returns the meta object for class '{@link hu.cubussapiens.modembed.modularasm.modularASM.ConfigurationWord <em>Configuration Word</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Variable Decl</em>'.
-   * @see hu.cubussapiens.modembed.modularasm.modularASM.VariableDecl
+   * @return the meta object for class '<em>Configuration Word</em>'.
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.ConfigurationWord
    * @generated
    */
-  EClass getVariableDecl();
+  EClass getConfigurationWord();
 
   /**
-   * Returns the meta object for the attribute list '{@link hu.cubussapiens.modembed.modularasm.modularASM.VariableDecl#getModifier <em>Modifier</em>}'.
+   * Returns the meta object for the containment reference '{@link hu.cubussapiens.modembed.modularasm.modularASM.ConfigurationWord#getDefault <em>Default</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Modifier</em>'.
-   * @see hu.cubussapiens.modembed.modularasm.modularASM.VariableDecl#getModifier()
-   * @see #getVariableDecl()
+   * @return the meta object for the containment reference '<em>Default</em>'.
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.ConfigurationWord#getDefault()
+   * @see #getConfigurationWord()
    * @generated
    */
-  EAttribute getVariableDecl_Modifier();
+  EReference getConfigurationWord_Default();
 
   /**
-   * Returns the meta object for the containment reference '{@link hu.cubussapiens.modembed.modularasm.modularASM.VariableDecl#getVariable <em>Variable</em>}'.
+   * Returns the meta object for the containment reference list '{@link hu.cubussapiens.modembed.modularasm.modularASM.ConfigurationWord#getFields <em>Fields</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Variable</em>'.
-   * @see hu.cubussapiens.modembed.modularasm.modularASM.VariableDecl#getVariable()
-   * @see #getVariableDecl()
+   * @return the meta object for the containment reference list '<em>Fields</em>'.
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.ConfigurationWord#getFields()
+   * @see #getConfigurationWord()
    * @generated
    */
-  EReference getVariableDecl_Variable();
+  EReference getConfigurationWord_Fields();
+
+  /**
+   * Returns the meta object for class '{@link hu.cubussapiens.modembed.modularasm.modularASM.ConfigurationFieldPlace <em>Configuration Field Place</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Configuration Field Place</em>'.
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.ConfigurationFieldPlace
+   * @generated
+   */
+  EClass getConfigurationFieldPlace();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.cubussapiens.modembed.modularasm.modularASM.ConfigurationFieldPlace#getBitNum <em>Bit Num</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Bit Num</em>'.
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.ConfigurationFieldPlace#getBitNum()
+   * @see #getConfigurationFieldPlace()
+   * @generated
+   */
+  EReference getConfigurationFieldPlace_BitNum();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.cubussapiens.modembed.modularasm.modularASM.ConfigurationFieldPlace#getStartBit <em>Start Bit</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Start Bit</em>'.
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.ConfigurationFieldPlace#getStartBit()
+   * @see #getConfigurationFieldPlace()
+   * @generated
+   */
+  EReference getConfigurationFieldPlace_StartBit();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.cubussapiens.modembed.modularasm.modularASM.ConfigurationFieldPlace#getField <em>Field</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Field</em>'.
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.ConfigurationFieldPlace#getField()
+   * @see #getConfigurationFieldPlace()
+   * @generated
+   */
+  EReference getConfigurationFieldPlace_Field();
+
+  /**
+   * Returns the meta object for class '{@link hu.cubussapiens.modembed.modularasm.modularASM.ConfigurationField <em>Configuration Field</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Configuration Field</em>'.
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.ConfigurationField
+   * @generated
+   */
+  EClass getConfigurationField();
+
+  /**
+   * Returns the meta object for class '{@link hu.cubussapiens.modembed.modularasm.modularASM.EnumConfigurationField <em>Enum Configuration Field</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Enum Configuration Field</em>'.
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.EnumConfigurationField
+   * @generated
+   */
+  EClass getEnumConfigurationField();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.cubussapiens.modembed.modularasm.modularASM.EnumConfigurationField#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.EnumConfigurationField#getName()
+   * @see #getEnumConfigurationField()
+   * @generated
+   */
+  EAttribute getEnumConfigurationField_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link hu.cubussapiens.modembed.modularasm.modularASM.EnumConfigurationField#getLiterals <em>Literals</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Literals</em>'.
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.EnumConfigurationField#getLiterals()
+   * @see #getEnumConfigurationField()
+   * @generated
+   */
+  EReference getEnumConfigurationField_Literals();
+
+  /**
+   * Returns the meta object for class '{@link hu.cubussapiens.modembed.modularasm.modularASM.EnumConfigurationFieldLiteral <em>Enum Configuration Field Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Enum Configuration Field Literal</em>'.
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.EnumConfigurationFieldLiteral
+   * @generated
+   */
+  EClass getEnumConfigurationFieldLiteral();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.cubussapiens.modembed.modularasm.modularASM.EnumConfigurationFieldLiteral#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.EnumConfigurationFieldLiteral#getName()
+   * @see #getEnumConfigurationFieldLiteral()
+   * @generated
+   */
+  EAttribute getEnumConfigurationFieldLiteral_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.cubussapiens.modembed.modularasm.modularASM.EnumConfigurationFieldLiteral#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Value</em>'.
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.EnumConfigurationFieldLiteral#getValue()
+   * @see #getEnumConfigurationFieldLiteral()
+   * @generated
+   */
+  EReference getEnumConfigurationFieldLiteral_Value();
 
   /**
    * Returns the meta object for class '{@link hu.cubussapiens.modembed.modularasm.modularASM.Symbol <em>Symbol</em>}'.
@@ -987,12 +1253,12 @@ public interface ModularASMPackage extends EPackage
     EClass MODULE_PARAM = eINSTANCE.getModuleParam();
 
     /**
-     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute MODULE_PARAM__TYPE = eINSTANCE.getModuleParam_Type();
+    EReference MODULE_PARAM__TYPE = eINSTANCE.getModuleParam_Type();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -1039,30 +1305,126 @@ public interface ModularASMPackage extends EPackage
     EAttribute MODULE_ITEM__NAME = eINSTANCE.getModuleItem_Name();
 
     /**
-     * The meta object literal for the '{@link hu.cubussapiens.modembed.modularasm.modularASM.impl.VariableDeclImpl <em>Variable Decl</em>}' class.
+     * The meta object literal for the '{@link hu.cubussapiens.modembed.modularasm.modularASM.impl.ConfigurationWordImpl <em>Configuration Word</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.VariableDeclImpl
-     * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ModularASMPackageImpl#getVariableDecl()
+     * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ConfigurationWordImpl
+     * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ModularASMPackageImpl#getConfigurationWord()
      * @generated
      */
-    EClass VARIABLE_DECL = eINSTANCE.getVariableDecl();
+    EClass CONFIGURATION_WORD = eINSTANCE.getConfigurationWord();
 
     /**
-     * The meta object literal for the '<em><b>Modifier</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Default</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute VARIABLE_DECL__MODIFIER = eINSTANCE.getVariableDecl_Modifier();
+    EReference CONFIGURATION_WORD__DEFAULT = eINSTANCE.getConfigurationWord_Default();
 
     /**
-     * The meta object literal for the '<em><b>Variable</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Fields</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference VARIABLE_DECL__VARIABLE = eINSTANCE.getVariableDecl_Variable();
+    EReference CONFIGURATION_WORD__FIELDS = eINSTANCE.getConfigurationWord_Fields();
+
+    /**
+     * The meta object literal for the '{@link hu.cubussapiens.modembed.modularasm.modularASM.impl.ConfigurationFieldPlaceImpl <em>Configuration Field Place</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ConfigurationFieldPlaceImpl
+     * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ModularASMPackageImpl#getConfigurationFieldPlace()
+     * @generated
+     */
+    EClass CONFIGURATION_FIELD_PLACE = eINSTANCE.getConfigurationFieldPlace();
+
+    /**
+     * The meta object literal for the '<em><b>Bit Num</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONFIGURATION_FIELD_PLACE__BIT_NUM = eINSTANCE.getConfigurationFieldPlace_BitNum();
+
+    /**
+     * The meta object literal for the '<em><b>Start Bit</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONFIGURATION_FIELD_PLACE__START_BIT = eINSTANCE.getConfigurationFieldPlace_StartBit();
+
+    /**
+     * The meta object literal for the '<em><b>Field</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONFIGURATION_FIELD_PLACE__FIELD = eINSTANCE.getConfigurationFieldPlace_Field();
+
+    /**
+     * The meta object literal for the '{@link hu.cubussapiens.modembed.modularasm.modularASM.impl.ConfigurationFieldImpl <em>Configuration Field</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ConfigurationFieldImpl
+     * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ModularASMPackageImpl#getConfigurationField()
+     * @generated
+     */
+    EClass CONFIGURATION_FIELD = eINSTANCE.getConfigurationField();
+
+    /**
+     * The meta object literal for the '{@link hu.cubussapiens.modembed.modularasm.modularASM.impl.EnumConfigurationFieldImpl <em>Enum Configuration Field</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.EnumConfigurationFieldImpl
+     * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ModularASMPackageImpl#getEnumConfigurationField()
+     * @generated
+     */
+    EClass ENUM_CONFIGURATION_FIELD = eINSTANCE.getEnumConfigurationField();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ENUM_CONFIGURATION_FIELD__NAME = eINSTANCE.getEnumConfigurationField_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Literals</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ENUM_CONFIGURATION_FIELD__LITERALS = eINSTANCE.getEnumConfigurationField_Literals();
+
+    /**
+     * The meta object literal for the '{@link hu.cubussapiens.modembed.modularasm.modularASM.impl.EnumConfigurationFieldLiteralImpl <em>Enum Configuration Field Literal</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.EnumConfigurationFieldLiteralImpl
+     * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ModularASMPackageImpl#getEnumConfigurationFieldLiteral()
+     * @generated
+     */
+    EClass ENUM_CONFIGURATION_FIELD_LITERAL = eINSTANCE.getEnumConfigurationFieldLiteral();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ENUM_CONFIGURATION_FIELD_LITERAL__NAME = eINSTANCE.getEnumConfigurationFieldLiteral_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ENUM_CONFIGURATION_FIELD_LITERAL__VALUE = eINSTANCE.getEnumConfigurationFieldLiteral_Value();
 
     /**
      * The meta object literal for the '{@link hu.cubussapiens.modembed.modularasm.modularASM.impl.SymbolImpl <em>Symbol</em>}' class.

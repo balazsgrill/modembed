@@ -2,6 +2,7 @@
  * <copyright>
  * </copyright>
  *
+
  */
 package hu.cubussapiens.modembed.modularasm.modularASM;
 
@@ -62,13 +63,49 @@ public interface ModularASMFactory extends EFactory
   ModuleItem createModuleItem();
 
   /**
-   * Returns a new object of class '<em>Variable Decl</em>'.
+   * Returns a new object of class '<em>Configuration Word</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Variable Decl</em>'.
+   * @return a new object of class '<em>Configuration Word</em>'.
    * @generated
    */
-  VariableDecl createVariableDecl();
+  ConfigurationWord createConfigurationWord();
+
+  /**
+   * Returns a new object of class '<em>Configuration Field Place</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Configuration Field Place</em>'.
+   * @generated
+   */
+  ConfigurationFieldPlace createConfigurationFieldPlace();
+
+  /**
+   * Returns a new object of class '<em>Configuration Field</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Configuration Field</em>'.
+   * @generated
+   */
+  ConfigurationField createConfigurationField();
+
+  /**
+   * Returns a new object of class '<em>Enum Configuration Field</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Enum Configuration Field</em>'.
+   * @generated
+   */
+  EnumConfigurationField createEnumConfigurationField();
+
+  /**
+   * Returns a new object of class '<em>Enum Configuration Field Literal</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Enum Configuration Field Literal</em>'.
+   * @generated
+   */
+  EnumConfigurationFieldLiteral createEnumConfigurationFieldLiteral();
 
   /**
    * Returns a new object of class '<em>Symbol</em>'.

@@ -159,11 +159,10 @@ public class InternalModularASMLexer extends Lexer {
     public final void mT18() throws RecognitionException {
         try {
             int _type = T18;
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:16:5: ( 'literal' )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:16:7: 'literal'
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:16:5: ( '.' )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:16:7: '.'
             {
-            match("literal"); 
-
+            match('.'); 
 
             }
 
@@ -178,11 +177,10 @@ public class InternalModularASMLexer extends Lexer {
     public final void mT19() throws RecognitionException {
         try {
             int _type = T19;
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:17:5: ( 'callback' )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:17:7: 'callback'
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:17:5: ( ';' )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:17:7: ';'
             {
-            match("callback"); 
-
+            match(';'); 
 
             }
 
@@ -197,10 +195,10 @@ public class InternalModularASMLexer extends Lexer {
     public final void mT20() throws RecognitionException {
         try {
             int _type = T20;
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:18:5: ( 'address' )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:18:7: 'address'
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:18:5: ( 'config' )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:18:7: 'config'
             {
-            match("address"); 
+            match("config"); 
 
 
             }
@@ -216,10 +214,11 @@ public class InternalModularASMLexer extends Lexer {
     public final void mT21() throws RecognitionException {
         try {
             int _type = T21;
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:19:5: ( '.' )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:19:7: '.'
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:19:5: ( 'at' )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:19:7: 'at'
             {
-            match('.'); 
+            match("at"); 
+
 
             }
 
@@ -234,10 +233,11 @@ public class InternalModularASMLexer extends Lexer {
     public final void mT22() throws RecognitionException {
         try {
             int _type = T22;
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:20:5: ( ';' )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:20:7: ';'
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:20:5: ( 'enum' )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:20:7: 'enum'
             {
-            match(';'); 
+            match("enum"); 
+
 
             }
 
@@ -252,11 +252,10 @@ public class InternalModularASMLexer extends Lexer {
     public final void mT23() throws RecognitionException {
         try {
             int _type = T23;
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:21:5: ( 'public' )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:21:7: 'public'
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:21:5: ( '=' )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:21:7: '='
             {
-            match("public"); 
-
+            match('='); 
 
             }
 
@@ -366,12 +365,12 @@ public class InternalModularASMLexer extends Lexer {
     public final void mRULE_HEXINT() throws RecognitionException {
         try {
             int _type = RULE_HEXINT;
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1185:13: ( '0x' ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' )+ )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1185:15: '0x' ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' )+
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1525:13: ( '0x' ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' )+ )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1525:15: '0x' ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' )+
             {
             match("0x"); 
 
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1185:20: ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' )+
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1525:20: ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' )+
             int cnt1=0;
             loop1:
             do {
@@ -424,10 +423,10 @@ public class InternalModularASMLexer extends Lexer {
     public final void mRULE_ID() throws RecognitionException {
         try {
             int _type = RULE_ID;
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1187:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1187:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1527:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1527:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1187:11: ( '^' )?
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1527:11: ( '^' )?
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -436,7 +435,7 @@ public class InternalModularASMLexer extends Lexer {
             }
             switch (alt2) {
                 case 1 :
-                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1187:11: '^'
+                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1527:11: '^'
                     {
                     match('^'); 
 
@@ -455,7 +454,7 @@ public class InternalModularASMLexer extends Lexer {
                 recover(mse);    throw mse;
             }
 
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1187:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1527:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop3:
             do {
                 int alt3=2;
@@ -503,10 +502,10 @@ public class InternalModularASMLexer extends Lexer {
     public final void mRULE_INT() throws RecognitionException {
         try {
             int _type = RULE_INT;
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1189:10: ( ( '0' .. '9' )+ )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1189:12: ( '0' .. '9' )+
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1529:10: ( ( '0' .. '9' )+ )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1529:12: ( '0' .. '9' )+
             {
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1189:12: ( '0' .. '9' )+
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1529:12: ( '0' .. '9' )+
             int cnt4=0;
             loop4:
             do {
@@ -520,7 +519,7 @@ public class InternalModularASMLexer extends Lexer {
 
                 switch (alt4) {
             	case 1 :
-            	    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1189:13: '0' .. '9'
+            	    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1529:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -550,10 +549,10 @@ public class InternalModularASMLexer extends Lexer {
     public final void mRULE_STRING() throws RecognitionException {
         try {
             int _type = RULE_STRING;
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1191:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1191:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1531:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1531:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1191:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1531:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -565,16 +564,16 @@ public class InternalModularASMLexer extends Lexer {
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("1191:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )", 7, 0, input);
+                    new NoViableAltException("1531:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )", 7, 0, input);
 
                 throw nvae;
             }
             switch (alt7) {
                 case 1 :
-                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1191:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1531:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1191:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1531:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -590,7 +589,7 @@ public class InternalModularASMLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1191:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' )
+                    	    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1531:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||input.LA(1)=='t' ) {
@@ -607,7 +606,7 @@ public class InternalModularASMLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1191:62: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1531:62: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFE') ) {
                     	        input.consume();
@@ -633,10 +632,10 @@ public class InternalModularASMLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1191:82: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1531:82: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1191:87: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1531:87: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop6:
                     do {
                         int alt6=3;
@@ -652,7 +651,7 @@ public class InternalModularASMLexer extends Lexer {
 
                         switch (alt6) {
                     	case 1 :
-                    	    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1191:88: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' )
+                    	    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1531:88: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||input.LA(1)=='t' ) {
@@ -669,7 +668,7 @@ public class InternalModularASMLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1191:129: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1531:129: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFE') ) {
                     	        input.consume();
@@ -711,12 +710,12 @@ public class InternalModularASMLexer extends Lexer {
     public final void mRULE_ML_COMMENT() throws RecognitionException {
         try {
             int _type = RULE_ML_COMMENT;
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1193:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1193:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1533:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1533:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1193:24: ( options {greedy=false; } : . )*
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1533:24: ( options {greedy=false; } : . )*
             loop8:
             do {
                 int alt8=2;
@@ -741,7 +740,7 @@ public class InternalModularASMLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1193:52: .
+            	    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1533:52: .
             	    {
             	    matchAny(); 
 
@@ -769,12 +768,12 @@ public class InternalModularASMLexer extends Lexer {
     public final void mRULE_SL_COMMENT() throws RecognitionException {
         try {
             int _type = RULE_SL_COMMENT;
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1195:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1195:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1535:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1535:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1195:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1535:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop9:
             do {
                 int alt9=2;
@@ -787,7 +786,7 @@ public class InternalModularASMLexer extends Lexer {
 
                 switch (alt9) {
             	case 1 :
-            	    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1195:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1535:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFE') ) {
             	        input.consume();
@@ -808,7 +807,7 @@ public class InternalModularASMLexer extends Lexer {
                 }
             } while (true);
 
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1195:40: ( ( '\\r' )? '\\n' )?
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1535:40: ( ( '\\r' )? '\\n' )?
             int alt11=2;
             int LA11_0 = input.LA(1);
 
@@ -817,9 +816,9 @@ public class InternalModularASMLexer extends Lexer {
             }
             switch (alt11) {
                 case 1 :
-                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1195:41: ( '\\r' )? '\\n'
+                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1535:41: ( '\\r' )? '\\n'
                     {
-                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1195:41: ( '\\r' )?
+                    // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1535:41: ( '\\r' )?
                     int alt10=2;
                     int LA10_0 = input.LA(1);
 
@@ -828,7 +827,7 @@ public class InternalModularASMLexer extends Lexer {
                     }
                     switch (alt10) {
                         case 1 :
-                            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1195:41: '\\r'
+                            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1535:41: '\\r'
                             {
                             match('\r'); 
 
@@ -858,10 +857,10 @@ public class InternalModularASMLexer extends Lexer {
     public final void mRULE_WS() throws RecognitionException {
         try {
             int _type = RULE_WS;
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1197:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1197:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1537:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1537:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1197:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1537:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt12=0;
             loop12:
             do {
@@ -914,8 +913,8 @@ public class InternalModularASMLexer extends Lexer {
     public final void mRULE_ANY_OTHER() throws RecognitionException {
         try {
             int _type = RULE_ANY_OTHER;
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1199:16: ( . )
-            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1199:18: .
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1539:16: ( . )
+            // ../hu.cubussapiens.modembed.modularasm/src-gen/hu/cubussapiens/modembed/modularasm/parser/antlr/internal/InternalModularASM.g:1539:18: .
             {
             matchAny(); 
 
@@ -937,21 +936,21 @@ public class InternalModularASMLexer extends Lexer {
             int LA13_1 = input.LA(2);
 
             if ( (LA13_1=='o') ) {
-                int LA13_26 = input.LA(3);
+                int LA13_27 = input.LA(3);
 
-                if ( (LA13_26=='d') ) {
-                    int LA13_50 = input.LA(4);
+                if ( (LA13_27=='d') ) {
+                    int LA13_51 = input.LA(4);
 
-                    if ( (LA13_50=='u') ) {
+                    if ( (LA13_51=='u') ) {
                         int LA13_61 = input.LA(5);
 
                         if ( (LA13_61=='l') ) {
-                            int LA13_72 = input.LA(6);
+                            int LA13_70 = input.LA(6);
 
-                            if ( (LA13_72=='e') ) {
-                                int LA13_82 = input.LA(7);
+                            if ( (LA13_70=='e') ) {
+                                int LA13_78 = input.LA(7);
 
-                                if ( ((LA13_82>='0' && LA13_82<='9')||(LA13_82>='A' && LA13_82<='Z')||LA13_82=='_'||(LA13_82>='a' && LA13_82<='z')) ) {
+                                if ( ((LA13_78>='0' && LA13_78<='9')||(LA13_78>='A' && LA13_78<='Z')||LA13_78=='_'||(LA13_78>='a' && LA13_78<='z')) ) {
                                     alt13=19;
                                 }
                                 else {
@@ -976,21 +975,21 @@ public class InternalModularASMLexer extends Lexer {
             int LA13_2 = input.LA(2);
 
             if ( (LA13_2=='a') ) {
-                int LA13_28 = input.LA(3);
+                int LA13_29 = input.LA(3);
 
-                if ( (LA13_28=='r') ) {
-                    int LA13_51 = input.LA(4);
+                if ( (LA13_29=='r') ) {
+                    int LA13_52 = input.LA(4);
 
-                    if ( (LA13_51=='g') ) {
+                    if ( (LA13_52=='g') ) {
                         int LA13_62 = input.LA(5);
 
                         if ( (LA13_62=='e') ) {
-                            int LA13_73 = input.LA(6);
+                            int LA13_71 = input.LA(6);
 
-                            if ( (LA13_73=='t') ) {
-                                int LA13_83 = input.LA(7);
+                            if ( (LA13_71=='t') ) {
+                                int LA13_79 = input.LA(7);
 
-                                if ( ((LA13_83>='0' && LA13_83<='9')||(LA13_83>='A' && LA13_83<='Z')||LA13_83=='_'||(LA13_83>='a' && LA13_83<='z')) ) {
+                                if ( ((LA13_79>='0' && LA13_79<='9')||(LA13_79>='A' && LA13_79<='Z')||LA13_79=='_'||(LA13_79>='a' && LA13_79<='z')) ) {
                                     alt13=19;
                                 }
                                 else {
@@ -1023,117 +1022,35 @@ public class InternalModularASMLexer extends Lexer {
         else if ( (LA13_0=='}') ) {
             alt13=6;
         }
-        else if ( (LA13_0=='l') ) {
-            switch ( input.LA(2) ) {
-            case 'i':
-                {
-                int LA13_33 = input.LA(3);
-
-                if ( (LA13_33=='t') ) {
-                    int LA13_52 = input.LA(4);
-
-                    if ( (LA13_52=='e') ) {
-                        int LA13_63 = input.LA(5);
-
-                        if ( (LA13_63=='r') ) {
-                            int LA13_74 = input.LA(6);
-
-                            if ( (LA13_74=='a') ) {
-                                int LA13_84 = input.LA(7);
-
-                                if ( (LA13_84=='l') ) {
-                                    int LA13_93 = input.LA(8);
-
-                                    if ( ((LA13_93>='0' && LA13_93<='9')||(LA13_93>='A' && LA13_93<='Z')||LA13_93=='_'||(LA13_93>='a' && LA13_93<='z')) ) {
-                                        alt13=19;
-                                    }
-                                    else {
-                                        alt13=7;}
-                                }
-                                else {
-                                    alt13=19;}
-                            }
-                            else {
-                                alt13=19;}
-                        }
-                        else {
-                            alt13=19;}
-                    }
-                    else {
-                        alt13=19;}
-                }
-                else {
-                    alt13=19;}
-                }
-                break;
-            case 'a':
-                {
-                int LA13_34 = input.LA(3);
-
-                if ( (LA13_34=='b') ) {
-                    int LA13_53 = input.LA(4);
-
-                    if ( (LA13_53=='e') ) {
-                        int LA13_64 = input.LA(5);
-
-                        if ( (LA13_64=='l') ) {
-                            int LA13_75 = input.LA(6);
-
-                            if ( ((LA13_75>='0' && LA13_75<='9')||(LA13_75>='A' && LA13_75<='Z')||LA13_75=='_'||(LA13_75>='a' && LA13_75<='z')) ) {
-                                alt13=19;
-                            }
-                            else {
-                                alt13=17;}
-                        }
-                        else {
-                            alt13=19;}
-                    }
-                    else {
-                        alt13=19;}
-                }
-                else {
-                    alt13=19;}
-                }
-                break;
-            default:
-                alt13=19;}
-
+        else if ( (LA13_0=='.') ) {
+            alt13=7;
+        }
+        else if ( (LA13_0==';') ) {
+            alt13=8;
         }
         else if ( (LA13_0=='c') ) {
-            int LA13_8 = input.LA(2);
+            int LA13_9 = input.LA(2);
 
-            if ( (LA13_8=='a') ) {
-                int LA13_35 = input.LA(3);
+            if ( (LA13_9=='o') ) {
+                int LA13_36 = input.LA(3);
 
-                if ( (LA13_35=='l') ) {
-                    int LA13_54 = input.LA(4);
+                if ( (LA13_36=='n') ) {
+                    int LA13_53 = input.LA(4);
 
-                    if ( (LA13_54=='l') ) {
-                        int LA13_65 = input.LA(5);
+                    if ( (LA13_53=='f') ) {
+                        int LA13_63 = input.LA(5);
 
-                        if ( (LA13_65=='b') ) {
-                            int LA13_76 = input.LA(6);
+                        if ( (LA13_63=='i') ) {
+                            int LA13_72 = input.LA(6);
 
-                            if ( (LA13_76=='a') ) {
-                                int LA13_86 = input.LA(7);
+                            if ( (LA13_72=='g') ) {
+                                int LA13_80 = input.LA(7);
 
-                                if ( (LA13_86=='c') ) {
-                                    int LA13_94 = input.LA(8);
-
-                                    if ( (LA13_94=='k') ) {
-                                        int LA13_100 = input.LA(9);
-
-                                        if ( ((LA13_100>='0' && LA13_100<='9')||(LA13_100>='A' && LA13_100<='Z')||LA13_100=='_'||(LA13_100>='a' && LA13_100<='z')) ) {
-                                            alt13=19;
-                                        }
-                                        else {
-                                            alt13=8;}
-                                    }
-                                    else {
-                                        alt13=19;}
+                                if ( ((LA13_80>='0' && LA13_80<='9')||(LA13_80>='A' && LA13_80<='Z')||LA13_80=='_'||(LA13_80>='a' && LA13_80<='z')) ) {
+                                    alt13=19;
                                 }
                                 else {
-                                    alt13=19;}
+                                    alt13=9;}
                             }
                             else {
                                 alt13=19;}
@@ -1151,40 +1068,37 @@ public class InternalModularASMLexer extends Lexer {
                 alt13=19;}
         }
         else if ( (LA13_0=='a') ) {
-            int LA13_9 = input.LA(2);
+            int LA13_10 = input.LA(2);
 
-            if ( (LA13_9=='d') ) {
-                int LA13_36 = input.LA(3);
+            if ( (LA13_10=='t') ) {
+                int LA13_37 = input.LA(3);
 
-                if ( (LA13_36=='d') ) {
+                if ( ((LA13_37>='0' && LA13_37<='9')||(LA13_37>='A' && LA13_37<='Z')||LA13_37=='_'||(LA13_37>='a' && LA13_37<='z')) ) {
+                    alt13=19;
+                }
+                else {
+                    alt13=10;}
+            }
+            else {
+                alt13=19;}
+        }
+        else if ( (LA13_0=='e') ) {
+            int LA13_11 = input.LA(2);
+
+            if ( (LA13_11=='n') ) {
+                int LA13_38 = input.LA(3);
+
+                if ( (LA13_38=='u') ) {
                     int LA13_55 = input.LA(4);
 
-                    if ( (LA13_55=='r') ) {
-                        int LA13_66 = input.LA(5);
+                    if ( (LA13_55=='m') ) {
+                        int LA13_64 = input.LA(5);
 
-                        if ( (LA13_66=='e') ) {
-                            int LA13_77 = input.LA(6);
-
-                            if ( (LA13_77=='s') ) {
-                                int LA13_87 = input.LA(7);
-
-                                if ( (LA13_87=='s') ) {
-                                    int LA13_95 = input.LA(8);
-
-                                    if ( ((LA13_95>='0' && LA13_95<='9')||(LA13_95>='A' && LA13_95<='Z')||LA13_95=='_'||(LA13_95>='a' && LA13_95<='z')) ) {
-                                        alt13=19;
-                                    }
-                                    else {
-                                        alt13=9;}
-                                }
-                                else {
-                                    alt13=19;}
-                            }
-                            else {
-                                alt13=19;}
+                        if ( ((LA13_64>='0' && LA13_64<='9')||(LA13_64>='A' && LA13_64<='Z')||LA13_64=='_'||(LA13_64>='a' && LA13_64<='z')) ) {
+                            alt13=19;
                         }
                         else {
-                            alt13=19;}
+                            alt13=11;}
                     }
                     else {
                         alt13=19;}
@@ -1195,50 +1109,8 @@ public class InternalModularASMLexer extends Lexer {
             else {
                 alt13=19;}
         }
-        else if ( (LA13_0=='.') ) {
-            alt13=10;
-        }
-        else if ( (LA13_0==';') ) {
-            alt13=11;
-        }
-        else if ( (LA13_0=='p') ) {
-            int LA13_12 = input.LA(2);
-
-            if ( (LA13_12=='u') ) {
-                int LA13_39 = input.LA(3);
-
-                if ( (LA13_39=='b') ) {
-                    int LA13_56 = input.LA(4);
-
-                    if ( (LA13_56=='l') ) {
-                        int LA13_67 = input.LA(5);
-
-                        if ( (LA13_67=='i') ) {
-                            int LA13_78 = input.LA(6);
-
-                            if ( (LA13_78=='c') ) {
-                                int LA13_88 = input.LA(7);
-
-                                if ( ((LA13_88>='0' && LA13_88<='9')||(LA13_88>='A' && LA13_88<='Z')||LA13_88=='_'||(LA13_88>='a' && LA13_88<='z')) ) {
-                                    alt13=19;
-                                }
-                                else {
-                                    alt13=12;}
-                            }
-                            else {
-                                alt13=19;}
-                        }
-                        else {
-                            alt13=19;}
-                    }
-                    else {
-                        alt13=19;}
-                }
-                else {
-                    alt13=19;}
-            }
-            else {
-                alt13=19;}
+        else if ( (LA13_0=='=') ) {
+            alt13=12;
         }
         else if ( (LA13_0=='s') ) {
             int LA13_13 = input.LA(2);
@@ -1247,18 +1119,18 @@ public class InternalModularASMLexer extends Lexer {
                 int LA13_40 = input.LA(3);
 
                 if ( (LA13_40=='m') ) {
-                    int LA13_57 = input.LA(4);
+                    int LA13_56 = input.LA(4);
 
-                    if ( (LA13_57=='b') ) {
-                        int LA13_68 = input.LA(5);
+                    if ( (LA13_56=='b') ) {
+                        int LA13_65 = input.LA(5);
 
-                        if ( (LA13_68=='o') ) {
-                            int LA13_79 = input.LA(6);
+                        if ( (LA13_65=='o') ) {
+                            int LA13_74 = input.LA(6);
 
-                            if ( (LA13_79=='l') ) {
-                                int LA13_89 = input.LA(7);
+                            if ( (LA13_74=='l') ) {
+                                int LA13_81 = input.LA(7);
 
-                                if ( ((LA13_89>='0' && LA13_89<='9')||(LA13_89>='A' && LA13_89<='Z')||LA13_89=='_'||(LA13_89>='a' && LA13_89<='z')) ) {
+                                if ( ((LA13_81>='0' && LA13_81<='9')||(LA13_81>='A' && LA13_81<='Z')||LA13_81=='_'||(LA13_81>='a' && LA13_81<='z')) ) {
                                     alt13=19;
                                 }
                                 else {
@@ -1286,9 +1158,9 @@ public class InternalModularASMLexer extends Lexer {
                 int LA13_41 = input.LA(3);
 
                 if ( (LA13_41=='r') ) {
-                    int LA13_58 = input.LA(4);
+                    int LA13_57 = input.LA(4);
 
-                    if ( ((LA13_58>='0' && LA13_58<='9')||(LA13_58>='A' && LA13_58<='Z')||LA13_58=='_'||(LA13_58>='a' && LA13_58<='z')) ) {
+                    if ( ((LA13_57>='0' && LA13_57<='9')||(LA13_57>='A' && LA13_57<='Z')||LA13_57=='_'||(LA13_57>='a' && LA13_57<='z')) ) {
                         alt13=19;
                     }
                     else {
@@ -1307,24 +1179,24 @@ public class InternalModularASMLexer extends Lexer {
                 int LA13_42 = input.LA(3);
 
                 if ( (LA13_42=='s') ) {
-                    int LA13_59 = input.LA(4);
+                    int LA13_58 = input.LA(4);
 
-                    if ( (LA13_59=='t') ) {
-                        int LA13_70 = input.LA(5);
+                    if ( (LA13_58=='t') ) {
+                        int LA13_67 = input.LA(5);
 
-                        if ( (LA13_70=='a') ) {
-                            int LA13_80 = input.LA(6);
+                        if ( (LA13_67=='a') ) {
+                            int LA13_75 = input.LA(6);
 
-                            if ( (LA13_80=='n') ) {
-                                int LA13_90 = input.LA(7);
+                            if ( (LA13_75=='n') ) {
+                                int LA13_82 = input.LA(7);
 
-                                if ( (LA13_90=='c') ) {
-                                    int LA13_98 = input.LA(8);
+                                if ( (LA13_82=='c') ) {
+                                    int LA13_88 = input.LA(8);
 
-                                    if ( (LA13_98=='e') ) {
-                                        int LA13_102 = input.LA(9);
+                                    if ( (LA13_88=='e') ) {
+                                        int LA13_89 = input.LA(9);
 
-                                        if ( ((LA13_102>='0' && LA13_102<='9')||(LA13_102>='A' && LA13_102<='Z')||LA13_102=='_'||(LA13_102>='a' && LA13_102<='z')) ) {
+                                        if ( ((LA13_89>='0' && LA13_89<='9')||(LA13_89>='A' && LA13_89<='Z')||LA13_89=='_'||(LA13_89>='a' && LA13_89<='z')) ) {
                                             alt13=19;
                                         }
                                         else {
@@ -1358,12 +1230,12 @@ public class InternalModularASMLexer extends Lexer {
                 int LA13_43 = input.LA(3);
 
                 if ( (LA13_43=='n') ) {
-                    int LA13_60 = input.LA(4);
+                    int LA13_59 = input.LA(4);
 
-                    if ( (LA13_60=='c') ) {
-                        int LA13_71 = input.LA(5);
+                    if ( (LA13_59=='c') ) {
+                        int LA13_68 = input.LA(5);
 
-                        if ( ((LA13_71>='0' && LA13_71<='9')||(LA13_71>='A' && LA13_71<='Z')||LA13_71=='_'||(LA13_71>='a' && LA13_71<='z')) ) {
+                        if ( ((LA13_68>='0' && LA13_68<='9')||(LA13_68>='A' && LA13_68<='Z')||LA13_68=='_'||(LA13_68>='a' && LA13_68<='z')) ) {
                             alt13=19;
                         }
                         else {
@@ -1378,40 +1250,64 @@ public class InternalModularASMLexer extends Lexer {
             else {
                 alt13=19;}
         }
-        else if ( (LA13_0=='0') ) {
+        else if ( (LA13_0=='l') ) {
             int LA13_17 = input.LA(2);
 
-            if ( (LA13_17=='x') ) {
+            if ( (LA13_17=='a') ) {
+                int LA13_44 = input.LA(3);
+
+                if ( (LA13_44=='b') ) {
+                    int LA13_60 = input.LA(4);
+
+                    if ( (LA13_60=='e') ) {
+                        int LA13_69 = input.LA(5);
+
+                        if ( (LA13_69=='l') ) {
+                            int LA13_77 = input.LA(6);
+
+                            if ( ((LA13_77>='0' && LA13_77<='9')||(LA13_77>='A' && LA13_77<='Z')||LA13_77=='_'||(LA13_77>='a' && LA13_77<='z')) ) {
+                                alt13=19;
+                            }
+                            else {
+                                alt13=17;}
+                        }
+                        else {
+                            alt13=19;}
+                    }
+                    else {
+                        alt13=19;}
+                }
+                else {
+                    alt13=19;}
+            }
+            else {
+                alt13=19;}
+        }
+        else if ( (LA13_0=='0') ) {
+            int LA13_18 = input.LA(2);
+
+            if ( (LA13_18=='x') ) {
                 alt13=18;
             }
             else {
                 alt13=20;}
         }
         else if ( (LA13_0=='^') ) {
-            int LA13_18 = input.LA(2);
+            int LA13_19 = input.LA(2);
 
-            if ( ((LA13_18>='A' && LA13_18<='Z')||LA13_18=='_'||(LA13_18>='a' && LA13_18<='z')) ) {
+            if ( ((LA13_19>='A' && LA13_19<='Z')||LA13_19=='_'||(LA13_19>='a' && LA13_19<='z')) ) {
                 alt13=19;
             }
             else {
                 alt13=25;}
         }
-        else if ( ((LA13_0>='A' && LA13_0<='Z')||LA13_0=='_'||LA13_0=='b'||(LA13_0>='d' && LA13_0<='e')||(LA13_0>='g' && LA13_0<='h')||(LA13_0>='j' && LA13_0<='k')||(LA13_0>='n' && LA13_0<='o')||(LA13_0>='q' && LA13_0<='r')||LA13_0=='u'||(LA13_0>='w' && LA13_0<='z')) ) {
+        else if ( ((LA13_0>='A' && LA13_0<='Z')||LA13_0=='_'||LA13_0=='b'||LA13_0=='d'||(LA13_0>='g' && LA13_0<='h')||(LA13_0>='j' && LA13_0<='k')||(LA13_0>='n' && LA13_0<='r')||LA13_0=='u'||(LA13_0>='w' && LA13_0<='z')) ) {
             alt13=19;
         }
         else if ( ((LA13_0>='1' && LA13_0<='9')) ) {
             alt13=20;
         }
         else if ( (LA13_0=='\"') ) {
-            int LA13_21 = input.LA(2);
-
-            if ( ((LA13_21>='\u0000' && LA13_21<='\uFFFE')) ) {
-                alt13=21;
-            }
-            else {
-                alt13=25;}
-        }
-        else if ( (LA13_0=='\'') ) {
             int LA13_22 = input.LA(2);
 
             if ( ((LA13_22>='\u0000' && LA13_22<='\uFFFE')) ) {
@@ -1420,16 +1316,25 @@ public class InternalModularASMLexer extends Lexer {
             else {
                 alt13=25;}
         }
+        else if ( (LA13_0=='\'') ) {
+            int LA13_23 = input.LA(2);
+
+            if ( ((LA13_23>='\u0000' && LA13_23<='\uFFFE')) ) {
+                alt13=21;
+            }
+            else {
+                alt13=25;}
+        }
         else if ( (LA13_0=='/') ) {
             switch ( input.LA(2) ) {
-            case '*':
-                {
-                alt13=22;
-                }
-                break;
             case '/':
                 {
                 alt13=23;
+                }
+                break;
+            case '*':
+                {
+                alt13=22;
                 }
                 break;
             default:
@@ -1439,7 +1344,7 @@ public class InternalModularASMLexer extends Lexer {
         else if ( ((LA13_0>='\t' && LA13_0<='\n')||LA13_0=='\r'||LA13_0==' ') ) {
             alt13=24;
         }
-        else if ( ((LA13_0>='\u0000' && LA13_0<='\b')||(LA13_0>='\u000B' && LA13_0<='\f')||(LA13_0>='\u000E' && LA13_0<='\u001F')||LA13_0=='!'||(LA13_0>='#' && LA13_0<='&')||(LA13_0>='*' && LA13_0<='-')||LA13_0==':'||(LA13_0>='<' && LA13_0<='@')||(LA13_0>='[' && LA13_0<=']')||LA13_0=='`'||LA13_0=='|'||(LA13_0>='~' && LA13_0<='\uFFFE')) ) {
+        else if ( ((LA13_0>='\u0000' && LA13_0<='\b')||(LA13_0>='\u000B' && LA13_0<='\f')||(LA13_0>='\u000E' && LA13_0<='\u001F')||LA13_0=='!'||(LA13_0>='#' && LA13_0<='&')||(LA13_0>='*' && LA13_0<='-')||LA13_0==':'||LA13_0=='<'||(LA13_0>='>' && LA13_0<='@')||(LA13_0>='[' && LA13_0<=']')||LA13_0=='`'||LA13_0=='|'||(LA13_0>='~' && LA13_0<='\uFFFE')) ) {
             alt13=25;
         }
         else {

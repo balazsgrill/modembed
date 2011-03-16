@@ -11,22 +11,30 @@ Module hidden(WS, ML_COMMENT, SL_COMMENT):
 	'}';
 	
 ModuleParam:
-	type=ModuleParamType name=ID;	
-	
-ModuleParamType:
-	'literal' | 'callback' | 'address';	
+	type=QualifiedID name=ID;	
 	
 QualifiedID:
 	segments+=ID ('.' segments+=ID)*;	
 	
 ModuleItem:
-	(Variable | Instance | Function | Symbol) ';';
+	(Variable | Instance | Function | Symbol | ConfigurationWord) ';';
 	
-Modifier:
-	'public';	
+ConfigurationWord:
+	'config' name=ID (default=LiteralParam)? '{' (fields+=ConfigurationFieldPlace ';')* '}';	
+
+ConfigurationFieldPlace:
+	bitNum=LiteralParam 'at' startBit=LiteralParam field=ConfigurationField;	
 	
-VariableDecl:
-	modifier+=Modifier* variable=Variable;	
+ConfigurationField:
+	 EnumConfigurationField;
+	
+EnumConfigurationField:
+	'enum' name=ID '{' (literals+=EnumConfigurationFieldLiteral ';')* '}' 
+	;		
+	
+EnumConfigurationFieldLiteral:
+	name=ID '=' value=LiteralParam
+	;	
 	
 Symbol:
 	'symbol' name=ID (value=INT | value=HEXINT)

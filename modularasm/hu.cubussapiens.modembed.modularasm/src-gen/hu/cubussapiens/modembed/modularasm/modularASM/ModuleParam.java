@@ -2,6 +2,7 @@
  * <copyright>
  * </copyright>
  *
+
  */
 package hu.cubussapiens.modembed.modularasm.modularASM;
 
@@ -27,30 +28,30 @@ import org.eclipse.emf.ecore.EObject;
 public interface ModuleParam extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Type</b></em>' attribute.
+   * Returns the value of the '<em><b>Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Type</em>' attribute isn't clear,
+   * If the meaning of the '<em>Type</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Type</em>' attribute.
-   * @see #setType(String)
+   * @return the value of the '<em>Type</em>' containment reference.
+   * @see #setType(QualifiedID)
    * @see hu.cubussapiens.modembed.modularasm.modularASM.ModularASMPackage#getModuleParam_Type()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getType();
+  QualifiedID getType();
 
   /**
-   * Sets the value of the '{@link hu.cubussapiens.modembed.modularasm.modularASM.ModuleParam#getType <em>Type</em>}' attribute.
+   * Sets the value of the '{@link hu.cubussapiens.modembed.modularasm.modularASM.ModuleParam#getType <em>Type</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Type</em>' attribute.
+   * @param value the new value of the '<em>Type</em>' containment reference.
    * @see #getType()
    * @generated
    */
-  void setType(String value);
+  void setType(QualifiedID value);
 
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.

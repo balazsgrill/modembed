@@ -2,6 +2,7 @@
  * <copyright>
  * </copyright>
  *
+
  */
 package hu.cubussapiens.modembed.modularasm.modularASM.util;
 
@@ -123,10 +124,40 @@ public class ModularASMSwitch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case ModularASMPackage.VARIABLE_DECL:
+      case ModularASMPackage.CONFIGURATION_WORD:
       {
-        VariableDecl variableDecl = (VariableDecl)theEObject;
-        T result = caseVariableDecl(variableDecl);
+        ConfigurationWord configurationWord = (ConfigurationWord)theEObject;
+        T result = caseConfigurationWord(configurationWord);
+        if (result == null) result = caseModuleItem(configurationWord);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModularASMPackage.CONFIGURATION_FIELD_PLACE:
+      {
+        ConfigurationFieldPlace configurationFieldPlace = (ConfigurationFieldPlace)theEObject;
+        T result = caseConfigurationFieldPlace(configurationFieldPlace);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModularASMPackage.CONFIGURATION_FIELD:
+      {
+        ConfigurationField configurationField = (ConfigurationField)theEObject;
+        T result = caseConfigurationField(configurationField);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModularASMPackage.ENUM_CONFIGURATION_FIELD:
+      {
+        EnumConfigurationField enumConfigurationField = (EnumConfigurationField)theEObject;
+        T result = caseEnumConfigurationField(enumConfigurationField);
+        if (result == null) result = caseConfigurationField(enumConfigurationField);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModularASMPackage.ENUM_CONFIGURATION_FIELD_LITERAL:
+      {
+        EnumConfigurationFieldLiteral enumConfigurationFieldLiteral = (EnumConfigurationFieldLiteral)theEObject;
+        T result = caseEnumConfigurationFieldLiteral(enumConfigurationFieldLiteral);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -277,17 +308,81 @@ public class ModularASMSwitch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Variable Decl</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Configuration Word</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Variable Decl</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Configuration Word</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseVariableDecl(VariableDecl object)
+  public T caseConfigurationWord(ConfigurationWord object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Configuration Field Place</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Configuration Field Place</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseConfigurationFieldPlace(ConfigurationFieldPlace object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Configuration Field</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Configuration Field</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseConfigurationField(ConfigurationField object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Enum Configuration Field</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Enum Configuration Field</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEnumConfigurationField(EnumConfigurationField object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Enum Configuration Field Literal</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Enum Configuration Field Literal</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEnumConfigurationFieldLiteral(EnumConfigurationFieldLiteral object)
   {
     return null;
   }
