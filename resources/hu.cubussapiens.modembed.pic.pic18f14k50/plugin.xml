@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="hu.cubussapiens.modembed.modularasm.sharedLibrary">
+      <library
+            folder="drivers"
+            rootname="microchip.pic18f14k50.drivers">
+      </library>
+   </extension>
+
+</plugin>
