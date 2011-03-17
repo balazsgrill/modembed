@@ -4,6 +4,7 @@
 package hu.cubussapiens.modembed.modularasm.compiler.internal;
 
 import hu.cubussapiens.modembed.modularasm.compiler.IModuleConfigurationHandler;
+import hu.cubussapiens.modembed.modularasm.compiler.internal.symbols.ConfigurationSymbol;
 import hu.cubussapiens.modembed.modularasm.compiler.internal.symbols.ISymbol;
 import hu.cubussapiens.modembed.modularasm.modularASM.ConfigurationFieldPlace;
 import hu.cubussapiens.modembed.modularasm.modularASM.ConfigurationWord;
@@ -69,9 +70,7 @@ public class ConfigurationWordManager {
 	}
 	
 	public ISymbol createSymbol(ConfigurationWord cw){
-		
-		
-		return null;
+		return new ConfigurationSymbol(getHandler(), instance.getRootReference(), cw, parametersets.get(cw));
 	}
 	
 	private IModuleConfigurationHandler getHandler(){

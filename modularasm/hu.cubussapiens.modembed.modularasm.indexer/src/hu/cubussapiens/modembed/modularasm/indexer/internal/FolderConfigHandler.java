@@ -12,6 +12,7 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 
@@ -67,6 +68,7 @@ public class FolderConfigHandler implements IModuleConfigurationHandler {
 		if (r == null){
 			r = rs.createResource(uri);
 		}else{
+			/* TODO FIXME create only once in one compile */
 			r.unload();
 		}
 		r.getContents().clear();
@@ -93,7 +95,27 @@ public class FolderConfigHandler implements IModuleConfigurationHandler {
 
 	@Override
 	public Configuration getConfiguration(String moduleInstance) {
-		// TODO Auto-generated method stub
+		try{
+			if (moduleInstance.isEmpty()) moduleInstance = "Main";
+			IFile config = configFolder.getFile(moduleInstance+".config");
+			URI uri = URI.createPlatformResourceURI(config.getFullPath().toString(), true);
+
+			Resource r = rs.getResource(uri, false);
+			if (r != null){
+				if (r.isLoaded()) r.unload();
+				try {
+					r.load(null);
+				} catch (IOException e) {
+					throw new CoreException(new Status(IStatus.ERROR, IndexerPlugin.getDefault().getBundle().getSymbolicName(), "Could not save config scheme", e));
+				}
+				for(EObject eo : r.getContents()){
+					if (eo instanceof Configuration)
+						return (Configuration)eo;
+				}
+			}
+		}catch(CoreException e){
+			IndexerPlugin.getDefault().getLog().log(e.getStatus());
+		}
 		return null;
 	}
 
