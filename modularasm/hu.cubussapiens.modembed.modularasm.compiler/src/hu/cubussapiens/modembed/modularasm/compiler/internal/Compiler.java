@@ -80,9 +80,6 @@ public class Compiler implements ICompiler {
 		 */
 		CompilationManager cmanager = new CompilationManager(this);
 		ModuleInstance mainInstance = cmanager.instantiate(main);
-		if (mainInstance != null){
-			cmanager.symbolManager.setMainModuleInstance(mainInstance);
-		}
 		monitor.worked(1);
 		
 		/*
@@ -95,6 +92,14 @@ public class Compiler implements ICompiler {
 			sm.worked(1);
 		}
 		sm.done();
+		
+		/*
+		 * Select main module
+		 * Has to be called after all modules has been instantiated
+		 */
+		if (mainInstance != null){
+			cmanager.symbolManager.setMainModuleInstance(mainInstance);
+		}
 		
 		/*
 		 * Preparing function instances
