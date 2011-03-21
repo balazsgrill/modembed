@@ -94,6 +94,34 @@
                name="appName"
                value="MODembed">
          </property>
+         <property
+               name="startupForegroundColor"
+               value="000000">
+         </property>
+         <property
+               name="startupMessageRect"
+               value="7,318,190,20">
+         </property>
+         <property
+               name="startupProgressRect"
+               value="5,340,190,15">
+         </property>
+         <property
+               name="preferenceCustomization"
+               value="plugin_customization.ini">
+         </property>
+         <property
+               name="aboutImage"
+               value="icons/window/cpu_50.png">
+         </property>
+         <property
+               name="aboutText"
+               value="MODembed 0.1.0&#x0D;&#x0A;&#x0D;&#x0A;Model-based embedded development environment&#x0D;&#x0A;&#x0D;&#x0A;web page: http://gbalage.github.com/modembed/">
+         </property>
+         <property
+               name="windowImages"
+               value="icons/window/cpu_16.png,icons/window/cpu_48.png">
+         </property>
       </product>
    </extension>
 

@@ -3,6 +3,16 @@
 
 <product name="MODembed" uid="hu.cubussapiens.modembed.product" id="hu.cubussapiens.modembed.ui.product" application="org.eclipse.ui.ide.workbench" version="0.1.0" useFeatures="true" includeLaunchers="true">
 
+   <aboutInfo>
+      <image path="/hu.cubussapiens.modembed.ui/icons/window/cpu_50.png"/>
+      <text>
+         MODembed 0.1.0
+
+Model-based embedded development environment
+
+web page: http://gbalage.github.com/modembed/
+      </text>
+   </aboutInfo>
 
    <configIni use="default">
    </configIni>
@@ -11,19 +21,27 @@
       <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts</vmArgsMac>
    </launcherArgs>
 
-   <windowImages/>
+   <windowImages i16="/hu.cubussapiens.modembed.ui/icons/window/cpu_16.png" i48="/hu.cubussapiens.modembed.ui/icons/window/cpu_48.png"/>
 
-
+   <splash
+      location="hu.cubussapiens.modembed.ui"
+      startupProgressRect="5,340,190,15"
+      startupMessageRect="7,318,190,20"
+      startupForegroundColor="000000" />
    <launcher name="modembed">
+      <linux icon="/hu.cubussapiens.modembed.product/cpu_48.xpm"/>
       <solaris/>
       <win useIco="false">
-         <bmp/>
+         <bmp
+            winSmallHigh="/hu.cubussapiens.modembed.product/cpu_16.bmp"
+            winLargeHigh="/hu.cubussapiens.modembed.product/cpu_48.bmp"/>
       </win>
    </launcher>
 
 
    <vm>
    </vm>
+
 
    <plugins>
    </plugins>
@@ -32,7 +50,6 @@
       <feature id="hu.cubussapiens.modembed.core.feature" version="0.1.0.qualifier"/>
       <feature id="hu.cubussapiens.modembed.pic.feature" version="0.1.0.qualifier"/>
       <feature id="hu.cubussapiens.modembed.dependencies.xtext.feature" version="1.0.0.qualifier"/>
-      <feature id="org.eclipse.platform" version="3.6.1.r361_v20100909-9gF78GrkFqw7GrsZnvz0JWNTeb6fue6896L"/>
       <feature id="org.eclipse.help" version="1.2.0.v20100427-7e7jEQFEp4jsWcboLU9l93"/>
       <feature id="org.eclipse.emf.ecore" version="2.6.1.v20100914-1218"/>
       <feature id="org.eclipse.emf.common" version="2.6.0.v20100914-1218"/>
@@ -40,6 +57,7 @@
       <feature id="org.eclipse.emf.edit.ui" version="2.6.0.v20100914-1218"/>
       <feature id="org.eclipse.emf.common.ui" version="2.6.0.v20100914-1218"/>
       <feature id="org.eclipse.emf.ecore.edit" version="2.6.0.v20100914-1218"/>
+      <feature id="org.eclipse.platform" version="3.6.1.r361_v20100909-9gF78GrkFqw7GrsZnvz0JWNTeb6fue6896L"/>
    </features>
 
 
