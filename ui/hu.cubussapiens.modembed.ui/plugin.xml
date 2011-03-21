@@ -84,5 +84,17 @@
             type="org.eclipse.core.resources.textmarker">
       </super>
    </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="org.eclipse.ui.ide.workbench"
+            name="MODembed">
+         <property
+               name="appName"
+               value="MODembed">
+         </property>
+      </product>
+   </extension>
 
 </plugin>
