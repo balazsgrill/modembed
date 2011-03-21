@@ -46,14 +46,28 @@
       <span class="small">by <a href="http://github.com/gbalage">gbalage</a></span></h1>
 
     <div class="description">
-      This project aims to create a development environment for embedded systems, using model based approach at every aspect of the development process.
+      Model-based development environment for embedded systems. Currently supports the 8-bit PIC18
+      microcontroller family.
     </div>
 
-    <h2>Dependencies</h2>
-<p>The project is based on the Eclipse platform, and uses EMF for model handling</p>
-
+    <p>
+    	The project aims to create a full-featured IDE which can support every aspect
+    	of an embedded system design using a model-based approach. 
+    </p>
+    
+    <h2>Features</h2>
+    <p>The currently implemented capabilities of the tool is the following:</p>
+    
+    <ul>
+    <li>A modular assembly language and assembler tool which enables reusable software components
+     - so-called modules to be compiled into a program that can be run by a microcontroller.</li>
+     <li>Easy to use code editor with syntax highlighting and content assist</li>
+     <li>Configuration model with convenient editor for configuration bits and component configuration</li>
+    </ul>
+    
 <h2>Help</h2>
-<p>Help content of the tool is available here: <a href="help/index.html">Online help</a></p>
+<p>Help content of the tool is available as an online version: <a href="help/index.html">Online help</a></p>
+<p>For further information and support please refer to the project page at github: <a href="https://github.com/gbalage/modembed">https://github.com/gbalage/modembed</a></p>
 
 <h2>License</h2>
 <p>All code are released under the EPL licence</p>
@@ -62,9 +76,17 @@
 <br/>
 <br/>      </p>
 
-    <h2>Download</h2>
+	<h2>Releases</h2>
+	<p>Please note that the application is in a very early alpha stage. It surely contains bugs and can behave unexpectedly.
+	The authors of this tool does not take responsibility of any damage that an erroneous hex file does to your hardware.</p>
+	<ul>
+		<li><a href="https://github.com/downloads/gbalage/modembed/modembed_0.1.0_linux_x86.zip">Modembed Release 0.1.0 for Linux x86 (GTK)</a></li>
+		<li><a href="https://github.com/downloads/gbalage/modembed/modembed_0.1.0_win32_x86.zip">Modembed Release 0.1.0 for Windows x86</a></li>
+	</ul>
+
+    <h2>Download source code</h2>
     <p>
-      You can download this project in either
+      You can download the source code in either
       <a href="http://github.com/gbalage/modembed/zipball/master">zip</a> or
       <a href="http://github.com/gbalage/modembed/tarball/master">tar</a> formats.
     </p>
