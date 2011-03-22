@@ -19,6 +19,7 @@ public class GeneralSettingsPage extends FormPage {
 
 	private final ProjectConfigInput input;
 	
+	
 	/**
 	 * @param editor
 	 * @param id
@@ -37,11 +38,11 @@ public class GeneralSettingsPage extends FormPage {
 		SourceDirsFormPart sdirs = new SourceDirsFormPart(managedForm.getForm().getBody(), managedForm.getToolkit(), Section.TITLE_BAR);
 		
 		sdirs.getSection().setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));		
-		sdirs.initialize(managedForm);
+		managedForm.addPart(sdirs);
 
 		BuildOptionsFormPart bopts = new BuildOptionsFormPart(managedForm.getForm().getBody(), managedForm.getToolkit(), Section.TITLE_BAR);
 		bopts.getSection().setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
-		bopts.initialize(managedForm);
+		managedForm.addPart(bopts);
 		
 	}
 }

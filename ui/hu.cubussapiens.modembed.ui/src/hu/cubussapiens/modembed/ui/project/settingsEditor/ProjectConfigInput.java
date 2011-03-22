@@ -3,6 +3,7 @@
  */
 package hu.cubussapiens.modembed.ui.project.settingsEditor;
 
+import org.eclipse.core.databinding.DataBindingContext;
 import org.eclipse.core.resources.IProject;
 
 import project.ProjectConfig;
@@ -17,9 +18,12 @@ public class ProjectConfigInput {
 
 	public final IProject project;
 	
-	public ProjectConfigInput(ProjectConfig config, IProject project) {
+	public final DataBindingContext context;
+	
+	public ProjectConfigInput(ProjectConfig config, IProject project, DataBindingContext context) {
 		this.config = config;
 		this.project = project;
+		this.context = context;
 	}
 	
 }

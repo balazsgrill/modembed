@@ -3,6 +3,9 @@
  */
 package hu.cubussapiens.modembed.ui.project.settingsEditor;
 
+import java.io.IOException;
+
+import org.eclipse.core.databinding.DataBindingContext;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.URI;
@@ -24,9 +27,6 @@ import project.ProjectConfig;
  *
  */
 public class ProjectSettingsEditorPart extends SharedHeaderFormEditor {
-
-	
-
 	private IFile file;
 	
 	private ResourceSet resourceSet;
@@ -57,7 +57,8 @@ public class ProjectSettingsEditorPart extends SharedHeaderFormEditor {
 					throw new IllegalArgumentException("Invalid project config");
 				}
 				
-				generalsettings = new GeneralSettingsPage(this, new ProjectConfigInput(config, file.getProject()));
+				context = new DataBindingContext();
+				generalsettings = new GeneralSettingsPage(this, new ProjectConfigInput(config, file.getProject(), context));
 				
 				setPartName(file.getProject().getName());
 			}
@@ -68,6 +69,8 @@ public class ProjectSettingsEditorPart extends SharedHeaderFormEditor {
 	}
 
 	private GeneralSettingsPage generalsettings;
+
+	private DataBindingContext context;
 	
 	@Override
 	protected void addPages() {
@@ -77,25 +80,30 @@ public class ProjectSettingsEditorPart extends SharedHeaderFormEditor {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		// TODO Auto-generated method stub
-		
+
 	}
 
+	
 	@Override
 	public void doSave(IProgressMonitor monitor) {
-		// TODO Auto-generated method stub
+		monitor.beginTask("Saving", -1);
+		try {
+			commitPages(true);
+			res.save(null);
+			getHeaderForm().dirtyStateChanged();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		
+		monitor.done();
 	}
 
 	@Override
-	public void doSaveAs() {
-		// TODO Auto-generated method stub
-		
+	public void doSaveAs() {	
 	}
 
 	@Override
 	public boolean isSaveAsAllowed() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
@@ -103,6 +111,12 @@ public class ProjectSettingsEditorPart extends SharedHeaderFormEditor {
 	protected void createHeaderContents(IManagedForm headerForm) {
 		headerForm.getForm().setText("Project Configuration");
 		
+	}
+	
+	@Override
+	public void dispose() {
+		context.dispose();
+		super.dispose();
 	}
 	
 }
