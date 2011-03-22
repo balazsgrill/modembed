@@ -2,7 +2,7 @@
 <feature
       id="hu.cubussapiens.modembed.dependencies.xtext.feature"
       label="XText Dependencies"
-      version="1.0.0.qualifier">
+      version="0.1.1.qualifier">
 
    <description url="http://www.example.com/description">
       [Enter Feature Description here.]
@@ -102,6 +102,13 @@
 
    <plugin
          id="org.apache.commons.logging"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.jdt.core"
          download-size="0"
          install-size="0"
          version="0.0.0"
