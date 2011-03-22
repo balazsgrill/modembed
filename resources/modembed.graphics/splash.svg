@@ -425,18 +425,6 @@
          stdDeviation="35.342982"
          id="feGaussianBlur4707" />
     </filter>
-    <filter
-       inkscape:collect="always"
-       id="filter4717"
-       x="-0.042227787"
-       width="1.0844556"
-       y="-0.29915757"
-       height="1.5983151">
-      <feGaussianBlur
-         inkscape:collect="always"
-         stdDeviation="2.5852492"
-         id="feGaussianBlur4719" />
-    </filter>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -468,7 +456,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -1095,7 +1083,7 @@
          x="53.299976"
          sodipodi:role="line"
          id="tspan4721"
-         style="font-style:normal;font-weight:normal;-inkscape-font-specification:Sans">MODembed 0.1.0</tspan></text>
+         style="font-style:normal;font-weight:normal;-inkscape-font-specification:Sans">MODembed</tspan></text>
     <image
        y="471.32581"
        x="49.066528"
@@ -1110,5 +1098,17 @@
        width="642.85712"
        id="rect4683"
        style="opacity:0.9103139;fill:url(#linearGradient4691);fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;filter:url(#filter4705)" />
+    <text
+       xml:space="preserve"
+       style="font-size:28px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
+       x="210.88376"
+       y="326.0668"
+       id="text3172"
+       sodipodi:linespacing="125%"><tspan
+         style="font-style:normal;font-weight:normal;-inkscape-font-specification:Sans"
+         id="tspan3174"
+         sodipodi:role="line"
+         x="210.88376"
+         y="326.0668">0.1.1</tspan></text>
   </g>
 </svg>

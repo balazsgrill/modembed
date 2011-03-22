@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="MODembed" uid="hu.cubussapiens.modembed.product" id="hu.cubussapiens.modembed.ui.product" application="org.eclipse.ui.ide.workbench" version="0.1.0" useFeatures="true" includeLaunchers="true">
+<product name="MODembed" uid="hu.cubussapiens.modembed.product" id="hu.cubussapiens.modembed.ui.product" application="org.eclipse.ui.ide.workbench" version="0.1.1" useFeatures="true" includeLaunchers="true">
 
    <aboutInfo>
       <image path="/hu.cubussapiens.modembed.ui/icons/window/cpu_50.png"/>
@@ -25,8 +25,8 @@ web page: http://gbalage.github.com/modembed/
 
    <splash
       location="hu.cubussapiens.modembed.ui"
-      startupProgressRect="5,340,190,15"
-      startupMessageRect="7,318,190,20"
+      startupProgressRect="5,182,349,15"
+      startupMessageRect="7,162,345,20"
       startupForegroundColor="000000" />
    <launcher name="modembed">
       <linux icon="/hu.cubussapiens.modembed.product/cpu_48.xpm"/>
@@ -38,16 +38,18 @@ web page: http://gbalage.github.com/modembed/
       </win>
    </launcher>
 
+
    <vm>
    </vm>
+
 
    <plugins>
    </plugins>
 
    <features>
-      <feature id="hu.cubussapiens.modembed.core.feature" version="0.1.0.qualifier"/>
-      <feature id="hu.cubussapiens.modembed.pic.feature" version="0.1.0.qualifier"/>
-      <feature id="hu.cubussapiens.modembed.dependencies.xtext.feature" version="1.0.0.qualifier"/>
+      <feature id="hu.cubussapiens.modembed.core.feature" version="0.1.1.qualifier"/>
+      <feature id="hu.cubussapiens.modembed.pic.feature" version="0.1.1.qualifier"/>
+      <feature id="hu.cubussapiens.modembed.dependencies.xtext.feature" version="0.1.1.qualifier"/>
       <feature id="org.eclipse.help" version="1.2.0.v20100427-7e7jEQFEp4jsWcboLU9l93"/>
       <feature id="org.eclipse.emf.ecore" version="2.6.1.v20100914-1218"/>
       <feature id="org.eclipse.emf.common" version="2.6.0.v20100914-1218"/>
