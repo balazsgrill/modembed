@@ -371,12 +371,39 @@
  <extension
        point="hu.cubussapiens.modembed.instructionsets">
     <instructionset
+          id="microchip.pic10.iset"
+          model="pic10.instructionset">
+    </instructionset>
+    <instructionset
+          id="microchip.pic12.iset"
+          model="pic12.instructionset">
+    </instructionset>
+    <instructionset
+          id="microchip.pic16.iset"
+          model="pic16.instructionset">
+    </instructionset>
+    <instructionset
           id="microchip.pic18.iset"
           model="pic18.instructionset">
     </instructionset>
  </extension>
  <extension
        point="hu.cubussapiens.modembed.architectures">
+    <architecture
+          id="microchip.pic10"
+          instructionSet="microchip.pic10.iset"
+          name="Microchip PIC10">
+    </architecture>
+    <architecture
+          id="microchip.pic12"
+          instructionSet="microchip.pic12.iset"
+          name="Microchip PIC12">
+    </architecture>
+    <architecture
+          id="microchip.pic16"
+          instructionSet="microchip.pic16.iset"
+          name="Microchip PIC16">
+    </architecture>
     <architecture
           id="microchip.pic18"
           instructionSet="microchip.pic18.iset"

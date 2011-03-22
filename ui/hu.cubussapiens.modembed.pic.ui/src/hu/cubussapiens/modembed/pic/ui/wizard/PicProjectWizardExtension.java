@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
+import org.eclipse.jface.viewers.ViewerFilter;
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
@@ -44,10 +45,16 @@ import project.ProjectConfig;
  * @author balazs.grill
  *
  */
-public class Pic18ProjectWizardExtension implements IProjectWizardExtension {
+public class PicProjectWizardExtension implements IProjectWizardExtension {
 
 	private ContentProposedTextViewer tv;
 
+	private final ViewerFilter filter;
+	
+	public PicProjectWizardExtension(ViewerFilter filter) {
+		this.filter = filter;
+	}
+	
 	/* (non-Javadoc)
 	 * @see hu.cubussapiens.modembed.ui.IProjectWizardExtension#createControls(org.eclipse.swt.widgets.Composite)
 	 */
@@ -63,7 +70,7 @@ public class Pic18ProjectWizardExtension implements IProjectWizardExtension {
 		tv = new ContentProposedTextViewer(c, SWT.BORDER);
 		tv.setContentProvider(new PicTargetContentProvider());
 		tv.setLabelProvider(new PicTargetLabelProvider());
-		tv.setFilter(new Pic18ArchitectureCPUFilter());
+		tv.setFilter(filter);
 		tv.setInput(PICPlugin.getDefault().getDefinitions());
 		tv.getControl().setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
 		tv.addSelectionChangedListener(new ISelectionChangedListener() {
