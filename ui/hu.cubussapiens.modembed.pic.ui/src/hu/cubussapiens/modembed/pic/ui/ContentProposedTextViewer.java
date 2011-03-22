@@ -17,6 +17,7 @@ import org.eclipse.jface.viewers.IStructuredContentProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.StructuredSelection;
+import org.eclipse.jface.viewers.ViewerFilter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
@@ -33,6 +34,8 @@ public class ContentProposedTextViewer extends ContentViewer {
 	private final Text text;
 	
 	private final ContentProviderBasedContentProposal proposalProvider;
+	
+	private ViewerFilter filter = null;
 	
 	public ContentProposedTextViewer(Composite parent, int style) {
 		text = new Text(parent, style);
@@ -73,11 +76,16 @@ public class ContentProposedTextViewer extends ContentViewer {
 		Object element = proposalProvider.getElement(text.getText());
 		return (element == null) ? new StructuredSelection() : new StructuredSelection(element);
 	}
-
+	
+	public void setFilter(ViewerFilter filter) {
+		this.filter = filter;
+	}
+	
 	@Override
 	public void refresh() {
 		proposalProvider.setContentProvider((IStructuredContentProvider)getContentProvider());
 		proposalProvider.setLabelProvider((ILabelProvider)getLabelProvider());
+		proposalProvider.setFilter(filter, this);
 		proposalProvider.setInput(getInput());
 	}
 

@@ -44,7 +44,7 @@ import project.ProjectConfig;
  * @author balazs.grill
  *
  */
-public class PicProjectWizardExtension implements IProjectWizardExtension {
+public class Pic18ProjectWizardExtension implements IProjectWizardExtension {
 
 	private ContentProposedTextViewer tv;
 
@@ -63,6 +63,7 @@ public class PicProjectWizardExtension implements IProjectWizardExtension {
 		tv = new ContentProposedTextViewer(c, SWT.BORDER);
 		tv.setContentProvider(new PicTargetContentProvider());
 		tv.setLabelProvider(new PicTargetLabelProvider());
+		tv.setFilter(new Pic18ArchitectureCPUFilter());
 		tv.setInput(PICPlugin.getDefault().getDefinitions());
 		tv.getControl().setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
 		tv.addSelectionChangedListener(new ISelectionChangedListener() {

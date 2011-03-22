@@ -5,7 +5,7 @@
          point="hu.cubussapiens.modembed.ui.project.extensions">
       <projectExtension
             architectureID="microchip.pic18"
-            extensionClass="hu.cubussapiens.modembed.pic.ui.wizard.PicProjectExtension">
+            extensionClass="hu.cubussapiens.modembed.pic.ui.wizard.Pic18ProjectExtension">
       </projectExtension>
    </extension>
 

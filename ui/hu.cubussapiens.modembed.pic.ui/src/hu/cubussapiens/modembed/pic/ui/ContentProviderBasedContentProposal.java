@@ -12,6 +12,8 @@ import java.util.Map;
 import org.eclipse.jface.fieldassist.SimpleContentProposalProvider;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.IStructuredContentProvider;
+import org.eclipse.jface.viewers.Viewer;
+import org.eclipse.jface.viewers.ViewerFilter;
 
 /**
  * @author balazs.grill
@@ -27,6 +29,14 @@ public class ContentProviderBasedContentProposal extends SimpleContentProposalPr
 	
 	private final Map<String, Object> nametoobject = new HashMap<String, Object>();
 	
+	private ViewerFilter filter = null;
+	private Viewer viewer = null;
+	
+	public void setFilter(ViewerFilter filter, Viewer viewer){
+		this.filter = filter;
+		this.viewer = viewer;
+	}
+	
 	/**
 	 * @param proposals
 	 */
@@ -37,6 +47,9 @@ public class ContentProviderBasedContentProposal extends SimpleContentProposalPr
 
 	public void refresh(){
 		Object[] elements = contentProvider.getElements(input);
+		if (filter != null){
+			elements = filter.filter(viewer, input, elements);
+		}
 		List<String> names = new ArrayList<String>(elements.length);
 		for(int i=0;i<elements.length;i++){
 			String name = labelProvider.getText(elements[i]);
