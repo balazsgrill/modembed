@@ -14,6 +14,15 @@ import java.net.URL;
 import java.util.HashSet;
 import java.util.Set;
 
+import modembedconfig.instance.Configuration;
+import modembedconfig.instance.InstanceFactory;
+
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IProject;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
@@ -91,7 +100,7 @@ public class PicProjectWizardExtension implements IProjectWizardExtension {
 	 * @see hu.cubussapiens.modembed.ui.IProjectWizardExtension#includeData(project.ProjectConfig)
 	 */
 	@Override
-	public void includeData(ProjectConfig config) {
+	public void includeData(IProject project, ProjectConfig config) {
 		if (selection != null){
 			try {
 				PicCPUType cpu = PICPlugin.getDefault().getCPUType(config.eResource().getResourceSet(), (URL)selection);
@@ -99,6 +108,16 @@ public class PicProjectWizardExtension implements IProjectWizardExtension {
 				pc.setCpu(cpu);
 				pc.setConfiguration("default.config");
 				config.getExtensions().add(pc);
+				
+				IFile configfile = project.getFile("default.config");
+				ResourceSet rs = new ResourceSetImpl();
+				Resource r = rs.createResource(URI.createPlatformResourceURI(configfile.getFullPath().toString(), true));
+				Configuration configi = InstanceFactory.eINSTANCE.createConfiguration();
+				configi.setName("Default config");
+				configi.setScheme(cpu.getConfiguration().getScheme());
+				r.getContents().add(configi);
+				r.save(null);
+				r.unload();
 			} catch (IOException e) {
 				e.printStackTrace();
 			}

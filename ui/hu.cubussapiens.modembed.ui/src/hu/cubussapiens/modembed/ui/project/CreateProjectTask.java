@@ -137,7 +137,7 @@ public class CreateProjectTask implements IRunnableWithProgress {
 			
 			if (wextensions != null){
 				for(IProjectWizardExtension we : wextensions){
-					we.includeData(pc);
+					we.includeData(project, pc);
 					monitor.worked(1);
 				}
 			}

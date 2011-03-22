@@ -3,6 +3,7 @@
  */
 package hu.cubussapiens.modembed.ui;
 
+import org.eclipse.core.resources.IProject;
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
@@ -20,7 +21,7 @@ public interface IProjectWizardExtension {
 	
 	public boolean validate(WizardPage page);
 	
-	public void includeData(ProjectConfig config);
+	public void includeData(IProject project, ProjectConfig config);
 	
 	public void addPropertyListener(IPropertyListener pl);
 	
