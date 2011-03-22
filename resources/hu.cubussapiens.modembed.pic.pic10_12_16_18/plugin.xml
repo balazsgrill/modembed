@@ -31,187 +31,187 @@
 		<cputype model="pic10/PIC10F202.pic" typename="PIC10F202"></cputype>
 		<cputype model="pic10/PIC10F220.pic" typename="PIC10F220"></cputype>
 		<cputype model="pic10/PIC10F200.pic" typename="PIC10F200"></cputype>
-		<cputype model="pic18/PIC18F8525.pic" typename="PIC18F8525"></cputype>
-		<cputype model="pic18/PIC18F8520.pic" typename="PIC18F8520"></cputype>
-		<cputype model="pic18/PIC18LF24J10.pic" typename="PIC18LF24J10"></cputype>
-		<cputype model="pic18/PIC18F64J90.pic" typename="PIC18F64J90"></cputype>
-		<cputype model="pic18/PIC18F4539.pic" typename="PIC18F4539"></cputype>
-		<cputype model="pic18/PIC18F4331.pic" typename="PIC18F4331"></cputype>
-		<cputype model="pic18/PIC18F4610.pic" typename="PIC18F4610"></cputype>
-		<cputype model="pic18/PIC18F85J50.pic" typename="PIC18F85J50"></cputype>
-		<cputype model="pic18/PIC18F83J90.pic" typename="PIC18F83J90"></cputype>
-		<cputype model="pic18/PIC18F242.pic" typename="PIC18F242"></cputype>
-		<cputype model="pic18/PIC18F2455.pic" typename="PIC18F2455"></cputype>
-		<cputype model="pic18/PIC18F8393.pic" typename="PIC18F8393"></cputype>
-		<cputype model="pic18/PIC18F4455.pic" typename="PIC18F4455"></cputype>
-		<cputype model="pic18/PIC18F6720.pic" typename="PIC18F6720"></cputype>
-		<cputype model="pic18/PIC18F4520.pic" typename="PIC18F4520"></cputype>
-		<cputype model="pic18/PIC18F2320.pic" typename="PIC18F2320"></cputype>
-		<cputype model="pic18/PIC18F87J11.pic" typename="PIC18F87J11"></cputype>
-		<cputype model="pic18/PIC18F1230.pic" typename="PIC18F1230"></cputype>
-		<cputype model="pic18/PIC18F4585.pic" typename="PIC18F4585"></cputype>
-		<cputype model="pic18/PIC18F8621.pic" typename="PIC18F8621"></cputype>
-		<cputype model="pic18/PIC18F67J11.pic" typename="PIC18F67J11"></cputype>
-		<cputype model="pic18/PIC18F65J90.pic" typename="PIC18F65J90"></cputype>
-		<cputype model="pic18/PIC18F65J10.pic" typename="PIC18F65J10"></cputype>
-		<cputype model="pic18/PIC18F44J10.pic" typename="PIC18F44J10"></cputype>
-		<cputype model="pic18/PIC18F4450.pic" typename="PIC18F4450"></cputype>
-		<cputype model="pic18/PIC18F8628.pic" typename="PIC18F8628"></cputype>
-		<cputype model="pic18/PIC18F8313.pic" typename="PIC18F8313"></cputype>
-		<cputype model="pic18/PIC18F65J11.pic" typename="PIC18F65J11"></cputype>
-		<cputype model="pic18/PIC18F6520.pic" typename="PIC18F6520"></cputype>
-		<cputype model="pic18/PIC18F26K20.pic" typename="PIC18F26K20"></cputype>
-		<cputype model="pic18/PIC18F452.pic" typename="PIC18F452"></cputype>
-		<cputype model="pic18/PIC18F2321.pic" typename="PIC18F2321"></cputype>
-		<cputype model="pic18/PIC18F6413.pic" typename="PIC18F6413"></cputype>
-		<cputype model="pic18/PIC18C858.pic" typename="PIC18C858"></cputype>
-		<cputype model="pic18/PIC18F6628.pic" typename="PIC18F6628"></cputype>
-		<cputype model="pic18/PIC18F2220.pic" typename="PIC18F2220"></cputype>
-		<cputype model="pic18/PIC18F8410.pic" typename="PIC18F8410"></cputype>
-		<cputype model="pic18/PIC18F2410.pic" typename="PIC18F2410"></cputype>
-		<cputype model="pic18/PIC18F4321.pic" typename="PIC18F4321"></cputype>
-		<cputype model="pic18/PIC18F86J60.pic" typename="PIC18F86J60"></cputype>
-		<cputype model="pic18/PIC18F6493.pic" typename="PIC18F6493"></cputype>
-		<cputype model="pic18/PIC18F4221.pic" typename="PIC18F4221"></cputype>
-		<cputype model="pic18/PIC18F6620.pic" typename="PIC18F6620"></cputype>
-		<cputype model="pic18/PIC18F86J50.pic" typename="PIC18F86J50"></cputype>
-		<cputype model="pic18/PIC18F45K20.pic" typename="PIC18F45K20"></cputype>
-		<cputype model="pic18/PIC18F448.pic" typename="PIC18F448"></cputype>
-		<cputype model="pic18/PIC18F4523.pic" typename="PIC18F4523"></cputype>
-		<cputype model="pic18/PIC18F6410.pic" typename="PIC18F6410"></cputype>
-		<cputype model="pic18/PIC18F6627.pic" typename="PIC18F6627"></cputype>
-		<cputype model="pic18/PIC18F6680.pic" typename="PIC18F6680"></cputype>
-		<cputype model="pic18/PIC18F13K50.pic" typename="PIC18F13K50"></cputype>
-		<cputype model="pic18/PIC18F2520.pic" typename="PIC18F2520"></cputype>
-		<cputype model="pic18/PIC18F252.pic" typename="PIC18F252"></cputype>
-		<cputype model="pic18/PIC18F4458.pic" typename="PIC18F4458"></cputype>
-		<cputype model="pic18/PIC18F8620.pic" typename="PIC18F8620"></cputype>
-		<cputype model="pic18/PIC18F84J90.pic" typename="PIC18F84J90"></cputype>
-		<cputype model="pic18/PIC18F6527.pic" typename="PIC18F6527"></cputype>
-		<cputype model="pic18/PIC18F2221.pic" typename="PIC18F2221"></cputype>
-		<cputype model="pic18/PIC18F2553.pic" typename="PIC18F2553"></cputype>
-		<cputype model="pic18/PIC18F2525.pic" typename="PIC18F2525"></cputype>
-		<cputype model="pic18/PIC18F2610.pic" typename="PIC18F2610"></cputype>
-		<cputype model="pic18/PIC18F4682.pic" typename="PIC18F4682"></cputype>
-		<cputype model="pic18/PIC18C252.pic" typename="PIC18C252"></cputype>
-		<cputype model="pic18/PIC18F4410.pic" typename="PIC18F4410"></cputype>
-		<cputype model="pic18/PIC18F8723.pic" typename="PIC18F8723"></cputype>
-		<cputype model="pic18/PIC18F86J10.pic" typename="PIC18F86J10"></cputype>
-		<cputype model="pic18/PIC18F2620.pic" typename="PIC18F2620"></cputype>
-		<cputype model="pic18/PIC18F4620.pic" typename="PIC18F4620"></cputype>
-		<cputype model="pic18/PIC18C242.pic" typename="PIC18C242"></cputype>
-		<cputype model="pic18/PIC18F2685.pic" typename="PIC18F2685"></cputype>
-		<cputype model="pic18/PIC18F1320.pic" typename="PIC18F1320"></cputype>
-		<cputype model="pic18/PIC18F1220.pic" typename="PIC18F1220"></cputype>
-		<cputype model="pic18/PIC18F85J90.pic" typename="PIC18F85J90"></cputype>
-		<cputype model="pic18/PIC18F84J11.pic" typename="PIC18F84J11"></cputype>
-		<cputype model="pic18/PIC18F45J10.pic" typename="PIC18F45J10"></cputype>
-		<cputype model="pic18/PIC18F2682.pic" typename="PIC18F2682"></cputype>
-		<cputype model="pic18/PIC18F4439.pic" typename="PIC18F4439"></cputype>
-		<cputype model="pic18/PIC18F4420.pic" typename="PIC18F4420"></cputype>
-		<cputype model="pic18/PIC18F6313.pic" typename="PIC18F6313"></cputype>
-		<cputype model="pic18/PIC18F66J60.pic" typename="PIC18F66J60"></cputype>
-		<cputype model="pic18/PIC18F2515.pic" typename="PIC18F2515"></cputype>
-		<cputype model="pic18/PIC18F8722.pic" typename="PIC18F8722"></cputype>
-		<cputype model="pic18/PIC18F6490.pic" typename="PIC18F6490"></cputype>
-		<cputype model="pic18/PIC18F96J60.pic" typename="PIC18F96J60"></cputype>
-		<cputype model="pic18/PIC18F67J50.pic" typename="PIC18F67J50"></cputype>
-		<cputype model="pic18/PIC18F2585.pic" typename="PIC18F2585"></cputype>
-		<cputype model="pic18/PIC18F8493.pic" typename="PIC18F8493"></cputype>
-		<cputype model="pic18/PIC18F25K20.pic" typename="PIC18F25K20"></cputype>
-		<cputype model="pic18/PIC18F85J11.pic" typename="PIC18F85J11"></cputype>
-		<cputype model="pic18/PIC18F2439.pic" typename="PIC18F2439"></cputype>
-		<cputype model="pic18/PIC18F6310.pic" typename="PIC18F6310"></cputype>
-		<cputype model="pic18/PIC18F97J60.pic" typename="PIC18F97J60"></cputype>
-		<cputype model="pic18/PIC18F8527.pic" typename="PIC18F8527"></cputype>
-		<cputype model="pic18/PIC18F8390.pic" typename="PIC18F8390"></cputype>
-		<cputype model="pic18/PIC18C658.pic" typename="PIC18C658"></cputype>
-		<cputype model="pic18/PIC18F14K50.pic" typename="PIC18F14K50"></cputype>
-		<cputype model="pic18/PIC18F86J65.pic" typename="PIC18F86J65"></cputype>
-		<cputype model="pic18/PIC18F63J90.pic" typename="PIC18F63J90"></cputype>
-		<cputype model="pic18/PIC18F2450.pic" typename="PIC18F2450"></cputype>
-		<cputype model="pic18/PIC18F44K20.pic" typename="PIC18F44K20"></cputype>
-		<cputype model="pic18/PIC18F8720.pic" typename="PIC18F8720"></cputype>
-		<cputype model="pic18/PIC18F66J50.pic" typename="PIC18F66J50"></cputype>
-		<cputype model="pic18/PIC18F2510.pic" typename="PIC18F2510"></cputype>
-		<cputype model="pic18/PIC18F87J50.pic" typename="PIC18F87J50"></cputype>
-		<cputype model="pic18/PIC18F66J16.pic" typename="PIC18F66J16"></cputype>
-		<cputype model="pic18/PIC18F6393.pic" typename="PIC18F6393"></cputype>
-		<cputype model="pic18/PIC18F4580.pic" typename="PIC18F4580"></cputype>
-		<cputype model="pic18/PIC18F4680.pic" typename="PIC18F4680"></cputype>
-		<cputype model="pic18/PIC18F66J15.pic" typename="PIC18F66J15"></cputype>
-		<cputype model="pic18/PIC18C452.pic" typename="PIC18C452"></cputype>
-		<cputype model="pic18/PIC18F8680.pic" typename="PIC18F8680"></cputype>
-		<cputype model="pic18/PIC18F66J55.pic" typename="PIC18F66J55"></cputype>
-		<cputype model="pic18/PIC18F25J10.pic" typename="PIC18F25J10"></cputype>
-		<cputype model="pic18/PIC18F4510.pic" typename="PIC18F4510"></cputype>
-		<cputype model="pic18/PIC18F67J10.pic" typename="PIC18F67J10"></cputype>
-		<cputype model="pic18/PIC18F2680.pic" typename="PIC18F2680"></cputype>
-		<cputype model="pic18/PIC18F66J10.pic" typename="PIC18F66J10"></cputype>
-		<cputype model="pic18/PIC18F442.pic" typename="PIC18F442"></cputype>
-		<cputype model="pic18/PIC18F258.pic" typename="PIC18F258"></cputype>
-		<cputype model="pic18/PIC18F1330.pic" typename="PIC18F1330"></cputype>
-		<cputype model="pic18/PIC18F4480.pic" typename="PIC18F4480"></cputype>
-		<cputype model="pic18/PIC18F2420.pic" typename="PIC18F2420"></cputype>
-		<cputype model="pic18/PIC18F8490.pic" typename="PIC18F8490"></cputype>
-		<cputype model="pic18/PIC18F24K20.pic" typename="PIC18F24K20"></cputype>
-		<cputype model="pic18/PIC18F8413.pic" typename="PIC18F8413"></cputype>
-		<cputype model="pic18/PIC18F4553.pic" typename="PIC18F4553"></cputype>
-		<cputype model="pic18/PIC18F2550.pic" typename="PIC18F2550"></cputype>
-		<cputype model="pic18/PIC18F87J10.pic" typename="PIC18F87J10"></cputype>
-		<cputype model="pic18/PIC18F8622.pic" typename="PIC18F8622"></cputype>
-		<cputype model="pic18/PIC18F24J10.pic" typename="PIC18F24J10"></cputype>
-		<cputype model="pic18/PIC18F2539.pic" typename="PIC18F2539"></cputype>
-		<cputype model="pic18/PIC18F2331.pic" typename="PIC18F2331"></cputype>
-		<cputype model="pic18/PIC18F4320.pic" typename="PIC18F4320"></cputype>
-		<cputype model="pic18/PIC18F86J16.pic" typename="PIC18F86J16"></cputype>
-		<cputype model="pic18/PIC18F2431.pic" typename="PIC18F2431"></cputype>
-		<cputype model="pic18/PIC18F4423.pic" typename="PIC18F4423"></cputype>
-		<cputype model="pic18/PIC18F4685.pic" typename="PIC18F4685"></cputype>
-		<cputype model="pic18/PIC18F66J65.pic" typename="PIC18F66J65"></cputype>
-		<cputype model="pic18/PIC18C801.pic" typename="PIC18C801"></cputype>
-		<cputype model="pic18/PIC18F458.pic" typename="PIC18F458"></cputype>
-		<cputype model="pic18/PIC18F65J15.pic" typename="PIC18F65J15"></cputype>
-		<cputype model="pic18/PIC18F46K20.pic" typename="PIC18F46K20"></cputype>
-		<cputype model="pic18/PIC18F4431.pic" typename="PIC18F4431"></cputype>
-		<cputype model="pic18/PIC18F83J11.pic" typename="PIC18F83J11"></cputype>
-		<cputype model="pic18/PIC18F248.pic" typename="PIC18F248"></cputype>
-		<cputype model="pic18/PIC18F85J15.pic" typename="PIC18F85J15"></cputype>
-		<cputype model="pic18/PIC18F6723.pic" typename="PIC18F6723"></cputype>
-		<cputype model="pic18/PIC18F6621.pic" typename="PIC18F6621"></cputype>
-		<cputype model="pic18/PIC18LF25J10.pic" typename="PIC18LF25J10"></cputype>
-		<cputype model="pic18/PIC18LF44J10.pic" typename="PIC18LF44J10"></cputype>
-		<cputype model="pic18/PIC18F2458.pic" typename="PIC18F2458"></cputype>
-		<cputype model="pic18/PIC18F6525.pic" typename="PIC18F6525"></cputype>
-		<cputype model="pic18/PIC18F2423.pic" typename="PIC18F2423"></cputype>
-		<cputype model="pic18/PIC18F8627.pic" typename="PIC18F8627"></cputype>
-		<cputype model="pic18/PIC18F65J50.pic" typename="PIC18F65J50"></cputype>
-		<cputype model="pic18/PIC18F8585.pic" typename="PIC18F8585"></cputype>
-		<cputype model="pic18/PIC18F66J11.pic" typename="PIC18F66J11"></cputype>
-		<cputype model="pic18/PIC18F2523.pic" typename="PIC18F2523"></cputype>
-		<cputype model="pic18/PIC18F8310.pic" typename="PIC18F8310"></cputype>
-		<cputype model="pic18/PIC18F67J60.pic" typename="PIC18F67J60"></cputype>
-		<cputype model="pic18/PIC18F96J65.pic" typename="PIC18F96J65"></cputype>
-		<cputype model="pic18/PIC18C601.pic" typename="PIC18C601"></cputype>
-		<cputype model="pic18/PIC18F86J11.pic" typename="PIC18F86J11"></cputype>
-		<cputype model="pic18/PIC18F6622.pic" typename="PIC18F6622"></cputype>
-		<cputype model="pic18/PIC18F2580.pic" typename="PIC18F2580"></cputype>
-		<cputype model="pic18/PIC18F86J55.pic" typename="PIC18F86J55"></cputype>
-		<cputype model="pic18/PIC18F63J11.pic" typename="PIC18F63J11"></cputype>
-		<cputype model="pic18/PIC18F85J10.pic" typename="PIC18F85J10"></cputype>
-		<cputype model="pic18/PIC18F6722.pic" typename="PIC18F6722"></cputype>
-		<cputype model="pic18/PIC18F6390.pic" typename="PIC18F6390"></cputype>
-		<cputype model="pic18/PIC18F86J15.pic" typename="PIC18F86J15"></cputype>
-		<cputype model="pic18/PIC18F6585.pic" typename="PIC18F6585"></cputype>
-		<cputype model="pic18/PIC18F2480.pic" typename="PIC18F2480"></cputype>
-		<cputype model="pic18/PIC18F4220.pic" typename="PIC18F4220"></cputype>
-		<cputype model="pic18/PIC18F87J60.pic" typename="PIC18F87J60"></cputype>
-		<cputype model="pic18/PIC18C442.pic" typename="PIC18C442"></cputype>
-		<cputype model="pic18/PIC18F4525.pic" typename="PIC18F4525"></cputype>
-		<cputype model="pic18/PIC18F4515.pic" typename="PIC18F4515"></cputype>
-		<cputype model="pic18/PIC18LF45J10.pic" typename="PIC18LF45J10"></cputype>
-		<cputype model="pic18/PIC18F64J11.pic" typename="PIC18F64J11"></cputype>
-		<cputype model="pic18/PIC18F4550.pic" typename="PIC18F4550"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F8525.pic" typename="PIC18F8525"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F8520.pic" typename="PIC18F8520"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18LF24J10.pic" typename="PIC18LF24J10"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F64J90.pic" typename="PIC18F64J90"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F4539.pic" typename="PIC18F4539"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F4331.pic" typename="PIC18F4331"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F4610.pic" typename="PIC18F4610"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F85J50.pic" typename="PIC18F85J50"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F83J90.pic" typename="PIC18F83J90"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F242.pic" typename="PIC18F242"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F2455.pic" typename="PIC18F2455"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F8393.pic" typename="PIC18F8393"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F4455.pic" typename="PIC18F4455"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F6720.pic" typename="PIC18F6720"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F4520.pic" typename="PIC18F4520"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F2320.pic" typename="PIC18F2320"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F87J11.pic" typename="PIC18F87J11"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F1230.pic" typename="PIC18F1230"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F4585.pic" typename="PIC18F4585"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F8621.pic" typename="PIC18F8621"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F67J11.pic" typename="PIC18F67J11"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F65J90.pic" typename="PIC18F65J90"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F65J10.pic" typename="PIC18F65J10"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F44J10.pic" typename="PIC18F44J10"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F4450.pic" typename="PIC18F4450"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F8628.pic" typename="PIC18F8628"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F8313.pic" typename="PIC18F8313"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F65J11.pic" typename="PIC18F65J11"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F6520.pic" typename="PIC18F6520"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F26K20.pic" typename="PIC18F26K20"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F452.pic" typename="PIC18F452"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F2321.pic" typename="PIC18F2321"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F6413.pic" typename="PIC18F6413"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18C858.pic" typename="PIC18C858"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F6628.pic" typename="PIC18F6628"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F2220.pic" typename="PIC18F2220"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F8410.pic" typename="PIC18F8410"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F2410.pic" typename="PIC18F2410"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F4321.pic" typename="PIC18F4321"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F86J60.pic" typename="PIC18F86J60"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F6493.pic" typename="PIC18F6493"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F4221.pic" typename="PIC18F4221"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F6620.pic" typename="PIC18F6620"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F86J50.pic" typename="PIC18F86J50"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F45K20.pic" typename="PIC18F45K20"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F448.pic" typename="PIC18F448"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F4523.pic" typename="PIC18F4523"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F6410.pic" typename="PIC18F6410"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F6627.pic" typename="PIC18F6627"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F6680.pic" typename="PIC18F6680"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F13K50.pic" typename="PIC18F13K50"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F2520.pic" typename="PIC18F2520"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F252.pic" typename="PIC18F252"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F4458.pic" typename="PIC18F4458"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F8620.pic" typename="PIC18F8620"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F84J90.pic" typename="PIC18F84J90"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F6527.pic" typename="PIC18F6527"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F2221.pic" typename="PIC18F2221"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F2553.pic" typename="PIC18F2553"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F2525.pic" typename="PIC18F2525"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F2610.pic" typename="PIC18F2610"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F4682.pic" typename="PIC18F4682"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18C252.pic" typename="PIC18C252"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F4410.pic" typename="PIC18F4410"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F8723.pic" typename="PIC18F8723"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F86J10.pic" typename="PIC18F86J10"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F2620.pic" typename="PIC18F2620"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F4620.pic" typename="PIC18F4620"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18C242.pic" typename="PIC18C242"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F2685.pic" typename="PIC18F2685"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F1320.pic" typename="PIC18F1320"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F1220.pic" typename="PIC18F1220"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F85J90.pic" typename="PIC18F85J90"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F84J11.pic" typename="PIC18F84J11"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F45J10.pic" typename="PIC18F45J10"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F2682.pic" typename="PIC18F2682"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F4439.pic" typename="PIC18F4439"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F4420.pic" typename="PIC18F4420"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F6313.pic" typename="PIC18F6313"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F66J60.pic" typename="PIC18F66J60"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F2515.pic" typename="PIC18F2515"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F8722.pic" typename="PIC18F8722"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F6490.pic" typename="PIC18F6490"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F96J60.pic" typename="PIC18F96J60"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F67J50.pic" typename="PIC18F67J50"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F2585.pic" typename="PIC18F2585"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F8493.pic" typename="PIC18F8493"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F25K20.pic" typename="PIC18F25K20"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F85J11.pic" typename="PIC18F85J11"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F2439.pic" typename="PIC18F2439"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F6310.pic" typename="PIC18F6310"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F97J60.pic" typename="PIC18F97J60"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F8527.pic" typename="PIC18F8527"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F8390.pic" typename="PIC18F8390"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18C658.pic" typename="PIC18C658"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F14K50.pic" typename="PIC18F14K50"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F86J65.pic" typename="PIC18F86J65"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F63J90.pic" typename="PIC18F63J90"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F2450.pic" typename="PIC18F2450"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F44K20.pic" typename="PIC18F44K20"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F8720.pic" typename="PIC18F8720"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F66J50.pic" typename="PIC18F66J50"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F2510.pic" typename="PIC18F2510"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F87J50.pic" typename="PIC18F87J50"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F66J16.pic" typename="PIC18F66J16"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F6393.pic" typename="PIC18F6393"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F4580.pic" typename="PIC18F4580"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F4680.pic" typename="PIC18F4680"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F66J15.pic" typename="PIC18F66J15"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18C452.pic" typename="PIC18C452"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F8680.pic" typename="PIC18F8680"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F66J55.pic" typename="PIC18F66J55"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F25J10.pic" typename="PIC18F25J10"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F4510.pic" typename="PIC18F4510"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F67J10.pic" typename="PIC18F67J10"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F2680.pic" typename="PIC18F2680"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F66J10.pic" typename="PIC18F66J10"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F442.pic" typename="PIC18F442"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F258.pic" typename="PIC18F258"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F1330.pic" typename="PIC18F1330"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F4480.pic" typename="PIC18F4480"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F2420.pic" typename="PIC18F2420"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F8490.pic" typename="PIC18F8490"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F24K20.pic" typename="PIC18F24K20"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F8413.pic" typename="PIC18F8413"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F4553.pic" typename="PIC18F4553"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F2550.pic" typename="PIC18F2550"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F87J10.pic" typename="PIC18F87J10"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F8622.pic" typename="PIC18F8622"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F24J10.pic" typename="PIC18F24J10"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F2539.pic" typename="PIC18F2539"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F2331.pic" typename="PIC18F2331"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F4320.pic" typename="PIC18F4320"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F86J16.pic" typename="PIC18F86J16"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F2431.pic" typename="PIC18F2431"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F4423.pic" typename="PIC18F4423"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F4685.pic" typename="PIC18F4685"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F66J65.pic" typename="PIC18F66J65"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18C801.pic" typename="PIC18C801"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F458.pic" typename="PIC18F458"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F65J15.pic" typename="PIC18F65J15"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F46K20.pic" typename="PIC18F46K20"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F4431.pic" typename="PIC18F4431"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F83J11.pic" typename="PIC18F83J11"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F248.pic" typename="PIC18F248"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F85J15.pic" typename="PIC18F85J15"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F6723.pic" typename="PIC18F6723"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F6621.pic" typename="PIC18F6621"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18LF25J10.pic" typename="PIC18LF25J10"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18LF44J10.pic" typename="PIC18LF44J10"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F2458.pic" typename="PIC18F2458"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F6525.pic" typename="PIC18F6525"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F2423.pic" typename="PIC18F2423"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F8627.pic" typename="PIC18F8627"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F65J50.pic" typename="PIC18F65J50"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F8585.pic" typename="PIC18F8585"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F66J11.pic" typename="PIC18F66J11"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F2523.pic" typename="PIC18F2523"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F8310.pic" typename="PIC18F8310"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F67J60.pic" typename="PIC18F67J60"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F96J65.pic" typename="PIC18F96J65"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18C601.pic" typename="PIC18C601"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F86J11.pic" typename="PIC18F86J11"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F6622.pic" typename="PIC18F6622"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F2580.pic" typename="PIC18F2580"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F86J55.pic" typename="PIC18F86J55"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F63J11.pic" typename="PIC18F63J11"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F85J10.pic" typename="PIC18F85J10"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F6722.pic" typename="PIC18F6722"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F6390.pic" typename="PIC18F6390"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F86J15.pic" typename="PIC18F86J15"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F6585.pic" typename="PIC18F6585"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F2480.pic" typename="PIC18F2480"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F4220.pic" typename="PIC18F4220"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F87J60.pic" typename="PIC18F87J60"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18C442.pic" typename="PIC18C442"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F4525.pic" typename="PIC18F4525"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F4515.pic" typename="PIC18F4515"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18LF45J10.pic" typename="PIC18LF45J10"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F64J11.pic" typename="PIC18F64J11"></cputype>
+		<cputype architecture="microchip.pic18" model="pic18/PIC18F4550.pic" typename="PIC18F4550"></cputype>
 		<cputype model="pic16/PIC16F818.pic" typename="PIC16F818"></cputype>
 		<cputype model="pic16/PIC16F872.pic" typename="PIC16F872"></cputype>
 		<cputype model="pic16/PIC16C745.pic" typename="PIC16C745"></cputype>
@@ -371,16 +371,12 @@
  <extension
        point="hu.cubussapiens.modembed.instructionsets">
     <instructionset
-          id="microchip.pic10.iset"
-          model="pic10.instructionset">
+          id="microchip.baseline.iset"
+          model="pic_baseline.instructionset">
     </instructionset>
     <instructionset
-          id="microchip.pic12.iset"
-          model="pic12.instructionset">
-    </instructionset>
-    <instructionset
-          id="microchip.pic16.iset"
-          model="pic16.instructionset">
+          id="microchip.midrange.iset"
+          model="pic_midrange.instructionset">
     </instructionset>
     <instructionset
           id="microchip.pic18.iset"
@@ -390,24 +386,19 @@
  <extension
        point="hu.cubussapiens.modembed.architectures">
     <architecture
-          id="microchip.pic10"
-          instructionSet="microchip.pic10.iset"
-          name="Microchip PIC10">
+          id="microchip.baseline"
+          instructionSet="microchip.baseline.iset"
+          name="Microchip Base-Line">
     </architecture>
     <architecture
-          id="microchip.pic12"
-          instructionSet="microchip.pic12.iset"
-          name="Microchip PIC12">
-    </architecture>
-    <architecture
-          id="microchip.pic16"
-          instructionSet="microchip.pic16.iset"
-          name="Microchip PIC16">
+          id="microchip.midrange"
+          instructionSet="microchip.midrange.iset"
+          name="Microchip Mid-Range">
     </architecture>
     <architecture
           id="microchip.pic18"
           instructionSet="microchip.pic18.iset"
-          name="Microchip PIC18">
+          name="Microchip High-End (PIC18)">
     </architecture>
  </extension>
  <extension

@@ -14,14 +14,14 @@ import project.ProjectConfig;
  * @author balazs.grill
  *
  */
-public class Pic10ProjectExtension implements IProjectExtension {
+public class PicBaseLineProjectExtension implements IProjectExtension {
 
 	/* (non-Javadoc)
 	 * @see hu.cubussapiens.modembed.ui.IProjectExtension#createWizardExtension()
 	 */
 	@Override
 	public IProjectWizardExtension createWizardExtension() {
-		return new PicProjectWizardExtension(new Pic10ArchitectureCPUFilter());
+		return new PicProjectWizardExtension(new PicBaseLineArchitectureCPUFilter());
 	}
 
 	@Override

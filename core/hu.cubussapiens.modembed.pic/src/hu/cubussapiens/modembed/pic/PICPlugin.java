@@ -71,6 +71,13 @@ public class PICPlugin extends Plugin {
 		return defsreg.models;
 	}
 	
+	public String getArchitecture(Object cpumodel){
+		if (defsreg == null){
+			defsreg = new DefinitionsRegistry();
+		}
+		return defsreg.archs.get(cpumodel);
+	}
+	
 	public Resource loadSharedResource(ResourceSet rs, URL modelurl) throws IOException{
 		Resource model = rs.createResource(URI.createURI(modelurl.toString()));
 		model.load(null);

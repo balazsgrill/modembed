@@ -4,20 +4,16 @@
    <extension
          point="hu.cubussapiens.modembed.ui.project.extensions">
       <projectExtension
-            architectureID="microchip.pic10"
-            extensionClass="hu.cubussapiens.modembed.pic.ui.wizard.Pic10ProjectExtension">
+            architectureID="microchip.baseline"
+            extensionClass="hu.cubussapiens.modembed.pic.ui.wizard.PicBaseLineProjectExtension">
+      </projectExtension>
+      <projectExtension
+            architectureID="microchip.midrange"
+            extensionClass="hu.cubussapiens.modembed.pic.ui.wizard.PicMidRangeProjectExtension">
       </projectExtension>
       <projectExtension
             architectureID="microchip.pic18"
             extensionClass="hu.cubussapiens.modembed.pic.ui.wizard.Pic18ProjectExtension">
-      </projectExtension>
-      <projectExtension
-            architectureID="microchip.pic12"
-            extensionClass="hu.cubussapiens.modembed.pic.ui.wizard.Pic12ProjectExtension">
-      </projectExtension>
-      <projectExtension
-            architectureID="microchip.pic16"
-            extensionClass="hu.cubussapiens.modembed.pic.ui.wizard.Pic16ProjectExtension">
       </projectExtension>
    </extension>
 

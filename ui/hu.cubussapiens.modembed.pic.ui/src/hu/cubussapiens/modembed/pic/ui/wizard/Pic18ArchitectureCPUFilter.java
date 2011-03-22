@@ -19,9 +19,9 @@ public class Pic18ArchitectureCPUFilter extends ViewerFilter {
 	 */
 	@Override
 	public boolean select(Viewer viewer, Object parentElement, Object element) {
-		String name = PICPlugin.getDefault().getDefinitions().get(element);
-		if (name != null){
-			return name.toLowerCase().startsWith("pic18");
+		String arch = PICPlugin.getDefault().getArchitecture(element);
+		if (arch != null){
+			return arch.equals("microchip.pic18");
 		}
 		return false;
 	}
