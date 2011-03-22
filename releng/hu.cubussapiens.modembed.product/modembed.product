@@ -6,7 +6,7 @@
    <aboutInfo>
       <image path="/hu.cubussapiens.modembed.ui/icons/window/cpu_50.png"/>
       <text>
-         MODembed 0.1.0
+         MODembed {0} ({1}/{2})
 
 Model-based embedded development environment
 
