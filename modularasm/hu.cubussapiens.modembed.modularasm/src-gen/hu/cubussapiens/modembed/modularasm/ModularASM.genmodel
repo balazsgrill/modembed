@@ -54,6 +54,14 @@
     <genClasses ecoreClass="ModularASM.ecore#//Function">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ModularASM.ecore#//Function/step"/>
     </genClasses>
+    <genClasses ecoreClass="ModularASM.ecore#//Method">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ModularASM.ecore#//Method/params"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ModularASM.ecore#//Method/step"/>
+    </genClasses>
+    <genClasses ecoreClass="ModularASM.ecore#//MethodParam">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ModularASM.ecore#//MethodParam/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ModularASM.ecore#//MethodParam/name"/>
+    </genClasses>
     <genClasses ecoreClass="ModularASM.ecore#//Step"/>
     <genClasses ecoreClass="ModularASM.ecore#//Label">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ModularASM.ecore#//Label/name"/>
@@ -62,7 +70,14 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ModularASM.ecore#//Instruction/ins"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ModularASM.ecore#//Instruction/params"/>
     </genClasses>
-    <genClasses ecoreClass="ModularASM.ecore#//Param"/>
+    <genClasses ecoreClass="ModularASM.ecore#//MethodCall">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ModularASM.ecore#//MethodCall/method"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ModularASM.ecore#//MethodCall/params"/>
+    </genClasses>
+    <genClasses ecoreClass="ModularASM.ecore#//MethodCallParam">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ModularASM.ecore#//MethodCallParam/ref"/>
+    </genClasses>
+    <genClasses ecoreClass="ModularASM.ecore#//InsParam"/>
     <genClasses ecoreClass="ModularASM.ecore#//LiteralParam">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ModularASM.ecore#//LiteralParam/value"/>
     </genClasses>

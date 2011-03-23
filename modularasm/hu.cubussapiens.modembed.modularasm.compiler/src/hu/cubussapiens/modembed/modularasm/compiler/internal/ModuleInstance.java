@@ -5,14 +5,15 @@ package hu.cubussapiens.modembed.modularasm.compiler.internal;
 
 import hu.cubussapiens.modembed.modularasm.compiler.CompilerException;
 import hu.cubussapiens.modembed.modularasm.compiler.MASMCompilerPlugin;
+import hu.cubussapiens.modembed.modularasm.compiler.internal.namespaces.Namespace;
 import hu.cubussapiens.modembed.modularasm.compiler.internal.symbols.ISymbol;
 import hu.cubussapiens.modembed.modularasm.compiler.internal.symbols.LiteralSymbol;
 import hu.cubussapiens.modembed.modularasm.modularASM.ConfigurationWord;
 import hu.cubussapiens.modembed.modularasm.modularASM.Function;
 import hu.cubussapiens.modembed.modularasm.modularASM.Instance;
+import hu.cubussapiens.modembed.modularasm.modularASM.Method;
 import hu.cubussapiens.modembed.modularasm.modularASM.Module;
 import hu.cubussapiens.modembed.modularasm.modularASM.ModuleItem;
-import hu.cubussapiens.modembed.modularasm.modularASM.QualifiedID;
 import hu.cubussapiens.modembed.modularasm.modularASM.Symbol;
 import hu.cubussapiens.modembed.modularasm.modularASM.Variable;
 
@@ -24,7 +25,7 @@ import java.util.Map;
  * @author balazs.grill
  *
  */
-public class ModuleInstance {
+public class ModuleInstance extends Namespace{
 
 	public final Module type;
 	public final CompilationManager manager;
@@ -38,6 +39,8 @@ public class ModuleInstance {
 	public final Map<String, ISymbol> configurationWords = new HashMap<String, ISymbol>();
 	
 	public final Map<String, ModuleInstance> instances = new HashMap<String, ModuleInstance>();
+	
+	public final Map<String, MethodDescriptor> methods = new HashMap<String, MethodDescriptor>();
 	
 	private ModuleInstance parent = null;
 	private String nameInParent = null;
@@ -73,30 +76,39 @@ public class ModuleInstance {
 					configurationWords.put(cw.getName(), cwsymbol);
 				}
 			}
+			
+			if (item instanceof Method){
+				Method m = (Method)item;
+				methods.put(m.getName(), new MethodDescriptor(this, m));
+			}
 		}
 	}
 	
-	public ISymbol resolveReference(QualifiedID qid) throws CompilerException{
-		ModuleInstance namespace = this;
-		for (int i = 0;i<qid.getSegments().size()-1;i++){
-			String n = qid.getSegments().get(i);
-			namespace = instances.get(n);
-			if (namespace == null)
-				throw new CompilerException("Could not resolve namespace: "+MASMCompilerPlugin.qualIDtoString(qid));
-		}
+	@Override
+	public MethodDescriptor getMethod(String name) throws CompilerException{
+		MethodDescriptor md = methods.get(name);
+		
+		if (md == null)
+			throw new CompilerException("Could not resolve method: "+name);
+		
+		return md;
+	}
+	
+	@Override
+	public ISymbol getSymbol(String name) throws CompilerException{
 		ISymbol s = null;
-		String last = qid.getSegments().get(qid.getSegments().size()-1);
+		String last = name;
 		
-		s = namespace.symbols.get(last);
+		s = symbols.get(last);
 		if (s != null) return s;
 		
-		s = namespace.configurationWords.get(last);
+		s = configurationWords.get(last);
 		if (s != null) return s;
 		
-		s = namespace.variables.get(last);
+		s = variables.get(last);
 		if (s != null) return s;
 		
-		s = namespace.functions.get(last);
+		s = functions.get(last);
 		if (s != null) return s;
 		
 		throw new CompilerException("Could not resolve symbol: "+last);
@@ -125,6 +137,13 @@ public class ModuleInstance {
 			return (r.isEmpty() ? "" : r+".")+nameInParent;
 		}
 		return "";
+	}
+
+
+
+	@Override
+	public Namespace getSubnamespace(String s) {
+		return instances.get(s);
 	}
 	
 }

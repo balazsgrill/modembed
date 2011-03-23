@@ -144,6 +144,24 @@ public interface ModularASMFactory extends EFactory
   Function createFunction();
 
   /**
+   * Returns a new object of class '<em>Method</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Method</em>'.
+   * @generated
+   */
+  Method createMethod();
+
+  /**
+   * Returns a new object of class '<em>Method Param</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Method Param</em>'.
+   * @generated
+   */
+  MethodParam createMethodParam();
+
+  /**
    * Returns a new object of class '<em>Step</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -171,13 +189,31 @@ public interface ModularASMFactory extends EFactory
   Instruction createInstruction();
 
   /**
-   * Returns a new object of class '<em>Param</em>'.
+   * Returns a new object of class '<em>Method Call</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Param</em>'.
+   * @return a new object of class '<em>Method Call</em>'.
    * @generated
    */
-  Param createParam();
+  MethodCall createMethodCall();
+
+  /**
+   * Returns a new object of class '<em>Method Call Param</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Method Call Param</em>'.
+   * @generated
+   */
+  MethodCallParam createMethodCallParam();
+
+  /**
+   * Returns a new object of class '<em>Ins Param</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Ins Param</em>'.
+   * @generated
+   */
+  InsParam createInsParam();
 
   /**
    * Returns a new object of class '<em>Literal Param</em>'.

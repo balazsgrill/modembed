@@ -10,14 +10,14 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Param</b></em>'.
+ * A representation of the model object '<em><b>Ins Param</b></em>'.
  * <!-- end-user-doc -->
  *
  *
- * @see hu.cubussapiens.modembed.modularasm.modularASM.ModularASMPackage#getParam()
+ * @see hu.cubussapiens.modembed.modularasm.modularASM.ModularASMPackage#getInsParam()
  * @model
  * @generated
  */
-public interface Param extends EObject
+public interface InsParam extends EObject
 {
-} // Param
+} // InsParam

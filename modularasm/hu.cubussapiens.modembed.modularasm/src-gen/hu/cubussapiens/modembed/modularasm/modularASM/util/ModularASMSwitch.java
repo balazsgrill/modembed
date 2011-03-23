@@ -193,6 +193,21 @@ public class ModularASMSwitch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case ModularASMPackage.METHOD:
+      {
+        Method method = (Method)theEObject;
+        T result = caseMethod(method);
+        if (result == null) result = caseModuleItem(method);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModularASMPackage.METHOD_PARAM:
+      {
+        MethodParam methodParam = (MethodParam)theEObject;
+        T result = caseMethodParam(methodParam);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case ModularASMPackage.STEP:
       {
         Step step = (Step)theEObject;
@@ -216,10 +231,25 @@ public class ModularASMSwitch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case ModularASMPackage.PARAM:
+      case ModularASMPackage.METHOD_CALL:
       {
-        Param param = (Param)theEObject;
-        T result = caseParam(param);
+        MethodCall methodCall = (MethodCall)theEObject;
+        T result = caseMethodCall(methodCall);
+        if (result == null) result = caseStep(methodCall);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModularASMPackage.METHOD_CALL_PARAM:
+      {
+        MethodCallParam methodCallParam = (MethodCallParam)theEObject;
+        T result = caseMethodCallParam(methodCallParam);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ModularASMPackage.INS_PARAM:
+      {
+        InsParam insParam = (InsParam)theEObject;
+        T result = caseInsParam(insParam);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -227,7 +257,7 @@ public class ModularASMSwitch<T>
       {
         LiteralParam literalParam = (LiteralParam)theEObject;
         T result = caseLiteralParam(literalParam);
-        if (result == null) result = caseParam(literalParam);
+        if (result == null) result = caseInsParam(literalParam);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -235,7 +265,7 @@ public class ModularASMSwitch<T>
       {
         RefParam refParam = (RefParam)theEObject;
         T result = caseRefParam(refParam);
-        if (result == null) result = caseParam(refParam);
+        if (result == null) result = caseInsParam(refParam);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -452,6 +482,38 @@ public class ModularASMSwitch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Method</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Method</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMethod(Method object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Method Param</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Method Param</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMethodParam(MethodParam object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Step</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -500,17 +562,49 @@ public class ModularASMSwitch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Param</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Method Call</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Param</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Method Call</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseParam(Param object)
+  public T caseMethodCall(MethodCall object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Method Call Param</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Method Call Param</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMethodCallParam(MethodCallParam object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Ins Param</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Ins Param</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInsParam(InsParam object)
   {
     return null;
   }

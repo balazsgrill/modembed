@@ -6,7 +6,8 @@
  */
 package hu.cubussapiens.modembed.modularasm.modularASM.impl;
 
-import hu.cubussapiens.modembed.modularasm.modularASM.Instance;
+import hu.cubussapiens.modembed.modularasm.modularASM.MethodCall;
+import hu.cubussapiens.modembed.modularasm.modularASM.MethodCallParam;
 import hu.cubussapiens.modembed.modularasm.modularASM.ModularASMPackage;
 import hu.cubussapiens.modembed.modularasm.modularASM.QualifiedID;
 
@@ -27,29 +28,29 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Instance</b></em>'.
+ * An implementation of the model object '<em><b>Method Call</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.cubussapiens.modembed.modularasm.modularASM.impl.InstanceImpl#getType <em>Type</em>}</li>
- *   <li>{@link hu.cubussapiens.modembed.modularasm.modularASM.impl.InstanceImpl#getParams <em>Params</em>}</li>
+ *   <li>{@link hu.cubussapiens.modembed.modularasm.modularASM.impl.MethodCallImpl#getMethod <em>Method</em>}</li>
+ *   <li>{@link hu.cubussapiens.modembed.modularasm.modularASM.impl.MethodCallImpl#getParams <em>Params</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class InstanceImpl extends ModuleItemImpl implements Instance
+public class MethodCallImpl extends StepImpl implements MethodCall
 {
   /**
-   * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
+   * The cached value of the '{@link #getMethod() <em>Method</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getType()
+   * @see #getMethod()
    * @generated
    * @ordered
    */
-  protected QualifiedID type;
+  protected QualifiedID method;
 
   /**
    * The cached value of the '{@link #getParams() <em>Params</em>}' containment reference list.
@@ -59,14 +60,14 @@ public class InstanceImpl extends ModuleItemImpl implements Instance
    * @generated
    * @ordered
    */
-  protected EList<QualifiedID> params;
+  protected EList<MethodCallParam> params;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected InstanceImpl()
+  protected MethodCallImpl()
   {
     super();
   }
@@ -79,7 +80,7 @@ public class InstanceImpl extends ModuleItemImpl implements Instance
   @Override
   protected EClass eStaticClass()
   {
-    return ModularASMPackage.Literals.INSTANCE;
+    return ModularASMPackage.Literals.METHOD_CALL;
   }
 
   /**
@@ -87,9 +88,9 @@ public class InstanceImpl extends ModuleItemImpl implements Instance
    * <!-- end-user-doc -->
    * @generated
    */
-  public QualifiedID getType()
+  public QualifiedID getMethod()
   {
-    return type;
+    return method;
   }
 
   /**
@@ -97,13 +98,13 @@ public class InstanceImpl extends ModuleItemImpl implements Instance
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetType(QualifiedID newType, NotificationChain msgs)
+  public NotificationChain basicSetMethod(QualifiedID newMethod, NotificationChain msgs)
   {
-    QualifiedID oldType = type;
-    type = newType;
+    QualifiedID oldMethod = method;
+    method = newMethod;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ModularASMPackage.INSTANCE__TYPE, oldType, newType);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ModularASMPackage.METHOD_CALL__METHOD, oldMethod, newMethod);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -114,20 +115,20 @@ public class InstanceImpl extends ModuleItemImpl implements Instance
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setType(QualifiedID newType)
+  public void setMethod(QualifiedID newMethod)
   {
-    if (newType != type)
+    if (newMethod != method)
     {
       NotificationChain msgs = null;
-      if (type != null)
-        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ModularASMPackage.INSTANCE__TYPE, null, msgs);
-      if (newType != null)
-        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ModularASMPackage.INSTANCE__TYPE, null, msgs);
-      msgs = basicSetType(newType, msgs);
+      if (method != null)
+        msgs = ((InternalEObject)method).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ModularASMPackage.METHOD_CALL__METHOD, null, msgs);
+      if (newMethod != null)
+        msgs = ((InternalEObject)newMethod).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ModularASMPackage.METHOD_CALL__METHOD, null, msgs);
+      msgs = basicSetMethod(newMethod, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ModularASMPackage.INSTANCE__TYPE, newType, newType));
+      eNotify(new ENotificationImpl(this, Notification.SET, ModularASMPackage.METHOD_CALL__METHOD, newMethod, newMethod));
   }
 
   /**
@@ -135,11 +136,11 @@ public class InstanceImpl extends ModuleItemImpl implements Instance
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<QualifiedID> getParams()
+  public EList<MethodCallParam> getParams()
   {
     if (params == null)
     {
-      params = new EObjectContainmentEList<QualifiedID>(QualifiedID.class, this, ModularASMPackage.INSTANCE__PARAMS);
+      params = new EObjectContainmentEList<MethodCallParam>(MethodCallParam.class, this, ModularASMPackage.METHOD_CALL__PARAMS);
     }
     return params;
   }
@@ -154,9 +155,9 @@ public class InstanceImpl extends ModuleItemImpl implements Instance
   {
     switch (featureID)
     {
-      case ModularASMPackage.INSTANCE__TYPE:
-        return basicSetType(null, msgs);
-      case ModularASMPackage.INSTANCE__PARAMS:
+      case ModularASMPackage.METHOD_CALL__METHOD:
+        return basicSetMethod(null, msgs);
+      case ModularASMPackage.METHOD_CALL__PARAMS:
         return ((InternalEList<?>)getParams()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -172,9 +173,9 @@ public class InstanceImpl extends ModuleItemImpl implements Instance
   {
     switch (featureID)
     {
-      case ModularASMPackage.INSTANCE__TYPE:
-        return getType();
-      case ModularASMPackage.INSTANCE__PARAMS:
+      case ModularASMPackage.METHOD_CALL__METHOD:
+        return getMethod();
+      case ModularASMPackage.METHOD_CALL__PARAMS:
         return getParams();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -191,12 +192,12 @@ public class InstanceImpl extends ModuleItemImpl implements Instance
   {
     switch (featureID)
     {
-      case ModularASMPackage.INSTANCE__TYPE:
-        setType((QualifiedID)newValue);
+      case ModularASMPackage.METHOD_CALL__METHOD:
+        setMethod((QualifiedID)newValue);
         return;
-      case ModularASMPackage.INSTANCE__PARAMS:
+      case ModularASMPackage.METHOD_CALL__PARAMS:
         getParams().clear();
-        getParams().addAll((Collection<? extends QualifiedID>)newValue);
+        getParams().addAll((Collection<? extends MethodCallParam>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -212,10 +213,10 @@ public class InstanceImpl extends ModuleItemImpl implements Instance
   {
     switch (featureID)
     {
-      case ModularASMPackage.INSTANCE__TYPE:
-        setType((QualifiedID)null);
+      case ModularASMPackage.METHOD_CALL__METHOD:
+        setMethod((QualifiedID)null);
         return;
-      case ModularASMPackage.INSTANCE__PARAMS:
+      case ModularASMPackage.METHOD_CALL__PARAMS:
         getParams().clear();
         return;
     }
@@ -232,12 +233,12 @@ public class InstanceImpl extends ModuleItemImpl implements Instance
   {
     switch (featureID)
     {
-      case ModularASMPackage.INSTANCE__TYPE:
-        return type != null;
-      case ModularASMPackage.INSTANCE__PARAMS:
+      case ModularASMPackage.METHOD_CALL__METHOD:
+        return method != null;
+      case ModularASMPackage.METHOD_CALL__PARAMS:
         return params != null && !params.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //InstanceImpl
+} //MethodCallImpl

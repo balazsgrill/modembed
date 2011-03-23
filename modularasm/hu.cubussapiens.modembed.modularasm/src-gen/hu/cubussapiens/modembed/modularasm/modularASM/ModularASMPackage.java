@@ -542,6 +542,89 @@ public interface ModularASMPackage extends EPackage
   int FUNCTION_FEATURE_COUNT = MODULE_ITEM_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link hu.cubussapiens.modembed.modularasm.modularASM.impl.MethodImpl <em>Method</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.MethodImpl
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ModularASMPackageImpl#getMethod()
+   * @generated
+   */
+  int METHOD = 13;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METHOD__NAME = MODULE_ITEM__NAME;
+
+  /**
+   * The feature id for the '<em><b>Params</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METHOD__PARAMS = MODULE_ITEM_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Step</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METHOD__STEP = MODULE_ITEM_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Method</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METHOD_FEATURE_COUNT = MODULE_ITEM_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link hu.cubussapiens.modembed.modularasm.modularASM.impl.MethodParamImpl <em>Method Param</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.MethodParamImpl
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ModularASMPackageImpl#getMethodParam()
+   * @generated
+   */
+  int METHOD_PARAM = 14;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METHOD_PARAM__TYPE = 0;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METHOD_PARAM__NAME = 1;
+
+  /**
+   * The number of structural features of the '<em>Method Param</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METHOD_PARAM_FEATURE_COUNT = 2;
+
+  /**
    * The meta object id for the '{@link hu.cubussapiens.modembed.modularasm.modularASM.impl.StepImpl <em>Step</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -549,7 +632,7 @@ public interface ModularASMPackage extends EPackage
    * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ModularASMPackageImpl#getStep()
    * @generated
    */
-  int STEP = 13;
+  int STEP = 15;
 
   /**
    * The number of structural features of the '<em>Step</em>' class.
@@ -568,7 +651,7 @@ public interface ModularASMPackage extends EPackage
    * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ModularASMPackageImpl#getLabel()
    * @generated
    */
-  int LABEL = 14;
+  int LABEL = 16;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -596,7 +679,7 @@ public interface ModularASMPackage extends EPackage
    * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ModularASMPackageImpl#getInstruction()
    * @generated
    */
-  int INSTRUCTION = 15;
+  int INSTRUCTION = 17;
 
   /**
    * The feature id for the '<em><b>Ins</b></em>' attribute.
@@ -626,23 +709,88 @@ public interface ModularASMPackage extends EPackage
   int INSTRUCTION_FEATURE_COUNT = STEP_FEATURE_COUNT + 2;
 
   /**
-   * The meta object id for the '{@link hu.cubussapiens.modembed.modularasm.modularASM.impl.ParamImpl <em>Param</em>}' class.
+   * The meta object id for the '{@link hu.cubussapiens.modembed.modularasm.modularASM.impl.MethodCallImpl <em>Method Call</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ParamImpl
-   * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ModularASMPackageImpl#getParam()
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.MethodCallImpl
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ModularASMPackageImpl#getMethodCall()
    * @generated
    */
-  int PARAM = 16;
+  int METHOD_CALL = 18;
 
   /**
-   * The number of structural features of the '<em>Param</em>' class.
+   * The feature id for the '<em><b>Method</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PARAM_FEATURE_COUNT = 0;
+  int METHOD_CALL__METHOD = STEP_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Params</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METHOD_CALL__PARAMS = STEP_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Method Call</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METHOD_CALL_FEATURE_COUNT = STEP_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link hu.cubussapiens.modembed.modularasm.modularASM.impl.MethodCallParamImpl <em>Method Call Param</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.MethodCallParamImpl
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ModularASMPackageImpl#getMethodCallParam()
+   * @generated
+   */
+  int METHOD_CALL_PARAM = 19;
+
+  /**
+   * The feature id for the '<em><b>Ref</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METHOD_CALL_PARAM__REF = 0;
+
+  /**
+   * The number of structural features of the '<em>Method Call Param</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METHOD_CALL_PARAM_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link hu.cubussapiens.modembed.modularasm.modularASM.impl.InsParamImpl <em>Ins Param</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.InsParamImpl
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ModularASMPackageImpl#getInsParam()
+   * @generated
+   */
+  int INS_PARAM = 20;
+
+  /**
+   * The number of structural features of the '<em>Ins Param</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INS_PARAM_FEATURE_COUNT = 0;
 
   /**
    * The meta object id for the '{@link hu.cubussapiens.modembed.modularasm.modularASM.impl.LiteralParamImpl <em>Literal Param</em>}' class.
@@ -652,7 +800,7 @@ public interface ModularASMPackage extends EPackage
    * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ModularASMPackageImpl#getLiteralParam()
    * @generated
    */
-  int LITERAL_PARAM = 17;
+  int LITERAL_PARAM = 21;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -661,7 +809,7 @@ public interface ModularASMPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LITERAL_PARAM__VALUE = PARAM_FEATURE_COUNT + 0;
+  int LITERAL_PARAM__VALUE = INS_PARAM_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Literal Param</em>' class.
@@ -670,7 +818,7 @@ public interface ModularASMPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LITERAL_PARAM_FEATURE_COUNT = PARAM_FEATURE_COUNT + 1;
+  int LITERAL_PARAM_FEATURE_COUNT = INS_PARAM_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link hu.cubussapiens.modembed.modularasm.modularASM.impl.RefParamImpl <em>Ref Param</em>}' class.
@@ -680,7 +828,7 @@ public interface ModularASMPackage extends EPackage
    * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ModularASMPackageImpl#getRefParam()
    * @generated
    */
-  int REF_PARAM = 18;
+  int REF_PARAM = 22;
 
   /**
    * The feature id for the '<em><b>Ref</b></em>' containment reference.
@@ -689,7 +837,7 @@ public interface ModularASMPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REF_PARAM__REF = PARAM_FEATURE_COUNT + 0;
+  int REF_PARAM__REF = INS_PARAM_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Ref Param</em>' class.
@@ -698,7 +846,7 @@ public interface ModularASMPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REF_PARAM_FEATURE_COUNT = PARAM_FEATURE_COUNT + 1;
+  int REF_PARAM_FEATURE_COUNT = INS_PARAM_FEATURE_COUNT + 1;
 
 
   /**
@@ -1063,6 +1211,70 @@ public interface ModularASMPackage extends EPackage
   EReference getFunction_Step();
 
   /**
+   * Returns the meta object for class '{@link hu.cubussapiens.modembed.modularasm.modularASM.Method <em>Method</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Method</em>'.
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.Method
+   * @generated
+   */
+  EClass getMethod();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link hu.cubussapiens.modembed.modularasm.modularASM.Method#getParams <em>Params</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Params</em>'.
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.Method#getParams()
+   * @see #getMethod()
+   * @generated
+   */
+  EReference getMethod_Params();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link hu.cubussapiens.modembed.modularasm.modularASM.Method#getStep <em>Step</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Step</em>'.
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.Method#getStep()
+   * @see #getMethod()
+   * @generated
+   */
+  EReference getMethod_Step();
+
+  /**
+   * Returns the meta object for class '{@link hu.cubussapiens.modembed.modularasm.modularASM.MethodParam <em>Method Param</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Method Param</em>'.
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.MethodParam
+   * @generated
+   */
+  EClass getMethodParam();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.cubussapiens.modembed.modularasm.modularASM.MethodParam#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Type</em>'.
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.MethodParam#getType()
+   * @see #getMethodParam()
+   * @generated
+   */
+  EReference getMethodParam_Type();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.cubussapiens.modembed.modularasm.modularASM.MethodParam#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.MethodParam#getName()
+   * @see #getMethodParam()
+   * @generated
+   */
+  EAttribute getMethodParam_Name();
+
+  /**
    * Returns the meta object for class '{@link hu.cubussapiens.modembed.modularasm.modularASM.Step <em>Step</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1126,14 +1338,67 @@ public interface ModularASMPackage extends EPackage
   EReference getInstruction_Params();
 
   /**
-   * Returns the meta object for class '{@link hu.cubussapiens.modembed.modularasm.modularASM.Param <em>Param</em>}'.
+   * Returns the meta object for class '{@link hu.cubussapiens.modembed.modularasm.modularASM.MethodCall <em>Method Call</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Param</em>'.
-   * @see hu.cubussapiens.modembed.modularasm.modularASM.Param
+   * @return the meta object for class '<em>Method Call</em>'.
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.MethodCall
    * @generated
    */
-  EClass getParam();
+  EClass getMethodCall();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.cubussapiens.modembed.modularasm.modularASM.MethodCall#getMethod <em>Method</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Method</em>'.
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.MethodCall#getMethod()
+   * @see #getMethodCall()
+   * @generated
+   */
+  EReference getMethodCall_Method();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link hu.cubussapiens.modembed.modularasm.modularASM.MethodCall#getParams <em>Params</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Params</em>'.
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.MethodCall#getParams()
+   * @see #getMethodCall()
+   * @generated
+   */
+  EReference getMethodCall_Params();
+
+  /**
+   * Returns the meta object for class '{@link hu.cubussapiens.modembed.modularasm.modularASM.MethodCallParam <em>Method Call Param</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Method Call Param</em>'.
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.MethodCallParam
+   * @generated
+   */
+  EClass getMethodCallParam();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.cubussapiens.modembed.modularasm.modularASM.MethodCallParam#getRef <em>Ref</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Ref</em>'.
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.MethodCallParam#getRef()
+   * @see #getMethodCallParam()
+   * @generated
+   */
+  EReference getMethodCallParam_Ref();
+
+  /**
+   * Returns the meta object for class '{@link hu.cubussapiens.modembed.modularasm.modularASM.InsParam <em>Ins Param</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Ins Param</em>'.
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.InsParam
+   * @generated
+   */
+  EClass getInsParam();
 
   /**
    * Returns the meta object for class '{@link hu.cubussapiens.modembed.modularasm.modularASM.LiteralParam <em>Literal Param</em>}'.
@@ -1499,6 +1764,58 @@ public interface ModularASMPackage extends EPackage
     EReference FUNCTION__STEP = eINSTANCE.getFunction_Step();
 
     /**
+     * The meta object literal for the '{@link hu.cubussapiens.modembed.modularasm.modularASM.impl.MethodImpl <em>Method</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.MethodImpl
+     * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ModularASMPackageImpl#getMethod()
+     * @generated
+     */
+    EClass METHOD = eINSTANCE.getMethod();
+
+    /**
+     * The meta object literal for the '<em><b>Params</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference METHOD__PARAMS = eINSTANCE.getMethod_Params();
+
+    /**
+     * The meta object literal for the '<em><b>Step</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference METHOD__STEP = eINSTANCE.getMethod_Step();
+
+    /**
+     * The meta object literal for the '{@link hu.cubussapiens.modembed.modularasm.modularASM.impl.MethodParamImpl <em>Method Param</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.MethodParamImpl
+     * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ModularASMPackageImpl#getMethodParam()
+     * @generated
+     */
+    EClass METHOD_PARAM = eINSTANCE.getMethodParam();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference METHOD_PARAM__TYPE = eINSTANCE.getMethodParam_Type();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute METHOD_PARAM__NAME = eINSTANCE.getMethodParam_Name();
+
+    /**
      * The meta object literal for the '{@link hu.cubussapiens.modembed.modularasm.modularASM.impl.StepImpl <em>Step</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1553,14 +1870,58 @@ public interface ModularASMPackage extends EPackage
     EReference INSTRUCTION__PARAMS = eINSTANCE.getInstruction_Params();
 
     /**
-     * The meta object literal for the '{@link hu.cubussapiens.modembed.modularasm.modularASM.impl.ParamImpl <em>Param</em>}' class.
+     * The meta object literal for the '{@link hu.cubussapiens.modembed.modularasm.modularASM.impl.MethodCallImpl <em>Method Call</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ParamImpl
-     * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ModularASMPackageImpl#getParam()
+     * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.MethodCallImpl
+     * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ModularASMPackageImpl#getMethodCall()
      * @generated
      */
-    EClass PARAM = eINSTANCE.getParam();
+    EClass METHOD_CALL = eINSTANCE.getMethodCall();
+
+    /**
+     * The meta object literal for the '<em><b>Method</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference METHOD_CALL__METHOD = eINSTANCE.getMethodCall_Method();
+
+    /**
+     * The meta object literal for the '<em><b>Params</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference METHOD_CALL__PARAMS = eINSTANCE.getMethodCall_Params();
+
+    /**
+     * The meta object literal for the '{@link hu.cubussapiens.modembed.modularasm.modularASM.impl.MethodCallParamImpl <em>Method Call Param</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.MethodCallParamImpl
+     * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ModularASMPackageImpl#getMethodCallParam()
+     * @generated
+     */
+    EClass METHOD_CALL_PARAM = eINSTANCE.getMethodCallParam();
+
+    /**
+     * The meta object literal for the '<em><b>Ref</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference METHOD_CALL_PARAM__REF = eINSTANCE.getMethodCallParam_Ref();
+
+    /**
+     * The meta object literal for the '{@link hu.cubussapiens.modembed.modularasm.modularASM.impl.InsParamImpl <em>Ins Param</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.InsParamImpl
+     * @see hu.cubussapiens.modembed.modularasm.modularASM.impl.ModularASMPackageImpl#getInsParam()
+     * @generated
+     */
+    EClass INS_PARAM = eINSTANCE.getInsParam();
 
     /**
      * The meta object literal for the '{@link hu.cubussapiens.modembed.modularasm.modularASM.impl.LiteralParamImpl <em>Literal Param</em>}' class.

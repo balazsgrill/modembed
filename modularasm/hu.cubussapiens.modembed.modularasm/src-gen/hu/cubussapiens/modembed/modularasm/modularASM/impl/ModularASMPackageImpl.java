@@ -12,16 +12,20 @@ import hu.cubussapiens.modembed.modularasm.modularASM.ConfigurationWord;
 import hu.cubussapiens.modembed.modularasm.modularASM.EnumConfigurationField;
 import hu.cubussapiens.modembed.modularasm.modularASM.EnumConfigurationFieldLiteral;
 import hu.cubussapiens.modembed.modularasm.modularASM.Function;
+import hu.cubussapiens.modembed.modularasm.modularASM.InsParam;
 import hu.cubussapiens.modembed.modularasm.modularASM.Instance;
 import hu.cubussapiens.modembed.modularasm.modularASM.Instruction;
 import hu.cubussapiens.modembed.modularasm.modularASM.Label;
 import hu.cubussapiens.modembed.modularasm.modularASM.LiteralParam;
+import hu.cubussapiens.modembed.modularasm.modularASM.Method;
+import hu.cubussapiens.modembed.modularasm.modularASM.MethodCall;
+import hu.cubussapiens.modembed.modularasm.modularASM.MethodCallParam;
+import hu.cubussapiens.modembed.modularasm.modularASM.MethodParam;
 import hu.cubussapiens.modembed.modularasm.modularASM.ModularASMFactory;
 import hu.cubussapiens.modembed.modularasm.modularASM.ModularASMPackage;
 import hu.cubussapiens.modembed.modularasm.modularASM.Module;
 import hu.cubussapiens.modembed.modularasm.modularASM.ModuleItem;
 import hu.cubussapiens.modembed.modularasm.modularASM.ModuleParam;
-import hu.cubussapiens.modembed.modularasm.modularASM.Param;
 import hu.cubussapiens.modembed.modularasm.modularASM.QualifiedID;
 import hu.cubussapiens.modembed.modularasm.modularASM.RefParam;
 import hu.cubussapiens.modembed.modularasm.modularASM.Step;
@@ -139,6 +143,20 @@ public class ModularASMPackageImpl extends EPackageImpl implements ModularASMPac
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass methodEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass methodParamEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass stepEClass = null;
 
   /**
@@ -160,7 +178,21 @@ public class ModularASMPackageImpl extends EPackageImpl implements ModularASMPac
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass paramEClass = null;
+  private EClass methodCallEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass methodCallParamEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass insParamEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -584,6 +616,66 @@ public class ModularASMPackageImpl extends EPackageImpl implements ModularASMPac
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getMethod()
+  {
+    return methodEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMethod_Params()
+  {
+    return (EReference)methodEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMethod_Step()
+  {
+    return (EReference)methodEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMethodParam()
+  {
+    return methodParamEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMethodParam_Type()
+  {
+    return (EReference)methodParamEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMethodParam_Name()
+  {
+    return (EAttribute)methodParamEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getStep()
   {
     return stepEClass;
@@ -644,9 +736,59 @@ public class ModularASMPackageImpl extends EPackageImpl implements ModularASMPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getParam()
+  public EClass getMethodCall()
   {
-    return paramEClass;
+    return methodCallEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMethodCall_Method()
+  {
+    return (EReference)methodCallEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMethodCall_Params()
+  {
+    return (EReference)methodCallEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMethodCallParam()
+  {
+    return methodCallParamEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMethodCallParam_Ref()
+  {
+    return (EReference)methodCallParamEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getInsParam()
+  {
+    return insParamEClass;
   }
 
   /**
@@ -766,6 +908,14 @@ public class ModularASMPackageImpl extends EPackageImpl implements ModularASMPac
     functionEClass = createEClass(FUNCTION);
     createEReference(functionEClass, FUNCTION__STEP);
 
+    methodEClass = createEClass(METHOD);
+    createEReference(methodEClass, METHOD__PARAMS);
+    createEReference(methodEClass, METHOD__STEP);
+
+    methodParamEClass = createEClass(METHOD_PARAM);
+    createEReference(methodParamEClass, METHOD_PARAM__TYPE);
+    createEAttribute(methodParamEClass, METHOD_PARAM__NAME);
+
     stepEClass = createEClass(STEP);
 
     labelEClass = createEClass(LABEL);
@@ -775,7 +925,14 @@ public class ModularASMPackageImpl extends EPackageImpl implements ModularASMPac
     createEAttribute(instructionEClass, INSTRUCTION__INS);
     createEReference(instructionEClass, INSTRUCTION__PARAMS);
 
-    paramEClass = createEClass(PARAM);
+    methodCallEClass = createEClass(METHOD_CALL);
+    createEReference(methodCallEClass, METHOD_CALL__METHOD);
+    createEReference(methodCallEClass, METHOD_CALL__PARAMS);
+
+    methodCallParamEClass = createEClass(METHOD_CALL_PARAM);
+    createEReference(methodCallParamEClass, METHOD_CALL_PARAM__REF);
+
+    insParamEClass = createEClass(INS_PARAM);
 
     literalParamEClass = createEClass(LITERAL_PARAM);
     createEAttribute(literalParamEClass, LITERAL_PARAM__VALUE);
@@ -819,10 +976,12 @@ public class ModularASMPackageImpl extends EPackageImpl implements ModularASMPac
     variableEClass.getESuperTypes().add(this.getModuleItem());
     instanceEClass.getESuperTypes().add(this.getModuleItem());
     functionEClass.getESuperTypes().add(this.getModuleItem());
+    methodEClass.getESuperTypes().add(this.getModuleItem());
     labelEClass.getESuperTypes().add(this.getStep());
     instructionEClass.getESuperTypes().add(this.getStep());
-    literalParamEClass.getESuperTypes().add(this.getParam());
-    refParamEClass.getESuperTypes().add(this.getParam());
+    methodCallEClass.getESuperTypes().add(this.getStep());
+    literalParamEClass.getESuperTypes().add(this.getInsParam());
+    refParamEClass.getESuperTypes().add(this.getInsParam());
 
     // Initialize classes and features; add operations and parameters
     initEClass(moduleEClass, Module.class, "Module", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -867,10 +1026,18 @@ public class ModularASMPackageImpl extends EPackageImpl implements ModularASMPac
 
     initEClass(instanceEClass, Instance.class, "Instance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getInstance_Type(), this.getQualifiedID(), null, "type", null, 0, 1, Instance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getInstance_Params(), this.getModuleParam(), null, "params", null, 0, -1, Instance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInstance_Params(), this.getQualifiedID(), null, "params", null, 0, -1, Instance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(functionEClass, Function.class, "Function", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getFunction_Step(), this.getStep(), null, "step", null, 0, -1, Function.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(methodEClass, Method.class, "Method", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getMethod_Params(), this.getMethodParam(), null, "params", null, 0, -1, Method.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMethod_Step(), this.getStep(), null, "step", null, 0, -1, Method.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(methodParamEClass, MethodParam.class, "MethodParam", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getMethodParam_Type(), this.getQualifiedID(), null, "type", null, 0, 1, MethodParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getMethodParam_Name(), ecorePackage.getEString(), "name", null, 0, 1, MethodParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(stepEClass, Step.class, "Step", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -879,9 +1046,16 @@ public class ModularASMPackageImpl extends EPackageImpl implements ModularASMPac
 
     initEClass(instructionEClass, Instruction.class, "Instruction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getInstruction_Ins(), ecorePackage.getEString(), "ins", null, 0, 1, Instruction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getInstruction_Params(), this.getParam(), null, "params", null, 0, -1, Instruction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInstruction_Params(), this.getInsParam(), null, "params", null, 0, -1, Instruction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(paramEClass, Param.class, "Param", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(methodCallEClass, MethodCall.class, "MethodCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getMethodCall_Method(), this.getQualifiedID(), null, "method", null, 0, 1, MethodCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMethodCall_Params(), this.getMethodCallParam(), null, "params", null, 0, -1, MethodCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(methodCallParamEClass, MethodCallParam.class, "MethodCallParam", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getMethodCallParam_Ref(), this.getQualifiedID(), null, "ref", null, 0, 1, MethodCallParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(insParamEClass, InsParam.class, "InsParam", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(literalParamEClass, LiteralParam.class, "LiteralParam", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getLiteralParam_Value(), ecorePackage.getEInt(), "value", null, 0, 1, LiteralParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

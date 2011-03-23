@@ -144,6 +144,16 @@ public class ModularASMAdapterFactory extends AdapterFactoryImpl
         return createFunctionAdapter();
       }
       @Override
+      public Adapter caseMethod(Method object)
+      {
+        return createMethodAdapter();
+      }
+      @Override
+      public Adapter caseMethodParam(MethodParam object)
+      {
+        return createMethodParamAdapter();
+      }
+      @Override
       public Adapter caseStep(Step object)
       {
         return createStepAdapter();
@@ -159,9 +169,19 @@ public class ModularASMAdapterFactory extends AdapterFactoryImpl
         return createInstructionAdapter();
       }
       @Override
-      public Adapter caseParam(Param object)
+      public Adapter caseMethodCall(MethodCall object)
       {
-        return createParamAdapter();
+        return createMethodCallAdapter();
+      }
+      @Override
+      public Adapter caseMethodCallParam(MethodCallParam object)
+      {
+        return createMethodCallParamAdapter();
+      }
+      @Override
+      public Adapter caseInsParam(InsParam object)
+      {
+        return createInsParamAdapter();
       }
       @Override
       public Adapter caseLiteralParam(LiteralParam object)
@@ -391,6 +411,36 @@ public class ModularASMAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link hu.cubussapiens.modembed.modularasm.modularASM.Method <em>Method</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.Method
+   * @generated
+   */
+  public Adapter createMethodAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.cubussapiens.modembed.modularasm.modularASM.MethodParam <em>Method Param</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.MethodParam
+   * @generated
+   */
+  public Adapter createMethodParamAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link hu.cubussapiens.modembed.modularasm.modularASM.Step <em>Step</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -436,16 +486,46 @@ public class ModularASMAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link hu.cubussapiens.modembed.modularasm.modularASM.Param <em>Param</em>}'.
+   * Creates a new adapter for an object of class '{@link hu.cubussapiens.modembed.modularasm.modularASM.MethodCall <em>Method Call</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see hu.cubussapiens.modembed.modularasm.modularASM.Param
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.MethodCall
    * @generated
    */
-  public Adapter createParamAdapter()
+  public Adapter createMethodCallAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.cubussapiens.modembed.modularasm.modularASM.MethodCallParam <em>Method Call Param</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.MethodCallParam
+   * @generated
+   */
+  public Adapter createMethodCallParamAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.cubussapiens.modembed.modularasm.modularASM.InsParam <em>Ins Param</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.cubussapiens.modembed.modularasm.modularASM.InsParam
+   * @generated
+   */
+  public Adapter createInsParamAdapter()
   {
     return null;
   }

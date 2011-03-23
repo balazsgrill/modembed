@@ -81,10 +81,14 @@ public class ModularASMFactoryImpl extends EFactoryImpl implements ModularASMFac
       case ModularASMPackage.VARIABLE: return createVariable();
       case ModularASMPackage.INSTANCE: return createInstance();
       case ModularASMPackage.FUNCTION: return createFunction();
+      case ModularASMPackage.METHOD: return createMethod();
+      case ModularASMPackage.METHOD_PARAM: return createMethodParam();
       case ModularASMPackage.STEP: return createStep();
       case ModularASMPackage.LABEL: return createLabel();
       case ModularASMPackage.INSTRUCTION: return createInstruction();
-      case ModularASMPackage.PARAM: return createParam();
+      case ModularASMPackage.METHOD_CALL: return createMethodCall();
+      case ModularASMPackage.METHOD_CALL_PARAM: return createMethodCallParam();
+      case ModularASMPackage.INS_PARAM: return createInsParam();
       case ModularASMPackage.LITERAL_PARAM: return createLiteralParam();
       case ModularASMPackage.REF_PARAM: return createRefParam();
       default:
@@ -240,6 +244,28 @@ public class ModularASMFactoryImpl extends EFactoryImpl implements ModularASMFac
    * <!-- end-user-doc -->
    * @generated
    */
+  public Method createMethod()
+  {
+    MethodImpl method = new MethodImpl();
+    return method;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MethodParam createMethodParam()
+  {
+    MethodParamImpl methodParam = new MethodParamImpl();
+    return methodParam;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Step createStep()
   {
     StepImpl step = new StepImpl();
@@ -273,10 +299,32 @@ public class ModularASMFactoryImpl extends EFactoryImpl implements ModularASMFac
    * <!-- end-user-doc -->
    * @generated
    */
-  public Param createParam()
+  public MethodCall createMethodCall()
   {
-    ParamImpl param = new ParamImpl();
-    return param;
+    MethodCallImpl methodCall = new MethodCallImpl();
+    return methodCall;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MethodCallParam createMethodCallParam()
+  {
+    MethodCallParamImpl methodCallParam = new MethodCallParamImpl();
+    return methodCallParam;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InsParam createInsParam()
+  {
+    InsParamImpl insParam = new InsParamImpl();
+    return insParam;
   }
 
   /**

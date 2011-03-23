@@ -28,7 +28,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class LiteralParamImpl extends ParamImpl implements LiteralParam
+public class LiteralParamImpl extends InsParamImpl implements LiteralParam
 {
   /**
    * The default value of the '{@link #getValue() <em>Value</em>}' attribute.

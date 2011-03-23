@@ -57,11 +57,22 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//QualifiedID"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="params" upperBound="-1"
-        eType="#//ModuleParam" containment="true"/>
+        eType="#//QualifiedID" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Function" eSuperTypes="#//ModuleItem">
     <eStructuralFeatures xsi:type="ecore:EReference" name="step" upperBound="-1" eType="#//Step"
         containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Method" eSuperTypes="#//ModuleItem">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="params" upperBound="-1"
+        eType="#//MethodParam" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="step" upperBound="-1" eType="#//Step"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MethodParam">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//QualifiedID"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Step"/>
   <eClassifiers xsi:type="ecore:EClass" name="Label" eSuperTypes="#//Step">
@@ -70,13 +81,23 @@
   <eClassifiers xsi:type="ecore:EClass" name="Instruction" eSuperTypes="#//Step">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ins" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="params" upperBound="-1"
-        eType="#//Param" containment="true"/>
+        eType="#//InsParam" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Param"/>
-  <eClassifiers xsi:type="ecore:EClass" name="LiteralParam" eSuperTypes="#//Param">
+  <eClassifiers xsi:type="ecore:EClass" name="MethodCall" eSuperTypes="#//Step">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="method" eType="#//QualifiedID"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="params" upperBound="-1"
+        eType="#//MethodCallParam" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MethodCallParam">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ref" eType="#//QualifiedID"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InsParam"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LiteralParam" eSuperTypes="#//InsParam">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RefParam" eSuperTypes="#//Param">
+  <eClassifiers xsi:type="ecore:EClass" name="RefParam" eSuperTypes="#//InsParam">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ref" eType="#//QualifiedID"
         containment="true"/>
   </eClassifiers>

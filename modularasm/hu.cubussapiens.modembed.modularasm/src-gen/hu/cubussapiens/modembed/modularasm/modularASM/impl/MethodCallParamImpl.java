@@ -6,9 +6,9 @@
  */
 package hu.cubussapiens.modembed.modularasm.modularASM.impl;
 
+import hu.cubussapiens.modembed.modularasm.modularASM.MethodCallParam;
 import hu.cubussapiens.modembed.modularasm.modularASM.ModularASMPackage;
 import hu.cubussapiens.modembed.modularasm.modularASM.QualifiedID;
-import hu.cubussapiens.modembed.modularasm.modularASM.RefParam;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -17,21 +17,22 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Ref Param</b></em>'.
+ * An implementation of the model object '<em><b>Method Call Param</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.cubussapiens.modembed.modularasm.modularASM.impl.RefParamImpl#getRef <em>Ref</em>}</li>
+ *   <li>{@link hu.cubussapiens.modembed.modularasm.modularASM.impl.MethodCallParamImpl#getRef <em>Ref</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class RefParamImpl extends InsParamImpl implements RefParam
+public class MethodCallParamImpl extends MinimalEObjectImpl.Container implements MethodCallParam
 {
   /**
    * The cached value of the '{@link #getRef() <em>Ref</em>}' containment reference.
@@ -48,7 +49,7 @@ public class RefParamImpl extends InsParamImpl implements RefParam
    * <!-- end-user-doc -->
    * @generated
    */
-  protected RefParamImpl()
+  protected MethodCallParamImpl()
   {
     super();
   }
@@ -61,7 +62,7 @@ public class RefParamImpl extends InsParamImpl implements RefParam
   @Override
   protected EClass eStaticClass()
   {
-    return ModularASMPackage.Literals.REF_PARAM;
+    return ModularASMPackage.Literals.METHOD_CALL_PARAM;
   }
 
   /**
@@ -85,7 +86,7 @@ public class RefParamImpl extends InsParamImpl implements RefParam
     ref = newRef;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ModularASMPackage.REF_PARAM__REF, oldRef, newRef);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ModularASMPackage.METHOD_CALL_PARAM__REF, oldRef, newRef);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -102,14 +103,14 @@ public class RefParamImpl extends InsParamImpl implements RefParam
     {
       NotificationChain msgs = null;
       if (ref != null)
-        msgs = ((InternalEObject)ref).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ModularASMPackage.REF_PARAM__REF, null, msgs);
+        msgs = ((InternalEObject)ref).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ModularASMPackage.METHOD_CALL_PARAM__REF, null, msgs);
       if (newRef != null)
-        msgs = ((InternalEObject)newRef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ModularASMPackage.REF_PARAM__REF, null, msgs);
+        msgs = ((InternalEObject)newRef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ModularASMPackage.METHOD_CALL_PARAM__REF, null, msgs);
       msgs = basicSetRef(newRef, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ModularASMPackage.REF_PARAM__REF, newRef, newRef));
+      eNotify(new ENotificationImpl(this, Notification.SET, ModularASMPackage.METHOD_CALL_PARAM__REF, newRef, newRef));
   }
 
   /**
@@ -122,7 +123,7 @@ public class RefParamImpl extends InsParamImpl implements RefParam
   {
     switch (featureID)
     {
-      case ModularASMPackage.REF_PARAM__REF:
+      case ModularASMPackage.METHOD_CALL_PARAM__REF:
         return basicSetRef(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -138,7 +139,7 @@ public class RefParamImpl extends InsParamImpl implements RefParam
   {
     switch (featureID)
     {
-      case ModularASMPackage.REF_PARAM__REF:
+      case ModularASMPackage.METHOD_CALL_PARAM__REF:
         return getRef();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -154,7 +155,7 @@ public class RefParamImpl extends InsParamImpl implements RefParam
   {
     switch (featureID)
     {
-      case ModularASMPackage.REF_PARAM__REF:
+      case ModularASMPackage.METHOD_CALL_PARAM__REF:
         setRef((QualifiedID)newValue);
         return;
     }
@@ -171,7 +172,7 @@ public class RefParamImpl extends InsParamImpl implements RefParam
   {
     switch (featureID)
     {
-      case ModularASMPackage.REF_PARAM__REF:
+      case ModularASMPackage.METHOD_CALL_PARAM__REF:
         setRef((QualifiedID)null);
         return;
     }
@@ -188,10 +189,10 @@ public class RefParamImpl extends InsParamImpl implements RefParam
   {
     switch (featureID)
     {
-      case ModularASMPackage.REF_PARAM__REF:
+      case ModularASMPackage.METHOD_CALL_PARAM__REF:
         return ref != null;
     }
     return super.eIsSet(featureID);
   }
 
-} //RefParamImpl
+} //MethodCallParamImpl

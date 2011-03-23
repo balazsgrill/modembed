@@ -17,7 +17,7 @@ QualifiedID:
 	segments+=ID ('.' segments+=ID)*;	
 	
 ModuleItem:
-	(Variable | Instance | Function | Symbol | ConfigurationWord) ';';
+	(Variable | Instance | Function | Symbol | ConfigurationWord | Method) ';';
 	
 ConfigurationWord:
 	'config' name=ID (default=LiteralParam)? '{' (fields+=ConfigurationFieldPlace ';')* '}';	
@@ -46,23 +46,37 @@ Variable:
 
 Instance:
 	'instance' type=QualifiedID name=ID
-	( '(' params+=ModuleParam* ')')?
+	( '(' params+=QualifiedID* ')')?
 	;
 	
 Function:
 	'func' name=ID '{' (step+=Step ';')* '}'
 	;
 	
+Method:
+	'method' name=ID '(' (params+=MethodParam)* ')' '{' (step+=Step ';')* '}'
+	;	
+	
+MethodParam:
+	type=QualifiedID name=ID
+	;	
+	
 Step:
-	Instruction | Label;	
+	Instruction | Label | MethodCall;	
 
 Label:
 	'label' name=ID;
 	
 Instruction:
-	ins=ID params+=Param*;
+	ins=ID params+=InsParam*;
 	
-Param:
+MethodCall:
+	method=QualifiedID '(' (params+=MethodCallParam)* ')';
+
+MethodCallParam:
+	ref=QualifiedID;
+	
+InsParam:
 	LiteralParam | RefParam;
 	
 terminal HEXINT returns ecore::EInt: '0x'('0'..'9'|'A'..'F'|'a'..'f')+;	

@@ -23,7 +23,7 @@ package hu.cubussapiens.modembed.modularasm.modularASM;
  * @model
  * @generated
  */
-public interface LiteralParam extends Param
+public interface LiteralParam extends InsParam
 {
   /**
    * Returns the value of the '<em><b>Value</b></em>' attribute.

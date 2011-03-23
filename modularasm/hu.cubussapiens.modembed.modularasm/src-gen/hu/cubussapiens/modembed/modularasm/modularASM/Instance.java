@@ -55,7 +55,7 @@ public interface Instance extends ModuleItem
 
   /**
    * Returns the value of the '<em><b>Params</b></em>' containment reference list.
-   * The list contents are of type {@link hu.cubussapiens.modembed.modularasm.modularASM.ModuleParam}.
+   * The list contents are of type {@link hu.cubussapiens.modembed.modularasm.modularASM.QualifiedID}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Params</em>' containment reference list isn't clear,
@@ -67,6 +67,6 @@ public interface Instance extends ModuleItem
    * @model containment="true"
    * @generated
    */
-  EList<ModuleParam> getParams();
+  EList<QualifiedID> getParams();
 
 } // Instance
