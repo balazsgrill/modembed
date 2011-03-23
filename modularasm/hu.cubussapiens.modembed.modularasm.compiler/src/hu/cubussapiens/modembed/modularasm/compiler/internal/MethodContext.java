@@ -19,10 +19,30 @@ public class MethodContext extends Namespace{
 
 	public final ModuleInstance namespace;
 	
+	private final MethodDescriptor md;
+	public final MethodContext parent;
+	
 	public MethodContext(ModuleInstance namespace) {
 		this.namespace = namespace;
+		this.parent = null;
+		this.md = null;
 	}
-
+	
+	public MethodContext(MethodContext parent, MethodDescriptor md) throws CompilerException {
+		this.namespace = md.namespace;
+		this.md = md;
+		this.parent = parent;
+		/*
+		 * Check for recursion 
+		 */
+		MethodContext mc = parent;
+		while(mc != null){
+			MethodDescriptor pmd = mc.md;
+			if (md.equals(pmd)) throw new CompilerException("Recursive call of methods is not allowed!");
+			mc = mc.parent;
+		}
+	}
+	
 	public final Map<String, Namespace> parameters = new HashMap<String, Namespace>();
 	
 	public final Map<String, ISymbol> labels = new HashMap<String, ISymbol>();

@@ -59,7 +59,7 @@ public class FunctionInstance {
 		if (step instanceof MethodCall){
 			MethodCall mc = (MethodCall)step;
 			MethodDescriptor md = context.resolveMethod(mc.getMethod().getSegments());
-			MethodContext subcontext = new MethodContext(md.namespace);
+			MethodContext subcontext = new MethodContext(context, md);
 			List<MethodParam> params = md.method.getParams();
 			List<MethodCallParam> paramvalues = mc.getParams();
 			if (params.size() != paramvalues.size())
