@@ -407,5 +407,9 @@
           folder="microchip"
           rootname="microchip">
     </library>
+    <library
+          folder="pic18utils"
+          rootname="utils.pic18">
+    </library>
  </extension>
 </plugin>
