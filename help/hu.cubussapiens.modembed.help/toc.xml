@@ -4,8 +4,14 @@
 <toc label="MODembed user guide">
    <topic href="html/concepts/maintopic.html" label="Concepts">
    </topic>
-   <topic href="html/gettingstarted/maintopic.html" label="Getting Started">
-   </topic>
    <topic href="html/modularasm/modularasm.html" label="Modular ASM">
+   </topic>
+   <topic label="Reference Information">
+      <topic label="Microchip High-end (Pic18)">
+         <topic href="html/reference/pic18/devices.html" label="Supported Devices">
+         </topic>
+         <topic href="html/reference/pic18/sharedmodules.html" label="Shared modules">
+         </topic>
+      </topic>
    </topic>
 </toc>
