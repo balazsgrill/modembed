@@ -9,14 +9,14 @@ import hu.cubussapiens.modembed.modularasm.indexer.IModuleIndexer;
 import hu.cubussapiens.modembed.modularasm.indexer.IndexerPlugin;
 import hu.cubussapiens.modembed.modularasm.modularASM.Function;
 import hu.cubussapiens.modembed.modularasm.modularASM.Instance;
+import hu.cubussapiens.modembed.modularasm.modularASM.Method;
 import hu.cubussapiens.modembed.modularasm.modularASM.Module;
+import hu.cubussapiens.modembed.modularasm.modularASM.ModuleItem;
 import hu.cubussapiens.modembed.modularasm.modularASM.QualifiedID;
 import hu.cubussapiens.modembed.ui.MODembedUI;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
@@ -28,22 +28,28 @@ import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
 
-import embedded.assembly.Field;
 import embedded.assembly.Instruction;
 import embedded.assembly.InstructionSet;
-import embedded.assembly.Section;
+import embedded.assembly.Parameter;
 /**
  * see http://www.eclipse.org/Xtext/documentation/latest/xtext.html#contentAssist on how to customize content assistant
  */
 public class ModularASMProposalProvider extends AbstractModularASMProposalProvider {
-
+	
+	private InstructionSet getInstructionSet(EObject model) {
+		InstructionSetCache cache = MODembedCore.getDefault().getInstructionSetCache();
+		if (model instanceof ModuleItem){
+			return cache.getCachedInstructionSet(((Module)(((ModuleItem)model).eContainer())).getTarget().getSegments());
+		}
+		return null;
+	}
+	
 	@Override
 	public void complete_Instruction(EObject model, RuleCall ruleCall,
 			ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		
-		if (model instanceof Function){
-			InstructionSetCache cache = MODembedCore.getDefault().getInstructionSetCache();
-			InstructionSet iset = cache.getCachedInstructionSet(((Module)(((Function)model).eContainer())).getTarget().getSegments());
+		if (model instanceof Function || model instanceof Method){
+			InstructionSet iset = getInstructionSet(model);
 			String prefix = context.getPrefix().toLowerCase();
 			if (iset != null){
 				for(embedded.assembly.Instruction i : iset.getInstructions()){
@@ -134,17 +140,21 @@ public class ModularASMProposalProvider extends AbstractModularASMProposalProvid
 	private ICompletionProposal propose(Instruction instruction, ContentAssistContext context){
 		StringBuilder sb = new StringBuilder();
 		sb.append(instruction.getName());
-		Set<String> params = new HashSet<String>();
-		for(Section s : instruction.getSections()){
-			if (s instanceof Field){
-				Field f = (Field)s;
-				String p = f.getParameter();
-				if (p != null && !p.isEmpty() && !params.contains(p)){
-					params.add(p);
-					sb.append(" ");
-					sb.append(p);
-				}
+		int i = 0;
+		for(Parameter p : instruction.getParameters()){
+			sb.append(" ");
+			if (p.getValue() == -1){
+				sb.append(p.getName());
+			}else{
+				sb.append("[");
+				sb.append(p.getName());
+				sb.append("=");
+				sb.append(p.getValue());
+				i++;
 			}
+		}
+		for(int j=0;j<i;j++){
+			sb.append("]");
 		}
 		return createCompletionProposal(instruction.getName(), sb.toString(), getImage(MODembedUI.IMAGE_ELEMENT_INSTRUCTION), context);
 	}
