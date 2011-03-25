@@ -11,6 +11,7 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Properties;
 
 import junit.framework.Assert;
 
@@ -81,6 +82,10 @@ public class HexfileTest {
 		p.open(new NullProgressMonitor());
 		p.refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
 		
+		IFile archmapping = p.getFile("architectures.mapping");
+		Properties archs = new Properties();
+		archs.load(archmapping.getContents());
+		
 		IFile pluginxml = p.getFile("plugin.xml");
 		StringBuffer sb = new StringBuffer();
 		
@@ -107,11 +112,25 @@ public class HexfileTest {
 			mcp = microchip.getFolder(folders.get(key));
 		
 			d = DeviceTranformationPlugin.getDefault().transformAllDevices(dev, pic, mcp, folders.get(key));
-		
+			
 			for(String k : d.keySet()){
+				String arch = "";
+				if (d.get(k).startsWith("PIC18")){
+					arch = "microchip.pic18";
+				}else{
+					arch = archs.getProperty(d.get(k));
+					if (arch == null){
+						arch = "";
+					}
+				}
+				
 				sb.append("\t\t<cputype model=\"");
 				sb.append(pic.getName());
-				sb.append("/");sb.append(k);sb.append("\" typename=\"");
+				sb.append("/");sb.append(k);sb.append("\" ");
+				if (!arch.isEmpty()){
+					sb.append(" architecture=\"");sb.append(arch);sb.append("\"");
+				}
+				sb.append(" typename=\"");
 				sb.append(d.get(k));sb.append("\"></cputype>\n");
 			}
 		}

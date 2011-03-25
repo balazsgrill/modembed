@@ -201,7 +201,9 @@ public class DeviceTranformationPlugin extends Plugin {
 				List<EObject> outObjects = output.getContents();
 				for(EObject eo : outObjects){
 					if (eo instanceof PicCPUType){
-						((PicCPUType) eo).setName(name);
+						PicCPUType cpu = ((PicCPUType) eo); 
+						cpu.setName(name);
+						cpu.getConfiguration().getScheme().setName(name);
 					}
 				}
 				// let's persist them using a resource 
