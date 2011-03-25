@@ -1,0 +1,25 @@
+module uint8 target microchip.pic18{
+	
+	var value;
+	
+	method add(utils.pic18.uint8 other){
+		MOVF value 0;
+		ADDWF other.value;
+		MOVWF value;
+	};
+	
+	method subtract(utils.pic18.uint8 other){
+		MOVF value 0;
+		SUBWF other.value;
+		MOVWF value;
+	};
+	
+	method inc(){
+		INCF value;
+	};
+	
+	method dec(){
+		DECF value;
+	};
+	
+}

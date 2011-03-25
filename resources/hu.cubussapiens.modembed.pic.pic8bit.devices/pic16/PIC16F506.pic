@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ASCII"?>
+<pic:PicCPUType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mbconf="http://cubussapiens.hu/modembed/config" xmlns:pic="http://cubussapiens.hu/modembed/pic" name="PIC16F506">
+  <configuration wordsize="8">
+    <scheme name="PIC16F506">
+      <subsets name="CONFIG">
+        <parameters xsi:type="mbconf:EnumParam" name="Oscillator Select">
+          <literals name="LP Osc With 18 ms DRT"/>
+          <literals name="XT Osc With 18 ms DRT" value="1"/>
+          <literals name="HS Osc With 18 ms DRT" value="2"/>
+          <literals name="EC Osc With RB4 and 18 ms DRT" value="3"/>
+          <literals name="INTRC With RB4 and 1 ms DRT" value="4"/>
+          <literals name="INTRC With CLKOUT and 1 ms DRT" value="5"/>
+          <literals name="EXTRC With RB4 1 ms DRT" value="6"/>
+          <literals name="EXTRC With CLKOUT 1 ms DRT" value="7"/>
+        </parameters>
+        <parameters xsi:type="mbconf:EnumParam" name="Watchdog Timer Enable">
+          <literals name="Enabled" value="1"/>
+          <literals name="Disabled"/>
+        </parameters>
+        <parameters xsi:type="mbconf:EnumParam" name="Code Protect">
+          <literals name="Off" value="1"/>
+          <literals name="On"/>
+        </parameters>
+        <parameters xsi:type="mbconf:EnumParam" name="Master Clear Enable">
+          <literals name="RB3/MCLR Functions as MCLR" value="1"/>
+          <literals name="RB3/MCLR Functions as RB3"/>
+        </parameters>
+        <parameters xsi:type="mbconf:EnumParam" name="Internal Oscillator Frequency Select">
+          <literals name="8 MHz INTOSC Speed" value="1"/>
+          <literals name="4 MHz INTOSC Speed"/>
+        </parameters>
+      </subsets>
+    </scheme>
+    <words address="4095">
+      <fields parameter="//@configuration/@scheme/@subsets.0/@parameters.0" length="3"/>
+      <fields parameter="//@configuration/@scheme/@subsets.0/@parameters.1" startBit="3" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.0/@parameters.2" startBit="4" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.0/@parameters.3" startBit="5" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.0/@parameters.4" startBit="6" length="1"/>
+    </words>
+  </configuration>
+</pic:PicCPUType>

@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Microchip 8bit Device descriptions
+Bundle-SymbolicName: hu.cubussapiens.modembed.pic.pic8bit.devices;singleton:=true
+Bundle-Version: 0.1.1.qualifier
+Bundle-Vendor: Cubussapiens.hu
+Require-Bundle: hu.cubussapiens.modembed;bundle-version="0.1.0",
+ hu.cubussapiens.modembed.pic;bundle-version="0.1.0",
+ hu.cubussapiens.modembed.modularasm.compiler;bundle-version="0.1.0"

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ASCII"?>
+<pic:PicCPUType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mbconf="http://cubussapiens.hu/modembed/config" xmlns:pic="http://cubussapiens.hu/modembed/pic" name="PIC16CR57C">
+  <configuration wordsize="16">
+    <scheme name="PIC16CR57C">
+      <subsets name="CONFIG">
+        <parameters xsi:type="mbconf:EnumParam" name="Oscillator">
+          <literals name="RC" value="3"/>
+          <literals name="LP"/>
+          <literals name="XT" value="1"/>
+          <literals name="HS" value="2"/>
+        </parameters>
+        <parameters xsi:type="mbconf:EnumParam" name="Watchdog Timer">
+          <literals name="On" value="1"/>
+          <literals name="Off"/>
+        </parameters>
+        <parameters xsi:type="mbconf:EnumParam" name="Code Protect">
+          <literals name="Off" value="511"/>
+          <literals name="On"/>
+        </parameters>
+      </subsets>
+    </scheme>
+    <words address="4095">
+      <fields parameter="//@configuration/@scheme/@subsets.0/@parameters.0" length="2"/>
+      <fields parameter="//@configuration/@scheme/@subsets.0/@parameters.1" startBit="2" length="1"/>
+      <fields parameter="//@configuration/@scheme/@subsets.0/@parameters.2" startBit="3" length="9"/>
+    </words>
+  </configuration>
+</pic:PicCPUType>
