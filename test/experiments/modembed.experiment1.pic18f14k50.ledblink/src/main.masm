@@ -24,12 +24,16 @@ module main target microchip.pic18{
 		return 0;
 	};
 
+	method haromnop(){
+		nop;
+		nop;
+		nop;
+	};
+
 	func delay1{
 		MOVLB 0;
 		label d;
-		nop;
-		nop;
-		nop;
+		haromnop();
 		INCFSZ 1 1 counter1;
 		goto d;
 		return 0;
