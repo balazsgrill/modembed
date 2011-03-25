@@ -49,12 +49,6 @@
          version="0.0.0"/>
 
    <plugin
-         id="hu.cubussapiens.modembed.pic.pic8bit"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"/>
-
-   <plugin
          id="hu.cubussapiens.modembed.pic.ui"
          download-size="0"
          install-size="0"
@@ -67,5 +61,23 @@
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
+   <plugin
+         id="hu.cubussapiens.modembed.pic.pic8bit.arch"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="hu.cubussapiens.modembed.pic.pic8bit.devices"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="hu.cubussapiens.modembed.pic.pic8bit.utils"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
 
 </feature>
