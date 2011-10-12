@@ -1,0 +1,31 @@
+# Device file info: $Id: 25AA080AB.dev,v 1.1 2007/03/26 16:27:04 hammersf Exp $
+# Macro file info: $Id: SEEmacro.dev,v 1.2 2006/08/04 20:16:19 nairnj Exp $
+#device=25AA080A
+format=0.1
+
+IsChecksumless=1
+
+vpp (range=1.875-5.500 dflt=5.000)
+vdd (range=1.875-5.500 dfltrange=5.000-5.000 nominal=5.000)
+
+pgming (memtech=ee tries=1 ovrpgm=1)
+    wait (eedata=100)
+    latches (eedata=1)
+
+eedata (region=0x0-0x3ff)
+cfgmem (region=0x400-0x401)
+
+                               # ------------------#
+#------------------------------#  Status Register  #------------------------------------#
+                               # ------------------#
+
+
+cfgbits (key=CONFIG0L addr=0x400 unused=0x0)
+    field (key=BP mask=0x0C desc="Write Protect" init=0x0)
+        setting (req=0xC value=0x00 desc="None")
+        setting (req=0xC value=0x04 desc="Upper 1/4 (0300-03FF)")
+        setting (req=0xC value=0x08 desc="Upper 1/2 (0200-03FF)")
+        setting (req=0xC value=0x0C desc="All       (0000-03FF)")
+    field (key=WPEN mask=0x80 desc="Write-Protect Enable" init=0x0)    
+    		setting (req=0x80 value=0x00 desc="Disabled")
+        setting (req=0x80 value=0x80 desc="Enabled")

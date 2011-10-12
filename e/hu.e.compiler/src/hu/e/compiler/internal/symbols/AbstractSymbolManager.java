@@ -1,0 +1,218 @@
+package hu.e.compiler.internal.symbols;
+
+import hu.e.compiler.ECompiler;
+import hu.e.compiler.internal.OperationCallCompiler;
+import hu.e.compiler.internal.OperationCompiler;
+import hu.e.compiler.internal.OperationFinder;
+import hu.e.compiler.internal.model.IProgramStep;
+import hu.e.compiler.internal.model.ISymbolManager;
+import hu.e.compiler.internal.model.symbols.IArraySymbol;
+import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
+import hu.e.compiler.internal.model.symbols.IStructSymbol;
+import hu.e.compiler.internal.model.symbols.ISymbol;
+import hu.e.compiler.internal.model.symbols.IVariableSymbol;
+import hu.e.compiler.internal.model.symbols.impl.ArrayLiteralSymbol;
+import hu.e.compiler.internal.model.symbols.impl.LiteralSymbol;
+import hu.e.compiler.internal.model.symbols.impl.OperatedSymbol;
+import hu.e.compiler.internal.model.symbols.impl.OperationSymbol;
+import hu.e.compiler.internal.model.symbols.impl.StructLiteralSymbol;
+import hu.e.parser.eSyntax.ArrayRef;
+import hu.e.parser.eSyntax.ArrayTypeDef;
+import hu.e.parser.eSyntax.OperationCall;
+import hu.e.parser.eSyntax.OperationRole;
+import hu.e.parser.eSyntax.StructRef;
+import hu.e.parser.eSyntax.StructTypeDef;
+import hu.e.parser.eSyntax.StructTypeDefMember;
+import hu.e.parser.eSyntax.Type;
+import hu.e.parser.eSyntax.TypeDef;
+import hu.e.parser.eSyntax.UNARY_OPERATOR;
+import hu.e.parser.eSyntax.VariableRefSection;
+import hu.e.parser.eSyntax.VariableReference;
+import hu.e.parser.eSyntax.XAddressOfVar;
+import hu.e.parser.eSyntax.XExpression;
+import hu.e.parser.eSyntax.XExpression1;
+import hu.e.parser.eSyntax.XExpression2;
+import hu.e.parser.eSyntax.XExpression3;
+import hu.e.parser.eSyntax.XExpression4;
+import hu.e.parser.eSyntax.XExpression5;
+import hu.e.parser.eSyntax.XExpressionLiteral;
+import hu.e.parser.eSyntax.XIsLiteralExpression;
+import hu.e.parser.eSyntax.XParenthesizedExpression;
+import hu.e.parser.eSyntax.XPrimaryExpression;
+import hu.e.parser.eSyntax.XSizeOfExpression;
+import hu.e.parser.eSyntax.XStructExpression;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.eclipse.emf.ecore.EObject;
+
+public abstract class AbstractSymbolManager implements ISymbolManager {
+	
+	@Override
+	public ISymbol resolve(XExpression x){
+		return resolve((XExpression5)x);
+	}
+	
+	private ISymbol resolve(XExpression5 x){
+		ISymbol a = resolve(x.getA());
+		for(int i=0;i<x.getB().size();i++){
+			a = new OperationSymbol(a, x.getOp().get(i), resolve(x.getB().get(i)), this);
+		}
+		return a;
+	}
+	
+	private ISymbol resolve(XExpression4 x){
+		ISymbol a = resolve(x.getA());
+		for(int i=0;i<x.getB().size();i++){
+			a = new OperationSymbol(a, x.getOp().get(i), resolve(x.getB().get(i)), this);
+		}
+		return a;
+	}
+	
+	private ISymbol resolve(XExpression3 x){
+		ISymbol a = resolve(x.getA());
+		for(int i=0;i<x.getB().size();i++){
+			a = new OperationSymbol(a, x.getOp().get(i), resolve(x.getB().get(i)), this);
+		}
+		return a;
+	}
+	
+	private ISymbol resolve(XExpression2 x){
+		ISymbol a = resolve(x.getA());
+		for(int i=0;i<x.getB().size();i++){
+			a = new OperationSymbol(a, x.getOp().get(i), resolve(x.getB().get(i)), this);
+		}
+		return a;
+	}
+	
+	private ISymbol resolve(XExpression1 x){
+		ISymbol a = resolve(x.getA());
+		for(UNARY_OPERATOR op : x.getOperator()){
+			a = new OperationSymbol(a, op, null, this);
+		}
+		return a;
+	}
+	
+	@Override
+	public ISymbol resolveVarRef(VariableReference vr){
+		ISymbol s = getSymbol(vr.getVar());
+		
+		/* Resolve struct sections and array indices */
+		for(VariableRefSection sect : vr.getRef()){
+			s = resolveVarRefSect(s, sect);
+		}
+		
+		if (s == null) ECompiler.throwError(vr, "Variable cannot be accessed here: "+vr.getVar());
+		return s;
+	}
+	
+	private ISymbol resolveVarRefSect(ISymbol symbol, VariableRefSection sect){
+		if (sect instanceof ArrayRef){
+			if (symbol instanceof IArraySymbol){
+				IArraySymbol as = (IArraySymbol)symbol;
+				ISymbol is = resolve(((ArrayRef) sect).getV());
+				if (!is.isLiteral())
+					ECompiler.throwError(sect, "Array indexing must be compile-time expression!");
+				return as.getElement(this, ((ILiteralSymbol)is).getValue());
+			}
+		}
+		if (sect instanceof StructRef){
+			if (symbol instanceof IStructSymbol){
+				IStructSymbol ss = (IStructSymbol)symbol;
+				return ss.getMember(this, ((StructRef) sect).getRef());
+			}else{
+				ECompiler.throwError(sect, " Struct type needed!");
+			}
+		}
+		return null;
+	}
+	
+	private ISymbol resolve(XPrimaryExpression x){
+		if(x instanceof VariableReference){
+			return resolveVarRef((VariableReference)x);
+		}
+		if (x instanceof XExpressionLiteral){
+			return new LiteralSymbol(ECompiler.convertLiteral(((XExpressionLiteral) x).getValue()));
+		}
+		if (x instanceof XParenthesizedExpression){
+			return resolve(((XParenthesizedExpression) x).getA());
+		}
+		
+		if (x instanceof XIsLiteralExpression){
+			ISymbol s = getSymbol(((XIsLiteralExpression) x).getRef().getVar());
+			return new LiteralSymbol(s.isLiteral()? 1 : 0);
+		}
+		
+		if (x instanceof XAddressOfVar){
+			VariableReference vr = ((XAddressOfVar) x).getRef();
+			ISymbol s = resolveVarRef(vr);
+			if (s.isLiteral()) ECompiler.throwError(x, "Literal values do not have addresses.");
+			return ((IVariableSymbol)s).getAddressSymbol();
+		}
+		
+		if (x instanceof OperationCall){
+			OperationCall oc = (OperationCall)x;
+			OperationCallCompiler c = new OperationCallCompiler(oc, this);
+			List<IProgramStep> ps = c.compile();
+			if (!ps.isEmpty()){
+				return new OperatedSymbol(ps, c.getReturns());
+			}
+			return c.getReturns();
+		}
+		if (x instanceof XStructExpression){
+			return resolveXStruct((XStructExpression)x);
+		}
+		if (x instanceof XSizeOfExpression){
+			Type t = ((XSizeOfExpression) x).getType();
+			int size = getVariableManager().getMemoryManager().getSize(this, t);
+			return new LiteralSymbol(size);
+		}
+		
+		ECompiler.throwError(x, "Invalid expression");
+		return null;
+	}
+	
+	private ISymbol resolveXStruct(XStructExpression literalStruct){
+		Type type = literalStruct.getType();
+		TypeDef td = type.getDef();
+		List<ISymbol> symbols = new ArrayList<ISymbol>(literalStruct.getValues().size());
+		for(XExpression value : literalStruct.getValues()){
+			symbols.add(resolve(value));
+		}
+		
+		if (td instanceof ArrayTypeDef){
+			ArrayTypeDef atd = (ArrayTypeDef)td;
+			int length = ((ILiteralSymbol)resolve(atd.getLength())).getValue();
+			if (length != symbols.size()) ECompiler.throwError(literalStruct, "Invalid number of elements!");
+			return new ArrayLiteralSymbol(symbols.toArray(new ISymbol[symbols.size()]), type);
+		}
+		
+		if (td instanceof StructTypeDef){
+			StructTypeDef std = (StructTypeDef)td;
+			if (std.getMembers().size() != symbols.size())
+				ECompiler.throwError(literalStruct, "Invalid number of elements!");
+			Map<StructTypeDefMember, ISymbol> members = new HashMap<StructTypeDefMember, ISymbol>();
+			int i = 0;
+			for(StructTypeDefMember m : std.getMembers()){
+				members.put(m, symbols.get(i));
+				i++;
+			}
+			return new StructLiteralSymbol(members, type);
+		}
+		
+		return null;
+	}
+	
+	@Override
+	public List<IProgramStep> executeOperator(OperationRole role, EObject context,
+			ISymbol... symbols) {
+		OperationFinder opfinder = getOpFinder();
+		OperationCompiler oc = opfinder.getOperationCompiler(role, symbols);
+		if (oc == null) ECompiler.throwError(context, "Cannot found "+role+" operator!");
+		return oc.compile(this);
+	}
+	
+}

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ASCII" standalone="yes" ?><sim:sim xmlns:sim="http://crownking/sim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/sim sim/sim.xsd">
+  <sim:peripheral sim:key="GPIO" sim:sfrs="GPIO TRISIO" sim:type="port">
+    <sim:iopin sim:dir="inout" sim:key="GPIO0">
+      <sim:cnpin sim:key="C1INP" sim:notify="CMSINGLE"/>
+      <sim:cnpin sim:key="GPIO0CN" sim:notify="CORE"/>
+      </sim:iopin>
+    <sim:iopin sim:dir="inout" sim:key="GPIO1">
+      <sim:cnpin sim:key="C1INN" sim:notify="CMSINGLE"/>
+      <sim:cnpin sim:key="GPIO1CN" sim:notify="CORE"/>
+      </sim:iopin>
+    <sim:iopin sim:dir="inout" sim:key="GPIO2"/>
+    <sim:iopin sim:dir="in" sim:key="GPIO3">
+      <sim:cnpin sim:key="GPIO3CN" sim:notify="CORE">
+        <!-- ________________________________________________________________________________ -->
+        <!--  				TIMERs -->
+        <!-- ________________________________________________________________________________ -->
+        <!--  CMCON0 register is listed here because TMR0 needs to make reference to CMCON0 -->
+        </sim:cnpin>
+      </sim:iopin>
+    </sim:peripheral>
+  <sim:peripheral sim:key="TMR0" sim:sfrs="TMR0 CMCON0">
+    <sim:pinfunc sim:dir="in" sim:key="T0CKI" sim:port="GPIO2">
+      <!-- ________________________________________________________________________________ -->
+      <!--  				CM -->
+      <!-- ________________________________________________________________________________ -->
+      </sim:pinfunc>
+    </sim:peripheral>
+  <sim:peripheral sim:key="CMSINGLE" sim:sfrs="CMCON0">
+    <sim:pinfunc sim:dir="in" sim:key="C1INP" sim:port="GPIO0"/>
+    <sim:pinfunc sim:dir="in" sim:key="C1INN" sim:port="GPIO1"/>
+    <sim:pinfunc sim:dir="inout" sim:key="C1OUT" sim:port="GPIO2">
+      <!-- ________________________________________________________________________________ -->
+      <!--  				MCLR -->
+      <!-- ________________________________________________________________________________ -->
+      </sim:pinfunc>
+    </sim:peripheral>
+  <sim:peripheral sim:key="MCLR">
+    <sim:pinfunc sim:dir="in" sim:key="MCLR" sim:port="GPIO3"/>
+    </sim:peripheral>
+  </sim:sim>

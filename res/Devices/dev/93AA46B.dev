@@ -1,0 +1,17 @@
+# Device file info: $Id: 93AA46B.dev,v 1.5 2007/07/10 23:04:49 hammersf Exp $
+# Macro file info: $Id: SEEmacro.dev,v 1.2 2006/08/04 20:16:19 nairnj Exp $
+#device=93AA46B
+format=0.1
+
+vpp (range=1.875-5.500 dflt=5.000)
+vdd (range=1.875-5.500 dfltrange=5.000-5.000 nominal=5.000)
+
+# pgm latches are used to determine 8 or 16 bit data.
+# 1 = 8-bits  2 = 16-bits
+# eedata latches are used for the address length.
+
+pgming (memtech=ee tries=1 ovrpgm=1)
+    wait (eedata=100)
+    latches (pgm=2 eedata=6)
+
+eedata (region=0x0-0x7F)

@@ -1,0 +1,99 @@
+# <!-- XML:Generated(2007-10-04 11:01:26.415000) -->
+
+# <!-- XML:AnnotatedFile:Generated(2007-08-22 13:56:09.359000) -->
+
+# Device file info: $Id: PIC12C509A.ann,v 1.4 2007/08/22 21:58:56 charled Exp $
+# Macro file info: $Id: PIC12C509A.ann,v 1.4 2007/08/22 21:58:56 charled Exp $
+
+format=0.1
+
+#device=PIC12C509A
+
+vpp (range=12.750-13.250  dflt=13.000)
+vdd (range=2.500-5.500  dfltrange=3.000-5.500  nominal=5.000)
+
+pgming (memtech=eprom ovrpgm=11 tries=8)
+    wait (pgm=100 cfg=100 userid=100)
+
+
+# <!-- XML:Regions:Begin() -->
+pgmmem (region=0x0-0x3ff)
+calmem (region=0x3ff-0x3ff)
+testmem (region=0x400-0x43f)
+userid (region=0x400-0x403)
+cfgmem (region=0xfff-0xfff)
+# <!-- XML:Regions:End() -->
+
+
+# <!-- XML:SFRs:Begin() -->
+sfr (key=INDF addr=0x0 size=1 flags=i access='u u u u u u u u')
+    reset (por='--------' mclr='--------')
+    bit (names='INDF' width='8')
+sfr (key=TMR0 addr=0x1 size=1 access='rw rw rw rw rw rw rw rw')
+    reset (por='xxxxxxxx' mclr='uuuuuuuu')
+    bit (names='TMR0' width='8')
+    stimulus (scl=rwb pcfiles=w regfiles=w type=int)
+sfr (key=PCL addr=0x2 size=1 access='rw rw rw rw rw rw rw rw')
+    reset (por='11111111' mclr='11111111')
+    bit (names='PCL' width='8')
+    stimulus (scl=rwb pcfiles=rw regfiles=w)
+sfr (key=STATUS addr=0x3 size=1 access='rw rw rw r r rw rw rw')
+    reset (por='00011xxx' mclr='q00qquuu')
+    bit (names='GPWUF - PA0 nTO nPD Z DC C' width='1 1 1 1 1 1 1 1')
+sfr (key=FSR addr=0x4 size=1 access='rw rw rw rw rw rw rw rw')
+    reset (por='110xxxxx' mclr='11uuuuuu')
+    bit (names='FSR' width='8')
+    stimulus (scl=rwb pcfiles=rw regfiles=w)
+sfr (key=OSCCAL addr=0x5 size=1 access='rw rw rw rw rw rw u u')
+    reset (por='100000--' mclr='uuuuuu--')
+    bit (names='CAL - -' width='6 1 1')
+sfr (key=GPIO addr=0x6 size=1 access='u u rw rw r rw rw rw')
+    reset (por='--xxxxxx' mclr='--uuuuuu')
+    bit (names='- - GP5 GP4 GP3 GP2 GP1 GP0' width='1 1 1 1 1 1 1 1')
+    bit (tag=scl names='GP' width='8')
+    stimulus (scl=rwb pcfiles=rw regfiles=rw)
+# <!-- XML:SFRs:End() -->
+
+
+# <!-- XML:DCRs:Begin() -->
+cfgbits (key=CONFIG addr=0xfff unused=0xfe0)
+    field (key=OSC mask=0x3 desc="Oscillator")
+        setting (req=0x3 value=0x3 desc="External RC")
+        setting (req=0x3 value=0x0 desc="LP")
+        setting (req=0x3 value=0x1 desc="XT")
+        setting (req=0x3 value=0x2 desc="Internal RC")
+    field (key=WDT mask=0x4 desc="Watchdog Timer")
+        setting (req=0x4 value=0x4 desc="On")
+        setting (req=0x4 value=0x0 desc="Off")
+    field (key=CP mask=0x8 desc="Code Protect")
+        setting (req=0x8 value=0x8 desc="Off")
+            checksum (type=0x0 protregion=0x00-0x00)
+        setting (req=0x8 value=0x0 desc="On")
+            checksum (type=0x20 protregion=0x40-0x3FE)
+    field (key=MCLRE mask=0x10 desc="Master Clear Enable")
+        setting (req=0x10 value=0x10 desc="External")
+        setting (req=0x10 value=0x0 desc="Internal")
+# <!-- XML:DCRs:End() -->
+
+
+                               # ---------------------------#
+#------------------------------# Nonmemory-Mapped Registers #------------------------------------#
+                               # ---------------------------#
+
+nmmr (key=WREG addr=0x0 size=1 access='rw rw rw rw rw rw rw rw')
+    reset (por='qqqqqqxx' mclr='qqqqqquu')
+    bit (names='WREG' width='8')
+nmmr (key=STKPTR addr=0x1 size=1 flags=h access='rw rw rw rw rw rw rw rw')
+    reset (por='00000000' mclr='00000000')
+    bit (names='STKPTR' width='8')
+nmmr (key=TRIS addr=0x3 size=1 access='u u rw rw rw rw rw rw')
+    reset (por='--111111' mclr='--111111')
+    bit (names='- - TRIS5 TRIS4 TRIS3 TRIS2 TRIS1 TRIS0')
+nmmr (key=OPTION_REG addr=0x5 size=1 access='rw rw rw rw rw rw rw rw')
+    reset (por='11111111' mclr='11111111')
+    bit (names='nGPWU nGPPU T0CS T0SE PSA PS' width='1 1 1 1 1 3')
+
+
+                               # ------------#
+NumBanks=2
+MirrorRegs (0x0-0x0f 0x20-0x2f)

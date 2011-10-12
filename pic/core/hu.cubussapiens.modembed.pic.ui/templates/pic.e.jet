@@ -1,0 +1,35 @@
+<%@ jet package="hu.cubussapiens.modembed.pic.ui" 
+	imports="java.util.* microchip.* microchip.device.* microchip.device.config.* microchip.device.memory.*" 
+	class="PicETemplate" %>
+<% Device device = (Device)argument; %>
+namespace microchip.<%=device.getName()%>;
+
+import e.types;
+
+/*
+ * Special function registers
+ */
+<%for(SFR sfr : device.getSfrs()){%>
+reg uint8 <%=sfr.getKey()%> : 0x<%=Integer.toHexString(sfr.getAddr())%>;
+<%}%>
+
+/*
+ * Configuration 
+ */
+const uint32 CONFIG_ADDRESS = 0x<%=Integer.toHexString(device.getCfgmem().getStart())%>;
+ 
+<%for(CfgBits cfgbits : device.getCfgbits()){%>
+<%for(Field field : cfgbits.getFields()){%>
+
+<%for(Setting s : field.getSettings()){%>
+	/*
+	 * <b><%=cfgbits.getKey()%></b> 
+	 * <%=field.getDesc()%> 
+	 * <%=s.getDesc()%> 
+	 */
+	const uint8 <%=cfgbits.getKey()%>_<%=field.getKey()%>_<%=PicUIPlugin.IDzeString(s.getDesc())%> = 0x<%=Integer.toHexString(s.getValue())%>;
+<%}%>
+
+
+<%}%>
+<%}%>

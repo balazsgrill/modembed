@@ -1,0 +1,49 @@
+# <!-- XML:Generated(2007-10-04 11:02:47.727000) -->
+
+# <!-- XML:AnnotatedFile:Generated(2007-08-22 10:13:46.390000) -->
+
+# Device file info: $Id: PIC16CR73.ann,v 1.4 2007/08/22 17:27:44 charled Exp $
+# Macro file info: $Id: PIC16CR73.ann,v 1.4 2007/08/22 17:27:44 charled Exp $
+
+format=0.1
+
+#device=PIC16CR73
+
+vpp (range=2.000-5.500  dflt=5.000)
+vdd (range=2.000-5.500  dfltrange=4.000-5.500  nominal=5.000)
+
+#pgming (memtech=ee tries=1)
+pgming (memtech=rom)
+
+# <!-- XML:Regions:Begin() -->
+pgmmem (region=0x0-0xfff)
+testmem (region=0x2000-0x20ff)
+userid (region=0x2000-0x2003)
+devid (region=0x2006-0x2006 idmask=0x3fe0 id=0xc80)
+    ver (id=0xc80 desc="Rev A")
+cfgmem (region=0x2007-0x2007)
+# <!-- XML:Regions:End() -->
+
+# <!-- XML:DCRs:Begin() -->
+cfgbits (key=CONFIG addr=0x2007 unused=0x3fa0)
+    field (key=OSC mask=0x3 desc="Oscillator")
+        setting (req=0x3 value=0x3 desc="RC")
+        setting (req=0x3 value=0x0 desc="LP")
+        setting (req=0x3 value=0x1 desc="XT")
+        setting (req=0x3 value=0x2 desc="HS")
+    field (key=WDT mask=0x4 desc="Watchdog Timer")
+        setting (req=0x4 value=0x4 desc="On")
+        setting (req=0x4 value=0x0 desc="Off")
+    field (key=PUT mask=0x8 desc="Power Up Timer")
+        setting (req=0x8 value=0x8 desc="Off")
+        setting (req=0x8 value=0x0 desc="On")
+    field (key=CP mask=0x10 desc="Code Protect")
+        setting (req=0x10 value=0x10 desc="Off")
+            checksum (type=0x0 protregion=0x00-0x00)
+        setting (req=0x10 value=0x0 desc="On")
+            checksum (type=0x20 protregion=0x0-0x0FFF)
+    field (key=BODEN mask=0x40 desc="Brown Out Detect")
+        setting (req=0x40 value=0x40 desc="On")
+        setting (req=0x40 value=0x0 desc="Off")
+# <!-- XML:DCRs:End() -->
+

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="false"
+            id="hu.cubussapiens.modembed.pic.ui.generateDesc"
+            nameFilter="*.dev"
+            objectClass="org.eclipse.core.resources.IFile">
+         <action
+               class="hu.cubussapiens.modembed.pic.ui.GeneratePicDesc"
+               id="hu.cubussapiens.modembed.pic.ui.GeneratePicDesc"
+               label="Generate PIC description">
+         </action>
+      </objectContribution>
+   </extension>
+
+</plugin>

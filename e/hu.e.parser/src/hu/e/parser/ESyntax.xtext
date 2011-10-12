@@ -1,0 +1,305 @@
+grammar hu.e.parser.ESyntax with org.eclipse.xtext.common.Terminals
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+generate eSyntax "http://www.e.hu/parser/ESyntax"
+
+Package:
+	'namespace' name=QualifiedName';'
+	
+	( 'import' uses+=[Package|QualifiedName] ';')*
+	
+	(
+	items += TopLevelItem
+	 )* ;
+	
+TopLevelItem:
+	Type | Operation | LinkedBinary | Variable';' | 
+	ConstantVariable';' | RegisterVariable';' | CompileContextVariable';' 
+	| OperatorDefinition
+	;
+
+QualifiedName:
+	ID ('.' ID)*
+;
+
+/***********************
+ * LITERALS *
+ ***********************/
+
+terminal HEXINT returns ecore::EInt: '0x'('0'..'9'|'a'..'f'|'A'..'F')+;
+
+terminal BINARY returns ecore::EInt: 'b'('0'|'1')+;
+
+LITERAL: INT | HEXINT | BINARY;
+
+/***********************
+ * DATATYPES *
+ ***********************/	
+Type:
+	'type' name=ID '=' def=TypeDef;
+
+TypeDef:
+	DataTypeDef | ArrayTypeDef | StructTypeDef ;
+	
+DataTypeDef:
+	kind=PrimitiveKind bits=INT 'bits' ';'
+	;
+
+enum PrimitiveKind:
+	UNSIGNED='unsigned' | SIGNED='signed' | REAL='real'
+;
+	
+ArrayTypeDef:
+	type=[Type|QualifiedName] '['length=XExpression']' ';'
+	;
+	
+StructTypeDef:
+	{StructTypeDef} 'struct' '{'
+		(members += StructTypeDefMember)
+		(',' members += StructTypeDefMember)*
+	'}';
+
+StructTypeDefMember:
+	type=[Type|QualifiedName] name=ID;
+
+/*************************
+ * GLOBAL VARIABLES
+ *************************/
+
+ConstantVariable returns Variable: 
+	{ConstantVariable} 'const' type=[Type|QualifiedName] name=ID '=' value=XExpression
+;
+
+RegisterVariable returns Variable:
+	{RegisterVariable} 'reg' type=[Type|QualifiedName] name=ID ':' addr=LITERAL
+;
+
+CompileContextVariable returns Variable:
+	{CompileContextVariable} 'compilecontext' name=ID ('=' value=XExpression)?
+;
+
+/***********************
+ * Operation *
+ ***********************/
+
+OperationStep:
+	InstructionWord | Label | (Variable';') | (OperationCall ';') | XTopLevelExpression
+;
+
+Label:
+	'label' name=ID ';'
+;
+
+InstructionWord:
+	'<' (sections+=WordSection)+ '>'
+;
+
+WordSection:
+	(LiteralValue | VariableReference | LabelReference) ':' size=INT (':' shift=INT)? ;
+
+LiteralValue:
+	value=LITERAL;
+
+LabelReference:
+	'@'label=[Label|ID]
+;
+
+Variable:
+	type=[Type|QualifiedName] name=ID
+;
+
+VariableReference:
+	var=[Variable|ID] (ref+=VariableRefSection)*
+;
+
+VariableRefSection:
+	ArrayRef | StructRef
+;
+
+ArrayRef:
+	'[' v=XExpression ']'
+;
+
+StructRef:
+	'.' ref=[StructTypeDefMember|ID]
+;
+
+OperationCall:
+	operation=[Operation|QualifiedName] '('
+		(params+=OperationCallParameter (',' params+=OperationCallParameter)*)?
+	')'
+;
+
+OperationCallParameter:
+	XExpression | LabelReference
+;
+
+Operation:
+	(returntype=[Type|QualifiedName])? name=ID '('
+		(params+=ParameterVariable (',' params+=ParameterVariable)*)?
+	')''{'
+		block=OperationBlock
+	'}' ('returns' return=XExpression ';')?
+;
+
+OperationBlock:
+	{OperationBlock} (steps+=OperationStep)*
+;
+
+ParameterVariable:
+	(kind=ParameterKind)? var=Variable ('=' default=LITERAL)?  
+;
+
+enum ParameterKind:
+	ANY='default' | VAR='var' | CONST='const'
+;
+
+/****************
+ * OPERATORS
+ ******************/
+
+enum OperationRole:
+	SET='SET' | ADD='ADD' | SUBTRACT='SUBTRACT' | AND='AND' | OR='OR' | XOR='XOR' |
+	EQUALS='EQUALS' | BRANCH='BRANCH' | UC_GOTO='UC_GOTO' | NOT='NOT' | INDIRECTION='INDIRECTION' |
+	CLEAR='CLEAR' | INCREMENT='INCREMENT' | DECREMENT='DECREMENT' | DIV='DIV' | MOD='MOD'
+	| LT='LT' | LTE='LTE' | GT='GT' | GTE='GTE'
+;
+
+OperatorDefinition:
+	'operator' role=OperationRole '{'
+		candidate+=[Operation|QualifiedName] (',' candidate+=[Operation|QualifiedName])* (',')?
+	'}'
+;
+
+/********************
+ * BINARY and LINKING
+ ********************/
+
+LinkedBinary:
+	'binary' name=ID (type=BinaryType)? '{'
+		(sections+=BinarySection)*
+	'}'
+;
+
+enum BinaryType:
+	DEFAULT='default' | HEXFILE='hexfile'
+;
+
+BinarySection:
+	(FunctionBinarySection | ConstantBinarySection | ReferenceBinarySection) 'at' start=XExpression ';'
+;
+ 
+FunctionBinarySection:
+	'link' operation=[Operation|QualifiedName] '{'
+		'memwidth' '=' memwidth=LITERAL ';'
+		(mems+=FunctionMemory ';')+
+	'}'
+; 
+
+FunctionMemory:
+	'mem' start=LITERAL '..' end=LITERAL
+;
+ 
+ConstantBinarySection:
+	'data' '{' (data+=XExpression ';')+ '}'
+; 
+
+ReferenceBinarySection:
+	'include' inc=[LinkedBinary|QualifiedName]
+;
+
+/********************
+ * INFIX SYNTAX
+ **********************/
+ 
+XExpression:
+	XExpression5;
+
+XPrimaryExpression:
+	XExpressionLiteral | XParenthesizedExpression | XIsLiteralExpression | VariableReference | OperationCall
+	| XAddressOfVar | XStructExpression | XSizeOfExpression
+;
+
+XSizeOfExpression:
+	'sizeof' '(' type = [Type|QualifiedName] ')'
+;
+
+XStructExpression:
+	type=[Type|QualifiedName] '{' values+=XExpression (',' values+=XExpression)* (',')? '}'
+;
+
+XExpression1:
+	(operator += UNARY_OPERATOR)* a=XPrimaryExpression
+;
+
+enum UNARY_OPERATOR:
+	MINUS='-' | NOT='!'
+;
+
+XExpression2:
+	a = XExpression1 (=> op+=MULTIPLICATIVE_OPERATOR b+= XExpression2)*
+;
+
+enum MULTIPLICATIVE_OPERATOR:
+	MUL='*' | DIV='/' | MOD='%'
+;
+
+XExpression3:
+	a = XExpression2 (=> op+=ADDITIVE_OPERATOR b+= XExpression2)*
+;
+
+enum ADDITIVE_OPERATOR:
+	ADD='+' | 
+	MINUS='-'
+;
+
+XExpression4:
+	a = XExpression3 (=> op+=EQUALITY_OPERATOR b+=XExpression3)*
+;
+
+enum EQUALITY_OPERATOR:
+	EQUALS='==' | NOTEQUALS='!=' | GTE='>=' | LTE='<=' | GT='>' | LT='<'
+;
+
+XExpression5:
+	a = XExpression4 (=> op+=BOOLEAN_OPERATOR b+=XExpression4)*
+;
+
+enum BOOLEAN_OPERATOR:
+	OR='||' | AND='&&' 
+;
+
+XExpressionLiteral:
+	value=LITERAL
+;
+
+XTopLevelExpression:
+	XAssignment | XIfExpression
+;
+
+XAssignment:
+	ref=VariableReference OpSingleAssign value=XExpression ';' ;
+
+OpSingleAssign:
+	'='
+;
+
+XAddressOfVar:
+	'addr' '(' ref = VariableReference ')'
+;
+
+XIsLiteralExpression:
+	'isliteral' '('
+		ref = VariableReference
+	')'
+;
+
+XIfExpression:
+	'if' '(' if=XExpression ')' '{'
+	then=OperationBlock
+	'}'
+	(=> 'else' '{' else=OperationBlock '}')?;
+	
+XParenthesizedExpression:
+	'(' a=XExpression ')';

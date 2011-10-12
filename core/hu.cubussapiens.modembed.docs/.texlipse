@@ -1,0 +1,13 @@
+#TeXlipse project settings
+#Sat May 14 18:09:48 CEST 2011
+builderNum=2
+outputDir=
+makeIndSty=
+bibrefDir=
+outputFormat=pdf
+tempDir=tmp
+mainTexFile=modemebed.tex
+outputFile=modembed.pdf
+langSpell=en
+markDer=true
+srcDir=

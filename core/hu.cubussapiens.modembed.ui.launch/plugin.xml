@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.debug.core.launchConfigurationTypes">
+      <launchConfigurationType
+            delegate="hu.cubussapiens.modembed.ui.launch.MODembedLaunchConfigurationDelegate"
+            delegateDescription="Launch a program given by a hex file on an embedded system"
+            delegateName="Embedded program launcher"
+            id="hu.cubussapiens.modembed.ui.launch"
+            modes="run"
+            name="Run program on microcontroller"
+            public="true">
+      </launchConfigurationType>
+   </extension>
+   <extension
+         point="org.eclipse.debug.ui.launchConfigurationTabGroups">
+      <launchConfigurationTabGroup
+            class="hu.cubussapiens.modembed.ui.launch.MODembedLaunchTabGroup"
+            id="hu.cubussapiens.modembed.ui.launch.tabgroup"
+            type="hu.cubussapiens.modembed.ui.launch">
+         <launchMode
+               mode="run">
+         </launchMode>
+      </launchConfigurationTabGroup>
+   </extension>
+   <extension
+         point="org.eclipse.debug.ui.launchConfigurationTypeImages">
+      <launchConfigurationTypeImage
+            configTypeID="hu.cubussapiens.modembed.ui.launch"
+            icon="icons/cpu_16.png"
+            id="hu.cubussapiens.modembed.ui.launch.launchConfigurationTypeImage">
+      </launchConfigurationTypeImage>
+   </extension>
+   <extension
+         point="org.eclipse.debug.ui.launchShortcuts">
+      <shortcut
+            class="hu.cubussapiens.modembed.ui.launch.MODembedLaunchShortcut"
+            icon="icons/cpu_16.png"
+            id="hu.cubussapiens.modembed.ui.launch.shortcut"
+            label="Run on device"
+            modes="run">
+         <contextualLaunch>
+            <enablement>
+               <with
+                     variable="selection">
+                  <count
+                        value="1">
+                  </count>
+                  <iterate
+                        ifEmpty="false"
+                        operator="and">
+                     <test
+                           property="org.eclipse.debug.ui.matchesPattern"
+                           value="*.hex">
+                     </test>
+                  </iterate>
+               </with>
+            </enablement>
+            <contextLabel
+                  label="Run on device"
+                  mode="run">
+            </contextLabel>
+         </contextualLaunch>
+         <configurationType
+               id="hu.cubussapiens.modembed.ui.launch">
+         </configurationType>
+      </shortcut>
+   </extension>
+
+</plugin>

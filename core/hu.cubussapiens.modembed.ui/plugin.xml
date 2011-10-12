@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="hu.cubussapiens.modembed.ui.model.descriptors" name="Model Descriptors" schema="schema/hu.cubussapiens.modembed.ui.model.descriptors.exsd"/>
+   <extension
+         id="nature"
+         point="org.eclipse.core.resources.natures">
+      <runtime>
+         <run
+               class="hu.cubussapiens.modembed.ui.ProjectNature">
+         </run>
+      </runtime>
+   </extension>
+   <extension
+         point="org.eclipse.ui.ide.projectNatureImages">
+      <image
+            icon="icons/chip.png"
+            id="hu.cubussapiens.modembed.ui.nature.icon"
+            natureId="hu.cubussapiens.modembed.ui.nature">
+      </image>
+   </extension>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            category="hu.cubussapiens.modembed.ui.wizards"
+            class="hu.cubussapiens.modembed.ui.wizards.NewMODembedProjectWizard"
+            finalPerspective="hu.cubussapiens.modembed.ui.perspective"
+            icon="icons/project_chip.png"
+            id="hu.cubussapiens.modembed.ui.newProject"
+            name="New MODembed project"
+            project="true">
+      </wizard>
+      <category
+            id="hu.cubussapiens.modembed.ui.wizards"
+            name="MODembed">
+      </category>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="org.eclipse.ui.ide.workbench"
+            name="MODembed">
+         <property
+               name="appName"
+               value="MODembed">
+         </property>
+         <property
+               name="startupForegroundColor"
+               value="FFFFFF">
+         </property>
+         <property
+               name="startupMessageRect"
+               value="4,222,440,18">
+         </property>
+         <property
+               name="startupProgressRect"
+               value="0,240,450,15">
+         </property>
+         <property
+               name="preferenceCustomization"
+               value="plugin_customization.ini">
+         </property>
+         <property
+               name="aboutImage"
+               value="icons/window/cpu_50.png">
+         </property>
+         <property
+               name="aboutText"
+               value="MODembed {0} ({1}/{2})&#x0A;&#x0A;Model-based embedded development environment&#x0A;&#x0A;web page: http://modembed.sourceforge.net">
+         </property>
+         <property
+               name="windowImages"
+               value="icons/window/cpu_16.png,icons/window/cpu_48.png">
+         </property>
+      </product>
+   </extension>
+   <extension
+         point="org.eclipse.ui.startup">
+      <startup
+            class="hu.cubussapiens.modembed.ui.Startup">
+      </startup>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="hu.cubussapiens.modembed.ui.perspective.MODembedPerspectiveFactory"
+            icon="icons/window/cpu_16.png"
+            id="hu.cubussapiens.modembed.ui.perspective"
+            name="Embedded development">
+      </perspective>
+   </extension>
+
+</plugin>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="hu.cubussapiens.modemed.sim.devices" name="Simulator devices" schema="schema/hu.cubussapiens.modemed.sim.devices.exsd"/>
+   <extension
+         point="hu.cubussapiens.modemed.sim.devices">
+      <category
+            id="hu.cubussapiens.modembed.simulator.pic"
+            name="PIC">
+      </category>
+      <device
+            category="hu.cubussapiens.modembed.simulator.pic"
+            name="Pic12F508"
+            unit="hu.cubussapiens.modembed.pic.simulator.baseline.Pic12f508Unit">
+      </device>
+   </extension>
+
+</plugin>

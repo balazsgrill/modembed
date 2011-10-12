@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/hu.e.parser/src-gen"
+    editDirectory="/hu.e.parser.edit/src" editorDirectory="/hu.e.parser.editor/src"
+    modelPluginID="hu.e.parser" forceOverwrite="true" modelName="ESyntax" updateClasspath="false"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" complianceLevel="5.0"
+    copyrightFields="false" editPluginID="hu.e.parser.edit" editorPluginID="hu.e.parser.editor">
+  <genPackages prefix="ESyntax" basePackage="hu.e.parser" disposableProviderFactory="true"
+      ecorePackage="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//PrimitiveKind">
+      <genEnumLiterals ecoreEnumLiteral="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//PrimitiveKind/UNSIGNED"/>
+      <genEnumLiterals ecoreEnumLiteral="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//PrimitiveKind/SIGNED"/>
+      <genEnumLiterals ecoreEnumLiteral="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//PrimitiveKind/REAL"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//ParameterKind">
+      <genEnumLiterals ecoreEnumLiteral="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//ParameterKind/ANY"/>
+      <genEnumLiterals ecoreEnumLiteral="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//ParameterKind/VAR"/>
+      <genEnumLiterals ecoreEnumLiteral="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//ParameterKind/CONST"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//OperationRole">
+      <genEnumLiterals ecoreEnumLiteral="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//OperationRole/SET"/>
+      <genEnumLiterals ecoreEnumLiteral="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//OperationRole/ADD"/>
+      <genEnumLiterals ecoreEnumLiteral="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//OperationRole/SUBTRACT"/>
+      <genEnumLiterals ecoreEnumLiteral="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//OperationRole/AND"/>
+      <genEnumLiterals ecoreEnumLiteral="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//OperationRole/OR"/>
+      <genEnumLiterals ecoreEnumLiteral="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//OperationRole/XOR"/>
+      <genEnumLiterals ecoreEnumLiteral="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//OperationRole/EQUALS"/>
+      <genEnumLiterals ecoreEnumLiteral="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//OperationRole/BRANCH"/>
+      <genEnumLiterals ecoreEnumLiteral="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//OperationRole/UC_GOTO"/>
+      <genEnumLiterals ecoreEnumLiteral="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//OperationRole/NOT"/>
+      <genEnumLiterals ecoreEnumLiteral="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//OperationRole/INDIRECTION"/>
+      <genEnumLiterals ecoreEnumLiteral="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//OperationRole/CLEAR"/>
+      <genEnumLiterals ecoreEnumLiteral="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//OperationRole/INCREMENT"/>
+      <genEnumLiterals ecoreEnumLiteral="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//OperationRole/DECREMENT"/>
+      <genEnumLiterals ecoreEnumLiteral="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//OperationRole/DIV"/>
+      <genEnumLiterals ecoreEnumLiteral="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//OperationRole/MOD"/>
+      <genEnumLiterals ecoreEnumLiteral="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//OperationRole/LT"/>
+      <genEnumLiterals ecoreEnumLiteral="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//OperationRole/LTE"/>
+      <genEnumLiterals ecoreEnumLiteral="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//OperationRole/GT"/>
+      <genEnumLiterals ecoreEnumLiteral="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//OperationRole/GTE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//BinaryType">
+      <genEnumLiterals ecoreEnumLiteral="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//BinaryType/DEFAULT"/>
+      <genEnumLiterals ecoreEnumLiteral="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//BinaryType/HEXFILE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//UNARY_OPERATOR">
+      <genEnumLiterals ecoreEnumLiteral="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//UNARY_OPERATOR/MINUS"/>
+      <genEnumLiterals ecoreEnumLiteral="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//UNARY_OPERATOR/NOT"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//MULTIPLICATIVE_OPERATOR">
+      <genEnumLiterals ecoreEnumLiteral="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//MULTIPLICATIVE_OPERATOR/MUL"/>
+      <genEnumLiterals ecoreEnumLiteral="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//MULTIPLICATIVE_OPERATOR/DIV"/>
+      <genEnumLiterals ecoreEnumLiteral="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//MULTIPLICATIVE_OPERATOR/MOD"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//ADDITIVE_OPERATOR">
+      <genEnumLiterals ecoreEnumLiteral="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//ADDITIVE_OPERATOR/ADD"/>
+      <genEnumLiterals ecoreEnumLiteral="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//ADDITIVE_OPERATOR/MINUS"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//EQUALITY_OPERATOR">
+      <genEnumLiterals ecoreEnumLiteral="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//EQUALITY_OPERATOR/EQUALS"/>
+      <genEnumLiterals ecoreEnumLiteral="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//EQUALITY_OPERATOR/NOTEQUALS"/>
+      <genEnumLiterals ecoreEnumLiteral="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//EQUALITY_OPERATOR/GTE"/>
+      <genEnumLiterals ecoreEnumLiteral="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//EQUALITY_OPERATOR/LTE"/>
+      <genEnumLiterals ecoreEnumLiteral="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//EQUALITY_OPERATOR/GT"/>
+      <genEnumLiterals ecoreEnumLiteral="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//EQUALITY_OPERATOR/LT"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//BOOLEAN_OPERATOR">
+      <genEnumLiterals ecoreEnumLiteral="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//BOOLEAN_OPERATOR/OR"/>
+      <genEnumLiterals ecoreEnumLiteral="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//BOOLEAN_OPERATOR/AND"/>
+    </genEnums>
+    <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Package">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Package/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Package/uses"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Package/items"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//TopLevelItem"/>
+    <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Type">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Type/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Type/def"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//TypeDef"/>
+    <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//DataTypeDef">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//DataTypeDef/kind"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//DataTypeDef/bits"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//ArrayTypeDef">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//ArrayTypeDef/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//ArrayTypeDef/length"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//StructTypeDef">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//StructTypeDef/members"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//StructTypeDefMember">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//StructTypeDefMember/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//StructTypeDefMember/name"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Variable">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Variable/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Variable/name"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//OperationStep"/>
+    <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Label">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Label/name"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//InstructionWord">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//InstructionWord/sections"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//WordSection">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//WordSection/size"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//WordSection/shift"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//LiteralValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//LiteralValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//LabelReference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//LabelReference/label"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//VariableReference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//VariableReference/var"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//VariableReference/ref"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//VariableRefSection"/>
+    <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//ArrayRef">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//ArrayRef/v"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//StructRef">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//StructRef/ref"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//OperationCall">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//OperationCall/operation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//OperationCall/params"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//OperationCallParameter"/>
+    <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Operation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Operation/returntype"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Operation/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Operation/params"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Operation/block"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Operation/return"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//OperationBlock">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//OperationBlock/steps"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//ParameterVariable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//ParameterVariable/kind"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//ParameterVariable/var"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//ParameterVariable/default"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//OperatorDefinition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//OperatorDefinition/role"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//OperatorDefinition/candidate"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//LinkedBinary">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//LinkedBinary/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//LinkedBinary/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//LinkedBinary/sections"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//BinarySection">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//BinarySection/start"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//FunctionBinarySection">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//FunctionBinarySection/operation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//FunctionBinarySection/memwidth"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//FunctionBinarySection/mems"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//FunctionMemory">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//FunctionMemory/start"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//FunctionMemory/end"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//ConstantBinarySection">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//ConstantBinarySection/data"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//ReferenceBinarySection">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//ReferenceBinarySection/inc"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XExpression"/>
+    <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XPrimaryExpression"/>
+    <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XSizeOfExpression">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XSizeOfExpression/type"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XStructExpression">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XStructExpression/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XStructExpression/values"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XExpression1">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XExpression1/operator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XExpression1/a"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XExpression2">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XExpression2/a"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XExpression2/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XExpression2/b"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XExpression3">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XExpression3/a"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XExpression3/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XExpression3/b"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XExpression4">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XExpression4/a"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XExpression4/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XExpression4/b"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XExpression5">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XExpression5/a"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XExpression5/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XExpression5/b"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XExpressionLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XExpressionLiteral/value"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XTopLevelExpression"/>
+    <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XAssignment">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XAssignment/ref"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XAssignment/value"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XAddressOfVar">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XAddressOfVar/ref"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XIsLiteralExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XIsLiteralExpression/ref"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XIfExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XIfExpression/if"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XIfExpression/then"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XIfExpression/else"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XParenthesizedExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XParenthesizedExpression/a"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//ConstantVariable">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//ConstantVariable/value"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//RegisterVariable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//RegisterVariable/addr"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//CompileContextVariable">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//CompileContextVariable/value"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

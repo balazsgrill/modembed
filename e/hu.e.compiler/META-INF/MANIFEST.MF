@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Compiler
+Bundle-SymbolicName: hu.e.compiler
+Bundle-Version: 0.1.8
+Bundle-Activator: hu.e.compiler.ECompilerPlugin
+Require-Bundle: org.eclipse.core.runtime,
+ hu.e.parser;bundle-version="0.1.0",
+ org.eclipse.core.resources;bundle-version="3.7.100",
+ hu.cubussapiens.modembed.hexfile.model;bundle-version="0.1.0",
+ hu.cubussapiens.modembed.hexfile.persistence;bundle-version="0.1.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: hu.e.compiler

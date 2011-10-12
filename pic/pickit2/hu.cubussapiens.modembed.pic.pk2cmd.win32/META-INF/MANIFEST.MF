@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: PK2CMD Win32 executable
+Bundle-SymbolicName: hu.cubussapiens.modembed.pic.pk2cmd.win32
+Bundle-Version: 1.20.2
+Fragment-Host: hu.cubussapiens.modembed.pic.pk2cmd;bundle-version="[1.20.0,1.21.0)"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Eclipse-PlatformFilter: (& (osgi.ws=win32) (osgi.os=win32) (osgi.arch=x86))

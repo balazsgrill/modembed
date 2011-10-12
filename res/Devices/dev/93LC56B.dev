@@ -1,0 +1,13 @@
+# Device file info: $Id: 93LC56B.dev,v 1.2 2007/07/10 23:04:50 hammersf Exp $
+# Macro file info: $Id: SEEmacro.dev,v 1.2 2006/08/04 20:16:19 nairnj Exp $
+#device=93LC56B
+format=0.1
+
+vpp (range=2.500-5.500 dflt=5.000)
+vdd (range=2.500-5.500 dfltrange=5.000-5.000 nominal=5.000)
+
+pgming (memtech=ee tries=1 ovrpgm=1)
+    wait (eedata=100)
+    latches (pgm=2 eedata=7)
+
+eedata (region=0x0-0xFF)

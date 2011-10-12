@@ -1,0 +1,1595 @@
+<?xml version="1.0" encoding="ASCII" standalone="yes" ?><sim:sim xmlns:sim="http://crownking/sim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/sim sim/sim.xsd">
+  <sim:peripheral sim:key="PSP"/><sim:peripheral sim:key="CORE" sim:sfrs="INTCON1 INTCON2 IFS0 IFS1 IFS2 IFS3 IFS4 IEC0 IEC1 IEC2 IEC3 IEC4 IPC0 IPC1 IPC2 IPC3 IPC4 IPC5 IPC6 IPC7 IPC8 IPC9 IPC10 IPC11 IPC12 IPC13 IPC15 IPC16 INTREG NVMCON NVMKEY"/><sim:peripheral sim:key="PORTA" sim:sfrs="TRISA LATA PORTA" sim:type="port">
+    <sim:iopin sim:dir="inout" sim:key="RA4"/>
+    </sim:peripheral><sim:peripheral sim:key="PORTB" sim:sfrs="TRISB LATB PORTB INTCON2 CNEN1 CNEN2" sim:type="port">
+    <sim:iopin sim:dir="inout" sim:key="RB0">
+      <sim:cnint sim:enmask="0x0008" sim:enreg="IEC1" sim:flgmask="0x0008" sim:flgreg="IFS1" sim:key="CNIRQ" sim:primask="0x7000" sim:prireg="IPC4"/>
+      <sim:cn sim:enmask="0x0004" sim:enreg="CNEN1" sim:key="CN2"/>
+      <sim:cnpin sim:key="RP0" sim:notify="XBAR"/>
+      </sim:iopin>
+    <sim:iopin sim:dir="inout" sim:key="RB1">
+      <sim:cnint sim:enmask="0x0008" sim:enreg="IEC1" sim:flgmask="0x0008" sim:flgreg="IFS1" sim:key="CNIRQ" sim:primask="0x7000" sim:prireg="IPC4"/>
+      <sim:cn sim:enmask="0x0008" sim:enreg="CNEN1" sim:key="CN3"/>
+      <sim:cnpin sim:key="RP1" sim:notify="XBAR"/>
+      </sim:iopin>
+    <sim:iopin sim:dir="inout" sim:key="RB2">
+      <sim:cnint sim:enmask="0x0008" sim:enreg="IEC1" sim:flgmask="0x0008" sim:flgreg="IFS1" sim:key="CNIRQ" sim:primask="0x7000" sim:prireg="IPC4"/>
+      <sim:cn sim:enmask="0x0010" sim:enreg="CNEN1" sim:key="CN4"/>
+      <sim:cnpin sim:key="RP13" sim:notify="XBAR">
+        <!--  C2INB goes into inverting input. -->
+        </sim:cnpin>
+      <sim:cnpin sim:key="CINN" sim:notify="CM_AMAD_2"/>
+      </sim:iopin>
+    <sim:iopin sim:dir="inout" sim:key="RB3">
+      <sim:cnint sim:enmask="0x0008" sim:enreg="IEC1" sim:flgmask="0x0008" sim:flgreg="IFS1" sim:key="CNIRQ" sim:primask="0x7000" sim:prireg="IPC4"/>
+      <sim:cn sim:enmask="0x0020" sim:enreg="CNEN1" sim:key="CN5">
+        <!--  C2INA goes into non_inverting input. -->
+        </sim:cn>
+      <sim:cnpin sim:key="CINP" sim:notify="CM_AMAD_2"/>
+      </sim:iopin>
+    <sim:iopin sim:dir="inout" sim:key="RB4">
+      <sim:cnint sim:enmask="0x0008" sim:enreg="IEC1" sim:flgmask="0x0008" sim:flgreg="IFS1" sim:key="CNIRQ" sim:primask="0x7000" sim:prireg="IPC4"/>
+      <sim:cn sim:enmask="0x0040" sim:enreg="CNEN1" sim:key="CN6"/>
+      <sim:cnpin sim:key="CINN" sim:notify="CM_AMAD_1"/>
+      </sim:iopin>
+    <sim:iopin sim:dir="inout" sim:key="RB5">
+      <sim:cnint sim:enmask="0x0008" sim:enreg="IEC1" sim:flgmask="0x0008" sim:flgreg="IFS1" sim:key="CNIRQ" sim:primask="0x7000" sim:prireg="IPC4"/>
+      <sim:cn sim:enmask="0x0080" sim:enreg="CNEN1" sim:key="CN7">
+        <!--  C1INA goes into non_inverting input. -->
+        </sim:cn>
+      <sim:cnpin sim:key="CINP" sim:notify="CM_AMAD_1"/>
+      </sim:iopin>
+    <sim:iopin sim:dir="inout" sim:key="RB6">
+      <sim:cnint sim:enmask="0x0008" sim:enreg="IEC1" sim:flgmask="0x0008" sim:flgreg="IFS1" sim:key="CNIRQ" sim:primask="0x7000" sim:prireg="IPC4"/>
+      <sim:cn sim:enmask="0x0100" sim:enreg="CNEN2" sim:key="CN24"/>
+      <sim:cnpin sim:key="RP6" sim:notify="XBAR"/>
+      </sim:iopin>
+    <sim:iopin sim:dir="inout" sim:key="RB7">
+      <sim:cnint sim:enmask="0x0008" sim:enreg="IEC1" sim:flgmask="0x0008" sim:flgreg="IFS1" sim:key="CNIRQ" sim:primask="0x7000" sim:prireg="IPC4"/>
+      <sim:cn sim:enmask="0x0200" sim:enreg="CNEN2" sim:key="CN25"/>
+      <sim:cnpin sim:key="RP7" sim:notify="XBAR"/>
+      </sim:iopin>
+    <sim:iopin sim:dir="inout" sim:key="RB8">
+      <sim:cnint sim:enmask="0x0008" sim:enreg="IEC1" sim:flgmask="0x0008" sim:flgreg="IFS1" sim:key="CNIRQ" sim:primask="0x7000" sim:prireg="IPC4"/>
+      <sim:cn sim:enmask="0x0400" sim:enreg="CNEN2" sim:key="CN26"/>
+      <sim:cnpin sim:key="RP8" sim:notify="XBAR"/>
+      </sim:iopin>
+    <sim:iopin sim:dir="inout" sim:key="RB9">
+      <sim:cnint sim:enmask="0x0008" sim:enreg="IEC1" sim:flgmask="0x0008" sim:flgreg="IFS1" sim:key="CNIRQ" sim:primask="0x7000" sim:prireg="IPC4"/>
+      <sim:cn sim:enmask="0x0800" sim:enreg="CNEN2" sim:key="CN27"/>
+      <sim:cnpin sim:key="RP9" sim:notify="XBAR"/>
+      </sim:iopin>
+    <sim:iopin sim:dir="inout" sim:key="RB10">
+      <sim:cnint sim:enmask="0x0008" sim:enreg="IEC1" sim:flgmask="0x0008" sim:flgreg="IFS1" sim:key="CNIRQ" sim:primask="0x7000" sim:prireg="IPC4"/>
+      <sim:cn sim:enmask="0x1000" sim:enreg="CNEN2" sim:key="CN28"/>
+      </sim:iopin>
+    <sim:iopin sim:dir="inout" sim:key="RB11">
+      <sim:cnint sim:enmask="0x0008" sim:enreg="IEC1" sim:flgmask="0x0008" sim:flgreg="IFS1" sim:key="CNIRQ" sim:primask="0x7000" sim:prireg="IPC4"/>
+      <sim:cn sim:enmask="0x2000" sim:enreg="CNEN2" sim:key="CN29"/>
+      </sim:iopin>
+    <sim:iopin sim:dir="inout" sim:key="RB12">
+      <sim:cnint sim:enmask="0x0008" sim:enreg="IEC1" sim:flgmask="0x0008" sim:flgreg="IFS1" sim:key="CNIRQ" sim:primask="0x7000" sim:prireg="IPC4"/>
+      <sim:cn sim:enmask="0x4000" sim:enreg="CNEN2" sim:key="CN30"/>
+      </sim:iopin>
+    <sim:iopin sim:dir="inout" sim:key="RB13">
+      <sim:cnint sim:enmask="0x0008" sim:enreg="IEC1" sim:flgmask="0x0008" sim:flgreg="IFS1" sim:key="CNIRQ" sim:primask="0x7000" sim:prireg="IPC4"/>
+      <sim:cn sim:enmask="0x8000" sim:enreg="CNEN2" sim:key="CN31"/>
+      </sim:iopin>
+    <sim:iopin sim:dir="inout" sim:key="RB14">
+      <sim:cnint sim:enmask="0x0008" sim:enreg="IEC1" sim:flgmask="0x0008" sim:flgreg="IFS1" sim:key="CNIRQ" sim:primask="0x7000" sim:prireg="IPC4"/>
+      <sim:cn sim:enmask="0x0001" sim:enreg="CNEN3" sim:key="CN32"/>
+      </sim:iopin>
+    <sim:iopin sim:dir="inout" sim:key="RB15">
+      <sim:cnint sim:enmask="0x0008" sim:enreg="IEC1" sim:flgmask="0x0008" sim:flgreg="IFS1" sim:key="CNIRQ" sim:primask="0x7000" sim:prireg="IPC4"/>
+      <sim:cn sim:enmask="0x1000" sim:enreg="CNEN1" sim:key="CN12"/>
+      </sim:iopin>
+    </sim:peripheral><sim:peripheral sim:key="PORTC" sim:sfrs="TRISC LATC PORTC INTCON2 CNEN1 CNEN2 CNEN3 CNEN4" sim:type="port">
+    <sim:iopin sim:dir="inout" sim:key="RC12">
+      <sim:cnint sim:enmask="0x0008" sim:enreg="IEC1" sim:flgmask="0x0008" sim:flgreg="IFS1" sim:key="CNIRQ" sim:primask="0x7000" sim:prireg="IPC4"/>
+      <sim:cn sim:enmask="0x0080" sim:enreg="CNEN2" sim:key="CN23"/>
+      </sim:iopin>
+    <sim:iopin sim:dir="inout" sim:key="RC13">
+      <sim:cnint sim:enmask="0x0008" sim:enreg="IEC1" sim:flgmask="0x0008" sim:flgreg="IFS1" sim:key="CNIRQ" sim:primask="0x7000" sim:prireg="IPC4"/>
+      <sim:cn sim:enmask="0x0002" sim:enreg="CNEN1" sim:key="CN1"/>
+      <sim:cnpin sim:key="CINN" sim:notify="CM_AMAD_3"/>
+      </sim:iopin>
+    <sim:iopin sim:dir="inout" sim:key="RC14">
+      <sim:cnint sim:enmask="0x0008" sim:enreg="IEC1" sim:flgmask="0x0008" sim:flgreg="IFS1" sim:key="CNIRQ" sim:primask="0x7000" sim:prireg="IPC4"/>
+      <sim:cn sim:enmask="0x0001" sim:enreg="CNEN1" sim:key="CN0"/>
+      <sim:cnpin sim:key="CINN" sim:notify="CM_AMAD_3"/>
+      </sim:iopin>
+    <sim:iopin sim:dir="inout" sim:key="RC15">
+      <sim:cnint sim:enmask="0x0008" sim:enreg="IEC1" sim:flgmask="0x0008" sim:flgreg="IFS1" sim:key="CNIRQ" sim:primask="0x7000" sim:prireg="IPC4"/>
+      <sim:cn sim:enmask="0x0040" sim:enreg="CNEN2" sim:key="CN22"/>
+      </sim:iopin>
+    </sim:peripheral><sim:peripheral sim:key="PORTD" sim:sfrs="TRISD LATD PORTD INTCON2 CNEN1 CNEN2 CNEN4" sim:type="port">
+    <sim:iopin sim:dir="inout" sim:key="RD0">
+      <sim:cnint sim:enmask="0x0008" sim:enreg="IEC1" sim:flgmask="0x0008" sim:flgreg="IFS1" sim:key="CNIRQ" sim:primask="0x7000" sim:prireg="IPC4"/>
+      <sim:cn sim:enmask="0x0002" sim:enreg="CNEN4" sim:key="CN49"/>
+      <sim:cnpin sim:key="RP11" sim:notify="XBAR"/>
+      <sim:extint sim:enmask="0x0001" sim:enreg="IEC0" sim:flgmask="0x0001" sim:flgreg="IFS0" sim:key="INT0" sim:primask="0x0007" sim:prireg="IPC0"/>
+      </sim:iopin>
+    <sim:iopin sim:dir="inout" sim:key="RD1">
+      <sim:cnint sim:enmask="0x0008" sim:enreg="IEC1" sim:flgmask="0x0008" sim:flgreg="IFS1" sim:key="CNIRQ" sim:primask="0x7000" sim:prireg="IPC4"/>
+      <sim:cn sim:enmask="0x0004" sim:enreg="CNEN4" sim:key="CN50"/>
+      <sim:cnpin sim:key="RP24" sim:notify="XBAR"/>
+      </sim:iopin>
+    <sim:iopin sim:dir="inout" sim:key="RD2">
+      <sim:cnint sim:enmask="0x0008" sim:enreg="IEC1" sim:flgmask="0x0008" sim:flgreg="IFS1" sim:key="CNIRQ" sim:primask="0x7000" sim:prireg="IPC4"/>
+      <sim:cn sim:enmask="0x0008" sim:enreg="CNEN4" sim:key="CN51"/>
+      <sim:cnpin sim:key="RP23" sim:notify="XBAR"/>
+      </sim:iopin>
+    <sim:iopin sim:dir="inout" sim:key="RD3">
+      <sim:cnint sim:enmask="0x0008" sim:enreg="IEC1" sim:flgmask="0x0008" sim:flgreg="IFS1" sim:key="CNIRQ" sim:primask="0x7000" sim:prireg="IPC4"/>
+      <sim:cn sim:enmask="0x0010" sim:enreg="CNEN4" sim:key="CN52"/>
+      <sim:cnpin sim:key="RP22" sim:notify="XBAR"/>
+      </sim:iopin>
+    <sim:iopin sim:dir="inout" sim:key="RD4">
+      <sim:cnint sim:enmask="0x0008" sim:enreg="IEC1" sim:flgmask="0x0008" sim:flgreg="IFS1" sim:key="CNIRQ" sim:primask="0x7000" sim:prireg="IPC4"/>
+      <sim:cn sim:enmask="0x2000" sim:enreg="CNEN1" sim:key="CN13"/>
+      <sim:cnpin sim:key="RP25" sim:notify="XBAR"/>
+      </sim:iopin>
+    <sim:iopin sim:dir="inout" sim:key="RD5">
+      <sim:cnint sim:enmask="0x0008" sim:enreg="IEC1" sim:flgmask="0x0008" sim:flgreg="IFS1" sim:key="CNIRQ" sim:primask="0x7000" sim:prireg="IPC4"/>
+      <sim:cn sim:enmask="0x4000" sim:enreg="CNEN1" sim:key="CN14"/>
+      <sim:cnpin sim:key="RP20" sim:notify="XBAR"/>
+      </sim:iopin>
+    <sim:iopin sim:dir="inout" sim:key="RD6">
+      <sim:cnint sim:enmask="0x0008" sim:enreg="IEC1" sim:flgmask="0x0008" sim:flgreg="IFS1" sim:key="CNIRQ" sim:primask="0x7000" sim:prireg="IPC4"/>
+      <sim:cn sim:enmask="0x6000" sim:enreg="CNEN1" sim:key="CN15"/>
+      <sim:cnpin sim:key="CINN" sim:notify="CM_AMAD_3"/>
+      </sim:iopin>
+    <sim:iopin sim:dir="inout" sim:key="RD7">
+      <sim:cnint sim:enmask="0x0008" sim:enreg="IEC1" sim:flgmask="0x0008" sim:flgreg="IFS1" sim:key="CNIRQ" sim:primask="0x7000" sim:prireg="IPC4"/>
+      <sim:cn sim:enmask="0x8000" sim:enreg="CNEN1" sim:key="CN16"/>
+      <sim:cnpin sim:key="CINP" sim:notify="CM_AMAD_3"/>
+      </sim:iopin>
+    <sim:iopin sim:dir="inout" sim:key="RD8">
+      <sim:cnint sim:enmask="0x0008" sim:enreg="IEC1" sim:flgmask="0x0008" sim:flgreg="IFS1" sim:key="CNIRQ" sim:primask="0x7000" sim:prireg="IPC4"/>
+      <sim:cn sim:enmask="0x0020" sim:enreg="CNEN4" sim:key="CN53"/>
+      <sim:cnpin sim:key="RP2" sim:notify="XBAR"/>
+      </sim:iopin>
+    <sim:iopin sim:dir="inout" sim:key="RD9">
+      <sim:cnint sim:enmask="0x0008" sim:enreg="IEC1" sim:flgmask="0x0008" sim:flgreg="IFS1" sim:key="CNIRQ" sim:primask="0x7000" sim:prireg="IPC4"/>
+      <sim:cn sim:enmask="0x0040" sim:enreg="CNEN4" sim:key="CN54"/>
+      <sim:cnpin sim:key="RP4" sim:notify="XBAR"/>
+      </sim:iopin>
+    <sim:iopin sim:dir="inout" sim:key="RD10">
+      <sim:cnint sim:enmask="0x0008" sim:enreg="IEC1" sim:flgmask="0x0008" sim:flgreg="IFS1" sim:key="CNIRQ" sim:primask="0x7000" sim:prireg="IPC4"/>
+      <sim:cn sim:enmask="0x0080" sim:enreg="CNEN4" sim:key="CN55"/>
+      <sim:cnpin sim:key="RP3" sim:notify="XBAR"/>
+      </sim:iopin>
+    <sim:iopin sim:dir="inout" sim:key="RD11">
+      <sim:cnint sim:enmask="0x0008" sim:enreg="IEC1" sim:flgmask="0x0008" sim:flgreg="IFS1" sim:key="CNIRQ" sim:primask="0x7000" sim:prireg="IPC4"/>
+      <sim:cn sim:enmask="0x0100" sim:enreg="CNEN4" sim:key="CN56"/>
+      <sim:cnpin sim:key="RP12" sim:notify="XBAR"/>
+      </sim:iopin>
+    </sim:peripheral><sim:peripheral sim:key="PORTE" sim:sfrs="TRISE LATE PORTE INTCON2 CNEN4 CNEN5" sim:type="port">
+    <sim:iopin sim:dir="inout" sim:key="RE0">
+      <sim:cnint sim:enmask="0x0008" sim:enreg="IEC1" sim:flgmask="0x0008" sim:flgreg="IFS1" sim:key="CNIRQ" sim:primask="0x7000" sim:prireg="IPC4"/>
+      <sim:cn sim:enmask="0x0400" sim:enreg="CNEN4" sim:key="CN58"/>
+      </sim:iopin>
+    <sim:iopin sim:dir="inout" sim:key="RE1">
+      <sim:cnint sim:enmask="0x0008" sim:enreg="IEC1" sim:flgmask="0x0008" sim:flgreg="IFS1" sim:key="CNIRQ" sim:primask="0x7000" sim:prireg="IPC4"/>
+      <sim:cn sim:enmask="0x0800" sim:enreg="CNEN4" sim:key="CN59"/>
+      </sim:iopin>
+    <sim:iopin sim:dir="inout" sim:key="RE2">
+      <sim:cnint sim:enmask="0x0008" sim:enreg="IEC1" sim:flgmask="0x0008" sim:flgreg="IFS1" sim:key="CNIRQ" sim:primask="0x7000" sim:prireg="IPC4"/>
+      <sim:cn sim:enmask="0x1000" sim:enreg="CNEN4" sim:key="CN60"/>
+      </sim:iopin>
+    <sim:iopin sim:dir="inout" sim:key="RE3">
+      <sim:cnint sim:enmask="0x0008" sim:enreg="IEC1" sim:flgmask="0x0008" sim:flgreg="IFS1" sim:key="CNIRQ" sim:primask="0x7000" sim:prireg="IPC4"/>
+      <sim:cn sim:enmask="0x2000" sim:enreg="CNEN4" sim:key="CN61"/>
+      </sim:iopin>
+    <sim:iopin sim:dir="inout" sim:key="RE4">
+      <sim:cnint sim:enmask="0x0008" sim:enreg="IEC1" sim:flgmask="0x0008" sim:flgreg="IFS1" sim:key="CNIRQ" sim:primask="0x7000" sim:prireg="IPC4"/>
+      <sim:cn sim:enmask="0x4000" sim:enreg="CNEN4" sim:key="CN62"/>
+      </sim:iopin>
+    <sim:iopin sim:dir="inout" sim:key="RE5">
+      <sim:cnint sim:enmask="0x0008" sim:enreg="IEC1" sim:flgmask="0x0008" sim:flgreg="IFS1" sim:key="CNIRQ" sim:primask="0x7000" sim:prireg="IPC4"/>
+      <sim:cn sim:enmask="0x8000" sim:enreg="CNEN4" sim:key="CN63"/>
+      </sim:iopin>
+    <sim:iopin sim:dir="inout" sim:key="RE6">
+      <sim:cnint sim:enmask="0x0008" sim:enreg="IEC1" sim:flgmask="0x0008" sim:flgreg="IFS1" sim:key="CNIRQ" sim:primask="0x7000" sim:prireg="IPC4"/>
+      <sim:cn sim:enmask="0x0001" sim:enreg="CNEN5" sim:key="CN64"/>
+      </sim:iopin>
+    <sim:iopin sim:dir="inout" sim:key="RE7">
+      <sim:cnint sim:enmask="0x0008" sim:enreg="IEC1" sim:flgmask="0x0008" sim:flgreg="IFS1" sim:key="CNIRQ" sim:primask="0x7000" sim:prireg="IPC4"/>
+      <sim:cn sim:enmask="0x0002" sim:enreg="CNEN5" sim:key="CN65"/>
+      </sim:iopin>
+    </sim:peripheral><sim:peripheral sim:key="PORTF" sim:sfrs="TRISF LATF PORTF INTCON2 CNEN5" sim:type="port">
+    <sim:iopin sim:dir="inout" sim:key="RF2">
+      <sim:cnint sim:enmask="0x0008" sim:enreg="IEC1" sim:flgmask="0x0008" sim:flgreg="IFS1" sim:key="CNIRQ" sim:primask="0x7000" sim:prireg="IPC4"/>
+      <sim:cn sim:enmask="0x0040" sim:enreg="CNEN5" sim:key="CN70"/>
+      <sim:cnpin sim:key="RP30" sim:notify="XBAR"/>
+      </sim:iopin>
+    <sim:iopin sim:dir="inout" sim:key="RF6">
+      <sim:cnint sim:enmask="0x0008" sim:enreg="IEC1" sim:flgmask="0x0008" sim:flgreg="IFS1" sim:key="CNIRQ" sim:primask="0x7000" sim:prireg="IPC4"/>
+      <sim:cn sim:enmask="0x0100" sim:enreg="CNEN5" sim:key="CN72"/>
+      <sim:cnpin sim:key="RP45" sim:notify="XBAR"/>
+      <sim:extint sim:enmask="0x0001" sim:enreg="IEC0" sim:flgmask="0x0001" sim:flgreg="IFS0" sim:key="INT0" sim:primask="0x0007" sim:prireg="IPC0"/>
+      </sim:iopin>
+    <sim:iopin sim:dir="inout" sim:key="RF0">
+      <sim:cnint sim:enmask="0x0008" sim:enreg="IEC1" sim:flgmask="0x0008" sim:flgreg="IFS1" sim:key="CNIRQ" sim:primask="0x7000" sim:prireg="IPC4"/>
+      <sim:cn sim:enmask="0x0010" sim:enreg="CNEN5" sim:key="CN68"/>
+      </sim:iopin><sim:iopin sim:dir="inout" sim:key="RF1">
+      <sim:cnint sim:enmask="0x0008" sim:enreg="IEC1" sim:flgmask="0x0008" sim:flgreg="IFS1" sim:key="CNIRQ" sim:primask="0x7000" sim:prireg="IPC4"/>
+      <sim:cn sim:enmask="0x0020" sim:enreg="CNEN5" sim:key="CN69"/>
+      </sim:iopin><sim:iopin sim:dir="inout" sim:key="RF3">
+      <sim:cnint sim:enmask="0x0008" sim:enreg="IEC1" sim:flgmask="0x0008" sim:flgreg="IFS1" sim:key="CNIRQ" sim:primask="0x7000" sim:prireg="IPC4"/>
+      <sim:cn sim:enmask="0x0080" sim:enreg="CNEN5" sim:key="CN71"/>
+      <sim:cnpin sim:key="RP16" sim:notify="XBAR"/>
+      </sim:iopin><sim:iopin sim:dir="inout" sim:key="RF4">
+      <sim:cnint sim:enmask="0x0008" sim:enreg="IEC1" sim:flgmask="0x0008" sim:flgreg="IFS1" sim:key="CNIRQ" sim:primask="0x7000" sim:prireg="IPC4"/>
+      <sim:cn sim:enmask="0x0002" sim:enreg="CNEN2" sim:key="CN17"/>
+      <sim:cnpin sim:key="RP10" sim:notify="XBAR"/>
+      </sim:iopin><sim:iopin sim:dir="inout" sim:key="RF5">
+      <sim:cnint sim:enmask="0x0008" sim:enreg="IEC1" sim:flgmask="0x0008" sim:flgreg="IFS1" sim:key="CNIRQ" sim:primask="0x7000" sim:prireg="IPC4"/>
+      <sim:cn sim:enmask="0x0004" sim:enreg="CNEN2" sim:key="CN18"/>
+      <sim:cnpin sim:key="RP17" sim:notify="XBAR"/>
+      </sim:iopin></sim:peripheral><sim:peripheral sim:key="PORTG" sim:sfrs="TRISG LATG PORTG INTCON2 CNEN1 CNEN5 CNEN6" sim:type="port">
+    <sim:iopin sim:dir="inout" sim:key="RG2">
+      <sim:cnint sim:enmask="0x0008" sim:enreg="IEC1" sim:flgmask="0x0008" sim:flgreg="IFS1" sim:key="CNIRQ" sim:primask="0x7000" sim:prireg="IPC4"/>
+      <sim:cn sim:enmask="0x0008" sim:enreg="CNEN6" sim:key="CN83"/>
+      </sim:iopin>
+    <sim:iopin sim:dir="inout" sim:key="RG3">
+      <sim:cnint sim:enmask="0x0008" sim:enreg="IEC1" sim:flgmask="0x0008" sim:flgreg="IFS1" sim:key="CNIRQ" sim:primask="0x7000" sim:prireg="IPC4"/>
+      <sim:cn sim:enmask="0x0010" sim:enreg="CNEN6" sim:key="CN84"/>
+      </sim:iopin>
+    <sim:iopin sim:dir="inout" sim:key="RG6">
+      <sim:cnint sim:enmask="0x0008" sim:enreg="IEC1" sim:flgmask="0x0008" sim:flgreg="IFS1" sim:key="CNIRQ" sim:primask="0x7000" sim:prireg="IPC4"/>
+      <sim:cn sim:enmask="0x0100" sim:enreg="CNEN1" sim:key="CN8"/>
+      <sim:cnpin sim:key="RP21" sim:notify="XBAR">
+        <!--  C1IND goes into inverting input. -->
+        </sim:cnpin>
+      <sim:cnpin sim:key="CINN" sim:notify="CM_AMAD_1"/>
+      </sim:iopin><sim:iopin sim:dir="inout" sim:key="RG7">
+      <sim:cnint sim:enmask="0x0008" sim:enreg="IEC1" sim:flgmask="0x0008" sim:flgreg="IFS1" sim:key="CNIRQ" sim:primask="0x7000" sim:prireg="IPC4"/>
+      <sim:cn sim:enmask="0x0200" sim:enreg="CNEN1" sim:key="CN9"/>
+      <sim:cnpin sim:key="RP26" sim:notify="XBAR">
+        <!--  C1INC goes into inverting input. -->
+        </sim:cnpin>
+      <sim:cnpin sim:key="CINN" sim:notify="CM_AMAD_1"/>
+      </sim:iopin><sim:iopin sim:dir="inout" sim:key="RG8">
+      <sim:cnint sim:enmask="0x0008" sim:enreg="IEC1" sim:flgmask="0x0008" sim:flgreg="IFS1" sim:key="CNIRQ" sim:primask="0x7000" sim:prireg="IPC4"/>
+      <sim:cn sim:enmask="0x0400" sim:enreg="CNEN1" sim:key="CN10"/>
+      <sim:cnpin sim:key="RP19" sim:notify="XBAR">
+        <!--  C2IND goes into inverting input. -->
+        </sim:cnpin>
+      <sim:cnpin sim:key="CINN" sim:notify="CM_AMAD_2"/>
+      </sim:iopin><sim:iopin sim:dir="inout" sim:key="RG9">
+      <sim:cnint sim:enmask="0x0008" sim:enreg="IEC1" sim:flgmask="0x0008" sim:flgreg="IFS1" sim:key="CNIRQ" sim:primask="0x7000" sim:prireg="IPC4"/>
+      <sim:cn sim:enmask="0x0800" sim:enreg="CNEN1" sim:key="CN11"/>
+      <sim:cnpin sim:key="RP27" sim:notify="XBAR">
+        <!--  C2INC goes into inverting input. -->
+        </sim:cnpin>
+      <sim:cnpin sim:key="CINN" sim:notify="CM_AMAD_2"/>
+      </sim:iopin></sim:peripheral><sim:peripheral sim:key="CM_AMAD_1" sim:sfrs="CM1CON CMSTAT CVRCON">
+    <sim:pinfunc sim:dir="out" sim:key="COUT" sim:port="RPx"/>
+    <sim:pinfunc sim:dir="in" sim:key="CINP" sim:port="RB5"/>
+    <sim:pinfunc sim:dir="in" sim:key="CINN" sim:port="multi">
+      <sim:portpins sim:muxaddr="0x634" sim:muxmask="0x03">
+        <sim:setting sim:dir="in" sim:muxval="0x0" sim:port="RB4"/>
+        <sim:setting sim:dir="in" sim:muxval="0x1" sim:port="RG7"/>
+        <sim:setting sim:dir="in" sim:muxval="0x2" sim:port="RG6">
+          <!--             setting (muxval=0x3 port=   dir=in) # this line is not needed for 03 is Vbg/2 -->
+          </sim:setting>
+        </sim:portpins>
+      </sim:pinfunc>
+    <sim:interrupt sim:enmask="0x0004" sim:enreg="IEC1" sim:flgmask="0x0004" sim:flgreg="IFS1" sim:name="CMINT" sim:primask="0x0700" sim:prireg="IPC4"/>
+    </sim:peripheral><sim:peripheral sim:key="CM_AMAD_2" sim:sfrs="CM2CON CMSTAT CVRCON">
+    <sim:pinfunc sim:dir="out" sim:key="COUT" sim:port="RPx"/>
+    <sim:pinfunc sim:dir="in" sim:key="CINP" sim:port="RB3"/>
+    <sim:pinfunc sim:dir="in" sim:key="CINN" sim:port="multi">
+      <sim:portpins sim:muxaddr="0x636" sim:muxmask="0x03">
+        <sim:setting sim:dir="in" sim:muxval="0x0" sim:port="RB2"/>
+        <sim:setting sim:dir="in" sim:muxval="0x1" sim:port="RG9"/>
+        <sim:setting sim:dir="in" sim:muxval="0x2" sim:port="RG8">
+          <!--             setting (muxval=0x3 port=   dir=in) # this line is not needed for 03 is Vbg/2 -->
+          </sim:setting>
+        </sim:portpins>
+      </sim:pinfunc>
+    <sim:interrupt sim:enmask="0x0004" sim:enreg="IEC1" sim:flgmask="0x0004" sim:flgreg="IFS1" sim:name="CMINT" sim:primask="0x0700" sim:prireg="IPC4"/>
+    </sim:peripheral><sim:peripheral sim:key="CM_AMAD_3" sim:sfrs="CM3CON CMSTAT CVRCON">
+    <sim:pinfunc sim:dir="out" sim:key="COUT" sim:port="RPx"/>
+    <sim:pinfunc sim:dir="in" sim:key="CINP" sim:port="RD7"/>
+    <sim:pinfunc sim:dir="in" sim:key="CINN" sim:port="multi">
+      <sim:portpins sim:muxaddr="0x638" sim:muxmask="0x03">
+        <sim:setting sim:dir="in" sim:muxval="0x0" sim:port="RD6"/>
+        <sim:setting sim:dir="in" sim:muxval="0x1" sim:port="RC14"/>
+        <sim:setting sim:dir="in" sim:muxval="0x2" sim:port="RC13">
+          <!--             setting (muxval=0x3 port=   dir=in) # this line is not needed for 03 is Vbg/2 -->
+          </sim:setting>
+        </sim:portpins>
+      </sim:pinfunc>
+    <sim:interrupt sim:enmask="0x0004" sim:enreg="IEC1" sim:flgmask="0x0004" sim:flgreg="IFS1" sim:name="CMINT" sim:primask="0x0700" sim:prireg="IPC4"/>
+    </sim:peripheral><sim:peripheral sim:key="TMR1" sim:sfrs="TMR1 PR1 T1CON">
+    <sim:pinfunc sim:dir="in" sim:key="T1CK" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RC14"/>
+    <sim:interrupt sim:enmask="0x0008" sim:enreg="IEC0" sim:flgmask="0x0008" sim:flgreg="IFS0" sim:name="TMR1INT" sim:primask="0x7000" sim:prireg="IPC0"/>
+    </sim:peripheral><sim:peripheral sim:key="TMR2" sim:sfrs="TMR2 PR2 T2CON TMR3 TMR3HLD PR3 T3CON">
+    <sim:pinfunc sim:dir="in" sim:key="T2CK" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RPx"/>
+    <sim:interrupt sim:enmask="0x0080" sim:enreg="IEC0" sim:flgmask="0x0080" sim:flgreg="IFS0" sim:name="TMR2INT" sim:primask="0x7000" sim:prireg="IPC1"/>
+    </sim:peripheral><sim:peripheral sim:key="TMR3" sim:sfrs="TMR3 TMR3HLD PR3 T3CON">
+    <sim:pinfunc sim:dir="in" sim:key="T3CK" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RPx"/>
+    <sim:interrupt sim:enmask="0x0100" sim:enreg="IEC0" sim:flgmask="0x0100" sim:flgreg="IFS0" sim:name="TMR3INT" sim:primask="0x0007" sim:prireg="IPC2"/>
+    </sim:peripheral><sim:peripheral sim:key="TMR4" sim:sfrs="TMR4 PR4 T4CON TMR5 TMR5HLD PR5 T5CON">
+    <sim:pinfunc sim:dir="in" sim:key="T4CK" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RPx"/>
+    <sim:interrupt sim:enmask="0x0800" sim:enreg="IEC1" sim:flgmask="0x0800" sim:flgreg="IFS1" sim:name="TMR4INT" sim:primask="0x7000" sim:prireg="IPC6"/>
+    </sim:peripheral><sim:peripheral sim:key="TMR5" sim:sfrs="TMR5 TMR5HLD PR5 T5CON">
+    <sim:pinfunc sim:dir="in" sim:key="T5CK" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RPx"/>
+    <sim:interrupt sim:enmask="0x1000" sim:enreg="IEC1" sim:flgmask="0x1000" sim:flgreg="IFS1" sim:name="TMR5INT" sim:primask="0x0007" sim:prireg="IPC7"/>
+    </sim:peripheral><sim:peripheral sim:key="ADC1012_1" sim:sfrs="AD1CON1 AD1CON2 AD1CON3 AD1CHS AD1PCFG AD1CSSL ADC1BUF0 ADC1BUF1 ADC1BUF2 ADC1BUF3 ADC1BUF4 ADC1BUF5 ADC1BUF6 ADC1BUF7 ADC1BUF8 ADC1BUF9 ADC1BUFA ADC1BUFB ADC1BUFC ADC1BUFD ADC1BUFE ADC1BUFF">
+    <sim:pinfunc sim:dir="in" sim:key="AN0" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RB0"/>
+    <sim:pinfunc sim:dir="in" sim:key="AN1" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RB1"/>
+    <sim:pinfunc sim:dir="in" sim:key="AN2" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RB2"/>
+    <sim:pinfunc sim:dir="in" sim:key="AN3" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RB3"/>
+    <sim:pinfunc sim:dir="in" sim:key="AN4" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RB4"/>
+    <sim:pinfunc sim:dir="in" sim:key="AN5" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RB5"/>
+    <sim:pinfunc sim:dir="in" sim:key="AN6" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RB6"/>
+    <sim:pinfunc sim:dir="in" sim:key="AN7" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RB7"/>
+    <sim:pinfunc sim:dir="in" sim:key="AN8" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RB8"/>
+    <sim:pinfunc sim:dir="in" sim:key="AN9" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RB9"/>
+    <sim:pinfunc sim:dir="in" sim:key="AN10" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RB10"/>
+    <sim:pinfunc sim:dir="in" sim:key="AN11" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RB11"/>
+    <sim:pinfunc sim:dir="in" sim:key="AN12" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RB12"/>
+    <sim:pinfunc sim:dir="in" sim:key="AN13" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RB13"/>
+    <sim:pinfunc sim:dir="in" sim:key="AN14" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RB14"/>
+    <sim:pinfunc sim:dir="in" sim:key="AN15" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RB15"/>
+    <sim:interrupt sim:enmask="0x2000" sim:enreg="IEC0" sim:flgmask="0x2000" sim:flgreg="IFS0" sim:name="ADCINT" sim:primask="0x0070" sim:prireg="IPC3"/>
+    </sim:peripheral><sim:peripheral sim:key="ICTMR1" sim:sfrs="IC1CON1 IC1CON2 IC1BUF IC1TMR">
+    <sim:timers sim:addr="0x140" sim:mask="0x01C0">
+      <sim:setting sim:key="TMR3" sim:val="0"/>
+      <sim:setting sim:key="TMR2" sim:val="1"/>
+      <sim:setting sim:key="TMR4" sim:val="2"/>
+      <sim:setting sim:key="TMR5" sim:val="3"/>
+      <sim:setting sim:key="TMR1" sim:val="4"/>
+      </sim:timers>
+    <sim:triggers1>
+      <!-- val=0 is not used -->
+      <sim:setting sim:key="OCTMR1" sim:val="1"/>
+      <sim:setting sim:key="OCTMR2" sim:val="2"/>
+      <sim:setting sim:key="OCTMR3" sim:val="3"/>
+      <sim:setting sim:key="OCTMR4" sim:val="4"/>
+      <sim:setting sim:key="OCTMR5" sim:val="5"/>
+      <sim:setting sim:key="OCTMR6" sim:val="6"/>
+      <sim:setting sim:key="OCTMR7" sim:val="7"/>
+      <sim:setting sim:key="OCTMR8" sim:val="8"/>
+      <sim:setting sim:key="OCTMR9" sim:val="9"/>
+      <sim:setting sim:key="ICTMR5" sim:val="10"/>
+      <sim:setting sim:key="TMR1" sim:val="11"/>
+      <sim:setting sim:key="TMR2" sim:val="12"/>
+      <sim:setting sim:key="TMR3" sim:val="13"/>
+      <sim:setting sim:key="TMR4" sim:val="14"/>
+      <sim:setting sim:key="TMR5" sim:val="15">
+        <!-- val=16 and 17, see triggers2 below -->
+        </sim:setting>
+      <sim:setting sim:key="ICTMR7" sim:val="18"/>
+      <sim:setting sim:key="ICTMR8" sim:val="19"/>
+      <sim:setting sim:key="ICTMR1" sim:val="20"/>
+      <sim:setting sim:key="ICTMR2" sim:val="21"/>
+      <sim:setting sim:key="ICTMR3" sim:val="22"/>
+      <sim:setting sim:key="ICTMR4" sim:val="23">
+        <!--  CMP1.trig_out -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_1" sim:val="24">
+        <!--  CMP2.trig_out -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_2" sim:val="25">
+        <!--  CMP3.trig_out -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_3" sim:val="26"/>
+      <sim:setting sim:key="ADC1012_1" sim:val="27">
+        <!-- setting (val=28 key=CTMU) # don't care -->
+        </sim:setting>
+      <sim:setting sim:key="ICTMR6" sim:val="29"/>
+      <sim:setting sim:key="ICTMR9" sim:val="30">
+        <!-- val=31 is not used -->
+        </sim:setting>
+      </sim:triggers1>
+    <sim:triggers2>
+      <!--  CM2CON.cout -->
+      <sim:setting sim:key="CM_AMAD_2" sim:val="16">
+        <!--  CM1CON.cout -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_1" sim:val="17"/>
+      </sim:triggers2>
+    <sim:pinfunc sim:dir="in" sim:key="IC1" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RPx"/>
+    <sim:interrupt sim:enmask="0x0002" sim:enreg="IEC0" sim:flgmask="0x0002" sim:flgreg="IFS0" sim:name="IC1INT" sim:primask="0x0070" sim:prireg="IPC0"/>
+    </sim:peripheral><sim:peripheral sim:key="ICTMR2" sim:sfrs="IC2CON1 IC2CON2 IC2BUF IC2TMR">
+    <sim:timers sim:addr="0x148" sim:mask="0x01C0">
+      <sim:setting sim:key="TMR3" sim:val="0"/>
+      <sim:setting sim:key="TMR2" sim:val="1"/>
+      <sim:setting sim:key="TMR4" sim:val="2"/>
+      <sim:setting sim:key="TMR5" sim:val="3"/>
+      <sim:setting sim:key="TMR1" sim:val="4"/>
+      </sim:timers>
+    <sim:triggers1>
+      <!-- val=0 is not used -->
+      <sim:setting sim:key="OCTMR1" sim:val="1"/>
+      <sim:setting sim:key="OCTMR2" sim:val="2"/>
+      <sim:setting sim:key="OCTMR3" sim:val="3"/>
+      <sim:setting sim:key="OCTMR4" sim:val="4"/>
+      <sim:setting sim:key="OCTMR5" sim:val="5"/>
+      <sim:setting sim:key="OCTMR6" sim:val="6"/>
+      <sim:setting sim:key="OCTMR7" sim:val="7"/>
+      <sim:setting sim:key="OCTMR8" sim:val="8"/>
+      <sim:setting sim:key="OCTMR9" sim:val="9"/>
+      <sim:setting sim:key="ICTMR5" sim:val="10"/>
+      <sim:setting sim:key="TMR1" sim:val="11"/>
+      <sim:setting sim:key="TMR2" sim:val="12"/>
+      <sim:setting sim:key="TMR3" sim:val="13"/>
+      <sim:setting sim:key="TMR4" sim:val="14"/>
+      <sim:setting sim:key="TMR5" sim:val="15">
+        <!-- val=16 and 17, see triggers2 below -->
+        </sim:setting>
+      <sim:setting sim:key="ICTMR7" sim:val="18"/>
+      <sim:setting sim:key="ICTMR8" sim:val="19"/>
+      <sim:setting sim:key="ICTMR1" sim:val="20"/>
+      <sim:setting sim:key="ICTMR2" sim:val="21"/>
+      <sim:setting sim:key="ICTMR3" sim:val="22"/>
+      <sim:setting sim:key="ICTMR4" sim:val="23">
+        <!--  CMP1.trig_out -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_1" sim:val="24">
+        <!--  CMP2.trig_out -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_2" sim:val="25">
+        <!--  CMP3.trig_out -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_3" sim:val="26"/>
+      <sim:setting sim:key="ADC1012_1" sim:val="27">
+        <!-- setting (val=28 key=CTMU) # don't care -->
+        </sim:setting>
+      <sim:setting sim:key="ICTMR6" sim:val="29"/>
+      <sim:setting sim:key="ICTMR9" sim:val="30">
+        <!-- val=31 is not used -->
+        </sim:setting>
+      </sim:triggers1>
+    <sim:triggers2>
+      <!--  CM2CON.cout -->
+      <sim:setting sim:key="CM_AMAD_2" sim:val="16">
+        <!--  CM1CON.cout -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_1" sim:val="17"/>
+      </sim:triggers2>
+    <sim:pinfunc sim:dir="in" sim:key="IC2" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RPx"/>
+    <sim:interrupt sim:enmask="0x0020" sim:enreg="IEC0" sim:flgmask="0x0020" sim:flgreg="IFS0" sim:name="IC2INT" sim:primask="0x0070" sim:prireg="IPC1"/>
+    </sim:peripheral><sim:peripheral sim:key="ICTMR3" sim:sfrs="IC3CON1 IC3CON2 IC3BUF IC3TMR">
+    <sim:timers sim:addr="0x150" sim:mask="0x01C0">
+      <sim:setting sim:key="TMR3" sim:val="0"/>
+      <sim:setting sim:key="TMR2" sim:val="1"/>
+      <sim:setting sim:key="TMR4" sim:val="2"/>
+      <sim:setting sim:key="TMR5" sim:val="3"/>
+      <sim:setting sim:key="TMR1" sim:val="4"/>
+      </sim:timers>
+    <sim:triggers1>
+      <!-- val=0 is not used -->
+      <sim:setting sim:key="OCTMR1" sim:val="1"/>
+      <sim:setting sim:key="OCTMR2" sim:val="2"/>
+      <sim:setting sim:key="OCTMR3" sim:val="3"/>
+      <sim:setting sim:key="OCTMR4" sim:val="4"/>
+      <sim:setting sim:key="OCTMR5" sim:val="5"/>
+      <sim:setting sim:key="OCTMR6" sim:val="6"/>
+      <sim:setting sim:key="OCTMR7" sim:val="7"/>
+      <sim:setting sim:key="OCTMR8" sim:val="8"/>
+      <sim:setting sim:key="OCTMR9" sim:val="9"/>
+      <sim:setting sim:key="ICTMR5" sim:val="10"/>
+      <sim:setting sim:key="TMR1" sim:val="11"/>
+      <sim:setting sim:key="TMR2" sim:val="12"/>
+      <sim:setting sim:key="TMR3" sim:val="13"/>
+      <sim:setting sim:key="TMR4" sim:val="14"/>
+      <sim:setting sim:key="TMR5" sim:val="15">
+        <!-- val=16 and 17, see triggers2 below -->
+        </sim:setting>
+      <sim:setting sim:key="ICTMR7" sim:val="18"/>
+      <sim:setting sim:key="ICTMR8" sim:val="19"/>
+      <sim:setting sim:key="ICTMR1" sim:val="20"/>
+      <sim:setting sim:key="ICTMR2" sim:val="21"/>
+      <sim:setting sim:key="ICTMR3" sim:val="22"/>
+      <sim:setting sim:key="ICTMR4" sim:val="23">
+        <!--  CMP1.trig_out -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_1" sim:val="24">
+        <!--  CMP2.trig_out -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_2" sim:val="25">
+        <!--  CMP3.trig_out -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_3" sim:val="26"/>
+      <sim:setting sim:key="ADC1012_1" sim:val="27">
+        <!-- setting (val=28 key=CTMU) # don't care -->
+        </sim:setting>
+      <sim:setting sim:key="ICTMR6" sim:val="29"/>
+      <sim:setting sim:key="ICTMR9" sim:val="30">
+        <!-- val=31 is not used -->
+        </sim:setting>
+      </sim:triggers1>
+    <sim:triggers2>
+      <!--  CM2CON.cout -->
+      <sim:setting sim:key="CM_AMAD_2" sim:val="16">
+        <!--  CM1CON.cout -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_1" sim:val="17"/>
+      </sim:triggers2>
+    <sim:pinfunc sim:dir="in" sim:key="IC3" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RPx"/>
+    <sim:interrupt sim:enmask="0x0020" sim:enreg="IEC2" sim:flgmask="0x0020" sim:flgreg="IFS2" sim:name="IC3INT" sim:primask="0x0070" sim:prireg="IPC9"/>
+    </sim:peripheral><sim:peripheral sim:key="ICTMR4" sim:sfrs="IC4CON1 IC4CON2 IC4BUF IC4TMR">
+    <sim:timers sim:addr="0x158" sim:mask="0x01C0">
+      <sim:setting sim:key="TMR3" sim:val="0"/>
+      <sim:setting sim:key="TMR2" sim:val="1"/>
+      <sim:setting sim:key="TMR4" sim:val="2"/>
+      <sim:setting sim:key="TMR5" sim:val="3"/>
+      <sim:setting sim:key="TMR1" sim:val="4"/>
+      </sim:timers>
+    <sim:triggers1>
+      <!-- val=0 is not used -->
+      <sim:setting sim:key="OCTMR1" sim:val="1"/>
+      <sim:setting sim:key="OCTMR2" sim:val="2"/>
+      <sim:setting sim:key="OCTMR3" sim:val="3"/>
+      <sim:setting sim:key="OCTMR4" sim:val="4"/>
+      <sim:setting sim:key="OCTMR5" sim:val="5"/>
+      <sim:setting sim:key="OCTMR6" sim:val="6"/>
+      <sim:setting sim:key="OCTMR7" sim:val="7"/>
+      <sim:setting sim:key="OCTMR8" sim:val="8"/>
+      <sim:setting sim:key="OCTMR9" sim:val="9"/>
+      <sim:setting sim:key="ICTMR5" sim:val="10"/>
+      <sim:setting sim:key="TMR1" sim:val="11"/>
+      <sim:setting sim:key="TMR2" sim:val="12"/>
+      <sim:setting sim:key="TMR3" sim:val="13"/>
+      <sim:setting sim:key="TMR4" sim:val="14"/>
+      <sim:setting sim:key="TMR5" sim:val="15">
+        <!-- val=16 and 17, see triggers2 below -->
+        </sim:setting>
+      <sim:setting sim:key="ICTMR7" sim:val="18"/>
+      <sim:setting sim:key="ICTMR8" sim:val="19"/>
+      <sim:setting sim:key="ICTMR1" sim:val="20"/>
+      <sim:setting sim:key="ICTMR2" sim:val="21"/>
+      <sim:setting sim:key="ICTMR3" sim:val="22"/>
+      <sim:setting sim:key="ICTMR4" sim:val="23">
+        <!--  CMP1.trig_out -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_1" sim:val="24">
+        <!--  CMP2.trig_out -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_2" sim:val="25">
+        <!--  CMP3.trig_out -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_3" sim:val="26"/>
+      <sim:setting sim:key="ADC1012_1" sim:val="27">
+        <!-- setting (val=28 key=CTMU) # don't care -->
+        </sim:setting>
+      <sim:setting sim:key="ICTMR6" sim:val="29"/>
+      <sim:setting sim:key="ICTMR9" sim:val="30">
+        <!-- val=31 is not used -->
+        </sim:setting>
+      </sim:triggers1>
+    <sim:triggers2>
+      <!--  CM2CON.cout -->
+      <sim:setting sim:key="CM_AMAD_2" sim:val="16">
+        <!--  CM1CON.cout -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_1" sim:val="17"/>
+      </sim:triggers2>
+    <sim:pinfunc sim:dir="in" sim:key="IC4" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RPx"/>
+    <sim:interrupt sim:enmask="0x0040" sim:enreg="IEC2" sim:flgmask="0x0040" sim:flgreg="IFS2" sim:name="IC4INT" sim:primask="0x0700" sim:prireg="IPC9"/>
+    </sim:peripheral><sim:peripheral sim:key="ICTMR5" sim:sfrs="IC5CON1 IC5CON2 IC5BUF IC5TMR">
+    <sim:timers sim:addr="0x160" sim:mask="0x01C0">
+      <sim:setting sim:key="TMR3" sim:val="0"/>
+      <sim:setting sim:key="TMR2" sim:val="1"/>
+      <sim:setting sim:key="TMR4" sim:val="2"/>
+      <sim:setting sim:key="TMR5" sim:val="3"/>
+      <sim:setting sim:key="TMR1" sim:val="4"/>
+      </sim:timers>
+    <sim:triggers1>
+      <!-- val=0 is not used -->
+      <sim:setting sim:key="OCTMR1" sim:val="1"/>
+      <sim:setting sim:key="OCTMR2" sim:val="2"/>
+      <sim:setting sim:key="OCTMR3" sim:val="3"/>
+      <sim:setting sim:key="OCTMR4" sim:val="4"/>
+      <sim:setting sim:key="OCTMR5" sim:val="5"/>
+      <sim:setting sim:key="OCTMR6" sim:val="6"/>
+      <sim:setting sim:key="OCTMR7" sim:val="7"/>
+      <sim:setting sim:key="OCTMR8" sim:val="8"/>
+      <sim:setting sim:key="OCTMR9" sim:val="9"/>
+      <sim:setting sim:key="ICTMR5" sim:val="10"/>
+      <sim:setting sim:key="TMR1" sim:val="11"/>
+      <sim:setting sim:key="TMR2" sim:val="12"/>
+      <sim:setting sim:key="TMR3" sim:val="13"/>
+      <sim:setting sim:key="TMR4" sim:val="14"/>
+      <sim:setting sim:key="TMR5" sim:val="15">
+        <!-- val=16 and 17, see triggers2 below -->
+        </sim:setting>
+      <sim:setting sim:key="ICTMR7" sim:val="18"/>
+      <sim:setting sim:key="ICTMR8" sim:val="19"/>
+      <sim:setting sim:key="ICTMR1" sim:val="20"/>
+      <sim:setting sim:key="ICTMR2" sim:val="21"/>
+      <sim:setting sim:key="ICTMR3" sim:val="22"/>
+      <sim:setting sim:key="ICTMR4" sim:val="23">
+        <!--  CMP1.trig_out -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_1" sim:val="24">
+        <!--  CMP2.trig_out -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_2" sim:val="25">
+        <!--  CMP3.trig_out -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_3" sim:val="26"/>
+      <sim:setting sim:key="ADC1012_1" sim:val="27">
+        <!-- setting (val=28 key=CTMU) # don't care -->
+        </sim:setting>
+      <sim:setting sim:key="ICTMR6" sim:val="29"/>
+      <sim:setting sim:key="ICTMR9" sim:val="30">
+        <!-- val=31 is not used -->
+        </sim:setting>
+      </sim:triggers1>
+    <sim:triggers2>
+      <!--  CM2CON.cout -->
+      <sim:setting sim:key="CM_AMAD_2" sim:val="16">
+        <!--  CM1CON.cout -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_1" sim:val="17"/>
+      </sim:triggers2>
+    <sim:pinfunc sim:dir="in" sim:key="IC5" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RPx"/>
+    <sim:interrupt sim:enmask="0x0080" sim:enreg="IEC2" sim:flgmask="0x0080" sim:flgreg="IFS2" sim:name="IC5INT" sim:primask="0x7000" sim:prireg="IPC9"/>
+    </sim:peripheral><sim:peripheral sim:key="ICTMR6" sim:sfrs="IC6CON1 IC6CON2 IC6BUF IC6TMR">
+    <sim:timers sim:addr="0x168" sim:mask="0x01C0">
+      <sim:setting sim:key="TMR3" sim:val="0"/>
+      <sim:setting sim:key="TMR2" sim:val="1"/>
+      <sim:setting sim:key="TMR4" sim:val="2"/>
+      <sim:setting sim:key="TMR5" sim:val="3"/>
+      <sim:setting sim:key="TMR1" sim:val="4"/>
+      </sim:timers>
+    <sim:triggers1>
+      <!-- val=0 is not used -->
+      <sim:setting sim:key="OCTMR1" sim:val="1"/>
+      <sim:setting sim:key="OCTMR2" sim:val="2"/>
+      <sim:setting sim:key="OCTMR3" sim:val="3"/>
+      <sim:setting sim:key="OCTMR4" sim:val="4"/>
+      <sim:setting sim:key="OCTMR5" sim:val="5"/>
+      <sim:setting sim:key="OCTMR6" sim:val="6"/>
+      <sim:setting sim:key="OCTMR7" sim:val="7"/>
+      <sim:setting sim:key="OCTMR8" sim:val="8"/>
+      <sim:setting sim:key="OCTMR9" sim:val="9"/>
+      <sim:setting sim:key="ICTMR5" sim:val="10"/>
+      <sim:setting sim:key="TMR1" sim:val="11"/>
+      <sim:setting sim:key="TMR2" sim:val="12"/>
+      <sim:setting sim:key="TMR3" sim:val="13"/>
+      <sim:setting sim:key="TMR4" sim:val="14"/>
+      <sim:setting sim:key="TMR5" sim:val="15">
+        <!-- val=16 and 17, see triggers2 below -->
+        </sim:setting>
+      <sim:setting sim:key="ICTMR7" sim:val="18"/>
+      <sim:setting sim:key="ICTMR8" sim:val="19"/>
+      <sim:setting sim:key="ICTMR1" sim:val="20"/>
+      <sim:setting sim:key="ICTMR2" sim:val="21"/>
+      <sim:setting sim:key="ICTMR3" sim:val="22"/>
+      <sim:setting sim:key="ICTMR4" sim:val="23">
+        <!--  CMP1.trig_out -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_1" sim:val="24">
+        <!--  CMP2.trig_out -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_2" sim:val="25">
+        <!--  CMP3.trig_out -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_3" sim:val="26"/>
+      <sim:setting sim:key="ADC1012_1" sim:val="27">
+        <!-- setting (val=28 key=CTMU) # don't care -->
+        </sim:setting>
+      <sim:setting sim:key="ICTMR6" sim:val="29"/>
+      <sim:setting sim:key="ICTMR9" sim:val="30">
+        <!-- val=31 is not used -->
+        </sim:setting>
+      </sim:triggers1>
+    <sim:triggers2>
+      <!--  CM2CON.cout -->
+      <sim:setting sim:key="CM_AMAD_2" sim:val="16">
+        <!--  CM1CON.cout -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_1" sim:val="17"/>
+      </sim:triggers2>
+    <sim:pinfunc sim:dir="in" sim:key="IC6" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RPx"/>
+    <sim:interrupt sim:enmask="0x0100" sim:enreg="IEC2" sim:flgmask="0x0100" sim:flgreg="IFS2" sim:name="IC6INT" sim:primask="0x007" sim:prireg="IPC10"/>
+    </sim:peripheral><sim:peripheral sim:key="ICTMR7" sim:sfrs="IC7CON1 IC7CON2 IC7BUF IC7TMR">
+    <sim:timers sim:addr="0x170" sim:mask="0x01C0">
+      <sim:setting sim:key="TMR3" sim:val="0"/>
+      <sim:setting sim:key="TMR2" sim:val="1"/>
+      <sim:setting sim:key="TMR4" sim:val="2"/>
+      <sim:setting sim:key="TMR5" sim:val="3"/>
+      <sim:setting sim:key="TMR1" sim:val="4"/>
+      </sim:timers>
+    <sim:triggers1>
+      <!-- val=0 is not used -->
+      <sim:setting sim:key="OCTMR1" sim:val="1"/>
+      <sim:setting sim:key="OCTMR2" sim:val="2"/>
+      <sim:setting sim:key="OCTMR3" sim:val="3"/>
+      <sim:setting sim:key="OCTMR4" sim:val="4"/>
+      <sim:setting sim:key="OCTMR5" sim:val="5"/>
+      <sim:setting sim:key="OCTMR6" sim:val="6"/>
+      <sim:setting sim:key="OCTMR7" sim:val="7"/>
+      <sim:setting sim:key="OCTMR8" sim:val="8"/>
+      <sim:setting sim:key="OCTMR9" sim:val="9"/>
+      <sim:setting sim:key="ICTMR5" sim:val="10"/>
+      <sim:setting sim:key="TMR1" sim:val="11"/>
+      <sim:setting sim:key="TMR2" sim:val="12"/>
+      <sim:setting sim:key="TMR3" sim:val="13"/>
+      <sim:setting sim:key="TMR4" sim:val="14"/>
+      <sim:setting sim:key="TMR5" sim:val="15">
+        <!-- val=16 and 17, see triggers2 below -->
+        </sim:setting>
+      <sim:setting sim:key="ICTMR7" sim:val="18"/>
+      <sim:setting sim:key="ICTMR8" sim:val="19"/>
+      <sim:setting sim:key="ICTMR1" sim:val="20"/>
+      <sim:setting sim:key="ICTMR2" sim:val="21"/>
+      <sim:setting sim:key="ICTMR3" sim:val="22"/>
+      <sim:setting sim:key="ICTMR4" sim:val="23">
+        <!--  CMP1.trig_out -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_1" sim:val="24">
+        <!--  CMP2.trig_out -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_2" sim:val="25">
+        <!--  CMP3.trig_out -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_3" sim:val="26"/>
+      <sim:setting sim:key="ADC1012_1" sim:val="27">
+        <!-- setting (val=28 key=CTMU) # don't care -->
+        </sim:setting>
+      <sim:setting sim:key="ICTMR6" sim:val="29"/>
+      <sim:setting sim:key="ICTMR9" sim:val="30">
+        <!-- val=31 is not used -->
+        </sim:setting>
+      </sim:triggers1>
+    <sim:triggers2>
+      <!--  CM2CON.cout -->
+      <sim:setting sim:key="CM_AMAD_2" sim:val="16">
+        <!--  CM1CON.cout -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_1" sim:val="17"/>
+      </sim:triggers2>
+    <sim:pinfunc sim:dir="in" sim:key="IC7" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RPx"/>
+    <sim:interrupt sim:enmask="0x0040" sim:enreg="IEC1" sim:flgmask="0x0040" sim:flgreg="IFS1" sim:name="IC7INT" sim:primask="0x0700" sim:prireg="IPC5"/>
+    </sim:peripheral><sim:peripheral sim:key="ICTMR8" sim:sfrs="IC8CON1 IC8CON2 IC8BUF IC8TMR">
+    <sim:timers sim:addr="0x178" sim:mask="0x01C0">
+      <sim:setting sim:key="TMR3" sim:val="0"/>
+      <sim:setting sim:key="TMR2" sim:val="1"/>
+      <sim:setting sim:key="TMR4" sim:val="2"/>
+      <sim:setting sim:key="TMR5" sim:val="3"/>
+      <sim:setting sim:key="TMR1" sim:val="4"/>
+      </sim:timers>
+    <sim:triggers1>
+      <!-- val=0 is not used -->
+      <sim:setting sim:key="OCTMR1" sim:val="1"/>
+      <sim:setting sim:key="OCTMR2" sim:val="2"/>
+      <sim:setting sim:key="OCTMR3" sim:val="3"/>
+      <sim:setting sim:key="OCTMR4" sim:val="4"/>
+      <sim:setting sim:key="OCTMR5" sim:val="5"/>
+      <sim:setting sim:key="OCTMR6" sim:val="6"/>
+      <sim:setting sim:key="OCTMR7" sim:val="7"/>
+      <sim:setting sim:key="OCTMR8" sim:val="8"/>
+      <sim:setting sim:key="OCTMR9" sim:val="9"/>
+      <sim:setting sim:key="ICTMR5" sim:val="10"/>
+      <sim:setting sim:key="TMR1" sim:val="11"/>
+      <sim:setting sim:key="TMR2" sim:val="12"/>
+      <sim:setting sim:key="TMR3" sim:val="13"/>
+      <sim:setting sim:key="TMR4" sim:val="14"/>
+      <sim:setting sim:key="TMR5" sim:val="15">
+        <!-- val=16 and 17, see triggers2 below -->
+        </sim:setting>
+      <sim:setting sim:key="ICTMR7" sim:val="18"/>
+      <sim:setting sim:key="ICTMR8" sim:val="19"/>
+      <sim:setting sim:key="ICTMR1" sim:val="20"/>
+      <sim:setting sim:key="ICTMR2" sim:val="21"/>
+      <sim:setting sim:key="ICTMR3" sim:val="22"/>
+      <sim:setting sim:key="ICTMR4" sim:val="23">
+        <!--  CMP1.trig_out -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_1" sim:val="24">
+        <!--  CMP2.trig_out -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_2" sim:val="25">
+        <!--  CMP3.trig_out -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_3" sim:val="26"/>
+      <sim:setting sim:key="ADC1012_1" sim:val="27">
+        <!-- setting (val=28 key=CTMU) # don't care -->
+        </sim:setting>
+      <sim:setting sim:key="ICTMR6" sim:val="29"/>
+      <sim:setting sim:key="ICTMR9" sim:val="30">
+        <!-- val=31 is not used -->
+        </sim:setting>
+      </sim:triggers1>
+    <sim:triggers2>
+      <!--  CM2CON.cout -->
+      <sim:setting sim:key="CM_AMAD_2" sim:val="16">
+        <!--  CM1CON.cout -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_1" sim:val="17"/>
+      </sim:triggers2>
+    <sim:pinfunc sim:dir="in" sim:key="IC8" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RPx"/>
+    <sim:interrupt sim:enmask="0x0080" sim:enreg="IEC1" sim:flgmask="0x0080" sim:flgreg="IFS1" sim:name="IC8INT" sim:primask="0x7000" sim:prireg="IPC5"/>
+    </sim:peripheral><sim:peripheral sim:key="ICTMR9" sim:sfrs="IC9CON1 IC9CON2 IC9BUF IC9TMR">
+    <sim:timers sim:addr="0x180" sim:mask="0x01C0">
+      <sim:setting sim:key="TMR3" sim:val="0"/>
+      <sim:setting sim:key="TMR2" sim:val="1"/>
+      <sim:setting sim:key="TMR4" sim:val="2"/>
+      <sim:setting sim:key="TMR5" sim:val="3"/>
+      <sim:setting sim:key="TMR1" sim:val="4"/>
+      </sim:timers>
+    <sim:triggers1>
+      <!-- val=0 is not used -->
+      <sim:setting sim:key="OCTMR1" sim:val="1"/>
+      <sim:setting sim:key="OCTMR2" sim:val="2"/>
+      <sim:setting sim:key="OCTMR3" sim:val="3"/>
+      <sim:setting sim:key="OCTMR4" sim:val="4"/>
+      <sim:setting sim:key="OCTMR5" sim:val="5"/>
+      <sim:setting sim:key="OCTMR6" sim:val="6"/>
+      <sim:setting sim:key="OCTMR7" sim:val="7"/>
+      <sim:setting sim:key="OCTMR8" sim:val="8"/>
+      <sim:setting sim:key="OCTMR9" sim:val="9"/>
+      <sim:setting sim:key="ICTMR5" sim:val="10"/>
+      <sim:setting sim:key="TMR1" sim:val="11"/>
+      <sim:setting sim:key="TMR2" sim:val="12"/>
+      <sim:setting sim:key="TMR3" sim:val="13"/>
+      <sim:setting sim:key="TMR4" sim:val="14"/>
+      <sim:setting sim:key="TMR5" sim:val="15">
+        <!-- val=16 and 17, see triggers2 below -->
+        </sim:setting>
+      <sim:setting sim:key="ICTMR7" sim:val="18"/>
+      <sim:setting sim:key="ICTMR8" sim:val="19"/>
+      <sim:setting sim:key="ICTMR1" sim:val="20"/>
+      <sim:setting sim:key="ICTMR2" sim:val="21"/>
+      <sim:setting sim:key="ICTMR3" sim:val="22"/>
+      <sim:setting sim:key="ICTMR4" sim:val="23">
+        <!--  CMP1.trig_out -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_1" sim:val="24">
+        <!--  CMP2.trig_out -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_2" sim:val="25">
+        <!--  CMP3.trig_out -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_3" sim:val="26"/>
+      <sim:setting sim:key="ADC1012_1" sim:val="27">
+        <!-- setting (val=28 key=CTMU) # don't care -->
+        </sim:setting>
+      <sim:setting sim:key="ICTMR6" sim:val="29"/>
+      <sim:setting sim:key="ICTMR9" sim:val="30">
+        <!-- val=31 is not used -->
+        </sim:setting>
+      </sim:triggers1>
+    <sim:triggers2>
+      <!--  CM2CON.cout -->
+      <sim:setting sim:key="CM_AMAD_2" sim:val="16">
+        <!--  CM1CON.cout -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_1" sim:val="17"/>
+      </sim:triggers2>
+    <sim:pinfunc sim:dir="in" sim:key="IC9" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RPx"/>
+    <sim:interrupt sim:enmask="0x2000" sim:enreg="IEC5" sim:flgmask="0x2000" sim:flgreg="IFS5" sim:name="IC9INT" sim:primask="0x0070" sim:prireg="IPC23"/>
+    </sim:peripheral><sim:peripheral sim:key="OCTMR1" sim:sfrs="OC1CON1 OC1CON2 OC1RS OC1R OC1TMR">
+    <sim:timers sim:addr="0x190" sim:mask="0x01C0">
+      <sim:setting sim:key="TMR2" sim:val="0"/>
+      <sim:setting sim:key="TMR3" sim:val="1"/>
+      <sim:setting sim:key="TMR4" sim:val="2"/>
+      <sim:setting sim:key="TMR5" sim:val="3"/>
+      <sim:setting sim:key="TMR1" sim:val="4"/>
+      </sim:timers>
+    <sim:triggers1>
+      <!-- val=0 is not used -->
+      <sim:setting sim:key="OCTMR1" sim:val="1"/>
+      <sim:setting sim:key="OCTMR2" sim:val="2"/>
+      <sim:setting sim:key="OCTMR3" sim:val="3"/>
+      <sim:setting sim:key="OCTMR4" sim:val="4"/>
+      <sim:setting sim:key="OCTMR5" sim:val="5"/>
+      <sim:setting sim:key="OCTMR6" sim:val="6"/>
+      <sim:setting sim:key="OCTMR7" sim:val="7"/>
+      <sim:setting sim:key="OCTMR8" sim:val="8"/>
+      <sim:setting sim:key="OCTMR9" sim:val="9"/>
+      <sim:setting sim:key="ICTMR5" sim:val="10"/>
+      <sim:setting sim:key="TMR1" sim:val="11"/>
+      <sim:setting sim:key="TMR2" sim:val="12"/>
+      <sim:setting sim:key="TMR3" sim:val="13"/>
+      <sim:setting sim:key="TMR4" sim:val="14"/>
+      <sim:setting sim:key="TMR5" sim:val="15">
+        <!-- val=16 and 17, see triggers2 below -->
+        </sim:setting>
+      <sim:setting sim:key="ICTMR7" sim:val="18"/>
+      <sim:setting sim:key="ICTMR8" sim:val="19"/>
+      <sim:setting sim:key="ICTMR1" sim:val="20"/>
+      <sim:setting sim:key="ICTMR2" sim:val="21"/>
+      <sim:setting sim:key="ICTMR3" sim:val="22"/>
+      <sim:setting sim:key="ICTMR4" sim:val="23">
+        <!--  CMP1.trig_out -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_1" sim:val="24">
+        <!--  CMP2.trig_out -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_2" sim:val="25">
+        <!--  CMP3.trig_out -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_3" sim:val="26"/>
+      <sim:setting sim:key="ADC1012_1" sim:val="27">
+        <!-- setting (val=28 key=CTMU) # don't care -->
+        </sim:setting>
+      <sim:setting sim:key="ICTMR6" sim:val="29"/>
+      <sim:setting sim:key="ICTMR9" sim:val="30"/>
+      <sim:setting sim:key="OCTMR1" sim:val="31"/>
+      </sim:triggers1>
+    <sim:triggers2>
+      <!--  CM2CON.cout -->
+      <sim:setting sim:key="CM_AMAD_2" sim:val="16">
+        <!--  CM1CON.cout -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_1" sim:val="17"/>
+      </sim:triggers2>
+    <sim:pinfunc sim:dir="out" sim:key="OC1" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RPx"/>
+    <sim:pinfunc sim:dir="in" sim:key="OCFA" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RPx"/>
+    <sim:interrupt sim:enmask="0x0004" sim:enreg="IEC0" sim:flgmask="0x0004" sim:flgreg="IFS0" sim:name="OC1INT" sim:primask="0x0700" sim:prireg="IPC0"/>
+    </sim:peripheral><sim:peripheral sim:key="OCTMR2" sim:sfrs="OC2CON1 OC2CON2 OC2RS OC2R OC2TMR">
+    <sim:timers sim:addr="0x19A" sim:mask="0x01C0">
+      <sim:setting sim:key="TMR2" sim:val="0"/>
+      <sim:setting sim:key="TMR3" sim:val="1"/>
+      <sim:setting sim:key="TMR4" sim:val="2"/>
+      <sim:setting sim:key="TMR5" sim:val="3"/>
+      <sim:setting sim:key="TMR1" sim:val="4"/>
+      </sim:timers>
+    <sim:triggers1>
+      <!-- val=0 is not used -->
+      <sim:setting sim:key="OCTMR1" sim:val="1"/>
+      <sim:setting sim:key="OCTMR2" sim:val="2"/>
+      <sim:setting sim:key="OCTMR3" sim:val="3"/>
+      <sim:setting sim:key="OCTMR4" sim:val="4"/>
+      <sim:setting sim:key="OCTMR5" sim:val="5"/>
+      <sim:setting sim:key="OCTMR6" sim:val="6"/>
+      <sim:setting sim:key="OCTMR7" sim:val="7"/>
+      <sim:setting sim:key="OCTMR8" sim:val="8"/>
+      <sim:setting sim:key="OCTMR9" sim:val="9"/>
+      <sim:setting sim:key="ICTMR5" sim:val="10"/>
+      <sim:setting sim:key="TMR1" sim:val="11"/>
+      <sim:setting sim:key="TMR2" sim:val="12"/>
+      <sim:setting sim:key="TMR3" sim:val="13"/>
+      <sim:setting sim:key="TMR4" sim:val="14"/>
+      <sim:setting sim:key="TMR5" sim:val="15">
+        <!-- val=16 and 17, see triggers2 below -->
+        </sim:setting>
+      <sim:setting sim:key="ICTMR7" sim:val="18"/>
+      <sim:setting sim:key="ICTMR8" sim:val="19"/>
+      <sim:setting sim:key="ICTMR1" sim:val="20"/>
+      <sim:setting sim:key="ICTMR2" sim:val="21"/>
+      <sim:setting sim:key="ICTMR3" sim:val="22"/>
+      <sim:setting sim:key="ICTMR4" sim:val="23">
+        <!--  CMP1.trig_out -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_1" sim:val="24">
+        <!--  CMP2.trig_out -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_2" sim:val="25">
+        <!--  CMP3.trig_out -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_3" sim:val="26"/>
+      <sim:setting sim:key="ADC1012_1" sim:val="27">
+        <!-- setting (val=28 key=CTMU) # don't care -->
+        </sim:setting>
+      <sim:setting sim:key="ICTMR6" sim:val="29"/>
+      <sim:setting sim:key="ICTMR9" sim:val="30"/>
+      <sim:setting sim:key="OCTMR2" sim:val="31"/>
+      </sim:triggers1>
+    <sim:triggers2>
+      <!--  CM2CON.cout -->
+      <sim:setting sim:key="CM_AMAD_2" sim:val="16">
+        <!--  CM1CON.cout -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_1" sim:val="17"/>
+      </sim:triggers2>
+    <sim:pinfunc sim:dir="out" sim:key="OC2" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RPx"/>
+    <sim:pinfunc sim:dir="in" sim:key="OCFA" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RPx"/>
+    <sim:interrupt sim:enmask="0x0040" sim:enreg="IEC0" sim:flgmask="0x0040" sim:flgreg="IFS0" sim:name="OC2INT" sim:primask="0x0700" sim:prireg="IPC1"/>
+    </sim:peripheral><sim:peripheral sim:key="OCTMR3" sim:sfrs="OC3CON1 OC3CON2 OC3RS OC3R OC3TMR">
+    <sim:timers sim:addr="0x1A4" sim:mask="0x01C0">
+      <sim:setting sim:key="TMR2" sim:val="0"/>
+      <sim:setting sim:key="TMR3" sim:val="1"/>
+      <sim:setting sim:key="TMR4" sim:val="2"/>
+      <sim:setting sim:key="TMR5" sim:val="3"/>
+      <sim:setting sim:key="TMR1" sim:val="4"/>
+      </sim:timers>
+    <sim:triggers1>
+      <!-- val=0 is not used -->
+      <sim:setting sim:key="OCTMR1" sim:val="1"/>
+      <sim:setting sim:key="OCTMR2" sim:val="2"/>
+      <sim:setting sim:key="OCTMR3" sim:val="3"/>
+      <sim:setting sim:key="OCTMR4" sim:val="4"/>
+      <sim:setting sim:key="OCTMR5" sim:val="5"/>
+      <sim:setting sim:key="OCTMR6" sim:val="6"/>
+      <sim:setting sim:key="OCTMR7" sim:val="7"/>
+      <sim:setting sim:key="OCTMR8" sim:val="8"/>
+      <sim:setting sim:key="OCTMR9" sim:val="9"/>
+      <sim:setting sim:key="ICTMR5" sim:val="10"/>
+      <sim:setting sim:key="TMR1" sim:val="11"/>
+      <sim:setting sim:key="TMR2" sim:val="12"/>
+      <sim:setting sim:key="TMR3" sim:val="13"/>
+      <sim:setting sim:key="TMR4" sim:val="14"/>
+      <sim:setting sim:key="TMR5" sim:val="15">
+        <!-- val=16 and 17, see triggers2 below -->
+        </sim:setting>
+      <sim:setting sim:key="ICTMR7" sim:val="18"/>
+      <sim:setting sim:key="ICTMR8" sim:val="19"/>
+      <sim:setting sim:key="ICTMR1" sim:val="20"/>
+      <sim:setting sim:key="ICTMR2" sim:val="21"/>
+      <sim:setting sim:key="ICTMR3" sim:val="22"/>
+      <sim:setting sim:key="ICTMR4" sim:val="23">
+        <!--  CMP1.trig_out -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_1" sim:val="24">
+        <!--  CMP2.trig_out -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_2" sim:val="25">
+        <!--  CMP3.trig_out -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_3" sim:val="26"/>
+      <sim:setting sim:key="ADC1012_1" sim:val="27">
+        <!-- setting (val=28 key=CTMU) # don't care -->
+        </sim:setting>
+      <sim:setting sim:key="ICTMR6" sim:val="29"/>
+      <sim:setting sim:key="ICTMR9" sim:val="30"/>
+      <sim:setting sim:key="OCTMR3" sim:val="31"/>
+      </sim:triggers1>
+    <sim:triggers2>
+      <!--  CM2CON.cout -->
+      <sim:setting sim:key="CM_AMAD_2" sim:val="16">
+        <!--  CM1CON.cout -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_1" sim:val="17"/>
+      </sim:triggers2>
+    <sim:pinfunc sim:dir="out" sim:key="OC3" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RPx"/>
+    <sim:pinfunc sim:dir="in" sim:key="OCFA" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RPx"/>
+    <sim:interrupt sim:enmask="0x0200" sim:enreg="IEC1" sim:flgmask="0x0200" sim:flgreg="IFS1" sim:name="OC3INT" sim:primask="0x0070" sim:prireg="IPC6"/>
+    </sim:peripheral><sim:peripheral sim:key="OCTMR4" sim:sfrs="OC4CON1 OC4CON2 OC4RS OC4R OC4TMR">
+    <sim:timers sim:addr="0x1AE" sim:mask="0x01C0">
+      <sim:setting sim:key="TMR2" sim:val="0"/>
+      <sim:setting sim:key="TMR3" sim:val="1"/>
+      <sim:setting sim:key="TMR4" sim:val="2"/>
+      <sim:setting sim:key="TMR5" sim:val="3"/>
+      <sim:setting sim:key="TMR1" sim:val="4"/>
+      </sim:timers>
+    <sim:triggers1>
+      <!-- val=0 is not used -->
+      <sim:setting sim:key="OCTMR1" sim:val="1"/>
+      <sim:setting sim:key="OCTMR2" sim:val="2"/>
+      <sim:setting sim:key="OCTMR3" sim:val="3"/>
+      <sim:setting sim:key="OCTMR4" sim:val="4"/>
+      <sim:setting sim:key="OCTMR5" sim:val="5"/>
+      <sim:setting sim:key="OCTMR6" sim:val="6"/>
+      <sim:setting sim:key="OCTMR7" sim:val="7"/>
+      <sim:setting sim:key="OCTMR8" sim:val="8"/>
+      <sim:setting sim:key="OCTMR9" sim:val="9"/>
+      <sim:setting sim:key="ICTMR5" sim:val="10"/>
+      <sim:setting sim:key="TMR1" sim:val="11"/>
+      <sim:setting sim:key="TMR2" sim:val="12"/>
+      <sim:setting sim:key="TMR3" sim:val="13"/>
+      <sim:setting sim:key="TMR4" sim:val="14"/>
+      <sim:setting sim:key="TMR5" sim:val="15">
+        <!-- val=16 and 17, see triggers2 below -->
+        </sim:setting>
+      <sim:setting sim:key="ICTMR7" sim:val="18"/>
+      <sim:setting sim:key="ICTMR8" sim:val="19"/>
+      <sim:setting sim:key="ICTMR1" sim:val="20"/>
+      <sim:setting sim:key="ICTMR2" sim:val="21"/>
+      <sim:setting sim:key="ICTMR3" sim:val="22"/>
+      <sim:setting sim:key="ICTMR4" sim:val="23">
+        <!--  CMP1.trig_out -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_1" sim:val="24">
+        <!--  CMP2.trig_out -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_2" sim:val="25">
+        <!--  CMP3.trig_out -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_3" sim:val="26"/>
+      <sim:setting sim:key="ADC1012_1" sim:val="27">
+        <!-- setting (val=28 key=CTMU) # don't care -->
+        </sim:setting>
+      <sim:setting sim:key="ICTMR6" sim:val="29"/>
+      <sim:setting sim:key="ICTMR9" sim:val="30"/>
+      <sim:setting sim:key="OCTMR4" sim:val="31"/>
+      </sim:triggers1>
+    <sim:triggers2>
+      <!--  CM2CON.cout -->
+      <sim:setting sim:key="CM_AMAD_2" sim:val="16">
+        <!--  CM1CON.cout -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_1" sim:val="17"/>
+      </sim:triggers2>
+    <sim:pinfunc sim:dir="out" sim:key="OC4" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RPx"/>
+    <sim:pinfunc sim:dir="in" sim:key="OCFA" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RPx"/>
+    <sim:interrupt sim:enmask="0x0400" sim:enreg="IEC1" sim:flgmask="0x0400" sim:flgreg="IFS1" sim:name="OC4INT" sim:primask="0x0700" sim:prireg="IPC6"/>
+    </sim:peripheral><sim:peripheral sim:key="OCTMR5" sim:sfrs="OC5CON1 OC5CON2 OC5RS OC5R OC5TMR">
+    <sim:timers sim:addr="0x1B8" sim:mask="0x01C0">
+      <sim:setting sim:key="TMR2" sim:val="0"/>
+      <sim:setting sim:key="TMR3" sim:val="1"/>
+      <sim:setting sim:key="TMR4" sim:val="2"/>
+      <sim:setting sim:key="TMR5" sim:val="3"/>
+      <sim:setting sim:key="TMR1" sim:val="4"/>
+      </sim:timers>
+    <sim:triggers1>
+      <!-- val=0 is not used -->
+      <sim:setting sim:key="OCTMR1" sim:val="1"/>
+      <sim:setting sim:key="OCTMR2" sim:val="2"/>
+      <sim:setting sim:key="OCTMR3" sim:val="3"/>
+      <sim:setting sim:key="OCTMR4" sim:val="4"/>
+      <sim:setting sim:key="OCTMR5" sim:val="5"/>
+      <sim:setting sim:key="OCTMR6" sim:val="6"/>
+      <sim:setting sim:key="OCTMR7" sim:val="7"/>
+      <sim:setting sim:key="OCTMR8" sim:val="8"/>
+      <sim:setting sim:key="OCTMR9" sim:val="9"/>
+      <sim:setting sim:key="ICTMR5" sim:val="10"/>
+      <sim:setting sim:key="TMR1" sim:val="11"/>
+      <sim:setting sim:key="TMR2" sim:val="12"/>
+      <sim:setting sim:key="TMR3" sim:val="13"/>
+      <sim:setting sim:key="TMR4" sim:val="14"/>
+      <sim:setting sim:key="TMR5" sim:val="15">
+        <!-- val=16 and 17, see triggers2 below -->
+        </sim:setting>
+      <sim:setting sim:key="ICTMR7" sim:val="18"/>
+      <sim:setting sim:key="ICTMR8" sim:val="19"/>
+      <sim:setting sim:key="ICTMR1" sim:val="20"/>
+      <sim:setting sim:key="ICTMR2" sim:val="21"/>
+      <sim:setting sim:key="ICTMR3" sim:val="22"/>
+      <sim:setting sim:key="ICTMR4" sim:val="23">
+        <!--  CMP1.trig_out -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_1" sim:val="24">
+        <!--  CMP2.trig_out -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_2" sim:val="25">
+        <!--  CMP3.trig_out -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_3" sim:val="26"/>
+      <sim:setting sim:key="ADC1012_1" sim:val="27">
+        <!-- setting (val=28 key=CTMU) # don't care -->
+        </sim:setting>
+      <sim:setting sim:key="ICTMR6" sim:val="29"/>
+      <sim:setting sim:key="ICTMR9" sim:val="30"/>
+      <sim:setting sim:key="OCTMR5" sim:val="31"/>
+      </sim:triggers1>
+    <sim:triggers2>
+      <!--  CM2CON.cout -->
+      <sim:setting sim:key="CM_AMAD_2" sim:val="16">
+        <!--  CM1CON.cout -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_1" sim:val="17"/>
+      </sim:triggers2>
+    <sim:pinfunc sim:dir="out" sim:key="OC5" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RPx"/>
+    <sim:pinfunc sim:dir="in" sim:key="OCFB" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RPx"/>
+    <sim:interrupt sim:enmask="0x0200" sim:enreg="IEC2" sim:flgmask="0x0200" sim:flgreg="IFS2" sim:name="OC5INT" sim:primask="0x0070" sim:prireg="IPC10"/>
+    </sim:peripheral><sim:peripheral sim:key="OCTMR6" sim:sfrs="OC6CON1 OC6CON2 OC6RS OC6R OC6TMR">
+    <sim:timers sim:addr="0x1C2" sim:mask="0x01C0">
+      <sim:setting sim:key="TMR2" sim:val="0"/>
+      <sim:setting sim:key="TMR3" sim:val="1"/>
+      <sim:setting sim:key="TMR4" sim:val="2"/>
+      <sim:setting sim:key="TMR5" sim:val="3"/>
+      <sim:setting sim:key="TMR1" sim:val="4"/>
+      </sim:timers>
+    <sim:triggers1>
+      <!-- val=0 is not used -->
+      <sim:setting sim:key="OCTMR1" sim:val="1"/>
+      <sim:setting sim:key="OCTMR2" sim:val="2"/>
+      <sim:setting sim:key="OCTMR3" sim:val="3"/>
+      <sim:setting sim:key="OCTMR4" sim:val="4"/>
+      <sim:setting sim:key="OCTMR5" sim:val="5"/>
+      <sim:setting sim:key="OCTMR6" sim:val="6"/>
+      <sim:setting sim:key="OCTMR7" sim:val="7"/>
+      <sim:setting sim:key="OCTMR8" sim:val="8"/>
+      <sim:setting sim:key="OCTMR9" sim:val="9"/>
+      <sim:setting sim:key="ICTMR5" sim:val="10"/>
+      <sim:setting sim:key="TMR1" sim:val="11"/>
+      <sim:setting sim:key="TMR2" sim:val="12"/>
+      <sim:setting sim:key="TMR3" sim:val="13"/>
+      <sim:setting sim:key="TMR4" sim:val="14"/>
+      <sim:setting sim:key="TMR5" sim:val="15">
+        <!-- val=16 and 17, see triggers2 below -->
+        </sim:setting>
+      <sim:setting sim:key="ICTMR7" sim:val="18"/>
+      <sim:setting sim:key="ICTMR8" sim:val="19"/>
+      <sim:setting sim:key="ICTMR1" sim:val="20"/>
+      <sim:setting sim:key="ICTMR2" sim:val="21"/>
+      <sim:setting sim:key="ICTMR3" sim:val="22"/>
+      <sim:setting sim:key="ICTMR4" sim:val="23">
+        <!--  CMP1.trig_out -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_1" sim:val="24">
+        <!--  CMP2.trig_out -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_2" sim:val="25">
+        <!--  CMP3.trig_out -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_3" sim:val="26"/>
+      <sim:setting sim:key="ADC1012_1" sim:val="27">
+        <!-- setting (val=28 key=CTMU) # don't care -->
+        </sim:setting>
+      <sim:setting sim:key="ICTMR6" sim:val="29"/>
+      <sim:setting sim:key="ICTMR9" sim:val="30"/>
+      <sim:setting sim:key="OCTMR6" sim:val="31"/>
+      </sim:triggers1>
+    <sim:triggers2>
+      <!--  CM2CON.cout -->
+      <sim:setting sim:key="CM_AMAD_2" sim:val="16">
+        <!--  CM1CON.cout -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_1" sim:val="17"/>
+      </sim:triggers2>
+    <sim:pinfunc sim:dir="out" sim:key="OC6" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RPx"/>
+    <sim:pinfunc sim:dir="in" sim:key="OCFB" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RPx"/>
+    <sim:interrupt sim:enmask="0x0400" sim:enreg="IEC2" sim:flgmask="0x0400" sim:flgreg="IFS2" sim:name="OC6INT" sim:primask="0x0700" sim:prireg="IPC10"/>
+    </sim:peripheral><sim:peripheral sim:key="OCTMR7" sim:sfrs="OC7CON1 OC7CON2 OC7RS OC7R OC7TMR">
+    <sim:timers sim:addr="0x1CC" sim:mask="0x01C0">
+      <sim:setting sim:key="TMR2" sim:val="0"/>
+      <sim:setting sim:key="TMR3" sim:val="1"/>
+      <sim:setting sim:key="TMR4" sim:val="2"/>
+      <sim:setting sim:key="TMR5" sim:val="3"/>
+      <sim:setting sim:key="TMR1" sim:val="4"/>
+      </sim:timers>
+    <sim:triggers1>
+      <!-- val=0 is not used -->
+      <sim:setting sim:key="OCTMR1" sim:val="1"/>
+      <sim:setting sim:key="OCTMR2" sim:val="2"/>
+      <sim:setting sim:key="OCTMR3" sim:val="3"/>
+      <sim:setting sim:key="OCTMR4" sim:val="4"/>
+      <sim:setting sim:key="OCTMR5" sim:val="5"/>
+      <sim:setting sim:key="OCTMR6" sim:val="6"/>
+      <sim:setting sim:key="OCTMR7" sim:val="7"/>
+      <sim:setting sim:key="OCTMR8" sim:val="8"/>
+      <sim:setting sim:key="OCTMR9" sim:val="9"/>
+      <sim:setting sim:key="ICTMR5" sim:val="10"/>
+      <sim:setting sim:key="TMR1" sim:val="11"/>
+      <sim:setting sim:key="TMR2" sim:val="12"/>
+      <sim:setting sim:key="TMR3" sim:val="13"/>
+      <sim:setting sim:key="TMR4" sim:val="14"/>
+      <sim:setting sim:key="TMR5" sim:val="15">
+        <!-- val=16 and 17, see triggers2 below -->
+        </sim:setting>
+      <sim:setting sim:key="ICTMR7" sim:val="18"/>
+      <sim:setting sim:key="ICTMR8" sim:val="19"/>
+      <sim:setting sim:key="ICTMR1" sim:val="20"/>
+      <sim:setting sim:key="ICTMR2" sim:val="21"/>
+      <sim:setting sim:key="ICTMR3" sim:val="22"/>
+      <sim:setting sim:key="ICTMR4" sim:val="23">
+        <!--  CMP1.trig_out -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_1" sim:val="24">
+        <!--  CMP2.trig_out -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_2" sim:val="25">
+        <!--  CMP3.trig_out -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_3" sim:val="26"/>
+      <sim:setting sim:key="ADC1012_1" sim:val="27">
+        <!-- setting (val=28 key=CTMU) # don't care -->
+        </sim:setting>
+      <sim:setting sim:key="ICTMR6" sim:val="29"/>
+      <sim:setting sim:key="ICTMR9" sim:val="30"/>
+      <sim:setting sim:key="OCTMR7" sim:val="31"/>
+      </sim:triggers1>
+    <sim:triggers2>
+      <!--  CM2CON.cout -->
+      <sim:setting sim:key="CM_AMAD_2" sim:val="16">
+        <!--  CM1CON.cout -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_1" sim:val="17"/>
+      </sim:triggers2>
+    <sim:pinfunc sim:dir="out" sim:key="OC7" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RPx"/>
+    <sim:pinfunc sim:dir="in" sim:key="OCFB" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RPx"/>
+    <sim:interrupt sim:enmask="0x0800" sim:enreg="IEC2" sim:flgmask="0x0800" sim:flgreg="IFS2" sim:name="OC7INT" sim:primask="0x7000" sim:prireg="IPC10"/>
+    </sim:peripheral><sim:peripheral sim:key="OCTMR8" sim:sfrs="OC8CON1 OC8CON2 OC8RS OC8R OC8TMR">
+    <sim:timers sim:addr="0x1D6" sim:mask="0x01C0">
+      <sim:setting sim:key="TMR2" sim:val="0"/>
+      <sim:setting sim:key="TMR3" sim:val="1"/>
+      <sim:setting sim:key="TMR4" sim:val="2"/>
+      <sim:setting sim:key="TMR5" sim:val="3"/>
+      <sim:setting sim:key="TMR1" sim:val="4"/>
+      </sim:timers>
+    <sim:triggers1>
+      <!-- val=0 is not used -->
+      <sim:setting sim:key="OCTMR1" sim:val="1"/>
+      <sim:setting sim:key="OCTMR2" sim:val="2"/>
+      <sim:setting sim:key="OCTMR3" sim:val="3"/>
+      <sim:setting sim:key="OCTMR4" sim:val="4"/>
+      <sim:setting sim:key="OCTMR5" sim:val="5"/>
+      <sim:setting sim:key="OCTMR6" sim:val="6"/>
+      <sim:setting sim:key="OCTMR7" sim:val="7"/>
+      <sim:setting sim:key="OCTMR8" sim:val="8"/>
+      <sim:setting sim:key="OCTMR9" sim:val="9"/>
+      <sim:setting sim:key="ICTMR5" sim:val="10"/>
+      <sim:setting sim:key="TMR1" sim:val="11"/>
+      <sim:setting sim:key="TMR2" sim:val="12"/>
+      <sim:setting sim:key="TMR3" sim:val="13"/>
+      <sim:setting sim:key="TMR4" sim:val="14"/>
+      <sim:setting sim:key="TMR5" sim:val="15">
+        <!-- val=16 and 17, see triggers2 below -->
+        </sim:setting>
+      <sim:setting sim:key="ICTMR7" sim:val="18"/>
+      <sim:setting sim:key="ICTMR8" sim:val="19"/>
+      <sim:setting sim:key="ICTMR1" sim:val="20"/>
+      <sim:setting sim:key="ICTMR2" sim:val="21"/>
+      <sim:setting sim:key="ICTMR3" sim:val="22"/>
+      <sim:setting sim:key="ICTMR4" sim:val="23">
+        <!--  CMP1.trig_out -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_1" sim:val="24">
+        <!--  CMP2.trig_out -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_2" sim:val="25">
+        <!--  CMP3.trig_out -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_3" sim:val="26"/>
+      <sim:setting sim:key="ADC1012_1" sim:val="27">
+        <!-- setting (val=28 key=CTMU) # don't care -->
+        </sim:setting>
+      <sim:setting sim:key="ICTMR6" sim:val="29"/>
+      <sim:setting sim:key="ICTMR9" sim:val="30"/>
+      <sim:setting sim:key="OCTMR8" sim:val="31"/>
+      </sim:triggers1>
+    <sim:triggers2>
+      <!--  CM2CON.cout -->
+      <sim:setting sim:key="CM_AMAD_2" sim:val="16">
+        <!--  CM1CON.cout -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_1" sim:val="17"/>
+      </sim:triggers2>
+    <sim:pinfunc sim:dir="out" sim:key="OC8" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RPx"/>
+    <sim:pinfunc sim:dir="in" sim:key="OCFB" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RPx"/>
+    <sim:interrupt sim:enmask="0x1000" sim:enreg="IEC2" sim:flgmask="0x1000" sim:flgreg="IFS2" sim:name="OC8INT" sim:primask="0x0007" sim:prireg="IPC11"/>
+    </sim:peripheral><sim:peripheral sim:key="OCTMR9" sim:sfrs="OC9CON1 OC9CON2 OC9RS OC9R OC9TMR">
+    <sim:timers sim:addr="0x1E0" sim:mask="0x01C0">
+      <sim:setting sim:key="TMR2" sim:val="0"/>
+      <sim:setting sim:key="TMR3" sim:val="1"/>
+      <sim:setting sim:key="TMR4" sim:val="2"/>
+      <sim:setting sim:key="TMR5" sim:val="3"/>
+      <sim:setting sim:key="TMR1" sim:val="4"/>
+      </sim:timers>
+    <sim:triggers1>
+      <!-- val=0 is not used -->
+      <sim:setting sim:key="OCTMR1" sim:val="1"/>
+      <sim:setting sim:key="OCTMR2" sim:val="2"/>
+      <sim:setting sim:key="OCTMR3" sim:val="3"/>
+      <sim:setting sim:key="OCTMR4" sim:val="4"/>
+      <sim:setting sim:key="OCTMR5" sim:val="5"/>
+      <sim:setting sim:key="OCTMR6" sim:val="6"/>
+      <sim:setting sim:key="OCTMR7" sim:val="7"/>
+      <sim:setting sim:key="OCTMR8" sim:val="8"/>
+      <sim:setting sim:key="OCTMR9" sim:val="9"/>
+      <sim:setting sim:key="ICTMR5" sim:val="10"/>
+      <sim:setting sim:key="TMR1" sim:val="11"/>
+      <sim:setting sim:key="TMR2" sim:val="12"/>
+      <sim:setting sim:key="TMR3" sim:val="13"/>
+      <sim:setting sim:key="TMR4" sim:val="14"/>
+      <sim:setting sim:key="TMR5" sim:val="15">
+        <!-- val=16 and 17, see triggers2 below -->
+        </sim:setting>
+      <sim:setting sim:key="ICTMR7" sim:val="18"/>
+      <sim:setting sim:key="ICTMR8" sim:val="19"/>
+      <sim:setting sim:key="ICTMR1" sim:val="20"/>
+      <sim:setting sim:key="ICTMR2" sim:val="21"/>
+      <sim:setting sim:key="ICTMR3" sim:val="22"/>
+      <sim:setting sim:key="ICTMR4" sim:val="23">
+        <!--  CMP1.trig_out -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_1" sim:val="24">
+        <!--  CMP2.trig_out -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_2" sim:val="25">
+        <!--  CMP3.trig_out -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_3" sim:val="26"/>
+      <sim:setting sim:key="ADC1012_1" sim:val="27">
+        <!-- setting (val=28 key=CTMU) # don't care -->
+        </sim:setting>
+      <sim:setting sim:key="ICTMR6" sim:val="29"/>
+      <sim:setting sim:key="ICTMR9" sim:val="30"/>
+      <sim:setting sim:key="OCTMR9" sim:val="31"/>
+      </sim:triggers1>
+    <sim:triggers2>
+      <!--  CM2CON.cout -->
+      <sim:setting sim:key="CM_AMAD_2" sim:val="16">
+        <!--  CM1CON.cout -->
+        </sim:setting>
+      <sim:setting sim:key="CM_AMAD_1" sim:val="17"/>
+      </sim:triggers2>
+    <sim:pinfunc sim:dir="out" sim:key="OC9" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RPx"/>
+    <sim:pinfunc sim:dir="in" sim:key="OCFB" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RPx"/>
+    <sim:interrupt sim:enmask="0x1000" sim:enreg="IEC5" sim:flgmask="0x1000" sim:flgreg="IFS5" sim:name="OC9INT" sim:primask="0x0007" sim:prireg="IPC23"/>
+    </sim:peripheral><sim:peripheral sim:key="UART1" sim:sfrs="U1MODE U1STA U1TXREG U1RXREG U1BRG">
+    <sim:pinfunc sim:dir="in" sim:key="U1RX" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RPx"/>
+    <sim:pinfunc sim:dir="out" sim:key="U1TX" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RPx"/>
+    <sim:interrupt sim:enmask="0x0800" sim:enreg="IEC0" sim:flgmask="0x0800" sim:flgreg="IFS0" sim:name="RXINT1" sim:primask="0x7000" sim:prireg="IPC2"/>
+    <sim:interrupt sim:enmask="0x1000" sim:enreg="IEC0" sim:flgmask="0x1000" sim:flgreg="IFS0" sim:name="TXINT1" sim:primask="0x0007" sim:prireg="IPC3"/>
+    </sim:peripheral><sim:peripheral sim:key="UART2" sim:sfrs="U2MODE U2STA U2TXREG U2RXREG U2BRG">
+    <sim:pinfunc sim:dir="in" sim:key="U2RX" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RPx"/>
+    <sim:pinfunc sim:dir="out" sim:key="U2TX" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RPx"/>
+    <sim:pinfunc sim:dir="in" sim:key="U2CTS" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RPx"/>
+    <sim:pinfunc sim:dir="out" sim:key="U2RTS" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RPx"/>
+    <sim:interrupt sim:enmask="0x4000" sim:enreg="IEC1" sim:flgmask="0x4000" sim:flgreg="IFS1" sim:name="RXINT2" sim:primask="0x0700" sim:prireg="IPC7"/>
+    <sim:interrupt sim:enmask="0x8000" sim:enreg="IEC1" sim:flgmask="0x8000" sim:flgreg="IFS1" sim:name="TXINT2" sim:primask="0x7000" sim:prireg="IPC7"/>
+    </sim:peripheral><sim:peripheral sim:key="SPI1">
+    <sim:pinfunc sim:dir="inout" sim:key="SCK1" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RPx"/>
+    <sim:pinfunc sim:dir="in" sim:key="SDI1" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RPx"/>
+    <sim:pinfunc sim:dir="out" sim:key="SDO1" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RPx">
+      <!--  sfrs='SPI2STAT SPI2CON SPI2BUF') -->
+      </sim:pinfunc>
+    </sim:peripheral><sim:peripheral sim:key="SPI2">
+    <sim:pinfunc sim:dir="inout" sim:key="SCK2" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RPx"/>
+    <sim:pinfunc sim:dir="in" sim:key="SDI2" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RPx"/>
+    <sim:pinfunc sim:dir="out" sim:key="SDO2" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RPx"/>
+    </sim:peripheral><sim:peripheral sim:key="I2C">
+    <sim:pinfunc sim:dir="inout" sim:key="SCL" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RG2"/>
+    <sim:pinfunc sim:dir="inout" sim:key="SDA" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RG3">
+      <!--  sfrs='I2C2RCV I2C2TRN I2C2BRG I2C2CON I2C2STAT I2C2ADD') -->
+      </sim:pinfunc>
+    </sim:peripheral><sim:peripheral sim:key="I2C2">
+    <sim:pinfunc sim:dir="inout" sim:key="SCL2" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RF5"/>
+    <sim:pinfunc sim:dir="inout" sim:key="SDA2" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RF4">
+      <!--  sfrs='I2C3RCV I2C3TRN I2C3BRG I2C3CON I2C3STAT I2C3ADD') -->
+      </sim:pinfunc>
+    </sim:peripheral><sim:peripheral sim:key="I2C3">
+    <sim:pinfunc sim:dir="inout" sim:key="SCL3" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RE6"/>
+    <sim:pinfunc sim:dir="inout" sim:key="SDA3" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RE7"/>
+    </sim:peripheral><sim:peripheral sim:key="OSC" sim:sfrs="OSCCON">
+    <sim:pinfunc sim:dir="out" sim:key="OSC1" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RC12"/>
+    <sim:pinfunc sim:dir="out" sim:key="OSC2" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RC15"/>
+    <sim:pinfunc sim:dir="out" sim:key="SOSC1" sim:nextperiph="TMR1" sim:nextpin="T1CK" sim:port="RC14"/>
+    <sim:pinfunc sim:dir="out" sim:key="SOSC2" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RC13"/>
+    <sim:pinfunc sim:dir="out" sim:key="CLKO" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RC15"/>
+    <sim:pinfunc sim:dir="out" sim:key="CLKI" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RC12"/>
+    </sim:peripheral><sim:peripheral sim:key="XBAR" sim:sfrs="OSCCON INTCON2 RPINR0 RPINR1 RPINR3 RPINR4 RPINR7 RPINR8 RPINR9 RPINR11 RPINR18 RPINR19 RPINR20 RPINR21 RPINR22 RPINR23 RPOR0 RPOR1 RPOR2 RPOR3 RPOR4 RPOR5 RPOR6 RPOR7 RPOR8 RPOR9 RPOR10 RPOR11 RPOR12">
+    <sim:pinfunc sim:dir="inout" sim:key="RP30" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RF2"/>
+    <sim:pinfunc sim:dir="inout" sim:key="RP45" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RF6"/>
+    <sim:pinfunc sim:dir="inout" sim:key="RP0" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RB0"/><sim:pinfunc sim:dir="inout" sim:key="RP1" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RB1"/><sim:pinfunc sim:dir="inout" sim:key="RP2" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RD8"/><sim:pinfunc sim:dir="inout" sim:key="RP3" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RD10"/><sim:pinfunc sim:dir="inout" sim:key="RP4" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RD9"/><sim:pinfunc sim:dir="inout" sim:key="RP6" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RB6"/><sim:pinfunc sim:dir="inout" sim:key="RP7" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RB7"/><sim:pinfunc sim:dir="inout" sim:key="RP8" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RB8"/><sim:pinfunc sim:dir="inout" sim:key="RP9" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RB9"/><sim:pinfunc sim:dir="inout" sim:key="RP10" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RF4"/><sim:pinfunc sim:dir="inout" sim:key="RP11" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RD0"/><sim:pinfunc sim:dir="inout" sim:key="RP12" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RD11"/><sim:pinfunc sim:dir="inout" sim:key="RP13" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RB2"/><sim:pinfunc sim:dir="inout" sim:key="RP14" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RB14"/><sim:pinfunc sim:dir="inout" sim:key="RP16" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RF3"/><sim:pinfunc sim:dir="inout" sim:key="RP17" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RF5"/><sim:pinfunc sim:dir="inout" sim:key="RP18" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RB5"/><sim:pinfunc sim:dir="inout" sim:key="RP19" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RG8"/><sim:pinfunc sim:dir="inout" sim:key="RP20" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RD5"/><sim:pinfunc sim:dir="inout" sim:key="RP21" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RG6"/><sim:pinfunc sim:dir="inout" sim:key="RP22" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RD3"/><sim:pinfunc sim:dir="inout" sim:key="RP23" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RD2"/><sim:pinfunc sim:dir="inout" sim:key="RP24" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RD1"/><sim:pinfunc sim:dir="inout" sim:key="RP25" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RD4"/><sim:pinfunc sim:dir="inout" sim:key="RP26" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RG7"/><sim:pinfunc sim:dir="inout" sim:key="RP27" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RG9"/><sim:pinfunc sim:dir="inout" sim:key="RP28" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RB4"/><sim:pinfunc sim:dir="inout" sim:key="RP29" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RB15"/><sim:pinfunc sim:dir="inout" sim:key="RP37" sim:nextperiph="NONE" sim:nextpin="NONE" sim:port="RC14"/><sim:crossbarinput sim:mask="0x3f00" sim:sfraddr="0x680">
+      <sim:nextp sim:nextperiph="XBAR" sim:nextpin="INT1">
+        <!--  RPINR1 -->
+        </sim:nextp>
+      </sim:crossbarinput><sim:crossbarinput sim:mask="0x003f" sim:sfraddr="0x682">
+      <sim:nextp sim:nextperiph="XBAR" sim:nextpin="INT2">
+        <!--  RPINR1 -->
+        </sim:nextp>
+      </sim:crossbarinput><sim:crossbarinput sim:mask="0x3f00" sim:sfraddr="0x682">
+      <sim:nextp sim:nextperiph="XBAR" sim:nextpin="INT3">
+        <!--  RPINR2 -->
+        </sim:nextp>
+      </sim:crossbarinput><sim:crossbarinput sim:mask="0x003f" sim:sfraddr="0x684">
+      <sim:nextp sim:nextperiph="XBAR" sim:nextpin="INT4">
+        <!--  RPINR3 -->
+        </sim:nextp>
+      </sim:crossbarinput><sim:crossbarinput sim:mask="0x003f" sim:sfraddr="0x686">
+      <sim:nextp sim:nextperiph="TMR2" sim:nextpin="T2CK">
+        <!--  RPINR3 -->
+        </sim:nextp>
+      </sim:crossbarinput><sim:crossbarinput sim:mask="0x3f00" sim:sfraddr="0x686">
+      <sim:nextp sim:nextperiph="TMR3" sim:nextpin="T3CK">
+        <!--  RPINR4 -->
+        </sim:nextp>
+      </sim:crossbarinput><sim:crossbarinput sim:mask="0x003f" sim:sfraddr="0x688">
+      <sim:nextp sim:nextperiph="TMR4" sim:nextpin="T4CK">
+        <!--  RPINR4 -->
+        </sim:nextp>
+      </sim:crossbarinput><sim:crossbarinput sim:mask="0x3f00" sim:sfraddr="0x688">
+      <sim:nextp sim:nextperiph="TMR5" sim:nextpin="T5CK">
+        <!--  RPINR7 -->
+        </sim:nextp>
+      </sim:crossbarinput><sim:crossbarinput sim:mask="0x003f" sim:sfraddr="0x68E">
+      <sim:nextp sim:nextperiph="ICTMR1" sim:nextpin="IC1">
+        <!--  RPINR7 -->
+        </sim:nextp>
+      </sim:crossbarinput><sim:crossbarinput sim:mask="0x3f00" sim:sfraddr="0x68E">
+      <sim:nextp sim:nextperiph="ICMTR2" sim:nextpin="IC2">
+        <!--  RPINR8 -->
+        </sim:nextp>
+      </sim:crossbarinput><sim:crossbarinput sim:mask="0x003f" sim:sfraddr="0x690">
+      <sim:nextp sim:nextperiph="ICMTR3" sim:nextpin="IC3">
+        <!--  RPINR8 -->
+        </sim:nextp>
+      </sim:crossbarinput><sim:crossbarinput sim:mask="0x3f00" sim:sfraddr="0x690">
+      <sim:nextp sim:nextperiph="ICMTR4" sim:nextpin="IC4">
+        <!--  RPINR9 -->
+        </sim:nextp>
+      </sim:crossbarinput><sim:crossbarinput sim:mask="0x003f" sim:sfraddr="0x692">
+      <sim:nextp sim:nextperiph="ICMTR5" sim:nextpin="IC5">
+        <!--  RPINR9 -->
+        </sim:nextp>
+      </sim:crossbarinput><sim:crossbarinput sim:mask="0x3f00" sim:sfraddr="0x692">
+      <sim:nextp sim:nextperiph="ICMTR6" sim:nextpin="IC6">
+        <!--  RPINR10 -->
+        </sim:nextp>
+      </sim:crossbarinput><sim:crossbarinput sim:mask="0x003f" sim:sfraddr="0x694">
+      <sim:nextp sim:nextperiph="ICMTR7" sim:nextpin="IC7">
+        <!--  RPINR10 -->
+        </sim:nextp>
+      </sim:crossbarinput><sim:crossbarinput sim:mask="0x3f00" sim:sfraddr="0x694">
+      <sim:nextp sim:nextperiph="ICMTR8" sim:nextpin="IC8">
+        <!--  RPINR11 -->
+        </sim:nextp>
+      </sim:crossbarinput><sim:crossbarinput sim:mask="0x003f" sim:sfraddr="0x696">
+      <sim:nextp sim:nextperiph="OCTMR1" sim:nextpin="OCFA"/>
+      <sim:nextp sim:nextperiph="OCTMR2" sim:nextpin="OCFA"/>
+      <sim:nextp sim:nextperiph="OCTMR3" sim:nextpin="OCFA"/>
+      <sim:nextp sim:nextperiph="OCTMR4" sim:nextpin="OCFA">
+        <!--  RPINR11 -->
+        </sim:nextp>
+      </sim:crossbarinput><sim:crossbarinput sim:mask="0x3f00" sim:sfraddr="0x696">
+      <sim:nextp sim:nextperiph="OCTMR5" sim:nextpin="OCFB"/>
+      <sim:nextp sim:nextperiph="OCTMR6" sim:nextpin="OCFB"/>
+      <sim:nextp sim:nextperiph="OCTMR7" sim:nextpin="OCFB"/>
+      <sim:nextp sim:nextperiph="OCTMR8" sim:nextpin="OCFB"/>
+      <sim:nextp sim:nextperiph="OCTMR9" sim:nextpin="OCFB">
+        <!--  RPINR15 -->
+        </sim:nextp>
+      </sim:crossbarinput><sim:crossbarinput sim:mask="0x3f00" sim:sfraddr="0x69E">
+      <sim:nextp sim:nextperiph="ICMTR9" sim:nextpin="IC9">
+        <!--  RPINR17 -->
+        </sim:nextp>
+      </sim:crossbarinput><sim:crossbarinput sim:mask="0x3f00" sim:sfraddr="0x6A2">
+      <sim:nextp sim:nextperiph="UART3" sim:nextpin="U3RX">
+        <!--  RPINR18 -->
+        </sim:nextp>
+      </sim:crossbarinput><sim:crossbarinput sim:mask="0x003f" sim:sfraddr="0x6A4">
+      <sim:nextp sim:nextperiph="UART1" sim:nextpin="U1RX">
+        <!--  RPINR18 -->
+        </sim:nextp>
+      </sim:crossbarinput><sim:crossbarinput sim:mask="0x3f00" sim:sfraddr="0x6A4">
+      <sim:nextp sim:nextperiph="UART1" sim:nextpin="U1CTS">
+        <!--  RPINR19 -->
+        </sim:nextp>
+      </sim:crossbarinput><sim:crossbarinput sim:mask="0x003f" sim:sfraddr="0x6A6">
+      <sim:nextp sim:nextperiph="UART2" sim:nextpin="U2RX">
+        <!--  RPINR19 -->
+        </sim:nextp>
+      </sim:crossbarinput><sim:crossbarinput sim:mask="0x3f00" sim:sfraddr="0x6A6">
+      <sim:nextp sim:nextperiph="UART2" sim:nextpin="U2CTS">
+        <!--  RPINR20 -->
+        </sim:nextp>
+      </sim:crossbarinput><sim:crossbarinput sim:mask="0x003f" sim:sfraddr="0x6A8">
+      <sim:nextp sim:nextperiph="SPI1" sim:nextpin="SDI1">
+        <!--  RPINR20 -->
+        </sim:nextp>
+      </sim:crossbarinput><sim:crossbarinput sim:mask="0x3f00" sim:sfraddr="0x6A8">
+      <sim:nextp sim:nextperiph="SPI1" sim:nextpin="SCK1">
+        <!--  RPINR21 -->
+        </sim:nextp>
+      </sim:crossbarinput><sim:crossbarinput sim:mask="0x003f" sim:sfraddr="0x6AA">
+      <sim:nextp sim:nextperiph="SPI1" sim:nextpin="SS1">
+        <!--  RPINR21 -->
+        </sim:nextp>
+      </sim:crossbarinput><sim:crossbarinput sim:mask="0x3f00" sim:sfraddr="0x6AA">
+      <sim:nextp sim:nextperiph="UART3" sim:nextpin="U3CTS">
+        <!--  RPINR22 -->
+        </sim:nextp>
+      </sim:crossbarinput><sim:crossbarinput sim:mask="0x003f" sim:sfraddr="0x6AC">
+      <sim:nextp sim:nextperiph="SPI2" sim:nextpin="SDI2">
+        <!--  RPINR22 -->
+        </sim:nextp>
+      </sim:crossbarinput><sim:crossbarinput sim:mask="0x3f00" sim:sfraddr="0x6AC">
+      <sim:nextp sim:nextperiph="SPI2" sim:nextpin="SCK2">
+        <!--  RPINR23 -->
+        </sim:nextp>
+      </sim:crossbarinput><sim:crossbarinput sim:mask="0x003f" sim:sfraddr="0x6AE">
+      <sim:nextp sim:nextperiph="SPI2" sim:nextpin="SS2">
+        <!--  RPINR27 -->
+        </sim:nextp>
+      </sim:crossbarinput><sim:crossbarinput sim:mask="0x003f" sim:sfraddr="0x6B6">
+      <sim:nextp sim:nextperiph="UART4" sim:nextpin="U4RX">
+        <!--  RPINR27 -->
+        </sim:nextp>
+      </sim:crossbarinput><sim:crossbarinput sim:mask="0x3f00" sim:sfraddr="0x6B6">
+      <sim:nextp sim:nextperiph="UART4" sim:nextpin="U4CTS">
+        <!--  RPINR28 -->
+        </sim:nextp>
+      </sim:crossbarinput><sim:crossbarinput sim:mask="0x003f" sim:sfraddr="0x6B8">
+      <sim:nextp sim:nextperiph="SPI3" sim:nextpin="SDI3">
+        <!--  RPINR28 -->
+        </sim:nextp>
+      </sim:crossbarinput><sim:crossbarinput sim:mask="0x3f00" sim:sfraddr="0x6B8">
+      <sim:nextp sim:nextperiph="SPI3" sim:nextpin="SCK3">
+        <!--  RPINR29 -->
+        </sim:nextp>
+      </sim:crossbarinput><sim:crossbarinput sim:mask="0x003f" sim:sfraddr="0x6BA">
+      <sim:nextp sim:nextperiph="SPI3" sim:nextpin="SS3"/>
+      </sim:crossbarinput><sim:crossbaroutput sim:key="RPOR0" sim:mask="0x003f" sim:pin="RP0"/><sim:crossbaroutput sim:key="RPOR0" sim:mask="0x3f00" sim:pin="RP1"/><sim:crossbaroutput sim:key="RPOR1" sim:mask="0x003f" sim:pin="RP2"/><sim:crossbaroutput sim:key="RPOR1" sim:mask="0x3f00" sim:pin="RP3"/><sim:crossbaroutput sim:key="RPOR2" sim:mask="0x003f" sim:pin="RP4"/><sim:crossbaroutput sim:key="RPOR2" sim:mask="0x3f00" sim:pin="RP5"/><sim:crossbaroutput sim:key="RPOR3" sim:mask="0x003f" sim:pin="RP6"/><sim:crossbaroutput sim:key="RPOR3" sim:mask="0x3f00" sim:pin="RP7"/><sim:crossbaroutput sim:key="RPOR4" sim:mask="0x003f" sim:pin="RP8"/><sim:crossbaroutput sim:key="RPOR4" sim:mask="0x3f00" sim:pin="RP9"/><sim:crossbaroutput sim:key="RPOR5" sim:mask="0x003f" sim:pin="RP10"/><sim:crossbaroutput sim:key="RPOR5" sim:mask="0x3f00" sim:pin="RP11"/><sim:crossbaroutput sim:key="RPOR6" sim:mask="0x003f" sim:pin="RP12"/><sim:crossbaroutput sim:key="RPOR6" sim:mask="0x3f00" sim:pin="RP13"/><sim:crossbaroutput sim:key="RPOR7" sim:mask="0x003f" sim:pin="RP14"/><sim:crossbaroutput sim:key="RPOR7" sim:mask="0x3f00" sim:pin="RP15"/><sim:crossbaroutput sim:key="RPOR8" sim:mask="0x003f" sim:pin="RP16"/><sim:crossbaroutput sim:key="RPOR8" sim:mask="0x3f00" sim:pin="RP17"/><sim:crossbaroutput sim:key="RPOR9" sim:mask="0x003f" sim:pin="RP18"/><sim:crossbaroutput sim:key="RPOR9" sim:mask="0x3f00" sim:pin="RP19"/><sim:crossbaroutput sim:key="RPOR10" sim:mask="0x003f" sim:pin="RP20"/><sim:crossbaroutput sim:key="RPOR10" sim:mask="0x3f00" sim:pin="RP21"/><sim:crossbaroutput sim:key="RPOR11" sim:mask="0x003f" sim:pin="RP22"/><sim:crossbaroutput sim:key="RPOR11" sim:mask="0x3f00" sim:pin="RP23"/><sim:crossbaroutput sim:key="RPOR12" sim:mask="0x003f" sim:pin="RP24"/><sim:crossbaroutput sim:key="RPOR12" sim:mask="0x3f00" sim:pin="RP25"/><sim:crossbaroutput sim:key="RPOR13" sim:mask="0x003f" sim:pin="RP26"/><sim:crossbaroutput sim:key="RPOR13" sim:mask="0x3f00" sim:pin="RP27"/><sim:crossbaroutput sim:key="RPOR14" sim:mask="0x003f" sim:pin="RP28"/><sim:crossbaroutput sim:key="RPOR14" sim:mask="0x3f00" sim:pin="RP29"/><sim:crossbaroutput sim:key="RPOR15" sim:mask="0x003f" sim:pin="RP30"/><sim:crossbaroutput sim:key="RPOR15" sim:mask="0x3f00" sim:pin="RP31"/><sim:periphpinid sim:key="C1OUT" sim:periph="CM_AMAD_1" sim:val="1"/><sim:periphpinid sim:key="C2OUT" sim:periph="CM_AMAD_2" sim:val="2"/><sim:periphpinid sim:key="U1TX" sim:periph="UART1" sim:val="3"/><sim:periphpinid sim:key="U1RTS" sim:periph="NONE" sim:val="4"/><sim:periphpinid sim:key="U2TX" sim:periph="UART2" sim:val="5"/><sim:periphpinid sim:key="U2RTS" sim:periph="NONE" sim:val="6"/><sim:periphpinid sim:key="SDO1" sim:periph="NONE" sim:val="7"/><sim:periphpinid sim:key="SCK1" sim:periph="NONE" sim:val="8"/><sim:periphpinid sim:key="SS1" sim:periph="NONE" sim:val="9"/><sim:periphpinid sim:key="SDO2" sim:periph="NONE" sim:val="10"/><sim:periphpinid sim:key="SCK2" sim:periph="NONE" sim:val="11"/><sim:periphpinid sim:key="SS2" sim:periph="NONE" sim:val="12"/><sim:periphpinid sim:key="OC1" sim:periph="OCTMR1" sim:val="18"/><sim:periphpinid sim:key="OC2" sim:periph="OCTMR2" sim:val="19"/><sim:periphpinid sim:key="OC3" sim:periph="OCTMR3" sim:val="20"/><sim:periphpinid sim:key="OC4" sim:periph="OCTMR4" sim:val="21"/><sim:periphpinid sim:key="OC5" sim:periph="OCTMR5" sim:val="22"/><sim:periphpinid sim:key="OC6" sim:periph="OCTMR6" sim:val="23"/><sim:periphpinid sim:key="OC7" sim:periph="OCTMR7" sim:val="24"/><sim:periphpinid sim:key="OC8" sim:periph="OCTMR8" sim:val="25"/><sim:periphpinid sim:key="U3TX" sim:periph="UART3" sim:val="28"/><sim:periphpinid sim:key="U3RTS" sim:periph="UART3" sim:val="29"/><sim:periphpinid sim:key="U4TX" sim:periph="UART4" sim:val="30"/><sim:periphpinid sim:key="U4RTS" sim:periph="UART4" sim:val="31"/><sim:periphpinid sim:key="SDO3" sim:periph="NONE" sim:val="32"/><sim:periphpinid sim:key="SCK3" sim:periph="NONE" sim:val="33"/><sim:periphpinid sim:key="SS3" sim:periph="NONE" sim:val="34"/><sim:periphpinid sim:key="OC9" sim:periph="OCTMR9" sim:val="35"/><sim:periphpinid sim:key="C3OUT" sim:periph="CM_AMAD_3" sim:val="36"/><sim:interrupt sim:enmask="0x0001" sim:enreg="IEC0" sim:flgmask="0x0001" sim:flgreg="IFS0" sim:name="INT0" sim:primask="0x0007" sim:prireg="IPC0"/><sim:interrupt sim:enmask="0x0010" sim:enreg="IEC1" sim:flgmask="0x0010" sim:flgreg="IFS1" sim:name="INT1" sim:primask="0x0007" sim:prireg="IPC5"/><sim:interrupt sim:enmask="0x2000" sim:enreg="IEC1" sim:flgmask="0x2000" sim:flgreg="IFS1" sim:name="INT2" sim:primask="0x0070" sim:prireg="IPC7"/><sim:interrupt sim:enmask="0x0020" sim:enreg="IEC3" sim:flgmask="0x0020" sim:flgreg="IFS3" sim:name="INT3" sim:primask="0x0070" sim:prireg="IPC13"/></sim:peripheral></sim:sim>

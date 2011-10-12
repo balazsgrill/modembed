@@ -1,0 +1,15 @@
+# Device file info: $Id: HCS361.dev,v 1.4 2007/02/08 05:40:47 pashaa Exp $
+# Macro file info: $Id: hcsmacro.dev,v 1.2 2006/08/04 20:16:22 nairnj Exp $
+#device=HCS361
+format=0.1
+IsChecksumless=1
+vpp (range=5.000-5.000 dflt=5.000)
+vdd (range=5.000-5.000 dfltrange=5.000-5.000 nominal=5.000)
+
+pgming (memtech=ee tries=1 ovrpgm=1)
+    wait (eedata=100)
+    latches (eedata=1)
+
+eedata (region=0x0-0x17)
+
+NumBanks=1

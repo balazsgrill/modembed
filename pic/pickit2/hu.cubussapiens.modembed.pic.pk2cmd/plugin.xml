@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="hu.cubussapiens.modembed.programmers">
+      <programmer
+            handler="hu.cubussapiens.modembed.pic.pk2cmd.PicKit2Programmer"
+            icon="pickit2.png"
+            id="hu.cubussapiens.modembed.pic.pk2cmd.programmer"
+            name="PicKit2">
+      </programmer>
+   </extension>
+
+</plugin>

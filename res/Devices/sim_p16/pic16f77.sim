@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="ASCII" standalone="yes" ?><sim:sim xmlns:sim="http://crownking/sim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/sim sim/sim.xsd">
+  <sim:peripheral sim:key="PORTA" sim:sfrs="TRISA PORTA" sim:type="port">
+    <sim:iopin sim:dir="inout" sim:key="RA0"/>
+    <sim:iopin sim:dir="inout" sim:key="RA1"/>
+    <sim:iopin sim:dir="inout" sim:key="RA2"/>
+    <sim:iopin sim:dir="inout" sim:key="RA3"/>
+    <sim:iopin sim:dir="inout" sim:key="RA4"/>
+    <sim:iopin sim:dir="inout" sim:key="RA5">
+      <!-- ________________________________________________________________________________ -->
+      <!--  				PORTB -->
+      <!-- ________________________________________________________________________________ -->
+      </sim:iopin>
+    </sim:peripheral>
+  <sim:peripheral sim:key="PORTB" sim:sfrs="TRISB PORTB" sim:type="port">
+    <sim:iopin sim:dir="inout" sim:key="RB0">
+      <sim:extint sim:enmask="0x10" sim:enreg="INTCON" sim:flgmask="0x02" sim:flgreg="INTCON" sim:key="INT0" sim:primask="0x00" sim:prireg="NONE"/>
+      </sim:iopin>
+    <sim:iopin sim:dir="inout" sim:key="RB1"/>
+    <sim:iopin sim:dir="inout" sim:key="RB2"/>
+    <sim:iopin sim:dir="inout" sim:key="RB3"/>
+    <sim:iopin sim:dir="inout" sim:key="RB4">
+      <sim:cnint sim:cnkey="PORTIOC0" sim:enmask="0x08" sim:enreg="INTCON" sim:flgmask="0x01" sim:flgreg="INTCON" sim:key="PORTIRQ" sim:primask="0x01" sim:prireg="NONE"/>
+      </sim:iopin>
+    <sim:iopin sim:dir="inout" sim:key="RB5">
+      <sim:cnint sim:cnkey="PORTIOC0" sim:enmask="0x08" sim:enreg="INTCON" sim:flgmask="0x01" sim:flgreg="INTCON" sim:key="PORTIRQ" sim:primask="0x01" sim:prireg="NONE"/>
+      </sim:iopin>
+    <sim:iopin sim:dir="inout" sim:key="RB6">
+      <sim:cnint sim:cnkey="PORTIOC0" sim:enmask="0x08" sim:enreg="INTCON" sim:flgmask="0x01" sim:flgreg="INTCON" sim:key="PORTIRQ" sim:primask="0x01" sim:prireg="NONE"/>
+      </sim:iopin>
+    <sim:iopin sim:dir="inout" sim:key="RB7">
+      <sim:cnint sim:cnkey="PORTIOC0" sim:enmask="0x08" sim:enreg="INTCON" sim:flgmask="0x01" sim:flgreg="INTCON" sim:key="PORTIRQ" sim:primask="0x01" sim:prireg="NONE">
+        <!-- ________________________________________________________________________________ -->
+        <!--  				PORTC -->
+        <!-- ________________________________________________________________________________ -->
+        </sim:cnint>
+      </sim:iopin>
+    </sim:peripheral>
+  <sim:peripheral sim:key="PORTC" sim:sfrs="TRISC PORTC" sim:type="port">
+    <sim:iopin sim:dir="inout" sim:key="RC0"/>
+    <sim:iopin sim:dir="inout" sim:key="RC1">
+      <sim:cnpin sim:key="CCP2CN" sim:notify="CCP2"/>
+      </sim:iopin>
+    <sim:iopin sim:dir="inout" sim:key="RC2">
+      <sim:cnpin sim:key="CCP1CN" sim:notify="CCP1"/>
+      </sim:iopin>
+    <sim:iopin sim:dir="inout" sim:key="RC3"/>
+    <sim:iopin sim:dir="inout" sim:key="RC4"/>
+    <sim:iopin sim:dir="inout" sim:key="RC5"/>
+    <sim:iopin sim:dir="inout" sim:key="RC6"/>
+    <sim:iopin sim:dir="inout" sim:key="RC7">
+      <!-- ________________________________________________________________________________ -->
+      <!--  				PORTD -->
+      <!-- ________________________________________________________________________________ -->
+      </sim:iopin>
+    </sim:peripheral>
+  <sim:peripheral sim:key="PORTD" sim:sfrs="TRISD PORTD" sim:type="port">
+    <sim:iopin sim:dir="inout" sim:key="RD0"/>
+    <sim:iopin sim:dir="inout" sim:key="RD1"/>
+    <sim:iopin sim:dir="inout" sim:key="RD2"/>
+    <sim:iopin sim:dir="inout" sim:key="RD3"/>
+    <sim:iopin sim:dir="inout" sim:key="RD4"/>
+    <sim:iopin sim:dir="inout" sim:key="RD5"/>
+    <sim:iopin sim:dir="inout" sim:key="RD6"/>
+    <sim:iopin sim:dir="inout" sim:key="RD7">
+      <!-- ________________________________________________________________________________ -->
+      <!--  				PORTE -->
+      <!-- ________________________________________________________________________________ -->
+      </sim:iopin>
+    </sim:peripheral>
+  <sim:peripheral sim:key="PORTE" sim:sfrs="TRISE PORTE" sim:type="port">
+    <sim:iopin sim:dir="inout" sim:key="RE0"/>
+    <sim:iopin sim:dir="inout" sim:key="RE1"/>
+    <sim:iopin sim:dir="inout" sim:key="RE2">
+      <!-- ________________________________________________________________________________ -->
+      <!--  				UARTs -->
+      <!-- ________________________________________________________________________________ -->
+      </sim:iopin>
+    </sim:peripheral>
+  <sim:peripheral sim:key="UART1" sim:sfrs="SPBRG RCREG TXREG TXSTA RCSTA">
+    <sim:pinfunc sim:dir="in" sim:key="U1RX" sim:port="RC7"/>
+    <sim:pinfunc sim:dir="out" sim:key="U1TX" sim:port="RC6"/>
+    <sim:interrupt sim:enmask="0x20" sim:enreg="PIE1" sim:flgmask="0x20" sim:flgreg="PIR1" sim:name="RXINT1" sim:primask="0x00" sim:prireg="NONE"/>
+    <sim:interrupt sim:enmask="0x10" sim:enreg="PIE1" sim:flgmask="0x10" sim:flgreg="PIR1" sim:name="TXINT1" sim:primask="0x00" sim:prireg="NONE">
+      <!-- ________________________________________________________________________________ -->
+      <!--  				ADC -->
+      <!-- ________________________________________________________________________________ -->
+      </sim:interrupt>
+    </sim:peripheral>
+  <sim:peripheral sim:key="ADC8" sim:sfrs="ADCON0 ADCON1 ADRES">
+    <sim:pinfunc sim:dir="in" sim:key="AN0" sim:port="RA0"/>
+    <sim:pinfunc sim:dir="in" sim:key="AN1" sim:port="RA1"/>
+    <sim:pinfunc sim:dir="in" sim:key="AN2" sim:port="RA2"/>
+    <sim:pinfunc sim:dir="in" sim:key="AN3" sim:port="RA3"/>
+    <sim:pinfunc sim:dir="in" sim:key="AN4" sim:port="RA5"/>
+    <sim:access sim:key="ADCON1" sim:mode="AD_PCFG_MIDRANGE"/>
+    <sim:interrupt sim:enmask="0x40" sim:enreg="PIE1" sim:flgmask="0x40" sim:flgreg="PIR1" sim:name="ADC" sim:primask="0x00" sim:prireg="NONE">
+      <!-- ________________________________________________________________________________ -->
+      <!--  				TIMERs -->
+      <!-- ________________________________________________________________________________ -->
+      </sim:interrupt>
+    </sim:peripheral>
+  <sim:peripheral sim:key="TMR0" sim:sfrs="TMR0">
+    <sim:pinfunc sim:dir="in" sim:key="T0CKI" sim:port="RA4"/>
+    <sim:interrupt sim:enmask="0x20" sim:enreg="INTCON" sim:flgmask="0x04" sim:flgreg="INTCON" sim:name="TMR0INT" sim:primask="0x00" sim:prireg="NONE"/>
+    </sim:peripheral>
+  <sim:peripheral sim:key="TMR1" sim:sfrs="TMR1H TMR1L T1CON">
+    <sim:pinfunc sim:dir="in" sim:key="T1CKI" sim:port="RC0"/>
+    <sim:interrupt sim:enmask="0x01" sim:enreg="PIE1" sim:flgmask="0x01" sim:flgreg="PIR1" sim:name="TMR1INT" sim:primask="0x00" sim:prireg="NONE"/>
+    </sim:peripheral>
+  <sim:peripheral sim:key="TMR2" sim:sfrs="TMR2 PR2 T2CON">
+    <sim:interrupt sim:enmask="0x02" sim:enreg="PIE1" sim:flgmask="0x02" sim:flgreg="PIR1" sim:name="TMR2INT" sim:primask="0x00" sim:prireg="NONE">
+      <!-- ________________________________________________________________________________ -->
+      <!--  				CCP -->
+      <!-- ________________________________________________________________________________ -->
+      </sim:interrupt>
+    </sim:peripheral>
+  <sim:peripheral sim:key="CCP1" sim:sfrs="CCP1CON CCPR1L CCPR1H">
+    <sim:pinfunc sim:dir="inout" sim:key="CCP1" sim:port="RC2"/>
+    <sim:interrupt sim:enmask="0x04" sim:enreg="PIE1" sim:flgmask="0x04" sim:flgreg="PIR1" sim:name="CCP1INT" sim:primask="0x04" sim:prireg="IPR1"/>
+    <sim:timers sim:addr="0x00" sim:mask="0x00">
+      <sim:setting sim:cc="TMR1" sim:pwm="TMR2" sim:val="0x00"/>
+      <sim:setting sim:cc="TMR1" sim:pwm="TMR2" sim:val="0x00"/>
+      <sim:setting sim:cc="TMR1" sim:pwm="TMR2" sim:val="0x00"/>
+      <sim:setting sim:cc="TMR1" sim:pwm="TMR2" sim:val="0x00"/>
+      </sim:timers>
+    </sim:peripheral>
+  <sim:peripheral sim:key="CCP2" sim:sfrs="CCP2CON CCPR2L CCPR2H">
+    <sim:pinfunc sim:dir="inout" sim:key="CCP2" sim:port="RC1"/>
+    <sim:interrupt sim:enmask="0x01" sim:enreg="PIE2" sim:flgmask="0x01" sim:flgreg="PIR2" sim:name="CCP2INT" sim:primask="0x00" sim:prireg="NONE"/>
+    <sim:specialevent sim:key="ADC8"/>
+    <sim:timers sim:addr="0x0" sim:mask="0x00">
+      <sim:setting sim:cc="TMR1" sim:pwm="TMR2" sim:val="0x00"/>
+      <sim:setting sim:cc="TMR1" sim:pwm="TMR2" sim:val="0x00"/>
+      <sim:setting sim:cc="TMR1" sim:pwm="TMR2" sim:val="0x00"/>
+      <sim:setting sim:cc="TMR1" sim:pwm="TMR2" sim:val="0x00">
+        <!-- ________________________________________________________________________________ -->
+        <!--  				OSC -->
+        <!-- ________________________________________________________________________________ -->
+        </sim:setting>
+      </sim:timers>
+    </sim:peripheral>
+  <sim:peripheral sim:key="OSC">
+    <sim:pinfunc sim:dir="in" sim:key="T1OSCI" sim:port="RC1"/>
+    <sim:pinfunc sim:dir="out" sim:key="T1OSCO" sim:port="RC0">
+      <sim:nextp sim:nextperiph="TMR1" sim:nextpin="T1CKI"/>
+      </sim:pinfunc>
+    </sim:peripheral>
+  <sim:peripheral sim:key="I2C"/>
+  <sim:peripheral sim:key="PSP">
+    <!-- ________________________________________________________________________________ -->
+    <!--  				CORE -->
+    <!-- ________________________________________________________________________________ -->
+    </sim:peripheral>
+  <sim:peripheral sim:key="CORE" sim:sfrs="PMDATA PMDATH PMADR PMADRH PMCON1 PCON"/>
+  </sim:sim>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+   <extension-point id="pages" name="Model Editor pages" schema="schema/hu.cubussapiens.modembed.model.editor.pages.exsd"/>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="hu.cubussapiens.modembed.model.editor.GenericModelEditor"
+            contributorClass="hu.cubussapiens.modembed.model.editor.GenericModelActionBarContributor"
+            default="true"
+            extensions="xmi"
+            id="hu.cubussapiens.modembed.model.editor"
+            name="Model Editor">
+      </editor>
+   </extension>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</plugin>
