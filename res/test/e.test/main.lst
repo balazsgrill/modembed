@@ -1,0 +1,965 @@
+main(){
+ set_u8( v = 80, dest = uint8@4051){
+  MOVLW( k = 80){
+   0: 111001010000
+   }
+  aMOVWF( f = 4051){
+   assistSelectBank( f = 4051){
+    }
+   MOVWF( f = 4051, a = {}0){
+    1: 110111011010011
+    }
+   }
+  }
+ set_u8( v = 0, dest = uint8@3966){
+  aCLRF( f = 3966){
+   assistSelectBank( f = 3966){
+    }
+   CLRF( a = {}0, f = 3966){
+    2: 110101001111110
+    }
+   }
+  }
+ set_u8( v = 0, dest = uint8@3967){
+  aCLRF( f = 3967){
+   assistSelectBank( f = 3967){
+    }
+   CLRF( a = {}0, f = 3967){
+    3: 110101001111111
+    }
+   }
+  }
+ set_u8( v = 0, dest = uint8@3988){
+  aCLRF( f = 3988){
+   assistSelectBank( f = 3988){
+    }
+   CLRF( a = {}0, f = 3988){
+    4: 110101010010100
+    }
+   }
+  }
+ set_u8( v = 0, dest = uint8@3970){
+  aCLRF( f = 3970){
+   assistSelectBank( f = 3970){
+    }
+   CLRF( a = {}0, f = 3970){
+    5: 110101010000010
+    }
+   }
+  }
+ set_u8( v = 0, dest = uint8@3979){
+  aCLRF( f = 3979){
+   assistSelectBank( f = 3979){
+    }
+   CLRF( a = {}0, f = 3979){
+    6: 110101010001011
+    }
+   }
+  }
+ set_u8( v = 0, dest = uint8@1){
+  aCLRF( f = 1){
+   assistSelectBank( f = 1){
+    }
+   CLRF( a = {}0, f = 1){
+    7: 110101000000001
+    }
+   }
+  }
+ set_u8( v = 0, dest = uint8@0){
+  aCLRF( f = 0){
+   assistSelectBank( f = 0){
+    }
+   CLRF( a = {}0, f = 0){
+    8: 110101000000000
+    }
+   }
+  }
+ set_u8( v = 0, dest = uint8@3969){
+  aCLRF( f = 3969){
+   assistSelectBank( f = 3969){
+    }
+   CLRF( a = {}0, f = 3969){
+    9: 110101010000001
+    }
+   }
+  }
+ set_u8( v = 0, dest = uint8@3978){
+  aCLRF( f = 3978){
+   assistSelectBank( f = 3978){
+    }
+   CLRF( a = {}0, f = 3978){
+    10: 110101010001010
+    }
+   }
+  }
+ set_u8( v = 0, dest = uint8@3987){
+  aCLRF( f = 3987){
+   assistSelectBank( f = 3987){
+    }
+   CLRF( a = {}0, f = 3987){
+    11: 110101010010011
+    }
+   }
+  }
+ set_u8( v = 255, dest = uint8@2){
+  aSETF( f = 2){
+   assistSelectBank( f = 2){
+    }
+   SETF( a = {}0, f = 2){
+    12: 110100000000010
+    }
+   }
+  }
+ RS232_init(){
+  aBSF( b = 5, f = 3987){
+   assistSelectBank( f = 3987){
+    }
+   BSF( f = 3987, a = {}0, b = 5){
+    13: 1000101010010011
+    }
+   }
+  aBSF( b = 7, f = 3987){
+   assistSelectBank( f = 3987){
+    }
+   BSF( f = 3987, a = {}0, b = 7){
+    14: 1000111010010011
+    }
+   }
+  aBSF( b = 2, f = 4012){
+   assistSelectBank( f = 4012){
+    }
+   BSF( f = 4012, a = {}0, b = 2){
+    15: 1000010010101100
+    }
+   }
+  MOVLW( k = 25){
+   16: 111000011001
+   }
+  aMOVWF( f = 4015){
+   assistSelectBank( f = 4015){
+    }
+   MOVWF( f = 4015, a = {}0){
+    17: 110111010101111
+    }
+   }
+  aCLRF( f = 4016){
+   assistSelectBank( f = 4016){
+    }
+   CLRF( a = {}0, f = 4016){
+    18: 110101010110000
+    }
+   }
+  aBSF( b = 5, f = 4012){
+   assistSelectBank( f = 4012){
+    }
+   BSF( f = 4012, a = {}0, b = 5){
+    19: 1000101010101100
+    }
+   }
+  aBSF( b = 4, f = 4011){
+   assistSelectBank( f = 4011){
+    }
+   BSF( f = 4011, a = {}0, b = 4){
+    20: 1000100010101011
+    }
+   }
+  aBCF( f = 4012, b = 4){
+   assistSelectBank( f = 4012){
+    }
+   BCF( f = 4012, a = {}0, b = 4){
+    21: 1001100010101100
+    }
+   }
+  aBSF( b = 7, f = 4011){
+   assistSelectBank( f = 4011){
+    }
+   BSF( f = 4011, a = {}0, b = 7){
+    22: 1000111010101011
+    }
+   }
+  }
+ label start
+ SPI_Send( clk = 9, tx = 10, d = uint8@2){
+  DIO_Set( channel = 9, b = 0, v = 0){
+   DIO_RawSet( v = 0, pin = 0, latch = 3979, b = 0){
+    aBCF( f = 3979, b = 0){
+     assistSelectBank( f = 3979){
+      }
+     BCF( f = 3979, a = {}0, b = 0){
+      23: 1001000010001011
+      }
+     }
+    }
+   }
+  wait(){
+   NOP(){
+    24: 0
+    }
+   NOP(){
+    25: 0
+    }
+   NOP(){
+    26: 0
+    }
+   }
+  DIO_Set( channel = 10, b = 0, v = uint8@2){
+   DIO_RawSet( v = uint8@2, pin = 1, latch = 3979, b = 0){
+    aBTFSC( b = 0, f = 2){
+     assistSelectBank( f = 2){
+      }
+     BTFSC( b = 0, f = 2, a = {}0){
+      27: 1011000000000010
+      }
+     }
+    GOTO( c = label(33)){
+     28: 1110111100100001
+     29: 1111000000000000
+     }
+    aBCF( f = 3979, b = 1){
+     assistSelectBank( f = 3979){
+      }
+     BCF( f = 3979, a = {}0, b = 1){
+      30: 1001001010001011
+      }
+     }
+    GOTO( c = label(34)){
+     31: 1110111100100010
+     32: 1111000000000000
+     }
+    label true
+    aBSF( b = 1, f = 3979){
+     assistSelectBank( f = 3979){
+      }
+     BSF( f = 3979, a = {}0, b = 1){
+      33: 1000001010001011
+      }
+     }
+    label done
+    }
+   }
+  wait(){
+   NOP(){
+    34: 0
+    }
+   NOP(){
+    35: 0
+    }
+   NOP(){
+    36: 0
+    }
+   }
+  DIO_Set( channel = 9, b = 0, v = 1){
+   DIO_RawSet( v = 1, pin = 0, latch = 3979, b = 0){
+    aBSF( b = 0, f = 3979){
+     assistSelectBank( f = 3979){
+      }
+     BSF( f = 3979, a = {}0, b = 0){
+      37: 1000000010001011
+      }
+     }
+    }
+   }
+  wait(){
+   NOP(){
+    38: 0
+    }
+   NOP(){
+    39: 0
+    }
+   NOP(){
+    40: 0
+    }
+   }
+  DIO_Set( channel = 9, b = 0, v = 0){
+   DIO_RawSet( v = 0, pin = 0, latch = 3979, b = 0){
+    aBCF( f = 3979, b = 0){
+     assistSelectBank( f = 3979){
+      }
+     BCF( f = 3979, a = {}0, b = 0){
+      41: 1001000010001011
+      }
+     }
+    }
+   }
+  wait(){
+   NOP(){
+    42: 0
+    }
+   NOP(){
+    43: 0
+    }
+   NOP(){
+    44: 0
+    }
+   }
+  DIO_Set( channel = 10, b = 1, v = uint8@2){
+   DIO_RawSet( v = uint8@2, pin = 1, latch = 3979, b = 1){
+    aBTFSC( b = 1, f = 2){
+     assistSelectBank( f = 2){
+      }
+     BTFSC( b = 1, f = 2, a = {}0){
+      45: 1011001000000010
+      }
+     }
+    GOTO( c = label(51)){
+     46: 1110111100110011
+     47: 1111000000000000
+     }
+    aBCF( f = 3979, b = 1){
+     assistSelectBank( f = 3979){
+      }
+     BCF( f = 3979, a = {}0, b = 1){
+      48: 1001001010001011
+      }
+     }
+    GOTO( c = label(52)){
+     49: 1110111100110100
+     50: 1111000000000000
+     }
+    label true
+    aBSF( b = 1, f = 3979){
+     assistSelectBank( f = 3979){
+      }
+     BSF( f = 3979, a = {}0, b = 1){
+      51: 1000001010001011
+      }
+     }
+    label done
+    }
+   }
+  wait(){
+   NOP(){
+    52: 0
+    }
+   NOP(){
+    53: 0
+    }
+   NOP(){
+    54: 0
+    }
+   }
+  DIO_Set( channel = 9, b = 0, v = 1){
+   DIO_RawSet( v = 1, pin = 0, latch = 3979, b = 0){
+    aBSF( b = 0, f = 3979){
+     assistSelectBank( f = 3979){
+      }
+     BSF( f = 3979, a = {}0, b = 0){
+      55: 1000000010001011
+      }
+     }
+    }
+   }
+  wait(){
+   NOP(){
+    56: 0
+    }
+   NOP(){
+    57: 0
+    }
+   NOP(){
+    58: 0
+    }
+   }
+  DIO_Set( channel = 9, b = 0, v = 0){
+   DIO_RawSet( v = 0, pin = 0, latch = 3979, b = 0){
+    aBCF( f = 3979, b = 0){
+     assistSelectBank( f = 3979){
+      }
+     BCF( f = 3979, a = {}0, b = 0){
+      59: 1001000010001011
+      }
+     }
+    }
+   }
+  wait(){
+   NOP(){
+    60: 0
+    }
+   NOP(){
+    61: 0
+    }
+   NOP(){
+    62: 0
+    }
+   }
+  DIO_Set( channel = 10, b = 2, v = uint8@2){
+   DIO_RawSet( v = uint8@2, pin = 1, latch = 3979, b = 2){
+    aBTFSC( b = 2, f = 2){
+     assistSelectBank( f = 2){
+      }
+     BTFSC( b = 2, f = 2, a = {}0){
+      63: 1011010000000010
+      }
+     }
+    GOTO( c = label(69)){
+     64: 1110111101000101
+     65: 1111000000000000
+     }
+    aBCF( f = 3979, b = 1){
+     assistSelectBank( f = 3979){
+      }
+     BCF( f = 3979, a = {}0, b = 1){
+      66: 1001001010001011
+      }
+     }
+    GOTO( c = label(70)){
+     67: 1110111101000110
+     68: 1111000000000000
+     }
+    label true
+    aBSF( b = 1, f = 3979){
+     assistSelectBank( f = 3979){
+      }
+     BSF( f = 3979, a = {}0, b = 1){
+      69: 1000001010001011
+      }
+     }
+    label done
+    }
+   }
+  wait(){
+   NOP(){
+    70: 0
+    }
+   NOP(){
+    71: 0
+    }
+   NOP(){
+    72: 0
+    }
+   }
+  DIO_Set( channel = 9, b = 0, v = 1){
+   DIO_RawSet( v = 1, pin = 0, latch = 3979, b = 0){
+    aBSF( b = 0, f = 3979){
+     assistSelectBank( f = 3979){
+      }
+     BSF( f = 3979, a = {}0, b = 0){
+      73: 1000000010001011
+      }
+     }
+    }
+   }
+  wait(){
+   NOP(){
+    74: 0
+    }
+   NOP(){
+    75: 0
+    }
+   NOP(){
+    76: 0
+    }
+   }
+  DIO_Set( channel = 9, b = 0, v = 0){
+   DIO_RawSet( v = 0, pin = 0, latch = 3979, b = 0){
+    aBCF( f = 3979, b = 0){
+     assistSelectBank( f = 3979){
+      }
+     BCF( f = 3979, a = {}0, b = 0){
+      77: 1001000010001011
+      }
+     }
+    }
+   }
+  wait(){
+   NOP(){
+    78: 0
+    }
+   NOP(){
+    79: 0
+    }
+   NOP(){
+    80: 0
+    }
+   }
+  DIO_Set( channel = 10, b = 3, v = uint8@2){
+   DIO_RawSet( v = uint8@2, pin = 1, latch = 3979, b = 3){
+    aBTFSC( b = 3, f = 2){
+     assistSelectBank( f = 2){
+      }
+     BTFSC( b = 3, f = 2, a = {}0){
+      81: 1011011000000010
+      }
+     }
+    GOTO( c = label(87)){
+     82: 1110111101010111
+     83: 1111000000000000
+     }
+    aBCF( f = 3979, b = 1){
+     assistSelectBank( f = 3979){
+      }
+     BCF( f = 3979, a = {}0, b = 1){
+      84: 1001001010001011
+      }
+     }
+    GOTO( c = label(88)){
+     85: 1110111101011000
+     86: 1111000000000000
+     }
+    label true
+    aBSF( b = 1, f = 3979){
+     assistSelectBank( f = 3979){
+      }
+     BSF( f = 3979, a = {}0, b = 1){
+      87: 1000001010001011
+      }
+     }
+    label done
+    }
+   }
+  wait(){
+   NOP(){
+    88: 0
+    }
+   NOP(){
+    89: 0
+    }
+   NOP(){
+    90: 0
+    }
+   }
+  DIO_Set( channel = 9, b = 0, v = 1){
+   DIO_RawSet( v = 1, pin = 0, latch = 3979, b = 0){
+    aBSF( b = 0, f = 3979){
+     assistSelectBank( f = 3979){
+      }
+     BSF( f = 3979, a = {}0, b = 0){
+      91: 1000000010001011
+      }
+     }
+    }
+   }
+  wait(){
+   NOP(){
+    92: 0
+    }
+   NOP(){
+    93: 0
+    }
+   NOP(){
+    94: 0
+    }
+   }
+  DIO_Set( channel = 9, b = 0, v = 0){
+   DIO_RawSet( v = 0, pin = 0, latch = 3979, b = 0){
+    aBCF( f = 3979, b = 0){
+     assistSelectBank( f = 3979){
+      }
+     BCF( f = 3979, a = {}0, b = 0){
+      95: 1001000010001011
+      }
+     }
+    }
+   }
+  wait(){
+   NOP(){
+    96: 0
+    }
+   NOP(){
+    97: 0
+    }
+   NOP(){
+    98: 0
+    }
+   }
+  DIO_Set( channel = 10, b = 4, v = uint8@2){
+   DIO_RawSet( v = uint8@2, pin = 1, latch = 3979, b = 4){
+    aBTFSC( b = 4, f = 2){
+     assistSelectBank( f = 2){
+      }
+     BTFSC( b = 4, f = 2, a = {}0){
+      99: 1011100000000010
+      }
+     }
+    GOTO( c = label(105)){
+     100: 1110111101101001
+     101: 1111000000000000
+     }
+    aBCF( f = 3979, b = 1){
+     assistSelectBank( f = 3979){
+      }
+     BCF( f = 3979, a = {}0, b = 1){
+      102: 1001001010001011
+      }
+     }
+    GOTO( c = label(106)){
+     103: 1110111101101010
+     104: 1111000000000000
+     }
+    label true
+    aBSF( b = 1, f = 3979){
+     assistSelectBank( f = 3979){
+      }
+     BSF( f = 3979, a = {}0, b = 1){
+      105: 1000001010001011
+      }
+     }
+    label done
+    }
+   }
+  wait(){
+   NOP(){
+    106: 0
+    }
+   NOP(){
+    107: 0
+    }
+   NOP(){
+    108: 0
+    }
+   }
+  DIO_Set( channel = 9, b = 0, v = 1){
+   DIO_RawSet( v = 1, pin = 0, latch = 3979, b = 0){
+    aBSF( b = 0, f = 3979){
+     assistSelectBank( f = 3979){
+      }
+     BSF( f = 3979, a = {}0, b = 0){
+      109: 1000000010001011
+      }
+     }
+    }
+   }
+  wait(){
+   NOP(){
+    110: 0
+    }
+   NOP(){
+    111: 0
+    }
+   NOP(){
+    112: 0
+    }
+   }
+  DIO_Set( channel = 9, b = 0, v = 0){
+   DIO_RawSet( v = 0, pin = 0, latch = 3979, b = 0){
+    aBCF( f = 3979, b = 0){
+     assistSelectBank( f = 3979){
+      }
+     BCF( f = 3979, a = {}0, b = 0){
+      113: 1001000010001011
+      }
+     }
+    }
+   }
+  wait(){
+   NOP(){
+    114: 0
+    }
+   NOP(){
+    115: 0
+    }
+   NOP(){
+    116: 0
+    }
+   }
+  DIO_Set( channel = 10, b = 5, v = uint8@2){
+   DIO_RawSet( v = uint8@2, pin = 1, latch = 3979, b = 5){
+    aBTFSC( b = 5, f = 2){
+     assistSelectBank( f = 2){
+      }
+     BTFSC( b = 5, f = 2, a = {}0){
+      117: 1011101000000010
+      }
+     }
+    GOTO( c = label(123)){
+     118: 1110111101111011
+     119: 1111000000000000
+     }
+    aBCF( f = 3979, b = 1){
+     assistSelectBank( f = 3979){
+      }
+     BCF( f = 3979, a = {}0, b = 1){
+      120: 1001001010001011
+      }
+     }
+    GOTO( c = label(124)){
+     121: 1110111101111100
+     122: 1111000000000000
+     }
+    label true
+    aBSF( b = 1, f = 3979){
+     assistSelectBank( f = 3979){
+      }
+     BSF( f = 3979, a = {}0, b = 1){
+      123: 1000001010001011
+      }
+     }
+    label done
+    }
+   }
+  wait(){
+   NOP(){
+    124: 0
+    }
+   NOP(){
+    125: 0
+    }
+   NOP(){
+    126: 0
+    }
+   }
+  DIO_Set( channel = 9, b = 0, v = 1){
+   DIO_RawSet( v = 1, pin = 0, latch = 3979, b = 0){
+    aBSF( b = 0, f = 3979){
+     assistSelectBank( f = 3979){
+      }
+     BSF( f = 3979, a = {}0, b = 0){
+      127: 1000000010001011
+      }
+     }
+    }
+   }
+  wait(){
+   NOP(){
+    128: 0
+    }
+   NOP(){
+    129: 0
+    }
+   NOP(){
+    130: 0
+    }
+   }
+  DIO_Set( channel = 9, b = 0, v = 0){
+   DIO_RawSet( v = 0, pin = 0, latch = 3979, b = 0){
+    aBCF( f = 3979, b = 0){
+     assistSelectBank( f = 3979){
+      }
+     BCF( f = 3979, a = {}0, b = 0){
+      131: 1001000010001011
+      }
+     }
+    }
+   }
+  wait(){
+   NOP(){
+    132: 0
+    }
+   NOP(){
+    133: 0
+    }
+   NOP(){
+    134: 0
+    }
+   }
+  DIO_Set( channel = 10, b = 6, v = uint8@2){
+   DIO_RawSet( v = uint8@2, pin = 1, latch = 3979, b = 6){
+    aBTFSC( b = 6, f = 2){
+     assistSelectBank( f = 2){
+      }
+     BTFSC( b = 6, f = 2, a = {}0){
+      135: 1011110000000010
+      }
+     }
+    GOTO( c = label(141)){
+     136: 1110111110001101
+     137: 1111000000000000
+     }
+    aBCF( f = 3979, b = 1){
+     assistSelectBank( f = 3979){
+      }
+     BCF( f = 3979, a = {}0, b = 1){
+      138: 1001001010001011
+      }
+     }
+    GOTO( c = label(142)){
+     139: 1110111110001110
+     140: 1111000000000000
+     }
+    label true
+    aBSF( b = 1, f = 3979){
+     assistSelectBank( f = 3979){
+      }
+     BSF( f = 3979, a = {}0, b = 1){
+      141: 1000001010001011
+      }
+     }
+    label done
+    }
+   }
+  wait(){
+   NOP(){
+    142: 0
+    }
+   NOP(){
+    143: 0
+    }
+   NOP(){
+    144: 0
+    }
+   }
+  DIO_Set( channel = 9, b = 0, v = 1){
+   DIO_RawSet( v = 1, pin = 0, latch = 3979, b = 0){
+    aBSF( b = 0, f = 3979){
+     assistSelectBank( f = 3979){
+      }
+     BSF( f = 3979, a = {}0, b = 0){
+      145: 1000000010001011
+      }
+     }
+    }
+   }
+  wait(){
+   NOP(){
+    146: 0
+    }
+   NOP(){
+    147: 0
+    }
+   NOP(){
+    148: 0
+    }
+   }
+  DIO_Set( channel = 9, b = 0, v = 0){
+   DIO_RawSet( v = 0, pin = 0, latch = 3979, b = 0){
+    aBCF( f = 3979, b = 0){
+     assistSelectBank( f = 3979){
+      }
+     BCF( f = 3979, a = {}0, b = 0){
+      149: 1001000010001011
+      }
+     }
+    }
+   }
+  wait(){
+   NOP(){
+    150: 0
+    }
+   NOP(){
+    151: 0
+    }
+   NOP(){
+    152: 0
+    }
+   }
+  DIO_Set( channel = 10, b = 7, v = uint8@2){
+   DIO_RawSet( v = uint8@2, pin = 1, latch = 3979, b = 7){
+    aBTFSC( b = 7, f = 2){
+     assistSelectBank( f = 2){
+      }
+     BTFSC( b = 7, f = 2, a = {}0){
+      153: 1011111000000010
+      }
+     }
+    GOTO( c = label(159)){
+     154: 1110111110011111
+     155: 1111000000000000
+     }
+    aBCF( f = 3979, b = 1){
+     assistSelectBank( f = 3979){
+      }
+     BCF( f = 3979, a = {}0, b = 1){
+      156: 1001001010001011
+      }
+     }
+    GOTO( c = label(160)){
+     157: 1110111110100000
+     158: 1111000000000000
+     }
+    label true
+    aBSF( b = 1, f = 3979){
+     assistSelectBank( f = 3979){
+      }
+     BSF( f = 3979, a = {}0, b = 1){
+      159: 1000001010001011
+      }
+     }
+    label done
+    }
+   }
+  wait(){
+   NOP(){
+    160: 0
+    }
+   NOP(){
+    161: 0
+    }
+   NOP(){
+    162: 0
+    }
+   }
+  DIO_Set( channel = 9, b = 0, v = 1){
+   DIO_RawSet( v = 1, pin = 0, latch = 3979, b = 0){
+    aBSF( b = 0, f = 3979){
+     assistSelectBank( f = 3979){
+      }
+     BSF( f = 3979, a = {}0, b = 0){
+      163: 1000000010001011
+      }
+     }
+    }
+   }
+  wait(){
+   NOP(){
+    164: 0
+    }
+   NOP(){
+    165: 0
+    }
+   NOP(){
+    166: 0
+    }
+   }
+  }
+ RS232_syncSend( send = uint8@1, rcv = uint8@0){
+  aBTFSS( b = 4, f = 3998){
+   assistSelectBank( f = 3998){
+    }
+   BTFSS( f = 3998, a = {}0, b = 4){
+    167: 1010100010011110
+    }
+   }
+  GOTO( c = label(172)){
+   168: 1110111110101100
+   169: 1111000000000000
+   }
+  MOVFF( s = 1, d = 4013){
+   170: 1100000000000001
+   171: 1111111110101101
+   }
+  label nosend
+  aBTFSS( b = 5, f = 3998){
+   assistSelectBank( f = 3998){
+    }
+   BTFSS( f = 3998, a = {}0, b = 5){
+    172: 1010101010011110
+    }
+   }
+  GOTO( c = label(177)){
+   173: 1110111110110001
+   174: 1111000000000000
+   }
+  MOVFF( s = 4014, d = 0){
+   175: 1100111110101110
+   176: 1111000000000000
+   }
+  label norcv
+  }
+ set_u8( v = uint8@1, dest = uint8@0){
+  MOVFF( s = 0, d = 1){
+   177: 1100000000000000
+   178: 1111000000000001
+   }
+  }
+ set_u8( v = uint8@2, dest = uint8@0){
+  MOVFF( s = 0, d = 2){
+   179: 1100000000000000
+   180: 1111000000000010
+   }
+  }
+ wait(){
+  NOP(){
+   181: 0
+   }
+  NOP(){
+   182: 0
+   }
+  NOP(){
+   183: 0
+   }
+  }
+ GOTO( c = label(23)){
+  184: 1110111100010111
+  185: 1111000000000000
+  }
+ }
