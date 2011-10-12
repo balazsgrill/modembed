@@ -1,7 +1,0 @@
-#
-#Wed Mar 16 15:01:23 CET 2011
-main=0x15
-adc.resultL=0x1
-adc.read=0xb
-adc.resultH=0x0
-adc.init=0x0

@@ -1,7 +1,0 @@
-Manifest-Version: 1.0
-Bundle-ManifestVersion: 2
-Bundle-Name: Architecture definitions
-Bundle-SymbolicName: hu.cubussapiens.modembed.pic.pic8bit.arch;singleton:=true
-Bundle-Version: 0.1.1.qualifier
-Require-Bundle: hu.cubussapiens.modembed.pic;bundle-version="0.1.0",
- hu.cubussapiens.modembed;bundle-version="0.1.0"

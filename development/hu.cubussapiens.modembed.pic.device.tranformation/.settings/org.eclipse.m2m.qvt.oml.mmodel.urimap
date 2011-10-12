@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="ASCII"?>
-<uriMap:MappingContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:uriMap="http:///www.eclipse.org/m2m/qvt/oml/MModelUriMap/1.0.0">
-  <mapping sourceURI="http://microchip.com" targetURI="platform:/resource/hu.cubussapiens.modembed.pic.device.model/model/microchip.device.ecore"/>
-  <mapping sourceURI="http://cubussapiens.hu/modembed/pic" targetURI="platform:/resource/hu.cubussapiens.modembed.pic.model/model/modembed.pic.ecore"/>
-  <mapping sourceURI="http://cubussapiens.hu/modembed/config" targetURI="platform:/resource/hu.cubussapiens.modembed.configuration.model/model/modembed.configuration.ecore"/>
-</uriMap:MappingContainer>

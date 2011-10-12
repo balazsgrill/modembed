@@ -1,7 +1,0 @@
-Manifest-Version: 1.0
-Bundle-ManifestVersion: 2
-Bundle-Name: Pic18f14k50
-Bundle-SymbolicName: hu.cubussapiens.modembed.pic.pic18f14k50;singleton:=true
-Bundle-Version: 0.1.0.qualifier
-Require-Bundle: hu.cubussapiens.modembed.pic;bundle-version="0.1.0",
- hu.cubussapiens.modembed.modularasm.compiler;bundle-version="0.1.0"
