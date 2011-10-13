@@ -14,16 +14,4 @@
 	<natures>
 		<nature>org.eclipse.xtext.ui.shared.xtextNature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>e.pic18</name>
-			<type>2</type>
-			<locationURI>PARENT-1-PROJECT_LOC/e.pic18</locationURI>
-		</link>
-		<link>
-			<name>e.pic18f14k50</name>
-			<type>2</type>
-			<locationURI>PARENT-1-PROJECT_LOC/e.pic18f14k50</locationURI>
-		</link>
-	</linkedResources>
 </projectDescription>
