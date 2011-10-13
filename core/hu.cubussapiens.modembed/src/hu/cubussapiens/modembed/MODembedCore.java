@@ -1,7 +1,12 @@
 package hu.cubussapiens.modembed;
 
+import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.Plugin;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.pde.core.plugin.IPluginImport;
+import org.eclipse.pde.core.plugin.IPluginModel;
+import org.eclipse.pde.core.plugin.IPluginModelBase;
+import org.eclipse.pde.core.plugin.PluginRegistry;
 import org.osgi.framework.BundleContext;
 
 public class MODembedCore extends Plugin {
@@ -49,6 +54,17 @@ public class MODembedCore extends Plugin {
 			else uri = uri.appendSegment(s);
 		}
 		return uri;
+	}
+	
+	public static void updateDeps(IProject project){
+		IPluginModelBase mb = PluginRegistry.findModel(project);
+		IPluginModel m = (IPluginModel)mb;
+		for(IPluginImport pi : m.getPlugin().getImports()){
+			System.out.println("depends on "+pi.getId());
+			IPluginModelBase ipm = PluginRegistry.findModel(pi.getId());
+			System.out.println("Installed to "+ipm.getInstallLocation());
+		}
+		
 	}
 	
 }

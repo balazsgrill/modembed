@@ -90,5 +90,18 @@
             name="Embedded development">
       </perspective>
    </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="false"
+            id="hu.cubussapiens.modembed.ui.updatePrefs"
+            objectClass="org.eclipse.core.resources.IProject">
+         <action
+               class="hu.cubussapiens.modembed.ui.project.UpdateProjectDependencies"
+               id="hu.cubussapiens.modembed.ui.updateDeps"
+               label="Update dependencies">
+         </action>
+      </objectContribution>
+   </extension>
 
 </plugin>
