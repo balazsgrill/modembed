@@ -4,6 +4,9 @@
 package hu.e.parser.ui;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.eclipse.xtext.resource.containers.IAllContainersState;
+
+import com.google.inject.Provider;
 
 /**
  * Use this class to register components to be used within the IDE.
@@ -11,5 +14,20 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
 public class ESyntaxUiModule extends hu.e.parser.ui.AbstractESyntaxUiModule {
 	public ESyntaxUiModule(AbstractUIPlugin plugin) {
 		super(plugin);
+	}
+	
+	private static IAllContainersState instance = null;
+	
+	@Override
+	public Provider<IAllContainersState> provideIAllContainersState() {
+		return new Provider<IAllContainersState>() {
+			
+			@Override
+			public IAllContainersState get() {
+				if (instance == null)
+					instance = new PluginsAllContainerState();
+				return instance;
+			}
+		};
 	}
 }

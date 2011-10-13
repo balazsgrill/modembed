@@ -3,9 +3,17 @@
  */
 package hu.e.parser;
 
+import org.eclipse.xtext.resource.IContainer.Manager;
+import org.eclipse.xtext.resource.containers.StateBasedContainerManager;
+
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
  */
 public class ESyntaxRuntimeModule extends hu.e.parser.AbstractESyntaxRuntimeModule {
 
+	@Override
+	public Class<? extends Manager> bindIContainer$Manager() {
+		return StateBasedContainerManager.class;
+	}
+	
 }
