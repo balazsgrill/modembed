@@ -5,11 +5,8 @@ package hu.e.parser.scoping;
 
 import hu.e.parser.eSyntax.OperationCall;
 
-import java.util.Iterator;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.xtext.resource.IEObjectDescription;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider;
 
@@ -46,19 +43,11 @@ public class ESyntaxScopeProvider extends AbstractDeclarativeScopeProvider {
 		return importedScope(eobject, ref);
 	}
 	
-	public IScope scope_Package_uses(EObject eobject, EReference ref){
-		
-		
-		//TODO: provide import package scope here
+	public IScope scope_Package_uses(EObject eobject, EReference ref){		
 		IScope scope = delegateGetScope(eobject, ref);
 		scope = new PluginDependencyScope(
 				eobject.eResource().getURI(), eobject.eResource().getResourceSet(), scope);
-		Iterable<IEObjectDescription> i = scope.getAllElements();
-		Iterator<IEObjectDescription> iter = i.iterator();
-		while(iter.hasNext()){
-			IEObjectDescription odesc = iter.next();
-			System.out.println(odesc.getName());
-		}
+		
 		return scope;
 	}
 	
