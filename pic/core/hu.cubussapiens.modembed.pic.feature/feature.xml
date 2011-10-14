@@ -6,7 +6,7 @@
       provider-name="cubussapiens.hu"
       plugin="hu.cubussapiens.modembed.pic.ui">
 
-   <description url="http://modembed.sourceforge.net/">
+   <description url="http://gbalage.github.com/modembed">
       PIC device support for MODembed
    </description>
 
@@ -210,7 +210,7 @@ litigation.
    </license>
 
    <url>
-      <update label="MODembed update site" url="http://modembed.sourceforge.net/updatesite/"/>
+      <update label="MODembed update site" url="http://gbalage.github.com/modembed/updatesite"/>
    </url>
 
    <requires>

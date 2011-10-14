@@ -6,8 +6,9 @@
       provider-name="Cubussapiens.hu"
       plugin="hu.e.compiler">
 
-   <description>
-      An advanced language designed for embedded programming, along with a compiler.
+   <description url="http://gbalage.github.com/modembed">
+      An advanced language designed for embedded programming, along
+with a compiler.
    </description>
 
    <license url="http://www.eclipse.org/legal/epl-v10.html">
@@ -84,7 +85,7 @@ This Agreement is governed by the laws of the State of New York and the intellec
    </license>
 
    <url>
-      <update label="MODembed update site" url="http://modembed.sourceforge.net/updatesite/"/>
+      <update label="MODembed update site" url="http://gbalage.github.com/modembed/updatesite"/>
    </url>
 
    <requires>

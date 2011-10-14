@@ -9,7 +9,7 @@
       ws="gtk,win32"
       arch="x86">
 
-   <description url="http://modembed.sourceforge.net/">
+   <description url="http://gbalage.github.com/modembed">
       PicKit2 support for MODembed
    </description>
 
@@ -210,7 +210,7 @@ reserved.
    </license>
 
    <url>
-      <update label="MODembed update site" url="http://modembed.sourceforge.net/updatesite/"/>
+      <update label="MODembed update site" url="http://gbalage.github.com/modembed/updatesite"/>
    </url>
 
    <requires>
