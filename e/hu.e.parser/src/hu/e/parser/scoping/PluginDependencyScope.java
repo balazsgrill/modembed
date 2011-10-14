@@ -13,6 +13,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.xtext.naming.QualifiedName;
 import org.eclipse.xtext.resource.EObjectDescription;
 import org.eclipse.xtext.resource.IEObjectDescription;
 import org.eclipse.xtext.scoping.IScope;
@@ -42,7 +43,9 @@ public class PluginDependencyScope extends AbstractScope {
 					Resource r = resourceset.getResource(uri, true);
 					for(EObject eo : r.getContents()){
 						if (eo instanceof Package){
-							descs.add(EObjectDescription.create(((Package) eo).getName(), eo));
+							String name = ((Package) eo).getName();
+							QualifiedName qname = QualifiedName.create(name.split("\\."));
+							descs.add(EObjectDescription.create(qname, eo));
 						}
 					}
 				}catch(Exception e){
