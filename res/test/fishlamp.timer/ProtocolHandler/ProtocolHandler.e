@@ -10,7 +10,7 @@ uint8 rcvcount;
 TMessage rcvmessage;
 
 init(){
-	pic18f14k50.eusart.RS232_init();
+	RS232_init();
 	rcvmsg_started = 0;
 }
 
@@ -19,7 +19,7 @@ refresh(){
 	uint8 rcvcounter;
 	
 	rcvcounter = 0;
-	pic18f14k50.eusart.RS232_rcv(rcv, rcvcounter);
+	RS232_rcv(rcv, rcvcounter);
 	if (rcvcounter){
 		// data is received
 		
