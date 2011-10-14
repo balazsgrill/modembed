@@ -100,12 +100,9 @@ public class MODembedCore extends Plugin {
 		return m.getPlugin();
 	}
 	
-	public static Collection<URI> getVisibleResources(String pluginname){
-		IPlugin plugin = getPlugin(pluginname);
+	private static Collection<URI> getVisibleResources(File root){
 		final List<URI> result = new ArrayList<URI>();
 		
-		String install = plugin.getPluginModel().getInstallLocation();
-		File root = new File(install);
 		Queue<File> queue = new LinkedList<File>();
 		queue.add(root);
 		
@@ -119,6 +116,22 @@ public class MODembedCore extends Plugin {
 		}
 		
 		return result;
+	}
+	
+	public static Collection<URI> getVisibleResources(String pluginname){
+		IPlugin plugin = getPlugin(pluginname);
+		
+		String install = plugin.getPluginModel().getInstallLocation();
+		
+		File root = new File(install);
+		if (root.isDirectory()){
+			// installed into directory
+			return getVisibleResources(root);
+		}else{
+			// installed into jar
+			return null;
+		}
+		
 	}
 	
 	private static URI getUri(File file) {
