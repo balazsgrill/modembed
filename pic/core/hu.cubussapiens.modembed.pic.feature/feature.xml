@@ -2,7 +2,7 @@
 <feature
       id="hu.cubussapiens.modembed.pic.feature"
       label="Modembed PIC feature"
-      version="0.4.1"
+      version="0.5.0"
       provider-name="cubussapiens.hu"
       plugin="hu.cubussapiens.modembed.pic.ui">
 
@@ -237,5 +237,17 @@ litigation.
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
+   <plugin
+         id="e.pic18"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="e.pic18f14k50"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
 
 </feature>
