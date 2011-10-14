@@ -10,6 +10,9 @@ import e.types;
  */
 type address = unsigned 12 bits;
 
+/*
+ * 20 bit code address
+ */
 type codeaddr = unsigned 20 bits;
 
 /*
@@ -18,8 +21,9 @@ type codeaddr = unsigned 20 bits;
 type bit = unsigned 3 bits;
 
 /*
-ADDWF	#f #d=1 #a=1	0010 01 	d1:d0 a1:a0 f8:f0
-*/
+ * Add W to F
+ * ADDWF	#f #d=1 #a=1	0010 01 	d1:d0 a1:a0 f8:f0
+ */
 ADDWF(address f , bool d=1 , bool a=1 ){
 	<b0010:4 b01:2 d:1 a:1 f:8>
 }

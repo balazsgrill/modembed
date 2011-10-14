@@ -2,7 +2,7 @@ namespace microchip.PIC18F14K50;
 
 import e.types;
 
-/*
+/* 
  * Special function registers
  */
 reg uint8 CM2CON1 : 0xf79;
