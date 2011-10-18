@@ -3,10 +3,6 @@
  */
 package hu.e.compiler;
 
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.util.List;
-
 import hu.e.compiler.internal.HexFileCompiler;
 import hu.e.compiler.internal.model.IProgramStep;
 import hu.e.compiler.internal.model.InstructionWordInstance;
@@ -19,6 +15,10 @@ import hu.e.parser.eSyntax.LinkedBinary;
 import hu.e.parser.eSyntax.Package;
 import hu.e.parser.eSyntax.TopLevelItem;
 
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.util.List;
+
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
@@ -27,9 +27,9 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.xtext.nodemodel.ICompositeNode;
 import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
-import org.eclipse.xtext.resource.XtextResourceSet;
 
 
 
@@ -105,10 +105,24 @@ public class ECompiler {
 		return sb.toString();
 	}
 	
-	public void compile(IFile f){
-		XtextResourceSet resourceset = new XtextResourceSet();
-		Resource r = resourceset.getResource(URI.createPlatformResourceURI(f.getFullPath().toString(), true), true);
-
+	public void compile(Resource r, IFile f){
+		
+//		// "workspace" is a string that contains the path to the workspace containing the DSL program.
+//		//new org.eclipse.emf.mwe.utils.StandaloneSetup().setPlatformUri(
+//		//		ResourcesPlugin.getWorkspace().getRoot().getLocation().toPortableString());
+//
+//		Injector injector = new ESyntaxStandaloneSetup().createInjector();//createInjectorAndDoEMFRegistration();
+//		XtextResourceSet resourceset = injector.getInstance(XtextResourceSet.class);
+//		resourceset.addLoadOption(XtextResource.OPTION_RESOLVE_ALL, Boolean.TRUE);
+//		
+//		
+//		//XtextResourceSet resourceset = new XtextResourceSet();
+//		Resource r = resourceset.getResource(URI.createPlatformResourceURI(f.getFullPath().toString(), true), true);
+//		
+//		
+		
+		ResourceSet resourceset = r.getResourceSet();
+		
 		for(EObject eo : r.getContents()){
 			if (eo instanceof Package){
 				System.out.println("Processing namespace "+((Package) eo).getName());

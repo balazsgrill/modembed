@@ -17,6 +17,7 @@ import hu.e.parser.eSyntax.TopLevelItem;
 import hu.e.parser.eSyntax.TypeDef;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.xtext.EcoreUtil2;
 
 /**
  * @author balazs.grill
@@ -81,6 +82,7 @@ public class OperationFinder {
 	}
 	
 	private boolean checkOperation(Operation op, ISymbol...symbols){
+		if (op.eIsProxy()) op = (Operation) EcoreUtil2.resolve(op, pack);
 		if (op.getParams().size() != symbols.length) return false;
 		for(int i=0;i<symbols.length;i++){
 			ParameterVariable pv = op.getParams().get(i);

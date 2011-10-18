@@ -232,19 +232,5 @@
             extensions="e">
     </provider>
   </extension>
-  <extension
-        point="org.eclipse.ui.popupMenus">
-     <objectContribution
-           adaptable="false"
-           id="hu.e.parser.ui.compileContriution"
-           nameFilter="*.e"
-           objectClass="org.eclipse.core.resources.IFile">
-        <action
-              class="hu.e.parser.ui.CompileAFile"
-              id="hu.e.parser.ui.compileAction"
-              label="Compile">
-        </action>
-     </objectContribution>
-  </extension>
 
 </plugin>
