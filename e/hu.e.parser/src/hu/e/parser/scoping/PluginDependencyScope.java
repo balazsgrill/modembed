@@ -9,6 +9,7 @@ import hu.e.parser.eSyntax.Package;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -38,19 +39,23 @@ public class PluginDependencyScope extends AbstractScope {
 		deps.remove(projname);
 		
 		for(String d : deps){
-			for(URI uri : MODembedCore.getVisibleResources(d)){
-				try{
-					Resource r = resourceset.getResource(uri, true);
-					for(EObject eo : r.getContents()){
-						if (eo instanceof Package){
-							String name = ((Package) eo).getName();
-							QualifiedName qname = QualifiedName.create(name.split("\\."));
-							descs.add(EObjectDescription.create(qname, eo));
+			try {
+				for(URI uri : MODembedCore.getVisibleResources(d)){
+					try{
+						Resource r = resourceset.getResource(uri, true);
+						for(EObject eo : r.getContents()){
+							if (eo instanceof Package){
+								String name = ((Package) eo).getName();
+								QualifiedName qname = QualifiedName.create(name.split("\\."));
+								descs.add(EObjectDescription.create(qname, eo));
+							}
 						}
+					}catch(Exception e){
+						
 					}
-				}catch(Exception e){
-					
 				}
+			} catch (CoreException e) {
+				
 			}
 		}
 	}

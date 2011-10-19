@@ -11,7 +11,11 @@ import java.util.List;
 import java.util.Queue;
 import java.util.Set;
 
+import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IResource;
+import org.eclipse.core.resources.IResourceVisitor;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.Plugin;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.pde.core.plugin.IPlugin;
@@ -118,23 +122,44 @@ public class MODembedCore extends Plugin {
 		return result;
 	}
 	
-	public static Collection<URI> getVisibleResources(String pluginname){
+	public static Collection<URI> getVisibleResources(String pluginname) throws CoreException{
 		IPlugin plugin = getPlugin(pluginname);
+		final Collection<URI> result = new ArrayList<URI>();
 		
-		String install = plugin.getPluginModel().getInstallLocation();
-		
-		File root = new File(install);
-		if (root.isDirectory()){
-			// installed into directory
-			return getVisibleResources(root);
+		IResource r = plugin.getPluginModel().getUnderlyingResource();
+		if (r != null){
+			r = r.getProject();
+			r.accept(new IResourceVisitor() {
+				
+				@Override
+				public boolean visit(IResource resource) throws CoreException {
+					if (resource instanceof IFile){
+						result.add(URI.createPlatformResourceURI(resource.getFullPath().toString(), true));
+						return false;
+					}
+					return true;
+				}
+			});
 		}else{
-			// installed into jar
-			return null;
+			
 		}
+		
+		return result;
+//		String install = plugin.getPluginModel().getInstallLocation();
+//		
+//		File root = new File(install);
+//		if (root.isDirectory()){
+//			// installed into directory
+//			return getVisibleResources(root);
+//		}else{
+//			// installed into jar
+//			return null;
+//		}
 		
 	}
 	
 	private static URI getUri(File file) {
+		//ResourcesPlugin.getWorkspace().getRoot().getL
 		try {
 			return URI.createFileURI(file.getCanonicalPath());
 		} catch (IOException e) {
