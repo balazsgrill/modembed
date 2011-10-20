@@ -1,92 +1,103 @@
 main(){
  init(){
-  RS232_init(){
-   aBSF( b = 5, f = 3987){
-    assistSelectBank( f = 3987){
-     }
-    BSF( a = {}0, b = 5, f = 3987){
-     0: 1000101010010011
-     }
-    }
-   aBSF( b = 7, f = 3987){
-    assistSelectBank( f = 3987){
-     }
-    BSF( a = {}0, b = 7, f = 3987){
-     1: 1000111010010011
+  init(){
+   set_u8( v = 0, dest = uint8@0){
+    aCLRF( f = 0){
+     assistSelectBank( f = 0){
+      }
+     CLRF( f = 0, a = {}0){
+      0: 110101000000000
+      }
      }
     }
-   aBSF( b = 2, f = 4012){
-    assistSelectBank( f = 4012){
+   init(){
+    RS232_init(){
+     aBSF( f = 3987, b = 5){
+      assistSelectBank( f = 3987){
+       }
+      BSF( b = 5, f = 3987, a = {}0){
+       1: 1000101010010011
+       }
+      }
+     aBSF( f = 3987, b = 7){
+      assistSelectBank( f = 3987){
+       }
+      BSF( b = 7, f = 3987, a = {}0){
+       2: 1000111010010011
+       }
+      }
+     aBSF( f = 4012, b = 2){
+      assistSelectBank( f = 4012){
+       }
+      BSF( b = 2, f = 4012, a = {}0){
+       3: 1000010010101100
+       }
+      }
+     MOVLW( k = 25){
+      4: 111000011001
+      }
+     aMOVWF( f = 4015){
+      assistSelectBank( f = 4015){
+       }
+      MOVWF( a = {}0, f = 4015){
+       5: 110111010101111
+       }
+      }
+     aCLRF( f = 4016){
+      assistSelectBank( f = 4016){
+       }
+      CLRF( f = 4016, a = {}0){
+       6: 110101010110000
+       }
+      }
+     aBSF( f = 4012, b = 5){
+      assistSelectBank( f = 4012){
+       }
+      BSF( b = 5, f = 4012, a = {}0){
+       7: 1000101010101100
+       }
+      }
+     aBSF( f = 4011, b = 4){
+      assistSelectBank( f = 4011){
+       }
+      BSF( b = 4, f = 4011, a = {}0){
+       8: 1000100010101011
+       }
+      }
+     aBCF( f = 4012, b = 4){
+      assistSelectBank( f = 4012){
+       }
+      BCF( a = {}0, b = 4, f = 4012){
+       9: 1001100010101100
+       }
+      }
+     aBSF( f = 4011, b = 7){
+      assistSelectBank( f = 4011){
+       }
+      BSF( b = 7, f = 4011, a = {}0){
+       10: 1000111010101011
+       }
+      }
      }
-    BSF( a = {}0, b = 2, f = 4012){
-     2: 1000010010101100
-     }
-    }
-   MOVLW( k = 25){
-    3: 111000011001
-    }
-   aMOVWF( f = 4015){
-    assistSelectBank( f = 4015){
-     }
-    MOVWF( a = {}0, f = 4015){
-     4: 110111010101111
-     }
-    }
-   aCLRF( f = 4016){
-    assistSelectBank( f = 4016){
-     }
-    CLRF( f = 4016, a = {}0){
-     5: 110101010110000
-     }
-    }
-   aBSF( b = 5, f = 4012){
-    assistSelectBank( f = 4012){
-     }
-    BSF( a = {}0, b = 5, f = 4012){
-     6: 1000101010101100
-     }
-    }
-   aBSF( b = 4, f = 4011){
-    assistSelectBank( f = 4011){
-     }
-    BSF( a = {}0, b = 4, f = 4011){
-     7: 1000100010101011
-     }
-    }
-   aBCF( b = 4, f = 4012){
-    assistSelectBank( f = 4012){
-     }
-    BCF( f = 4012, b = 4, a = {}0){
-     8: 1001100010101100
-     }
-    }
-   aBSF( b = 7, f = 4011){
-    assistSelectBank( f = 4011){
-     }
-    BSF( a = {}0, b = 7, f = 4011){
-     9: 1000111010101011
+    set_u8( v = 0, dest = uint8@1){
+     aCLRF( f = 1){
+      assistSelectBank( f = 1){
+       }
+      CLRF( f = 1, a = {}0){
+       11: 110101000000001
+       }
+      }
      }
     }
    }
-  ByteBuffer_init( buffer = TByteBuffer@0){
-   set_u8( v = 0, dest = uint8@32){
-    aCLRF( f = 32){
-     assistSelectBank( f = 32){
-      }
-     CLRF( f = 32, a = {}0){
-      10: 110101000100000
-      }
-     }
-    }
-   set_u8( v = 0, dest = uint8@33){
-    aCLRF( f = 33){
-     assistSelectBank( f = 33){
-      }
-     CLRF( f = 33, a = {}0){
-      11: 110101000100001
-      }
-     }
-    }
+  }
+ label start
+ run(){
+  refresh(){
    }
+  }
+ GOTO( c = label(12)){
+  12: 1110111100001100
+  13: 1111000000000000
   }
  }

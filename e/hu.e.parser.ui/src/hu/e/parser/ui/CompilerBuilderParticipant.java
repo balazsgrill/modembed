@@ -44,6 +44,7 @@ public class CompilerBuilderParticipant implements IXtextBuilderParticipant {
 							compiler.compile(res, (IFile)resource);
 						}catch (Exception e) {
 							e.printStackTrace();
+							//res.getErrors().add
 						}
 					}
 					return false;

@@ -2,9 +2,12 @@ package hu.cubussapiens.modembed;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Enumeration;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -16,6 +19,8 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IResourceVisitor;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.FileLocator;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Plugin;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.pde.core.plugin.IPlugin;
@@ -23,6 +28,7 @@ import org.eclipse.pde.core.plugin.IPluginImport;
 import org.eclipse.pde.core.plugin.IPluginModel;
 import org.eclipse.pde.core.plugin.IPluginModelBase;
 import org.eclipse.pde.core.plugin.PluginRegistry;
+import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
 
 public class MODembedCore extends Plugin {
@@ -141,20 +147,26 @@ public class MODembedCore extends Plugin {
 				}
 			});
 		}else{
-			
+			Bundle b = Platform.getBundle(plugin.getId());
+			Enumeration<URL> urls = b.findEntries("/", "*.e", true);
+			while(urls.hasMoreElements()){
+				URL url = urls.nextElement();
+				try {
+					url = FileLocator.resolve(url);
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				try {
+					result.add(URI.createURI(url.toURI().toString()));
+				} catch (URISyntaxException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
 		}
 		
 		return result;
-//		String install = plugin.getPluginModel().getInstallLocation();
-//		
-//		File root = new File(install);
-//		if (root.isDirectory()){
-//			// installed into directory
-//			return getVisibleResources(root);
-//		}else{
-//			// installed into jar
-//			return null;
-//		}
 		
 	}
 	

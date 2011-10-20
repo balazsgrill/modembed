@@ -14,10 +14,10 @@ init(){
 }
 
 messageReceived(TMessage msg){
-	rcvbuffer = msg;
+	//rcvbuffer = msg;
 	rcvevent = 1;
 }
 
 refresh(){
-	ProtocolHandler.refresh();
+	//ProtocolHandler.refresh();
 }
