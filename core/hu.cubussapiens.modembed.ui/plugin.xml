@@ -34,6 +34,12 @@
             id="hu.cubussapiens.modembed.ui.wizards"
             name="MODembed">
       </category>
+      <wizard
+            category="hu.cubussapiens.modembed.ui.wizards"
+            class="hu.cubussapiens.modembed.ui.wizards.NewModembedFileWizard"
+            id="hu.cubussapiens.modembed.ui.newmodelwizard"
+            name="new MODembed model">
+      </wizard>
    </extension>
    <extension
          id="product"
