@@ -90,5 +90,20 @@
             name="Embedded development">
       </perspective>
    </extension>
+   <extension
+         point="hu.cubussapiens.modembed.ui.model.descriptors">
+      <model
+            name="Core model">
+         <adapterfactory
+               class="hu.modembed.model.core.provider.CoreItemProviderAdapterFactory">
+         </adapterfactory>
+         <adapterfactory
+               class="hu.modembed.model.network.provider.NetworkItemProviderAdapterFactory">
+         </adapterfactory>
+         <adapterfactory
+               class="hu.modembed.model.network.rs232.provider.Rs232ItemProviderAdapterFactory">
+         </adapterfactory>
+      </model>
+   </extension>
 
 </plugin>

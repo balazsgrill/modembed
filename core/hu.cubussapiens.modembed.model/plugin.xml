@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://modembed.hu/core"
+            class="hu.modembed.model.core.CorePackage"
+            genModel="model/modembedmodel.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://modembed.hu/network"
+            class="hu.modembed.model.network.NetworkPackage"
+            genModel="model/modembedmodel.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://modembed.hu/network/rs232"
+            class="hu.modembed.model.network.rs232.Rs232Package"
+            genModel="model/modembedmodel.genmodel"/>
+   </extension>
+
+</plugin>

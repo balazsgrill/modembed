@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Model plug-in
+Bundle-SymbolicName: hu.cubussapiens.modembed.model;singleton:=true
+Bundle-Version: 0.1.0
+Bundle-ClassPath: .
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: hu.modembed.model.core,
+ hu.modembed.model.core.impl,
+ hu.modembed.model.core.util,
+ hu.modembed.model.network,
+ hu.modembed.model.network.impl,
+ hu.modembed.model.network.rs232,
+ hu.modembed.model.network.rs232.impl,
+ hu.modembed.model.network.rs232.util,
+ hu.modembed.model.network.util
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport
+Bundle-ActivationPolicy: lazy

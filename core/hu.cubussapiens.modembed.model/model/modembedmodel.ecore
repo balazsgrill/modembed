@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="model"
+    nsURI="http://modembed.hu/" nsPrefix="modembedmodel">
+  <eSubpackages name="core" nsURI="http://modembed.hu/core" nsPrefix="core">
+    <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true" eSuperTypes="#//core/MODembedElement">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Package" eSuperTypes="#//core/PackagedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="contents" upperBound="-1"
+          eType="#//core/PackagedElement" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MODembedElement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="PackagedElement" eSuperTypes="#//core/NamedElement"/>
+  </eSubpackages>
+  <eSubpackages name="network" nsURI="http://modembed.hu/network" nsPrefix="network">
+    <eClassifiers xsi:type="ecore:EClass" name="NetworkNode" eSuperTypes="#//core/NamedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="interfaces" upperBound="-1"
+          eType="#//network/NetworkInterface" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Network" eSuperTypes="#//core/PackagedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="nodes" upperBound="-1"
+          eType="#//network/NetworkNode" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="connections" upperBound="-1"
+          eType="#//network/Connection" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Connection" abstract="true" eSuperTypes="#//core/NamedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="nodes" upperBound="-1"
+          eType="#//network/NetworkInterface"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="NetworkInterface" abstract="true"
+        eSuperTypes="#//core/NamedElement"/>
+    <eSubpackages name="rs232" nsURI="http://modembed.hu/network/rs232" nsPrefix="rs232">
+      <eClassifiers xsi:type="ecore:EClass" name="RS232Interface" eSuperTypes="#//network/NetworkInterface"/>
+      <eClassifiers xsi:type="ecore:EClass" name="RS232Connection" eSuperTypes="#//network/Connection">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="baudRate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </eClassifiers>
+    </eSubpackages>
+  </eSubpackages>
+</ecore:EPackage>

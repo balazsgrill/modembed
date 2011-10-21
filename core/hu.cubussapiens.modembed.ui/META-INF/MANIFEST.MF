@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Ui Plugin
 Bundle-SymbolicName: hu.cubussapiens.modembed.ui;singleton:=true
-Bundle-Version: 0.5.0
+Bundle-Version: 0.5.1
 Bundle-Activator: hu.cubussapiens.modembed.ui.MODembedUI
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
@@ -17,7 +17,8 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.emf.databinding;bundle-version="1.2.0",
  org.eclipse.jface.databinding;bundle-version="1.4.0",
  org.eclipse.emf.edit,
- org.eclipse.emf.edit.ui
+ org.eclipse.emf.edit.ui,
+ hu.cubussapiens.modembed.model.edit;bundle-version="0.1.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: hu.cubussapiens.modembed.ui,
