@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  *
  * @see hu.modembed.model.core.CorePackage#getMODembedElement()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface MODembedElement extends EObject {

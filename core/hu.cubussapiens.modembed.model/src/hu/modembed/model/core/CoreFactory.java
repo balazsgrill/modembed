@@ -35,24 +35,6 @@ public interface CoreFactory extends EFactory {
 	Package createPackage();
 
 	/**
-	 * Returns a new object of class '<em>MO Dembed Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>MO Dembed Element</em>'.
-	 * @generated
-	 */
-	MODembedElement createMODembedElement();
-
-	/**
-	 * Returns a new object of class '<em>Packaged Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Packaged Element</em>'.
-	 * @generated
-	 */
-	PackagedElement createPackagedElement();
-
-	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

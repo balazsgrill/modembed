@@ -5,7 +5,7 @@ main(){
     aCLRF( f = 0){
      assistSelectBank( f = 0){
       }
-     CLRF( f = 0, a = {}0){
+     CLRF( a = {}0, f = 0){
       0: 110101000000000
       }
      }
@@ -15,21 +15,21 @@ main(){
      aBSF( f = 3987, b = 5){
       assistSelectBank( f = 3987){
        }
-      BSF( b = 5, f = 3987, a = {}0){
+      BSF( b = 5, a = {}0, f = 3987){
        1: 1000101010010011
        }
       }
      aBSF( f = 3987, b = 7){
       assistSelectBank( f = 3987){
        }
-      BSF( b = 7, f = 3987, a = {}0){
+      BSF( b = 7, a = {}0, f = 3987){
        2: 1000111010010011
        }
       }
      aBSF( f = 4012, b = 2){
       assistSelectBank( f = 4012){
        }
-      BSF( b = 2, f = 4012, a = {}0){
+      BSF( b = 2, a = {}0, f = 4012){
        3: 1000010010101100
        }
       }
@@ -46,35 +46,35 @@ main(){
      aCLRF( f = 4016){
       assistSelectBank( f = 4016){
        }
-      CLRF( f = 4016, a = {}0){
+      CLRF( a = {}0, f = 4016){
        6: 110101010110000
        }
       }
      aBSF( f = 4012, b = 5){
       assistSelectBank( f = 4012){
        }
-      BSF( b = 5, f = 4012, a = {}0){
+      BSF( b = 5, a = {}0, f = 4012){
        7: 1000101010101100
        }
       }
      aBSF( f = 4011, b = 4){
       assistSelectBank( f = 4011){
        }
-      BSF( b = 4, f = 4011, a = {}0){
+      BSF( b = 4, a = {}0, f = 4011){
        8: 1000100010101011
        }
       }
      aBCF( f = 4012, b = 4){
       assistSelectBank( f = 4012){
        }
-      BCF( a = {}0, b = 4, f = 4012){
+      BCF( b = 4, f = 4012, a = {}0){
        9: 1001100010101100
        }
       }
      aBSF( f = 4011, b = 7){
       assistSelectBank( f = 4011){
        }
-      BSF( b = 7, f = 4011, a = {}0){
+      BSF( b = 7, a = {}0, f = 4011){
        10: 1000111010101011
        }
       }
@@ -83,7 +83,7 @@ main(){
      aCLRF( f = 1){
       assistSelectBank( f = 1){
        }
-      CLRF( f = 1, a = {}0){
+      CLRF( a = {}0, f = 1){
        11: 110101000000001
        }
       }

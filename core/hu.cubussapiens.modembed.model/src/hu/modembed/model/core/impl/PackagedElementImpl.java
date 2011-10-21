@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class PackagedElementImpl extends NamedElementImpl implements PackagedElement {
+public abstract class PackagedElementImpl extends NamedElementImpl implements PackagedElement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

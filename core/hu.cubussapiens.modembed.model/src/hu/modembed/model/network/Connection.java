@@ -38,7 +38,7 @@ public interface Connection extends NamedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Nodes</em>' reference list.
 	 * @see hu.modembed.model.network.NetworkPackage#getConnection_Nodes()
-	 * @model
+	 * @model annotation="reference scope='..'"
 	 * @generated
 	 */
 	EList<NetworkInterface> getNodes();

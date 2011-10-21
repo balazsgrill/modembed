@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *
  * @generated
  */
-public class MODembedElementImpl extends EObjectImpl implements MODembedElement {
+public abstract class MODembedElementImpl extends EObjectImpl implements MODembedElement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

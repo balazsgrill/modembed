@@ -155,11 +155,6 @@ public class PackageItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(CorePackage.Literals.PACKAGE__CONTENTS,
-				 CoreFactory.eINSTANCE.createPackagedElement()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.PACKAGE__CONTENTS,
 				 CoreFactory.eINSTANCE.createPackage()));
 
 		newChildDescriptors.add

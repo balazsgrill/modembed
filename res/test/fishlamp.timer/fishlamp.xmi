@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ASCII"?>
+<core:Package xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://modembed.hu/core" xmlns:network="http://modembed.hu/network" xmlns:rs232="http://modembed.hu/network/rs232" name="root">
+  <contents xsi:type="core:Package" name="network">
+    <contents xsi:type="network:Network" name="fishlampNetwork">
+      <nodes name="Timer">
+        <interfaces xsi:type="rs232:RS232Interface" name="Timer_slave"/>
+      </nodes>
+      <nodes name="PC">
+        <interfaces xsi:type="rs232:RS232Interface" name="PC_Host"/>
+      </nodes>
+      <connections xsi:type="rs232:RS232Connection" name="HostToSlave" nodes="//@contents.0/@contents.0/@nodes.1/@interfaces.0 //@contents.0/@contents.0/@nodes.0/@interfaces.0" baudRate="9600"/>
+    </contents>
+  </contents>
+</core:Package>

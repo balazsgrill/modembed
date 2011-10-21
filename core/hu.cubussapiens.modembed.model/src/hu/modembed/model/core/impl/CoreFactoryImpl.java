@@ -64,8 +64,6 @@ public class CoreFactoryImpl extends EFactoryImpl implements CoreFactory {
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case CorePackage.PACKAGE: return createPackage();
-			case CorePackage.MO_DEMBED_ELEMENT: return createMODembedElement();
-			case CorePackage.PACKAGED_ELEMENT: return createPackagedElement();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -79,26 +77,6 @@ public class CoreFactoryImpl extends EFactoryImpl implements CoreFactory {
 	public hu.modembed.model.core.Package createPackage() {
 		PackageImpl package_ = new PackageImpl();
 		return package_;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MODembedElement createMODembedElement() {
-		MODembedElementImpl moDembedElement = new MODembedElementImpl();
-		return moDembedElement;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public PackagedElement createPackagedElement() {
-		PackagedElementImpl packagedElement = new PackagedElementImpl();
-		return packagedElement;
 	}
 
 	/**

@@ -99,52 +99,6 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link hu.modembed.model.core.MODembedElement} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected MODembedElementItemProvider moDembedElementItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link hu.modembed.model.core.MODembedElement}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createMODembedElementAdapter() {
-		if (moDembedElementItemProvider == null) {
-			moDembedElementItemProvider = new MODembedElementItemProvider(this);
-		}
-
-		return moDembedElementItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link hu.modembed.model.core.PackagedElement} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected PackagedElementItemProvider packagedElementItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link hu.modembed.model.core.PackagedElement}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createPackagedElementAdapter() {
-		if (packagedElementItemProvider == null) {
-			packagedElementItemProvider = new PackagedElementItemProvider(this);
-		}
-
-		return packagedElementItemProvider;
-	}
-
-	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -244,8 +198,6 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 */
 	public void dispose() {
 		if (packageItemProvider != null) packageItemProvider.dispose();
-		if (moDembedElementItemProvider != null) moDembedElementItemProvider.dispose();
-		if (packagedElementItemProvider != null) packagedElementItemProvider.dispose();
 	}
 
 }

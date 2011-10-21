@@ -299,6 +299,26 @@ public class NetworkPackageImpl extends EPackageImpl implements NetworkPackage {
 
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// reference
+		createReferenceAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>reference</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createReferenceAnnotations() {
+		String source = "reference";		
+		addAnnotation
+		  (getConnection_Nodes(), 
+		   source, 
+		   new String[] {
+			 "scope", ".."
+		   });
 	}
 
 } //NetworkPackageImpl

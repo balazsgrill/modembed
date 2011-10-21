@@ -14,7 +14,7 @@ package hu.modembed.model.core;
  *
  *
  * @see hu.modembed.model.core.CorePackage#getPackagedElement()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface PackagedElement extends NamedElement {

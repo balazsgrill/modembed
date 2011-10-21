@@ -11,8 +11,8 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="contents" upperBound="-1"
           eType="#//core/PackagedElement" containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="MODembedElement"/>
-    <eClassifiers xsi:type="ecore:EClass" name="PackagedElement" eSuperTypes="#//core/NamedElement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="MODembedElement" abstract="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="PackagedElement" abstract="true" eSuperTypes="#//core/NamedElement"/>
   </eSubpackages>
   <eSubpackages name="network" nsURI="http://modembed.hu/network" nsPrefix="network">
     <eClassifiers xsi:type="ecore:EClass" name="NetworkNode" eSuperTypes="#//core/NamedElement">
@@ -27,7 +27,11 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Connection" abstract="true" eSuperTypes="#//core/NamedElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="nodes" upperBound="-1"
-          eType="#//network/NetworkInterface"/>
+          eType="#//network/NetworkInterface">
+        <eAnnotations source="reference">
+          <details key="scope" value=".."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="NetworkInterface" abstract="true"
         eSuperTypes="#//core/NamedElement"/>
