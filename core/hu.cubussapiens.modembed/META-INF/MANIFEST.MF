@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: MODembed Core
 Bundle-SymbolicName: hu.cubussapiens.modembed;singleton:=true
-Bundle-Version: 0.5.0
+Bundle-Version: 0.5.1
 Bundle-Activator: hu.cubussapiens.modembed.MODembedCore
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources,

@@ -1,11 +1,9 @@
 package hu.cubussapiens.modembed;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Enumeration;
 import java.util.HashSet;
@@ -110,24 +108,6 @@ public class MODembedCore extends Plugin {
 		return m.getPlugin();
 	}
 	
-	private static Collection<URI> getVisibleResources(File root){
-		final List<URI> result = new ArrayList<URI>();
-		
-		Queue<File> queue = new LinkedList<File>();
-		queue.add(root);
-		
-		while(!queue.isEmpty()){
-			File f = queue.poll();
-			if (f.isDirectory()){
-				queue.addAll(Arrays.asList(f.listFiles()));
-			}else{
-				result.add(getUri(f));
-			}
-		}
-		
-		return result;
-	}
-	
 	public static Collection<URI> getVisibleResources(String pluginname) throws CoreException{
 		IPlugin plugin = getPlugin(pluginname);
 		final Collection<URI> result = new ArrayList<URI>();
@@ -167,28 +147,6 @@ public class MODembedCore extends Plugin {
 		}
 		
 		return result;
-		
-	}
-	
-	private static URI getUri(File file) {
-		//ResourcesPlugin.getWorkspace().getRoot().getL
-		try {
-			return URI.createFileURI(file.getCanonicalPath());
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			return null;
-		}
-	}
-	
-	public static void updateDeps(IProject project){
-		IPluginModelBase mb = PluginRegistry.findModel(project);
-		IPluginModel m = (IPluginModel)mb;
-		for(IPluginImport pi : m.getPlugin().getImports()){
-			System.out.println("depends on "+pi.getId());
-			IPluginModelBase ipm = PluginRegistry.findModel(pi.getId());
-			System.out.println("Installed to "+ipm.getInstallLocation());
-		}
 		
 	}
 	
