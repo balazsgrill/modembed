@@ -4,6 +4,8 @@
 package hu.e.compiler.internal.model;
 
 import hu.e.compiler.internal.model.symbols.ISymbol;
+import hu.e.parser.eSyntax.Operation;
+import hu.e.parser.eSyntax.Package;
 import hu.e.parser.eSyntax.Variable;
 
 import java.util.Map;
@@ -18,8 +20,9 @@ public class OperationEntryStep implements IProgramStep {
 	
 	private final Map<Variable, ISymbol> params;
 	
-	public OperationEntryStep(String operation, Map<Variable, ISymbol> params) {
-		this.operation = operation;
+	public OperationEntryStep(Operation operation, Map<Variable, ISymbol> params) {
+		Package pack = (Package)operation.eContainer();
+		this.operation = pack.getName()+"/"+operation.getName();
 		this.params = params;
 	}
 	

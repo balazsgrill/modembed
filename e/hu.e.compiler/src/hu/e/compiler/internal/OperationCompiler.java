@@ -85,7 +85,7 @@ public class OperationCompiler {
 	
 	public List<IProgramStep> compile(final ISymbolManager sm){
 		List<IProgramStep> steps = new ArrayList<IProgramStep>();
-		steps.add(new OperationEntryStep(operation.getName(), parameters));
+		steps.add(new OperationEntryStep(operation, parameters));
 		OperationBlock block = operation.getBlock();
 		if (block == null){
 			steps.add(CompilationErrorEntry.error(block,  "Null block!"));

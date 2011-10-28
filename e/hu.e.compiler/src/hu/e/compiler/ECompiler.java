@@ -4,7 +4,6 @@
 package hu.e.compiler;
 
 import hu.e.compiler.internal.HexFileCompiler;
-import hu.e.compiler.internal.model.CompilationErrorEntry;
 import hu.e.compiler.internal.model.IProgramStep;
 import hu.e.compiler.internal.model.InstructionWordInstance;
 import hu.e.compiler.internal.model.LabelStep;
@@ -65,25 +64,26 @@ public class ECompiler {
 		int i = 0;
 		int r = 0;
 		for(IProgramStep s : steps){
+			if (s instanceof OperationExitStep){
+				r--;
+			}
 			for(int j =0;j<r;j++) sb.append(" ");
 			if (s instanceof InstructionWordInstance){
 				sb.append(i);sb.append(": ");
 				sb.append(Integer.toBinaryString(((InstructionWordInstance) s).getValue()));
 				i++;
-			}
+			}else
 			if (s instanceof LabelStep){
 				sb.append("label ");
 				sb.append(((LabelStep) s).label.getName());
-			}
+			}else
 			if (s instanceof OperationEntryStep){
 				sb.append(s);sb.append("{");
 				r++;
-			}
+			}else
 			if (s instanceof OperationExitStep){
 				sb.append("}");
-				r--;
-			}
-			if (s instanceof CompilationErrorEntry){
+			}else{
 				sb.append(s);
 			}
 			sb.append("\n");
