@@ -4,6 +4,7 @@
 package hu.e.compiler;
 
 import hu.e.compiler.internal.HexFileCompiler;
+import hu.e.compiler.internal.model.CompilationErrorEntry;
 import hu.e.compiler.internal.model.IProgramStep;
 import hu.e.compiler.internal.model.InstructionWordInstance;
 import hu.e.compiler.internal.model.LabelStep;
@@ -28,8 +29,6 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.xtext.nodemodel.ICompositeNode;
-import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 
 
 
@@ -38,22 +37,6 @@ import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
  *
  */
 public class ECompiler {
-
-	public static void throwError(EObject element, String text){
-		ICompositeNode cn = NodeModelUtils.findActualNodeFor(element);
-		Package p = null;
-		EObject eo = element;
-		while(!(eo instanceof Package) && (eo != null)){
-			eo = eo.eContainer();
-			if (eo instanceof Package)
-				p = (Package)eo;
-		}
-		String msg = text;
-		if (cn != null && p != null){
-			msg = text + " at "+p.getName()+" line "+cn.getStartLine();
-		}
-		throw new RuntimeException(msg);
-	}
 	
 	public static int convertLiteral(String lit){
 		if (lit.toLowerCase().startsWith("b")){
@@ -100,26 +83,15 @@ public class ECompiler {
 				sb.append("}");
 				r--;
 			}
+			if (s instanceof CompilationErrorEntry){
+				sb.append(s);
+			}
 			sb.append("\n");
 		}
 		return sb.toString();
 	}
 	
 	public void compile(Resource r, IFile f){
-		
-//		// "workspace" is a string that contains the path to the workspace containing the DSL program.
-//		//new org.eclipse.emf.mwe.utils.StandaloneSetup().setPlatformUri(
-//		//		ResourcesPlugin.getWorkspace().getRoot().getLocation().toPortableString());
-//
-//		Injector injector = new ESyntaxStandaloneSetup().createInjector();//createInjectorAndDoEMFRegistration();
-//		XtextResourceSet resourceset = injector.getInstance(XtextResourceSet.class);
-//		resourceset.addLoadOption(XtextResource.OPTION_RESOLVE_ALL, Boolean.TRUE);
-//		
-//		
-//		//XtextResourceSet resourceset = new XtextResourceSet();
-//		Resource r = resourceset.getResource(URI.createPlatformResourceURI(f.getFullPath().toString(), true), true);
-//		
-//		
 		
 		ResourceSet resourceset = r.getResourceSet();
 		

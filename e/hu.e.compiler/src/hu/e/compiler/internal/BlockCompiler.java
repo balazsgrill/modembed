@@ -3,8 +3,9 @@
  */
 package hu.e.compiler.internal;
 
-import hu.e.compiler.ECompiler;
+import hu.e.compiler.ECompilerException;
 import hu.e.compiler.internal.model.AddressedStep;
+import hu.e.compiler.internal.model.CompilationErrorEntry;
 import hu.e.compiler.internal.model.IProgramStep;
 import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.compiler.internal.model.InstructionWordInstance;
@@ -59,12 +60,20 @@ public class BlockCompiler {
 		sm.getVariableManager().startBlock();
 		for(OperationStep step : block.getSteps()){
 			if (step instanceof InstructionWord){
-				InstructionWordInstance iwi = new InstructionWordInstance((InstructionWord)step, sm);
-				labeluses.addAll(iwi.getLabeluses());
-				result.add(iwi);
+				try{
+					InstructionWordInstance iwi = new InstructionWordInstance((InstructionWord)step, sm);
+					labeluses.addAll(iwi.getLabeluses());
+					result.add(iwi);
+				}catch(ECompilerException e){
+					result.add(CompilationErrorEntry.create(e));
+				}
 			}
 			if (step instanceof Variable){
-				sm.getVariableManager().define(sm, (Variable)step);
+				try{
+					sm.getVariableManager().define(sm, (Variable)step);
+				}catch(ECompilerException e){
+					result.add(CompilationErrorEntry.create(e));
+				}
 			}
 			if (step instanceof Label){
 				LabelStep ls = new LabelStep((Label)step);
@@ -81,60 +90,72 @@ public class BlockCompiler {
 				if (((XAssignment) step).getRef().getVar() instanceof CompileContextVariable){
 					// assignment to compiler context
 					XAssignment a = (XAssignment)step;
-					sm.contextAssign(a.getRef(), ((ILiteralSymbol)sm.resolve(a.getValue())).getValue());
+					try {
+						sm.contextAssign(a.getRef(), ((ILiteralSymbol)sm.resolve(a.getValue())).getValue());
+					} catch (ECompilerException e) {
+						result.add(CompilationErrorEntry.create(e));
+					}
 				}else{
-					XAssignment xa = (XAssignment)step;
-					ISymbol ts = sm.resolveVarRef(xa.getRef());
-					ISymbol vs = sm.resolve(xa.getValue());
-					result.addAll(ts.getSteps());
-					result.addAll(vs.getSteps());
-					
-					OperationCompiler op = getOpfinder().getOperationCompiler(OperationRole.SET, ts, vs);
-					if (op != null){
-						result.addAll(op.compile(sm));
-					}else{
-						ECompiler.throwError(step, "Could not find assignment operator!");
+					try{
+						XAssignment xa = (XAssignment)step;
+						ISymbol ts = sm.resolveVarRef(xa.getRef());
+						ISymbol vs = sm.resolve(xa.getValue());
+						result.addAll(ts.getSteps());
+						result.addAll(vs.getSteps());
+
+						OperationCompiler op = getOpfinder().getOperationCompiler(OperationRole.SET, ts, vs);
+						if (op != null){
+							result.addAll(op.compile(sm));
+						}else{
+							result.add(CompilationErrorEntry.error(step, "Could not find assignment operator!"));
+						}
+					}catch(ECompilerException e){
+						result.add(CompilationErrorEntry.create(e));
 					}
 				}
 			}
 			if (step instanceof XIfExpression){
-				ISymbol symbol = sm.resolve(((XIfExpression) step).getIf());
-				result.addAll(symbol.getSteps());
-				
-				if (symbol.isLiteral()){
-					//Literal condition, decide in compile time
-					int v = ((ILiteralSymbol)symbol).getValue();
-					OperationBlock ifblock = (v==0) ? ((XIfExpression) step).getElse() : ((XIfExpression) step).getThen();
-					if (ifblock != null){
-						BlockCompiler subBlock = new BlockCompiler(ifblock);
-						result.addAll(subBlock.compile(sm));
-					}
-				}else{
-					//Runtime condition
-					IVariableSymbol v = (IVariableSymbol)symbol;
-					AddressedStep trueLabel = new AddressedStep();
-					AddressedStep falseLabel = new AddressedStep();
-					AddressedStep endLabel = new AddressedStep();
-					
-					OperationBlock trueBlock = ((XIfExpression) step).getThen();
-					OperationBlock falseBlock = ((XIfExpression) step).getElse();
-					
-					if (falseBlock == null){
-						result.addAll(sm.executeOperator(OperationRole.BRANCH, step, v, 
-								new CodeAddressSymbol(trueLabel), new CodeAddressSymbol(endLabel)));
-						result.add(trueLabel);
-						result.addAll(new BlockCompiler(trueBlock).compile(sm));
-						result.add(endLabel);
+				try{
+					ISymbol symbol = sm.resolve(((XIfExpression) step).getIf());
+					result.addAll(symbol.getSteps());
+
+					if (symbol.isLiteral()){
+						//Literal condition, decide in compile time
+						int v = ((ILiteralSymbol)symbol).getValue();
+						OperationBlock ifblock = (v==0) ? ((XIfExpression) step).getElse() : ((XIfExpression) step).getThen();
+						if (ifblock != null){
+							BlockCompiler subBlock = new BlockCompiler(ifblock);
+							result.addAll(subBlock.compile(sm));
+						}
 					}else{
-						result.addAll(sm.executeOperator(OperationRole.BRANCH,step, v, 
-								new CodeAddressSymbol(trueLabel), new CodeAddressSymbol(falseLabel)));
-						result.add(trueLabel);
-						result.addAll(new BlockCompiler(trueBlock).compile(sm));
-						result.addAll(sm.executeOperator(OperationRole.UC_GOTO,step, new CodeAddressSymbol(endLabel)));
-						result.add(falseLabel);
-						result.addAll(new BlockCompiler(falseBlock).compile(sm));
-						result.add(endLabel);
+						//Runtime condition
+						IVariableSymbol v = (IVariableSymbol)symbol;
+						AddressedStep trueLabel = new AddressedStep();
+						AddressedStep falseLabel = new AddressedStep();
+						AddressedStep endLabel = new AddressedStep();
+
+						OperationBlock trueBlock = ((XIfExpression) step).getThen();
+						OperationBlock falseBlock = ((XIfExpression) step).getElse();
+
+						if (falseBlock == null){
+							result.addAll(sm.executeOperator(OperationRole.BRANCH, step, v, 
+									new CodeAddressSymbol(trueLabel), new CodeAddressSymbol(endLabel)));
+							result.add(trueLabel);
+							result.addAll(new BlockCompiler(trueBlock).compile(sm));
+							result.add(endLabel);
+						}else{
+							result.addAll(sm.executeOperator(OperationRole.BRANCH,step, v, 
+									new CodeAddressSymbol(trueLabel), new CodeAddressSymbol(falseLabel)));
+							result.add(trueLabel);
+							result.addAll(new BlockCompiler(trueBlock).compile(sm));
+							result.addAll(sm.executeOperator(OperationRole.UC_GOTO,step, new CodeAddressSymbol(endLabel)));
+							result.add(falseLabel);
+							result.addAll(new BlockCompiler(falseBlock).compile(sm));
+							result.add(endLabel);
+						}
 					}
+				}catch(ECompilerException e){
+					result.add(CompilationErrorEntry.create(e));
 				}
 			}
 		}

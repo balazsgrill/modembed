@@ -3,6 +3,7 @@
  */
 package hu.e.compiler.internal.model.symbols.impl;
 
+import hu.e.compiler.ECompilerException;
 import hu.e.compiler.internal.MemoryManager;
 import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.compiler.internal.model.OPERATION;
@@ -30,7 +31,7 @@ public class ArrayVariableSymbol extends VariableSymbol implements IArraySymbol 
 	 * @see hu.e.compiler.internal.model.symbols.IArraySymbol#getElement(int)
 	 */
 	@Override
-	public ISymbol getElement(ISymbolManager sm, int index) {
+	public ISymbol getElement(ISymbolManager sm, int index) throws ECompilerException {
 		MemoryManager memman = sm.getVariableManager().getMemoryManager();
 		ArrayTypeDef atd = (ArrayTypeDef)getType().getDef();
 		int length = ((ILiteralSymbol)sm.resolve(atd.getLength())).getValue();

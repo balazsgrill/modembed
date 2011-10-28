@@ -3,8 +3,8 @@
  */
 package hu.e.compiler.internal;
 
-import hu.e.compiler.ECompiler;
 import hu.e.compiler.ECompilerException;
+import hu.e.compiler.internal.model.CompilationErrorEntry;
 import hu.e.compiler.internal.model.IProgramStep;
 import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.compiler.internal.model.IVariableManager;
@@ -43,7 +43,7 @@ public class OperationCompiler {
 		}
 
 		@Override
-		public ISymbol getSymbol(Variable ref) {
+		public ISymbol getSymbol(Variable ref) throws ECompilerException {
 			if (parameters.containsKey(ref)){
 				return parameters.get(ref);
 			}
@@ -56,7 +56,7 @@ public class OperationCompiler {
 		}
 		
 		@Override
-		public void setLabelAddresses(Map<LabelStep, Integer> addresses) {
+		public void setLabelAddresses(Map<LabelStep, Integer> addresses) throws ECompilerException {
 			sm.setLabelAddresses(addresses);
 		}
 		
@@ -88,7 +88,7 @@ public class OperationCompiler {
 		steps.add(new OperationEntryStep(operation.getName(), parameters));
 		OperationBlock block = operation.getBlock();
 		if (block == null){
-			throw new ECompilerException(operation, "Null block!");
+			steps.add(CompilationErrorEntry.error(block,  "Null block!"));
 		}
 		BlockCompiler bc = new BlockCompiler(block);
 		steps.addAll(bc.compile(new WrappedSymbolManager(sm)));
@@ -96,12 +96,11 @@ public class OperationCompiler {
 		return steps;
 	}
 	
-	public ISymbol getReturns(ISymbolManager sm){
+	public ISymbol getReturns(ISymbolManager sm) throws ECompilerException{
 		if (operation.getReturn() != null){
 			return new WrappedSymbolManager(sm).resolve(operation.getReturn());
 		}
-		ECompiler.throwError(operation, "Return value assumed to be not null!");
-		return null;
+		throw new ECompilerException(operation, "Return value assumed to be not null!");
 	}
 	
 }

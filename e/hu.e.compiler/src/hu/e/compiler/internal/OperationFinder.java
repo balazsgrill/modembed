@@ -3,6 +3,7 @@
  */
 package hu.e.compiler.internal;
 
+import hu.e.compiler.ECompilerException;
 import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
 import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.compiler.internal.model.symbols.IVariableSymbol;
@@ -42,7 +43,7 @@ public class OperationFinder {
 		}
 	}
 	
-	public OperationCompiler getOperationCompiler(OperationRole role, ISymbol...symbols){
+	public OperationCompiler getOperationCompiler(OperationRole role, ISymbol...symbols) throws ECompilerException{
 		Operation op = getOperation(role, symbols);
 		if (op == null) return null;
 		OperationCompiler opcomp = new OperationCompiler(op);
@@ -54,7 +55,7 @@ public class OperationFinder {
 		return opcomp;
 	}
 	
-	public Operation getOperation(OperationRole role, ISymbol...symbols){
+	public Operation getOperation(OperationRole role, ISymbol...symbols) throws ECompilerException{
 		OperatorDefinition opdef = findDef(role);
 		if (opdef == null) return null;
 		for(Operation op : opdef.getCandidate()){
@@ -81,7 +82,7 @@ public class OperationFinder {
 		return null;
 	}
 	
-	private boolean checkOperation(Operation op, ISymbol...symbols){
+	private boolean checkOperation(Operation op, ISymbol...symbols) throws ECompilerException{
 		if (op.eIsProxy()) op = (Operation) EcoreUtil2.resolve(op, pack);
 		if (op.getParams().size() != symbols.length) return false;
 		for(int i=0;i<symbols.length;i++){

@@ -3,6 +3,7 @@
  */
 package hu.e.compiler.internal.model.symbols.impl;
 
+import hu.e.compiler.ECompilerException;
 import hu.e.compiler.internal.MemoryManager;
 import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.compiler.internal.model.OPERATION;
@@ -24,7 +25,7 @@ public class StructVariableSymbol extends VariableSymbol implements IStructSymbo
 	}
 
 	@Override
-	public ISymbol getMember(ISymbolManager sm, StructTypeDefMember member) {
+	public ISymbol getMember(ISymbolManager sm, StructTypeDefMember member) throws ECompilerException {
 		MemoryManager memman = sm.getVariableManager().getMemoryManager();
 		TypeDef td = getType().getDef();
 		if (td instanceof StructTypeDef){

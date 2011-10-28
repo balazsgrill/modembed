@@ -34,7 +34,7 @@ public class RootSymbolManager extends AbstractSymbolManager {
 	
 	private final Map<CompileContextVariable, Integer> compilecontext = new HashMap<CompileContextVariable, Integer>();
 	
-	private int getCCValue(CompileContextVariable var){
+	private int getCCValue(CompileContextVariable var) throws ECompilerException{
 		if (compilecontext.containsKey(var)){
 			return compilecontext.get(var);
 		}
@@ -53,7 +53,7 @@ public class RootSymbolManager extends AbstractSymbolManager {
 	 * @see hu.e.compiler.internal.model.ISymbolManager#getSymbol(hu.e.parser.eSyntax.Variable)
 	 */
 	@Override
-	public ISymbol getSymbol(Variable ref) {
+	public ISymbol getSymbol(Variable ref) throws ECompilerException {
 		if (ref instanceof ConstantVariable){
 			return resolve(((ConstantVariable) ref).getValue());
 		}
@@ -76,7 +76,7 @@ public class RootSymbolManager extends AbstractSymbolManager {
 	}
 
 	@Override
-	public void setLabelAddresses(Map<LabelStep, Integer> addresses) {
+	public void setLabelAddresses(Map<LabelStep, Integer> addresses) throws ECompilerException {
 		for(LabelSymbol ls : labels){
 			if (ls.step == null){
 				throw new ECompilerException(ls.label, "Could not resolve label: "+ls.label.getName());

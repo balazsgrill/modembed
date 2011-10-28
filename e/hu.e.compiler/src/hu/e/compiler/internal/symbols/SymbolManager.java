@@ -3,6 +3,7 @@
  */
 package hu.e.compiler.internal.symbols;
 
+import hu.e.compiler.ECompilerException;
 import hu.e.compiler.internal.MemoryManager;
 import hu.e.compiler.internal.OperationFinder;
 import hu.e.compiler.internal.model.ISymbolManager;
@@ -45,7 +46,7 @@ public class SymbolManager extends AbstractSymbolManager {
 	 * @see hu.e.compiler.internal.model.ISymbolManager#getSymbol(hu.e.parser.eSyntax.VariableReference)
 	 */
 	@Override
-	public ISymbol getSymbol(Variable ref) {
+	public ISymbol getSymbol(Variable ref) throws ECompilerException {
 		ISymbol s = parent.getSymbol(ref);
 		if (s != null) return s;
 		int baseaddr = varman.getAddress(this, ref);
@@ -61,7 +62,7 @@ public class SymbolManager extends AbstractSymbolManager {
 	}
 
 	@Override
-	public void setLabelAddresses(Map<LabelStep, Integer> addresses) {
+	public void setLabelAddresses(Map<LabelStep, Integer> addresses) throws ECompilerException {
 		parent.setLabelAddresses(addresses);
 	}
 

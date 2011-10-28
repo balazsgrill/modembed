@@ -8,6 +8,8 @@ import java.util.Iterator;
 import java.util.List;
 
 import hu.e.compiler.ECompiler;
+import hu.e.compiler.ECompilerException;
+import hu.e.compiler.internal.model.CompilationErrorEntry;
 import hu.e.compiler.internal.model.IProgramStep;
 import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.compiler.internal.model.symbols.ISymbol;
@@ -62,9 +64,13 @@ public class OperationCallCompiler {
 				}
 				
 				if (ocp instanceof XExpression){
-					ISymbol s = sm.resolve((XExpression)ocp);
-					oc.addParameter(pvar, s);
-					before.addAll(s.getSteps());
+					try{
+						ISymbol s = sm.resolve((XExpression)ocp);
+						oc.addParameter(pvar, s);
+						before.addAll(s.getSteps());
+					}catch(ECompilerException e){
+						before.add(CompilationErrorEntry.create(e));
+					}
 				}
 			}
 		}
@@ -76,7 +82,7 @@ public class OperationCallCompiler {
 		return ps;
 	}
 	
-	public ISymbol getReturns(){
+	public ISymbol getReturns() throws ECompilerException{
 		return oc.getReturns(sm);
 	}
 	

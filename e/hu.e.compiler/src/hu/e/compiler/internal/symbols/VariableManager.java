@@ -3,6 +3,7 @@
  */
 package hu.e.compiler.internal.symbols;
 
+import hu.e.compiler.ECompilerException;
 import hu.e.compiler.internal.MemoryManager;
 import hu.e.compiler.internal.StackLevel;
 import hu.e.compiler.internal.model.ISymbolManager;
@@ -49,11 +50,11 @@ public class VariableManager implements IVariableManager {
 	 * @see hu.e.compiler.internal.model.IVariableManager#define(hu.e.parser.eSyntax.Variable)
 	 */
 	@Override
-	public void define(ISymbolManager sm, Variable var) {
+	public void define(ISymbolManager sm, Variable var) throws ECompilerException {
 		stack.peek().allocate(sm, var);
 	}
 
-	public int getAddress(ISymbolManager sm, Variable var){
+	public int getAddress(ISymbolManager sm, Variable var) throws ECompilerException{
 		if (var.eContainer() instanceof Package){
 			if (!globals.containsKey(var)){
 				Integer a = memman.allocate(memman.getSize(sm, var.getType()));
@@ -78,7 +79,7 @@ public class VariableManager implements IVariableManager {
 	}
 
 	@Override
-	public int allocate(ISymbolManager sm, Type type) {
+	public int allocate(ISymbolManager sm, Type type) throws ECompilerException {
 		return stack.peek().allocate(sm, type);
 	}
 	

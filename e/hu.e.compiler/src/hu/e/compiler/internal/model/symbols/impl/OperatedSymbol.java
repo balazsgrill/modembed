@@ -3,6 +3,7 @@
  */
 package hu.e.compiler.internal.model.symbols.impl;
 
+import hu.e.compiler.ECompilerException;
 import hu.e.compiler.internal.model.IProgramStep;
 import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
 import hu.e.compiler.internal.model.symbols.ISymbol;
@@ -50,7 +51,7 @@ public class OperatedSymbol implements ILiteralSymbol, IVariableSymbol {
 	}
 
 	@Override
-	public Type getType() {
+	public Type getType() throws ECompilerException {
 		return symbol.getType();
 	}
 

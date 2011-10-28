@@ -3,6 +3,7 @@
  */
 package hu.e.compiler.internal.model.symbols;
 
+import hu.e.compiler.ECompilerException;
 import hu.e.compiler.internal.model.ISymbolManager;
 
 /**
@@ -11,6 +12,6 @@ import hu.e.compiler.internal.model.ISymbolManager;
  */
 public interface IArraySymbol extends ISymbol{
 
-	public ISymbol getElement(ISymbolManager sm, int index); 
+	public ISymbol getElement(ISymbolManager sm, int index) throws ECompilerException; 
 	
 }

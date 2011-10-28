@@ -4,6 +4,7 @@
 package hu.e.compiler.internal.model;
 
 import hu.e.compiler.ECompiler;
+import hu.e.compiler.ECompilerException;
 import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
 import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.compiler.internal.model.symbols.impl.LabelSymbol;
@@ -53,7 +54,7 @@ public class InstructionWordInstance implements IProgramStep{
 		return labeluses;
 	}
 	
-	public InstructionWordInstance(InstructionWord word, ISymbolManager sm) {
+	public InstructionWordInstance(InstructionWord word, ISymbolManager sm) throws ECompilerException {
 		List<WordSection> sections = word.getSections();
 		
 		int s = 0;
@@ -82,10 +83,10 @@ public class InstructionWordInstance implements IProgramStep{
 				shift = ((VariableReference) ws).getShift();
 				ISymbol vs = sm.getSymbol(((VariableReference)ws).getVar());
 				if (!vs.isLiteral())
-					ECompiler.throwError(ws, "Instruction word can only contain compile-time variables!");
+					throw new ECompilerException(ws, "Instruction word can only contain compile-time variables!");
 				symbol = (ILiteralSymbol)vs;
 				if (!((VariableReference) ws).getRef().isEmpty())
-					throw new RuntimeException("TODO: structured variable references are not yet supported!");
+					throw new ECompilerException(ws, "TODO: structured variable references are not yet supported!");
 			}
 			
 			symbols.add(new IncludeSymbol(symbol, s, size, shift));

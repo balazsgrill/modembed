@@ -1,6 +1,7 @@
 package hu.e.compiler.internal.symbols;
 
 import hu.e.compiler.ECompiler;
+import hu.e.compiler.ECompilerException;
 import hu.e.compiler.internal.OperationCallCompiler;
 import hu.e.compiler.internal.OperationCompiler;
 import hu.e.compiler.internal.OperationFinder;
@@ -52,11 +53,11 @@ import org.eclipse.emf.ecore.EObject;
 public abstract class AbstractSymbolManager implements ISymbolManager {
 	
 	@Override
-	public ISymbol resolve(XExpression x){
+	public ISymbol resolve(XExpression x) throws ECompilerException{
 		return resolve((XExpression5)x);
 	}
 	
-	private ISymbol resolve(XExpression5 x){
+	private ISymbol resolve(XExpression5 x) throws ECompilerException{
 		ISymbol a = resolve(x.getA());
 		for(int i=0;i<x.getB().size();i++){
 			a = new OperationSymbol(a, x.getOp().get(i), resolve(x.getB().get(i)), this);
@@ -64,7 +65,7 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 		return a;
 	}
 	
-	private ISymbol resolve(XExpression4 x){
+	private ISymbol resolve(XExpression4 x) throws ECompilerException{
 		ISymbol a = resolve(x.getA());
 		for(int i=0;i<x.getB().size();i++){
 			a = new OperationSymbol(a, x.getOp().get(i), resolve(x.getB().get(i)), this);
@@ -72,7 +73,7 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 		return a;
 	}
 	
-	private ISymbol resolve(XExpression3 x){
+	private ISymbol resolve(XExpression3 x) throws ECompilerException{
 		ISymbol a = resolve(x.getA());
 		for(int i=0;i<x.getB().size();i++){
 			a = new OperationSymbol(a, x.getOp().get(i), resolve(x.getB().get(i)), this);
@@ -80,7 +81,7 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 		return a;
 	}
 	
-	private ISymbol resolve(XExpression2 x){
+	private ISymbol resolve(XExpression2 x) throws ECompilerException{
 		ISymbol a = resolve(x.getA());
 		for(int i=0;i<x.getB().size();i++){
 			a = new OperationSymbol(a, x.getOp().get(i), resolve(x.getB().get(i)), this);
@@ -88,7 +89,7 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 		return a;
 	}
 	
-	private ISymbol resolve(XExpression1 x){
+	private ISymbol resolve(XExpression1 x) throws ECompilerException{
 		ISymbol a = resolve(x.getA());
 		for(UNARY_OPERATOR op : x.getOperator()){
 			a = new OperationSymbol(a, op, null, this);
@@ -97,7 +98,7 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 	}
 	
 	@Override
-	public ISymbol resolveVarRef(VariableReference vr){
+	public ISymbol resolveVarRef(VariableReference vr) throws ECompilerException{
 		ISymbol s = getSymbol(vr.getVar());
 		
 		/* Resolve struct sections and array indices */
@@ -105,17 +106,17 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 			s = resolveVarRefSect(s, sect);
 		}
 		
-		if (s == null) ECompiler.throwError(vr, "Variable cannot be accessed here: "+vr.getVar());
+		if (s == null) throw new ECompilerException(vr, "Variable cannot be accessed here: "+vr.getVar());
 		return s;
 	}
 	
-	private ISymbol resolveVarRefSect(ISymbol symbol, VariableRefSection sect){
+	private ISymbol resolveVarRefSect(ISymbol symbol, VariableRefSection sect) throws ECompilerException{
 		if (sect instanceof ArrayRef){
 			if (symbol instanceof IArraySymbol){
 				IArraySymbol as = (IArraySymbol)symbol;
 				ISymbol is = resolve(((ArrayRef) sect).getV());
 				if (!is.isLiteral())
-					ECompiler.throwError(sect, "Array indexing must be compile-time expression!");
+					throw new ECompilerException(sect, "Array indexing must be compile-time expression!");
 				return as.getElement(this, ((ILiteralSymbol)is).getValue());
 			}
 		}
@@ -124,13 +125,13 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 				IStructSymbol ss = (IStructSymbol)symbol;
 				return ss.getMember(this, ((StructRef) sect).getRef());
 			}else{
-				ECompiler.throwError(sect, " Struct type needed!");
+				throw new ECompilerException(sect, " Struct type needed!");
 			}
 		}
 		return null;
 	}
 	
-	private ISymbol resolve(XPrimaryExpression x){
+	private ISymbol resolve(XPrimaryExpression x) throws ECompilerException{
 		if(x instanceof VariableReference){
 			return resolveVarRef((VariableReference)x);
 		}
@@ -149,7 +150,7 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 		if (x instanceof XAddressOfVar){
 			VariableReference vr = ((XAddressOfVar) x).getRef();
 			ISymbol s = resolveVarRef(vr);
-			if (s.isLiteral()) ECompiler.throwError(x, "Literal values do not have addresses.");
+			if (s.isLiteral()) throw new ECompilerException(x, "Literal values do not have addresses.");
 			return ((IVariableSymbol)s).getAddressSymbol();
 		}
 		
@@ -171,11 +172,10 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 			return new LiteralSymbol(size);
 		}
 		
-		ECompiler.throwError(x, "Invalid expression");
-		return null;
+		throw new ECompilerException(x, "Invalid expression");
 	}
 	
-	private ISymbol resolveXStruct(XStructExpression literalStruct){
+	private ISymbol resolveXStruct(XStructExpression literalStruct) throws ECompilerException{
 		Type type = literalStruct.getType();
 		TypeDef td = type.getDef();
 		List<ISymbol> symbols = new ArrayList<ISymbol>(literalStruct.getValues().size());
@@ -186,14 +186,14 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 		if (td instanceof ArrayTypeDef){
 			ArrayTypeDef atd = (ArrayTypeDef)td;
 			int length = ((ILiteralSymbol)resolve(atd.getLength())).getValue();
-			if (length != symbols.size()) ECompiler.throwError(literalStruct, "Invalid number of elements!");
+			if (length != symbols.size()) throw new ECompilerException(literalStruct, "Invalid number of elements!");
 			return new ArrayLiteralSymbol(symbols.toArray(new ISymbol[symbols.size()]), type);
 		}
 		
 		if (td instanceof StructTypeDef){
 			StructTypeDef std = (StructTypeDef)td;
 			if (std.getMembers().size() != symbols.size())
-				ECompiler.throwError(literalStruct, "Invalid number of elements!");
+				throw new ECompilerException(literalStruct, "Invalid number of elements!");
 			Map<StructTypeDefMember, ISymbol> members = new HashMap<StructTypeDefMember, ISymbol>();
 			int i = 0;
 			for(StructTypeDefMember m : std.getMembers()){
@@ -208,10 +208,10 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 	
 	@Override
 	public List<IProgramStep> executeOperator(OperationRole role, EObject context,
-			ISymbol... symbols) {
+			ISymbol... symbols) throws ECompilerException {
 		OperationFinder opfinder = getOpFinder();
 		OperationCompiler oc = opfinder.getOperationCompiler(role, symbols);
-		if (oc == null) ECompiler.throwError(context, "Cannot found "+role+" operator!");
+		if (oc == null) throw new ECompilerException(context, "Cannot found "+role+" operator!");
 		return oc.compile(this);
 	}
 	

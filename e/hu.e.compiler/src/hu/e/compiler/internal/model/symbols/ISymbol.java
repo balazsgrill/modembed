@@ -3,6 +3,7 @@
  */
 package hu.e.compiler.internal.model.symbols;
 
+import hu.e.compiler.ECompilerException;
 import hu.e.compiler.internal.model.IProgramStep;
 import hu.e.parser.eSyntax.Type;
 
@@ -18,6 +19,6 @@ public interface ISymbol {
 	
 	public List<IProgramStep> getSteps();
 	
-	public Type getType();
+	public Type getType() throws ECompilerException;
 	
 }

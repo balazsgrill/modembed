@@ -5,7 +5,9 @@ package hu.e.compiler.internal;
 
 import hu.cubussapiens.modembed.hexfile.persistence.HexFileResource;
 import hu.e.compiler.ECompiler;
+import hu.e.compiler.ECompilerException;
 import hu.e.compiler.internal.model.AddressedStep;
+import hu.e.compiler.internal.model.CompilationErrorEntry;
 import hu.e.compiler.internal.model.IProgramStep;
 import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.compiler.internal.model.InstructionWordInstance;
@@ -53,26 +55,31 @@ public class FunctionCompiler {
 		
 		//Linking
 		int progsize = 0;
-		ISymbol startsymbol = sm.resolve((link.getStart()));
-		if (!startsymbol.isLiteral()) throw new RuntimeException("Start address of binary block cannot be accessed in compile time!");
-		int startAddr = ((ILiteralSymbol)startsymbol).getValue();
-		Map<LabelStep, Integer> labelAddr = new HashMap<LabelStep, Integer>();
-		for(IProgramStep s : ps){
-			if (s instanceof LabelStep){
-				labelAddr.put((LabelStep)s,startAddr);
-			}
-			if (s instanceof AddressedStep){
-				((AddressedStep) s).address = startAddr;
-			}
-			if (s instanceof InstructionWordInstance){
-				progsize += ((InstructionWordInstance) s).getWidth();
-				startAddr++;
-			}
-			
-		}
 		
-		//Resolve labels
-		sm.setLabelAddresses(labelAddr);
+		try{
+			ISymbol startsymbol = sm.resolve((link.getStart()));
+			if (!startsymbol.isLiteral()) throw new RuntimeException("Start address of binary block cannot be accessed in compile time!");
+			int startAddr = ((ILiteralSymbol)startsymbol).getValue();
+			Map<LabelStep, Integer> labelAddr = new HashMap<LabelStep, Integer>();
+			for(IProgramStep s : ps){
+				if (s instanceof LabelStep){
+					labelAddr.put((LabelStep)s,startAddr);
+				}
+				if (s instanceof AddressedStep){
+					((AddressedStep) s).address = startAddr;
+				}
+				if (s instanceof InstructionWordInstance){
+					progsize += ((InstructionWordInstance) s).getWidth();
+					startAddr++;
+				}
+
+			}
+
+			//Resolve labels
+			sm.setLabelAddresses(labelAddr);
+		}catch(ECompilerException e){
+			ps.add(CompilationErrorEntry.create(e));
+		}
 		
 		//Produce instruction bytes
 		byte[] data = new byte[progsize];

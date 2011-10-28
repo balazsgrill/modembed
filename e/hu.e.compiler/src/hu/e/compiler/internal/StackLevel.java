@@ -3,6 +3,7 @@
  */
 package hu.e.compiler.internal;
 
+import hu.e.compiler.ECompilerException;
 import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.parser.eSyntax.Type;
 import hu.e.parser.eSyntax.Variable;
@@ -28,11 +29,11 @@ public class StackLevel {
 		this.memman = memman;
 	}
 	
-	public void allocate(ISymbolManager sm, Variable var){
+	public void allocate(ISymbolManager sm, Variable var) throws ECompilerException{
 		vars.put(var, memman.allocate(memman.getSize(sm, var.getType())));
 	}
 	
-	public int allocate(ISymbolManager sm, Type type){
+	public int allocate(ISymbolManager sm, Type type) throws ECompilerException{
 		Integer addr = memman.allocate(memman.getSize(sm, type));
 		alloc.add(addr);
 		return addr;

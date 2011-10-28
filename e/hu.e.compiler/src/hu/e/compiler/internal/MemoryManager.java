@@ -3,6 +3,7 @@
  */
 package hu.e.compiler.internal;
 
+import hu.e.compiler.ECompilerException;
 import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
 import hu.e.parser.eSyntax.ArrayTypeDef;
@@ -49,7 +50,7 @@ public class MemoryManager{
 		}
 	}
 	
-	public int getSize(ISymbolManager sm, Type type){
+	public int getSize(ISymbolManager sm, Type type) throws ECompilerException{
 		if (type == null) return 0;
 		TypeDef td = type.getDef();
 		if (td instanceof DataTypeDef){

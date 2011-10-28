@@ -3,6 +3,7 @@
  */
 package hu.e.compiler.internal.model.symbols;
 
+import hu.e.compiler.ECompilerException;
 import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.parser.eSyntax.StructTypeDefMember;
 
@@ -12,6 +13,6 @@ import hu.e.parser.eSyntax.StructTypeDefMember;
  */
 public interface IStructSymbol extends ISymbol{
 
-	public ISymbol getMember(ISymbolManager sm, StructTypeDefMember member); 
+	public ISymbol getMember(ISymbolManager sm, StructTypeDefMember member) throws ECompilerException; 
 	
 }
