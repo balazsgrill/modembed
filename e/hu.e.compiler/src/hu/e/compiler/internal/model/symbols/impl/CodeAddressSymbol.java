@@ -23,6 +23,11 @@ public class CodeAddressSymbol implements ILiteralSymbol {
 		this.step = step;
 	}
 	
+	@Override
+	public String toString() {
+		return "Code("+step.address+")";
+	}
+	
 	/* (non-Javadoc)
 	 * @see hu.e.compiler.internal.model.symbols.ISymbol#isLiteral()
 	 */
