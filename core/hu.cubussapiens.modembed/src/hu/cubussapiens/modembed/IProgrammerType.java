@@ -15,4 +15,6 @@ public interface IProgrammerType {
 	public IProgrammerInstance[] detectInstances();
 	
 	public IProgrammerInstance findInstance(String id);
+	
+	public IProgrammerPropertiesPane createPropertiesPane();
 }

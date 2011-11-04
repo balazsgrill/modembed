@@ -9,6 +9,7 @@ import java.util.List;
 import org.eclipse.core.runtime.CoreException;
 
 import hu.cubussapiens.modembed.IProgrammerInstance;
+import hu.cubussapiens.modembed.IProgrammerPropertiesPane;
 import hu.cubussapiens.modembed.IProgrammerType;
 
 /**
@@ -82,6 +83,12 @@ public class PicKit2Programmer implements IProgrammerType {
 			if (id == null) return pi;
 			if (id.equals(pi.getID())) return pi;
 		}
+		return null;
+	}
+
+	@Override
+	public IProgrammerPropertiesPane createPropertiesPane() {
+		// TODO Auto-generated method stub
 		return null;
 	}
 

@@ -3,8 +3,9 @@
  */
 package hu.cubussapiens.modembed;
 
-import java.io.File;
+import java.util.Properties;
 
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 
 /**
@@ -12,13 +13,6 @@ import org.eclipse.core.runtime.IProgressMonitor;
  *
  */
 public interface IProgrammerInstance {
-
-	/**
-	 * Get the device type ID which is connected to
-	 * this programmer
-	 * @return
-	 */
-	public String getDeviceType();
 	
 	/**
 	 * Returns true if this programmer is currently connected
@@ -28,31 +22,13 @@ public interface IProgrammerInstance {
 	public boolean isConnected();
 	
 	/**
-	 * Return an ID which identifies this programmer.
-	 * This feature is optional, this function can return null.
-     * In this case the programmer cannot be identified between
-     * sessions.
-	 * @return
+	 * Initialize this programmer before running. This may include
+	 * programming a hex file to the device.
+	 * 
+	 * @param props
+	 * @param monitor
 	 */
-	public String getID();
-	
-	/**
-	 * Program the hexfile given by path to the device
-	 * @param hexfile
-	 */
-	public void program(File hexfile, IProgressMonitor monitor);
-	
-	/**
-	 * Return the file, which was programmed to this device the last time
-	 */
-	public File getLastProgrammedFile();
-	
-	/**
-	 * Get the modification time of the hex file which was programmed
-	 * the last time, at the time of the programming.
-	 * @return
-	 */
-	public long getLastProgrammedFileModifiedTime();
+	public void initialize(Properties props, IProgressMonitor monitor) throws CoreException;
 	
 	/**
 	 * Let the device start running

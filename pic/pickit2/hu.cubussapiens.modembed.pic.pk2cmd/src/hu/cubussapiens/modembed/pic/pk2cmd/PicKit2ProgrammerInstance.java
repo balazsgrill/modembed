@@ -4,22 +4,26 @@
 package hu.cubussapiens.modembed.pic.pk2cmd;
 
 import hu.cubussapiens.modembed.IProgrammerInstance;
+import hu.cubussapiens.modembed.pic.pk2cmd.props.IPK2Propertes;
 
 import java.io.File;
+import java.net.URL;
+import java.util.Properties;
 
+import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
 
 /**
  * @author balazs.grill
  *
  */
-public class PicKit2ProgrammerInstance implements IProgrammerInstance {
+public class PicKit2ProgrammerInstance implements IProgrammerInstance, IPK2Propertes {
 
 	private final String id;
 	private final PicKit2Programmer prog;
-	
-	private File lastFile = null;
-	private long lastmodified = 0;
 	
 	public PicKit2ProgrammerInstance(String id, PicKit2Programmer prog) {
 		this.id = id;
@@ -31,8 +35,7 @@ public class PicKit2ProgrammerInstance implements IProgrammerInstance {
 	/* (non-Javadoc)
 	 * @see hu.cubussapiens.modembed.IProgrammerInstance#getDeviceType()
 	 */
-	@Override
-	public String getDeviceType() {
+	private String getDeviceType() {
 		if (device == null){
 			device = prog.getExecutable().detectDevice(id);
 		}
@@ -70,16 +73,12 @@ public class PicKit2ProgrammerInstance implements IProgrammerInstance {
 	/* (non-Javadoc)
 	 * @see hu.cubussapiens.modembed.IProgrammerInstance#getID()
 	 */
-	@Override
 	public String getID() {
 		return id;
 	}
 
-	@Override
-	public void program(File hexfile, IProgressMonitor monitor) {
-		lastFile = hexfile;
-		lastmodified = lastFile.lastModified();
-		prog.getExecutable().programDevice(getDeviceType(), id, hexfile.getAbsolutePath(), monitor);
+	private void program(String hexfile, IProgressMonitor monitor) {
+		prog.getExecutable().programDevice(getDeviceType(), id, hexfile, monitor);
 	}
 
 	@Override
@@ -93,13 +92,16 @@ public class PicKit2ProgrammerInstance implements IProgrammerInstance {
 	}
 
 	@Override
-	public File getLastProgrammedFile() {
-		return lastFile;
-	}
-	
-	@Override
-	public long getLastProgrammedFileModifiedTime() {
-		return lastmodified;
+	public void initialize(Properties props, IProgressMonitor monitor) throws CoreException {
+		String hexfile = props.getProperty(HEXFILEURL);
+		try {
+			URL url = FileLocator.resolve(new URL(hexfile));
+			File file = new File(url.toURI());
+			program(file.getAbsolutePath(), monitor);
+		} catch (Exception e) {
+			throw new CoreException(
+					new Status(IStatus.ERROR, PK2Plugin.PLUGIN_ID, "Could not find hexfile: "+hexfile,e));
+		}
 	}
 
 }

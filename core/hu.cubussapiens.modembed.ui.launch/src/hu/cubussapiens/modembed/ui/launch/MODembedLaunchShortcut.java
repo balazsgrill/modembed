@@ -83,7 +83,7 @@ public class MODembedLaunchShortcut implements ILaunchShortcut{
 			ProgrammerDescriptor pdesc = findProgrammer();
 			if (pdesc != null){
 				wc.setAttribute(LaunchPlugin.A_PROG, pdesc.id);
-				wc.setAttribute(LaunchPlugin.A_PROGID, pdesc.pi.getID());
+				//wc.setAttribute(LaunchPlugin.A_PROGID, pdesc.pi.getID());
 				wc.setAttribute(LaunchPlugin.A_ALWAYSPROGRAM, true);
 			}else{
 				return null;

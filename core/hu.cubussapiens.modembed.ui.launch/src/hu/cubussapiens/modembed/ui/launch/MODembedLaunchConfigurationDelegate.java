@@ -42,7 +42,6 @@ public class MODembedLaunchConfigurationDelegate implements
 		String hexfile = configuration.getAttribute(LaunchPlugin.A_HEXFILE, "");
 		String prog = configuration.getAttribute(LaunchPlugin.A_PROG, "");
 		String progid = configuration.getAttribute(LaunchPlugin.A_PROGID, "");
-		boolean alwaysprogram = configuration.getAttribute(LaunchPlugin.A_ALWAYSPROGRAM, false);
 		
 		RegisteredProgrammer rp = MODembedCore.getDefault().getProgrammerRegistry().getProgrammer(prog);
 		if (rp == null) throw new CoreException(new Status(IStatus.ERROR, LaunchPlugin.PLUGIN_ID, "Could not found programmer in registry: \""+prog+"\""));
@@ -58,21 +57,14 @@ public class MODembedLaunchConfigurationDelegate implements
 		if (!file.exists()) throw new CoreException(new Status(IStatus.ERROR, LaunchPlugin.PLUGIN_ID, "Hex file not found! "+hexfile));
 		final File f = file.getLocation().toFile().getAbsoluteFile();
 		
-		boolean needprogram = alwaysprogram;
-		if (!needprogram){
-			if (!f.equals(pi.getLastProgrammedFile())) 
-				needprogram = true;
-		}
-		if (!needprogram){
-			needprogram = f.lastModified() != pi.getLastProgrammedFileModifiedTime();
-		}
+		
 		
 		if (needprogram){
 			Job job = new Job("Programming..") {
 
 				@Override
 				protected IStatus run(IProgressMonitor monitor) {
-					pi.program(f, monitor);
+					pi.initialize(props, monitor);
 					return Status.OK_STATUS;
 				}
 			};

@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: MODembed Launch
 Bundle-SymbolicName: hu.cubussapiens.modembed.ui.launch;singleton:=true
-Bundle-Version: 0.3.0
+Bundle-Version: 0.5.2
 Bundle-Activator: hu.cubussapiens.modembed.ui.launch.LaunchPlugin
 Bundle-Vendor: Cubussapiens.hu
 Require-Bundle: org.eclipse.ui,

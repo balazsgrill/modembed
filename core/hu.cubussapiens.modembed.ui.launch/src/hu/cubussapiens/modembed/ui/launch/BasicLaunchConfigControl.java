@@ -158,8 +158,8 @@ public class BasicLaunchConfigControl extends Composite {
 					if (o instanceof ProgrammerDescriptor){
 						ProgrammerDescriptor pd = (ProgrammerDescriptor)o;
 						progID = pd.id;
-						String id = pd.pi.getID();
-						programmerID.setText(id==null?"":id);
+						//String id = pd.pi.getID();
+						//programmerID.setText(id==null?"":id);
 						updateProgrammerLabel();
 					}
 				}
