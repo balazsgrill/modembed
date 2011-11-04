@@ -77,6 +77,7 @@ public class MODembedLaunchConfigurationTab extends
 		configuration.setAttribute(LaunchPlugin.A_PROG, control.getProgID());
 		configuration.setAttribute(LaunchPlugin.A_PROGID, control.getProgrammerID().getText());
 		configuration.setAttribute(LaunchPlugin.A_ALWAYSPROGRAM, control.getAlwaysProgram().getSelection());
+		//configuration.setat
 	}
 
 	/* (non-Javadoc)

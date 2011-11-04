@@ -37,51 +37,51 @@ public class MODembedLaunchConfigurationDelegate implements
 	public void launch(ILaunchConfiguration configuration, String mode,
 			ILaunch launch, IProgressMonitor monitor) throws CoreException {
 		
-		monitor.beginTask("Launching program..", 3);
-		
-		String hexfile = configuration.getAttribute(LaunchPlugin.A_HEXFILE, "");
-		String prog = configuration.getAttribute(LaunchPlugin.A_PROG, "");
-		String progid = configuration.getAttribute(LaunchPlugin.A_PROGID, "");
-		
-		RegisteredProgrammer rp = MODembedCore.getDefault().getProgrammerRegistry().getProgrammer(prog);
-		if (rp == null) throw new CoreException(new Status(IStatus.ERROR, LaunchPlugin.PLUGIN_ID, "Could not found programmer in registry: \""+prog+"\""));
-		
-		IProgrammerType pt = rp.getHandler();
-		final IProgrammerInstance pi = pt.findInstance(progid);
-		
-		if (pi == null) throw new CoreException(new Status(IStatus.ERROR, LaunchPlugin.PLUGIN_ID, "Could not found programmer! Maybe it's not connected?"));
-		
-		monitor.worked(1);
-	
-		IFile file = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(hexfile));
-		if (!file.exists()) throw new CoreException(new Status(IStatus.ERROR, LaunchPlugin.PLUGIN_ID, "Hex file not found! "+hexfile));
-		final File f = file.getLocation().toFile().getAbsoluteFile();
-		
-		
-		
-		if (needprogram){
-			Job job = new Job("Programming..") {
-
-				@Override
-				protected IStatus run(IProgressMonitor monitor) {
-					pi.initialize(props, monitor);
-					return Status.OK_STATUS;
-				}
-			};
-			job.setUser(true);
-			job.schedule();
-			try {
-				job.join();
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		
-		IProcess p = new ProgrammerProcess(pi, launch);
-		launch.addProcess(p);
-		
-		monitor.done();
+//		monitor.beginTask("Launching program..", 3);
+//		
+//		String hexfile = configuration.getAttribute(LaunchPlugin.A_HEXFILE, "");
+//		String prog = configuration.getAttribute(LaunchPlugin.A_PROG, "");
+//		String progid = configuration.getAttribute(LaunchPlugin.A_PROGID, "");
+//		
+//		RegisteredProgrammer rp = MODembedCore.getDefault().getProgrammerRegistry().getProgrammer(prog);
+//		if (rp == null) throw new CoreException(new Status(IStatus.ERROR, LaunchPlugin.PLUGIN_ID, "Could not found programmer in registry: \""+prog+"\""));
+//		
+//		IProgrammerType pt = rp.getHandler();
+//		final IProgrammerInstance pi = pt.findInstance(progid);
+//		
+//		if (pi == null) throw new CoreException(new Status(IStatus.ERROR, LaunchPlugin.PLUGIN_ID, "Could not found programmer! Maybe it's not connected?"));
+//		
+//		monitor.worked(1);
+//	
+//		IFile file = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(hexfile));
+//		if (!file.exists()) throw new CoreException(new Status(IStatus.ERROR, LaunchPlugin.PLUGIN_ID, "Hex file not found! "+hexfile));
+//		final File f = file.getLocation().toFile().getAbsoluteFile();
+//		
+//		
+//		
+//		if (needprogram){
+//			Job job = new Job("Programming..") {
+//
+//				@Override
+//				protected IStatus run(IProgressMonitor monitor) {
+//					pi.initialize(props, monitor);
+//					return Status.OK_STATUS;
+//				}
+//			};
+//			job.setUser(true);
+//			job.schedule();
+//			try {
+//				job.join();
+//			} catch (InterruptedException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+//		}
+//		
+//		IProcess p = new ProgrammerProcess(pi, launch);
+//		launch.addProcess(p);
+//		
+//		monitor.done();
 	}
 
 }
