@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="hu.modembed.programmers">
+      <programmer
+            handler="hu.modembed.debug.com.rs232.RS232DebugConnectionType"
+            id="hu.modembed.debug.com.rs232"
+            name="RS232 Connection">
+      </programmer>
+   </extension>
+
+</plugin>

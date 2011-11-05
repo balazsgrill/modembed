@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Communication debug plug-in
+Bundle-SymbolicName: hu.modembed.debug.com;singleton:=true
+Bundle-Version: 0.1.0
+Bundle-Activator: hu.modembed.debug.com.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ hu.modembed;bundle-version="0.5.2",
+ hu.modembed.ui.launch;bundle-version="0.5.2"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
