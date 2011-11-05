@@ -3,14 +3,26 @@
  */
 package hu.cubussapiens.modembed.ui.launch;
 
+import hu.cubussapiens.modembed.IProgrammerInstance;
+import hu.cubussapiens.modembed.IProgrammerType;
+import hu.cubussapiens.modembed.MODembedCore;
+import hu.cubussapiens.modembed.RegisteredProgrammer;
 import hu.cubussapiens.modembed.ui.launch.control.LaunchConfigControl;
+import hu.cubussapiens.modembed.ui.launch.control.ProgrammerConfiguration;
 
+import java.io.IOException;
+import java.io.StringReader;
+import java.io.StringWriter;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Properties;
+
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.debug.core.ILaunchConfiguration;
 import org.eclipse.debug.core.ILaunchConfigurationWorkingCopy;
 import org.eclipse.debug.ui.AbstractLaunchConfigurationTab;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.events.ModifyEvent;
-import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Composite;
 
@@ -19,8 +31,8 @@ import org.eclipse.swt.widgets.Composite;
  *
  */
 public class MODembedLaunchConfigurationTab extends
-		AbstractLaunchConfigurationTab implements ModifyListener{
-
+		AbstractLaunchConfigurationTab implements ILaunchAttribs{
+	
 	private LaunchConfigControl control;
 
 	/* (non-Javadoc)
@@ -30,16 +42,12 @@ public class MODembedLaunchConfigurationTab extends
 	public void createControl(Composite parent) {
 		this.control = new LaunchConfigControl(parent, SWT.NONE);
 		setControl(control);
-		scheduleUpdateJob();
-		
-//		this.control.getHexfile().addModifyListener(this);
-//		this.control.getProgrammerID().addModifyListener(this);
-//		this.control.getAlwaysProgram().addSelectionListener(new SelectionAdapter() {
-//			@Override
-//			public void widgetSelected(SelectionEvent e) {
-//				scheduleUpdateJob();
-//			}
-//		});
+		control.addListener(new Runnable() {
+			@Override
+			public void run() {
+				scheduleUpdateJob();
+			}
+		});
 	}
 
 	/* (non-Javadoc)
@@ -47,26 +55,41 @@ public class MODembedLaunchConfigurationTab extends
 	 */
 	@Override
 	public void setDefaults(ILaunchConfigurationWorkingCopy configuration) {
-		configuration.setAttribute(LaunchPlugin.A_HEXFILE, "");
-		configuration.setAttribute(LaunchPlugin.A_PROG, "");
-		configuration.setAttribute(LaunchPlugin.A_PROGID, "");
-		configuration.setAttribute(LaunchPlugin.A_ALWAYSPROGRAM, false);
+		//Default is empty
 	}
 
+	public static List<ProgrammerConfiguration> readConfiguration(ILaunchConfiguration configuration){
+		List<ProgrammerConfiguration> configs = new ArrayList<ProgrammerConfiguration>();
+		try {
+			List<?> list = configuration.getAttribute(DATA, Collections.emptyList());
+			for(Object o : list){
+				StringReader sr = new StringReader(o.toString());
+				Properties prop = new Properties();
+				try {
+					prop.load(sr);
+					String pid = prop.getProperty(PROGRAMMER_TYPE);
+					RegisteredProgrammer rp = MODembedCore.getDefault().getProgrammerRegistry().getProgrammer(pid);
+					if (rp != null){
+						IProgrammerType pt = rp.getHandler();
+						IProgrammerInstance pi = pt.createInstance(prop);
+						configs.add(new ProgrammerConfiguration(pi, prop));
+					}
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		} catch (CoreException e) {
+			e.printStackTrace();
+		}
+		return configs;
+	}
+	
 	/* (non-Javadoc)
 	 * @see org.eclipse.debug.ui.ILaunchConfigurationTab#initializeFrom(org.eclipse.debug.core.ILaunchConfiguration)
 	 */
 	@Override
 	public void initializeFrom(ILaunchConfiguration configuration) {
-//		try {
-////			this.control.getHexfile().setText(configuration.getAttribute(LaunchPlugin.A_HEXFILE, ""));
-////			this.control.setProgID(configuration.getAttribute(LaunchPlugin.A_PROG, ""));
-////			this.control.getProgrammerID().setText(configuration.getAttribute(LaunchPlugin.A_PROGID, ""));
-////			this.control.getAlwaysProgram().setSelection(configuration.getAttribute(LaunchPlugin.A_ALWAYSPROGRAM, false));
-//		} catch (CoreException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
+		control.setConfigurations(readConfiguration(configuration));
 	}
 
 	/* (non-Javadoc)
@@ -74,11 +97,21 @@ public class MODembedLaunchConfigurationTab extends
 	 */
 	@Override
 	public void performApply(ILaunchConfigurationWorkingCopy configuration) {
-//		configuration.setAttribute(LaunchPlugin.A_HEXFILE, control.getHexfile().getText());
-//		configuration.setAttribute(LaunchPlugin.A_PROG, control.getProgID());
-//		configuration.setAttribute(LaunchPlugin.A_PROGID, control.getProgrammerID().getText());
-//		configuration.setAttribute(LaunchPlugin.A_ALWAYSPROGRAM, control.getAlwaysProgram().getSelection());
-		//configuration.setat
+		List<String> data = new ArrayList<String>();
+		for(ProgrammerConfiguration pc : control.getConfigurations()){
+			Properties p = new Properties();
+			p.putAll(pc.getProperties());
+			p.put(PROGRAMMER_TYPE, pc.getInstance().getType().getID());
+			StringWriter sw = new StringWriter();
+			try {
+				p.store(sw, "");
+				data.add(sw.getBuffer().toString());
+				sw.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		configuration.setAttribute(DATA, data);
 	}
 
 	/* (non-Javadoc)
@@ -87,11 +120,6 @@ public class MODembedLaunchConfigurationTab extends
 	@Override
 	public String getName() {
 		return "Embedded";
-	}
-
-	@Override
-	public void modifyText(ModifyEvent e) {
-		scheduleUpdateJob();
 	}
 	
 	@Override

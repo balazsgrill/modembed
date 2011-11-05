@@ -31,6 +31,12 @@ public class ProgrammerConfiguration {
 	public ProgrammerConfiguration(IProgrammerInstance instance) {
 		this.instance = instance;
 		this.properties = new Properties();
+		instance.fillDefaults(properties);
+	}
+	
+	public ProgrammerConfiguration(IProgrammerInstance instance, Properties props) {
+		this(instance);
+		setProperties(props);
 	}
 	
 }

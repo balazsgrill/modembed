@@ -46,4 +46,10 @@ public interface IProgrammerInstance {
 	 */
 	public IProgrammerType getType();
 	
+	/**
+	 * Fill any default properties to the given set
+	 * @param props
+	 */
+	public void fillDefaults(Properties props);
+	
 }

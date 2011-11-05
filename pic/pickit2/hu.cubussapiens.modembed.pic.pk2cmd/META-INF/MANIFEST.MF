@@ -6,7 +6,8 @@ Bundle-Version: 1.20.5
 Bundle-Activator: hu.cubussapiens.modembed.pic.pk2cmd.PK2Plugin
 Require-Bundle: org.eclipse.core.runtime,
  hu.cubussapiens.modembed;bundle-version="0.5.2",
- org.eclipse.ui
+ org.eclipse.ui,
+ hu.cubussapiens.modembed.ui.launch;bundle-version="0.5.2"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: hu.cubussapiens.modembed.pic.pk2cmd

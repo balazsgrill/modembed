@@ -3,20 +3,25 @@
  */
 package hu.cubussapiens.modembed.pic.pk2cmd;
 
+import hu.cubussapiens.modembed.IProgrammerInstance;
+import hu.cubussapiens.modembed.pic.pk2cmd.props.IPK2Propertes;
+import hu.cubussapiens.modembed.pic.pk2cmd.props.PK2ConfigurationPane;
+import hu.cubussapiens.modembed.ui.launch.core.IProgrammerInstanceConfigurationPane;
+import hu.cubussapiens.modembed.ui.launch.core.IUIProgrammerType;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 import org.eclipse.core.runtime.CoreException;
-
-import hu.cubussapiens.modembed.IProgrammerInstance;
-import hu.cubussapiens.modembed.IProgrammerPropertiesPane;
-import hu.cubussapiens.modembed.IProgrammerType;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.widgets.Composite;
 
 /**
  * @author balazs.grill
  *
  */
-public class PicKit2Programmer implements IProgrammerType {
+public class PicKit2Programmer implements IUIProgrammerType, IPK2Propertes {
 
 	public static final String PROG_ID = "hu.cubussapiens.modembed.pic.pk2cmd.programmer";
 	
@@ -53,19 +58,20 @@ public class PicKit2Programmer implements IProgrammerType {
 	}
 
 	@Override
-	public IProgrammerInstance createInstance() {
-		return new PicKit2ProgrammerInstance(null, this);
-	}
-
-	@Override
-	public IProgrammerPropertiesPane createPropertiesPane() {
-		// TODO Auto-generated method stub
-		return null;
+	public IProgrammerInstance createInstance(Properties props) {
+		String id = props != null ? props.getProperty(PK2ID) : null;
+		return new PicKit2ProgrammerInstance(id, this);
 	}
 
 	@Override
 	public String getID() {
 		return PROG_ID;
+	}
+
+	@Override
+	public IProgrammerInstanceConfigurationPane createConfigurationPane(
+			Composite parent) {
+		return new PK2ConfigurationPane(parent, SWT.NONE);
 	}
 
 }

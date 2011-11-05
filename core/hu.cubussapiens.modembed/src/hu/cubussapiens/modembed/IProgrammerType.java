@@ -3,6 +3,8 @@
  */
 package hu.cubussapiens.modembed;
 
+import java.util.Properties;
+
 /**
  * @author balazs.grill
  *
@@ -14,9 +16,7 @@ public interface IProgrammerType {
 	 */
 	public IProgrammerInstance[] detectInstances();
 	
-	public IProgrammerInstance createInstance();
-	
-	public IProgrammerPropertiesPane createPropertiesPane();
+	public IProgrammerInstance createInstance(Properties props);
 	
 	public String getID();
 }

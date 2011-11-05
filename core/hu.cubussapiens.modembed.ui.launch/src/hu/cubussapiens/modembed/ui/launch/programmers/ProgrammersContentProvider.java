@@ -45,7 +45,7 @@ public class ProgrammersContentProvider implements ITreeContentProvider {
 			IProgrammerType pt = rp.getHandler();
 			IProgrammerInstance[] instances = pt.detectInstances();
 			if (instances == null || instances.length == 0){
-				obs.add(pt.createInstance());
+				obs.add(pt.createInstance(null));
 			}else{
 				for(IProgrammerInstance pi : instances){
 					obs.add(pi);

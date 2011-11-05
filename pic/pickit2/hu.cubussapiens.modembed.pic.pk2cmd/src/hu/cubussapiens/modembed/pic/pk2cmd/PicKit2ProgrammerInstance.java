@@ -90,7 +90,7 @@ public class PicKit2ProgrammerInstance implements IProgrammerInstance, IPK2Prope
 
 	@Override
 	public void initialize(Properties props, IProgressMonitor monitor) throws CoreException {
-		String hexfile = props.getProperty(HEXFILEURL);
+		String hexfile = props.getProperty(HEXFILEPATH);
 		try {
 			URL url = FileLocator.resolve(new URL(hexfile));
 			File file = new File(url.toURI());
@@ -101,6 +101,11 @@ public class PicKit2ProgrammerInstance implements IProgrammerInstance, IPK2Prope
 		}
 	}
 
+	@Override
+	public void fillDefaults(Properties props) {
+		if (id != null)	props.put(PK2ID, id);
+	}
+	
 	@Override
 	public IProgrammerType getType() {
 		return prog;
