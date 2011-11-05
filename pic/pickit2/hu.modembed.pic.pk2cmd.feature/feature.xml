@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="hu.cubussapiens.modembed.pic.pk2cmd.feature"
+      id="hu.modembed.pic.pk2cmd.feature"
       label="PicKit2 programmer support"
       version="1.20.5"
       plugin="hu.modembed.pic.pk2cmd"
@@ -213,8 +213,8 @@ reserved.
    </url>
 
    <requires>
-      <import feature="hu.cubussapiens.modembed.core.feature" version="0.2.0" match="greaterOrEqual"/>
-      <import feature="hu.cubussapiens.modembed.pic.feature" version="0.2.0" match="greaterOrEqual"/>
+      <import feature="hu.modembed.core.feature" version="0.5.0" match="greaterOrEqual"/>
+      <import feature="hu.modembed.pic.feature" version="0.5.0" match="greaterOrEqual"/>
    </requires>
 
    <plugin

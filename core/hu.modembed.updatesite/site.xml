@@ -3,18 +3,6 @@
    <description name="MODembed update site" url="http://gbalage.github.com/modembed/updatesite">
       Model-based development environment currently supporting Microchip PIC microcontrollers
    </description>
-   <feature url="features/hu.cubussapiens.modembed.core.feature_0.5.0.jar" id="hu.cubussapiens.modembed.core.feature" version="0.5.0">
-      <category name="MODembed"/>
-   </feature>
-   <feature url="features/hu.cubussapiens.modembed.pic.feature_0.5.0.jar" id="hu.cubussapiens.modembed.pic.feature" version="0.5.0">
-      <category name="MODembed"/>
-   </feature>
-   <feature url="features/hu.cubussapiens.modembed.pic.pk2cmd.feature_1.20.4.jar" id="hu.cubussapiens.modembed.pic.pk2cmd.feature" version="1.20.4" os="linux,win32" ws="gtk,win32" arch="x86">
-      <category name="MODembed"/>
-   </feature>
-   <feature url="features/hu.e.feature_0.1.8.jar" id="hu.e.feature" version="0.1.8">
-      <category name="MODembed"/>
-   </feature>
    <category-def name="MODembed" label="MODembed">
       <description>
          Model-based development environment for embedded systems.
