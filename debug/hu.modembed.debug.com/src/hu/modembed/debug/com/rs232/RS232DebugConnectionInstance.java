@@ -31,6 +31,11 @@ public class RS232DebugConnectionInstance implements IProgrammerInstance {
 		return true;
 	}
 
+	@Override
+	public String toString() {
+		return "RS232 connection";
+	}
+	
 	/* (non-Javadoc)
 	 * @see hu.modembed.IProgrammerInstance#initialize(java.util.Properties, org.eclipse.core.runtime.IProgressMonitor)
 	 */

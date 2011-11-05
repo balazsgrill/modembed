@@ -5,6 +5,7 @@
          point="hu.modembed.programmers">
       <programmer
             handler="hu.modembed.debug.com.rs232.RS232DebugConnectionType"
+            icon="icons/rs232.png"
             id="hu.modembed.debug.com.rs232"
             name="RS232 Connection">
       </programmer>
