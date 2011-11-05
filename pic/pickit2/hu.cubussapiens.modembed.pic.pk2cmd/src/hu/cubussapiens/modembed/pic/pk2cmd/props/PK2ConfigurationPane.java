@@ -3,11 +3,19 @@
  */
 package hu.cubussapiens.modembed.pic.pk2cmd.props;
 
+import hu.cubussapiens.modembed.pic.pk2cmd.PK2Plugin;
 import hu.cubussapiens.modembed.ui.launch.core.IProgrammerInstanceConfigurationPane;
 
 import java.util.Properties;
 
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
+import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
@@ -15,6 +23,10 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
+import org.eclipse.ui.dialogs.ElementTreeSelectionDialog;
+import org.eclipse.ui.dialogs.ISelectionStatusValidator;
+import org.eclipse.ui.model.WorkbenchContentProvider;
+import org.eclipse.ui.model.WorkbenchLabelProvider;
 
 /**
  * @author balazs.grill
@@ -44,6 +56,35 @@ public class PK2ConfigurationPane extends Composite implements
 		Button browse = new Button(this, SWT.PUSH);
 		browse.setText("Browse..");
 		browse.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false));
+		
+		browse.addSelectionListener(new SelectionAdapter() {
+			
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				ElementTreeSelectionDialog dialog = new ElementTreeSelectionDialog(getShell(), new WorkbenchLabelProvider(), new WorkbenchContentProvider());
+				dialog.setInput(ResourcesPlugin.getWorkspace().getRoot());
+				dialog.setAllowMultiple(false);
+				dialog.setTitle("Select hex file to program");
+				dialog.setValidator(new ISelectionStatusValidator() {
+
+					@Override
+					public IStatus validate(Object[] selection) {
+						if (selection.length == 1 && selection[0] instanceof IFile){
+							return Status.OK_STATUS;
+						}
+						return new Status(IStatus.ERROR, PK2Plugin.PLUGIN_ID, "You must select a file!");
+					}
+				});
+
+				if (dialog.open() == Dialog.OK){
+					Object o = dialog.getFirstResult();
+					if (o instanceof IFile){
+						hexfile.setText(((IFile) o).getFullPath().toString());
+					}
+				}
+			}
+
+		});
 		
 		label = new Label(this, SWT.NONE);
 		label.setText("Programmer ID (optional:)");

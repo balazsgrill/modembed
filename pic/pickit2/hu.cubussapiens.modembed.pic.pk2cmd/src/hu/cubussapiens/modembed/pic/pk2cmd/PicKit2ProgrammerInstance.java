@@ -7,14 +7,14 @@ import hu.cubussapiens.modembed.IProgrammerInstance;
 import hu.cubussapiens.modembed.IProgrammerType;
 import hu.cubussapiens.modembed.pic.pk2cmd.props.IPK2Propertes;
 
-import java.io.File;
-import java.net.URL;
 import java.util.Properties;
 
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
-import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Status;
 
 /**
@@ -92,9 +92,8 @@ public class PicKit2ProgrammerInstance implements IProgrammerInstance, IPK2Prope
 	public void initialize(Properties props, IProgressMonitor monitor) throws CoreException {
 		String hexfile = props.getProperty(HEXFILEPATH);
 		try {
-			URL url = FileLocator.resolve(new URL(hexfile));
-			File file = new File(url.toURI());
-			program(file.getAbsolutePath(), monitor);
+			IFile file = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(hexfile));
+			program(file.getLocation().toString(), monitor);
 		} catch (Exception e) {
 			throw new CoreException(
 					new Status(IStatus.ERROR, PK2Plugin.PLUGIN_ID, "Could not find hexfile: "+hexfile,e));
