@@ -2,7 +2,7 @@
 <feature
       id="hu.cubussapiens.modembed.core.feature"
       label="MODembed Core"
-      version="0.5.0"
+      version="0.5.2"
       provider-name="cubussapiens.hu"
       plugin="hu.cubussapiens.modembed.ui">
 

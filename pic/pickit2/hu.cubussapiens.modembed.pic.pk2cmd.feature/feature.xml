@@ -2,7 +2,7 @@
 <feature
       id="hu.cubussapiens.modembed.pic.pk2cmd.feature"
       label="PicKit2 programmer support"
-      version="1.20.4"
+      version="1.20.5"
       provider-name="cubussapiens.hu"
       plugin="hu.cubussapiens.modembed.pic.pk2cmd"
       os="linux,win32"
