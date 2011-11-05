@@ -4,6 +4,7 @@
 package hu.cubussapiens.modembed.pic.pk2cmd;
 
 import hu.cubussapiens.modembed.IProgrammerInstance;
+import hu.cubussapiens.modembed.IProgrammerType;
 import hu.cubussapiens.modembed.pic.pk2cmd.props.IPK2Propertes;
 
 import java.io.File;
@@ -51,15 +52,11 @@ public class PicKit2ProgrammerInstance implements IProgrammerInstance, IPK2Prope
 			sb.append(id);
 			sb.append("\" ");
 		}
-		sb.append("-> ");
-		sb.append(getDeviceType());
+		sb.append("[");
+		String devtype = getDeviceType();
+		sb.append(devtype==null ? "disconnected" : devtype);
+		sb.append("]");
 		return sb.toString();
-	}
-	
-	private boolean connected = true;
-	
-	public void disconnect(){
-		connected = false;
 	}
 	
 	/* (non-Javadoc)
@@ -67,7 +64,7 @@ public class PicKit2ProgrammerInstance implements IProgrammerInstance, IPK2Prope
 	 */
 	@Override
 	public boolean isConnected() {
-		return connected;
+		return getDeviceType() != null;
 	}
 
 	/* (non-Javadoc)
@@ -102,6 +99,11 @@ public class PicKit2ProgrammerInstance implements IProgrammerInstance, IPK2Prope
 			throw new CoreException(
 					new Status(IStatus.ERROR, PK2Plugin.PLUGIN_ID, "Could not find hexfile: "+hexfile,e));
 		}
+	}
+
+	@Override
+	public IProgrammerType getType() {
+		return prog;
 	}
 
 }

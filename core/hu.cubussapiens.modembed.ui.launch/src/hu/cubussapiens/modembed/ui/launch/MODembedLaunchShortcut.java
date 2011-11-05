@@ -3,7 +3,7 @@
  */
 package hu.cubussapiens.modembed.ui.launch;
 
-import hu.cubussapiens.modembed.ui.launch.programmers.ProgrammerDescriptor;
+import hu.cubussapiens.modembed.IProgrammerInstance;
 import hu.cubussapiens.modembed.ui.launch.programmers.ProgrammersContentProvider;
 
 import org.eclipse.core.resources.IFile;
@@ -55,7 +55,7 @@ public class MODembedLaunchShortcut implements ILaunchShortcut{
 		DebugUITools.launch(lc, mode);
 	}
 	
-	private ProgrammerDescriptor findProgrammer(){
+	private IProgrammerInstance findProgrammer(){
 		ProgrammersContentProvider cp = new ProgrammersContentProvider();
 		Object[] ps = cp.getElements(null);
 		if (ps.length == 0){
@@ -63,7 +63,7 @@ public class MODembedLaunchShortcut implements ILaunchShortcut{
 			return null;
 		}
 		if (ps.length == 1){
-			return (ProgrammerDescriptor)ps[0];
+			return (IProgrammerInstance)ps[0];
 		}
 		return LaunchPlugin.getDefault().selectProgrammer(getShell());
 	}
@@ -80,9 +80,9 @@ public class MODembedLaunchShortcut implements ILaunchShortcut{
 			wc = configType.newInstance(null, getLaunchManager().generateLaunchConfigurationName(file.getName()));
 			wc.setAttribute(LaunchPlugin.A_HEXFILE, file.getFullPath().toString());
 			
-			ProgrammerDescriptor pdesc = findProgrammer();
+			IProgrammerInstance pdesc = findProgrammer();
 			if (pdesc != null){
-				wc.setAttribute(LaunchPlugin.A_PROG, pdesc.id);
+				wc.setAttribute(LaunchPlugin.A_PROG, pdesc.getType().getID());
 				//wc.setAttribute(LaunchPlugin.A_PROGID, pdesc.pi.getID());
 				wc.setAttribute(LaunchPlugin.A_ALWAYSPROGRAM, true);
 			}else{

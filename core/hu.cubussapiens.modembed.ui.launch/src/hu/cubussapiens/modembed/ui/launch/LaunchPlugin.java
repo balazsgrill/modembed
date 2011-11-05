@@ -1,6 +1,6 @@
 package hu.cubussapiens.modembed.ui.launch;
 
-import hu.cubussapiens.modembed.ui.launch.programmers.ProgrammerDescriptor;
+import hu.cubussapiens.modembed.IProgrammerInstance;
 import hu.cubussapiens.modembed.ui.launch.programmers.ProgrammersContentProvider;
 import hu.cubussapiens.modembed.ui.launch.programmers.ProgrammersLabelProvider;
 
@@ -78,7 +78,7 @@ public class LaunchPlugin extends AbstractUIPlugin {
 		return plugin;
 	}
 	
-	public ProgrammerDescriptor selectProgrammer(Shell shell){
+	public IProgrammerInstance selectProgrammer(Shell shell){
 		ElementTreeSelectionDialog dialog = new ElementTreeSelectionDialog(shell, new ProgrammersLabelProvider(), new ProgrammersContentProvider());
 		dialog.setInput(Object.class);
 		dialog.setAllowMultiple(false);
@@ -95,8 +95,8 @@ public class LaunchPlugin extends AbstractUIPlugin {
 		});
 		if (dialog.open() == Dialog.OK){
 			Object o = dialog.getFirstResult();
-			if (o instanceof ProgrammerDescriptor){
-				ProgrammerDescriptor pd = (ProgrammerDescriptor)o;
+			if (o instanceof IProgrammerInstance){
+				IProgrammerInstance pd = (IProgrammerInstance)o;
 				return pd;
 			}
 		}

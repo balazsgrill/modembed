@@ -43,8 +43,13 @@ public class ProgrammersContentProvider implements ITreeContentProvider {
 		
 		for(RegisteredProgrammer rp : MODembedCore.getDefault().getProgrammerRegistry().listProgrammers()){
 			IProgrammerType pt = rp.getHandler();
-			for(IProgrammerInstance pi : pt.detectInstances()){
-				obs.add(new ProgrammerDescriptor(rp.getId(), pt, pi));
+			IProgrammerInstance[] instances = pt.detectInstances();
+			if (instances == null || instances.length == 0){
+				obs.add(pt.createInstance());
+			}else{
+				for(IProgrammerInstance pi : instances){
+					obs.add(pi);
+				}
 			}
 		}
 		

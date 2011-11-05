@@ -40,4 +40,10 @@ public interface IProgrammerInstance {
 	 */
 	public void stop();
 	
+	/**
+	 * Get type
+	 * @return
+	 */
+	public IProgrammerType getType();
+	
 }
