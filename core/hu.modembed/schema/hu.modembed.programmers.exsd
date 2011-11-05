@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!-- Schema file written by PDE -->
-<schema targetNamespace="hu.cubussapiens.modembed" xmlns="http://www.w3.org/2001/XMLSchema">
+<schema targetNamespace="hu.modembed" xmlns="http://www.w3.org/2001/XMLSchema">
 <annotation>
       <appinfo>
-         <meta.schema plugin="hu.cubussapiens.modembed" id="hu.cubussapiens.modembed.programmers" name="Programmers"/>
+         <meta.schema plugin="hu.modembed" id="hu.modembed.programmers" name="Programmers"/>
       </appinfo>
       <documentation>
          [Enter description of this extension point.]
@@ -62,7 +62,7 @@
                   
                </documentation>
                <appinfo>
-                  <meta.attribute kind="java" basedOn=":hu.cubussapiens.modembed.IProgrammerType"/>
+                  <meta.attribute kind="java" basedOn=":hu.modembed.IProgrammerType"/>
                </appinfo>
             </annotation>
          </attribute>

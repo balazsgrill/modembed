@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: MODembed Core
 Bundle-SymbolicName: hu.modembed;singleton:=true
 Bundle-Version: 0.5.2
-Bundle-Activator: hu.cubussapiens.modembed.MODembedCore
+Bundle-Activator: hu.modembed.MODembedCore
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources,
  org.eclipse.emf.ecore.xmi;bundle-version="2.7.0",
@@ -11,4 +11,4 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.xtext;bundle-version="2.0.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: hu.cubussapiens.modembed
+Export-Package: hu.modembed

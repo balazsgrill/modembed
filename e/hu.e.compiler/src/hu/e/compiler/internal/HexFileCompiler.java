@@ -14,7 +14,6 @@ import hexfile.AddressType;
 import hexfile.Entry;
 import hexfile.HexFile;
 import hexfile.HexfileFactory;
-import hu.cubussapiens.modembed.hexfile.persistence.HexFileResource;
 import hu.e.compiler.ECompilerException;
 import hu.e.compiler.internal.model.CompilationErrorEntry;
 import hu.e.compiler.internal.model.IProgramStep;
@@ -27,6 +26,7 @@ import hu.e.parser.eSyntax.FunctionBinarySection;
 import hu.e.parser.eSyntax.LinkedBinary;
 import hu.e.parser.eSyntax.ReferenceBinarySection;
 import hu.e.parser.eSyntax.XExpression;
+import hu.modembed.hexfile.persistence.HexFileResource;
 
 /**
  * @author balazs.grill

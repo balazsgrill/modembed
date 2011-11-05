@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Pk2cmd
 Bundle-SymbolicName: hu.modembed.pic.pk2cmd;singleton:=true
 Bundle-Version: 1.20.5
-Bundle-Activator: hu.cubussapiens.modembed.pic.pk2cmd.PK2Plugin
+Bundle-Activator: hu.modembed.pic.pk2cmd.PK2Plugin
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.ui,
  org.eclipse.core.resources,
@@ -11,5 +11,5 @@ Require-Bundle: org.eclipse.core.runtime,
  hu.modembed.ui.launch;bundle-version="0.5.2"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: hu.cubussapiens.modembed.pic.pk2cmd
+Export-Package: hu.modembed.pic.pk2cmd
 Import-Package: org.eclipse.ui.model

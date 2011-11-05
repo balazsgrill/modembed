@@ -5,12 +5,12 @@
          point="org.eclipse.ui.popupMenus">
       <objectContribution
             adaptable="false"
-            id="hu.cubussapiens.modembed.pic.ui.generateDesc"
+            id="hu.modembed.pic.ui.generateDesc"
             nameFilter="*.dev"
             objectClass="org.eclipse.core.resources.IFile">
          <action
-               class="hu.cubussapiens.modembed.pic.ui.GeneratePicDesc"
-               id="hu.cubussapiens.modembed.pic.ui.GeneratePicDesc"
+               class="hu.modembed.pic.ui.GeneratePicDesc"
+               id="hu.modembed.pic.ui.GeneratePicDesc"
                label="Generate PIC description">
          </action>
       </objectContribution>

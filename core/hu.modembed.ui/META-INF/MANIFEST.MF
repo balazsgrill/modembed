@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Ui Plugin
 Bundle-SymbolicName: hu.modembed.ui;singleton:=true
 Bundle-Version: 0.5.1
-Bundle-Activator: hu.cubussapiens.modembed.ui.MODembedUI
+Bundle-Activator: hu.modembed.ui.MODembedUI
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.core.resources,
@@ -21,6 +21,6 @@ Require-Bundle: org.eclipse.ui,
  hu.modembed.model.edit;bundle-version="0.1.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: hu.cubussapiens.modembed.ui,
- hu.cubussapiens.modembed.ui.dialogs,
- hu.cubussapiens.modembed.ui.widgets
+Export-Package: hu.modembed.ui,
+ hu.modembed.ui.dialogs,
+ hu.modembed.ui.widgets

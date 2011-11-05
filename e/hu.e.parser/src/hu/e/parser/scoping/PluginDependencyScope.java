@@ -3,8 +3,8 @@
  */
 package hu.e.parser.scoping;
 
-import hu.cubussapiens.modembed.MODembedCore;
 import hu.e.parser.eSyntax.Package;
+import hu.modembed.MODembedCore;
 
 import java.util.ArrayList;
 import java.util.List;

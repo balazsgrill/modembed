@@ -4,9 +4,9 @@
    <extension
          point="hu.modembed.programmers">
       <programmer
-            handler="hu.cubussapiens.modembed.pic.pk2cmd.PicKit2Programmer"
+            handler="hu.modembed.pic.pk2cmd.PicKit2Programmer"
             icon="pickit2.png"
-            id="hu.cubussapiens.modembed.pic.pk2cmd.programmer"
+            id="hu.modembed.pic.pk2cmd.programmer"
             name="PicKit2">
       </programmer>
    </extension>

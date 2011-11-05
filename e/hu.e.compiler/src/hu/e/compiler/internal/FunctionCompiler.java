@@ -3,7 +3,6 @@
  */
 package hu.e.compiler.internal;
 
-import hu.cubussapiens.modembed.hexfile.persistence.HexFileResource;
 import hu.e.compiler.ECompiler;
 import hu.e.compiler.ECompilerException;
 import hu.e.compiler.internal.model.AddressedStep;
@@ -17,6 +16,7 @@ import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.compiler.internal.symbols.SymbolManager;
 import hu.e.parser.eSyntax.FunctionBinarySection;
 import hu.e.parser.eSyntax.FunctionMemory;
+import hu.modembed.hexfile.persistence.HexFileResource;
 
 import java.util.HashMap;
 import java.util.List;

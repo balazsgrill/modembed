@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!-- Schema file written by PDE -->
-<schema targetNamespace="hu.cubussapiens.modembed.pic.simulator" xmlns="http://www.w3.org/2001/XMLSchema">
+<schema targetNamespace="hu.modembed.pic.simulator" xmlns="http://www.w3.org/2001/XMLSchema">
 <annotation>
       <appinfo>
-         <meta.schema plugin="hu.cubussapiens.modembed.pic.simulator" id="hu.cubussapiens.modemed.sim.devices" name="Simulator devices"/>
+         <meta.schema plugin="hu.modembed.pic.simulator" id="hu.cubussapiens.modemed.sim.devices" name="Simulator devices"/>
       </appinfo>
       <documentation>
          [Enter description of this extension point.]
@@ -105,7 +105,7 @@
                   
                </documentation>
                <appinfo>
-                  <meta.attribute kind="java" basedOn=":hu.cubussapiens.modembed.pic.simulator.IUnit"/>
+                  <meta.attribute kind="java" basedOn=":hu.modembed.pic.simulator.IUnit"/>
                </appinfo>
             </annotation>
          </attribute>

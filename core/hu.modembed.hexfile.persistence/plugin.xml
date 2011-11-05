@@ -4,7 +4,7 @@
    <extension
          point="org.eclipse.emf.ecore.extension_parser">
       <parser
-            class="hu.cubussapiens.modembed.hexfile.persistence.HexFileResourceFactory"
+            class="hu.modembed.hexfile.persistence.HexFileResourceFactory"
             type="hex">
       </parser>
    </extension>
