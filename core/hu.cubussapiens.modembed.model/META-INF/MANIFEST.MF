@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Model plug-in
-Bundle-SymbolicName: hu.cubussapiens.modembed.model;singleton:=true
+Bundle-SymbolicName: hu.modembed.model;singleton:=true
 Bundle-Version: 0.1.0
 Bundle-ClassPath: .
 Bundle-Localization: plugin

@@ -2,7 +2,7 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension
-         point="hu.cubussapiens.modembed.programmers">
+         point="hu.modembed.programmers">
       <programmer
             handler="hu.cubussapiens.modembed.pic.pk2cmd.PicKit2Programmer"
             icon="pickit2.png"

@@ -1,13 +1,13 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Simulator
-Bundle-SymbolicName: hu.cubussapiens.modembed.pic.simulator;singleton:=true
+Bundle-SymbolicName: hu.modembed.pic.simulator;singleton:=true
 Bundle-Version: 0.1.0
 Bundle-Activator: hu.cubussapiens.modembed.pic.simulator.PicSimulator
 Bundle-Vendor: Cubussapiens.hu
 Require-Bundle: org.eclipse.core.runtime,
- hu.cubussapiens.modembed.hexfile.model;bundle-version="0.1.0",
- hu.cubussapiens.modembed.hexfile.persistence;bundle-version="0.1.0"
+ hu.modembed.hexfile.model;bundle-version="0.1.0",
+ hu.modembed.hexfile.persistence;bundle-version="0.1.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Export-Package: hu.cubussapiens.modembed.pic.simulator,

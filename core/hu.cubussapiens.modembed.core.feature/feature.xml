@@ -3,8 +3,8 @@
       id="hu.cubussapiens.modembed.core.feature"
       label="MODembed Core"
       version="0.5.2"
-      provider-name="cubussapiens.hu"
-      plugin="hu.cubussapiens.modembed.ui">
+      provider-name=""
+      plugin="hu.modembed.ui">
 
    <description url="http://gbalage.github.com/modembed">
       Model-based development environment for embedded systems.
@@ -222,48 +222,62 @@ litigation.
    </requires>
 
    <plugin
-         id="hu.cubussapiens.modembed"
+         id="hu.modembed"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="hu.cubussapiens.modembed.hexfile.model"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="hu.cubussapiens.modembed.hexfile.persistence"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="hu.cubussapiens.modembed.ui"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="hu.cubussapiens.modembed.ui.launch"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="hu.cubussapiens.modembed.help"
+         id="hu.modembed.help"
          download-size="0"
          install-size="0"
          version="0.0.0"/>
 
    <plugin
-         id="hu.cubussapiens.modembed.model.editor"
+         id="hu.modembed.hexfile.model"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="hu.modembed.hexfile.persistence"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="hu.modembed.model"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="hu.modembed.model.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="hu.modembed.model.editor"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="hu.modembed.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="hu.modembed.ui.launch"
          download-size="0"
          install-size="0"
          version="0.0.0"

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
-   <extension-point id="hu.cubussapiens.modembed.programmers" name="Programmers" schema="schema/hu.cubussapiens.modembed.programmers.exsd"/>
+   <extension-point id="hu.modembed.programmers" name="Programmers" schema="schema/hu.modembed.programmers.exsd"/>
 
 </plugin>

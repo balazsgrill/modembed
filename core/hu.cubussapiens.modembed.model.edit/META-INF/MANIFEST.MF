@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-SymbolicName: hu.cubussapiens.modembed.model.edit;singleton:=true
+Bundle-SymbolicName: hu.modembed.model.edit;singleton:=true
 Bundle-Version: 0.1.0
 Bundle-ClassPath: .
 Bundle-Activator: hu.modembed.model.core.provider.ModembedmodelEditPlugin$Implementation
@@ -10,6 +10,6 @@ Export-Package: hu.modembed.model.core.provider,
  hu.modembed.model.network.provider,
  hu.modembed.model.network.rs232.provider
 Require-Bundle: org.eclipse.core.runtime,
- hu.cubussapiens.modembed.model;visibility:=reexport,
+ hu.modembed.model;visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy

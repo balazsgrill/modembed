@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Modembed User guide
-Bundle-SymbolicName: hu.cubussapiens.modembed.help; singleton:=true
+Bundle-SymbolicName: hu.modembed.help;singleton:=true
 Bundle-Version: 0.4.2
 Bundle-Vendor: Cubussapiens.hu

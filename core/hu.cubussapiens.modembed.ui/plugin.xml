@@ -16,7 +16,7 @@
       <image
             icon="icons/chip.png"
             id="hu.cubussapiens.modembed.ui.nature.icon"
-            natureId="hu.cubussapiens.modembed.ui.nature">
+            natureId="hu.modembed.ui.nature">
       </image>
    </extension>
    <extension
@@ -97,7 +97,7 @@
       </perspective>
    </extension>
    <extension
-         point="hu.cubussapiens.modembed.ui.model.descriptors">
+         point="hu.modembed.ui.model.descriptors">
       <model
             name="Core model">
          <adapterfactory
