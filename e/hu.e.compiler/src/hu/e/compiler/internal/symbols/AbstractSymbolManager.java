@@ -211,7 +211,8 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 			ISymbol... symbols) throws ECompilerException {
 		OperationFinder opfinder = getOpFinder();
 		OperationCompiler oc = opfinder.getOperationCompiler(role, symbols);
-		if (oc == null) throw new ECompilerException(context, "Cannot found "+role+" operator!");
+		if (oc == null) 
+			throw new ECompilerException(context, "Cannot find "+role+" operator!");
 		return oc.compile(this);
 	}
 	
