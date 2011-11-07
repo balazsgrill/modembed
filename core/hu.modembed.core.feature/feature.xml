@@ -2,7 +2,7 @@
 <feature
       id="hu.modembed.core.feature"
       label="MODembed Core"
-      version="0.5.2"
+      version="0.5.3"
       plugin="hu.modembed.ui">
 
    <description url="http://gbalage.github.com/modembed">
