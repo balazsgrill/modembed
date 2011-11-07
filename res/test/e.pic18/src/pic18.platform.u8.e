@@ -46,22 +46,19 @@ branch_u8(var uint8 condition, const uint16 true, const uint16 false){
 /*
  * dest = (d1 == d2)
  */
-isequal_u8(var bool dest, uint8 d1, uint8 d2){
-	set_u8(dest,1);
-	if (isliteral(d1)){
-		//d2 is garanteed to not beeing literal
-		MOVLW(d1);
-		aCPFSEQ(addr(d2));
+isequal_u8(var bool dest, uint8 d){
+	if (isliteral(d)){
+		MOVLW(d);
 	}else{
-		if (isliteral(d2)){
-			MOVLW(d2);
-		}else{
-			aMOVF(addr(d2),0);
-		}
-		aCPFSEQ(addr(d1));
+		aMOVF(addr(d),0);
 	}
+	aCPFSEQ(addr(dest));
 	//Skipped if equal
 	GOTO(@notequal);
-	set_u8(dest,0);
+	set_u8(dest,1);
+	GOTO(@end);
 	label notequal;
+	set_u8(dest,0);
+	GOTO(@end);
+	label end;
 }
