@@ -89,7 +89,7 @@ public class OperationFinder {
 			ParameterVariable pv = op.getParams().get(i);
 			ISymbol s = symbols[i];
 			
-			if (s instanceof ILiteralSymbol){
+			if (s instanceof ILiteralSymbol && s.isLiteral()){
 				if (pv.getKind() == ParameterKind.VAR) return false;
 				
 				TypeDef td = pv.getVar().getType().getDef();
