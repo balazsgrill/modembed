@@ -155,6 +155,7 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
 		case LTE:
 		case MUL:
 		case NOTEQUALS:
+		case EQUALS:
 		case OR:
 			execute(OperationRole.SET, result,a);
 			execute(getRole(op), result,b);
