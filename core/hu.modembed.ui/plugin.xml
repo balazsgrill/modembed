@@ -111,5 +111,15 @@
          </adapterfactory>
       </model>
    </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="hu.modembed.ui.lsteditor.LSTEditorPart"
+            default="true"
+            extensions="lst"
+            id="hu.modembed.ui.editor.lst"
+            name="LST viewer">
+      </editor>
+   </extension>
 
 </plugin>
