@@ -2,7 +2,7 @@
 <feature
       id="hu.e.feature"
       label="Language e parser and compiler"
-      version="0.1.10"
+      version="0.1.11"
       plugin="hu.e.compiler">
 
    <description url="http://gbalage.github.com/modembed">
