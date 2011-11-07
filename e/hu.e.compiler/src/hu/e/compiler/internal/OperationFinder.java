@@ -104,10 +104,12 @@ public class OperationFinder {
 			}else if (s instanceof IVariableSymbol){
 				if (pv.getKind() == ParameterKind.CONST) return false;
 				
-				if (s.getType() != pv.getVar().getType()) return false;
+				if (s.getType() != pv.getVar().getType()){
+					return false;
+				}
 				
 			}else{
-				throw new IllegalArgumentException("Unsupported operator symbol: "+s);
+				throw new ECompilerException(op, "Unsupported operator symbol: "+s);
 			}
 		}
 		return true;
