@@ -37,7 +37,7 @@ public class InstructionWordInstance implements IProgramStep{
 			this.shift = shift;
 		}
 		
-		public int getValue(){
+		public int getValue() throws ECompilerException{
 			int v = (symbol != null) ? symbol.getValue() : 0;
 			v = v>>shift;
 			v = v%(1<<size);
@@ -102,7 +102,7 @@ public class InstructionWordInstance implements IProgramStep{
 		return r/8 + ((r%8==0)?0:1);
 	}
 	
-	public int getValue(){
+	public int getValue() throws ECompilerException{
 		int r = 0;
 		for(IncludeSymbol is : symbols){
 			r += is.getValue();

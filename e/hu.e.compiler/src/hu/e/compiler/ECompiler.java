@@ -70,7 +70,11 @@ public class ECompiler {
 			for(int j =0;j<r;j++) sb.append(" ");
 			if (s instanceof InstructionWordInstance){
 				sb.append(i);sb.append(": ");
-				sb.append(Integer.toBinaryString(((InstructionWordInstance) s).getValue()));
+				try {
+					sb.append(Integer.toBinaryString(((InstructionWordInstance) s).getValue()));
+				} catch (ECompilerException e) {
+					sb.append("ERROR: "+e.getMessage());
+				}
 				i++;
 			}else
 			if (s instanceof LabelStep){

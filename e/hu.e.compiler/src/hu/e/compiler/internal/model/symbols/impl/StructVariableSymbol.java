@@ -35,7 +35,7 @@ public class StructVariableSymbol extends VariableSymbol implements IStructSymbo
 				for(StructTypeDefMember m : std.getMembers()){
 					if (member.equals(m)){
 						Type t = member.getType();
-						return VariableSymbol.create(new OperationSymbol(getAddressSymbol(), OPERATION.ADD, new LiteralSymbol(size), sm), t);
+						return VariableSymbol.create(new OperationSymbol(null, getAddressSymbol(), OPERATION.ADD, new LiteralSymbol(size), sm), t);
 					}else{
 						size += memman.getSize(sm, m.getType());
 					}

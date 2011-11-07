@@ -21,6 +21,8 @@ import hu.e.parser.eSyntax.UNARY_OPERATOR;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.emf.ecore.EObject;
+
 /**
  * @author balazs.grill
  *
@@ -74,15 +76,18 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
 		return null;
 	}
 	
-	public OperationSymbol(ISymbol a, Object op, ISymbol b, ISymbolManager sm) throws ECompilerException {
+	private final EObject context;
+	
+	public OperationSymbol(EObject context, ISymbol a, Object op, ISymbol b, ISymbolManager sm) throws ECompilerException {
 		super();
+		this.context = context;
 		this.a = a;
 		if (a == null){
-			throw new IllegalArgumentException("The operation needs at least one argument");
+			throw new ECompilerException(context, "The operation needs at least one argument");
 		}
 		this.op = findop(op);
 		if (this.op == null){
-			throw new IllegalArgumentException("Could not find operator for "+op);
+			throw new ECompilerException(context, "Could not find operator for "+op);
 		}
 		this.b = b;
 		this.sm = sm;
@@ -170,7 +175,7 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
 	}
 	
 	@Override
-	public int getValue() {
+	public int getValue() throws ECompilerException {
 		if (isLiteral()){
 			ILiteralSymbol a = (ILiteralSymbol)this.a;
 			ILiteralSymbol b = (this.b == null)? null : (ILiteralSymbol)this.b;
@@ -206,12 +211,12 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
 			case OR:
 				return a.getValue() | b.getValue();
 			}
-			throw new IllegalArgumentException("Unknown operator: "+op);
+			throw new ECompilerException(context, "Unknown operator: "+op);
 		}else{
 			
 			
 			
-			throw new IllegalArgumentException("This is a runtime operation!");
+			throw new ECompilerException(context, "This is a runtime operation!");
 		}
 	}
 
@@ -245,8 +250,13 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
 
 	@Override
 	public String toString() {
-		if (isLiteral())
-			return ""+getValue();
+		if (isLiteral()){
+			try {
+				return ""+getValue();
+			} catch (ECompilerException e) {
+				return "VARERROR("+e.getMessage()+")";
+			}
+		}
 		return op+"("+a.toString()+(b==null?"":(", "+b.toString()))+")";
 	}
 	

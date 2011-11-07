@@ -60,7 +60,7 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 	private ISymbol resolve(XExpression5 x) throws ECompilerException{
 		ISymbol a = resolve(x.getA());
 		for(int i=0;i<x.getB().size();i++){
-			a = new OperationSymbol(a, x.getOp().get(i), resolve(x.getB().get(i)), this);
+			a = new OperationSymbol(x, a, x.getOp().get(i), resolve(x.getB().get(i)), this);
 		}
 		return a;
 	}
@@ -68,7 +68,7 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 	private ISymbol resolve(XExpression4 x) throws ECompilerException{
 		ISymbol a = resolve(x.getA());
 		for(int i=0;i<x.getB().size();i++){
-			a = new OperationSymbol(a, x.getOp().get(i), resolve(x.getB().get(i)), this);
+			a = new OperationSymbol(x, a, x.getOp().get(i), resolve(x.getB().get(i)), this);
 		}
 		return a;
 	}
@@ -76,7 +76,7 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 	private ISymbol resolve(XExpression3 x) throws ECompilerException{
 		ISymbol a = resolve(x.getA());
 		for(int i=0;i<x.getB().size();i++){
-			a = new OperationSymbol(a, x.getOp().get(i), resolve(x.getB().get(i)), this);
+			a = new OperationSymbol(x, a, x.getOp().get(i), resolve(x.getB().get(i)), this);
 		}
 		return a;
 	}
@@ -84,7 +84,7 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 	private ISymbol resolve(XExpression2 x) throws ECompilerException{
 		ISymbol a = resolve(x.getA());
 		for(int i=0;i<x.getB().size();i++){
-			a = new OperationSymbol(a, x.getOp().get(i), resolve(x.getB().get(i)), this);
+			a = new OperationSymbol(x, a, x.getOp().get(i), resolve(x.getB().get(i)), this);
 		}
 		return a;
 	}
@@ -92,7 +92,7 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 	private ISymbol resolve(XExpression1 x) throws ECompilerException{
 		ISymbol a = resolve(x.getA());
 		for(UNARY_OPERATOR op : x.getOperator()){
-			a = new OperationSymbol(a, op, null, this);
+			a = new OperationSymbol(x, a, op, null, this);
 		}
 		return a;
 	}

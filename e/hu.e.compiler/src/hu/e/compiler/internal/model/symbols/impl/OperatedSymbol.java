@@ -30,7 +30,7 @@ public class OperatedSymbol implements ILiteralSymbol, IVariableSymbol {
 	 * @see hu.e.compiler.internal.model.ISymbol#getValue()
 	 */
 	@Override
-	public int getValue() {
+	public int getValue() throws ECompilerException {
 		return ((ILiteralSymbol)symbol).getValue();
 	}
 

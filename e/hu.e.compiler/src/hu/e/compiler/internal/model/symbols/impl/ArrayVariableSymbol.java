@@ -42,7 +42,7 @@ public class ArrayVariableSymbol extends VariableSymbol implements IArraySymbol 
 			return null;
 		int asize = memman.getSize(sm, atd.getType());
 		Type t = atd.getType();
-		return VariableSymbol.create(new OperationSymbol(getAddressSymbol(), OPERATION.ADD, new LiteralSymbol(index*asize), sm), t);
+		return VariableSymbol.create(new OperationSymbol(null, getAddressSymbol(), OPERATION.ADD, new LiteralSymbol(index*asize), sm), t);
 	}
 
 }

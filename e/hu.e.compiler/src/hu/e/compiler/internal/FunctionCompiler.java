@@ -87,7 +87,12 @@ public class FunctionCompiler {
 		for(IProgramStep s : ps){
 			if (s instanceof InstructionWordInstance){
 				int wordbytes = ((InstructionWordInstance) s).getWidth();
-				int d = ((InstructionWordInstance) s).getValue();
+				int d = 0;
+				try {
+					d = ((InstructionWordInstance) s).getValue();
+				} catch (ECompilerException e) {
+					e.printStackTrace();
+				}
 				for(int j=0;j<wordbytes;j++){
 					int b = (int)(d&0xFF);
 					d = d>>8;

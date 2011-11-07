@@ -80,6 +80,11 @@ public class MemorySegment {
 				fstart = d[0]+d[1];
 			}
 		}
+		//Add free segments at the end of the list
+		if (fsize > 0){
+			newdata.add(new int[]{fstart,fsize,0});
+			fsize = 0;
+		}
 		
 		data = newdata.toArray(new int[newdata.size()][]);
 	}
