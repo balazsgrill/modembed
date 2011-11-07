@@ -21,6 +21,7 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
+import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.dialogs.ElementTreeSelectionDialog;
@@ -37,6 +38,10 @@ public class PK2ConfigurationPane extends Composite implements
 
 	private Text hexfile;
 	private Text id;
+	private Button vdd_def;
+	private Button vdd_5v;
+	private Button vdd_33v;
+	private Button vdd_ext;
 	
 	/**
 	 * @param parent
@@ -92,6 +97,23 @@ public class PK2ConfigurationPane extends Composite implements
 
 		id = new Text(this, SWT.BORDER);
 		id.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false,2,1));
+		
+		Group vddGroup = new Group(this, SWT.NONE);
+		vddGroup.setText("Target power");
+		vddGroup.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false,3,1));
+		vddGroup.setLayout(new GridLayout(1, false));
+		
+		vdd_def = new Button(vddGroup, SWT.RADIO);
+		vdd_def.setText("Powered by pickit2 with default voltage");
+		
+		vdd_5v = new Button(vddGroup, SWT.RADIO);
+		vdd_5v.setText("Powered by pickit2 with 5V");
+		
+		vdd_33v = new Button(vddGroup, SWT.RADIO);
+		vdd_33v.setText("Powered by pickit2 with 3.3V");
+		
+		vdd_ext = new Button(vddGroup, SWT.RADIO);
+		vdd_ext.setText("Powered externally");
 	}
 
 	/* (non-Javadoc)
@@ -109,6 +131,22 @@ public class PK2ConfigurationPane extends Composite implements
 	public void setProperties(Properties props) {
 		this.hexfile.setText(props.getProperty(HEXFILEPATH, ""));
 		this.id.setText(props.getProperty(PK2ID, ""));
+		
+		String vdd = props.getProperty(VDD);
+		if (vdd == null){
+			vdd_def.setSelection(true);
+		}else
+		if ("5".equals(vdd)){
+			vdd_5v.setSelection(true);
+		}else
+		if ("3.3".equals(vdd)){
+			vdd_33v.setSelection(true);
+		}else
+		if (VDD_External.equals(vdd)){
+			vdd_ext.setSelection(true);
+		}else{
+			vdd_def.setSelection(true);
+		}
 	}
 
 	/* (non-Javadoc)
@@ -119,6 +157,10 @@ public class PK2ConfigurationPane extends Composite implements
 		Properties prop = new Properties();
 		prop.put(HEXFILEPATH, hexfile.getText());
 		prop.put(PK2ID, id.getText());
+		if (vdd_def.getSelection()) prop.remove(VDD);
+		if (vdd_ext.getSelection()) prop.put(VDD,VDD_External);
+		if (vdd_33v.getSelection()) prop.put(VDD,"3.3");
+		if (vdd_5v.getSelection()) prop.put(VDD,"5");
 		return prop;
 	}
 

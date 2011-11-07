@@ -2,15 +2,15 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: MODembed Launch
 Bundle-SymbolicName: hu.modembed.ui.launch;singleton:=true
-Bundle-Version: 0.5.2
+Bundle-Version: 0.5.3
 Bundle-Activator: hu.modembed.ui.launch.LaunchPlugin
 Bundle-Vendor: Cubussapiens.hu
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.debug.core,
  org.eclipse.debug.ui,
- hu.modembed;bundle-version="0.1.3",
- hu.modembed.ui;bundle-version="0.1.3"
+ hu.modembed;bundle-version="0.5.3",
+ hu.modembed.ui;bundle-version="0.5.1"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Import-Package: org.eclipse.ui.model

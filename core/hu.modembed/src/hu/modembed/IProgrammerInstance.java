@@ -33,7 +33,7 @@ public interface IProgrammerInstance {
 	/**
 	 * Let the device start running
 	 */
-	public void start();
+	public void start(Properties props);
 	
 	/**
 	 * Stop the device

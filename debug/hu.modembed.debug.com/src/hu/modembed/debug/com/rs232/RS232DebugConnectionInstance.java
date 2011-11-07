@@ -50,7 +50,7 @@ public class RS232DebugConnectionInstance implements IProgrammerInstance {
 	 * @see hu.modembed.IProgrammerInstance#start()
 	 */
 	@Override
-	public void start() {
+	public void start(Properties props) {
 		// TODO Auto-generated method stub
 
 	}

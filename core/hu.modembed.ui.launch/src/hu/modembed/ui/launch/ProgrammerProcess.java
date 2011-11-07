@@ -3,6 +3,8 @@
  */
 package hu.modembed.ui.launch;
 
+import java.util.Properties;
+
 import hu.modembed.IProgrammerInstance;
 
 import org.eclipse.debug.core.DebugEvent;
@@ -23,8 +25,8 @@ public class ProgrammerProcess implements IProcess {
 	
 	boolean terminated = false;
 	
-	public ProgrammerProcess(IProgrammerInstance instance, ILaunch launch) {
-		instance.start();
+	public ProgrammerProcess(IProgrammerInstance instance, ILaunch launch, Properties props) {
+		instance.start(props);
 		this.instance = instance;
 		this.launch = launch;
 	}

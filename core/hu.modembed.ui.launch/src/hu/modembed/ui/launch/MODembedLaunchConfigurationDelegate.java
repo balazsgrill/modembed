@@ -73,7 +73,7 @@ public class MODembedLaunchConfigurationDelegate implements
 		
 		//Start processes
 		for(ProgrammerConfiguration pc : configs){
-			IProcess p = new ProgrammerProcess(pc.getInstance(), launch);
+			IProcess p = new ProgrammerProcess(pc.getInstance(), launch, pc.getProperties());
 			launch.addProcess(p);
 		}
 		

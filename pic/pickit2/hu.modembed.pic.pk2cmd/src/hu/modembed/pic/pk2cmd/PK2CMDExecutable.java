@@ -3,6 +3,8 @@
  */
 package hu.modembed.pic.pk2cmd;
 
+import hu.modembed.pic.pk2cmd.props.IPK2Propertes;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
@@ -22,7 +24,7 @@ import org.eclipse.core.runtime.Status;
  * @author balazs.grill
  *
  */
-public class PK2CMDExecutable {
+public class PK2CMDExecutable implements IPK2Propertes{
 
 	private final String executable;
 	private final String deviceFile;
@@ -74,10 +76,20 @@ public class PK2CMDExecutable {
 		return false;
 	}
 	
-	public boolean startDevice(String device, String pk2id){
+	public boolean startDevice(String device, String pk2id, String VDD){
 		if (device == null) device="";
 		try {
-			PK2ResultData rd = run(null,pk2id, "-P"+device, "-T");
+			List<String> params = new ArrayList<String>();
+			params.add("-P"+device);
+			params.add("-T");
+			if (VDD != null){
+				if (VDD_External.equals(VDD)){
+					params.add("-W");
+				}else{
+					params.add("-A"+VDD);
+				}
+			}
+			PK2ResultData rd = run(null,pk2id,params.toArray(new String[params.size()]));
 			return rd.success;
 		} catch (IOException e) {
 		}

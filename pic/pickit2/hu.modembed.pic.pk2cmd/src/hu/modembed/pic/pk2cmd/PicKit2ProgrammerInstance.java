@@ -79,8 +79,8 @@ public class PicKit2ProgrammerInstance implements IProgrammerInstance, IPK2Prope
 	}
 
 	@Override
-	public void start() {
-		prog.getExecutable().startDevice(getDeviceType(), id);
+	public void start(Properties props) {
+		prog.getExecutable().startDevice(getDeviceType(), id, props.getProperty(VDD));
 	}
 
 	@Override
