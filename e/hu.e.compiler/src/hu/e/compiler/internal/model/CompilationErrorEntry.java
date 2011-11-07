@@ -66,7 +66,7 @@ public class CompilationErrorEntry implements IProgramStep {
 		if (cn != null && p != null){
 			return " at "+p.getName()+" line "+cn.getStartLine();
 		}
-		return "";
+		return " (unknown source)";
 	}
 	
 	@Override
