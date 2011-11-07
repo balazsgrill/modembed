@@ -19,3 +19,7 @@ operator SET{
 	set_u16_u8,
 	set_u16_u16
 }
+
+operator EQUALS{
+	isequal_u8
+}
