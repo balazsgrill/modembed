@@ -46,7 +46,7 @@ branch_u8(var uint8 condition, const uint16 true, const uint16 false){
 /*
  * dest = (d1 == d2)
  */
-isequal_u8(var bool dest, uint8 d){
+isequal_u8(var uint8 dest, uint8 d){
 	if (isliteral(d)){
 		MOVLW(d);
 	}else{
