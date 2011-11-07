@@ -6,13 +6,13 @@
    <feature url="features/hu.e.feature_0.1.10.jar" id="hu.e.feature" version="0.1.10">
       <category name="MODembed"/>
    </feature>
-   <feature url="features/hu.modembed.core.feature_0.5.2.jar" id="hu.modembed.core.feature" version="0.5.2">
-      <category name="MODembed"/>
-   </feature>
    <feature url="features/hu.modembed.pic.feature_0.5.2.jar" id="hu.modembed.pic.feature" version="0.5.2">
       <category name="MODembed"/>
    </feature>
-   <feature url="features/hu.modembed.pic.pk2cmd.feature_1.20.5.jar" id="hu.modembed.pic.pk2cmd.feature" version="1.20.5" os="linux,win32" ws="gtk,win32" arch="x86">
+   <feature url="features/hu.modembed.core.feature_0.5.3.jar" id="hu.modembed.core.feature" version="0.5.3">
+      <category name="MODembed"/>
+   </feature>
+   <feature url="features/hu.modembed.pic.pk2cmd.feature_1.20.6.jar" id="hu.modembed.pic.pk2cmd.feature" version="1.20.6" os="linux,win32" ws="gtk,win32" arch="x86">
       <category name="MODembed"/>
    </feature>
    <category-def name="MODembed" label="MODembed">
