@@ -43,22 +43,34 @@ branch_u8(var uint8 condition, const uint16 true, const uint16 false){
 	GOTO(false);
 }
 
+branch_bool(var bool condition, const uint16 true, const uint16 false){
+	aBTFSC(addr(condition),0);
+	GOTO(true);
+	GOTO(false);
+}
+
 /*
  * dest = (d1 == d2)
  */
-isequal_u8(var uint8 dest, uint8 d){
-	if (isliteral(d)){
-		MOVLW(d);
+isequal_u8(uint8 d1, uint8 d2){
+	if (isliteral(d1)){
+		MOVLW(d1);
+		//d2 garanteed to be variable
+		aCPFSEQ(addr(d2));
 	}else{
-		aMOVF(addr(d),0);
+		if (isliteral(d2)){
+			MOVLW(d2);
+		}else{
+			aMOVF(addr(d2),0);
+		}
+		aCPFSEQ(addr(d1));
 	}
-	aCPFSEQ(addr(dest));
 	//Skipped if equal
 	GOTO(@notequal);
-	set_u8(dest,1);
+	set_u8(result,1);
 	GOTO(@end);
 	label notequal;
-	set_u8(dest,0);
+	set_u8(result,0);
 	GOTO(@end);
 	label end;
-}
+} returns bool result;

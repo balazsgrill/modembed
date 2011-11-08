@@ -6,7 +6,7 @@ import microchip.pic18;
 compilecontext bank = 0;
 
 compilecontext bank_a;
-bool assistSelectBank(address f){
+assistSelectBank(address f){
 	bank_a = 0;
 	if((f > 0x5f) && (f < 0xf60)){
 		// bank selection needed

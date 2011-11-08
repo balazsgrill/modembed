@@ -11,7 +11,8 @@ operator ADD{
 }
 
 operator BRANCH{
-	branch_u8
+	branch_u8,
+	branch_bool
 }
 
 operator SET{
