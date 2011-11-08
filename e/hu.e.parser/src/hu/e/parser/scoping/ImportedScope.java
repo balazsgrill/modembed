@@ -54,6 +54,7 @@ public class ImportedScope extends AbstractScope {
 					String name = getName(tli);
 					if (name != null && clazz.isInstance(tli)){
 						descs.add(EObjectDescription.create(name, tli));
+						descs.add(EObjectDescription.create(p.getName()+"::"+name, tli));
 					}
 				}
 			}

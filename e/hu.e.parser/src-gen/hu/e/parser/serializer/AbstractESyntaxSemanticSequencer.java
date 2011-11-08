@@ -129,12 +129,12 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 				}
 				else break;
 			case ESyntaxPackage.FUNCTION_BINARY_SECTION:
-				if(context == grammarAccess.getFunctionBinarySectionRule()) {
-					sequence_FunctionBinarySection_FunctionBinarySection(context, (FunctionBinarySection) semanticObject); 
+				if(context == grammarAccess.getBinarySectionRule()) {
+					sequence_BinarySection_FunctionBinarySection(context, (FunctionBinarySection) semanticObject); 
 					return; 
 				}
-				else if(context == grammarAccess.getBinarySectionRule()) {
-					sequence_BinarySection_FunctionBinarySection(context, (FunctionBinarySection) semanticObject); 
+				else if(context == grammarAccess.getFunctionBinarySectionRule()) {
+					sequence_FunctionBinarySection_FunctionBinarySection(context, (FunctionBinarySection) semanticObject); 
 					return; 
 				}
 				else break;
@@ -177,12 +177,12 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 				}
 				else break;
 			case ESyntaxPackage.LITERAL_VALUE:
-				if(context == grammarAccess.getLiteralValueRule()) {
-					sequence_LiteralValue_LiteralValue(context, (LiteralValue) semanticObject); 
+				if(context == grammarAccess.getWordSectionRule()) {
+					sequence_WordSection_LiteralValue(context, (LiteralValue) semanticObject); 
 					return; 
 				}
-				else if(context == grammarAccess.getWordSectionRule()) {
-					sequence_WordSection_LiteralValue(context, (LiteralValue) semanticObject); 
+				else if(context == grammarAccess.getLiteralValueRule()) {
+					sequence_LiteralValue_LiteralValue(context, (LiteralValue) semanticObject); 
 					return; 
 				}
 				else break;
@@ -227,12 +227,12 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 				}
 				else break;
 			case ESyntaxPackage.REFERENCE_BINARY_SECTION:
-				if(context == grammarAccess.getBinarySectionRule()) {
-					sequence_BinarySection_ReferenceBinarySection(context, (ReferenceBinarySection) semanticObject); 
+				if(context == grammarAccess.getReferenceBinarySectionRule()) {
+					sequence_ReferenceBinarySection_ReferenceBinarySection(context, (ReferenceBinarySection) semanticObject); 
 					return; 
 				}
-				else if(context == grammarAccess.getReferenceBinarySectionRule()) {
-					sequence_ReferenceBinarySection_ReferenceBinarySection(context, (ReferenceBinarySection) semanticObject); 
+				else if(context == grammarAccess.getBinarySectionRule()) {
+					sequence_BinarySection_ReferenceBinarySection(context, (ReferenceBinarySection) semanticObject); 
 					return; 
 				}
 				else break;
@@ -715,7 +715,7 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (name=QualifiedName uses+=[Package|QualifiedName]* items+=TopLevelItem*)
+	 *     (name=NameSpaceName uses+=[Package|NameSpaceName]* items+=TopLevelItem*)
 	 *
 	 * Features:
 	 *    name[1, 1]
@@ -859,7 +859,7 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (var=[Variable|ID] ref+=VariableRefSection*)
+	 *     (var=[Variable|QualifiedName] ref+=VariableRefSection*)
 	 *
 	 * Features:
 	 *    var[1, 1]
@@ -923,7 +923,7 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (var=[Variable|ID] ref+=VariableRefSection* size=INT shift=INT?)
+	 *     (var=[Variable|QualifiedName] ref+=VariableRefSection* size=INT shift=INT?)
 	 *
 	 * Features:
 	 *    size[1, 1]

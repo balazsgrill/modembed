@@ -22,7 +22,10 @@ public class OperationEntryStep implements IProgramStep {
 	
 	public OperationEntryStep(Operation operation, Map<Variable, ISymbol> params) {
 		Package pack = (Package)operation.eContainer();
-		this.operation = pack.getName()+"/"+operation.getName();
+		if (pack == null){
+			throw new IllegalArgumentException("Invalid operation call, no package for "+operation.getName());
+		}
+		this.operation = pack.getName()+"::"+operation.getName();
 		this.params = params;
 	}
 	

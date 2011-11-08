@@ -63,8 +63,10 @@ public class ESyntaxParser extends AbstractContentAssistParser {
 					put(grammarAccess.getTopLevelItemAccess().getGroup_4(), "rule__TopLevelItem__Group_4__0");
 					put(grammarAccess.getTopLevelItemAccess().getGroup_5(), "rule__TopLevelItem__Group_5__0");
 					put(grammarAccess.getTopLevelItemAccess().getGroup_6(), "rule__TopLevelItem__Group_6__0");
+					put(grammarAccess.getNameSpaceNameAccess().getGroup(), "rule__NameSpaceName__Group__0");
+					put(grammarAccess.getNameSpaceNameAccess().getGroup_1(), "rule__NameSpaceName__Group_1__0");
 					put(grammarAccess.getQualifiedNameAccess().getGroup(), "rule__QualifiedName__Group__0");
-					put(grammarAccess.getQualifiedNameAccess().getGroup_1(), "rule__QualifiedName__Group_1__0");
+					put(grammarAccess.getQualifiedNameAccess().getGroup_0(), "rule__QualifiedName__Group_0__0");
 					put(grammarAccess.getTypeAccess().getGroup(), "rule__Type__Group__0");
 					put(grammarAccess.getDataTypeDefAccess().getGroup(), "rule__DataTypeDef__Group__0");
 					put(grammarAccess.getArrayTypeDefAccess().getGroup(), "rule__ArrayTypeDef__Group__0");

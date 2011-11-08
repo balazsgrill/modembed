@@ -49,6 +49,7 @@ public class CompilerBuilderParticipant implements IXtextBuilderParticipant {
 						try{
 							compiler.compile(res, (IFile)resource);
 						}catch (final Exception e) {
+							e.printStackTrace();
 							Display.getDefault().asyncExec(new Runnable() {
 								
 								@Override

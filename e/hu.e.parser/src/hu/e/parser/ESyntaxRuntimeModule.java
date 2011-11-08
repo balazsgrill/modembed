@@ -3,6 +3,9 @@
  */
 package hu.e.parser;
 
+import hu.e.parser.scoping.EQualifiedNameConverter;
+
+import org.eclipse.xtext.naming.IQualifiedNameConverter;
 import org.eclipse.xtext.resource.IContainer.Manager;
 import org.eclipse.xtext.resource.containers.StateBasedContainerManager;
 
@@ -14,6 +17,10 @@ public class ESyntaxRuntimeModule extends hu.e.parser.AbstractESyntaxRuntimeModu
 	@Override
 	public Class<? extends Manager> bindIContainer$Manager() {
 		return StateBasedContainerManager.class;
+	}
+	
+	public Class<? extends IQualifiedNameConverter> bindIQualifiedNameConverter(){
+		return EQualifiedNameConverter.class;
 	}
 	
 }
