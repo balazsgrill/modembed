@@ -16,6 +16,15 @@ add_u8(var uint8 dest, uint8 v){
 	aADDWF(addr(dest));
 }
 
+subtract_u8(var uint8 dest, uint8 v){
+	if(isliteral(v)){
+		MOVLW(v);
+	}else{
+		aMOVF(addr(v),0);
+	}
+	aSUBWF(addr(dest));
+}
+
 /*
  * dest = v
  */
