@@ -136,11 +136,11 @@ OperationCallParameter:
 ;
 
 Operation:
-	(returntype=[Type|QualifiedName])? name=ID '('
+	name=ID '('
 		(params+=ParameterVariable (',' params+=ParameterVariable)*)?
 	')''{'
 		block=OperationBlock
-	'}' ('returns' return=XExpression ';')?
+	'}' ('returns' (return=XExpression | returnvar=Variable) ';')?
 ;
 
 OperationBlock:

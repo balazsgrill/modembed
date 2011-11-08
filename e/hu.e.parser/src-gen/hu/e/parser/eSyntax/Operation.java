@@ -2,6 +2,7 @@
  * <copyright>
  * </copyright>
  *
+
  */
 package hu.e.parser.eSyntax;
 
@@ -15,11 +16,11 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link hu.e.parser.eSyntax.Operation#getReturntype <em>Returntype</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.Operation#getName <em>Name</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.Operation#getParams <em>Params</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.Operation#getBlock <em>Block</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.Operation#getReturn <em>Return</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.Operation#getReturnvar <em>Returnvar</em>}</li>
  * </ul>
  * </p>
  *
@@ -29,32 +30,6 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface Operation extends TopLevelItem
 {
-  /**
-   * Returns the value of the '<em><b>Returntype</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Returntype</em>' reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Returntype</em>' reference.
-   * @see #setReturntype(Type)
-   * @see hu.e.parser.eSyntax.ESyntaxPackage#getOperation_Returntype()
-   * @model
-   * @generated
-   */
-  Type getReturntype();
-
-  /**
-   * Sets the value of the '{@link hu.e.parser.eSyntax.Operation#getReturntype <em>Returntype</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Returntype</em>' reference.
-   * @see #getReturntype()
-   * @generated
-   */
-  void setReturntype(Type value);
-
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
@@ -148,5 +123,31 @@ public interface Operation extends TopLevelItem
    * @generated
    */
   void setReturn(XExpression value);
+
+  /**
+   * Returns the value of the '<em><b>Returnvar</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Returnvar</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Returnvar</em>' containment reference.
+   * @see #setReturnvar(Variable)
+   * @see hu.e.parser.eSyntax.ESyntaxPackage#getOperation_Returnvar()
+   * @model containment="true"
+   * @generated
+   */
+  Variable getReturnvar();
+
+  /**
+   * Sets the value of the '{@link hu.e.parser.eSyntax.Operation#getReturnvar <em>Returnvar</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Returnvar</em>' containment reference.
+   * @see #getReturnvar()
+   * @generated
+   */
+  void setReturnvar(Variable value);
 
 } // Operation

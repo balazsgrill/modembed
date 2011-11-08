@@ -105,12 +105,12 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 				}
 				else break;
 			case ESyntaxPackage.CONSTANT_BINARY_SECTION:
-				if(context == grammarAccess.getConstantBinarySectionRule()) {
-					sequence_ConstantBinarySection_ConstantBinarySection(context, (ConstantBinarySection) semanticObject); 
+				if(context == grammarAccess.getBinarySectionRule()) {
+					sequence_BinarySection_ConstantBinarySection(context, (ConstantBinarySection) semanticObject); 
 					return; 
 				}
-				else if(context == grammarAccess.getBinarySectionRule()) {
-					sequence_BinarySection_ConstantBinarySection(context, (ConstantBinarySection) semanticObject); 
+				else if(context == grammarAccess.getConstantBinarySectionRule()) {
+					sequence_ConstantBinarySection_ConstantBinarySection(context, (ConstantBinarySection) semanticObject); 
 					return; 
 				}
 				else break;
@@ -129,12 +129,12 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 				}
 				else break;
 			case ESyntaxPackage.FUNCTION_BINARY_SECTION:
-				if(context == grammarAccess.getBinarySectionRule()) {
-					sequence_BinarySection_FunctionBinarySection(context, (FunctionBinarySection) semanticObject); 
+				if(context == grammarAccess.getFunctionBinarySectionRule()) {
+					sequence_FunctionBinarySection_FunctionBinarySection(context, (FunctionBinarySection) semanticObject); 
 					return; 
 				}
-				else if(context == grammarAccess.getFunctionBinarySectionRule()) {
-					sequence_FunctionBinarySection_FunctionBinarySection(context, (FunctionBinarySection) semanticObject); 
+				else if(context == grammarAccess.getBinarySectionRule()) {
+					sequence_BinarySection_FunctionBinarySection(context, (FunctionBinarySection) semanticObject); 
 					return; 
 				}
 				else break;
@@ -159,13 +159,13 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 				}
 				else break;
 			case ESyntaxPackage.LABEL_REFERENCE:
-				if(context == grammarAccess.getWordSectionRule()) {
-					sequence_WordSection_LabelReference(context, (LabelReference) semanticObject); 
-					return; 
-				}
-				else if(context == grammarAccess.getLabelReferenceRule() ||
+				if(context == grammarAccess.getLabelReferenceRule() ||
 				   context == grammarAccess.getOperationCallParameterRule()) {
 					sequence_LabelReference_LabelReference(context, (LabelReference) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getWordSectionRule()) {
+					sequence_WordSection_LabelReference(context, (LabelReference) semanticObject); 
 					return; 
 				}
 				else break;
@@ -227,12 +227,12 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 				}
 				else break;
 			case ESyntaxPackage.REFERENCE_BINARY_SECTION:
-				if(context == grammarAccess.getReferenceBinarySectionRule()) {
-					sequence_ReferenceBinarySection_ReferenceBinarySection(context, (ReferenceBinarySection) semanticObject); 
+				if(context == grammarAccess.getBinarySectionRule()) {
+					sequence_BinarySection_ReferenceBinarySection(context, (ReferenceBinarySection) semanticObject); 
 					return; 
 				}
-				else if(context == grammarAccess.getBinarySectionRule()) {
-					sequence_BinarySection_ReferenceBinarySection(context, (ReferenceBinarySection) semanticObject); 
+				else if(context == grammarAccess.getReferenceBinarySectionRule()) {
+					sequence_ReferenceBinarySection_ReferenceBinarySection(context, (ReferenceBinarySection) semanticObject); 
 					return; 
 				}
 				else break;
@@ -684,14 +684,16 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (returntype=[Type|QualifiedName]? name=ID (params+=ParameterVariable params+=ParameterVariable*)? block=OperationBlock return=XExpression?)
+	 *     (name=ID (params+=ParameterVariable params+=ParameterVariable*)? block=OperationBlock (return=XExpression | returnvar=Variable)?)
 	 *
 	 * Features:
-	 *    returntype[0, 1]
 	 *    name[1, 1]
 	 *    params[0, *]
 	 *    block[1, 1]
 	 *    return[0, 1]
+	 *         EXCLUDE_IF_SET returnvar
+	 *    returnvar[0, 1]
+	 *         EXCLUDE_IF_SET return
 	 */
 	protected void sequence_Operation_Operation(EObject context, Operation semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

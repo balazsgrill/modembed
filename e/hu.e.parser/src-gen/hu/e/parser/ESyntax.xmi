@@ -520,14 +520,6 @@
         <classifier xsi:type="ecore:EClass" href="http://www.e.hu/parser/ESyntax#//Operation"/>
       </type>
       <alternatives xsi:type="xtext:Group">
-        <elements xsi:type="xtext:Assignment" cardinality="?" feature="returntype" operator="=">
-          <terminal xsi:type="xtext:CrossReference">
-            <type metamodel="/0/@metamodelDeclarations.1">
-              <classifier xsi:type="ecore:EClass" href="http://www.e.hu/parser/ESyntax#//Type"/>
-            </type>
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.2"/>
-          </terminal>
-        </elements>
         <elements xsi:type="xtext:Assignment" feature="name" operator="=">
           <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
         </elements>
@@ -551,8 +543,13 @@
         <elements xsi:type="xtext:Keyword" value="}"/>
         <elements xsi:type="xtext:Group" cardinality="?">
           <elements xsi:type="xtext:Keyword" value="returns"/>
-          <elements xsi:type="xtext:Assignment" feature="return" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.42"/>
+          <elements xsi:type="xtext:Alternatives">
+            <elements xsi:type="xtext:Assignment" feature="return" operator="=">
+              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.42"/>
+            </elements>
+            <elements xsi:type="xtext:Assignment" feature="returnvar" operator="=">
+              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.22"/>
+            </elements>
           </elements>
           <elements xsi:type="xtext:Keyword" value=";"/>
         </elements>

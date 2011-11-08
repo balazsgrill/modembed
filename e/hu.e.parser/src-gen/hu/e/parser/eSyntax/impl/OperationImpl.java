@@ -2,6 +2,7 @@
  * <copyright>
  * </copyright>
  *
+
  */
 package hu.e.parser.eSyntax.impl;
 
@@ -9,7 +10,7 @@ import hu.e.parser.eSyntax.ESyntaxPackage;
 import hu.e.parser.eSyntax.Operation;
 import hu.e.parser.eSyntax.OperationBlock;
 import hu.e.parser.eSyntax.ParameterVariable;
-import hu.e.parser.eSyntax.Type;
+import hu.e.parser.eSyntax.Variable;
 import hu.e.parser.eSyntax.XExpression;
 
 import java.util.Collection;
@@ -34,11 +35,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.e.parser.eSyntax.impl.OperationImpl#getReturntype <em>Returntype</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.impl.OperationImpl#getName <em>Name</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.impl.OperationImpl#getParams <em>Params</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.impl.OperationImpl#getBlock <em>Block</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.impl.OperationImpl#getReturn <em>Return</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.impl.OperationImpl#getReturnvar <em>Returnvar</em>}</li>
  * </ul>
  * </p>
  *
@@ -46,16 +47,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class OperationImpl extends TopLevelItemImpl implements Operation
 {
-  /**
-   * The cached value of the '{@link #getReturntype() <em>Returntype</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getReturntype()
-   * @generated
-   * @ordered
-   */
-  protected Type returntype;
-
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -107,6 +98,16 @@ public class OperationImpl extends TopLevelItemImpl implements Operation
   protected XExpression return_;
 
   /**
+   * The cached value of the '{@link #getReturnvar() <em>Returnvar</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getReturnvar()
+   * @generated
+   * @ordered
+   */
+  protected Variable returnvar;
+
+  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -125,49 +126,6 @@ public class OperationImpl extends TopLevelItemImpl implements Operation
   protected EClass eStaticClass()
   {
     return ESyntaxPackage.Literals.OPERATION;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Type getReturntype()
-  {
-    if (returntype != null && returntype.eIsProxy())
-    {
-      InternalEObject oldReturntype = (InternalEObject)returntype;
-      returntype = (Type)eResolveProxy(oldReturntype);
-      if (returntype != oldReturntype)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ESyntaxPackage.OPERATION__RETURNTYPE, oldReturntype, returntype));
-      }
-    }
-    return returntype;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Type basicGetReturntype()
-  {
-    return returntype;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setReturntype(Type newReturntype)
-  {
-    Type oldReturntype = returntype;
-    returntype = newReturntype;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.OPERATION__RETURNTYPE, oldReturntype, returntype));
   }
 
   /**
@@ -308,6 +266,54 @@ public class OperationImpl extends TopLevelItemImpl implements Operation
    * <!-- end-user-doc -->
    * @generated
    */
+  public Variable getReturnvar()
+  {
+    return returnvar;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetReturnvar(Variable newReturnvar, NotificationChain msgs)
+  {
+    Variable oldReturnvar = returnvar;
+    returnvar = newReturnvar;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ESyntaxPackage.OPERATION__RETURNVAR, oldReturnvar, newReturnvar);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setReturnvar(Variable newReturnvar)
+  {
+    if (newReturnvar != returnvar)
+    {
+      NotificationChain msgs = null;
+      if (returnvar != null)
+        msgs = ((InternalEObject)returnvar).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ESyntaxPackage.OPERATION__RETURNVAR, null, msgs);
+      if (newReturnvar != null)
+        msgs = ((InternalEObject)newReturnvar).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ESyntaxPackage.OPERATION__RETURNVAR, null, msgs);
+      msgs = basicSetReturnvar(newReturnvar, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.OPERATION__RETURNVAR, newReturnvar, newReturnvar));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -319,6 +325,8 @@ public class OperationImpl extends TopLevelItemImpl implements Operation
         return basicSetBlock(null, msgs);
       case ESyntaxPackage.OPERATION__RETURN:
         return basicSetReturn(null, msgs);
+      case ESyntaxPackage.OPERATION__RETURNVAR:
+        return basicSetReturnvar(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -333,9 +341,6 @@ public class OperationImpl extends TopLevelItemImpl implements Operation
   {
     switch (featureID)
     {
-      case ESyntaxPackage.OPERATION__RETURNTYPE:
-        if (resolve) return getReturntype();
-        return basicGetReturntype();
       case ESyntaxPackage.OPERATION__NAME:
         return getName();
       case ESyntaxPackage.OPERATION__PARAMS:
@@ -344,6 +349,8 @@ public class OperationImpl extends TopLevelItemImpl implements Operation
         return getBlock();
       case ESyntaxPackage.OPERATION__RETURN:
         return getReturn();
+      case ESyntaxPackage.OPERATION__RETURNVAR:
+        return getReturnvar();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -359,9 +366,6 @@ public class OperationImpl extends TopLevelItemImpl implements Operation
   {
     switch (featureID)
     {
-      case ESyntaxPackage.OPERATION__RETURNTYPE:
-        setReturntype((Type)newValue);
-        return;
       case ESyntaxPackage.OPERATION__NAME:
         setName((String)newValue);
         return;
@@ -374,6 +378,9 @@ public class OperationImpl extends TopLevelItemImpl implements Operation
         return;
       case ESyntaxPackage.OPERATION__RETURN:
         setReturn((XExpression)newValue);
+        return;
+      case ESyntaxPackage.OPERATION__RETURNVAR:
+        setReturnvar((Variable)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -389,9 +396,6 @@ public class OperationImpl extends TopLevelItemImpl implements Operation
   {
     switch (featureID)
     {
-      case ESyntaxPackage.OPERATION__RETURNTYPE:
-        setReturntype((Type)null);
-        return;
       case ESyntaxPackage.OPERATION__NAME:
         setName(NAME_EDEFAULT);
         return;
@@ -403,6 +407,9 @@ public class OperationImpl extends TopLevelItemImpl implements Operation
         return;
       case ESyntaxPackage.OPERATION__RETURN:
         setReturn((XExpression)null);
+        return;
+      case ESyntaxPackage.OPERATION__RETURNVAR:
+        setReturnvar((Variable)null);
         return;
     }
     super.eUnset(featureID);
@@ -418,8 +425,6 @@ public class OperationImpl extends TopLevelItemImpl implements Operation
   {
     switch (featureID)
     {
-      case ESyntaxPackage.OPERATION__RETURNTYPE:
-        return returntype != null;
       case ESyntaxPackage.OPERATION__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case ESyntaxPackage.OPERATION__PARAMS:
@@ -428,6 +433,8 @@ public class OperationImpl extends TopLevelItemImpl implements Operation
         return block != null;
       case ESyntaxPackage.OPERATION__RETURN:
         return return_ != null;
+      case ESyntaxPackage.OPERATION__RETURNVAR:
+        return returnvar != null;
     }
     return super.eIsSet(featureID);
   }

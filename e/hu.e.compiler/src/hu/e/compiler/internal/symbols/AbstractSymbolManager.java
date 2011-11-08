@@ -17,8 +17,10 @@ import hu.e.compiler.internal.model.symbols.impl.LiteralSymbol;
 import hu.e.compiler.internal.model.symbols.impl.OperatedSymbol;
 import hu.e.compiler.internal.model.symbols.impl.OperationSymbol;
 import hu.e.compiler.internal.model.symbols.impl.StructLiteralSymbol;
+import hu.e.compiler.internal.model.symbols.impl.VariableSymbol;
 import hu.e.parser.eSyntax.ArrayRef;
 import hu.e.parser.eSyntax.ArrayTypeDef;
+import hu.e.parser.eSyntax.Operation;
 import hu.e.parser.eSyntax.OperationCall;
 import hu.e.parser.eSyntax.OperationRole;
 import hu.e.parser.eSyntax.StructRef;
@@ -207,13 +209,35 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 	}
 	
 	@Override
-	public List<IProgramStep> executeOperator(OperationRole role, EObject context,
+	public OperatedSymbol executeOperator(OperationRole role, EObject context,
 			ISymbol... symbols) throws ECompilerException {
 		OperationFinder opfinder = getOpFinder();
 		OperationCompiler oc = opfinder.getOperationCompiler(role, symbols);
 		if (oc == null) 
 			throw new ECompilerException(context, "Cannot find "+role+" operator!");
-		return oc.compile(this);
+		return new OperatedSymbol(oc.compile(this),oc.getReturns(this));
+	}
+	
+	@Override
+	public IVariableSymbol createBuffer(Type type) throws ECompilerException {
+		int addr = this.getVariableManager().allocate(this, type);
+		IVariableSymbol v = VariableSymbol.create(new LiteralSymbol(addr), type);
+		return v;
+	}
+	
+	@Override
+	public Type getResultType(OperationRole role, ISymbol... symbols) throws ECompilerException {
+		OperationFinder opfinder = getOpFinder();
+		Operation op = opfinder.getOperation(role, symbols);
+		if (op != null){
+			if (op.getReturn() != null){
+				return resolve(op.getReturn()).getType();
+			}
+			if (op.getReturnvar() != null){
+				return op.getReturnvar().getType();
+			}
+		}
+		return null;
 	}
 	
 }

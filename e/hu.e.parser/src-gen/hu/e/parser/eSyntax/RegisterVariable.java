@@ -2,6 +2,7 @@
  * <copyright>
  * </copyright>
  *
+
  */
 package hu.e.parser.eSyntax;
 

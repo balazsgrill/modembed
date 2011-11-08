@@ -26,6 +26,10 @@ public class OperatedSymbol implements ILiteralSymbol, IVariableSymbol {
 		this.symbol = symbol;
 	}
 	
+	public ISymbol getSymbol() {
+		return symbol;
+	}
+	
 	/* (non-Javadoc)
 	 * @see hu.e.compiler.internal.model.ISymbol#getValue()
 	 */

@@ -139,16 +139,16 @@ public class BlockCompiler {
 
 						if (falseBlock == null){
 							result.addAll(sm.executeOperator(OperationRole.BRANCH, step, v, 
-									new CodeAddressSymbol(trueLabel), new CodeAddressSymbol(endLabel)));
+									new CodeAddressSymbol(trueLabel), new CodeAddressSymbol(endLabel)).getSteps());
 							result.add(trueLabel);
 							result.addAll(new BlockCompiler(trueBlock).compile(sm));
 							result.add(endLabel);
 						}else{
 							result.addAll(sm.executeOperator(OperationRole.BRANCH,step, v, 
-									new CodeAddressSymbol(trueLabel), new CodeAddressSymbol(falseLabel)));
+									new CodeAddressSymbol(trueLabel), new CodeAddressSymbol(falseLabel)).getSteps());
 							result.add(trueLabel);
 							result.addAll(new BlockCompiler(trueBlock).compile(sm));
-							result.addAll(sm.executeOperator(OperationRole.UC_GOTO,step, new CodeAddressSymbol(endLabel)));
+							result.addAll(sm.executeOperator(OperationRole.UC_GOTO,step, new CodeAddressSymbol(endLabel)).getSteps());
 							result.add(falseLabel);
 							result.addAll(new BlockCompiler(falseBlock).compile(sm));
 							result.add(endLabel);

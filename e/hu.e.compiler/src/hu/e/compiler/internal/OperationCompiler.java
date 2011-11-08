@@ -13,6 +13,7 @@ import hu.e.compiler.internal.model.OperationEntryStep;
 import hu.e.compiler.internal.model.OperationExitStep;
 import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.compiler.internal.model.symbols.impl.LabelSymbol;
+import hu.e.compiler.internal.model.symbols.impl.NullSymbol;
 import hu.e.compiler.internal.symbols.AbstractSymbolManager;
 import hu.e.parser.eSyntax.Operation;
 import hu.e.parser.eSyntax.OperationBlock;
@@ -85,6 +86,16 @@ public class OperationCompiler {
 	
 	public List<IProgramStep> compile(final ISymbolManager sm){
 		List<IProgramStep> steps = new ArrayList<IProgramStep>();
+		if(operation.getReturnvar() != null){
+			//needs a result buffer
+			try {
+				sm.getVariableManager().define(sm, operation.getReturnvar());
+			} catch (ECompilerException e) {
+				steps.add(CompilationErrorEntry.create(e));
+			}
+		}
+		
+		
 		steps.add(new OperationEntryStep(operation, parameters));
 		OperationBlock block = operation.getBlock();
 		if (block == null){
@@ -100,7 +111,10 @@ public class OperationCompiler {
 		if (operation.getReturn() != null){
 			return new WrappedSymbolManager(sm).resolve(operation.getReturn());
 		}
-		throw new ECompilerException(operation, "Return value assumed to be not null!");
+		if (operation.getReturnvar() != null){
+			return sm.getSymbol(operation.getReturnvar());
+		}
+		return new NullSymbol();
 	}
 	
 }

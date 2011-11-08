@@ -2,6 +2,7 @@
  * <copyright>
  * </copyright>
  *
+
  */
 package hu.e.parser.eSyntax.impl;
 
@@ -1038,19 +1039,9 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getOperation_Returntype()
-  {
-    return (EReference)operationEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EAttribute getOperation_Name()
   {
-    return (EAttribute)operationEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)operationEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1060,7 +1051,7 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    */
   public EReference getOperation_Params()
   {
-    return (EReference)operationEClass.getEStructuralFeatures().get(2);
+    return (EReference)operationEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1070,7 +1061,7 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    */
   public EReference getOperation_Block()
   {
-    return (EReference)operationEClass.getEStructuralFeatures().get(3);
+    return (EReference)operationEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1079,6 +1070,16 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * @generated
    */
   public EReference getOperation_Return()
+  {
+    return (EReference)operationEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getOperation_Returnvar()
   {
     return (EReference)operationEClass.getEStructuralFeatures().get(4);
   }
@@ -2012,11 +2013,11 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     operationCallParameterEClass = createEClass(OPERATION_CALL_PARAMETER);
 
     operationEClass = createEClass(OPERATION);
-    createEReference(operationEClass, OPERATION__RETURNTYPE);
     createEAttribute(operationEClass, OPERATION__NAME);
     createEReference(operationEClass, OPERATION__PARAMS);
     createEReference(operationEClass, OPERATION__BLOCK);
     createEReference(operationEClass, OPERATION__RETURN);
+    createEReference(operationEClass, OPERATION__RETURNVAR);
 
     operationBlockEClass = createEClass(OPERATION_BLOCK);
     createEReference(operationBlockEClass, OPERATION_BLOCK__STEPS);
@@ -2269,11 +2270,11 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     initEClass(operationCallParameterEClass, OperationCallParameter.class, "OperationCallParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(operationEClass, Operation.class, "Operation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getOperation_Returntype(), this.getType(), null, "returntype", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getOperation_Name(), ecorePackage.getEString(), "name", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getOperation_Params(), this.getParameterVariable(), null, "params", null, 0, -1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getOperation_Block(), this.getOperationBlock(), null, "block", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getOperation_Return(), this.getXExpression(), null, "return", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getOperation_Returnvar(), this.getVariable(), null, "returnvar", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(operationBlockEClass, OperationBlock.class, "OperationBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getOperationBlock_Steps(), this.getOperationStep(), null, "steps", null, 0, -1, OperationBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

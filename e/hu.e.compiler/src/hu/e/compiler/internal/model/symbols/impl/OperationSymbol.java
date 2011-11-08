@@ -120,8 +120,10 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
 		return v;
 	}
 	
-	private void execute(OperationRole role, ISymbol...symbols) throws ECompilerException{
-		steps.addAll(sm.executeOperator(role,sm.getOpFinder().getElement(), symbols));
+	private ISymbol execute(OperationRole role, ISymbol...symbols) throws ECompilerException{
+		OperatedSymbol os = sm.executeOperator(role,sm.getOpFinder().getElement(), symbols);
+		steps.addAll(os.getSteps());
+		return os.getSymbol();
 	}
 	
 	private OperationRole getRole(OPERATION op) throws ECompilerException{
@@ -145,7 +147,6 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
 	
 	private void compile() throws ECompilerException{
 		Type type = getType();
-		result = createBuffer(type);
 		
 		sm.getVariableManager().startBlock();
 		switch(op){
@@ -154,18 +155,21 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
 		case MINUS:
 		case MOD:
 		case DIV:
+		case MUL:
+		case OR:
+			result = createBuffer(type);
+			execute(OperationRole.SET, result,a);
+			execute(getRole(op), result,b);
+			break;
+		
 		case GT:
 		case GTE:
 		case LT:
 		case LTE:
-		case MUL:
 		case NOTEQUALS:
 		case EQUALS:
-		case OR:
-			execute(OperationRole.SET, result,a);
-			execute(getRole(op), result,b);
+			result = (IVariableSymbol)execute(getRole(op), a,b);
 			break;
-			
 			
 		default:
 			throw new ECompilerException(sm.getOpFinder().getElement(), "Runtime "+op+" operator is not yet supported.");
@@ -237,14 +241,35 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
 
 	@Override
 	public Type getType() throws ECompilerException {
-		if (b != null){
-			int sizeb = 0;
-			int sizea = sm.getVariableManager().getMemoryManager().getSize(sm, a.getType());
-			sizeb = sm.getVariableManager().getMemoryManager().getSize(sm, b.getType());
-			return sizea > sizeb ? a.getType() : b.getType();
-		}else{
-			return a.getType();
+		switch(op){
+		case ADD:
+		case AND:
+		case MINUS:
+		case MOD:
+		case DIV:
+		case MUL:
+		case OR:
+			if (b != null){
+				int sizeb = 0;
+				int sizea = sm.getVariableManager().getMemoryManager().getSize(sm, a.getType());
+				sizeb = sm.getVariableManager().getMemoryManager().getSize(sm, b.getType());
+				return sizea > sizeb ? a.getType() : b.getType();
+			}else{
+				return a.getType();
+			}
+		
+		case GT:
+		case GTE:
+		case LT:
+		case LTE:
+		case NOTEQUALS:
+		case EQUALS:
+			return sm.getResultType(getRole(op), a,b);
+			
+		default:
+			return null;
 		}
+		
 		
 	}
 

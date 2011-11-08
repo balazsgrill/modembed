@@ -2,6 +2,7 @@
  * <copyright>
  * </copyright>
  *
+
  */
 package hu.e.parser.eSyntax;
 
@@ -758,22 +759,13 @@ public interface ESyntaxPackage extends EPackage
   int OPERATION = 21;
 
   /**
-   * The feature id for the '<em><b>Returntype</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OPERATION__RETURNTYPE = TOP_LEVEL_ITEM_FEATURE_COUNT + 0;
-
-  /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int OPERATION__NAME = TOP_LEVEL_ITEM_FEATURE_COUNT + 1;
+  int OPERATION__NAME = TOP_LEVEL_ITEM_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Params</b></em>' containment reference list.
@@ -782,7 +774,7 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OPERATION__PARAMS = TOP_LEVEL_ITEM_FEATURE_COUNT + 2;
+  int OPERATION__PARAMS = TOP_LEVEL_ITEM_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Block</b></em>' containment reference.
@@ -791,7 +783,7 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OPERATION__BLOCK = TOP_LEVEL_ITEM_FEATURE_COUNT + 3;
+  int OPERATION__BLOCK = TOP_LEVEL_ITEM_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Return</b></em>' containment reference.
@@ -800,7 +792,16 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OPERATION__RETURN = TOP_LEVEL_ITEM_FEATURE_COUNT + 4;
+  int OPERATION__RETURN = TOP_LEVEL_ITEM_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Returnvar</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERATION__RETURNVAR = TOP_LEVEL_ITEM_FEATURE_COUNT + 4;
 
   /**
    * The number of structural features of the '<em>Operation</em>' class.
@@ -2436,17 +2437,6 @@ public interface ESyntaxPackage extends EPackage
   EClass getOperation();
 
   /**
-   * Returns the meta object for the reference '{@link hu.e.parser.eSyntax.Operation#getReturntype <em>Returntype</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Returntype</em>'.
-   * @see hu.e.parser.eSyntax.Operation#getReturntype()
-   * @see #getOperation()
-   * @generated
-   */
-  EReference getOperation_Returntype();
-
-  /**
    * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.Operation#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2489,6 +2479,17 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    */
   EReference getOperation_Return();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.e.parser.eSyntax.Operation#getReturnvar <em>Returnvar</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Returnvar</em>'.
+   * @see hu.e.parser.eSyntax.Operation#getReturnvar()
+   * @see #getOperation()
+   * @generated
+   */
+  EReference getOperation_Returnvar();
 
   /**
    * Returns the meta object for class '{@link hu.e.parser.eSyntax.OperationBlock <em>Operation Block</em>}'.
@@ -3818,14 +3819,6 @@ public interface ESyntaxPackage extends EPackage
     EClass OPERATION = eINSTANCE.getOperation();
 
     /**
-     * The meta object literal for the '<em><b>Returntype</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference OPERATION__RETURNTYPE = eINSTANCE.getOperation_Returntype();
-
-    /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3856,6 +3849,14 @@ public interface ESyntaxPackage extends EPackage
      * @generated
      */
     EReference OPERATION__RETURN = eINSTANCE.getOperation_Return();
+
+    /**
+     * The meta object literal for the '<em><b>Returnvar</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OPERATION__RETURNVAR = eINSTANCE.getOperation_Returnvar();
 
     /**
      * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.OperationBlockImpl <em>Operation Block</em>}' class.
