@@ -73,6 +73,11 @@ public class MODembedCore extends Plugin {
 		return uri;
 	}
 	
+	/**
+	 * Collect all plug-ins on which the given plug-in depends 
+	 * @param name
+	 * @return
+	 */
 	public static List<String> collectAllDependencies(String name){
 		Set<String> all = new HashSet<String>();
 		
