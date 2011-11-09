@@ -1,20 +1,19 @@
 /**
  * 
  */
-package hu.modembed.pic.simulator.baseline;
+package hu.modembed.pic.simulator.pic18.instructions;
 
 import hu.modembed.pic.simulator.IProgramContext;
-import hu.modembed.pic.simulator.generic.AbstractOperation;
 import hu.modembed.pic.simulator.generic.IRegisters;
 
 /**
  * @author balazs.grill
  *
  */
-public abstract class ArithmeticOperation extends AbstractOperation implements IRegisters{
+public abstract class AbstractByteOrientedOperation extends AbstractPic18Operation implements IRegisters{
 	
-	public ArithmeticOperation(String mask) {
-		super(mask);
+	public AbstractByteOrientedOperation(String maskprefix) {
+		super(maskprefix+"daffffffff");
 	}
 
 	protected abstract long calculate(long w, long fv);
@@ -24,11 +23,13 @@ public abstract class ArithmeticOperation extends AbstractOperation implements I
 	 */
 	@Override
 	public long execute(long op, long addr, IProgramContext context) {
-		boolean d = true;
-		if (mask.contains("d")) d = extract(op, 'd') != 0;
+		boolean d = extract(op, 'd') != 0;
 		long f = extract(op, 'f');
+		long a = extract(op, 'a');
 		
-		long w = 0xFF&calculate(context.getRegisterValue(W), context.getRAM().getValue(f));
+		long address = resolveAddress(f, a, context);
+		
+		long w = 0xFF&calculate(context.getRegisterValue(W), context.getRAM().getValue(address));
 		
 		if (d){
 			context.getRAM().setValue(f, w);

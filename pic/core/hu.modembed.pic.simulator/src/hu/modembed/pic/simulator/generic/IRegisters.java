@@ -1,7 +1,7 @@
 /**
  * 
  */
-package hu.modembed.pic.simulator.baseline;
+package hu.modembed.pic.simulator.generic;
 
 /**
  * @author balazs.grill

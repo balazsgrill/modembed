@@ -8,6 +8,7 @@ import hu.modembed.pic.simulator.IMemory;
 import hu.modembed.pic.simulator.IProgramContext;
 import hu.modembed.pic.simulator.generic.AbstractOperation;
 import hu.modembed.pic.simulator.generic.IOperation;
+import hu.modembed.pic.simulator.generic.IRegisters;
 
 /**
  * @author balazs.grill

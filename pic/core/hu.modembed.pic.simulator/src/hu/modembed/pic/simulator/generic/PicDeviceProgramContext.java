@@ -6,7 +6,6 @@ package hu.modembed.pic.simulator.generic;
 import hu.modembed.pic.simulator.IMemory;
 import hu.modembed.pic.simulator.IPeripheral;
 import hu.modembed.pic.simulator.IProgramContext;
-import hu.modembed.pic.simulator.baseline.IRegisters;
 import hu.modembed.pic.simulator.generic.ram.MappedRAM;
 
 /**
