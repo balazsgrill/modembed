@@ -36,7 +36,6 @@ public class PluginDependencyScope extends AbstractScope {
 		super(parent, false);
 		String projname = context.trimFragment().segment(1);
 		List<String> deps = MODembedCore.collectAllDependencies(projname);
-		deps.remove(projname);
 		
 		for(String d : deps){
 			try {

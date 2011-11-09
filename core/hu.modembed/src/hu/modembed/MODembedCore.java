@@ -1,7 +1,5 @@
 package hu.modembed;
 
-import java.io.IOException;
-import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -17,7 +15,6 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IResourceVisitor;
 import org.eclipse.core.runtime.CoreException;
-import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Plugin;
 import org.eclipse.emf.common.util.URI;
@@ -129,20 +126,12 @@ public class MODembedCore extends Plugin {
 		}else{
 			Bundle b = Platform.getBundle(plugin.getId());
 			Enumeration<URL> urls = b.findEntries("/", "*.e", true);
+			//b.
 			while(urls.hasMoreElements()){
 				URL url = urls.nextElement();
-				try {
-					url = FileLocator.resolve(url);
-				} catch (IOException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-				try {
-					result.add(URI.createURI(url.toURI().toString()));
-				} catch (URISyntaxException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+				URI uri = URI.createPlatformPluginURI(pluginname+url.getPath(), true);
+				result.add(uri);
+				
 			}
 		}
 		

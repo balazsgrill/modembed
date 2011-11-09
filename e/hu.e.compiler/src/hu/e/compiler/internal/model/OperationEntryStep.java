@@ -3,6 +3,7 @@
  */
 package hu.e.compiler.internal.model;
 
+import hu.e.compiler.ECompilerException;
 import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.parser.eSyntax.Operation;
 import hu.e.parser.eSyntax.Package;
@@ -20,10 +21,10 @@ public class OperationEntryStep implements IProgramStep {
 	
 	private final Map<Variable, ISymbol> params;
 	
-	public OperationEntryStep(Operation operation, Map<Variable, ISymbol> params) {
+	public OperationEntryStep(Operation operation, Map<Variable, ISymbol> params) throws ECompilerException {
 		Package pack = (Package)operation.eContainer();
 		if (pack == null){
-			throw new IllegalArgumentException("Invalid operation call, no package for "+operation.getName());
+			throw new ECompilerException(operation, "Invalid operation call, no package for "+operation.getName());
 		}
 		this.operation = pack.getName()+"::"+operation.getName();
 		this.params = params;

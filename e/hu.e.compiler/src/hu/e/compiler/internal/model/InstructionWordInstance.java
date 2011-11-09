@@ -82,6 +82,8 @@ public class InstructionWordInstance implements IProgramStep{
 				size = ((VariableReference) ws).getSize();
 				shift = ((VariableReference) ws).getShift();
 				ISymbol vs = sm.getSymbol(((VariableReference)ws).getVar());
+				if (vs == null)
+					throw new ECompilerException(ws, "Cannot resolve symbol: "+((VariableReference)ws).getVar());
 				if (!vs.isLiteral())
 					throw new ECompilerException(ws, "Instruction word can only contain compile-time variables!");
 				symbol = (ILiteralSymbol)vs;

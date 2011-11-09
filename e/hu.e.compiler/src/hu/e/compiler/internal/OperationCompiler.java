@@ -95,15 +95,18 @@ public class OperationCompiler {
 			}
 		}
 		
-		
-		steps.add(new OperationEntryStep(operation, parameters));
-		OperationBlock block = operation.getBlock();
-		if (block == null){
-			steps.add(CompilationErrorEntry.error(block,  "Null block!"));
+		try{
+			steps.add(new OperationEntryStep(operation, parameters));
+			OperationBlock block = operation.getBlock();
+			if (block == null){
+				steps.add(CompilationErrorEntry.error(block,  "Null block!"));
+			}
+			BlockCompiler bc = new BlockCompiler(block);
+			steps.addAll(bc.compile(new WrappedSymbolManager(sm)));
+			steps.add(new OperationExitStep());
+		}catch(ECompilerException e){
+			steps.add(CompilationErrorEntry.create(e));
 		}
-		BlockCompiler bc = new BlockCompiler(block);
-		steps.addAll(bc.compile(new WrappedSymbolManager(sm)));
-		steps.add(new OperationExitStep());
 		return steps;
 	}
 	
