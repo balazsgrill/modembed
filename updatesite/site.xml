@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/hu.e.feature_0.1.11.jar" id="hu.e.feature" version="0.1.11">
+   <feature url="features/hu.e.feature_0.1.12.jar" id="hu.e.feature" version="0.1.12">
       <category name="MODembed"/>
    </feature>
-   <feature url="features/hu.modembed.core.feature_0.5.3.jar" id="hu.modembed.core.feature" version="0.5.3">
+   <feature url="features/hu.modembed.core.feature_0.5.4.jar" id="hu.modembed.core.feature" version="0.5.4">
       <category name="MODembed"/>
    </feature>
    <feature url="features/hu.modembed.pic.feature_0.5.3.jar" id="hu.modembed.pic.feature" version="0.5.3">
