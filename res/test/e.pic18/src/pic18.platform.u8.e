@@ -41,7 +41,7 @@ set_u8(var uint8 dest, uint8 v){
 			}
 		}
 	}else{
-		MOVFF(addr(dest),addr(v));
+		MOVFF(addr(v),addr(dest));
 	}
 }
 
