@@ -112,6 +112,7 @@ public class ECompiler {
 							IFile hf = getHexFileSibling(f, b.getName()+".hex");
 							Resource hr = resourceset.createResource(URI.createPlatformResourceURI(hf.getFullPath().toString(),true));
 							HexFileCompiler hfc = new HexFileCompiler(b);
+							hr.getContents().clear();
 							hr.getContents().add(hfc.create());
 							try {
 								hr.save(null);
