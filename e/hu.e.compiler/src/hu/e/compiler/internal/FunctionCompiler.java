@@ -5,6 +5,7 @@ package hu.e.compiler.internal;
 
 import hu.e.compiler.ECompiler;
 import hu.e.compiler.ECompilerException;
+import hu.e.compiler.internal.linking.FunctionLinker;
 import hu.e.compiler.internal.model.AddressedStep;
 import hu.e.compiler.internal.model.CompilationErrorEntry;
 import hu.e.compiler.internal.model.IProgramStep;
@@ -16,8 +17,10 @@ import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.compiler.internal.symbols.SymbolManager;
 import hu.e.parser.eSyntax.FunctionBinarySection;
 import hu.e.parser.eSyntax.FunctionMemory;
+import hu.e.parser.eSyntax.Variable;
 import hu.modembed.hexfile.persistence.HexFileResource;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -38,19 +41,31 @@ public class FunctionCompiler {
 		for(FunctionMemory fm : link.getMems()){
 			memman.addSegment(ECompiler.convertLiteral(fm.getStart()), ECompiler.convertLiteral(fm.getEnd()));
 		}
+		
+		plinker = new FunctionLinker(link.getOperation());
 	}
 	
 	private List<IProgramStep> steps;
+
+	private FunctionLinker plinker;
 	
 	public List<IProgramStep> getSteps() {
 		return steps;
 	}
 	
 	public byte[] compile(ISymbolManager parentsm){
+		List<IProgramStep> ps = new ArrayList<IProgramStep>();
 		SymbolManager sm = new SymbolManager(parentsm,memman);
+		for(Variable v : plinker.getGlobals()){
+			try {
+				sm.getSymbol(v);
+			} catch (ECompilerException e) {
+				ps.add(CompilationErrorEntry.create(e));
+			}
+		}
 		
 		OperationCompiler opc = new OperationCompiler(link.getOperation());
-		List<IProgramStep> ps = opc.compile(sm);
+		ps.addAll(opc.compile(sm));
 		this.steps = ps;
 		
 		//Linking
