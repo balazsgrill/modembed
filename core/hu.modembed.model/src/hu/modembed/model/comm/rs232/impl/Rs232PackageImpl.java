@@ -281,6 +281,7 @@ public class Rs232PackageImpl extends EPackageImpl implements Rs232Package {
 
 		// Obtain other dependent packages
 		CommPackage theCommPackage = (CommPackage)EPackage.Registry.INSTANCE.getEPackage(CommPackage.eNS_URI);
+		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -288,6 +289,7 @@ public class Rs232PackageImpl extends EPackageImpl implements Rs232Package {
 
 		// Add supertypes to classes
 		rs232FrameEClass.getESuperTypes().add(theCommPackage.getFrame());
+		fieldEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		rs232ProtocolEClass.getESuperTypes().add(theCommPackage.getCommunicationProtocol());
 
 		// Initialize classes and features; add operations and parameters

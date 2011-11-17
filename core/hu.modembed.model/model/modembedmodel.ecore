@@ -56,7 +56,7 @@
             eType="#//comm/rs232/Field" containment="true"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Field">
+      <eClassifiers xsi:type="ecore:EClass" name="Field" eSuperTypes="#//core/NamedElement">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="start" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="length" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       </eClassifiers>

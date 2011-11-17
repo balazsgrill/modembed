@@ -12,6 +12,7 @@ import hu.modembed.model.comm.rs232.Rs232Package;
 
 import hu.modembed.model.core.provider.ModembedmodelEditPlugin;
 
+import hu.modembed.model.core.provider.NamedElementItemProvider;
 import java.util.Collection;
 import java.util.List;
 
@@ -38,7 +39,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * @generated
  */
 public class FieldItemProvider
-	extends ItemProviderAdapter
+	extends NamedElementItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -135,8 +136,10 @@ public class FieldItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		Field field = (Field)object;
-		return getString("_UI_Field_type") + " " + field.getStart();
+		String label = ((Field)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Field_type") :
+			getString("_UI_Field_type") + " " + label;
 	}
 
 	/**

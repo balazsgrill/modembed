@@ -6,6 +6,7 @@
  */
 package hu.modembed.model.comm.rs232;
 
+import hu.modembed.model.core.NamedElement;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -25,7 +26,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Field extends EObject {
+public interface Field extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Start</b></em>' attribute.
 	 * <!-- begin-user-doc -->

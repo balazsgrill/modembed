@@ -8,6 +8,7 @@ package hu.modembed.model.comm.rs232;
 
 import hu.modembed.model.comm.CommPackage;
 
+import hu.modembed.model.core.CorePackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -127,13 +128,22 @@ public interface Rs232Package extends EPackage {
 	int FIELD = 1;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIELD__NAME = CorePackage.NAMED_ELEMENT__NAME;
+
+	/**
 	 * The feature id for the '<em><b>Start</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD__START = 0;
+	int FIELD__START = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Length</b></em>' attribute.
@@ -142,7 +152,7 @@ public interface Rs232Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD__LENGTH = 1;
+	int FIELD__LENGTH = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Field</em>' class.
@@ -151,7 +161,7 @@ public interface Rs232Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD_FEATURE_COUNT = 2;
+	int FIELD_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link hu.modembed.model.comm.rs232.impl.RS232ProtocolImpl <em>RS232 Protocol</em>}' class.

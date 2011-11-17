@@ -89,6 +89,8 @@ public class Rs232Switch<T> extends Switch<T> {
 			case Rs232Package.FIELD: {
 				Field field = (Field)theEObject;
 				T result = caseField(field);
+				if (result == null) result = caseNamedElement(field);
+				if (result == null) result = caseMODembedElement(field);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

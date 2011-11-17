@@ -9,6 +9,7 @@ package hu.modembed.model.comm.rs232.impl;
 import hu.modembed.model.comm.rs232.Field;
 import hu.modembed.model.comm.rs232.Rs232Package;
 
+import hu.modembed.model.core.impl.NamedElementImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -30,7 +31,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *
  * @generated
  */
-public class FieldImpl extends EObjectImpl implements Field {
+public class FieldImpl extends NamedElementImpl implements Field {
 	/**
 	 * The default value of the '{@link #getStart() <em>Start</em>}' attribute.
 	 * <!-- begin-user-doc -->
