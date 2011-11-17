@@ -42,4 +42,27 @@
       </eClassifiers>
     </eSubpackages>
   </eSubpackages>
+  <eSubpackages name="comm" nsURI="http://modembed.hu/comm" nsPrefix="comm">
+    <eClassifiers xsi:type="ecore:EClass" name="Frame" abstract="true" eSuperTypes="#//core/NamedElement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="CommunicationProtocol" abstract="true"
+        eSuperTypes="#//core/PackagedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="frames" upperBound="-1"
+          eType="#//comm/Frame" containment="true"/>
+    </eClassifiers>
+    <eSubpackages name="rs232" nsURI="http://modembed.hu/comm/rs232" nsPrefix="commrs232">
+      <eClassifiers xsi:type="ecore:EClass" name="RS232Frame" eSuperTypes="#//comm/Frame">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="numOfBytes" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="fields" upperBound="-1"
+            eType="#//comm/rs232/Field" containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="Field">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="start" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="length" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="RS232Protocol" eSuperTypes="#//comm/CommunicationProtocol">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="idBitLength" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </eClassifiers>
+    </eSubpackages>
+  </eSubpackages>
 </ecore:EPackage>

@@ -31,4 +31,18 @@
             genModel="model/modembedmodel.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://modembed.hu/comm"
+            class="hu.modembed.model.comm.CommPackage"
+            genModel="model/modembedmodel.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://modembed.hu/comm/rs232"
+            class="hu.modembed.model.comm.rs232.Rs232Package"
+            genModel="model/modembedmodel.genmodel"/>
+   </extension>
+
 </plugin>

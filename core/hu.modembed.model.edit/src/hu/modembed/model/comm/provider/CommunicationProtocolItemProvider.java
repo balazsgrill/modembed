@@ -4,20 +4,24 @@
  *
  * $Id$
  */
-package hu.modembed.model.core.provider;
+package hu.modembed.model.comm.provider;
 
+
+import hu.modembed.model.comm.CommPackage;
+import hu.modembed.model.comm.CommunicationProtocol;
 
 import hu.modembed.model.comm.rs232.Rs232Factory;
-import hu.modembed.model.core.CoreFactory;
-import hu.modembed.model.core.CorePackage;
 
-import hu.modembed.model.network.NetworkFactory;
+import hu.modembed.model.core.provider.ModembedmodelEditPlugin;
+import hu.modembed.model.core.provider.PackagedElementItemProvider;
 
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
 
@@ -30,12 +34,12 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link hu.modembed.model.core.Package} object.
+ * This is the item provider adapter for a {@link hu.modembed.model.comm.CommunicationProtocol} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class PackageItemProvider
+public class CommunicationProtocolItemProvider
 	extends PackagedElementItemProvider
 	implements
 		IEditingDomainItemProvider,
@@ -49,7 +53,7 @@ public class PackageItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PackageItemProvider(AdapterFactory adapterFactory) {
+	public CommunicationProtocolItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -80,7 +84,7 @@ public class PackageItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(CorePackage.Literals.PACKAGE__CONTENTS);
+			childrenFeatures.add(CommPackage.Literals.COMMUNICATION_PROTOCOL__FRAMES);
 		}
 		return childrenFeatures;
 	}
@@ -99,17 +103,6 @@ public class PackageItemProvider
 	}
 
 	/**
-	 * This returns Package.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Package"));
-	}
-
-	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -117,10 +110,10 @@ public class PackageItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((hu.modembed.model.core.Package)object).getName();
+		String label = ((CommunicationProtocol)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Package_type") :
-			getString("_UI_Package_type") + " " + label;
+			getString("_UI_CommunicationProtocol_type") :
+			getString("_UI_CommunicationProtocol_type") + " " + label;
 	}
 
 	/**
@@ -134,8 +127,8 @@ public class PackageItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(hu.modembed.model.core.Package.class)) {
-			case CorePackage.PACKAGE__CONTENTS:
+		switch (notification.getFeatureID(CommunicationProtocol.class)) {
+			case CommPackage.COMMUNICATION_PROTOCOL__FRAMES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -155,18 +148,19 @@ public class PackageItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.PACKAGE__CONTENTS,
-				 CoreFactory.eINSTANCE.createPackage()));
+				(CommPackage.Literals.COMMUNICATION_PROTOCOL__FRAMES,
+				 Rs232Factory.eINSTANCE.createRS232Frame()));
+	}
 
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.PACKAGE__CONTENTS,
-				 NetworkFactory.eINSTANCE.createNetwork()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.PACKAGE__CONTENTS,
-				 Rs232Factory.eINSTANCE.createRS232Protocol()));
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return ModembedmodelEditPlugin.INSTANCE;
 	}
 
 }

@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/hu.cubussapiens.modembed.model/src"
-    modelPluginID="hu.cubussapiens.modembed.model" modelName="Modembedmodel" importerID="org.eclipse.emf.importer.ecore"
-    complianceLevel="6.0" copyrightFields="false">
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/hu.modembed.model/src"
+    editDirectory="/hu.modembed.model.edit/src" editorDirectory="/hu.modembed.model.editor/src"
+    modelPluginID="hu.modembed.model" modelName="Modembedmodel" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false" editPluginID="hu.modembed.model.edit"
+    editorPluginID="hu.modembed.model.editor">
   <foreignModel>modembedmodel.ecore</foreignModel>
   <genPackages prefix="model" basePackage="hu.modembed" disposableProviderFactory="true"
       ecorePackage="modembedmodel.ecore#/">
@@ -34,6 +36,26 @@
         <genClasses ecoreClass="modembedmodel.ecore#//network/rs232/RS232Interface"/>
         <genClasses ecoreClass="modembedmodel.ecore#//network/rs232/RS232Connection">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembedmodel.ecore#//network/rs232/RS232Connection/baudRate"/>
+        </genClasses>
+      </nestedGenPackages>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Comm" disposableProviderFactory="true" ecorePackage="modembedmodel.ecore#//comm">
+      <genClasses image="false" ecoreClass="modembedmodel.ecore#//comm/Frame"/>
+      <genClasses image="false" ecoreClass="modembedmodel.ecore#//comm/CommunicationProtocol">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembedmodel.ecore#//comm/CommunicationProtocol/frames"/>
+      </genClasses>
+      <nestedGenPackages prefix="Rs232" disposableProviderFactory="true" ecorePackage="modembedmodel.ecore#//comm/rs232">
+        <genClasses ecoreClass="modembedmodel.ecore#//comm/rs232/RS232Frame">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembedmodel.ecore#//comm/rs232/RS232Frame/numOfBytes"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembedmodel.ecore#//comm/rs232/RS232Frame/fields"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembedmodel.ecore#//comm/rs232/RS232Frame/id"/>
+        </genClasses>
+        <genClasses ecoreClass="modembedmodel.ecore#//comm/rs232/Field">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembedmodel.ecore#//comm/rs232/Field/start"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembedmodel.ecore#//comm/rs232/Field/length"/>
+        </genClasses>
+        <genClasses ecoreClass="modembedmodel.ecore#//comm/rs232/RS232Protocol">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembedmodel.ecore#//comm/rs232/RS232Protocol/idBitLength"/>
         </genClasses>
       </nestedGenPackages>
     </nestedGenPackages>

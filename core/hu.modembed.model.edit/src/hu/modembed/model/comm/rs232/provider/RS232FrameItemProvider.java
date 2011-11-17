@@ -4,14 +4,16 @@
  *
  * $Id$
  */
-package hu.modembed.model.core.provider;
+package hu.modembed.model.comm.rs232.provider;
 
 
+import hu.modembed.model.comm.provider.FrameItemProvider;
+
+import hu.modembed.model.comm.rs232.RS232Frame;
 import hu.modembed.model.comm.rs232.Rs232Factory;
-import hu.modembed.model.core.CoreFactory;
-import hu.modembed.model.core.CorePackage;
+import hu.modembed.model.comm.rs232.Rs232Package;
 
-import hu.modembed.model.network.NetworkFactory;
+import hu.modembed.model.core.provider.ModembedmodelEditPlugin;
 
 import java.util.Collection;
 import java.util.List;
@@ -19,24 +21,28 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link hu.modembed.model.core.Package} object.
+ * This is the item provider adapter for a {@link hu.modembed.model.comm.rs232.RS232Frame} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class PackageItemProvider
-	extends PackagedElementItemProvider
+public class RS232FrameItemProvider
+	extends FrameItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -49,7 +55,7 @@ public class PackageItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PackageItemProvider(AdapterFactory adapterFactory) {
+	public RS232FrameItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -64,8 +70,54 @@ public class PackageItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addNumOfBytesPropertyDescriptor(object);
+			addIdPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Num Of Bytes feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNumOfBytesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_RS232Frame_numOfBytes_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RS232Frame_numOfBytes_feature", "_UI_RS232Frame_type"),
+				 Rs232Package.Literals.RS232_FRAME__NUM_OF_BYTES,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Id feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIdPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_RS232Frame_id_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RS232Frame_id_feature", "_UI_RS232Frame_type"),
+				 Rs232Package.Literals.RS232_FRAME__ID,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -80,7 +132,7 @@ public class PackageItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(CorePackage.Literals.PACKAGE__CONTENTS);
+			childrenFeatures.add(Rs232Package.Literals.RS232_FRAME__FIELDS);
 		}
 		return childrenFeatures;
 	}
@@ -99,14 +151,14 @@ public class PackageItemProvider
 	}
 
 	/**
-	 * This returns Package.gif.
+	 * This returns RS232Frame.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Package"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/RS232Frame"));
 	}
 
 	/**
@@ -117,10 +169,10 @@ public class PackageItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((hu.modembed.model.core.Package)object).getName();
+		String label = ((RS232Frame)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Package_type") :
-			getString("_UI_Package_type") + " " + label;
+			getString("_UI_RS232Frame_type") :
+			getString("_UI_RS232Frame_type") + " " + label;
 	}
 
 	/**
@@ -134,8 +186,12 @@ public class PackageItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(hu.modembed.model.core.Package.class)) {
-			case CorePackage.PACKAGE__CONTENTS:
+		switch (notification.getFeatureID(RS232Frame.class)) {
+			case Rs232Package.RS232_FRAME__NUM_OF_BYTES:
+			case Rs232Package.RS232_FRAME__ID:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+			case Rs232Package.RS232_FRAME__FIELDS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -155,18 +211,19 @@ public class PackageItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.PACKAGE__CONTENTS,
-				 CoreFactory.eINSTANCE.createPackage()));
+				(Rs232Package.Literals.RS232_FRAME__FIELDS,
+				 Rs232Factory.eINSTANCE.createField()));
+	}
 
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.PACKAGE__CONTENTS,
-				 NetworkFactory.eINSTANCE.createNetwork()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.PACKAGE__CONTENTS,
-				 Rs232Factory.eINSTANCE.createRS232Protocol()));
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return ModembedmodelEditPlugin.INSTANCE;
 	}
 
 }
