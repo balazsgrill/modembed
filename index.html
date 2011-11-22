@@ -7,46 +7,84 @@
 
   <style type="text/css">
     body {
-      margin-top: 1.0em;
+      margin: 0;
+      padding: 0;
       background-color: #FFFFFF;
       font-family: "Helvetica,Arial,FreeSans";
       color: #000000;
     }
-    #container {
+    .container {
       margin: 0 auto;
       width: 700px;
     }
-    h1 { font-size: 3.8em; color: #ad14a7; margin-bottom: 3px; }
-    h1 .small { font-size: 0.4em; }
+    h1 { font-size: 3.8em; color: #000; margin-bottom: 3px; }
     h1 a { text-decoration: none }
-    h2 { font-size: 1.5em; color: #ad14a7; }
-    h3 { text-align: center; color: #ad14a7; }
-    a { color: #ad14a7; }
+    h2 { font-size: 1.5em; color: #000; }
+    a { color: #000; }
     .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
     .download { float: right; }
     pre { background: #000; color: #fff; padding: 15px;}
     hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
     .footer { text-align:center; padding-top:30px; font-style: italic; }
+    
+    a.abutton {
+    	display: inline-block;
+    	padding: 2px;
+    	text-decoration: none;
+    	font-family: helvetica, arial, sans-serif;
+    	text-shadow: white 1px 1px 0px;
+    	text-align: center;
+    	border-radius: 4px;
+    	color: #555;
+    	border-top: 1px solid #222;
+    	border-bottom: 1px solid #444;
+    	border-left: 1px solid #222;
+    	border-right: 1px solid #444;
+    	background-color: #ddd;
+    	font-size:0.8em;
+    	font-weight:bold;
+    	box-shadow: 0 0 20px rgba(255,255,255,0.5);
+    }
+    a.abutton:hover{
+    	background-color: #bbb;
+    }
+    div.content{
+//    	border-top: 1px solid #222;
+//    	border-bottom: 1px solid #fff;
+//    	border-left: 1px solid #fff;
+//    	border-right: 1px solid #fff;
+//    	border-radius: 10px;
+    	margin-top: 5px;
+    }
+    div#header{
+    	background-color:#333;
+    	color:#fff;
+    	padding: 10px;
+    	border-radius:10px;
+    	margin-top: 5px;
+    }
+    div#header h1 a{
+    	color:#fff;
+    }
   </style>
 </head>
 
 <body>
-  <a href="http://github.com/gbalage/modembed"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
 
-  <div id="container">
+	<div id="header" class="container">
+		<h1><a href="http://github.com/gbalage/modembed">MODembed</a></h1>
+		<div id="headerbuttons">
+			<a class="abutton" href="https://github.com/gbalage/modembed">GitHub</a>
+			<a class="abutton" href="https://github.com/gbalage/modembed/wiki">Wiki</a>
+			<a class="abutton" href="https://github.com/gbalage/modembed/issues">Issues</a>
+			<a class="abutton" href="http://marketplace.eclipse.org/content/modembed">Eclipse marketplace</a>
+		</div>
+	</div>
 
-    <div class="download">
-      <a href="http://github.com/gbalage/modembed/zipball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
-      <a href="http://github.com/gbalage/modembed/tarball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
-    </div>
-
-    <h1><a href="http://github.com/gbalage/modembed">MODembed</a></h1>
+  <div class="container content">
 
     <div class="description">
-      Model-based development environment for embedded systems. Currently supports the 8-bit PIC18
-      microcontroller family.
+      Model-based development environment for embedded projects. Features a clean and advanced language designed for embedded programming.
     </div>
 
     <p>
@@ -55,50 +93,21 @@
     </p>
     
     <h2>Features</h2>
-    <p>The currently implemented capabilities of the tool is the following:</p>
     
     <ul>
-    <li>A modular assembly language and assembler tool which enables reusable software components
-     - so-called modules to be compiled into a program that can be run by a microcontroller.</li>
-     <li>Easy to use code editor with syntax highlighting and content assist</li>
-     <li>Configuration model with convenient editor for configuration bits and component configuration</li>
+    <li>Enables the user to choose the abstraction level of her/his project: from low-level cpu instructions to high level programming concepts like variables and operations.</li>
+     <li>Easy to use syntax-coloring editor with content assist.</li>
+     <li>Support for programmers, like the PicKit2.</li>
     </ul>
     
-<h2>Help</h2>
-<p>Help content of the tool is available as an online version: <a href="help/index.html">Online help</a></p>
-<p>For further information and support please refer to the project page at github: <a href="https://github.com/gbalage/modembed">https://github.com/gbalage/modembed</a></p>
-<p>Some screenshots are available in the <a href="screenshots/index.html">Screenshots</a> section.</p>
-
-<h2>License</h2>
-<p>All code are released under the EPL licence</p>
-<h2>Authors</h2>
-<p><a href="http://github.com/gbalage">Balázs Grill (gbalage)</a> (balage.g@gmail.com)
-<br/>
-<br/>      </p>
-
-	<h2>Releases</h2>
-	<p>Please note that the application is in a very early alpha stage. It surely contains bugs and can behave unexpectedly.
-	The authors of this tool does not take responsibility of any damage that an erroneous hex file does to your hardware.</p>
-	<ul>
-		<li><a href="https://github.com/downloads/gbalage/modembed/modembed_0.1.0_linux_x86.zip">Modembed Release 0.1.0 for Linux x86 (GTK)</a></li>
-		<li><a href="https://github.com/downloads/gbalage/modembed/modembed_0.1.0_win32_x86.zip">Modembed Release 0.1.0 for Windows x86</a></li>
-	</ul>
-
-    <h2>Download source code</h2>
+    <h2>Installation</h2>
+    
     <p>
-      You can download the source code in either
-      <a href="http://github.com/gbalage/modembed/zipball/master">zip</a> or
-      <a href="http://github.com/gbalage/modembed/tarball/master">tar</a> formats.
+    	To install the tool to an existing eclipse installation, you can search for "modembed" in the eclipse marketplace client, or add "http://gbalage.github.com/modembed/updatesite/" as an update site.
     </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/gbalage/modembed</pre>
-    </p>
-
-    <div class="footer">
-      get the source code on GitHub : <a href="http://github.com/gbalage/modembed">gbalage/modembed</a>
-    </div>
-
+    <p>Alternatively, drag and drop this button to a running eclipse instance (at least indigo is needed): <a href='http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=39590' title='Drag and drop into a running Eclipse Indigo workspace to install MODembed'> 
+	<img src='http://marketplace.eclipse.org/misc/installbutton.png'/>
+</a></p>
   </div>
 
   
