@@ -65,4 +65,45 @@
       </eClassifiers>
     </eSubpackages>
   </eSubpackages>
+  <eSubpackages name="application" nsURI="http://modembed.hu/application" nsPrefix="app">
+    <eClassifiers xsi:type="ecore:EClass" name="ComponentType" eSuperTypes="#//core/PackagedElement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ComponentImplementation" abstract="true"
+        eSuperTypes="#//core/PackagedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//application/ComponentType"/>
+    </eClassifiers>
+    <eSubpackages name="interface" nsURI="http://modembed.hu/application/interface"
+        nsPrefix="interface">
+      <eClassifiers xsi:type="ecore:EClass" name="ComponentInterface" abstract="true"
+          eSuperTypes="#//core/PackagedElement"/>
+      <eClassifiers xsi:type="ecore:EClass" name="OperationInterface" eSuperTypes="#//application/interface/ComponentInterface">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="operations" upperBound="-1"
+            eType="#//application/interface/Operation" containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="Operation" eSuperTypes="#//core/NamedElement">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="arguments" upperBound="-1"
+            eType="#//application/interface/Argument" containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="Argument" eSuperTypes="#//core/NamedElement"/>
+    </eSubpackages>
+    <eSubpackages name="datatypes" nsURI="http://modembed.hu/application/datatypes"
+        nsPrefix="datatypes">
+      <eClassifiers xsi:type="ecore:EClass" name="Datatype" abstract="true" eSuperTypes="#//core/PackagedElement"/>
+      <eClassifiers xsi:type="ecore:EClass" name="AtomicType" eSuperTypes="#//application/datatypes/Datatype">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="qualifiedName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="StructuredType" abstract="true"
+          eSuperTypes="#//application/datatypes/Datatype"/>
+      <eClassifiers xsi:type="ecore:EClass" name="ArrayType" eSuperTypes="#//application/datatypes/StructuredType">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="baseType" eType="#//application/datatypes/Datatype"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="length" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="StructType" eSuperTypes="#//application/datatypes/StructuredType">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+            eType="#//application/datatypes/StructElement" containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="StructElement" eSuperTypes="#//core/NamedElement">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//application/datatypes/Datatype"/>
+      </eClassifiers>
+    </eSubpackages>
+  </eSubpackages>
 </ecore:EPackage>
