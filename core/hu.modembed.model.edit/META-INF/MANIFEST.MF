@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-SymbolicName: hu.modembed.model.edit;singleton:=true
-Bundle-Version: 0.2.0
+Bundle-Version: 0.6.0
 Bundle-ClassPath: .
 Bundle-Activator: hu.modembed.model.core.provider.ModembedmodelEditPlugin$Implementation
 Bundle-Localization: plugin
