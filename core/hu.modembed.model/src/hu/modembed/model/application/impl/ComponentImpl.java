@@ -7,7 +7,7 @@
 package hu.modembed.model.application.impl;
 
 import hu.modembed.model.application.ApplicationPackage;
-import hu.modembed.model.application.ComponentType;
+import hu.modembed.model.application.Component;
 import hu.modembed.model.application.Port;
 
 import hu.modembed.model.core.impl.PackagedElementImpl;
@@ -26,19 +26,19 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Component Type</b></em>'.
+ * An implementation of the model object '<em><b>Component</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.modembed.model.application.impl.ComponentTypeImpl#getUses <em>Uses</em>}</li>
- *   <li>{@link hu.modembed.model.application.impl.ComponentTypeImpl#getImplements <em>Implements</em>}</li>
+ *   <li>{@link hu.modembed.model.application.impl.ComponentImpl#getUses <em>Uses</em>}</li>
+ *   <li>{@link hu.modembed.model.application.impl.ComponentImpl#getImplements <em>Implements</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ComponentTypeImpl extends PackagedElementImpl implements ComponentType {
+public abstract class ComponentImpl extends PackagedElementImpl implements Component {
 	/**
 	 * The cached value of the '{@link #getUses() <em>Uses</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -64,7 +64,7 @@ public class ComponentTypeImpl extends PackagedElementImpl implements ComponentT
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ComponentTypeImpl() {
+	protected ComponentImpl() {
 		super();
 	}
 
@@ -75,7 +75,7 @@ public class ComponentTypeImpl extends PackagedElementImpl implements ComponentT
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ApplicationPackage.Literals.COMPONENT_TYPE;
+		return ApplicationPackage.Literals.COMPONENT;
 	}
 
 	/**
@@ -85,7 +85,7 @@ public class ComponentTypeImpl extends PackagedElementImpl implements ComponentT
 	 */
 	public EList<Port> getUses() {
 		if (uses == null) {
-			uses = new EObjectContainmentEList<Port>(Port.class, this, ApplicationPackage.COMPONENT_TYPE__USES);
+			uses = new EObjectContainmentEList<Port>(Port.class, this, ApplicationPackage.COMPONENT__USES);
 		}
 		return uses;
 	}
@@ -97,7 +97,7 @@ public class ComponentTypeImpl extends PackagedElementImpl implements ComponentT
 	 */
 	public EList<Port> getImplements() {
 		if (implements_ == null) {
-			implements_ = new EObjectContainmentEList<Port>(Port.class, this, ApplicationPackage.COMPONENT_TYPE__IMPLEMENTS);
+			implements_ = new EObjectContainmentEList<Port>(Port.class, this, ApplicationPackage.COMPONENT__IMPLEMENTS);
 		}
 		return implements_;
 	}
@@ -110,9 +110,9 @@ public class ComponentTypeImpl extends PackagedElementImpl implements ComponentT
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ApplicationPackage.COMPONENT_TYPE__USES:
+			case ApplicationPackage.COMPONENT__USES:
 				return ((InternalEList<?>)getUses()).basicRemove(otherEnd, msgs);
-			case ApplicationPackage.COMPONENT_TYPE__IMPLEMENTS:
+			case ApplicationPackage.COMPONENT__IMPLEMENTS:
 				return ((InternalEList<?>)getImplements()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -126,9 +126,9 @@ public class ComponentTypeImpl extends PackagedElementImpl implements ComponentT
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ApplicationPackage.COMPONENT_TYPE__USES:
+			case ApplicationPackage.COMPONENT__USES:
 				return getUses();
-			case ApplicationPackage.COMPONENT_TYPE__IMPLEMENTS:
+			case ApplicationPackage.COMPONENT__IMPLEMENTS:
 				return getImplements();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -143,11 +143,11 @@ public class ComponentTypeImpl extends PackagedElementImpl implements ComponentT
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ApplicationPackage.COMPONENT_TYPE__USES:
+			case ApplicationPackage.COMPONENT__USES:
 				getUses().clear();
 				getUses().addAll((Collection<? extends Port>)newValue);
 				return;
-			case ApplicationPackage.COMPONENT_TYPE__IMPLEMENTS:
+			case ApplicationPackage.COMPONENT__IMPLEMENTS:
 				getImplements().clear();
 				getImplements().addAll((Collection<? extends Port>)newValue);
 				return;
@@ -163,10 +163,10 @@ public class ComponentTypeImpl extends PackagedElementImpl implements ComponentT
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ApplicationPackage.COMPONENT_TYPE__USES:
+			case ApplicationPackage.COMPONENT__USES:
 				getUses().clear();
 				return;
-			case ApplicationPackage.COMPONENT_TYPE__IMPLEMENTS:
+			case ApplicationPackage.COMPONENT__IMPLEMENTS:
 				getImplements().clear();
 				return;
 		}
@@ -181,12 +181,12 @@ public class ComponentTypeImpl extends PackagedElementImpl implements ComponentT
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ApplicationPackage.COMPONENT_TYPE__USES:
+			case ApplicationPackage.COMPONENT__USES:
 				return uses != null && !uses.isEmpty();
-			case ApplicationPackage.COMPONENT_TYPE__IMPLEMENTS:
+			case ApplicationPackage.COMPONENT__IMPLEMENTS:
 				return implements_ != null && !implements_.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //ComponentTypeImpl
+} //ComponentImpl

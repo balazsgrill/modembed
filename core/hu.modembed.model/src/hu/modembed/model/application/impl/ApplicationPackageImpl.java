@@ -8,10 +8,15 @@ package hu.modembed.model.application.impl;
 
 import hu.modembed.model.application.ApplicationFactory;
 import hu.modembed.model.application.ApplicationPackage;
+import hu.modembed.model.application.Component;
 import hu.modembed.model.application.ComponentImplementation;
 import hu.modembed.model.application.ComponentType;
 import hu.modembed.model.application.Port;
 
+import hu.modembed.model.application.code.CodePackage;
+import hu.modembed.model.application.code.impl.CodePackageImpl;
+import hu.modembed.model.application.composition.CompositionPackage;
+import hu.modembed.model.application.composition.impl.CompositionPackageImpl;
 import hu.modembed.model.application.datatypes.DatatypesPackage;
 
 import hu.modembed.model.application.datatypes.impl.DatatypesPackageImpl;
@@ -54,14 +59,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass componentTypeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass componentImplementationEClass = null;
+	private EClass componentEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -124,6 +122,8 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		hu.modembed.model.comm.rs232.impl.Rs232PackageImpl theRs232Package_1 = (hu.modembed.model.comm.rs232.impl.Rs232PackageImpl)(EPackage.Registry.INSTANCE.getEPackage(hu.modembed.model.comm.rs232.Rs232Package.eNS_URI) instanceof hu.modembed.model.comm.rs232.impl.Rs232PackageImpl ? EPackage.Registry.INSTANCE.getEPackage(hu.modembed.model.comm.rs232.Rs232Package.eNS_URI) : hu.modembed.model.comm.rs232.Rs232Package.eINSTANCE);
 		InterfacePackageImpl theInterfacePackage = (InterfacePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InterfacePackage.eNS_URI) instanceof InterfacePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InterfacePackage.eNS_URI) : InterfacePackage.eINSTANCE);
 		DatatypesPackageImpl theDatatypesPackage = (DatatypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI) instanceof DatatypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI) : DatatypesPackage.eINSTANCE);
+		CompositionPackageImpl theCompositionPackage = (CompositionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CompositionPackage.eNS_URI) instanceof CompositionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CompositionPackage.eNS_URI) : CompositionPackage.eINSTANCE);
+		CodePackageImpl theCodePackage = (CodePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CodePackage.eNS_URI) instanceof CodePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CodePackage.eNS_URI) : CodePackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theApplicationPackage.createPackageContents();
@@ -134,6 +134,8 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		theRs232Package_1.createPackageContents();
 		theInterfacePackage.createPackageContents();
 		theDatatypesPackage.createPackageContents();
+		theCompositionPackage.createPackageContents();
+		theCodePackage.createPackageContents();
 
 		// Initialize created meta-data
 		theApplicationPackage.initializePackageContents();
@@ -144,6 +146,8 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		theRs232Package_1.initializePackageContents();
 		theInterfacePackage.initializePackageContents();
 		theDatatypesPackage.initializePackageContents();
+		theCompositionPackage.initializePackageContents();
+		theCodePackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theApplicationPackage.freeze();
@@ -159,8 +163,8 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getComponentType() {
-		return componentTypeEClass;
+	public EClass getComponent() {
+		return componentEClass;
 	}
 
 	/**
@@ -168,8 +172,8 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getComponentType_Uses() {
-		return (EReference)componentTypeEClass.getEStructuralFeatures().get(0);
+	public EReference getComponent_Uses() {
+		return (EReference)componentEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -177,26 +181,8 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getComponentType_Implements() {
-		return (EReference)componentTypeEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getComponentImplementation() {
-		return componentImplementationEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getComponentImplementation_Type() {
-		return (EReference)componentImplementationEClass.getEStructuralFeatures().get(0);
+	public EReference getComponent_Implements() {
+		return (EReference)componentEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -245,12 +231,9 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		isCreated = true;
 
 		// Create classes and their features
-		componentTypeEClass = createEClass(COMPONENT_TYPE);
-		createEReference(componentTypeEClass, COMPONENT_TYPE__USES);
-		createEReference(componentTypeEClass, COMPONENT_TYPE__IMPLEMENTS);
-
-		componentImplementationEClass = createEClass(COMPONENT_IMPLEMENTATION);
-		createEReference(componentImplementationEClass, COMPONENT_IMPLEMENTATION__TYPE);
+		componentEClass = createEClass(COMPONENT);
+		createEReference(componentEClass, COMPONENT__USES);
+		createEReference(componentEClass, COMPONENT__IMPLEMENTS);
 
 		portEClass = createEClass(PORT);
 		createEReference(portEClass, PORT__INTERFACE);
@@ -282,28 +265,28 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		// Obtain other dependent packages
 		InterfacePackage theInterfacePackage = (InterfacePackage)EPackage.Registry.INSTANCE.getEPackage(InterfacePackage.eNS_URI);
 		DatatypesPackage theDatatypesPackage = (DatatypesPackage)EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI);
+		CompositionPackage theCompositionPackage = (CompositionPackage)EPackage.Registry.INSTANCE.getEPackage(CompositionPackage.eNS_URI);
+		CodePackage theCodePackage = (CodePackage)EPackage.Registry.INSTANCE.getEPackage(CodePackage.eNS_URI);
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 
 		// Add subpackages
 		getESubpackages().add(theInterfacePackage);
 		getESubpackages().add(theDatatypesPackage);
+		getESubpackages().add(theCompositionPackage);
+		getESubpackages().add(theCodePackage);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		componentTypeEClass.getESuperTypes().add(theCorePackage.getPackagedElement());
-		componentImplementationEClass.getESuperTypes().add(theCorePackage.getPackagedElement());
+		componentEClass.getESuperTypes().add(theCorePackage.getPackagedElement());
 		portEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(componentTypeEClass, ComponentType.class, "ComponentType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getComponentType_Uses(), this.getPort(), null, "uses", null, 0, -1, ComponentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComponentType_Implements(), this.getPort(), null, "implements", null, 0, -1, ComponentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(componentImplementationEClass, ComponentImplementation.class, "ComponentImplementation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getComponentImplementation_Type(), this.getComponentType(), null, "type", null, 0, 1, ComponentImplementation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(componentEClass, Component.class, "Component", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getComponent_Uses(), this.getPort(), null, "uses", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponent_Implements(), this.getPort(), null, "implements", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(portEClass, Port.class, "Port", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPort_Interface(), theInterfacePackage.getComponentInterface(), null, "interface", null, 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -4,7 +4,7 @@
  *
  * $Id$
  */
-package hu.modembed.model.application;
+package hu.modembed.model.application.code;
 
 import org.eclipse.emf.ecore.EFactory;
 
@@ -13,26 +13,26 @@ import org.eclipse.emf.ecore.EFactory;
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
- * @see hu.modembed.model.application.ApplicationPackage
+ * @see hu.modembed.model.application.code.CodePackage
  * @generated
  */
-public interface ApplicationFactory extends EFactory {
+public interface CodeFactory extends EFactory {
 	/**
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	ApplicationFactory eINSTANCE = hu.modembed.model.application.impl.ApplicationFactoryImpl.init();
+	CodeFactory eINSTANCE = hu.modembed.model.application.code.impl.CodeFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Port</em>'.
+	 * Returns a new object of class '<em>Component</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Port</em>'.
+	 * @return a new object of class '<em>Component</em>'.
 	 * @generated
 	 */
-	Port createPort();
+	CodeComponent createCodeComponent();
 
 	/**
 	 * Returns the package supported by this factory.
@@ -41,6 +41,6 @@ public interface ApplicationFactory extends EFactory {
 	 * @return the package supported by this factory.
 	 * @generated
 	 */
-	ApplicationPackage getApplicationPackage();
+	CodePackage getCodePackage();
 
-} //ApplicationFactory
+} //CodeFactory

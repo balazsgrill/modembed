@@ -4,9 +4,11 @@
  *
  * $Id$
  */
-package hu.modembed.model.application.util;
+package hu.modembed.model.application.composition.util;
 
-import hu.modembed.model.application.*;
+import hu.modembed.model.application.Component;
+
+import hu.modembed.model.application.composition.*;
 
 import hu.modembed.model.core.MODembedElement;
 import hu.modembed.model.core.NamedElement;
@@ -27,17 +29,17 @@ import org.eclipse.emf.ecore.util.Switch;
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * @see hu.modembed.model.application.ApplicationPackage
+ * @see hu.modembed.model.application.composition.CompositionPackage
  * @generated
  */
-public class ApplicationSwitch<T> extends Switch<T> {
+public class CompositionSwitch<T> extends Switch<T> {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static ApplicationPackage modelPackage;
+	protected static CompositionPackage modelPackage;
 
 	/**
 	 * Creates an instance of the switch.
@@ -45,9 +47,9 @@ public class ApplicationSwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ApplicationSwitch() {
+	public CompositionSwitch() {
 		if (modelPackage == null) {
-			modelPackage = ApplicationPackage.eINSTANCE;
+			modelPackage = CompositionPackage.eINSTANCE;
 		}
 	}
 
@@ -74,20 +76,27 @@ public class ApplicationSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case ApplicationPackage.COMPONENT: {
-				Component component = (Component)theEObject;
-				T result = caseComponent(component);
-				if (result == null) result = casePackagedElement(component);
-				if (result == null) result = caseNamedElement(component);
-				if (result == null) result = caseMODembedElement(component);
+			case CompositionPackage.COMPOSITE_COMPONENT: {
+				CompositeComponent compositeComponent = (CompositeComponent)theEObject;
+				T result = caseCompositeComponent(compositeComponent);
+				if (result == null) result = caseComponent(compositeComponent);
+				if (result == null) result = casePackagedElement(compositeComponent);
+				if (result == null) result = caseNamedElement(compositeComponent);
+				if (result == null) result = caseMODembedElement(compositeComponent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ApplicationPackage.PORT: {
-				Port port = (Port)theEObject;
-				T result = casePort(port);
-				if (result == null) result = caseNamedElement(port);
-				if (result == null) result = caseMODembedElement(port);
+			case CompositionPackage.SUB_COMPONENT: {
+				SubComponent subComponent = (SubComponent)theEObject;
+				T result = caseSubComponent(subComponent);
+				if (result == null) result = caseNamedElement(subComponent);
+				if (result == null) result = caseMODembedElement(subComponent);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CompositionPackage.CONNECTION: {
+				Connection connection = (Connection)theEObject;
+				T result = caseConnection(connection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -96,32 +105,47 @@ public class ApplicationSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Component</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Composite Component</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Component</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Composite Component</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseComponent(Component object) {
+	public T caseCompositeComponent(CompositeComponent object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Port</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Sub Component</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Port</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Sub Component</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePort(Port object) {
+	public T caseSubComponent(SubComponent object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Connection</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Connection</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseConnection(Connection object) {
 		return null;
 	}
 
@@ -171,6 +195,21 @@ public class ApplicationSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Component</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Component</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseComponent(Component object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>EObject</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -186,4 +225,4 @@ public class ApplicationSwitch<T> extends Switch<T> {
 		return null;
 	}
 
-} //ApplicationSwitch
+} //CompositionSwitch

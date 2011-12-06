@@ -61,14 +61,14 @@ public interface ApplicationPackage extends EPackage {
 	ApplicationPackage eINSTANCE = hu.modembed.model.application.impl.ApplicationPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link hu.modembed.model.application.impl.ComponentTypeImpl <em>Component Type</em>}' class.
+	 * The meta object id for the '{@link hu.modembed.model.application.impl.ComponentImpl <em>Component</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see hu.modembed.model.application.impl.ComponentTypeImpl
-	 * @see hu.modembed.model.application.impl.ApplicationPackageImpl#getComponentType()
+	 * @see hu.modembed.model.application.impl.ComponentImpl
+	 * @see hu.modembed.model.application.impl.ApplicationPackageImpl#getComponent()
 	 * @generated
 	 */
-	int COMPONENT_TYPE = 0;
+	int COMPONENT = 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -77,7 +77,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_TYPE__NAME = CorePackage.PACKAGED_ELEMENT__NAME;
+	int COMPONENT__NAME = CorePackage.PACKAGED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Uses</b></em>' containment reference list.
@@ -86,7 +86,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_TYPE__USES = CorePackage.PACKAGED_ELEMENT_FEATURE_COUNT + 0;
+	int COMPONENT__USES = CorePackage.PACKAGED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Implements</b></em>' containment reference list.
@@ -95,53 +95,16 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_TYPE__IMPLEMENTS = CorePackage.PACKAGED_ELEMENT_FEATURE_COUNT + 1;
+	int COMPONENT__IMPLEMENTS = CorePackage.PACKAGED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Component Type</em>' class.
+	 * The number of structural features of the '<em>Component</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_TYPE_FEATURE_COUNT = CorePackage.PACKAGED_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The meta object id for the '{@link hu.modembed.model.application.impl.ComponentImplementationImpl <em>Component Implementation</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see hu.modembed.model.application.impl.ComponentImplementationImpl
-	 * @see hu.modembed.model.application.impl.ApplicationPackageImpl#getComponentImplementation()
-	 * @generated
-	 */
-	int COMPONENT_IMPLEMENTATION = 1;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_IMPLEMENTATION__NAME = CorePackage.PACKAGED_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_IMPLEMENTATION__TYPE = CorePackage.PACKAGED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Component Implementation</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_IMPLEMENTATION_FEATURE_COUNT = CorePackage.PACKAGED_ELEMENT_FEATURE_COUNT + 1;
+	int COMPONENT_FEATURE_COUNT = CorePackage.PACKAGED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link hu.modembed.model.application.impl.PortImpl <em>Port</em>}' class.
@@ -151,7 +114,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @see hu.modembed.model.application.impl.ApplicationPackageImpl#getPort()
 	 * @generated
 	 */
-	int PORT = 2;
+	int PORT = 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -182,57 +145,36 @@ public interface ApplicationPackage extends EPackage {
 
 
 	/**
-	 * Returns the meta object for class '{@link hu.modembed.model.application.ComponentType <em>Component Type</em>}'.
+	 * Returns the meta object for class '{@link hu.modembed.model.application.Component <em>Component</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Component Type</em>'.
-	 * @see hu.modembed.model.application.ComponentType
+	 * @return the meta object for class '<em>Component</em>'.
+	 * @see hu.modembed.model.application.Component
 	 * @generated
 	 */
-	EClass getComponentType();
+	EClass getComponent();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link hu.modembed.model.application.ComponentType#getUses <em>Uses</em>}'.
+	 * Returns the meta object for the containment reference list '{@link hu.modembed.model.application.Component#getUses <em>Uses</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Uses</em>'.
-	 * @see hu.modembed.model.application.ComponentType#getUses()
-	 * @see #getComponentType()
+	 * @see hu.modembed.model.application.Component#getUses()
+	 * @see #getComponent()
 	 * @generated
 	 */
-	EReference getComponentType_Uses();
+	EReference getComponent_Uses();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link hu.modembed.model.application.ComponentType#getImplements <em>Implements</em>}'.
+	 * Returns the meta object for the containment reference list '{@link hu.modembed.model.application.Component#getImplements <em>Implements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Implements</em>'.
-	 * @see hu.modembed.model.application.ComponentType#getImplements()
-	 * @see #getComponentType()
+	 * @see hu.modembed.model.application.Component#getImplements()
+	 * @see #getComponent()
 	 * @generated
 	 */
-	EReference getComponentType_Implements();
-
-	/**
-	 * Returns the meta object for class '{@link hu.modembed.model.application.ComponentImplementation <em>Component Implementation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Component Implementation</em>'.
-	 * @see hu.modembed.model.application.ComponentImplementation
-	 * @generated
-	 */
-	EClass getComponentImplementation();
-
-	/**
-	 * Returns the meta object for the reference '{@link hu.modembed.model.application.ComponentImplementation#getType <em>Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Type</em>'.
-	 * @see hu.modembed.model.application.ComponentImplementation#getType()
-	 * @see #getComponentImplementation()
-	 * @generated
-	 */
-	EReference getComponentImplementation_Type();
+	EReference getComponent_Implements();
 
 	/**
 	 * Returns the meta object for class '{@link hu.modembed.model.application.Port <em>Port</em>}'.
@@ -278,14 +220,14 @@ public interface ApplicationPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link hu.modembed.model.application.impl.ComponentTypeImpl <em>Component Type</em>}' class.
+		 * The meta object literal for the '{@link hu.modembed.model.application.impl.ComponentImpl <em>Component</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see hu.modembed.model.application.impl.ComponentTypeImpl
-		 * @see hu.modembed.model.application.impl.ApplicationPackageImpl#getComponentType()
+		 * @see hu.modembed.model.application.impl.ComponentImpl
+		 * @see hu.modembed.model.application.impl.ApplicationPackageImpl#getComponent()
 		 * @generated
 		 */
-		EClass COMPONENT_TYPE = eINSTANCE.getComponentType();
+		EClass COMPONENT = eINSTANCE.getComponent();
 
 		/**
 		 * The meta object literal for the '<em><b>Uses</b></em>' containment reference list feature.
@@ -293,7 +235,7 @@ public interface ApplicationPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COMPONENT_TYPE__USES = eINSTANCE.getComponentType_Uses();
+		EReference COMPONENT__USES = eINSTANCE.getComponent_Uses();
 
 		/**
 		 * The meta object literal for the '<em><b>Implements</b></em>' containment reference list feature.
@@ -301,25 +243,7 @@ public interface ApplicationPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COMPONENT_TYPE__IMPLEMENTS = eINSTANCE.getComponentType_Implements();
-
-		/**
-		 * The meta object literal for the '{@link hu.modembed.model.application.impl.ComponentImplementationImpl <em>Component Implementation</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see hu.modembed.model.application.impl.ComponentImplementationImpl
-		 * @see hu.modembed.model.application.impl.ApplicationPackageImpl#getComponentImplementation()
-		 * @generated
-		 */
-		EClass COMPONENT_IMPLEMENTATION = eINSTANCE.getComponentImplementation();
-
-		/**
-		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COMPONENT_IMPLEMENTATION__TYPE = eINSTANCE.getComponentImplementation_Type();
+		EReference COMPONENT__IMPLEMENTS = eINSTANCE.getComponent_Implements();
 
 		/**
 		 * The meta object literal for the '{@link hu.modembed.model.application.impl.PortImpl <em>Port</em>}' class.

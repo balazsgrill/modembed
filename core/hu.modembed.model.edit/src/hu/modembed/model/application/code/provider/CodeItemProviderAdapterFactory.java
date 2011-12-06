@@ -4,9 +4,9 @@
  *
  * $Id$
  */
-package hu.modembed.model.application.provider;
+package hu.modembed.model.application.code.provider;
 
-import hu.modembed.model.application.util.ApplicationAdapterFactory;
+import hu.modembed.model.application.code.util.CodeAdapterFactory;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -36,7 +36,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ApplicationItemProviderAdapterFactory extends ApplicationAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
+public class CodeItemProviderAdapterFactory extends CodeAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -67,7 +67,7 @@ public class ApplicationItemProviderAdapterFactory extends ApplicationAdapterFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ApplicationItemProviderAdapterFactory() {
+	public CodeItemProviderAdapterFactory() {
 		supportedTypes.add(IEditingDomainItemProvider.class);
 		supportedTypes.add(IStructuredItemContentProvider.class);
 		supportedTypes.add(ITreeItemContentProvider.class);
@@ -76,26 +76,26 @@ public class ApplicationItemProviderAdapterFactory extends ApplicationAdapterFac
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link hu.modembed.model.application.Port} instances.
+	 * This keeps track of the one adapter used for all {@link hu.modembed.model.application.code.CodeComponent} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PortItemProvider portItemProvider;
+	protected CodeComponentItemProvider codeComponentItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link hu.modembed.model.application.Port}.
+	 * This creates an adapter for a {@link hu.modembed.model.application.code.CodeComponent}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createPortAdapter() {
-		if (portItemProvider == null) {
-			portItemProvider = new PortItemProvider(this);
+	public Adapter createCodeComponentAdapter() {
+		if (codeComponentItemProvider == null) {
+			codeComponentItemProvider = new CodeComponentItemProvider(this);
 		}
 
-		return portItemProvider;
+		return codeComponentItemProvider;
 	}
 
 	/**
@@ -197,7 +197,7 @@ public class ApplicationItemProviderAdapterFactory extends ApplicationAdapterFac
 	 * @generated
 	 */
 	public void dispose() {
-		if (portItemProvider != null) portItemProvider.dispose();
+		if (codeComponentItemProvider != null) codeComponentItemProvider.dispose();
 	}
 
 }

@@ -4,14 +4,17 @@
  *
  * $Id$
  */
-package hu.modembed.model.application.provider;
+package hu.modembed.model.application.code.provider;
 
 
 import hu.modembed.model.application.ApplicationPackage;
-import hu.modembed.model.application.ComponentImplementation;
+
+import hu.modembed.model.application.code.CodeComponent;
+import hu.modembed.model.application.code.CodePackage;
+
+import hu.modembed.model.application.provider.ComponentItemProvider;
 
 import hu.modembed.model.core.provider.ModembedmodelEditPlugin;
-import hu.modembed.model.core.provider.PackagedElementItemProvider;
 
 import java.util.Collection;
 import java.util.List;
@@ -28,15 +31,17 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link hu.modembed.model.application.ComponentImplementation} object.
+ * This is the item provider adapter for a {@link hu.modembed.model.application.code.CodeComponent} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ComponentImplementationItemProvider
-	extends PackagedElementItemProvider
+public class CodeComponentItemProvider
+	extends ComponentItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -49,7 +54,7 @@ public class ComponentImplementationItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ComponentImplementationItemProvider(AdapterFactory adapterFactory) {
+	public CodeComponentItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -64,31 +69,42 @@ public class ComponentImplementationItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addTypePropertyDescriptor(object);
+			addQualifiedNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Type feature.
+	 * This adds a property descriptor for the Qualified Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTypePropertyDescriptor(Object object) {
+	protected void addQualifiedNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ComponentImplementation_type_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentImplementation_type_feature", "_UI_ComponentImplementation_type"),
-				 ApplicationPackage.Literals.COMPONENT_IMPLEMENTATION__TYPE,
+				 getString("_UI_CodeComponent_qualifiedName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CodeComponent_qualifiedName_feature", "_UI_CodeComponent_type"),
+				 CodePackage.Literals.CODE_COMPONENT__QUALIFIED_NAME,
 				 true,
 				 false,
-				 true,
-				 null,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
+	}
+
+	/**
+	 * This returns CodeComponent.gif.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object getImage(Object object) {
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/CodeComponent"));
 	}
 
 	/**
@@ -99,10 +115,10 @@ public class ComponentImplementationItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ComponentImplementation)object).getName();
+		String label = ((CodeComponent)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_ComponentImplementation_type") :
-			getString("_UI_ComponentImplementation_type") + " " + label;
+			getString("_UI_CodeComponent_type") :
+			getString("_UI_CodeComponent_type") + " " + label;
 	}
 
 	/**
@@ -115,6 +131,12 @@ public class ComponentImplementationItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(CodeComponent.class)) {
+			case CodePackage.CODE_COMPONENT__QUALIFIED_NAME:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 
@@ -128,6 +150,29 @@ public class ComponentImplementationItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify =
+			childFeature == ApplicationPackage.Literals.COMPONENT__USES ||
+			childFeature == ApplicationPackage.Literals.COMPONENT__IMPLEMENTS;
+
+		if (qualify) {
+			return getString
+				("_UI_CreateChild_text2",
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 	/**

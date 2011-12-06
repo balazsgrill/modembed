@@ -4,9 +4,9 @@
  *
  * $Id$
  */
-package hu.modembed.model.application.provider;
+package hu.modembed.model.application.composition.provider;
 
-import hu.modembed.model.application.util.ApplicationAdapterFactory;
+import hu.modembed.model.application.composition.util.CompositionAdapterFactory;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -36,7 +36,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ApplicationItemProviderAdapterFactory extends ApplicationAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
+public class CompositionItemProviderAdapterFactory extends CompositionAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -67,7 +67,7 @@ public class ApplicationItemProviderAdapterFactory extends ApplicationAdapterFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ApplicationItemProviderAdapterFactory() {
+	public CompositionItemProviderAdapterFactory() {
 		supportedTypes.add(IEditingDomainItemProvider.class);
 		supportedTypes.add(IStructuredItemContentProvider.class);
 		supportedTypes.add(ITreeItemContentProvider.class);
@@ -76,26 +76,72 @@ public class ApplicationItemProviderAdapterFactory extends ApplicationAdapterFac
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link hu.modembed.model.application.Port} instances.
+	 * This keeps track of the one adapter used for all {@link hu.modembed.model.application.composition.CompositeComponent} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PortItemProvider portItemProvider;
+	protected CompositeComponentItemProvider compositeComponentItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link hu.modembed.model.application.Port}.
+	 * This creates an adapter for a {@link hu.modembed.model.application.composition.CompositeComponent}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createPortAdapter() {
-		if (portItemProvider == null) {
-			portItemProvider = new PortItemProvider(this);
+	public Adapter createCompositeComponentAdapter() {
+		if (compositeComponentItemProvider == null) {
+			compositeComponentItemProvider = new CompositeComponentItemProvider(this);
 		}
 
-		return portItemProvider;
+		return compositeComponentItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link hu.modembed.model.application.composition.SubComponent} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SubComponentItemProvider subComponentItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link hu.modembed.model.application.composition.SubComponent}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSubComponentAdapter() {
+		if (subComponentItemProvider == null) {
+			subComponentItemProvider = new SubComponentItemProvider(this);
+		}
+
+		return subComponentItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link hu.modembed.model.application.composition.Connection} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ConnectionItemProvider connectionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link hu.modembed.model.application.composition.Connection}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createConnectionAdapter() {
+		if (connectionItemProvider == null) {
+			connectionItemProvider = new ConnectionItemProvider(this);
+		}
+
+		return connectionItemProvider;
 	}
 
 	/**
@@ -197,7 +243,9 @@ public class ApplicationItemProviderAdapterFactory extends ApplicationAdapterFac
 	 * @generated
 	 */
 	public void dispose() {
-		if (portItemProvider != null) portItemProvider.dispose();
+		if (compositeComponentItemProvider != null) compositeComponentItemProvider.dispose();
+		if (subComponentItemProvider != null) subComponentItemProvider.dispose();
+		if (connectionItemProvider != null) connectionItemProvider.dispose();
 	}
 
 }

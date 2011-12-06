@@ -4,15 +4,18 @@
  *
  * $Id$
  */
-package hu.modembed.model.application.provider;
+package hu.modembed.model.application.composition.provider;
 
 
-import hu.modembed.model.application.ApplicationFactory;
 import hu.modembed.model.application.ApplicationPackage;
-import hu.modembed.model.application.ComponentType;
+
+import hu.modembed.model.application.composition.CompositeComponent;
+import hu.modembed.model.application.composition.CompositionFactory;
+import hu.modembed.model.application.composition.CompositionPackage;
+
+import hu.modembed.model.application.provider.ComponentItemProvider;
 
 import hu.modembed.model.core.provider.ModembedmodelEditPlugin;
-import hu.modembed.model.core.provider.PackagedElementItemProvider;
 
 import java.util.Collection;
 import java.util.List;
@@ -33,13 +36,13 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link hu.modembed.model.application.ComponentType} object.
+ * This is the item provider adapter for a {@link hu.modembed.model.application.composition.CompositeComponent} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ComponentTypeItemProvider
-	extends PackagedElementItemProvider
+public class CompositeComponentItemProvider
+	extends ComponentItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -52,7 +55,7 @@ public class ComponentTypeItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ComponentTypeItemProvider(AdapterFactory adapterFactory) {
+	public CompositeComponentItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -83,8 +86,8 @@ public class ComponentTypeItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ApplicationPackage.Literals.COMPONENT_TYPE__USES);
-			childrenFeatures.add(ApplicationPackage.Literals.COMPONENT_TYPE__IMPLEMENTS);
+			childrenFeatures.add(CompositionPackage.Literals.COMPOSITE_COMPONENT__COMPONENTS);
+			childrenFeatures.add(CompositionPackage.Literals.COMPOSITE_COMPONENT__CONNECTIONS);
 		}
 		return childrenFeatures;
 	}
@@ -103,14 +106,14 @@ public class ComponentTypeItemProvider
 	}
 
 	/**
-	 * This returns ComponentType.gif.
+	 * This returns CompositeComponent.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ComponentType"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/CompositeComponent"));
 	}
 
 	/**
@@ -121,10 +124,10 @@ public class ComponentTypeItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ComponentType)object).getName();
+		String label = ((CompositeComponent)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_ComponentType_type") :
-			getString("_UI_ComponentType_type") + " " + label;
+			getString("_UI_CompositeComponent_type") :
+			getString("_UI_CompositeComponent_type") + " " + label;
 	}
 
 	/**
@@ -138,9 +141,9 @@ public class ComponentTypeItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ComponentType.class)) {
-			case ApplicationPackage.COMPONENT_TYPE__USES:
-			case ApplicationPackage.COMPONENT_TYPE__IMPLEMENTS:
+		switch (notification.getFeatureID(CompositeComponent.class)) {
+			case CompositionPackage.COMPOSITE_COMPONENT__COMPONENTS:
+			case CompositionPackage.COMPOSITE_COMPONENT__CONNECTIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -160,13 +163,13 @@ public class ComponentTypeItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ApplicationPackage.Literals.COMPONENT_TYPE__USES,
-				 ApplicationFactory.eINSTANCE.createPort()));
+				(CompositionPackage.Literals.COMPOSITE_COMPONENT__COMPONENTS,
+				 CompositionFactory.eINSTANCE.createSubComponent()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ApplicationPackage.Literals.COMPONENT_TYPE__IMPLEMENTS,
-				 ApplicationFactory.eINSTANCE.createPort()));
+				(CompositionPackage.Literals.COMPOSITE_COMPONENT__CONNECTIONS,
+				 CompositionFactory.eINSTANCE.createConnection()));
 	}
 
 	/**
@@ -181,8 +184,8 @@ public class ComponentTypeItemProvider
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == ApplicationPackage.Literals.COMPONENT_TYPE__USES ||
-			childFeature == ApplicationPackage.Literals.COMPONENT_TYPE__IMPLEMENTS;
+			childFeature == ApplicationPackage.Literals.COMPONENT__USES ||
+			childFeature == ApplicationPackage.Literals.COMPONENT__IMPLEMENTS;
 
 		if (qualify) {
 			return getString

@@ -7,6 +7,10 @@
 package hu.modembed.model.network.impl;
 
 import hu.modembed.model.application.ApplicationPackage;
+import hu.modembed.model.application.code.CodePackage;
+import hu.modembed.model.application.code.impl.CodePackageImpl;
+import hu.modembed.model.application.composition.CompositionPackage;
+import hu.modembed.model.application.composition.impl.CompositionPackageImpl;
 import hu.modembed.model.application.datatypes.DatatypesPackage;
 import hu.modembed.model.application.datatypes.impl.DatatypesPackageImpl;
 import hu.modembed.model.application.impl.ApplicationPackageImpl;
@@ -124,6 +128,8 @@ public class NetworkPackageImpl extends EPackageImpl implements NetworkPackage {
 		ApplicationPackageImpl theApplicationPackage = (ApplicationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI) instanceof ApplicationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI) : ApplicationPackage.eINSTANCE);
 		InterfacePackageImpl theInterfacePackage = (InterfacePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InterfacePackage.eNS_URI) instanceof InterfacePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InterfacePackage.eNS_URI) : InterfacePackage.eINSTANCE);
 		DatatypesPackageImpl theDatatypesPackage = (DatatypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI) instanceof DatatypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI) : DatatypesPackage.eINSTANCE);
+		CompositionPackageImpl theCompositionPackage = (CompositionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CompositionPackage.eNS_URI) instanceof CompositionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CompositionPackage.eNS_URI) : CompositionPackage.eINSTANCE);
+		CodePackageImpl theCodePackage = (CodePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CodePackage.eNS_URI) instanceof CodePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CodePackage.eNS_URI) : CodePackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theNetworkPackage.createPackageContents();
@@ -134,6 +140,8 @@ public class NetworkPackageImpl extends EPackageImpl implements NetworkPackage {
 		theApplicationPackage.createPackageContents();
 		theInterfacePackage.createPackageContents();
 		theDatatypesPackage.createPackageContents();
+		theCompositionPackage.createPackageContents();
+		theCodePackage.createPackageContents();
 
 		// Initialize created meta-data
 		theNetworkPackage.initializePackageContents();
@@ -144,6 +152,8 @@ public class NetworkPackageImpl extends EPackageImpl implements NetworkPackage {
 		theApplicationPackage.initializePackageContents();
 		theInterfacePackage.initializePackageContents();
 		theDatatypesPackage.initializePackageContents();
+		theCompositionPackage.initializePackageContents();
+		theCodePackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theNetworkPackage.freeze();

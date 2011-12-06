@@ -4,9 +4,11 @@
  *
  * $Id$
  */
-package hu.modembed.model.application.util;
+package hu.modembed.model.application.composition.util;
 
-import hu.modembed.model.application.*;
+import hu.modembed.model.application.Component;
+
+import hu.modembed.model.application.composition.*;
 
 import hu.modembed.model.core.MODembedElement;
 import hu.modembed.model.core.NamedElement;
@@ -24,17 +26,17 @@ import org.eclipse.emf.ecore.EObject;
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
- * @see hu.modembed.model.application.ApplicationPackage
+ * @see hu.modembed.model.application.composition.CompositionPackage
  * @generated
  */
-public class ApplicationAdapterFactory extends AdapterFactoryImpl {
+public class CompositionAdapterFactory extends AdapterFactoryImpl {
 	/**
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static ApplicationPackage modelPackage;
+	protected static CompositionPackage modelPackage;
 
 	/**
 	 * Creates an instance of the adapter factory.
@@ -42,9 +44,9 @@ public class ApplicationAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ApplicationAdapterFactory() {
+	public CompositionAdapterFactory() {
 		if (modelPackage == null) {
-			modelPackage = ApplicationPackage.eINSTANCE;
+			modelPackage = CompositionPackage.eINSTANCE;
 		}
 	}
 
@@ -73,15 +75,19 @@ public class ApplicationAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ApplicationSwitch<Adapter> modelSwitch =
-		new ApplicationSwitch<Adapter>() {
+	protected CompositionSwitch<Adapter> modelSwitch =
+		new CompositionSwitch<Adapter>() {
 			@Override
-			public Adapter caseComponent(Component object) {
-				return createComponentAdapter();
+			public Adapter caseCompositeComponent(CompositeComponent object) {
+				return createCompositeComponentAdapter();
 			}
 			@Override
-			public Adapter casePort(Port object) {
-				return createPortAdapter();
+			public Adapter caseSubComponent(SubComponent object) {
+				return createSubComponentAdapter();
+			}
+			@Override
+			public Adapter caseConnection(Connection object) {
+				return createConnectionAdapter();
 			}
 			@Override
 			public Adapter caseMODembedElement(MODembedElement object) {
@@ -94,6 +100,10 @@ public class ApplicationAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter casePackagedElement(PackagedElement object) {
 				return createPackagedElementAdapter();
+			}
+			@Override
+			public Adapter caseComponent(Component object) {
+				return createComponentAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -116,30 +126,44 @@ public class ApplicationAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link hu.modembed.model.application.Component <em>Component</em>}'.
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.application.composition.CompositeComponent <em>Composite Component</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see hu.modembed.model.application.Component
+	 * @see hu.modembed.model.application.composition.CompositeComponent
 	 * @generated
 	 */
-	public Adapter createComponentAdapter() {
+	public Adapter createCompositeComponentAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link hu.modembed.model.application.Port <em>Port</em>}'.
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.application.composition.SubComponent <em>Sub Component</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see hu.modembed.model.application.Port
+	 * @see hu.modembed.model.application.composition.SubComponent
 	 * @generated
 	 */
-	public Adapter createPortAdapter() {
+	public Adapter createSubComponentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.application.composition.Connection <em>Connection</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.modembed.model.application.composition.Connection
+	 * @generated
+	 */
+	public Adapter createConnectionAdapter() {
 		return null;
 	}
 
@@ -186,6 +210,20 @@ public class ApplicationAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.application.Component <em>Component</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.modembed.model.application.Component
+	 * @generated
+	 */
+	public Adapter createComponentAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for the default case.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null.
@@ -197,4 +235,4 @@ public class ApplicationAdapterFactory extends AdapterFactoryImpl {
 		return null;
 	}
 
-} //ApplicationAdapterFactory
+} //CompositionAdapterFactory

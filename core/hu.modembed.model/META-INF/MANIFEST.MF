@@ -8,6 +8,12 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: hu.modembed.model.application,
+ hu.modembed.model.application.code,
+ hu.modembed.model.application.code.impl,
+ hu.modembed.model.application.code.util,
+ hu.modembed.model.application.composition,
+ hu.modembed.model.application.composition.impl,
+ hu.modembed.model.application.composition.util,
  hu.modembed.model.application.datatypes,
  hu.modembed.model.application.datatypes.impl,
  hu.modembed.model.application.datatypes.util,

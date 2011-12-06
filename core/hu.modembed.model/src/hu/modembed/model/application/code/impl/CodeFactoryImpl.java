@@ -4,9 +4,9 @@
  *
  * $Id$
  */
-package hu.modembed.model.application.impl;
+package hu.modembed.model.application.code.impl;
 
-import hu.modembed.model.application.*;
+import hu.modembed.model.application.code.*;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -22,24 +22,24 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationFactory {
+public class CodeFactoryImpl extends EFactoryImpl implements CodeFactory {
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static ApplicationFactory init() {
+	public static CodeFactory init() {
 		try {
-			ApplicationFactory theApplicationFactory = (ApplicationFactory)EPackage.Registry.INSTANCE.getEFactory("http://modembed.hu/application"); 
-			if (theApplicationFactory != null) {
-				return theApplicationFactory;
+			CodeFactory theCodeFactory = (CodeFactory)EPackage.Registry.INSTANCE.getEFactory("http://modembed.hu/application/code"); 
+			if (theCodeFactory != null) {
+				return theCodeFactory;
 			}
 		}
 		catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
-		return new ApplicationFactoryImpl();
+		return new CodeFactoryImpl();
 	}
 
 	/**
@@ -48,7 +48,7 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ApplicationFactoryImpl() {
+	public CodeFactoryImpl() {
 		super();
 	}
 
@@ -60,7 +60,7 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case ApplicationPackage.PORT: return createPort();
+			case CodePackage.CODE_COMPONENT: return createCodeComponent();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -71,9 +71,9 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Port createPort() {
-		PortImpl port = new PortImpl();
-		return port;
+	public CodeComponent createCodeComponent() {
+		CodeComponentImpl codeComponent = new CodeComponentImpl();
+		return codeComponent;
 	}
 
 	/**
@@ -81,8 +81,8 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ApplicationPackage getApplicationPackage() {
-		return (ApplicationPackage)getEPackage();
+	public CodePackage getCodePackage() {
+		return (CodePackage)getEPackage();
 	}
 
 	/**
@@ -92,8 +92,8 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 	 * @generated
 	 */
 	@Deprecated
-	public static ApplicationPackage getPackage() {
-		return ApplicationPackage.eINSTANCE;
+	public static CodePackage getPackage() {
+		return CodePackage.eINSTANCE;
 	}
 
-} //ApplicationFactoryImpl
+} //CodeFactoryImpl

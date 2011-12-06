@@ -4,13 +4,14 @@
  *
  * $Id$
  */
-package hu.modembed.model.application.impl;
+package hu.modembed.model.application.composition.impl;
 
-import hu.modembed.model.application.ApplicationPackage;
-import hu.modembed.model.application.ComponentImplementation;
-import hu.modembed.model.application.ComponentType;
+import hu.modembed.model.application.Component;
 
-import hu.modembed.model.core.impl.PackagedElementImpl;
+import hu.modembed.model.application.composition.CompositionPackage;
+import hu.modembed.model.application.composition.SubComponent;
+
+import hu.modembed.model.core.impl.NamedElementImpl;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -21,18 +22,18 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Component Implementation</b></em>'.
+ * An implementation of the model object '<em><b>Sub Component</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.modembed.model.application.impl.ComponentImplementationImpl#getType <em>Type</em>}</li>
+ *   <li>{@link hu.modembed.model.application.composition.impl.SubComponentImpl#getType <em>Type</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public abstract class ComponentImplementationImpl extends PackagedElementImpl implements ComponentImplementation {
+public class SubComponentImpl extends NamedElementImpl implements SubComponent {
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -41,14 +42,14 @@ public abstract class ComponentImplementationImpl extends PackagedElementImpl im
 	 * @generated
 	 * @ordered
 	 */
-	protected ComponentType type;
+	protected Component type;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ComponentImplementationImpl() {
+	protected SubComponentImpl() {
 		super();
 	}
 
@@ -59,7 +60,7 @@ public abstract class ComponentImplementationImpl extends PackagedElementImpl im
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ApplicationPackage.Literals.COMPONENT_IMPLEMENTATION;
+		return CompositionPackage.Literals.SUB_COMPONENT;
 	}
 
 	/**
@@ -67,13 +68,13 @@ public abstract class ComponentImplementationImpl extends PackagedElementImpl im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ComponentType getType() {
+	public Component getType() {
 		if (type != null && type.eIsProxy()) {
 			InternalEObject oldType = (InternalEObject)type;
-			type = (ComponentType)eResolveProxy(oldType);
+			type = (Component)eResolveProxy(oldType);
 			if (type != oldType) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ApplicationPackage.COMPONENT_IMPLEMENTATION__TYPE, oldType, type));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CompositionPackage.SUB_COMPONENT__TYPE, oldType, type));
 			}
 		}
 		return type;
@@ -84,7 +85,7 @@ public abstract class ComponentImplementationImpl extends PackagedElementImpl im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ComponentType basicGetType() {
+	public Component basicGetType() {
 		return type;
 	}
 
@@ -93,11 +94,11 @@ public abstract class ComponentImplementationImpl extends PackagedElementImpl im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setType(ComponentType newType) {
-		ComponentType oldType = type;
+	public void setType(Component newType) {
+		Component oldType = type;
 		type = newType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ApplicationPackage.COMPONENT_IMPLEMENTATION__TYPE, oldType, type));
+			eNotify(new ENotificationImpl(this, Notification.SET, CompositionPackage.SUB_COMPONENT__TYPE, oldType, type));
 	}
 
 	/**
@@ -108,7 +109,7 @@ public abstract class ComponentImplementationImpl extends PackagedElementImpl im
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ApplicationPackage.COMPONENT_IMPLEMENTATION__TYPE:
+			case CompositionPackage.SUB_COMPONENT__TYPE:
 				if (resolve) return getType();
 				return basicGetType();
 		}
@@ -123,8 +124,8 @@ public abstract class ComponentImplementationImpl extends PackagedElementImpl im
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ApplicationPackage.COMPONENT_IMPLEMENTATION__TYPE:
-				setType((ComponentType)newValue);
+			case CompositionPackage.SUB_COMPONENT__TYPE:
+				setType((Component)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -138,8 +139,8 @@ public abstract class ComponentImplementationImpl extends PackagedElementImpl im
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ApplicationPackage.COMPONENT_IMPLEMENTATION__TYPE:
-				setType((ComponentType)null);
+			case CompositionPackage.SUB_COMPONENT__TYPE:
+				setType((Component)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -153,10 +154,10 @@ public abstract class ComponentImplementationImpl extends PackagedElementImpl im
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ApplicationPackage.COMPONENT_IMPLEMENTATION__TYPE:
+			case CompositionPackage.SUB_COMPONENT__TYPE:
 				return type != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //ComponentImplementationImpl
+} //SubComponentImpl
