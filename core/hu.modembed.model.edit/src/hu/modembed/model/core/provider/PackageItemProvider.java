@@ -176,6 +176,11 @@ public class PackageItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(CorePackage.Literals.PACKAGE__CONTENTS,
+				 ApplicationFactory.eINSTANCE.createApplication()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.PACKAGE__CONTENTS,
 				 InterfaceFactory.eINSTANCE.createOperationInterface()));
 
 		newChildDescriptors.add

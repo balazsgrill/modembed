@@ -84,6 +84,10 @@ public class ApplicationAdapterFactory extends AdapterFactoryImpl {
 				return createPortAdapter();
 			}
 			@Override
+			public Adapter caseApplication(Application object) {
+				return createApplicationAdapter();
+			}
+			@Override
 			public Adapter caseMODembedElement(MODembedElement object) {
 				return createMODembedElementAdapter();
 			}
@@ -140,6 +144,20 @@ public class ApplicationAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPortAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.application.Application <em>Application</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.modembed.model.application.Application
+	 * @generated
+	 */
+	public Adapter createApplicationAdapter() {
 		return null;
 	}
 

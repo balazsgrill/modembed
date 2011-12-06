@@ -6,6 +6,7 @@
  */
 package hu.modembed.model.application.impl;
 
+import hu.modembed.model.application.Application;
 import hu.modembed.model.application.ApplicationFactory;
 import hu.modembed.model.application.ApplicationPackage;
 import hu.modembed.model.application.Component;
@@ -67,6 +68,13 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * @generated
 	 */
 	private EClass portEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass applicationEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -208,6 +216,42 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getApplication() {
+		return applicationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getApplication_MainComp() {
+		return (EReference)applicationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getApplication_MainPort() {
+		return (EReference)applicationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getApplication_Main() {
+		return (EReference)applicationEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ApplicationFactory getApplicationFactory() {
 		return (ApplicationFactory)getEFactoryInstance();
 	}
@@ -237,6 +281,11 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 
 		portEClass = createEClass(PORT);
 		createEReference(portEClass, PORT__INTERFACE);
+
+		applicationEClass = createEClass(APPLICATION);
+		createEReference(applicationEClass, APPLICATION__MAIN_COMP);
+		createEReference(applicationEClass, APPLICATION__MAIN_PORT);
+		createEReference(applicationEClass, APPLICATION__MAIN);
 	}
 
 	/**
@@ -282,6 +331,7 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 		// Add supertypes to classes
 		componentEClass.getESuperTypes().add(theCorePackage.getPackagedElement());
 		portEClass.getESuperTypes().add(theCorePackage.getNamedElement());
+		applicationEClass.getESuperTypes().add(theCorePackage.getPackagedElement());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(componentEClass, Component.class, "Component", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -290,6 +340,11 @@ public class ApplicationPackageImpl extends EPackageImpl implements ApplicationP
 
 		initEClass(portEClass, Port.class, "Port", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPort_Interface(), theInterfacePackage.getComponentInterface(), null, "interface", null, 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(applicationEClass, Application.class, "Application", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getApplication_MainComp(), this.getComponent(), null, "mainComp", null, 0, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getApplication_MainPort(), this.getPort(), null, "mainPort", null, 0, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getApplication_Main(), theInterfacePackage.getOperation(), null, "main", null, 0, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

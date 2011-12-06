@@ -99,6 +99,29 @@ public class ApplicationItemProviderAdapterFactory extends ApplicationAdapterFac
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link hu.modembed.model.application.Application} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ApplicationItemProvider applicationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link hu.modembed.model.application.Application}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createApplicationAdapter() {
+		if (applicationItemProvider == null) {
+			applicationItemProvider = new ApplicationItemProvider(this);
+		}
+
+		return applicationItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -198,6 +221,7 @@ public class ApplicationItemProviderAdapterFactory extends ApplicationAdapterFac
 	 */
 	public void dispose() {
 		if (portItemProvider != null) portItemProvider.dispose();
+		if (applicationItemProvider != null) applicationItemProvider.dispose();
 	}
 
 }

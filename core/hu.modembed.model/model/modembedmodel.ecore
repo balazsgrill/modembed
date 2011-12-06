@@ -75,6 +75,11 @@
     <eClassifiers xsi:type="ecore:EClass" name="Port" eSuperTypes="#//core/NamedElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="interface" eType="#//application/interface/ComponentInterface"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Application" eSuperTypes="#//core/PackagedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="mainComp" eType="#//application/Component"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="mainPort" eType="#//application/Port"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="main" eType="#//application/interface/Operation"/>
+    </eClassifiers>
     <eSubpackages name="interface" nsURI="http://modembed.hu/application/interface"
         nsPrefix="interface">
       <eClassifiers xsi:type="ecore:EClass" name="ComponentInterface" abstract="true"

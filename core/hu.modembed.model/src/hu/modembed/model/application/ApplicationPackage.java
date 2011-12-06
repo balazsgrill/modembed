@@ -145,6 +145,62 @@ public interface ApplicationPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link hu.modembed.model.application.impl.ApplicationImpl <em>Application</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.modembed.model.application.impl.ApplicationImpl
+	 * @see hu.modembed.model.application.impl.ApplicationPackageImpl#getApplication()
+	 * @generated
+	 */
+	int APPLICATION = 2;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION__NAME = CorePackage.PACKAGED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Main Comp</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION__MAIN_COMP = CorePackage.PACKAGED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Main Port</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION__MAIN_PORT = CorePackage.PACKAGED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Main</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION__MAIN = CorePackage.PACKAGED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Application</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION_FEATURE_COUNT = CorePackage.PACKAGED_ELEMENT_FEATURE_COUNT + 3;
+
+
+	/**
 	 * Returns the meta object for class '{@link hu.modembed.model.application.Component <em>Component</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -196,6 +252,49 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getPort_Interface();
+
+	/**
+	 * Returns the meta object for class '{@link hu.modembed.model.application.Application <em>Application</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Application</em>'.
+	 * @see hu.modembed.model.application.Application
+	 * @generated
+	 */
+	EClass getApplication();
+
+	/**
+	 * Returns the meta object for the reference '{@link hu.modembed.model.application.Application#getMainComp <em>Main Comp</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Main Comp</em>'.
+	 * @see hu.modembed.model.application.Application#getMainComp()
+	 * @see #getApplication()
+	 * @generated
+	 */
+	EReference getApplication_MainComp();
+
+	/**
+	 * Returns the meta object for the reference '{@link hu.modembed.model.application.Application#getMainPort <em>Main Port</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Main Port</em>'.
+	 * @see hu.modembed.model.application.Application#getMainPort()
+	 * @see #getApplication()
+	 * @generated
+	 */
+	EReference getApplication_MainPort();
+
+	/**
+	 * Returns the meta object for the reference '{@link hu.modembed.model.application.Application#getMain <em>Main</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Main</em>'.
+	 * @see hu.modembed.model.application.Application#getMain()
+	 * @see #getApplication()
+	 * @generated
+	 */
+	EReference getApplication_Main();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -262,6 +361,40 @@ public interface ApplicationPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PORT__INTERFACE = eINSTANCE.getPort_Interface();
+
+		/**
+		 * The meta object literal for the '{@link hu.modembed.model.application.impl.ApplicationImpl <em>Application</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.modembed.model.application.impl.ApplicationImpl
+		 * @see hu.modembed.model.application.impl.ApplicationPackageImpl#getApplication()
+		 * @generated
+		 */
+		EClass APPLICATION = eINSTANCE.getApplication();
+
+		/**
+		 * The meta object literal for the '<em><b>Main Comp</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference APPLICATION__MAIN_COMP = eINSTANCE.getApplication_MainComp();
+
+		/**
+		 * The meta object literal for the '<em><b>Main Port</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference APPLICATION__MAIN_PORT = eINSTANCE.getApplication_MainPort();
+
+		/**
+		 * The meta object literal for the '<em><b>Main</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference APPLICATION__MAIN = eINSTANCE.getApplication_Main();
 
 	}
 

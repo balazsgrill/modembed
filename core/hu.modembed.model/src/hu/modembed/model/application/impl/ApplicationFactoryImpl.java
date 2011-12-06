@@ -61,6 +61,7 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case ApplicationPackage.PORT: return createPort();
+			case ApplicationPackage.APPLICATION: return createApplication();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -74,6 +75,16 @@ public class ApplicationFactoryImpl extends EFactoryImpl implements ApplicationF
 	public Port createPort() {
 		PortImpl port = new PortImpl();
 		return port;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Application createApplication() {
+		ApplicationImpl application = new ApplicationImpl();
+		return application;
 	}
 
 	/**
