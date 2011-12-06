@@ -4,23 +4,23 @@
  *
  * $Id$
  */
-package hu.modembed.model.core.provider;
+package hu.modembed.model.application.interface_.provider;
 
 
-import hu.modembed.model.application.ApplicationFactory;
-import hu.modembed.model.application.datatypes.DatatypesFactory;
 import hu.modembed.model.application.interface_.InterfaceFactory;
-import hu.modembed.model.comm.rs232.Rs232Factory;
-import hu.modembed.model.core.CoreFactory;
-import hu.modembed.model.core.CorePackage;
+import hu.modembed.model.application.interface_.InterfacePackage;
+import hu.modembed.model.application.interface_.Operation;
 
-import hu.modembed.model.network.NetworkFactory;
+import hu.modembed.model.core.provider.ModembedmodelEditPlugin;
+import hu.modembed.model.core.provider.NamedElementItemProvider;
 
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
 
@@ -33,13 +33,13 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link hu.modembed.model.core.Package} object.
+ * This is the item provider adapter for a {@link hu.modembed.model.application.interface_.Operation} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class PackageItemProvider
-	extends PackagedElementItemProvider
+public class OperationItemProvider
+	extends NamedElementItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -52,7 +52,7 @@ public class PackageItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PackageItemProvider(AdapterFactory adapterFactory) {
+	public OperationItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -83,7 +83,7 @@ public class PackageItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(CorePackage.Literals.PACKAGE__CONTENTS);
+			childrenFeatures.add(InterfacePackage.Literals.OPERATION__ARGUMENTS);
 		}
 		return childrenFeatures;
 	}
@@ -102,14 +102,14 @@ public class PackageItemProvider
 	}
 
 	/**
-	 * This returns Package.gif.
+	 * This returns Operation.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Package"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Operation"));
 	}
 
 	/**
@@ -120,10 +120,10 @@ public class PackageItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((hu.modembed.model.core.Package)object).getName();
+		String label = ((Operation)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Package_type") :
-			getString("_UI_Package_type") + " " + label;
+			getString("_UI_Operation_type") :
+			getString("_UI_Operation_type") + " " + label;
 	}
 
 	/**
@@ -137,8 +137,8 @@ public class PackageItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(hu.modembed.model.core.Package.class)) {
-			case CorePackage.PACKAGE__CONTENTS:
+		switch (notification.getFeatureID(Operation.class)) {
+			case InterfacePackage.OPERATION__ARGUMENTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -158,43 +158,19 @@ public class PackageItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.PACKAGE__CONTENTS,
-				 CoreFactory.eINSTANCE.createPackage()));
+				(InterfacePackage.Literals.OPERATION__ARGUMENTS,
+				 InterfaceFactory.eINSTANCE.createArgument()));
+	}
 
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.PACKAGE__CONTENTS,
-				 NetworkFactory.eINSTANCE.createNetwork()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.PACKAGE__CONTENTS,
-				 Rs232Factory.eINSTANCE.createRS232Protocol()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.PACKAGE__CONTENTS,
-				 ApplicationFactory.eINSTANCE.createComponentType()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.PACKAGE__CONTENTS,
-				 InterfaceFactory.eINSTANCE.createOperationInterface()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.PACKAGE__CONTENTS,
-				 DatatypesFactory.eINSTANCE.createAtomicType()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.PACKAGE__CONTENTS,
-				 DatatypesFactory.eINSTANCE.createArrayType()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.PACKAGE__CONTENTS,
-				 DatatypesFactory.eINSTANCE.createStructType()));
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return ModembedmodelEditPlugin.INSTANCE;
 	}
 
 }

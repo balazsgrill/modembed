@@ -4,17 +4,12 @@
  *
  * $Id$
  */
-package hu.modembed.model.core.provider;
+package hu.modembed.model.application.datatypes.provider;
 
 
-import hu.modembed.model.application.ApplicationFactory;
 import hu.modembed.model.application.datatypes.DatatypesFactory;
-import hu.modembed.model.application.interface_.InterfaceFactory;
-import hu.modembed.model.comm.rs232.Rs232Factory;
-import hu.modembed.model.core.CoreFactory;
-import hu.modembed.model.core.CorePackage;
-
-import hu.modembed.model.network.NetworkFactory;
+import hu.modembed.model.application.datatypes.DatatypesPackage;
+import hu.modembed.model.application.datatypes.StructType;
 
 import java.util.Collection;
 import java.util.List;
@@ -33,13 +28,13 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link hu.modembed.model.core.Package} object.
+ * This is the item provider adapter for a {@link hu.modembed.model.application.datatypes.StructType} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class PackageItemProvider
-	extends PackagedElementItemProvider
+public class StructTypeItemProvider
+	extends StructuredTypeItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -52,7 +47,7 @@ public class PackageItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PackageItemProvider(AdapterFactory adapterFactory) {
+	public StructTypeItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -83,7 +78,7 @@ public class PackageItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(CorePackage.Literals.PACKAGE__CONTENTS);
+			childrenFeatures.add(DatatypesPackage.Literals.STRUCT_TYPE__ELEMENTS);
 		}
 		return childrenFeatures;
 	}
@@ -102,14 +97,14 @@ public class PackageItemProvider
 	}
 
 	/**
-	 * This returns Package.gif.
+	 * This returns StructType.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Package"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/StructType"));
 	}
 
 	/**
@@ -120,10 +115,10 @@ public class PackageItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((hu.modembed.model.core.Package)object).getName();
+		String label = ((StructType)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Package_type") :
-			getString("_UI_Package_type") + " " + label;
+			getString("_UI_StructType_type") :
+			getString("_UI_StructType_type") + " " + label;
 	}
 
 	/**
@@ -137,8 +132,8 @@ public class PackageItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(hu.modembed.model.core.Package.class)) {
-			case CorePackage.PACKAGE__CONTENTS:
+		switch (notification.getFeatureID(StructType.class)) {
+			case DatatypesPackage.STRUCT_TYPE__ELEMENTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -158,43 +153,8 @@ public class PackageItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.PACKAGE__CONTENTS,
-				 CoreFactory.eINSTANCE.createPackage()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.PACKAGE__CONTENTS,
-				 NetworkFactory.eINSTANCE.createNetwork()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.PACKAGE__CONTENTS,
-				 Rs232Factory.eINSTANCE.createRS232Protocol()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.PACKAGE__CONTENTS,
-				 ApplicationFactory.eINSTANCE.createComponentType()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.PACKAGE__CONTENTS,
-				 InterfaceFactory.eINSTANCE.createOperationInterface()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.PACKAGE__CONTENTS,
-				 DatatypesFactory.eINSTANCE.createAtomicType()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.PACKAGE__CONTENTS,
-				 DatatypesFactory.eINSTANCE.createArrayType()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.PACKAGE__CONTENTS,
-				 DatatypesFactory.eINSTANCE.createStructType()));
+				(DatatypesPackage.Literals.STRUCT_TYPE__ELEMENTS,
+				 DatatypesFactory.eINSTANCE.createStructElement()));
 	}
 
 }

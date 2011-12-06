@@ -66,10 +66,18 @@
     </eSubpackages>
   </eSubpackages>
   <eSubpackages name="application" nsURI="http://modembed.hu/application" nsPrefix="app">
-    <eClassifiers xsi:type="ecore:EClass" name="ComponentType" eSuperTypes="#//core/PackagedElement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ComponentType" eSuperTypes="#//core/PackagedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="uses" upperBound="-1"
+          eType="#//application/Port" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="implements" upperBound="-1"
+          eType="#//application/Port" containment="true"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ComponentImplementation" abstract="true"
         eSuperTypes="#//core/PackagedElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//application/ComponentType"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Port" eSuperTypes="#//core/NamedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="interface" eType="#//application/interface/ComponentInterface"/>
     </eClassifiers>
     <eSubpackages name="interface" nsURI="http://modembed.hu/application/interface"
         nsPrefix="interface">

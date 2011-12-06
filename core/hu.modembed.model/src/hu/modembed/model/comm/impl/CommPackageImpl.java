@@ -6,6 +6,12 @@
  */
 package hu.modembed.model.comm.impl;
 
+import hu.modembed.model.application.ApplicationPackage;
+import hu.modembed.model.application.datatypes.DatatypesPackage;
+import hu.modembed.model.application.datatypes.impl.DatatypesPackageImpl;
+import hu.modembed.model.application.impl.ApplicationPackageImpl;
+import hu.modembed.model.application.interface_.InterfacePackage;
+import hu.modembed.model.application.interface_.impl.InterfacePackageImpl;
 import hu.modembed.model.comm.CommFactory;
 import hu.modembed.model.comm.CommPackage;
 import hu.modembed.model.comm.CommunicationProtocol;
@@ -101,6 +107,9 @@ public class CommPackageImpl extends EPackageImpl implements CommPackage {
 		NetworkPackageImpl theNetworkPackage = (NetworkPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(NetworkPackage.eNS_URI) instanceof NetworkPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(NetworkPackage.eNS_URI) : NetworkPackage.eINSTANCE);
 		Rs232PackageImpl theRs232Package = (Rs232PackageImpl)(EPackage.Registry.INSTANCE.getEPackage(Rs232Package.eNS_URI) instanceof Rs232PackageImpl ? EPackage.Registry.INSTANCE.getEPackage(Rs232Package.eNS_URI) : Rs232Package.eINSTANCE);
 		hu.modembed.model.comm.rs232.impl.Rs232PackageImpl theRs232Package_1 = (hu.modembed.model.comm.rs232.impl.Rs232PackageImpl)(EPackage.Registry.INSTANCE.getEPackage(hu.modembed.model.comm.rs232.Rs232Package.eNS_URI) instanceof hu.modembed.model.comm.rs232.impl.Rs232PackageImpl ? EPackage.Registry.INSTANCE.getEPackage(hu.modembed.model.comm.rs232.Rs232Package.eNS_URI) : hu.modembed.model.comm.rs232.Rs232Package.eINSTANCE);
+		ApplicationPackageImpl theApplicationPackage = (ApplicationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI) instanceof ApplicationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI) : ApplicationPackage.eINSTANCE);
+		InterfacePackageImpl theInterfacePackage = (InterfacePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InterfacePackage.eNS_URI) instanceof InterfacePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InterfacePackage.eNS_URI) : InterfacePackage.eINSTANCE);
+		DatatypesPackageImpl theDatatypesPackage = (DatatypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI) instanceof DatatypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI) : DatatypesPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theCommPackage.createPackageContents();
@@ -108,6 +117,9 @@ public class CommPackageImpl extends EPackageImpl implements CommPackage {
 		theNetworkPackage.createPackageContents();
 		theRs232Package.createPackageContents();
 		theRs232Package_1.createPackageContents();
+		theApplicationPackage.createPackageContents();
+		theInterfacePackage.createPackageContents();
+		theDatatypesPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theCommPackage.initializePackageContents();
@@ -115,6 +127,9 @@ public class CommPackageImpl extends EPackageImpl implements CommPackage {
 		theNetworkPackage.initializePackageContents();
 		theRs232Package.initializePackageContents();
 		theRs232Package_1.initializePackageContents();
+		theApplicationPackage.initializePackageContents();
+		theInterfacePackage.initializePackageContents();
+		theDatatypesPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theCommPackage.freeze();

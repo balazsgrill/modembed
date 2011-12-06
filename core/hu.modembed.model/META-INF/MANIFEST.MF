@@ -7,7 +7,16 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: hu.modembed.model.comm,
+Export-Package: hu.modembed.model.application,
+ hu.modembed.model.application.datatypes,
+ hu.modembed.model.application.datatypes.impl,
+ hu.modembed.model.application.datatypes.util,
+ hu.modembed.model.application.impl,
+ hu.modembed.model.application.interface_,
+ hu.modembed.model.application.interface_.impl,
+ hu.modembed.model.application.interface_.util,
+ hu.modembed.model.application.util,
+ hu.modembed.model.comm,
  hu.modembed.model.comm.impl,
  hu.modembed.model.comm.rs232,
  hu.modembed.model.comm.rs232.impl,
