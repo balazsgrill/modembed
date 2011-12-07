@@ -110,6 +110,16 @@ public class MODembedCore extends Plugin {
 		return m.getPlugin();
 	}
 	
+	public static Collection<URI> getAllResources(String project, String type) throws CoreException{
+		final Collection<URI> result = new ArrayList<URI>();
+		List<String> deps = MODembedCore.collectAllDependencies(project);
+
+		for(String d : deps){
+			result.addAll(getVisibleResources(d,type));
+		}
+		return result;
+	}
+	
 	public static Collection<URI> getVisibleResources(String pluginname, final String type) throws CoreException{
 		IPlugin plugin = getPlugin(pluginname);
 		final Collection<URI> result = new ArrayList<URI>();

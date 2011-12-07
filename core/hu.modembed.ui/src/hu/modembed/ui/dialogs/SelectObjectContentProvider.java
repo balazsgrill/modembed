@@ -3,6 +3,8 @@
  */
 package hu.modembed.ui.dialogs;
 
+import hu.modembed.MODembedCore;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
@@ -13,11 +15,15 @@ import java.util.Set;
 
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.CoreException;
+import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.jface.viewers.IStructuredContentProvider;
 import org.eclipse.jface.viewers.Viewer;
 
@@ -28,6 +34,8 @@ import org.eclipse.jface.viewers.Viewer;
 public class SelectObjectContentProvider implements IStructuredContentProvider {
 
 	private final EClass type;
+	
+	private final ResourceSet resourceSet;
 	
 	private final Set<String[]> allrefs = new HashSet<String[]>();
 	
@@ -82,8 +90,9 @@ public class SelectObjectContentProvider implements IStructuredContentProvider {
 		return es;
 	}
 	
-	public SelectObjectContentProvider(EReference ref) {
+	public SelectObjectContentProvider(EReference ref, ResourceSet resourceSet) {
 		this.type = ref.getEReferenceType();
+		this.resourceSet = resourceSet;
 		EAnnotation ann = ref.getEAnnotation("reference");
 		if (ann != null){
 			String paths = ann.getDetails().get("scope");
@@ -127,11 +136,23 @@ public class SelectObjectContentProvider implements IStructuredContentProvider {
 			}
 		}
 		if (inputElement instanceof IProject){
-//			try {
-//				//return MODembedCore.getDefault().getResourceSet((IProject)inputElement).findEObjects(type).toArray();
-//			} catch (CoreException e) {
-//				e.printStackTrace();
-//			}
+			List<Object> result = new ArrayList<Object>();
+			try {
+				for(URI uri : MODembedCore.getAllResources(((IProject) inputElement).getName(), "xmi")){
+					Resource r = resourceSet.getResource(uri, true);
+					TreeIterator<EObject> ti = r.getAllContents();
+					while(ti.hasNext()){
+						EObject eo = ti.next();
+						if (type.isInstance(eo)){
+							result.add(eo);
+						}
+					}
+				}
+				return result.toArray();
+			} catch (CoreException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		return new Object[0];
 	}

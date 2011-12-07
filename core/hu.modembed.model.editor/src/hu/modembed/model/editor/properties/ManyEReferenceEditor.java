@@ -72,7 +72,7 @@ public class ManyEReferenceEditor implements IPropertyEditor {
 		menumanager.add(new Action("Add..") {
 			@Override
 			public void run() {
-				SelectObjectDialog dialog = new SelectObjectDialog(viewer.getControl().getShell(), eobject, reference, true);
+				SelectObjectDialog dialog = new SelectObjectDialog(viewer.getControl().getShell(),eobject.eResource().getResourceSet(), eobject, reference, true);
 				if (dialog.open() == Dialog.OK){
 					Object[] sel = dialog.getResult();
 					if (sel.length > 0){

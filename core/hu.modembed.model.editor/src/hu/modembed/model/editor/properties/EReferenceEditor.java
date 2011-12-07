@@ -78,7 +78,7 @@ public class EReferenceEditor implements IPropertyEditor {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				Object input = (scope == null) ? eobject : scope;
-				SelectObjectDialog dialog = new SelectObjectDialog(button.getShell(), input, reference, false);
+				SelectObjectDialog dialog = new SelectObjectDialog(button.getShell(), eobject.eResource().getResourceSet(), input, reference, false);
 				if (dialog.open() == Dialog.OK){
 					Object[] sel = dialog.getResult();
 					if (sel.length > 0){

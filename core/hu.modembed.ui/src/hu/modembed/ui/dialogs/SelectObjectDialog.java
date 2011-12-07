@@ -6,6 +6,7 @@ package hu.modembed.ui.dialogs;
 import hu.modembed.ui.MODembedUI;
 
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Shell;
@@ -19,11 +20,11 @@ public class SelectObjectDialog extends ListDialog {
 
 	private final boolean multi;
 	
-	public SelectObjectDialog(Shell parentShell, Object input, EReference ref, boolean multi) {
+	public SelectObjectDialog(Shell parentShell, ResourceSet resourceset, Object input, EReference ref, boolean multi) {
 		super(parentShell);
 		
 		this.multi = multi;
-		setContentProvider(new SelectObjectContentProvider(ref));
+		setContentProvider(new SelectObjectContentProvider(ref, resourceset));
 		setLabelProvider(new AdapterFactoryLabelProvider(MODembedUI.getDefault().createAdapterFactory()));
 		setInput(input);
 		setTitle("Select an object");
