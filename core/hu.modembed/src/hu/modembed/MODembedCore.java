@@ -110,7 +110,7 @@ public class MODembedCore extends Plugin {
 		return m.getPlugin();
 	}
 	
-	public static Collection<URI> getVisibleResources(String pluginname) throws CoreException{
+	public static Collection<URI> getVisibleResources(String pluginname, final String type) throws CoreException{
 		IPlugin plugin = getPlugin(pluginname);
 		final Collection<URI> result = new ArrayList<URI>();
 		
@@ -122,7 +122,9 @@ public class MODembedCore extends Plugin {
 				@Override
 				public boolean visit(IResource resource) throws CoreException {
 					if (resource instanceof IFile){
-						result.add(URI.createPlatformResourceURI(resource.getFullPath().toString(), true));
+						if (type.equals(resource.getFileExtension())){
+							result.add(URI.createPlatformResourceURI(resource.getFullPath().toString(), true));
+						}
 						return false;
 					}
 					return true;
@@ -130,8 +132,8 @@ public class MODembedCore extends Plugin {
 			});
 		}else{
 			Bundle b = Platform.getBundle(plugin.getId());
-			Enumeration<URL> urls = b.findEntries("/", "*.e", true);
-			//b.
+			Enumeration<URL> urls = b.findEntries("/", "*."+type, true);
+
 			while(urls.hasMoreElements()){
 				URL url = urls.nextElement();
 				URI uri = URI.createPlatformPluginURI(pluginname+url.getPath(), true);

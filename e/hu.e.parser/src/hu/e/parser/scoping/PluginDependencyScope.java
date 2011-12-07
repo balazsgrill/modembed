@@ -39,7 +39,7 @@ public class PluginDependencyScope extends AbstractScope {
 		
 		for(String d : deps){
 			try {
-				for(URI uri : MODembedCore.getVisibleResources(d)){
+				for(URI uri : MODembedCore.getVisibleResources(d,"e")){
 					try{
 						Resource r = resourceset.getResource(uri, true);
 						for(EObject eo : r.getContents()){
