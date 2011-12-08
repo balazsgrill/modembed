@@ -12,7 +12,7 @@
    <extension
          point="org.eclipse.graphiti.ui.diagramTypeProviders">
       <diagramTypeProvider
-            class="hu.modembed.model.graph.CompositionDiagramTypeProvider"
+            class="hu.modembed.model.graph.composition.CompositionDiagramTypeProvider"
             id="hu.modembed.model.graph.compositionDiagram.provider"
             name="Composition diagram editor">
          <diagramType

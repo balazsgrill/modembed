@@ -1,7 +1,7 @@
 /**
  * 
  */
-package hu.modembed.model.graph;
+package hu.modembed.model.graph.composition;
 
 import org.eclipse.graphiti.dt.IDiagramTypeProvider;
 import org.eclipse.graphiti.ui.features.DefaultFeatureProvider;

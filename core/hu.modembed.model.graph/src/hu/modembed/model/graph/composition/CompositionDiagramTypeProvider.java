@@ -1,4 +1,4 @@
-package hu.modembed.model.graph;
+package hu.modembed.model.graph.composition;
 
 import org.eclipse.graphiti.dt.AbstractDiagramTypeProvider;
 import org.eclipse.graphiti.dt.IDiagramTypeProvider;
