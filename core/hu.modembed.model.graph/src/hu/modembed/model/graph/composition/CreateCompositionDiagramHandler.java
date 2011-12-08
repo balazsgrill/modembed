@@ -15,6 +15,8 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.graphiti.mm.MmFactory;
+import org.eclipse.graphiti.mm.Property;
 import org.eclipse.graphiti.mm.pictograms.Diagram;
 import org.eclipse.graphiti.services.Graphiti;
 import org.eclipse.jface.viewers.ISelection;
@@ -28,6 +30,8 @@ import org.eclipse.ui.handlers.HandlerUtil;
 public class CreateCompositionDiagramHandler extends AbstractHandler implements
 		IHandler {
 
+	public static String ModelLink = "hu.modembed.model.graph.domain.uri"; 
+	
 	public static String DIAGRAMTYPEID = "MODembedCompositionDiagram";
 	
 	/* (non-Javadoc)
@@ -45,6 +49,12 @@ public class CreateCompositionDiagramHandler extends AbstractHandler implements
 				uri = uri.trimSegments(1).appendSegment(cc.getName()+".diagram");
 				
 				Diagram diagram = Graphiti.getPeCreateService().createDiagram(DIAGRAMTYPEID, cc.getName(), true);
+				Property modellink = MmFactory.eINSTANCE.createProperty();
+				modellink.setKey(ModelLink);
+				URI objectURI = cc.eResource().getURI();
+				objectURI = objectURI.appendFragment(cc.eResource().getURIFragment(cc));
+				modellink.setValue(objectURI.toString());
+				diagram.getProperties().add(modellink);
 				
 				ResourceSet resourceSet = new ResourceSetImpl();
 				Resource resource = resourceSet.createResource(uri);
