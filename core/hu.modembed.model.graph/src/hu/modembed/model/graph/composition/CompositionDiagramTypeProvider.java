@@ -6,6 +6,8 @@ import org.eclipse.graphiti.dt.IDiagramTypeProvider;
 public class CompositionDiagramTypeProvider extends AbstractDiagramTypeProvider
 		implements IDiagramTypeProvider {
 
+	
+	
 	public CompositionDiagramTypeProvider() {
 		setFeatureProvider(new CompositionDiagramFeatureProvider(this));
 		

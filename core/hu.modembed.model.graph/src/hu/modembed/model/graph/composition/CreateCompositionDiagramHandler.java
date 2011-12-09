@@ -4,6 +4,7 @@
 package hu.modembed.model.graph.composition;
 
 import hu.modembed.model.application.composition.CompositeComponent;
+import hu.modembed.model.graph.DiagramProperties;
 
 import java.io.IOException;
 
@@ -29,8 +30,6 @@ import org.eclipse.ui.handlers.HandlerUtil;
  */
 public class CreateCompositionDiagramHandler extends AbstractHandler implements
 		IHandler {
-
-	public static String ModelLink = "hu.modembed.model.graph.domain.uri"; 
 	
 	public static String DIAGRAMTYPEID = "MODembedCompositionDiagram";
 	
@@ -50,7 +49,7 @@ public class CreateCompositionDiagramHandler extends AbstractHandler implements
 				
 				Diagram diagram = Graphiti.getPeCreateService().createDiagram(DIAGRAMTYPEID, cc.getName(), true);
 				Property modellink = MmFactory.eINSTANCE.createProperty();
-				modellink.setKey(ModelLink);
+				modellink.setKey(DiagramProperties.ModelLink);
 				URI objectURI = cc.eResource().getURI();
 				objectURI = objectURI.appendFragment(cc.eResource().getURIFragment(cc));
 				modellink.setValue(objectURI.toString());
