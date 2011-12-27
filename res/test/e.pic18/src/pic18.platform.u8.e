@@ -25,6 +25,23 @@ subtract_u8(var uint8 dest, uint8 v){
 	aSUBWF(addr(dest));
 }
 
+set_bool(var bool dest, bool v){
+	if(isliteral(v)){
+		if (v == 0){
+			aCLRF(addr(dest));
+		}else{
+			if (v == 0xFF){
+				aSETF(addr(dest));
+			}else{
+				MOVLW(v);
+				aMOVWF(addr(dest));
+			}
+		}
+	}else{
+		MOVFF(addr(v),addr(dest));
+	}
+}
+
 /*
  * dest = v
  */

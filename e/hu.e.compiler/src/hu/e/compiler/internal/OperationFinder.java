@@ -3,10 +3,15 @@
  */
 package hu.e.compiler.internal;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
 import hu.e.compiler.ECompilerException;
 import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
 import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.compiler.internal.model.symbols.IVariableSymbol;
+import hu.e.compiler.internal.model.symbols.impl.StructLiteralSymbol;
 import hu.e.parser.eSyntax.DataTypeDef;
 import hu.e.parser.eSyntax.Operation;
 import hu.e.parser.eSyntax.OperationRole;
@@ -56,30 +61,31 @@ public class OperationFinder {
 	}
 	
 	public Operation getOperation(OperationRole role, ISymbol...symbols) throws ECompilerException{
-		OperatorDefinition opdef = findDef(role);
-		if (opdef == null) return null;
-		for(Operation op : opdef.getCandidate()){
-			if (checkOperation(op, symbols)) return op;
+		for(OperatorDefinition opdef : findDef(role)){
+			for(Operation op : opdef.getCandidate()){
+				if (checkOperation(op, symbols)) return op;
+			}
 		}
 		return null;
 	}
 	
-	private OperatorDefinition findDef(OperationRole role){
+	private Collection<OperatorDefinition> findDef(OperationRole role){
+		List<OperatorDefinition> opdefs = new ArrayList<OperatorDefinition>();
 		for(TopLevelItem tli : pack.getItems()){
 			if (tli instanceof OperatorDefinition){
 				if (role == ((OperatorDefinition) tli).getRole())
-					return (OperatorDefinition)tli;
+					opdefs.add((OperatorDefinition)tli);
 			}
 		}
 		for(Package ipack : pack.getUses()){
 			for(TopLevelItem tli : ipack.getItems()){
 				if (tli instanceof OperatorDefinition){
 					if (role == ((OperatorDefinition) tli).getRole())
-						return (OperatorDefinition)tli;
+						opdefs.add((OperatorDefinition)tli);
 				}
 			}
 		}
-		return null;
+		return opdefs;
 	}
 	
 	private boolean checkOperation(Operation op, ISymbol...symbols) throws ECompilerException{
@@ -108,6 +114,12 @@ public class OperationFinder {
 					return false;
 				}
 				
+			}else if (s instanceof StructLiteralSymbol){
+				if (pv.getKind() == ParameterKind.VAR) return false;
+				
+				if (s.getType() != pv.getVar().getType()){
+					return false;
+				}
 			}else{
 				throw new ECompilerException(op, "Unsupported operator symbol: "+s);
 			}

@@ -25,6 +25,7 @@ operator UC_GOTO{
 }
 
 operator SET{
+	set_bool,
 	set_u8,
 	set_u16_u8,
 	set_u16_u16
