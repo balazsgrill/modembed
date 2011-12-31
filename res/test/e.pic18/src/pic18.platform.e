@@ -4,6 +4,7 @@ import e.types;
 import e.platform.u8;
 import e.platform.u16;
 import microchip.pic18;
+import microchip.pic18.assisted;
 
 operator ADD{
 	add_u8,
@@ -21,7 +22,7 @@ operator BRANCH{
 }
 
 operator UC_GOTO{
-	GOTO
+	aGOTO
 }
 
 operator SET{

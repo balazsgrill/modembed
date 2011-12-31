@@ -20,6 +20,11 @@ assistSelectBank(address f){
 	}
 } returns bank_a;
 
+aGOTO(codeaddr c ){
+	bank = 0;
+	GOTO(c);
+}
+
 aADDWF(address f, bool d=1){
 	ADDWF(f,d,assistSelectBank(f));
 }
