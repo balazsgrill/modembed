@@ -18,12 +18,14 @@ import hu.e.parser.eSyntax.DataTypeDef;
 import hu.e.parser.eSyntax.ESyntaxPackage;
 import hu.e.parser.eSyntax.FunctionBinarySection;
 import hu.e.parser.eSyntax.FunctionMemory;
+import hu.e.parser.eSyntax.InstanceConfig;
 import hu.e.parser.eSyntax.InstanceReference;
 import hu.e.parser.eSyntax.InstructionWord;
 import hu.e.parser.eSyntax.Label;
 import hu.e.parser.eSyntax.Library;
 import hu.e.parser.eSyntax.LibraryItem;
 import hu.e.parser.eSyntax.LinkedBinary;
+import hu.e.parser.eSyntax.LinkedInstance;
 import hu.e.parser.eSyntax.LiteralValue;
 import hu.e.parser.eSyntax.Operation;
 import hu.e.parser.eSyntax.OperationBlock;
@@ -34,6 +36,7 @@ import hu.e.parser.eSyntax.OperatorDefinition;
 import hu.e.parser.eSyntax.PointerTypeDef;
 import hu.e.parser.eSyntax.RefTypeDef;
 import hu.e.parser.eSyntax.ReferenceBinarySection;
+import hu.e.parser.eSyntax.ReferenceLink;
 import hu.e.parser.eSyntax.RegisterVariable;
 import hu.e.parser.eSyntax.StructTypeDef;
 import hu.e.parser.eSyntax.Type;
@@ -370,6 +373,27 @@ public class ESyntaxSwitch<T> extends Switch<T>
         FunctionBinarySection functionBinarySection = (FunctionBinarySection)theEObject;
         T result = caseFunctionBinarySection(functionBinarySection);
         if (result == null) result = caseBinarySection(functionBinarySection);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ESyntaxPackage.LINKED_INSTANCE:
+      {
+        LinkedInstance linkedInstance = (LinkedInstance)theEObject;
+        T result = caseLinkedInstance(linkedInstance);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ESyntaxPackage.REFERENCE_LINK:
+      {
+        ReferenceLink referenceLink = (ReferenceLink)theEObject;
+        T result = caseReferenceLink(referenceLink);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ESyntaxPackage.INSTANCE_CONFIG:
+      {
+        InstanceConfig instanceConfig = (InstanceConfig)theEObject;
+        T result = caseInstanceConfig(instanceConfig);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -1092,6 +1116,54 @@ public class ESyntaxSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseFunctionBinarySection(FunctionBinarySection object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Linked Instance</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Linked Instance</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLinkedInstance(LinkedInstance object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Reference Link</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Reference Link</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseReferenceLink(ReferenceLink object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Instance Config</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Instance Config</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInstanceConfig(InstanceConfig object)
   {
     return null;
   }

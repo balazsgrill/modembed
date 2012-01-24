@@ -23,12 +23,14 @@ import hu.e.parser.eSyntax.ESyntaxFactory;
 import hu.e.parser.eSyntax.ESyntaxPackage;
 import hu.e.parser.eSyntax.FunctionBinarySection;
 import hu.e.parser.eSyntax.FunctionMemory;
+import hu.e.parser.eSyntax.InstanceConfig;
 import hu.e.parser.eSyntax.InstanceReference;
 import hu.e.parser.eSyntax.InstructionWord;
 import hu.e.parser.eSyntax.Label;
 import hu.e.parser.eSyntax.Library;
 import hu.e.parser.eSyntax.LibraryItem;
 import hu.e.parser.eSyntax.LinkedBinary;
+import hu.e.parser.eSyntax.LinkedInstance;
 import hu.e.parser.eSyntax.LiteralValue;
 import hu.e.parser.eSyntax.MULTIPLICATIVE_OPERATOR;
 import hu.e.parser.eSyntax.Operation;
@@ -43,6 +45,7 @@ import hu.e.parser.eSyntax.PointerTypeDef;
 import hu.e.parser.eSyntax.PrimitiveKind;
 import hu.e.parser.eSyntax.RefTypeDef;
 import hu.e.parser.eSyntax.ReferenceBinarySection;
+import hu.e.parser.eSyntax.ReferenceLink;
 import hu.e.parser.eSyntax.RegisterVariable;
 import hu.e.parser.eSyntax.StructTypeDef;
 import hu.e.parser.eSyntax.Type;
@@ -165,6 +168,9 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
       case ESyntaxPackage.LINKED_BINARY: return createLinkedBinary();
       case ESyntaxPackage.BINARY_SECTION: return createBinarySection();
       case ESyntaxPackage.FUNCTION_BINARY_SECTION: return createFunctionBinarySection();
+      case ESyntaxPackage.LINKED_INSTANCE: return createLinkedInstance();
+      case ESyntaxPackage.REFERENCE_LINK: return createReferenceLink();
+      case ESyntaxPackage.INSTANCE_CONFIG: return createInstanceConfig();
       case ESyntaxPackage.FUNCTION_MEMORY: return createFunctionMemory();
       case ESyntaxPackage.CONSTANT_BINARY_SECTION: return createConstantBinarySection();
       case ESyntaxPackage.REFERENCE_BINARY_SECTION: return createReferenceBinarySection();
@@ -601,6 +607,39 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
   {
     FunctionBinarySectionImpl functionBinarySection = new FunctionBinarySectionImpl();
     return functionBinarySection;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public LinkedInstance createLinkedInstance()
+  {
+    LinkedInstanceImpl linkedInstance = new LinkedInstanceImpl();
+    return linkedInstance;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ReferenceLink createReferenceLink()
+  {
+    ReferenceLinkImpl referenceLink = new ReferenceLinkImpl();
+    return referenceLink;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InstanceConfig createInstanceConfig()
+  {
+    InstanceConfigImpl instanceConfig = new InstanceConfigImpl();
+    return instanceConfig;
   }
 
   /**

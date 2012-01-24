@@ -251,11 +251,34 @@ BinarySection:
 ;
  
 FunctionBinarySection:
-	'link' operation=[Operation|QualifiedName] '{'
+	'link' '('
 		'memwidth' '=' memwidth=LITERAL ';'
 		(mems+=FunctionMemory ';')+
+	')' '{'
+		(
+		('lib' lib+=Library ';') |
+		(instances+=LinkedInstance '{'
+			( 
+			(links+=ReferenceLink | confs+=InstanceConfig)	
+			';')*
+		'}')
+		)*
+		
+		'link' opins=[LinkedInstance|ID] op=[Operation|ID]
 	'}'
 ; 
+
+LinkedInstance:
+	type=[Class|QualifiedName] name=ID
+;
+
+ReferenceLink:
+	ref=[InstanceReference|ID] ':' inst=[LinkedInstance|ID]
+;
+
+InstanceConfig:
+	conf=[ConfigVariable|ID] '=' value=XExpression
+;
 
 FunctionMemory:
 	'mem' start=LITERAL '..' end=LITERAL

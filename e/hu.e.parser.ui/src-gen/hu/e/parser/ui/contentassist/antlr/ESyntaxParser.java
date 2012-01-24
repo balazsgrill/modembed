@@ -46,6 +46,8 @@ public class ESyntaxParser extends AbstractContentAssistParser {
 					put(grammarAccess.getWordSectionAccess().getAlternatives_0(), "rule__WordSection__Alternatives_0");
 					put(grammarAccess.getOperationAccess().getAlternatives_8_1(), "rule__Operation__Alternatives_8_1");
 					put(grammarAccess.getBinarySectionAccess().getAlternatives_0(), "rule__BinarySection__Alternatives_0");
+					put(grammarAccess.getFunctionBinarySectionAccess().getAlternatives_10(), "rule__FunctionBinarySection__Alternatives_10");
+					put(grammarAccess.getFunctionBinarySectionAccess().getAlternatives_10_1_2_0(), "rule__FunctionBinarySection__Alternatives_10_1_2_0");
 					put(grammarAccess.getXPrimaryExpressionAccess().getAlternatives(), "rule__XPrimaryExpression__Alternatives");
 					put(grammarAccess.getXTopLevelExpressionAccess().getAlternatives(), "rule__XTopLevelExpression__Alternatives");
 					put(grammarAccess.getPrimitiveKindAccess().getAlternatives(), "rule__PrimitiveKind__Alternatives");
@@ -116,6 +118,12 @@ public class ESyntaxParser extends AbstractContentAssistParser {
 					put(grammarAccess.getBinarySectionAccess().getGroup(), "rule__BinarySection__Group__0");
 					put(grammarAccess.getFunctionBinarySectionAccess().getGroup(), "rule__FunctionBinarySection__Group__0");
 					put(grammarAccess.getFunctionBinarySectionAccess().getGroup_7(), "rule__FunctionBinarySection__Group_7__0");
+					put(grammarAccess.getFunctionBinarySectionAccess().getGroup_10_0(), "rule__FunctionBinarySection__Group_10_0__0");
+					put(grammarAccess.getFunctionBinarySectionAccess().getGroup_10_1(), "rule__FunctionBinarySection__Group_10_1__0");
+					put(grammarAccess.getFunctionBinarySectionAccess().getGroup_10_1_2(), "rule__FunctionBinarySection__Group_10_1_2__0");
+					put(grammarAccess.getLinkedInstanceAccess().getGroup(), "rule__LinkedInstance__Group__0");
+					put(grammarAccess.getReferenceLinkAccess().getGroup(), "rule__ReferenceLink__Group__0");
+					put(grammarAccess.getInstanceConfigAccess().getGroup(), "rule__InstanceConfig__Group__0");
 					put(grammarAccess.getFunctionMemoryAccess().getGroup(), "rule__FunctionMemory__Group__0");
 					put(grammarAccess.getConstantBinarySectionAccess().getGroup(), "rule__ConstantBinarySection__Group__0");
 					put(grammarAccess.getConstantBinarySectionAccess().getGroup_2(), "rule__ConstantBinarySection__Group_2__0");
@@ -216,6 +224,16 @@ public class ESyntaxParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFunctionBinarySectionAccess().getOperationAssignment_1(), "rule__FunctionBinarySection__OperationAssignment_1");
 					put(grammarAccess.getFunctionBinarySectionAccess().getMemwidthAssignment_5(), "rule__FunctionBinarySection__MemwidthAssignment_5");
 					put(grammarAccess.getFunctionBinarySectionAccess().getMemsAssignment_7_0(), "rule__FunctionBinarySection__MemsAssignment_7_0");
+					put(grammarAccess.getFunctionBinarySectionAccess().getLibAssignment_10_0_1(), "rule__FunctionBinarySection__LibAssignment_10_0_1");
+					put(grammarAccess.getFunctionBinarySectionAccess().getInstancesAssignment_10_1_0(), "rule__FunctionBinarySection__InstancesAssignment_10_1_0");
+					put(grammarAccess.getFunctionBinarySectionAccess().getLinksAssignment_10_1_2_0_0(), "rule__FunctionBinarySection__LinksAssignment_10_1_2_0_0");
+					put(grammarAccess.getFunctionBinarySectionAccess().getConfsAssignment_10_1_2_0_1(), "rule__FunctionBinarySection__ConfsAssignment_10_1_2_0_1");
+					put(grammarAccess.getLinkedInstanceAccess().getTypeAssignment_0(), "rule__LinkedInstance__TypeAssignment_0");
+					put(grammarAccess.getLinkedInstanceAccess().getNameAssignment_1(), "rule__LinkedInstance__NameAssignment_1");
+					put(grammarAccess.getReferenceLinkAccess().getRefAssignment_0(), "rule__ReferenceLink__RefAssignment_0");
+					put(grammarAccess.getReferenceLinkAccess().getInstAssignment_2(), "rule__ReferenceLink__InstAssignment_2");
+					put(grammarAccess.getInstanceConfigAccess().getConfAssignment_0(), "rule__InstanceConfig__ConfAssignment_0");
+					put(grammarAccess.getInstanceConfigAccess().getValueAssignment_2(), "rule__InstanceConfig__ValueAssignment_2");
 					put(grammarAccess.getFunctionMemoryAccess().getStartAssignment_1(), "rule__FunctionMemory__StartAssignment_1");
 					put(grammarAccess.getFunctionMemoryAccess().getEndAssignment_3(), "rule__FunctionMemory__EndAssignment_3");
 					put(grammarAccess.getConstantBinarySectionAccess().getDataAssignment_2_0(), "rule__ConstantBinarySection__DataAssignment_2_0");

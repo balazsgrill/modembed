@@ -174,6 +174,30 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="memwidth" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mems" upperBound="-1" eType="ecore:EClass platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//FunctionMemory"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lib" upperBound="-1" eType="ecore:EClass platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Library"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instances" upperBound="-1"
+        eType="ecore:EClass platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//LinkedInstance"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="links" upperBound="-1"
+        eType="ecore:EClass platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//ReferenceLink"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="confs" upperBound="-1"
+        eType="ecore:EClass platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//InstanceConfig"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LinkedInstance">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="ecore:EClass platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Class"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReferenceLink">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ref" eType="ecore:EClass platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//InstanceReference"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inst" eType="ecore:EClass platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//LinkedInstance"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InstanceConfig">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conf" eType="ecore:EClass platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//ConfigVariable"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="ecore:EClass platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XExpression"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FunctionMemory">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="start" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

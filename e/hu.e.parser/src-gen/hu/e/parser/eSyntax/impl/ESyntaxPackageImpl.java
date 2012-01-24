@@ -20,12 +20,14 @@ import hu.e.parser.eSyntax.ESyntaxFactory;
 import hu.e.parser.eSyntax.ESyntaxPackage;
 import hu.e.parser.eSyntax.FunctionBinarySection;
 import hu.e.parser.eSyntax.FunctionMemory;
+import hu.e.parser.eSyntax.InstanceConfig;
 import hu.e.parser.eSyntax.InstanceReference;
 import hu.e.parser.eSyntax.InstructionWord;
 import hu.e.parser.eSyntax.Label;
 import hu.e.parser.eSyntax.Library;
 import hu.e.parser.eSyntax.LibraryItem;
 import hu.e.parser.eSyntax.LinkedBinary;
+import hu.e.parser.eSyntax.LinkedInstance;
 import hu.e.parser.eSyntax.LiteralValue;
 import hu.e.parser.eSyntax.Operation;
 import hu.e.parser.eSyntax.OperationBlock;
@@ -39,6 +41,7 @@ import hu.e.parser.eSyntax.PointerTypeDef;
 import hu.e.parser.eSyntax.PrimitiveKind;
 import hu.e.parser.eSyntax.RefTypeDef;
 import hu.e.parser.eSyntax.ReferenceBinarySection;
+import hu.e.parser.eSyntax.ReferenceLink;
 import hu.e.parser.eSyntax.RegisterVariable;
 import hu.e.parser.eSyntax.StructTypeDef;
 import hu.e.parser.eSyntax.Type;
@@ -300,6 +303,27 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * @generated
    */
   private EClass functionBinarySectionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass linkedInstanceEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass referenceLinkEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass instanceConfigEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1374,6 +1398,136 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getFunctionBinarySection_Lib()
+  {
+    return (EReference)functionBinarySectionEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getFunctionBinarySection_Instances()
+  {
+    return (EReference)functionBinarySectionEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getFunctionBinarySection_Links()
+  {
+    return (EReference)functionBinarySectionEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getFunctionBinarySection_Confs()
+  {
+    return (EReference)functionBinarySectionEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getLinkedInstance()
+  {
+    return linkedInstanceEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getLinkedInstance_Type()
+  {
+    return (EReference)linkedInstanceEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getLinkedInstance_Name()
+  {
+    return (EAttribute)linkedInstanceEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getReferenceLink()
+  {
+    return referenceLinkEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getReferenceLink_Ref()
+  {
+    return (EReference)referenceLinkEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getReferenceLink_Inst()
+  {
+    return (EReference)referenceLinkEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getInstanceConfig()
+  {
+    return instanceConfigEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getInstanceConfig_Conf()
+  {
+    return (EReference)instanceConfigEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getInstanceConfig_Value()
+  {
+    return (EReference)instanceConfigEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getFunctionMemory()
   {
     return functionMemoryEClass;
@@ -2255,6 +2409,22 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     createEReference(functionBinarySectionEClass, FUNCTION_BINARY_SECTION__OPERATION);
     createEAttribute(functionBinarySectionEClass, FUNCTION_BINARY_SECTION__MEMWIDTH);
     createEReference(functionBinarySectionEClass, FUNCTION_BINARY_SECTION__MEMS);
+    createEReference(functionBinarySectionEClass, FUNCTION_BINARY_SECTION__LIB);
+    createEReference(functionBinarySectionEClass, FUNCTION_BINARY_SECTION__INSTANCES);
+    createEReference(functionBinarySectionEClass, FUNCTION_BINARY_SECTION__LINKS);
+    createEReference(functionBinarySectionEClass, FUNCTION_BINARY_SECTION__CONFS);
+
+    linkedInstanceEClass = createEClass(LINKED_INSTANCE);
+    createEReference(linkedInstanceEClass, LINKED_INSTANCE__TYPE);
+    createEAttribute(linkedInstanceEClass, LINKED_INSTANCE__NAME);
+
+    referenceLinkEClass = createEClass(REFERENCE_LINK);
+    createEReference(referenceLinkEClass, REFERENCE_LINK__REF);
+    createEReference(referenceLinkEClass, REFERENCE_LINK__INST);
+
+    instanceConfigEClass = createEClass(INSTANCE_CONFIG);
+    createEReference(instanceConfigEClass, INSTANCE_CONFIG__CONF);
+    createEReference(instanceConfigEClass, INSTANCE_CONFIG__VALUE);
 
     functionMemoryEClass = createEClass(FUNCTION_MEMORY);
     createEAttribute(functionMemoryEClass, FUNCTION_MEMORY__START);
@@ -2537,6 +2707,22 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     initEReference(getFunctionBinarySection_Operation(), this.getOperation(), null, "operation", null, 0, 1, FunctionBinarySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getFunctionBinarySection_Memwidth(), ecorePackage.getEString(), "memwidth", null, 0, 1, FunctionBinarySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFunctionBinarySection_Mems(), this.getFunctionMemory(), null, "mems", null, 0, -1, FunctionBinarySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFunctionBinarySection_Lib(), this.getLibrary(), null, "lib", null, 0, -1, FunctionBinarySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFunctionBinarySection_Instances(), this.getLinkedInstance(), null, "instances", null, 0, -1, FunctionBinarySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFunctionBinarySection_Links(), this.getReferenceLink(), null, "links", null, 0, -1, FunctionBinarySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFunctionBinarySection_Confs(), this.getInstanceConfig(), null, "confs", null, 0, -1, FunctionBinarySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(linkedInstanceEClass, LinkedInstance.class, "LinkedInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getLinkedInstance_Type(), this.getClass_(), null, "type", null, 0, 1, LinkedInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getLinkedInstance_Name(), ecorePackage.getEString(), "name", null, 0, 1, LinkedInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(referenceLinkEClass, ReferenceLink.class, "ReferenceLink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getReferenceLink_Ref(), this.getInstanceReference(), null, "ref", null, 0, 1, ReferenceLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getReferenceLink_Inst(), this.getLinkedInstance(), null, "inst", null, 0, 1, ReferenceLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(instanceConfigEClass, InstanceConfig.class, "InstanceConfig", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getInstanceConfig_Conf(), this.getConfigVariable(), null, "conf", null, 0, 1, InstanceConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInstanceConfig_Value(), this.getXExpression(), null, "value", null, 0, 1, InstanceConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(functionMemoryEClass, FunctionMemory.class, "FunctionMemory", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getFunctionMemory_Start(), ecorePackage.getEString(), "start", null, 0, 1, FunctionMemory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

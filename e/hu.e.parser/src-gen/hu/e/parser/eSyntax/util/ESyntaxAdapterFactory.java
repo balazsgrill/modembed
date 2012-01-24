@@ -18,12 +18,14 @@ import hu.e.parser.eSyntax.DataTypeDef;
 import hu.e.parser.eSyntax.ESyntaxPackage;
 import hu.e.parser.eSyntax.FunctionBinarySection;
 import hu.e.parser.eSyntax.FunctionMemory;
+import hu.e.parser.eSyntax.InstanceConfig;
 import hu.e.parser.eSyntax.InstanceReference;
 import hu.e.parser.eSyntax.InstructionWord;
 import hu.e.parser.eSyntax.Label;
 import hu.e.parser.eSyntax.Library;
 import hu.e.parser.eSyntax.LibraryItem;
 import hu.e.parser.eSyntax.LinkedBinary;
+import hu.e.parser.eSyntax.LinkedInstance;
 import hu.e.parser.eSyntax.LiteralValue;
 import hu.e.parser.eSyntax.Operation;
 import hu.e.parser.eSyntax.OperationBlock;
@@ -34,6 +36,7 @@ import hu.e.parser.eSyntax.OperatorDefinition;
 import hu.e.parser.eSyntax.PointerTypeDef;
 import hu.e.parser.eSyntax.RefTypeDef;
 import hu.e.parser.eSyntax.ReferenceBinarySection;
+import hu.e.parser.eSyntax.ReferenceLink;
 import hu.e.parser.eSyntax.RegisterVariable;
 import hu.e.parser.eSyntax.StructTypeDef;
 import hu.e.parser.eSyntax.Type;
@@ -287,6 +290,21 @@ public class ESyntaxAdapterFactory extends AdapterFactoryImpl
       public Adapter caseFunctionBinarySection(FunctionBinarySection object)
       {
         return createFunctionBinarySectionAdapter();
+      }
+      @Override
+      public Adapter caseLinkedInstance(LinkedInstance object)
+      {
+        return createLinkedInstanceAdapter();
+      }
+      @Override
+      public Adapter caseReferenceLink(ReferenceLink object)
+      {
+        return createReferenceLinkAdapter();
+      }
+      @Override
+      public Adapter caseInstanceConfig(InstanceConfig object)
+      {
+        return createInstanceConfigAdapter();
       }
       @Override
       public Adapter caseFunctionMemory(FunctionMemory object)
@@ -901,6 +919,51 @@ public class ESyntaxAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createFunctionBinarySectionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.e.parser.eSyntax.LinkedInstance <em>Linked Instance</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.e.parser.eSyntax.LinkedInstance
+   * @generated
+   */
+  public Adapter createLinkedInstanceAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.e.parser.eSyntax.ReferenceLink <em>Reference Link</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.e.parser.eSyntax.ReferenceLink
+   * @generated
+   */
+  public Adapter createReferenceLinkAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.e.parser.eSyntax.InstanceConfig <em>Instance Config</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.e.parser.eSyntax.InstanceConfig
+   * @generated
+   */
+  public Adapter createInstanceConfigAdapter()
   {
     return null;
   }

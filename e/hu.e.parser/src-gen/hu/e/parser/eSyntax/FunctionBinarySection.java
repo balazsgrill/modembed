@@ -19,6 +19,10 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getOperation <em>Operation</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getMemwidth <em>Memwidth</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getMems <em>Mems</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getLib <em>Lib</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getInstances <em>Instances</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getLinks <em>Links</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getConfs <em>Confs</em>}</li>
  * </ul>
  * </p>
  *
@@ -95,5 +99,69 @@ public interface FunctionBinarySection extends BinarySection
    * @generated
    */
   EList<FunctionMemory> getMems();
+
+  /**
+   * Returns the value of the '<em><b>Lib</b></em>' containment reference list.
+   * The list contents are of type {@link hu.e.parser.eSyntax.Library}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Lib</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Lib</em>' containment reference list.
+   * @see hu.e.parser.eSyntax.ESyntaxPackage#getFunctionBinarySection_Lib()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Library> getLib();
+
+  /**
+   * Returns the value of the '<em><b>Instances</b></em>' containment reference list.
+   * The list contents are of type {@link hu.e.parser.eSyntax.LinkedInstance}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Instances</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Instances</em>' containment reference list.
+   * @see hu.e.parser.eSyntax.ESyntaxPackage#getFunctionBinarySection_Instances()
+   * @model containment="true"
+   * @generated
+   */
+  EList<LinkedInstance> getInstances();
+
+  /**
+   * Returns the value of the '<em><b>Links</b></em>' containment reference list.
+   * The list contents are of type {@link hu.e.parser.eSyntax.ReferenceLink}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Links</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Links</em>' containment reference list.
+   * @see hu.e.parser.eSyntax.ESyntaxPackage#getFunctionBinarySection_Links()
+   * @model containment="true"
+   * @generated
+   */
+  EList<ReferenceLink> getLinks();
+
+  /**
+   * Returns the value of the '<em><b>Confs</b></em>' containment reference list.
+   * The list contents are of type {@link hu.e.parser.eSyntax.InstanceConfig}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Confs</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Confs</em>' containment reference list.
+   * @see hu.e.parser.eSyntax.ESyntaxPackage#getFunctionBinarySection_Confs()
+   * @model containment="true"
+   * @generated
+   */
+  EList<InstanceConfig> getConfs();
 
 } // FunctionBinarySection

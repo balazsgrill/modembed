@@ -306,6 +306,33 @@ public interface ESyntaxFactory extends EFactory
   FunctionBinarySection createFunctionBinarySection();
 
   /**
+   * Returns a new object of class '<em>Linked Instance</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Linked Instance</em>'.
+   * @generated
+   */
+  LinkedInstance createLinkedInstance();
+
+  /**
+   * Returns a new object of class '<em>Reference Link</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Reference Link</em>'.
+   * @generated
+   */
+  ReferenceLink createReferenceLink();
+
+  /**
+   * Returns a new object of class '<em>Instance Config</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Instance Config</em>'.
+   * @generated
+   */
+  InstanceConfig createInstanceConfig();
+
+  /**
    * Returns a new object of class '<em>Function Memory</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

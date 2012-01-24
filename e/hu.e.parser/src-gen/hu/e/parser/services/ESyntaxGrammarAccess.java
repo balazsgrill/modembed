@@ -1771,7 +1771,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cOperationAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final CrossReference cOperationOperationCrossReference_1_0 = (CrossReference)cOperationAssignment_1.eContents().get(0);
 		private final RuleCall cOperationOperationQualifiedNameParserRuleCall_1_0_1 = (RuleCall)cOperationOperationCrossReference_1_0.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cLeftParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Keyword cMemwidthKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Keyword cEqualsSignKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cMemwidthAssignment_5 = (Assignment)cGroup.eContents().get(5);
@@ -1781,13 +1781,36 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cMemsAssignment_7_0 = (Assignment)cGroup_7.eContents().get(0);
 		private final RuleCall cMemsFunctionMemoryParserRuleCall_7_0_0 = (RuleCall)cMemsAssignment_7_0.eContents().get(0);
 		private final Keyword cSemicolonKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
-		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Keyword cRightParenthesisKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Keyword cLeftCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Alternatives cAlternatives_10 = (Alternatives)cGroup.eContents().get(10);
+		private final Group cGroup_10_0 = (Group)cAlternatives_10.eContents().get(0);
+		private final Keyword cLibKeyword_10_0_0 = (Keyword)cGroup_10_0.eContents().get(0);
+		private final Assignment cLibAssignment_10_0_1 = (Assignment)cGroup_10_0.eContents().get(1);
+		private final RuleCall cLibLibraryParserRuleCall_10_0_1_0 = (RuleCall)cLibAssignment_10_0_1.eContents().get(0);
+		private final Keyword cSemicolonKeyword_10_0_2 = (Keyword)cGroup_10_0.eContents().get(2);
+		private final Group cGroup_10_1 = (Group)cAlternatives_10.eContents().get(1);
+		private final Assignment cInstancesAssignment_10_1_0 = (Assignment)cGroup_10_1.eContents().get(0);
+		private final RuleCall cInstancesLinkedInstanceParserRuleCall_10_1_0_0 = (RuleCall)cInstancesAssignment_10_1_0.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_10_1_1 = (Keyword)cGroup_10_1.eContents().get(1);
+		private final Group cGroup_10_1_2 = (Group)cGroup_10_1.eContents().get(2);
+		private final Alternatives cAlternatives_10_1_2_0 = (Alternatives)cGroup_10_1_2.eContents().get(0);
+		private final Assignment cLinksAssignment_10_1_2_0_0 = (Assignment)cAlternatives_10_1_2_0.eContents().get(0);
+		private final RuleCall cLinksReferenceLinkParserRuleCall_10_1_2_0_0_0 = (RuleCall)cLinksAssignment_10_1_2_0_0.eContents().get(0);
+		private final Assignment cConfsAssignment_10_1_2_0_1 = (Assignment)cAlternatives_10_1_2_0.eContents().get(1);
+		private final RuleCall cConfsInstanceConfigParserRuleCall_10_1_2_0_1_0 = (RuleCall)cConfsAssignment_10_1_2_0_1.eContents().get(0);
+		private final Keyword cSemicolonKeyword_10_1_2_1 = (Keyword)cGroup_10_1_2.eContents().get(1);
+		private final Keyword cRightCurlyBracketKeyword_10_1_3 = (Keyword)cGroup_10_1.eContents().get(3);
+		private final Keyword cRightCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
 		
 		//FunctionBinarySection:
-		//	"link" operation=[Operation|QualifiedName] "{" "memwidth" "=" memwidth=LITERAL ";" (mems+=FunctionMemory ";")+ "}";
+		//	"link" operation=[Operation|QualifiedName] "(" "memwidth" "=" memwidth=LITERAL ";" (mems+=FunctionMemory ";")+ ")" "{"
+		//	("lib" lib+=Library ";" | instances+=LinkedInstance "{" ((links+=ReferenceLink | confs+=InstanceConfig) ";")* "}")*
+		//	"}";
 		public ParserRule getRule() { return rule; }
 
-		//"link" operation=[Operation|QualifiedName] "{" "memwidth" "=" memwidth=LITERAL ";" (mems+=FunctionMemory ";")+ "}"
+		//"link" operation=[Operation|QualifiedName] "(" "memwidth" "=" memwidth=LITERAL ";" (mems+=FunctionMemory ";")+ ")" "{"
+		//("lib" lib+=Library ";" | instances+=LinkedInstance "{" ((links+=ReferenceLink | confs+=InstanceConfig) ";")* "}")* "}"
 		public Group getGroup() { return cGroup; }
 
 		//"link"
@@ -1802,8 +1825,8 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		//QualifiedName
 		public RuleCall getOperationOperationQualifiedNameParserRuleCall_1_0_1() { return cOperationOperationQualifiedNameParserRuleCall_1_0_1; }
 
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		//"("
+		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
 
 		//"memwidth"
 		public Keyword getMemwidthKeyword_3() { return cMemwidthKeyword_3; }
@@ -1832,8 +1855,176 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		//";"
 		public Keyword getSemicolonKeyword_7_1() { return cSemicolonKeyword_7_1; }
 
+		//")"
+		public Keyword getRightParenthesisKeyword_8() { return cRightParenthesisKeyword_8; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_9() { return cLeftCurlyBracketKeyword_9; }
+
+		//("lib" lib+=Library ";" | instances+=LinkedInstance "{" ((links+=ReferenceLink | confs+=InstanceConfig) ";")* "}")*
+		public Alternatives getAlternatives_10() { return cAlternatives_10; }
+
+		//"lib" lib+=Library ";"
+		public Group getGroup_10_0() { return cGroup_10_0; }
+
+		//"lib"
+		public Keyword getLibKeyword_10_0_0() { return cLibKeyword_10_0_0; }
+
+		//lib+=Library
+		public Assignment getLibAssignment_10_0_1() { return cLibAssignment_10_0_1; }
+
+		//Library
+		public RuleCall getLibLibraryParserRuleCall_10_0_1_0() { return cLibLibraryParserRuleCall_10_0_1_0; }
+
+		//";"
+		public Keyword getSemicolonKeyword_10_0_2() { return cSemicolonKeyword_10_0_2; }
+
+		//instances+=LinkedInstance "{" ((links+=ReferenceLink | confs+=InstanceConfig) ";")* "}"
+		public Group getGroup_10_1() { return cGroup_10_1; }
+
+		//instances+=LinkedInstance
+		public Assignment getInstancesAssignment_10_1_0() { return cInstancesAssignment_10_1_0; }
+
+		//LinkedInstance
+		public RuleCall getInstancesLinkedInstanceParserRuleCall_10_1_0_0() { return cInstancesLinkedInstanceParserRuleCall_10_1_0_0; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_10_1_1() { return cLeftCurlyBracketKeyword_10_1_1; }
+
+		//((links+=ReferenceLink | confs+=InstanceConfig) ";")*
+		public Group getGroup_10_1_2() { return cGroup_10_1_2; }
+
+		//links+=ReferenceLink | confs+=InstanceConfig
+		public Alternatives getAlternatives_10_1_2_0() { return cAlternatives_10_1_2_0; }
+
+		//links+=ReferenceLink
+		public Assignment getLinksAssignment_10_1_2_0_0() { return cLinksAssignment_10_1_2_0_0; }
+
+		//ReferenceLink
+		public RuleCall getLinksReferenceLinkParserRuleCall_10_1_2_0_0_0() { return cLinksReferenceLinkParserRuleCall_10_1_2_0_0_0; }
+
+		//confs+=InstanceConfig
+		public Assignment getConfsAssignment_10_1_2_0_1() { return cConfsAssignment_10_1_2_0_1; }
+
+		//InstanceConfig
+		public RuleCall getConfsInstanceConfigParserRuleCall_10_1_2_0_1_0() { return cConfsInstanceConfigParserRuleCall_10_1_2_0_1_0; }
+
+		//";"
+		public Keyword getSemicolonKeyword_10_1_2_1() { return cSemicolonKeyword_10_1_2_1; }
+
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
+		public Keyword getRightCurlyBracketKeyword_10_1_3() { return cRightCurlyBracketKeyword_10_1_3; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_11() { return cRightCurlyBracketKeyword_11; }
+	}
+
+	public class LinkedInstanceElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "LinkedInstance");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cTypeAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final CrossReference cTypeClassCrossReference_0_0 = (CrossReference)cTypeAssignment_0.eContents().get(0);
+		private final RuleCall cTypeClassQualifiedNameParserRuleCall_0_0_1 = (RuleCall)cTypeClassCrossReference_0_0.eContents().get(1);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		
+		//LinkedInstance:
+		//	type=[Class|QualifiedName] name=ID;
+		public ParserRule getRule() { return rule; }
+
+		//type=[Class|QualifiedName] name=ID
+		public Group getGroup() { return cGroup; }
+
+		//type=[Class|QualifiedName]
+		public Assignment getTypeAssignment_0() { return cTypeAssignment_0; }
+
+		//[Class|QualifiedName]
+		public CrossReference getTypeClassCrossReference_0_0() { return cTypeClassCrossReference_0_0; }
+
+		//QualifiedName
+		public RuleCall getTypeClassQualifiedNameParserRuleCall_0_0_1() { return cTypeClassQualifiedNameParserRuleCall_0_0_1; }
+
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+	}
+
+	public class ReferenceLinkElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ReferenceLink");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cRefAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final CrossReference cRefInstanceReferenceCrossReference_0_0 = (CrossReference)cRefAssignment_0.eContents().get(0);
+		private final RuleCall cRefInstanceReferenceIDTerminalRuleCall_0_0_1 = (RuleCall)cRefInstanceReferenceCrossReference_0_0.eContents().get(1);
+		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cInstAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cInstLinkedInstanceCrossReference_2_0 = (CrossReference)cInstAssignment_2.eContents().get(0);
+		private final RuleCall cInstLinkedInstanceIDTerminalRuleCall_2_0_1 = (RuleCall)cInstLinkedInstanceCrossReference_2_0.eContents().get(1);
+		
+		//ReferenceLink:
+		//	ref=[InstanceReference] ":" inst=[LinkedInstance];
+		public ParserRule getRule() { return rule; }
+
+		//ref=[InstanceReference] ":" inst=[LinkedInstance]
+		public Group getGroup() { return cGroup; }
+
+		//ref=[InstanceReference]
+		public Assignment getRefAssignment_0() { return cRefAssignment_0; }
+
+		//[InstanceReference]
+		public CrossReference getRefInstanceReferenceCrossReference_0_0() { return cRefInstanceReferenceCrossReference_0_0; }
+
+		//ID
+		public RuleCall getRefInstanceReferenceIDTerminalRuleCall_0_0_1() { return cRefInstanceReferenceIDTerminalRuleCall_0_0_1; }
+
+		//":"
+		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
+
+		//inst=[LinkedInstance]
+		public Assignment getInstAssignment_2() { return cInstAssignment_2; }
+
+		//[LinkedInstance]
+		public CrossReference getInstLinkedInstanceCrossReference_2_0() { return cInstLinkedInstanceCrossReference_2_0; }
+
+		//ID
+		public RuleCall getInstLinkedInstanceIDTerminalRuleCall_2_0_1() { return cInstLinkedInstanceIDTerminalRuleCall_2_0_1; }
+	}
+
+	public class InstanceConfigElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "InstanceConfig");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cConfAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final CrossReference cConfConfigVariableCrossReference_0_0 = (CrossReference)cConfAssignment_0.eContents().get(0);
+		private final RuleCall cConfConfigVariableIDTerminalRuleCall_0_0_1 = (RuleCall)cConfConfigVariableCrossReference_0_0.eContents().get(1);
+		private final Keyword cEqualsSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cValueXExpressionParserRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
+		
+		//InstanceConfig:
+		//	conf=[ConfigVariable] "=" value=XExpression;
+		public ParserRule getRule() { return rule; }
+
+		//conf=[ConfigVariable] "=" value=XExpression
+		public Group getGroup() { return cGroup; }
+
+		//conf=[ConfigVariable]
+		public Assignment getConfAssignment_0() { return cConfAssignment_0; }
+
+		//[ConfigVariable]
+		public CrossReference getConfConfigVariableCrossReference_0_0() { return cConfConfigVariableCrossReference_0_0; }
+
+		//ID
+		public RuleCall getConfConfigVariableIDTerminalRuleCall_0_0_1() { return cConfConfigVariableIDTerminalRuleCall_0_0_1; }
+
+		//"="
+		public Keyword getEqualsSignKeyword_1() { return cEqualsSignKeyword_1; }
+
+		//value=XExpression
+		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
+
+		//XExpression
+		public RuleCall getValueXExpressionParserRuleCall_2_0() { return cValueXExpressionParserRuleCall_2_0; }
 	}
 
 	public class FunctionMemoryElements extends AbstractParserRuleElementFinder {
@@ -3101,6 +3292,9 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	private BinaryTypeElements unknownRuleBinaryType;
 	private BinarySectionElements pBinarySection;
 	private FunctionBinarySectionElements pFunctionBinarySection;
+	private LinkedInstanceElements pLinkedInstance;
+	private ReferenceLinkElements pReferenceLink;
+	private InstanceConfigElements pInstanceConfig;
 	private FunctionMemoryElements pFunctionMemory;
 	private ConstantBinarySectionElements pConstantBinarySection;
 	private ReferenceBinarySectionElements pReferenceBinarySection;
@@ -3634,13 +3828,45 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//FunctionBinarySection:
-	//	"link" operation=[Operation|QualifiedName] "{" "memwidth" "=" memwidth=LITERAL ";" (mems+=FunctionMemory ";")+ "}";
+	//	"link" operation=[Operation|QualifiedName] "(" "memwidth" "=" memwidth=LITERAL ";" (mems+=FunctionMemory ";")+ ")" "{"
+	//	("lib" lib+=Library ";" | instances+=LinkedInstance "{" ((links+=ReferenceLink | confs+=InstanceConfig) ";")* "}")*
+	//	"}";
 	public FunctionBinarySectionElements getFunctionBinarySectionAccess() {
 		return (pFunctionBinarySection != null) ? pFunctionBinarySection : (pFunctionBinarySection = new FunctionBinarySectionElements());
 	}
 	
 	public ParserRule getFunctionBinarySectionRule() {
 		return getFunctionBinarySectionAccess().getRule();
+	}
+
+	//LinkedInstance:
+	//	type=[Class|QualifiedName] name=ID;
+	public LinkedInstanceElements getLinkedInstanceAccess() {
+		return (pLinkedInstance != null) ? pLinkedInstance : (pLinkedInstance = new LinkedInstanceElements());
+	}
+	
+	public ParserRule getLinkedInstanceRule() {
+		return getLinkedInstanceAccess().getRule();
+	}
+
+	//ReferenceLink:
+	//	ref=[InstanceReference] ":" inst=[LinkedInstance];
+	public ReferenceLinkElements getReferenceLinkAccess() {
+		return (pReferenceLink != null) ? pReferenceLink : (pReferenceLink = new ReferenceLinkElements());
+	}
+	
+	public ParserRule getReferenceLinkRule() {
+		return getReferenceLinkAccess().getRule();
+	}
+
+	//InstanceConfig:
+	//	conf=[ConfigVariable] "=" value=XExpression;
+	public InstanceConfigElements getInstanceConfigAccess() {
+		return (pInstanceConfig != null) ? pInstanceConfig : (pInstanceConfig = new InstanceConfigElements());
+	}
+	
+	public ParserRule getInstanceConfigRule() {
+		return getInstanceConfigAccess().getRule();
 	}
 
 	//FunctionMemory:

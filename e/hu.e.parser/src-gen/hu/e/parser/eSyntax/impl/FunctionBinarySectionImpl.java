@@ -9,7 +9,11 @@ package hu.e.parser.eSyntax.impl;
 import hu.e.parser.eSyntax.ESyntaxPackage;
 import hu.e.parser.eSyntax.FunctionBinarySection;
 import hu.e.parser.eSyntax.FunctionMemory;
+import hu.e.parser.eSyntax.InstanceConfig;
+import hu.e.parser.eSyntax.Library;
+import hu.e.parser.eSyntax.LinkedInstance;
 import hu.e.parser.eSyntax.Operation;
+import hu.e.parser.eSyntax.ReferenceLink;
 
 import java.util.Collection;
 
@@ -36,6 +40,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link hu.e.parser.eSyntax.impl.FunctionBinarySectionImpl#getOperation <em>Operation</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.impl.FunctionBinarySectionImpl#getMemwidth <em>Memwidth</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.impl.FunctionBinarySectionImpl#getMems <em>Mems</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.impl.FunctionBinarySectionImpl#getLib <em>Lib</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.impl.FunctionBinarySectionImpl#getInstances <em>Instances</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.impl.FunctionBinarySectionImpl#getLinks <em>Links</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.impl.FunctionBinarySectionImpl#getConfs <em>Confs</em>}</li>
  * </ul>
  * </p>
  *
@@ -82,6 +90,46 @@ public class FunctionBinarySectionImpl extends BinarySectionImpl implements Func
    * @ordered
    */
   protected EList<FunctionMemory> mems;
+
+  /**
+   * The cached value of the '{@link #getLib() <em>Lib</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getLib()
+   * @generated
+   * @ordered
+   */
+  protected EList<Library> lib;
+
+  /**
+   * The cached value of the '{@link #getInstances() <em>Instances</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getInstances()
+   * @generated
+   * @ordered
+   */
+  protected EList<LinkedInstance> instances;
+
+  /**
+   * The cached value of the '{@link #getLinks() <em>Links</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getLinks()
+   * @generated
+   * @ordered
+   */
+  protected EList<ReferenceLink> links;
+
+  /**
+   * The cached value of the '{@link #getConfs() <em>Confs</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getConfs()
+   * @generated
+   * @ordered
+   */
+  protected EList<InstanceConfig> confs;
 
   /**
    * <!-- begin-user-doc -->
@@ -189,6 +237,62 @@ public class FunctionBinarySectionImpl extends BinarySectionImpl implements Func
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<Library> getLib()
+  {
+    if (lib == null)
+    {
+      lib = new EObjectContainmentEList<Library>(Library.class, this, ESyntaxPackage.FUNCTION_BINARY_SECTION__LIB);
+    }
+    return lib;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<LinkedInstance> getInstances()
+  {
+    if (instances == null)
+    {
+      instances = new EObjectContainmentEList<LinkedInstance>(LinkedInstance.class, this, ESyntaxPackage.FUNCTION_BINARY_SECTION__INSTANCES);
+    }
+    return instances;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<ReferenceLink> getLinks()
+  {
+    if (links == null)
+    {
+      links = new EObjectContainmentEList<ReferenceLink>(ReferenceLink.class, this, ESyntaxPackage.FUNCTION_BINARY_SECTION__LINKS);
+    }
+    return links;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<InstanceConfig> getConfs()
+  {
+    if (confs == null)
+    {
+      confs = new EObjectContainmentEList<InstanceConfig>(InstanceConfig.class, this, ESyntaxPackage.FUNCTION_BINARY_SECTION__CONFS);
+    }
+    return confs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -196,6 +300,14 @@ public class FunctionBinarySectionImpl extends BinarySectionImpl implements Func
     {
       case ESyntaxPackage.FUNCTION_BINARY_SECTION__MEMS:
         return ((InternalEList<?>)getMems()).basicRemove(otherEnd, msgs);
+      case ESyntaxPackage.FUNCTION_BINARY_SECTION__LIB:
+        return ((InternalEList<?>)getLib()).basicRemove(otherEnd, msgs);
+      case ESyntaxPackage.FUNCTION_BINARY_SECTION__INSTANCES:
+        return ((InternalEList<?>)getInstances()).basicRemove(otherEnd, msgs);
+      case ESyntaxPackage.FUNCTION_BINARY_SECTION__LINKS:
+        return ((InternalEList<?>)getLinks()).basicRemove(otherEnd, msgs);
+      case ESyntaxPackage.FUNCTION_BINARY_SECTION__CONFS:
+        return ((InternalEList<?>)getConfs()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -217,6 +329,14 @@ public class FunctionBinarySectionImpl extends BinarySectionImpl implements Func
         return getMemwidth();
       case ESyntaxPackage.FUNCTION_BINARY_SECTION__MEMS:
         return getMems();
+      case ESyntaxPackage.FUNCTION_BINARY_SECTION__LIB:
+        return getLib();
+      case ESyntaxPackage.FUNCTION_BINARY_SECTION__INSTANCES:
+        return getInstances();
+      case ESyntaxPackage.FUNCTION_BINARY_SECTION__LINKS:
+        return getLinks();
+      case ESyntaxPackage.FUNCTION_BINARY_SECTION__CONFS:
+        return getConfs();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -242,6 +362,22 @@ public class FunctionBinarySectionImpl extends BinarySectionImpl implements Func
         getMems().clear();
         getMems().addAll((Collection<? extends FunctionMemory>)newValue);
         return;
+      case ESyntaxPackage.FUNCTION_BINARY_SECTION__LIB:
+        getLib().clear();
+        getLib().addAll((Collection<? extends Library>)newValue);
+        return;
+      case ESyntaxPackage.FUNCTION_BINARY_SECTION__INSTANCES:
+        getInstances().clear();
+        getInstances().addAll((Collection<? extends LinkedInstance>)newValue);
+        return;
+      case ESyntaxPackage.FUNCTION_BINARY_SECTION__LINKS:
+        getLinks().clear();
+        getLinks().addAll((Collection<? extends ReferenceLink>)newValue);
+        return;
+      case ESyntaxPackage.FUNCTION_BINARY_SECTION__CONFS:
+        getConfs().clear();
+        getConfs().addAll((Collection<? extends InstanceConfig>)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -265,6 +401,18 @@ public class FunctionBinarySectionImpl extends BinarySectionImpl implements Func
       case ESyntaxPackage.FUNCTION_BINARY_SECTION__MEMS:
         getMems().clear();
         return;
+      case ESyntaxPackage.FUNCTION_BINARY_SECTION__LIB:
+        getLib().clear();
+        return;
+      case ESyntaxPackage.FUNCTION_BINARY_SECTION__INSTANCES:
+        getInstances().clear();
+        return;
+      case ESyntaxPackage.FUNCTION_BINARY_SECTION__LINKS:
+        getLinks().clear();
+        return;
+      case ESyntaxPackage.FUNCTION_BINARY_SECTION__CONFS:
+        getConfs().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -285,6 +433,14 @@ public class FunctionBinarySectionImpl extends BinarySectionImpl implements Func
         return MEMWIDTH_EDEFAULT == null ? memwidth != null : !MEMWIDTH_EDEFAULT.equals(memwidth);
       case ESyntaxPackage.FUNCTION_BINARY_SECTION__MEMS:
         return mems != null && !mems.isEmpty();
+      case ESyntaxPackage.FUNCTION_BINARY_SECTION__LIB:
+        return lib != null && !lib.isEmpty();
+      case ESyntaxPackage.FUNCTION_BINARY_SECTION__INSTANCES:
+        return instances != null && !instances.isEmpty();
+      case ESyntaxPackage.FUNCTION_BINARY_SECTION__LINKS:
+        return links != null && !links.isEmpty();
+      case ESyntaxPackage.FUNCTION_BINARY_SECTION__CONFS:
+        return confs != null && !confs.isEmpty();
     }
     return super.eIsSet(featureID);
   }
