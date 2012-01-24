@@ -40,7 +40,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class OperationCallImpl extends OperationStepImpl implements OperationCall
+public class OperationCallImpl extends XPrimaryExpressionImpl implements OperationCall
 {
   /**
    * The cached value of the '{@link #getOperation() <em>Operation</em>}' reference.

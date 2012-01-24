@@ -7,8 +7,8 @@
 package hu.e.parser.eSyntax.impl;
 
 import hu.e.parser.eSyntax.ESyntaxPackage;
-import hu.e.parser.eSyntax.VariableReference;
-import hu.e.parser.eSyntax.XAssignment;
+import hu.e.parser.eSyntax.VarArrayType;
+import hu.e.parser.eSyntax.VarType;
 import hu.e.parser.eSyntax.XExpression;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -18,49 +18,50 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>XAssignment</b></em>'.
+ * An implementation of the model object '<em><b>Var Array Type</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.e.parser.eSyntax.impl.XAssignmentImpl#getRef <em>Ref</em>}</li>
- *   <li>{@link hu.e.parser.eSyntax.impl.XAssignmentImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.impl.VarArrayTypeImpl#getSize <em>Size</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.impl.VarArrayTypeImpl#getType <em>Type</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class XAssignmentImpl extends XTopLevelExpressionImpl implements XAssignment
+public class VarArrayTypeImpl extends MinimalEObjectImpl.Container implements VarArrayType
 {
   /**
-   * The cached value of the '{@link #getRef() <em>Ref</em>}' containment reference.
+   * The cached value of the '{@link #getSize() <em>Size</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getRef()
+   * @see #getSize()
    * @generated
    * @ordered
    */
-  protected VariableReference ref;
+  protected XExpression size;
 
   /**
-   * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
+   * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getValue()
+   * @see #getType()
    * @generated
    * @ordered
    */
-  protected XExpression value;
+  protected VarType type;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected XAssignmentImpl()
+  protected VarArrayTypeImpl()
   {
     super();
   }
@@ -73,7 +74,7 @@ public class XAssignmentImpl extends XTopLevelExpressionImpl implements XAssignm
   @Override
   protected EClass eStaticClass()
   {
-    return ESyntaxPackage.Literals.XASSIGNMENT;
+    return ESyntaxPackage.Literals.VAR_ARRAY_TYPE;
   }
 
   /**
@@ -81,9 +82,9 @@ public class XAssignmentImpl extends XTopLevelExpressionImpl implements XAssignm
    * <!-- end-user-doc -->
    * @generated
    */
-  public VariableReference getRef()
+  public XExpression getSize()
   {
-    return ref;
+    return size;
   }
 
   /**
@@ -91,13 +92,13 @@ public class XAssignmentImpl extends XTopLevelExpressionImpl implements XAssignm
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetRef(VariableReference newRef, NotificationChain msgs)
+  public NotificationChain basicSetSize(XExpression newSize, NotificationChain msgs)
   {
-    VariableReference oldRef = ref;
-    ref = newRef;
+    XExpression oldSize = size;
+    size = newSize;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ESyntaxPackage.XASSIGNMENT__REF, oldRef, newRef);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ESyntaxPackage.VAR_ARRAY_TYPE__SIZE, oldSize, newSize);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -108,20 +109,20 @@ public class XAssignmentImpl extends XTopLevelExpressionImpl implements XAssignm
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setRef(VariableReference newRef)
+  public void setSize(XExpression newSize)
   {
-    if (newRef != ref)
+    if (newSize != size)
     {
       NotificationChain msgs = null;
-      if (ref != null)
-        msgs = ((InternalEObject)ref).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ESyntaxPackage.XASSIGNMENT__REF, null, msgs);
-      if (newRef != null)
-        msgs = ((InternalEObject)newRef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ESyntaxPackage.XASSIGNMENT__REF, null, msgs);
-      msgs = basicSetRef(newRef, msgs);
+      if (size != null)
+        msgs = ((InternalEObject)size).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ESyntaxPackage.VAR_ARRAY_TYPE__SIZE, null, msgs);
+      if (newSize != null)
+        msgs = ((InternalEObject)newSize).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ESyntaxPackage.VAR_ARRAY_TYPE__SIZE, null, msgs);
+      msgs = basicSetSize(newSize, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.XASSIGNMENT__REF, newRef, newRef));
+      eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.VAR_ARRAY_TYPE__SIZE, newSize, newSize));
   }
 
   /**
@@ -129,9 +130,9 @@ public class XAssignmentImpl extends XTopLevelExpressionImpl implements XAssignm
    * <!-- end-user-doc -->
    * @generated
    */
-  public XExpression getValue()
+  public VarType getType()
   {
-    return value;
+    return type;
   }
 
   /**
@@ -139,13 +140,13 @@ public class XAssignmentImpl extends XTopLevelExpressionImpl implements XAssignm
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetValue(XExpression newValue, NotificationChain msgs)
+  public NotificationChain basicSetType(VarType newType, NotificationChain msgs)
   {
-    XExpression oldValue = value;
-    value = newValue;
+    VarType oldType = type;
+    type = newType;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ESyntaxPackage.XASSIGNMENT__VALUE, oldValue, newValue);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ESyntaxPackage.VAR_ARRAY_TYPE__TYPE, oldType, newType);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -156,20 +157,20 @@ public class XAssignmentImpl extends XTopLevelExpressionImpl implements XAssignm
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setValue(XExpression newValue)
+  public void setType(VarType newType)
   {
-    if (newValue != value)
+    if (newType != type)
     {
       NotificationChain msgs = null;
-      if (value != null)
-        msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ESyntaxPackage.XASSIGNMENT__VALUE, null, msgs);
-      if (newValue != null)
-        msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ESyntaxPackage.XASSIGNMENT__VALUE, null, msgs);
-      msgs = basicSetValue(newValue, msgs);
+      if (type != null)
+        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ESyntaxPackage.VAR_ARRAY_TYPE__TYPE, null, msgs);
+      if (newType != null)
+        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ESyntaxPackage.VAR_ARRAY_TYPE__TYPE, null, msgs);
+      msgs = basicSetType(newType, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.XASSIGNMENT__VALUE, newValue, newValue));
+      eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.VAR_ARRAY_TYPE__TYPE, newType, newType));
   }
 
   /**
@@ -182,10 +183,10 @@ public class XAssignmentImpl extends XTopLevelExpressionImpl implements XAssignm
   {
     switch (featureID)
     {
-      case ESyntaxPackage.XASSIGNMENT__REF:
-        return basicSetRef(null, msgs);
-      case ESyntaxPackage.XASSIGNMENT__VALUE:
-        return basicSetValue(null, msgs);
+      case ESyntaxPackage.VAR_ARRAY_TYPE__SIZE:
+        return basicSetSize(null, msgs);
+      case ESyntaxPackage.VAR_ARRAY_TYPE__TYPE:
+        return basicSetType(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -200,10 +201,10 @@ public class XAssignmentImpl extends XTopLevelExpressionImpl implements XAssignm
   {
     switch (featureID)
     {
-      case ESyntaxPackage.XASSIGNMENT__REF:
-        return getRef();
-      case ESyntaxPackage.XASSIGNMENT__VALUE:
-        return getValue();
+      case ESyntaxPackage.VAR_ARRAY_TYPE__SIZE:
+        return getSize();
+      case ESyntaxPackage.VAR_ARRAY_TYPE__TYPE:
+        return getType();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -218,11 +219,11 @@ public class XAssignmentImpl extends XTopLevelExpressionImpl implements XAssignm
   {
     switch (featureID)
     {
-      case ESyntaxPackage.XASSIGNMENT__REF:
-        setRef((VariableReference)newValue);
+      case ESyntaxPackage.VAR_ARRAY_TYPE__SIZE:
+        setSize((XExpression)newValue);
         return;
-      case ESyntaxPackage.XASSIGNMENT__VALUE:
-        setValue((XExpression)newValue);
+      case ESyntaxPackage.VAR_ARRAY_TYPE__TYPE:
+        setType((VarType)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -238,11 +239,11 @@ public class XAssignmentImpl extends XTopLevelExpressionImpl implements XAssignm
   {
     switch (featureID)
     {
-      case ESyntaxPackage.XASSIGNMENT__REF:
-        setRef((VariableReference)null);
+      case ESyntaxPackage.VAR_ARRAY_TYPE__SIZE:
+        setSize((XExpression)null);
         return;
-      case ESyntaxPackage.XASSIGNMENT__VALUE:
-        setValue((XExpression)null);
+      case ESyntaxPackage.VAR_ARRAY_TYPE__TYPE:
+        setType((VarType)null);
         return;
     }
     super.eUnset(featureID);
@@ -258,12 +259,12 @@ public class XAssignmentImpl extends XTopLevelExpressionImpl implements XAssignm
   {
     switch (featureID)
     {
-      case ESyntaxPackage.XASSIGNMENT__REF:
-        return ref != null;
-      case ESyntaxPackage.XASSIGNMENT__VALUE:
-        return value != null;
+      case ESyntaxPackage.VAR_ARRAY_TYPE__SIZE:
+        return size != null;
+      case ESyntaxPackage.VAR_ARRAY_TYPE__TYPE:
+        return type != null;
     }
     return super.eIsSet(featureID);
   }
 
-} //XAssignmentImpl
+} //VarArrayTypeImpl

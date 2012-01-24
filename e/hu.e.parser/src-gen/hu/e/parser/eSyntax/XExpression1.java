@@ -56,12 +56,12 @@ public interface XExpression1 extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>A</em>' containment reference.
-   * @see #setA(XPrimaryExpression)
+   * @see #setA(XExpression0)
    * @see hu.e.parser.eSyntax.ESyntaxPackage#getXExpression1_A()
    * @model containment="true"
    * @generated
    */
-  XPrimaryExpression getA();
+  XExpression0 getA();
 
   /**
    * Sets the value of the '{@link hu.e.parser.eSyntax.XExpression1#getA <em>A</em>}' containment reference.
@@ -71,6 +71,6 @@ public interface XExpression1 extends EObject
    * @see #getA()
    * @generated
    */
-  void setA(XPrimaryExpression value);
+  void setA(XExpression0 value);
 
 } // XExpression1

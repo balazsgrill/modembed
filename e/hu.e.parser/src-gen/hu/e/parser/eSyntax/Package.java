@@ -74,7 +74,7 @@ public interface Package extends EObject
 
   /**
    * Returns the value of the '<em><b>Items</b></em>' containment reference list.
-   * The list contents are of type {@link hu.e.parser.eSyntax.TopLevelItem}.
+   * The list contents are of type {@link hu.e.parser.eSyntax.CompilationUnit}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Items</em>' containment reference list isn't clear,
@@ -86,6 +86,6 @@ public interface Package extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<TopLevelItem> getItems();
+  EList<CompilationUnit> getItems();
 
 } // Package

@@ -7,12 +7,14 @@
 package hu.e.parser.eSyntax.impl;
 
 import hu.e.parser.eSyntax.ADDITIVE_OPERATOR;
-import hu.e.parser.eSyntax.ArrayRef;
 import hu.e.parser.eSyntax.ArrayTypeDef;
 import hu.e.parser.eSyntax.BOOLEAN_OPERATOR;
 import hu.e.parser.eSyntax.BinarySection;
 import hu.e.parser.eSyntax.BinaryType;
+import hu.e.parser.eSyntax.ClassItem;
+import hu.e.parser.eSyntax.CompilationUnit;
 import hu.e.parser.eSyntax.CompileContextVariable;
+import hu.e.parser.eSyntax.ConfigVariable;
 import hu.e.parser.eSyntax.ConstantBinarySection;
 import hu.e.parser.eSyntax.ConstantVariable;
 import hu.e.parser.eSyntax.DataTypeDef;
@@ -21,9 +23,11 @@ import hu.e.parser.eSyntax.ESyntaxFactory;
 import hu.e.parser.eSyntax.ESyntaxPackage;
 import hu.e.parser.eSyntax.FunctionBinarySection;
 import hu.e.parser.eSyntax.FunctionMemory;
+import hu.e.parser.eSyntax.InstanceReference;
 import hu.e.parser.eSyntax.InstructionWord;
 import hu.e.parser.eSyntax.Label;
-import hu.e.parser.eSyntax.LabelReference;
+import hu.e.parser.eSyntax.Library;
+import hu.e.parser.eSyntax.LibraryItem;
 import hu.e.parser.eSyntax.LinkedBinary;
 import hu.e.parser.eSyntax.LiteralValue;
 import hu.e.parser.eSyntax.MULTIPLICATIVE_OPERATOR;
@@ -35,30 +39,32 @@ import hu.e.parser.eSyntax.OperationRole;
 import hu.e.parser.eSyntax.OperationStep;
 import hu.e.parser.eSyntax.OperatorDefinition;
 import hu.e.parser.eSyntax.ParameterKind;
-import hu.e.parser.eSyntax.ParameterVariable;
+import hu.e.parser.eSyntax.PointerTypeDef;
 import hu.e.parser.eSyntax.PrimitiveKind;
+import hu.e.parser.eSyntax.RefTypeDef;
 import hu.e.parser.eSyntax.ReferenceBinarySection;
 import hu.e.parser.eSyntax.RegisterVariable;
-import hu.e.parser.eSyntax.StructRef;
 import hu.e.parser.eSyntax.StructTypeDef;
-import hu.e.parser.eSyntax.StructTypeDefMember;
-import hu.e.parser.eSyntax.TopLevelItem;
 import hu.e.parser.eSyntax.Type;
 import hu.e.parser.eSyntax.TypeDef;
 import hu.e.parser.eSyntax.UNARY_OPERATOR;
+import hu.e.parser.eSyntax.VarArrayType;
+import hu.e.parser.eSyntax.VarPointerType;
+import hu.e.parser.eSyntax.VarSimpleType;
+import hu.e.parser.eSyntax.VarType;
 import hu.e.parser.eSyntax.Variable;
-import hu.e.parser.eSyntax.VariableRefSection;
 import hu.e.parser.eSyntax.VariableReference;
 import hu.e.parser.eSyntax.WordSection;
-import hu.e.parser.eSyntax.XAddressOfVar;
-import hu.e.parser.eSyntax.XAssignment;
 import hu.e.parser.eSyntax.XExpression;
+import hu.e.parser.eSyntax.XExpression0;
 import hu.e.parser.eSyntax.XExpression1;
 import hu.e.parser.eSyntax.XExpression2;
 import hu.e.parser.eSyntax.XExpression3;
 import hu.e.parser.eSyntax.XExpression4;
 import hu.e.parser.eSyntax.XExpression5;
+import hu.e.parser.eSyntax.XExpression6;
 import hu.e.parser.eSyntax.XExpressionLiteral;
+import hu.e.parser.eSyntax.XExpressionM1;
 import hu.e.parser.eSyntax.XIfExpression;
 import hu.e.parser.eSyntax.XIsLiteralExpression;
 import hu.e.parser.eSyntax.XParenthesizedExpression;
@@ -129,29 +135,32 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
     switch (eClass.getClassifierID())
     {
       case ESyntaxPackage.PACKAGE: return createPackage();
-      case ESyntaxPackage.TOP_LEVEL_ITEM: return createTopLevelItem();
-      case ESyntaxPackage.TYPE: return createType();
-      case ESyntaxPackage.TYPE_DEF: return createTypeDef();
-      case ESyntaxPackage.DATA_TYPE_DEF: return createDataTypeDef();
-      case ESyntaxPackage.ARRAY_TYPE_DEF: return createArrayTypeDef();
-      case ESyntaxPackage.STRUCT_TYPE_DEF: return createStructTypeDef();
-      case ESyntaxPackage.STRUCT_TYPE_DEF_MEMBER: return createStructTypeDefMember();
+      case ESyntaxPackage.COMPILATION_UNIT: return createCompilationUnit();
+      case ESyntaxPackage.CLASS: return createClass();
+      case ESyntaxPackage.CLASS_ITEM: return createClassItem();
+      case ESyntaxPackage.INSTANCE_REFERENCE: return createInstanceReference();
       case ESyntaxPackage.VARIABLE: return createVariable();
+      case ESyntaxPackage.LIBRARY: return createLibrary();
+      case ESyntaxPackage.LIBRARY_ITEM: return createLibraryItem();
+      case ESyntaxPackage.TYPE: return createType();
+      case ESyntaxPackage.VAR_TYPE: return createVarType();
+      case ESyntaxPackage.VAR_SIMPLE_TYPE: return createVarSimpleType();
+      case ESyntaxPackage.VAR_POINTER_TYPE: return createVarPointerType();
+      case ESyntaxPackage.VAR_ARRAY_TYPE: return createVarArrayType();
+      case ESyntaxPackage.TYPE_DEF: return createTypeDef();
+      case ESyntaxPackage.POINTER_TYPE_DEF: return createPointerTypeDef();
+      case ESyntaxPackage.ARRAY_TYPE_DEF: return createArrayTypeDef();
+      case ESyntaxPackage.REF_TYPE_DEF: return createRefTypeDef();
+      case ESyntaxPackage.DATA_TYPE_DEF: return createDataTypeDef();
+      case ESyntaxPackage.STRUCT_TYPE_DEF: return createStructTypeDef();
       case ESyntaxPackage.OPERATION_STEP: return createOperationStep();
-      case ESyntaxPackage.LABEL: return createLabel();
       case ESyntaxPackage.INSTRUCTION_WORD: return createInstructionWord();
       case ESyntaxPackage.WORD_SECTION: return createWordSection();
       case ESyntaxPackage.LITERAL_VALUE: return createLiteralValue();
-      case ESyntaxPackage.LABEL_REFERENCE: return createLabelReference();
       case ESyntaxPackage.VARIABLE_REFERENCE: return createVariableReference();
-      case ESyntaxPackage.VARIABLE_REF_SECTION: return createVariableRefSection();
-      case ESyntaxPackage.ARRAY_REF: return createArrayRef();
-      case ESyntaxPackage.STRUCT_REF: return createStructRef();
       case ESyntaxPackage.OPERATION_CALL: return createOperationCall();
       case ESyntaxPackage.OPERATION_CALL_PARAMETER: return createOperationCallParameter();
-      case ESyntaxPackage.OPERATION: return createOperation();
       case ESyntaxPackage.OPERATION_BLOCK: return createOperationBlock();
-      case ESyntaxPackage.PARAMETER_VARIABLE: return createParameterVariable();
       case ESyntaxPackage.OPERATOR_DEFINITION: return createOperatorDefinition();
       case ESyntaxPackage.LINKED_BINARY: return createLinkedBinary();
       case ESyntaxPackage.BINARY_SECTION: return createBinarySection();
@@ -164,20 +173,24 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
       case ESyntaxPackage.XSIZE_OF_EXPRESSION: return createXSizeOfExpression();
       case ESyntaxPackage.XSTRUCT_EXPRESSION: return createXStructExpression();
       case ESyntaxPackage.XEXPRESSION1: return createXExpression1();
+      case ESyntaxPackage.XEXPRESSION0: return createXExpression0();
+      case ESyntaxPackage.XEXPRESSION_M1: return createXExpressionM1();
       case ESyntaxPackage.XEXPRESSION2: return createXExpression2();
       case ESyntaxPackage.XEXPRESSION3: return createXExpression3();
       case ESyntaxPackage.XEXPRESSION4: return createXExpression4();
       case ESyntaxPackage.XEXPRESSION5: return createXExpression5();
+      case ESyntaxPackage.XEXPRESSION6: return createXExpression6();
       case ESyntaxPackage.XEXPRESSION_LITERAL: return createXExpressionLiteral();
       case ESyntaxPackage.XTOP_LEVEL_EXPRESSION: return createXTopLevelExpression();
-      case ESyntaxPackage.XASSIGNMENT: return createXAssignment();
-      case ESyntaxPackage.XADDRESS_OF_VAR: return createXAddressOfVar();
       case ESyntaxPackage.XIS_LITERAL_EXPRESSION: return createXIsLiteralExpression();
       case ESyntaxPackage.XIF_EXPRESSION: return createXIfExpression();
       case ESyntaxPackage.XPARENTHESIZED_EXPRESSION: return createXParenthesizedExpression();
+      case ESyntaxPackage.CONFIG_VARIABLE: return createConfigVariable();
       case ESyntaxPackage.CONSTANT_VARIABLE: return createConstantVariable();
       case ESyntaxPackage.REGISTER_VARIABLE: return createRegisterVariable();
       case ESyntaxPackage.COMPILE_CONTEXT_VARIABLE: return createCompileContextVariable();
+      case ESyntaxPackage.LABEL: return createLabel();
+      case ESyntaxPackage.OPERATION: return createOperation();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -265,10 +278,10 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public TopLevelItem createTopLevelItem()
+  public CompilationUnit createCompilationUnit()
   {
-    TopLevelItemImpl topLevelItem = new TopLevelItemImpl();
-    return topLevelItem;
+    CompilationUnitImpl compilationUnit = new CompilationUnitImpl();
+    return compilationUnit;
   }
 
   /**
@@ -276,10 +289,10 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Type createType()
+  public hu.e.parser.eSyntax.Class createClass()
   {
-    TypeImpl type = new TypeImpl();
-    return type;
+    ClassImpl class_ = new ClassImpl();
+    return class_;
   }
 
   /**
@@ -287,10 +300,10 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public TypeDef createTypeDef()
+  public ClassItem createClassItem()
   {
-    TypeDefImpl typeDef = new TypeDefImpl();
-    return typeDef;
+    ClassItemImpl classItem = new ClassItemImpl();
+    return classItem;
   }
 
   /**
@@ -298,43 +311,10 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public DataTypeDef createDataTypeDef()
+  public InstanceReference createInstanceReference()
   {
-    DataTypeDefImpl dataTypeDef = new DataTypeDefImpl();
-    return dataTypeDef;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ArrayTypeDef createArrayTypeDef()
-  {
-    ArrayTypeDefImpl arrayTypeDef = new ArrayTypeDefImpl();
-    return arrayTypeDef;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public StructTypeDef createStructTypeDef()
-  {
-    StructTypeDefImpl structTypeDef = new StructTypeDefImpl();
-    return structTypeDef;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public StructTypeDefMember createStructTypeDefMember()
-  {
-    StructTypeDefMemberImpl structTypeDefMember = new StructTypeDefMemberImpl();
-    return structTypeDefMember;
+    InstanceReferenceImpl instanceReference = new InstanceReferenceImpl();
+    return instanceReference;
   }
 
   /**
@@ -353,10 +333,10 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public OperationStep createOperationStep()
+  public Library createLibrary()
   {
-    OperationStepImpl operationStep = new OperationStepImpl();
-    return operationStep;
+    LibraryImpl library = new LibraryImpl();
+    return library;
   }
 
   /**
@@ -364,10 +344,142 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Label createLabel()
+  public LibraryItem createLibraryItem()
   {
-    LabelImpl label = new LabelImpl();
-    return label;
+    LibraryItemImpl libraryItem = new LibraryItemImpl();
+    return libraryItem;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Type createType()
+  {
+    TypeImpl type = new TypeImpl();
+    return type;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public VarType createVarType()
+  {
+    VarTypeImpl varType = new VarTypeImpl();
+    return varType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public VarSimpleType createVarSimpleType()
+  {
+    VarSimpleTypeImpl varSimpleType = new VarSimpleTypeImpl();
+    return varSimpleType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public VarPointerType createVarPointerType()
+  {
+    VarPointerTypeImpl varPointerType = new VarPointerTypeImpl();
+    return varPointerType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public VarArrayType createVarArrayType()
+  {
+    VarArrayTypeImpl varArrayType = new VarArrayTypeImpl();
+    return varArrayType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TypeDef createTypeDef()
+  {
+    TypeDefImpl typeDef = new TypeDefImpl();
+    return typeDef;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PointerTypeDef createPointerTypeDef()
+  {
+    PointerTypeDefImpl pointerTypeDef = new PointerTypeDefImpl();
+    return pointerTypeDef;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ArrayTypeDef createArrayTypeDef()
+  {
+    ArrayTypeDefImpl arrayTypeDef = new ArrayTypeDefImpl();
+    return arrayTypeDef;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public RefTypeDef createRefTypeDef()
+  {
+    RefTypeDefImpl refTypeDef = new RefTypeDefImpl();
+    return refTypeDef;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DataTypeDef createDataTypeDef()
+  {
+    DataTypeDefImpl dataTypeDef = new DataTypeDefImpl();
+    return dataTypeDef;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public StructTypeDef createStructTypeDef()
+  {
+    StructTypeDefImpl structTypeDef = new StructTypeDefImpl();
+    return structTypeDef;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public OperationStep createOperationStep()
+  {
+    OperationStepImpl operationStep = new OperationStepImpl();
+    return operationStep;
   }
 
   /**
@@ -408,54 +520,10 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public LabelReference createLabelReference()
-  {
-    LabelReferenceImpl labelReference = new LabelReferenceImpl();
-    return labelReference;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public VariableReference createVariableReference()
   {
     VariableReferenceImpl variableReference = new VariableReferenceImpl();
     return variableReference;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public VariableRefSection createVariableRefSection()
-  {
-    VariableRefSectionImpl variableRefSection = new VariableRefSectionImpl();
-    return variableRefSection;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ArrayRef createArrayRef()
-  {
-    ArrayRefImpl arrayRef = new ArrayRefImpl();
-    return arrayRef;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public StructRef createStructRef()
-  {
-    StructRefImpl structRef = new StructRefImpl();
-    return structRef;
   }
 
   /**
@@ -485,32 +553,10 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Operation createOperation()
-  {
-    OperationImpl operation = new OperationImpl();
-    return operation;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public OperationBlock createOperationBlock()
   {
     OperationBlockImpl operationBlock = new OperationBlockImpl();
     return operationBlock;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ParameterVariable createParameterVariable()
-  {
-    ParameterVariableImpl parameterVariable = new ParameterVariableImpl();
-    return parameterVariable;
   }
 
   /**
@@ -650,6 +696,28 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public XExpression0 createXExpression0()
+  {
+    XExpression0Impl xExpression0 = new XExpression0Impl();
+    return xExpression0;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public XExpressionM1 createXExpressionM1()
+  {
+    XExpressionM1Impl xExpressionM1 = new XExpressionM1Impl();
+    return xExpressionM1;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public XExpression2 createXExpression2()
   {
     XExpression2Impl xExpression2 = new XExpression2Impl();
@@ -694,6 +762,17 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public XExpression6 createXExpression6()
+  {
+    XExpression6Impl xExpression6 = new XExpression6Impl();
+    return xExpression6;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public XExpressionLiteral createXExpressionLiteral()
   {
     XExpressionLiteralImpl xExpressionLiteral = new XExpressionLiteralImpl();
@@ -709,28 +788,6 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
   {
     XTopLevelExpressionImpl xTopLevelExpression = new XTopLevelExpressionImpl();
     return xTopLevelExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public XAssignment createXAssignment()
-  {
-    XAssignmentImpl xAssignment = new XAssignmentImpl();
-    return xAssignment;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public XAddressOfVar createXAddressOfVar()
-  {
-    XAddressOfVarImpl xAddressOfVar = new XAddressOfVarImpl();
-    return xAddressOfVar;
   }
 
   /**
@@ -771,6 +828,17 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public ConfigVariable createConfigVariable()
+  {
+    ConfigVariableImpl configVariable = new ConfigVariableImpl();
+    return configVariable;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public ConstantVariable createConstantVariable()
   {
     ConstantVariableImpl constantVariable = new ConstantVariableImpl();
@@ -797,6 +865,28 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
   {
     CompileContextVariableImpl compileContextVariable = new CompileContextVariableImpl();
     return compileContextVariable;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Label createLabel()
+  {
+    LabelImpl label = new LabelImpl();
+    return label;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Operation createOperation()
+  {
+    OperationImpl operation = new OperationImpl();
+    return operation;
   }
 
   /**

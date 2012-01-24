@@ -24,7 +24,7 @@ package hu.e.parser.eSyntax;
  * @model
  * @generated
  */
-public interface Type extends TopLevelItem
+public interface Type extends LibraryItem
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.

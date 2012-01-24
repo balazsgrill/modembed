@@ -24,11 +24,11 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface StructTypeDef extends TypeDef
+public interface StructTypeDef extends TypeDef, Variable
 {
   /**
    * Returns the value of the '<em><b>Members</b></em>' containment reference list.
-   * The list contents are of type {@link hu.e.parser.eSyntax.StructTypeDefMember}.
+   * The list contents are of type {@link hu.e.parser.eSyntax.Variable}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Members</em>' containment reference list isn't clear,
@@ -40,6 +40,6 @@ public interface StructTypeDef extends TypeDef
    * @model containment="true"
    * @generated
    */
-  EList<StructTypeDefMember> getMembers();
+  EList<Variable> getMembers();
 
 } // StructTypeDef

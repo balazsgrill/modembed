@@ -36,67 +36,40 @@ public interface ESyntaxFactory extends EFactory
   Package createPackage();
 
   /**
-   * Returns a new object of class '<em>Top Level Item</em>'.
+   * Returns a new object of class '<em>Compilation Unit</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Top Level Item</em>'.
+   * @return a new object of class '<em>Compilation Unit</em>'.
    * @generated
    */
-  TopLevelItem createTopLevelItem();
+  CompilationUnit createCompilationUnit();
 
   /**
-   * Returns a new object of class '<em>Type</em>'.
+   * Returns a new object of class '<em>Class</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Type</em>'.
+   * @return a new object of class '<em>Class</em>'.
    * @generated
    */
-  Type createType();
+  Class createClass();
 
   /**
-   * Returns a new object of class '<em>Type Def</em>'.
+   * Returns a new object of class '<em>Class Item</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Type Def</em>'.
+   * @return a new object of class '<em>Class Item</em>'.
    * @generated
    */
-  TypeDef createTypeDef();
+  ClassItem createClassItem();
 
   /**
-   * Returns a new object of class '<em>Data Type Def</em>'.
+   * Returns a new object of class '<em>Instance Reference</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Data Type Def</em>'.
+   * @return a new object of class '<em>Instance Reference</em>'.
    * @generated
    */
-  DataTypeDef createDataTypeDef();
-
-  /**
-   * Returns a new object of class '<em>Array Type Def</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Array Type Def</em>'.
-   * @generated
-   */
-  ArrayTypeDef createArrayTypeDef();
-
-  /**
-   * Returns a new object of class '<em>Struct Type Def</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Struct Type Def</em>'.
-   * @generated
-   */
-  StructTypeDef createStructTypeDef();
-
-  /**
-   * Returns a new object of class '<em>Struct Type Def Member</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Struct Type Def Member</em>'.
-   * @generated
-   */
-  StructTypeDefMember createStructTypeDefMember();
+  InstanceReference createInstanceReference();
 
   /**
    * Returns a new object of class '<em>Variable</em>'.
@@ -108,6 +81,123 @@ public interface ESyntaxFactory extends EFactory
   Variable createVariable();
 
   /**
+   * Returns a new object of class '<em>Library</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Library</em>'.
+   * @generated
+   */
+  Library createLibrary();
+
+  /**
+   * Returns a new object of class '<em>Library Item</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Library Item</em>'.
+   * @generated
+   */
+  LibraryItem createLibraryItem();
+
+  /**
+   * Returns a new object of class '<em>Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Type</em>'.
+   * @generated
+   */
+  Type createType();
+
+  /**
+   * Returns a new object of class '<em>Var Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Var Type</em>'.
+   * @generated
+   */
+  VarType createVarType();
+
+  /**
+   * Returns a new object of class '<em>Var Simple Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Var Simple Type</em>'.
+   * @generated
+   */
+  VarSimpleType createVarSimpleType();
+
+  /**
+   * Returns a new object of class '<em>Var Pointer Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Var Pointer Type</em>'.
+   * @generated
+   */
+  VarPointerType createVarPointerType();
+
+  /**
+   * Returns a new object of class '<em>Var Array Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Var Array Type</em>'.
+   * @generated
+   */
+  VarArrayType createVarArrayType();
+
+  /**
+   * Returns a new object of class '<em>Type Def</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Type Def</em>'.
+   * @generated
+   */
+  TypeDef createTypeDef();
+
+  /**
+   * Returns a new object of class '<em>Pointer Type Def</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Pointer Type Def</em>'.
+   * @generated
+   */
+  PointerTypeDef createPointerTypeDef();
+
+  /**
+   * Returns a new object of class '<em>Array Type Def</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Array Type Def</em>'.
+   * @generated
+   */
+  ArrayTypeDef createArrayTypeDef();
+
+  /**
+   * Returns a new object of class '<em>Ref Type Def</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Ref Type Def</em>'.
+   * @generated
+   */
+  RefTypeDef createRefTypeDef();
+
+  /**
+   * Returns a new object of class '<em>Data Type Def</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Data Type Def</em>'.
+   * @generated
+   */
+  DataTypeDef createDataTypeDef();
+
+  /**
+   * Returns a new object of class '<em>Struct Type Def</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Struct Type Def</em>'.
+   * @generated
+   */
+  StructTypeDef createStructTypeDef();
+
+  /**
    * Returns a new object of class '<em>Operation Step</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -115,15 +205,6 @@ public interface ESyntaxFactory extends EFactory
    * @generated
    */
   OperationStep createOperationStep();
-
-  /**
-   * Returns a new object of class '<em>Label</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Label</em>'.
-   * @generated
-   */
-  Label createLabel();
 
   /**
    * Returns a new object of class '<em>Instruction Word</em>'.
@@ -153,15 +234,6 @@ public interface ESyntaxFactory extends EFactory
   LiteralValue createLiteralValue();
 
   /**
-   * Returns a new object of class '<em>Label Reference</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Label Reference</em>'.
-   * @generated
-   */
-  LabelReference createLabelReference();
-
-  /**
    * Returns a new object of class '<em>Variable Reference</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -169,33 +241,6 @@ public interface ESyntaxFactory extends EFactory
    * @generated
    */
   VariableReference createVariableReference();
-
-  /**
-   * Returns a new object of class '<em>Variable Ref Section</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Variable Ref Section</em>'.
-   * @generated
-   */
-  VariableRefSection createVariableRefSection();
-
-  /**
-   * Returns a new object of class '<em>Array Ref</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Array Ref</em>'.
-   * @generated
-   */
-  ArrayRef createArrayRef();
-
-  /**
-   * Returns a new object of class '<em>Struct Ref</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Struct Ref</em>'.
-   * @generated
-   */
-  StructRef createStructRef();
 
   /**
    * Returns a new object of class '<em>Operation Call</em>'.
@@ -216,15 +261,6 @@ public interface ESyntaxFactory extends EFactory
   OperationCallParameter createOperationCallParameter();
 
   /**
-   * Returns a new object of class '<em>Operation</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Operation</em>'.
-   * @generated
-   */
-  Operation createOperation();
-
-  /**
    * Returns a new object of class '<em>Operation Block</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -232,15 +268,6 @@ public interface ESyntaxFactory extends EFactory
    * @generated
    */
   OperationBlock createOperationBlock();
-
-  /**
-   * Returns a new object of class '<em>Parameter Variable</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Parameter Variable</em>'.
-   * @generated
-   */
-  ParameterVariable createParameterVariable();
 
   /**
    * Returns a new object of class '<em>Operator Definition</em>'.
@@ -351,6 +378,24 @@ public interface ESyntaxFactory extends EFactory
   XExpression1 createXExpression1();
 
   /**
+   * Returns a new object of class '<em>XExpression0</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>XExpression0</em>'.
+   * @generated
+   */
+  XExpression0 createXExpression0();
+
+  /**
+   * Returns a new object of class '<em>XExpression M1</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>XExpression M1</em>'.
+   * @generated
+   */
+  XExpressionM1 createXExpressionM1();
+
+  /**
    * Returns a new object of class '<em>XExpression2</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -387,6 +432,15 @@ public interface ESyntaxFactory extends EFactory
   XExpression5 createXExpression5();
 
   /**
+   * Returns a new object of class '<em>XExpression6</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>XExpression6</em>'.
+   * @generated
+   */
+  XExpression6 createXExpression6();
+
+  /**
    * Returns a new object of class '<em>XExpression Literal</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -403,24 +457,6 @@ public interface ESyntaxFactory extends EFactory
    * @generated
    */
   XTopLevelExpression createXTopLevelExpression();
-
-  /**
-   * Returns a new object of class '<em>XAssignment</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>XAssignment</em>'.
-   * @generated
-   */
-  XAssignment createXAssignment();
-
-  /**
-   * Returns a new object of class '<em>XAddress Of Var</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>XAddress Of Var</em>'.
-   * @generated
-   */
-  XAddressOfVar createXAddressOfVar();
 
   /**
    * Returns a new object of class '<em>XIs Literal Expression</em>'.
@@ -450,6 +486,15 @@ public interface ESyntaxFactory extends EFactory
   XParenthesizedExpression createXParenthesizedExpression();
 
   /**
+   * Returns a new object of class '<em>Config Variable</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Config Variable</em>'.
+   * @generated
+   */
+  ConfigVariable createConfigVariable();
+
+  /**
    * Returns a new object of class '<em>Constant Variable</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -475,6 +520,24 @@ public interface ESyntaxFactory extends EFactory
    * @generated
    */
   CompileContextVariable createCompileContextVariable();
+
+  /**
+   * Returns a new object of class '<em>Label</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Label</em>'.
+   * @generated
+   */
+  Label createLabel();
+
+  /**
+   * Returns a new object of class '<em>Operation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Operation</em>'.
+   * @generated
+   */
+  Operation createOperation();
 
   /**
    * Returns the package supported by this factory.

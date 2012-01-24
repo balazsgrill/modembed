@@ -32,7 +32,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class TypeImpl extends TopLevelItemImpl implements Type
+public class TypeImpl extends LibraryItemImpl implements Type
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.

@@ -8,8 +8,8 @@ package hu.e.parser.eSyntax.impl;
 
 import hu.e.parser.eSyntax.ESyntaxPackage;
 import hu.e.parser.eSyntax.UNARY_OPERATOR;
+import hu.e.parser.eSyntax.XExpression0;
 import hu.e.parser.eSyntax.XExpression1;
-import hu.e.parser.eSyntax.XPrimaryExpression;
 
 import java.util.Collection;
 
@@ -60,7 +60,7 @@ public class XExpression1Impl extends MinimalEObjectImpl.Container implements XE
    * @generated
    * @ordered
    */
-  protected XPrimaryExpression a;
+  protected XExpression0 a;
 
   /**
    * <!-- begin-user-doc -->
@@ -102,7 +102,7 @@ public class XExpression1Impl extends MinimalEObjectImpl.Container implements XE
    * <!-- end-user-doc -->
    * @generated
    */
-  public XPrimaryExpression getA()
+  public XExpression0 getA()
   {
     return a;
   }
@@ -112,9 +112,9 @@ public class XExpression1Impl extends MinimalEObjectImpl.Container implements XE
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetA(XPrimaryExpression newA, NotificationChain msgs)
+  public NotificationChain basicSetA(XExpression0 newA, NotificationChain msgs)
   {
-    XPrimaryExpression oldA = a;
+    XExpression0 oldA = a;
     a = newA;
     if (eNotificationRequired())
     {
@@ -129,7 +129,7 @@ public class XExpression1Impl extends MinimalEObjectImpl.Container implements XE
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setA(XPrimaryExpression newA)
+  public void setA(XExpression0 newA)
   {
     if (newA != a)
     {
@@ -195,7 +195,7 @@ public class XExpression1Impl extends MinimalEObjectImpl.Container implements XE
         getOperator().addAll((Collection<? extends UNARY_OPERATOR>)newValue);
         return;
       case ESyntaxPackage.XEXPRESSION1__A:
-        setA((XPrimaryExpression)newValue);
+        setA((XExpression0)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -215,7 +215,7 @@ public class XExpression1Impl extends MinimalEObjectImpl.Container implements XE
         getOperator().clear();
         return;
       case ESyntaxPackage.XEXPRESSION1__A:
-        setA((XPrimaryExpression)null);
+        setA((XExpression0)null);
         return;
     }
     super.eUnset(featureID);

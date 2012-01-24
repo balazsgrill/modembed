@@ -26,29 +26,29 @@ package hu.e.parser.eSyntax;
 public interface RegisterVariable extends Variable
 {
   /**
-   * Returns the value of the '<em><b>Addr</b></em>' attribute.
+   * Returns the value of the '<em><b>Addr</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Addr</em>' attribute isn't clear,
+   * If the meaning of the '<em>Addr</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Addr</em>' attribute.
-   * @see #setAddr(String)
+   * @return the value of the '<em>Addr</em>' containment reference.
+   * @see #setAddr(XExpression)
    * @see hu.e.parser.eSyntax.ESyntaxPackage#getRegisterVariable_Addr()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getAddr();
+  XExpression getAddr();
 
   /**
-   * Sets the value of the '{@link hu.e.parser.eSyntax.RegisterVariable#getAddr <em>Addr</em>}' attribute.
+   * Sets the value of the '{@link hu.e.parser.eSyntax.RegisterVariable#getAddr <em>Addr</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Addr</em>' attribute.
+   * @param value the new value of the '<em>Addr</em>' containment reference.
    * @see #getAddr()
    * @generated
    */
-  void setAddr(String value);
+  void setAddr(XExpression value);
 
 } // RegisterVariable

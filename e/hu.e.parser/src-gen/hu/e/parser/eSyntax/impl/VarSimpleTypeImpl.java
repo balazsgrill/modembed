@@ -6,9 +6,9 @@
  */
 package hu.e.parser.eSyntax.impl;
 
-import hu.e.parser.eSyntax.ArrayRef;
 import hu.e.parser.eSyntax.ESyntaxPackage;
-import hu.e.parser.eSyntax.XExpression;
+import hu.e.parser.eSyntax.TypeDef;
+import hu.e.parser.eSyntax.VarSimpleType;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -20,35 +20,35 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Array Ref</b></em>'.
+ * An implementation of the model object '<em><b>Var Simple Type</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.e.parser.eSyntax.impl.ArrayRefImpl#getV <em>V</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.impl.VarSimpleTypeImpl#getType <em>Type</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ArrayRefImpl extends VariableRefSectionImpl implements ArrayRef
+public class VarSimpleTypeImpl extends VarTypeImpl implements VarSimpleType
 {
   /**
-   * The cached value of the '{@link #getV() <em>V</em>}' containment reference.
+   * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getV()
+   * @see #getType()
    * @generated
    * @ordered
    */
-  protected XExpression v;
+  protected TypeDef type;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ArrayRefImpl()
+  protected VarSimpleTypeImpl()
   {
     super();
   }
@@ -61,7 +61,7 @@ public class ArrayRefImpl extends VariableRefSectionImpl implements ArrayRef
   @Override
   protected EClass eStaticClass()
   {
-    return ESyntaxPackage.Literals.ARRAY_REF;
+    return ESyntaxPackage.Literals.VAR_SIMPLE_TYPE;
   }
 
   /**
@@ -69,9 +69,9 @@ public class ArrayRefImpl extends VariableRefSectionImpl implements ArrayRef
    * <!-- end-user-doc -->
    * @generated
    */
-  public XExpression getV()
+  public TypeDef getType()
   {
-    return v;
+    return type;
   }
 
   /**
@@ -79,13 +79,13 @@ public class ArrayRefImpl extends VariableRefSectionImpl implements ArrayRef
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetV(XExpression newV, NotificationChain msgs)
+  public NotificationChain basicSetType(TypeDef newType, NotificationChain msgs)
   {
-    XExpression oldV = v;
-    v = newV;
+    TypeDef oldType = type;
+    type = newType;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ESyntaxPackage.ARRAY_REF__V, oldV, newV);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ESyntaxPackage.VAR_SIMPLE_TYPE__TYPE, oldType, newType);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -96,20 +96,20 @@ public class ArrayRefImpl extends VariableRefSectionImpl implements ArrayRef
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setV(XExpression newV)
+  public void setType(TypeDef newType)
   {
-    if (newV != v)
+    if (newType != type)
     {
       NotificationChain msgs = null;
-      if (v != null)
-        msgs = ((InternalEObject)v).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ESyntaxPackage.ARRAY_REF__V, null, msgs);
-      if (newV != null)
-        msgs = ((InternalEObject)newV).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ESyntaxPackage.ARRAY_REF__V, null, msgs);
-      msgs = basicSetV(newV, msgs);
+      if (type != null)
+        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ESyntaxPackage.VAR_SIMPLE_TYPE__TYPE, null, msgs);
+      if (newType != null)
+        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ESyntaxPackage.VAR_SIMPLE_TYPE__TYPE, null, msgs);
+      msgs = basicSetType(newType, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.ARRAY_REF__V, newV, newV));
+      eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.VAR_SIMPLE_TYPE__TYPE, newType, newType));
   }
 
   /**
@@ -122,8 +122,8 @@ public class ArrayRefImpl extends VariableRefSectionImpl implements ArrayRef
   {
     switch (featureID)
     {
-      case ESyntaxPackage.ARRAY_REF__V:
-        return basicSetV(null, msgs);
+      case ESyntaxPackage.VAR_SIMPLE_TYPE__TYPE:
+        return basicSetType(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -138,8 +138,8 @@ public class ArrayRefImpl extends VariableRefSectionImpl implements ArrayRef
   {
     switch (featureID)
     {
-      case ESyntaxPackage.ARRAY_REF__V:
-        return getV();
+      case ESyntaxPackage.VAR_SIMPLE_TYPE__TYPE:
+        return getType();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -154,8 +154,8 @@ public class ArrayRefImpl extends VariableRefSectionImpl implements ArrayRef
   {
     switch (featureID)
     {
-      case ESyntaxPackage.ARRAY_REF__V:
-        setV((XExpression)newValue);
+      case ESyntaxPackage.VAR_SIMPLE_TYPE__TYPE:
+        setType((TypeDef)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -171,8 +171,8 @@ public class ArrayRefImpl extends VariableRefSectionImpl implements ArrayRef
   {
     switch (featureID)
     {
-      case ESyntaxPackage.ARRAY_REF__V:
-        setV((XExpression)null);
+      case ESyntaxPackage.VAR_SIMPLE_TYPE__TYPE:
+        setType((TypeDef)null);
         return;
     }
     super.eUnset(featureID);
@@ -188,10 +188,10 @@ public class ArrayRefImpl extends VariableRefSectionImpl implements ArrayRef
   {
     switch (featureID)
     {
-      case ESyntaxPackage.ARRAY_REF__V:
-        return v != null;
+      case ESyntaxPackage.VAR_SIMPLE_TYPE__TYPE:
+        return type != null;
     }
     return super.eIsSet(featureID);
   }
 
-} //ArrayRefImpl
+} //VarSimpleTypeImpl

@@ -41,7 +41,27 @@ public enum UNARY_OPERATOR implements Enumerator
    * @generated
    * @ordered
    */
-  NOT(1, "NOT", "!");
+  NOT(1, "NOT", "!"),
+
+  /**
+   * The '<em><b>REFERENCE</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #REFERENCE_VALUE
+   * @generated
+   * @ordered
+   */
+  REFERENCE(2, "REFERENCE", "&"),
+
+  /**
+   * The '<em><b>DEREFERENCE</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #DEREFERENCE_VALUE
+   * @generated
+   * @ordered
+   */
+  DEREFERENCE(3, "DEREFERENCE", "@");
 
   /**
    * The '<em><b>MINUS</b></em>' literal value.
@@ -74,6 +94,36 @@ public enum UNARY_OPERATOR implements Enumerator
   public static final int NOT_VALUE = 1;
 
   /**
+   * The '<em><b>REFERENCE</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of '<em><b>REFERENCE</b></em>' literal object isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @see #REFERENCE
+   * @model literal="&"
+   * @generated
+   * @ordered
+   */
+  public static final int REFERENCE_VALUE = 2;
+
+  /**
+   * The '<em><b>DEREFERENCE</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of '<em><b>DEREFERENCE</b></em>' literal object isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @see #DEREFERENCE
+   * @model literal="@"
+   * @generated
+   * @ordered
+   */
+  public static final int DEREFERENCE_VALUE = 3;
+
+  /**
    * An array of all the '<em><b>UNARY OPERATOR</b></em>' enumerators.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -84,6 +134,8 @@ public enum UNARY_OPERATOR implements Enumerator
     {
       MINUS,
       NOT,
+      REFERENCE,
+      DEREFERENCE,
     };
 
   /**
@@ -144,6 +196,8 @@ public enum UNARY_OPERATOR implements Enumerator
     {
       case MINUS_VALUE: return MINUS;
       case NOT_VALUE: return NOT;
+      case REFERENCE_VALUE: return REFERENCE;
+      case DEREFERENCE_VALUE: return DEREFERENCE;
     }
     return null;
   }

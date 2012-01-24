@@ -25,7 +25,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface OperationCall extends OperationStep, XPrimaryExpression
+public interface OperationCall extends XPrimaryExpression
 {
   /**
    * Returns the value of the '<em><b>Operation</b></em>' reference.

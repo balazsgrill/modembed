@@ -10,21 +10,19 @@ Package:
 	( 'import' uses+=[Package|NameSpaceName] ';')*
 	
 	(
-	items += TopLevelItem
+	items += CompilationUnit
 	 )* ;
 	
-TopLevelItem:
-	Type | Operation | LinkedBinary | Variable';' | 
-	ConstantVariable';' | RegisterVariable';' | CompileContextVariable';' 
-	| OperatorDefinition
-	;
+CompilationUnit:
+	Class | Library | LinkedBinary
+;	
 
 NameSpaceName:
 	ID ('.' ID)*
 ;
 
 QualifiedName:
-	(NameSpaceName '::')? ID 
+	(NameSpaceName '::')? ID
 ;
 
 /***********************
@@ -38,13 +36,90 @@ terminal BINARY returns ecore::EInt: 'b'('0'|'1')+;
 LITERAL: INT | HEXINT | BINARY;
 
 /***********************
+ * CLASSES *
+ ***********************/
+
+Class:
+	'class' name=ID
+	('extends' extends+=[Class|QualifiedName] (',' extends+=[Class|QualifiedName])*)?
+	'{'
+	('use' use+=[Library|QualifiedName]';')*
+	(items+=ClassItem)*
+	'}'
+;
+
+ClassItem:
+	Variable';' | 
+	ConfigVariable';' |
+	ConstantVariable';' |
+	InstanceReference';' |
+	Operation
+;
+
+InstanceReference:
+	'ref' type=[Class|QualifiedName] name=ID
+;
+
+ConfigVariable returns Variable:
+	{ConfigVariable} 'config' type=[Type|QualifiedName] name=ID
+;
+
+/***********************
+ * LIBRARY *
+ ***********************/
+
+Library:
+	'library' name=ID
+	('overrides' override+=[Library|QualifiedName] (',' overrides+=[Library|QualifiedName])*)?
+	'{'
+	('use' use+=[Library|QualifiedName]';')*
+	(items+=LibraryItem)*
+	'}'
+;
+
+LibraryItem:
+	Type | Operation | Variable';' | 
+	ConstantVariable';' | RegisterVariable';' | CompileContextVariable';' 
+	| OperatorDefinition
+	;
+
+/***********************
  * DATATYPES *
  ***********************/	
 Type:
 	'type' name=ID '=' def=TypeDef;
 
+VarType:
+	VarSimpleType //| VarPointerType | VarArrayType
+;
+
+VarSimpleType:
+	type=TypeDef
+;
+
+VarPointerType:
+	'pointer' 'of' type=VarType 
+;
+
+VarArrayType:
+	'['size=XExpression']' type=VarType
+;
+
 TypeDef:
-	DataTypeDef | ArrayTypeDef | StructTypeDef ;
+	DataTypeDef | StructTypeDef | PointerTypeDef | ArrayTypeDef | RefTypeDef
+;
+	
+PointerTypeDef:
+	'pointer' 'of' def=TypeDef 
+;	
+	
+ArrayTypeDef:
+	'array' '[' size=XExpression ']' 'of' def=TypeDef
+;
+
+RefTypeDef:
+	type=[Type|QualifiedName]
+;	
 	
 DataTypeDef:
 	kind=PrimitiveKind bits=INT 'bits' ';'
@@ -54,29 +129,26 @@ enum PrimitiveKind:
 	UNSIGNED='unsigned' | SIGNED='signed' | REAL='real'
 ;
 	
-ArrayTypeDef:
-	type=[Type|QualifiedName] '['length=XExpression']' ';'
-	;
-	
 StructTypeDef:
 	{StructTypeDef} 'struct' '{'
 		(members += StructTypeDefMember)
 		(',' members += StructTypeDefMember)*
 	'}';
 
-StructTypeDefMember:
-	type=[Type|QualifiedName] name=ID;
+StructTypeDefMember returns Variable:
+	{StructTypeDef} type=VarType name=ID
+;
 
 /*************************
  * GLOBAL VARIABLES
  *************************/
 
 ConstantVariable returns Variable: 
-	{ConstantVariable} 'const' type=[Type|QualifiedName] name=ID '=' value=XExpression
+	{ConstantVariable} 'const' type=VarType name=ID '=' value=XExpression
 ;
 
 RegisterVariable returns Variable:
-	{RegisterVariable} 'reg' type=[Type|QualifiedName] name=ID ':' addr=LITERAL
+	{RegisterVariable} 'reg' type=VarType name=ID ':' addr=XExpression
 ;
 
 CompileContextVariable returns Variable:
@@ -88,11 +160,11 @@ CompileContextVariable returns Variable:
  ***********************/
 
 OperationStep:
-	InstructionWord | Label | (Variable';') | (OperationCall ';') | XTopLevelExpression
+	InstructionWord | Label | (Variable';') | XTopLevelExpression
 ;
 
-Label:
-	'label' name=ID ';'
+Label returns Variable:
+	{Label} 'label' name=ID ';'
 ;
 
 InstructionWord:
@@ -100,33 +172,17 @@ InstructionWord:
 ;
 
 WordSection:
-	(LiteralValue | VariableReference | LabelReference) ':' size=INT (':' shift=INT)? ;
+	(LiteralValue | VariableReference ) ':' size=INT (':' shift=INT)? ;
 
 LiteralValue:
 	value=LITERAL;
 
-LabelReference:
-	'@'label=[Label|ID]
-;
-
 Variable:
-	type=[Type|QualifiedName] name=ID
+	type=VarType name=ID
 ;
 
 VariableReference:
-	var=[Variable|QualifiedName] (ref+=VariableRefSection)*
-;
-
-VariableRefSection:
-	ArrayRef | StructRef
-;
-
-ArrayRef:
-	'[' v=XExpression ']'
-;
-
-StructRef:
-	'.' ref=[StructTypeDefMember|ID]
+	var=[Variable|QualifiedName]
 ;
 
 OperationCall:
@@ -136,11 +192,11 @@ OperationCall:
 ;
 
 OperationCallParameter:
-	XExpression | LabelReference
+	XExpression
 ;
 
-Operation:
-	name=ID '('
+Operation returns Variable:
+	{Operation} name=ID '('
 		(params+=ParameterVariable (',' params+=ParameterVariable)*)?
 	')''{'
 		block=OperationBlock
@@ -151,8 +207,8 @@ OperationBlock:
 	{OperationBlock} (steps+=OperationStep)*
 ;
 
-ParameterVariable:
-	(kind=ParameterKind)? var=Variable ('=' default=LITERAL)?  
+ParameterVariable returns Variable:
+	(kind=ParameterKind)? type=VarType name=ID ('=' default=LITERAL)?  
 ;
 
 enum ParameterKind:
@@ -218,11 +274,11 @@ ReferenceBinarySection:
  **********************/
  
 XExpression:
-	XExpression5;
+	XExpression6;
 
 XPrimaryExpression:
 	XExpressionLiteral | XParenthesizedExpression | XIsLiteralExpression | VariableReference | OperationCall
-	| XAddressOfVar | XStructExpression | XSizeOfExpression
+	 | XStructExpression | XSizeOfExpression
 ;
 
 XSizeOfExpression:
@@ -234,11 +290,19 @@ XStructExpression:
 ;
 
 XExpression1:
-	(operator += UNARY_OPERATOR)* a=XPrimaryExpression
+	(operator += UNARY_OPERATOR)* a=XExpression0
+;
+
+XExpression0:
+	a=XExpressionM1 ('->' member+=VariableReference)*
+;
+
+XExpressionM1:
+	a=XPrimaryExpression ('[' index+=XExpression ']')*
 ;
 
 enum UNARY_OPERATOR:
-	MINUS='-' | NOT='!'
+	MINUS='-' | NOT='!' | REFERENCE='&' | DEREFERENCE='@'
 ;
 
 XExpression2:
@@ -270,6 +334,10 @@ XExpression5:
 	a = XExpression4 (=> op+=BOOLEAN_OPERATOR b+=XExpression4)*
 ;
 
+XExpression6:
+	(=> ref+=VariableReference OpSingleAssign)* a=XExpression5
+;
+
 enum BOOLEAN_OPERATOR:
 	OR='||' | AND='&&' 
 ;
@@ -279,18 +347,11 @@ XExpressionLiteral:
 ;
 
 XTopLevelExpression:
-	XAssignment | XIfExpression
+	XExpression ';' | XIfExpression
 ;
-
-XAssignment:
-	ref=VariableReference OpSingleAssign value=XExpression ';' ;
 
 OpSingleAssign:
 	'='
-;
-
-XAddressOfVar:
-	'addr' '(' ref = VariableReference ')'
 ;
 
 XIsLiteralExpression:

@@ -8,10 +8,13 @@ package hu.e.parser.eSyntax.impl;
 
 import hu.e.parser.eSyntax.ESyntaxPackage;
 import hu.e.parser.eSyntax.RegisterVariable;
+import hu.e.parser.eSyntax.XExpression;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -31,24 +34,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class RegisterVariableImpl extends VariableImpl implements RegisterVariable
 {
   /**
-   * The default value of the '{@link #getAddr() <em>Addr</em>}' attribute.
+   * The cached value of the '{@link #getAddr() <em>Addr</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getAddr()
    * @generated
    * @ordered
    */
-  protected static final String ADDR_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getAddr() <em>Addr</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getAddr()
-   * @generated
-   * @ordered
-   */
-  protected String addr = ADDR_EDEFAULT;
+  protected XExpression addr;
 
   /**
    * <!-- begin-user-doc -->
@@ -76,7 +69,7 @@ public class RegisterVariableImpl extends VariableImpl implements RegisterVariab
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getAddr()
+  public XExpression getAddr()
   {
     return addr;
   }
@@ -86,12 +79,53 @@ public class RegisterVariableImpl extends VariableImpl implements RegisterVariab
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setAddr(String newAddr)
+  public NotificationChain basicSetAddr(XExpression newAddr, NotificationChain msgs)
   {
-    String oldAddr = addr;
+    XExpression oldAddr = addr;
     addr = newAddr;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.REGISTER_VARIABLE__ADDR, oldAddr, addr));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ESyntaxPackage.REGISTER_VARIABLE__ADDR, oldAddr, newAddr);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setAddr(XExpression newAddr)
+  {
+    if (newAddr != addr)
+    {
+      NotificationChain msgs = null;
+      if (addr != null)
+        msgs = ((InternalEObject)addr).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ESyntaxPackage.REGISTER_VARIABLE__ADDR, null, msgs);
+      if (newAddr != null)
+        msgs = ((InternalEObject)newAddr).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ESyntaxPackage.REGISTER_VARIABLE__ADDR, null, msgs);
+      msgs = basicSetAddr(newAddr, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.REGISTER_VARIABLE__ADDR, newAddr, newAddr));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case ESyntaxPackage.REGISTER_VARIABLE__ADDR:
+        return basicSetAddr(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -121,7 +155,7 @@ public class RegisterVariableImpl extends VariableImpl implements RegisterVariab
     switch (featureID)
     {
       case ESyntaxPackage.REGISTER_VARIABLE__ADDR:
-        setAddr((String)newValue);
+        setAddr((XExpression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -138,7 +172,7 @@ public class RegisterVariableImpl extends VariableImpl implements RegisterVariab
     switch (featureID)
     {
       case ESyntaxPackage.REGISTER_VARIABLE__ADDR:
-        setAddr(ADDR_EDEFAULT);
+        setAddr((XExpression)null);
         return;
     }
     super.eUnset(featureID);
@@ -155,26 +189,9 @@ public class RegisterVariableImpl extends VariableImpl implements RegisterVariab
     switch (featureID)
     {
       case ESyntaxPackage.REGISTER_VARIABLE__ADDR:
-        return ADDR_EDEFAULT == null ? addr != null : !ADDR_EDEFAULT.equals(addr);
+        return addr != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (addr: ");
-    result.append(addr);
-    result.append(')');
-    return result.toString();
   }
 
 } //RegisterVariableImpl

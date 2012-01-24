@@ -8,7 +8,7 @@ package hu.e.parser.eSyntax.impl;
 
 import hu.e.parser.eSyntax.ArrayTypeDef;
 import hu.e.parser.eSyntax.ESyntaxPackage;
-import hu.e.parser.eSyntax.Type;
+import hu.e.parser.eSyntax.TypeDef;
 import hu.e.parser.eSyntax.XExpression;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -26,8 +26,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.e.parser.eSyntax.impl.ArrayTypeDefImpl#getType <em>Type</em>}</li>
- *   <li>{@link hu.e.parser.eSyntax.impl.ArrayTypeDefImpl#getLength <em>Length</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.impl.ArrayTypeDefImpl#getSize <em>Size</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.impl.ArrayTypeDefImpl#getDef <em>Def</em>}</li>
  * </ul>
  * </p>
  *
@@ -36,24 +36,24 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class ArrayTypeDefImpl extends TypeDefImpl implements ArrayTypeDef
 {
   /**
-   * The cached value of the '{@link #getType() <em>Type</em>}' reference.
+   * The cached value of the '{@link #getSize() <em>Size</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getType()
+   * @see #getSize()
    * @generated
    * @ordered
    */
-  protected Type type;
+  protected XExpression size;
 
   /**
-   * The cached value of the '{@link #getLength() <em>Length</em>}' containment reference.
+   * The cached value of the '{@link #getDef() <em>Def</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getLength()
+   * @see #getDef()
    * @generated
    * @ordered
    */
-  protected XExpression length;
+  protected TypeDef def;
 
   /**
    * <!-- begin-user-doc -->
@@ -81,19 +81,9 @@ public class ArrayTypeDefImpl extends TypeDefImpl implements ArrayTypeDef
    * <!-- end-user-doc -->
    * @generated
    */
-  public Type getType()
+  public XExpression getSize()
   {
-    if (type != null && type.eIsProxy())
-    {
-      InternalEObject oldType = (InternalEObject)type;
-      type = (Type)eResolveProxy(oldType);
-      if (type != oldType)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ESyntaxPackage.ARRAY_TYPE_DEF__TYPE, oldType, type));
-      }
-    }
-    return type;
+    return size;
   }
 
   /**
@@ -101,46 +91,13 @@ public class ArrayTypeDefImpl extends TypeDefImpl implements ArrayTypeDef
    * <!-- end-user-doc -->
    * @generated
    */
-  public Type basicGetType()
+  public NotificationChain basicSetSize(XExpression newSize, NotificationChain msgs)
   {
-    return type;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setType(Type newType)
-  {
-    Type oldType = type;
-    type = newType;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.ARRAY_TYPE_DEF__TYPE, oldType, type));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public XExpression getLength()
-  {
-    return length;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetLength(XExpression newLength, NotificationChain msgs)
-  {
-    XExpression oldLength = length;
-    length = newLength;
+    XExpression oldSize = size;
+    size = newSize;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ESyntaxPackage.ARRAY_TYPE_DEF__LENGTH, oldLength, newLength);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ESyntaxPackage.ARRAY_TYPE_DEF__SIZE, oldSize, newSize);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -151,20 +108,68 @@ public class ArrayTypeDefImpl extends TypeDefImpl implements ArrayTypeDef
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setLength(XExpression newLength)
+  public void setSize(XExpression newSize)
   {
-    if (newLength != length)
+    if (newSize != size)
     {
       NotificationChain msgs = null;
-      if (length != null)
-        msgs = ((InternalEObject)length).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ESyntaxPackage.ARRAY_TYPE_DEF__LENGTH, null, msgs);
-      if (newLength != null)
-        msgs = ((InternalEObject)newLength).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ESyntaxPackage.ARRAY_TYPE_DEF__LENGTH, null, msgs);
-      msgs = basicSetLength(newLength, msgs);
+      if (size != null)
+        msgs = ((InternalEObject)size).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ESyntaxPackage.ARRAY_TYPE_DEF__SIZE, null, msgs);
+      if (newSize != null)
+        msgs = ((InternalEObject)newSize).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ESyntaxPackage.ARRAY_TYPE_DEF__SIZE, null, msgs);
+      msgs = basicSetSize(newSize, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.ARRAY_TYPE_DEF__LENGTH, newLength, newLength));
+      eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.ARRAY_TYPE_DEF__SIZE, newSize, newSize));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TypeDef getDef()
+  {
+    return def;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetDef(TypeDef newDef, NotificationChain msgs)
+  {
+    TypeDef oldDef = def;
+    def = newDef;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ESyntaxPackage.ARRAY_TYPE_DEF__DEF, oldDef, newDef);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setDef(TypeDef newDef)
+  {
+    if (newDef != def)
+    {
+      NotificationChain msgs = null;
+      if (def != null)
+        msgs = ((InternalEObject)def).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ESyntaxPackage.ARRAY_TYPE_DEF__DEF, null, msgs);
+      if (newDef != null)
+        msgs = ((InternalEObject)newDef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ESyntaxPackage.ARRAY_TYPE_DEF__DEF, null, msgs);
+      msgs = basicSetDef(newDef, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.ARRAY_TYPE_DEF__DEF, newDef, newDef));
   }
 
   /**
@@ -177,8 +182,10 @@ public class ArrayTypeDefImpl extends TypeDefImpl implements ArrayTypeDef
   {
     switch (featureID)
     {
-      case ESyntaxPackage.ARRAY_TYPE_DEF__LENGTH:
-        return basicSetLength(null, msgs);
+      case ESyntaxPackage.ARRAY_TYPE_DEF__SIZE:
+        return basicSetSize(null, msgs);
+      case ESyntaxPackage.ARRAY_TYPE_DEF__DEF:
+        return basicSetDef(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -193,11 +200,10 @@ public class ArrayTypeDefImpl extends TypeDefImpl implements ArrayTypeDef
   {
     switch (featureID)
     {
-      case ESyntaxPackage.ARRAY_TYPE_DEF__TYPE:
-        if (resolve) return getType();
-        return basicGetType();
-      case ESyntaxPackage.ARRAY_TYPE_DEF__LENGTH:
-        return getLength();
+      case ESyntaxPackage.ARRAY_TYPE_DEF__SIZE:
+        return getSize();
+      case ESyntaxPackage.ARRAY_TYPE_DEF__DEF:
+        return getDef();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -212,11 +218,11 @@ public class ArrayTypeDefImpl extends TypeDefImpl implements ArrayTypeDef
   {
     switch (featureID)
     {
-      case ESyntaxPackage.ARRAY_TYPE_DEF__TYPE:
-        setType((Type)newValue);
+      case ESyntaxPackage.ARRAY_TYPE_DEF__SIZE:
+        setSize((XExpression)newValue);
         return;
-      case ESyntaxPackage.ARRAY_TYPE_DEF__LENGTH:
-        setLength((XExpression)newValue);
+      case ESyntaxPackage.ARRAY_TYPE_DEF__DEF:
+        setDef((TypeDef)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -232,11 +238,11 @@ public class ArrayTypeDefImpl extends TypeDefImpl implements ArrayTypeDef
   {
     switch (featureID)
     {
-      case ESyntaxPackage.ARRAY_TYPE_DEF__TYPE:
-        setType((Type)null);
+      case ESyntaxPackage.ARRAY_TYPE_DEF__SIZE:
+        setSize((XExpression)null);
         return;
-      case ESyntaxPackage.ARRAY_TYPE_DEF__LENGTH:
-        setLength((XExpression)null);
+      case ESyntaxPackage.ARRAY_TYPE_DEF__DEF:
+        setDef((TypeDef)null);
         return;
     }
     super.eUnset(featureID);
@@ -252,10 +258,10 @@ public class ArrayTypeDefImpl extends TypeDefImpl implements ArrayTypeDef
   {
     switch (featureID)
     {
-      case ESyntaxPackage.ARRAY_TYPE_DEF__TYPE:
-        return type != null;
-      case ESyntaxPackage.ARRAY_TYPE_DEF__LENGTH:
-        return length != null;
+      case ESyntaxPackage.ARRAY_TYPE_DEF__SIZE:
+        return size != null;
+      case ESyntaxPackage.ARRAY_TYPE_DEF__DEF:
+        return def != null;
     }
     return super.eIsSet(featureID);
   }

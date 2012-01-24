@@ -6,7 +6,6 @@
  */
 package hu.e.parser.eSyntax;
 
-import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -17,7 +16,6 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  *   <li>{@link hu.e.parser.eSyntax.VariableReference#getVar <em>Var</em>}</li>
- *   <li>{@link hu.e.parser.eSyntax.VariableReference#getRef <em>Ref</em>}</li>
  * </ul>
  * </p>
  *
@@ -52,21 +50,5 @@ public interface VariableReference extends WordSection, XPrimaryExpression
    * @generated
    */
   void setVar(Variable value);
-
-  /**
-   * Returns the value of the '<em><b>Ref</b></em>' containment reference list.
-   * The list contents are of type {@link hu.e.parser.eSyntax.VariableRefSection}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Ref</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Ref</em>' containment reference list.
-   * @see hu.e.parser.eSyntax.ESyntaxPackage#getVariableReference_Ref()
-   * @model containment="true"
-   * @generated
-   */
-  EList<VariableRefSection> getRef();
 
 } // VariableReference

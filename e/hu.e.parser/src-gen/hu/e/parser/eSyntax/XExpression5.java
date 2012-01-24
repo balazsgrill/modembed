@@ -8,6 +8,8 @@ package hu.e.parser.eSyntax;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.ecore.EObject;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>XExpression5</b></em>'.
@@ -26,7 +28,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface XExpression5 extends XExpression
+public interface XExpression5 extends EObject
 {
   /**
    * Returns the value of the '<em><b>A</b></em>' containment reference.

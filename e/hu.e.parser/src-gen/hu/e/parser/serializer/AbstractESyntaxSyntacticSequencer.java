@@ -2,12 +2,14 @@ package hu.e.parser.serializer;
 
 import com.google.inject.Inject;
 import hu.e.parser.services.ESyntaxGrammarAccess;
+import java.util.List;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
+import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
 import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 
@@ -26,13 +28,13 @@ public class AbstractESyntaxSyntacticSequencer extends AbstractSyntacticSequence
 	}
 	
 	@Override
-	protected String getUnassignedRuleCallToken(RuleCall ruleCall, INode node) {
+	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if(ruleCall.getRule() == grammarAccess.getOpSingleAssignRule())
-			return getOpSingleAssignToken(ruleCall, node);
+			return getOpSingleAssignToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
-	protected String getOpSingleAssignToken(RuleCall ruleCall, INode node) {
+	protected String getOpSingleAssignToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (node != null)
 			return getTokenText(node);
 		return "=";
@@ -40,29 +42,32 @@ public class AbstractESyntaxSyntacticSequencer extends AbstractSyntacticSequence
 	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
-		if (!transition.isSyntacticallyAmbiguous())
-			return;
-		if(match_OperatorDefinition_CommaKeyword_5_q.equals(transition.getAmbiguousSyntax()))
-			emit_OperatorDefinition_CommaKeyword_5_q(semanticObject, transition, fromNode, toNode);
-		else if(match_XStructExpression_CommaKeyword_4_q.equals(transition.getAmbiguousSyntax()))
-			emit_XStructExpression_CommaKeyword_4_q(semanticObject, transition, fromNode, toNode);
-		else acceptNodes(transition, fromNode, toNode);
+		if (transition.getAmbiguousSyntaxes().isEmpty()) return;
+		List<INode> transitionNodes = collectNodes(fromNode, toNode);
+		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
+			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
+			if(match_OperatorDefinition_CommaKeyword_5_q.equals(syntax))
+				emit_OperatorDefinition_CommaKeyword_5_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_XStructExpression_CommaKeyword_4_q.equals(syntax))
+				emit_XStructExpression_CommaKeyword_4_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else acceptNodes(getLastNavigableState(), syntaxNodes);
+		}
 	}
 
 	/**
 	 * Syntax:
 	 *     ','?
 	 */
-	protected void emit_OperatorDefinition_CommaKeyword_5_q(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
-		acceptNodes(transition, fromNode, toNode);
+	protected void emit_OperatorDefinition_CommaKeyword_5_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
 	}
 	
 	/**
 	 * Syntax:
 	 *     ','?
 	 */
-	protected void emit_XStructExpression_CommaKeyword_4_q(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
-		acceptNodes(transition, fromNode, toNode);
+	protected void emit_XStructExpression_CommaKeyword_4_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
 	}
 	
 }

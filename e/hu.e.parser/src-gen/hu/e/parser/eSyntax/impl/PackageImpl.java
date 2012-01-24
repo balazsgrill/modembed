@@ -6,8 +6,8 @@
  */
 package hu.e.parser.eSyntax.impl;
 
+import hu.e.parser.eSyntax.CompilationUnit;
 import hu.e.parser.eSyntax.ESyntaxPackage;
-import hu.e.parser.eSyntax.TopLevelItem;
 
 import java.util.Collection;
 
@@ -81,7 +81,7 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements hu.e.pa
    * @generated
    * @ordered
    */
-  protected EList<TopLevelItem> items;
+  protected EList<CompilationUnit> items;
 
   /**
    * <!-- begin-user-doc -->
@@ -146,11 +146,11 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements hu.e.pa
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<TopLevelItem> getItems()
+  public EList<CompilationUnit> getItems()
   {
     if (items == null)
     {
-      items = new EObjectContainmentEList<TopLevelItem>(TopLevelItem.class, this, ESyntaxPackage.PACKAGE__ITEMS);
+      items = new EObjectContainmentEList<CompilationUnit>(CompilationUnit.class, this, ESyntaxPackage.PACKAGE__ITEMS);
     }
     return items;
   }
@@ -211,7 +211,7 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements hu.e.pa
         return;
       case ESyntaxPackage.PACKAGE__ITEMS:
         getItems().clear();
-        getItems().addAll((Collection<? extends TopLevelItem>)newValue);
+        getItems().addAll((Collection<? extends CompilationUnit>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

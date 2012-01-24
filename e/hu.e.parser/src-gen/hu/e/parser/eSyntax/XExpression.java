@@ -17,6 +17,6 @@ package hu.e.parser.eSyntax;
  * @model
  * @generated
  */
-public interface XExpression extends OperationCallParameter
+public interface XExpression extends OperationCallParameter, XTopLevelExpression
 {
 } // XExpression

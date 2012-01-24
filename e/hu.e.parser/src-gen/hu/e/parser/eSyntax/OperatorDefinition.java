@@ -25,7 +25,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface OperatorDefinition extends TopLevelItem
+public interface OperatorDefinition extends LibraryItem
 {
   /**
    * Returns the value of the '<em><b>Role</b></em>' attribute.

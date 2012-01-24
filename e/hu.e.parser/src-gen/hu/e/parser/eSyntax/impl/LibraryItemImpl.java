@@ -7,7 +7,7 @@
 package hu.e.parser.eSyntax.impl;
 
 import hu.e.parser.eSyntax.ESyntaxPackage;
-import hu.e.parser.eSyntax.TopLevelItem;
+import hu.e.parser.eSyntax.LibraryItem;
 
 import org.eclipse.emf.ecore.EClass;
 
@@ -15,21 +15,21 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Top Level Item</b></em>'.
+ * An implementation of the model object '<em><b>Library Item</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class TopLevelItemImpl extends MinimalEObjectImpl.Container implements TopLevelItem
+public class LibraryItemImpl extends MinimalEObjectImpl.Container implements LibraryItem
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected TopLevelItemImpl()
+  protected LibraryItemImpl()
   {
     super();
   }
@@ -42,7 +42,7 @@ public class TopLevelItemImpl extends MinimalEObjectImpl.Container implements To
   @Override
   protected EClass eStaticClass()
   {
-    return ESyntaxPackage.Literals.TOP_LEVEL_ITEM;
+    return ESyntaxPackage.Literals.LIBRARY_ITEM;
   }
 
-} //TopLevelItemImpl
+} //LibraryItemImpl

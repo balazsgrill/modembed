@@ -8,23 +8,14 @@ package hu.e.parser.eSyntax.impl;
 
 import hu.e.parser.eSyntax.ESyntaxPackage;
 import hu.e.parser.eSyntax.Variable;
-import hu.e.parser.eSyntax.VariableRefSection;
 import hu.e.parser.eSyntax.VariableReference;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,7 +25,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link hu.e.parser.eSyntax.impl.VariableReferenceImpl#getVar <em>Var</em>}</li>
- *   <li>{@link hu.e.parser.eSyntax.impl.VariableReferenceImpl#getRef <em>Ref</em>}</li>
  * </ul>
  * </p>
  *
@@ -51,16 +41,6 @@ public class VariableReferenceImpl extends WordSectionImpl implements VariableRe
    * @ordered
    */
   protected Variable var;
-
-  /**
-   * The cached value of the '{@link #getRef() <em>Ref</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getRef()
-   * @generated
-   * @ordered
-   */
-  protected EList<VariableRefSection> ref;
 
   /**
    * <!-- begin-user-doc -->
@@ -131,36 +111,6 @@ public class VariableReferenceImpl extends WordSectionImpl implements VariableRe
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<VariableRefSection> getRef()
-  {
-    if (ref == null)
-    {
-      ref = new EObjectContainmentEList<VariableRefSection>(VariableRefSection.class, this, ESyntaxPackage.VARIABLE_REFERENCE__REF);
-    }
-    return ref;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case ESyntaxPackage.VARIABLE_REFERENCE__REF:
-        return ((InternalEList<?>)getRef()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -169,8 +119,6 @@ public class VariableReferenceImpl extends WordSectionImpl implements VariableRe
       case ESyntaxPackage.VARIABLE_REFERENCE__VAR:
         if (resolve) return getVar();
         return basicGetVar();
-      case ESyntaxPackage.VARIABLE_REFERENCE__REF:
-        return getRef();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -180,7 +128,6 @@ public class VariableReferenceImpl extends WordSectionImpl implements VariableRe
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -188,10 +135,6 @@ public class VariableReferenceImpl extends WordSectionImpl implements VariableRe
     {
       case ESyntaxPackage.VARIABLE_REFERENCE__VAR:
         setVar((Variable)newValue);
-        return;
-      case ESyntaxPackage.VARIABLE_REFERENCE__REF:
-        getRef().clear();
-        getRef().addAll((Collection<? extends VariableRefSection>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -210,9 +153,6 @@ public class VariableReferenceImpl extends WordSectionImpl implements VariableRe
       case ESyntaxPackage.VARIABLE_REFERENCE__VAR:
         setVar((Variable)null);
         return;
-      case ESyntaxPackage.VARIABLE_REFERENCE__REF:
-        getRef().clear();
-        return;
     }
     super.eUnset(featureID);
   }
@@ -229,8 +169,6 @@ public class VariableReferenceImpl extends WordSectionImpl implements VariableRe
     {
       case ESyntaxPackage.VARIABLE_REFERENCE__VAR:
         return var != null;
-      case ESyntaxPackage.VARIABLE_REFERENCE__REF:
-        return ref != null && !ref.isEmpty();
     }
     return super.eIsSet(featureID);
   }

@@ -37,7 +37,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *
  * @generated
  */
-public class OperatorDefinitionImpl extends TopLevelItemImpl implements OperatorDefinition
+public class OperatorDefinitionImpl extends LibraryItemImpl implements OperatorDefinition
 {
   /**
    * The default value of the '{@link #getRole() <em>Role</em>}' attribute.

@@ -9,7 +9,6 @@ package hu.e.parser.eSyntax.impl;
 import hu.e.parser.eSyntax.ESyntaxPackage;
 import hu.e.parser.eSyntax.Operation;
 import hu.e.parser.eSyntax.OperationBlock;
-import hu.e.parser.eSyntax.ParameterVariable;
 import hu.e.parser.eSyntax.Variable;
 import hu.e.parser.eSyntax.XExpression;
 
@@ -35,7 +34,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.e.parser.eSyntax.impl.OperationImpl#getName <em>Name</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.impl.OperationImpl#getParams <em>Params</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.impl.OperationImpl#getBlock <em>Block</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.impl.OperationImpl#getReturn <em>Return</em>}</li>
@@ -45,28 +43,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class OperationImpl extends TopLevelItemImpl implements Operation
+public class OperationImpl extends VariableImpl implements Operation
 {
-  /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getParams() <em>Params</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -75,7 +53,7 @@ public class OperationImpl extends TopLevelItemImpl implements Operation
    * @generated
    * @ordered
    */
-  protected EList<ParameterVariable> params;
+  protected EList<Variable> params;
 
   /**
    * The cached value of the '{@link #getBlock() <em>Block</em>}' containment reference.
@@ -133,34 +111,11 @@ public class OperationImpl extends TopLevelItemImpl implements Operation
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.OPERATION__NAME, oldName, name));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<ParameterVariable> getParams()
+  public EList<Variable> getParams()
   {
     if (params == null)
     {
-      params = new EObjectContainmentEList<ParameterVariable>(ParameterVariable.class, this, ESyntaxPackage.OPERATION__PARAMS);
+      params = new EObjectContainmentEList<Variable>(Variable.class, this, ESyntaxPackage.OPERATION__PARAMS);
     }
     return params;
   }
@@ -341,8 +296,6 @@ public class OperationImpl extends TopLevelItemImpl implements Operation
   {
     switch (featureID)
     {
-      case ESyntaxPackage.OPERATION__NAME:
-        return getName();
       case ESyntaxPackage.OPERATION__PARAMS:
         return getParams();
       case ESyntaxPackage.OPERATION__BLOCK:
@@ -366,12 +319,9 @@ public class OperationImpl extends TopLevelItemImpl implements Operation
   {
     switch (featureID)
     {
-      case ESyntaxPackage.OPERATION__NAME:
-        setName((String)newValue);
-        return;
       case ESyntaxPackage.OPERATION__PARAMS:
         getParams().clear();
-        getParams().addAll((Collection<? extends ParameterVariable>)newValue);
+        getParams().addAll((Collection<? extends Variable>)newValue);
         return;
       case ESyntaxPackage.OPERATION__BLOCK:
         setBlock((OperationBlock)newValue);
@@ -396,9 +346,6 @@ public class OperationImpl extends TopLevelItemImpl implements Operation
   {
     switch (featureID)
     {
-      case ESyntaxPackage.OPERATION__NAME:
-        setName(NAME_EDEFAULT);
-        return;
       case ESyntaxPackage.OPERATION__PARAMS:
         getParams().clear();
         return;
@@ -425,8 +372,6 @@ public class OperationImpl extends TopLevelItemImpl implements Operation
   {
     switch (featureID)
     {
-      case ESyntaxPackage.OPERATION__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case ESyntaxPackage.OPERATION__PARAMS:
         return params != null && !params.isEmpty();
       case ESyntaxPackage.OPERATION__BLOCK:
@@ -437,23 +382,6 @@ public class OperationImpl extends TopLevelItemImpl implements Operation
         return returnvar != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(')');
-    return result.toString();
   }
 
 } //OperationImpl

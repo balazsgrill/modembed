@@ -7,8 +7,8 @@
 package hu.e.parser.eSyntax.impl;
 
 import hu.e.parser.eSyntax.ESyntaxPackage;
-import hu.e.parser.eSyntax.Label;
-import hu.e.parser.eSyntax.LabelReference;
+import hu.e.parser.eSyntax.RefTypeDef;
+import hu.e.parser.eSyntax.Type;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -19,35 +19,35 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Label Reference</b></em>'.
+ * An implementation of the model object '<em><b>Ref Type Def</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.e.parser.eSyntax.impl.LabelReferenceImpl#getLabel <em>Label</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.impl.RefTypeDefImpl#getType <em>Type</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class LabelReferenceImpl extends WordSectionImpl implements LabelReference
+public class RefTypeDefImpl extends TypeDefImpl implements RefTypeDef
 {
   /**
-   * The cached value of the '{@link #getLabel() <em>Label</em>}' reference.
+   * The cached value of the '{@link #getType() <em>Type</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getLabel()
+   * @see #getType()
    * @generated
    * @ordered
    */
-  protected Label label;
+  protected Type type;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected LabelReferenceImpl()
+  protected RefTypeDefImpl()
   {
     super();
   }
@@ -60,7 +60,7 @@ public class LabelReferenceImpl extends WordSectionImpl implements LabelReferenc
   @Override
   protected EClass eStaticClass()
   {
-    return ESyntaxPackage.Literals.LABEL_REFERENCE;
+    return ESyntaxPackage.Literals.REF_TYPE_DEF;
   }
 
   /**
@@ -68,19 +68,19 @@ public class LabelReferenceImpl extends WordSectionImpl implements LabelReferenc
    * <!-- end-user-doc -->
    * @generated
    */
-  public Label getLabel()
+  public Type getType()
   {
-    if (label != null && label.eIsProxy())
+    if (type != null && type.eIsProxy())
     {
-      InternalEObject oldLabel = (InternalEObject)label;
-      label = (Label)eResolveProxy(oldLabel);
-      if (label != oldLabel)
+      InternalEObject oldType = (InternalEObject)type;
+      type = (Type)eResolveProxy(oldType);
+      if (type != oldType)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ESyntaxPackage.LABEL_REFERENCE__LABEL, oldLabel, label));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ESyntaxPackage.REF_TYPE_DEF__TYPE, oldType, type));
       }
     }
-    return label;
+    return type;
   }
 
   /**
@@ -88,9 +88,9 @@ public class LabelReferenceImpl extends WordSectionImpl implements LabelReferenc
    * <!-- end-user-doc -->
    * @generated
    */
-  public Label basicGetLabel()
+  public Type basicGetType()
   {
-    return label;
+    return type;
   }
 
   /**
@@ -98,12 +98,12 @@ public class LabelReferenceImpl extends WordSectionImpl implements LabelReferenc
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setLabel(Label newLabel)
+  public void setType(Type newType)
   {
-    Label oldLabel = label;
-    label = newLabel;
+    Type oldType = type;
+    type = newType;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.LABEL_REFERENCE__LABEL, oldLabel, label));
+      eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.REF_TYPE_DEF__TYPE, oldType, type));
   }
 
   /**
@@ -116,9 +116,9 @@ public class LabelReferenceImpl extends WordSectionImpl implements LabelReferenc
   {
     switch (featureID)
     {
-      case ESyntaxPackage.LABEL_REFERENCE__LABEL:
-        if (resolve) return getLabel();
-        return basicGetLabel();
+      case ESyntaxPackage.REF_TYPE_DEF__TYPE:
+        if (resolve) return getType();
+        return basicGetType();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -133,8 +133,8 @@ public class LabelReferenceImpl extends WordSectionImpl implements LabelReferenc
   {
     switch (featureID)
     {
-      case ESyntaxPackage.LABEL_REFERENCE__LABEL:
-        setLabel((Label)newValue);
+      case ESyntaxPackage.REF_TYPE_DEF__TYPE:
+        setType((Type)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -150,8 +150,8 @@ public class LabelReferenceImpl extends WordSectionImpl implements LabelReferenc
   {
     switch (featureID)
     {
-      case ESyntaxPackage.LABEL_REFERENCE__LABEL:
-        setLabel((Label)null);
+      case ESyntaxPackage.REF_TYPE_DEF__TYPE:
+        setType((Type)null);
         return;
     }
     super.eUnset(featureID);
@@ -167,10 +167,10 @@ public class LabelReferenceImpl extends WordSectionImpl implements LabelReferenc
   {
     switch (featureID)
     {
-      case ESyntaxPackage.LABEL_REFERENCE__LABEL:
-        return label != null;
+      case ESyntaxPackage.REF_TYPE_DEF__TYPE:
+        return type != null;
     }
     return super.eIsSet(featureID);
   }
 
-} //LabelReferenceImpl
+} //RefTypeDefImpl
