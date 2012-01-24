@@ -12,6 +12,7 @@ import hu.e.parser.eSyntax.StructTypeDef;
 import hu.e.parser.eSyntax.StructTypeDefMember;
 import hu.e.parser.eSyntax.Type;
 import hu.e.parser.eSyntax.TypeDef;
+import hu.e.parser.eSyntax.Variable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,22 +51,19 @@ public class MemoryManager{
 		}
 	}
 	
-	public int getSize(ISymbolManager sm, Type type) throws ECompilerException{
-		if (type == null) return 0;
-		TypeDef td = type.getDef();
+	public int getSize(ISymbolManager sm, TypeDef td) throws ECompilerException{
 		if (td instanceof DataTypeDef){
 			boolean full = ((((DataTypeDef) td).getBits()%memwidth) == 0);
 			return (((DataTypeDef) td).getBits()/memwidth) + (full?0:1);
 		}
 		if (td instanceof ArrayTypeDef){
-			Type baseType = ((ArrayTypeDef) td).getType();
-			int baseSize = getSize(sm, baseType);
-			ILiteralSymbol length = (ILiteralSymbol)sm.resolve(((ArrayTypeDef)td).getLength());
+			int baseSize = getSize(sm, ((ArrayTypeDef) td).getDef());
+			ILiteralSymbol length = (ILiteralSymbol)sm.resolve(((ArrayTypeDef)td).getSize());
 			return baseSize*length.getValue();
 		}
 		if (td instanceof StructTypeDef){
 			int size = 0;
-			for(StructTypeDefMember m : ((StructTypeDef) td).getMembers()){
+			for(Variable m : ((StructTypeDef) td).getMembers()){
 				size+=getSize(sm,m.getType());
 			}
 			return size;

@@ -10,10 +10,10 @@ import hu.e.compiler.internal.model.LabelStep;
 import hu.e.compiler.internal.model.OperationEntryStep;
 import hu.e.compiler.internal.model.OperationExitStep;
 import hu.e.parser.eSyntax.BinaryType;
+import hu.e.parser.eSyntax.CompilationUnit;
 import hu.e.parser.eSyntax.FunctionBinarySection;
 import hu.e.parser.eSyntax.LinkedBinary;
 import hu.e.parser.eSyntax.Package;
-import hu.e.parser.eSyntax.TopLevelItem;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -104,7 +104,7 @@ public class ECompiler {
 				System.out.println("Processing namespace "+((Package) eo).getName());
 				
 				
-				for(TopLevelItem tli : ((Package) eo).getItems()){
+				for(CompilationUnit tli : ((Package) eo).getItems()){
 					if (tli instanceof LinkedBinary){
 						LinkedBinary b = (LinkedBinary)tli;
 						if (BinaryType.HEXFILE == b.getType()){

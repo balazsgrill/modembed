@@ -15,7 +15,6 @@ import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.compiler.internal.model.symbols.IVariableSymbol;
 import hu.e.compiler.internal.model.symbols.impl.CodeAddressSymbol;
 import hu.e.compiler.internal.model.symbols.impl.LabelSymbol;
-import hu.e.parser.eSyntax.CompileContextVariable;
 import hu.e.parser.eSyntax.InstructionWord;
 import hu.e.parser.eSyntax.Label;
 import hu.e.parser.eSyntax.OperationBlock;
@@ -23,7 +22,7 @@ import hu.e.parser.eSyntax.OperationCall;
 import hu.e.parser.eSyntax.OperationRole;
 import hu.e.parser.eSyntax.OperationStep;
 import hu.e.parser.eSyntax.Variable;
-import hu.e.parser.eSyntax.XAssignment;
+import hu.e.parser.eSyntax.XExpression;
 import hu.e.parser.eSyntax.XIfExpression;
 
 import java.util.ArrayList;
@@ -86,34 +85,37 @@ public class BlockCompiler {
 				labeluses.addAll(oc.getLabeluses());
 				result.addAll(oc.compile());
 			}
-			if (step instanceof XAssignment){
-				if (((XAssignment) step).getRef().getVar() instanceof CompileContextVariable){
-					// assignment to compiler context
-					XAssignment a = (XAssignment)step;
-					try {
-						sm.contextAssign(a.getRef(), ((ILiteralSymbol)sm.resolve(a.getValue())).getValue());
-					} catch (ECompilerException e) {
-						result.add(CompilationErrorEntry.create(e));
-					}
-				}else{
-					try{
-						XAssignment xa = (XAssignment)step;
-						ISymbol ts = sm.resolveVarRef(xa.getRef());
-						ISymbol vs = sm.resolve(xa.getValue());
-						result.addAll(ts.getSteps());
-						result.addAll(vs.getSteps());
-
-						OperationCompiler op = getOpfinder().getOperationCompiler(OperationRole.SET, ts, vs);
-						if (op != null){
-							result.addAll(op.compile(sm));
-						}else{
-							result.add(CompilationErrorEntry.error(step, "Could not find assignment operator!"));
-						}
-					}catch(ECompilerException e){
-						result.add(CompilationErrorEntry.create(e));
-					}
-				}
+			if (step instanceof XExpression){
+				
 			}
+//			if (step instanceof XAssignment){
+//				if (((XAssignment) step).getRef().getVar() instanceof CompileContextVariable){
+//					// assignment to compiler context
+//					XAssignment a = (XAssignment)step;
+//					try {
+//						sm.contextAssign(a.getRef(), ((ILiteralSymbol)sm.resolve(a.getValue())).getValue());
+//					} catch (ECompilerException e) {
+//						result.add(CompilationErrorEntry.create(e));
+//					}
+//				}else{
+//					try{
+//						XAssignment xa = (XAssignment)step;
+//						ISymbol ts = sm.resolveVarRef(xa.getRef());
+//						ISymbol vs = sm.resolve(xa.getValue());
+//						result.addAll(ts.getSteps());
+//						result.addAll(vs.getSteps());
+//
+//						OperationCompiler op = getOpfinder().getOperationCompiler(OperationRole.SET, ts, vs);
+//						if (op != null){
+//							result.addAll(op.compile(sm));
+//						}else{
+//							result.add(CompilationErrorEntry.error(step, "Could not find assignment operator!"));
+//						}
+//					}catch(ECompilerException e){
+//						result.add(CompilationErrorEntry.create(e));
+//					}
+//				}
+//			}
 			if (step instanceof XIfExpression){
 				try{
 					ISymbol symbol = sm.resolve(((XIfExpression) step).getIf());
