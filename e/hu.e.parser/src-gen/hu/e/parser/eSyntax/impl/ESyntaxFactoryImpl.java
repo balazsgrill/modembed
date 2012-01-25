@@ -48,13 +48,10 @@ import hu.e.parser.eSyntax.ReferenceBinarySection;
 import hu.e.parser.eSyntax.ReferenceLink;
 import hu.e.parser.eSyntax.RegisterVariable;
 import hu.e.parser.eSyntax.StructTypeDef;
+import hu.e.parser.eSyntax.StructTypeDefMember;
 import hu.e.parser.eSyntax.Type;
 import hu.e.parser.eSyntax.TypeDef;
 import hu.e.parser.eSyntax.UNARY_OPERATOR;
-import hu.e.parser.eSyntax.VarArrayType;
-import hu.e.parser.eSyntax.VarPointerType;
-import hu.e.parser.eSyntax.VarSimpleType;
-import hu.e.parser.eSyntax.VarType;
 import hu.e.parser.eSyntax.Variable;
 import hu.e.parser.eSyntax.VariableReference;
 import hu.e.parser.eSyntax.WordSection;
@@ -146,10 +143,6 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
       case ESyntaxPackage.LIBRARY: return createLibrary();
       case ESyntaxPackage.LIBRARY_ITEM: return createLibraryItem();
       case ESyntaxPackage.TYPE: return createType();
-      case ESyntaxPackage.VAR_TYPE: return createVarType();
-      case ESyntaxPackage.VAR_SIMPLE_TYPE: return createVarSimpleType();
-      case ESyntaxPackage.VAR_POINTER_TYPE: return createVarPointerType();
-      case ESyntaxPackage.VAR_ARRAY_TYPE: return createVarArrayType();
       case ESyntaxPackage.TYPE_DEF: return createTypeDef();
       case ESyntaxPackage.POINTER_TYPE_DEF: return createPointerTypeDef();
       case ESyntaxPackage.ARRAY_TYPE_DEF: return createArrayTypeDef();
@@ -192,6 +185,7 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
       case ESyntaxPackage.XIF_EXPRESSION: return createXIfExpression();
       case ESyntaxPackage.XPARENTHESIZED_EXPRESSION: return createXParenthesizedExpression();
       case ESyntaxPackage.CONFIG_VARIABLE: return createConfigVariable();
+      case ESyntaxPackage.STRUCT_TYPE_DEF_MEMBER: return createStructTypeDefMember();
       case ESyntaxPackage.CONSTANT_VARIABLE: return createConstantVariable();
       case ESyntaxPackage.REGISTER_VARIABLE: return createRegisterVariable();
       case ESyntaxPackage.COMPILE_CONTEXT_VARIABLE: return createCompileContextVariable();
@@ -365,50 +359,6 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
   {
     TypeImpl type = new TypeImpl();
     return type;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public VarType createVarType()
-  {
-    VarTypeImpl varType = new VarTypeImpl();
-    return varType;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public VarSimpleType createVarSimpleType()
-  {
-    VarSimpleTypeImpl varSimpleType = new VarSimpleTypeImpl();
-    return varSimpleType;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public VarPointerType createVarPointerType()
-  {
-    VarPointerTypeImpl varPointerType = new VarPointerTypeImpl();
-    return varPointerType;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public VarArrayType createVarArrayType()
-  {
-    VarArrayTypeImpl varArrayType = new VarArrayTypeImpl();
-    return varArrayType;
   }
 
   /**
@@ -871,6 +821,17 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
   {
     ConfigVariableImpl configVariable = new ConfigVariableImpl();
     return configVariable;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public StructTypeDefMember createStructTypeDefMember()
+  {
+    StructTypeDefMemberImpl structTypeDefMember = new StructTypeDefMemberImpl();
+    return structTypeDefMember;
   }
 
   /**

@@ -8,9 +8,9 @@ import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
 import hu.e.parser.eSyntax.ArrayTypeDef;
 import hu.e.parser.eSyntax.DataTypeDef;
+import hu.e.parser.eSyntax.PointerTypeDef;
+import hu.e.parser.eSyntax.RefTypeDef;
 import hu.e.parser.eSyntax.StructTypeDef;
-import hu.e.parser.eSyntax.StructTypeDefMember;
-import hu.e.parser.eSyntax.Type;
 import hu.e.parser.eSyntax.TypeDef;
 import hu.e.parser.eSyntax.Variable;
 
@@ -25,10 +25,13 @@ public class MemoryManager{
 
 	private final int memwidth;
 	
+	private final int pointerwidth;
+	
 	private final List<MemorySegment> segments = new ArrayList<MemorySegment>();
 	
-	public MemoryManager(int memwidth) {
+	public MemoryManager(int memwidth, int pointerwidth) {
 		this.memwidth = memwidth;
+		this.pointerwidth = pointerwidth;
 	}
 	
 	public void addSegment(int start, int end){
@@ -67,6 +70,12 @@ public class MemoryManager{
 				size+=getSize(sm,m.getType());
 			}
 			return size;
+		}
+		if (td instanceof PointerTypeDef){
+			return pointerwidth;
+		}
+		if (td instanceof RefTypeDef){
+			return getSize(sm, ((RefTypeDef) td).getType().getDef());
 		}
 		return 0;
 	}

@@ -16,13 +16,14 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getOperation <em>Operation</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getMemwidth <em>Memwidth</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getMems <em>Mems</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getLib <em>Lib</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getInstances <em>Instances</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getLinks <em>Links</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getConfs <em>Confs</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getOpins <em>Opins</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getOp <em>Op</em>}</li>
  * </ul>
  * </p>
  *
@@ -32,32 +33,6 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface FunctionBinarySection extends BinarySection
 {
-  /**
-   * Returns the value of the '<em><b>Operation</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Operation</em>' reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Operation</em>' reference.
-   * @see #setOperation(Operation)
-   * @see hu.e.parser.eSyntax.ESyntaxPackage#getFunctionBinarySection_Operation()
-   * @model
-   * @generated
-   */
-  Operation getOperation();
-
-  /**
-   * Sets the value of the '{@link hu.e.parser.eSyntax.FunctionBinarySection#getOperation <em>Operation</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Operation</em>' reference.
-   * @see #getOperation()
-   * @generated
-   */
-  void setOperation(Operation value);
-
   /**
    * Returns the value of the '<em><b>Memwidth</b></em>' attribute.
    * <!-- begin-user-doc -->
@@ -163,5 +138,57 @@ public interface FunctionBinarySection extends BinarySection
    * @generated
    */
   EList<InstanceConfig> getConfs();
+
+  /**
+   * Returns the value of the '<em><b>Opins</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Opins</em>' reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Opins</em>' reference.
+   * @see #setOpins(LinkedInstance)
+   * @see hu.e.parser.eSyntax.ESyntaxPackage#getFunctionBinarySection_Opins()
+   * @model
+   * @generated
+   */
+  LinkedInstance getOpins();
+
+  /**
+   * Sets the value of the '{@link hu.e.parser.eSyntax.FunctionBinarySection#getOpins <em>Opins</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Opins</em>' reference.
+   * @see #getOpins()
+   * @generated
+   */
+  void setOpins(LinkedInstance value);
+
+  /**
+   * Returns the value of the '<em><b>Op</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Op</em>' reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Op</em>' reference.
+   * @see #setOp(Operation)
+   * @see hu.e.parser.eSyntax.ESyntaxPackage#getFunctionBinarySection_Op()
+   * @model
+   * @generated
+   */
+  Operation getOp();
+
+  /**
+   * Sets the value of the '{@link hu.e.parser.eSyntax.FunctionBinarySection#getOp <em>Op</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Op</em>' reference.
+   * @see #getOp()
+   * @generated
+   */
+  void setOp(Operation value);
 
 } // FunctionBinarySection

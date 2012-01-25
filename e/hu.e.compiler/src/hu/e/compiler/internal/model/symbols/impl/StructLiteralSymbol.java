@@ -3,27 +3,28 @@
  */
 package hu.e.compiler.internal.model.symbols.impl;
 
+import hu.e.compiler.ECompilerException;
+import hu.e.compiler.internal.model.IProgramStep;
+import hu.e.compiler.internal.model.ISymbolManager;
+import hu.e.compiler.internal.model.symbols.ISymbol;
+import hu.e.parser.eSyntax.StructTypeDefMember;
+import hu.e.parser.eSyntax.TypeDef;
+import hu.e.parser.eSyntax.Variable;
+
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-
-import hu.e.compiler.internal.model.IProgramStep;
-import hu.e.compiler.internal.model.ISymbolManager;
-import hu.e.compiler.internal.model.symbols.IStructSymbol;
-import hu.e.compiler.internal.model.symbols.ISymbol;
-import hu.e.parser.eSyntax.StructTypeDefMember;
-import hu.e.parser.eSyntax.Type;
 
 /**
  * @author balazs.grill
  *
  */
-public class StructLiteralSymbol implements IStructSymbol {
+public class StructLiteralSymbol implements ISymbol {
 
-	private final Map<StructTypeDefMember, ISymbol> symbols;
-	private final Type type;
+	private final Map<Variable, ISymbol> symbols;
+	private final TypeDef type;
 	
-	public StructLiteralSymbol(Map<StructTypeDefMember, ISymbol> symbols, Type type) {
+	public StructLiteralSymbol(Map<Variable, ISymbol> symbols, TypeDef type) {
 		this.symbols = symbols;
 		this.type = type;
 	}
@@ -48,7 +49,7 @@ public class StructLiteralSymbol implements IStructSymbol {
 	 * @see hu.e.compiler.internal.model.symbols.ISymbol#getType()
 	 */
 	@Override
-	public Type getType() {
+	public TypeDef getType() {
 		return type;
 	}
 
@@ -58,6 +59,12 @@ public class StructLiteralSymbol implements IStructSymbol {
 	@Override
 	public ISymbol getMember(ISymbolManager sm, StructTypeDefMember member) {
 		return symbols.get(member);
+	}
+
+	@Override
+	public ISymbol getElement(ISymbolManager sm, int index)
+			throws ECompilerException {
+		return null;
 	}
 
 }

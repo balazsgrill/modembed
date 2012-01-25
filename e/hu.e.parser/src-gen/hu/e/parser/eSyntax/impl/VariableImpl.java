@@ -8,13 +8,13 @@ package hu.e.parser.eSyntax.impl;
 
 import hu.e.parser.eSyntax.ESyntaxPackage;
 import hu.e.parser.eSyntax.ParameterKind;
+import hu.e.parser.eSyntax.TypeDef;
 import hu.e.parser.eSyntax.Variable;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -44,7 +44,7 @@ public class VariableImpl extends ClassItemImpl implements Variable
    * @generated
    * @ordered
    */
-  protected EObject type;
+  protected TypeDef type;
 
   /**
    * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
@@ -112,7 +112,7 @@ public class VariableImpl extends ClassItemImpl implements Variable
    * <!-- end-user-doc -->
    * @generated
    */
-  public EObject getType()
+  public TypeDef getType()
   {
     return type;
   }
@@ -122,9 +122,9 @@ public class VariableImpl extends ClassItemImpl implements Variable
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetType(EObject newType, NotificationChain msgs)
+  public NotificationChain basicSetType(TypeDef newType, NotificationChain msgs)
   {
-    EObject oldType = type;
+    TypeDef oldType = type;
     type = newType;
     if (eNotificationRequired())
     {
@@ -139,7 +139,7 @@ public class VariableImpl extends ClassItemImpl implements Variable
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setType(EObject newType)
+  public void setType(TypeDef newType)
   {
     if (newType != type)
     {
@@ -248,7 +248,7 @@ public class VariableImpl extends ClassItemImpl implements Variable
     switch (featureID)
     {
       case ESyntaxPackage.VARIABLE__TYPE:
-        setType((EObject)newValue);
+        setType((TypeDef)newValue);
         return;
       case ESyntaxPackage.VARIABLE__KIND:
         setKind((ParameterKind)newValue);
@@ -271,7 +271,7 @@ public class VariableImpl extends ClassItemImpl implements Variable
     switch (featureID)
     {
       case ESyntaxPackage.VARIABLE__TYPE:
-        setType((EObject)null);
+        setType((TypeDef)null);
         return;
       case ESyntaxPackage.VARIABLE__KIND:
         setKind(KIND_EDEFAULT);

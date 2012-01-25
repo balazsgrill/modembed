@@ -61,7 +61,7 @@ InstanceReference:
 ;
 
 ConfigVariable returns Variable:
-	{ConfigVariable} 'config' type=[Type|QualifiedName] name=ID
+	{ConfigVariable} 'config' type=TypeDef name=ID
 ;
 
 /***********************
@@ -88,22 +88,6 @@ LibraryItem:
  ***********************/	
 Type:
 	'type' name=ID '=' def=TypeDef;
-
-VarType:
-	VarSimpleType //| VarPointerType | VarArrayType
-;
-
-VarSimpleType:
-	type=TypeDef
-;
-
-VarPointerType:
-	'pointer' 'of' type=VarType 
-;
-
-VarArrayType:
-	'['size=XExpression']' type=VarType
-;
 
 TypeDef:
 	DataTypeDef | StructTypeDef | PointerTypeDef | ArrayTypeDef | RefTypeDef
@@ -136,7 +120,7 @@ StructTypeDef:
 	'}';
 
 StructTypeDefMember returns Variable:
-	{StructTypeDef} type=VarType name=ID
+	{StructTypeDefMember} type=TypeDef name=ID
 ;
 
 /*************************
@@ -144,11 +128,11 @@ StructTypeDefMember returns Variable:
  *************************/
 
 ConstantVariable returns Variable: 
-	{ConstantVariable} 'const' type=VarType name=ID '=' value=XExpression
+	{ConstantVariable} 'const' type=TypeDef name=ID '=' value=XExpression
 ;
 
 RegisterVariable returns Variable:
-	{RegisterVariable} 'reg' type=VarType name=ID ':' addr=XExpression
+	{RegisterVariable} 'reg' type=TypeDef name=ID ':' addr=XExpression
 ;
 
 CompileContextVariable returns Variable:
@@ -178,7 +162,7 @@ LiteralValue:
 	value=LITERAL;
 
 Variable:
-	type=VarType name=ID
+	type=TypeDef name=ID
 ;
 
 VariableReference:
@@ -208,7 +192,7 @@ OperationBlock:
 ;
 
 ParameterVariable returns Variable:
-	(kind=ParameterKind)? type=VarType name=ID ('=' default=LITERAL)?  
+	(kind=ParameterKind)? type=TypeDef name=ID ('=' default=LITERAL)?  
 ;
 
 enum ParameterKind:
@@ -309,7 +293,7 @@ XSizeOfExpression:
 ;
 
 XStructExpression:
-	type=[Type|QualifiedName] '{' values+=XExpression (',' values+=XExpression)* (',')? '}'
+	'{' values+=XExpression (',' values+=XExpression)* (',')? '}'
 ;
 
 XExpression1:

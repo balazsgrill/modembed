@@ -37,13 +37,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.e.parser.eSyntax.impl.FunctionBinarySectionImpl#getOperation <em>Operation</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.impl.FunctionBinarySectionImpl#getMemwidth <em>Memwidth</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.impl.FunctionBinarySectionImpl#getMems <em>Mems</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.impl.FunctionBinarySectionImpl#getLib <em>Lib</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.impl.FunctionBinarySectionImpl#getInstances <em>Instances</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.impl.FunctionBinarySectionImpl#getLinks <em>Links</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.impl.FunctionBinarySectionImpl#getConfs <em>Confs</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.impl.FunctionBinarySectionImpl#getOpins <em>Opins</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.impl.FunctionBinarySectionImpl#getOp <em>Op</em>}</li>
  * </ul>
  * </p>
  *
@@ -51,16 +52,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class FunctionBinarySectionImpl extends BinarySectionImpl implements FunctionBinarySection
 {
-  /**
-   * The cached value of the '{@link #getOperation() <em>Operation</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getOperation()
-   * @generated
-   * @ordered
-   */
-  protected Operation operation;
-
   /**
    * The default value of the '{@link #getMemwidth() <em>Memwidth</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -132,6 +123,26 @@ public class FunctionBinarySectionImpl extends BinarySectionImpl implements Func
   protected EList<InstanceConfig> confs;
 
   /**
+   * The cached value of the '{@link #getOpins() <em>Opins</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getOpins()
+   * @generated
+   * @ordered
+   */
+  protected LinkedInstance opins;
+
+  /**
+   * The cached value of the '{@link #getOp() <em>Op</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getOp()
+   * @generated
+   * @ordered
+   */
+  protected Operation op;
+
+  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -150,49 +161,6 @@ public class FunctionBinarySectionImpl extends BinarySectionImpl implements Func
   protected EClass eStaticClass()
   {
     return ESyntaxPackage.Literals.FUNCTION_BINARY_SECTION;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Operation getOperation()
-  {
-    if (operation != null && operation.eIsProxy())
-    {
-      InternalEObject oldOperation = (InternalEObject)operation;
-      operation = (Operation)eResolveProxy(oldOperation);
-      if (operation != oldOperation)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ESyntaxPackage.FUNCTION_BINARY_SECTION__OPERATION, oldOperation, operation));
-      }
-    }
-    return operation;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Operation basicGetOperation()
-  {
-    return operation;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setOperation(Operation newOperation)
-  {
-    Operation oldOperation = operation;
-    operation = newOperation;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.FUNCTION_BINARY_SECTION__OPERATION, oldOperation, operation));
   }
 
   /**
@@ -293,6 +261,92 @@ public class FunctionBinarySectionImpl extends BinarySectionImpl implements Func
    * <!-- end-user-doc -->
    * @generated
    */
+  public LinkedInstance getOpins()
+  {
+    if (opins != null && opins.eIsProxy())
+    {
+      InternalEObject oldOpins = (InternalEObject)opins;
+      opins = (LinkedInstance)eResolveProxy(oldOpins);
+      if (opins != oldOpins)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ESyntaxPackage.FUNCTION_BINARY_SECTION__OPINS, oldOpins, opins));
+      }
+    }
+    return opins;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public LinkedInstance basicGetOpins()
+  {
+    return opins;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setOpins(LinkedInstance newOpins)
+  {
+    LinkedInstance oldOpins = opins;
+    opins = newOpins;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.FUNCTION_BINARY_SECTION__OPINS, oldOpins, opins));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Operation getOp()
+  {
+    if (op != null && op.eIsProxy())
+    {
+      InternalEObject oldOp = (InternalEObject)op;
+      op = (Operation)eResolveProxy(oldOp);
+      if (op != oldOp)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ESyntaxPackage.FUNCTION_BINARY_SECTION__OP, oldOp, op));
+      }
+    }
+    return op;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Operation basicGetOp()
+  {
+    return op;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setOp(Operation newOp)
+  {
+    Operation oldOp = op;
+    op = newOp;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.FUNCTION_BINARY_SECTION__OP, oldOp, op));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -322,9 +376,6 @@ public class FunctionBinarySectionImpl extends BinarySectionImpl implements Func
   {
     switch (featureID)
     {
-      case ESyntaxPackage.FUNCTION_BINARY_SECTION__OPERATION:
-        if (resolve) return getOperation();
-        return basicGetOperation();
       case ESyntaxPackage.FUNCTION_BINARY_SECTION__MEMWIDTH:
         return getMemwidth();
       case ESyntaxPackage.FUNCTION_BINARY_SECTION__MEMS:
@@ -337,6 +388,12 @@ public class FunctionBinarySectionImpl extends BinarySectionImpl implements Func
         return getLinks();
       case ESyntaxPackage.FUNCTION_BINARY_SECTION__CONFS:
         return getConfs();
+      case ESyntaxPackage.FUNCTION_BINARY_SECTION__OPINS:
+        if (resolve) return getOpins();
+        return basicGetOpins();
+      case ESyntaxPackage.FUNCTION_BINARY_SECTION__OP:
+        if (resolve) return getOp();
+        return basicGetOp();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -352,9 +409,6 @@ public class FunctionBinarySectionImpl extends BinarySectionImpl implements Func
   {
     switch (featureID)
     {
-      case ESyntaxPackage.FUNCTION_BINARY_SECTION__OPERATION:
-        setOperation((Operation)newValue);
-        return;
       case ESyntaxPackage.FUNCTION_BINARY_SECTION__MEMWIDTH:
         setMemwidth((String)newValue);
         return;
@@ -378,6 +432,12 @@ public class FunctionBinarySectionImpl extends BinarySectionImpl implements Func
         getConfs().clear();
         getConfs().addAll((Collection<? extends InstanceConfig>)newValue);
         return;
+      case ESyntaxPackage.FUNCTION_BINARY_SECTION__OPINS:
+        setOpins((LinkedInstance)newValue);
+        return;
+      case ESyntaxPackage.FUNCTION_BINARY_SECTION__OP:
+        setOp((Operation)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -392,9 +452,6 @@ public class FunctionBinarySectionImpl extends BinarySectionImpl implements Func
   {
     switch (featureID)
     {
-      case ESyntaxPackage.FUNCTION_BINARY_SECTION__OPERATION:
-        setOperation((Operation)null);
-        return;
       case ESyntaxPackage.FUNCTION_BINARY_SECTION__MEMWIDTH:
         setMemwidth(MEMWIDTH_EDEFAULT);
         return;
@@ -413,6 +470,12 @@ public class FunctionBinarySectionImpl extends BinarySectionImpl implements Func
       case ESyntaxPackage.FUNCTION_BINARY_SECTION__CONFS:
         getConfs().clear();
         return;
+      case ESyntaxPackage.FUNCTION_BINARY_SECTION__OPINS:
+        setOpins((LinkedInstance)null);
+        return;
+      case ESyntaxPackage.FUNCTION_BINARY_SECTION__OP:
+        setOp((Operation)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -427,8 +490,6 @@ public class FunctionBinarySectionImpl extends BinarySectionImpl implements Func
   {
     switch (featureID)
     {
-      case ESyntaxPackage.FUNCTION_BINARY_SECTION__OPERATION:
-        return operation != null;
       case ESyntaxPackage.FUNCTION_BINARY_SECTION__MEMWIDTH:
         return MEMWIDTH_EDEFAULT == null ? memwidth != null : !MEMWIDTH_EDEFAULT.equals(memwidth);
       case ESyntaxPackage.FUNCTION_BINARY_SECTION__MEMS:
@@ -441,6 +502,10 @@ public class FunctionBinarySectionImpl extends BinarySectionImpl implements Func
         return links != null && !links.isEmpty();
       case ESyntaxPackage.FUNCTION_BINARY_SECTION__CONFS:
         return confs != null && !confs.isEmpty();
+      case ESyntaxPackage.FUNCTION_BINARY_SECTION__OPINS:
+        return opins != null;
+      case ESyntaxPackage.FUNCTION_BINARY_SECTION__OP:
+        return op != null;
     }
     return super.eIsSet(featureID);
   }

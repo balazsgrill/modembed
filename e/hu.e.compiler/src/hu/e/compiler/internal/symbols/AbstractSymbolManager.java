@@ -7,9 +7,7 @@ import hu.e.compiler.internal.OperationCompiler;
 import hu.e.compiler.internal.OperationFinder;
 import hu.e.compiler.internal.model.IProgramStep;
 import hu.e.compiler.internal.model.ISymbolManager;
-import hu.e.compiler.internal.model.symbols.IArraySymbol;
 import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
-import hu.e.compiler.internal.model.symbols.IStructSymbol;
 import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.compiler.internal.model.symbols.IVariableSymbol;
 import hu.e.compiler.internal.model.symbols.impl.ArrayLiteralSymbol;
@@ -18,27 +16,26 @@ import hu.e.compiler.internal.model.symbols.impl.OperatedSymbol;
 import hu.e.compiler.internal.model.symbols.impl.OperationSymbol;
 import hu.e.compiler.internal.model.symbols.impl.StructLiteralSymbol;
 import hu.e.compiler.internal.model.symbols.impl.VariableSymbol;
-import hu.e.parser.eSyntax.ArrayRef;
 import hu.e.parser.eSyntax.ArrayTypeDef;
 import hu.e.parser.eSyntax.Operation;
 import hu.e.parser.eSyntax.OperationCall;
 import hu.e.parser.eSyntax.OperationRole;
-import hu.e.parser.eSyntax.StructRef;
 import hu.e.parser.eSyntax.StructTypeDef;
 import hu.e.parser.eSyntax.StructTypeDefMember;
 import hu.e.parser.eSyntax.Type;
 import hu.e.parser.eSyntax.TypeDef;
 import hu.e.parser.eSyntax.UNARY_OPERATOR;
-import hu.e.parser.eSyntax.VariableRefSection;
+import hu.e.parser.eSyntax.Variable;
 import hu.e.parser.eSyntax.VariableReference;
-import hu.e.parser.eSyntax.XAddressOfVar;
 import hu.e.parser.eSyntax.XExpression;
+import hu.e.parser.eSyntax.XExpression0;
 import hu.e.parser.eSyntax.XExpression1;
 import hu.e.parser.eSyntax.XExpression2;
 import hu.e.parser.eSyntax.XExpression3;
 import hu.e.parser.eSyntax.XExpression4;
 import hu.e.parser.eSyntax.XExpression5;
 import hu.e.parser.eSyntax.XExpressionLiteral;
+import hu.e.parser.eSyntax.XExpressionM1;
 import hu.e.parser.eSyntax.XIsLiteralExpression;
 import hu.e.parser.eSyntax.XParenthesizedExpression;
 import hu.e.parser.eSyntax.XPrimaryExpression;
@@ -99,38 +96,33 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 		return a;
 	}
 	
+	private ISymbol resolve(XExpression0 x) throws ECompilerException{
+		ISymbol a = resolve(x.getA());
+		for(VariableReference ref : x.getMember()){
+			Variable v = ref.getVar();
+			if (v instanceof StructTypeDefMember){
+				a = a.getMember(this, (StructTypeDefMember)v);
+			}else{
+				throw new ECompilerException(x, "No such member: "+v.getName());
+			}
+		}
+		return a;
+	}
+	
+	private ISymbol resolve(XExpressionM1 x) throws ECompilerException{
+		ISymbol a = resolve(x.getA());
+		for(XExpression index : x.getIndex()){
+			
+		}
+		return a;
+	}
+	
 	@Override
 	public ISymbol resolveVarRef(VariableReference vr) throws ECompilerException{
 		ISymbol s = getSymbol(vr.getVar());
 		
-		/* Resolve struct sections and array indices */
-		for(VariableRefSection sect : vr.getRef()){
-			s = resolveVarRefSect(s, sect);
-		}
-		
 		if (s == null) throw new ECompilerException(vr, "Variable cannot be accessed here: "+vr.getVar());
 		return s;
-	}
-	
-	private ISymbol resolveVarRefSect(ISymbol symbol, VariableRefSection sect) throws ECompilerException{
-		if (sect instanceof ArrayRef){
-			if (symbol instanceof IArraySymbol){
-				IArraySymbol as = (IArraySymbol)symbol;
-				ISymbol is = resolve(((ArrayRef) sect).getV());
-				if (!is.isLiteral())
-					throw new ECompilerException(sect, "Array indexing must be compile-time expression!");
-				return as.getElement(this, ((ILiteralSymbol)is).getValue());
-			}
-		}
-		if (sect instanceof StructRef){
-			if (symbol instanceof IStructSymbol){
-				IStructSymbol ss = (IStructSymbol)symbol;
-				return ss.getMember(this, ((StructRef) sect).getRef());
-			}else{
-				throw new ECompilerException(sect, " Struct type needed!");
-			}
-		}
-		return null;
 	}
 	
 	private ISymbol resolve(XPrimaryExpression x) throws ECompilerException{
@@ -149,13 +141,6 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 			return new LiteralSymbol(s.isLiteral()? 1 : 0);
 		}
 		
-		if (x instanceof XAddressOfVar){
-			VariableReference vr = ((XAddressOfVar) x).getRef();
-			ISymbol s = resolveVarRef(vr);
-			if (s.isLiteral()) throw new ECompilerException(x, "Literal values do not have addresses.");
-			return ((IVariableSymbol)s).getAddressSymbol();
-		}
-		
 		if (x instanceof OperationCall){
 			OperationCall oc = (OperationCall)x;
 			OperationCallCompiler c = new OperationCallCompiler(oc, this);
@@ -170,7 +155,7 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 		}
 		if (x instanceof XSizeOfExpression){
 			Type t = ((XSizeOfExpression) x).getType();
-			int size = getVariableManager().getMemoryManager().getSize(this, t);
+			int size = getVariableManager().getMemoryManager().getSize(this, t.getDef());
 			return new LiteralSymbol(size);
 		}
 		
@@ -187,7 +172,7 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 		
 		if (td instanceof ArrayTypeDef){
 			ArrayTypeDef atd = (ArrayTypeDef)td;
-			int length = ((ILiteralSymbol)resolve(atd.getLength())).getValue();
+			int length = ((ILiteralSymbol)resolve(atd.getSize())).getValue();
 			if (length != symbols.size()) throw new ECompilerException(literalStruct, "Invalid number of elements!");
 			return new ArrayLiteralSymbol(symbols.toArray(new ISymbol[symbols.size()]), type);
 		}
@@ -196,13 +181,13 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 			StructTypeDef std = (StructTypeDef)td;
 			if (std.getMembers().size() != symbols.size())
 				throw new ECompilerException(literalStruct, "Invalid number of elements!");
-			Map<StructTypeDefMember, ISymbol> members = new HashMap<StructTypeDefMember, ISymbol>();
+			Map<Variable, ISymbol> members = new HashMap<Variable, ISymbol>();
 			int i = 0;
-			for(StructTypeDefMember m : std.getMembers()){
+			for(Variable m : std.getMembers()){
 				members.put(m, symbols.get(i));
 				i++;
 			}
-			return new StructLiteralSymbol(members, type);
+			return new StructLiteralSymbol(members, td);
 		}
 		
 		return null;
@@ -226,7 +211,7 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 	}
 	
 	@Override
-	public Type getResultType(OperationRole role, ISymbol... symbols) throws ECompilerException {
+	public TypeDef getResultType(OperationRole role, ISymbol... symbols) throws ECompilerException {
 		OperationFinder opfinder = getOpFinder();
 		Operation op = opfinder.getOperation(role, symbols);
 		if (op != null){

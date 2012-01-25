@@ -8,6 +8,7 @@ import hu.e.compiler.internal.model.symbols.impl.LabelSymbol;
 import hu.e.compiler.internal.model.symbols.impl.OperatedSymbol;
 import hu.e.parser.eSyntax.OperationRole;
 import hu.e.parser.eSyntax.Type;
+import hu.e.parser.eSyntax.TypeDef;
 import hu.e.parser.eSyntax.Variable;
 import hu.e.parser.eSyntax.VariableReference;
 import hu.e.parser.eSyntax.XExpression;
@@ -36,7 +37,7 @@ public interface ISymbolManager {
 	
 	public OperatedSymbol executeOperator(OperationRole role, EObject context, ISymbol...symbols) throws ECompilerException;
 	
-	public Type getResultType(OperationRole role, ISymbol...symbols) throws ECompilerException;
+	public TypeDef getResultType(OperationRole role, ISymbol...symbols) throws ECompilerException;
 	
 	public IVariableSymbol createBuffer(Type type) throws ECompilerException;
 }

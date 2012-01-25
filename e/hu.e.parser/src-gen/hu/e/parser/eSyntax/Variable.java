@@ -6,7 +6,6 @@
  */
 package hu.e.parser.eSyntax;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -37,12 +36,12 @@ public interface Variable extends ClassItem, LibraryItem, OperationStep
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Type</em>' containment reference.
-   * @see #setType(EObject)
+   * @see #setType(TypeDef)
    * @see hu.e.parser.eSyntax.ESyntaxPackage#getVariable_Type()
    * @model containment="true"
    * @generated
    */
-  EObject getType();
+  TypeDef getType();
 
   /**
    * Sets the value of the '{@link hu.e.parser.eSyntax.Variable#getType <em>Type</em>}' containment reference.
@@ -52,7 +51,7 @@ public interface Variable extends ClassItem, LibraryItem, OperationStep
    * @see #getType()
    * @generated
    */
-  void setType(EObject value);
+  void setType(TypeDef value);
 
   /**
    * Returns the value of the '<em><b>Kind</b></em>' attribute.

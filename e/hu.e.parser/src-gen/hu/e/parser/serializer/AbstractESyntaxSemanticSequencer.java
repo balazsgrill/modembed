@@ -29,10 +29,8 @@ import hu.e.parser.eSyntax.ReferenceBinarySection;
 import hu.e.parser.eSyntax.ReferenceLink;
 import hu.e.parser.eSyntax.RegisterVariable;
 import hu.e.parser.eSyntax.StructTypeDef;
+import hu.e.parser.eSyntax.StructTypeDefMember;
 import hu.e.parser.eSyntax.Type;
-import hu.e.parser.eSyntax.VarArrayType;
-import hu.e.parser.eSyntax.VarPointerType;
-import hu.e.parser.eSyntax.VarSimpleType;
 import hu.e.parser.eSyntax.Variable;
 import hu.e.parser.eSyntax.VariableReference;
 import hu.e.parser.eSyntax.XExpression0;
@@ -288,13 +286,15 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 				}
 				else break;
 			case ESyntaxPackage.STRUCT_TYPE_DEF:
-				if(context == grammarAccess.getStructTypeDefMemberRule()) {
-					sequence_StructTypeDefMember(context, (StructTypeDef) semanticObject); 
-					return; 
-				}
-				else if(context == grammarAccess.getStructTypeDefRule() ||
+				if(context == grammarAccess.getStructTypeDefRule() ||
 				   context == grammarAccess.getTypeDefRule()) {
 					sequence_StructTypeDef(context, (StructTypeDef) semanticObject); 
+					return; 
+				}
+				else break;
+			case ESyntaxPackage.STRUCT_TYPE_DEF_MEMBER:
+				if(context == grammarAccess.getStructTypeDefMemberRule()) {
+					sequence_StructTypeDefMember(context, (StructTypeDefMember) semanticObject); 
 					return; 
 				}
 				else break;
@@ -302,25 +302,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 				if(context == grammarAccess.getLibraryItemRule() ||
 				   context == grammarAccess.getTypeRule()) {
 					sequence_Type(context, (Type) semanticObject); 
-					return; 
-				}
-				else break;
-			case ESyntaxPackage.VAR_ARRAY_TYPE:
-				if(context == grammarAccess.getVarArrayTypeRule()) {
-					sequence_VarArrayType(context, (VarArrayType) semanticObject); 
-					return; 
-				}
-				else break;
-			case ESyntaxPackage.VAR_POINTER_TYPE:
-				if(context == grammarAccess.getVarPointerTypeRule()) {
-					sequence_VarPointerType(context, (VarPointerType) semanticObject); 
-					return; 
-				}
-				else break;
-			case ESyntaxPackage.VAR_SIMPLE_TYPE:
-				if(context == grammarAccess.getVarSimpleTypeRule() ||
-				   context == grammarAccess.getVarTypeRule()) {
-					sequence_VarSimpleType(context, (VarSimpleType) semanticObject); 
 					return; 
 				}
 				else break;
@@ -486,16 +467,16 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     (
-	 *         operation=[Operation|QualifiedName] 
 	 *         memwidth=LITERAL 
 	 *         mems+=FunctionMemory+ 
 	 *         (lib+=Library | (instances+=LinkedInstance (links+=ReferenceLink | confs+=InstanceConfig)*))* 
+	 *         opins=[LinkedInstance|ID] 
+	 *         op=[Operation|ID] 
 	 *         start=XExpression
 	 *     )
 	 *
 	 * Features:
 	 *    start[1, 1]
-	 *    operation[1, 1]
 	 *    memwidth[1, 1]
 	 *    mems[1, *]
 	 *    lib[0, *]
@@ -506,6 +487,8 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	 *         EXCLUDE_IF_UNSET instances
 	 *    confs[0, *]
 	 *         EXCLUDE_IF_UNSET instances
+	 *    opins[1, 1]
+	 *    op[1, 1]
 	 */
 	protected void sequence_BinarySection(EObject context, FunctionBinarySection semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -565,7 +548,7 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (type=[Type|QualifiedName] name=ID)
+	 *     (type=TypeDef name=ID)
 	 *
 	 * Features:
 	 *    name[1, 1]
@@ -590,7 +573,7 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (type=VarType name=ID value=XExpression)
+	 *     (type=TypeDef name=ID value=XExpression)
 	 *
 	 * Features:
 	 *    name[1, 1]
@@ -628,14 +611,14 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     (
-	 *         operation=[Operation|QualifiedName] 
 	 *         memwidth=LITERAL 
 	 *         mems+=FunctionMemory+ 
-	 *         (lib+=Library | (instances+=LinkedInstance (links+=ReferenceLink | confs+=InstanceConfig)*))*
+	 *         (lib+=Library | (instances+=LinkedInstance (links+=ReferenceLink | confs+=InstanceConfig)*))* 
+	 *         opins=[LinkedInstance|ID] 
+	 *         op=[Operation|ID]
 	 *     )
 	 *
 	 * Features:
-	 *    operation[1, 1]
 	 *    memwidth[1, 1]
 	 *    mems[1, *]
 	 *    lib[0, *]
@@ -646,6 +629,8 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	 *         EXCLUDE_IF_UNSET instances
 	 *    confs[0, *]
 	 *         EXCLUDE_IF_UNSET instances
+	 *    opins[1, 1]
+	 *    op[1, 1]
 	 */
 	protected void sequence_FunctionBinarySection(EObject context, FunctionBinarySection semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -884,7 +869,7 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (kind=ParameterKind? type=VarType name=ID default=LITERAL?)
+	 *     (kind=ParameterKind? type=TypeDef name=ID default=LITERAL?)
 	 *
 	 * Features:
 	 *    name[1, 1]
@@ -972,7 +957,7 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (type=VarType name=ID addr=XExpression)
+	 *     (type=TypeDef name=ID addr=XExpression)
 	 *
 	 * Features:
 	 *    name[1, 1]
@@ -986,13 +971,13 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (type=VarType name=ID)
+	 *     (type=TypeDef name=ID)
 	 *
 	 * Features:
 	 *    name[1, 1]
 	 *    type[1, 1]
 	 */
-	protected void sequence_StructTypeDefMember(EObject context, StructTypeDef semanticObject) {
+	protected void sequence_StructTypeDefMember(EObject context, StructTypeDefMember semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1034,67 +1019,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (size=XExpression type=VarType)
-	 *
-	 * Features:
-	 *    size[1, 1]
-	 *    type[1, 1]
-	 */
-	protected void sequence_VarArrayType(EObject context, VarArrayType semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.VAR_ARRAY_TYPE__SIZE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.VAR_ARRAY_TYPE__SIZE));
-			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.VAR_ARRAY_TYPE__TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.VAR_ARRAY_TYPE__TYPE));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getVarArrayTypeAccess().getSizeXExpressionParserRuleCall_1_0(), semanticObject.getSize());
-		feeder.accept(grammarAccess.getVarArrayTypeAccess().getTypeVarTypeParserRuleCall_3_0(), semanticObject.getType());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     type=VarType
-	 *
-	 * Features:
-	 *    type[1, 1]
-	 */
-	protected void sequence_VarPointerType(EObject context, VarPointerType semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.VAR_POINTER_TYPE__TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.VAR_POINTER_TYPE__TYPE));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getVarPointerTypeAccess().getTypeVarTypeParserRuleCall_2_0(), semanticObject.getType());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     type=TypeDef
-	 *
-	 * Features:
-	 *    type[1, 1]
-	 */
-	protected void sequence_VarSimpleType(EObject context, VarSimpleType semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.VAR_SIMPLE_TYPE__TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.VAR_SIMPLE_TYPE__TYPE));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getVarSimpleTypeAccess().getTypeTypeDefParserRuleCall_0(), semanticObject.getType());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
 	 *     var=[Variable|QualifiedName]
 	 *
 	 * Features:
@@ -1107,7 +1031,7 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (type=VarType name=ID)
+	 *     (type=TypeDef name=ID)
 	 *
 	 * Features:
 	 *    name[1, 1]
@@ -1354,10 +1278,9 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (type=[Type|QualifiedName] values+=XExpression values+=XExpression*)
+	 *     (values+=XExpression values+=XExpression*)
 	 *
 	 * Features:
-	 *    type[1, 1]
 	 *    values[1, *]
 	 */
 	protected void sequence_XStructExpression(EObject context, XStructExpression semanticObject) {

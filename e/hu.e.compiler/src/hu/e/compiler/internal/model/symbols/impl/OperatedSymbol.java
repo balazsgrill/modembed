@@ -5,10 +5,12 @@ package hu.e.compiler.internal.model.symbols.impl;
 
 import hu.e.compiler.ECompilerException;
 import hu.e.compiler.internal.model.IProgramStep;
+import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
 import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.compiler.internal.model.symbols.IVariableSymbol;
-import hu.e.parser.eSyntax.Type;
+import hu.e.parser.eSyntax.StructTypeDefMember;
+import hu.e.parser.eSyntax.TypeDef;
 
 import java.util.List;
 
@@ -55,7 +57,7 @@ public class OperatedSymbol implements ILiteralSymbol, IVariableSymbol {
 	}
 
 	@Override
-	public Type getType() throws ECompilerException {
+	public TypeDef getType() throws ECompilerException {
 		return symbol.getType();
 	}
 
@@ -67,6 +69,18 @@ public class OperatedSymbol implements ILiteralSymbol, IVariableSymbol {
 	@Override
 	public String toString() {
 		return "{}"+symbol.toString();
+	}
+
+	@Override
+	public ISymbol getElement(ISymbolManager sm, int index)
+			throws ECompilerException {
+		return symbol.getElement(sm, index);
+	}
+
+	@Override
+	public ISymbol getMember(ISymbolManager sm, StructTypeDefMember member)
+			throws ECompilerException {
+		return symbol.getMember(sm, member);
 	}
 	
 }

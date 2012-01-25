@@ -15,7 +15,8 @@ import hu.e.parser.eSyntax.BOOLEAN_OPERATOR;
 import hu.e.parser.eSyntax.EQUALITY_OPERATOR;
 import hu.e.parser.eSyntax.MULTIPLICATIVE_OPERATOR;
 import hu.e.parser.eSyntax.OperationRole;
-import hu.e.parser.eSyntax.Type;
+import hu.e.parser.eSyntax.StructTypeDefMember;
+import hu.e.parser.eSyntax.TypeDef;
 import hu.e.parser.eSyntax.UNARY_OPERATOR;
 
 import java.util.ArrayList;
@@ -114,7 +115,7 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
 	
 	private IVariableSymbol result = null;
 	
-	private IVariableSymbol createBuffer(Type type) throws ECompilerException{
+	private IVariableSymbol createBuffer(TypeDef type) throws ECompilerException{
 		int addr = sm.getVariableManager().allocate(sm, type);
 		IVariableSymbol v = VariableSymbol.create(new LiteralSymbol(addr), type);
 		return v;
@@ -146,7 +147,7 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
 	}
 	
 	private void compile() throws ECompilerException{
-		Type type = getType();
+		TypeDef type = getType();
 		
 		sm.getVariableManager().startBlock();
 		switch(op){
@@ -240,7 +241,7 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
 	}
 
 	@Override
-	public Type getType() throws ECompilerException {
+	public TypeDef getType() throws ECompilerException {
 		switch(op){
 		case ADD:
 		case AND:
@@ -249,14 +250,14 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
 		case DIV:
 		case MUL:
 		case OR:
-			if (b != null){
-				int sizeb = 0;
-				int sizea = sm.getVariableManager().getMemoryManager().getSize(sm, a.getType());
-				sizeb = sm.getVariableManager().getMemoryManager().getSize(sm, b.getType());
-				return sizea > sizeb ? a.getType() : b.getType();
-			}else{
-				return a.getType();
-			}
+//			if (b != null){
+//				int sizeb = 0;
+//				int sizea = sm.getVariableManager().getMemoryManager().getSize(sm, a.getType());
+//				sizeb = sm.getVariableManager().getMemoryManager().getSize(sm, b.getType());
+//				return sizea > sizeb ? a.getType() : b.getType();
+//			}else{
+//				return a.getType();
+//			}
 		
 		case GT:
 		case GTE:
@@ -288,6 +289,20 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
 	@Override
 	public ISymbol getAddressSymbol() {
 		return result.getAddressSymbol();
+	}
+
+	@Override
+	public ISymbol getElement(ISymbolManager sm, int index)
+			throws ECompilerException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ISymbol getMember(ISymbolManager sm, StructTypeDefMember member)
+			throws ECompilerException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }

@@ -30,7 +30,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="ecore:EClass platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Class"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Variable" eSuperTypes="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//ClassItem platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//LibraryItem platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//OperationStep">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="ecore:EClass platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//TypeDef"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="ecore:EEnum platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//ParameterKind"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="default" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -50,21 +50,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="Type" eSuperTypes="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//LibraryItem">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="def" eType="ecore:EClass platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//TypeDef"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="VarType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="VarSimpleType" eSuperTypes="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//VarType">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="ecore:EClass platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//TypeDef"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="VarPointerType">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="ecore:EClass platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//VarType"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="VarArrayType">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="size" eType="ecore:EClass platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XExpression"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="ecore:EClass platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//VarType"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TypeDef"/>
@@ -90,7 +75,7 @@
     <eLiterals name="SIGNED" value="1" literal="signed"/>
     <eLiterals name="REAL" value="2" literal="real"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="StructTypeDef" eSuperTypes="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//TypeDef platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Variable">
+  <eClassifiers xsi:type="ecore:EClass" name="StructTypeDef" eSuperTypes="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//TypeDef">
     <eStructuralFeatures xsi:type="ecore:EReference" name="members" upperBound="-1"
         eType="ecore:EClass platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Variable"
         containment="true"/>
@@ -170,7 +155,6 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FunctionBinarySection" eSuperTypes="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//BinarySection">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="operation" eType="ecore:EClass platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Operation"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="memwidth" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mems" upperBound="-1" eType="ecore:EClass platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//FunctionMemory"
         containment="true"/>
@@ -185,6 +169,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="confs" upperBound="-1"
         eType="ecore:EClass platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//InstanceConfig"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="opins" eType="ecore:EClass platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//LinkedInstance"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="op" eType="ecore:EClass platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Operation"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LinkedInstance">
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="ecore:EClass platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Class"/>
@@ -216,7 +202,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="ecore:EClass platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Type"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="XStructExpression" eSuperTypes="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XPrimaryExpression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="ecore:EClass platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Type"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="values" upperBound="-1"
         eType="ecore:EClass platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XExpression"
         containment="true"/>
@@ -327,6 +312,7 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConfigVariable" eSuperTypes="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Variable"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StructTypeDefMember" eSuperTypes="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Variable"/>
   <eClassifiers xsi:type="ecore:EClass" name="ConstantVariable" eSuperTypes="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Variable">
     <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="ecore:EClass platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XExpression"
         containment="true"/>

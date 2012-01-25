@@ -9,7 +9,7 @@ import hu.e.compiler.internal.StackLevel;
 import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.compiler.internal.model.IVariableManager;
 import hu.e.parser.eSyntax.Package;
-import hu.e.parser.eSyntax.Type;
+import hu.e.parser.eSyntax.TypeDef;
 import hu.e.parser.eSyntax.Variable;
 
 import java.util.HashMap;
@@ -79,7 +79,7 @@ public class VariableManager implements IVariableManager {
 	}
 
 	@Override
-	public int allocate(ISymbolManager sm, Type type) throws ECompilerException {
+	public int allocate(ISymbolManager sm, TypeDef type) throws ECompilerException {
 		return stack.peek().allocate(sm, type);
 	}
 	

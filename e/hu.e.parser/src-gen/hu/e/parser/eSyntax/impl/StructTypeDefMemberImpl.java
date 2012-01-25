@@ -7,29 +7,27 @@
 package hu.e.parser.eSyntax.impl;
 
 import hu.e.parser.eSyntax.ESyntaxPackage;
-import hu.e.parser.eSyntax.VarType;
+import hu.e.parser.eSyntax.StructTypeDefMember;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Var Type</b></em>'.
+ * An implementation of the model object '<em><b>Struct Type Def Member</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class VarTypeImpl extends MinimalEObjectImpl.Container implements VarType
+public class StructTypeDefMemberImpl extends VariableImpl implements StructTypeDefMember
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected VarTypeImpl()
+  protected StructTypeDefMemberImpl()
   {
     super();
   }
@@ -42,7 +40,7 @@ public class VarTypeImpl extends MinimalEObjectImpl.Container implements VarType
   @Override
   protected EClass eStaticClass()
   {
-    return ESyntaxPackage.Literals.VAR_TYPE;
+    return ESyntaxPackage.Literals.STRUCT_TYPE_DEF_MEMBER;
   }
 
-} //VarTypeImpl
+} //StructTypeDefMemberImpl

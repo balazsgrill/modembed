@@ -108,42 +108,6 @@ public interface ESyntaxFactory extends EFactory
   Type createType();
 
   /**
-   * Returns a new object of class '<em>Var Type</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Var Type</em>'.
-   * @generated
-   */
-  VarType createVarType();
-
-  /**
-   * Returns a new object of class '<em>Var Simple Type</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Var Simple Type</em>'.
-   * @generated
-   */
-  VarSimpleType createVarSimpleType();
-
-  /**
-   * Returns a new object of class '<em>Var Pointer Type</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Var Pointer Type</em>'.
-   * @generated
-   */
-  VarPointerType createVarPointerType();
-
-  /**
-   * Returns a new object of class '<em>Var Array Type</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Var Array Type</em>'.
-   * @generated
-   */
-  VarArrayType createVarArrayType();
-
-  /**
    * Returns a new object of class '<em>Type Def</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -520,6 +484,15 @@ public interface ESyntaxFactory extends EFactory
    * @generated
    */
   ConfigVariable createConfigVariable();
+
+  /**
+   * Returns a new object of class '<em>Struct Type Def Member</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Struct Type Def Member</em>'.
+   * @generated
+   */
+  StructTypeDefMember createStructTypeDefMember();
 
   /**
    * Returns a new object of class '<em>Constant Variable</em>'.

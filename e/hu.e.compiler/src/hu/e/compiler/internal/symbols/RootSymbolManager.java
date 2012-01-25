@@ -3,7 +3,6 @@
  */
 package hu.e.compiler.internal.symbols;
 
-import hu.e.compiler.ECompiler;
 import hu.e.compiler.ECompilerException;
 import hu.e.compiler.internal.OperationFinder;
 import hu.e.compiler.internal.model.IVariableManager;
@@ -58,8 +57,7 @@ public class RootSymbolManager extends AbstractSymbolManager {
 			return resolve(((ConstantVariable) ref).getValue());
 		}
 		if (ref instanceof RegisterVariable){
-			int addr = ECompiler.convertLiteral(((RegisterVariable) ref).getAddr());
-			return VariableSymbol.create(new LiteralSymbol(addr), ref.getType());
+			return VariableSymbol.create(resolve(((RegisterVariable) ref).getAddr()), ref.getType());
 		}
 		if (ref instanceof CompileContextVariable){
 			return new LiteralSymbol(getCCValue((CompileContextVariable)ref));
@@ -88,9 +86,6 @@ public class RootSymbolManager extends AbstractSymbolManager {
 	@Override
 	public void contextAssign(VariableReference vr, int value) {
 		CompileContextVariable ccvar = (CompileContextVariable) vr.getVar();
-		if (!vr.getRef().isEmpty()){
-			throw new RuntimeException("Struct and array variables are not yet supported!");
-		}
 		
 		compilecontext.put(ccvar, value);
 	}

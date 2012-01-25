@@ -39,12 +39,9 @@ import hu.e.parser.eSyntax.ReferenceBinarySection;
 import hu.e.parser.eSyntax.ReferenceLink;
 import hu.e.parser.eSyntax.RegisterVariable;
 import hu.e.parser.eSyntax.StructTypeDef;
+import hu.e.parser.eSyntax.StructTypeDefMember;
 import hu.e.parser.eSyntax.Type;
 import hu.e.parser.eSyntax.TypeDef;
-import hu.e.parser.eSyntax.VarArrayType;
-import hu.e.parser.eSyntax.VarPointerType;
-import hu.e.parser.eSyntax.VarSimpleType;
-import hu.e.parser.eSyntax.VarType;
 import hu.e.parser.eSyntax.Variable;
 import hu.e.parser.eSyntax.VariableReference;
 import hu.e.parser.eSyntax.WordSection;
@@ -204,35 +201,6 @@ public class ESyntaxSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case ESyntaxPackage.VAR_TYPE:
-      {
-        VarType varType = (VarType)theEObject;
-        T result = caseVarType(varType);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case ESyntaxPackage.VAR_SIMPLE_TYPE:
-      {
-        VarSimpleType varSimpleType = (VarSimpleType)theEObject;
-        T result = caseVarSimpleType(varSimpleType);
-        if (result == null) result = caseVarType(varSimpleType);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case ESyntaxPackage.VAR_POINTER_TYPE:
-      {
-        VarPointerType varPointerType = (VarPointerType)theEObject;
-        T result = caseVarPointerType(varPointerType);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case ESyntaxPackage.VAR_ARRAY_TYPE:
-      {
-        VarArrayType varArrayType = (VarArrayType)theEObject;
-        T result = caseVarArrayType(varArrayType);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case ESyntaxPackage.TYPE_DEF:
       {
         TypeDef typeDef = (TypeDef)theEObject;
@@ -277,10 +245,6 @@ public class ESyntaxSwitch<T> extends Switch<T>
         StructTypeDef structTypeDef = (StructTypeDef)theEObject;
         T result = caseStructTypeDef(structTypeDef);
         if (result == null) result = caseTypeDef(structTypeDef);
-        if (result == null) result = caseVariable(structTypeDef);
-        if (result == null) result = caseClassItem(structTypeDef);
-        if (result == null) result = caseLibraryItem(structTypeDef);
-        if (result == null) result = caseOperationStep(structTypeDef);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -565,6 +529,17 @@ public class ESyntaxSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case ESyntaxPackage.STRUCT_TYPE_DEF_MEMBER:
+      {
+        StructTypeDefMember structTypeDefMember = (StructTypeDefMember)theEObject;
+        T result = caseStructTypeDefMember(structTypeDefMember);
+        if (result == null) result = caseVariable(structTypeDefMember);
+        if (result == null) result = caseClassItem(structTypeDefMember);
+        if (result == null) result = caseLibraryItem(structTypeDefMember);
+        if (result == null) result = caseOperationStep(structTypeDefMember);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case ESyntaxPackage.CONSTANT_VARIABLE:
       {
         ConstantVariable constantVariable = (ConstantVariable)theEObject;
@@ -764,70 +739,6 @@ public class ESyntaxSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseType(Type object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Var Type</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Var Type</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseVarType(VarType object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Var Simple Type</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Var Simple Type</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseVarSimpleType(VarSimpleType object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Var Pointer Type</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Var Pointer Type</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseVarPointerType(VarPointerType object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Var Array Type</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Var Array Type</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseVarArrayType(VarArrayType object)
   {
     return null;
   }
@@ -1500,6 +1411,22 @@ public class ESyntaxSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseConfigVariable(ConfigVariable object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Struct Type Def Member</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Struct Type Def Member</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStructTypeDefMember(StructTypeDefMember object)
   {
     return null;
   }

@@ -3,25 +3,26 @@
  */
 package hu.e.compiler.internal.model.symbols.impl;
 
-import java.util.Collections;
-import java.util.List;
-
+import hu.e.compiler.ECompilerException;
 import hu.e.compiler.internal.model.IProgramStep;
 import hu.e.compiler.internal.model.ISymbolManager;
-import hu.e.compiler.internal.model.symbols.IArraySymbol;
 import hu.e.compiler.internal.model.symbols.ISymbol;
-import hu.e.parser.eSyntax.Type;
+import hu.e.parser.eSyntax.StructTypeDefMember;
+import hu.e.parser.eSyntax.TypeDef;
+
+import java.util.Collections;
+import java.util.List;
 
 /**
  * @author balazs.grill
  *
  */
-public class ArrayLiteralSymbol implements IArraySymbol {
+public class ArrayLiteralSymbol implements ISymbol {
 
 	private final ISymbol[] values;
-	private final Type type;
+	private final TypeDef type;
 	
-	public ArrayLiteralSymbol(ISymbol[] values, Type type) {
+	public ArrayLiteralSymbol(ISymbol[] values, TypeDef type) {
 		this.values = values;
 		this.type = type;
 	}
@@ -47,8 +48,14 @@ public class ArrayLiteralSymbol implements IArraySymbol {
 	}
 
 	@Override
-	public Type getType() {
+	public TypeDef getType() {
 		return type;
+	}
+
+	@Override
+	public ISymbol getMember(ISymbolManager sm, StructTypeDefMember member)
+			throws ECompilerException {
+		return null;
 	}
 
 }

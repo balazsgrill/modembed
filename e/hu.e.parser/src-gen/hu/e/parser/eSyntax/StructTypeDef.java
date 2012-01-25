@@ -24,7 +24,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface StructTypeDef extends TypeDef, Variable
+public interface StructTypeDef extends TypeDef
 {
   /**
    * Returns the value of the '<em><b>Members</b></em>' containment reference list.

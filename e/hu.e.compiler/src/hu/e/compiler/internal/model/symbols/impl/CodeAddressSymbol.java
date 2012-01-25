@@ -3,13 +3,17 @@
  */
 package hu.e.compiler.internal.model.symbols.impl;
 
-import java.util.Collections;
-import java.util.List;
-
+import hu.e.compiler.ECompilerException;
 import hu.e.compiler.internal.model.AddressedStep;
 import hu.e.compiler.internal.model.IProgramStep;
+import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
-import hu.e.parser.eSyntax.Type;
+import hu.e.compiler.internal.model.symbols.ISymbol;
+import hu.e.parser.eSyntax.StructTypeDefMember;
+import hu.e.parser.eSyntax.TypeDef;
+
+import java.util.Collections;
+import java.util.List;
 
 /**
  * @author balazs.grill
@@ -48,7 +52,7 @@ public class CodeAddressSymbol implements ILiteralSymbol {
 	 * @see hu.e.compiler.internal.model.symbols.ISymbol#getType()
 	 */
 	@Override
-	public Type getType() {
+	public TypeDef getType() {
 		return null;
 	}
 
@@ -58,6 +62,18 @@ public class CodeAddressSymbol implements ILiteralSymbol {
 	@Override
 	public int getValue() {
 		return step.address;
+	}
+
+	@Override
+	public ISymbol getElement(ISymbolManager sm, int index)
+			throws ECompilerException {
+		return null;
+	}
+
+	@Override
+	public ISymbol getMember(ISymbolManager sm, StructTypeDefMember member)
+			throws ECompilerException {
+		return null;
 	}
 
 }
