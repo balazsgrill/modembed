@@ -7,10 +7,11 @@
 package hu.e.parser.eSyntax.impl;
 
 import hu.e.parser.eSyntax.ESyntaxPackage;
-import hu.e.parser.eSyntax.Type;
+import hu.e.parser.eSyntax.TypeDef;
 import hu.e.parser.eSyntax.XSizeOfExpression;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -33,14 +34,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class XSizeOfExpressionImpl extends XPrimaryExpressionImpl implements XSizeOfExpression
 {
   /**
-   * The cached value of the '{@link #getType() <em>Type</em>}' reference.
+   * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getType()
    * @generated
    * @ordered
    */
-  protected Type type;
+  protected TypeDef type;
 
   /**
    * <!-- begin-user-doc -->
@@ -68,27 +69,7 @@ public class XSizeOfExpressionImpl extends XPrimaryExpressionImpl implements XSi
    * <!-- end-user-doc -->
    * @generated
    */
-  public Type getType()
-  {
-    if (type != null && type.eIsProxy())
-    {
-      InternalEObject oldType = (InternalEObject)type;
-      type = (Type)eResolveProxy(oldType);
-      if (type != oldType)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ESyntaxPackage.XSIZE_OF_EXPRESSION__TYPE, oldType, type));
-      }
-    }
-    return type;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Type basicGetType()
+  public TypeDef getType()
   {
     return type;
   }
@@ -98,12 +79,53 @@ public class XSizeOfExpressionImpl extends XPrimaryExpressionImpl implements XSi
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setType(Type newType)
+  public NotificationChain basicSetType(TypeDef newType, NotificationChain msgs)
   {
-    Type oldType = type;
+    TypeDef oldType = type;
     type = newType;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.XSIZE_OF_EXPRESSION__TYPE, oldType, type));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ESyntaxPackage.XSIZE_OF_EXPRESSION__TYPE, oldType, newType);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setType(TypeDef newType)
+  {
+    if (newType != type)
+    {
+      NotificationChain msgs = null;
+      if (type != null)
+        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ESyntaxPackage.XSIZE_OF_EXPRESSION__TYPE, null, msgs);
+      if (newType != null)
+        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ESyntaxPackage.XSIZE_OF_EXPRESSION__TYPE, null, msgs);
+      msgs = basicSetType(newType, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.XSIZE_OF_EXPRESSION__TYPE, newType, newType));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case ESyntaxPackage.XSIZE_OF_EXPRESSION__TYPE:
+        return basicSetType(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -117,8 +139,7 @@ public class XSizeOfExpressionImpl extends XPrimaryExpressionImpl implements XSi
     switch (featureID)
     {
       case ESyntaxPackage.XSIZE_OF_EXPRESSION__TYPE:
-        if (resolve) return getType();
-        return basicGetType();
+        return getType();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -134,7 +155,7 @@ public class XSizeOfExpressionImpl extends XPrimaryExpressionImpl implements XSi
     switch (featureID)
     {
       case ESyntaxPackage.XSIZE_OF_EXPRESSION__TYPE:
-        setType((Type)newValue);
+        setType((TypeDef)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -151,7 +172,7 @@ public class XSizeOfExpressionImpl extends XPrimaryExpressionImpl implements XSi
     switch (featureID)
     {
       case ESyntaxPackage.XSIZE_OF_EXPRESSION__TYPE:
-        setType((Type)null);
+        setType((TypeDef)null);
         return;
     }
     super.eUnset(featureID);

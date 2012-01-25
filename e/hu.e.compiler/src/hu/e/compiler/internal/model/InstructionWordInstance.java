@@ -10,8 +10,9 @@ import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.compiler.internal.model.symbols.impl.LabelSymbol;
 import hu.e.compiler.internal.model.symbols.impl.LiteralSymbol;
 import hu.e.parser.eSyntax.InstructionWord;
-import hu.e.parser.eSyntax.LabelReference;
+import hu.e.parser.eSyntax.Label;
 import hu.e.parser.eSyntax.LiteralValue;
+import hu.e.parser.eSyntax.Variable;
 import hu.e.parser.eSyntax.VariableReference;
 import hu.e.parser.eSyntax.WordSection;
 
@@ -65,14 +66,6 @@ public class InstructionWordInstance implements IProgramStep{
 			int shift = -1;
 			ILiteralSymbol symbol = null;
 			
-			if (ws instanceof LabelReference){
-				size = ((LabelReference) ws).getSize();
-				shift = ((LabelReference) ws).getShift();
-				LabelSymbol ls = new LabelSymbol(((LabelReference) ws).getLabel());
-				sm.addLabelSymbol(ls);
-				labeluses.add(ls);
-				symbol = ls;
-			}
 			if (ws instanceof LiteralValue){
 				size = ((LiteralValue) ws).getSize();
 				shift = ((LiteralValue) ws).getShift();
@@ -81,14 +74,20 @@ public class InstructionWordInstance implements IProgramStep{
 			if (ws instanceof VariableReference){
 				size = ((VariableReference) ws).getSize();
 				shift = ((VariableReference) ws).getShift();
-				ISymbol vs = sm.getSymbol(((VariableReference)ws).getVar());
-				if (vs == null)
-					throw new ECompilerException(ws, "Cannot resolve symbol: "+((VariableReference)ws).getVar());
-				if (!vs.isLiteral())
-					throw new ECompilerException(ws, "Instruction word can only contain compile-time variables!");
-				symbol = (ILiteralSymbol)vs;
-				if (!((VariableReference) ws).getRef().isEmpty())
-					throw new ECompilerException(ws, "TODO: structured variable references are not yet supported!");
+				Variable var = ((VariableReference)ws).getVar();
+				if (var instanceof Label){
+					LabelSymbol ls = new LabelSymbol((Label)var);
+					sm.addLabelSymbol(ls);
+					labeluses.add(ls);
+					symbol = ls;
+				}else{
+					ISymbol vs = sm.getSymbol(var);
+					if (vs == null)
+						throw new ECompilerException(ws, "Cannot resolve symbol: "+((VariableReference)ws).getVar());
+					if (!vs.isLiteral())
+						throw new ECompilerException(ws, "Instruction word can only contain compile-time variables!");
+					symbol = (ILiteralSymbol)vs;
+				}
 			}
 			
 			symbols.add(new IncludeSymbol(symbol, s, size, shift));

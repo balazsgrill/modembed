@@ -7,7 +7,6 @@ import hu.e.compiler.internal.model.symbols.IVariableSymbol;
 import hu.e.compiler.internal.model.symbols.impl.LabelSymbol;
 import hu.e.compiler.internal.model.symbols.impl.OperatedSymbol;
 import hu.e.parser.eSyntax.OperationRole;
-import hu.e.parser.eSyntax.Type;
 import hu.e.parser.eSyntax.TypeDef;
 import hu.e.parser.eSyntax.Variable;
 import hu.e.parser.eSyntax.VariableReference;
@@ -39,5 +38,5 @@ public interface ISymbolManager {
 	
 	public TypeDef getResultType(OperationRole role, ISymbol...symbols) throws ECompilerException;
 	
-	public IVariableSymbol createBuffer(Type type) throws ECompilerException;
+	public IVariableSymbol createBuffer(TypeDef type) throws ECompilerException;
 }

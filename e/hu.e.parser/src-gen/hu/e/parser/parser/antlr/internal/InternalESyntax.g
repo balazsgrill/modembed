@@ -3390,15 +3390,18 @@ ruleXSizeOfExpression returns [EObject current=null]
     }
 (
 (
-		{
-			if ($current==null) {
-	            $current = createModelElement(grammarAccess.getXSizeOfExpressionRule());
-	        }
-        }
 		{ 
-	        newCompositeNode(grammarAccess.getXSizeOfExpressionAccess().getTypeTypeCrossReference_2_0()); 
+	        newCompositeNode(grammarAccess.getXSizeOfExpressionAccess().getTypeTypeDefParserRuleCall_2_0()); 
 	    }
-		ruleQualifiedName		{ 
+		lv_type_2_0=ruleTypeDef		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getXSizeOfExpressionRule());
+	        }
+       		set(
+       			$current, 
+       			"type",
+        		lv_type_2_0, 
+        		"TypeDef");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3428,57 +3431,72 @@ ruleXStructExpression returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(	otherlv_0='{' 
+((
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getXStructExpressionRule());
+	        }
+        }
+		{ 
+	        newCompositeNode(grammarAccess.getXStructExpressionAccess().getTypeTypeCrossReference_0_0()); 
+	    }
+		ruleQualifiedName		{ 
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_1='{' 
     {
-    	newLeafNode(otherlv_0, grammarAccess.getXStructExpressionAccess().getLeftCurlyBracketKeyword_0());
+    	newLeafNode(otherlv_1, grammarAccess.getXStructExpressionAccess().getLeftCurlyBracketKeyword_1());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getXStructExpressionAccess().getValuesXExpressionParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getXStructExpressionAccess().getValuesXExpressionParserRuleCall_2_0()); 
 	    }
-		lv_values_1_0=ruleXExpression		{
+		lv_values_2_0=ruleXExpression		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getXStructExpressionRule());
 	        }
        		add(
        			$current, 
        			"values",
-        		lv_values_1_0, 
+        		lv_values_2_0, 
         		"XExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)(	otherlv_2=',' 
+)(	otherlv_3=',' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getXStructExpressionAccess().getCommaKeyword_2_0());
+    	newLeafNode(otherlv_3, grammarAccess.getXStructExpressionAccess().getCommaKeyword_3_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getXStructExpressionAccess().getValuesXExpressionParserRuleCall_2_1_0()); 
+	        newCompositeNode(grammarAccess.getXStructExpressionAccess().getValuesXExpressionParserRuleCall_3_1_0()); 
 	    }
-		lv_values_3_0=ruleXExpression		{
+		lv_values_4_0=ruleXExpression		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getXStructExpressionRule());
 	        }
        		add(
        			$current, 
        			"values",
-        		lv_values_3_0, 
+        		lv_values_4_0, 
         		"XExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-))*(	otherlv_4=',' 
+))*(	otherlv_5=',' 
     {
-    	newLeafNode(otherlv_4, grammarAccess.getXStructExpressionAccess().getCommaKeyword_3());
+    	newLeafNode(otherlv_5, grammarAccess.getXStructExpressionAccess().getCommaKeyword_4());
     }
-)?	otherlv_5='}' 
+)?	otherlv_6='}' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getXStructExpressionAccess().getRightCurlyBracketKeyword_4());
+    	newLeafNode(otherlv_6, grammarAccess.getXStructExpressionAccess().getRightCurlyBracketKeyword_5());
     }
 )
 ;

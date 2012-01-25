@@ -289,11 +289,11 @@ XPrimaryExpression:
 ;
 
 XSizeOfExpression:
-	'sizeof' '(' type = [Type|QualifiedName] ')'
+	'sizeof' '(' type = TypeDef ')'
 ;
 
 XStructExpression:
-	'{' values+=XExpression (',' values+=XExpression)* (',')? '}'
+	type=[Type|QualifiedName] '{' values+=XExpression (',' values+=XExpression)* (',')? '}'
 ;
 
 XExpression1:

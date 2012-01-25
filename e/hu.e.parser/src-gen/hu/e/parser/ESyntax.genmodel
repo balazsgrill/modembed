@@ -192,9 +192,10 @@
     <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XExpression"/>
     <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XPrimaryExpression"/>
     <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XSizeOfExpression">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XSizeOfExpression/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XSizeOfExpression/type"/>
     </genClasses>
     <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XStructExpression">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XStructExpression/type"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XStructExpression/values"/>
     </genClasses>
     <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XExpression1">

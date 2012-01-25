@@ -18,13 +18,13 @@ public class AbstractESyntaxSyntacticSequencer extends AbstractSyntacticSequence
 
 	protected ESyntaxGrammarAccess grammarAccess;
 	protected AbstractElementAlias match_OperatorDefinition_CommaKeyword_5_q;
-	protected AbstractElementAlias match_XStructExpression_CommaKeyword_3_q;
+	protected AbstractElementAlias match_XStructExpression_CommaKeyword_4_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (ESyntaxGrammarAccess) access;
 		match_OperatorDefinition_CommaKeyword_5_q = new TokenAlias(true, false, grammarAccess.getOperatorDefinitionAccess().getCommaKeyword_5());
-		match_XStructExpression_CommaKeyword_3_q = new TokenAlias(true, false, grammarAccess.getXStructExpressionAccess().getCommaKeyword_3());
+		match_XStructExpression_CommaKeyword_4_q = new TokenAlias(true, false, grammarAccess.getXStructExpressionAccess().getCommaKeyword_4());
 	}
 	
 	@Override
@@ -48,8 +48,8 @@ public class AbstractESyntaxSyntacticSequencer extends AbstractSyntacticSequence
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
 			if(match_OperatorDefinition_CommaKeyword_5_q.equals(syntax))
 				emit_OperatorDefinition_CommaKeyword_5_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_XStructExpression_CommaKeyword_3_q.equals(syntax))
-				emit_XStructExpression_CommaKeyword_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_XStructExpression_CommaKeyword_4_q.equals(syntax))
+				emit_XStructExpression_CommaKeyword_4_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -66,7 +66,7 @@ public class AbstractESyntaxSyntacticSequencer extends AbstractSyntacticSequence
 	 * Syntax:
 	 *     ','?
 	 */
-	protected void emit_XStructExpression_CommaKeyword_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_XStructExpression_CommaKeyword_4_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

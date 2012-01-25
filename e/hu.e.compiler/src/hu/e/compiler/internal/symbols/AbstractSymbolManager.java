@@ -22,7 +22,6 @@ import hu.e.parser.eSyntax.OperationCall;
 import hu.e.parser.eSyntax.OperationRole;
 import hu.e.parser.eSyntax.StructTypeDef;
 import hu.e.parser.eSyntax.StructTypeDefMember;
-import hu.e.parser.eSyntax.Type;
 import hu.e.parser.eSyntax.TypeDef;
 import hu.e.parser.eSyntax.UNARY_OPERATOR;
 import hu.e.parser.eSyntax.Variable;
@@ -112,7 +111,12 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 	private ISymbol resolve(XExpressionM1 x) throws ECompilerException{
 		ISymbol a = resolve(x.getA());
 		for(XExpression index : x.getIndex()){
-			
+			ISymbol i = resolve(index);
+			if (i.isLiteral()){
+				a = a.getElement(this, ((ILiteralSymbol)i).getValue());
+			}else{
+				throw new ECompilerException(index, "TODO: Only compile-time indexing is supported for now");
+			}
 		}
 		return a;
 	}
@@ -154,17 +158,16 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 			return resolveXStruct((XStructExpression)x);
 		}
 		if (x instanceof XSizeOfExpression){
-			Type t = ((XSizeOfExpression) x).getType();
-			int size = getVariableManager().getMemoryManager().getSize(this, t.getDef());
+			TypeDef t = ((XSizeOfExpression) x).getType();
+			int size = getVariableManager().getMemoryManager().getSize(this, t);
 			return new LiteralSymbol(size);
 		}
 		
 		throw new ECompilerException(x, "Invalid expression");
 	}
 	
-	private ISymbol resolveXStruct(XStructExpression literalStruct) throws ECompilerException{
-		Type type = literalStruct.getType();
-		TypeDef td = type.getDef();
+	private ISymbol resolveXStruct(XStructExpression literalStruct) throws ECompilerException{ 
+		TypeDef td = literalStruct.getType().getDef();
 		List<ISymbol> symbols = new ArrayList<ISymbol>(literalStruct.getValues().size());
 		for(XExpression value : literalStruct.getValues()){
 			symbols.add(resolve(value));
@@ -174,7 +177,7 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 			ArrayTypeDef atd = (ArrayTypeDef)td;
 			int length = ((ILiteralSymbol)resolve(atd.getSize())).getValue();
 			if (length != symbols.size()) throw new ECompilerException(literalStruct, "Invalid number of elements!");
-			return new ArrayLiteralSymbol(symbols.toArray(new ISymbol[symbols.size()]), type);
+			return new ArrayLiteralSymbol(symbols.toArray(new ISymbol[symbols.size()]), td);
 		}
 		
 		if (td instanceof StructTypeDef){
@@ -204,7 +207,7 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 	}
 	
 	@Override
-	public IVariableSymbol createBuffer(Type type) throws ECompilerException {
+	public IVariableSymbol createBuffer(TypeDef type) throws ECompilerException {
 		int addr = this.getVariableManager().allocate(this, type);
 		IVariableSymbol v = VariableSymbol.create(new LiteralSymbol(addr), type);
 		return v;

@@ -1259,7 +1259,7 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     type=[Type|QualifiedName]
+	 *     type=TypeDef
 	 *
 	 * Features:
 	 *    type[1, 1]
@@ -1271,16 +1271,17 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getXSizeOfExpressionAccess().getTypeTypeQualifiedNameParserRuleCall_2_0_1(), semanticObject.getType());
+		feeder.accept(grammarAccess.getXSizeOfExpressionAccess().getTypeTypeDefParserRuleCall_2_0(), semanticObject.getType());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (values+=XExpression values+=XExpression*)
+	 *     (type=[Type|QualifiedName] values+=XExpression values+=XExpression*)
 	 *
 	 * Features:
+	 *    type[1, 1]
 	 *    values[1, *]
 	 */
 	protected void sequence_XStructExpression(EObject context, XStructExpression semanticObject) {

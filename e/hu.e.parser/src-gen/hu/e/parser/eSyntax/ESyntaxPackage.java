@@ -1349,7 +1349,7 @@ public interface ESyntaxPackage extends EPackage
   int XSIZE_OF_EXPRESSION = 35;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' reference.
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1377,13 +1377,22 @@ public interface ESyntaxPackage extends EPackage
   int XSTRUCT_EXPRESSION = 36;
 
   /**
+   * The feature id for the '<em><b>Type</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int XSTRUCT_EXPRESSION__TYPE = XPRIMARY_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
    * The feature id for the '<em><b>Values</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int XSTRUCT_EXPRESSION__VALUES = XPRIMARY_EXPRESSION_FEATURE_COUNT + 0;
+  int XSTRUCT_EXPRESSION__VALUES = XPRIMARY_EXPRESSION_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>XStruct Expression</em>' class.
@@ -1392,7 +1401,7 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    * @ordered
    */
-  int XSTRUCT_EXPRESSION_FEATURE_COUNT = XPRIMARY_EXPRESSION_FEATURE_COUNT + 1;
+  int XSTRUCT_EXPRESSION_FEATURE_COUNT = XPRIMARY_EXPRESSION_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.impl.XExpression1Impl <em>XExpression1</em>}' class.
@@ -3391,10 +3400,10 @@ public interface ESyntaxPackage extends EPackage
   EClass getXSizeOfExpression();
 
   /**
-   * Returns the meta object for the reference '{@link hu.e.parser.eSyntax.XSizeOfExpression#getType <em>Type</em>}'.
+   * Returns the meta object for the containment reference '{@link hu.e.parser.eSyntax.XSizeOfExpression#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Type</em>'.
+   * @return the meta object for the containment reference '<em>Type</em>'.
    * @see hu.e.parser.eSyntax.XSizeOfExpression#getType()
    * @see #getXSizeOfExpression()
    * @generated
@@ -3410,6 +3419,17 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    */
   EClass getXStructExpression();
+
+  /**
+   * Returns the meta object for the reference '{@link hu.e.parser.eSyntax.XStructExpression#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Type</em>'.
+   * @see hu.e.parser.eSyntax.XStructExpression#getType()
+   * @see #getXStructExpression()
+   * @generated
+   */
+  EReference getXStructExpression_Type();
 
   /**
    * Returns the meta object for the containment reference list '{@link hu.e.parser.eSyntax.XStructExpression#getValues <em>Values</em>}'.
@@ -4907,7 +4927,7 @@ public interface ESyntaxPackage extends EPackage
     EClass XSIZE_OF_EXPRESSION = eINSTANCE.getXSizeOfExpression();
 
     /**
-     * The meta object literal for the '<em><b>Type</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -4923,6 +4943,14 @@ public interface ESyntaxPackage extends EPackage
      * @generated
      */
     EClass XSTRUCT_EXPRESSION = eINSTANCE.getXStructExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference XSTRUCT_EXPRESSION__TYPE = eINSTANCE.getXStructExpression_Type();
 
     /**
      * The meta object literal for the '<em><b>Values</b></em>' containment reference list feature.
