@@ -122,7 +122,7 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
 	}
 	
 	private ISymbol execute(OperationRole role, ISymbol...symbols) throws ECompilerException{
-		OperatedSymbol os = sm.executeOperator(role,sm.getOpFinder().getElement(), symbols);
+		OperatedSymbol os = sm.executeOperator(role,context, symbols);
 		steps.addAll(os.getSteps());
 		return os.getSymbol();
 	}
@@ -143,7 +143,7 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
 		case NOTEQUALS : break;
 		case OR: return OperationRole.OR;
 		}
-		throw new ECompilerException(sm.getOpFinder().getElement(), "Runtime "+op+" operator is not yet supported.");
+		throw new ECompilerException(context, "Runtime "+op+" operator is not yet supported.");
 	}
 	
 	private void compile() throws ECompilerException{
@@ -173,7 +173,7 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
 			break;
 			
 		default:
-			throw new ECompilerException(sm.getOpFinder().getElement(), "Runtime "+op+" operator is not yet supported.");
+			throw new ECompilerException(context, "Runtime "+op+" operator is not yet supported.");
 		}
 		sm.getVariableManager().startBlock();
 		

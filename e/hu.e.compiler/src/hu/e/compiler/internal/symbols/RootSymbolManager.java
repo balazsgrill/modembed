@@ -4,7 +4,7 @@
 package hu.e.compiler.internal.symbols;
 
 import hu.e.compiler.ECompilerException;
-import hu.e.compiler.internal.OperationFinder;
+import hu.e.compiler.internal.linking.OperationFinder;
 import hu.e.compiler.internal.model.IVariableManager;
 import hu.e.compiler.internal.model.LabelStep;
 import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
@@ -28,6 +28,10 @@ import java.util.Map;
  *
  */
 public class RootSymbolManager extends AbstractSymbolManager {
+
+	public RootSymbolManager() {
+		super(null);
+	}
 
 	private final List<LabelSymbol> labels = new ArrayList<LabelSymbol>();
 	

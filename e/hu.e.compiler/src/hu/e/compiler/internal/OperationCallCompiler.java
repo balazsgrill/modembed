@@ -3,24 +3,24 @@
  */
 package hu.e.compiler.internal;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-
 import hu.e.compiler.ECompiler;
 import hu.e.compiler.ECompilerException;
+import hu.e.compiler.internal.linking.CodePlatform;
 import hu.e.compiler.internal.model.CompilationErrorEntry;
 import hu.e.compiler.internal.model.IProgramStep;
 import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.compiler.internal.model.symbols.impl.LabelSymbol;
 import hu.e.compiler.internal.model.symbols.impl.LiteralSymbol;
-import hu.e.parser.eSyntax.LabelReference;
 import hu.e.parser.eSyntax.OperationCall;
 import hu.e.parser.eSyntax.OperationCallParameter;
 import hu.e.parser.eSyntax.ParameterVariable;
 import hu.e.parser.eSyntax.Variable;
 import hu.e.parser.eSyntax.XExpression;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * @author balazs.grill
@@ -40,12 +40,13 @@ public class OperationCallCompiler {
 		return labeluses;
 	}
 	
-	public OperationCallCompiler(OperationCall call, ISymbolManager sm) {
+	public OperationCallCompiler(CodePlatform platform, OperationCall call, ISymbolManager sm) {
 		this.sm = sm;
-		this.oc = new OperationCompiler(call.getOperation());
+		this.oc = new OperationCompiler(platform, call.getOperation());
 		Iterator<OperationCallParameter> pexs = call.getParams().iterator();
-		for(ParameterVariable p : call.getOperation().getParams()){
-			Variable pvar = p.getVar();
+		for(Variable pvar : call.getOperation().getParams()){
+			//Variable pvar = p.getVar();
+			ParameterVariable p = (ParameterVariable)pvar;
 			OperationCallParameter ocp = pexs.hasNext() ? pexs.next() : null;
 			
 			if (ocp == null){
@@ -56,12 +57,12 @@ public class OperationCallCompiler {
 				oc.addParameter(pvar, new LiteralSymbol(ECompiler.convertLiteral(p.getDefault())));
 			}else{
 				
-				if (ocp instanceof LabelReference){
-					LabelSymbol ls = new LabelSymbol(((LabelReference) ocp).getLabel());
-					labeluses.add(ls);
-					sm.addLabelSymbol(ls);
-					oc.addParameter(pvar, ls);
-				}
+//				if (ocp instanceof LabelReference){
+//					LabelSymbol ls = new LabelSymbol(((LabelReference) ocp).getLabel());
+//					labeluses.add(ls);
+//					sm.addLabelSymbol(ls);
+//					oc.addParameter(pvar, ls);
+//				}
 				
 				if (ocp instanceof XExpression){
 					try{

@@ -7,15 +7,25 @@
 package hu.e.parser.eSyntax.impl;
 
 import hu.e.parser.eSyntax.ESyntaxPackage;
+import hu.e.parser.eSyntax.InstanceConfig;
 import hu.e.parser.eSyntax.LinkedInstance;
+import hu.e.parser.eSyntax.ReferenceLink;
+
+import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,6 +36,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link hu.e.parser.eSyntax.impl.LinkedInstanceImpl#getType <em>Type</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.impl.LinkedInstanceImpl#getName <em>Name</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.impl.LinkedInstanceImpl#getLinks <em>Links</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.impl.LinkedInstanceImpl#getConfs <em>Confs</em>}</li>
  * </ul>
  * </p>
  *
@@ -62,6 +74,26 @@ public class LinkedInstanceImpl extends MinimalEObjectImpl.Container implements 
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getLinks() <em>Links</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getLinks()
+   * @generated
+   * @ordered
+   */
+  protected EList<ReferenceLink> links;
+
+  /**
+   * The cached value of the '{@link #getConfs() <em>Confs</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getConfs()
+   * @generated
+   * @ordered
+   */
+  protected EList<InstanceConfig> confs;
 
   /**
    * <!-- begin-user-doc -->
@@ -155,6 +187,52 @@ public class LinkedInstanceImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<ReferenceLink> getLinks()
+  {
+    if (links == null)
+    {
+      links = new EObjectContainmentEList<ReferenceLink>(ReferenceLink.class, this, ESyntaxPackage.LINKED_INSTANCE__LINKS);
+    }
+    return links;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<InstanceConfig> getConfs()
+  {
+    if (confs == null)
+    {
+      confs = new EObjectContainmentEList<InstanceConfig>(InstanceConfig.class, this, ESyntaxPackage.LINKED_INSTANCE__CONFS);
+    }
+    return confs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case ESyntaxPackage.LINKED_INSTANCE__LINKS:
+        return ((InternalEList<?>)getLinks()).basicRemove(otherEnd, msgs);
+      case ESyntaxPackage.LINKED_INSTANCE__CONFS:
+        return ((InternalEList<?>)getConfs()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -165,6 +243,10 @@ public class LinkedInstanceImpl extends MinimalEObjectImpl.Container implements 
         return basicGetType();
       case ESyntaxPackage.LINKED_INSTANCE__NAME:
         return getName();
+      case ESyntaxPackage.LINKED_INSTANCE__LINKS:
+        return getLinks();
+      case ESyntaxPackage.LINKED_INSTANCE__CONFS:
+        return getConfs();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -174,6 +256,7 @@ public class LinkedInstanceImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -184,6 +267,14 @@ public class LinkedInstanceImpl extends MinimalEObjectImpl.Container implements 
         return;
       case ESyntaxPackage.LINKED_INSTANCE__NAME:
         setName((String)newValue);
+        return;
+      case ESyntaxPackage.LINKED_INSTANCE__LINKS:
+        getLinks().clear();
+        getLinks().addAll((Collection<? extends ReferenceLink>)newValue);
+        return;
+      case ESyntaxPackage.LINKED_INSTANCE__CONFS:
+        getConfs().clear();
+        getConfs().addAll((Collection<? extends InstanceConfig>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -205,6 +296,12 @@ public class LinkedInstanceImpl extends MinimalEObjectImpl.Container implements 
       case ESyntaxPackage.LINKED_INSTANCE__NAME:
         setName(NAME_EDEFAULT);
         return;
+      case ESyntaxPackage.LINKED_INSTANCE__LINKS:
+        getLinks().clear();
+        return;
+      case ESyntaxPackage.LINKED_INSTANCE__CONFS:
+        getConfs().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -223,6 +320,10 @@ public class LinkedInstanceImpl extends MinimalEObjectImpl.Container implements 
         return type != null;
       case ESyntaxPackage.LINKED_INSTANCE__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case ESyntaxPackage.LINKED_INSTANCE__LINKS:
+        return links != null && !links.isEmpty();
+      case ESyntaxPackage.LINKED_INSTANCE__CONFS:
+        return confs != null && !confs.isEmpty();
     }
     return super.eIsSet(featureID);
   }

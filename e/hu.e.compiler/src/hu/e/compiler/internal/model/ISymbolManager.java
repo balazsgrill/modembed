@@ -1,7 +1,8 @@
 package hu.e.compiler.internal.model;
 
 import hu.e.compiler.ECompilerException;
-import hu.e.compiler.internal.OperationFinder;
+import hu.e.compiler.internal.linking.CodePlatform;
+import hu.e.compiler.internal.linking.OperationFinder;
 import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.compiler.internal.model.symbols.IVariableSymbol;
 import hu.e.compiler.internal.model.symbols.impl.LabelSymbol;
@@ -39,4 +40,6 @@ public interface ISymbolManager {
 	public TypeDef getResultType(OperationRole role, ISymbol...symbols) throws ECompilerException;
 	
 	public IVariableSymbol createBuffer(TypeDef type) throws ECompilerException;
+	
+	public CodePlatform getCodePlatform();
 }

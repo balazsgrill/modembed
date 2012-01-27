@@ -468,6 +468,15 @@ public interface ESyntaxFactory extends EFactory
   XIfExpression createXIfExpression();
 
   /**
+   * Returns a new object of class '<em>XWhile Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>XWhile Expression</em>'.
+   * @generated
+   */
+  XWhileExpression createXWhileExpression();
+
+  /**
    * Returns a new object of class '<em>XParenthesized Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -538,6 +547,15 @@ public interface ESyntaxFactory extends EFactory
    * @generated
    */
   Operation createOperation();
+
+  /**
+   * Returns a new object of class '<em>Parameter Variable</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Parameter Variable</em>'.
+   * @generated
+   */
+  ParameterVariable createParameterVariable();
 
   /**
    * Returns the package supported by this factory.

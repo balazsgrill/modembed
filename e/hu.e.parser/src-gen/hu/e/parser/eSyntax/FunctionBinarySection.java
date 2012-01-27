@@ -17,13 +17,11 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getMemwidth <em>Memwidth</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getPointersize <em>Pointersize</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getMems <em>Mems</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getLib <em>Lib</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getInstances <em>Instances</em>}</li>
- *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getLinks <em>Links</em>}</li>
- *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getConfs <em>Confs</em>}</li>
- *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getOpins <em>Opins</em>}</li>
- *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getOp <em>Op</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getDo <em>Do</em>}</li>
  * </ul>
  * </p>
  *
@@ -58,6 +56,32 @@ public interface FunctionBinarySection extends BinarySection
    * @generated
    */
   void setMemwidth(String value);
+
+  /**
+   * Returns the value of the '<em><b>Pointersize</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Pointersize</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Pointersize</em>' attribute.
+   * @see #setPointersize(String)
+   * @see hu.e.parser.eSyntax.ESyntaxPackage#getFunctionBinarySection_Pointersize()
+   * @model
+   * @generated
+   */
+  String getPointersize();
+
+  /**
+   * Sets the value of the '{@link hu.e.parser.eSyntax.FunctionBinarySection#getPointersize <em>Pointersize</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Pointersize</em>' attribute.
+   * @see #getPointersize()
+   * @generated
+   */
+  void setPointersize(String value);
 
   /**
    * Returns the value of the '<em><b>Mems</b></em>' containment reference list.
@@ -108,87 +132,29 @@ public interface FunctionBinarySection extends BinarySection
   EList<LinkedInstance> getInstances();
 
   /**
-   * Returns the value of the '<em><b>Links</b></em>' containment reference list.
-   * The list contents are of type {@link hu.e.parser.eSyntax.ReferenceLink}.
+   * Returns the value of the '<em><b>Do</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Links</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Do</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Links</em>' containment reference list.
-   * @see hu.e.parser.eSyntax.ESyntaxPackage#getFunctionBinarySection_Links()
+   * @return the value of the '<em>Do</em>' containment reference.
+   * @see #setDo(OperationBlock)
+   * @see hu.e.parser.eSyntax.ESyntaxPackage#getFunctionBinarySection_Do()
    * @model containment="true"
    * @generated
    */
-  EList<ReferenceLink> getLinks();
+  OperationBlock getDo();
 
   /**
-   * Returns the value of the '<em><b>Confs</b></em>' containment reference list.
-   * The list contents are of type {@link hu.e.parser.eSyntax.InstanceConfig}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Confs</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Confs</em>' containment reference list.
-   * @see hu.e.parser.eSyntax.ESyntaxPackage#getFunctionBinarySection_Confs()
-   * @model containment="true"
-   * @generated
-   */
-  EList<InstanceConfig> getConfs();
-
-  /**
-   * Returns the value of the '<em><b>Opins</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Opins</em>' reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Opins</em>' reference.
-   * @see #setOpins(LinkedInstance)
-   * @see hu.e.parser.eSyntax.ESyntaxPackage#getFunctionBinarySection_Opins()
-   * @model
-   * @generated
-   */
-  LinkedInstance getOpins();
-
-  /**
-   * Sets the value of the '{@link hu.e.parser.eSyntax.FunctionBinarySection#getOpins <em>Opins</em>}' reference.
+   * Sets the value of the '{@link hu.e.parser.eSyntax.FunctionBinarySection#getDo <em>Do</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Opins</em>' reference.
-   * @see #getOpins()
+   * @param value the new value of the '<em>Do</em>' containment reference.
+   * @see #getDo()
    * @generated
    */
-  void setOpins(LinkedInstance value);
-
-  /**
-   * Returns the value of the '<em><b>Op</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Op</em>' reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Op</em>' reference.
-   * @see #setOp(Operation)
-   * @see hu.e.parser.eSyntax.ESyntaxPackage#getFunctionBinarySection_Op()
-   * @model
-   * @generated
-   */
-  Operation getOp();
-
-  /**
-   * Sets the value of the '{@link hu.e.parser.eSyntax.FunctionBinarySection#getOp <em>Op</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Op</em>' reference.
-   * @see #getOp()
-   * @generated
-   */
-  void setOp(Operation value);
+  void setDo(OperationBlock value);
 
 } // FunctionBinarySection

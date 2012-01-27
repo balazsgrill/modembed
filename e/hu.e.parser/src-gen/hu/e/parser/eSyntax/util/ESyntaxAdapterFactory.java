@@ -33,6 +33,7 @@ import hu.e.parser.eSyntax.OperationCall;
 import hu.e.parser.eSyntax.OperationCallParameter;
 import hu.e.parser.eSyntax.OperationStep;
 import hu.e.parser.eSyntax.OperatorDefinition;
+import hu.e.parser.eSyntax.ParameterVariable;
 import hu.e.parser.eSyntax.PointerTypeDef;
 import hu.e.parser.eSyntax.RefTypeDef;
 import hu.e.parser.eSyntax.ReferenceBinarySection;
@@ -62,6 +63,7 @@ import hu.e.parser.eSyntax.XPrimaryExpression;
 import hu.e.parser.eSyntax.XSizeOfExpression;
 import hu.e.parser.eSyntax.XStructExpression;
 import hu.e.parser.eSyntax.XTopLevelExpression;
+import hu.e.parser.eSyntax.XWhileExpression;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
@@ -379,6 +381,11 @@ public class ESyntaxAdapterFactory extends AdapterFactoryImpl
         return createXIfExpressionAdapter();
       }
       @Override
+      public Adapter caseXWhileExpression(XWhileExpression object)
+      {
+        return createXWhileExpressionAdapter();
+      }
+      @Override
       public Adapter caseXParenthesizedExpression(XParenthesizedExpression object)
       {
         return createXParenthesizedExpressionAdapter();
@@ -417,6 +424,11 @@ public class ESyntaxAdapterFactory extends AdapterFactoryImpl
       public Adapter caseOperation(Operation object)
       {
         return createOperationAdapter();
+      }
+      @Override
+      public Adapter caseParameterVariable(ParameterVariable object)
+      {
+        return createParameterVariableAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -1176,6 +1188,21 @@ public class ESyntaxAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link hu.e.parser.eSyntax.XWhileExpression <em>XWhile Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.e.parser.eSyntax.XWhileExpression
+   * @generated
+   */
+  public Adapter createXWhileExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link hu.e.parser.eSyntax.XParenthesizedExpression <em>XParenthesized Expression</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -1291,6 +1318,21 @@ public class ESyntaxAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createOperationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.e.parser.eSyntax.ParameterVariable <em>Parameter Variable</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.e.parser.eSyntax.ParameterVariable
+   * @generated
+   */
+  public Adapter createParameterVariableAdapter()
   {
     return null;
   }

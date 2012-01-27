@@ -4,6 +4,8 @@
 package hu.e.compiler.internal;
 
 import hu.e.compiler.ECompilerException;
+import hu.e.compiler.internal.linking.CodePlatform;
+import hu.e.compiler.internal.linking.OperationFinder;
 import hu.e.compiler.internal.model.CompilationErrorEntry;
 import hu.e.compiler.internal.model.IProgramStep;
 import hu.e.compiler.internal.model.ISymbolManager;
@@ -35,6 +37,7 @@ public class OperationCompiler {
 		private final ISymbolManager sm;
 
 		private WrappedSymbolManager(ISymbolManager sm) {
+			super(platform);
 			this.sm = sm;
 		}
 
@@ -68,11 +71,13 @@ public class OperationCompiler {
 
 		@Override
 		public OperationFinder getOpFinder() {
-			return new OperationFinder(operation);
+			return platform.getOperationFinder();
 		}
 	}
 
 	private final Operation operation;
+	
+	private final CodePlatform platform;
 	
 	private final Map<Variable, ISymbol> parameters = new HashMap<Variable, ISymbol>();
 	
@@ -80,8 +85,9 @@ public class OperationCompiler {
 		parameters.put(v, symbol);
 	}
 	
-	public OperationCompiler(Operation operation) {
+	public OperationCompiler(CodePlatform platform, Operation operation) {
 		this.operation = operation;
+		this.platform = platform;
 	}
 	
 	public List<IProgramStep> compile(final ISymbolManager sm){

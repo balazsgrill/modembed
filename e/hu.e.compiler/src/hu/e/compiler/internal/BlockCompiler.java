@@ -18,7 +18,6 @@ import hu.e.compiler.internal.model.symbols.impl.LabelSymbol;
 import hu.e.parser.eSyntax.InstructionWord;
 import hu.e.parser.eSyntax.Label;
 import hu.e.parser.eSyntax.OperationBlock;
-import hu.e.parser.eSyntax.OperationCall;
 import hu.e.parser.eSyntax.OperationRole;
 import hu.e.parser.eSyntax.OperationStep;
 import hu.e.parser.eSyntax.Variable;
@@ -42,13 +41,13 @@ public class BlockCompiler {
 		this.block = block;
 	}
 	
-	private OperationFinder opfinder = null;
+//	private OperationFinder opfinder = null;
 	
-	private OperationFinder getOpfinder() {
-		if (opfinder == null)
-			opfinder = new OperationFinder(block);
-		return opfinder;
-	}
+//	private OperationFinder getOpfinder() {
+//		if (opfinder == null)
+//			opfinder = new OperationFinder(block);
+//		return opfinder;
+//	}
 	
 	public List<IProgramStep> compile(ISymbolManager sm){
 		List<IProgramStep> result = new ArrayList<IProgramStep>();
@@ -68,25 +67,31 @@ public class BlockCompiler {
 				}
 			}
 			if (step instanceof Variable){
-				try{
-					sm.getVariableManager().define(sm, (Variable)step);
-				}catch(ECompilerException e){
-					result.add(CompilationErrorEntry.create(e));
+				if (step instanceof Label){
+					LabelStep ls = new LabelStep((Label)step);
+					labels.put((Label)step, ls);
+					result.add(ls);
+				}else{
+					try{
+						sm.getVariableManager().define(sm, (Variable)step);
+					}catch(ECompilerException e){
+						result.add(CompilationErrorEntry.create(e));
+					}
 				}
 			}
-			if (step instanceof Label){
-				LabelStep ls = new LabelStep((Label)step);
-				labels.put((Label)step, ls);
-				result.add(ls);
-			}
-			if (step instanceof OperationCall){
-				OperationCall call = (OperationCall)step;
-				OperationCallCompiler oc = new OperationCallCompiler(call, sm);
-				labeluses.addAll(oc.getLabeluses());
-				result.addAll(oc.compile());
-			}
+//			if (step instanceof OperationCall){
+//				OperationCall call = (OperationCall)step;
+//				OperationCallCompiler oc = new OperationCallCompiler(call, sm);
+//				labeluses.addAll(oc.getLabeluses());
+//				result.addAll(oc.compile());
+//			}
 			if (step instanceof XExpression){
-				
+				try {
+					ISymbol s = sm.resolve((XExpression)step);
+					result.addAll(s.getSteps());
+				} catch (ECompilerException e) {
+					result.add(CompilationErrorEntry.create(e));
+				}
 			}
 //			if (step instanceof XAssignment){
 //				if (((XAssignment) step).getRef().getVar() instanceof CompileContextVariable){

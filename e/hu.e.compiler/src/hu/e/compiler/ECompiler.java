@@ -124,7 +124,7 @@ public class ECompiler {
 							//Produce lst files.
 							for(FunctionBinarySection fbs : hfc.getSteps().keySet()){
 								List<IProgramStep> steps = hfc.getSteps().get(fbs);
-								IFile lf = getHexFileSibling(f, fbs.getOperation().getName()+".lst");
+								IFile lf = getHexFileSibling(f, "object"+".lst");
 								String content = produceLST(steps);
 								try {
 									if (lf.exists()){

@@ -92,11 +92,8 @@
     </genClasses>
     <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Variable">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Variable/type"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Variable/kind"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Variable/default"/>
     </genClasses>
     <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Library">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Library/override"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Library/overrides"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Library/use"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Library/items"/>
@@ -159,17 +156,17 @@
     </genClasses>
     <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//FunctionBinarySection">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//FunctionBinarySection/memwidth"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//FunctionBinarySection/pointersize"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//FunctionBinarySection/mems"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//FunctionBinarySection/lib"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//FunctionBinarySection/instances"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//FunctionBinarySection/links"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//FunctionBinarySection/confs"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//FunctionBinarySection/opins"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//FunctionBinarySection/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//FunctionBinarySection/do"/>
     </genClasses>
     <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//LinkedInstance">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//LinkedInstance/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//LinkedInstance/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//LinkedInstance/links"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//LinkedInstance/confs"/>
     </genClasses>
     <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//ReferenceLink">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//ReferenceLink/ref"/>
@@ -246,6 +243,10 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XIfExpression/then"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XIfExpression/else"/>
     </genClasses>
+    <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XWhileExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XWhileExpression/cond"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XWhileExpression/do"/>
+    </genClasses>
     <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XParenthesizedExpression">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XParenthesizedExpression/a"/>
     </genClasses>
@@ -266,6 +267,10 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Operation/block"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Operation/return"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Operation/returnvar"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//ParameterVariable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//ParameterVariable/kind"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//ParameterVariable/default"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: hu.e.parser.ui
 Bundle-Vendor: Cubussapiens.hu
-Bundle-Version: 0.1.11
+Bundle-Version: 0.2.0
 Bundle-SymbolicName: hu.e.parser.ui; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: hu.e.parser;visibility:=reexport,

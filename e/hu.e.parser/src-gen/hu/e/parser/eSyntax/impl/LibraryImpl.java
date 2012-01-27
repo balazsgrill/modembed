@@ -30,7 +30,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.e.parser.eSyntax.impl.LibraryImpl#getOverride <em>Override</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.impl.LibraryImpl#getOverrides <em>Overrides</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.impl.LibraryImpl#getUse <em>Use</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.impl.LibraryImpl#getItems <em>Items</em>}</li>
@@ -41,16 +40,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class LibraryImpl extends CompilationUnitImpl implements Library
 {
-  /**
-   * The cached value of the '{@link #getOverride() <em>Override</em>}' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getOverride()
-   * @generated
-   * @ordered
-   */
-  protected EList<Library> override;
-
   /**
    * The cached value of the '{@link #getOverrides() <em>Overrides</em>}' reference list.
    * <!-- begin-user-doc -->
@@ -100,20 +89,6 @@ public class LibraryImpl extends CompilationUnitImpl implements Library
   protected EClass eStaticClass()
   {
     return ESyntaxPackage.Literals.LIBRARY;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<Library> getOverride()
-  {
-    if (override == null)
-    {
-      override = new EObjectResolvingEList<Library>(Library.class, this, ESyntaxPackage.LIBRARY__OVERRIDE);
-    }
-    return override;
   }
 
   /**
@@ -184,8 +159,6 @@ public class LibraryImpl extends CompilationUnitImpl implements Library
   {
     switch (featureID)
     {
-      case ESyntaxPackage.LIBRARY__OVERRIDE:
-        return getOverride();
       case ESyntaxPackage.LIBRARY__OVERRIDES:
         return getOverrides();
       case ESyntaxPackage.LIBRARY__USE:
@@ -207,10 +180,6 @@ public class LibraryImpl extends CompilationUnitImpl implements Library
   {
     switch (featureID)
     {
-      case ESyntaxPackage.LIBRARY__OVERRIDE:
-        getOverride().clear();
-        getOverride().addAll((Collection<? extends Library>)newValue);
-        return;
       case ESyntaxPackage.LIBRARY__OVERRIDES:
         getOverrides().clear();
         getOverrides().addAll((Collection<? extends Library>)newValue);
@@ -237,9 +206,6 @@ public class LibraryImpl extends CompilationUnitImpl implements Library
   {
     switch (featureID)
     {
-      case ESyntaxPackage.LIBRARY__OVERRIDE:
-        getOverride().clear();
-        return;
       case ESyntaxPackage.LIBRARY__OVERRIDES:
         getOverrides().clear();
         return;
@@ -263,8 +229,6 @@ public class LibraryImpl extends CompilationUnitImpl implements Library
   {
     switch (featureID)
     {
-      case ESyntaxPackage.LIBRARY__OVERRIDE:
-        return override != null && !override.isEmpty();
       case ESyntaxPackage.LIBRARY__OVERRIDES:
         return overrides != null && !overrides.isEmpty();
       case ESyntaxPackage.LIBRARY__USE:

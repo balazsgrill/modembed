@@ -5,7 +5,8 @@ package hu.e.compiler.internal;
 
 import hu.e.compiler.ECompiler;
 import hu.e.compiler.ECompilerException;
-import hu.e.compiler.internal.linking.FunctionLinker;
+import hu.e.compiler.internal.linking.CodePlatform;
+import hu.e.compiler.internal.linking.ComponentLinker;
 import hu.e.compiler.internal.model.AddressedStep;
 import hu.e.compiler.internal.model.CompilationErrorEntry;
 import hu.e.compiler.internal.model.IProgramStep;
@@ -17,7 +18,7 @@ import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.compiler.internal.symbols.SymbolManager;
 import hu.e.parser.eSyntax.FunctionBinarySection;
 import hu.e.parser.eSyntax.FunctionMemory;
-import hu.e.parser.eSyntax.Variable;
+import hu.e.parser.eSyntax.Library;
 import hu.modembed.hexfile.persistence.HexFileResource;
 
 import java.util.ArrayList;
@@ -35,19 +36,20 @@ public class FunctionCompiler {
 	
 	private final MemoryManager memman;
 	
+	private final ComponentLinker linker;
+	
 	public FunctionCompiler(FunctionBinarySection link) {
 		this.link = link;
-		memman = new MemoryManager(ECompiler.convertLiteral(link.getMemwidth()));
+		int memwidth = ECompiler.convertLiteral(link.getMemwidth());
+		int pointersize = ECompiler.convertLiteral(link.getPointersize())/memwidth;
+		memman = new MemoryManager(memwidth,pointersize);
 		for(FunctionMemory fm : link.getMems()){
 			memman.addSegment(ECompiler.convertLiteral(fm.getStart()), ECompiler.convertLiteral(fm.getEnd()));
 		}
-		
-		plinker = new FunctionLinker(link.getOperation());
+		linker = new ComponentLinker(link);
 	}
 	
 	private List<IProgramStep> steps;
-
-	private FunctionLinker plinker;
 	
 	public List<IProgramStep> getSteps() {
 		return steps;
@@ -55,17 +57,18 @@ public class FunctionCompiler {
 	
 	public byte[] compile(ISymbolManager parentsm){
 		List<IProgramStep> ps = new ArrayList<IProgramStep>();
-		SymbolManager sm = new SymbolManager(parentsm,memman);
-		for(Variable v : plinker.getGlobals()){
-			try {
-				sm.getSymbol(v);
-			} catch (ECompilerException e) {
-				ps.add(CompilationErrorEntry.create(e));
-			}
-		}
+		SymbolManager sm = new SymbolManager(new CodePlatform(linker, new ArrayList<Library>()),parentsm,memman);
+//		TODO: Handle globals
+//		for(Variable v : plinker.getGlobals()){
+//			try {
+//				sm.getSymbol(v);
+//			} catch (ECompilerException e) {
+//				ps.add(CompilationErrorEntry.create(e));
+//			}
+//		}
 		
-		OperationCompiler opc = new OperationCompiler(link.getOperation());
-		ps.addAll(opc.compile(sm));
+		BlockCompiler bc = new BlockCompiler(link.getDo());
+		ps.addAll(bc.compile(sm));
 		this.steps = ps;
 		
 		//Linking

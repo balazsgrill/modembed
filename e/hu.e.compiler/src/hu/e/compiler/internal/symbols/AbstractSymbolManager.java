@@ -4,7 +4,8 @@ import hu.e.compiler.ECompiler;
 import hu.e.compiler.ECompilerException;
 import hu.e.compiler.internal.OperationCallCompiler;
 import hu.e.compiler.internal.OperationCompiler;
-import hu.e.compiler.internal.OperationFinder;
+import hu.e.compiler.internal.linking.CodePlatform;
+import hu.e.compiler.internal.linking.OperationFinder;
 import hu.e.compiler.internal.model.IProgramStep;
 import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
@@ -49,6 +50,17 @@ import java.util.Map;
 import org.eclipse.emf.ecore.EObject;
 
 public abstract class AbstractSymbolManager implements ISymbolManager {
+	
+	private final CodePlatform platform;
+	
+	public AbstractSymbolManager(CodePlatform platform) {
+		this.platform = platform;
+	}
+	
+	@Override
+	public CodePlatform getCodePlatform() {
+		return platform;
+	}
 	
 	@Override
 	public ISymbol resolve(XExpression x) throws ECompilerException{
@@ -147,7 +159,7 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 		
 		if (x instanceof OperationCall){
 			OperationCall oc = (OperationCall)x;
-			OperationCallCompiler c = new OperationCallCompiler(oc, this);
+			OperationCallCompiler c = new OperationCallCompiler(platform, oc, this);
 			List<IProgramStep> ps = c.compile();
 			if (!ps.isEmpty()){
 				return new OperatedSymbol(ps, c.getReturns());
@@ -200,7 +212,7 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 	public OperatedSymbol executeOperator(OperationRole role, EObject context,
 			ISymbol... symbols) throws ECompilerException {
 		OperationFinder opfinder = getOpFinder();
-		OperationCompiler oc = opfinder.getOperationCompiler(role, symbols);
+		OperationCompiler oc = opfinder.getOperationCompiler(getCodePlatform(), role, symbols);
 		if (oc == null) 
 			throw new ECompilerException(context, "Cannot find "+role+" operator!");
 		return new OperatedSymbol(oc.compile(this),oc.getReturns(this));

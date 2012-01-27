@@ -33,6 +33,7 @@ import hu.e.parser.eSyntax.OperationCall;
 import hu.e.parser.eSyntax.OperationCallParameter;
 import hu.e.parser.eSyntax.OperationStep;
 import hu.e.parser.eSyntax.OperatorDefinition;
+import hu.e.parser.eSyntax.ParameterVariable;
 import hu.e.parser.eSyntax.PointerTypeDef;
 import hu.e.parser.eSyntax.RefTypeDef;
 import hu.e.parser.eSyntax.ReferenceBinarySection;
@@ -62,6 +63,7 @@ import hu.e.parser.eSyntax.XPrimaryExpression;
 import hu.e.parser.eSyntax.XSizeOfExpression;
 import hu.e.parser.eSyntax.XStructExpression;
 import hu.e.parser.eSyntax.XTopLevelExpression;
+import hu.e.parser.eSyntax.XWhileExpression;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -510,6 +512,15 @@ public class ESyntaxSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case ESyntaxPackage.XWHILE_EXPRESSION:
+      {
+        XWhileExpression xWhileExpression = (XWhileExpression)theEObject;
+        T result = caseXWhileExpression(xWhileExpression);
+        if (result == null) result = caseXTopLevelExpression(xWhileExpression);
+        if (result == null) result = caseOperationStep(xWhileExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case ESyntaxPackage.XPARENTHESIZED_EXPRESSION:
       {
         XParenthesizedExpression xParenthesizedExpression = (XParenthesizedExpression)theEObject;
@@ -592,6 +603,17 @@ public class ESyntaxSwitch<T> extends Switch<T>
         if (result == null) result = caseClassItem(operation);
         if (result == null) result = caseLibraryItem(operation);
         if (result == null) result = caseOperationStep(operation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ESyntaxPackage.PARAMETER_VARIABLE:
+      {
+        ParameterVariable parameterVariable = (ParameterVariable)theEObject;
+        T result = caseParameterVariable(parameterVariable);
+        if (result == null) result = caseVariable(parameterVariable);
+        if (result == null) result = caseClassItem(parameterVariable);
+        if (result == null) result = caseLibraryItem(parameterVariable);
+        if (result == null) result = caseOperationStep(parameterVariable);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -1384,6 +1406,22 @@ public class ESyntaxSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>XWhile Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>XWhile Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseXWhileExpression(XWhileExpression object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>XParenthesized Expression</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -1507,6 +1545,22 @@ public class ESyntaxSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseOperation(Operation object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Parameter Variable</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Parameter Variable</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseParameterVariable(ParameterVariable object)
   {
     return null;
   }

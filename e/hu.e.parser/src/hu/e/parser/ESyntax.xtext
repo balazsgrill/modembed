@@ -25,6 +25,10 @@ QualifiedName:
 	(NameSpaceName '::')? ID
 ;
 
+ReferenceID:
+	(ID '.')? ID
+;
+
 /***********************
  * LITERALS *
  ***********************/
@@ -57,7 +61,7 @@ ClassItem:
 ;
 
 InstanceReference:
-	'ref' type=[Class|QualifiedName] name=ID
+	'ref' type=[Class|ReferenceID] name=ID
 ;
 
 ConfigVariable returns Variable:
@@ -70,7 +74,7 @@ ConfigVariable returns Variable:
 
 Library:
 	'library' name=ID
-	('overrides' override+=[Library|QualifiedName] (',' overrides+=[Library|QualifiedName])*)?
+	('overrides' overrides+=[Library|QualifiedName] (',' overrides+=[Library|QualifiedName])*)?
 	'{'
 	('use' use+=[Library|QualifiedName]';')*
 	(items+=LibraryItem)*
@@ -102,7 +106,7 @@ ArrayTypeDef:
 ;
 
 RefTypeDef:
-	type=[Type|QualifiedName]
+	type=[Type|ReferenceID]
 ;	
 	
 DataTypeDef:
@@ -166,11 +170,11 @@ Variable:
 ;
 
 VariableReference:
-	var=[Variable|QualifiedName]
+	var=[Variable|ReferenceID]
 ;
 
 OperationCall:
-	operation=[Operation|QualifiedName] '('
+	operation=[Operation|ReferenceID] '('
 		(params+=OperationCallParameter (',' params+=OperationCallParameter)*)?
 	')'
 ;
@@ -192,7 +196,7 @@ OperationBlock:
 ;
 
 ParameterVariable returns Variable:
-	(kind=ParameterKind)? type=TypeDef name=ID ('=' default=LITERAL)?  
+	{ParameterVariable} (kind=ParameterKind)? type=TypeDef name=ID ('=' default=LITERAL)?  
 ;
 
 enum ParameterKind:
@@ -212,7 +216,7 @@ enum OperationRole:
 
 OperatorDefinition:
 	'operator' role=OperationRole '{'
-		candidate+=[Operation|QualifiedName] (',' candidate+=[Operation|QualifiedName])* (',')?
+		candidate+=[Operation|ReferenceID] (',' candidate+=[Operation|ReferenceID])* (',')?
 	'}'
 ;
 
@@ -237,23 +241,24 @@ BinarySection:
 FunctionBinarySection:
 	'link' '('
 		'memwidth' '=' memwidth=LITERAL ';'
+		'pointersize' '=' pointersize=LITERAL ';'
 		(mems+=FunctionMemory ';')+
 	')' '{'
 		(
 		('lib' lib+=Library ';') |
-		(instances+=LinkedInstance '{'
-			( 
-			(links+=ReferenceLink | confs+=InstanceConfig)	
-			';')*
-		'}')
+		(instances+=LinkedInstance )
 		)*
 		
-		'link' opins=[LinkedInstance|ID] op=[Operation|ID]
+		'link' '{' do=OperationBlock '}'
 	'}'
 ; 
 
 LinkedInstance:
-	type=[Class|QualifiedName] name=ID
+	type=[Class|QualifiedName] name=ID '{'
+			( 
+			(links+=ReferenceLink | confs+=InstanceConfig)	
+			';')*
+		'}'
 ;
 
 ReferenceLink:
@@ -354,7 +359,7 @@ XExpressionLiteral:
 ;
 
 XTopLevelExpression:
-	XExpression ';' | XIfExpression
+	XExpression ';' | XIfExpression | XWhileExpression
 ;
 
 OpSingleAssign:
@@ -372,6 +377,12 @@ XIfExpression:
 	then=OperationBlock
 	'}'
 	(=> 'else' '{' else=OperationBlock '}')?;
+	
+XWhileExpression:
+	'while' '(' cond=XExpression ')' '{'
+		do=OperationBlock
+	'}'
+;	
 	
 XParenthesizedExpression:
 	'(' a=XExpression ')';

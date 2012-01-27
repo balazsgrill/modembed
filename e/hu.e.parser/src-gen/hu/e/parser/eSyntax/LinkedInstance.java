@@ -6,6 +6,8 @@
  */
 package hu.e.parser.eSyntax;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -18,6 +20,8 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link hu.e.parser.eSyntax.LinkedInstance#getType <em>Type</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.LinkedInstance#getName <em>Name</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.LinkedInstance#getLinks <em>Links</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.LinkedInstance#getConfs <em>Confs</em>}</li>
  * </ul>
  * </p>
  *
@@ -78,5 +82,37 @@ public interface LinkedInstance extends EObject
    * @generated
    */
   void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Links</b></em>' containment reference list.
+   * The list contents are of type {@link hu.e.parser.eSyntax.ReferenceLink}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Links</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Links</em>' containment reference list.
+   * @see hu.e.parser.eSyntax.ESyntaxPackage#getLinkedInstance_Links()
+   * @model containment="true"
+   * @generated
+   */
+  EList<ReferenceLink> getLinks();
+
+  /**
+   * Returns the value of the '<em><b>Confs</b></em>' containment reference list.
+   * The list contents are of type {@link hu.e.parser.eSyntax.InstanceConfig}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Confs</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Confs</em>' containment reference list.
+   * @see hu.e.parser.eSyntax.ESyntaxPackage#getLinkedInstance_Confs()
+   * @model containment="true"
+   * @generated
+   */
+  EList<InstanceConfig> getConfs();
 
 } // LinkedInstance

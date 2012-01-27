@@ -41,6 +41,7 @@ import hu.e.parser.eSyntax.OperationRole;
 import hu.e.parser.eSyntax.OperationStep;
 import hu.e.parser.eSyntax.OperatorDefinition;
 import hu.e.parser.eSyntax.ParameterKind;
+import hu.e.parser.eSyntax.ParameterVariable;
 import hu.e.parser.eSyntax.PointerTypeDef;
 import hu.e.parser.eSyntax.PrimitiveKind;
 import hu.e.parser.eSyntax.RefTypeDef;
@@ -72,6 +73,7 @@ import hu.e.parser.eSyntax.XPrimaryExpression;
 import hu.e.parser.eSyntax.XSizeOfExpression;
 import hu.e.parser.eSyntax.XStructExpression;
 import hu.e.parser.eSyntax.XTopLevelExpression;
+import hu.e.parser.eSyntax.XWhileExpression;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -183,6 +185,7 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
       case ESyntaxPackage.XTOP_LEVEL_EXPRESSION: return createXTopLevelExpression();
       case ESyntaxPackage.XIS_LITERAL_EXPRESSION: return createXIsLiteralExpression();
       case ESyntaxPackage.XIF_EXPRESSION: return createXIfExpression();
+      case ESyntaxPackage.XWHILE_EXPRESSION: return createXWhileExpression();
       case ESyntaxPackage.XPARENTHESIZED_EXPRESSION: return createXParenthesizedExpression();
       case ESyntaxPackage.CONFIG_VARIABLE: return createConfigVariable();
       case ESyntaxPackage.STRUCT_TYPE_DEF_MEMBER: return createStructTypeDefMember();
@@ -191,6 +194,7 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
       case ESyntaxPackage.COMPILE_CONTEXT_VARIABLE: return createCompileContextVariable();
       case ESyntaxPackage.LABEL: return createLabel();
       case ESyntaxPackage.OPERATION: return createOperation();
+      case ESyntaxPackage.PARAMETER_VARIABLE: return createParameterVariable();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -806,6 +810,17 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public XWhileExpression createXWhileExpression()
+  {
+    XWhileExpressionImpl xWhileExpression = new XWhileExpressionImpl();
+    return xWhileExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public XParenthesizedExpression createXParenthesizedExpression()
   {
     XParenthesizedExpressionImpl xParenthesizedExpression = new XParenthesizedExpressionImpl();
@@ -887,6 +902,17 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
   {
     OperationImpl operation = new OperationImpl();
     return operation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ParameterVariable createParameterVariable()
+  {
+    ParameterVariableImpl parameterVariable = new ParameterVariableImpl();
+    return parameterVariable;
   }
 
   /**
