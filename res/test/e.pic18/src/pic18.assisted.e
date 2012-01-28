@@ -1,7 +1,9 @@
 namespace microchip.pic18.assisted;
 
-import e.types;
-import microchip.pic18;
+library pic18_assisted{
+
+use microchip.pic18::pic18;
+use e::platform;
 
 compilecontext bank = 0;
 
@@ -163,4 +165,7 @@ aBTFSS(address f, bit b){
 
 aBTG(address f, bit b){
 	BTG(f,b,assistSelectBank(f));
+}
+
+
 }

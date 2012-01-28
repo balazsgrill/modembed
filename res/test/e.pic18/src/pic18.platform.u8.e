@@ -1,8 +1,6 @@
 namespace e.platform.u8;
 
-import e.types;
-import microchip.pic18;
-import microchip.pic18.assisted;
+library pic18_platform_u8{
 
 /*
  * dest += v
@@ -100,3 +98,5 @@ isequal_u8(uint8 d1, uint8 d2){
 	GOTO(@end);
 	label end;
 } returns bool result;
+
+}

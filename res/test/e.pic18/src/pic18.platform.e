@@ -1,10 +1,8 @@
 namespace e.platform;
 
-import e.types;
-import e.platform.u8;
-import e.platform.u16;
-import microchip.pic18;
-import microchip.pic18.assisted;
+library pic18_platform overrides e::platform{
+
+use e.platform.u16::pic18_platform_u8;
 
 operator ADD{
 	add_u8,
@@ -34,4 +32,6 @@ operator SET{
 
 operator EQUALS{
 	isequal_u8
+}
+
 }

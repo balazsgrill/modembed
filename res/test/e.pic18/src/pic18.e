@@ -3,7 +3,9 @@
  */
 namespace microchip.pic18;
 
-import e.types;
+library pic18{
+
+use e::platform;
 
 /*
  * 12 bit File register address
@@ -497,4 +499,6 @@ SUBLW(uint8 k ){
  */
 XORLW(uint8 k ){
 	<b0000:4 b1010:4 k:8>
+}
+
 }

@@ -1,9 +1,6 @@
 namespace e.platform.u16;
 
-import e.types;
-import microchip.pic18;
-import microchip.pic18.assisted;
-import e.platform.u8;
+library pic18_platform_u16{
 
 add_u16_u8(var uint16 dest, uint8 v){
 	if (isliteral(v)){
@@ -75,4 +72,6 @@ set_u16_u16(var uint16 dest, uint16 v){
 		MOVFF(addr(v),addr(dest));
 		MOVFF(addr(v)+1,addr(dest)+1);
 	}
+}
+
 }
