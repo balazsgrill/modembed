@@ -4,12 +4,18 @@
 package hu.e.parser.scoping;
 
 
-import hu.e.parser.eSyntax.Package;
+import hu.e.parser.eSyntax.CompilationUnit;
+import hu.e.parser.eSyntax.Library;
+import hu.e.parser.eSyntax.LibraryItem;
+import hu.e.parser.eSyntax.Type;
+import hu.e.parser.eSyntax.Variable;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.xtext.resource.EObjectDescription;
 import org.eclipse.xtext.resource.IEObjectDescription;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.impl.AbstractScope;
@@ -22,17 +28,21 @@ public class ImportedScope extends AbstractScope {
 
 	private final List<IEObjectDescription> descs = new ArrayList<IEObjectDescription>();
 	
-//	public static String getName(TopLevelItem tli){
-//		if (tli instanceof LinkedBinary)
-//			return ((LinkedBinary) tli).getName();
-//		if (tli instanceof Operation)
-//			return ((Operation) tli).getName();
-//		if (tli instanceof Type)
-//			return ((Type) tli).getName();
-//		if (tli instanceof Variable)
-//			return ((Variable) tli).getName();
-//		return null;
-//	}
+	public static String getName(LibraryItem tli){
+		if (tli instanceof Type)
+			return ((Type) tli).getName();
+		if (tli instanceof Variable)
+			return ((Variable) tli).getName();
+		return null;
+	}
+	
+	private CompilationUnit getUnit(EObject eo){
+		if (eo == null) return null;
+		if (eo instanceof CompilationUnit){
+			return (CompilationUnit)eo;
+		}
+		return getUnit(eo.eContainer());
+	}
 	
 	/**
 	 * @param parent
@@ -40,18 +50,24 @@ public class ImportedScope extends AbstractScope {
 	 */
 	public ImportedScope(EObject element, Class<?> clazz, IScope parent) {
 		super(parent, false);
-		EObject eo = element.eResource().getContents().get(0);
-		if (eo instanceof Package){
-			Package pack = (Package)eo;
-//			for(Package p : pack.getUses()){
-//				for(TopLevelItem tli : p.getItems()){
-//					String name = getName(tli);
-//					if (name != null && clazz.isInstance(tli)){
-//						descs.add(EObjectDescription.create(name, tli));
-//						descs.add(EObjectDescription.create(p.getName()+"::"+name, tli));
-//					}
-//				}
-//			}
+		CompilationUnit cu = getUnit(element);
+		if (cu != null){
+			List<Library> uses = Collections.emptyList();
+			if (cu instanceof Library){
+				uses = ((Library) cu).getUse();
+			}else
+			if (cu instanceof hu.e.parser.eSyntax.Class){
+				uses = ((hu.e.parser.eSyntax.Class) cu).getUse();
+			}
+			
+			for(Library lib : uses){
+				for(LibraryItem li : lib.getItems()){
+					String name = getName(li);
+					if (name != null && clazz.isInstance(li)){
+						descs.add(EObjectDescription.create(name, li));
+					}
+				}
+			}
 		}
 	}
 	

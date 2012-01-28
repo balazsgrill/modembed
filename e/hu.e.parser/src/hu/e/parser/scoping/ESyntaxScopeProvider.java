@@ -23,6 +23,10 @@ public class ESyntaxScopeProvider extends AbstractDeclarativeScopeProvider {
 		return new ImportedScope(eobject, ref.getEType().getInstanceClass(), delegateGetScope(eobject, ref));
 	}
 	
+	public IScope scope_RefTypeDef_type(EObject eobject, EReference ref){
+		return importedScope(eobject, ref);
+	}
+	
 	public IScope scope_OperationCall_operation(OperationCall opcall, EReference ref){
 		return importedScope(opcall, ref);
 	}
