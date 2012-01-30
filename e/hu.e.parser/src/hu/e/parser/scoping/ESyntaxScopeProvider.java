@@ -23,6 +23,14 @@ public class ESyntaxScopeProvider extends AbstractDeclarativeScopeProvider {
 		return new ImportedScope(eobject, ref.getEType().getInstanceClass(), delegateGetScope(eobject, ref));
 	}
 	
+	protected IScope pluginScope(EObject eobject, EReference ref){
+		IScope scope = delegateGetScope(eobject, ref);
+		scope = new PluginDependencyScope(
+				eobject.eResource().getURI(), eobject.eResource().getResourceSet(), scope);
+		
+		return scope;
+	}
+	
 	public IScope scope_RefTypeDef_type(EObject eobject, EReference ref){
 		return importedScope(eobject, ref);
 	}
@@ -48,11 +56,11 @@ public class ESyntaxScopeProvider extends AbstractDeclarativeScopeProvider {
 	}
 	
 	public IScope scope_Package_uses(EObject eobject, EReference ref){		
-		IScope scope = delegateGetScope(eobject, ref);
-		scope = new PluginDependencyScope(
-				eobject.eResource().getURI(), eobject.eResource().getResourceSet(), scope);
-		
-		return scope;
+		return pluginScope(eobject, ref);
+	}
+	
+	public IScope scope_Library_use(EObject eobject, EReference ref){		
+		return pluginScope(eobject, ref);
 	}
 	
 	public IScope scope_StructTypeDefMember_type(EObject eobject, EReference ref){
