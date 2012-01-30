@@ -2,7 +2,9 @@ namespace e.platform;
 
 library pic18_platform overrides e::platform{
 
-use e.platform.u16::pic18_platform_u8;
+use e.platform.u16::pic18_platform_u16;
+use e.platform.u8::pic18_platform_u8;
+use microchip.pic18.assisted::pic18_assisted;
 
 operator ADD{
 	add_u8,

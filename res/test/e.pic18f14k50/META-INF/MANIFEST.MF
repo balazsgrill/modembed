@@ -3,4 +3,4 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Pic18f14k50
 Bundle-SymbolicName: e.pic18f14k50
 Bundle-Version: 0.1.0
-Require-Bundle: e.pic18;bundle-version="0.1.0"
+Require-Bundle: e.pic18;bundle-version="0.2.0"

@@ -1,6 +1,8 @@
 namespace microchip.PIC18F14K50;
 
-import e.types;
+library device{
+
+use e::platform;
 
 /* 
  * Special function registers
@@ -716,4 +718,6 @@ const uint32 CONFIG_ADDRESS = 0x300000;
 	 * Enabled 
 	 */
 	const uint8 CONFIG7H_EBTRB_Enabled = 0x0;
+
+}
 

@@ -2,6 +2,10 @@ namespace e.platform.u8;
 
 library pic18_platform_u8{
 
+use e::platform;
+use microchip.pic18::pic18;
+use microchip.pic18.assisted::pic18_assisted;
+
 /*
  * dest += v
  */
@@ -9,34 +13,34 @@ add_u8(var uint8 dest, uint8 v){
 	if(isliteral(v)){
 		MOVLW(v);
 	}else{
-		aMOVF(addr(v),0);
+		aMOVF(&v,0);
 	}
-	aADDWF(addr(dest));
+	aADDWF(&dest);
 }
 
 subtract_u8(var uint8 dest, uint8 v){
 	if(isliteral(v)){
 		MOVLW(v);
 	}else{
-		aMOVF(addr(v),0);
+		aMOVF(&v,0);
 	}
-	aSUBWF(addr(dest));
+	aSUBWF(&dest);
 }
 
 set_bool(var bool dest, bool v){
 	if(isliteral(v)){
 		if (v == 0){
-			aCLRF(addr(dest));
+			aCLRF(&dest);
 		}else{
 			if (v == 0xFF){
-				aSETF(addr(dest));
+				aSETF(&dest);
 			}else{
 				MOVLW(v);
-				aMOVWF(addr(dest));
+				aMOVWF(&dest);
 			}
 		}
 	}else{
-		MOVFF(addr(v),addr(dest));
+		MOVFF(&v,&dest);
 	}
 }
 
@@ -46,29 +50,29 @@ set_bool(var bool dest, bool v){
 set_u8(var uint8 dest, uint8 v){
 	if(isliteral(v)){
 		if (v == 0){
-			aCLRF(addr(dest));
+			aCLRF(&dest);
 		}else{
 			if (v == 0xFF){
-				aSETF(addr(dest));
+				aSETF(&dest);
 			}else{
 				MOVLW(v);
-				aMOVWF(addr(dest));
+				aMOVWF(&dest);
 			}
 		}
 	}else{
-		MOVFF(addr(v),addr(dest));
+		MOVFF(&v,&dest);
 	}
 }
 
 branch_u8(var uint8 condition, const uint16 true, const uint16 false){
-	aMOVF(addr(condition)); //Set Zero bit
+	aMOVF(&condition); //Set Zero bit
 	BZ(2);//Branch if zero (jump to false)
 	GOTO(true);
 	GOTO(false);
 }
 
 branch_bool(var bool condition, const uint16 true, const uint16 false){
-	aBTFSC(addr(condition),0);
+	aBTFSC(&condition,0);
 	GOTO(true);
 	GOTO(false);
 }
@@ -80,14 +84,14 @@ isequal_u8(uint8 d1, uint8 d2){
 	if (isliteral(d1)){
 		MOVLW(d1);
 		//d2 garanteed to be variable
-		aCPFSEQ(addr(d2));
+		aCPFSEQ(&d2);
 	}else{
 		if (isliteral(d2)){
 			MOVLW(d2);
 		}else{
-			aMOVF(addr(d2),0);
+			aMOVF(&d2,0);
 		}
-		aCPFSEQ(addr(d1));
+		aCPFSEQ(&d1);
 	}
 	//Skipped if equal
 	GOTO(@notequal);
