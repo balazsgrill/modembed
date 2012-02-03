@@ -8,7 +8,6 @@ import hu.e.compiler.internal.MemoryManager;
 import hu.e.compiler.internal.StackLevel;
 import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.compiler.internal.model.IVariableManager;
-import hu.e.parser.eSyntax.Package;
 import hu.e.parser.eSyntax.TypeDef;
 import hu.e.parser.eSyntax.Variable;
 

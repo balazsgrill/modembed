@@ -6,7 +6,6 @@ package hu.e.compiler.internal.model;
 import hu.e.compiler.ECompilerException;
 import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.parser.eSyntax.Operation;
-import hu.e.parser.eSyntax.Package;
 import hu.e.parser.eSyntax.Variable;
 
 import java.util.Map;

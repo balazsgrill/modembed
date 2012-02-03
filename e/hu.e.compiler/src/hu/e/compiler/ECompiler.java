@@ -10,10 +10,8 @@ import hu.e.compiler.internal.model.LabelStep;
 import hu.e.compiler.internal.model.OperationEntryStep;
 import hu.e.compiler.internal.model.OperationExitStep;
 import hu.e.parser.eSyntax.BinaryType;
-import hu.e.parser.eSyntax.CompilationUnit;
 import hu.e.parser.eSyntax.FunctionBinarySection;
 import hu.e.parser.eSyntax.LinkedBinary;
-import hu.e.parser.eSyntax.Package;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -98,45 +96,38 @@ public class ECompiler {
 	public void compile(Resource r, IFile f){
 		
 		ResourceSet resourceset = r.getResourceSet();
-		
+
 		for(EObject eo : r.getContents()){
-			if (eo instanceof Package){
-				System.out.println("Processing namespace "+((Package) eo).getName());
-				
-				
-				for(CompilationUnit tli : ((Package) eo).getItems()){
-					if (tli instanceof LinkedBinary){
-						LinkedBinary b = (LinkedBinary)tli;
-						if (BinaryType.HEXFILE == b.getType()){
-							System.out.println("Creating "+b.getName());
-							IFile hf = getHexFileSibling(f, b.getName()+".hex");
-							Resource hr = resourceset.createResource(URI.createPlatformResourceURI(hf.getFullPath().toString(),true));
-							HexFileCompiler hfc = new HexFileCompiler(b);
-							hr.getContents().clear();
-							hr.getContents().add(hfc.create());
-							try {
-								hr.save(null);
-							} catch (IOException e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
+			if (eo instanceof LinkedBinary){
+				LinkedBinary b = (LinkedBinary)eo;
+				if (BinaryType.HEXFILE == b.getType()){
+					System.out.println("Creating "+b.getName());
+					IFile hf = getHexFileSibling(f, b.getName()+".hex");
+					Resource hr = resourceset.createResource(URI.createPlatformResourceURI(hf.getFullPath().toString(),true));
+					HexFileCompiler hfc = new HexFileCompiler(b);
+					hr.getContents().clear();
+					hr.getContents().add(hfc.create());
+					try {
+						hr.save(null);
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+
+					//Produce lst files.
+					for(FunctionBinarySection fbs : hfc.getSteps().keySet()){
+						List<IProgramStep> steps = hfc.getSteps().get(fbs);
+						IFile lf = getHexFileSibling(f, "object"+".lst");
+						String content = produceLST(steps);
+						try {
+							if (lf.exists()){
+								lf.setContents(new ByteArrayInputStream(content.getBytes()), true, true, new NullProgressMonitor());
+							}else{
+								lf.create(new ByteArrayInputStream(content.getBytes()),true, new NullProgressMonitor());
 							}
-							
-							//Produce lst files.
-							for(FunctionBinarySection fbs : hfc.getSteps().keySet()){
-								List<IProgramStep> steps = hfc.getSteps().get(fbs);
-								IFile lf = getHexFileSibling(f, "object"+".lst");
-								String content = produceLST(steps);
-								try {
-									if (lf.exists()){
-										lf.setContents(new ByteArrayInputStream(content.getBytes()), true, true, new NullProgressMonitor());
-									}else{
-										lf.create(new ByteArrayInputStream(content.getBytes()),true, new NullProgressMonitor());
-									}
-								}catch (Exception e) {
-									// TODO Auto-generated catch block
-									e.printStackTrace();
-								}
-							}
+						}catch (Exception e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
 						}
 					}
 				}
