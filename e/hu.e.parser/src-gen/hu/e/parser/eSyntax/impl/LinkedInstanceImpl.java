@@ -9,6 +9,7 @@ package hu.e.parser.eSyntax.impl;
 import hu.e.parser.eSyntax.ESyntaxPackage;
 import hu.e.parser.eSyntax.InstanceConfig;
 import hu.e.parser.eSyntax.LinkedInstance;
+import hu.e.parser.eSyntax.Module;
 import hu.e.parser.eSyntax.ReferenceLink;
 
 import java.util.Collection;
@@ -53,7 +54,7 @@ public class LinkedInstanceImpl extends MinimalEObjectImpl.Container implements 
    * @generated
    * @ordered
    */
-  protected hu.e.parser.eSyntax.Class type;
+  protected Module type;
 
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -121,12 +122,12 @@ public class LinkedInstanceImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public hu.e.parser.eSyntax.Class getType()
+  public Module getType()
   {
     if (type != null && type.eIsProxy())
     {
       InternalEObject oldType = (InternalEObject)type;
-      type = (hu.e.parser.eSyntax.Class)eResolveProxy(oldType);
+      type = (Module)eResolveProxy(oldType);
       if (type != oldType)
       {
         if (eNotificationRequired())
@@ -141,7 +142,7 @@ public class LinkedInstanceImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public hu.e.parser.eSyntax.Class basicGetType()
+  public Module basicGetType()
   {
     return type;
   }
@@ -151,9 +152,9 @@ public class LinkedInstanceImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setType(hu.e.parser.eSyntax.Class newType)
+  public void setType(Module newType)
   {
-    hu.e.parser.eSyntax.Class oldType = type;
+    Module oldType = type;
     type = newType;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.LINKED_INSTANCE__TYPE, oldType, type));
@@ -263,7 +264,7 @@ public class LinkedInstanceImpl extends MinimalEObjectImpl.Container implements 
     switch (featureID)
     {
       case ESyntaxPackage.LINKED_INSTANCE__TYPE:
-        setType((hu.e.parser.eSyntax.Class)newValue);
+        setType((Module)newValue);
         return;
       case ESyntaxPackage.LINKED_INSTANCE__NAME:
         setName((String)newValue);
@@ -291,7 +292,7 @@ public class LinkedInstanceImpl extends MinimalEObjectImpl.Container implements 
     switch (featureID)
     {
       case ESyntaxPackage.LINKED_INSTANCE__TYPE:
-        setType((hu.e.parser.eSyntax.Class)null);
+        setType((Module)null);
         return;
       case ESyntaxPackage.LINKED_INSTANCE__NAME:
         setName(NAME_EDEFAULT);

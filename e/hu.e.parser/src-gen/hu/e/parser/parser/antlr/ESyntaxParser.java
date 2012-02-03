@@ -25,7 +25,7 @@ public class ESyntaxParser extends org.eclipse.xtext.parser.antlr.AbstractAntlrP
 	
 	@Override 
 	protected String getDefaultRuleName() {
-		return "Package";
+		return "CompilationUnit";
 	}
 	
 	public ESyntaxGrammarAccess getGrammarAccess() {

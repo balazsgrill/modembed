@@ -6,64 +6,7 @@
  */
 package hu.e.parser.eSyntax.util;
 
-import hu.e.parser.eSyntax.ArrayTypeDef;
-import hu.e.parser.eSyntax.BinarySection;
-import hu.e.parser.eSyntax.ClassItem;
-import hu.e.parser.eSyntax.CompilationUnit;
-import hu.e.parser.eSyntax.CompileContextVariable;
-import hu.e.parser.eSyntax.ConfigVariable;
-import hu.e.parser.eSyntax.ConstantBinarySection;
-import hu.e.parser.eSyntax.ConstantVariable;
-import hu.e.parser.eSyntax.DataTypeDef;
-import hu.e.parser.eSyntax.ESyntaxPackage;
-import hu.e.parser.eSyntax.FunctionBinarySection;
-import hu.e.parser.eSyntax.FunctionMemory;
-import hu.e.parser.eSyntax.InstanceConfig;
-import hu.e.parser.eSyntax.InstanceReference;
-import hu.e.parser.eSyntax.InstructionWord;
-import hu.e.parser.eSyntax.Label;
-import hu.e.parser.eSyntax.Library;
-import hu.e.parser.eSyntax.LibraryItem;
-import hu.e.parser.eSyntax.LinkedBinary;
-import hu.e.parser.eSyntax.LinkedInstance;
-import hu.e.parser.eSyntax.LiteralValue;
-import hu.e.parser.eSyntax.Operation;
-import hu.e.parser.eSyntax.OperationBlock;
-import hu.e.parser.eSyntax.OperationCall;
-import hu.e.parser.eSyntax.OperationCallParameter;
-import hu.e.parser.eSyntax.OperationStep;
-import hu.e.parser.eSyntax.OperatorDefinition;
-import hu.e.parser.eSyntax.ParameterVariable;
-import hu.e.parser.eSyntax.PointerTypeDef;
-import hu.e.parser.eSyntax.RefTypeDef;
-import hu.e.parser.eSyntax.ReferenceBinarySection;
-import hu.e.parser.eSyntax.ReferenceLink;
-import hu.e.parser.eSyntax.RegisterVariable;
-import hu.e.parser.eSyntax.StructTypeDef;
-import hu.e.parser.eSyntax.StructTypeDefMember;
-import hu.e.parser.eSyntax.Type;
-import hu.e.parser.eSyntax.TypeDef;
-import hu.e.parser.eSyntax.Variable;
-import hu.e.parser.eSyntax.VariableReference;
-import hu.e.parser.eSyntax.WordSection;
-import hu.e.parser.eSyntax.XExpression;
-import hu.e.parser.eSyntax.XExpression0;
-import hu.e.parser.eSyntax.XExpression1;
-import hu.e.parser.eSyntax.XExpression2;
-import hu.e.parser.eSyntax.XExpression3;
-import hu.e.parser.eSyntax.XExpression4;
-import hu.e.parser.eSyntax.XExpression5;
-import hu.e.parser.eSyntax.XExpression6;
-import hu.e.parser.eSyntax.XExpressionLiteral;
-import hu.e.parser.eSyntax.XExpressionM1;
-import hu.e.parser.eSyntax.XIfExpression;
-import hu.e.parser.eSyntax.XIsLiteralExpression;
-import hu.e.parser.eSyntax.XParenthesizedExpression;
-import hu.e.parser.eSyntax.XPrimaryExpression;
-import hu.e.parser.eSyntax.XSizeOfExpression;
-import hu.e.parser.eSyntax.XStructExpression;
-import hu.e.parser.eSyntax.XTopLevelExpression;
-import hu.e.parser.eSyntax.XWhileExpression;
+import hu.e.parser.eSyntax.*;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
@@ -136,19 +79,14 @@ public class ESyntaxAdapterFactory extends AdapterFactoryImpl
     new ESyntaxSwitch<Adapter>()
     {
       @Override
-      public Adapter casePackage(hu.e.parser.eSyntax.Package object)
-      {
-        return createPackageAdapter();
-      }
-      @Override
       public Adapter caseCompilationUnit(CompilationUnit object)
       {
         return createCompilationUnitAdapter();
       }
       @Override
-      public Adapter caseClass(hu.e.parser.eSyntax.Class object)
+      public Adapter caseModule(Module object)
       {
-        return createClassAdapter();
+        return createModuleAdapter();
       }
       @Override
       public Adapter caseClassItem(ClassItem object)
@@ -453,21 +391,6 @@ public class ESyntaxAdapterFactory extends AdapterFactoryImpl
 
 
   /**
-   * Creates a new adapter for an object of class '{@link hu.e.parser.eSyntax.Package <em>Package</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see hu.e.parser.eSyntax.Package
-   * @generated
-   */
-  public Adapter createPackageAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link hu.e.parser.eSyntax.CompilationUnit <em>Compilation Unit</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -483,16 +406,16 @@ public class ESyntaxAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link hu.e.parser.eSyntax.Class <em>Class</em>}'.
+   * Creates a new adapter for an object of class '{@link hu.e.parser.eSyntax.Module <em>Module</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see hu.e.parser.eSyntax.Class
+   * @see hu.e.parser.eSyntax.Module
    * @generated
    */
-  public Adapter createClassAdapter()
+  public Adapter createModuleAdapter()
   {
     return null;
   }

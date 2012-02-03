@@ -19,6 +19,7 @@ import hu.e.parser.eSyntax.Library;
 import hu.e.parser.eSyntax.LinkedBinary;
 import hu.e.parser.eSyntax.LinkedInstance;
 import hu.e.parser.eSyntax.LiteralValue;
+import hu.e.parser.eSyntax.Module;
 import hu.e.parser.eSyntax.Operation;
 import hu.e.parser.eSyntax.OperationBlock;
 import hu.e.parser.eSyntax.OperationCall;
@@ -94,13 +95,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 				if(context == grammarAccess.getArrayTypeDefRule() ||
 				   context == grammarAccess.getTypeDefRule()) {
 					sequence_ArrayTypeDef(context, (ArrayTypeDef) semanticObject); 
-					return; 
-				}
-				else break;
-			case ESyntaxPackage.CLASS:
-				if(context == grammarAccess.getClassRule() ||
-				   context == grammarAccess.getCompilationUnitRule()) {
-					sequence_Class(context, (hu.e.parser.eSyntax.Class) semanticObject); 
 					return; 
 				}
 				else break;
@@ -216,6 +210,13 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 					return; 
 				}
 				else break;
+			case ESyntaxPackage.MODULE:
+				if(context == grammarAccess.getCompilationUnitRule() ||
+				   context == grammarAccess.getModuleRule()) {
+					sequence_Module(context, (Module) semanticObject); 
+					return; 
+				}
+				else break;
 			case ESyntaxPackage.OPERATION:
 				if(context == grammarAccess.getClassItemRule() ||
 				   context == grammarAccess.getLibraryItemRule() ||
@@ -241,12 +242,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 				if(context == grammarAccess.getLibraryItemRule() ||
 				   context == grammarAccess.getOperatorDefinitionRule()) {
 					sequence_OperatorDefinition(context, (OperatorDefinition) semanticObject); 
-					return; 
-				}
-				else break;
-			case ESyntaxPackage.PACKAGE:
-				if(context == grammarAccess.getPackageRule()) {
-					sequence_Package(context, (hu.e.parser.eSyntax.Package) semanticObject); 
 					return; 
 				}
 				else break;
@@ -526,21 +521,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (name=ID (extends+=[Class|QualifiedName] extends+=[Class|QualifiedName]*)? use+=[Library|QualifiedName]* items+=ClassItem*)
-	 *
-	 * Features:
-	 *    name[1, 1]
-	 *    extends[0, *]
-	 *    use[0, *]
-	 *    items[0, *]
-	 */
-	protected void sequence_Class(EObject context, hu.e.parser.eSyntax.Class semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
 	 *     (name=ID value=XExpression?)
 	 *
 	 * Features:
@@ -702,7 +682,7 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (type=[Class|ReferenceID] name=ID)
+	 *     (type=[Module|ReferenceID] name=ID)
 	 *
 	 * Features:
 	 *    name[1, 1]
@@ -717,7 +697,7 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getInstanceReferenceAccess().getTypeClassReferenceIDParserRuleCall_1_0_1(), semanticObject.getType());
+		feeder.accept(grammarAccess.getInstanceReferenceAccess().getTypeModuleReferenceIDParserRuleCall_1_0_1(), semanticObject.getType());
 		feeder.accept(grammarAccess.getInstanceReferenceAccess().getNameIDTerminalRuleCall_2_0(), semanticObject.getName());
 		feeder.finish();
 	}
@@ -778,7 +758,7 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (type=[Class|QualifiedName] name=ID (links+=ReferenceLink | confs+=InstanceConfig)*)
+	 *     (type=[Module|QualifiedName] name=ID (links+=ReferenceLink | confs+=InstanceConfig)*)
 	 *
 	 * Features:
 	 *    type[1, 1]
@@ -799,6 +779,21 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	 *    value[1, 1]
 	 */
 	protected void sequence_LiteralValue(EObject context, LiteralValue semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID (extends+=[Module|QualifiedName] extends+=[Module|QualifiedName]*)? use+=[Library|QualifiedName]* items+=ClassItem*)
+	 *
+	 * Features:
+	 *    name[1, 1]
+	 *    extends[0, *]
+	 *    use[0, *]
+	 *    items[0, *]
+	 */
+	protected void sequence_Module(EObject context, Module semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -855,20 +850,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	 *    candidate[1, *]
 	 */
 	protected void sequence_OperatorDefinition(EObject context, OperatorDefinition semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (name=NameSpaceName uses+=[Package|NameSpaceName]* items+=CompilationUnit*)
-	 *
-	 * Features:
-	 *    name[1, 1]
-	 *    uses[0, *]
-	 *    items[0, *]
-	 */
-	protected void sequence_Package(EObject context, hu.e.parser.eSyntax.Package semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1317,7 +1298,7 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (type=[Type|QualifiedName] values+=XExpression values+=XExpression*)
+	 *     (type=[Type|ReferenceID] values+=XExpression values+=XExpression*)
 	 *
 	 * Features:
 	 *    type[1, 1]

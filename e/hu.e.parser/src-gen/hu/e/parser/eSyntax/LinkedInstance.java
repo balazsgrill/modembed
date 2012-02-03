@@ -40,12 +40,12 @@ public interface LinkedInstance extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Type</em>' reference.
-   * @see #setType(hu.e.parser.eSyntax.Class)
+   * @see #setType(Module)
    * @see hu.e.parser.eSyntax.ESyntaxPackage#getLinkedInstance_Type()
    * @model
    * @generated
    */
-  hu.e.parser.eSyntax.Class getType();
+  Module getType();
 
   /**
    * Sets the value of the '{@link hu.e.parser.eSyntax.LinkedInstance#getType <em>Type</em>}' reference.
@@ -55,7 +55,7 @@ public interface LinkedInstance extends EObject
    * @see #getType()
    * @generated
    */
-  void setType(hu.e.parser.eSyntax.Class value);
+  void setType(Module value);
 
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.

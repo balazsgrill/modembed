@@ -27,15 +27,6 @@ public interface ESyntaxFactory extends EFactory
   ESyntaxFactory eINSTANCE = hu.e.parser.eSyntax.impl.ESyntaxFactoryImpl.init();
 
   /**
-   * Returns a new object of class '<em>Package</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Package</em>'.
-   * @generated
-   */
-  Package createPackage();
-
-  /**
    * Returns a new object of class '<em>Compilation Unit</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -45,13 +36,13 @@ public interface ESyntaxFactory extends EFactory
   CompilationUnit createCompilationUnit();
 
   /**
-   * Returns a new object of class '<em>Class</em>'.
+   * Returns a new object of class '<em>Module</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Class</em>'.
+   * @return a new object of class '<em>Module</em>'.
    * @generated
    */
-  Class createClass();
+  Module createModule();
 
   /**
    * Returns a new object of class '<em>Class Item</em>'.

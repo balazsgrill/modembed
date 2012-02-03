@@ -3,20 +3,12 @@
     xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="eSyntax"
     nsURI="http://www.e.hu/parser/ESyntax" nsPrefix="eSyntax">
-  <eClassifiers xsi:type="ecore:EClass" name="Package">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="uses" unique="false" upperBound="-1"
-        eType="ecore:EClass platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Package"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="items" upperBound="-1"
-        eType="ecore:EClass platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//CompilationUnit"
-        containment="true"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CompilationUnit">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Class" eSuperTypes="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//CompilationUnit">
+  <eClassifiers xsi:type="ecore:EClass" name="Module" eSuperTypes="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//CompilationUnit">
     <eStructuralFeatures xsi:type="ecore:EReference" name="extends" unique="false"
-        upperBound="-1" eType="ecore:EClass platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Class"/>
+        upperBound="-1" eType="ecore:EClass platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Module"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="use" unique="false" upperBound="-1"
         eType="ecore:EClass platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Library"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="items" upperBound="-1"
@@ -27,7 +19,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InstanceReference" eSuperTypes="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//ClassItem">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="ecore:EClass platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Class"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="ecore:EClass platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Module"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Variable" eSuperTypes="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//ClassItem platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//LibraryItem platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//OperationStep">
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="ecore:EClass platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//TypeDef"
@@ -164,7 +156,7 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LinkedInstance">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="ecore:EClass platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Class"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="ecore:EClass platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Module"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="links" upperBound="-1"
         eType="ecore:EClass platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//ReferenceLink"

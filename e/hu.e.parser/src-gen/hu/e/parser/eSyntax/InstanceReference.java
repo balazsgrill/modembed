@@ -34,12 +34,12 @@ public interface InstanceReference extends ClassItem
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Type</em>' reference.
-   * @see #setType(hu.e.parser.eSyntax.Class)
+   * @see #setType(Module)
    * @see hu.e.parser.eSyntax.ESyntaxPackage#getInstanceReference_Type()
    * @model
    * @generated
    */
-  hu.e.parser.eSyntax.Class getType();
+  Module getType();
 
   /**
    * Sets the value of the '{@link hu.e.parser.eSyntax.InstanceReference#getType <em>Type</em>}' reference.
@@ -49,6 +49,6 @@ public interface InstanceReference extends ClassItem
    * @see #getType()
    * @generated
    */
-  void setType(hu.e.parser.eSyntax.Class value);
+  void setType(Module value);
 
 } // InstanceReference

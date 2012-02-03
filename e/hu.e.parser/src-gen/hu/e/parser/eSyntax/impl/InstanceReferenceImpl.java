@@ -8,6 +8,7 @@ package hu.e.parser.eSyntax.impl;
 
 import hu.e.parser.eSyntax.ESyntaxPackage;
 import hu.e.parser.eSyntax.InstanceReference;
+import hu.e.parser.eSyntax.Module;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -39,7 +40,7 @@ public class InstanceReferenceImpl extends ClassItemImpl implements InstanceRefe
    * @generated
    * @ordered
    */
-  protected hu.e.parser.eSyntax.Class type;
+  protected Module type;
 
   /**
    * <!-- begin-user-doc -->
@@ -67,12 +68,12 @@ public class InstanceReferenceImpl extends ClassItemImpl implements InstanceRefe
    * <!-- end-user-doc -->
    * @generated
    */
-  public hu.e.parser.eSyntax.Class getType()
+  public Module getType()
   {
     if (type != null && type.eIsProxy())
     {
       InternalEObject oldType = (InternalEObject)type;
-      type = (hu.e.parser.eSyntax.Class)eResolveProxy(oldType);
+      type = (Module)eResolveProxy(oldType);
       if (type != oldType)
       {
         if (eNotificationRequired())
@@ -87,7 +88,7 @@ public class InstanceReferenceImpl extends ClassItemImpl implements InstanceRefe
    * <!-- end-user-doc -->
    * @generated
    */
-  public hu.e.parser.eSyntax.Class basicGetType()
+  public Module basicGetType()
   {
     return type;
   }
@@ -97,9 +98,9 @@ public class InstanceReferenceImpl extends ClassItemImpl implements InstanceRefe
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setType(hu.e.parser.eSyntax.Class newType)
+  public void setType(Module newType)
   {
-    hu.e.parser.eSyntax.Class oldType = type;
+    Module oldType = type;
     type = newType;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.INSTANCE_REFERENCE__TYPE, oldType, type));
@@ -133,7 +134,7 @@ public class InstanceReferenceImpl extends ClassItemImpl implements InstanceRefe
     switch (featureID)
     {
       case ESyntaxPackage.INSTANCE_REFERENCE__TYPE:
-        setType((hu.e.parser.eSyntax.Class)newValue);
+        setType((Module)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -150,7 +151,7 @@ public class InstanceReferenceImpl extends ClassItemImpl implements InstanceRefe
     switch (featureID)
     {
       case ESyntaxPackage.INSTANCE_REFERENCE__TYPE:
-        setType((hu.e.parser.eSyntax.Class)null);
+        setType((Module)null);
         return;
     }
     super.eUnset(featureID);

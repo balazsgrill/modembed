@@ -7,6 +7,7 @@ package hu.e.parser.scoping;
 import hu.e.parser.eSyntax.CompilationUnit;
 import hu.e.parser.eSyntax.Library;
 import hu.e.parser.eSyntax.LibraryItem;
+import hu.e.parser.eSyntax.Module;
 import hu.e.parser.eSyntax.Type;
 import hu.e.parser.eSyntax.Variable;
 
@@ -56,8 +57,8 @@ public class ImportedScope extends AbstractScope {
 			if (cu instanceof Library){
 				uses = ((Library) cu).getUse();
 			}else
-			if (cu instanceof hu.e.parser.eSyntax.Class){
-				uses = ((hu.e.parser.eSyntax.Class) cu).getUse();
+			if (cu instanceof Module){
+				uses = ((Module) cu).getUse();
 			}
 			
 			for(Library lib : uses){

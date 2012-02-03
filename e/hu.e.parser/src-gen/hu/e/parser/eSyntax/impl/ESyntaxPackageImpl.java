@@ -29,6 +29,7 @@ import hu.e.parser.eSyntax.LibraryItem;
 import hu.e.parser.eSyntax.LinkedBinary;
 import hu.e.parser.eSyntax.LinkedInstance;
 import hu.e.parser.eSyntax.LiteralValue;
+import hu.e.parser.eSyntax.Module;
 import hu.e.parser.eSyntax.Operation;
 import hu.e.parser.eSyntax.OperationBlock;
 import hu.e.parser.eSyntax.OperationCall;
@@ -91,13 +92,6 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass packageEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass compilationUnitEClass = null;
 
   /**
@@ -105,7 +99,7 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass classEClass = null;
+  private EClass moduleEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -630,46 +624,6 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getPackage()
-  {
-    return packageEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getPackage_Name()
-  {
-    return (EAttribute)packageEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getPackage_Uses()
-  {
-    return (EReference)packageEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getPackage_Items()
-  {
-    return (EReference)packageEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getCompilationUnit()
   {
     return compilationUnitEClass;
@@ -690,9 +644,9 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getClass_()
+  public EClass getModule()
   {
-    return classEClass;
+    return moduleEClass;
   }
 
   /**
@@ -700,9 +654,9 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getClass_Extends()
+  public EReference getModule_Extends()
   {
-    return (EReference)classEClass.getEStructuralFeatures().get(0);
+    return (EReference)moduleEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -710,9 +664,9 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getClass_Use()
+  public EReference getModule_Use()
   {
-    return (EReference)classEClass.getEStructuralFeatures().get(1);
+    return (EReference)moduleEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -720,9 +674,9 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getClass_Items()
+  public EReference getModule_Items()
   {
-    return (EReference)classEClass.getEStructuralFeatures().get(2);
+    return (EReference)moduleEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -2265,18 +2219,13 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     isCreated = true;
 
     // Create classes and their features
-    packageEClass = createEClass(PACKAGE);
-    createEAttribute(packageEClass, PACKAGE__NAME);
-    createEReference(packageEClass, PACKAGE__USES);
-    createEReference(packageEClass, PACKAGE__ITEMS);
-
     compilationUnitEClass = createEClass(COMPILATION_UNIT);
     createEAttribute(compilationUnitEClass, COMPILATION_UNIT__NAME);
 
-    classEClass = createEClass(CLASS);
-    createEReference(classEClass, CLASS__EXTENDS);
-    createEReference(classEClass, CLASS__USE);
-    createEReference(classEClass, CLASS__ITEMS);
+    moduleEClass = createEClass(MODULE);
+    createEReference(moduleEClass, MODULE__EXTENDS);
+    createEReference(moduleEClass, MODULE__USE);
+    createEReference(moduleEClass, MODULE__ITEMS);
 
     classItemEClass = createEClass(CLASS_ITEM);
     createEAttribute(classItemEClass, CLASS_ITEM__NAME);
@@ -2517,7 +2466,7 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    classEClass.getESuperTypes().add(this.getCompilationUnit());
+    moduleEClass.getESuperTypes().add(this.getCompilationUnit());
     instanceReferenceEClass.getESuperTypes().add(this.getClassItem());
     variableEClass.getESuperTypes().add(this.getClassItem());
     variableEClass.getESuperTypes().add(this.getLibraryItem());
@@ -2560,24 +2509,19 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     parameterVariableEClass.getESuperTypes().add(this.getVariable());
 
     // Initialize classes and features; add operations and parameters
-    initEClass(packageEClass, hu.e.parser.eSyntax.Package.class, "Package", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getPackage_Name(), ecorePackage.getEString(), "name", null, 0, 1, hu.e.parser.eSyntax.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPackage_Uses(), this.getPackage(), null, "uses", null, 0, -1, hu.e.parser.eSyntax.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPackage_Items(), this.getCompilationUnit(), null, "items", null, 0, -1, hu.e.parser.eSyntax.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
     initEClass(compilationUnitEClass, CompilationUnit.class, "CompilationUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getCompilationUnit_Name(), ecorePackage.getEString(), "name", null, 0, 1, CompilationUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(classEClass, hu.e.parser.eSyntax.Class.class, "Class", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getClass_Extends(), this.getClass_(), null, "extends", null, 0, -1, hu.e.parser.eSyntax.Class.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getClass_Use(), this.getLibrary(), null, "use", null, 0, -1, hu.e.parser.eSyntax.Class.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getClass_Items(), this.getClassItem(), null, "items", null, 0, -1, hu.e.parser.eSyntax.Class.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(moduleEClass, Module.class, "Module", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getModule_Extends(), this.getModule(), null, "extends", null, 0, -1, Module.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModule_Use(), this.getLibrary(), null, "use", null, 0, -1, Module.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModule_Items(), this.getClassItem(), null, "items", null, 0, -1, Module.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(classItemEClass, ClassItem.class, "ClassItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getClassItem_Name(), ecorePackage.getEString(), "name", null, 0, 1, ClassItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(instanceReferenceEClass, InstanceReference.class, "InstanceReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getInstanceReference_Type(), this.getClass_(), null, "type", null, 0, 1, InstanceReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInstanceReference_Type(), this.getModule(), null, "type", null, 0, 1, InstanceReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(variableEClass, Variable.class, "Variable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getVariable_Type(), this.getTypeDef(), null, "type", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2656,7 +2600,7 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     initEReference(getFunctionBinarySection_Do(), this.getOperationBlock(), null, "do", null, 0, 1, FunctionBinarySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(linkedInstanceEClass, LinkedInstance.class, "LinkedInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getLinkedInstance_Type(), this.getClass_(), null, "type", null, 0, 1, LinkedInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLinkedInstance_Type(), this.getModule(), null, "type", null, 0, 1, LinkedInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getLinkedInstance_Name(), ecorePackage.getEString(), "name", null, 0, 1, LinkedInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getLinkedInstance_Links(), this.getReferenceLink(), null, "links", null, 0, -1, LinkedInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getLinkedInstance_Confs(), this.getInstanceConfig(), null, "confs", null, 0, -1, LinkedInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

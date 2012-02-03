@@ -59,18 +59,14 @@ public class ESyntaxParser extends AbstractContentAssistParser {
 					put(grammarAccess.getADDITIVE_OPERATORAccess().getAlternatives(), "rule__ADDITIVE_OPERATOR__Alternatives");
 					put(grammarAccess.getEQUALITY_OPERATORAccess().getAlternatives(), "rule__EQUALITY_OPERATOR__Alternatives");
 					put(grammarAccess.getBOOLEAN_OPERATORAccess().getAlternatives(), "rule__BOOLEAN_OPERATOR__Alternatives");
-					put(grammarAccess.getPackageAccess().getGroup(), "rule__Package__Group__0");
-					put(grammarAccess.getPackageAccess().getGroup_3(), "rule__Package__Group_3__0");
-					put(grammarAccess.getNameSpaceNameAccess().getGroup(), "rule__NameSpaceName__Group__0");
-					put(grammarAccess.getNameSpaceNameAccess().getGroup_1(), "rule__NameSpaceName__Group_1__0");
 					put(grammarAccess.getQualifiedNameAccess().getGroup(), "rule__QualifiedName__Group__0");
-					put(grammarAccess.getQualifiedNameAccess().getGroup_0(), "rule__QualifiedName__Group_0__0");
+					put(grammarAccess.getQualifiedNameAccess().getGroup_1(), "rule__QualifiedName__Group_1__0");
 					put(grammarAccess.getReferenceIDAccess().getGroup(), "rule__ReferenceID__Group__0");
 					put(grammarAccess.getReferenceIDAccess().getGroup_0(), "rule__ReferenceID__Group_0__0");
-					put(grammarAccess.getClassAccess().getGroup(), "rule__Class__Group__0");
-					put(grammarAccess.getClassAccess().getGroup_2(), "rule__Class__Group_2__0");
-					put(grammarAccess.getClassAccess().getGroup_2_2(), "rule__Class__Group_2_2__0");
-					put(grammarAccess.getClassAccess().getGroup_4(), "rule__Class__Group_4__0");
+					put(grammarAccess.getModuleAccess().getGroup(), "rule__Module__Group__0");
+					put(grammarAccess.getModuleAccess().getGroup_2(), "rule__Module__Group_2__0");
+					put(grammarAccess.getModuleAccess().getGroup_2_2(), "rule__Module__Group_2_2__0");
+					put(grammarAccess.getModuleAccess().getGroup_4(), "rule__Module__Group_4__0");
 					put(grammarAccess.getClassItemAccess().getGroup_0(), "rule__ClassItem__Group_0__0");
 					put(grammarAccess.getClassItemAccess().getGroup_1(), "rule__ClassItem__Group_1__0");
 					put(grammarAccess.getClassItemAccess().getGroup_2(), "rule__ClassItem__Group_2__0");
@@ -151,14 +147,11 @@ public class ESyntaxParser extends AbstractContentAssistParser {
 					put(grammarAccess.getXIfExpressionAccess().getGroup_7(), "rule__XIfExpression__Group_7__0");
 					put(grammarAccess.getXWhileExpressionAccess().getGroup(), "rule__XWhileExpression__Group__0");
 					put(grammarAccess.getXParenthesizedExpressionAccess().getGroup(), "rule__XParenthesizedExpression__Group__0");
-					put(grammarAccess.getPackageAccess().getNameAssignment_1(), "rule__Package__NameAssignment_1");
-					put(grammarAccess.getPackageAccess().getUsesAssignment_3_1(), "rule__Package__UsesAssignment_3_1");
-					put(grammarAccess.getPackageAccess().getItemsAssignment_4(), "rule__Package__ItemsAssignment_4");
-					put(grammarAccess.getClassAccess().getNameAssignment_1(), "rule__Class__NameAssignment_1");
-					put(grammarAccess.getClassAccess().getExtendsAssignment_2_1(), "rule__Class__ExtendsAssignment_2_1");
-					put(grammarAccess.getClassAccess().getExtendsAssignment_2_2_1(), "rule__Class__ExtendsAssignment_2_2_1");
-					put(grammarAccess.getClassAccess().getUseAssignment_4_1(), "rule__Class__UseAssignment_4_1");
-					put(grammarAccess.getClassAccess().getItemsAssignment_5(), "rule__Class__ItemsAssignment_5");
+					put(grammarAccess.getModuleAccess().getNameAssignment_1(), "rule__Module__NameAssignment_1");
+					put(grammarAccess.getModuleAccess().getExtendsAssignment_2_1(), "rule__Module__ExtendsAssignment_2_1");
+					put(grammarAccess.getModuleAccess().getExtendsAssignment_2_2_1(), "rule__Module__ExtendsAssignment_2_2_1");
+					put(grammarAccess.getModuleAccess().getUseAssignment_4_1(), "rule__Module__UseAssignment_4_1");
+					put(grammarAccess.getModuleAccess().getItemsAssignment_5(), "rule__Module__ItemsAssignment_5");
 					put(grammarAccess.getInstanceReferenceAccess().getTypeAssignment_1(), "rule__InstanceReference__TypeAssignment_1");
 					put(grammarAccess.getInstanceReferenceAccess().getNameAssignment_2(), "rule__InstanceReference__NameAssignment_2");
 					put(grammarAccess.getConfigVariableAccess().getTypeAssignment_2(), "rule__ConfigVariable__TypeAssignment_2");
@@ -277,7 +270,7 @@ public class ESyntaxParser extends AbstractContentAssistParser {
 	protected Collection<FollowElement> getFollowElements(AbstractInternalContentAssistParser parser) {
 		try {
 			hu.e.parser.ui.contentassist.antlr.internal.InternalESyntaxParser typedParser = (hu.e.parser.ui.contentassist.antlr.internal.InternalESyntaxParser) parser;
-			typedParser.entryRulePackage();
+			typedParser.entryRuleCompilationUnit();
 			return typedParser.getFollowElements();
 		} catch(RecognitionException ex) {
 			throw new RuntimeException(ex);

@@ -4,7 +4,6 @@
 package hu.e.parser.scoping;
 
 import hu.e.parser.eSyntax.CompilationUnit;
-import hu.e.parser.eSyntax.Package;
 import hu.modembed.MODembedCore;
 
 import java.util.ArrayList;
@@ -44,13 +43,10 @@ public class PluginDependencyScope extends AbstractScope {
 					try{
 						Resource r = resourceset.getResource(uri, true);
 						for(EObject eo : r.getContents()){
-							if (eo instanceof Package){
+							if (eo instanceof CompilationUnit){
 								String name = ((Package) eo).getName();
 								QualifiedName qname = QualifiedName.create(name.split("\\."));
 								descs.add(EObjectDescription.create(qname, eo));
-								for(CompilationUnit cu : ((Package) eo).getItems()){
-									descs.add(EObjectDescription.create(qname.append(cu.getName()), cu));
-								}
 							}
 						}
 					}catch(Exception e){

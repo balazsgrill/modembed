@@ -9,6 +9,7 @@ package hu.e.parser.eSyntax.impl;
 import hu.e.parser.eSyntax.ClassItem;
 import hu.e.parser.eSyntax.ESyntaxPackage;
 import hu.e.parser.eSyntax.Library;
+import hu.e.parser.eSyntax.Module;
 
 import java.util.Collection;
 
@@ -25,20 +26,20 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Class</b></em>'.
+ * An implementation of the model object '<em><b>Module</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.e.parser.eSyntax.impl.ClassImpl#getExtends <em>Extends</em>}</li>
- *   <li>{@link hu.e.parser.eSyntax.impl.ClassImpl#getUse <em>Use</em>}</li>
- *   <li>{@link hu.e.parser.eSyntax.impl.ClassImpl#getItems <em>Items</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.impl.ModuleImpl#getExtends <em>Extends</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.impl.ModuleImpl#getUse <em>Use</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.impl.ModuleImpl#getItems <em>Items</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ClassImpl extends CompilationUnitImpl implements hu.e.parser.eSyntax.Class
+public class ModuleImpl extends CompilationUnitImpl implements Module
 {
   /**
    * The cached value of the '{@link #getExtends() <em>Extends</em>}' reference list.
@@ -48,7 +49,7 @@ public class ClassImpl extends CompilationUnitImpl implements hu.e.parser.eSynta
    * @generated
    * @ordered
    */
-  protected EList<hu.e.parser.eSyntax.Class> extends_;
+  protected EList<Module> extends_;
 
   /**
    * The cached value of the '{@link #getUse() <em>Use</em>}' reference list.
@@ -75,7 +76,7 @@ public class ClassImpl extends CompilationUnitImpl implements hu.e.parser.eSynta
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ClassImpl()
+  protected ModuleImpl()
   {
     super();
   }
@@ -88,7 +89,7 @@ public class ClassImpl extends CompilationUnitImpl implements hu.e.parser.eSynta
   @Override
   protected EClass eStaticClass()
   {
-    return ESyntaxPackage.Literals.CLASS;
+    return ESyntaxPackage.Literals.MODULE;
   }
 
   /**
@@ -96,11 +97,11 @@ public class ClassImpl extends CompilationUnitImpl implements hu.e.parser.eSynta
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<hu.e.parser.eSyntax.Class> getExtends()
+  public EList<Module> getExtends()
   {
     if (extends_ == null)
     {
-      extends_ = new EObjectResolvingEList<hu.e.parser.eSyntax.Class>(hu.e.parser.eSyntax.Class.class, this, ESyntaxPackage.CLASS__EXTENDS);
+      extends_ = new EObjectResolvingEList<Module>(Module.class, this, ESyntaxPackage.MODULE__EXTENDS);
     }
     return extends_;
   }
@@ -114,7 +115,7 @@ public class ClassImpl extends CompilationUnitImpl implements hu.e.parser.eSynta
   {
     if (use == null)
     {
-      use = new EObjectResolvingEList<Library>(Library.class, this, ESyntaxPackage.CLASS__USE);
+      use = new EObjectResolvingEList<Library>(Library.class, this, ESyntaxPackage.MODULE__USE);
     }
     return use;
   }
@@ -128,7 +129,7 @@ public class ClassImpl extends CompilationUnitImpl implements hu.e.parser.eSynta
   {
     if (items == null)
     {
-      items = new EObjectContainmentEList<ClassItem>(ClassItem.class, this, ESyntaxPackage.CLASS__ITEMS);
+      items = new EObjectContainmentEList<ClassItem>(ClassItem.class, this, ESyntaxPackage.MODULE__ITEMS);
     }
     return items;
   }
@@ -143,7 +144,7 @@ public class ClassImpl extends CompilationUnitImpl implements hu.e.parser.eSynta
   {
     switch (featureID)
     {
-      case ESyntaxPackage.CLASS__ITEMS:
+      case ESyntaxPackage.MODULE__ITEMS:
         return ((InternalEList<?>)getItems()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -159,11 +160,11 @@ public class ClassImpl extends CompilationUnitImpl implements hu.e.parser.eSynta
   {
     switch (featureID)
     {
-      case ESyntaxPackage.CLASS__EXTENDS:
+      case ESyntaxPackage.MODULE__EXTENDS:
         return getExtends();
-      case ESyntaxPackage.CLASS__USE:
+      case ESyntaxPackage.MODULE__USE:
         return getUse();
-      case ESyntaxPackage.CLASS__ITEMS:
+      case ESyntaxPackage.MODULE__ITEMS:
         return getItems();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -180,15 +181,15 @@ public class ClassImpl extends CompilationUnitImpl implements hu.e.parser.eSynta
   {
     switch (featureID)
     {
-      case ESyntaxPackage.CLASS__EXTENDS:
+      case ESyntaxPackage.MODULE__EXTENDS:
         getExtends().clear();
-        getExtends().addAll((Collection<? extends hu.e.parser.eSyntax.Class>)newValue);
+        getExtends().addAll((Collection<? extends Module>)newValue);
         return;
-      case ESyntaxPackage.CLASS__USE:
+      case ESyntaxPackage.MODULE__USE:
         getUse().clear();
         getUse().addAll((Collection<? extends Library>)newValue);
         return;
-      case ESyntaxPackage.CLASS__ITEMS:
+      case ESyntaxPackage.MODULE__ITEMS:
         getItems().clear();
         getItems().addAll((Collection<? extends ClassItem>)newValue);
         return;
@@ -206,13 +207,13 @@ public class ClassImpl extends CompilationUnitImpl implements hu.e.parser.eSynta
   {
     switch (featureID)
     {
-      case ESyntaxPackage.CLASS__EXTENDS:
+      case ESyntaxPackage.MODULE__EXTENDS:
         getExtends().clear();
         return;
-      case ESyntaxPackage.CLASS__USE:
+      case ESyntaxPackage.MODULE__USE:
         getUse().clear();
         return;
-      case ESyntaxPackage.CLASS__ITEMS:
+      case ESyntaxPackage.MODULE__ITEMS:
         getItems().clear();
         return;
     }
@@ -229,14 +230,14 @@ public class ClassImpl extends CompilationUnitImpl implements hu.e.parser.eSynta
   {
     switch (featureID)
     {
-      case ESyntaxPackage.CLASS__EXTENDS:
+      case ESyntaxPackage.MODULE__EXTENDS:
         return extends_ != null && !extends_.isEmpty();
-      case ESyntaxPackage.CLASS__USE:
+      case ESyntaxPackage.MODULE__USE:
         return use != null && !use.isEmpty();
-      case ESyntaxPackage.CLASS__ITEMS:
+      case ESyntaxPackage.MODULE__ITEMS:
         return items != null && !items.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //ClassImpl
+} //ModuleImpl
