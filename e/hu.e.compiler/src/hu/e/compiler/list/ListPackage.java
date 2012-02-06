@@ -248,13 +248,13 @@ public interface ListPackage extends EPackage {
 	int LABEL_REFERENCE__SHIFT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Mask</b></em>' attribute.
+	 * The feature id for the '<em><b>Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LABEL_REFERENCE__MASK = 1;
+	int LABEL_REFERENCE__SIZE = 1;
 
 	/**
 	 * The feature id for the '<em><b>Label</b></em>' reference.
@@ -266,13 +266,22 @@ public interface ListPackage extends EPackage {
 	int LABEL_REFERENCE__LABEL = 2;
 
 	/**
+	 * The feature id for the '<em><b>Start</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LABEL_REFERENCE__START = 3;
+
+	/**
 	 * The number of structural features of the '<em>Label Reference</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LABEL_REFERENCE_FEATURE_COUNT = 3;
+	int LABEL_REFERENCE_FEATURE_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link hu.e.compiler.list.impl.StatusStepImpl <em>Status Step</em>}' class.
@@ -470,15 +479,15 @@ public interface ListPackage extends EPackage {
 	EAttribute getLabelReference_Shift();
 
 	/**
-	 * Returns the meta object for the attribute '{@link hu.e.compiler.list.LabelReference#getMask <em>Mask</em>}'.
+	 * Returns the meta object for the attribute '{@link hu.e.compiler.list.LabelReference#getSize <em>Size</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Mask</em>'.
-	 * @see hu.e.compiler.list.LabelReference#getMask()
+	 * @return the meta object for the attribute '<em>Size</em>'.
+	 * @see hu.e.compiler.list.LabelReference#getSize()
 	 * @see #getLabelReference()
 	 * @generated
 	 */
-	EAttribute getLabelReference_Mask();
+	EAttribute getLabelReference_Size();
 
 	/**
 	 * Returns the meta object for the reference '{@link hu.e.compiler.list.LabelReference#getLabel <em>Label</em>}'.
@@ -490,6 +499,17 @@ public interface ListPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getLabelReference_Label();
+
+	/**
+	 * Returns the meta object for the attribute '{@link hu.e.compiler.list.LabelReference#getStart <em>Start</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Start</em>'.
+	 * @see hu.e.compiler.list.LabelReference#getStart()
+	 * @see #getLabelReference()
+	 * @generated
+	 */
+	EAttribute getLabelReference_Start();
 
 	/**
 	 * Returns the meta object for class '{@link hu.e.compiler.list.StatusStep <em>Status Step</em>}'.
@@ -682,12 +702,12 @@ public interface ListPackage extends EPackage {
 		EAttribute LABEL_REFERENCE__SHIFT = eINSTANCE.getLabelReference_Shift();
 
 		/**
-		 * The meta object literal for the '<em><b>Mask</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Size</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute LABEL_REFERENCE__MASK = eINSTANCE.getLabelReference_Mask();
+		EAttribute LABEL_REFERENCE__SIZE = eINSTANCE.getLabelReference_Size();
 
 		/**
 		 * The meta object literal for the '<em><b>Label</b></em>' reference feature.
@@ -696,6 +716,14 @@ public interface ListPackage extends EPackage {
 		 * @generated
 		 */
 		EReference LABEL_REFERENCE__LABEL = eINSTANCE.getLabelReference_Label();
+
+		/**
+		 * The meta object literal for the '<em><b>Start</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LABEL_REFERENCE__START = eINSTANCE.getLabelReference_Start();
 
 		/**
 		 * The meta object literal for the '{@link hu.e.compiler.list.impl.StatusStepImpl <em>Status Step</em>}' class.

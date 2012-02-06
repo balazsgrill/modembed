@@ -7,6 +7,7 @@ import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.compiler.internal.model.symbols.IVariableSymbol;
 import hu.e.compiler.internal.model.symbols.impl.LabelSymbol;
 import hu.e.compiler.internal.model.symbols.impl.OperatedSymbol;
+import hu.e.compiler.list.LabelStep;
 import hu.e.parser.eSyntax.OperationRole;
 import hu.e.parser.eSyntax.TypeDef;
 import hu.e.parser.eSyntax.Variable;

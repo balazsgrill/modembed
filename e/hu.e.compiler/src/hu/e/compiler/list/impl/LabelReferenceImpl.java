@@ -26,8 +26,9 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link hu.e.compiler.list.impl.LabelReferenceImpl#getShift <em>Shift</em>}</li>
- *   <li>{@link hu.e.compiler.list.impl.LabelReferenceImpl#getMask <em>Mask</em>}</li>
+ *   <li>{@link hu.e.compiler.list.impl.LabelReferenceImpl#getSize <em>Size</em>}</li>
  *   <li>{@link hu.e.compiler.list.impl.LabelReferenceImpl#getLabel <em>Label</em>}</li>
+ *   <li>{@link hu.e.compiler.list.impl.LabelReferenceImpl#getStart <em>Start</em>}</li>
  * </ul>
  * </p>
  *
@@ -55,24 +56,24 @@ public class LabelReferenceImpl extends EObjectImpl implements LabelReference {
 	protected int shift = SHIFT_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getMask() <em>Mask</em>}' attribute.
+	 * The default value of the '{@link #getSize() <em>Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMask()
+	 * @see #getSize()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final long MASK_EDEFAULT = 0L;
+	protected static final int SIZE_EDEFAULT = 0;
 
 	/**
-	 * The cached value of the '{@link #getMask() <em>Mask</em>}' attribute.
+	 * The cached value of the '{@link #getSize() <em>Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMask()
+	 * @see #getSize()
 	 * @generated
 	 * @ordered
 	 */
-	protected long mask = MASK_EDEFAULT;
+	protected int size = SIZE_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getLabel() <em>Label</em>}' reference.
@@ -83,6 +84,26 @@ public class LabelReferenceImpl extends EObjectImpl implements LabelReference {
 	 * @ordered
 	 */
 	protected LabelStep label;
+
+	/**
+	 * The default value of the '{@link #getStart() <em>Start</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStart()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int START_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getStart() <em>Start</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStart()
+	 * @generated
+	 * @ordered
+	 */
+	protected int start = START_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -129,8 +150,8 @@ public class LabelReferenceImpl extends EObjectImpl implements LabelReference {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public long getMask() {
-		return mask;
+	public int getSize() {
+		return size;
 	}
 
 	/**
@@ -138,11 +159,11 @@ public class LabelReferenceImpl extends EObjectImpl implements LabelReference {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMask(long newMask) {
-		long oldMask = mask;
-		mask = newMask;
+	public void setSize(int newSize) {
+		int oldSize = size;
+		size = newSize;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ListPackage.LABEL_REFERENCE__MASK, oldMask, mask));
+			eNotify(new ENotificationImpl(this, Notification.SET, ListPackage.LABEL_REFERENCE__SIZE, oldSize, size));
 	}
 
 	/**
@@ -188,16 +209,39 @@ public class LabelReferenceImpl extends EObjectImpl implements LabelReference {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getStart() {
+		return start;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setStart(int newStart) {
+		int oldStart = start;
+		start = newStart;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ListPackage.LABEL_REFERENCE__START, oldStart, start));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ListPackage.LABEL_REFERENCE__SHIFT:
 				return getShift();
-			case ListPackage.LABEL_REFERENCE__MASK:
-				return getMask();
+			case ListPackage.LABEL_REFERENCE__SIZE:
+				return getSize();
 			case ListPackage.LABEL_REFERENCE__LABEL:
 				if (resolve) return getLabel();
 				return basicGetLabel();
+			case ListPackage.LABEL_REFERENCE__START:
+				return getStart();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -213,11 +257,14 @@ public class LabelReferenceImpl extends EObjectImpl implements LabelReference {
 			case ListPackage.LABEL_REFERENCE__SHIFT:
 				setShift((Integer)newValue);
 				return;
-			case ListPackage.LABEL_REFERENCE__MASK:
-				setMask((Long)newValue);
+			case ListPackage.LABEL_REFERENCE__SIZE:
+				setSize((Integer)newValue);
 				return;
 			case ListPackage.LABEL_REFERENCE__LABEL:
 				setLabel((LabelStep)newValue);
+				return;
+			case ListPackage.LABEL_REFERENCE__START:
+				setStart((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -234,11 +281,14 @@ public class LabelReferenceImpl extends EObjectImpl implements LabelReference {
 			case ListPackage.LABEL_REFERENCE__SHIFT:
 				setShift(SHIFT_EDEFAULT);
 				return;
-			case ListPackage.LABEL_REFERENCE__MASK:
-				setMask(MASK_EDEFAULT);
+			case ListPackage.LABEL_REFERENCE__SIZE:
+				setSize(SIZE_EDEFAULT);
 				return;
 			case ListPackage.LABEL_REFERENCE__LABEL:
 				setLabel((LabelStep)null);
+				return;
+			case ListPackage.LABEL_REFERENCE__START:
+				setStart(START_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -254,10 +304,12 @@ public class LabelReferenceImpl extends EObjectImpl implements LabelReference {
 		switch (featureID) {
 			case ListPackage.LABEL_REFERENCE__SHIFT:
 				return shift != SHIFT_EDEFAULT;
-			case ListPackage.LABEL_REFERENCE__MASK:
-				return mask != MASK_EDEFAULT;
+			case ListPackage.LABEL_REFERENCE__SIZE:
+				return size != SIZE_EDEFAULT;
 			case ListPackage.LABEL_REFERENCE__LABEL:
 				return label != null;
+			case ListPackage.LABEL_REFERENCE__START:
+				return start != START_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -274,8 +326,10 @@ public class LabelReferenceImpl extends EObjectImpl implements LabelReference {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (shift: ");
 		result.append(shift);
-		result.append(", mask: ");
-		result.append(mask);
+		result.append(", size: ");
+		result.append(size);
+		result.append(", start: ");
+		result.append(start);
 		result.append(')');
 		return result.toString();
 	}

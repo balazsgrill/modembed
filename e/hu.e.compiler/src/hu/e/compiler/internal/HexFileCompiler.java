@@ -3,23 +3,16 @@
  */
 package hu.e.compiler.internal;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.eclipse.emf.ecore.util.EcoreUtil;
-
 import hexfile.AddressType;
 import hexfile.Entry;
 import hexfile.HexFile;
 import hexfile.HexfileFactory;
 import hu.e.compiler.ECompilerException;
 import hu.e.compiler.internal.model.CompilationErrorEntry;
-import hu.e.compiler.internal.model.IProgramStep;
 import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
 import hu.e.compiler.internal.symbols.RootSymbolManager;
+import hu.e.compiler.list.ProgramStep;
 import hu.e.parser.eSyntax.BinarySection;
 import hu.e.parser.eSyntax.ConstantBinarySection;
 import hu.e.parser.eSyntax.FunctionBinarySection;
@@ -27,6 +20,13 @@ import hu.e.parser.eSyntax.LinkedBinary;
 import hu.e.parser.eSyntax.ReferenceBinarySection;
 import hu.e.parser.eSyntax.XExpression;
 import hu.modembed.hexfile.persistence.HexFileResource;
+
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * @author balazs.grill
@@ -40,9 +40,9 @@ public class HexFileCompiler {
 		this.lb = lb;
 	}
 
-	private final Map<FunctionBinarySection, List<IProgramStep>> steps = new HashMap<FunctionBinarySection, List<IProgramStep>>();
+	private final Map<FunctionBinarySection, List<ProgramStep>> steps = new HashMap<FunctionBinarySection, List<ProgramStep>>();
 	
-	public Map<FunctionBinarySection, List<IProgramStep>> getSteps() {
+	public Map<FunctionBinarySection, List<ProgramStep>> getSteps() {
 		return steps;
 	}
 	

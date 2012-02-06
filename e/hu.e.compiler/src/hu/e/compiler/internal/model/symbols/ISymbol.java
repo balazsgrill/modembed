@@ -3,13 +3,13 @@
  */
 package hu.e.compiler.internal.model.symbols;
 
+import java.util.List;
+
 import hu.e.compiler.ECompilerException;
-import hu.e.compiler.internal.model.IProgramStep;
 import hu.e.compiler.internal.model.ISymbolManager;
+import hu.e.compiler.list.ProgramStep;
 import hu.e.parser.eSyntax.StructTypeDefMember;
 import hu.e.parser.eSyntax.TypeDef;
-
-import java.util.List;
 
 /**
  * @author balazs.grill
@@ -19,7 +19,7 @@ public interface ISymbol {
 	
 	public boolean isLiteral();
 	
-	public List<IProgramStep> getSteps();
+	public List<ProgramStep> getSteps();
 	
 	public TypeDef getType() throws ECompilerException;
 	

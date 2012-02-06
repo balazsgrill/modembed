@@ -4,10 +4,10 @@
 package hu.e.compiler.internal.model.symbols.impl;
 
 import hu.e.compiler.ECompilerException;
-import hu.e.compiler.internal.model.IProgramStep;
 import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
 import hu.e.compiler.internal.model.symbols.ISymbol;
+import hu.e.compiler.list.ProgramStep;
 import hu.e.parser.eSyntax.StructTypeDefMember;
 import hu.e.parser.eSyntax.TypeDef;
 
@@ -40,7 +40,7 @@ public class LiteralSymbol implements ILiteralSymbol {
 	}
 
 	@Override
-	public List<IProgramStep> getSteps() {
+	public List<ProgramStep> getSteps() {
 		return Collections.emptyList();
 	}
 

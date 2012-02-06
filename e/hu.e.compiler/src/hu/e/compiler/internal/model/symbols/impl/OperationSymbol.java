@@ -4,12 +4,12 @@
 package hu.e.compiler.internal.model.symbols.impl;
 
 import hu.e.compiler.ECompilerException;
-import hu.e.compiler.internal.model.IProgramStep;
 import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.compiler.internal.model.OPERATION;
 import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
 import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.compiler.internal.model.symbols.IVariableSymbol;
+import hu.e.compiler.list.ProgramStep;
 import hu.e.parser.eSyntax.ADDITIVE_OPERATOR;
 import hu.e.parser.eSyntax.BOOLEAN_OPERATOR;
 import hu.e.parser.eSyntax.EQUALITY_OPERATOR;
@@ -111,7 +111,7 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
 		return b;
 	}
 
-	private final List<IProgramStep> steps = new ArrayList<IProgramStep>();
+	private final List<ProgramStep> steps = new ArrayList<ProgramStep>();
 	
 	private IVariableSymbol result = null;
 	
@@ -232,8 +232,8 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
 	}
 
 	@Override
-	public List<IProgramStep> getSteps() {
-		List<IProgramStep> ps = new ArrayList<IProgramStep>();
+	public List<ProgramStep> getSteps() {
+		List<ProgramStep> ps = new ArrayList<ProgramStep>();
 		ps.addAll(a.getSteps());
 		ps.addAll(b.getSteps());
 		ps.addAll(steps);

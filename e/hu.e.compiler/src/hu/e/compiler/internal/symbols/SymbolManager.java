@@ -9,11 +9,11 @@ import hu.e.compiler.internal.linking.CodePlatform;
 import hu.e.compiler.internal.linking.OperationFinder;
 import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.compiler.internal.model.IVariableManager;
-import hu.e.compiler.internal.model.LabelStep;
 import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.compiler.internal.model.symbols.impl.LabelSymbol;
 import hu.e.compiler.internal.model.symbols.impl.LiteralSymbol;
 import hu.e.compiler.internal.model.symbols.impl.VariableSymbol;
+import hu.e.compiler.list.LabelStep;
 import hu.e.parser.eSyntax.Variable;
 import hu.e.parser.eSyntax.VariableReference;
 

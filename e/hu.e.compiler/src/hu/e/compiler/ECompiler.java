@@ -56,42 +56,7 @@ public class ECompiler {
 		}
 		return null;
 	}
-	
-	private static String produceLST(List<IProgramStep> steps){
-		StringBuilder sb = new StringBuilder();
-		int i = 0;
-		int r = 0;
-		for(IProgramStep s : steps){
-			if (s instanceof OperationExitStep){
-				r--;
-			}
-			for(int j =0;j<r;j++) sb.append(" ");
-			if (s instanceof InstructionWordInstance){
-				sb.append(i);sb.append(": ");
-				try {
-					sb.append(Integer.toBinaryString(((InstructionWordInstance) s).getValue()));
-				} catch (ECompilerException e) {
-					sb.append("ERROR: "+e.getMessage());
-				}
-				i++;
-			}else
-			if (s instanceof LabelStep){
-				sb.append("label ");
-				sb.append(((LabelStep) s).label.getName());
-			}else
-			if (s instanceof OperationEntryStep){
-				sb.append(s);sb.append("{");
-				r++;
-			}else
-			if (s instanceof OperationExitStep){
-				sb.append("}");
-			}else{
-				sb.append(s);
-			}
-			sb.append("\n");
-		}
-		return sb.toString();
-	}
+
 	
 	public void compile(Resource r, IFile f){
 		

@@ -5,10 +5,10 @@ package hu.e.compiler.internal.model.symbols.impl;
 
 import hu.e.compiler.ECompilerException;
 import hu.e.compiler.internal.model.AddressedStep;
-import hu.e.compiler.internal.model.IProgramStep;
 import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
 import hu.e.compiler.internal.model.symbols.ISymbol;
+import hu.e.compiler.list.ProgramStep;
 import hu.e.parser.eSyntax.StructTypeDefMember;
 import hu.e.parser.eSyntax.TypeDef;
 
@@ -44,7 +44,7 @@ public class CodeAddressSymbol implements ILiteralSymbol {
 	 * @see hu.e.compiler.internal.model.symbols.ISymbol#getSteps()
 	 */
 	@Override
-	public List<IProgramStep> getSteps() {
+	public List<ProgramStep> getSteps() {
 		return Collections.emptyList();
 	}
 

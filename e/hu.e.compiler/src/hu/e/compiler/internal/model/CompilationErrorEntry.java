@@ -4,8 +4,11 @@
 package hu.e.compiler.internal.model;
 
 import hu.e.compiler.ECompilerException;
+import hu.e.compiler.list.ListFactory;
+import hu.e.compiler.list.ProgramStep;
+import hu.e.compiler.list.Severity;
+import hu.e.compiler.list.StatusStep;
 
-import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.nodemodel.ICompositeNode;
 import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
@@ -14,35 +17,42 @@ import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
  * @author balazs.grill
  *
  */
-public class CompilationErrorEntry implements IProgramStep {
+public class CompilationErrorEntry{
 
-	public static IProgramStep create(ECompilerException e){
-		return new CompilationErrorEntry(IStatus.ERROR, e.getItem(), e.getMessage());
+	public static ProgramStep create(ECompilerException e){
+		return new CompilationErrorEntry(Severity.ERROR, e.getItem(), e.getMessage()).createStep();
 	}
 	
-	public static IProgramStep error(EObject item, String msg){
-		return new CompilationErrorEntry(IStatus.ERROR, item, msg);
+	public static ProgramStep error(EObject item, String msg){
+		return new CompilationErrorEntry(Severity.ERROR, item, msg).createStep();
 	}
 	
-	public static IProgramStep warning(EObject item, String msg){
-		return new CompilationErrorEntry(IStatus.WARNING, item, msg);
+	public static ProgramStep warning(EObject item, String msg){
+		return new CompilationErrorEntry(Severity.WARNING, item, msg).createStep();
 	}
 	
-	public static IProgramStep info(EObject item, String msg){
-		return new CompilationErrorEntry(IStatus.INFO, item, msg);
+	public static ProgramStep info(EObject item, String msg){
+		return new CompilationErrorEntry(Severity.INFO, item, msg).createStep();
 	}
 	
-	private final int type;
+	private ProgramStep createStep(){
+		StatusStep ss = ListFactory.eINSTANCE.createStatusStep();
+		ss.setMessage(getMsg());
+		ss.setSeverity(getType());
+		return ss;
+	}
+	
+	private final Severity type;
 	private final EObject item;
 	private final String msg;
 	
-	public CompilationErrorEntry(int type, EObject item, String msg) {
+	public CompilationErrorEntry(Severity type, EObject item, String msg) {
 		this.type = type;
 		this.item = item;
 		this.msg = msg;
 	}
 	
-	public int getType() {
+	public Severity getType() {
 		return type;
 	}
 	
@@ -69,27 +79,5 @@ public class CompilationErrorEntry implements IProgramStep {
 		return " (unknown source)";
 	}
 	
-	@Override
-	public String toString() {
-		StringBuilder sb = new StringBuilder();
-		switch(type){
-		case IStatus.OK:
-			sb.append("OK: ");
-			break;
-		case IStatus.INFO:
-			sb.append("INFO: ");
-			break;
-		case IStatus.WARNING:
-			sb.append("WARNING: ");
-			break;
-		case IStatus.ERROR:
-			sb.append("ERROR: ");
-			break;
-		}
-		sb.append(msg);
-		sb.append(getLocation(item));
-		
-		return sb.toString();
-	}
 	
 }

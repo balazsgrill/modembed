@@ -4,11 +4,11 @@
 package hu.e.compiler.internal.model.symbols.impl;
 
 import hu.e.compiler.ECompilerException;
-import hu.e.compiler.internal.model.IProgramStep;
 import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
 import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.compiler.internal.model.symbols.IVariableSymbol;
+import hu.e.compiler.list.ProgramStep;
 import hu.e.parser.eSyntax.StructTypeDefMember;
 import hu.e.parser.eSyntax.TypeDef;
 
@@ -20,10 +20,10 @@ import java.util.List;
  */
 public class OperatedSymbol implements ILiteralSymbol, IVariableSymbol {
 
-	private final List<IProgramStep> steps;
+	private final List<ProgramStep> steps;
 	private final ISymbol symbol;
 	
-	public OperatedSymbol(List<IProgramStep> steps, ISymbol symbol) {
+	public OperatedSymbol(List<ProgramStep> steps, ISymbol symbol) {
 		this.steps = steps;
 		this.symbol = symbol;
 	}
@@ -52,7 +52,7 @@ public class OperatedSymbol implements ILiteralSymbol, IVariableSymbol {
 	 * @see hu.e.compiler.internal.model.ISymbol#getSteps()
 	 */
 	@Override
-	public List<IProgramStep> getSteps() {
+	public List<ProgramStep> getSteps() {
 		return steps;
 	}
 

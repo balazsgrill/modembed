@@ -288,7 +288,7 @@ public class ListPackageImpl extends EPackageImpl implements ListPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getLabelReference_Mask() {
+	public EAttribute getLabelReference_Size() {
 		return (EAttribute)labelReferenceEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -299,6 +299,15 @@ public class ListPackageImpl extends EPackageImpl implements ListPackage {
 	 */
 	public EReference getLabelReference_Label() {
 		return (EReference)labelReferenceEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLabelReference_Start() {
+		return (EAttribute)labelReferenceEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -385,8 +394,9 @@ public class ListPackageImpl extends EPackageImpl implements ListPackage {
 
 		labelReferenceEClass = createEClass(LABEL_REFERENCE);
 		createEAttribute(labelReferenceEClass, LABEL_REFERENCE__SHIFT);
-		createEAttribute(labelReferenceEClass, LABEL_REFERENCE__MASK);
+		createEAttribute(labelReferenceEClass, LABEL_REFERENCE__SIZE);
 		createEReference(labelReferenceEClass, LABEL_REFERENCE__LABEL);
+		createEAttribute(labelReferenceEClass, LABEL_REFERENCE__START);
 
 		statusStepEClass = createEClass(STATUS_STEP);
 		createEAttribute(statusStepEClass, STATUS_STEP__SEVERITY);
@@ -451,8 +461,9 @@ public class ListPackageImpl extends EPackageImpl implements ListPackage {
 
 		initEClass(labelReferenceEClass, LabelReference.class, "LabelReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getLabelReference_Shift(), ecorePackage.getEInt(), "shift", null, 0, 1, LabelReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getLabelReference_Mask(), ecorePackage.getELong(), "mask", null, 0, 1, LabelReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLabelReference_Size(), ecorePackage.getEInt(), "size", null, 0, 1, LabelReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLabelReference_Label(), this.getLabelStep(), null, "label", null, 0, 1, LabelReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLabelReference_Start(), ecorePackage.getEInt(), "start", null, 0, 1, LabelReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(statusStepEClass, StatusStep.class, "StatusStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStatusStep_Severity(), this.getSeverity(), "severity", null, 0, 1, StatusStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
