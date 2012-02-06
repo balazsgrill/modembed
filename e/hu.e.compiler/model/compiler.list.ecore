@@ -3,5 +3,37 @@
     xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="list"
     nsURI="http://e.hu/compiler/list" nsPrefix="lst">
-  <eClassifiers xsi:type="ecore:EClass" name="ProgramList"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ProgramList">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="step" eType="#//ProgramStep"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProgramStep" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InstructionStep" eSuperTypes="#//ProgramStep">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refs" upperBound="-1" eType="#//LabelReference"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SequenceStep" eSuperTypes="#//ProgramStep">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="steps" upperBound="-1"
+        eType="#//ProgramStep" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ChoiceStep" eSuperTypes="#//ProgramStep"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LabelStep" eSuperTypes="#//ProgramStep"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LabelReference">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="shift" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mask" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="label" eType="#//LabelStep"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StatusStep" eSuperTypes="#//ProgramStep">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="severity" eType="#//Severity"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="message" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Severity">
+    <eLiterals name="DEBUG" value="3"/>
+    <eLiterals name="INFO" value="2"/>
+    <eLiterals name="WARNING" value="1"/>
+    <eLiterals name="ERROR"/>
+  </eClassifiers>
 </ecore:EPackage>

@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Compiler
-Bundle-SymbolicName: hu.e.compiler
+Bundle-SymbolicName: hu.e.compiler;singleton:=true
 Bundle-Version: 0.2.0
 Bundle-Activator: hu.e.compiler.ECompilerPlugin
 Require-Bundle: org.eclipse.core.runtime,
@@ -11,4 +11,7 @@ Require-Bundle: org.eclipse.core.runtime,
  hu.modembed.hexfile.persistence;bundle-version="0.1.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: hu.e.compiler
+Export-Package: hu.e.compiler,
+ hu.e.compiler.list,
+ hu.e.compiler.list.impl,
+ hu.e.compiler.list.util
