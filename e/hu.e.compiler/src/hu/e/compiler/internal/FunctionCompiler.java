@@ -15,11 +15,8 @@ import hu.e.compiler.list.ProgramList;
 import hu.e.compiler.list.SequenceStep;
 import hu.e.parser.eSyntax.FunctionBinarySection;
 import hu.e.parser.eSyntax.FunctionMemory;
-import hu.e.parser.eSyntax.Library;
 import hu.e.parser.eSyntax.LinkedBinary;
 import hu.e.parser.eSyntax.Variable;
-
-import java.util.ArrayList;
 
 /**
  * @author balazs.grill
@@ -53,7 +50,7 @@ public class FunctionCompiler {
 		root.setName("GLOBAL");
 		pl.setStep(root);
 		pl.setName(((LinkedBinary)link.eContainer()).getName());
-		SymbolManager sm = new SymbolManager(new CodePlatform(linker, new ArrayList<Library>()),parentsm,memman);
+		SymbolManager sm = new SymbolManager(new CodePlatform(linker, link.getLib()),parentsm,memman);
 
 		for(Variable v : linker.getGlobals()){
 			try {
