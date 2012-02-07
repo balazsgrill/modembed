@@ -8,14 +8,12 @@ package hu.e.compiler.list.provider;
 
 
 import hu.e.compiler.list.ListPackage;
-import hu.e.compiler.list.Severity;
 import hu.e.compiler.list.StatusStep;
 
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -126,15 +124,17 @@ public class StatusStepItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
-		Severity labelValue = ((StatusStep)object).getSeverity();
-		String label = labelValue == null ? null : labelValue.toString();
-		return label == null || label.length() == 0 ?
-			getString("_UI_StatusStep_type") :
-			getString("_UI_StatusStep_type") + " " + label;
+		StatusStep ss = (StatusStep)object;
+		StringBuilder sb = new StringBuilder();
+		sb.append("[");
+		sb.append(ss.getSeverity());
+		sb.append("] ");
+		sb.append(ss.getMessage());
+		return sb.toString();
 	}
 
 	/**
