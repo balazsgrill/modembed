@@ -729,12 +729,12 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (name=ID (overrides+=[Library|QualifiedName] overrides+=[Library|QualifiedName]*)? use+=[Library|QualifiedName]* items+=LibraryItem*)
+	 *     (name=QualifiedName (overrides+=[Library|QualifiedName] overrides+=[Library|QualifiedName]*)? use+=[Library|QualifiedName]* items+=LibraryItem*)
 	 *
 	 * Features:
 	 *    name[1, 1]
-	 *    overrides[0, *]
 	 *    use[0, *]
+	 *    overrides[0, *]
 	 *    items[0, *]
 	 */
 	protected void sequence_Library(EObject context, Library semanticObject) {
@@ -744,10 +744,11 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (name=ID type=BinaryType? sections+=BinarySection*)
+	 *     (name=QualifiedName type=BinaryType? use+=[Library|QualifiedName]* sections+=BinarySection*)
 	 *
 	 * Features:
 	 *    name[1, 1]
+	 *    use[0, *]
 	 *    type[0, 1]
 	 *    sections[0, *]
 	 */
@@ -785,12 +786,12 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (name=ID (extends+=[Module|QualifiedName] extends+=[Module|QualifiedName]*)? use+=[Library|QualifiedName]* items+=ClassItem*)
+	 *     (name=QualifiedName (extends+=[Module|QualifiedName] extends+=[Module|QualifiedName]*)? use+=[Library|QualifiedName]* items+=ClassItem*)
 	 *
 	 * Features:
 	 *    name[1, 1]
-	 *    extends[0, *]
 	 *    use[0, *]
+	 *    extends[0, *]
 	 *    items[0, *]
 	 */
 	protected void sequence_Module(EObject context, Module semanticObject) {

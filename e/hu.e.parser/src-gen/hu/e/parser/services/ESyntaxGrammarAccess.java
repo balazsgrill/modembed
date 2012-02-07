@@ -126,7 +126,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cModuleKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final RuleCall cNameQualifiedNameParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
 		private final Keyword cExtendsKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Assignment cExtendsAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
@@ -150,22 +150,22 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		/// ***********************
 		// * CLASSES *
 		// *********************** / Module:
-		//	"module" name=ID ("extends" extends+=[Module|QualifiedName] ("," extends+=[Module|QualifiedName])*)? ";" ("use"
-		//	use+=[Library|QualifiedName] ";")* items+=ClassItem*;
+		//	"module" name=QualifiedName ("extends" extends+=[Module|QualifiedName] ("," extends+=[Module|QualifiedName])*)? ";"
+		//	("use" use+=[Library|QualifiedName] ";")* items+=ClassItem*;
 		public ParserRule getRule() { return rule; }
 
-		//"module" name=ID ("extends" extends+=[Module|QualifiedName] ("," extends+=[Module|QualifiedName])*)? ";" ("use"
-		//use+=[Library|QualifiedName] ";")* items+=ClassItem*
+		//"module" name=QualifiedName ("extends" extends+=[Module|QualifiedName] ("," extends+=[Module|QualifiedName])*)? ";"
+		//("use" use+=[Library|QualifiedName] ";")* items+=ClassItem*
 		public Group getGroup() { return cGroup; }
 
 		//"module"
 		public Keyword getModuleKeyword_0() { return cModuleKeyword_0; }
 
-		//name=ID
+		//name=QualifiedName
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		//QualifiedName
+		public RuleCall getNameQualifiedNameParserRuleCall_1_0() { return cNameQualifiedNameParserRuleCall_1_0; }
 
 		//("extends" extends+=[Module|QualifiedName] ("," extends+=[Module|QualifiedName])*)?
 		public Group getGroup_2() { return cGroup_2; }
@@ -366,7 +366,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cLibraryKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final RuleCall cNameQualifiedNameParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
 		private final Keyword cOverridesKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Assignment cOverridesAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
@@ -390,22 +390,22 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		/// ***********************
 		// * LIBRARY *
 		// *********************** / Library:
-		//	"library" name=ID ("overrides" overrides+=[Library|QualifiedName] ("," overrides+=[Library|QualifiedName])*)? ";"
-		//	("use" use+=[Library|QualifiedName] ";")* items+=LibraryItem*;
+		//	"library" name=QualifiedName ("overrides" overrides+=[Library|QualifiedName] (","
+		//	overrides+=[Library|QualifiedName])*)? ";" ("use" use+=[Library|QualifiedName] ";")* items+=LibraryItem*;
 		public ParserRule getRule() { return rule; }
 
-		//"library" name=ID ("overrides" overrides+=[Library|QualifiedName] ("," overrides+=[Library|QualifiedName])*)? ";" ("use"
-		//use+=[Library|QualifiedName] ";")* items+=LibraryItem*
+		//"library" name=QualifiedName ("overrides" overrides+=[Library|QualifiedName] ("," overrides+=[Library|QualifiedName])*)?
+		//";" ("use" use+=[Library|QualifiedName] ";")* items+=LibraryItem*
 		public Group getGroup() { return cGroup; }
 
 		//"library"
 		public Keyword getLibraryKeyword_0() { return cLibraryKeyword_0; }
 
-		//name=ID
+		//name=QualifiedName
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		//QualifiedName
+		public RuleCall getNameQualifiedNameParserRuleCall_1_0() { return cNameQualifiedNameParserRuleCall_1_0; }
 
 		//("overrides" overrides+=[Library|QualifiedName] ("," overrides+=[Library|QualifiedName])*)?
 		public Group getGroup_2() { return cGroup_2; }
@@ -548,14 +548,15 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cEqualsSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cDefAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cDefTypeDefParserRuleCall_3_0 = (RuleCall)cDefAssignment_3.eContents().get(0);
+		private final Keyword cSemicolonKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		/// ***********************
 		// * DATATYPES *
 		// *********************** / Type:
-		//	"type" name=ID "=" def=TypeDef;
+		//	"type" name=ID "=" def=TypeDef ";";
 		public ParserRule getRule() { return rule; }
 
-		//"type" name=ID "=" def=TypeDef
+		//"type" name=ID "=" def=TypeDef ";"
 		public Group getGroup() { return cGroup; }
 
 		//"type"
@@ -575,6 +576,9 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 
 		//TypeDef
 		public RuleCall getDefTypeDefParserRuleCall_3_0() { return cDefTypeDefParserRuleCall_3_0; }
+
+		//";"
+		public Keyword getSemicolonKeyword_4() { return cSemicolonKeyword_4; }
 	}
 
 	public class TypeDefElements extends AbstractParserRuleElementFinder {
@@ -709,13 +713,12 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cBitsAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cBitsINTTerminalRuleCall_1_0 = (RuleCall)cBitsAssignment_1.eContents().get(0);
 		private final Keyword cBitsKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cSemicolonKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//DataTypeDef:
-		//	kind=PrimitiveKind bits=INT "bits" ";";
+		//	kind=PrimitiveKind bits=INT "bits";
 		public ParserRule getRule() { return rule; }
 
-		//kind=PrimitiveKind bits=INT "bits" ";"
+		//kind=PrimitiveKind bits=INT "bits"
 		public Group getGroup() { return cGroup; }
 
 		//kind=PrimitiveKind
@@ -732,9 +735,6 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"bits"
 		public Keyword getBitsKeyword_2() { return cBitsKeyword_2; }
-
-		//";"
-		public Keyword getSemicolonKeyword_3() { return cSemicolonKeyword_3; }
 	}
 
 	public class StructTypeDefElements extends AbstractParserRuleElementFinder {
@@ -1513,31 +1513,36 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cBinaryKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final RuleCall cNameQualifiedNameParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Assignment cTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cTypeBinaryTypeEnumRuleCall_2_0 = (RuleCall)cTypeAssignment_2.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cSectionsAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cSectionsBinarySectionParserRuleCall_4_0 = (RuleCall)cSectionsAssignment_4.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cSemicolonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cUseKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cUseAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final CrossReference cUseLibraryCrossReference_4_1_0 = (CrossReference)cUseAssignment_4_1.eContents().get(0);
+		private final RuleCall cUseLibraryQualifiedNameParserRuleCall_4_1_0_1 = (RuleCall)cUseLibraryCrossReference_4_1_0.eContents().get(1);
+		private final Keyword cSemicolonKeyword_4_2 = (Keyword)cGroup_4.eContents().get(2);
+		private final Assignment cSectionsAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cSectionsBinarySectionParserRuleCall_5_0 = (RuleCall)cSectionsAssignment_5.eContents().get(0);
 		
 		/// ********************
 		// * BINARY and LINKING
 		// ******************** / LinkedBinary:
-		//	"binary" name=ID type=BinaryType? "{" sections+=BinarySection* "}";
+		//	"binary" name=QualifiedName type=BinaryType? ";" ("use" use+=[Library|QualifiedName] ";")* sections+=BinarySection*;
 		public ParserRule getRule() { return rule; }
 
-		//"binary" name=ID type=BinaryType? "{" sections+=BinarySection* "}"
+		//"binary" name=QualifiedName type=BinaryType? ";" ("use" use+=[Library|QualifiedName] ";")* sections+=BinarySection*
 		public Group getGroup() { return cGroup; }
 
 		//"binary"
 		public Keyword getBinaryKeyword_0() { return cBinaryKeyword_0; }
 
-		//name=ID
+		//name=QualifiedName
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		//QualifiedName
+		public RuleCall getNameQualifiedNameParserRuleCall_1_0() { return cNameQualifiedNameParserRuleCall_1_0; }
 
 		//type=BinaryType?
 		public Assignment getTypeAssignment_2() { return cTypeAssignment_2; }
@@ -1545,17 +1550,32 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		//BinaryType
 		public RuleCall getTypeBinaryTypeEnumRuleCall_2_0() { return cTypeBinaryTypeEnumRuleCall_2_0; }
 
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
+		//";"
+		public Keyword getSemicolonKeyword_3() { return cSemicolonKeyword_3; }
+
+		//("use" use+=[Library|QualifiedName] ";")*
+		public Group getGroup_4() { return cGroup_4; }
+
+		//"use"
+		public Keyword getUseKeyword_4_0() { return cUseKeyword_4_0; }
+
+		//use+=[Library|QualifiedName]
+		public Assignment getUseAssignment_4_1() { return cUseAssignment_4_1; }
+
+		//[Library|QualifiedName]
+		public CrossReference getUseLibraryCrossReference_4_1_0() { return cUseLibraryCrossReference_4_1_0; }
+
+		//QualifiedName
+		public RuleCall getUseLibraryQualifiedNameParserRuleCall_4_1_0_1() { return cUseLibraryQualifiedNameParserRuleCall_4_1_0_1; }
+
+		//";"
+		public Keyword getSemicolonKeyword_4_2() { return cSemicolonKeyword_4_2; }
 
 		//sections+=BinarySection*
-		public Assignment getSectionsAssignment_4() { return cSectionsAssignment_4; }
+		public Assignment getSectionsAssignment_5() { return cSectionsAssignment_5; }
 
 		//BinarySection
-		public RuleCall getSectionsBinarySectionParserRuleCall_4_0() { return cSectionsBinarySectionParserRuleCall_4_0; }
-
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+		public RuleCall getSectionsBinarySectionParserRuleCall_5_0() { return cSectionsBinarySectionParserRuleCall_5_0; }
 	}
 
 	public class BinarySectionElements extends AbstractParserRuleElementFinder {
@@ -3305,8 +3325,8 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	/// ***********************
 	// * CLASSES *
 	// *********************** / Module:
-	//	"module" name=ID ("extends" extends+=[Module|QualifiedName] ("," extends+=[Module|QualifiedName])*)? ";" ("use"
-	//	use+=[Library|QualifiedName] ";")* items+=ClassItem*;
+	//	"module" name=QualifiedName ("extends" extends+=[Module|QualifiedName] ("," extends+=[Module|QualifiedName])*)? ";"
+	//	("use" use+=[Library|QualifiedName] ";")* items+=ClassItem*;
 	public ModuleElements getModuleAccess() {
 		return (pModule != null) ? pModule : (pModule = new ModuleElements());
 	}
@@ -3348,8 +3368,8 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	/// ***********************
 	// * LIBRARY *
 	// *********************** / Library:
-	//	"library" name=ID ("overrides" overrides+=[Library|QualifiedName] ("," overrides+=[Library|QualifiedName])*)? ";"
-	//	("use" use+=[Library|QualifiedName] ";")* items+=LibraryItem*;
+	//	"library" name=QualifiedName ("overrides" overrides+=[Library|QualifiedName] (","
+	//	overrides+=[Library|QualifiedName])*)? ";" ("use" use+=[Library|QualifiedName] ";")* items+=LibraryItem*;
 	public LibraryElements getLibraryAccess() {
 		return (pLibrary != null) ? pLibrary : (pLibrary = new LibraryElements());
 	}
@@ -3372,7 +3392,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	/// ***********************
 	// * DATATYPES *
 	// *********************** / Type:
-	//	"type" name=ID "=" def=TypeDef;
+	//	"type" name=ID "=" def=TypeDef ";";
 	public TypeElements getTypeAccess() {
 		return (pType != null) ? pType : (pType = new TypeElements());
 	}
@@ -3422,7 +3442,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//DataTypeDef:
-	//	kind=PrimitiveKind bits=INT "bits" ";";
+	//	kind=PrimitiveKind bits=INT "bits";
 	public DataTypeDefElements getDataTypeDefAccess() {
 		return (pDataTypeDef != null) ? pDataTypeDef : (pDataTypeDef = new DataTypeDefElements());
 	}
@@ -3653,7 +3673,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	/// ********************
 	// * BINARY and LINKING
 	// ******************** / LinkedBinary:
-	//	"binary" name=ID type=BinaryType? "{" sections+=BinarySection* "}";
+	//	"binary" name=QualifiedName type=BinaryType? ";" ("use" use+=[Library|QualifiedName] ";")* sections+=BinarySection*;
 	public LinkedBinaryElements getLinkedBinaryAccess() {
 		return (pLinkedBinary != null) ? pLinkedBinary : (pLinkedBinary = new LinkedBinaryElements());
 	}

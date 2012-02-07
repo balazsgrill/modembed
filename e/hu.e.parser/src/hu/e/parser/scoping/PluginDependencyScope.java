@@ -44,7 +44,7 @@ public class PluginDependencyScope extends AbstractScope {
 						Resource r = resourceset.getResource(uri, true);
 						for(EObject eo : r.getContents()){
 							if (eo instanceof CompilationUnit){
-								String name = ((Package) eo).getName();
+								String name = ((CompilationUnit) eo).getName();
 								QualifiedName qname = QualifiedName.create(name.split("\\."));
 								descs.add(EObjectDescription.create(qname, eo));
 							}

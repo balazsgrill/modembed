@@ -8,7 +8,6 @@ package hu.e.parser.eSyntax.impl;
 
 import hu.e.parser.eSyntax.ClassItem;
 import hu.e.parser.eSyntax.ESyntaxPackage;
-import hu.e.parser.eSyntax.Library;
 import hu.e.parser.eSyntax.Module;
 
 import java.util.Collection;
@@ -32,7 +31,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link hu.e.parser.eSyntax.impl.ModuleImpl#getExtends <em>Extends</em>}</li>
- *   <li>{@link hu.e.parser.eSyntax.impl.ModuleImpl#getUse <em>Use</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.impl.ModuleImpl#getItems <em>Items</em>}</li>
  * </ul>
  * </p>
@@ -50,16 +48,6 @@ public class ModuleImpl extends CompilationUnitImpl implements Module
    * @ordered
    */
   protected EList<Module> extends_;
-
-  /**
-   * The cached value of the '{@link #getUse() <em>Use</em>}' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getUse()
-   * @generated
-   * @ordered
-   */
-  protected EList<Library> use;
 
   /**
    * The cached value of the '{@link #getItems() <em>Items</em>}' containment reference list.
@@ -111,20 +99,6 @@ public class ModuleImpl extends CompilationUnitImpl implements Module
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Library> getUse()
-  {
-    if (use == null)
-    {
-      use = new EObjectResolvingEList<Library>(Library.class, this, ESyntaxPackage.MODULE__USE);
-    }
-    return use;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EList<ClassItem> getItems()
   {
     if (items == null)
@@ -162,8 +136,6 @@ public class ModuleImpl extends CompilationUnitImpl implements Module
     {
       case ESyntaxPackage.MODULE__EXTENDS:
         return getExtends();
-      case ESyntaxPackage.MODULE__USE:
-        return getUse();
       case ESyntaxPackage.MODULE__ITEMS:
         return getItems();
     }
@@ -184,10 +156,6 @@ public class ModuleImpl extends CompilationUnitImpl implements Module
       case ESyntaxPackage.MODULE__EXTENDS:
         getExtends().clear();
         getExtends().addAll((Collection<? extends Module>)newValue);
-        return;
-      case ESyntaxPackage.MODULE__USE:
-        getUse().clear();
-        getUse().addAll((Collection<? extends Library>)newValue);
         return;
       case ESyntaxPackage.MODULE__ITEMS:
         getItems().clear();
@@ -210,9 +178,6 @@ public class ModuleImpl extends CompilationUnitImpl implements Module
       case ESyntaxPackage.MODULE__EXTENDS:
         getExtends().clear();
         return;
-      case ESyntaxPackage.MODULE__USE:
-        getUse().clear();
-        return;
       case ESyntaxPackage.MODULE__ITEMS:
         getItems().clear();
         return;
@@ -232,8 +197,6 @@ public class ModuleImpl extends CompilationUnitImpl implements Module
     {
       case ESyntaxPackage.MODULE__EXTENDS:
         return extends_ != null && !extends_.isEmpty();
-      case ESyntaxPackage.MODULE__USE:
-        return use != null && !use.isEmpty();
       case ESyntaxPackage.MODULE__ITEMS:
         return items != null && !items.isEmpty();
     }

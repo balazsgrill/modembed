@@ -644,6 +644,16 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getCompilationUnit_Use()
+  {
+    return (EReference)compilationUnitEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getModule()
   {
     return moduleEClass;
@@ -664,19 +674,9 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getModule_Use()
-  {
-    return (EReference)moduleEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getModule_Items()
   {
-    return (EReference)moduleEClass.getEStructuralFeatures().get(2);
+    return (EReference)moduleEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -764,19 +764,9 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getLibrary_Use()
-  {
-    return (EReference)libraryEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getLibrary_Items()
   {
-    return (EReference)libraryEClass.getEStructuralFeatures().get(2);
+    return (EReference)libraryEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2221,10 +2211,10 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     // Create classes and their features
     compilationUnitEClass = createEClass(COMPILATION_UNIT);
     createEAttribute(compilationUnitEClass, COMPILATION_UNIT__NAME);
+    createEReference(compilationUnitEClass, COMPILATION_UNIT__USE);
 
     moduleEClass = createEClass(MODULE);
     createEReference(moduleEClass, MODULE__EXTENDS);
-    createEReference(moduleEClass, MODULE__USE);
     createEReference(moduleEClass, MODULE__ITEMS);
 
     classItemEClass = createEClass(CLASS_ITEM);
@@ -2238,7 +2228,6 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
 
     libraryEClass = createEClass(LIBRARY);
     createEReference(libraryEClass, LIBRARY__OVERRIDES);
-    createEReference(libraryEClass, LIBRARY__USE);
     createEReference(libraryEClass, LIBRARY__ITEMS);
 
     libraryItemEClass = createEClass(LIBRARY_ITEM);
@@ -2511,10 +2500,10 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     // Initialize classes and features; add operations and parameters
     initEClass(compilationUnitEClass, CompilationUnit.class, "CompilationUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getCompilationUnit_Name(), ecorePackage.getEString(), "name", null, 0, 1, CompilationUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCompilationUnit_Use(), this.getLibrary(), null, "use", null, 0, -1, CompilationUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(moduleEClass, Module.class, "Module", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getModule_Extends(), this.getModule(), null, "extends", null, 0, -1, Module.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getModule_Use(), this.getLibrary(), null, "use", null, 0, -1, Module.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getModule_Items(), this.getClassItem(), null, "items", null, 0, -1, Module.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(classItemEClass, ClassItem.class, "ClassItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2528,7 +2517,6 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
 
     initEClass(libraryEClass, Library.class, "Library", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getLibrary_Overrides(), this.getLibrary(), null, "overrides", null, 0, -1, Library.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getLibrary_Use(), this.getLibrary(), null, "use", null, 0, -1, Library.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getLibrary_Items(), this.getLibraryItem(), null, "items", null, 0, -1, Library.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(libraryItemEClass, LibraryItem.class, "LibraryItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

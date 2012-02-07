@@ -111,6 +111,7 @@ public class ESyntaxParser extends AbstractContentAssistParser {
 					put(grammarAccess.getOperatorDefinitionAccess().getGroup(), "rule__OperatorDefinition__Group__0");
 					put(grammarAccess.getOperatorDefinitionAccess().getGroup_4(), "rule__OperatorDefinition__Group_4__0");
 					put(grammarAccess.getLinkedBinaryAccess().getGroup(), "rule__LinkedBinary__Group__0");
+					put(grammarAccess.getLinkedBinaryAccess().getGroup_4(), "rule__LinkedBinary__Group_4__0");
 					put(grammarAccess.getBinarySectionAccess().getGroup(), "rule__BinarySection__Group__0");
 					put(grammarAccess.getFunctionBinarySectionAccess().getGroup(), "rule__FunctionBinarySection__Group__0");
 					put(grammarAccess.getFunctionBinarySectionAccess().getGroup_10(), "rule__FunctionBinarySection__Group_10__0");
@@ -208,7 +209,8 @@ public class ESyntaxParser extends AbstractContentAssistParser {
 					put(grammarAccess.getOperatorDefinitionAccess().getCandidateAssignment_4_1(), "rule__OperatorDefinition__CandidateAssignment_4_1");
 					put(grammarAccess.getLinkedBinaryAccess().getNameAssignment_1(), "rule__LinkedBinary__NameAssignment_1");
 					put(grammarAccess.getLinkedBinaryAccess().getTypeAssignment_2(), "rule__LinkedBinary__TypeAssignment_2");
-					put(grammarAccess.getLinkedBinaryAccess().getSectionsAssignment_4(), "rule__LinkedBinary__SectionsAssignment_4");
+					put(grammarAccess.getLinkedBinaryAccess().getUseAssignment_4_1(), "rule__LinkedBinary__UseAssignment_4_1");
+					put(grammarAccess.getLinkedBinaryAccess().getSectionsAssignment_5(), "rule__LinkedBinary__SectionsAssignment_5");
 					put(grammarAccess.getBinarySectionAccess().getStartAssignment_2(), "rule__BinarySection__StartAssignment_2");
 					put(grammarAccess.getFunctionBinarySectionAccess().getMemwidthAssignment_4(), "rule__FunctionBinarySection__MemwidthAssignment_4");
 					put(grammarAccess.getFunctionBinarySectionAccess().getPointersizeAssignment_8(), "rule__FunctionBinarySection__PointersizeAssignment_8");

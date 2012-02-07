@@ -7,11 +7,11 @@ import hu.e.compiler.ECompiler;
 import hu.e.compiler.ECompilerException;
 import hu.e.compiler.internal.linking.CodePlatform;
 import hu.e.compiler.internal.model.CompilationErrorEntry;
-import hu.e.compiler.internal.model.IProgramStep;
 import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.compiler.internal.model.symbols.impl.LabelSymbol;
 import hu.e.compiler.internal.model.symbols.impl.LiteralSymbol;
+import hu.e.compiler.list.ProgramStep;
 import hu.e.parser.eSyntax.OperationCall;
 import hu.e.parser.eSyntax.OperationCallParameter;
 import hu.e.parser.eSyntax.ParameterVariable;
@@ -32,7 +32,7 @@ public class OperationCallCompiler {
 	
 	private final ISymbolManager sm;
 	
-	private final List<IProgramStep> before = new ArrayList<IProgramStep>();
+	private final List<ProgramStep> before = new ArrayList<ProgramStep>();
 	
 	private final List<LabelSymbol> labeluses = new ArrayList<LabelSymbol>();
 	
@@ -77,9 +77,9 @@ public class OperationCallCompiler {
 		}
 	}
 	
-	public List<IProgramStep> compile(){
-		List<IProgramStep> ps = new ArrayList<IProgramStep>(before);
-		ps.addAll(oc.compile(sm));
+	public List<ProgramStep> compile(){
+		List<ProgramStep> ps = new ArrayList<ProgramStep>(before);
+		ps.add(oc.compile(sm));
 		return ps;
 	}
 	

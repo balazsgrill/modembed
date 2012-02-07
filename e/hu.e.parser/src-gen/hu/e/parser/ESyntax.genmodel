@@ -73,10 +73,10 @@
     </genEnums>
     <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//CompilationUnit">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//CompilationUnit/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//CompilationUnit/use"/>
     </genClasses>
     <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Module">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Module/extends"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Module/use"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Module/items"/>
     </genClasses>
     <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//ClassItem">
@@ -90,7 +90,6 @@
     </genClasses>
     <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Library">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Library/overrides"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Library/use"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Library/items"/>
     </genClasses>
     <genClasses ecoreClass="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//LibraryItem"/>

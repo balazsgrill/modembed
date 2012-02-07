@@ -5,12 +5,12 @@
     nsURI="http://www.e.hu/parser/ESyntax" nsPrefix="eSyntax">
   <eClassifiers xsi:type="ecore:EClass" name="CompilationUnit">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="use" unique="false" upperBound="-1"
+        eType="ecore:EClass platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Library"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Module" eSuperTypes="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//CompilationUnit">
     <eStructuralFeatures xsi:type="ecore:EReference" name="extends" unique="false"
         upperBound="-1" eType="ecore:EClass platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Module"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="use" unique="false" upperBound="-1"
-        eType="ecore:EClass platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Library"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="items" upperBound="-1"
         eType="ecore:EClass platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//ClassItem"
         containment="true"/>
@@ -28,8 +28,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="Library" eSuperTypes="platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//CompilationUnit">
     <eStructuralFeatures xsi:type="ecore:EReference" name="overrides" unique="false"
         upperBound="-1" eType="ecore:EClass platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Library"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="use" unique="false" upperBound="-1"
-        eType="ecore:EClass platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Library"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="items" upperBound="-1"
         eType="ecore:EClass platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//LibraryItem"
         containment="true"/>

@@ -4,10 +4,9 @@
 package hu.e.compiler.internal.model.symbols.impl;
 
 import hu.e.compiler.ECompilerException;
-import hu.e.compiler.internal.model.AddressedStep;
 import hu.e.compiler.internal.model.ISymbolManager;
-import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
 import hu.e.compiler.internal.model.symbols.ISymbol;
+import hu.e.compiler.list.LabelStep;
 import hu.e.compiler.list.ProgramStep;
 import hu.e.parser.eSyntax.StructTypeDefMember;
 import hu.e.parser.eSyntax.TypeDef;
@@ -19,17 +18,16 @@ import java.util.List;
  * @author balazs.grill
  *
  */
-public class CodeAddressSymbol implements ILiteralSymbol {
+public class CodeAddressSymbol implements ISymbol {
 
-	private final AddressedStep step;
+	private final LabelStep step;
 	
-	public CodeAddressSymbol(AddressedStep step) {
+	public CodeAddressSymbol(LabelStep step) {
 		this.step = step;
 	}
 	
-	@Override
-	public String toString() {
-		return "Code("+step.address+")";
+	public LabelStep getStep() {
+		return step;
 	}
 	
 	/* (non-Javadoc)
@@ -54,14 +52,6 @@ public class CodeAddressSymbol implements ILiteralSymbol {
 	@Override
 	public TypeDef getType() {
 		return null;
-	}
-
-	/* (non-Javadoc)
-	 * @see hu.e.compiler.internal.model.symbols.ILiteralSymbol#getValue()
-	 */
-	@Override
-	public int getValue() {
-		return step.address;
 	}
 
 	@Override

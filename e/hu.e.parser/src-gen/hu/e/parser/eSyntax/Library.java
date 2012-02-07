@@ -17,7 +17,6 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  *   <li>{@link hu.e.parser.eSyntax.Library#getOverrides <em>Overrides</em>}</li>
- *   <li>{@link hu.e.parser.eSyntax.Library#getUse <em>Use</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.Library#getItems <em>Items</em>}</li>
  * </ul>
  * </p>
@@ -43,22 +42,6 @@ public interface Library extends CompilationUnit
    * @generated
    */
   EList<Library> getOverrides();
-
-  /**
-   * Returns the value of the '<em><b>Use</b></em>' reference list.
-   * The list contents are of type {@link hu.e.parser.eSyntax.Library}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Use</em>' reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Use</em>' reference list.
-   * @see hu.e.parser.eSyntax.ESyntaxPackage#getLibrary_Use()
-   * @model
-   * @generated
-   */
-  EList<Library> getUse();
 
   /**
    * Returns the value of the '<em><b>Items</b></em>' containment reference list.

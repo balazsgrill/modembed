@@ -7,22 +7,21 @@ import hu.e.compiler.ECompilerException;
 import hu.e.compiler.internal.linking.CodePlatform;
 import hu.e.compiler.internal.linking.OperationFinder;
 import hu.e.compiler.internal.model.CompilationErrorEntry;
-import hu.e.compiler.internal.model.IProgramStep;
 import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.compiler.internal.model.IVariableManager;
-import hu.e.compiler.internal.model.LabelStep;
-import hu.e.compiler.internal.model.OperationEntryStep;
-import hu.e.compiler.internal.model.OperationExitStep;
 import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.compiler.internal.model.symbols.impl.LabelSymbol;
 import hu.e.compiler.internal.model.symbols.impl.NullSymbol;
 import hu.e.compiler.internal.symbols.AbstractSymbolManager;
+import hu.e.compiler.list.LabelStep;
+import hu.e.compiler.list.ListFactory;
+import hu.e.compiler.list.ProgramStep;
+import hu.e.compiler.list.SequenceStep;
 import hu.e.parser.eSyntax.Operation;
 import hu.e.parser.eSyntax.OperationBlock;
 import hu.e.parser.eSyntax.Variable;
 import hu.e.parser.eSyntax.VariableReference;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -90,8 +89,9 @@ public class OperationCompiler {
 		this.platform = platform;
 	}
 	
-	public List<IProgramStep> compile(final ISymbolManager sm){
-		List<IProgramStep> steps = new ArrayList<IProgramStep>();
+	public ProgramStep compile(final ISymbolManager sm){
+		SequenceStep result = ListFactory.eINSTANCE.createSequenceStep();
+		List<ProgramStep> steps = result.getSteps();
 		if(operation.getReturnvar() != null){
 			//needs a result buffer
 			try {
@@ -101,19 +101,17 @@ public class OperationCompiler {
 			}
 		}
 		
-		try{
-			steps.add(new OperationEntryStep(operation, parameters));
+//		try{
 			OperationBlock block = operation.getBlock();
 			if (block == null){
 				steps.add(CompilationErrorEntry.error(block,  "Null block!"));
 			}
 			BlockCompiler bc = new BlockCompiler(block);
-			steps.addAll(bc.compile(new WrappedSymbolManager(sm)));
-			steps.add(new OperationExitStep());
-		}catch(ECompilerException e){
-			steps.add(CompilationErrorEntry.create(e));
-		}
-		return steps;
+			steps.add(bc.compile(new WrappedSymbolManager(sm)));
+//		}catch(ECompilerException e){
+//			steps.add(CompilationErrorEntry.create(e));
+//		}
+		return result;
 	}
 	
 	public ISymbol getReturns(ISymbolManager sm) throws ECompilerException{

@@ -31,7 +31,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link hu.e.parser.eSyntax.impl.LibraryImpl#getOverrides <em>Overrides</em>}</li>
- *   <li>{@link hu.e.parser.eSyntax.impl.LibraryImpl#getUse <em>Use</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.impl.LibraryImpl#getItems <em>Items</em>}</li>
  * </ul>
  * </p>
@@ -49,16 +48,6 @@ public class LibraryImpl extends CompilationUnitImpl implements Library
    * @ordered
    */
   protected EList<Library> overrides;
-
-  /**
-   * The cached value of the '{@link #getUse() <em>Use</em>}' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getUse()
-   * @generated
-   * @ordered
-   */
-  protected EList<Library> use;
 
   /**
    * The cached value of the '{@link #getItems() <em>Items</em>}' containment reference list.
@@ -110,20 +99,6 @@ public class LibraryImpl extends CompilationUnitImpl implements Library
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Library> getUse()
-  {
-    if (use == null)
-    {
-      use = new EObjectResolvingEList<Library>(Library.class, this, ESyntaxPackage.LIBRARY__USE);
-    }
-    return use;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EList<LibraryItem> getItems()
   {
     if (items == null)
@@ -161,8 +136,6 @@ public class LibraryImpl extends CompilationUnitImpl implements Library
     {
       case ESyntaxPackage.LIBRARY__OVERRIDES:
         return getOverrides();
-      case ESyntaxPackage.LIBRARY__USE:
-        return getUse();
       case ESyntaxPackage.LIBRARY__ITEMS:
         return getItems();
     }
@@ -183,10 +156,6 @@ public class LibraryImpl extends CompilationUnitImpl implements Library
       case ESyntaxPackage.LIBRARY__OVERRIDES:
         getOverrides().clear();
         getOverrides().addAll((Collection<? extends Library>)newValue);
-        return;
-      case ESyntaxPackage.LIBRARY__USE:
-        getUse().clear();
-        getUse().addAll((Collection<? extends Library>)newValue);
         return;
       case ESyntaxPackage.LIBRARY__ITEMS:
         getItems().clear();
@@ -209,9 +178,6 @@ public class LibraryImpl extends CompilationUnitImpl implements Library
       case ESyntaxPackage.LIBRARY__OVERRIDES:
         getOverrides().clear();
         return;
-      case ESyntaxPackage.LIBRARY__USE:
-        getUse().clear();
-        return;
       case ESyntaxPackage.LIBRARY__ITEMS:
         getItems().clear();
         return;
@@ -231,8 +197,6 @@ public class LibraryImpl extends CompilationUnitImpl implements Library
     {
       case ESyntaxPackage.LIBRARY__OVERRIDES:
         return overrides != null && !overrides.isEmpty();
-      case ESyntaxPackage.LIBRARY__USE:
-        return use != null && !use.isEmpty();
       case ESyntaxPackage.LIBRARY__ITEMS:
         return items != null && !items.isEmpty();
     }

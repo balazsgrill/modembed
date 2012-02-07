@@ -31,7 +31,7 @@ LITERAL: INT | HEXINT | BINARY;
  ***********************/
 
 Module:
-	'module' name=ID
+	'module' name=QualifiedName
 	('extends' extends+=[Module|QualifiedName] (',' extends+=[Module|QualifiedName])*)?
 	';'
 	('use' use+=[Library|QualifiedName]';')*
@@ -59,7 +59,7 @@ ConfigVariable returns Variable:
  ***********************/
 
 Library:
-	'library' name=ID
+	'library' name=QualifiedName
 	('overrides' overrides+=[Library|QualifiedName] (',' overrides+=[Library|QualifiedName])*)?
 	';'
 	('use' use+=[Library|QualifiedName]';')*
@@ -76,14 +76,14 @@ LibraryItem:
  * DATATYPES *
  ***********************/	
 Type:
-	'type' name=ID '=' def=TypeDef;
+	'type' name=ID '=' def=TypeDef ';';
 
 TypeDef:
 	DataTypeDef | StructTypeDef | PointerTypeDef | ArrayTypeDef | RefTypeDef
 ;
 	
 PointerTypeDef:
-	'pointer' 'of' def=TypeDef 
+	'pointer' 'of' def=TypeDef
 ;	
 	
 ArrayTypeDef:
@@ -95,7 +95,7 @@ RefTypeDef:
 ;	
 	
 DataTypeDef:
-	kind=PrimitiveKind bits=INT 'bits' ';'
+	kind=PrimitiveKind bits=INT 'bits' 
 	;
 
 enum PrimitiveKind:
@@ -210,9 +210,9 @@ OperatorDefinition:
  ********************/
 
 LinkedBinary:
-	'binary' name=ID (type=BinaryType)? '{'
+	'binary' name=QualifiedName (type=BinaryType)? ';'
+	('use' use+=[Library|QualifiedName]';')*
 		(sections+=BinarySection)*
-	'}'
 ;
 
 enum BinaryType:

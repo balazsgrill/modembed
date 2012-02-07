@@ -81,13 +81,22 @@ public interface ESyntaxPackage extends EPackage
   int COMPILATION_UNIT__NAME = 0;
 
   /**
+   * The feature id for the '<em><b>Use</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPILATION_UNIT__USE = 1;
+
+  /**
    * The number of structural features of the '<em>Compilation Unit</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPILATION_UNIT_FEATURE_COUNT = 1;
+  int COMPILATION_UNIT_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.impl.ModuleImpl <em>Module</em>}' class.
@@ -109,6 +118,15 @@ public interface ESyntaxPackage extends EPackage
   int MODULE__NAME = COMPILATION_UNIT__NAME;
 
   /**
+   * The feature id for the '<em><b>Use</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODULE__USE = COMPILATION_UNIT__USE;
+
+  /**
    * The feature id for the '<em><b>Extends</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -118,22 +136,13 @@ public interface ESyntaxPackage extends EPackage
   int MODULE__EXTENDS = COMPILATION_UNIT_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Use</b></em>' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MODULE__USE = COMPILATION_UNIT_FEATURE_COUNT + 1;
-
-  /**
    * The feature id for the '<em><b>Items</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODULE__ITEMS = COMPILATION_UNIT_FEATURE_COUNT + 2;
+  int MODULE__ITEMS = COMPILATION_UNIT_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Module</em>' class.
@@ -142,7 +151,7 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODULE_FEATURE_COUNT = COMPILATION_UNIT_FEATURE_COUNT + 3;
+  int MODULE_FEATURE_COUNT = COMPILATION_UNIT_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.impl.ClassItemImpl <em>Class Item</em>}' class.
@@ -266,6 +275,15 @@ public interface ESyntaxPackage extends EPackage
   int LIBRARY__NAME = COMPILATION_UNIT__NAME;
 
   /**
+   * The feature id for the '<em><b>Use</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIBRARY__USE = COMPILATION_UNIT__USE;
+
+  /**
    * The feature id for the '<em><b>Overrides</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -275,22 +293,13 @@ public interface ESyntaxPackage extends EPackage
   int LIBRARY__OVERRIDES = COMPILATION_UNIT_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Use</b></em>' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LIBRARY__USE = COMPILATION_UNIT_FEATURE_COUNT + 1;
-
-  /**
    * The feature id for the '<em><b>Items</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LIBRARY__ITEMS = COMPILATION_UNIT_FEATURE_COUNT + 2;
+  int LIBRARY__ITEMS = COMPILATION_UNIT_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Library</em>' class.
@@ -299,7 +308,7 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LIBRARY_FEATURE_COUNT = COMPILATION_UNIT_FEATURE_COUNT + 3;
+  int LIBRARY_FEATURE_COUNT = COMPILATION_UNIT_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.impl.LibraryItemImpl <em>Library Item</em>}' class.
@@ -868,6 +877,15 @@ public interface ESyntaxPackage extends EPackage
    * @ordered
    */
   int LINKED_BINARY__NAME = COMPILATION_UNIT__NAME;
+
+  /**
+   * The feature id for the '<em><b>Use</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LINKED_BINARY__USE = COMPILATION_UNIT__USE;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -2338,6 +2356,17 @@ public interface ESyntaxPackage extends EPackage
   EAttribute getCompilationUnit_Name();
 
   /**
+   * Returns the meta object for the reference list '{@link hu.e.parser.eSyntax.CompilationUnit#getUse <em>Use</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Use</em>'.
+   * @see hu.e.parser.eSyntax.CompilationUnit#getUse()
+   * @see #getCompilationUnit()
+   * @generated
+   */
+  EReference getCompilationUnit_Use();
+
+  /**
    * Returns the meta object for class '{@link hu.e.parser.eSyntax.Module <em>Module</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2357,17 +2386,6 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    */
   EReference getModule_Extends();
-
-  /**
-   * Returns the meta object for the reference list '{@link hu.e.parser.eSyntax.Module#getUse <em>Use</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Use</em>'.
-   * @see hu.e.parser.eSyntax.Module#getUse()
-   * @see #getModule()
-   * @generated
-   */
-  EReference getModule_Use();
 
   /**
    * Returns the meta object for the containment reference list '{@link hu.e.parser.eSyntax.Module#getItems <em>Items</em>}'.
@@ -2463,17 +2481,6 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    */
   EReference getLibrary_Overrides();
-
-  /**
-   * Returns the meta object for the reference list '{@link hu.e.parser.eSyntax.Library#getUse <em>Use</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Use</em>'.
-   * @see hu.e.parser.eSyntax.Library#getUse()
-   * @see #getLibrary()
-   * @generated
-   */
-  EReference getLibrary_Use();
 
   /**
    * Returns the meta object for the containment reference list '{@link hu.e.parser.eSyntax.Library#getItems <em>Items</em>}'.
@@ -4018,6 +4025,14 @@ public interface ESyntaxPackage extends EPackage
     EAttribute COMPILATION_UNIT__NAME = eINSTANCE.getCompilationUnit_Name();
 
     /**
+     * The meta object literal for the '<em><b>Use</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMPILATION_UNIT__USE = eINSTANCE.getCompilationUnit_Use();
+
+    /**
      * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.ModuleImpl <em>Module</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4034,14 +4049,6 @@ public interface ESyntaxPackage extends EPackage
      * @generated
      */
     EReference MODULE__EXTENDS = eINSTANCE.getModule_Extends();
-
-    /**
-     * The meta object literal for the '<em><b>Use</b></em>' reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference MODULE__USE = eINSTANCE.getModule_Use();
 
     /**
      * The meta object literal for the '<em><b>Items</b></em>' containment reference list feature.
@@ -4122,14 +4129,6 @@ public interface ESyntaxPackage extends EPackage
      * @generated
      */
     EReference LIBRARY__OVERRIDES = eINSTANCE.getLibrary_Overrides();
-
-    /**
-     * The meta object literal for the '<em><b>Use</b></em>' reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference LIBRARY__USE = eINSTANCE.getLibrary_Use();
 
     /**
      * The meta object literal for the '<em><b>Items</b></em>' containment reference list feature.

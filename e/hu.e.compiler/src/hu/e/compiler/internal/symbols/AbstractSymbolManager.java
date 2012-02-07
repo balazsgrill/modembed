@@ -6,7 +6,6 @@ import hu.e.compiler.internal.OperationCallCompiler;
 import hu.e.compiler.internal.OperationCompiler;
 import hu.e.compiler.internal.linking.CodePlatform;
 import hu.e.compiler.internal.linking.OperationFinder;
-import hu.e.compiler.internal.model.IProgramStep;
 import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
 import hu.e.compiler.internal.model.symbols.ISymbol;
@@ -17,6 +16,7 @@ import hu.e.compiler.internal.model.symbols.impl.OperatedSymbol;
 import hu.e.compiler.internal.model.symbols.impl.OperationSymbol;
 import hu.e.compiler.internal.model.symbols.impl.StructLiteralSymbol;
 import hu.e.compiler.internal.model.symbols.impl.VariableSymbol;
+import hu.e.compiler.list.ProgramStep;
 import hu.e.parser.eSyntax.ArrayTypeDef;
 import hu.e.parser.eSyntax.Operation;
 import hu.e.parser.eSyntax.OperationCall;
@@ -43,6 +43,7 @@ import hu.e.parser.eSyntax.XSizeOfExpression;
 import hu.e.parser.eSyntax.XStructExpression;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -160,7 +161,7 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 		if (x instanceof OperationCall){
 			OperationCall oc = (OperationCall)x;
 			OperationCallCompiler c = new OperationCallCompiler(platform, oc, this);
-			List<IProgramStep> ps = c.compile();
+			List<ProgramStep> ps = c.compile();
 			if (!ps.isEmpty()){
 				return new OperatedSymbol(ps, c.getReturns());
 			}
@@ -215,7 +216,7 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 		OperationCompiler oc = opfinder.getOperationCompiler(getCodePlatform(), role, symbols);
 		if (oc == null) 
 			throw new ECompilerException(context, "Cannot find "+role+" operator!");
-		return new OperatedSymbol(oc.compile(this),oc.getReturns(this));
+		return new OperatedSymbol(Collections.singletonList(oc.compile(this)),oc.getReturns(this));
 	}
 	
 	@Override

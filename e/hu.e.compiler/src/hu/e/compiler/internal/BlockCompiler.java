@@ -11,7 +11,6 @@ import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
 import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.compiler.internal.model.symbols.IVariableSymbol;
 import hu.e.compiler.internal.model.symbols.impl.CodeAddressSymbol;
-import hu.e.compiler.internal.model.symbols.impl.LabelSymbol;
 import hu.e.compiler.list.LabelReference;
 import hu.e.compiler.list.LabelStep;
 import hu.e.compiler.list.ListFactory;

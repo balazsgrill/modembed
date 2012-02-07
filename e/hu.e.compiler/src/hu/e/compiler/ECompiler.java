@@ -4,24 +4,15 @@
 package hu.e.compiler;
 
 import hu.e.compiler.internal.HexFileCompiler;
-import hu.e.compiler.internal.model.IProgramStep;
-import hu.e.compiler.internal.model.InstructionWordInstance;
-import hu.e.compiler.internal.model.LabelStep;
-import hu.e.compiler.internal.model.OperationEntryStep;
-import hu.e.compiler.internal.model.OperationExitStep;
 import hu.e.parser.eSyntax.BinaryType;
-import hu.e.parser.eSyntax.FunctionBinarySection;
 import hu.e.parser.eSyntax.LinkedBinary;
 
-import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import java.util.List;
 
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
-import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -80,21 +71,21 @@ public class ECompiler {
 					}
 
 					//Produce lst files.
-					for(FunctionBinarySection fbs : hfc.getSteps().keySet()){
-						List<IProgramStep> steps = hfc.getSteps().get(fbs);
-						IFile lf = getHexFileSibling(f, "object"+".lst");
-						String content = produceLST(steps);
-						try {
-							if (lf.exists()){
-								lf.setContents(new ByteArrayInputStream(content.getBytes()), true, true, new NullProgressMonitor());
-							}else{
-								lf.create(new ByteArrayInputStream(content.getBytes()),true, new NullProgressMonitor());
-							}
-						}catch (Exception e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
-					}
+//					for(FunctionBinarySection fbs : hfc.getSteps().keySet()){
+//						List<ProgramStep> steps = hfc.getSteps().get(fbs);
+//						IFile lf = getHexFileSibling(f, "object"+".lst");
+//						String content = produceLST(steps);
+//						try {
+//							if (lf.exists()){
+//								lf.setContents(new ByteArrayInputStream(content.getBytes()), true, true, new NullProgressMonitor());
+//							}else{
+//								lf.create(new ByteArrayInputStream(content.getBytes()),true, new NullProgressMonitor());
+//							}
+//						}catch (Exception e) {
+//							// TODO Auto-generated catch block
+//							e.printStackTrace();
+//						}
+//					}
 				}
 			}
 		}

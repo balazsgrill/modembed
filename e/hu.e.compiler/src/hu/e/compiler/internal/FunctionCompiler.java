@@ -7,15 +7,14 @@ import hu.e.compiler.ECompiler;
 import hu.e.compiler.ECompilerException;
 import hu.e.compiler.internal.linking.CodePlatform;
 import hu.e.compiler.internal.linking.ComponentLinker;
-import hu.e.compiler.internal.model.AddressedStep;
 import hu.e.compiler.internal.model.CompilationErrorEntry;
-import hu.e.compiler.internal.model.IProgramStep;
 import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.compiler.internal.model.InstructionWordInstance;
-import hu.e.compiler.internal.model.LabelStep;
 import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
 import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.compiler.internal.symbols.SymbolManager;
+import hu.e.compiler.list.LabelStep;
+import hu.e.compiler.list.ProgramStep;
 import hu.e.parser.eSyntax.FunctionBinarySection;
 import hu.e.parser.eSyntax.FunctionMemory;
 import hu.e.parser.eSyntax.Library;
@@ -49,14 +48,14 @@ public class FunctionCompiler {
 		linker = new ComponentLinker(link);
 	}
 	
-	private List<IProgramStep> steps;
+	private List<ProgramStep> steps;
 	
-	public List<IProgramStep> getSteps() {
+	public List<ProgramStep> getSteps() {
 		return steps;
 	}
 	
 	public byte[] compile(ISymbolManager parentsm){
-		List<IProgramStep> ps = new ArrayList<IProgramStep>();
+		List<ProgramStep> ps = new ArrayList<ProgramStep>();
 		SymbolManager sm = new SymbolManager(new CodePlatform(linker, new ArrayList<Library>()),parentsm,memman);
 //		TODO: Handle globals
 //		for(Variable v : plinker.getGlobals()){
@@ -68,7 +67,7 @@ public class FunctionCompiler {
 //		}
 		
 		BlockCompiler bc = new BlockCompiler(link.getDo());
-		ps.addAll(bc.compile(sm));
+		ps.add(bc.compile(sm));
 		this.steps = ps;
 		
 		//Linking
@@ -79,13 +78,13 @@ public class FunctionCompiler {
 			if (!startsymbol.isLiteral()) throw new RuntimeException("Start address of binary block cannot be accessed in compile time!");
 			int startAddr = ((ILiteralSymbol)startsymbol).getValue();
 			Map<LabelStep, Integer> labelAddr = new HashMap<LabelStep, Integer>();
-			for(IProgramStep s : ps){
+			for(ProgramStep s : ps){
 				if (s instanceof LabelStep){
 					labelAddr.put((LabelStep)s,startAddr);
 				}
-				if (s instanceof AddressedStep){
-					((AddressedStep) s).address = startAddr;
-				}
+//				if (s instanceof AddressedStep){
+//					((AddressedStep) s).address = startAddr;
+//				}
 				if (s instanceof InstructionWordInstance){
 					progsize += ((InstructionWordInstance) s).getWidth();
 					startAddr++;
@@ -102,7 +101,7 @@ public class FunctionCompiler {
 		//Produce instruction bytes
 		byte[] data = new byte[progsize];
 		int i = 0;
-		for(IProgramStep s : ps){
+		for(ProgramStep s : ps){
 			if (s instanceof InstructionWordInstance){
 				int wordbytes = ((InstructionWordInstance) s).getWidth();
 				int d = 0;
