@@ -145,13 +145,22 @@ public interface ListPackage extends EPackage {
 	int INSTRUCTION_STEP__REFS = PROGRAM_STEP_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Width</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION_STEP__WIDTH = PROGRAM_STEP_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Instruction Step</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INSTRUCTION_STEP_FEATURE_COUNT = PROGRAM_STEP_FEATURE_COUNT + 2;
+	int INSTRUCTION_STEP_FEATURE_COUNT = PROGRAM_STEP_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link hu.e.compiler.list.impl.SequenceStepImpl <em>Sequence Step</em>}' class.
@@ -406,6 +415,17 @@ public interface ListPackage extends EPackage {
 	EReference getInstructionStep_Refs();
 
 	/**
+	 * Returns the meta object for the attribute '{@link hu.e.compiler.list.InstructionStep#getWidth <em>Width</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Width</em>'.
+	 * @see hu.e.compiler.list.InstructionStep#getWidth()
+	 * @see #getInstructionStep()
+	 * @generated
+	 */
+	EAttribute getInstructionStep_Width();
+
+	/**
 	 * Returns the meta object for class '{@link hu.e.compiler.list.SequenceStep <em>Sequence Step</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -636,6 +656,14 @@ public interface ListPackage extends EPackage {
 		 * @generated
 		 */
 		EReference INSTRUCTION_STEP__REFS = eINSTANCE.getInstructionStep_Refs();
+
+		/**
+		 * The meta object literal for the '<em><b>Width</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INSTRUCTION_STEP__WIDTH = eINSTANCE.getInstructionStep_Width();
 
 		/**
 		 * The meta object literal for the '{@link hu.e.compiler.list.impl.SequenceStepImpl <em>Sequence Step</em>}' class.

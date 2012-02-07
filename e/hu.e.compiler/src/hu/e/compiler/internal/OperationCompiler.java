@@ -10,10 +10,8 @@ import hu.e.compiler.internal.model.CompilationErrorEntry;
 import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.compiler.internal.model.IVariableManager;
 import hu.e.compiler.internal.model.symbols.ISymbol;
-import hu.e.compiler.internal.model.symbols.impl.LabelSymbol;
 import hu.e.compiler.internal.model.symbols.impl.NullSymbol;
 import hu.e.compiler.internal.symbols.AbstractSymbolManager;
-import hu.e.compiler.list.LabelStep;
 import hu.e.compiler.list.ListFactory;
 import hu.e.compiler.list.ProgramStep;
 import hu.e.compiler.list.SequenceStep;
@@ -53,15 +51,10 @@ public class OperationCompiler {
 			return sm.getSymbol(ref);
 		}
 		
-		@Override
-		public void addLabelSymbol(LabelSymbol ls) {
-			sm.addLabelSymbol(ls);
-		}
-		
-		@Override
-		public void setLabelAddresses(Map<LabelStep, Integer> addresses) throws ECompilerException {
-			sm.setLabelAddresses(addresses);
-		}
+//		@Override
+//		public void setLabelAddresses(Map<LabelStep, Integer> addresses) throws ECompilerException {
+//			sm.setLabelAddresses(addresses);
+//		}
 		
 		@Override
 		public void contextAssign(VariableReference vr, int value) {

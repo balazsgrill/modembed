@@ -34,6 +34,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link hu.e.compiler.list.impl.InstructionStepImpl#getCode <em>Code</em>}</li>
  *   <li>{@link hu.e.compiler.list.impl.InstructionStepImpl#getRefs <em>Refs</em>}</li>
+ *   <li>{@link hu.e.compiler.list.impl.InstructionStepImpl#getWidth <em>Width</em>}</li>
  * </ul>
  * </p>
  *
@@ -69,6 +70,26 @@ public class InstructionStepImpl extends ProgramStepImpl implements InstructionS
 	 * @ordered
 	 */
 	protected EList<LabelReference> refs;
+
+	/**
+	 * The default value of the '{@link #getWidth() <em>Width</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getWidth()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int WIDTH_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getWidth() <em>Width</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getWidth()
+	 * @generated
+	 * @ordered
+	 */
+	protected int width = WIDTH_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -127,6 +148,27 @@ public class InstructionStepImpl extends ProgramStepImpl implements InstructionS
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getWidth() {
+		return width;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setWidth(int newWidth) {
+		int oldWidth = width;
+		width = newWidth;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ListPackage.INSTRUCTION_STEP__WIDTH, oldWidth, width));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -148,6 +190,8 @@ public class InstructionStepImpl extends ProgramStepImpl implements InstructionS
 				return getCode();
 			case ListPackage.INSTRUCTION_STEP__REFS:
 				return getRefs();
+			case ListPackage.INSTRUCTION_STEP__WIDTH:
+				return getWidth();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -168,6 +212,9 @@ public class InstructionStepImpl extends ProgramStepImpl implements InstructionS
 				getRefs().clear();
 				getRefs().addAll((Collection<? extends LabelReference>)newValue);
 				return;
+			case ListPackage.INSTRUCTION_STEP__WIDTH:
+				setWidth((Integer)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -186,6 +233,9 @@ public class InstructionStepImpl extends ProgramStepImpl implements InstructionS
 			case ListPackage.INSTRUCTION_STEP__REFS:
 				getRefs().clear();
 				return;
+			case ListPackage.INSTRUCTION_STEP__WIDTH:
+				setWidth(WIDTH_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -202,6 +252,8 @@ public class InstructionStepImpl extends ProgramStepImpl implements InstructionS
 				return code != CODE_EDEFAULT;
 			case ListPackage.INSTRUCTION_STEP__REFS:
 				return refs != null && !refs.isEmpty();
+			case ListPackage.INSTRUCTION_STEP__WIDTH:
+				return width != WIDTH_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -218,6 +270,8 @@ public class InstructionStepImpl extends ProgramStepImpl implements InstructionS
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (code: ");
 		result.append(code);
+		result.append(", width: ");
+		result.append(width);
 		result.append(')');
 		return result.toString();
 	}

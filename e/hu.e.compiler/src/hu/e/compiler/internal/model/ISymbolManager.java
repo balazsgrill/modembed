@@ -5,7 +5,6 @@ import hu.e.compiler.internal.linking.CodePlatform;
 import hu.e.compiler.internal.linking.OperationFinder;
 import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.compiler.internal.model.symbols.IVariableSymbol;
-import hu.e.compiler.internal.model.symbols.impl.LabelSymbol;
 import hu.e.compiler.internal.model.symbols.impl.OperatedSymbol;
 import hu.e.compiler.list.LabelStep;
 import hu.e.parser.eSyntax.OperationRole;
@@ -20,8 +19,6 @@ import org.eclipse.emf.ecore.EObject;
 
 public interface ISymbolManager {
 	
-	public void addLabelSymbol(LabelSymbol ls);
-	
 	public ISymbol getSymbol(Variable ref) throws ECompilerException;
 	
 	public IVariableManager getVariableManager();
@@ -30,7 +27,7 @@ public interface ISymbolManager {
 	
 	public void contextAssign(VariableReference vr, int value);
 	
-	public void setLabelAddresses(Map<LabelStep, Integer> addresses) throws ECompilerException;
+//	public void setLabelAddresses(Map<LabelStep, Integer> addresses) throws ECompilerException;
 	
 	public ISymbol resolveVarRef(VariableReference vr) throws ECompilerException;
 	

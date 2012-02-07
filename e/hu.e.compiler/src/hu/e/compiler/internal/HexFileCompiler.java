@@ -8,11 +8,10 @@ import hexfile.Entry;
 import hexfile.HexFile;
 import hexfile.HexfileFactory;
 import hu.e.compiler.ECompilerException;
-import hu.e.compiler.internal.model.CompilationErrorEntry;
 import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
 import hu.e.compiler.internal.symbols.RootSymbolManager;
-import hu.e.compiler.list.ProgramStep;
+import hu.e.compiler.list.ProgramList;
 import hu.e.parser.eSyntax.BinarySection;
 import hu.e.parser.eSyntax.ConstantBinarySection;
 import hu.e.parser.eSyntax.FunctionBinarySection;
@@ -21,10 +20,8 @@ import hu.e.parser.eSyntax.ReferenceBinarySection;
 import hu.e.parser.eSyntax.XExpression;
 import hu.modembed.hexfile.persistence.HexFileResource;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.HashSet;
+import java.util.Set;
 
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
@@ -39,11 +36,11 @@ public class HexFileCompiler {
 	public HexFileCompiler(LinkedBinary lb) {
 		this.lb = lb;
 	}
-
-	private final Map<FunctionBinarySection, List<ProgramStep>> steps = new HashMap<FunctionBinarySection, List<ProgramStep>>();
 	
-	public Map<FunctionBinarySection, List<ProgramStep>> getSteps() {
-		return steps;
+	private final Set<ProgramList> lists = new HashSet<ProgramList>();
+	
+	public Set<ProgramList> getLists() {
+		return lists;
 	}
 	
 	public HexFile create(){
@@ -78,11 +75,13 @@ public class HexFileCompiler {
 					Entry entry = HexfileFactory.eINSTANCE.createEntry();
 					entry.setAddress(start);
 					FunctionCompiler fc = new FunctionCompiler((FunctionBinarySection)bs);
-					entry.setData(fc.compile(sm));
+					lists.add(fc.compile(sm));
+					
+					entry.setData(new byte[0]);
 					result.getEntries().add(entry);
-					this.steps.put((FunctionBinarySection)bs, fc.getSteps());
+					
 				}catch(ECompilerException e){
-					this.steps.put((FunctionBinarySection)bs, Collections.singletonList(CompilationErrorEntry.create(e)));
+					//this.steps.put((FunctionBinarySection)bs, Collections.singletonList(CompilationErrorEntry.create(e)));
 				}
 			}
 			if (bs instanceof ReferenceBinarySection){
@@ -96,7 +95,7 @@ public class HexFileCompiler {
 						entry.setAddress(entry.getAddress()+start);
 						result.getEntries().add(entry);
 					}
-					this.steps.putAll(includedcompiler.steps);
+					//this.steps.putAll(includedcompiler.steps);
 				}catch(ECompilerException e){
 					//TODO: handle this exception
 					e.printStackTrace();

@@ -9,7 +9,6 @@ import hu.e.compiler.internal.linking.CodePlatform;
 import hu.e.compiler.internal.model.CompilationErrorEntry;
 import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.compiler.internal.model.symbols.ISymbol;
-import hu.e.compiler.internal.model.symbols.impl.LabelSymbol;
 import hu.e.compiler.internal.model.symbols.impl.LiteralSymbol;
 import hu.e.compiler.list.ProgramStep;
 import hu.e.parser.eSyntax.OperationCall;
@@ -34,11 +33,11 @@ public class OperationCallCompiler {
 	
 	private final List<ProgramStep> before = new ArrayList<ProgramStep>();
 	
-	private final List<LabelSymbol> labeluses = new ArrayList<LabelSymbol>();
-	
-	public List<LabelSymbol> getLabeluses() {
-		return labeluses;
-	}
+//	private final List<LabelSymbol> labeluses = new ArrayList<LabelSymbol>();
+//	
+//	public List<LabelSymbol> getLabeluses() {
+//		return labeluses;
+//	}
 	
 	public OperationCallCompiler(CodePlatform platform, OperationCall call, ISymbolManager sm) {
 		this.sm = sm;

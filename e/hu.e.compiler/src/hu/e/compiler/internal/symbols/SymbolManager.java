@@ -10,14 +10,10 @@ import hu.e.compiler.internal.linking.OperationFinder;
 import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.compiler.internal.model.IVariableManager;
 import hu.e.compiler.internal.model.symbols.ISymbol;
-import hu.e.compiler.internal.model.symbols.impl.LabelSymbol;
 import hu.e.compiler.internal.model.symbols.impl.LiteralSymbol;
 import hu.e.compiler.internal.model.symbols.impl.VariableSymbol;
-import hu.e.compiler.list.LabelStep;
 import hu.e.parser.eSyntax.Variable;
 import hu.e.parser.eSyntax.VariableReference;
-
-import java.util.Map;
 
 /**
  * @author balazs.grill
@@ -38,12 +34,6 @@ public class SymbolManager extends AbstractSymbolManager {
 		this.varman = new VariableManager(memman);
 	}
 
-	@Override
-	public void addLabelSymbol(LabelSymbol ls) {
-		parent.addLabelSymbol(ls);
-	}
-	
-
 	/* (non-Javadoc)
 	 * @see hu.e.compiler.internal.model.ISymbolManager#getSymbol(hu.e.parser.eSyntax.VariableReference)
 	 */
@@ -63,10 +53,10 @@ public class SymbolManager extends AbstractSymbolManager {
 		return varman;
 	}
 
-	@Override
-	public void setLabelAddresses(Map<LabelStep, Integer> addresses) throws ECompilerException {
-		parent.setLabelAddresses(addresses);
-	}
+//	@Override
+//	public void setLabelAddresses(Map<LabelStep, Integer> addresses) throws ECompilerException {
+//		parent.setLabelAddresses(addresses);
+//	}
 
 	@Override
 	public void contextAssign(VariableReference vr, int value) {

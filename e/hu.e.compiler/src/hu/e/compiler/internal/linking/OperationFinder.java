@@ -33,13 +33,6 @@ public class OperationFinder {
 	
 	public OperationFinder(Collection<Library> usedlibs) {
 		this.usedlibs = usedlibs;
-//		this.element = element;
-//		EObject eo = element.eResource().getContents().get(0);
-//		if (eo instanceof Package){
-//			this.pack = (Package)eo;
-//		}else{
-//			throw new IllegalArgumentException(element+" is not contained by a namespace!");
-//		}
 	}
 	
 	public OperationCompiler getOperationCompiler(CodePlatform platform, OperationRole role, ISymbol...symbols) throws ECompilerException{

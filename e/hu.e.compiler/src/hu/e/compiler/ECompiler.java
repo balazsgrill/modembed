@@ -4,6 +4,7 @@
 package hu.e.compiler;
 
 import hu.e.compiler.internal.HexFileCompiler;
+import hu.e.compiler.list.ProgramList;
 import hu.e.parser.eSyntax.BinaryType;
 import hu.e.parser.eSyntax.LinkedBinary;
 
@@ -71,21 +72,18 @@ public class ECompiler {
 					}
 
 					//Produce lst files.
-//					for(FunctionBinarySection fbs : hfc.getSteps().keySet()){
-//						List<ProgramStep> steps = hfc.getSteps().get(fbs);
-//						IFile lf = getHexFileSibling(f, "object"+".lst");
-//						String content = produceLST(steps);
-//						try {
-//							if (lf.exists()){
-//								lf.setContents(new ByteArrayInputStream(content.getBytes()), true, true, new NullProgressMonitor());
-//							}else{
-//								lf.create(new ByteArrayInputStream(content.getBytes()),true, new NullProgressMonitor());
-//							}
-//						}catch (Exception e) {
-//							// TODO Auto-generated catch block
-//							e.printStackTrace();
-//						}
-//					}
+					for(ProgramList pl : hfc.getLists()){
+						IFile lf = getHexFileSibling(f, pl.getName()+".lst");
+						Resource lr = resourceset.createResource(URI.createPlatformResourceURI(lf.getFullPath().toString(),true));
+						lr.getContents().clear();
+						lr.getContents().add(pl);
+						try {
+							lr.save(null);
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+					}
 				}
 			}
 		}

@@ -225,6 +225,15 @@ public class ListPackageImpl extends EPackageImpl implements ListPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getInstructionStep_Width() {
+		return (EAttribute)instructionStepEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getSequenceStep() {
 		return sequenceStepEClass;
 	}
@@ -383,6 +392,7 @@ public class ListPackageImpl extends EPackageImpl implements ListPackage {
 		instructionStepEClass = createEClass(INSTRUCTION_STEP);
 		createEAttribute(instructionStepEClass, INSTRUCTION_STEP__CODE);
 		createEReference(instructionStepEClass, INSTRUCTION_STEP__REFS);
+		createEAttribute(instructionStepEClass, INSTRUCTION_STEP__WIDTH);
 
 		sequenceStepEClass = createEClass(SEQUENCE_STEP);
 		createEAttribute(sequenceStepEClass, SEQUENCE_STEP__NAME);
@@ -450,6 +460,7 @@ public class ListPackageImpl extends EPackageImpl implements ListPackage {
 		initEClass(instructionStepEClass, InstructionStep.class, "InstructionStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getInstructionStep_Code(), ecorePackage.getELong(), "code", null, 0, 1, InstructionStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getInstructionStep_Refs(), this.getLabelReference(), null, "refs", null, 0, -1, InstructionStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getInstructionStep_Width(), ecorePackage.getEInt(), "width", null, 0, 1, InstructionStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sequenceStepEClass, SequenceStep.class, "SequenceStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSequenceStep_Name(), ecorePackage.getEString(), "name", null, 0, 1, SequenceStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

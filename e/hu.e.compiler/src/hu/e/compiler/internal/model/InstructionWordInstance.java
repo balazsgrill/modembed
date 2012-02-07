@@ -96,13 +96,14 @@ public class InstructionWordInstance{
 		return size;
 	}
 	
-	public int getValue() throws ECompilerException{
+	public int getValue(){
 		return value;
 	}
 	
 	public InstructionStep create() throws ECompilerException{
 		InstructionStep is = ListFactory.eINSTANCE.createInstructionStep();
 		is.setCode(getValue());
+		is.setWidth(getWidth());
 		is.getRefs().addAll(labeluses.keySet());
 		return is;
 	}

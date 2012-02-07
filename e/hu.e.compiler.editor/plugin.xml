@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="hu.e.compiler.list.presentation.ListEditorID"
+            name="%_UI_ListEditor_label"
+            icon="icons/full/obj16/ListModelFile.gif"
+            extensions="lst"
+            class="hu.e.compiler.list.presentation.ListEditor"
+            contributorClass="hu.e.compiler.list.presentation.ListActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

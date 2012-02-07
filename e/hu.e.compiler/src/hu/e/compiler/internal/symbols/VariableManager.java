@@ -8,6 +8,7 @@ import hu.e.compiler.internal.MemoryManager;
 import hu.e.compiler.internal.StackLevel;
 import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.compiler.internal.model.IVariableManager;
+import hu.e.parser.eSyntax.Library;
 import hu.e.parser.eSyntax.TypeDef;
 import hu.e.parser.eSyntax.Variable;
 
@@ -54,7 +55,7 @@ public class VariableManager implements IVariableManager {
 	}
 
 	public int getAddress(ISymbolManager sm, Variable var) throws ECompilerException{
-		if (var.eContainer() instanceof Package){
+		if (var.eContainer() instanceof Library){
 			if (!globals.containsKey(var)){
 				Integer a = memman.allocate(memman.getSize(sm, var.getType()));
 				globals.put(var, a);

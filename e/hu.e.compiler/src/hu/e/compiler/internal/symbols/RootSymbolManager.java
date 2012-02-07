@@ -8,19 +8,15 @@ import hu.e.compiler.internal.linking.OperationFinder;
 import hu.e.compiler.internal.model.IVariableManager;
 import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
 import hu.e.compiler.internal.model.symbols.ISymbol;
-import hu.e.compiler.internal.model.symbols.impl.LabelSymbol;
 import hu.e.compiler.internal.model.symbols.impl.LiteralSymbol;
 import hu.e.compiler.internal.model.symbols.impl.VariableSymbol;
-import hu.e.compiler.list.LabelStep;
 import hu.e.parser.eSyntax.CompileContextVariable;
 import hu.e.parser.eSyntax.ConstantVariable;
 import hu.e.parser.eSyntax.RegisterVariable;
 import hu.e.parser.eSyntax.Variable;
 import hu.e.parser.eSyntax.VariableReference;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -32,8 +28,6 @@ public class RootSymbolManager extends AbstractSymbolManager {
 	public RootSymbolManager() {
 		super(null);
 	}
-
-	private final List<LabelSymbol> labels = new ArrayList<LabelSymbol>();
 	
 	private final Map<CompileContextVariable, Integer> compilecontext = new HashMap<CompileContextVariable, Integer>();
 	
@@ -45,11 +39,6 @@ public class RootSymbolManager extends AbstractSymbolManager {
 		if (var.getValue() != null) v = ((ILiteralSymbol)resolve(var.getValue())).getValue();
 		compilecontext.put(var, v);
 		return v;
-	}
-
-	@Override
-	public void addLabelSymbol(LabelSymbol ls) {
-		labels.add(ls);
 	}
 	
 	/* (non-Javadoc)
@@ -77,15 +66,15 @@ public class RootSymbolManager extends AbstractSymbolManager {
 		return null;
 	}
 
-	@Override
-	public void setLabelAddresses(Map<LabelStep, Integer> addresses) throws ECompilerException {
-		for(LabelSymbol ls : labels){
-			if (ls.step == null){
-				throw new ECompilerException(ls.label, "Could not resolve label: "+ls.label.getName());
-			}
-			ls.value = addresses.get(ls.step);
-		}
-	}
+//	@Override
+//	public void setLabelAddresses(Map<LabelStep, Integer> addresses) throws ECompilerException {
+//		for(LabelSymbol ls : labels){
+//			if (ls.step == null){
+//				throw new ECompilerException(ls.label, "Could not resolve label: "+ls.label.getName());
+//			}
+//			ls.value = addresses.get(ls.step);
+//		}
+//	}
 
 	@Override
 	public void contextAssign(VariableReference vr, int value) {
