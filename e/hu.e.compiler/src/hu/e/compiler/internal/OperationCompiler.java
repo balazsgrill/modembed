@@ -51,11 +51,6 @@ public class OperationCompiler {
 			return sm.getSymbol(ref);
 		}
 		
-//		@Override
-//		public void setLabelAddresses(Map<LabelStep, Integer> addresses) throws ECompilerException {
-//			sm.setLabelAddresses(addresses);
-//		}
-		
 		@Override
 		public void contextAssign(VariableReference vr, int value) {
 			sm.contextAssign(vr, value);
@@ -94,16 +89,13 @@ public class OperationCompiler {
 			}
 		}
 		
-//		try{
-			OperationBlock block = operation.getBlock();
-			if (block == null){
-				steps.add(CompilationErrorEntry.error(block,  "Null block!"));
-			}
-			BlockCompiler bc = new BlockCompiler(block);
-			steps.add(bc.compile(new WrappedSymbolManager(sm)));
-//		}catch(ECompilerException e){
-//			steps.add(CompilationErrorEntry.create(e));
-//		}
+		OperationBlock block = operation.getBlock();
+		if (block == null){
+			steps.add(CompilationErrorEntry.error(block,  "Null block!"));
+		}
+		BlockCompiler bc = new BlockCompiler(block);
+		steps.add(bc.compile(new WrappedSymbolManager(sm)));
+
 		return result;
 	}
 	

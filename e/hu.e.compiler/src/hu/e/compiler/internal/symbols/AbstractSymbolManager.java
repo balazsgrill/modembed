@@ -288,9 +288,27 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 			ISymbol... symbols) throws ECompilerException {
 		OperationFinder opfinder = getOpFinder();
 		OperationCompiler oc = opfinder.getOperationCompiler(getCodePlatform(), role, symbols);
-		if (oc == null) 
-			throw new ECompilerException(context, "Cannot find "+role+" operator!");
+		if (oc == null) {
+			StringBuilder sb = new StringBuilder();
+			sb.append("Cannot find ");
+			sb.append(role);
+			sb.append("operator for pattern (");
+			for(ISymbol s : symbols){
+				sb.append(getTypeName(s.getType()));
+				sb.append(", ");
+			}
+			sb.append(")");
+			throw new ECompilerException(context, sb.toString());
+		}
 		return new OperatedSymbol(Collections.singletonList(oc.compile(this)),oc.getReturns(this));
+	}
+	
+	private String getTypeName(TypeDef td){
+		if (td == null) return "<NULLTYPE>";
+		if (td instanceof RefTypeDef){
+			return ((RefTypeDef) td).getType().getName();
+		}
+		return td.toString();
 	}
 	
 	@Override

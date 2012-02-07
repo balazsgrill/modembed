@@ -66,16 +66,6 @@ public class RootSymbolManager extends AbstractSymbolManager {
 		return null;
 	}
 
-//	@Override
-//	public void setLabelAddresses(Map<LabelStep, Integer> addresses) throws ECompilerException {
-//		for(LabelSymbol ls : labels){
-//			if (ls.step == null){
-//				throw new ECompilerException(ls.label, "Could not resolve label: "+ls.label.getName());
-//			}
-//			ls.value = addresses.get(ls.step);
-//		}
-//	}
-
 	@Override
 	public void contextAssign(VariableReference vr, int value) {
 		CompileContextVariable ccvar = (CompileContextVariable) vr.getVar();

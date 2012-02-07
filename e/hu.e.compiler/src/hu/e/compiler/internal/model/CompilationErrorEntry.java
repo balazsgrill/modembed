@@ -8,6 +8,7 @@ import hu.e.compiler.list.ListFactory;
 import hu.e.compiler.list.ProgramStep;
 import hu.e.compiler.list.Severity;
 import hu.e.compiler.list.StatusStep;
+import hu.e.parser.eSyntax.CompilationUnit;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.nodemodel.ICompositeNode;
@@ -37,7 +38,7 @@ public class CompilationErrorEntry{
 	
 	private ProgramStep createStep(){
 		StatusStep ss = ListFactory.eINSTANCE.createStatusStep();
-		ss.setMessage(getMsg());
+		ss.setMessage(getMsg() + getLocation(getItem()));
 		ss.setSeverity(getType());
 		return ss;
 	}
@@ -66,12 +67,12 @@ public class CompilationErrorEntry{
 	
 	public String getLocation(EObject element){
 		ICompositeNode cn = NodeModelUtils.findActualNodeFor(element);
-		Package p = null;
+		CompilationUnit p = null;
 		EObject eo = element;
-		while(!(eo instanceof Package) && (eo != null)){
+		while(!(eo instanceof CompilationUnit) && (eo != null)){
 			eo = eo.eContainer();
-			if (eo instanceof Package)
-				p = (Package)eo;
+			if (eo instanceof CompilationUnit)
+				p = (CompilationUnit)eo;
 		}
 		if (cn != null && p != null){
 			return " at "+p.getName()+" line "+cn.getStartLine();

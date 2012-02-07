@@ -176,9 +176,7 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
 			}
 			throw new ECompilerException(context, "Unknown operator: "+op);
 		}else{
-			
-			
-			
+
 			throw new ECompilerException(context, "This is a runtime operation!");
 		}
 	}
