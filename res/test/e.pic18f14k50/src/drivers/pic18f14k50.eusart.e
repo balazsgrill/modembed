@@ -1,9 +1,9 @@
-namespace pic18f14k50.eusart;
+library microchip.PIC18F14K50.EUSART;
 
-import e.types;
-import microchip.pic18;
-import microchip.pic18.assisted;
-import microchip.PIC18F14K50;
+use e.platform;
+use microchip.pic18;
+use microchip.pic18.assisted;
+use microchip.PIC18F14K50;
 
 /* TXSTA */
 const bit TX9D = 0;
@@ -28,65 +28,65 @@ RS232_init(){
 	 * TX is RB7
 	 * RX is RB5
 	 */
-	aBSF(addr(TRISB),5);
-	aBSF(addr(TRISB),7);
+	aBSF(&(TRISB),5);
+	aBSF(&(TRISB),7);
 
 	/* 
 	 * Configure BRG
 	 * 9600 bps for 4MHz
 	 */
-	aBSF(addr(TXSTA),BRGH);
+	aBSF(&(TXSTA),BRGH);
 	MOVLW(25);
-	aMOVWF(addr(SPBRG));
-	aCLRF(addr(SPBRGH));
+	aMOVWF(&(SPBRG));
+	aCLRF(&(SPBRGH));
 	
 	/* Enable EUSART */
-	aBSF(addr(TXSTA),TXEN);
-	aBSF(addr(RCSTA),CREN);
-	aBCF(addr(TXSTA),SYNC);
-	aBSF(addr(RCSTA),SPEN);
+	aBSF(&(TXSTA),TXEN);
+	aBSF(&(RCSTA),CREN);
+	aBCF(&(TXSTA),SYNC);
+	aBSF(&(RCSTA),SPEN);
 }
 
 /* Tries to send 8 bits. If successful, counter is increased */
 RS232_send(uint8 send, var uint8 counter){
 	/* If sending is pending, no sending.. */
-	aBTFSS(addr(PIR1),TXIF);
+	aBTFSS(&(PIR1),TXIF);
 	GOTO(@nosend);
 	if (isliteral(send)){
 		MOVLW(send);
-		aMOVWF(addr(TXREG));
+		aMOVWF(&(TXREG));
 	}else{
-		MOVFF(addr(send),addr(TXREG));
+		MOVFF(&(send),&(TXREG));
 	}
-	aINCF(addr(counter));
+	aINCF(&(counter));
 	label nosend;
 }
 
 /* Tries to receive 8 bits. If successful, counter is increased */
 RS232_rcv(var uint8 rcv, var uint8 counter){
 	/* If there is received value, receive */
-	aBTFSS(addr(PIR1),RCIF);
+	aBTFSS(&(PIR1),RCIF);
 	GOTO(@norcv);
-	MOVFF(addr(RCREG),addr(rcv));
-	aINCF(addr(counter));
+	MOVFF(&(RCREG),&(rcv));
+	aINCF(&(counter));
 	label norcv;
 }
 
 RS232_syncSend(uint8 send, var uint8 rcv){
 	/* If sending is pending, no sending.. */
-	aBTFSS(addr(PIR1),TXIF);
+	aBTFSS(&(PIR1),TXIF);
 	GOTO(@nosend);
 	if (isliteral(send)){
 		MOVLW(send);
-		aMOVWF(addr(TXREG));
+		aMOVWF(&(TXREG));
 	}else{
-		MOVFF(addr(send),addr(TXREG));
+		MOVFF(&(send),&(TXREG));
 	}
 	label nosend;
 	
 	/* If there is received value, receive */
-	aBTFSS(addr(PIR1),RCIF);
+	aBTFSS(&(PIR1),RCIF);
 	GOTO(@norcv);
-	MOVFF(addr(RCREG),addr(rcv));
+	MOVFF(&(RCREG),&(rcv));
 	label norcv;
 }

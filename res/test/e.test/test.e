@@ -1,10 +1,9 @@
-namespace test;
+library test;
 
-import e.types;
-import e.platform;
-import microchip.pic18;
-import microchip.pic18.assisted;
-import microchip.PIC18F14K50;
+use e.platform;
+use microchip.pic18;
+use microchip.pic18.assisted;
+use microchip.PIC18F14K50;
 import dio;
 import spi;
 import pic18f14k50.eusart;

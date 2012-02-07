@@ -1,9 +1,9 @@
-namespace spi;
+library microchip.PIC18F14K50.SPI;
 
-import e.types;
-import microchip.pic18;
-import microchip.pic18.assisted;
-import dio;
+use e.platform;
+use microchip.pic18;
+use microchip.pic18.assisted;
+use microchip.PIC18F14K50.DIO;
 
 wait(){
 	NOP();

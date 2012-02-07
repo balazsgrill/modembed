@@ -1,11 +1,9 @@
 /*
  * Pic18 architecture
  */
-namespace microchip.pic18;
+library microchip.pic18;
 
-library pic18{
-
-use e::platform;
+use e.platform;
 
 /*
  * 12 bit File register address
@@ -501,4 +499,3 @@ XORLW(uint8 k ){
 	<b0000:4 b1010:4 k:8>
 }
 
-}

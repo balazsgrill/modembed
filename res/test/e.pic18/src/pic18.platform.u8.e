@@ -1,10 +1,8 @@
-namespace e.platform.u8;
+library pic18.platform.u8;
 
-library pic18_platform_u8{
-
-use e::platform;
-use microchip.pic18::pic18;
-use microchip.pic18.assisted::pic18_assisted;
+use e.platform;
+use microchip.pic18;
+use microchip.pic18.assisted;
 
 /*
  * dest += v
@@ -103,4 +101,3 @@ isequal_u8(uint8 d1, uint8 d2){
 	label end;
 } returns bool result;
 
-}

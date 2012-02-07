@@ -1,12 +1,12 @@
 /*
  * PIC18F14K50 specific implementation of DIO
  */
-namespace dio;
+library microchip.PIC18F14K50.DIO;
 
-import e.types;
-import microchip.pic18;
-import microchip.pic18.assisted;
-import microchip.PIC18F14K50;
+use e.platform;
+use microchip.pic18;
+use microchip.pic18.assisted;
+use microchip.PIC18F14K50;
 
 type ChannelID = unsigned 8 bits;
 
@@ -37,28 +37,28 @@ type TChannelConfig = struct{
 	address latch,
 	bit pin
 }
-type TChannelConfigTable = TChannelConfig[channelNum];
+type TChannelConfigTable = array [channelNum] of TChannelConfig
 
 const TChannelConfigTable channelConfigTable = TChannelConfigTable{
-	TChannelConfig{addr(PORTA),addr(LATA),0}, //RA0
-	TChannelConfig{addr(PORTA),addr(LATA),1}, //RA1
-	TChannelConfig{addr(PORTA),addr(LATA),3}, //RA3
-	TChannelConfig{addr(PORTA),addr(LATA),4}, //RA4
-	TChannelConfig{addr(PORTA),addr(LATA),5}, //RA5
+	TChannelConfig{&(PORTA),&(LATA),0}, //RA0
+	TChannelConfig{&(PORTA),&(LATA),1}, //RA1
+	TChannelConfig{&(PORTA),&(LATA),3}, //RA3
+	TChannelConfig{&(PORTA),&(LATA),4}, //RA4
+	TChannelConfig{&(PORTA),&(LATA),5}, //RA5
 	
-	TChannelConfig{addr(PORTB),addr(LATB),4}, //RB4
-	TChannelConfig{addr(PORTB),addr(LATB),5}, //RB5
-	TChannelConfig{addr(PORTB),addr(LATB),6}, //RB6
-	TChannelConfig{addr(PORTB),addr(LATB),7}, //RB7
+	TChannelConfig{&(PORTB),&(LATB),4}, //RB4
+	TChannelConfig{&(PORTB),&(LATB),5}, //RB5
+	TChannelConfig{&(PORTB),&(LATB),6}, //RB6
+	TChannelConfig{&(PORTB),&(LATB),7}, //RB7
 	
-	TChannelConfig{addr(PORTC),addr(LATC),0}, //RC0
-	TChannelConfig{addr(PORTC),addr(LATC),1}, //RC1
-	TChannelConfig{addr(PORTC),addr(LATC),2}, //RC2
-	TChannelConfig{addr(PORTC),addr(LATC),3}, //RC3
-	TChannelConfig{addr(PORTC),addr(LATC),4}, //RC4
-	TChannelConfig{addr(PORTC),addr(LATC),5}, //RC5
-	TChannelConfig{addr(PORTC),addr(LATC),6}, //RC6
-	TChannelConfig{addr(PORTC),addr(LATC),7}  //RC7
+	TChannelConfig{&(PORTC),&(LATC),0}, //RC0
+	TChannelConfig{&(PORTC),&(LATC),1}, //RC1
+	TChannelConfig{&(PORTC),&(LATC),2}, //RC2
+	TChannelConfig{&(PORTC),&(LATC),3}, //RC3
+	TChannelConfig{&(PORTC),&(LATC),4}, //RC4
+	TChannelConfig{&(PORTC),&(LATC),5}, //RC5
+	TChannelConfig{&(PORTC),&(LATC),6}, //RC6
+	TChannelConfig{&(PORTC),&(LATC),7}  //RC7
 	
 };
 
@@ -70,7 +70,7 @@ DIO_RawSet(address latch,const bit pin, uint8 v, bit b = 0){
 			aBCF(latch,pin);
 		}
 	}else{
-		aBTFSC(addr(v),b);
+		aBTFSC(&(v),b);
 		GOTO(@true);
 		//false
 		aBCF(latch,pin);
@@ -83,15 +83,15 @@ DIO_RawSet(address latch,const bit pin, uint8 v, bit b = 0){
 }
 
 DIO_Read(ChannelID channel, uint8 v, bit b = 0){
-	aBCF(addr(v),b);
-	aBTFSC(channelConfigTable[channel].port,channelConfigTable[channel].pin);
-	aBSF(addr(v),b);
+	aBCF(&(v),b);
+	aBTFSC(channelConfigTable[channel]->port,channelConfigTable[channel]->pin);
+	aBSF(&(v),b);
 }
 
 DIO_Set(ChannelID channel, uint8 v, bit b = 0){
 	DIO_RawSet(
-		channelConfigTable[channel].latch,
-		channelConfigTable[channel].pin,
+		channelConfigTable[channel]->latch,
+		channelConfigTable[channel]->pin,
 		v,b
 	);
 }

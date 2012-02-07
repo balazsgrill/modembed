@@ -1,10 +1,8 @@
-namespace e.platform.u16;
+library pic18.platform.u16;
 
-library pic18_platform_u16{
-
-use e::platform;
-use microchip.pic18::pic18;
-use microchip.pic18.assisted::pic18_assisted;
+use e.platform;
+use microchip.pic18;
+use microchip.pic18.assisted;
 
 add_u16_u8(var uint16 dest, uint8 v){
 	if (isliteral(v)){
@@ -76,6 +74,4 @@ set_u16_u16(var uint16 dest, uint16 v){
 		MOVFF(&v,&dest);
 		MOVFF((&v)+1,(&dest)+1);
 	}
-}
-
 }
