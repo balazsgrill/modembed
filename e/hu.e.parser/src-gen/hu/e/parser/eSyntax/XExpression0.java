@@ -56,19 +56,19 @@ public interface XExpression0 extends EObject
   void setA(XExpressionM1 value);
 
   /**
-   * Returns the value of the '<em><b>Member</b></em>' containment reference list.
-   * The list contents are of type {@link hu.e.parser.eSyntax.VariableReference}.
+   * Returns the value of the '<em><b>Member</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Member</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Member</em>' attribute list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Member</em>' containment reference list.
+   * @return the value of the '<em>Member</em>' attribute list.
    * @see hu.e.parser.eSyntax.ESyntaxPackage#getXExpression0_Member()
-   * @model containment="true"
+   * @model unique="false"
    * @generated
    */
-  EList<VariableReference> getMember();
+  EList<String> getMember();
 
 } // XExpression0

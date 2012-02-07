@@ -1647,7 +1647,8 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_13_0 = (Group)cAlternatives_13.eContents().get(0);
 		private final Keyword cLibKeyword_13_0_0 = (Keyword)cGroup_13_0.eContents().get(0);
 		private final Assignment cLibAssignment_13_0_1 = (Assignment)cGroup_13_0.eContents().get(1);
-		private final RuleCall cLibLibraryParserRuleCall_13_0_1_0 = (RuleCall)cLibAssignment_13_0_1.eContents().get(0);
+		private final CrossReference cLibLibraryCrossReference_13_0_1_0 = (CrossReference)cLibAssignment_13_0_1.eContents().get(0);
+		private final RuleCall cLibLibraryQualifiedNameParserRuleCall_13_0_1_0_1 = (RuleCall)cLibLibraryCrossReference_13_0_1_0.eContents().get(1);
 		private final Keyword cSemicolonKeyword_13_0_2 = (Keyword)cGroup_13_0.eContents().get(2);
 		private final Assignment cInstancesAssignment_13_1 = (Assignment)cAlternatives_13.eContents().get(1);
 		private final RuleCall cInstancesLinkedInstanceParserRuleCall_13_1_0 = (RuleCall)cInstancesAssignment_13_1.eContents().get(0);
@@ -1660,11 +1661,11 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//FunctionBinarySection:
 		//	"link" "(" "memwidth" "=" memwidth=LITERAL ";" "pointersize" "=" pointersize=LITERAL ";" (mems+=FunctionMemory ";")+
-		//	")" "{" ("lib" lib+=Library ";" | instances+=LinkedInstance)* "link" "{" do=OperationBlock "}" "}";
+		//	")" "{" ("lib" lib+=[Library|QualifiedName] ";" | instances+=LinkedInstance)* "link" "{" do=OperationBlock "}" "}";
 		public ParserRule getRule() { return rule; }
 
 		//"link" "(" "memwidth" "=" memwidth=LITERAL ";" "pointersize" "=" pointersize=LITERAL ";" (mems+=FunctionMemory ";")+ ")"
-		//"{" ("lib" lib+=Library ";" | instances+=LinkedInstance)* "link" "{" do=OperationBlock "}" "}"
+		//"{" ("lib" lib+=[Library|QualifiedName] ";" | instances+=LinkedInstance)* "link" "{" do=OperationBlock "}" "}"
 		public Group getGroup() { return cGroup; }
 
 		//"link"
@@ -1721,20 +1722,23 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_12() { return cLeftCurlyBracketKeyword_12; }
 
-		//("lib" lib+=Library ";" | instances+=LinkedInstance)*
+		//("lib" lib+=[Library|QualifiedName] ";" | instances+=LinkedInstance)*
 		public Alternatives getAlternatives_13() { return cAlternatives_13; }
 
-		//"lib" lib+=Library ";"
+		//"lib" lib+=[Library|QualifiedName] ";"
 		public Group getGroup_13_0() { return cGroup_13_0; }
 
 		//"lib"
 		public Keyword getLibKeyword_13_0_0() { return cLibKeyword_13_0_0; }
 
-		//lib+=Library
+		//lib+=[Library|QualifiedName]
 		public Assignment getLibAssignment_13_0_1() { return cLibAssignment_13_0_1; }
 
-		//Library
-		public RuleCall getLibLibraryParserRuleCall_13_0_1_0() { return cLibLibraryParserRuleCall_13_0_1_0; }
+		//[Library|QualifiedName]
+		public CrossReference getLibLibraryCrossReference_13_0_1_0() { return cLibLibraryCrossReference_13_0_1_0; }
+
+		//QualifiedName
+		public RuleCall getLibLibraryQualifiedNameParserRuleCall_13_0_1_0_1() { return cLibLibraryQualifiedNameParserRuleCall_13_0_1_0_1; }
 
 		//";"
 		public Keyword getSemicolonKeyword_13_0_2() { return cSemicolonKeyword_13_0_2; }
@@ -2196,13 +2200,13 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Keyword cHyphenMinusGreaterThanSignKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Assignment cMemberAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cMemberVariableReferenceParserRuleCall_1_1_0 = (RuleCall)cMemberAssignment_1_1.eContents().get(0);
+		private final RuleCall cMemberIDTerminalRuleCall_1_1_0 = (RuleCall)cMemberAssignment_1_1.eContents().get(0);
 		
 		//XExpression0:
-		//	a=XExpressionM1 ("->" member+=VariableReference)*;
+		//	a=XExpressionM1 ("->" member+=ID)*;
 		public ParserRule getRule() { return rule; }
 
-		//a=XExpressionM1 ("->" member+=VariableReference)*
+		//a=XExpressionM1 ("->" member+=ID)*
 		public Group getGroup() { return cGroup; }
 
 		//a=XExpressionM1
@@ -2211,17 +2215,17 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		//XExpressionM1
 		public RuleCall getAXExpressionM1ParserRuleCall_0_0() { return cAXExpressionM1ParserRuleCall_0_0; }
 
-		//("->" member+=VariableReference)*
+		//("->" member+=ID)*
 		public Group getGroup_1() { return cGroup_1; }
 
 		//"->"
 		public Keyword getHyphenMinusGreaterThanSignKeyword_1_0() { return cHyphenMinusGreaterThanSignKeyword_1_0; }
 
-		//member+=VariableReference
+		//member+=ID
 		public Assignment getMemberAssignment_1_1() { return cMemberAssignment_1_1; }
 
-		//VariableReference
-		public RuleCall getMemberVariableReferenceParserRuleCall_1_1_0() { return cMemberVariableReferenceParserRuleCall_1_1_0; }
+		//ID
+		public RuleCall getMemberIDTerminalRuleCall_1_1_0() { return cMemberIDTerminalRuleCall_1_1_0; }
 	}
 
 	public class XExpressionM1Elements extends AbstractParserRuleElementFinder {
@@ -3704,7 +3708,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 
 	//FunctionBinarySection:
 	//	"link" "(" "memwidth" "=" memwidth=LITERAL ";" "pointersize" "=" pointersize=LITERAL ";" (mems+=FunctionMemory ";")+
-	//	")" "{" ("lib" lib+=Library ";" | instances+=LinkedInstance)* "link" "{" do=OperationBlock "}" "}";
+	//	")" "{" ("lib" lib+=[Library|QualifiedName] ";" | instances+=LinkedInstance)* "link" "{" do=OperationBlock "}" "}";
 	public FunctionBinarySectionElements getFunctionBinarySectionAccess() {
 		return (pFunctionBinarySection != null) ? pFunctionBinarySection : (pFunctionBinarySection = new FunctionBinarySectionElements());
 	}
@@ -3827,7 +3831,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//XExpression0:
-	//	a=XExpressionM1 ("->" member+=VariableReference)*;
+	//	a=XExpressionM1 ("->" member+=ID)*;
 	public XExpression0Elements getXExpression0Access() {
 		return (pXExpression0 != null) ? pXExpression0 : (pXExpression0 = new XExpression0Elements());
 	}

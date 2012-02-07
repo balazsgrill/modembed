@@ -9,6 +9,9 @@ package hu.e.compiler.internal.model;
  */
 public enum OPERATION {
 	
+	//
+	SET,
+	
 	//Branch
 	BRANCH,
 	

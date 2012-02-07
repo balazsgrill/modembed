@@ -230,7 +230,7 @@ FunctionBinarySection:
 		(mems+=FunctionMemory ';')+
 	')' '{'
 		(
-		('lib' lib+=Library ';') |
+		('lib' lib+=[Library|QualifiedName] ';') |
 		(instances+=LinkedInstance )
 		)*
 		
@@ -291,7 +291,7 @@ XExpression1:
 ;
 
 XExpression0:
-	a=XExpressionM1 ('->' member+=VariableReference)*
+	a=XExpressionM1 ('->' member+=ID)*
 ;
 
 XExpressionM1:

@@ -477,7 +477,7 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	 *         memwidth=LITERAL 
 	 *         pointersize=LITERAL 
 	 *         mems+=FunctionMemory+ 
-	 *         (lib+=Library | instances+=LinkedInstance)* 
+	 *         (lib+=[Library|QualifiedName] | instances+=LinkedInstance)* 
 	 *         do=OperationBlock 
 	 *         start=XExpression
 	 *     )
@@ -619,7 +619,7 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (memwidth=LITERAL pointersize=LITERAL mems+=FunctionMemory+ (lib+=Library | instances+=LinkedInstance)* do=OperationBlock)
+	 *     (memwidth=LITERAL pointersize=LITERAL mems+=FunctionMemory+ (lib+=[Library|QualifiedName] | instances+=LinkedInstance)* do=OperationBlock)
 	 *
 	 * Features:
 	 *    memwidth[1, 1]
@@ -1093,7 +1093,7 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (a=XExpressionM1 member+=VariableReference*)
+	 *     (a=XExpressionM1 member+=ID*)
 	 *
 	 * Features:
 	 *    a[1, 1]

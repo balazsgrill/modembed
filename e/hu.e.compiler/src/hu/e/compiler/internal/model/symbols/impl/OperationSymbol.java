@@ -10,14 +10,9 @@ import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
 import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.compiler.internal.model.symbols.IVariableSymbol;
 import hu.e.compiler.list.ProgramStep;
-import hu.e.parser.eSyntax.ADDITIVE_OPERATOR;
-import hu.e.parser.eSyntax.BOOLEAN_OPERATOR;
-import hu.e.parser.eSyntax.EQUALITY_OPERATOR;
-import hu.e.parser.eSyntax.MULTIPLICATIVE_OPERATOR;
 import hu.e.parser.eSyntax.OperationRole;
 import hu.e.parser.eSyntax.StructTypeDefMember;
 import hu.e.parser.eSyntax.TypeDef;
-import hu.e.parser.eSyntax.UNARY_OPERATOR;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,58 +30,16 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
 	private final ISymbol b;
 	private final ISymbolManager sm;
 	
-	public static OPERATION findop(Object op){
-		if (op instanceof OPERATION) return (OPERATION)op;
-		
-		if (op instanceof UNARY_OPERATOR){
-			switch((UNARY_OPERATOR)op){
-			case MINUS: return OPERATION.UNARYMINUS;
-			case NOT: return OPERATION.NOT;
-			}
-		}
-		if (op instanceof BOOLEAN_OPERATOR){
-			switch((BOOLEAN_OPERATOR)op){
-			case AND: return OPERATION.AND;
-			case OR: return OPERATION.OR;
-			}
-		}
-		if (op instanceof EQUALITY_OPERATOR){
-			switch((EQUALITY_OPERATOR)op){
-			case EQUALS: return OPERATION.EQUALS;
-			case NOTEQUALS: return OPERATION.NOTEQUALS;
-			case GT: return OPERATION.GT;
-			case LT: return OPERATION.LT;
-			case GTE: return OPERATION.GTE;
-			case LTE: return OPERATION.LTE;
-			}
-		}
-		if (op instanceof ADDITIVE_OPERATOR){
-			switch((ADDITIVE_OPERATOR)op){
-			case ADD: return OPERATION.ADD;
-			case MINUS: return OPERATION.MINUS;
-			}
-		}
-		if (op instanceof MULTIPLICATIVE_OPERATOR){
-			switch((MULTIPLICATIVE_OPERATOR)op){
-			case DIV: return OPERATION.DIV;
-			case MOD: return OPERATION.MOD;
-			case MUL: return OPERATION.MUL;
-			}
-		}
-		
-		return null;
-	}
-	
 	private final EObject context;
 	
-	public OperationSymbol(EObject context, ISymbol a, Object op, ISymbol b, ISymbolManager sm) throws ECompilerException {
+	public OperationSymbol(EObject context, ISymbol a, OPERATION op, ISymbol b, ISymbolManager sm) throws ECompilerException {
 		super();
 		this.context = context;
 		this.a = a;
 		if (a == null){
 			throw new ECompilerException(context, "The operation needs at least one argument");
 		}
-		this.op = findop(op);
+		this.op = op;
 		if (this.op == null){
 			throw new ECompilerException(context, "Could not find operator for "+op);
 		}
@@ -151,6 +104,11 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
 		
 		sm.getVariableManager().startBlock();
 		switch(op){
+		case SET:
+			result = (IVariableSymbol)a;
+			execute(OperationRole.SET, a, b);
+			break;
+		
 		case ADD:
 		case AND:
 		case MINUS:

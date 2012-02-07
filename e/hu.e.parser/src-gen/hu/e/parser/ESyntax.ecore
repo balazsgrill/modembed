@@ -145,8 +145,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="pointersize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mems" upperBound="-1" eType="ecore:EClass platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//FunctionMemory"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="lib" upperBound="-1" eType="ecore:EClass platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Library"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lib" unique="false" upperBound="-1"
+        eType="ecore:EClass platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//Library"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="instances" upperBound="-1"
         eType="ecore:EClass platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//LinkedInstance"
         containment="true"/>
@@ -204,9 +204,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="XExpression0">
     <eStructuralFeatures xsi:type="ecore:EReference" name="a" eType="ecore:EClass platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XExpressionM1"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="member" upperBound="-1"
-        eType="ecore:EClass platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//VariableReference"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="member" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="XExpressionM1">
     <eStructuralFeatures xsi:type="ecore:EReference" name="a" eType="ecore:EClass platform:/resource/hu.e.parser/src-gen/hu/e/parser/ESyntax.ecore#//XPrimaryExpression"

@@ -3,6 +3,8 @@
  */
 package hu.e.parser.scoping;
 
+import hu.e.parser.eSyntax.XExpression0;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,6 +27,9 @@ public class StructMemberScope extends AbstractScope {
 	 */
 	public StructMemberScope(EObject eobject, IScope parent) {
 		super(parent, false);
+		if (eobject instanceof XExpression0){
+			
+		}
 //		if (eobject instanceof StructRef){
 //			EObject eo = eobject.eContainer();
 //			if (eo instanceof VariableReference){

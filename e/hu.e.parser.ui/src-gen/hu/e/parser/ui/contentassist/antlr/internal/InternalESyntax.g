@@ -13277,8 +13277,12 @@ rule__FunctionBinarySection__LibAssignment_13_0_1
     }
 :
 (
-{ before(grammarAccess.getFunctionBinarySectionAccess().getLibLibraryParserRuleCall_13_0_1_0()); }
-	ruleLibrary{ after(grammarAccess.getFunctionBinarySectionAccess().getLibLibraryParserRuleCall_13_0_1_0()); }
+{ before(grammarAccess.getFunctionBinarySectionAccess().getLibLibraryCrossReference_13_0_1_0()); }
+(
+{ before(grammarAccess.getFunctionBinarySectionAccess().getLibLibraryQualifiedNameParserRuleCall_13_0_1_0_1()); }
+	ruleQualifiedName{ after(grammarAccess.getFunctionBinarySectionAccess().getLibLibraryQualifiedNameParserRuleCall_13_0_1_0_1()); }
+)
+{ after(grammarAccess.getFunctionBinarySectionAccess().getLibLibraryCrossReference_13_0_1_0()); }
 )
 
 ;
@@ -13631,8 +13635,8 @@ rule__XExpression0__MemberAssignment_1_1
     }
 :
 (
-{ before(grammarAccess.getXExpression0Access().getMemberVariableReferenceParserRuleCall_1_1_0()); }
-	ruleVariableReference{ after(grammarAccess.getXExpression0Access().getMemberVariableReferenceParserRuleCall_1_1_0()); }
+{ before(grammarAccess.getXExpression0Access().getMemberIDTerminalRuleCall_1_1_0()); }
+	RULE_ID{ after(grammarAccess.getXExpression0Access().getMemberIDTerminalRuleCall_1_1_0()); }
 )
 
 ;

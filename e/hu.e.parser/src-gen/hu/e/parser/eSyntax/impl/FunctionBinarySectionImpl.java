@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -99,7 +100,7 @@ public class FunctionBinarySectionImpl extends BinarySectionImpl implements Func
   protected EList<FunctionMemory> mems;
 
   /**
-   * The cached value of the '{@link #getLib() <em>Lib</em>}' containment reference list.
+   * The cached value of the '{@link #getLib() <em>Lib</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getLib()
@@ -218,7 +219,7 @@ public class FunctionBinarySectionImpl extends BinarySectionImpl implements Func
   {
     if (lib == null)
     {
-      lib = new EObjectContainmentEList<Library>(Library.class, this, ESyntaxPackage.FUNCTION_BINARY_SECTION__LIB);
+      lib = new EObjectResolvingEList<Library>(Library.class, this, ESyntaxPackage.FUNCTION_BINARY_SECTION__LIB);
     }
     return lib;
   }
@@ -297,8 +298,6 @@ public class FunctionBinarySectionImpl extends BinarySectionImpl implements Func
     {
       case ESyntaxPackage.FUNCTION_BINARY_SECTION__MEMS:
         return ((InternalEList<?>)getMems()).basicRemove(otherEnd, msgs);
-      case ESyntaxPackage.FUNCTION_BINARY_SECTION__LIB:
-        return ((InternalEList<?>)getLib()).basicRemove(otherEnd, msgs);
       case ESyntaxPackage.FUNCTION_BINARY_SECTION__INSTANCES:
         return ((InternalEList<?>)getInstances()).basicRemove(otherEnd, msgs);
       case ESyntaxPackage.FUNCTION_BINARY_SECTION__DO:

@@ -2751,18 +2751,15 @@ ruleFunctionBinarySection returns [EObject current=null]
     }
 (
 (
-		{ 
-	        newCompositeNode(grammarAccess.getFunctionBinarySectionAccess().getLibLibraryParserRuleCall_13_0_1_0()); 
-	    }
-		lv_lib_15_0=ruleLibrary		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getFunctionBinarySectionRule());
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getFunctionBinarySectionRule());
 	        }
-       		add(
-       			$current, 
-       			"lib",
-        		lv_lib_15_0, 
-        		"Library");
+        }
+		{ 
+	        newCompositeNode(grammarAccess.getFunctionBinarySectionAccess().getLibLibraryCrossReference_13_0_1_0()); 
+	    }
+		ruleQualifiedName		{ 
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3555,19 +3552,19 @@ ruleXExpression0 returns [EObject current=null]
     }
 (
 (
-		{ 
-	        newCompositeNode(grammarAccess.getXExpression0Access().getMemberVariableReferenceParserRuleCall_1_1_0()); 
-	    }
-		lv_member_2_0=ruleVariableReference		{
+		lv_member_2_0=RULE_ID
+		{
+			newLeafNode(lv_member_2_0, grammarAccess.getXExpression0Access().getMemberIDTerminalRuleCall_1_1_0()); 
+		}
+		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getXExpression0Rule());
+	            $current = createModelElement(grammarAccess.getXExpression0Rule());
 	        }
-       		add(
+       		addWithLastConsumed(
        			$current, 
        			"member",
         		lv_member_2_0, 
-        		"VariableReference");
-	        afterParserOrEnumRuleCall();
+        		"ID");
 	    }
 
 )

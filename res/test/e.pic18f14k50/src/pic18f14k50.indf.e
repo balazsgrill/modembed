@@ -8,7 +8,7 @@ use microchip.PIC18F14K50;
 type HWPointer = struct{
 	address pointerreg,
 	address valuereg
-}
+};
 
 type HWPID = unsigned 2 bits;
 
@@ -16,7 +16,7 @@ const HWPID HWP0 = 0;
 const HWPID HWP1 = 1;
 const HWPID HWP2 = 2;
 
-type HWPointerConfig = array [3] of HWPointer
+type HWPointerConfig = array [3] of HWPointer;
 
 const HWPointerConfig pointers = HWPointerConfig{
 	HWPointer{&FSR0, &INDF0},

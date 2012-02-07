@@ -7,6 +7,7 @@ import hu.e.compiler.internal.OperationCompiler;
 import hu.e.compiler.internal.linking.CodePlatform;
 import hu.e.compiler.internal.linking.OperationFinder;
 import hu.e.compiler.internal.model.ISymbolManager;
+import hu.e.compiler.internal.model.OPERATION;
 import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
 import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.compiler.internal.model.symbols.IVariableSymbol;
@@ -17,10 +18,15 @@ import hu.e.compiler.internal.model.symbols.impl.OperationSymbol;
 import hu.e.compiler.internal.model.symbols.impl.StructLiteralSymbol;
 import hu.e.compiler.internal.model.symbols.impl.VariableSymbol;
 import hu.e.compiler.list.ProgramStep;
+import hu.e.parser.eSyntax.ADDITIVE_OPERATOR;
 import hu.e.parser.eSyntax.ArrayTypeDef;
+import hu.e.parser.eSyntax.BOOLEAN_OPERATOR;
+import hu.e.parser.eSyntax.EQUALITY_OPERATOR;
+import hu.e.parser.eSyntax.MULTIPLICATIVE_OPERATOR;
 import hu.e.parser.eSyntax.Operation;
 import hu.e.parser.eSyntax.OperationCall;
 import hu.e.parser.eSyntax.OperationRole;
+import hu.e.parser.eSyntax.RefTypeDef;
 import hu.e.parser.eSyntax.StructTypeDef;
 import hu.e.parser.eSyntax.StructTypeDefMember;
 import hu.e.parser.eSyntax.TypeDef;
@@ -34,6 +40,7 @@ import hu.e.parser.eSyntax.XExpression2;
 import hu.e.parser.eSyntax.XExpression3;
 import hu.e.parser.eSyntax.XExpression4;
 import hu.e.parser.eSyntax.XExpression5;
+import hu.e.parser.eSyntax.XExpression6;
 import hu.e.parser.eSyntax.XExpressionLiteral;
 import hu.e.parser.eSyntax.XExpressionM1;
 import hu.e.parser.eSyntax.XIsLiteralExpression;
@@ -65,13 +72,31 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 	
 	@Override
 	public ISymbol resolve(XExpression x) throws ECompilerException{
-		return resolve((XExpression5)x);
+		return resolve((XExpression6)x);
+	}
+	
+	private ISymbol resolve(XExpression6 x) throws ECompilerException{
+		ISymbol a = resolve(x.getA());
+		
+		for(VariableReference vr : x.getRef()){
+			a = new OperationSymbol(x, getSymbol(vr.getVar()), OPERATION.SET, a, this);
+		}
+		
+		return a;
+	}
+	
+	private OPERATION getOp(EObject x, BOOLEAN_OPERATOR op) throws ECompilerException{
+		switch(op){
+		case AND: return OPERATION.AND;
+		case OR: return OPERATION.OR; 
+		}
+		throw new ECompilerException(x, "Unsupported operator: "+op);
 	}
 	
 	private ISymbol resolve(XExpression5 x) throws ECompilerException{
 		ISymbol a = resolve(x.getA());
 		for(int i=0;i<x.getB().size();i++){
-			a = new OperationSymbol(x, a, x.getOp().get(i), resolve(x.getB().get(i)), this);
+			a = new OperationSymbol(x, a, getOp(x,x.getOp().get(i)), resolve(x.getB().get(i)), this);
 		}
 		return a;
 	}
@@ -79,43 +104,92 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 	private ISymbol resolve(XExpression4 x) throws ECompilerException{
 		ISymbol a = resolve(x.getA());
 		for(int i=0;i<x.getB().size();i++){
-			a = new OperationSymbol(x, a, x.getOp().get(i), resolve(x.getB().get(i)), this);
+			a = new OperationSymbol(x, a, getOp(x,x.getOp().get(i)), resolve(x.getB().get(i)), this);
 		}
 		return a;
 	}
 	
+	private OPERATION getOp(EObject x, EQUALITY_OPERATOR op) throws ECompilerException {
+		switch(op){
+		case EQUALS: return OPERATION.EQUALS;
+		case NOTEQUALS: return OPERATION.NOTEQUALS;
+		case GT: return OPERATION.GT;
+		case LT: return OPERATION.LT;
+		case GTE: return OPERATION.GTE;
+		case LTE: return OPERATION.LTE;
+		}
+		throw new ECompilerException(x, "Unsupported operator: "+op);
+	}
+
 	private ISymbol resolve(XExpression3 x) throws ECompilerException{
 		ISymbol a = resolve(x.getA());
 		for(int i=0;i<x.getB().size();i++){
-			a = new OperationSymbol(x, a, x.getOp().get(i), resolve(x.getB().get(i)), this);
+			a = new OperationSymbol(x, a, getOp(x,x.getOp().get(i)), resolve(x.getB().get(i)), this);
 		}
 		return a;
 	}
 	
+	private OPERATION getOp(EObject x, ADDITIVE_OPERATOR op) throws ECompilerException {
+		switch(op){
+		case ADD: return OPERATION.ADD;
+		case MINUS: return OPERATION.MINUS;
+		}
+		throw new ECompilerException(x, "Unsupported operator: "+op);
+	}
+
 	private ISymbol resolve(XExpression2 x) throws ECompilerException{
 		ISymbol a = resolve(x.getA());
 		for(int i=0;i<x.getB().size();i++){
-			a = new OperationSymbol(x, a, x.getOp().get(i), resolve(x.getB().get(i)), this);
+			a = new OperationSymbol(x, a, getOp(x,x.getOp().get(i)), resolve(x.getB().get(i)), this);
 		}
 		return a;
 	}
 	
+	private OPERATION getOp(EObject x, MULTIPLICATIVE_OPERATOR op) throws ECompilerException {
+		switch(op){
+		case DIV: return OPERATION.DIV;
+		case MOD: return OPERATION.MOD;
+		case MUL: return OPERATION.MUL;
+		}
+		throw new ECompilerException(x, "Unsupported operator: "+op);
+	}
+
 	private ISymbol resolve(XExpression1 x) throws ECompilerException{
 		ISymbol a = resolve(x.getA());
 		for(UNARY_OPERATOR op : x.getOperator()){
-			a = new OperationSymbol(x, a, op, null, this);
+			a = new OperationSymbol(x, a, getOp(x, op), null, this);
 		}
 		return a;
 	}
 	
+	private OPERATION getOp(EObject x, UNARY_OPERATOR op) throws ECompilerException {
+		switch (op) {
+		case MINUS: return OPERATION.UNARYMINUS;
+		case NOT: return OPERATION.NOT;
+		}
+		throw new ECompilerException(x, "Unsupported operator: "+op);
+	}
+
 	private ISymbol resolve(XExpression0 x) throws ECompilerException{
 		ISymbol a = resolve(x.getA());
-		for(VariableReference ref : x.getMember()){
-			Variable v = ref.getVar();
-			if (v instanceof StructTypeDefMember){
-				a = a.getMember(this, (StructTypeDefMember)v);
+		for(String v : x.getMember()){
+			TypeDef td = a.getType();
+			while(td instanceof RefTypeDef){
+				td = ((RefTypeDef)td).getType().getDef();
+			}
+			if (td instanceof StructTypeDef){
+				boolean ok = false;
+				for(Variable member : ((StructTypeDef) td).getMembers()) if (!ok){
+					if (v.equals(member.getName())){
+						a = a.getMember(this, (StructTypeDefMember)member);
+						ok = true;
+					}
+				}
+				if (!ok){
+					throw new ECompilerException(x, "No such member: "+v);
+				}
 			}else{
-				throw new ECompilerException(x, "No such member: "+v.getName());
+				throw new ECompilerException(x, "Struct expression expected");
 			}
 		}
 		return a;

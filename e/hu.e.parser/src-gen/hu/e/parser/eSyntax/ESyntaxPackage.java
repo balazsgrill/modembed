@@ -989,7 +989,7 @@ public interface ESyntaxPackage extends EPackage
   int FUNCTION_BINARY_SECTION__MEMS = BINARY_SECTION_FEATURE_COUNT + 2;
 
   /**
-   * The feature id for the '<em><b>Lib</b></em>' containment reference list.
+   * The feature id for the '<em><b>Lib</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1405,7 +1405,7 @@ public interface ESyntaxPackage extends EPackage
   int XEXPRESSION0__A = 0;
 
   /**
-   * The feature id for the '<em><b>Member</b></em>' containment reference list.
+   * The feature id for the '<em><b>Member</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -2969,10 +2969,10 @@ public interface ESyntaxPackage extends EPackage
   EReference getFunctionBinarySection_Mems();
 
   /**
-   * Returns the meta object for the containment reference list '{@link hu.e.parser.eSyntax.FunctionBinarySection#getLib <em>Lib</em>}'.
+   * Returns the meta object for the reference list '{@link hu.e.parser.eSyntax.FunctionBinarySection#getLib <em>Lib</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Lib</em>'.
+   * @return the meta object for the reference list '<em>Lib</em>'.
    * @see hu.e.parser.eSyntax.FunctionBinarySection#getLib()
    * @see #getFunctionBinarySection()
    * @generated
@@ -3320,15 +3320,15 @@ public interface ESyntaxPackage extends EPackage
   EReference getXExpression0_A();
 
   /**
-   * Returns the meta object for the containment reference list '{@link hu.e.parser.eSyntax.XExpression0#getMember <em>Member</em>}'.
+   * Returns the meta object for the attribute list '{@link hu.e.parser.eSyntax.XExpression0#getMember <em>Member</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Member</em>'.
+   * @return the meta object for the attribute list '<em>Member</em>'.
    * @see hu.e.parser.eSyntax.XExpression0#getMember()
    * @see #getXExpression0()
    * @generated
    */
-  EReference getXExpression0_Member();
+  EAttribute getXExpression0_Member();
 
   /**
    * Returns the meta object for class '{@link hu.e.parser.eSyntax.XExpressionM1 <em>XExpression M1</em>}'.
@@ -4539,7 +4539,7 @@ public interface ESyntaxPackage extends EPackage
     EReference FUNCTION_BINARY_SECTION__MEMS = eINSTANCE.getFunctionBinarySection_Mems();
 
     /**
-     * The meta object literal for the '<em><b>Lib</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Lib</b></em>' reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -4827,12 +4827,12 @@ public interface ESyntaxPackage extends EPackage
     EReference XEXPRESSION0__A = eINSTANCE.getXExpression0_A();
 
     /**
-     * The meta object literal for the '<em><b>Member</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Member</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference XEXPRESSION0__MEMBER = eINSTANCE.getXExpression0_Member();
+    EAttribute XEXPRESSION0__MEMBER = eINSTANCE.getXExpression0_Member();
 
     /**
      * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.XExpressionM1Impl <em>XExpression M1</em>}' class.

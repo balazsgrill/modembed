@@ -100,17 +100,17 @@ public interface FunctionBinarySection extends BinarySection
   EList<FunctionMemory> getMems();
 
   /**
-   * Returns the value of the '<em><b>Lib</b></em>' containment reference list.
+   * Returns the value of the '<em><b>Lib</b></em>' reference list.
    * The list contents are of type {@link hu.e.parser.eSyntax.Library}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Lib</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Lib</em>' reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Lib</em>' containment reference list.
+   * @return the value of the '<em>Lib</em>' reference list.
    * @see hu.e.parser.eSyntax.ESyntaxPackage#getFunctionBinarySection_Lib()
-   * @model containment="true"
+   * @model
    * @generated
    */
   EList<Library> getLib();

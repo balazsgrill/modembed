@@ -36,8 +36,8 @@ type TChannelConfig = struct{
 	address port,
 	address latch,
 	bit pin
-}
-type TChannelConfigTable = array [channelNum] of TChannelConfig
+};
+type TChannelConfigTable = array [channelNum] of TChannelConfig;
 
 const TChannelConfigTable channelConfigTable = TChannelConfigTable{
 	TChannelConfig{&(PORTA),&(LATA),0}, //RA0

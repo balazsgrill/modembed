@@ -55,11 +55,11 @@ public class ESyntaxScopeProvider extends AbstractDeclarativeScopeProvider {
 		return importedScope(eobject, ref);
 	}
 	
-	public IScope scope_Package_uses(EObject eobject, EReference ref){		
+	public IScope scope_CompilationUnit_use(EObject eobject, EReference ref){		
 		return pluginScope(eobject, ref);
 	}
 	
-	public IScope scope_Library_use(EObject eobject, EReference ref){		
+	public IScope scope_FunctionBinarySection_lib(EObject eobject, EReference ref){		
 		return pluginScope(eobject, ref);
 	}
 	
@@ -71,7 +71,7 @@ public class ESyntaxScopeProvider extends AbstractDeclarativeScopeProvider {
 		return importedScope(eobject, ref);
 	}
 	
-	public IScope scope_StructRef_ref(EObject eobject, EReference ref){
+	public IScope scope_XExpression0_member(EObject eobject, EReference ref){
 		return new StructMemberScope(eobject, delegateGetScope(eobject, ref));
 	}
 	

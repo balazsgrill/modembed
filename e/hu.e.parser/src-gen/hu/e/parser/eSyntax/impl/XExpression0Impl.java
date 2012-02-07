@@ -7,7 +7,6 @@
 package hu.e.parser.eSyntax.impl;
 
 import hu.e.parser.eSyntax.ESyntaxPackage;
-import hu.e.parser.eSyntax.VariableReference;
 import hu.e.parser.eSyntax.XExpression0;
 import hu.e.parser.eSyntax.XExpressionM1;
 
@@ -24,8 +23,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -54,14 +52,14 @@ public class XExpression0Impl extends MinimalEObjectImpl.Container implements XE
   protected XExpressionM1 a;
 
   /**
-   * The cached value of the '{@link #getMember() <em>Member</em>}' containment reference list.
+   * The cached value of the '{@link #getMember() <em>Member</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getMember()
    * @generated
    * @ordered
    */
-  protected EList<VariableReference> member;
+  protected EList<String> member;
 
   /**
    * <!-- begin-user-doc -->
@@ -137,11 +135,11 @@ public class XExpression0Impl extends MinimalEObjectImpl.Container implements XE
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<VariableReference> getMember()
+  public EList<String> getMember()
   {
     if (member == null)
     {
-      member = new EObjectContainmentEList<VariableReference>(VariableReference.class, this, ESyntaxPackage.XEXPRESSION0__MEMBER);
+      member = new EDataTypeEList<String>(String.class, this, ESyntaxPackage.XEXPRESSION0__MEMBER);
     }
     return member;
   }
@@ -158,8 +156,6 @@ public class XExpression0Impl extends MinimalEObjectImpl.Container implements XE
     {
       case ESyntaxPackage.XEXPRESSION0__A:
         return basicSetA(null, msgs);
-      case ESyntaxPackage.XEXPRESSION0__MEMBER:
-        return ((InternalEList<?>)getMember()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -198,7 +194,7 @@ public class XExpression0Impl extends MinimalEObjectImpl.Container implements XE
         return;
       case ESyntaxPackage.XEXPRESSION0__MEMBER:
         getMember().clear();
-        getMember().addAll((Collection<? extends VariableReference>)newValue);
+        getMember().addAll((Collection<? extends String>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -240,6 +236,23 @@ public class XExpression0Impl extends MinimalEObjectImpl.Container implements XE
         return member != null && !member.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (member: ");
+    result.append(member);
+    result.append(')');
+    return result.toString();
   }
 
 } //XExpression0Impl
