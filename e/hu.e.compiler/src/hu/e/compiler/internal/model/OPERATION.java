@@ -38,6 +38,8 @@ public enum OPERATION {
 	
 	//UNARY
 	UNARYMINUS,
-	NOT
+	NOT,
+	REFERENCE,
+	DEREFERENCE
 	
 }

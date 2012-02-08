@@ -4,67 +4,319 @@
     <steps xsi:type="lst:SequenceStep">
       <steps xsi:type="lst:SequenceStep">
         <steps xsi:type="lst:SequenceStep">
-          <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (uint8, &lt;NULLTYPE>, ) at test line 48"/>
-          <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (uint8, &lt;NULLTYPE>, ) at test line 50"/>
-          <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (uint8, &lt;NULLTYPE>, ) at test line 51"/>
-          <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (uint8, &lt;NULLTYPE>, ) at test line 52"/>
-          <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (uint8, &lt;NULLTYPE>, ) at test line 53"/>
-          <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (uint8, &lt;NULLTYPE>, ) at test line 54"/>
-          <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (uint8, &lt;NULLTYPE>, ) at test line 55"/>
-          <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (uint8, &lt;NULLTYPE>, ) at test line 56"/>
-          <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (uint8, &lt;NULLTYPE>, ) at test line 57"/>
-          <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (uint8, &lt;NULLTYPE>, ) at test line 58"/>
-          <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (uint8, &lt;NULLTYPE>, ) at test line 59"/>
-          <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (uint8, &lt;NULLTYPE>, ) at test line 61"/>
           <steps xsi:type="lst:SequenceStep">
             <steps xsi:type="lst:SequenceStep">
-              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.EUSART line 31"/>
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@a29867 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@a29867 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
                   <steps xsi:type="lst:SequenceStep">
                     <steps xsi:type="lst:SequenceStep">
-                      <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@18394a (name: f) (kind: default, default: null) at microchip.pic18.assisted line 11"/>
+                      <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:InstructionStep" code="3664" width="16"/>
+                      </steps>
                     </steps>
-                  </steps>
-                  <steps xsi:type="lst:SequenceStep">
                     <steps xsi:type="lst:SequenceStep">
-                      <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e4b65 (name: f) (kind: default, default: null) at microchip.pic18 line 253"/>
+                      <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:SequenceStep">
+                          <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep"/>
+                          </steps>
+                        </steps>
+                        <steps xsi:type="lst:SequenceStep">
+                          <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:InstructionStep" code="28371" width="16"/>
+                          </steps>
+                        </steps>
+                      </steps>
                     </steps>
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.EUSART line 32"/>
+            </steps>
+          </steps>
+          <steps xsi:type="lst:SequenceStep">
+            <steps xsi:type="lst:SequenceStep">
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@a29867 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@a29867 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
                   <steps xsi:type="lst:SequenceStep">
                     <steps xsi:type="lst:SequenceStep">
-                      <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@18394a (name: f) (kind: default, default: null) at microchip.pic18.assisted line 11"/>
-                    </steps>
-                  </steps>
-                  <steps xsi:type="lst:SequenceStep">
-                    <steps xsi:type="lst:SequenceStep">
-                      <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e4b65 (name: f) (kind: default, default: null) at microchip.pic18 line 253"/>
+                      <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:SequenceStep">
+                          <steps xsi:type="lst:SequenceStep"/>
+                        </steps>
+                      </steps>
+                      <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:SequenceStep">
+                          <steps xsi:type="lst:InstructionStep" code="27262" width="16"/>
+                        </steps>
+                      </steps>
                     </steps>
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.EUSART line 38"/>
+            </steps>
+          </steps>
+          <steps xsi:type="lst:SequenceStep">
+            <steps xsi:type="lst:SequenceStep">
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@a29867 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@a29867 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
                   <steps xsi:type="lst:SequenceStep">
                     <steps xsi:type="lst:SequenceStep">
-                      <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@18394a (name: f) (kind: default, default: null) at microchip.pic18.assisted line 11"/>
+                      <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:SequenceStep">
+                          <steps xsi:type="lst:SequenceStep"/>
+                        </steps>
+                      </steps>
+                      <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:SequenceStep">
+                          <steps xsi:type="lst:InstructionStep" code="27263" width="16"/>
+                        </steps>
+                      </steps>
+                    </steps>
+                  </steps>
+                </steps>
+              </steps>
+            </steps>
+          </steps>
+          <steps xsi:type="lst:SequenceStep">
+            <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep">
+                <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep">
+                    <steps xsi:type="lst:SequenceStep">
+                      <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:SequenceStep">
+                          <steps xsi:type="lst:SequenceStep"/>
+                        </steps>
+                      </steps>
+                      <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:SequenceStep">
+                          <steps xsi:type="lst:InstructionStep" code="27284" width="16"/>
+                        </steps>
+                      </steps>
+                    </steps>
+                  </steps>
+                </steps>
+              </steps>
+            </steps>
+          </steps>
+          <steps xsi:type="lst:SequenceStep">
+            <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep">
+                <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep">
+                    <steps xsi:type="lst:SequenceStep">
+                      <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:SequenceStep">
+                          <steps xsi:type="lst:SequenceStep"/>
+                        </steps>
+                      </steps>
+                      <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:SequenceStep">
+                          <steps xsi:type="lst:InstructionStep" code="27266" width="16"/>
+                        </steps>
+                      </steps>
+                    </steps>
+                  </steps>
+                </steps>
+              </steps>
+            </steps>
+          </steps>
+          <steps xsi:type="lst:SequenceStep">
+            <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep">
+                <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep">
+                    <steps xsi:type="lst:SequenceStep">
+                      <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:SequenceStep">
+                          <steps xsi:type="lst:SequenceStep"/>
+                        </steps>
+                      </steps>
+                      <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:SequenceStep">
+                          <steps xsi:type="lst:InstructionStep" code="27275" width="16"/>
+                        </steps>
+                      </steps>
+                    </steps>
+                  </steps>
+                </steps>
+              </steps>
+            </steps>
+          </steps>
+          <steps xsi:type="lst:SequenceStep">
+            <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep">
+                <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep">
+                    <steps xsi:type="lst:SequenceStep">
+                      <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:SequenceStep">
+                          <steps xsi:type="lst:SequenceStep"/>
+                        </steps>
+                      </steps>
+                      <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:SequenceStep">
+                          <steps xsi:type="lst:InstructionStep" code="27137" width="16"/>
+                        </steps>
+                      </steps>
+                    </steps>
+                  </steps>
+                </steps>
+              </steps>
+            </steps>
+          </steps>
+          <steps xsi:type="lst:SequenceStep">
+            <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep">
+                <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep">
+                    <steps xsi:type="lst:SequenceStep">
+                      <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:SequenceStep">
+                          <steps xsi:type="lst:SequenceStep"/>
+                        </steps>
+                      </steps>
+                      <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:SequenceStep">
+                          <steps xsi:type="lst:InstructionStep" code="27136" width="16"/>
+                        </steps>
+                      </steps>
+                    </steps>
+                  </steps>
+                </steps>
+              </steps>
+            </steps>
+          </steps>
+          <steps xsi:type="lst:SequenceStep">
+            <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep">
+                <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep">
+                    <steps xsi:type="lst:SequenceStep">
+                      <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:SequenceStep">
+                          <steps xsi:type="lst:SequenceStep"/>
+                        </steps>
+                      </steps>
+                      <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:SequenceStep">
+                          <steps xsi:type="lst:InstructionStep" code="27265" width="16"/>
+                        </steps>
+                      </steps>
+                    </steps>
+                  </steps>
+                </steps>
+              </steps>
+            </steps>
+          </steps>
+          <steps xsi:type="lst:SequenceStep">
+            <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep">
+                <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep">
+                    <steps xsi:type="lst:SequenceStep">
+                      <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:SequenceStep">
+                          <steps xsi:type="lst:SequenceStep"/>
+                        </steps>
+                      </steps>
+                      <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:SequenceStep">
+                          <steps xsi:type="lst:InstructionStep" code="27274" width="16"/>
+                        </steps>
+                      </steps>
+                    </steps>
+                  </steps>
+                </steps>
+              </steps>
+            </steps>
+          </steps>
+          <steps xsi:type="lst:SequenceStep">
+            <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep">
+                <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep">
+                    <steps xsi:type="lst:SequenceStep">
+                      <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:SequenceStep">
+                          <steps xsi:type="lst:SequenceStep"/>
+                        </steps>
+                      </steps>
+                      <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:SequenceStep">
+                          <steps xsi:type="lst:InstructionStep" code="27283" width="16"/>
+                        </steps>
+                      </steps>
+                    </steps>
+                  </steps>
+                </steps>
+              </steps>
+            </steps>
+          </steps>
+          <steps xsi:type="lst:SequenceStep">
+            <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep">
+                <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep">
+                    <steps xsi:type="lst:SequenceStep">
+                      <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:SequenceStep">
+                          <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep"/>
+                          </steps>
+                        </steps>
+                        <steps xsi:type="lst:SequenceStep">
+                          <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:InstructionStep" code="26626" width="16"/>
+                          </steps>
+                        </steps>
+                      </steps>
+                    </steps>
+                  </steps>
+                </steps>
+              </steps>
+            </steps>
+          </steps>
+          <steps xsi:type="lst:SequenceStep">
+            <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep">
+                <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep">
+                    <steps xsi:type="lst:SequenceStep">
+                      <steps xsi:type="lst:SequenceStep"/>
                     </steps>
                   </steps>
                   <steps xsi:type="lst:SequenceStep">
                     <steps xsi:type="lst:SequenceStep">
-                      <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e4b65 (name: f) (kind: default, default: null) at microchip.pic18 line 253"/>
+                      <steps xsi:type="lst:InstructionStep" code="35475" width="16"/>
+                    </steps>
+                  </steps>
+                </steps>
+              </steps>
+              <steps xsi:type="lst:SequenceStep">
+                <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep">
+                    <steps xsi:type="lst:SequenceStep">
+                      <steps xsi:type="lst:SequenceStep"/>
+                    </steps>
+                  </steps>
+                  <steps xsi:type="lst:SequenceStep">
+                    <steps xsi:type="lst:SequenceStep">
+                      <steps xsi:type="lst:InstructionStep" code="36499" width="16"/>
+                    </steps>
+                  </steps>
+                </steps>
+              </steps>
+              <steps xsi:type="lst:SequenceStep">
+                <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep">
+                    <steps xsi:type="lst:SequenceStep">
+                      <steps xsi:type="lst:SequenceStep"/>
+                    </steps>
+                  </steps>
+                  <steps xsi:type="lst:SequenceStep">
+                    <steps xsi:type="lst:SequenceStep">
+                      <steps xsi:type="lst:InstructionStep" code="33964" width="16"/>
                     </steps>
                   </steps>
                 </steps>
@@ -74,104 +326,86 @@
                   <steps xsi:type="lst:InstructionStep" code="3609" width="16"/>
                 </steps>
               </steps>
-              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.EUSART line 40"/>
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1082505 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 93"/>
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1082505 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 93"/>
                   <steps xsi:type="lst:SequenceStep">
                     <steps xsi:type="lst:SequenceStep">
-                      <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@18394a (name: f) (kind: default, default: null) at microchip.pic18.assisted line 11"/>
+                      <steps xsi:type="lst:SequenceStep"/>
                     </steps>
                   </steps>
                   <steps xsi:type="lst:SequenceStep">
                     <steps xsi:type="lst:SequenceStep">
-                      <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@b89cc2 (name: f) (kind: default, default: null) at microchip.pic18 line 148"/>
+                      <steps xsi:type="lst:InstructionStep" code="28335" width="16"/>
                     </steps>
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.EUSART line 41"/>
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@136fb6f (name: f) (kind: default, default: null) at microchip.pic18.assisted line 41"/>
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@136fb6f (name: f) (kind: default, default: null) at microchip.pic18.assisted line 41"/>
                   <steps xsi:type="lst:SequenceStep">
                     <steps xsi:type="lst:SequenceStep">
-                      <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@18394a (name: f) (kind: default, default: null) at microchip.pic18.assisted line 11"/>
+                      <steps xsi:type="lst:SequenceStep"/>
                     </steps>
                   </steps>
                   <steps xsi:type="lst:SequenceStep">
                     <steps xsi:type="lst:SequenceStep">
-                      <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@67226 (name: f) (kind: default, default: null) at microchip.pic18 line 49"/>
+                      <steps xsi:type="lst:InstructionStep" code="27312" width="16"/>
                     </steps>
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.EUSART line 44"/>
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@a29867 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@a29867 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
                   <steps xsi:type="lst:SequenceStep">
                     <steps xsi:type="lst:SequenceStep">
-                      <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@18394a (name: f) (kind: default, default: null) at microchip.pic18.assisted line 11"/>
+                      <steps xsi:type="lst:SequenceStep"/>
                     </steps>
                   </steps>
                   <steps xsi:type="lst:SequenceStep">
                     <steps xsi:type="lst:SequenceStep">
-                      <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e4b65 (name: f) (kind: default, default: null) at microchip.pic18 line 253"/>
+                      <steps xsi:type="lst:InstructionStep" code="35500" width="16"/>
                     </steps>
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.EUSART line 45"/>
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@a29867 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@a29867 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
                   <steps xsi:type="lst:SequenceStep">
                     <steps xsi:type="lst:SequenceStep">
-                      <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@18394a (name: f) (kind: default, default: null) at microchip.pic18.assisted line 11"/>
+                      <steps xsi:type="lst:SequenceStep"/>
                     </steps>
                   </steps>
                   <steps xsi:type="lst:SequenceStep">
                     <steps xsi:type="lst:SequenceStep">
-                      <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e4b65 (name: f) (kind: default, default: null) at microchip.pic18 line 253"/>
+                      <steps xsi:type="lst:InstructionStep" code="34987" width="16"/>
                     </steps>
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.EUSART line 46"/>
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@874910 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 149"/>
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@874910 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 149"/>
                   <steps xsi:type="lst:SequenceStep">
                     <steps xsi:type="lst:SequenceStep">
-                      <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@18394a (name: f) (kind: default, default: null) at microchip.pic18.assisted line 11"/>
+                      <steps xsi:type="lst:SequenceStep"/>
                     </steps>
                   </steps>
                   <steps xsi:type="lst:SequenceStep">
                     <steps xsi:type="lst:SequenceStep">
-                      <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@176c011 (name: f) (kind: default, default: null) at microchip.pic18 line 246"/>
+                      <steps xsi:type="lst:InstructionStep" code="39084" width="16"/>
                     </steps>
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.EUSART line 47"/>
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@a29867 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@a29867 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
                   <steps xsi:type="lst:SequenceStep">
                     <steps xsi:type="lst:SequenceStep">
-                      <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@18394a (name: f) (kind: default, default: null) at microchip.pic18.assisted line 11"/>
+                      <steps xsi:type="lst:SequenceStep"/>
                     </steps>
                   </steps>
                   <steps xsi:type="lst:SequenceStep">
                     <steps xsi:type="lst:SequenceStep">
-                      <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e4b65 (name: f) (kind: default, default: null) at microchip.pic18 line 253"/>
+                      <steps xsi:type="lst:InstructionStep" code="36523" width="16"/>
                     </steps>
                   </steps>
                 </steps>
@@ -183,27 +417,20 @@
             <steps xsi:type="lst:SequenceStep">
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.DIO line 43"/>
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.DIO line 43"/>
                   <steps xsi:type="lst:SequenceStep">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep">
                         <steps xsi:type="lst:SequenceStep">
-                          <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@93da21 (name: latch) (kind: default, default: null) at microchip.PIC18F14K50.DIO line 70"/>
-                          <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@17848c5 (name: pin) (kind: const, default: null) at microchip.PIC18F14K50.DIO line 70"/>
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep">
-                              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@874910 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 149"/>
-                              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1fb7b50 (name: b) (kind: default, default: null) at microchip.pic18.assisted line 149"/>
-                              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@874910 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 149"/>
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@18394a (name: f) (kind: default, default: null) at microchip.pic18.assisted line 11"/>
+                                  <steps xsi:type="lst:SequenceStep"/>
                                 </steps>
                               </steps>
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@176c011 (name: f) (kind: default, default: null) at microchip.pic18 line 246"/>
+                                  <steps xsi:type="lst:InstructionStep" code="37003" width="16"/>
                                 </steps>
                               </steps>
                             </steps>
@@ -235,77 +462,62 @@
               </steps>
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.DIO line 43"/>
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.DIO line 43"/>
                   <steps xsi:type="lst:SequenceStep">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep">
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.DIO line 73"/>
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@12b3e7 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 157"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@12b3e7 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 157"/>
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@18394a (name: f) (kind: default, default: null) at microchip.pic18.assisted line 11"/>
+                                <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e463d0 (name: f) (kind: default, default: null) at microchip.pic18 line 260"/>
+                                <steps xsi:type="lst:InstructionStep" code="45058" width="16"/>
                               </steps>
                             </steps>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@730f12 (name: true) at microchip.PIC18F14K50.DIO line 74"/>
+                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@1037517 (name: true) at microchip.PIC18F14K50.DIO line 74"/>
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e33ab9 (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e33ab9 (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@93da21 (name: latch) (kind: default, default: null) at microchip.PIC18F14K50.DIO line 76"/>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@17848c5 (name: pin) (kind: const, default: null) at microchip.PIC18F14K50.DIO line 76"/>
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@874910 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 149"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1fb7b50 (name: b) (kind: default, default: null) at microchip.pic18.assisted line 149"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@874910 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 149"/>
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@18394a (name: f) (kind: default, default: null) at microchip.pic18.assisted line 11"/>
+                                <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@176c011 (name: f) (kind: default, default: null) at microchip.pic18 line 246"/>
+                                <steps xsi:type="lst:InstructionStep" code="37515" width="16"/>
                               </steps>
                             </steps>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@156c571 (name: done) at microchip.PIC18F14K50.DIO line 77"/>
+                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@a8b23b (name: done) at microchip.PIC18F14K50.DIO line 77"/>
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e33ab9 (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e33ab9 (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
                           </steps>
                         </steps>
                         <steps xsi:type="lst:LabelStep"/>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@93da21 (name: latch) (kind: default, default: null) at microchip.PIC18F14K50.DIO line 80"/>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@17848c5 (name: pin) (kind: const, default: null) at microchip.PIC18F14K50.DIO line 80"/>
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@a29867 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1b5d2c1 (name: b) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@a29867 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@18394a (name: f) (kind: default, default: null) at microchip.pic18.assisted line 11"/>
+                                <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e4b65 (name: f) (kind: default, default: null) at microchip.pic18 line 253"/>
+                                <steps xsi:type="lst:InstructionStep" code="33419" width="16"/>
                               </steps>
                             </steps>
                           </steps>
@@ -337,27 +549,20 @@
               </steps>
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.DIO line 43"/>
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.DIO line 43"/>
                   <steps xsi:type="lst:SequenceStep">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep">
                         <steps xsi:type="lst:SequenceStep">
-                          <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@93da21 (name: latch) (kind: default, default: null) at microchip.PIC18F14K50.DIO line 68"/>
-                          <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@17848c5 (name: pin) (kind: const, default: null) at microchip.PIC18F14K50.DIO line 68"/>
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep">
-                              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@a29867 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
-                              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1b5d2c1 (name: b) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
-                              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@a29867 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@18394a (name: f) (kind: default, default: null) at microchip.pic18.assisted line 11"/>
+                                  <steps xsi:type="lst:SequenceStep"/>
                                 </steps>
                               </steps>
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e4b65 (name: f) (kind: default, default: null) at microchip.pic18 line 253"/>
+                                  <steps xsi:type="lst:InstructionStep" code="32907" width="16"/>
                                 </steps>
                               </steps>
                             </steps>
@@ -389,27 +594,20 @@
               </steps>
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.DIO line 43"/>
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.DIO line 43"/>
                   <steps xsi:type="lst:SequenceStep">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep">
                         <steps xsi:type="lst:SequenceStep">
-                          <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@93da21 (name: latch) (kind: default, default: null) at microchip.PIC18F14K50.DIO line 70"/>
-                          <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@17848c5 (name: pin) (kind: const, default: null) at microchip.PIC18F14K50.DIO line 70"/>
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep">
-                              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@874910 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 149"/>
-                              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1fb7b50 (name: b) (kind: default, default: null) at microchip.pic18.assisted line 149"/>
-                              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@874910 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 149"/>
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@18394a (name: f) (kind: default, default: null) at microchip.pic18.assisted line 11"/>
+                                  <steps xsi:type="lst:SequenceStep"/>
                                 </steps>
                               </steps>
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@176c011 (name: f) (kind: default, default: null) at microchip.pic18 line 246"/>
+                                  <steps xsi:type="lst:InstructionStep" code="37003" width="16"/>
                                 </steps>
                               </steps>
                             </steps>
@@ -441,77 +639,62 @@
               </steps>
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.DIO line 43"/>
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.DIO line 43"/>
                   <steps xsi:type="lst:SequenceStep">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep">
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.DIO line 73"/>
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@12b3e7 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 157"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@12b3e7 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 157"/>
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@18394a (name: f) (kind: default, default: null) at microchip.pic18.assisted line 11"/>
+                                <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e463d0 (name: f) (kind: default, default: null) at microchip.pic18 line 260"/>
+                                <steps xsi:type="lst:InstructionStep" code="45570" width="16"/>
                               </steps>
                             </steps>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@730f12 (name: true) at microchip.PIC18F14K50.DIO line 74"/>
+                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@1037517 (name: true) at microchip.PIC18F14K50.DIO line 74"/>
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e33ab9 (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e33ab9 (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@93da21 (name: latch) (kind: default, default: null) at microchip.PIC18F14K50.DIO line 76"/>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@17848c5 (name: pin) (kind: const, default: null) at microchip.PIC18F14K50.DIO line 76"/>
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@874910 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 149"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1fb7b50 (name: b) (kind: default, default: null) at microchip.pic18.assisted line 149"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@874910 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 149"/>
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@18394a (name: f) (kind: default, default: null) at microchip.pic18.assisted line 11"/>
+                                <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@176c011 (name: f) (kind: default, default: null) at microchip.pic18 line 246"/>
+                                <steps xsi:type="lst:InstructionStep" code="37515" width="16"/>
                               </steps>
                             </steps>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@156c571 (name: done) at microchip.PIC18F14K50.DIO line 77"/>
+                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@a8b23b (name: done) at microchip.PIC18F14K50.DIO line 77"/>
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e33ab9 (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e33ab9 (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
                           </steps>
                         </steps>
                         <steps xsi:type="lst:LabelStep"/>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@93da21 (name: latch) (kind: default, default: null) at microchip.PIC18F14K50.DIO line 80"/>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@17848c5 (name: pin) (kind: const, default: null) at microchip.PIC18F14K50.DIO line 80"/>
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@a29867 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1b5d2c1 (name: b) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@a29867 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@18394a (name: f) (kind: default, default: null) at microchip.pic18.assisted line 11"/>
+                                <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e4b65 (name: f) (kind: default, default: null) at microchip.pic18 line 253"/>
+                                <steps xsi:type="lst:InstructionStep" code="33419" width="16"/>
                               </steps>
                             </steps>
                           </steps>
@@ -543,27 +726,20 @@
               </steps>
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.DIO line 43"/>
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.DIO line 43"/>
                   <steps xsi:type="lst:SequenceStep">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep">
                         <steps xsi:type="lst:SequenceStep">
-                          <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@93da21 (name: latch) (kind: default, default: null) at microchip.PIC18F14K50.DIO line 68"/>
-                          <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@17848c5 (name: pin) (kind: const, default: null) at microchip.PIC18F14K50.DIO line 68"/>
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep">
-                              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@a29867 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
-                              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1b5d2c1 (name: b) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
-                              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@a29867 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@18394a (name: f) (kind: default, default: null) at microchip.pic18.assisted line 11"/>
+                                  <steps xsi:type="lst:SequenceStep"/>
                                 </steps>
                               </steps>
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e4b65 (name: f) (kind: default, default: null) at microchip.pic18 line 253"/>
+                                  <steps xsi:type="lst:InstructionStep" code="32907" width="16"/>
                                 </steps>
                               </steps>
                             </steps>
@@ -595,27 +771,20 @@
               </steps>
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.DIO line 43"/>
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.DIO line 43"/>
                   <steps xsi:type="lst:SequenceStep">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep">
                         <steps xsi:type="lst:SequenceStep">
-                          <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@93da21 (name: latch) (kind: default, default: null) at microchip.PIC18F14K50.DIO line 70"/>
-                          <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@17848c5 (name: pin) (kind: const, default: null) at microchip.PIC18F14K50.DIO line 70"/>
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep">
-                              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@874910 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 149"/>
-                              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1fb7b50 (name: b) (kind: default, default: null) at microchip.pic18.assisted line 149"/>
-                              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@874910 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 149"/>
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@18394a (name: f) (kind: default, default: null) at microchip.pic18.assisted line 11"/>
+                                  <steps xsi:type="lst:SequenceStep"/>
                                 </steps>
                               </steps>
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@176c011 (name: f) (kind: default, default: null) at microchip.pic18 line 246"/>
+                                  <steps xsi:type="lst:InstructionStep" code="37003" width="16"/>
                                 </steps>
                               </steps>
                             </steps>
@@ -647,77 +816,62 @@
               </steps>
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.DIO line 43"/>
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.DIO line 43"/>
                   <steps xsi:type="lst:SequenceStep">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep">
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.DIO line 73"/>
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@12b3e7 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 157"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@12b3e7 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 157"/>
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@18394a (name: f) (kind: default, default: null) at microchip.pic18.assisted line 11"/>
+                                <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e463d0 (name: f) (kind: default, default: null) at microchip.pic18 line 260"/>
+                                <steps xsi:type="lst:InstructionStep" code="46082" width="16"/>
                               </steps>
                             </steps>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@730f12 (name: true) at microchip.PIC18F14K50.DIO line 74"/>
+                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@1037517 (name: true) at microchip.PIC18F14K50.DIO line 74"/>
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e33ab9 (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e33ab9 (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@93da21 (name: latch) (kind: default, default: null) at microchip.PIC18F14K50.DIO line 76"/>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@17848c5 (name: pin) (kind: const, default: null) at microchip.PIC18F14K50.DIO line 76"/>
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@874910 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 149"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1fb7b50 (name: b) (kind: default, default: null) at microchip.pic18.assisted line 149"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@874910 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 149"/>
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@18394a (name: f) (kind: default, default: null) at microchip.pic18.assisted line 11"/>
+                                <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@176c011 (name: f) (kind: default, default: null) at microchip.pic18 line 246"/>
+                                <steps xsi:type="lst:InstructionStep" code="37515" width="16"/>
                               </steps>
                             </steps>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@156c571 (name: done) at microchip.PIC18F14K50.DIO line 77"/>
+                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@a8b23b (name: done) at microchip.PIC18F14K50.DIO line 77"/>
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e33ab9 (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e33ab9 (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
                           </steps>
                         </steps>
                         <steps xsi:type="lst:LabelStep"/>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@93da21 (name: latch) (kind: default, default: null) at microchip.PIC18F14K50.DIO line 80"/>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@17848c5 (name: pin) (kind: const, default: null) at microchip.PIC18F14K50.DIO line 80"/>
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@a29867 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1b5d2c1 (name: b) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@a29867 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@18394a (name: f) (kind: default, default: null) at microchip.pic18.assisted line 11"/>
+                                <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e4b65 (name: f) (kind: default, default: null) at microchip.pic18 line 253"/>
+                                <steps xsi:type="lst:InstructionStep" code="33419" width="16"/>
                               </steps>
                             </steps>
                           </steps>
@@ -749,27 +903,20 @@
               </steps>
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.DIO line 43"/>
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.DIO line 43"/>
                   <steps xsi:type="lst:SequenceStep">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep">
                         <steps xsi:type="lst:SequenceStep">
-                          <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@93da21 (name: latch) (kind: default, default: null) at microchip.PIC18F14K50.DIO line 68"/>
-                          <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@17848c5 (name: pin) (kind: const, default: null) at microchip.PIC18F14K50.DIO line 68"/>
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep">
-                              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@a29867 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
-                              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1b5d2c1 (name: b) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
-                              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@a29867 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@18394a (name: f) (kind: default, default: null) at microchip.pic18.assisted line 11"/>
+                                  <steps xsi:type="lst:SequenceStep"/>
                                 </steps>
                               </steps>
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e4b65 (name: f) (kind: default, default: null) at microchip.pic18 line 253"/>
+                                  <steps xsi:type="lst:InstructionStep" code="32907" width="16"/>
                                 </steps>
                               </steps>
                             </steps>
@@ -801,27 +948,20 @@
               </steps>
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.DIO line 43"/>
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.DIO line 43"/>
                   <steps xsi:type="lst:SequenceStep">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep">
                         <steps xsi:type="lst:SequenceStep">
-                          <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@93da21 (name: latch) (kind: default, default: null) at microchip.PIC18F14K50.DIO line 70"/>
-                          <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@17848c5 (name: pin) (kind: const, default: null) at microchip.PIC18F14K50.DIO line 70"/>
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep">
-                              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@874910 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 149"/>
-                              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1fb7b50 (name: b) (kind: default, default: null) at microchip.pic18.assisted line 149"/>
-                              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@874910 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 149"/>
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@18394a (name: f) (kind: default, default: null) at microchip.pic18.assisted line 11"/>
+                                  <steps xsi:type="lst:SequenceStep"/>
                                 </steps>
                               </steps>
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@176c011 (name: f) (kind: default, default: null) at microchip.pic18 line 246"/>
+                                  <steps xsi:type="lst:InstructionStep" code="37003" width="16"/>
                                 </steps>
                               </steps>
                             </steps>
@@ -853,77 +993,62 @@
               </steps>
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.DIO line 43"/>
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.DIO line 43"/>
                   <steps xsi:type="lst:SequenceStep">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep">
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.DIO line 73"/>
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@12b3e7 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 157"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@12b3e7 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 157"/>
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@18394a (name: f) (kind: default, default: null) at microchip.pic18.assisted line 11"/>
+                                <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e463d0 (name: f) (kind: default, default: null) at microchip.pic18 line 260"/>
+                                <steps xsi:type="lst:InstructionStep" code="46594" width="16"/>
                               </steps>
                             </steps>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@730f12 (name: true) at microchip.PIC18F14K50.DIO line 74"/>
+                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@1037517 (name: true) at microchip.PIC18F14K50.DIO line 74"/>
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e33ab9 (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e33ab9 (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@93da21 (name: latch) (kind: default, default: null) at microchip.PIC18F14K50.DIO line 76"/>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@17848c5 (name: pin) (kind: const, default: null) at microchip.PIC18F14K50.DIO line 76"/>
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@874910 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 149"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1fb7b50 (name: b) (kind: default, default: null) at microchip.pic18.assisted line 149"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@874910 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 149"/>
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@18394a (name: f) (kind: default, default: null) at microchip.pic18.assisted line 11"/>
+                                <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@176c011 (name: f) (kind: default, default: null) at microchip.pic18 line 246"/>
+                                <steps xsi:type="lst:InstructionStep" code="37515" width="16"/>
                               </steps>
                             </steps>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@156c571 (name: done) at microchip.PIC18F14K50.DIO line 77"/>
+                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@a8b23b (name: done) at microchip.PIC18F14K50.DIO line 77"/>
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e33ab9 (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e33ab9 (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
                           </steps>
                         </steps>
                         <steps xsi:type="lst:LabelStep"/>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@93da21 (name: latch) (kind: default, default: null) at microchip.PIC18F14K50.DIO line 80"/>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@17848c5 (name: pin) (kind: const, default: null) at microchip.PIC18F14K50.DIO line 80"/>
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@a29867 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1b5d2c1 (name: b) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@a29867 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@18394a (name: f) (kind: default, default: null) at microchip.pic18.assisted line 11"/>
+                                <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e4b65 (name: f) (kind: default, default: null) at microchip.pic18 line 253"/>
+                                <steps xsi:type="lst:InstructionStep" code="33419" width="16"/>
                               </steps>
                             </steps>
                           </steps>
@@ -955,27 +1080,20 @@
               </steps>
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.DIO line 43"/>
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.DIO line 43"/>
                   <steps xsi:type="lst:SequenceStep">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep">
                         <steps xsi:type="lst:SequenceStep">
-                          <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@93da21 (name: latch) (kind: default, default: null) at microchip.PIC18F14K50.DIO line 68"/>
-                          <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@17848c5 (name: pin) (kind: const, default: null) at microchip.PIC18F14K50.DIO line 68"/>
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep">
-                              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@a29867 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
-                              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1b5d2c1 (name: b) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
-                              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@a29867 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@18394a (name: f) (kind: default, default: null) at microchip.pic18.assisted line 11"/>
+                                  <steps xsi:type="lst:SequenceStep"/>
                                 </steps>
                               </steps>
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e4b65 (name: f) (kind: default, default: null) at microchip.pic18 line 253"/>
+                                  <steps xsi:type="lst:InstructionStep" code="32907" width="16"/>
                                 </steps>
                               </steps>
                             </steps>
@@ -1007,27 +1125,20 @@
               </steps>
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.DIO line 43"/>
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.DIO line 43"/>
                   <steps xsi:type="lst:SequenceStep">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep">
                         <steps xsi:type="lst:SequenceStep">
-                          <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@93da21 (name: latch) (kind: default, default: null) at microchip.PIC18F14K50.DIO line 70"/>
-                          <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@17848c5 (name: pin) (kind: const, default: null) at microchip.PIC18F14K50.DIO line 70"/>
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep">
-                              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@874910 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 149"/>
-                              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1fb7b50 (name: b) (kind: default, default: null) at microchip.pic18.assisted line 149"/>
-                              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@874910 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 149"/>
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@18394a (name: f) (kind: default, default: null) at microchip.pic18.assisted line 11"/>
+                                  <steps xsi:type="lst:SequenceStep"/>
                                 </steps>
                               </steps>
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@176c011 (name: f) (kind: default, default: null) at microchip.pic18 line 246"/>
+                                  <steps xsi:type="lst:InstructionStep" code="37003" width="16"/>
                                 </steps>
                               </steps>
                             </steps>
@@ -1059,77 +1170,62 @@
               </steps>
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.DIO line 43"/>
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.DIO line 43"/>
                   <steps xsi:type="lst:SequenceStep">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep">
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.DIO line 73"/>
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@12b3e7 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 157"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@12b3e7 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 157"/>
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@18394a (name: f) (kind: default, default: null) at microchip.pic18.assisted line 11"/>
+                                <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e463d0 (name: f) (kind: default, default: null) at microchip.pic18 line 260"/>
+                                <steps xsi:type="lst:InstructionStep" code="47106" width="16"/>
                               </steps>
                             </steps>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@730f12 (name: true) at microchip.PIC18F14K50.DIO line 74"/>
+                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@1037517 (name: true) at microchip.PIC18F14K50.DIO line 74"/>
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e33ab9 (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e33ab9 (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@93da21 (name: latch) (kind: default, default: null) at microchip.PIC18F14K50.DIO line 76"/>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@17848c5 (name: pin) (kind: const, default: null) at microchip.PIC18F14K50.DIO line 76"/>
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@874910 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 149"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1fb7b50 (name: b) (kind: default, default: null) at microchip.pic18.assisted line 149"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@874910 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 149"/>
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@18394a (name: f) (kind: default, default: null) at microchip.pic18.assisted line 11"/>
+                                <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@176c011 (name: f) (kind: default, default: null) at microchip.pic18 line 246"/>
+                                <steps xsi:type="lst:InstructionStep" code="37515" width="16"/>
                               </steps>
                             </steps>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@156c571 (name: done) at microchip.PIC18F14K50.DIO line 77"/>
+                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@a8b23b (name: done) at microchip.PIC18F14K50.DIO line 77"/>
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e33ab9 (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e33ab9 (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
                           </steps>
                         </steps>
                         <steps xsi:type="lst:LabelStep"/>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@93da21 (name: latch) (kind: default, default: null) at microchip.PIC18F14K50.DIO line 80"/>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@17848c5 (name: pin) (kind: const, default: null) at microchip.PIC18F14K50.DIO line 80"/>
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@a29867 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1b5d2c1 (name: b) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@a29867 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@18394a (name: f) (kind: default, default: null) at microchip.pic18.assisted line 11"/>
+                                <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e4b65 (name: f) (kind: default, default: null) at microchip.pic18 line 253"/>
+                                <steps xsi:type="lst:InstructionStep" code="33419" width="16"/>
                               </steps>
                             </steps>
                           </steps>
@@ -1161,27 +1257,20 @@
               </steps>
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.DIO line 43"/>
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.DIO line 43"/>
                   <steps xsi:type="lst:SequenceStep">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep">
                         <steps xsi:type="lst:SequenceStep">
-                          <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@93da21 (name: latch) (kind: default, default: null) at microchip.PIC18F14K50.DIO line 68"/>
-                          <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@17848c5 (name: pin) (kind: const, default: null) at microchip.PIC18F14K50.DIO line 68"/>
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep">
-                              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@a29867 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
-                              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1b5d2c1 (name: b) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
-                              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@a29867 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@18394a (name: f) (kind: default, default: null) at microchip.pic18.assisted line 11"/>
+                                  <steps xsi:type="lst:SequenceStep"/>
                                 </steps>
                               </steps>
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e4b65 (name: f) (kind: default, default: null) at microchip.pic18 line 253"/>
+                                  <steps xsi:type="lst:InstructionStep" code="32907" width="16"/>
                                 </steps>
                               </steps>
                             </steps>
@@ -1213,27 +1302,20 @@
               </steps>
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.DIO line 43"/>
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.DIO line 43"/>
                   <steps xsi:type="lst:SequenceStep">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep">
                         <steps xsi:type="lst:SequenceStep">
-                          <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@93da21 (name: latch) (kind: default, default: null) at microchip.PIC18F14K50.DIO line 70"/>
-                          <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@17848c5 (name: pin) (kind: const, default: null) at microchip.PIC18F14K50.DIO line 70"/>
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep">
-                              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@874910 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 149"/>
-                              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1fb7b50 (name: b) (kind: default, default: null) at microchip.pic18.assisted line 149"/>
-                              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@874910 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 149"/>
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@18394a (name: f) (kind: default, default: null) at microchip.pic18.assisted line 11"/>
+                                  <steps xsi:type="lst:SequenceStep"/>
                                 </steps>
                               </steps>
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@176c011 (name: f) (kind: default, default: null) at microchip.pic18 line 246"/>
+                                  <steps xsi:type="lst:InstructionStep" code="37003" width="16"/>
                                 </steps>
                               </steps>
                             </steps>
@@ -1265,77 +1347,62 @@
               </steps>
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.DIO line 43"/>
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.DIO line 43"/>
                   <steps xsi:type="lst:SequenceStep">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep">
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.DIO line 73"/>
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@12b3e7 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 157"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@12b3e7 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 157"/>
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@18394a (name: f) (kind: default, default: null) at microchip.pic18.assisted line 11"/>
+                                <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e463d0 (name: f) (kind: default, default: null) at microchip.pic18 line 260"/>
+                                <steps xsi:type="lst:InstructionStep" code="47618" width="16"/>
                               </steps>
                             </steps>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@730f12 (name: true) at microchip.PIC18F14K50.DIO line 74"/>
+                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@1037517 (name: true) at microchip.PIC18F14K50.DIO line 74"/>
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e33ab9 (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e33ab9 (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@93da21 (name: latch) (kind: default, default: null) at microchip.PIC18F14K50.DIO line 76"/>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@17848c5 (name: pin) (kind: const, default: null) at microchip.PIC18F14K50.DIO line 76"/>
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@874910 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 149"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1fb7b50 (name: b) (kind: default, default: null) at microchip.pic18.assisted line 149"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@874910 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 149"/>
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@18394a (name: f) (kind: default, default: null) at microchip.pic18.assisted line 11"/>
+                                <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@176c011 (name: f) (kind: default, default: null) at microchip.pic18 line 246"/>
+                                <steps xsi:type="lst:InstructionStep" code="37515" width="16"/>
                               </steps>
                             </steps>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@156c571 (name: done) at microchip.PIC18F14K50.DIO line 77"/>
+                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@a8b23b (name: done) at microchip.PIC18F14K50.DIO line 77"/>
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e33ab9 (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e33ab9 (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
                           </steps>
                         </steps>
                         <steps xsi:type="lst:LabelStep"/>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@93da21 (name: latch) (kind: default, default: null) at microchip.PIC18F14K50.DIO line 80"/>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@17848c5 (name: pin) (kind: const, default: null) at microchip.PIC18F14K50.DIO line 80"/>
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@a29867 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1b5d2c1 (name: b) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@a29867 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@18394a (name: f) (kind: default, default: null) at microchip.pic18.assisted line 11"/>
+                                <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e4b65 (name: f) (kind: default, default: null) at microchip.pic18 line 253"/>
+                                <steps xsi:type="lst:InstructionStep" code="33419" width="16"/>
                               </steps>
                             </steps>
                           </steps>
@@ -1367,27 +1434,20 @@
               </steps>
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.DIO line 43"/>
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.DIO line 43"/>
                   <steps xsi:type="lst:SequenceStep">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep">
                         <steps xsi:type="lst:SequenceStep">
-                          <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@93da21 (name: latch) (kind: default, default: null) at microchip.PIC18F14K50.DIO line 68"/>
-                          <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@17848c5 (name: pin) (kind: const, default: null) at microchip.PIC18F14K50.DIO line 68"/>
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep">
-                              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@a29867 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
-                              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1b5d2c1 (name: b) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
-                              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@a29867 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@18394a (name: f) (kind: default, default: null) at microchip.pic18.assisted line 11"/>
+                                  <steps xsi:type="lst:SequenceStep"/>
                                 </steps>
                               </steps>
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e4b65 (name: f) (kind: default, default: null) at microchip.pic18 line 253"/>
+                                  <steps xsi:type="lst:InstructionStep" code="32907" width="16"/>
                                 </steps>
                               </steps>
                             </steps>
@@ -1419,27 +1479,20 @@
               </steps>
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.DIO line 43"/>
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.DIO line 43"/>
                   <steps xsi:type="lst:SequenceStep">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep">
                         <steps xsi:type="lst:SequenceStep">
-                          <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@93da21 (name: latch) (kind: default, default: null) at microchip.PIC18F14K50.DIO line 70"/>
-                          <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@17848c5 (name: pin) (kind: const, default: null) at microchip.PIC18F14K50.DIO line 70"/>
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep">
-                              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@874910 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 149"/>
-                              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1fb7b50 (name: b) (kind: default, default: null) at microchip.pic18.assisted line 149"/>
-                              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@874910 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 149"/>
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@18394a (name: f) (kind: default, default: null) at microchip.pic18.assisted line 11"/>
+                                  <steps xsi:type="lst:SequenceStep"/>
                                 </steps>
                               </steps>
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@176c011 (name: f) (kind: default, default: null) at microchip.pic18 line 246"/>
+                                  <steps xsi:type="lst:InstructionStep" code="37003" width="16"/>
                                 </steps>
                               </steps>
                             </steps>
@@ -1471,77 +1524,62 @@
               </steps>
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.DIO line 43"/>
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.DIO line 43"/>
                   <steps xsi:type="lst:SequenceStep">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep">
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.DIO line 73"/>
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@12b3e7 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 157"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@12b3e7 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 157"/>
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@18394a (name: f) (kind: default, default: null) at microchip.pic18.assisted line 11"/>
+                                <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e463d0 (name: f) (kind: default, default: null) at microchip.pic18 line 260"/>
+                                <steps xsi:type="lst:InstructionStep" code="48130" width="16"/>
                               </steps>
                             </steps>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@730f12 (name: true) at microchip.PIC18F14K50.DIO line 74"/>
+                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@1037517 (name: true) at microchip.PIC18F14K50.DIO line 74"/>
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e33ab9 (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e33ab9 (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@93da21 (name: latch) (kind: default, default: null) at microchip.PIC18F14K50.DIO line 76"/>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@17848c5 (name: pin) (kind: const, default: null) at microchip.PIC18F14K50.DIO line 76"/>
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@874910 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 149"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1fb7b50 (name: b) (kind: default, default: null) at microchip.pic18.assisted line 149"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@874910 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 149"/>
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@18394a (name: f) (kind: default, default: null) at microchip.pic18.assisted line 11"/>
+                                <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@176c011 (name: f) (kind: default, default: null) at microchip.pic18 line 246"/>
+                                <steps xsi:type="lst:InstructionStep" code="37515" width="16"/>
                               </steps>
                             </steps>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@156c571 (name: done) at microchip.PIC18F14K50.DIO line 77"/>
+                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@a8b23b (name: done) at microchip.PIC18F14K50.DIO line 77"/>
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e33ab9 (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e33ab9 (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
                           </steps>
                         </steps>
                         <steps xsi:type="lst:LabelStep"/>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@93da21 (name: latch) (kind: default, default: null) at microchip.PIC18F14K50.DIO line 80"/>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@17848c5 (name: pin) (kind: const, default: null) at microchip.PIC18F14K50.DIO line 80"/>
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@a29867 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1b5d2c1 (name: b) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@a29867 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@18394a (name: f) (kind: default, default: null) at microchip.pic18.assisted line 11"/>
+                                <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e4b65 (name: f) (kind: default, default: null) at microchip.pic18 line 253"/>
+                                <steps xsi:type="lst:InstructionStep" code="33419" width="16"/>
                               </steps>
                             </steps>
                           </steps>
@@ -1573,27 +1611,20 @@
               </steps>
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.DIO line 43"/>
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.DIO line 43"/>
                   <steps xsi:type="lst:SequenceStep">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep">
                         <steps xsi:type="lst:SequenceStep">
-                          <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@93da21 (name: latch) (kind: default, default: null) at microchip.PIC18F14K50.DIO line 68"/>
-                          <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@17848c5 (name: pin) (kind: const, default: null) at microchip.PIC18F14K50.DIO line 68"/>
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep">
-                              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@a29867 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
-                              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1b5d2c1 (name: b) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
-                              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@a29867 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@18394a (name: f) (kind: default, default: null) at microchip.pic18.assisted line 11"/>
+                                  <steps xsi:type="lst:SequenceStep"/>
                                 </steps>
                               </steps>
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e4b65 (name: f) (kind: default, default: null) at microchip.pic18 line 253"/>
+                                  <steps xsi:type="lst:InstructionStep" code="32907" width="16"/>
                                 </steps>
                               </steps>
                             </steps>
@@ -1625,27 +1656,20 @@
               </steps>
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.DIO line 43"/>
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.DIO line 43"/>
                   <steps xsi:type="lst:SequenceStep">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep">
                         <steps xsi:type="lst:SequenceStep">
-                          <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@93da21 (name: latch) (kind: default, default: null) at microchip.PIC18F14K50.DIO line 70"/>
-                          <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@17848c5 (name: pin) (kind: const, default: null) at microchip.PIC18F14K50.DIO line 70"/>
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep">
-                              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@874910 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 149"/>
-                              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1fb7b50 (name: b) (kind: default, default: null) at microchip.pic18.assisted line 149"/>
-                              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@874910 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 149"/>
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@18394a (name: f) (kind: default, default: null) at microchip.pic18.assisted line 11"/>
+                                  <steps xsi:type="lst:SequenceStep"/>
                                 </steps>
                               </steps>
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@176c011 (name: f) (kind: default, default: null) at microchip.pic18 line 246"/>
+                                  <steps xsi:type="lst:InstructionStep" code="37003" width="16"/>
                                 </steps>
                               </steps>
                             </steps>
@@ -1677,77 +1701,62 @@
               </steps>
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.DIO line 43"/>
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.DIO line 43"/>
                   <steps xsi:type="lst:SequenceStep">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep">
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.DIO line 73"/>
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@12b3e7 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 157"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@12b3e7 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 157"/>
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@18394a (name: f) (kind: default, default: null) at microchip.pic18.assisted line 11"/>
+                                <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e463d0 (name: f) (kind: default, default: null) at microchip.pic18 line 260"/>
+                                <steps xsi:type="lst:InstructionStep" code="48642" width="16"/>
                               </steps>
                             </steps>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@730f12 (name: true) at microchip.PIC18F14K50.DIO line 74"/>
+                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@1037517 (name: true) at microchip.PIC18F14K50.DIO line 74"/>
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e33ab9 (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e33ab9 (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@93da21 (name: latch) (kind: default, default: null) at microchip.PIC18F14K50.DIO line 76"/>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@17848c5 (name: pin) (kind: const, default: null) at microchip.PIC18F14K50.DIO line 76"/>
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@874910 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 149"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1fb7b50 (name: b) (kind: default, default: null) at microchip.pic18.assisted line 149"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@874910 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 149"/>
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@18394a (name: f) (kind: default, default: null) at microchip.pic18.assisted line 11"/>
+                                <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@176c011 (name: f) (kind: default, default: null) at microchip.pic18 line 246"/>
+                                <steps xsi:type="lst:InstructionStep" code="37515" width="16"/>
                               </steps>
                             </steps>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@156c571 (name: done) at microchip.PIC18F14K50.DIO line 77"/>
+                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@a8b23b (name: done) at microchip.PIC18F14K50.DIO line 77"/>
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e33ab9 (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e33ab9 (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
                           </steps>
                         </steps>
                         <steps xsi:type="lst:LabelStep"/>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@93da21 (name: latch) (kind: default, default: null) at microchip.PIC18F14K50.DIO line 80"/>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@17848c5 (name: pin) (kind: const, default: null) at microchip.PIC18F14K50.DIO line 80"/>
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@a29867 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1b5d2c1 (name: b) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@a29867 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@18394a (name: f) (kind: default, default: null) at microchip.pic18.assisted line 11"/>
+                                <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e4b65 (name: f) (kind: default, default: null) at microchip.pic18 line 253"/>
+                                <steps xsi:type="lst:InstructionStep" code="33419" width="16"/>
                               </steps>
                             </steps>
                           </steps>
@@ -1779,27 +1788,20 @@
               </steps>
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.DIO line 43"/>
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.DIO line 43"/>
                   <steps xsi:type="lst:SequenceStep">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep">
                         <steps xsi:type="lst:SequenceStep">
-                          <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@93da21 (name: latch) (kind: default, default: null) at microchip.PIC18F14K50.DIO line 68"/>
-                          <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@17848c5 (name: pin) (kind: const, default: null) at microchip.PIC18F14K50.DIO line 68"/>
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep">
-                              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@a29867 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
-                              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1b5d2c1 (name: b) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
-                              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@a29867 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 153"/>
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@18394a (name: f) (kind: default, default: null) at microchip.pic18.assisted line 11"/>
+                                  <steps xsi:type="lst:SequenceStep"/>
                                 </steps>
                               </steps>
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e4b65 (name: f) (kind: default, default: null) at microchip.pic18 line 253"/>
+                                  <steps xsi:type="lst:InstructionStep" code="32907" width="16"/>
                                 </steps>
                               </steps>
                             </steps>
@@ -1833,78 +1835,90 @@
           </steps>
           <steps xsi:type="lst:SequenceStep">
             <steps xsi:type="lst:SequenceStep">
-              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.EUSART line 77"/>
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@2cd9f9 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 161"/>
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@2cd9f9 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 161"/>
                   <steps xsi:type="lst:SequenceStep">
                     <steps xsi:type="lst:SequenceStep">
-                      <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@18394a (name: f) (kind: default, default: null) at microchip.pic18.assisted line 11"/>
+                      <steps xsi:type="lst:SequenceStep"/>
                     </steps>
                   </steps>
                   <steps xsi:type="lst:SequenceStep">
                     <steps xsi:type="lst:SequenceStep">
-                      <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@10b3465 (name: f) (kind: default, default: null) at microchip.pic18 line 267"/>
+                      <steps xsi:type="lst:InstructionStep" code="43166" width="16"/>
                     </steps>
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@18793d1 (name: nosend) at microchip.PIC18F14K50.EUSART line 78"/>
+              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@97eb1 (name: nosend) at microchip.PIC18F14K50.EUSART line 78"/>
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e33ab9 (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e33ab9 (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
+                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
+                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
                 </steps>
               </steps>
               <steps xsi:type="lst:SequenceStep">
-                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.EUSART line 83"/>
-                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.EUSART line 83"/>
                 <steps xsi:type="lst:SequenceStep">
                   <steps xsi:type="lst:SequenceStep">
-                    <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@56deff (name: s) (kind: default, default: null) at microchip.pic18 line 140"/>
-                    <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@8abfb1 (name: d) (kind: default, default: null) at microchip.pic18 line 141"/>
+                    <steps xsi:type="lst:InstructionStep" code="49153" width="16"/>
+                    <steps xsi:type="lst:InstructionStep" code="65453" width="16"/>
                   </steps>
                 </steps>
               </steps>
               <steps xsi:type="lst:LabelStep"/>
-              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.EUSART line 88"/>
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@2cd9f9 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 161"/>
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@2cd9f9 (name: f) (kind: default, default: null) at microchip.pic18.assisted line 161"/>
                   <steps xsi:type="lst:SequenceStep">
                     <steps xsi:type="lst:SequenceStep">
-                      <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.ParameterVariableImpl@18394a (name: f) (kind: default, default: null) at microchip.pic18.assisted line 11"/>
+                      <steps xsi:type="lst:SequenceStep"/>
                     </steps>
                   </steps>
                   <steps xsi:type="lst:SequenceStep">
                     <steps xsi:type="lst:SequenceStep">
-                      <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@10b3465 (name: f) (kind: default, default: null) at microchip.pic18 line 267"/>
+                      <steps xsi:type="lst:InstructionStep" code="43678" width="16"/>
                     </steps>
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@19cb1a8 (name: norcv) at microchip.PIC18F14K50.EUSART line 89"/>
+              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@1d7eaea (name: norcv) at microchip.PIC18F14K50.EUSART line 89"/>
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e33ab9 (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e33ab9 (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
+                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
+                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
                 </steps>
               </steps>
-              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.EUSART line 90"/>
-              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Unsupported operator: &amp; at microchip.PIC18F14K50.EUSART line 90"/>
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@56deff (name: s) (kind: default, default: null) at microchip.pic18 line 140"/>
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@8abfb1 (name: d) (kind: default, default: null) at microchip.pic18 line 141"/>
+                  <steps xsi:type="lst:InstructionStep" code="53166" width="16"/>
+                  <steps xsi:type="lst:InstructionStep" code="61440" width="16"/>
                 </steps>
               </steps>
               <steps xsi:type="lst:LabelStep"/>
             </steps>
           </steps>
-          <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (uint8, uint8, ) at test line 73"/>
-          <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (uint8, uint8, ) at test line 76"/>
+          <steps xsi:type="lst:SequenceStep">
+            <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep">
+                <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep">
+                    <steps xsi:type="lst:InstructionStep" code="49153" width="16"/>
+                    <steps xsi:type="lst:InstructionStep" code="61440" width="16"/>
+                  </steps>
+                </steps>
+              </steps>
+            </steps>
+          </steps>
+          <steps xsi:type="lst:SequenceStep">
+            <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep">
+                <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep">
+                    <steps xsi:type="lst:InstructionStep" code="49154" width="16"/>
+                    <steps xsi:type="lst:InstructionStep" code="61440" width="16"/>
+                  </steps>
+                </steps>
+              </steps>
+            </steps>
+          </steps>
           <steps xsi:type="lst:SequenceStep">
             <steps xsi:type="lst:SequenceStep">
               <steps xsi:type="lst:SequenceStep">
@@ -1924,11 +1938,11 @@
               </steps>
             </steps>
           </steps>
-          <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@575b9e (name: start) at test line 79"/>
+          <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@1115cea (name: start) at test line 79"/>
           <steps xsi:type="lst:SequenceStep">
             <steps xsi:type="lst:SequenceStep">
-              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e33ab9 (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
-              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1e33ab9 (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
+              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
+              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
             </steps>
           </steps>
         </steps>

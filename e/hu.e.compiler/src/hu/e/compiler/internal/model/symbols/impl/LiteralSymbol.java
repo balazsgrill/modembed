@@ -8,6 +8,9 @@ import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
 import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.compiler.list.ProgramStep;
+import hu.e.parser.eSyntax.DataTypeDef;
+import hu.e.parser.eSyntax.ESyntaxFactory;
+import hu.e.parser.eSyntax.PrimitiveKind;
 import hu.e.parser.eSyntax.StructTypeDefMember;
 import hu.e.parser.eSyntax.TypeDef;
 
@@ -46,7 +49,16 @@ public class LiteralSymbol implements ILiteralSymbol {
 
 	@Override
 	public TypeDef getType() {
-		return null;
+		DataTypeDef dtd = ESyntaxFactory.eINSTANCE.createDataTypeDef();
+		int bits = 0;
+		long v = 1;
+		while(v <= Math.abs(value)){
+			bits++;
+			v = v<<1;
+		}
+		dtd.setBits(bits);
+		dtd.setKind((value >= 0) ? PrimitiveKind.UNSIGNED : PrimitiveKind.SIGNED);
+		return dtd;
 	}
 
 	@Override

@@ -66,9 +66,12 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
 
 	private final List<ProgramStep> steps = new ArrayList<ProgramStep>();
 	
-	private IVariableSymbol result = null;
+	private ISymbol result = null;
 	
 	private IVariableSymbol createBuffer(TypeDef type) throws ECompilerException{
+		if (sm.getVariableManager() == null){
+			throw new ECompilerException(context, "Cannot define runtime variables in compiletime context!");
+		}
 		int addr = sm.getVariableManager().allocate(sm, type);
 		IVariableSymbol v = VariableSymbol.create(new LiteralSymbol(addr), type);
 		return v;
@@ -102,7 +105,7 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
 	private void compile() throws ECompilerException{
 		TypeDef type = getType();
 		
-		sm.getVariableManager().startBlock();
+		//sm.getVariableManager().startBlock();
 		switch(op){
 		case SET:
 			result = (IVariableSymbol)a;
@@ -129,11 +132,15 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
 		case EQUALS:
 			result = (IVariableSymbol)execute(getRole(op), a,b);
 			break;
-			
+		case REFERENCE:
+			if (a instanceof IVariableSymbol){
+				result = ((IVariableSymbol) a).getAddressSymbol();
+			}
+			break;
 		default:
 			throw new ECompilerException(context, "Runtime "+op+" operator is not yet supported.");
 		}
-		sm.getVariableManager().startBlock();
+		//sm.getVariableManager().endBlock();
 		
 	}
 	
@@ -191,7 +198,7 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
 	public List<ProgramStep> getSteps() {
 		List<ProgramStep> ps = new ArrayList<ProgramStep>();
 		ps.addAll(a.getSteps());
-		ps.addAll(b.getSteps());
+		if (b != null) ps.addAll(b.getSteps());
 		ps.addAll(steps);
 		return ps;
 	}
@@ -222,7 +229,7 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
 		case NOTEQUALS:
 		case EQUALS:
 			return sm.getResultType(getRole(op), a,b);
-			
+		
 		default:
 			return null;
 		}
@@ -243,8 +250,10 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
 	}
 	
 	@Override
-	public ISymbol getAddressSymbol() {
-		return result.getAddressSymbol();
+	public ISymbol getAddressSymbol() throws ECompilerException {
+		if (result instanceof IVariableSymbol)
+			return ((IVariableSymbol)result).getAddressSymbol();
+		throw new ECompilerException(context, "Literal value does not have an address.");
 	}
 
 	@Override

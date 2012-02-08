@@ -62,7 +62,7 @@ public class OperatedSymbol implements ILiteralSymbol, IVariableSymbol {
 	}
 
 	@Override
-	public ISymbol getAddressSymbol() {
+	public ISymbol getAddressSymbol() throws ECompilerException {
 		return ((IVariableSymbol)symbol).getAddressSymbol();
 	}
 

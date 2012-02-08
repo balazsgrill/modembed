@@ -157,7 +157,15 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 	private ISymbol resolve(XExpression1 x) throws ECompilerException{
 		ISymbol a = resolve(x.getA());
 		for(UNARY_OPERATOR op : x.getOperator()){
-			a = new OperationSymbol(x, a, getOp(x, op), null, this);
+			if (UNARY_OPERATOR.REFERENCE == op){
+				if (a instanceof IVariableSymbol){
+					a = ((IVariableSymbol) a).getAddressSymbol();
+				}else{
+					throw new ECompilerException(x, "Only variable can have a reference.");
+				}
+			}else{
+				a = new OperationSymbol(x, a, getOp(x, op), null, this);
+			}
 		}
 		return a;
 	}
@@ -166,6 +174,8 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 		switch (op) {
 		case MINUS: return OPERATION.UNARYMINUS;
 		case NOT: return OPERATION.NOT;
+		case DEREFERENCE: return OPERATION.DEREFERENCE;
+		case REFERENCE: return OPERATION.REFERENCE;
 		}
 		throw new ECompilerException(x, "Unsupported operator: "+op);
 	}

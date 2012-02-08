@@ -17,6 +17,7 @@ import hu.e.parser.eSyntax.OperationRole;
 import hu.e.parser.eSyntax.OperatorDefinition;
 import hu.e.parser.eSyntax.ParameterKind;
 import hu.e.parser.eSyntax.ParameterVariable;
+import hu.e.parser.eSyntax.RefTypeDef;
 import hu.e.parser.eSyntax.TypeDef;
 
 import java.util.ArrayList;
@@ -79,6 +80,31 @@ public class OperationFinder {
 		return opdefs;
 	}
 	
+	private boolean isAssignableTo(TypeDef to, TypeDef what){
+		if (to instanceof RefTypeDef){
+			if (what instanceof RefTypeDef){
+				return ((RefTypeDef) to).getType().equals(((RefTypeDef) what).getType());
+			}
+		}
+		if (to instanceof RefTypeDef){
+			return isAssignableTo(((RefTypeDef) to).getType().getDef(), what);
+		}
+		if (what instanceof RefTypeDef){
+			return isAssignableTo(to, ((RefTypeDef) what).getType().getDef());
+		}
+		if (to instanceof DataTypeDef){
+			if (what instanceof DataTypeDef){
+				return isAssignableToData((DataTypeDef)to, (DataTypeDef)what);
+			}
+			return false;
+		}
+		return false;
+	}
+	
+	private boolean isAssignableToData(DataTypeDef to, DataTypeDef what){
+		return what.getBits() <= to.getBits();
+	}
+	
 	private boolean checkOperation(Operation op, ISymbol...symbols) throws ECompilerException{
 		//if (op.eIsProxy()) op = (Operation) EcoreUtil2.resolve(op, pack);
 		if (op.getParams().size() != symbols.length) return false;
@@ -88,29 +114,16 @@ public class OperationFinder {
 			
 			if (s instanceof ILiteralSymbol && s.isLiteral()){
 				if (pv.getKind() == ParameterKind.VAR) return false;
-				
-				TypeDef td = pv.getType();
-				
-				if (td instanceof DataTypeDef){
-					int bits = ((DataTypeDef) td).getBits();
-					if (1<<bits <= ((ILiteralSymbol) s).getValue()) return false;
-				}else{
-					return false;
-				}
-				
+			
+				if (!isAssignableTo(pv.getType(), s.getType())) return false;
 			}else if (s instanceof IVariableSymbol){
 				if (pv.getKind() == ParameterKind.CONST) return false;
 				
-				if (s.getType() != pv.getType()){
-					return false;
-				}
-				
+				if (!isAssignableTo(pv.getType(), s.getType())) return false;
 			}else if (s instanceof StructLiteralSymbol){
 				if (pv.getKind() == ParameterKind.VAR) return false;
 				
-				if (s.getType() != pv.getType()){
-					return false;
-				}
+				if (!isAssignableTo(pv.getType(), s.getType())) return false;
 			}else{
 				throw new ECompilerException(op, "Unsupported operator symbol: "+s);
 			}
