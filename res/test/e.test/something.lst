@@ -2,26 +2,26 @@
 <lst:ProgramList xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:lst="http://e.hu/compiler/list" name="something">
   <step xsi:type="lst:SequenceStep" name="GLOBAL">
     <steps xsi:type="lst:SequenceStep">
-      <steps xsi:type="lst:SequenceStep">
+      <steps xsi:type="lst:SequenceStep" name="test.main">
         <steps xsi:type="lst:SequenceStep">
-          <steps xsi:type="lst:SequenceStep">
+          <steps xsi:type="lst:SequenceStep" name="pic18.platform.u8.set_u8">
             <steps xsi:type="lst:SequenceStep">
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
                   <steps xsi:type="lst:SequenceStep">
-                    <steps xsi:type="lst:SequenceStep">
+                    <steps xsi:type="lst:SequenceStep" name="microchip.pic18.MOVLW">
                       <steps xsi:type="lst:SequenceStep">
                         <steps xsi:type="lst:InstructionStep" code="3664" width="16"/>
                       </steps>
                     </steps>
-                    <steps xsi:type="lst:SequenceStep">
+                    <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aMOVWF">
                       <steps xsi:type="lst:SequenceStep">
-                        <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep"/>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.MOVWF">
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:InstructionStep" code="28371" width="16"/>
                           </steps>
@@ -33,18 +33,18 @@
               </steps>
             </steps>
           </steps>
-          <steps xsi:type="lst:SequenceStep">
+          <steps xsi:type="lst:SequenceStep" name="pic18.platform.u8.set_u8">
             <steps xsi:type="lst:SequenceStep">
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aCLRF">
                     <steps xsi:type="lst:SequenceStep">
-                      <steps xsi:type="lst:SequenceStep">
+                      <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:SequenceStep"/>
                         </steps>
                       </steps>
-                      <steps xsi:type="lst:SequenceStep">
+                      <steps xsi:type="lst:SequenceStep" name="microchip.pic18.CLRF">
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:InstructionStep" code="27262" width="16"/>
                         </steps>
@@ -55,18 +55,18 @@
               </steps>
             </steps>
           </steps>
-          <steps xsi:type="lst:SequenceStep">
+          <steps xsi:type="lst:SequenceStep" name="pic18.platform.u8.set_u8">
             <steps xsi:type="lst:SequenceStep">
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aCLRF">
                     <steps xsi:type="lst:SequenceStep">
-                      <steps xsi:type="lst:SequenceStep">
+                      <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:SequenceStep"/>
                         </steps>
                       </steps>
-                      <steps xsi:type="lst:SequenceStep">
+                      <steps xsi:type="lst:SequenceStep" name="microchip.pic18.CLRF">
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:InstructionStep" code="27263" width="16"/>
                         </steps>
@@ -77,18 +77,18 @@
               </steps>
             </steps>
           </steps>
-          <steps xsi:type="lst:SequenceStep">
+          <steps xsi:type="lst:SequenceStep" name="pic18.platform.u8.set_u8">
             <steps xsi:type="lst:SequenceStep">
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aCLRF">
                     <steps xsi:type="lst:SequenceStep">
-                      <steps xsi:type="lst:SequenceStep">
+                      <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:SequenceStep"/>
                         </steps>
                       </steps>
-                      <steps xsi:type="lst:SequenceStep">
+                      <steps xsi:type="lst:SequenceStep" name="microchip.pic18.CLRF">
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:InstructionStep" code="27284" width="16"/>
                         </steps>
@@ -99,18 +99,18 @@
               </steps>
             </steps>
           </steps>
-          <steps xsi:type="lst:SequenceStep">
+          <steps xsi:type="lst:SequenceStep" name="pic18.platform.u8.set_u8">
             <steps xsi:type="lst:SequenceStep">
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aCLRF">
                     <steps xsi:type="lst:SequenceStep">
-                      <steps xsi:type="lst:SequenceStep">
+                      <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:SequenceStep"/>
                         </steps>
                       </steps>
-                      <steps xsi:type="lst:SequenceStep">
+                      <steps xsi:type="lst:SequenceStep" name="microchip.pic18.CLRF">
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:InstructionStep" code="27266" width="16"/>
                         </steps>
@@ -121,18 +121,18 @@
               </steps>
             </steps>
           </steps>
-          <steps xsi:type="lst:SequenceStep">
+          <steps xsi:type="lst:SequenceStep" name="pic18.platform.u8.set_u8">
             <steps xsi:type="lst:SequenceStep">
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aCLRF">
                     <steps xsi:type="lst:SequenceStep">
-                      <steps xsi:type="lst:SequenceStep">
+                      <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:SequenceStep"/>
                         </steps>
                       </steps>
-                      <steps xsi:type="lst:SequenceStep">
+                      <steps xsi:type="lst:SequenceStep" name="microchip.pic18.CLRF">
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:InstructionStep" code="27275" width="16"/>
                         </steps>
@@ -143,18 +143,18 @@
               </steps>
             </steps>
           </steps>
-          <steps xsi:type="lst:SequenceStep">
+          <steps xsi:type="lst:SequenceStep" name="pic18.platform.u8.set_u8">
             <steps xsi:type="lst:SequenceStep">
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aCLRF">
                     <steps xsi:type="lst:SequenceStep">
-                      <steps xsi:type="lst:SequenceStep">
+                      <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:SequenceStep"/>
                         </steps>
                       </steps>
-                      <steps xsi:type="lst:SequenceStep">
+                      <steps xsi:type="lst:SequenceStep" name="microchip.pic18.CLRF">
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:InstructionStep" code="27137" width="16"/>
                         </steps>
@@ -165,18 +165,18 @@
               </steps>
             </steps>
           </steps>
-          <steps xsi:type="lst:SequenceStep">
+          <steps xsi:type="lst:SequenceStep" name="pic18.platform.u8.set_u8">
             <steps xsi:type="lst:SequenceStep">
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aCLRF">
                     <steps xsi:type="lst:SequenceStep">
-                      <steps xsi:type="lst:SequenceStep">
+                      <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:SequenceStep"/>
                         </steps>
                       </steps>
-                      <steps xsi:type="lst:SequenceStep">
+                      <steps xsi:type="lst:SequenceStep" name="microchip.pic18.CLRF">
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:InstructionStep" code="27136" width="16"/>
                         </steps>
@@ -187,18 +187,18 @@
               </steps>
             </steps>
           </steps>
-          <steps xsi:type="lst:SequenceStep">
+          <steps xsi:type="lst:SequenceStep" name="pic18.platform.u8.set_u8">
             <steps xsi:type="lst:SequenceStep">
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aCLRF">
                     <steps xsi:type="lst:SequenceStep">
-                      <steps xsi:type="lst:SequenceStep">
+                      <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:SequenceStep"/>
                         </steps>
                       </steps>
-                      <steps xsi:type="lst:SequenceStep">
+                      <steps xsi:type="lst:SequenceStep" name="microchip.pic18.CLRF">
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:InstructionStep" code="27265" width="16"/>
                         </steps>
@@ -209,18 +209,18 @@
               </steps>
             </steps>
           </steps>
-          <steps xsi:type="lst:SequenceStep">
+          <steps xsi:type="lst:SequenceStep" name="pic18.platform.u8.set_u8">
             <steps xsi:type="lst:SequenceStep">
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aCLRF">
                     <steps xsi:type="lst:SequenceStep">
-                      <steps xsi:type="lst:SequenceStep">
+                      <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:SequenceStep"/>
                         </steps>
                       </steps>
-                      <steps xsi:type="lst:SequenceStep">
+                      <steps xsi:type="lst:SequenceStep" name="microchip.pic18.CLRF">
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:InstructionStep" code="27274" width="16"/>
                         </steps>
@@ -231,18 +231,18 @@
               </steps>
             </steps>
           </steps>
-          <steps xsi:type="lst:SequenceStep">
+          <steps xsi:type="lst:SequenceStep" name="pic18.platform.u8.set_u8">
             <steps xsi:type="lst:SequenceStep">
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aCLRF">
                     <steps xsi:type="lst:SequenceStep">
-                      <steps xsi:type="lst:SequenceStep">
+                      <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:SequenceStep"/>
                         </steps>
                       </steps>
-                      <steps xsi:type="lst:SequenceStep">
+                      <steps xsi:type="lst:SequenceStep" name="microchip.pic18.CLRF">
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:InstructionStep" code="27283" width="16"/>
                         </steps>
@@ -253,19 +253,19 @@
               </steps>
             </steps>
           </steps>
-          <steps xsi:type="lst:SequenceStep">
+          <steps xsi:type="lst:SequenceStep" name="pic18.platform.u8.set_u8">
             <steps xsi:type="lst:SequenceStep">
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
                   <steps xsi:type="lst:SequenceStep">
-                    <steps xsi:type="lst:SequenceStep">
+                    <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aSETF">
                       <steps xsi:type="lst:SequenceStep">
-                        <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep"/>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.SETF">
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:InstructionStep" code="26626" width="16"/>
                           </steps>
@@ -277,133 +277,133 @@
               </steps>
             </steps>
           </steps>
-          <steps xsi:type="lst:SequenceStep">
+          <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.EUSART.RS232_init">
             <steps xsi:type="lst:SequenceStep">
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aBSF">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BSF">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" code="35475" width="16"/>
                     </steps>
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aBSF">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BSF">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" code="36499" width="16"/>
                     </steps>
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aBSF">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BSF">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" code="33964" width="16"/>
                     </steps>
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.pic18.MOVLW">
                 <steps xsi:type="lst:SequenceStep">
                   <steps xsi:type="lst:InstructionStep" code="3609" width="16"/>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aMOVWF">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.MOVWF">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" code="28335" width="16"/>
                     </steps>
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aCLRF">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.CLRF">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" code="27312" width="16"/>
                     </steps>
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aBSF">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BSF">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" code="35500" width="16"/>
                     </steps>
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aBSF">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BSF">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" code="34987" width="16"/>
                     </steps>
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aBCF">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BCF">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" code="39084" width="16"/>
                     </steps>
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aBSF">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BSF">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" code="36523" width="16"/>
                     </steps>
@@ -413,22 +413,22 @@
             </steps>
           </steps>
           <steps xsi:type="lst:LabelStep"/>
-          <steps xsi:type="lst:SequenceStep">
+          <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.SPI.SPI_Send">
             <steps xsi:type="lst:SequenceStep">
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.DIO.DIO_Set">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.DIO.DIO_RawSet">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep">
                         <steps xsi:type="lst:SequenceStep">
-                          <steps xsi:type="lst:SequenceStep">
+                          <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aBCF">
                             <steps xsi:type="lst:SequenceStep">
-                              <steps xsi:type="lst:SequenceStep">
+                              <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
                                   <steps xsi:type="lst:SequenceStep"/>
                                 </steps>
                               </steps>
-                              <steps xsi:type="lst:SequenceStep">
+                              <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BCF">
                                 <steps xsi:type="lst:SequenceStep">
                                   <steps xsi:type="lst:InstructionStep" code="37003" width="16"/>
                                 </steps>
@@ -441,81 +441,81 @@
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.SPI.wait">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.DIO.DIO_Set">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.DIO.DIO_RawSet">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep">
-                        <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aBTFSC">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
-                            <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BTFSC">
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:InstructionStep" code="45058" width="16"/>
                               </steps>
                             </steps>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@1037517 (name: true) at microchip.PIC18F14K50.DIO line 74"/>
-                        <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@9a912e (name: true) at microchip.PIC18F14K50.DIO line 74"/>
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.GOTO">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aBCF">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
-                            <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BCF">
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:InstructionStep" code="37515" width="16"/>
                               </steps>
                             </steps>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@a8b23b (name: done) at microchip.PIC18F14K50.DIO line 77"/>
-                        <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@1f826d (name: done) at microchip.PIC18F14K50.DIO line 77"/>
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.GOTO">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
                           </steps>
                         </steps>
                         <steps xsi:type="lst:LabelStep"/>
-                        <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aBSF">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
-                            <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BSF">
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:InstructionStep" code="33419" width="16"/>
                               </steps>
@@ -528,39 +528,39 @@
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.SPI.wait">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.DIO.DIO_Set">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.DIO.DIO_RawSet">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep">
                         <steps xsi:type="lst:SequenceStep">
-                          <steps xsi:type="lst:SequenceStep">
+                          <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aBSF">
                             <steps xsi:type="lst:SequenceStep">
-                              <steps xsi:type="lst:SequenceStep">
+                              <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
                                   <steps xsi:type="lst:SequenceStep"/>
                                 </steps>
                               </steps>
-                              <steps xsi:type="lst:SequenceStep">
+                              <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BSF">
                                 <steps xsi:type="lst:SequenceStep">
                                   <steps xsi:type="lst:InstructionStep" code="32907" width="16"/>
                                 </steps>
@@ -573,39 +573,39 @@
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.SPI.wait">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.DIO.DIO_Set">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.DIO.DIO_RawSet">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep">
                         <steps xsi:type="lst:SequenceStep">
-                          <steps xsi:type="lst:SequenceStep">
+                          <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aBCF">
                             <steps xsi:type="lst:SequenceStep">
-                              <steps xsi:type="lst:SequenceStep">
+                              <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
                                   <steps xsi:type="lst:SequenceStep"/>
                                 </steps>
                               </steps>
-                              <steps xsi:type="lst:SequenceStep">
+                              <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BCF">
                                 <steps xsi:type="lst:SequenceStep">
                                   <steps xsi:type="lst:InstructionStep" code="37003" width="16"/>
                                 </steps>
@@ -618,81 +618,81 @@
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.SPI.wait">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.DIO.DIO_Set">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.DIO.DIO_RawSet">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep">
-                        <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aBTFSC">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
-                            <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BTFSC">
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:InstructionStep" code="45570" width="16"/>
                               </steps>
                             </steps>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@1037517 (name: true) at microchip.PIC18F14K50.DIO line 74"/>
-                        <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@9a912e (name: true) at microchip.PIC18F14K50.DIO line 74"/>
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.GOTO">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aBCF">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
-                            <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BCF">
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:InstructionStep" code="37515" width="16"/>
                               </steps>
                             </steps>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@a8b23b (name: done) at microchip.PIC18F14K50.DIO line 77"/>
-                        <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@1f826d (name: done) at microchip.PIC18F14K50.DIO line 77"/>
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.GOTO">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
                           </steps>
                         </steps>
                         <steps xsi:type="lst:LabelStep"/>
-                        <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aBSF">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
-                            <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BSF">
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:InstructionStep" code="33419" width="16"/>
                               </steps>
@@ -705,39 +705,39 @@
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.SPI.wait">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.DIO.DIO_Set">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.DIO.DIO_RawSet">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep">
                         <steps xsi:type="lst:SequenceStep">
-                          <steps xsi:type="lst:SequenceStep">
+                          <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aBSF">
                             <steps xsi:type="lst:SequenceStep">
-                              <steps xsi:type="lst:SequenceStep">
+                              <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
                                   <steps xsi:type="lst:SequenceStep"/>
                                 </steps>
                               </steps>
-                              <steps xsi:type="lst:SequenceStep">
+                              <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BSF">
                                 <steps xsi:type="lst:SequenceStep">
                                   <steps xsi:type="lst:InstructionStep" code="32907" width="16"/>
                                 </steps>
@@ -750,39 +750,39 @@
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.SPI.wait">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.DIO.DIO_Set">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.DIO.DIO_RawSet">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep">
                         <steps xsi:type="lst:SequenceStep">
-                          <steps xsi:type="lst:SequenceStep">
+                          <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aBCF">
                             <steps xsi:type="lst:SequenceStep">
-                              <steps xsi:type="lst:SequenceStep">
+                              <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
                                   <steps xsi:type="lst:SequenceStep"/>
                                 </steps>
                               </steps>
-                              <steps xsi:type="lst:SequenceStep">
+                              <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BCF">
                                 <steps xsi:type="lst:SequenceStep">
                                   <steps xsi:type="lst:InstructionStep" code="37003" width="16"/>
                                 </steps>
@@ -795,81 +795,81 @@
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.SPI.wait">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.DIO.DIO_Set">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.DIO.DIO_RawSet">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep">
-                        <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aBTFSC">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
-                            <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BTFSC">
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:InstructionStep" code="46082" width="16"/>
                               </steps>
                             </steps>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@1037517 (name: true) at microchip.PIC18F14K50.DIO line 74"/>
-                        <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@9a912e (name: true) at microchip.PIC18F14K50.DIO line 74"/>
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.GOTO">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aBCF">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
-                            <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BCF">
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:InstructionStep" code="37515" width="16"/>
                               </steps>
                             </steps>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@a8b23b (name: done) at microchip.PIC18F14K50.DIO line 77"/>
-                        <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@1f826d (name: done) at microchip.PIC18F14K50.DIO line 77"/>
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.GOTO">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
                           </steps>
                         </steps>
                         <steps xsi:type="lst:LabelStep"/>
-                        <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aBSF">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
-                            <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BSF">
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:InstructionStep" code="33419" width="16"/>
                               </steps>
@@ -882,39 +882,39 @@
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.SPI.wait">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.DIO.DIO_Set">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.DIO.DIO_RawSet">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep">
                         <steps xsi:type="lst:SequenceStep">
-                          <steps xsi:type="lst:SequenceStep">
+                          <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aBSF">
                             <steps xsi:type="lst:SequenceStep">
-                              <steps xsi:type="lst:SequenceStep">
+                              <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
                                   <steps xsi:type="lst:SequenceStep"/>
                                 </steps>
                               </steps>
-                              <steps xsi:type="lst:SequenceStep">
+                              <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BSF">
                                 <steps xsi:type="lst:SequenceStep">
                                   <steps xsi:type="lst:InstructionStep" code="32907" width="16"/>
                                 </steps>
@@ -927,39 +927,39 @@
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.SPI.wait">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.DIO.DIO_Set">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.DIO.DIO_RawSet">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep">
                         <steps xsi:type="lst:SequenceStep">
-                          <steps xsi:type="lst:SequenceStep">
+                          <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aBCF">
                             <steps xsi:type="lst:SequenceStep">
-                              <steps xsi:type="lst:SequenceStep">
+                              <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
                                   <steps xsi:type="lst:SequenceStep"/>
                                 </steps>
                               </steps>
-                              <steps xsi:type="lst:SequenceStep">
+                              <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BCF">
                                 <steps xsi:type="lst:SequenceStep">
                                   <steps xsi:type="lst:InstructionStep" code="37003" width="16"/>
                                 </steps>
@@ -972,81 +972,81 @@
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.SPI.wait">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.DIO.DIO_Set">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.DIO.DIO_RawSet">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep">
-                        <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aBTFSC">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
-                            <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BTFSC">
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:InstructionStep" code="46594" width="16"/>
                               </steps>
                             </steps>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@1037517 (name: true) at microchip.PIC18F14K50.DIO line 74"/>
-                        <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@9a912e (name: true) at microchip.PIC18F14K50.DIO line 74"/>
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.GOTO">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aBCF">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
-                            <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BCF">
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:InstructionStep" code="37515" width="16"/>
                               </steps>
                             </steps>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@a8b23b (name: done) at microchip.PIC18F14K50.DIO line 77"/>
-                        <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@1f826d (name: done) at microchip.PIC18F14K50.DIO line 77"/>
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.GOTO">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
                           </steps>
                         </steps>
                         <steps xsi:type="lst:LabelStep"/>
-                        <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aBSF">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
-                            <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BSF">
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:InstructionStep" code="33419" width="16"/>
                               </steps>
@@ -1059,39 +1059,39 @@
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.SPI.wait">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.DIO.DIO_Set">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.DIO.DIO_RawSet">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep">
                         <steps xsi:type="lst:SequenceStep">
-                          <steps xsi:type="lst:SequenceStep">
+                          <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aBSF">
                             <steps xsi:type="lst:SequenceStep">
-                              <steps xsi:type="lst:SequenceStep">
+                              <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
                                   <steps xsi:type="lst:SequenceStep"/>
                                 </steps>
                               </steps>
-                              <steps xsi:type="lst:SequenceStep">
+                              <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BSF">
                                 <steps xsi:type="lst:SequenceStep">
                                   <steps xsi:type="lst:InstructionStep" code="32907" width="16"/>
                                 </steps>
@@ -1104,39 +1104,39 @@
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.SPI.wait">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.DIO.DIO_Set">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.DIO.DIO_RawSet">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep">
                         <steps xsi:type="lst:SequenceStep">
-                          <steps xsi:type="lst:SequenceStep">
+                          <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aBCF">
                             <steps xsi:type="lst:SequenceStep">
-                              <steps xsi:type="lst:SequenceStep">
+                              <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
                                   <steps xsi:type="lst:SequenceStep"/>
                                 </steps>
                               </steps>
-                              <steps xsi:type="lst:SequenceStep">
+                              <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BCF">
                                 <steps xsi:type="lst:SequenceStep">
                                   <steps xsi:type="lst:InstructionStep" code="37003" width="16"/>
                                 </steps>
@@ -1149,81 +1149,81 @@
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.SPI.wait">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.DIO.DIO_Set">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.DIO.DIO_RawSet">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep">
-                        <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aBTFSC">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
-                            <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BTFSC">
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:InstructionStep" code="47106" width="16"/>
                               </steps>
                             </steps>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@1037517 (name: true) at microchip.PIC18F14K50.DIO line 74"/>
-                        <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@9a912e (name: true) at microchip.PIC18F14K50.DIO line 74"/>
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.GOTO">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aBCF">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
-                            <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BCF">
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:InstructionStep" code="37515" width="16"/>
                               </steps>
                             </steps>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@a8b23b (name: done) at microchip.PIC18F14K50.DIO line 77"/>
-                        <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@1f826d (name: done) at microchip.PIC18F14K50.DIO line 77"/>
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.GOTO">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
                           </steps>
                         </steps>
                         <steps xsi:type="lst:LabelStep"/>
-                        <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aBSF">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
-                            <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BSF">
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:InstructionStep" code="33419" width="16"/>
                               </steps>
@@ -1236,39 +1236,39 @@
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.SPI.wait">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.DIO.DIO_Set">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.DIO.DIO_RawSet">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep">
                         <steps xsi:type="lst:SequenceStep">
-                          <steps xsi:type="lst:SequenceStep">
+                          <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aBSF">
                             <steps xsi:type="lst:SequenceStep">
-                              <steps xsi:type="lst:SequenceStep">
+                              <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
                                   <steps xsi:type="lst:SequenceStep"/>
                                 </steps>
                               </steps>
-                              <steps xsi:type="lst:SequenceStep">
+                              <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BSF">
                                 <steps xsi:type="lst:SequenceStep">
                                   <steps xsi:type="lst:InstructionStep" code="32907" width="16"/>
                                 </steps>
@@ -1281,39 +1281,39 @@
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.SPI.wait">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.DIO.DIO_Set">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.DIO.DIO_RawSet">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep">
                         <steps xsi:type="lst:SequenceStep">
-                          <steps xsi:type="lst:SequenceStep">
+                          <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aBCF">
                             <steps xsi:type="lst:SequenceStep">
-                              <steps xsi:type="lst:SequenceStep">
+                              <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
                                   <steps xsi:type="lst:SequenceStep"/>
                                 </steps>
                               </steps>
-                              <steps xsi:type="lst:SequenceStep">
+                              <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BCF">
                                 <steps xsi:type="lst:SequenceStep">
                                   <steps xsi:type="lst:InstructionStep" code="37003" width="16"/>
                                 </steps>
@@ -1326,81 +1326,81 @@
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.SPI.wait">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.DIO.DIO_Set">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.DIO.DIO_RawSet">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep">
-                        <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aBTFSC">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
-                            <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BTFSC">
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:InstructionStep" code="47618" width="16"/>
                               </steps>
                             </steps>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@1037517 (name: true) at microchip.PIC18F14K50.DIO line 74"/>
-                        <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@9a912e (name: true) at microchip.PIC18F14K50.DIO line 74"/>
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.GOTO">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aBCF">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
-                            <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BCF">
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:InstructionStep" code="37515" width="16"/>
                               </steps>
                             </steps>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@a8b23b (name: done) at microchip.PIC18F14K50.DIO line 77"/>
-                        <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@1f826d (name: done) at microchip.PIC18F14K50.DIO line 77"/>
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.GOTO">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
                           </steps>
                         </steps>
                         <steps xsi:type="lst:LabelStep"/>
-                        <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aBSF">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
-                            <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BSF">
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:InstructionStep" code="33419" width="16"/>
                               </steps>
@@ -1413,39 +1413,39 @@
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.SPI.wait">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.DIO.DIO_Set">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.DIO.DIO_RawSet">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep">
                         <steps xsi:type="lst:SequenceStep">
-                          <steps xsi:type="lst:SequenceStep">
+                          <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aBSF">
                             <steps xsi:type="lst:SequenceStep">
-                              <steps xsi:type="lst:SequenceStep">
+                              <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
                                   <steps xsi:type="lst:SequenceStep"/>
                                 </steps>
                               </steps>
-                              <steps xsi:type="lst:SequenceStep">
+                              <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BSF">
                                 <steps xsi:type="lst:SequenceStep">
                                   <steps xsi:type="lst:InstructionStep" code="32907" width="16"/>
                                 </steps>
@@ -1458,39 +1458,39 @@
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.SPI.wait">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.DIO.DIO_Set">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.DIO.DIO_RawSet">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep">
                         <steps xsi:type="lst:SequenceStep">
-                          <steps xsi:type="lst:SequenceStep">
+                          <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aBCF">
                             <steps xsi:type="lst:SequenceStep">
-                              <steps xsi:type="lst:SequenceStep">
+                              <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
                                   <steps xsi:type="lst:SequenceStep"/>
                                 </steps>
                               </steps>
-                              <steps xsi:type="lst:SequenceStep">
+                              <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BCF">
                                 <steps xsi:type="lst:SequenceStep">
                                   <steps xsi:type="lst:InstructionStep" code="37003" width="16"/>
                                 </steps>
@@ -1503,81 +1503,81 @@
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.SPI.wait">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.DIO.DIO_Set">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.DIO.DIO_RawSet">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep">
-                        <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aBTFSC">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
-                            <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BTFSC">
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:InstructionStep" code="48130" width="16"/>
                               </steps>
                             </steps>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@1037517 (name: true) at microchip.PIC18F14K50.DIO line 74"/>
-                        <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@9a912e (name: true) at microchip.PIC18F14K50.DIO line 74"/>
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.GOTO">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aBCF">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
-                            <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BCF">
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:InstructionStep" code="37515" width="16"/>
                               </steps>
                             </steps>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@a8b23b (name: done) at microchip.PIC18F14K50.DIO line 77"/>
-                        <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@1f826d (name: done) at microchip.PIC18F14K50.DIO line 77"/>
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.GOTO">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
                           </steps>
                         </steps>
                         <steps xsi:type="lst:LabelStep"/>
-                        <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aBSF">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
-                            <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BSF">
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:InstructionStep" code="33419" width="16"/>
                               </steps>
@@ -1590,39 +1590,39 @@
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.SPI.wait">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.DIO.DIO_Set">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.DIO.DIO_RawSet">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep">
                         <steps xsi:type="lst:SequenceStep">
-                          <steps xsi:type="lst:SequenceStep">
+                          <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aBSF">
                             <steps xsi:type="lst:SequenceStep">
-                              <steps xsi:type="lst:SequenceStep">
+                              <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
                                   <steps xsi:type="lst:SequenceStep"/>
                                 </steps>
                               </steps>
-                              <steps xsi:type="lst:SequenceStep">
+                              <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BSF">
                                 <steps xsi:type="lst:SequenceStep">
                                   <steps xsi:type="lst:InstructionStep" code="32907" width="16"/>
                                 </steps>
@@ -1635,39 +1635,39 @@
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.SPI.wait">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.DIO.DIO_Set">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.DIO.DIO_RawSet">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep">
                         <steps xsi:type="lst:SequenceStep">
-                          <steps xsi:type="lst:SequenceStep">
+                          <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aBCF">
                             <steps xsi:type="lst:SequenceStep">
-                              <steps xsi:type="lst:SequenceStep">
+                              <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
                                   <steps xsi:type="lst:SequenceStep"/>
                                 </steps>
                               </steps>
-                              <steps xsi:type="lst:SequenceStep">
+                              <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BCF">
                                 <steps xsi:type="lst:SequenceStep">
                                   <steps xsi:type="lst:InstructionStep" code="37003" width="16"/>
                                 </steps>
@@ -1680,81 +1680,81 @@
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.SPI.wait">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.DIO.DIO_Set">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.DIO.DIO_RawSet">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep">
-                        <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aBTFSC">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
-                            <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BTFSC">
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:InstructionStep" code="48642" width="16"/>
                               </steps>
                             </steps>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@1037517 (name: true) at microchip.PIC18F14K50.DIO line 74"/>
-                        <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@9a912e (name: true) at microchip.PIC18F14K50.DIO line 74"/>
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.GOTO">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aBCF">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
-                            <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BCF">
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:InstructionStep" code="37515" width="16"/>
                               </steps>
                             </steps>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@a8b23b (name: done) at microchip.PIC18F14K50.DIO line 77"/>
-                        <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@1f826d (name: done) at microchip.PIC18F14K50.DIO line 77"/>
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.GOTO">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
                           </steps>
                         </steps>
                         <steps xsi:type="lst:LabelStep"/>
-                        <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aBSF">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
-                            <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BSF">
                               <steps xsi:type="lst:SequenceStep">
                                 <steps xsi:type="lst:InstructionStep" code="33419" width="16"/>
                               </steps>
@@ -1767,39 +1767,39 @@
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.SPI.wait">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.DIO.DIO_Set">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.DIO.DIO_RawSet">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep">
                         <steps xsi:type="lst:SequenceStep">
-                          <steps xsi:type="lst:SequenceStep">
+                          <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aBSF">
                             <steps xsi:type="lst:SequenceStep">
-                              <steps xsi:type="lst:SequenceStep">
+                              <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
                                   <steps xsi:type="lst:SequenceStep"/>
                                 </steps>
                               </steps>
-                              <steps xsi:type="lst:SequenceStep">
+                              <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BSF">
                                 <steps xsi:type="lst:SequenceStep">
                                   <steps xsi:type="lst:InstructionStep" code="32907" width="16"/>
                                 </steps>
@@ -1812,19 +1812,19 @@
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.SPI.wait">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" width="16"/>
                     </steps>
@@ -1833,31 +1833,31 @@
               </steps>
             </steps>
           </steps>
-          <steps xsi:type="lst:SequenceStep">
+          <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.EUSART.RS232_syncSend">
             <steps xsi:type="lst:SequenceStep">
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aBTFSS">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BTFSS">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" code="43166" width="16"/>
                     </steps>
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@97eb1 (name: nosend) at microchip.PIC18F14K50.EUSART line 78"/>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@d9b967 (name: nosend) at microchip.PIC18F14K50.EUSART line 78"/>
+              <steps xsi:type="lst:SequenceStep" name="microchip.pic18.GOTO">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
+                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
+                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
                 </steps>
               </steps>
               <steps xsi:type="lst:SequenceStep">
-                <steps xsi:type="lst:SequenceStep">
+                <steps xsi:type="lst:SequenceStep" name="microchip.pic18.MOVFF">
                   <steps xsi:type="lst:SequenceStep">
                     <steps xsi:type="lst:InstructionStep" code="49153" width="16"/>
                     <steps xsi:type="lst:InstructionStep" code="65453" width="16"/>
@@ -1865,28 +1865,28 @@
                 </steps>
               </steps>
               <steps xsi:type="lst:LabelStep"/>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aBTFSS">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:SequenceStep"/>
                     </steps>
                   </steps>
-                  <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BTFSS">
                     <steps xsi:type="lst:SequenceStep">
                       <steps xsi:type="lst:InstructionStep" code="43678" width="16"/>
                     </steps>
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@1d7eaea (name: norcv) at microchip.PIC18F14K50.EUSART line 89"/>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@9689fb (name: norcv) at microchip.PIC18F14K50.EUSART line 89"/>
+              <steps xsi:type="lst:SequenceStep" name="microchip.pic18.GOTO">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
+                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
+                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.pic18.MOVFF">
                 <steps xsi:type="lst:SequenceStep">
                   <steps xsi:type="lst:InstructionStep" code="53166" width="16"/>
                   <steps xsi:type="lst:InstructionStep" code="61440" width="16"/>
@@ -1895,10 +1895,10 @@
               <steps xsi:type="lst:LabelStep"/>
             </steps>
           </steps>
-          <steps xsi:type="lst:SequenceStep">
+          <steps xsi:type="lst:SequenceStep" name="pic18.platform.u8.set_u8">
             <steps xsi:type="lst:SequenceStep">
               <steps xsi:type="lst:SequenceStep">
-                <steps xsi:type="lst:SequenceStep">
+                <steps xsi:type="lst:SequenceStep" name="microchip.pic18.MOVFF">
                   <steps xsi:type="lst:SequenceStep">
                     <steps xsi:type="lst:InstructionStep" code="49153" width="16"/>
                     <steps xsi:type="lst:InstructionStep" code="61440" width="16"/>
@@ -1907,10 +1907,10 @@
               </steps>
             </steps>
           </steps>
-          <steps xsi:type="lst:SequenceStep">
+          <steps xsi:type="lst:SequenceStep" name="pic18.platform.u8.set_u8">
             <steps xsi:type="lst:SequenceStep">
               <steps xsi:type="lst:SequenceStep">
-                <steps xsi:type="lst:SequenceStep">
+                <steps xsi:type="lst:SequenceStep" name="microchip.pic18.MOVFF">
                   <steps xsi:type="lst:SequenceStep">
                     <steps xsi:type="lst:InstructionStep" code="49154" width="16"/>
                     <steps xsi:type="lst:InstructionStep" code="61440" width="16"/>
@@ -1919,30 +1919,30 @@
               </steps>
             </steps>
           </steps>
-          <steps xsi:type="lst:SequenceStep">
+          <steps xsi:type="lst:SequenceStep" name="microchip.PIC18F14K50.SPI.wait">
             <steps xsi:type="lst:SequenceStep">
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                 <steps xsi:type="lst:SequenceStep">
                   <steps xsi:type="lst:InstructionStep" width="16"/>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                 <steps xsi:type="lst:SequenceStep">
                   <steps xsi:type="lst:InstructionStep" width="16"/>
                 </steps>
               </steps>
-              <steps xsi:type="lst:SequenceStep">
+              <steps xsi:type="lst:SequenceStep" name="microchip.pic18.NOP">
                 <steps xsi:type="lst:SequenceStep">
                   <steps xsi:type="lst:InstructionStep" width="16"/>
                 </steps>
               </steps>
             </steps>
           </steps>
-          <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@1115cea (name: start) at test line 79"/>
-          <steps xsi:type="lst:SequenceStep">
+          <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@6cb7fd (name: start) at test line 79"/>
+          <steps xsi:type="lst:SequenceStep" name="microchip.pic18.GOTO">
             <steps xsi:type="lst:SequenceStep">
-              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
-              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@152327c (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
+              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
+              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
             </steps>
           </steps>
         </steps>

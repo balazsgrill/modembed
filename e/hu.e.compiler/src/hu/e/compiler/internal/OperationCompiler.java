@@ -15,6 +15,7 @@ import hu.e.compiler.internal.symbols.AbstractSymbolManager;
 import hu.e.compiler.list.ListFactory;
 import hu.e.compiler.list.ProgramStep;
 import hu.e.compiler.list.SequenceStep;
+import hu.e.parser.eSyntax.CompilationUnit;
 import hu.e.parser.eSyntax.Operation;
 import hu.e.parser.eSyntax.OperationBlock;
 import hu.e.parser.eSyntax.Variable;
@@ -79,6 +80,7 @@ public class OperationCompiler {
 	
 	public ProgramStep compile(final ISymbolManager sm){
 		SequenceStep result = ListFactory.eINSTANCE.createSequenceStep();
+		result.setName(((CompilationUnit)operation.eContainer()).getName() +"."+ operation.getName());
 		List<ProgramStep> steps = result.getSteps();
 		if(operation.getReturnvar() != null){
 			//needs a result buffer

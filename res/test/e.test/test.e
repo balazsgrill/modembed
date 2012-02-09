@@ -76,5 +76,5 @@ main(){
 	rcv = display;
 	
 	wait();
-	GOTO(@start);
+	GOTO(start);
 }
