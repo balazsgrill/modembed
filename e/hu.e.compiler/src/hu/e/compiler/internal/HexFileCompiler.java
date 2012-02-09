@@ -7,7 +7,9 @@ import hexfile.AddressType;
 import hexfile.Entry;
 import hexfile.HexFile;
 import hexfile.HexfileFactory;
+import hu.e.compiler.ECompiler;
 import hu.e.compiler.ECompilerException;
+import hu.e.compiler.internal.linking.ProgramListLinker;
 import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
 import hu.e.compiler.internal.symbols.RootSymbolManager;
@@ -75,9 +77,15 @@ public class HexFileCompiler {
 					Entry entry = HexfileFactory.eINSTANCE.createEntry();
 					entry.setAddress(start);
 					FunctionCompiler fc = new FunctionCompiler((FunctionBinarySection)bs);
-					lists.add(fc.compile(sm));
+					ProgramList plist = fc.compile(sm); 
+					lists.add(plist);
+					ProgramListLinker linker = new ProgramListLinker(plist);
 					
-					entry.setData(new byte[0]);
+					int memwidth = ECompiler.convertLiteral(((FunctionBinarySection) bs).getMemwidth());
+					memwidth = (memwidth/8) + ( ((memwidth%8)==0 )? 0 :1);
+					int startAddr = start/memwidth;
+					
+					entry.setData(linker.link(startAddr));
 					result.getEntries().add(entry);
 					
 				}catch(ECompilerException e){

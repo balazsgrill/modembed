@@ -64,54 +64,6 @@ public class FunctionCompiler {
 		root.getSteps().add(bc.compile(sm));
 		
 		return pl;
-		
-//		//Linking
-//		int progsize = 0;
-//		
-//		try{
-//			ISymbol startsymbol = sm.resolve((link.getStart()));
-//			if (!startsymbol.isLiteral()) throw new RuntimeException("Start address of binary block cannot be accessed in compile time!");
-//			int startAddr = ((ILiteralSymbol)startsymbol).getValue();
-//			Map<LabelStep, Integer> labelAddr = new HashMap<LabelStep, Integer>();
-//			for(ProgramStep s : ps){
-//				if (s instanceof LabelStep){
-//					labelAddr.put((LabelStep)s,startAddr);
-//				}
-//				if (s instanceof InstructionStep){
-//					progsize += ((InstructionStep) s).getWidth();
-//					startAddr++;
-//				}
-//
-//			}
-//
-//			//Resolve labels
-//			sm.setLabelAddresses(labelAddr);
-//		}catch(ECompilerException e){
-//			ps.add(CompilationErrorEntry.create(e));
-//		}
-//		
-//		//Produce instruction bytes
-//		byte[] data = new byte[progsize];
-//		int i = 0;
-//		for(ProgramStep s : ps){
-//			if (s instanceof InstructionWordInstance){
-//				int wordbytes = ((InstructionWordInstance) s).getWidth();
-//				int d = 0;
-//					d = ((InstructionWordInstance) s).getValue();
-//				for(int j=0;j<wordbytes;j++){
-//					int b = (int)(d&0xFF);
-//					d = d>>8;
-//					//Reversed byte order (for now, it seems that 
-//					// forward byte order should be used)
-//					//int index = i + (wordbytes-1-j);
-//					int index = i + j;
-//					data[index] = HexFileResource.intToByte(b);
-//				}
-//				i+=wordbytes;
-//			}
-//		}
-//		
-//		return data;
 	}
 	
 }

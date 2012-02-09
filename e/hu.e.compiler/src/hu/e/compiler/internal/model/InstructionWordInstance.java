@@ -26,7 +26,7 @@ import java.util.List;
  */
 public class InstructionWordInstance{
 	
-	private int getItemValue(int value, int shift, int start, int size){
+	public static int getItemValue(int value, int shift, int start, int size){
 		int v = value;
 		v = v>>shift;
 		v = v%(1<<size);
