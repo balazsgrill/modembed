@@ -10,10 +10,10 @@ import hu.e.parser.eSyntax.LinkedBinary;
 
 import java.io.IOException;
 
-import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
-import org.eclipse.core.resources.IProject;
+import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -37,12 +37,15 @@ public class ECompiler {
 		return Integer.parseInt(lit);
 	}
 	
-	private IFile getHexFileSibling(IFile f, String name){
+	private IFile getHexFileSibling(IFile f, String name) throws CoreException{
 		String filename = name;
-		IContainer c = f.getParent();
-		if (c instanceof IProject){
-			return ((IProject)c).getFile(filename);
+		IFolder c = f.getProject().getFolder("out");
+		if (!c.exists()){
+			c.create(true, true, new NullProgressMonitor());
 		}
+//		if (c instanceof IProject){
+//			return ((IProject)c).getFile(filename);
+//		}
 		if (c instanceof IFolder){
 			return ((IFolder)c).getFile(filename);
 		}
@@ -50,7 +53,7 @@ public class ECompiler {
 	}
 
 	
-	public void compile(Resource r, IFile f){
+	public void compile(Resource r, IFile f) throws CoreException{
 		
 		ResourceSet resourceset = r.getResourceSet();
 
@@ -58,7 +61,7 @@ public class ECompiler {
 			if (eo instanceof LinkedBinary){
 				LinkedBinary b = (LinkedBinary)eo;
 				if (BinaryType.HEXFILE == b.getType()){
-					System.out.println("Creating "+b.getName());
+					
 					IFile hf = getHexFileSibling(f, b.getName()+".hex");
 					Resource hr = resourceset.createResource(URI.createPlatformResourceURI(hf.getFullPath().toString(),true));
 					HexFileCompiler hfc = new HexFileCompiler(b);
@@ -73,7 +76,7 @@ public class ECompiler {
 
 					//Produce lst files.
 					for(ProgramList pl : hfc.getLists()){
-						IFile lf = getHexFileSibling(f, pl.getName()+".lst");
+						IFile lf = getHexFileSibling(f, b.getName()+"."+pl.getName()+".lst");
 						Resource lr = resourceset.createResource(URI.createPlatformResourceURI(lf.getFullPath().toString(),true));
 						lr.getContents().clear();
 						lr.getContents().add(pl);

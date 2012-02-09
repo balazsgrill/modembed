@@ -81,9 +81,7 @@ public class HexFileCompiler {
 					lists.add(plist);
 					ProgramListLinker linker = new ProgramListLinker(plist);
 					
-					int memwidth = ECompiler.convertLiteral(((FunctionBinarySection) bs).getMemwidth());
-					memwidth = (memwidth/8) + ( ((memwidth%8)==0 )? 0 :1);
-					int startAddr = start/memwidth;
+					int startAddr = ECompiler.convertLiteral(((FunctionBinarySection) bs).getStartAddr());
 					
 					entry.setData(linker.link(startAddr));
 					result.getEntries().add(entry);

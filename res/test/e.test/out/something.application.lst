@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<lst:ProgramList xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:lst="http://e.hu/compiler/list" name="something">
+<lst:ProgramList xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:lst="http://e.hu/compiler/list" name="application">
   <step xsi:type="lst:SequenceStep" name="GLOBAL">
     <steps xsi:type="lst:SequenceStep">
       <steps xsi:type="lst:SequenceStep" name="test.main">
