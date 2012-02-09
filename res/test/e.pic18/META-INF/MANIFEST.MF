@@ -4,3 +4,4 @@ Bundle-Name: Pic18 support
 Bundle-SymbolicName: e.pic18;singleton:=true
 Bundle-Version: 0.2.0
 Bundle-Activator: hu.cubussapiens.modembed.MODembedCore
+Require-Bundle: e.core;bundle-version="0.1.0"
