@@ -55,14 +55,6 @@ public class ESyntaxScopeProvider extends AbstractDeclarativeScopeProvider {
 		return importedScope(eobject, ref);
 	}
 	
-	public IScope scope_CompilationUnit_use(EObject eobject, EReference ref){		
-		return pluginScope(eobject, ref);
-	}
-	
-	public IScope scope_FunctionBinarySection_lib(EObject eobject, EReference ref){		
-		return pluginScope(eobject, ref);
-	}
-	
 	public IScope scope_StructTypeDefMember_type(EObject eobject, EReference ref){
 		return importedScope(eobject, ref);
 	}
@@ -75,4 +67,21 @@ public class ESyntaxScopeProvider extends AbstractDeclarativeScopeProvider {
 		return new StructMemberScope(eobject, delegateGetScope(eobject, ref));
 	}
 	
+	
+	
+	public IScope scope_ReferenceBinarySection_inc(EObject eobject, EReference ref){		
+		return pluginScope(eobject, ref);
+	}
+	
+	public IScope scope_Library_overrides(EObject eobject, EReference ref){		
+		return pluginScope(eobject, ref);
+	}
+	
+	public IScope scope_CompilationUnit_use(EObject eobject, EReference ref){		
+		return pluginScope(eobject, ref);
+	}
+	
+	public IScope scope_FunctionBinarySection_lib(EObject eobject, EReference ref){		
+		return pluginScope(eobject, ref);
+	}
 }
