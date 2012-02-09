@@ -8,6 +8,8 @@ import hu.e.compiler.internal.MemoryManager;
 import hu.e.compiler.internal.StackLevel;
 import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.compiler.internal.model.IVariableManager;
+import hu.e.compiler.list.LabelStep;
+import hu.e.parser.eSyntax.Label;
 import hu.e.parser.eSyntax.Library;
 import hu.e.parser.eSyntax.TypeDef;
 import hu.e.parser.eSyntax.Variable;
@@ -81,6 +83,20 @@ public class VariableManager implements IVariableManager {
 	@Override
 	public int allocate(ISymbolManager sm, TypeDef type) throws ECompilerException {
 		return stack.peek().allocate(sm, type);
+	}
+
+	@Override
+	public void defineLabel(Label label, LabelStep ls) {
+		stack.peek().defineLabel(label, ls);
+	}
+
+	@Override
+	public LabelStep getLabelStep(Label label) {
+		for(StackLevel sl : stack){
+			LabelStep ls = sl.getLabel(label);
+			if (ls != null) return ls;
+		}
+		return null;
 	}
 	
 }

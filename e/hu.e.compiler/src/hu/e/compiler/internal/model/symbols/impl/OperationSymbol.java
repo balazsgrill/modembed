@@ -147,6 +147,9 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
 	@Override
 	public int getValue() throws ECompilerException {
 		if (isLiteral()){
+			if (this.a instanceof CodeAddressSymbol) throw new ECompilerException(context, "Cannot execute operation on a code address!");
+			if (this.b instanceof CodeAddressSymbol) throw new ECompilerException(context, "Cannot execute operation on a code address!");
+			
 			ILiteralSymbol a = (ILiteralSymbol)this.a;
 			ILiteralSymbol b = (this.b == null)? null : (ILiteralSymbol)this.b;
 			switch(op){

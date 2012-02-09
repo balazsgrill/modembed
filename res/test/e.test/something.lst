@@ -479,11 +479,10 @@
                             </steps>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@9a912e (name: true) at microchip.PIC18F14K50.DIO line 74"/>
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.GOTO">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot execute operation on a code address! at microchip.PIC18F14K50.DIO line 74"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot execute operation on a code address! at microchip.PIC18F14K50.DIO line 74"/>
                           </steps>
                         </steps>
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aBCF">
@@ -500,11 +499,10 @@
                             </steps>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@1f826d (name: done) at microchip.PIC18F14K50.DIO line 77"/>
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.GOTO">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot execute operation on a code address! at microchip.PIC18F14K50.DIO line 77"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot execute operation on a code address! at microchip.PIC18F14K50.DIO line 77"/>
                           </steps>
                         </steps>
                         <steps xsi:type="lst:LabelStep"/>
@@ -656,11 +654,10 @@
                             </steps>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@9a912e (name: true) at microchip.PIC18F14K50.DIO line 74"/>
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.GOTO">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot execute operation on a code address! at microchip.PIC18F14K50.DIO line 74"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot execute operation on a code address! at microchip.PIC18F14K50.DIO line 74"/>
                           </steps>
                         </steps>
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aBCF">
@@ -677,11 +674,10 @@
                             </steps>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@1f826d (name: done) at microchip.PIC18F14K50.DIO line 77"/>
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.GOTO">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot execute operation on a code address! at microchip.PIC18F14K50.DIO line 77"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot execute operation on a code address! at microchip.PIC18F14K50.DIO line 77"/>
                           </steps>
                         </steps>
                         <steps xsi:type="lst:LabelStep"/>
@@ -833,11 +829,10 @@
                             </steps>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@9a912e (name: true) at microchip.PIC18F14K50.DIO line 74"/>
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.GOTO">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot execute operation on a code address! at microchip.PIC18F14K50.DIO line 74"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot execute operation on a code address! at microchip.PIC18F14K50.DIO line 74"/>
                           </steps>
                         </steps>
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aBCF">
@@ -854,11 +849,10 @@
                             </steps>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@1f826d (name: done) at microchip.PIC18F14K50.DIO line 77"/>
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.GOTO">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot execute operation on a code address! at microchip.PIC18F14K50.DIO line 77"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot execute operation on a code address! at microchip.PIC18F14K50.DIO line 77"/>
                           </steps>
                         </steps>
                         <steps xsi:type="lst:LabelStep"/>
@@ -1010,11 +1004,10 @@
                             </steps>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@9a912e (name: true) at microchip.PIC18F14K50.DIO line 74"/>
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.GOTO">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot execute operation on a code address! at microchip.PIC18F14K50.DIO line 74"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot execute operation on a code address! at microchip.PIC18F14K50.DIO line 74"/>
                           </steps>
                         </steps>
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aBCF">
@@ -1031,11 +1024,10 @@
                             </steps>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@1f826d (name: done) at microchip.PIC18F14K50.DIO line 77"/>
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.GOTO">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot execute operation on a code address! at microchip.PIC18F14K50.DIO line 77"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot execute operation on a code address! at microchip.PIC18F14K50.DIO line 77"/>
                           </steps>
                         </steps>
                         <steps xsi:type="lst:LabelStep"/>
@@ -1187,11 +1179,10 @@
                             </steps>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@9a912e (name: true) at microchip.PIC18F14K50.DIO line 74"/>
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.GOTO">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot execute operation on a code address! at microchip.PIC18F14K50.DIO line 74"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot execute operation on a code address! at microchip.PIC18F14K50.DIO line 74"/>
                           </steps>
                         </steps>
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aBCF">
@@ -1208,11 +1199,10 @@
                             </steps>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@1f826d (name: done) at microchip.PIC18F14K50.DIO line 77"/>
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.GOTO">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot execute operation on a code address! at microchip.PIC18F14K50.DIO line 77"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot execute operation on a code address! at microchip.PIC18F14K50.DIO line 77"/>
                           </steps>
                         </steps>
                         <steps xsi:type="lst:LabelStep"/>
@@ -1364,11 +1354,10 @@
                             </steps>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@9a912e (name: true) at microchip.PIC18F14K50.DIO line 74"/>
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.GOTO">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot execute operation on a code address! at microchip.PIC18F14K50.DIO line 74"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot execute operation on a code address! at microchip.PIC18F14K50.DIO line 74"/>
                           </steps>
                         </steps>
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aBCF">
@@ -1385,11 +1374,10 @@
                             </steps>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@1f826d (name: done) at microchip.PIC18F14K50.DIO line 77"/>
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.GOTO">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot execute operation on a code address! at microchip.PIC18F14K50.DIO line 77"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot execute operation on a code address! at microchip.PIC18F14K50.DIO line 77"/>
                           </steps>
                         </steps>
                         <steps xsi:type="lst:LabelStep"/>
@@ -1541,11 +1529,10 @@
                             </steps>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@9a912e (name: true) at microchip.PIC18F14K50.DIO line 74"/>
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.GOTO">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot execute operation on a code address! at microchip.PIC18F14K50.DIO line 74"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot execute operation on a code address! at microchip.PIC18F14K50.DIO line 74"/>
                           </steps>
                         </steps>
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aBCF">
@@ -1562,11 +1549,10 @@
                             </steps>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@1f826d (name: done) at microchip.PIC18F14K50.DIO line 77"/>
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.GOTO">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot execute operation on a code address! at microchip.PIC18F14K50.DIO line 77"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot execute operation on a code address! at microchip.PIC18F14K50.DIO line 77"/>
                           </steps>
                         </steps>
                         <steps xsi:type="lst:LabelStep"/>
@@ -1718,11 +1704,10 @@
                             </steps>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@9a912e (name: true) at microchip.PIC18F14K50.DIO line 74"/>
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.GOTO">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot execute operation on a code address! at microchip.PIC18F14K50.DIO line 74"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot execute operation on a code address! at microchip.PIC18F14K50.DIO line 74"/>
                           </steps>
                         </steps>
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aBCF">
@@ -1739,11 +1724,10 @@
                             </steps>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@1f826d (name: done) at microchip.PIC18F14K50.DIO line 77"/>
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.GOTO">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot execute operation on a code address! at microchip.PIC18F14K50.DIO line 77"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot execute operation on a code address! at microchip.PIC18F14K50.DIO line 77"/>
                           </steps>
                         </steps>
                         <steps xsi:type="lst:LabelStep"/>
@@ -1849,11 +1833,14 @@
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@d9b967 (name: nosend) at microchip.PIC18F14K50.EUSART line 78"/>
               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.GOTO">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
+                  <steps xsi:type="lst:InstructionStep" code="61184" width="16">
+                    <refs size="8" label="//@step/@steps.0/@steps.0/@steps.0/@steps.15/@steps.0/@steps.3"/>
+                  </steps>
+                  <steps xsi:type="lst:InstructionStep" code="61440" width="16">
+                    <refs shift="8" size="12" label="//@step/@steps.0/@steps.0/@steps.0/@steps.15/@steps.0/@steps.3"/>
+                  </steps>
                 </steps>
               </steps>
               <steps xsi:type="lst:SequenceStep">
@@ -1879,11 +1866,14 @@
                   </steps>
                 </steps>
               </steps>
-              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@9689fb (name: norcv) at microchip.PIC18F14K50.EUSART line 89"/>
               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.GOTO">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
+                  <steps xsi:type="lst:InstructionStep" code="61184" width="16">
+                    <refs size="8" label="//@step/@steps.0/@steps.0/@steps.0/@steps.15/@steps.0/@steps.7"/>
+                  </steps>
+                  <steps xsi:type="lst:InstructionStep" code="61440" width="16">
+                    <refs shift="8" size="12" label="//@step/@steps.0/@steps.0/@steps.0/@steps.15/@steps.0/@steps.7"/>
+                  </steps>
                 </steps>
               </steps>
               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.MOVFF">
@@ -1938,11 +1928,14 @@
               </steps>
             </steps>
           </steps>
-          <steps xsi:type="lst:StatusStep" severity="ERROR" message="Variable cannot be accessed here: hu.e.parser.eSyntax.impl.LabelImpl@6cb7fd (name: start) at test line 79"/>
           <steps xsi:type="lst:SequenceStep" name="microchip.pic18.GOTO">
             <steps xsi:type="lst:SequenceStep">
-              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 366"/>
-              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot resolve symbol: hu.e.parser.eSyntax.impl.ParameterVariableImpl@1d207b2 (name: c) (kind: default, default: null) at microchip.pic18 line 367"/>
+              <steps xsi:type="lst:InstructionStep" code="61184" width="16">
+                <refs size="8" label="//@step/@steps.0/@steps.0/@steps.0/@steps.13"/>
+              </steps>
+              <steps xsi:type="lst:InstructionStep" code="61440" width="16">
+                <refs shift="8" size="12" label="//@step/@steps.0/@steps.0/@steps.0/@steps.13"/>
+              </steps>
             </steps>
           </steps>
         </steps>

@@ -11,7 +11,6 @@ import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
 import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.compiler.internal.model.symbols.IVariableSymbol;
 import hu.e.compiler.internal.model.symbols.impl.CodeAddressSymbol;
-import hu.e.compiler.list.LabelReference;
 import hu.e.compiler.list.LabelStep;
 import hu.e.compiler.list.ListFactory;
 import hu.e.compiler.list.ProgramStep;
@@ -44,24 +43,28 @@ public class BlockCompiler {
 		SequenceStep result = ListFactory.eINSTANCE.createSequenceStep();
 		
 		Map<Label, LabelStep> labels = new HashMap<Label, LabelStep>();
-		Map<LabelReference, Label> labeluses = new HashMap<LabelReference, Label>();
 		
 		sm.getVariableManager().startBlock();
+		for(OperationStep step : block.getSteps()){
+			if (step instanceof Label){
+				LabelStep ls = ListFactory.eINSTANCE.createLabelStep();
+				labels.put((Label)step, ls);
+				sm.getVariableManager().defineLabel((Label)step, ls);
+			}
+		}
+		
 		for(OperationStep step : block.getSteps()){
 			if (step instanceof InstructionWord){
 				try{
 					InstructionWordInstance iwi = new InstructionWordInstance((InstructionWord)step, sm);
 					result.getSteps().add(iwi.create());
-					labeluses.putAll(iwi.getLabeluses());
 				}catch(ECompilerException e){
 					result.getSteps().add((CompilationErrorEntry.create(e)));
 				}
 			}
 			if (step instanceof Variable){
 				if (step instanceof Label){
-					LabelStep ls = ListFactory.eINSTANCE.createLabelStep();
-					labels.put((Label)step, ls);
-					result.getSteps().add(ls);
+					result.getSteps().add(labels.get(step));
 				}else{
 					try{
 						sm.getVariableManager().define(sm, (Variable)step);
@@ -124,10 +127,6 @@ public class BlockCompiler {
 			}
 		}
 		sm.getVariableManager().endBlock();
-		
-		for(LabelReference lref : labeluses.keySet()){
-			lref.setLabel(labels.get(labeluses.get(lref)));
-		}
 		
 		return result;
 	}

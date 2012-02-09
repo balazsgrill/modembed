@@ -66,7 +66,7 @@ RS232_send(uint8 send, var uint8 counter){
 RS232_rcv(var uint8 rcv, var uint8 counter){
 	/* If there is received value, receive */
 	aBTFSS(&(PIR1),RCIF);
-	GOTO(@norcv);
+	GOTO(norcv);
 	MOVFF(&(RCREG),&(rcv));
 	aINCF(&(counter));
 	label norcv;
@@ -75,7 +75,7 @@ RS232_rcv(var uint8 rcv, var uint8 counter){
 RS232_syncSend(uint8 send, var uint8 rcv){
 	/* If sending is pending, no sending.. */
 	aBTFSS(&(PIR1),TXIF);
-	GOTO(@nosend);
+	GOTO(nosend);
 	if (isliteral(send)){
 		MOVLW(send);
 		aMOVWF(&(TXREG));
@@ -86,7 +86,7 @@ RS232_syncSend(uint8 send, var uint8 rcv){
 	
 	/* If there is received value, receive */
 	aBTFSS(&(PIR1),RCIF);
-	GOTO(@norcv);
+	GOTO(norcv);
 	MOVFF(&(RCREG),&(rcv));
 	label norcv;
 }

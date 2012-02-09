@@ -56,13 +56,6 @@ public class OperationCallCompiler {
 				oc.addParameter(pvar, new LiteralSymbol(ECompiler.convertLiteral(p.getDefault())));
 			}else{
 				
-//				if (ocp instanceof LabelReference){
-//					LabelSymbol ls = new LabelSymbol(((LabelReference) ocp).getLabel());
-//					labeluses.add(ls);
-//					sm.addLabelSymbol(ls);
-//					oc.addParameter(pvar, ls);
-//				}
-				
 				if (ocp instanceof XExpression){
 					try{
 						ISymbol s = sm.resolve((XExpression)ocp);

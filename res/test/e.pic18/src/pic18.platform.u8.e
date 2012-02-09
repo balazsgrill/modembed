@@ -92,12 +92,12 @@ isequal_u8(uint8 d1, uint8 d2){
 		aCPFSEQ(&d1);
 	}
 	//Skipped if equal
-	GOTO(@notequal);
+	GOTO(notequal);
 	set_u8(result,1);
-	GOTO(@end);
+	GOTO(end);
 	label notequal;
 	set_u8(result,0);
-	GOTO(@end);
+	GOTO(end);
 	label end;
 } returns bool result;
 

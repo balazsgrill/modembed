@@ -5,6 +5,8 @@ package hu.e.compiler.internal;
 
 import hu.e.compiler.ECompilerException;
 import hu.e.compiler.internal.model.ISymbolManager;
+import hu.e.compiler.list.LabelStep;
+import hu.e.parser.eSyntax.Label;
 import hu.e.parser.eSyntax.TypeDef;
 import hu.e.parser.eSyntax.Variable;
 
@@ -24,6 +26,8 @@ public class StackLevel {
 	private final Map<Variable, Integer> vars = new HashMap<Variable, Integer>();
 	
 	private final List<Integer> alloc = new ArrayList<Integer>();
+	
+	private final Map<Label, LabelStep> labels = new HashMap<Label, LabelStep>();
 	
 	public StackLevel(MemoryManager memman) {
 		this.memman = memman;
@@ -48,10 +52,19 @@ public class StackLevel {
 		}
 		alloc.clear();
 		vars.clear();
+		labels.clear();
 	}
 	
 	public Integer getAddress(Variable v){
 		return vars.get(v);
+	}
+
+	public LabelStep getLabel(Label label){
+		return labels.get(label);
+	}
+	
+	public void defineLabel(Label label, LabelStep ls) {
+		labels.put(label, ls);
 	}
 	
 }

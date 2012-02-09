@@ -7,19 +7,18 @@ import hu.e.compiler.ECompiler;
 import hu.e.compiler.ECompilerException;
 import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
 import hu.e.compiler.internal.model.symbols.ISymbol;
+import hu.e.compiler.internal.model.symbols.impl.CodeAddressSymbol;
 import hu.e.compiler.list.InstructionStep;
 import hu.e.compiler.list.LabelReference;
 import hu.e.compiler.list.ListFactory;
 import hu.e.parser.eSyntax.InstructionWord;
-import hu.e.parser.eSyntax.Label;
 import hu.e.parser.eSyntax.LiteralValue;
 import hu.e.parser.eSyntax.Variable;
 import hu.e.parser.eSyntax.VariableReference;
 import hu.e.parser.eSyntax.WordSection;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 /**
  * @author balazs.grill
@@ -35,11 +34,7 @@ public class InstructionWordInstance{
 		return v;
 	}
 	
-	private final Map<LabelReference, Label> labeluses = new HashMap<LabelReference, Label>();
-	
-	public Map<LabelReference, Label> getLabeluses() {
-		return labeluses;
-	}
+	private final List<LabelReference> labelRefs = new ArrayList<LabelReference>();
 	
 	private int value;
 	private int size;
@@ -67,23 +62,26 @@ public class InstructionWordInstance{
 				size = ((VariableReference) ws).getSize();
 				shift = ((VariableReference) ws).getShift();
 				Variable var = ((VariableReference)ws).getVar();
-				if (var instanceof Label){
+
+
+				ISymbol vs = sm.getSymbol(var);
+				if (vs == null)
+					throw new ECompilerException(ws, "Cannot resolve symbol: "+((VariableReference)ws).getVar());
+				if (!vs.isLiteral())
+					throw new ECompilerException(ws, "Instruction word can only contain compile-time variables!");
+
+				if (vs instanceof CodeAddressSymbol){
 					LabelReference ref = ListFactory.eINSTANCE.createLabelReference();
 					ref.setShift(shift);
 					ref.setSize(size);
 					ref.setStart(s);
-
-					labeluses.put(ref,(Label)var);
-				}else{
-					ISymbol vs = sm.getSymbol(var);
-					if (vs == null)
-						throw new ECompilerException(ws, "Cannot resolve symbol: "+((VariableReference)ws).getVar());
-					if (!vs.isLiteral())
-						throw new ECompilerException(ws, "Instruction word can only contain compile-time variables!");
-
+					ref.setLabel(((CodeAddressSymbol) vs).getStep());
+					labelRefs.add(ref);
+				}else{	
 					v = ((ILiteralSymbol)vs).getValue();
 					value += getItemValue(v, shift, s, size);
 				}
+
 			}
 			
 			s += size;
@@ -104,7 +102,7 @@ public class InstructionWordInstance{
 		InstructionStep is = ListFactory.eINSTANCE.createInstructionStep();
 		is.setCode(getValue());
 		is.setWidth(getWidth());
-		is.getRefs().addAll(labeluses.keySet());
+		is.getRefs().addAll(labelRefs);
 		return is;
 	}
 	

@@ -10,8 +10,11 @@ import hu.e.compiler.internal.linking.OperationFinder;
 import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.compiler.internal.model.IVariableManager;
 import hu.e.compiler.internal.model.symbols.ISymbol;
+import hu.e.compiler.internal.model.symbols.impl.CodeAddressSymbol;
 import hu.e.compiler.internal.model.symbols.impl.LiteralSymbol;
 import hu.e.compiler.internal.model.symbols.impl.VariableSymbol;
+import hu.e.compiler.list.LabelStep;
+import hu.e.parser.eSyntax.Label;
 import hu.e.parser.eSyntax.Variable;
 import hu.e.parser.eSyntax.VariableReference;
 
@@ -39,6 +42,11 @@ public class SymbolManager extends AbstractSymbolManager {
 	 */
 	@Override
 	public ISymbol getSymbol(Variable ref) throws ECompilerException {
+		if (ref instanceof Label){
+			LabelStep ls = getVariableManager().getLabelStep((Label)ref);
+			if (ls != null)
+				return new CodeAddressSymbol(ls);
+		}
 		ISymbol s = parent.getSymbol(ref);
 		if (s != null) return s;
 		int baseaddr = varman.getAddress(this, ref);
