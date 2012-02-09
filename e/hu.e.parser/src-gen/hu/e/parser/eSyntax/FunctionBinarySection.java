@@ -16,6 +16,8 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getName <em>Name</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getStartAddr <em>Start Addr</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getMemwidth <em>Memwidth</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getPointersize <em>Pointersize</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getMems <em>Mems</em>}</li>
@@ -31,6 +33,58 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface FunctionBinarySection extends BinarySection
 {
+  /**
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Name</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see hu.e.parser.eSyntax.ESyntaxPackage#getFunctionBinarySection_Name()
+   * @model
+   * @generated
+   */
+  String getName();
+
+  /**
+   * Sets the value of the '{@link hu.e.parser.eSyntax.FunctionBinarySection#getName <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
+   * @generated
+   */
+  void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Start Addr</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Start Addr</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Start Addr</em>' attribute.
+   * @see #setStartAddr(String)
+   * @see hu.e.parser.eSyntax.ESyntaxPackage#getFunctionBinarySection_StartAddr()
+   * @model
+   * @generated
+   */
+  String getStartAddr();
+
+  /**
+   * Sets the value of the '{@link hu.e.parser.eSyntax.FunctionBinarySection#getStartAddr <em>Start Addr</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Start Addr</em>' attribute.
+   * @see #getStartAddr()
+   * @generated
+   */
+  void setStartAddr(String value);
+
   /**
    * Returns the value of the '<em><b>Memwidth</b></em>' attribute.
    * <!-- begin-user-doc -->

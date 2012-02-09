@@ -89,9 +89,9 @@ public class ESyntaxAdapterFactory extends AdapterFactoryImpl
         return createModuleAdapter();
       }
       @Override
-      public Adapter caseClassItem(ClassItem object)
+      public Adapter caseModuleItem(ModuleItem object)
       {
-        return createClassItemAdapter();
+        return createModuleItemAdapter();
       }
       @Override
       public Adapter caseInstanceReference(InstanceReference object)
@@ -421,16 +421,16 @@ public class ESyntaxAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link hu.e.parser.eSyntax.ClassItem <em>Class Item</em>}'.
+   * Creates a new adapter for an object of class '{@link hu.e.parser.eSyntax.ModuleItem <em>Module Item</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see hu.e.parser.eSyntax.ClassItem
+   * @see hu.e.parser.eSyntax.ModuleItem
    * @generated
    */
-  public Adapter createClassItemAdapter()
+  public Adapter createModuleItemAdapter()
   {
     return null;
   }

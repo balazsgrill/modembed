@@ -36,6 +36,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link hu.e.parser.eSyntax.impl.FunctionBinarySectionImpl#getName <em>Name</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.impl.FunctionBinarySectionImpl#getStartAddr <em>Start Addr</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.impl.FunctionBinarySectionImpl#getMemwidth <em>Memwidth</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.impl.FunctionBinarySectionImpl#getPointersize <em>Pointersize</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.impl.FunctionBinarySectionImpl#getMems <em>Mems</em>}</li>
@@ -49,6 +51,46 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class FunctionBinarySectionImpl extends BinarySectionImpl implements FunctionBinarySection
 {
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getStartAddr() <em>Start Addr</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getStartAddr()
+   * @generated
+   * @ordered
+   */
+  protected static final String START_ADDR_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getStartAddr() <em>Start Addr</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getStartAddr()
+   * @generated
+   * @ordered
+   */
+  protected String startAddr = START_ADDR_EDEFAULT;
+
   /**
    * The default value of the '{@link #getMemwidth() <em>Memwidth</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -148,6 +190,52 @@ public class FunctionBinarySectionImpl extends BinarySectionImpl implements Func
   protected EClass eStaticClass()
   {
     return ESyntaxPackage.Literals.FUNCTION_BINARY_SECTION;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.FUNCTION_BINARY_SECTION__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getStartAddr()
+  {
+    return startAddr;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setStartAddr(String newStartAddr)
+  {
+    String oldStartAddr = startAddr;
+    startAddr = newStartAddr;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.FUNCTION_BINARY_SECTION__START_ADDR, oldStartAddr, startAddr));
   }
 
   /**
@@ -316,6 +404,10 @@ public class FunctionBinarySectionImpl extends BinarySectionImpl implements Func
   {
     switch (featureID)
     {
+      case ESyntaxPackage.FUNCTION_BINARY_SECTION__NAME:
+        return getName();
+      case ESyntaxPackage.FUNCTION_BINARY_SECTION__START_ADDR:
+        return getStartAddr();
       case ESyntaxPackage.FUNCTION_BINARY_SECTION__MEMWIDTH:
         return getMemwidth();
       case ESyntaxPackage.FUNCTION_BINARY_SECTION__POINTERSIZE:
@@ -343,6 +435,12 @@ public class FunctionBinarySectionImpl extends BinarySectionImpl implements Func
   {
     switch (featureID)
     {
+      case ESyntaxPackage.FUNCTION_BINARY_SECTION__NAME:
+        setName((String)newValue);
+        return;
+      case ESyntaxPackage.FUNCTION_BINARY_SECTION__START_ADDR:
+        setStartAddr((String)newValue);
+        return;
       case ESyntaxPackage.FUNCTION_BINARY_SECTION__MEMWIDTH:
         setMemwidth((String)newValue);
         return;
@@ -378,6 +476,12 @@ public class FunctionBinarySectionImpl extends BinarySectionImpl implements Func
   {
     switch (featureID)
     {
+      case ESyntaxPackage.FUNCTION_BINARY_SECTION__NAME:
+        setName(NAME_EDEFAULT);
+        return;
+      case ESyntaxPackage.FUNCTION_BINARY_SECTION__START_ADDR:
+        setStartAddr(START_ADDR_EDEFAULT);
+        return;
       case ESyntaxPackage.FUNCTION_BINARY_SECTION__MEMWIDTH:
         setMemwidth(MEMWIDTH_EDEFAULT);
         return;
@@ -410,6 +514,10 @@ public class FunctionBinarySectionImpl extends BinarySectionImpl implements Func
   {
     switch (featureID)
     {
+      case ESyntaxPackage.FUNCTION_BINARY_SECTION__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case ESyntaxPackage.FUNCTION_BINARY_SECTION__START_ADDR:
+        return START_ADDR_EDEFAULT == null ? startAddr != null : !START_ADDR_EDEFAULT.equals(startAddr);
       case ESyntaxPackage.FUNCTION_BINARY_SECTION__MEMWIDTH:
         return MEMWIDTH_EDEFAULT == null ? memwidth != null : !MEMWIDTH_EDEFAULT.equals(memwidth);
       case ESyntaxPackage.FUNCTION_BINARY_SECTION__POINTERSIZE:
@@ -437,7 +545,11 @@ public class FunctionBinarySectionImpl extends BinarySectionImpl implements Func
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (memwidth: ");
+    result.append(" (name: ");
+    result.append(name);
+    result.append(", startAddr: ");
+    result.append(startAddr);
+    result.append(", memwidth: ");
     result.append(memwidth);
     result.append(", pointersize: ");
     result.append(pointersize);

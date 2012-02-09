@@ -30,7 +30,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class InstanceReferenceImpl extends ClassItemImpl implements InstanceReference
+public class InstanceReferenceImpl extends ModuleItemImpl implements InstanceReference
 {
   /**
    * The cached value of the '{@link #getType() <em>Type</em>}' reference.

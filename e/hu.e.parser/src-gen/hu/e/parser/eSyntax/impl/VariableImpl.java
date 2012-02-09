@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class VariableImpl extends ClassItemImpl implements Variable
+public class VariableImpl extends ModuleItemImpl implements Variable
 {
   /**
    * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.

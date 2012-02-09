@@ -45,13 +45,13 @@ public interface ESyntaxFactory extends EFactory
   Module createModule();
 
   /**
-   * Returns a new object of class '<em>Class Item</em>'.
+   * Returns a new object of class '<em>Module Item</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Class Item</em>'.
+   * @return a new object of class '<em>Module Item</em>'.
    * @generated
    */
-  ClassItem createClassItem();
+  ModuleItem createModuleItem();
 
   /**
    * Returns a new object of class '<em>Instance Reference</em>'.

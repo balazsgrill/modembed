@@ -6,9 +6,9 @@
  */
 package hu.e.parser.eSyntax.impl;
 
-import hu.e.parser.eSyntax.ClassItem;
 import hu.e.parser.eSyntax.ESyntaxPackage;
 import hu.e.parser.eSyntax.Module;
+import hu.e.parser.eSyntax.ModuleItem;
 
 import java.util.Collection;
 
@@ -57,7 +57,7 @@ public class ModuleImpl extends CompilationUnitImpl implements Module
    * @generated
    * @ordered
    */
-  protected EList<ClassItem> items;
+  protected EList<ModuleItem> items;
 
   /**
    * <!-- begin-user-doc -->
@@ -99,11 +99,11 @@ public class ModuleImpl extends CompilationUnitImpl implements Module
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ClassItem> getItems()
+  public EList<ModuleItem> getItems()
   {
     if (items == null)
     {
-      items = new EObjectContainmentEList<ClassItem>(ClassItem.class, this, ESyntaxPackage.MODULE__ITEMS);
+      items = new EObjectContainmentEList<ModuleItem>(ModuleItem.class, this, ESyntaxPackage.MODULE__ITEMS);
     }
     return items;
   }
@@ -159,7 +159,7 @@ public class ModuleImpl extends CompilationUnitImpl implements Module
         return;
       case ESyntaxPackage.MODULE__ITEMS:
         getItems().clear();
-        getItems().addAll((Collection<? extends ClassItem>)newValue);
+        getItems().addAll((Collection<? extends ModuleItem>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

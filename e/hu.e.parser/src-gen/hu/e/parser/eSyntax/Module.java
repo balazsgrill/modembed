@@ -45,7 +45,7 @@ public interface Module extends CompilationUnit
 
   /**
    * Returns the value of the '<em><b>Items</b></em>' containment reference list.
-   * The list contents are of type {@link hu.e.parser.eSyntax.ClassItem}.
+   * The list contents are of type {@link hu.e.parser.eSyntax.ModuleItem}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Items</em>' containment reference list isn't clear,
@@ -57,6 +57,6 @@ public interface Module extends CompilationUnit
    * @model containment="true"
    * @generated
    */
-  EList<ClassItem> getItems();
+  EList<ModuleItem> getItems();
 
 } // Module

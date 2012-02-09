@@ -23,7 +23,7 @@ package hu.e.parser.eSyntax;
  * @model
  * @generated
  */
-public interface InstanceReference extends ClassItem
+public interface InstanceReference extends ModuleItem
 {
   /**
    * Returns the value of the '<em><b>Type</b></em>' reference.

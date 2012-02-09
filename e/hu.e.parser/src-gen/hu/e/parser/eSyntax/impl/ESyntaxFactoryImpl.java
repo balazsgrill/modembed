@@ -71,7 +71,7 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
     {
       case ESyntaxPackage.COMPILATION_UNIT: return createCompilationUnit();
       case ESyntaxPackage.MODULE: return createModule();
-      case ESyntaxPackage.CLASS_ITEM: return createClassItem();
+      case ESyntaxPackage.MODULE_ITEM: return createModuleItem();
       case ESyntaxPackage.INSTANCE_REFERENCE: return createInstanceReference();
       case ESyntaxPackage.VARIABLE: return createVariable();
       case ESyntaxPackage.LIBRARY: return createLibrary();
@@ -225,10 +225,10 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ClassItem createClassItem()
+  public ModuleItem createModuleItem()
   {
-    ClassItemImpl classItem = new ClassItemImpl();
-    return classItem;
+    ModuleItemImpl moduleItem = new ModuleItemImpl();
+    return moduleItem;
   }
 
   /**

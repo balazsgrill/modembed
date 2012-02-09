@@ -6,8 +6,8 @@
  */
 package hu.e.parser.eSyntax.impl;
 
-import hu.e.parser.eSyntax.ClassItem;
 import hu.e.parser.eSyntax.ESyntaxPackage;
+import hu.e.parser.eSyntax.ModuleItem;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -18,18 +18,18 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Class Item</b></em>'.
+ * An implementation of the model object '<em><b>Module Item</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.e.parser.eSyntax.impl.ClassItemImpl#getName <em>Name</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.impl.ModuleItemImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ClassItemImpl extends MinimalEObjectImpl.Container implements ClassItem
+public class ModuleItemImpl extends MinimalEObjectImpl.Container implements ModuleItem
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -56,7 +56,7 @@ public class ClassItemImpl extends MinimalEObjectImpl.Container implements Class
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ClassItemImpl()
+  protected ModuleItemImpl()
   {
     super();
   }
@@ -69,7 +69,7 @@ public class ClassItemImpl extends MinimalEObjectImpl.Container implements Class
   @Override
   protected EClass eStaticClass()
   {
-    return ESyntaxPackage.Literals.CLASS_ITEM;
+    return ESyntaxPackage.Literals.MODULE_ITEM;
   }
 
   /**
@@ -92,7 +92,7 @@ public class ClassItemImpl extends MinimalEObjectImpl.Container implements Class
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.CLASS_ITEM__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.MODULE_ITEM__NAME, oldName, name));
   }
 
   /**
@@ -105,7 +105,7 @@ public class ClassItemImpl extends MinimalEObjectImpl.Container implements Class
   {
     switch (featureID)
     {
-      case ESyntaxPackage.CLASS_ITEM__NAME:
+      case ESyntaxPackage.MODULE_ITEM__NAME:
         return getName();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -121,7 +121,7 @@ public class ClassItemImpl extends MinimalEObjectImpl.Container implements Class
   {
     switch (featureID)
     {
-      case ESyntaxPackage.CLASS_ITEM__NAME:
+      case ESyntaxPackage.MODULE_ITEM__NAME:
         setName((String)newValue);
         return;
     }
@@ -138,7 +138,7 @@ public class ClassItemImpl extends MinimalEObjectImpl.Container implements Class
   {
     switch (featureID)
     {
-      case ESyntaxPackage.CLASS_ITEM__NAME:
+      case ESyntaxPackage.MODULE_ITEM__NAME:
         setName(NAME_EDEFAULT);
         return;
     }
@@ -155,7 +155,7 @@ public class ClassItemImpl extends MinimalEObjectImpl.Container implements Class
   {
     switch (featureID)
     {
-      case ESyntaxPackage.CLASS_ITEM__NAME:
+      case ESyntaxPackage.MODULE_ITEM__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
     }
     return super.eIsSet(featureID);
@@ -178,4 +178,4 @@ public class ClassItemImpl extends MinimalEObjectImpl.Container implements Class
     return result.toString();
   }
 
-} //ClassItemImpl
+} //ModuleItemImpl

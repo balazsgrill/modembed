@@ -154,14 +154,14 @@ public interface ESyntaxPackage extends EPackage
   int MODULE_FEATURE_COUNT = COMPILATION_UNIT_FEATURE_COUNT + 2;
 
   /**
-   * The meta object id for the '{@link hu.e.parser.eSyntax.impl.ClassItemImpl <em>Class Item</em>}' class.
+   * The meta object id for the '{@link hu.e.parser.eSyntax.impl.ModuleItemImpl <em>Module Item</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see hu.e.parser.eSyntax.impl.ClassItemImpl
-   * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getClassItem()
+   * @see hu.e.parser.eSyntax.impl.ModuleItemImpl
+   * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getModuleItem()
    * @generated
    */
-  int CLASS_ITEM = 2;
+  int MODULE_ITEM = 2;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -170,16 +170,16 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_ITEM__NAME = 0;
+  int MODULE_ITEM__NAME = 0;
 
   /**
-   * The number of structural features of the '<em>Class Item</em>' class.
+   * The number of structural features of the '<em>Module Item</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CLASS_ITEM_FEATURE_COUNT = 1;
+  int MODULE_ITEM_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.impl.InstanceReferenceImpl <em>Instance Reference</em>}' class.
@@ -198,7 +198,7 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INSTANCE_REFERENCE__NAME = CLASS_ITEM__NAME;
+  int INSTANCE_REFERENCE__NAME = MODULE_ITEM__NAME;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' reference.
@@ -207,7 +207,7 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INSTANCE_REFERENCE__TYPE = CLASS_ITEM_FEATURE_COUNT + 0;
+  int INSTANCE_REFERENCE__TYPE = MODULE_ITEM_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Instance Reference</em>' class.
@@ -216,7 +216,7 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INSTANCE_REFERENCE_FEATURE_COUNT = CLASS_ITEM_FEATURE_COUNT + 1;
+  int INSTANCE_REFERENCE_FEATURE_COUNT = MODULE_ITEM_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.impl.VariableImpl <em>Variable</em>}' class.
@@ -235,7 +235,7 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VARIABLE__NAME = CLASS_ITEM__NAME;
+  int VARIABLE__NAME = MODULE_ITEM__NAME;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -244,7 +244,7 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VARIABLE__TYPE = CLASS_ITEM_FEATURE_COUNT + 0;
+  int VARIABLE__TYPE = MODULE_ITEM_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Variable</em>' class.
@@ -253,7 +253,7 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VARIABLE_FEATURE_COUNT = CLASS_ITEM_FEATURE_COUNT + 1;
+  int VARIABLE_FEATURE_COUNT = MODULE_ITEM_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.impl.LibraryImpl <em>Library</em>}' class.
@@ -962,13 +962,31 @@ public interface ESyntaxPackage extends EPackage
   int FUNCTION_BINARY_SECTION__START = BINARY_SECTION__START;
 
   /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_BINARY_SECTION__NAME = BINARY_SECTION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Start Addr</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_BINARY_SECTION__START_ADDR = BINARY_SECTION_FEATURE_COUNT + 1;
+
+  /**
    * The feature id for the '<em><b>Memwidth</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FUNCTION_BINARY_SECTION__MEMWIDTH = BINARY_SECTION_FEATURE_COUNT + 0;
+  int FUNCTION_BINARY_SECTION__MEMWIDTH = BINARY_SECTION_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Pointersize</b></em>' attribute.
@@ -977,7 +995,7 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FUNCTION_BINARY_SECTION__POINTERSIZE = BINARY_SECTION_FEATURE_COUNT + 1;
+  int FUNCTION_BINARY_SECTION__POINTERSIZE = BINARY_SECTION_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Mems</b></em>' containment reference list.
@@ -986,7 +1004,7 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FUNCTION_BINARY_SECTION__MEMS = BINARY_SECTION_FEATURE_COUNT + 2;
+  int FUNCTION_BINARY_SECTION__MEMS = BINARY_SECTION_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Lib</b></em>' reference list.
@@ -995,7 +1013,7 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FUNCTION_BINARY_SECTION__LIB = BINARY_SECTION_FEATURE_COUNT + 3;
+  int FUNCTION_BINARY_SECTION__LIB = BINARY_SECTION_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Instances</b></em>' containment reference list.
@@ -1004,7 +1022,7 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FUNCTION_BINARY_SECTION__INSTANCES = BINARY_SECTION_FEATURE_COUNT + 4;
+  int FUNCTION_BINARY_SECTION__INSTANCES = BINARY_SECTION_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Do</b></em>' containment reference.
@@ -1013,7 +1031,7 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FUNCTION_BINARY_SECTION__DO = BINARY_SECTION_FEATURE_COUNT + 5;
+  int FUNCTION_BINARY_SECTION__DO = BINARY_SECTION_FEATURE_COUNT + 7;
 
   /**
    * The number of structural features of the '<em>Function Binary Section</em>' class.
@@ -1022,7 +1040,7 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FUNCTION_BINARY_SECTION_FEATURE_COUNT = BINARY_SECTION_FEATURE_COUNT + 6;
+  int FUNCTION_BINARY_SECTION_FEATURE_COUNT = BINARY_SECTION_FEATURE_COUNT + 8;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.impl.LinkedInstanceImpl <em>Linked Instance</em>}' class.
@@ -2399,25 +2417,25 @@ public interface ESyntaxPackage extends EPackage
   EReference getModule_Items();
 
   /**
-   * Returns the meta object for class '{@link hu.e.parser.eSyntax.ClassItem <em>Class Item</em>}'.
+   * Returns the meta object for class '{@link hu.e.parser.eSyntax.ModuleItem <em>Module Item</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Class Item</em>'.
-   * @see hu.e.parser.eSyntax.ClassItem
+   * @return the meta object for class '<em>Module Item</em>'.
+   * @see hu.e.parser.eSyntax.ModuleItem
    * @generated
    */
-  EClass getClassItem();
+  EClass getModuleItem();
 
   /**
-   * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.ClassItem#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.ModuleItem#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see hu.e.parser.eSyntax.ClassItem#getName()
-   * @see #getClassItem()
+   * @see hu.e.parser.eSyntax.ModuleItem#getName()
+   * @see #getModuleItem()
    * @generated
    */
-  EAttribute getClassItem_Name();
+  EAttribute getModuleItem_Name();
 
   /**
    * Returns the meta object for class '{@link hu.e.parser.eSyntax.InstanceReference <em>Instance Reference</em>}'.
@@ -2934,6 +2952,28 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    */
   EClass getFunctionBinarySection();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.FunctionBinarySection#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see hu.e.parser.eSyntax.FunctionBinarySection#getName()
+   * @see #getFunctionBinarySection()
+   * @generated
+   */
+  EAttribute getFunctionBinarySection_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.FunctionBinarySection#getStartAddr <em>Start Addr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Start Addr</em>'.
+   * @see hu.e.parser.eSyntax.FunctionBinarySection#getStartAddr()
+   * @see #getFunctionBinarySection()
+   * @generated
+   */
+  EAttribute getFunctionBinarySection_StartAddr();
 
   /**
    * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.FunctionBinarySection#getMemwidth <em>Memwidth</em>}'.
@@ -4059,14 +4099,14 @@ public interface ESyntaxPackage extends EPackage
     EReference MODULE__ITEMS = eINSTANCE.getModule_Items();
 
     /**
-     * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.ClassItemImpl <em>Class Item</em>}' class.
+     * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.ModuleItemImpl <em>Module Item</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see hu.e.parser.eSyntax.impl.ClassItemImpl
-     * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getClassItem()
+     * @see hu.e.parser.eSyntax.impl.ModuleItemImpl
+     * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getModuleItem()
      * @generated
      */
-    EClass CLASS_ITEM = eINSTANCE.getClassItem();
+    EClass MODULE_ITEM = eINSTANCE.getModuleItem();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -4074,7 +4114,7 @@ public interface ESyntaxPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute CLASS_ITEM__NAME = eINSTANCE.getClassItem_Name();
+    EAttribute MODULE_ITEM__NAME = eINSTANCE.getModuleItem_Name();
 
     /**
      * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.InstanceReferenceImpl <em>Instance Reference</em>}' class.
@@ -4513,6 +4553,22 @@ public interface ESyntaxPackage extends EPackage
      * @generated
      */
     EClass FUNCTION_BINARY_SECTION = eINSTANCE.getFunctionBinarySection();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FUNCTION_BINARY_SECTION__NAME = eINSTANCE.getFunctionBinarySection_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Start Addr</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FUNCTION_BINARY_SECTION__START_ADDR = eINSTANCE.getFunctionBinarySection_StartAddr();
 
     /**
      * The meta object literal for the '<em><b>Memwidth</b></em>' attribute feature.

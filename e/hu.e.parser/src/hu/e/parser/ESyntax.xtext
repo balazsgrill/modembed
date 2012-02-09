@@ -35,10 +35,10 @@ Module:
 	('extends' extends+=[Module|QualifiedName] (',' extends+=[Module|QualifiedName])*)?
 	';'
 	('use' use+=[Library|QualifiedName]';')*
-	(items+=ClassItem)*
+	(items+=ModuleItem)*
 ;
 
-ClassItem:
+ModuleItem:
 	Variable';' | 
 	ConfigVariable';' |
 	ConstantVariable';' |
@@ -224,7 +224,8 @@ BinarySection:
 ;
  
 FunctionBinarySection:
-	'link' '('
+	'program' name=ID '('
+		'startAddr' '=' startAddr=LITERAL ';'
 		'memwidth' '=' memwidth=LITERAL ';'
 		'pointersize' '=' pointersize=LITERAL ';'
 		(mems+=FunctionMemory ';')+

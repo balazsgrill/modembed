@@ -23,7 +23,7 @@ package hu.e.parser.eSyntax;
  * @model
  * @generated
  */
-public interface Variable extends ClassItem, LibraryItem, OperationStep
+public interface Variable extends ModuleItem, LibraryItem, OperationStep
 {
   /**
    * Returns the value of the '<em><b>Type</b></em>' containment reference.

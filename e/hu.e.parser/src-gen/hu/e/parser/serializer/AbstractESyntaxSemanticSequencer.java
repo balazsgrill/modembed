@@ -106,8 +106,8 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 				}
 				else break;
 			case ESyntaxPackage.CONFIG_VARIABLE:
-				if(context == grammarAccess.getClassItemRule() ||
-				   context == grammarAccess.getConfigVariableRule()) {
+				if(context == grammarAccess.getConfigVariableRule() ||
+				   context == grammarAccess.getModuleItemRule()) {
 					sequence_ConfigVariable(context, (ConfigVariable) semanticObject); 
 					return; 
 				}
@@ -123,9 +123,9 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 				}
 				else break;
 			case ESyntaxPackage.CONSTANT_VARIABLE:
-				if(context == grammarAccess.getClassItemRule() ||
-				   context == grammarAccess.getConstantVariableRule() ||
-				   context == grammarAccess.getLibraryItemRule()) {
+				if(context == grammarAccess.getConstantVariableRule() ||
+				   context == grammarAccess.getLibraryItemRule() ||
+				   context == grammarAccess.getModuleItemRule()) {
 					sequence_ConstantVariable(context, (ConstantVariable) semanticObject); 
 					return; 
 				}
@@ -160,8 +160,8 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 				}
 				else break;
 			case ESyntaxPackage.INSTANCE_REFERENCE:
-				if(context == grammarAccess.getClassItemRule() ||
-				   context == grammarAccess.getInstanceReferenceRule()) {
+				if(context == grammarAccess.getInstanceReferenceRule() ||
+				   context == grammarAccess.getModuleItemRule()) {
 					sequence_InstanceReference(context, (InstanceReference) semanticObject); 
 					return; 
 				}
@@ -218,8 +218,8 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 				}
 				else break;
 			case ESyntaxPackage.OPERATION:
-				if(context == grammarAccess.getClassItemRule() ||
-				   context == grammarAccess.getLibraryItemRule() ||
+				if(context == grammarAccess.getLibraryItemRule() ||
+				   context == grammarAccess.getModuleItemRule() ||
 				   context == grammarAccess.getOperationRule()) {
 					sequence_Operation(context, (Operation) semanticObject); 
 					return; 
@@ -309,8 +309,8 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 				}
 				else break;
 			case ESyntaxPackage.VARIABLE:
-				if(context == grammarAccess.getClassItemRule() ||
-				   context == grammarAccess.getLibraryItemRule() ||
+				if(context == grammarAccess.getLibraryItemRule() ||
+				   context == grammarAccess.getModuleItemRule() ||
 				   context == grammarAccess.getOperationStepRule() ||
 				   context == grammarAccess.getVariableRule()) {
 					sequence_Variable(context, (Variable) semanticObject); 
@@ -474,6 +474,8 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     (
+	 *         name=ID 
+	 *         startAddr=LITERAL 
 	 *         memwidth=LITERAL 
 	 *         pointersize=LITERAL 
 	 *         mems+=FunctionMemory+ 
@@ -484,6 +486,8 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	 *
 	 * Features:
 	 *    start[1, 1]
+	 *    name[1, 1]
+	 *    startAddr[1, 1]
 	 *    memwidth[1, 1]
 	 *    pointersize[1, 1]
 	 *    mems[1, *]
@@ -542,8 +546,8 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	 */
 	protected void sequence_ConfigVariable(EObject context, ConfigVariable semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.CLASS_ITEM__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.CLASS_ITEM__NAME));
+			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.MODULE_ITEM__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.MODULE_ITEM__NAME));
 			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.VARIABLE__TYPE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.VARIABLE__TYPE));
 		}
@@ -578,8 +582,8 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	 */
 	protected void sequence_ConstantVariable(EObject context, ConstantVariable semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.CLASS_ITEM__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.CLASS_ITEM__NAME));
+			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.MODULE_ITEM__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.MODULE_ITEM__NAME));
 			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.VARIABLE__TYPE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.VARIABLE__TYPE));
 			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.CONSTANT_VARIABLE__VALUE) == ValueTransient.YES)
@@ -619,9 +623,19 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (memwidth=LITERAL pointersize=LITERAL mems+=FunctionMemory+ (lib+=[Library|QualifiedName] | instances+=LinkedInstance)* do=OperationBlock)
+	 *     (
+	 *         name=ID 
+	 *         startAddr=LITERAL 
+	 *         memwidth=LITERAL 
+	 *         pointersize=LITERAL 
+	 *         mems+=FunctionMemory+ 
+	 *         (lib+=[Library|QualifiedName] | instances+=LinkedInstance)* 
+	 *         do=OperationBlock
+	 *     )
 	 *
 	 * Features:
+	 *    name[1, 1]
+	 *    startAddr[1, 1]
 	 *    memwidth[1, 1]
 	 *    pointersize[1, 1]
 	 *    mems[1, *]
@@ -690,8 +704,8 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	 */
 	protected void sequence_InstanceReference(EObject context, InstanceReference semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.CLASS_ITEM__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.CLASS_ITEM__NAME));
+			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.MODULE_ITEM__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.MODULE_ITEM__NAME));
 			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.INSTANCE_REFERENCE__TYPE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.INSTANCE_REFERENCE__TYPE));
 		}
@@ -786,7 +800,7 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (name=QualifiedName (extends+=[Module|QualifiedName] extends+=[Module|QualifiedName]*)? use+=[Library|QualifiedName]* items+=ClassItem*)
+	 *     (name=QualifiedName (extends+=[Module|QualifiedName] extends+=[Module|QualifiedName]*)? use+=[Library|QualifiedName]* items+=ModuleItem*)
 	 *
 	 * Features:
 	 *    name[1, 1]
@@ -954,8 +968,8 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	 */
 	protected void sequence_RegisterVariable(EObject context, RegisterVariable semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.CLASS_ITEM__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.CLASS_ITEM__NAME));
+			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.MODULE_ITEM__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.MODULE_ITEM__NAME));
 			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.VARIABLE__TYPE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.VARIABLE__TYPE));
 			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.REGISTER_VARIABLE__ADDR) == ValueTransient.YES)
@@ -980,8 +994,8 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	 */
 	protected void sequence_StructTypeDefMember(EObject context, StructTypeDefMember semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.CLASS_ITEM__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.CLASS_ITEM__NAME));
+			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.MODULE_ITEM__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.MODULE_ITEM__NAME));
 			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.VARIABLE__TYPE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.VARIABLE__TYPE));
 		}
@@ -1050,8 +1064,8 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	 */
 	protected void sequence_Variable(EObject context, Variable semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.CLASS_ITEM__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.CLASS_ITEM__NAME));
+			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.MODULE_ITEM__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.MODULE_ITEM__NAME));
 			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.VARIABLE__TYPE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.VARIABLE__TYPE));
 		}

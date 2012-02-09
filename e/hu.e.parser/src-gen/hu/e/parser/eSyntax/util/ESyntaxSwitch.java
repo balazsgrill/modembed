@@ -91,10 +91,10 @@ public class ESyntaxSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case ESyntaxPackage.CLASS_ITEM:
+      case ESyntaxPackage.MODULE_ITEM:
       {
-        ClassItem classItem = (ClassItem)theEObject;
-        T result = caseClassItem(classItem);
+        ModuleItem moduleItem = (ModuleItem)theEObject;
+        T result = caseModuleItem(moduleItem);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -102,7 +102,7 @@ public class ESyntaxSwitch<T> extends Switch<T>
       {
         InstanceReference instanceReference = (InstanceReference)theEObject;
         T result = caseInstanceReference(instanceReference);
-        if (result == null) result = caseClassItem(instanceReference);
+        if (result == null) result = caseModuleItem(instanceReference);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -110,7 +110,7 @@ public class ESyntaxSwitch<T> extends Switch<T>
       {
         Variable variable = (Variable)theEObject;
         T result = caseVariable(variable);
-        if (result == null) result = caseClassItem(variable);
+        if (result == null) result = caseModuleItem(variable);
         if (result == null) result = caseLibraryItem(variable);
         if (result == null) result = caseOperationStep(variable);
         if (result == null) result = defaultCase(theEObject);
@@ -470,7 +470,7 @@ public class ESyntaxSwitch<T> extends Switch<T>
         ConfigVariable configVariable = (ConfigVariable)theEObject;
         T result = caseConfigVariable(configVariable);
         if (result == null) result = caseVariable(configVariable);
-        if (result == null) result = caseClassItem(configVariable);
+        if (result == null) result = caseModuleItem(configVariable);
         if (result == null) result = caseLibraryItem(configVariable);
         if (result == null) result = caseOperationStep(configVariable);
         if (result == null) result = defaultCase(theEObject);
@@ -481,7 +481,7 @@ public class ESyntaxSwitch<T> extends Switch<T>
         StructTypeDefMember structTypeDefMember = (StructTypeDefMember)theEObject;
         T result = caseStructTypeDefMember(structTypeDefMember);
         if (result == null) result = caseVariable(structTypeDefMember);
-        if (result == null) result = caseClassItem(structTypeDefMember);
+        if (result == null) result = caseModuleItem(structTypeDefMember);
         if (result == null) result = caseLibraryItem(structTypeDefMember);
         if (result == null) result = caseOperationStep(structTypeDefMember);
         if (result == null) result = defaultCase(theEObject);
@@ -492,7 +492,7 @@ public class ESyntaxSwitch<T> extends Switch<T>
         ConstantVariable constantVariable = (ConstantVariable)theEObject;
         T result = caseConstantVariable(constantVariable);
         if (result == null) result = caseVariable(constantVariable);
-        if (result == null) result = caseClassItem(constantVariable);
+        if (result == null) result = caseModuleItem(constantVariable);
         if (result == null) result = caseLibraryItem(constantVariable);
         if (result == null) result = caseOperationStep(constantVariable);
         if (result == null) result = defaultCase(theEObject);
@@ -503,7 +503,7 @@ public class ESyntaxSwitch<T> extends Switch<T>
         RegisterVariable registerVariable = (RegisterVariable)theEObject;
         T result = caseRegisterVariable(registerVariable);
         if (result == null) result = caseVariable(registerVariable);
-        if (result == null) result = caseClassItem(registerVariable);
+        if (result == null) result = caseModuleItem(registerVariable);
         if (result == null) result = caseLibraryItem(registerVariable);
         if (result == null) result = caseOperationStep(registerVariable);
         if (result == null) result = defaultCase(theEObject);
@@ -514,7 +514,7 @@ public class ESyntaxSwitch<T> extends Switch<T>
         CompileContextVariable compileContextVariable = (CompileContextVariable)theEObject;
         T result = caseCompileContextVariable(compileContextVariable);
         if (result == null) result = caseVariable(compileContextVariable);
-        if (result == null) result = caseClassItem(compileContextVariable);
+        if (result == null) result = caseModuleItem(compileContextVariable);
         if (result == null) result = caseLibraryItem(compileContextVariable);
         if (result == null) result = caseOperationStep(compileContextVariable);
         if (result == null) result = defaultCase(theEObject);
@@ -525,7 +525,7 @@ public class ESyntaxSwitch<T> extends Switch<T>
         Label label = (Label)theEObject;
         T result = caseLabel(label);
         if (result == null) result = caseVariable(label);
-        if (result == null) result = caseClassItem(label);
+        if (result == null) result = caseModuleItem(label);
         if (result == null) result = caseLibraryItem(label);
         if (result == null) result = caseOperationStep(label);
         if (result == null) result = defaultCase(theEObject);
@@ -536,7 +536,7 @@ public class ESyntaxSwitch<T> extends Switch<T>
         Operation operation = (Operation)theEObject;
         T result = caseOperation(operation);
         if (result == null) result = caseVariable(operation);
-        if (result == null) result = caseClassItem(operation);
+        if (result == null) result = caseModuleItem(operation);
         if (result == null) result = caseLibraryItem(operation);
         if (result == null) result = caseOperationStep(operation);
         if (result == null) result = defaultCase(theEObject);
@@ -547,7 +547,7 @@ public class ESyntaxSwitch<T> extends Switch<T>
         ParameterVariable parameterVariable = (ParameterVariable)theEObject;
         T result = caseParameterVariable(parameterVariable);
         if (result == null) result = caseVariable(parameterVariable);
-        if (result == null) result = caseClassItem(parameterVariable);
+        if (result == null) result = caseModuleItem(parameterVariable);
         if (result == null) result = caseLibraryItem(parameterVariable);
         if (result == null) result = caseOperationStep(parameterVariable);
         if (result == null) result = defaultCase(theEObject);
@@ -590,17 +590,17 @@ public class ESyntaxSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Class Item</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Module Item</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Class Item</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Module Item</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseClassItem(ClassItem object)
+  public T caseModuleItem(ModuleItem object)
   {
     return null;
   }

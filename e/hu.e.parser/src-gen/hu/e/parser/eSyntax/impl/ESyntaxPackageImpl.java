@@ -9,7 +9,6 @@ package hu.e.parser.eSyntax.impl;
 import hu.e.parser.eSyntax.ArrayTypeDef;
 import hu.e.parser.eSyntax.BinarySection;
 import hu.e.parser.eSyntax.BinaryType;
-import hu.e.parser.eSyntax.ClassItem;
 import hu.e.parser.eSyntax.CompilationUnit;
 import hu.e.parser.eSyntax.CompileContextVariable;
 import hu.e.parser.eSyntax.ConfigVariable;
@@ -30,6 +29,7 @@ import hu.e.parser.eSyntax.LinkedBinary;
 import hu.e.parser.eSyntax.LinkedInstance;
 import hu.e.parser.eSyntax.LiteralValue;
 import hu.e.parser.eSyntax.Module;
+import hu.e.parser.eSyntax.ModuleItem;
 import hu.e.parser.eSyntax.Operation;
 import hu.e.parser.eSyntax.OperationBlock;
 import hu.e.parser.eSyntax.OperationCall;
@@ -106,7 +106,7 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass classItemEClass = null;
+  private EClass moduleItemEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -684,9 +684,9 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getClassItem()
+  public EClass getModuleItem()
   {
-    return classItemEClass;
+    return moduleItemEClass;
   }
 
   /**
@@ -694,9 +694,9 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getClassItem_Name()
+  public EAttribute getModuleItem_Name()
   {
-    return (EAttribute)classItemEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)moduleItemEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1194,7 +1194,7 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getFunctionBinarySection_Memwidth()
+  public EAttribute getFunctionBinarySection_Name()
   {
     return (EAttribute)functionBinarySectionEClass.getEStructuralFeatures().get(0);
   }
@@ -1204,7 +1204,7 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getFunctionBinarySection_Pointersize()
+  public EAttribute getFunctionBinarySection_StartAddr()
   {
     return (EAttribute)functionBinarySectionEClass.getEStructuralFeatures().get(1);
   }
@@ -1214,27 +1214,27 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getFunctionBinarySection_Memwidth()
+  {
+    return (EAttribute)functionBinarySectionEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFunctionBinarySection_Pointersize()
+  {
+    return (EAttribute)functionBinarySectionEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getFunctionBinarySection_Mems()
-  {
-    return (EReference)functionBinarySectionEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getFunctionBinarySection_Lib()
-  {
-    return (EReference)functionBinarySectionEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getFunctionBinarySection_Instances()
   {
     return (EReference)functionBinarySectionEClass.getEStructuralFeatures().get(4);
   }
@@ -1244,9 +1244,29 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getFunctionBinarySection_Do()
+  public EReference getFunctionBinarySection_Lib()
   {
     return (EReference)functionBinarySectionEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getFunctionBinarySection_Instances()
+  {
+    return (EReference)functionBinarySectionEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getFunctionBinarySection_Do()
+  {
+    return (EReference)functionBinarySectionEClass.getEStructuralFeatures().get(7);
   }
 
   /**
@@ -2217,8 +2237,8 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     createEReference(moduleEClass, MODULE__EXTENDS);
     createEReference(moduleEClass, MODULE__ITEMS);
 
-    classItemEClass = createEClass(CLASS_ITEM);
-    createEAttribute(classItemEClass, CLASS_ITEM__NAME);
+    moduleItemEClass = createEClass(MODULE_ITEM);
+    createEAttribute(moduleItemEClass, MODULE_ITEM__NAME);
 
     instanceReferenceEClass = createEClass(INSTANCE_REFERENCE);
     createEReference(instanceReferenceEClass, INSTANCE_REFERENCE__TYPE);
@@ -2291,6 +2311,8 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     createEReference(binarySectionEClass, BINARY_SECTION__START);
 
     functionBinarySectionEClass = createEClass(FUNCTION_BINARY_SECTION);
+    createEAttribute(functionBinarySectionEClass, FUNCTION_BINARY_SECTION__NAME);
+    createEAttribute(functionBinarySectionEClass, FUNCTION_BINARY_SECTION__START_ADDR);
     createEAttribute(functionBinarySectionEClass, FUNCTION_BINARY_SECTION__MEMWIDTH);
     createEAttribute(functionBinarySectionEClass, FUNCTION_BINARY_SECTION__POINTERSIZE);
     createEReference(functionBinarySectionEClass, FUNCTION_BINARY_SECTION__MEMS);
@@ -2456,8 +2478,8 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
 
     // Add supertypes to classes
     moduleEClass.getESuperTypes().add(this.getCompilationUnit());
-    instanceReferenceEClass.getESuperTypes().add(this.getClassItem());
-    variableEClass.getESuperTypes().add(this.getClassItem());
+    instanceReferenceEClass.getESuperTypes().add(this.getModuleItem());
+    variableEClass.getESuperTypes().add(this.getModuleItem());
     variableEClass.getESuperTypes().add(this.getLibraryItem());
     variableEClass.getESuperTypes().add(this.getOperationStep());
     libraryEClass.getESuperTypes().add(this.getCompilationUnit());
@@ -2504,10 +2526,10 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
 
     initEClass(moduleEClass, Module.class, "Module", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getModule_Extends(), this.getModule(), null, "extends", null, 0, -1, Module.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getModule_Items(), this.getClassItem(), null, "items", null, 0, -1, Module.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModule_Items(), this.getModuleItem(), null, "items", null, 0, -1, Module.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(classItemEClass, ClassItem.class, "ClassItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getClassItem_Name(), ecorePackage.getEString(), "name", null, 0, 1, ClassItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(moduleItemEClass, ModuleItem.class, "ModuleItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getModuleItem_Name(), ecorePackage.getEString(), "name", null, 0, 1, ModuleItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(instanceReferenceEClass, InstanceReference.class, "InstanceReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getInstanceReference_Type(), this.getModule(), null, "type", null, 0, 1, InstanceReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2580,6 +2602,8 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     initEReference(getBinarySection_Start(), this.getXExpression(), null, "start", null, 0, 1, BinarySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(functionBinarySectionEClass, FunctionBinarySection.class, "FunctionBinarySection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getFunctionBinarySection_Name(), ecorePackage.getEString(), "name", null, 0, 1, FunctionBinarySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFunctionBinarySection_StartAddr(), ecorePackage.getEString(), "startAddr", null, 0, 1, FunctionBinarySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getFunctionBinarySection_Memwidth(), ecorePackage.getEString(), "memwidth", null, 0, 1, FunctionBinarySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getFunctionBinarySection_Pointersize(), ecorePackage.getEString(), "pointersize", null, 0, 1, FunctionBinarySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFunctionBinarySection_Mems(), this.getFunctionMemory(), null, "mems", null, 0, -1, FunctionBinarySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
