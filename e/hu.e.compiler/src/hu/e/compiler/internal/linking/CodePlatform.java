@@ -38,7 +38,7 @@ public class CodePlatform {
 					libs.add(u);
 				}
 			}
-			opfinder = new OperationFinder(libs);
+			opfinder = new OperationFinder(linker, libs);
 		}
 		return opfinder;
 	}

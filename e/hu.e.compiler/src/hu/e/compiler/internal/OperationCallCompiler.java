@@ -11,6 +11,7 @@ import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.compiler.internal.model.symbols.impl.LiteralSymbol;
 import hu.e.compiler.list.ProgramStep;
+import hu.e.parser.eSyntax.Operation;
 import hu.e.parser.eSyntax.OperationCall;
 import hu.e.parser.eSyntax.OperationCallParameter;
 import hu.e.parser.eSyntax.ParameterVariable;
@@ -33,17 +34,18 @@ public class OperationCallCompiler {
 	
 	private final List<ProgramStep> before = new ArrayList<ProgramStep>();
 	
-//	private final List<LabelSymbol> labeluses = new ArrayList<LabelSymbol>();
-//	
-//	public List<LabelSymbol> getLabeluses() {
-//		return labeluses;
-//	}
-	
 	public OperationCallCompiler(CodePlatform platform, OperationCall call, ISymbolManager sm) {
 		this.sm = sm;
-		this.oc = new OperationCompiler(platform, call.getOperation());
+		Operation op = call.getOperation();
+		op = platform.getOperationFinder().findOverride(op);
+//		for(int i=0;i<op.getParams().size();i++){
+//			Variable oldvar = op.getParams().get(i);
+//			Variable newvar = operation.getParams().get(i);
+//			parameters.put(newvar, parameters.get(oldvar));
+//		}
+		this.oc = new OperationCompiler(platform, op);
 		Iterator<OperationCallParameter> pexs = call.getParams().iterator();
-		for(Variable pvar : call.getOperation().getParams()){
+		for(Variable pvar : op.getParams()){
 			//Variable pvar = p.getVar();
 			ParameterVariable p = (ParameterVariable)pvar;
 			OperationCallParameter ocp = pexs.hasNext() ? pexs.next() : null;
@@ -51,7 +53,7 @@ public class OperationCallCompiler {
 			if (ocp == null){
 				//default value
 				if (p.getDefault() == null || "".equals(p.getDefault())){
-					throw new RuntimeException("Invalid number of parameters for "+call.getOperation().getName());
+					before.add(CompilationErrorEntry.error(call, "Invalid number of parameters for "+call.getOperation().getName()));
 				}
 				oc.addParameter(pvar, new LiteralSymbol(ECompiler.convertLiteral(p.getDefault())));
 			}else{

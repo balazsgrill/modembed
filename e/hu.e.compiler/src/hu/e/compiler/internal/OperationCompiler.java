@@ -73,8 +73,8 @@ public class OperationCompiler {
 		parameters.put(v, symbol);
 	}
 	
-	public OperationCompiler(CodePlatform platform, Operation operation) {
-		this.operation = operation;
+	public OperationCompiler(CodePlatform platform, Operation op) {
+		this.operation = op;
 		this.platform = platform;
 	}
 	

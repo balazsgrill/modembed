@@ -40,6 +40,7 @@ public class BlockCompiler {
 	}
 	
 	public ProgramStep compile(ISymbolManager sm){
+		if (block == null) return CompilationErrorEntry.error(block, "Null code block!");
 		SequenceStep result = ListFactory.eINSTANCE.createSequenceStep();
 		
 		Map<Label, LabelStep> labels = new HashMap<Label, LabelStep>();

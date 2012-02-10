@@ -239,6 +239,7 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 		
 		if (x instanceof XIsLiteralExpression){
 			ISymbol s = getSymbol(((XIsLiteralExpression) x).getRef().getVar());
+			if (s == null) throw new ECompilerException(x, "Symbol cannot be resolved!");
 			return new LiteralSymbol(s.isLiteral()? 1 : 0);
 		}
 		

@@ -70,10 +70,10 @@ DIO_RawSet(address latch,const bit pin, uint8 v, bit b = 0){
 		}
 	}else{
 		aBTFSC(&(v),b);
-		GOTO(@true);
+		GOTO(true);
 		//false
 		aBCF(latch,pin);
-		GOTO(@done);
+		GOTO(done);
 		label true;
 		//true
 		aBSF(latch,pin);

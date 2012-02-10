@@ -32,8 +32,26 @@ public class OperationFinder {
 
 	private final Collection<Library> usedlibs;
 	
-	public OperationFinder(Collection<Library> usedlibs) {
+	private final ComponentLinker linker;
+	
+	public OperationFinder(ComponentLinker linker, Collection<Library> usedlibs) {
 		this.usedlibs = usedlibs;
+		this.linker = linker;
+	}
+	
+	public Operation findOverride(Operation operation){
+		Operation op = operation;
+		Library def = (Library)op.eContainer();
+		for(Library lib : linker.getLibraryPath(def)){
+			for(LibraryItem li : lib.getItems()){
+				if (li instanceof Operation){
+					if (((Operation) li).getName().equals(op.getName())){
+						return (Operation)li;
+					}
+				}
+			}
+		}
+		return op;
 	}
 	
 	public OperationCompiler getOperationCompiler(CodePlatform platform, OperationRole role, ISymbol...symbols) throws ECompilerException{
