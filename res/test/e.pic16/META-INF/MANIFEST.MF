@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: PIC 16 midrange library
+Bundle-SymbolicName: e.pic16
+Bundle-Version: 0.1.0.qualifier
+Require-Bundle: e.core;bundle-version="0.1.0"
