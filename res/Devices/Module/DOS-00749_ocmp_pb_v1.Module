@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:Module xmlns:edc="http://crownking/edc" edc:dosid="00749_ocmp_pb_v1" edc:modid="ocmp_pb_v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/Module.xsd">
+  <edc:ArchDef edc:desc="" edc:name="">
+    <edc:MemTraits>
+      <edc:DataMemTraits edc:addrinc="0x4" edc:locsize="0x4" edc:wordimpl="0xffffffff" edc:wordinit="0x0" edc:wordsafe="0xffffffff" edc:wordsize="0x4"/>
+    </edc:MemTraits>
+  </edc:ArchDef>
+  <edc:SFRDef edc:access="----------------n-n-------nrnnnn" edc:cname="OC@CON" edc:desc="" edc:grp="OCMP1" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="----------------000-------000000" edc:name="OC@CON" edc:nzwidth="0x20" edc:por="----------------000-------000000" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="OCM" edc:desc="" edc:mask="0x7" edc:name="OCM" edc:nzwidth="0x3"/>
+        <edc:SFRFieldDef edc:cname="OCTSEL" edc:desc="" edc:mask="0x1" edc:name="OCTSEL" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="OCFLT" edc:desc="" edc:mask="0x1" edc:name="OCFLT" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="OC32" edc:desc="" edc:mask="0x1" edc:name="OC32" edc:nzwidth="0x1"/>
+        <edc:AdjustPoint edc:offset="7"/>
+        <edc:SFRFieldDef edc:cname="SIDL" edc:desc="" edc:mask="0x1" edc:name="SIDL" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="FRZ" edc:desc="" edc:ishidden="true" edc:islanghidden="true" edc:mask="0x1" edc:name="FRZ" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="ON" edc:desc="" edc:mask="0x1" edc:name="ON" edc:nzwidth="0x1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="OCM0" edc:desc="" edc:mask="0x1" edc:name="OCM0" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="OCM1" edc:desc="" edc:mask="0x1" edc:name="OCM1" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="OCM2" edc:desc="" edc:mask="0x1" edc:name="OCM2" edc:nzwidth="0x1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.1">
+        <edc:AdjustPoint edc:offset="0xd"/>
+        <edc:SFRFieldDef edc:cname="OCSIDL" edc:desc="" edc:mask="0x1" edc:name="OCSIDL" edc:nzwidth="0x1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.2">
+        <edc:SFRFieldDef edc:cname="w" edc:desc="" edc:mask="0x1" edc:name="w" edc:nzwidth="0x20"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+    <edc:FreezeBit edc:freezeval="1" edc:name="OUTPUT COMPARE @" edc:pos="14"/>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn" edc:cname="OC@R" edc:desc="" edc:grp="OCMP1" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" edc:name="OC@R" edc:nzwidth="0x20" edc:por="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="OC@R" edc:desc="" edc:islanghidden="true" edc:mask="0xffffffff" edc:name="OC@R" edc:nzwidth="0x20"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn" edc:cname="OC@RS" edc:desc="" edc:grp="OCMP1" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" edc:name="OC@RS" edc:nzwidth="0x20" edc:por="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="OC@RS" edc:desc="" edc:islanghidden="true" edc:mask="0xffffffff" edc:name="OC@RS" edc:nzwidth="0x20"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+</edc:Module>

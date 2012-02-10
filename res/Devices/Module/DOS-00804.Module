@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:Module xmlns:edc="http://crownking/edc" edc:dosid="00804" edc:modid="rst_sib_v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/Module.xsd">
+  <edc:ArchDef edc:desc="" edc:name="">
+    <edc:MemTraits>
+      <edc:DataMemTraits edc:addrinc="0x2" edc:locsize="0x2" edc:wordimpl="0xffff" edc:wordinit="0x0" edc:wordsafe="0xffff" edc:wordsize="0x2"/>
+    </edc:MemTraits>
+  </edc:ArchDef>
+  <edc:SFRDef edc:access="nnn-ncnnnnnnnnnn" edc:cname="RCON" edc:desc="" edc:impl="0xe8ff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="uux-xuu01u0uuuuu" edc:name="RCON" edc:nzwidth="0x10" edc:por="00x-x00000000011">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="POR" edc:desc="" edc:mask="0x1" edc:name="POR" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="BOR" edc:desc="" edc:mask="0x1" edc:name="BOR" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="IDLE" edc:desc="" edc:mask="0x1" edc:name="IDLE" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="SLEEP" edc:desc="" edc:mask="0x1" edc:name="SLEEP" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="WDTO" edc:desc="" edc:mask="0x1" edc:name="WDTO" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="SWDTEN" edc:desc="" edc:mask="0x1" edc:name="SWDTEN" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="SWR" edc:desc="" edc:mask="0x1" edc:name="SWR" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="EXTR" edc:desc="" edc:mask="0x1" edc:name="EXTR" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="VREGS" edc:desc="" edc:mask="0x1" edc:name="VREGS" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="CM" edc:desc="" edc:mask="0x1" edc:name="CM" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="DPSLP" edc:desc="" edc:mask="0x1" edc:name="DPSLP" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="VREGSF" edc:desc="" edc:mask="0x1" edc:name="VREGSF" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="SBOREN" edc:desc="" edc:mask="0x1" edc:name="SBOREN" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="IOPUWR" edc:desc="" edc:mask="0x1" edc:name="IOPUWR" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="TRAPR" edc:desc="" edc:mask="0x1" edc:name="TRAPR" edc:nzwidth="0x1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+    <edc:StimInfo edc:stimpcfiles="" edc:stimregfiles="" edc:stimscl="r" edc:stimtype="Record"/>
+  </edc:SFRDef>
+</edc:Module>

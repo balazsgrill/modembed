@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:Module xmlns:edc="http://crownking/edc" edc:dosid="00936" edc:modid="icap_v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/Module.xsd">
+  <edc:ArchDef edc:desc="" edc:name="">
+    <edc:MemTraits>
+      <edc:DataMemTraits edc:addrinc="0x2" edc:locsize="0x2" edc:wordimpl="0xffff" edc:wordinit="0x0" edc:wordsafe="0xffff" edc:wordsize="0x2"/>
+    </edc:MemTraits>
+  </edc:ArchDef>
+  <edc:SFRDef edc:access="rrrrrrrrrrrrrrrr" edc:cname="IC@BUF" edc:desc="" edc:impl="0xffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="uuuuuuuuuuuuuuuu" edc:name="IC@BUF" edc:nzwidth="0x10" edc:por="xxxxxxxxxxxxxxxx">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="IC@BUF" edc:desc="" edc:islanghidden="true" edc:mask="0xffff" edc:name="IC@BUF" edc:nzwidth="0x10"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+    <edc:StimInfo edc:stimpcfiles="" edc:stimregfiles="" edc:stimscl="rwb" edc:stimtype="Integer"/>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="--n-----nnnrrnnn" edc:cname="IC@CON" edc:desc="" edc:impl="0x20ff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="--0-----00000000" edc:name="IC@CON" edc:nzwidth="0x10" edc:por="--0-----00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:aspect="Number" edc:cname="ICM" edc:desc="" edc:mask="0x7" edc:name="ICM" edc:nzwidth="0x3"/>
+        <edc:SFRFieldDef edc:aspect="Pattern" edc:cname="ICBNE" edc:desc="" edc:mask="0x1" edc:name="ICBNE" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:aspect="Pattern" edc:cname="ICOV" edc:desc="" edc:mask="0x1" edc:name="ICOV" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:aspect="Number" edc:cname="ICI" edc:desc="" edc:mask="0x3" edc:name="ICI" edc:nzwidth="0x2"/>
+        <edc:SFRFieldDef edc:aspect="Pattern" edc:cname="ICTMR" edc:desc="" edc:mask="0x1" edc:name="ICTMR" edc:nzwidth="0x1"/>
+        <edc:AdjustPoint edc:offset="5"/>
+        <edc:SFRFieldDef edc:aspect="Pattern" edc:cname="ICSIDL" edc:desc="" edc:mask="0x1" edc:name="ICSIDL" edc:nzwidth="0x1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="ICM0" edc:desc="" edc:mask="0x1" edc:name="ICM0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="ICM1" edc:desc="" edc:mask="0x1" edc:name="ICM1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="ICM2" edc:desc="" edc:mask="0x1" edc:name="ICM2" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="2"/>
+        <edc:SFRFieldDef edc:cname="ICI0" edc:desc="" edc:mask="0x1" edc:name="ICI0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="ICI1" edc:desc="" edc:mask="0x1" edc:name="ICI1" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+    <edc:StimInfo edc:stimpcfiles="" edc:stimregfiles="" edc:stimscl="rwb" edc:stimtype="Record"/>
+    <edc:FreezeBit edc:freezeval="1" edc:name="INPUT CAPTURE @" edc:pos="0xe"/>
+  </edc:SFRDef>
+</edc:Module>

@@ -1,0 +1,33 @@
+<?xml version="1.0" ?><edc:PIC edc:arch="SEE" edc:desc="" edc:isextended="false" edc:name="11LC020" edc:procid="0xee69" xmlns:edc="http://crownking/edc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
+  <edc:Power>
+    <edc:VPP edc:defaultvoltage="5.000" edc:maxvoltage="5.500" edc:minvoltage="2.500"/>
+    <edc:VDD edc:maxdefaultvoltage="5.000" edc:maxvoltage="5.500" edc:mindefaultvoltage="5.000" edc:minvoltage="2.500" edc:nominalvoltage="5.000"/>
+  </edc:Power>
+  <edc:Programming edc:arraysize="0x0" edc:erasealgo="1" edc:maskalgo="0x0" edc:memtech="ee" edc:ovrpgm="1" edc:pagesize="0x10" edc:protocol="UNIO" edc:tries="1">
+    <edc:Wait edc:eedata="100"/>
+    <edc:Latches edc:eedata="1"/>
+    <edc:SpeedRanges edc:highvoltagespeed="10-100kHz" edc:mediumvoltagespeed="10-100kHz"/>
+  </edc:Programming>
+  <edc:ArchDef edc:desc="SEE" edc:name="SEE">
+    <edc:MemTraits edc:addrinc="0x1" edc:locsize="0x1" edc:wordimpl="0xff" edc:wordinit="0xff" edc:wordsafe="0xff" edc:wordsize="0x1"/>
+  </edc:ArchDef>
+  <edc:ProgramSpace>
+    <edc:EEDataSector edc:beginaddr="0x0" edc:endaddr="0x100" edc:regionid="eedata"/>
+    <edc:ConfigFuseSector edc:beginaddr="0x100" edc:endaddr="0x102" edc:regionid="cfgmem">
+      <edc:DCRDef edc:access="----nn--" edc:cname="CONFIG0L" edc:default="0xf3" edc:desc="" edc:impl="0xc" edc:name="CONFIG0L" edc:nzwidth="0x8" edc:unused="0x0" edc:useinchecksum="0xc">
+        <edc:DCRModeList>
+          <edc:DCRMode edc:id="DS.0">
+            <edc:AdjustPoint edc:offset="2"/>
+            <edc:DCRFieldDef edc:cname="BP" edc:desc="Write Protect" edc:mask="0x3" edc:name="BP" edc:nzwidth="0x2">
+              <edc:DCRFieldSemantic edc:desc="None" edc:when="(field &amp; 0x3) == 0x0"/>
+              <edc:DCRFieldSemantic edc:desc="Upper 1/4 (0C0-0FF)" edc:when="(field &amp; 0x3) == 0x1"/>
+              <edc:DCRFieldSemantic edc:desc="Upper 1/2 (080-0FF)" edc:when="(field &amp; 0x3) == 0x2"/>
+              <edc:DCRFieldSemantic edc:desc="All       (000-0FF)" edc:when="(field &amp; 0x3) == 0x3"/>
+            </edc:DCRFieldDef>
+          </edc:DCRMode>
+        </edc:DCRModeList>
+      </edc:DCRDef>
+    </edc:ConfigFuseSector>
+  </edc:ProgramSpace>
+  <edc:DataSpace/>
+</edc:PIC>

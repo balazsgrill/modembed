@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:Module xmlns:edc="http://crownking/edc" edc:dosid="00866_cmp_control_pb_v2" edc:modid="cmp_control_pb_v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/Module.xsd">
+  <edc:ArchDef edc:desc="" edc:name="">
+    <edc:MemTraits>
+      <edc:DataMemTraits edc:addrinc="0x4" edc:locsize="0x4" edc:wordimpl="0xffffffff" edc:wordinit="0x0" edc:wordsafe="0xffffffff" edc:wordsize="0x4"/>
+    </edc:MemTraits>
+  </edc:ArchDef>
+  <edc:SFRDef edc:access="----------------nnnn---nnn-n--nn" edc:cname="CM@CON" edc:desc="" edc:grp="CMP" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="----------------000x---011-0--11" edc:name="CM@CON" edc:nzwidth="0x20" edc:por="----------------000x---011-0--11" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="CCH" edc:desc="" edc:mask="0x3" edc:name="CCH" edc:nzwidth="0x2"/>
+        <edc:AdjustPoint edc:offset="2"/>
+        <edc:SFRFieldDef edc:cname="CREF" edc:desc="" edc:mask="0x1" edc:name="CREF" edc:nzwidth="0x1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="EVPOL" edc:desc="" edc:mask="0x3" edc:name="EVPOL" edc:nzwidth="0x2"/>
+        <edc:SFRFieldDef edc:cname="COUT" edc:desc="" edc:mask="0x1" edc:name="COUT" edc:nzwidth="0x1"/>
+        <edc:AdjustPoint edc:offset="3"/>
+        <edc:SFRFieldDef edc:cname="CLPWR" edc:desc="" edc:mask="0x1" edc:name="CLPWR" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CPOL" edc:desc="" edc:mask="0x1" edc:name="CPOL" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="COE" edc:desc="" edc:mask="0x1" edc:name="COE" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="ON" edc:desc="" edc:mask="0x1" edc:name="ON" edc:nzwidth="0x1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="CCH0" edc:desc="" edc:mask="0x1" edc:name="CCH0" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="CCH1" edc:desc="" edc:mask="0x1" edc:name="CCH1" edc:nzwidth="0x1"/>
+        <edc:AdjustPoint edc:offset="0x4"/>
+        <edc:SFRFieldDef edc:cname="EVPOL0" edc:desc="" edc:mask="0x1" edc:name="EVPOL0" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="EVPOL1" edc:desc="" edc:mask="0x1" edc:name="EVPOL1" edc:nzwidth="0x1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.1">
+        <edc:SFRFieldDef edc:cname="w" edc:desc="" edc:mask="0x1" edc:name="w" edc:nzwidth="0x20"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="------------------n-------nnnnrr" edc:cname="CMSTAT" edc:desc="" edc:grp="CMP" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="------------------------00xxxx00" edc:name="CMSTAT" edc:nzwidth="0x20" edc:por="------------------------00xxxx00" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="C1OUT" edc:desc="" edc:mask="0x1" edc:name="C1OUT" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="C2OUT" edc:desc="" edc:mask="0x1" edc:name="C2OUT" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="C3OUT" edc:desc="" edc:mask="0x1" edc:name="C3OUT" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="C4OUT" edc:desc="" edc:mask="0x1" edc:name="C4OUT" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="C5OUT" edc:desc="" edc:mask="0x1" edc:name="C5OUT" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="C6OUT" edc:desc="" edc:mask="0x1" edc:name="C6OUT" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="7"/>
+        <edc:SFRFieldDef edc:cname="SIDL" edc:desc="" edc:mask="0x1" edc:name="SIDL" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="FRZ" edc:desc="" edc:ishidden="true" edc:islanghidden="true" edc:mask="0x1" edc:name="FRZ" edc:nzwidth="0x1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="w" edc:desc="" edc:mask="0x1" edc:name="w" edc:nzwidth="0x20"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+    <edc:FreezeBit edc:freezeval="1" edc:name="COMPARATOR" edc:pos="14"/>
+  </edc:SFRDef>
+</edc:Module>

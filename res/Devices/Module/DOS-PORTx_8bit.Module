@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:Module xmlns:edc="http://crownking/edc" edc:dosid="DOS-PORTx_8bit" edc:modid="DOS-PORTx_8bit" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/Module.xsd">
+  <edc:ArchDef edc:desc="" edc:name="">
+    <edc:MemTraits>
+      <edc:DataMemTraits edc:addrinc="0x1" edc:locsize="0x1" edc:wordimpl="0xff" edc:wordinit="0x0" edc:wordsafe="0xff" edc:wordsize="0x1"/>
+    </edc:MemTraits>
+  </edc:ArchDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="PORT@" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="xxxxxxxx" edc:name="PORT@" edc:nzwidth="8" edc:por="xxxxxxxx">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="R@0" edc:desc="" edc:mask="0x1" edc:name="R@0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="R@1" edc:desc="" edc:mask="0x1" edc:name="R@1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="R@2" edc:desc="" edc:mask="0x1" edc:name="R@2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="R@3" edc:desc="" edc:mask="0x1" edc:name="R@3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="R@4" edc:desc="" edc:mask="0x1" edc:name="R@4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="R@5" edc:desc="" edc:mask="0x1" edc:name="R@5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="R@6" edc:desc="" edc:mask="0x1" edc:name="R@6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="R@7" edc:desc="" edc:mask="0x1" edc:name="R@7" edc:nzwidth="1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="SIM.0">
+        <edc:SFRFieldDef edc:cname="R@" edc:desc="" edc:mask="0xff" edc:name="R@" edc:nzwidth="8"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LAT@" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="uuuuuuuu" edc:name="LAT@" edc:nzwidth="8" edc:por="xxxxxxxx">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="LAT@0" edc:desc="" edc:mask="0x1" edc:name="LAT@0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LAT@1" edc:desc="" edc:mask="0x1" edc:name="LAT@1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LAT@2" edc:desc="" edc:mask="0x1" edc:name="LAT@2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LAT@3" edc:desc="" edc:mask="0x1" edc:name="LAT@3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LAT@4" edc:desc="" edc:mask="0x1" edc:name="LAT@4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LAT@5" edc:desc="" edc:mask="0x1" edc:name="LAT@5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LAT@6" edc:desc="" edc:mask="0x1" edc:name="LAT@6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LAT@7" edc:desc="" edc:mask="0x1" edc:name="LAT@7" edc:nzwidth="1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="SIM.0">
+        <edc:SFRFieldDef edc:cname="LAT@" edc:desc="" edc:mask="0xff" edc:name="LAT@" edc:nzwidth="8"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="TRIS@" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="11111111" edc:name="TRIS@" edc:nzwidth="8" edc:por="11111111">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="TRIS@0" edc:desc="" edc:mask="0x1" edc:name="TRIS@0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="TRIS@1" edc:desc="" edc:mask="0x1" edc:name="TRIS@1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="TRIS@2" edc:desc="" edc:mask="0x1" edc:name="TRIS@2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="TRIS@3" edc:desc="" edc:mask="0x1" edc:name="TRIS@3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="TRIS@4" edc:desc="" edc:mask="0x1" edc:name="TRIS@4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="TRIS@5" edc:desc="" edc:mask="0x1" edc:name="TRIS@5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="TRIS@6" edc:desc="" edc:mask="0x1" edc:name="TRIS@6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="TRIS@7" edc:desc="" edc:mask="0x1" edc:name="TRIS@7" edc:nzwidth="1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="SIM.0">
+        <edc:SFRFieldDef edc:cname="TRIS@" edc:desc="" edc:mask="0xff" edc:name="TRIS@" edc:nzwidth="8"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+</edc:Module>

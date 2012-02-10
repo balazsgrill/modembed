@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:Module xmlns:edc="http://crownking/edc" edc:dosid="01390_pfm_control_hpmd_v2" edc:modid="pfm_control_hpmd_v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/Module.xsd">
+  <edc:ArchDef edc:desc="" edc:name="">
+    <edc:MemTraits>
+      <edc:DataMemTraits edc:addrinc="0x4" edc:locsize="0x4" edc:wordimpl="0xffffffff" edc:wordinit="0x0" edc:wordsafe="0xffffffff" edc:wordsize="0x4"/>
+    </edc:MemTraits>
+  </edc:ArchDef>
+  <edc:SFRDef edc:access="----------------nnnnn-------nnnn" edc:cname="NVMCON" edc:desc="" edc:grp="NVM" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="----------------00000-------0000" edc:name="NVMCON" edc:nzwidth="0x20" edc:por="----------------00000-------0000" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="NVMOP" edc:desc="" edc:mask="0xf" edc:name="NVMOP" edc:nzwidth="0x4"/>
+        <edc:AdjustPoint edc:offset="7"/>
+        <edc:SFRFieldDef edc:cname="LVDSTAT" edc:desc="" edc:mask="0x1" edc:name="LVDSTAT" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="LVDERR" edc:desc="" edc:mask="0x1" edc:name="LVDERR" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="WRERR" edc:desc="" edc:mask="0x1" edc:name="WRERR" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="WREN" edc:desc="" edc:mask="0x1" edc:name="WREN" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="WR" edc:desc="" edc:mask="0x1" edc:name="WR" edc:nzwidth="0x1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="NVMOP0" edc:desc="" edc:mask="0x1" edc:name="NVMOP0" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="NVMOP1" edc:desc="" edc:mask="0x1" edc:name="NVMOP1" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="NVMOP2" edc:desc="" edc:mask="0x1" edc:name="NVMOP2" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="NVMOP3" edc:desc="" edc:mask="0x1" edc:name="NVMOP3" edc:nzwidth="0x1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.1">
+        <edc:SFRFieldDef edc:cname="PROGOP" edc:desc="" edc:mask="0x1" edc:name="PROGOP" edc:nzwidth="0x4"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.2">
+        <edc:SFRFieldDef edc:cname="PROGOP0" edc:desc="" edc:mask="0x1" edc:name="PROGOP0" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="PROGOP1" edc:desc="" edc:mask="0x1" edc:name="PROGOP1" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="PROGOP2" edc:desc="" edc:mask="0x1" edc:name="PROGOP2" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="PROGOP3" edc:desc="" edc:mask="0x1" edc:name="PROGOP3" edc:nzwidth="0x1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.3">
+        <edc:SFRFieldDef edc:cname="w" edc:desc="" edc:mask="0x1" edc:name="w" edc:nzwidth="0x20"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww" edc:cname="NVMKEY" edc:desc="" edc:grp="FLASH" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000000000000000000000000000" edc:name="NVMKEY" edc:nzwidth="0x20" edc:por="00000000000000000000000000000000" edc:portals="- - -">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="NVMKEY" edc:desc="" edc:islanghidden="true" edc:mask="0xffffffff" edc:name="NVMKEY" edc:nzwidth="0x20"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn" edc:cname="NVMADDR" edc:desc="" edc:grp="NVM" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000000000000000000000000000" edc:name="NVMADDR" edc:nzwidth="0x20" edc:por="00000000000000000000000000000000" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="NVMADDR" edc:desc="" edc:islanghidden="true" edc:mask="0xffffffff" edc:name="NVMADDR" edc:nzwidth="0x20"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn" edc:cname="NVMDATA" edc:desc="" edc:grp="FLASH" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000000000000000000000000000" edc:name="NVMDATA" edc:nzwidth="0x20" edc:por="00000000000000000000000000000000" edc:portals="- - -">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="NVMDATA" edc:desc="" edc:islanghidden="true" edc:mask="0xffffffff" edc:name="NVMDATA" edc:nzwidth="0x20"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn" edc:cname="NVMSRCADDR" edc:desc="" edc:grp="FLASH" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000000000000000000000000000" edc:name="NVMSRCADDR" edc:nzwidth="0x20" edc:por="00000000000000000000000000000000" edc:portals="- - -">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="NVMSRCADDR" edc:desc="" edc:islanghidden="true" edc:mask="0xffffffff" edc:name="NVMSRCADDR" edc:nzwidth="0x20"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+</edc:Module>

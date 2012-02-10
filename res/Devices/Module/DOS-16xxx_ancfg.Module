@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:Module xmlns:edc="http://crownking/edc" edc:dosid="DOS-16xxx_ancfg" edc:modid="ANCFG" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/Module.xsd">
+  <edc:ArchDef edc:desc="" edc:name="">
+    <edc:MemTraits>
+      <edc:DataMemTraits edc:addrinc="0x2" edc:locsize="0x2" edc:wordimpl="0xffff" edc:wordinit="0x0" edc:wordsafe="0xffff" edc:wordsize="0x2"/>
+    </edc:MemTraits>
+  </edc:ArchDef>
+  <edc:SFRDef edc:access="-------------n--" edc:cname="ANCFG" edc:desc="" edc:impl="0x4" edc:isindirect="false" edc:isvolatile="true" edc:mclr="-------------0--" edc:name="ANCFG" edc:nzwidth="16" edc:por="-------------0--">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:AdjustPoint edc:offset="2"/>
+        <edc:SFRFieldDef edc:cname="VBG2EN" edc:desc="" edc:mask="0x1" edc:name="VBG2EN" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="n-nn-----n----nn" edc:cname="BUFCON1" edc:desc="" edc:impl="0xb043" edc:isindirect="false" edc:isvolatile="true" edc:mclr="0-00-----0----xx" edc:name="BUFCON1" edc:nzwidth="16" edc:por="0-00-----0----xx">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="BUFREF" edc:desc="" edc:mask="0x3" edc:name="BUFREF" edc:nzwidth="2"/>
+        <edc:AdjustPoint edc:offset="4"/>
+        <edc:SFRFieldDef edc:cname="BUFSTBY" edc:desc="" edc:mask="0x1" edc:name="BUFSTBY" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="5"/>
+        <edc:SFRFieldDef edc:cname="PSLPEN" edc:desc="" edc:mask="0x1" edc:name="PSLPEN" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="PSIDL" edc:desc="" edc:mask="0x1" edc:name="PSIDL" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="BUFEN" edc:desc="" edc:mask="0x1" edc:name="BUFEN" edc:nzwidth="1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="BUFREF0" edc:desc="" edc:mask="0x1" edc:name="BUFREF0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="BUFREF1" edc:desc="" edc:mask="0x1" edc:name="BUFREF1" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="n-nn----nn----nn" edc:cname="BUFCON2" edc:desc="" edc:impl="0xb0c3" edc:isindirect="false" edc:isvolatile="true" edc:mclr="0-00-----0----xx" edc:name="BUFCON2" edc:nzwidth="16" edc:por="0-00-----0----xx">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="BUFREF" edc:desc="" edc:mask="0x3" edc:name="BUFREF" edc:nzwidth="2"/>
+        <edc:AdjustPoint edc:offset="4"/>
+        <edc:SFRFieldDef edc:cname="BUFSTBY" edc:desc="" edc:mask="0x1" edc:name="BUFSTBY" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="BUFIOEN" edc:desc="" edc:mask="0x1" edc:name="BUFIOEN" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="4"/>
+        <edc:SFRFieldDef edc:cname="PSLPEN" edc:desc="" edc:mask="0x1" edc:name="PSLPEN" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="PSIDL" edc:desc="" edc:mask="0x1" edc:name="PSIDL" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="BUFEN" edc:desc="" edc:mask="0x1" edc:name="BUFEN" edc:nzwidth="1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="BUFREF0" edc:desc="" edc:mask="0x1" edc:name="BUFREF0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="BUFREF1" edc:desc="" edc:mask="0x1" edc:name="BUFREF1" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="n-nn----nn----nn" edc:cname="BUFCON3" edc:desc="" edc:impl="0xb0c3" edc:isindirect="false" edc:isvolatile="true" edc:mclr="0-00-----0----xx" edc:name="BUFCON3" edc:nzwidth="16" edc:por="0-00-----0----xx">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="BUFREF" edc:desc="" edc:mask="0x3" edc:name="BUFREF" edc:nzwidth="2"/>
+        <edc:AdjustPoint edc:offset="4"/>
+        <edc:SFRFieldDef edc:cname="BUFSTBY" edc:desc="" edc:mask="0x1" edc:name="BUFSTBY" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="BUFIOEN" edc:desc="" edc:mask="0x1" edc:name="BUFIOEN" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="4"/>
+        <edc:SFRFieldDef edc:cname="PSLPEN" edc:desc="" edc:mask="0x1" edc:name="PSLPEN" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="PSIDL" edc:desc="" edc:mask="0x1" edc:name="PSIDL" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="BUFEN" edc:desc="" edc:mask="0x1" edc:name="BUFEN" edc:nzwidth="1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="BUFREF0" edc:desc="" edc:mask="0x1" edc:name="BUFREF0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="BUFREF1" edc:desc="" edc:mask="0x1" edc:name="BUFREF1" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+</edc:Module>

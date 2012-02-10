@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:Module xmlns:edc="http://crownking/edc" edc:dosid="DOS-01565_Interrupt_on_change_8bit" edc:modid="int_on_change_v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/Module.xsd">
+  <edc:ArchDef edc:desc="" edc:name="">
+    <edc:MemTraits>
+      <edc:DataMemTraits edc:addrinc="0x1" edc:locsize="0x1" edc:wordimpl="0xff" edc:wordinit="0x0" edc:wordsafe="0xff" edc:wordsize="0x1"/>
+    </edc:MemTraits>
+  </edc:ArchDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="IOCF" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="IOCF" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="IOCF0" edc:desc="" edc:mask="0x1" edc:name="IOCF0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="IOCF1" edc:desc="" edc:mask="0x1" edc:name="IOCF1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="IOCF2" edc:desc="" edc:mask="0x1" edc:name="IOCF2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="IOCF3" edc:desc="" edc:mask="0x1" edc:name="IOCF3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="IOCF4" edc:desc="" edc:mask="0x1" edc:name="IOCF4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="IOCF5" edc:desc="" edc:mask="0x1" edc:name="IOCF5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="IOCF6" edc:desc="" edc:mask="0x1" edc:name="IOCF6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="IOCF7" edc:desc="" edc:mask="0x1" edc:name="IOCF7" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="IOCN" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="IOCN" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="IOCN0" edc:desc="" edc:mask="0x1" edc:name="IOCN0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="IOCN1" edc:desc="" edc:mask="0x1" edc:name="IOCN1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="IOCN2" edc:desc="" edc:mask="0x1" edc:name="IOCN2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="IOCN3" edc:desc="" edc:mask="0x1" edc:name="IOCN3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="IOCN4" edc:desc="" edc:mask="0x1" edc:name="IOCN4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="IOCN5" edc:desc="" edc:mask="0x1" edc:name="IOCN5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="IOCN6" edc:desc="" edc:mask="0x1" edc:name="IOCN6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="IOCN7" edc:desc="" edc:mask="0x1" edc:name="IOCN7" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="IOCP" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="IOCP" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="IOCP0" edc:desc="" edc:mask="0x1" edc:name="IOCP0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="IOCP1" edc:desc="" edc:mask="0x1" edc:name="IOCP1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="IOCP2" edc:desc="" edc:mask="0x1" edc:name="IOCP2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="IOCP3" edc:desc="" edc:mask="0x1" edc:name="IOCP3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="IOCP4" edc:desc="" edc:mask="0x1" edc:name="IOCP4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="IOCP5" edc:desc="" edc:mask="0x1" edc:name="IOCP5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="IOCP6" edc:desc="" edc:mask="0x1" edc:name="IOCP6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="IOCP7" edc:desc="" edc:mask="0x1" edc:name="IOCP7" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+</edc:Module>

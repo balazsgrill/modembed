@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:Module xmlns:edc="http://crownking/edc" edc:desc="enhanced usart" edc:dosid="DOS-01499" edc:modid="uart_autobd_v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/Module.xsd">
+  <edc:ArchDef edc:desc="" edc:name="">
+    <edc:MemTraits>
+      <edc:DataMemTraits edc:addrinc="0x1" edc:locsize="0x1" edc:wordimpl="0xff" edc:wordinit="0x0" edc:wordsafe="0xff" edc:wordsize="0x1"/>
+    </edc:MemTraits>
+  </edc:ArchDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="RC@REG" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="RC@REG" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList>
+      <edc:LegacyAlias edc:cname="RCREG"/>
+      <edc:LegacyAlias edc:cname="RCREG@"/>
+    </edc:AliasList>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="RC@REG" edc:desc="" edc:mask="0xff" edc:name="RC@REG" edc:nzwidth="8"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="TX@REG" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="TX@REG" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList>
+      <edc:LegacyAlias edc:cname="TXREG@"/>
+      <edc:LegacyAlias edc:cname="TXREG"/>
+    </edc:AliasList>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="TX@REG" edc:desc="" edc:mask="0xff" edc:name="TX@REG" edc:nzwidth="8"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:JoinedSFRDef edc:cname="SP@BRG" edc:desc="" edc:name="SP@BRG" edc:nzwidth="0x10">
+    <edc:SFRModeList/>
+    <edc:SFRDef edc:access="nnnnnnnn" edc:cname="SP@BRGL" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="SP@BRGL" edc:nzwidth="8" edc:por="00000000">
+      <edc:AliasList>
+        <edc:LegacyAlias edc:cname="SPBRG"/>
+        <edc:LegacyAlias edc:cname="SPBRG@"/>
+        <edc:LegacyAlias edc:cname="SPBRGL"/>
+      </edc:AliasList>
+      <edc:SFRModeList>
+        <edc:SFRMode edc:id="DS.0">
+          <edc:SFRFieldDef edc:cname="SP@BRGL" edc:desc="" edc:mask="0xff" edc:name="SP@BRGL" edc:nzwidth="8"/>
+        </edc:SFRMode>
+      </edc:SFRModeList>
+    </edc:SFRDef>
+    <edc:SFRDef edc:access="nnnnnnnn" edc:cname="SP@BRGH" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="SP@BRGH" edc:nzwidth="8" edc:por="00000000">
+      <edc:AliasList>
+        <edc:LegacyAlias edc:cname="SPBRGH"/>
+        <edc:LegacyAlias edc:cname="SPBRGH@"/>
+      </edc:AliasList>
+      <edc:SFRModeList>
+        <edc:SFRMode edc:id="DS.0">
+          <edc:SFRFieldDef edc:cname="SP@BRGH" edc:desc="" edc:mask="0xff" edc:name="SP@BRGH" edc:nzwidth="8"/>
+        </edc:SFRMode>
+      </edc:SFRModeList>
+    </edc:SFRDef>
+  </edc:JoinedSFRDef>
+  <edc:SFRDef edc:access="nnnnnrrr" edc:cname="RC@STA" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="RC@STA" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList>
+      <edc:LegacyAlias edc:cname="RCSTA@"/>
+      <edc:LegacyAlias edc:cname="RCSTA"/>
+    </edc:AliasList>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="RX9D" edc:desc="" edc:mask="0x1" edc:name="RX9D" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="OERR" edc:desc="" edc:mask="0x1" edc:name="OERR" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="FERR" edc:desc="" edc:mask="0x1" edc:name="FERR" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="ADDEN" edc:desc="" edc:mask="0x1" edc:name="ADDEN" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CREN" edc:desc="" edc:mask="0x1" edc:name="CREN" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SREN" edc:desc="" edc:mask="0x1" edc:name="SREN" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="RX9" edc:desc="" edc:mask="0x1" edc:name="RX9" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SPEN" edc:desc="" edc:mask="0x1" edc:name="SPEN" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnrn" edc:cname="TX@STA" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000010" edc:name="TX@STA" edc:nzwidth="8" edc:por="00000010">
+    <edc:AliasList>
+      <edc:LegacyAlias edc:cname="TXSTA@"/>
+      <edc:LegacyAlias edc:cname="TXSTA"/>
+    </edc:AliasList>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="TX9D" edc:desc="" edc:mask="0x1" edc:name="TX9D" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="TRMT" edc:desc="" edc:mask="0x1" edc:name="TRMT" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="BRGH" edc:desc="" edc:mask="0x1" edc:name="BRGH" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SENDB" edc:desc="" edc:mask="0x1" edc:name="SENDB" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SYNC" edc:desc="" edc:mask="0x1" edc:name="SYNC" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="TXEN" edc:desc="" edc:mask="0x1" edc:name="TXEN" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="TX9" edc:desc="" edc:mask="0x1" edc:name="TX9" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CSRC" edc:desc="" edc:mask="0x1" edc:name="CSRC" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="cr-nn-nn" edc:cname="BAUD@CON" edc:desc="" edc:impl="0xdb" edc:isindirect="false" edc:isvolatile="true" edc:mclr="01-00-00" edc:name="BAUD@CON" edc:nzwidth="8" edc:por="01-00-00">
+    <edc:AliasList>
+      <edc:LegacyAlias edc:cname="BAUDCON@"/>
+      <edc:LegacyAlias edc:cname="BAUDCTL@"/>
+      <edc:LegacyAlias edc:cname="BAUDCON"/>
+      <edc:LegacyAlias edc:cname="BAUDCTL"/>
+    </edc:AliasList>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="ABDEN" edc:desc="" edc:mask="0x1" edc:name="ABDEN" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="WUE" edc:desc="" edc:mask="0x1" edc:name="WUE" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="BRG16" edc:desc="" edc:mask="0x1" edc:name="BRG16" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SCKP" edc:desc="" edc:mask="0x1" edc:name="SCKP" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="RCIDL" edc:desc="" edc:mask="0x1" edc:name="RCIDL" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="ABDOVF" edc:desc="" edc:mask="0x1" edc:name="ABDOVF" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+</edc:Module>

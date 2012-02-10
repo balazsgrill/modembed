@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:Module xmlns:edc="http://crownking/edc" edc:dosid="DOS-00850" edc:modid="lvd_ctrl_v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/Module.xsd">
+  <edc:ArchDef edc:desc="" edc:name="">
+    <edc:MemTraits>
+      <edc:DataMemTraits edc:addrinc="0x2" edc:locsize="0x2" edc:wordimpl="0xffff" edc:wordinit="0x0" edc:wordsafe="0xffff" edc:wordsize="0x2"/>
+    </edc:MemTraits>
+  </edc:ArchDef>
+  <edc:SFRDef edc:access="n-n-----nnn-nnnn" edc:cname="HLVDCON" edc:desc="" edc:impl="0xa0ef" edc:isindirect="false" edc:isvolatile="true" edc:mclr="0-0-----000-0000" edc:name="HLVDCON" edc:nzwidth="16" edc:por="0-0-----000-0000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="HLVDL" edc:desc="" edc:mask="0xf" edc:name="HLVDL" edc:nzwidth="4"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="IRVST" edc:desc="" edc:mask="0x1" edc:name="IRVST" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="BGVST" edc:desc="" edc:mask="0x1" edc:name="BGVST" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="VDIR" edc:desc="" edc:mask="0x1" edc:name="VDIR" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="5"/>
+        <edc:SFRFieldDef edc:cname="LSIDL" edc:desc="" edc:mask="0x1" edc:name="LSIDL" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="HLVDEN" edc:desc="" edc:mask="0x1" edc:name="HLVDEN" edc:nzwidth="1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="HLVDL0" edc:desc="" edc:mask="0x1" edc:name="HLVDL0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="HLVDL1" edc:desc="" edc:mask="0x1" edc:name="HLVDL1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="HLVDL2" edc:desc="" edc:mask="0x1" edc:name="HLVDL2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="HLVDL3" edc:desc="" edc:mask="0x1" edc:name="HLVDL3" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+</edc:Module>

@@ -1,0 +1,1184 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:Module xmlns:edc="http://crownking/edc" edc:dosid="DOS-01516_lcd_sib_v2_8bit" edc:modid="lcd_sib_v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/Module.xsd">
+  <edc:ArchDef edc:desc="" edc:name="">
+    <edc:MemTraits>
+      <edc:DataMemTraits edc:addrinc="0x1" edc:locsize="0x1" edc:wordimpl="0xff" edc:wordinit="0x0" edc:wordsafe="0xff" edc:wordsize="0x1"/>
+    </edc:MemTraits>
+  </edc:ArchDef>
+  <edc:SFRDef edc:access="nncnnnnn" edc:cname="LCDCON" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDCON" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="LMUX0" edc:desc="" edc:mask="0x1" edc:name="LMUX0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LMUX1" edc:desc="" edc:mask="0x1" edc:name="LMUX1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LMUX2" edc:desc="" edc:mask="0x1" edc:name="LMUX2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CS0" edc:desc="" edc:mask="0x1" edc:name="CS0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CS1" edc:desc="" edc:mask="0x1" edc:name="CS1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="WERR" edc:desc="" edc:mask="0x1" edc:name="WERR" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SLPEN" edc:desc="" edc:mask="0x1" edc:name="SLPEN" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="ON" edc:desc="" edc:mask="0x1" edc:name="ON" edc:nzwidth="1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="LMUX" edc:desc="" edc:mask="0x7" edc:name="LMUX" edc:nzwidth="3"/>
+        <edc:SFRFieldDef edc:cname="CS" edc:desc="" edc:mask="0x3" edc:name="CS" edc:nzwidth="2"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="n-nnnnnn" edc:cname="LCDREFH" edc:desc="" edc:impl="0xbf" edc:isindirect="false" edc:isvolatile="true" edc:mclr="0-000000" edc:name="LCDREFH" edc:nzwidth="8" edc:por="0-000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="VLCD1PE" edc:desc="" edc:mask="0x1" edc:name="VLCD1PE" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="VLCD2PE" edc:desc="" edc:mask="0x1" edc:name="VLCD2PE" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="VLCD3PE" edc:desc="" edc:mask="0x1" edc:name="VLCD3PE" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LCDCST0" edc:desc="" edc:mask="0x1" edc:name="LCDCST0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LCDCST1" edc:desc="" edc:mask="0x1" edc:name="LCDCST1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LCDCST2" edc:desc="" edc:mask="0x1" edc:name="LCDCST2" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="LCDIRE" edc:desc="" edc:mask="0x1" edc:name="LCDIRE" edc:nzwidth="1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:AdjustPoint edc:offset="3"/>
+        <edc:SFRFieldDef edc:cname="LCDCST" edc:desc="" edc:mask="0x7" edc:name="LCDCST" edc:nzwidth="3"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnrr-nnn" edc:cname="LCDREFL" edc:desc="" edc:impl="0xf7" edc:isindirect="false" edc:isvolatile="true" edc:mclr="0000-000" edc:name="LCDREFL" edc:nzwidth="8" edc:por="0000-000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="LRLAT0" edc:desc="" edc:mask="0x1" edc:name="LRLAT0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LRLAT1" edc:desc="" edc:mask="0x1" edc:name="LRLAT1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LRLAT2" edc:desc="" edc:mask="0x1" edc:name="LRLAT2" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="LRLBP0" edc:desc="" edc:mask="0x1" edc:name="LRLBP0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LRLBP1" edc:desc="" edc:mask="0x1" edc:name="LRLBP1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LRLAP0" edc:desc="" edc:mask="0x1" edc:name="LRLAP0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LRLAP1" edc:desc="" edc:mask="0x1" edc:name="LRLAP1" edc:nzwidth="1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="LRLAT" edc:desc="" edc:mask="0x7" edc:name="LRLAT" edc:nzwidth="3"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="LRLBP" edc:desc="" edc:mask="0x3" edc:name="LRLBP" edc:nzwidth="2"/>
+        <edc:SFRFieldDef edc:cname="LRLAP" edc:desc="" edc:mask="0x3" edc:name="LRLAP" edc:nzwidth="2"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnrrnnnn" edc:cname="LCDPS" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDPS" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="LP0" edc:desc="" edc:mask="0x1" edc:name="LP0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LP1" edc:desc="" edc:mask="0x1" edc:name="LP1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LP2" edc:desc="" edc:mask="0x1" edc:name="LP2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LP3" edc:desc="" edc:mask="0x1" edc:name="LP3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="WA" edc:desc="" edc:mask="0x1" edc:name="WA" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LCDA" edc:desc="" edc:mask="0x1" edc:name="LCDA" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="BIASMD" edc:desc="" edc:mask="0x1" edc:name="BIASMD" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="WFT" edc:desc="" edc:mask="0x1" edc:name="WFT" edc:nzwidth="1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="LP" edc:desc="" edc:mask="0xf" edc:name="LP" edc:nzwidth="4"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="n-nnnnnn" edc:cname="VLCDCON" edc:desc="" edc:impl="0xbf" edc:isindirect="false" edc:isvolatile="true" edc:mclr="0-111100" edc:name="VLCDCON" edc:nzwidth="8" edc:por="0-111100">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="CLKSEL0" edc:desc="" edc:mask="0x1" edc:name="CLKSEL0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CLKSEL1" edc:desc="" edc:mask="0x1" edc:name="CLKSEL1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="MODE13" edc:desc="" edc:mask="0x1" edc:name="MODE13" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="BIAS0" edc:desc="" edc:mask="0x1" edc:name="BIAS0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="BIAS1" edc:desc="" edc:mask="0x1" edc:name="BIAS1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="BIAS2" edc:desc="" edc:mask="0x1" edc:name="BIAS2" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="CPEN" edc:desc="" edc:mask="0x1" edc:name="CPEN" edc:nzwidth="1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="CLKSEL" edc:desc="" edc:mask="0x3" edc:name="CLKSEL" edc:nzwidth="2"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="BIAS" edc:desc="" edc:mask="0x7" edc:name="BIAS" edc:nzwidth="3"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA0" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA0" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S00C0" edc:desc="" edc:mask="0x1" edc:name="S00C0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S01C0" edc:desc="" edc:mask="0x1" edc:name="S01C0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S02C0" edc:desc="" edc:mask="0x1" edc:name="S02C0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S03C0" edc:desc="" edc:mask="0x1" edc:name="S03C0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S04C0" edc:desc="" edc:mask="0x1" edc:name="S04C0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S05C0" edc:desc="" edc:mask="0x1" edc:name="S05C0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S06C0" edc:desc="" edc:mask="0x1" edc:name="S06C0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S07C0" edc:desc="" edc:mask="0x1" edc:name="S07C0" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA1" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA1" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S08C0" edc:desc="" edc:mask="0x1" edc:name="S08C0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S09C0" edc:desc="" edc:mask="0x1" edc:name="S09C0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S10C0" edc:desc="" edc:mask="0x1" edc:name="S10C0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S11C0" edc:desc="" edc:mask="0x1" edc:name="S11C0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S12C0" edc:desc="" edc:mask="0x1" edc:name="S12C0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S13C0" edc:desc="" edc:mask="0x1" edc:name="S13C0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S14C0" edc:desc="" edc:mask="0x1" edc:name="S14C0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S15C0" edc:desc="" edc:mask="0x1" edc:name="S15C0" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA2" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA2" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S16C0" edc:desc="" edc:mask="0x1" edc:name="S16C0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S17C0" edc:desc="" edc:mask="0x1" edc:name="S17C0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S18C0" edc:desc="" edc:mask="0x1" edc:name="S18C0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S19C0" edc:desc="" edc:mask="0x1" edc:name="S19C0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S20C0" edc:desc="" edc:mask="0x1" edc:name="S20C0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S21C0" edc:desc="" edc:mask="0x1" edc:name="S21C0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S22C0" edc:desc="" edc:mask="0x1" edc:name="S22C0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S23C0" edc:desc="" edc:mask="0x1" edc:name="S23C0" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA3" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA3" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S24C0" edc:desc="" edc:mask="0x1" edc:name="S24C0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S25C0" edc:desc="" edc:mask="0x1" edc:name="S25C0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S26C0" edc:desc="" edc:mask="0x1" edc:name="S26C0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S27C0" edc:desc="" edc:mask="0x1" edc:name="S27C0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S28C0" edc:desc="" edc:mask="0x1" edc:name="S28C0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S29C0" edc:desc="" edc:mask="0x1" edc:name="S29C0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S30C0" edc:desc="" edc:mask="0x1" edc:name="S30C0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S31C0" edc:desc="" edc:mask="0x1" edc:name="S31C0" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA4" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA4" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S32C0" edc:desc="" edc:mask="0x1" edc:name="S32C0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S33C0" edc:desc="" edc:mask="0x1" edc:name="S33C0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S34C0" edc:desc="" edc:mask="0x1" edc:name="S34C0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S35C0" edc:desc="" edc:mask="0x1" edc:name="S35C0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S36C0" edc:desc="" edc:mask="0x1" edc:name="S36C0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S37C0" edc:desc="" edc:mask="0x1" edc:name="S37C0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S38C0" edc:desc="" edc:mask="0x1" edc:name="S38C0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S39C0" edc:desc="" edc:mask="0x1" edc:name="S39C0" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA5" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA5" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S40C0" edc:desc="" edc:mask="0x1" edc:name="S40C0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S41C0" edc:desc="" edc:mask="0x1" edc:name="S41C0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S42C0" edc:desc="" edc:mask="0x1" edc:name="S42C0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S43C0" edc:desc="" edc:mask="0x1" edc:name="S43C0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S44C0" edc:desc="" edc:mask="0x1" edc:name="S44C0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S45C0" edc:desc="" edc:mask="0x1" edc:name="S45C0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S46C0" edc:desc="" edc:mask="0x1" edc:name="S46C0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S47C0" edc:desc="" edc:mask="0x1" edc:name="S47C0" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA6" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA6" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S48C0" edc:desc="" edc:mask="0x1" edc:name="S48C0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S49C0" edc:desc="" edc:mask="0x1" edc:name="S49C0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S50C0" edc:desc="" edc:mask="0x1" edc:name="S50C0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S51C0" edc:desc="" edc:mask="0x1" edc:name="S51C0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S52C0" edc:desc="" edc:mask="0x1" edc:name="S52C0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S53C0" edc:desc="" edc:mask="0x1" edc:name="S53C0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S54C0" edc:desc="" edc:mask="0x1" edc:name="S54C0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S55C0" edc:desc="" edc:mask="0x1" edc:name="S55C0" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA7" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA7" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S65C0" edc:desc="" edc:mask="0x1" edc:name="S65C0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S57C0" edc:desc="" edc:mask="0x1" edc:name="S57C0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S58C0" edc:desc="" edc:mask="0x1" edc:name="S58C0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S59C0" edc:desc="" edc:mask="0x1" edc:name="S59C0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S60C0" edc:desc="" edc:mask="0x1" edc:name="S60C0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S61C0" edc:desc="" edc:mask="0x1" edc:name="S61C0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S62C0" edc:desc="" edc:mask="0x1" edc:name="S62C0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S63C0" edc:desc="" edc:mask="0x1" edc:name="S63C0" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA8" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA8" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S00C1" edc:desc="" edc:mask="0x1" edc:name="S00C1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S01C1" edc:desc="" edc:mask="0x1" edc:name="S01C1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S02C1" edc:desc="" edc:mask="0x1" edc:name="S02C1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S03C1" edc:desc="" edc:mask="0x1" edc:name="S03C1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S04C1" edc:desc="" edc:mask="0x1" edc:name="S04C1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S05C1" edc:desc="" edc:mask="0x1" edc:name="S05C1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S06C1" edc:desc="" edc:mask="0x1" edc:name="S06C1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S07C1" edc:desc="" edc:mask="0x1" edc:name="S07C1" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA9" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA9" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S08C1" edc:desc="" edc:mask="0x1" edc:name="S08C1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S09C1" edc:desc="" edc:mask="0x1" edc:name="S09C1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S10C1" edc:desc="" edc:mask="0x1" edc:name="S10C1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S11C1" edc:desc="" edc:mask="0x1" edc:name="S11C1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S12C1" edc:desc="" edc:mask="0x1" edc:name="S12C1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S13C1" edc:desc="" edc:mask="0x1" edc:name="S13C1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S14C1" edc:desc="" edc:mask="0x1" edc:name="S14C1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S15C1" edc:desc="" edc:mask="0x1" edc:name="S15C1" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA10" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA10" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S16C1" edc:desc="" edc:mask="0x1" edc:name="S16C1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S17C1" edc:desc="" edc:mask="0x1" edc:name="S17C1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S18C1" edc:desc="" edc:mask="0x1" edc:name="S18C1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S19C1" edc:desc="" edc:mask="0x1" edc:name="S19C1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S20C1" edc:desc="" edc:mask="0x1" edc:name="S20C1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S21C1" edc:desc="" edc:mask="0x1" edc:name="S21C1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S22C1" edc:desc="" edc:mask="0x1" edc:name="S22C1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S23C1" edc:desc="" edc:mask="0x1" edc:name="S23C1" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA11" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA11" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S24C1" edc:desc="" edc:mask="0x1" edc:name="S24C1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S25C1" edc:desc="" edc:mask="0x1" edc:name="S25C1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S26C1" edc:desc="" edc:mask="0x1" edc:name="S26C1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S27C1" edc:desc="" edc:mask="0x1" edc:name="S27C1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S28C1" edc:desc="" edc:mask="0x1" edc:name="S28C1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S29C1" edc:desc="" edc:mask="0x1" edc:name="S29C1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S30C1" edc:desc="" edc:mask="0x1" edc:name="S30C1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S31C1" edc:desc="" edc:mask="0x1" edc:name="S31C1" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA12" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA12" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S32C1" edc:desc="" edc:mask="0x1" edc:name="S32C1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S33C1" edc:desc="" edc:mask="0x1" edc:name="S33C1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S34C1" edc:desc="" edc:mask="0x1" edc:name="S34C1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S35C1" edc:desc="" edc:mask="0x1" edc:name="S35C1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S36C1" edc:desc="" edc:mask="0x1" edc:name="S36C1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S37C1" edc:desc="" edc:mask="0x1" edc:name="S37C1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S38C1" edc:desc="" edc:mask="0x1" edc:name="S38C1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S39C1" edc:desc="" edc:mask="0x1" edc:name="S39C1" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA13" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA13" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S40C1" edc:desc="" edc:mask="0x1" edc:name="S40C1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S41C1" edc:desc="" edc:mask="0x1" edc:name="S41C1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S42C1" edc:desc="" edc:mask="0x1" edc:name="S42C1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S43C1" edc:desc="" edc:mask="0x1" edc:name="S43C1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S44C1" edc:desc="" edc:mask="0x1" edc:name="S44C1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S45C1" edc:desc="" edc:mask="0x1" edc:name="S45C1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S46C1" edc:desc="" edc:mask="0x1" edc:name="S46C1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S47C1" edc:desc="" edc:mask="0x1" edc:name="S47C1" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA14" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA14" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S48C1" edc:desc="" edc:mask="0x1" edc:name="S48C1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S49C1" edc:desc="" edc:mask="0x1" edc:name="S49C1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S50C1" edc:desc="" edc:mask="0x1" edc:name="S50C1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S51C1" edc:desc="" edc:mask="0x1" edc:name="S51C1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S52C1" edc:desc="" edc:mask="0x1" edc:name="S52C1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S53C1" edc:desc="" edc:mask="0x1" edc:name="S53C1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S54C1" edc:desc="" edc:mask="0x1" edc:name="S54C1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S55C1" edc:desc="" edc:mask="0x1" edc:name="S55C1" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA15" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA15" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S65C1" edc:desc="" edc:mask="0x1" edc:name="S65C1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S57C1" edc:desc="" edc:mask="0x1" edc:name="S57C1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S58C1" edc:desc="" edc:mask="0x1" edc:name="S58C1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S59C1" edc:desc="" edc:mask="0x1" edc:name="S59C1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S60C1" edc:desc="" edc:mask="0x1" edc:name="S60C1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S61C1" edc:desc="" edc:mask="0x1" edc:name="S61C1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S62C1" edc:desc="" edc:mask="0x1" edc:name="S62C1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S63C1" edc:desc="" edc:mask="0x1" edc:name="S63C1" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA16" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA16" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S00C2" edc:desc="" edc:mask="0x1" edc:name="S00C2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S01C2" edc:desc="" edc:mask="0x1" edc:name="S01C2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S02C2" edc:desc="" edc:mask="0x1" edc:name="S02C2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S03C2" edc:desc="" edc:mask="0x1" edc:name="S03C2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S04C2" edc:desc="" edc:mask="0x1" edc:name="S04C2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S05C2" edc:desc="" edc:mask="0x1" edc:name="S05C2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S06C2" edc:desc="" edc:mask="0x1" edc:name="S06C2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S07C2" edc:desc="" edc:mask="0x1" edc:name="S07C2" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA17" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA17" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S08C2" edc:desc="" edc:mask="0x1" edc:name="S08C2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S09C2" edc:desc="" edc:mask="0x1" edc:name="S09C2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S10C2" edc:desc="" edc:mask="0x1" edc:name="S10C2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S11C2" edc:desc="" edc:mask="0x1" edc:name="S11C2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S12C2" edc:desc="" edc:mask="0x1" edc:name="S12C2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S13C2" edc:desc="" edc:mask="0x1" edc:name="S13C2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S14C2" edc:desc="" edc:mask="0x1" edc:name="S14C2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S15C2" edc:desc="" edc:mask="0x1" edc:name="S15C2" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA18" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA18" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S16C2" edc:desc="" edc:mask="0x1" edc:name="S16C2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S17C2" edc:desc="" edc:mask="0x1" edc:name="S17C2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S18C2" edc:desc="" edc:mask="0x1" edc:name="S18C2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S19C2" edc:desc="" edc:mask="0x1" edc:name="S19C2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S20C2" edc:desc="" edc:mask="0x1" edc:name="S20C2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S21C2" edc:desc="" edc:mask="0x1" edc:name="S21C2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S22C2" edc:desc="" edc:mask="0x1" edc:name="S22C2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S23C2" edc:desc="" edc:mask="0x1" edc:name="S23C2" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA19" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA19" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S24C2" edc:desc="" edc:mask="0x1" edc:name="S24C2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S25C2" edc:desc="" edc:mask="0x1" edc:name="S25C2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S26C2" edc:desc="" edc:mask="0x1" edc:name="S26C2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S27C2" edc:desc="" edc:mask="0x1" edc:name="S27C2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S28C2" edc:desc="" edc:mask="0x1" edc:name="S28C2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S29C2" edc:desc="" edc:mask="0x1" edc:name="S29C2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S30C2" edc:desc="" edc:mask="0x1" edc:name="S30C2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S31C2" edc:desc="" edc:mask="0x1" edc:name="S31C2" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA20" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA20" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S32C2" edc:desc="" edc:mask="0x1" edc:name="S32C2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S33C2" edc:desc="" edc:mask="0x1" edc:name="S33C2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S34C2" edc:desc="" edc:mask="0x1" edc:name="S34C2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S35C2" edc:desc="" edc:mask="0x1" edc:name="S35C2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S36C2" edc:desc="" edc:mask="0x1" edc:name="S36C2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S37C2" edc:desc="" edc:mask="0x1" edc:name="S37C2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S38C2" edc:desc="" edc:mask="0x1" edc:name="S38C2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S39C2" edc:desc="" edc:mask="0x1" edc:name="S39C2" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA21" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA21" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S40C2" edc:desc="" edc:mask="0x1" edc:name="S40C2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S41C2" edc:desc="" edc:mask="0x1" edc:name="S41C2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S42C2" edc:desc="" edc:mask="0x1" edc:name="S42C2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S43C2" edc:desc="" edc:mask="0x1" edc:name="S43C2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S44C2" edc:desc="" edc:mask="0x1" edc:name="S44C2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S45C2" edc:desc="" edc:mask="0x1" edc:name="S45C2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S46C2" edc:desc="" edc:mask="0x1" edc:name="S46C2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S47C2" edc:desc="" edc:mask="0x1" edc:name="S47C2" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA22" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA22" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S48C2" edc:desc="" edc:mask="0x1" edc:name="S48C2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S49C2" edc:desc="" edc:mask="0x1" edc:name="S49C2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S50C2" edc:desc="" edc:mask="0x1" edc:name="S50C2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S51C2" edc:desc="" edc:mask="0x1" edc:name="S51C2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S52C2" edc:desc="" edc:mask="0x1" edc:name="S52C2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S53C2" edc:desc="" edc:mask="0x1" edc:name="S53C2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S54C2" edc:desc="" edc:mask="0x1" edc:name="S54C2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S55C2" edc:desc="" edc:mask="0x1" edc:name="S55C2" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA23" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA23" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S65C2" edc:desc="" edc:mask="0x1" edc:name="S65C2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S57C2" edc:desc="" edc:mask="0x1" edc:name="S57C2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S58C2" edc:desc="" edc:mask="0x1" edc:name="S58C2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S59C2" edc:desc="" edc:mask="0x1" edc:name="S59C2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S60C2" edc:desc="" edc:mask="0x1" edc:name="S60C2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S61C2" edc:desc="" edc:mask="0x1" edc:name="S61C2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S62C2" edc:desc="" edc:mask="0x1" edc:name="S62C2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S63C2" edc:desc="" edc:mask="0x1" edc:name="S63C2" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA24" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA24" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S00C3" edc:desc="" edc:mask="0x1" edc:name="S00C3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S01C3" edc:desc="" edc:mask="0x1" edc:name="S01C3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S02C3" edc:desc="" edc:mask="0x1" edc:name="S02C3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S03C3" edc:desc="" edc:mask="0x1" edc:name="S03C3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S04C3" edc:desc="" edc:mask="0x1" edc:name="S04C3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S05C3" edc:desc="" edc:mask="0x1" edc:name="S05C3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S06C3" edc:desc="" edc:mask="0x1" edc:name="S06C3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S07C3" edc:desc="" edc:mask="0x1" edc:name="S07C3" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA25" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA25" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S08C3" edc:desc="" edc:mask="0x1" edc:name="S08C3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S09C3" edc:desc="" edc:mask="0x1" edc:name="S09C3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S10C3" edc:desc="" edc:mask="0x1" edc:name="S10C3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S11C3" edc:desc="" edc:mask="0x1" edc:name="S11C3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S12C3" edc:desc="" edc:mask="0x1" edc:name="S12C3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S13C3" edc:desc="" edc:mask="0x1" edc:name="S13C3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S14C3" edc:desc="" edc:mask="0x1" edc:name="S14C3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S15C3" edc:desc="" edc:mask="0x1" edc:name="S15C3" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA26" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA26" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S16C3" edc:desc="" edc:mask="0x1" edc:name="S16C3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S17C3" edc:desc="" edc:mask="0x1" edc:name="S17C3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S18C3" edc:desc="" edc:mask="0x1" edc:name="S18C3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S19C3" edc:desc="" edc:mask="0x1" edc:name="S19C3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S20C3" edc:desc="" edc:mask="0x1" edc:name="S20C3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S21C3" edc:desc="" edc:mask="0x1" edc:name="S21C3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S22C3" edc:desc="" edc:mask="0x1" edc:name="S22C3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S23C3" edc:desc="" edc:mask="0x1" edc:name="S23C3" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA27" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA27" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S24C3" edc:desc="" edc:mask="0x1" edc:name="S24C3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S25C3" edc:desc="" edc:mask="0x1" edc:name="S25C3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S26C3" edc:desc="" edc:mask="0x1" edc:name="S26C3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S27C3" edc:desc="" edc:mask="0x1" edc:name="S27C3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S28C3" edc:desc="" edc:mask="0x1" edc:name="S28C3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S29C3" edc:desc="" edc:mask="0x1" edc:name="S29C3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S30C3" edc:desc="" edc:mask="0x1" edc:name="S30C3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S31C3" edc:desc="" edc:mask="0x1" edc:name="S31C3" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA28" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA28" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S32C3" edc:desc="" edc:mask="0x1" edc:name="S32C3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S33C3" edc:desc="" edc:mask="0x1" edc:name="S33C3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S34C3" edc:desc="" edc:mask="0x1" edc:name="S34C3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S35C3" edc:desc="" edc:mask="0x1" edc:name="S35C3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S36C3" edc:desc="" edc:mask="0x1" edc:name="S36C3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S37C3" edc:desc="" edc:mask="0x1" edc:name="S37C3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S38C3" edc:desc="" edc:mask="0x1" edc:name="S38C3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S39C3" edc:desc="" edc:mask="0x1" edc:name="S39C3" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA29" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA29" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S40C3" edc:desc="" edc:mask="0x1" edc:name="S40C3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S41C3" edc:desc="" edc:mask="0x1" edc:name="S41C3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S42C3" edc:desc="" edc:mask="0x1" edc:name="S42C3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S43C3" edc:desc="" edc:mask="0x1" edc:name="S43C3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S44C3" edc:desc="" edc:mask="0x1" edc:name="S44C3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S45C3" edc:desc="" edc:mask="0x1" edc:name="S45C3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S46C3" edc:desc="" edc:mask="0x1" edc:name="S46C3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S47C3" edc:desc="" edc:mask="0x1" edc:name="S47C3" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA30" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA30" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S48C3" edc:desc="" edc:mask="0x1" edc:name="S48C3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S49C3" edc:desc="" edc:mask="0x1" edc:name="S49C3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S50C3" edc:desc="" edc:mask="0x1" edc:name="S50C3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S51C3" edc:desc="" edc:mask="0x1" edc:name="S51C3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S52C3" edc:desc="" edc:mask="0x1" edc:name="S52C3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S53C3" edc:desc="" edc:mask="0x1" edc:name="S53C3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S54C3" edc:desc="" edc:mask="0x1" edc:name="S54C3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S55C3" edc:desc="" edc:mask="0x1" edc:name="S55C3" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA31" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA31" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S65C3" edc:desc="" edc:mask="0x1" edc:name="S65C3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S57C3" edc:desc="" edc:mask="0x1" edc:name="S57C3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S58C3" edc:desc="" edc:mask="0x1" edc:name="S58C3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S59C3" edc:desc="" edc:mask="0x1" edc:name="S59C3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S60C3" edc:desc="" edc:mask="0x1" edc:name="S60C3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S61C3" edc:desc="" edc:mask="0x1" edc:name="S61C3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S62C3" edc:desc="" edc:mask="0x1" edc:name="S62C3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S63C3" edc:desc="" edc:mask="0x1" edc:name="S63C3" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA32" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA32" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S00C4" edc:desc="" edc:mask="0x1" edc:name="S00C4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S01C4" edc:desc="" edc:mask="0x1" edc:name="S01C4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S02C4" edc:desc="" edc:mask="0x1" edc:name="S02C4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S03C4" edc:desc="" edc:mask="0x1" edc:name="S03C4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S04C4" edc:desc="" edc:mask="0x1" edc:name="S04C4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S05C4" edc:desc="" edc:mask="0x1" edc:name="S05C4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S06C4" edc:desc="" edc:mask="0x1" edc:name="S06C4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S07C4" edc:desc="" edc:mask="0x1" edc:name="S07C4" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA33" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA33" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S08C4" edc:desc="" edc:mask="0x1" edc:name="S08C4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S09C4" edc:desc="" edc:mask="0x1" edc:name="S09C4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S10C4" edc:desc="" edc:mask="0x1" edc:name="S10C4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S11C4" edc:desc="" edc:mask="0x1" edc:name="S11C4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S12C4" edc:desc="" edc:mask="0x1" edc:name="S12C4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S13C4" edc:desc="" edc:mask="0x1" edc:name="S13C4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S14C4" edc:desc="" edc:mask="0x1" edc:name="S14C4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S15C4" edc:desc="" edc:mask="0x1" edc:name="S15C4" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA34" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA34" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S16C4" edc:desc="" edc:mask="0x1" edc:name="S16C4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S17C4" edc:desc="" edc:mask="0x1" edc:name="S17C4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S18C4" edc:desc="" edc:mask="0x1" edc:name="S18C4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S19C4" edc:desc="" edc:mask="0x1" edc:name="S19C4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S20C4" edc:desc="" edc:mask="0x1" edc:name="S20C4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S21C4" edc:desc="" edc:mask="0x1" edc:name="S21C4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S22C4" edc:desc="" edc:mask="0x1" edc:name="S22C4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S23C4" edc:desc="" edc:mask="0x1" edc:name="S23C4" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA35" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA35" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S24C4" edc:desc="" edc:mask="0x1" edc:name="S24C4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S25C4" edc:desc="" edc:mask="0x1" edc:name="S25C4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S26C4" edc:desc="" edc:mask="0x1" edc:name="S26C4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S27C4" edc:desc="" edc:mask="0x1" edc:name="S27C4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S28C4" edc:desc="" edc:mask="0x1" edc:name="S28C4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S29C4" edc:desc="" edc:mask="0x1" edc:name="S29C4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S30C4" edc:desc="" edc:mask="0x1" edc:name="S30C4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S31C4" edc:desc="" edc:mask="0x1" edc:name="S31C4" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA36" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA36" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S32C4" edc:desc="" edc:mask="0x1" edc:name="S32C4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S33C4" edc:desc="" edc:mask="0x1" edc:name="S33C4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S34C4" edc:desc="" edc:mask="0x1" edc:name="S34C4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S35C4" edc:desc="" edc:mask="0x1" edc:name="S35C4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S36C4" edc:desc="" edc:mask="0x1" edc:name="S36C4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S37C4" edc:desc="" edc:mask="0x1" edc:name="S37C4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S38C4" edc:desc="" edc:mask="0x1" edc:name="S38C4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S39C4" edc:desc="" edc:mask="0x1" edc:name="S39C4" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA37" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA37" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S40C4" edc:desc="" edc:mask="0x1" edc:name="S40C4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S41C4" edc:desc="" edc:mask="0x1" edc:name="S41C4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S42C4" edc:desc="" edc:mask="0x1" edc:name="S42C4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S43C4" edc:desc="" edc:mask="0x1" edc:name="S43C4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S44C4" edc:desc="" edc:mask="0x1" edc:name="S44C4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S45C4" edc:desc="" edc:mask="0x1" edc:name="S45C4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S46C4" edc:desc="" edc:mask="0x1" edc:name="S46C4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S47C4" edc:desc="" edc:mask="0x1" edc:name="S47C4" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA38" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA38" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S48C4" edc:desc="" edc:mask="0x1" edc:name="S48C4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S49C4" edc:desc="" edc:mask="0x1" edc:name="S49C4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S50C4" edc:desc="" edc:mask="0x1" edc:name="S50C4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S51C4" edc:desc="" edc:mask="0x1" edc:name="S51C4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S52C4" edc:desc="" edc:mask="0x1" edc:name="S52C4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S53C4" edc:desc="" edc:mask="0x1" edc:name="S53C4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S54C4" edc:desc="" edc:mask="0x1" edc:name="S54C4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S55C4" edc:desc="" edc:mask="0x1" edc:name="S55C4" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA39" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA39" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S65C4" edc:desc="" edc:mask="0x1" edc:name="S65C4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S57C4" edc:desc="" edc:mask="0x1" edc:name="S57C4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S58C4" edc:desc="" edc:mask="0x1" edc:name="S58C4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S59C4" edc:desc="" edc:mask="0x1" edc:name="S59C4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S60C4" edc:desc="" edc:mask="0x1" edc:name="S60C4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S61C4" edc:desc="" edc:mask="0x1" edc:name="S61C4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S62C4" edc:desc="" edc:mask="0x1" edc:name="S62C4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S63C4" edc:desc="" edc:mask="0x1" edc:name="S63C4" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA40" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA40" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S00C5" edc:desc="" edc:mask="0x1" edc:name="S00C5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S01C5" edc:desc="" edc:mask="0x1" edc:name="S01C5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S02C5" edc:desc="" edc:mask="0x1" edc:name="S02C5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S03C5" edc:desc="" edc:mask="0x1" edc:name="S03C5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S04C5" edc:desc="" edc:mask="0x1" edc:name="S04C5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S05C5" edc:desc="" edc:mask="0x1" edc:name="S05C5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S06C5" edc:desc="" edc:mask="0x1" edc:name="S06C5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S07C5" edc:desc="" edc:mask="0x1" edc:name="S07C5" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA41" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA41" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S08C5" edc:desc="" edc:mask="0x1" edc:name="S08C5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S09C5" edc:desc="" edc:mask="0x1" edc:name="S09C5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S10C5" edc:desc="" edc:mask="0x1" edc:name="S10C5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S11C5" edc:desc="" edc:mask="0x1" edc:name="S11C5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S12C5" edc:desc="" edc:mask="0x1" edc:name="S12C5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S13C5" edc:desc="" edc:mask="0x1" edc:name="S13C5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S14C5" edc:desc="" edc:mask="0x1" edc:name="S14C5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S15C5" edc:desc="" edc:mask="0x1" edc:name="S15C5" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA42" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA42" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S16C5" edc:desc="" edc:mask="0x1" edc:name="S16C5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S17C5" edc:desc="" edc:mask="0x1" edc:name="S17C5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S18C5" edc:desc="" edc:mask="0x1" edc:name="S18C5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S19C5" edc:desc="" edc:mask="0x1" edc:name="S19C5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S20C5" edc:desc="" edc:mask="0x1" edc:name="S20C5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S21C5" edc:desc="" edc:mask="0x1" edc:name="S21C5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S22C5" edc:desc="" edc:mask="0x1" edc:name="S22C5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S23C5" edc:desc="" edc:mask="0x1" edc:name="S23C5" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA43" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA43" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S24C5" edc:desc="" edc:mask="0x1" edc:name="S24C5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S25C5" edc:desc="" edc:mask="0x1" edc:name="S25C5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S26C5" edc:desc="" edc:mask="0x1" edc:name="S26C5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S27C5" edc:desc="" edc:mask="0x1" edc:name="S27C5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S28C5" edc:desc="" edc:mask="0x1" edc:name="S28C5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S29C5" edc:desc="" edc:mask="0x1" edc:name="S29C5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S30C5" edc:desc="" edc:mask="0x1" edc:name="S30C5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S31C5" edc:desc="" edc:mask="0x1" edc:name="S31C5" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA44" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA44" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S32C5" edc:desc="" edc:mask="0x1" edc:name="S32C5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S33C5" edc:desc="" edc:mask="0x1" edc:name="S33C5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S34C5" edc:desc="" edc:mask="0x1" edc:name="S34C5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S35C5" edc:desc="" edc:mask="0x1" edc:name="S35C5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S36C5" edc:desc="" edc:mask="0x1" edc:name="S36C5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S37C5" edc:desc="" edc:mask="0x1" edc:name="S37C5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S38C5" edc:desc="" edc:mask="0x1" edc:name="S38C5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S39C5" edc:desc="" edc:mask="0x1" edc:name="S39C5" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA45" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA45" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S40C5" edc:desc="" edc:mask="0x1" edc:name="S40C5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S41C5" edc:desc="" edc:mask="0x1" edc:name="S41C5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S42C5" edc:desc="" edc:mask="0x1" edc:name="S42C5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S43C5" edc:desc="" edc:mask="0x1" edc:name="S43C5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S44C5" edc:desc="" edc:mask="0x1" edc:name="S44C5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S45C5" edc:desc="" edc:mask="0x1" edc:name="S45C5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S46C5" edc:desc="" edc:mask="0x1" edc:name="S46C5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S47C5" edc:desc="" edc:mask="0x1" edc:name="S47C5" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA46" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA46" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S48C5" edc:desc="" edc:mask="0x1" edc:name="S48C5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S49C5" edc:desc="" edc:mask="0x1" edc:name="S49C5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S50C5" edc:desc="" edc:mask="0x1" edc:name="S50C5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S51C5" edc:desc="" edc:mask="0x1" edc:name="S51C5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S52C5" edc:desc="" edc:mask="0x1" edc:name="S52C5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S53C5" edc:desc="" edc:mask="0x1" edc:name="S53C5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S54C5" edc:desc="" edc:mask="0x1" edc:name="S54C5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S55C5" edc:desc="" edc:mask="0x1" edc:name="S55C5" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA47" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA47" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S65C5" edc:desc="" edc:mask="0x1" edc:name="S65C5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S57C5" edc:desc="" edc:mask="0x1" edc:name="S57C5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S58C5" edc:desc="" edc:mask="0x1" edc:name="S58C5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S59C5" edc:desc="" edc:mask="0x1" edc:name="S59C5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S60C5" edc:desc="" edc:mask="0x1" edc:name="S60C5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S61C5" edc:desc="" edc:mask="0x1" edc:name="S61C5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S62C5" edc:desc="" edc:mask="0x1" edc:name="S62C5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S63C5" edc:desc="" edc:mask="0x1" edc:name="S63C5" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA48" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA48" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S00C6" edc:desc="" edc:mask="0x1" edc:name="S00C6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S01C6" edc:desc="" edc:mask="0x1" edc:name="S01C6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S02C6" edc:desc="" edc:mask="0x1" edc:name="S02C6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S03C6" edc:desc="" edc:mask="0x1" edc:name="S03C6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S04C6" edc:desc="" edc:mask="0x1" edc:name="S04C6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S05C6" edc:desc="" edc:mask="0x1" edc:name="S05C6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S06C6" edc:desc="" edc:mask="0x1" edc:name="S06C6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S07C6" edc:desc="" edc:mask="0x1" edc:name="S07C6" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA49" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA49" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S08C6" edc:desc="" edc:mask="0x1" edc:name="S08C6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S09C6" edc:desc="" edc:mask="0x1" edc:name="S09C6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S10C6" edc:desc="" edc:mask="0x1" edc:name="S10C6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S11C6" edc:desc="" edc:mask="0x1" edc:name="S11C6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S12C6" edc:desc="" edc:mask="0x1" edc:name="S12C6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S13C6" edc:desc="" edc:mask="0x1" edc:name="S13C6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S14C6" edc:desc="" edc:mask="0x1" edc:name="S14C6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S15C6" edc:desc="" edc:mask="0x1" edc:name="S15C6" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA50" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA50" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S16C6" edc:desc="" edc:mask="0x1" edc:name="S16C6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S17C6" edc:desc="" edc:mask="0x1" edc:name="S17C6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S18C6" edc:desc="" edc:mask="0x1" edc:name="S18C6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S19C6" edc:desc="" edc:mask="0x1" edc:name="S19C6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S20C6" edc:desc="" edc:mask="0x1" edc:name="S20C6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S21C6" edc:desc="" edc:mask="0x1" edc:name="S21C6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S22C6" edc:desc="" edc:mask="0x1" edc:name="S22C6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S23C6" edc:desc="" edc:mask="0x1" edc:name="S23C6" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA51" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA51" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S24C6" edc:desc="" edc:mask="0x1" edc:name="S24C6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S25C6" edc:desc="" edc:mask="0x1" edc:name="S25C6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S26C6" edc:desc="" edc:mask="0x1" edc:name="S26C6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S27C6" edc:desc="" edc:mask="0x1" edc:name="S27C6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S28C6" edc:desc="" edc:mask="0x1" edc:name="S28C6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S29C6" edc:desc="" edc:mask="0x1" edc:name="S29C6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S30C6" edc:desc="" edc:mask="0x1" edc:name="S30C6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S31C6" edc:desc="" edc:mask="0x1" edc:name="S31C6" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA52" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA52" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S32C6" edc:desc="" edc:mask="0x1" edc:name="S32C6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S33C6" edc:desc="" edc:mask="0x1" edc:name="S33C6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S34C6" edc:desc="" edc:mask="0x1" edc:name="S34C6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S35C6" edc:desc="" edc:mask="0x1" edc:name="S35C6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S36C6" edc:desc="" edc:mask="0x1" edc:name="S36C6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S37C6" edc:desc="" edc:mask="0x1" edc:name="S37C6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S38C6" edc:desc="" edc:mask="0x1" edc:name="S38C6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S39C6" edc:desc="" edc:mask="0x1" edc:name="S39C6" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA53" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA53" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S40C6" edc:desc="" edc:mask="0x1" edc:name="S40C6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S41C6" edc:desc="" edc:mask="0x1" edc:name="S41C6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S42C6" edc:desc="" edc:mask="0x1" edc:name="S42C6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S43C6" edc:desc="" edc:mask="0x1" edc:name="S43C6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S44C6" edc:desc="" edc:mask="0x1" edc:name="S44C6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S45C6" edc:desc="" edc:mask="0x1" edc:name="S45C6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S46C6" edc:desc="" edc:mask="0x1" edc:name="S46C6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S47C6" edc:desc="" edc:mask="0x1" edc:name="S47C6" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA54" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA54" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S48C6" edc:desc="" edc:mask="0x1" edc:name="S48C6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S49C6" edc:desc="" edc:mask="0x1" edc:name="S49C6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S50C6" edc:desc="" edc:mask="0x1" edc:name="S50C6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S51C6" edc:desc="" edc:mask="0x1" edc:name="S51C6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S52C6" edc:desc="" edc:mask="0x1" edc:name="S52C6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S53C6" edc:desc="" edc:mask="0x1" edc:name="S53C6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S54C6" edc:desc="" edc:mask="0x1" edc:name="S54C6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S55C6" edc:desc="" edc:mask="0x1" edc:name="S55C6" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA55" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA55" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S65C6" edc:desc="" edc:mask="0x1" edc:name="S65C6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S57C6" edc:desc="" edc:mask="0x1" edc:name="S57C6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S58C6" edc:desc="" edc:mask="0x1" edc:name="S58C6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S59C6" edc:desc="" edc:mask="0x1" edc:name="S59C6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S60C6" edc:desc="" edc:mask="0x1" edc:name="S60C6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S61C6" edc:desc="" edc:mask="0x1" edc:name="S61C6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S62C6" edc:desc="" edc:mask="0x1" edc:name="S62C6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S63C6" edc:desc="" edc:mask="0x1" edc:name="S63C6" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA56" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA56" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S00C7" edc:desc="" edc:mask="0x1" edc:name="S00C7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S01C7" edc:desc="" edc:mask="0x1" edc:name="S01C7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S02C7" edc:desc="" edc:mask="0x1" edc:name="S02C7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S03C7" edc:desc="" edc:mask="0x1" edc:name="S03C7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S04C7" edc:desc="" edc:mask="0x1" edc:name="S04C7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S05C7" edc:desc="" edc:mask="0x1" edc:name="S05C7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S06C7" edc:desc="" edc:mask="0x1" edc:name="S06C7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S07C7" edc:desc="" edc:mask="0x1" edc:name="S07C7" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA57" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA57" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S08C7" edc:desc="" edc:mask="0x1" edc:name="S08C7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S09C7" edc:desc="" edc:mask="0x1" edc:name="S09C7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S10C7" edc:desc="" edc:mask="0x1" edc:name="S10C7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S11C7" edc:desc="" edc:mask="0x1" edc:name="S11C7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S12C7" edc:desc="" edc:mask="0x1" edc:name="S12C7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S13C7" edc:desc="" edc:mask="0x1" edc:name="S13C7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S14C7" edc:desc="" edc:mask="0x1" edc:name="S14C7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S15C7" edc:desc="" edc:mask="0x1" edc:name="S15C7" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA58" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA58" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S16C7" edc:desc="" edc:mask="0x1" edc:name="S16C7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S17C7" edc:desc="" edc:mask="0x1" edc:name="S17C7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S18C7" edc:desc="" edc:mask="0x1" edc:name="S18C7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S19C7" edc:desc="" edc:mask="0x1" edc:name="S19C7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S20C7" edc:desc="" edc:mask="0x1" edc:name="S20C7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S21C7" edc:desc="" edc:mask="0x1" edc:name="S21C7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S22C7" edc:desc="" edc:mask="0x1" edc:name="S22C7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S23C7" edc:desc="" edc:mask="0x1" edc:name="S23C7" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA59" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA59" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S24C7" edc:desc="" edc:mask="0x1" edc:name="S24C7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S25C7" edc:desc="" edc:mask="0x1" edc:name="S25C7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S26C7" edc:desc="" edc:mask="0x1" edc:name="S26C7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S27C7" edc:desc="" edc:mask="0x1" edc:name="S27C7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S28C7" edc:desc="" edc:mask="0x1" edc:name="S28C7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S29C7" edc:desc="" edc:mask="0x1" edc:name="S29C7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S30C7" edc:desc="" edc:mask="0x1" edc:name="S30C7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S31C7" edc:desc="" edc:mask="0x1" edc:name="S31C7" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA60" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA60" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S32C7" edc:desc="" edc:mask="0x1" edc:name="S32C7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S33C7" edc:desc="" edc:mask="0x1" edc:name="S33C7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S34C7" edc:desc="" edc:mask="0x1" edc:name="S34C7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S35C7" edc:desc="" edc:mask="0x1" edc:name="S35C7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S36C7" edc:desc="" edc:mask="0x1" edc:name="S36C7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S37C7" edc:desc="" edc:mask="0x1" edc:name="S37C7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S38C7" edc:desc="" edc:mask="0x1" edc:name="S38C7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S39C7" edc:desc="" edc:mask="0x1" edc:name="S39C7" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA61" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA61" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S40C7" edc:desc="" edc:mask="0x1" edc:name="S40C7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S41C7" edc:desc="" edc:mask="0x1" edc:name="S41C7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S42C7" edc:desc="" edc:mask="0x1" edc:name="S42C7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S43C7" edc:desc="" edc:mask="0x1" edc:name="S43C7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S44C7" edc:desc="" edc:mask="0x1" edc:name="S44C7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S45C7" edc:desc="" edc:mask="0x1" edc:name="S45C7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S46C7" edc:desc="" edc:mask="0x1" edc:name="S46C7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S47C7" edc:desc="" edc:mask="0x1" edc:name="S47C7" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA62" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA62" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S48C7" edc:desc="" edc:mask="0x1" edc:name="S48C7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S49C7" edc:desc="" edc:mask="0x1" edc:name="S49C7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S50C7" edc:desc="" edc:mask="0x1" edc:name="S50C7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S51C7" edc:desc="" edc:mask="0x1" edc:name="S51C7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S52C7" edc:desc="" edc:mask="0x1" edc:name="S52C7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S53C7" edc:desc="" edc:mask="0x1" edc:name="S53C7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S54C7" edc:desc="" edc:mask="0x1" edc:name="S54C7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S55C7" edc:desc="" edc:mask="0x1" edc:name="S55C7" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDDATA63" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDDATA63" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="S65C7" edc:desc="" edc:mask="0x1" edc:name="S65C7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S57C7" edc:desc="" edc:mask="0x1" edc:name="S57C7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S58C7" edc:desc="" edc:mask="0x1" edc:name="S58C7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S59C7" edc:desc="" edc:mask="0x1" edc:name="S59C7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S60C7" edc:desc="" edc:mask="0x1" edc:name="S60C7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S61C7" edc:desc="" edc:mask="0x1" edc:name="S61C7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S62C7" edc:desc="" edc:mask="0x1" edc:name="S62C7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="S63C7" edc:desc="" edc:mask="0x1" edc:name="S63C7" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDSE0" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDSE0" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="SE00" edc:desc="" edc:mask="0x1" edc:name="SE00" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SE01" edc:desc="" edc:mask="0x1" edc:name="SE01" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SE02" edc:desc="" edc:mask="0x1" edc:name="SE02" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SE03" edc:desc="" edc:mask="0x1" edc:name="SE03" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SE04" edc:desc="" edc:mask="0x1" edc:name="SE04" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SE05" edc:desc="" edc:mask="0x1" edc:name="SE05" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SE06" edc:desc="" edc:mask="0x1" edc:name="SE06" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SE07" edc:desc="" edc:mask="0x1" edc:name="SE07" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDSE1" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDSE1" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="SE08" edc:desc="" edc:mask="0x1" edc:name="SE08" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SE09" edc:desc="" edc:mask="0x1" edc:name="SE09" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SE10" edc:desc="" edc:mask="0x1" edc:name="SE10" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SE11" edc:desc="" edc:mask="0x1" edc:name="SE11" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SE12" edc:desc="" edc:mask="0x1" edc:name="SE12" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SE13" edc:desc="" edc:mask="0x1" edc:name="SE13" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SE14" edc:desc="" edc:mask="0x1" edc:name="SE14" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SE15" edc:desc="" edc:mask="0x1" edc:name="SE15" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDSE2" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDSE2" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="SE16" edc:desc="" edc:mask="0x1" edc:name="SE16" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SE17" edc:desc="" edc:mask="0x1" edc:name="SE17" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SE18" edc:desc="" edc:mask="0x1" edc:name="SE18" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SE19" edc:desc="" edc:mask="0x1" edc:name="SE19" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SE20" edc:desc="" edc:mask="0x1" edc:name="SE20" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SE21" edc:desc="" edc:mask="0x1" edc:name="SE21" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SE22" edc:desc="" edc:mask="0x1" edc:name="SE22" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SE23" edc:desc="" edc:mask="0x1" edc:name="SE23" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDSE3" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDSE3" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="SE24" edc:desc="" edc:mask="0x1" edc:name="SE24" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SE25" edc:desc="" edc:mask="0x1" edc:name="SE25" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SE26" edc:desc="" edc:mask="0x1" edc:name="SE26" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SE27" edc:desc="" edc:mask="0x1" edc:name="SE27" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SE28" edc:desc="" edc:mask="0x1" edc:name="SE28" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SE29" edc:desc="" edc:mask="0x1" edc:name="SE29" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SE30" edc:desc="" edc:mask="0x1" edc:name="SE30" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SE31" edc:desc="" edc:mask="0x1" edc:name="SE31" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDSE4" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDSE4" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="SE32" edc:desc="" edc:mask="0x1" edc:name="SE32" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SE33" edc:desc="" edc:mask="0x1" edc:name="SE33" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SE34" edc:desc="" edc:mask="0x1" edc:name="SE34" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SE35" edc:desc="" edc:mask="0x1" edc:name="SE35" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SE36" edc:desc="" edc:mask="0x1" edc:name="SE36" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SE37" edc:desc="" edc:mask="0x1" edc:name="SE37" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SE38" edc:desc="" edc:mask="0x1" edc:name="SE38" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SE39" edc:desc="" edc:mask="0x1" edc:name="SE39" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDSE5" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDSE5" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="SE40" edc:desc="" edc:mask="0x1" edc:name="SE40" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SE41" edc:desc="" edc:mask="0x1" edc:name="SE41" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SE42" edc:desc="" edc:mask="0x1" edc:name="SE42" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SE43" edc:desc="" edc:mask="0x1" edc:name="SE43" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SE44" edc:desc="" edc:mask="0x1" edc:name="SE44" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SE45" edc:desc="" edc:mask="0x1" edc:name="SE45" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SE46" edc:desc="" edc:mask="0x1" edc:name="SE46" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SE47" edc:desc="" edc:mask="0x1" edc:name="SE47" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDSE6" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDSE6" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="SE48" edc:desc="" edc:mask="0x1" edc:name="SE48" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SE49" edc:desc="" edc:mask="0x1" edc:name="SE49" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SE50" edc:desc="" edc:mask="0x1" edc:name="SE50" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SE51" edc:desc="" edc:mask="0x1" edc:name="SE51" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SE52" edc:desc="" edc:mask="0x1" edc:name="SE52" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SE53" edc:desc="" edc:mask="0x1" edc:name="SE53" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SE54" edc:desc="" edc:mask="0x1" edc:name="SE54" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SE55" edc:desc="" edc:mask="0x1" edc:name="SE55" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LCDSE7" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="LCDSE7" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="SE56" edc:desc="" edc:mask="0x1" edc:name="SE56" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SE57" edc:desc="" edc:mask="0x1" edc:name="SE57" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SE58" edc:desc="" edc:mask="0x1" edc:name="SE58" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SE59" edc:desc="" edc:mask="0x1" edc:name="SE59" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SE60" edc:desc="" edc:mask="0x1" edc:name="SE60" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SE61" edc:desc="" edc:mask="0x1" edc:name="SE61" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SE62" edc:desc="" edc:mask="0x1" edc:name="SE62" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SE63" edc:desc="" edc:mask="0x1" edc:name="SE63" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+</edc:Module>

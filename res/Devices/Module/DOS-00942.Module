@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:Module xmlns:edc="http://crownking/edc" edc:dosid="00942" edc:modid="icap_v4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/Module.xsd">
+  <edc:ArchDef edc:desc="" edc:name="">
+    <edc:MemTraits>
+      <edc:DataMemTraits edc:addrinc="0x2" edc:locsize="0x2" edc:wordimpl="0xffff" edc:wordinit="0x0" edc:wordsafe="0xffff" edc:wordsize="0x2"/>
+    </edc:MemTraits>
+  </edc:ArchDef>
+  <edc:SFRDef edc:access="--nnnn---nnnnnnn" edc:cname="IC@CON1" edc:desc="" edc:impl="0x7c7f" edc:isindirect="false" edc:isvolatile="true" edc:mclr="--0000---0000000" edc:name="IC@CON1" edc:nzwidth="0x10" edc:por="--0000---0000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="ICM" edc:desc="" edc:mask="0x7" edc:name="ICM" edc:nzwidth="0x3"/>
+        <edc:SFRFieldDef edc:cname="ICBNE" edc:desc="" edc:mask="0x1" edc:name="ICBNE" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="ICOV" edc:desc="" edc:mask="0x1" edc:name="ICOV" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="ICI" edc:desc="" edc:mask="0x3" edc:name="ICI" edc:nzwidth="0x2"/>
+        <edc:AdjustPoint edc:offset="3"/>
+        <edc:SFRFieldDef edc:cname="ICTSEL" edc:desc="" edc:mask="0x7" edc:name="ICTSEL" edc:nzwidth="0x3"/>
+        <edc:SFRFieldDef edc:cname="ICSIDL" edc:desc="" edc:mask="0x1" edc:name="ICSIDL" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="ICM0" edc:desc="" edc:mask="0x1" edc:name="ICM0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="ICM1" edc:desc="" edc:mask="0x1" edc:name="ICM1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="ICM2" edc:desc="" edc:mask="0x1" edc:name="ICM2" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="2"/>
+        <edc:SFRFieldDef edc:cname="ICI0" edc:desc="" edc:mask="0x1" edc:name="ICI0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="ICI1" edc:desc="" edc:mask="0x1" edc:name="ICI1" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="3"/>
+        <edc:SFRFieldDef edc:cname="ICTSEL0" edc:desc="" edc:mask="0x1" edc:name="ICTSEL0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="ICTSEL1" edc:desc="" edc:mask="0x1" edc:name="ICTSEL1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="ICTSEL2" edc:desc="" edc:mask="0x1" edc:name="ICTSEL2" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+    <edc:StimInfo edc:stimpcfiles="" edc:stimregfiles="" edc:stimscl="rwb" edc:stimtype="Record"/>
+    <edc:FreezeBit edc:freezeval="1" edc:name="INPUT CAPTURE @" edc:pos="0xe"/>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="-------nnn-nnnnn" edc:cname="IC@CON2" edc:desc="" edc:impl="0x1df" edc:isindirect="false" edc:isvolatile="true" edc:mclr="-------000-01101" edc:name="IC@CON2" edc:nzwidth="0x10" edc:por="-------000-01101">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="SYNCSEL" edc:desc="" edc:mask="0x1f" edc:name="SYNCSEL" edc:nzwidth="0x5"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="TRIGSTAT" edc:desc="" edc:mask="0x1" edc:name="TRIGSTAT" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="ICTRIG" edc:desc="" edc:mask="0x1" edc:name="ICTRIG" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="IC32" edc:desc="" edc:mask="0x1" edc:name="IC32" edc:nzwidth="0x1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="SYNCSEL0" edc:desc="" edc:mask="0x1" edc:name="SYNCSEL0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SYNCSEL1" edc:desc="" edc:mask="0x1" edc:name="SYNCSEL1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SYNCSEL2" edc:desc="" edc:mask="0x1" edc:name="SYNCSEL2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SYNCSEL3" edc:desc="" edc:mask="0x1" edc:name="SYNCSEL3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SYNCSEL4" edc:desc="" edc:mask="0x1" edc:name="SYNCSEL4" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+    <edc:StimInfo edc:stimpcfiles="" edc:stimregfiles="" edc:stimscl="rwb" edc:stimtype="Record"/>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="rrrrrrrrrrrrrrrr" edc:cname="IC@BUF" edc:desc="" edc:impl="0xffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="0000000000000000" edc:name="IC@BUF" edc:nzwidth="0x10" edc:por="0000000000000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="IC@BUF" edc:desc="" edc:mask="0xffff" edc:name="IC@BUF" edc:nzwidth="0x10"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+    <edc:StimInfo edc:stimpcfiles="" edc:stimregfiles="" edc:stimscl="rwb" edc:stimtype="Integer"/>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="rrrrrrrrrrrrrrrr" edc:cname="IC@TMR" edc:desc="" edc:impl="0xffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="0000000000000000" edc:name="IC@TMR" edc:nzwidth="0x10" edc:por="0000000000000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="IC@TMR" edc:desc="" edc:mask="0xffff" edc:name="IC@TMR" edc:nzwidth="0x10"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+    <edc:StimInfo edc:stimpcfiles="" edc:stimregfiles="" edc:stimscl="rwb" edc:stimtype="Record"/>
+  </edc:SFRDef>
+</edc:Module>

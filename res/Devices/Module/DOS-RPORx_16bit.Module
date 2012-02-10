@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:Module xmlns:edc="http://crownking/edc" edc:dosid="RPORx_16bit" edc:modid="remap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/Module.xsd">
+  <edc:ArchDef edc:desc="" edc:name="">
+    <edc:MemTraits>
+      <edc:DataMemTraits edc:addrinc="0x2" edc:locsize="0x2" edc:wordimpl="0xffff" edc:wordinit="0x0" edc:wordsafe="0xffff" edc:wordsize="0x2"/>
+    </edc:MemTraits>
+  </edc:ArchDef>
+  <edc:SFRDef edc:access="--nnnnnn--nnnnnn" edc:cname="RPOR@" edc:desc="" edc:impl="0x3f3f" edc:isindirect="false" edc:isvolatile="true" edc:mclr="--000000--000000" edc:name="RPOR@" edc:nzwidth="16" edc:por="--000000--000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="RP%y%R" edc:desc="" edc:mask="0x3f" edc:name="RP%y%R" edc:nzwidth="6"/>
+        <edc:AdjustPoint edc:offset="2"/>
+        <edc:SFRFieldDef edc:cname="RP%x%R" edc:desc="" edc:mask="0x3f" edc:name="RP%x%R" edc:nzwidth="6"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="RP%y%R0" edc:desc="" edc:mask="0x1" edc:name="RP%y%R0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="RP%y%R1" edc:desc="" edc:mask="0x1" edc:name="RP%y%R1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="RP%y%R2" edc:desc="" edc:mask="0x1" edc:name="RP%y%R2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="RP%y%R3" edc:desc="" edc:mask="0x1" edc:name="RP%y%R3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="RP%y%R4" edc:desc="" edc:mask="0x1" edc:name="RP%y%R4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="RP%y%R5" edc:desc="" edc:mask="0x1" edc:name="RP%y%R5" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="2"/>
+        <edc:SFRFieldDef edc:cname="RP%x%R0" edc:desc="" edc:mask="0x1" edc:name="RP%x%R0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="RP%x%R1" edc:desc="" edc:mask="0x1" edc:name="RP%x%R1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="RP%x%R2" edc:desc="" edc:mask="0x1" edc:name="RP%x%R2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="RP%x%R3" edc:desc="" edc:mask="0x1" edc:name="RP%x%R3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="RP%x%R4" edc:desc="" edc:mask="0x1" edc:name="RP%x%R4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="RP%x%R5" edc:desc="" edc:mask="0x1" edc:name="RP%x%R5" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+</edc:Module>

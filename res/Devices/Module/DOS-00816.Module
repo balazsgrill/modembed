@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:Module xmlns:edc="http://crownking/edc" edc:dosid="00816" edc:modid="pwm_ps_v4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/Module.xsd">
+  <edc:ArchDef edc:desc="" edc:name="">
+    <edc:MemTraits>
+      <edc:DataMemTraits edc:addrinc="0x2" edc:locsize="0x2" edc:wordimpl="0xffff" edc:wordinit="0x0" edc:wordsafe="0xffff" edc:wordsize="0x2"/>
+    </edc:MemTraits>
+  </edc:ArchDef>
+  <edc:SFRDef edc:access="nnnnnnnnnnnnnnnn" edc:cname="U@PWMRRS" edc:desc="" edc:impl="0xffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="0000000000000000" edc:name="U@PWMRRS" edc:nzwidth="0x10" edc:por="0000000000000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="mode0">
+        <edc:SFRFieldDef edc:cname="PER0" edc:desc="" edc:mask="0x1" edc:name="PER0" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="PER1" edc:desc="" edc:mask="0x1" edc:name="PER1" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="PER2" edc:desc="" edc:mask="0x1" edc:name="PER2" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="PER3" edc:desc="" edc:mask="0x1" edc:name="PER3" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="PER4" edc:desc="" edc:mask="0x1" edc:name="PER4" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="PER5" edc:desc="" edc:mask="0x1" edc:name="PER5" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="PER6" edc:desc="" edc:mask="0x1" edc:name="PER6" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="PER7" edc:desc="" edc:mask="0x1" edc:name="PER7" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="DC0" edc:desc="" edc:mask="0x1" edc:name="DC0" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="DC1" edc:desc="" edc:mask="0x1" edc:name="DC1" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="DC2" edc:desc="" edc:mask="0x1" edc:name="DC2" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="DC3" edc:desc="" edc:mask="0x1" edc:name="DC3" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="DC4" edc:desc="" edc:mask="0x1" edc:name="DC4" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="DC5" edc:desc="" edc:mask="0x1" edc:name="DC5" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="DC6" edc:desc="" edc:mask="0x1" edc:name="DC6" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="DC7" edc:desc="" edc:mask="0x1" edc:name="DC7" edc:nzwidth="0x1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="mode1">
+        <edc:SFRFieldDef edc:cname="PER" edc:desc="" edc:mask="0xff" edc:name="PER" edc:nzwidth="8"/>
+        <edc:SFRFieldDef edc:cname="DC" edc:desc="" edc:mask="0xff" edc:name="DC" edc:nzwidth="8"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="mode2">
+        <edc:SFRFieldDef edc:cname="USBRS0" edc:desc="" edc:mask="0x1" edc:name="USBRS0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="USBRS1" edc:desc="" edc:mask="0x1" edc:name="USBRS1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="USBRS2" edc:desc="" edc:mask="0x1" edc:name="USBRS2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="USBRS3" edc:desc="" edc:mask="0x1" edc:name="USBRS3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="USBRS4" edc:desc="" edc:mask="0x1" edc:name="USBRS4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="USBRS5" edc:desc="" edc:mask="0x1" edc:name="USBRS5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="USBRS6" edc:desc="" edc:mask="0x1" edc:name="USBRS6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="USBRS7" edc:desc="" edc:mask="0x1" edc:name="USBRS7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="USBR0" edc:desc="" edc:mask="0x1" edc:name="USBR0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="USBR1" edc:desc="" edc:mask="0x1" edc:name="USBR1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="USBR2" edc:desc="" edc:mask="0x1" edc:name="USBR2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="USBR3" edc:desc="" edc:mask="0x1" edc:name="USBR3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="USBR4" edc:desc="" edc:mask="0x1" edc:name="USBR4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="USBR5" edc:desc="" edc:mask="0x1" edc:name="USBR5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="USBR6" edc:desc="" edc:mask="0x1" edc:name="USBR6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="USBR7" edc:desc="" edc:mask="0x1" edc:name="USBR7" edc:nzwidth="1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="mode3">
+        <edc:SFRFieldDef edc:cname="USBRS" edc:desc="" edc:mask="0xff" edc:name="USBRS" edc:nzwidth="8"/>
+        <edc:SFRFieldDef edc:cname="USBR" edc:desc="" edc:mask="0xff" edc:name="USBR" edc:nzwidth="8"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+    <edc:StimInfo edc:stimpcfiles="" edc:stimregfiles="w" edc:stimscl="rwb" edc:stimtype="Record"/>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="n-----nn--------" edc:cname="U@PWMCON" edc:desc="" edc:impl="0x9f00" edc:isindirect="false" edc:isvolatile="true" edc:mclr="0-----00--------" edc:name="U@PWMCON" edc:nzwidth="0x10" edc:por="0-----00--------">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="mode0">
+        <edc:AdjustPoint edc:offset="8"/>
+        <edc:SFRFieldDef edc:cname="CNTEN" edc:desc="" edc:mask="0x1" edc:name="CNTEN" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="PWMPOL" edc:desc="" edc:mask="0x1" edc:name="PWMPOL" edc:nzwidth="0x1"/>
+        <edc:AdjustPoint edc:offset="5"/>
+        <edc:SFRFieldDef edc:cname="PWMEN" edc:desc="" edc:mask="0x1" edc:name="PWMEN" edc:nzwidth="0x1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+    <edc:StimInfo edc:stimpcfiles="" edc:stimregfiles="w" edc:stimscl="rwb" edc:stimtype="Record"/>
+  </edc:SFRDef>
+</edc:Module>

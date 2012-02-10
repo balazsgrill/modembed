@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:Module xmlns:edc="http://crownking/edc" edc:dosid="DOS-01447_rst_integration_v7_8bit" edc:modid="rst_integration_v7" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/Module.xsd">
+  <edc:ArchDef edc:desc="" edc:name="">
+    <edc:MemTraits>
+      <edc:DataMemTraits edc:addrinc="0x1" edc:locsize="0x1" edc:wordimpl="0xff" edc:wordinit="0x0" edc:wordsafe="0xff" edc:wordsize="0x1"/>
+    </edc:MemTraits>
+  </edc:ArchDef>
+  <edc:SFRDef edc:access="nnnn-n-n" edc:cname="RCON2H" edc:desc="" edc:impl="0xf5" edc:isindirect="false" edc:isvolatile="true" edc:mclr="0000-0-0" edc:name="RCON2H" edc:nzwidth="8" edc:por="0000-0-0">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="VREGS" edc:desc="" edc:mask="0x1" edc:name="VREGS" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="DPSLP" edc:desc="" edc:mask="0x1" edc:name="DPSLP" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="RETEN" edc:desc="" edc:mask="0x1" edc:name="RETEN" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SBOREN" edc:desc="" edc:mask="0x1" edc:name="SBOREN" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="IOPUWR" edc:desc="" edc:mask="0x1" edc:name="IOPUWR" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="TRAPR" edc:desc="" edc:mask="0x1" edc:name="TRAPR" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="---nnncc" edc:cname="RCON2L" edc:desc="" edc:impl="0x1f" edc:isindirect="false" edc:isvolatile="true" edc:mclr="---00000" edc:name="RCON2L" edc:nzwidth="8" edc:por="---00000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="VBAT" edc:desc="" edc:mask="0x1" edc:name="VBAT" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="VBPOR" edc:desc="" edc:mask="0x1" edc:name="VBPOR" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="VDDPOR" edc:desc="" edc:mask="0x1" edc:name="VDDPOR" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="VDDBOR" edc:desc="" edc:mask="0x1" edc:name="VDDBOR" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="BBEN" edc:desc="" edc:mask="0x1" edc:name="BBEN" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="2"/>
+        <edc:AdjustPoint edc:offset="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="n-n-n---" edc:cname="RCONH" edc:desc="" edc:impl="0xa8" edc:isindirect="false" edc:isvolatile="true" edc:mclr="1-1-0---" edc:name="RCONH" edc:nzwidth="8" edc:por="0-1-0---">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:AdjustPoint edc:offset="2"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="SLEEP" edc:desc="" edc:mask="0x1" edc:name="SLEEP" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="SWDTEN" edc:desc="" edc:mask="0x1" edc:name="SWDTEN" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="EXTR" edc:desc="" edc:mask="0x1" edc:name="EXTR" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="n-nnrrnn" edc:cname="RCONL" edc:desc="" edc:impl="0xbf" edc:isindirect="false" edc:isvolatile="true" edc:mclr="0-qqqquu" edc:name="RCONL" edc:nzwidth="8" edc:por="0-1111qq">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="nBOR" edc:desc="" edc:mask="0x1" edc:name="nBOR" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="nPOR" edc:desc="" edc:mask="0x1" edc:name="nPOR" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="nPD" edc:desc="" edc:mask="0x1" edc:name="nPD" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="nTO" edc:desc="" edc:mask="0x1" edc:name="nTO" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="nRI" edc:desc="" edc:mask="0x1" edc:name="nRI" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="nCM" edc:desc="" edc:mask="0x1" edc:name="nCM" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="IPEN" edc:desc="" edc:mask="0x1" edc:name="IPEN" edc:nzwidth="1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="BOR" edc:desc="" edc:mask="0x1" edc:name="BOR" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="POR" edc:desc="" edc:mask="0x1" edc:name="POR" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="PD" edc:desc="" edc:mask="0x1" edc:name="PD" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="TO" edc:desc="" edc:mask="0x1" edc:name="TO" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="RI" edc:desc="" edc:mask="0x1" edc:name="RI" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CM" edc:desc="" edc:mask="0x1" edc:name="CM" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+</edc:Module>

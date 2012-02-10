@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:Module xmlns:edc="http://crownking/edc" edc:dosid="DOS-01359" edc:modid="amp_opamp_con_v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/Module.xsd">
+  <edc:ArchDef edc:desc="" edc:name="">
+    <edc:MemTraits>
+      <edc:DataMemTraits edc:addrinc="0x2" edc:locsize="0x2" edc:wordimpl="0xffff" edc:wordinit="0x0" edc:wordsafe="0xffff" edc:wordsize="0x2"/>
+    </edc:MemTraits>
+  </edc:ArchDef>
+  <edc:SFRDef edc:access="n-nnnnnnnnnnnnnn" edc:cname="AMP@CON" edc:desc="" edc:impl="0xbfff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="0-00000000000000" edc:name="AMP@CON" edc:nzwidth="16" edc:por="0-00000000000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="PINSEL" edc:desc="Positive OPAMP Input Select bits" edc:mask="0x7" edc:name="PINSEL" edc:nzwidth="3"/>
+        <edc:SFRFieldDef edc:cname="NINSEL" edc:desc="Negative OPAMP Input Select bits" edc:mask="0x7" edc:name="NINSEL" edc:nzwidth="3"/>
+        <edc:SFRFieldDef edc:cname="AMPOE" edc:desc="Amplifier Output Enable bit" edc:mask="0x1" edc:name="AMPOE" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SPDSEL" edc:desc="Speed/Power Selection bit" edc:mask="0x1" edc:name="SPDSEL" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CMPSEL" edc:desc="Mode Select bit" edc:mask="0x1" edc:name="CMPSEL" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CMPOE" edc:desc="Comparator Output Status bit" edc:mask="0x1" edc:name="CMPOE" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="INTPOL" edc:desc="Interrupt Polarity bits" edc:mask="0x3" edc:name="INTPOL" edc:nzwidth="2"/>
+        <edc:SFRFieldDef edc:cname="AMPSLP" edc:desc="Op Amp Enabled in Sleep Mode bit" edc:mask="0x1" edc:name="AMPSLP" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="AMPSIDL" edc:desc="Op Amp Stop in Idle Mode bit" edc:mask="0x1" edc:name="AMPSIDL" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="AMPEN" edc:desc="Op-Amp Control Module Enable bit" edc:mask="0x1" edc:name="AMPEN" edc:nzwidth="1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="PINSEL0" edc:desc="" edc:mask="0x1" edc:name="PINSEL0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="PINSEL1" edc:desc="" edc:mask="0x1" edc:name="PINSEL1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="PINSEL2" edc:desc="" edc:mask="0x1" edc:name="PINSEL2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="NINSEL0" edc:desc="" edc:mask="0x1" edc:name="NINSEL0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="NINSEL1" edc:desc="" edc:mask="0x1" edc:name="NINSEL1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="NINSEL2" edc:desc="" edc:mask="0x1" edc:name="NINSEL2" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="4"/>
+        <edc:SFRFieldDef edc:cname="INTPOL0" edc:desc="" edc:mask="0x1" edc:name="INTPOL0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="INTPOL1" edc:desc="" edc:mask="0x1" edc:name="INTPOL1" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+</edc:Module>

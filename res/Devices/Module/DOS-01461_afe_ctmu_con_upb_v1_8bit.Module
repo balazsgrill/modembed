@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:Module xmlns:edc="http://crownking/edc" edc:dosid="DOS-01461_afe_ctmu_con_upb_v1_8bit" edc:modid="afe_ctmu_con_upb_v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/Module.xsd">
+  <edc:ArchDef edc:desc="" edc:name="">
+    <edc:MemTraits>
+      <edc:DataMemTraits edc:addrinc="0x1" edc:locsize="0x1" edc:wordimpl="0xff" edc:wordinit="0x0" edc:wordsafe="0xff" edc:wordsize="0x1"/>
+    </edc:MemTraits>
+  </edc:ArchDef>
+  <edc:SFRDef edc:access="---n-nnn" edc:cname="CTMUCON4" edc:desc="" edc:impl="0x17" edc:isindirect="false" edc:isvolatile="true" edc:mclr="---0-000" edc:name="CTMUCON4" edc:nzwidth="8" edc:por="---0-000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="DSCHS0" edc:desc="" edc:mask="0x1" edc:name="DSCHS0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="DSCHS1" edc:desc="" edc:mask="0x1" edc:name="DSCHS1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="DSCHS2" edc:desc="" edc:mask="0x1" edc:name="DSCHS2" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="IRSTEN" edc:desc="" edc:mask="0x1" edc:name="IRSTEN" edc:nzwidth="1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="DSCHS" edc:desc="" edc:mask="0x7" edc:name="DSCHS" edc:nzwidth="3"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="CTMUCON3" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="CTMUCON3" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="EDG1STAT" edc:desc="" edc:mask="0x1" edc:name="EDG1STAT" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="EDG2STAT" edc:desc="" edc:mask="0x1" edc:name="EDG2STAT" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="EDG1SEL0" edc:desc="" edc:mask="0x1" edc:name="EDG1SEL0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="EDG1SEL1" edc:desc="" edc:mask="0x1" edc:name="EDG1SEL1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="EDG1SEL2" edc:desc="" edc:mask="0x1" edc:name="EDG1SEL2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="EDG1SEL3" edc:desc="" edc:mask="0x1" edc:name="EDG1SEL3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="EDG2POL" edc:desc="" edc:mask="0x1" edc:name="EDG2POL" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="EDG1MOD" edc:desc="" edc:mask="0x1" edc:name="EDG1MOD" edc:nzwidth="1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:AdjustPoint edc:offset="2"/>
+        <edc:SFRFieldDef edc:cname="EDG1SEL" edc:desc="" edc:mask="0xf" edc:name="EDG1SEL" edc:nzwidth="4"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnn--" edc:cname="CTMUCON2" edc:desc="" edc:impl="0xfc" edc:isindirect="false" edc:isvolatile="true" edc:mclr="000000--" edc:name="CTMUCON2" edc:nzwidth="8" edc:por="000000--">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:AdjustPoint edc:offset="2"/>
+        <edc:SFRFieldDef edc:cname="EDG2SEL0" edc:desc="" edc:mask="0x1" edc:name="EDG2SEL0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="EDG2SEL1" edc:desc="" edc:mask="0x1" edc:name="EDG2SEL1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="EDG2SEL2" edc:desc="" edc:mask="0x1" edc:name="EDG2SEL2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="EDG2SEL3" edc:desc="" edc:mask="0x1" edc:name="EDG2SEL3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="EDG2POL" edc:desc="" edc:mask="0x1" edc:name="EDG2POL" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="EDG2MOD" edc:desc="" edc:mask="0x1" edc:name="EDG2MOD" edc:nzwidth="1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:AdjustPoint edc:offset="2"/>
+        <edc:SFRFieldDef edc:cname="EDG2SEL" edc:desc="" edc:mask="0xf" edc:name="EDG2SEL" edc:nzwidth="4"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="CTMUCON1" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="CTMUCON1" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="IRNG0" edc:desc="" edc:mask="0x1" edc:name="IRNG0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="IRNG1" edc:desc="" edc:mask="0x1" edc:name="IRNG1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="ITRIM0" edc:desc="" edc:mask="0x1" edc:name="ITRIM0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="ITRIM1" edc:desc="" edc:mask="0x1" edc:name="ITRIM1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="ITRIM2" edc:desc="" edc:mask="0x1" edc:name="ITRIM2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="ITRIM3" edc:desc="" edc:mask="0x1" edc:name="ITRIM3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="ITRIM4" edc:desc="" edc:mask="0x1" edc:name="ITRIM4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="ITRIM5" edc:desc="" edc:mask="0x1" edc:name="ITRIM5" edc:nzwidth="1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="IRNG" edc:desc="" edc:mask="0x3" edc:name="IRNG" edc:nzwidth="2"/>
+        <edc:SFRFieldDef edc:cname="ITRIM" edc:desc="" edc:mask="0x3f" edc:name="ITRIM" edc:nzwidth="6"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="CTMUCON" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="CTMUCON" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="TRIGEN" edc:desc="" edc:mask="0x1" edc:name="TRIGEN" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="IDISSEN" edc:desc="" edc:mask="0x1" edc:name="IDISSEN" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="EDGSEQEN" edc:desc="" edc:mask="0x1" edc:name="EDGSEQEN" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="EDGEN" edc:desc="" edc:mask="0x1" edc:name="EDGEN" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="TGEN" edc:desc="" edc:mask="0x1" edc:name="TGEN" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SIDL" edc:desc="" edc:mask="0x1" edc:name="SIDL" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="FRZ" edc:desc="" edc:ishidden="true" edc:islanghidden="true" edc:mask="0x1" edc:name="FRZ" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="ON" edc:desc="" edc:mask="0x1" edc:name="ON" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+</edc:Module>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:Module xmlns:edc="http://crownking/edc" edc:dosid="00747_bus_matrix_bvci_v1" edc:modid="bus_matrix_bvci_v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/Module.xsd">
+  <edc:ArchDef edc:desc="" edc:name="">
+    <edc:MemTraits>
+      <edc:DataMemTraits edc:addrinc="0x4" edc:locsize="0x4" edc:wordimpl="0xffffffff" edc:wordinit="0x0" edc:wordsafe="0xffffffff" edc:wordsize="0x4"/>
+    </edc:MemTraits>
+  </edc:ArchDef>
+  <edc:SFRDef edc:access="-----n-----nnnnn---------n---nnn" edc:cname="BMXCON" edc:desc="" edc:grp="BMX" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="-----0-----11111---------1---001" edc:name="BMXCON" edc:nzwidth="0x20" edc:por="-----0-----11111---------1---001" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="BMXARB" edc:desc="" edc:mask="0x7" edc:name="BMXARB" edc:nzwidth="0x3"/>
+        <edc:AdjustPoint edc:offset="3"/>
+        <edc:SFRFieldDef edc:cname="BMXWSDRM" edc:desc="" edc:mask="0x1" edc:name="BMXWSDRM" edc:nzwidth="0x1"/>
+        <edc:AdjustPoint edc:offset="9"/>
+        <edc:SFRFieldDef edc:cname="BMXERRIS" edc:desc="" edc:mask="0x1" edc:name="BMXERRIS" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="BMXERRDS" edc:desc="" edc:mask="0x1" edc:name="BMXERRDS" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="BMXERRDMA" edc:desc="" edc:mask="0x1" edc:name="BMXERRDMA" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="BMXERRICD" edc:desc="" edc:mask="0x1" edc:name="BMXERRICD" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="BMXERRIXI" edc:desc="" edc:mask="0x1" edc:name="BMXERRIXI" edc:nzwidth="0x1"/>
+        <edc:AdjustPoint edc:offset="5"/>
+        <edc:SFRFieldDef edc:cname="BMXCHEDMA" edc:desc="" edc:mask="0x1" edc:name="BMXCHEDMA" edc:nzwidth="0x1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="w" edc:desc="" edc:mask="0x1" edc:name="w" edc:nzwidth="0x20"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn" edc:cname="BMXDKPBA" edc:desc="" edc:grp="BMX" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000000000000000000000000000" edc:name="BMXDKPBA" edc:nzwidth="0x20" edc:por="00000000000000000000000000000000" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="BMXDKPBA" edc:desc="" edc:islanghidden="true" edc:mask="0xffffffff" edc:name="BMXDKPBA" edc:nzwidth="0x20"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn" edc:cname="BMXDUDBA" edc:desc="" edc:grp="BMX" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000000000000000000000000000" edc:name="BMXDUDBA" edc:nzwidth="0x20" edc:por="00000000000000000000000000000000" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="BMXDUDBA" edc:desc="" edc:islanghidden="true" edc:mask="0xffffffff" edc:name="BMXDUDBA" edc:nzwidth="0x20"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn" edc:cname="BMXDUPBA" edc:desc="" edc:grp="BMX" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000000000000000000000000000" edc:name="BMXDUPBA" edc:nzwidth="0x20" edc:por="00000000000000000000000000000000" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="BMXDUPBA" edc:desc="" edc:islanghidden="true" edc:mask="0xffffffff" edc:name="BMXDUPBA" edc:nzwidth="0x20"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr" edc:cname="BMXDRMSZ" edc:desc="" edc:grp="BMX" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000000000100000000000000000" edc:name="BMXDRMSZ" edc:nzwidth="0x20" edc:por="00000000000000100000000000000000" edc:portals="- - -">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="BMXDRMSZ" edc:desc="" edc:islanghidden="true" edc:mask="0xffffffff" edc:name="BMXDRMSZ" edc:nzwidth="0x20"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn" edc:cname="BMXPUPBA" edc:desc="" edc:grp="BMX" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000000000000000000000000000" edc:name="BMXPUPBA" edc:nzwidth="0x20" edc:por="00000000000000000000000000000000" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="BMXPUPBA" edc:desc="" edc:islanghidden="true" edc:mask="0xffffffff" edc:name="BMXPUPBA" edc:nzwidth="0x20"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr" edc:cname="BMXPFMSZ" edc:desc="" edc:grp="BMX" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000000010000000000000000000" edc:name="BMXPFMSZ" edc:nzwidth="0x20" edc:por="00000000000010000000000000000000" edc:portals="- - -">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="BMXPFMSZ" edc:desc="" edc:islanghidden="true" edc:mask="0xffffffff" edc:name="BMXPFMSZ" edc:nzwidth="0x20"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr" edc:cname="BMXBOOTSZ" edc:desc="" edc:grp="BMX" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000000000000011000000000000" edc:name="BMXBOOTSZ" edc:nzwidth="0x20" edc:por="00000000000000000011000000000000" edc:portals="- - -">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="BMXBOOTSZ" edc:desc="" edc:islanghidden="true" edc:mask="0xffffffff" edc:name="BMXBOOTSZ" edc:nzwidth="0x20"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+</edc:Module>

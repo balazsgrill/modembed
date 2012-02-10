@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:Module xmlns:edc="http://crownking/edc" edc:dosid="00788_icd_bvci_v1" edc:modid="icd_bvci_v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/Module.xsd">
+  <edc:ArchDef edc:desc="" edc:name="">
+    <edc:MemTraits>
+      <edc:DataMemTraits edc:addrinc="0x4" edc:locsize="0x4" edc:wordimpl="0xffffffff" edc:wordinit="0x0" edc:wordsafe="0xffffffff" edc:wordsize="0x4"/>
+    </edc:MemTraits>
+  </edc:ArchDef>
+  <edc:SFRDef edc:access="--------------------------------" edc:cname="RESERVED1" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="--------------------------------" edc:name="RESERVED1" edc:nzwidth="32" edc:por="--------------------------------" edc:portals="- - -">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0"/>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="--------------------------------" edc:cname="RESERVED2" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="--------------------------------" edc:name="RESERVED2" edc:nzwidth="32" edc:por="--------------------------------" edc:portals="- - -">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0"/>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="--------------------------------" edc:cname="RESERVED3" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="--------------------------------" edc:name="RESERVED3" edc:nzwidth="32" edc:por="--------------------------------" edc:portals="- - -">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0"/>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="--------------------------------" edc:cname="RESERVED4" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="--------------------------------" edc:name="RESERVED4" edc:nzwidth="32" edc:por="--------------------------------" edc:portals="- - -">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0"/>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="--------------------------------" edc:cname="RESERVED5" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="--------------------------------" edc:name="RESERVED5" edc:nzwidth="32" edc:por="--------------------------------" edc:portals="- - -">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0"/>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="--------------------------------" edc:cname="RESERVED6" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="--------------------------------" edc:name="RESERVED6" edc:nzwidth="32" edc:por="--------------------------------" edc:portals="- - -">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0"/>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="--------------------------------" edc:cname="RESERVED7" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="--------------------------------" edc:name="RESERVED7" edc:nzwidth="32" edc:por="--------------------------------" edc:portals="- - -">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0"/>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="--------------------------------" edc:cname="RESERVED8" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="--------------------------------" edc:name="RESERVED8" edc:nzwidth="32" edc:por="--------------------------------" edc:portals="- - -">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0"/>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="--------------------------------" edc:cname="RESERVED9" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="--------------------------------" edc:name="RESERVED9" edc:nzwidth="32" edc:por="--------------------------------" edc:portals="- - -">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0"/>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="--------------------------------" edc:cname="RESERVED10" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="--------------------------------" edc:name="RESERVED10" edc:nzwidth="32" edc:por="--------------------------------" edc:portals="- - -">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0"/>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="--------------------------------" edc:cname="RESERVED11" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="--------------------------------" edc:name="RESERVED11" edc:nzwidth="32" edc:por="--------------------------------" edc:portals="- - -">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0"/>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="--------------------------------" edc:cname="RESERVED12" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="--------------------------------" edc:name="RESERVED12" edc:nzwidth="32" edc:por="--------------------------------" edc:portals="- - -">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0"/>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="--------------------------------" edc:cname="RESERVED13" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="--------------------------------" edc:name="RESERVED13" edc:nzwidth="32" edc:por="--------------------------------" edc:portals="- - -">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0"/>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="--------------------------------" edc:cname="RESERVED14" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="--------------------------------" edc:name="RESERVED14" edc:nzwidth="32" edc:por="--------------------------------" edc:portals="- - -">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0"/>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="--------------------------------" edc:cname="RESERVED15" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="--------------------------------" edc:name="RESERVED15" edc:nzwidth="32" edc:por="--------------------------------" edc:portals="- - -">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0"/>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="--------------------------------" edc:cname="RESERVED16" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="--------------------------------" edc:name="RESERVED16" edc:nzwidth="32" edc:por="--------------------------------" edc:portals="- - -">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0"/>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="--------------------------------" edc:cname="RESERVED17" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="--------------------------------" edc:name="RESERVED17" edc:nzwidth="32" edc:por="--------------------------------" edc:portals="- - -">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0"/>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="--------------------------------" edc:cname="RESERVED18" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="--------------------------------" edc:name="RESERVED18" edc:nzwidth="32" edc:por="--------------------------------" edc:portals="- - -">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0"/>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="--------------------------------" edc:cname="RESERVED19" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="--------------------------------" edc:name="RESERVED19" edc:nzwidth="32" edc:por="--------------------------------" edc:portals="- - -">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0"/>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="--------------------------------" edc:cname="RESERVED20" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="--------------------------------" edc:name="RESERVED20" edc:nzwidth="32" edc:por="--------------------------------" edc:portals="- - -">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0"/>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="-------------------------------n" edc:cname="_DDPSTAT" edc:desc="" edc:grp="_DDPSTAT" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="-------------------------------0" edc:name="_DDPSTAT" edc:nzwidth="0x20" edc:por="-------------------------------0" edc:portals="- - -">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:AdjustPoint edc:offset="0x1"/>
+        <edc:SFRFieldDef edc:cname="APIFUL" edc:desc="" edc:mask="0x1" edc:name="APIFUL" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="APOFUL" edc:desc="" edc:mask="0x1" edc:name="APOFUL" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="STRFUL" edc:desc="" edc:mask="0x1" edc:name="STRFUL" edc:nzwidth="0x1"/>
+        <edc:AdjustPoint edc:offset="0x5"/>
+        <edc:SFRFieldDef edc:cname="APIOV" edc:desc="" edc:mask="0x1" edc:name="APIOV" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="APOOV" edc:desc="" edc:mask="0x1" edc:name="APOOV" edc:nzwidth="0x1"/>
+        <edc:AdjustPoint edc:offset="0x5"/>
+        <edc:SFRFieldDef edc:cname="STOV" edc:desc="" edc:mask="0x1" edc:name="STOV" edc:nzwidth="0x10"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="--------------------------------" edc:cname="RESERVED21" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="--------------------------------" edc:name="RESERVED21" edc:nzwidth="32" edc:por="--------------------------------" edc:portals="- - -">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0"/>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="--------------------------------" edc:cname="RESERVED22" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="--------------------------------" edc:name="RESERVED22" edc:nzwidth="32" edc:por="--------------------------------" edc:portals="- - -">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0"/>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn" edc:cname="_STRO" edc:desc="George" edc:grp="_STRO" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" edc:name="_STRO" edc:nzwidth="0x20" edc:por="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="_STRO" edc:desc="" edc:islanghidden="true" edc:mask="0xffffffff" edc:name="_STRO" edc:nzwidth="32"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn" edc:cname="_APPO" edc:desc="George" edc:grp="_APPO" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" edc:name="_APPO" edc:nzwidth="0x20" edc:por="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="_APPO" edc:desc="" edc:islanghidden="true" edc:mask="0xffffffff" edc:name="_APPO" edc:nzwidth="32"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn" edc:cname="_APPI" edc:desc="George" edc:grp="_APPI" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" edc:name="_APPI" edc:nzwidth="0x20" edc:por="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" edc:portals="- - -">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="_APPI" edc:desc="" edc:islanghidden="true" edc:mask="0xffffffff" edc:name="_APPI" edc:nzwidth="32"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+</edc:Module>

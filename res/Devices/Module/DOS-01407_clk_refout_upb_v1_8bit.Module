@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:Module xmlns:edc="http://crownking/edc" edc:dosid="DOS-01407_clk_refout_upb_v1_8bit" edc:modid="clk_refout_upb_v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/Module.xsd">
+  <edc:ArchDef edc:desc="" edc:name="">
+    <edc:MemTraits>
+      <edc:DataMemTraits edc:addrinc="0x1" edc:locsize="0x1" edc:wordimpl="0xff" edc:wordinit="0x0" edc:wordsafe="0xff" edc:wordsize="0x1"/>
+    </edc:MemTraits>
+  </edc:ArchDef>
+  <edc:SFRDef edc:access="n-------" edc:cname="REFO@TRIM2" edc:desc="" edc:impl="0x80" edc:isindirect="false" edc:isvolatile="true" edc:mclr="0-------" edc:name="REFO@TRIM2" edc:nzwidth="8" edc:por="0-------">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:AdjustPoint edc:offset="7"/>
+        <edc:SFRFieldDef edc:cname="ROTRIM" edc:desc="" edc:mask="0x1" edc:name="ROTRIM" edc:nzwidth="1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:AdjustPoint edc:offset="7"/>
+        <edc:SFRFieldDef edc:cname="ROTRIM8" edc:desc="" edc:mask="0x1" edc:name="ROTRIM8" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="REFO@TRIM1" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="REFO@TRIM1" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="ROTRIM" edc:desc="" edc:mask="0xff" edc:name="ROTRIM" edc:nzwidth="8"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="ROTRIM7" edc:desc="" edc:mask="0x1" edc:name="ROTRIM7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="ROTRIM6" edc:desc="" edc:mask="0x1" edc:name="ROTRIM6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="ROTRIM5" edc:desc="" edc:mask="0x1" edc:name="ROTRIM5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="ROTRIM4" edc:desc="" edc:mask="0x1" edc:name="ROTRIM4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="ROTRIM3" edc:desc="" edc:mask="0x1" edc:name="ROTRIM3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="ROTRIM2" edc:desc="" edc:mask="0x1" edc:name="ROTRIM2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="ROTRIM1" edc:desc="" edc:mask="0x1" edc:name="ROTRIM1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="ROTRIM0" edc:desc="" edc:mask="0x1" edc:name="ROTRIM0" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="-nnnnnnn" edc:cname="REFO@CON3" edc:desc="" edc:impl="0x7f" edc:isindirect="false" edc:isvolatile="true" edc:mclr="-0000000" edc:name="REFO@CON3" edc:nzwidth="8" edc:por="-0000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="RODIV" edc:desc="" edc:mask="0x7f" edc:name="RODIV" edc:nzwidth="7"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="RODIV8" edc:desc="" edc:mask="0x1" edc:name="RODIV8" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="RODIV9" edc:desc="" edc:mask="0x1" edc:name="RODIV9" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="RODIV10" edc:desc="" edc:mask="0x1" edc:name="RODIV10" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="RODIV11" edc:desc="" edc:mask="0x1" edc:name="RODIV11" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="RODIV12" edc:desc="" edc:mask="0x1" edc:name="RODIV12" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="RODIV13" edc:desc="" edc:mask="0x1" edc:name="RODIV13" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="RODIV14" edc:desc="" edc:mask="0x1" edc:name="RODIV14" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="REFO@CON2" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="REFO@CON2" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="RODIV" edc:desc="" edc:mask="0xff" edc:name="RODIV" edc:nzwidth="8"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="RODIV0" edc:desc="" edc:mask="0x1" edc:name="RODIV0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="RODIV1" edc:desc="" edc:mask="0x1" edc:name="RODIV1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="RODIV2" edc:desc="" edc:mask="0x1" edc:name="RODIV2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="RODIV3" edc:desc="" edc:mask="0x1" edc:name="RODIV3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="RODIV4" edc:desc="" edc:mask="0x1" edc:name="RODIV4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="RODIV5" edc:desc="" edc:mask="0x1" edc:name="RODIV5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="RODIV6" edc:desc="" edc:mask="0x1" edc:name="RODIV6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="RODIV7" edc:desc="" edc:mask="0x1" edc:name="RODIV7" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="----nnnn" edc:cname="REFO@CON1" edc:desc="" edc:impl="0xf" edc:isindirect="false" edc:isvolatile="true" edc:mclr="----0000" edc:name="REFO@CON1" edc:nzwidth="8" edc:por="----0000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="ROSEL" edc:desc="" edc:mask="0xf" edc:name="ROSEL" edc:nzwidth="4"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="ROSEL0" edc:desc="" edc:mask="0x1" edc:name="ROSEL0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="ROSEL1" edc:desc="" edc:mask="0x1" edc:name="ROSEL1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="ROSEL2" edc:desc="" edc:mask="0x1" edc:name="ROSEL2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="ROSEL3" edc:desc="" edc:mask="0x1" edc:name="ROSEL3" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="n-nnn-nr" edc:cname="REFO@CON" edc:desc="" edc:impl="0xbb" edc:isindirect="false" edc:isvolatile="true" edc:mclr="0-000-00" edc:name="REFO@CON" edc:nzwidth="8" edc:por="0-000-00">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="ACTIVE" edc:desc="" edc:mask="0x1" edc:name="ACTIVE" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="DIVSW_EN" edc:desc="" edc:mask="0x1" edc:name="DIVSW_EN" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="RSLP" edc:desc="" edc:mask="0x1" edc:name="RSLP" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="OE" edc:desc="" edc:mask="0x1" edc:name="OE" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SIDL" edc:desc="" edc:mask="0x1" edc:name="SIDL" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="ON" edc:desc="" edc:mask="0x1" edc:name="ON" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+</edc:Module>

@@ -1,0 +1,17 @@
+<?xml version="1.0" ?><edc:PIC edc:arch="HCS" edc:desc="" edc:isextended="false" edc:name="HCS365" edc:procid="0xf80e" xmlns:edc="http://crownking/edc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
+  <edc:Power>
+    <edc:VPP edc:defaultvoltage="13.000" edc:maxvoltage="13.750" edc:minvoltage="10.000"/>
+    <edc:VDD edc:maxdefaultvoltage="5.500" edc:maxvoltage="5.500" edc:mindefaultvoltage="4.500" edc:minvoltage="4.500" edc:nominalvoltage="5.000"/>
+  </edc:Power>
+  <edc:Programming edc:haschecksum="false" edc:memtech="ee" edc:tries="1">
+    <edc:Wait edc:cfg="10000" edc:eedata="10000" edc:erase="10000"/>
+    <edc:Latches edc:eedata="1"/>
+  </edc:Programming>
+  <edc:ArchDef edc:desc="HCS" edc:name="HCS">
+    <edc:MemTraits edc:addrinc="0x1" edc:bankcount="1" edc:locsize="0x1" edc:wordimpl="0xff" edc:wordinit="0xff" edc:wordsafe="0xff" edc:wordsize="0x1"/>
+  </edc:ArchDef>
+  <edc:ProgramSpace>
+    <edc:EEDataSector edc:beginaddr="0x0" edc:endaddr="0x40" edc:regionid="eedata"/>
+  </edc:ProgramSpace>
+  <edc:DataSpace/>
+</edc:PIC>

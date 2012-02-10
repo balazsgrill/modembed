@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:Module xmlns:edc="http://crownking/edc" edc:dosid="00822" edc:modid="clk_refout_v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/Module.xsd">
+  <edc:ArchDef edc:desc="" edc:name="">
+    <edc:MemTraits>
+      <edc:DataMemTraits edc:addrinc="0x2" edc:locsize="0x2" edc:wordimpl="0xffff" edc:wordinit="0x0" edc:wordsafe="0xffff" edc:wordsize="0x2"/>
+    </edc:MemTraits>
+  </edc:ArchDef>
+  <edc:SFRDef edc:access="n-nnnnnn--------" edc:cname="REFOCON" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="0-000000--------" edc:name="REFOCON" edc:nzwidth="0x10" edc:por="0-000000--------">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:AdjustPoint edc:offset="8"/>
+        <edc:SFRFieldDef edc:cname="RODIV" edc:desc="" edc:mask="0xf" edc:name="RODIV" edc:nzwidth="0x4"/>
+        <edc:SFRFieldDef edc:cname="ROSEL" edc:desc="" edc:mask="0x1" edc:name="ROSEL" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="ROSSLP" edc:desc="" edc:mask="0x1" edc:name="ROSSLP" edc:nzwidth="0x1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="ROEN" edc:desc="" edc:mask="0x1" edc:name="ROEN" edc:nzwidth="0x1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:AdjustPoint edc:offset="8"/>
+        <edc:SFRFieldDef edc:cname="RODIV0" edc:desc="" edc:mask="0x1" edc:name="RODIV0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="RODIV1" edc:desc="" edc:mask="0x1" edc:name="RODIV1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="RODIV2" edc:desc="" edc:mask="0x1" edc:name="RODIV2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="RODIV3" edc:desc="" edc:mask="0x1" edc:name="RODIV3" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="3"/>
+        <edc:SFRFieldDef edc:cname="ROON" edc:desc="" edc:mask="0x1" edc:name="ROON" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+</edc:Module>

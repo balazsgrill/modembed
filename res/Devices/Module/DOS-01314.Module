@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:Module xmlns:edc="http://crownking/edc" edc:dosid="DOS-01314" edc:modid="tmr_16b_v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/Module.xsd">
+  <edc:ArchDef edc:desc="" edc:name="">
+    <edc:MemTraits>
+      <edc:DataMemTraits edc:addrinc="0x2" edc:locsize="0x2" edc:wordimpl="0xffff" edc:wordinit="0x0" edc:wordsafe="0xffff" edc:wordsize="0x2"/>
+    </edc:MemTraits>
+  </edc:ArchDef>
+  <edc:SFRDef edc:access="nnnnnnnnnnnnnnnn" edc:cname="TMR%x%" edc:desc="" edc:impl="0xffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="0000000000000000" edc:name="TMR%x%" edc:nzwidth="16" edc:por="0000000000000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="TMR%x%" edc:desc="" edc:mask="0xffff" edc:name="TMR%x%" edc:nzwidth="16"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnnnnnnnnnn" edc:cname="PR%x%" edc:desc="" edc:impl="0xffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="1111111111111111" edc:name="PR%x%" edc:nzwidth="16" edc:por="1111111111111111">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="PR%x%" edc:desc="" edc:mask="0xffff" edc:name="PR%x%" edc:nzwidth="16"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="n-n---nn-nnn-nn-" edc:cname="T%x%CON" edc:desc="" edc:impl="0xa376" edc:isindirect="false" edc:isvolatile="true" edc:mclr="0-0---00-000-00-" edc:name="T%x%CON" edc:nzwidth="16" edc:por="0-0---00-000-00-">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="TCS" edc:desc="" edc:mask="0x1" edc:name="TCS" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="TSYNC" edc:desc="" edc:mask="0x1" edc:name="TSYNC" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="TCKPS" edc:desc="" edc:mask="0x3" edc:name="TCKPS" edc:nzwidth="2"/>
+        <edc:SFRFieldDef edc:cname="TGATE" edc:desc="" edc:mask="0x1" edc:name="TGATE" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="TIECS" edc:desc="" edc:mask="0x3" edc:name="TIECS" edc:nzwidth="2"/>
+        <edc:AdjustPoint edc:offset="3"/>
+        <edc:SFRFieldDef edc:cname="TSIDL" edc:desc="" edc:mask="0x1" edc:name="TSIDL" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="TON" edc:desc="" edc:mask="0x1" edc:name="TON" edc:nzwidth="1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:AdjustPoint edc:offset="4"/>
+        <edc:SFRFieldDef edc:cname="TCKPS0" edc:desc="" edc:mask="0x1" edc:name="TCKPS0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="TCKPS1" edc:desc="" edc:mask="0x1" edc:name="TCKPS1" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="2"/>
+        <edc:SFRFieldDef edc:cname="T@ECS0" edc:desc="" edc:mask="0x1" edc:name="T@ECS0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="T@ECS1" edc:desc="" edc:mask="0x1" edc:name="T@ECS1" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnnnnnnnnnn" edc:cname="TMR%y%" edc:desc="" edc:impl="0xffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="0000000000000000" edc:name="TMR%y%" edc:nzwidth="16" edc:por="0000000000000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="TMR%y%" edc:desc="" edc:mask="0xffff" edc:name="TMR%y%" edc:nzwidth="16"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnnnnnnnnnn" edc:cname="TMR%z%HLD" edc:desc="" edc:impl="0xffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="0000000000000000" edc:name="TMR%z%HLD" edc:nzwidth="16" edc:por="0000000000000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="TMR%z%HLD" edc:desc="" edc:mask="0xffff" edc:name="TMR%z%HLD" edc:nzwidth="16"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnnnnnnnnnn" edc:cname="TMR%z%" edc:desc="" edc:impl="0xffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="0000000000000000" edc:name="TMR%z%" edc:nzwidth="16" edc:por="0000000000000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="TMR%z%" edc:desc="" edc:mask="0xffff" edc:name="TMR%z%" edc:nzwidth="16"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnnnnnnnnnn" edc:cname="PR%y%" edc:desc="" edc:impl="0xffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="1111111111111111" edc:name="PR%y%" edc:nzwidth="16" edc:por="1111111111111111">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="PR%y%" edc:desc="" edc:mask="0xffff" edc:name="PR%y%" edc:nzwidth="16"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnnnnnnnnnn" edc:cname="PR%z%" edc:desc="" edc:impl="0xffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="1111111111111111" edc:name="PR%z%" edc:nzwidth="16" edc:por="1111111111111111">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="PR%z%" edc:desc="" edc:mask="0xffff" edc:name="PR%z%" edc:nzwidth="16"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="n-n------nnnn-n-" edc:cname="T%y%CON" edc:desc="" edc:impl="0xa07a" edc:isindirect="false" edc:isvolatile="true" edc:mclr="0-0------0000-0-" edc:name="T%y%CON" edc:nzwidth="16" edc:por="0-0------0000-0-">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="TCS" edc:desc="" edc:mask="0x1" edc:name="TCS" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="T%y%x" edc:desc="" edc:mask="0x1" edc:name="T%y%x" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="TCKPS" edc:desc="" edc:mask="0x3" edc:name="TCKPS" edc:nzwidth="2"/>
+        <edc:SFRFieldDef edc:cname="TGATE" edc:desc="" edc:mask="0x1" edc:name="TGATE" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="6"/>
+        <edc:SFRFieldDef edc:cname="TSIDL" edc:desc="" edc:mask="0x1" edc:name="TSIDL" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="TON" edc:desc="" edc:mask="0x1" edc:name="TON" edc:nzwidth="1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:AdjustPoint edc:offset="4"/>
+        <edc:SFRFieldDef edc:cname="TCKPS0" edc:desc="" edc:mask="0x1" edc:name="TCKPS0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="TCKPS1" edc:desc="" edc:mask="0x1" edc:name="TCKPS1" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="n-n------nnn--n-" edc:cname="T%z%CON" edc:desc="" edc:impl="0xa072" edc:isindirect="false" edc:isvolatile="true" edc:mclr="0-0------000--0-" edc:name="T%z%CON" edc:nzwidth="16" edc:por="0-0------000--0-">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="TCS" edc:desc="" edc:mask="0x1" edc:name="TCS" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="2"/>
+        <edc:SFRFieldDef edc:cname="TCKPS" edc:desc="" edc:mask="0x3" edc:name="TCKPS" edc:nzwidth="2"/>
+        <edc:SFRFieldDef edc:cname="TGATE" edc:desc="" edc:mask="0x1" edc:name="TGATE" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="6"/>
+        <edc:SFRFieldDef edc:cname="TSIDL" edc:desc="" edc:mask="0x1" edc:name="TSIDL" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="TON" edc:desc="" edc:mask="0x1" edc:name="TON" edc:nzwidth="1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:AdjustPoint edc:offset="4"/>
+        <edc:SFRFieldDef edc:cname="TCKPS0" edc:desc="" edc:mask="0x1" edc:name="TCKPS0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="TCKPS1" edc:desc="" edc:mask="0x1" edc:name="TCKPS1" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+</edc:Module>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:Module xmlns:edc="http://crownking/edc" edc:dosid="DOS-01450_pfm_control_v7_8bit" edc:modid="pfm_control_v7" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/Module.xsd">
+  <edc:ArchDef edc:desc="" edc:name="">
+    <edc:MemTraits>
+      <edc:DataMemTraits edc:addrinc="0x1" edc:locsize="0x1" edc:wordimpl="0xff" edc:wordinit="0x0" edc:wordsafe="0xff" edc:wordsize="0x1"/>
+    </edc:MemTraits>
+  </edc:ArchDef>
+  <edc:SFRDef edc:access="wwwwwwww" edc:cname="EECON2" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="--------" edc:name="EECON2" edc:nzwidth="8" edc:por="--------">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="EECON2" edc:desc="" edc:mask="0xff" edc:name="EECON2" edc:nzwidth="8"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="--nnnns-" edc:cname="EECON1" edc:desc="" edc:impl="0x3e" edc:isindirect="false" edc:isvolatile="true" edc:mclr="--00x00-" edc:name="EECON1" edc:nzwidth="8" edc:por="--00x00-">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="WR" edc:desc="" edc:mask="0x1" edc:name="WR" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="WREN" edc:desc="" edc:mask="0x1" edc:name="WREN" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="WRERR" edc:desc="" edc:mask="0x1" edc:name="WRERR" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="FREE" edc:desc="" edc:mask="0x1" edc:name="FREE" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="WWPROG" edc:desc="" edc:mask="0x1" edc:name="WWPROG" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="s-------" edc:cname="BULK_ERASE" edc:desc="" edc:impl="0x80" edc:isindirect="false" edc:isvolatile="true" edc:mclr="0-------" edc:name="BULK_ERASE" edc:nzwidth="8" edc:por="0-------">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:AdjustPoint edc:offset="7"/>
+        <edc:SFRFieldDef edc:cname="ERASE" edc:desc="" edc:mask="0x1" edc:name="ERASE" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+</edc:Module>

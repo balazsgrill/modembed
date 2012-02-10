@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:Module xmlns:edc="http://crownking/edc" edc:dosid="01446_rst_sib_v3_16bit" edc:modid="rst_sib_v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/Module.xsd">
+  <edc:ArchDef edc:desc="" edc:name="">
+    <edc:MemTraits>
+      <edc:DataMemTraits edc:addrinc="0x2" edc:locsize="0x2" edc:wordimpl="0xffff" edc:wordinit="0x0" edc:wordsafe="0xffff" edc:wordsize="0x2"/>
+    </edc:MemTraits>
+  </edc:ArchDef>
+  <edc:SFRDef edc:access="nn-n-nnnnnnnnnnn" edc:cname="RCON" edc:desc="" edc:impl="0xd7ff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00-0-00000000011" edc:name="RCON" edc:nzwidth="16" edc:por="00-0-00000000011">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="POR" edc:desc="" edc:mask="0x1" edc:name="POR" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="BOR" edc:desc="" edc:mask="0x1" edc:name="BOR" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="IDLE" edc:desc="" edc:mask="0x1" edc:name="IDLE" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SLEEP" edc:desc="" edc:mask="0x1" edc:name="SLEEP" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="WDTO" edc:desc="" edc:mask="0x1" edc:name="WDTO" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SWDTEN" edc:desc="" edc:mask="0x1" edc:name="SWDTEN" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SWR" edc:desc="" edc:mask="0x1" edc:name="SWR" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="EXTR" edc:desc="" edc:mask="0x1" edc:name="EXTR" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="VREGS" edc:desc="" edc:mask="0x1" edc:name="VREGS" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CM" edc:desc="" edc:mask="0x1" edc:name="CM" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="DPSLP" edc:desc="" edc:mask="0x1" edc:name="DPSLP" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="RETEN" edc:desc="" edc:mask="0x1" edc:name="RETEN" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="IOPUWR" edc:desc="" edc:mask="0x1" edc:name="IOPUWR" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="TRAPR" edc:desc="" edc:mask="0x1" edc:name="TRAPR" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="-----------rnnnn" edc:cname="RCON2" edc:desc="" edc:impl="0xf" edc:isindirect="false" edc:isvolatile="true" edc:mclr="------------xxxx" edc:name="RCON2" edc:nzwidth="16" edc:por="------------xxxx">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="VBAT" edc:desc="" edc:mask="0x1" edc:name="VBAT" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="VBPOR" edc:desc="" edc:mask="0x1" edc:name="VBPOR" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="VDDPOR" edc:desc="" edc:mask="0x1" edc:name="VDDPOR" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="VDDBOR" edc:desc="" edc:mask="0x1" edc:name="VDDBOR" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+</edc:Module>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:Module xmlns:edc="http://crownking/edc" edc:dosid="01614_tmr_timer0_v2_8bit" edc:modid="tmr_timer0_v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/Module.xsd">
+  <edc:ArchDef edc:desc="" edc:name="">
+    <edc:MemTraits>
+      <edc:DataMemTraits edc:addrinc="0x1" edc:locsize="0x1" edc:wordimpl="0xff" edc:wordinit="0x0" edc:wordsafe="0xff" edc:wordsize="0x1"/>
+    </edc:MemTraits>
+  </edc:ArchDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="T@CON" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="11111111" edc:name="T@CON" edc:nzwidth="8" edc:por="11111111">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="T@PS0" edc:desc="" edc:mask="0x1" edc:name="T@PS0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="T@PS1" edc:desc="" edc:mask="0x1" edc:name="T@PS1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="T@PS2" edc:desc="" edc:mask="0x1" edc:name="T@PS2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="PSA" edc:desc="" edc:mask="0x1" edc:name="PSA" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="T@CS0" edc:desc="" edc:mask="0x1" edc:name="T@CS0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="T@CS1" edc:desc="" edc:mask="0x1" edc:name="T@CS1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="T@8BIT" edc:desc="" edc:mask="0x1" edc:name="T@8BIT" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="TMR@ON" edc:desc="" edc:mask="0x1" edc:name="TMR@ON" edc:nzwidth="1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="T@PS" edc:desc="" edc:mask="0x7" edc:name="T@PS" edc:nzwidth="3"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="T@CS" edc:desc="" edc:mask="0x3" edc:name="T@CS" edc:nzwidth="2"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:JoinedSFRDef edc:cname="TMR@" edc:desc="" edc:name="TMR@" edc:nzwidth="0x10">
+    <edc:SFRModeList/>
+    <edc:SFRDef edc:access="nnnnnnnn" edc:cname="TMR@L" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="uuuuuuuu" edc:name="TMR@L" edc:nzwidth="8" edc:por="xxxxxxxx">
+      <edc:AliasList/>
+      <edc:SFRModeList>
+        <edc:SFRMode edc:id="DS.0">
+          <edc:SFRFieldDef edc:cname="TMR@L" edc:desc="" edc:mask="0xff" edc:name="TMR@L" edc:nzwidth="8"/>
+        </edc:SFRMode>
+      </edc:SFRModeList>
+    </edc:SFRDef>
+    <edc:SFRDef edc:access="nnnnnnnn" edc:cname="TMR@H" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="uuuuuuuu" edc:name="TMR@H" edc:nzwidth="8" edc:por="00000000">
+      <edc:AliasList/>
+      <edc:SFRModeList>
+        <edc:SFRMode edc:id="DS.0">
+          <edc:SFRFieldDef edc:cname="TMR@H" edc:desc="" edc:mask="0xff" edc:name="TMR@H" edc:nzwidth="8"/>
+        </edc:SFRMode>
+      </edc:SFRModeList>
+    </edc:SFRDef>
+  </edc:JoinedSFRDef>
+</edc:Module>

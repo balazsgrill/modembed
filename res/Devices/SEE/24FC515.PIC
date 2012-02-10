@@ -1,0 +1,18 @@
+<?xml version="1.0" ?><edc:PIC edc:arch="SEE" edc:desc="" edc:isextended="false" edc:name="24FC515" edc:procid="0xee1a" xmlns:edc="http://crownking/edc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
+  <edc:Power>
+    <edc:VPP edc:defaultvoltage="5.000" edc:maxvoltage="5.500" edc:minvoltage="2.500"/>
+    <edc:VDD edc:maxdefaultvoltage="5.000" edc:maxvoltage="5.500" edc:mindefaultvoltage="5.000" edc:minvoltage="2.500" edc:nominalvoltage="5.000"/>
+  </edc:Power>
+  <edc:Programming edc:arraysize="0x203" edc:erasealgo="0" edc:maskalgo="0x8" edc:memtech="ee" edc:ovrpgm="1" edc:pagesize="0x40" edc:protocol="I2C" edc:tries="1">
+    <edc:Wait edc:eedata="100"/>
+    <edc:Latches edc:eedata="0x40" edc:pgm="2"/>
+    <edc:SpeedRanges edc:highvoltagespeed="1MHz" edc:mediumvoltagespeed="1MHz"/>
+  </edc:Programming>
+  <edc:ArchDef edc:desc="SEE" edc:name="SEE">
+    <edc:MemTraits edc:addrinc="0x1" edc:locsize="0x1" edc:wordimpl="0xff" edc:wordinit="0xff" edc:wordsafe="0xff" edc:wordsize="0x1"/>
+  </edc:ArchDef>
+  <edc:ProgramSpace>
+    <edc:EEDataSector edc:beginaddr="0x0" edc:endaddr="0x10000" edc:regionid="eedata"/>
+  </edc:ProgramSpace>
+  <edc:DataSpace/>
+</edc:PIC>

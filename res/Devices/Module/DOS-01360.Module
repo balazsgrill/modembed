@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:Module xmlns:edc="http://crownking/edc" edc:dosid="DOS-01360" edc:modid="dac_nbit_ctrl_v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/Module.xsd">
+  <edc:ArchDef edc:desc="" edc:name="">
+    <edc:MemTraits>
+      <edc:DataMemTraits edc:addrinc="0x2" edc:locsize="0x2" edc:wordimpl="0xffff" edc:wordinit="0x0" edc:wordsafe="0xffff" edc:wordsize="0x2"/>
+    </edc:MemTraits>
+  </edc:ArchDef>
+  <edc:ArchDef edc:desc="" edc:name="">
+    <edc:MemTraits>
+      <edc:DataMemTraits edc:addrinc="0x2" edc:locsize="0x2" edc:wordimpl="0xffff" edc:wordinit="0x0" edc:wordsafe="0xffff" edc:wordsize="0x2"/>
+    </edc:MemTraits>
+  </edc:ArchDef>
+  <edc:SFRDef edc:access="n-nnn--nnnnnnnnn" edc:cname="DAC@CON" edc:desc="" edc:impl="0xb9ff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="0-000--000000000" edc:name="DAC@CON" edc:nzwidth="16" edc:por="0-000--000000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="DACREF" edc:desc="" edc:mask="0x3" edc:name="DACREF" edc:nzwidth="2"/>
+        <edc:SFRFieldDef edc:cname="DACTSEL" edc:desc="" edc:mask="0x1f" edc:name="DACTSEL" edc:nzwidth="5"/>
+        <edc:SFRFieldDef edc:cname="DACOE" edc:desc="" edc:mask="0x1" edc:name="DACOE" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="DACTRIG" edc:desc="" edc:mask="0x1" edc:name="DACTRIG" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="2"/>
+        <edc:SFRFieldDef edc:cname="DACFM" edc:desc="" edc:mask="0x1" edc:name="DACFM" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="DACSLP" edc:desc="" edc:mask="0x1" edc:name="DACSLP" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="DACSIDL" edc:desc="" edc:mask="0x1" edc:name="DACSIDL" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="DACEN" edc:desc="DAC Enable" edc:mask="0x1" edc:name="DACEN" edc:nzwidth="1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="REFSEL0" edc:desc="" edc:mask="0x1" edc:name="REFSEL0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="REFSEL1" edc:desc="" edc:mask="0x1" edc:name="REFSEL1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="DACTSEL0" edc:desc="" edc:mask="0x1" edc:name="DACTSEL0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="DACTSEL1" edc:desc="" edc:mask="0x1" edc:name="DACTSEL1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="DACTSEL2" edc:desc="" edc:mask="0x1" edc:name="DACTSEL2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="DACTSEL3" edc:desc="" edc:mask="0x1" edc:name="DACTSEL3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="DACTSEL4" edc:desc="" edc:mask="0x1" edc:name="DACTSEL4" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnnnnnnnnnn" edc:cname="DAC@DAT" edc:desc="" edc:impl="0xffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="0000000000000000" edc:name="DAC@DAT" edc:nzwidth="16" edc:por="0000000000000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="DACDAT" edc:desc="" edc:mask="0xffff" edc:name="DACDAT" edc:nzwidth="16"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+</edc:Module>

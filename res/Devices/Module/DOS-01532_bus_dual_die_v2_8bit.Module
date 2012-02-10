@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:Module xmlns:edc="http://crownking/edc" edc:dosid="DOS-01532_bus_dual_die_v2_8bit" edc:modid="bus_dual_die_v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/Module.xsd">
+  <edc:ArchDef edc:desc="" edc:name="">
+    <edc:MemTraits>
+      <edc:DataMemTraits edc:addrinc="0x1" edc:locsize="0x1" edc:wordimpl="0xff" edc:wordinit="0x0" edc:wordsafe="0xff" edc:wordsize="0x1"/>
+    </edc:MemTraits>
+  </edc:ArchDef>
+  <edc:SFRDef edc:access="nnnnn-nn" edc:cname="DUALTRIS" edc:desc="" edc:impl="0xfb" edc:isindirect="false" edc:isvolatile="true" edc:mclr="xxxxx0xx" edc:name="DUALTRIS" edc:nzwidth="8" edc:por="xxxxx0xx">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="TRISIO0" edc:desc="" edc:mask="0x1" edc:name="TRISIO0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="TRISIO1" edc:desc="" edc:mask="0x1" edc:name="TRISIO1" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="TRISSCL_SCK" edc:desc="" edc:mask="0x1" edc:name="TRISSCL_SCK" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="TRISSDA_SDI" edc:desc="" edc:mask="0x1" edc:name="TRISSDA_SDI" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="TRISSDO" edc:desc="" edc:mask="0x1" edc:name="TRISSDO" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="TRISSS" edc:desc="" edc:mask="0x1" edc:name="TRISSS" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="TRISREFO" edc:desc="" edc:mask="0x1" edc:name="TRISREFO" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnn-nn" edc:cname="DUALPORT" edc:desc="" edc:impl="0xfb" edc:isindirect="false" edc:isvolatile="true" edc:mclr="xxxxx0xx" edc:name="DUALPORT" edc:nzwidth="8" edc:por="xxxxx0xx">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="PORTIO0" edc:desc="" edc:mask="0x1" edc:name="PORTIO0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="PORTIO1" edc:desc="" edc:mask="0x1" edc:name="PORTIO1" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="PORTSCL_SCK" edc:desc="" edc:mask="0x1" edc:name="PORTSCL_SCK" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="PORTSDA_SDI" edc:desc="" edc:mask="0x1" edc:name="PORTSDA_SDI" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="PORTSDO" edc:desc="" edc:mask="0x1" edc:name="PORTSDO" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="PORTSS" edc:desc="" edc:mask="0x1" edc:name="PORTSS" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="PORTREFO" edc:desc="" edc:mask="0x1" edc:name="PORTREFO" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnn-nn" edc:cname="DUALLAT" edc:desc="" edc:impl="0xfb" edc:isindirect="false" edc:isvolatile="true" edc:mclr="xxxxx0xx" edc:name="DUALLAT" edc:nzwidth="8" edc:por="xxxxx0xx">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="LATIO0" edc:desc="" edc:mask="0x1" edc:name="LATIO0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LATIO1" edc:desc="" edc:mask="0x1" edc:name="LATIO1" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="LATSCL_SCK" edc:desc="" edc:mask="0x1" edc:name="LATSCL_SCK" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LATSDA_SDI" edc:desc="" edc:mask="0x1" edc:name="LATSDA_SDI" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LATSDO" edc:desc="" edc:mask="0x1" edc:name="LATSDO" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LATSS" edc:desc="" edc:mask="0x1" edc:name="LATSS" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LATREFO" edc:desc="" edc:mask="0x1" edc:name="LATREFO" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnn-nn" edc:cname="DUALPCFG" edc:desc="" edc:impl="0xfb" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="DUALPCFG" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="PCFGIO0" edc:desc="" edc:mask="0x1" edc:name="PCFGIO0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="PCFGIO1" edc:desc="" edc:mask="0x1" edc:name="PCFGIO1" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="PCFGSCL_SCK" edc:desc="" edc:mask="0x1" edc:name="PCFGSCL_SCK" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="PCFGSDA_SDI" edc:desc="" edc:mask="0x1" edc:name="PCFGSDA_SDI" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="PCFGSDO" edc:desc="" edc:mask="0x1" edc:name="PCFGSDO" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="PCFGSS" edc:desc="" edc:mask="0x1" edc:name="PCFGSS" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="PCFGREFO" edc:desc="" edc:mask="0x1" edc:name="PCFGREFO" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="DUALCON" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="DUALCON" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="MIRROREN" edc:desc="" edc:mask="0x1" edc:name="MIRROREN" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="USESPI" edc:desc="" edc:mask="0x1" edc:name="USESPI" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="USEIIC" edc:desc="" edc:mask="0x1" edc:name="USEIIC" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="USEREFO0" edc:desc="" edc:mask="0x1" edc:name="USEREFO0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="USEREFO1" edc:desc="" edc:mask="0x1" edc:name="USEREFO1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="USEINT0" edc:desc="" edc:mask="0x1" edc:name="USEINT0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="USEINT1" edc:desc="" edc:mask="0x1" edc:name="USEINT1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="DUALEN" edc:desc="" edc:mask="0x1" edc:name="DUALEN" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+</edc:Module>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:Module xmlns:edc="http://crownking/edc" edc:dosid="DOS-01563_lvd_ctrl_v5_8Bit" edc:modid="lvd_ctrl_v5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/Module.xsd">
+  <edc:ArchDef edc:desc="" edc:name="">
+    <edc:MemTraits>
+      <edc:DataMemTraits edc:addrinc="0x1" edc:locsize="0x1" edc:wordimpl="0xff" edc:wordinit="0x0" edc:wordsafe="0xff" edc:wordsize="0x1"/>
+    </edc:MemTraits>
+  </edc:ArchDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="LVDCON" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="xxxxxxxx" edc:name="LVDCON" edc:nzwidth="0x8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="LVDL" edc:desc="" edc:mask="0xf" edc:name="LVDL" edc:nzwidth="4"/>
+        <edc:SFRFieldDef edc:cname="LVDEN" edc:desc="" edc:mask="0x1" edc:name="LVDEN" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="IRVST" edc:desc="" edc:mask="0x1" edc:name="IRVST" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="BGVST" edc:desc="" edc:mask="0x1" edc:name="BGVST" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="VDIRMAG" edc:desc="" edc:mask="0x1" edc:name="VDIRMAG" edc:nzwidth="1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="LVDL0" edc:desc="" edc:mask="0x1" edc:name="LVDL0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LVDL1" edc:desc="" edc:mask="0x1" edc:name="LVDL1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LVDL2" edc:desc="" edc:mask="0x1" edc:name="LVDL2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LVDL3" edc:desc="" edc:mask="0x1" edc:name="LVDL3" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+    <edc:StimInfo edc:stimpcfiles="" edc:stimregfiles="w" edc:stimscl="rwb" edc:stimtype="Record"/>
+  </edc:SFRDef>
+</edc:Module>

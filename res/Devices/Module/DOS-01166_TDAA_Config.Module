@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:Module xmlns:edc="http://crownking/edc" edc:dosid="01166_TDAA_Config" edc:modid="TDAA_Config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/Module.xsd">
+  <edc:ArchDef edc:desc="" edc:name="">
+    <edc:MemTraits>
+      <edc:DataMemTraits edc:addrinc="0x4" edc:locsize="0x4" edc:wordimpl="0xffffffff" edc:wordinit="0x0" edc:wordsafe="0xffffffff" edc:wordsize="0x4"/>
+    </edc:MemTraits>
+  </edc:ArchDef>
+  <edc:SFRDef edc:access="----------------------------nn-n" edc:cname="DDPCON" edc:desc="" edc:impl="0xd" edc:isindirect="false" edc:isvolatile="true" edc:mclr="----------------------------10-0" edc:name="DDPCON" edc:nzwidth="32" edc:por="----------------------------10-0" edc:portals="- - -">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="TDOEN" edc:desc="" edc:mask="0x1" edc:name="TDOEN" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="TROEN" edc:desc="" edc:mask="0x1" edc:name="TROEN" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="JTAGEN" edc:desc="" edc:mask="0x1" edc:name="JTAGEN" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="--------------------------------" edc:cname="RESERVED1" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="--------------------------------" edc:name="RESERVED1" edc:nzwidth="32" edc:por="--------------------------------" edc:portals="- - -">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0"/>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr" edc:cname="DEVID" edc:desc="" edc:grp="CFG" edc:impl="0xfffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" edc:name="DEVID" edc:nzwidth="0x20" edc:por="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" edc:portals="- - -">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="DEVID" edc:desc="" edc:mask="0xfffffff" edc:name="DEVID" edc:nzwidth="0x1c"/>
+        <edc:SFRFieldDef edc:cname="VER" edc:desc="" edc:mask="0x1" edc:name="VER" edc:nzwidth="0x4"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="rrrrrrrrrrrrrrrrrrrrrrrrrrrrrr-r" edc:cname="SYSKEY" edc:desc="" edc:grp="CFG" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" edc:name="SYSKEY" edc:nzwidth="0x20" edc:por="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="SYSKEY" edc:desc="" edc:islanghidden="true" edc:mask="0xffffffff" edc:name="SYSKEY" edc:nzwidth="0x20"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+</edc:Module>

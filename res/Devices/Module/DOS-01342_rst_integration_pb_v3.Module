@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:Module xmlns:edc="http://crownking/edc" edc:dosid="01342_rst_integration_pb_v3" edc:modid="rst_integration_pb_v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/Module.xsd">
+  <edc:ArchDef edc:desc="" edc:name="">
+    <edc:MemTraits>
+      <edc:DataMemTraits edc:addrinc="0x4" edc:locsize="0x4" edc:wordimpl="0xffffffff" edc:wordinit="0x0" edc:wordsafe="0xffffffff" edc:wordsize="0x4"/>
+    </edc:MemTraits>
+  </edc:ArchDef>
+  <edc:SFRDef edc:access="----------------------nnnn-nnnnn" edc:cname="RCON" edc:desc="" edc:grp="RCON" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="----------------------0000-00011" edc:name="RCON" edc:nzwidth="0x20" edc:por="----------------------0000-00011" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="POR" edc:desc="" edc:mask="0x1" edc:name="POR" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="BOR" edc:desc="" edc:mask="0x1" edc:name="BOR" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="IDLE" edc:desc="" edc:mask="0x1" edc:name="IDLE" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="SLEEP" edc:desc="" edc:mask="0x1" edc:name="SLEEP" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="WDTO" edc:desc="" edc:mask="0x1" edc:name="WDTO" edc:nzwidth="0x1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="SWR" edc:desc="" edc:mask="0x1" edc:name="SWR" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="EXTR" edc:desc="" edc:mask="0x1" edc:name="EXTR" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="VREGS" edc:desc="" edc:mask="0x1" edc:name="VREGS" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="CMR" edc:desc="" edc:mask="0x1" edc:name="CMR" edc:nzwidth="0x1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="w" edc:desc="" edc:mask="0x1" edc:name="w" edc:nzwidth="0x20"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="-------------------------------n" edc:cname="RSWRST" edc:desc="" edc:grp="RCON" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="-------------------------------0" edc:name="RSWRST" edc:nzwidth="0x20" edc:por="-------------------------------0" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="SWRST" edc:desc="" edc:mask="0x1" edc:name="SWRST" edc:nzwidth="0x1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="w" edc:desc="" edc:mask="0x1" edc:name="w" edc:nzwidth="0x20"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+</edc:Module>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:Module xmlns:edc="http://crownking/edc" edc:desc="Complementary Waveform Generator" edc:dosid="01488_CWG_" edc:modid="wg_cmpl_v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/Module.xsd">
+  <edc:ArchDef edc:desc="" edc:name="">
+    <edc:MemTraits>
+      <edc:DataMemTraits edc:addrinc="0x1" edc:locsize="0x1" edc:wordimpl="0xff" edc:wordinit="0x0" edc:wordsafe="0xff" edc:wordsize="0x1"/>
+    </edc:MemTraits>
+  </edc:ArchDef>
+  <edc:SFRDef edc:access="nnnnn-nn" edc:cname="CWG@CON0" edc:desc="Configurable logic cell control" edc:impl="0xfb" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000-00" edc:name="CWG@CON0" edc:nzwidth="8" edc:por="00000-00">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="CWG@CS0" edc:desc="" edc:mask="0x1" edc:name="CWG@CS0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CWG@CS1" edc:desc="" edc:mask="0x1" edc:name="CWG@CS1" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="CWG@BPOL" edc:desc="" edc:mask="0x1" edc:name="CWG@BPOL" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CWG@APOL" edc:desc="" edc:mask="0x1" edc:name="CWG@APOL" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CWG@BOE" edc:desc="" edc:mask="0x1" edc:name="CWG@BOE" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CWG@AOE" edc:desc="" edc:mask="0x1" edc:name="CWG@AOE" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CWG@EN" edc:desc="" edc:mask="0x1" edc:name="CWG@EN" edc:nzwidth="1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="LCMODE0" edc:desc="" edc:mask="0x1" edc:name="LCMODE0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LCMODE1" edc:desc="" edc:mask="0x1" edc:name="LCMODE1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LCMODE2" edc:desc="" edc:mask="0x1" edc:name="LCMODE2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LCFIE" edc:desc="" edc:mask="0x1" edc:name="LCFIE" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LCRIE" edc:desc="" edc:mask="0x1" edc:name="LCRIE" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LCOUT" edc:desc="" edc:mask="0x1" edc:name="LCOUT" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LCOE" edc:desc="" edc:mask="0x1" edc:name="LCOE" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LCEN" edc:desc="" edc:mask="0x1" edc:name="LCEN" edc:nzwidth="1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.1">
+        <edc:SFRFieldDef edc:cname="LC@MODE" edc:desc="" edc:mask="0x7" edc:name="LC@MODE" edc:nzwidth="3"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="CWG@ASD0" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="uuuuuuuu" edc:name="CWG@ASD0" edc:nzwidth="8" edc:por="xxxxxxxx">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="CWG@IS0" edc:desc="" edc:mask="0x1" edc:name="CWG@IS0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CWG@IS1" edc:desc="" edc:mask="0x1" edc:name="CWG@IS1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CWG@IS2" edc:desc="" edc:mask="0x1" edc:name="CWG@IS2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CWG@IS3" edc:desc="" edc:mask="0x1" edc:name="CWG@IS3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CWG@SSB0" edc:desc="" edc:mask="0x1" edc:name="CWG@SSB0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CWG@SSB1" edc:desc="" edc:mask="0x1" edc:name="CWG@SSB1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CWG@SSA0" edc:desc="" edc:mask="0x1" edc:name="CWG@SSA0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CWG@SSA1" edc:desc="" edc:mask="0x1" edc:name="CWG@SSA1" edc:nzwidth="1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="CWG@IS" edc:desc="" edc:mask="0xf" edc:name="CWG@IS" edc:nzwidth="4"/>
+        <edc:SFRFieldDef edc:cname="CWG@SSB" edc:desc="" edc:mask="0x3" edc:name="CWG@SSB" edc:nzwidth="2"/>
+        <edc:SFRFieldDef edc:cname="CWG@SSA" edc:desc="" edc:mask="0x3" edc:name="CWG@SSA" edc:nzwidth="2"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.1">
+        <edc:SFRFieldDef edc:cname="CWGIS0" edc:desc="" edc:mask="0x1" edc:name="CWGIS0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CWGIS1" edc:desc="" edc:mask="0x1" edc:name="CWGIS1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CWGIS2" edc:desc="" edc:mask="0x1" edc:name="CWGIS2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CWGIS3" edc:desc="" edc:mask="0x1" edc:name="CWGIS3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CWGSSB0" edc:desc="" edc:mask="0x1" edc:name="CWGSSB0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CWGSSB1" edc:desc="" edc:mask="0x1" edc:name="CWGSSB1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CWGSSA0" edc:desc="" edc:mask="0x1" edc:name="CWGSSA0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CWG2SSA1" edc:desc="" edc:mask="0x1" edc:name="CWG2SSA1" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nn--nnnn" edc:cname="CWG@ASD1" edc:desc="" edc:impl="0xcf" edc:isindirect="false" edc:isvolatile="true" edc:mclr="uu--uuuu" edc:name="CWG@ASD1" edc:nzwidth="8" edc:por="xx--xxxx">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="CWG@AS%src0%E" edc:desc="" edc:mask="0x1" edc:name="CWG@AS%src0%E" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CWG@AS%src1%E" edc:desc="" edc:mask="0x1" edc:name="CWG@AS%src1%E" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CWG@AS%src@%E" edc:desc="" edc:mask="0x1" edc:name="CWG@AS%src@%E" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CWG@AS%src3%E" edc:desc="" edc:mask="0x1" edc:name="CWG@AS%src3%E" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="2"/>
+        <edc:SFRFieldDef edc:cname="CWG@ARE" edc:desc="" edc:mask="0x1" edc:name="CWG@ARE" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CWG@ASE" edc:desc="" edc:mask="0x1" edc:name="CWG@ASE" edc:nzwidth="1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="CWGAS%src0%E" edc:desc="" edc:mask="0x1" edc:name="CWGAS%src0%E" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CWGAS%src1%E" edc:desc="" edc:mask="0x1" edc:name="CWGAS%src1%E" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CWGAS%src2%E" edc:desc="" edc:mask="0x1" edc:name="CWGAS%src2%E" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CWGAS%src3%E" edc:desc="" edc:mask="0x1" edc:name="CWGAS%src3%E" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="2"/>
+        <edc:SFRFieldDef edc:cname="CWGARE" edc:desc="" edc:mask="0x1" edc:name="CWGARE" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CWGASE" edc:desc="" edc:mask="0x1" edc:name="CWGASE" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="--nnnnnn" edc:cname="CWG@RC" edc:desc="" edc:impl="0x3f" edc:isindirect="false" edc:isvolatile="true" edc:mclr="--uuuuuu" edc:name="CWG@RC" edc:nzwidth="8" edc:por="--xxxxxx">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="CWG@RCNT0" edc:desc="" edc:mask="0x1" edc:name="CWG@RCNT0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CWG@RCNT1" edc:desc="" edc:mask="0x1" edc:name="CWG@RCNT1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CWG@RCNT2" edc:desc="" edc:mask="0x1" edc:name="CWG@RCNT2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CWG@RCNT3" edc:desc="" edc:mask="0x1" edc:name="CWG@RCNT3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CWG@RCNT4" edc:desc="" edc:mask="0x1" edc:name="CWG@RCNT4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CWG@RCNT5" edc:desc="" edc:mask="0x1" edc:name="CWG@RCNT5" edc:nzwidth="1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="CWG@RCNT" edc:desc="" edc:mask="0x3f" edc:name="CWG@RCNT" edc:nzwidth="6"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="--nnnnnn" edc:cname="CWG@FC" edc:desc="" edc:impl="0x3f" edc:isindirect="false" edc:isvolatile="true" edc:mclr="--uuuuuu" edc:name="CWG@FC" edc:nzwidth="8" edc:por="--xxxxxx">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="CWG@FCNT0" edc:desc="" edc:mask="0x1" edc:name="CWG@FCNT0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CWG@FCNT1" edc:desc="" edc:mask="0x1" edc:name="CWG@FCNT1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CWG@FCNT2" edc:desc="" edc:mask="0x1" edc:name="CWG@FCNT2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CWG@FCNT3" edc:desc="" edc:mask="0x1" edc:name="CWG@FCNT3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CWG@FCNT4" edc:desc="" edc:mask="0x1" edc:name="CWG@FCNT4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CWG@FCNT5" edc:desc="" edc:mask="0x1" edc:name="CWG@FCNT5" edc:nzwidth="1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="CWG@FCNT" edc:desc="" edc:mask="0x3f" edc:name="CWG@FCNT" edc:nzwidth="6"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+</edc:Module>

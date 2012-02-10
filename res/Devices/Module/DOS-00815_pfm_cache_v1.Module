@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:Module xmlns:edc="http://crownking/edc" edc:dosid="00815_pfm_cache_v1" edc:modid="icap_pb_v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/Module.xsd">
+  <edc:ArchDef edc:desc="" edc:name="">
+    <edc:MemTraits>
+      <edc:DataMemTraits edc:addrinc="0x4" edc:locsize="0x4" edc:wordimpl="0xffffffff" edc:wordinit="0x0" edc:wordsafe="0xffffffff" edc:wordsize="0x4"/>
+    </edc:MemTraits>
+  </edc:ArchDef>
+  <edc:SFRDef edc:access="---------------n------nn--nn-nnn" edc:cname="CHECON" edc:desc="" edc:grp="PCACHE" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="---------------0------00--00-111" edc:name="CHECON" edc:nzwidth="0x20" edc:por="---------------0------00--00-111" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="PFMWS" edc:desc="" edc:mask="0x7" edc:name="PFMWS" edc:nzwidth="0x3"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="PREFEN" edc:desc="" edc:mask="0x3" edc:name="PREFEN" edc:nzwidth="0x2"/>
+        <edc:AdjustPoint edc:offset="2"/>
+        <edc:SFRFieldDef edc:cname="DCSZ" edc:desc="" edc:mask="0x3" edc:name="DCSZ" edc:nzwidth="0x2"/>
+        <edc:AdjustPoint edc:offset="6"/>
+        <edc:SFRFieldDef edc:cname="CHECOH" edc:desc="" edc:mask="0x1" edc:name="CHECOH" edc:nzwidth="0x1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="w" edc:desc="" edc:mask="0x1" edc:name="w" edc:nzwidth="0x20"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn" edc:cname="CHEACC" edc:desc="" edc:grp="PCACHE" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000000000000000000000000000" edc:name="CHEACC" edc:nzwidth="0x20" edc:por="00000000000000000000000000000000" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="CHEIDX" edc:desc="" edc:islanghidden="true" edc:mask="0xf" edc:name="CHEIDX" edc:nzwidth="0x4"/>
+        <edc:AdjustPoint edc:offset="27"/>
+        <edc:SFRFieldDef edc:cname="CHEWEN" edc:desc="" edc:islanghidden="true" edc:mask="0x1" edc:name="CHEWEN" edc:nzwidth="0x1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="n-------nnnnnnnnnnnnnnnnnnnnnnn-" edc:cname="CHETAG" edc:desc="" edc:grp="PCACHE" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="0xxxxxxxxxxxxxxxxxxxxxxxxxxx0010" edc:name="CHETAG" edc:nzwidth="0x20" edc:por="0xxxxxxxxxxxxxxxxxxxxxxxxxxx0010" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="LTYPE" edc:desc="" edc:mask="0x1" edc:name="LTYPE" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="LLOCK" edc:desc="" edc:mask="0x1" edc:name="LLOCK" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="LVALID" edc:desc="" edc:mask="0x1" edc:name="LVALID" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="LTAG" edc:desc="" edc:mask="0x1" edc:name="LTAG" edc:nzwidth="0x14"/>
+        <edc:AdjustPoint edc:offset="7"/>
+        <edc:SFRFieldDef edc:cname="LTAGBOOT" edc:desc="" edc:mask="0x1f" edc:name="LTAGBOOT" edc:nzwidth="0x1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="w" edc:desc="" edc:mask="0x1" edc:name="w" edc:nzwidth="0x20"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn" edc:cname="CHEMSK" edc:desc="" edc:grp="PCACHE" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000000000000000000000000000" edc:name="CHEMSK" edc:nzwidth="0x20" edc:por="00000000000000000000000000000000" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:AdjustPoint edc:offset="5"/>
+        <edc:SFRFieldDef edc:cname="LMASK" edc:desc="" edc:islanghidden="true" edc:mask="0x7ff" edc:name="LMASK" edc:nzwidth="0xb"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn" edc:cname="CHEW0" edc:desc="" edc:grp="CACHE" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" edc:name="CHEW0" edc:nzwidth="0x20" edc:por="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" edc:portals="- - -">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="CHEW0" edc:desc="" edc:islanghidden="true" edc:mask="0xffffffff" edc:name="CHEW0" edc:nzwidth="0x20"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn" edc:cname="CHEW1" edc:desc="" edc:grp="CACHE" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" edc:name="CHEW1" edc:nzwidth="0x20" edc:por="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" edc:portals="- - -">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="CHEW1" edc:desc="" edc:islanghidden="true" edc:mask="0xffffffff" edc:name="CHEW1" edc:nzwidth="0x20"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn" edc:cname="CHEW2" edc:desc="" edc:grp="CACHE" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" edc:name="CHEW2" edc:nzwidth="0x20" edc:por="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" edc:portals="- - -">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="CHEW2" edc:desc="" edc:islanghidden="true" edc:mask="0xffffffff" edc:name="CHEW2" edc:nzwidth="0x20"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn" edc:cname="CHEW3" edc:desc="" edc:grp="CACHE" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" edc:name="CHEW3" edc:nzwidth="0x20" edc:por="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" edc:portals="- - -">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="CHEW3" edc:desc="" edc:islanghidden="true" edc:mask="0xffffffff" edc:name="CHEW3" edc:nzwidth="0x20"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn" edc:cname="CHELRU" edc:desc="" edc:grp="CACHE" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="0000000000000000000000000000000" edc:name="CHELRU" edc:nzwidth="0x20" edc:por="00000000000000000000000000000000" edc:portals="- - -">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="CHELRU" edc:desc="" edc:islanghidden="true" edc:mask="0x1ffffff" edc:name="CHELRU" edc:nzwidth="0x19"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="cccccccccccccccccccccccccccccccc" edc:cname="CHEHIT" edc:desc="" edc:grp="CACHE" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" edc:name="CHEHIT" edc:nzwidth="0x20" edc:por="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" edc:portals="- - -">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="CHEHIT" edc:desc="" edc:islanghidden="true" edc:mask="0xffffffff" edc:name="CHEHIT" edc:nzwidth="0x20"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="cccccccccccccccccccccccccccccccc" edc:cname="CHEMIS" edc:desc="" edc:grp="CACHE" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" edc:name="CHEMIS" edc:nzwidth="0x20" edc:por="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" edc:portals="- - -">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="CHEMIS" edc:desc="" edc:islanghidden="true" edc:mask="0xffffffff" edc:name="CHEMIS" edc:nzwidth="0x20"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="--------------------------------" edc:cname="RESERVED1" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="--------------------------------" edc:name="RESERVED1" edc:nzwidth="32" edc:por="--------------------------------" edc:portals="- - -">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0"/>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="cccccccccccccccccccccccccccccccc" edc:cname="CHEPFABT" edc:desc="" edc:grp="CACHE" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" edc:name="CHEPFABT" edc:nzwidth="0x20" edc:por="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" edc:portals="- - -">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="CHEPFABT" edc:desc="" edc:islanghidden="true" edc:mask="0xffffffff" edc:name="CHEPFABT" edc:nzwidth="0x20"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+</edc:Module>

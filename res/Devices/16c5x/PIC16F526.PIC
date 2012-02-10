@@ -1,0 +1,485 @@
+<?xml version="1.0" ?><edc:PIC edc:arch="16c5x" edc:desc="" edc:hasfreeze="false" edc:informedby="DOS PS DS" edc:isextended="false" edc:name="PIC16F526" edc:procid="0xf526" xmlns:edc="http://crownking/edc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
+  <edc:Power>
+    <edc:VPP edc:defaultvoltage="11.000" edc:maxvoltage="12.000" edc:minvoltage="10.000"/>
+    <edc:VDD edc:maxdefaultvoltage="5.500" edc:maxvoltage="5.500" edc:mindefaultvoltage="3.000" edc:minvoltage="2.000" edc:nominalvoltage="5.000"/>
+  </edc:Power>
+  <edc:Programming edc:erasealgo="3" edc:lvpthresh="0" edc:memtech="ee" edc:tries="1">
+    <edc:Wait edc:cfg="2000" edc:eedata="2000" edc:erase="10000" edc:lvpgm="2000" edc:pgm="3000" edc:userid="2000"/>
+    <edc:Latches edc:cfg="1" edc:eedata="1" edc:pgm="1" edc:userid="1"/>
+  </edc:Programming>
+  <edc:ArchDef edc:desc="16c5x" edc:name="16c5x">
+    <edc:MemTraits edc:hwstackdepth="2">
+      <edc:ProgramMemTraits edc:locsize="0x2" edc:wordimpl="0x3fff" edc:wordinit="0x3fff" edc:wordsafe="0x3fff" edc:wordsize="0x2"/>
+      <edc:DataMemTraits edc:locsize="0x1" edc:wordimpl="0xff" edc:wordinit="0x0" edc:wordsafe="0xff" edc:wordsize="0x1"/>
+    </edc:MemTraits>
+  </edc:ArchDef>
+  <edc:Breakpoints edc:hwbpcount="1"/>
+  <edc:ProgramSpace>
+    <edc:CodeSector edc:beginaddr="0x0" edc:endaddr="0x200" edc:issection="true" edc:regionid="page0" edc:sectiondesc="ROM code space" edc:sectionname="PROG0"/>
+    <edc:CodeSector edc:beginaddr="0x200" edc:endaddr="0x400" edc:issection="true" edc:regionid="page1" edc:sectiondesc="ROM code space" edc:sectionname="PROG1"/>
+    <edc:TestZone edc:beginaddr="0x440" edc:endaddr="0x4a0" edc:regionid="testmem"/>
+    <edc:CalDataZone edc:beginaddr="0x3ff" edc:endaddr="0x400" edc:regionid="calmem"/>
+    <edc:FlashDataSector edc:beginaddr="0x400" edc:endaddr="0x440" edc:issection="true" edc:regionid="flashdata" edc:sectiondesc="Writable Flash Data Memory" edc:sectionname="FLASHDATA"/>
+    <edc:ConfigFuseSector edc:beginaddr="0xfff" edc:endaddr="0x1000" edc:regionid=".config">
+      <edc:DCRDef edc:access="nnnnnnnn" edc:cname="CONFIG" edc:default="0xff" edc:desc="" edc:impl="0xff" edc:name="CONFIG" edc:nzwidth="0x8" edc:unused="0x0000" edc:useinchecksum="0xff">
+        <edc:DCRModeList>
+          <edc:DCRMode edc:id="DS.0">
+            <edc:DCRFieldDef edc:cname="FOSC" edc:desc="Oscillator" edc:mask="0x7" edc:name="FOSC" edc:nzwidth="0x3">
+              <edc:DCRFieldSemantic edc:cname="LP" edc:desc="LP oscillator and 18 ms DRT" edc:when="(field &amp; 0x7) == 0x0">
+                <edc:AliasList>
+                  <edc:LegacyAlias edc:cname="_LP_OSC"/>
+                </edc:AliasList>
+              </edc:DCRFieldSemantic>
+              <edc:DCRFieldSemantic edc:cname="XT" edc:desc="XT oscillator and 18 ms DRT" edc:when="(field &amp; 0x7) == 0x1">
+                <edc:AliasList>
+                  <edc:LegacyAlias edc:cname="_XT_OSC"/>
+                </edc:AliasList>
+              </edc:DCRFieldSemantic>
+              <edc:DCRFieldSemantic edc:cname="HS" edc:desc="HS oscillator and 18 ms DRT" edc:when="(field &amp; 0x7) == 0x2">
+                <edc:AliasList>
+                  <edc:LegacyAlias edc:cname="_HS_OSC"/>
+                </edc:AliasList>
+              </edc:DCRFieldSemantic>
+              <edc:DCRFieldSemantic edc:cname="EC" edc:desc="EC oscillator with RB4 function on RB4/OSC2/CLKOUT and 1 ms DRT" edc:when="(field &amp; 0x7) == 0x3">
+                <edc:AliasList>
+                  <edc:LegacyAlias edc:cname="_EC_OSC"/>
+                </edc:AliasList>
+              </edc:DCRFieldSemantic>
+              <edc:DCRFieldSemantic edc:cname="INTRC_RB4" edc:desc="INTRC with RB4 function on RB4/OSC2/CLKOUT and 1 ms DRT" edc:when="(field &amp; 0x7) == 0x4">
+                <edc:AliasList>
+                  <edc:LegacyAlias edc:cname="_IntRC_OSC_RB4"/>
+                </edc:AliasList>
+              </edc:DCRFieldSemantic>
+              <edc:DCRFieldSemantic edc:cname="INTRC_CLKOUT" edc:desc="INTRC with CLKOUT function on RB4/OSC2/CLKOUT and 1 ms DRT" edc:when="(field &amp; 0x7) == 0x5">
+                <edc:AliasList>
+                  <edc:LegacyAlias edc:cname="_IntRC_OSC_CLKOUT"/>
+                </edc:AliasList>
+              </edc:DCRFieldSemantic>
+              <edc:DCRFieldSemantic edc:cname="ExtRC_RB4" edc:desc="EXTRC with RB4 function on RB4/OSC2/CLKOUT and 1 ms DRT" edc:when="(field &amp; 0x7) == 0x6">
+                <edc:AliasList>
+                  <edc:LegacyAlias edc:cname="_ExtRC_OSC_RB4"/>
+                </edc:AliasList>
+              </edc:DCRFieldSemantic>
+              <edc:DCRFieldSemantic edc:cname="ExtRC_CLKOUT" edc:desc="EXTRC with CLKOUT function on RB4/OSC2/CLKOUT and 1 ms DRT" edc:when="(field &amp; 0x7) == 0x7">
+                <edc:AliasList>
+                  <edc:LegacyAlias edc:cname="_ExtRC_OSC_CLKOUT"/>
+                </edc:AliasList>
+              </edc:DCRFieldSemantic>
+            </edc:DCRFieldDef>
+            <edc:DCRFieldDef edc:cname="WDTE" edc:desc="Watchdog Timer Enable bit" edc:mask="0x1" edc:name="WDTE" edc:nzwidth="0x1">
+              <edc:DCRFieldSemantic edc:cname="ON" edc:desc="Enabled" edc:when="(field &amp; 0x1) == 0x1"/>
+              <edc:DCRFieldSemantic edc:cname="OFF" edc:desc="Disabled" edc:when="(field &amp; 0x1) == 0x0"/>
+            </edc:DCRFieldDef>
+            <edc:DCRFieldDef edc:cname="CP" edc:desc="Code Protection bit" edc:mask="0x1" edc:name="CP" edc:nzwidth="0x1">
+              <edc:DCRFieldSemantic edc:cname="OFF" edc:desc="Code protection off" edc:when="(field &amp; 0x1) == 0x1">
+                <edc:Checksum edc:beginaddr="0x0" edc:checksumalgo="0x0" edc:endaddr="0x0"/>
+              </edc:DCRFieldSemantic>
+              <edc:DCRFieldSemantic edc:cname="ON" edc:desc="Code protection on" edc:when="(field &amp; 0x1) == 0x0">
+                <edc:Checksum edc:beginaddr="0x40" edc:checksumalgo="0x20" edc:endaddr="0x3ff"/>
+              </edc:DCRFieldSemantic>
+            </edc:DCRFieldDef>
+            <edc:DCRFieldDef edc:cname="MCLRE" edc:desc="Master Clear Enable bit" edc:mask="0x1" edc:name="MCLRE" edc:nzwidth="0x1">
+              <edc:DCRFieldSemantic edc:cname="ON" edc:desc="RB3/MCLR functions as MCLR" edc:when="(field &amp; 0x1) == 0x1"/>
+              <edc:DCRFieldSemantic edc:cname="OFF" edc:desc="RB3/MCLR functions as RB3, MCLR internally tied to Vdd" edc:when="(field &amp; 0x1) == 0x0"/>
+            </edc:DCRFieldDef>
+            <edc:DCRFieldDef edc:cname="IOSCFS" edc:desc="Internal Oscillator Frequency Select" edc:mask="0x1" edc:name="IOSCFS" edc:nzwidth="0x1">
+              <edc:DCRFieldSemantic edc:cname="8MHz" edc:desc="8 MHz INTOSC Speed" edc:when="(field &amp; 0x1) == 0x1"/>
+              <edc:DCRFieldSemantic edc:cname="4MHz" edc:desc="4 MHz INTOSC Speed" edc:when="(field &amp; 0x1) == 0x0"/>
+            </edc:DCRFieldDef>
+            <edc:DCRFieldDef edc:cname="CPDF" edc:desc="Code Protection bit - Flash Data Memory" edc:mask="0x1" edc:name="CPDF" edc:nzwidth="0x1">
+              <edc:DCRFieldSemantic edc:cname="OFF" edc:desc="Code protection off" edc:when="(field &amp; 0x1) == 0x1"/>
+              <edc:DCRFieldSemantic edc:cname="ON" edc:desc="Code protection on" edc:when="(field &amp; 0x1) == 0x0"/>
+            </edc:DCRFieldDef>
+          </edc:DCRMode>
+        </edc:DCRModeList>
+      </edc:DCRDef>
+    </edc:ConfigFuseSector>
+    <edc:UserIDSector edc:beginaddr="0x440" edc:endaddr="0x444" edc:issection="true" edc:regionid=".idlocs" edc:sectiondesc="ID locations" edc:sectionname="IDLOCS"/>
+  </edc:ProgramSpace>
+  <edc:DataSpace>
+    <edc:RegardlessOfMode>
+      <edc:SFRDataSector edc:bank="0" edc:beginaddr="0x0" edc:endaddr="0xd" edc:regionid="sfr0">
+        <edc:SFRDef edc:access="--------" edc:cname="INDF" edc:desc="" edc:impl="0xff" edc:isindirect="true" edc:isvolatile="true" edc:mclr="--------" edc:name="INDF" edc:nzwidth="0x8" edc:por="--------">
+          <edc:SFRModeList>
+            <edc:SFRMode edc:id="DS.0">
+              <edc:SFRFieldDef edc:cname="INDF" edc:desc="" edc:mask="0xff" edc:name="INDF" edc:nzwidth="0x8"/>
+            </edc:SFRMode>
+          </edc:SFRModeList>
+        </edc:SFRDef>
+        <edc:SFRDef edc:access="nnnnnnnn" edc:cname="TMR0" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="uuuuuuuu" edc:name="TMR0" edc:nzwidth="0x8" edc:por="xxxxxxxx">
+          <edc:SFRModeList>
+            <edc:SFRMode edc:id="DS.0">
+              <edc:SFRFieldDef edc:cname="TMR0" edc:desc="" edc:mask="0xff" edc:name="TMR0" edc:nzwidth="0x8"/>
+            </edc:SFRMode>
+          </edc:SFRModeList>
+          <edc:StimInfo edc:stimpcfiles="w" edc:stimregfiles="w" edc:stimscl="rwb" edc:stimtype="Integer"/>
+        </edc:SFRDef>
+        <edc:SFRDef edc:access="nnnnnnnn" edc:cname="PCL" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="11111111" edc:name="PCL" edc:nzwidth="0x8" edc:por="11111111">
+          <edc:SFRModeList>
+            <edc:SFRMode edc:id="DS.0">
+              <edc:SFRFieldDef edc:cname="PCL" edc:desc="" edc:mask="0xff" edc:name="PCL" edc:nzwidth="0x8"/>
+            </edc:SFRMode>
+          </edc:SFRModeList>
+          <edc:StimInfo edc:stimpcfiles="rw" edc:stimregfiles="w" edc:stimscl="rwb" edc:stimtype="Record"/>
+        </edc:SFRDef>
+        <edc:SFRDef edc:access="nnnrrnnn" edc:cname="STATUS" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00011uuu" edc:name="STATUS" edc:nzwidth="0x8" edc:por="00011xxx">
+          <edc:SFRModeList>
+            <edc:SFRMode edc:id="DS.0">
+              <edc:SFRFieldDef edc:cname="C" edc:desc="" edc:mask="0x1" edc:name="C" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="DC" edc:desc="" edc:mask="0x1" edc:name="DC" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="Z" edc:desc="" edc:mask="0x1" edc:name="Z" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="nPD" edc:desc="" edc:mask="0x1" edc:name="nPD" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="nTO" edc:desc="" edc:mask="0x1" edc:name="nTO" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="PA0" edc:desc="" edc:mask="0x1" edc:name="PA0" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="CWUF" edc:desc="" edc:mask="0x1" edc:name="CWUF" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="RBWUF" edc:desc="" edc:mask="0x1" edc:name="RBWUF" edc:nzwidth="0x1"/>
+            </edc:SFRMode>
+          </edc:SFRModeList>
+        </edc:SFRDef>
+        <edc:SFRDef edc:access="rnnnnnnn" edc:cname="FSR" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="100uuuuu" edc:name="FSR" edc:nzwidth="0x8" edc:por="100xxxxx">
+          <edc:SFRModeList>
+            <edc:SFRMode edc:id="DS.0">
+              <edc:SFRFieldDef edc:cname="FSR" edc:desc="" edc:mask="0xff" edc:name="FSR" edc:nzwidth="0x8"/>
+            </edc:SFRMode>
+          </edc:SFRModeList>
+          <edc:StimInfo edc:stimpcfiles="rw" edc:stimregfiles="w" edc:stimscl="rwb" edc:stimtype="Record"/>
+        </edc:SFRDef>
+        <edc:SFRDef edc:access="nnnnnnn-" edc:cname="OSCCAL" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="1111111-" edc:name="OSCCAL" edc:nzwidth="0x8" edc:por="1111111-">
+          <edc:SFRModeList>
+            <edc:SFRMode edc:id="DS.0">
+              <edc:AdjustPoint edc:offset="1"/>
+              <edc:SFRFieldDef edc:cname="CAL" edc:desc="" edc:mask="0x7f" edc:name="CAL" edc:nzwidth="0x7"/>
+            </edc:SFRMode>
+            <edc:SFRMode edc:id="LT.0">
+              <edc:AdjustPoint edc:offset="1"/>
+              <edc:SFRFieldDef edc:cname="CAL0" edc:desc="" edc:mask="0x1" edc:name="CAL0" edc:nzwidth="1"/>
+              <edc:SFRFieldDef edc:cname="CAL1" edc:desc="" edc:mask="0x1" edc:name="CAL1" edc:nzwidth="1"/>
+              <edc:SFRFieldDef edc:cname="CAL2" edc:desc="" edc:mask="0x1" edc:name="CAL2" edc:nzwidth="1"/>
+              <edc:SFRFieldDef edc:cname="CAL3" edc:desc="" edc:mask="0x1" edc:name="CAL3" edc:nzwidth="1"/>
+              <edc:SFRFieldDef edc:cname="CAL4" edc:desc="" edc:mask="0x1" edc:name="CAL4" edc:nzwidth="1"/>
+              <edc:SFRFieldDef edc:cname="CAL5" edc:desc="" edc:mask="0x1" edc:name="CAL5" edc:nzwidth="1"/>
+              <edc:SFRFieldDef edc:cname="CAL6" edc:desc="" edc:mask="0x1" edc:name="CAL6" edc:nzwidth="1"/>
+            </edc:SFRMode>
+          </edc:SFRModeList>
+        </edc:SFRDef>
+        <edc:SFRDef edc:access="--nnrnnn" edc:cname="PORTB" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="--uuuuuu" edc:name="PORTB" edc:nzwidth="0x8" edc:por="--xxxxxx">
+          <edc:SFRModeList>
+            <edc:SFRMode edc:id="DS.0">
+              <edc:SFRFieldDef edc:cname="RB" edc:desc="" edc:mask="0x3f" edc:name="RB" edc:nzwidth="0x6"/>
+            </edc:SFRMode>
+            <edc:SFRMode edc:id="LT.0">
+              <edc:SFRFieldDef edc:cname="RB0" edc:desc="" edc:mask="0x1" edc:name="RB0" edc:nzwidth="1"/>
+              <edc:SFRFieldDef edc:cname="RB1" edc:desc="" edc:mask="0x1" edc:name="RB1" edc:nzwidth="1"/>
+              <edc:SFRFieldDef edc:cname="RB2" edc:desc="" edc:mask="0x1" edc:name="RB2" edc:nzwidth="1"/>
+              <edc:SFRFieldDef edc:cname="RB3" edc:desc="" edc:mask="0x1" edc:name="RB3" edc:nzwidth="1"/>
+              <edc:SFRFieldDef edc:cname="RB4" edc:desc="" edc:mask="0x1" edc:name="RB4" edc:nzwidth="1"/>
+              <edc:SFRFieldDef edc:cname="RB5" edc:desc="" edc:mask="0x1" edc:name="RB5" edc:nzwidth="1"/>
+            </edc:SFRMode>
+          </edc:SFRModeList>
+          <edc:StimInfo edc:stimpcfiles="rw" edc:stimregfiles="rw" edc:stimscl="rwb" edc:stimtype="Record"/>
+        </edc:SFRDef>
+        <edc:SFRDef edc:access="--nnnnnn" edc:cname="PORTC" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="--uuuuuu" edc:name="PORTC" edc:nzwidth="0x8" edc:por="--xxxxxx">
+          <edc:SFRModeList>
+            <edc:SFRMode edc:id="DS.0">
+              <edc:SFRFieldDef edc:cname="RC" edc:desc="" edc:mask="0x3f" edc:name="RC" edc:nzwidth="0x6"/>
+            </edc:SFRMode>
+            <edc:SFRMode edc:id="LT.0">
+              <edc:SFRFieldDef edc:cname="RC0" edc:desc="" edc:mask="0x1" edc:name="RC0" edc:nzwidth="1"/>
+              <edc:SFRFieldDef edc:cname="RC1" edc:desc="" edc:mask="0x1" edc:name="RC1" edc:nzwidth="1"/>
+              <edc:SFRFieldDef edc:cname="RC2" edc:desc="" edc:mask="0x1" edc:name="RC2" edc:nzwidth="1"/>
+              <edc:SFRFieldDef edc:cname="RC3" edc:desc="" edc:mask="0x1" edc:name="RC3" edc:nzwidth="1"/>
+              <edc:SFRFieldDef edc:cname="RC4" edc:desc="" edc:mask="0x1" edc:name="RC4" edc:nzwidth="1"/>
+              <edc:SFRFieldDef edc:cname="RC5" edc:desc="" edc:mask="0x1" edc:name="RC5" edc:nzwidth="1"/>
+            </edc:SFRMode>
+          </edc:SFRModeList>
+          <edc:StimInfo edc:stimpcfiles="rw" edc:stimregfiles="rw" edc:stimscl="rwb" edc:stimtype="Record"/>
+        </edc:SFRDef>
+        <edc:SFRDef edc:access="rnnnnnnn" edc:cname="CM1CON0" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="11111111" edc:name="CM1CON0" edc:nzwidth="0x8" edc:por="11111111">
+          <edc:SFRModeList>
+            <edc:SFRMode edc:id="DS.0">
+              <edc:SFRFieldDef edc:cname="nC1WU" edc:desc="" edc:mask="0x1" edc:name="nC1WU" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="C1PREF" edc:desc="" edc:mask="0x1" edc:name="C1PREF" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="C1NREF" edc:desc="" edc:mask="0x1" edc:name="C1NREF" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="C1ON" edc:desc="" edc:mask="0x1" edc:name="C1ON" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="nC1T0CS" edc:desc="" edc:mask="0x1" edc:name="nC1T0CS" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="C1POL" edc:desc="" edc:mask="0x1" edc:name="C1POL" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="nC1OUTEN" edc:desc="" edc:mask="0x1" edc:name="nC1OUTEN" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="C1OUT" edc:desc="" edc:mask="0x1" edc:name="C1OUT" edc:nzwidth="0x1"/>
+            </edc:SFRMode>
+          </edc:SFRModeList>
+          <edc:StimInfo edc:stimpcfiles="" edc:stimregfiles="w" edc:stimscl="rwb" edc:stimtype="Record"/>
+        </edc:SFRDef>
+        <edc:SFRDef edc:access="nnnnnnnn" edc:cname="ADCON0" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="11111100" edc:name="ADCON0" edc:nzwidth="0x8" edc:por="11111100">
+          <edc:SFRModeList>
+            <edc:SFRMode edc:id="DS.0">
+              <edc:SFRFieldDef edc:cname="ADON" edc:desc="" edc:mask="0x1" edc:name="ADON" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="GO_nDONE" edc:desc="" edc:mask="0x1" edc:name="GO/nDONE" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="CHS" edc:desc="" edc:mask="0x3" edc:name="CHS" edc:nzwidth="0x2"/>
+              <edc:SFRFieldDef edc:cname="ADCS" edc:desc="" edc:mask="0x3" edc:name="ADCS" edc:nzwidth="0x2"/>
+              <edc:SFRFieldDef edc:cname="ANS" edc:desc="" edc:mask="0x3" edc:name="ANS" edc:nzwidth="0x2"/>
+            </edc:SFRMode>
+            <edc:SFRMode edc:id="SIM.0">
+              <edc:SFRFieldDef edc:cname="ADON" edc:desc="" edc:mask="0x1" edc:name="ADON" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="GO_nDONE" edc:desc="" edc:mask="0x1" edc:name="GO_nDONE" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="CHS" edc:desc="" edc:mask="0x3" edc:name="CHS" edc:nzwidth="0x2"/>
+              <edc:SFRFieldDef edc:cname="ADCS" edc:desc="" edc:mask="0x3" edc:name="ADCS" edc:nzwidth="0x2"/>
+              <edc:SFRFieldDef edc:cname="ANS" edc:desc="" edc:mask="0x3" edc:name="ANS" edc:nzwidth="0x2"/>
+            </edc:SFRMode>
+            <edc:SFRMode edc:id="LT.0">
+              <edc:AdjustPoint edc:offset="1"/>
+              <edc:SFRFieldDef edc:cname="GO" edc:desc="" edc:mask="0x1" edc:name="GO" edc:nzwidth="1"/>
+              <edc:SFRFieldDef edc:cname="CHS0" edc:desc="" edc:mask="0x1" edc:name="CHS0" edc:nzwidth="1"/>
+              <edc:SFRFieldDef edc:cname="CHS1" edc:desc="" edc:mask="0x1" edc:name="CHS1" edc:nzwidth="1"/>
+              <edc:SFRFieldDef edc:cname="ADCS0" edc:desc="" edc:mask="0x1" edc:name="ADCS0" edc:nzwidth="1"/>
+              <edc:SFRFieldDef edc:cname="ADCS1" edc:desc="" edc:mask="0x1" edc:name="ADCS1" edc:nzwidth="1"/>
+              <edc:SFRFieldDef edc:cname="ANS0" edc:desc="" edc:mask="0x1" edc:name="ANS0" edc:nzwidth="1"/>
+              <edc:SFRFieldDef edc:cname="ANS1" edc:desc="" edc:mask="0x1" edc:name="ANS1" edc:nzwidth="1"/>
+            </edc:SFRMode>
+            <edc:SFRMode edc:id="LT.1">
+              <edc:AdjustPoint edc:offset="1"/>
+              <edc:SFRFieldDef edc:cname="NOT_DONE" edc:desc="" edc:mask="0x1" edc:name="NOT_DONE" edc:nzwidth="1"/>
+            </edc:SFRMode>
+          </edc:SFRModeList>
+          <edc:StimInfo edc:stimpcfiles="" edc:stimregfiles="w" edc:stimscl="rwb" edc:stimtype="Record"/>
+        </edc:SFRDef>
+        <edc:SFRDef edc:access="nnnnnnnn" edc:cname="ADRES" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="uuuuuuuu" edc:name="ADRES" edc:nzwidth="0x8" edc:por="xxxxxxxxx">
+          <edc:SFRModeList>
+            <edc:SFRMode edc:id="DS.0">
+              <edc:SFRFieldDef edc:cname="ADRES" edc:desc="" edc:mask="0xff" edc:name="ADRES" edc:nzwidth="0x8"/>
+            </edc:SFRMode>
+            <edc:SFRMode edc:id="LT.0">
+              <edc:SFRFieldDef edc:cname="ADRES0" edc:desc="" edc:mask="0x1" edc:name="ADRES0" edc:nzwidth="1"/>
+              <edc:SFRFieldDef edc:cname="ADRES1" edc:desc="" edc:mask="0x1" edc:name="ADRES1" edc:nzwidth="1"/>
+              <edc:SFRFieldDef edc:cname="ADRES2" edc:desc="" edc:mask="0x1" edc:name="ADRES2" edc:nzwidth="1"/>
+              <edc:SFRFieldDef edc:cname="ADRES3" edc:desc="" edc:mask="0x1" edc:name="ADRES3" edc:nzwidth="1"/>
+              <edc:SFRFieldDef edc:cname="ADRES4" edc:desc="" edc:mask="0x1" edc:name="ADRES4" edc:nzwidth="1"/>
+              <edc:SFRFieldDef edc:cname="ADRES5" edc:desc="" edc:mask="0x1" edc:name="ADRES5" edc:nzwidth="1"/>
+              <edc:SFRFieldDef edc:cname="ADRES6" edc:desc="" edc:mask="0x1" edc:name="ADRES6" edc:nzwidth="1"/>
+              <edc:SFRFieldDef edc:cname="ADRES7" edc:desc="" edc:mask="0x1" edc:name="ADRES7" edc:nzwidth="1"/>
+            </edc:SFRMode>
+          </edc:SFRModeList>
+          <edc:StimInfo edc:stimpcfiles="" edc:stimregfiles="r" edc:stimscl="rwb" edc:stimtype="Integer"/>
+        </edc:SFRDef>
+        <edc:SFRDef edc:access="rnnnnnnn" edc:cname="CM2CON0" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="11111111" edc:name="CM2CON0" edc:nzwidth="0x8" edc:por="11111111">
+          <edc:SFRModeList>
+            <edc:SFRMode edc:id="DS.0">
+              <edc:SFRFieldDef edc:cname="nC2WU" edc:desc="" edc:mask="0x1" edc:name="nC2WU" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="C2PREF1" edc:desc="" edc:mask="0x1" edc:name="C2PREF1" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="C2NREF" edc:desc="" edc:mask="0x1" edc:name="C2NREF" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="C2ON" edc:desc="" edc:mask="0x1" edc:name="C2ON" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="C2PREF2" edc:desc="" edc:mask="0x1" edc:name="C2PREF2" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="C2POL" edc:desc="" edc:mask="0x1" edc:name="C2POL" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="nC2OUTEN" edc:desc="" edc:mask="0x1" edc:name="nC2OUTEN" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="C2OUT" edc:desc="" edc:mask="0x1" edc:name="C2OUT" edc:nzwidth="0x1"/>
+            </edc:SFRMode>
+          </edc:SFRModeList>
+          <edc:StimInfo edc:stimpcfiles="" edc:stimregfiles="w" edc:stimscl="rwb" edc:stimtype="Record"/>
+        </edc:SFRDef>
+        <edc:SFRDef edc:access="nnn-nnnn" edc:cname="VRCON" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="000-0000" edc:name="VRCON" edc:nzwidth="0x8" edc:por="000-0000">
+          <edc:SFRModeList>
+            <edc:SFRMode edc:id="DS.0">
+              <edc:SFRFieldDef edc:cname="VR" edc:desc="" edc:mask="0xf" edc:name="VR" edc:nzwidth="0x4"/>
+              <edc:AdjustPoint edc:offset="1"/>
+              <edc:SFRFieldDef edc:cname="VRR" edc:desc="" edc:mask="0x1" edc:name="VRR" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="VROE" edc:desc="" edc:mask="0x1" edc:name="VROE" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="VREN" edc:desc="" edc:mask="0x1" edc:name="VREN" edc:nzwidth="0x1"/>
+            </edc:SFRMode>
+            <edc:SFRMode edc:id="LT.0">
+              <edc:SFRFieldDef edc:cname="VR0" edc:desc="" edc:mask="0x1" edc:name="VR0" edc:nzwidth="1"/>
+              <edc:SFRFieldDef edc:cname="VR1" edc:desc="" edc:mask="0x1" edc:name="VR1" edc:nzwidth="1"/>
+              <edc:SFRFieldDef edc:cname="VR2" edc:desc="" edc:mask="0x1" edc:name="VR2" edc:nzwidth="1"/>
+              <edc:SFRFieldDef edc:cname="VR3" edc:desc="" edc:mask="0x1" edc:name="VR3" edc:nzwidth="1"/>
+            </edc:SFRMode>
+          </edc:SFRModeList>
+          <edc:StimInfo edc:stimpcfiles="" edc:stimregfiles="w" edc:stimscl="rwb" edc:stimtype="Record"/>
+        </edc:SFRDef>
+      </edc:SFRDataSector>
+      <edc:SFRDataSector edc:bank="1" edc:beginaddr="0x20" edc:endaddr="0x2d" edc:regionid="sfr1">
+        <edc:Mirror edc:nzsize="0x1" edc:regionidref="sfr0"/>
+        <edc:SFRDef edc:access="---nnnss" edc:cname="EECON" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="---00000" edc:name="EECON" edc:nzwidth="0x8" edc:por="---00000">
+          <edc:SFRModeList>
+            <edc:SFRMode edc:id="DS.0">
+              <edc:SFRFieldDef edc:cname="RD" edc:desc="" edc:mask="0x1" edc:name="RD" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="WR" edc:desc="" edc:mask="0x1" edc:name="WR" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="WREN" edc:desc="" edc:mask="0x1" edc:name="WREN" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="WRERR" edc:desc="" edc:mask="0x1" edc:name="WRERR" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="FREE" edc:desc="" edc:mask="0x1" edc:name="FREE" edc:nzwidth="0x1"/>
+            </edc:SFRMode>
+          </edc:SFRModeList>
+          <edc:StimInfo edc:stimpcfiles="rw" edc:stimregfiles="w" edc:stimscl="rwb" edc:stimtype="Record"/>
+        </edc:SFRDef>
+        <edc:Mirror edc:nzsize="0x3" edc:regionidref="sfr0"/>
+        <edc:SFRDef edc:access="nnnnnnnn" edc:cname="EEDATA" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="uuuuuuuu" edc:name="EEDATA" edc:nzwidth="0x8" edc:por="xxxxxxxx">
+          <edc:SFRModeList>
+            <edc:SFRMode edc:id="DS.0">
+              <edc:SFRFieldDef edc:cname="EEDATA" edc:desc="" edc:mask="0xff" edc:name="EEDATA" edc:nzwidth="0x8"/>
+            </edc:SFRMode>
+          </edc:SFRModeList>
+          <edc:StimInfo edc:stimpcfiles="rw" edc:stimregfiles="rw" edc:stimscl="rwb" edc:stimtype="Record"/>
+        </edc:SFRDef>
+        <edc:SFRDef edc:access="--nnnnnn" edc:cname="EEADR" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="--uuuuuu" edc:name="EEADR" edc:nzwidth="0x8" edc:por="--xxxxxx">
+          <edc:SFRModeList>
+            <edc:SFRMode edc:id="DS.0">
+              <edc:SFRFieldDef edc:cname="EEADR" edc:desc="" edc:mask="0xff" edc:name="EEADR" edc:nzwidth="0x8"/>
+            </edc:SFRMode>
+          </edc:SFRModeList>
+          <edc:StimInfo edc:stimpcfiles="rw" edc:stimregfiles="w" edc:stimscl="rwb" edc:stimtype="Record"/>
+        </edc:SFRDef>
+        <edc:Mirror edc:nzsize="0x6" edc:regionidref="sfr0"/>
+      </edc:SFRDataSector>
+      <edc:SFRDataSector edc:bank="2" edc:beginaddr="0x40" edc:endaddr="0x4d" edc:regionid="sfr2">
+        <edc:Mirror edc:nzsize="0xd" edc:regionidref="sfr0"/>
+      </edc:SFRDataSector>
+      <edc:SFRDataSector edc:bank="3" edc:beginaddr="0x60" edc:endaddr="0x6d" edc:regionid="sfr3">
+        <edc:Mirror edc:nzsize="0x1" edc:regionidref="sfr0"/>
+        <edc:Mirror edc:nzsize="0x1" edc:regionidref="sfr1"/>
+        <edc:Mirror edc:nzsize="0x3" edc:regionidref="sfr0"/>
+        <edc:Mirror edc:nzsize="0x2" edc:regionidref="sfr1"/>
+        <edc:Mirror edc:nzsize="0x6" edc:regionidref="sfr0"/>
+      </edc:SFRDataSector>
+      <edc:GPRDataSector edc:bank="0" edc:beginaddr="0xd" edc:endaddr="0x10" edc:regionid="gpr0a"/>
+      <edc:GPRDataSector edc:bank="0" edc:beginaddr="0x10" edc:endaddr="0x20" edc:regionid="gpr0b"/>
+      <edc:GPRDataSector edc:bank="1" edc:beginaddr="0x2d" edc:endaddr="0x30" edc:regionid="gpr1a" edc:shadowidref="gpr0a"/>
+      <edc:GPRDataSector edc:bank="1" edc:beginaddr="0x30" edc:endaddr="0x40" edc:regionid="gpr1b"/>
+      <edc:GPRDataSector edc:bank="2" edc:beginaddr="0x4d" edc:endaddr="0x50" edc:regionid="gpr2a" edc:shadowidref="gpr0a"/>
+      <edc:GPRDataSector edc:bank="2" edc:beginaddr="0x50" edc:endaddr="0x60" edc:regionid="gpr2b"/>
+      <edc:GPRDataSector edc:bank="3" edc:beginaddr="0x6d" edc:endaddr="0x70" edc:regionid="gpr3a" edc:shadowidref="gpr0a"/>
+      <edc:GPRDataSector edc:bank="3" edc:beginaddr="0x70" edc:endaddr="0x80" edc:regionid="gpr3b"/>
+      <edc:NMMRPlace edc:regionid="corenmmrs">
+        <edc:SFRDef edc:access="nnnnnnnn" edc:cname="WREG" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="qqqqqqqq" edc:name="WREG" edc:nmmrid="0x0" edc:nzwidth="0x8" edc:por="qqqqqqqq">
+          <edc:SFRModeList>
+            <edc:SFRMode edc:id="DS.0">
+              <edc:SFRFieldDef edc:cname="WREG" edc:desc="" edc:mask="0xff" edc:name="WREG" edc:nzwidth="0x8"/>
+            </edc:SFRMode>
+          </edc:SFRModeList>
+        </edc:SFRDef>
+        <edc:SFRDef edc:access="nnnnnnnn" edc:cname="STKPTR" edc:desc="" edc:impl="0xff" edc:ishidden="true" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="STKPTR" edc:nmmrid="0x1" edc:nzwidth="0x8" edc:por="00000000">
+          <edc:SFRModeList>
+            <edc:SFRMode edc:id="DS.0">
+              <edc:SFRFieldDef edc:cname="STKPTR" edc:desc="" edc:mask="0xff" edc:name="STKPTR" edc:nzwidth="0x8"/>
+            </edc:SFRMode>
+          </edc:SFRModeList>
+        </edc:SFRDef>
+        <edc:SFRDef edc:access="--nnnnnn" edc:cname="TRISB" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="--111111" edc:name="TRISB" edc:nmmrid="0x3" edc:nzwidth="0x8" edc:por="--111111">
+          <edc:SFRModeList>
+            <edc:SFRMode edc:id="DS.0">
+              <edc:SFRFieldDef edc:cname="TRISB0" edc:desc="" edc:mask="0x1" edc:name="TRISB0" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="TRISB1" edc:desc="" edc:mask="0x1" edc:name="TRISB1" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="TRISB2" edc:desc="" edc:mask="0x1" edc:name="TRISB2" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="TRISB3" edc:desc="" edc:mask="0x1" edc:name="TRISB3" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="TRISB4" edc:desc="" edc:mask="0x1" edc:name="TRISB4" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="TRISB5" edc:desc="" edc:mask="0x1" edc:name="TRISB5" edc:nzwidth="0x1"/>
+            </edc:SFRMode>
+          </edc:SFRModeList>
+        </edc:SFRDef>
+        <edc:SFRDef edc:access="--nnnnnn" edc:cname="TRISC" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="--111111" edc:name="TRISC" edc:nmmrid="0x4" edc:nzwidth="0x8" edc:por="--111111">
+          <edc:SFRModeList>
+            <edc:SFRMode edc:id="DS.0">
+              <edc:SFRFieldDef edc:cname="TRISC0" edc:desc="" edc:mask="0x1" edc:name="TRISC0" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="TRISC1" edc:desc="" edc:mask="0x1" edc:name="TRISC1" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="TRISC2" edc:desc="" edc:mask="0x1" edc:name="TRISC2" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="TRISC3" edc:desc="" edc:mask="0x1" edc:name="TRISC3" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="TRISC4" edc:desc="" edc:mask="0x1" edc:name="TRISC4" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="TRISC5" edc:desc="" edc:mask="0x1" edc:name="TRISC5" edc:nzwidth="0x1"/>
+            </edc:SFRMode>
+          </edc:SFRModeList>
+        </edc:SFRDef>
+        <edc:SFRDef edc:access="nnnnnnnn" edc:cname="OPTION_REG" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="11111111" edc:name="OPTION_REG" edc:nmmrid="0x5" edc:nzwidth="0x8" edc:por="11111111">
+          <edc:SFRModeList>
+            <edc:SFRMode edc:id="DS.0">
+              <edc:SFRFieldDef edc:cname="PS" edc:desc="" edc:mask="0x7" edc:name="PS" edc:nzwidth="0x3"/>
+              <edc:SFRFieldDef edc:cname="PSA" edc:desc="" edc:mask="0x1" edc:name="PSA" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="T0SE" edc:desc="" edc:mask="0x1" edc:name="T0SE" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="T0CS" edc:desc="" edc:mask="0x1" edc:name="T0CS" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="nRBPU" edc:desc="" edc:mask="0x1" edc:name="nRBPU" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="nRBWU" edc:desc="" edc:mask="0x1" edc:name="nRBWU" edc:nzwidth="0x1"/>
+            </edc:SFRMode>
+            <edc:SFRMode edc:id="LT.0">
+              <edc:SFRFieldDef edc:cname="PS0" edc:desc="" edc:mask="0x1" edc:name="PS0" edc:nzwidth="1"/>
+              <edc:SFRFieldDef edc:cname="PS1" edc:desc="" edc:mask="0x1" edc:name="PS1" edc:nzwidth="1"/>
+              <edc:SFRFieldDef edc:cname="PS2" edc:desc="" edc:mask="0x1" edc:name="PS2" edc:nzwidth="1"/>
+            </edc:SFRMode>
+          </edc:SFRModeList>
+        </edc:SFRDef>
+      </edc:NMMRPlace>
+      <edc:EmulatorZone edc:beginaddr="0xa6" edc:endaddr="0xa8" edc:regionid="emulatorzone"/>
+    </edc:RegardlessOfMode>
+  </edc:DataSpace>
+  <edc:PinList>
+    <edc:Pin>
+      <!--Pin 1-->
+      <edc:VirtualPin edc:name="Vdd"/>
+    </edc:Pin>
+    <edc:Pin>
+      <!--Pin 2-->
+      <edc:VirtualPin edc:name="RB5"/>
+      <edc:VirtualPin edc:name="OSC1"/>
+      <edc:VirtualPin edc:name="CLKIN"/>
+    </edc:Pin>
+    <edc:Pin>
+      <!--Pin 3-->
+      <edc:VirtualPin edc:name="RB4"/>
+      <edc:VirtualPin edc:name="OSC2"/>
+      <edc:VirtualPin edc:name="CLKOUT"/>
+    </edc:Pin>
+    <edc:Pin>
+      <!--Pin 4-->
+      <edc:VirtualPin edc:name="RB3"/>
+      <edc:VirtualPin edc:name="MCLR"/>
+      <edc:VirtualPin edc:name="Vpp"/>
+    </edc:Pin>
+    <edc:Pin>
+      <!--Pin 5-->
+      <edc:VirtualPin edc:name="RC5"/>
+      <edc:VirtualPin edc:name="T0CKI"/>
+    </edc:Pin>
+    <edc:Pin>
+      <!--Pin 6-->
+      <edc:VirtualPin edc:name="RC4"/>
+      <edc:VirtualPin edc:name="C2OUT"/>
+    </edc:Pin>
+    <edc:Pin>
+      <!--Pin 7-->
+      <edc:VirtualPin edc:name="RC3"/>
+    </edc:Pin>
+    <edc:Pin>
+      <!--Pin 8-->
+      <edc:VirtualPin edc:name="RC2"/>
+      <edc:VirtualPin edc:name="CVref"/>
+    </edc:Pin>
+    <edc:Pin>
+      <!--Pin 9-->
+      <edc:VirtualPin edc:name="RC1"/>
+      <edc:VirtualPin edc:name="C2IN-"/>
+    </edc:Pin>
+    <edc:Pin>
+      <!--Pin 10-->
+      <edc:VirtualPin edc:name="RC0"/>
+      <edc:VirtualPin edc:name="C2IN+"/>
+    </edc:Pin>
+    <edc:Pin>
+      <!--Pin 11-->
+      <edc:VirtualPin edc:name="RB2"/>
+      <edc:VirtualPin edc:name="C1OUT"/>
+      <edc:VirtualPin edc:name="AN2"/>
+    </edc:Pin>
+    <edc:Pin>
+      <!--Pin 12-->
+      <edc:VirtualPin edc:name="RB1"/>
+      <edc:VirtualPin edc:name="C1IN-"/>
+      <edc:VirtualPin edc:name="AN1"/>
+      <edc:VirtualPin edc:name="ICSPCLK"/>
+    </edc:Pin>
+    <edc:Pin>
+      <!--Pin 13-->
+      <edc:VirtualPin edc:name="RB0"/>
+      <edc:VirtualPin edc:name="C1IN+"/>
+      <edc:VirtualPin edc:name="AN0"/>
+      <edc:VirtualPin edc:name="ICSPDAT"/>
+    </edc:Pin>
+    <edc:Pin>
+      <!--Pin 14-->
+      <edc:VirtualPin edc:name="Vss"/>
+    </edc:Pin>
+  </edc:PinList>
+</edc:PIC>

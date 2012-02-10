@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<edc:Module edc:dosid="DOS-00000" edc:modid="16xxxx_core_nmmrs" xmlns:edc="http://crownking/edc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/Module.xsd">
+  <edc:SFRDef edc:nmmrid="0x0" edc:name="WREG" edc:cname="WREG" edc:desc="" edc:nzwidth="0x8" edc:impl="0xff" edc:access="nnnnnnnn" edc:por="00000000" edc:mclr="00000000" edc:isvolatile="true" edc:isindirect="false"/>
+  <edc:SFRDef edc:nmmrid="0x1" edc:name="STKPTR" edc:cname="STKPTR" edc:desc="" edc:nzwidth="0x8" edc:impl="0xff" edc:access="nnnnnnn" edc:por="00000000" edc:mclr="00000000" edc:isvolatile="true" edc:isindirect="false" edc:ishidden="true"/>
+</edc:Module>

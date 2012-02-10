@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:Module xmlns:edc="http://crownking/edc" edc:dosid="00740" edc:modid="icap_pb_v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/Module.xsd">
+  <edc:ArchDef edc:desc="" edc:name="">
+    <edc:MemTraits>
+      <edc:DataMemTraits edc:addrinc="0x4" edc:locsize="0x4" edc:wordimpl="0xffffffff" edc:wordinit="0x0" edc:wordsafe="0xffffffff" edc:wordsize="0x4"/>
+    </edc:MemTraits>
+  </edc:ArchDef>
+  <edc:SFRDef edc:access="----------------n-n---nnnnnrrnnn" edc:cname="IC@CON" edc:desc="" edc:grp="ICAP1" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="----------------000---0000000000" edc:name="IC@CON" edc:nzwidth="0x20" edc:por="----------------000---0000000000" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="ICM" edc:desc="" edc:mask="0x7" edc:name="ICM" edc:nzwidth="0x3"/>
+        <edc:SFRFieldDef edc:cname="ICBNE" edc:desc="" edc:mask="0x1" edc:name="ICBNE" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="ICOV" edc:desc="" edc:mask="0x1" edc:name="ICOV" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="ICI" edc:desc="" edc:mask="0x3" edc:name="ICI" edc:nzwidth="0x2"/>
+        <edc:SFRFieldDef edc:cname="ICTMR" edc:desc="" edc:mask="0x1" edc:name="ICTMR" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="C32" edc:desc="" edc:mask="0x1" edc:name="C32" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="FEDGE" edc:desc="" edc:mask="0x1" edc:name="FEDGE" edc:nzwidth="0x1"/>
+        <edc:AdjustPoint edc:offset="3"/>
+        <edc:SFRFieldDef edc:cname="SIDL" edc:desc="" edc:mask="0x1" edc:name="SIDL" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="FRZ" edc:desc="" edc:ishidden="true" edc:islanghidden="true" edc:mask="0x1" edc:name="FRZ" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="ON" edc:desc="" edc:mask="0x1" edc:name="ON" edc:nzwidth="0x1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="ICM0" edc:desc="" edc:mask="0x1" edc:name="ICM0" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="ICM1" edc:desc="" edc:mask="0x1" edc:name="ICM1" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="ICM2" edc:desc="" edc:mask="0x1" edc:name="ICM2" edc:nzwidth="0x1"/>
+        <edc:AdjustPoint edc:offset="0x2"/>
+        <edc:SFRFieldDef edc:cname="ICI0" edc:desc="" edc:mask="0x1" edc:name="ICI0" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="ICI1" edc:desc="" edc:mask="0x1" edc:name="ICI1" edc:nzwidth="0x1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.1">
+        <edc:AdjustPoint edc:offset="0xd"/>
+        <edc:SFRFieldDef edc:cname="ICSIDL" edc:desc="" edc:mask="0x1" edc:name="ICSIDL" edc:nzwidth="0x1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.2">
+        <edc:SFRFieldDef edc:cname="w" edc:desc="" edc:mask="0x1" edc:name="w" edc:nzwidth="0x20"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+    <edc:FreezeBit edc:freezeval="1" edc:name="INPUT CAPTURE @" edc:pos="14"/>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr" edc:cname="IC@BUF" edc:desc="" edc:grp="ICAP1" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" edc:name="IC@BUF" edc:nzwidth="0x20" edc:por="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" edc:portals="- - -">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="IC@BUF" edc:desc="" edc:islanghidden="true" edc:mask="0xffffffff" edc:name="IC@BUF" edc:nzwidth="0x20"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+</edc:Module>

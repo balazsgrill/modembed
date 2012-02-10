@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:Module xmlns:edc="http://crownking/edc" edc:dosid="00828" edc:modid="tmr_rtcc_v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/Module.xsd">
+  <edc:ArchDef edc:desc="" edc:name="">
+    <edc:MemTraits>
+      <edc:DataMemTraits edc:addrinc="0x2" edc:locsize="0x2" edc:wordimpl="0xffff" edc:wordinit="0x0" edc:wordsafe="0xffff" edc:wordsize="0x2"/>
+    </edc:MemTraits>
+  </edc:ArchDef>
+  <edc:SFRDef edc:access="nnnnnnnnnnnnnnnn" edc:cname="ALRMVAL" edc:desc="" edc:impl="0xffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="uuuuuuuuuuuuuuuu" edc:name="ALRMVAL" edc:nzwidth="0x10" edc:por="0000000000000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="ALRMVAL" edc:desc="" edc:islanghidden="true" edc:mask="0xffff" edc:name="ALRMVAL" edc:nzwidth="0x10"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+    <edc:StimInfo edc:stimpcfiles="rw" edc:stimregfiles="rw" edc:stimscl="rwb" edc:stimtype="Integer"/>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnnnnnnnnnn" edc:cname="ALCFGRPT" edc:desc="" edc:impl="0xffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="uuuuuuuuuuuuuuuu" edc:name="ALCFGRPT" edc:nzwidth="0x10" edc:por="0000000000000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="ARPT" edc:desc="" edc:mask="0xff" edc:name="ARPT" edc:nzwidth="0x8"/>
+        <edc:SFRFieldDef edc:cname="ALRMPTR" edc:desc="" edc:mask="0x3" edc:name="ALRMPTR" edc:nzwidth="0x2"/>
+        <edc:SFRFieldDef edc:cname="AMASK" edc:desc="" edc:mask="0xf" edc:name="AMASK" edc:nzwidth="0x4"/>
+        <edc:SFRFieldDef edc:cname="CHIME" edc:desc="" edc:mask="0x1" edc:name="CHIME" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="ALRMEN" edc:desc="" edc:mask="0x1" edc:name="ALRMEN" edc:nzwidth="0x1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="ARPT0" edc:desc="" edc:mask="0x1" edc:name="ARPT0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="ARPT1" edc:desc="" edc:mask="0x1" edc:name="ARPT1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="ARPT2" edc:desc="" edc:mask="0x1" edc:name="ARPT2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="ARPT3" edc:desc="" edc:mask="0x1" edc:name="ARPT3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="ARPT4" edc:desc="" edc:mask="0x1" edc:name="ARPT4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="ARPT5" edc:desc="" edc:mask="0x1" edc:name="ARPT5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="ARPT6" edc:desc="" edc:mask="0x1" edc:name="ARPT6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="ARPT7" edc:desc="" edc:mask="0x1" edc:name="ARPT7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="ALRMPTR0" edc:desc="" edc:mask="0x1" edc:name="ALRMPTR0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="ALRMPTR1" edc:desc="" edc:mask="0x1" edc:name="ALRMPTR1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="AMASK0" edc:desc="" edc:mask="0x1" edc:name="AMASK0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="AMASK1" edc:desc="" edc:mask="0x1" edc:name="AMASK1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="AMASK2" edc:desc="" edc:mask="0x1" edc:name="AMASK2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="AMASK3" edc:desc="" edc:mask="0x1" edc:name="AMASK3" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+    <edc:StimInfo edc:stimpcfiles="rw" edc:stimregfiles="rw" edc:stimscl="rwb" edc:stimtype="Record"/>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnnnnnnnnnn" edc:cname="RTCVAL" edc:desc="" edc:impl="0xffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="uuuuuuuuuuuuuuuu" edc:name="RTCVAL" edc:nzwidth="0x10" edc:por="0000000000000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="RTCVAL" edc:desc="" edc:islanghidden="true" edc:mask="0xffff" edc:name="RTCVAL" edc:nzwidth="0x10"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+    <edc:StimInfo edc:stimpcfiles="rw" edc:stimregfiles="rw" edc:stimscl="rwb" edc:stimtype="Integer"/>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="n-nnnnnnnnnnnnnn" edc:cname="RCFGCAL" edc:desc="" edc:impl="0xffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="u-uuuuuuuuuuuuuu" edc:name="RCFGCAL" edc:nzwidth="0x10" edc:por="0-00000000000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="CAL" edc:desc="" edc:mask="0xff" edc:name="CAL" edc:nzwidth="0x8"/>
+        <edc:SFRFieldDef edc:cname="RTCPTR" edc:desc="" edc:mask="0x3" edc:name="RTCPTR" edc:nzwidth="0x2"/>
+        <edc:SFRFieldDef edc:cname="RTCOE" edc:desc="" edc:mask="0x1" edc:name="RTCOE" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="HALFSEC" edc:desc="" edc:mask="0x1" edc:name="HALFSEC" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="RTCSYNC" edc:desc="" edc:mask="0x1" edc:name="RTCSYNC" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="RTCWREN" edc:desc="" edc:mask="0x1" edc:name="RTCWREN" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="RTCEN" edc:desc="" edc:mask="0x1" edc:name="RTCEN" edc:nzwidth="0x1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="CAL0" edc:desc="" edc:mask="0x1" edc:name="CAL0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CAL1" edc:desc="" edc:mask="0x1" edc:name="CAL1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CAL2" edc:desc="" edc:mask="0x1" edc:name="CAL2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CAL3" edc:desc="" edc:mask="0x1" edc:name="CAL3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CAL4" edc:desc="" edc:mask="0x1" edc:name="CAL4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CAL5" edc:desc="" edc:mask="0x1" edc:name="CAL5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CAL6" edc:desc="" edc:mask="0x1" edc:name="CAL6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CAL7" edc:desc="" edc:mask="0x1" edc:name="CAL7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="RTCPTR0" edc:desc="" edc:mask="0x1" edc:name="RTCPTR0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="RTCPTR1" edc:desc="" edc:mask="0x1" edc:name="RTCPTR1" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+    <edc:StimInfo edc:stimpcfiles="rw" edc:stimregfiles="rw" edc:stimscl="rwb" edc:stimtype="Record"/>
+    <edc:FreezeBit edc:freezeval="1" edc:name="REAL TIME CLOCK AND CALENDAR" edc:pos="0xe"/>
+  </edc:SFRDef>
+</edc:Module>

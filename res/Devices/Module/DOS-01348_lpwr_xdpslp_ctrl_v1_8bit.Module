@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:Module xmlns:edc="http://crownking/edc" edc:dosid="DOS-01348_lpwr_xdpslp_ctrl_v1_8bit" edc:modid="lpwr_xdpslp_ctrl_v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/Module.xsd">
+  <edc:ArchDef edc:desc="" edc:name="">
+    <edc:MemTraits>
+      <edc:DataMemTraits edc:addrinc="0x1" edc:locsize="0x1" edc:wordimpl="0xff" edc:wordinit="0x0" edc:wordsafe="0xff" edc:wordsize="0x1"/>
+    </edc:MemTraits>
+  </edc:ArchDef>
+  <edc:SFRDef edc:access="-------n" edc:cname="DSWSRC2" edc:desc="" edc:impl="0x1" edc:isindirect="false" edc:isvolatile="true" edc:mclr="-------0" edc:name="DSWSRC2" edc:nzwidth="8" edc:por="-------0">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="INT0" edc:desc="" edc:mask="0x1" edc:name="INT0" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="DSWSRC1" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="DSWSRC1" edc:nzwidth="8" edc:por="00000001">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="POR" edc:desc="" edc:mask="0x1" edc:name="POR" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="ICD" edc:desc="" edc:mask="0x1" edc:name="ICD" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="MCLR" edc:desc="" edc:mask="0x1" edc:name="MCLR" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="RTCC" edc:desc="" edc:mask="0x1" edc:name="RTCC" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="DSWDT" edc:desc="" edc:mask="0x1" edc:name="DSWDT" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="EXT" edc:desc="" edc:mask="0x1" edc:name="EXT" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="BOR" edc:desc="" edc:mask="0x1" edc:name="BOR" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="FAULT" edc:desc="" edc:mask="0x1" edc:name="FAULT" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="n-n----n" edc:cname="DSCON2" edc:desc="" edc:impl="0xa1" edc:isindirect="false" edc:isvolatile="true" edc:mclr="0-0----0" edc:name="DSCON2" edc:nzwidth="8" edc:por="0-0----0">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="RTCCWDIS" edc:desc="" edc:mask="0x1" edc:name="RTCCWDIS" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="4"/>
+        <edc:SFRFieldDef edc:cname="XSEMAEN" edc:desc="" edc:mask="0x1" edc:name="XSEMAEN" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="DSEN" edc:desc="" edc:mask="0x1" edc:name="DSEN" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="-----nnn" edc:cname="DSCON1" edc:desc="" edc:impl="0x7" edc:isindirect="false" edc:isvolatile="true" edc:mclr="-----000" edc:name="DSCON1" edc:nzwidth="8" edc:por="-----000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="DSSR" edc:desc="" edc:mask="0x1" edc:name="DSSR" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="ZPBOR" edc:desc="" edc:mask="0x1" edc:name="ZPBOR" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="WAKEDIS" edc:desc="" edc:mask="0x1" edc:name="WAKEDIS" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+</edc:Module>

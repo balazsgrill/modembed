@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:Module xmlns:edc="http://crownking/edc" edc:dosid="00826" edc:modid="clk_sib_v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/Module.xsd">
+  <edc:ArchDef edc:desc="" edc:name="">
+    <edc:MemTraits>
+      <edc:DataMemTraits edc:addrinc="0x2" edc:locsize="0x2" edc:wordimpl="0xffff" edc:wordinit="0x0" edc:wordsafe="0xffff" edc:wordsize="0x2"/>
+    </edc:MemTraits>
+  </edc:ArchDef>
+  <edc:SFRDef edc:access="-rrr-nnnnnr-c-nn" edc:cname="OSCCON" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="-000-yyy000-0-x0" edc:name="OSCCON" edc:nzwidth="16" edc:por="-000-yyy000-0-x0">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="OSWEN" edc:desc="" edc:mask="0x1" edc:name="OSWEN" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LPOSCEN" edc:desc="" edc:mask="0x1" edc:name="LPOSCEN" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="CF" edc:desc="" edc:mask="0x1" edc:name="CF" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="LOCK" edc:desc="" edc:mask="0x1" edc:name="LOCK" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="IOLOCK" edc:desc="" edc:mask="0x1" edc:name="IOLOCK" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CLKLOCK" edc:desc="" edc:mask="0x1" edc:name="CLKLOCK" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="NOSC" edc:desc="" edc:mask="0x7" edc:name="NOSC" edc:nzwidth="3"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="COSC" edc:desc="" edc:mask="0x7" edc:name="COSC" edc:nzwidth="3"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:AdjustPoint edc:offset="8"/>
+        <edc:SFRFieldDef edc:cname="NOSC0" edc:desc="" edc:mask="0x1" edc:name="NOSC0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="NOSC1" edc:desc="" edc:mask="0x1" edc:name="NOSC1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="NOSC2" edc:desc="" edc:mask="0x1" edc:name="NOSC2" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="COSC0" edc:desc="" edc:mask="0x1" edc:name="COSC0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="COSC1" edc:desc="" edc:mask="0x1" edc:name="COSC1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="COSC2" edc:desc="" edc:mask="0x1" edc:name="COSC2" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnnnn-nnnnn" edc:cname="CLKDIV" edc:desc="" edc:impl="0xffdf" edc:isindirect="false" edc:isvolatile="true" edc:mclr="0011000001-00000" edc:name="CLKDIV" edc:nzwidth="0x10" edc:por="0011000001-00000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="PLLPRE" edc:desc="" edc:mask="0x1f" edc:name="PLLPRE" edc:nzwidth="0x5"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="PLLPOST" edc:desc="" edc:mask="0x3" edc:name="PLLPOST" edc:nzwidth="0x2"/>
+        <edc:SFRFieldDef edc:cname="FRCDIV" edc:desc="" edc:mask="0x7" edc:name="FRCDIV" edc:nzwidth="0x3"/>
+        <edc:SFRFieldDef edc:cname="DOZEN" edc:desc="" edc:mask="0x1" edc:name="DOZEN" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="DOZE" edc:desc="" edc:mask="0x7" edc:name="DOZE" edc:nzwidth="0x3"/>
+        <edc:SFRFieldDef edc:cname="ROI" edc:desc="" edc:mask="0x1" edc:name="ROI" edc:nzwidth="0x1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="PLLPRE0" edc:desc="" edc:mask="0x1" edc:name="PLLPRE0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="PLLPRE1" edc:desc="" edc:mask="0x1" edc:name="PLLPRE1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="PLLPRE2" edc:desc="" edc:mask="0x1" edc:name="PLLPRE2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="PLLPRE3" edc:desc="" edc:mask="0x1" edc:name="PLLPRE3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="PLLPRE4" edc:desc="" edc:mask="0x1" edc:name="PLLPRE4" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="PLLPOST0" edc:desc="" edc:mask="0x1" edc:name="PLLPOST0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="PLLPOST1" edc:desc="" edc:mask="0x1" edc:name="PLLPOST1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="FRCDIV0" edc:desc="" edc:mask="0x1" edc:name="FRCDIV0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="FRCDIV1" edc:desc="" edc:mask="0x1" edc:name="FRCDIV1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="FRCDIV2" edc:desc="" edc:mask="0x1" edc:name="FRCDIV2" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="DOZE0" edc:desc="" edc:mask="0x1" edc:name="DOZE0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="DOZE1" edc:desc="" edc:mask="0x1" edc:name="DOZE1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="DOZE2" edc:desc="" edc:mask="0x1" edc:name="DOZE2" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+    <edc:StimInfo edc:stimpcfiles="rw" edc:stimregfiles="rw" edc:stimscl="rwb" edc:stimtype="Record"/>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="-------nnnnnnnnn" edc:cname="PLLFBD" edc:desc="" edc:impl="0x1ff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="-------000110000" edc:name="PLLFBD" edc:nzwidth="0x10" edc:por="-------000110000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="PLLDIV" edc:desc="" edc:mask="0x1ff" edc:name="PLLDIV" edc:nzwidth="0x9"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="PLLDIV0" edc:desc="" edc:mask="0x1" edc:name="PLLDIV0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="PLLDIV1" edc:desc="" edc:mask="0x1" edc:name="PLLDIV1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="PLLDIV2" edc:desc="" edc:mask="0x1" edc:name="PLLDIV2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="PLLDIV3" edc:desc="" edc:mask="0x1" edc:name="PLLDIV3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="PLLDIV4" edc:desc="" edc:mask="0x1" edc:name="PLLDIV4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="PLLDIV5" edc:desc="" edc:mask="0x1" edc:name="PLLDIV5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="PLLDIV6" edc:desc="" edc:mask="0x1" edc:name="PLLDIV6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="PLLDIV7" edc:desc="" edc:mask="0x1" edc:name="PLLDIV7" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="PLLDIV8" edc:desc="" edc:mask="0x1" edc:name="PLLDIV8" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+    <edc:StimInfo edc:stimpcfiles="rw" edc:stimregfiles="rw" edc:stimscl="rwb" edc:stimtype="Record"/>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="----------nnnnnn" edc:cname="OSCTUN" edc:desc="" edc:impl="0x3f" edc:isindirect="false" edc:isvolatile="true" edc:mclr="----------000000" edc:name="OSCTUN" edc:nzwidth="0x10" edc:por="----------000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="TUN" edc:desc="" edc:mask="0x3f" edc:name="TUN" edc:nzwidth="0x6"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="TUN0" edc:desc="" edc:mask="0x1" edc:name="TUN0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="TUN1" edc:desc="" edc:mask="0x1" edc:name="TUN1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="TUN2" edc:desc="" edc:mask="0x1" edc:name="TUN2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="TUN3" edc:desc="" edc:mask="0x1" edc:name="TUN3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="TUN4" edc:desc="" edc:mask="0x1" edc:name="TUN4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="TUN5" edc:desc="" edc:mask="0x1" edc:name="TUN5" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+    <edc:StimInfo edc:stimpcfiles="rw" edc:stimregfiles="rw" edc:stimscl="rwb" edc:stimtype="Record"/>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="----------------" edc:cname="OSCTUN2" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="----------------" edc:name="OSCTUN2" edc:nzwidth="16" edc:por="----------------">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0"/>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="----------------" edc:cname="LFSR" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="----------------" edc:name="LFSR" edc:nzwidth="16" edc:por="----------------">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0"/>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="n-nnnnnn--------" edc:cname="REFOCON" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="0-000000--------" edc:name="REFOCON" edc:nzwidth="0x10" edc:por="0-000000--------">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:AdjustPoint edc:offset="8"/>
+        <edc:SFRFieldDef edc:cname="RODIV" edc:desc="" edc:mask="0xf" edc:name="RODIV" edc:nzwidth="0x4"/>
+        <edc:SFRFieldDef edc:cname="ROSEL" edc:desc="" edc:mask="0x1" edc:name="ROSEL" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="ROSSLP" edc:desc="" edc:mask="0x1" edc:name="ROSSLP" edc:nzwidth="0x1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="ROON" edc:desc="" edc:mask="0x1" edc:name="ROON" edc:nzwidth="0x1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:AdjustPoint edc:offset="8"/>
+        <edc:SFRFieldDef edc:cname="RODIV0" edc:desc="" edc:mask="0x1" edc:name="RODIV0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="RODIV1" edc:desc="" edc:mask="0x1" edc:name="RODIV1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="RODIV2" edc:desc="" edc:mask="0x1" edc:name="RODIV2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="RODIV3" edc:desc="" edc:mask="0x1" edc:name="RODIV3" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnn-nnnnnnnn" edc:cname="ACLKCON@" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="000xxxx-xxx00xxx" edc:name="ACLKCON@" edc:nzwidth="0x10" edc:por="000xxxx-xxx00xxx">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="APLLPRE" edc:desc="" edc:mask="0x7" edc:name="APLLPRE" edc:nzwidth="3"/>
+        <edc:AdjustPoint edc:offset="2"/>
+        <edc:SFRFieldDef edc:cname="APLLPOST" edc:desc="" edc:mask="0x7" edc:name="APLLPOST" edc:nzwidth="3"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="FRCSEL" edc:desc="" edc:mask="0x1" edc:name="FRCSEL" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="ASRCSEL" edc:desc="" edc:mask="0x1" edc:name="ASRCSEL" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="AOSCMD" edc:desc="" edc:mask="0x3" edc:name="AOSCMD" edc:nzwidth="2"/>
+        <edc:SFRFieldDef edc:cname="SELACLK" edc:desc="" edc:mask="0x1" edc:name="SELACLK" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="APLLCK" edc:desc="" edc:mask="0x1" edc:name="APLLCK" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="ENAPLL" edc:desc="" edc:mask="0x1" edc:name="ENAPLL" edc:nzwidth="0x1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="APPLPRE0" edc:desc="" edc:mask="0x1" edc:name="APPLPRE0" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="APPLPRE1" edc:desc="" edc:mask="0x1" edc:name="APPLPRE1" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="APPLPRE2" edc:desc="" edc:mask="0x1" edc:name="APPLPRE2" edc:nzwidth="0x1"/>
+        <edc:AdjustPoint edc:offset="2"/>
+        <edc:SFRFieldDef edc:cname="APLLPOST0" edc:desc="" edc:mask="0x1" edc:name="APLLPOST0" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="APLLPOST1" edc:desc="" edc:mask="0x1" edc:name="APLLPOST1" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="APLLPOST2" edc:desc="" edc:mask="0x1" edc:name="APLLPOST2" edc:nzwidth="0x1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="AOSCMD0" edc:desc="" edc:mask="0x1" edc:name="AOSCMD0" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="AOSCMD1" edc:desc="" edc:mask="0x1" edc:name="AOSCMD1" edc:nzwidth="0x1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="---nn-----nnnnnn" edc:cname="ACLKDIV@" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="---00-----000xxx" edc:name="ACLKDIV@" edc:nzwidth="0x10" edc:por="---00-----000xxx">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="APLLDIV" edc:desc="" edc:mask="0x7" edc:name="APLLDIV" edc:nzwidth="3"/>
+        <edc:AdjustPoint edc:offset="3"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:AdjustPoint edc:offset="3"/>
+        <edc:AdjustPoint edc:offset="2"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="APLLDIV0" edc:desc="" edc:mask="0x1" edc:name="APLLDIV0" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="APLLDIV1" edc:desc="" edc:mask="0x1" edc:name="APLLDIV1" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="APLLDIV2" edc:desc="" edc:mask="0x1" edc:name="APLLDIV2" edc:nzwidth="0x1"/>
+        <edc:AdjustPoint edc:offset="5"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+</edc:Module>

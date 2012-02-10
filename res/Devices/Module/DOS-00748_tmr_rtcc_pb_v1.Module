@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:Module xmlns:edc="http://crownking/edc" edc:dosid="00748" edc:modid="tmr_rtcc_pb_v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/Module.xsd">
+  <edc:ArchDef edc:desc="" edc:name="">
+    <edc:MemTraits>
+      <edc:DataMemTraits edc:addrinc="0x4" edc:locsize="0x4" edc:wordimpl="0xffffffff" edc:wordinit="0x0" edc:wordsafe="0xffffffff" edc:wordsize="0x4"/>
+    </edc:MemTraits>
+  </edc:ArchDef>
+  <edc:SFRDef edc:access="------nnnnnnnnnnnnn-----nn--nrrn" edc:cname="RTCCON" edc:desc="" edc:grp="RTCC" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="------xxxxxxxxxxxxx-----xx--xxxx" edc:name="RTCCON" edc:nzwidth="0x20" edc:por="------0000000000000-----00--0000" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="RTCOE" edc:desc="" edc:mask="0x1" edc:name="RTCOE" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="HALFSEC" edc:desc="" edc:mask="0x1" edc:name="HALFSEC" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="RTCSYNC" edc:desc="" edc:mask="0x1" edc:name="RTCSYNC" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="RTCWREN" edc:desc="" edc:mask="0x1" edc:name="RTCWREN" edc:nzwidth="0x1"/>
+        <edc:AdjustPoint edc:offset="2"/>
+        <edc:SFRFieldDef edc:cname="RTCCLKON" edc:desc="" edc:mask="0x1" edc:name="RTCCLKON" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="RTSECSEL" edc:desc="" edc:mask="0x1" edc:name="RTSECSEL" edc:nzwidth="0x1"/>
+        <edc:AdjustPoint edc:offset="5"/>
+        <edc:SFRFieldDef edc:cname="SIDL" edc:desc="" edc:mask="0x1" edc:name="SIDL" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="FRZ" edc:desc="" edc:ishidden="true" edc:islanghidden="true" edc:mask="0x1" edc:name="FRZ" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="ON" edc:desc="" edc:mask="0x1" edc:name="ON" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="CAL" edc:desc="" edc:mask="0x3ff" edc:name="CAL" edc:nzwidth="0xa"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="w" edc:desc="" edc:mask="0x1" edc:name="w" edc:nzwidth="0x20"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+    <edc:FreezeBit edc:freezeval="1" edc:name="REAL TIME CLOCK" edc:pos="14"/>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="----------------nnnnnnnnnnnnnnnn" edc:cname="RTCALRM" edc:desc="" edc:grp="RTCC" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="----------------0000000000000000" edc:name="RTCALRM" edc:nzwidth="0x20" edc:por="----------------0000000000000000" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="ARPT" edc:desc="" edc:mask="0xff" edc:name="ARPT" edc:nzwidth="0x8"/>
+        <edc:SFRFieldDef edc:cname="AMASK" edc:desc="" edc:mask="0xf" edc:name="AMASK" edc:nzwidth="0x4"/>
+        <edc:SFRFieldDef edc:cname="ALRMSYNC" edc:desc="" edc:mask="0x1" edc:name="ALRMSYNC" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="PIV" edc:desc="" edc:mask="0x1" edc:name="PIV" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="CHIME" edc:desc="" edc:mask="0x1" edc:name="CHIME" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="ALRMEN" edc:desc="" edc:mask="0x1" edc:name="ALRMEN" edc:nzwidth="0x1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="w" edc:desc="" edc:mask="0x1" edc:name="w" edc:nzwidth="0x20"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="rrrnnnnnnnnnnnnnrnnnnnnn--------" edc:cname="RTCTIME" edc:desc="" edc:grp="RTCC" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="000xxxxxxxxxxxxx0xxxxxxx--------" edc:name="RTCTIME" edc:nzwidth="0x20" edc:por="000xxxxxxxxxxxxx0xxxxxxx--------" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:AdjustPoint edc:offset="8"/>
+        <edc:SFRFieldDef edc:cname="SEC01" edc:desc="" edc:mask="0xf" edc:name="SEC01" edc:nzwidth="0x4"/>
+        <edc:SFRFieldDef edc:cname="SEC10" edc:desc="" edc:mask="0xf" edc:name="SEC10" edc:nzwidth="0x4"/>
+        <edc:SFRFieldDef edc:cname="MIN01" edc:desc="" edc:mask="0xf" edc:name="MIN01" edc:nzwidth="0x4"/>
+        <edc:SFRFieldDef edc:cname="MIN10" edc:desc="" edc:mask="0xf" edc:name="MIN10" edc:nzwidth="0x4"/>
+        <edc:SFRFieldDef edc:cname="HR01" edc:desc="" edc:mask="0xf" edc:name="HR01" edc:nzwidth="0x4"/>
+        <edc:SFRFieldDef edc:cname="HR10" edc:desc="" edc:mask="0xf" edc:name="HR10" edc:nzwidth="0x4"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="w" edc:desc="" edc:mask="0x1" edc:name="w" edc:nzwidth="0x20"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnnrrrnnnnnrrnnnnnn----rnnn" edc:cname="RTCDATE" edc:desc="" edc:grp="RTCC" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="xxxxxxxx000xxxxx00xxxxxx----0xxx" edc:name="RTCDATE" edc:nzwidth="0x20" edc:por="xxxxxxxx000xxxxx00xxxxxx----0xxx" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="WDAY01" edc:desc="" edc:mask="0xf" edc:name="WDAY01" edc:nzwidth="0x4"/>
+        <edc:AdjustPoint edc:offset="4"/>
+        <edc:SFRFieldDef edc:cname="DAY01" edc:desc="" edc:mask="0xf" edc:name="DAY01" edc:nzwidth="0x4"/>
+        <edc:SFRFieldDef edc:cname="DAY10" edc:desc="" edc:mask="0xf" edc:name="DAY10" edc:nzwidth="0x4"/>
+        <edc:SFRFieldDef edc:cname="MONTH01" edc:desc="" edc:mask="0xf" edc:name="MONTH01" edc:nzwidth="0x4"/>
+        <edc:SFRFieldDef edc:cname="MONTH10" edc:desc="" edc:mask="0xf" edc:name="MONTH10" edc:nzwidth="0x4"/>
+        <edc:SFRFieldDef edc:cname="YEAR01" edc:desc="" edc:mask="0xf" edc:name="YEAR01" edc:nzwidth="0x4"/>
+        <edc:SFRFieldDef edc:cname="YEAR10" edc:desc="" edc:mask="0xf" edc:name="YEAR10" edc:nzwidth="0x4"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="w" edc:desc="" edc:mask="0x1" edc:name="w" edc:nzwidth="0x20"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="rrrnnnnnrnnnnnnnrnnnnnnn--------" edc:cname="ALRMTIME" edc:desc="" edc:grp="RTCC" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="000xxxxx0xxxxxxx0xxxxxxx--------" edc:name="ALRMTIME" edc:nzwidth="0x20" edc:por="000xxxxx0xxxxxxx0xxxxxxx--------" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:AdjustPoint edc:offset="8"/>
+        <edc:SFRFieldDef edc:cname="SEC01" edc:desc="" edc:mask="0xf" edc:name="SEC01" edc:nzwidth="0x4"/>
+        <edc:SFRFieldDef edc:cname="SEC10" edc:desc="" edc:mask="0xf" edc:name="SEC10" edc:nzwidth="0x4"/>
+        <edc:SFRFieldDef edc:cname="MIN01" edc:desc="" edc:mask="0xf" edc:name="MIN01" edc:nzwidth="0x4"/>
+        <edc:SFRFieldDef edc:cname="MIN10" edc:desc="" edc:mask="0xf" edc:name="MIN10" edc:nzwidth="0x4"/>
+        <edc:SFRFieldDef edc:cname="HR01" edc:desc="" edc:mask="0xf" edc:name="HR01" edc:nzwidth="0x4"/>
+        <edc:SFRFieldDef edc:cname="HR10" edc:desc="" edc:mask="0xf" edc:name="HR10" edc:nzwidth="0x4"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="w" edc:desc="" edc:mask="0x1" edc:name="w" edc:nzwidth="0x20"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="--------rrrnnnnnrrnnnnnn----rnnn" edc:cname="ALRMDATE" edc:desc="" edc:grp="RTCC" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="--------000xxxxx00xxxxxx----0xxx" edc:name="ALRMDATE" edc:nzwidth="0x20" edc:por="--------000xxxxx00xxxxxx----0xxx" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="WDAY01" edc:desc="" edc:mask="0xf" edc:name="WDAY01" edc:nzwidth="0x4"/>
+        <edc:AdjustPoint edc:offset="4"/>
+        <edc:SFRFieldDef edc:cname="DAY01" edc:desc="" edc:mask="0xf" edc:name="DAY01" edc:nzwidth="0x4"/>
+        <edc:SFRFieldDef edc:cname="DAY10" edc:desc="" edc:mask="0xf" edc:name="DAY10" edc:nzwidth="0x4"/>
+        <edc:SFRFieldDef edc:cname="MONTH01" edc:desc="" edc:mask="0xf" edc:name="MONTH01" edc:nzwidth="0x4"/>
+        <edc:SFRFieldDef edc:cname="MONTH10" edc:desc="" edc:mask="0xf" edc:name="MONTH10" edc:nzwidth="0x4"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="w" edc:desc="" edc:mask="0x1" edc:name="w" edc:nzwidth="0x20"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+</edc:Module>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:Module xmlns:edc="http://crownking/edc" edc:desc="PWM" edc:dosid="01435" edc:modid="PWM" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/Module.xsd">
+  <edc:ArchDef edc:desc="" edc:name="">
+    <edc:MemTraits>
+      <edc:DataMemTraits edc:addrinc="0x1" edc:locsize="0x1" edc:wordimpl="0xff" edc:wordinit="0x0" edc:wordsafe="0xff" edc:wordsize="0x1"/>
+    </edc:MemTraits>
+  </edc:ArchDef>
+  <edc:SFRDef edc:access="nn------" edc:cname="PWM@DCL" edc:desc="" edc:impl="0xc0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="uu------" edc:name="PWM@DCL" edc:nzwidth="8" edc:por="xx------">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="PWM@DCL" edc:desc="" edc:mask="0x3" edc:name="PWM@DCL" edc:nzwidth="2"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="PWM@DCL0" edc:desc="" edc:mask="0x1" edc:name="PWM@DCL0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="PWM@DCL1" edc:desc="" edc:mask="0x1" edc:name="PWM@DCL1" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="PWM@DCH" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="uuuuuuuu" edc:name="PWM@DCH" edc:nzwidth="8" edc:por="xxxxxxxx">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="PWM@DCH" edc:desc="" edc:mask="0xff" edc:name="PWM@DCH" edc:nzwidth="8"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="PWM@DCH0" edc:desc="" edc:mask="0x1" edc:name="PWM@DCH0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="PWM@DCH1" edc:desc="" edc:mask="0x1" edc:name="PWM@DCH1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="PWM@DCH2" edc:desc="" edc:mask="0x1" edc:name="PWM@DCH2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="PWM@DCH3" edc:desc="" edc:mask="0x1" edc:name="PWM@DCH3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="PWM@DCH4" edc:desc="" edc:mask="0x1" edc:name="PWM@DCH4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="PWM@DCH5" edc:desc="" edc:mask="0x1" edc:name="PWM@DCH5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="PWM@DCH6" edc:desc="" edc:mask="0x1" edc:name="PWM@DCH6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="PWM@DCH7" edc:desc="" edc:mask="0x1" edc:name="PWM@DCH7" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnn----" edc:cname="PWM@CON" edc:desc="Configurable logic cell control" edc:impl="0xf0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00x0----" edc:name="PWM@CON" edc:nzwidth="8" edc:por="00x0----">
+    <edc:AliasList>
+      <edc:LegacyAlias edc:cname="PWM@CON0"/>
+    </edc:AliasList>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="PWM@POL" edc:desc="" edc:mask="0x1" edc:name="PWM@POL" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="PWM@OUT" edc:desc="" edc:mask="0x1" edc:name="PWM@OUT" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="PWM@OE" edc:desc="" edc:mask="0x1" edc:name="PWM@OE" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="PWM@EN" edc:desc="" edc:mask="0x1" edc:name="PWM@EN" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+</edc:Module>

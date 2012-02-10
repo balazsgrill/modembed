@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:Module xmlns:edc="http://crownking/edc" edc:desc="TimerN DDS" edc:dosid="DOS-01444" edc:modid="tmr_dds_v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/Module.xsd">
+  <edc:ArchDef edc:desc="" edc:name="">
+    <edc:MemTraits>
+      <edc:DataMemTraits edc:addrinc="0x1" edc:locsize="0x1" edc:wordimpl="0xff" edc:wordinit="0x0" edc:wordsafe="0xff" edc:wordsize="0x1"/>
+    </edc:MemTraits>
+  </edc:ArchDef>
+  <edc:JoinedSFRDef edc:cname="DDS@ACC" edc:desc="" edc:name="DDS@ACC" edc:nzwidth="0x18">
+    <edc:SFRModeList/>
+    <edc:SFRDef edc:access="nnnnnnnn" edc:cname="DDS@ACCL" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="DDS@ACCL" edc:nzwidth="8" edc:por="00000000">
+      <edc:AliasList/>
+      <edc:SFRModeList>
+        <edc:SFRMode edc:id="DS.0">
+          <edc:SFRFieldDef edc:cname="DDS@ACC0" edc:desc="" edc:mask="0x1" edc:name="DDS@ACC0" edc:nzwidth="1"/>
+          <edc:SFRFieldDef edc:cname="DDS@ACC1" edc:desc="" edc:mask="0x1" edc:name="DDS@ACC1" edc:nzwidth="1"/>
+          <edc:SFRFieldDef edc:cname="DDS@ACC2" edc:desc="" edc:mask="0x1" edc:name="DDS@ACC2" edc:nzwidth="1"/>
+          <edc:SFRFieldDef edc:cname="DDS@ACC3" edc:desc="" edc:mask="0x1" edc:name="DDS@ACC3" edc:nzwidth="1"/>
+          <edc:SFRFieldDef edc:cname="DDS@ACC4" edc:desc="" edc:mask="0x1" edc:name="DDS@ACC4" edc:nzwidth="1"/>
+          <edc:SFRFieldDef edc:cname="DDS@ACC5" edc:desc="" edc:mask="0x1" edc:name="DDS@ACC5" edc:nzwidth="1"/>
+          <edc:SFRFieldDef edc:cname="DDS@ACC6" edc:desc="" edc:mask="0x1" edc:name="DDS@ACC6" edc:nzwidth="1"/>
+          <edc:SFRFieldDef edc:cname="DDS@ACC7" edc:desc="" edc:mask="0x1" edc:name="DDS@ACC7" edc:nzwidth="1"/>
+        </edc:SFRMode>
+      </edc:SFRModeList>
+    </edc:SFRDef>
+    <edc:SFRDef edc:access="nnnnnnnn" edc:cname="DDS@ACCH" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="DDS@ACCH" edc:nzwidth="8" edc:por="00000000">
+      <edc:AliasList/>
+      <edc:SFRModeList>
+        <edc:SFRMode edc:id="DS.0">
+          <edc:SFRFieldDef edc:cname="DDS@ACC8" edc:desc="" edc:mask="0x1" edc:name="DDS@ACC8" edc:nzwidth="1"/>
+          <edc:SFRFieldDef edc:cname="DDS@ACC9" edc:desc="" edc:mask="0x1" edc:name="DDS@ACC9" edc:nzwidth="1"/>
+          <edc:SFRFieldDef edc:cname="DDS@ACC10" edc:desc="" edc:mask="0x1" edc:name="DDS@ACC10" edc:nzwidth="1"/>
+          <edc:SFRFieldDef edc:cname="DDS@ACC11" edc:desc="" edc:mask="0x1" edc:name="DDS@ACC11" edc:nzwidth="1"/>
+          <edc:SFRFieldDef edc:cname="DDS@ACC12" edc:desc="" edc:mask="0x1" edc:name="DDS@ACC12" edc:nzwidth="1"/>
+          <edc:SFRFieldDef edc:cname="DDS@ACC13" edc:desc="" edc:mask="0x1" edc:name="DDS@ACC13" edc:nzwidth="1"/>
+          <edc:SFRFieldDef edc:cname="DDS@ACC14" edc:desc="" edc:mask="0x1" edc:name="DDS@ACC14" edc:nzwidth="1"/>
+          <edc:SFRFieldDef edc:cname="DDS@ACC15" edc:desc="" edc:mask="0x1" edc:name="DDS@ACC15" edc:nzwidth="1"/>
+        </edc:SFRMode>
+      </edc:SFRModeList>
+    </edc:SFRDef>
+    <edc:SFRDef edc:access="nnnnnnnn" edc:cname="DDS@ACCU" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="DDS@ACCU" edc:nzwidth="8" edc:por="00000000">
+      <edc:AliasList/>
+      <edc:SFRModeList>
+        <edc:SFRMode edc:id="DS.0">
+          <edc:SFRFieldDef edc:cname="DDS@ACC16" edc:desc="" edc:mask="0x1" edc:name="DDS@ACC16" edc:nzwidth="1"/>
+          <edc:SFRFieldDef edc:cname="DDS@ACC17" edc:desc="" edc:mask="0x1" edc:name="DDS@ACC17" edc:nzwidth="1"/>
+          <edc:SFRFieldDef edc:cname="DDS@ACC18" edc:desc="" edc:mask="0x1" edc:name="DDS@ACC18" edc:nzwidth="1"/>
+          <edc:SFRFieldDef edc:cname="DDS@ACC19" edc:desc="" edc:mask="0x1" edc:name="DDS@ACC19" edc:nzwidth="1"/>
+          <edc:SFRFieldDef edc:cname="DDS@ACC20" edc:desc="" edc:mask="0x1" edc:name="DDS@ACC20" edc:nzwidth="1"/>
+          <edc:SFRFieldDef edc:cname="DDS@ACC21" edc:desc="" edc:mask="0x1" edc:name="DDS@ACC21" edc:nzwidth="1"/>
+          <edc:SFRFieldDef edc:cname="DDS@ACC22" edc:desc="" edc:mask="0x1" edc:name="DDS@ACC22" edc:nzwidth="1"/>
+          <edc:SFRFieldDef edc:cname="DDS@ACC23" edc:desc="" edc:mask="0x1" edc:name="DDS@ACC23" edc:nzwidth="1"/>
+        </edc:SFRMode>
+      </edc:SFRModeList>
+    </edc:SFRDef>
+  </edc:JoinedSFRDef>
+  <edc:JoinedSFRDef edc:cname="DDS@INC" edc:desc="" edc:name="DDS@INC" edc:nzwidth="0x18">
+    <edc:SFRModeList/>
+    <edc:SFRDef edc:access="nnnnnnnn" edc:cname="DDS@INCL" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000001" edc:name="DDS@INCL" edc:nzwidth="8" edc:por="00000001">
+      <edc:AliasList/>
+      <edc:SFRModeList>
+        <edc:SFRMode edc:id="DS.0">
+          <edc:SFRFieldDef edc:cname="DDS@INC0" edc:desc="" edc:mask="0x1" edc:name="DDS@INC0" edc:nzwidth="1"/>
+          <edc:SFRFieldDef edc:cname="DDS@INC1" edc:desc="" edc:mask="0x1" edc:name="DDS@INC1" edc:nzwidth="1"/>
+          <edc:SFRFieldDef edc:cname="DDS@INC2" edc:desc="" edc:mask="0x1" edc:name="DDS@INC2" edc:nzwidth="1"/>
+          <edc:SFRFieldDef edc:cname="DDS@INC3" edc:desc="" edc:mask="0x1" edc:name="DDS@INC3" edc:nzwidth="1"/>
+          <edc:SFRFieldDef edc:cname="DDS@INC4" edc:desc="" edc:mask="0x1" edc:name="DDS@INC4" edc:nzwidth="1"/>
+          <edc:SFRFieldDef edc:cname="DDS@INC5" edc:desc="" edc:mask="0x1" edc:name="DDS@INC5" edc:nzwidth="1"/>
+          <edc:SFRFieldDef edc:cname="DDS@INC6" edc:desc="" edc:mask="0x1" edc:name="DDS@INC6" edc:nzwidth="1"/>
+          <edc:SFRFieldDef edc:cname="DDS@INC7" edc:desc="" edc:mask="0x1" edc:name="DDS@INC7" edc:nzwidth="1"/>
+        </edc:SFRMode>
+      </edc:SFRModeList>
+    </edc:SFRDef>
+    <edc:SFRDef edc:access="nnnnnnnn" edc:cname="DDS@INCH" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="DDS@INCH" edc:nzwidth="8" edc:por="00000000">
+      <edc:AliasList/>
+      <edc:SFRModeList>
+        <edc:SFRMode edc:id="DS.0">
+          <edc:SFRFieldDef edc:cname="DDS@INC8" edc:desc="" edc:mask="0x1" edc:name="DDS@INC8" edc:nzwidth="1"/>
+          <edc:SFRFieldDef edc:cname="DDS@INC9" edc:desc="" edc:mask="0x1" edc:name="DDS@INC9" edc:nzwidth="1"/>
+          <edc:SFRFieldDef edc:cname="DDS@INC10" edc:desc="" edc:mask="0x1" edc:name="DDS@INC10" edc:nzwidth="1"/>
+          <edc:SFRFieldDef edc:cname="DDS@INC11" edc:desc="" edc:mask="0x1" edc:name="DDS@INC11" edc:nzwidth="1"/>
+          <edc:SFRFieldDef edc:cname="DDS@INC12" edc:desc="" edc:mask="0x1" edc:name="DDS@INC12" edc:nzwidth="1"/>
+          <edc:SFRFieldDef edc:cname="DDS@INC13" edc:desc="" edc:mask="0x1" edc:name="DDS@INC13" edc:nzwidth="1"/>
+          <edc:SFRFieldDef edc:cname="DDS@INC14" edc:desc="" edc:mask="0x1" edc:name="DDS@INC14" edc:nzwidth="1"/>
+          <edc:SFRFieldDef edc:cname="DDS@INC15" edc:desc="" edc:mask="0x1" edc:name="DDS@INC15" edc:nzwidth="1"/>
+        </edc:SFRMode>
+      </edc:SFRModeList>
+    </edc:SFRDef>
+    <edc:SFRDef edc:access="nnnnnnnn" edc:cname="DDS@INCU" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="DDS@INCU" edc:nzwidth="8" edc:por="00000000">
+      <edc:AliasList/>
+      <edc:SFRModeList>
+        <edc:SFRMode edc:id="DS.0">
+          <edc:SFRFieldDef edc:cname="DDS@INC16" edc:desc="" edc:mask="0x1" edc:name="DDS@INC16" edc:nzwidth="1"/>
+          <edc:SFRFieldDef edc:cname="DDS@INC17" edc:desc="" edc:mask="0x1" edc:name="DDS@INC17" edc:nzwidth="1"/>
+          <edc:SFRFieldDef edc:cname="DDS@INC18" edc:desc="" edc:mask="0x1" edc:name="DDS@INC18" edc:nzwidth="1"/>
+          <edc:SFRFieldDef edc:cname="DDS@INC19" edc:desc="" edc:mask="0x1" edc:name="DDS@INC19" edc:nzwidth="1"/>
+          <edc:SFRFieldDef edc:cname="DDS@INC20" edc:desc="" edc:mask="0x1" edc:name="DDS@INC20" edc:nzwidth="1"/>
+          <edc:SFRFieldDef edc:cname="DDS@INC21" edc:desc="" edc:mask="0x1" edc:name="DDS@INC21" edc:nzwidth="1"/>
+          <edc:SFRFieldDef edc:cname="DDS@INC22" edc:desc="" edc:mask="0x1" edc:name="DDS@INC22" edc:nzwidth="1"/>
+          <edc:SFRFieldDef edc:cname="DDS@INC23" edc:desc="" edc:mask="0x1" edc:name="DDS@INC23" edc:nzwidth="1"/>
+        </edc:SFRMode>
+      </edc:SFRModeList>
+    </edc:SFRDef>
+  </edc:JoinedSFRDef>
+  <edc:SFRDef edc:access="nnrn---n" edc:cname="DDS@CON" edc:desc="Configurable logic cell control" edc:impl="0xf1" edc:isindirect="false" edc:isvolatile="true" edc:mclr="0000---0" edc:name="DDS@CON" edc:nzwidth="8" edc:por="0000---0">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="D@PFM" edc:desc="" edc:mask="0x1" edc:name="D@PFM" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="D@POL" edc:desc="" edc:mask="0x1" edc:name="D@POL" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="D@OUT" edc:desc="" edc:mask="0x1" edc:name="D@OUT" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="D@OE" edc:desc="" edc:mask="0x1" edc:name="D@OE" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="D@EN" edc:desc="" edc:mask="0x1" edc:name="D@EN" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnn-nnnn" edc:cname="DDS@CLK" edc:desc="" edc:impl="0xef" edc:isindirect="false" edc:isvolatile="true" edc:mclr="000-0000" edc:name="DDS@CLK" edc:nzwidth="8" edc:por="000-0000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="D@CKS0" edc:desc="" edc:mask="0x1" edc:name="D@CKS0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="D@CKS1" edc:desc="" edc:mask="0x1" edc:name="D@CKS1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="D@CKS2" edc:desc="" edc:mask="0x1" edc:name="D@CKS2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="D@CKS3" edc:desc="" edc:mask="0x1" edc:name="D@CKS3" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="D@PWS0" edc:desc="" edc:mask="0x1" edc:name="D@PWS0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="D@PWS1" edc:desc="" edc:mask="0x1" edc:name="D@PWS1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="D@PWS2" edc:desc="" edc:mask="0x1" edc:name="D@PWS2" edc:nzwidth="1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="D@CKS" edc:desc="" edc:mask="0xf" edc:name="D@CKS" edc:nzwidth="4"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="D@PWS" edc:desc="" edc:mask="0x7" edc:name="D@PWS" edc:nzwidth="3"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+</edc:Module>

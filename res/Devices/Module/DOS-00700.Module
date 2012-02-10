@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:Module xmlns:edc="http://crownking/edc" edc:dosid="DOS-00700" edc:modid="i2c_v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/Module.xsd">
+  <edc:ArchDef edc:desc="" edc:name="">
+    <edc:MemTraits>
+      <edc:DataMemTraits edc:addrinc="0x2" edc:locsize="0x2" edc:wordimpl="0xffff" edc:wordinit="0x0" edc:wordsafe="0xffff" edc:wordsize="0x2"/>
+    </edc:MemTraits>
+  </edc:ArchDef>
+  <edc:SFRDef edc:access="--------rrrrrrrr" edc:cname="I2C@RCV" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="--------00000000" edc:name="I2C@RCV" edc:nzwidth="0x10" edc:por="--------00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="I2CRCV" edc:desc="" edc:islanghidden="true" edc:mask="0xff" edc:name="I2CRCV" edc:nzwidth="0x8"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+    <edc:StimInfo edc:stimpcfiles="r" edc:stimregfiles="r" edc:stimscl="rwb" edc:stimtype="Record"/>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="--------wwwwwwww" edc:cname="I2C@TRN" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="--------11111111" edc:name="I2C@TRN" edc:nzwidth="0x10" edc:por="--------11111111">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="I2CTRN" edc:desc="" edc:islanghidden="true" edc:mask="0xff" edc:name="I2CTRN" edc:nzwidth="0x8"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+    <edc:StimInfo edc:stimpcfiles="w" edc:stimregfiles="w" edc:stimscl="rwb" edc:stimtype="Record"/>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="-------nnnnnnnnn" edc:cname="I2C@BRG" edc:desc="" edc:impl="0x1ff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="-------000000000" edc:name="I2C@BRG" edc:nzwidth="0x10" edc:por="-------000000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="I2CBRG" edc:desc="" edc:islanghidden="true" edc:mask="0x1ff" edc:name="I2CBRG" edc:nzwidth="0x9"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+    <edc:StimInfo edc:stimpcfiles="" edc:stimregfiles="" edc:stimscl="rwb" edc:stimtype="Record"/>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="n-nnnnnnnnnnnnnn" edc:cname="I2C@CON" edc:desc="" edc:impl="0xbfff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="0-01000000000000" edc:name="I2C@CON" edc:nzwidth="0x10" edc:por="0-01000000000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="SEN" edc:desc="" edc:mask="0x1" edc:name="SEN" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="RSEN" edc:desc="" edc:mask="0x1" edc:name="RSEN" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="PEN" edc:desc="" edc:mask="0x1" edc:name="PEN" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="RCEN" edc:desc="" edc:mask="0x1" edc:name="RCEN" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="ACKEN" edc:desc="" edc:mask="0x1" edc:name="ACKEN" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="ACKDT" edc:desc="" edc:mask="0x1" edc:name="ACKDT" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="STREN" edc:desc="" edc:mask="0x1" edc:name="STREN" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="GCEN" edc:desc="" edc:mask="0x1" edc:name="GCEN" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="SMEN" edc:desc="" edc:mask="0x1" edc:name="SMEN" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="DISSLW" edc:desc="" edc:mask="0x1" edc:name="DISSLW" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="A10M" edc:desc="" edc:mask="0x1" edc:name="A10M" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="IPMIEN" edc:desc="" edc:mask="0x1" edc:name="IPMIEN" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="SCLREL" edc:desc="" edc:mask="0x1" edc:name="SCLREL" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="I2CSIDL" edc:desc="" edc:mask="0x1" edc:name="I2CSIDL" edc:nzwidth="0x1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="I2CEN" edc:desc="" edc:mask="0x1" edc:name="I2CEN" edc:nzwidth="0x1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+    <edc:StimInfo edc:stimpcfiles="" edc:stimregfiles="" edc:stimscl="rwb" edc:stimtype="Record"/>
+    <edc:FreezeBit edc:freezeval="1" edc:name="I2C1" edc:pos="0xe"/>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="rr---crrccrccrrr" edc:cname="I2C@STAT" edc:desc="" edc:impl="0xc7ff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00---00000000000" edc:name="I2C@STAT" edc:nzwidth="0x10" edc:por="00---00000000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="TBF" edc:desc="" edc:mask="0x1" edc:name="TBF" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="RBF" edc:desc="" edc:mask="0x1" edc:name="RBF" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="R_nW" edc:desc="" edc:mask="0x1" edc:name="R/nW" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="S" edc:desc="" edc:mask="0x1" edc:name="S" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="P" edc:desc="" edc:mask="0x1" edc:name="P" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="D_nA" edc:desc="" edc:mask="0x1" edc:name="D/nA" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="I2COV" edc:desc="" edc:mask="0x1" edc:name="I2COV" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="IWCOL" edc:desc="" edc:mask="0x1" edc:name="IWCOL" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="ADD10" edc:desc="" edc:mask="0x1" edc:name="ADD10" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="GCSTAT" edc:desc="" edc:mask="0x1" edc:name="GCSTAT" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="BCL" edc:desc="" edc:mask="0x1" edc:name="BCL" edc:nzwidth="0x1"/>
+        <edc:AdjustPoint edc:offset="3"/>
+        <edc:SFRFieldDef edc:cname="TRSTAT" edc:desc="" edc:mask="0x1" edc:name="TRSTAT" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="ACKSTAT" edc:desc="" edc:mask="0x1" edc:name="ACKSTAT" edc:nzwidth="0x1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:AdjustPoint edc:offset="2"/>
+        <edc:SFRFieldDef edc:cname="R_W" edc:desc="" edc:mask="0x1" edc:name="R_W" edc:nzwidth="0x1"/>
+        <edc:AdjustPoint edc:offset="2"/>
+        <edc:SFRFieldDef edc:cname="D_A" edc:desc="" edc:mask="0x1" edc:name="D_A" edc:nzwidth="0x1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+    <edc:StimInfo edc:stimpcfiles="" edc:stimregfiles="" edc:stimscl="rwb" edc:stimtype="Record"/>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="------nnnnnnnnnn" edc:cname="I2C@ADD" edc:desc="" edc:impl="0x3ff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="------0000000000" edc:name="I2C@ADD" edc:nzwidth="0x10" edc:por="------0000000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="I2CADD" edc:desc="" edc:islanghidden="true" edc:mask="0x3ff" edc:name="I2CADD" edc:nzwidth="0xa"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+    <edc:StimInfo edc:stimpcfiles="" edc:stimregfiles="" edc:stimscl="rwb" edc:stimtype="Record"/>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="------nnnnnnnnnn" edc:cname="I2C@MSK" edc:desc="" edc:impl="0x3ff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="------0000000000" edc:name="I2C@MSK" edc:nzwidth="0x10" edc:por="------0000000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="AMSK" edc:desc="" edc:islanghidden="true" edc:mask="0x3ff" edc:name="AMSK" edc:nzwidth="0xa"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+    <edc:StimInfo edc:stimpcfiles="" edc:stimregfiles="" edc:stimscl="rwb" edc:stimtype="Record"/>
+  </edc:SFRDef>
+</edc:Module>

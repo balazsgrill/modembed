@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:Module xmlns:edc="http://crownking/edc" edc:dosid="DOS-00781" edc:modid="wdt_pwrt_pb_v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/Module.xsd">
+  <edc:ArchDef edc:desc="" edc:name="">
+    <edc:MemTraits>
+      <edc:DataMemTraits edc:addrinc="0x4" edc:locsize="0x4" edc:wordimpl="0xffffffff" edc:wordinit="0x0" edc:wordsafe="0xffffffff" edc:wordsize="0x4"/>
+    </edc:MemTraits>
+  </edc:ArchDef>
+  <edc:SFRDef edc:access="----------------n--------rrrrr-n" edc:cname="WDTCON" edc:desc="" edc:grp="WDT" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="----------------x--------xxxxxxx" edc:name="WDTCON" edc:nzwidth="0x20" edc:por="----------------0--------0000000" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="WDTCLR" edc:desc="" edc:mask="0x1" edc:name="WDTCLR" edc:nzwidth="0x1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="SWDTPS" edc:desc="" edc:mask="0x1f" edc:name="SWDTPS" edc:nzwidth="0x5"/>
+        <edc:AdjustPoint edc:offset="8"/>
+        <edc:SFRFieldDef edc:cname="ON" edc:desc="" edc:mask="0x1" edc:name="ON" edc:nzwidth="0x1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:AdjustPoint edc:offset="0x2"/>
+        <edc:SFRFieldDef edc:cname="SWDTPS0" edc:desc="" edc:mask="0x1" edc:name="SWDTPS0" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="SWDTPS1" edc:desc="" edc:mask="0x1" edc:name="SWDTPS1" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="SWDTPS2" edc:desc="" edc:mask="0x1" edc:name="SWDTPS2" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="SWDTPS3" edc:desc="" edc:mask="0x1" edc:name="SWDTPS3" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="SWDTPS4" edc:desc="" edc:mask="0x1" edc:name="SWDTPS4" edc:nzwidth="0x1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.1">
+        <edc:AdjustPoint edc:offset="0x2"/>
+        <edc:SFRFieldDef edc:cname="WDTPSTA" edc:desc="" edc:mask="0x1" edc:name="WDTPSTA" edc:nzwidth="0x5"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.2">
+        <edc:AdjustPoint edc:offset="0x2"/>
+        <edc:SFRFieldDef edc:cname="WDTPS" edc:desc="" edc:mask="0x1" edc:name="WDTPS" edc:nzwidth="0x5"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.3">
+        <edc:SFRFieldDef edc:cname="w" edc:desc="" edc:mask="0x1" edc:name="w" edc:nzwidth="0x20"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+</edc:Module>

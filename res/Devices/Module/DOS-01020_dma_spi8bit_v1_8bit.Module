@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:Module xmlns:edc="http://crownking/edc" edc:dosid="DOS-01020_dma_spi8bit_v1_8bit" edc:modid="dma_spi8bit_v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/Module.xsd">
+  <edc:ArchDef edc:desc="" edc:name="">
+    <edc:MemTraits>
+      <edc:DataMemTraits edc:addrinc="0x1" edc:locsize="0x1" edc:wordimpl="0xff" edc:wordinit="0x0" edc:wordsafe="0xff" edc:wordsize="0x1"/>
+    </edc:MemTraits>
+  </edc:ArchDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="TXBUF" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="TXBUF" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="TXBUF" edc:desc="" edc:mask="0xff" edc:name="TXBUF" edc:nzwidth="8"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="------nn" edc:cname="DMABCH" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="------00" edc:name="DMABCH" edc:nzwidth="8" edc:por="------00">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="DMACNTHB" edc:desc="" edc:mask="0x3" edc:name="DMACNTHB" edc:nzwidth="2"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="DMABCL" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="DMABCL" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="DMACNTLB" edc:desc="" edc:mask="0xff" edc:name="DMACNTLB" edc:nzwidth="8"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="----nnnn" edc:cname="RXADDRH" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="----0000" edc:name="RXADDRH" edc:nzwidth="8" edc:por="----0000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="DMARCPTRHB" edc:desc="" edc:mask="0xf" edc:name="DMARCPTRHB" edc:nzwidth="4"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="RXADDRL" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="RXADDRL" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="DMARCVPTRLB" edc:desc="" edc:mask="0xff" edc:name="DMARCVPTRLB" edc:nzwidth="8"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="----nnnn" edc:cname="TXADDRH" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="----0000" edc:name="TXADDRH" edc:nzwidth="8" edc:por="----0000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="DMATXPTRHB" edc:desc="" edc:mask="0xf" edc:name="DMATXPTRHB" edc:nzwidth="4"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="TXADDRL" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="TXADDRL" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="DMATXPTRLB" edc:desc="" edc:mask="0xff" edc:name="DMATXPTRLB" edc:nzwidth="8"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="DMACON2" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="DMACON2" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="INTLVL" edc:desc="" edc:mask="0xf" edc:name="INTLVL" edc:nzwidth="4"/>
+        <edc:SFRFieldDef edc:cname="DLYCYC" edc:desc="" edc:mask="0xf" edc:name="DLYCYC" edc:nzwidth="4"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="INTLVL0" edc:desc="" edc:mask="0x1" edc:name="INTLVL0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="INTLVL1" edc:desc="" edc:mask="0x1" edc:name="INTLVL1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="INTLVL2" edc:desc="" edc:mask="0x1" edc:name="INTLVL2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="INTLVL3" edc:desc="" edc:mask="0x1" edc:name="INTLVL3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="DLYCYC0" edc:desc="" edc:mask="0x1" edc:name="DLYCYC0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="DLYCYC1" edc:desc="" edc:mask="0x1" edc:name="DLYCYC1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="DLYCYC2" edc:desc="" edc:mask="0x1" edc:name="DLYCYC2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="DLYCYC3" edc:desc="" edc:mask="0x1" edc:name="DLYCYC3" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="DMACON1" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="DMACON1" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="DMAEN" edc:desc="" edc:mask="0x1" edc:name="DMAEN" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="DLYINTEN" edc:desc="" edc:mask="0x1" edc:name="DLYINTEN" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="DUPLEX0" edc:desc="" edc:mask="0x1" edc:name="DUPLEX0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="DUPLEX1" edc:desc="" edc:mask="0x1" edc:name="DUPLEX1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="RXINC" edc:desc="" edc:mask="0x1" edc:name="RXINC" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="TXINC" edc:desc="" edc:mask="0x1" edc:name="TXINC" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SSCON0" edc:desc="" edc:mask="0x1" edc:name="SSCON0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SSCON1" edc:desc="" edc:mask="0x1" edc:name="SSCON1" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+</edc:Module>

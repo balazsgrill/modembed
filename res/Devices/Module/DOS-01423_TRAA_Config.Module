@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:Module xmlns:edc="http://crownking/edc" edc:dosid="01423_TRAA_Config" edc:modid="TRAA_Config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/Module.xsd">
+  <edc:ArchDef edc:desc="" edc:name="">
+    <edc:MemTraits>
+      <edc:DataMemTraits edc:addrinc="0x4" edc:locsize="0x4" edc:wordimpl="0xffffffff" edc:wordinit="0x0" edc:wordsafe="0xffffffff" edc:wordsize="0x4"/>
+    </edc:MemTraits>
+  </edc:ArchDef>
+  <edc:SFRDef edc:access="------------------nn--------nn-n" edc:cname="CFGCON" edc:desc="" edc:grp="CFG" edc:impl="0x300d" edc:isindirect="false" edc:isvolatile="true" edc:mclr="------------------00--------10-0" edc:name="CFGCON" edc:nzwidth="32" edc:por="------------------00--------10-0" edc:portals="- - -">
+    <edc:AliasList>
+      <edc:LegacyAlias edc:cname="DDPCON"/>
+    </edc:AliasList>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="TDOEN" edc:desc="" edc:mask="0x1" edc:name="TDOEN" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="TROEN" edc:desc="" edc:mask="0x1" edc:name="TROEN" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="JTAGEN" edc:desc="" edc:mask="0x1" edc:name="JTAGEN" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="8"/>
+        <edc:SFRFieldDef edc:cname="PMDLOCK" edc:desc="" edc:mask="0x1" edc:name="PMDLOCK" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="IOLOCK" edc:desc="" edc:mask="0x1" edc:name="IOLOCK" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="--------------------------------" edc:cname="RESERVED1" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="--------------------------------" edc:name="RESERVED1" edc:nzwidth="32" edc:por="--------------------------------" edc:portals="- - -">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0"/>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr" edc:cname="DEVID" edc:desc="" edc:grp="CFG" edc:impl="0xfffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" edc:name="DEVID" edc:nzwidth="0x20" edc:por="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" edc:portals="- - -">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="DEVID" edc:desc="" edc:mask="0xfffffff" edc:name="DEVID" edc:nzwidth="0x1c"/>
+        <edc:SFRFieldDef edc:cname="VER" edc:desc="" edc:mask="0x1" edc:name="VER" edc:nzwidth="0x4"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="rrrrrrrrrrrrrrrrrrrrrrrrrrrrrr-r" edc:cname="SYSKEY" edc:desc="" edc:grp="CFG" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" edc:name="SYSKEY" edc:nzwidth="0x20" edc:por="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="SYSKEY" edc:desc="" edc:islanghidden="true" edc:mask="0xffffffff" edc:name="SYSKEY" edc:nzwidth="0x20"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="-------------------n---n-------n" edc:cname="PMD1" edc:desc="" edc:grp="CFG" edc:impl="0x1101" edc:isindirect="false" edc:isvolatile="true" edc:mclr="-------------------0---0-------0" edc:name="PMD1" edc:nzwidth="0x20" edc:por="-------------------0---0-------0" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="AD1MD" edc:desc="" edc:mask="0x1" edc:name="AD1MD" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="7"/>
+        <edc:SFRFieldDef edc:cname="CTMUMD" edc:desc="" edc:mask="0x1" edc:name="CTMUMD" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="3"/>
+        <edc:SFRFieldDef edc:cname="CVRMD" edc:desc="" edc:mask="0x1" edc:name="CVRMD" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="19"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="-----------------------------nnn" edc:cname="PMD2" edc:desc="" edc:grp="CFG" edc:impl="0x7" edc:isindirect="false" edc:isvolatile="true" edc:mclr="-----------------------------000" edc:name="PMD2" edc:nzwidth="0x20" edc:por="-----------------------------000" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="CMP1MD" edc:desc="" edc:mask="0x1" edc:name="CMP1MD" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CMP2MD" edc:desc="" edc:mask="0x1" edc:name="CMP2MD" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CMP3MD" edc:desc="" edc:mask="0x1" edc:name="CMP3MD" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="5"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:AdjustPoint edc:offset="3"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:AdjustPoint edc:offset="19"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="-----------nnnnn-----------nnnnn" edc:cname="PMD3" edc:desc="" edc:grp="CFG" edc:impl="0x1f001f" edc:isindirect="false" edc:isvolatile="true" edc:mclr="-----------00000-----------00000" edc:name="PMD3" edc:nzwidth="0x20" edc:por="-----------00000-----------00000" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="IC1MD" edc:desc="" edc:mask="0x1" edc:name="IC1MD" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="IC2MD" edc:desc="" edc:mask="0x1" edc:name="IC2MD" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="IC3MD" edc:desc="" edc:mask="0x1" edc:name="IC3MD" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="IC4MD" edc:desc="" edc:mask="0x1" edc:name="IC4MD" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="IC5MD" edc:desc="" edc:mask="0x1" edc:name="IC5MD" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="3"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:AdjustPoint edc:offset="3"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:AdjustPoint edc:offset="3"/>
+        <edc:SFRFieldDef edc:cname="OC1MD" edc:desc="" edc:mask="0x1" edc:name="OC1MD" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="OC2MD" edc:desc="" edc:mask="0x1" edc:name="OC2MD" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="OC3MD" edc:desc="" edc:mask="0x1" edc:name="OC3MD" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="OC4MD" edc:desc="" edc:mask="0x1" edc:name="OC4MD" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="OC5MD" edc:desc="" edc:mask="0x1" edc:name="OC5MD" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="11"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="---------------------------nnnnn" edc:cname="PMD4" edc:desc="" edc:grp="CFG" edc:impl="0x1f" edc:isindirect="false" edc:isvolatile="true" edc:mclr="---------------------------00000" edc:name="PMD4" edc:nzwidth="0x20" edc:por="---------------------------00000" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="T1MD" edc:desc="" edc:mask="0x1" edc:name="T1MD" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="T2MD" edc:desc="" edc:mask="0x1" edc:name="T2MD" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="T3MD" edc:desc="" edc:mask="0x1" edc:name="T3MD" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="T4MD" edc:desc="" edc:mask="0x1" edc:name="T4MD" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="T5MD" edc:desc="" edc:mask="0x1" edc:name="T5MD" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="3"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:AdjustPoint edc:offset="3"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:AdjustPoint edc:offset="3"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:AdjustPoint edc:offset="11"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="-------n------nn------nn------nn" edc:cname="PMD5" edc:desc="" edc:grp="CFG" edc:impl="0x1030303" edc:isindirect="false" edc:isvolatile="true" edc:mclr="-------0------00------00------00" edc:name="PMD5" edc:nzwidth="0x20" edc:por="-------0------00------00------00" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="U1MD" edc:desc="" edc:mask="0x1" edc:name="U1MD" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="U2MD" edc:desc="" edc:mask="0x1" edc:name="U2MD" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:AdjustPoint edc:offset="3"/>
+        <edc:SFRFieldDef edc:cname="SPI1MD" edc:desc="" edc:mask="0x1" edc:name="SPI1MD" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SPI2MD" edc:desc="" edc:mask="0x1" edc:name="SPI2MD" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="2"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:AdjustPoint edc:offset="3"/>
+        <edc:SFRFieldDef edc:cname="I2C1MD" edc:desc="" edc:mask="0x1" edc:name="I2C1MD" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="I2C2MD" edc:desc="" edc:mask="0x1" edc:name="I2C2MD" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:AdjustPoint edc:offset="3"/>
+        <edc:SFRFieldDef edc:cname="USB1MD" edc:desc="" edc:mask="0x1" edc:name="USB1MD" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="7"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="---------------n--------------nn" edc:cname="PMD6" edc:desc="" edc:grp="CFG" edc:impl="0x10003" edc:isindirect="false" edc:isvolatile="true" edc:mclr="---------------0--------------00" edc:name="PMD6" edc:nzwidth="0x20" edc:por="---------------0--------------00" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="RTCCMD" edc:desc="" edc:mask="0x1" edc:name="RTCCMD" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="REFOMD" edc:desc="" edc:mask="0x1" edc:name="REFOMD" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:AdjustPoint edc:offset="3"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:AdjustPoint edc:offset="2"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:AdjustPoint edc:offset="3"/>
+        <edc:SFRFieldDef edc:cname="PMPMD" edc:desc="" edc:mask="0x1" edc:name="PMPMD" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:AdjustPoint edc:offset="3"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:AdjustPoint edc:offset="7"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+</edc:Module>

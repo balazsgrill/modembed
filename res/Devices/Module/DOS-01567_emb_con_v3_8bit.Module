@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:Module xmlns:edc="http://crownking/edc" edc:dosid="01567_emb_con_v3_8bit" edc:modid="emb_con_v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/Module.xsd">
+  <edc:ArchDef edc:desc="" edc:name="">
+    <edc:MemTraits>
+      <edc:DataMemTraits edc:addrinc="0x1" edc:locsize="0x1" edc:wordimpl="0xff" edc:wordinit="0x0" edc:wordsafe="0xff" edc:wordsize="0x1"/>
+    </edc:MemTraits>
+  </edc:ArchDef>
+  <edc:SFRDef edc:access="n-nn--nn" edc:cname="MEMCON" edc:desc="" edc:impl="0x33" edc:isindirect="false" edc:isvolatile="true" edc:mclr="0-00--00" edc:name="MEMCON" edc:nzwidth="8" edc:por="0-00--00">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="WM0" edc:desc="" edc:mask="0x1" edc:name="WM0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="WM1" edc:desc="" edc:mask="0x1" edc:name="WM1" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="2"/>
+        <edc:SFRFieldDef edc:cname="WAIT0" edc:desc="" edc:mask="0x1" edc:name="WAIT0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="WAIT1" edc:desc="" edc:mask="0x1" edc:name="WAIT1" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="EBDIS" edc:desc="" edc:mask="0x1" edc:name="EBDIS" edc:nzwidth="1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="WM" edc:desc="" edc:mask="0x3" edc:name="WM" edc:nzwidth="2"/>
+        <edc:AdjustPoint edc:offset="2"/>
+        <edc:SFRFieldDef edc:cname="WAIT" edc:desc="" edc:mask="0x3" edc:name="WAIT" edc:nzwidth="2"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+</edc:Module>

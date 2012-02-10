@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:Module xmlns:edc="http://crownking/edc" edc:desc="RTCC" edc:dosid="DOS-01303_tmr_rtcc_v3_8bit" edc:modid="tmr_rtcc_v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/Module.xsd">
+  <edc:ArchDef edc:desc="" edc:name="">
+    <edc:MemTraits>
+      <edc:DataMemTraits edc:addrinc="0x1" edc:locsize="0x1" edc:wordimpl="0xff" edc:wordinit="0x0" edc:wordsafe="0xff" edc:wordsize="0x1"/>
+    </edc:MemTraits>
+  </edc:ArchDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="RTCCON2" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="RTCCON2" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="RTCSECSEL" edc:desc="" edc:mask="0x3" edc:name="RTCSECSEL" edc:nzwidth="2"/>
+        <edc:SFRFieldDef edc:cname="RTCCLKSEL" edc:desc="" edc:mask="0x3" edc:name="RTCCLKSEL" edc:nzwidth="2"/>
+        <edc:SFRFieldDef edc:cname="PWCSPRE" edc:desc="" edc:mask="0x1" edc:name="PWCSPRE" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="PWCCPRE" edc:desc="" edc:mask="0x1" edc:name="PWCCPRE" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="PWCPOL" edc:desc="" edc:mask="0x1" edc:name="PWCPOL" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="PWCEN" edc:desc="" edc:mask="0x1" edc:name="PWCEN" edc:nzwidth="1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="RTCSECSEL0" edc:desc="" edc:mask="0x1" edc:name="RTCSECSEL0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="RTCSECSEL1" edc:desc="" edc:mask="0x1" edc:name="RTCSECSEL1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="RTCCLKSEL0" edc:desc="" edc:mask="0x1" edc:name="RTCCLKSEL0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="RTCCLKSEL1" edc:desc="" edc:mask="0x1" edc:name="RTCCLKSEL1" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="ALRMVALL" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="xxxxxxxx" edc:name="ALRMVALL" edc:nzwidth="8" edc:por="xxxxxxxx">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="ALRMVALL" edc:desc="" edc:mask="0xff" edc:name="ALRMVALL" edc:nzwidth="8"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="ALRMVALH" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="xxxxxxxx" edc:name="ALRMVALH" edc:nzwidth="8" edc:por="xxxxxxxx">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="ALRMVALH" edc:desc="" edc:mask="0xff" edc:name="ALRMVALH" edc:nzwidth="8"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="ALRMRPT" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="ALRMRPT" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="ARPT" edc:desc="" edc:mask="0xff" edc:name="ARPT" edc:nzwidth="8"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="ARPT0" edc:desc="" edc:mask="0x1" edc:name="ARPT0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="ARPT1" edc:desc="" edc:mask="0x1" edc:name="ARPT1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="ARPT2" edc:desc="" edc:mask="0x1" edc:name="ARPT2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="ARPT3" edc:desc="" edc:mask="0x1" edc:name="ARPT3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="ARPT4" edc:desc="" edc:mask="0x1" edc:name="ARPT4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="ARPT5" edc:desc="" edc:mask="0x1" edc:name="ARPT5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="ARPT6" edc:desc="" edc:mask="0x1" edc:name="ARPT6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="ARPT7" edc:desc="" edc:mask="0x1" edc:name="ARPT7" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="ALRMCFG" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="ALRMCFG" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="ALRMPTR" edc:desc="" edc:mask="0x3" edc:name="ALRMPTR" edc:nzwidth="2"/>
+        <edc:SFRFieldDef edc:cname="AMASK" edc:desc="" edc:mask="0xf" edc:name="AMASK" edc:nzwidth="4"/>
+        <edc:SFRFieldDef edc:cname="CHIME" edc:desc="" edc:mask="0x1" edc:name="CHIME" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="ALRMEN" edc:desc="" edc:mask="0x1" edc:name="ALRMEN" edc:nzwidth="1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="ALRMPTR0" edc:desc="" edc:mask="0x1" edc:name="ALRMPTR0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="ALRMPTR1" edc:desc="" edc:mask="0x1" edc:name="ALRMPTR1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="AMASK0" edc:desc="" edc:mask="0x1" edc:name="AMASK0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="AMASK1" edc:desc="" edc:mask="0x1" edc:name="AMASK1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="AMASK2" edc:desc="" edc:mask="0x1" edc:name="AMASK2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="AMASK3" edc:desc="" edc:mask="0x1" edc:name="AMASK3" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="RTCVALL" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="xxxxxxxx" edc:name="RTCVALL" edc:nzwidth="8" edc:por="xxxxxxxx">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="RTCVALL" edc:desc="" edc:mask="0xff" edc:name="RTCVALL" edc:nzwidth="8"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="RTCVALH" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="xxxxxxxx" edc:name="RTCVALH" edc:nzwidth="8" edc:por="xxxxxxxx">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="RTCVALH" edc:desc="" edc:mask="0xff" edc:name="RTCVALH" edc:nzwidth="8"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="RTCCAL" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="RTCCAL" edc:nzwidth="8" edc:por="00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="CAL" edc:desc="" edc:mask="0xff" edc:name="CAL" edc:nzwidth="8"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="CAL0" edc:desc="" edc:mask="0x1" edc:name="CAL0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CAL1" edc:desc="" edc:mask="0x1" edc:name="CAL1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CAL2" edc:desc="" edc:mask="0x1" edc:name="CAL2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CAL3" edc:desc="" edc:mask="0x1" edc:name="CAL3" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CAL4" edc:desc="" edc:mask="0x1" edc:name="CAL4" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CAL5" edc:desc="" edc:mask="0x1" edc:name="CAL5" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CAL6" edc:desc="" edc:mask="0x1" edc:name="CAL6" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CAL7" edc:desc="" edc:mask="0x1" edc:name="CAL7" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="n-nrrnnn" edc:cname="RTCCON1" edc:desc="" edc:impl="0xbf" edc:isindirect="false" edc:isvolatile="true" edc:mclr="x-000000" edc:name="RTCCON1" edc:nzwidth="8" edc:por="0-000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="RTCPTR" edc:desc="" edc:mask="0x3" edc:name="RTCPTR" edc:nzwidth="2"/>
+        <edc:SFRFieldDef edc:cname="RTCOE" edc:desc="" edc:mask="0x1" edc:name="RTCOE" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="HALFSEC" edc:desc="" edc:mask="0x1" edc:name="HALFSEC" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="RTCSYNC" edc:desc="" edc:mask="0x1" edc:name="RTCSYNC" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="RTCWREN" edc:desc="" edc:mask="0x1" edc:name="RTCWREN" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="RTCEN" edc:desc="" edc:mask="0x1" edc:name="RTCEN" edc:nzwidth="1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="RTCPTR0" edc:desc="" edc:mask="0x1" edc:name="RTCPTR0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="RTCPTR1" edc:desc="" edc:mask="0x1" edc:name="RTCPTR1" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+</edc:Module>

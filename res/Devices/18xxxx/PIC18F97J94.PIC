@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:PIC xmlns:edc="http://crownking/edc" edc:arch="18xxxx" edc:desc="" edc:informedby="DOS PS DS" edc:isextended="true" edc:name="PIC18F97J94" edc:procid="0x9794" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
+  <edc:Power>
+    <edc:VPP edc:defaultvoltage="3.250" edc:maxvoltage="3.500" edc:minvoltage="2.125"/>
+    <edc:VDD edc:maxdefaultvoltage="3.500" edc:maxvoltage="3.500" edc:mindefaultvoltage="2.125" edc:minvoltage="2.125" edc:nominalvoltage="3.250"/>
+  </edc:Power>
+  <edc:Programming edc:haschecksum="true" edc:memtech="ee" edc:panelsize="0x0" edc:tries="1">
+    <edc:Wait edc:cfg="5000" edc:eedata="4000" edc:erase="600" edc:lvpgm="1000" edc:pgm="1000" edc:userid="5000"/>
+    <edc:Latches edc:cfg="2" edc:eedata="2" edc:pgm="64" edc:rowerase="1024" edc:userid="8"/>
+  </edc:Programming>
+  <edc:ArchDef edc:desc="18xxxx" edc:name="18xxxx">
+    <edc:MemTraits edc:bankcount="16" edc:hwstackdepth="31">
+      <edc:CodeMemTraits edc:locsize="0x2" edc:wordimpl="0xffff" edc:wordinit="0xffff" edc:wordsafe="0xffff" edc:wordsize="0x2"/>
+      <edc:ExtCodeMemTraits edc:locsize="0x2" edc:wordimpl="0xffff" edc:wordinit="0xffff" edc:wordsafe="0xffff" edc:wordsize="0x2"/>
+      <edc:BackgroundDebugMemTraits edc:locsize="0x2" edc:wordimpl="0xffff" edc:wordinit="0xffff" edc:wordsafe="0xffff" edc:wordsize="0x2"/>
+      <edc:TestMemTraits edc:locsize="0x2" edc:wordimpl="0xffff" edc:wordinit="0xffff" edc:wordsafe="0xffff" edc:wordsize="0x2"/>
+      <edc:UserIDMemTraits edc:locsize="0x1" edc:wordimpl="0xf" edc:wordinit="0xff" edc:wordsafe="0xf" edc:wordsize="0x1"/>
+      <edc:ConfigFuseMemTraits edc:locsize="0x1" edc:wordimpl="0xff" edc:wordinit="0xff" edc:wordsafe="0xff" edc:wordsize="0x1"/>
+      <edc:ConfigWORMMemTraits edc:locsize="0x1" edc:wordimpl="0xff" edc:wordinit="0xff" edc:wordsafe="0xff" edc:wordsize="0x1"/>
+      <edc:DeviceIDMemTraits edc:locsize="0x1" edc:wordimpl="0xff" edc:wordinit="0xff" edc:wordsafe="0xff" edc:wordsize="0x1"/>
+      <edc:EEDataMemTraits edc:magicoffset="0xf00000"/>
+      <edc:DataMemTraits edc:locsize="0x1" edc:wordimpl="0xff" edc:wordinit="0x0" edc:wordsafe="0xff" edc:wordsize="0x1"/>
+    </edc:MemTraits>
+  </edc:ArchDef>
+  <edc:MemoryModeList edc:addr="0x300004">
+    <edc:MicrocontrollerMode edc:id="microctrl"/>
+    <edc:ExternalMemoryMode edc:beginaddr="0x0" edc:endaddr="0x2000" edc:id="extmicroctrl12bit"/>
+    <edc:ExternalMemoryMode edc:beginaddr="0x0" edc:endaddr="0x20000" edc:id="extmicroctrl16bit"/>
+    <edc:ExternalMemoryMode edc:beginaddr="0x0" edc:endaddr="0x200000" edc:id="extmicroctrl20bit"/>
+  </edc:MemoryModeList>
+  <edc:Import>
+    <edc:Module_import edc:modsrc="DOS-01558_cpu_pic18f_core_v4.Module"/>
+    <edc:Module_import edc:modsrc="DOS-01020_dma_spi8bit_v1_8bit.Module"/>
+    <edc:Module_import edc:modsrc="DOS-01381_clk_sib_v10_8Bit.Module"/>
+    <edc:Module_import edc:modsrc="DOS-01490_mssp_v6_8Bit.Module"/>
+    <edc:Module_import edc:modsrc="DOS-00332_uart_enh_v4_8Bit.Module"/>
+    <edc:Module_import edc:modsrc="DOS-01552_usb_fscore_v3_8bit.Module"/>
+    <edc:Module_import edc:modsrc="DOS-01446_rst_sib_v3_8bit.Module"/>
+    <edc:Module_import edc:modsrc="DOS-01447_rst_integration_v7_8bit.Module"/>
+    <edc:Module_import edc:modsrc="DOS-01450_pfm_control_v7_8bit.Module"/>
+    <edc:Module_import edc:modsrc="DOS-PORTx_8bit.Module"/>
+    <edc:Module_import edc:modsrc="DOS-01491_eccp_v3_8Bit.Module"/>
+    <edc:Module_import edc:modsrc="DOS-01563_lvd_ctrl_v5_8Bit.Module"/>
+    <edc:Module_import edc:modsrc="DOS-01474_tmr_Timer1_v5_8bit.Module"/>
+    <edc:Module_import edc:modsrc="DOS-01568_cmp_control_v2_8Bit.Module"/>
+    <edc:Module_import edc:modsrc="DOS-01277_adc_1012_v4_8bit.Module"/>
+    <edc:Module_import edc:modsrc="DOS-01277_adc_result_buf_8bit.Module"/>
+    <edc:Module_import edc:modsrc="DOS-01504_tmr_Timer2_v3_8bit.Module"/>
+    <edc:Module_import edc:modsrc="DOS-01565_int_on_change_v3_8Bit.Module"/>
+    <edc:Module_import edc:modsrc="DOS-01614_tmr_timer0_v2_8bit.Module"/>
+    <edc:Module_import edc:modsrc="DOS-01348_lpwr_xdpslp_ctrl_v1_8bit.Module"/>
+    <edc:Module_import edc:modsrc="DOS-01348_lpwr_sema_reg_8bit.Module"/>
+    <edc:Module_import edc:modsrc="DOS-01565_Interrupt_on_change.Module"/>
+    <edc:Module_import edc:modsrc="DOS-01303_tmr_rtcc_v3_8bit.Module"/>
+    <edc:Module_import edc:modsrc="DOS-01516_lcd_sib_v2_8Bit.Module"/>
+    <edc:Module_import edc:modsrc="DOS-01516_lcd_sib_v2_8bit.Module"/>
+    <edc:Module_import edc:modsrc="DOS-01407_clk_refout_upb_v1_8bit.Module"/>
+    <edc:Module_import edc:modsrc="DOS-01567_emb_con_v3_8bit.Module"/>
+    <edc:Module_import edc:modsrc="DOS-01370_txm_mod_v2_8Bit.Module"/>
+    <edc:Module_import edc:modsrc="DOS-01370_txm_mod_v2_8bit.Module"/>
+    <edc:Module_import edc:modsrc="DOS-01461_afe_ctmu_con_upb_v1_8bit.Module"/>
+    <edc:Module_import edc:modsrc="DOS-01378_PIC18F97J94.Module"/>
+  </edc:Import>
+  <edc:DataSpace>
+    <edc:RegardlessOfMode>
+      <edc:GPRDataSector edc:bank="0x0" edc:beginaddr="0x60" edc:endaddr="0x100" edc:regionid="gpr0"/>
+      <edc:GPRDataSector edc:bank="0x1" edc:beginaddr="0x100" edc:endaddr="0x200" edc:regionid="gpr1"/>
+      <edc:GPRDataSector edc:bank="0x2" edc:beginaddr="0x200" edc:endaddr="0x300" edc:regionid="gpr2"/>
+      <edc:GPRDataSector edc:bank="0x3" edc:beginaddr="0x300" edc:endaddr="0x400" edc:regionid="gpr3"/>
+      <edc:GPRDataSector edc:bank="0x4" edc:beginaddr="0x400" edc:endaddr="0x500" edc:regionid="gpr4"/>
+      <edc:GPRDataSector edc:bank="0x5" edc:beginaddr="0x500" edc:endaddr="0x600" edc:regionid="gpr5"/>
+      <edc:GPRDataSector edc:bank="0x6" edc:beginaddr="0x600" edc:endaddr="0x700" edc:regionid="gpr6"/>
+      <edc:GPRDataSector edc:bank="0x7" edc:beginaddr="0x700" edc:endaddr="0x800" edc:regionid="gpr7"/>
+      <edc:GPRDataSector edc:bank="0x8" edc:beginaddr="0x800" edc:endaddr="0x900" edc:regionid="gpr8"/>
+      <edc:GPRDataSector edc:bank="0x9" edc:beginaddr="0x900" edc:endaddr="0xa00" edc:regionid="gpr9"/>
+      <edc:GPRDataSector edc:bank="0xa" edc:beginaddr="0xa00" edc:endaddr="0xb00" edc:regionid="gpr10"/>
+      <edc:GPRDataSector edc:bank="0xb" edc:beginaddr="0xb00" edc:endaddr="0xc00" edc:regionid="gpr11"/>
+      <edc:GPRDataSector edc:bank="0xc" edc:beginaddr="0xc00" edc:endaddr="0xd00" edc:regionid="gpr12"/>
+      <edc:GPRDataSector edc:bank="0xd" edc:beginaddr="0xd00" edc:endaddr="0xdff" edc:regionid="gpr13"/>
+      <edc:SFRDataSector edc:bank="0xd" edc:beginaddr="0xdff" edc:endaddr="0xe00" edc:regionid="sfr13">
+        <edc:Module_ref edc:begin="0x0" edc:end="0x01" edc:modsrc="DOS-01552_usb_fscore_v3_8bit.Module"/>
+      </edc:SFRDataSector>
+      <edc:SFRDataSector edc:bank="0xe" edc:beginaddr="0xe00" edc:endaddr="0xf00" edc:regionid="sfr14">
+        <edc:Module_ref edc:begin="0x1" edc:end="0x10" edc:modsrc="DOS-01552_usb_fscore_v3_8bit.Module"/>
+        <edc:Module_ref edc:begin="0x14" edc:end="0x15" edc:modsrc="DOS-01552_usb_fscore_v3_8bit.Module"/>
+        <edc:Module_ref edc:begin="0x16" edc:end="0x17" edc:modsrc="DOS-01552_usb_fscore_v3_8bit.Module"/>
+        <edc:Module_ref edc:begin="0x10" edc:end="0x11" edc:modsrc="DOS-01552_usb_fscore_v3_8bit.Module"/>
+        <edc:Module_ref edc:begin="0x00" edc:end="0x36" edc:modsrc="DOS-01378_PIC18F97J94.Module"/>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x2" edc:modsrc="DOS-01277_adc_result_buf_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="1"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x2" edc:modsrc="DOS-01277_adc_result_buf_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="2"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x2" edc:modsrc="DOS-01277_adc_result_buf_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="3"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x2" edc:modsrc="DOS-01277_adc_result_buf_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="4"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x2" edc:modsrc="DOS-01277_adc_result_buf_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="5"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x2" edc:modsrc="DOS-01277_adc_result_buf_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="6"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x2" edc:modsrc="DOS-01277_adc_result_buf_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="7"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x2" edc:modsrc="DOS-01277_adc_result_buf_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="8"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x2" edc:modsrc="DOS-01277_adc_result_buf_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="9"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x2" edc:modsrc="DOS-01277_adc_result_buf_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="10"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x2" edc:modsrc="DOS-01277_adc_result_buf_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="11"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x2" edc:modsrc="DOS-01277_adc_result_buf_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="12"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x2" edc:modsrc="DOS-01277_adc_result_buf_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="13"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x2" edc:modsrc="DOS-01277_adc_result_buf_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="14"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x2" edc:modsrc="DOS-01277_adc_result_buf_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="15"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x2" edc:modsrc="DOS-01277_adc_result_buf_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="16"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x2" edc:modsrc="DOS-01277_adc_result_buf_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="17"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x2" edc:modsrc="DOS-01277_adc_result_buf_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="18"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x2" edc:modsrc="DOS-01277_adc_result_buf_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="19"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x2" edc:modsrc="DOS-01277_adc_result_buf_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="20"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x2" edc:modsrc="DOS-01277_adc_result_buf_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="21"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x2" edc:modsrc="DOS-01277_adc_result_buf_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="22"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x2" edc:modsrc="DOS-01277_adc_result_buf_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="23"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x2" edc:modsrc="DOS-01277_adc_result_buf_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="24"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x2" edc:modsrc="DOS-01277_adc_result_buf_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="25"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x2" edc:end="0x10" edc:modsrc="DOS-01277_adc_1012_v4_8bit.Module"/>
+        <edc:Module_ref edc:begin="0x12" edc:end="0x14" edc:modsrc="DOS-01277_adc_1012_v4_8bit.Module"/>
+        <edc:Module_ref edc:begin="0x16" edc:end="0x1A" edc:modsrc="DOS-01277_adc_1012_v4_8bit.Module"/>
+        <edc:Module_ref edc:begin="0x5" edc:end="0x4d" edc:modsrc="DOS-01516_lcd_sib_v2_8bit.Module"/>
+        <edc:Module_ref edc:begin="0x2" edc:end="0x03" edc:modsrc="DOS-01516_lcd_sib_v2_8bit.Module"/>
+        <edc:Module_ref edc:begin="0x1" edc:end="0x02" edc:modsrc="DOS-01516_lcd_sib_v2_8bit.Module"/>
+        <edc:Module_ref edc:begin="0x4" edc:end="0x05" edc:modsrc="DOS-01516_lcd_sib_v2_8bit.Module"/>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x01" edc:modsrc="DOS-01516_lcd_sib_v2_8bit.Module"/>
+        <edc:Module_ref edc:begin="0x3" edc:end="0x04" edc:modsrc="DOS-01516_lcd_sib_v2_8bit.Module"/>
+        <edc:Module_ref edc:begin="0x2" edc:end="0x6" edc:modsrc="DOS-01407_clk_refout_upb_v1_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="2"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x2" edc:end="0x6" edc:modsrc="DOS-01407_clk_refout_upb_v1_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="1"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x1" edc:modsrc="DOS-01567_emb_con_v3_8bit.Module"/>
+        <edc:Module_ref edc:begin="0x36" edc:end="0x37" edc:modsrc="DOS-01378_PIC18F97J94.Module"/>
+        <edc:Module_ref edc:begin="0x1" edc:end="0x3" edc:modsrc="DOS-PORTx_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="L"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x37" edc:end="0x38" edc:modsrc="DOS-01378_PIC18F97J94.Module"/>
+        <edc:Module_ref edc:begin="0x1" edc:end="0x3" edc:modsrc="DOS-PORTx_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="K"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x38" edc:end="0x3a" edc:modsrc="DOS-01378_PIC18F97J94.Module"/>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01370_txm_mod_v2_8bit.Module"/>
+        <edc:Module_ref edc:begin="0x3a" edc:end="0x3f" edc:modsrc="DOS-01378_PIC18F97J94.Module"/>
+        <edc:Module_ref edc:begin="0x1" edc:end="0x5" edc:modsrc="DOS-01461_afe_ctmu_con_upb_v1_8bit.Module"/>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x7" edc:modsrc="DOS-00332_uart_enh_v4_8Bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="4"/>
+        </edc:Module_ref>
+      </edc:SFRDataSector>
+      <edc:SFRDataSector edc:bank="0xf" edc:beginaddr="0xf00" edc:endaddr="0xf60" edc:regionid="sfr15">
+        <edc:Module_ref edc:begin="0x7" edc:end="0x8" edc:modsrc="DOS-01020_dma_spi8bit_v1_8bit.Module"/>
+        <edc:Module_ref edc:begin="0x3f" edc:end="0x40" edc:modsrc="DOS-01378_PIC18F97J94.Module"/>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x2" edc:modsrc="DOS-01490_mssp_v6_8Bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="2"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x3" edc:modsrc="DOS-01504_tmr_Timer2_v3_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="4"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x3" edc:modsrc="DOS-01491_eccp_v3_8Bit.Module">
+          <edc:ModuleExclude edc:impl="0x3F" edc:offset="0"/>
+          <edc:ModuleMacro edc:replace="@" edc:with="7"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x3" edc:modsrc="DOS-01491_eccp_v3_8Bit.Module">
+          <edc:ModuleExclude edc:impl="0x3F" edc:offset="0"/>
+          <edc:ModuleMacro edc:replace="@" edc:with="6"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x3" edc:modsrc="DOS-01491_eccp_v3_8Bit.Module">
+          <edc:ModuleExclude edc:impl="0x3F" edc:offset="0"/>
+          <edc:ModuleMacro edc:replace="@" edc:with="5"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x3" edc:modsrc="DOS-01491_eccp_v3_8Bit.Module">
+          <edc:ModuleExclude edc:impl="0x3F" edc:offset="0"/>
+          <edc:ModuleMacro edc:replace="@" edc:with="4"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01474_tmr_Timer1_v5_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="5"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x2" edc:end="0x3" edc:modsrc="DOS-01490_mssp_v6_8Bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="2"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x4" edc:end="0x7" edc:modsrc="DOS-01490_mssp_v6_8Bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="2"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x5" edc:end="0x6" edc:modsrc="DOS-01491_eccp_v3_8Bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="3"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x5" edc:end="0x6" edc:modsrc="DOS-01491_eccp_v3_8Bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="2"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-00332_uart_enh_v4_8Bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="2"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x1" edc:modsrc="DOS-01348_lpwr_sema_reg_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="4"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x1" edc:modsrc="DOS-01348_lpwr_sema_reg_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="3"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x1" edc:modsrc="DOS-01348_lpwr_sema_reg_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="2"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x1" edc:modsrc="DOS-01348_lpwr_sema_reg_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="1"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01348_lpwr_xdpslp_ctrl_v1_8bit.Module"/>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x7" edc:modsrc="DOS-00332_uart_enh_v4_8Bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="3"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x3" edc:end="0x4" edc:modsrc="DOS-00332_uart_enh_v4_8Bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="1"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x4" edc:end="0x7" edc:modsrc="DOS-00332_uart_enh_v4_8Bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="2"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x40" edc:end="0x43" edc:modsrc="DOS-01378_PIC18F97J94.Module"/>
+        <edc:Module_ref edc:begin="0x3" edc:end="0x5" edc:modsrc="DOS-01568_cmp_control_v2_8Bit.Module"/>
+        <edc:Module_ref edc:begin="0x3" edc:end="0x4" edc:modsrc="DOS-01490_mssp_v6_8Bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="2"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x3" edc:modsrc="DOS-01504_tmr_Timer2_v3_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="8"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x3" edc:modsrc="DOS-01504_tmr_Timer2_v3_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="6"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x3" edc:modsrc="DOS-01491_eccp_v3_8Bit.Module">
+          <edc:ModuleExclude edc:impl="0x3F" edc:offset="0"/>
+          <edc:ModuleMacro edc:replace="@" edc:with="10"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x3" edc:modsrc="DOS-01491_eccp_v3_8Bit.Module">
+          <edc:ModuleExclude edc:impl="0x3F" edc:offset="0"/>
+          <edc:ModuleMacro edc:replace="@" edc:with="9"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x3" edc:modsrc="DOS-01491_eccp_v3_8Bit.Module">
+          <edc:ModuleExclude edc:impl="0x3F" edc:offset="0"/>
+          <edc:ModuleMacro edc:replace="@" edc:with="8"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x5" edc:modsrc="DOS-01491_eccp_v3_8Bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="3"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x5" edc:modsrc="DOS-01491_eccp_v3_8Bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="2"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x5" edc:end="0x6" edc:modsrc="DOS-01568_cmp_control_v2_8Bit.Module"/>
+        <edc:Module_ref edc:begin="0x43" edc:end="0x44" edc:modsrc="DOS-01378_PIC18F97J94.Module"/>
+        <edc:Module_ref edc:begin="0x1" edc:end="0x3" edc:modsrc="DOS-01565_Interrupt_on_change.Module"/>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x9" edc:modsrc="DOS-01303_tmr_rtcc_v3_8bit.Module"/>
+      </edc:SFRDataSector>
+      <edc:SFRDataSector edc:bank="0xf" edc:beginaddr="0xf60" edc:endaddr="0x1000" edc:regionid="accesssfr">
+        <edc:Module_ref edc:begin="0x8" edc:end="0x9" edc:modsrc="DOS-01020_dma_spi8bit_v1_8bit.Module"/>
+        <edc:Module_ref edc:begin="0x44" edc:end="0x46" edc:modsrc="DOS-01378_PIC18F97J94.Module"/>
+        <edc:Module_ref edc:begin="0x1" edc:end="0x5" edc:modsrc="DOS-01381_clk_sib_v10_8Bit.Module">
+          <edc:ModuleExclude edc:impl="0xfe" edc:offset="4"/>
+          <edc:ModuleExclude edc:impl="0x07" edc:offset="3"/>
+          <edc:ModuleExclude edc:impl="0xe0" edc:offset="2"/>
+          <edc:ModuleExclude edc:impl="0xaf" edc:offset="1"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x2" edc:end="0x3" edc:modsrc="DOS-00332_uart_enh_v4_8Bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="1"/>
+          <edc:ModuleExclude edc:impl="0xfb" edc:offset="2"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x2" edc:end="0x4" edc:modsrc="DOS-01490_mssp_v6_8Bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="1"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x7" edc:modsrc="DOS-01020_dma_spi8bit_v1_8bit.Module"/>
+        <edc:Module_ref edc:begin="0x46" edc:end="0x49" edc:modsrc="DOS-01378_PIC18F97J94.Module"/>
+        <edc:Module_ref edc:begin="0x11" edc:end="0x14" edc:modsrc="DOS-01552_usb_fscore_v3_8bit.Module"/>
+        <edc:Module_ref edc:begin="0x15" edc:end="0x16" edc:modsrc="DOS-01552_usb_fscore_v3_8bit.Module"/>
+        <edc:Module_ref edc:begin="0x17" edc:end="0x1a" edc:modsrc="DOS-01552_usb_fscore_v3_8bit.Module"/>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x3" edc:modsrc="DOS-01447_rst_integration_v7_8bit.Module"/>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x2" edc:modsrc="DOS-01450_pfm_control_v7_8bit.Module"/>
+        <edc:Module_ref edc:begin="0x49" edc:end="0x52" edc:modsrc="DOS-01378_PIC18F97J94.Module"/>
+        <edc:Module_ref edc:begin="0x1" edc:end="0x2" edc:modsrc="DOS-PORTx_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="A"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x1" edc:end="0x2" edc:modsrc="DOS-PORTx_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="B"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x1" edc:end="0x2" edc:modsrc="DOS-PORTx_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="C"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x1" edc:end="0x2" edc:modsrc="DOS-PORTx_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="D"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x1" edc:end="0x2" edc:modsrc="DOS-PORTx_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="E"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x1" edc:end="0x2" edc:modsrc="DOS-PORTx_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="F"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x1" edc:end="0x2" edc:modsrc="DOS-PORTx_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="G"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x1" edc:end="0x2" edc:modsrc="DOS-PORTx_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="H"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x1" edc:end="0x2" edc:modsrc="DOS-PORTx_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="J"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x2" edc:end="0x3" edc:modsrc="DOS-PORTx_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="A"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x2" edc:end="0x3" edc:modsrc="DOS-PORTx_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="B"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x2" edc:end="0x3" edc:modsrc="DOS-PORTx_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="C"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x2" edc:end="0x3" edc:modsrc="DOS-PORTx_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="D"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x2" edc:end="0x3" edc:modsrc="DOS-PORTx_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="E"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x2" edc:end="0x3" edc:modsrc="DOS-PORTx_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="F"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x2" edc:end="0x3" edc:modsrc="DOS-PORTx_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="G"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x2" edc:end="0x3" edc:modsrc="DOS-PORTx_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="H"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x2" edc:end="0x3" edc:modsrc="DOS-PORTx_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="J"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x1" edc:modsrc="DOS-01381_clk_sib_v10_8Bit.Module"/>
+        <edc:Module_ref edc:begin="0x5" edc:end="0x6" edc:modsrc="DOS-01491_eccp_v3_8Bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="1"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x52" edc:end="0x5d" edc:modsrc="DOS-01378_PIC18F97J94.Module"/>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x1" edc:modsrc="DOS-01563_lvd_ctrl_v5_8Bit.Module"/>
+        <edc:Module_ref edc:begin="0x5d" edc:end="0x5e" edc:modsrc="DOS-01378_PIC18F97J94.Module"/>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x1" edc:modsrc="DOS-01474_tmr_Timer1_v5_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="1"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x6" edc:end="0x7" edc:modsrc="DOS-00332_uart_enh_v4_8Bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="1"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x5" edc:end="0x6" edc:modsrc="DOS-00332_uart_enh_v4_8Bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="1"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x3" edc:modsrc="DOS-00332_uart_enh_v4_8Bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="1"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01474_tmr_Timer1_v5_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="3"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x5e" edc:end="0x63" edc:modsrc="DOS-01378_PIC18F97J94.Module"/>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x5" edc:modsrc="DOS-01491_eccp_v3_8Bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="1"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x1" edc:end="0x2" edc:modsrc="DOS-01568_cmp_control_v2_8Bit.Module"/>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x1" edc:modsrc="DOS-01568_cmp_control_v2_8Bit.Module"/>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x2" edc:modsrc="DOS-01277_adc_1012_v4_8bit.Module">
+          <edc:ModuleExclude edc:impl="0xF7" edc:offset="0"/>
+          <edc:ModuleExclude edc:impl="0x87" edc:offset="1"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x2" edc:modsrc="DOS-01277_adc_result_buf_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="0"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x3" edc:end="0x4" edc:modsrc="DOS-01568_cmp_control_v2_8Bit.Module"/>
+        <edc:Module_ref edc:begin="0x4" edc:end="0x7" edc:modsrc="DOS-01490_mssp_v6_8Bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="1"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x2" edc:modsrc="DOS-01490_mssp_v6_8Bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="1"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x3" edc:modsrc="DOS-01504_tmr_Timer2_v3_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="2"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x1" edc:end="0x4" edc:modsrc="DOS-01474_tmr_Timer1_v5_8bit.Module">
+          <edc:ModuleMacro edc:replace="@" edc:with="1"/>
+        </edc:Module_ref>
+        <edc:Module_ref edc:begin="0x3" edc:end="0x4" edc:modsrc="DOS-01447_rst_integration_v7_8bit.Module"/>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x1" edc:modsrc="DOS-01565_int_on_change_v3_8Bit.Module"/>
+        <edc:Module_ref edc:begin="0x63" edc:end="0x64" edc:modsrc="DOS-01378_PIC18F97J94.Module"/>
+        <edc:Module_ref edc:begin="0x5" edc:end="0x6" edc:modsrc="DOS-01381_clk_sib_v10_8Bit.Module"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x3" edc:modsrc="DOS-01614_tmr_timer0_v2_8bit.Module"/>
+        <edc:Module_ref edc:begin="0x0" edc:end="0x18" edc:modsrc="DOS-01558_cpu_pic18f_core_v4.Module"/>
+        <edc:Module_ref edc:begin="0x64" edc:end="0x67" edc:modsrc="DOS-01378_PIC18F97J94.Module"/>
+        <edc:Module_ref edc:begin="0x18" edc:end="0x25" edc:modsrc="DOS-01558_cpu_pic18f_core_v4.Module"/>
+      </edc:SFRDataSector>
+    </edc:RegardlessOfMode>
+  </edc:DataSpace>
+  <edc:ProgramSpace>
+    <edc:WORMHoleSector edc:beginaddr="0x1fff0" edc:endaddr="0x20000" edc:regionid="config">
+      <edc:DCRDef edc:access="--------" edc:cname="CONFIG1L" edc:default="0xff" edc:desc="" edc:impl="0x0" edc:name="CONFIG1L" edc:nzwidth="8" edc:unimplval="0" edc:unused="0x0" edc:useinchecksum="0xff">
+        <edc:AliasList/>
+        <edc:DCRModeList>
+          <edc:DCRMode edc:id="DS.0"/>
+        </edc:DCRModeList>
+      </edc:DCRDef>
+      <edc:DCRDef edc:access="--------" edc:cname="CONFIG1H" edc:default="0xff" edc:desc="" edc:impl="0x0" edc:name="CONFIG1H" edc:nzwidth="8" edc:unimplval="0" edc:unused="0x0" edc:useinchecksum="0xff">
+        <edc:AliasList/>
+        <edc:DCRModeList>
+          <edc:DCRMode edc:id="DS.0"/>
+        </edc:DCRModeList>
+      </edc:DCRDef>
+      <edc:DCRDef edc:access="--------" edc:cname="CONFIG2L" edc:default="0xff" edc:desc="" edc:impl="0x0" edc:name="CONFIG2L" edc:nzwidth="8" edc:unimplval="0" edc:unused="0x0" edc:useinchecksum="0xff">
+        <edc:AliasList/>
+        <edc:DCRModeList>
+          <edc:DCRMode edc:id="DS.0"/>
+        </edc:DCRModeList>
+      </edc:DCRDef>
+      <edc:DCRDef edc:access="--------" edc:cname="CONFIG2H" edc:default="0xff" edc:desc="" edc:impl="0x0" edc:name="CONFIG2H" edc:nzwidth="8" edc:unimplval="0" edc:unused="0x0" edc:useinchecksum="0xff">
+        <edc:AliasList/>
+        <edc:DCRModeList>
+          <edc:DCRMode edc:id="DS.0"/>
+        </edc:DCRModeList>
+      </edc:DCRDef>
+      <edc:DCRDef edc:access="--------" edc:cname="CONFIG3L" edc:default="0xff" edc:desc="" edc:impl="0x0" edc:name="CONFIG3L" edc:nzwidth="8" edc:unimplval="0" edc:unused="0x0" edc:useinchecksum="0xff">
+        <edc:AliasList/>
+        <edc:DCRModeList>
+          <edc:DCRMode edc:id="DS.0"/>
+        </edc:DCRModeList>
+      </edc:DCRDef>
+      <edc:DCRDef edc:access="--------" edc:cname="CONFIG3H" edc:default="0xff" edc:desc="" edc:impl="0x0" edc:name="CONFIG3H" edc:nzwidth="8" edc:unimplval="0" edc:unused="0x0" edc:useinchecksum="0xff">
+        <edc:AliasList/>
+        <edc:DCRModeList>
+          <edc:DCRMode edc:id="DS.0"/>
+        </edc:DCRModeList>
+      </edc:DCRDef>
+      <edc:DCRDef edc:access="--------" edc:cname="CONFIG4L" edc:default="0xff" edc:desc="" edc:impl="0x0" edc:name="CONFIG4L" edc:nzwidth="8" edc:unimplval="0" edc:unused="0x0" edc:useinchecksum="0xff">
+        <edc:AliasList/>
+        <edc:DCRModeList>
+          <edc:DCRMode edc:id="DS.0"/>
+        </edc:DCRModeList>
+      </edc:DCRDef>
+      <edc:DCRDef edc:access="--------" edc:cname="CONFIG4H" edc:default="0xff" edc:desc="" edc:impl="0x0" edc:name="CONFIG4H" edc:nzwidth="8" edc:unimplval="0" edc:unused="0x0" edc:useinchecksum="0xff">
+        <edc:AliasList/>
+        <edc:DCRModeList>
+          <edc:DCRMode edc:id="DS.0"/>
+        </edc:DCRModeList>
+      </edc:DCRDef>
+      <edc:DCRDef edc:access="--------" edc:cname="CONFIG5L" edc:default="0xff" edc:desc="" edc:impl="0x0" edc:name="CONFIG5L" edc:nzwidth="8" edc:unimplval="0" edc:unused="0x0" edc:useinchecksum="0xff">
+        <edc:AliasList/>
+        <edc:DCRModeList>
+          <edc:DCRMode edc:id="DS.0"/>
+        </edc:DCRModeList>
+      </edc:DCRDef>
+      <edc:DCRDef edc:access="--------" edc:cname="CONFIG5H" edc:default="0xff" edc:desc="" edc:impl="0x0" edc:name="CONFIG5H" edc:nzwidth="8" edc:unimplval="0" edc:unused="0x0" edc:useinchecksum="0xff">
+        <edc:AliasList/>
+        <edc:DCRModeList>
+          <edc:DCRMode edc:id="DS.0"/>
+        </edc:DCRModeList>
+      </edc:DCRDef>
+      <edc:DCRDef edc:access="--------" edc:cname="CONFIG6L" edc:default="0xff" edc:desc="" edc:impl="0x0" edc:name="CONFIG6L" edc:nzwidth="8" edc:unimplval="0" edc:unused="0x0" edc:useinchecksum="0xff">
+        <edc:AliasList/>
+        <edc:DCRModeList>
+          <edc:DCRMode edc:id="DS.0"/>
+        </edc:DCRModeList>
+      </edc:DCRDef>
+      <edc:DCRDef edc:access="--------" edc:cname="CONFIG6H" edc:default="0xff" edc:desc="" edc:impl="0x0" edc:name="CONFIG6H" edc:nzwidth="8" edc:unimplval="0" edc:unused="0x0" edc:useinchecksum="0xff">
+        <edc:AliasList/>
+        <edc:DCRModeList>
+          <edc:DCRMode edc:id="DS.0"/>
+        </edc:DCRModeList>
+      </edc:DCRDef>
+      <edc:DCRDef edc:access="--------" edc:cname="CONFIG7L" edc:default="0xff" edc:desc="" edc:impl="0x0" edc:name="CONFIG7L" edc:nzwidth="8" edc:unimplval="0" edc:unused="0x0" edc:useinchecksum="0xff">
+        <edc:AliasList/>
+        <edc:DCRModeList>
+          <edc:DCRMode edc:id="DS.0"/>
+        </edc:DCRModeList>
+      </edc:DCRDef>
+      <edc:DCRDef edc:access="--------" edc:cname="CONFIG7H" edc:default="0xff" edc:desc="" edc:impl="0x0" edc:name="CONFIG7H" edc:nzwidth="8" edc:unimplval="0" edc:unused="0x0" edc:useinchecksum="0xff">
+        <edc:AliasList/>
+        <edc:DCRModeList>
+          <edc:DCRMode edc:id="DS.0"/>
+        </edc:DCRModeList>
+      </edc:DCRDef>
+      <edc:DCRDef edc:access="--------" edc:cname="CONFIG8L" edc:default="0xff" edc:desc="" edc:impl="0x0" edc:name="CONFIG8L" edc:nzwidth="8" edc:unimplval="0" edc:unused="0x0" edc:useinchecksum="0xff">
+        <edc:AliasList/>
+        <edc:DCRModeList>
+          <edc:DCRMode edc:id="DS.0"/>
+        </edc:DCRModeList>
+      </edc:DCRDef>
+      <edc:DCRDef edc:access="--------" edc:cname="CONFIG8H" edc:default="0xff" edc:desc="" edc:impl="0x0" edc:name="CONFIG8H" edc:nzwidth="8" edc:unimplval="0" edc:unused="0x0" edc:useinchecksum="0xff">
+        <edc:AliasList/>
+        <edc:DCRModeList>
+          <edc:DCRMode edc:id="DS.0"/>
+        </edc:DCRModeList>
+      </edc:DCRDef>
+    </edc:WORMHoleSector>
+  </edc:ProgramSpace>
+</edc:PIC>

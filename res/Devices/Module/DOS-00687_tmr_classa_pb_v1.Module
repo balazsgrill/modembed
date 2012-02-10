@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:Module xmlns:edc="http://crownking/edc" edc:dosid="00687" edc:modid="tmr_classa_pb_v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/Module.xsd">
+  <edc:ArchDef edc:desc="" edc:name="">
+    <edc:MemTraits>
+      <edc:DataMemTraits edc:addrinc="0x4" edc:locsize="0x4" edc:wordimpl="0xffffffff" edc:wordinit="0x0" edc:wordsafe="0xffffffff" edc:wordsize="0x4"/>
+    </edc:MemTraits>
+  </edc:ArchDef>
+  <edc:SFRDef edc:access="----------------n-nnn---n-nn-nn-" edc:cname="T1CON" edc:desc="" edc:grp="TMR1" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="----------------00000---0-00-00-" edc:name="T1CON" edc:nzwidth="0x20" edc:por="----------------00000---0-00-00-" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="TCS" edc:desc="" edc:mask="0x1" edc:name="TCS" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="TSYNC" edc:desc="" edc:mask="0x1" edc:name="TSYNC" edc:nzwidth="0x1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="TCKPS" edc:desc="" edc:mask="0x3" edc:name="TCKPS" edc:nzwidth="0x2"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="TGATE" edc:desc="" edc:mask="0x1" edc:name="TGATE" edc:nzwidth="0x1"/>
+        <edc:AdjustPoint edc:offset="3"/>
+        <edc:SFRFieldDef edc:cname="TWIP" edc:desc="" edc:mask="0x1" edc:name="TWIP" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="TWDIS" edc:desc="" edc:mask="0x1" edc:name="TWDIS" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="SIDL" edc:desc="" edc:mask="0x1" edc:name="SIDL" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="FRZ" edc:desc="" edc:ishidden="true" edc:islanghidden="true" edc:mask="0x1" edc:name="FRZ" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="ON" edc:desc="" edc:mask="0x1" edc:name="ON" edc:nzwidth="0x1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:AdjustPoint edc:offset="0x4"/>
+        <edc:SFRFieldDef edc:cname="TCKPS0" edc:desc="" edc:mask="0x1" edc:name="TCKPS0" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="TCKPS1" edc:desc="" edc:mask="0x1" edc:name="TCKPS1" edc:nzwidth="0x1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.1">
+        <edc:AdjustPoint edc:offset="0xd"/>
+        <edc:SFRFieldDef edc:cname="TSIDL" edc:desc="" edc:mask="0x1" edc:name="TSIDL" edc:nzwidth="0x1"/>
+        <edc:AdjustPoint edc:offset="0x1"/>
+        <edc:SFRFieldDef edc:cname="TON" edc:desc="" edc:mask="0x1" edc:name="TON" edc:nzwidth="0x1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.2">
+        <edc:SFRFieldDef edc:cname="w" edc:desc="" edc:mask="0x1" edc:name="w" edc:nzwidth="0x20"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+    <edc:StimInfo edc:stimpcfiles="" edc:stimregfiles="" edc:stimscl="rwb" edc:stimtype="Record"/>
+    <edc:FreezeBit edc:freezeval="1" edc:name="TIMER1" edc:pos="14"/>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="----------------nnnnnnnnnnnnnnnn" edc:cname="TMR1" edc:desc="" edc:grp="TMR1" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000000000000000000000000000" edc:name="TMR1" edc:nzwidth="0x20" edc:por="00000000000000000000000000000000" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="TMR1" edc:desc="" edc:islanghidden="true" edc:mask="0xffffffff" edc:name="TMR1" edc:nzwidth="0x20"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="----------------nnnnnnnnnnnnnnnn" edc:cname="PR1" edc:desc="" edc:grp="TMR1" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000000000001111111111111111" edc:name="PR1" edc:nzwidth="0x20" edc:por="00000000000000001111111111111111" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="PR1" edc:desc="" edc:islanghidden="true" edc:mask="0xffffffff" edc:name="PR1" edc:nzwidth="0x20"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+</edc:Module>

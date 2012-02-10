@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:Module xmlns:edc="http://crownking/edc" edc:dosid="00546" edc:modid="nvm_tsmc25_v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/Module.xsd">
+  <edc:ArchDef edc:desc="" edc:name="">
+    <edc:MemTraits>
+      <edc:DataMemTraits edc:addrinc="0x2" edc:locsize="0x2" edc:wordimpl="0xffff" edc:wordinit="0x0" edc:wordsafe="0xffff" edc:wordsize="0x2"/>
+    </edc:MemTraits>
+  </edc:ArchDef>
+  <edc:SFRDef edc:access="snn------n--nnnn" edc:cname="NVMCON" edc:desc="" edc:impl="0xe04f" edc:isindirect="false" edc:isvolatile="true" edc:mclr="000------0--0000" edc:name="NVMCON" edc:nzwidth="0x10" edc:por="000------0--0000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="NVMOP" edc:desc="" edc:mask="0xf" edc:name="NVMOP" edc:nzwidth="0x4"/>
+        <edc:AdjustPoint edc:offset="2"/>
+        <edc:SFRFieldDef edc:cname="ERASE" edc:desc="" edc:mask="0x1" edc:name="ERASE" edc:nzwidth="0x1"/>
+        <edc:AdjustPoint edc:offset="5"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="WRERR" edc:desc="" edc:mask="0x1" edc:name="WRERR" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="WREN" edc:desc="" edc:mask="0x1" edc:name="WREN" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="WR" edc:desc="" edc:mask="0x1" edc:name="WR" edc:nzwidth="0x1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="NVMOP0" edc:desc="" edc:mask="0x1" edc:name="NVMOP0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="NVMOP1" edc:desc="" edc:mask="0x1" edc:name="NVMOP1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="NVMOP2" edc:desc="" edc:mask="0x1" edc:name="NVMOP2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="NVMOP3" edc:desc="" edc:mask="0x1" edc:name="NVMOP3" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+    <edc:StimInfo edc:stimpcfiles="" edc:stimregfiles="" edc:stimscl="r" edc:stimtype="Record"/>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnnnnnnnnnn" edc:cname="NVMADR" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="xxxxxxxxxxxxxxxx" edc:name="NVMADR" edc:nzwidth="16" edc:por="xxxxxxxxxxxxxxxx">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="NVMADR" edc:desc="" edc:mask="0xffff" edc:name="NVMADR" edc:nzwidth="16"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="--------nnnnnnnn" edc:cname="NVMADRU" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="--------xxxxxxxx" edc:name="NVMADRU" edc:nzwidth="16" edc:por="--------xxxxxxxx">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="NVMADRU" edc:desc="" edc:mask="0xff" edc:name="NVMADRU" edc:nzwidth="8"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="--------wwwwwwww" edc:cname="NVMKEY" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="--------00000000" edc:name="NVMKEY" edc:nzwidth="0x10" edc:por="--------00000000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="NVMKEY" edc:desc="" edc:islanghidden="true" edc:mask="0xff" edc:name="NVMKEY" edc:nzwidth="0x8"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+    <edc:StimInfo edc:stimpcfiles="" edc:stimregfiles="" edc:stimscl="r" edc:stimtype="Record"/>
+  </edc:SFRDef>
+</edc:Module>

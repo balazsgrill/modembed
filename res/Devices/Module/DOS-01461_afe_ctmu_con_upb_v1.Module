@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:Module xmlns:edc="http://crownking/edc" edc:dosid="01461_afe_ctmu_con_upb_v1" edc:modid="ctmu_v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/Module.xsd">
+  <edc:ArchDef edc:desc="" edc:name="">
+    <edc:MemTraits>
+      <edc:DataMemTraits edc:addrinc="0x4" edc:locsize="0x4" edc:wordimpl="0xffffffff" edc:wordinit="0x0" edc:wordsafe="0xffffffff" edc:wordsize="0x4"/>
+    </edc:MemTraits>
+  </edc:ArchDef>
+  <edc:SFRDef edc:access="nnnnnnnnnnnnnn--nnnnnnnnnnnnnnnn" edc:cname="CTMUCON" edc:desc="" edc:grp="CTMU" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000000000--0000000000000000" edc:name="CTMUCON" edc:nzwidth="0x20" edc:por="00000000000000--0000000000000000" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="IRNG" edc:desc="" edc:mask="0x3" edc:name="IRNG" edc:nzwidth="2"/>
+        <edc:SFRFieldDef edc:cname="ITRIM" edc:desc="" edc:mask="0x3f" edc:name="ITRIM" edc:nzwidth="6"/>
+        <edc:SFRFieldDef edc:cname="CTTRIG" edc:desc="" edc:mask="0x1" edc:name="CTTRIG" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="IDISSEN" edc:desc="" edc:mask="0x1" edc:name="IDISSEN" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="EDGSEQEN" edc:desc="" edc:mask="0x1" edc:name="EDGSEQEN" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="EDGEN" edc:desc="" edc:mask="0x1" edc:name="EDGEN" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="TGEN" edc:desc="" edc:mask="0x1" edc:name="TGEN" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CTMUSIDL" edc:desc="" edc:mask="0x1" edc:name="CTMUSIDL" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="FRZ" edc:desc="" edc:ishidden="true" edc:islanghidden="true" edc:mask="0x1" edc:name="FRZ" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="ON" edc:desc="" edc:mask="0x1" edc:name="ON" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="2"/>
+        <edc:SFRFieldDef edc:cname="EDG2SEL" edc:desc="" edc:mask="0xf" edc:name="EDG2SEL" edc:nzwidth="4"/>
+        <edc:SFRFieldDef edc:cname="EDG2POL" edc:desc="" edc:mask="0x1" edc:name="EDG2POL" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="EDG2MOD" edc:desc="" edc:mask="0x1" edc:name="EDG2MOD" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="EDG1STAT" edc:desc="" edc:mask="0x1" edc:name="EDG1STAT" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="EDG2STAT" edc:desc="" edc:mask="0x1" edc:name="EDG2STAT" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="EDG1SEL" edc:desc="" edc:mask="0xf" edc:name="EDG1SEL" edc:nzwidth="4"/>
+        <edc:SFRFieldDef edc:cname="EDG1POL" edc:desc="" edc:mask="0x1" edc:name="EDG1POL" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="EDG1MOD" edc:desc="" edc:mask="0x1" edc:name="EDG1MOD" edc:nzwidth="1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="w" edc:desc="" edc:mask="0x1" edc:name="w" edc:nzwidth="0x20"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+    <edc:FreezeBit edc:freezeval="1" edc:name="CTMU" edc:pos="14"/>
+  </edc:SFRDef>
+</edc:Module>

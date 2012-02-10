@@ -1,0 +1,847 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:PIC xmlns:edc="http://crownking/edc" edc:arch="32xxxx" edc:desc="" edc:informedby="" edc:isextended="false" edc:name="PIC32MX250F128B" edc:procid="0x0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
+  <edc:Import>
+    <edc:Module_import edc:modsrc="32xxxx-NMMR.Module"/>
+    <edc:Module_import edc:modsrc="DOS-01385_wdt_pwrt_pb_v2.Module"/>
+    <edc:Module_import edc:modsrc="DOS-00748_tmr_rtcc_pb_v1.Module"/>
+    <edc:Module_import edc:modsrc="DOS-00687_tmr_classa_pb_v1.Module"/>
+    <edc:Module_import edc:modsrc="DOS-00745_tmr_classb_pb_v1.Module"/>
+    <edc:Module_import edc:modsrc="DOS-00740_icap_pb_v1.Module"/>
+    <edc:Module_import edc:modsrc="DOS-00749_ocmp_pb_v1.Module"/>
+    <edc:Module_import edc:modsrc="DOS-00774_i2c_pb_v1.Module"/>
+    <edc:Module_import edc:modsrc="DOS-01329_spi_pb_v2.Module"/>
+    <edc:Module_import edc:modsrc="DOS-00734_uart_irda_pb_v1.Module"/>
+    <edc:Module_import edc:modsrc="DOS-00751_ppi_pmp_v1.Module"/>
+    <edc:Module_import edc:modsrc="DOS-00755_adc_1012_pb_v1.Module"/>
+    <edc:Module_import edc:modsrc="DOS-01423_TRAA_Config.Module"/>
+    <edc:Module_import edc:modsrc="DOS-01390_pfm_control_hpmd_v2.Module"/>
+    <edc:Module_import edc:modsrc="DOS-01416_clk_sib_pb_v4.Module"/>
+    <edc:Module_import edc:modsrc="DOS-01423_TRAA_int_evic.Module"/>
+    <edc:Module_import edc:modsrc="DOS-00747_bus_matrix_bvci_v1.Module"/>
+    <edc:Module_import edc:modsrc="DOS-00735_dma_bvci_v1.Module"/>
+    <edc:Module_import edc:modsrc="DOS-01195_usb_otgcore_pb_v2.Module"/>
+    <edc:Module_import edc:modsrc="DOS-00800_dac_4bit_ctrl_pb_v1.Module"/>
+    <edc:Module_import edc:modsrc="DOS-00866_cmp_control_pb_v2.Module"/>
+    <edc:Module_import edc:modsrc="DOS-01342_rst_integration_pb_v3.Module"/>
+    <edc:Module_import edc:modsrc="DOS-01423_TRAA_Ports.Module"/>
+    <edc:Module_import edc:modsrc="DOS-01423_RPINRx.Module"/>
+    <edc:Module_import edc:modsrc="DOS-01423_RPORx.Module"/>
+    <edc:Module_import edc:modsrc="DOS-01461_afe_ctmu_con_upb_v1.Module"/>
+  </edc:Import>
+  <edc:Power>
+    <edc:VPP edc:defaultvoltage="3.300" edc:maxvoltage="3.600" edc:minvoltage="2.500"/>
+    <edc:VDD edc:maxdefaultvoltage="3.600" edc:maxvoltage="3.600" edc:mindefaultvoltage="2.500" edc:minvoltage="2.500" edc:nominalvoltage="3.300"/>
+  </edc:Power>
+  <edc:ArchDef edc:desc="32xxxx" edc:name="32xxxx">
+    <edc:MemTraits edc:addrinc="0x4" edc:locsize="0x4" edc:wordimpl="0xffffffff" edc:wordinit="0xffffffff" edc:wordsafe="0xffffffff" edc:wordsize="0x4"/>
+  </edc:ArchDef>
+  <edc:PeripheralList>
+    <edc:Peripheral edc:beginaddr="0xBF800000" edc:cname="WDT"/>
+    <edc:Peripheral edc:beginaddr="0xBF800200" edc:cname="RTCC"/>
+    <edc:Peripheral edc:beginaddr="0xBF800600" edc:cname="TMR1"/>
+    <edc:Peripheral edc:beginaddr="0xBF800800" edc:cname="TMR2"/>
+    <edc:Peripheral edc:beginaddr="0xBF800A00" edc:cname="TMR3"/>
+    <edc:Peripheral edc:beginaddr="0xBF800C00" edc:cname="TMR4"/>
+    <edc:Peripheral edc:beginaddr="0xBF800E00" edc:cname="TMR5"/>
+    <edc:Peripheral edc:beginaddr="0xBF802000" edc:cname="ICAP1"/>
+    <edc:Peripheral edc:beginaddr="0xBF802200" edc:cname="ICAP2"/>
+    <edc:Peripheral edc:beginaddr="0xBF802400" edc:cname="ICAP3"/>
+    <edc:Peripheral edc:beginaddr="0xBF802600" edc:cname="ICAP4"/>
+    <edc:Peripheral edc:beginaddr="0xBF802800" edc:cname="ICAP5"/>
+    <edc:Peripheral edc:beginaddr="0xBF803000" edc:cname="OCMP1"/>
+    <edc:Peripheral edc:beginaddr="0xBF803200" edc:cname="OCMP2"/>
+    <edc:Peripheral edc:beginaddr="0xBF803400" edc:cname="OCMP3"/>
+    <edc:Peripheral edc:beginaddr="0xBF803600" edc:cname="OCMP4"/>
+    <edc:Peripheral edc:beginaddr="0xBF803800" edc:cname="OCMP5"/>
+    <edc:Peripheral edc:beginaddr="0xBF805000" edc:cname="I2C1"/>
+    <edc:Peripheral edc:beginaddr="0xBF805100" edc:cname="I2C2"/>
+    <edc:Peripheral edc:beginaddr="0xBF805800" edc:cname="SPI1"/>
+    <edc:Peripheral edc:beginaddr="0xBF805A00" edc:cname="SPI2"/>
+    <edc:Peripheral edc:beginaddr="0xBF806000" edc:cname="UART1"/>
+    <edc:Peripheral edc:beginaddr="0xBF806200" edc:cname="UART2"/>
+    <edc:Peripheral edc:beginaddr="0xBF807000" edc:cname="PMP"/>
+    <edc:Peripheral edc:beginaddr="0xBF809000" edc:cname="ADC10"/>
+    <edc:Peripheral edc:beginaddr="0xBF809800" edc:cname="CVR"/>
+    <edc:Peripheral edc:beginaddr="0xBF80A000" edc:cname="CMP"/>
+    <edc:Peripheral edc:beginaddr="0xBF80F000" edc:cname="OSC"/>
+    <edc:Peripheral edc:beginaddr="0xBF80F200" edc:cname="CFG"/>
+    <edc:Peripheral edc:beginaddr="0xBF80F400" edc:cname="NVM"/>
+    <edc:Peripheral edc:beginaddr="0xBF80F600" edc:cname="RCON"/>
+    <edc:Peripheral edc:beginaddr="0xBF881000" edc:cname="INT"/>
+    <edc:Peripheral edc:beginaddr="0xBF882000" edc:cname="BMX"/>
+    <edc:Peripheral edc:beginaddr="0xBF883000" edc:cname="DMAC"/>
+    <edc:Peripheral edc:beginaddr="0xBF883060" edc:cname="DMAC0"/>
+    <edc:Peripheral edc:beginaddr="0xBF883120" edc:cname="DMAC1"/>
+    <edc:Peripheral edc:beginaddr="0xBF8831E0" edc:cname="DMAC2"/>
+    <edc:Peripheral edc:beginaddr="0xBF8832A0" edc:cname="DMAC3"/>
+    <edc:Peripheral edc:beginaddr="0xBF885000" edc:cname="USB"/>
+    <edc:Peripheral edc:beginaddr="0xBF886000" edc:cname="PORTA"/>
+    <edc:Peripheral edc:beginaddr="0xBF886100" edc:cname="PORTB"/>
+  </edc:PeripheralList>
+  <edc:InterruptList>
+    <edc:Interrupt edc:cname="CORE_TIMER" edc:desc="Core Timer" edc:irq="0"/>
+    <edc:Interrupt edc:cname="CORE_SOFTWARE_0" edc:desc="Core Software 0" edc:irq="1"/>
+    <edc:Interrupt edc:cname="CORE_SOFTWARE_1" edc:desc="Core Software 1" edc:irq="2"/>
+    <edc:Interrupt edc:cname="EXTERNAL_0" edc:desc="Ext INT 0" edc:irq="3"/>
+    <edc:Interrupt edc:cname="TIMER_1" edc:desc="Timer1" edc:irq="4"/>
+    <edc:Interrupt edc:cname="INPUT_CAPTURE_1" edc:desc="Input Capture 1" edc:irq="5"/>
+    <edc:Interrupt edc:cname="OUTPUT_COMPARE_1" edc:desc="Output Compare 1" edc:irq="6"/>
+    <edc:Interrupt edc:cname="EXTERNAL_1" edc:desc="Ext INT 1" edc:irq="7"/>
+    <edc:Interrupt edc:cname="TIMER_2" edc:desc="Timer2" edc:irq="8"/>
+    <edc:Interrupt edc:cname="INPUT_CAPTURE_2" edc:desc="Input Capture 2" edc:irq="9"/>
+    <edc:Interrupt edc:cname="OUTPUT_COMPARE_2" edc:desc="Output Compare 2" edc:irq="10"/>
+    <edc:Interrupt edc:cname="EXTERNAL_2" edc:desc="Ext INT 2" edc:irq="11"/>
+    <edc:Interrupt edc:cname="TIMER_3" edc:desc="Timer3" edc:irq="12"/>
+    <edc:Interrupt edc:cname="INPUT_CAPTURE_3" edc:desc="Input Capture 3" edc:irq="13"/>
+    <edc:Interrupt edc:cname="OUTPUT_COMPARE_3" edc:desc="Output Compare 3" edc:irq="14"/>
+    <edc:Interrupt edc:cname="EXTERNAL_3" edc:desc="Ext INT 3" edc:irq="15"/>
+    <edc:Interrupt edc:cname="TIMER_4" edc:desc="Timer4" edc:irq="16"/>
+    <edc:Interrupt edc:cname="INPUT_CAPTURE_4" edc:desc="Input Capture 4" edc:irq="17"/>
+    <edc:Interrupt edc:cname="OUTPUT_COMPARE_4" edc:desc="Output Compare 4" edc:irq="18"/>
+    <edc:Interrupt edc:cname="EXTERNAL_4" edc:desc="Ext INT 4" edc:irq="19"/>
+    <edc:Interrupt edc:cname="TIMER_5" edc:desc="Timer5" edc:irq="20"/>
+    <edc:Interrupt edc:cname="INPUT_CAPTURE_5" edc:desc="Input Capture 5" edc:irq="21"/>
+    <edc:Interrupt edc:cname="OUTPUT_COMPARE_5" edc:desc="Output Compare 5" edc:irq="22"/>
+    <edc:Interrupt edc:cname="ADC" edc:desc="ADC" edc:irq="23"/>
+    <edc:Interrupt edc:cname="FAIL_SAFE_MONITOR" edc:desc="Fail Safe Clock Monitor" edc:irq="24"/>
+    <edc:Interrupt edc:cname="RTCC" edc:desc="Real Time Clock Calendar" edc:irq="25"/>
+    <edc:Interrupt edc:cname="FCE" edc:desc="Flash Control Event" edc:irq="26"/>
+    <edc:Interrupt edc:cname="COMPARATOR_1" edc:desc="Comparator 1" edc:irq="27"/>
+    <edc:Interrupt edc:cname="COMPARATOR_2" edc:desc="Comparator 2" edc:irq="28"/>
+    <edc:Interrupt edc:cname="COMPARATOR_3" edc:desc="Comparator 3" edc:irq="29"/>
+    <edc:Interrupt edc:cname="USB_1" edc:desc="USB Module 1" edc:irq="30"/>
+    <edc:Interrupt edc:cname="SPI_1" edc:desc="SPI1" edc:irq="31"/>
+    <edc:Interrupt edc:cname="UART_1" edc:desc="UART 1" edc:irq="32"/>
+    <edc:Interrupt edc:cname="I2C_1" edc:desc="I2C 1" edc:irq="33"/>
+    <edc:Interrupt edc:cname="CHANGE_NOTICE" edc:desc="Change Notice" edc:irq="34"/>
+    <edc:Interrupt edc:cname="PMP" edc:desc="PMP" edc:irq="35"/>
+    <edc:Interrupt edc:cname="SPI_2" edc:desc="SPI 2" edc:irq="36"/>
+    <edc:Interrupt edc:cname="UART_2" edc:desc="UART 2" edc:irq="37"/>
+    <edc:Interrupt edc:cname="I2C_2" edc:desc="I2C 2" edc:irq="38"/>
+    <edc:Interrupt edc:cname="CTMU" edc:desc="CTMU Event" edc:irq="39"/>
+    <edc:Interrupt edc:cname="DMA_0" edc:desc="DMA Channel 0" edc:irq="40"/>
+    <edc:Interrupt edc:cname="DMA_1" edc:desc="DMA Channel 1" edc:irq="41"/>
+    <edc:Interrupt edc:cname="DMA_2" edc:desc="DMA Channel 2" edc:irq="42"/>
+    <edc:Interrupt edc:cname="DMA_3" edc:desc="DMA Channel 3" edc:irq="43"/>
+    <edc:InterruptRequest edc:cname="CORE_TIMER" edc:desc="Core Timer" edc:irq="0"/>
+    <edc:InterruptRequest edc:cname="CORE_SOFTWARE_0" edc:desc="Core Software 0" edc:irq="1"/>
+    <edc:InterruptRequest edc:cname="CORE_SOFTWARE_1" edc:desc="Core Software 1" edc:irq="2"/>
+    <edc:InterruptRequest edc:cname="EXTERNAL_0" edc:desc="Ext INT 0" edc:irq="3"/>
+    <edc:InterruptRequest edc:cname="TIMER_1" edc:desc="Timer 1" edc:irq="4"/>
+    <edc:InterruptRequest edc:cname="INPUT_CAPTURE_ERROR_1" edc:desc="Input Capature 1 Error" edc:irq="5"/>
+    <edc:InterruptRequest edc:cname="INPUT_CAPTURE_1" edc:desc="Input Capture 1" edc:irq="6"/>
+    <edc:InterruptRequest edc:cname="OUTPUT_COMPARE_1" edc:desc="Output Compare 1" edc:irq="7"/>
+    <edc:InterruptRequest edc:cname="EXTERNAL_1" edc:desc="Ext INT 1" edc:irq="8"/>
+    <edc:InterruptRequest edc:cname="TIMER_2" edc:desc="Timer 2" edc:irq="9"/>
+    <edc:InterruptRequest edc:cname="INPUT_CAPTURE_ERROR_2" edc:desc="Input Capture 2 Error" edc:irq="10"/>
+    <edc:InterruptRequest edc:cname="INPUT_CAPTURE_2" edc:desc="Input Capture 2" edc:irq="11"/>
+    <edc:InterruptRequest edc:cname="OUTPUT_COMPARE_2" edc:desc="Output Compare 2" edc:irq="12"/>
+    <edc:InterruptRequest edc:cname="EXTERNAL_2" edc:desc="External INT 2" edc:irq="13"/>
+    <edc:InterruptRequest edc:cname="TIMER_3" edc:desc="Timer 3" edc:irq="14"/>
+    <edc:InterruptRequest edc:cname="INPUT_CAPTURE_ERROR_3" edc:desc="Input Capture 3 Error" edc:irq="15"/>
+    <edc:InterruptRequest edc:cname="INPUT_CAPTURE_3" edc:desc="Input Capture 3" edc:irq="16"/>
+    <edc:InterruptRequest edc:cname="OUTPUT_COMPARE_3" edc:desc="Output Compare 3" edc:irq="17"/>
+    <edc:InterruptRequest edc:cname="EXTERNAL_3" edc:desc="Ext INT 3" edc:irq="18"/>
+    <edc:InterruptRequest edc:cname="TIMER_4" edc:desc="Timer 4" edc:irq="19"/>
+    <edc:InterruptRequest edc:cname="INPUT_CAPTURE_ERROR_4" edc:desc="Input Capture 4 Error" edc:irq="20"/>
+    <edc:InterruptRequest edc:cname="INPUT_CAPTURE_4" edc:desc="Input Capture 4" edc:irq="21"/>
+    <edc:InterruptRequest edc:cname="OUTPUT_COMPARE_4" edc:desc="Output Compare 4" edc:irq="22"/>
+    <edc:InterruptRequest edc:cname="EXTERNAL_4" edc:desc="Ext INT 4" edc:irq="23"/>
+    <edc:InterruptRequest edc:cname="TIMER_5" edc:desc="Timer 5" edc:irq="24"/>
+    <edc:InterruptRequest edc:cname="INPUT_CAPTURE_ERROR_5" edc:desc="Input Capture 5 Error" edc:irq="25"/>
+    <edc:InterruptRequest edc:cname="INPUT_CAPTURE_5" edc:desc="Input Capture 5" edc:irq="26"/>
+    <edc:InterruptRequest edc:cname="OUTPUT_COMPARE_5" edc:desc="Output Compare 5" edc:irq="27"/>
+    <edc:InterruptRequest edc:cname="ADC" edc:desc="ADC1 Convert Done" edc:irq="28"/>
+    <edc:InterruptRequest edc:cname="FAIL_SAFE_MONITOR" edc:desc="Fail Safe Clock Monitor" edc:irq="29"/>
+    <edc:InterruptRequest edc:cname="RTCC" edc:desc="Real Time Clock Calendar" edc:irq="30"/>
+    <edc:InterruptRequest edc:cname="FLASH_CONTROL" edc:desc="" edc:irq="31"/>
+    <edc:InterruptRequest edc:cname="COMPARATOR_1" edc:desc="Comparator 1" edc:irq="32"/>
+    <edc:InterruptRequest edc:cname="COMPARATOR_2" edc:desc="Comparator 2" edc:irq="33"/>
+    <edc:InterruptRequest edc:cname="COMPARATOR_3" edc:desc="Comparator 3" edc:irq="34"/>
+    <edc:InterruptRequest edc:cname="USB" edc:desc="USB" edc:irq="35"/>
+    <edc:InterruptRequest edc:cname="SPI1_ERR" edc:desc="SPI1 Fault" edc:irq="36"/>
+    <edc:InterruptRequest edc:cname="SPI1_RX" edc:desc="SPI1 Receive Done" edc:irq="37"/>
+    <edc:InterruptRequest edc:cname="SPI1_TX" edc:desc="SPI1 Transmit Done" edc:irq="38"/>
+    <edc:InterruptRequest edc:cname="UART1_ERR" edc:desc="UART1 Error" edc:irq="39"/>
+    <edc:InterruptRequest edc:cname="UART1_RX" edc:desc="UART1 Receiver" edc:irq="40"/>
+    <edc:InterruptRequest edc:cname="UART1_TX" edc:desc="UART1 Trasmitter" edc:irq="41"/>
+    <edc:InterruptRequest edc:cname="I2C1_BUS" edc:desc="I2C1 Bus Collision Event" edc:irq="42"/>
+    <edc:InterruptRequest edc:cname="I2C1_SLAVE" edc:desc="I2C1 Slave Event" edc:irq="43"/>
+    <edc:InterruptRequest edc:cname="I2C1_MASTER" edc:desc="I2C1 Master Event" edc:irq="44"/>
+    <edc:InterruptRequest edc:cname="CHANGE_NOTICE_A" edc:desc="Part A Change Notice" edc:irq="45"/>
+    <edc:InterruptRequest edc:cname="CHANGE_NOTICE_B" edc:desc="Part B Change Notice" edc:irq="46"/>
+    <edc:InterruptRequest edc:cname="CHANGE_NOTICE_C" edc:desc="Part C Change Notice" edc:irq="47"/>
+    <edc:InterruptRequest edc:cname="PMP" edc:desc="Parallel Master Port" edc:irq="48"/>
+    <edc:InterruptRequest edc:cname="PMP_ERROR" edc:desc="PMP Error" edc:irq="49"/>
+    <edc:InterruptRequest edc:cname="SPI2_ERR" edc:desc="SPI2 Error" edc:irq="50"/>
+    <edc:InterruptRequest edc:cname="SPI2_RX" edc:desc="SPI2 Receiver" edc:irq="51"/>
+    <edc:InterruptRequest edc:cname="SPI2_TX" edc:desc="SPI2 Trasmitter" edc:irq="52"/>
+    <edc:InterruptRequest edc:cname="UART2_ERR" edc:desc="UART2 Error" edc:irq="53"/>
+    <edc:InterruptRequest edc:cname="UART2_RX" edc:desc="UART2 Receiver" edc:irq="54"/>
+    <edc:InterruptRequest edc:cname="UART2_TX" edc:desc="UART2 Trasmitter" edc:irq="55"/>
+    <edc:InterruptRequest edc:cname="I2C2_BUS" edc:desc="I2C2 Bus Collision Event" edc:irq="56"/>
+    <edc:InterruptRequest edc:cname="I2C2_SLAVE" edc:desc="I2C2 Slave Event" edc:irq="57"/>
+    <edc:InterruptRequest edc:cname="I2C2_MASTER" edc:desc="I2C2 Master Event" edc:irq="58"/>
+    <edc:InterruptRequest edc:cname="CTMU" edc:desc="CTMU Event" edc:irq="59"/>
+    <edc:InterruptRequest edc:cname="DMA0" edc:desc="" edc:irq="60"/>
+    <edc:InterruptRequest edc:cname="DMA1" edc:desc="" edc:irq="61"/>
+    <edc:InterruptRequest edc:cname="DMA2" edc:desc="" edc:irq="62"/>
+    <edc:InterruptRequest edc:cname="DMA3" edc:desc="" edc:irq="63"/>
+  </edc:InterruptList>
+  <edc:WatchdogTimer edc:min="1"/>
+  <edc:Breakpoints edc:hwbpcount="6"/>
+  <edc:ProjectionTable edc:ksegmask="0xFF000000">
+    <edc:Projection edc:ksegval="0xC0000000" edc:ptovop="NONE" edc:vtopop="NONE"/>
+    <edc:Projection edc:ksegval="0xBF000000" edc:ptovop="XOR" edc:ptovval="0xA0000000" edc:vtopop="XOR" edc:vtopval="0xA0000000"/>
+    <edc:Projection edc:ksegval="0xBD000000" edc:ptovop="XOR" edc:ptovval="0xA0000000" edc:vtopop="XOR" edc:vtopval="0xA0000000"/>
+    <edc:Projection edc:ksegval="0xA0000000" edc:ptovop="XOR" edc:ptovval="0xA0000000" edc:vtopop="XOR" edc:vtopval="0xA0000000"/>
+    <edc:Projection edc:ksegval="0x9F000000" edc:ptovop="XOR" edc:ptovval="0x80000000" edc:vtopop="XOR" edc:vtopval="0x80000000"/>
+    <edc:Projection edc:ksegval="0x9D000000" edc:ptovop="XOR" edc:ptovval="0x80000000" edc:vtopop="XOR" edc:vtopval="0x80000000"/>
+    <edc:Projection edc:ksegval="0x80000000" edc:ptovop="XOR" edc:ptovval="0x80000000" edc:vtopop="XOR" edc:vtopval="0x80000000"/>
+    <edc:Projection edc:ksegval="0x7F000000" edc:ptovop="XOR" edc:ptovval="0x7F000000" edc:vtopop="XOR" edc:vtopval="0x7F000000"/>
+    <edc:Projection edc:ksegval="0x7D000000" edc:ptovop="XOR" edc:ptovval="0x60000000" edc:vtopop="XOR" edc:vtopval="0x60000000"/>
+    <edc:Projection edc:ksegval="0x00000000" edc:ptovop="SUB" edc:ptovval="0x40000000" edc:vtopop="ADD" edc:vtopval="0x40000000"/>
+  </edc:ProjectionTable>
+  <edc:PhysicalSpace>
+    <edc:NMMRPlace edc:regionid="corenmmrs">
+      <edc:Module_ref edc:modsrc="32xxxx-NMMR.Module"/>
+    </edc:NMMRPlace>
+    <edc:EmulatorSector edc:beginaddr="0xff300000" edc:endaddr="0xff400000" edc:regionid="emulation"/>
+    <edc:DeviceIDSector edc:beginaddr="0xffffffff" edc:endaddr="0xffffffff" edc:mask="0x0fffffff" edc:regionid="devid" edc:value="0x04D00053"/>
+    <edc:CodeSector edc:beginaddr="0x1d000000" edc:endaddr="0x1d020000" edc:kseg0="0x80000000" edc:kseg1="0xa0000000" edc:kuseg="0x60000000" edc:regionid="code"/>
+    <edc:BootConfigSector edc:beginaddr="0x1fc00000" edc:endaddr="0x1fc00bf0" edc:kseg0="0x80000000" edc:kseg1="0xa0000000" edc:regionid="bootconfig"/>
+    <edc:ConfigFuseSector edc:beginaddr="0x1fc00bf0" edc:endaddr="0x1fc00c00" edc:kseg0="0x80000000" edc:kseg1="0xa0000000" edc:regionid="config">
+      <edc:DCRDef edc:access="nnnn------------nnnnnnnnnnnnnnnn" edc:cname="DEVCFG3" edc:default="0xffffffff" edc:desc="" edc:impl="0xf000ffff" edc:name="DEVCFG3" edc:nzwidth="32" edc:unimplval="0" edc:unused="0x0" edc:useinchecksum="0xffff0000">
+        <edc:AliasList/>
+        <edc:DCRModeList>
+          <edc:DCRMode edc:id="DS.0">
+            <edc:DCRFieldDef edc:cname="USERID" edc:desc="" edc:mask="0xffff" edc:name="USERID" edc:nzwidth="16"/>
+            <edc:AdjustPoint edc:offset="3"/>
+            <edc:AdjustPoint edc:offset="3"/>
+            <edc:AdjustPoint edc:offset="1"/>
+            <edc:AdjustPoint edc:offset="1"/>
+            <edc:AdjustPoint edc:offset="1"/>
+            <edc:AdjustPoint edc:offset="1"/>
+            <edc:AdjustPoint edc:offset="1"/>
+            <edc:AdjustPoint edc:offset="1"/>
+            <edc:DCRFieldDef edc:cname="PMDL1WAY" edc:desc="Peripheral Module Disable Configuration" edc:mask="0x1" edc:name="PMDL1WAY" edc:nzwidth="1">
+              <edc:DCRFieldSemantic edc:cname="ON" edc:desc="Allow only one reconfiguration" edc:when="(field &amp; 0x1) == 0x1"/>
+              <edc:DCRFieldSemantic edc:cname="OFF" edc:desc="Allow multiple reconfigurations" edc:when="(field &amp; 0x1) == 0x0"/>
+            </edc:DCRFieldDef>
+            <edc:DCRFieldDef edc:cname="IOL1WAY" edc:desc="Peripheral Pin Select Configuration" edc:mask="0x1" edc:name="IOL1WAY" edc:nzwidth="1">
+              <edc:DCRFieldSemantic edc:cname="ON" edc:desc="Allow only one reconfiguration" edc:when="(field &amp; 0x1) == 0x1"/>
+              <edc:DCRFieldSemantic edc:cname="OFF" edc:desc="Allow multiple reconfigurations" edc:when="(field &amp; 0x1) == 0x0"/>
+            </edc:DCRFieldDef>
+            <edc:DCRFieldDef edc:cname="FUSBIDIO" edc:desc="USB USID Selection" edc:mask="0x1" edc:name="FUSBIDIO" edc:nzwidth="1">
+              <edc:DCRFieldSemantic edc:cname="OFF" edc:desc="Controlled by Port Function" edc:when="(field &amp; 0x1) == 0x0"/>
+              <edc:DCRFieldSemantic edc:cname="ON" edc:desc="Controlled by the USB Module" edc:when="(field &amp; 0x1) == 0x1"/>
+            </edc:DCRFieldDef>
+            <edc:DCRFieldDef edc:cname="FVBUSONIO" edc:desc="USB VBUS ON Selection" edc:mask="0x1" edc:name="FVBUSONIO" edc:nzwidth="1">
+              <edc:DCRFieldSemantic edc:cname="OFF" edc:desc="Controlled by Port Function" edc:when="(field &amp; 0x1) == 0x0"/>
+              <edc:DCRFieldSemantic edc:cname="ON" edc:desc="Controlled by USB Module" edc:when="(field &amp; 0x1) == 0x1"/>
+            </edc:DCRFieldDef>
+          </edc:DCRMode>
+        </edc:DCRModeList>
+      </edc:DCRDef>
+      <edc:DCRDef edc:access="-------------nnnn----nnn-nnn-nnn" edc:cname="DEVCFG2" edc:default="0xffffffff" edc:desc="" edc:impl="0x78777" edc:name="DEVCFG2" edc:nzwidth="0x20" edc:unused="0x0" edc:useinchecksum="0xffffffff">
+        <edc:DCRModeList>
+          <edc:DCRMode edc:id="DS.0">
+            <edc:DCRFieldDef edc:cname="FPLLIDIV" edc:desc="PLL Input Divider" edc:mask="0x7" edc:name="FPLLIDIV" edc:nzwidth="0x3">
+              <edc:DCRFieldSemantic edc:cname="DIV_1" edc:desc="1x Divider" edc:when="(field &amp; 0x7) == 0x0"/>
+              <edc:DCRFieldSemantic edc:cname="DIV_2" edc:desc="2x Divider" edc:when="(field &amp; 0x7) == 0x1"/>
+              <edc:DCRFieldSemantic edc:cname="DIV_3" edc:desc="3x Divider" edc:when="(field &amp; 0x7) == 0x2"/>
+              <edc:DCRFieldSemantic edc:cname="DIV_4" edc:desc="4x Divider" edc:when="(field &amp; 0x7) == 0x3"/>
+              <edc:DCRFieldSemantic edc:cname="DIV_5" edc:desc="5x Divider" edc:when="(field &amp; 0x7) == 0x4"/>
+              <edc:DCRFieldSemantic edc:cname="DIV_6" edc:desc="6x Divider" edc:when="(field &amp; 0x7) == 0x5"/>
+              <edc:DCRFieldSemantic edc:cname="DIV_10" edc:desc="10x Divider" edc:when="(field &amp; 0x7) == 0x6"/>
+              <edc:DCRFieldSemantic edc:cname="DIV_12" edc:desc="12x Divider" edc:when="(field &amp; 0x7) == 0x7"/>
+            </edc:DCRFieldDef>
+            <edc:AdjustPoint edc:offset="1"/>
+            <edc:DCRFieldDef edc:cname="FPLLMUL" edc:desc="PLL Multiplier" edc:mask="0x7" edc:name="FPLLMUL" edc:nzwidth="0x3">
+              <edc:DCRFieldSemantic edc:cname="MUL_15" edc:desc="15x Multiplier" edc:when="(field &amp; 0x7) == 0x0"/>
+              <edc:DCRFieldSemantic edc:cname="MUL_16" edc:desc="16x Multiplier" edc:when="(field &amp; 0x7) == 0x1"/>
+              <edc:DCRFieldSemantic edc:cname="MUL_17" edc:desc="17x Multiplier" edc:when="(field &amp; 0x7) == 0x2"/>
+              <edc:DCRFieldSemantic edc:cname="MUL_18" edc:desc="18x Multiplier" edc:when="(field &amp; 0x7) == 0x3"/>
+              <edc:DCRFieldSemantic edc:cname="MUL_19" edc:desc="19x Multiplier" edc:when="(field &amp; 0x7) == 0x4"/>
+              <edc:DCRFieldSemantic edc:cname="MUL_20" edc:desc="20x Multiplier" edc:when="(field &amp; 0x7) == 0x5"/>
+              <edc:DCRFieldSemantic edc:cname="MUL_21" edc:desc="21x Multiplier" edc:when="(field &amp; 0x7) == 0x6"/>
+              <edc:DCRFieldSemantic edc:cname="MUL_24" edc:desc="24x Multiplier" edc:when="(field &amp; 0x7) == 0x7"/>
+            </edc:DCRFieldDef>
+            <edc:AdjustPoint edc:offset="1"/>
+            <edc:DCRFieldDef edc:cname="UPLLIDIV" edc:desc="USB PLL Input Divider" edc:mask="0x7" edc:name="UPLLIDIV" edc:nzwidth="0x3">
+              <edc:DCRFieldSemantic edc:cname="DIV_1" edc:desc="1x Divider" edc:when="(field &amp; 0x7) == 0x0"/>
+              <edc:DCRFieldSemantic edc:cname="DIV_2" edc:desc="2x Divider" edc:when="(field &amp; 0x7) == 0x1"/>
+              <edc:DCRFieldSemantic edc:cname="DIV_3" edc:desc="3x Divider" edc:when="(field &amp; 0x7) == 0x2"/>
+              <edc:DCRFieldSemantic edc:cname="DIV_4" edc:desc="4x Divider" edc:when="(field &amp; 0x7) == 0x3"/>
+              <edc:DCRFieldSemantic edc:cname="DIV_5" edc:desc="5x Divider" edc:when="(field &amp; 0x7) == 0x4"/>
+              <edc:DCRFieldSemantic edc:cname="DIV_6" edc:desc="6x Divider" edc:when="(field &amp; 0x7) == 0x5"/>
+              <edc:DCRFieldSemantic edc:cname="DIV_10" edc:desc="10x Divider" edc:when="(field &amp; 0x7) == 0x6"/>
+              <edc:DCRFieldSemantic edc:cname="DIV_12" edc:desc="12x Divider" edc:when="(field &amp; 0x7) == 0x7"/>
+            </edc:DCRFieldDef>
+            <edc:AdjustPoint edc:offset="4"/>
+            <edc:DCRFieldDef edc:cname="UPLLEN" edc:desc="USB PLL Enable" edc:mask="0x1" edc:name="UPLLEN" edc:nzwidth="0x1">
+              <edc:DCRFieldSemantic edc:cname="ON" edc:desc="Enabled" edc:when="(field &amp; 0x1) == 0x0"/>
+              <edc:DCRFieldSemantic edc:cname="OFF" edc:desc="Disabled and Bypassed" edc:when="(field &amp; 0x1) == 0x1"/>
+            </edc:DCRFieldDef>
+            <edc:DCRFieldDef edc:cname="FPLLODIV" edc:desc="System PLL Output Clock Divider" edc:mask="0x7" edc:name="FPLLODIV" edc:nzwidth="0x3">
+              <edc:DCRFieldSemantic edc:cname="DIV_1" edc:desc="PLL Divide by 1" edc:when="(field &amp; 0x7) == 0x0"/>
+              <edc:DCRFieldSemantic edc:cname="DIV_2" edc:desc="PLL Divide by 2" edc:when="(field &amp; 0x7) == 0x1"/>
+              <edc:DCRFieldSemantic edc:cname="DIV_4" edc:desc="PLL Divide by 4" edc:when="(field &amp; 0x7) == 0x2"/>
+              <edc:DCRFieldSemantic edc:cname="DIV_8" edc:desc="PLL Divide by 8" edc:when="(field &amp; 0x7) == 0x3"/>
+              <edc:DCRFieldSemantic edc:cname="DIV_16" edc:desc="PLL Divide by 16" edc:when="(field &amp; 0x7) == 0x4"/>
+              <edc:DCRFieldSemantic edc:cname="DIV_32" edc:desc="PLL Divide by 32" edc:when="(field &amp; 0x7) == 0x5"/>
+              <edc:DCRFieldSemantic edc:cname="DIV_64" edc:desc="PLL Divide by 64" edc:when="(field &amp; 0x7) == 0x6"/>
+              <edc:DCRFieldSemantic edc:cname="DIV_256" edc:desc="PLL Divide by 256" edc:when="(field &amp; 0x7) == 0x7"/>
+            </edc:DCRFieldDef>
+          </edc:DCRMode>
+        </edc:DCRModeList>
+      </edc:DCRDef>
+      <edc:DCRDef edc:access="------nnnn-nnnnnnnnn-nnnn-n--nnn" edc:cname="DEVCFG1" edc:default="0xffffffff" edc:desc="" edc:impl="0x3dff7a7" edc:name="DEVCFG1" edc:nzwidth="0x20" edc:unused="0x0" edc:useinchecksum="0xffffffff">
+        <edc:DCRModeList>
+          <edc:DCRMode edc:id="DS.0">
+            <edc:DCRFieldDef edc:cname="FNOSC" edc:desc="Oscillator Selection Bits" edc:mask="0x7" edc:name="FNOSC" edc:nzwidth="0x3">
+              <edc:DCRFieldSemantic edc:cname="FRC" edc:desc="Fast RC Osc (FRC)" edc:when="(field &amp; 0x7) == 0x0"/>
+              <edc:DCRFieldSemantic edc:cname="FRCPLL" edc:desc="Fast RC Osc with PLL" edc:when="(field &amp; 0x7) == 0x1"/>
+              <edc:DCRFieldSemantic edc:cname="PRI" edc:desc="Primary Osc (XT,HS,EC)" edc:when="(field &amp; 0x7) == 0x2"/>
+              <edc:DCRFieldSemantic edc:cname="PRIPLL" edc:desc="Primary Osc w/PLL (XT+,HS+,EC+PLL)" edc:when="(field &amp; 0x7) == 0x3"/>
+              <edc:DCRFieldSemantic edc:cname="SOSC" edc:desc="Low Power Secondary Osc (SOSC)" edc:when="(field &amp; 0x7) == 0x4"/>
+              <edc:DCRFieldSemantic edc:cname="LPRC" edc:desc="Low Power RC Osc (LPRC)" edc:when="(field &amp; 0x7) == 0x5"/>
+              <edc:DCRFieldSemantic edc:cname="FRCDIV16" edc:desc="Fast RC Osc w/Div-by-16 (FRC/16)" edc:when="(field &amp; 0x7) == 0x6"/>
+              <edc:DCRFieldSemantic edc:cname="FRCDIV" edc:desc="Fast RC Osc w/Div-by-N (FRCDIV)" edc:when="(field &amp; 0x7) == 0x7"/>
+            </edc:DCRFieldDef>
+            <edc:AdjustPoint edc:offset="2"/>
+            <edc:DCRFieldDef edc:cname="FSOSCEN" edc:desc="Secondary Oscillator Enable" edc:mask="0x1" edc:name="FSOSCEN" edc:nzwidth="0x1">
+              <edc:DCRFieldSemantic edc:cname="OFF" edc:desc="Disabled" edc:when="(field &amp; 0x1) == 0x0"/>
+              <edc:DCRFieldSemantic edc:cname="ON" edc:desc="Enabled" edc:when="(field &amp; 0x1) == 0x1"/>
+            </edc:DCRFieldDef>
+            <edc:AdjustPoint edc:offset="1"/>
+            <edc:DCRFieldDef edc:cname="IESO" edc:desc="Internal/External Switch Over" edc:mask="0x1" edc:name="IESO" edc:nzwidth="0x1">
+              <edc:DCRFieldSemantic edc:cname="OFF" edc:desc="Disabled" edc:when="(field &amp; 0x1) == 0x0"/>
+              <edc:DCRFieldSemantic edc:cname="ON" edc:desc="Enabled" edc:when="(field &amp; 0x1) == 0x1"/>
+            </edc:DCRFieldDef>
+            <edc:DCRFieldDef edc:cname="POSCMOD" edc:desc="Primary Oscillator Configuration" edc:mask="0x3" edc:name="POSCMOD" edc:nzwidth="0x2">
+              <edc:DCRFieldSemantic edc:cname="EC" edc:desc="External clock mode" edc:when="(field &amp; 0x3) == 0x0"/>
+              <edc:DCRFieldSemantic edc:cname="XT" edc:desc="XT osc mode" edc:when="(field &amp; 0x3) == 0x1"/>
+              <edc:DCRFieldSemantic edc:cname="HS" edc:desc="HS osc mode" edc:when="(field &amp; 0x3) == 0x2"/>
+              <edc:DCRFieldSemantic edc:cname="OFF" edc:desc="Primary osc disabled" edc:when="(field &amp; 0x3) == 0x3"/>
+            </edc:DCRFieldDef>
+            <edc:DCRFieldDef edc:cname="OSCIOFNC" edc:desc="CLKO Output Signal Active on the OSCO Pin" edc:mask="0x1" edc:name="OSCIOFNC" edc:nzwidth="0x1">
+              <edc:DCRFieldSemantic edc:cname="OFF" edc:desc="Disabled" edc:when="(field &amp; 0x1) == 0x1"/>
+              <edc:DCRFieldSemantic edc:cname="ON" edc:desc="Enabled" edc:when="(field &amp; 0x1) == 0x0"/>
+            </edc:DCRFieldDef>
+            <edc:AdjustPoint edc:offset="1"/>
+            <edc:DCRFieldDef edc:cname="FPBDIV" edc:desc="Peripheral Clock Divisor" edc:mask="0x3" edc:name="FPBDIV" edc:nzwidth="0x2">
+              <edc:DCRFieldSemantic edc:cname="DIV_1" edc:desc="Pb_Clk is Sys_Clk/1" edc:when="(field &amp; 0x3) == 0x0"/>
+              <edc:DCRFieldSemantic edc:cname="DIV_2" edc:desc="Pb_Clk is Sys_Clk/2" edc:when="(field &amp; 0x3) == 0x1"/>
+              <edc:DCRFieldSemantic edc:cname="DIV_4" edc:desc="Pb_Clk is Sys_Clk/4" edc:when="(field &amp; 0x3) == 0x2"/>
+              <edc:DCRFieldSemantic edc:cname="DIV_8" edc:desc="Pb_Clk is Sys_Clk/8" edc:when="(field &amp; 0x3) == 0x3"/>
+            </edc:DCRFieldDef>
+            <edc:DCRFieldDef edc:cname="FCKSM" edc:desc="Clock Switching and Monitor Selection" edc:mask="0x3" edc:name="FCKSM" edc:nzwidth="0x2">
+              <edc:DCRFieldSemantic edc:cname="CSECME" edc:desc="Clock Switch Enable, FSCM Enabled" edc:when="(field &amp; 0x3) == 0x0"/>
+              <edc:DCRFieldSemantic edc:cname="CSECMD" edc:desc="Clock Switch Enable, FSCM Disabled" edc:when="(field &amp; 0x3) == 0x1"/>
+              <edc:DCRFieldSemantic edc:cname="CSDCMD" edc:desc="Clock Switch Disable, FSCM Disabled" edc:when="(field &amp; 0x3) == 0x3"/>
+            </edc:DCRFieldDef>
+            <edc:DCRFieldDef edc:cname="WDTPS" edc:desc="Watchdog Timer Postscaler" edc:mask="0x1f" edc:name="WDTPS" edc:nzwidth="0x5">
+              <edc:DCRFieldSemantic edc:cname="PS1" edc:desc="1:1" edc:when="(field &amp; 0x1f) == 0x0"/>
+              <edc:DCRFieldSemantic edc:cname="PS2" edc:desc="1:2" edc:when="(field &amp; 0x1f) == 0x1"/>
+              <edc:DCRFieldSemantic edc:cname="PS4" edc:desc="1:4" edc:when="(field &amp; 0x1f) == 0x2"/>
+              <edc:DCRFieldSemantic edc:cname="PS8" edc:desc="1:8" edc:when="(field &amp; 0x1f) == 0x3"/>
+              <edc:DCRFieldSemantic edc:cname="PS16" edc:desc="1:16" edc:when="(field &amp; 0x1f) == 0x4"/>
+              <edc:DCRFieldSemantic edc:cname="PS32" edc:desc="1:32" edc:when="(field &amp; 0x1f) == 0x5"/>
+              <edc:DCRFieldSemantic edc:cname="PS64" edc:desc="1:64" edc:when="(field &amp; 0x1f) == 0x6"/>
+              <edc:DCRFieldSemantic edc:cname="PS128" edc:desc="1:128" edc:when="(field &amp; 0x1f) == 0x7"/>
+              <edc:DCRFieldSemantic edc:cname="PS256" edc:desc="1:256" edc:when="(field &amp; 0x1f) == 0x8"/>
+              <edc:DCRFieldSemantic edc:cname="PS512" edc:desc="1:512" edc:when="(field &amp; 0x1f) == 0x9"/>
+              <edc:DCRFieldSemantic edc:cname="PS1024" edc:desc="1:1024" edc:when="(field &amp; 0x1f) == 0xa"/>
+              <edc:DCRFieldSemantic edc:cname="PS2048" edc:desc="1:2048" edc:when="(field &amp; 0x1f) == 0xb"/>
+              <edc:DCRFieldSemantic edc:cname="PS4096" edc:desc="1:4096" edc:when="(field &amp; 0x1f) == 0xc"/>
+              <edc:DCRFieldSemantic edc:cname="PS8192" edc:desc="1:8192" edc:when="(field &amp; 0x1f) == 0xd"/>
+              <edc:DCRFieldSemantic edc:cname="PS16384" edc:desc="1:16384" edc:when="(field &amp; 0x1f) == 0xe"/>
+              <edc:DCRFieldSemantic edc:cname="PS32768" edc:desc="1:32768" edc:when="(field &amp; 0x1f) == 0xf"/>
+              <edc:DCRFieldSemantic edc:cname="PS65536" edc:desc="1:65536" edc:when="(field &amp; 0x17) == 0x10"/>
+              <edc:DCRFieldSemantic edc:cname="PS131072" edc:desc="1:131072" edc:when="(field &amp; 0x17) == 0x11"/>
+              <edc:DCRFieldSemantic edc:cname="PS262144" edc:desc="1:262144" edc:when="(field &amp; 0x17) == 0x12"/>
+              <edc:DCRFieldSemantic edc:cname="PS524288" edc:desc="1:524288" edc:when="(field &amp; 0x17) == 0x13"/>
+              <edc:DCRFieldSemantic edc:cname="PS1048576" edc:desc="1:1048576" edc:when="(field &amp; 0x14) == 0x14"/>
+            </edc:DCRFieldDef>
+            <edc:AdjustPoint edc:offset="1"/>
+            <edc:DCRFieldDef edc:cname="WINDIS" edc:desc="Watchdog Timer Window Enable" edc:mask="0x1" edc:name="WINDIS" edc:nzwidth="1">
+              <edc:DCRFieldSemantic edc:cname="ON" edc:desc="Watchdog Timer is in Window Mode" edc:when="(field &amp; 0x1) == 0x0"/>
+              <edc:DCRFieldSemantic edc:cname="OFF" edc:desc="Watchdog Timer is in Non-Window Mode" edc:when="(field &amp; 0x1) == 0x1"/>
+            </edc:DCRFieldDef>
+            <edc:DCRFieldDef edc:cname="FWDTEN" edc:desc="Watchdog Timer Enable" edc:mask="0x1" edc:name="FWDTEN" edc:nzwidth="0x1">
+              <edc:DCRFieldSemantic edc:cname="OFF" edc:desc="WDT Disabled (SWDTEN Bit Controls)" edc:when="(field &amp; 0x1) == 0x0"/>
+              <edc:DCRFieldSemantic edc:cname="ON" edc:desc="WDT Enabled" edc:when="(field &amp; 0x1) == 0x1"/>
+            </edc:DCRFieldDef>
+            <edc:DCRFieldDef edc:cname="FWDTWINSZ" edc:desc="Watchdog Timer Window Size" edc:mask="0x3" edc:name="FWDTWINSZ" edc:nzwidth="2">
+              <edc:DCRFieldSemantic edc:cname="WINSZ_75" edc:desc="Window Size is 75%" edc:when="(field &amp; 0x3) == 0x0"/>
+              <edc:DCRFieldSemantic edc:cname="WINSZ_50" edc:desc="Window Size is 50%" edc:when="(field &amp; 0x3) == 0x1"/>
+              <edc:DCRFieldSemantic edc:cname="WINSZ_37" edc:desc="Window Size is 37.5%" edc:when="(field &amp; 0x3) == 0x2"/>
+              <edc:DCRFieldSemantic edc:cname="WISZ_25" edc:desc="Window Size is 25%" edc:when="(field &amp; 0x3) == 0x3"/>
+            </edc:DCRFieldDef>
+          </edc:DCRMode>
+        </edc:DCRModeList>
+      </edc:DCRDef>
+      <edc:DCRDef edc:access="---n---n--------nnnnnn-----nnnnn" edc:cname="DEVCFG0" edc:default="0x7fffffff" edc:desc="" edc:impl="0x1100fc1f" edc:name="DEVCFG0" edc:nzwidth="0x20" edc:unused="0x0" edc:useinchecksum="0x7fffffff">
+        <edc:DCRModeList>
+          <edc:DCRMode edc:id="DS.0">
+            <edc:DCRFieldDef edc:cname="DEBUG" edc:desc="Background Debugger Enable" edc:isidehidden="true" edc:mask="0x3" edc:name="DEBUG" edc:nzwidth="2">
+              <edc:DCRFieldSemantic edc:cname="ON" edc:desc="Debugger is Enabled" edc:when="(field &amp; 0x2) == 0x0"/>
+              <edc:DCRFieldSemantic edc:cname="OFF" edc:desc="Debugger is Disabled" edc:when="(field &amp; 0x2) == 0x2"/>
+            </edc:DCRFieldDef>
+            <edc:DCRFieldDef edc:cname="JTAGEN" edc:desc="JTAG Enable" edc:mask="0x1" edc:name="JTAGEN" edc:nzwidth="1">
+              <edc:DCRFieldSemantic edc:cname="ON" edc:desc="JTAG Port Enabled" edc:when="(field &amp; 0x1) == 0x1"/>
+              <edc:DCRFieldSemantic edc:cname="OFF" edc:desc="JTAG Disabled" edc:when="(field &amp; 0x1) == 0x0"/>
+            </edc:DCRFieldDef>
+            <edc:DCRFieldDef edc:cname="ICESEL" edc:desc="ICE/ICD Comm Channel Select" edc:mask="0x3" edc:name="ICESEL" edc:nzwidth="2">
+              <edc:DCRFieldSemantic edc:cname="ICS_PGx1" edc:desc="Communicate on PGEC1/PGED1" edc:when="(field &amp; 0x3) == 0x3"/>
+              <edc:DCRFieldSemantic edc:cname="ICS_PGx2" edc:desc="Communicate on PGEC2/PGED2" edc:when="(field &amp; 0x3) == 0x2"/>
+              <edc:DCRFieldSemantic edc:cname="ICS_PGx3" edc:desc="Communicate on PGEC3/PGED3" edc:when="(field &amp; 0x3) == 0x1"/>
+              <edc:DCRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 0x0"/>
+            </edc:DCRFieldDef>
+            <edc:AdjustPoint edc:offset="2"/>
+            <edc:AdjustPoint edc:offset="1"/>
+            <edc:AdjustPoint edc:offset="2"/>
+            <edc:DCRFieldDef edc:cname="PWP" edc:desc="Program Flash Write Protect" edc:mask="0x3f" edc:name="PWP" edc:nzwidth="6">
+              <edc:DCRFieldSemantic edc:cname="OFF" edc:desc="Disable" edc:when="(field &amp; 0x3f) == 0x3f"/>
+              <edc:DCRFieldSemantic edc:cname="PWP1K" edc:desc="First 1K" edc:when="(field &amp; 0x3f) == 0x3e"/>
+              <edc:DCRFieldSemantic edc:cname="PWP2K" edc:desc="First 2K" edc:when="(field &amp; 0x3f) == 0x3d"/>
+              <edc:DCRFieldSemantic edc:cname="PWP3K" edc:desc="First 3K" edc:when="(field &amp; 0x3f) == 0x3c"/>
+              <edc:DCRFieldSemantic edc:cname="PWP4K" edc:desc="First 4K" edc:when="(field &amp; 0x3f) == 0x3b"/>
+              <edc:DCRFieldSemantic edc:cname="PWP5K" edc:desc="First 5K" edc:when="(field &amp; 0x3f) == 0x3a"/>
+              <edc:DCRFieldSemantic edc:cname="PWP6K" edc:desc="First 6K" edc:when="(field &amp; 0x3f) == 0x39"/>
+              <edc:DCRFieldSemantic edc:cname="PWP7K" edc:desc="First 7K" edc:when="(field &amp; 0x3f) == 0x38"/>
+              <edc:DCRFieldSemantic edc:cname="PWP8K" edc:desc="First 8K" edc:when="(field &amp; 0x3f) == 0x37"/>
+              <edc:DCRFieldSemantic edc:cname="PWP9K" edc:desc="First 9K" edc:when="(field &amp; 0x3f) == 0x36"/>
+              <edc:DCRFieldSemantic edc:cname="PWP10K" edc:desc="First 10K" edc:when="(field &amp; 0x3f) == 0x35"/>
+              <edc:DCRFieldSemantic edc:cname="PWP11K" edc:desc="First 11K" edc:when="(field &amp; 0x3f) == 0x34"/>
+              <edc:DCRFieldSemantic edc:cname="PWP12K" edc:desc="First 12K" edc:when="(field &amp; 0x3f) == 0x33"/>
+              <edc:DCRFieldSemantic edc:cname="PWP13K" edc:desc="First 13K" edc:when="(field &amp; 0x3f) == 0x32"/>
+              <edc:DCRFieldSemantic edc:cname="PWP14K" edc:desc="First 14K" edc:when="(field &amp; 0x3f) == 0x31"/>
+              <edc:DCRFieldSemantic edc:cname="PWP15K" edc:desc="First 15K" edc:when="(field &amp; 0x3f) == 0x30"/>
+              <edc:DCRFieldSemantic edc:cname="PWP16K" edc:desc="First 16K" edc:when="(field &amp; 0x3f) == 0x2f"/>
+              <edc:DCRFieldSemantic edc:cname="PWP17K" edc:desc="First 17K" edc:when="(field &amp; 0x3f) == 0x2e"/>
+              <edc:DCRFieldSemantic edc:cname="PWP18K" edc:desc="First 18K" edc:when="(field &amp; 0x3f) == 0x2d"/>
+              <edc:DCRFieldSemantic edc:cname="PWP19K" edc:desc="First 19K" edc:when="(field &amp; 0x3f) == 0x2c"/>
+              <edc:DCRFieldSemantic edc:cname="PWP20K" edc:desc="First 20K" edc:when="(field &amp; 0x3f) == 0x2b"/>
+              <edc:DCRFieldSemantic edc:cname="PWP21K" edc:desc="First 21K" edc:when="(field &amp; 0x3f) == 0x2a"/>
+              <edc:DCRFieldSemantic edc:cname="PWP22K" edc:desc="First 22K" edc:when="(field &amp; 0x3f) == 0x29"/>
+              <edc:DCRFieldSemantic edc:cname="PWP23K" edc:desc="First 23K" edc:when="(field &amp; 0x3f) == 0x28"/>
+              <edc:DCRFieldSemantic edc:cname="PWP24K" edc:desc="First 24K" edc:when="(field &amp; 0x3f) == 0x27"/>
+              <edc:DCRFieldSemantic edc:cname="PWP25K" edc:desc="First 25K" edc:when="(field &amp; 0x3f) == 0x26"/>
+              <edc:DCRFieldSemantic edc:cname="PWP26K" edc:desc="First 26K" edc:when="(field &amp; 0x3f) == 0x25"/>
+              <edc:DCRFieldSemantic edc:cname="PWP27K" edc:desc="First 27K" edc:when="(field &amp; 0x3f) == 0x24"/>
+              <edc:DCRFieldSemantic edc:cname="PWP28K" edc:desc="First 28K" edc:when="(field &amp; 0x3f) == 0x23"/>
+              <edc:DCRFieldSemantic edc:cname="PWP29K" edc:desc="First 29K" edc:when="(field &amp; 0x3f) == 0x22"/>
+              <edc:DCRFieldSemantic edc:cname="PWP30K" edc:desc="First 30K" edc:when="(field &amp; 0x3f) == 0x21"/>
+              <edc:DCRFieldSemantic edc:cname="PWP31K" edc:desc="First 31K" edc:when="(field &amp; 0x3f) == 0x20"/>
+              <edc:DCRFieldSemantic edc:cname="PWP32K" edc:desc="First 32K" edc:when="(field &amp; 0x3f) == 0x1f"/>
+            </edc:DCRFieldDef>
+            <edc:AdjustPoint edc:offset="4"/>
+            <edc:AdjustPoint edc:offset="4"/>
+            <edc:DCRFieldDef edc:cname="BWP" edc:desc="Boot Flash Write Protect bit" edc:mask="0x1" edc:name="BWP" edc:nzwidth="0x1">
+              <edc:DCRFieldSemantic edc:cname="ON" edc:desc="Protection Enabled" edc:when="(field &amp; 0x1) == 0x0"/>
+              <edc:DCRFieldSemantic edc:cname="OFF" edc:desc="Protection Disabled" edc:when="(field &amp; 0x1) == 0x1"/>
+            </edc:DCRFieldDef>
+            <edc:AdjustPoint edc:offset="3"/>
+            <edc:DCRFieldDef edc:cname="CP" edc:desc="Code Protect" edc:mask="0x1" edc:name="CP" edc:nzwidth="0x1">
+              <edc:DCRFieldSemantic edc:cname="ON" edc:desc="Protection Enabled" edc:when="(field &amp; 0x1) == 0x0">
+                <edc:Checksum edc:beginaddr="0x1d000000" edc:checksumalgo="0x80" edc:endaddr="0x1d07ffff"/>
+              </edc:DCRFieldSemantic>
+              <edc:DCRFieldSemantic edc:cname="OFF" edc:desc="Protection Disabled" edc:when="(field &amp; 0x1) == 0x1">
+                <edc:Checksum edc:beginaddr="0x0" edc:checksumalgo="0x20" edc:endaddr="0x0"/>
+              </edc:DCRFieldSemantic>
+            </edc:DCRFieldDef>
+            <edc:AdjustPoint edc:offset="2"/>
+            <edc:AdjustPoint edc:offset="1"/>
+          </edc:DCRMode>
+        </edc:DCRModeList>
+      </edc:DCRDef>
+    </edc:ConfigFuseSector>
+    <edc:GPRDataSector edc:beginaddr="0x0" edc:endaddr="0x8000" edc:kseg0="0x80000000" edc:kseg1="0xa0000000" edc:ksegdef="2" edc:kuseg="0x7f000000" edc:regionid="kseg1_data_mem"/>
+    <edc:SFRDataSector edc:beginaddr="0x1f800000" edc:endaddr="0x1f80a400" edc:kseg1="0xa0000000" edc:ksegdef="2" edc:regionid="periph0">
+      <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01385_wdt_pwrt_pb_v2.Module"/>
+      <edc:AdjustPoint edc:offset="496"/>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x60" edc:modsrc="DOS-00748_tmr_rtcc_pb_v1.Module"/>
+      <edc:AdjustPoint edc:offset="928"/>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x30" edc:modsrc="DOS-00687_tmr_classa_pb_v1.Module"/>
+      <edc:AdjustPoint edc:offset="464"/>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x30" edc:modsrc="DOS-00745_tmr_classb_pb_v1.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="2"/>
+      </edc:Module_ref>
+      <edc:AdjustPoint edc:offset="464"/>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x30" edc:modsrc="DOS-00745_tmr_classb_pb_v1.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="3"/>
+        <edc:ModuleExclude edc:impl="0xfffffff7" edc:offset="0x0"/>
+      </edc:Module_ref>
+      <edc:AdjustPoint edc:offset="464"/>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x30" edc:modsrc="DOS-00745_tmr_classb_pb_v1.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="4"/>
+      </edc:Module_ref>
+      <edc:AdjustPoint edc:offset="464"/>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x30" edc:modsrc="DOS-00745_tmr_classb_pb_v1.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="5"/>
+        <edc:ModuleExclude edc:impl="0xfffffff7" edc:offset="0x0"/>
+      </edc:Module_ref>
+      <edc:AdjustPoint edc:offset="4560"/>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x20" edc:modsrc="DOS-00740_icap_pb_v1.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="1"/>
+      </edc:Module_ref>
+      <edc:AdjustPoint edc:offset="480"/>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x20" edc:modsrc="DOS-00740_icap_pb_v1.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="2"/>
+      </edc:Module_ref>
+      <edc:AdjustPoint edc:offset="480"/>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x20" edc:modsrc="DOS-00740_icap_pb_v1.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="3"/>
+      </edc:Module_ref>
+      <edc:AdjustPoint edc:offset="480"/>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x20" edc:modsrc="DOS-00740_icap_pb_v1.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="4"/>
+      </edc:Module_ref>
+      <edc:AdjustPoint edc:offset="480"/>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x20" edc:modsrc="DOS-00740_icap_pb_v1.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="5"/>
+      </edc:Module_ref>
+      <edc:AdjustPoint edc:offset="2016"/>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x30" edc:modsrc="DOS-00749_ocmp_pb_v1.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="1"/>
+      </edc:Module_ref>
+      <edc:AdjustPoint edc:offset="464"/>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x30" edc:modsrc="DOS-00749_ocmp_pb_v1.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="2"/>
+      </edc:Module_ref>
+      <edc:AdjustPoint edc:offset="464"/>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x30" edc:modsrc="DOS-00749_ocmp_pb_v1.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="3"/>
+      </edc:Module_ref>
+      <edc:AdjustPoint edc:offset="464"/>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x30" edc:modsrc="DOS-00749_ocmp_pb_v1.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="4"/>
+      </edc:Module_ref>
+      <edc:AdjustPoint edc:offset="464"/>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x30" edc:modsrc="DOS-00749_ocmp_pb_v1.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="5"/>
+      </edc:Module_ref>
+      <edc:AdjustPoint edc:offset="6096"/>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x70" edc:modsrc="DOS-00774_i2c_pb_v1.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="1"/>
+        <edc:ModuleMacro edc:replace="%x%" edc:with="1"/>
+        <edc:ModuleMacro edc:replace="%y%" edc:with="A"/>
+      </edc:Module_ref>
+      <edc:AdjustPoint edc:offset="144"/>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x70" edc:modsrc="DOS-00774_i2c_pb_v1.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="2"/>
+        <edc:ModuleMacro edc:replace="%x%" edc:with="2"/>
+        <edc:ModuleMacro edc:replace="%y%" edc:with="A"/>
+      </edc:Module_ref>
+      <edc:AdjustPoint edc:offset="1680"/>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x50" edc:modsrc="DOS-01329_spi_pb_v2.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="1"/>
+        <edc:ModuleMacro edc:replace="%x%" edc:with="1"/>
+        <edc:ModuleMacro edc:replace="%y%" edc:with="A"/>
+      </edc:Module_ref>
+      <edc:AdjustPoint edc:offset="432"/>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x50" edc:modsrc="DOS-01329_spi_pb_v2.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="2"/>
+        <edc:ModuleMacro edc:replace="%x%" edc:with="3"/>
+        <edc:ModuleMacro edc:replace="%y%" edc:with="A"/>
+      </edc:Module_ref>
+      <edc:AdjustPoint edc:offset="1456"/>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x50" edc:modsrc="DOS-00734_uart_irda_pb_v1.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="1"/>
+        <edc:ModuleMacro edc:replace="%x%" edc:with="1"/>
+        <edc:ModuleMacro edc:replace="%y%" edc:with="A"/>
+      </edc:Module_ref>
+      <edc:AdjustPoint edc:offset="432"/>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x50" edc:modsrc="DOS-00734_uart_irda_pb_v1.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="2"/>
+        <edc:ModuleMacro edc:replace="%x%" edc:with="3"/>
+        <edc:ModuleMacro edc:replace="%y%" edc:with="A"/>
+      </edc:Module_ref>
+      <edc:AdjustPoint edc:offset="3504"/>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x70" edc:modsrc="DOS-00751_ppi_pmp_v1.Module">
+        <edc:ModuleExclude edc:impl="0xffff7fff" edc:offset="0x20"/>
+        <edc:ModuleExclude edc:impl="0xfffffbff" edc:offset="0x10"/>
+        <edc:ModuleExclude edc:impl="0xffffffef" edc:offset="0x0"/>
+      </edc:Module_ref>
+      <edc:AdjustPoint edc:offset="8080"/>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x30" edc:modsrc="DOS-00755_adc_1012_pb_v1.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="1"/>
+      </edc:Module_ref>
+      <edc:AdjustPoint edc:offset="16"/>
+      <edc:Module_ref edc:begin="0x40" edc:end="0x60" edc:modsrc="DOS-00755_adc_1012_pb_v1.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="1"/>
+      </edc:Module_ref>
+      <edc:AdjustPoint edc:offset="16"/>
+      <edc:Module_ref edc:begin="0x70" edc:end="0x170" edc:modsrc="DOS-00755_adc_1012_pb_v1.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="1"/>
+      </edc:Module_ref>
+      <edc:AdjustPoint edc:offset="1680"/>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x10" edc:modsrc="DOS-00800_dac_4bit_ctrl_pb_v1.Module">
+        <edc:ModuleExclude edc:impl="0xfffff8ff" edc:offset="0x0"/>
+      </edc:Module_ref>
+      <edc:AdjustPoint edc:offset="2032"/>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x10" edc:modsrc="DOS-00866_cmp_control_pb_v2.Module">
+        <edc:ModuleExclude edc:impl="0xffffefff" edc:offset="0x0"/>
+        <edc:ModuleMacro edc:replace="@" edc:with="1"/>
+      </edc:Module_ref>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x10" edc:modsrc="DOS-00866_cmp_control_pb_v2.Module">
+        <edc:ModuleExclude edc:impl="0xffffefff" edc:offset="0x0"/>
+        <edc:ModuleMacro edc:replace="@" edc:with="2"/>
+      </edc:Module_ref>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x10" edc:modsrc="DOS-00866_cmp_control_pb_v2.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="3"/>
+        <edc:ModuleExclude edc:impl="0xffffefff" edc:offset="0x0"/>
+      </edc:Module_ref>
+      <edc:AdjustPoint edc:offset="48"/>
+      <edc:Module_ref edc:begin="0x10" edc:end="0x20" edc:modsrc="DOS-00866_cmp_control_pb_v2.Module">
+        <edc:ModuleExclude edc:impl="0xffffffc7" edc:offset="0x10"/>
+      </edc:Module_ref>
+      <edc:AdjustPoint edc:offset="400"/>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x10" edc:modsrc="DOS-01461_afe_ctmu_con_upb_v1.Module"/>
+    </edc:SFRDataSector>
+    <edc:SFRDataSector edc:beginaddr="0x1f80f000" edc:endaddr="0x1f80fc00" edc:kseg1="0xa0000000" edc:ksegdef="2" edc:regionid="periph1">
+      <edc:Module_ref edc:begin="0x0" edc:end="0x40" edc:modsrc="DOS-01416_clk_sib_pb_v4.Module"/>
+      <edc:AdjustPoint edc:offset="448"/>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x10" edc:modsrc="DOS-01423_TRAA_Config.Module"/>
+      <edc:AdjustPoint edc:offset="16"/>
+      <edc:Module_ref edc:begin="0x20" edc:end="0xA0" edc:modsrc="DOS-01423_TRAA_Config.Module"/>
+      <edc:AdjustPoint edc:offset="352"/>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x50" edc:modsrc="DOS-01390_pfm_control_hpmd_v2.Module"/>
+      <edc:AdjustPoint edc:offset="432"/>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x20" edc:modsrc="DOS-01342_rst_integration_pb_v3.Module"/>
+      <edc:AdjustPoint edc:offset="996"/>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01423_RPINRx.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="INT1"/>
+      </edc:Module_ref>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01423_RPINRx.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="INT2"/>
+      </edc:Module_ref>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01423_RPINRx.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="INT3"/>
+      </edc:Module_ref>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01423_RPINRx.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="INT4"/>
+      </edc:Module_ref>
+      <edc:AdjustPoint edc:offset="4"/>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01423_RPINRx.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="T2CK"/>
+      </edc:Module_ref>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01423_RPINRx.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="T3CK"/>
+      </edc:Module_ref>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01423_RPINRx.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="T4CK"/>
+      </edc:Module_ref>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01423_RPINRx.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="T5CK"/>
+      </edc:Module_ref>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01423_RPINRx.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="IC1"/>
+      </edc:Module_ref>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01423_RPINRx.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="IC2"/>
+      </edc:Module_ref>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01423_RPINRx.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="IC3"/>
+      </edc:Module_ref>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01423_RPINRx.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="IC4"/>
+      </edc:Module_ref>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01423_RPINRx.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="IC5"/>
+      </edc:Module_ref>
+      <edc:AdjustPoint edc:offset="12"/>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01423_RPINRx.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="OCFA"/>
+      </edc:Module_ref>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01423_RPINRx.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="OCFB"/>
+      </edc:Module_ref>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01423_RPINRx.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="U1RX"/>
+      </edc:Module_ref>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01423_RPINRx.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="U1CTS"/>
+      </edc:Module_ref>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01423_RPINRx.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="U2RX"/>
+      </edc:Module_ref>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01423_RPINRx.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="U2CTS"/>
+      </edc:Module_ref>
+      <edc:AdjustPoint edc:offset="36"/>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01423_RPINRx.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="SDI1"/>
+      </edc:Module_ref>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01423_RPINRx.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="SS1"/>
+      </edc:Module_ref>
+      <edc:AdjustPoint edc:offset="4"/>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01423_RPINRx.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="SDI2"/>
+      </edc:Module_ref>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01423_RPINRx.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="SS2"/>
+      </edc:Module_ref>
+      <edc:AdjustPoint edc:offset="32"/>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01423_RPINRx.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="REFCLKI"/>
+      </edc:Module_ref>
+      <edc:AdjustPoint edc:offset="68"/>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01423_RPORx.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="A0"/>
+      </edc:Module_ref>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01423_RPORx.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="A1"/>
+      </edc:Module_ref>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01423_RPORx.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="A2"/>
+      </edc:Module_ref>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01423_RPORx.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="A3"/>
+      </edc:Module_ref>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01423_RPORx.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="A4"/>
+      </edc:Module_ref>
+      <edc:AdjustPoint edc:offset="12"/>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01423_RPORx.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="A8"/>
+      </edc:Module_ref>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01423_RPORx.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="A9"/>
+      </edc:Module_ref>
+      <edc:AdjustPoint edc:offset="4"/>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01423_RPORx.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="B0"/>
+      </edc:Module_ref>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01423_RPORx.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="B1"/>
+      </edc:Module_ref>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01423_RPORx.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="B2"/>
+      </edc:Module_ref>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01423_RPORx.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="B3"/>
+      </edc:Module_ref>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01423_RPORx.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="B4"/>
+      </edc:Module_ref>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01423_RPORx.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="B5"/>
+      </edc:Module_ref>
+      <edc:AdjustPoint edc:offset="4"/>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01423_RPORx.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="B7"/>
+      </edc:Module_ref>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01423_RPORx.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="B8"/>
+      </edc:Module_ref>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01423_RPORx.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="B9"/>
+      </edc:Module_ref>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01423_RPORx.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="B10"/>
+      </edc:Module_ref>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01423_RPORx.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="B11"/>
+      </edc:Module_ref>
+      <edc:AdjustPoint edc:offset="4"/>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01423_RPORx.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="B13"/>
+      </edc:Module_ref>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01423_RPORx.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="B14"/>
+      </edc:Module_ref>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01423_RPORx.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="B15"/>
+      </edc:Module_ref>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01423_RPORx.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="C0"/>
+      </edc:Module_ref>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01423_RPORx.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="C1"/>
+      </edc:Module_ref>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01423_RPORx.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="C2"/>
+      </edc:Module_ref>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01423_RPORx.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="C3"/>
+      </edc:Module_ref>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01423_RPORx.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="C4"/>
+      </edc:Module_ref>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01423_RPORx.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="C5"/>
+      </edc:Module_ref>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01423_RPORx.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="C6"/>
+      </edc:Module_ref>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01423_RPORx.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="C7"/>
+      </edc:Module_ref>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01423_RPORx.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="C8"/>
+      </edc:Module_ref>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x4" edc:modsrc="DOS-01423_RPORx.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="C9"/>
+      </edc:Module_ref>
+    </edc:SFRDataSector>
+    <edc:SFRDataSector edc:beginaddr="0x1f880000" edc:endaddr="0x1f887000" edc:kseg1="0xa0000000" edc:ksegdef="2" edc:regionid="periph2">
+      <edc:AdjustPoint edc:offset="4096"/>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x50" edc:modsrc="DOS-01423_TRAA_int_evic.Module"/>
+      <edc:AdjustPoint edc:offset="16"/>
+      <edc:Module_ref edc:begin="0x60" edc:end="0x80" edc:modsrc="DOS-01423_TRAA_int_evic.Module"/>
+      <edc:AdjustPoint edc:offset="16"/>
+      <edc:Module_ref edc:begin="0x90" edc:end="0x140" edc:modsrc="DOS-01423_TRAA_int_evic.Module"/>
+      <edc:AdjustPoint edc:offset="3776"/>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x80" edc:modsrc="DOS-00747_bus_matrix_bvci_v1.Module"/>
+      <edc:AdjustPoint edc:offset="3968"/>
+      <edc:Module_ref edc:begin="0x0" edc:end="0x120" edc:modsrc="DOS-00735_dma_bvci_v1.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="0"/>
+      </edc:Module_ref>
+      <edc:Module_ref edc:begin="0x60" edc:end="0x120" edc:modsrc="DOS-00735_dma_bvci_v1.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="1"/>
+      </edc:Module_ref>
+      <edc:Module_ref edc:begin="0x60" edc:end="0x120" edc:modsrc="DOS-00735_dma_bvci_v1.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="2"/>
+      </edc:Module_ref>
+      <edc:Module_ref edc:begin="0x60" edc:end="0x120" edc:modsrc="DOS-00735_dma_bvci_v1.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="3"/>
+      </edc:Module_ref>
+      <edc:AdjustPoint edc:offset="7392"/>
+      <edc:Module_ref edc:begin="0x40" edc:end="0x90" edc:modsrc="DOS-01195_usb_otgcore_pb_v2.Module"/>
+      <edc:AdjustPoint edc:offset="368"/>
+      <edc:Module_ref edc:begin="0x200" edc:end="0x2F0" edc:modsrc="DOS-01195_usb_otgcore_pb_v2.Module"/>
+      <edc:AdjustPoint edc:offset="16"/>
+      <edc:Module_ref edc:begin="0x300" edc:end="0x400" edc:modsrc="DOS-01195_usb_otgcore_pb_v2.Module"/>
+      <edc:AdjustPoint edc:offset="3072"/>
+      <edc:Module_ref edc:begin="0x0" edc:end="0xa0" edc:modsrc="DOS-01423_TRAA_Ports.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="A"/>
+        <edc:ModuleExclude edc:impl="0xffff0003" edc:offset="0x0"/>
+        <edc:ModuleExclude edc:impl="0xffff001f" edc:offset="0x10"/>
+        <edc:ModuleExclude edc:impl="0xffff001f" edc:offset="0x20"/>
+        <edc:ModuleExclude edc:impl="0xffff001f" edc:offset="0x30"/>
+        <edc:ModuleExclude edc:impl="0xffff0000" edc:offset="0x40"/>
+        <edc:ModuleExclude edc:impl="0xffff001f" edc:offset="0x50"/>
+        <edc:ModuleExclude edc:impl="0xffff001f" edc:offset="0x60"/>
+        <edc:ModuleExclude edc:impl="0xffff001f" edc:offset="0x80"/>
+        <edc:ModuleExclude edc:impl="0xffff001f" edc:offset="0x90"/>
+      </edc:Module_ref>
+      <edc:AdjustPoint edc:offset="96"/>
+      <edc:Module_ref edc:begin="0x0" edc:end="0xa0" edc:modsrc="DOS-01423_TRAA_Ports.Module">
+        <edc:ModuleMacro edc:replace="@" edc:with="B"/>
+        <edc:ModuleExclude edc:impl="0xffffe00f" edc:offset="0x0"/>
+        <edc:ModuleExclude edc:impl="0xffffefbf" edc:offset="0x10"/>
+        <edc:ModuleExclude edc:impl="0xffffefbf" edc:offset="0x20"/>
+        <edc:ModuleExclude edc:impl="0xffffefbf" edc:offset="0x30"/>
+        <edc:ModuleExclude edc:impl="0xffff0fb0" edc:offset="0x40"/>
+        <edc:ModuleExclude edc:impl="0xffffefbf" edc:offset="0x50"/>
+        <edc:ModuleExclude edc:impl="0xffffefbf" edc:offset="0x60"/>
+        <edc:ModuleExclude edc:impl="0xffffefbf" edc:offset="0x80"/>
+        <edc:ModuleExclude edc:impl="0xffffefbf" edc:offset="0x90"/>
+      </edc:Module_ref>
+      <edc:AdjustPoint edc:offset="96"/>
+    </edc:SFRDataSector>
+  </edc:PhysicalSpace>
+</edc:PIC>

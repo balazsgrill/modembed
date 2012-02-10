@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:Module xmlns:edc="http://crownking/edc" edc:dosid="00735_dma_bvci_v1" edc:modid="dma_bvci_v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/Module.xsd">
+  <edc:ArchDef edc:desc="" edc:name="">
+    <edc:MemTraits>
+      <edc:DataMemTraits edc:addrinc="0x4" edc:locsize="0x4" edc:wordimpl="0xffffffff" edc:wordinit="0x0" edc:wordsafe="0xffffffff" edc:wordsize="0x4"/>
+    </edc:MemTraits>
+  </edc:ArchDef>
+  <edc:SFRDef edc:access="----------------n--nn-----------" edc:cname="DMACON" edc:desc="" edc:grp="DMAC" edc:impl="0xffffdfff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="----------------00-0x-----------" edc:name="DMACON" edc:nzwidth="0x20" edc:por="----------------00-0x-----------" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:AdjustPoint edc:offset="11"/>
+        <edc:SFRFieldDef edc:cname="DMABUSY" edc:desc="" edc:mask="0x1" edc:name="DMABUSY" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="SUSPEND" edc:desc="" edc:mask="0x1" edc:name="SUSPEND" edc:nzwidth="0x1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="FRZ" edc:desc="" edc:ishidden="true" edc:islanghidden="true" edc:mask="0x1" edc:name="FRZ" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="ON" edc:desc="" edc:mask="0x1" edc:name="ON" edc:nzwidth="0x1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="w" edc:desc="" edc:mask="0x1" edc:name="w" edc:nzwidth="0x20"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+    <edc:FreezeBit edc:freezeval="1" edc:name="DMA" edc:pos="14"/>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="----------------------------nnnn" edc:cname="DMASTAT" edc:desc="" edc:grp="DMAC" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="----------------------------0000" edc:name="DMASTAT" edc:nzwidth="0x20" edc:por="----------------------------0000" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="DMACH" edc:desc="" edc:mask="0x3" edc:name="DMACH" edc:nzwidth="0x3"/>
+        <edc:SFRFieldDef edc:cname="RDWR" edc:desc="" edc:mask="0x1" edc:name="RDWR" edc:nzwidth="0x1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="w" edc:desc="" edc:mask="0x1" edc:name="w" edc:nzwidth="0x20"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr" edc:cname="DMAADDR" edc:desc="" edc:grp="DMAC" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000000000000000000000000000" edc:name="DMAADDR" edc:nzwidth="0x20" edc:por="00000000000000000000000000000000" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="DMAADDR" edc:desc="" edc:islanghidden="true" edc:mask="0xffffffff" edc:name="DMAADDR" edc:nzwidth="0x20"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="--nnn--n-----------nnnnnnnn--nnn" edc:cname="DCRCCON" edc:desc="" edc:grp="DMAC" edc:impl="0xfb7fffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="--xxx--x-----------xxxxx00x--000" edc:name="DCRCCON" edc:nzwidth="0x20" edc:por="--xxx--x-----------xxxxx00x--000" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="CRCCH" edc:desc="" edc:mask="0x7" edc:name="CRCCH" edc:nzwidth="0x3"/>
+        <edc:AdjustPoint edc:offset="2"/>
+        <edc:SFRFieldDef edc:cname="CRCTYP" edc:desc="" edc:mask="0x1" edc:name="CRCTYP" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="CRCAPP" edc:desc="" edc:mask="0x1" edc:name="CRCAPP" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="CRCEN" edc:desc="" edc:mask="0x1" edc:name="CRCEN" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="PLEN" edc:desc="" edc:mask="0x1f" edc:name="PLEN" edc:nzwidth="5"/>
+        <edc:AdjustPoint edc:offset="0xb"/>
+        <edc:SFRFieldDef edc:cname="BITO" edc:desc="" edc:mask="0x1" edc:name="BITO" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="0x2"/>
+        <edc:SFRFieldDef edc:cname="WBO" edc:desc="" edc:mask="0x1" edc:name="WBO" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="BYTO" edc:desc="" edc:mask="0x3" edc:name="BYTO" edc:nzwidth="2"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.1">
+        <edc:SFRFieldDef edc:cname="w" edc:desc="" edc:mask="0x1" edc:name="w" edc:nzwidth="0x20"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn" edc:cname="DCRCDATA" edc:desc="" edc:grp="DMAC" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000000000000000000000000000" edc:name="DCRCDATA" edc:nzwidth="0x20" edc:por="00000000000000000000000000000000" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="DCRCDATA" edc:desc="" edc:islanghidden="true" edc:mask="0xffffffff" edc:name="DCRCDATA" edc:nzwidth="0x20"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn" edc:cname="DCRCXOR" edc:desc="" edc:grp="DMAC" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000000000000000000000000000" edc:name="DCRCXOR" edc:nzwidth="0x20" edc:por="00000000000000000000000000000000" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="DCRCXOR" edc:desc="" edc:islanghidden="true" edc:mask="0xffffffff" edc:name="DCRCXOR" edc:nzwidth="0x20"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="----------------n------nnnnn-rnn" edc:cname="DCH@CON" edc:desc="" edc:grp="DMAC0" edc:impl="0xfffffff7" edc:isindirect="false" edc:isvolatile="true" edc:mclr="----------------x------00000-000" edc:name="DCH@CON" edc:nzwidth="0x20" edc:por="----------------x------00000-000" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="CHPRI" edc:desc="" edc:mask="0x3" edc:name="CHPRI" edc:nzwidth="0x2"/>
+        <edc:SFRFieldDef edc:cname="CHEDET" edc:desc="" edc:mask="0x1" edc:name="CHEDET" edc:nzwidth="0x1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="CHAEN" edc:desc="" edc:mask="0x1" edc:name="CHAEN" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="CHCHN" edc:desc="" edc:mask="0x1" edc:name="CHCHN" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="CHAED" edc:desc="" edc:mask="0x1" edc:name="CHAED" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="CHEN" edc:desc="" edc:mask="0x1" edc:name="CHEN" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="CHCHNS" edc:desc="" edc:mask="0x1" edc:name="CHCHNS" edc:nzwidth="0x1"/>
+        <edc:AdjustPoint edc:offset="6"/>
+        <edc:SFRFieldDef edc:cname="CHBUSY" edc:desc="" edc:mask="0x1" edc:name="CHBUSY" edc:nzwidth="1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="w" edc:desc="" edc:mask="0x1" edc:name="w" edc:nzwidth="0x20"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="--------nnnnnnnnnnnnnnnnssnnn---" edc:cname="DCH@ECON" edc:desc="" edc:grp="DMAC0" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="--------111111111111111100000---" edc:name="DCH@ECON" edc:nzwidth="0x20" edc:por="--------111111111111111100000---" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:AdjustPoint edc:offset="3"/>
+        <edc:SFRFieldDef edc:cname="AIRQEN" edc:desc="" edc:mask="0x1" edc:name="AIRQEN" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="SIRQEN" edc:desc="" edc:mask="0x1" edc:name="SIRQEN" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="PATEN" edc:desc="" edc:mask="0x1" edc:name="PATEN" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="CABORT" edc:desc="" edc:mask="0x1" edc:name="CABORT" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="CFORCE" edc:desc="" edc:mask="0x1" edc:name="CFORCE" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="CHSIRQ" edc:desc="" edc:mask="0xff" edc:name="CHSIRQ" edc:nzwidth="0x8"/>
+        <edc:SFRFieldDef edc:cname="CHAIRQ" edc:desc="" edc:mask="0xff" edc:name="CHAIRQ" edc:nzwidth="0x8"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="w" edc:desc="" edc:mask="0x1" edc:name="w" edc:nzwidth="0x20"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="--------nnnnnnnn--------nnnnnnnn" edc:cname="DCH@INT" edc:desc="" edc:grp="DMAC0" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="--------00000000--------00000000" edc:name="DCH@INT" edc:nzwidth="0x20" edc:por="--------00000000--------00000000" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="CHERIF" edc:desc="" edc:mask="0x1" edc:name="CHERIF" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="CHTAIF" edc:desc="" edc:mask="0x1" edc:name="CHTAIF" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="CHCCIF" edc:desc="" edc:mask="0x1" edc:name="CHCCIF" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="CHBCIF" edc:desc="" edc:mask="0x1" edc:name="CHBCIF" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="CHDHIF" edc:desc="" edc:mask="0x1" edc:name="CHDHIF" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="CHDDIF" edc:desc="" edc:mask="0x1" edc:name="CHDDIF" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="CHSHIF" edc:desc="" edc:mask="0x1" edc:name="CHSHIF" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="CHSDIF" edc:desc="" edc:mask="0x1" edc:name="CHSDIF" edc:nzwidth="0x1"/>
+        <edc:AdjustPoint edc:offset="8"/>
+        <edc:SFRFieldDef edc:cname="CHERIE" edc:desc="" edc:mask="0x1" edc:name="CHERIE" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="CHTAIE" edc:desc="" edc:mask="0x1" edc:name="CHTAIE" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="CHCCIE" edc:desc="" edc:mask="0x1" edc:name="CHCCIE" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="CHBCIE" edc:desc="" edc:mask="0x1" edc:name="CHBCIE" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="CHDHIE" edc:desc="" edc:mask="0x1" edc:name="CHDHIE" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="CHDDIE" edc:desc="" edc:mask="0x1" edc:name="CHDDIE" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="CHSHIE" edc:desc="" edc:mask="0x1" edc:name="CHSHIE" edc:nzwidth="0x1"/>
+        <edc:SFRFieldDef edc:cname="CHSDIE" edc:desc="" edc:mask="0x1" edc:name="CHSDIE" edc:nzwidth="0x1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="w" edc:desc="" edc:mask="0x1" edc:name="w" edc:nzwidth="0x20"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn" edc:cname="DCH@SSA" edc:desc="" edc:grp="DMAC0" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" edc:name="DCH@SSA" edc:nzwidth="0x20" edc:por="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="DCH@SSA" edc:desc="" edc:islanghidden="true" edc:mask="0xffffffff" edc:name="DCH@SSA" edc:nzwidth="0x20"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn" edc:cname="DCH@DSA" edc:desc="" edc:grp="DMAC0" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" edc:name="DCH@DSA" edc:nzwidth="0x20" edc:por="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="DCH@DSA" edc:desc="" edc:islanghidden="true" edc:mask="0xffffffff" edc:name="DCH@DSA" edc:nzwidth="0x20"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="----------------nnnnnnnnnnnnnnnn" edc:cname="DCH@SSIZ" edc:desc="" edc:grp="DMAC0" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="----------------xxxxxxxxxxxxxxxx" edc:name="DCH@SSIZ" edc:nzwidth="0x20" edc:por="----------------xxxxxxxxxxxxxxxx" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="CHSSIZ" edc:desc="" edc:islanghidden="true" edc:mask="0xffff" edc:name="CHSSIZ" edc:nzwidth="16"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="----------------nnnnnnnnnnnnnnnn" edc:cname="DCH@DSIZ" edc:desc="" edc:grp="DMAC0" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="----------------xxxxxxxxxxxxxxxx" edc:name="DCH@DSIZ" edc:nzwidth="0x20" edc:por="----------------xxxxxxxxxxxxxxxx" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="CHDSIZ" edc:desc="" edc:islanghidden="true" edc:mask="0xffff" edc:name="CHDSIZ" edc:nzwidth="16"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="----------------nnnnnnnnnnnnnnnn" edc:cname="DCH@SPTR" edc:desc="" edc:grp="DMAC0" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="----------------xxxxxxxxxxxxxxxx" edc:name="DCH@SPTR" edc:nzwidth="0x20" edc:por="----------------xxxxxxxxxxxxxxxx" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="CHSPTR" edc:desc="" edc:islanghidden="true" edc:mask="0xffff" edc:name="CHSPTR" edc:nzwidth="16"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="----------------rrrrrrrrrrrrrrrr" edc:cname="DCH@DPTR" edc:desc="" edc:grp="DMAC0" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="----------------0000000000000000" edc:name="DCH@DPTR" edc:nzwidth="0x20" edc:por="----------------0000000000000000" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="CHDPTR" edc:desc="" edc:islanghidden="true" edc:mask="0xffff" edc:name="CHDPTR" edc:nzwidth="0x10"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="----------------nnnnnnnnnnnnnnnn" edc:cname="DCH@CSIZ" edc:desc="" edc:grp="DMAC0" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="----------------xxxxxxxxxxxxxxxx" edc:name="DCH@CSIZ" edc:nzwidth="0x20" edc:por="----------------xxxxxxxxxxxxxxxx" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="CHCSIZ" edc:desc="" edc:islanghidden="true" edc:mask="0xffff" edc:name="CHCSIZ" edc:nzwidth="16"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="----------------nnnnnnnnnnnnnnnn" edc:cname="DCH@CPTR" edc:desc="" edc:grp="DMAC0" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="----------------xxxxxxxxxxxxxxxx" edc:name="DCH@CPTR" edc:nzwidth="0x20" edc:por="----------------xxxxxxxxxxxxxxxx" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="CHCPTR" edc:desc="" edc:islanghidden="true" edc:mask="0x1" edc:name="CHCPTR" edc:nzwidth="0x10"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="------------------------nnnnnnnn" edc:cname="DCH@DAT" edc:desc="" edc:grp="DMAC0" edc:impl="0xffffffff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="------------------------xxxxxxxx" edc:name="DCH@DAT" edc:nzwidth="0x20" edc:por="------------------------xxxxxxxx" edc:portals="CLR SET INV">
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="DCHPDAT" edc:desc="" edc:islanghidden="true" edc:mask="0xff" edc:name="DCHPDAT" edc:nzwidth="0x8"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+</edc:Module>

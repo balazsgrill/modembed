@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:Module xmlns:edc="http://crownking/edc" edc:desc="configurable logic cell" edc:dosid="01451_CLC-4xx_test" edc:modid="cla_clc[4][16]_v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/Module.xsd">
+  <edc:ArchDef edc:desc="" edc:name="">
+    <edc:MemTraits>
+      <edc:DataMemTraits edc:addrinc="0x1" edc:locsize="0x1" edc:wordimpl="0xff" edc:wordinit="0x0" edc:wordsafe="0xff" edc:wordsize="0x1"/>
+    </edc:MemTraits>
+  </edc:ArchDef>
+  <edc:SFRDef edc:access="nnrnnnnn" edc:cname="CLC@CON" edc:desc="Configurable logic cell control" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00u00000" edc:name="CLC@CON" edc:nzwidth="8" edc:por="00u00000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="LT.8">
+        <edc:SFRFieldDef edc:cname="LC@MODE0" edc:desc="" edc:mask="0x1" edc:name="LC@MODE0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LC@MODE1" edc:desc="" edc:mask="0x1" edc:name="LC@MODE1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LC@MODE2" edc:desc="" edc:mask="0x1" edc:name="LC@MODE2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LC@INTN" edc:desc="" edc:mask="0x1" edc:name="LC@INTN" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LC@INTP" edc:desc="" edc:mask="0x1" edc:name="LC@INTP" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LC@OUT" edc:desc="" edc:mask="0x1" edc:name="LC@OUT" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LC@OE" edc:desc="" edc:mask="0x1" edc:name="LC@OE" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LC@EN" edc:desc="" edc:mask="0x1" edc:name="LC@EN" edc:nzwidth="1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="LCMODE0" edc:desc="" edc:mask="0x1" edc:name="LCMODE0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LCMODE1" edc:desc="" edc:mask="0x1" edc:name="LCMODE1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LCMODE2" edc:desc="" edc:mask="0x1" edc:name="LCMODE2" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LCINTN" edc:desc="" edc:mask="0x1" edc:name="LCINTN" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LCINTP" edc:desc="" edc:mask="0x1" edc:name="LCINTP" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LCOUT" edc:desc="" edc:mask="0x1" edc:name="LCOUT" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LCOE" edc:desc="" edc:mask="0x1" edc:name="LCOE" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LCEN" edc:desc="" edc:mask="0x1" edc:name="LCEN" edc:nzwidth="1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.1">
+        <edc:SFRFieldDef edc:cname="LC@MODE" edc:desc="" edc:mask="0x7" edc:name="LC@MODE" edc:nzwidth="3"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="LCMODE_@" edc:desc="" edc:mask="0x7" edc:name="LCMODE_@" edc:nzwidth="3"/>
+        <edc:SFRFieldDef edc:cname="LCINTN_@" edc:desc="" edc:mask="0x1" edc:name="LCINTN_@" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LCINTP_@" edc:desc="" edc:mask="0x1" edc:name="LCINTP_@" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LCOUT_@" edc:desc="" edc:mask="0x1" edc:name="LCOUT_@" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LCOE_@" edc:desc="" edc:mask="0x1" edc:name="LCOE_@" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LCEN_@" edc:desc="" edc:mask="0x1" edc:name="LCEN_@" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="n---nnnn" edc:cname="CLC@POL" edc:desc="Polarity control" edc:impl="0x8f" edc:isindirect="false" edc:isvolatile="true" edc:mclr="0---0000" edc:name="CLC@POL" edc:nzwidth="8" edc:por="0---0000">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="LC@G1POL" edc:desc="" edc:mask="0x1" edc:name="LC@G1POL" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LC@G2POL" edc:desc="" edc:mask="0x1" edc:name="LC@G2POL" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LC@G3POL" edc:desc="" edc:mask="0x1" edc:name="LC@G3POL" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LC@G4POL" edc:desc="" edc:mask="0x1" edc:name="LC@G4POL" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="3"/>
+        <edc:SFRFieldDef edc:cname="LC@POL" edc:desc="" edc:mask="0x1" edc:name="LC@POL" edc:nzwidth="1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="G1POL" edc:desc="" edc:mask="0x1" edc:name="G1POL" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="G2POL" edc:desc="" edc:mask="0x1" edc:name="G2POL" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="G3POL" edc:desc="" edc:mask="0x1" edc:name="G3POL" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="G4POL" edc:desc="" edc:mask="0x1" edc:name="G4POL" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="3"/>
+        <edc:SFRFieldDef edc:cname="POL" edc:desc="" edc:mask="0x1" edc:name="POL" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="-nnn-nnn" edc:cname="CLC@SEL0" edc:desc="Input select register 0" edc:impl="0xe7" edc:isindirect="false" edc:isvolatile="true" edc:mclr="-uuu-uuu" edc:name="CLC@SEL0" edc:nzwidth="8" edc:por="-xxx-xxx">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="LC@D1S0" edc:desc="" edc:mask="0x1" edc:name="LC@D1S0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LC@D1S1" edc:desc="" edc:mask="0x1" edc:name="LC@D1S1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LC@D1S2" edc:desc="" edc:mask="0x1" edc:name="LC@D1S2" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="LC@D2S0" edc:desc="" edc:mask="0x1" edc:name="LC@D2S0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LC@D2S1" edc:desc="" edc:mask="0x1" edc:name="LC@D2S1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LC@D2S2" edc:desc="" edc:mask="0x1" edc:name="LC@D2S2" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="D1S0" edc:desc="" edc:mask="0x1" edc:name="D1S0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="D1S1" edc:desc="" edc:mask="0x1" edc:name="D1S1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="D1S2" edc:desc="" edc:mask="0x1" edc:name="D1S2" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="D2S0" edc:desc="" edc:mask="0x1" edc:name="D2S0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="D2S1" edc:desc="" edc:mask="0x1" edc:name="D2S1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="D2S2" edc:desc="" edc:mask="0x1" edc:name="D2S2" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.1">
+        <edc:SFRFieldDef edc:cname="LC@D1S" edc:desc="" edc:mask="0x7" edc:name="LC@D1S" edc:nzwidth="3"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="LC@D2S" edc:desc="" edc:mask="0x7" edc:name="LC@D2S" edc:nzwidth="3"/>
+        <edc:AdjustPoint edc:offset="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="-nnn-nnn" edc:cname="CLC@SEL1" edc:desc="Input select register 1" edc:impl="0x77" edc:isindirect="false" edc:isvolatile="true" edc:mclr="-uuu-uuu" edc:name="CLC@SEL1" edc:nzwidth="8" edc:por="-xxx-xxx">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="LC@D3S0" edc:desc="" edc:mask="0x1" edc:name="LC@D3S0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LC@D3S1" edc:desc="" edc:mask="0x1" edc:name="LC@D3S1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LC@D3S2" edc:desc="" edc:mask="0x1" edc:name="LC@D3S2" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="LC@D4S0" edc:desc="" edc:mask="0x1" edc:name="LC@D4S0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LC@D4S1" edc:desc="" edc:mask="0x1" edc:name="LC@D4S1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LC@D4S2" edc:desc="" edc:mask="0x1" edc:name="LC@D4S2" edc:nzwidth="1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="D3S0" edc:desc="" edc:mask="0x1" edc:name="D3S0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="D3S1" edc:desc="" edc:mask="0x1" edc:name="D3S1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="D3S2" edc:desc="" edc:mask="0x1" edc:name="D3S2" edc:nzwidth="1"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="D4S0" edc:desc="" edc:mask="0x1" edc:name="D4S0" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="D4S1" edc:desc="" edc:mask="0x1" edc:name="D4S1" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="D4S2" edc:desc="" edc:mask="0x1" edc:name="D4S2" edc:nzwidth="1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.1">
+        <edc:SFRFieldDef edc:cname="LC@D3S" edc:desc="" edc:mask="0x7" edc:name="LC@D3S" edc:nzwidth="3"/>
+        <edc:AdjustPoint edc:offset="1"/>
+        <edc:SFRFieldDef edc:cname="LC@D4S" edc:desc="" edc:mask="0x7" edc:name="LC@D4S" edc:nzwidth="3"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="CLC@GLS0" edc:desc="Gate logic select register 0" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="uuuuuuuu" edc:name="CLC@GLS0" edc:nzwidth="8" edc:por="xxxxxxxx">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="LC@G1D1N" edc:desc="" edc:mask="0x1" edc:name="LC@G1D1N" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LC@G1D1T" edc:desc="" edc:mask="0x1" edc:name="LC@G1D1T" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LC@G1D2N" edc:desc="" edc:mask="0x1" edc:name="LC@G1D2N" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LC@G1D2T" edc:desc="" edc:mask="0x1" edc:name="LC@G1D2T" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LC@G1D3N" edc:desc="" edc:mask="0x1" edc:name="LC@G1D3N" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LC@G1D3T" edc:desc="" edc:mask="0x1" edc:name="LC@G1D3T" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LC@G1D4N" edc:desc="" edc:mask="0x1" edc:name="LC@G1D4N" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LC@G1D4T" edc:desc="" edc:mask="0x1" edc:name="LC@G1D4T" edc:nzwidth="1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="D1N" edc:desc="" edc:mask="0x1" edc:name="D1N" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="D1T" edc:desc="" edc:mask="0x1" edc:name="D1T" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="D2N" edc:desc="" edc:mask="0x1" edc:name="D2N" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="D2T" edc:desc="" edc:mask="0x1" edc:name="D2T" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="D3N" edc:desc="" edc:mask="0x1" edc:name="D3N" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="D3T" edc:desc="" edc:mask="0x1" edc:name="D3T" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="D4N" edc:desc="" edc:mask="0x1" edc:name="D4N" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="D4T" edc:desc="" edc:mask="0x1" edc:name="D4T" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="CLC@GLS1" edc:desc="Gate logic select register 1" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="uuuuuuuu" edc:name="CLC@GLS1" edc:nzwidth="8" edc:por="xxxxxxxx">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="LC@G2D1N" edc:desc="" edc:mask="0x1" edc:name="LC@G2D1N" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LC@G2D1T" edc:desc="" edc:mask="0x1" edc:name="LC@G2D1T" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LC@G2D2N" edc:desc="" edc:mask="0x1" edc:name="LC@G2D2N" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LC@G2D2T" edc:desc="" edc:mask="0x1" edc:name="LC@G2D2T" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LC@G2D3N" edc:desc="" edc:mask="0x1" edc:name="LC@G2D3N" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LC@G2D3T" edc:desc="" edc:mask="0x1" edc:name="LC@G2D3T" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LC@G2D4N" edc:desc="" edc:mask="0x1" edc:name="LC@G2D4N" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LC@G2D4T" edc:desc="" edc:mask="0x1" edc:name="LC@G2D4T" edc:nzwidth="1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="D1N" edc:desc="" edc:mask="0x1" edc:name="D1N" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="D1T" edc:desc="" edc:mask="0x1" edc:name="D1T" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="D2N" edc:desc="" edc:mask="0x1" edc:name="D2N" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="D2T" edc:desc="" edc:mask="0x1" edc:name="D2T" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="D3N" edc:desc="" edc:mask="0x1" edc:name="D3N" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="D3T" edc:desc="" edc:mask="0x1" edc:name="D3T" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="D4N" edc:desc="" edc:mask="0x1" edc:name="D4N" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="D4T" edc:desc="" edc:mask="0x1" edc:name="D4T" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="CLC@GLS2" edc:desc="Gate logic select register 2" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="uuuuuuuu" edc:name="CLC@GLS2" edc:nzwidth="8" edc:por="xxxxxxxx">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="LC@G3D1N" edc:desc="" edc:mask="0x1" edc:name="LC@G3D1N" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LC@G3D1T" edc:desc="" edc:mask="0x1" edc:name="LC@G3D1T" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LC@G3D2N" edc:desc="" edc:mask="0x1" edc:name="LC@G3D2N" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LC@G3D2T" edc:desc="" edc:mask="0x1" edc:name="LC@G3D2T" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LC@G3D3N" edc:desc="" edc:mask="0x1" edc:name="LC@G3D3N" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LC@G3D3T" edc:desc="" edc:mask="0x1" edc:name="LC@G3D3T" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LC@G3D4N" edc:desc="" edc:mask="0x1" edc:name="LC@G3D4N" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LC@G3D4T" edc:desc="" edc:mask="0x1" edc:name="LC@G3D4T" edc:nzwidth="1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="LT.0">
+        <edc:SFRFieldDef edc:cname="D1N" edc:desc="" edc:mask="0x1" edc:name="D1N" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="D1T" edc:desc="" edc:mask="0x1" edc:name="D1T" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="D2N" edc:desc="" edc:mask="0x1" edc:name="D2N" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="D2T" edc:desc="" edc:mask="0x1" edc:name="D2T" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="D3N" edc:desc="" edc:mask="0x1" edc:name="D3N" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="D3T" edc:desc="" edc:mask="0x1" edc:name="D3T" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="D4N" edc:desc="" edc:mask="0x1" edc:name="D4N" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="D4T" edc:desc="" edc:mask="0x1" edc:name="D4T" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+  <edc:SFRDef edc:access="nnnnnnnn" edc:cname="CLC@GLS3" edc:desc="Gate logic select register 3" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="xxxxxxxx" edc:name="CLC@GLS3" edc:nzwidth="8" edc:por="xxxxxxxx">
+    <edc:AliasList/>
+    <edc:SFRModeList>
+      <edc:SFRMode edc:id="DS.0">
+        <edc:SFRFieldDef edc:cname="LC@G4D1N" edc:desc="" edc:mask="0x1" edc:name="LC@G4D1N" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LC@G4D1T" edc:desc="" edc:mask="0x1" edc:name="LC@G4D1T" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LC@G4D2N" edc:desc="" edc:mask="0x1" edc:name="LC@G4D2N" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LC@G4D2T" edc:desc="" edc:mask="0x1" edc:name="LC@G4D2T" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LC@G4D3N" edc:desc="" edc:mask="0x1" edc:name="LC@G4D3N" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LC@G4D3T" edc:desc="" edc:mask="0x1" edc:name="LC@G4D3T" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LC@G4D4N" edc:desc="" edc:mask="0x1" edc:name="LC@G4D4N" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="LC@G4D4T" edc:desc="" edc:mask="0x1" edc:name="LC@G4D4T" edc:nzwidth="1"/>
+      </edc:SFRMode>
+      <edc:SFRMode edc:id="DS.1">
+        <edc:SFRFieldDef edc:cname="G4D1N" edc:desc="" edc:mask="0x1" edc:name="G4D1N" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="G4D1T" edc:desc="" edc:mask="0x1" edc:name="G4D1T" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="G4D2N" edc:desc="" edc:mask="0x1" edc:name="G4D2N" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="G4D2T" edc:desc="" edc:mask="0x1" edc:name="G4D2T" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="G4D3N" edc:desc="" edc:mask="0x1" edc:name="G4D3N" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="G4D3T" edc:desc="" edc:mask="0x1" edc:name="G4D3T" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="G4D4N" edc:desc="" edc:mask="0x1" edc:name="G4D4N" edc:nzwidth="1"/>
+        <edc:SFRFieldDef edc:cname="G4D4T" edc:desc="" edc:mask="0x1" edc:name="G4D4T" edc:nzwidth="1"/>
+      </edc:SFRMode>
+    </edc:SFRModeList>
+  </edc:SFRDef>
+</edc:Module>
