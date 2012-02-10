@@ -1,14 +1,13 @@
 /*
  * PIC18F14K50 specific implementation of DIO
  */
-library microchip.PIC18F14K50.DIO;
+library microchip.PIC18F14K50.DIO overrides e.dio;
 
 use e.platform;
+use e.dio;
 use microchip.pic18;
 use microchip.pic18.assisted;
 use microchip.PIC18F14K50;
-
-type ChannelID = unsigned 8 bits;
 
 const uint8 channelNum = 17;
 

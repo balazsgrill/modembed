@@ -1,6 +1,7 @@
 library microchip.PIC18F14K50.SPI;
 
 use e.platform;
+use e.dio;
 use microchip.pic18;
 use microchip.pic18.assisted;
 use microchip.PIC18F14K50.DIO;

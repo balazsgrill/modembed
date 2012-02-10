@@ -14,4 +14,7 @@ type uint16 = unsigned 16 bits;
 
 type uint32 = unsigned 32 bits;
 
-
+/*
+ * the index of one bit in a byte
+ */
+type bit = unsigned 3 bits;

@@ -16,11 +16,6 @@ type address = unsigned 12 bits;
 type codeaddr = unsigned 20 bits;
 
 /*
- * the index of one bit  a byte
- */
-type bit = unsigned 3 bits;
-
-/*
  * Add W to F
  * ADDWF	#f #d=1 #a=1	0010 01 	d1:d0 a1:a0 f8:f0
  */

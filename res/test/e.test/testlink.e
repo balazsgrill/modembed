@@ -9,6 +9,7 @@ program application (
 	mem 0x00..0xeff;
 ) {
 	lib	pic18.platform;
+	lib microchip.PIC18F14K50.DIO;
 	link{
 		main();
 	}
