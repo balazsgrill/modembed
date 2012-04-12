@@ -8,7 +8,6 @@ package hu.e.compiler.list.provider;
 
 
 import hu.e.compiler.list.ListPackage;
-import hu.e.compiler.list.Severity;
 import hu.e.compiler.list.StatusStep;
 
 import java.util.List;

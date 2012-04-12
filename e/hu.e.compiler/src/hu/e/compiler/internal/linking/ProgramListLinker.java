@@ -9,6 +9,7 @@ import hu.e.compiler.list.LabelReference;
 import hu.e.compiler.list.LabelStep;
 import hu.e.compiler.list.ProgramList;
 import hu.e.compiler.list.ProgramStep;
+import hu.e.compiler.list.Reference;
 import hu.e.compiler.list.SequenceStep;
 import hu.modembed.hexfile.persistence.HexFileResource;
 
@@ -56,7 +57,8 @@ public class ProgramListLinker {
 			int wordbytes = (w/8) + (((w%8)==0)?0:1); 
 			int d = 0;
 			d = (int) s.getCode();
-			for(LabelReference lr : s.getRefs()){
+			for(Reference lr : s.getRefs()){
+				
 				int v = labels.get(lr.getLabel());
 				d += InstructionWordInstance.getItemValue(v, lr.getShift(), lr.getStart(), lr.getSize());
 			}

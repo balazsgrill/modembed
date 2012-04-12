@@ -8,7 +8,6 @@ package hu.e.compiler.list.impl;
 
 import hu.e.compiler.list.ChoiceStep;
 import hu.e.compiler.list.InstructionStep;
-import hu.e.compiler.list.LabelReference;
 import hu.e.compiler.list.LabelStep;
 import hu.e.compiler.list.ListFactory;
 import hu.e.compiler.list.ListPackage;
@@ -26,7 +25,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
