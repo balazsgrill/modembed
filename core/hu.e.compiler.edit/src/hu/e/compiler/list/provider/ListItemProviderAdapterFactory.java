@@ -191,26 +191,26 @@ public class ListItemProviderAdapterFactory extends ListAdapterFactory implement
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link hu.e.compiler.list.LabelReference} instances.
+	 * This keeps track of the one adapter used for all {@link hu.e.compiler.list.Reference} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected LabelReferenceItemProvider labelReferenceItemProvider;
+	protected ReferenceItemProvider referenceItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link hu.e.compiler.list.LabelReference}.
+	 * This creates an adapter for a {@link hu.e.compiler.list.Reference}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createLabelReferenceAdapter() {
-		if (labelReferenceItemProvider == null) {
-			labelReferenceItemProvider = new LabelReferenceItemProvider(this);
+	public Adapter createReferenceAdapter() {
+		if (referenceItemProvider == null) {
+			referenceItemProvider = new ReferenceItemProvider(this);
 		}
 
-		return labelReferenceItemProvider;
+		return referenceItemProvider;
 	}
 
 	/**
@@ -234,6 +234,29 @@ public class ListItemProviderAdapterFactory extends ListAdapterFactory implement
 		}
 
 		return statusStepItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link hu.e.compiler.list.MemoryAssignment} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MemoryAssignmentItemProvider memoryAssignmentItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link hu.e.compiler.list.MemoryAssignment}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMemoryAssignmentAdapter() {
+		if (memoryAssignmentItemProvider == null) {
+			memoryAssignmentItemProvider = new MemoryAssignmentItemProvider(this);
+		}
+
+		return memoryAssignmentItemProvider;
 	}
 
 	/**
@@ -340,8 +363,9 @@ public class ListItemProviderAdapterFactory extends ListAdapterFactory implement
 		if (sequenceStepItemProvider != null) sequenceStepItemProvider.dispose();
 		if (choiceStepItemProvider != null) choiceStepItemProvider.dispose();
 		if (labelStepItemProvider != null) labelStepItemProvider.dispose();
-		if (labelReferenceItemProvider != null) labelReferenceItemProvider.dispose();
+		if (referenceItemProvider != null) referenceItemProvider.dispose();
 		if (statusStepItemProvider != null) statusStepItemProvider.dispose();
+		if (memoryAssignmentItemProvider != null) memoryAssignmentItemProvider.dispose();
 	}
 
 }

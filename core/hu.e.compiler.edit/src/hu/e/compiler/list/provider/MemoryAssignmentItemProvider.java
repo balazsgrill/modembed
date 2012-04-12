@@ -8,13 +8,13 @@ package hu.e.compiler.list.provider;
 
 
 import hu.e.compiler.list.ListPackage;
-import hu.e.compiler.list.Severity;
-import hu.e.compiler.list.StatusStep;
+import hu.e.compiler.list.MemoryAssignment;
 
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -26,13 +26,13 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link hu.e.compiler.list.StatusStep} object.
+ * This is the item provider adapter for a {@link hu.e.compiler.list.MemoryAssignment} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class StatusStepItemProvider
-	extends ProgramStepItemProvider
+public class MemoryAssignmentItemProvider
+	extends ReferableValueItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -45,7 +45,7 @@ public class StatusStepItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public StatusStepItemProvider(AdapterFactory adapterFactory) {
+	public MemoryAssignmentItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -60,82 +60,54 @@ public class StatusStepItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addSeverityPropertyDescriptor(object);
-			addMessagePropertyDescriptor(object);
+			addSizePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Severity feature.
+	 * This adds a property descriptor for the Size feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSeverityPropertyDescriptor(Object object) {
+	protected void addSizePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_StatusStep_severity_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_StatusStep_severity_feature", "_UI_StatusStep_type"),
-				 ListPackage.Literals.STATUS_STEP__SEVERITY,
+				 getString("_UI_MemoryAssignment_size_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MemoryAssignment_size_feature", "_UI_MemoryAssignment_type"),
+				 ListPackage.Literals.MEMORY_ASSIGNMENT__SIZE,
 				 true,
 				 false,
 				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
 				 null,
 				 null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Message feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addMessagePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_StatusStep_message_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_StatusStep_message_feature", "_UI_StatusStep_type"),
-				 ListPackage.Literals.STATUS_STEP__MESSAGE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This returns StatusStep.gif.
+	 * This returns MemoryAssignment.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/StatusStep"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/MemoryAssignment"));
 	}
 
 	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		StatusStep ss = (StatusStep)object;
-		StringBuilder sb = new StringBuilder();
-		sb.append("[");
-		sb.append(ss.getSeverity());
-		sb.append("] ");
-		sb.append(ss.getMessage());
-		return sb.toString();
+		MemoryAssignment memoryAssignment = (MemoryAssignment)object;
+		return getString("_UI_MemoryAssignment_type") + " " + memoryAssignment.getSize();
 	}
 
 	/**
@@ -149,9 +121,8 @@ public class StatusStepItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(StatusStep.class)) {
-			case ListPackage.STATUS_STEP__SEVERITY:
-			case ListPackage.STATUS_STEP__MESSAGE:
+		switch (notification.getFeatureID(MemoryAssignment.class)) {
+			case ListPackage.MEMORY_ASSIGNMENT__SIZE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

@@ -96,12 +96,20 @@ public class ListAdapterFactory extends AdapterFactoryImpl {
 				return createLabelStepAdapter();
 			}
 			@Override
-			public Adapter caseLabelReference(LabelReference object) {
-				return createLabelReferenceAdapter();
+			public Adapter caseReference(Reference object) {
+				return createReferenceAdapter();
 			}
 			@Override
 			public Adapter caseStatusStep(StatusStep object) {
 				return createStatusStepAdapter();
+			}
+			@Override
+			public Adapter caseReferableValue(ReferableValue object) {
+				return createReferableValueAdapter();
+			}
+			@Override
+			public Adapter caseMemoryAssignment(MemoryAssignment object) {
+				return createMemoryAssignmentAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -208,16 +216,16 @@ public class ListAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link hu.e.compiler.list.LabelReference <em>Label Reference</em>}'.
+	 * Creates a new adapter for an object of class '{@link hu.e.compiler.list.Reference <em>Reference</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see hu.e.compiler.list.LabelReference
+	 * @see hu.e.compiler.list.Reference
 	 * @generated
 	 */
-	public Adapter createLabelReferenceAdapter() {
+	public Adapter createReferenceAdapter() {
 		return null;
 	}
 
@@ -232,6 +240,34 @@ public class ListAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createStatusStepAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.e.compiler.list.ReferableValue <em>Referable Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.e.compiler.list.ReferableValue
+	 * @generated
+	 */
+	public Adapter createReferableValueAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.e.compiler.list.MemoryAssignment <em>Memory Assignment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.e.compiler.list.MemoryAssignment
+	 * @generated
+	 */
+	public Adapter createMemoryAssignmentAdapter() {
 		return null;
 	}
 

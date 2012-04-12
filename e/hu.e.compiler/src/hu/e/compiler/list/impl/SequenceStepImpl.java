@@ -7,6 +7,7 @@
 package hu.e.compiler.list.impl;
 
 import hu.e.compiler.list.ListPackage;
+import hu.e.compiler.list.MemoryAssignment;
 import hu.e.compiler.list.ProgramStep;
 import hu.e.compiler.list.SequenceStep;
 
@@ -34,6 +35,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link hu.e.compiler.list.impl.SequenceStepImpl#getName <em>Name</em>}</li>
  *   <li>{@link hu.e.compiler.list.impl.SequenceStepImpl#getSteps <em>Steps</em>}</li>
+ *   <li>{@link hu.e.compiler.list.impl.SequenceStepImpl#getVariables <em>Variables</em>}</li>
  * </ul>
  * </p>
  *
@@ -69,6 +71,16 @@ public class SequenceStepImpl extends ProgramStepImpl implements SequenceStep {
 	 * @ordered
 	 */
 	protected EList<ProgramStep> steps;
+
+	/**
+	 * The cached value of the '{@link #getVariables() <em>Variables</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVariables()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<MemoryAssignment> variables;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -127,11 +139,25 @@ public class SequenceStepImpl extends ProgramStepImpl implements SequenceStep {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<MemoryAssignment> getVariables() {
+		if (variables == null) {
+			variables = new EObjectContainmentEList<MemoryAssignment>(MemoryAssignment.class, this, ListPackage.SEQUENCE_STEP__VARIABLES);
+		}
+		return variables;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case ListPackage.SEQUENCE_STEP__STEPS:
 				return ((InternalEList<?>)getSteps()).basicRemove(otherEnd, msgs);
+			case ListPackage.SEQUENCE_STEP__VARIABLES:
+				return ((InternalEList<?>)getVariables()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -148,6 +174,8 @@ public class SequenceStepImpl extends ProgramStepImpl implements SequenceStep {
 				return getName();
 			case ListPackage.SEQUENCE_STEP__STEPS:
 				return getSteps();
+			case ListPackage.SEQUENCE_STEP__VARIABLES:
+				return getVariables();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -168,6 +196,10 @@ public class SequenceStepImpl extends ProgramStepImpl implements SequenceStep {
 				getSteps().clear();
 				getSteps().addAll((Collection<? extends ProgramStep>)newValue);
 				return;
+			case ListPackage.SEQUENCE_STEP__VARIABLES:
+				getVariables().clear();
+				getVariables().addAll((Collection<? extends MemoryAssignment>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -186,6 +218,9 @@ public class SequenceStepImpl extends ProgramStepImpl implements SequenceStep {
 			case ListPackage.SEQUENCE_STEP__STEPS:
 				getSteps().clear();
 				return;
+			case ListPackage.SEQUENCE_STEP__VARIABLES:
+				getVariables().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -202,6 +237,8 @@ public class SequenceStepImpl extends ProgramStepImpl implements SequenceStep {
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case ListPackage.SEQUENCE_STEP__STEPS:
 				return steps != null && !steps.isEmpty();
+			case ListPackage.SEQUENCE_STEP__VARIABLES:
+				return variables != null && !variables.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

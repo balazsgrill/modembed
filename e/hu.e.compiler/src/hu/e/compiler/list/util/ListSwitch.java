@@ -107,12 +107,13 @@ public class ListSwitch<T> extends Switch<T> {
 				LabelStep labelStep = (LabelStep)theEObject;
 				T result = caseLabelStep(labelStep);
 				if (result == null) result = caseProgramStep(labelStep);
+				if (result == null) result = caseReferableValue(labelStep);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ListPackage.LABEL_REFERENCE: {
-				LabelReference labelReference = (LabelReference)theEObject;
-				T result = caseLabelReference(labelReference);
+			case ListPackage.REFERENCE: {
+				Reference reference = (Reference)theEObject;
+				T result = caseReference(reference);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -120,6 +121,19 @@ public class ListSwitch<T> extends Switch<T> {
 				StatusStep statusStep = (StatusStep)theEObject;
 				T result = caseStatusStep(statusStep);
 				if (result == null) result = caseProgramStep(statusStep);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ListPackage.REFERABLE_VALUE: {
+				ReferableValue referableValue = (ReferableValue)theEObject;
+				T result = caseReferableValue(referableValue);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ListPackage.MEMORY_ASSIGNMENT: {
+				MemoryAssignment memoryAssignment = (MemoryAssignment)theEObject;
+				T result = caseMemoryAssignment(memoryAssignment);
+				if (result == null) result = caseReferableValue(memoryAssignment);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -218,17 +232,17 @@ public class ListSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Label Reference</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Reference</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Label Reference</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Reference</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseLabelReference(LabelReference object) {
+	public T caseReference(Reference object) {
 		return null;
 	}
 
@@ -244,6 +258,36 @@ public class ListSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseStatusStep(StatusStep object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Referable Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Referable Value</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseReferableValue(ReferableValue object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Memory Assignment</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Memory Assignment</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMemoryAssignment(MemoryAssignment object) {
 		return null;
 	}
 

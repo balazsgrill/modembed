@@ -12,8 +12,11 @@ import hu.e.compiler.list.LabelReference;
 import hu.e.compiler.list.LabelStep;
 import hu.e.compiler.list.ListFactory;
 import hu.e.compiler.list.ListPackage;
+import hu.e.compiler.list.MemoryAssignment;
 import hu.e.compiler.list.ProgramList;
 import hu.e.compiler.list.ProgramStep;
+import hu.e.compiler.list.ReferableValue;
+import hu.e.compiler.list.Reference;
 import hu.e.compiler.list.SequenceStep;
 import hu.e.compiler.list.Severity;
 import hu.e.compiler.list.StatusStep;
@@ -80,7 +83,7 @@ public class ListPackageImpl extends EPackageImpl implements ListPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass labelReferenceEClass = null;
+	private EClass referenceEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -88,6 +91,20 @@ public class ListPackageImpl extends EPackageImpl implements ListPackage {
 	 * @generated
 	 */
 	private EClass statusStepEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass referableValueEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass memoryAssignmentEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -261,6 +278,15 @@ public class ListPackageImpl extends EPackageImpl implements ListPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getSequenceStep_Variables() {
+		return (EReference)sequenceStepEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getChoiceStep() {
 		return choiceStepEClass;
 	}
@@ -279,8 +305,8 @@ public class ListPackageImpl extends EPackageImpl implements ListPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getLabelReference() {
-		return labelReferenceEClass;
+	public EClass getReference() {
+		return referenceEClass;
 	}
 
 	/**
@@ -288,8 +314,8 @@ public class ListPackageImpl extends EPackageImpl implements ListPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getLabelReference_Shift() {
-		return (EAttribute)labelReferenceEClass.getEStructuralFeatures().get(0);
+	public EAttribute getReference_Shift() {
+		return (EAttribute)referenceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -297,8 +323,8 @@ public class ListPackageImpl extends EPackageImpl implements ListPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getLabelReference_Size() {
-		return (EAttribute)labelReferenceEClass.getEStructuralFeatures().get(1);
+	public EAttribute getReference_Size() {
+		return (EAttribute)referenceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -306,8 +332,8 @@ public class ListPackageImpl extends EPackageImpl implements ListPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getLabelReference_Label() {
-		return (EReference)labelReferenceEClass.getEStructuralFeatures().get(2);
+	public EReference getReference_Value() {
+		return (EReference)referenceEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -315,8 +341,8 @@ public class ListPackageImpl extends EPackageImpl implements ListPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getLabelReference_Start() {
-		return (EAttribute)labelReferenceEClass.getEStructuralFeatures().get(3);
+	public EAttribute getReference_Start() {
+		return (EAttribute)referenceEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -344,6 +370,33 @@ public class ListPackageImpl extends EPackageImpl implements ListPackage {
 	 */
 	public EAttribute getStatusStep_Message() {
 		return (EAttribute)statusStepEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getReferableValue() {
+		return referableValueEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getMemoryAssignment() {
+		return memoryAssignmentEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getMemoryAssignment_Size() {
+		return (EAttribute)memoryAssignmentEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -397,20 +450,26 @@ public class ListPackageImpl extends EPackageImpl implements ListPackage {
 		sequenceStepEClass = createEClass(SEQUENCE_STEP);
 		createEAttribute(sequenceStepEClass, SEQUENCE_STEP__NAME);
 		createEReference(sequenceStepEClass, SEQUENCE_STEP__STEPS);
+		createEReference(sequenceStepEClass, SEQUENCE_STEP__VARIABLES);
 
 		choiceStepEClass = createEClass(CHOICE_STEP);
 
 		labelStepEClass = createEClass(LABEL_STEP);
 
-		labelReferenceEClass = createEClass(LABEL_REFERENCE);
-		createEAttribute(labelReferenceEClass, LABEL_REFERENCE__SHIFT);
-		createEAttribute(labelReferenceEClass, LABEL_REFERENCE__SIZE);
-		createEReference(labelReferenceEClass, LABEL_REFERENCE__LABEL);
-		createEAttribute(labelReferenceEClass, LABEL_REFERENCE__START);
+		referenceEClass = createEClass(REFERENCE);
+		createEAttribute(referenceEClass, REFERENCE__SHIFT);
+		createEAttribute(referenceEClass, REFERENCE__SIZE);
+		createEReference(referenceEClass, REFERENCE__VALUE);
+		createEAttribute(referenceEClass, REFERENCE__START);
 
 		statusStepEClass = createEClass(STATUS_STEP);
 		createEAttribute(statusStepEClass, STATUS_STEP__SEVERITY);
 		createEAttribute(statusStepEClass, STATUS_STEP__MESSAGE);
+
+		referableValueEClass = createEClass(REFERABLE_VALUE);
+
+		memoryAssignmentEClass = createEClass(MEMORY_ASSIGNMENT);
+		createEAttribute(memoryAssignmentEClass, MEMORY_ASSIGNMENT__SIZE);
 
 		// Create enums
 		severityEEnum = createEEnum(SEVERITY);
@@ -448,7 +507,9 @@ public class ListPackageImpl extends EPackageImpl implements ListPackage {
 		sequenceStepEClass.getESuperTypes().add(this.getProgramStep());
 		choiceStepEClass.getESuperTypes().add(this.getProgramStep());
 		labelStepEClass.getESuperTypes().add(this.getProgramStep());
+		labelStepEClass.getESuperTypes().add(this.getReferableValue());
 		statusStepEClass.getESuperTypes().add(this.getProgramStep());
+		memoryAssignmentEClass.getESuperTypes().add(this.getReferableValue());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(programListEClass, ProgramList.class, "ProgramList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -459,26 +520,32 @@ public class ListPackageImpl extends EPackageImpl implements ListPackage {
 
 		initEClass(instructionStepEClass, InstructionStep.class, "InstructionStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getInstructionStep_Code(), ecorePackage.getELong(), "code", null, 0, 1, InstructionStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getInstructionStep_Refs(), this.getLabelReference(), null, "refs", null, 0, -1, InstructionStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInstructionStep_Refs(), this.getReference(), null, "refs", null, 0, -1, InstructionStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getInstructionStep_Width(), ecorePackage.getEInt(), "width", null, 0, 1, InstructionStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sequenceStepEClass, SequenceStep.class, "SequenceStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSequenceStep_Name(), ecorePackage.getEString(), "name", null, 0, 1, SequenceStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSequenceStep_Steps(), this.getProgramStep(), null, "steps", null, 0, -1, SequenceStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSequenceStep_Variables(), this.getMemoryAssignment(), null, "variables", null, 0, -1, SequenceStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(choiceStepEClass, ChoiceStep.class, "ChoiceStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(labelStepEClass, LabelStep.class, "LabelStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(labelReferenceEClass, LabelReference.class, "LabelReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getLabelReference_Shift(), ecorePackage.getEInt(), "shift", null, 0, 1, LabelReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getLabelReference_Size(), ecorePackage.getEInt(), "size", null, 0, 1, LabelReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getLabelReference_Label(), this.getLabelStep(), null, "label", null, 0, 1, LabelReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getLabelReference_Start(), ecorePackage.getEInt(), "start", null, 0, 1, LabelReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(referenceEClass, Reference.class, "Reference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getReference_Shift(), ecorePackage.getEInt(), "shift", null, 0, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getReference_Size(), ecorePackage.getEInt(), "size", null, 0, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getReference_Value(), this.getReferableValue(), null, "value", null, 0, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getReference_Start(), ecorePackage.getEInt(), "start", null, 0, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(statusStepEClass, StatusStep.class, "StatusStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStatusStep_Severity(), this.getSeverity(), "severity", null, 0, 1, StatusStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStatusStep_Message(), ecorePackage.getEString(), "message", null, 0, 1, StatusStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(referableValueEClass, ReferableValue.class, "ReferableValue", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(memoryAssignmentEClass, MemoryAssignment.class, "MemoryAssignment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getMemoryAssignment_Size(), ecorePackage.getEInt(), "size", null, 0, 1, MemoryAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(severityEEnum, Severity.class, "Severity");

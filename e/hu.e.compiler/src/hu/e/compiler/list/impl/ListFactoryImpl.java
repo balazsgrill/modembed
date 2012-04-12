@@ -66,8 +66,9 @@ public class ListFactoryImpl extends EFactoryImpl implements ListFactory {
 			case ListPackage.SEQUENCE_STEP: return createSequenceStep();
 			case ListPackage.CHOICE_STEP: return createChoiceStep();
 			case ListPackage.LABEL_STEP: return createLabelStep();
-			case ListPackage.LABEL_REFERENCE: return createLabelReference();
+			case ListPackage.REFERENCE: return createReference();
 			case ListPackage.STATUS_STEP: return createStatusStep();
+			case ListPackage.MEMORY_ASSIGNMENT: return createMemoryAssignment();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -158,9 +159,9 @@ public class ListFactoryImpl extends EFactoryImpl implements ListFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public LabelReference createLabelReference() {
-		LabelReferenceImpl labelReference = new LabelReferenceImpl();
-		return labelReference;
+	public Reference createReference() {
+		ReferenceImpl reference = new ReferenceImpl();
+		return reference;
 	}
 
 	/**
@@ -171,6 +172,16 @@ public class ListFactoryImpl extends EFactoryImpl implements ListFactory {
 	public StatusStep createStatusStep() {
 		StatusStepImpl statusStep = new StatusStepImpl();
 		return statusStep;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MemoryAssignment createMemoryAssignment() {
+		MemoryAssignmentImpl memoryAssignment = new MemoryAssignmentImpl();
+		return memoryAssignment;
 	}
 
 	/**

@@ -71,13 +71,13 @@ public interface ListFactory extends EFactory {
 	LabelStep createLabelStep();
 
 	/**
-	 * Returns a new object of class '<em>Label Reference</em>'.
+	 * Returns a new object of class '<em>Reference</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Label Reference</em>'.
+	 * @return a new object of class '<em>Reference</em>'.
 	 * @generated
 	 */
-	LabelReference createLabelReference();
+	Reference createReference();
 
 	/**
 	 * Returns a new object of class '<em>Status Step</em>'.
@@ -87,6 +87,15 @@ public interface ListFactory extends EFactory {
 	 * @generated
 	 */
 	StatusStep createStatusStep();
+
+	/**
+	 * Returns a new object of class '<em>Memory Assignment</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Memory Assignment</em>'.
+	 * @generated
+	 */
+	MemoryAssignment createMemoryAssignment();
 
 	/**
 	 * Returns the package supported by this factory.

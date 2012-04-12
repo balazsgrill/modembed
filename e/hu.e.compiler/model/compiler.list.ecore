@@ -11,7 +11,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="ProgramStep" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="InstructionStep" eSuperTypes="#//ProgramStep">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="refs" upperBound="-1" eType="#//LabelReference"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refs" upperBound="-1" eType="#//Reference"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
@@ -19,13 +19,15 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="steps" upperBound="-1"
         eType="#//ProgramStep" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variables" upperBound="-1"
+        eType="#//MemoryAssignment" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ChoiceStep" eSuperTypes="#//ProgramStep"/>
-  <eClassifiers xsi:type="ecore:EClass" name="LabelStep" eSuperTypes="#//ProgramStep"/>
-  <eClassifiers xsi:type="ecore:EClass" name="LabelReference">
+  <eClassifiers xsi:type="ecore:EClass" name="LabelStep" eSuperTypes="#//ProgramStep #//ReferableValue"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Reference">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="shift" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="label" eType="#//LabelStep"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//ReferableValue"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="start" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StatusStep" eSuperTypes="#//ProgramStep">
@@ -37,5 +39,9 @@
     <eLiterals name="INFO" value="2"/>
     <eLiterals name="WARNING" value="1"/>
     <eLiterals name="ERROR"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReferableValue" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MemoryAssignment" eSuperTypes="#//ReferableValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
 </ecore:EPackage>

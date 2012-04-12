@@ -17,5 +17,5 @@ package hu.e.compiler.list;
  * @model
  * @generated
  */
-public interface LabelStep extends ProgramStep {
+public interface LabelStep extends ProgramStep, ReferableValue {
 } // LabelStep

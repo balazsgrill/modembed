@@ -18,6 +18,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link hu.e.compiler.list.SequenceStep#getName <em>Name</em>}</li>
  *   <li>{@link hu.e.compiler.list.SequenceStep#getSteps <em>Steps</em>}</li>
+ *   <li>{@link hu.e.compiler.list.SequenceStep#getVariables <em>Variables</em>}</li>
  * </ul>
  * </p>
  *
@@ -67,5 +68,21 @@ public interface SequenceStep extends ProgramStep {
 	 * @generated
 	 */
 	EList<ProgramStep> getSteps();
+
+	/**
+	 * Returns the value of the '<em><b>Variables</b></em>' containment reference list.
+	 * The list contents are of type {@link hu.e.compiler.list.MemoryAssignment}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Variables</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Variables</em>' containment reference list.
+	 * @see hu.e.compiler.list.ListPackage#getSequenceStep_Variables()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<MemoryAssignment> getVariables();
 
 } // SequenceStep

@@ -10,6 +10,7 @@ import hu.e.compiler.list.InstructionStep;
 import hu.e.compiler.list.LabelReference;
 import hu.e.compiler.list.ListPackage;
 
+import hu.e.compiler.list.Reference;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -69,7 +70,7 @@ public class InstructionStepImpl extends ProgramStepImpl implements InstructionS
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<LabelReference> refs;
+	protected EList<Reference> refs;
 
 	/**
 	 * The default value of the '{@link #getWidth() <em>Width</em>}' attribute.
@@ -136,9 +137,9 @@ public class InstructionStepImpl extends ProgramStepImpl implements InstructionS
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<LabelReference> getRefs() {
+	public EList<Reference> getRefs() {
 		if (refs == null) {
-			refs = new EObjectContainmentEList<LabelReference>(LabelReference.class, this, ListPackage.INSTRUCTION_STEP__REFS);
+			refs = new EObjectContainmentEList<Reference>(Reference.class, this, ListPackage.INSTRUCTION_STEP__REFS);
 		}
 		return refs;
 	}
@@ -210,7 +211,7 @@ public class InstructionStepImpl extends ProgramStepImpl implements InstructionS
 				return;
 			case ListPackage.INSTRUCTION_STEP__REFS:
 				getRefs().clear();
-				getRefs().addAll((Collection<? extends LabelReference>)newValue);
+				getRefs().addAll((Collection<? extends Reference>)newValue);
 				return;
 			case ListPackage.INSTRUCTION_STEP__WIDTH:
 				setWidth((Integer)newValue);

@@ -191,13 +191,22 @@ public interface ListPackage extends EPackage {
 	int SEQUENCE_STEP__STEPS = PROGRAM_STEP_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Variables</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEQUENCE_STEP__VARIABLES = PROGRAM_STEP_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Sequence Step</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SEQUENCE_STEP_FEATURE_COUNT = PROGRAM_STEP_FEATURE_COUNT + 2;
+	int SEQUENCE_STEP_FEATURE_COUNT = PROGRAM_STEP_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link hu.e.compiler.list.impl.ChoiceStepImpl <em>Choice Step</em>}' class.
@@ -238,14 +247,14 @@ public interface ListPackage extends EPackage {
 	int LABEL_STEP_FEATURE_COUNT = PROGRAM_STEP_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link hu.e.compiler.list.impl.LabelReferenceImpl <em>Label Reference</em>}' class.
+	 * The meta object id for the '{@link hu.e.compiler.list.impl.ReferenceImpl <em>Reference</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see hu.e.compiler.list.impl.LabelReferenceImpl
-	 * @see hu.e.compiler.list.impl.ListPackageImpl#getLabelReference()
+	 * @see hu.e.compiler.list.impl.ReferenceImpl
+	 * @see hu.e.compiler.list.impl.ListPackageImpl#getReference()
 	 * @generated
 	 */
-	int LABEL_REFERENCE = 6;
+	int REFERENCE = 6;
 
 	/**
 	 * The feature id for the '<em><b>Shift</b></em>' attribute.
@@ -254,7 +263,7 @@ public interface ListPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LABEL_REFERENCE__SHIFT = 0;
+	int REFERENCE__SHIFT = 0;
 
 	/**
 	 * The feature id for the '<em><b>Size</b></em>' attribute.
@@ -263,16 +272,16 @@ public interface ListPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LABEL_REFERENCE__SIZE = 1;
+	int REFERENCE__SIZE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Label</b></em>' reference.
+	 * The feature id for the '<em><b>Value</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LABEL_REFERENCE__LABEL = 2;
+	int REFERENCE__VALUE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Start</b></em>' attribute.
@@ -281,16 +290,16 @@ public interface ListPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LABEL_REFERENCE__START = 3;
+	int REFERENCE__START = 3;
 
 	/**
-	 * The number of structural features of the '<em>Label Reference</em>' class.
+	 * The number of structural features of the '<em>Reference</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LABEL_REFERENCE_FEATURE_COUNT = 4;
+	int REFERENCE_FEATURE_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link hu.e.compiler.list.impl.StatusStepImpl <em>Status Step</em>}' class.
@@ -330,6 +339,53 @@ public interface ListPackage extends EPackage {
 	int STATUS_STEP_FEATURE_COUNT = PROGRAM_STEP_FEATURE_COUNT + 2;
 
 	/**
+	 * The meta object id for the '{@link hu.e.compiler.list.impl.ReferableValueImpl <em>Referable Value</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.e.compiler.list.impl.ReferableValueImpl
+	 * @see hu.e.compiler.list.impl.ListPackageImpl#getReferableValue()
+	 * @generated
+	 */
+	int REFERABLE_VALUE = 8;
+
+	/**
+	 * The number of structural features of the '<em>Referable Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFERABLE_VALUE_FEATURE_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link hu.e.compiler.list.impl.MemoryAssignmentImpl <em>Memory Assignment</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.e.compiler.list.impl.MemoryAssignmentImpl
+	 * @see hu.e.compiler.list.impl.ListPackageImpl#getMemoryAssignment()
+	 * @generated
+	 */
+	int MEMORY_ASSIGNMENT = 9;
+
+	/**
+	 * The feature id for the '<em><b>Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEMORY_ASSIGNMENT__SIZE = REFERABLE_VALUE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Memory Assignment</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEMORY_ASSIGNMENT_FEATURE_COUNT = REFERABLE_VALUE_FEATURE_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link hu.e.compiler.list.Severity <em>Severity</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -337,7 +393,7 @@ public interface ListPackage extends EPackage {
 	 * @see hu.e.compiler.list.impl.ListPackageImpl#getSeverity()
 	 * @generated
 	 */
-	int SEVERITY = 8;
+	int SEVERITY = 10;
 
 
 	/**
@@ -458,6 +514,17 @@ public interface ListPackage extends EPackage {
 	EReference getSequenceStep_Steps();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link hu.e.compiler.list.SequenceStep#getVariables <em>Variables</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Variables</em>'.
+	 * @see hu.e.compiler.list.SequenceStep#getVariables()
+	 * @see #getSequenceStep()
+	 * @generated
+	 */
+	EReference getSequenceStep_Variables();
+
+	/**
 	 * Returns the meta object for class '{@link hu.e.compiler.list.ChoiceStep <em>Choice Step</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -478,58 +545,58 @@ public interface ListPackage extends EPackage {
 	EClass getLabelStep();
 
 	/**
-	 * Returns the meta object for class '{@link hu.e.compiler.list.LabelReference <em>Label Reference</em>}'.
+	 * Returns the meta object for class '{@link hu.e.compiler.list.Reference <em>Reference</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Label Reference</em>'.
-	 * @see hu.e.compiler.list.LabelReference
+	 * @return the meta object for class '<em>Reference</em>'.
+	 * @see hu.e.compiler.list.Reference
 	 * @generated
 	 */
-	EClass getLabelReference();
+	EClass getReference();
 
 	/**
-	 * Returns the meta object for the attribute '{@link hu.e.compiler.list.LabelReference#getShift <em>Shift</em>}'.
+	 * Returns the meta object for the attribute '{@link hu.e.compiler.list.Reference#getShift <em>Shift</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Shift</em>'.
-	 * @see hu.e.compiler.list.LabelReference#getShift()
-	 * @see #getLabelReference()
+	 * @see hu.e.compiler.list.Reference#getShift()
+	 * @see #getReference()
 	 * @generated
 	 */
-	EAttribute getLabelReference_Shift();
+	EAttribute getReference_Shift();
 
 	/**
-	 * Returns the meta object for the attribute '{@link hu.e.compiler.list.LabelReference#getSize <em>Size</em>}'.
+	 * Returns the meta object for the attribute '{@link hu.e.compiler.list.Reference#getSize <em>Size</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Size</em>'.
-	 * @see hu.e.compiler.list.LabelReference#getSize()
-	 * @see #getLabelReference()
+	 * @see hu.e.compiler.list.Reference#getSize()
+	 * @see #getReference()
 	 * @generated
 	 */
-	EAttribute getLabelReference_Size();
+	EAttribute getReference_Size();
 
 	/**
-	 * Returns the meta object for the reference '{@link hu.e.compiler.list.LabelReference#getLabel <em>Label</em>}'.
+	 * Returns the meta object for the reference '{@link hu.e.compiler.list.Reference#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Label</em>'.
-	 * @see hu.e.compiler.list.LabelReference#getLabel()
-	 * @see #getLabelReference()
+	 * @return the meta object for the reference '<em>Value</em>'.
+	 * @see hu.e.compiler.list.Reference#getValue()
+	 * @see #getReference()
 	 * @generated
 	 */
-	EReference getLabelReference_Label();
+	EReference getReference_Value();
 
 	/**
-	 * Returns the meta object for the attribute '{@link hu.e.compiler.list.LabelReference#getStart <em>Start</em>}'.
+	 * Returns the meta object for the attribute '{@link hu.e.compiler.list.Reference#getStart <em>Start</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Start</em>'.
-	 * @see hu.e.compiler.list.LabelReference#getStart()
-	 * @see #getLabelReference()
+	 * @see hu.e.compiler.list.Reference#getStart()
+	 * @see #getReference()
 	 * @generated
 	 */
-	EAttribute getLabelReference_Start();
+	EAttribute getReference_Start();
 
 	/**
 	 * Returns the meta object for class '{@link hu.e.compiler.list.StatusStep <em>Status Step</em>}'.
@@ -562,6 +629,37 @@ public interface ListPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getStatusStep_Message();
+
+	/**
+	 * Returns the meta object for class '{@link hu.e.compiler.list.ReferableValue <em>Referable Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Referable Value</em>'.
+	 * @see hu.e.compiler.list.ReferableValue
+	 * @generated
+	 */
+	EClass getReferableValue();
+
+	/**
+	 * Returns the meta object for class '{@link hu.e.compiler.list.MemoryAssignment <em>Memory Assignment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Memory Assignment</em>'.
+	 * @see hu.e.compiler.list.MemoryAssignment
+	 * @generated
+	 */
+	EClass getMemoryAssignment();
+
+	/**
+	 * Returns the meta object for the attribute '{@link hu.e.compiler.list.MemoryAssignment#getSize <em>Size</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Size</em>'.
+	 * @see hu.e.compiler.list.MemoryAssignment#getSize()
+	 * @see #getMemoryAssignment()
+	 * @generated
+	 */
+	EAttribute getMemoryAssignment_Size();
 
 	/**
 	 * Returns the meta object for enum '{@link hu.e.compiler.list.Severity <em>Severity</em>}'.
@@ -692,6 +790,14 @@ public interface ListPackage extends EPackage {
 		EReference SEQUENCE_STEP__STEPS = eINSTANCE.getSequenceStep_Steps();
 
 		/**
+		 * The meta object literal for the '<em><b>Variables</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SEQUENCE_STEP__VARIABLES = eINSTANCE.getSequenceStep_Variables();
+
+		/**
 		 * The meta object literal for the '{@link hu.e.compiler.list.impl.ChoiceStepImpl <em>Choice Step</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -712,14 +818,14 @@ public interface ListPackage extends EPackage {
 		EClass LABEL_STEP = eINSTANCE.getLabelStep();
 
 		/**
-		 * The meta object literal for the '{@link hu.e.compiler.list.impl.LabelReferenceImpl <em>Label Reference</em>}' class.
+		 * The meta object literal for the '{@link hu.e.compiler.list.impl.ReferenceImpl <em>Reference</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see hu.e.compiler.list.impl.LabelReferenceImpl
-		 * @see hu.e.compiler.list.impl.ListPackageImpl#getLabelReference()
+		 * @see hu.e.compiler.list.impl.ReferenceImpl
+		 * @see hu.e.compiler.list.impl.ListPackageImpl#getReference()
 		 * @generated
 		 */
-		EClass LABEL_REFERENCE = eINSTANCE.getLabelReference();
+		EClass REFERENCE = eINSTANCE.getReference();
 
 		/**
 		 * The meta object literal for the '<em><b>Shift</b></em>' attribute feature.
@@ -727,7 +833,7 @@ public interface ListPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute LABEL_REFERENCE__SHIFT = eINSTANCE.getLabelReference_Shift();
+		EAttribute REFERENCE__SHIFT = eINSTANCE.getReference_Shift();
 
 		/**
 		 * The meta object literal for the '<em><b>Size</b></em>' attribute feature.
@@ -735,15 +841,15 @@ public interface ListPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute LABEL_REFERENCE__SIZE = eINSTANCE.getLabelReference_Size();
+		EAttribute REFERENCE__SIZE = eINSTANCE.getReference_Size();
 
 		/**
-		 * The meta object literal for the '<em><b>Label</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Value</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference LABEL_REFERENCE__LABEL = eINSTANCE.getLabelReference_Label();
+		EReference REFERENCE__VALUE = eINSTANCE.getReference_Value();
 
 		/**
 		 * The meta object literal for the '<em><b>Start</b></em>' attribute feature.
@@ -751,7 +857,7 @@ public interface ListPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute LABEL_REFERENCE__START = eINSTANCE.getLabelReference_Start();
+		EAttribute REFERENCE__START = eINSTANCE.getReference_Start();
 
 		/**
 		 * The meta object literal for the '{@link hu.e.compiler.list.impl.StatusStepImpl <em>Status Step</em>}' class.
@@ -778,6 +884,34 @@ public interface ListPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute STATUS_STEP__MESSAGE = eINSTANCE.getStatusStep_Message();
+
+		/**
+		 * The meta object literal for the '{@link hu.e.compiler.list.impl.ReferableValueImpl <em>Referable Value</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.e.compiler.list.impl.ReferableValueImpl
+		 * @see hu.e.compiler.list.impl.ListPackageImpl#getReferableValue()
+		 * @generated
+		 */
+		EClass REFERABLE_VALUE = eINSTANCE.getReferableValue();
+
+		/**
+		 * The meta object literal for the '{@link hu.e.compiler.list.impl.MemoryAssignmentImpl <em>Memory Assignment</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.e.compiler.list.impl.MemoryAssignmentImpl
+		 * @see hu.e.compiler.list.impl.ListPackageImpl#getMemoryAssignment()
+		 * @generated
+		 */
+		EClass MEMORY_ASSIGNMENT = eINSTANCE.getMemoryAssignment();
+
+		/**
+		 * The meta object literal for the '<em><b>Size</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MEMORY_ASSIGNMENT__SIZE = eINSTANCE.getMemoryAssignment_Size();
 
 		/**
 		 * The meta object literal for the '{@link hu.e.compiler.list.Severity <em>Severity</em>}' enum.

@@ -103,6 +103,7 @@ public class SequenceStepItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(ListPackage.Literals.SEQUENCE_STEP__STEPS);
+			childrenFeatures.add(ListPackage.Literals.SEQUENCE_STEP__VARIABLES);
 		}
 		return childrenFeatures;
 	}
@@ -161,6 +162,7 @@ public class SequenceStepItemProvider
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case ListPackage.SEQUENCE_STEP__STEPS:
+			case ListPackage.SEQUENCE_STEP__VARIABLES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
