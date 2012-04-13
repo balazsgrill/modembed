@@ -1,3 +1,6 @@
+/*
+ * Mid-range (PIC16) instruction set
+ */
 library microchip.pic16;
 
 use e.platform;

@@ -4,26 +4,65 @@
     <steps xsi:type="lst:SequenceStep">
       <steps xsi:type="lst:SequenceStep" name="test.main">
         <steps xsi:type="lst:SequenceStep">
-          <steps xsi:type="lst:SequenceStep" name="pic18.platform.u8.set_u8">
-            <steps xsi:type="lst:SequenceStep">
+          <steps xsi:type="lst:SequenceStep" name="SET(hu.e.parser.eSyntax.impl.RefTypeDefImpl@10fa836@4051, 80)">
+            <steps xsi:type="lst:SequenceStep" name="pic18.platform.u8.set_u8">
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="0"/>
                   <steps xsi:type="lst:SequenceStep">
-                    <steps xsi:type="lst:SequenceStep" name="microchip.pic18.MOVLW">
-                      <steps xsi:type="lst:SequenceStep">
-                        <steps xsi:type="lst:InstructionStep" code="3664" width="16"/>
+                    <steps xsi:type="lst:SequenceStep" name="0"/>
+                    <steps xsi:type="lst:SequenceStep">
+                      <steps xsi:type="lst:SequenceStep" name="microchip.pic18.MOVLW">
+                        <steps xsi:type="lst:SequenceStep">
+                          <steps xsi:type="lst:InstructionStep" code="3664" width="16"/>
+                        </steps>
+                      </steps>
+                      <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aMOVWF">
+                        <steps xsi:type="lst:SequenceStep">
+                          <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
+                            <steps xsi:type="lst:SequenceStep">
+                              <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                              <steps xsi:type="lst:SequenceStep" name="0">
+                                <steps xsi:type="lst:SequenceStep" name="1"/>
+                                <steps xsi:type="lst:SequenceStep" name="0"/>
+                              </steps>
+                              <steps xsi:type="lst:SequenceStep"/>
+                            </steps>
+                          </steps>
+                          <steps xsi:type="lst:SequenceStep" name="microchip.pic18.MOVWF">
+                            <steps xsi:type="lst:SequenceStep">
+                              <steps xsi:type="lst:InstructionStep" code="28371" width="16"/>
+                            </steps>
+                          </steps>
+                        </steps>
                       </steps>
                     </steps>
-                    <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aMOVWF">
+                  </steps>
+                </steps>
+              </steps>
+            </steps>
+          </steps>
+          <steps xsi:type="lst:SequenceStep" name="SET(hu.e.parser.eSyntax.impl.RefTypeDefImpl@123a01f@3966, 0)">
+            <steps xsi:type="lst:SequenceStep" name="pic18.platform.u8.set_u8">
+              <steps xsi:type="lst:SequenceStep">
+                <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="1"/>
+                  <steps xsi:type="lst:SequenceStep">
+                    <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aCLRF">
                       <steps xsi:type="lst:SequenceStep">
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                           <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                            <steps xsi:type="lst:SequenceStep" name="0">
+                              <steps xsi:type="lst:SequenceStep" name="1"/>
+                              <steps xsi:type="lst:SequenceStep" name="0"/>
+                            </steps>
                             <steps xsi:type="lst:SequenceStep"/>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.MOVWF">
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.CLRF">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:InstructionStep" code="28371" width="16"/>
+                            <steps xsi:type="lst:InstructionStep" code="27262" width="16"/>
                           </steps>
                         </steps>
                       </steps>
@@ -33,197 +72,242 @@
               </steps>
             </steps>
           </steps>
-          <steps xsi:type="lst:SequenceStep" name="pic18.platform.u8.set_u8">
-            <steps xsi:type="lst:SequenceStep">
+          <steps xsi:type="lst:SequenceStep" name="SET(hu.e.parser.eSyntax.impl.RefTypeDefImpl@100d8d8@3967, 0)">
+            <steps xsi:type="lst:SequenceStep" name="pic18.platform.u8.set_u8">
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aCLRF">
-                    <steps xsi:type="lst:SequenceStep">
-                      <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
-                        <steps xsi:type="lst:SequenceStep">
-                          <steps xsi:type="lst:SequenceStep"/>
-                        </steps>
-                      </steps>
-                      <steps xsi:type="lst:SequenceStep" name="microchip.pic18.CLRF">
-                        <steps xsi:type="lst:SequenceStep">
-                          <steps xsi:type="lst:InstructionStep" code="27262" width="16"/>
-                        </steps>
-                      </steps>
-                    </steps>
-                  </steps>
-                </steps>
-              </steps>
-            </steps>
-          </steps>
-          <steps xsi:type="lst:SequenceStep" name="pic18.platform.u8.set_u8">
-            <steps xsi:type="lst:SequenceStep">
-              <steps xsi:type="lst:SequenceStep">
-                <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aCLRF">
-                    <steps xsi:type="lst:SequenceStep">
-                      <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
-                        <steps xsi:type="lst:SequenceStep">
-                          <steps xsi:type="lst:SequenceStep"/>
-                        </steps>
-                      </steps>
-                      <steps xsi:type="lst:SequenceStep" name="microchip.pic18.CLRF">
-                        <steps xsi:type="lst:SequenceStep">
-                          <steps xsi:type="lst:InstructionStep" code="27263" width="16"/>
-                        </steps>
-                      </steps>
-                    </steps>
-                  </steps>
-                </steps>
-              </steps>
-            </steps>
-          </steps>
-          <steps xsi:type="lst:SequenceStep" name="pic18.platform.u8.set_u8">
-            <steps xsi:type="lst:SequenceStep">
-              <steps xsi:type="lst:SequenceStep">
-                <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aCLRF">
-                    <steps xsi:type="lst:SequenceStep">
-                      <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
-                        <steps xsi:type="lst:SequenceStep">
-                          <steps xsi:type="lst:SequenceStep"/>
-                        </steps>
-                      </steps>
-                      <steps xsi:type="lst:SequenceStep" name="microchip.pic18.CLRF">
-                        <steps xsi:type="lst:SequenceStep">
-                          <steps xsi:type="lst:InstructionStep" code="27284" width="16"/>
-                        </steps>
-                      </steps>
-                    </steps>
-                  </steps>
-                </steps>
-              </steps>
-            </steps>
-          </steps>
-          <steps xsi:type="lst:SequenceStep" name="pic18.platform.u8.set_u8">
-            <steps xsi:type="lst:SequenceStep">
-              <steps xsi:type="lst:SequenceStep">
-                <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aCLRF">
-                    <steps xsi:type="lst:SequenceStep">
-                      <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
-                        <steps xsi:type="lst:SequenceStep">
-                          <steps xsi:type="lst:SequenceStep"/>
-                        </steps>
-                      </steps>
-                      <steps xsi:type="lst:SequenceStep" name="microchip.pic18.CLRF">
-                        <steps xsi:type="lst:SequenceStep">
-                          <steps xsi:type="lst:InstructionStep" code="27266" width="16"/>
-                        </steps>
-                      </steps>
-                    </steps>
-                  </steps>
-                </steps>
-              </steps>
-            </steps>
-          </steps>
-          <steps xsi:type="lst:SequenceStep" name="pic18.platform.u8.set_u8">
-            <steps xsi:type="lst:SequenceStep">
-              <steps xsi:type="lst:SequenceStep">
-                <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aCLRF">
-                    <steps xsi:type="lst:SequenceStep">
-                      <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
-                        <steps xsi:type="lst:SequenceStep">
-                          <steps xsi:type="lst:SequenceStep"/>
-                        </steps>
-                      </steps>
-                      <steps xsi:type="lst:SequenceStep" name="microchip.pic18.CLRF">
-                        <steps xsi:type="lst:SequenceStep">
-                          <steps xsi:type="lst:InstructionStep" code="27275" width="16"/>
-                        </steps>
-                      </steps>
-                    </steps>
-                  </steps>
-                </steps>
-              </steps>
-            </steps>
-          </steps>
-          <steps xsi:type="lst:SequenceStep" name="pic18.platform.u8.set_u8">
-            <steps xsi:type="lst:SequenceStep">
-              <steps xsi:type="lst:SequenceStep">
-                <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aCLRF">
-                    <steps xsi:type="lst:SequenceStep">
-                      <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
-                        <steps xsi:type="lst:SequenceStep">
-                          <steps xsi:type="lst:SequenceStep"/>
-                        </steps>
-                      </steps>
-                      <steps xsi:type="lst:SequenceStep" name="microchip.pic18.CLRF">
-                        <steps xsi:type="lst:SequenceStep">
-                          <steps xsi:type="lst:InstructionStep" code="27265" width="16"/>
-                        </steps>
-                      </steps>
-                    </steps>
-                  </steps>
-                </steps>
-              </steps>
-            </steps>
-          </steps>
-          <steps xsi:type="lst:SequenceStep" name="pic18.platform.u8.set_u8">
-            <steps xsi:type="lst:SequenceStep">
-              <steps xsi:type="lst:SequenceStep">
-                <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aCLRF">
-                    <steps xsi:type="lst:SequenceStep">
-                      <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
-                        <steps xsi:type="lst:SequenceStep">
-                          <steps xsi:type="lst:SequenceStep"/>
-                        </steps>
-                      </steps>
-                      <steps xsi:type="lst:SequenceStep" name="microchip.pic18.CLRF">
-                        <steps xsi:type="lst:SequenceStep">
-                          <steps xsi:type="lst:InstructionStep" code="27274" width="16"/>
-                        </steps>
-                      </steps>
-                    </steps>
-                  </steps>
-                </steps>
-              </steps>
-            </steps>
-          </steps>
-          <steps xsi:type="lst:SequenceStep" name="pic18.platform.u8.set_u8">
-            <steps xsi:type="lst:SequenceStep">
-              <steps xsi:type="lst:SequenceStep">
-                <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aCLRF">
-                    <steps xsi:type="lst:SequenceStep">
-                      <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
-                        <steps xsi:type="lst:SequenceStep">
-                          <steps xsi:type="lst:SequenceStep"/>
-                        </steps>
-                      </steps>
-                      <steps xsi:type="lst:SequenceStep" name="microchip.pic18.CLRF">
-                        <steps xsi:type="lst:SequenceStep">
-                          <steps xsi:type="lst:InstructionStep" code="27283" width="16"/>
-                        </steps>
-                      </steps>
-                    </steps>
-                  </steps>
-                </steps>
-              </steps>
-            </steps>
-          </steps>
-          <steps xsi:type="lst:SequenceStep" name="pic18.platform.u8.set_u8">
-            <steps xsi:type="lst:SequenceStep">
-              <steps xsi:type="lst:SequenceStep">
-                <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="1"/>
                   <steps xsi:type="lst:SequenceStep">
-                    <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aSETF">
+                    <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aCLRF">
                       <steps xsi:type="lst:SequenceStep">
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                           <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                            <steps xsi:type="lst:SequenceStep" name="0">
+                              <steps xsi:type="lst:SequenceStep" name="1"/>
+                              <steps xsi:type="lst:SequenceStep" name="0"/>
+                            </steps>
                             <steps xsi:type="lst:SequenceStep"/>
                           </steps>
                         </steps>
-                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.SETF">
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.CLRF">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:InstructionStep" code="26624" width="16"/>
+                            <steps xsi:type="lst:InstructionStep" code="27263" width="16"/>
+                          </steps>
+                        </steps>
+                      </steps>
+                    </steps>
+                  </steps>
+                </steps>
+              </steps>
+            </steps>
+          </steps>
+          <steps xsi:type="lst:SequenceStep" name="SET(hu.e.parser.eSyntax.impl.RefTypeDefImpl@10b8772@3988, 0)">
+            <steps xsi:type="lst:SequenceStep" name="pic18.platform.u8.set_u8">
+              <steps xsi:type="lst:SequenceStep">
+                <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="1"/>
+                  <steps xsi:type="lst:SequenceStep">
+                    <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aCLRF">
+                      <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
+                          <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                            <steps xsi:type="lst:SequenceStep" name="0">
+                              <steps xsi:type="lst:SequenceStep" name="1"/>
+                              <steps xsi:type="lst:SequenceStep" name="0"/>
+                            </steps>
+                            <steps xsi:type="lst:SequenceStep"/>
+                          </steps>
+                        </steps>
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.CLRF">
+                          <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:InstructionStep" code="27284" width="16"/>
+                          </steps>
+                        </steps>
+                      </steps>
+                    </steps>
+                  </steps>
+                </steps>
+              </steps>
+            </steps>
+          </steps>
+          <steps xsi:type="lst:SequenceStep" name="SET(hu.e.parser.eSyntax.impl.RefTypeDefImpl@143938e@3970, 0)">
+            <steps xsi:type="lst:SequenceStep" name="pic18.platform.u8.set_u8">
+              <steps xsi:type="lst:SequenceStep">
+                <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="1"/>
+                  <steps xsi:type="lst:SequenceStep">
+                    <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aCLRF">
+                      <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
+                          <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                            <steps xsi:type="lst:SequenceStep" name="0">
+                              <steps xsi:type="lst:SequenceStep" name="1"/>
+                              <steps xsi:type="lst:SequenceStep" name="0"/>
+                            </steps>
+                            <steps xsi:type="lst:SequenceStep"/>
+                          </steps>
+                        </steps>
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.CLRF">
+                          <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:InstructionStep" code="27266" width="16"/>
+                          </steps>
+                        </steps>
+                      </steps>
+                    </steps>
+                  </steps>
+                </steps>
+              </steps>
+            </steps>
+          </steps>
+          <steps xsi:type="lst:SequenceStep" name="SET(hu.e.parser.eSyntax.impl.RefTypeDefImpl@11b53af@3979, 0)">
+            <steps xsi:type="lst:SequenceStep" name="pic18.platform.u8.set_u8">
+              <steps xsi:type="lst:SequenceStep">
+                <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="1"/>
+                  <steps xsi:type="lst:SequenceStep">
+                    <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aCLRF">
+                      <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
+                          <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                            <steps xsi:type="lst:SequenceStep" name="0">
+                              <steps xsi:type="lst:SequenceStep" name="1"/>
+                              <steps xsi:type="lst:SequenceStep" name="0"/>
+                            </steps>
+                            <steps xsi:type="lst:SequenceStep"/>
+                          </steps>
+                        </steps>
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.CLRF">
+                          <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:InstructionStep" code="27275" width="16"/>
+                          </steps>
+                        </steps>
+                      </steps>
+                    </steps>
+                  </steps>
+                </steps>
+              </steps>
+            </steps>
+          </steps>
+          <steps xsi:type="lst:SequenceStep" name="SET(hu.e.parser.eSyntax.impl.RefTypeDefImpl@15dcf52@3969, 0)">
+            <steps xsi:type="lst:SequenceStep" name="pic18.platform.u8.set_u8">
+              <steps xsi:type="lst:SequenceStep">
+                <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="1"/>
+                  <steps xsi:type="lst:SequenceStep">
+                    <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aCLRF">
+                      <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
+                          <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                            <steps xsi:type="lst:SequenceStep" name="0">
+                              <steps xsi:type="lst:SequenceStep" name="1"/>
+                              <steps xsi:type="lst:SequenceStep" name="0"/>
+                            </steps>
+                            <steps xsi:type="lst:SequenceStep"/>
+                          </steps>
+                        </steps>
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.CLRF">
+                          <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:InstructionStep" code="27265" width="16"/>
+                          </steps>
+                        </steps>
+                      </steps>
+                    </steps>
+                  </steps>
+                </steps>
+              </steps>
+            </steps>
+          </steps>
+          <steps xsi:type="lst:SequenceStep" name="SET(hu.e.parser.eSyntax.impl.RefTypeDefImpl@88e2b8@3978, 0)">
+            <steps xsi:type="lst:SequenceStep" name="pic18.platform.u8.set_u8">
+              <steps xsi:type="lst:SequenceStep">
+                <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="1"/>
+                  <steps xsi:type="lst:SequenceStep">
+                    <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aCLRF">
+                      <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
+                          <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                            <steps xsi:type="lst:SequenceStep" name="0">
+                              <steps xsi:type="lst:SequenceStep" name="1"/>
+                              <steps xsi:type="lst:SequenceStep" name="0"/>
+                            </steps>
+                            <steps xsi:type="lst:SequenceStep"/>
+                          </steps>
+                        </steps>
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.CLRF">
+                          <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:InstructionStep" code="27274" width="16"/>
+                          </steps>
+                        </steps>
+                      </steps>
+                    </steps>
+                  </steps>
+                </steps>
+              </steps>
+            </steps>
+          </steps>
+          <steps xsi:type="lst:SequenceStep" name="SET(hu.e.parser.eSyntax.impl.RefTypeDefImpl@2109e3@3987, 0)">
+            <steps xsi:type="lst:SequenceStep" name="pic18.platform.u8.set_u8">
+              <steps xsi:type="lst:SequenceStep">
+                <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="1"/>
+                  <steps xsi:type="lst:SequenceStep">
+                    <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aCLRF">
+                      <steps xsi:type="lst:SequenceStep">
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
+                          <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                            <steps xsi:type="lst:SequenceStep" name="0">
+                              <steps xsi:type="lst:SequenceStep" name="1"/>
+                              <steps xsi:type="lst:SequenceStep" name="0"/>
+                            </steps>
+                            <steps xsi:type="lst:SequenceStep"/>
+                          </steps>
+                        </steps>
+                        <steps xsi:type="lst:SequenceStep" name="microchip.pic18.CLRF">
+                          <steps xsi:type="lst:SequenceStep">
+                            <steps xsi:type="lst:InstructionStep" code="27283" width="16"/>
+                          </steps>
+                        </steps>
+                      </steps>
+                    </steps>
+                  </steps>
+                </steps>
+              </steps>
+            </steps>
+          </steps>
+          <steps xsi:type="lst:SequenceStep" name="SET(hu.e.parser.eSyntax.impl.RefTypeDefImpl@beaacc@hu.e.compiler.internal.model.symbols.impl.MemoryAssignmentValueSymbol@1594bee, 255)">
+            <steps xsi:type="lst:SequenceStep" name="pic18.platform.u8.set_u8">
+              <steps xsi:type="lst:SequenceStep">
+                <steps xsi:type="lst:SequenceStep">
+                  <steps xsi:type="lst:SequenceStep" name="0"/>
+                  <steps xsi:type="lst:SequenceStep">
+                    <steps xsi:type="lst:SequenceStep" name="1"/>
+                    <steps xsi:type="lst:SequenceStep">
+                      <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.aSETF">
+                        <steps xsi:type="lst:SequenceStep">
+                          <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
+                            <steps xsi:type="lst:SequenceStep">
+                              <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                              <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)">
+                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
+                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
+                              </steps>
+                              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot execute operation on a link-time symbol! at microchip.pic18.assisted line 11"/>
+                            </steps>
+                          </steps>
+                          <steps xsi:type="lst:SequenceStep" name="microchip.pic18.SETF">
+                            <steps xsi:type="lst:SequenceStep">
+                              <steps xsi:type="lst:InstructionStep" code="26624" width="16">
+                                <refs size="8" value="//@step/@steps.0/@steps.0/@steps.0/@variables.0"/>
+                              </steps>
+                            </steps>
                           </steps>
                         </steps>
                       </steps>
@@ -246,6 +330,11 @@
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
+                                  <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                  <steps xsi:type="lst:SequenceStep" name="0">
+                                    <steps xsi:type="lst:SequenceStep" name="1"/>
+                                    <steps xsi:type="lst:SequenceStep" name="0"/>
+                                  </steps>
                                   <steps xsi:type="lst:SequenceStep"/>
                                 </steps>
                               </steps>
@@ -290,12 +379,19 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:SequenceStep"/>
+                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)">
+                                  <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
+                                  <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
+                                </steps>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot execute operation on a link-time symbol! at microchip.pic18.assisted line 11"/>
                               </steps>
                             </steps>
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BTFSC">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:InstructionStep" code="45056" width="16"/>
+                                <steps xsi:type="lst:InstructionStep" code="45056" width="16">
+                                  <refs size="8" value="//@step/@steps.0/@steps.0/@steps.0/@variables.0"/>
+                                </steps>
                               </steps>
                             </steps>
                           </steps>
@@ -303,10 +399,10 @@
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.GOTO">
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:InstructionStep" code="61184" width="16">
-                              <refs size="8" label="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.2/@steps.0/@steps.0/@steps.0/@steps.0/@steps.4"/>
+                              <refs size="8" value="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.2/@steps.0/@steps.0/@steps.0/@steps.0/@steps.4"/>
                             </steps>
                             <steps xsi:type="lst:InstructionStep" code="61440" width="16">
-                              <refs shift="8" size="12" label="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.2/@steps.0/@steps.0/@steps.0/@steps.0/@steps.4"/>
+                              <refs shift="8" size="12" value="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.2/@steps.0/@steps.0/@steps.0/@steps.0/@steps.4"/>
                             </steps>
                           </steps>
                         </steps>
@@ -314,6 +410,11 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
+                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                <steps xsi:type="lst:SequenceStep" name="0">
+                                  <steps xsi:type="lst:SequenceStep" name="1"/>
+                                  <steps xsi:type="lst:SequenceStep" name="0"/>
+                                </steps>
                                 <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
@@ -327,10 +428,10 @@
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.GOTO">
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:InstructionStep" code="61184" width="16">
-                              <refs size="8" label="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.2/@steps.0/@steps.0/@steps.0/@steps.0/@steps.6"/>
+                              <refs size="8" value="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.2/@steps.0/@steps.0/@steps.0/@steps.0/@steps.6"/>
                             </steps>
                             <steps xsi:type="lst:InstructionStep" code="61440" width="16">
-                              <refs shift="8" size="12" label="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.2/@steps.0/@steps.0/@steps.0/@steps.0/@steps.6"/>
+                              <refs shift="8" size="12" value="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.2/@steps.0/@steps.0/@steps.0/@steps.0/@steps.6"/>
                             </steps>
                           </steps>
                         </steps>
@@ -339,6 +440,11 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
+                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                <steps xsi:type="lst:SequenceStep" name="0">
+                                  <steps xsi:type="lst:SequenceStep" name="1"/>
+                                  <steps xsi:type="lst:SequenceStep" name="0"/>
+                                </steps>
                                 <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
@@ -384,6 +490,11 @@
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
+                                  <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                  <steps xsi:type="lst:SequenceStep" name="0">
+                                    <steps xsi:type="lst:SequenceStep" name="1"/>
+                                    <steps xsi:type="lst:SequenceStep" name="0"/>
+                                  </steps>
                                   <steps xsi:type="lst:SequenceStep"/>
                                 </steps>
                               </steps>
@@ -429,6 +540,11 @@
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
+                                  <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                  <steps xsi:type="lst:SequenceStep" name="0">
+                                    <steps xsi:type="lst:SequenceStep" name="1"/>
+                                    <steps xsi:type="lst:SequenceStep" name="0"/>
+                                  </steps>
                                   <steps xsi:type="lst:SequenceStep"/>
                                 </steps>
                               </steps>
@@ -473,12 +589,19 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:SequenceStep"/>
+                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)">
+                                  <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
+                                  <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
+                                </steps>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot execute operation on a link-time symbol! at microchip.pic18.assisted line 11"/>
                               </steps>
                             </steps>
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BTFSC">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:InstructionStep" code="45568" width="16"/>
+                                <steps xsi:type="lst:InstructionStep" code="45568" width="16">
+                                  <refs size="8" value="//@step/@steps.0/@steps.0/@steps.0/@variables.0"/>
+                                </steps>
                               </steps>
                             </steps>
                           </steps>
@@ -486,10 +609,10 @@
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.GOTO">
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:InstructionStep" code="61184" width="16">
-                              <refs size="8" label="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.8/@steps.0/@steps.0/@steps.0/@steps.0/@steps.4"/>
+                              <refs size="8" value="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.8/@steps.0/@steps.0/@steps.0/@steps.0/@steps.4"/>
                             </steps>
                             <steps xsi:type="lst:InstructionStep" code="61440" width="16">
-                              <refs shift="8" size="12" label="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.8/@steps.0/@steps.0/@steps.0/@steps.0/@steps.4"/>
+                              <refs shift="8" size="12" value="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.8/@steps.0/@steps.0/@steps.0/@steps.0/@steps.4"/>
                             </steps>
                           </steps>
                         </steps>
@@ -497,6 +620,11 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
+                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                <steps xsi:type="lst:SequenceStep" name="0">
+                                  <steps xsi:type="lst:SequenceStep" name="1"/>
+                                  <steps xsi:type="lst:SequenceStep" name="0"/>
+                                </steps>
                                 <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
@@ -510,10 +638,10 @@
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.GOTO">
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:InstructionStep" code="61184" width="16">
-                              <refs size="8" label="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.8/@steps.0/@steps.0/@steps.0/@steps.0/@steps.6"/>
+                              <refs size="8" value="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.8/@steps.0/@steps.0/@steps.0/@steps.0/@steps.6"/>
                             </steps>
                             <steps xsi:type="lst:InstructionStep" code="61440" width="16">
-                              <refs shift="8" size="12" label="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.8/@steps.0/@steps.0/@steps.0/@steps.0/@steps.6"/>
+                              <refs shift="8" size="12" value="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.8/@steps.0/@steps.0/@steps.0/@steps.0/@steps.6"/>
                             </steps>
                           </steps>
                         </steps>
@@ -522,6 +650,11 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
+                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                <steps xsi:type="lst:SequenceStep" name="0">
+                                  <steps xsi:type="lst:SequenceStep" name="1"/>
+                                  <steps xsi:type="lst:SequenceStep" name="0"/>
+                                </steps>
                                 <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
@@ -567,6 +700,11 @@
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
+                                  <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                  <steps xsi:type="lst:SequenceStep" name="0">
+                                    <steps xsi:type="lst:SequenceStep" name="1"/>
+                                    <steps xsi:type="lst:SequenceStep" name="0"/>
+                                  </steps>
                                   <steps xsi:type="lst:SequenceStep"/>
                                 </steps>
                               </steps>
@@ -612,6 +750,11 @@
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
+                                  <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                  <steps xsi:type="lst:SequenceStep" name="0">
+                                    <steps xsi:type="lst:SequenceStep" name="1"/>
+                                    <steps xsi:type="lst:SequenceStep" name="0"/>
+                                  </steps>
                                   <steps xsi:type="lst:SequenceStep"/>
                                 </steps>
                               </steps>
@@ -656,12 +799,19 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:SequenceStep"/>
+                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)">
+                                  <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
+                                  <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
+                                </steps>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot execute operation on a link-time symbol! at microchip.pic18.assisted line 11"/>
                               </steps>
                             </steps>
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BTFSC">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:InstructionStep" code="46080" width="16"/>
+                                <steps xsi:type="lst:InstructionStep" code="46080" width="16">
+                                  <refs size="8" value="//@step/@steps.0/@steps.0/@steps.0/@variables.0"/>
+                                </steps>
                               </steps>
                             </steps>
                           </steps>
@@ -669,10 +819,10 @@
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.GOTO">
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:InstructionStep" code="61184" width="16">
-                              <refs size="8" label="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.14/@steps.0/@steps.0/@steps.0/@steps.0/@steps.4"/>
+                              <refs size="8" value="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.14/@steps.0/@steps.0/@steps.0/@steps.0/@steps.4"/>
                             </steps>
                             <steps xsi:type="lst:InstructionStep" code="61440" width="16">
-                              <refs shift="8" size="12" label="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.14/@steps.0/@steps.0/@steps.0/@steps.0/@steps.4"/>
+                              <refs shift="8" size="12" value="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.14/@steps.0/@steps.0/@steps.0/@steps.0/@steps.4"/>
                             </steps>
                           </steps>
                         </steps>
@@ -680,6 +830,11 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
+                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                <steps xsi:type="lst:SequenceStep" name="0">
+                                  <steps xsi:type="lst:SequenceStep" name="1"/>
+                                  <steps xsi:type="lst:SequenceStep" name="0"/>
+                                </steps>
                                 <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
@@ -693,10 +848,10 @@
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.GOTO">
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:InstructionStep" code="61184" width="16">
-                              <refs size="8" label="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.14/@steps.0/@steps.0/@steps.0/@steps.0/@steps.6"/>
+                              <refs size="8" value="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.14/@steps.0/@steps.0/@steps.0/@steps.0/@steps.6"/>
                             </steps>
                             <steps xsi:type="lst:InstructionStep" code="61440" width="16">
-                              <refs shift="8" size="12" label="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.14/@steps.0/@steps.0/@steps.0/@steps.0/@steps.6"/>
+                              <refs shift="8" size="12" value="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.14/@steps.0/@steps.0/@steps.0/@steps.0/@steps.6"/>
                             </steps>
                           </steps>
                         </steps>
@@ -705,6 +860,11 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
+                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                <steps xsi:type="lst:SequenceStep" name="0">
+                                  <steps xsi:type="lst:SequenceStep" name="1"/>
+                                  <steps xsi:type="lst:SequenceStep" name="0"/>
+                                </steps>
                                 <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
@@ -750,6 +910,11 @@
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
+                                  <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                  <steps xsi:type="lst:SequenceStep" name="0">
+                                    <steps xsi:type="lst:SequenceStep" name="1"/>
+                                    <steps xsi:type="lst:SequenceStep" name="0"/>
+                                  </steps>
                                   <steps xsi:type="lst:SequenceStep"/>
                                 </steps>
                               </steps>
@@ -795,6 +960,11 @@
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
+                                  <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                  <steps xsi:type="lst:SequenceStep" name="0">
+                                    <steps xsi:type="lst:SequenceStep" name="1"/>
+                                    <steps xsi:type="lst:SequenceStep" name="0"/>
+                                  </steps>
                                   <steps xsi:type="lst:SequenceStep"/>
                                 </steps>
                               </steps>
@@ -839,12 +1009,19 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:SequenceStep"/>
+                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)">
+                                  <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
+                                  <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
+                                </steps>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot execute operation on a link-time symbol! at microchip.pic18.assisted line 11"/>
                               </steps>
                             </steps>
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BTFSC">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:InstructionStep" code="46592" width="16"/>
+                                <steps xsi:type="lst:InstructionStep" code="46592" width="16">
+                                  <refs size="8" value="//@step/@steps.0/@steps.0/@steps.0/@variables.0"/>
+                                </steps>
                               </steps>
                             </steps>
                           </steps>
@@ -852,10 +1029,10 @@
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.GOTO">
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:InstructionStep" code="61184" width="16">
-                              <refs size="8" label="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.20/@steps.0/@steps.0/@steps.0/@steps.0/@steps.4"/>
+                              <refs size="8" value="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.20/@steps.0/@steps.0/@steps.0/@steps.0/@steps.4"/>
                             </steps>
                             <steps xsi:type="lst:InstructionStep" code="61440" width="16">
-                              <refs shift="8" size="12" label="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.20/@steps.0/@steps.0/@steps.0/@steps.0/@steps.4"/>
+                              <refs shift="8" size="12" value="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.20/@steps.0/@steps.0/@steps.0/@steps.0/@steps.4"/>
                             </steps>
                           </steps>
                         </steps>
@@ -863,6 +1040,11 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
+                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                <steps xsi:type="lst:SequenceStep" name="0">
+                                  <steps xsi:type="lst:SequenceStep" name="1"/>
+                                  <steps xsi:type="lst:SequenceStep" name="0"/>
+                                </steps>
                                 <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
@@ -876,10 +1058,10 @@
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.GOTO">
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:InstructionStep" code="61184" width="16">
-                              <refs size="8" label="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.20/@steps.0/@steps.0/@steps.0/@steps.0/@steps.6"/>
+                              <refs size="8" value="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.20/@steps.0/@steps.0/@steps.0/@steps.0/@steps.6"/>
                             </steps>
                             <steps xsi:type="lst:InstructionStep" code="61440" width="16">
-                              <refs shift="8" size="12" label="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.20/@steps.0/@steps.0/@steps.0/@steps.0/@steps.6"/>
+                              <refs shift="8" size="12" value="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.20/@steps.0/@steps.0/@steps.0/@steps.0/@steps.6"/>
                             </steps>
                           </steps>
                         </steps>
@@ -888,6 +1070,11 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
+                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                <steps xsi:type="lst:SequenceStep" name="0">
+                                  <steps xsi:type="lst:SequenceStep" name="1"/>
+                                  <steps xsi:type="lst:SequenceStep" name="0"/>
+                                </steps>
                                 <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
@@ -933,6 +1120,11 @@
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
+                                  <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                  <steps xsi:type="lst:SequenceStep" name="0">
+                                    <steps xsi:type="lst:SequenceStep" name="1"/>
+                                    <steps xsi:type="lst:SequenceStep" name="0"/>
+                                  </steps>
                                   <steps xsi:type="lst:SequenceStep"/>
                                 </steps>
                               </steps>
@@ -978,6 +1170,11 @@
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
+                                  <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                  <steps xsi:type="lst:SequenceStep" name="0">
+                                    <steps xsi:type="lst:SequenceStep" name="1"/>
+                                    <steps xsi:type="lst:SequenceStep" name="0"/>
+                                  </steps>
                                   <steps xsi:type="lst:SequenceStep"/>
                                 </steps>
                               </steps>
@@ -1022,12 +1219,19 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:SequenceStep"/>
+                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)">
+                                  <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
+                                  <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
+                                </steps>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot execute operation on a link-time symbol! at microchip.pic18.assisted line 11"/>
                               </steps>
                             </steps>
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BTFSC">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:InstructionStep" code="47104" width="16"/>
+                                <steps xsi:type="lst:InstructionStep" code="47104" width="16">
+                                  <refs size="8" value="//@step/@steps.0/@steps.0/@steps.0/@variables.0"/>
+                                </steps>
                               </steps>
                             </steps>
                           </steps>
@@ -1035,10 +1239,10 @@
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.GOTO">
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:InstructionStep" code="61184" width="16">
-                              <refs size="8" label="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.26/@steps.0/@steps.0/@steps.0/@steps.0/@steps.4"/>
+                              <refs size="8" value="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.26/@steps.0/@steps.0/@steps.0/@steps.0/@steps.4"/>
                             </steps>
                             <steps xsi:type="lst:InstructionStep" code="61440" width="16">
-                              <refs shift="8" size="12" label="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.26/@steps.0/@steps.0/@steps.0/@steps.0/@steps.4"/>
+                              <refs shift="8" size="12" value="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.26/@steps.0/@steps.0/@steps.0/@steps.0/@steps.4"/>
                             </steps>
                           </steps>
                         </steps>
@@ -1046,6 +1250,11 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
+                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                <steps xsi:type="lst:SequenceStep" name="0">
+                                  <steps xsi:type="lst:SequenceStep" name="1"/>
+                                  <steps xsi:type="lst:SequenceStep" name="0"/>
+                                </steps>
                                 <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
@@ -1059,10 +1268,10 @@
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.GOTO">
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:InstructionStep" code="61184" width="16">
-                              <refs size="8" label="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.26/@steps.0/@steps.0/@steps.0/@steps.0/@steps.6"/>
+                              <refs size="8" value="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.26/@steps.0/@steps.0/@steps.0/@steps.0/@steps.6"/>
                             </steps>
                             <steps xsi:type="lst:InstructionStep" code="61440" width="16">
-                              <refs shift="8" size="12" label="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.26/@steps.0/@steps.0/@steps.0/@steps.0/@steps.6"/>
+                              <refs shift="8" size="12" value="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.26/@steps.0/@steps.0/@steps.0/@steps.0/@steps.6"/>
                             </steps>
                           </steps>
                         </steps>
@@ -1071,6 +1280,11 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
+                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                <steps xsi:type="lst:SequenceStep" name="0">
+                                  <steps xsi:type="lst:SequenceStep" name="1"/>
+                                  <steps xsi:type="lst:SequenceStep" name="0"/>
+                                </steps>
                                 <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
@@ -1116,6 +1330,11 @@
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
+                                  <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                  <steps xsi:type="lst:SequenceStep" name="0">
+                                    <steps xsi:type="lst:SequenceStep" name="1"/>
+                                    <steps xsi:type="lst:SequenceStep" name="0"/>
+                                  </steps>
                                   <steps xsi:type="lst:SequenceStep"/>
                                 </steps>
                               </steps>
@@ -1161,6 +1380,11 @@
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
+                                  <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                  <steps xsi:type="lst:SequenceStep" name="0">
+                                    <steps xsi:type="lst:SequenceStep" name="1"/>
+                                    <steps xsi:type="lst:SequenceStep" name="0"/>
+                                  </steps>
                                   <steps xsi:type="lst:SequenceStep"/>
                                 </steps>
                               </steps>
@@ -1205,12 +1429,19 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:SequenceStep"/>
+                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)">
+                                  <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
+                                  <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
+                                </steps>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot execute operation on a link-time symbol! at microchip.pic18.assisted line 11"/>
                               </steps>
                             </steps>
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BTFSC">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:InstructionStep" code="47616" width="16"/>
+                                <steps xsi:type="lst:InstructionStep" code="47616" width="16">
+                                  <refs size="8" value="//@step/@steps.0/@steps.0/@steps.0/@variables.0"/>
+                                </steps>
                               </steps>
                             </steps>
                           </steps>
@@ -1218,10 +1449,10 @@
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.GOTO">
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:InstructionStep" code="61184" width="16">
-                              <refs size="8" label="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.32/@steps.0/@steps.0/@steps.0/@steps.0/@steps.4"/>
+                              <refs size="8" value="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.32/@steps.0/@steps.0/@steps.0/@steps.0/@steps.4"/>
                             </steps>
                             <steps xsi:type="lst:InstructionStep" code="61440" width="16">
-                              <refs shift="8" size="12" label="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.32/@steps.0/@steps.0/@steps.0/@steps.0/@steps.4"/>
+                              <refs shift="8" size="12" value="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.32/@steps.0/@steps.0/@steps.0/@steps.0/@steps.4"/>
                             </steps>
                           </steps>
                         </steps>
@@ -1229,6 +1460,11 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
+                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                <steps xsi:type="lst:SequenceStep" name="0">
+                                  <steps xsi:type="lst:SequenceStep" name="1"/>
+                                  <steps xsi:type="lst:SequenceStep" name="0"/>
+                                </steps>
                                 <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
@@ -1242,10 +1478,10 @@
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.GOTO">
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:InstructionStep" code="61184" width="16">
-                              <refs size="8" label="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.32/@steps.0/@steps.0/@steps.0/@steps.0/@steps.6"/>
+                              <refs size="8" value="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.32/@steps.0/@steps.0/@steps.0/@steps.0/@steps.6"/>
                             </steps>
                             <steps xsi:type="lst:InstructionStep" code="61440" width="16">
-                              <refs shift="8" size="12" label="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.32/@steps.0/@steps.0/@steps.0/@steps.0/@steps.6"/>
+                              <refs shift="8" size="12" value="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.32/@steps.0/@steps.0/@steps.0/@steps.0/@steps.6"/>
                             </steps>
                           </steps>
                         </steps>
@@ -1254,6 +1490,11 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
+                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                <steps xsi:type="lst:SequenceStep" name="0">
+                                  <steps xsi:type="lst:SequenceStep" name="1"/>
+                                  <steps xsi:type="lst:SequenceStep" name="0"/>
+                                </steps>
                                 <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
@@ -1299,6 +1540,11 @@
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
+                                  <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                  <steps xsi:type="lst:SequenceStep" name="0">
+                                    <steps xsi:type="lst:SequenceStep" name="1"/>
+                                    <steps xsi:type="lst:SequenceStep" name="0"/>
+                                  </steps>
                                   <steps xsi:type="lst:SequenceStep"/>
                                 </steps>
                               </steps>
@@ -1344,6 +1590,11 @@
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
+                                  <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                  <steps xsi:type="lst:SequenceStep" name="0">
+                                    <steps xsi:type="lst:SequenceStep" name="1"/>
+                                    <steps xsi:type="lst:SequenceStep" name="0"/>
+                                  </steps>
                                   <steps xsi:type="lst:SequenceStep"/>
                                 </steps>
                               </steps>
@@ -1388,12 +1639,19 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:SequenceStep"/>
+                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)">
+                                  <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
+                                  <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
+                                </steps>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot execute operation on a link-time symbol! at microchip.pic18.assisted line 11"/>
                               </steps>
                             </steps>
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BTFSC">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:InstructionStep" code="48128" width="16"/>
+                                <steps xsi:type="lst:InstructionStep" code="48128" width="16">
+                                  <refs size="8" value="//@step/@steps.0/@steps.0/@steps.0/@variables.0"/>
+                                </steps>
                               </steps>
                             </steps>
                           </steps>
@@ -1401,10 +1659,10 @@
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.GOTO">
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:InstructionStep" code="61184" width="16">
-                              <refs size="8" label="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.38/@steps.0/@steps.0/@steps.0/@steps.0/@steps.4"/>
+                              <refs size="8" value="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.38/@steps.0/@steps.0/@steps.0/@steps.0/@steps.4"/>
                             </steps>
                             <steps xsi:type="lst:InstructionStep" code="61440" width="16">
-                              <refs shift="8" size="12" label="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.38/@steps.0/@steps.0/@steps.0/@steps.0/@steps.4"/>
+                              <refs shift="8" size="12" value="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.38/@steps.0/@steps.0/@steps.0/@steps.0/@steps.4"/>
                             </steps>
                           </steps>
                         </steps>
@@ -1412,6 +1670,11 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
+                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                <steps xsi:type="lst:SequenceStep" name="0">
+                                  <steps xsi:type="lst:SequenceStep" name="1"/>
+                                  <steps xsi:type="lst:SequenceStep" name="0"/>
+                                </steps>
                                 <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
@@ -1425,10 +1688,10 @@
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.GOTO">
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:InstructionStep" code="61184" width="16">
-                              <refs size="8" label="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.38/@steps.0/@steps.0/@steps.0/@steps.0/@steps.6"/>
+                              <refs size="8" value="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.38/@steps.0/@steps.0/@steps.0/@steps.0/@steps.6"/>
                             </steps>
                             <steps xsi:type="lst:InstructionStep" code="61440" width="16">
-                              <refs shift="8" size="12" label="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.38/@steps.0/@steps.0/@steps.0/@steps.0/@steps.6"/>
+                              <refs shift="8" size="12" value="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.38/@steps.0/@steps.0/@steps.0/@steps.0/@steps.6"/>
                             </steps>
                           </steps>
                         </steps>
@@ -1437,6 +1700,11 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
+                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                <steps xsi:type="lst:SequenceStep" name="0">
+                                  <steps xsi:type="lst:SequenceStep" name="1"/>
+                                  <steps xsi:type="lst:SequenceStep" name="0"/>
+                                </steps>
                                 <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
@@ -1482,6 +1750,11 @@
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
+                                  <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                  <steps xsi:type="lst:SequenceStep" name="0">
+                                    <steps xsi:type="lst:SequenceStep" name="1"/>
+                                    <steps xsi:type="lst:SequenceStep" name="0"/>
+                                  </steps>
                                   <steps xsi:type="lst:SequenceStep"/>
                                 </steps>
                               </steps>
@@ -1527,6 +1800,11 @@
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
+                                  <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                  <steps xsi:type="lst:SequenceStep" name="0">
+                                    <steps xsi:type="lst:SequenceStep" name="1"/>
+                                    <steps xsi:type="lst:SequenceStep" name="0"/>
+                                  </steps>
                                   <steps xsi:type="lst:SequenceStep"/>
                                 </steps>
                               </steps>
@@ -1571,12 +1849,19 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:SequenceStep"/>
+                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)">
+                                  <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
+                                  <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
+                                </steps>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot execute operation on a link-time symbol! at microchip.pic18.assisted line 11"/>
                               </steps>
                             </steps>
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BTFSC">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:InstructionStep" code="48640" width="16"/>
+                                <steps xsi:type="lst:InstructionStep" code="48640" width="16">
+                                  <refs size="8" value="//@step/@steps.0/@steps.0/@steps.0/@variables.0"/>
+                                </steps>
                               </steps>
                             </steps>
                           </steps>
@@ -1584,10 +1869,10 @@
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.GOTO">
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:InstructionStep" code="61184" width="16">
-                              <refs size="8" label="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.44/@steps.0/@steps.0/@steps.0/@steps.0/@steps.4"/>
+                              <refs size="8" value="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.44/@steps.0/@steps.0/@steps.0/@steps.0/@steps.4"/>
                             </steps>
                             <steps xsi:type="lst:InstructionStep" code="61440" width="16">
-                              <refs shift="8" size="12" label="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.44/@steps.0/@steps.0/@steps.0/@steps.0/@steps.4"/>
+                              <refs shift="8" size="12" value="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.44/@steps.0/@steps.0/@steps.0/@steps.0/@steps.4"/>
                             </steps>
                           </steps>
                         </steps>
@@ -1595,6 +1880,11 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
+                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                <steps xsi:type="lst:SequenceStep" name="0">
+                                  <steps xsi:type="lst:SequenceStep" name="1"/>
+                                  <steps xsi:type="lst:SequenceStep" name="0"/>
+                                </steps>
                                 <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
@@ -1608,10 +1898,10 @@
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.GOTO">
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:InstructionStep" code="61184" width="16">
-                              <refs size="8" label="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.44/@steps.0/@steps.0/@steps.0/@steps.0/@steps.6"/>
+                              <refs size="8" value="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.44/@steps.0/@steps.0/@steps.0/@steps.0/@steps.6"/>
                             </steps>
                             <steps xsi:type="lst:InstructionStep" code="61440" width="16">
-                              <refs shift="8" size="12" label="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.44/@steps.0/@steps.0/@steps.0/@steps.0/@steps.6"/>
+                              <refs shift="8" size="12" value="//@step/@steps.0/@steps.0/@steps.0/@steps.11/@steps.0/@steps.44/@steps.0/@steps.0/@steps.0/@steps.0/@steps.6"/>
                             </steps>
                           </steps>
                         </steps>
@@ -1620,6 +1910,11 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
+                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                <steps xsi:type="lst:SequenceStep" name="0">
+                                  <steps xsi:type="lst:SequenceStep" name="1"/>
+                                  <steps xsi:type="lst:SequenceStep" name="0"/>
+                                </steps>
                                 <steps xsi:type="lst:SequenceStep"/>
                               </steps>
                             </steps>
@@ -1665,6 +1960,11 @@
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
+                                  <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                  <steps xsi:type="lst:SequenceStep" name="0">
+                                    <steps xsi:type="lst:SequenceStep" name="1"/>
+                                    <steps xsi:type="lst:SequenceStep" name="0"/>
+                                  </steps>
                                   <steps xsi:type="lst:SequenceStep"/>
                                 </steps>
                               </steps>
@@ -1706,12 +2006,19 @@
             <steps xsi:type="lst:SequenceStep">
               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep"/>
+                  <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                  <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)">
+                    <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
+                    <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
+                  </steps>
+                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot execute operation on a link-time symbol! at microchip.pic18.assisted line 11"/>
                 </steps>
               </steps>
               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.INCF">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:InstructionStep" code="10752" width="16"/>
+                  <steps xsi:type="lst:InstructionStep" code="10752" width="16">
+                    <refs size="8" value="//@step/@steps.0/@steps.0/@steps.0/@variables.0"/>
+                  </steps>
                 </steps>
               </steps>
             </steps>
@@ -1738,15 +2045,21 @@
           <steps xsi:type="lst:SequenceStep" name="microchip.pic18.GOTO">
             <steps xsi:type="lst:SequenceStep">
               <steps xsi:type="lst:InstructionStep" code="61184" width="16">
-                <refs size="8" label="//@step/@steps.0/@steps.0/@steps.0/@steps.10"/>
+                <refs size="8" value="//@step/@steps.0/@steps.0/@steps.0/@steps.10"/>
               </steps>
               <steps xsi:type="lst:InstructionStep" code="61440" width="16">
-                <refs shift="8" size="12" label="//@step/@steps.0/@steps.0/@steps.0/@steps.10"/>
+                <refs shift="8" size="12" value="//@step/@steps.0/@steps.0/@steps.0/@steps.10"/>
               </steps>
             </steps>
           </steps>
+          <variables size="1"/>
         </steps>
       </steps>
     </steps>
+    <variables name="microchip.PIC18F14K50.DIO.DIO_RawSet"/>
+    <variables name="microchip.PIC18F14K50.DIO.DIO_Read"/>
+    <variables name="microchip.PIC18F14K50.DIO.DIO_Set"/>
+    <variables name="e.dio.DIO_Read"/>
+    <variables name="e.dio.DIO_Set"/>
   </step>
 </lst:ProgramList>
