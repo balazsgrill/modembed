@@ -4,11 +4,11 @@
 package hu.e.compiler.internal.symbols;
 
 import hu.e.compiler.ECompilerException;
-import hu.e.compiler.internal.MemoryManager;
 import hu.e.compiler.internal.linking.CodePlatform;
 import hu.e.compiler.internal.linking.OperationFinder;
 import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.compiler.internal.model.IVariableManager;
+import hu.e.compiler.internal.model.TypeDefinitionResolver;
 import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.compiler.internal.model.symbols.impl.CodeAddressSymbol;
 import hu.e.compiler.internal.model.symbols.impl.MemoryAssignmentValueSymbol;
@@ -31,7 +31,7 @@ public class SymbolManager extends AbstractSymbolManager {
 	
 	private final VariableManager varman;
 	
-	public SymbolManager(CodePlatform platform, ISymbolManager parent, MemoryManager memman, SequenceStep sequence) {
+	public SymbolManager(CodePlatform platform, ISymbolManager parent, TypeDefinitionResolver memman, SequenceStep sequence) {
 		super(platform);
 		//this.memman = memman;
 		this.parent = parent;

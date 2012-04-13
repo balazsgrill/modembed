@@ -4,7 +4,6 @@
 package hu.e.compiler.internal.model;
 
 import hu.e.compiler.ECompilerException;
-import hu.e.compiler.internal.MemoryManager;
 import hu.e.compiler.internal.model.symbols.impl.MemoryAssignmentValueSymbol;
 import hu.e.compiler.list.LabelStep;
 import hu.e.compiler.list.MemoryAssignment;
@@ -30,6 +29,6 @@ public interface IVariableManager {
 	
 	public void endBlock();
 	
-	public MemoryManager getMemoryManager();
+	public TypeDefinitionResolver getTypeResolver();
 	
 }

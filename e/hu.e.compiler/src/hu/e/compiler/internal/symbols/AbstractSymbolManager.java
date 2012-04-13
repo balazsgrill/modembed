@@ -258,7 +258,7 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 		}
 		if (x instanceof XSizeOfExpression){
 			TypeDef t = ((XSizeOfExpression) x).getType();
-			int size = getVariableManager().getMemoryManager().getSize(this, t);
+			int size = getVariableManager().getTypeResolver().getSize(this, t);
 			return new LiteralSymbol(size);
 		}
 		

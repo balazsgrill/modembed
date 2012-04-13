@@ -5,6 +5,7 @@ package hu.e.compiler.internal;
 
 import hu.e.compiler.ECompilerException;
 import hu.e.compiler.internal.model.ISymbolManager;
+import hu.e.compiler.internal.model.TypeDefinitionResolver;
 import hu.e.compiler.internal.model.symbols.impl.MemoryAssignmentValueSymbol;
 import hu.e.compiler.list.LabelStep;
 import hu.e.compiler.list.ListFactory;
@@ -22,13 +23,13 @@ import java.util.Map;
  */
 public class StackLevel {
 
-	private final MemoryManager memman;
+	private final TypeDefinitionResolver memman;
 	
 	private final Map<Variable, MemoryAssignment> vars = new HashMap<Variable, MemoryAssignment>();
 	
 	private final Map<Label, LabelStep> labels = new HashMap<Label, LabelStep>();
 	
-	public StackLevel(MemoryManager memman) {
+	public StackLevel(TypeDefinitionResolver memman) {
 		this.memman = memman;
 	}
 	

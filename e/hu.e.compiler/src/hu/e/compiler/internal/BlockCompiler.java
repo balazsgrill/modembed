@@ -58,7 +58,7 @@ public class BlockCompiler {
 					try {
 						MemoryAssignment ma = ListFactory.eINSTANCE.createMemoryAssignment();
 						ma.setName(((Variable) step).getName());
-						ma.setSize(sm.getVariableManager().getMemoryManager().getSize(sm, ((Variable) step).getType()));
+						ma.setSize(sm.getVariableManager().getTypeResolver().getSize(sm, ((Variable) step).getType()));
 						result.getVariables().add(ma);
 						sm.getVariableManager().define(sm, (Variable)step, ma);
 						memory.put((Variable) step, ma);

@@ -7,12 +7,12 @@ import hu.e.compiler.ECompiler;
 import hu.e.compiler.internal.linking.CodePlatform;
 import hu.e.compiler.internal.linking.ComponentLinker;
 import hu.e.compiler.internal.model.ISymbolManager;
+import hu.e.compiler.internal.model.TypeDefinitionResolver;
 import hu.e.compiler.internal.symbols.SymbolManager;
 import hu.e.compiler.list.ListFactory;
 import hu.e.compiler.list.ProgramList;
 import hu.e.compiler.list.SequenceStep;
 import hu.e.parser.eSyntax.FunctionBinarySection;
-import hu.e.parser.eSyntax.FunctionMemory;
 
 /**
  * @author balazs.grill
@@ -22,7 +22,7 @@ public class FunctionCompiler {
 
 	private final FunctionBinarySection link;
 	
-	private final MemoryManager memman;
+	private final TypeDefinitionResolver memman;
 	
 	private final ComponentLinker linker;
 	
@@ -33,10 +33,7 @@ public class FunctionCompiler {
 		
 		pointersize = (pointersize/memwidth) + ((pointersize%memwidth==0) ? 0 : 1);
 		
-		memman = new MemoryManager(memwidth,pointersize);
-		for(FunctionMemory fm : link.getMems()){
-			memman.addSegment(ECompiler.convertLiteral(fm.getStart()), ECompiler.convertLiteral(fm.getEnd()));
-		}
+		memman = new TypeDefinitionResolver(memwidth,pointersize);
 		linker = new ComponentLinker(link);
 	}
 	

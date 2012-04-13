@@ -3,19 +3,25 @@
  */
 package hu.e.compiler.internal.linking;
 
+import hu.e.compiler.internal.MemoryManager;
 import hu.e.compiler.internal.model.InstructionWordInstance;
 import hu.e.compiler.list.InstructionStep;
 import hu.e.compiler.list.LabelStep;
+import hu.e.compiler.list.MemoryAssignment;
 import hu.e.compiler.list.ProgramList;
 import hu.e.compiler.list.ProgramStep;
+import hu.e.compiler.list.ReferableValue;
 import hu.e.compiler.list.Reference;
 import hu.e.compiler.list.SequenceStep;
 import hu.modembed.hexfile.persistence.HexFileResource;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * @author balazs.grill
@@ -29,7 +35,34 @@ public class ProgramListLinker {
 		this.plist = plist;
 	}
 	
-	public byte[] link(int startAddr){
+	private void mapMemory(Map<MemoryAssignment, Integer> addresses, MemoryManager memman, SequenceStep step){
+		Set<Integer> as = new HashSet<Integer>();
+		for(MemoryAssignment ma : step.getVariables()){
+			int addr = memman.allocate(ma.getSize());
+			addresses.put(ma, addr);
+			as.add(addr);
+		}
+		
+		for(ProgramStep ps : step.getSteps()){
+			if (ps instanceof SequenceStep){
+				mapMemory(addresses, memman, (SequenceStep) ps);
+			}
+		}
+		
+		for(Integer addr : as){
+			memman.release(addr);
+		}
+	}
+	
+	public byte[] link(MemoryManager memman, int startAddr){
+		
+		/*
+		 * Map variables to memory addresses
+		 */
+		Map<MemoryAssignment, Integer> variables = new LinkedHashMap<MemoryAssignment, Integer>();
+		if (plist.getStep() instanceof SequenceStep){
+			mapMemory(variables, memman, (SequenceStep) plist.getStep());
+		}
 		
 		Map<LabelStep, Integer> labels = new HashMap<LabelStep, Integer>();
 		
@@ -57,8 +90,16 @@ public class ProgramListLinker {
 			int d = 0;
 			d = (int) s.getCode();
 			for(Reference lr : s.getRefs()){
+				int v = -1;
 				
-				int v = labels.get(lr.getValue());
+				ReferableValue rv = lr.getValue();
+				if (rv instanceof LabelStep){
+					v = labels.get(rv);
+				}
+				if (rv instanceof MemoryAssignment){
+					v = variables.get(rv);
+				}
+				
 				d += InstructionWordInstance.getItemValue(v, lr.getShift(), lr.getStart(), lr.getSize());
 			}
 			for(int j=0;j<wordbytes;j++){

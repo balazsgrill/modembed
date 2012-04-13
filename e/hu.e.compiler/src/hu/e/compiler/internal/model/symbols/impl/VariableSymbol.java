@@ -4,9 +4,9 @@
 package hu.e.compiler.internal.model.symbols.impl;
 
 import hu.e.compiler.ECompilerException;
-import hu.e.compiler.internal.MemoryManager;
 import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.compiler.internal.model.OPERATION;
+import hu.e.compiler.internal.model.TypeDefinitionResolver;
 import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
 import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.compiler.internal.model.symbols.IVariableSymbol;
@@ -67,7 +67,7 @@ public class VariableSymbol implements IVariableSymbol{
 	
 	@Override
 	public String toString() {
-		return type.toString()+"@"+address.toString();
+		return TypeDefinitionResolver.getTypeDefString(type)+"@"+address.toString();
 	}
 	
 	private ArrayTypeDef getArrayTypeDef(TypeDef td){
@@ -81,7 +81,7 @@ public class VariableSymbol implements IVariableSymbol{
 	 */
 	@Override
 	public ISymbol getElement(ISymbolManager sm, int index) throws ECompilerException {
-		MemoryManager memman = sm.getVariableManager().getMemoryManager();
+		TypeDefinitionResolver memman = sm.getVariableManager().getTypeResolver();
 		ArrayTypeDef atd = getArrayTypeDef(getType());
 		
 		if (atd == null) return null;
@@ -98,7 +98,7 @@ public class VariableSymbol implements IVariableSymbol{
 	
 	@Override
 	public ISymbol getMember(ISymbolManager sm, StructTypeDefMember member) throws ECompilerException {
-		MemoryManager memman = sm.getVariableManager().getMemoryManager();
+		TypeDefinitionResolver memman = sm.getVariableManager().getTypeResolver();
 		TypeDef td = getType();
 		if (td instanceof StructTypeDef){
 			StructTypeDef std = (StructTypeDef)td;

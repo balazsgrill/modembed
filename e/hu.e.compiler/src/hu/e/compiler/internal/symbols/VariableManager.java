@@ -4,10 +4,10 @@
 package hu.e.compiler.internal.symbols;
 
 import hu.e.compiler.ECompilerException;
-import hu.e.compiler.internal.MemoryManager;
 import hu.e.compiler.internal.StackLevel;
 import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.compiler.internal.model.IVariableManager;
+import hu.e.compiler.internal.model.TypeDefinitionResolver;
 import hu.e.compiler.internal.model.symbols.impl.MemoryAssignmentValueSymbol;
 import hu.e.compiler.list.LabelStep;
 import hu.e.compiler.list.ListFactory;
@@ -32,19 +32,19 @@ public class VariableManager implements IVariableManager {
 	
 	private final Map<Variable, MemoryAssignment> globals = new HashMap<Variable, MemoryAssignment>();
 	
-	private final MemoryManager memman;
+	private final TypeDefinitionResolver typeref;
 	
 	private final SequenceStep rootstep;
 	
 	@Override
-	public MemoryManager getMemoryManager() {
-		return memman;
+	public TypeDefinitionResolver getTypeResolver() {
+		return typeref;
 	}
 	
-	public VariableManager(MemoryManager memman, SequenceStep rootstep) {
-		this.memman = memman;
+	public VariableManager(TypeDefinitionResolver typeref, SequenceStep rootstep) {
+		this.typeref = typeref;
 		this.rootstep = rootstep;
-		stack.push(new StackLevel(memman));
+		stack.push(new StackLevel(typeref));
 	}
 	
 	/* (non-Javadoc)
@@ -52,7 +52,7 @@ public class VariableManager implements IVariableManager {
 	 */
 	@Override
 	public void startBlock() {
-		stack.push(new StackLevel(memman));
+		stack.push(new StackLevel(typeref));
 	}
 
 	/* (non-Javadoc)
@@ -67,7 +67,7 @@ public class VariableManager implements IVariableManager {
 		if (var.eContainer() instanceof Library){
 			if (!globals.containsKey(var)){
 				MemoryAssignment ma = ListFactory.eINSTANCE.createMemoryAssignment();
-				ma.setSize(memman.getSize(sm, var.getType()));
+				ma.setSize(typeref.getSize(sm, var.getType()));
 				ma.setName(((Library)var.eContainer()).getName()+"."+var.getName());
 				rootstep.getVariables().add(ma);
 				globals.put(var, ma);

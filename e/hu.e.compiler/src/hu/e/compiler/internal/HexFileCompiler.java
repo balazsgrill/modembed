@@ -17,6 +17,7 @@ import hu.e.compiler.list.ProgramList;
 import hu.e.parser.eSyntax.BinarySection;
 import hu.e.parser.eSyntax.ConstantBinarySection;
 import hu.e.parser.eSyntax.FunctionBinarySection;
+import hu.e.parser.eSyntax.FunctionMemory;
 import hu.e.parser.eSyntax.LinkedBinary;
 import hu.e.parser.eSyntax.ReferenceBinarySection;
 import hu.e.parser.eSyntax.XExpression;
@@ -73,18 +74,24 @@ public class HexFileCompiler {
 			}
 			if (bs instanceof FunctionBinarySection){
 				try{
+					FunctionBinarySection functionBs = (FunctionBinarySection)bs;
 					int start = ((ILiteralSymbol)sm.resolve(bs.getStart())).getValue();
 					Entry entry = HexfileFactory.eINSTANCE.createEntry();
 					entry.setAddress(start);
-					FunctionCompiler fc = new FunctionCompiler((FunctionBinarySection)bs);
+					FunctionCompiler fc = new FunctionCompiler(functionBs);
 					ProgramList plist = fc.compile(sm); 
 					lists.add(plist);
+					
+					MemoryManager memman = new MemoryManager();
+					for(FunctionMemory fm : functionBs.getMems()){
+						memman.addSegment(ECompiler.convertLiteral(fm.getStart()), ECompiler.convertLiteral(fm.getEnd()));
+					}
+					
 					ProgramListLinker linker = new ProgramListLinker(plist);
 					
 					int startAddr = ECompiler.convertLiteral(((FunctionBinarySection) bs).getStartAddr());
 					
-					//TODO linking is disabled
-					entry.setData(new byte[0]/*linker.link(startAddr)*/);
+					entry.setData(linker.link(memman, startAddr));
 					result.getEntries().add(entry);
 					
 				}catch(ECompilerException e){
