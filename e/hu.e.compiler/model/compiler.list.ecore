@@ -22,13 +22,18 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="variables" upperBound="-1"
         eType="#//MemoryAssignment" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ChoiceStep" eSuperTypes="#//ProgramStep"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ChoiceStep" eSuperTypes="#//ProgramStep">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="alternatives" upperBound="-1"
+        eType="#//ChoiceAlternative" containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LabelStep" eSuperTypes="#//ProgramStep #//ReferableValue"/>
   <eClassifiers xsi:type="ecore:EClass" name="Reference">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="shift" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//ReferableValue"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="start" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="offset" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="0"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StatusStep" eSuperTypes="#//ProgramStep">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="severity" eType="#//Severity"/>
@@ -43,5 +48,11 @@
   <eClassifiers xsi:type="ecore:EClass" name="ReferableValue" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="MemoryAssignment" eSuperTypes="#//ReferableValue">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ChoiceAlternative">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="step" eType="#//ProgramStep"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="connected" upperBound="-1"
+        eType="#//ChoiceAlternative"/>
   </eClassifiers>
 </ecore:EPackage>

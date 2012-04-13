@@ -69,6 +69,7 @@ public class ListFactoryImpl extends EFactoryImpl implements ListFactory {
 			case ListPackage.REFERENCE: return createReference();
 			case ListPackage.STATUS_STEP: return createStatusStep();
 			case ListPackage.MEMORY_ASSIGNMENT: return createMemoryAssignment();
+			case ListPackage.CHOICE_ALTERNATIVE: return createChoiceAlternative();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -182,6 +183,16 @@ public class ListFactoryImpl extends EFactoryImpl implements ListFactory {
 	public MemoryAssignment createMemoryAssignment() {
 		MemoryAssignmentImpl memoryAssignment = new MemoryAssignmentImpl();
 		return memoryAssignment;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ChoiceAlternative createChoiceAlternative() {
+		ChoiceAlternativeImpl choiceAlternative = new ChoiceAlternativeImpl();
+		return choiceAlternative;
 	}
 
 	/**

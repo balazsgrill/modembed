@@ -7,31 +7,37 @@
 package hu.e.compiler.list.provider;
 
 
-import hu.e.compiler.list.ChoiceStep;
+import hu.e.compiler.list.ChoiceAlternative;
 import hu.e.compiler.list.ListPackage;
+
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
+
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link hu.e.compiler.list.ChoiceStep} object.
+ * This is the item provider adapter for a {@link hu.e.compiler.list.ChoiceAlternative} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ChoiceStepItemProvider
-	extends ProgramStepItemProvider
+public class ChoiceAlternativeItemProvider
+	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -44,7 +50,7 @@ public class ChoiceStepItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ChoiceStepItemProvider(AdapterFactory adapterFactory) {
+	public ChoiceAlternativeItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -59,8 +65,31 @@ public class ChoiceStepItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addConnectedPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Connected feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addConnectedPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ChoiceAlternative_connected_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ChoiceAlternative_connected_feature", "_UI_ChoiceAlternative_type"),
+				 ListPackage.Literals.CHOICE_ALTERNATIVE__CONNECTED,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -75,7 +104,7 @@ public class ChoiceStepItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ListPackage.Literals.CHOICE_STEP__ALTERNATIVES);
+			childrenFeatures.add(ListPackage.Literals.CHOICE_ALTERNATIVE__STEP);
 		}
 		return childrenFeatures;
 	}
@@ -94,14 +123,14 @@ public class ChoiceStepItemProvider
 	}
 
 	/**
-	 * This returns ChoiceStep.gif.
+	 * This returns ChoiceAlternative.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ChoiceStep"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ChoiceAlternative"));
 	}
 
 	/**
@@ -112,7 +141,7 @@ public class ChoiceStepItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_ChoiceStep_type");
+		return getString("_UI_ChoiceAlternative_type");
 	}
 
 	/**
@@ -126,12 +155,23 @@ public class ChoiceStepItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ChoiceStep.class)) {
-			case ListPackage.CHOICE_STEP__ALTERNATIVES:
+		switch (notification.getFeatureID(ChoiceAlternative.class)) {
+			case ListPackage.CHOICE_ALTERNATIVE__STEP:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
 		super.notifyChanged(notification);
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return CompilerEditPlugin.INSTANCE;
 	}
 
 }

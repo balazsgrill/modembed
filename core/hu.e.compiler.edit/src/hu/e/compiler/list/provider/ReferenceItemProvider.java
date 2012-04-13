@@ -67,6 +67,7 @@ public class ReferenceItemProvider
 			addSizePropertyDescriptor(object);
 			addValuePropertyDescriptor(object);
 			addStartPropertyDescriptor(object);
+			addOffsetPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -160,6 +161,28 @@ public class ReferenceItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Offset feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOffsetPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Reference_offset_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Reference_offset_feature", "_UI_Reference_type"),
+				 ListPackage.Literals.REFERENCE__OFFSET,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns Reference.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -197,6 +220,7 @@ public class ReferenceItemProvider
 			case ListPackage.REFERENCE__SHIFT:
 			case ListPackage.REFERENCE__SIZE:
 			case ListPackage.REFERENCE__START:
+			case ListPackage.REFERENCE__OFFSET:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

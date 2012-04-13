@@ -29,6 +29,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *   <li>{@link hu.e.compiler.list.impl.ReferenceImpl#getSize <em>Size</em>}</li>
  *   <li>{@link hu.e.compiler.list.impl.ReferenceImpl#getValue <em>Value</em>}</li>
  *   <li>{@link hu.e.compiler.list.impl.ReferenceImpl#getStart <em>Start</em>}</li>
+ *   <li>{@link hu.e.compiler.list.impl.ReferenceImpl#getOffset <em>Offset</em>}</li>
  * </ul>
  * </p>
  *
@@ -104,6 +105,26 @@ public class ReferenceImpl extends EObjectImpl implements Reference {
 	 * @ordered
 	 */
 	protected int start = START_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getOffset() <em>Offset</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOffset()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int OFFSET_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getOffset() <em>Offset</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOffset()
+	 * @generated
+	 * @ordered
+	 */
+	protected int offset = OFFSET_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -230,6 +251,27 @@ public class ReferenceImpl extends EObjectImpl implements Reference {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getOffset() {
+		return offset;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOffset(int newOffset) {
+		int oldOffset = offset;
+		offset = newOffset;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ListPackage.REFERENCE__OFFSET, oldOffset, offset));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -242,6 +284,8 @@ public class ReferenceImpl extends EObjectImpl implements Reference {
 				return basicGetValue();
 			case ListPackage.REFERENCE__START:
 				return getStart();
+			case ListPackage.REFERENCE__OFFSET:
+				return getOffset();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -265,6 +309,9 @@ public class ReferenceImpl extends EObjectImpl implements Reference {
 				return;
 			case ListPackage.REFERENCE__START:
 				setStart((Integer)newValue);
+				return;
+			case ListPackage.REFERENCE__OFFSET:
+				setOffset((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -290,6 +337,9 @@ public class ReferenceImpl extends EObjectImpl implements Reference {
 			case ListPackage.REFERENCE__START:
 				setStart(START_EDEFAULT);
 				return;
+			case ListPackage.REFERENCE__OFFSET:
+				setOffset(OFFSET_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -310,6 +360,8 @@ public class ReferenceImpl extends EObjectImpl implements Reference {
 				return value != null;
 			case ListPackage.REFERENCE__START:
 				return start != START_EDEFAULT;
+			case ListPackage.REFERENCE__OFFSET:
+				return offset != OFFSET_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -330,6 +382,8 @@ public class ReferenceImpl extends EObjectImpl implements Reference {
 		result.append(size);
 		result.append(", start: ");
 		result.append(start);
+		result.append(", offset: ");
+		result.append(offset);
 		result.append(')');
 		return result.toString();
 	}

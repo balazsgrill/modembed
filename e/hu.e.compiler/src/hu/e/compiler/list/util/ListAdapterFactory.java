@@ -112,6 +112,10 @@ public class ListAdapterFactory extends AdapterFactoryImpl {
 				return createMemoryAssignmentAdapter();
 			}
 			@Override
+			public Adapter caseChoiceAlternative(ChoiceAlternative object) {
+				return createChoiceAlternativeAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -268,6 +272,20 @@ public class ListAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createMemoryAssignmentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.e.compiler.list.ChoiceAlternative <em>Choice Alternative</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.e.compiler.list.ChoiceAlternative
+	 * @generated
+	 */
+	public Adapter createChoiceAlternativeAdapter() {
 		return null;
 	}
 

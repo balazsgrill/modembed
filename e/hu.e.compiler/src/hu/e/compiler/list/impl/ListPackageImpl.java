@@ -6,6 +6,7 @@
  */
 package hu.e.compiler.list.impl;
 
+import hu.e.compiler.list.ChoiceAlternative;
 import hu.e.compiler.list.ChoiceStep;
 import hu.e.compiler.list.InstructionStep;
 import hu.e.compiler.list.LabelStep;
@@ -103,6 +104,13 @@ public class ListPackageImpl extends EPackageImpl implements ListPackage {
 	 * @generated
 	 */
 	private EClass memoryAssignmentEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass choiceAlternativeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -294,6 +302,15 @@ public class ListPackageImpl extends EPackageImpl implements ListPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getChoiceStep_Alternatives() {
+		return (EReference)choiceStepEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getLabelStep() {
 		return labelStepEClass;
 	}
@@ -341,6 +358,15 @@ public class ListPackageImpl extends EPackageImpl implements ListPackage {
 	 */
 	public EAttribute getReference_Start() {
 		return (EAttribute)referenceEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getReference_Offset() {
+		return (EAttribute)referenceEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -402,6 +428,33 @@ public class ListPackageImpl extends EPackageImpl implements ListPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getChoiceAlternative() {
+		return choiceAlternativeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getChoiceAlternative_Step() {
+		return (EReference)choiceAlternativeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getChoiceAlternative_Connected() {
+		return (EReference)choiceAlternativeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getSeverity() {
 		return severityEEnum;
 	}
@@ -451,6 +504,7 @@ public class ListPackageImpl extends EPackageImpl implements ListPackage {
 		createEReference(sequenceStepEClass, SEQUENCE_STEP__VARIABLES);
 
 		choiceStepEClass = createEClass(CHOICE_STEP);
+		createEReference(choiceStepEClass, CHOICE_STEP__ALTERNATIVES);
 
 		labelStepEClass = createEClass(LABEL_STEP);
 
@@ -459,6 +513,7 @@ public class ListPackageImpl extends EPackageImpl implements ListPackage {
 		createEAttribute(referenceEClass, REFERENCE__SIZE);
 		createEReference(referenceEClass, REFERENCE__VALUE);
 		createEAttribute(referenceEClass, REFERENCE__START);
+		createEAttribute(referenceEClass, REFERENCE__OFFSET);
 
 		statusStepEClass = createEClass(STATUS_STEP);
 		createEAttribute(statusStepEClass, STATUS_STEP__SEVERITY);
@@ -468,6 +523,10 @@ public class ListPackageImpl extends EPackageImpl implements ListPackage {
 
 		memoryAssignmentEClass = createEClass(MEMORY_ASSIGNMENT);
 		createEAttribute(memoryAssignmentEClass, MEMORY_ASSIGNMENT__SIZE);
+
+		choiceAlternativeEClass = createEClass(CHOICE_ALTERNATIVE);
+		createEReference(choiceAlternativeEClass, CHOICE_ALTERNATIVE__STEP);
+		createEReference(choiceAlternativeEClass, CHOICE_ALTERNATIVE__CONNECTED);
 
 		// Create enums
 		severityEEnum = createEEnum(SEVERITY);
@@ -527,6 +586,7 @@ public class ListPackageImpl extends EPackageImpl implements ListPackage {
 		initEReference(getSequenceStep_Variables(), this.getMemoryAssignment(), null, "variables", null, 0, -1, SequenceStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(choiceStepEClass, ChoiceStep.class, "ChoiceStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getChoiceStep_Alternatives(), this.getChoiceAlternative(), null, "alternatives", null, 0, -1, ChoiceStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(labelStepEClass, LabelStep.class, "LabelStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -535,6 +595,7 @@ public class ListPackageImpl extends EPackageImpl implements ListPackage {
 		initEAttribute(getReference_Size(), ecorePackage.getEInt(), "size", null, 0, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getReference_Value(), this.getReferableValue(), null, "value", null, 0, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getReference_Start(), ecorePackage.getEInt(), "start", null, 0, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getReference_Offset(), ecorePackage.getEInt(), "offset", "0", 0, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(statusStepEClass, StatusStep.class, "StatusStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStatusStep_Severity(), this.getSeverity(), "severity", null, 0, 1, StatusStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -544,6 +605,10 @@ public class ListPackageImpl extends EPackageImpl implements ListPackage {
 
 		initEClass(memoryAssignmentEClass, MemoryAssignment.class, "MemoryAssignment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMemoryAssignment_Size(), ecorePackage.getEInt(), "size", null, 0, 1, MemoryAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(choiceAlternativeEClass, ChoiceAlternative.class, "ChoiceAlternative", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getChoiceAlternative_Step(), this.getProgramStep(), null, "step", null, 0, 1, ChoiceAlternative.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getChoiceAlternative_Connected(), this.getChoiceAlternative(), null, "connected", null, 0, -1, ChoiceAlternative.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(severityEEnum, Severity.class, "Severity");

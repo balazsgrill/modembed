@@ -98,6 +98,15 @@ public interface ListFactory extends EFactory {
 	MemoryAssignment createMemoryAssignment();
 
 	/**
+	 * Returns a new object of class '<em>Choice Alternative</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Choice Alternative</em>'.
+	 * @generated
+	 */
+	ChoiceAlternative createChoiceAlternative();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

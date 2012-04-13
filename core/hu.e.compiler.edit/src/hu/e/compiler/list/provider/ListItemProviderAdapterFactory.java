@@ -260,6 +260,29 @@ public class ListItemProviderAdapterFactory extends ListAdapterFactory implement
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link hu.e.compiler.list.ChoiceAlternative} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ChoiceAlternativeItemProvider choiceAlternativeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link hu.e.compiler.list.ChoiceAlternative}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createChoiceAlternativeAdapter() {
+		if (choiceAlternativeItemProvider == null) {
+			choiceAlternativeItemProvider = new ChoiceAlternativeItemProvider(this);
+		}
+
+		return choiceAlternativeItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -366,6 +389,7 @@ public class ListItemProviderAdapterFactory extends ListAdapterFactory implement
 		if (referenceItemProvider != null) referenceItemProvider.dispose();
 		if (statusStepItemProvider != null) statusStepItemProvider.dispose();
 		if (memoryAssignmentItemProvider != null) memoryAssignmentItemProvider.dispose();
+		if (choiceAlternativeItemProvider != null) choiceAlternativeItemProvider.dispose();
 	}
 
 }

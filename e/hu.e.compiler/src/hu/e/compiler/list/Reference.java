@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link hu.e.compiler.list.Reference#getSize <em>Size</em>}</li>
  *   <li>{@link hu.e.compiler.list.Reference#getValue <em>Value</em>}</li>
  *   <li>{@link hu.e.compiler.list.Reference#getStart <em>Start</em>}</li>
+ *   <li>{@link hu.e.compiler.list.Reference#getOffset <em>Offset</em>}</li>
  * </ul>
  * </p>
  *
@@ -131,5 +132,32 @@ public interface Reference extends EObject {
 	 * @generated
 	 */
 	void setStart(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Offset</b></em>' attribute.
+	 * The default value is <code>"0"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Offset</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Offset</em>' attribute.
+	 * @see #setOffset(int)
+	 * @see hu.e.compiler.list.ListPackage#getReference_Offset()
+	 * @model default="0"
+	 * @generated
+	 */
+	int getOffset();
+
+	/**
+	 * Sets the value of the '{@link hu.e.compiler.list.Reference#getOffset <em>Offset</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Offset</em>' attribute.
+	 * @see #getOffset()
+	 * @generated
+	 */
+	void setOffset(int value);
 
 } // Reference
