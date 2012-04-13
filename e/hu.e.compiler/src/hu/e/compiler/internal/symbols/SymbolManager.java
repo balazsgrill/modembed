@@ -11,9 +11,10 @@ import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.compiler.internal.model.IVariableManager;
 import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.compiler.internal.model.symbols.impl.CodeAddressSymbol;
-import hu.e.compiler.internal.model.symbols.impl.LiteralSymbol;
+import hu.e.compiler.internal.model.symbols.impl.MemoryAssignmentValueSymbol;
 import hu.e.compiler.internal.model.symbols.impl.VariableSymbol;
 import hu.e.compiler.list.LabelStep;
+import hu.e.compiler.list.SequenceStep;
 import hu.e.parser.eSyntax.Label;
 import hu.e.parser.eSyntax.Variable;
 import hu.e.parser.eSyntax.VariableReference;
@@ -30,11 +31,11 @@ public class SymbolManager extends AbstractSymbolManager {
 	
 	private final VariableManager varman;
 	
-	public SymbolManager(CodePlatform platform, ISymbolManager parent, MemoryManager memman) {
+	public SymbolManager(CodePlatform platform, ISymbolManager parent, MemoryManager memman, SequenceStep sequence) {
 		super(platform);
 		//this.memman = memman;
 		this.parent = parent;
-		this.varman = new VariableManager(memman);
+		this.varman = new VariableManager(memman, sequence);
 	}
 
 	/* (non-Javadoc)
@@ -49,9 +50,9 @@ public class SymbolManager extends AbstractSymbolManager {
 		}
 		ISymbol s = parent.getSymbol(ref);
 		if (s != null) return s;
-		int baseaddr = varman.getAddress(this, ref);
-		if (baseaddr != -1){
-			return VariableSymbol.create(new LiteralSymbol(baseaddr), ref.getType());
+		MemoryAssignmentValueSymbol symbol = varman.getAddress(this, ref);
+		if (symbol != null){
+			return VariableSymbol.create(symbol, ref.getType());
 		}
 		return null;
 	}
@@ -73,7 +74,7 @@ public class SymbolManager extends AbstractSymbolManager {
 
 	@Override
 	public OperationFinder getOpFinder() {
-		return null;
+		return getCodePlatform().getOperationFinder();
 	}
 	
 }

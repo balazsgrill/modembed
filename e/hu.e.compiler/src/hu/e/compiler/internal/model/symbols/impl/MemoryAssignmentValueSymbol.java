@@ -3,33 +3,39 @@
  */
 package hu.e.compiler.internal.model.symbols.impl;
 
+import java.util.Collections;
+import java.util.List;
+
 import hu.e.compiler.ECompilerException;
 import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.compiler.internal.model.symbols.IReferenceSymbol;
 import hu.e.compiler.internal.model.symbols.ISymbol;
-import hu.e.compiler.list.LabelStep;
+import hu.e.compiler.list.MemoryAssignment;
 import hu.e.compiler.list.ProgramStep;
 import hu.e.compiler.list.ReferableValue;
 import hu.e.parser.eSyntax.StructTypeDefMember;
 import hu.e.parser.eSyntax.TypeDef;
 
-import java.util.Collections;
-import java.util.List;
-
 /**
  * @author balazs.grill
  *
  */
-public class CodeAddressSymbol implements IReferenceSymbol {
+public class MemoryAssignmentValueSymbol implements IReferenceSymbol {
 
-	private final LabelStep step;
+	private final MemoryAssignment assignment;
 	
-	public CodeAddressSymbol(LabelStep step) {
-		this.step = step;
+	private final int offset;
+	
+	/**
+	 * 
+	 */
+	public MemoryAssignmentValueSymbol(MemoryAssignment assignment, int offset) {
+		this.assignment = assignment;
+		this.offset = offset;
 	}
-	
-	public LabelStep getStep() {
-		return step;
+
+	public MemoryAssignment getAssignment() {
+		return assignment;
 	}
 	
 	/* (non-Javadoc)
@@ -52,30 +58,47 @@ public class CodeAddressSymbol implements IReferenceSymbol {
 	 * @see hu.e.compiler.internal.model.symbols.ISymbol#getType()
 	 */
 	@Override
-	public TypeDef getType() {
+	public TypeDef getType() throws ECompilerException {
 		return null;
 	}
 
+	/* (non-Javadoc)
+	 * @see hu.e.compiler.internal.model.symbols.ISymbol#getElement(hu.e.compiler.internal.model.ISymbolManager, int)
+	 */
 	@Override
 	public ISymbol getElement(ISymbolManager sm, int index)
 			throws ECompilerException {
 		return null;
 	}
 
+	/* (non-Javadoc)
+	 * @see hu.e.compiler.internal.model.symbols.ISymbol#getMember(hu.e.compiler.internal.model.ISymbolManager, hu.e.parser.eSyntax.StructTypeDefMember)
+	 */
 	@Override
-	public ISymbol getMember(ISymbolManager sm, StructTypeDefMember member)
-			throws ECompilerException {
+	public ISymbol getMember(ISymbolManager sm, StructTypeDefMember member){
 		return null;
 	}
 
 	@Override
 	public ReferableValue getReferableValue() {
-		return getStep();
+		return getAssignment();
 	}
 
 	@Override
 	public int getOffset() {
-		return 0;
+		return offset;
 	}
 
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append(getAssignment().getName());
+		if (offset != 0){
+			sb.append("[");
+			sb.append(offset);
+			sb.append("]");
+		}
+		return sb.toString();
+	}
+	
 }

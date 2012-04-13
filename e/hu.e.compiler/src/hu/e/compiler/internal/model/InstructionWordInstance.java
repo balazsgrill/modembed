@@ -6,11 +6,11 @@ package hu.e.compiler.internal.model;
 import hu.e.compiler.ECompiler;
 import hu.e.compiler.ECompilerException;
 import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
+import hu.e.compiler.internal.model.symbols.IReferenceSymbol;
 import hu.e.compiler.internal.model.symbols.ISymbol;
-import hu.e.compiler.internal.model.symbols.impl.CodeAddressSymbol;
 import hu.e.compiler.list.InstructionStep;
-import hu.e.compiler.list.LabelReference;
 import hu.e.compiler.list.ListFactory;
+import hu.e.compiler.list.Reference;
 import hu.e.parser.eSyntax.InstructionWord;
 import hu.e.parser.eSyntax.LiteralValue;
 import hu.e.parser.eSyntax.Variable;
@@ -34,7 +34,7 @@ public class InstructionWordInstance{
 		return v;
 	}
 	
-	private final List<LabelReference> labelRefs = new ArrayList<LabelReference>();
+	private final List<Reference> labelRefs = new ArrayList<Reference>();
 	
 	private int value;
 	private int size;
@@ -70,14 +70,15 @@ public class InstructionWordInstance{
 				if (!vs.isLiteral())
 					throw new ECompilerException(ws, "Instruction word can only contain compile-time variables!");
 
-				if (vs instanceof CodeAddressSymbol){
-					LabelReference ref = ListFactory.eINSTANCE.createLabelReference();
+				if (vs instanceof IReferenceSymbol){
+					Reference ref = ListFactory.eINSTANCE.createReference();
 					ref.setShift(shift);
 					ref.setSize(size);
 					ref.setStart(s);
-					ref.setLabel(((CodeAddressSymbol) vs).getStep());
+					ref.setValue(((IReferenceSymbol) vs).getReferableValue());
+					ref.setOffset(((IReferenceSymbol) vs).getOffset());
 					labelRefs.add(ref);
-				}else{	
+				} else{	
 					v = ((ILiteralSymbol)vs).getValue();
 					value += getItemValue(v, shift, s, size);
 				}

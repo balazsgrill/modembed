@@ -5,7 +5,6 @@ package hu.e.compiler.internal.linking;
 
 import hu.e.compiler.internal.model.InstructionWordInstance;
 import hu.e.compiler.list.InstructionStep;
-import hu.e.compiler.list.LabelReference;
 import hu.e.compiler.list.LabelStep;
 import hu.e.compiler.list.ProgramList;
 import hu.e.compiler.list.ProgramStep;
@@ -59,7 +58,7 @@ public class ProgramListLinker {
 			d = (int) s.getCode();
 			for(Reference lr : s.getRefs()){
 				
-				int v = labels.get(lr.getLabel());
+				int v = labels.get(lr.getValue());
 				d += InstructionWordInstance.getItemValue(v, lr.getShift(), lr.getStart(), lr.getSize());
 			}
 			for(int j=0;j<wordbytes;j++){

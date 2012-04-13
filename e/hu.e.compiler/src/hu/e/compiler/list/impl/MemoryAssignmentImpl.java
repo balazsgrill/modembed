@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link hu.e.compiler.list.impl.MemoryAssignmentImpl#getSize <em>Size</em>}</li>
+ *   <li>{@link hu.e.compiler.list.impl.MemoryAssignmentImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -48,6 +49,26 @@ public class MemoryAssignmentImpl extends ReferableValueImpl implements MemoryAs
 	 * @ordered
 	 */
 	protected int size = SIZE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -94,11 +115,34 @@ public class MemoryAssignmentImpl extends ReferableValueImpl implements MemoryAs
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ListPackage.MEMORY_ASSIGNMENT__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ListPackage.MEMORY_ASSIGNMENT__SIZE:
 				return getSize();
+			case ListPackage.MEMORY_ASSIGNMENT__NAME:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -113,6 +157,9 @@ public class MemoryAssignmentImpl extends ReferableValueImpl implements MemoryAs
 		switch (featureID) {
 			case ListPackage.MEMORY_ASSIGNMENT__SIZE:
 				setSize((Integer)newValue);
+				return;
+			case ListPackage.MEMORY_ASSIGNMENT__NAME:
+				setName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -129,6 +176,9 @@ public class MemoryAssignmentImpl extends ReferableValueImpl implements MemoryAs
 			case ListPackage.MEMORY_ASSIGNMENT__SIZE:
 				setSize(SIZE_EDEFAULT);
 				return;
+			case ListPackage.MEMORY_ASSIGNMENT__NAME:
+				setName(NAME_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -143,6 +193,8 @@ public class MemoryAssignmentImpl extends ReferableValueImpl implements MemoryAs
 		switch (featureID) {
 			case ListPackage.MEMORY_ASSIGNMENT__SIZE:
 				return size != SIZE_EDEFAULT;
+			case ListPackage.MEMORY_ASSIGNMENT__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -159,6 +211,8 @@ public class MemoryAssignmentImpl extends ReferableValueImpl implements MemoryAs
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (size: ");
 		result.append(size);
+		result.append(", name: ");
+		result.append(name);
 		result.append(')');
 		return result.toString();
 	}

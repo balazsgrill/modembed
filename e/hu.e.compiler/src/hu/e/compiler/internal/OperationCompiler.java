@@ -13,6 +13,7 @@ import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.compiler.internal.model.symbols.impl.NullSymbol;
 import hu.e.compiler.internal.symbols.AbstractSymbolManager;
 import hu.e.compiler.list.ListFactory;
+import hu.e.compiler.list.MemoryAssignment;
 import hu.e.compiler.list.ProgramStep;
 import hu.e.compiler.list.SequenceStep;
 import hu.e.parser.eSyntax.CompilationUnit;
@@ -85,7 +86,10 @@ public class OperationCompiler {
 		if(operation.getReturnvar() != null){
 			//needs a result buffer
 			try {
-				sm.getVariableManager().define(sm, operation.getReturnvar());
+				MemoryAssignment ma = ListFactory.eINSTANCE.createMemoryAssignment();
+				ma.setName("result");
+				sm.getVariableManager().define(sm, operation.getReturnvar(),ma);
+				result.getVariables().add(ma);
 			} catch (ECompilerException e) {
 				steps.add(CompilationErrorEntry.create(e));
 			}

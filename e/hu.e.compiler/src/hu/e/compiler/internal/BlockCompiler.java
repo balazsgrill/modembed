@@ -13,6 +13,7 @@ import hu.e.compiler.internal.model.symbols.IVariableSymbol;
 import hu.e.compiler.internal.model.symbols.impl.CodeAddressSymbol;
 import hu.e.compiler.list.LabelStep;
 import hu.e.compiler.list.ListFactory;
+import hu.e.compiler.list.MemoryAssignment;
 import hu.e.compiler.list.ProgramStep;
 import hu.e.compiler.list.SequenceStep;
 import hu.e.parser.eSyntax.InstructionWord;
@@ -44,14 +45,30 @@ public class BlockCompiler {
 		SequenceStep result = ListFactory.eINSTANCE.createSequenceStep();
 		
 		Map<Label, LabelStep> labels = new HashMap<Label, LabelStep>();
+		Map<Variable, MemoryAssignment> memory = new HashMap<Variable, MemoryAssignment>();
 		
 		sm.getVariableManager().startBlock();
 		for(OperationStep step : block.getSteps()){
-			if (step instanceof Label){
-				LabelStep ls = ListFactory.eINSTANCE.createLabelStep();
-				labels.put((Label)step, ls);
-				sm.getVariableManager().defineLabel((Label)step, ls);
+			if (step instanceof Variable){
+				if (step instanceof Label){
+					LabelStep ls = ListFactory.eINSTANCE.createLabelStep();
+					labels.put((Label)step, ls);
+					sm.getVariableManager().defineLabel((Label)step, ls);
+				}else{
+					try {
+						MemoryAssignment ma = ListFactory.eINSTANCE.createMemoryAssignment();
+						ma.setName(((Variable) step).getName());
+						ma.setSize(sm.getVariableManager().getMemoryManager().getSize(sm, ((Variable) step).getType()));
+						result.getVariables().add(ma);
+						sm.getVariableManager().define(sm, (Variable)step, ma);
+						memory.put((Variable) step, ma);
+					} catch (ECompilerException e) {
+						result.getSteps().add(CompilationErrorEntry.create(e));
+					}
+					
+				}
 			}
+			
 		}
 		
 		for(OperationStep step : block.getSteps()){
@@ -67,11 +84,11 @@ public class BlockCompiler {
 				if (step instanceof Label){
 					result.getSteps().add(labels.get(step));
 				}else{
-					try{
-						sm.getVariableManager().define(sm, (Variable)step);
-					}catch(ECompilerException e){
-						result.getSteps().add(CompilationErrorEntry.create(e));
-					}
+//					try{
+//						sm.getVariableManager().define(sm, (Variable)step);
+//					}catch(ECompilerException e){
+//						result.getSteps().add(CompilationErrorEntry.create(e));
+//					}
 				}
 			}
 			if (step instanceof XExpression){

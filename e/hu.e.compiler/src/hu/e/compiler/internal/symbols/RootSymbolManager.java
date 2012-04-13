@@ -75,7 +75,7 @@ public class RootSymbolManager extends AbstractSymbolManager {
 
 	@Override
 	public OperationFinder getOpFinder() {
-		return null;
+		return getCodePlatform().getOperationFinder();
 	}
 	
 

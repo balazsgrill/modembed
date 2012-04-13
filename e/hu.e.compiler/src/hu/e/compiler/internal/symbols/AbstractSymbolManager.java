@@ -13,6 +13,7 @@ import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.compiler.internal.model.symbols.IVariableSymbol;
 import hu.e.compiler.internal.model.symbols.impl.ArrayLiteralSymbol;
 import hu.e.compiler.internal.model.symbols.impl.LiteralSymbol;
+import hu.e.compiler.internal.model.symbols.impl.MemoryAssignmentValueSymbol;
 import hu.e.compiler.internal.model.symbols.impl.OperatedSymbol;
 import hu.e.compiler.internal.model.symbols.impl.OperationSymbol;
 import hu.e.compiler.internal.model.symbols.impl.StructLiteralSymbol;
@@ -324,8 +325,8 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 	
 	@Override
 	public IVariableSymbol createBuffer(TypeDef type) throws ECompilerException {
-		int addr = this.getVariableManager().allocate(this, type);
-		IVariableSymbol v = VariableSymbol.create(new LiteralSymbol(addr), type);
+		MemoryAssignmentValueSymbol symbol = this.getVariableManager().allocate(this, type);
+		IVariableSymbol v = VariableSymbol.create(symbol, type);
 		return v;
 	}
 	

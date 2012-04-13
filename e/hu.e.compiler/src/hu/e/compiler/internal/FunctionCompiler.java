@@ -4,10 +4,8 @@
 package hu.e.compiler.internal;
 
 import hu.e.compiler.ECompiler;
-import hu.e.compiler.ECompilerException;
 import hu.e.compiler.internal.linking.CodePlatform;
 import hu.e.compiler.internal.linking.ComponentLinker;
-import hu.e.compiler.internal.model.CompilationErrorEntry;
 import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.compiler.internal.symbols.SymbolManager;
 import hu.e.compiler.list.ListFactory;
@@ -15,7 +13,6 @@ import hu.e.compiler.list.ProgramList;
 import hu.e.compiler.list.SequenceStep;
 import hu.e.parser.eSyntax.FunctionBinarySection;
 import hu.e.parser.eSyntax.FunctionMemory;
-import hu.e.parser.eSyntax.Variable;
 
 /**
  * @author balazs.grill
@@ -49,15 +46,15 @@ public class FunctionCompiler {
 		root.setName("GLOBAL");
 		pl.setStep(root);
 		pl.setName(link.getName());
-		SymbolManager sm = new SymbolManager(new CodePlatform(linker, link.getLib()),parentsm,memman);
+		SymbolManager sm = new SymbolManager(new CodePlatform(linker, link.getLib()),parentsm,memman, root);
 
-		for(Variable v : linker.getGlobals()){
-			try {
-				sm.getSymbol(v);
-			} catch (ECompilerException e) {
-				root.getSteps().add(CompilationErrorEntry.create(e));
-			}
-		}
+//		for(Variable v : linker.getGlobals()){
+//			try {
+//				sm.getSymbol(v);
+//			} catch (ECompilerException e) {
+//				root.getSteps().add(CompilationErrorEntry.create(e));
+//			}
+//		}
 		
 		BlockCompiler bc = new BlockCompiler(link.getDo());
 		root.getSteps().add(bc.compile(sm));

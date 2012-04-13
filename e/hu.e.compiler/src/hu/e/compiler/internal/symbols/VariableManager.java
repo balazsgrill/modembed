@@ -8,7 +8,11 @@ import hu.e.compiler.internal.MemoryManager;
 import hu.e.compiler.internal.StackLevel;
 import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.compiler.internal.model.IVariableManager;
+import hu.e.compiler.internal.model.symbols.impl.MemoryAssignmentValueSymbol;
 import hu.e.compiler.list.LabelStep;
+import hu.e.compiler.list.ListFactory;
+import hu.e.compiler.list.MemoryAssignment;
+import hu.e.compiler.list.SequenceStep;
 import hu.e.parser.eSyntax.Label;
 import hu.e.parser.eSyntax.Library;
 import hu.e.parser.eSyntax.TypeDef;
@@ -26,17 +30,20 @@ public class VariableManager implements IVariableManager {
 
 	Stack<StackLevel> stack = new Stack<StackLevel>();
 	
-	private final Map<Variable, Integer> globals = new HashMap<Variable, Integer>();
+	private final Map<Variable, MemoryAssignment> globals = new HashMap<Variable, MemoryAssignment>();
 	
 	private final MemoryManager memman;
+	
+	private final SequenceStep rootstep;
 	
 	@Override
 	public MemoryManager getMemoryManager() {
 		return memman;
 	}
 	
-	public VariableManager(MemoryManager memman) {
+	public VariableManager(MemoryManager memman, SequenceStep rootstep) {
 		this.memman = memman;
+		this.rootstep = rootstep;
 		stack.push(new StackLevel(memman));
 	}
 	
@@ -52,23 +59,26 @@ public class VariableManager implements IVariableManager {
 	 * @see hu.e.compiler.internal.model.IVariableManager#define(hu.e.parser.eSyntax.Variable)
 	 */
 	@Override
-	public void define(ISymbolManager sm, Variable var) throws ECompilerException {
-		stack.peek().allocate(sm, var);
+	public void define(ISymbolManager sm, Variable var, MemoryAssignment ma) throws ECompilerException {
+		stack.peek().allocate(sm, var, ma);
 	}
 
-	public int getAddress(ISymbolManager sm, Variable var) throws ECompilerException{
+	public MemoryAssignmentValueSymbol getAddress(ISymbolManager sm, Variable var) throws ECompilerException{
 		if (var.eContainer() instanceof Library){
 			if (!globals.containsKey(var)){
-				Integer a = memman.allocate(memman.getSize(sm, var.getType()));
-				globals.put(var, a);
+				MemoryAssignment ma = ListFactory.eINSTANCE.createMemoryAssignment();
+				ma.setSize(memman.getSize(sm, var.getType()));
+				ma.setName(((Library)var.eContainer()).getName()+"."+var.getName());
+				rootstep.getVariables().add(ma);
+				globals.put(var, ma);
 			}
-			return globals.get(var);
+			return new MemoryAssignmentValueSymbol(globals.get(var),0);
 		}
 		for(StackLevel sl : stack){
-			Integer addr = sl.getAddress(var);
-			if (addr != null) return addr;
+			MemoryAssignment addr = sl.getAddress(var);
+			if (addr != null) return new MemoryAssignmentValueSymbol(addr, 0);
 		}
-		return -1;
+		return null;
 	}
 	
 	/* (non-Javadoc)
@@ -81,7 +91,7 @@ public class VariableManager implements IVariableManager {
 	}
 
 	@Override
-	public int allocate(ISymbolManager sm, TypeDef type) throws ECompilerException {
+	public MemoryAssignmentValueSymbol allocate(ISymbolManager sm, TypeDef type) throws ECompilerException {
 		return stack.peek().allocate(sm, type);
 	}
 

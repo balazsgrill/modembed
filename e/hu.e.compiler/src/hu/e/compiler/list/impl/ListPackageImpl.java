@@ -428,6 +428,15 @@ public class ListPackageImpl extends EPackageImpl implements ListPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getMemoryAssignment_Name() {
+		return (EAttribute)memoryAssignmentEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getChoiceAlternative() {
 		return choiceAlternativeEClass;
 	}
@@ -523,6 +532,7 @@ public class ListPackageImpl extends EPackageImpl implements ListPackage {
 
 		memoryAssignmentEClass = createEClass(MEMORY_ASSIGNMENT);
 		createEAttribute(memoryAssignmentEClass, MEMORY_ASSIGNMENT__SIZE);
+		createEAttribute(memoryAssignmentEClass, MEMORY_ASSIGNMENT__NAME);
 
 		choiceAlternativeEClass = createEClass(CHOICE_ALTERNATIVE);
 		createEReference(choiceAlternativeEClass, CHOICE_ALTERNATIVE__STEP);
@@ -605,6 +615,7 @@ public class ListPackageImpl extends EPackageImpl implements ListPackage {
 
 		initEClass(memoryAssignmentEClass, MemoryAssignment.class, "MemoryAssignment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMemoryAssignment_Size(), ecorePackage.getEInt(), "size", null, 0, 1, MemoryAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMemoryAssignment_Name(), ecorePackage.getEString(), "name", null, 0, 1, MemoryAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(choiceAlternativeEClass, ChoiceAlternative.class, "ChoiceAlternative", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getChoiceAlternative_Step(), this.getProgramStep(), null, "step", null, 0, 1, ChoiceAlternative.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

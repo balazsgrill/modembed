@@ -61,6 +61,7 @@ public class MemoryAssignmentItemProvider
 			super.getPropertyDescriptors(object);
 
 			addSizePropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -88,6 +89,28 @@ public class MemoryAssignmentItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_MemoryAssignment_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MemoryAssignment_name_feature", "_UI_MemoryAssignment_type"),
+				 ListPackage.Literals.MEMORY_ASSIGNMENT__NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns MemoryAssignment.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -106,8 +129,10 @@ public class MemoryAssignmentItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		MemoryAssignment memoryAssignment = (MemoryAssignment)object;
-		return getString("_UI_MemoryAssignment_type") + " " + memoryAssignment.getSize();
+		String label = ((MemoryAssignment)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_MemoryAssignment_type") :
+			getString("_UI_MemoryAssignment_type") + " " + label;
 	}
 
 	/**
@@ -123,6 +148,7 @@ public class MemoryAssignmentItemProvider
 
 		switch (notification.getFeatureID(MemoryAssignment.class)) {
 			case ListPackage.MEMORY_ASSIGNMENT__SIZE:
+			case ListPackage.MEMORY_ASSIGNMENT__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

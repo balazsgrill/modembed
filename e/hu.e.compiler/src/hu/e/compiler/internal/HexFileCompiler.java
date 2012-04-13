@@ -83,7 +83,8 @@ public class HexFileCompiler {
 					
 					int startAddr = ECompiler.convertLiteral(((FunctionBinarySection) bs).getStartAddr());
 					
-					entry.setData(linker.link(startAddr));
+					//TODO linking is disabled
+					entry.setData(new byte[0]/*linker.link(startAddr)*/);
 					result.getEntries().add(entry);
 					
 				}catch(ECompilerException e){

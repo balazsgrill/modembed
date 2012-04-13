@@ -5,14 +5,15 @@ package hu.e.compiler.internal;
 
 import hu.e.compiler.ECompilerException;
 import hu.e.compiler.internal.model.ISymbolManager;
+import hu.e.compiler.internal.model.symbols.impl.MemoryAssignmentValueSymbol;
 import hu.e.compiler.list.LabelStep;
+import hu.e.compiler.list.ListFactory;
+import hu.e.compiler.list.MemoryAssignment;
 import hu.e.parser.eSyntax.Label;
 import hu.e.parser.eSyntax.TypeDef;
 import hu.e.parser.eSyntax.Variable;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -23,9 +24,7 @@ public class StackLevel {
 
 	private final MemoryManager memman;
 	
-	private final Map<Variable, Integer> vars = new HashMap<Variable, Integer>();
-	
-	private final List<Integer> alloc = new ArrayList<Integer>();
+	private final Map<Variable, MemoryAssignment> vars = new HashMap<Variable, MemoryAssignment>();
 	
 	private final Map<Label, LabelStep> labels = new HashMap<Label, LabelStep>();
 	
@@ -33,29 +32,24 @@ public class StackLevel {
 		this.memman = memman;
 	}
 	
-	public void allocate(ISymbolManager sm, Variable var) throws ECompilerException{
-		vars.put(var, memman.allocate(memman.getSize(sm, var.getType())));
+	public void allocate(ISymbolManager sm, Variable var, MemoryAssignment ma) throws ECompilerException{
+		ma.setSize(memman.getSize(sm, var.getType()));
+		vars.put(var, ma);
 	}
 	
-	public int allocate(ISymbolManager sm, TypeDef type) throws ECompilerException{
-		Integer addr = memman.allocate(memman.getSize(sm, type));
-		alloc.add(addr);
-		return addr;
+	public MemoryAssignmentValueSymbol allocate(ISymbolManager sm, TypeDef type) throws ECompilerException{
+		MemoryAssignment ma = ListFactory.eINSTANCE.createMemoryAssignment();
+		ma.setName("buffer");
+		ma.setSize(memman.getSize(sm, type));
+		return new MemoryAssignmentValueSymbol(ma, 0);
 	}
 	
 	public void release(){
-		for(Integer addr : vars.values()){
-			memman.release(addr);
-		}
-		for(Integer addr : alloc){
-			memman.release(addr);
-		}
-		alloc.clear();
 		vars.clear();
 		labels.clear();
 	}
 	
-	public Integer getAddress(Variable v){
+	public MemoryAssignment getAddress(Variable v){
 		return vars.get(v);
 	}
 

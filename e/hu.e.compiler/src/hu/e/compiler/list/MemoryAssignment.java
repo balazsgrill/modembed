@@ -16,6 +16,7 @@ package hu.e.compiler.list;
  * The following features are supported:
  * <ul>
  *   <li>{@link hu.e.compiler.list.MemoryAssignment#getSize <em>Size</em>}</li>
+ *   <li>{@link hu.e.compiler.list.MemoryAssignment#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -49,5 +50,31 @@ public interface MemoryAssignment extends ReferableValue {
 	 * @generated
 	 */
 	void setSize(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see hu.e.compiler.list.ListPackage#getMemoryAssignment_Name()
+	 * @model
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Sets the value of the '{@link hu.e.compiler.list.MemoryAssignment#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
 
 } // MemoryAssignment

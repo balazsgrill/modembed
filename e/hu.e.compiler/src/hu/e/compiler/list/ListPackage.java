@@ -395,13 +395,22 @@ public interface ListPackage extends EPackage {
 	int MEMORY_ASSIGNMENT__SIZE = REFERABLE_VALUE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEMORY_ASSIGNMENT__NAME = REFERABLE_VALUE_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Memory Assignment</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MEMORY_ASSIGNMENT_FEATURE_COUNT = REFERABLE_VALUE_FEATURE_COUNT + 1;
+	int MEMORY_ASSIGNMENT_FEATURE_COUNT = REFERABLE_VALUE_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link hu.e.compiler.list.impl.ChoiceAlternativeImpl <em>Choice Alternative</em>}' class.
@@ -739,6 +748,17 @@ public interface ListPackage extends EPackage {
 	EAttribute getMemoryAssignment_Size();
 
 	/**
+	 * Returns the meta object for the attribute '{@link hu.e.compiler.list.MemoryAssignment#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see hu.e.compiler.list.MemoryAssignment#getName()
+	 * @see #getMemoryAssignment()
+	 * @generated
+	 */
+	EAttribute getMemoryAssignment_Name();
+
+	/**
 	 * Returns the meta object for class '{@link hu.e.compiler.list.ChoiceAlternative <em>Choice Alternative</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1037,6 +1057,14 @@ public interface ListPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute MEMORY_ASSIGNMENT__SIZE = eINSTANCE.getMemoryAssignment_Size();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MEMORY_ASSIGNMENT__NAME = eINSTANCE.getMemoryAssignment_Name();
 
 		/**
 		 * The meta object literal for the '{@link hu.e.compiler.list.impl.ChoiceAlternativeImpl <em>Choice Alternative</em>}' class.

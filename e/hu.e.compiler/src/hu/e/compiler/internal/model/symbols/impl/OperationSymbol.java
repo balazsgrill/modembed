@@ -7,14 +7,19 @@ import hu.e.compiler.ECompilerException;
 import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.compiler.internal.model.OPERATION;
 import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
+import hu.e.compiler.internal.model.symbols.IReferenceSymbol;
 import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.compiler.internal.model.symbols.IVariableSymbol;
+import hu.e.compiler.list.ListFactory;
+import hu.e.compiler.list.MemoryAssignment;
 import hu.e.compiler.list.ProgramStep;
+import hu.e.compiler.list.SequenceStep;
 import hu.e.parser.eSyntax.OperationRole;
 import hu.e.parser.eSyntax.StructTypeDefMember;
 import hu.e.parser.eSyntax.TypeDef;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
@@ -65,6 +70,7 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
 	}
 
 	private final List<ProgramStep> steps = new ArrayList<ProgramStep>();
+	private final List<MemoryAssignment> memassignments = new ArrayList<MemoryAssignment>();
 	
 	private ISymbol result = null;
 	
@@ -72,8 +78,9 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
 		if (sm.getVariableManager() == null){
 			throw new ECompilerException(context, "Cannot define runtime variables in compiletime context!");
 		}
-		int addr = sm.getVariableManager().allocate(sm, type);
-		IVariableSymbol v = VariableSymbol.create(new LiteralSymbol(addr), type);
+		MemoryAssignmentValueSymbol symbol = sm.getVariableManager().allocate(sm, type);
+		memassignments.add(symbol.getAssignment());
+		IVariableSymbol v = VariableSymbol.create(symbol, type);
 		return v;
 	}
 	
@@ -147,8 +154,8 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
 	@Override
 	public int getValue() throws ECompilerException {
 		if (isLiteral()){
-			if (this.a instanceof CodeAddressSymbol) throw new ECompilerException(context, "Cannot execute operation on a code address!");
-			if (this.b instanceof CodeAddressSymbol) throw new ECompilerException(context, "Cannot execute operation on a code address!");
+			if (this.a instanceof IReferenceSymbol) throw new ECompilerException(context, "Cannot execute operation on a link-time symbol!");
+			if (this.b instanceof IReferenceSymbol) throw new ECompilerException(context, "Cannot execute operation on a link-time symbol!");
 			
 			ILiteralSymbol a = (ILiteralSymbol)this.a;
 			ILiteralSymbol b = (this.b == null)? null : (ILiteralSymbol)this.b;
@@ -199,11 +206,15 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
 
 	@Override
 	public List<ProgramStep> getSteps() {
+		SequenceStep step = ListFactory.eINSTANCE.createSequenceStep();
+		step.setName(toString());
 		List<ProgramStep> ps = new ArrayList<ProgramStep>();
 		ps.addAll(a.getSteps());
 		if (b != null) ps.addAll(b.getSteps());
 		ps.addAll(steps);
-		return ps;
+		step.getSteps().addAll(ps);
+		step.getVariables().addAll(memassignments);
+		return Arrays.asList((ProgramStep)step);
 	}
 
 	@Override
