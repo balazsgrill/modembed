@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: eTrice code generator launch plugin for e
+Bundle-SymbolicName: hu.modembed.etrice.generator.launch.e;singleton:=true
+Bundle-Version: 0.1.0.qualifier
+Bundle-Activator: hu.modembed.etrice.generator.e.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.etrice.generator.launch;bundle-version="0.2.0",
+ org.eclipse.debug.core;bundle-version="3.7.0",
+ org.eclipse.debug.ui;bundle-version="3.7.0",
+ org.eclipse.jdt.launching;bundle-version="3.6.0",
+ org.eclipse.etrice.generator;bundle-version="0.2.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
