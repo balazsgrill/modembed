@@ -45,6 +45,10 @@ MOVLB(uint8 k){
 	<b000000001:9 k:5>
 }
 
+SELECTB(address f){
+	<b000000001:9 f:5:7>
+}
+
 /*
  * Move literal to PCLATH
  */

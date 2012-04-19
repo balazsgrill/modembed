@@ -8,10 +8,10 @@ use e.platform;
 /*
  * File register address
  */
-type address = unsigned 9 bits;
+type address = unsigned 12 bits;
 
 /*
- * 20 bit code address
+ * 13 bit code address
  */
 type codeaddr = unsigned 13 bits;
 
