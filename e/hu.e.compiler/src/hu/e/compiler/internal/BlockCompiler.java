@@ -3,6 +3,7 @@
  */
 package hu.e.compiler.internal;
 
+import hu.e.compiler.ECompiler;
 import hu.e.compiler.ECompilerException;
 import hu.e.compiler.internal.model.CompilationErrorEntry;
 import hu.e.compiler.internal.model.ISymbolManager;
@@ -15,6 +16,7 @@ import hu.e.compiler.list.LabelStep;
 import hu.e.compiler.list.ListFactory;
 import hu.e.compiler.list.MemoryAssignment;
 import hu.e.compiler.list.ProgramStep;
+import hu.e.compiler.list.ScriptStep;
 import hu.e.compiler.list.SequenceStep;
 import hu.e.parser.eSyntax.InstructionWord;
 import hu.e.parser.eSyntax.Label;
@@ -24,6 +26,7 @@ import hu.e.parser.eSyntax.OperationStep;
 import hu.e.parser.eSyntax.Variable;
 import hu.e.parser.eSyntax.XExpression;
 import hu.e.parser.eSyntax.XIfExpression;
+import hu.e.parser.eSyntax.XScriptedExpression;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -98,6 +101,23 @@ public class BlockCompiler {
 				} catch (ECompilerException e) {
 					result.getSteps().add(CompilationErrorEntry.create(e));
 				}
+			}
+			if (step instanceof XScriptedExpression){
+				XScriptedExpression script = (XScriptedExpression)step;
+				
+				if (script.getConditional() != null){
+					OperationBlock conditional = script.getConditional();
+					
+					ProgramStep ps = new BlockCompiler(conditional).compile(sm);
+					ps.setCondition(ECompiler.convertScriptLiteral(script.getScript()));
+					result.getSteps().add(ps);
+					
+				}else{
+					ScriptStep ss = ListFactory.eINSTANCE.createScriptStep();
+					ss.setExecute(ECompiler.convertScriptLiteral(script.getScript()));
+					result.getSteps().add(ss);
+				}
+				
 			}
 			if (step instanceof XIfExpression){
 				try{

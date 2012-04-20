@@ -4,7 +4,7 @@
     <steps xsi:type="lst:SequenceStep">
       <steps xsi:type="lst:SequenceStep" name="test.main">
         <steps xsi:type="lst:SequenceStep">
-          <steps xsi:type="lst:SequenceStep" name="SET(hu.e.parser.eSyntax.impl.RefTypeDefImpl@10fa836@4051, 80)">
+          <steps xsi:type="lst:SequenceStep" name="SET(e.platform.uint8@4051, 80)">
             <steps xsi:type="lst:SequenceStep" name="pic18.platform.u8.set_u8">
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
@@ -21,7 +21,7 @@
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                             <steps xsi:type="lst:SequenceStep">
-                              <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@1707a6a (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                               <steps xsi:type="lst:SequenceStep" name="0">
                                 <steps xsi:type="lst:SequenceStep" name="1"/>
                                 <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -31,7 +31,7 @@
                           </steps>
                           <steps xsi:type="lst:SequenceStep" name="microchip.pic18.MOVWF">
                             <steps xsi:type="lst:SequenceStep">
-                              <steps xsi:type="lst:InstructionStep" code="28371" width="16"/>
+                              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Instruction word can only contain compile-time variables! at microchip.pic18 line 143"/>
                             </steps>
                           </steps>
                         </steps>
@@ -42,7 +42,7 @@
               </steps>
             </steps>
           </steps>
-          <steps xsi:type="lst:SequenceStep" name="SET(hu.e.parser.eSyntax.impl.RefTypeDefImpl@123a01f@3966, 0)">
+          <steps xsi:type="lst:SequenceStep" name="SET(e.platform.uint8@3966, 0)">
             <steps xsi:type="lst:SequenceStep" name="pic18.platform.u8.set_u8">
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
@@ -52,7 +52,7 @@
                       <steps xsi:type="lst:SequenceStep">
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@1b9a906 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                             <steps xsi:type="lst:SequenceStep" name="0">
                               <steps xsi:type="lst:SequenceStep" name="1"/>
                               <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -62,7 +62,7 @@
                         </steps>
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.CLRF">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:InstructionStep" code="27262" width="16"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Instruction word can only contain compile-time variables! at microchip.pic18 line 44"/>
                           </steps>
                         </steps>
                       </steps>
@@ -72,7 +72,7 @@
               </steps>
             </steps>
           </steps>
-          <steps xsi:type="lst:SequenceStep" name="SET(hu.e.parser.eSyntax.impl.RefTypeDefImpl@100d8d8@3967, 0)">
+          <steps xsi:type="lst:SequenceStep" name="SET(e.platform.uint8@3967, 0)">
             <steps xsi:type="lst:SequenceStep" name="pic18.platform.u8.set_u8">
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
@@ -82,7 +82,7 @@
                       <steps xsi:type="lst:SequenceStep">
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@230076 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                             <steps xsi:type="lst:SequenceStep" name="0">
                               <steps xsi:type="lst:SequenceStep" name="1"/>
                               <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -92,7 +92,7 @@
                         </steps>
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.CLRF">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:InstructionStep" code="27263" width="16"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Instruction word can only contain compile-time variables! at microchip.pic18 line 44"/>
                           </steps>
                         </steps>
                       </steps>
@@ -102,7 +102,7 @@
               </steps>
             </steps>
           </steps>
-          <steps xsi:type="lst:SequenceStep" name="SET(hu.e.parser.eSyntax.impl.RefTypeDefImpl@10b8772@3988, 0)">
+          <steps xsi:type="lst:SequenceStep" name="SET(e.platform.uint8@3988, 0)">
             <steps xsi:type="lst:SequenceStep" name="pic18.platform.u8.set_u8">
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
@@ -112,7 +112,7 @@
                       <steps xsi:type="lst:SequenceStep">
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@b65f39 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                             <steps xsi:type="lst:SequenceStep" name="0">
                               <steps xsi:type="lst:SequenceStep" name="1"/>
                               <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -122,7 +122,7 @@
                         </steps>
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.CLRF">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:InstructionStep" code="27284" width="16"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Instruction word can only contain compile-time variables! at microchip.pic18 line 44"/>
                           </steps>
                         </steps>
                       </steps>
@@ -132,7 +132,7 @@
               </steps>
             </steps>
           </steps>
-          <steps xsi:type="lst:SequenceStep" name="SET(hu.e.parser.eSyntax.impl.RefTypeDefImpl@143938e@3970, 0)">
+          <steps xsi:type="lst:SequenceStep" name="SET(e.platform.uint8@3970, 0)">
             <steps xsi:type="lst:SequenceStep" name="pic18.platform.u8.set_u8">
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
@@ -142,7 +142,7 @@
                       <steps xsi:type="lst:SequenceStep">
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@af68b0 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                             <steps xsi:type="lst:SequenceStep" name="0">
                               <steps xsi:type="lst:SequenceStep" name="1"/>
                               <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -152,7 +152,7 @@
                         </steps>
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.CLRF">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:InstructionStep" code="27266" width="16"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Instruction word can only contain compile-time variables! at microchip.pic18 line 44"/>
                           </steps>
                         </steps>
                       </steps>
@@ -162,7 +162,7 @@
               </steps>
             </steps>
           </steps>
-          <steps xsi:type="lst:SequenceStep" name="SET(hu.e.parser.eSyntax.impl.RefTypeDefImpl@11b53af@3979, 0)">
+          <steps xsi:type="lst:SequenceStep" name="SET(e.platform.uint8@3979, 0)">
             <steps xsi:type="lst:SequenceStep" name="pic18.platform.u8.set_u8">
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
@@ -172,7 +172,7 @@
                       <steps xsi:type="lst:SequenceStep">
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@da8b1d (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                             <steps xsi:type="lst:SequenceStep" name="0">
                               <steps xsi:type="lst:SequenceStep" name="1"/>
                               <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -182,7 +182,7 @@
                         </steps>
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.CLRF">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:InstructionStep" code="27275" width="16"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Instruction word can only contain compile-time variables! at microchip.pic18 line 44"/>
                           </steps>
                         </steps>
                       </steps>
@@ -192,7 +192,7 @@
               </steps>
             </steps>
           </steps>
-          <steps xsi:type="lst:SequenceStep" name="SET(hu.e.parser.eSyntax.impl.RefTypeDefImpl@15dcf52@3969, 0)">
+          <steps xsi:type="lst:SequenceStep" name="SET(e.platform.uint8@3969, 0)">
             <steps xsi:type="lst:SequenceStep" name="pic18.platform.u8.set_u8">
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
@@ -202,7 +202,7 @@
                       <steps xsi:type="lst:SequenceStep">
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@1305cfc (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                             <steps xsi:type="lst:SequenceStep" name="0">
                               <steps xsi:type="lst:SequenceStep" name="1"/>
                               <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -212,7 +212,7 @@
                         </steps>
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.CLRF">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:InstructionStep" code="27265" width="16"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Instruction word can only contain compile-time variables! at microchip.pic18 line 44"/>
                           </steps>
                         </steps>
                       </steps>
@@ -222,7 +222,7 @@
               </steps>
             </steps>
           </steps>
-          <steps xsi:type="lst:SequenceStep" name="SET(hu.e.parser.eSyntax.impl.RefTypeDefImpl@88e2b8@3978, 0)">
+          <steps xsi:type="lst:SequenceStep" name="SET(e.platform.uint8@3978, 0)">
             <steps xsi:type="lst:SequenceStep" name="pic18.platform.u8.set_u8">
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
@@ -232,7 +232,7 @@
                       <steps xsi:type="lst:SequenceStep">
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@1c6640c (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                             <steps xsi:type="lst:SequenceStep" name="0">
                               <steps xsi:type="lst:SequenceStep" name="1"/>
                               <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -242,7 +242,7 @@
                         </steps>
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.CLRF">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:InstructionStep" code="27274" width="16"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Instruction word can only contain compile-time variables! at microchip.pic18 line 44"/>
                           </steps>
                         </steps>
                       </steps>
@@ -252,7 +252,7 @@
               </steps>
             </steps>
           </steps>
-          <steps xsi:type="lst:SequenceStep" name="SET(hu.e.parser.eSyntax.impl.RefTypeDefImpl@2109e3@3987, 0)">
+          <steps xsi:type="lst:SequenceStep" name="SET(e.platform.uint8@3987, 0)">
             <steps xsi:type="lst:SequenceStep" name="pic18.platform.u8.set_u8">
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
@@ -262,7 +262,7 @@
                       <steps xsi:type="lst:SequenceStep">
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@b1df4d (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                             <steps xsi:type="lst:SequenceStep" name="0">
                               <steps xsi:type="lst:SequenceStep" name="1"/>
                               <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -272,7 +272,7 @@
                         </steps>
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.CLRF">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:InstructionStep" code="27283" width="16"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Instruction word can only contain compile-time variables! at microchip.pic18 line 44"/>
                           </steps>
                         </steps>
                       </steps>
@@ -282,7 +282,7 @@
               </steps>
             </steps>
           </steps>
-          <steps xsi:type="lst:SequenceStep" name="SET(hu.e.parser.eSyntax.impl.RefTypeDefImpl@beaacc@hu.e.compiler.internal.model.symbols.impl.MemoryAssignmentValueSymbol@1594bee, 255)">
+          <steps xsi:type="lst:SequenceStep" name="SET(e.platform.uint8@display, 255)">
             <steps xsi:type="lst:SequenceStep" name="pic18.platform.u8.set_u8">
               <steps xsi:type="lst:SequenceStep">
                 <steps xsi:type="lst:SequenceStep">
@@ -294,7 +294,7 @@
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                             <steps xsi:type="lst:SequenceStep">
-                              <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@18371b5 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                               <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)">
                                 <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
                                 <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
@@ -304,9 +304,7 @@
                           </steps>
                           <steps xsi:type="lst:SequenceStep" name="microchip.pic18.SETF">
                             <steps xsi:type="lst:SequenceStep">
-                              <steps xsi:type="lst:InstructionStep" code="26624" width="16">
-                                <refs size="8" value="//@step/@steps.0/@steps.0/@steps.0/@variables.0"/>
-                              </steps>
+                              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Instruction word can only contain compile-time variables! at microchip.pic18 line 192"/>
                             </steps>
                           </steps>
                         </steps>
@@ -330,7 +328,7 @@
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@a5ea9 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                   <steps xsi:type="lst:SequenceStep" name="0">
                                     <steps xsi:type="lst:SequenceStep" name="1"/>
                                     <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -340,7 +338,7 @@
                               </steps>
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BCF">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:InstructionStep" code="37003" width="16"/>
+                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Instruction word can only contain compile-time variables! at microchip.pic18 line 241"/>
                                 </steps>
                               </steps>
                             </steps>
@@ -379,7 +377,7 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@1ee0e93 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                 <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)">
                                   <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
                                   <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
@@ -389,9 +387,7 @@
                             </steps>
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BTFSC">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:InstructionStep" code="45056" width="16">
-                                  <refs size="8" value="//@step/@steps.0/@steps.0/@steps.0/@variables.0"/>
-                                </steps>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Instruction word can only contain compile-time variables! at microchip.pic18 line 255"/>
                               </steps>
                             </steps>
                           </steps>
@@ -410,7 +406,7 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@1e0b3d7 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                 <steps xsi:type="lst:SequenceStep" name="0">
                                   <steps xsi:type="lst:SequenceStep" name="1"/>
                                   <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -420,7 +416,7 @@
                             </steps>
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BCF">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:InstructionStep" code="37515" width="16"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Instruction word can only contain compile-time variables! at microchip.pic18 line 241"/>
                               </steps>
                             </steps>
                           </steps>
@@ -440,7 +436,7 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@16760e3 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                 <steps xsi:type="lst:SequenceStep" name="0">
                                   <steps xsi:type="lst:SequenceStep" name="1"/>
                                   <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -450,7 +446,7 @@
                             </steps>
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BSF">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:InstructionStep" code="33419" width="16"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Instruction word can only contain compile-time variables! at microchip.pic18 line 248"/>
                               </steps>
                             </steps>
                           </steps>
@@ -490,7 +486,7 @@
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@682583 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                   <steps xsi:type="lst:SequenceStep" name="0">
                                     <steps xsi:type="lst:SequenceStep" name="1"/>
                                     <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -500,7 +496,7 @@
                               </steps>
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BSF">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:InstructionStep" code="32907" width="16"/>
+                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Instruction word can only contain compile-time variables! at microchip.pic18 line 248"/>
                                 </steps>
                               </steps>
                             </steps>
@@ -540,7 +536,7 @@
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@10cb2cb (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                   <steps xsi:type="lst:SequenceStep" name="0">
                                     <steps xsi:type="lst:SequenceStep" name="1"/>
                                     <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -550,7 +546,7 @@
                               </steps>
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BCF">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:InstructionStep" code="37003" width="16"/>
+                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Instruction word can only contain compile-time variables! at microchip.pic18 line 241"/>
                                 </steps>
                               </steps>
                             </steps>
@@ -589,7 +585,7 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@929696 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                 <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)">
                                   <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
                                   <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
@@ -599,9 +595,7 @@
                             </steps>
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BTFSC">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:InstructionStep" code="45568" width="16">
-                                  <refs size="8" value="//@step/@steps.0/@steps.0/@steps.0/@variables.0"/>
-                                </steps>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Instruction word can only contain compile-time variables! at microchip.pic18 line 255"/>
                               </steps>
                             </steps>
                           </steps>
@@ -620,7 +614,7 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@1dc7d3a (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                 <steps xsi:type="lst:SequenceStep" name="0">
                                   <steps xsi:type="lst:SequenceStep" name="1"/>
                                   <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -630,7 +624,7 @@
                             </steps>
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BCF">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:InstructionStep" code="37515" width="16"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Instruction word can only contain compile-time variables! at microchip.pic18 line 241"/>
                               </steps>
                             </steps>
                           </steps>
@@ -650,7 +644,7 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@a19e0e (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                 <steps xsi:type="lst:SequenceStep" name="0">
                                   <steps xsi:type="lst:SequenceStep" name="1"/>
                                   <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -660,7 +654,7 @@
                             </steps>
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BSF">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:InstructionStep" code="33419" width="16"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Instruction word can only contain compile-time variables! at microchip.pic18 line 248"/>
                               </steps>
                             </steps>
                           </steps>
@@ -700,7 +694,7 @@
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@8cd352 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                   <steps xsi:type="lst:SequenceStep" name="0">
                                     <steps xsi:type="lst:SequenceStep" name="1"/>
                                     <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -710,7 +704,7 @@
                               </steps>
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BSF">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:InstructionStep" code="32907" width="16"/>
+                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Instruction word can only contain compile-time variables! at microchip.pic18 line 248"/>
                                 </steps>
                               </steps>
                             </steps>
@@ -750,7 +744,7 @@
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@165b4e3 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                   <steps xsi:type="lst:SequenceStep" name="0">
                                     <steps xsi:type="lst:SequenceStep" name="1"/>
                                     <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -760,7 +754,7 @@
                               </steps>
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BCF">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:InstructionStep" code="37003" width="16"/>
+                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Instruction word can only contain compile-time variables! at microchip.pic18 line 241"/>
                                 </steps>
                               </steps>
                             </steps>
@@ -799,7 +793,7 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@1d20d34 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                 <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)">
                                   <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
                                   <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
@@ -809,9 +803,7 @@
                             </steps>
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BTFSC">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:InstructionStep" code="46080" width="16">
-                                  <refs size="8" value="//@step/@steps.0/@steps.0/@steps.0/@variables.0"/>
-                                </steps>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Instruction word can only contain compile-time variables! at microchip.pic18 line 255"/>
                               </steps>
                             </steps>
                           </steps>
@@ -830,7 +822,7 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@160e244 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                 <steps xsi:type="lst:SequenceStep" name="0">
                                   <steps xsi:type="lst:SequenceStep" name="1"/>
                                   <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -840,7 +832,7 @@
                             </steps>
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BCF">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:InstructionStep" code="37515" width="16"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Instruction word can only contain compile-time variables! at microchip.pic18 line 241"/>
                               </steps>
                             </steps>
                           </steps>
@@ -860,7 +852,7 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@1a7125b (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                 <steps xsi:type="lst:SequenceStep" name="0">
                                   <steps xsi:type="lst:SequenceStep" name="1"/>
                                   <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -870,7 +862,7 @@
                             </steps>
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BSF">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:InstructionStep" code="33419" width="16"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Instruction word can only contain compile-time variables! at microchip.pic18 line 248"/>
                               </steps>
                             </steps>
                           </steps>
@@ -910,7 +902,7 @@
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@1f85b2a (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                   <steps xsi:type="lst:SequenceStep" name="0">
                                     <steps xsi:type="lst:SequenceStep" name="1"/>
                                     <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -920,7 +912,7 @@
                               </steps>
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BSF">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:InstructionStep" code="32907" width="16"/>
+                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Instruction word can only contain compile-time variables! at microchip.pic18 line 248"/>
                                 </steps>
                               </steps>
                             </steps>
@@ -960,7 +952,7 @@
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@14f672e (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                   <steps xsi:type="lst:SequenceStep" name="0">
                                     <steps xsi:type="lst:SequenceStep" name="1"/>
                                     <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -970,7 +962,7 @@
                               </steps>
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BCF">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:InstructionStep" code="37003" width="16"/>
+                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Instruction word can only contain compile-time variables! at microchip.pic18 line 241"/>
                                 </steps>
                               </steps>
                             </steps>
@@ -1009,7 +1001,7 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@1492aff (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                 <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)">
                                   <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
                                   <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
@@ -1019,9 +1011,7 @@
                             </steps>
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BTFSC">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:InstructionStep" code="46592" width="16">
-                                  <refs size="8" value="//@step/@steps.0/@steps.0/@steps.0/@variables.0"/>
-                                </steps>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Instruction word can only contain compile-time variables! at microchip.pic18 line 255"/>
                               </steps>
                             </steps>
                           </steps>
@@ -1040,7 +1030,7 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@a60159 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                 <steps xsi:type="lst:SequenceStep" name="0">
                                   <steps xsi:type="lst:SequenceStep" name="1"/>
                                   <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -1050,7 +1040,7 @@
                             </steps>
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BCF">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:InstructionStep" code="37515" width="16"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Instruction word can only contain compile-time variables! at microchip.pic18 line 241"/>
                               </steps>
                             </steps>
                           </steps>
@@ -1070,7 +1060,7 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@a29c3e (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                 <steps xsi:type="lst:SequenceStep" name="0">
                                   <steps xsi:type="lst:SequenceStep" name="1"/>
                                   <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -1080,7 +1070,7 @@
                             </steps>
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BSF">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:InstructionStep" code="33419" width="16"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Instruction word can only contain compile-time variables! at microchip.pic18 line 248"/>
                               </steps>
                             </steps>
                           </steps>
@@ -1120,7 +1110,7 @@
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@ce6203 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                   <steps xsi:type="lst:SequenceStep" name="0">
                                     <steps xsi:type="lst:SequenceStep" name="1"/>
                                     <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -1130,7 +1120,7 @@
                               </steps>
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BSF">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:InstructionStep" code="32907" width="16"/>
+                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Instruction word can only contain compile-time variables! at microchip.pic18 line 248"/>
                                 </steps>
                               </steps>
                             </steps>
@@ -1170,7 +1160,7 @@
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@72d9f5 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                   <steps xsi:type="lst:SequenceStep" name="0">
                                     <steps xsi:type="lst:SequenceStep" name="1"/>
                                     <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -1180,7 +1170,7 @@
                               </steps>
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BCF">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:InstructionStep" code="37003" width="16"/>
+                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Instruction word can only contain compile-time variables! at microchip.pic18 line 241"/>
                                 </steps>
                               </steps>
                             </steps>
@@ -1219,7 +1209,7 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@7fcee1 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                 <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)">
                                   <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
                                   <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
@@ -1229,9 +1219,7 @@
                             </steps>
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BTFSC">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:InstructionStep" code="47104" width="16">
-                                  <refs size="8" value="//@step/@steps.0/@steps.0/@steps.0/@variables.0"/>
-                                </steps>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Instruction word can only contain compile-time variables! at microchip.pic18 line 255"/>
                               </steps>
                             </steps>
                           </steps>
@@ -1250,7 +1238,7 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@e73e0a (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                 <steps xsi:type="lst:SequenceStep" name="0">
                                   <steps xsi:type="lst:SequenceStep" name="1"/>
                                   <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -1260,7 +1248,7 @@
                             </steps>
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BCF">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:InstructionStep" code="37515" width="16"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Instruction word can only contain compile-time variables! at microchip.pic18 line 241"/>
                               </steps>
                             </steps>
                           </steps>
@@ -1280,7 +1268,7 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@19a1780 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                 <steps xsi:type="lst:SequenceStep" name="0">
                                   <steps xsi:type="lst:SequenceStep" name="1"/>
                                   <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -1290,7 +1278,7 @@
                             </steps>
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BSF">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:InstructionStep" code="33419" width="16"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Instruction word can only contain compile-time variables! at microchip.pic18 line 248"/>
                               </steps>
                             </steps>
                           </steps>
@@ -1330,7 +1318,7 @@
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@7b6333 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                   <steps xsi:type="lst:SequenceStep" name="0">
                                     <steps xsi:type="lst:SequenceStep" name="1"/>
                                     <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -1340,7 +1328,7 @@
                               </steps>
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BSF">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:InstructionStep" code="32907" width="16"/>
+                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Instruction word can only contain compile-time variables! at microchip.pic18 line 248"/>
                                 </steps>
                               </steps>
                             </steps>
@@ -1380,7 +1368,7 @@
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@302667 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                   <steps xsi:type="lst:SequenceStep" name="0">
                                     <steps xsi:type="lst:SequenceStep" name="1"/>
                                     <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -1390,7 +1378,7 @@
                               </steps>
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BCF">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:InstructionStep" code="37003" width="16"/>
+                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Instruction word can only contain compile-time variables! at microchip.pic18 line 241"/>
                                 </steps>
                               </steps>
                             </steps>
@@ -1429,7 +1417,7 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@1d95624 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                 <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)">
                                   <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
                                   <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
@@ -1439,9 +1427,7 @@
                             </steps>
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BTFSC">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:InstructionStep" code="47616" width="16">
-                                  <refs size="8" value="//@step/@steps.0/@steps.0/@steps.0/@variables.0"/>
-                                </steps>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Instruction word can only contain compile-time variables! at microchip.pic18 line 255"/>
                               </steps>
                             </steps>
                           </steps>
@@ -1460,7 +1446,7 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@1a67848 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                 <steps xsi:type="lst:SequenceStep" name="0">
                                   <steps xsi:type="lst:SequenceStep" name="1"/>
                                   <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -1470,7 +1456,7 @@
                             </steps>
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BCF">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:InstructionStep" code="37515" width="16"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Instruction word can only contain compile-time variables! at microchip.pic18 line 241"/>
                               </steps>
                             </steps>
                           </steps>
@@ -1490,7 +1476,7 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@22f942 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                 <steps xsi:type="lst:SequenceStep" name="0">
                                   <steps xsi:type="lst:SequenceStep" name="1"/>
                                   <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -1500,7 +1486,7 @@
                             </steps>
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BSF">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:InstructionStep" code="33419" width="16"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Instruction word can only contain compile-time variables! at microchip.pic18 line 248"/>
                               </steps>
                             </steps>
                           </steps>
@@ -1540,7 +1526,7 @@
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@d92120 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                   <steps xsi:type="lst:SequenceStep" name="0">
                                     <steps xsi:type="lst:SequenceStep" name="1"/>
                                     <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -1550,7 +1536,7 @@
                               </steps>
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BSF">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:InstructionStep" code="32907" width="16"/>
+                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Instruction word can only contain compile-time variables! at microchip.pic18 line 248"/>
                                 </steps>
                               </steps>
                             </steps>
@@ -1590,7 +1576,7 @@
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@3277a7 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                   <steps xsi:type="lst:SequenceStep" name="0">
                                     <steps xsi:type="lst:SequenceStep" name="1"/>
                                     <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -1600,7 +1586,7 @@
                               </steps>
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BCF">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:InstructionStep" code="37003" width="16"/>
+                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Instruction word can only contain compile-time variables! at microchip.pic18 line 241"/>
                                 </steps>
                               </steps>
                             </steps>
@@ -1639,7 +1625,7 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@29a303 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                 <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)">
                                   <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
                                   <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
@@ -1649,9 +1635,7 @@
                             </steps>
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BTFSC">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:InstructionStep" code="48128" width="16">
-                                  <refs size="8" value="//@step/@steps.0/@steps.0/@steps.0/@variables.0"/>
-                                </steps>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Instruction word can only contain compile-time variables! at microchip.pic18 line 255"/>
                               </steps>
                             </steps>
                           </steps>
@@ -1670,7 +1654,7 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@18d2a74 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                 <steps xsi:type="lst:SequenceStep" name="0">
                                   <steps xsi:type="lst:SequenceStep" name="1"/>
                                   <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -1680,7 +1664,7 @@
                             </steps>
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BCF">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:InstructionStep" code="37515" width="16"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Instruction word can only contain compile-time variables! at microchip.pic18 line 241"/>
                               </steps>
                             </steps>
                           </steps>
@@ -1700,7 +1684,7 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@de2c9f (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                 <steps xsi:type="lst:SequenceStep" name="0">
                                   <steps xsi:type="lst:SequenceStep" name="1"/>
                                   <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -1710,7 +1694,7 @@
                             </steps>
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BSF">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:InstructionStep" code="33419" width="16"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Instruction word can only contain compile-time variables! at microchip.pic18 line 248"/>
                               </steps>
                             </steps>
                           </steps>
@@ -1750,7 +1734,7 @@
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@74bced (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                   <steps xsi:type="lst:SequenceStep" name="0">
                                     <steps xsi:type="lst:SequenceStep" name="1"/>
                                     <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -1760,7 +1744,7 @@
                               </steps>
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BSF">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:InstructionStep" code="32907" width="16"/>
+                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Instruction word can only contain compile-time variables! at microchip.pic18 line 248"/>
                                 </steps>
                               </steps>
                             </steps>
@@ -1800,7 +1784,7 @@
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@dffe1 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                   <steps xsi:type="lst:SequenceStep" name="0">
                                     <steps xsi:type="lst:SequenceStep" name="1"/>
                                     <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -1810,7 +1794,7 @@
                               </steps>
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BCF">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:InstructionStep" code="37003" width="16"/>
+                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Instruction word can only contain compile-time variables! at microchip.pic18 line 241"/>
                                 </steps>
                               </steps>
                             </steps>
@@ -1849,7 +1833,7 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@575054 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                 <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)">
                                   <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
                                   <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
@@ -1859,9 +1843,7 @@
                             </steps>
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BTFSC">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:InstructionStep" code="48640" width="16">
-                                  <refs size="8" value="//@step/@steps.0/@steps.0/@steps.0/@variables.0"/>
-                                </steps>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Instruction word can only contain compile-time variables! at microchip.pic18 line 255"/>
                               </steps>
                             </steps>
                           </steps>
@@ -1880,7 +1862,7 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@71fa83 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                 <steps xsi:type="lst:SequenceStep" name="0">
                                   <steps xsi:type="lst:SequenceStep" name="1"/>
                                   <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -1890,7 +1872,7 @@
                             </steps>
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BCF">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:InstructionStep" code="37515" width="16"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Instruction word can only contain compile-time variables! at microchip.pic18 line 241"/>
                               </steps>
                             </steps>
                           </steps>
@@ -1910,7 +1892,7 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@ace515 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                 <steps xsi:type="lst:SequenceStep" name="0">
                                   <steps xsi:type="lst:SequenceStep" name="1"/>
                                   <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -1920,7 +1902,7 @@
                             </steps>
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BSF">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:InstructionStep" code="33419" width="16"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Instruction word can only contain compile-time variables! at microchip.pic18 line 248"/>
                               </steps>
                             </steps>
                           </steps>
@@ -1960,7 +1942,7 @@
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@14aa6eb (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                   <steps xsi:type="lst:SequenceStep" name="0">
                                     <steps xsi:type="lst:SequenceStep" name="1"/>
                                     <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -1970,7 +1952,7 @@
                               </steps>
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.BSF">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:InstructionStep" code="32907" width="16"/>
+                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Instruction word can only contain compile-time variables! at microchip.pic18 line 248"/>
                                 </steps>
                               </steps>
                             </steps>
@@ -2006,7 +1988,7 @@
             <steps xsi:type="lst:SequenceStep">
               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:SequenceStep" name="VARERROR(Unknown operator: SET)"/>
+                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@8dbd21 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                   <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)">
                     <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
                     <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
@@ -2016,9 +1998,7 @@
               </steps>
               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.INCF">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:InstructionStep" code="10752" width="16">
-                    <refs size="8" value="//@step/@steps.0/@steps.0/@steps.0/@variables.0"/>
-                  </steps>
+                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Instruction word can only contain compile-time variables! at microchip.pic18 line 100"/>
                 </steps>
               </steps>
             </steps>
@@ -2052,14 +2032,10 @@
               </steps>
             </steps>
           </steps>
-          <variables size="1"/>
+          <variables size="1" name="display"/>
         </steps>
       </steps>
     </steps>
-    <variables name="microchip.PIC18F14K50.DIO.DIO_RawSet"/>
-    <variables name="microchip.PIC18F14K50.DIO.DIO_Read"/>
-    <variables name="microchip.PIC18F14K50.DIO.DIO_Set"/>
-    <variables name="e.dio.DIO_Read"/>
-    <variables name="e.dio.DIO_Set"/>
+    <variables name="microchip.pic18.assisted.bank_a"/>
   </step>
 </lst:ProgramList>

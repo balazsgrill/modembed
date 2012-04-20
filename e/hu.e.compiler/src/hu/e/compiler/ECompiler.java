@@ -37,6 +37,13 @@ public class ECompiler {
 		return Integer.parseInt(lit);
 	}
 	
+	public static String convertScriptLiteral(String lit){
+		String r = lit;
+		if (r.startsWith("$$")) r = r.substring(2);
+		if (r.endsWith("$$")) r = r.substring(0, r.length()-2);
+		return r.trim();
+	}
+	
 	private IFile getHexFileSibling(IFile f, String name) throws CoreException{
 		String filename = name;
 		IFolder c = f.getProject().getFolder("out");
