@@ -86,12 +86,6 @@ public class BlockCompiler {
 			if (step instanceof Variable){
 				if (step instanceof Label){
 					result.getSteps().add(labels.get(step));
-				}else{
-//					try{
-//						sm.getVariableManager().define(sm, (Variable)step);
-//					}catch(ECompilerException e){
-//						result.getSteps().add(CompilationErrorEntry.create(e));
-//					}
 				}
 			}
 			if (step instanceof XExpression){
