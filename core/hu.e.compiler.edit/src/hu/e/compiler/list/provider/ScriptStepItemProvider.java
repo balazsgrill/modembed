@@ -7,30 +7,31 @@
 package hu.e.compiler.list.provider;
 
 
-import hu.e.compiler.list.ChoiceStep;
 import hu.e.compiler.list.ListPackage;
-import java.util.Collection;
+import hu.e.compiler.list.ScriptStep;
+
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link hu.e.compiler.list.ChoiceStep} object.
+ * This is the item provider adapter for a {@link hu.e.compiler.list.ScriptStep} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ChoiceStepItemProvider
+public class ScriptStepItemProvider
 	extends ProgramStepItemProvider
 	implements
 		IEditingDomainItemProvider,
@@ -44,7 +45,7 @@ public class ChoiceStepItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ChoiceStepItemProvider(AdapterFactory adapterFactory) {
+	public ScriptStepItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -59,49 +60,42 @@ public class ChoiceStepItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addExecutePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * This adds a property descriptor for the Execute feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(ListPackage.Literals.CHOICE_STEP__ALTERNATIVES);
-		}
-		return childrenFeatures;
+	protected void addExecutePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ScriptStep_execute_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ScriptStep_execute_feature", "_UI_ScriptStep_type"),
+				 ListPackage.Literals.SCRIPT_STEP__EXECUTE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
-	}
-
-	/**
-	 * This returns ChoiceStep.gif.
+	 * This returns ScriptStep.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ChoiceStep"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ScriptStep"));
 	}
 
 	/**
@@ -112,7 +106,10 @@ public class ChoiceStepItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_ChoiceStep_type");
+		String label = ((ScriptStep)object).getCondition();
+		return label == null || label.length() == 0 ?
+			getString("_UI_ScriptStep_type") :
+			getString("_UI_ScriptStep_type") + " " + label;
 	}
 
 	/**
@@ -126,9 +123,9 @@ public class ChoiceStepItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ChoiceStep.class)) {
-			case ListPackage.CHOICE_STEP__ALTERNATIVES:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+		switch (notification.getFeatureID(ScriptStep.class)) {
+			case ListPackage.SCRIPT_STEP__EXECUTE:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
 		super.notifyChanged(notification);

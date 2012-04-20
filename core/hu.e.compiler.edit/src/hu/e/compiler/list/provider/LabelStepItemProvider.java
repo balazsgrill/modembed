@@ -7,6 +7,7 @@
 package hu.e.compiler.list.provider;
 
 
+import hu.e.compiler.list.LabelStep;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -77,7 +78,10 @@ public class LabelStepItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_LabelStep_type");
+		String label = ((LabelStep)object).getCondition();
+		return label == null || label.length() == 0 ?
+			getString("_UI_LabelStep_type") :
+			getString("_UI_LabelStep_type") + " " + label;
 	}
 
 	/**

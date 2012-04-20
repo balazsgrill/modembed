@@ -88,10 +88,6 @@ public class ListAdapterFactory extends AdapterFactoryImpl {
 				return createSequenceStepAdapter();
 			}
 			@Override
-			public Adapter caseChoiceStep(ChoiceStep object) {
-				return createChoiceStepAdapter();
-			}
-			@Override
 			public Adapter caseLabelStep(LabelStep object) {
 				return createLabelStepAdapter();
 			}
@@ -112,8 +108,8 @@ public class ListAdapterFactory extends AdapterFactoryImpl {
 				return createMemoryAssignmentAdapter();
 			}
 			@Override
-			public Adapter caseChoiceAlternative(ChoiceAlternative object) {
-				return createChoiceAlternativeAdapter();
+			public Adapter caseScriptStep(ScriptStep object) {
+				return createScriptStepAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -192,20 +188,6 @@ public class ListAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link hu.e.compiler.list.ChoiceStep <em>Choice Step</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see hu.e.compiler.list.ChoiceStep
-	 * @generated
-	 */
-	public Adapter createChoiceStepAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link hu.e.compiler.list.LabelStep <em>Label Step</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -276,16 +258,16 @@ public class ListAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link hu.e.compiler.list.ChoiceAlternative <em>Choice Alternative</em>}'.
+	 * Creates a new adapter for an object of class '{@link hu.e.compiler.list.ScriptStep <em>Script Step</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see hu.e.compiler.list.ChoiceAlternative
+	 * @see hu.e.compiler.list.ScriptStep
 	 * @generated
 	 */
-	public Adapter createChoiceAlternativeAdapter() {
+	public Adapter createScriptStepAdapter() {
 		return null;
 	}
 

@@ -64,12 +64,11 @@ public class ListFactoryImpl extends EFactoryImpl implements ListFactory {
 			case ListPackage.PROGRAM_LIST: return createProgramList();
 			case ListPackage.INSTRUCTION_STEP: return createInstructionStep();
 			case ListPackage.SEQUENCE_STEP: return createSequenceStep();
-			case ListPackage.CHOICE_STEP: return createChoiceStep();
 			case ListPackage.LABEL_STEP: return createLabelStep();
 			case ListPackage.REFERENCE: return createReference();
 			case ListPackage.STATUS_STEP: return createStatusStep();
 			case ListPackage.MEMORY_ASSIGNMENT: return createMemoryAssignment();
-			case ListPackage.CHOICE_ALTERNATIVE: return createChoiceAlternative();
+			case ListPackage.SCRIPT_STEP: return createScriptStep();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -140,16 +139,6 @@ public class ListFactoryImpl extends EFactoryImpl implements ListFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ChoiceStep createChoiceStep() {
-		ChoiceStepImpl choiceStep = new ChoiceStepImpl();
-		return choiceStep;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public LabelStep createLabelStep() {
 		LabelStepImpl labelStep = new LabelStepImpl();
 		return labelStep;
@@ -190,9 +179,9 @@ public class ListFactoryImpl extends EFactoryImpl implements ListFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ChoiceAlternative createChoiceAlternative() {
-		ChoiceAlternativeImpl choiceAlternative = new ChoiceAlternativeImpl();
-		return choiceAlternative;
+	public ScriptStep createScriptStep() {
+		ScriptStepImpl scriptStep = new ScriptStepImpl();
+		return scriptStep;
 	}
 
 	/**

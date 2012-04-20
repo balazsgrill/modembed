@@ -8,7 +8,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="step" eType="#//ProgramStep"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ProgramStep" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ProgramStep" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="condition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InstructionStep" eSuperTypes="#//ProgramStep">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="refs" upperBound="-1" eType="#//Reference"
@@ -21,10 +23,6 @@
         eType="#//ProgramStep" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="variables" upperBound="-1"
         eType="#//MemoryAssignment" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ChoiceStep" eSuperTypes="#//ProgramStep">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="alternatives" upperBound="-1"
-        eType="#//ChoiceAlternative" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LabelStep" eSuperTypes="#//ProgramStep #//ReferableValue"/>
   <eClassifiers xsi:type="ecore:EClass" name="Reference">
@@ -50,10 +48,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ChoiceAlternative">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="step" eType="#//ProgramStep"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="connected" upperBound="-1"
-        eType="#//ChoiceAlternative"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ScriptStep" eSuperTypes="#//ProgramStep">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="execute" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

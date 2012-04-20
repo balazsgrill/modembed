@@ -108,13 +108,22 @@ public interface ListPackage extends EPackage {
 	int PROGRAM_STEP = 1;
 
 	/**
+	 * The feature id for the '<em><b>Condition</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROGRAM_STEP__CONDITION = 0;
+
+	/**
 	 * The number of structural features of the '<em>Program Step</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROGRAM_STEP_FEATURE_COUNT = 0;
+	int PROGRAM_STEP_FEATURE_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link hu.e.compiler.list.impl.InstructionStepImpl <em>Instruction Step</em>}' class.
@@ -125,6 +134,15 @@ public interface ListPackage extends EPackage {
 	 * @generated
 	 */
 	int INSTRUCTION_STEP = 2;
+
+	/**
+	 * The feature id for the '<em><b>Condition</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION_STEP__CONDITION = PROGRAM_STEP__CONDITION;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' attribute.
@@ -173,6 +191,15 @@ public interface ListPackage extends EPackage {
 	int SEQUENCE_STEP = 3;
 
 	/**
+	 * The feature id for the '<em><b>Condition</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEQUENCE_STEP__CONDITION = PROGRAM_STEP__CONDITION;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -209,34 +236,6 @@ public interface ListPackage extends EPackage {
 	int SEQUENCE_STEP_FEATURE_COUNT = PROGRAM_STEP_FEATURE_COUNT + 3;
 
 	/**
-	 * The meta object id for the '{@link hu.e.compiler.list.impl.ChoiceStepImpl <em>Choice Step</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see hu.e.compiler.list.impl.ChoiceStepImpl
-	 * @see hu.e.compiler.list.impl.ListPackageImpl#getChoiceStep()
-	 * @generated
-	 */
-	int CHOICE_STEP = 4;
-
-	/**
-	 * The feature id for the '<em><b>Alternatives</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHOICE_STEP__ALTERNATIVES = PROGRAM_STEP_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Choice Step</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHOICE_STEP_FEATURE_COUNT = PROGRAM_STEP_FEATURE_COUNT + 1;
-
-	/**
 	 * The meta object id for the '{@link hu.e.compiler.list.impl.LabelStepImpl <em>Label Step</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -244,7 +243,16 @@ public interface ListPackage extends EPackage {
 	 * @see hu.e.compiler.list.impl.ListPackageImpl#getLabelStep()
 	 * @generated
 	 */
-	int LABEL_STEP = 5;
+	int LABEL_STEP = 4;
+
+	/**
+	 * The feature id for the '<em><b>Condition</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LABEL_STEP__CONDITION = PROGRAM_STEP__CONDITION;
 
 	/**
 	 * The number of structural features of the '<em>Label Step</em>' class.
@@ -263,7 +271,7 @@ public interface ListPackage extends EPackage {
 	 * @see hu.e.compiler.list.impl.ListPackageImpl#getReference()
 	 * @generated
 	 */
-	int REFERENCE = 6;
+	int REFERENCE = 5;
 
 	/**
 	 * The feature id for the '<em><b>Shift</b></em>' attribute.
@@ -327,7 +335,16 @@ public interface ListPackage extends EPackage {
 	 * @see hu.e.compiler.list.impl.ListPackageImpl#getStatusStep()
 	 * @generated
 	 */
-	int STATUS_STEP = 7;
+	int STATUS_STEP = 6;
+
+	/**
+	 * The feature id for the '<em><b>Condition</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATUS_STEP__CONDITION = PROGRAM_STEP__CONDITION;
 
 	/**
 	 * The feature id for the '<em><b>Severity</b></em>' attribute.
@@ -364,7 +381,7 @@ public interface ListPackage extends EPackage {
 	 * @see hu.e.compiler.list.impl.ListPackageImpl#getReferableValue()
 	 * @generated
 	 */
-	int REFERABLE_VALUE = 8;
+	int REFERABLE_VALUE = 7;
 
 	/**
 	 * The number of structural features of the '<em>Referable Value</em>' class.
@@ -383,7 +400,7 @@ public interface ListPackage extends EPackage {
 	 * @see hu.e.compiler.list.impl.ListPackageImpl#getMemoryAssignment()
 	 * @generated
 	 */
-	int MEMORY_ASSIGNMENT = 9;
+	int MEMORY_ASSIGNMENT = 8;
 
 	/**
 	 * The feature id for the '<em><b>Size</b></em>' attribute.
@@ -413,41 +430,41 @@ public interface ListPackage extends EPackage {
 	int MEMORY_ASSIGNMENT_FEATURE_COUNT = REFERABLE_VALUE_FEATURE_COUNT + 2;
 
 	/**
-	 * The meta object id for the '{@link hu.e.compiler.list.impl.ChoiceAlternativeImpl <em>Choice Alternative</em>}' class.
+	 * The meta object id for the '{@link hu.e.compiler.list.impl.ScriptStepImpl <em>Script Step</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see hu.e.compiler.list.impl.ChoiceAlternativeImpl
-	 * @see hu.e.compiler.list.impl.ListPackageImpl#getChoiceAlternative()
+	 * @see hu.e.compiler.list.impl.ScriptStepImpl
+	 * @see hu.e.compiler.list.impl.ListPackageImpl#getScriptStep()
 	 * @generated
 	 */
-	int CHOICE_ALTERNATIVE = 10;
+	int SCRIPT_STEP = 9;
 
 	/**
-	 * The feature id for the '<em><b>Step</b></em>' containment reference.
+	 * The feature id for the '<em><b>Condition</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CHOICE_ALTERNATIVE__STEP = 0;
+	int SCRIPT_STEP__CONDITION = PROGRAM_STEP__CONDITION;
 
 	/**
-	 * The feature id for the '<em><b>Connected</b></em>' reference list.
+	 * The feature id for the '<em><b>Execute</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CHOICE_ALTERNATIVE__CONNECTED = 1;
+	int SCRIPT_STEP__EXECUTE = PROGRAM_STEP_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Choice Alternative</em>' class.
+	 * The number of structural features of the '<em>Script Step</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CHOICE_ALTERNATIVE_FEATURE_COUNT = 2;
+	int SCRIPT_STEP_FEATURE_COUNT = PROGRAM_STEP_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link hu.e.compiler.list.Severity <em>Severity</em>}' enum.
@@ -457,7 +474,7 @@ public interface ListPackage extends EPackage {
 	 * @see hu.e.compiler.list.impl.ListPackageImpl#getSeverity()
 	 * @generated
 	 */
-	int SEVERITY = 11;
+	int SEVERITY = 10;
 
 
 	/**
@@ -501,6 +518,17 @@ public interface ListPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getProgramStep();
+
+	/**
+	 * Returns the meta object for the attribute '{@link hu.e.compiler.list.ProgramStep#getCondition <em>Condition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Condition</em>'.
+	 * @see hu.e.compiler.list.ProgramStep#getCondition()
+	 * @see #getProgramStep()
+	 * @generated
+	 */
+	EAttribute getProgramStep_Condition();
 
 	/**
 	 * Returns the meta object for class '{@link hu.e.compiler.list.InstructionStep <em>Instruction Step</em>}'.
@@ -587,27 +615,6 @@ public interface ListPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSequenceStep_Variables();
-
-	/**
-	 * Returns the meta object for class '{@link hu.e.compiler.list.ChoiceStep <em>Choice Step</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Choice Step</em>'.
-	 * @see hu.e.compiler.list.ChoiceStep
-	 * @generated
-	 */
-	EClass getChoiceStep();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link hu.e.compiler.list.ChoiceStep#getAlternatives <em>Alternatives</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Alternatives</em>'.
-	 * @see hu.e.compiler.list.ChoiceStep#getAlternatives()
-	 * @see #getChoiceStep()
-	 * @generated
-	 */
-	EReference getChoiceStep_Alternatives();
 
 	/**
 	 * Returns the meta object for class '{@link hu.e.compiler.list.LabelStep <em>Label Step</em>}'.
@@ -759,36 +766,25 @@ public interface ListPackage extends EPackage {
 	EAttribute getMemoryAssignment_Name();
 
 	/**
-	 * Returns the meta object for class '{@link hu.e.compiler.list.ChoiceAlternative <em>Choice Alternative</em>}'.
+	 * Returns the meta object for class '{@link hu.e.compiler.list.ScriptStep <em>Script Step</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Choice Alternative</em>'.
-	 * @see hu.e.compiler.list.ChoiceAlternative
+	 * @return the meta object for class '<em>Script Step</em>'.
+	 * @see hu.e.compiler.list.ScriptStep
 	 * @generated
 	 */
-	EClass getChoiceAlternative();
+	EClass getScriptStep();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link hu.e.compiler.list.ChoiceAlternative#getStep <em>Step</em>}'.
+	 * Returns the meta object for the attribute '{@link hu.e.compiler.list.ScriptStep#getExecute <em>Execute</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Step</em>'.
-	 * @see hu.e.compiler.list.ChoiceAlternative#getStep()
-	 * @see #getChoiceAlternative()
+	 * @return the meta object for the attribute '<em>Execute</em>'.
+	 * @see hu.e.compiler.list.ScriptStep#getExecute()
+	 * @see #getScriptStep()
 	 * @generated
 	 */
-	EReference getChoiceAlternative_Step();
-
-	/**
-	 * Returns the meta object for the reference list '{@link hu.e.compiler.list.ChoiceAlternative#getConnected <em>Connected</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Connected</em>'.
-	 * @see hu.e.compiler.list.ChoiceAlternative#getConnected()
-	 * @see #getChoiceAlternative()
-	 * @generated
-	 */
-	EReference getChoiceAlternative_Connected();
+	EAttribute getScriptStep_Execute();
 
 	/**
 	 * Returns the meta object for enum '{@link hu.e.compiler.list.Severity <em>Severity</em>}'.
@@ -859,6 +855,14 @@ public interface ListPackage extends EPackage {
 		EClass PROGRAM_STEP = eINSTANCE.getProgramStep();
 
 		/**
+		 * The meta object literal for the '<em><b>Condition</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PROGRAM_STEP__CONDITION = eINSTANCE.getProgramStep_Condition();
+
+		/**
 		 * The meta object literal for the '{@link hu.e.compiler.list.impl.InstructionStepImpl <em>Instruction Step</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -925,24 +929,6 @@ public interface ListPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SEQUENCE_STEP__VARIABLES = eINSTANCE.getSequenceStep_Variables();
-
-		/**
-		 * The meta object literal for the '{@link hu.e.compiler.list.impl.ChoiceStepImpl <em>Choice Step</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see hu.e.compiler.list.impl.ChoiceStepImpl
-		 * @see hu.e.compiler.list.impl.ListPackageImpl#getChoiceStep()
-		 * @generated
-		 */
-		EClass CHOICE_STEP = eINSTANCE.getChoiceStep();
-
-		/**
-		 * The meta object literal for the '<em><b>Alternatives</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CHOICE_STEP__ALTERNATIVES = eINSTANCE.getChoiceStep_Alternatives();
 
 		/**
 		 * The meta object literal for the '{@link hu.e.compiler.list.impl.LabelStepImpl <em>Label Step</em>}' class.
@@ -1067,30 +1053,22 @@ public interface ListPackage extends EPackage {
 		EAttribute MEMORY_ASSIGNMENT__NAME = eINSTANCE.getMemoryAssignment_Name();
 
 		/**
-		 * The meta object literal for the '{@link hu.e.compiler.list.impl.ChoiceAlternativeImpl <em>Choice Alternative</em>}' class.
+		 * The meta object literal for the '{@link hu.e.compiler.list.impl.ScriptStepImpl <em>Script Step</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see hu.e.compiler.list.impl.ChoiceAlternativeImpl
-		 * @see hu.e.compiler.list.impl.ListPackageImpl#getChoiceAlternative()
+		 * @see hu.e.compiler.list.impl.ScriptStepImpl
+		 * @see hu.e.compiler.list.impl.ListPackageImpl#getScriptStep()
 		 * @generated
 		 */
-		EClass CHOICE_ALTERNATIVE = eINSTANCE.getChoiceAlternative();
+		EClass SCRIPT_STEP = eINSTANCE.getScriptStep();
 
 		/**
-		 * The meta object literal for the '<em><b>Step</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Execute</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CHOICE_ALTERNATIVE__STEP = eINSTANCE.getChoiceAlternative_Step();
-
-		/**
-		 * The meta object literal for the '<em><b>Connected</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CHOICE_ALTERNATIVE__CONNECTED = eINSTANCE.getChoiceAlternative_Connected();
+		EAttribute SCRIPT_STEP__EXECUTE = eINSTANCE.getScriptStep_Execute();
 
 		/**
 		 * The meta object literal for the '{@link hu.e.compiler.list.Severity <em>Severity</em>}' enum.

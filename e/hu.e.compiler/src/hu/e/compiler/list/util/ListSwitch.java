@@ -96,13 +96,6 @@ public class ListSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ListPackage.CHOICE_STEP: {
-				ChoiceStep choiceStep = (ChoiceStep)theEObject;
-				T result = caseChoiceStep(choiceStep);
-				if (result == null) result = caseProgramStep(choiceStep);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case ListPackage.LABEL_STEP: {
 				LabelStep labelStep = (LabelStep)theEObject;
 				T result = caseLabelStep(labelStep);
@@ -137,9 +130,10 @@ public class ListSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ListPackage.CHOICE_ALTERNATIVE: {
-				ChoiceAlternative choiceAlternative = (ChoiceAlternative)theEObject;
-				T result = caseChoiceAlternative(choiceAlternative);
+			case ListPackage.SCRIPT_STEP: {
+				ScriptStep scriptStep = (ScriptStep)theEObject;
+				T result = caseScriptStep(scriptStep);
+				if (result == null) result = caseProgramStep(scriptStep);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -204,21 +198,6 @@ public class ListSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSequenceStep(SequenceStep object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Choice Step</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Choice Step</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseChoiceStep(ChoiceStep object) {
 		return null;
 	}
 
@@ -298,17 +277,17 @@ public class ListSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Choice Alternative</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Script Step</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Choice Alternative</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Script Step</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseChoiceAlternative(ChoiceAlternative object) {
+	public T caseScriptStep(ScriptStep object) {
 		return null;
 	}
 

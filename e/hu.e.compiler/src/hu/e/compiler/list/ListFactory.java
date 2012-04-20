@@ -53,15 +53,6 @@ public interface ListFactory extends EFactory {
 	SequenceStep createSequenceStep();
 
 	/**
-	 * Returns a new object of class '<em>Choice Step</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Choice Step</em>'.
-	 * @generated
-	 */
-	ChoiceStep createChoiceStep();
-
-	/**
 	 * Returns a new object of class '<em>Label Step</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -98,13 +89,13 @@ public interface ListFactory extends EFactory {
 	MemoryAssignment createMemoryAssignment();
 
 	/**
-	 * Returns a new object of class '<em>Choice Alternative</em>'.
+	 * Returns a new object of class '<em>Script Step</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Choice Alternative</em>'.
+	 * @return a new object of class '<em>Script Step</em>'.
 	 * @generated
 	 */
-	ChoiceAlternative createChoiceAlternative();
+	ScriptStep createScriptStep();
 
 	/**
 	 * Returns the package supported by this factory.

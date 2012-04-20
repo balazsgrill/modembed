@@ -7,53 +7,54 @@
 package hu.e.compiler.list.impl;
 
 import hu.e.compiler.list.ListPackage;
-import hu.e.compiler.list.ProgramStep;
+import hu.e.compiler.list.ScriptStep;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Program Step</b></em>'.
+ * An implementation of the model object '<em><b>Script Step</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.e.compiler.list.impl.ProgramStepImpl#getCondition <em>Condition</em>}</li>
+ *   <li>{@link hu.e.compiler.list.impl.ScriptStepImpl#getExecute <em>Execute</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public abstract class ProgramStepImpl extends EObjectImpl implements ProgramStep {
+public class ScriptStepImpl extends ProgramStepImpl implements ScriptStep {
 	/**
-	 * The default value of the '{@link #getCondition() <em>Condition</em>}' attribute.
+	 * The default value of the '{@link #getExecute() <em>Execute</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCondition()
+	 * @see #getExecute()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String CONDITION_EDEFAULT = null;
+	protected static final String EXECUTE_EDEFAULT = null;
+
 	/**
-	 * The cached value of the '{@link #getCondition() <em>Condition</em>}' attribute.
+	 * The cached value of the '{@link #getExecute() <em>Execute</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCondition()
+	 * @see #getExecute()
 	 * @generated
 	 * @ordered
 	 */
-	protected String condition = CONDITION_EDEFAULT;
+	protected String execute = EXECUTE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ProgramStepImpl() {
+	protected ScriptStepImpl() {
 		super();
 	}
 
@@ -64,7 +65,7 @@ public abstract class ProgramStepImpl extends EObjectImpl implements ProgramStep
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ListPackage.Literals.PROGRAM_STEP;
+		return ListPackage.Literals.SCRIPT_STEP;
 	}
 
 	/**
@@ -72,8 +73,8 @@ public abstract class ProgramStepImpl extends EObjectImpl implements ProgramStep
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getCondition() {
-		return condition;
+	public String getExecute() {
+		return execute;
 	}
 
 	/**
@@ -81,11 +82,11 @@ public abstract class ProgramStepImpl extends EObjectImpl implements ProgramStep
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCondition(String newCondition) {
-		String oldCondition = condition;
-		condition = newCondition;
+	public void setExecute(String newExecute) {
+		String oldExecute = execute;
+		execute = newExecute;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ListPackage.PROGRAM_STEP__CONDITION, oldCondition, condition));
+			eNotify(new ENotificationImpl(this, Notification.SET, ListPackage.SCRIPT_STEP__EXECUTE, oldExecute, execute));
 	}
 
 	/**
@@ -96,8 +97,8 @@ public abstract class ProgramStepImpl extends EObjectImpl implements ProgramStep
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ListPackage.PROGRAM_STEP__CONDITION:
-				return getCondition();
+			case ListPackage.SCRIPT_STEP__EXECUTE:
+				return getExecute();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -110,8 +111,8 @@ public abstract class ProgramStepImpl extends EObjectImpl implements ProgramStep
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ListPackage.PROGRAM_STEP__CONDITION:
-				setCondition((String)newValue);
+			case ListPackage.SCRIPT_STEP__EXECUTE:
+				setExecute((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -125,8 +126,8 @@ public abstract class ProgramStepImpl extends EObjectImpl implements ProgramStep
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ListPackage.PROGRAM_STEP__CONDITION:
-				setCondition(CONDITION_EDEFAULT);
+			case ListPackage.SCRIPT_STEP__EXECUTE:
+				setExecute(EXECUTE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -140,8 +141,8 @@ public abstract class ProgramStepImpl extends EObjectImpl implements ProgramStep
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ListPackage.PROGRAM_STEP__CONDITION:
-				return CONDITION_EDEFAULT == null ? condition != null : !CONDITION_EDEFAULT.equals(condition);
+			case ListPackage.SCRIPT_STEP__EXECUTE:
+				return EXECUTE_EDEFAULT == null ? execute != null : !EXECUTE_EDEFAULT.equals(execute);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -156,10 +157,10 @@ public abstract class ProgramStepImpl extends EObjectImpl implements ProgramStep
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (condition: ");
-		result.append(condition);
+		result.append(" (execute: ");
+		result.append(execute);
 		result.append(')');
 		return result.toString();
 	}
 
-} //ProgramStepImpl
+} //ScriptStepImpl

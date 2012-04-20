@@ -145,29 +145,6 @@ public class ListItemProviderAdapterFactory extends ListAdapterFactory implement
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link hu.e.compiler.list.ChoiceStep} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ChoiceStepItemProvider choiceStepItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link hu.e.compiler.list.ChoiceStep}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createChoiceStepAdapter() {
-		if (choiceStepItemProvider == null) {
-			choiceStepItemProvider = new ChoiceStepItemProvider(this);
-		}
-
-		return choiceStepItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link hu.e.compiler.list.LabelStep} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -260,26 +237,26 @@ public class ListItemProviderAdapterFactory extends ListAdapterFactory implement
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link hu.e.compiler.list.ChoiceAlternative} instances.
+	 * This keeps track of the one adapter used for all {@link hu.e.compiler.list.ScriptStep} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ChoiceAlternativeItemProvider choiceAlternativeItemProvider;
+	protected ScriptStepItemProvider scriptStepItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link hu.e.compiler.list.ChoiceAlternative}.
+	 * This creates an adapter for a {@link hu.e.compiler.list.ScriptStep}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createChoiceAlternativeAdapter() {
-		if (choiceAlternativeItemProvider == null) {
-			choiceAlternativeItemProvider = new ChoiceAlternativeItemProvider(this);
+	public Adapter createScriptStepAdapter() {
+		if (scriptStepItemProvider == null) {
+			scriptStepItemProvider = new ScriptStepItemProvider(this);
 		}
 
-		return choiceAlternativeItemProvider;
+		return scriptStepItemProvider;
 	}
 
 	/**
@@ -384,12 +361,11 @@ public class ListItemProviderAdapterFactory extends ListAdapterFactory implement
 		if (programListItemProvider != null) programListItemProvider.dispose();
 		if (instructionStepItemProvider != null) instructionStepItemProvider.dispose();
 		if (sequenceStepItemProvider != null) sequenceStepItemProvider.dispose();
-		if (choiceStepItemProvider != null) choiceStepItemProvider.dispose();
 		if (labelStepItemProvider != null) labelStepItemProvider.dispose();
 		if (referenceItemProvider != null) referenceItemProvider.dispose();
 		if (statusStepItemProvider != null) statusStepItemProvider.dispose();
 		if (memoryAssignmentItemProvider != null) memoryAssignmentItemProvider.dispose();
-		if (choiceAlternativeItemProvider != null) choiceAlternativeItemProvider.dispose();
+		if (scriptStepItemProvider != null) scriptStepItemProvider.dispose();
 	}
 
 }
