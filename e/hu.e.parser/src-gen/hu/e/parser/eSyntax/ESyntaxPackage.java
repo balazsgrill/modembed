@@ -1302,6 +1302,34 @@ public interface ESyntaxPackage extends EPackage
   int XEXPRESSION_FEATURE_COUNT = OPERATION_CALL_PARAMETER_FEATURE_COUNT + 0;
 
   /**
+   * The meta object id for the '{@link hu.e.parser.eSyntax.impl.XScriptValueExpressionImpl <em>XScript Value Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.e.parser.eSyntax.impl.XScriptValueExpressionImpl
+   * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXScriptValueExpression()
+   * @generated
+   */
+  int XSCRIPT_VALUE_EXPRESSION = 34;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int XSCRIPT_VALUE_EXPRESSION__VALUE = XPRIMARY_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>XScript Value Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int XSCRIPT_VALUE_EXPRESSION_FEATURE_COUNT = XPRIMARY_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.impl.XSizeOfExpressionImpl <em>XSize Of Expression</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1309,7 +1337,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXSizeOfExpression()
    * @generated
    */
-  int XSIZE_OF_EXPRESSION = 34;
+  int XSIZE_OF_EXPRESSION = 35;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -1337,7 +1365,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXStructExpression()
    * @generated
    */
-  int XSTRUCT_EXPRESSION = 35;
+  int XSTRUCT_EXPRESSION = 36;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' reference.
@@ -1374,7 +1402,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXExpression1()
    * @generated
    */
-  int XEXPRESSION1 = 36;
+  int XEXPRESSION1 = 37;
 
   /**
    * The feature id for the '<em><b>Operator</b></em>' attribute list.
@@ -1411,7 +1439,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXExpression0()
    * @generated
    */
-  int XEXPRESSION0 = 37;
+  int XEXPRESSION0 = 38;
 
   /**
    * The feature id for the '<em><b>A</b></em>' containment reference.
@@ -1448,7 +1476,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXExpressionM1()
    * @generated
    */
-  int XEXPRESSION_M1 = 38;
+  int XEXPRESSION_M1 = 39;
 
   /**
    * The feature id for the '<em><b>A</b></em>' containment reference.
@@ -1485,7 +1513,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXExpression2()
    * @generated
    */
-  int XEXPRESSION2 = 39;
+  int XEXPRESSION2 = 40;
 
   /**
    * The feature id for the '<em><b>A</b></em>' containment reference.
@@ -1531,7 +1559,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXExpression3()
    * @generated
    */
-  int XEXPRESSION3 = 40;
+  int XEXPRESSION3 = 41;
 
   /**
    * The feature id for the '<em><b>A</b></em>' containment reference.
@@ -1577,7 +1605,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXExpression4()
    * @generated
    */
-  int XEXPRESSION4 = 41;
+  int XEXPRESSION4 = 42;
 
   /**
    * The feature id for the '<em><b>A</b></em>' containment reference.
@@ -1623,7 +1651,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXExpression5()
    * @generated
    */
-  int XEXPRESSION5 = 42;
+  int XEXPRESSION5 = 43;
 
   /**
    * The feature id for the '<em><b>A</b></em>' containment reference.
@@ -1669,7 +1697,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXExpression6()
    * @generated
    */
-  int XEXPRESSION6 = 43;
+  int XEXPRESSION6 = 44;
 
   /**
    * The feature id for the '<em><b>Ref</b></em>' containment reference list.
@@ -1706,7 +1734,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXExpressionLiteral()
    * @generated
    */
-  int XEXPRESSION_LITERAL = 44;
+  int XEXPRESSION_LITERAL = 45;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1734,7 +1762,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXTopLevelExpression()
    * @generated
    */
-  int XTOP_LEVEL_EXPRESSION = 45;
+  int XTOP_LEVEL_EXPRESSION = 46;
 
   /**
    * The number of structural features of the '<em>XTop Level Expression</em>' class.
@@ -1753,7 +1781,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXIsLiteralExpression()
    * @generated
    */
-  int XIS_LITERAL_EXPRESSION = 46;
+  int XIS_LITERAL_EXPRESSION = 47;
 
   /**
    * The feature id for the '<em><b>Ref</b></em>' containment reference.
@@ -1781,7 +1809,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXIfExpression()
    * @generated
    */
-  int XIF_EXPRESSION = 47;
+  int XIF_EXPRESSION = 48;
 
   /**
    * The feature id for the '<em><b>If</b></em>' containment reference.
@@ -1827,7 +1855,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXWhileExpression()
    * @generated
    */
-  int XWHILE_EXPRESSION = 48;
+  int XWHILE_EXPRESSION = 49;
 
   /**
    * The feature id for the '<em><b>Cond</b></em>' containment reference.
@@ -1864,7 +1892,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXParenthesizedExpression()
    * @generated
    */
-  int XPARENTHESIZED_EXPRESSION = 49;
+  int XPARENTHESIZED_EXPRESSION = 50;
 
   /**
    * The feature id for the '<em><b>A</b></em>' containment reference.
@@ -1883,43 +1911,6 @@ public interface ESyntaxPackage extends EPackage
    * @ordered
    */
   int XPARENTHESIZED_EXPRESSION_FEATURE_COUNT = XPRIMARY_EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link hu.e.parser.eSyntax.impl.XScriptedExpressionImpl <em>XScripted Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see hu.e.parser.eSyntax.impl.XScriptedExpressionImpl
-   * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXScriptedExpression()
-   * @generated
-   */
-  int XSCRIPTED_EXPRESSION = 50;
-
-  /**
-   * The feature id for the '<em><b>Script</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int XSCRIPTED_EXPRESSION__SCRIPT = XTOP_LEVEL_EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Conditional</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int XSCRIPTED_EXPRESSION__CONDITIONAL = XTOP_LEVEL_EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>XScripted Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int XSCRIPTED_EXPRESSION_FEATURE_COUNT = XTOP_LEVEL_EXPRESSION_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.impl.ConfigVariableImpl <em>Config Variable</em>}' class.
@@ -3245,6 +3236,27 @@ public interface ESyntaxPackage extends EPackage
   EClass getXPrimaryExpression();
 
   /**
+   * Returns the meta object for class '{@link hu.e.parser.eSyntax.XScriptValueExpression <em>XScript Value Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>XScript Value Expression</em>'.
+   * @see hu.e.parser.eSyntax.XScriptValueExpression
+   * @generated
+   */
+  EClass getXScriptValueExpression();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.XScriptValueExpression#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see hu.e.parser.eSyntax.XScriptValueExpression#getValue()
+   * @see #getXScriptValueExpression()
+   * @generated
+   */
+  EAttribute getXScriptValueExpression_Value();
+
+  /**
    * Returns the meta object for class '{@link hu.e.parser.eSyntax.XSizeOfExpression <em>XSize Of Expression</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3744,38 +3756,6 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    */
   EReference getXParenthesizedExpression_A();
-
-  /**
-   * Returns the meta object for class '{@link hu.e.parser.eSyntax.XScriptedExpression <em>XScripted Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>XScripted Expression</em>'.
-   * @see hu.e.parser.eSyntax.XScriptedExpression
-   * @generated
-   */
-  EClass getXScriptedExpression();
-
-  /**
-   * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.XScriptedExpression#getScript <em>Script</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Script</em>'.
-   * @see hu.e.parser.eSyntax.XScriptedExpression#getScript()
-   * @see #getXScriptedExpression()
-   * @generated
-   */
-  EAttribute getXScriptedExpression_Script();
-
-  /**
-   * Returns the meta object for the containment reference '{@link hu.e.parser.eSyntax.XScriptedExpression#getConditional <em>Conditional</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Conditional</em>'.
-   * @see hu.e.parser.eSyntax.XScriptedExpression#getConditional()
-   * @see #getXScriptedExpression()
-   * @generated
-   */
-  EReference getXScriptedExpression_Conditional();
 
   /**
    * Returns the meta object for class '{@link hu.e.parser.eSyntax.ConfigVariable <em>Config Variable</em>}'.
@@ -4797,6 +4777,24 @@ public interface ESyntaxPackage extends EPackage
     EClass XPRIMARY_EXPRESSION = eINSTANCE.getXPrimaryExpression();
 
     /**
+     * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.XScriptValueExpressionImpl <em>XScript Value Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.e.parser.eSyntax.impl.XScriptValueExpressionImpl
+     * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXScriptValueExpression()
+     * @generated
+     */
+    EClass XSCRIPT_VALUE_EXPRESSION = eINSTANCE.getXScriptValueExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute XSCRIPT_VALUE_EXPRESSION__VALUE = eINSTANCE.getXScriptValueExpression_Value();
+
+    /**
      * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.XSizeOfExpressionImpl <em>XSize Of Expression</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5203,32 +5201,6 @@ public interface ESyntaxPackage extends EPackage
      * @generated
      */
     EReference XPARENTHESIZED_EXPRESSION__A = eINSTANCE.getXParenthesizedExpression_A();
-
-    /**
-     * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.XScriptedExpressionImpl <em>XScripted Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see hu.e.parser.eSyntax.impl.XScriptedExpressionImpl
-     * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXScriptedExpression()
-     * @generated
-     */
-    EClass XSCRIPTED_EXPRESSION = eINSTANCE.getXScriptedExpression();
-
-    /**
-     * The meta object literal for the '<em><b>Script</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute XSCRIPTED_EXPRESSION__SCRIPT = eINSTANCE.getXScriptedExpression_Script();
-
-    /**
-     * The meta object literal for the '<em><b>Conditional</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference XSCRIPTED_EXPRESSION__CONDITIONAL = eINSTANCE.getXScriptedExpression_Conditional();
 
     /**
      * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.ConfigVariableImpl <em>Config Variable</em>}' class.

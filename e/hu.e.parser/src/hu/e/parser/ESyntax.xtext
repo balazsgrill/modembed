@@ -273,8 +273,12 @@ XExpression:
 	XExpression6;
 
 XPrimaryExpression:
-	XExpressionLiteral | XParenthesizedExpression | XIsLiteralExpression | VariableReference | OperationCall
+	XScriptValueExpression | XExpressionLiteral | XParenthesizedExpression | XIsLiteralExpression | VariableReference | OperationCall
 	 | XStructExpression | XSizeOfExpression
+;
+
+XScriptValueExpression:
+	value = SCRIPT
 ;
 
 XSizeOfExpression:
@@ -343,7 +347,7 @@ XExpressionLiteral:
 ;
 
 XTopLevelExpression:
-	XExpression ';' | XIfExpression | XWhileExpression | XScriptedExpression
+	XExpression ';' | XIfExpression | XWhileExpression
 ;
 
 OpSingleAssign:
@@ -371,7 +375,4 @@ XWhileExpression:
 XParenthesizedExpression:
 	'(' a=XExpression ')';
 
-XScriptedExpression:
-	script = SCRIPT ( '{' conditional=OperationBlock '}' )?
-;	
 	

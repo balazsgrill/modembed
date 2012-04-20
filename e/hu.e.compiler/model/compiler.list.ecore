@@ -8,9 +8,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="step" eType="#//ProgramStep"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ProgramStep" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="condition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProgramStep" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="InstructionStep" eSuperTypes="#//ProgramStep">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="refs" upperBound="-1" eType="#//Reference"
@@ -48,7 +46,14 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ScriptStep" eSuperTypes="#//ProgramStep">
+  <eClassifiers xsi:type="ecore:EClass" name="ScriptStep" eSuperTypes="#//ProgramStep #//ReferableValue">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="execute" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConditionalStep" eSuperTypes="#//ProgramStep">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="condition" eType="#//ScriptStep"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="success" eType="#//ProgramStep"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fail" eType="#//ProgramStep"
+        containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

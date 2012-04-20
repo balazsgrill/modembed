@@ -184,6 +184,9 @@
     </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//XExpression"/>
     <genClasses ecoreClass="ESyntax.ecore#//XPrimaryExpression"/>
+    <genClasses ecoreClass="ESyntax.ecore#//XScriptValueExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//XScriptValueExpression/value"/>
+    </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//XSizeOfExpression">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XSizeOfExpression/type"/>
     </genClasses>
@@ -245,10 +248,6 @@
     </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//XParenthesizedExpression">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XParenthesizedExpression/a"/>
-    </genClasses>
-    <genClasses ecoreClass="ESyntax.ecore#//XScriptedExpression">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//XScriptedExpression/script"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XScriptedExpression/conditional"/>
     </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//ConfigVariable"/>
     <genClasses ecoreClass="ESyntax.ecore#//StructTypeDefMember"/>

@@ -23,7 +23,7 @@ package hu.e.compiler.list;
  * @model
  * @generated
  */
-public interface ScriptStep extends ProgramStep {
+public interface ScriptStep extends ProgramStep, ReferableValue {
 	/**
 	 * Returns the value of the '<em><b>Execute</b></em>' attribute.
 	 * <!-- begin-user-doc -->

@@ -108,22 +108,13 @@ public interface ListPackage extends EPackage {
 	int PROGRAM_STEP = 1;
 
 	/**
-	 * The feature id for the '<em><b>Condition</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROGRAM_STEP__CONDITION = 0;
-
-	/**
 	 * The number of structural features of the '<em>Program Step</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROGRAM_STEP_FEATURE_COUNT = 1;
+	int PROGRAM_STEP_FEATURE_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link hu.e.compiler.list.impl.InstructionStepImpl <em>Instruction Step</em>}' class.
@@ -134,15 +125,6 @@ public interface ListPackage extends EPackage {
 	 * @generated
 	 */
 	int INSTRUCTION_STEP = 2;
-
-	/**
-	 * The feature id for the '<em><b>Condition</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INSTRUCTION_STEP__CONDITION = PROGRAM_STEP__CONDITION;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' attribute.
@@ -191,15 +173,6 @@ public interface ListPackage extends EPackage {
 	int SEQUENCE_STEP = 3;
 
 	/**
-	 * The feature id for the '<em><b>Condition</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SEQUENCE_STEP__CONDITION = PROGRAM_STEP__CONDITION;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -244,15 +217,6 @@ public interface ListPackage extends EPackage {
 	 * @generated
 	 */
 	int LABEL_STEP = 4;
-
-	/**
-	 * The feature id for the '<em><b>Condition</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LABEL_STEP__CONDITION = PROGRAM_STEP__CONDITION;
 
 	/**
 	 * The number of structural features of the '<em>Label Step</em>' class.
@@ -336,15 +300,6 @@ public interface ListPackage extends EPackage {
 	 * @generated
 	 */
 	int STATUS_STEP = 6;
-
-	/**
-	 * The feature id for the '<em><b>Condition</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATUS_STEP__CONDITION = PROGRAM_STEP__CONDITION;
 
 	/**
 	 * The feature id for the '<em><b>Severity</b></em>' attribute.
@@ -440,15 +395,6 @@ public interface ListPackage extends EPackage {
 	int SCRIPT_STEP = 9;
 
 	/**
-	 * The feature id for the '<em><b>Condition</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SCRIPT_STEP__CONDITION = PROGRAM_STEP__CONDITION;
-
-	/**
 	 * The feature id for the '<em><b>Execute</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -467,6 +413,52 @@ public interface ListPackage extends EPackage {
 	int SCRIPT_STEP_FEATURE_COUNT = PROGRAM_STEP_FEATURE_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link hu.e.compiler.list.impl.ConditionalStepImpl <em>Conditional Step</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.e.compiler.list.impl.ConditionalStepImpl
+	 * @see hu.e.compiler.list.impl.ListPackageImpl#getConditionalStep()
+	 * @generated
+	 */
+	int CONDITIONAL_STEP = 10;
+
+	/**
+	 * The feature id for the '<em><b>Condition</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONDITIONAL_STEP__CONDITION = PROGRAM_STEP_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Success</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONDITIONAL_STEP__SUCCESS = PROGRAM_STEP_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Fail</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONDITIONAL_STEP__FAIL = PROGRAM_STEP_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Conditional Step</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONDITIONAL_STEP_FEATURE_COUNT = PROGRAM_STEP_FEATURE_COUNT + 3;
+
+	/**
 	 * The meta object id for the '{@link hu.e.compiler.list.Severity <em>Severity</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -474,7 +466,7 @@ public interface ListPackage extends EPackage {
 	 * @see hu.e.compiler.list.impl.ListPackageImpl#getSeverity()
 	 * @generated
 	 */
-	int SEVERITY = 10;
+	int SEVERITY = 11;
 
 
 	/**
@@ -518,17 +510,6 @@ public interface ListPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getProgramStep();
-
-	/**
-	 * Returns the meta object for the attribute '{@link hu.e.compiler.list.ProgramStep#getCondition <em>Condition</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Condition</em>'.
-	 * @see hu.e.compiler.list.ProgramStep#getCondition()
-	 * @see #getProgramStep()
-	 * @generated
-	 */
-	EAttribute getProgramStep_Condition();
 
 	/**
 	 * Returns the meta object for class '{@link hu.e.compiler.list.InstructionStep <em>Instruction Step</em>}'.
@@ -787,6 +768,49 @@ public interface ListPackage extends EPackage {
 	EAttribute getScriptStep_Execute();
 
 	/**
+	 * Returns the meta object for class '{@link hu.e.compiler.list.ConditionalStep <em>Conditional Step</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Conditional Step</em>'.
+	 * @see hu.e.compiler.list.ConditionalStep
+	 * @generated
+	 */
+	EClass getConditionalStep();
+
+	/**
+	 * Returns the meta object for the reference '{@link hu.e.compiler.list.ConditionalStep#getCondition <em>Condition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Condition</em>'.
+	 * @see hu.e.compiler.list.ConditionalStep#getCondition()
+	 * @see #getConditionalStep()
+	 * @generated
+	 */
+	EReference getConditionalStep_Condition();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link hu.e.compiler.list.ConditionalStep#getSuccess <em>Success</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Success</em>'.
+	 * @see hu.e.compiler.list.ConditionalStep#getSuccess()
+	 * @see #getConditionalStep()
+	 * @generated
+	 */
+	EReference getConditionalStep_Success();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link hu.e.compiler.list.ConditionalStep#getFail <em>Fail</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Fail</em>'.
+	 * @see hu.e.compiler.list.ConditionalStep#getFail()
+	 * @see #getConditionalStep()
+	 * @generated
+	 */
+	EReference getConditionalStep_Fail();
+
+	/**
 	 * Returns the meta object for enum '{@link hu.e.compiler.list.Severity <em>Severity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -853,14 +877,6 @@ public interface ListPackage extends EPackage {
 		 * @generated
 		 */
 		EClass PROGRAM_STEP = eINSTANCE.getProgramStep();
-
-		/**
-		 * The meta object literal for the '<em><b>Condition</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PROGRAM_STEP__CONDITION = eINSTANCE.getProgramStep_Condition();
 
 		/**
 		 * The meta object literal for the '{@link hu.e.compiler.list.impl.InstructionStepImpl <em>Instruction Step</em>}' class.
@@ -1069,6 +1085,40 @@ public interface ListPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SCRIPT_STEP__EXECUTE = eINSTANCE.getScriptStep_Execute();
+
+		/**
+		 * The meta object literal for the '{@link hu.e.compiler.list.impl.ConditionalStepImpl <em>Conditional Step</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.e.compiler.list.impl.ConditionalStepImpl
+		 * @see hu.e.compiler.list.impl.ListPackageImpl#getConditionalStep()
+		 * @generated
+		 */
+		EClass CONDITIONAL_STEP = eINSTANCE.getConditionalStep();
+
+		/**
+		 * The meta object literal for the '<em><b>Condition</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONDITIONAL_STEP__CONDITION = eINSTANCE.getConditionalStep_Condition();
+
+		/**
+		 * The meta object literal for the '<em><b>Success</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONDITIONAL_STEP__SUCCESS = eINSTANCE.getConditionalStep_Success();
+
+		/**
+		 * The meta object literal for the '<em><b>Fail</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONDITIONAL_STEP__FAIL = eINSTANCE.getConditionalStep_Fail();
 
 		/**
 		 * The meta object literal for the '{@link hu.e.compiler.list.Severity <em>Severity</em>}' enum.

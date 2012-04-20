@@ -65,7 +65,7 @@ import hu.e.parser.eSyntax.XIfExpression;
 import hu.e.parser.eSyntax.XIsLiteralExpression;
 import hu.e.parser.eSyntax.XParenthesizedExpression;
 import hu.e.parser.eSyntax.XPrimaryExpression;
-import hu.e.parser.eSyntax.XScriptedExpression;
+import hu.e.parser.eSyntax.XScriptValueExpression;
 import hu.e.parser.eSyntax.XSizeOfExpression;
 import hu.e.parser.eSyntax.XStructExpression;
 import hu.e.parser.eSyntax.XTopLevelExpression;
@@ -330,6 +330,13 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass xScriptValueExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass xSizeOfExpressionEClass = null;
 
   /**
@@ -436,13 +443,6 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * @generated
    */
   private EClass xParenthesizedExpressionEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass xScriptedExpressionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1474,6 +1474,26 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getXScriptValueExpression()
+  {
+    return xScriptValueExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getXScriptValueExpression_Value()
+  {
+    return (EAttribute)xScriptValueExpressionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getXSizeOfExpression()
   {
     return xSizeOfExpressionEClass;
@@ -1944,36 +1964,6 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getXScriptedExpression()
-  {
-    return xScriptedExpressionEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getXScriptedExpression_Script()
-  {
-    return (EAttribute)xScriptedExpressionEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getXScriptedExpression_Conditional()
-  {
-    return (EReference)xScriptedExpressionEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getConfigVariable()
   {
     return configVariableEClass;
@@ -2358,6 +2348,9 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
 
     xPrimaryExpressionEClass = createEClass(XPRIMARY_EXPRESSION);
 
+    xScriptValueExpressionEClass = createEClass(XSCRIPT_VALUE_EXPRESSION);
+    createEAttribute(xScriptValueExpressionEClass, XSCRIPT_VALUE_EXPRESSION__VALUE);
+
     xSizeOfExpressionEClass = createEClass(XSIZE_OF_EXPRESSION);
     createEReference(xSizeOfExpressionEClass, XSIZE_OF_EXPRESSION__TYPE);
 
@@ -2420,10 +2413,6 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
 
     xParenthesizedExpressionEClass = createEClass(XPARENTHESIZED_EXPRESSION);
     createEReference(xParenthesizedExpressionEClass, XPARENTHESIZED_EXPRESSION__A);
-
-    xScriptedExpressionEClass = createEClass(XSCRIPTED_EXPRESSION);
-    createEAttribute(xScriptedExpressionEClass, XSCRIPTED_EXPRESSION__SCRIPT);
-    createEReference(xScriptedExpressionEClass, XSCRIPTED_EXPRESSION__CONDITIONAL);
 
     configVariableEClass = createEClass(CONFIG_VARIABLE);
 
@@ -2512,6 +2501,7 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     referenceBinarySectionEClass.getESuperTypes().add(this.getBinarySection());
     xExpressionEClass.getESuperTypes().add(this.getOperationCallParameter());
     xExpressionEClass.getESuperTypes().add(this.getXTopLevelExpression());
+    xScriptValueExpressionEClass.getESuperTypes().add(this.getXPrimaryExpression());
     xSizeOfExpressionEClass.getESuperTypes().add(this.getXPrimaryExpression());
     xStructExpressionEClass.getESuperTypes().add(this.getXPrimaryExpression());
     xExpression6EClass.getESuperTypes().add(this.getXExpression());
@@ -2521,7 +2511,6 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     xIfExpressionEClass.getESuperTypes().add(this.getXTopLevelExpression());
     xWhileExpressionEClass.getESuperTypes().add(this.getXTopLevelExpression());
     xParenthesizedExpressionEClass.getESuperTypes().add(this.getXPrimaryExpression());
-    xScriptedExpressionEClass.getESuperTypes().add(this.getXTopLevelExpression());
     configVariableEClass.getESuperTypes().add(this.getVariable());
     structTypeDefMemberEClass.getESuperTypes().add(this.getVariable());
     constantVariableEClass.getESuperTypes().add(this.getVariable());
@@ -2650,6 +2639,9 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
 
     initEClass(xPrimaryExpressionEClass, XPrimaryExpression.class, "XPrimaryExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+    initEClass(xScriptValueExpressionEClass, XScriptValueExpression.class, "XScriptValueExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getXScriptValueExpression_Value(), ecorePackage.getEString(), "value", null, 0, 1, XScriptValueExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(xSizeOfExpressionEClass, XSizeOfExpression.class, "XSizeOfExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getXSizeOfExpression_Type(), this.getTypeDef(), null, "type", null, 0, 1, XSizeOfExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -2712,10 +2704,6 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
 
     initEClass(xParenthesizedExpressionEClass, XParenthesizedExpression.class, "XParenthesizedExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getXParenthesizedExpression_A(), this.getXExpression(), null, "a", null, 0, 1, XParenthesizedExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(xScriptedExpressionEClass, XScriptedExpression.class, "XScriptedExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getXScriptedExpression_Script(), ecorePackage.getEString(), "script", null, 0, 1, XScriptedExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getXScriptedExpression_Conditional(), this.getOperationBlock(), null, "conditional", null, 0, 1, XScriptedExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(configVariableEClass, ConfigVariable.class, "ConfigVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

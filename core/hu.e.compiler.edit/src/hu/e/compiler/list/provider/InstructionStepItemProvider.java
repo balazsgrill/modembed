@@ -162,10 +162,8 @@ public class InstructionStepItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((InstructionStep)object).getCondition();
-		return label == null || label.length() == 0 ?
-			getString("_UI_InstructionStep_type") :
-			getString("_UI_InstructionStep_type") + " " + label;
+		InstructionStep instructionStep = (InstructionStep)object;
+		return getString("_UI_InstructionStep_type") + " " + instructionStep.getCode();
 	}
 
 	/**

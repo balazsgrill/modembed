@@ -260,6 +260,29 @@ public class ListItemProviderAdapterFactory extends ListAdapterFactory implement
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link hu.e.compiler.list.ConditionalStep} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ConditionalStepItemProvider conditionalStepItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link hu.e.compiler.list.ConditionalStep}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createConditionalStepAdapter() {
+		if (conditionalStepItemProvider == null) {
+			conditionalStepItemProvider = new ConditionalStepItemProvider(this);
+		}
+
+		return conditionalStepItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -366,6 +389,7 @@ public class ListItemProviderAdapterFactory extends ListAdapterFactory implement
 		if (statusStepItemProvider != null) statusStepItemProvider.dispose();
 		if (memoryAssignmentItemProvider != null) memoryAssignmentItemProvider.dispose();
 		if (scriptStepItemProvider != null) scriptStepItemProvider.dispose();
+		if (conditionalStepItemProvider != null) conditionalStepItemProvider.dispose();
 	}
 
 }

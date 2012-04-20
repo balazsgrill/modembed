@@ -177,6 +177,9 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="XExpression" eSuperTypes="#//OperationCallParameter #//XTopLevelExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="XPrimaryExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="XScriptValueExpression" eSuperTypes="#//XPrimaryExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="XSizeOfExpression" eSuperTypes="#//XPrimaryExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//TypeDef"
         containment="true"/>
@@ -293,11 +296,6 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="XParenthesizedExpression" eSuperTypes="#//XPrimaryExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="a" eType="#//XExpression"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="XScriptedExpression" eSuperTypes="#//XTopLevelExpression">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="script" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="conditional" eType="#//OperationBlock"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConfigVariable" eSuperTypes="#//Variable"/>

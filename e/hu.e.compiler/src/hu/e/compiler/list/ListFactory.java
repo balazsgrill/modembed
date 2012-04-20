@@ -98,6 +98,15 @@ public interface ListFactory extends EFactory {
 	ScriptStep createScriptStep();
 
 	/**
+	 * Returns a new object of class '<em>Conditional Step</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Conditional Step</em>'.
+	 * @generated
+	 */
+	ConditionalStep createConditionalStep();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

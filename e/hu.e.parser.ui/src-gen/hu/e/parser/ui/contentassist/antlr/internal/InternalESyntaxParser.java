@@ -3891,17 +3891,102 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "ruleXPrimaryExpression"
 
 
+    // $ANTLR start "entryRuleXScriptValueExpression"
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1293:1: entryRuleXScriptValueExpression : ruleXScriptValueExpression EOF ;
+    public final void entryRuleXScriptValueExpression() throws RecognitionException {
+        try {
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1294:1: ( ruleXScriptValueExpression EOF )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1295:1: ruleXScriptValueExpression EOF
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getXScriptValueExpressionRule()); 
+            }
+            pushFollow(FOLLOW_ruleXScriptValueExpression_in_entryRuleXScriptValueExpression2705);
+            ruleXScriptValueExpression();
+
+            state._fsp--;
+            if (state.failed) return ;
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getXScriptValueExpressionRule()); 
+            }
+            match(input,EOF,FOLLOW_EOF_in_entryRuleXScriptValueExpression2712); if (state.failed) return ;
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleXScriptValueExpression"
+
+
+    // $ANTLR start "ruleXScriptValueExpression"
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1302:1: ruleXScriptValueExpression : ( ( rule__XScriptValueExpression__ValueAssignment ) ) ;
+    public final void ruleXScriptValueExpression() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1306:2: ( ( ( rule__XScriptValueExpression__ValueAssignment ) ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1307:1: ( ( rule__XScriptValueExpression__ValueAssignment ) )
+            {
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1307:1: ( ( rule__XScriptValueExpression__ValueAssignment ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1308:1: ( rule__XScriptValueExpression__ValueAssignment )
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getXScriptValueExpressionAccess().getValueAssignment()); 
+            }
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1309:1: ( rule__XScriptValueExpression__ValueAssignment )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1309:2: rule__XScriptValueExpression__ValueAssignment
+            {
+            pushFollow(FOLLOW_rule__XScriptValueExpression__ValueAssignment_in_ruleXScriptValueExpression2738);
+            rule__XScriptValueExpression__ValueAssignment();
+
+            state._fsp--;
+            if (state.failed) return ;
+
+            }
+
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getXScriptValueExpressionAccess().getValueAssignment()); 
+            }
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleXScriptValueExpression"
+
+
     // $ANTLR start "entryRuleXSizeOfExpression"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1293:1: entryRuleXSizeOfExpression : ruleXSizeOfExpression EOF ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1321:1: entryRuleXSizeOfExpression : ruleXSizeOfExpression EOF ;
     public final void entryRuleXSizeOfExpression() throws RecognitionException {
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1294:1: ( ruleXSizeOfExpression EOF )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1295:1: ruleXSizeOfExpression EOF
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1322:1: ( ruleXSizeOfExpression EOF )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1323:1: ruleXSizeOfExpression EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXSizeOfExpressionRule()); 
             }
-            pushFollow(FOLLOW_ruleXSizeOfExpression_in_entryRuleXSizeOfExpression2705);
+            pushFollow(FOLLOW_ruleXSizeOfExpression_in_entryRuleXSizeOfExpression2765);
             ruleXSizeOfExpression();
 
             state._fsp--;
@@ -3909,7 +3994,7 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                after(grammarAccess.getXSizeOfExpressionRule()); 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleXSizeOfExpression2712); if (state.failed) return ;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleXSizeOfExpression2772); if (state.failed) return ;
 
             }
 
@@ -3926,25 +4011,25 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleXSizeOfExpression"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1302:1: ruleXSizeOfExpression : ( ( rule__XSizeOfExpression__Group__0 ) ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1330:1: ruleXSizeOfExpression : ( ( rule__XSizeOfExpression__Group__0 ) ) ;
     public final void ruleXSizeOfExpression() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1306:2: ( ( ( rule__XSizeOfExpression__Group__0 ) ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1307:1: ( ( rule__XSizeOfExpression__Group__0 ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1334:2: ( ( ( rule__XSizeOfExpression__Group__0 ) ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1335:1: ( ( rule__XSizeOfExpression__Group__0 ) )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1307:1: ( ( rule__XSizeOfExpression__Group__0 ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1308:1: ( rule__XSizeOfExpression__Group__0 )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1335:1: ( ( rule__XSizeOfExpression__Group__0 ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1336:1: ( rule__XSizeOfExpression__Group__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXSizeOfExpressionAccess().getGroup()); 
             }
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1309:1: ( rule__XSizeOfExpression__Group__0 )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1309:2: rule__XSizeOfExpression__Group__0
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1337:1: ( rule__XSizeOfExpression__Group__0 )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1337:2: rule__XSizeOfExpression__Group__0
             {
-            pushFollow(FOLLOW_rule__XSizeOfExpression__Group__0_in_ruleXSizeOfExpression2738);
+            pushFollow(FOLLOW_rule__XSizeOfExpression__Group__0_in_ruleXSizeOfExpression2798);
             rule__XSizeOfExpression__Group__0();
 
             state._fsp--;
@@ -3977,16 +4062,16 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleXStructExpression"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1321:1: entryRuleXStructExpression : ruleXStructExpression EOF ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1349:1: entryRuleXStructExpression : ruleXStructExpression EOF ;
     public final void entryRuleXStructExpression() throws RecognitionException {
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1322:1: ( ruleXStructExpression EOF )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1323:1: ruleXStructExpression EOF
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1350:1: ( ruleXStructExpression EOF )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1351:1: ruleXStructExpression EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXStructExpressionRule()); 
             }
-            pushFollow(FOLLOW_ruleXStructExpression_in_entryRuleXStructExpression2765);
+            pushFollow(FOLLOW_ruleXStructExpression_in_entryRuleXStructExpression2825);
             ruleXStructExpression();
 
             state._fsp--;
@@ -3994,7 +4079,7 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                after(grammarAccess.getXStructExpressionRule()); 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleXStructExpression2772); if (state.failed) return ;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleXStructExpression2832); if (state.failed) return ;
 
             }
 
@@ -4011,25 +4096,25 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleXStructExpression"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1330:1: ruleXStructExpression : ( ( rule__XStructExpression__Group__0 ) ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1358:1: ruleXStructExpression : ( ( rule__XStructExpression__Group__0 ) ) ;
     public final void ruleXStructExpression() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1334:2: ( ( ( rule__XStructExpression__Group__0 ) ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1335:1: ( ( rule__XStructExpression__Group__0 ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1362:2: ( ( ( rule__XStructExpression__Group__0 ) ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1363:1: ( ( rule__XStructExpression__Group__0 ) )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1335:1: ( ( rule__XStructExpression__Group__0 ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1336:1: ( rule__XStructExpression__Group__0 )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1363:1: ( ( rule__XStructExpression__Group__0 ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1364:1: ( rule__XStructExpression__Group__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXStructExpressionAccess().getGroup()); 
             }
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1337:1: ( rule__XStructExpression__Group__0 )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1337:2: rule__XStructExpression__Group__0
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1365:1: ( rule__XStructExpression__Group__0 )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1365:2: rule__XStructExpression__Group__0
             {
-            pushFollow(FOLLOW_rule__XStructExpression__Group__0_in_ruleXStructExpression2798);
+            pushFollow(FOLLOW_rule__XStructExpression__Group__0_in_ruleXStructExpression2858);
             rule__XStructExpression__Group__0();
 
             state._fsp--;
@@ -4062,16 +4147,16 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleXExpression1"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1349:1: entryRuleXExpression1 : ruleXExpression1 EOF ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1377:1: entryRuleXExpression1 : ruleXExpression1 EOF ;
     public final void entryRuleXExpression1() throws RecognitionException {
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1350:1: ( ruleXExpression1 EOF )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1351:1: ruleXExpression1 EOF
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1378:1: ( ruleXExpression1 EOF )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1379:1: ruleXExpression1 EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXExpression1Rule()); 
             }
-            pushFollow(FOLLOW_ruleXExpression1_in_entryRuleXExpression12825);
+            pushFollow(FOLLOW_ruleXExpression1_in_entryRuleXExpression12885);
             ruleXExpression1();
 
             state._fsp--;
@@ -4079,7 +4164,7 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                after(grammarAccess.getXExpression1Rule()); 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleXExpression12832); if (state.failed) return ;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleXExpression12892); if (state.failed) return ;
 
             }
 
@@ -4096,25 +4181,25 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleXExpression1"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1358:1: ruleXExpression1 : ( ( rule__XExpression1__Group__0 ) ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1386:1: ruleXExpression1 : ( ( rule__XExpression1__Group__0 ) ) ;
     public final void ruleXExpression1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1362:2: ( ( ( rule__XExpression1__Group__0 ) ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1363:1: ( ( rule__XExpression1__Group__0 ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1390:2: ( ( ( rule__XExpression1__Group__0 ) ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1391:1: ( ( rule__XExpression1__Group__0 ) )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1363:1: ( ( rule__XExpression1__Group__0 ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1364:1: ( rule__XExpression1__Group__0 )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1391:1: ( ( rule__XExpression1__Group__0 ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1392:1: ( rule__XExpression1__Group__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXExpression1Access().getGroup()); 
             }
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1365:1: ( rule__XExpression1__Group__0 )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1365:2: rule__XExpression1__Group__0
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1393:1: ( rule__XExpression1__Group__0 )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1393:2: rule__XExpression1__Group__0
             {
-            pushFollow(FOLLOW_rule__XExpression1__Group__0_in_ruleXExpression12858);
+            pushFollow(FOLLOW_rule__XExpression1__Group__0_in_ruleXExpression12918);
             rule__XExpression1__Group__0();
 
             state._fsp--;
@@ -4147,16 +4232,16 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleXExpression0"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1377:1: entryRuleXExpression0 : ruleXExpression0 EOF ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1405:1: entryRuleXExpression0 : ruleXExpression0 EOF ;
     public final void entryRuleXExpression0() throws RecognitionException {
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1378:1: ( ruleXExpression0 EOF )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1379:1: ruleXExpression0 EOF
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1406:1: ( ruleXExpression0 EOF )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1407:1: ruleXExpression0 EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXExpression0Rule()); 
             }
-            pushFollow(FOLLOW_ruleXExpression0_in_entryRuleXExpression02885);
+            pushFollow(FOLLOW_ruleXExpression0_in_entryRuleXExpression02945);
             ruleXExpression0();
 
             state._fsp--;
@@ -4164,7 +4249,7 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                after(grammarAccess.getXExpression0Rule()); 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleXExpression02892); if (state.failed) return ;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleXExpression02952); if (state.failed) return ;
 
             }
 
@@ -4181,25 +4266,25 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleXExpression0"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1386:1: ruleXExpression0 : ( ( rule__XExpression0__Group__0 ) ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1414:1: ruleXExpression0 : ( ( rule__XExpression0__Group__0 ) ) ;
     public final void ruleXExpression0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1390:2: ( ( ( rule__XExpression0__Group__0 ) ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1391:1: ( ( rule__XExpression0__Group__0 ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1418:2: ( ( ( rule__XExpression0__Group__0 ) ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1419:1: ( ( rule__XExpression0__Group__0 ) )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1391:1: ( ( rule__XExpression0__Group__0 ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1392:1: ( rule__XExpression0__Group__0 )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1419:1: ( ( rule__XExpression0__Group__0 ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1420:1: ( rule__XExpression0__Group__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXExpression0Access().getGroup()); 
             }
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1393:1: ( rule__XExpression0__Group__0 )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1393:2: rule__XExpression0__Group__0
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1421:1: ( rule__XExpression0__Group__0 )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1421:2: rule__XExpression0__Group__0
             {
-            pushFollow(FOLLOW_rule__XExpression0__Group__0_in_ruleXExpression02918);
+            pushFollow(FOLLOW_rule__XExpression0__Group__0_in_ruleXExpression02978);
             rule__XExpression0__Group__0();
 
             state._fsp--;
@@ -4232,16 +4317,16 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleXExpressionM1"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1405:1: entryRuleXExpressionM1 : ruleXExpressionM1 EOF ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1433:1: entryRuleXExpressionM1 : ruleXExpressionM1 EOF ;
     public final void entryRuleXExpressionM1() throws RecognitionException {
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1406:1: ( ruleXExpressionM1 EOF )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1407:1: ruleXExpressionM1 EOF
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1434:1: ( ruleXExpressionM1 EOF )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1435:1: ruleXExpressionM1 EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXExpressionM1Rule()); 
             }
-            pushFollow(FOLLOW_ruleXExpressionM1_in_entryRuleXExpressionM12945);
+            pushFollow(FOLLOW_ruleXExpressionM1_in_entryRuleXExpressionM13005);
             ruleXExpressionM1();
 
             state._fsp--;
@@ -4249,7 +4334,7 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                after(grammarAccess.getXExpressionM1Rule()); 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleXExpressionM12952); if (state.failed) return ;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleXExpressionM13012); if (state.failed) return ;
 
             }
 
@@ -4266,25 +4351,25 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleXExpressionM1"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1414:1: ruleXExpressionM1 : ( ( rule__XExpressionM1__Group__0 ) ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1442:1: ruleXExpressionM1 : ( ( rule__XExpressionM1__Group__0 ) ) ;
     public final void ruleXExpressionM1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1418:2: ( ( ( rule__XExpressionM1__Group__0 ) ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1419:1: ( ( rule__XExpressionM1__Group__0 ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1446:2: ( ( ( rule__XExpressionM1__Group__0 ) ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1447:1: ( ( rule__XExpressionM1__Group__0 ) )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1419:1: ( ( rule__XExpressionM1__Group__0 ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1420:1: ( rule__XExpressionM1__Group__0 )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1447:1: ( ( rule__XExpressionM1__Group__0 ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1448:1: ( rule__XExpressionM1__Group__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXExpressionM1Access().getGroup()); 
             }
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1421:1: ( rule__XExpressionM1__Group__0 )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1421:2: rule__XExpressionM1__Group__0
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1449:1: ( rule__XExpressionM1__Group__0 )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1449:2: rule__XExpressionM1__Group__0
             {
-            pushFollow(FOLLOW_rule__XExpressionM1__Group__0_in_ruleXExpressionM12978);
+            pushFollow(FOLLOW_rule__XExpressionM1__Group__0_in_ruleXExpressionM13038);
             rule__XExpressionM1__Group__0();
 
             state._fsp--;
@@ -4317,16 +4402,16 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleXExpression2"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1433:1: entryRuleXExpression2 : ruleXExpression2 EOF ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1461:1: entryRuleXExpression2 : ruleXExpression2 EOF ;
     public final void entryRuleXExpression2() throws RecognitionException {
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1434:1: ( ruleXExpression2 EOF )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1435:1: ruleXExpression2 EOF
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1462:1: ( ruleXExpression2 EOF )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1463:1: ruleXExpression2 EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXExpression2Rule()); 
             }
-            pushFollow(FOLLOW_ruleXExpression2_in_entryRuleXExpression23005);
+            pushFollow(FOLLOW_ruleXExpression2_in_entryRuleXExpression23065);
             ruleXExpression2();
 
             state._fsp--;
@@ -4334,7 +4419,7 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                after(grammarAccess.getXExpression2Rule()); 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleXExpression23012); if (state.failed) return ;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleXExpression23072); if (state.failed) return ;
 
             }
 
@@ -4351,25 +4436,25 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleXExpression2"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1442:1: ruleXExpression2 : ( ( rule__XExpression2__Group__0 ) ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1470:1: ruleXExpression2 : ( ( rule__XExpression2__Group__0 ) ) ;
     public final void ruleXExpression2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1446:2: ( ( ( rule__XExpression2__Group__0 ) ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1447:1: ( ( rule__XExpression2__Group__0 ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1474:2: ( ( ( rule__XExpression2__Group__0 ) ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1475:1: ( ( rule__XExpression2__Group__0 ) )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1447:1: ( ( rule__XExpression2__Group__0 ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1448:1: ( rule__XExpression2__Group__0 )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1475:1: ( ( rule__XExpression2__Group__0 ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1476:1: ( rule__XExpression2__Group__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXExpression2Access().getGroup()); 
             }
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1449:1: ( rule__XExpression2__Group__0 )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1449:2: rule__XExpression2__Group__0
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1477:1: ( rule__XExpression2__Group__0 )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1477:2: rule__XExpression2__Group__0
             {
-            pushFollow(FOLLOW_rule__XExpression2__Group__0_in_ruleXExpression23038);
+            pushFollow(FOLLOW_rule__XExpression2__Group__0_in_ruleXExpression23098);
             rule__XExpression2__Group__0();
 
             state._fsp--;
@@ -4402,16 +4487,16 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleXExpression3"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1461:1: entryRuleXExpression3 : ruleXExpression3 EOF ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1489:1: entryRuleXExpression3 : ruleXExpression3 EOF ;
     public final void entryRuleXExpression3() throws RecognitionException {
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1462:1: ( ruleXExpression3 EOF )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1463:1: ruleXExpression3 EOF
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1490:1: ( ruleXExpression3 EOF )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1491:1: ruleXExpression3 EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXExpression3Rule()); 
             }
-            pushFollow(FOLLOW_ruleXExpression3_in_entryRuleXExpression33065);
+            pushFollow(FOLLOW_ruleXExpression3_in_entryRuleXExpression33125);
             ruleXExpression3();
 
             state._fsp--;
@@ -4419,7 +4504,7 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                after(grammarAccess.getXExpression3Rule()); 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleXExpression33072); if (state.failed) return ;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleXExpression33132); if (state.failed) return ;
 
             }
 
@@ -4436,25 +4521,25 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleXExpression3"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1470:1: ruleXExpression3 : ( ( rule__XExpression3__Group__0 ) ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1498:1: ruleXExpression3 : ( ( rule__XExpression3__Group__0 ) ) ;
     public final void ruleXExpression3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1474:2: ( ( ( rule__XExpression3__Group__0 ) ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1475:1: ( ( rule__XExpression3__Group__0 ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1502:2: ( ( ( rule__XExpression3__Group__0 ) ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1503:1: ( ( rule__XExpression3__Group__0 ) )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1475:1: ( ( rule__XExpression3__Group__0 ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1476:1: ( rule__XExpression3__Group__0 )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1503:1: ( ( rule__XExpression3__Group__0 ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1504:1: ( rule__XExpression3__Group__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXExpression3Access().getGroup()); 
             }
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1477:1: ( rule__XExpression3__Group__0 )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1477:2: rule__XExpression3__Group__0
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1505:1: ( rule__XExpression3__Group__0 )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1505:2: rule__XExpression3__Group__0
             {
-            pushFollow(FOLLOW_rule__XExpression3__Group__0_in_ruleXExpression33098);
+            pushFollow(FOLLOW_rule__XExpression3__Group__0_in_ruleXExpression33158);
             rule__XExpression3__Group__0();
 
             state._fsp--;
@@ -4487,16 +4572,16 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleXExpression4"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1489:1: entryRuleXExpression4 : ruleXExpression4 EOF ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1517:1: entryRuleXExpression4 : ruleXExpression4 EOF ;
     public final void entryRuleXExpression4() throws RecognitionException {
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1490:1: ( ruleXExpression4 EOF )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1491:1: ruleXExpression4 EOF
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1518:1: ( ruleXExpression4 EOF )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1519:1: ruleXExpression4 EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXExpression4Rule()); 
             }
-            pushFollow(FOLLOW_ruleXExpression4_in_entryRuleXExpression43125);
+            pushFollow(FOLLOW_ruleXExpression4_in_entryRuleXExpression43185);
             ruleXExpression4();
 
             state._fsp--;
@@ -4504,7 +4589,7 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                after(grammarAccess.getXExpression4Rule()); 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleXExpression43132); if (state.failed) return ;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleXExpression43192); if (state.failed) return ;
 
             }
 
@@ -4521,25 +4606,25 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleXExpression4"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1498:1: ruleXExpression4 : ( ( rule__XExpression4__Group__0 ) ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1526:1: ruleXExpression4 : ( ( rule__XExpression4__Group__0 ) ) ;
     public final void ruleXExpression4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1502:2: ( ( ( rule__XExpression4__Group__0 ) ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1503:1: ( ( rule__XExpression4__Group__0 ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1530:2: ( ( ( rule__XExpression4__Group__0 ) ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1531:1: ( ( rule__XExpression4__Group__0 ) )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1503:1: ( ( rule__XExpression4__Group__0 ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1504:1: ( rule__XExpression4__Group__0 )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1531:1: ( ( rule__XExpression4__Group__0 ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1532:1: ( rule__XExpression4__Group__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXExpression4Access().getGroup()); 
             }
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1505:1: ( rule__XExpression4__Group__0 )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1505:2: rule__XExpression4__Group__0
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1533:1: ( rule__XExpression4__Group__0 )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1533:2: rule__XExpression4__Group__0
             {
-            pushFollow(FOLLOW_rule__XExpression4__Group__0_in_ruleXExpression43158);
+            pushFollow(FOLLOW_rule__XExpression4__Group__0_in_ruleXExpression43218);
             rule__XExpression4__Group__0();
 
             state._fsp--;
@@ -4572,16 +4657,16 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleXExpression5"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1517:1: entryRuleXExpression5 : ruleXExpression5 EOF ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1545:1: entryRuleXExpression5 : ruleXExpression5 EOF ;
     public final void entryRuleXExpression5() throws RecognitionException {
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1518:1: ( ruleXExpression5 EOF )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1519:1: ruleXExpression5 EOF
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1546:1: ( ruleXExpression5 EOF )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1547:1: ruleXExpression5 EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXExpression5Rule()); 
             }
-            pushFollow(FOLLOW_ruleXExpression5_in_entryRuleXExpression53185);
+            pushFollow(FOLLOW_ruleXExpression5_in_entryRuleXExpression53245);
             ruleXExpression5();
 
             state._fsp--;
@@ -4589,7 +4674,7 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                after(grammarAccess.getXExpression5Rule()); 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleXExpression53192); if (state.failed) return ;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleXExpression53252); if (state.failed) return ;
 
             }
 
@@ -4606,25 +4691,25 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleXExpression5"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1526:1: ruleXExpression5 : ( ( rule__XExpression5__Group__0 ) ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1554:1: ruleXExpression5 : ( ( rule__XExpression5__Group__0 ) ) ;
     public final void ruleXExpression5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1530:2: ( ( ( rule__XExpression5__Group__0 ) ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1531:1: ( ( rule__XExpression5__Group__0 ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1558:2: ( ( ( rule__XExpression5__Group__0 ) ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1559:1: ( ( rule__XExpression5__Group__0 ) )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1531:1: ( ( rule__XExpression5__Group__0 ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1532:1: ( rule__XExpression5__Group__0 )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1559:1: ( ( rule__XExpression5__Group__0 ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1560:1: ( rule__XExpression5__Group__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXExpression5Access().getGroup()); 
             }
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1533:1: ( rule__XExpression5__Group__0 )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1533:2: rule__XExpression5__Group__0
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1561:1: ( rule__XExpression5__Group__0 )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1561:2: rule__XExpression5__Group__0
             {
-            pushFollow(FOLLOW_rule__XExpression5__Group__0_in_ruleXExpression53218);
+            pushFollow(FOLLOW_rule__XExpression5__Group__0_in_ruleXExpression53278);
             rule__XExpression5__Group__0();
 
             state._fsp--;
@@ -4657,16 +4742,16 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleXExpression6"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1545:1: entryRuleXExpression6 : ruleXExpression6 EOF ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1573:1: entryRuleXExpression6 : ruleXExpression6 EOF ;
     public final void entryRuleXExpression6() throws RecognitionException {
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1546:1: ( ruleXExpression6 EOF )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1547:1: ruleXExpression6 EOF
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1574:1: ( ruleXExpression6 EOF )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1575:1: ruleXExpression6 EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXExpression6Rule()); 
             }
-            pushFollow(FOLLOW_ruleXExpression6_in_entryRuleXExpression63245);
+            pushFollow(FOLLOW_ruleXExpression6_in_entryRuleXExpression63305);
             ruleXExpression6();
 
             state._fsp--;
@@ -4674,7 +4759,7 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                after(grammarAccess.getXExpression6Rule()); 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleXExpression63252); if (state.failed) return ;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleXExpression63312); if (state.failed) return ;
 
             }
 
@@ -4691,25 +4776,25 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleXExpression6"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1554:1: ruleXExpression6 : ( ( rule__XExpression6__Group__0 ) ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1582:1: ruleXExpression6 : ( ( rule__XExpression6__Group__0 ) ) ;
     public final void ruleXExpression6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1558:2: ( ( ( rule__XExpression6__Group__0 ) ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1559:1: ( ( rule__XExpression6__Group__0 ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1586:2: ( ( ( rule__XExpression6__Group__0 ) ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1587:1: ( ( rule__XExpression6__Group__0 ) )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1559:1: ( ( rule__XExpression6__Group__0 ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1560:1: ( rule__XExpression6__Group__0 )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1587:1: ( ( rule__XExpression6__Group__0 ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1588:1: ( rule__XExpression6__Group__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXExpression6Access().getGroup()); 
             }
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1561:1: ( rule__XExpression6__Group__0 )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1561:2: rule__XExpression6__Group__0
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1589:1: ( rule__XExpression6__Group__0 )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1589:2: rule__XExpression6__Group__0
             {
-            pushFollow(FOLLOW_rule__XExpression6__Group__0_in_ruleXExpression63278);
+            pushFollow(FOLLOW_rule__XExpression6__Group__0_in_ruleXExpression63338);
             rule__XExpression6__Group__0();
 
             state._fsp--;
@@ -4742,16 +4827,16 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleXExpressionLiteral"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1573:1: entryRuleXExpressionLiteral : ruleXExpressionLiteral EOF ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1601:1: entryRuleXExpressionLiteral : ruleXExpressionLiteral EOF ;
     public final void entryRuleXExpressionLiteral() throws RecognitionException {
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1574:1: ( ruleXExpressionLiteral EOF )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1575:1: ruleXExpressionLiteral EOF
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1602:1: ( ruleXExpressionLiteral EOF )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1603:1: ruleXExpressionLiteral EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXExpressionLiteralRule()); 
             }
-            pushFollow(FOLLOW_ruleXExpressionLiteral_in_entryRuleXExpressionLiteral3305);
+            pushFollow(FOLLOW_ruleXExpressionLiteral_in_entryRuleXExpressionLiteral3365);
             ruleXExpressionLiteral();
 
             state._fsp--;
@@ -4759,7 +4844,7 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                after(grammarAccess.getXExpressionLiteralRule()); 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleXExpressionLiteral3312); if (state.failed) return ;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleXExpressionLiteral3372); if (state.failed) return ;
 
             }
 
@@ -4776,25 +4861,25 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleXExpressionLiteral"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1582:1: ruleXExpressionLiteral : ( ( rule__XExpressionLiteral__ValueAssignment ) ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1610:1: ruleXExpressionLiteral : ( ( rule__XExpressionLiteral__ValueAssignment ) ) ;
     public final void ruleXExpressionLiteral() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1586:2: ( ( ( rule__XExpressionLiteral__ValueAssignment ) ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1587:1: ( ( rule__XExpressionLiteral__ValueAssignment ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1614:2: ( ( ( rule__XExpressionLiteral__ValueAssignment ) ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1615:1: ( ( rule__XExpressionLiteral__ValueAssignment ) )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1587:1: ( ( rule__XExpressionLiteral__ValueAssignment ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1588:1: ( rule__XExpressionLiteral__ValueAssignment )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1615:1: ( ( rule__XExpressionLiteral__ValueAssignment ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1616:1: ( rule__XExpressionLiteral__ValueAssignment )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXExpressionLiteralAccess().getValueAssignment()); 
             }
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1589:1: ( rule__XExpressionLiteral__ValueAssignment )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1589:2: rule__XExpressionLiteral__ValueAssignment
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1617:1: ( rule__XExpressionLiteral__ValueAssignment )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1617:2: rule__XExpressionLiteral__ValueAssignment
             {
-            pushFollow(FOLLOW_rule__XExpressionLiteral__ValueAssignment_in_ruleXExpressionLiteral3338);
+            pushFollow(FOLLOW_rule__XExpressionLiteral__ValueAssignment_in_ruleXExpressionLiteral3398);
             rule__XExpressionLiteral__ValueAssignment();
 
             state._fsp--;
@@ -4827,16 +4912,16 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleXTopLevelExpression"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1601:1: entryRuleXTopLevelExpression : ruleXTopLevelExpression EOF ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1629:1: entryRuleXTopLevelExpression : ruleXTopLevelExpression EOF ;
     public final void entryRuleXTopLevelExpression() throws RecognitionException {
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1602:1: ( ruleXTopLevelExpression EOF )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1603:1: ruleXTopLevelExpression EOF
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1630:1: ( ruleXTopLevelExpression EOF )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1631:1: ruleXTopLevelExpression EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXTopLevelExpressionRule()); 
             }
-            pushFollow(FOLLOW_ruleXTopLevelExpression_in_entryRuleXTopLevelExpression3365);
+            pushFollow(FOLLOW_ruleXTopLevelExpression_in_entryRuleXTopLevelExpression3425);
             ruleXTopLevelExpression();
 
             state._fsp--;
@@ -4844,7 +4929,7 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                after(grammarAccess.getXTopLevelExpressionRule()); 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleXTopLevelExpression3372); if (state.failed) return ;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleXTopLevelExpression3432); if (state.failed) return ;
 
             }
 
@@ -4861,25 +4946,25 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleXTopLevelExpression"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1610:1: ruleXTopLevelExpression : ( ( rule__XTopLevelExpression__Alternatives ) ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1638:1: ruleXTopLevelExpression : ( ( rule__XTopLevelExpression__Alternatives ) ) ;
     public final void ruleXTopLevelExpression() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1614:2: ( ( ( rule__XTopLevelExpression__Alternatives ) ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1615:1: ( ( rule__XTopLevelExpression__Alternatives ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1642:2: ( ( ( rule__XTopLevelExpression__Alternatives ) ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1643:1: ( ( rule__XTopLevelExpression__Alternatives ) )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1615:1: ( ( rule__XTopLevelExpression__Alternatives ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1616:1: ( rule__XTopLevelExpression__Alternatives )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1643:1: ( ( rule__XTopLevelExpression__Alternatives ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1644:1: ( rule__XTopLevelExpression__Alternatives )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXTopLevelExpressionAccess().getAlternatives()); 
             }
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1617:1: ( rule__XTopLevelExpression__Alternatives )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1617:2: rule__XTopLevelExpression__Alternatives
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1645:1: ( rule__XTopLevelExpression__Alternatives )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1645:2: rule__XTopLevelExpression__Alternatives
             {
-            pushFollow(FOLLOW_rule__XTopLevelExpression__Alternatives_in_ruleXTopLevelExpression3398);
+            pushFollow(FOLLOW_rule__XTopLevelExpression__Alternatives_in_ruleXTopLevelExpression3458);
             rule__XTopLevelExpression__Alternatives();
 
             state._fsp--;
@@ -4912,16 +4997,16 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleOpSingleAssign"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1629:1: entryRuleOpSingleAssign : ruleOpSingleAssign EOF ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1657:1: entryRuleOpSingleAssign : ruleOpSingleAssign EOF ;
     public final void entryRuleOpSingleAssign() throws RecognitionException {
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1630:1: ( ruleOpSingleAssign EOF )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1631:1: ruleOpSingleAssign EOF
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1658:1: ( ruleOpSingleAssign EOF )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1659:1: ruleOpSingleAssign EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOpSingleAssignRule()); 
             }
-            pushFollow(FOLLOW_ruleOpSingleAssign_in_entryRuleOpSingleAssign3425);
+            pushFollow(FOLLOW_ruleOpSingleAssign_in_entryRuleOpSingleAssign3485);
             ruleOpSingleAssign();
 
             state._fsp--;
@@ -4929,7 +5014,7 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                after(grammarAccess.getOpSingleAssignRule()); 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleOpSingleAssign3432); if (state.failed) return ;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleOpSingleAssign3492); if (state.failed) return ;
 
             }
 
@@ -4946,22 +5031,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleOpSingleAssign"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1638:1: ruleOpSingleAssign : ( '=' ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1666:1: ruleOpSingleAssign : ( '=' ) ;
     public final void ruleOpSingleAssign() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1642:2: ( ( '=' ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1643:1: ( '=' )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1670:2: ( ( '=' ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1671:1: ( '=' )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1643:1: ( '=' )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1644:1: '='
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1671:1: ( '=' )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1672:1: '='
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOpSingleAssignAccess().getEqualsSignKeyword()); 
             }
-            match(input,14,FOLLOW_14_in_ruleOpSingleAssign3459); if (state.failed) return ;
+            match(input,14,FOLLOW_14_in_ruleOpSingleAssign3519); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getOpSingleAssignAccess().getEqualsSignKeyword()); 
             }
@@ -4987,16 +5072,16 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleXIsLiteralExpression"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1659:1: entryRuleXIsLiteralExpression : ruleXIsLiteralExpression EOF ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1687:1: entryRuleXIsLiteralExpression : ruleXIsLiteralExpression EOF ;
     public final void entryRuleXIsLiteralExpression() throws RecognitionException {
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1660:1: ( ruleXIsLiteralExpression EOF )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1661:1: ruleXIsLiteralExpression EOF
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1688:1: ( ruleXIsLiteralExpression EOF )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1689:1: ruleXIsLiteralExpression EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXIsLiteralExpressionRule()); 
             }
-            pushFollow(FOLLOW_ruleXIsLiteralExpression_in_entryRuleXIsLiteralExpression3487);
+            pushFollow(FOLLOW_ruleXIsLiteralExpression_in_entryRuleXIsLiteralExpression3547);
             ruleXIsLiteralExpression();
 
             state._fsp--;
@@ -5004,7 +5089,7 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                after(grammarAccess.getXIsLiteralExpressionRule()); 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleXIsLiteralExpression3494); if (state.failed) return ;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleXIsLiteralExpression3554); if (state.failed) return ;
 
             }
 
@@ -5021,25 +5106,25 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleXIsLiteralExpression"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1668:1: ruleXIsLiteralExpression : ( ( rule__XIsLiteralExpression__Group__0 ) ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1696:1: ruleXIsLiteralExpression : ( ( rule__XIsLiteralExpression__Group__0 ) ) ;
     public final void ruleXIsLiteralExpression() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1672:2: ( ( ( rule__XIsLiteralExpression__Group__0 ) ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1673:1: ( ( rule__XIsLiteralExpression__Group__0 ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1700:2: ( ( ( rule__XIsLiteralExpression__Group__0 ) ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1701:1: ( ( rule__XIsLiteralExpression__Group__0 ) )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1673:1: ( ( rule__XIsLiteralExpression__Group__0 ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1674:1: ( rule__XIsLiteralExpression__Group__0 )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1701:1: ( ( rule__XIsLiteralExpression__Group__0 ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1702:1: ( rule__XIsLiteralExpression__Group__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXIsLiteralExpressionAccess().getGroup()); 
             }
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1675:1: ( rule__XIsLiteralExpression__Group__0 )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1675:2: rule__XIsLiteralExpression__Group__0
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1703:1: ( rule__XIsLiteralExpression__Group__0 )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1703:2: rule__XIsLiteralExpression__Group__0
             {
-            pushFollow(FOLLOW_rule__XIsLiteralExpression__Group__0_in_ruleXIsLiteralExpression3520);
+            pushFollow(FOLLOW_rule__XIsLiteralExpression__Group__0_in_ruleXIsLiteralExpression3580);
             rule__XIsLiteralExpression__Group__0();
 
             state._fsp--;
@@ -5072,16 +5157,16 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleXIfExpression"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1687:1: entryRuleXIfExpression : ruleXIfExpression EOF ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1715:1: entryRuleXIfExpression : ruleXIfExpression EOF ;
     public final void entryRuleXIfExpression() throws RecognitionException {
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1688:1: ( ruleXIfExpression EOF )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1689:1: ruleXIfExpression EOF
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1716:1: ( ruleXIfExpression EOF )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1717:1: ruleXIfExpression EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXIfExpressionRule()); 
             }
-            pushFollow(FOLLOW_ruleXIfExpression_in_entryRuleXIfExpression3547);
+            pushFollow(FOLLOW_ruleXIfExpression_in_entryRuleXIfExpression3607);
             ruleXIfExpression();
 
             state._fsp--;
@@ -5089,7 +5174,7 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                after(grammarAccess.getXIfExpressionRule()); 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleXIfExpression3554); if (state.failed) return ;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleXIfExpression3614); if (state.failed) return ;
 
             }
 
@@ -5106,25 +5191,25 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleXIfExpression"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1696:1: ruleXIfExpression : ( ( rule__XIfExpression__Group__0 ) ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1724:1: ruleXIfExpression : ( ( rule__XIfExpression__Group__0 ) ) ;
     public final void ruleXIfExpression() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1700:2: ( ( ( rule__XIfExpression__Group__0 ) ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1701:1: ( ( rule__XIfExpression__Group__0 ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1728:2: ( ( ( rule__XIfExpression__Group__0 ) ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1729:1: ( ( rule__XIfExpression__Group__0 ) )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1701:1: ( ( rule__XIfExpression__Group__0 ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1702:1: ( rule__XIfExpression__Group__0 )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1729:1: ( ( rule__XIfExpression__Group__0 ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1730:1: ( rule__XIfExpression__Group__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXIfExpressionAccess().getGroup()); 
             }
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1703:1: ( rule__XIfExpression__Group__0 )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1703:2: rule__XIfExpression__Group__0
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1731:1: ( rule__XIfExpression__Group__0 )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1731:2: rule__XIfExpression__Group__0
             {
-            pushFollow(FOLLOW_rule__XIfExpression__Group__0_in_ruleXIfExpression3580);
+            pushFollow(FOLLOW_rule__XIfExpression__Group__0_in_ruleXIfExpression3640);
             rule__XIfExpression__Group__0();
 
             state._fsp--;
@@ -5157,16 +5242,16 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleXWhileExpression"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1715:1: entryRuleXWhileExpression : ruleXWhileExpression EOF ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1743:1: entryRuleXWhileExpression : ruleXWhileExpression EOF ;
     public final void entryRuleXWhileExpression() throws RecognitionException {
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1716:1: ( ruleXWhileExpression EOF )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1717:1: ruleXWhileExpression EOF
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1744:1: ( ruleXWhileExpression EOF )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1745:1: ruleXWhileExpression EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXWhileExpressionRule()); 
             }
-            pushFollow(FOLLOW_ruleXWhileExpression_in_entryRuleXWhileExpression3607);
+            pushFollow(FOLLOW_ruleXWhileExpression_in_entryRuleXWhileExpression3667);
             ruleXWhileExpression();
 
             state._fsp--;
@@ -5174,7 +5259,7 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                after(grammarAccess.getXWhileExpressionRule()); 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleXWhileExpression3614); if (state.failed) return ;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleXWhileExpression3674); if (state.failed) return ;
 
             }
 
@@ -5191,25 +5276,25 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleXWhileExpression"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1724:1: ruleXWhileExpression : ( ( rule__XWhileExpression__Group__0 ) ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1752:1: ruleXWhileExpression : ( ( rule__XWhileExpression__Group__0 ) ) ;
     public final void ruleXWhileExpression() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1728:2: ( ( ( rule__XWhileExpression__Group__0 ) ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1729:1: ( ( rule__XWhileExpression__Group__0 ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1756:2: ( ( ( rule__XWhileExpression__Group__0 ) ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1757:1: ( ( rule__XWhileExpression__Group__0 ) )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1729:1: ( ( rule__XWhileExpression__Group__0 ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1730:1: ( rule__XWhileExpression__Group__0 )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1757:1: ( ( rule__XWhileExpression__Group__0 ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1758:1: ( rule__XWhileExpression__Group__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXWhileExpressionAccess().getGroup()); 
             }
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1731:1: ( rule__XWhileExpression__Group__0 )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1731:2: rule__XWhileExpression__Group__0
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1759:1: ( rule__XWhileExpression__Group__0 )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1759:2: rule__XWhileExpression__Group__0
             {
-            pushFollow(FOLLOW_rule__XWhileExpression__Group__0_in_ruleXWhileExpression3640);
+            pushFollow(FOLLOW_rule__XWhileExpression__Group__0_in_ruleXWhileExpression3700);
             rule__XWhileExpression__Group__0();
 
             state._fsp--;
@@ -5242,16 +5327,16 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleXParenthesizedExpression"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1743:1: entryRuleXParenthesizedExpression : ruleXParenthesizedExpression EOF ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1771:1: entryRuleXParenthesizedExpression : ruleXParenthesizedExpression EOF ;
     public final void entryRuleXParenthesizedExpression() throws RecognitionException {
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1744:1: ( ruleXParenthesizedExpression EOF )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1745:1: ruleXParenthesizedExpression EOF
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1772:1: ( ruleXParenthesizedExpression EOF )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1773:1: ruleXParenthesizedExpression EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXParenthesizedExpressionRule()); 
             }
-            pushFollow(FOLLOW_ruleXParenthesizedExpression_in_entryRuleXParenthesizedExpression3667);
+            pushFollow(FOLLOW_ruleXParenthesizedExpression_in_entryRuleXParenthesizedExpression3727);
             ruleXParenthesizedExpression();
 
             state._fsp--;
@@ -5259,7 +5344,7 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                after(grammarAccess.getXParenthesizedExpressionRule()); 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleXParenthesizedExpression3674); if (state.failed) return ;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleXParenthesizedExpression3734); if (state.failed) return ;
 
             }
 
@@ -5276,25 +5361,25 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleXParenthesizedExpression"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1752:1: ruleXParenthesizedExpression : ( ( rule__XParenthesizedExpression__Group__0 ) ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1780:1: ruleXParenthesizedExpression : ( ( rule__XParenthesizedExpression__Group__0 ) ) ;
     public final void ruleXParenthesizedExpression() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1756:2: ( ( ( rule__XParenthesizedExpression__Group__0 ) ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1757:1: ( ( rule__XParenthesizedExpression__Group__0 ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1784:2: ( ( ( rule__XParenthesizedExpression__Group__0 ) ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1785:1: ( ( rule__XParenthesizedExpression__Group__0 ) )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1757:1: ( ( rule__XParenthesizedExpression__Group__0 ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1758:1: ( rule__XParenthesizedExpression__Group__0 )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1785:1: ( ( rule__XParenthesizedExpression__Group__0 ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1786:1: ( rule__XParenthesizedExpression__Group__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXParenthesizedExpressionAccess().getGroup()); 
             }
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1759:1: ( rule__XParenthesizedExpression__Group__0 )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1759:2: rule__XParenthesizedExpression__Group__0
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1787:1: ( rule__XParenthesizedExpression__Group__0 )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1787:2: rule__XParenthesizedExpression__Group__0
             {
-            pushFollow(FOLLOW_rule__XParenthesizedExpression__Group__0_in_ruleXParenthesizedExpression3700);
+            pushFollow(FOLLOW_rule__XParenthesizedExpression__Group__0_in_ruleXParenthesizedExpression3760);
             rule__XParenthesizedExpression__Group__0();
 
             state._fsp--;
@@ -5324,91 +5409,6 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
         return ;
     }
     // $ANTLR end "ruleXParenthesizedExpression"
-
-
-    // $ANTLR start "entryRuleXScriptedExpression"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1771:1: entryRuleXScriptedExpression : ruleXScriptedExpression EOF ;
-    public final void entryRuleXScriptedExpression() throws RecognitionException {
-        try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1772:1: ( ruleXScriptedExpression EOF )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1773:1: ruleXScriptedExpression EOF
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getXScriptedExpressionRule()); 
-            }
-            pushFollow(FOLLOW_ruleXScriptedExpression_in_entryRuleXScriptedExpression3727);
-            ruleXScriptedExpression();
-
-            state._fsp--;
-            if (state.failed) return ;
-            if ( state.backtracking==0 ) {
-               after(grammarAccess.getXScriptedExpressionRule()); 
-            }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleXScriptedExpression3734); if (state.failed) return ;
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-        }
-        return ;
-    }
-    // $ANTLR end "entryRuleXScriptedExpression"
-
-
-    // $ANTLR start "ruleXScriptedExpression"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1780:1: ruleXScriptedExpression : ( ( rule__XScriptedExpression__Group__0 ) ) ;
-    public final void ruleXScriptedExpression() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1784:2: ( ( ( rule__XScriptedExpression__Group__0 ) ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1785:1: ( ( rule__XScriptedExpression__Group__0 ) )
-            {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1785:1: ( ( rule__XScriptedExpression__Group__0 ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1786:1: ( rule__XScriptedExpression__Group__0 )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getXScriptedExpressionAccess().getGroup()); 
-            }
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1787:1: ( rule__XScriptedExpression__Group__0 )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1787:2: rule__XScriptedExpression__Group__0
-            {
-            pushFollow(FOLLOW_rule__XScriptedExpression__Group__0_in_ruleXScriptedExpression3760);
-            rule__XScriptedExpression__Group__0();
-
-            state._fsp--;
-            if (state.failed) return ;
-
-            }
-
-            if ( state.backtracking==0 ) {
-               after(grammarAccess.getXScriptedExpressionAccess().getGroup()); 
-            }
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "ruleXScriptedExpression"
 
 
     // $ANTLR start "rulePrimitiveKind"
@@ -6122,11 +6122,11 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
                 {
                 int LA3_2 = input.LA(2);
 
-                if ( (LA3_2==81) ) {
-                    alt3=5;
-                }
-                else if ( (LA3_2==RULE_ID||LA3_2==58) ) {
+                if ( (LA3_2==RULE_ID||LA3_2==58) ) {
                     alt3=1;
+                }
+                else if ( (LA3_2==81) ) {
+                    alt3=5;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return ;}
@@ -6336,11 +6336,11 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
                 {
                 int LA4_2 = input.LA(2);
 
-                if ( (LA4_2==RULE_ID||LA4_2==58) ) {
-                    alt4=3;
-                }
-                else if ( (LA4_2==81) ) {
+                if ( (LA4_2==81) ) {
                     alt4=2;
+                }
+                else if ( (LA4_2==RULE_ID||LA4_2==58) ) {
+                    alt4=3;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return ;}
@@ -7079,34 +7079,6 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
             case RULE_ID:
                 {
                 switch ( input.LA(2) ) {
-                case 14:
-                case 42:
-                case 46:
-                case 47:
-                case 48:
-                case 49:
-                case 50:
-                case 51:
-                case 52:
-                case 53:
-                case 54:
-                case 55:
-                case 56:
-                case 57:
-                case 60:
-                case 72:
-                case 76:
-                case 81:
-                case 98:
-                    {
-                    alt8=1;
-                    }
-                    break;
-                case RULE_ID:
-                    {
-                    alt8=2;
-                    }
-                    break;
                 case 58:
                     {
                     int LA8_4 = input.LA(3);
@@ -7137,6 +7109,34 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
                     }
                     }
                     break;
+                case 14:
+                case 42:
+                case 46:
+                case 47:
+                case 48:
+                case 49:
+                case 50:
+                case 51:
+                case 52:
+                case 53:
+                case 54:
+                case 55:
+                case 56:
+                case 57:
+                case 60:
+                case 72:
+                case 76:
+                case 81:
+                case 98:
+                    {
+                    alt8=1;
+                    }
+                    break;
+                case RULE_ID:
+                    {
+                    alt8=2;
+                    }
+                    break;
                 default:
                     if (state.backtracking>0) {state.failed=true; return ;}
                     NoViableAltException nvae =
@@ -7150,6 +7150,7 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
             case RULE_INT:
             case RULE_HEXINT:
             case RULE_BINARY:
+            case RULE_SCRIPT:
             case 42:
             case 43:
             case 44:
@@ -7587,32 +7588,32 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__XPrimaryExpression__Alternatives"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2302:1: rule__XPrimaryExpression__Alternatives : ( ( ruleXExpressionLiteral ) | ( ruleXParenthesizedExpression ) | ( ruleXIsLiteralExpression ) | ( ruleVariableReference ) | ( ruleOperationCall ) | ( ruleXStructExpression ) | ( ruleXSizeOfExpression ) );
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2302:1: rule__XPrimaryExpression__Alternatives : ( ( ruleXScriptValueExpression ) | ( ruleXExpressionLiteral ) | ( ruleXParenthesizedExpression ) | ( ruleXIsLiteralExpression ) | ( ruleVariableReference ) | ( ruleOperationCall ) | ( ruleXStructExpression ) | ( ruleXSizeOfExpression ) );
     public final void rule__XPrimaryExpression__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2306:1: ( ( ruleXExpressionLiteral ) | ( ruleXParenthesizedExpression ) | ( ruleXIsLiteralExpression ) | ( ruleVariableReference ) | ( ruleOperationCall ) | ( ruleXStructExpression ) | ( ruleXSizeOfExpression ) )
-            int alt12=7;
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2306:1: ( ( ruleXScriptValueExpression ) | ( ruleXExpressionLiteral ) | ( ruleXParenthesizedExpression ) | ( ruleXIsLiteralExpression ) | ( ruleVariableReference ) | ( ruleOperationCall ) | ( ruleXStructExpression ) | ( ruleXSizeOfExpression ) )
+            int alt12=8;
             alt12 = dfa12.predict(input);
             switch (alt12) {
                 case 1 :
-                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2307:1: ( ruleXExpressionLiteral )
+                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2307:1: ( ruleXScriptValueExpression )
                     {
-                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2307:1: ( ruleXExpressionLiteral )
-                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2308:1: ruleXExpressionLiteral
+                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2307:1: ( ruleXScriptValueExpression )
+                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2308:1: ruleXScriptValueExpression
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getXPrimaryExpressionAccess().getXExpressionLiteralParserRuleCall_0()); 
+                       before(grammarAccess.getXPrimaryExpressionAccess().getXScriptValueExpressionParserRuleCall_0()); 
                     }
-                    pushFollow(FOLLOW_ruleXExpressionLiteral_in_rule__XPrimaryExpression__Alternatives4928);
-                    ruleXExpressionLiteral();
+                    pushFollow(FOLLOW_ruleXScriptValueExpression_in_rule__XPrimaryExpression__Alternatives4928);
+                    ruleXScriptValueExpression();
 
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getXPrimaryExpressionAccess().getXExpressionLiteralParserRuleCall_0()); 
+                       after(grammarAccess.getXPrimaryExpressionAccess().getXScriptValueExpressionParserRuleCall_0()); 
                     }
 
                     }
@@ -7621,21 +7622,21 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2313:6: ( ruleXParenthesizedExpression )
+                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2313:6: ( ruleXExpressionLiteral )
                     {
-                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2313:6: ( ruleXParenthesizedExpression )
-                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2314:1: ruleXParenthesizedExpression
+                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2313:6: ( ruleXExpressionLiteral )
+                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2314:1: ruleXExpressionLiteral
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getXPrimaryExpressionAccess().getXParenthesizedExpressionParserRuleCall_1()); 
+                       before(grammarAccess.getXPrimaryExpressionAccess().getXExpressionLiteralParserRuleCall_1()); 
                     }
-                    pushFollow(FOLLOW_ruleXParenthesizedExpression_in_rule__XPrimaryExpression__Alternatives4945);
-                    ruleXParenthesizedExpression();
+                    pushFollow(FOLLOW_ruleXExpressionLiteral_in_rule__XPrimaryExpression__Alternatives4945);
+                    ruleXExpressionLiteral();
 
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getXPrimaryExpressionAccess().getXParenthesizedExpressionParserRuleCall_1()); 
+                       after(grammarAccess.getXPrimaryExpressionAccess().getXExpressionLiteralParserRuleCall_1()); 
                     }
 
                     }
@@ -7644,21 +7645,21 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2319:6: ( ruleXIsLiteralExpression )
+                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2319:6: ( ruleXParenthesizedExpression )
                     {
-                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2319:6: ( ruleXIsLiteralExpression )
-                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2320:1: ruleXIsLiteralExpression
+                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2319:6: ( ruleXParenthesizedExpression )
+                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2320:1: ruleXParenthesizedExpression
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getXPrimaryExpressionAccess().getXIsLiteralExpressionParserRuleCall_2()); 
+                       before(grammarAccess.getXPrimaryExpressionAccess().getXParenthesizedExpressionParserRuleCall_2()); 
                     }
-                    pushFollow(FOLLOW_ruleXIsLiteralExpression_in_rule__XPrimaryExpression__Alternatives4962);
-                    ruleXIsLiteralExpression();
+                    pushFollow(FOLLOW_ruleXParenthesizedExpression_in_rule__XPrimaryExpression__Alternatives4962);
+                    ruleXParenthesizedExpression();
 
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getXPrimaryExpressionAccess().getXIsLiteralExpressionParserRuleCall_2()); 
+                       after(grammarAccess.getXPrimaryExpressionAccess().getXParenthesizedExpressionParserRuleCall_2()); 
                     }
 
                     }
@@ -7667,21 +7668,21 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 4 :
-                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2325:6: ( ruleVariableReference )
+                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2325:6: ( ruleXIsLiteralExpression )
                     {
-                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2325:6: ( ruleVariableReference )
-                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2326:1: ruleVariableReference
+                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2325:6: ( ruleXIsLiteralExpression )
+                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2326:1: ruleXIsLiteralExpression
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getXPrimaryExpressionAccess().getVariableReferenceParserRuleCall_3()); 
+                       before(grammarAccess.getXPrimaryExpressionAccess().getXIsLiteralExpressionParserRuleCall_3()); 
                     }
-                    pushFollow(FOLLOW_ruleVariableReference_in_rule__XPrimaryExpression__Alternatives4979);
-                    ruleVariableReference();
+                    pushFollow(FOLLOW_ruleXIsLiteralExpression_in_rule__XPrimaryExpression__Alternatives4979);
+                    ruleXIsLiteralExpression();
 
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getXPrimaryExpressionAccess().getVariableReferenceParserRuleCall_3()); 
+                       after(grammarAccess.getXPrimaryExpressionAccess().getXIsLiteralExpressionParserRuleCall_3()); 
                     }
 
                     }
@@ -7690,21 +7691,21 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 5 :
-                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2331:6: ( ruleOperationCall )
+                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2331:6: ( ruleVariableReference )
                     {
-                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2331:6: ( ruleOperationCall )
-                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2332:1: ruleOperationCall
+                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2331:6: ( ruleVariableReference )
+                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2332:1: ruleVariableReference
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getXPrimaryExpressionAccess().getOperationCallParserRuleCall_4()); 
+                       before(grammarAccess.getXPrimaryExpressionAccess().getVariableReferenceParserRuleCall_4()); 
                     }
-                    pushFollow(FOLLOW_ruleOperationCall_in_rule__XPrimaryExpression__Alternatives4996);
-                    ruleOperationCall();
+                    pushFollow(FOLLOW_ruleVariableReference_in_rule__XPrimaryExpression__Alternatives4996);
+                    ruleVariableReference();
 
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getXPrimaryExpressionAccess().getOperationCallParserRuleCall_4()); 
+                       after(grammarAccess.getXPrimaryExpressionAccess().getVariableReferenceParserRuleCall_4()); 
                     }
 
                     }
@@ -7713,21 +7714,21 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 6 :
-                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2337:6: ( ruleXStructExpression )
+                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2337:6: ( ruleOperationCall )
                     {
-                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2337:6: ( ruleXStructExpression )
-                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2338:1: ruleXStructExpression
+                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2337:6: ( ruleOperationCall )
+                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2338:1: ruleOperationCall
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getXPrimaryExpressionAccess().getXStructExpressionParserRuleCall_5()); 
+                       before(grammarAccess.getXPrimaryExpressionAccess().getOperationCallParserRuleCall_5()); 
                     }
-                    pushFollow(FOLLOW_ruleXStructExpression_in_rule__XPrimaryExpression__Alternatives5013);
-                    ruleXStructExpression();
+                    pushFollow(FOLLOW_ruleOperationCall_in_rule__XPrimaryExpression__Alternatives5013);
+                    ruleOperationCall();
 
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getXPrimaryExpressionAccess().getXStructExpressionParserRuleCall_5()); 
+                       after(grammarAccess.getXPrimaryExpressionAccess().getOperationCallParserRuleCall_5()); 
                     }
 
                     }
@@ -7736,21 +7737,44 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 7 :
-                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2343:6: ( ruleXSizeOfExpression )
+                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2343:6: ( ruleXStructExpression )
                     {
-                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2343:6: ( ruleXSizeOfExpression )
-                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2344:1: ruleXSizeOfExpression
+                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2343:6: ( ruleXStructExpression )
+                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2344:1: ruleXStructExpression
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getXPrimaryExpressionAccess().getXSizeOfExpressionParserRuleCall_6()); 
+                       before(grammarAccess.getXPrimaryExpressionAccess().getXStructExpressionParserRuleCall_6()); 
                     }
-                    pushFollow(FOLLOW_ruleXSizeOfExpression_in_rule__XPrimaryExpression__Alternatives5030);
+                    pushFollow(FOLLOW_ruleXStructExpression_in_rule__XPrimaryExpression__Alternatives5030);
+                    ruleXStructExpression();
+
+                    state._fsp--;
+                    if (state.failed) return ;
+                    if ( state.backtracking==0 ) {
+                       after(grammarAccess.getXPrimaryExpressionAccess().getXStructExpressionParserRuleCall_6()); 
+                    }
+
+                    }
+
+
+                    }
+                    break;
+                case 8 :
+                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2349:6: ( ruleXSizeOfExpression )
+                    {
+                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2349:6: ( ruleXSizeOfExpression )
+                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2350:1: ruleXSizeOfExpression
+                    {
+                    if ( state.backtracking==0 ) {
+                       before(grammarAccess.getXPrimaryExpressionAccess().getXSizeOfExpressionParserRuleCall_7()); 
+                    }
+                    pushFollow(FOLLOW_ruleXSizeOfExpression_in_rule__XPrimaryExpression__Alternatives5047);
                     ruleXSizeOfExpression();
 
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getXPrimaryExpressionAccess().getXSizeOfExpressionParserRuleCall_6()); 
+                       after(grammarAccess.getXPrimaryExpressionAccess().getXSizeOfExpressionParserRuleCall_7()); 
                     }
 
                     }
@@ -7776,19 +7800,20 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__XTopLevelExpression__Alternatives"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2354:1: rule__XTopLevelExpression__Alternatives : ( ( ( rule__XTopLevelExpression__Group_0__0 ) ) | ( ruleXIfExpression ) | ( ruleXWhileExpression ) | ( ruleXScriptedExpression ) );
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2360:1: rule__XTopLevelExpression__Alternatives : ( ( ( rule__XTopLevelExpression__Group_0__0 ) ) | ( ruleXIfExpression ) | ( ruleXWhileExpression ) );
     public final void rule__XTopLevelExpression__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2358:1: ( ( ( rule__XTopLevelExpression__Group_0__0 ) ) | ( ruleXIfExpression ) | ( ruleXWhileExpression ) | ( ruleXScriptedExpression ) )
-            int alt13=4;
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2364:1: ( ( ( rule__XTopLevelExpression__Group_0__0 ) ) | ( ruleXIfExpression ) | ( ruleXWhileExpression ) )
+            int alt13=3;
             switch ( input.LA(1) ) {
             case RULE_INT:
             case RULE_HEXINT:
             case RULE_BINARY:
             case RULE_ID:
+            case RULE_SCRIPT:
             case 42:
             case 43:
             case 44:
@@ -7810,11 +7835,6 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
                 alt13=3;
                 }
                 break;
-            case RULE_SCRIPT:
-                {
-                alt13=4;
-                }
-                break;
             default:
                 if (state.backtracking>0) {state.failed=true; return ;}
                 NoViableAltException nvae =
@@ -7825,18 +7845,18 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
             switch (alt13) {
                 case 1 :
-                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2359:1: ( ( rule__XTopLevelExpression__Group_0__0 ) )
+                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2365:1: ( ( rule__XTopLevelExpression__Group_0__0 ) )
                     {
-                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2359:1: ( ( rule__XTopLevelExpression__Group_0__0 ) )
-                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2360:1: ( rule__XTopLevelExpression__Group_0__0 )
+                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2365:1: ( ( rule__XTopLevelExpression__Group_0__0 ) )
+                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2366:1: ( rule__XTopLevelExpression__Group_0__0 )
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getXTopLevelExpressionAccess().getGroup_0()); 
                     }
-                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2361:1: ( rule__XTopLevelExpression__Group_0__0 )
-                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2361:2: rule__XTopLevelExpression__Group_0__0
+                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2367:1: ( rule__XTopLevelExpression__Group_0__0 )
+                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2367:2: rule__XTopLevelExpression__Group_0__0
                     {
-                    pushFollow(FOLLOW_rule__XTopLevelExpression__Group_0__0_in_rule__XTopLevelExpression__Alternatives5062);
+                    pushFollow(FOLLOW_rule__XTopLevelExpression__Group_0__0_in_rule__XTopLevelExpression__Alternatives5079);
                     rule__XTopLevelExpression__Group_0__0();
 
                     state._fsp--;
@@ -7854,15 +7874,15 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2365:6: ( ruleXIfExpression )
+                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2371:6: ( ruleXIfExpression )
                     {
-                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2365:6: ( ruleXIfExpression )
-                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2366:1: ruleXIfExpression
+                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2371:6: ( ruleXIfExpression )
+                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2372:1: ruleXIfExpression
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getXTopLevelExpressionAccess().getXIfExpressionParserRuleCall_1()); 
                     }
-                    pushFollow(FOLLOW_ruleXIfExpression_in_rule__XTopLevelExpression__Alternatives5080);
+                    pushFollow(FOLLOW_ruleXIfExpression_in_rule__XTopLevelExpression__Alternatives5097);
                     ruleXIfExpression();
 
                     state._fsp--;
@@ -7877,44 +7897,21 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2371:6: ( ruleXWhileExpression )
+                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2377:6: ( ruleXWhileExpression )
                     {
-                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2371:6: ( ruleXWhileExpression )
-                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2372:1: ruleXWhileExpression
+                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2377:6: ( ruleXWhileExpression )
+                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2378:1: ruleXWhileExpression
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getXTopLevelExpressionAccess().getXWhileExpressionParserRuleCall_2()); 
                     }
-                    pushFollow(FOLLOW_ruleXWhileExpression_in_rule__XTopLevelExpression__Alternatives5097);
+                    pushFollow(FOLLOW_ruleXWhileExpression_in_rule__XTopLevelExpression__Alternatives5114);
                     ruleXWhileExpression();
 
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
                        after(grammarAccess.getXTopLevelExpressionAccess().getXWhileExpressionParserRuleCall_2()); 
-                    }
-
-                    }
-
-
-                    }
-                    break;
-                case 4 :
-                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2377:6: ( ruleXScriptedExpression )
-                    {
-                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2377:6: ( ruleXScriptedExpression )
-                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:2378:1: ruleXScriptedExpression
-                    {
-                    if ( state.backtracking==0 ) {
-                       before(grammarAccess.getXTopLevelExpressionAccess().getXScriptedExpressionParserRuleCall_3()); 
-                    }
-                    pushFollow(FOLLOW_ruleXScriptedExpression_in_rule__XTopLevelExpression__Alternatives5114);
-                    ruleXScriptedExpression();
-
-                    state._fsp--;
-                    if (state.failed) return ;
-                    if ( state.backtracking==0 ) {
-                       after(grammarAccess.getXTopLevelExpressionAccess().getXScriptedExpressionParserRuleCall_3()); 
                     }
 
                     }
@@ -19404,7 +19401,7 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
             int alt36=2;
             int LA36_0 = input.LA(1);
 
-            if ( ((LA36_0>=RULE_INT && LA36_0<=RULE_ID)||(LA36_0>=42 && LA36_0<=45)||LA36_0==81||LA36_0==97||LA36_0==99) ) {
+            if ( ((LA36_0>=RULE_INT && LA36_0<=RULE_SCRIPT)||(LA36_0>=42 && LA36_0<=45)||LA36_0==81||LA36_0==97||LA36_0==99) ) {
                 alt36=1;
             }
             switch (alt36) {
@@ -28056,7 +28053,7 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
                 int alt52=2;
                 int LA52_0 = input.LA(1);
 
-                if ( ((LA52_0>=RULE_INT && LA52_0<=RULE_ID)||(LA52_0>=42 && LA52_0<=45)||LA52_0==81||LA52_0==97||LA52_0==99) ) {
+                if ( ((LA52_0>=RULE_INT && LA52_0<=RULE_SCRIPT)||(LA52_0>=42 && LA52_0<=45)||LA52_0==81||LA52_0==97||LA52_0==99) ) {
                     alt52=1;
                 }
 
@@ -29147,7 +29144,7 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
                 if ( (LA53_0==62) ) {
                     int LA53_1 = input.LA(2);
 
-                    if ( ((LA53_1>=RULE_INT && LA53_1<=RULE_ID)||(LA53_1>=42 && LA53_1<=45)||LA53_1==81||LA53_1==97||LA53_1==99) ) {
+                    if ( ((LA53_1>=RULE_INT && LA53_1<=RULE_SCRIPT)||(LA53_1>=42 && LA53_1<=45)||LA53_1==81||LA53_1==97||LA53_1==99) ) {
                         alt53=1;
                     }
 
@@ -34656,449 +34653,23 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__XParenthesizedExpression__Group__2__Impl"
 
 
-    // $ANTLR start "rule__XScriptedExpression__Group__0"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12124:1: rule__XScriptedExpression__Group__0 : rule__XScriptedExpression__Group__0__Impl rule__XScriptedExpression__Group__1 ;
-    public final void rule__XScriptedExpression__Group__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12128:1: ( rule__XScriptedExpression__Group__0__Impl rule__XScriptedExpression__Group__1 )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12129:2: rule__XScriptedExpression__Group__0__Impl rule__XScriptedExpression__Group__1
-            {
-            pushFollow(FOLLOW_rule__XScriptedExpression__Group__0__Impl_in_rule__XScriptedExpression__Group__024546);
-            rule__XScriptedExpression__Group__0__Impl();
-
-            state._fsp--;
-            if (state.failed) return ;
-            pushFollow(FOLLOW_rule__XScriptedExpression__Group__1_in_rule__XScriptedExpression__Group__024549);
-            rule__XScriptedExpression__Group__1();
-
-            state._fsp--;
-            if (state.failed) return ;
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__XScriptedExpression__Group__0"
-
-
-    // $ANTLR start "rule__XScriptedExpression__Group__0__Impl"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12136:1: rule__XScriptedExpression__Group__0__Impl : ( ( rule__XScriptedExpression__ScriptAssignment_0 ) ) ;
-    public final void rule__XScriptedExpression__Group__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12140:1: ( ( ( rule__XScriptedExpression__ScriptAssignment_0 ) ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12141:1: ( ( rule__XScriptedExpression__ScriptAssignment_0 ) )
-            {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12141:1: ( ( rule__XScriptedExpression__ScriptAssignment_0 ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12142:1: ( rule__XScriptedExpression__ScriptAssignment_0 )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getXScriptedExpressionAccess().getScriptAssignment_0()); 
-            }
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12143:1: ( rule__XScriptedExpression__ScriptAssignment_0 )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12143:2: rule__XScriptedExpression__ScriptAssignment_0
-            {
-            pushFollow(FOLLOW_rule__XScriptedExpression__ScriptAssignment_0_in_rule__XScriptedExpression__Group__0__Impl24576);
-            rule__XScriptedExpression__ScriptAssignment_0();
-
-            state._fsp--;
-            if (state.failed) return ;
-
-            }
-
-            if ( state.backtracking==0 ) {
-               after(grammarAccess.getXScriptedExpressionAccess().getScriptAssignment_0()); 
-            }
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__XScriptedExpression__Group__0__Impl"
-
-
-    // $ANTLR start "rule__XScriptedExpression__Group__1"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12153:1: rule__XScriptedExpression__Group__1 : rule__XScriptedExpression__Group__1__Impl ;
-    public final void rule__XScriptedExpression__Group__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12157:1: ( rule__XScriptedExpression__Group__1__Impl )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12158:2: rule__XScriptedExpression__Group__1__Impl
-            {
-            pushFollow(FOLLOW_rule__XScriptedExpression__Group__1__Impl_in_rule__XScriptedExpression__Group__124606);
-            rule__XScriptedExpression__Group__1__Impl();
-
-            state._fsp--;
-            if (state.failed) return ;
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__XScriptedExpression__Group__1"
-
-
-    // $ANTLR start "rule__XScriptedExpression__Group__1__Impl"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12164:1: rule__XScriptedExpression__Group__1__Impl : ( ( rule__XScriptedExpression__Group_1__0 )? ) ;
-    public final void rule__XScriptedExpression__Group__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12168:1: ( ( ( rule__XScriptedExpression__Group_1__0 )? ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12169:1: ( ( rule__XScriptedExpression__Group_1__0 )? )
-            {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12169:1: ( ( rule__XScriptedExpression__Group_1__0 )? )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12170:1: ( rule__XScriptedExpression__Group_1__0 )?
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getXScriptedExpressionAccess().getGroup_1()); 
-            }
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12171:1: ( rule__XScriptedExpression__Group_1__0 )?
-            int alt64=2;
-            int LA64_0 = input.LA(1);
-
-            if ( (LA64_0==76) ) {
-                alt64=1;
-            }
-            switch (alt64) {
-                case 1 :
-                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12171:2: rule__XScriptedExpression__Group_1__0
-                    {
-                    pushFollow(FOLLOW_rule__XScriptedExpression__Group_1__0_in_rule__XScriptedExpression__Group__1__Impl24633);
-                    rule__XScriptedExpression__Group_1__0();
-
-                    state._fsp--;
-                    if (state.failed) return ;
-
-                    }
-                    break;
-
-            }
-
-            if ( state.backtracking==0 ) {
-               after(grammarAccess.getXScriptedExpressionAccess().getGroup_1()); 
-            }
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__XScriptedExpression__Group__1__Impl"
-
-
-    // $ANTLR start "rule__XScriptedExpression__Group_1__0"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12185:1: rule__XScriptedExpression__Group_1__0 : rule__XScriptedExpression__Group_1__0__Impl rule__XScriptedExpression__Group_1__1 ;
-    public final void rule__XScriptedExpression__Group_1__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12189:1: ( rule__XScriptedExpression__Group_1__0__Impl rule__XScriptedExpression__Group_1__1 )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12190:2: rule__XScriptedExpression__Group_1__0__Impl rule__XScriptedExpression__Group_1__1
-            {
-            pushFollow(FOLLOW_rule__XScriptedExpression__Group_1__0__Impl_in_rule__XScriptedExpression__Group_1__024668);
-            rule__XScriptedExpression__Group_1__0__Impl();
-
-            state._fsp--;
-            if (state.failed) return ;
-            pushFollow(FOLLOW_rule__XScriptedExpression__Group_1__1_in_rule__XScriptedExpression__Group_1__024671);
-            rule__XScriptedExpression__Group_1__1();
-
-            state._fsp--;
-            if (state.failed) return ;
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__XScriptedExpression__Group_1__0"
-
-
-    // $ANTLR start "rule__XScriptedExpression__Group_1__0__Impl"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12197:1: rule__XScriptedExpression__Group_1__0__Impl : ( '{' ) ;
-    public final void rule__XScriptedExpression__Group_1__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12201:1: ( ( '{' ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12202:1: ( '{' )
-            {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12202:1: ( '{' )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12203:1: '{'
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getXScriptedExpressionAccess().getLeftCurlyBracketKeyword_1_0()); 
-            }
-            match(input,76,FOLLOW_76_in_rule__XScriptedExpression__Group_1__0__Impl24699); if (state.failed) return ;
-            if ( state.backtracking==0 ) {
-               after(grammarAccess.getXScriptedExpressionAccess().getLeftCurlyBracketKeyword_1_0()); 
-            }
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__XScriptedExpression__Group_1__0__Impl"
-
-
-    // $ANTLR start "rule__XScriptedExpression__Group_1__1"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12216:1: rule__XScriptedExpression__Group_1__1 : rule__XScriptedExpression__Group_1__1__Impl rule__XScriptedExpression__Group_1__2 ;
-    public final void rule__XScriptedExpression__Group_1__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12220:1: ( rule__XScriptedExpression__Group_1__1__Impl rule__XScriptedExpression__Group_1__2 )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12221:2: rule__XScriptedExpression__Group_1__1__Impl rule__XScriptedExpression__Group_1__2
-            {
-            pushFollow(FOLLOW_rule__XScriptedExpression__Group_1__1__Impl_in_rule__XScriptedExpression__Group_1__124730);
-            rule__XScriptedExpression__Group_1__1__Impl();
-
-            state._fsp--;
-            if (state.failed) return ;
-            pushFollow(FOLLOW_rule__XScriptedExpression__Group_1__2_in_rule__XScriptedExpression__Group_1__124733);
-            rule__XScriptedExpression__Group_1__2();
-
-            state._fsp--;
-            if (state.failed) return ;
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__XScriptedExpression__Group_1__1"
-
-
-    // $ANTLR start "rule__XScriptedExpression__Group_1__1__Impl"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12228:1: rule__XScriptedExpression__Group_1__1__Impl : ( ( rule__XScriptedExpression__ConditionalAssignment_1_1 ) ) ;
-    public final void rule__XScriptedExpression__Group_1__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12232:1: ( ( ( rule__XScriptedExpression__ConditionalAssignment_1_1 ) ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12233:1: ( ( rule__XScriptedExpression__ConditionalAssignment_1_1 ) )
-            {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12233:1: ( ( rule__XScriptedExpression__ConditionalAssignment_1_1 ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12234:1: ( rule__XScriptedExpression__ConditionalAssignment_1_1 )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getXScriptedExpressionAccess().getConditionalAssignment_1_1()); 
-            }
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12235:1: ( rule__XScriptedExpression__ConditionalAssignment_1_1 )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12235:2: rule__XScriptedExpression__ConditionalAssignment_1_1
-            {
-            pushFollow(FOLLOW_rule__XScriptedExpression__ConditionalAssignment_1_1_in_rule__XScriptedExpression__Group_1__1__Impl24760);
-            rule__XScriptedExpression__ConditionalAssignment_1_1();
-
-            state._fsp--;
-            if (state.failed) return ;
-
-            }
-
-            if ( state.backtracking==0 ) {
-               after(grammarAccess.getXScriptedExpressionAccess().getConditionalAssignment_1_1()); 
-            }
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__XScriptedExpression__Group_1__1__Impl"
-
-
-    // $ANTLR start "rule__XScriptedExpression__Group_1__2"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12245:1: rule__XScriptedExpression__Group_1__2 : rule__XScriptedExpression__Group_1__2__Impl ;
-    public final void rule__XScriptedExpression__Group_1__2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12249:1: ( rule__XScriptedExpression__Group_1__2__Impl )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12250:2: rule__XScriptedExpression__Group_1__2__Impl
-            {
-            pushFollow(FOLLOW_rule__XScriptedExpression__Group_1__2__Impl_in_rule__XScriptedExpression__Group_1__224790);
-            rule__XScriptedExpression__Group_1__2__Impl();
-
-            state._fsp--;
-            if (state.failed) return ;
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__XScriptedExpression__Group_1__2"
-
-
-    // $ANTLR start "rule__XScriptedExpression__Group_1__2__Impl"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12256:1: rule__XScriptedExpression__Group_1__2__Impl : ( '}' ) ;
-    public final void rule__XScriptedExpression__Group_1__2__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12260:1: ( ( '}' ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12261:1: ( '}' )
-            {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12261:1: ( '}' )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12262:1: '}'
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getXScriptedExpressionAccess().getRightCurlyBracketKeyword_1_2()); 
-            }
-            match(input,77,FOLLOW_77_in_rule__XScriptedExpression__Group_1__2__Impl24818); if (state.failed) return ;
-            if ( state.backtracking==0 ) {
-               after(grammarAccess.getXScriptedExpressionAccess().getRightCurlyBracketKeyword_1_2()); 
-            }
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__XScriptedExpression__Group_1__2__Impl"
-
-
     // $ANTLR start "rule__Module__NameAssignment_1"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12282:1: rule__Module__NameAssignment_1 : ( ruleQualifiedName ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12125:1: rule__Module__NameAssignment_1 : ( ruleQualifiedName ) ;
     public final void rule__Module__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12286:1: ( ( ruleQualifiedName ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12287:1: ( ruleQualifiedName )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12129:1: ( ( ruleQualifiedName ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12130:1: ( ruleQualifiedName )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12287:1: ( ruleQualifiedName )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12288:1: ruleQualifiedName
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12130:1: ( ruleQualifiedName )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12131:1: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getModuleAccess().getNameQualifiedNameParserRuleCall_1_0()); 
             }
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__Module__NameAssignment_124860);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__Module__NameAssignment_124551);
             ruleQualifiedName();
 
             state._fsp--;
@@ -35128,28 +34699,28 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Module__ExtendsAssignment_2_1"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12297:1: rule__Module__ExtendsAssignment_2_1 : ( ( ruleQualifiedName ) ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12140:1: rule__Module__ExtendsAssignment_2_1 : ( ( ruleQualifiedName ) ) ;
     public final void rule__Module__ExtendsAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12301:1: ( ( ( ruleQualifiedName ) ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12302:1: ( ( ruleQualifiedName ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12144:1: ( ( ( ruleQualifiedName ) ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12145:1: ( ( ruleQualifiedName ) )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12302:1: ( ( ruleQualifiedName ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12303:1: ( ruleQualifiedName )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12145:1: ( ( ruleQualifiedName ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12146:1: ( ruleQualifiedName )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getModuleAccess().getExtendsModuleCrossReference_2_1_0()); 
             }
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12304:1: ( ruleQualifiedName )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12305:1: ruleQualifiedName
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12147:1: ( ruleQualifiedName )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12148:1: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getModuleAccess().getExtendsModuleQualifiedNameParserRuleCall_2_1_0_1()); 
             }
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__Module__ExtendsAssignment_2_124895);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__Module__ExtendsAssignment_2_124586);
             ruleQualifiedName();
 
             state._fsp--;
@@ -35185,28 +34756,28 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Module__ExtendsAssignment_2_2_1"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12316:1: rule__Module__ExtendsAssignment_2_2_1 : ( ( ruleQualifiedName ) ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12159:1: rule__Module__ExtendsAssignment_2_2_1 : ( ( ruleQualifiedName ) ) ;
     public final void rule__Module__ExtendsAssignment_2_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12320:1: ( ( ( ruleQualifiedName ) ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12321:1: ( ( ruleQualifiedName ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12163:1: ( ( ( ruleQualifiedName ) ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12164:1: ( ( ruleQualifiedName ) )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12321:1: ( ( ruleQualifiedName ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12322:1: ( ruleQualifiedName )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12164:1: ( ( ruleQualifiedName ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12165:1: ( ruleQualifiedName )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getModuleAccess().getExtendsModuleCrossReference_2_2_1_0()); 
             }
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12323:1: ( ruleQualifiedName )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12324:1: ruleQualifiedName
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12166:1: ( ruleQualifiedName )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12167:1: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getModuleAccess().getExtendsModuleQualifiedNameParserRuleCall_2_2_1_0_1()); 
             }
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__Module__ExtendsAssignment_2_2_124934);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__Module__ExtendsAssignment_2_2_124625);
             ruleQualifiedName();
 
             state._fsp--;
@@ -35242,28 +34813,28 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Module__UseAssignment_4_1"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12335:1: rule__Module__UseAssignment_4_1 : ( ( ruleQualifiedName ) ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12178:1: rule__Module__UseAssignment_4_1 : ( ( ruleQualifiedName ) ) ;
     public final void rule__Module__UseAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12339:1: ( ( ( ruleQualifiedName ) ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12340:1: ( ( ruleQualifiedName ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12182:1: ( ( ( ruleQualifiedName ) ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12183:1: ( ( ruleQualifiedName ) )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12340:1: ( ( ruleQualifiedName ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12341:1: ( ruleQualifiedName )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12183:1: ( ( ruleQualifiedName ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12184:1: ( ruleQualifiedName )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getModuleAccess().getUseLibraryCrossReference_4_1_0()); 
             }
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12342:1: ( ruleQualifiedName )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12343:1: ruleQualifiedName
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12185:1: ( ruleQualifiedName )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12186:1: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getModuleAccess().getUseLibraryQualifiedNameParserRuleCall_4_1_0_1()); 
             }
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__Module__UseAssignment_4_124973);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__Module__UseAssignment_4_124664);
             ruleQualifiedName();
 
             state._fsp--;
@@ -35299,22 +34870,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Module__ItemsAssignment_5"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12354:1: rule__Module__ItemsAssignment_5 : ( ruleModuleItem ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12197:1: rule__Module__ItemsAssignment_5 : ( ruleModuleItem ) ;
     public final void rule__Module__ItemsAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12358:1: ( ( ruleModuleItem ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12359:1: ( ruleModuleItem )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12201:1: ( ( ruleModuleItem ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12202:1: ( ruleModuleItem )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12359:1: ( ruleModuleItem )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12360:1: ruleModuleItem
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12202:1: ( ruleModuleItem )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12203:1: ruleModuleItem
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getModuleAccess().getItemsModuleItemParserRuleCall_5_0()); 
             }
-            pushFollow(FOLLOW_ruleModuleItem_in_rule__Module__ItemsAssignment_525008);
+            pushFollow(FOLLOW_ruleModuleItem_in_rule__Module__ItemsAssignment_524699);
             ruleModuleItem();
 
             state._fsp--;
@@ -35344,28 +34915,28 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InstanceReference__TypeAssignment_1"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12369:1: rule__InstanceReference__TypeAssignment_1 : ( ( ruleReferenceID ) ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12212:1: rule__InstanceReference__TypeAssignment_1 : ( ( ruleReferenceID ) ) ;
     public final void rule__InstanceReference__TypeAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12373:1: ( ( ( ruleReferenceID ) ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12374:1: ( ( ruleReferenceID ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12216:1: ( ( ( ruleReferenceID ) ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12217:1: ( ( ruleReferenceID ) )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12374:1: ( ( ruleReferenceID ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12375:1: ( ruleReferenceID )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12217:1: ( ( ruleReferenceID ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12218:1: ( ruleReferenceID )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getInstanceReferenceAccess().getTypeModuleCrossReference_1_0()); 
             }
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12376:1: ( ruleReferenceID )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12377:1: ruleReferenceID
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12219:1: ( ruleReferenceID )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12220:1: ruleReferenceID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getInstanceReferenceAccess().getTypeModuleReferenceIDParserRuleCall_1_0_1()); 
             }
-            pushFollow(FOLLOW_ruleReferenceID_in_rule__InstanceReference__TypeAssignment_125043);
+            pushFollow(FOLLOW_ruleReferenceID_in_rule__InstanceReference__TypeAssignment_124734);
             ruleReferenceID();
 
             state._fsp--;
@@ -35401,22 +34972,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InstanceReference__NameAssignment_2"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12388:1: rule__InstanceReference__NameAssignment_2 : ( RULE_ID ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12231:1: rule__InstanceReference__NameAssignment_2 : ( RULE_ID ) ;
     public final void rule__InstanceReference__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12392:1: ( ( RULE_ID ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12393:1: ( RULE_ID )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12235:1: ( ( RULE_ID ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12236:1: ( RULE_ID )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12393:1: ( RULE_ID )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12394:1: RULE_ID
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12236:1: ( RULE_ID )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12237:1: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getInstanceReferenceAccess().getNameIDTerminalRuleCall_2_0()); 
             }
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__InstanceReference__NameAssignment_225078); if (state.failed) return ;
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__InstanceReference__NameAssignment_224769); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getInstanceReferenceAccess().getNameIDTerminalRuleCall_2_0()); 
             }
@@ -35442,22 +35013,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConfigVariable__TypeAssignment_2"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12403:1: rule__ConfigVariable__TypeAssignment_2 : ( ruleTypeDef ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12246:1: rule__ConfigVariable__TypeAssignment_2 : ( ruleTypeDef ) ;
     public final void rule__ConfigVariable__TypeAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12407:1: ( ( ruleTypeDef ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12408:1: ( ruleTypeDef )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12250:1: ( ( ruleTypeDef ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12251:1: ( ruleTypeDef )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12408:1: ( ruleTypeDef )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12409:1: ruleTypeDef
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12251:1: ( ruleTypeDef )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12252:1: ruleTypeDef
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getConfigVariableAccess().getTypeTypeDefParserRuleCall_2_0()); 
             }
-            pushFollow(FOLLOW_ruleTypeDef_in_rule__ConfigVariable__TypeAssignment_225109);
+            pushFollow(FOLLOW_ruleTypeDef_in_rule__ConfigVariable__TypeAssignment_224800);
             ruleTypeDef();
 
             state._fsp--;
@@ -35487,22 +35058,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConfigVariable__NameAssignment_3"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12418:1: rule__ConfigVariable__NameAssignment_3 : ( RULE_ID ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12261:1: rule__ConfigVariable__NameAssignment_3 : ( RULE_ID ) ;
     public final void rule__ConfigVariable__NameAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12422:1: ( ( RULE_ID ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12423:1: ( RULE_ID )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12265:1: ( ( RULE_ID ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12266:1: ( RULE_ID )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12423:1: ( RULE_ID )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12424:1: RULE_ID
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12266:1: ( RULE_ID )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12267:1: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getConfigVariableAccess().getNameIDTerminalRuleCall_3_0()); 
             }
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ConfigVariable__NameAssignment_325140); if (state.failed) return ;
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ConfigVariable__NameAssignment_324831); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getConfigVariableAccess().getNameIDTerminalRuleCall_3_0()); 
             }
@@ -35528,22 +35099,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Library__NameAssignment_1"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12433:1: rule__Library__NameAssignment_1 : ( ruleQualifiedName ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12276:1: rule__Library__NameAssignment_1 : ( ruleQualifiedName ) ;
     public final void rule__Library__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12437:1: ( ( ruleQualifiedName ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12438:1: ( ruleQualifiedName )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12280:1: ( ( ruleQualifiedName ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12281:1: ( ruleQualifiedName )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12438:1: ( ruleQualifiedName )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12439:1: ruleQualifiedName
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12281:1: ( ruleQualifiedName )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12282:1: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getLibraryAccess().getNameQualifiedNameParserRuleCall_1_0()); 
             }
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__Library__NameAssignment_125171);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__Library__NameAssignment_124862);
             ruleQualifiedName();
 
             state._fsp--;
@@ -35573,28 +35144,28 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Library__OverridesAssignment_2_1"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12448:1: rule__Library__OverridesAssignment_2_1 : ( ( ruleQualifiedName ) ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12291:1: rule__Library__OverridesAssignment_2_1 : ( ( ruleQualifiedName ) ) ;
     public final void rule__Library__OverridesAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12452:1: ( ( ( ruleQualifiedName ) ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12453:1: ( ( ruleQualifiedName ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12295:1: ( ( ( ruleQualifiedName ) ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12296:1: ( ( ruleQualifiedName ) )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12453:1: ( ( ruleQualifiedName ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12454:1: ( ruleQualifiedName )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12296:1: ( ( ruleQualifiedName ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12297:1: ( ruleQualifiedName )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getLibraryAccess().getOverridesLibraryCrossReference_2_1_0()); 
             }
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12455:1: ( ruleQualifiedName )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12456:1: ruleQualifiedName
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12298:1: ( ruleQualifiedName )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12299:1: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getLibraryAccess().getOverridesLibraryQualifiedNameParserRuleCall_2_1_0_1()); 
             }
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__Library__OverridesAssignment_2_125206);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__Library__OverridesAssignment_2_124897);
             ruleQualifiedName();
 
             state._fsp--;
@@ -35630,28 +35201,28 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Library__OverridesAssignment_2_2_1"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12467:1: rule__Library__OverridesAssignment_2_2_1 : ( ( ruleQualifiedName ) ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12310:1: rule__Library__OverridesAssignment_2_2_1 : ( ( ruleQualifiedName ) ) ;
     public final void rule__Library__OverridesAssignment_2_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12471:1: ( ( ( ruleQualifiedName ) ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12472:1: ( ( ruleQualifiedName ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12314:1: ( ( ( ruleQualifiedName ) ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12315:1: ( ( ruleQualifiedName ) )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12472:1: ( ( ruleQualifiedName ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12473:1: ( ruleQualifiedName )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12315:1: ( ( ruleQualifiedName ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12316:1: ( ruleQualifiedName )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getLibraryAccess().getOverridesLibraryCrossReference_2_2_1_0()); 
             }
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12474:1: ( ruleQualifiedName )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12475:1: ruleQualifiedName
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12317:1: ( ruleQualifiedName )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12318:1: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getLibraryAccess().getOverridesLibraryQualifiedNameParserRuleCall_2_2_1_0_1()); 
             }
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__Library__OverridesAssignment_2_2_125245);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__Library__OverridesAssignment_2_2_124936);
             ruleQualifiedName();
 
             state._fsp--;
@@ -35687,28 +35258,28 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Library__UseAssignment_4_1"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12486:1: rule__Library__UseAssignment_4_1 : ( ( ruleQualifiedName ) ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12329:1: rule__Library__UseAssignment_4_1 : ( ( ruleQualifiedName ) ) ;
     public final void rule__Library__UseAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12490:1: ( ( ( ruleQualifiedName ) ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12491:1: ( ( ruleQualifiedName ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12333:1: ( ( ( ruleQualifiedName ) ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12334:1: ( ( ruleQualifiedName ) )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12491:1: ( ( ruleQualifiedName ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12492:1: ( ruleQualifiedName )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12334:1: ( ( ruleQualifiedName ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12335:1: ( ruleQualifiedName )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getLibraryAccess().getUseLibraryCrossReference_4_1_0()); 
             }
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12493:1: ( ruleQualifiedName )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12494:1: ruleQualifiedName
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12336:1: ( ruleQualifiedName )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12337:1: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getLibraryAccess().getUseLibraryQualifiedNameParserRuleCall_4_1_0_1()); 
             }
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__Library__UseAssignment_4_125284);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__Library__UseAssignment_4_124975);
             ruleQualifiedName();
 
             state._fsp--;
@@ -35744,22 +35315,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Library__ItemsAssignment_5"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12505:1: rule__Library__ItemsAssignment_5 : ( ruleLibraryItem ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12348:1: rule__Library__ItemsAssignment_5 : ( ruleLibraryItem ) ;
     public final void rule__Library__ItemsAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12509:1: ( ( ruleLibraryItem ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12510:1: ( ruleLibraryItem )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12352:1: ( ( ruleLibraryItem ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12353:1: ( ruleLibraryItem )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12510:1: ( ruleLibraryItem )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12511:1: ruleLibraryItem
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12353:1: ( ruleLibraryItem )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12354:1: ruleLibraryItem
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getLibraryAccess().getItemsLibraryItemParserRuleCall_5_0()); 
             }
-            pushFollow(FOLLOW_ruleLibraryItem_in_rule__Library__ItemsAssignment_525319);
+            pushFollow(FOLLOW_ruleLibraryItem_in_rule__Library__ItemsAssignment_525010);
             ruleLibraryItem();
 
             state._fsp--;
@@ -35789,22 +35360,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Type__NameAssignment_1"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12520:1: rule__Type__NameAssignment_1 : ( RULE_ID ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12363:1: rule__Type__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Type__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12524:1: ( ( RULE_ID ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12525:1: ( RULE_ID )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12367:1: ( ( RULE_ID ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12368:1: ( RULE_ID )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12525:1: ( RULE_ID )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12526:1: RULE_ID
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12368:1: ( RULE_ID )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12369:1: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getTypeAccess().getNameIDTerminalRuleCall_1_0()); 
             }
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Type__NameAssignment_125350); if (state.failed) return ;
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Type__NameAssignment_125041); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getTypeAccess().getNameIDTerminalRuleCall_1_0()); 
             }
@@ -35830,22 +35401,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Type__DefAssignment_3"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12535:1: rule__Type__DefAssignment_3 : ( ruleTypeDef ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12378:1: rule__Type__DefAssignment_3 : ( ruleTypeDef ) ;
     public final void rule__Type__DefAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12539:1: ( ( ruleTypeDef ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12540:1: ( ruleTypeDef )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12382:1: ( ( ruleTypeDef ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12383:1: ( ruleTypeDef )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12540:1: ( ruleTypeDef )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12541:1: ruleTypeDef
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12383:1: ( ruleTypeDef )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12384:1: ruleTypeDef
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getTypeAccess().getDefTypeDefParserRuleCall_3_0()); 
             }
-            pushFollow(FOLLOW_ruleTypeDef_in_rule__Type__DefAssignment_325381);
+            pushFollow(FOLLOW_ruleTypeDef_in_rule__Type__DefAssignment_325072);
             ruleTypeDef();
 
             state._fsp--;
@@ -35875,22 +35446,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PointerTypeDef__DefAssignment_2"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12550:1: rule__PointerTypeDef__DefAssignment_2 : ( ruleTypeDef ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12393:1: rule__PointerTypeDef__DefAssignment_2 : ( ruleTypeDef ) ;
     public final void rule__PointerTypeDef__DefAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12554:1: ( ( ruleTypeDef ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12555:1: ( ruleTypeDef )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12397:1: ( ( ruleTypeDef ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12398:1: ( ruleTypeDef )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12555:1: ( ruleTypeDef )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12556:1: ruleTypeDef
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12398:1: ( ruleTypeDef )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12399:1: ruleTypeDef
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPointerTypeDefAccess().getDefTypeDefParserRuleCall_2_0()); 
             }
-            pushFollow(FOLLOW_ruleTypeDef_in_rule__PointerTypeDef__DefAssignment_225412);
+            pushFollow(FOLLOW_ruleTypeDef_in_rule__PointerTypeDef__DefAssignment_225103);
             ruleTypeDef();
 
             state._fsp--;
@@ -35920,22 +35491,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ArrayTypeDef__SizeAssignment_2"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12565:1: rule__ArrayTypeDef__SizeAssignment_2 : ( ruleXExpression ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12408:1: rule__ArrayTypeDef__SizeAssignment_2 : ( ruleXExpression ) ;
     public final void rule__ArrayTypeDef__SizeAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12569:1: ( ( ruleXExpression ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12570:1: ( ruleXExpression )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12412:1: ( ( ruleXExpression ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12413:1: ( ruleXExpression )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12570:1: ( ruleXExpression )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12571:1: ruleXExpression
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12413:1: ( ruleXExpression )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12414:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getArrayTypeDefAccess().getSizeXExpressionParserRuleCall_2_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__ArrayTypeDef__SizeAssignment_225443);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__ArrayTypeDef__SizeAssignment_225134);
             ruleXExpression();
 
             state._fsp--;
@@ -35965,22 +35536,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ArrayTypeDef__DefAssignment_5"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12580:1: rule__ArrayTypeDef__DefAssignment_5 : ( ruleTypeDef ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12423:1: rule__ArrayTypeDef__DefAssignment_5 : ( ruleTypeDef ) ;
     public final void rule__ArrayTypeDef__DefAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12584:1: ( ( ruleTypeDef ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12585:1: ( ruleTypeDef )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12427:1: ( ( ruleTypeDef ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12428:1: ( ruleTypeDef )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12585:1: ( ruleTypeDef )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12586:1: ruleTypeDef
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12428:1: ( ruleTypeDef )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12429:1: ruleTypeDef
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getArrayTypeDefAccess().getDefTypeDefParserRuleCall_5_0()); 
             }
-            pushFollow(FOLLOW_ruleTypeDef_in_rule__ArrayTypeDef__DefAssignment_525474);
+            pushFollow(FOLLOW_ruleTypeDef_in_rule__ArrayTypeDef__DefAssignment_525165);
             ruleTypeDef();
 
             state._fsp--;
@@ -36010,28 +35581,28 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RefTypeDef__TypeAssignment"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12595:1: rule__RefTypeDef__TypeAssignment : ( ( ruleReferenceID ) ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12438:1: rule__RefTypeDef__TypeAssignment : ( ( ruleReferenceID ) ) ;
     public final void rule__RefTypeDef__TypeAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12599:1: ( ( ( ruleReferenceID ) ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12600:1: ( ( ruleReferenceID ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12442:1: ( ( ( ruleReferenceID ) ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12443:1: ( ( ruleReferenceID ) )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12600:1: ( ( ruleReferenceID ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12601:1: ( ruleReferenceID )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12443:1: ( ( ruleReferenceID ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12444:1: ( ruleReferenceID )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getRefTypeDefAccess().getTypeTypeCrossReference_0()); 
             }
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12602:1: ( ruleReferenceID )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12603:1: ruleReferenceID
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12445:1: ( ruleReferenceID )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12446:1: ruleReferenceID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getRefTypeDefAccess().getTypeTypeReferenceIDParserRuleCall_0_1()); 
             }
-            pushFollow(FOLLOW_ruleReferenceID_in_rule__RefTypeDef__TypeAssignment25509);
+            pushFollow(FOLLOW_ruleReferenceID_in_rule__RefTypeDef__TypeAssignment25200);
             ruleReferenceID();
 
             state._fsp--;
@@ -36067,22 +35638,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DataTypeDef__KindAssignment_0"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12614:1: rule__DataTypeDef__KindAssignment_0 : ( rulePrimitiveKind ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12457:1: rule__DataTypeDef__KindAssignment_0 : ( rulePrimitiveKind ) ;
     public final void rule__DataTypeDef__KindAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12618:1: ( ( rulePrimitiveKind ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12619:1: ( rulePrimitiveKind )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12461:1: ( ( rulePrimitiveKind ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12462:1: ( rulePrimitiveKind )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12619:1: ( rulePrimitiveKind )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12620:1: rulePrimitiveKind
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12462:1: ( rulePrimitiveKind )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12463:1: rulePrimitiveKind
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getDataTypeDefAccess().getKindPrimitiveKindEnumRuleCall_0_0()); 
             }
-            pushFollow(FOLLOW_rulePrimitiveKind_in_rule__DataTypeDef__KindAssignment_025544);
+            pushFollow(FOLLOW_rulePrimitiveKind_in_rule__DataTypeDef__KindAssignment_025235);
             rulePrimitiveKind();
 
             state._fsp--;
@@ -36112,22 +35683,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DataTypeDef__BitsAssignment_1"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12629:1: rule__DataTypeDef__BitsAssignment_1 : ( RULE_INT ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12472:1: rule__DataTypeDef__BitsAssignment_1 : ( RULE_INT ) ;
     public final void rule__DataTypeDef__BitsAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12633:1: ( ( RULE_INT ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12634:1: ( RULE_INT )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12476:1: ( ( RULE_INT ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12477:1: ( RULE_INT )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12634:1: ( RULE_INT )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12635:1: RULE_INT
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12477:1: ( RULE_INT )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12478:1: RULE_INT
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getDataTypeDefAccess().getBitsINTTerminalRuleCall_1_0()); 
             }
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__DataTypeDef__BitsAssignment_125575); if (state.failed) return ;
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__DataTypeDef__BitsAssignment_125266); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getDataTypeDefAccess().getBitsINTTerminalRuleCall_1_0()); 
             }
@@ -36153,22 +35724,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StructTypeDef__MembersAssignment_3"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12644:1: rule__StructTypeDef__MembersAssignment_3 : ( ruleStructTypeDefMember ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12487:1: rule__StructTypeDef__MembersAssignment_3 : ( ruleStructTypeDefMember ) ;
     public final void rule__StructTypeDef__MembersAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12648:1: ( ( ruleStructTypeDefMember ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12649:1: ( ruleStructTypeDefMember )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12491:1: ( ( ruleStructTypeDefMember ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12492:1: ( ruleStructTypeDefMember )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12649:1: ( ruleStructTypeDefMember )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12650:1: ruleStructTypeDefMember
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12492:1: ( ruleStructTypeDefMember )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12493:1: ruleStructTypeDefMember
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getStructTypeDefAccess().getMembersStructTypeDefMemberParserRuleCall_3_0()); 
             }
-            pushFollow(FOLLOW_ruleStructTypeDefMember_in_rule__StructTypeDef__MembersAssignment_325606);
+            pushFollow(FOLLOW_ruleStructTypeDefMember_in_rule__StructTypeDef__MembersAssignment_325297);
             ruleStructTypeDefMember();
 
             state._fsp--;
@@ -36198,22 +35769,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StructTypeDef__MembersAssignment_4_1"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12659:1: rule__StructTypeDef__MembersAssignment_4_1 : ( ruleStructTypeDefMember ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12502:1: rule__StructTypeDef__MembersAssignment_4_1 : ( ruleStructTypeDefMember ) ;
     public final void rule__StructTypeDef__MembersAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12663:1: ( ( ruleStructTypeDefMember ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12664:1: ( ruleStructTypeDefMember )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12506:1: ( ( ruleStructTypeDefMember ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12507:1: ( ruleStructTypeDefMember )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12664:1: ( ruleStructTypeDefMember )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12665:1: ruleStructTypeDefMember
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12507:1: ( ruleStructTypeDefMember )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12508:1: ruleStructTypeDefMember
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getStructTypeDefAccess().getMembersStructTypeDefMemberParserRuleCall_4_1_0()); 
             }
-            pushFollow(FOLLOW_ruleStructTypeDefMember_in_rule__StructTypeDef__MembersAssignment_4_125637);
+            pushFollow(FOLLOW_ruleStructTypeDefMember_in_rule__StructTypeDef__MembersAssignment_4_125328);
             ruleStructTypeDefMember();
 
             state._fsp--;
@@ -36243,22 +35814,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StructTypeDefMember__TypeAssignment_1"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12674:1: rule__StructTypeDefMember__TypeAssignment_1 : ( ruleTypeDef ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12517:1: rule__StructTypeDefMember__TypeAssignment_1 : ( ruleTypeDef ) ;
     public final void rule__StructTypeDefMember__TypeAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12678:1: ( ( ruleTypeDef ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12679:1: ( ruleTypeDef )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12521:1: ( ( ruleTypeDef ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12522:1: ( ruleTypeDef )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12679:1: ( ruleTypeDef )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12680:1: ruleTypeDef
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12522:1: ( ruleTypeDef )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12523:1: ruleTypeDef
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getStructTypeDefMemberAccess().getTypeTypeDefParserRuleCall_1_0()); 
             }
-            pushFollow(FOLLOW_ruleTypeDef_in_rule__StructTypeDefMember__TypeAssignment_125668);
+            pushFollow(FOLLOW_ruleTypeDef_in_rule__StructTypeDefMember__TypeAssignment_125359);
             ruleTypeDef();
 
             state._fsp--;
@@ -36288,22 +35859,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StructTypeDefMember__NameAssignment_2"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12689:1: rule__StructTypeDefMember__NameAssignment_2 : ( RULE_ID ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12532:1: rule__StructTypeDefMember__NameAssignment_2 : ( RULE_ID ) ;
     public final void rule__StructTypeDefMember__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12693:1: ( ( RULE_ID ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12694:1: ( RULE_ID )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12536:1: ( ( RULE_ID ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12537:1: ( RULE_ID )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12694:1: ( RULE_ID )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12695:1: RULE_ID
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12537:1: ( RULE_ID )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12538:1: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getStructTypeDefMemberAccess().getNameIDTerminalRuleCall_2_0()); 
             }
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__StructTypeDefMember__NameAssignment_225699); if (state.failed) return ;
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__StructTypeDefMember__NameAssignment_225390); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getStructTypeDefMemberAccess().getNameIDTerminalRuleCall_2_0()); 
             }
@@ -36329,22 +35900,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConstantVariable__TypeAssignment_2"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12704:1: rule__ConstantVariable__TypeAssignment_2 : ( ruleTypeDef ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12547:1: rule__ConstantVariable__TypeAssignment_2 : ( ruleTypeDef ) ;
     public final void rule__ConstantVariable__TypeAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12708:1: ( ( ruleTypeDef ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12709:1: ( ruleTypeDef )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12551:1: ( ( ruleTypeDef ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12552:1: ( ruleTypeDef )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12709:1: ( ruleTypeDef )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12710:1: ruleTypeDef
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12552:1: ( ruleTypeDef )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12553:1: ruleTypeDef
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getConstantVariableAccess().getTypeTypeDefParserRuleCall_2_0()); 
             }
-            pushFollow(FOLLOW_ruleTypeDef_in_rule__ConstantVariable__TypeAssignment_225730);
+            pushFollow(FOLLOW_ruleTypeDef_in_rule__ConstantVariable__TypeAssignment_225421);
             ruleTypeDef();
 
             state._fsp--;
@@ -36374,22 +35945,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConstantVariable__NameAssignment_3"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12719:1: rule__ConstantVariable__NameAssignment_3 : ( RULE_ID ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12562:1: rule__ConstantVariable__NameAssignment_3 : ( RULE_ID ) ;
     public final void rule__ConstantVariable__NameAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12723:1: ( ( RULE_ID ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12724:1: ( RULE_ID )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12566:1: ( ( RULE_ID ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12567:1: ( RULE_ID )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12724:1: ( RULE_ID )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12725:1: RULE_ID
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12567:1: ( RULE_ID )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12568:1: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getConstantVariableAccess().getNameIDTerminalRuleCall_3_0()); 
             }
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ConstantVariable__NameAssignment_325761); if (state.failed) return ;
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ConstantVariable__NameAssignment_325452); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getConstantVariableAccess().getNameIDTerminalRuleCall_3_0()); 
             }
@@ -36415,22 +35986,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConstantVariable__ValueAssignment_5"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12734:1: rule__ConstantVariable__ValueAssignment_5 : ( ruleXExpression ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12577:1: rule__ConstantVariable__ValueAssignment_5 : ( ruleXExpression ) ;
     public final void rule__ConstantVariable__ValueAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12738:1: ( ( ruleXExpression ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12739:1: ( ruleXExpression )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12581:1: ( ( ruleXExpression ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12582:1: ( ruleXExpression )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12739:1: ( ruleXExpression )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12740:1: ruleXExpression
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12582:1: ( ruleXExpression )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12583:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getConstantVariableAccess().getValueXExpressionParserRuleCall_5_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__ConstantVariable__ValueAssignment_525792);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__ConstantVariable__ValueAssignment_525483);
             ruleXExpression();
 
             state._fsp--;
@@ -36460,22 +36031,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RegisterVariable__TypeAssignment_2"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12749:1: rule__RegisterVariable__TypeAssignment_2 : ( ruleTypeDef ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12592:1: rule__RegisterVariable__TypeAssignment_2 : ( ruleTypeDef ) ;
     public final void rule__RegisterVariable__TypeAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12753:1: ( ( ruleTypeDef ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12754:1: ( ruleTypeDef )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12596:1: ( ( ruleTypeDef ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12597:1: ( ruleTypeDef )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12754:1: ( ruleTypeDef )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12755:1: ruleTypeDef
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12597:1: ( ruleTypeDef )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12598:1: ruleTypeDef
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getRegisterVariableAccess().getTypeTypeDefParserRuleCall_2_0()); 
             }
-            pushFollow(FOLLOW_ruleTypeDef_in_rule__RegisterVariable__TypeAssignment_225823);
+            pushFollow(FOLLOW_ruleTypeDef_in_rule__RegisterVariable__TypeAssignment_225514);
             ruleTypeDef();
 
             state._fsp--;
@@ -36505,22 +36076,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RegisterVariable__NameAssignment_3"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12764:1: rule__RegisterVariable__NameAssignment_3 : ( RULE_ID ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12607:1: rule__RegisterVariable__NameAssignment_3 : ( RULE_ID ) ;
     public final void rule__RegisterVariable__NameAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12768:1: ( ( RULE_ID ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12769:1: ( RULE_ID )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12611:1: ( ( RULE_ID ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12612:1: ( RULE_ID )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12769:1: ( RULE_ID )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12770:1: RULE_ID
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12612:1: ( RULE_ID )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12613:1: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getRegisterVariableAccess().getNameIDTerminalRuleCall_3_0()); 
             }
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__RegisterVariable__NameAssignment_325854); if (state.failed) return ;
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__RegisterVariable__NameAssignment_325545); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getRegisterVariableAccess().getNameIDTerminalRuleCall_3_0()); 
             }
@@ -36546,22 +36117,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RegisterVariable__AddrAssignment_5"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12779:1: rule__RegisterVariable__AddrAssignment_5 : ( ruleXExpression ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12622:1: rule__RegisterVariable__AddrAssignment_5 : ( ruleXExpression ) ;
     public final void rule__RegisterVariable__AddrAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12783:1: ( ( ruleXExpression ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12784:1: ( ruleXExpression )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12626:1: ( ( ruleXExpression ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12627:1: ( ruleXExpression )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12784:1: ( ruleXExpression )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12785:1: ruleXExpression
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12627:1: ( ruleXExpression )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12628:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getRegisterVariableAccess().getAddrXExpressionParserRuleCall_5_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__RegisterVariable__AddrAssignment_525885);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__RegisterVariable__AddrAssignment_525576);
             ruleXExpression();
 
             state._fsp--;
@@ -36591,22 +36162,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Label__NameAssignment_2"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12794:1: rule__Label__NameAssignment_2 : ( RULE_ID ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12637:1: rule__Label__NameAssignment_2 : ( RULE_ID ) ;
     public final void rule__Label__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12798:1: ( ( RULE_ID ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12799:1: ( RULE_ID )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12641:1: ( ( RULE_ID ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12642:1: ( RULE_ID )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12799:1: ( RULE_ID )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12800:1: RULE_ID
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12642:1: ( RULE_ID )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12643:1: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getLabelAccess().getNameIDTerminalRuleCall_2_0()); 
             }
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Label__NameAssignment_225916); if (state.failed) return ;
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Label__NameAssignment_225607); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getLabelAccess().getNameIDTerminalRuleCall_2_0()); 
             }
@@ -36632,22 +36203,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InstructionWord__SectionsAssignment_1"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12809:1: rule__InstructionWord__SectionsAssignment_1 : ( ruleWordSection ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12652:1: rule__InstructionWord__SectionsAssignment_1 : ( ruleWordSection ) ;
     public final void rule__InstructionWord__SectionsAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12813:1: ( ( ruleWordSection ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12814:1: ( ruleWordSection )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12656:1: ( ( ruleWordSection ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12657:1: ( ruleWordSection )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12814:1: ( ruleWordSection )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12815:1: ruleWordSection
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12657:1: ( ruleWordSection )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12658:1: ruleWordSection
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getInstructionWordAccess().getSectionsWordSectionParserRuleCall_1_0()); 
             }
-            pushFollow(FOLLOW_ruleWordSection_in_rule__InstructionWord__SectionsAssignment_125947);
+            pushFollow(FOLLOW_ruleWordSection_in_rule__InstructionWord__SectionsAssignment_125638);
             ruleWordSection();
 
             state._fsp--;
@@ -36677,22 +36248,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WordSection__SizeAssignment_2"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12824:1: rule__WordSection__SizeAssignment_2 : ( RULE_INT ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12667:1: rule__WordSection__SizeAssignment_2 : ( RULE_INT ) ;
     public final void rule__WordSection__SizeAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12828:1: ( ( RULE_INT ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12829:1: ( RULE_INT )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12671:1: ( ( RULE_INT ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12672:1: ( RULE_INT )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12829:1: ( RULE_INT )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12830:1: RULE_INT
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12672:1: ( RULE_INT )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12673:1: RULE_INT
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getWordSectionAccess().getSizeINTTerminalRuleCall_2_0()); 
             }
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__WordSection__SizeAssignment_225978); if (state.failed) return ;
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__WordSection__SizeAssignment_225669); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getWordSectionAccess().getSizeINTTerminalRuleCall_2_0()); 
             }
@@ -36718,22 +36289,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WordSection__ShiftAssignment_3_1"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12839:1: rule__WordSection__ShiftAssignment_3_1 : ( RULE_INT ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12682:1: rule__WordSection__ShiftAssignment_3_1 : ( RULE_INT ) ;
     public final void rule__WordSection__ShiftAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12843:1: ( ( RULE_INT ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12844:1: ( RULE_INT )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12686:1: ( ( RULE_INT ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12687:1: ( RULE_INT )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12844:1: ( RULE_INT )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12845:1: RULE_INT
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12687:1: ( RULE_INT )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12688:1: RULE_INT
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getWordSectionAccess().getShiftINTTerminalRuleCall_3_1_0()); 
             }
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__WordSection__ShiftAssignment_3_126009); if (state.failed) return ;
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__WordSection__ShiftAssignment_3_125700); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getWordSectionAccess().getShiftINTTerminalRuleCall_3_1_0()); 
             }
@@ -36759,22 +36330,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LiteralValue__ValueAssignment"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12854:1: rule__LiteralValue__ValueAssignment : ( ruleLITERAL ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12697:1: rule__LiteralValue__ValueAssignment : ( ruleLITERAL ) ;
     public final void rule__LiteralValue__ValueAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12858:1: ( ( ruleLITERAL ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12859:1: ( ruleLITERAL )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12701:1: ( ( ruleLITERAL ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12702:1: ( ruleLITERAL )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12859:1: ( ruleLITERAL )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12860:1: ruleLITERAL
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12702:1: ( ruleLITERAL )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12703:1: ruleLITERAL
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getLiteralValueAccess().getValueLITERALParserRuleCall_0()); 
             }
-            pushFollow(FOLLOW_ruleLITERAL_in_rule__LiteralValue__ValueAssignment26040);
+            pushFollow(FOLLOW_ruleLITERAL_in_rule__LiteralValue__ValueAssignment25731);
             ruleLITERAL();
 
             state._fsp--;
@@ -36804,22 +36375,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Variable__TypeAssignment_0"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12869:1: rule__Variable__TypeAssignment_0 : ( ruleTypeDef ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12712:1: rule__Variable__TypeAssignment_0 : ( ruleTypeDef ) ;
     public final void rule__Variable__TypeAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12873:1: ( ( ruleTypeDef ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12874:1: ( ruleTypeDef )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12716:1: ( ( ruleTypeDef ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12717:1: ( ruleTypeDef )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12874:1: ( ruleTypeDef )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12875:1: ruleTypeDef
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12717:1: ( ruleTypeDef )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12718:1: ruleTypeDef
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getVariableAccess().getTypeTypeDefParserRuleCall_0_0()); 
             }
-            pushFollow(FOLLOW_ruleTypeDef_in_rule__Variable__TypeAssignment_026071);
+            pushFollow(FOLLOW_ruleTypeDef_in_rule__Variable__TypeAssignment_025762);
             ruleTypeDef();
 
             state._fsp--;
@@ -36849,22 +36420,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Variable__NameAssignment_1"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12884:1: rule__Variable__NameAssignment_1 : ( RULE_ID ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12727:1: rule__Variable__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Variable__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12888:1: ( ( RULE_ID ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12889:1: ( RULE_ID )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12731:1: ( ( RULE_ID ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12732:1: ( RULE_ID )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12889:1: ( RULE_ID )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12890:1: RULE_ID
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12732:1: ( RULE_ID )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12733:1: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getVariableAccess().getNameIDTerminalRuleCall_1_0()); 
             }
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Variable__NameAssignment_126102); if (state.failed) return ;
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Variable__NameAssignment_125793); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getVariableAccess().getNameIDTerminalRuleCall_1_0()); 
             }
@@ -36890,28 +36461,28 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__VariableReference__VarAssignment"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12899:1: rule__VariableReference__VarAssignment : ( ( ruleReferenceID ) ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12742:1: rule__VariableReference__VarAssignment : ( ( ruleReferenceID ) ) ;
     public final void rule__VariableReference__VarAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12903:1: ( ( ( ruleReferenceID ) ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12904:1: ( ( ruleReferenceID ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12746:1: ( ( ( ruleReferenceID ) ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12747:1: ( ( ruleReferenceID ) )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12904:1: ( ( ruleReferenceID ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12905:1: ( ruleReferenceID )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12747:1: ( ( ruleReferenceID ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12748:1: ( ruleReferenceID )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getVariableReferenceAccess().getVarVariableCrossReference_0()); 
             }
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12906:1: ( ruleReferenceID )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12907:1: ruleReferenceID
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12749:1: ( ruleReferenceID )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12750:1: ruleReferenceID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getVariableReferenceAccess().getVarVariableReferenceIDParserRuleCall_0_1()); 
             }
-            pushFollow(FOLLOW_ruleReferenceID_in_rule__VariableReference__VarAssignment26137);
+            pushFollow(FOLLOW_ruleReferenceID_in_rule__VariableReference__VarAssignment25828);
             ruleReferenceID();
 
             state._fsp--;
@@ -36947,28 +36518,28 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OperationCall__OperationAssignment_0"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12918:1: rule__OperationCall__OperationAssignment_0 : ( ( ruleReferenceID ) ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12761:1: rule__OperationCall__OperationAssignment_0 : ( ( ruleReferenceID ) ) ;
     public final void rule__OperationCall__OperationAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12922:1: ( ( ( ruleReferenceID ) ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12923:1: ( ( ruleReferenceID ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12765:1: ( ( ( ruleReferenceID ) ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12766:1: ( ( ruleReferenceID ) )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12923:1: ( ( ruleReferenceID ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12924:1: ( ruleReferenceID )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12766:1: ( ( ruleReferenceID ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12767:1: ( ruleReferenceID )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOperationCallAccess().getOperationOperationCrossReference_0_0()); 
             }
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12925:1: ( ruleReferenceID )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12926:1: ruleReferenceID
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12768:1: ( ruleReferenceID )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12769:1: ruleReferenceID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOperationCallAccess().getOperationOperationReferenceIDParserRuleCall_0_0_1()); 
             }
-            pushFollow(FOLLOW_ruleReferenceID_in_rule__OperationCall__OperationAssignment_026176);
+            pushFollow(FOLLOW_ruleReferenceID_in_rule__OperationCall__OperationAssignment_025867);
             ruleReferenceID();
 
             state._fsp--;
@@ -37004,22 +36575,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OperationCall__ParamsAssignment_2_0"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12937:1: rule__OperationCall__ParamsAssignment_2_0 : ( ruleOperationCallParameter ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12780:1: rule__OperationCall__ParamsAssignment_2_0 : ( ruleOperationCallParameter ) ;
     public final void rule__OperationCall__ParamsAssignment_2_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12941:1: ( ( ruleOperationCallParameter ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12942:1: ( ruleOperationCallParameter )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12784:1: ( ( ruleOperationCallParameter ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12785:1: ( ruleOperationCallParameter )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12942:1: ( ruleOperationCallParameter )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12943:1: ruleOperationCallParameter
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12785:1: ( ruleOperationCallParameter )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12786:1: ruleOperationCallParameter
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOperationCallAccess().getParamsOperationCallParameterParserRuleCall_2_0_0()); 
             }
-            pushFollow(FOLLOW_ruleOperationCallParameter_in_rule__OperationCall__ParamsAssignment_2_026211);
+            pushFollow(FOLLOW_ruleOperationCallParameter_in_rule__OperationCall__ParamsAssignment_2_025902);
             ruleOperationCallParameter();
 
             state._fsp--;
@@ -37049,22 +36620,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OperationCall__ParamsAssignment_2_1_1"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12952:1: rule__OperationCall__ParamsAssignment_2_1_1 : ( ruleOperationCallParameter ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12795:1: rule__OperationCall__ParamsAssignment_2_1_1 : ( ruleOperationCallParameter ) ;
     public final void rule__OperationCall__ParamsAssignment_2_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12956:1: ( ( ruleOperationCallParameter ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12957:1: ( ruleOperationCallParameter )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12799:1: ( ( ruleOperationCallParameter ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12800:1: ( ruleOperationCallParameter )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12957:1: ( ruleOperationCallParameter )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12958:1: ruleOperationCallParameter
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12800:1: ( ruleOperationCallParameter )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12801:1: ruleOperationCallParameter
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOperationCallAccess().getParamsOperationCallParameterParserRuleCall_2_1_1_0()); 
             }
-            pushFollow(FOLLOW_ruleOperationCallParameter_in_rule__OperationCall__ParamsAssignment_2_1_126242);
+            pushFollow(FOLLOW_ruleOperationCallParameter_in_rule__OperationCall__ParamsAssignment_2_1_125933);
             ruleOperationCallParameter();
 
             state._fsp--;
@@ -37094,22 +36665,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Operation__NameAssignment_1"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12967:1: rule__Operation__NameAssignment_1 : ( RULE_ID ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12810:1: rule__Operation__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Operation__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12971:1: ( ( RULE_ID ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12972:1: ( RULE_ID )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12814:1: ( ( RULE_ID ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12815:1: ( RULE_ID )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12972:1: ( RULE_ID )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12973:1: RULE_ID
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12815:1: ( RULE_ID )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12816:1: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOperationAccess().getNameIDTerminalRuleCall_1_0()); 
             }
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Operation__NameAssignment_126273); if (state.failed) return ;
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Operation__NameAssignment_125964); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getOperationAccess().getNameIDTerminalRuleCall_1_0()); 
             }
@@ -37135,22 +36706,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Operation__ParamsAssignment_3_0"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12982:1: rule__Operation__ParamsAssignment_3_0 : ( ruleParameterVariable ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12825:1: rule__Operation__ParamsAssignment_3_0 : ( ruleParameterVariable ) ;
     public final void rule__Operation__ParamsAssignment_3_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12986:1: ( ( ruleParameterVariable ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12987:1: ( ruleParameterVariable )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12829:1: ( ( ruleParameterVariable ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12830:1: ( ruleParameterVariable )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12987:1: ( ruleParameterVariable )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12988:1: ruleParameterVariable
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12830:1: ( ruleParameterVariable )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12831:1: ruleParameterVariable
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOperationAccess().getParamsParameterVariableParserRuleCall_3_0_0()); 
             }
-            pushFollow(FOLLOW_ruleParameterVariable_in_rule__Operation__ParamsAssignment_3_026304);
+            pushFollow(FOLLOW_ruleParameterVariable_in_rule__Operation__ParamsAssignment_3_025995);
             ruleParameterVariable();
 
             state._fsp--;
@@ -37180,22 +36751,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Operation__ParamsAssignment_3_1_1"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12997:1: rule__Operation__ParamsAssignment_3_1_1 : ( ruleParameterVariable ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12840:1: rule__Operation__ParamsAssignment_3_1_1 : ( ruleParameterVariable ) ;
     public final void rule__Operation__ParamsAssignment_3_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13001:1: ( ( ruleParameterVariable ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13002:1: ( ruleParameterVariable )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12844:1: ( ( ruleParameterVariable ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12845:1: ( ruleParameterVariable )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13002:1: ( ruleParameterVariable )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13003:1: ruleParameterVariable
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12845:1: ( ruleParameterVariable )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12846:1: ruleParameterVariable
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOperationAccess().getParamsParameterVariableParserRuleCall_3_1_1_0()); 
             }
-            pushFollow(FOLLOW_ruleParameterVariable_in_rule__Operation__ParamsAssignment_3_1_126335);
+            pushFollow(FOLLOW_ruleParameterVariable_in_rule__Operation__ParamsAssignment_3_1_126026);
             ruleParameterVariable();
 
             state._fsp--;
@@ -37225,22 +36796,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Operation__BlockAssignment_6"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13012:1: rule__Operation__BlockAssignment_6 : ( ruleOperationBlock ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12855:1: rule__Operation__BlockAssignment_6 : ( ruleOperationBlock ) ;
     public final void rule__Operation__BlockAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13016:1: ( ( ruleOperationBlock ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13017:1: ( ruleOperationBlock )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12859:1: ( ( ruleOperationBlock ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12860:1: ( ruleOperationBlock )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13017:1: ( ruleOperationBlock )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13018:1: ruleOperationBlock
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12860:1: ( ruleOperationBlock )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12861:1: ruleOperationBlock
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOperationAccess().getBlockOperationBlockParserRuleCall_6_0()); 
             }
-            pushFollow(FOLLOW_ruleOperationBlock_in_rule__Operation__BlockAssignment_626366);
+            pushFollow(FOLLOW_ruleOperationBlock_in_rule__Operation__BlockAssignment_626057);
             ruleOperationBlock();
 
             state._fsp--;
@@ -37270,22 +36841,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Operation__ReturnAssignment_8_1_0"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13027:1: rule__Operation__ReturnAssignment_8_1_0 : ( ruleXExpression ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12870:1: rule__Operation__ReturnAssignment_8_1_0 : ( ruleXExpression ) ;
     public final void rule__Operation__ReturnAssignment_8_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13031:1: ( ( ruleXExpression ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13032:1: ( ruleXExpression )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12874:1: ( ( ruleXExpression ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12875:1: ( ruleXExpression )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13032:1: ( ruleXExpression )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13033:1: ruleXExpression
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12875:1: ( ruleXExpression )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12876:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOperationAccess().getReturnXExpressionParserRuleCall_8_1_0_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__Operation__ReturnAssignment_8_1_026397);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__Operation__ReturnAssignment_8_1_026088);
             ruleXExpression();
 
             state._fsp--;
@@ -37315,22 +36886,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Operation__ReturnvarAssignment_8_1_1"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13042:1: rule__Operation__ReturnvarAssignment_8_1_1 : ( ruleVariable ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12885:1: rule__Operation__ReturnvarAssignment_8_1_1 : ( ruleVariable ) ;
     public final void rule__Operation__ReturnvarAssignment_8_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13046:1: ( ( ruleVariable ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13047:1: ( ruleVariable )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12889:1: ( ( ruleVariable ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12890:1: ( ruleVariable )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13047:1: ( ruleVariable )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13048:1: ruleVariable
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12890:1: ( ruleVariable )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12891:1: ruleVariable
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOperationAccess().getReturnvarVariableParserRuleCall_8_1_1_0()); 
             }
-            pushFollow(FOLLOW_ruleVariable_in_rule__Operation__ReturnvarAssignment_8_1_126428);
+            pushFollow(FOLLOW_ruleVariable_in_rule__Operation__ReturnvarAssignment_8_1_126119);
             ruleVariable();
 
             state._fsp--;
@@ -37360,22 +36931,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OperationBlock__StepsAssignment_1"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13057:1: rule__OperationBlock__StepsAssignment_1 : ( ruleOperationStep ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12900:1: rule__OperationBlock__StepsAssignment_1 : ( ruleOperationStep ) ;
     public final void rule__OperationBlock__StepsAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13061:1: ( ( ruleOperationStep ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13062:1: ( ruleOperationStep )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12904:1: ( ( ruleOperationStep ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12905:1: ( ruleOperationStep )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13062:1: ( ruleOperationStep )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13063:1: ruleOperationStep
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12905:1: ( ruleOperationStep )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12906:1: ruleOperationStep
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOperationBlockAccess().getStepsOperationStepParserRuleCall_1_0()); 
             }
-            pushFollow(FOLLOW_ruleOperationStep_in_rule__OperationBlock__StepsAssignment_126459);
+            pushFollow(FOLLOW_ruleOperationStep_in_rule__OperationBlock__StepsAssignment_126150);
             ruleOperationStep();
 
             state._fsp--;
@@ -37405,22 +36976,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterVariable__KindAssignment_1"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13072:1: rule__ParameterVariable__KindAssignment_1 : ( ruleParameterKind ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12915:1: rule__ParameterVariable__KindAssignment_1 : ( ruleParameterKind ) ;
     public final void rule__ParameterVariable__KindAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13076:1: ( ( ruleParameterKind ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13077:1: ( ruleParameterKind )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12919:1: ( ( ruleParameterKind ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12920:1: ( ruleParameterKind )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13077:1: ( ruleParameterKind )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13078:1: ruleParameterKind
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12920:1: ( ruleParameterKind )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12921:1: ruleParameterKind
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getParameterVariableAccess().getKindParameterKindEnumRuleCall_1_0()); 
             }
-            pushFollow(FOLLOW_ruleParameterKind_in_rule__ParameterVariable__KindAssignment_126490);
+            pushFollow(FOLLOW_ruleParameterKind_in_rule__ParameterVariable__KindAssignment_126181);
             ruleParameterKind();
 
             state._fsp--;
@@ -37450,22 +37021,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterVariable__TypeAssignment_2"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13087:1: rule__ParameterVariable__TypeAssignment_2 : ( ruleTypeDef ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12930:1: rule__ParameterVariable__TypeAssignment_2 : ( ruleTypeDef ) ;
     public final void rule__ParameterVariable__TypeAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13091:1: ( ( ruleTypeDef ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13092:1: ( ruleTypeDef )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12934:1: ( ( ruleTypeDef ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12935:1: ( ruleTypeDef )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13092:1: ( ruleTypeDef )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13093:1: ruleTypeDef
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12935:1: ( ruleTypeDef )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12936:1: ruleTypeDef
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getParameterVariableAccess().getTypeTypeDefParserRuleCall_2_0()); 
             }
-            pushFollow(FOLLOW_ruleTypeDef_in_rule__ParameterVariable__TypeAssignment_226521);
+            pushFollow(FOLLOW_ruleTypeDef_in_rule__ParameterVariable__TypeAssignment_226212);
             ruleTypeDef();
 
             state._fsp--;
@@ -37495,22 +37066,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterVariable__NameAssignment_3"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13102:1: rule__ParameterVariable__NameAssignment_3 : ( RULE_ID ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12945:1: rule__ParameterVariable__NameAssignment_3 : ( RULE_ID ) ;
     public final void rule__ParameterVariable__NameAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13106:1: ( ( RULE_ID ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13107:1: ( RULE_ID )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12949:1: ( ( RULE_ID ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12950:1: ( RULE_ID )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13107:1: ( RULE_ID )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13108:1: RULE_ID
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12950:1: ( RULE_ID )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12951:1: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getParameterVariableAccess().getNameIDTerminalRuleCall_3_0()); 
             }
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ParameterVariable__NameAssignment_326552); if (state.failed) return ;
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ParameterVariable__NameAssignment_326243); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getParameterVariableAccess().getNameIDTerminalRuleCall_3_0()); 
             }
@@ -37536,22 +37107,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParameterVariable__DefaultAssignment_4_1"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13117:1: rule__ParameterVariable__DefaultAssignment_4_1 : ( ruleLITERAL ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12960:1: rule__ParameterVariable__DefaultAssignment_4_1 : ( ruleLITERAL ) ;
     public final void rule__ParameterVariable__DefaultAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13121:1: ( ( ruleLITERAL ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13122:1: ( ruleLITERAL )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12964:1: ( ( ruleLITERAL ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12965:1: ( ruleLITERAL )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13122:1: ( ruleLITERAL )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13123:1: ruleLITERAL
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12965:1: ( ruleLITERAL )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12966:1: ruleLITERAL
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getParameterVariableAccess().getDefaultLITERALParserRuleCall_4_1_0()); 
             }
-            pushFollow(FOLLOW_ruleLITERAL_in_rule__ParameterVariable__DefaultAssignment_4_126583);
+            pushFollow(FOLLOW_ruleLITERAL_in_rule__ParameterVariable__DefaultAssignment_4_126274);
             ruleLITERAL();
 
             state._fsp--;
@@ -37581,22 +37152,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OperatorDefinition__RoleAssignment_1"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13132:1: rule__OperatorDefinition__RoleAssignment_1 : ( ruleOperationRole ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12975:1: rule__OperatorDefinition__RoleAssignment_1 : ( ruleOperationRole ) ;
     public final void rule__OperatorDefinition__RoleAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13136:1: ( ( ruleOperationRole ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13137:1: ( ruleOperationRole )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12979:1: ( ( ruleOperationRole ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12980:1: ( ruleOperationRole )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13137:1: ( ruleOperationRole )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13138:1: ruleOperationRole
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12980:1: ( ruleOperationRole )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12981:1: ruleOperationRole
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOperatorDefinitionAccess().getRoleOperationRoleEnumRuleCall_1_0()); 
             }
-            pushFollow(FOLLOW_ruleOperationRole_in_rule__OperatorDefinition__RoleAssignment_126614);
+            pushFollow(FOLLOW_ruleOperationRole_in_rule__OperatorDefinition__RoleAssignment_126305);
             ruleOperationRole();
 
             state._fsp--;
@@ -37626,28 +37197,28 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OperatorDefinition__CandidateAssignment_3"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13147:1: rule__OperatorDefinition__CandidateAssignment_3 : ( ( ruleReferenceID ) ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12990:1: rule__OperatorDefinition__CandidateAssignment_3 : ( ( ruleReferenceID ) ) ;
     public final void rule__OperatorDefinition__CandidateAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13151:1: ( ( ( ruleReferenceID ) ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13152:1: ( ( ruleReferenceID ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12994:1: ( ( ( ruleReferenceID ) ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12995:1: ( ( ruleReferenceID ) )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13152:1: ( ( ruleReferenceID ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13153:1: ( ruleReferenceID )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12995:1: ( ( ruleReferenceID ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12996:1: ( ruleReferenceID )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOperatorDefinitionAccess().getCandidateOperationCrossReference_3_0()); 
             }
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13154:1: ( ruleReferenceID )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13155:1: ruleReferenceID
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12997:1: ( ruleReferenceID )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:12998:1: ruleReferenceID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOperatorDefinitionAccess().getCandidateOperationReferenceIDParserRuleCall_3_0_1()); 
             }
-            pushFollow(FOLLOW_ruleReferenceID_in_rule__OperatorDefinition__CandidateAssignment_326649);
+            pushFollow(FOLLOW_ruleReferenceID_in_rule__OperatorDefinition__CandidateAssignment_326340);
             ruleReferenceID();
 
             state._fsp--;
@@ -37683,28 +37254,28 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OperatorDefinition__CandidateAssignment_4_1"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13166:1: rule__OperatorDefinition__CandidateAssignment_4_1 : ( ( ruleReferenceID ) ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13009:1: rule__OperatorDefinition__CandidateAssignment_4_1 : ( ( ruleReferenceID ) ) ;
     public final void rule__OperatorDefinition__CandidateAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13170:1: ( ( ( ruleReferenceID ) ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13171:1: ( ( ruleReferenceID ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13013:1: ( ( ( ruleReferenceID ) ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13014:1: ( ( ruleReferenceID ) )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13171:1: ( ( ruleReferenceID ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13172:1: ( ruleReferenceID )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13014:1: ( ( ruleReferenceID ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13015:1: ( ruleReferenceID )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOperatorDefinitionAccess().getCandidateOperationCrossReference_4_1_0()); 
             }
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13173:1: ( ruleReferenceID )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13174:1: ruleReferenceID
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13016:1: ( ruleReferenceID )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13017:1: ruleReferenceID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOperatorDefinitionAccess().getCandidateOperationReferenceIDParserRuleCall_4_1_0_1()); 
             }
-            pushFollow(FOLLOW_ruleReferenceID_in_rule__OperatorDefinition__CandidateAssignment_4_126688);
+            pushFollow(FOLLOW_ruleReferenceID_in_rule__OperatorDefinition__CandidateAssignment_4_126379);
             ruleReferenceID();
 
             state._fsp--;
@@ -37740,22 +37311,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LinkedBinary__NameAssignment_1"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13185:1: rule__LinkedBinary__NameAssignment_1 : ( ruleQualifiedName ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13028:1: rule__LinkedBinary__NameAssignment_1 : ( ruleQualifiedName ) ;
     public final void rule__LinkedBinary__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13189:1: ( ( ruleQualifiedName ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13190:1: ( ruleQualifiedName )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13032:1: ( ( ruleQualifiedName ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13033:1: ( ruleQualifiedName )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13190:1: ( ruleQualifiedName )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13191:1: ruleQualifiedName
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13033:1: ( ruleQualifiedName )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13034:1: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getLinkedBinaryAccess().getNameQualifiedNameParserRuleCall_1_0()); 
             }
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__LinkedBinary__NameAssignment_126723);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__LinkedBinary__NameAssignment_126414);
             ruleQualifiedName();
 
             state._fsp--;
@@ -37785,22 +37356,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LinkedBinary__TypeAssignment_2"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13200:1: rule__LinkedBinary__TypeAssignment_2 : ( ruleBinaryType ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13043:1: rule__LinkedBinary__TypeAssignment_2 : ( ruleBinaryType ) ;
     public final void rule__LinkedBinary__TypeAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13204:1: ( ( ruleBinaryType ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13205:1: ( ruleBinaryType )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13047:1: ( ( ruleBinaryType ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13048:1: ( ruleBinaryType )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13205:1: ( ruleBinaryType )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13206:1: ruleBinaryType
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13048:1: ( ruleBinaryType )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13049:1: ruleBinaryType
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getLinkedBinaryAccess().getTypeBinaryTypeEnumRuleCall_2_0()); 
             }
-            pushFollow(FOLLOW_ruleBinaryType_in_rule__LinkedBinary__TypeAssignment_226754);
+            pushFollow(FOLLOW_ruleBinaryType_in_rule__LinkedBinary__TypeAssignment_226445);
             ruleBinaryType();
 
             state._fsp--;
@@ -37830,28 +37401,28 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LinkedBinary__UseAssignment_4_1"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13215:1: rule__LinkedBinary__UseAssignment_4_1 : ( ( ruleQualifiedName ) ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13058:1: rule__LinkedBinary__UseAssignment_4_1 : ( ( ruleQualifiedName ) ) ;
     public final void rule__LinkedBinary__UseAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13219:1: ( ( ( ruleQualifiedName ) ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13220:1: ( ( ruleQualifiedName ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13062:1: ( ( ( ruleQualifiedName ) ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13063:1: ( ( ruleQualifiedName ) )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13220:1: ( ( ruleQualifiedName ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13221:1: ( ruleQualifiedName )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13063:1: ( ( ruleQualifiedName ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13064:1: ( ruleQualifiedName )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getLinkedBinaryAccess().getUseLibraryCrossReference_4_1_0()); 
             }
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13222:1: ( ruleQualifiedName )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13223:1: ruleQualifiedName
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13065:1: ( ruleQualifiedName )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13066:1: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getLinkedBinaryAccess().getUseLibraryQualifiedNameParserRuleCall_4_1_0_1()); 
             }
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__LinkedBinary__UseAssignment_4_126789);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__LinkedBinary__UseAssignment_4_126480);
             ruleQualifiedName();
 
             state._fsp--;
@@ -37887,22 +37458,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LinkedBinary__SectionsAssignment_5"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13234:1: rule__LinkedBinary__SectionsAssignment_5 : ( ruleBinarySection ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13077:1: rule__LinkedBinary__SectionsAssignment_5 : ( ruleBinarySection ) ;
     public final void rule__LinkedBinary__SectionsAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13238:1: ( ( ruleBinarySection ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13239:1: ( ruleBinarySection )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13081:1: ( ( ruleBinarySection ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13082:1: ( ruleBinarySection )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13239:1: ( ruleBinarySection )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13240:1: ruleBinarySection
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13082:1: ( ruleBinarySection )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13083:1: ruleBinarySection
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getLinkedBinaryAccess().getSectionsBinarySectionParserRuleCall_5_0()); 
             }
-            pushFollow(FOLLOW_ruleBinarySection_in_rule__LinkedBinary__SectionsAssignment_526824);
+            pushFollow(FOLLOW_ruleBinarySection_in_rule__LinkedBinary__SectionsAssignment_526515);
             ruleBinarySection();
 
             state._fsp--;
@@ -37932,22 +37503,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BinarySection__StartAssignment_2"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13249:1: rule__BinarySection__StartAssignment_2 : ( ruleXExpression ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13092:1: rule__BinarySection__StartAssignment_2 : ( ruleXExpression ) ;
     public final void rule__BinarySection__StartAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13253:1: ( ( ruleXExpression ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13254:1: ( ruleXExpression )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13096:1: ( ( ruleXExpression ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13097:1: ( ruleXExpression )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13254:1: ( ruleXExpression )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13255:1: ruleXExpression
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13097:1: ( ruleXExpression )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13098:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBinarySectionAccess().getStartXExpressionParserRuleCall_2_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__BinarySection__StartAssignment_226855);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__BinarySection__StartAssignment_226546);
             ruleXExpression();
 
             state._fsp--;
@@ -37977,22 +37548,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FunctionBinarySection__NameAssignment_1"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13264:1: rule__FunctionBinarySection__NameAssignment_1 : ( RULE_ID ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13107:1: rule__FunctionBinarySection__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__FunctionBinarySection__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13268:1: ( ( RULE_ID ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13269:1: ( RULE_ID )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13111:1: ( ( RULE_ID ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13112:1: ( RULE_ID )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13269:1: ( RULE_ID )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13270:1: RULE_ID
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13112:1: ( RULE_ID )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13113:1: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFunctionBinarySectionAccess().getNameIDTerminalRuleCall_1_0()); 
             }
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__FunctionBinarySection__NameAssignment_126886); if (state.failed) return ;
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__FunctionBinarySection__NameAssignment_126577); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFunctionBinarySectionAccess().getNameIDTerminalRuleCall_1_0()); 
             }
@@ -38018,22 +37589,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FunctionBinarySection__StartAddrAssignment_5"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13279:1: rule__FunctionBinarySection__StartAddrAssignment_5 : ( ruleLITERAL ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13122:1: rule__FunctionBinarySection__StartAddrAssignment_5 : ( ruleLITERAL ) ;
     public final void rule__FunctionBinarySection__StartAddrAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13283:1: ( ( ruleLITERAL ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13284:1: ( ruleLITERAL )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13126:1: ( ( ruleLITERAL ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13127:1: ( ruleLITERAL )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13284:1: ( ruleLITERAL )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13285:1: ruleLITERAL
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13127:1: ( ruleLITERAL )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13128:1: ruleLITERAL
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFunctionBinarySectionAccess().getStartAddrLITERALParserRuleCall_5_0()); 
             }
-            pushFollow(FOLLOW_ruleLITERAL_in_rule__FunctionBinarySection__StartAddrAssignment_526917);
+            pushFollow(FOLLOW_ruleLITERAL_in_rule__FunctionBinarySection__StartAddrAssignment_526608);
             ruleLITERAL();
 
             state._fsp--;
@@ -38063,22 +37634,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FunctionBinarySection__MemwidthAssignment_9"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13294:1: rule__FunctionBinarySection__MemwidthAssignment_9 : ( ruleLITERAL ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13137:1: rule__FunctionBinarySection__MemwidthAssignment_9 : ( ruleLITERAL ) ;
     public final void rule__FunctionBinarySection__MemwidthAssignment_9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13298:1: ( ( ruleLITERAL ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13299:1: ( ruleLITERAL )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13141:1: ( ( ruleLITERAL ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13142:1: ( ruleLITERAL )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13299:1: ( ruleLITERAL )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13300:1: ruleLITERAL
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13142:1: ( ruleLITERAL )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13143:1: ruleLITERAL
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFunctionBinarySectionAccess().getMemwidthLITERALParserRuleCall_9_0()); 
             }
-            pushFollow(FOLLOW_ruleLITERAL_in_rule__FunctionBinarySection__MemwidthAssignment_926948);
+            pushFollow(FOLLOW_ruleLITERAL_in_rule__FunctionBinarySection__MemwidthAssignment_926639);
             ruleLITERAL();
 
             state._fsp--;
@@ -38108,22 +37679,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FunctionBinarySection__PointersizeAssignment_13"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13309:1: rule__FunctionBinarySection__PointersizeAssignment_13 : ( ruleLITERAL ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13152:1: rule__FunctionBinarySection__PointersizeAssignment_13 : ( ruleLITERAL ) ;
     public final void rule__FunctionBinarySection__PointersizeAssignment_13() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13313:1: ( ( ruleLITERAL ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13314:1: ( ruleLITERAL )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13156:1: ( ( ruleLITERAL ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13157:1: ( ruleLITERAL )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13314:1: ( ruleLITERAL )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13315:1: ruleLITERAL
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13157:1: ( ruleLITERAL )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13158:1: ruleLITERAL
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFunctionBinarySectionAccess().getPointersizeLITERALParserRuleCall_13_0()); 
             }
-            pushFollow(FOLLOW_ruleLITERAL_in_rule__FunctionBinarySection__PointersizeAssignment_1326979);
+            pushFollow(FOLLOW_ruleLITERAL_in_rule__FunctionBinarySection__PointersizeAssignment_1326670);
             ruleLITERAL();
 
             state._fsp--;
@@ -38153,22 +37724,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FunctionBinarySection__MemsAssignment_15_0"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13324:1: rule__FunctionBinarySection__MemsAssignment_15_0 : ( ruleFunctionMemory ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13167:1: rule__FunctionBinarySection__MemsAssignment_15_0 : ( ruleFunctionMemory ) ;
     public final void rule__FunctionBinarySection__MemsAssignment_15_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13328:1: ( ( ruleFunctionMemory ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13329:1: ( ruleFunctionMemory )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13171:1: ( ( ruleFunctionMemory ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13172:1: ( ruleFunctionMemory )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13329:1: ( ruleFunctionMemory )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13330:1: ruleFunctionMemory
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13172:1: ( ruleFunctionMemory )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13173:1: ruleFunctionMemory
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFunctionBinarySectionAccess().getMemsFunctionMemoryParserRuleCall_15_0_0()); 
             }
-            pushFollow(FOLLOW_ruleFunctionMemory_in_rule__FunctionBinarySection__MemsAssignment_15_027010);
+            pushFollow(FOLLOW_ruleFunctionMemory_in_rule__FunctionBinarySection__MemsAssignment_15_026701);
             ruleFunctionMemory();
 
             state._fsp--;
@@ -38198,28 +37769,28 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FunctionBinarySection__LibAssignment_18_0_1"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13339:1: rule__FunctionBinarySection__LibAssignment_18_0_1 : ( ( ruleQualifiedName ) ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13182:1: rule__FunctionBinarySection__LibAssignment_18_0_1 : ( ( ruleQualifiedName ) ) ;
     public final void rule__FunctionBinarySection__LibAssignment_18_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13343:1: ( ( ( ruleQualifiedName ) ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13344:1: ( ( ruleQualifiedName ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13186:1: ( ( ( ruleQualifiedName ) ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13187:1: ( ( ruleQualifiedName ) )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13344:1: ( ( ruleQualifiedName ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13345:1: ( ruleQualifiedName )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13187:1: ( ( ruleQualifiedName ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13188:1: ( ruleQualifiedName )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFunctionBinarySectionAccess().getLibLibraryCrossReference_18_0_1_0()); 
             }
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13346:1: ( ruleQualifiedName )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13347:1: ruleQualifiedName
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13189:1: ( ruleQualifiedName )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13190:1: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFunctionBinarySectionAccess().getLibLibraryQualifiedNameParserRuleCall_18_0_1_0_1()); 
             }
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__FunctionBinarySection__LibAssignment_18_0_127045);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__FunctionBinarySection__LibAssignment_18_0_126736);
             ruleQualifiedName();
 
             state._fsp--;
@@ -38255,22 +37826,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FunctionBinarySection__InstancesAssignment_18_1"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13358:1: rule__FunctionBinarySection__InstancesAssignment_18_1 : ( ruleLinkedInstance ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13201:1: rule__FunctionBinarySection__InstancesAssignment_18_1 : ( ruleLinkedInstance ) ;
     public final void rule__FunctionBinarySection__InstancesAssignment_18_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13362:1: ( ( ruleLinkedInstance ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13363:1: ( ruleLinkedInstance )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13205:1: ( ( ruleLinkedInstance ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13206:1: ( ruleLinkedInstance )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13363:1: ( ruleLinkedInstance )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13364:1: ruleLinkedInstance
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13206:1: ( ruleLinkedInstance )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13207:1: ruleLinkedInstance
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFunctionBinarySectionAccess().getInstancesLinkedInstanceParserRuleCall_18_1_0()); 
             }
-            pushFollow(FOLLOW_ruleLinkedInstance_in_rule__FunctionBinarySection__InstancesAssignment_18_127080);
+            pushFollow(FOLLOW_ruleLinkedInstance_in_rule__FunctionBinarySection__InstancesAssignment_18_126771);
             ruleLinkedInstance();
 
             state._fsp--;
@@ -38300,22 +37871,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FunctionBinarySection__DoAssignment_21"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13373:1: rule__FunctionBinarySection__DoAssignment_21 : ( ruleOperationBlock ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13216:1: rule__FunctionBinarySection__DoAssignment_21 : ( ruleOperationBlock ) ;
     public final void rule__FunctionBinarySection__DoAssignment_21() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13377:1: ( ( ruleOperationBlock ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13378:1: ( ruleOperationBlock )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13220:1: ( ( ruleOperationBlock ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13221:1: ( ruleOperationBlock )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13378:1: ( ruleOperationBlock )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13379:1: ruleOperationBlock
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13221:1: ( ruleOperationBlock )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13222:1: ruleOperationBlock
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFunctionBinarySectionAccess().getDoOperationBlockParserRuleCall_21_0()); 
             }
-            pushFollow(FOLLOW_ruleOperationBlock_in_rule__FunctionBinarySection__DoAssignment_2127111);
+            pushFollow(FOLLOW_ruleOperationBlock_in_rule__FunctionBinarySection__DoAssignment_2126802);
             ruleOperationBlock();
 
             state._fsp--;
@@ -38345,28 +37916,28 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LinkedInstance__TypeAssignment_0"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13388:1: rule__LinkedInstance__TypeAssignment_0 : ( ( ruleQualifiedName ) ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13231:1: rule__LinkedInstance__TypeAssignment_0 : ( ( ruleQualifiedName ) ) ;
     public final void rule__LinkedInstance__TypeAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13392:1: ( ( ( ruleQualifiedName ) ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13393:1: ( ( ruleQualifiedName ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13235:1: ( ( ( ruleQualifiedName ) ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13236:1: ( ( ruleQualifiedName ) )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13393:1: ( ( ruleQualifiedName ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13394:1: ( ruleQualifiedName )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13236:1: ( ( ruleQualifiedName ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13237:1: ( ruleQualifiedName )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getLinkedInstanceAccess().getTypeModuleCrossReference_0_0()); 
             }
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13395:1: ( ruleQualifiedName )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13396:1: ruleQualifiedName
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13238:1: ( ruleQualifiedName )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13239:1: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getLinkedInstanceAccess().getTypeModuleQualifiedNameParserRuleCall_0_0_1()); 
             }
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__LinkedInstance__TypeAssignment_027146);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__LinkedInstance__TypeAssignment_026837);
             ruleQualifiedName();
 
             state._fsp--;
@@ -38402,22 +37973,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LinkedInstance__NameAssignment_1"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13407:1: rule__LinkedInstance__NameAssignment_1 : ( RULE_ID ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13250:1: rule__LinkedInstance__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__LinkedInstance__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13411:1: ( ( RULE_ID ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13412:1: ( RULE_ID )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13254:1: ( ( RULE_ID ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13255:1: ( RULE_ID )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13412:1: ( RULE_ID )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13413:1: RULE_ID
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13255:1: ( RULE_ID )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13256:1: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getLinkedInstanceAccess().getNameIDTerminalRuleCall_1_0()); 
             }
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__LinkedInstance__NameAssignment_127181); if (state.failed) return ;
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__LinkedInstance__NameAssignment_126872); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getLinkedInstanceAccess().getNameIDTerminalRuleCall_1_0()); 
             }
@@ -38443,22 +38014,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LinkedInstance__LinksAssignment_3_0_0"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13422:1: rule__LinkedInstance__LinksAssignment_3_0_0 : ( ruleReferenceLink ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13265:1: rule__LinkedInstance__LinksAssignment_3_0_0 : ( ruleReferenceLink ) ;
     public final void rule__LinkedInstance__LinksAssignment_3_0_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13426:1: ( ( ruleReferenceLink ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13427:1: ( ruleReferenceLink )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13269:1: ( ( ruleReferenceLink ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13270:1: ( ruleReferenceLink )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13427:1: ( ruleReferenceLink )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13428:1: ruleReferenceLink
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13270:1: ( ruleReferenceLink )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13271:1: ruleReferenceLink
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getLinkedInstanceAccess().getLinksReferenceLinkParserRuleCall_3_0_0_0()); 
             }
-            pushFollow(FOLLOW_ruleReferenceLink_in_rule__LinkedInstance__LinksAssignment_3_0_027212);
+            pushFollow(FOLLOW_ruleReferenceLink_in_rule__LinkedInstance__LinksAssignment_3_0_026903);
             ruleReferenceLink();
 
             state._fsp--;
@@ -38488,22 +38059,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LinkedInstance__ConfsAssignment_3_0_1"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13437:1: rule__LinkedInstance__ConfsAssignment_3_0_1 : ( ruleInstanceConfig ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13280:1: rule__LinkedInstance__ConfsAssignment_3_0_1 : ( ruleInstanceConfig ) ;
     public final void rule__LinkedInstance__ConfsAssignment_3_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13441:1: ( ( ruleInstanceConfig ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13442:1: ( ruleInstanceConfig )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13284:1: ( ( ruleInstanceConfig ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13285:1: ( ruleInstanceConfig )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13442:1: ( ruleInstanceConfig )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13443:1: ruleInstanceConfig
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13285:1: ( ruleInstanceConfig )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13286:1: ruleInstanceConfig
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getLinkedInstanceAccess().getConfsInstanceConfigParserRuleCall_3_0_1_0()); 
             }
-            pushFollow(FOLLOW_ruleInstanceConfig_in_rule__LinkedInstance__ConfsAssignment_3_0_127243);
+            pushFollow(FOLLOW_ruleInstanceConfig_in_rule__LinkedInstance__ConfsAssignment_3_0_126934);
             ruleInstanceConfig();
 
             state._fsp--;
@@ -38533,28 +38104,28 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ReferenceLink__RefAssignment_0"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13452:1: rule__ReferenceLink__RefAssignment_0 : ( ( RULE_ID ) ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13295:1: rule__ReferenceLink__RefAssignment_0 : ( ( RULE_ID ) ) ;
     public final void rule__ReferenceLink__RefAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13456:1: ( ( ( RULE_ID ) ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13457:1: ( ( RULE_ID ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13299:1: ( ( ( RULE_ID ) ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13300:1: ( ( RULE_ID ) )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13457:1: ( ( RULE_ID ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13458:1: ( RULE_ID )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13300:1: ( ( RULE_ID ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13301:1: ( RULE_ID )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getReferenceLinkAccess().getRefInstanceReferenceCrossReference_0_0()); 
             }
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13459:1: ( RULE_ID )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13460:1: RULE_ID
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13302:1: ( RULE_ID )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13303:1: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getReferenceLinkAccess().getRefInstanceReferenceIDTerminalRuleCall_0_0_1()); 
             }
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ReferenceLink__RefAssignment_027278); if (state.failed) return ;
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ReferenceLink__RefAssignment_026969); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getReferenceLinkAccess().getRefInstanceReferenceIDTerminalRuleCall_0_0_1()); 
             }
@@ -38586,28 +38157,28 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ReferenceLink__InstAssignment_2"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13471:1: rule__ReferenceLink__InstAssignment_2 : ( ( RULE_ID ) ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13314:1: rule__ReferenceLink__InstAssignment_2 : ( ( RULE_ID ) ) ;
     public final void rule__ReferenceLink__InstAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13475:1: ( ( ( RULE_ID ) ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13476:1: ( ( RULE_ID ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13318:1: ( ( ( RULE_ID ) ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13319:1: ( ( RULE_ID ) )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13476:1: ( ( RULE_ID ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13477:1: ( RULE_ID )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13319:1: ( ( RULE_ID ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13320:1: ( RULE_ID )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getReferenceLinkAccess().getInstLinkedInstanceCrossReference_2_0()); 
             }
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13478:1: ( RULE_ID )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13479:1: RULE_ID
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13321:1: ( RULE_ID )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13322:1: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getReferenceLinkAccess().getInstLinkedInstanceIDTerminalRuleCall_2_0_1()); 
             }
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ReferenceLink__InstAssignment_227317); if (state.failed) return ;
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ReferenceLink__InstAssignment_227008); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getReferenceLinkAccess().getInstLinkedInstanceIDTerminalRuleCall_2_0_1()); 
             }
@@ -38639,28 +38210,28 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InstanceConfig__ConfAssignment_0"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13490:1: rule__InstanceConfig__ConfAssignment_0 : ( ( RULE_ID ) ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13333:1: rule__InstanceConfig__ConfAssignment_0 : ( ( RULE_ID ) ) ;
     public final void rule__InstanceConfig__ConfAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13494:1: ( ( ( RULE_ID ) ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13495:1: ( ( RULE_ID ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13337:1: ( ( ( RULE_ID ) ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13338:1: ( ( RULE_ID ) )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13495:1: ( ( RULE_ID ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13496:1: ( RULE_ID )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13338:1: ( ( RULE_ID ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13339:1: ( RULE_ID )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getInstanceConfigAccess().getConfConfigVariableCrossReference_0_0()); 
             }
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13497:1: ( RULE_ID )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13498:1: RULE_ID
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13340:1: ( RULE_ID )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13341:1: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getInstanceConfigAccess().getConfConfigVariableIDTerminalRuleCall_0_0_1()); 
             }
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__InstanceConfig__ConfAssignment_027356); if (state.failed) return ;
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__InstanceConfig__ConfAssignment_027047); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getInstanceConfigAccess().getConfConfigVariableIDTerminalRuleCall_0_0_1()); 
             }
@@ -38692,22 +38263,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InstanceConfig__ValueAssignment_2"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13509:1: rule__InstanceConfig__ValueAssignment_2 : ( ruleXExpression ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13352:1: rule__InstanceConfig__ValueAssignment_2 : ( ruleXExpression ) ;
     public final void rule__InstanceConfig__ValueAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13513:1: ( ( ruleXExpression ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13514:1: ( ruleXExpression )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13356:1: ( ( ruleXExpression ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13357:1: ( ruleXExpression )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13514:1: ( ruleXExpression )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13515:1: ruleXExpression
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13357:1: ( ruleXExpression )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13358:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getInstanceConfigAccess().getValueXExpressionParserRuleCall_2_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__InstanceConfig__ValueAssignment_227391);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__InstanceConfig__ValueAssignment_227082);
             ruleXExpression();
 
             state._fsp--;
@@ -38737,22 +38308,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FunctionMemory__StartAssignment_1"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13524:1: rule__FunctionMemory__StartAssignment_1 : ( ruleLITERAL ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13367:1: rule__FunctionMemory__StartAssignment_1 : ( ruleLITERAL ) ;
     public final void rule__FunctionMemory__StartAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13528:1: ( ( ruleLITERAL ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13529:1: ( ruleLITERAL )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13371:1: ( ( ruleLITERAL ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13372:1: ( ruleLITERAL )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13529:1: ( ruleLITERAL )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13530:1: ruleLITERAL
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13372:1: ( ruleLITERAL )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13373:1: ruleLITERAL
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFunctionMemoryAccess().getStartLITERALParserRuleCall_1_0()); 
             }
-            pushFollow(FOLLOW_ruleLITERAL_in_rule__FunctionMemory__StartAssignment_127422);
+            pushFollow(FOLLOW_ruleLITERAL_in_rule__FunctionMemory__StartAssignment_127113);
             ruleLITERAL();
 
             state._fsp--;
@@ -38782,22 +38353,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FunctionMemory__EndAssignment_3"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13539:1: rule__FunctionMemory__EndAssignment_3 : ( ruleLITERAL ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13382:1: rule__FunctionMemory__EndAssignment_3 : ( ruleLITERAL ) ;
     public final void rule__FunctionMemory__EndAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13543:1: ( ( ruleLITERAL ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13544:1: ( ruleLITERAL )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13386:1: ( ( ruleLITERAL ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13387:1: ( ruleLITERAL )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13544:1: ( ruleLITERAL )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13545:1: ruleLITERAL
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13387:1: ( ruleLITERAL )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13388:1: ruleLITERAL
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFunctionMemoryAccess().getEndLITERALParserRuleCall_3_0()); 
             }
-            pushFollow(FOLLOW_ruleLITERAL_in_rule__FunctionMemory__EndAssignment_327453);
+            pushFollow(FOLLOW_ruleLITERAL_in_rule__FunctionMemory__EndAssignment_327144);
             ruleLITERAL();
 
             state._fsp--;
@@ -38827,22 +38398,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConstantBinarySection__DataAssignment_2_0"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13554:1: rule__ConstantBinarySection__DataAssignment_2_0 : ( ruleXExpression ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13397:1: rule__ConstantBinarySection__DataAssignment_2_0 : ( ruleXExpression ) ;
     public final void rule__ConstantBinarySection__DataAssignment_2_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13558:1: ( ( ruleXExpression ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13559:1: ( ruleXExpression )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13401:1: ( ( ruleXExpression ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13402:1: ( ruleXExpression )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13559:1: ( ruleXExpression )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13560:1: ruleXExpression
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13402:1: ( ruleXExpression )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13403:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getConstantBinarySectionAccess().getDataXExpressionParserRuleCall_2_0_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__ConstantBinarySection__DataAssignment_2_027484);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__ConstantBinarySection__DataAssignment_2_027175);
             ruleXExpression();
 
             state._fsp--;
@@ -38872,28 +38443,28 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ReferenceBinarySection__IncAssignment_1"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13569:1: rule__ReferenceBinarySection__IncAssignment_1 : ( ( ruleQualifiedName ) ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13412:1: rule__ReferenceBinarySection__IncAssignment_1 : ( ( ruleQualifiedName ) ) ;
     public final void rule__ReferenceBinarySection__IncAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13573:1: ( ( ( ruleQualifiedName ) ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13574:1: ( ( ruleQualifiedName ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13416:1: ( ( ( ruleQualifiedName ) ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13417:1: ( ( ruleQualifiedName ) )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13574:1: ( ( ruleQualifiedName ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13575:1: ( ruleQualifiedName )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13417:1: ( ( ruleQualifiedName ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13418:1: ( ruleQualifiedName )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getReferenceBinarySectionAccess().getIncLinkedBinaryCrossReference_1_0()); 
             }
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13576:1: ( ruleQualifiedName )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13577:1: ruleQualifiedName
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13419:1: ( ruleQualifiedName )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13420:1: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getReferenceBinarySectionAccess().getIncLinkedBinaryQualifiedNameParserRuleCall_1_0_1()); 
             }
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__ReferenceBinarySection__IncAssignment_127519);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__ReferenceBinarySection__IncAssignment_127210);
             ruleQualifiedName();
 
             state._fsp--;
@@ -38928,23 +38499,64 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__ReferenceBinarySection__IncAssignment_1"
 
 
+    // $ANTLR start "rule__XScriptValueExpression__ValueAssignment"
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13431:1: rule__XScriptValueExpression__ValueAssignment : ( RULE_SCRIPT ) ;
+    public final void rule__XScriptValueExpression__ValueAssignment() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13435:1: ( ( RULE_SCRIPT ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13436:1: ( RULE_SCRIPT )
+            {
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13436:1: ( RULE_SCRIPT )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13437:1: RULE_SCRIPT
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getXScriptValueExpressionAccess().getValueSCRIPTTerminalRuleCall_0()); 
+            }
+            match(input,RULE_SCRIPT,FOLLOW_RULE_SCRIPT_in_rule__XScriptValueExpression__ValueAssignment27245); if (state.failed) return ;
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getXScriptValueExpressionAccess().getValueSCRIPTTerminalRuleCall_0()); 
+            }
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__XScriptValueExpression__ValueAssignment"
+
+
     // $ANTLR start "rule__XSizeOfExpression__TypeAssignment_2"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13588:1: rule__XSizeOfExpression__TypeAssignment_2 : ( ruleTypeDef ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13446:1: rule__XSizeOfExpression__TypeAssignment_2 : ( ruleTypeDef ) ;
     public final void rule__XSizeOfExpression__TypeAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13592:1: ( ( ruleTypeDef ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13593:1: ( ruleTypeDef )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13450:1: ( ( ruleTypeDef ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13451:1: ( ruleTypeDef )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13593:1: ( ruleTypeDef )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13594:1: ruleTypeDef
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13451:1: ( ruleTypeDef )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13452:1: ruleTypeDef
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXSizeOfExpressionAccess().getTypeTypeDefParserRuleCall_2_0()); 
             }
-            pushFollow(FOLLOW_ruleTypeDef_in_rule__XSizeOfExpression__TypeAssignment_227554);
+            pushFollow(FOLLOW_ruleTypeDef_in_rule__XSizeOfExpression__TypeAssignment_227276);
             ruleTypeDef();
 
             state._fsp--;
@@ -38974,28 +38586,28 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__XStructExpression__TypeAssignment_0"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13603:1: rule__XStructExpression__TypeAssignment_0 : ( ( ruleReferenceID ) ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13461:1: rule__XStructExpression__TypeAssignment_0 : ( ( ruleReferenceID ) ) ;
     public final void rule__XStructExpression__TypeAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13607:1: ( ( ( ruleReferenceID ) ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13608:1: ( ( ruleReferenceID ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13465:1: ( ( ( ruleReferenceID ) ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13466:1: ( ( ruleReferenceID ) )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13608:1: ( ( ruleReferenceID ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13609:1: ( ruleReferenceID )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13466:1: ( ( ruleReferenceID ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13467:1: ( ruleReferenceID )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXStructExpressionAccess().getTypeTypeCrossReference_0_0()); 
             }
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13610:1: ( ruleReferenceID )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13611:1: ruleReferenceID
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13468:1: ( ruleReferenceID )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13469:1: ruleReferenceID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXStructExpressionAccess().getTypeTypeReferenceIDParserRuleCall_0_0_1()); 
             }
-            pushFollow(FOLLOW_ruleReferenceID_in_rule__XStructExpression__TypeAssignment_027589);
+            pushFollow(FOLLOW_ruleReferenceID_in_rule__XStructExpression__TypeAssignment_027311);
             ruleReferenceID();
 
             state._fsp--;
@@ -39031,22 +38643,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__XStructExpression__ValuesAssignment_2"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13622:1: rule__XStructExpression__ValuesAssignment_2 : ( ruleXExpression ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13480:1: rule__XStructExpression__ValuesAssignment_2 : ( ruleXExpression ) ;
     public final void rule__XStructExpression__ValuesAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13626:1: ( ( ruleXExpression ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13627:1: ( ruleXExpression )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13484:1: ( ( ruleXExpression ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13485:1: ( ruleXExpression )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13627:1: ( ruleXExpression )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13628:1: ruleXExpression
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13485:1: ( ruleXExpression )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13486:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXStructExpressionAccess().getValuesXExpressionParserRuleCall_2_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XStructExpression__ValuesAssignment_227624);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XStructExpression__ValuesAssignment_227346);
             ruleXExpression();
 
             state._fsp--;
@@ -39076,22 +38688,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__XStructExpression__ValuesAssignment_3_1"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13637:1: rule__XStructExpression__ValuesAssignment_3_1 : ( ruleXExpression ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13495:1: rule__XStructExpression__ValuesAssignment_3_1 : ( ruleXExpression ) ;
     public final void rule__XStructExpression__ValuesAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13641:1: ( ( ruleXExpression ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13642:1: ( ruleXExpression )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13499:1: ( ( ruleXExpression ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13500:1: ( ruleXExpression )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13642:1: ( ruleXExpression )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13643:1: ruleXExpression
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13500:1: ( ruleXExpression )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13501:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXStructExpressionAccess().getValuesXExpressionParserRuleCall_3_1_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XStructExpression__ValuesAssignment_3_127655);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XStructExpression__ValuesAssignment_3_127377);
             ruleXExpression();
 
             state._fsp--;
@@ -39121,22 +38733,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__XExpression1__OperatorAssignment_0"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13652:1: rule__XExpression1__OperatorAssignment_0 : ( ruleUNARY_OPERATOR ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13510:1: rule__XExpression1__OperatorAssignment_0 : ( ruleUNARY_OPERATOR ) ;
     public final void rule__XExpression1__OperatorAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13656:1: ( ( ruleUNARY_OPERATOR ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13657:1: ( ruleUNARY_OPERATOR )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13514:1: ( ( ruleUNARY_OPERATOR ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13515:1: ( ruleUNARY_OPERATOR )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13657:1: ( ruleUNARY_OPERATOR )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13658:1: ruleUNARY_OPERATOR
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13515:1: ( ruleUNARY_OPERATOR )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13516:1: ruleUNARY_OPERATOR
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXExpression1Access().getOperatorUNARY_OPERATOREnumRuleCall_0_0()); 
             }
-            pushFollow(FOLLOW_ruleUNARY_OPERATOR_in_rule__XExpression1__OperatorAssignment_027686);
+            pushFollow(FOLLOW_ruleUNARY_OPERATOR_in_rule__XExpression1__OperatorAssignment_027408);
             ruleUNARY_OPERATOR();
 
             state._fsp--;
@@ -39166,22 +38778,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__XExpression1__AAssignment_1"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13667:1: rule__XExpression1__AAssignment_1 : ( ruleXExpression0 ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13525:1: rule__XExpression1__AAssignment_1 : ( ruleXExpression0 ) ;
     public final void rule__XExpression1__AAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13671:1: ( ( ruleXExpression0 ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13672:1: ( ruleXExpression0 )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13529:1: ( ( ruleXExpression0 ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13530:1: ( ruleXExpression0 )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13672:1: ( ruleXExpression0 )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13673:1: ruleXExpression0
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13530:1: ( ruleXExpression0 )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13531:1: ruleXExpression0
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXExpression1Access().getAXExpression0ParserRuleCall_1_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression0_in_rule__XExpression1__AAssignment_127717);
+            pushFollow(FOLLOW_ruleXExpression0_in_rule__XExpression1__AAssignment_127439);
             ruleXExpression0();
 
             state._fsp--;
@@ -39211,22 +38823,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__XExpression0__AAssignment_0"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13682:1: rule__XExpression0__AAssignment_0 : ( ruleXExpressionM1 ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13540:1: rule__XExpression0__AAssignment_0 : ( ruleXExpressionM1 ) ;
     public final void rule__XExpression0__AAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13686:1: ( ( ruleXExpressionM1 ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13687:1: ( ruleXExpressionM1 )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13544:1: ( ( ruleXExpressionM1 ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13545:1: ( ruleXExpressionM1 )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13687:1: ( ruleXExpressionM1 )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13688:1: ruleXExpressionM1
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13545:1: ( ruleXExpressionM1 )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13546:1: ruleXExpressionM1
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXExpression0Access().getAXExpressionM1ParserRuleCall_0_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpressionM1_in_rule__XExpression0__AAssignment_027748);
+            pushFollow(FOLLOW_ruleXExpressionM1_in_rule__XExpression0__AAssignment_027470);
             ruleXExpressionM1();
 
             state._fsp--;
@@ -39256,22 +38868,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__XExpression0__MemberAssignment_1_1"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13697:1: rule__XExpression0__MemberAssignment_1_1 : ( RULE_ID ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13555:1: rule__XExpression0__MemberAssignment_1_1 : ( RULE_ID ) ;
     public final void rule__XExpression0__MemberAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13701:1: ( ( RULE_ID ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13702:1: ( RULE_ID )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13559:1: ( ( RULE_ID ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13560:1: ( RULE_ID )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13702:1: ( RULE_ID )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13703:1: RULE_ID
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13560:1: ( RULE_ID )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13561:1: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXExpression0Access().getMemberIDTerminalRuleCall_1_1_0()); 
             }
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__XExpression0__MemberAssignment_1_127779); if (state.failed) return ;
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__XExpression0__MemberAssignment_1_127501); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getXExpression0Access().getMemberIDTerminalRuleCall_1_1_0()); 
             }
@@ -39297,22 +38909,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__XExpressionM1__AAssignment_0"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13712:1: rule__XExpressionM1__AAssignment_0 : ( ruleXPrimaryExpression ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13570:1: rule__XExpressionM1__AAssignment_0 : ( ruleXPrimaryExpression ) ;
     public final void rule__XExpressionM1__AAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13716:1: ( ( ruleXPrimaryExpression ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13717:1: ( ruleXPrimaryExpression )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13574:1: ( ( ruleXPrimaryExpression ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13575:1: ( ruleXPrimaryExpression )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13717:1: ( ruleXPrimaryExpression )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13718:1: ruleXPrimaryExpression
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13575:1: ( ruleXPrimaryExpression )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13576:1: ruleXPrimaryExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXExpressionM1Access().getAXPrimaryExpressionParserRuleCall_0_0()); 
             }
-            pushFollow(FOLLOW_ruleXPrimaryExpression_in_rule__XExpressionM1__AAssignment_027810);
+            pushFollow(FOLLOW_ruleXPrimaryExpression_in_rule__XExpressionM1__AAssignment_027532);
             ruleXPrimaryExpression();
 
             state._fsp--;
@@ -39342,22 +38954,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__XExpressionM1__IndexAssignment_1_1"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13727:1: rule__XExpressionM1__IndexAssignment_1_1 : ( ruleXExpression ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13585:1: rule__XExpressionM1__IndexAssignment_1_1 : ( ruleXExpression ) ;
     public final void rule__XExpressionM1__IndexAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13731:1: ( ( ruleXExpression ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13732:1: ( ruleXExpression )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13589:1: ( ( ruleXExpression ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13590:1: ( ruleXExpression )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13732:1: ( ruleXExpression )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13733:1: ruleXExpression
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13590:1: ( ruleXExpression )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13591:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXExpressionM1Access().getIndexXExpressionParserRuleCall_1_1_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XExpressionM1__IndexAssignment_1_127841);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XExpressionM1__IndexAssignment_1_127563);
             ruleXExpression();
 
             state._fsp--;
@@ -39387,22 +38999,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__XExpression2__AAssignment_0"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13742:1: rule__XExpression2__AAssignment_0 : ( ruleXExpression1 ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13600:1: rule__XExpression2__AAssignment_0 : ( ruleXExpression1 ) ;
     public final void rule__XExpression2__AAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13746:1: ( ( ruleXExpression1 ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13747:1: ( ruleXExpression1 )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13604:1: ( ( ruleXExpression1 ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13605:1: ( ruleXExpression1 )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13747:1: ( ruleXExpression1 )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13748:1: ruleXExpression1
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13605:1: ( ruleXExpression1 )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13606:1: ruleXExpression1
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXExpression2Access().getAXExpression1ParserRuleCall_0_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression1_in_rule__XExpression2__AAssignment_027872);
+            pushFollow(FOLLOW_ruleXExpression1_in_rule__XExpression2__AAssignment_027594);
             ruleXExpression1();
 
             state._fsp--;
@@ -39432,22 +39044,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__XExpression2__OpAssignment_1_0"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13757:1: rule__XExpression2__OpAssignment_1_0 : ( ruleMULTIPLICATIVE_OPERATOR ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13615:1: rule__XExpression2__OpAssignment_1_0 : ( ruleMULTIPLICATIVE_OPERATOR ) ;
     public final void rule__XExpression2__OpAssignment_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13761:1: ( ( ruleMULTIPLICATIVE_OPERATOR ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13762:1: ( ruleMULTIPLICATIVE_OPERATOR )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13619:1: ( ( ruleMULTIPLICATIVE_OPERATOR ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13620:1: ( ruleMULTIPLICATIVE_OPERATOR )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13762:1: ( ruleMULTIPLICATIVE_OPERATOR )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13763:1: ruleMULTIPLICATIVE_OPERATOR
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13620:1: ( ruleMULTIPLICATIVE_OPERATOR )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13621:1: ruleMULTIPLICATIVE_OPERATOR
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXExpression2Access().getOpMULTIPLICATIVE_OPERATOREnumRuleCall_1_0_0()); 
             }
-            pushFollow(FOLLOW_ruleMULTIPLICATIVE_OPERATOR_in_rule__XExpression2__OpAssignment_1_027903);
+            pushFollow(FOLLOW_ruleMULTIPLICATIVE_OPERATOR_in_rule__XExpression2__OpAssignment_1_027625);
             ruleMULTIPLICATIVE_OPERATOR();
 
             state._fsp--;
@@ -39477,22 +39089,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__XExpression2__BAssignment_1_1"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13772:1: rule__XExpression2__BAssignment_1_1 : ( ruleXExpression2 ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13630:1: rule__XExpression2__BAssignment_1_1 : ( ruleXExpression2 ) ;
     public final void rule__XExpression2__BAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13776:1: ( ( ruleXExpression2 ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13777:1: ( ruleXExpression2 )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13634:1: ( ( ruleXExpression2 ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13635:1: ( ruleXExpression2 )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13777:1: ( ruleXExpression2 )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13778:1: ruleXExpression2
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13635:1: ( ruleXExpression2 )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13636:1: ruleXExpression2
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXExpression2Access().getBXExpression2ParserRuleCall_1_1_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression2_in_rule__XExpression2__BAssignment_1_127934);
+            pushFollow(FOLLOW_ruleXExpression2_in_rule__XExpression2__BAssignment_1_127656);
             ruleXExpression2();
 
             state._fsp--;
@@ -39522,22 +39134,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__XExpression3__AAssignment_0"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13787:1: rule__XExpression3__AAssignment_0 : ( ruleXExpression2 ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13645:1: rule__XExpression3__AAssignment_0 : ( ruleXExpression2 ) ;
     public final void rule__XExpression3__AAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13791:1: ( ( ruleXExpression2 ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13792:1: ( ruleXExpression2 )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13649:1: ( ( ruleXExpression2 ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13650:1: ( ruleXExpression2 )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13792:1: ( ruleXExpression2 )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13793:1: ruleXExpression2
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13650:1: ( ruleXExpression2 )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13651:1: ruleXExpression2
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXExpression3Access().getAXExpression2ParserRuleCall_0_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression2_in_rule__XExpression3__AAssignment_027965);
+            pushFollow(FOLLOW_ruleXExpression2_in_rule__XExpression3__AAssignment_027687);
             ruleXExpression2();
 
             state._fsp--;
@@ -39567,22 +39179,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__XExpression3__OpAssignment_1_0"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13802:1: rule__XExpression3__OpAssignment_1_0 : ( ruleADDITIVE_OPERATOR ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13660:1: rule__XExpression3__OpAssignment_1_0 : ( ruleADDITIVE_OPERATOR ) ;
     public final void rule__XExpression3__OpAssignment_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13806:1: ( ( ruleADDITIVE_OPERATOR ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13807:1: ( ruleADDITIVE_OPERATOR )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13664:1: ( ( ruleADDITIVE_OPERATOR ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13665:1: ( ruleADDITIVE_OPERATOR )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13807:1: ( ruleADDITIVE_OPERATOR )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13808:1: ruleADDITIVE_OPERATOR
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13665:1: ( ruleADDITIVE_OPERATOR )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13666:1: ruleADDITIVE_OPERATOR
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXExpression3Access().getOpADDITIVE_OPERATOREnumRuleCall_1_0_0()); 
             }
-            pushFollow(FOLLOW_ruleADDITIVE_OPERATOR_in_rule__XExpression3__OpAssignment_1_027996);
+            pushFollow(FOLLOW_ruleADDITIVE_OPERATOR_in_rule__XExpression3__OpAssignment_1_027718);
             ruleADDITIVE_OPERATOR();
 
             state._fsp--;
@@ -39612,22 +39224,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__XExpression3__BAssignment_1_1"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13817:1: rule__XExpression3__BAssignment_1_1 : ( ruleXExpression2 ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13675:1: rule__XExpression3__BAssignment_1_1 : ( ruleXExpression2 ) ;
     public final void rule__XExpression3__BAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13821:1: ( ( ruleXExpression2 ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13822:1: ( ruleXExpression2 )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13679:1: ( ( ruleXExpression2 ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13680:1: ( ruleXExpression2 )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13822:1: ( ruleXExpression2 )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13823:1: ruleXExpression2
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13680:1: ( ruleXExpression2 )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13681:1: ruleXExpression2
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXExpression3Access().getBXExpression2ParserRuleCall_1_1_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression2_in_rule__XExpression3__BAssignment_1_128027);
+            pushFollow(FOLLOW_ruleXExpression2_in_rule__XExpression3__BAssignment_1_127749);
             ruleXExpression2();
 
             state._fsp--;
@@ -39657,22 +39269,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__XExpression4__AAssignment_0"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13832:1: rule__XExpression4__AAssignment_0 : ( ruleXExpression3 ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13690:1: rule__XExpression4__AAssignment_0 : ( ruleXExpression3 ) ;
     public final void rule__XExpression4__AAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13836:1: ( ( ruleXExpression3 ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13837:1: ( ruleXExpression3 )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13694:1: ( ( ruleXExpression3 ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13695:1: ( ruleXExpression3 )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13837:1: ( ruleXExpression3 )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13838:1: ruleXExpression3
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13695:1: ( ruleXExpression3 )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13696:1: ruleXExpression3
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXExpression4Access().getAXExpression3ParserRuleCall_0_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression3_in_rule__XExpression4__AAssignment_028058);
+            pushFollow(FOLLOW_ruleXExpression3_in_rule__XExpression4__AAssignment_027780);
             ruleXExpression3();
 
             state._fsp--;
@@ -39702,22 +39314,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__XExpression4__OpAssignment_1_0"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13847:1: rule__XExpression4__OpAssignment_1_0 : ( ruleEQUALITY_OPERATOR ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13705:1: rule__XExpression4__OpAssignment_1_0 : ( ruleEQUALITY_OPERATOR ) ;
     public final void rule__XExpression4__OpAssignment_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13851:1: ( ( ruleEQUALITY_OPERATOR ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13852:1: ( ruleEQUALITY_OPERATOR )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13709:1: ( ( ruleEQUALITY_OPERATOR ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13710:1: ( ruleEQUALITY_OPERATOR )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13852:1: ( ruleEQUALITY_OPERATOR )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13853:1: ruleEQUALITY_OPERATOR
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13710:1: ( ruleEQUALITY_OPERATOR )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13711:1: ruleEQUALITY_OPERATOR
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXExpression4Access().getOpEQUALITY_OPERATOREnumRuleCall_1_0_0()); 
             }
-            pushFollow(FOLLOW_ruleEQUALITY_OPERATOR_in_rule__XExpression4__OpAssignment_1_028089);
+            pushFollow(FOLLOW_ruleEQUALITY_OPERATOR_in_rule__XExpression4__OpAssignment_1_027811);
             ruleEQUALITY_OPERATOR();
 
             state._fsp--;
@@ -39747,22 +39359,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__XExpression4__BAssignment_1_1"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13862:1: rule__XExpression4__BAssignment_1_1 : ( ruleXExpression3 ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13720:1: rule__XExpression4__BAssignment_1_1 : ( ruleXExpression3 ) ;
     public final void rule__XExpression4__BAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13866:1: ( ( ruleXExpression3 ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13867:1: ( ruleXExpression3 )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13724:1: ( ( ruleXExpression3 ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13725:1: ( ruleXExpression3 )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13867:1: ( ruleXExpression3 )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13868:1: ruleXExpression3
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13725:1: ( ruleXExpression3 )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13726:1: ruleXExpression3
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXExpression4Access().getBXExpression3ParserRuleCall_1_1_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression3_in_rule__XExpression4__BAssignment_1_128120);
+            pushFollow(FOLLOW_ruleXExpression3_in_rule__XExpression4__BAssignment_1_127842);
             ruleXExpression3();
 
             state._fsp--;
@@ -39792,22 +39404,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__XExpression5__AAssignment_0"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13877:1: rule__XExpression5__AAssignment_0 : ( ruleXExpression4 ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13735:1: rule__XExpression5__AAssignment_0 : ( ruleXExpression4 ) ;
     public final void rule__XExpression5__AAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13881:1: ( ( ruleXExpression4 ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13882:1: ( ruleXExpression4 )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13739:1: ( ( ruleXExpression4 ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13740:1: ( ruleXExpression4 )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13882:1: ( ruleXExpression4 )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13883:1: ruleXExpression4
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13740:1: ( ruleXExpression4 )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13741:1: ruleXExpression4
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXExpression5Access().getAXExpression4ParserRuleCall_0_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression4_in_rule__XExpression5__AAssignment_028151);
+            pushFollow(FOLLOW_ruleXExpression4_in_rule__XExpression5__AAssignment_027873);
             ruleXExpression4();
 
             state._fsp--;
@@ -39837,22 +39449,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__XExpression5__OpAssignment_1_0"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13892:1: rule__XExpression5__OpAssignment_1_0 : ( ruleBOOLEAN_OPERATOR ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13750:1: rule__XExpression5__OpAssignment_1_0 : ( ruleBOOLEAN_OPERATOR ) ;
     public final void rule__XExpression5__OpAssignment_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13896:1: ( ( ruleBOOLEAN_OPERATOR ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13897:1: ( ruleBOOLEAN_OPERATOR )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13754:1: ( ( ruleBOOLEAN_OPERATOR ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13755:1: ( ruleBOOLEAN_OPERATOR )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13897:1: ( ruleBOOLEAN_OPERATOR )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13898:1: ruleBOOLEAN_OPERATOR
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13755:1: ( ruleBOOLEAN_OPERATOR )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13756:1: ruleBOOLEAN_OPERATOR
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXExpression5Access().getOpBOOLEAN_OPERATOREnumRuleCall_1_0_0()); 
             }
-            pushFollow(FOLLOW_ruleBOOLEAN_OPERATOR_in_rule__XExpression5__OpAssignment_1_028182);
+            pushFollow(FOLLOW_ruleBOOLEAN_OPERATOR_in_rule__XExpression5__OpAssignment_1_027904);
             ruleBOOLEAN_OPERATOR();
 
             state._fsp--;
@@ -39882,22 +39494,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__XExpression5__BAssignment_1_1"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13907:1: rule__XExpression5__BAssignment_1_1 : ( ruleXExpression4 ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13765:1: rule__XExpression5__BAssignment_1_1 : ( ruleXExpression4 ) ;
     public final void rule__XExpression5__BAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13911:1: ( ( ruleXExpression4 ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13912:1: ( ruleXExpression4 )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13769:1: ( ( ruleXExpression4 ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13770:1: ( ruleXExpression4 )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13912:1: ( ruleXExpression4 )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13913:1: ruleXExpression4
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13770:1: ( ruleXExpression4 )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13771:1: ruleXExpression4
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXExpression5Access().getBXExpression4ParserRuleCall_1_1_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression4_in_rule__XExpression5__BAssignment_1_128213);
+            pushFollow(FOLLOW_ruleXExpression4_in_rule__XExpression5__BAssignment_1_127935);
             ruleXExpression4();
 
             state._fsp--;
@@ -39927,22 +39539,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__XExpression6__RefAssignment_0_0"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13922:1: rule__XExpression6__RefAssignment_0_0 : ( ruleVariableReference ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13780:1: rule__XExpression6__RefAssignment_0_0 : ( ruleVariableReference ) ;
     public final void rule__XExpression6__RefAssignment_0_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13926:1: ( ( ruleVariableReference ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13927:1: ( ruleVariableReference )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13784:1: ( ( ruleVariableReference ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13785:1: ( ruleVariableReference )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13927:1: ( ruleVariableReference )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13928:1: ruleVariableReference
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13785:1: ( ruleVariableReference )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13786:1: ruleVariableReference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXExpression6Access().getRefVariableReferenceParserRuleCall_0_0_0()); 
             }
-            pushFollow(FOLLOW_ruleVariableReference_in_rule__XExpression6__RefAssignment_0_028244);
+            pushFollow(FOLLOW_ruleVariableReference_in_rule__XExpression6__RefAssignment_0_027966);
             ruleVariableReference();
 
             state._fsp--;
@@ -39972,22 +39584,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__XExpression6__AAssignment_1"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13937:1: rule__XExpression6__AAssignment_1 : ( ruleXExpression5 ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13795:1: rule__XExpression6__AAssignment_1 : ( ruleXExpression5 ) ;
     public final void rule__XExpression6__AAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13941:1: ( ( ruleXExpression5 ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13942:1: ( ruleXExpression5 )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13799:1: ( ( ruleXExpression5 ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13800:1: ( ruleXExpression5 )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13942:1: ( ruleXExpression5 )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13943:1: ruleXExpression5
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13800:1: ( ruleXExpression5 )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13801:1: ruleXExpression5
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXExpression6Access().getAXExpression5ParserRuleCall_1_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression5_in_rule__XExpression6__AAssignment_128275);
+            pushFollow(FOLLOW_ruleXExpression5_in_rule__XExpression6__AAssignment_127997);
             ruleXExpression5();
 
             state._fsp--;
@@ -40017,22 +39629,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__XExpressionLiteral__ValueAssignment"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13952:1: rule__XExpressionLiteral__ValueAssignment : ( ruleLITERAL ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13810:1: rule__XExpressionLiteral__ValueAssignment : ( ruleLITERAL ) ;
     public final void rule__XExpressionLiteral__ValueAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13956:1: ( ( ruleLITERAL ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13957:1: ( ruleLITERAL )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13814:1: ( ( ruleLITERAL ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13815:1: ( ruleLITERAL )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13957:1: ( ruleLITERAL )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13958:1: ruleLITERAL
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13815:1: ( ruleLITERAL )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13816:1: ruleLITERAL
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXExpressionLiteralAccess().getValueLITERALParserRuleCall_0()); 
             }
-            pushFollow(FOLLOW_ruleLITERAL_in_rule__XExpressionLiteral__ValueAssignment28306);
+            pushFollow(FOLLOW_ruleLITERAL_in_rule__XExpressionLiteral__ValueAssignment28028);
             ruleLITERAL();
 
             state._fsp--;
@@ -40062,22 +39674,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__XIsLiteralExpression__RefAssignment_2"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13967:1: rule__XIsLiteralExpression__RefAssignment_2 : ( ruleVariableReference ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13825:1: rule__XIsLiteralExpression__RefAssignment_2 : ( ruleVariableReference ) ;
     public final void rule__XIsLiteralExpression__RefAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13971:1: ( ( ruleVariableReference ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13972:1: ( ruleVariableReference )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13829:1: ( ( ruleVariableReference ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13830:1: ( ruleVariableReference )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13972:1: ( ruleVariableReference )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13973:1: ruleVariableReference
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13830:1: ( ruleVariableReference )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13831:1: ruleVariableReference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXIsLiteralExpressionAccess().getRefVariableReferenceParserRuleCall_2_0()); 
             }
-            pushFollow(FOLLOW_ruleVariableReference_in_rule__XIsLiteralExpression__RefAssignment_228337);
+            pushFollow(FOLLOW_ruleVariableReference_in_rule__XIsLiteralExpression__RefAssignment_228059);
             ruleVariableReference();
 
             state._fsp--;
@@ -40107,22 +39719,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__XIfExpression__IfAssignment_2"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13982:1: rule__XIfExpression__IfAssignment_2 : ( ruleXExpression ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13840:1: rule__XIfExpression__IfAssignment_2 : ( ruleXExpression ) ;
     public final void rule__XIfExpression__IfAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13986:1: ( ( ruleXExpression ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13987:1: ( ruleXExpression )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13844:1: ( ( ruleXExpression ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13845:1: ( ruleXExpression )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13987:1: ( ruleXExpression )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13988:1: ruleXExpression
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13845:1: ( ruleXExpression )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13846:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXIfExpressionAccess().getIfXExpressionParserRuleCall_2_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XIfExpression__IfAssignment_228368);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XIfExpression__IfAssignment_228090);
             ruleXExpression();
 
             state._fsp--;
@@ -40152,22 +39764,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__XIfExpression__ThenAssignment_5"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13997:1: rule__XIfExpression__ThenAssignment_5 : ( ruleOperationBlock ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13855:1: rule__XIfExpression__ThenAssignment_5 : ( ruleOperationBlock ) ;
     public final void rule__XIfExpression__ThenAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:14001:1: ( ( ruleOperationBlock ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:14002:1: ( ruleOperationBlock )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13859:1: ( ( ruleOperationBlock ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13860:1: ( ruleOperationBlock )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:14002:1: ( ruleOperationBlock )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:14003:1: ruleOperationBlock
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13860:1: ( ruleOperationBlock )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13861:1: ruleOperationBlock
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXIfExpressionAccess().getThenOperationBlockParserRuleCall_5_0()); 
             }
-            pushFollow(FOLLOW_ruleOperationBlock_in_rule__XIfExpression__ThenAssignment_528399);
+            pushFollow(FOLLOW_ruleOperationBlock_in_rule__XIfExpression__ThenAssignment_528121);
             ruleOperationBlock();
 
             state._fsp--;
@@ -40197,22 +39809,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__XIfExpression__ElseAssignment_7_2"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:14012:1: rule__XIfExpression__ElseAssignment_7_2 : ( ruleOperationBlock ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13870:1: rule__XIfExpression__ElseAssignment_7_2 : ( ruleOperationBlock ) ;
     public final void rule__XIfExpression__ElseAssignment_7_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:14016:1: ( ( ruleOperationBlock ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:14017:1: ( ruleOperationBlock )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13874:1: ( ( ruleOperationBlock ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13875:1: ( ruleOperationBlock )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:14017:1: ( ruleOperationBlock )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:14018:1: ruleOperationBlock
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13875:1: ( ruleOperationBlock )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13876:1: ruleOperationBlock
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXIfExpressionAccess().getElseOperationBlockParserRuleCall_7_2_0()); 
             }
-            pushFollow(FOLLOW_ruleOperationBlock_in_rule__XIfExpression__ElseAssignment_7_228430);
+            pushFollow(FOLLOW_ruleOperationBlock_in_rule__XIfExpression__ElseAssignment_7_228152);
             ruleOperationBlock();
 
             state._fsp--;
@@ -40242,22 +39854,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__XWhileExpression__CondAssignment_2"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:14027:1: rule__XWhileExpression__CondAssignment_2 : ( ruleXExpression ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13885:1: rule__XWhileExpression__CondAssignment_2 : ( ruleXExpression ) ;
     public final void rule__XWhileExpression__CondAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:14031:1: ( ( ruleXExpression ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:14032:1: ( ruleXExpression )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13889:1: ( ( ruleXExpression ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13890:1: ( ruleXExpression )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:14032:1: ( ruleXExpression )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:14033:1: ruleXExpression
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13890:1: ( ruleXExpression )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13891:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXWhileExpressionAccess().getCondXExpressionParserRuleCall_2_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XWhileExpression__CondAssignment_228461);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XWhileExpression__CondAssignment_228183);
             ruleXExpression();
 
             state._fsp--;
@@ -40287,22 +39899,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__XWhileExpression__DoAssignment_5"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:14042:1: rule__XWhileExpression__DoAssignment_5 : ( ruleOperationBlock ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13900:1: rule__XWhileExpression__DoAssignment_5 : ( ruleOperationBlock ) ;
     public final void rule__XWhileExpression__DoAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:14046:1: ( ( ruleOperationBlock ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:14047:1: ( ruleOperationBlock )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13904:1: ( ( ruleOperationBlock ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13905:1: ( ruleOperationBlock )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:14047:1: ( ruleOperationBlock )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:14048:1: ruleOperationBlock
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13905:1: ( ruleOperationBlock )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13906:1: ruleOperationBlock
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXWhileExpressionAccess().getDoOperationBlockParserRuleCall_5_0()); 
             }
-            pushFollow(FOLLOW_ruleOperationBlock_in_rule__XWhileExpression__DoAssignment_528492);
+            pushFollow(FOLLOW_ruleOperationBlock_in_rule__XWhileExpression__DoAssignment_528214);
             ruleOperationBlock();
 
             state._fsp--;
@@ -40332,22 +39944,22 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__XParenthesizedExpression__AAssignment_1"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:14057:1: rule__XParenthesizedExpression__AAssignment_1 : ( ruleXExpression ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13915:1: rule__XParenthesizedExpression__AAssignment_1 : ( ruleXExpression ) ;
     public final void rule__XParenthesizedExpression__AAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:14061:1: ( ( ruleXExpression ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:14062:1: ( ruleXExpression )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13919:1: ( ( ruleXExpression ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13920:1: ( ruleXExpression )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:14062:1: ( ruleXExpression )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:14063:1: ruleXExpression
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13920:1: ( ruleXExpression )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:13921:1: ruleXExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXParenthesizedExpressionAccess().getAXExpressionParserRuleCall_1_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__XParenthesizedExpression__AAssignment_128523);
+            pushFollow(FOLLOW_ruleXExpression_in_rule__XParenthesizedExpression__AAssignment_128245);
             ruleXExpression();
 
             state._fsp--;
@@ -40374,92 +39986,6 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
         return ;
     }
     // $ANTLR end "rule__XParenthesizedExpression__AAssignment_1"
-
-
-    // $ANTLR start "rule__XScriptedExpression__ScriptAssignment_0"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:14072:1: rule__XScriptedExpression__ScriptAssignment_0 : ( RULE_SCRIPT ) ;
-    public final void rule__XScriptedExpression__ScriptAssignment_0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:14076:1: ( ( RULE_SCRIPT ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:14077:1: ( RULE_SCRIPT )
-            {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:14077:1: ( RULE_SCRIPT )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:14078:1: RULE_SCRIPT
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getXScriptedExpressionAccess().getScriptSCRIPTTerminalRuleCall_0_0()); 
-            }
-            match(input,RULE_SCRIPT,FOLLOW_RULE_SCRIPT_in_rule__XScriptedExpression__ScriptAssignment_028554); if (state.failed) return ;
-            if ( state.backtracking==0 ) {
-               after(grammarAccess.getXScriptedExpressionAccess().getScriptSCRIPTTerminalRuleCall_0_0()); 
-            }
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__XScriptedExpression__ScriptAssignment_0"
-
-
-    // $ANTLR start "rule__XScriptedExpression__ConditionalAssignment_1_1"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:14087:1: rule__XScriptedExpression__ConditionalAssignment_1_1 : ( ruleOperationBlock ) ;
-    public final void rule__XScriptedExpression__ConditionalAssignment_1_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:14091:1: ( ( ruleOperationBlock ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:14092:1: ( ruleOperationBlock )
-            {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:14092:1: ( ruleOperationBlock )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:14093:1: ruleOperationBlock
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getXScriptedExpressionAccess().getConditionalOperationBlockParserRuleCall_1_1_0()); 
-            }
-            pushFollow(FOLLOW_ruleOperationBlock_in_rule__XScriptedExpression__ConditionalAssignment_1_128585);
-            ruleOperationBlock();
-
-            state._fsp--;
-            if (state.failed) return ;
-            if ( state.backtracking==0 ) {
-               after(grammarAccess.getXScriptedExpressionAccess().getConditionalOperationBlockParserRuleCall_1_1_0()); 
-            }
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__XScriptedExpression__ConditionalAssignment_1_1"
 
     // $ANTLR start synpred107_InternalESyntax
     public final void synpred107_InternalESyntax_fragment() throws RecognitionException {   
@@ -40496,31 +40022,32 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
     protected DFA12 dfa12 = new DFA12(this);
     static final String DFA12_eotS =
-        "\13\uffff";
+        "\14\uffff";
     static final String DFA12_eofS =
-        "\4\uffff\1\10\5\uffff\1\10";
+        "\5\uffff\1\10\5\uffff\1\10";
     static final String DFA12_minS =
-        "\1\4\3\uffff\1\52\2\uffff\1\7\2\uffff\1\52";
+        "\1\4\4\uffff\1\52\1\uffff\1\7\3\uffff\1\52";
     static final String DFA12_maxS =
-        "\1\143\3\uffff\1\142\2\uffff\1\7\2\uffff\1\142";
+        "\1\143\4\uffff\1\142\1\uffff\1\7\3\uffff\1\142";
     static final String DFA12_acceptS =
-        "\1\uffff\1\1\1\2\1\3\1\uffff\1\7\1\6\1\uffff\1\4\1\5\1\uffff";
+        "\1\uffff\1\1\1\2\1\3\1\4\1\uffff\1\10\1\uffff\1\5\1\6\1\7\1\uffff";
     static final String DFA12_specialS =
-        "\13\uffff}>";
+        "\14\uffff}>";
     static final String[] DFA12_transitionS = {
-            "\3\1\1\4\111\uffff\1\2\17\uffff\1\5\1\uffff\1\3",
+            "\3\2\1\5\1\1\110\uffff\1\3\17\uffff\1\6\1\uffff\1\4",
+            "",
             "",
             "",
             "",
             "\1\10\3\uffff\14\10\1\7\1\uffff\1\10\1\uffff\1\10\11\uffff"+
-            "\2\10\2\uffff\1\6\1\10\3\uffff\1\11\1\10\17\uffff\1\10",
+            "\2\10\2\uffff\1\12\1\10\3\uffff\1\11\1\10\17\uffff\1\10",
             "",
+            "\1\13",
             "",
-            "\1\12",
             "",
             "",
             "\1\10\3\uffff\14\10\2\uffff\1\10\1\uffff\1\10\11\uffff\2\10"+
-            "\2\uffff\1\6\1\10\3\uffff\1\11\1\10\17\uffff\1\10"
+            "\2\uffff\1\12\1\10\3\uffff\1\11\1\10\17\uffff\1\10"
     };
 
     static final short[] DFA12_eot = DFA.unpackEncodedString(DFA12_eotS);
@@ -40553,7 +40080,7 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
             this.transition = DFA12_transition;
         }
         public String getDescription() {
-            return "2302:1: rule__XPrimaryExpression__Alternatives : ( ( ruleXExpressionLiteral ) | ( ruleXParenthesizedExpression ) | ( ruleXIsLiteralExpression ) | ( ruleVariableReference ) | ( ruleOperationCall ) | ( ruleXStructExpression ) | ( ruleXSizeOfExpression ) );";
+            return "2302:1: rule__XPrimaryExpression__Alternatives : ( ( ruleXScriptValueExpression ) | ( ruleXExpressionLiteral ) | ( ruleXParenthesizedExpression ) | ( ruleXIsLiteralExpression ) | ( ruleVariableReference ) | ( ruleOperationCall ) | ( ruleXStructExpression ) | ( ruleXSizeOfExpression ) );";
         }
     }
  
@@ -40690,60 +40217,60 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_ruleXPrimaryExpression_in_entryRuleXPrimaryExpression2645 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXPrimaryExpression2652 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__XPrimaryExpression__Alternatives_in_ruleXPrimaryExpression2678 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXSizeOfExpression_in_entryRuleXSizeOfExpression2705 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleXSizeOfExpression2712 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__XSizeOfExpression__Group__0_in_ruleXSizeOfExpression2738 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXStructExpression_in_entryRuleXStructExpression2765 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleXStructExpression2772 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__XStructExpression__Group__0_in_ruleXStructExpression2798 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression1_in_entryRuleXExpression12825 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleXExpression12832 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__XExpression1__Group__0_in_ruleXExpression12858 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression0_in_entryRuleXExpression02885 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleXExpression02892 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__XExpression0__Group__0_in_ruleXExpression02918 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpressionM1_in_entryRuleXExpressionM12945 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleXExpressionM12952 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__XExpressionM1__Group__0_in_ruleXExpressionM12978 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression2_in_entryRuleXExpression23005 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleXExpression23012 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__XExpression2__Group__0_in_ruleXExpression23038 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression3_in_entryRuleXExpression33065 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleXExpression33072 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__XExpression3__Group__0_in_ruleXExpression33098 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression4_in_entryRuleXExpression43125 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleXExpression43132 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__XExpression4__Group__0_in_ruleXExpression43158 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression5_in_entryRuleXExpression53185 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleXExpression53192 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__XExpression5__Group__0_in_ruleXExpression53218 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression6_in_entryRuleXExpression63245 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleXExpression63252 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__XExpression6__Group__0_in_ruleXExpression63278 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpressionLiteral_in_entryRuleXExpressionLiteral3305 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleXExpressionLiteral3312 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__XExpressionLiteral__ValueAssignment_in_ruleXExpressionLiteral3338 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXTopLevelExpression_in_entryRuleXTopLevelExpression3365 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleXTopLevelExpression3372 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__XTopLevelExpression__Alternatives_in_ruleXTopLevelExpression3398 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOpSingleAssign_in_entryRuleOpSingleAssign3425 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleOpSingleAssign3432 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_14_in_ruleOpSingleAssign3459 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXIsLiteralExpression_in_entryRuleXIsLiteralExpression3487 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleXIsLiteralExpression3494 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__XIsLiteralExpression__Group__0_in_ruleXIsLiteralExpression3520 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXIfExpression_in_entryRuleXIfExpression3547 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleXIfExpression3554 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__XIfExpression__Group__0_in_ruleXIfExpression3580 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXWhileExpression_in_entryRuleXWhileExpression3607 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleXWhileExpression3614 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__XWhileExpression__Group__0_in_ruleXWhileExpression3640 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXParenthesizedExpression_in_entryRuleXParenthesizedExpression3667 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleXParenthesizedExpression3674 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__XParenthesizedExpression__Group__0_in_ruleXParenthesizedExpression3700 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXScriptedExpression_in_entryRuleXScriptedExpression3727 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleXScriptedExpression3734 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__XScriptedExpression__Group__0_in_ruleXScriptedExpression3760 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXScriptValueExpression_in_entryRuleXScriptValueExpression2705 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleXScriptValueExpression2712 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__XScriptValueExpression__ValueAssignment_in_ruleXScriptValueExpression2738 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXSizeOfExpression_in_entryRuleXSizeOfExpression2765 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleXSizeOfExpression2772 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__XSizeOfExpression__Group__0_in_ruleXSizeOfExpression2798 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXStructExpression_in_entryRuleXStructExpression2825 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleXStructExpression2832 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__XStructExpression__Group__0_in_ruleXStructExpression2858 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression1_in_entryRuleXExpression12885 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleXExpression12892 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__XExpression1__Group__0_in_ruleXExpression12918 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression0_in_entryRuleXExpression02945 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleXExpression02952 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__XExpression0__Group__0_in_ruleXExpression02978 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpressionM1_in_entryRuleXExpressionM13005 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleXExpressionM13012 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__XExpressionM1__Group__0_in_ruleXExpressionM13038 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression2_in_entryRuleXExpression23065 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleXExpression23072 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__XExpression2__Group__0_in_ruleXExpression23098 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression3_in_entryRuleXExpression33125 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleXExpression33132 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__XExpression3__Group__0_in_ruleXExpression33158 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression4_in_entryRuleXExpression43185 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleXExpression43192 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__XExpression4__Group__0_in_ruleXExpression43218 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression5_in_entryRuleXExpression53245 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleXExpression53252 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__XExpression5__Group__0_in_ruleXExpression53278 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression6_in_entryRuleXExpression63305 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleXExpression63312 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__XExpression6__Group__0_in_ruleXExpression63338 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpressionLiteral_in_entryRuleXExpressionLiteral3365 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleXExpressionLiteral3372 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__XExpressionLiteral__ValueAssignment_in_ruleXExpressionLiteral3398 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXTopLevelExpression_in_entryRuleXTopLevelExpression3425 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleXTopLevelExpression3432 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__XTopLevelExpression__Alternatives_in_ruleXTopLevelExpression3458 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOpSingleAssign_in_entryRuleOpSingleAssign3485 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleOpSingleAssign3492 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_14_in_ruleOpSingleAssign3519 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXIsLiteralExpression_in_entryRuleXIsLiteralExpression3547 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleXIsLiteralExpression3554 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__XIsLiteralExpression__Group__0_in_ruleXIsLiteralExpression3580 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXIfExpression_in_entryRuleXIfExpression3607 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleXIfExpression3614 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__XIfExpression__Group__0_in_ruleXIfExpression3640 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXWhileExpression_in_entryRuleXWhileExpression3667 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleXWhileExpression3674 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__XWhileExpression__Group__0_in_ruleXWhileExpression3700 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXParenthesizedExpression_in_entryRuleXParenthesizedExpression3727 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleXParenthesizedExpression3734 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__XParenthesizedExpression__Group__0_in_ruleXParenthesizedExpression3760 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__PrimitiveKind__Alternatives_in_rulePrimitiveKind3797 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ParameterKind__Alternatives_in_ruleParameterKind3833 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__OperationRole__Alternatives_in_ruleOperationRole3869 = new BitSet(new long[]{0x0000000000000002L});
@@ -40790,17 +40317,17 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__FunctionBinarySection__InstancesAssignment_18_1_in_rule__FunctionBinarySection__Alternatives_184844 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__LinkedInstance__LinksAssignment_3_0_0_in_rule__LinkedInstance__Alternatives_3_04877 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__LinkedInstance__ConfsAssignment_3_0_1_in_rule__LinkedInstance__Alternatives_3_04895 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpressionLiteral_in_rule__XPrimaryExpression__Alternatives4928 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXParenthesizedExpression_in_rule__XPrimaryExpression__Alternatives4945 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXIsLiteralExpression_in_rule__XPrimaryExpression__Alternatives4962 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleVariableReference_in_rule__XPrimaryExpression__Alternatives4979 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOperationCall_in_rule__XPrimaryExpression__Alternatives4996 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXStructExpression_in_rule__XPrimaryExpression__Alternatives5013 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXSizeOfExpression_in_rule__XPrimaryExpression__Alternatives5030 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__XTopLevelExpression__Group_0__0_in_rule__XTopLevelExpression__Alternatives5062 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXIfExpression_in_rule__XTopLevelExpression__Alternatives5080 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXWhileExpression_in_rule__XTopLevelExpression__Alternatives5097 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXScriptedExpression_in_rule__XTopLevelExpression__Alternatives5114 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXScriptValueExpression_in_rule__XPrimaryExpression__Alternatives4928 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpressionLiteral_in_rule__XPrimaryExpression__Alternatives4945 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXParenthesizedExpression_in_rule__XPrimaryExpression__Alternatives4962 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXIsLiteralExpression_in_rule__XPrimaryExpression__Alternatives4979 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleVariableReference_in_rule__XPrimaryExpression__Alternatives4996 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOperationCall_in_rule__XPrimaryExpression__Alternatives5013 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXStructExpression_in_rule__XPrimaryExpression__Alternatives5030 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXSizeOfExpression_in_rule__XPrimaryExpression__Alternatives5047 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__XTopLevelExpression__Group_0__0_in_rule__XTopLevelExpression__Alternatives5079 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXIfExpression_in_rule__XTopLevelExpression__Alternatives5097 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXWhileExpression_in_rule__XTopLevelExpression__Alternatives5114 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_15_in_rule__PrimitiveKind__Alternatives5147 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_16_in_rule__PrimitiveKind__Alternatives5168 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_17_in_rule__PrimitiveKind__Alternatives5189 = new BitSet(new long[]{0x0000000000000002L});
@@ -41020,7 +40547,7 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__ArrayTypeDef__Group__0__Impl_in_rule__ArrayTypeDef__Group__010241 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
     public static final BitSet FOLLOW_rule__ArrayTypeDef__Group__1_in_rule__ArrayTypeDef__Group__010244 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_71_in_rule__ArrayTypeDef__Group__0__Impl10272 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ArrayTypeDef__Group__1__Impl_in_rule__ArrayTypeDef__Group__110303 = new BitSet(new long[]{0x00003C00000380F0L,0x0000000A000208A0L});
+    public static final BitSet FOLLOW_rule__ArrayTypeDef__Group__1__Impl_in_rule__ArrayTypeDef__Group__110303 = new BitSet(new long[]{0x00003C00000381F0L,0x0000000A000208A0L});
     public static final BitSet FOLLOW_rule__ArrayTypeDef__Group__2_in_rule__ArrayTypeDef__Group__110306 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_72_in_rule__ArrayTypeDef__Group__1__Impl10334 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ArrayTypeDef__Group__2__Impl_in_rule__ArrayTypeDef__Group__210365 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
@@ -41081,7 +40608,7 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__ConstantVariable__Group__3__Impl_in_rule__ConstantVariable__Group__311670 = new BitSet(new long[]{0x0000000000004000L});
     public static final BitSet FOLLOW_rule__ConstantVariable__Group__4_in_rule__ConstantVariable__Group__311673 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ConstantVariable__NameAssignment_3_in_rule__ConstantVariable__Group__3__Impl11700 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ConstantVariable__Group__4__Impl_in_rule__ConstantVariable__Group__411730 = new BitSet(new long[]{0x00003C00000380F0L,0x0000000A000208A0L});
+    public static final BitSet FOLLOW_rule__ConstantVariable__Group__4__Impl_in_rule__ConstantVariable__Group__411730 = new BitSet(new long[]{0x00003C00000381F0L,0x0000000A000208A0L});
     public static final BitSet FOLLOW_rule__ConstantVariable__Group__5_in_rule__ConstantVariable__Group__411733 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_14_in_rule__ConstantVariable__Group__4__Impl11761 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ConstantVariable__Group__5__Impl_in_rule__ConstantVariable__Group__511792 = new BitSet(new long[]{0x0000000000000002L});
@@ -41097,7 +40624,7 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__RegisterVariable__Group__3__Impl_in_rule__RegisterVariable__Group__312044 = new BitSet(new long[]{0x0000000000000000L,0x0000000000008000L});
     public static final BitSet FOLLOW_rule__RegisterVariable__Group__4_in_rule__RegisterVariable__Group__312047 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__RegisterVariable__NameAssignment_3_in_rule__RegisterVariable__Group__3__Impl12074 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__RegisterVariable__Group__4__Impl_in_rule__RegisterVariable__Group__412104 = new BitSet(new long[]{0x00003C00000380F0L,0x0000000A000208A0L});
+    public static final BitSet FOLLOW_rule__RegisterVariable__Group__4__Impl_in_rule__RegisterVariable__Group__412104 = new BitSet(new long[]{0x00003C00000381F0L,0x0000000A000208A0L});
     public static final BitSet FOLLOW_rule__RegisterVariable__Group__5_in_rule__RegisterVariable__Group__412107 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_79_in_rule__RegisterVariable__Group__4__Impl12135 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__RegisterVariable__Group__5__Impl_in_rule__RegisterVariable__Group__512166 = new BitSet(new long[]{0x0000000000000002L});
@@ -41150,10 +40677,10 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__OperationCall__Group__0__Impl_in_rule__OperationCall__Group__013303 = new BitSet(new long[]{0x0000000000000000L,0x0000000000020000L});
     public static final BitSet FOLLOW_rule__OperationCall__Group__1_in_rule__OperationCall__Group__013306 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__OperationCall__OperationAssignment_0_in_rule__OperationCall__Group__0__Impl13333 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__OperationCall__Group__1__Impl_in_rule__OperationCall__Group__113363 = new BitSet(new long[]{0x00003C00000380F0L,0x0000000A000608A0L});
+    public static final BitSet FOLLOW_rule__OperationCall__Group__1__Impl_in_rule__OperationCall__Group__113363 = new BitSet(new long[]{0x00003C00000381F0L,0x0000000A000608A0L});
     public static final BitSet FOLLOW_rule__OperationCall__Group__2_in_rule__OperationCall__Group__113366 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_81_in_rule__OperationCall__Group__1__Impl13394 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__OperationCall__Group__2__Impl_in_rule__OperationCall__Group__213425 = new BitSet(new long[]{0x00003C00000380F0L,0x0000000A000608A0L});
+    public static final BitSet FOLLOW_rule__OperationCall__Group__2__Impl_in_rule__OperationCall__Group__213425 = new BitSet(new long[]{0x00003C00000381F0L,0x0000000A000608A0L});
     public static final BitSet FOLLOW_rule__OperationCall__Group__3_in_rule__OperationCall__Group__213428 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__OperationCall__Group_2__0_in_rule__OperationCall__Group__2__Impl13455 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__OperationCall__Group__3__Impl_in_rule__OperationCall__Group__313486 = new BitSet(new long[]{0x0000000000000002L});
@@ -41163,7 +40690,7 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__OperationCall__ParamsAssignment_2_0_in_rule__OperationCall__Group_2__0__Impl13583 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__OperationCall__Group_2__1__Impl_in_rule__OperationCall__Group_2__113613 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__OperationCall__Group_2_1__0_in_rule__OperationCall__Group_2__1__Impl13640 = new BitSet(new long[]{0x4000000000000002L});
-    public static final BitSet FOLLOW_rule__OperationCall__Group_2_1__0__Impl_in_rule__OperationCall__Group_2_1__013675 = new BitSet(new long[]{0x00003C00000380F0L,0x0000000A000208A0L});
+    public static final BitSet FOLLOW_rule__OperationCall__Group_2_1__0__Impl_in_rule__OperationCall__Group_2_1__013675 = new BitSet(new long[]{0x00003C00000381F0L,0x0000000A000208A0L});
     public static final BitSet FOLLOW_rule__OperationCall__Group_2_1__1_in_rule__OperationCall__Group_2_1__013678 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_62_in_rule__OperationCall__Group_2_1__0__Impl13706 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__OperationCall__Group_2_1__1__Impl_in_rule__OperationCall__Group_2_1__113737 = new BitSet(new long[]{0x0000000000000002L});
@@ -41203,7 +40730,7 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_62_in_rule__Operation__Group_3_1__0__Impl14517 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Operation__Group_3_1__1__Impl_in_rule__Operation__Group_3_1__114548 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Operation__ParamsAssignment_3_1_1_in_rule__Operation__Group_3_1__1__Impl14575 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Operation__Group_8__0__Impl_in_rule__Operation__Group_8__014609 = new BitSet(new long[]{0x00003C00000380F0L,0x0000000A000208A0L});
+    public static final BitSet FOLLOW_rule__Operation__Group_8__0__Impl_in_rule__Operation__Group_8__014609 = new BitSet(new long[]{0x00003C00000381F0L,0x0000000A000208A0L});
     public static final BitSet FOLLOW_rule__Operation__Group_8__1_in_rule__Operation__Group_8__014612 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_83_in_rule__Operation__Group_8__0__Impl14640 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Operation__Group_8__1__Impl_in_rule__Operation__Group_8__114671 = new BitSet(new long[]{0x1000000000000000L});
@@ -41286,7 +40813,7 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__BinarySection__Group__0__Impl_in_rule__BinarySection__Group__016481 = new BitSet(new long[]{0x0000000000000000L,0x0000000000400000L});
     public static final BitSet FOLLOW_rule__BinarySection__Group__1_in_rule__BinarySection__Group__016484 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__BinarySection__Alternatives_0_in_rule__BinarySection__Group__0__Impl16511 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__BinarySection__Group__1__Impl_in_rule__BinarySection__Group__116541 = new BitSet(new long[]{0x00003C00000380F0L,0x0000000A000208A0L});
+    public static final BitSet FOLLOW_rule__BinarySection__Group__1__Impl_in_rule__BinarySection__Group__116541 = new BitSet(new long[]{0x00003C00000381F0L,0x0000000A000208A0L});
     public static final BitSet FOLLOW_rule__BinarySection__Group__2_in_rule__BinarySection__Group__116544 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_86_in_rule__BinarySection__Group__1__Impl16572 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__BinarySection__Group__2__Impl_in_rule__BinarySection__Group__216603 = new BitSet(new long[]{0x1000000000000000L});
@@ -41409,7 +40936,7 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__InstanceConfig__Group__0__Impl_in_rule__InstanceConfig__Group__019197 = new BitSet(new long[]{0x0000000000004000L});
     public static final BitSet FOLLOW_rule__InstanceConfig__Group__1_in_rule__InstanceConfig__Group__019200 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__InstanceConfig__ConfAssignment_0_in_rule__InstanceConfig__Group__0__Impl19227 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__InstanceConfig__Group__1__Impl_in_rule__InstanceConfig__Group__119257 = new BitSet(new long[]{0x00003C00000380F0L,0x0000000A000208A0L});
+    public static final BitSet FOLLOW_rule__InstanceConfig__Group__1__Impl_in_rule__InstanceConfig__Group__119257 = new BitSet(new long[]{0x00003C00000381F0L,0x0000000A000208A0L});
     public static final BitSet FOLLOW_rule__InstanceConfig__Group__2_in_rule__InstanceConfig__Group__119260 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_14_in_rule__InstanceConfig__Group__1__Impl19288 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__InstanceConfig__Group__2__Impl_in_rule__InstanceConfig__Group__219319 = new BitSet(new long[]{0x0000000000000002L});
@@ -41428,13 +40955,13 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__ConstantBinarySection__Group__0__Impl_in_rule__ConstantBinarySection__Group__019631 = new BitSet(new long[]{0x0000000000000000L,0x0000000000001000L});
     public static final BitSet FOLLOW_rule__ConstantBinarySection__Group__1_in_rule__ConstantBinarySection__Group__019634 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_95_in_rule__ConstantBinarySection__Group__0__Impl19662 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ConstantBinarySection__Group__1__Impl_in_rule__ConstantBinarySection__Group__119693 = new BitSet(new long[]{0x00003C00000380F0L,0x0000000A000208A0L});
+    public static final BitSet FOLLOW_rule__ConstantBinarySection__Group__1__Impl_in_rule__ConstantBinarySection__Group__119693 = new BitSet(new long[]{0x00003C00000381F0L,0x0000000A000208A0L});
     public static final BitSet FOLLOW_rule__ConstantBinarySection__Group__2_in_rule__ConstantBinarySection__Group__119696 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_76_in_rule__ConstantBinarySection__Group__1__Impl19724 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ConstantBinarySection__Group__2__Impl_in_rule__ConstantBinarySection__Group__219755 = new BitSet(new long[]{0x0000000000000000L,0x0000000000002000L});
     public static final BitSet FOLLOW_rule__ConstantBinarySection__Group__3_in_rule__ConstantBinarySection__Group__219758 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ConstantBinarySection__Group_2__0_in_rule__ConstantBinarySection__Group__2__Impl19787 = new BitSet(new long[]{0x00003C00000380F2L,0x0000000A000208A0L});
-    public static final BitSet FOLLOW_rule__ConstantBinarySection__Group_2__0_in_rule__ConstantBinarySection__Group__2__Impl19799 = new BitSet(new long[]{0x00003C00000380F2L,0x0000000A000208A0L});
+    public static final BitSet FOLLOW_rule__ConstantBinarySection__Group_2__0_in_rule__ConstantBinarySection__Group__2__Impl19787 = new BitSet(new long[]{0x00003C00000381F2L,0x0000000A000208A0L});
+    public static final BitSet FOLLOW_rule__ConstantBinarySection__Group_2__0_in_rule__ConstantBinarySection__Group__2__Impl19799 = new BitSet(new long[]{0x00003C00000381F2L,0x0000000A000208A0L});
     public static final BitSet FOLLOW_rule__ConstantBinarySection__Group__3__Impl_in_rule__ConstantBinarySection__Group__319832 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_77_in_rule__ConstantBinarySection__Group__3__Impl19860 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ConstantBinarySection__Group_2__0__Impl_in_rule__ConstantBinarySection__Group_2__019899 = new BitSet(new long[]{0x1000000000000000L});
@@ -41461,7 +40988,7 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__XStructExpression__Group__0__Impl_in_rule__XStructExpression__Group__020396 = new BitSet(new long[]{0x0000000000000000L,0x0000000000001000L});
     public static final BitSet FOLLOW_rule__XStructExpression__Group__1_in_rule__XStructExpression__Group__020399 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__XStructExpression__TypeAssignment_0_in_rule__XStructExpression__Group__0__Impl20426 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__XStructExpression__Group__1__Impl_in_rule__XStructExpression__Group__120456 = new BitSet(new long[]{0x00003C00000380F0L,0x0000000A000208A0L});
+    public static final BitSet FOLLOW_rule__XStructExpression__Group__1__Impl_in_rule__XStructExpression__Group__120456 = new BitSet(new long[]{0x00003C00000381F0L,0x0000000A000208A0L});
     public static final BitSet FOLLOW_rule__XStructExpression__Group__2_in_rule__XStructExpression__Group__120459 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_76_in_rule__XStructExpression__Group__1__Impl20487 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__XStructExpression__Group__2__Impl_in_rule__XStructExpression__Group__220518 = new BitSet(new long[]{0x4000000000000000L,0x0000000000002000L});
@@ -41475,12 +41002,12 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_62_in_rule__XStructExpression__Group__4__Impl20671 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__XStructExpression__Group__5__Impl_in_rule__XStructExpression__Group__520704 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_77_in_rule__XStructExpression__Group__5__Impl20732 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__XStructExpression__Group_3__0__Impl_in_rule__XStructExpression__Group_3__020775 = new BitSet(new long[]{0x00003C00000380F0L,0x0000000A000208A0L});
+    public static final BitSet FOLLOW_rule__XStructExpression__Group_3__0__Impl_in_rule__XStructExpression__Group_3__020775 = new BitSet(new long[]{0x00003C00000381F0L,0x0000000A000208A0L});
     public static final BitSet FOLLOW_rule__XStructExpression__Group_3__1_in_rule__XStructExpression__Group_3__020778 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_62_in_rule__XStructExpression__Group_3__0__Impl20806 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__XStructExpression__Group_3__1__Impl_in_rule__XStructExpression__Group_3__120837 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__XStructExpression__ValuesAssignment_3_1_in_rule__XStructExpression__Group_3__1__Impl20864 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__XExpression1__Group__0__Impl_in_rule__XExpression1__Group__020898 = new BitSet(new long[]{0x00003C00000380F0L,0x0000000A000208A0L});
+    public static final BitSet FOLLOW_rule__XExpression1__Group__0__Impl_in_rule__XExpression1__Group__020898 = new BitSet(new long[]{0x00003C00000381F0L,0x0000000A000208A0L});
     public static final BitSet FOLLOW_rule__XExpression1__Group__1_in_rule__XExpression1__Group__020901 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__XExpression1__OperatorAssignment_0_in_rule__XExpression1__Group__0__Impl20928 = new BitSet(new long[]{0x00003C0000000002L});
     public static final BitSet FOLLOW_rule__XExpression1__Group__1__Impl_in_rule__XExpression1__Group__120959 = new BitSet(new long[]{0x0000000000000002L});
@@ -41500,7 +41027,7 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__XExpressionM1__AAssignment_0_in_rule__XExpressionM1__Group__0__Impl21295 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__XExpressionM1__Group__1__Impl_in_rule__XExpressionM1__Group__121325 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__XExpressionM1__Group_1__0_in_rule__XExpressionM1__Group__1__Impl21352 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000100L});
-    public static final BitSet FOLLOW_rule__XExpressionM1__Group_1__0__Impl_in_rule__XExpressionM1__Group_1__021387 = new BitSet(new long[]{0x00003C00000380F0L,0x0000000A000208A0L});
+    public static final BitSet FOLLOW_rule__XExpressionM1__Group_1__0__Impl_in_rule__XExpressionM1__Group_1__021387 = new BitSet(new long[]{0x00003C00000381F0L,0x0000000A000208A0L});
     public static final BitSet FOLLOW_rule__XExpressionM1__Group_1__1_in_rule__XExpressionM1__Group_1__021390 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_72_in_rule__XExpressionM1__Group_1__0__Impl21418 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__XExpressionM1__Group_1__1__Impl_in_rule__XExpressionM1__Group_1__121449 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
@@ -41513,7 +41040,7 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__XExpression2__AAssignment_0_in_rule__XExpression2__Group__0__Impl21604 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__XExpression2__Group__1__Impl_in_rule__XExpression2__Group__121634 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__XExpression2__Group_1__0_in_rule__XExpression2__Group__1__Impl21661 = new BitSet(new long[]{0x0001C00000000002L});
-    public static final BitSet FOLLOW_rule__XExpression2__Group_1__0__Impl_in_rule__XExpression2__Group_1__021696 = new BitSet(new long[]{0x00003C00000380F0L,0x0000000A000208A0L});
+    public static final BitSet FOLLOW_rule__XExpression2__Group_1__0__Impl_in_rule__XExpression2__Group_1__021696 = new BitSet(new long[]{0x00003C00000381F0L,0x0000000A000208A0L});
     public static final BitSet FOLLOW_rule__XExpression2__Group_1__1_in_rule__XExpression2__Group_1__021699 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__XExpression2__OpAssignment_1_0_in_rule__XExpression2__Group_1__0__Impl21726 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__XExpression2__Group_1__1__Impl_in_rule__XExpression2__Group_1__121756 = new BitSet(new long[]{0x0000000000000002L});
@@ -41523,7 +41050,7 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__XExpression3__AAssignment_0_in_rule__XExpression3__Group__0__Impl21847 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__XExpression3__Group__1__Impl_in_rule__XExpression3__Group__121877 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__XExpression3__Group_1__0_in_rule__XExpression3__Group__1__Impl21904 = new BitSet(new long[]{0x0002040000000002L});
-    public static final BitSet FOLLOW_rule__XExpression3__Group_1__0__Impl_in_rule__XExpression3__Group_1__021939 = new BitSet(new long[]{0x00003C00000380F0L,0x0000000A000208A0L});
+    public static final BitSet FOLLOW_rule__XExpression3__Group_1__0__Impl_in_rule__XExpression3__Group_1__021939 = new BitSet(new long[]{0x00003C00000381F0L,0x0000000A000208A0L});
     public static final BitSet FOLLOW_rule__XExpression3__Group_1__1_in_rule__XExpression3__Group_1__021942 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__XExpression3__OpAssignment_1_0_in_rule__XExpression3__Group_1__0__Impl21969 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__XExpression3__Group_1__1__Impl_in_rule__XExpression3__Group_1__121999 = new BitSet(new long[]{0x0000000000000002L});
@@ -41533,7 +41060,7 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__XExpression4__AAssignment_0_in_rule__XExpression4__Group__0__Impl22090 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__XExpression4__Group__1__Impl_in_rule__XExpression4__Group__122120 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__XExpression4__Group_1__0_in_rule__XExpression4__Group__1__Impl22147 = new BitSet(new long[]{0x00FC000000000002L});
-    public static final BitSet FOLLOW_rule__XExpression4__Group_1__0__Impl_in_rule__XExpression4__Group_1__022182 = new BitSet(new long[]{0x00003C00000380F0L,0x0000000A000208A0L});
+    public static final BitSet FOLLOW_rule__XExpression4__Group_1__0__Impl_in_rule__XExpression4__Group_1__022182 = new BitSet(new long[]{0x00003C00000381F0L,0x0000000A000208A0L});
     public static final BitSet FOLLOW_rule__XExpression4__Group_1__1_in_rule__XExpression4__Group_1__022185 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__XExpression4__OpAssignment_1_0_in_rule__XExpression4__Group_1__0__Impl22212 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__XExpression4__Group_1__1__Impl_in_rule__XExpression4__Group_1__122242 = new BitSet(new long[]{0x0000000000000002L});
@@ -41543,12 +41070,12 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__XExpression5__AAssignment_0_in_rule__XExpression5__Group__0__Impl22333 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__XExpression5__Group__1__Impl_in_rule__XExpression5__Group__122363 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__XExpression5__Group_1__0_in_rule__XExpression5__Group__1__Impl22390 = new BitSet(new long[]{0x0300000000000002L});
-    public static final BitSet FOLLOW_rule__XExpression5__Group_1__0__Impl_in_rule__XExpression5__Group_1__022425 = new BitSet(new long[]{0x00003C00000380F0L,0x0000000A000208A0L});
+    public static final BitSet FOLLOW_rule__XExpression5__Group_1__0__Impl_in_rule__XExpression5__Group_1__022425 = new BitSet(new long[]{0x00003C00000381F0L,0x0000000A000208A0L});
     public static final BitSet FOLLOW_rule__XExpression5__Group_1__1_in_rule__XExpression5__Group_1__022428 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__XExpression5__OpAssignment_1_0_in_rule__XExpression5__Group_1__0__Impl22455 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__XExpression5__Group_1__1__Impl_in_rule__XExpression5__Group_1__122485 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__XExpression5__BAssignment_1_1_in_rule__XExpression5__Group_1__1__Impl22512 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__XExpression6__Group__0__Impl_in_rule__XExpression6__Group__022546 = new BitSet(new long[]{0x00003C00000380F0L,0x0000000A000208A0L});
+    public static final BitSet FOLLOW_rule__XExpression6__Group__0__Impl_in_rule__XExpression6__Group__022546 = new BitSet(new long[]{0x00003C00000381F0L,0x0000000A000208A0L});
     public static final BitSet FOLLOW_rule__XExpression6__Group__1_in_rule__XExpression6__Group__022549 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__XExpression6__Group_0__0_in_rule__XExpression6__Group__0__Impl22576 = new BitSet(new long[]{0x0000000000038082L,0x00000000000008A0L});
     public static final BitSet FOLLOW_rule__XExpression6__Group__1__Impl_in_rule__XExpression6__Group__122607 = new BitSet(new long[]{0x0000000000000002L});
@@ -41577,7 +41104,7 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__XIfExpression__Group__0__Impl_in_rule__XIfExpression__Group__023161 = new BitSet(new long[]{0x0000000000000000L,0x0000000000020000L});
     public static final BitSet FOLLOW_rule__XIfExpression__Group__1_in_rule__XIfExpression__Group__023164 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_100_in_rule__XIfExpression__Group__0__Impl23192 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__XIfExpression__Group__1__Impl_in_rule__XIfExpression__Group__123223 = new BitSet(new long[]{0x00003C00000380F0L,0x0000000A000208A0L});
+    public static final BitSet FOLLOW_rule__XIfExpression__Group__1__Impl_in_rule__XIfExpression__Group__123223 = new BitSet(new long[]{0x00003C00000381F0L,0x0000000A000208A0L});
     public static final BitSet FOLLOW_rule__XIfExpression__Group__2_in_rule__XIfExpression__Group__123226 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_81_in_rule__XIfExpression__Group__1__Impl23254 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__XIfExpression__Group__2__Impl_in_rule__XIfExpression__Group__223285 = new BitSet(new long[]{0x0000000000000000L,0x0000000000040000L});
@@ -41611,7 +41138,7 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__XWhileExpression__Group__0__Impl_in_rule__XWhileExpression__Group__023918 = new BitSet(new long[]{0x0000000000000000L,0x0000000000020000L});
     public static final BitSet FOLLOW_rule__XWhileExpression__Group__1_in_rule__XWhileExpression__Group__023921 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_102_in_rule__XWhileExpression__Group__0__Impl23949 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__XWhileExpression__Group__1__Impl_in_rule__XWhileExpression__Group__123980 = new BitSet(new long[]{0x00003C00000380F0L,0x0000000A000208A0L});
+    public static final BitSet FOLLOW_rule__XWhileExpression__Group__1__Impl_in_rule__XWhileExpression__Group__123980 = new BitSet(new long[]{0x00003C00000381F0L,0x0000000A000208A0L});
     public static final BitSet FOLLOW_rule__XWhileExpression__Group__2_in_rule__XWhileExpression__Group__123983 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_81_in_rule__XWhileExpression__Group__1__Impl24011 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__XWhileExpression__Group__2__Impl_in_rule__XWhileExpression__Group__224042 = new BitSet(new long[]{0x0000000000000000L,0x0000000000040000L});
@@ -41628,7 +41155,7 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__XWhileExpression__DoAssignment_5_in_rule__XWhileExpression__Group__5__Impl24256 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__XWhileExpression__Group__6__Impl_in_rule__XWhileExpression__Group__624286 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_77_in_rule__XWhileExpression__Group__6__Impl24314 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__XParenthesizedExpression__Group__0__Impl_in_rule__XParenthesizedExpression__Group__024359 = new BitSet(new long[]{0x00003C00000380F0L,0x0000000A000208A0L});
+    public static final BitSet FOLLOW_rule__XParenthesizedExpression__Group__0__Impl_in_rule__XParenthesizedExpression__Group__024359 = new BitSet(new long[]{0x00003C00000381F0L,0x0000000A000208A0L});
     public static final BitSet FOLLOW_rule__XParenthesizedExpression__Group__1_in_rule__XParenthesizedExpression__Group__024362 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_81_in_rule__XParenthesizedExpression__Group__0__Impl24390 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__XParenthesizedExpression__Group__1__Impl_in_rule__XParenthesizedExpression__Group__124421 = new BitSet(new long[]{0x0000000000000000L,0x0000000000040000L});
@@ -41636,135 +41163,121 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__XParenthesizedExpression__AAssignment_1_in_rule__XParenthesizedExpression__Group__1__Impl24451 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__XParenthesizedExpression__Group__2__Impl_in_rule__XParenthesizedExpression__Group__224481 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_82_in_rule__XParenthesizedExpression__Group__2__Impl24509 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__XScriptedExpression__Group__0__Impl_in_rule__XScriptedExpression__Group__024546 = new BitSet(new long[]{0x0000000000000000L,0x0000000000001000L});
-    public static final BitSet FOLLOW_rule__XScriptedExpression__Group__1_in_rule__XScriptedExpression__Group__024549 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__XScriptedExpression__ScriptAssignment_0_in_rule__XScriptedExpression__Group__0__Impl24576 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__XScriptedExpression__Group__1__Impl_in_rule__XScriptedExpression__Group__124606 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__XScriptedExpression__Group_1__0_in_rule__XScriptedExpression__Group__1__Impl24633 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__XScriptedExpression__Group_1__0__Impl_in_rule__XScriptedExpression__Group_1__024668 = new BitSet(new long[]{0x00803C00000381F0L,0x0000005A000308A0L});
-    public static final BitSet FOLLOW_rule__XScriptedExpression__Group_1__1_in_rule__XScriptedExpression__Group_1__024671 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_76_in_rule__XScriptedExpression__Group_1__0__Impl24699 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__XScriptedExpression__Group_1__1__Impl_in_rule__XScriptedExpression__Group_1__124730 = new BitSet(new long[]{0x0000000000000000L,0x0000000000002000L});
-    public static final BitSet FOLLOW_rule__XScriptedExpression__Group_1__2_in_rule__XScriptedExpression__Group_1__124733 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__XScriptedExpression__ConditionalAssignment_1_1_in_rule__XScriptedExpression__Group_1__1__Impl24760 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__XScriptedExpression__Group_1__2__Impl_in_rule__XScriptedExpression__Group_1__224790 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_77_in_rule__XScriptedExpression__Group_1__2__Impl24818 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__Module__NameAssignment_124860 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__Module__ExtendsAssignment_2_124895 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__Module__ExtendsAssignment_2_2_124934 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__Module__UseAssignment_4_124973 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleModuleItem_in_rule__Module__ItemsAssignment_525008 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleReferenceID_in_rule__InstanceReference__TypeAssignment_125043 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__InstanceReference__NameAssignment_225078 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTypeDef_in_rule__ConfigVariable__TypeAssignment_225109 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__ConfigVariable__NameAssignment_325140 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__Library__NameAssignment_125171 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__Library__OverridesAssignment_2_125206 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__Library__OverridesAssignment_2_2_125245 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__Library__UseAssignment_4_125284 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLibraryItem_in_rule__Library__ItemsAssignment_525319 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Type__NameAssignment_125350 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTypeDef_in_rule__Type__DefAssignment_325381 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTypeDef_in_rule__PointerTypeDef__DefAssignment_225412 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__ArrayTypeDef__SizeAssignment_225443 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTypeDef_in_rule__ArrayTypeDef__DefAssignment_525474 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleReferenceID_in_rule__RefTypeDef__TypeAssignment25509 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePrimitiveKind_in_rule__DataTypeDef__KindAssignment_025544 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__DataTypeDef__BitsAssignment_125575 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStructTypeDefMember_in_rule__StructTypeDef__MembersAssignment_325606 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStructTypeDefMember_in_rule__StructTypeDef__MembersAssignment_4_125637 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTypeDef_in_rule__StructTypeDefMember__TypeAssignment_125668 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__StructTypeDefMember__NameAssignment_225699 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTypeDef_in_rule__ConstantVariable__TypeAssignment_225730 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__ConstantVariable__NameAssignment_325761 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__ConstantVariable__ValueAssignment_525792 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTypeDef_in_rule__RegisterVariable__TypeAssignment_225823 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__RegisterVariable__NameAssignment_325854 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__RegisterVariable__AddrAssignment_525885 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Label__NameAssignment_225916 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleWordSection_in_rule__InstructionWord__SectionsAssignment_125947 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__WordSection__SizeAssignment_225978 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__WordSection__ShiftAssignment_3_126009 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLITERAL_in_rule__LiteralValue__ValueAssignment26040 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTypeDef_in_rule__Variable__TypeAssignment_026071 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Variable__NameAssignment_126102 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleReferenceID_in_rule__VariableReference__VarAssignment26137 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleReferenceID_in_rule__OperationCall__OperationAssignment_026176 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOperationCallParameter_in_rule__OperationCall__ParamsAssignment_2_026211 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOperationCallParameter_in_rule__OperationCall__ParamsAssignment_2_1_126242 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Operation__NameAssignment_126273 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleParameterVariable_in_rule__Operation__ParamsAssignment_3_026304 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleParameterVariable_in_rule__Operation__ParamsAssignment_3_1_126335 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOperationBlock_in_rule__Operation__BlockAssignment_626366 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__Operation__ReturnAssignment_8_1_026397 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleVariable_in_rule__Operation__ReturnvarAssignment_8_1_126428 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOperationStep_in_rule__OperationBlock__StepsAssignment_126459 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleParameterKind_in_rule__ParameterVariable__KindAssignment_126490 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTypeDef_in_rule__ParameterVariable__TypeAssignment_226521 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__ParameterVariable__NameAssignment_326552 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLITERAL_in_rule__ParameterVariable__DefaultAssignment_4_126583 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOperationRole_in_rule__OperatorDefinition__RoleAssignment_126614 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleReferenceID_in_rule__OperatorDefinition__CandidateAssignment_326649 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleReferenceID_in_rule__OperatorDefinition__CandidateAssignment_4_126688 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__LinkedBinary__NameAssignment_126723 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBinaryType_in_rule__LinkedBinary__TypeAssignment_226754 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__LinkedBinary__UseAssignment_4_126789 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBinarySection_in_rule__LinkedBinary__SectionsAssignment_526824 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__BinarySection__StartAssignment_226855 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__FunctionBinarySection__NameAssignment_126886 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLITERAL_in_rule__FunctionBinarySection__StartAddrAssignment_526917 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLITERAL_in_rule__FunctionBinarySection__MemwidthAssignment_926948 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLITERAL_in_rule__FunctionBinarySection__PointersizeAssignment_1326979 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFunctionMemory_in_rule__FunctionBinarySection__MemsAssignment_15_027010 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__FunctionBinarySection__LibAssignment_18_0_127045 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLinkedInstance_in_rule__FunctionBinarySection__InstancesAssignment_18_127080 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOperationBlock_in_rule__FunctionBinarySection__DoAssignment_2127111 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__LinkedInstance__TypeAssignment_027146 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__LinkedInstance__NameAssignment_127181 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleReferenceLink_in_rule__LinkedInstance__LinksAssignment_3_0_027212 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInstanceConfig_in_rule__LinkedInstance__ConfsAssignment_3_0_127243 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__ReferenceLink__RefAssignment_027278 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__ReferenceLink__InstAssignment_227317 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__InstanceConfig__ConfAssignment_027356 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__InstanceConfig__ValueAssignment_227391 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLITERAL_in_rule__FunctionMemory__StartAssignment_127422 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLITERAL_in_rule__FunctionMemory__EndAssignment_327453 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__ConstantBinarySection__DataAssignment_2_027484 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__ReferenceBinarySection__IncAssignment_127519 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTypeDef_in_rule__XSizeOfExpression__TypeAssignment_227554 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleReferenceID_in_rule__XStructExpression__TypeAssignment_027589 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XStructExpression__ValuesAssignment_227624 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XStructExpression__ValuesAssignment_3_127655 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleUNARY_OPERATOR_in_rule__XExpression1__OperatorAssignment_027686 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression0_in_rule__XExpression1__AAssignment_127717 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpressionM1_in_rule__XExpression0__AAssignment_027748 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__XExpression0__MemberAssignment_1_127779 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXPrimaryExpression_in_rule__XExpressionM1__AAssignment_027810 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XExpressionM1__IndexAssignment_1_127841 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression1_in_rule__XExpression2__AAssignment_027872 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMULTIPLICATIVE_OPERATOR_in_rule__XExpression2__OpAssignment_1_027903 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression2_in_rule__XExpression2__BAssignment_1_127934 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression2_in_rule__XExpression3__AAssignment_027965 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleADDITIVE_OPERATOR_in_rule__XExpression3__OpAssignment_1_027996 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression2_in_rule__XExpression3__BAssignment_1_128027 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression3_in_rule__XExpression4__AAssignment_028058 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEQUALITY_OPERATOR_in_rule__XExpression4__OpAssignment_1_028089 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression3_in_rule__XExpression4__BAssignment_1_128120 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression4_in_rule__XExpression5__AAssignment_028151 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBOOLEAN_OPERATOR_in_rule__XExpression5__OpAssignment_1_028182 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression4_in_rule__XExpression5__BAssignment_1_128213 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleVariableReference_in_rule__XExpression6__RefAssignment_0_028244 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression5_in_rule__XExpression6__AAssignment_128275 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLITERAL_in_rule__XExpressionLiteral__ValueAssignment28306 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleVariableReference_in_rule__XIsLiteralExpression__RefAssignment_228337 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XIfExpression__IfAssignment_228368 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOperationBlock_in_rule__XIfExpression__ThenAssignment_528399 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOperationBlock_in_rule__XIfExpression__ElseAssignment_7_228430 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XWhileExpression__CondAssignment_228461 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOperationBlock_in_rule__XWhileExpression__DoAssignment_528492 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__XParenthesizedExpression__AAssignment_128523 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_SCRIPT_in_rule__XScriptedExpression__ScriptAssignment_028554 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOperationBlock_in_rule__XScriptedExpression__ConditionalAssignment_1_128585 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__Module__NameAssignment_124551 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__Module__ExtendsAssignment_2_124586 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__Module__ExtendsAssignment_2_2_124625 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__Module__UseAssignment_4_124664 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleModuleItem_in_rule__Module__ItemsAssignment_524699 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleReferenceID_in_rule__InstanceReference__TypeAssignment_124734 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__InstanceReference__NameAssignment_224769 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTypeDef_in_rule__ConfigVariable__TypeAssignment_224800 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__ConfigVariable__NameAssignment_324831 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__Library__NameAssignment_124862 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__Library__OverridesAssignment_2_124897 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__Library__OverridesAssignment_2_2_124936 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__Library__UseAssignment_4_124975 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLibraryItem_in_rule__Library__ItemsAssignment_525010 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Type__NameAssignment_125041 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTypeDef_in_rule__Type__DefAssignment_325072 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTypeDef_in_rule__PointerTypeDef__DefAssignment_225103 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__ArrayTypeDef__SizeAssignment_225134 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTypeDef_in_rule__ArrayTypeDef__DefAssignment_525165 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleReferenceID_in_rule__RefTypeDef__TypeAssignment25200 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePrimitiveKind_in_rule__DataTypeDef__KindAssignment_025235 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__DataTypeDef__BitsAssignment_125266 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStructTypeDefMember_in_rule__StructTypeDef__MembersAssignment_325297 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStructTypeDefMember_in_rule__StructTypeDef__MembersAssignment_4_125328 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTypeDef_in_rule__StructTypeDefMember__TypeAssignment_125359 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__StructTypeDefMember__NameAssignment_225390 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTypeDef_in_rule__ConstantVariable__TypeAssignment_225421 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__ConstantVariable__NameAssignment_325452 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__ConstantVariable__ValueAssignment_525483 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTypeDef_in_rule__RegisterVariable__TypeAssignment_225514 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__RegisterVariable__NameAssignment_325545 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__RegisterVariable__AddrAssignment_525576 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Label__NameAssignment_225607 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleWordSection_in_rule__InstructionWord__SectionsAssignment_125638 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__WordSection__SizeAssignment_225669 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__WordSection__ShiftAssignment_3_125700 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLITERAL_in_rule__LiteralValue__ValueAssignment25731 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTypeDef_in_rule__Variable__TypeAssignment_025762 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Variable__NameAssignment_125793 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleReferenceID_in_rule__VariableReference__VarAssignment25828 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleReferenceID_in_rule__OperationCall__OperationAssignment_025867 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOperationCallParameter_in_rule__OperationCall__ParamsAssignment_2_025902 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOperationCallParameter_in_rule__OperationCall__ParamsAssignment_2_1_125933 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Operation__NameAssignment_125964 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleParameterVariable_in_rule__Operation__ParamsAssignment_3_025995 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleParameterVariable_in_rule__Operation__ParamsAssignment_3_1_126026 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOperationBlock_in_rule__Operation__BlockAssignment_626057 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__Operation__ReturnAssignment_8_1_026088 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleVariable_in_rule__Operation__ReturnvarAssignment_8_1_126119 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOperationStep_in_rule__OperationBlock__StepsAssignment_126150 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleParameterKind_in_rule__ParameterVariable__KindAssignment_126181 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTypeDef_in_rule__ParameterVariable__TypeAssignment_226212 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__ParameterVariable__NameAssignment_326243 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLITERAL_in_rule__ParameterVariable__DefaultAssignment_4_126274 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOperationRole_in_rule__OperatorDefinition__RoleAssignment_126305 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleReferenceID_in_rule__OperatorDefinition__CandidateAssignment_326340 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleReferenceID_in_rule__OperatorDefinition__CandidateAssignment_4_126379 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__LinkedBinary__NameAssignment_126414 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBinaryType_in_rule__LinkedBinary__TypeAssignment_226445 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__LinkedBinary__UseAssignment_4_126480 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBinarySection_in_rule__LinkedBinary__SectionsAssignment_526515 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__BinarySection__StartAssignment_226546 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__FunctionBinarySection__NameAssignment_126577 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLITERAL_in_rule__FunctionBinarySection__StartAddrAssignment_526608 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLITERAL_in_rule__FunctionBinarySection__MemwidthAssignment_926639 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLITERAL_in_rule__FunctionBinarySection__PointersizeAssignment_1326670 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFunctionMemory_in_rule__FunctionBinarySection__MemsAssignment_15_026701 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__FunctionBinarySection__LibAssignment_18_0_126736 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLinkedInstance_in_rule__FunctionBinarySection__InstancesAssignment_18_126771 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOperationBlock_in_rule__FunctionBinarySection__DoAssignment_2126802 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__LinkedInstance__TypeAssignment_026837 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__LinkedInstance__NameAssignment_126872 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleReferenceLink_in_rule__LinkedInstance__LinksAssignment_3_0_026903 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInstanceConfig_in_rule__LinkedInstance__ConfsAssignment_3_0_126934 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__ReferenceLink__RefAssignment_026969 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__ReferenceLink__InstAssignment_227008 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__InstanceConfig__ConfAssignment_027047 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__InstanceConfig__ValueAssignment_227082 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLITERAL_in_rule__FunctionMemory__StartAssignment_127113 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLITERAL_in_rule__FunctionMemory__EndAssignment_327144 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__ConstantBinarySection__DataAssignment_2_027175 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__ReferenceBinarySection__IncAssignment_127210 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_SCRIPT_in_rule__XScriptValueExpression__ValueAssignment27245 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTypeDef_in_rule__XSizeOfExpression__TypeAssignment_227276 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleReferenceID_in_rule__XStructExpression__TypeAssignment_027311 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XStructExpression__ValuesAssignment_227346 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XStructExpression__ValuesAssignment_3_127377 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleUNARY_OPERATOR_in_rule__XExpression1__OperatorAssignment_027408 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression0_in_rule__XExpression1__AAssignment_127439 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpressionM1_in_rule__XExpression0__AAssignment_027470 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__XExpression0__MemberAssignment_1_127501 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXPrimaryExpression_in_rule__XExpressionM1__AAssignment_027532 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XExpressionM1__IndexAssignment_1_127563 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression1_in_rule__XExpression2__AAssignment_027594 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMULTIPLICATIVE_OPERATOR_in_rule__XExpression2__OpAssignment_1_027625 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression2_in_rule__XExpression2__BAssignment_1_127656 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression2_in_rule__XExpression3__AAssignment_027687 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleADDITIVE_OPERATOR_in_rule__XExpression3__OpAssignment_1_027718 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression2_in_rule__XExpression3__BAssignment_1_127749 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression3_in_rule__XExpression4__AAssignment_027780 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEQUALITY_OPERATOR_in_rule__XExpression4__OpAssignment_1_027811 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression3_in_rule__XExpression4__BAssignment_1_127842 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression4_in_rule__XExpression5__AAssignment_027873 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBOOLEAN_OPERATOR_in_rule__XExpression5__OpAssignment_1_027904 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression4_in_rule__XExpression5__BAssignment_1_127935 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleVariableReference_in_rule__XExpression6__RefAssignment_0_027966 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression5_in_rule__XExpression6__AAssignment_127997 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLITERAL_in_rule__XExpressionLiteral__ValueAssignment28028 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleVariableReference_in_rule__XIsLiteralExpression__RefAssignment_228059 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XIfExpression__IfAssignment_228090 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOperationBlock_in_rule__XIfExpression__ThenAssignment_528121 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOperationBlock_in_rule__XIfExpression__ElseAssignment_7_228152 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XWhileExpression__CondAssignment_228183 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOperationBlock_in_rule__XWhileExpression__DoAssignment_528214 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_rule__XParenthesizedExpression__AAssignment_128245 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__XExpression2__Group_1__0_in_synpred107_InternalESyntax21661 = new BitSet(new long[]{0x0000000000000002L});
 
 }

@@ -134,6 +134,14 @@ public class ListSwitch<T> extends Switch<T> {
 				ScriptStep scriptStep = (ScriptStep)theEObject;
 				T result = caseScriptStep(scriptStep);
 				if (result == null) result = caseProgramStep(scriptStep);
+				if (result == null) result = caseReferableValue(scriptStep);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ListPackage.CONDITIONAL_STEP: {
+				ConditionalStep conditionalStep = (ConditionalStep)theEObject;
+				T result = caseConditionalStep(conditionalStep);
+				if (result == null) result = caseProgramStep(conditionalStep);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -288,6 +296,21 @@ public class ListSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseScriptStep(ScriptStep object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Conditional Step</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Conditional Step</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseConditionalStep(ConditionalStep object) {
 		return null;
 	}
 

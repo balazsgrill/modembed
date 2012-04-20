@@ -145,8 +145,6 @@ public class ESyntaxParser extends AbstractContentAssistParser {
 					put(grammarAccess.getXIfExpressionAccess().getGroup_7(), "rule__XIfExpression__Group_7__0");
 					put(grammarAccess.getXWhileExpressionAccess().getGroup(), "rule__XWhileExpression__Group__0");
 					put(grammarAccess.getXParenthesizedExpressionAccess().getGroup(), "rule__XParenthesizedExpression__Group__0");
-					put(grammarAccess.getXScriptedExpressionAccess().getGroup(), "rule__XScriptedExpression__Group__0");
-					put(grammarAccess.getXScriptedExpressionAccess().getGroup_1(), "rule__XScriptedExpression__Group_1__0");
 					put(grammarAccess.getModuleAccess().getNameAssignment_1(), "rule__Module__NameAssignment_1");
 					put(grammarAccess.getModuleAccess().getExtendsAssignment_2_1(), "rule__Module__ExtendsAssignment_2_1");
 					put(grammarAccess.getModuleAccess().getExtendsAssignment_2_2_1(), "rule__Module__ExtendsAssignment_2_2_1");
@@ -229,6 +227,7 @@ public class ESyntaxParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFunctionMemoryAccess().getEndAssignment_3(), "rule__FunctionMemory__EndAssignment_3");
 					put(grammarAccess.getConstantBinarySectionAccess().getDataAssignment_2_0(), "rule__ConstantBinarySection__DataAssignment_2_0");
 					put(grammarAccess.getReferenceBinarySectionAccess().getIncAssignment_1(), "rule__ReferenceBinarySection__IncAssignment_1");
+					put(grammarAccess.getXScriptValueExpressionAccess().getValueAssignment(), "rule__XScriptValueExpression__ValueAssignment");
 					put(grammarAccess.getXSizeOfExpressionAccess().getTypeAssignment_2(), "rule__XSizeOfExpression__TypeAssignment_2");
 					put(grammarAccess.getXStructExpressionAccess().getTypeAssignment_0(), "rule__XStructExpression__TypeAssignment_0");
 					put(grammarAccess.getXStructExpressionAccess().getValuesAssignment_2(), "rule__XStructExpression__ValuesAssignment_2");
@@ -261,8 +260,6 @@ public class ESyntaxParser extends AbstractContentAssistParser {
 					put(grammarAccess.getXWhileExpressionAccess().getCondAssignment_2(), "rule__XWhileExpression__CondAssignment_2");
 					put(grammarAccess.getXWhileExpressionAccess().getDoAssignment_5(), "rule__XWhileExpression__DoAssignment_5");
 					put(grammarAccess.getXParenthesizedExpressionAccess().getAAssignment_1(), "rule__XParenthesizedExpression__AAssignment_1");
-					put(grammarAccess.getXScriptedExpressionAccess().getScriptAssignment_0(), "rule__XScriptedExpression__ScriptAssignment_0");
-					put(grammarAccess.getXScriptedExpressionAccess().getConditionalAssignment_1_1(), "rule__XScriptedExpression__ConditionalAssignment_1_1");
 				}
 			};
 		}

@@ -46,7 +46,7 @@ import hu.e.parser.eSyntax.XExpressionM1;
 import hu.e.parser.eSyntax.XIfExpression;
 import hu.e.parser.eSyntax.XIsLiteralExpression;
 import hu.e.parser.eSyntax.XParenthesizedExpression;
-import hu.e.parser.eSyntax.XScriptedExpression;
+import hu.e.parser.eSyntax.XScriptValueExpression;
 import hu.e.parser.eSyntax.XSizeOfExpression;
 import hu.e.parser.eSyntax.XStructExpression;
 import hu.e.parser.eSyntax.XWhileExpression;
@@ -402,11 +402,10 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 					return; 
 				}
 				else break;
-			case ESyntaxPackage.XSCRIPTED_EXPRESSION:
-				if(context == grammarAccess.getOperationStepRule() ||
-				   context == grammarAccess.getXScriptedExpressionRule() ||
-				   context == grammarAccess.getXTopLevelExpressionRule()) {
-					sequence_XScriptedExpression(context, (XScriptedExpression) semanticObject); 
+			case ESyntaxPackage.XSCRIPT_VALUE_EXPRESSION:
+				if(context == grammarAccess.getXPrimaryExpressionRule() ||
+				   context == grammarAccess.getXScriptValueExpressionRule()) {
+					sequence_XScriptValueExpression(context, (XScriptValueExpression) semanticObject); 
 					return; 
 				}
 				else break;
@@ -1058,10 +1057,17 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (script=SCRIPT conditional=OperationBlock?)
+	 *     value=SCRIPT
 	 */
-	protected void sequence_XScriptedExpression(EObject context, XScriptedExpression semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+	protected void sequence_XScriptValueExpression(EObject context, XScriptValueExpression semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.XSCRIPT_VALUE_EXPRESSION__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.XSCRIPT_VALUE_EXPRESSION__VALUE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getXScriptValueExpressionAccess().getValueSCRIPTTerminalRuleCall_0(), semanticObject.getValue());
+		feeder.finish();
 	}
 	
 	

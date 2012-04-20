@@ -106,7 +106,7 @@ public class ScriptStepItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ScriptStep)object).getCondition();
+		String label = ((ScriptStep)object).getExecute();
 		return label == null || label.length() == 0 ?
 			getString("_UI_ScriptStep_type") :
 			getString("_UI_ScriptStep_type") + " " + label;

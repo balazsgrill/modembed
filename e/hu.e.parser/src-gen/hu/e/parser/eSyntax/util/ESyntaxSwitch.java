@@ -339,6 +339,14 @@ public class ESyntaxSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case ESyntaxPackage.XSCRIPT_VALUE_EXPRESSION:
+      {
+        XScriptValueExpression xScriptValueExpression = (XScriptValueExpression)theEObject;
+        T result = caseXScriptValueExpression(xScriptValueExpression);
+        if (result == null) result = caseXPrimaryExpression(xScriptValueExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case ESyntaxPackage.XSIZE_OF_EXPRESSION:
       {
         XSizeOfExpression xSizeOfExpression = (XSizeOfExpression)theEObject;
@@ -462,15 +470,6 @@ public class ESyntaxSwitch<T> extends Switch<T>
         XParenthesizedExpression xParenthesizedExpression = (XParenthesizedExpression)theEObject;
         T result = caseXParenthesizedExpression(xParenthesizedExpression);
         if (result == null) result = caseXPrimaryExpression(xParenthesizedExpression);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case ESyntaxPackage.XSCRIPTED_EXPRESSION:
-      {
-        XScriptedExpression xScriptedExpression = (XScriptedExpression)theEObject;
-        T result = caseXScriptedExpression(xScriptedExpression);
-        if (result == null) result = caseXTopLevelExpression(xScriptedExpression);
-        if (result == null) result = caseOperationStep(xScriptedExpression);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -1100,6 +1099,22 @@ public class ESyntaxSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>XScript Value Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>XScript Value Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseXScriptValueExpression(XScriptValueExpression object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>XSize Of Expression</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -1351,22 +1366,6 @@ public class ESyntaxSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseXParenthesizedExpression(XParenthesizedExpression object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>XScripted Expression</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>XScripted Expression</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseXScriptedExpression(XScriptedExpression object)
   {
     return null;
   }

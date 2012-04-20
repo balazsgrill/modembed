@@ -3,7 +3,6 @@
  */
 package hu.e.compiler.internal;
 
-import hu.e.compiler.ECompiler;
 import hu.e.compiler.ECompilerException;
 import hu.e.compiler.internal.model.CompilationErrorEntry;
 import hu.e.compiler.internal.model.ISymbolManager;
@@ -12,11 +11,12 @@ import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
 import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.compiler.internal.model.symbols.IVariableSymbol;
 import hu.e.compiler.internal.model.symbols.impl.CodeAddressSymbol;
+import hu.e.compiler.internal.model.symbols.impl.ScriptedSymbol;
+import hu.e.compiler.list.ConditionalStep;
 import hu.e.compiler.list.LabelStep;
 import hu.e.compiler.list.ListFactory;
 import hu.e.compiler.list.MemoryAssignment;
 import hu.e.compiler.list.ProgramStep;
-import hu.e.compiler.list.ScriptStep;
 import hu.e.compiler.list.SequenceStep;
 import hu.e.parser.eSyntax.InstructionWord;
 import hu.e.parser.eSyntax.Label;
@@ -26,7 +26,6 @@ import hu.e.parser.eSyntax.OperationStep;
 import hu.e.parser.eSyntax.Variable;
 import hu.e.parser.eSyntax.XExpression;
 import hu.e.parser.eSyntax.XIfExpression;
-import hu.e.parser.eSyntax.XScriptedExpression;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -96,61 +95,60 @@ public class BlockCompiler {
 					result.getSteps().add(CompilationErrorEntry.create(e));
 				}
 			}
-			if (step instanceof XScriptedExpression){
-				XScriptedExpression script = (XScriptedExpression)step;
-				
-				if (script.getConditional() != null){
-					OperationBlock conditional = script.getConditional();
-					
-					ProgramStep ps = new BlockCompiler(conditional).compile(sm);
-					ps.setCondition(ECompiler.convertScriptLiteral(script.getScript()));
-					result.getSteps().add(ps);
-					
-				}else{
-					ScriptStep ss = ListFactory.eINSTANCE.createScriptStep();
-					ss.setExecute(ECompiler.convertScriptLiteral(script.getScript()));
-					result.getSteps().add(ss);
-				}
-				
-			}
 			if (step instanceof XIfExpression){
 				try{
 					ISymbol symbol = sm.resolve(((XIfExpression) step).getIf());
 					result.getSteps().addAll(symbol.getSteps());
 
-					if (symbol.isLiteral()){
-						//Literal condition, decide in compile time
-						int v = ((ILiteralSymbol)symbol).getValue();
-						OperationBlock ifblock = (v==0) ? ((XIfExpression) step).getElse() : ((XIfExpression) step).getThen();
-						if (ifblock != null){
-							BlockCompiler subBlock = new BlockCompiler(ifblock);
-							result.getSteps().add(subBlock.compile(sm));
-						}
-					}else{
-						//Runtime condition
-						IVariableSymbol v = (IVariableSymbol)symbol;
-						LabelStep trueLabel = ListFactory.eINSTANCE.createLabelStep();
-						LabelStep falseLabel = ListFactory.eINSTANCE.createLabelStep();
-						LabelStep endLabel = ListFactory.eINSTANCE.createLabelStep();
-
+					if (symbol instanceof ScriptedSymbol){
+						ConditionalStep cstep = ListFactory.eINSTANCE.createConditionalStep();
+						cstep.setCondition(((ScriptedSymbol) symbol).getScriptedValue());
+						
 						OperationBlock trueBlock = ((XIfExpression) step).getThen();
 						OperationBlock falseBlock = ((XIfExpression) step).getElse();
+						
+						cstep.setSuccess(new BlockCompiler(trueBlock).compile(sm));
+						if (falseBlock != null){
+							cstep.setFail(new BlockCompiler(falseBlock).compile(sm));
+						}
+						
+						result.getSteps().add(cstep);
+					}else{
 
-						if (falseBlock == null){
-							result.getSteps().addAll(sm.executeOperator(OperationRole.BRANCH, step, v, 
-									new CodeAddressSymbol(trueLabel), new CodeAddressSymbol(endLabel)).getSteps());
-							result.getSteps().add(trueLabel);
-							result.getSteps().add(new BlockCompiler(trueBlock).compile(sm));
-							result.getSteps().add(endLabel);
+						if (symbol.isLiteral()){
+							//Literal condition, decide in compile time
+							int v = ((ILiteralSymbol)symbol).getValue();
+							OperationBlock ifblock = (v==0) ? ((XIfExpression) step).getElse() : ((XIfExpression) step).getThen();
+							if (ifblock != null){
+								BlockCompiler subBlock = new BlockCompiler(ifblock);
+								result.getSteps().add(subBlock.compile(sm));
+							}
 						}else{
-							result.getSteps().addAll(sm.executeOperator(OperationRole.BRANCH,step, v, 
-									new CodeAddressSymbol(trueLabel), new CodeAddressSymbol(falseLabel)).getSteps());
-							result.getSteps().add(trueLabel);
-							result.getSteps().add(new BlockCompiler(trueBlock).compile(sm));
-							result.getSteps().addAll(sm.executeOperator(OperationRole.UC_GOTO,step, new CodeAddressSymbol(endLabel)).getSteps());
-							result.getSteps().add(falseLabel);
-							result.getSteps().add(new BlockCompiler(falseBlock).compile(sm));
-							result.getSteps().add(endLabel);
+							//Runtime condition
+							IVariableSymbol v = (IVariableSymbol)symbol;
+							LabelStep trueLabel = ListFactory.eINSTANCE.createLabelStep();
+							LabelStep falseLabel = ListFactory.eINSTANCE.createLabelStep();
+							LabelStep endLabel = ListFactory.eINSTANCE.createLabelStep();
+
+							OperationBlock trueBlock = ((XIfExpression) step).getThen();
+							OperationBlock falseBlock = ((XIfExpression) step).getElse();
+
+							if (falseBlock == null){
+								result.getSteps().addAll(sm.executeOperator(OperationRole.BRANCH, step, v, 
+										new CodeAddressSymbol(trueLabel), new CodeAddressSymbol(endLabel)).getSteps());
+								result.getSteps().add(trueLabel);
+								result.getSteps().add(new BlockCompiler(trueBlock).compile(sm));
+								result.getSteps().add(endLabel);
+							}else{
+								result.getSteps().addAll(sm.executeOperator(OperationRole.BRANCH,step, v, 
+										new CodeAddressSymbol(trueLabel), new CodeAddressSymbol(falseLabel)).getSteps());
+								result.getSteps().add(trueLabel);
+								result.getSteps().add(new BlockCompiler(trueBlock).compile(sm));
+								result.getSteps().addAll(sm.executeOperator(OperationRole.UC_GOTO,step, new CodeAddressSymbol(endLabel)).getSteps());
+								result.getSteps().add(falseLabel);
+								result.getSteps().add(new BlockCompiler(falseBlock).compile(sm));
+								result.getSteps().add(endLabel);
+							}
 						}
 					}
 				}catch(ECompilerException e){

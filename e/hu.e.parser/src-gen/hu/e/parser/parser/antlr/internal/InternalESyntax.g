@@ -3207,73 +3207,122 @@ ruleXPrimaryExpression returns [EObject current=null]
     @after { leaveRule(); }:
 (
     { 
-        newCompositeNode(grammarAccess.getXPrimaryExpressionAccess().getXExpressionLiteralParserRuleCall_0()); 
+        newCompositeNode(grammarAccess.getXPrimaryExpressionAccess().getXScriptValueExpressionParserRuleCall_0()); 
     }
-    this_XExpressionLiteral_0=ruleXExpressionLiteral
+    this_XScriptValueExpression_0=ruleXScriptValueExpression
     { 
-        $current = $this_XExpressionLiteral_0.current; 
+        $current = $this_XScriptValueExpression_0.current; 
         afterParserOrEnumRuleCall();
     }
 
     |
     { 
-        newCompositeNode(grammarAccess.getXPrimaryExpressionAccess().getXParenthesizedExpressionParserRuleCall_1()); 
+        newCompositeNode(grammarAccess.getXPrimaryExpressionAccess().getXExpressionLiteralParserRuleCall_1()); 
     }
-    this_XParenthesizedExpression_1=ruleXParenthesizedExpression
+    this_XExpressionLiteral_1=ruleXExpressionLiteral
     { 
-        $current = $this_XParenthesizedExpression_1.current; 
+        $current = $this_XExpressionLiteral_1.current; 
         afterParserOrEnumRuleCall();
     }
 
     |
     { 
-        newCompositeNode(grammarAccess.getXPrimaryExpressionAccess().getXIsLiteralExpressionParserRuleCall_2()); 
+        newCompositeNode(grammarAccess.getXPrimaryExpressionAccess().getXParenthesizedExpressionParserRuleCall_2()); 
     }
-    this_XIsLiteralExpression_2=ruleXIsLiteralExpression
+    this_XParenthesizedExpression_2=ruleXParenthesizedExpression
     { 
-        $current = $this_XIsLiteralExpression_2.current; 
+        $current = $this_XParenthesizedExpression_2.current; 
         afterParserOrEnumRuleCall();
     }
 
     |
     { 
-        newCompositeNode(grammarAccess.getXPrimaryExpressionAccess().getVariableReferenceParserRuleCall_3()); 
+        newCompositeNode(grammarAccess.getXPrimaryExpressionAccess().getXIsLiteralExpressionParserRuleCall_3()); 
     }
-    this_VariableReference_3=ruleVariableReference
+    this_XIsLiteralExpression_3=ruleXIsLiteralExpression
     { 
-        $current = $this_VariableReference_3.current; 
+        $current = $this_XIsLiteralExpression_3.current; 
         afterParserOrEnumRuleCall();
     }
 
     |
     { 
-        newCompositeNode(grammarAccess.getXPrimaryExpressionAccess().getOperationCallParserRuleCall_4()); 
+        newCompositeNode(grammarAccess.getXPrimaryExpressionAccess().getVariableReferenceParserRuleCall_4()); 
     }
-    this_OperationCall_4=ruleOperationCall
+    this_VariableReference_4=ruleVariableReference
     { 
-        $current = $this_OperationCall_4.current; 
+        $current = $this_VariableReference_4.current; 
         afterParserOrEnumRuleCall();
     }
 
     |
     { 
-        newCompositeNode(grammarAccess.getXPrimaryExpressionAccess().getXStructExpressionParserRuleCall_5()); 
+        newCompositeNode(grammarAccess.getXPrimaryExpressionAccess().getOperationCallParserRuleCall_5()); 
     }
-    this_XStructExpression_5=ruleXStructExpression
+    this_OperationCall_5=ruleOperationCall
     { 
-        $current = $this_XStructExpression_5.current; 
+        $current = $this_OperationCall_5.current; 
         afterParserOrEnumRuleCall();
     }
 
     |
     { 
-        newCompositeNode(grammarAccess.getXPrimaryExpressionAccess().getXSizeOfExpressionParserRuleCall_6()); 
+        newCompositeNode(grammarAccess.getXPrimaryExpressionAccess().getXStructExpressionParserRuleCall_6()); 
     }
-    this_XSizeOfExpression_6=ruleXSizeOfExpression
+    this_XStructExpression_6=ruleXStructExpression
     { 
-        $current = $this_XSizeOfExpression_6.current; 
+        $current = $this_XStructExpression_6.current; 
         afterParserOrEnumRuleCall();
     }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getXPrimaryExpressionAccess().getXSizeOfExpressionParserRuleCall_7()); 
+    }
+    this_XSizeOfExpression_7=ruleXSizeOfExpression
+    { 
+        $current = $this_XSizeOfExpression_7.current; 
+        afterParserOrEnumRuleCall();
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRuleXScriptValueExpression
+entryRuleXScriptValueExpression returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getXScriptValueExpressionRule()); }
+	 iv_ruleXScriptValueExpression=ruleXScriptValueExpression 
+	 { $current=$iv_ruleXScriptValueExpression.current; } 
+	 EOF 
+;
+
+// Rule XScriptValueExpression
+ruleXScriptValueExpression returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+(
+		lv_value_0_0=RULE_SCRIPT
+		{
+			newLeafNode(lv_value_0_0, grammarAccess.getXScriptValueExpressionAccess().getValueSCRIPTTerminalRuleCall_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getXScriptValueExpressionRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"value",
+        		lv_value_0_0, 
+        		"SCRIPT");
+	    }
+
+)
 )
 ;
 
@@ -4074,16 +4123,6 @@ ruleXTopLevelExpression returns [EObject current=null]
         $current = $this_XWhileExpression_3.current; 
         afterParserOrEnumRuleCall();
     }
-
-    |
-    { 
-        newCompositeNode(grammarAccess.getXTopLevelExpressionAccess().getXScriptedExpressionParserRuleCall_3()); 
-    }
-    this_XScriptedExpression_4=ruleXScriptedExpression
-    { 
-        $current = $this_XScriptedExpression_4.current; 
-        afterParserOrEnumRuleCall();
-    }
 )
 ;
 
@@ -4395,71 +4434,6 @@ ruleXParenthesizedExpression returns [EObject current=null]
     	newLeafNode(otherlv_2, grammarAccess.getXParenthesizedExpressionAccess().getRightParenthesisKeyword_2());
     }
 )
-;
-
-
-
-
-
-// Entry rule entryRuleXScriptedExpression
-entryRuleXScriptedExpression returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getXScriptedExpressionRule()); }
-	 iv_ruleXScriptedExpression=ruleXScriptedExpression 
-	 { $current=$iv_ruleXScriptedExpression.current; } 
-	 EOF 
-;
-
-// Rule XScriptedExpression
-ruleXScriptedExpression returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-((
-(
-		lv_script_0_0=RULE_SCRIPT
-		{
-			newLeafNode(lv_script_0_0, grammarAccess.getXScriptedExpressionAccess().getScriptSCRIPTTerminalRuleCall_0_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getXScriptedExpressionRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"script",
-        		lv_script_0_0, 
-        		"SCRIPT");
-	    }
-
-)
-)(	otherlv_1='{' 
-    {
-    	newLeafNode(otherlv_1, grammarAccess.getXScriptedExpressionAccess().getLeftCurlyBracketKeyword_1_0());
-    }
-(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getXScriptedExpressionAccess().getConditionalOperationBlockParserRuleCall_1_1_0()); 
-	    }
-		lv_conditional_2_0=ruleOperationBlock		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getXScriptedExpressionRule());
-	        }
-       		set(
-       			$current, 
-       			"conditional",
-        		lv_conditional_2_0, 
-        		"OperationBlock");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)	otherlv_3='}' 
-    {
-    	newLeafNode(otherlv_3, grammarAccess.getXScriptedExpressionAccess().getRightCurlyBracketKeyword_1_2());
-    }
-)?)
 ;
 
 

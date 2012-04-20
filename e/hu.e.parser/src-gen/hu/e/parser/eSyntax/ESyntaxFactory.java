@@ -333,6 +333,15 @@ public interface ESyntaxFactory extends EFactory
   XPrimaryExpression createXPrimaryExpression();
 
   /**
+   * Returns a new object of class '<em>XScript Value Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>XScript Value Expression</em>'.
+   * @generated
+   */
+  XScriptValueExpression createXScriptValueExpression();
+
+  /**
    * Returns a new object of class '<em>XSize Of Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -475,15 +484,6 @@ public interface ESyntaxFactory extends EFactory
    * @generated
    */
   XParenthesizedExpression createXParenthesizedExpression();
-
-  /**
-   * Returns a new object of class '<em>XScripted Expression</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>XScripted Expression</em>'.
-   * @generated
-   */
-  XScriptedExpression createXScriptedExpression();
 
   /**
    * Returns a new object of class '<em>Config Variable</em>'.

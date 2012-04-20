@@ -6,6 +6,7 @@
  */
 package hu.e.compiler.list.impl;
 
+import hu.e.compiler.list.ConditionalStep;
 import hu.e.compiler.list.InstructionStep;
 import hu.e.compiler.list.LabelStep;
 import hu.e.compiler.list.ListFactory;
@@ -109,6 +110,13 @@ public class ListPackageImpl extends EPackageImpl implements ListPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass conditionalStepEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum severityEEnum = null;
 
 	/**
@@ -206,15 +214,6 @@ public class ListPackageImpl extends EPackageImpl implements ListPackage {
 	 */
 	public EClass getProgramStep() {
 		return programStepEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getProgramStep_Condition() {
-		return (EAttribute)programStepEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -438,6 +437,42 @@ public class ListPackageImpl extends EPackageImpl implements ListPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getConditionalStep() {
+		return conditionalStepEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getConditionalStep_Condition() {
+		return (EReference)conditionalStepEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getConditionalStep_Success() {
+		return (EReference)conditionalStepEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getConditionalStep_Fail() {
+		return (EReference)conditionalStepEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getSeverity() {
 		return severityEEnum;
 	}
@@ -475,7 +510,6 @@ public class ListPackageImpl extends EPackageImpl implements ListPackage {
 		createEReference(programListEClass, PROGRAM_LIST__STEP);
 
 		programStepEClass = createEClass(PROGRAM_STEP);
-		createEAttribute(programStepEClass, PROGRAM_STEP__CONDITION);
 
 		instructionStepEClass = createEClass(INSTRUCTION_STEP);
 		createEAttribute(instructionStepEClass, INSTRUCTION_STEP__CODE);
@@ -508,6 +542,11 @@ public class ListPackageImpl extends EPackageImpl implements ListPackage {
 
 		scriptStepEClass = createEClass(SCRIPT_STEP);
 		createEAttribute(scriptStepEClass, SCRIPT_STEP__EXECUTE);
+
+		conditionalStepEClass = createEClass(CONDITIONAL_STEP);
+		createEReference(conditionalStepEClass, CONDITIONAL_STEP__CONDITION);
+		createEReference(conditionalStepEClass, CONDITIONAL_STEP__SUCCESS);
+		createEReference(conditionalStepEClass, CONDITIONAL_STEP__FAIL);
 
 		// Create enums
 		severityEEnum = createEEnum(SEVERITY);
@@ -548,6 +587,8 @@ public class ListPackageImpl extends EPackageImpl implements ListPackage {
 		statusStepEClass.getESuperTypes().add(this.getProgramStep());
 		memoryAssignmentEClass.getESuperTypes().add(this.getReferableValue());
 		scriptStepEClass.getESuperTypes().add(this.getProgramStep());
+		scriptStepEClass.getESuperTypes().add(this.getReferableValue());
+		conditionalStepEClass.getESuperTypes().add(this.getProgramStep());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(programListEClass, ProgramList.class, "ProgramList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -555,7 +596,6 @@ public class ListPackageImpl extends EPackageImpl implements ListPackage {
 		initEReference(getProgramList_Step(), this.getProgramStep(), null, "step", null, 0, 1, ProgramList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(programStepEClass, ProgramStep.class, "ProgramStep", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getProgramStep_Condition(), ecorePackage.getEString(), "condition", null, 0, 1, ProgramStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(instructionStepEClass, InstructionStep.class, "InstructionStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getInstructionStep_Code(), ecorePackage.getELong(), "code", null, 0, 1, InstructionStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -588,6 +628,11 @@ public class ListPackageImpl extends EPackageImpl implements ListPackage {
 
 		initEClass(scriptStepEClass, ScriptStep.class, "ScriptStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getScriptStep_Execute(), ecorePackage.getEString(), "execute", null, 0, 1, ScriptStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(conditionalStepEClass, ConditionalStep.class, "ConditionalStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getConditionalStep_Condition(), this.getScriptStep(), null, "condition", null, 0, 1, ConditionalStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConditionalStep_Success(), this.getProgramStep(), null, "success", null, 0, 1, ConditionalStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConditionalStep_Fail(), this.getProgramStep(), null, "fail", null, 0, 1, ConditionalStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(severityEEnum, Severity.class, "Severity");

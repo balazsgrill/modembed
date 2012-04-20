@@ -7,13 +7,17 @@
 package hu.e.compiler.list.provider;
 
 
+import hu.e.compiler.list.ConditionalStep;
 import hu.e.compiler.list.ListPackage;
-import hu.e.compiler.list.StatusStep;
 
+import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -21,16 +25,15 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link hu.e.compiler.list.StatusStep} object.
+ * This is the item provider adapter for a {@link hu.e.compiler.list.ConditionalStep} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class StatusStepItemProvider
+public class ConditionalStepItemProvider
 	extends ProgramStepItemProvider
 	implements
 		IEditingDomainItemProvider,
@@ -44,7 +47,7 @@ public class StatusStepItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public StatusStepItemProvider(AdapterFactory adapterFactory) {
+	public ConditionalStepItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -59,82 +62,84 @@ public class StatusStepItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addSeverityPropertyDescriptor(object);
-			addMessagePropertyDescriptor(object);
+			addConditionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Severity feature.
+	 * This adds a property descriptor for the Condition feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSeverityPropertyDescriptor(Object object) {
+	protected void addConditionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_StatusStep_severity_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_StatusStep_severity_feature", "_UI_StatusStep_type"),
-				 ListPackage.Literals.STATUS_STEP__SEVERITY,
+				 getString("_UI_ConditionalStep_condition_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ConditionalStep_condition_feature", "_UI_ConditionalStep_type"),
+				 ListPackage.Literals.CONDITIONAL_STEP__CONDITION,
 				 true,
 				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 true,
+				 null,
 				 null,
 				 null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Message feature.
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addMessagePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_StatusStep_message_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_StatusStep_message_feature", "_UI_StatusStep_type"),
-				 ListPackage.Literals.STATUS_STEP__MESSAGE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(ListPackage.Literals.CONDITIONAL_STEP__SUCCESS);
+			childrenFeatures.add(ListPackage.Literals.CONDITIONAL_STEP__FAIL);
+		}
+		return childrenFeatures;
 	}
 
 	/**
-	 * This returns StatusStep.gif.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
+	}
+
+	/**
+	 * This returns ConditionalStep.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/StatusStep"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ConditionalStep"));
 	}
 
 	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		StatusStep ss = (StatusStep)object;
-		StringBuilder sb = new StringBuilder();
-		sb.append("[");
-		sb.append(ss.getSeverity());
-		sb.append("] ");
-		sb.append(ss.getMessage());
-		return sb.toString();
+		return getString("_UI_ConditionalStep_type");
 	}
 
 	/**
@@ -148,10 +153,10 @@ public class StatusStepItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(StatusStep.class)) {
-			case ListPackage.STATUS_STEP__SEVERITY:
-			case ListPackage.STATUS_STEP__MESSAGE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+		switch (notification.getFeatureID(ConditionalStep.class)) {
+			case ListPackage.CONDITIONAL_STEP__SUCCESS:
+			case ListPackage.CONDITIONAL_STEP__FAIL:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
 		super.notifyChanged(notification);

@@ -103,6 +103,7 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
       case ESyntaxPackage.REFERENCE_BINARY_SECTION: return createReferenceBinarySection();
       case ESyntaxPackage.XEXPRESSION: return createXExpression();
       case ESyntaxPackage.XPRIMARY_EXPRESSION: return createXPrimaryExpression();
+      case ESyntaxPackage.XSCRIPT_VALUE_EXPRESSION: return createXScriptValueExpression();
       case ESyntaxPackage.XSIZE_OF_EXPRESSION: return createXSizeOfExpression();
       case ESyntaxPackage.XSTRUCT_EXPRESSION: return createXStructExpression();
       case ESyntaxPackage.XEXPRESSION1: return createXExpression1();
@@ -119,7 +120,6 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
       case ESyntaxPackage.XIF_EXPRESSION: return createXIfExpression();
       case ESyntaxPackage.XWHILE_EXPRESSION: return createXWhileExpression();
       case ESyntaxPackage.XPARENTHESIZED_EXPRESSION: return createXParenthesizedExpression();
-      case ESyntaxPackage.XSCRIPTED_EXPRESSION: return createXScriptedExpression();
       case ESyntaxPackage.CONFIG_VARIABLE: return createConfigVariable();
       case ESyntaxPackage.STRUCT_TYPE_DEF_MEMBER: return createStructTypeDefMember();
       case ESyntaxPackage.CONSTANT_VARIABLE: return createConstantVariable();
@@ -577,6 +577,17 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public XScriptValueExpression createXScriptValueExpression()
+  {
+    XScriptValueExpressionImpl xScriptValueExpression = new XScriptValueExpressionImpl();
+    return xScriptValueExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public XSizeOfExpression createXSizeOfExpression()
   {
     XSizeOfExpressionImpl xSizeOfExpression = new XSizeOfExpressionImpl();
@@ -746,17 +757,6 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
   {
     XParenthesizedExpressionImpl xParenthesizedExpression = new XParenthesizedExpressionImpl();
     return xParenthesizedExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public XScriptedExpression createXScriptedExpression()
-  {
-    XScriptedExpressionImpl xScriptedExpression = new XScriptedExpressionImpl();
-    return xScriptedExpression;
   }
 
   /**

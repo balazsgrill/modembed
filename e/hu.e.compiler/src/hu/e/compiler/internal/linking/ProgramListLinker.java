@@ -5,6 +5,7 @@ package hu.e.compiler.internal.linking;
 
 import hu.e.compiler.internal.MemoryManager;
 import hu.e.compiler.internal.model.InstructionWordInstance;
+import hu.e.compiler.list.ConditionalStep;
 import hu.e.compiler.list.InstructionStep;
 import hu.e.compiler.list.LabelStep;
 import hu.e.compiler.list.MemoryAssignment;
@@ -43,6 +44,7 @@ public class ProgramListLinker {
 	private class LinkingContext{
 		
 		public final Map<MemoryAssignment, Integer> addresses;
+		public final Map<ScriptStep, Object> scriptValues;
 		public final MemoryManager memman;
 		public final ScriptEngine engine;
 		
@@ -50,6 +52,7 @@ public class ProgramListLinker {
 				MemoryManager memman, ScriptEngine engine) {
 			super();
 			this.addresses = new LinkedHashMap<MemoryAssignment, Integer>();
+			this.scriptValues = new LinkedHashMap<ScriptStep, Object>();
 			this.memman = memman;
 			this.engine = engine;
 		}
@@ -100,6 +103,16 @@ public class ProgramListLinker {
 				if (rv instanceof MemoryAssignment){
 					v = context.addresses.get(rv);
 				}
+				if (rv instanceof ScriptStep){
+					Object o = context.scriptValues.get(rv);
+					if (o instanceof Number){
+						v = ((Number) o).intValue();
+					}
+				}
+				
+				if (v == -1){
+					throw new IllegalArgumentException("Could not resolve value of "+rv);
+				}
 				
 				d += InstructionWordInstance.getItemValue(v, lr.getShift(), lr.getStart(), lr.getSize());
 			}
@@ -122,78 +135,83 @@ public class ProgramListLinker {
 	private List<ProgramStep> flatten(LinkingContext context, ProgramStep step){
 		List<ProgramStep> steps = new ArrayList<ProgramStep>();
 		
-		String condition = step.getCondition();
-		boolean ok = true;
-		if (condition != null && !condition.isEmpty()){
+
+		if (step instanceof ScriptStep){
 			try {
-				Object o = context.engine.eval(condition);
-				ok = false;
-				if (o instanceof Boolean){
-					ok = ((Boolean) o).booleanValue();
-				}	
+				ScriptStep value = (ScriptStep)step;
+				Object result = context.engine.eval(value.getExecute());
+				context.scriptValues.put(value, result);
 			} catch (ScriptException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
-		
-		if (ok){
-			if (step instanceof ScriptStep){
-				try {
-					context.engine.eval(((ScriptStep) step).getExecute());
-				} catch (ScriptException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
-			if (step instanceof InstructionStep){
-				steps.add(step);
-			}
-			if (step instanceof LabelStep){
-				steps.add(step);
-			}
-			if (step instanceof SequenceStep){
-				SequenceStep sequence = (SequenceStep)step;
-				Set<Integer> as = new HashSet<Integer>();
-				Map<String, Object> oldvalues = new HashMap<String, Object>();
-				Set<String> variables = new HashSet<String>();
-				for(MemoryAssignment ma : sequence.getVariables()){
-					int addr = context.memman.allocate(ma.getSize());
-					context.addresses.put(ma, addr);
-					as.add(addr);
-					
-					/*
-					 * Let variable to be accessed from scripts
-					 */
-					String vkey = ma.getName();
-					Object v = context.engine.get(vkey);
-					if (v != null){
-						oldvalues.put(vkey, v);
+		if (step instanceof ConditionalStep){
+			ConditionalStep conditional = (ConditionalStep)step;
+			ScriptStep value = conditional.getCondition();
+			
+			Object o = context.scriptValues.get(value);
+			if (o instanceof Boolean){
+				
+				if (((Boolean) o).booleanValue()){
+					steps.addAll(flatten(context, conditional.getSuccess()));
+				}else{
+					if (conditional.getFail() != null) {
+						steps.addAll(flatten(context, conditional.getFail()));
 					}
-					context.engine.put(vkey, Integer.valueOf(addr));
-					variables.add(vkey);
+				}
+				
+			}
+			
+		}
+		if (step instanceof InstructionStep){
+			steps.add(step);
+		}
+		if (step instanceof LabelStep){
+			steps.add(step);
+		}
+		if (step instanceof SequenceStep){
+			SequenceStep sequence = (SequenceStep)step;
+			Set<Integer> as = new HashSet<Integer>();
+			Map<String, Object> oldvalues = new HashMap<String, Object>();
+			Set<String> variables = new HashSet<String>();
+			for(MemoryAssignment ma : sequence.getVariables()){
+				int addr = context.memman.allocate(ma.getSize());
+				context.addresses.put(ma, addr);
+				as.add(addr);
+
+				/*
+				 * Let variable to be accessed from scripts
+				 */
+				String vkey = ma.getName();
+				Object v = context.engine.get(vkey);
+				if (v != null){
+					oldvalues.put(vkey, v);
+				}
+				context.engine.put(vkey, Integer.valueOf(addr));
+				variables.add(vkey);
+			}
+
+			for(ProgramStep ps : ((SequenceStep) step).getSteps()){
+				steps.addAll(flatten(context, ps));
+			}
+
+			for(Integer addr : as){
+				/*
+				 * Restore previous variables
+				 */
+				for(String vkey : variables){
+					if (oldvalues.containsKey(vkey)){
+						context.engine.put(vkey, oldvalues.get(vkey));
+					}else{
+						context.engine.put(vkey, null);
+					}
 				}
 
-				for(ProgramStep ps : ((SequenceStep) step).getSteps()){
-					steps.addAll(flatten(context, ps));
-				}
-
-				for(Integer addr : as){
-					/*
-					 * Restore previous variables
-					 */
-					for(String vkey : variables){
-						if (oldvalues.containsKey(vkey)){
-							context.engine.put(vkey, oldvalues.get(vkey));
-						}else{
-							context.engine.put(vkey, null);
-						}
-					}
-					
-					context.memman.release(addr);
-				}
+				context.memman.release(addr);
 			}
 		}
+
 		return steps;
 	}
 	

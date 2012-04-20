@@ -16,6 +16,7 @@ import hu.e.compiler.internal.model.symbols.impl.LiteralSymbol;
 import hu.e.compiler.internal.model.symbols.impl.MemoryAssignmentValueSymbol;
 import hu.e.compiler.internal.model.symbols.impl.OperatedSymbol;
 import hu.e.compiler.internal.model.symbols.impl.OperationSymbol;
+import hu.e.compiler.internal.model.symbols.impl.ScriptedSymbol;
 import hu.e.compiler.internal.model.symbols.impl.StructLiteralSymbol;
 import hu.e.compiler.internal.model.symbols.impl.VariableSymbol;
 import hu.e.compiler.list.ProgramStep;
@@ -47,6 +48,7 @@ import hu.e.parser.eSyntax.XExpressionM1;
 import hu.e.parser.eSyntax.XIsLiteralExpression;
 import hu.e.parser.eSyntax.XParenthesizedExpression;
 import hu.e.parser.eSyntax.XPrimaryExpression;
+import hu.e.parser.eSyntax.XScriptValueExpression;
 import hu.e.parser.eSyntax.XSizeOfExpression;
 import hu.e.parser.eSyntax.XStructExpression;
 
@@ -228,6 +230,11 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 	}
 	
 	private ISymbol resolve(XPrimaryExpression x) throws ECompilerException{
+		if (x instanceof XScriptValueExpression){
+			XScriptValueExpression script = (XScriptValueExpression)x;
+			
+			return new ScriptedSymbol(script.getValue());
+		}
 		if(x instanceof VariableReference){
 			return resolveVarRef((VariableReference)x);
 		}
