@@ -12,6 +12,7 @@ import hu.e.compiler.list.ProgramList;
 import hu.e.compiler.list.ProgramStep;
 import hu.e.compiler.list.ReferableValue;
 import hu.e.compiler.list.Reference;
+import hu.e.compiler.list.ScriptStep;
 import hu.e.compiler.list.SequenceStep;
 import hu.modembed.hexfile.persistence.HexFileResource;
 
@@ -22,6 +23,10 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
+import javax.script.ScriptException;
 
 /**
  * @author balazs.grill
@@ -35,38 +40,34 @@ public class ProgramListLinker {
 		this.plist = plist;
 	}
 	
-	private void mapMemory(Map<MemoryAssignment, Integer> addresses, MemoryManager memman, SequenceStep step){
-		Set<Integer> as = new HashSet<Integer>();
-		for(MemoryAssignment ma : step.getVariables()){
-			int addr = memman.allocate(ma.getSize());
-			addresses.put(ma, addr);
-			as.add(addr);
+	private class LinkingContext{
+		
+		public final Map<MemoryAssignment, Integer> addresses;
+		public final MemoryManager memman;
+		public final ScriptEngine engine;
+		
+		public LinkingContext(
+				MemoryManager memman, ScriptEngine engine) {
+			super();
+			this.addresses = new LinkedHashMap<MemoryAssignment, Integer>();
+			this.memman = memman;
+			this.engine = engine;
 		}
 		
-		for(ProgramStep ps : step.getSteps()){
-			if (ps instanceof SequenceStep){
-				mapMemory(addresses, memman, (SequenceStep) ps);
-			}
-		}
-		
-		for(Integer addr : as){
-			memman.release(addr);
-		}
 	}
 	
 	public byte[] link(MemoryManager memman, int startAddr){
 		
 		/*
-		 * Map variables to memory addresses
+		 * Create context
 		 */
-		Map<MemoryAssignment, Integer> variables = new LinkedHashMap<MemoryAssignment, Integer>();
-		if (plist.getStep() instanceof SequenceStep){
-			mapMemory(variables, memman, (SequenceStep) plist.getStep());
-		}
+		ScriptEngineManager factory = new ScriptEngineManager();
+		ScriptEngine engine = factory.getEngineByName("JavaScript");
+		LinkingContext context = new LinkingContext(memman, engine);
 		
 		Map<LabelStep, Integer> labels = new HashMap<LabelStep, Integer>();
 		
-		List<ProgramStep> allsteps = flatten(plist.getStep());
+		List<ProgramStep> allsteps = flatten(context, plist.getStep());
 		List<InstructionStep> instructions = new ArrayList<InstructionStep>();
 		int progsize = 0;
 		
@@ -97,7 +98,7 @@ public class ProgramListLinker {
 					v = labels.get(rv);
 				}
 				if (rv instanceof MemoryAssignment){
-					v = variables.get(rv);
+					v = context.addresses.get(rv);
 				}
 				
 				d += InstructionWordInstance.getItemValue(v, lr.getShift(), lr.getStart(), lr.getSize());
@@ -118,21 +119,81 @@ public class ProgramListLinker {
 		return data;
 	}
 	
-	private List<ProgramStep> flatten(ProgramStep step){
+	private List<ProgramStep> flatten(LinkingContext context, ProgramStep step){
 		List<ProgramStep> steps = new ArrayList<ProgramStep>();
 		
-		if (step instanceof InstructionStep){
-			steps.add(step);
-		}
-		if (step instanceof LabelStep){
-			steps.add(step);
-		}
-		if (step instanceof SequenceStep){
-			for(ProgramStep ps : ((SequenceStep) step).getSteps()){
-				steps.addAll(flatten(ps));
+		String condition = step.getCondition();
+		boolean ok = true;
+		if (condition != null && !condition.isEmpty()){
+			try {
+				Object o = context.engine.eval(condition);
+				ok = false;
+				if (o instanceof Boolean){
+					ok = ((Boolean) o).booleanValue();
+				}	
+			} catch (ScriptException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
 		}
 		
+		if (ok){
+			if (step instanceof ScriptStep){
+				try {
+					context.engine.eval(((ScriptStep) step).getExecute());
+				} catch (ScriptException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			if (step instanceof InstructionStep){
+				steps.add(step);
+			}
+			if (step instanceof LabelStep){
+				steps.add(step);
+			}
+			if (step instanceof SequenceStep){
+				SequenceStep sequence = (SequenceStep)step;
+				Set<Integer> as = new HashSet<Integer>();
+				Map<String, Object> oldvalues = new HashMap<String, Object>();
+				Set<String> variables = new HashSet<String>();
+				for(MemoryAssignment ma : sequence.getVariables()){
+					int addr = context.memman.allocate(ma.getSize());
+					context.addresses.put(ma, addr);
+					as.add(addr);
+					
+					/*
+					 * Let variable to be accessed from scripts
+					 */
+					String vkey = ma.getName();
+					Object v = context.engine.get(vkey);
+					if (v != null){
+						oldvalues.put(vkey, v);
+					}
+					context.engine.put(vkey, Integer.valueOf(addr));
+					variables.add(vkey);
+				}
+
+				for(ProgramStep ps : ((SequenceStep) step).getSteps()){
+					steps.addAll(flatten(context, ps));
+				}
+
+				for(Integer addr : as){
+					/*
+					 * Restore previous variables
+					 */
+					for(String vkey : variables){
+						if (oldvalues.containsKey(vkey)){
+							context.engine.put(vkey, oldvalues.get(vkey));
+						}else{
+							context.engine.put(vkey, null);
+						}
+					}
+					
+					context.memman.release(addr);
+				}
+			}
+		}
 		return steps;
 	}
 	
