@@ -479,18 +479,13 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
 		private final RuleCall cRegisterVariableParserRuleCall_4_0 = (RuleCall)cGroup_4.eContents().get(0);
 		private final Keyword cSemicolonKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
-		private final Group cGroup_5 = (Group)cAlternatives.eContents().get(5);
-		private final RuleCall cCompileContextVariableParserRuleCall_5_0 = (RuleCall)cGroup_5.eContents().get(0);
-		private final Keyword cSemicolonKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
-		private final RuleCall cOperatorDefinitionParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
+		private final RuleCall cOperatorDefinitionParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
 		
 		//LibraryItem:
-		//	Type | Operation | Variable ";" | ConstantVariable ";" | RegisterVariable ";" | CompileContextVariable ";" |
-		//	OperatorDefinition;
+		//	Type | Operation | Variable ";" | ConstantVariable ";" | RegisterVariable ";" | OperatorDefinition;
 		public ParserRule getRule() { return rule; }
 
-		//Type | Operation | Variable ";" | ConstantVariable ";" | RegisterVariable ";" | CompileContextVariable ";" |
-		//OperatorDefinition
+		//Type | Operation | Variable ";" | ConstantVariable ";" | RegisterVariable ";" | OperatorDefinition
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//Type
@@ -526,17 +521,8 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		//";"
 		public Keyword getSemicolonKeyword_4_1() { return cSemicolonKeyword_4_1; }
 
-		//CompileContextVariable ";"
-		public Group getGroup_5() { return cGroup_5; }
-
-		//CompileContextVariable
-		public RuleCall getCompileContextVariableParserRuleCall_5_0() { return cCompileContextVariableParserRuleCall_5_0; }
-
-		//";"
-		public Keyword getSemicolonKeyword_5_1() { return cSemicolonKeyword_5_1; }
-
 		//OperatorDefinition
-		public RuleCall getOperatorDefinitionParserRuleCall_6() { return cOperatorDefinitionParserRuleCall_6; }
+		public RuleCall getOperatorDefinitionParserRuleCall_5() { return cOperatorDefinitionParserRuleCall_5; }
 	}
 
 	public class TypeElements extends AbstractParserRuleElementFinder {
@@ -917,50 +903,6 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 
 		//XExpression
 		public RuleCall getAddrXExpressionParserRuleCall_5_0() { return cAddrXExpressionParserRuleCall_5_0; }
-	}
-
-	public class CompileContextVariableElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "CompileContextVariable");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cCompileContextVariableAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cCompilecontextKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cEqualsSignKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cValueAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cValueXExpressionParserRuleCall_3_1_0 = (RuleCall)cValueAssignment_3_1.eContents().get(0);
-		
-		//CompileContextVariable returns Variable:
-		//	{CompileContextVariable} "compilecontext" name=ID ("=" value=XExpression)?;
-		public ParserRule getRule() { return rule; }
-
-		//{CompileContextVariable} "compilecontext" name=ID ("=" value=XExpression)?
-		public Group getGroup() { return cGroup; }
-
-		//{CompileContextVariable}
-		public Action getCompileContextVariableAction_0() { return cCompileContextVariableAction_0; }
-
-		//"compilecontext"
-		public Keyword getCompilecontextKeyword_1() { return cCompilecontextKeyword_1; }
-
-		//name=ID
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
-
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
-
-		//("=" value=XExpression)?
-		public Group getGroup_3() { return cGroup_3; }
-
-		//"="
-		public Keyword getEqualsSignKeyword_3_0() { return cEqualsSignKeyword_3_0; }
-
-		//value=XExpression
-		public Assignment getValueAssignment_3_1() { return cValueAssignment_3_1; }
-
-		//XExpression
-		public RuleCall getValueXExpressionParserRuleCall_3_1_0() { return cValueXExpressionParserRuleCall_3_1_0; }
 	}
 
 	public class OperationStepElements extends AbstractParserRuleElementFinder {
@@ -2518,12 +2460,13 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSemicolonKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
 		private final RuleCall cXIfExpressionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cXWhileExpressionParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cXScriptedExpressionParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
 		//XTopLevelExpression:
-		//	XExpression ";" | XIfExpression | XWhileExpression;
+		//	XExpression ";" | XIfExpression | XWhileExpression | XScriptedExpression;
 		public ParserRule getRule() { return rule; }
 
-		//XExpression ";" | XIfExpression | XWhileExpression
+		//XExpression ";" | XIfExpression | XWhileExpression | XScriptedExpression
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//XExpression ";"
@@ -2540,6 +2483,9 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 
 		//XWhileExpression
 		public RuleCall getXWhileExpressionParserRuleCall_2() { return cXWhileExpressionParserRuleCall_2; }
+
+		//XScriptedExpression
+		public RuleCall getXScriptedExpressionParserRuleCall_3() { return cXScriptedExpressionParserRuleCall_3; }
 	}
 
 	public class OpSingleAssignElements extends AbstractParserRuleElementFinder {
@@ -2732,6 +2678,46 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 
 		//")"
 		public Keyword getRightParenthesisKeyword_2() { return cRightParenthesisKeyword_2; }
+	}
+
+	public class XScriptedExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "XScriptedExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cScriptAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cScriptSCRIPTTerminalRuleCall_0_0 = (RuleCall)cScriptAssignment_0.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Assignment cConditionalAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cConditionalOperationBlockParserRuleCall_1_1_0 = (RuleCall)cConditionalAssignment_1_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
+		
+		//XScriptedExpression:
+		//	script=SCRIPT ("{" conditional=OperationBlock "}")?;
+		public ParserRule getRule() { return rule; }
+
+		//script=SCRIPT ("{" conditional=OperationBlock "}")?
+		public Group getGroup() { return cGroup; }
+
+		//script=SCRIPT
+		public Assignment getScriptAssignment_0() { return cScriptAssignment_0; }
+
+		//SCRIPT
+		public RuleCall getScriptSCRIPTTerminalRuleCall_0_0() { return cScriptSCRIPTTerminalRuleCall_0_0; }
+
+		//("{" conditional=OperationBlock "}")?
+		public Group getGroup_1() { return cGroup_1; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_1_0() { return cLeftCurlyBracketKeyword_1_0; }
+
+		//conditional=OperationBlock
+		public Assignment getConditionalAssignment_1_1() { return cConditionalAssignment_1_1; }
+
+		//OperationBlock
+		public RuleCall getConditionalOperationBlockParserRuleCall_1_1_0() { return cConditionalOperationBlockParserRuleCall_1_1_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_1_2() { return cRightCurlyBracketKeyword_1_2; }
 	}
 	
 	
@@ -3210,6 +3196,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	private CompilationUnitElements pCompilationUnit;
 	private QualifiedNameElements pQualifiedName;
 	private ReferenceIDElements pReferenceID;
+	private TerminalRule tSCRIPT;
 	private TerminalRule tHEXINT;
 	private TerminalRule tBINARY;
 	private LITERALElements pLITERAL;
@@ -3230,7 +3217,6 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	private StructTypeDefMemberElements pStructTypeDefMember;
 	private ConstantVariableElements pConstantVariable;
 	private RegisterVariableElements pRegisterVariable;
-	private CompileContextVariableElements pCompileContextVariable;
 	private OperationStepElements pOperationStep;
 	private LabelElements pLabel;
 	private InstructionWordElements pInstructionWord;
@@ -3280,6 +3266,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	private XIfExpressionElements pXIfExpression;
 	private XWhileExpressionElements pXWhileExpression;
 	private XParenthesizedExpressionElements pXParenthesizedExpression;
+	private XScriptedExpressionElements pXScriptedExpression;
 	
 	private final GrammarProvider grammarProvider;
 
@@ -3334,7 +3321,13 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 
 	/// ***********************
 	// * LITERALS *
-	// *********************** / terminal HEXINT returns ecore::EInt:
+	// *********************** / terminal SCRIPT:
+	//	"$$"->"$$";
+	public TerminalRule getSCRIPTRule() {
+		return (tSCRIPT != null) ? tSCRIPT : (tSCRIPT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "SCRIPT"));
+	} 
+
+	//terminal HEXINT returns ecore::EInt:
 	//	"0x" ("0".."9" | "a".."f" | "A".."F")+;
 	public TerminalRule getHEXINTRule() {
 		return (tHEXINT != null) ? tHEXINT : (tHEXINT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "HEXINT"));
@@ -3413,8 +3406,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//LibraryItem:
-	//	Type | Operation | Variable ";" | ConstantVariable ";" | RegisterVariable ";" | CompileContextVariable ";" |
-	//	OperatorDefinition;
+	//	Type | Operation | Variable ";" | ConstantVariable ";" | RegisterVariable ";" | OperatorDefinition;
 	public LibraryItemElements getLibraryItemAccess() {
 		return (pLibraryItem != null) ? pLibraryItem : (pLibraryItem = new LibraryItemElements());
 	}
@@ -3535,16 +3527,6 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getRegisterVariableRule() {
 		return getRegisterVariableAccess().getRule();
-	}
-
-	//CompileContextVariable returns Variable:
-	//	{CompileContextVariable} "compilecontext" name=ID ("=" value=XExpression)?;
-	public CompileContextVariableElements getCompileContextVariableAccess() {
-		return (pCompileContextVariable != null) ? pCompileContextVariable : (pCompileContextVariable = new CompileContextVariableElements());
-	}
-	
-	public ParserRule getCompileContextVariableRule() {
-		return getCompileContextVariableAccess().getRule();
 	}
 
 	/// ***********************
@@ -3992,7 +3974,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//XTopLevelExpression:
-	//	XExpression ";" | XIfExpression | XWhileExpression;
+	//	XExpression ";" | XIfExpression | XWhileExpression | XScriptedExpression;
 	public XTopLevelExpressionElements getXTopLevelExpressionAccess() {
 		return (pXTopLevelExpression != null) ? pXTopLevelExpression : (pXTopLevelExpression = new XTopLevelExpressionElements());
 	}
@@ -4049,6 +4031,16 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getXParenthesizedExpressionRule() {
 		return getXParenthesizedExpressionAccess().getRule();
+	}
+
+	//XScriptedExpression:
+	//	script=SCRIPT ("{" conditional=OperationBlock "}")?;
+	public XScriptedExpressionElements getXScriptedExpressionAccess() {
+		return (pXScriptedExpression != null) ? pXScriptedExpression : (pXScriptedExpression = new XScriptedExpressionElements());
+	}
+	
+	public ParserRule getXScriptedExpressionRule() {
+		return getXScriptedExpressionAccess().getRule();
 	}
 
 	//terminal ID:

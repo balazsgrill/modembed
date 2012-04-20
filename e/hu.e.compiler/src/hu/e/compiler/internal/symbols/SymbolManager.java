@@ -17,7 +17,6 @@ import hu.e.compiler.list.LabelStep;
 import hu.e.compiler.list.SequenceStep;
 import hu.e.parser.eSyntax.Label;
 import hu.e.parser.eSyntax.Variable;
-import hu.e.parser.eSyntax.VariableReference;
 
 /**
  * @author balazs.grill
@@ -60,16 +59,6 @@ public class SymbolManager extends AbstractSymbolManager {
 	@Override
 	public IVariableManager getVariableManager() {
 		return varman;
-	}
-
-//	@Override
-//	public void setLabelAddresses(Map<LabelStep, Integer> addresses) throws ECompilerException {
-//		parent.setLabelAddresses(addresses);
-//	}
-
-	@Override
-	public void contextAssign(VariableReference vr, int value) {
-		parent.contextAssign(vr, value);
 	}
 
 	@Override

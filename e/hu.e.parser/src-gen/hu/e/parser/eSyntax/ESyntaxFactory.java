@@ -477,6 +477,15 @@ public interface ESyntaxFactory extends EFactory
   XParenthesizedExpression createXParenthesizedExpression();
 
   /**
+   * Returns a new object of class '<em>XScripted Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>XScripted Expression</em>'.
+   * @generated
+   */
+  XScriptedExpression createXScriptedExpression();
+
+  /**
    * Returns a new object of class '<em>Config Variable</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -511,15 +520,6 @@ public interface ESyntaxFactory extends EFactory
    * @generated
    */
   RegisterVariable createRegisterVariable();
-
-  /**
-   * Returns a new object of class '<em>Compile Context Variable</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Compile Context Variable</em>'.
-   * @generated
-   */
-  CompileContextVariable createCompileContextVariable();
 
   /**
    * Returns a new object of class '<em>Label</em>'.

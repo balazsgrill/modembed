@@ -779,27 +779,13 @@ ruleLibraryItem returns [EObject current=null]
     	newLeafNode(otherlv_7, grammarAccess.getLibraryItemAccess().getSemicolonKeyword_4_1());
     }
 )
-    |(
-    { 
-        newCompositeNode(grammarAccess.getLibraryItemAccess().getCompileContextVariableParserRuleCall_5_0()); 
-    }
-    this_CompileContextVariable_8=ruleCompileContextVariable
-    { 
-        $current = $this_CompileContextVariable_8.current; 
-        afterParserOrEnumRuleCall();
-    }
-	otherlv_9=';' 
-    {
-    	newLeafNode(otherlv_9, grammarAccess.getLibraryItemAccess().getSemicolonKeyword_5_1());
-    }
-)
     |
     { 
-        newCompositeNode(grammarAccess.getLibraryItemAccess().getOperatorDefinitionParserRuleCall_6()); 
+        newCompositeNode(grammarAccess.getLibraryItemAccess().getOperatorDefinitionParserRuleCall_5()); 
     }
-    this_OperatorDefinition_10=ruleOperatorDefinition
+    this_OperatorDefinition_8=ruleOperatorDefinition
     { 
-        $current = $this_OperatorDefinition_10.current; 
+        $current = $this_OperatorDefinition_8.current; 
         afterParserOrEnumRuleCall();
     }
 )
@@ -1479,77 +1465,6 @@ ruleRegisterVariable returns [EObject current=null]
 
 )
 ))
-;
-
-
-
-
-
-// Entry rule entryRuleCompileContextVariable
-entryRuleCompileContextVariable returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getCompileContextVariableRule()); }
-	 iv_ruleCompileContextVariable=ruleCompileContextVariable 
-	 { $current=$iv_ruleCompileContextVariable.current; } 
-	 EOF 
-;
-
-// Rule CompileContextVariable
-ruleCompileContextVariable returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-((
-    {
-        $current = forceCreateModelElement(
-            grammarAccess.getCompileContextVariableAccess().getCompileContextVariableAction_0(),
-            $current);
-    }
-)	otherlv_1='compilecontext' 
-    {
-    	newLeafNode(otherlv_1, grammarAccess.getCompileContextVariableAccess().getCompilecontextKeyword_1());
-    }
-(
-(
-		lv_name_2_0=RULE_ID
-		{
-			newLeafNode(lv_name_2_0, grammarAccess.getCompileContextVariableAccess().getNameIDTerminalRuleCall_2_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getCompileContextVariableRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"name",
-        		lv_name_2_0, 
-        		"ID");
-	    }
-
-)
-)(	otherlv_3='=' 
-    {
-    	newLeafNode(otherlv_3, grammarAccess.getCompileContextVariableAccess().getEqualsSignKeyword_3_0());
-    }
-(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getCompileContextVariableAccess().getValueXExpressionParserRuleCall_3_1_0()); 
-	    }
-		lv_value_4_0=ruleXExpression		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getCompileContextVariableRule());
-	        }
-       		set(
-       			$current, 
-       			"value",
-        		lv_value_4_0, 
-        		"XExpression");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-))?)
 ;
 
 
@@ -4159,6 +4074,16 @@ ruleXTopLevelExpression returns [EObject current=null]
         $current = $this_XWhileExpression_3.current; 
         afterParserOrEnumRuleCall();
     }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getXTopLevelExpressionAccess().getXScriptedExpressionParserRuleCall_3()); 
+    }
+    this_XScriptedExpression_4=ruleXScriptedExpression
+    { 
+        $current = $this_XScriptedExpression_4.current; 
+        afterParserOrEnumRuleCall();
+    }
 )
 ;
 
@@ -4470,6 +4395,71 @@ ruleXParenthesizedExpression returns [EObject current=null]
     	newLeafNode(otherlv_2, grammarAccess.getXParenthesizedExpressionAccess().getRightParenthesisKeyword_2());
     }
 )
+;
+
+
+
+
+
+// Entry rule entryRuleXScriptedExpression
+entryRuleXScriptedExpression returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getXScriptedExpressionRule()); }
+	 iv_ruleXScriptedExpression=ruleXScriptedExpression 
+	 { $current=$iv_ruleXScriptedExpression.current; } 
+	 EOF 
+;
+
+// Rule XScriptedExpression
+ruleXScriptedExpression returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+(
+		lv_script_0_0=RULE_SCRIPT
+		{
+			newLeafNode(lv_script_0_0, grammarAccess.getXScriptedExpressionAccess().getScriptSCRIPTTerminalRuleCall_0_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getXScriptedExpressionRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"script",
+        		lv_script_0_0, 
+        		"SCRIPT");
+	    }
+
+)
+)(	otherlv_1='{' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getXScriptedExpressionAccess().getLeftCurlyBracketKeyword_1_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getXScriptedExpressionAccess().getConditionalOperationBlockParserRuleCall_1_1_0()); 
+	    }
+		lv_conditional_2_0=ruleOperationBlock		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getXScriptedExpressionRule());
+	        }
+       		set(
+       			$current, 
+       			"conditional",
+        		lv_conditional_2_0, 
+        		"OperationBlock");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_3='}' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getXScriptedExpressionAccess().getRightCurlyBracketKeyword_1_2());
+    }
+)?)
 ;
 
 
@@ -4808,6 +4798,8 @@ ruleBOOLEAN_OPERATOR returns [Enumerator current=null]
 ));
 
 
+
+RULE_SCRIPT : '$$' ( options {greedy=false;} : . )*'$$';
 
 RULE_HEXINT : '0x' ('0'..'9'|'a'..'f'|'A'..'F')+;
 

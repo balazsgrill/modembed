@@ -20,7 +20,6 @@ import hu.e.parser.eSyntax.CompilationUnit;
 import hu.e.parser.eSyntax.Operation;
 import hu.e.parser.eSyntax.OperationBlock;
 import hu.e.parser.eSyntax.Variable;
-import hu.e.parser.eSyntax.VariableReference;
 
 import java.util.HashMap;
 import java.util.List;
@@ -51,11 +50,6 @@ public class OperationCompiler {
 				return parameters.get(ref);
 			}
 			return sm.getSymbol(ref);
-		}
-		
-		@Override
-		public void contextAssign(VariableReference vr, int value) {
-			sm.contextAssign(vr, value);
 		}
 
 		@Override

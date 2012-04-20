@@ -3,7 +3,6 @@ package hu.e.parser.serializer;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
 import hu.e.parser.eSyntax.ArrayTypeDef;
-import hu.e.parser.eSyntax.CompileContextVariable;
 import hu.e.parser.eSyntax.ConfigVariable;
 import hu.e.parser.eSyntax.ConstantBinarySection;
 import hu.e.parser.eSyntax.ConstantVariable;
@@ -47,6 +46,7 @@ import hu.e.parser.eSyntax.XExpressionM1;
 import hu.e.parser.eSyntax.XIfExpression;
 import hu.e.parser.eSyntax.XIsLiteralExpression;
 import hu.e.parser.eSyntax.XParenthesizedExpression;
+import hu.e.parser.eSyntax.XScriptedExpression;
 import hu.e.parser.eSyntax.XSizeOfExpression;
 import hu.e.parser.eSyntax.XStructExpression;
 import hu.e.parser.eSyntax.XWhileExpression;
@@ -95,13 +95,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 				if(context == grammarAccess.getArrayTypeDefRule() ||
 				   context == grammarAccess.getTypeDefRule()) {
 					sequence_ArrayTypeDef(context, (ArrayTypeDef) semanticObject); 
-					return; 
-				}
-				else break;
-			case ESyntaxPackage.COMPILE_CONTEXT_VARIABLE:
-				if(context == grammarAccess.getCompileContextVariableRule() ||
-				   context == grammarAccess.getLibraryItemRule()) {
-					sequence_CompileContextVariable(context, (CompileContextVariable) semanticObject); 
 					return; 
 				}
 				else break;
@@ -409,6 +402,14 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 					return; 
 				}
 				else break;
+			case ESyntaxPackage.XSCRIPTED_EXPRESSION:
+				if(context == grammarAccess.getOperationStepRule() ||
+				   context == grammarAccess.getXScriptedExpressionRule() ||
+				   context == grammarAccess.getXTopLevelExpressionRule()) {
+					sequence_XScriptedExpression(context, (XScriptedExpression) semanticObject); 
+					return; 
+				}
+				else break;
 			case ESyntaxPackage.XSIZE_OF_EXPRESSION:
 				if(context == grammarAccess.getXPrimaryExpressionRule() ||
 				   context == grammarAccess.getXSizeOfExpressionRule()) {
@@ -438,10 +439,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     (size=XExpression def=TypeDef)
-	 *
-	 * Features:
-	 *    size[1, 1]
-	 *    def[1, 1]
 	 */
 	protected void sequence_ArrayTypeDef(EObject context, ArrayTypeDef semanticObject) {
 		if(errorAcceptor != null) {
@@ -461,10 +458,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     (data+=XExpression+ start=XExpression)
-	 *
-	 * Features:
-	 *    start[1, 1]
-	 *    data[1, *]
 	 */
 	protected void sequence_BinarySection(EObject context, ConstantBinarySection semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -483,17 +476,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	 *         do=OperationBlock 
 	 *         start=XExpression
 	 *     )
-	 *
-	 * Features:
-	 *    start[1, 1]
-	 *    name[1, 1]
-	 *    startAddr[1, 1]
-	 *    memwidth[1, 1]
-	 *    pointersize[1, 1]
-	 *    mems[1, *]
-	 *    lib[0, *]
-	 *    instances[0, *]
-	 *    do[1, 1]
 	 */
 	protected void sequence_BinarySection(EObject context, FunctionBinarySection semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -503,10 +485,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     (inc=[LinkedBinary|QualifiedName] start=XExpression)
-	 *
-	 * Features:
-	 *    start[1, 1]
-	 *    inc[1, 1]
 	 */
 	protected void sequence_BinarySection(EObject context, ReferenceBinarySection semanticObject) {
 		if(errorAcceptor != null) {
@@ -525,24 +503,7 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (name=ID value=XExpression?)
-	 *
-	 * Features:
-	 *    name[1, 1]
-	 *    value[0, 1]
-	 */
-	protected void sequence_CompileContextVariable(EObject context, CompileContextVariable semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
 	 *     (type=TypeDef name=ID)
-	 *
-	 * Features:
-	 *    name[1, 1]
-	 *    type[1, 1]
 	 */
 	protected void sequence_ConfigVariable(EObject context, ConfigVariable semanticObject) {
 		if(errorAcceptor != null) {
@@ -562,9 +523,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     data+=XExpression+
-	 *
-	 * Features:
-	 *    data[1, *]
 	 */
 	protected void sequence_ConstantBinarySection(EObject context, ConstantBinarySection semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -574,11 +532,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     (type=TypeDef name=ID value=XExpression)
-	 *
-	 * Features:
-	 *    name[1, 1]
-	 *    type[1, 1]
-	 *    value[1, 1]
 	 */
 	protected void sequence_ConstantVariable(EObject context, ConstantVariable semanticObject) {
 		if(errorAcceptor != null) {
@@ -601,10 +554,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     (kind=PrimitiveKind bits=INT)
-	 *
-	 * Features:
-	 *    kind[1, 1]
-	 *    bits[1, 1]
 	 */
 	protected void sequence_DataTypeDef(EObject context, DataTypeDef semanticObject) {
 		if(errorAcceptor != null) {
@@ -632,16 +581,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	 *         (lib+=[Library|QualifiedName] | instances+=LinkedInstance)* 
 	 *         do=OperationBlock
 	 *     )
-	 *
-	 * Features:
-	 *    name[1, 1]
-	 *    startAddr[1, 1]
-	 *    memwidth[1, 1]
-	 *    pointersize[1, 1]
-	 *    mems[1, *]
-	 *    lib[0, *]
-	 *    instances[0, *]
-	 *    do[1, 1]
 	 */
 	protected void sequence_FunctionBinarySection(EObject context, FunctionBinarySection semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -651,10 +590,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     (start=LITERAL end=LITERAL)
-	 *
-	 * Features:
-	 *    start[1, 1]
-	 *    end[1, 1]
 	 */
 	protected void sequence_FunctionMemory(EObject context, FunctionMemory semanticObject) {
 		if(errorAcceptor != null) {
@@ -674,10 +609,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     (conf=[ConfigVariable|ID] value=XExpression)
-	 *
-	 * Features:
-	 *    conf[1, 1]
-	 *    value[1, 1]
 	 */
 	protected void sequence_InstanceConfig(EObject context, InstanceConfig semanticObject) {
 		if(errorAcceptor != null) {
@@ -697,10 +628,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     (type=[Module|ReferenceID] name=ID)
-	 *
-	 * Features:
-	 *    name[1, 1]
-	 *    type[1, 1]
 	 */
 	protected void sequence_InstanceReference(EObject context, InstanceReference semanticObject) {
 		if(errorAcceptor != null) {
@@ -720,9 +647,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     sections+=WordSection+
-	 *
-	 * Features:
-	 *    sections[1, *]
 	 */
 	protected void sequence_InstructionWord(EObject context, InstructionWord semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -732,9 +656,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     name=ID
-	 *
-	 * Features:
-	 *    name[1, 1]
 	 */
 	protected void sequence_Label(EObject context, Label semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -744,12 +665,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     (name=QualifiedName (overrides+=[Library|QualifiedName] overrides+=[Library|QualifiedName]*)? use+=[Library|QualifiedName]* items+=LibraryItem*)
-	 *
-	 * Features:
-	 *    name[1, 1]
-	 *    use[0, *]
-	 *    overrides[0, *]
-	 *    items[0, *]
 	 */
 	protected void sequence_Library(EObject context, Library semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -759,12 +674,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     (name=QualifiedName type=BinaryType? use+=[Library|QualifiedName]* sections+=BinarySection*)
-	 *
-	 * Features:
-	 *    name[1, 1]
-	 *    use[0, *]
-	 *    type[0, 1]
-	 *    sections[0, *]
 	 */
 	protected void sequence_LinkedBinary(EObject context, LinkedBinary semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -774,12 +683,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     (type=[Module|QualifiedName] name=ID (links+=ReferenceLink | confs+=InstanceConfig)*)
-	 *
-	 * Features:
-	 *    type[1, 1]
-	 *    name[1, 1]
-	 *    links[0, *]
-	 *    confs[0, *]
 	 */
 	protected void sequence_LinkedInstance(EObject context, LinkedInstance semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -789,9 +692,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     value=LITERAL
-	 *
-	 * Features:
-	 *    value[1, 1]
 	 */
 	protected void sequence_LiteralValue(EObject context, LiteralValue semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -801,12 +701,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     (name=QualifiedName (extends+=[Module|QualifiedName] extends+=[Module|QualifiedName]*)? use+=[Library|QualifiedName]* items+=ModuleItem*)
-	 *
-	 * Features:
-	 *    name[1, 1]
-	 *    use[0, *]
-	 *    extends[0, *]
-	 *    items[0, *]
 	 */
 	protected void sequence_Module(EObject context, Module semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -816,9 +710,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     (steps+=OperationStep*)
-	 *
-	 * Features:
-	 *    steps[0, *]
 	 */
 	protected void sequence_OperationBlock(EObject context, OperationBlock semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -828,10 +719,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     (operation=[Operation|ReferenceID] (params+=OperationCallParameter params+=OperationCallParameter*)?)
-	 *
-	 * Features:
-	 *    operation[1, 1]
-	 *    params[0, *]
 	 */
 	protected void sequence_OperationCall(EObject context, OperationCall semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -841,15 +728,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     (name=ID (params+=ParameterVariable params+=ParameterVariable*)? block=OperationBlock (return=XExpression | returnvar=Variable)?)
-	 *
-	 * Features:
-	 *    name[1, 1]
-	 *    params[0, *]
-	 *    block[1, 1]
-	 *    return[0, 1]
-	 *         EXCLUDE_IF_SET returnvar
-	 *    returnvar[0, 1]
-	 *         EXCLUDE_IF_SET return
 	 */
 	protected void sequence_Operation(EObject context, Operation semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -859,10 +737,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     (role=OperationRole candidate+=[Operation|ReferenceID] candidate+=[Operation|ReferenceID]*)
-	 *
-	 * Features:
-	 *    role[1, 1]
-	 *    candidate[1, *]
 	 */
 	protected void sequence_OperatorDefinition(EObject context, OperatorDefinition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -872,12 +746,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     (kind=ParameterKind? type=TypeDef name=ID default=LITERAL?)
-	 *
-	 * Features:
-	 *    name[1, 1]
-	 *    type[1, 1]
-	 *    kind[0, 1]
-	 *    default[0, 1]
 	 */
 	protected void sequence_ParameterVariable(EObject context, ParameterVariable semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -887,9 +755,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     def=TypeDef
-	 *
-	 * Features:
-	 *    def[1, 1]
 	 */
 	protected void sequence_PointerTypeDef(EObject context, PointerTypeDef semanticObject) {
 		if(errorAcceptor != null) {
@@ -906,9 +771,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     type=[Type|ReferenceID]
-	 *
-	 * Features:
-	 *    type[1, 1]
 	 */
 	protected void sequence_RefTypeDef(EObject context, RefTypeDef semanticObject) {
 		if(errorAcceptor != null) {
@@ -925,9 +787,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     inc=[LinkedBinary|QualifiedName]
-	 *
-	 * Features:
-	 *    inc[1, 1]
 	 */
 	protected void sequence_ReferenceBinarySection(EObject context, ReferenceBinarySection semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -937,10 +796,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     (ref=[InstanceReference|ID] inst=[LinkedInstance|ID])
-	 *
-	 * Features:
-	 *    ref[1, 1]
-	 *    inst[1, 1]
 	 */
 	protected void sequence_ReferenceLink(EObject context, ReferenceLink semanticObject) {
 		if(errorAcceptor != null) {
@@ -960,11 +815,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     (type=TypeDef name=ID addr=XExpression)
-	 *
-	 * Features:
-	 *    name[1, 1]
-	 *    type[1, 1]
-	 *    addr[1, 1]
 	 */
 	protected void sequence_RegisterVariable(EObject context, RegisterVariable semanticObject) {
 		if(errorAcceptor != null) {
@@ -987,10 +837,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     (type=TypeDef name=ID)
-	 *
-	 * Features:
-	 *    name[1, 1]
-	 *    type[1, 1]
 	 */
 	protected void sequence_StructTypeDefMember(EObject context, StructTypeDefMember semanticObject) {
 		if(errorAcceptor != null) {
@@ -1010,9 +856,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     (members+=StructTypeDefMember members+=StructTypeDefMember*)
-	 *
-	 * Features:
-	 *    members[1, *]
 	 */
 	protected void sequence_StructTypeDef(EObject context, StructTypeDef semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1022,10 +865,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     (name=ID def=TypeDef)
-	 *
-	 * Features:
-	 *    name[1, 1]
-	 *    def[1, 1]
 	 */
 	protected void sequence_Type(EObject context, Type semanticObject) {
 		if(errorAcceptor != null) {
@@ -1045,9 +884,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     var=[Variable|ReferenceID]
-	 *
-	 * Features:
-	 *    var[1, 1]
 	 */
 	protected void sequence_VariableReference(EObject context, VariableReference semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1057,10 +893,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     (type=TypeDef name=ID)
-	 *
-	 * Features:
-	 *    name[1, 1]
-	 *    type[1, 1]
 	 */
 	protected void sequence_Variable(EObject context, Variable semanticObject) {
 		if(errorAcceptor != null) {
@@ -1080,11 +912,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     (value=LITERAL size=INT shift=INT?)
-	 *
-	 * Features:
-	 *    size[1, 1]
-	 *    shift[0, 1]
-	 *    value[1, 1]
 	 */
 	protected void sequence_WordSection(EObject context, LiteralValue semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1094,11 +921,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     (var=[Variable|ReferenceID] size=INT shift=INT?)
-	 *
-	 * Features:
-	 *    size[1, 1]
-	 *    shift[0, 1]
-	 *    var[1, 1]
 	 */
 	protected void sequence_WordSection(EObject context, VariableReference semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1108,10 +930,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     (a=XExpressionM1 member+=ID*)
-	 *
-	 * Features:
-	 *    a[1, 1]
-	 *    member[0, *]
 	 */
 	protected void sequence_XExpression0(EObject context, XExpression0 semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1121,10 +939,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     (operator+=UNARY_OPERATOR* a=XExpression0)
-	 *
-	 * Features:
-	 *    operator[0, *]
-	 *    a[1, 1]
 	 */
 	protected void sequence_XExpression1(EObject context, XExpression1 semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1134,13 +948,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     (a=XExpression1 (op+=MULTIPLICATIVE_OPERATOR b+=XExpression2)*)
-	 *
-	 * Features:
-	 *    a[1, 1]
-	 *    op[0, *]
-	 *         SAME b
-	 *    b[0, *]
-	 *         SAME op
 	 */
 	protected void sequence_XExpression2(EObject context, XExpression2 semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1150,13 +957,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     (a=XExpression2 (op+=ADDITIVE_OPERATOR b+=XExpression2)*)
-	 *
-	 * Features:
-	 *    a[1, 1]
-	 *    op[0, *]
-	 *         SAME b
-	 *    b[0, *]
-	 *         SAME op
 	 */
 	protected void sequence_XExpression3(EObject context, XExpression3 semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1166,13 +966,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     (a=XExpression3 (op+=EQUALITY_OPERATOR b+=XExpression3)*)
-	 *
-	 * Features:
-	 *    a[1, 1]
-	 *    op[0, *]
-	 *         SAME b
-	 *    b[0, *]
-	 *         SAME op
 	 */
 	protected void sequence_XExpression4(EObject context, XExpression4 semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1182,13 +975,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     (a=XExpression4 (op+=BOOLEAN_OPERATOR b+=XExpression4)*)
-	 *
-	 * Features:
-	 *    a[1, 1]
-	 *    op[0, *]
-	 *         SAME b
-	 *    b[0, *]
-	 *         SAME op
 	 */
 	protected void sequence_XExpression5(EObject context, XExpression5 semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1198,10 +984,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     (ref+=VariableReference* a=XExpression5)
-	 *
-	 * Features:
-	 *    ref[0, *]
-	 *    a[1, 1]
 	 */
 	protected void sequence_XExpression6(EObject context, XExpression6 semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1211,9 +993,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     value=LITERAL
-	 *
-	 * Features:
-	 *    value[1, 1]
 	 */
 	protected void sequence_XExpressionLiteral(EObject context, XExpressionLiteral semanticObject) {
 		if(errorAcceptor != null) {
@@ -1230,10 +1009,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     (a=XPrimaryExpression index+=XExpression*)
-	 *
-	 * Features:
-	 *    a[1, 1]
-	 *    index[0, *]
 	 */
 	protected void sequence_XExpressionM1(EObject context, XExpressionM1 semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1243,11 +1018,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     (if=XExpression then=OperationBlock else=OperationBlock?)
-	 *
-	 * Features:
-	 *    if[1, 1]
-	 *    then[1, 1]
-	 *    else[0, 1]
 	 */
 	protected void sequence_XIfExpression(EObject context, XIfExpression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1257,9 +1027,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     ref=VariableReference
-	 *
-	 * Features:
-	 *    ref[1, 1]
 	 */
 	protected void sequence_XIsLiteralExpression(EObject context, XIsLiteralExpression semanticObject) {
 		if(errorAcceptor != null) {
@@ -1276,9 +1043,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     a=XExpression
-	 *
-	 * Features:
-	 *    a[1, 1]
 	 */
 	protected void sequence_XParenthesizedExpression(EObject context, XParenthesizedExpression semanticObject) {
 		if(errorAcceptor != null) {
@@ -1294,10 +1058,16 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	
 	/**
 	 * Constraint:
+	 *     (script=SCRIPT conditional=OperationBlock?)
+	 */
+	protected void sequence_XScriptedExpression(EObject context, XScriptedExpression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     type=TypeDef
-	 *
-	 * Features:
-	 *    type[1, 1]
 	 */
 	protected void sequence_XSizeOfExpression(EObject context, XSizeOfExpression semanticObject) {
 		if(errorAcceptor != null) {
@@ -1314,10 +1084,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     (type=[Type|ReferenceID] values+=XExpression values+=XExpression*)
-	 *
-	 * Features:
-	 *    type[1, 1]
-	 *    values[1, *]
 	 */
 	protected void sequence_XStructExpression(EObject context, XStructExpression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1327,10 +1093,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     (cond=XExpression do=OperationBlock)
-	 *
-	 * Features:
-	 *    cond[1, 1]
-	 *    do[1, 1]
 	 */
 	protected void sequence_XWhileExpression(EObject context, XWhileExpression semanticObject) {
 		if(errorAcceptor != null) {

@@ -10,7 +10,6 @@ import hu.e.parser.eSyntax.ArrayTypeDef;
 import hu.e.parser.eSyntax.BinarySection;
 import hu.e.parser.eSyntax.BinaryType;
 import hu.e.parser.eSyntax.CompilationUnit;
-import hu.e.parser.eSyntax.CompileContextVariable;
 import hu.e.parser.eSyntax.ConfigVariable;
 import hu.e.parser.eSyntax.ConstantBinarySection;
 import hu.e.parser.eSyntax.ConstantVariable;
@@ -66,6 +65,7 @@ import hu.e.parser.eSyntax.XIfExpression;
 import hu.e.parser.eSyntax.XIsLiteralExpression;
 import hu.e.parser.eSyntax.XParenthesizedExpression;
 import hu.e.parser.eSyntax.XPrimaryExpression;
+import hu.e.parser.eSyntax.XScriptedExpression;
 import hu.e.parser.eSyntax.XSizeOfExpression;
 import hu.e.parser.eSyntax.XStructExpression;
 import hu.e.parser.eSyntax.XTopLevelExpression;
@@ -442,6 +442,13 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass xScriptedExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass configVariableEClass = null;
 
   /**
@@ -464,13 +471,6 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * @generated
    */
   private EClass registerVariableEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass compileContextVariableEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1944,6 +1944,36 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getXScriptedExpression()
+  {
+    return xScriptedExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getXScriptedExpression_Script()
+  {
+    return (EAttribute)xScriptedExpressionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getXScriptedExpression_Conditional()
+  {
+    return (EReference)xScriptedExpressionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getConfigVariable()
   {
     return configVariableEClass;
@@ -1997,26 +2027,6 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
   public EReference getRegisterVariable_Addr()
   {
     return (EReference)registerVariableEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getCompileContextVariable()
-  {
-    return compileContextVariableEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getCompileContextVariable_Value()
-  {
-    return (EReference)compileContextVariableEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2411,6 +2421,10 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     xParenthesizedExpressionEClass = createEClass(XPARENTHESIZED_EXPRESSION);
     createEReference(xParenthesizedExpressionEClass, XPARENTHESIZED_EXPRESSION__A);
 
+    xScriptedExpressionEClass = createEClass(XSCRIPTED_EXPRESSION);
+    createEAttribute(xScriptedExpressionEClass, XSCRIPTED_EXPRESSION__SCRIPT);
+    createEReference(xScriptedExpressionEClass, XSCRIPTED_EXPRESSION__CONDITIONAL);
+
     configVariableEClass = createEClass(CONFIG_VARIABLE);
 
     structTypeDefMemberEClass = createEClass(STRUCT_TYPE_DEF_MEMBER);
@@ -2420,9 +2434,6 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
 
     registerVariableEClass = createEClass(REGISTER_VARIABLE);
     createEReference(registerVariableEClass, REGISTER_VARIABLE__ADDR);
-
-    compileContextVariableEClass = createEClass(COMPILE_CONTEXT_VARIABLE);
-    createEReference(compileContextVariableEClass, COMPILE_CONTEXT_VARIABLE__VALUE);
 
     labelEClass = createEClass(LABEL);
 
@@ -2510,11 +2521,11 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     xIfExpressionEClass.getESuperTypes().add(this.getXTopLevelExpression());
     xWhileExpressionEClass.getESuperTypes().add(this.getXTopLevelExpression());
     xParenthesizedExpressionEClass.getESuperTypes().add(this.getXPrimaryExpression());
+    xScriptedExpressionEClass.getESuperTypes().add(this.getXTopLevelExpression());
     configVariableEClass.getESuperTypes().add(this.getVariable());
     structTypeDefMemberEClass.getESuperTypes().add(this.getVariable());
     constantVariableEClass.getESuperTypes().add(this.getVariable());
     registerVariableEClass.getESuperTypes().add(this.getVariable());
-    compileContextVariableEClass.getESuperTypes().add(this.getVariable());
     labelEClass.getESuperTypes().add(this.getVariable());
     operationEClass.getESuperTypes().add(this.getVariable());
     parameterVariableEClass.getESuperTypes().add(this.getVariable());
@@ -2702,6 +2713,10 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     initEClass(xParenthesizedExpressionEClass, XParenthesizedExpression.class, "XParenthesizedExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getXParenthesizedExpression_A(), this.getXExpression(), null, "a", null, 0, 1, XParenthesizedExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(xScriptedExpressionEClass, XScriptedExpression.class, "XScriptedExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getXScriptedExpression_Script(), ecorePackage.getEString(), "script", null, 0, 1, XScriptedExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getXScriptedExpression_Conditional(), this.getOperationBlock(), null, "conditional", null, 0, 1, XScriptedExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(configVariableEClass, ConfigVariable.class, "ConfigVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(structTypeDefMemberEClass, StructTypeDefMember.class, "StructTypeDefMember", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2711,9 +2726,6 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
 
     initEClass(registerVariableEClass, RegisterVariable.class, "RegisterVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getRegisterVariable_Addr(), this.getXExpression(), null, "addr", null, 0, 1, RegisterVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(compileContextVariableEClass, CompileContextVariable.class, "CompileContextVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getCompileContextVariable_Value(), this.getXExpression(), null, "value", null, 0, 1, CompileContextVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(labelEClass, Label.class, "Label", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

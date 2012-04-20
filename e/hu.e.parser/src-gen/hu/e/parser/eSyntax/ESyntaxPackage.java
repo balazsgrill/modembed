@@ -1885,6 +1885,43 @@ public interface ESyntaxPackage extends EPackage
   int XPARENTHESIZED_EXPRESSION_FEATURE_COUNT = XPRIMARY_EXPRESSION_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link hu.e.parser.eSyntax.impl.XScriptedExpressionImpl <em>XScripted Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.e.parser.eSyntax.impl.XScriptedExpressionImpl
+   * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXScriptedExpression()
+   * @generated
+   */
+  int XSCRIPTED_EXPRESSION = 50;
+
+  /**
+   * The feature id for the '<em><b>Script</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int XSCRIPTED_EXPRESSION__SCRIPT = XTOP_LEVEL_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Conditional</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int XSCRIPTED_EXPRESSION__CONDITIONAL = XTOP_LEVEL_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>XScripted Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int XSCRIPTED_EXPRESSION_FEATURE_COUNT = XTOP_LEVEL_EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.impl.ConfigVariableImpl <em>Config Variable</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1892,7 +1929,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getConfigVariable()
    * @generated
    */
-  int CONFIG_VARIABLE = 50;
+  int CONFIG_VARIABLE = 51;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1929,7 +1966,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getStructTypeDefMember()
    * @generated
    */
-  int STRUCT_TYPE_DEF_MEMBER = 51;
+  int STRUCT_TYPE_DEF_MEMBER = 52;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1966,7 +2003,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getConstantVariable()
    * @generated
    */
-  int CONSTANT_VARIABLE = 52;
+  int CONSTANT_VARIABLE = 53;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2012,7 +2049,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getRegisterVariable()
    * @generated
    */
-  int REGISTER_VARIABLE = 53;
+  int REGISTER_VARIABLE = 54;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2049,52 +2086,6 @@ public interface ESyntaxPackage extends EPackage
    * @ordered
    */
   int REGISTER_VARIABLE_FEATURE_COUNT = VARIABLE_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link hu.e.parser.eSyntax.impl.CompileContextVariableImpl <em>Compile Context Variable</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see hu.e.parser.eSyntax.impl.CompileContextVariableImpl
-   * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getCompileContextVariable()
-   * @generated
-   */
-  int COMPILE_CONTEXT_VARIABLE = 54;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPILE_CONTEXT_VARIABLE__NAME = VARIABLE__NAME;
-
-  /**
-   * The feature id for the '<em><b>Type</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPILE_CONTEXT_VARIABLE__TYPE = VARIABLE__TYPE;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPILE_CONTEXT_VARIABLE__VALUE = VARIABLE_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Compile Context Variable</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPILE_CONTEXT_VARIABLE_FEATURE_COUNT = VARIABLE_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.impl.LabelImpl <em>Label</em>}' class.
@@ -3755,6 +3746,38 @@ public interface ESyntaxPackage extends EPackage
   EReference getXParenthesizedExpression_A();
 
   /**
+   * Returns the meta object for class '{@link hu.e.parser.eSyntax.XScriptedExpression <em>XScripted Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>XScripted Expression</em>'.
+   * @see hu.e.parser.eSyntax.XScriptedExpression
+   * @generated
+   */
+  EClass getXScriptedExpression();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.XScriptedExpression#getScript <em>Script</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Script</em>'.
+   * @see hu.e.parser.eSyntax.XScriptedExpression#getScript()
+   * @see #getXScriptedExpression()
+   * @generated
+   */
+  EAttribute getXScriptedExpression_Script();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.e.parser.eSyntax.XScriptedExpression#getConditional <em>Conditional</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Conditional</em>'.
+   * @see hu.e.parser.eSyntax.XScriptedExpression#getConditional()
+   * @see #getXScriptedExpression()
+   * @generated
+   */
+  EReference getXScriptedExpression_Conditional();
+
+  /**
    * Returns the meta object for class '{@link hu.e.parser.eSyntax.ConfigVariable <em>Config Variable</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3815,27 +3838,6 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    */
   EReference getRegisterVariable_Addr();
-
-  /**
-   * Returns the meta object for class '{@link hu.e.parser.eSyntax.CompileContextVariable <em>Compile Context Variable</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Compile Context Variable</em>'.
-   * @see hu.e.parser.eSyntax.CompileContextVariable
-   * @generated
-   */
-  EClass getCompileContextVariable();
-
-  /**
-   * Returns the meta object for the containment reference '{@link hu.e.parser.eSyntax.CompileContextVariable#getValue <em>Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Value</em>'.
-   * @see hu.e.parser.eSyntax.CompileContextVariable#getValue()
-   * @see #getCompileContextVariable()
-   * @generated
-   */
-  EReference getCompileContextVariable_Value();
 
   /**
    * Returns the meta object for class '{@link hu.e.parser.eSyntax.Label <em>Label</em>}'.
@@ -5203,6 +5205,32 @@ public interface ESyntaxPackage extends EPackage
     EReference XPARENTHESIZED_EXPRESSION__A = eINSTANCE.getXParenthesizedExpression_A();
 
     /**
+     * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.XScriptedExpressionImpl <em>XScripted Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.e.parser.eSyntax.impl.XScriptedExpressionImpl
+     * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXScriptedExpression()
+     * @generated
+     */
+    EClass XSCRIPTED_EXPRESSION = eINSTANCE.getXScriptedExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Script</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute XSCRIPTED_EXPRESSION__SCRIPT = eINSTANCE.getXScriptedExpression_Script();
+
+    /**
+     * The meta object literal for the '<em><b>Conditional</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference XSCRIPTED_EXPRESSION__CONDITIONAL = eINSTANCE.getXScriptedExpression_Conditional();
+
+    /**
      * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.ConfigVariableImpl <em>Config Variable</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5257,24 +5285,6 @@ public interface ESyntaxPackage extends EPackage
      * @generated
      */
     EReference REGISTER_VARIABLE__ADDR = eINSTANCE.getRegisterVariable_Addr();
-
-    /**
-     * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.CompileContextVariableImpl <em>Compile Context Variable</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see hu.e.parser.eSyntax.impl.CompileContextVariableImpl
-     * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getCompileContextVariable()
-     * @generated
-     */
-    EClass COMPILE_CONTEXT_VARIABLE = eINSTANCE.getCompileContextVariable();
-
-    /**
-     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference COMPILE_CONTEXT_VARIABLE__VALUE = eINSTANCE.getCompileContextVariable_Value();
 
     /**
      * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.LabelImpl <em>Label</em>}' class.

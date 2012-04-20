@@ -22,8 +22,6 @@ public interface ISymbolManager {
 	
 	public ISymbol resolve(XExpression expression) throws ECompilerException;
 	
-	public void contextAssign(VariableReference vr, int value);
-	
 	public ISymbol resolveVarRef(VariableReference vr) throws ECompilerException;
 	
 	public OperationFinder getOpFinder();

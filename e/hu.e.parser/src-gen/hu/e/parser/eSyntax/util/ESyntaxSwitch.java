@@ -465,6 +465,15 @@ public class ESyntaxSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case ESyntaxPackage.XSCRIPTED_EXPRESSION:
+      {
+        XScriptedExpression xScriptedExpression = (XScriptedExpression)theEObject;
+        T result = caseXScriptedExpression(xScriptedExpression);
+        if (result == null) result = caseXTopLevelExpression(xScriptedExpression);
+        if (result == null) result = caseOperationStep(xScriptedExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case ESyntaxPackage.CONFIG_VARIABLE:
       {
         ConfigVariable configVariable = (ConfigVariable)theEObject;
@@ -506,17 +515,6 @@ public class ESyntaxSwitch<T> extends Switch<T>
         if (result == null) result = caseModuleItem(registerVariable);
         if (result == null) result = caseLibraryItem(registerVariable);
         if (result == null) result = caseOperationStep(registerVariable);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case ESyntaxPackage.COMPILE_CONTEXT_VARIABLE:
-      {
-        CompileContextVariable compileContextVariable = (CompileContextVariable)theEObject;
-        T result = caseCompileContextVariable(compileContextVariable);
-        if (result == null) result = caseVariable(compileContextVariable);
-        if (result == null) result = caseModuleItem(compileContextVariable);
-        if (result == null) result = caseLibraryItem(compileContextVariable);
-        if (result == null) result = caseOperationStep(compileContextVariable);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -1358,6 +1356,22 @@ public class ESyntaxSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>XScripted Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>XScripted Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseXScriptedExpression(XScriptedExpression object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Config Variable</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -1417,22 +1431,6 @@ public class ESyntaxSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseRegisterVariable(RegisterVariable object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Compile Context Variable</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Compile Context Variable</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseCompileContextVariable(CompileContextVariable object)
   {
     return null;
   }

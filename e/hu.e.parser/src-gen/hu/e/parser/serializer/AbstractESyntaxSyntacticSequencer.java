@@ -23,8 +23,8 @@ public class AbstractESyntaxSyntacticSequencer extends AbstractSyntacticSequence
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (ESyntaxGrammarAccess) access;
-		match_OperatorDefinition_CommaKeyword_5_q = new TokenAlias(true, false, grammarAccess.getOperatorDefinitionAccess().getCommaKeyword_5());
-		match_XStructExpression_CommaKeyword_4_q = new TokenAlias(true, false, grammarAccess.getXStructExpressionAccess().getCommaKeyword_4());
+		match_OperatorDefinition_CommaKeyword_5_q = new TokenAlias(false, true, grammarAccess.getOperatorDefinitionAccess().getCommaKeyword_5());
+		match_XStructExpression_CommaKeyword_4_q = new TokenAlias(false, true, grammarAccess.getXStructExpressionAccess().getCommaKeyword_4());
 	}
 	
 	@Override

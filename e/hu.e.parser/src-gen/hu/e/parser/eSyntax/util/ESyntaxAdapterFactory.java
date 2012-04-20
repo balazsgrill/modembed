@@ -329,6 +329,11 @@ public class ESyntaxAdapterFactory extends AdapterFactoryImpl
         return createXParenthesizedExpressionAdapter();
       }
       @Override
+      public Adapter caseXScriptedExpression(XScriptedExpression object)
+      {
+        return createXScriptedExpressionAdapter();
+      }
+      @Override
       public Adapter caseConfigVariable(ConfigVariable object)
       {
         return createConfigVariableAdapter();
@@ -347,11 +352,6 @@ public class ESyntaxAdapterFactory extends AdapterFactoryImpl
       public Adapter caseRegisterVariable(RegisterVariable object)
       {
         return createRegisterVariableAdapter();
-      }
-      @Override
-      public Adapter caseCompileContextVariable(CompileContextVariable object)
-      {
-        return createCompileContextVariableAdapter();
       }
       @Override
       public Adapter caseLabel(Label object)
@@ -1141,6 +1141,21 @@ public class ESyntaxAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link hu.e.parser.eSyntax.XScriptedExpression <em>XScripted Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.e.parser.eSyntax.XScriptedExpression
+   * @generated
+   */
+  public Adapter createXScriptedExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link hu.e.parser.eSyntax.ConfigVariable <em>Config Variable</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -1196,21 +1211,6 @@ public class ESyntaxAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createRegisterVariableAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link hu.e.parser.eSyntax.CompileContextVariable <em>Compile Context Variable</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see hu.e.parser.eSyntax.CompileContextVariable
-   * @generated
-   */
-  public Adapter createCompileContextVariableAdapter()
   {
     return null;
   }

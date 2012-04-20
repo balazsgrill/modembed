@@ -32,4 +32,7 @@ Export-Package: hu.e.parser,
  hu.e.parser.serializer,
  hu.e.parser.parser.antlr,
  hu.e.parser.parser.antlr.internal,
- hu.e.parser.validation
+ hu.e.parser.validation,
+ hu.e.parser.scoping,
+ hu.e.parser.generator,
+ hu.e.parser.formatting

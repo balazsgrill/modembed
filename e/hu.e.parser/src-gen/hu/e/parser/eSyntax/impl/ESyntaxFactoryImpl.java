@@ -119,11 +119,11 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
       case ESyntaxPackage.XIF_EXPRESSION: return createXIfExpression();
       case ESyntaxPackage.XWHILE_EXPRESSION: return createXWhileExpression();
       case ESyntaxPackage.XPARENTHESIZED_EXPRESSION: return createXParenthesizedExpression();
+      case ESyntaxPackage.XSCRIPTED_EXPRESSION: return createXScriptedExpression();
       case ESyntaxPackage.CONFIG_VARIABLE: return createConfigVariable();
       case ESyntaxPackage.STRUCT_TYPE_DEF_MEMBER: return createStructTypeDefMember();
       case ESyntaxPackage.CONSTANT_VARIABLE: return createConstantVariable();
       case ESyntaxPackage.REGISTER_VARIABLE: return createRegisterVariable();
-      case ESyntaxPackage.COMPILE_CONTEXT_VARIABLE: return createCompileContextVariable();
       case ESyntaxPackage.LABEL: return createLabel();
       case ESyntaxPackage.OPERATION: return createOperation();
       case ESyntaxPackage.PARAMETER_VARIABLE: return createParameterVariable();
@@ -753,6 +753,17 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public XScriptedExpression createXScriptedExpression()
+  {
+    XScriptedExpressionImpl xScriptedExpression = new XScriptedExpressionImpl();
+    return xScriptedExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public ConfigVariable createConfigVariable()
   {
     ConfigVariableImpl configVariable = new ConfigVariableImpl();
@@ -790,17 +801,6 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
   {
     RegisterVariableImpl registerVariable = new RegisterVariableImpl();
     return registerVariable;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public CompileContextVariable createCompileContextVariable()
-  {
-    CompileContextVariableImpl compileContextVariable = new CompileContextVariableImpl();
-    return compileContextVariable;
   }
 
   /**

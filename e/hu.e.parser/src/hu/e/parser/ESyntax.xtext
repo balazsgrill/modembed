@@ -20,6 +20,8 @@ ReferenceID:
  * LITERALS *
  ***********************/
 
+terminal SCRIPT: "$$" -> "$$";
+
 terminal HEXINT returns ecore::EInt: '0x'('0'..'9'|'a'..'f'|'A'..'F')+;
 
 terminal BINARY returns ecore::EInt: 'b'('0'|'1')+;
@@ -68,7 +70,7 @@ Library:
 
 LibraryItem:
 	Type | Operation | Variable';' | 
-	ConstantVariable';' | RegisterVariable';' | CompileContextVariable';' 
+	ConstantVariable';' | RegisterVariable';' 
 	| OperatorDefinition
 	;
 
@@ -122,10 +124,6 @@ ConstantVariable returns Variable:
 
 RegisterVariable returns Variable:
 	{RegisterVariable} 'reg' type=TypeDef name=ID ':' addr=XExpression
-;
-
-CompileContextVariable returns Variable:
-	{CompileContextVariable} 'compilecontext' name=ID ('=' value=XExpression)?
 ;
 
 /***********************
@@ -345,7 +343,7 @@ XExpressionLiteral:
 ;
 
 XTopLevelExpression:
-	XExpression ';' | XIfExpression | XWhileExpression
+	XExpression ';' | XIfExpression | XWhileExpression | XScriptedExpression
 ;
 
 OpSingleAssign:
@@ -372,3 +370,8 @@ XWhileExpression:
 	
 XParenthesizedExpression:
 	'(' a=XExpression ')';
+
+XScriptedExpression:
+	script = SCRIPT ( '{' conditional=OperationBlock '}' )?
+;	
+	

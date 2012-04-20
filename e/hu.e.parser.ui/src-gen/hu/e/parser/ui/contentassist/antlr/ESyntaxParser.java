@@ -80,7 +80,6 @@ public class ESyntaxParser extends AbstractContentAssistParser {
 					put(grammarAccess.getLibraryItemAccess().getGroup_2(), "rule__LibraryItem__Group_2__0");
 					put(grammarAccess.getLibraryItemAccess().getGroup_3(), "rule__LibraryItem__Group_3__0");
 					put(grammarAccess.getLibraryItemAccess().getGroup_4(), "rule__LibraryItem__Group_4__0");
-					put(grammarAccess.getLibraryItemAccess().getGroup_5(), "rule__LibraryItem__Group_5__0");
 					put(grammarAccess.getTypeAccess().getGroup(), "rule__Type__Group__0");
 					put(grammarAccess.getPointerTypeDefAccess().getGroup(), "rule__PointerTypeDef__Group__0");
 					put(grammarAccess.getArrayTypeDefAccess().getGroup(), "rule__ArrayTypeDef__Group__0");
@@ -90,8 +89,6 @@ public class ESyntaxParser extends AbstractContentAssistParser {
 					put(grammarAccess.getStructTypeDefMemberAccess().getGroup(), "rule__StructTypeDefMember__Group__0");
 					put(grammarAccess.getConstantVariableAccess().getGroup(), "rule__ConstantVariable__Group__0");
 					put(grammarAccess.getRegisterVariableAccess().getGroup(), "rule__RegisterVariable__Group__0");
-					put(grammarAccess.getCompileContextVariableAccess().getGroup(), "rule__CompileContextVariable__Group__0");
-					put(grammarAccess.getCompileContextVariableAccess().getGroup_3(), "rule__CompileContextVariable__Group_3__0");
 					put(grammarAccess.getOperationStepAccess().getGroup_2(), "rule__OperationStep__Group_2__0");
 					put(grammarAccess.getLabelAccess().getGroup(), "rule__Label__Group__0");
 					put(grammarAccess.getInstructionWordAccess().getGroup(), "rule__InstructionWord__Group__0");
@@ -148,6 +145,8 @@ public class ESyntaxParser extends AbstractContentAssistParser {
 					put(grammarAccess.getXIfExpressionAccess().getGroup_7(), "rule__XIfExpression__Group_7__0");
 					put(grammarAccess.getXWhileExpressionAccess().getGroup(), "rule__XWhileExpression__Group__0");
 					put(grammarAccess.getXParenthesizedExpressionAccess().getGroup(), "rule__XParenthesizedExpression__Group__0");
+					put(grammarAccess.getXScriptedExpressionAccess().getGroup(), "rule__XScriptedExpression__Group__0");
+					put(grammarAccess.getXScriptedExpressionAccess().getGroup_1(), "rule__XScriptedExpression__Group_1__0");
 					put(grammarAccess.getModuleAccess().getNameAssignment_1(), "rule__Module__NameAssignment_1");
 					put(grammarAccess.getModuleAccess().getExtendsAssignment_2_1(), "rule__Module__ExtendsAssignment_2_1");
 					put(grammarAccess.getModuleAccess().getExtendsAssignment_2_2_1(), "rule__Module__ExtendsAssignment_2_2_1");
@@ -180,8 +179,6 @@ public class ESyntaxParser extends AbstractContentAssistParser {
 					put(grammarAccess.getRegisterVariableAccess().getTypeAssignment_2(), "rule__RegisterVariable__TypeAssignment_2");
 					put(grammarAccess.getRegisterVariableAccess().getNameAssignment_3(), "rule__RegisterVariable__NameAssignment_3");
 					put(grammarAccess.getRegisterVariableAccess().getAddrAssignment_5(), "rule__RegisterVariable__AddrAssignment_5");
-					put(grammarAccess.getCompileContextVariableAccess().getNameAssignment_2(), "rule__CompileContextVariable__NameAssignment_2");
-					put(grammarAccess.getCompileContextVariableAccess().getValueAssignment_3_1(), "rule__CompileContextVariable__ValueAssignment_3_1");
 					put(grammarAccess.getLabelAccess().getNameAssignment_2(), "rule__Label__NameAssignment_2");
 					put(grammarAccess.getInstructionWordAccess().getSectionsAssignment_1(), "rule__InstructionWord__SectionsAssignment_1");
 					put(grammarAccess.getWordSectionAccess().getSizeAssignment_2(), "rule__WordSection__SizeAssignment_2");
@@ -264,6 +261,8 @@ public class ESyntaxParser extends AbstractContentAssistParser {
 					put(grammarAccess.getXWhileExpressionAccess().getCondAssignment_2(), "rule__XWhileExpression__CondAssignment_2");
 					put(grammarAccess.getXWhileExpressionAccess().getDoAssignment_5(), "rule__XWhileExpression__DoAssignment_5");
 					put(grammarAccess.getXParenthesizedExpressionAccess().getAAssignment_1(), "rule__XParenthesizedExpression__AAssignment_1");
+					put(grammarAccess.getXScriptedExpressionAccess().getScriptAssignment_0(), "rule__XScriptedExpression__ScriptAssignment_0");
+					put(grammarAccess.getXScriptedExpressionAccess().getConditionalAssignment_1_1(), "rule__XScriptedExpression__ConditionalAssignment_1_1");
 				}
 			};
 		}
