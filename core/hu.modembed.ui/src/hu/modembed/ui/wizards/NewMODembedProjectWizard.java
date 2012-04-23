@@ -28,7 +28,7 @@ public class NewMODembedProjectWizard extends Wizard implements INewWizard {
 	@Override
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		page1 = new NewMODembedProjectWizardPage("page1");
-		setWindowTitle("MODembed project creation");
+		setWindowTitle("New e project");
 		setNeedsProgressMonitor(true);
 	}
 

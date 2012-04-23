@@ -18,7 +18,8 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.jface.databinding;bundle-version="1.4.0",
  org.eclipse.emf.edit,
  org.eclipse.emf.edit.ui,
- hu.modembed.model.edit;bundle-version="0.1.0"
+ hu.modembed.model.edit;bundle-version="0.1.0",
+ hu.e.project;bundle-version="0.1.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: hu.modembed.ui,

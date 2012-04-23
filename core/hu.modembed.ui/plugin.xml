@@ -7,7 +7,7 @@
          point="org.eclipse.core.resources.natures">
       <runtime>
          <run
-               class="hu.modembed.ui.ProjectNature">
+               class="hu.e.project.EProjectNature">
          </run>
       </runtime>
    </extension>
@@ -15,8 +15,8 @@
          point="org.eclipse.ui.ide.projectNatureImages">
       <image
             icon="icons/chip.png"
-            id="hu.modembed.ui.nature.icon"
-            natureId="hu.modembed.ui.nature">
+            id="hu.e.project.nature.icon"
+            natureId="hu.e.project.nature">
       </image>
    </extension>
    <extension
@@ -27,7 +27,7 @@
             finalPerspective="hu.modembed.ui.perspective"
             icon="icons/project_chip.png"
             id="hu.modembed.ui.newProject"
-            name="New MODembed project"
+            name="New e project"
             project="true">
       </wizard>
       <category

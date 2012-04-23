@@ -18,8 +18,8 @@ public class NewMODembedProjectWizardPage extends WizardNewProjectCreationPage {
 	 */
 	public NewMODembedProjectWizardPage(String pageName) {
 		super(pageName);
-		setTitle("New MODembed project");
-		setDescription("Create a new model based embedded project");
+		setTitle("New e project");
+		setDescription("Create a new embedded code project");
 		setImageDescriptor(MODembedUI.getDefault().getImageRegistry().getDescriptor(MODembedUI.IMAGE_NEWPROJWZRD));
 	}	
 	
