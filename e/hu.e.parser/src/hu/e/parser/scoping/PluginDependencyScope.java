@@ -35,28 +35,27 @@ public class PluginDependencyScope extends AbstractScope {
 	public PluginDependencyScope(URI context,ResourceSet resourceset, IScope parent) {
 		super(parent, false);
 		String projname = context.trimFragment().segment(1);
-		List<String> deps = MODembedCore.collectAllDependencies(projname);
 		
-		for(String d : deps){
-			try {
-				for(URI uri : MODembedCore.getVisibleResources(d,"e")){
-					try{
-						Resource r = resourceset.getResource(uri, true);
-						for(EObject eo : r.getContents()){
-							if (eo instanceof CompilationUnit){
-								String name = ((CompilationUnit) eo).getName();
-								QualifiedName qname = QualifiedName.create(name.split("\\."));
-								descs.add(EObjectDescription.create(qname, eo));
-							}
+		try {
+			for(URI uri : MODembedCore.getDefault().getResourceProvider().getResources(projname,"e")){
+				try{
+					Resource r = resourceset.getResource(uri, true);
+					for(EObject eo : r.getContents()){
+						if (eo instanceof CompilationUnit){
+							String name = ((CompilationUnit) eo).getName();
+							QualifiedName qname = QualifiedName.create(name.split("\\."));
+							descs.add(EObjectDescription.create(qname, eo));
 						}
-					}catch(Exception e){
-						
 					}
+				}catch(Exception e){
+
 				}
-			} catch (CoreException e) {
-				
 			}
+		} catch (CoreException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
+
 	}
 
 	/* (non-Javadoc)

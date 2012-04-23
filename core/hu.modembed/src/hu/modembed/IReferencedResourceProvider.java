@@ -1,8 +1,9 @@
 /**
  * 
  */
-package hu.e.project;
+package hu.modembed;
 
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.emf.common.util.URI;
 
 /**
@@ -18,7 +19,8 @@ public interface IReferencedResourceProvider {
 	 * @param project
 	 * @param type
 	 * @return
+	 * @throws CoreException 
 	 */
-	public Iterable<URI> getResources(String project, String type);
+	public Iterable<URI> getResources(String project, String type) throws CoreException;
 	
 }

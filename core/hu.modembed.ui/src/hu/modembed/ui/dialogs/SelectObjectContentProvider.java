@@ -138,7 +138,7 @@ public class SelectObjectContentProvider implements IStructuredContentProvider {
 		if (inputElement instanceof IProject){
 			List<Object> result = new ArrayList<Object>();
 			try {
-				for(URI uri : MODembedCore.getAllResources(((IProject) inputElement).getName(), "xmi")){
+				for(URI uri : MODembedCore.getDefault().getResourceProvider().getResources(((IProject) inputElement).getName(), "xmi")){
 					Resource r = resourceSet.getResource(uri, true);
 					TreeIterator<EObject> ti = r.getAllContents();
 					while(ti.hasNext()){

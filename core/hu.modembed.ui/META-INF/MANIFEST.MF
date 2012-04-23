@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Ui Plugin
 Bundle-SymbolicName: hu.modembed.ui;singleton:=true
-Bundle-Version: 0.6.0
+Bundle-Version: 0.7.0
 Bundle-Activator: hu.modembed.ui.MODembedUI
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
