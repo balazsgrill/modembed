@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Embedded development Project
+Bundle-SymbolicName: hu.e.project;singleton:=true
+Bundle-Version: 0.1.0.qualifier
+Bundle-Activator: hu.e.project.ProjectPlugin
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources,
+ org.eclipse.xtext.ui;bundle-version="2.0.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

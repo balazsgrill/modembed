@@ -59,8 +59,6 @@ public class CreateProjectTask implements IRunnableWithProgress {
 			
 			monitor.worked(1);
 			
-			project.getFile("MODembed.build").create(new ByteArrayInputStream(new byte[0]), true, new SubProgressMonitor(monitor, 1));
-			
 			monitor.done();
 		} catch (Exception e) {
 			e.printStackTrace();
