@@ -21,7 +21,7 @@
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                             <steps xsi:type="lst:SequenceStep">
-                              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@1707a6a (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
+                              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@1ab39bd (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                               <steps xsi:type="lst:SequenceStep" name="0">
                                 <steps xsi:type="lst:SequenceStep" name="1"/>
                                 <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -52,7 +52,7 @@
                       <steps xsi:type="lst:SequenceStep">
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@1b9a906 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@1c2a19b (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                             <steps xsi:type="lst:SequenceStep" name="0">
                               <steps xsi:type="lst:SequenceStep" name="1"/>
                               <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -82,7 +82,7 @@
                       <steps xsi:type="lst:SequenceStep">
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@230076 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@34705c (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                             <steps xsi:type="lst:SequenceStep" name="0">
                               <steps xsi:type="lst:SequenceStep" name="1"/>
                               <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -112,7 +112,7 @@
                       <steps xsi:type="lst:SequenceStep">
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@b65f39 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@218e52 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                             <steps xsi:type="lst:SequenceStep" name="0">
                               <steps xsi:type="lst:SequenceStep" name="1"/>
                               <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -142,7 +142,7 @@
                       <steps xsi:type="lst:SequenceStep">
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@af68b0 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@6d1ceb (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                             <steps xsi:type="lst:SequenceStep" name="0">
                               <steps xsi:type="lst:SequenceStep" name="1"/>
                               <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -172,7 +172,7 @@
                       <steps xsi:type="lst:SequenceStep">
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@da8b1d (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@158b201 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                             <steps xsi:type="lst:SequenceStep" name="0">
                               <steps xsi:type="lst:SequenceStep" name="1"/>
                               <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -202,7 +202,7 @@
                       <steps xsi:type="lst:SequenceStep">
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@1305cfc (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@18e7dc7 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                             <steps xsi:type="lst:SequenceStep" name="0">
                               <steps xsi:type="lst:SequenceStep" name="1"/>
                               <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -232,7 +232,7 @@
                       <steps xsi:type="lst:SequenceStep">
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@1c6640c (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@f1d1da (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                             <steps xsi:type="lst:SequenceStep" name="0">
                               <steps xsi:type="lst:SequenceStep" name="1"/>
                               <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -262,7 +262,7 @@
                       <steps xsi:type="lst:SequenceStep">
                         <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                           <steps xsi:type="lst:SequenceStep">
-                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@b1df4d (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
+                            <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@311eb1 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                             <steps xsi:type="lst:SequenceStep" name="0">
                               <steps xsi:type="lst:SequenceStep" name="1"/>
                               <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -294,7 +294,7 @@
                         <steps xsi:type="lst:SequenceStep">
                           <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                             <steps xsi:type="lst:SequenceStep">
-                              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@18371b5 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
+                              <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@c81239 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                               <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)">
                                 <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
                                 <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
@@ -328,7 +328,7 @@
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@a5ea9 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
+                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@19c2759 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                   <steps xsi:type="lst:SequenceStep" name="0">
                                     <steps xsi:type="lst:SequenceStep" name="1"/>
                                     <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -377,7 +377,7 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@1ee0e93 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@14ea7be (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                 <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)">
                                   <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
                                   <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
@@ -406,7 +406,7 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@1e0b3d7 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@1d55b5f (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                 <steps xsi:type="lst:SequenceStep" name="0">
                                   <steps xsi:type="lst:SequenceStep" name="1"/>
                                   <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -436,7 +436,7 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@16760e3 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@23b7ed (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                 <steps xsi:type="lst:SequenceStep" name="0">
                                   <steps xsi:type="lst:SequenceStep" name="1"/>
                                   <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -486,7 +486,7 @@
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@682583 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
+                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@9dda0e (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                   <steps xsi:type="lst:SequenceStep" name="0">
                                     <steps xsi:type="lst:SequenceStep" name="1"/>
                                     <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -536,7 +536,7 @@
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@10cb2cb (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
+                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@f15d6a (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                   <steps xsi:type="lst:SequenceStep" name="0">
                                     <steps xsi:type="lst:SequenceStep" name="1"/>
                                     <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -585,7 +585,7 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@929696 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@a4ab27 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                 <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)">
                                   <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
                                   <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
@@ -614,7 +614,7 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@1dc7d3a (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@e08ecc (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                 <steps xsi:type="lst:SequenceStep" name="0">
                                   <steps xsi:type="lst:SequenceStep" name="1"/>
                                   <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -644,7 +644,7 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@a19e0e (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@bef7a1 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                 <steps xsi:type="lst:SequenceStep" name="0">
                                   <steps xsi:type="lst:SequenceStep" name="1"/>
                                   <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -694,7 +694,7 @@
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@8cd352 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
+                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@1c2e04f (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                   <steps xsi:type="lst:SequenceStep" name="0">
                                     <steps xsi:type="lst:SequenceStep" name="1"/>
                                     <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -744,7 +744,7 @@
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@165b4e3 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
+                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@c24821 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                   <steps xsi:type="lst:SequenceStep" name="0">
                                     <steps xsi:type="lst:SequenceStep" name="1"/>
                                     <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -793,7 +793,7 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@1d20d34 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@1124745 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                 <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)">
                                   <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
                                   <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
@@ -822,7 +822,7 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@160e244 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@10534cc (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                 <steps xsi:type="lst:SequenceStep" name="0">
                                   <steps xsi:type="lst:SequenceStep" name="1"/>
                                   <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -852,7 +852,7 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@1a7125b (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@cc628 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                 <steps xsi:type="lst:SequenceStep" name="0">
                                   <steps xsi:type="lst:SequenceStep" name="1"/>
                                   <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -902,7 +902,7 @@
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@1f85b2a (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
+                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@1de7a9a (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                   <steps xsi:type="lst:SequenceStep" name="0">
                                     <steps xsi:type="lst:SequenceStep" name="1"/>
                                     <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -952,7 +952,7 @@
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@14f672e (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
+                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@1536b1d (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                   <steps xsi:type="lst:SequenceStep" name="0">
                                     <steps xsi:type="lst:SequenceStep" name="1"/>
                                     <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -1001,7 +1001,7 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@1492aff (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@dc9a3 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                 <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)">
                                   <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
                                   <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
@@ -1030,7 +1030,7 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@a60159 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@17adc4c (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                 <steps xsi:type="lst:SequenceStep" name="0">
                                   <steps xsi:type="lst:SequenceStep" name="1"/>
                                   <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -1060,7 +1060,7 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@a29c3e (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@1151bfb (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                 <steps xsi:type="lst:SequenceStep" name="0">
                                   <steps xsi:type="lst:SequenceStep" name="1"/>
                                   <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -1110,7 +1110,7 @@
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@ce6203 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
+                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@1014dd4 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                   <steps xsi:type="lst:SequenceStep" name="0">
                                     <steps xsi:type="lst:SequenceStep" name="1"/>
                                     <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -1160,7 +1160,7 @@
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@72d9f5 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
+                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@38aa44 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                   <steps xsi:type="lst:SequenceStep" name="0">
                                     <steps xsi:type="lst:SequenceStep" name="1"/>
                                     <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -1209,7 +1209,7 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@7fcee1 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@1d9ac7b (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                 <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)">
                                   <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
                                   <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
@@ -1238,7 +1238,7 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@e73e0a (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@1caf9a2 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                 <steps xsi:type="lst:SequenceStep" name="0">
                                   <steps xsi:type="lst:SequenceStep" name="1"/>
                                   <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -1268,7 +1268,7 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@19a1780 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@caffb3 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                 <steps xsi:type="lst:SequenceStep" name="0">
                                   <steps xsi:type="lst:SequenceStep" name="1"/>
                                   <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -1318,7 +1318,7 @@
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@7b6333 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
+                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@bf349f (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                   <steps xsi:type="lst:SequenceStep" name="0">
                                     <steps xsi:type="lst:SequenceStep" name="1"/>
                                     <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -1368,7 +1368,7 @@
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@302667 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
+                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@1610e12 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                   <steps xsi:type="lst:SequenceStep" name="0">
                                     <steps xsi:type="lst:SequenceStep" name="1"/>
                                     <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -1417,7 +1417,7 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@1d95624 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@340d96 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                 <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)">
                                   <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
                                   <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
@@ -1446,7 +1446,7 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@1a67848 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@1680257 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                 <steps xsi:type="lst:SequenceStep" name="0">
                                   <steps xsi:type="lst:SequenceStep" name="1"/>
                                   <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -1476,7 +1476,7 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@22f942 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@4cad8b (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                 <steps xsi:type="lst:SequenceStep" name="0">
                                   <steps xsi:type="lst:SequenceStep" name="1"/>
                                   <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -1526,7 +1526,7 @@
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@d92120 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
+                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@ce6af0 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                   <steps xsi:type="lst:SequenceStep" name="0">
                                     <steps xsi:type="lst:SequenceStep" name="1"/>
                                     <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -1576,7 +1576,7 @@
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@3277a7 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
+                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@1726337 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                   <steps xsi:type="lst:SequenceStep" name="0">
                                     <steps xsi:type="lst:SequenceStep" name="1"/>
                                     <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -1625,7 +1625,7 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@29a303 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@78aa1f (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                 <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)">
                                   <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
                                   <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
@@ -1654,7 +1654,7 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@18d2a74 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@1e8fb50 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                 <steps xsi:type="lst:SequenceStep" name="0">
                                   <steps xsi:type="lst:SequenceStep" name="1"/>
                                   <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -1684,7 +1684,7 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@de2c9f (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@cb82cb (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                 <steps xsi:type="lst:SequenceStep" name="0">
                                   <steps xsi:type="lst:SequenceStep" name="1"/>
                                   <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -1734,7 +1734,7 @@
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@74bced (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
+                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@1e84706 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                   <steps xsi:type="lst:SequenceStep" name="0">
                                     <steps xsi:type="lst:SequenceStep" name="1"/>
                                     <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -1784,7 +1784,7 @@
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@dffe1 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
+                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@727923 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                   <steps xsi:type="lst:SequenceStep" name="0">
                                     <steps xsi:type="lst:SequenceStep" name="1"/>
                                     <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -1833,7 +1833,7 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@575054 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@3c2a68 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                 <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)">
                                   <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
                                   <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
@@ -1862,7 +1862,7 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@71fa83 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@41404 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                 <steps xsi:type="lst:SequenceStep" name="0">
                                   <steps xsi:type="lst:SequenceStep" name="1"/>
                                   <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -1892,7 +1892,7 @@
                           <steps xsi:type="lst:SequenceStep">
                             <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                               <steps xsi:type="lst:SequenceStep">
-                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@ace515 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
+                                <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@1be17bf (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                 <steps xsi:type="lst:SequenceStep" name="0">
                                   <steps xsi:type="lst:SequenceStep" name="1"/>
                                   <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -1942,7 +1942,7 @@
                             <steps xsi:type="lst:SequenceStep">
                               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                                 <steps xsi:type="lst:SequenceStep">
-                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@14aa6eb (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
+                                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@7b1495 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                                   <steps xsi:type="lst:SequenceStep" name="0">
                                     <steps xsi:type="lst:SequenceStep" name="1"/>
                                     <steps xsi:type="lst:SequenceStep" name="0"/>
@@ -1988,7 +1988,7 @@
             <steps xsi:type="lst:SequenceStep">
               <steps xsi:type="lst:SequenceStep" name="microchip.pic18.assisted.assistSelectBank">
                 <steps xsi:type="lst:SequenceStep">
-                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@8dbd21 (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
+                  <steps xsi:type="lst:StatusStep" severity="ERROR" message="Cannot find SEToperator for pattern (null, hu.e.parser.eSyntax.impl.DataTypeDefImpl@c1bccd (kind: unsigned, bits: 0), ) at microchip.pic18.assisted line 10"/>
                   <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)">
                     <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>
                     <steps xsi:type="lst:SequenceStep" name="VARERROR(Cannot execute operation on a link-time symbol!)"/>

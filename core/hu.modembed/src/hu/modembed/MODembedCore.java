@@ -1,6 +1,6 @@
 package hu.modembed;
 
-import hu.modembed.impl.PDEReferencedResourceProvider;
+import hu.modembed.impl.ReferencedResourceProvider;
 
 import org.eclipse.core.runtime.Plugin;
 import org.eclipse.emf.common.util.URI;
@@ -57,7 +57,7 @@ public class MODembedCore extends Plugin {
 	
 	public IReferencedResourceProvider getResourceProvider() {
 		if (resourceProvider == null){
-			resourceProvider = new PDEReferencedResourceProvider();
+			resourceProvider = new ReferencedResourceProvider();//PDEReferencedResourceProvider();
 		}
 		return resourceProvider;
 	}

@@ -3,6 +3,8 @@
 	<name>e.pic18f14k50</name>
 	<comment></comment>
 	<projects>
+		<project>e.core</project>
+		<project>e.pic18</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

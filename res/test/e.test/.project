@@ -3,6 +3,9 @@
 	<name>e.test</name>
 	<comment></comment>
 	<projects>
+		<project>e.core</project>
+		<project>e.pic18</project>
+		<project>e.pic18f14k50</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

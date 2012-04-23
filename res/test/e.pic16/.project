@@ -3,6 +3,7 @@
 	<name>e.pic16</name>
 	<comment></comment>
 	<projects>
+		<project>e.core</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
