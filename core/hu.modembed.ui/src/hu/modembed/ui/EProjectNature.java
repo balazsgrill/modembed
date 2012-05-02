@@ -1,7 +1,7 @@
 /**
  * 
  */
-package hu.e.project;
+package hu.modembed.ui;
 
 import java.util.ArrayList;
 import java.util.Arrays;

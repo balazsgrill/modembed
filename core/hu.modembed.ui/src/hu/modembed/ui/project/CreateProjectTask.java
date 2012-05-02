@@ -5,7 +5,6 @@ package hu.modembed.ui.project;
 
 import hu.modembed.ui.MODembedUI;
 
-import java.io.ByteArrayInputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -7,16 +7,16 @@
          point="org.eclipse.core.resources.natures">
       <runtime>
          <run
-               class="hu.e.project.EProjectNature">
+               class="hu.modembed.ui.EProjectNature">
          </run>
       </runtime>
    </extension>
    <extension
          point="org.eclipse.ui.ide.projectNatureImages">
       <image
-            icon="icons/chip.png"
+            icon="icons/e.png"
             id="hu.e.project.nature.icon"
-            natureId="hu.e.project.nature">
+            natureId="hu.modembed.ui.nature">
       </image>
    </extension>
    <extension
