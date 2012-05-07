@@ -6,9 +6,11 @@ package hu.e.compiler.internal.model.symbols.impl;
 import hu.e.compiler.ECompiler;
 import hu.e.compiler.ECompilerException;
 import hu.e.compiler.internal.model.ISymbolManager;
+import hu.e.compiler.internal.model.symbols.IReferenceSymbol;
 import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.compiler.list.ListFactory;
 import hu.e.compiler.list.ProgramStep;
+import hu.e.compiler.list.ReferableValue;
 import hu.e.compiler.list.ScriptStep;
 import hu.e.parser.eSyntax.StructTypeDefMember;
 import hu.e.parser.eSyntax.TypeDef;
@@ -20,7 +22,7 @@ import java.util.List;
  * @author balazs.grill
  *
  */
-public class ScriptedSymbol implements ISymbol {
+public class ScriptedSymbol implements IReferenceSymbol {
 
 	private final ScriptStep va;
 	
@@ -76,6 +78,16 @@ public class ScriptedSymbol implements ISymbol {
 	public ISymbol getMember(ISymbolManager sm, StructTypeDefMember member)
 			throws ECompilerException {
 		return null;
+	}
+
+	@Override
+	public ReferableValue getReferableValue() {
+		return va;
+	}
+
+	@Override
+	public int getOffset() {
+		return 0;
 	}
 
 }

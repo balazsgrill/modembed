@@ -3,6 +3,7 @@ library pic16.platform overrides e.platform;
 use e.platform;
 use microchip.pic16;
 use microchip.pic16.enchanced;
+use pic16.bankselect;
 
 
 set_u8 (var uint8 d, uint8 v){
