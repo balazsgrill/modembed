@@ -49,6 +49,11 @@ public final class IncludedProject {
 		}
 	}
 	
+	@Override
+	public String toString() {
+		return name+" ("+ID+")";
+	}
+	
 	public List<String> getDependencies() {
 		return Collections.unmodifiableList(deps);
 	}

@@ -4,6 +4,7 @@
 package hu.modembed.includedcode;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.core.runtime.IConfigurationElement;
@@ -27,6 +28,10 @@ public final class IncludedProjectsRegistry {
 	private static final String EPID = "hu.modembed.ui.includedCode";
 	
 	private final List<IncludedProject> projects = new ArrayList<IncludedProject>();
+	
+	public List<IncludedProject> getProjects() {
+		return Collections.unmodifiableList(projects);
+	}
 	
 	private IncludedProjectsRegistry() {
 		for(IConfigurationElement ce: Platform.getExtensionRegistry().getConfigurationElementsFor(EPID)){

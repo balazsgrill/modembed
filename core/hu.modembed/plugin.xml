@@ -7,7 +7,7 @@
          point="hu.modembed.ui.includedCode">
       <project
             id="e.core"
-            name="e.core ">
+            name="Core platform">
          <resource
                path="/"
                resource="core/platform.e">

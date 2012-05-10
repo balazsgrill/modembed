@@ -111,5 +111,18 @@
          </adapterfactory>
       </model>
    </extension>
+   <extension
+         point="org.eclipse.ui.importWizards">
+      <category
+            id="hu.modembed.ui.category"
+            name="MODembed">
+      </category>
+      <wizard
+            category="hu.modembed.ui.category"
+            class="hu.modembed.ui.wizards.included.ImportIncludedProjectWizard"
+            id="hu.modembed.ui.wizard.import.included"
+            name="Import common code Project">
+      </wizard>
+   </extension>
 
 </plugin>
