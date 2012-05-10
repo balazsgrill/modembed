@@ -1,0 +1,890 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/hu.modembed.pic.device.model/src"
+    modelPluginID="hu.modembed.pic.device.model" modelName="Ecd" importerID="org.eclipse.xsd.ecore.importer"
+    complianceLevel="6.0" copyrightFields="false">
+  <foreignModel>../../Devices/ecd.xsd</foreignModel>
+  <genPackages prefix="Edc" basePackage="crownking" resource="XML" disposableProviderFactory="true"
+      loadInitialization="true" literalsInterface="false" ecorePackage="edc.ecore#/">
+    <genClasses ecoreClass="edc.ecore#//AdjustPointType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute edc.ecore#//AdjustPointType/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AdjustPointType/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//AdjustPointType/dCRFieldSemantic"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//AdjustPointType/aliasList"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//AdjustPointType/sFRModeList"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//AdjustPointType/stimInfo"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//AdjustPointType/moduleMacro"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//AdjustPointType/moduleExclude"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//AdjustPointType/sFRDef"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//AdjustPointType/checksum"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//AdjustPointType/sFRFieldSemantic"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AdjustPointType/access"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AdjustPointType/begin"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AdjustPointType/cname"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AdjustPointType/desc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AdjustPointType/end"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AdjustPointType/impl"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AdjustPointType/ishidden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AdjustPointType/isidehidden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AdjustPointType/isindirect"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AdjustPointType/islanghidden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AdjustPointType/islnaghidden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AdjustPointType/isvolatile"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AdjustPointType/mask"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AdjustPointType/mclr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AdjustPointType/modsrc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AdjustPointType/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AdjustPointType/nzsize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AdjustPointType/nzwidth"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AdjustPointType/offset"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AdjustPointType/por"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AdjustPointType/regionidref"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//AliasListType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//AliasListType/legacyAlias"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//AliasListType/migrationAlias"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//AliasListType/aliasList"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//AliasListType/checksum"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType/beginaddr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType/checksumalgo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType/cname"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType/desc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType/endaddr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType/ishidden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType/islanghidden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType/oscmodeidref"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType/when"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//AliasListType1">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType1/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType1/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//AliasListType1/legacyAlias"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//AliasListType1/migrationAlias"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//AliasListType1/aliasList"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//AliasListType1/checksum"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType1/beginaddr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType1/checksumalgo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType1/cname"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType1/desc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType1/endaddr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType1/ishidden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType1/islanghidden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType1/oscmodeidref"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType1/when"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//AliasListType2">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType2/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType2/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//AliasListType2/legacyAlias"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//AliasListType2/migrationAlias"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//AliasListType2/aliasList"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//AliasListType2/checksum"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType2/beginaddr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType2/checksumalgo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType2/cname"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType2/desc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType2/endaddr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType2/ishidden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType2/islanghidden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType2/oscmodeidref"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType2/when"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//AliasListType3">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType3/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType3/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//AliasListType3/legacyAlias"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//AliasListType3/migrationAlias"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//AliasListType3/aliasList"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//AliasListType3/checksum"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType3/beginaddr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType3/checksumalgo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType3/cname"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType3/desc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType3/endaddr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType3/ishidden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType3/islanghidden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType3/oscmodeidref"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType3/when"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//AliasListType4">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType4/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType4/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//AliasListType4/legacyAlias"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//AliasListType4/migrationAlias"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//AliasListType4/aliasList"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//AliasListType4/checksum"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType4/beginaddr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType4/checksumalgo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType4/cname"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType4/desc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType4/endaddr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType4/ishidden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType4/islanghidden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType4/oscmodeidref"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType4/when"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//AliasListType5">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType5/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType5/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//AliasListType5/legacyAlias"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//AliasListType5/migrationAlias"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//AliasListType5/aliasList"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//AliasListType5/checksum"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType5/beginaddr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType5/checksumalgo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType5/cname"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType5/desc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType5/endaddr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType5/ishidden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType5/islanghidden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType5/oscmodeidref"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType5/when"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//AliasListType6">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType6/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType6/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//AliasListType6/legacyAlias"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//AliasListType6/migrationAlias"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//AliasListType6/aliasList"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//AliasListType6/checksum"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType6/beginaddr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType6/checksumalgo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType6/cname"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType6/desc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType6/endaddr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType6/ishidden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType6/islanghidden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType6/oscmodeidref"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType6/when"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//AliasListType7">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType7/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType7/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//AliasListType7/legacyAlias"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//AliasListType7/migrationAlias"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//AliasListType7/aliasList"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//AliasListType7/checksum"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType7/beginaddr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType7/checksumalgo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType7/cname"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType7/desc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType7/endaddr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType7/ishidden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType7/islanghidden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType7/oscmodeidref"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType7/when"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//AliasListType8">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute edc.ecore#//AliasListType8/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//AliasListType8/legacyAlias"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//AliasListType8/migrationAlias"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//ArchDefType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference edc.ecore#//ArchDefType/memTraits"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ArchDefType/desc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ArchDefType/name"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//BACKBUGVectorSectorType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//BACKBUGVectorSectorType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//BACKBUGVectorSectorType/beginaddr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//BACKBUGVectorSectorType/endaddr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//BACKBUGVectorSectorType/regionid"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//BackgroundDebugMemTraitsType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//BackgroundDebugMemTraitsType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//BackgroundDebugMemTraitsType/locsize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//BackgroundDebugMemTraitsType/wordimpl"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//BackgroundDebugMemTraitsType/wordinit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//BackgroundDebugMemTraitsType/wordsafe"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//BackgroundDebugMemTraitsType/wordsize"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//BreakpointsType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//BreakpointsType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//BreakpointsType/hasdatacapture"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//BreakpointsType/hwbpcount"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//BreakpointsType/idbyte"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//CalDataMemTraitsType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//CalDataMemTraitsType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//CalDataMemTraitsType/locsize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//CalDataMemTraitsType/wordimpl"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//CalDataMemTraitsType/wordinit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//CalDataMemTraitsType/wordsafe"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//CalDataMemTraitsType/wordsize"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//CalDataZoneType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//CalDataZoneType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//CalDataZoneType/beginaddr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//CalDataZoneType/endaddr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//CalDataZoneType/issection"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//CalDataZoneType/regionid"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//CalDataZoneType/sectiondesc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//CalDataZoneType/sectionname"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//ChecksumType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute edc.ecore#//ChecksumType/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//ChecksumType/aliasList"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//ChecksumType/checksum"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ChecksumType/beginaddr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ChecksumType/checksumalgo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ChecksumType/cname"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ChecksumType/desc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ChecksumType/endaddr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ChecksumType/islanghidden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ChecksumType/when"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//CodeMemTraitsType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//CodeMemTraitsType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//CodeMemTraitsType/locsize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//CodeMemTraitsType/wordimpl"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//CodeMemTraitsType/wordinit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//CodeMemTraitsType/wordsafe"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//CodeMemTraitsType/wordsize"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//CodeSectorType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//CodeSectorType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//CodeSectorType/beginaddr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//CodeSectorType/endaddr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//CodeSectorType/issection"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//CodeSectorType/regionid"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//CodeSectorType/sectiondesc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//CodeSectorType/sectionname"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//ConfigFuseMemTraitsType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ConfigFuseMemTraitsType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ConfigFuseMemTraitsType/locsize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ConfigFuseMemTraitsType/unimplval"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ConfigFuseMemTraitsType/wordimpl"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ConfigFuseMemTraitsType/wordinit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ConfigFuseMemTraitsType/wordsafe"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ConfigFuseMemTraitsType/wordsize"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//ConfigFuseSectorType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference edc.ecore#//ConfigFuseSectorType/dCRDef"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ConfigFuseSectorType/beginaddr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ConfigFuseSectorType/endaddr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ConfigFuseSectorType/regionid"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//DataMemTraitsType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DataMemTraitsType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DataMemTraitsType/locsize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DataMemTraitsType/wordimpl"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DataMemTraitsType/wordinit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DataMemTraitsType/wordsafe"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DataMemTraitsType/wordsize"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//DataSpaceType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference edc.ecore#//DataSpaceType/regardlessOfMode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DataSpaceType/traditionalModeOnly"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DataSpaceType/extendedModeOnly"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DataSpaceType/endaddr"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//DCRDefType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DCRDefType/aliasList"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference edc.ecore#//DCRDefType/illegal"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference edc.ecore#//DCRDefType/dCRModeList"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DCRDefType/access"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DCRDefType/cname"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DCRDefType/default"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DCRDefType/desc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DCRDefType/impl"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DCRDefType/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DCRDefType/nzwidth"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DCRDefType/unimplval"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DCRDefType/unused"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DCRDefType/useinchecksum"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//DCRFieldDefType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute edc.ecore#//DCRFieldDefType/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DCRFieldDefType/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//DCRFieldDefType/dCRFieldSemantic"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//DCRFieldDefType/aliasList"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//DCRFieldDefType/sFRModeList"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//DCRFieldDefType/stimInfo"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//DCRFieldDefType/moduleMacro"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//DCRFieldDefType/moduleExclude"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//DCRFieldDefType/sFRDef"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//DCRFieldDefType/checksum"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//DCRFieldDefType/sFRFieldSemantic"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DCRFieldDefType/access"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DCRFieldDefType/begin"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DCRFieldDefType/cname"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DCRFieldDefType/desc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DCRFieldDefType/end"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DCRFieldDefType/impl"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DCRFieldDefType/ishidden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DCRFieldDefType/isidehidden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DCRFieldDefType/isindirect"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DCRFieldDefType/islanghidden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DCRFieldDefType/islnaghidden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DCRFieldDefType/isvolatile"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DCRFieldDefType/mask"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DCRFieldDefType/mclr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DCRFieldDefType/modsrc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DCRFieldDefType/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DCRFieldDefType/nzsize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DCRFieldDefType/nzwidth"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DCRFieldDefType/offset"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DCRFieldDefType/por"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DCRFieldDefType/regionidref"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//DCRFieldSemanticType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute edc.ecore#//DCRFieldSemanticType/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//DCRFieldSemanticType/aliasList"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//DCRFieldSemanticType/checksum"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DCRFieldSemanticType/beginaddr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DCRFieldSemanticType/checksumalgo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DCRFieldSemanticType/cname"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DCRFieldSemanticType/desc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DCRFieldSemanticType/endaddr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DCRFieldSemanticType/ishidden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DCRFieldSemanticType/islanghidden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DCRFieldSemanticType/oscmodeidref"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DCRFieldSemanticType/when"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//DCRModeListType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference edc.ecore#//DCRModeListType/dCRMode"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//DCRModeType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute edc.ecore#//DCRModeType/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//DCRModeType/adjustPoint"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//DCRModeType/dCRFieldDef"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DCRModeType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//DeviceIDMemTraitsType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DeviceIDMemTraitsType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DeviceIDMemTraitsType/locsize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DeviceIDMemTraitsType/wordimpl"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DeviceIDMemTraitsType/wordinit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DeviceIDMemTraitsType/wordsafe"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DeviceIDMemTraitsType/wordsize"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//DeviceIDSectorType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute edc.ecore#//DeviceIDSectorType/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//DeviceIDSectorType/dEVIDToRev"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DeviceIDSectorType/beginaddr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DeviceIDSectorType/endaddr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DeviceIDSectorType/issection"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DeviceIDSectorType/mask"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DeviceIDSectorType/regionid"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DeviceIDSectorType/sectiondesc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DeviceIDSectorType/sectionname"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DeviceIDSectorType/value"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//DEVIDToRevType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DEVIDToRevType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DEVIDToRevType/revlist"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DEVIDToRevType/value1"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//DocumentRoot">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DocumentRoot/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//DocumentRoot/xMLNSPrefixMap"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//DocumentRoot/xSISchemaLocation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference edc.ecore#//DocumentRoot/pIC"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//DPRDataSectorType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute edc.ecore#//DPRDataSectorType/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DPRDataSectorType/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//DPRDataSectorType/sFRDef"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//DPRDataSectorType/adjustPoint"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DPRDataSectorType/bank"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DPRDataSectorType/beginaddr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DPRDataSectorType/endaddr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DPRDataSectorType/regionid"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DPRDataSectorType/shadowidref"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DPRDataSectorType/shadowoffset"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//DPRDataSectorType/shadowoffset1"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//EEDataMemTraitsType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//EEDataMemTraitsType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//EEDataMemTraitsType/magicoffset"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//EEDataSectorType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//EEDataSectorType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//EEDataSectorType/beginaddr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//EEDataSectorType/endaddr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//EEDataSectorType/issection"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//EEDataSectorType/regionid"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//EEDataSectorType/sectiondesc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//EEDataSectorType/sectionname"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//EmulatorZoneType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute edc.ecore#//EmulatorZoneType/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//EmulatorZoneType/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//EmulatorZoneType/sFRDef"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//EmulatorZoneType/adjustPoint"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//EmulatorZoneType/bank"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//EmulatorZoneType/beginaddr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//EmulatorZoneType/endaddr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//EmulatorZoneType/regionid"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//EmulatorZoneType/shadowidref"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//EmulatorZoneType/shadowoffset"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//EmulatorZoneType/shadowoffset1"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//GPRDataSectorType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute edc.ecore#//GPRDataSectorType/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//GPRDataSectorType/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//GPRDataSectorType/sFRDef"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//GPRDataSectorType/adjustPoint"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//GPRDataSectorType/bank"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//GPRDataSectorType/beginaddr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//GPRDataSectorType/endaddr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//GPRDataSectorType/regionid"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//GPRDataSectorType/shadowidref"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//GPRDataSectorType/shadowoffset"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//GPRDataSectorType/shadowoffset1"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//IllegalType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//IllegalType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//IllegalType/desc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//IllegalType/when"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//ImportType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference edc.ecore#//ImportType/moduleImport"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//JoinedSFRDefType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute edc.ecore#//JoinedSFRDefType/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//JoinedSFRDefType/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//JoinedSFRDefType/dCRFieldSemantic"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//JoinedSFRDefType/aliasList"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//JoinedSFRDefType/sFRModeList"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//JoinedSFRDefType/stimInfo"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//JoinedSFRDefType/sFRDef"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//JoinedSFRDefType/moduleMacro"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//JoinedSFRDefType/moduleExclude"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//JoinedSFRDefType/checksum"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//JoinedSFRDefType/sFRFieldSemantic"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//JoinedSFRDefType/access"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//JoinedSFRDefType/begin"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//JoinedSFRDefType/cname"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//JoinedSFRDefType/desc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//JoinedSFRDefType/end"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//JoinedSFRDefType/impl"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//JoinedSFRDefType/ishidden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//JoinedSFRDefType/isidehidden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//JoinedSFRDefType/isindirect"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//JoinedSFRDefType/islanghidden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//JoinedSFRDefType/islnaghidden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//JoinedSFRDefType/isvolatile"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//JoinedSFRDefType/mask"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//JoinedSFRDefType/mclr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//JoinedSFRDefType/modsrc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//JoinedSFRDefType/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//JoinedSFRDefType/nzsize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//JoinedSFRDefType/nzwidth"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//JoinedSFRDefType/offset"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//JoinedSFRDefType/por"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//JoinedSFRDefType/regionidref"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//LatchesType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//LatchesType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//LatchesType/cfg"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//LatchesType/eedata"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//LatchesType/pgm"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//LatchesType/rowerase"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//LatchesType/userid"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//LCDType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//LCDType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//LCDType/segcount"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//LegacyAliasType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//LegacyAliasType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//LegacyAliasType/cname"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//MemTraitsType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference edc.ecore#//MemTraitsType/codeMemTraits"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference edc.ecore#//MemTraitsType/calDataMemTraits"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference edc.ecore#//MemTraitsType/backgroundDebugMemTraits"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference edc.ecore#//MemTraitsType/testMemTraits"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference edc.ecore#//MemTraitsType/userIDMemTraits"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference edc.ecore#//MemTraitsType/configFuseMemTraits"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference edc.ecore#//MemTraitsType/deviceIDMemTraits"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference edc.ecore#//MemTraitsType/eEDataMemTraits"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference edc.ecore#//MemTraitsType/dataMemTraits"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//MemTraitsType/bankcount"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//MemTraitsType/hwstackdepth"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//MigrationAliasType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//MigrationAliasType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//MigrationAliasType/cname"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//MirrorType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute edc.ecore#//MirrorType/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//MirrorType/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//MirrorType/dCRFieldSemantic"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//MirrorType/aliasList"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//MirrorType/sFRModeList"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//MirrorType/stimInfo"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//MirrorType/moduleMacro"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//MirrorType/moduleExclude"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//MirrorType/sFRDef"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//MirrorType/checksum"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//MirrorType/sFRFieldSemantic"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//MirrorType/access"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//MirrorType/begin"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//MirrorType/cname"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//MirrorType/desc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//MirrorType/end"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//MirrorType/impl"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//MirrorType/ishidden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//MirrorType/isidehidden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//MirrorType/isindirect"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//MirrorType/islanghidden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//MirrorType/islnaghidden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//MirrorType/isvolatile"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//MirrorType/mask"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//MirrorType/mclr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//MirrorType/modsrc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//MirrorType/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//MirrorType/nzsize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//MirrorType/nzwidth"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//MirrorType/offset"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//MirrorType/por"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//MirrorType/regionidref"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//ModuleExcludeType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ModuleExcludeType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ModuleExcludeType/impl"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ModuleExcludeType/offset"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ModuleExcludeType/replace"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ModuleExcludeType/with"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//ModuleImportType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ModuleImportType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ModuleImportType/modsrc"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//ModuleMacroType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ModuleMacroType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ModuleMacroType/impl"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ModuleMacroType/offset"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ModuleMacroType/replace"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ModuleMacroType/with"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//ModuleRefType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute edc.ecore#//ModuleRefType/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ModuleRefType/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//ModuleRefType/moduleMacro"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//ModuleRefType/moduleExclude"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//ModuleRefType/dCRFieldSemantic"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//ModuleRefType/aliasList"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//ModuleRefType/sFRModeList"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//ModuleRefType/stimInfo"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//ModuleRefType/sFRDef"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//ModuleRefType/checksum"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//ModuleRefType/sFRFieldSemantic"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ModuleRefType/access"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ModuleRefType/begin"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ModuleRefType/cname"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ModuleRefType/desc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ModuleRefType/end"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ModuleRefType/impl"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ModuleRefType/ishidden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ModuleRefType/isidehidden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ModuleRefType/isindirect"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ModuleRefType/islanghidden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ModuleRefType/islnaghidden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ModuleRefType/isvolatile"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ModuleRefType/mask"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ModuleRefType/mclr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ModuleRefType/modsrc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ModuleRefType/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ModuleRefType/nzsize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ModuleRefType/nzwidth"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ModuleRefType/offset"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ModuleRefType/por"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ModuleRefType/regionidref"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//MuxedSFRDefType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute edc.ecore#//MuxedSFRDefType/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//MuxedSFRDefType/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//MuxedSFRDefType/selectSFR"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//MuxedSFRDefType/dCRFieldSemantic"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//MuxedSFRDefType/aliasList"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//MuxedSFRDefType/sFRModeList"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//MuxedSFRDefType/stimInfo"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//MuxedSFRDefType/moduleMacro"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//MuxedSFRDefType/moduleExclude"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//MuxedSFRDefType/sFRDef"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//MuxedSFRDefType/checksum"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//MuxedSFRDefType/sFRFieldSemantic"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//MuxedSFRDefType/access"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//MuxedSFRDefType/begin"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//MuxedSFRDefType/cname"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//MuxedSFRDefType/desc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//MuxedSFRDefType/end"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//MuxedSFRDefType/impl"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//MuxedSFRDefType/ishidden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//MuxedSFRDefType/isidehidden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//MuxedSFRDefType/isindirect"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//MuxedSFRDefType/islanghidden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//MuxedSFRDefType/islnaghidden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//MuxedSFRDefType/isvolatile"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//MuxedSFRDefType/mask"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//MuxedSFRDefType/mclr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//MuxedSFRDefType/modsrc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//MuxedSFRDefType/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//MuxedSFRDefType/nzsize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//MuxedSFRDefType/nzwidth"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//MuxedSFRDefType/offset"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//MuxedSFRDefType/por"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//MuxedSFRDefType/regionidref"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//NMMRPlaceType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference edc.ecore#//NMMRPlaceType/moduleRef"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//NMMRPlaceType/regionid"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//OscillatorModeType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//OscillatorModeType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//OscillatorModeType/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//OscillatorModeType/max"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//OscillatorModeType/min"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//OscillatorType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference edc.ecore#//OscillatorType/oscillatorMode"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//PICType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference edc.ecore#//PICType/import"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference edc.ecore#//PICType/power"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference edc.ecore#//PICType/programming"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference edc.ecore#//PICType/archDef"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference edc.ecore#//PICType/oscillator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference edc.ecore#//PICType/watchdogTimer"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference edc.ecore#//PICType/breakpoints"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference edc.ecore#//PICType/lCD"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference edc.ecore#//PICType/programSpace"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference edc.ecore#//PICType/dataSpace"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference edc.ecore#//PICType/pinList"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//PICType/arch"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//PICType/desc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//PICType/dsid"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//PICType/hasfreeze"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//PICType/informedby"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//PICType/isextended"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//PICType/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//PICType/procid"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//PinListType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference edc.ecore#//PinListType/pin"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//PinType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference edc.ecore#//PinType/virtualPin"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//PowerType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference edc.ecore#//PowerType/vPP"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference edc.ecore#//PowerType/vDD"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//ProgrammingType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute edc.ecore#//ProgrammingType/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//ProgrammingType/wait"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//ProgrammingType/latches"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ProgrammingType/boundary"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ProgrammingType/csumadd"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ProgrammingType/erasealgo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ProgrammingType/haschecksum"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ProgrammingType/hasrowerasecmd"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ProgrammingType/hasvppfirst"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ProgrammingType/lvpthresh"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ProgrammingType/memtech"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ProgrammingType/ovrpgm"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//ProgrammingType/tries"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//ProgramSpaceType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute edc.ecore#//ProgramSpaceType/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//ProgramSpaceType/codeSector"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//ProgramSpaceType/userIDSector"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//ProgramSpaceType/testZone"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//ProgramSpaceType/deviceIDSector"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//ProgramSpaceType/configFuseSector"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//ProgramSpaceType/bACKBUGVectorSector"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//ProgramSpaceType/calDataZone"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//ProgramSpaceType/eEDataSector"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//RegardlessOfModeType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute edc.ecore#//RegardlessOfModeType/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//RegardlessOfModeType/nMMRPlace"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//RegardlessOfModeType/sFRDataSector"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//RegardlessOfModeType/dPRDataSector"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//RegardlessOfModeType/gPRDataSector"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//RegardlessOfModeType/emulatorZone"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//SelectSFRType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference edc.ecore#//SelectSFRType/sFRDef"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//SFRDataSectorType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute edc.ecore#//SFRDataSectorType/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//SFRDataSectorType/sFRDef"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//SFRDataSectorType/joinedSFRDef"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//SFRDataSectorType/adjustPoint"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//SFRDataSectorType/mirror"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//SFRDataSectorType/moduleRef"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//SFRDataSectorType/muxedSFRDef"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//SFRDataSectorType/bank"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//SFRDataSectorType/beginaddr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//SFRDataSectorType/endaddr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//SFRDataSectorType/regionid"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//SFRDefType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute edc.ecore#//SFRDefType/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//SFRDefType/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//SFRDefType/dCRFieldSemantic"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//SFRDefType/aliasList"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//SFRDefType/sFRModeList"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//SFRDefType/stimInfo"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//SFRDefType/moduleMacro"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//SFRDefType/moduleExclude"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//SFRDefType/sFRDef"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//SFRDefType/checksum"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//SFRDefType/sFRFieldSemantic"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//SFRDefType/access"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//SFRDefType/begin"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//SFRDefType/cname"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//SFRDefType/desc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//SFRDefType/end"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//SFRDefType/impl"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//SFRDefType/ishidden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//SFRDefType/isidehidden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//SFRDefType/isindirect"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//SFRDefType/islanghidden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//SFRDefType/islnaghidden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//SFRDefType/isvolatile"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//SFRDefType/mask"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//SFRDefType/mclr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//SFRDefType/modsrc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//SFRDefType/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//SFRDefType/nzsize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//SFRDefType/nzwidth"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//SFRDefType/offset"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//SFRDefType/por"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//SFRDefType/regionidref"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//SFRFieldDefType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute edc.ecore#//SFRFieldDefType/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//SFRFieldDefType/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//SFRFieldDefType/dCRFieldSemantic"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//SFRFieldDefType/aliasList"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//SFRFieldDefType/sFRModeList"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//SFRFieldDefType/stimInfo"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//SFRFieldDefType/moduleMacro"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//SFRFieldDefType/moduleExclude"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//SFRFieldDefType/sFRDef"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//SFRFieldDefType/checksum"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//SFRFieldDefType/sFRFieldSemantic"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//SFRFieldDefType/access"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//SFRFieldDefType/begin"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//SFRFieldDefType/cname"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//SFRFieldDefType/desc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//SFRFieldDefType/end"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//SFRFieldDefType/impl"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//SFRFieldDefType/ishidden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//SFRFieldDefType/isidehidden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//SFRFieldDefType/isindirect"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//SFRFieldDefType/islanghidden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//SFRFieldDefType/islnaghidden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//SFRFieldDefType/isvolatile"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//SFRFieldDefType/mask"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//SFRFieldDefType/mclr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//SFRFieldDefType/modsrc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//SFRFieldDefType/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//SFRFieldDefType/nzsize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//SFRFieldDefType/nzwidth"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//SFRFieldDefType/offset"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//SFRFieldDefType/por"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//SFRFieldDefType/regionidref"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//SFRFieldSemanticType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//SFRFieldSemanticType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//SFRFieldSemanticType/desc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//SFRFieldSemanticType/when"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//SFRModeListType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute edc.ecore#//SFRModeListType/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//SFRModeListType/sFRMode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//SFRModeListType/stimpcfiles"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//SFRModeListType/stimregfiles"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//SFRModeListType/stimscl"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//SFRModeListType/stimtype"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//SFRModeType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute edc.ecore#//SFRModeType/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//SFRModeType/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//SFRModeType/adjustPoint"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edc.ecore#//SFRModeType/sFRFieldDef"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//SFRModeType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//StimInfoType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//StimInfoType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//StimInfoType/stimpcfiles"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//StimInfoType/stimregfiles"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//StimInfoType/stimscl"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//StimInfoType/stimtype"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//TestMemTraitsType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//TestMemTraitsType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//TestMemTraitsType/locsize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//TestMemTraitsType/wordimpl"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//TestMemTraitsType/wordinit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//TestMemTraitsType/wordsafe"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//TestMemTraitsType/wordsize"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//TestZoneType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//TestZoneType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//TestZoneType/beginaddr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//TestZoneType/endaddr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//TestZoneType/regionid"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//UserIDMemTraitsType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//UserIDMemTraitsType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//UserIDMemTraitsType/locsize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//UserIDMemTraitsType/wordimpl"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//UserIDMemTraitsType/wordinit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//UserIDMemTraitsType/wordsafe"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//UserIDMemTraitsType/wordsize"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//UserIDSectorType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//UserIDSectorType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//UserIDSectorType/beginaddr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//UserIDSectorType/endaddr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//UserIDSectorType/issection"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//UserIDSectorType/regionid"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//UserIDSectorType/sectiondesc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//UserIDSectorType/sectionname"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//VDDType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//VDDType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//VDDType/maxdefaultvoltage"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//VDDType/maxvoltage"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//VDDType/mindefaultvoltage"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//VDDType/minvoltage"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//VDDType/nominalvoltage"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//VirtualPinType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//VirtualPinType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//VirtualPinType/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//VirtualPinType/ppsval"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//VPPType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//VPPType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//VPPType/defaultvoltage"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//VPPType/maxvoltage"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//VPPType/minvoltage"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//WaitType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//WaitType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//WaitType/cfg"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//WaitType/eedata"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//WaitType/erase"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//WaitType/lverase"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//WaitType/lvpgm"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//WaitType/pgm"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//WaitType/userid"/>
+    </genClasses>
+    <genClasses ecoreClass="edc.ecore#//WatchdogTimerType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//WatchdogTimerType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edc.ecore#//WatchdogTimerType/min"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

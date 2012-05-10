@@ -7,7 +7,10 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: microchip,
+Export-Package: crownking.edc,
+ crownking.edc.impl,
+ crownking.edc.util,
+ microchip,
  microchip.device,
  microchip.device.config,
  microchip.device.config.impl,
@@ -23,5 +26,6 @@ Export-Package: microchip,
  microchip.impl,
  microchip.util
 Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.emf.ecore;visibility:=reexport
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.emf.ecore.xmi;bundle-version="2.7.0"
 Bundle-ActivationPolicy: lazy

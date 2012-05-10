@@ -23,5 +23,13 @@
             class="microchip.device.generic.GenericPackage"
             genModel="model/microchip.device.genmodel"/>
    </extension>
+   <extension
+         point="org.eclipse.emf.ecore.generated_package">
+      <package
+            class="crownking.edc.EdcPackage"
+            genModel="model/edc.genmodel"
+            uri="http://crownking/edc">
+      </package>
+   </extension>
 
 </plugin>

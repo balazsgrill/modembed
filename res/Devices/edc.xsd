@@ -1,0 +1,1030 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://crownking/edc" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="PIC" type="edc:PICType" xmlns:edc="http://crownking/edc"/>
+  <xs:complexType name="Module_importType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="modsrc" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="ImportType">
+    <xs:sequence>
+      <xs:element type="edc:Module_importType" name="Module_import" maxOccurs="unbounded" minOccurs="0" xmlns:edc="http://crownking/edc"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VPPType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:float" name="defaultvoltage" use="optional"/>
+        <xs:attribute type="xs:float" name="maxvoltage" use="optional"/>
+        <xs:attribute type="xs:float" name="minvoltage" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VDDType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:float" name="maxdefaultvoltage" use="optional"/>
+        <xs:attribute type="xs:float" name="maxvoltage" use="optional"/>
+        <xs:attribute type="xs:float" name="mindefaultvoltage" use="optional"/>
+        <xs:attribute type="xs:float" name="minvoltage" use="optional"/>
+        <xs:attribute type="xs:float" name="nominalvoltage" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="PowerType">
+    <xs:sequence>
+      <xs:element type="edc:VPPType" name="VPP" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:VDDType" name="VDD" xmlns:edc="http://crownking/edc"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WaitType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:short" name="cfg" use="optional"/>
+        <xs:attribute type="xs:short" name="eedata" use="optional"/>
+        <xs:attribute type="xs:short" name="erase" use="optional"/>
+        <xs:attribute type="xs:short" name="lverase" use="optional"/>
+        <xs:attribute type="xs:short" name="lvpgm" use="optional"/>
+        <xs:attribute type="xs:short" name="pgm" use="optional"/>
+        <xs:attribute type="xs:short" name="userid" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="LatchesType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:byte" name="cfg" use="optional"/>
+        <xs:attribute type="xs:byte" name="eedata" use="optional"/>
+        <xs:attribute type="xs:byte" name="pgm" use="optional"/>
+        <xs:attribute type="xs:byte" name="rowerase" use="optional"/>
+        <xs:attribute type="xs:byte" name="userid" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="ProgrammingType" mixed="true">
+    <xs:sequence>
+      <xs:element type="edc:WaitType" name="Wait" minOccurs="0" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:LatchesType" name="Latches" minOccurs="0" xmlns:edc="http://crownking/edc"/>
+    </xs:sequence>
+    <xs:attribute type="xs:byte" name="boundary" use="optional"/>
+    <xs:attribute type="xs:byte" name="erasealgo" use="optional"/>
+    <xs:attribute type="xs:string" name="hasrowerasecmd" use="optional"/>
+    <xs:attribute type="xs:string" name="hasvppfirst" use="optional"/>
+    <xs:attribute type="xs:float" name="lvpthresh" use="optional"/>
+    <xs:attribute type="xs:string" name="memtech" use="optional"/>
+    <xs:attribute type="xs:byte" name="tries" use="optional"/>
+    <xs:attribute type="xs:string" name="haschecksum" use="optional"/>
+    <xs:attribute type="xs:byte" name="ovrpgm" use="optional"/>
+    <xs:attribute type="xs:string" name="csumadd" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="CodeMemTraitsType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="locsize" use="optional"/>
+        <xs:attribute type="xs:string" name="wordimpl" use="optional"/>
+        <xs:attribute type="xs:string" name="wordinit" use="optional"/>
+        <xs:attribute type="xs:string" name="wordsafe" use="optional"/>
+        <xs:attribute type="xs:string" name="wordsize" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CalDataMemTraitsType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="locsize" use="optional"/>
+        <xs:attribute type="xs:string" name="wordimpl" use="optional"/>
+        <xs:attribute type="xs:string" name="wordinit" use="optional"/>
+        <xs:attribute type="xs:string" name="wordsafe" use="optional"/>
+        <xs:attribute type="xs:string" name="wordsize" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="BackgroundDebugMemTraitsType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="locsize" use="optional"/>
+        <xs:attribute type="xs:string" name="wordimpl" use="optional"/>
+        <xs:attribute type="xs:string" name="wordinit" use="optional"/>
+        <xs:attribute type="xs:string" name="wordsafe" use="optional"/>
+        <xs:attribute type="xs:string" name="wordsize" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="TestMemTraitsType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="locsize" use="optional"/>
+        <xs:attribute type="xs:string" name="wordimpl" use="optional"/>
+        <xs:attribute type="xs:string" name="wordinit" use="optional"/>
+        <xs:attribute type="xs:string" name="wordsafe" use="optional"/>
+        <xs:attribute type="xs:string" name="wordsize" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="UserIDMemTraitsType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="locsize" use="optional"/>
+        <xs:attribute type="xs:string" name="wordimpl" use="optional"/>
+        <xs:attribute type="xs:string" name="wordinit" use="optional"/>
+        <xs:attribute type="xs:string" name="wordsafe" use="optional"/>
+        <xs:attribute type="xs:string" name="wordsize" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="ConfigFuseMemTraitsType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="locsize" use="optional"/>
+        <xs:attribute type="xs:string" name="wordimpl" use="optional"/>
+        <xs:attribute type="xs:string" name="wordinit" use="optional"/>
+        <xs:attribute type="xs:string" name="wordsafe" use="optional"/>
+        <xs:attribute type="xs:string" name="wordsize" use="optional"/>
+        <xs:attribute type="xs:byte" name="unimplval" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="DeviceIDMemTraitsType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="locsize" use="optional"/>
+        <xs:attribute type="xs:string" name="wordimpl" use="optional"/>
+        <xs:attribute type="xs:string" name="wordinit" use="optional"/>
+        <xs:attribute type="xs:string" name="wordsafe" use="optional"/>
+        <xs:attribute type="xs:string" name="wordsize" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="EEDataMemTraitsType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="magicoffset" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="DataMemTraitsType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="locsize" use="optional"/>
+        <xs:attribute type="xs:string" name="wordimpl" use="optional"/>
+        <xs:attribute type="xs:string" name="wordinit" use="optional"/>
+        <xs:attribute type="xs:string" name="wordsafe" use="optional"/>
+        <xs:attribute type="xs:string" name="wordsize" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="MemTraitsType">
+    <xs:sequence>
+      <xs:element type="edc:CodeMemTraitsType" name="CodeMemTraits" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:CalDataMemTraitsType" name="CalDataMemTraits" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:BackgroundDebugMemTraitsType" name="BackgroundDebugMemTraits" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:TestMemTraitsType" name="TestMemTraits" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:UserIDMemTraitsType" name="UserIDMemTraits" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:ConfigFuseMemTraitsType" name="ConfigFuseMemTraits" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:DeviceIDMemTraitsType" name="DeviceIDMemTraits" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:EEDataMemTraitsType" name="EEDataMemTraits" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:DataMemTraitsType" name="DataMemTraits" xmlns:edc="http://crownking/edc"/>
+    </xs:sequence>
+    <xs:attribute type="xs:byte" name="hwstackdepth" use="optional"/>
+    <xs:attribute type="xs:byte" name="bankcount" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="ArchDefType">
+    <xs:sequence>
+      <xs:element type="edc:MemTraitsType" name="MemTraits" xmlns:edc="http://crownking/edc"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="desc" use="optional"/>
+    <xs:attribute type="xs:string" name="name" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="BreakpointsType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="hasdatacapture" use="optional"/>
+        <xs:attribute type="xs:byte" name="hwbpcount" use="optional"/>
+        <xs:attribute type="xs:string" name="idbyte" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CodeSectorType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="beginaddr" use="optional"/>
+        <xs:attribute type="xs:string" name="endaddr" use="optional"/>
+        <xs:attribute type="xs:string" name="issection" use="optional"/>
+        <xs:attribute type="xs:string" name="regionid" use="optional"/>
+        <xs:attribute type="xs:string" name="sectiondesc" use="optional"/>
+        <xs:attribute type="xs:string" name="sectionname" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="UserIDSectorType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="beginaddr" use="optional"/>
+        <xs:attribute type="xs:string" name="endaddr" use="optional"/>
+        <xs:attribute type="xs:string" name="issection" use="optional"/>
+        <xs:attribute type="xs:string" name="regionid" use="optional"/>
+        <xs:attribute type="xs:string" name="sectiondesc" use="optional"/>
+        <xs:attribute type="xs:string" name="sectionname" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="TestZoneType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="beginaddr" use="optional"/>
+        <xs:attribute type="xs:string" name="endaddr" use="optional"/>
+        <xs:attribute type="xs:string" name="regionid" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="DeviceIDSectorType" mixed="true">
+    <xs:sequence>
+      <xs:element type="edc:DEVIDToRevType" name="DEVIDToRev" maxOccurs="unbounded" minOccurs="0" xmlns:edc="http://crownking/edc"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="beginaddr" use="optional"/>
+    <xs:attribute type="xs:string" name="endaddr" use="optional"/>
+    <xs:attribute type="xs:string" name="mask" use="optional"/>
+    <xs:attribute type="xs:string" name="regionid" use="optional"/>
+    <xs:attribute type="xs:string" name="value" use="optional"/>
+    <xs:attribute type="xs:string" name="issection" use="optional"/>
+    <xs:attribute type="xs:string" name="sectiondesc" use="optional"/>
+    <xs:attribute type="xs:string" name="sectionname" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="IllegalType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="desc" use="optional"/>
+        <xs:attribute type="xs:string" name="when" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="AdjustPointType" mixed="true">
+    <xs:choice maxOccurs="unbounded" minOccurs="0">
+      <xs:element type="edc:DCRFieldSemanticType" name="DCRFieldSemantic" xmlns:edc="http://crownking/edc"/>
+      <xs:element name="AliasList">
+        <xs:complexType mixed="true">
+          <xs:choice maxOccurs="unbounded" minOccurs="0">
+            <xs:element type="edc:LegacyAliasType" name="LegacyAlias" xmlns:edc="http://crownking/edc"/>
+            <xs:element type="edc:MigrationAliasType" name="MigrationAlias" xmlns:edc="http://crownking/edc"/>
+            <xs:element type="edc:AliasListType" name="AliasList" minOccurs="0" xmlns:edc="http://crownking/edc"/>
+            <xs:element type="edc:ChecksumType" name="Checksum" minOccurs="0" xmlns:edc="http://crownking/edc"/>
+          </xs:choice>
+          <xs:attribute type="xs:string" name="cname" use="optional"/>
+          <xs:attribute type="xs:string" name="desc" use="optional"/>
+          <xs:attribute type="xs:string" name="when" use="optional"/>
+          <xs:attribute type="xs:string" name="islanghidden" use="optional"/>
+          <xs:attribute type="xs:string" name="beginaddr" use="optional"/>
+          <xs:attribute type="xs:string" name="checksumalgo" use="optional"/>
+          <xs:attribute type="xs:string" name="endaddr" use="optional"/>
+          <xs:attribute type="xs:string" name="ishidden" use="optional"/>
+          <xs:attribute type="xs:byte" name="oscmodeidref" use="optional"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element type="edc:SFRModeListType" name="SFRModeList" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:StimInfoType" name="StimInfo" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:ModuleMacroType" name="ModuleMacro" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:ModuleExcludeType" name="ModuleExclude" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:SFRDefType" name="SFRDef" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:ChecksumType" name="Checksum" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:SFRFieldSemanticType" name="SFRFieldSemantic" xmlns:edc="http://crownking/edc"/>
+    </xs:choice>
+    <xs:attribute type="xs:string" name="offset" use="optional"/>
+    <xs:attribute type="xs:string" name="cname" use="optional"/>
+    <xs:attribute type="xs:string" name="desc" use="optional"/>
+    <xs:attribute type="xs:string" name="mask" use="optional"/>
+    <xs:attribute type="xs:string" name="name" use="optional"/>
+    <xs:attribute type="xs:string" name="nzwidth" use="optional"/>
+    <xs:attribute type="xs:string" name="ishidden" use="optional"/>
+    <xs:attribute type="xs:string" name="islanghidden" use="optional"/>
+    <xs:attribute type="xs:string" name="access" use="optional"/>
+    <xs:attribute type="xs:string" name="impl" use="optional"/>
+    <xs:attribute type="xs:string" name="isindirect" use="optional"/>
+    <xs:attribute type="xs:string" name="isvolatile" use="optional"/>
+    <xs:attribute type="xs:string" name="mclr" use="optional"/>
+    <xs:attribute type="xs:string" name="por" use="optional"/>
+    <xs:attribute type="xs:string" name="nzsize" use="optional"/>
+    <xs:attribute type="xs:string" name="regionidref" use="optional"/>
+    <xs:attribute type="xs:string" name="modsrc" use="optional"/>
+    <xs:attribute type="xs:string" name="begin" use="optional"/>
+    <xs:attribute type="xs:string" name="end" use="optional"/>
+    <xs:attribute type="xs:string" name="isidehidden" use="optional"/>
+    <xs:attribute type="xs:string" name="islnaghidden" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="LegacyAliasType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="cname" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="AliasListType">
+    <xs:choice maxOccurs="unbounded" minOccurs="0">
+      <xs:element type="edc:LegacyAliasType" name="LegacyAlias" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:MigrationAliasType" name="MigrationAlias" xmlns:edc="http://crownking/edc"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="DCRFieldSemanticType" mixed="true">
+    <xs:sequence>
+      <xs:element type="edc:AliasListType" name="AliasList" minOccurs="0" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:ChecksumType" name="Checksum" minOccurs="0" xmlns:edc="http://crownking/edc"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="cname" use="optional"/>
+    <xs:attribute type="xs:string" name="desc" use="optional"/>
+    <xs:attribute type="xs:string" name="when" use="optional"/>
+    <xs:attribute type="xs:string" name="islanghidden" use="optional"/>
+    <xs:attribute type="xs:string" name="beginaddr" use="optional"/>
+    <xs:attribute type="xs:string" name="checksumalgo" use="optional"/>
+    <xs:attribute type="xs:string" name="endaddr" use="optional"/>
+    <xs:attribute type="xs:string" name="ishidden" use="optional"/>
+    <xs:attribute type="xs:byte" name="oscmodeidref" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="DCRFieldDefType" mixed="true">
+    <xs:choice maxOccurs="unbounded" minOccurs="0">
+      <xs:element type="edc:DCRFieldSemanticType" name="DCRFieldSemantic" xmlns:edc="http://crownking/edc"/>
+      <xs:element name="AliasList">
+        <xs:complexType mixed="true">
+          <xs:choice maxOccurs="unbounded" minOccurs="0">
+            <xs:element type="edc:LegacyAliasType" name="LegacyAlias" xmlns:edc="http://crownking/edc"/>
+            <xs:element type="edc:MigrationAliasType" name="MigrationAlias" xmlns:edc="http://crownking/edc"/>
+            <xs:element type="edc:AliasListType" name="AliasList" minOccurs="0" xmlns:edc="http://crownking/edc"/>
+            <xs:element type="edc:ChecksumType" name="Checksum" minOccurs="0" xmlns:edc="http://crownking/edc"/>
+          </xs:choice>
+          <xs:attribute type="xs:string" name="cname" use="optional"/>
+          <xs:attribute type="xs:string" name="desc" use="optional"/>
+          <xs:attribute type="xs:string" name="when" use="optional"/>
+          <xs:attribute type="xs:string" name="islanghidden" use="optional"/>
+          <xs:attribute type="xs:string" name="beginaddr" use="optional"/>
+          <xs:attribute type="xs:string" name="checksumalgo" use="optional"/>
+          <xs:attribute type="xs:string" name="endaddr" use="optional"/>
+          <xs:attribute type="xs:string" name="ishidden" use="optional"/>
+          <xs:attribute type="xs:byte" name="oscmodeidref" use="optional"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element type="edc:SFRModeListType" name="SFRModeList" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:StimInfoType" name="StimInfo" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:ModuleMacroType" name="ModuleMacro" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:ModuleExcludeType" name="ModuleExclude" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:SFRDefType" name="SFRDef" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:ChecksumType" name="Checksum" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:SFRFieldSemanticType" name="SFRFieldSemantic" xmlns:edc="http://crownking/edc"/>
+    </xs:choice>
+    <xs:attribute type="xs:string" name="cname" use="optional"/>
+    <xs:attribute type="xs:string" name="desc" use="optional"/>
+    <xs:attribute type="xs:string" name="mask" use="optional"/>
+    <xs:attribute type="xs:string" name="name" use="optional"/>
+    <xs:attribute type="xs:string" name="nzwidth" use="optional"/>
+    <xs:attribute type="xs:string" name="ishidden" use="optional"/>
+    <xs:attribute type="xs:string" name="offset" use="optional"/>
+    <xs:attribute type="xs:string" name="islanghidden" use="optional"/>
+    <xs:attribute type="xs:string" name="access" use="optional"/>
+    <xs:attribute type="xs:string" name="impl" use="optional"/>
+    <xs:attribute type="xs:string" name="isindirect" use="optional"/>
+    <xs:attribute type="xs:string" name="isvolatile" use="optional"/>
+    <xs:attribute type="xs:string" name="mclr" use="optional"/>
+    <xs:attribute type="xs:string" name="por" use="optional"/>
+    <xs:attribute type="xs:string" name="nzsize" use="optional"/>
+    <xs:attribute type="xs:string" name="regionidref" use="optional"/>
+    <xs:attribute type="xs:string" name="modsrc" use="optional"/>
+    <xs:attribute type="xs:string" name="begin" use="optional"/>
+    <xs:attribute type="xs:string" name="end" use="optional"/>
+    <xs:attribute type="xs:string" name="isidehidden" use="optional"/>
+    <xs:attribute type="xs:string" name="islnaghidden" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="ChecksumType" mixed="true">
+    <xs:sequence>
+      <xs:element type="edc:AliasListType" name="AliasList" minOccurs="0" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:ChecksumType" name="Checksum" minOccurs="0" xmlns:edc="http://crownking/edc"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="beginaddr" use="optional"/>
+    <xs:attribute type="xs:string" name="checksumalgo" use="optional"/>
+    <xs:attribute type="xs:string" name="endaddr" use="optional"/>
+    <xs:attribute type="xs:string" name="cname" use="optional"/>
+    <xs:attribute type="xs:string" name="desc" use="optional"/>
+    <xs:attribute type="xs:string" name="when" use="optional"/>
+    <xs:attribute type="xs:string" name="islanghidden" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="DCRModeType">
+    <xs:choice maxOccurs="unbounded" minOccurs="0">
+      <xs:element type="edc:AdjustPointType" name="AdjustPoint" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:DCRFieldDefType" name="DCRFieldDef" xmlns:edc="http://crownking/edc"/>
+    </xs:choice>
+    <xs:attribute type="xs:string" name="id" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="DCRModeListType">
+    <xs:sequence>
+      <xs:element type="edc:DCRModeType" name="DCRMode" xmlns:edc="http://crownking/edc"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DCRDefType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="AliasList" minOccurs="0"/>
+      <xs:element type="edc:IllegalType" name="Illegal" maxOccurs="unbounded" minOccurs="0" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:DCRModeListType" name="DCRModeList" xmlns:edc="http://crownking/edc"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="access" use="optional"/>
+    <xs:attribute type="xs:string" name="cname" use="optional"/>
+    <xs:attribute type="xs:string" name="default" use="optional"/>
+    <xs:attribute type="xs:string" name="desc" use="optional"/>
+    <xs:attribute type="xs:string" name="impl" use="optional"/>
+    <xs:attribute type="xs:string" name="name" use="optional"/>
+    <xs:attribute type="xs:string" name="nzwidth" use="optional"/>
+    <xs:attribute type="xs:byte" name="unimplval" use="optional"/>
+    <xs:attribute type="xs:string" name="unused" use="optional"/>
+    <xs:attribute type="xs:string" name="useinchecksum" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="ConfigFuseSectorType">
+    <xs:sequence>
+      <xs:element type="edc:DCRDefType" name="DCRDef" maxOccurs="unbounded" minOccurs="0" xmlns:edc="http://crownking/edc"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="beginaddr" use="optional"/>
+    <xs:attribute type="xs:string" name="endaddr" use="optional"/>
+    <xs:attribute type="xs:string" name="regionid" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="BACKBUGVectorSectorType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="beginaddr" use="optional"/>
+        <xs:attribute type="xs:string" name="endaddr" use="optional"/>
+        <xs:attribute type="xs:string" name="regionid" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="ProgramSpaceType">
+    <xs:choice maxOccurs="unbounded" minOccurs="0">
+      <xs:element type="edc:CodeSectorType" name="CodeSector" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:UserIDSectorType" name="UserIDSector" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:TestZoneType" name="TestZone" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:DeviceIDSectorType" name="DeviceIDSector" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:ConfigFuseSectorType" name="ConfigFuseSector" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:BACKBUGVectorSectorType" name="BACKBUGVectorSector" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:CalDataZoneType" name="CalDataZone" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:EEDataSectorType" name="EEDataSector" xmlns:edc="http://crownking/edc"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="Module_refType" mixed="true">
+    <xs:choice maxOccurs="unbounded" minOccurs="0">
+      <xs:element type="edc:ModuleMacroType" name="ModuleMacro" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:ModuleExcludeType" name="ModuleExclude" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:DCRFieldSemanticType" name="DCRFieldSemantic" xmlns:edc="http://crownking/edc"/>
+      <xs:element name="AliasList">
+        <xs:complexType mixed="true">
+          <xs:choice maxOccurs="unbounded" minOccurs="0">
+            <xs:element type="edc:LegacyAliasType" name="LegacyAlias" xmlns:edc="http://crownking/edc"/>
+            <xs:element type="edc:MigrationAliasType" name="MigrationAlias" xmlns:edc="http://crownking/edc"/>
+            <xs:element type="edc:AliasListType" name="AliasList" minOccurs="0" xmlns:edc="http://crownking/edc"/>
+            <xs:element type="edc:ChecksumType" name="Checksum" minOccurs="0" xmlns:edc="http://crownking/edc"/>
+          </xs:choice>
+          <xs:attribute type="xs:string" name="cname" use="optional"/>
+          <xs:attribute type="xs:string" name="desc" use="optional"/>
+          <xs:attribute type="xs:string" name="when" use="optional"/>
+          <xs:attribute type="xs:string" name="islanghidden" use="optional"/>
+          <xs:attribute type="xs:string" name="beginaddr" use="optional"/>
+          <xs:attribute type="xs:string" name="checksumalgo" use="optional"/>
+          <xs:attribute type="xs:string" name="endaddr" use="optional"/>
+          <xs:attribute type="xs:string" name="ishidden" use="optional"/>
+          <xs:attribute type="xs:byte" name="oscmodeidref" use="optional"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element type="edc:SFRModeListType" name="SFRModeList" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:StimInfoType" name="StimInfo" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:SFRDefType" name="SFRDef" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:ChecksumType" name="Checksum" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:SFRFieldSemanticType" name="SFRFieldSemantic" xmlns:edc="http://crownking/edc"/>
+    </xs:choice>
+    <xs:attribute type="xs:string" name="modsrc" use="optional"/>
+    <xs:attribute type="xs:string" name="begin" use="optional"/>
+    <xs:attribute type="xs:string" name="end" use="optional"/>
+    <xs:attribute type="xs:string" name="access" use="optional"/>
+    <xs:attribute type="xs:string" name="cname" use="optional"/>
+    <xs:attribute type="xs:string" name="desc" use="optional"/>
+    <xs:attribute type="xs:string" name="impl" use="optional"/>
+    <xs:attribute type="xs:string" name="isindirect" use="optional"/>
+    <xs:attribute type="xs:string" name="isvolatile" use="optional"/>
+    <xs:attribute type="xs:string" name="mclr" use="optional"/>
+    <xs:attribute type="xs:string" name="name" use="optional"/>
+    <xs:attribute type="xs:string" name="nzwidth" use="optional"/>
+    <xs:attribute type="xs:string" name="por" use="optional"/>
+    <xs:attribute type="xs:string" name="offset" use="optional"/>
+    <xs:attribute type="xs:string" name="mask" use="optional"/>
+    <xs:attribute type="xs:string" name="ishidden" use="optional"/>
+    <xs:attribute type="xs:string" name="islanghidden" use="optional"/>
+    <xs:attribute type="xs:string" name="nzsize" use="optional"/>
+    <xs:attribute type="xs:string" name="regionidref" use="optional"/>
+    <xs:attribute type="xs:string" name="isidehidden" use="optional"/>
+    <xs:attribute type="xs:string" name="islnaghidden" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="NMMRPlaceType">
+    <xs:sequence>
+      <xs:element type="edc:Module_refType" name="Module_ref" xmlns:edc="http://crownking/edc"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="regionid" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="SFRFieldDefType" mixed="true">
+    <xs:choice maxOccurs="unbounded" minOccurs="0">
+      <xs:element type="edc:DCRFieldSemanticType" name="DCRFieldSemantic" xmlns:edc="http://crownking/edc"/>
+      <xs:element name="AliasList">
+        <xs:complexType mixed="true">
+          <xs:choice maxOccurs="unbounded" minOccurs="0">
+            <xs:element type="edc:LegacyAliasType" name="LegacyAlias" xmlns:edc="http://crownking/edc"/>
+            <xs:element type="edc:MigrationAliasType" name="MigrationAlias" xmlns:edc="http://crownking/edc"/>
+            <xs:element type="edc:AliasListType" name="AliasList" minOccurs="0" xmlns:edc="http://crownking/edc"/>
+            <xs:element type="edc:ChecksumType" name="Checksum" minOccurs="0" xmlns:edc="http://crownking/edc"/>
+          </xs:choice>
+          <xs:attribute type="xs:string" name="cname" use="optional"/>
+          <xs:attribute type="xs:string" name="desc" use="optional"/>
+          <xs:attribute type="xs:string" name="when" use="optional"/>
+          <xs:attribute type="xs:string" name="islanghidden" use="optional"/>
+          <xs:attribute type="xs:string" name="beginaddr" use="optional"/>
+          <xs:attribute type="xs:string" name="checksumalgo" use="optional"/>
+          <xs:attribute type="xs:string" name="endaddr" use="optional"/>
+          <xs:attribute type="xs:string" name="ishidden" use="optional"/>
+          <xs:attribute type="xs:byte" name="oscmodeidref" use="optional"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element type="edc:SFRModeListType" name="SFRModeList" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:StimInfoType" name="StimInfo" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:ModuleMacroType" name="ModuleMacro" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:ModuleExcludeType" name="ModuleExclude" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:SFRDefType" name="SFRDef" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:ChecksumType" name="Checksum" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:SFRFieldSemanticType" name="SFRFieldSemantic" xmlns:edc="http://crownking/edc"/>
+    </xs:choice>
+    <xs:attribute type="xs:string" name="cname" use="optional"/>
+    <xs:attribute type="xs:string" name="desc" use="optional"/>
+    <xs:attribute type="xs:string" name="islanghidden" use="optional"/>
+    <xs:attribute type="xs:string" name="mask" use="optional"/>
+    <xs:attribute type="xs:string" name="name" use="optional"/>
+    <xs:attribute type="xs:string" name="nzwidth" use="optional"/>
+    <xs:attribute type="xs:string" name="offset" use="optional"/>
+    <xs:attribute type="xs:string" name="ishidden" use="optional"/>
+    <xs:attribute type="xs:string" name="access" use="optional"/>
+    <xs:attribute type="xs:string" name="impl" use="optional"/>
+    <xs:attribute type="xs:string" name="isindirect" use="optional"/>
+    <xs:attribute type="xs:string" name="isvolatile" use="optional"/>
+    <xs:attribute type="xs:string" name="mclr" use="optional"/>
+    <xs:attribute type="xs:string" name="por" use="optional"/>
+    <xs:attribute type="xs:string" name="nzsize" use="optional"/>
+    <xs:attribute type="xs:string" name="regionidref" use="optional"/>
+    <xs:attribute type="xs:string" name="modsrc" use="optional"/>
+    <xs:attribute type="xs:string" name="begin" use="optional"/>
+    <xs:attribute type="xs:string" name="end" use="optional"/>
+    <xs:attribute type="xs:string" name="isidehidden" use="optional"/>
+    <xs:attribute type="xs:string" name="islnaghidden" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="SFRModeType" mixed="true">
+    <xs:choice maxOccurs="unbounded" minOccurs="0">
+      <xs:element type="edc:AdjustPointType" name="AdjustPoint" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:SFRFieldDefType" name="SFRFieldDef" xmlns:edc="http://crownking/edc"/>
+    </xs:choice>
+    <xs:attribute type="xs:string" name="id" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="SFRModeListType" mixed="true">
+    <xs:sequence>
+      <xs:element type="edc:SFRModeType" name="SFRMode" maxOccurs="unbounded" minOccurs="0" xmlns:edc="http://crownking/edc"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="stimpcfiles" use="optional"/>
+    <xs:attribute type="xs:string" name="stimregfiles" use="optional"/>
+    <xs:attribute type="xs:string" name="stimscl" use="optional"/>
+    <xs:attribute type="xs:string" name="stimtype" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="SFRDefType" mixed="true">
+    <xs:choice maxOccurs="unbounded" minOccurs="0">
+      <xs:element type="edc:DCRFieldSemanticType" name="DCRFieldSemantic" xmlns:edc="http://crownking/edc"/>
+      <xs:element name="AliasList">
+        <xs:complexType mixed="true">
+          <xs:choice maxOccurs="unbounded" minOccurs="0">
+            <xs:element type="edc:LegacyAliasType" name="LegacyAlias" xmlns:edc="http://crownking/edc"/>
+            <xs:element type="edc:MigrationAliasType" name="MigrationAlias" xmlns:edc="http://crownking/edc"/>
+            <xs:element type="edc:AliasListType" name="AliasList" minOccurs="0" xmlns:edc="http://crownking/edc"/>
+            <xs:element type="edc:ChecksumType" name="Checksum" minOccurs="0" xmlns:edc="http://crownking/edc"/>
+          </xs:choice>
+          <xs:attribute type="xs:string" name="cname" use="optional"/>
+          <xs:attribute type="xs:string" name="desc" use="optional"/>
+          <xs:attribute type="xs:string" name="when" use="optional"/>
+          <xs:attribute type="xs:string" name="islanghidden" use="optional"/>
+          <xs:attribute type="xs:string" name="beginaddr" use="optional"/>
+          <xs:attribute type="xs:string" name="checksumalgo" use="optional"/>
+          <xs:attribute type="xs:string" name="endaddr" use="optional"/>
+          <xs:attribute type="xs:string" name="ishidden" use="optional"/>
+          <xs:attribute type="xs:byte" name="oscmodeidref" use="optional"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element type="edc:SFRModeListType" name="SFRModeList" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:StimInfoType" name="StimInfo" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:ModuleMacroType" name="ModuleMacro" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:ModuleExcludeType" name="ModuleExclude" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:SFRDefType" name="SFRDef" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:ChecksumType" name="Checksum" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:SFRFieldSemanticType" name="SFRFieldSemantic" xmlns:edc="http://crownking/edc"/>
+    </xs:choice>
+    <xs:attribute type="xs:string" name="access" use="optional"/>
+    <xs:attribute type="xs:string" name="cname" use="optional"/>
+    <xs:attribute type="xs:string" name="desc" use="optional"/>
+    <xs:attribute type="xs:string" name="impl" use="optional"/>
+    <xs:attribute type="xs:string" name="isindirect" use="optional"/>
+    <xs:attribute type="xs:string" name="isvolatile" use="optional"/>
+    <xs:attribute type="xs:string" name="mclr" use="optional"/>
+    <xs:attribute type="xs:string" name="name" use="optional"/>
+    <xs:attribute type="xs:string" name="nzwidth" use="optional"/>
+    <xs:attribute type="xs:string" name="por" use="optional"/>
+    <xs:attribute type="xs:string" name="offset" use="optional"/>
+    <xs:attribute type="xs:string" name="mask" use="optional"/>
+    <xs:attribute type="xs:string" name="ishidden" use="optional"/>
+    <xs:attribute type="xs:string" name="islanghidden" use="optional"/>
+    <xs:attribute type="xs:string" name="nzsize" use="optional"/>
+    <xs:attribute type="xs:string" name="regionidref" use="optional"/>
+    <xs:attribute type="xs:string" name="modsrc" use="optional"/>
+    <xs:attribute type="xs:string" name="begin" use="optional"/>
+    <xs:attribute type="xs:string" name="end" use="optional"/>
+    <xs:attribute type="xs:string" name="isidehidden" use="optional"/>
+    <xs:attribute type="xs:string" name="islnaghidden" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="StimInfoType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="stimpcfiles" use="optional"/>
+        <xs:attribute type="xs:string" name="stimregfiles" use="optional"/>
+        <xs:attribute type="xs:string" name="stimscl" use="optional"/>
+        <xs:attribute type="xs:string" name="stimtype" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="MigrationAliasType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="cname" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="JoinedSFRDefType" mixed="true">
+    <xs:choice maxOccurs="unbounded" minOccurs="0">
+      <xs:element type="edc:DCRFieldSemanticType" name="DCRFieldSemantic" xmlns:edc="http://crownking/edc"/>
+      <xs:element name="AliasList">
+        <xs:complexType mixed="true">
+          <xs:choice maxOccurs="unbounded" minOccurs="0">
+            <xs:element type="edc:LegacyAliasType" name="LegacyAlias" xmlns:edc="http://crownking/edc"/>
+            <xs:element type="edc:MigrationAliasType" name="MigrationAlias" xmlns:edc="http://crownking/edc"/>
+            <xs:element type="edc:AliasListType" name="AliasList" minOccurs="0" xmlns:edc="http://crownking/edc"/>
+            <xs:element type="edc:ChecksumType" name="Checksum" minOccurs="0" xmlns:edc="http://crownking/edc"/>
+          </xs:choice>
+          <xs:attribute type="xs:string" name="cname" use="optional"/>
+          <xs:attribute type="xs:string" name="desc" use="optional"/>
+          <xs:attribute type="xs:string" name="when" use="optional"/>
+          <xs:attribute type="xs:string" name="islanghidden" use="optional"/>
+          <xs:attribute type="xs:string" name="beginaddr" use="optional"/>
+          <xs:attribute type="xs:string" name="checksumalgo" use="optional"/>
+          <xs:attribute type="xs:string" name="endaddr" use="optional"/>
+          <xs:attribute type="xs:string" name="ishidden" use="optional"/>
+          <xs:attribute type="xs:byte" name="oscmodeidref" use="optional"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element type="edc:SFRModeListType" name="SFRModeList" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:StimInfoType" name="StimInfo" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:SFRDefType" name="SFRDef" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:ModuleMacroType" name="ModuleMacro" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:ModuleExcludeType" name="ModuleExclude" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:ChecksumType" name="Checksum" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:SFRFieldSemanticType" name="SFRFieldSemantic" xmlns:edc="http://crownking/edc"/>
+    </xs:choice>
+    <xs:attribute type="xs:string" name="cname" use="optional"/>
+    <xs:attribute type="xs:string" name="desc" use="optional"/>
+    <xs:attribute type="xs:string" name="name" use="optional"/>
+    <xs:attribute type="xs:string" name="nzwidth" use="optional"/>
+    <xs:attribute type="xs:string" name="access" use="optional"/>
+    <xs:attribute type="xs:string" name="impl" use="optional"/>
+    <xs:attribute type="xs:string" name="isindirect" use="optional"/>
+    <xs:attribute type="xs:string" name="isvolatile" use="optional"/>
+    <xs:attribute type="xs:string" name="mclr" use="optional"/>
+    <xs:attribute type="xs:string" name="por" use="optional"/>
+    <xs:attribute type="xs:string" name="offset" use="optional"/>
+    <xs:attribute type="xs:string" name="mask" use="optional"/>
+    <xs:attribute type="xs:string" name="ishidden" use="optional"/>
+    <xs:attribute type="xs:string" name="islanghidden" use="optional"/>
+    <xs:attribute type="xs:string" name="nzsize" use="optional"/>
+    <xs:attribute type="xs:string" name="regionidref" use="optional"/>
+    <xs:attribute type="xs:string" name="modsrc" use="optional"/>
+    <xs:attribute type="xs:string" name="begin" use="optional"/>
+    <xs:attribute type="xs:string" name="end" use="optional"/>
+    <xs:attribute type="xs:string" name="isidehidden" use="optional"/>
+    <xs:attribute type="xs:string" name="islnaghidden" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="SFRDataSectorType">
+    <xs:choice maxOccurs="unbounded" minOccurs="0">
+      <xs:element type="edc:SFRDefType" name="SFRDef" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:JoinedSFRDefType" name="JoinedSFRDef" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:AdjustPointType" name="AdjustPoint" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:MirrorType" name="Mirror" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:Module_refType" name="Module_ref" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:MuxedSFRDefType" name="MuxedSFRDef" xmlns:edc="http://crownking/edc"/>
+    </xs:choice>
+    <xs:attribute type="xs:byte" name="bank" use="optional"/>
+    <xs:attribute type="xs:string" name="beginaddr" use="optional"/>
+    <xs:attribute type="xs:string" name="endaddr" use="optional"/>
+    <xs:attribute type="xs:string" name="regionid" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="MirrorType" mixed="true">
+    <xs:choice maxOccurs="unbounded" minOccurs="0">
+      <xs:element type="edc:DCRFieldSemanticType" name="DCRFieldSemantic" xmlns:edc="http://crownking/edc"/>
+      <xs:element name="AliasList">
+        <xs:complexType mixed="true">
+          <xs:choice maxOccurs="unbounded" minOccurs="0">
+            <xs:element type="edc:LegacyAliasType" name="LegacyAlias" xmlns:edc="http://crownking/edc"/>
+            <xs:element type="edc:MigrationAliasType" name="MigrationAlias" xmlns:edc="http://crownking/edc"/>
+            <xs:element type="edc:AliasListType" name="AliasList" minOccurs="0" xmlns:edc="http://crownking/edc"/>
+            <xs:element type="edc:ChecksumType" name="Checksum" minOccurs="0" xmlns:edc="http://crownking/edc"/>
+          </xs:choice>
+          <xs:attribute type="xs:string" name="cname" use="optional"/>
+          <xs:attribute type="xs:string" name="desc" use="optional"/>
+          <xs:attribute type="xs:string" name="when" use="optional"/>
+          <xs:attribute type="xs:string" name="islanghidden" use="optional"/>
+          <xs:attribute type="xs:string" name="beginaddr" use="optional"/>
+          <xs:attribute type="xs:string" name="checksumalgo" use="optional"/>
+          <xs:attribute type="xs:string" name="endaddr" use="optional"/>
+          <xs:attribute type="xs:string" name="ishidden" use="optional"/>
+          <xs:attribute type="xs:byte" name="oscmodeidref" use="optional"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element type="edc:SFRModeListType" name="SFRModeList" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:StimInfoType" name="StimInfo" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:ModuleMacroType" name="ModuleMacro" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:ModuleExcludeType" name="ModuleExclude" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:SFRDefType" name="SFRDef" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:ChecksumType" name="Checksum" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:SFRFieldSemanticType" name="SFRFieldSemantic" xmlns:edc="http://crownking/edc"/>
+    </xs:choice>
+    <xs:attribute type="xs:string" name="nzsize" use="optional"/>
+    <xs:attribute type="xs:string" name="regionidref" use="optional"/>
+    <xs:attribute type="xs:string" name="access" use="optional"/>
+    <xs:attribute type="xs:string" name="cname" use="optional"/>
+    <xs:attribute type="xs:string" name="desc" use="optional"/>
+    <xs:attribute type="xs:string" name="impl" use="optional"/>
+    <xs:attribute type="xs:string" name="isindirect" use="optional"/>
+    <xs:attribute type="xs:string" name="isvolatile" use="optional"/>
+    <xs:attribute type="xs:string" name="mclr" use="optional"/>
+    <xs:attribute type="xs:string" name="name" use="optional"/>
+    <xs:attribute type="xs:string" name="nzwidth" use="optional"/>
+    <xs:attribute type="xs:string" name="por" use="optional"/>
+    <xs:attribute type="xs:string" name="offset" use="optional"/>
+    <xs:attribute type="xs:string" name="mask" use="optional"/>
+    <xs:attribute type="xs:string" name="ishidden" use="optional"/>
+    <xs:attribute type="xs:string" name="islanghidden" use="optional"/>
+    <xs:attribute type="xs:string" name="modsrc" use="optional"/>
+    <xs:attribute type="xs:string" name="begin" use="optional"/>
+    <xs:attribute type="xs:string" name="end" use="optional"/>
+    <xs:attribute type="xs:string" name="isidehidden" use="optional"/>
+    <xs:attribute type="xs:string" name="islnaghidden" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="GPRDataSectorType" mixed="true">
+    <xs:choice maxOccurs="unbounded" minOccurs="0">
+      <xs:element type="edc:SFRDefType" name="SFRDef" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:AdjustPointType" name="AdjustPoint" xmlns:edc="http://crownking/edc"/>
+    </xs:choice>
+    <xs:attribute type="xs:byte" name="bank" use="optional"/>
+    <xs:attribute type="xs:string" name="beginaddr" use="optional"/>
+    <xs:attribute type="xs:string" name="endaddr" use="optional"/>
+    <xs:attribute type="xs:string" name="regionid" use="optional"/>
+    <xs:attribute type="xs:string" name="shadowidref" use="optional"/>
+    <xs:attribute type="xs:string" name="shadowoffset" use="optional"/>
+    <xs:attribute type="xs:byte" name="shadowoffset" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="RegardlessOfModeType">
+    <xs:choice maxOccurs="unbounded" minOccurs="0">
+      <xs:element type="edc:NMMRPlaceType" name="NMMRPlace" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:SFRDataSectorType" name="SFRDataSector" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:DPRDataSectorType" name="DPRDataSector" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:GPRDataSectorType" name="GPRDataSector" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:EmulatorZoneType" name="EmulatorZone" xmlns:edc="http://crownking/edc"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="DataSpaceType">
+    <xs:sequence>
+      <xs:element type="edc:RegardlessOfModeType" name="RegardlessOfMode" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="xs:string" name="TraditionalModeOnly"/>
+      <xs:element type="xs:string" name="ExtendedModeOnly"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="endaddr" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="PICType">
+    <xs:sequence>
+      <xs:element type="edc:ImportType" name="Import" maxOccurs="unbounded" minOccurs="0" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:PowerType" name="Power" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:ProgrammingType" name="Programming" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:ArchDefType" name="ArchDef" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:OscillatorType" name="Oscillator" minOccurs="0" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:WatchdogTimerType" name="WatchdogTimer" minOccurs="0" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:BreakpointsType" name="Breakpoints" minOccurs="0" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:LCDType" name="LCD" minOccurs="0" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:ProgramSpaceType" name="ProgramSpace" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:DataSpaceType" name="DataSpace" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:PinListType" name="PinList" minOccurs="0" xmlns:edc="http://crownking/edc"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="arch" use="optional"/>
+    <xs:attribute type="xs:string" name="desc" use="optional"/>
+    <xs:attribute type="xs:int" name="dsid" use="optional"/>
+    <xs:attribute type="xs:string" name="isextended" use="optional"/>
+    <xs:attribute type="xs:string" name="name" use="optional"/>
+    <xs:attribute type="xs:string" name="procid" use="optional"/>
+    <xs:attribute type="xs:string" name="informedby" use="optional"/>
+    <xs:attribute type="xs:string" name="hasfreeze" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="EmulatorZoneType" mixed="true">
+    <xs:choice maxOccurs="unbounded" minOccurs="0">
+      <xs:element type="edc:SFRDefType" name="SFRDef" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:AdjustPointType" name="AdjustPoint" xmlns:edc="http://crownking/edc"/>
+    </xs:choice>
+    <xs:attribute type="xs:string" name="beginaddr" use="optional"/>
+    <xs:attribute type="xs:string" name="endaddr" use="optional"/>
+    <xs:attribute type="xs:string" name="regionid" use="optional"/>
+    <xs:attribute type="xs:byte" name="bank" use="optional"/>
+    <xs:attribute type="xs:string" name="shadowidref" use="optional"/>
+    <xs:attribute type="xs:string" name="shadowoffset" use="optional"/>
+    <xs:attribute type="xs:byte" name="shadowoffset" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="WatchdogTimerType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:byte" name="min" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="ModuleMacroType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="replace" use="optional"/>
+        <xs:attribute type="xs:string" name="with" use="optional"/>
+        <xs:attribute type="xs:string" name="impl" use="optional"/>
+        <xs:attribute type="xs:string" name="offset" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="ModuleExcludeType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="impl" use="optional"/>
+        <xs:attribute type="xs:string" name="offset" use="optional"/>
+        <xs:attribute type="xs:string" name="replace" use="optional"/>
+        <xs:attribute type="xs:string" name="with" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="VirtualPinType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="name" use="optional"/>
+        <xs:attribute type="xs:byte" name="ppsval" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="PinType">
+    <xs:sequence>
+      <xs:element type="edc:VirtualPinType" name="VirtualPin" maxOccurs="unbounded" minOccurs="0" xmlns:edc="http://crownking/edc">
+        <xs:annotation>
+          <xs:documentation>Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8  Pin 1    Pin 2    Pin 3    Pin 4    Pin 5    Pin 6    Pin 7    Pin 8  Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8  Pin 1    Pin 2    Pin 3    Pin 4    Pin 5    Pin 6    Pin 7    Pin 8    Pin 9    Pin 10    Pin 11    Pin 12    Pin 13    Pin 14  Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28  Pin 1    Pin 2    Pin 3    Pin 4    Pin 5    Pin 6    Pin 7    Pin 8    Pin 9    Pin 10    Pin 11    Pin 12    Pin 13    Pin 14    Pin 15    Pin 16    Pin 17    Pin 18    Pin 19    Pin 20    Pin 21    Pin 22    Pin 23    Pin 24    Pin 25    Pin 26    Pin 27    Pin 28  Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 29Pin 30Pin 31Pin 32Pin 33Pin 34Pin 35Pin 36Pin 37Pin 38Pin 39Pin 40Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 29Pin 30Pin 31Pin 32Pin 33Pin 34Pin 35Pin 36Pin 37Pin 38Pin 39Pin 40Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 29Pin 30Pin 31Pin 32Pin 33Pin 34Pin 35Pin 36Pin 37Pin 38Pin 39Pin 40Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 29Pin 30Pin 31Pin 32Pin 33Pin 34Pin 35Pin 36Pin 37Pin 38Pin 39Pin 40Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 29Pin 30Pin 31Pin 32Pin 33Pin 34Pin 35Pin 36Pin 37Pin 38Pin 39Pin 40Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18  Pin 1    Pin 2    Pin 3    Pin 4    Pin 5    Pin 6    Pin 7    Pin 8    Pin 9    Pin 10    Pin 11    Pin 12    Pin 13    Pin 14    Pin 15    Pin 16    Pin 17    Pin 18    Pin 19    Pin 20    Pin 21    Pin 22    Pin 23    Pin 24    Pin 25    Pin 26    Pin 27    Pin 28    Pin 1    Pin 2    Pin 3    Pin 4    Pin 5    Pin 6    Pin 7    Pin 8    Pin 9    Pin 10    Pin 11    Pin 12    Pin 13    Pin 14    Pin 15    Pin 16    Pin 17    Pin 18    Pin 19    Pin 20    Pin 21    Pin 22    Pin 23    Pin 24    Pin 25    Pin 26    Pin 27    Pin 28  Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 29Pin 30Pin 31Pin 32Pin 33Pin 34Pin 35Pin 36Pin 37Pin 38Pin 39Pin 40  Pin 1    Pin 2    Pin 3    Pin 4    Pin 5    Pin 6    Pin 7    Pin 8    Pin 9    Pin 10    Pin 11    Pin 12    Pin 13    Pin 14    Pin 15    Pin 16    Pin 17    Pin 18    Pin 19    Pin 20    Pin 21    Pin 22    Pin 23    Pin 24    Pin 25    Pin 26    Pin 27    Pin 28    Pin 29    Pin 30    Pin 31    Pin 32    Pin 33    Pin 34    Pin 35    Pin 36    Pin 37    Pin 38    Pin 39    Pin 40    Pin 41    Pin 42    Pin 43    Pin 44  Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 29Pin 30Pin 31Pin 32Pin 33Pin 34Pin 35Pin 36Pin 37Pin 38Pin 39Pin 40Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 29Pin 30Pin 31Pin 32Pin 33Pin 34Pin 35Pin 36Pin 37Pin 38Pin 39Pin 40Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 29Pin 30Pin 31Pin 32Pin 33Pin 34Pin 35Pin 36Pin 37Pin 38Pin 39Pin 40Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 29Pin 30Pin 31Pin 32Pin 33Pin 34Pin 35Pin 36Pin 37Pin 38Pin 39Pin 40Pin 41Pin 42Pin 43Pin 44Pin 45Pin 46Pin 47Pin 48Pin 49Pin 50Pin 51Pin 52Pin 53Pin 54Pin 55Pin 56Pin 57Pin 58Pin 59Pin 60Pin 61Pin 62Pin 63Pin 64Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 29Pin 30Pin 31Pin 32Pin 33Pin 34Pin 35Pin 36Pin 37Pin 38Pin 39Pin 40Pin 41Pin 42Pin 43Pin 44Pin 45Pin 46Pin 47Pin 48Pin 49Pin 50Pin 51Pin 52Pin 53Pin 54Pin 55Pin 56Pin 57Pin 58Pin 59Pin 60Pin 61Pin 62Pin 63Pin 64  Pin 1    Pin 2    Pin 3    Pin 4    Pin 5    Pin 6    Pin 7    Pin 8    Pin 9    Pin 10    Pin 11    Pin 12    Pin 13    Pin 14    Pin 15    Pin 16    Pin 17    Pin 18    Pin 19    Pin 20    Pin 21    Pin 22    Pin 23    Pin 24    Pin 25    Pin 26    Pin 27    Pin 28    Pin 29    Pin 30    Pin 31    Pin 32    Pin 33    Pin 34    Pin 35    Pin 36    Pin 37    Pin 38    Pin 39    Pin 40    Pin 41    Pin 42    Pin 43    Pin 44    Pin 45    Pin 46    Pin 47    Pin 48    Pin 49    Pin 50    Pin 51    Pin 52    Pin 53    Pin 54    Pin 55    Pin 56    Pin 57    Pin 58    Pin 59    Pin 60    Pin 61    Pin 62    Pin 63    Pin 64    Pin 1    Pin 2    Pin 3    Pin 4    Pin 5    Pin 6    Pin 7    Pin 8    Pin 9    Pin 10    Pin 11    Pin 12    Pin 13    Pin 14    Pin 15    Pin 16    Pin 17    Pin 18    Pin 19    Pin 20    Pin 21    Pin 22    Pin 23    Pin 24    Pin 25    Pin 26    Pin 27    Pin 28    Pin 29    Pin 30    Pin 31    Pin 32    Pin 33    Pin 34    Pin 35    Pin 36    Pin 37    Pin 38    Pin 39    Pin 40    Pin 41    Pin 42    Pin 43    Pin 44    Pin 45    Pin 46    Pin 47    Pin 48    Pin 49    Pin 50    Pin 51    Pin 52    Pin 53    Pin 54    Pin 55    Pin 56    Pin 57    Pin 58    Pin 59    Pin 60    Pin 61    Pin 62    Pin 63    Pin 64  Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 29Pin 30Pin 31Pin 32Pin 33Pin 34Pin 35Pin 36Pin 37Pin 38Pin 39Pin 40Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 29Pin 30Pin 31Pin 32Pin 33Pin 34Pin 35Pin 36Pin 37Pin 38Pin 39Pin 40  Pin 1    Pin 2    Pin 3    Pin 4    Pin 5    Pin 6    Pin 7    Pin 8    Pin 9    Pin 10    Pin 11    Pin 12    Pin 13    Pin 14    Pin 15    Pin 16    Pin 17    Pin 18    Pin 19    Pin 20    Pin 21    Pin 22    Pin 23    Pin 24    Pin 25    Pin 26    Pin 27    Pin 28  Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 29Pin 30Pin 31Pin 32Pin 33Pin 34Pin 35Pin 36Pin 37Pin 38Pin 39Pin 40Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 29Pin 30Pin 31Pin 32Pin 33Pin 34Pin 35Pin 36Pin 37Pin 38Pin 39Pin 40Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 29Pin 30Pin 31Pin 32Pin 33Pin 34Pin 35Pin 36Pin 37Pin 38Pin 39Pin 40Pin 41Pin 42Pin 43Pin 44Pin 45Pin 46Pin 47Pin 48Pin 49Pin 50Pin 51Pin 52Pin 53Pin 54Pin 55Pin 56Pin 57Pin 58Pin 59Pin 60Pin 61Pin 62Pin 63Pin 64Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 29Pin 30Pin 31Pin 32Pin 33Pin 34Pin 35Pin 36Pin 37Pin 38Pin 39Pin 40Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 29Pin 30Pin 31Pin 32Pin 33Pin 34Pin 35Pin 36Pin 37Pin 38Pin 39Pin 40Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 29Pin 30Pin 31Pin 32Pin 33Pin 34Pin 35Pin 36Pin 37Pin 38Pin 39Pin 40Pin 41Pin 42Pin 43Pin 44Pin 45Pin 46Pin 47Pin 48Pin 49Pin 50Pin 51Pin 52Pin 53Pin 54Pin 55Pin 56Pin 57Pin 58Pin 59Pin 60Pin 61Pin 62Pin 63Pin 64Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 29Pin 30Pin 31Pin 32Pin 33Pin 34Pin 35Pin 36Pin 37Pin 38Pin 39Pin 40Pin 41Pin 42Pin 43Pin 44Pin 45Pin 46Pin 47Pin 48Pin 49Pin 50Pin 51Pin 52Pin 53Pin 54Pin 55Pin 56Pin 57Pin 58Pin 59Pin 60Pin 61Pin 62Pin 63Pin 64Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28 Pin 01 Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 29Pin 30Pin 31Pin 32Pin 33Pin 34Pin 35Pin 36Pin 37Pin 38Pin 39Pin 40Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 29Pin 30Pin 31Pin 32Pin 33Pin 34Pin 35Pin 36Pin 37Pin 38Pin 39Pin 40Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 29Pin 30Pin 31Pin 32Pin 33Pin 34Pin 35Pin 36Pin 37Pin 38Pin 39Pin 40Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 29Pin 30Pin 31Pin 32Pin 33Pin 34Pin 35Pin 36Pin 37Pin 38Pin 39Pin 40Pin 41Pin 42Pin 43Pin 44Pin 45Pin 46Pin 47Pin 48Pin 49Pin 50Pin 51Pin 52Pin 53Pin 54Pin 55Pin 56Pin 57Pin 58Pin 59Pin 60Pin 61Pin 62Pin 63Pin 64Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 29Pin 30Pin 31Pin 32Pin 33Pin 34Pin 35Pin 36Pin 37Pin 38Pin 39Pin 40Pin 41Pin 42Pin 43Pin 44Pin 45Pin 46Pin 47Pin 48Pin 49Pin 50Pin 51Pin 52Pin 53Pin 54Pin 55Pin 56Pin 57Pin 58Pin 59Pin 60Pin 61Pin 62Pin 63Pin 64Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20 01  02  03  04  05  06  07  08  09  10  11  12  13  14 Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 29Pin 30Pin 31Pin 32Pin 33Pin 34Pin 35Pin 36Pin 37Pin 38Pin 39Pin 40Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28 Pin 01  Pin 02  Pin 03  Pin 04  Pin 05  Pin 06  Pin 07  Pin 08  Pin 09  Pin 10  Pin 11  Pin 14  Pin 15  Pin 16  Pin 17  Pin 18  Pin 19  Pin 20  Pin 21  Pin 22  Pin 23  Pin 24  Pin 25  Pin 26  Pin 27  Pin 28  Pin 29  Pin 30  Pin 31  Pin 32  Pin 35  Pin 36  Pin 37  Pin 38  Pin 39  Pin 40  Pin 41  Pin 42  Pin 43  Pin 44 Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20 Pin 01  Pin 02  Pin 03  Pin 04  Pin 05  Pin 06  Pin 07  Pin 08  Pin 09  Pin 10  Pin 11  Pin 14  Pin 15  Pin 16  Pin 17  Pin 18  Pin 19  Pin 20  Pin 21  Pin 22  Pin 23  Pin 24  Pin 25  Pin 26  Pin 27  Pin 28  Pin 29  Pin 30  Pin 31  Pin 32  Pin 35  Pin 36  Pin 37  Pin 38  Pin 39  Pin 40  Pin 41  Pin 42  Pin 43  Pin 44 Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 29Pin 30Pin 31Pin 32Pin 33Pin 34Pin 35Pin 36Pin 37Pin 38Pin 39Pin 40Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 29Pin 30Pin 31Pin 32Pin 33Pin 34Pin 35Pin 36Pin 37Pin 38Pin 39Pin 40Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 29Pin 30Pin 31Pin 32Pin 33Pin 34Pin 35Pin 36Pin 37Pin 38Pin 39Pin 40Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 29Pin 30Pin 31Pin 32Pin 33Pin 34Pin 35Pin 36Pin 37Pin 38Pin 39Pin 40Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 29Pin 30Pin 31Pin 32Pin 33Pin 34Pin 35Pin 36Pin 37Pin 38Pin 39Pin 40Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 29Pin 30Pin 31Pin 32Pin 33Pin 34Pin 35Pin 36Pin 37Pin 38Pin 39Pin 40Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 29Pin 30Pin 31Pin 32Pin 33Pin 34Pin 35Pin 36Pin 37Pin 38Pin 39Pin 40Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28  Pin 1    Pin 2    Pin 3    Pin 4    Pin 5    Pin 6    Pin 7    Pin 8    Pin 9    Pin 10    Pin 11    Pin 12    Pin 13    Pin 14    Pin 15    Pin 16    Pin 17    Pin 18    Pin 19    Pin 20    Pin 21    Pin 22    Pin 23    Pin 24    Pin 25    Pin 26    Pin 27    Pin 28  Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 29Pin 30Pin 31Pin 32Pin 33Pin 34Pin 35Pin 36Pin 37Pin 38Pin 39Pin 40  Pin 1    Pin 2    Pin 3    Pin 4    Pin 5    Pin 6    Pin 7    Pin 8    Pin 9    Pin 10    Pin 11    Pin 12    Pin 13    Pin 14    Pin 15    Pin 16    Pin 17    Pin 18    Pin 19    Pin 20    Pin 21    Pin 22    Pin 23    Pin 24    Pin 25    Pin 26    Pin 27    Pin 28    Pin 29    Pin 30    Pin 31    Pin 32    Pin 33    Pin 34    Pin 35    Pin 36    Pin 37    Pin 38    Pin 39    Pin 40  Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28  Pin 1    Pin 2    Pin 3    Pin 4    Pin 5    Pin 6    Pin 7    Pin 8    Pin 9    Pin 10    Pin 11    Pin 12    Pin 13    Pin 14    Pin 15    Pin 16    Pin 17    Pin 18    Pin 19    Pin 20    Pin 21    Pin 22    Pin 23    Pin 24    Pin 25    Pin 26    Pin 27    Pin 28  Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 29Pin 30Pin 31Pin 32Pin 33Pin 34Pin 35Pin 36Pin 37Pin 38Pin 39Pin 40  Pin 1    Pin 2    Pin 3    Pin 4    Pin 5    Pin 6    Pin 7    Pin 8    Pin 9    Pin 10    Pin 11    Pin 12    Pin 13    Pin 14    Pin 15    Pin 16    Pin 17    Pin 18    Pin 19    Pin 20    Pin 21    Pin 22    Pin 23    Pin 24    Pin 25    Pin 26    Pin 27    Pin 28    Pin 29    Pin 30    Pin 31    Pin 32    Pin 33    Pin 34    Pin 35    Pin 36    Pin 37    Pin 38    Pin 39    Pin 40  Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 29Pin 30Pin 31Pin 32Pin 33Pin 34Pin 35Pin 36Pin 37Pin 38Pin 39Pin 40Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28 Pin 01  Pin 02  Pin 03  Pin 04  Pin 05  Pin 06  Pin 07  Pin 08  Pin 09  Pin 10  Pin 11  Pin 14  Pin 15  Pin 16  Pin 17  Pin 18  Pin 19  Pin 20  Pin 21  Pin 22  Pin 23  Pin 24  Pin 25  Pin 26  Pin 27  Pin 28  Pin 29  Pin 30  Pin 31  Pin 32  Pin 35  Pin 36  Pin 37  Pin 38  Pin 39  Pin 40  Pin 41  Pin 42  Pin 43  Pin 44 Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 29Pin 30Pin 31Pin 32Pin 33Pin 34Pin 35Pin 36Pin 37Pin 38Pin 39Pin 40Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 29Pin 30Pin 31Pin 32Pin 33Pin 34Pin 35Pin 36Pin 37Pin 38Pin 39Pin 40Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 29Pin 30Pin 31Pin 32Pin 33Pin 34Pin 35Pin 36Pin 37Pin 38Pin 39Pin 40Pin 41Pin 42Pin 43Pin 44Pin 45Pin 46Pin 47Pin 48Pin 49Pin 50Pin 51Pin 52Pin 53Pin 54Pin 55Pin 56Pin 57Pin 58Pin 59Pin 60Pin 61Pin 62Pin 63Pin 64Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 29Pin 30Pin 31Pin 32Pin 33Pin 34Pin 35Pin 36Pin 37Pin 38Pin 39Pin 40Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 29Pin 30Pin 31Pin 32Pin 33Pin 34Pin 35Pin 36Pin 37Pin 38Pin 39Pin 40Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 29Pin 30Pin 31Pin 32Pin 33Pin 34Pin 35Pin 36Pin 37Pin 38Pin 39Pin 40Pin 41Pin 42Pin 43Pin 44Pin 45Pin 46Pin 47Pin 48Pin 49Pin 50Pin 51Pin 52Pin 53Pin 54Pin 55Pin 56Pin 57Pin 58Pin 59Pin 60Pin 61Pin 62Pin 63Pin 64Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 29Pin 30Pin 31Pin 32Pin 33Pin 34Pin 35Pin 36Pin 37Pin 38Pin 39Pin 40Pin 41Pin 42Pin 43Pin 44Pin 45Pin 46Pin 47Pin 48Pin 49Pin 50Pin 51Pin 52Pin 53Pin 54Pin 55Pin 56Pin 57Pin 58Pin 59Pin 60Pin 61Pin 62Pin 63Pin 64Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28 Pin 01 Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 29Pin 30Pin 31Pin 32Pin 33Pin 34Pin 35Pin 36Pin 37Pin 38Pin 39Pin 40Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 29Pin 30Pin 31Pin 32Pin 33Pin 34Pin 35Pin 36Pin 37Pin 38Pin 39Pin 40Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 29Pin 30Pin 31Pin 32Pin 33Pin 34Pin 35Pin 36Pin 37Pin 38Pin 39Pin 40Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 29Pin 30Pin 31Pin 32Pin 33Pin 34Pin 35Pin 36Pin 37Pin 38Pin 39Pin 40Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 29Pin 30Pin 31Pin 32Pin 33Pin 34Pin 35Pin 36Pin 37Pin 38Pin 39Pin 40Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 29Pin 30Pin 31Pin 32Pin 33Pin 34Pin 35Pin 36Pin 37Pin 38Pin 39Pin 40Pin 41Pin 42Pin 43Pin 44Pin 45Pin 46Pin 47Pin 48Pin 49Pin 50Pin 51Pin 52Pin 53Pin 54Pin 55Pin 56Pin 57Pin 58Pin 59Pin 60Pin 61Pin 62Pin 63Pin 64Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 29Pin 30Pin 31Pin 32Pin 33Pin 34Pin 35Pin 36Pin 37Pin 38Pin 39Pin 40Pin 41Pin 42Pin 43Pin 44Pin 45Pin 46Pin 47Pin 48Pin 49Pin 50Pin 51Pin 52Pin 53Pin 54Pin 55Pin 56Pin 57Pin 58Pin 59Pin 60Pin 61Pin 62Pin 63Pin 64Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 29Pin 30Pin 31Pin 32Pin 33Pin 34Pin 35Pin 36Pin 37Pin 38Pin 39Pin 40Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 29Pin 30Pin 31Pin 32Pin 33Pin 34Pin 35Pin 36Pin 37Pin 38Pin 39Pin 40Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin 21Pin 22Pin 23Pin 24Pin 25Pin 26Pin 27Pin 28Pin 29Pin 30Pin 31Pin 32Pin 33Pin 34Pin 35Pin 36Pin 37Pin 38Pin 39Pin 40Pin 1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin ﻿1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin ﻿1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20Pin ﻿1Pin 2Pin 3Pin 4Pin 5Pin 6Pin 7Pin 8Pin 9Pin 10Pin 11Pin 12Pin 13Pin 14Pin 15Pin 16Pin 17Pin 18Pin 19Pin 20</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PinListType">
+    <xs:sequence>
+      <xs:element type="edc:PinType" name="Pin" maxOccurs="unbounded" minOccurs="0" xmlns:edc="http://crownking/edc">
+        <xs:annotation>
+          <xs:documentation>Pin 02  PIN 03  PIN 04  PIN 05  PIN 06  PIN 07  PIN 08  PIN 09  PIN 10  PIN 11  PIN 12  PIN 13  PIN 14  Pin 02  PIN 03  PIN 04  PIN 05  PIN 06  PIN 07  PIN 08  PIN 09  PIN 10  PIN 11  PIN 12  PIN 13  PIN 14</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CalDataZoneType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="beginaddr" use="optional"/>
+        <xs:attribute type="xs:string" name="endaddr" use="optional"/>
+        <xs:attribute type="xs:string" name="regionid" use="optional"/>
+        <xs:attribute type="xs:string" name="issection" use="optional"/>
+        <xs:attribute type="xs:string" name="sectiondesc" use="optional"/>
+        <xs:attribute type="xs:string" name="sectionname" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="DEVIDToRevType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="revlist" use="optional"/>
+        <xs:attribute type="xs:string" name="value" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="EEDataSectorType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="beginaddr" use="optional"/>
+        <xs:attribute type="xs:string" name="endaddr" use="optional"/>
+        <xs:attribute type="xs:string" name="issection" use="optional"/>
+        <xs:attribute type="xs:string" name="regionid" use="optional"/>
+        <xs:attribute type="xs:string" name="sectiondesc" use="optional"/>
+        <xs:attribute type="xs:string" name="sectionname" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="DPRDataSectorType" mixed="true">
+    <xs:choice maxOccurs="unbounded" minOccurs="0">
+      <xs:element type="edc:SFRDefType" name="SFRDef" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:AdjustPointType" name="AdjustPoint" xmlns:edc="http://crownking/edc"/>
+    </xs:choice>
+    <xs:attribute type="xs:byte" name="bank" use="optional"/>
+    <xs:attribute type="xs:string" name="beginaddr" use="optional"/>
+    <xs:attribute type="xs:string" name="endaddr" use="optional"/>
+    <xs:attribute type="xs:string" name="regionid" use="optional"/>
+    <xs:attribute type="xs:string" name="shadowidref" use="optional"/>
+    <xs:attribute type="xs:string" name="shadowoffset" use="optional"/>
+    <xs:attribute type="xs:byte" name="shadowoffset" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="LCDType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="segcount" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="SFRFieldSemanticType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="desc" use="optional"/>
+        <xs:attribute type="xs:string" name="when" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="SelectSFRType">
+    <xs:sequence>
+      <xs:element type="edc:SFRDefType" name="SFRDef" xmlns:edc="http://crownking/edc"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MuxedSFRDefType" mixed="true">
+    <xs:choice maxOccurs="unbounded" minOccurs="0">
+      <xs:element type="edc:SelectSFRType" name="SelectSFR" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:DCRFieldSemanticType" name="DCRFieldSemantic" xmlns:edc="http://crownking/edc"/>
+      <xs:element name="AliasList">
+        <xs:complexType mixed="true">
+          <xs:choice maxOccurs="unbounded" minOccurs="0">
+            <xs:element type="edc:LegacyAliasType" name="LegacyAlias" xmlns:edc="http://crownking/edc"/>
+            <xs:element type="edc:MigrationAliasType" name="MigrationAlias" xmlns:edc="http://crownking/edc"/>
+            <xs:element type="edc:AliasListType" name="AliasList" minOccurs="0" xmlns:edc="http://crownking/edc"/>
+            <xs:element type="edc:ChecksumType" name="Checksum" minOccurs="0" xmlns:edc="http://crownking/edc"/>
+          </xs:choice>
+          <xs:attribute type="xs:string" name="cname" use="optional"/>
+          <xs:attribute type="xs:string" name="desc" use="optional"/>
+          <xs:attribute type="xs:string" name="when" use="optional"/>
+          <xs:attribute type="xs:string" name="islanghidden" use="optional"/>
+          <xs:attribute type="xs:string" name="beginaddr" use="optional"/>
+          <xs:attribute type="xs:string" name="checksumalgo" use="optional"/>
+          <xs:attribute type="xs:string" name="endaddr" use="optional"/>
+          <xs:attribute type="xs:string" name="ishidden" use="optional"/>
+          <xs:attribute type="xs:byte" name="oscmodeidref" use="optional"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element type="edc:SFRModeListType" name="SFRModeList" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:StimInfoType" name="StimInfo" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:ModuleMacroType" name="ModuleMacro" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:ModuleExcludeType" name="ModuleExclude" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:SFRDefType" name="SFRDef" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:ChecksumType" name="Checksum" xmlns:edc="http://crownking/edc"/>
+      <xs:element type="edc:SFRFieldSemanticType" name="SFRFieldSemantic" xmlns:edc="http://crownking/edc"/>
+    </xs:choice>
+    <xs:attribute type="xs:string" name="nzwidth" use="optional"/>
+    <xs:attribute type="xs:string" name="access" use="optional"/>
+    <xs:attribute type="xs:string" name="cname" use="optional"/>
+    <xs:attribute type="xs:string" name="desc" use="optional"/>
+    <xs:attribute type="xs:string" name="impl" use="optional"/>
+    <xs:attribute type="xs:string" name="isindirect" use="optional"/>
+    <xs:attribute type="xs:string" name="isvolatile" use="optional"/>
+    <xs:attribute type="xs:string" name="mclr" use="optional"/>
+    <xs:attribute type="xs:string" name="name" use="optional"/>
+    <xs:attribute type="xs:string" name="por" use="optional"/>
+    <xs:attribute type="xs:string" name="offset" use="optional"/>
+    <xs:attribute type="xs:string" name="mask" use="optional"/>
+    <xs:attribute type="xs:string" name="ishidden" use="optional"/>
+    <xs:attribute type="xs:string" name="islanghidden" use="optional"/>
+    <xs:attribute type="xs:string" name="nzsize" use="optional"/>
+    <xs:attribute type="xs:string" name="regionidref" use="optional"/>
+    <xs:attribute type="xs:string" name="modsrc" use="optional"/>
+    <xs:attribute type="xs:string" name="begin" use="optional"/>
+    <xs:attribute type="xs:string" name="end" use="optional"/>
+    <xs:attribute type="xs:string" name="isidehidden" use="optional"/>
+    <xs:attribute type="xs:string" name="islnaghidden" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="OscillatorModeType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:byte" name="id" use="optional"/>
+        <xs:attribute type="xs:int" name="max" use="optional"/>
+        <xs:attribute type="xs:int" name="min" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="OscillatorType">
+    <xs:sequence>
+      <xs:element type="edc:OscillatorModeType" name="OscillatorMode" maxOccurs="unbounded" minOccurs="0" xmlns:edc="http://crownking/edc"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
