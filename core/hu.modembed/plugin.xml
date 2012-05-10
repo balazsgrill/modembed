@@ -2,5 +2,21 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension-point id="hu.modembed.programmers" name="Programmers" schema="schema/hu.modembed.programmers.exsd"/>
+   <extension-point id="hu.modembed.ui.includedCode" name="Included Code" schema="schema/hu.modembed.ui.includedCode.exsd"/>
+   <extension
+         point="hu.modembed.ui.includedCode">
+      <project
+            id="e.core"
+            name="e.core ">
+         <resource
+               path="/"
+               resource="core/platform.e">
+         </resource>
+         <resource
+               path="/"
+               resource="core/dio.e">
+         </resource>
+      </project>
+   </extension>
 
 </plugin>
