@@ -89,22 +89,13 @@ public interface ListFactory extends EFactory {
 	MemoryAssignment createMemoryAssignment();
 
 	/**
-	 * Returns a new object of class '<em>Script Step</em>'.
+	 * Returns a new object of class '<em>Annotation Step</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Script Step</em>'.
+	 * @return a new object of class '<em>Annotation Step</em>'.
 	 * @generated
 	 */
-	ScriptStep createScriptStep();
-
-	/**
-	 * Returns a new object of class '<em>Conditional Step</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Conditional Step</em>'.
-	 * @generated
-	 */
-	ConditionalStep createConditionalStep();
+	AnnotationStep createAnnotationStep();
 
 	/**
 	 * Returns the package supported by this factory.

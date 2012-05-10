@@ -36,6 +36,24 @@ public interface ESyntaxFactory extends EFactory
   CompilationUnit createCompilationUnit();
 
   /**
+   * Returns a new object of class '<em>Annotation Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Annotation Definition</em>'.
+   * @generated
+   */
+  AnnotationDefinition createAnnotationDefinition();
+
+  /**
+   * Returns a new object of class '<em>Annotation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Annotation</em>'.
+   * @generated
+   */
+  Annotation createAnnotation();
+
+  /**
    * Returns a new object of class '<em>Module</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -331,15 +349,6 @@ public interface ESyntaxFactory extends EFactory
    * @generated
    */
   XPrimaryExpression createXPrimaryExpression();
-
-  /**
-   * Returns a new object of class '<em>XScript Value Expression</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>XScript Value Expression</em>'.
-   * @generated
-   */
-  XScriptValueExpression createXScriptValueExpression();
 
   /**
    * Returns a new object of class '<em>XSize Of Expression</em>'.

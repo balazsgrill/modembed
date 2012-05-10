@@ -20,13 +20,23 @@ ReferenceID:
  * LITERALS *
  ***********************/
 
-terminal SCRIPT: "$$" -> "$$";
-
 terminal HEXINT returns ecore::EInt: '0x'('0'..'9'|'a'..'f'|'A'..'F')+;
 
 terminal BINARY returns ecore::EInt: 'b'('0'|'1')+;
 
 LITERAL: INT | HEXINT | BINARY;
+
+/**********************
+ * Annotations
+ ***********************/
+
+AnnotationDefinition:
+	'annotation' name=ID
+;
+
+Annotation:
+	'#' definition=[AnnotationDefinition|ID]
+;
 
 /***********************
  * CLASSES *
@@ -71,7 +81,7 @@ Library:
 LibraryItem:
 	Type | Operation | Variable';' | 
 	ConstantVariable';' | RegisterVariable';' 
-	| OperatorDefinition
+	| OperatorDefinition | AnnotationDefinition ';'
 	;
 
 /***********************
@@ -273,12 +283,8 @@ XExpression:
 	XExpression6;
 
 XPrimaryExpression:
-	XScriptValueExpression | XExpressionLiteral | XParenthesizedExpression | XIsLiteralExpression | VariableReference | OperationCall
+	XExpressionLiteral | XParenthesizedExpression | XIsLiteralExpression | VariableReference | OperationCall
 	 | XStructExpression | XSizeOfExpression
-;
-
-XScriptValueExpression:
-	value = SCRIPT
 ;
 
 XSizeOfExpression:
@@ -347,7 +353,7 @@ XExpressionLiteral:
 ;
 
 XTopLevelExpression:
-	XExpression ';' | XIfExpression | XWhileExpression
+	Annotation ';' | XExpression ';' | XIfExpression | XWhileExpression
 ;
 
 OpSingleAssign:

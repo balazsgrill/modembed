@@ -11,15 +11,17 @@ import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
 import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.compiler.internal.model.symbols.IVariableSymbol;
 import hu.e.compiler.internal.model.symbols.impl.CodeAddressSymbol;
-import hu.e.compiler.internal.model.symbols.impl.ScriptedSymbol;
-import hu.e.compiler.list.ConditionalStep;
+import hu.e.compiler.list.AnnotationStep;
 import hu.e.compiler.list.LabelStep;
 import hu.e.compiler.list.ListFactory;
 import hu.e.compiler.list.MemoryAssignment;
 import hu.e.compiler.list.ProgramStep;
 import hu.e.compiler.list.SequenceStep;
+import hu.e.parser.eSyntax.Annotation;
+import hu.e.parser.eSyntax.AnnotationDefinition;
 import hu.e.parser.eSyntax.InstructionWord;
 import hu.e.parser.eSyntax.Label;
+import hu.e.parser.eSyntax.Library;
 import hu.e.parser.eSyntax.OperationBlock;
 import hu.e.parser.eSyntax.OperationRole;
 import hu.e.parser.eSyntax.OperationStep;
@@ -74,6 +76,13 @@ public class BlockCompiler {
 		}
 		
 		for(OperationStep step : block.getSteps()){
+			if (step instanceof Annotation){
+				AnnotationStep as = ListFactory.eINSTANCE.createAnnotationStep();
+				AnnotationDefinition adef = ((Annotation) step).getDefinition();
+				Library lib = (Library)adef.eContainer();
+				as.setKey(lib.getName()+"."+adef.getName());
+				result.getSteps().add(as);
+			}
 			if (step instanceof InstructionWord){
 				try{
 					InstructionWordInstance iwi = new InstructionWordInstance((InstructionWord)step, sm);
@@ -100,56 +109,41 @@ public class BlockCompiler {
 					ISymbol symbol = sm.resolve(((XIfExpression) step).getIf());
 					result.getSteps().addAll(symbol.getSteps());
 
-					if (symbol instanceof ScriptedSymbol){
-						ConditionalStep cstep = ListFactory.eINSTANCE.createConditionalStep();
-						cstep.setCondition(((ScriptedSymbol) symbol).getScriptedValue());
-						
+					if (symbol.isLiteral()){
+						//Literal condition, decide in compile time
+						int v = ((ILiteralSymbol)symbol).getValue();
+						OperationBlock ifblock = (v==0) ? ((XIfExpression) step).getElse() : ((XIfExpression) step).getThen();
+						if (ifblock != null){
+							BlockCompiler subBlock = new BlockCompiler(ifblock);
+							result.getSteps().add(subBlock.compile(sm));
+						}
+					}else{
+						//Runtime condition
+						IVariableSymbol v = (IVariableSymbol)symbol;
+						LabelStep trueLabel = ListFactory.eINSTANCE.createLabelStep();
+						LabelStep falseLabel = ListFactory.eINSTANCE.createLabelStep();
+						LabelStep endLabel = ListFactory.eINSTANCE.createLabelStep();
+
 						OperationBlock trueBlock = ((XIfExpression) step).getThen();
 						OperationBlock falseBlock = ((XIfExpression) step).getElse();
-						
-						cstep.setSuccess(new BlockCompiler(trueBlock).compile(sm));
-						if (falseBlock != null){
-							cstep.setFail(new BlockCompiler(falseBlock).compile(sm));
-						}
-						
-						result.getSteps().add(cstep);
-					}else{
 
-						if (symbol.isLiteral()){
-							//Literal condition, decide in compile time
-							int v = ((ILiteralSymbol)symbol).getValue();
-							OperationBlock ifblock = (v==0) ? ((XIfExpression) step).getElse() : ((XIfExpression) step).getThen();
-							if (ifblock != null){
-								BlockCompiler subBlock = new BlockCompiler(ifblock);
-								result.getSteps().add(subBlock.compile(sm));
-							}
+						if (falseBlock == null){
+							result.getSteps().addAll(sm.executeOperator(OperationRole.BRANCH, step, v, 
+									new CodeAddressSymbol(trueLabel), new CodeAddressSymbol(endLabel)).getSteps());
+							result.getSteps().add(trueLabel);
+							result.getSteps().add(new BlockCompiler(trueBlock).compile(sm));
+							result.getSteps().add(endLabel);
 						}else{
-							//Runtime condition
-							IVariableSymbol v = (IVariableSymbol)symbol;
-							LabelStep trueLabel = ListFactory.eINSTANCE.createLabelStep();
-							LabelStep falseLabel = ListFactory.eINSTANCE.createLabelStep();
-							LabelStep endLabel = ListFactory.eINSTANCE.createLabelStep();
-
-							OperationBlock trueBlock = ((XIfExpression) step).getThen();
-							OperationBlock falseBlock = ((XIfExpression) step).getElse();
-
-							if (falseBlock == null){
-								result.getSteps().addAll(sm.executeOperator(OperationRole.BRANCH, step, v, 
-										new CodeAddressSymbol(trueLabel), new CodeAddressSymbol(endLabel)).getSteps());
-								result.getSteps().add(trueLabel);
-								result.getSteps().add(new BlockCompiler(trueBlock).compile(sm));
-								result.getSteps().add(endLabel);
-							}else{
-								result.getSteps().addAll(sm.executeOperator(OperationRole.BRANCH,step, v, 
-										new CodeAddressSymbol(trueLabel), new CodeAddressSymbol(falseLabel)).getSteps());
-								result.getSteps().add(trueLabel);
-								result.getSteps().add(new BlockCompiler(trueBlock).compile(sm));
-								result.getSteps().addAll(sm.executeOperator(OperationRole.UC_GOTO,step, new CodeAddressSymbol(endLabel)).getSteps());
-								result.getSteps().add(falseLabel);
-								result.getSteps().add(new BlockCompiler(falseBlock).compile(sm));
-								result.getSteps().add(endLabel);
-							}
+							result.getSteps().addAll(sm.executeOperator(OperationRole.BRANCH,step, v, 
+									new CodeAddressSymbol(trueLabel), new CodeAddressSymbol(falseLabel)).getSteps());
+							result.getSteps().add(trueLabel);
+							result.getSteps().add(new BlockCompiler(trueBlock).compile(sm));
+							result.getSteps().addAll(sm.executeOperator(OperationRole.UC_GOTO,step, new CodeAddressSymbol(endLabel)).getSteps());
+							result.getSteps().add(falseLabel);
+							result.getSteps().add(new BlockCompiler(falseBlock).compile(sm));
+							result.getSteps().add(endLabel);
 						}
+
 					}
 				}catch(ECompilerException e){
 					result.getSteps().add(CompilationErrorEntry.create(e));

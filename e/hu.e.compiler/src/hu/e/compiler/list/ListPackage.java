@@ -385,78 +385,32 @@ public interface ListPackage extends EPackage {
 	int MEMORY_ASSIGNMENT_FEATURE_COUNT = REFERABLE_VALUE_FEATURE_COUNT + 2;
 
 	/**
-	 * The meta object id for the '{@link hu.e.compiler.list.impl.ScriptStepImpl <em>Script Step</em>}' class.
+	 * The meta object id for the '{@link hu.e.compiler.list.impl.AnnotationStepImpl <em>Annotation Step</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see hu.e.compiler.list.impl.ScriptStepImpl
-	 * @see hu.e.compiler.list.impl.ListPackageImpl#getScriptStep()
+	 * @see hu.e.compiler.list.impl.AnnotationStepImpl
+	 * @see hu.e.compiler.list.impl.ListPackageImpl#getAnnotationStep()
 	 * @generated
 	 */
-	int SCRIPT_STEP = 9;
+	int ANNOTATION_STEP = 9;
 
 	/**
-	 * The feature id for the '<em><b>Execute</b></em>' attribute.
+	 * The feature id for the '<em><b>Key</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCRIPT_STEP__EXECUTE = PROGRAM_STEP_FEATURE_COUNT + 0;
+	int ANNOTATION_STEP__KEY = PROGRAM_STEP_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Script Step</em>' class.
+	 * The number of structural features of the '<em>Annotation Step</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCRIPT_STEP_FEATURE_COUNT = PROGRAM_STEP_FEATURE_COUNT + 1;
-
-	/**
-	 * The meta object id for the '{@link hu.e.compiler.list.impl.ConditionalStepImpl <em>Conditional Step</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see hu.e.compiler.list.impl.ConditionalStepImpl
-	 * @see hu.e.compiler.list.impl.ListPackageImpl#getConditionalStep()
-	 * @generated
-	 */
-	int CONDITIONAL_STEP = 10;
-
-	/**
-	 * The feature id for the '<em><b>Condition</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITIONAL_STEP__CONDITION = PROGRAM_STEP_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Success</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITIONAL_STEP__SUCCESS = PROGRAM_STEP_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Fail</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITIONAL_STEP__FAIL = PROGRAM_STEP_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of structural features of the '<em>Conditional Step</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITIONAL_STEP_FEATURE_COUNT = PROGRAM_STEP_FEATURE_COUNT + 3;
+	int ANNOTATION_STEP_FEATURE_COUNT = PROGRAM_STEP_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link hu.e.compiler.list.Severity <em>Severity</em>}' enum.
@@ -466,7 +420,7 @@ public interface ListPackage extends EPackage {
 	 * @see hu.e.compiler.list.impl.ListPackageImpl#getSeverity()
 	 * @generated
 	 */
-	int SEVERITY = 11;
+	int SEVERITY = 10;
 
 
 	/**
@@ -747,68 +701,25 @@ public interface ListPackage extends EPackage {
 	EAttribute getMemoryAssignment_Name();
 
 	/**
-	 * Returns the meta object for class '{@link hu.e.compiler.list.ScriptStep <em>Script Step</em>}'.
+	 * Returns the meta object for class '{@link hu.e.compiler.list.AnnotationStep <em>Annotation Step</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Script Step</em>'.
-	 * @see hu.e.compiler.list.ScriptStep
+	 * @return the meta object for class '<em>Annotation Step</em>'.
+	 * @see hu.e.compiler.list.AnnotationStep
 	 * @generated
 	 */
-	EClass getScriptStep();
+	EClass getAnnotationStep();
 
 	/**
-	 * Returns the meta object for the attribute '{@link hu.e.compiler.list.ScriptStep#getExecute <em>Execute</em>}'.
+	 * Returns the meta object for the attribute '{@link hu.e.compiler.list.AnnotationStep#getKey <em>Key</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Execute</em>'.
-	 * @see hu.e.compiler.list.ScriptStep#getExecute()
-	 * @see #getScriptStep()
+	 * @return the meta object for the attribute '<em>Key</em>'.
+	 * @see hu.e.compiler.list.AnnotationStep#getKey()
+	 * @see #getAnnotationStep()
 	 * @generated
 	 */
-	EAttribute getScriptStep_Execute();
-
-	/**
-	 * Returns the meta object for class '{@link hu.e.compiler.list.ConditionalStep <em>Conditional Step</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Conditional Step</em>'.
-	 * @see hu.e.compiler.list.ConditionalStep
-	 * @generated
-	 */
-	EClass getConditionalStep();
-
-	/**
-	 * Returns the meta object for the reference '{@link hu.e.compiler.list.ConditionalStep#getCondition <em>Condition</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Condition</em>'.
-	 * @see hu.e.compiler.list.ConditionalStep#getCondition()
-	 * @see #getConditionalStep()
-	 * @generated
-	 */
-	EReference getConditionalStep_Condition();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link hu.e.compiler.list.ConditionalStep#getSuccess <em>Success</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Success</em>'.
-	 * @see hu.e.compiler.list.ConditionalStep#getSuccess()
-	 * @see #getConditionalStep()
-	 * @generated
-	 */
-	EReference getConditionalStep_Success();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link hu.e.compiler.list.ConditionalStep#getFail <em>Fail</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Fail</em>'.
-	 * @see hu.e.compiler.list.ConditionalStep#getFail()
-	 * @see #getConditionalStep()
-	 * @generated
-	 */
-	EReference getConditionalStep_Fail();
+	EAttribute getAnnotationStep_Key();
 
 	/**
 	 * Returns the meta object for enum '{@link hu.e.compiler.list.Severity <em>Severity</em>}'.
@@ -1069,56 +980,22 @@ public interface ListPackage extends EPackage {
 		EAttribute MEMORY_ASSIGNMENT__NAME = eINSTANCE.getMemoryAssignment_Name();
 
 		/**
-		 * The meta object literal for the '{@link hu.e.compiler.list.impl.ScriptStepImpl <em>Script Step</em>}' class.
+		 * The meta object literal for the '{@link hu.e.compiler.list.impl.AnnotationStepImpl <em>Annotation Step</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see hu.e.compiler.list.impl.ScriptStepImpl
-		 * @see hu.e.compiler.list.impl.ListPackageImpl#getScriptStep()
+		 * @see hu.e.compiler.list.impl.AnnotationStepImpl
+		 * @see hu.e.compiler.list.impl.ListPackageImpl#getAnnotationStep()
 		 * @generated
 		 */
-		EClass SCRIPT_STEP = eINSTANCE.getScriptStep();
+		EClass ANNOTATION_STEP = eINSTANCE.getAnnotationStep();
 
 		/**
-		 * The meta object literal for the '<em><b>Execute</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SCRIPT_STEP__EXECUTE = eINSTANCE.getScriptStep_Execute();
-
-		/**
-		 * The meta object literal for the '{@link hu.e.compiler.list.impl.ConditionalStepImpl <em>Conditional Step</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see hu.e.compiler.list.impl.ConditionalStepImpl
-		 * @see hu.e.compiler.list.impl.ListPackageImpl#getConditionalStep()
-		 * @generated
-		 */
-		EClass CONDITIONAL_STEP = eINSTANCE.getConditionalStep();
-
-		/**
-		 * The meta object literal for the '<em><b>Condition</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CONDITIONAL_STEP__CONDITION = eINSTANCE.getConditionalStep_Condition();
-
-		/**
-		 * The meta object literal for the '<em><b>Success</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CONDITIONAL_STEP__SUCCESS = eINSTANCE.getConditionalStep_Success();
-
-		/**
-		 * The meta object literal for the '<em><b>Fail</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CONDITIONAL_STEP__FAIL = eINSTANCE.getConditionalStep_Fail();
+		EAttribute ANNOTATION_STEP__KEY = eINSTANCE.getAnnotationStep_Key();
 
 		/**
 		 * The meta object literal for the '{@link hu.e.compiler.list.Severity <em>Severity</em>}' enum.

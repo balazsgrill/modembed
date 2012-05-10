@@ -6,6 +6,8 @@
  */
 package hu.e.parser.eSyntax.impl;
 
+import hu.e.parser.eSyntax.Annotation;
+import hu.e.parser.eSyntax.AnnotationDefinition;
 import hu.e.parser.eSyntax.ArrayTypeDef;
 import hu.e.parser.eSyntax.BinarySection;
 import hu.e.parser.eSyntax.BinaryType;
@@ -65,7 +67,6 @@ import hu.e.parser.eSyntax.XIfExpression;
 import hu.e.parser.eSyntax.XIsLiteralExpression;
 import hu.e.parser.eSyntax.XParenthesizedExpression;
 import hu.e.parser.eSyntax.XPrimaryExpression;
-import hu.e.parser.eSyntax.XScriptValueExpression;
 import hu.e.parser.eSyntax.XSizeOfExpression;
 import hu.e.parser.eSyntax.XStructExpression;
 import hu.e.parser.eSyntax.XTopLevelExpression;
@@ -93,6 +94,20 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * @generated
    */
   private EClass compilationUnitEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass annotationDefinitionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass annotationEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -324,13 +339,6 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * @generated
    */
   private EClass xPrimaryExpressionEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass xScriptValueExpressionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -647,6 +655,46 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
   public EReference getCompilationUnit_Use()
   {
     return (EReference)compilationUnitEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getAnnotationDefinition()
+  {
+    return annotationDefinitionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getAnnotationDefinition_Name()
+  {
+    return (EAttribute)annotationDefinitionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getAnnotation()
+  {
+    return annotationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAnnotation_Definition()
+  {
+    return (EReference)annotationEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1474,26 +1522,6 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getXScriptValueExpression()
-  {
-    return xScriptValueExpressionEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getXScriptValueExpression_Value()
-  {
-    return (EAttribute)xScriptValueExpressionEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getXSizeOfExpression()
   {
     return xSizeOfExpressionEClass;
@@ -2233,6 +2261,12 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     createEAttribute(compilationUnitEClass, COMPILATION_UNIT__NAME);
     createEReference(compilationUnitEClass, COMPILATION_UNIT__USE);
 
+    annotationDefinitionEClass = createEClass(ANNOTATION_DEFINITION);
+    createEAttribute(annotationDefinitionEClass, ANNOTATION_DEFINITION__NAME);
+
+    annotationEClass = createEClass(ANNOTATION);
+    createEReference(annotationEClass, ANNOTATION__DEFINITION);
+
     moduleEClass = createEClass(MODULE);
     createEReference(moduleEClass, MODULE__EXTENDS);
     createEReference(moduleEClass, MODULE__ITEMS);
@@ -2347,9 +2381,6 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     xExpressionEClass = createEClass(XEXPRESSION);
 
     xPrimaryExpressionEClass = createEClass(XPRIMARY_EXPRESSION);
-
-    xScriptValueExpressionEClass = createEClass(XSCRIPT_VALUE_EXPRESSION);
-    createEAttribute(xScriptValueExpressionEClass, XSCRIPT_VALUE_EXPRESSION__VALUE);
 
     xSizeOfExpressionEClass = createEClass(XSIZE_OF_EXPRESSION);
     createEReference(xSizeOfExpressionEClass, XSIZE_OF_EXPRESSION__TYPE);
@@ -2477,6 +2508,8 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    annotationDefinitionEClass.getESuperTypes().add(this.getLibraryItem());
+    annotationEClass.getESuperTypes().add(this.getXTopLevelExpression());
     moduleEClass.getESuperTypes().add(this.getCompilationUnit());
     instanceReferenceEClass.getESuperTypes().add(this.getModuleItem());
     variableEClass.getESuperTypes().add(this.getModuleItem());
@@ -2501,7 +2534,6 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     referenceBinarySectionEClass.getESuperTypes().add(this.getBinarySection());
     xExpressionEClass.getESuperTypes().add(this.getOperationCallParameter());
     xExpressionEClass.getESuperTypes().add(this.getXTopLevelExpression());
-    xScriptValueExpressionEClass.getESuperTypes().add(this.getXPrimaryExpression());
     xSizeOfExpressionEClass.getESuperTypes().add(this.getXPrimaryExpression());
     xStructExpressionEClass.getESuperTypes().add(this.getXPrimaryExpression());
     xExpression6EClass.getESuperTypes().add(this.getXExpression());
@@ -2523,6 +2555,12 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     initEClass(compilationUnitEClass, CompilationUnit.class, "CompilationUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getCompilationUnit_Name(), ecorePackage.getEString(), "name", null, 0, 1, CompilationUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getCompilationUnit_Use(), this.getLibrary(), null, "use", null, 0, -1, CompilationUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(annotationDefinitionEClass, AnnotationDefinition.class, "AnnotationDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getAnnotationDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, AnnotationDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(annotationEClass, Annotation.class, "Annotation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getAnnotation_Definition(), this.getAnnotationDefinition(), null, "definition", null, 0, 1, Annotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(moduleEClass, Module.class, "Module", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getModule_Extends(), this.getModule(), null, "extends", null, 0, -1, Module.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2638,9 +2676,6 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     initEClass(xExpressionEClass, XExpression.class, "XExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(xPrimaryExpressionEClass, XPrimaryExpression.class, "XPrimaryExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(xScriptValueExpressionEClass, XScriptValueExpression.class, "XScriptValueExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getXScriptValueExpression_Value(), ecorePackage.getEString(), "value", null, 0, 1, XScriptValueExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(xSizeOfExpressionEClass, XSizeOfExpression.class, "XSizeOfExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getXSizeOfExpression_Type(), this.getTypeDef(), null, "type", null, 0, 1, XSizeOfExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

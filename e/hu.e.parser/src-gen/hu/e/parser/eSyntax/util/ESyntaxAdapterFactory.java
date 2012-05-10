@@ -84,6 +84,16 @@ public class ESyntaxAdapterFactory extends AdapterFactoryImpl
         return createCompilationUnitAdapter();
       }
       @Override
+      public Adapter caseAnnotationDefinition(AnnotationDefinition object)
+      {
+        return createAnnotationDefinitionAdapter();
+      }
+      @Override
+      public Adapter caseAnnotation(Annotation object)
+      {
+        return createAnnotationAdapter();
+      }
+      @Override
       public Adapter caseModule(Module object)
       {
         return createModuleAdapter();
@@ -249,11 +259,6 @@ public class ESyntaxAdapterFactory extends AdapterFactoryImpl
         return createXPrimaryExpressionAdapter();
       }
       @Override
-      public Adapter caseXScriptValueExpression(XScriptValueExpression object)
-      {
-        return createXScriptValueExpressionAdapter();
-      }
-      @Override
       public Adapter caseXSizeOfExpression(XSizeOfExpression object)
       {
         return createXSizeOfExpressionAdapter();
@@ -401,6 +406,36 @@ public class ESyntaxAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createCompilationUnitAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.e.parser.eSyntax.AnnotationDefinition <em>Annotation Definition</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.e.parser.eSyntax.AnnotationDefinition
+   * @generated
+   */
+  public Adapter createAnnotationDefinitionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.e.parser.eSyntax.Annotation <em>Annotation</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.e.parser.eSyntax.Annotation
+   * @generated
+   */
+  public Adapter createAnnotationAdapter()
   {
     return null;
   }
@@ -896,21 +931,6 @@ public class ESyntaxAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createXPrimaryExpressionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link hu.e.parser.eSyntax.XScriptValueExpression <em>XScript Value Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see hu.e.parser.eSyntax.XScriptValueExpression
-   * @generated
-   */
-  public Adapter createXScriptValueExpressionAdapter()
   {
     return null;
   }

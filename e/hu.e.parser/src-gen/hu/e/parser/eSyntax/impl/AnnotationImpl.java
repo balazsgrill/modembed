@@ -6,56 +6,48 @@
  */
 package hu.e.parser.eSyntax.impl;
 
+import hu.e.parser.eSyntax.Annotation;
+import hu.e.parser.eSyntax.AnnotationDefinition;
 import hu.e.parser.eSyntax.ESyntaxPackage;
-import hu.e.parser.eSyntax.XScriptValueExpression;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>XScript Value Expression</b></em>'.
+ * An implementation of the model object '<em><b>Annotation</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.e.parser.eSyntax.impl.XScriptValueExpressionImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.impl.AnnotationImpl#getDefinition <em>Definition</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class XScriptValueExpressionImpl extends XPrimaryExpressionImpl implements XScriptValueExpression
+public class AnnotationImpl extends XTopLevelExpressionImpl implements Annotation
 {
   /**
-   * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+   * The cached value of the '{@link #getDefinition() <em>Definition</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getValue()
+   * @see #getDefinition()
    * @generated
    * @ordered
    */
-  protected static final String VALUE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getValue()
-   * @generated
-   * @ordered
-   */
-  protected String value = VALUE_EDEFAULT;
+  protected AnnotationDefinition definition;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected XScriptValueExpressionImpl()
+  protected AnnotationImpl()
   {
     super();
   }
@@ -68,7 +60,7 @@ public class XScriptValueExpressionImpl extends XPrimaryExpressionImpl implement
   @Override
   protected EClass eStaticClass()
   {
-    return ESyntaxPackage.Literals.XSCRIPT_VALUE_EXPRESSION;
+    return ESyntaxPackage.Literals.ANNOTATION;
   }
 
   /**
@@ -76,9 +68,19 @@ public class XScriptValueExpressionImpl extends XPrimaryExpressionImpl implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getValue()
+  public AnnotationDefinition getDefinition()
   {
-    return value;
+    if (definition != null && definition.eIsProxy())
+    {
+      InternalEObject oldDefinition = (InternalEObject)definition;
+      definition = (AnnotationDefinition)eResolveProxy(oldDefinition);
+      if (definition != oldDefinition)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ESyntaxPackage.ANNOTATION__DEFINITION, oldDefinition, definition));
+      }
+    }
+    return definition;
   }
 
   /**
@@ -86,12 +88,22 @@ public class XScriptValueExpressionImpl extends XPrimaryExpressionImpl implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setValue(String newValue)
+  public AnnotationDefinition basicGetDefinition()
   {
-    String oldValue = value;
-    value = newValue;
+    return definition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setDefinition(AnnotationDefinition newDefinition)
+  {
+    AnnotationDefinition oldDefinition = definition;
+    definition = newDefinition;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.XSCRIPT_VALUE_EXPRESSION__VALUE, oldValue, value));
+      eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.ANNOTATION__DEFINITION, oldDefinition, definition));
   }
 
   /**
@@ -104,8 +116,9 @@ public class XScriptValueExpressionImpl extends XPrimaryExpressionImpl implement
   {
     switch (featureID)
     {
-      case ESyntaxPackage.XSCRIPT_VALUE_EXPRESSION__VALUE:
-        return getValue();
+      case ESyntaxPackage.ANNOTATION__DEFINITION:
+        if (resolve) return getDefinition();
+        return basicGetDefinition();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -120,8 +133,8 @@ public class XScriptValueExpressionImpl extends XPrimaryExpressionImpl implement
   {
     switch (featureID)
     {
-      case ESyntaxPackage.XSCRIPT_VALUE_EXPRESSION__VALUE:
-        setValue((String)newValue);
+      case ESyntaxPackage.ANNOTATION__DEFINITION:
+        setDefinition((AnnotationDefinition)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -137,8 +150,8 @@ public class XScriptValueExpressionImpl extends XPrimaryExpressionImpl implement
   {
     switch (featureID)
     {
-      case ESyntaxPackage.XSCRIPT_VALUE_EXPRESSION__VALUE:
-        setValue(VALUE_EDEFAULT);
+      case ESyntaxPackage.ANNOTATION__DEFINITION:
+        setDefinition((AnnotationDefinition)null);
         return;
     }
     super.eUnset(featureID);
@@ -154,27 +167,10 @@ public class XScriptValueExpressionImpl extends XPrimaryExpressionImpl implement
   {
     switch (featureID)
     {
-      case ESyntaxPackage.XSCRIPT_VALUE_EXPRESSION__VALUE:
-        return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+      case ESyntaxPackage.ANNOTATION__DEFINITION:
+        return definition != null;
     }
     return super.eIsSet(featureID);
   }
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (value: ");
-    result.append(value);
-    result.append(')');
-    return result.toString();
-  }
-
-} //XScriptValueExpressionImpl
+} //AnnotationImpl

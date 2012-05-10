@@ -2,6 +2,8 @@ package hu.e.parser.serializer;
 
 import com.google.inject.Inject;
 import com.google.inject.Provider;
+import hu.e.parser.eSyntax.Annotation;
+import hu.e.parser.eSyntax.AnnotationDefinition;
 import hu.e.parser.eSyntax.ArrayTypeDef;
 import hu.e.parser.eSyntax.ConfigVariable;
 import hu.e.parser.eSyntax.ConstantBinarySection;
@@ -46,7 +48,6 @@ import hu.e.parser.eSyntax.XExpressionM1;
 import hu.e.parser.eSyntax.XIfExpression;
 import hu.e.parser.eSyntax.XIsLiteralExpression;
 import hu.e.parser.eSyntax.XParenthesizedExpression;
-import hu.e.parser.eSyntax.XScriptValueExpression;
 import hu.e.parser.eSyntax.XSizeOfExpression;
 import hu.e.parser.eSyntax.XStructExpression;
 import hu.e.parser.eSyntax.XWhileExpression;
@@ -91,6 +92,21 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == ESyntaxPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
+			case ESyntaxPackage.ANNOTATION:
+				if(context == grammarAccess.getAnnotationRule() ||
+				   context == grammarAccess.getOperationStepRule() ||
+				   context == grammarAccess.getXTopLevelExpressionRule()) {
+					sequence_Annotation(context, (Annotation) semanticObject); 
+					return; 
+				}
+				else break;
+			case ESyntaxPackage.ANNOTATION_DEFINITION:
+				if(context == grammarAccess.getAnnotationDefinitionRule() ||
+				   context == grammarAccess.getLibraryItemRule()) {
+					sequence_AnnotationDefinition(context, (AnnotationDefinition) semanticObject); 
+					return; 
+				}
+				else break;
 			case ESyntaxPackage.ARRAY_TYPE_DEF:
 				if(context == grammarAccess.getArrayTypeDefRule() ||
 				   context == grammarAccess.getTypeDefRule()) {
@@ -402,13 +418,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 					return; 
 				}
 				else break;
-			case ESyntaxPackage.XSCRIPT_VALUE_EXPRESSION:
-				if(context == grammarAccess.getXPrimaryExpressionRule() ||
-				   context == grammarAccess.getXScriptValueExpressionRule()) {
-					sequence_XScriptValueExpression(context, (XScriptValueExpression) semanticObject); 
-					return; 
-				}
-				else break;
 			case ESyntaxPackage.XSIZE_OF_EXPRESSION:
 				if(context == grammarAccess.getXPrimaryExpressionRule() ||
 				   context == grammarAccess.getXSizeOfExpressionRule()) {
@@ -434,6 +443,38 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 			}
 		if (errorAcceptor != null) errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
+	
+	/**
+	 * Constraint:
+	 *     name=ID
+	 */
+	protected void sequence_AnnotationDefinition(EObject context, AnnotationDefinition semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.ANNOTATION_DEFINITION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.ANNOTATION_DEFINITION__NAME));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getAnnotationDefinitionAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     definition=[AnnotationDefinition|ID]
+	 */
+	protected void sequence_Annotation(EObject context, Annotation semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.ANNOTATION__DEFINITION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.ANNOTATION__DEFINITION));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getAnnotationAccess().getDefinitionAnnotationDefinitionIDTerminalRuleCall_1_0_1(), semanticObject.getDefinition());
+		feeder.finish();
+	}
+	
 	
 	/**
 	 * Constraint:
@@ -1051,22 +1092,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getXParenthesizedExpressionAccess().getAXExpressionParserRuleCall_1_0(), semanticObject.getA());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     value=SCRIPT
-	 */
-	protected void sequence_XScriptValueExpression(EObject context, XScriptValueExpression semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.XSCRIPT_VALUE_EXPRESSION__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.XSCRIPT_VALUE_EXPRESSION__VALUE));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getXScriptValueExpressionAccess().getValueSCRIPTTerminalRuleCall_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	

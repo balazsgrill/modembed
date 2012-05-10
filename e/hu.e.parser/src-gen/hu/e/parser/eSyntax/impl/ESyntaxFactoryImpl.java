@@ -70,6 +70,8 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
     switch (eClass.getClassifierID())
     {
       case ESyntaxPackage.COMPILATION_UNIT: return createCompilationUnit();
+      case ESyntaxPackage.ANNOTATION_DEFINITION: return createAnnotationDefinition();
+      case ESyntaxPackage.ANNOTATION: return createAnnotation();
       case ESyntaxPackage.MODULE: return createModule();
       case ESyntaxPackage.MODULE_ITEM: return createModuleItem();
       case ESyntaxPackage.INSTANCE_REFERENCE: return createInstanceReference();
@@ -103,7 +105,6 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
       case ESyntaxPackage.REFERENCE_BINARY_SECTION: return createReferenceBinarySection();
       case ESyntaxPackage.XEXPRESSION: return createXExpression();
       case ESyntaxPackage.XPRIMARY_EXPRESSION: return createXPrimaryExpression();
-      case ESyntaxPackage.XSCRIPT_VALUE_EXPRESSION: return createXScriptValueExpression();
       case ESyntaxPackage.XSIZE_OF_EXPRESSION: return createXSizeOfExpression();
       case ESyntaxPackage.XSTRUCT_EXPRESSION: return createXStructExpression();
       case ESyntaxPackage.XEXPRESSION1: return createXExpression1();
@@ -207,6 +208,28 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
   {
     CompilationUnitImpl compilationUnit = new CompilationUnitImpl();
     return compilationUnit;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AnnotationDefinition createAnnotationDefinition()
+  {
+    AnnotationDefinitionImpl annotationDefinition = new AnnotationDefinitionImpl();
+    return annotationDefinition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Annotation createAnnotation()
+  {
+    AnnotationImpl annotation = new AnnotationImpl();
+    return annotation;
   }
 
   /**
@@ -570,17 +593,6 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
   {
     XPrimaryExpressionImpl xPrimaryExpression = new XPrimaryExpressionImpl();
     return xPrimaryExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public XScriptValueExpression createXScriptValueExpression()
-  {
-    XScriptValueExpressionImpl xScriptValueExpression = new XScriptValueExpressionImpl();
-    return xScriptValueExpression;
   }
 
   /**

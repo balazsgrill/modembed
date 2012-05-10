@@ -237,49 +237,26 @@ public class ListItemProviderAdapterFactory extends ListAdapterFactory implement
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link hu.e.compiler.list.ScriptStep} instances.
+	 * This keeps track of the one adapter used for all {@link hu.e.compiler.list.AnnotationStep} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ScriptStepItemProvider scriptStepItemProvider;
+	protected AnnotationStepItemProvider annotationStepItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link hu.e.compiler.list.ScriptStep}.
+	 * This creates an adapter for a {@link hu.e.compiler.list.AnnotationStep}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createScriptStepAdapter() {
-		if (scriptStepItemProvider == null) {
-			scriptStepItemProvider = new ScriptStepItemProvider(this);
+	public Adapter createAnnotationStepAdapter() {
+		if (annotationStepItemProvider == null) {
+			annotationStepItemProvider = new AnnotationStepItemProvider(this);
 		}
 
-		return scriptStepItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link hu.e.compiler.list.ConditionalStep} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ConditionalStepItemProvider conditionalStepItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link hu.e.compiler.list.ConditionalStep}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createConditionalStepAdapter() {
-		if (conditionalStepItemProvider == null) {
-			conditionalStepItemProvider = new ConditionalStepItemProvider(this);
-		}
-
-		return conditionalStepItemProvider;
+		return annotationStepItemProvider;
 	}
 
 	/**
@@ -388,8 +365,7 @@ public class ListItemProviderAdapterFactory extends ListAdapterFactory implement
 		if (referenceItemProvider != null) referenceItemProvider.dispose();
 		if (statusStepItemProvider != null) statusStepItemProvider.dispose();
 		if (memoryAssignmentItemProvider != null) memoryAssignmentItemProvider.dispose();
-		if (scriptStepItemProvider != null) scriptStepItemProvider.dispose();
-		if (conditionalStepItemProvider != null) conditionalStepItemProvider.dispose();
+		if (annotationStepItemProvider != null) annotationStepItemProvider.dispose();
 	}
 
 }

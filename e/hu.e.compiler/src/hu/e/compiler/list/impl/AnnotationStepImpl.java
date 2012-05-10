@@ -6,8 +6,8 @@
  */
 package hu.e.compiler.list.impl;
 
+import hu.e.compiler.list.AnnotationStep;
 import hu.e.compiler.list.ListPackage;
-import hu.e.compiler.list.ScriptStep;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -17,44 +17,44 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Script Step</b></em>'.
+ * An implementation of the model object '<em><b>Annotation Step</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.e.compiler.list.impl.ScriptStepImpl#getExecute <em>Execute</em>}</li>
+ *   <li>{@link hu.e.compiler.list.impl.AnnotationStepImpl#getKey <em>Key</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ScriptStepImpl extends ProgramStepImpl implements ScriptStep {
+public class AnnotationStepImpl extends ProgramStepImpl implements AnnotationStep {
 	/**
-	 * The default value of the '{@link #getExecute() <em>Execute</em>}' attribute.
+	 * The default value of the '{@link #getKey() <em>Key</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getExecute()
+	 * @see #getKey()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String EXECUTE_EDEFAULT = null;
+	protected static final String KEY_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getExecute() <em>Execute</em>}' attribute.
+	 * The cached value of the '{@link #getKey() <em>Key</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getExecute()
+	 * @see #getKey()
 	 * @generated
 	 * @ordered
 	 */
-	protected String execute = EXECUTE_EDEFAULT;
+	protected String key = KEY_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ScriptStepImpl() {
+	protected AnnotationStepImpl() {
 		super();
 	}
 
@@ -65,7 +65,7 @@ public class ScriptStepImpl extends ProgramStepImpl implements ScriptStep {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ListPackage.Literals.SCRIPT_STEP;
+		return ListPackage.Literals.ANNOTATION_STEP;
 	}
 
 	/**
@@ -73,8 +73,8 @@ public class ScriptStepImpl extends ProgramStepImpl implements ScriptStep {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getExecute() {
-		return execute;
+	public String getKey() {
+		return key;
 	}
 
 	/**
@@ -82,11 +82,11 @@ public class ScriptStepImpl extends ProgramStepImpl implements ScriptStep {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setExecute(String newExecute) {
-		String oldExecute = execute;
-		execute = newExecute;
+	public void setKey(String newKey) {
+		String oldKey = key;
+		key = newKey;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ListPackage.SCRIPT_STEP__EXECUTE, oldExecute, execute));
+			eNotify(new ENotificationImpl(this, Notification.SET, ListPackage.ANNOTATION_STEP__KEY, oldKey, key));
 	}
 
 	/**
@@ -97,8 +97,8 @@ public class ScriptStepImpl extends ProgramStepImpl implements ScriptStep {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ListPackage.SCRIPT_STEP__EXECUTE:
-				return getExecute();
+			case ListPackage.ANNOTATION_STEP__KEY:
+				return getKey();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -111,8 +111,8 @@ public class ScriptStepImpl extends ProgramStepImpl implements ScriptStep {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ListPackage.SCRIPT_STEP__EXECUTE:
-				setExecute((String)newValue);
+			case ListPackage.ANNOTATION_STEP__KEY:
+				setKey((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -126,8 +126,8 @@ public class ScriptStepImpl extends ProgramStepImpl implements ScriptStep {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ListPackage.SCRIPT_STEP__EXECUTE:
-				setExecute(EXECUTE_EDEFAULT);
+			case ListPackage.ANNOTATION_STEP__KEY:
+				setKey(KEY_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -141,8 +141,8 @@ public class ScriptStepImpl extends ProgramStepImpl implements ScriptStep {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ListPackage.SCRIPT_STEP__EXECUTE:
-				return EXECUTE_EDEFAULT == null ? execute != null : !EXECUTE_EDEFAULT.equals(execute);
+			case ListPackage.ANNOTATION_STEP__KEY:
+				return KEY_EDEFAULT == null ? key != null : !KEY_EDEFAULT.equals(key);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -157,10 +157,10 @@ public class ScriptStepImpl extends ProgramStepImpl implements ScriptStep {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (execute: ");
-		result.append(execute);
+		result.append(" (key: ");
+		result.append(key);
 		result.append(')');
 		return result.toString();
 	}
 
-} //ScriptStepImpl
+} //AnnotationStepImpl

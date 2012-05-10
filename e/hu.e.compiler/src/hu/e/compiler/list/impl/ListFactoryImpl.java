@@ -68,8 +68,7 @@ public class ListFactoryImpl extends EFactoryImpl implements ListFactory {
 			case ListPackage.REFERENCE: return createReference();
 			case ListPackage.STATUS_STEP: return createStatusStep();
 			case ListPackage.MEMORY_ASSIGNMENT: return createMemoryAssignment();
-			case ListPackage.SCRIPT_STEP: return createScriptStep();
-			case ListPackage.CONDITIONAL_STEP: return createConditionalStep();
+			case ListPackage.ANNOTATION_STEP: return createAnnotationStep();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -180,19 +179,9 @@ public class ListFactoryImpl extends EFactoryImpl implements ListFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ScriptStep createScriptStep() {
-		ScriptStepImpl scriptStep = new ScriptStepImpl();
-		return scriptStep;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ConditionalStep createConditionalStep() {
-		ConditionalStepImpl conditionalStep = new ConditionalStepImpl();
-		return conditionalStep;
+	public AnnotationStep createAnnotationStep() {
+		AnnotationStepImpl annotationStep = new AnnotationStepImpl();
+		return annotationStep;
 	}
 
 	/**

@@ -108,12 +108,8 @@ public class ListAdapterFactory extends AdapterFactoryImpl {
 				return createMemoryAssignmentAdapter();
 			}
 			@Override
-			public Adapter caseScriptStep(ScriptStep object) {
-				return createScriptStepAdapter();
-			}
-			@Override
-			public Adapter caseConditionalStep(ConditionalStep object) {
-				return createConditionalStepAdapter();
+			public Adapter caseAnnotationStep(AnnotationStep object) {
+				return createAnnotationStepAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -262,30 +258,16 @@ public class ListAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link hu.e.compiler.list.ScriptStep <em>Script Step</em>}'.
+	 * Creates a new adapter for an object of class '{@link hu.e.compiler.list.AnnotationStep <em>Annotation Step</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see hu.e.compiler.list.ScriptStep
+	 * @see hu.e.compiler.list.AnnotationStep
 	 * @generated
 	 */
-	public Adapter createScriptStepAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link hu.e.compiler.list.ConditionalStep <em>Conditional Step</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see hu.e.compiler.list.ConditionalStep
-	 * @generated
-	 */
-	public Adapter createConditionalStepAdapter() {
+	public Adapter createAnnotationStepAdapter() {
 		return null;
 	}
 

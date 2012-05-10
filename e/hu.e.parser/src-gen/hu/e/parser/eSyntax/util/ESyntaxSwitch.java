@@ -83,6 +83,23 @@ public class ESyntaxSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case ESyntaxPackage.ANNOTATION_DEFINITION:
+      {
+        AnnotationDefinition annotationDefinition = (AnnotationDefinition)theEObject;
+        T result = caseAnnotationDefinition(annotationDefinition);
+        if (result == null) result = caseLibraryItem(annotationDefinition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ESyntaxPackage.ANNOTATION:
+      {
+        Annotation annotation = (Annotation)theEObject;
+        T result = caseAnnotation(annotation);
+        if (result == null) result = caseXTopLevelExpression(annotation);
+        if (result == null) result = caseOperationStep(annotation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case ESyntaxPackage.MODULE:
       {
         Module module = (Module)theEObject;
@@ -339,14 +356,6 @@ public class ESyntaxSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case ESyntaxPackage.XSCRIPT_VALUE_EXPRESSION:
-      {
-        XScriptValueExpression xScriptValueExpression = (XScriptValueExpression)theEObject;
-        T result = caseXScriptValueExpression(xScriptValueExpression);
-        if (result == null) result = caseXPrimaryExpression(xScriptValueExpression);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case ESyntaxPackage.XSIZE_OF_EXPRESSION:
       {
         XSizeOfExpression xSizeOfExpression = (XSizeOfExpression)theEObject;
@@ -566,6 +575,38 @@ public class ESyntaxSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseCompilationUnit(CompilationUnit object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Annotation Definition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Annotation Definition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAnnotationDefinition(AnnotationDefinition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Annotation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Annotation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAnnotation(Annotation object)
   {
     return null;
   }
@@ -1094,22 +1135,6 @@ public class ESyntaxSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseXPrimaryExpression(XPrimaryExpression object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>XScript Value Expression</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>XScript Value Expression</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseXScriptValueExpression(XScriptValueExpression object)
   {
     return null;
   }

@@ -63,6 +63,8 @@ public class ESyntaxParser extends AbstractContentAssistParser {
 					put(grammarAccess.getQualifiedNameAccess().getGroup_1(), "rule__QualifiedName__Group_1__0");
 					put(grammarAccess.getReferenceIDAccess().getGroup(), "rule__ReferenceID__Group__0");
 					put(grammarAccess.getReferenceIDAccess().getGroup_0(), "rule__ReferenceID__Group_0__0");
+					put(grammarAccess.getAnnotationDefinitionAccess().getGroup(), "rule__AnnotationDefinition__Group__0");
+					put(grammarAccess.getAnnotationAccess().getGroup(), "rule__Annotation__Group__0");
 					put(grammarAccess.getModuleAccess().getGroup(), "rule__Module__Group__0");
 					put(grammarAccess.getModuleAccess().getGroup_2(), "rule__Module__Group_2__0");
 					put(grammarAccess.getModuleAccess().getGroup_2_2(), "rule__Module__Group_2_2__0");
@@ -80,6 +82,7 @@ public class ESyntaxParser extends AbstractContentAssistParser {
 					put(grammarAccess.getLibraryItemAccess().getGroup_2(), "rule__LibraryItem__Group_2__0");
 					put(grammarAccess.getLibraryItemAccess().getGroup_3(), "rule__LibraryItem__Group_3__0");
 					put(grammarAccess.getLibraryItemAccess().getGroup_4(), "rule__LibraryItem__Group_4__0");
+					put(grammarAccess.getLibraryItemAccess().getGroup_6(), "rule__LibraryItem__Group_6__0");
 					put(grammarAccess.getTypeAccess().getGroup(), "rule__Type__Group__0");
 					put(grammarAccess.getPointerTypeDefAccess().getGroup(), "rule__PointerTypeDef__Group__0");
 					put(grammarAccess.getArrayTypeDefAccess().getGroup(), "rule__ArrayTypeDef__Group__0");
@@ -140,11 +143,14 @@ public class ESyntaxParser extends AbstractContentAssistParser {
 					put(grammarAccess.getXExpression6Access().getGroup(), "rule__XExpression6__Group__0");
 					put(grammarAccess.getXExpression6Access().getGroup_0(), "rule__XExpression6__Group_0__0");
 					put(grammarAccess.getXTopLevelExpressionAccess().getGroup_0(), "rule__XTopLevelExpression__Group_0__0");
+					put(grammarAccess.getXTopLevelExpressionAccess().getGroup_1(), "rule__XTopLevelExpression__Group_1__0");
 					put(grammarAccess.getXIsLiteralExpressionAccess().getGroup(), "rule__XIsLiteralExpression__Group__0");
 					put(grammarAccess.getXIfExpressionAccess().getGroup(), "rule__XIfExpression__Group__0");
 					put(grammarAccess.getXIfExpressionAccess().getGroup_7(), "rule__XIfExpression__Group_7__0");
 					put(grammarAccess.getXWhileExpressionAccess().getGroup(), "rule__XWhileExpression__Group__0");
 					put(grammarAccess.getXParenthesizedExpressionAccess().getGroup(), "rule__XParenthesizedExpression__Group__0");
+					put(grammarAccess.getAnnotationDefinitionAccess().getNameAssignment_1(), "rule__AnnotationDefinition__NameAssignment_1");
+					put(grammarAccess.getAnnotationAccess().getDefinitionAssignment_1(), "rule__Annotation__DefinitionAssignment_1");
 					put(grammarAccess.getModuleAccess().getNameAssignment_1(), "rule__Module__NameAssignment_1");
 					put(grammarAccess.getModuleAccess().getExtendsAssignment_2_1(), "rule__Module__ExtendsAssignment_2_1");
 					put(grammarAccess.getModuleAccess().getExtendsAssignment_2_2_1(), "rule__Module__ExtendsAssignment_2_2_1");
@@ -227,7 +233,6 @@ public class ESyntaxParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFunctionMemoryAccess().getEndAssignment_3(), "rule__FunctionMemory__EndAssignment_3");
 					put(grammarAccess.getConstantBinarySectionAccess().getDataAssignment_2_0(), "rule__ConstantBinarySection__DataAssignment_2_0");
 					put(grammarAccess.getReferenceBinarySectionAccess().getIncAssignment_1(), "rule__ReferenceBinarySection__IncAssignment_1");
-					put(grammarAccess.getXScriptValueExpressionAccess().getValueAssignment(), "rule__XScriptValueExpression__ValueAssignment");
 					put(grammarAccess.getXSizeOfExpressionAccess().getTypeAssignment_2(), "rule__XSizeOfExpression__TypeAssignment_2");
 					put(grammarAccess.getXStructExpressionAccess().getTypeAssignment_0(), "rule__XStructExpression__TypeAssignment_0");
 					put(grammarAccess.getXStructExpressionAccess().getValuesAssignment_2(), "rule__XStructExpression__ValuesAssignment_2");
