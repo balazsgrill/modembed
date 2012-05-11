@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: PICDeviceDescriptionFileGenerator
+Bundle-SymbolicName: hu.modembed.pic.tools.generator
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: hu.modembed.pic.tools.generator.Activator
+Require-Bundle: org.eclipse.core.runtime,
+ org.junit,
+ org.eclipse.core.resources;bundle-version="3.7.101"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
