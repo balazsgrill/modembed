@@ -95,6 +95,11 @@ library microchip.<%=pic.getAttribute("edc:name")%>{
 				size = size/8;
 				String type = (size==2) ? "uint16" :"uint8";
 %>
+
+/*
+ * <%=item.getAttribute("edc:name")%>
+ * <%=item.getAttribute("edc:desc")%>
+ */
 reg <%=type%> <%=item.getAttribute("edc:cname")%> : 0x<%=Integer.toHexString(beginAddr)%>; 
 <%
 				beginAddr += size;
@@ -103,9 +108,10 @@ reg <%=type%> <%=item.getAttribute("edc:cname")%> : 0x<%=Integer.toHexString(beg
 				int size = ECompiler.convertLiteral(item.getAttribute("edc:offset"));
 				beginAddr += size;
 			}
-%>
-
-<%
+			if ("edc:Mirror".equals(name)){
+				int size = ECompiler.convertLiteral(item.getAttribute("edc:nzsize"));
+				beginAddr += size;
+			}
 		}
 	}
 %>

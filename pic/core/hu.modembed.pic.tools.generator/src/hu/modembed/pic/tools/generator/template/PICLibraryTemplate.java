@@ -34,13 +34,14 @@ public class PICLibraryTemplate
   protected final String TEXT_17 = " = ";
   protected final String TEXT_18 = ";";
   protected final String TEXT_19 = NL + NL + "/********************" + NL + " * Special function registers" + NL + " ********************/" + NL;
-  protected final String TEXT_20 = NL + "reg ";
-  protected final String TEXT_21 = " ";
-  protected final String TEXT_22 = " : 0x";
-  protected final String TEXT_23 = "; ";
-  protected final String TEXT_24 = NL;
-  protected final String TEXT_25 = NL + "}";
-  protected final String TEXT_26 = NL;
+  protected final String TEXT_20 = NL + NL + "/*" + NL + " * ";
+  protected final String TEXT_21 = NL + " * ";
+  protected final String TEXT_22 = NL + " */" + NL + "reg ";
+  protected final String TEXT_23 = " ";
+  protected final String TEXT_24 = " : 0x";
+  protected final String TEXT_25 = "; ";
+  protected final String TEXT_26 = NL + "}";
+  protected final String TEXT_27 = NL;
 
   public String generate(Object argument)
   {
@@ -144,12 +145,16 @@ public class PICLibraryTemplate
 				String type = (size==2) ? "uint16" :"uint8";
 
     stringBuffer.append(TEXT_20);
-    stringBuffer.append(type);
+    stringBuffer.append(item.getAttribute("edc:name"));
     stringBuffer.append(TEXT_21);
-    stringBuffer.append(item.getAttribute("edc:cname"));
+    stringBuffer.append(item.getAttribute("edc:desc"));
     stringBuffer.append(TEXT_22);
-    stringBuffer.append(Integer.toHexString(beginAddr));
+    stringBuffer.append(type);
     stringBuffer.append(TEXT_23);
+    stringBuffer.append(item.getAttribute("edc:cname"));
+    stringBuffer.append(TEXT_24);
+    stringBuffer.append(Integer.toHexString(beginAddr));
+    stringBuffer.append(TEXT_25);
     
 				beginAddr += size;
 			}
@@ -157,14 +162,15 @@ public class PICLibraryTemplate
 				int size = ECompiler.convertLiteral(item.getAttribute("edc:offset"));
 				beginAddr += size;
 			}
-
-    stringBuffer.append(TEXT_24);
-    
+			if ("edc:Mirror".equals(name)){
+				int size = ECompiler.convertLiteral(item.getAttribute("edc:nzsize"));
+				beginAddr += size;
+			}
 		}
 	}
 
-    stringBuffer.append(TEXT_25);
     stringBuffer.append(TEXT_26);
+    stringBuffer.append(TEXT_27);
     return stringBuffer.toString();
   }
 }
