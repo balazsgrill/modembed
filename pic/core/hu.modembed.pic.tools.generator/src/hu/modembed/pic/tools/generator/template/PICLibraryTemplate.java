@@ -1,6 +1,7 @@
 package hu.modembed.pic.tools.generator.template;
 
 import org.w3c.dom.*;
+import hu.e.compiler.*;
 
 public class PICLibraryTemplate
 {
@@ -32,8 +33,14 @@ public class PICLibraryTemplate
   protected final String TEXT_16 = "_";
   protected final String TEXT_17 = " = ";
   protected final String TEXT_18 = ";";
-  protected final String TEXT_19 = NL + NL + "}";
-  protected final String TEXT_20 = NL;
+  protected final String TEXT_19 = NL + NL + "/********************" + NL + " * Special function registers" + NL + " ********************/" + NL;
+  protected final String TEXT_20 = NL + "reg ";
+  protected final String TEXT_21 = " ";
+  protected final String TEXT_22 = " : 0x";
+  protected final String TEXT_23 = "; ";
+  protected final String TEXT_24 = NL;
+  protected final String TEXT_25 = NL + "}";
+  protected final String TEXT_26 = NL;
 
   public String generate(Object argument)
   {
@@ -54,7 +61,7 @@ public class PICLibraryTemplate
      	}else
     	if(arch.startsWith("16")){ 
     stringBuffer.append(TEXT_7);
-     	}else
+     	}else{}
     stringBuffer.append(TEXT_8);
      
 	Element program = (Element)pic.getElementsByTagName("edc:ProgramSpace").item(0);
@@ -71,9 +78,17 @@ public class PICLibraryTemplate
 		for(int j=0;j<DCRModes.getLength();j++){
 			Element DCRMode = (Element)DCRModes.item(j);
 			NodeList DCRFieldDefs = DCRMode.getElementsByTagName("edc:DCRFieldDef");
+			int field_offset = 0;
 			for(int l=0;l<DCRFieldDefs.getLength();l++){
 				Element DCRFieldDef = (Element)DCRFieldDefs.item(l);
 				String fieldname = DCRFieldDef.getAttribute("edc:cname");
+				String widthText = DCRFieldDef.getAttribute("edc:nzwidth");
+				int width = 0;
+				if (widthText.startsWith("0x")){
+					width = Integer.parseInt(widthText.substring(2).trim(),16);
+				}else{
+					width = Integer.parseInt(widthText.trim());
+				}
 
     stringBuffer.append(TEXT_10);
     stringBuffer.append(fieldname);
@@ -89,6 +104,7 @@ public class PICLibraryTemplate
 						int q = value.lastIndexOf(' ');
 						value = value.substring(q+1);
 					}
+					value = value + "*"+(1<<field_offset);
 
     stringBuffer.append(TEXT_13);
     stringBuffer.append(DCRFieldSemantic.getAttribute("edc:desc"));
@@ -103,12 +119,52 @@ public class PICLibraryTemplate
     stringBuffer.append(TEXT_18);
     
 				}
+				field_offset += width;
 			}
 		}
 	}
 
     stringBuffer.append(TEXT_19);
+    
+	Element dataspace = (Element)pic.getElementsByTagName("edc:DataSpace").item(0);
+	Element regardlessOfMode = (Element)dataspace.getElementsByTagName("edc:RegardlessOfMode").item(0);
+	
+	NodeList SFRDataSectors = regardlessOfMode.getElementsByTagName("edc:SFRDataSector");
+	for(int i=0;i<SFRDataSectors.getLength();i++){
+		Element SFRDataSector = (Element)SFRDataSectors.item(i);
+		String beginAddrText = SFRDataSector.getAttribute("edc:beginaddr");
+		int beginAddr = ECompiler.convertLiteral(beginAddrText);
+		NodeList elements = SFRDataSector.getChildNodes();
+		for (int j=0;j<elements.getLength();j++) if (elements.item(j) instanceof Element){
+			Element item = (Element)elements.item(j);
+			String name = item.getNodeName();
+			if ("edc:SFRDef".equals(name) || "edc:JoinedSFRDef".equals(name)){
+				int size = ECompiler.convertLiteral(item.getAttribute("edc:nzwidth"));
+				size = size/8;
+				String type = (size==2) ? "uint16" :"uint8";
+
     stringBuffer.append(TEXT_20);
+    stringBuffer.append(type);
+    stringBuffer.append(TEXT_21);
+    stringBuffer.append(item.getAttribute("edc:cname"));
+    stringBuffer.append(TEXT_22);
+    stringBuffer.append(Integer.toHexString(beginAddr));
+    stringBuffer.append(TEXT_23);
+    
+				beginAddr += size;
+			}
+			if ("edc:AdjustPoint".equals(name)){
+				int size = ECompiler.convertLiteral(item.getAttribute("edc:offset"));
+				beginAddr += size;
+			}
+
+    stringBuffer.append(TEXT_24);
+    
+		}
+	}
+
+    stringBuffer.append(TEXT_25);
+    stringBuffer.append(TEXT_26);
     return stringBuffer.toString();
   }
 }

@@ -1,4 +1,4 @@
-<%@ jet package="hu.modembed.pic.tools.generator.template" imports="org.w3c.dom.*"
+<%@ jet package="hu.modembed.pic.tools.generator.template" imports="org.w3c.dom.* hu.e.compiler.*"
 class="PICLibraryTemplate" %>
 <% org.w3c.dom.Element pic = (org.w3c.dom.Element)argument; %>
 <% String arch = pic.getAttribute("edc:arch");%>
@@ -15,7 +15,7 @@ library microchip.<%=pic.getAttribute("edc:name")%>{
 <% 	}else%>
 <%	if(arch.startsWith("16")){ %>
 	use microchip.pic16;
-<% 	}else%>
+<% 	}else{}%>
 
 /*************************
  * Configuration
@@ -36,9 +36,17 @@ library microchip.<%=pic.getAttribute("edc:name")%>{
 		for(int j=0;j<DCRModes.getLength();j++){
 			Element DCRMode = (Element)DCRModes.item(j);
 			NodeList DCRFieldDefs = DCRMode.getElementsByTagName("edc:DCRFieldDef");
+			int field_offset = 0;
 			for(int l=0;l<DCRFieldDefs.getLength();l++){
 				Element DCRFieldDef = (Element)DCRFieldDefs.item(l);
 				String fieldname = DCRFieldDef.getAttribute("edc:cname");
+				String widthText = DCRFieldDef.getAttribute("edc:nzwidth");
+				int width = 0;
+				if (widthText.startsWith("0x")){
+					width = Integer.parseInt(widthText.substring(2).trim(),16);
+				}else{
+					width = Integer.parseInt(widthText.trim());
+				}
 %>
 	/*
 	 * Field: <%=fieldname%>
@@ -53,14 +61,52 @@ library microchip.<%=pic.getAttribute("edc:name")%>{
 						int q = value.lastIndexOf(' ');
 						value = value.substring(q+1);
 					}
+					value = value + "*"+(1<<field_offset);
 %>
 		/* <%=DCRFieldSemantic.getAttribute("edc:desc")%> */
 		const uint8 <%=cname%>_<%=fieldname%>_<%=DCRFieldSemantic.getAttribute("edc:cname")%> = <%=value%>;
 <%
 				}
+				field_offset += width;
 			}
 		}
 	}
 %>
 
+/********************
+ * Special function registers
+ ********************/
+
+<%
+	Element dataspace = (Element)pic.getElementsByTagName("edc:DataSpace").item(0);
+	Element regardlessOfMode = (Element)dataspace.getElementsByTagName("edc:RegardlessOfMode").item(0);
+	
+	NodeList SFRDataSectors = regardlessOfMode.getElementsByTagName("edc:SFRDataSector");
+	for(int i=0;i<SFRDataSectors.getLength();i++){
+		Element SFRDataSector = (Element)SFRDataSectors.item(i);
+		String beginAddrText = SFRDataSector.getAttribute("edc:beginaddr");
+		int beginAddr = ECompiler.convertLiteral(beginAddrText);
+		NodeList elements = SFRDataSector.getChildNodes();
+		for (int j=0;j<elements.getLength();j++) if (elements.item(j) instanceof Element){
+			Element item = (Element)elements.item(j);
+			String name = item.getNodeName();
+			if ("edc:SFRDef".equals(name) || "edc:JoinedSFRDef".equals(name)){
+				int size = ECompiler.convertLiteral(item.getAttribute("edc:nzwidth"));
+				size = size/8;
+				String type = (size==2) ? "uint16" :"uint8";
+%>
+reg <%=type%> <%=item.getAttribute("edc:cname")%> : 0x<%=Integer.toHexString(beginAddr)%>; 
+<%
+				beginAddr += size;
+			}
+			if ("edc:AdjustPoint".equals(name)){
+				int size = ECompiler.convertLiteral(item.getAttribute("edc:offset"));
+				beginAddr += size;
+			}
+%>
+
+<%
+		}
+	}
+%>
 }

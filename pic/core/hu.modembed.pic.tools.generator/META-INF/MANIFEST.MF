@@ -6,6 +6,7 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: hu.modembed.pic.tools.generator.Activator
 Require-Bundle: org.eclipse.core.runtime,
  org.junit,
- org.eclipse.core.resources;bundle-version="3.7.101"
+ org.eclipse.core.resources,
+ hu.e.compiler;bundle-version="0.3.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

@@ -13,6 +13,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.NullProgressMonitor;
@@ -39,7 +40,9 @@ public class LibraryGenerator {
 		PICLibraryTemplate template = new PICLibraryTemplate();
 		String s = template.generate(pic);
 		
-		IFile target = file.getParent().getFile(new Path(name+".e"));
+		IFolder tf = file.getParent().getParent().getFolder(new Path("e"));
+		
+		IFile target = tf.getFile(new Path(name+".e"));
 		InputStream content = new ByteArrayInputStream(s.getBytes());
 		if (target.exists()){
 			target.setContents(content, IResource.FORCE, new NullProgressMonitor());
