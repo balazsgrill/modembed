@@ -2,7 +2,7 @@
 <feature
       id="hu.modembed.pic.feature"
       label="Modembed PIC feature"
-      version="0.6.0"
+      version="0.7.0"
       plugin="hu.modembed.pic.ui">
 
    <description url="http://gbalage.github.com/modembed">
@@ -217,36 +217,10 @@ litigation.
    </requires>
 
    <plugin
-         id="e.pic18"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"/>
-
-   <plugin
-         id="e.pic18f14k50"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"/>
-
-   <plugin
-         id="hu.modembed.pic.device.model"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="hu.modembed.pic.device.persistence"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="hu.modembed.pic.ui"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="0.7.0"
          unpack="false"/>
 
 </feature>
