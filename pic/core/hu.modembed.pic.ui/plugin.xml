@@ -10,5 +10,27 @@
             name="Import PIC library">
       </wizard>
    </extension>
+   <extension
+         point="hu.modembed.ui.includedCode">
+      <project
+            id="microchip.pic16"
+            name="PIC16 midrange architecture code">
+         <dependency
+               project="e.core">
+         </dependency>
+         <resource
+               path="/"
+               resource="code/pic16/pic16.e">
+         </resource>
+         <resource
+               path="/"
+               resource="code/pic16/pic16e.e">
+         </resource>
+         <resource
+               path="/"
+               resource="code/pic16/pic16.platform.e">
+         </resource>
+      </project>
+   </extension>
 
 </plugin>
