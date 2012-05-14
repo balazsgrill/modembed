@@ -19,61 +19,61 @@ library microchip.PIC16C773{
 	 * Oscillator selection bits
 	 */
 		/* RC oscillator */
-		const uint8 CONFIG_FOSC_RC = 0x3*1;
+		const uint16 CONFIG_FOSC_RC = 0x3*1;
 		/* HS oscillator */
-		const uint8 CONFIG_FOSC_HS = 0x2*1;
+		const uint16 CONFIG_FOSC_HS = 0x2*1;
 		/* XT oscillator */
-		const uint8 CONFIG_FOSC_XT = 0x1*1;
+		const uint16 CONFIG_FOSC_XT = 0x1*1;
 		/* LP oscillator */
-		const uint8 CONFIG_FOSC_LP = 0x0*1;
+		const uint16 CONFIG_FOSC_LP = 0x0*1;
 	/*
 	 * Field: WDTE
 	 * Watchdog Timer Enable bit
 	 */
 		/* WDT enabled */
-		const uint8 CONFIG_WDTE_ON = 0x1*4;
+		const uint16 CONFIG_WDTE_ON = 0x1*4;
 		/* WDT disabled */
-		const uint8 CONFIG_WDTE_OFF = 0x0*4;
+		const uint16 CONFIG_WDTE_OFF = 0x0*4;
 	/*
 	 * Field: PWRTE
 	 * Power-up Timer Enable bit
 	 */
 		/* PWRT disabled */
-		const uint8 CONFIG_PWRTE_OFF = 0x1*8;
+		const uint16 CONFIG_PWRTE_OFF = 0x1*8;
 		/* PWRT enabled */
-		const uint8 CONFIG_PWRTE_ON = 0x0*8;
+		const uint16 CONFIG_PWRTE_ON = 0x0*8;
 	/*
 	 * Field: CP
 	 * Code Protection bits
 	 */
 		/* Code protection off */
-		const uint8 CONFIG_CP_OFF = 0x333*16;
+		const uint16 CONFIG_CP_OFF = 0x333*16;
 		/* 0800h-0FFFh code protected */
-		const uint8 CONFIG_CP_50 = 0x222*16;
+		const uint16 CONFIG_CP_50 = 0x222*16;
 		/* 0400h-0FFFh code protected */
-		const uint8 CONFIG_CP_75 = 0x111*16;
+		const uint16 CONFIG_CP_75 = 0x111*16;
 		/* All memory is code protected */
-		const uint8 CONFIG_CP_ALL = 0x0*16;
+		const uint16 CONFIG_CP_ALL = 0x0*16;
 	/*
 	 * Field: BOREN
 	 * Brown-out Reset Enable bit
 	 */
 		/* BOR enabled */
-		const uint8 CONFIG_BOREN_ON = 0x1*16384;
+		const uint16 CONFIG_BOREN_ON = 0x1*16384;
 		/* BOR disabled */
-		const uint8 CONFIG_BOREN_OFF = 0x0*16384;
+		const uint16 CONFIG_BOREN_OFF = 0x0*16384;
 	/*
 	 * Field: BODENV
 	 * Brown Out Voltage
 	 */
 		/* VBOR set to 2.5V */
-		const uint8 CONFIG_BODENV_25 = 0x3*32768;
+		const uint16 CONFIG_BODENV_25 = 0x3*32768;
 		/* VBOR set to 2.7V */
-		const uint8 CONFIG_BODENV_27 = 0x2*32768;
+		const uint16 CONFIG_BODENV_27 = 0x2*32768;
 		/* VBOR set to 4.2V */
-		const uint8 CONFIG_BODENV_42 = 0x1*32768;
+		const uint16 CONFIG_BODENV_42 = 0x1*32768;
 		/* VBOR set to 4.5V */
-		const uint8 CONFIG_BODENV_45 = 0x0*32768;
+		const uint16 CONFIG_BODENV_45 = 0x0*32768;
 
 /********************
  * Special function registers

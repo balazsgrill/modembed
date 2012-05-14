@@ -19,73 +19,73 @@ library microchip.PIC16C781{
 	 * Oscillator selection bits
 	 */
 		/* RC CLKOUT */
-		const uint8 CONFIG1_FOSC_ER_CLKOUT = 0x7*1;
+		const uint16 CONFIG1_FOSC_ER_CLKOUT = 0x7*1;
 		/* RC I/O */
-		const uint8 CONFIG1_FOSC_ER_NOCLKOUT = 0x6*1;
+		const uint16 CONFIG1_FOSC_ER_NOCLKOUT = 0x6*1;
 		/* INTRC, clockout on OSC2 */
-		const uint8 CONFIG1_FOSC_INTRCCLK = 0x5*1;
+		const uint16 CONFIG1_FOSC_INTRCCLK = 0x5*1;
 		/* INTRC, OSC2 is I/O */
-		const uint8 CONFIG1_FOSC_INTRCIO = 0x4*1;
+		const uint16 CONFIG1_FOSC_INTRCIO = 0x4*1;
 		/* EC I/O */
-		const uint8 CONFIG1_FOSC_EXTCLK = 0x3*1;
+		const uint16 CONFIG1_FOSC_EXTCLK = 0x3*1;
 		/* HS oscillator */
-		const uint8 CONFIG1_FOSC_HS = 0x2*1;
+		const uint16 CONFIG1_FOSC_HS = 0x2*1;
 		/* XT oscillator */
-		const uint8 CONFIG1_FOSC_XT = 0x1*1;
+		const uint16 CONFIG1_FOSC_XT = 0x1*1;
 		/* LP oscillator */
-		const uint8 CONFIG1_FOSC_LP = 0x0*1;
+		const uint16 CONFIG1_FOSC_LP = 0x0*1;
 	/*
 	 * Field: WDTE
 	 * Watchdog Timer Enable bit
 	 */
 		/* WDT enabled */
-		const uint8 CONFIG1_WDTE_ON = 0x1*8;
+		const uint16 CONFIG1_WDTE_ON = 0x1*8;
 		/* WDT disabled */
-		const uint8 CONFIG1_WDTE_OFF = 0x0*8;
+		const uint16 CONFIG1_WDTE_OFF = 0x0*8;
 	/*
 	 * Field: PWRTE
 	 * Power-up Timer Enable bit
 	 */
 		/* PWRT disabled */
-		const uint8 CONFIG1_PWRTE_OFF = 0x1*16;
+		const uint16 CONFIG1_PWRTE_OFF = 0x1*16;
 		/* PWRT enabled */
-		const uint8 CONFIG1_PWRTE_ON = 0x0*16;
+		const uint16 CONFIG1_PWRTE_ON = 0x0*16;
 	/*
 	 * Field: MCLRE
 	 * Master Clear Enable
 	 */
 		/* External */
-		const uint8 CONFIG1_MCLRE_ON = 0x1*32;
+		const uint16 CONFIG1_MCLRE_ON = 0x1*32;
 		/* Internal */
-		const uint8 CONFIG1_MCLRE_OFF = 0x0*32;
+		const uint16 CONFIG1_MCLRE_OFF = 0x0*32;
 	/*
 	 * Field: BOREN
 	 * Brown-out Reset Enable bit
 	 */
 		/* BOR enabled */
-		const uint8 CONFIG1_BOREN_ON = 0x1*64;
+		const uint16 CONFIG1_BOREN_ON = 0x1*64;
 		/* BOR disabled */
-		const uint8 CONFIG1_BOREN_OFF = 0x0*64;
+		const uint16 CONFIG1_BOREN_OFF = 0x0*64;
 	/*
 	 * Field: CP
 	 * Code Protecton bit
 	 */
 		/* Code protection off */
-		const uint8 CONFIG1_CP_OFF = 0x33*128;
+		const uint16 CONFIG1_CP_OFF = 0x33*128;
 		/* All memory is code protected */
-		const uint8 CONFIG1_CP_ALL = 0x0*128;
+		const uint16 CONFIG1_CP_ALL = 0x0*128;
 	/*
 	 * Field: BODENV
 	 * Brown Out Voltage
 	 */
 		/* VBOR set to 2.5V */
-		const uint8 CONFIG1_BODENV_25 = 0x3*8192;
+		const uint16 CONFIG1_BODENV_25 = 0x3*8192;
 		/* VBOR set to 2.7V */
-		const uint8 CONFIG1_BODENV_27 = 0x2*8192;
+		const uint16 CONFIG1_BODENV_27 = 0x2*8192;
 		/* VBOR set to 4.2V */
-		const uint8 CONFIG1_BODENV_42 = 0x1*8192;
+		const uint16 CONFIG1_BODENV_42 = 0x1*8192;
 		/* VBOR set to 4.5V */
-		const uint8 CONFIG1_BODENV_45 = 0x0*8192;
+		const uint16 CONFIG1_BODENV_45 = 0x0*8192;
 
 /********************
  * Special function registers

@@ -19,79 +19,79 @@ library microchip.PIC12HV752{
 	 * 
 	 */
 		/* EC oscillator mode.  CLKIN function on RA5/CLKIN */
-		const uint8 CONFIG_FOSC0_EC = 0x1*1;
+		const uint16 CONFIG_FOSC0_EC = 0x1*1;
 		/* Internal oscillator mode.  I/O function on RA5/CLKIN */
-		const uint8 CONFIG_FOSC0_INT = 0x0*1;
+		const uint16 CONFIG_FOSC0_INT = 0x0*1;
 	/*
 	 * Field: WDTE
 	 * Watchdog Timer
 	 */
 		/* Watchdog Timer enabled */
-		const uint8 CONFIG_WDTE_ON = 0x1*2;
+		const uint16 CONFIG_WDTE_ON = 0x1*2;
 		/* Watchdog Timer disabled */
-		const uint8 CONFIG_WDTE_OFF = 0x0*2;
+		const uint16 CONFIG_WDTE_OFF = 0x0*2;
 	/*
 	 * Field: PWRTE
 	 * Power Up Timer
 	 */
 		/* Power-up Timer disabled */
-		const uint8 CONFIG_PWRTE_OFF = 0x1*4;
+		const uint16 CONFIG_PWRTE_OFF = 0x1*4;
 		/* Power-up Timer enabled */
-		const uint8 CONFIG_PWRTE_ON = 0x0*4;
+		const uint16 CONFIG_PWRTE_ON = 0x0*4;
 	/*
 	 * Field: MCLRE
 	 * Master Clear Enable
 	 */
 		/* MCLR pin is MCLR function with internal weak pullup */
-		const uint8 CONFIG_MCLRE_ON = 0x1*8;
+		const uint16 CONFIG_MCLRE_ON = 0x1*8;
 		/* MCLR pin is alternate function */
-		const uint8 CONFIG_MCLRE_OFF = 0x0*8;
+		const uint16 CONFIG_MCLRE_OFF = 0x0*8;
 	/*
 	 * Field: CP
 	 * Code Protect
 	 */
 		/* Code protection disabled */
-		const uint8 CONFIG_CP_OFF = 0x1*16;
+		const uint16 CONFIG_CP_OFF = 0x1*16;
 		/* Code protection enabled */
-		const uint8 CONFIG_CP_ON = 0x0*16;
+		const uint16 CONFIG_CP_ON = 0x0*16;
 	/*
 	 * Field: BOREN
 	 * 
 	 */
 		/* BOR enabled */
-		const uint8 CONFIG_BOREN_EN = 0x3*32;
+		const uint16 CONFIG_BOREN_EN = 0x3*32;
 		/* BOR disabled during Sleep and enabled during run */
-		const uint8 CONFIG_BOREN_SLEEP_DIS = 0x2*32;
+		const uint16 CONFIG_BOREN_SLEEP_DIS = 0x2*32;
 		/* BOR disabled */
-		const uint8 CONFIG_BOREN_DIS = 0x0*32;
+		const uint16 CONFIG_BOREN_DIS = 0x0*32;
 	/*
 	 * Field: WRT
 	 * 
 	 */
 		/* Flash self-write protection off */
-		const uint8 CONFIG_WRT_OFF = 0x3*128;
+		const uint16 CONFIG_WRT_OFF = 0x3*128;
 		/* 000h to 0FFh self-write protected */
-		const uint8 CONFIG_WRT_FOURTH = 0x2*128;
+		const uint16 CONFIG_WRT_FOURTH = 0x2*128;
 		/* 000h to 1FFh self-write protected */
-		const uint8 CONFIG_WRT_HALF = 0x1*128;
+		const uint16 CONFIG_WRT_HALF = 0x1*128;
 		/* 000h to 3FFh self-write protected */
-		const uint8 CONFIG_WRT_ALL = 0x0*128;
+		const uint16 CONFIG_WRT_ALL = 0x0*128;
 	/*
 	 * Field: CLKOUTEN
 	 * 
 	 */
 		/* CLKOUT function disabled.  CLKOUT pin acts as I/O */
-		const uint8 CONFIG_CLKOUTEN_OFF = 0x1*512;
+		const uint16 CONFIG_CLKOUTEN_OFF = 0x1*512;
 		/* CLKOUT function enabled.  CLKOUT pin is CLKOUT */
-		const uint8 CONFIG_CLKOUTEN_ON = 0x0*512;
+		const uint16 CONFIG_CLKOUTEN_ON = 0x0*512;
 	/*
 	 * Field: DEBUG
 	 * 
 	 */
 		/* Debug mode disabled */
-		const uint8 CONFIG_DEBUG_OFF = 0x1*1024;
+		const uint16 CONFIG_DEBUG_OFF = 0x1*1024;
 		/* Debug mode enabled */
-		const uint8 CONFIG_DEBUG_ON = 0x0*1024;
+		const uint16 CONFIG_DEBUG_ON = 0x0*1024;
 
 /********************
  * Special function registers

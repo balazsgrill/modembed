@@ -19,153 +19,153 @@ library microchip.PIC16LF1939{
 	 * Oscillator Selection
 	 */
 		/* ECH, External Clock, High Power Mode (4-32 MHz): device clock supplied to CLKIN pin */
-		const uint8 CONFIG1_FOSC_ECH = 0x7*1;
+		const uint16 CONFIG1_FOSC_ECH = 0x7*1;
 		/* ECM, External Clock, Medium Power Mode (0.5-4 MHz): device clock supplied to CLKIN pin */
-		const uint8 CONFIG1_FOSC_ECM = 0x6*1;
+		const uint16 CONFIG1_FOSC_ECM = 0x6*1;
 		/* ECL, External Clock, Low Power Mode (0-0.5 MHz): device clock supplied to CLKIN pin */
-		const uint8 CONFIG1_FOSC_ECL = 0x5*1;
+		const uint16 CONFIG1_FOSC_ECL = 0x5*1;
 		/* INTOSC oscillator: I/O function on CLKIN pin */
-		const uint8 CONFIG1_FOSC_INTOSC = 0x4*1;
+		const uint16 CONFIG1_FOSC_INTOSC = 0x4*1;
 		/* EXTRC oscillator: External RC circuit connected to CLKIN pin */
-		const uint8 CONFIG1_FOSC_EXTRC = 0x3*1;
+		const uint16 CONFIG1_FOSC_EXTRC = 0x3*1;
 		/* HS Oscillator, High-speed crystal/resonator connected between OSC1 and OSC2 pins */
-		const uint8 CONFIG1_FOSC_HS = 0x2*1;
+		const uint16 CONFIG1_FOSC_HS = 0x2*1;
 		/* XT Oscillator, Crystal/resonator connected between OSC1 and OSC2 pins */
-		const uint8 CONFIG1_FOSC_XT = 0x1*1;
+		const uint16 CONFIG1_FOSC_XT = 0x1*1;
 		/* LP Oscillator, Low-power crystal connected between OSC1 and OSC2 pins */
-		const uint8 CONFIG1_FOSC_LP = 0x0*1;
+		const uint16 CONFIG1_FOSC_LP = 0x0*1;
 	/*
 	 * Field: WDTE
 	 * Watchdog Timer Enable
 	 */
 		/* WDT enabled */
-		const uint8 CONFIG1_WDTE_ON = 0x3*8;
+		const uint16 CONFIG1_WDTE_ON = 0x3*8;
 		/* WDT enabled while running and disabled in Sleep */
-		const uint8 CONFIG1_WDTE_NSLEEP = 0x2*8;
+		const uint16 CONFIG1_WDTE_NSLEEP = 0x2*8;
 		/* WDT controlled by the SWDTEN bit in the WDTCON register */
-		const uint8 CONFIG1_WDTE_SWDTEN = 0x1*8;
+		const uint16 CONFIG1_WDTE_SWDTEN = 0x1*8;
 		/* WDT disabled */
-		const uint8 CONFIG1_WDTE_OFF = 0x0*8;
+		const uint16 CONFIG1_WDTE_OFF = 0x0*8;
 	/*
 	 * Field: PWRTE
 	 * Power-up Timer Enable
 	 */
 		/* PWRT disabled */
-		const uint8 CONFIG1_PWRTE_OFF = 0x1*32;
+		const uint16 CONFIG1_PWRTE_OFF = 0x1*32;
 		/* PWRT enabled */
-		const uint8 CONFIG1_PWRTE_ON = 0x0*32;
+		const uint16 CONFIG1_PWRTE_ON = 0x0*32;
 	/*
 	 * Field: MCLRE
 	 * MCLR Pin Function Select
 	 */
 		/* MCLR/VPP pin function is MCLR */
-		const uint8 CONFIG1_MCLRE_ON = 0x1*64;
+		const uint16 CONFIG1_MCLRE_ON = 0x1*64;
 		/* MCLR/VPP pin function is digital input */
-		const uint8 CONFIG1_MCLRE_OFF = 0x0*64;
+		const uint16 CONFIG1_MCLRE_OFF = 0x0*64;
 	/*
 	 * Field: CP
 	 * Flash Program Memory Code Protection
 	 */
 		/* Program memory code protection is disabled */
-		const uint8 CONFIG1_CP_OFF = 0x1*128;
+		const uint16 CONFIG1_CP_OFF = 0x1*128;
 		/* Program memory code protection is enabled */
-		const uint8 CONFIG1_CP_ON = 0x0*128;
+		const uint16 CONFIG1_CP_ON = 0x0*128;
 	/*
 	 * Field: CPD
 	 * Data Memory Code Protection
 	 */
 		/* Data memory code protection is disabled */
-		const uint8 CONFIG1_CPD_OFF = 0x1*256;
+		const uint16 CONFIG1_CPD_OFF = 0x1*256;
 		/* Data memory code protection is enabled */
-		const uint8 CONFIG1_CPD_ON = 0x0*256;
+		const uint16 CONFIG1_CPD_ON = 0x0*256;
 	/*
 	 * Field: BOREN
 	 * Brown-out Reset Enable
 	 */
 		/* Brown-out Reset enabled */
-		const uint8 CONFIG1_BOREN_ON = 0x3*512;
+		const uint16 CONFIG1_BOREN_ON = 0x3*512;
 		/* Brown-out Reset enabled while running and disabled in Sleep */
-		const uint8 CONFIG1_BOREN_NSLEEP = 0x2*512;
+		const uint16 CONFIG1_BOREN_NSLEEP = 0x2*512;
 		/* Brown-out Reset controlled by the SBOREN bit in the BORCON register */
-		const uint8 CONFIG1_BOREN_SBODEN = 0x1*512;
+		const uint16 CONFIG1_BOREN_SBODEN = 0x1*512;
 		/* Brown-out Reset disabled */
-		const uint8 CONFIG1_BOREN_OFF = 0x0*512;
+		const uint16 CONFIG1_BOREN_OFF = 0x0*512;
 	/*
 	 * Field: CLKOUTEN
 	 * Clock Out Enable
 	 */
 		/* CLKOUT function is disabled. I/O or oscillator function on the CLKOUT pin */
-		const uint8 CONFIG1_CLKOUTEN_OFF = 0x1*2048;
+		const uint16 CONFIG1_CLKOUTEN_OFF = 0x1*2048;
 		/* CLKOUT function is enabled on the CLKOUT pin */
-		const uint8 CONFIG1_CLKOUTEN_ON = 0x0*2048;
+		const uint16 CONFIG1_CLKOUTEN_ON = 0x0*2048;
 	/*
 	 * Field: IESO
 	 * Internal/External Switchover
 	 */
 		/* Internal/External Switchover mode is enabled */
-		const uint8 CONFIG1_IESO_ON = 0x1*4096;
+		const uint16 CONFIG1_IESO_ON = 0x1*4096;
 		/* Internal/External Switchover mode is disabled */
-		const uint8 CONFIG1_IESO_OFF = 0x0*4096;
+		const uint16 CONFIG1_IESO_OFF = 0x0*4096;
 	/*
 	 * Field: FCMEN
 	 * Fail-Safe Clock Monitor Enable
 	 */
 		/* Fail-Safe Clock Monitor is enabled */
-		const uint8 CONFIG1_FCMEN_ON = 0x1*8192;
+		const uint16 CONFIG1_FCMEN_ON = 0x1*8192;
 		/* Fail-Safe Clock Monitor is disabled */
-		const uint8 CONFIG1_FCMEN_OFF = 0x0*8192;
+		const uint16 CONFIG1_FCMEN_OFF = 0x0*8192;
 	/*
 	 * Field: WRT
 	 * Flash Memory Self-Write Protection
 	 */
 		/* Write protection off */
-		const uint8 CONFIG2_WRT_OFF = 0x3*1;
+		const uint16 CONFIG2_WRT_OFF = 0x3*1;
 		/* 000h to 1FFh write protected, 200h to 3FFFh may be modified by EECON control */
-		const uint8 CONFIG2_WRT_BOOT = 0x2*1;
+		const uint16 CONFIG2_WRT_BOOT = 0x2*1;
 		/* 000h to 1FFFh write protected, 2000h to 3FFFh may be modified by EECON control */
-		const uint8 CONFIG2_WRT_HALF = 0x1*1;
+		const uint16 CONFIG2_WRT_HALF = 0x1*1;
 		/* 000h to 3FFFh write protected, no addresses may be modified by EECON control */
-		const uint8 CONFIG2_WRT_ALL = 0x0*1;
+		const uint16 CONFIG2_WRT_ALL = 0x0*1;
 	/*
 	 * Field: PLLEN
 	 * PLL Enable
 	 */
 		/* 4x PLL enabled */
-		const uint8 CONFIG2_PLLEN_ON = 0x1*4;
+		const uint16 CONFIG2_PLLEN_ON = 0x1*4;
 		/* 4x PLL disabled */
-		const uint8 CONFIG2_PLLEN_OFF = 0x0*4;
+		const uint16 CONFIG2_PLLEN_OFF = 0x0*4;
 	/*
 	 * Field: STVREN
 	 * Stack Overflow/Underflow Reset Enable
 	 */
 		/* Stack Overflow or Underflow will cause a Reset */
-		const uint8 CONFIG2_STVREN_ON = 0x1*8;
+		const uint16 CONFIG2_STVREN_ON = 0x1*8;
 		/* Stack Overflow or Underflow will not cause a Reset */
-		const uint8 CONFIG2_STVREN_OFF = 0x0*8;
+		const uint16 CONFIG2_STVREN_OFF = 0x0*8;
 	/*
 	 * Field: BORV
 	 * Brown-out Reset Voltage Selection
 	 */
 		/* Brown-out Reset Voltage (Vbor), low trip point selected. */
-		const uint8 CONFIG2_BORV_LO = 0x1*16;
+		const uint16 CONFIG2_BORV_LO = 0x1*16;
 		/* Brown-out Reset Voltage (Vbor), high trip point selected. */
-		const uint8 CONFIG2_BORV_HI = 0x0*16;
+		const uint16 CONFIG2_BORV_HI = 0x0*16;
 	/*
 	 * Field: DEBUG
 	 * In-Circuit Debugger Mode
 	 */
 		/* In-Circuit Debugger disabled, ICSPCLK and ICSPDAT are general purpose I/O pins */
-		const uint8 CONFIG2_DEBUG_OFF = 0x1*32;
+		const uint16 CONFIG2_DEBUG_OFF = 0x1*32;
 		/* In-Circuit Debugger enabled, ICSPCLK and ICSPDAT are dedicated to the debugger */
-		const uint8 CONFIG2_DEBUG_ON = 0x0*32;
+		const uint16 CONFIG2_DEBUG_ON = 0x0*32;
 	/*
 	 * Field: LVP
 	 * Low-Voltage Programming Enable
 	 */
 		/* Low-voltage programming enabled */
-		const uint8 CONFIG2_LVP_ON = 0x1*64;
+		const uint16 CONFIG2_LVP_ON = 0x1*64;
 		/* High-voltage on MCLR/VPP must be used for programming */
-		const uint8 CONFIG2_LVP_OFF = 0x0*64;
+		const uint16 CONFIG2_LVP_OFF = 0x0*64;
 
 /********************
  * Special function registers

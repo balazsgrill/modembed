@@ -19,81 +19,81 @@ library microchip.PIC16F877{
 	 * Oscillator Selection bits
 	 */
 		/* RC oscillator */
-		const uint8 CONFIG_FOSC_EXTRC = 0x3*1;
+		const uint16 CONFIG_FOSC_EXTRC = 0x3*1;
 		/* HS oscillator */
-		const uint8 CONFIG_FOSC_HS = 0x2*1;
+		const uint16 CONFIG_FOSC_HS = 0x2*1;
 		/* XT oscillator */
-		const uint8 CONFIG_FOSC_XT = 0x1*1;
+		const uint16 CONFIG_FOSC_XT = 0x1*1;
 		/* LP oscillator */
-		const uint8 CONFIG_FOSC_LP = 0x0*1;
+		const uint16 CONFIG_FOSC_LP = 0x0*1;
 	/*
 	 * Field: WDTE
 	 * Watchdog Timer Enable bit
 	 */
 		/* WDT enabled */
-		const uint8 CONFIG_WDTE_ON = 0x1*4;
+		const uint16 CONFIG_WDTE_ON = 0x1*4;
 		/* WDT disabled */
-		const uint8 CONFIG_WDTE_OFF = 0x0*4;
+		const uint16 CONFIG_WDTE_OFF = 0x0*4;
 	/*
 	 * Field: PWRTE
 	 * Power-up Timer Enable bit
 	 */
 		/* PWRT disabled */
-		const uint8 CONFIG_PWRTE_OFF = 0x1*8;
+		const uint16 CONFIG_PWRTE_OFF = 0x1*8;
 		/* PWRT enabled */
-		const uint8 CONFIG_PWRTE_ON = 0x0*8;
+		const uint16 CONFIG_PWRTE_ON = 0x0*8;
 	/*
 	 * Field: CP
 	 * FLASH Program Memory Code Protection bits
 	 */
 		/* Code protection off */
-		const uint8 CONFIG_CP_OFF = 0x303*16;
+		const uint16 CONFIG_CP_OFF = 0x303*16;
 		/* 1F00h to 1FFFh code protected */
-		const uint8 CONFIG_CP_UPPER_256 = 0x202*16;
+		const uint16 CONFIG_CP_UPPER_256 = 0x202*16;
 		/* 1000h to 1FFFh code protected */
-		const uint8 CONFIG_CP_HALF = 0x101*16;
+		const uint16 CONFIG_CP_HALF = 0x101*16;
 		/* 0000h to 1FFFh code protected */
-		const uint8 CONFIG_CP_ALL = 0x0*16;
+		const uint16 CONFIG_CP_ALL = 0x0*16;
 	/*
 	 * Field: BOREN
 	 * Brown-out Reset Enable bit
 	 */
 		/* BOR enabled */
-		const uint8 CONFIG_BOREN_ON = 0x1*16384;
+		const uint16 CONFIG_BOREN_ON = 0x1*16384;
 		/* BOR disabled */
-		const uint8 CONFIG_BOREN_OFF = 0x0*16384;
+		const uint16 CONFIG_BOREN_OFF = 0x0*16384;
 	/*
 	 * Field: LVP
 	 * Low Voltage In-Circuit Serial Programming Enable bit
 	 */
 		/* RB3/PGM pin has PGM function; low-voltage programming enabled */
-		const uint8 CONFIG_LVP_ON = 0x1*32768;
+		const uint16 CONFIG_LVP_ON = 0x1*32768;
 		/* RB3 is digital I/O, HV on MCLR must be used for programming */
-		const uint8 CONFIG_LVP_OFF = 0x0*32768;
+		const uint16 CONFIG_LVP_OFF = 0x0*32768;
 	/*
 	 * Field: CPD
 	 * Data EE Memory Code Protection
 	 */
 		/* Code Protection off */
-		const uint8 CONFIG_CPD_OFF = 0x1*65536;
+		const uint16 CONFIG_CPD_OFF = 0x1*65536;
 		/* Data EEPROM memory code-protected */
-		const uint8 CONFIG_CPD_ON = 0x0*65536;
+		const uint16 CONFIG_CPD_ON = 0x0*65536;
 	/*
 	 * Field: WRT
 	 * FLASH Program Memory Write Enable
 	 */
 		/* Unprotected program memory may be written to by EECON control */
-		const uint8 CONFIG_WRT_ON = 0x1*131072;
+		const uint16 CONFIG_WRT_ON = 0x1*131072;
 		/* Unprotected program memory may not be written to by EECON control */
-		const uint8 CONFIG_WRT_OFF = 0x0*131072;
+		const uint16 CONFIG_WRT_OFF = 0x0*131072;
 	/*
 	 * Field: DEBUG
 	 * In-Circuit Debugger Mode bit
 	 */
 		/* In-Circuit Debugger disabled, RB6 and RB7 are general purpose I/O pins */
-		const uint8 CONFIG_DEBUG_OFF = 0x1*262144;
+		const uint16 CONFIG_DEBUG_OFF = 0x1*262144;
 		/* In-Circuit Debugger enabled, RB6 and RB7 are dedicated to the debugger */
-		const uint8 CONFIG_DEBUG_ON = 0x0*262144;
+		const uint16 CONFIG_DEBUG_ON = 0x0*262144;
 
 /********************
  * Special function registers

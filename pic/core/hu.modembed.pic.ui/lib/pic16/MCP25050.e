@@ -19,21 +19,21 @@ library microchip.MCP25050{
 	 * Oscillator
 	 */
 		/* HS */
-		const uint8 CONFIG_OSC_ = 0x3*1;
+		const uint16 CONFIG_OSC_ = 0x3*1;
 		/* Reserved */
-		const uint8 CONFIG_OSC_ = 0x2*1;
+		const uint16 CONFIG_OSC_ = 0x2*1;
 		/* XT */
-		const uint8 CONFIG_OSC_ = 0x1*1;
+		const uint16 CONFIG_OSC_ = 0x1*1;
 		/* LP */
-		const uint8 CONFIG_OSC_ = 0x0*1;
+		const uint16 CONFIG_OSC_ = 0x0*1;
 	/*
 	 * Field: RSTEN
 	 * Reset on GP7 Enable Bit
 	 */
 		/* Reset enabled on GP7 I/O pin */
-		const uint8 CONFIG_RSTEN_ = 0x1*4;
+		const uint16 CONFIG_RSTEN_ = 0x1*4;
 		/* GP7 is general I/O */
-		const uint8 CONFIG_RSTEN_ = 0x0*4;
+		const uint16 CONFIG_RSTEN_ = 0x0*4;
 
 /********************
  * Special function registers

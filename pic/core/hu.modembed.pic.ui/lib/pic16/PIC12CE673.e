@@ -19,55 +19,55 @@ library microchip.PIC12CE673{
 	 * Oscillator selection bits
 	 */
 		/* EXTRC, Clockout on OSC2 */
-		const uint8 CONFIG_FOSC_EXTRCCLK = 0x7*1;
+		const uint16 CONFIG_FOSC_EXTRCCLK = 0x7*1;
 		/* EXTRC, OSC2 is I/O */
-		const uint8 CONFIG_FOSC_EXTRCIO = 0x6*1;
+		const uint16 CONFIG_FOSC_EXTRCIO = 0x6*1;
 		/* INTRC, Clockout on OSC2 */
-		const uint8 CONFIG_FOSC_INTRCCLK = 0x5*1;
+		const uint16 CONFIG_FOSC_INTRCCLK = 0x5*1;
 		/* INTRC, OSC2 is I/O */
-		const uint8 CONFIG_FOSC_INTRCIO = 0x4*1;
+		const uint16 CONFIG_FOSC_INTRCIO = 0x4*1;
 		/* HS oscillator */
-		const uint8 CONFIG_FOSC_HS = 0x2*1;
+		const uint16 CONFIG_FOSC_HS = 0x2*1;
 		/* XT oscillator */
-		const uint8 CONFIG_FOSC_XT = 0x1*1;
+		const uint16 CONFIG_FOSC_XT = 0x1*1;
 		/* LP oscillator */
-		const uint8 CONFIG_FOSC_LP = 0x0*1;
+		const uint16 CONFIG_FOSC_LP = 0x0*1;
 	/*
 	 * Field: WDTE
 	 * Watchdog Timer Enable bit
 	 */
 		/* WDT enabled */
-		const uint8 CONFIG_WDTE_ON = 0x1*8;
+		const uint16 CONFIG_WDTE_ON = 0x1*8;
 		/* WDT disabled */
-		const uint8 CONFIG_WDTE_OFF = 0x0*8;
+		const uint16 CONFIG_WDTE_OFF = 0x0*8;
 	/*
 	 * Field: PWRTE
 	 * Power Up Timer
 	 */
 		/* Disabled */
-		const uint8 CONFIG_PWRTE_OFF = 0x1*16;
+		const uint16 CONFIG_PWRTE_OFF = 0x1*16;
 		/* Enabled */
-		const uint8 CONFIG_PWRTE_ON = 0x0*16;
+		const uint16 CONFIG_PWRTE_ON = 0x0*16;
 	/*
 	 * Field: CP
 	 * Code Protection bits
 	 */
 		/* code protection off */
-		const uint8 CONFIG_CP_OFF = 0x1fb*32;
+		const uint16 CONFIG_CP_OFF = 0x1fb*32;
 		/* Do not use */
-		const uint8 CONFIG_CP_50 = 0x152*32;
+		const uint16 CONFIG_CP_50 = 0x152*32;
 		/* 0200h-03FEh code protected */
-		const uint8 CONFIG_CP_75 = 0xa9*32;
+		const uint16 CONFIG_CP_75 = 0xa9*32;
 		/* All memory is code protected */
-		const uint8 CONFIG_CP_ALL = 0x0*32;
+		const uint16 CONFIG_CP_ALL = 0x0*32;
 	/*
 	 * Field: MCLRE
 	 * Master Clear Enable
 	 */
 		/* Master Clear enabled */
-		const uint8 CONFIG_MCLRE_ON = 0x1*16384;
+		const uint16 CONFIG_MCLRE_ON = 0x1*16384;
 		/* Master Clear disabled */
-		const uint8 CONFIG_MCLRE_OFF = 0x0*16384;
+		const uint16 CONFIG_MCLRE_OFF = 0x0*16384;
 
 /********************
  * Special function registers

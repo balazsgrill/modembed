@@ -19,53 +19,53 @@ library microchip.MCP19111{
 	 * Watchdog Timer Enable bit
 	 */
 		/* WDT enabled */
-		const uint8 CONFIG_WDTE_ON = 0x1*1;
+		const uint16 CONFIG_WDTE_ON = 0x1*1;
 		/* WDT disabled and can be enabled by SWDTEN bit of the WDTCON register */
-		const uint8 CONFIG_WDTE_OFF = 0x0*1;
+		const uint16 CONFIG_WDTE_OFF = 0x0*1;
 	/*
 	 * Field: PWRTE
 	 * Power-up Timer Enable bit
 	 */
 		/* PWRT disabled */
-		const uint8 CONFIG_PWRTE_OFF = 0x1*2;
+		const uint16 CONFIG_PWRTE_OFF = 0x1*2;
 		/* PWRT enabled */
-		const uint8 CONFIG_PWRTE_ON = 0x0*2;
+		const uint16 CONFIG_PWRTE_ON = 0x0*2;
 	/*
 	 * Field: MCLRE
 	 * MCLR Pin Function Select bit
 	 */
 		/* MCLR pin is MCLR function and weak internal pull-up is enabled */
-		const uint8 CONFIG_MCLRE_ON = 0x1*4;
+		const uint16 CONFIG_MCLRE_ON = 0x1*4;
 		/* MCLR pin is alternate function, MCLR function is internally disabled */
-		const uint8 CONFIG_MCLRE_OFF = 0x0*4;
+		const uint16 CONFIG_MCLRE_OFF = 0x0*4;
 	/*
 	 * Field: CP
 	 * Code Protection bit
 	 */
 		/* Program memory is not code protected */
-		const uint8 CONFIG_CP_OFF = 0x1*8;
+		const uint16 CONFIG_CP_OFF = 0x1*8;
 		/* Program memory is external read and write protected */
-		const uint8 CONFIG_CP_ON = 0x0*8;
+		const uint16 CONFIG_CP_ON = 0x0*8;
 	/*
 	 * Field: WRT
 	 * Flash Program Memory Self Write Enable bits
 	 */
 		/* Write protection off */
-		const uint8 CONFIG_WRT_OFF = 0x3*16;
+		const uint16 CONFIG_WRT_OFF = 0x3*16;
 		/* 000h to 1FFh write protected, 200h to 7FFh may be modified by PMCON1 control */
-		const uint8 CONFIG_WRT_BOOT = 0x2*16;
+		const uint16 CONFIG_WRT_BOOT = 0x2*16;
 		/* 000h to 3FFh write protected, 400h to 7FFh may be modified by PMCON1 control */
-		const uint8 CONFIG_WRT_HALF = 0x1*16;
+		const uint16 CONFIG_WRT_HALF = 0x1*16;
 		/* 000h to 7FFh write protected, entire program memory is write protected. */
-		const uint8 CONFIG_WRT_ALL = 0x0*16;
+		const uint16 CONFIG_WRT_ALL = 0x0*16;
 	/*
 	 * Field: DEBUG
 	 * ICD Debug Mode Enable bits
 	 */
 		/* ICD Debug Mode Disabled */
-		const uint8 CONFIG_DEBUG_OFF = 0x1*64;
+		const uint16 CONFIG_DEBUG_OFF = 0x1*64;
 		/* ICD Debug Mode Enabled */
-		const uint8 CONFIG_DEBUG_ON = 0x0*64;
+		const uint16 CONFIG_DEBUG_ON = 0x0*64;
 
 /********************
  * Special function registers

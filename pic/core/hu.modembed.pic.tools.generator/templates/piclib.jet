@@ -32,6 +32,9 @@ library microchip.<%=pic.getAttribute("edc:name")%>{
 	for(int i=0;i<DCRDefs.getLength();i++){
 		Element DCRDef = (Element)DCRDefs.item(i);
 		String cname = DCRDef.getAttribute("edc:cname");
+		int csize = ECompiler.convertLiteral(DCRDef.getAttribute("edc:nzwidth"));
+		csize = csize/8;
+		String ctype = (csize == 2) ? "uint16" : "uint8";
 		NodeList DCRModes = ((Element)DCRDef.getElementsByTagName("edc:DCRModeList").item(0)).getElementsByTagName("edc:DCRMode");
 		for(int j=0;j<DCRModes.getLength();j++){
 			Element DCRMode = (Element)DCRModes.item(j);
@@ -64,7 +67,7 @@ library microchip.<%=pic.getAttribute("edc:name")%>{
 					value = value + "*"+(1<<field_offset);
 %>
 		/* <%=DCRFieldSemantic.getAttribute("edc:desc")%> */
-		const uint8 <%=cname%>_<%=fieldname%>_<%=DCRFieldSemantic.getAttribute("edc:cname")%> = <%=value%>;
+		const <%=ctype%> <%=cname%>_<%=fieldname%>_<%=DCRFieldSemantic.getAttribute("edc:cname")%> = <%=value%>;
 <%
 				}
 				field_offset += width;

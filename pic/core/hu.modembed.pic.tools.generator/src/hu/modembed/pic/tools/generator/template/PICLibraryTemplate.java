@@ -28,20 +28,21 @@ public class PICLibraryTemplate
   protected final String TEXT_11 = NL + "\t * ";
   protected final String TEXT_12 = NL + "\t */";
   protected final String TEXT_13 = NL + "\t\t/* ";
-  protected final String TEXT_14 = " */" + NL + "\t\tconst uint8 ";
-  protected final String TEXT_15 = "_";
+  protected final String TEXT_14 = " */" + NL + "\t\tconst ";
+  protected final String TEXT_15 = " ";
   protected final String TEXT_16 = "_";
-  protected final String TEXT_17 = " = ";
-  protected final String TEXT_18 = ";";
-  protected final String TEXT_19 = NL + NL + "/********************" + NL + " * Special function registers" + NL + " ********************/" + NL;
-  protected final String TEXT_20 = NL + NL + "/*" + NL + " * ";
-  protected final String TEXT_21 = NL + " * ";
-  protected final String TEXT_22 = NL + " */" + NL + "reg ";
-  protected final String TEXT_23 = " ";
-  protected final String TEXT_24 = " : 0x";
-  protected final String TEXT_25 = "; ";
-  protected final String TEXT_26 = NL + "}";
-  protected final String TEXT_27 = NL;
+  protected final String TEXT_17 = "_";
+  protected final String TEXT_18 = " = ";
+  protected final String TEXT_19 = ";";
+  protected final String TEXT_20 = NL + NL + "/********************" + NL + " * Special function registers" + NL + " ********************/" + NL;
+  protected final String TEXT_21 = NL + NL + "/*" + NL + " * ";
+  protected final String TEXT_22 = NL + " * ";
+  protected final String TEXT_23 = NL + " */" + NL + "reg ";
+  protected final String TEXT_24 = " ";
+  protected final String TEXT_25 = " : 0x";
+  protected final String TEXT_26 = "; ";
+  protected final String TEXT_27 = NL + "}";
+  protected final String TEXT_28 = NL;
 
   public String generate(Object argument)
   {
@@ -75,6 +76,9 @@ public class PICLibraryTemplate
 	for(int i=0;i<DCRDefs.getLength();i++){
 		Element DCRDef = (Element)DCRDefs.item(i);
 		String cname = DCRDef.getAttribute("edc:cname");
+		int csize = ECompiler.convertLiteral(DCRDef.getAttribute("edc:nzwidth"));
+		csize = csize/8;
+		String ctype = (csize == 2) ? "uint16" : "uint8";
 		NodeList DCRModes = ((Element)DCRDef.getElementsByTagName("edc:DCRModeList").item(0)).getElementsByTagName("edc:DCRMode");
 		for(int j=0;j<DCRModes.getLength();j++){
 			Element DCRMode = (Element)DCRModes.item(j);
@@ -110,14 +114,16 @@ public class PICLibraryTemplate
     stringBuffer.append(TEXT_13);
     stringBuffer.append(DCRFieldSemantic.getAttribute("edc:desc"));
     stringBuffer.append(TEXT_14);
-    stringBuffer.append(cname);
+    stringBuffer.append(ctype);
     stringBuffer.append(TEXT_15);
-    stringBuffer.append(fieldname);
+    stringBuffer.append(cname);
     stringBuffer.append(TEXT_16);
-    stringBuffer.append(DCRFieldSemantic.getAttribute("edc:cname"));
+    stringBuffer.append(fieldname);
     stringBuffer.append(TEXT_17);
-    stringBuffer.append(value);
+    stringBuffer.append(DCRFieldSemantic.getAttribute("edc:cname"));
     stringBuffer.append(TEXT_18);
+    stringBuffer.append(value);
+    stringBuffer.append(TEXT_19);
     
 				}
 				field_offset += width;
@@ -125,7 +131,7 @@ public class PICLibraryTemplate
 		}
 	}
 
-    stringBuffer.append(TEXT_19);
+    stringBuffer.append(TEXT_20);
     
 	Element dataspace = (Element)pic.getElementsByTagName("edc:DataSpace").item(0);
 	Element regardlessOfMode = (Element)dataspace.getElementsByTagName("edc:RegardlessOfMode").item(0);
@@ -144,17 +150,17 @@ public class PICLibraryTemplate
 				size = size/8;
 				String type = (size==2) ? "uint16" :"uint8";
 
-    stringBuffer.append(TEXT_20);
-    stringBuffer.append(item.getAttribute("edc:name"));
     stringBuffer.append(TEXT_21);
-    stringBuffer.append(item.getAttribute("edc:desc"));
+    stringBuffer.append(item.getAttribute("edc:name"));
     stringBuffer.append(TEXT_22);
-    stringBuffer.append(type);
+    stringBuffer.append(item.getAttribute("edc:desc"));
     stringBuffer.append(TEXT_23);
-    stringBuffer.append(item.getAttribute("edc:cname"));
+    stringBuffer.append(type);
     stringBuffer.append(TEXT_24);
-    stringBuffer.append(Integer.toHexString(beginAddr));
+    stringBuffer.append(item.getAttribute("edc:cname"));
     stringBuffer.append(TEXT_25);
+    stringBuffer.append(Integer.toHexString(beginAddr));
+    stringBuffer.append(TEXT_26);
     
 				beginAddr += size;
 			}
@@ -169,8 +175,8 @@ public class PICLibraryTemplate
 		}
 	}
 
-    stringBuffer.append(TEXT_26);
     stringBuffer.append(TEXT_27);
+    stringBuffer.append(TEXT_28);
     return stringBuffer.toString();
   }
 }

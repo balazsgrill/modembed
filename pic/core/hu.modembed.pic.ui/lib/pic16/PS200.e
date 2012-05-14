@@ -19,89 +19,89 @@ library microchip.PS200{
 	 * Oscillator
 	 */
 		/* EXTRC: CLKOUT on RA4, RC on RA5 */
-		const uint8 CONFIG_OSC_ = 0x7*1;
+		const uint16 CONFIG_OSC_ = 0x7*1;
 		/* EXTRCIO: I/O on RA4, RC on RA5 */
-		const uint8 CONFIG_OSC_ = 0x6*1;
+		const uint16 CONFIG_OSC_ = 0x6*1;
 		/* INTOSC: CLKOUT on RA4, I/O on RA5 */
-		const uint8 CONFIG_OSC_ = 0x5*1;
+		const uint16 CONFIG_OSC_ = 0x5*1;
 		/* INTOSCIO: I/O on RA4/RA5 */
-		const uint8 CONFIG_OSC_ = 0x4*1;
+		const uint16 CONFIG_OSC_ = 0x4*1;
 		/* EC */
-		const uint8 CONFIG_OSC_ = 0x3*1;
+		const uint16 CONFIG_OSC_ = 0x3*1;
 		/* HS */
-		const uint8 CONFIG_OSC_ = 0x2*1;
+		const uint16 CONFIG_OSC_ = 0x2*1;
 		/* XT */
-		const uint8 CONFIG_OSC_ = 0x1*1;
+		const uint16 CONFIG_OSC_ = 0x1*1;
 		/* LP */
-		const uint8 CONFIG_OSC_ = 0x0*1;
+		const uint16 CONFIG_OSC_ = 0x0*1;
 	/*
 	 * Field: WDT
 	 * Watchdog Timer
 	 */
 		/* On */
-		const uint8 CONFIG_WDT_ = 0x1*8;
+		const uint16 CONFIG_WDT_ = 0x1*8;
 		/* Off */
-		const uint8 CONFIG_WDT_ = 0x0*8;
+		const uint16 CONFIG_WDT_ = 0x0*8;
 	/*
 	 * Field: PUT
 	 * Power Up Timer
 	 */
 		/* Off */
-		const uint8 CONFIG_PUT_ = 0x1*16;
+		const uint16 CONFIG_PUT_ = 0x1*16;
 		/* On */
-		const uint8 CONFIG_PUT_ = 0x0*16;
+		const uint16 CONFIG_PUT_ = 0x0*16;
 	/*
 	 * Field: MCLRE
 	 * Master Clear Enable
 	 */
 		/* External */
-		const uint8 CONFIG_MCLRE_ = 0x1*32;
+		const uint16 CONFIG_MCLRE_ = 0x1*32;
 		/* Internal */
-		const uint8 CONFIG_MCLRE_ = 0x0*32;
+		const uint16 CONFIG_MCLRE_ = 0x0*32;
 	/*
 	 * Field: CP
 	 * Code Protect
 	 */
 		/* Off */
-		const uint8 CONFIG_CP_ = 0x1*64;
+		const uint16 CONFIG_CP_ = 0x1*64;
 		/* On */
-		const uint8 CONFIG_CP_ = 0x0*64;
+		const uint16 CONFIG_CP_ = 0x0*64;
 	/*
 	 * Field: CPD
 	 * Data EE Read Protect
 	 */
 		/* Off */
-		const uint8 CONFIG_CPD_ = 0x1*128;
+		const uint16 CONFIG_CPD_ = 0x1*128;
 		/* On */
-		const uint8 CONFIG_CPD_ = 0x0*128;
+		const uint16 CONFIG_CPD_ = 0x0*128;
 	/*
 	 * Field: BODEN
 	 * Brown Out Detect
 	 */
 		/* BOD and SBOREN disabled */
-		const uint8 CONFIG_BODEN_ = 0x0*256;
+		const uint16 CONFIG_BODEN_ = 0x0*256;
 		/* SBOREN controls BOR function */
-		const uint8 CONFIG_BODEN_ = 0x1*256;
+		const uint16 CONFIG_BODEN_ = 0x1*256;
 		/* BOD enabled in run, disabled in sleep, SBOREN disabled */
-		const uint8 CONFIG_BODEN_ = 0x2*256;
+		const uint16 CONFIG_BODEN_ = 0x2*256;
 		/* BOD Enabled, SBOREN Disabled */
-		const uint8 CONFIG_BODEN_ = 0x3*256;
+		const uint16 CONFIG_BODEN_ = 0x3*256;
 	/*
 	 * Field: IESO
 	 * Internal External Switch Over Mode
 	 */
 		/* Enabled */
-		const uint8 CONFIG_IESO_ = 0x1*1024;
+		const uint16 CONFIG_IESO_ = 0x1*1024;
 		/* Disabled */
-		const uint8 CONFIG_IESO_ = 0x0*1024;
+		const uint16 CONFIG_IESO_ = 0x0*1024;
 	/*
 	 * Field: FCMEN
 	 * Monitor Clock Fail-safe
 	 */
 		/* Enabled */
-		const uint8 CONFIG_FCMEN_ = 0x1*2048;
+		const uint16 CONFIG_FCMEN_ = 0x1*2048;
 		/* Disabled */
-		const uint8 CONFIG_FCMEN_ = 0x0*2048;
+		const uint16 CONFIG_FCMEN_ = 0x0*2048;
 
 /********************
  * Special function registers

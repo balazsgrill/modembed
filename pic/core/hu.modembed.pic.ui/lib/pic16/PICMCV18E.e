@@ -19,53 +19,53 @@ library microchip.PICMCV18E{
 	 * Oscillator Selection bits
 	 */
 		/* RC oscillator */
-		const uint8 CONFIG_FOSC_RC = 0x3*1;
+		const uint16 CONFIG_FOSC_RC = 0x3*1;
 		/* HS oscillator */
-		const uint8 CONFIG_FOSC_HS = 0x2*1;
+		const uint16 CONFIG_FOSC_HS = 0x2*1;
 		/* XT oscillator */
-		const uint8 CONFIG_FOSC_XT = 0x1*1;
+		const uint16 CONFIG_FOSC_XT = 0x1*1;
 		/* LP oscillator */
-		const uint8 CONFIG_FOSC_LP = 0x0*1;
+		const uint16 CONFIG_FOSC_LP = 0x0*1;
 	/*
 	 * Field: WDTE
 	 * Watchdog Timer Enable bit
 	 */
 		/* WDT enabled */
-		const uint8 CONFIG_WDTE_ON = 0x1*4;
+		const uint16 CONFIG_WDTE_ON = 0x1*4;
 		/* WDT disabled and can be enabled by SWDTEN bit of the WDTCON register */
-		const uint8 CONFIG_WDTE_OFF = 0x0*4;
+		const uint16 CONFIG_WDTE_OFF = 0x0*4;
 	/*
 	 * Field: PWRTE
 	 * Power-up Timer Enable bit
 	 */
 		/* PWRT disabled */
-		const uint8 CONFIG_PWRTE_OFF = 0x1*8;
+		const uint16 CONFIG_PWRTE_OFF = 0x1*8;
 		/* PWRT enabled */
-		const uint8 CONFIG_PWRTE_ON = 0x0*8;
+		const uint16 CONFIG_PWRTE_ON = 0x0*8;
 	/*
 	 * Field: BOREN
 	 * Brown-out Reset Enable bit
 	 */
 		/* BOR enabled */
-		const uint8 CONFIG_BOREN_ON = 0x1*16;
+		const uint16 CONFIG_BOREN_ON = 0x1*16;
 		/* BOR disabled */
-		const uint8 CONFIG_BOREN_OFF = 0x0*16;
+		const uint16 CONFIG_BOREN_OFF = 0x0*16;
 	/*
 	 * Field: BODENV
 	 * Brown-out Reset Voltage bit
 	 */
 		/* VBOR set to 4.0V */
-		const uint8 CONFIG_BODENV_40 = 0x1*32;
+		const uint16 CONFIG_BODENV_40 = 0x1*32;
 		/* VBOR set to 2.5V */
-		const uint8 CONFIG_BODENV_25 = 0x0*32;
+		const uint16 CONFIG_BODENV_25 = 0x0*32;
 	/*
 	 * Field: CP
 	 * Code Protect
 	 */
 		/* Program memory code protection is disabled */
-		const uint8 CONFIG_CP_OFF = 0x1*64;
+		const uint16 CONFIG_CP_OFF = 0x1*64;
 		/* Program memory code protection is enabled */
-		const uint8 CONFIG_CP_ON = 0x0*64;
+		const uint16 CONFIG_CP_ON = 0x0*64;
 
 /********************
  * Special function registers

@@ -19,121 +19,121 @@ library microchip.PIC16F87{
 	 * Oscillator Selection bits
 	 */
 		/* EXTRC oscillator; CLKO function on RA6/OSC2/CLKO */
-		const uint8 CONFIG1_FOSC_EXTRCCLK = 0x13*1;
+		const uint16 CONFIG1_FOSC_EXTRCCLK = 0x13*1;
 		/* EXTRC oscillator; port I/O function on RA6/OSC2/CLKO */
-		const uint8 CONFIG1_FOSC_EXTRCIO = 0x12*1;
+		const uint16 CONFIG1_FOSC_EXTRCIO = 0x12*1;
 		/* INTRC oscillator; CLKO function on RA6/OSC2/CLKO pin and port I/O function on RA7/OSC1/CLKI pin */
-		const uint8 CONFIG1_FOSC_INTOSCCLK = 0x11*1;
+		const uint16 CONFIG1_FOSC_INTOSCCLK = 0x11*1;
 		/* INTRC oscillator; port I/O function on both RA6/OSC2/CLKO pin and RA7/OSC1/CLKI pin */
-		const uint8 CONFIG1_FOSC_INTOSCIO = 0x10*1;
+		const uint16 CONFIG1_FOSC_INTOSCIO = 0x10*1;
 		/* ECIO; port I/O function on RA6/OSC2/CLKO */
-		const uint8 CONFIG1_FOSC_EC = 0x3*1;
+		const uint16 CONFIG1_FOSC_EC = 0x3*1;
 		/* HS oscillator */
-		const uint8 CONFIG1_FOSC_HS = 0x2*1;
+		const uint16 CONFIG1_FOSC_HS = 0x2*1;
 		/* XT oscillator */
-		const uint8 CONFIG1_FOSC_XT = 0x1*1;
+		const uint16 CONFIG1_FOSC_XT = 0x1*1;
 		/* LP oscillator */
-		const uint8 CONFIG1_FOSC_LP = 0x0*1;
+		const uint16 CONFIG1_FOSC_LP = 0x0*1;
 	/*
 	 * Field: WDTE
 	 * Watchdog Timer Enable bit
 	 */
 		/* WDT enabled */
-		const uint8 CONFIG1_WDTE_ON = 0x1*32;
+		const uint16 CONFIG1_WDTE_ON = 0x1*32;
 		/* WDT disabled */
-		const uint8 CONFIG1_WDTE_OFF = 0x0*32;
+		const uint16 CONFIG1_WDTE_OFF = 0x0*32;
 	/*
 	 * Field: PWRTE
 	 * Power-up Timer Enable bit
 	 */
 		/* PWRT disabled */
-		const uint8 CONFIG1_PWRTE_OFF = 0x1*64;
+		const uint16 CONFIG1_PWRTE_OFF = 0x1*64;
 		/* PWRT enabled */
-		const uint8 CONFIG1_PWRTE_ON = 0x0*64;
+		const uint16 CONFIG1_PWRTE_ON = 0x0*64;
 	/*
 	 * Field: MCLRE
 	 * RA5/MCLR/VPP Pin Function Select bit
 	 */
 		/* RA5/MCLR/VPP pin function is MCLR */
-		const uint8 CONFIG1_MCLRE_ON = 0x1*128;
+		const uint16 CONFIG1_MCLRE_ON = 0x1*128;
 		/* RA5/MCLR/VPP pin function is digital I/O, MCLR internally tied to VDD */
-		const uint8 CONFIG1_MCLRE_OFF = 0x0*128;
+		const uint16 CONFIG1_MCLRE_OFF = 0x0*128;
 	/*
 	 * Field: BOREN
 	 * Brown-out Reset Enable bit
 	 */
 		/* BOR enabled */
-		const uint8 CONFIG1_BOREN_ON = 0x1*256;
+		const uint16 CONFIG1_BOREN_ON = 0x1*256;
 		/* BOR disabled */
-		const uint8 CONFIG1_BOREN_OFF = 0x0*256;
+		const uint16 CONFIG1_BOREN_OFF = 0x0*256;
 	/*
 	 * Field: LVP
 	 * Low-Voltage Programming Enable bit
 	 */
 		/* RB3/PGM pin has PGM function, Low-Voltage Programming enabled */
-		const uint8 CONFIG1_LVP_ON = 0x1*512;
+		const uint16 CONFIG1_LVP_ON = 0x1*512;
 		/* RB3 is digital I/O, HV on MCLR must be used for programming */
-		const uint8 CONFIG1_LVP_OFF = 0x0*512;
+		const uint16 CONFIG1_LVP_OFF = 0x0*512;
 	/*
 	 * Field: CPD
 	 * Data EE Memory Code Protection bit
 	 */
 		/* Code protection off */
-		const uint8 CONFIG1_CPD_OFF = 0x1*1024;
+		const uint16 CONFIG1_CPD_OFF = 0x1*1024;
 		/* Data EE memory code-protected */
-		const uint8 CONFIG1_CPD_ON = 0x0*1024;
+		const uint16 CONFIG1_CPD_ON = 0x0*1024;
 	/*
 	 * Field: WRT
 	 * Flash Program Memory Write Enable bits
 	 */
 		/* Write protection off */
-		const uint8 CONFIG1_WRT_OFF = 0x3*2048;
+		const uint16 CONFIG1_WRT_OFF = 0x3*2048;
 		/* 0000h to 00FFh write-protected, 0100h to 0FFFh may be modified by EECON control */
-		const uint8 CONFIG1_WRT_256 = 0x2*2048;
+		const uint16 CONFIG1_WRT_256 = 0x2*2048;
 		/* 0000h to 07FFh write-protected, 0800h to 0FFFh may be modified by EECON control */
-		const uint8 CONFIG1_WRT_2048 = 0x1*2048;
+		const uint16 CONFIG1_WRT_2048 = 0x1*2048;
 		/* 0000h to 0FFFh write-protected */
-		const uint8 CONFIG1_WRT_ALL = 0x0*2048;
+		const uint16 CONFIG1_WRT_ALL = 0x0*2048;
 	/*
 	 * Field: DEBUG
 	 * In-Circuit Debugger Mode bit
 	 */
 		/* In-Circuit Debugger disabled, RB6 and RB7 are general purpose I/O pins */
-		const uint8 CONFIG1_DEBUG_OFF = 0x1*8192;
+		const uint16 CONFIG1_DEBUG_OFF = 0x1*8192;
 		/* In-Circuit Debugger enabled, RB6 and RB7 are dedicated to the debugger */
-		const uint8 CONFIG1_DEBUG_ON = 0x0*8192;
+		const uint16 CONFIG1_DEBUG_ON = 0x0*8192;
 	/*
 	 * Field: CCPMX
 	 * CCP1 Pin Selection bit
 	 */
 		/* CCP1 function on RB0 */
-		const uint8 CONFIG1_CCPMX_RB0 = 0x1*16384;
+		const uint16 CONFIG1_CCPMX_RB0 = 0x1*16384;
 		/* CCP1 function on RB3 */
-		const uint8 CONFIG1_CCPMX_RB3 = 0x0*16384;
+		const uint16 CONFIG1_CCPMX_RB3 = 0x0*16384;
 	/*
 	 * Field: CP
 	 * Flash Program Memory Code Protection bit
 	 */
 		/* Code protection off */
-		const uint8 CONFIG1_CP_OFF = 0x1*32768;
+		const uint16 CONFIG1_CP_OFF = 0x1*32768;
 		/* 0000h to 0FFFh code-protected (all protected) */
-		const uint8 CONFIG1_CP_ON = 0x0*32768;
+		const uint16 CONFIG1_CP_ON = 0x0*32768;
 	/*
 	 * Field: FCMEN
 	 * Fail-Safe Clock Monitor Enable bit
 	 */
 		/* Fail-Safe Clock Monitor enabled */
-		const uint8 CONFIG2_FCMEN_ON = 0x1*1;
+		const uint16 CONFIG2_FCMEN_ON = 0x1*1;
 		/* Fail-Safe Clock Monitor disabled */
-		const uint8 CONFIG2_FCMEN_OFF = 0x0*1;
+		const uint16 CONFIG2_FCMEN_OFF = 0x0*1;
 	/*
 	 * Field: IESO
 	 * Internal External Switchover bit
 	 */
 		/* Internal External Switchover mode enabled */
-		const uint8 CONFIG2_IESO_ON = 0x1*2;
+		const uint16 CONFIG2_IESO_ON = 0x1*2;
 		/* Internal External Switchover mode disabled */
-		const uint8 CONFIG2_IESO_OFF = 0x0*2;
+		const uint16 CONFIG2_IESO_OFF = 0x0*2;
 
 /********************
  * Special function registers

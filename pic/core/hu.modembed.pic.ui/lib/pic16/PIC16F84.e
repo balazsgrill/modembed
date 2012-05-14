@@ -19,37 +19,37 @@ library microchip.PIC16F84{
 	 * Oscillator Selection bits
 	 */
 		/* RC oscillator */
-		const uint8 CONFIG_FOSC_EXTRC = 0x3*1;
+		const uint16 CONFIG_FOSC_EXTRC = 0x3*1;
 		/* HS oscillator */
-		const uint8 CONFIG_FOSC_HS = 0x2*1;
+		const uint16 CONFIG_FOSC_HS = 0x2*1;
 		/* XT oscillator */
-		const uint8 CONFIG_FOSC_XT = 0x1*1;
+		const uint16 CONFIG_FOSC_XT = 0x1*1;
 		/* LP oscillator */
-		const uint8 CONFIG_FOSC_LP = 0x0*1;
+		const uint16 CONFIG_FOSC_LP = 0x0*1;
 	/*
 	 * Field: WDTE
 	 * Watchdog Timer
 	 */
 		/* WDT enabled */
-		const uint8 CONFIG_WDTE_ON = 0x1*4;
+		const uint16 CONFIG_WDTE_ON = 0x1*4;
 		/* WDT disabled */
-		const uint8 CONFIG_WDTE_OFF = 0x0*4;
+		const uint16 CONFIG_WDTE_OFF = 0x0*4;
 	/*
 	 * Field: PWRTE
 	 * Power-up Timer Enable bit
 	 */
 		/* Power-up Timer is disabled */
-		const uint8 CONFIG_PWRTE_OFF = 0x1*8;
+		const uint16 CONFIG_PWRTE_OFF = 0x1*8;
 		/* Power-up Timer is enabled */
-		const uint8 CONFIG_PWRTE_ON = 0x0*8;
+		const uint16 CONFIG_PWRTE_ON = 0x0*8;
 	/*
 	 * Field: CP
 	 * Code Protection bit
 	 */
 		/* Code protection disabled */
-		const uint8 CONFIG_CP_OFF = 0x3ff*16;
+		const uint16 CONFIG_CP_OFF = 0x3ff*16;
 		/* All program memory is code protected */
-		const uint8 CONFIG_CP_ON = 0x0*16;
+		const uint16 CONFIG_CP_ON = 0x0*16;
 
 /********************
  * Special function registers

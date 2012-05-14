@@ -19,101 +19,101 @@ library microchip.PIC10LF322{
 	 * Oscillator Selection bits
 	 */
 		/* INTOSC oscillator: CLKIN function disabled */
-		const uint8 CONFIG_FOSC_INTOSC = 0x0*1;
+		const uint16 CONFIG_FOSC_INTOSC = 0x0*1;
 		/* EC: CLKIN function enabled */
-		const uint8 CONFIG_FOSC_EC = 0x1*1;
+		const uint16 CONFIG_FOSC_EC = 0x1*1;
 	/*
 	 * Field: BOREN
 	 * Brown-out Reset Enable
 	 */
 		/* Brown-out Reset enabled */
-		const uint8 CONFIG_BOREN_ON = 0x3*2;
+		const uint16 CONFIG_BOREN_ON = 0x3*2;
 		/* Brown-out Reset enabled while running and disabled in Sleep */
-		const uint8 CONFIG_BOREN_NSLEEP = 0x2*2;
+		const uint16 CONFIG_BOREN_NSLEEP = 0x2*2;
 		/* Brown-out Reset controlled by the SBOREN bit in the BORCON register */
-		const uint8 CONFIG_BOREN_SBODEN = 0x1*2;
+		const uint16 CONFIG_BOREN_SBODEN = 0x1*2;
 		/* Brown-out Reset disabled */
-		const uint8 CONFIG_BOREN_OFF = 0x0*2;
+		const uint16 CONFIG_BOREN_OFF = 0x0*2;
 	/*
 	 * Field: WDTE
 	 * Watchdog Timer Enable
 	 */
 		/* WDT enabled */
-		const uint8 CONFIG_WDTE_ON = 0x3*8;
+		const uint16 CONFIG_WDTE_ON = 0x3*8;
 		/* WDT enabled while running and disabled in Sleep */
-		const uint8 CONFIG_WDTE_NSLEEP = 0x2*8;
+		const uint16 CONFIG_WDTE_NSLEEP = 0x2*8;
 		/* WDT controlled by the SWDTEN bit in the WDTCON register */
-		const uint8 CONFIG_WDTE_SWDTEN = 0x1*8;
+		const uint16 CONFIG_WDTE_SWDTEN = 0x1*8;
 		/* WDT disabled */
-		const uint8 CONFIG_WDTE_OFF = 0x0*8;
+		const uint16 CONFIG_WDTE_OFF = 0x0*8;
 	/*
 	 * Field: PWRTE
 	 * Power-up Timer Enable bit
 	 */
 		/* PWRT disabled */
-		const uint8 CONFIG_PWRTE_OFF = 0x1*32;
+		const uint16 CONFIG_PWRTE_OFF = 0x1*32;
 		/* PWRT enabled */
-		const uint8 CONFIG_PWRTE_ON = 0x0*32;
+		const uint16 CONFIG_PWRTE_ON = 0x0*32;
 	/*
 	 * Field: MCLRE
 	 * MCLR Pin Function Select bit
 	 */
 		/* MCLR pin function is MCLR */
-		const uint8 CONFIG_MCLRE_ON = 0x1*64;
+		const uint16 CONFIG_MCLRE_ON = 0x1*64;
 		/* MCLR pin function is digital input, MCLR internally tied to VDD */
-		const uint8 CONFIG_MCLRE_OFF = 0x0*64;
+		const uint16 CONFIG_MCLRE_OFF = 0x0*64;
 	/*
 	 * Field: CP
 	 * Code Protection bit
 	 */
 		/* Program memory code protection is disabled */
-		const uint8 CONFIG_CP_OFF = 0x1*128;
+		const uint16 CONFIG_CP_OFF = 0x1*128;
 		/* Program memory code protection is enabled */
-		const uint8 CONFIG_CP_ON = 0x0*128;
+		const uint16 CONFIG_CP_ON = 0x0*128;
 	/*
 	 * Field: LVP
 	 * Low-Voltage Programming Enable
 	 */
 		/* Low-voltage programming enabled */
-		const uint8 CONFIG_LVP_ON = 0x1*256;
+		const uint16 CONFIG_LVP_ON = 0x1*256;
 		/* High-voltage on MCLR/VPP must be used for programming */
-		const uint8 CONFIG_LVP_OFF = 0x0*256;
+		const uint16 CONFIG_LVP_OFF = 0x0*256;
 	/*
 	 * Field: LPBOR
 	 * Brown-out Reset Selection bits
 	 */
 		/* BOR enabled */
-		const uint8 CONFIG_LPBOR_ON = 0x1*512;
+		const uint16 CONFIG_LPBOR_ON = 0x1*512;
 		/* BOR disabled */
-		const uint8 CONFIG_LPBOR_OFF = 0x0*512;
+		const uint16 CONFIG_LPBOR_OFF = 0x0*512;
 	/*
 	 * Field: BORV
 	 * Brown-out Reset Voltage Selection
 	 */
 		/* Brown-out Reset Voltage (Vbor), low trip point selected. */
-		const uint8 CONFIG_BORV_LO = 0x1*1024;
+		const uint16 CONFIG_BORV_LO = 0x1*1024;
 		/* Brown-out Reset Voltage (Vbor), high trip point selected. */
-		const uint8 CONFIG_BORV_HI = 0x0*1024;
+		const uint16 CONFIG_BORV_HI = 0x0*1024;
 	/*
 	 * Field: WRT
 	 * Flash Memory Self-Write Protection
 	 */
 		/* Write protection off */
-		const uint8 CONFIG_WRT_OFF = 0x3*2048;
+		const uint16 CONFIG_WRT_OFF = 0x3*2048;
 		/* 000h to 07Fh write protected, 080h to 1FFh may be modified by PMCON control */
-		const uint8 CONFIG_WRT_BOOT = 0x2*2048;
+		const uint16 CONFIG_WRT_BOOT = 0x2*2048;
 		/* 000h to 0FFh write protected, 100h to 1FFh may be modified by PMCON control */
-		const uint8 CONFIG_WRT_HALF = 0x1*2048;
+		const uint16 CONFIG_WRT_HALF = 0x1*2048;
 		/* 000h to 1FFh write protected, no addresses may be modified by PMCON control */
-		const uint8 CONFIG_WRT_ALL = 0x0*2048;
+		const uint16 CONFIG_WRT_ALL = 0x0*2048;
 	/*
 	 * Field: DEBUG
 	 * In-Circuit Debugger Mode
 	 */
 		/* In-Circuit Debugger disabled, ICSPCLK and ICSPDAT are general purpose I/O pins */
-		const uint8 CONFIG_DEBUG_OFF = 0x1*8192;
+		const uint16 CONFIG_DEBUG_OFF = 0x1*8192;
 		/* In-Circuit Debugger enabled, ICSPCLK and ICSPDAT are dedicated to the debugger */
-		const uint8 CONFIG_DEBUG_ON = 0x0*8192;
+		const uint16 CONFIG_DEBUG_ON = 0x0*8192;
 
 /********************
  * Special function registers

@@ -19,77 +19,77 @@ library microchip.PIC16F627A{
 	 * Oscillator Selection bits
 	 */
 		/* RC oscillator: CLKOUT function on RA6/OSC2/CLKOUT pin, Resistor and Capacitor on RA7/OSC1/CLKIN */
-		const uint8 CONFIG_FOSC_EXTRCCLK = 0x13*1;
+		const uint16 CONFIG_FOSC_EXTRCCLK = 0x13*1;
 		/* RC oscillator: I/O function on RA6/OSC2/CLKOUT pin, Resistor and Capacitor on RA7/OSC1/CLKIN */
-		const uint8 CONFIG_FOSC_EXTRCIO = 0x12*1;
+		const uint16 CONFIG_FOSC_EXTRCIO = 0x12*1;
 		/* INTOSC oscillator: CLKOUT function on RA6/OSC2/CLKOUT pin, I/O function on RA7/OSC1/CLKIN */
-		const uint8 CONFIG_FOSC_INTOSCCLK = 0x11*1;
+		const uint16 CONFIG_FOSC_INTOSCCLK = 0x11*1;
 		/* INTOSC oscillator: I/O function on RA6/OSC2/CLKOUT pin, I/O function on RA7/OSC1/CLKIN */
-		const uint8 CONFIG_FOSC_INTOSCIO = 0x10*1;
+		const uint16 CONFIG_FOSC_INTOSCIO = 0x10*1;
 		/* EC: I/O function on RA6/OSC2/CLKOUT pin, CLKIN on RA7/OSC1/CLKIN */
-		const uint8 CONFIG_FOSC_ECIO = 0x3*1;
+		const uint16 CONFIG_FOSC_ECIO = 0x3*1;
 		/* HS oscillator: High-speed crystal/resonator on RA6/OSC2/CLKOUT and RA7/OSC1/CLKIN */
-		const uint8 CONFIG_FOSC_HS = 0x2*1;
+		const uint16 CONFIG_FOSC_HS = 0x2*1;
 		/* XT oscillator: Crystal/resonator on RA6/OSC2/CLKOUT and RA7/OSC1/CLKIN */
-		const uint8 CONFIG_FOSC_XT = 0x1*1;
+		const uint16 CONFIG_FOSC_XT = 0x1*1;
 		/* LP oscillator: Low-power crystal on RA6/OSC2/CLKOUT and RA7/OSC1/CLKIN */
-		const uint8 CONFIG_FOSC_LP = 0x0*1;
+		const uint16 CONFIG_FOSC_LP = 0x0*1;
 	/*
 	 * Field: WDTE
 	 * Watchdog Timer Enable bit
 	 */
 		/* WDT enabled */
-		const uint8 CONFIG_WDTE_ON = 0x1*32;
+		const uint16 CONFIG_WDTE_ON = 0x1*32;
 		/* WDT disabled */
-		const uint8 CONFIG_WDTE_OFF = 0x0*32;
+		const uint16 CONFIG_WDTE_OFF = 0x0*32;
 	/*
 	 * Field: PWRTE
 	 * Power-up Timer Enable bit
 	 */
 		/* PWRT disabled */
-		const uint8 CONFIG_PWRTE_OFF = 0x1*64;
+		const uint16 CONFIG_PWRTE_OFF = 0x1*64;
 		/* PWRT enabled */
-		const uint8 CONFIG_PWRTE_ON = 0x0*64;
+		const uint16 CONFIG_PWRTE_ON = 0x0*64;
 	/*
 	 * Field: MCLRE
 	 * RA5/MCLR/VPP Pin Function Select bit
 	 */
 		/* RA5/MCLR/VPP pin function is MCLR */
-		const uint8 CONFIG_MCLRE_ON = 0x1*128;
+		const uint16 CONFIG_MCLRE_ON = 0x1*128;
 		/* RA5/MCLR/VPP pin function is digital input, MCLR internally tied to VDD */
-		const uint8 CONFIG_MCLRE_OFF = 0x0*128;
+		const uint16 CONFIG_MCLRE_OFF = 0x0*128;
 	/*
 	 * Field: BOREN
 	 * Brown-out Detect Enable bit
 	 */
 		/* BOD enabled */
-		const uint8 CONFIG_BOREN_ON = 0x1*256;
+		const uint16 CONFIG_BOREN_ON = 0x1*256;
 		/* BOD disabled */
-		const uint8 CONFIG_BOREN_OFF = 0x0*256;
+		const uint16 CONFIG_BOREN_OFF = 0x0*256;
 	/*
 	 * Field: LVP
 	 * Low-Voltage Programming Enable bit
 	 */
 		/* RB4/PGM pin has PGM function, low-voltage programming enabled */
-		const uint8 CONFIG_LVP_ON = 0x1*512;
+		const uint16 CONFIG_LVP_ON = 0x1*512;
 		/* RB4/PGM pin has digital I/O function, HV on MCLR must be used for programming */
-		const uint8 CONFIG_LVP_OFF = 0x0*512;
+		const uint16 CONFIG_LVP_OFF = 0x0*512;
 	/*
 	 * Field: CPD
 	 * Data EE Memory Code Protection bit
 	 */
 		/* Data memory code protection off */
-		const uint8 CONFIG_CPD_OFF = 0x1*1024;
+		const uint16 CONFIG_CPD_OFF = 0x1*1024;
 		/* Data memory code-protected */
-		const uint8 CONFIG_CPD_ON = 0x0*1024;
+		const uint16 CONFIG_CPD_ON = 0x0*1024;
 	/*
 	 * Field: CP
 	 * Flash Program Memory Code Protection bit
 	 */
 		/* Code protection off */
-		const uint8 CONFIG_CP_OFF = 0x1*2048;
+		const uint16 CONFIG_CP_OFF = 0x1*2048;
 		/* 0000h to 03FFh code-protected */
-		const uint8 CONFIG_CP_ON = 0x0*2048;
+		const uint16 CONFIG_CP_ON = 0x0*2048;
 
 /********************
  * Special function registers
