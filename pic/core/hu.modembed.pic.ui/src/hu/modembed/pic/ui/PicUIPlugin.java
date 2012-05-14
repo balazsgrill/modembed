@@ -1,5 +1,10 @@
 package hu.modembed.pic.ui;
 
+import java.net.URL;
+import java.util.Enumeration;
+import java.util.HashMap;
+import java.util.Map;
+
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
@@ -29,6 +34,31 @@ public class PicUIPlugin extends AbstractUIPlugin {
 			if (Character.isJavaIdentifierPart(c)) q += c;
 		}
 		return q;
+	}
+	
+	private static Map<String, URL> piclibs = null;
+	
+	public static String getNameOfURL(URL url){
+		String s = url.getPath();
+		if (s.contains("/")){
+			s = s.substring(s.lastIndexOf('/')+1);
+		}
+		s = s.substring(0, s.length()-2);
+		return s;
+	}
+	
+	public static Map<String, URL> getAvailablePICs(){
+		if (piclibs != null) return piclibs;
+		Map<String, URL> urls = new HashMap<String, URL>();
+		Enumeration<URL> es = getDefault().getBundle().findEntries("lib", "*.e", true);
+		
+		while(es.hasMoreElements()){
+			URL url = es.nextElement();
+			urls.put(getNameOfURL(url), url);
+		}
+		
+		piclibs = urls;
+		return urls;
 	}
 	
 	/*
