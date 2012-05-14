@@ -2,20 +2,6 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension
-         point="org.eclipse.ui.popupMenus">
-      <objectContribution
-            adaptable="false"
-            id="hu.modembed.pic.ui.generateDesc"
-            nameFilter="*.dev"
-            objectClass="org.eclipse.core.resources.IFile">
-         <action
-               class="hu.modembed.pic.ui.GeneratePicDesc"
-               id="hu.modembed.pic.ui.GeneratePicDesc"
-               label="Generate PIC description">
-         </action>
-      </objectContribution>
-   </extension>
-   <extension
          point="org.eclipse.ui.importWizards">
       <wizard
             category="hu.modembed.ui.category"
