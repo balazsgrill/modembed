@@ -3,17 +3,18 @@
  * 
  * Architecture: 16Exxx
  */
-library microchip.PIC16LF1519{
+library microchip.PIC16LF1519;
 
 	use e.platform;
 	use microchip.pic16.enchanced;
+	use microchip.pic16;
 
 /*************************
  * Configuration
  ************************/
  
 
-	const codeaddr configStartAddress = 0x8007
+	const codeaddr configStartAddress = 0x8007;
 	/*
 	 * Field: FOSC
 	 * Oscillator Selection
@@ -715,4 +716,4 @@ reg uint8 TOSL : 0xfee;
  * Top of Stack High byte
  */
 reg uint8 TOSH : 0xfef; 
-}
+

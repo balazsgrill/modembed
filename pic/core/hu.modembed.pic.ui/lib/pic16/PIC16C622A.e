@@ -3,7 +3,7 @@
  * 
  * Architecture: 16xxxx
  */
-library microchip.PIC16C622A{
+library microchip.PIC16C622A;
 
 	use e.platform;
 	use microchip.pic16;
@@ -13,7 +13,7 @@ library microchip.PIC16C622A{
  ************************/
  
 
-	const codeaddr configStartAddress = 0x2007
+	const codeaddr configStartAddress = 0x2007;
 	/*
 	 * Field: FOSC
 	 * Oscillator selection bits
@@ -169,4 +169,4 @@ reg uint8 PCON : 0x8e;
  * 
  */
 reg uint8 VRCON : 0x9f; 
-}
+

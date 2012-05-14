@@ -3,7 +3,7 @@
  * 
  * Architecture: 16xxxx
  */
-library microchip.MCP25025{
+library microchip.MCP25025;
 
 	use e.platform;
 	use microchip.pic16;
@@ -13,7 +13,7 @@ library microchip.MCP25025{
  ************************/
  
 
-	const codeaddr configStartAddress = 0x2007
+	const codeaddr configStartAddress = 0x2007;
 	/*
 	 * Field: OSC
 	 * Oscillator
@@ -39,4 +39,4 @@ library microchip.MCP25025{
  * Special function registers
  ********************/
 
-}
+

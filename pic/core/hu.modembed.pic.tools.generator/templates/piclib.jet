@@ -7,12 +7,12 @@ class="PICLibraryTemplate" %>
  * <%=pic.getAttribute("edc:desc")%>
  * Architecture: <%=arch%>
  */
-library microchip.<%=pic.getAttribute("edc:name")%>{
+library microchip.<%=pic.getAttribute("edc:name")%>;
 
 	use e.platform;
 <%	if(arch.startsWith("16E")){ %>
 	use microchip.pic16.enchanced;
-<% 	}else%>
+<% 	}%>
 <%	if(arch.startsWith("16")){ %>
 	use microchip.pic16;
 <% 	}else{}%>
@@ -26,7 +26,7 @@ library microchip.<%=pic.getAttribute("edc:name")%>{
 	Element config  = (Element)pic.getElementsByTagName("edc:ConfigFuseSector").item(0);
 %>
 
-	const codeaddr configStartAddress = <%=config.getAttribute("edc:beginaddr")%>
+	const codeaddr configStartAddress = <%=config.getAttribute("edc:beginaddr")%>;
 <%
 	NodeList DCRDefs = config.getElementsByTagName("edc:DCRDef");
 	for(int i=0;i<DCRDefs.getLength();i++){
@@ -118,4 +118,4 @@ reg <%=type%> <%=item.getAttribute("edc:cname")%> : 0x<%=Integer.toHexString(beg
 		}
 	}
 %>
-}
+

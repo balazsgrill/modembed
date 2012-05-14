@@ -3,7 +3,7 @@
  * 
  * Architecture: 16xxxx
  */
-library microchip.PIC12HV752{
+library microchip.PIC12HV752;
 
 	use e.platform;
 	use microchip.pic16;
@@ -13,7 +13,7 @@ library microchip.PIC12HV752{
  ************************/
  
 
-	const codeaddr configStartAddress = 0x2007
+	const codeaddr configStartAddress = 0x2007;
 	/*
 	 * Field: FOSC0
 	 * 
@@ -445,4 +445,4 @@ reg uint8 COG1CON1 : 0x196;
  * 
  */
 reg uint8 COG1ASD : 0x197; 
-}
+

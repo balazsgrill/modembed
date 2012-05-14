@@ -3,7 +3,7 @@
  * 
  * Architecture: 16xxxx
  */
-library microchip.PIC10F320{
+library microchip.PIC10F320;
 
 	use e.platform;
 	use microchip.pic16;
@@ -13,7 +13,7 @@ library microchip.PIC10F320{
  ************************/
  
 
-	const codeaddr configStartAddress = 0x2007
+	const codeaddr configStartAddress = 0x2007;
 	/*
 	 * Field: FOSC
 	 * Oscillator Selection bits
@@ -323,4 +323,4 @@ reg uint8 VREGCON : 0x23;
  * 
  */
 reg uint8 BORCON : 0x24; 
-}
+

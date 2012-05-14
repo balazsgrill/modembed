@@ -3,7 +3,7 @@
  * 
  * Architecture: 16xxxx
  */
-library microchip.PIC16LF727{
+library microchip.PIC16LF727;
 
 	use e.platform;
 	use microchip.pic16;
@@ -13,7 +13,7 @@ library microchip.PIC16LF727{
  ************************/
  
 
-	const codeaddr configStartAddress = 0x2007
+	const codeaddr configStartAddress = 0x2007;
 	/*
 	 * Field: FOSC
 	 * Oscillator Selection bits
@@ -499,4 +499,4 @@ reg uint8 ANSELE : 0x189;
  * 
  */
 reg uint8 PMCON1 : 0x18c; 
-}
+

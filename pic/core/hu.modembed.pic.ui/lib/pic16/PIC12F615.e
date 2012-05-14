@@ -3,7 +3,7 @@
  * 
  * Architecture: 16xxxx
  */
-library microchip.PIC12F615{
+library microchip.PIC12F615;
 
 	use e.platform;
 	use microchip.pic16;
@@ -13,7 +13,7 @@ library microchip.PIC12F615{
  ************************/
  
 
-	const codeaddr configStartAddress = 0x2007
+	const codeaddr configStartAddress = 0x2007;
 	/*
 	 * Field: FOSC
 	 * Oscillator Selection bits
@@ -289,4 +289,4 @@ reg uint8 ADRESL : 0x9e;
  * 
  */
 reg uint8 ANSEL : 0x9f; 
-}
+

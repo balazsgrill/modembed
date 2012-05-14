@@ -3,7 +3,7 @@
  * 
  * Architecture: 16xxxx
  */
-library microchip.PIC16HV785{
+library microchip.PIC16HV785;
 
 	use e.platform;
 	use microchip.pic16;
@@ -13,7 +13,7 @@ library microchip.PIC16HV785{
  ************************/
  
 
-	const codeaddr configStartAddress = 0x2007
+	const codeaddr configStartAddress = 0x2007;
 	/*
 	 * Field: FOSC
 	 * Oscillator Selection bits
@@ -413,4 +413,4 @@ reg uint8 OPA1CON : 0x11c;
  * 
  */
 reg uint8 OPA2CON : 0x11d; 
-}
+

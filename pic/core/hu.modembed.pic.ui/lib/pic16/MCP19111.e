@@ -3,7 +3,7 @@
  * 
  * Architecture: 16xxxx
  */
-library microchip.MCP19111{
+library microchip.MCP19111;
 
 	use e.platform;
 	use microchip.pic16;
@@ -13,7 +13,7 @@ library microchip.MCP19111{
  ************************/
  
 
-	const codeaddr configStartAddress = 0x2007
+	const codeaddr configStartAddress = 0x2007;
 	/*
 	 * Field: WDTE
 	 * Watchdog Timer Enable bit
@@ -569,4 +569,4 @@ reg uint8 ZROCAL : 0x19d;
  * 
  */
 reg uint8 ATSTCON : 0x19f; 
-}
+
