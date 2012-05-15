@@ -26,8 +26,8 @@ import java.util.List;
  */
 public class InstructionWordInstance{
 	
-	public static int getItemValue(int value, int shift, int start, int size){
-		int v = value;
+	public static long getItemValue(long value, int shift, int start, int size){
+		long v = value;
 		v = v>>shift;
 		v = v%(1<<size);
 		v = v<<start;
@@ -36,7 +36,7 @@ public class InstructionWordInstance{
 	
 	private final List<Reference> labelRefs = new ArrayList<Reference>();
 	
-	private int value;
+	private long value;
 	private int size;
 	
 	public InstructionWordInstance(InstructionWord word, ISymbolManager sm) throws ECompilerException {
@@ -50,7 +50,7 @@ public class InstructionWordInstance{
 			
 			int size = -1;
 			int shift = -1;
-			int v = 0;
+			long v = 0;
 			
 			if (ws instanceof LiteralValue){
 				size = ((LiteralValue) ws).getSize();
@@ -95,7 +95,7 @@ public class InstructionWordInstance{
 		return size;
 	}
 	
-	public int getValue(){
+	public long getValue(){
 		return value;
 	}
 	

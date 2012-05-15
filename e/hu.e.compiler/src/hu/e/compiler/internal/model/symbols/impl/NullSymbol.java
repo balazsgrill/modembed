@@ -45,7 +45,7 @@ public class NullSymbol implements ILiteralSymbol {
 	}
 
 	@Override
-	public int getValue() throws ECompilerException {
+	public long getValue() throws ECompilerException {
 		throw new ECompilerException(null, "Null symbol");
 	}
 

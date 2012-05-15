@@ -23,11 +23,11 @@ import java.util.List;
  */
 public class LiteralSymbol implements ILiteralSymbol {
 
-	private final int value;
+	private final long value;
 	
 	private final TypeDef td;
 	
-	public LiteralSymbol(TypeDef td, int value) {
+	public LiteralSymbol(TypeDef td, long value) {
 		if (td == null){
 			DataTypeDef dtd = ESyntaxFactory.eINSTANCE.createDataTypeDef();
 			int bits = 0;
@@ -49,7 +49,7 @@ public class LiteralSymbol implements ILiteralSymbol {
 	 * @see hu.e.compiler.internal.model.ISymbol#getValue()
 	 */
 	@Override
-	public int getValue() {
+	public long getValue() {
 		return value;
 	}
 

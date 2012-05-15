@@ -11,6 +11,6 @@ import hu.e.compiler.ECompilerException;
  */
 public interface ILiteralSymbol extends ISymbol{
 
-	public int getValue() throws ECompilerException;
+	public long getValue() throws ECompilerException;
 	
 }

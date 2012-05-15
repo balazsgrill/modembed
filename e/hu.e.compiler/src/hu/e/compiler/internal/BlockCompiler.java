@@ -111,7 +111,7 @@ public class BlockCompiler {
 
 					if (symbol.isLiteral()){
 						//Literal condition, decide in compile time
-						int v = ((ILiteralSymbol)symbol).getValue();
+						long v = ((ILiteralSymbol)symbol).getValue();
 						OperationBlock ifblock = (v==0) ? ((XIfExpression) step).getElse() : ((XIfExpression) step).getThen();
 						if (ifblock != null){
 							BlockCompiler subBlock = new BlockCompiler(ifblock);

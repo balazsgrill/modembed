@@ -211,7 +211,7 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 		for(XExpression index : x.getIndex()){
 			ISymbol i = resolve(index);
 			if (i.isLiteral()){
-				a = a.getElement(this, ((ILiteralSymbol)i).getValue());
+				a = a.getElement(this, (int)((ILiteralSymbol)i).getValue());
 			}else{
 				throw new ECompilerException(index, "TODO: Only compile-time indexing is supported for now");
 			}
@@ -274,7 +274,7 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 		
 		if (td instanceof ArrayTypeDef){
 			ArrayTypeDef atd = (ArrayTypeDef)td;
-			int length = ((ILiteralSymbol)resolve(atd.getSize())).getValue();
+			int length = (int)((ILiteralSymbol)resolve(atd.getSize())).getValue();
 			if (length != symbols.size()) throw new ECompilerException(literalStruct, "Invalid number of elements!");
 			return new ArrayLiteralSymbol(symbols.toArray(new ISymbol[symbols.size()]), td);
 		}
