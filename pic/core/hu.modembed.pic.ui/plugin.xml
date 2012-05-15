@@ -32,6 +32,10 @@
                path="/"
                resource="code/pic16/pic16.platform.e">
          </resource>
+         <resource
+               path="/"
+               resource="code/pic16/pic16.bankselect.e">
+         </resource>
       </project>
    </extension>
 

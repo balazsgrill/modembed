@@ -52,10 +52,10 @@ public final class IncludedProject {
 			String resource = c.getAttribute("resource");
 			String path = c.getAttribute("path");
 			try {
-				URL url = FileLocator.toFileURL(new URL(resource));
+				URL url = FileLocator.toFileURL(bundle.getEntry(resource));
 				resources.put(url, path);
 			} catch (Exception e) {
-				MODembedCore.getDefault().getLog().log(new Status(IStatus.ERROR, c.getContributor().getName(), "Could not resolve Resource "+resource));
+				MODembedCore.getDefault().getLog().log(new Status(IStatus.ERROR, c.getContributor().getName(), "Could not resolve Resource "+resource,e));
 			}
 		}
 	}

@@ -76,15 +76,14 @@ public class CreateProjectInWorkspaceTask {
 				dependencies[i] = p;
 			}
 			pd.setReferencedProjects(dependencies);
+			pro.setDescription(pd, new NullProgressMonitor());
 			
 			/*
 			 * Add files
 			 */
 			for(URL url : resources.keySet()){
 				String path = resources.get(url);
-				
-				IFolder folder = pro.getFolder(new Path(path));
-				ensureFolder(folder);
+				IContainer folder = getContainer(pro, path);
 				
 				String file = url.getPath();
 				int i = file.lastIndexOf('/');
@@ -92,7 +91,7 @@ public class CreateProjectInWorkspaceTask {
 					file = file.substring(i+1);
 				}
 				
-				IFile f = folder.getFile(file);
+				IFile f = folder.getFile(new Path(file));
 				try {
 					f.create(url.openStream(), true, new SubProgressMonitor(monitor, 1));
 				} catch (IOException e) {
@@ -105,13 +104,30 @@ public class CreateProjectInWorkspaceTask {
 		monitor.done();
 	}
 	
-	private void ensureFolder(IFolder folder) throws CoreException{
-		if (folder.exists()) return;
-		IContainer parent = folder.getParent();
-		if (parent instanceof IFolder){
-			ensureFolder((IFolder)parent);
-			folder.create(true, true, new NullProgressMonitor());
+	private IContainer getContainer(IContainer cont, String folderpath) throws CoreException{
+		String path = folderpath;
+		if (path.startsWith("/")) path = path.substring(1);
+		
+		if (path.isEmpty()) return cont;
+		
+		int i = folderpath.indexOf('/');
+		String next = folderpath;
+		if (i != -1){
+			next = next.substring(0,i);
 		}
+		String nextpath = folderpath.substring(i+1);
+		
+		IFolder folder = null;
+		if (cont instanceof IProject){
+			folder = ((IProject) cont).getFolder(next);
+		}
+		if (cont instanceof IFolder){
+			folder = ((IFolder) cont).getFolder(next);
+		}
+		
+		if (!folder.exists()) folder.create(true, true, new NullProgressMonitor());
+		
+		return getContainer(folder, nextpath);
 	}
 	
 }
