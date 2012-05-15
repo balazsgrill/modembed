@@ -6,6 +6,7 @@
    <extension
          point="hu.modembed.ui.includedCode">
       <project
+            icon="icons/e.core.png"
             id="e.core"
             name="Core platform">
          <resource
