@@ -15,7 +15,9 @@ import java.util.Map;
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
+import org.osgi.framework.Bundle;
 
 /**
  * @author balazs.grill
@@ -31,9 +33,18 @@ public final class IncludedProject {
 	
 	private final Map<URL, String> resources = new LinkedHashMap<URL, String>();
 	
+	private final URL icon;
+	
 	protected IncludedProject(IConfigurationElement ce) {
 		ID = ce.getAttribute("id");
 		name = ce.getAttribute("name");
+		String icon = ce.getAttribute("icon");
+		Bundle bundle = Platform.getBundle(ce.getContributor().getName());
+		if (bundle != null){
+			this.icon = bundle.getEntry(icon);
+		}else{
+			this.icon = null;
+		}
 		for(IConfigurationElement c : ce.getChildren("dependency")){
 			deps.add(c.getAttribute("project"));
 		}
@@ -47,6 +58,10 @@ public final class IncludedProject {
 				MODembedCore.getDefault().getLog().log(new Status(IStatus.ERROR, c.getContributor().getName(), "Could not resolve Resource "+resource));
 			}
 		}
+	}
+	
+	public URL getIcon() {
+		return icon;
 	}
 	
 	@Override

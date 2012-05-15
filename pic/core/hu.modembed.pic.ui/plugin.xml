@@ -6,6 +6,7 @@
       <wizard
             category="hu.modembed.ui.category"
             class="hu.modembed.pic.ui.wizard.ImportPICLibWizard"
+            icon="icons/microchip.png"
             id="hu.modembed.pic.ui.importLib"
             name="Import PIC library">
       </wizard>

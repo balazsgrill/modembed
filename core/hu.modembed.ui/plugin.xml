@@ -120,6 +120,7 @@
       <wizard
             category="hu.modembed.ui.category"
             class="hu.modembed.ui.wizards.included.ImportIncludedProjectWizard"
+            icon="icons/e.core.png"
             id="hu.modembed.ui.wizard.import.included"
             name="Import common code Project">
       </wizard>
