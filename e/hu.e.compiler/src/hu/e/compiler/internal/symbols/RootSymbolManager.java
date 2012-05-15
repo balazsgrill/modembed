@@ -49,7 +49,7 @@ public class RootSymbolManager extends AbstractSymbolManager {
 
 	@Override
 	public OperationFinder getOpFinder() {
-		return getCodePlatform().getOperationFinder();
+		return null;
 	}
 	
 

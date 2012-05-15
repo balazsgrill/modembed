@@ -4,6 +4,8 @@
 package hu.e.compiler.internal.linking;
 
 import hu.e.parser.eSyntax.Library;
+import hu.e.parser.eSyntax.RefTypeDef;
+import hu.e.parser.eSyntax.TypeDef;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -41,6 +43,13 @@ public class CodePlatform {
 			opfinder = new OperationFinder(linker, libs);
 		}
 		return opfinder;
+	}
+	
+	public static TypeDef resolveType(TypeDef td){
+		if (td instanceof RefTypeDef){
+			return resolveType(((RefTypeDef) td).getType().getDef());
+		}
+		return td;
 	}
 	
 }

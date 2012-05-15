@@ -4,6 +4,7 @@
 package hu.e.compiler.internal.model.symbols.impl;
 
 import hu.e.compiler.ECompilerException;
+import hu.e.compiler.internal.linking.CodePlatform;
 import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.compiler.internal.model.OPERATION;
 import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
@@ -14,6 +15,7 @@ import hu.e.compiler.list.ListFactory;
 import hu.e.compiler.list.MemoryAssignment;
 import hu.e.compiler.list.ProgramStep;
 import hu.e.compiler.list.SequenceStep;
+import hu.e.parser.eSyntax.DataTypeDef;
 import hu.e.parser.eSyntax.OperationRole;
 import hu.e.parser.eSyntax.StructTypeDefMember;
 import hu.e.parser.eSyntax.TypeDef;
@@ -216,9 +218,30 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
 		step.getVariables().addAll(memassignments);
 		return Arrays.asList((ProgramStep)step);
 	}
-
+	
+	private TypeDef getLiteralType() throws ECompilerException{
+		if (b == null) return a.getType();
+		
+		int bits = 0;
+		
+		TypeDef td = CodePlatform.resolveType(a.getType());
+		if (td instanceof DataTypeDef){
+			bits = ((DataTypeDef) td).getBits();
+		}
+		
+		TypeDef btd = CodePlatform.resolveType(b.getType());
+		if (btd instanceof DataTypeDef){
+			if (((DataTypeDef) btd).getBits() > bits) return btd;
+		}
+		
+		return a.getType();
+	}
+	
 	@Override
 	public TypeDef getType() throws ECompilerException {
+		if (isLiteral()){
+			return getLiteralType();
+		}
 		switch(op){
 		case ADD:
 		case AND:

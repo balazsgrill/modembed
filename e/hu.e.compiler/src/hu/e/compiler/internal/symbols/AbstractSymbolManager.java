@@ -333,13 +333,15 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 	@Override
 	public TypeDef getResultType(OperationRole role, ISymbol... symbols) throws ECompilerException {
 		OperationFinder opfinder = getOpFinder();
-		Operation op = opfinder.getOperation(role, symbols);
-		if (op != null){
-			if (op.getReturn() != null){
-				return resolve(op.getReturn()).getType();
-			}
-			if (op.getReturnvar() != null){
-				return op.getReturnvar().getType();
+		if (opfinder != null){
+			Operation op = opfinder.getOperation(role, symbols);
+			if (op != null){
+				if (op.getReturn() != null){
+					return resolve(op.getReturn()).getType();
+				}
+				if (op.getReturnvar() != null){
+					return op.getReturnvar().getType();
+				}
 			}
 		}
 		return null;

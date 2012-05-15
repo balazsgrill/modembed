@@ -9,6 +9,7 @@ import hexfile.HexFile;
 import hexfile.HexfileFactory;
 import hu.e.compiler.ECompiler;
 import hu.e.compiler.ECompilerException;
+import hu.e.compiler.internal.linking.CodePlatform;
 import hu.e.compiler.internal.linking.ProgramListLinker;
 import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
@@ -64,10 +65,10 @@ public class HexFileCompiler {
 					byte[] data = new byte[0];
 					for(XExpression x : c.getData()){
 						ILiteralSymbol s = (ILiteralSymbol)sm.resolve(x);
-						TypeDef td = s.getType();
+						TypeDef td = CodePlatform.resolveType(s.getType());
 						if (td instanceof DataTypeDef){
 							int bits = ((DataTypeDef) td).getBits();
-							int bytes = (bits/2) + ((bits%8==0)?0:1) ;
+							int bytes = (bits/8) + ((bits%8==0)?0:1) ;
 							int v = s.getValue();
 							for (int i=0;i<bytes;i++){
 								int b = v%256;
