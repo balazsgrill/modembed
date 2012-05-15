@@ -13,6 +13,7 @@
    <extension
          point="hu.modembed.ui.includedCode">
       <project
+            icon="icons/microchip.png"
             id="microchip.pic16"
             name="PIC16 midrange architecture code">
          <dependency
