@@ -55,7 +55,7 @@ public class OperationCallCompiler {
 				if (p.getDefault() == null || "".equals(p.getDefault())){
 					before.add(CompilationErrorEntry.error(call, "Invalid number of parameters for "+call.getOperation().getName()));
 				}
-				oc.addParameter(pvar, new LiteralSymbol(ECompiler.convertLiteral(p.getDefault())));
+				oc.addParameter(pvar, new LiteralSymbol(null, ECompiler.convertLiteral(p.getDefault())));
 			}else{
 				
 				if (ocp instanceof XExpression){

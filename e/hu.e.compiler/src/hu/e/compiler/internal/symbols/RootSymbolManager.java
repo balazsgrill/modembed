@@ -6,7 +6,9 @@ package hu.e.compiler.internal.symbols;
 import hu.e.compiler.ECompilerException;
 import hu.e.compiler.internal.linking.OperationFinder;
 import hu.e.compiler.internal.model.IVariableManager;
+import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
 import hu.e.compiler.internal.model.symbols.ISymbol;
+import hu.e.compiler.internal.model.symbols.impl.LiteralSymbol;
 import hu.e.compiler.internal.model.symbols.impl.VariableSymbol;
 import hu.e.parser.eSyntax.ConstantVariable;
 import hu.e.parser.eSyntax.RegisterVariable;
@@ -28,7 +30,8 @@ public class RootSymbolManager extends AbstractSymbolManager {
 	@Override
 	public ISymbol getSymbol(Variable ref) throws ECompilerException {
 		if (ref instanceof ConstantVariable){
-			return resolve(((ConstantVariable) ref).getValue());
+			ILiteralSymbol lsymbol = (ILiteralSymbol)resolve(((ConstantVariable) ref).getValue());
+			return new LiteralSymbol(ref.getType(), lsymbol.getValue());
 		}
 		if (ref instanceof RegisterVariable){
 			return VariableSymbol.create(resolve(((RegisterVariable) ref).getAddr()), ref.getType());

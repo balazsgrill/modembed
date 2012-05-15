@@ -16,13 +16,16 @@ import hu.e.compiler.internal.symbols.RootSymbolManager;
 import hu.e.compiler.list.ProgramList;
 import hu.e.parser.eSyntax.BinarySection;
 import hu.e.parser.eSyntax.ConstantBinarySection;
+import hu.e.parser.eSyntax.DataTypeDef;
 import hu.e.parser.eSyntax.FunctionBinarySection;
 import hu.e.parser.eSyntax.FunctionMemory;
 import hu.e.parser.eSyntax.LinkedBinary;
 import hu.e.parser.eSyntax.ReferenceBinarySection;
+import hu.e.parser.eSyntax.TypeDef;
 import hu.e.parser.eSyntax.XExpression;
 import hu.modembed.hexfile.persistence.HexFileResource;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -58,12 +61,22 @@ public class HexFileCompiler {
 					Entry entry = HexfileFactory.eINSTANCE.createEntry();
 					entry.setAddress(start);
 					ConstantBinarySection c = (ConstantBinarySection)bs;
-					byte[] data = new byte[c.getData().size()];
-					int i = 0;
+					byte[] data = new byte[0];
 					for(XExpression x : c.getData()){
 						ILiteralSymbol s = (ILiteralSymbol)sm.resolve(x);
-						data[i] = HexFileResource.intToByte(s.getValue());
-						i++;
+						TypeDef td = s.getType();
+						if (td instanceof DataTypeDef){
+							int bits = ((DataTypeDef) td).getBits();
+							int bytes = (bits/2) + ((bits%8==0)?0:1) ;
+							int v = s.getValue();
+							for (int i=0;i<bytes;i++){
+								int b = v%256;
+								v = v/256;
+								data = Arrays.copyOf(data, data.length+1);
+								data[data.length-1] = HexFileResource.intToByte(b);
+							}
+						}
+						
 					}
 					entry.setData(data);
 					result.getEntries().add(entry);

@@ -93,7 +93,7 @@ public class VariableSymbol implements IVariableSymbol{
 			return null;
 		int asize = memman.getSize(sm, atd.getDef());
 		TypeDef t = atd.getDef();
-		return VariableSymbol.create(new OperationSymbol(null, getAddressSymbol(), OPERATION.ADD, new LiteralSymbol(index*asize), sm), t);
+		return VariableSymbol.create(new OperationSymbol(null, getAddressSymbol(), OPERATION.ADD, new LiteralSymbol(null, index*asize), sm), t);
 	}
 	
 	@Override
@@ -107,7 +107,7 @@ public class VariableSymbol implements IVariableSymbol{
 				for(Variable m : std.getMembers()){
 					if (member.equals(m)){
 						TypeDef t = member.getType();
-						return VariableSymbol.create(new OperationSymbol(null, getAddressSymbol(), OPERATION.ADD, new LiteralSymbol(size), sm), t);
+						return VariableSymbol.create(new OperationSymbol(null, getAddressSymbol(), OPERATION.ADD, new LiteralSymbol(null, size), sm), t);
 					}else{
 						size += memman.getSize(sm, m.getType());
 					}

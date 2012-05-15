@@ -232,7 +232,7 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 			return resolveVarRef((VariableReference)x);
 		}
 		if (x instanceof XExpressionLiteral){
-			return new LiteralSymbol(ECompiler.convertLiteral(((XExpressionLiteral) x).getValue()));
+			return new LiteralSymbol(null, ECompiler.convertLiteral(((XExpressionLiteral) x).getValue()));
 		}
 		if (x instanceof XParenthesizedExpression){
 			return resolve(((XParenthesizedExpression) x).getA());
@@ -241,7 +241,7 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 		if (x instanceof XIsLiteralExpression){
 			ISymbol s = getSymbol(((XIsLiteralExpression) x).getRef().getVar());
 			if (s == null) throw new ECompilerException(x, "Symbol cannot be resolved!");
-			return new LiteralSymbol(s.isLiteral()? 1 : 0);
+			return new LiteralSymbol(null, s.isLiteral()? 1 : 0);
 		}
 		
 		if (x instanceof OperationCall){
@@ -259,7 +259,7 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 		if (x instanceof XSizeOfExpression){
 			TypeDef t = ((XSizeOfExpression) x).getType();
 			int size = getVariableManager().getTypeResolver().getSize(this, t);
-			return new LiteralSymbol(size);
+			return new LiteralSymbol(null, size);
 		}
 		
 		throw new ECompilerException(x, "Invalid expression");

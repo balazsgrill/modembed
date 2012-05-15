@@ -25,7 +25,23 @@ public class LiteralSymbol implements ILiteralSymbol {
 
 	private final int value;
 	
-	public LiteralSymbol(int value) {
+	private final TypeDef td;
+	
+	public LiteralSymbol(TypeDef td, int value) {
+		if (td == null){
+			DataTypeDef dtd = ESyntaxFactory.eINSTANCE.createDataTypeDef();
+			int bits = 0;
+			long v = 1;
+			while(v <= Math.abs(value)){
+				bits++;
+				v = v<<1;
+			}
+			dtd.setBits(bits);
+			dtd.setKind((value >= 0) ? PrimitiveKind.UNSIGNED : PrimitiveKind.SIGNED);
+			this.td = dtd;
+		}else{
+			this.td = td;
+		}
 		this.value = value;
 	}
 	
@@ -49,16 +65,7 @@ public class LiteralSymbol implements ILiteralSymbol {
 
 	@Override
 	public TypeDef getType() {
-		DataTypeDef dtd = ESyntaxFactory.eINSTANCE.createDataTypeDef();
-		int bits = 0;
-		long v = 1;
-		while(v <= Math.abs(value)){
-			bits++;
-			v = v<<1;
-		}
-		dtd.setBits(bits);
-		dtd.setKind((value >= 0) ? PrimitiveKind.UNSIGNED : PrimitiveKind.SIGNED);
-		return dtd;
+		return td;
 	}
 
 	@Override
