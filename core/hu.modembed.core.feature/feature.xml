@@ -2,7 +2,7 @@
 <feature
       id="hu.modembed.core.feature"
       label="MODembed Core"
-      version="0.6.0"
+      version="0.6.9"
       plugin="hu.modembed.ui">
 
    <description url="http://gbalage.github.com/modembed">
@@ -224,62 +224,62 @@ litigation.
          id="hu.modembed"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="0.6.9"
          unpack="false"/>
 
    <plugin
          id="hu.modembed.help"
          download-size="0"
          install-size="0"
-         version="0.0.0"/>
+         version="0.6.9"/>
 
    <plugin
          id="hu.modembed.hexfile.model"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="0.6.9"
          unpack="false"/>
 
    <plugin
          id="hu.modembed.hexfile.persistence"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="0.6.9"
          unpack="false"/>
 
    <plugin
          id="hu.modembed.model"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="0.6.9"
          unpack="false"/>
 
    <plugin
          id="hu.modembed.model.edit"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="0.6.9"
          unpack="false"/>
 
    <plugin
          id="hu.modembed.model.editor"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="0.6.9"
          unpack="false"/>
 
    <plugin
          id="hu.modembed.ui"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="0.6.9"
          unpack="false"/>
 
    <plugin
          id="hu.modembed.ui.launch"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="0.6.9"
          unpack="false"/>
 
 </feature>

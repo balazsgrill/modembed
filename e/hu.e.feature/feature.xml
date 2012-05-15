@@ -2,7 +2,7 @@
 <feature
       id="hu.e.feature"
       label="Language e parser and compiler"
-      version="0.2.0"
+      version="0.3.0"
       plugin="hu.e.compiler">
 
    <description url="http://gbalage.github.com/modembed">
@@ -97,35 +97,35 @@ This Agreement is governed by the laws of the State of New York and the intellec
          id="hu.e.compiler"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="0.3.0"
          unpack="false"/>
 
    <plugin
          id="hu.e.parser"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="0.3.0"
          unpack="false"/>
 
    <plugin
          id="hu.e.parser.ui"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="0.3.0"
          unpack="false"/>
 
    <plugin
          id="hu.e.compiler.list.edit"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="0.3.0"
          unpack="false"/>
 
    <plugin
          id="hu.e.compiler.list.editor"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="0.3.0"
          unpack="false"/>
 
 </feature>
