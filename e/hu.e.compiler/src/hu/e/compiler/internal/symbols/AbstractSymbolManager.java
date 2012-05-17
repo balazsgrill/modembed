@@ -73,12 +73,12 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 	}
 	
 	@Override
-	public ISymbol resolve(XExpression x) throws ECompilerException{
-		return resolve((XExpression6)x);
+	public ISymbol resolve(SequenceStep context, XExpression x) throws ECompilerException{
+		return resolve(context, (XExpression6)x);
 	}
 	
-	private ISymbol resolve(XExpression6 x) throws ECompilerException{
-		ISymbol a = resolve(x.getA());
+	private ISymbol resolve(SequenceStep context, XExpression6 x) throws ECompilerException{
+		ISymbol a = resolve(context, x.getA());
 		
 		for(VariableReference vr : x.getRef()){
 			a = new OperationSymbol(x, getSymbol(vr.getVar()), OPERATION.SET, a, this);
@@ -95,18 +95,18 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 		throw new ECompilerException(x, "Unsupported operator: "+op);
 	}
 	
-	private ISymbol resolve(XExpression5 x) throws ECompilerException{
-		ISymbol a = resolve(x.getA());
+	private ISymbol resolve(SequenceStep context, XExpression5 x) throws ECompilerException{
+		ISymbol a = resolve(context, x.getA());
 		for(int i=0;i<x.getB().size();i++){
-			a = new OperationSymbol(x, a, getOp(x,x.getOp().get(i)), resolve(x.getB().get(i)), this);
+			a = new OperationSymbol(x, a, getOp(x,x.getOp().get(i)), resolve(context, x.getB().get(i)), this);
 		}
 		return a;
 	}
 	
-	private ISymbol resolve(XExpression4 x) throws ECompilerException{
-		ISymbol a = resolve(x.getA());
+	private ISymbol resolve(SequenceStep context, XExpression4 x) throws ECompilerException{
+		ISymbol a = resolve(context, x.getA());
 		for(int i=0;i<x.getB().size();i++){
-			a = new OperationSymbol(x, a, getOp(x,x.getOp().get(i)), resolve(x.getB().get(i)), this);
+			a = new OperationSymbol(x, a, getOp(x,x.getOp().get(i)), resolve(context, x.getB().get(i)), this);
 		}
 		return a;
 	}
@@ -123,10 +123,10 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 		throw new ECompilerException(x, "Unsupported operator: "+op);
 	}
 
-	private ISymbol resolve(XExpression3 x) throws ECompilerException{
-		ISymbol a = resolve(x.getA());
+	private ISymbol resolve(SequenceStep context, XExpression3 x) throws ECompilerException{
+		ISymbol a = resolve(context, x.getA());
 		for(int i=0;i<x.getB().size();i++){
-			a = new OperationSymbol(x, a, getOp(x,x.getOp().get(i)), resolve(x.getB().get(i)), this);
+			a = new OperationSymbol(x, a, getOp(x,x.getOp().get(i)), resolve(context, x.getB().get(i)), this);
 		}
 		return a;
 	}
@@ -139,10 +139,10 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 		throw new ECompilerException(x, "Unsupported operator: "+op);
 	}
 
-	private ISymbol resolve(XExpression2 x) throws ECompilerException{
-		ISymbol a = resolve(x.getA());
+	private ISymbol resolve(SequenceStep context, XExpression2 x) throws ECompilerException{
+		ISymbol a = resolve(context, x.getA());
 		for(int i=0;i<x.getB().size();i++){
-			a = new OperationSymbol(x, a, getOp(x,x.getOp().get(i)), resolve(x.getB().get(i)), this);
+			a = new OperationSymbol(x, a, getOp(x,x.getOp().get(i)), resolve(context, x.getB().get(i)), this);
 		}
 		return a;
 	}
@@ -156,8 +156,8 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 		throw new ECompilerException(x, "Unsupported operator: "+op);
 	}
 
-	private ISymbol resolve(XExpression1 x) throws ECompilerException{
-		ISymbol a = resolve(x.getA());
+	private ISymbol resolve(SequenceStep context, XExpression1 x) throws ECompilerException{
+		ISymbol a = resolve(context, x.getA());
 		for(UNARY_OPERATOR op : x.getOperator()){
 			if (UNARY_OPERATOR.REFERENCE == op){
 				if (a instanceof IVariableSymbol){
@@ -182,8 +182,8 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 		throw new ECompilerException(x, "Unsupported operator: "+op);
 	}
 
-	private ISymbol resolve(XExpression0 x) throws ECompilerException{
-		ISymbol a = resolve(x.getA());
+	private ISymbol resolve(SequenceStep context, XExpression0 x) throws ECompilerException{
+		ISymbol a = resolve(context, x.getA());
 		for(String v : x.getMember()){
 			TypeDef td = a.getType();
 			while(td instanceof RefTypeDef){
@@ -207,10 +207,10 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 		return a;
 	}
 	
-	private ISymbol resolve(XExpressionM1 x) throws ECompilerException{
-		ISymbol a = resolve(x.getA());
+	private ISymbol resolve(SequenceStep context, XExpressionM1 x) throws ECompilerException{
+		ISymbol a = resolve(context, x.getA());
 		for(XExpression index : x.getIndex()){
-			ISymbol i = resolve(index);
+			ISymbol i = resolve(context, index);
 			if (i.isLiteral()){
 				a = a.getElement(this, (int)((ILiteralSymbol)i).getValue());
 			}else{
@@ -228,7 +228,7 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 		return s;
 	}
 	
-	private ISymbol resolve(XPrimaryExpression x) throws ECompilerException{
+	private ISymbol resolve(SequenceStep context, XPrimaryExpression x) throws ECompilerException{
 		if(x instanceof VariableReference){
 			return resolveVarRef((VariableReference)x);
 		}
@@ -236,7 +236,7 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 			return new LiteralSymbol(null, ECompiler.convertLiteral(((XExpressionLiteral) x).getValue()));
 		}
 		if (x instanceof XParenthesizedExpression){
-			return resolve(((XParenthesizedExpression) x).getA());
+			return resolve(context, ((XParenthesizedExpression) x).getA());
 		}
 		
 		if (x instanceof XIsLiteralExpression){
@@ -248,14 +248,14 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 		if (x instanceof OperationCall){
 			OperationCall oc = (OperationCall)x;
 			OperationCallCompiler c = new OperationCallCompiler(platform, oc, this);
-			List<ProgramStep> ps = c.compile();
+			List<ProgramStep> ps = c.compile(context);
 			if (!ps.isEmpty()){
 				return new OperatedSymbol(ps, c.getReturns());
 			}
 			return c.getReturns();
 		}
 		if (x instanceof XStructExpression){
-			return resolveXStruct((XStructExpression)x);
+			return resolveXStruct(context, (XStructExpression)x);
 		}
 		if (x instanceof XSizeOfExpression){
 			TypeDef t = ((XSizeOfExpression) x).getType();
@@ -266,16 +266,16 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 		throw new ECompilerException(x, "Invalid expression");
 	}
 	
-	private ISymbol resolveXStruct(XStructExpression literalStruct) throws ECompilerException{ 
+	private ISymbol resolveXStruct(SequenceStep context, XStructExpression literalStruct) throws ECompilerException{ 
 		TypeDef td = literalStruct.getType().getDef();
 		List<ISymbol> symbols = new ArrayList<ISymbol>(literalStruct.getValues().size());
 		for(XExpression value : literalStruct.getValues()){
-			symbols.add(resolve(value));
+			symbols.add(resolve(context, value));
 		}
 		
 		if (td instanceof ArrayTypeDef){
 			ArrayTypeDef atd = (ArrayTypeDef)td;
-			int length = (int)((ILiteralSymbol)resolve(atd.getSize())).getValue();
+			int length = (int)((ILiteralSymbol)resolve(context, atd.getSize())).getValue();
 			if (length != symbols.size()) throw new ECompilerException(literalStruct, "Invalid number of elements!");
 			return new ArrayLiteralSymbol(symbols.toArray(new ISymbol[symbols.size()]), td);
 		}
@@ -338,7 +338,7 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 			Operation op = opfinder.getOperation(role, symbols);
 			if (op != null){
 				if (op.getReturn() != null){
-					return resolve(op.getReturn()).getType();
+					return resolve(null, op.getReturn()).getType();
 				}
 				if (op.getReturnvar() != null){
 					return op.getReturnvar().getType();

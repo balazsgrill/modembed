@@ -58,13 +58,13 @@ public class HexFileCompiler {
 		for(BinarySection bs : lb.getSections()){
 			if (bs instanceof ConstantBinarySection){
 				try{
-					long start = ((ILiteralSymbol)sm.resolve(bs.getStart())).getValue();
+					long start = ((ILiteralSymbol)sm.resolve(null, bs.getStart())).getValue();
 					Entry entry = HexfileFactory.eINSTANCE.createEntry();
 					entry.setAddress((int)start);
 					ConstantBinarySection c = (ConstantBinarySection)bs;
 					byte[] data = new byte[0];
 					for(XExpression x : c.getData()){
-						ILiteralSymbol s = (ILiteralSymbol)sm.resolve(x);
+						ILiteralSymbol s = (ILiteralSymbol)sm.resolve(null, x);
 						TypeDef td = CodePlatform.resolveType(s.getType());
 						if (td instanceof DataTypeDef){
 							int bits = ((DataTypeDef) td).getBits();
@@ -89,7 +89,7 @@ public class HexFileCompiler {
 			if (bs instanceof FunctionBinarySection){
 				try{
 					FunctionBinarySection functionBs = (FunctionBinarySection)bs;
-					int start = (int)((ILiteralSymbol)sm.resolve(bs.getStart())).getValue();
+					int start = (int)((ILiteralSymbol)sm.resolve(null, bs.getStart())).getValue();
 					Entry entry = HexfileFactory.eINSTANCE.createEntry();
 					entry.setAddress(start);
 					FunctionCompiler fc = new FunctionCompiler(functionBs);
@@ -114,7 +114,7 @@ public class HexFileCompiler {
 			}
 			if (bs instanceof ReferenceBinarySection){
 				try{
-					int start = (int)((ILiteralSymbol)sm.resolve(bs.getStart())).getValue();
+					int start = (int)((ILiteralSymbol)sm.resolve(null, bs.getStart())).getValue();
 					LinkedBinary included = ((ReferenceBinarySection) bs).getInc();
 					HexFileCompiler includedcompiler = new HexFileCompiler(included);
 					HexFile includedhexfile = includedcompiler.create();

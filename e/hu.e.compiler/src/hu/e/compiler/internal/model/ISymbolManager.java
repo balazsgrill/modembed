@@ -21,7 +21,7 @@ public interface ISymbolManager {
 	
 	public IVariableManager getVariableManager();
 	
-	public ISymbol resolve(XExpression expression) throws ECompilerException;
+	public ISymbol resolve(SequenceStep context, XExpression expression) throws ECompilerException;
 	
 	public ISymbol resolveVarRef(VariableReference vr) throws ECompilerException;
 	

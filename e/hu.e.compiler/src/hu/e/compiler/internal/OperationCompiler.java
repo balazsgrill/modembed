@@ -109,7 +109,7 @@ public class OperationCompiler {
 	
 	public ISymbol getReturns(ISymbolManager sm) throws ECompilerException{
 		if (operation.getReturn() != null){
-			return new WrappedSymbolManager(sm).resolve(operation.getReturn());
+			return new WrappedSymbolManager(sm).resolve(null, operation.getReturn());
 		}
 		if (operation.getReturnvar() != null){
 			return sm.getSymbol(operation.getReturnvar());

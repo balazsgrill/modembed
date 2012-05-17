@@ -37,7 +37,7 @@ public class TypeDefinitionResolver {
 		}
 		if (td instanceof ArrayTypeDef){
 			int baseSize = getSize(sm, ((ArrayTypeDef) td).getDef());
-			ILiteralSymbol length = (ILiteralSymbol)sm.resolve(((ArrayTypeDef)td).getSize());
+			ILiteralSymbol length = (ILiteralSymbol)sm.resolve(null, ((ArrayTypeDef)td).getSize());
 			return baseSize*(int)length.getValue();
 		}
 		if (td instanceof StructTypeDef){

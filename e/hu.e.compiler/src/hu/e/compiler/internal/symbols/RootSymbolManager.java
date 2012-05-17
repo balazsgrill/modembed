@@ -30,11 +30,11 @@ public class RootSymbolManager extends AbstractSymbolManager {
 	@Override
 	public ISymbol getSymbol(Variable ref) throws ECompilerException {
 		if (ref instanceof ConstantVariable){
-			ILiteralSymbol lsymbol = (ILiteralSymbol)resolve(((ConstantVariable) ref).getValue());
+			ILiteralSymbol lsymbol = (ILiteralSymbol)resolve(null, ((ConstantVariable) ref).getValue());
 			return new LiteralSymbol(ref.getType(), lsymbol.getValue());
 		}
 		if (ref instanceof RegisterVariable){
-			return VariableSymbol.create(resolve(((RegisterVariable) ref).getAddr()), ref.getType());
+			return VariableSymbol.create(resolve(null, ((RegisterVariable) ref).getAddr()), ref.getType());
 		}
 		return null;
 	}

@@ -99,7 +99,7 @@ public class BlockCompiler {
 			}
 			if (step instanceof XExpression){
 				try {
-					ISymbol s = sm.resolve((XExpression)step);
+					ISymbol s = sm.resolve(result, (XExpression)step);
 					s.addSteps(result);
 				} catch (ECompilerException e) {
 					result.getSteps().add(CompilationErrorEntry.create(e));
@@ -107,7 +107,7 @@ public class BlockCompiler {
 			}
 			if (step instanceof XIfExpression){
 				try{
-					ISymbol symbol = sm.resolve(((XIfExpression) step).getIf());
+					ISymbol symbol = sm.resolve(result, ((XIfExpression) step).getIf());
 					symbol.addSteps(result);
 
 					if (symbol.isLiteral()){

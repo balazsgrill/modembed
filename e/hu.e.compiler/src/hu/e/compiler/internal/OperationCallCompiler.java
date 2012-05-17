@@ -63,7 +63,7 @@ public class OperationCallCompiler {
 				
 				if (ocp instanceof XExpression){
 					try{
-						ISymbol s = sm.resolve((XExpression)ocp);
+						ISymbol s = sm.resolve(callstep, (XExpression)ocp);
 						oc.addParameter(pvar, s);
 						s.addSteps(callstep);
 					}catch(ECompilerException e){
@@ -74,8 +74,8 @@ public class OperationCallCompiler {
 		}
 	}
 	
-	public List<ProgramStep> compile(){
-		callstep.getSteps().add(oc.compile(sm, oc.createResultBuffer(callstep)));
+	public List<ProgramStep> compile(SequenceStep parent){
+		callstep.getSteps().add(oc.compile(sm, oc.createResultBuffer(parent)));
 		return Collections.singletonList((ProgramStep)callstep);
 	}
 	
