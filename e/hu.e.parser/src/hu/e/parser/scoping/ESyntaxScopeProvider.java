@@ -23,9 +23,9 @@ public class ESyntaxScopeProvider extends AbstractDeclarativeScopeProvider {
 		return new ImportedScope(eobject, ref.getEType().getInstanceClass(), delegateGetScope(eobject, ref));
 	}
 	
-	protected IScope pluginScope(EObject eobject, EReference ref){
+	protected IScope projectScope(EObject eobject, EReference ref){
 		IScope scope = delegateGetScope(eobject, ref);
-		scope = new PluginDependencyScope(
+		scope = new ProjectDependencyScope(
 				eobject.eResource().getURI(), eobject.eResource().getResourceSet(), scope);
 		
 		return scope;
@@ -68,20 +68,21 @@ public class ESyntaxScopeProvider extends AbstractDeclarativeScopeProvider {
 	}
 	
 	
+
 	
 	public IScope scope_ReferenceBinarySection_inc(EObject eobject, EReference ref){		
-		return pluginScope(eobject, ref);
+		return projectScope(eobject, ref);
 	}
 	
 	public IScope scope_Library_overrides(EObject eobject, EReference ref){		
-		return pluginScope(eobject, ref);
+		return projectScope(eobject, ref);
 	}
 	
 	public IScope scope_CompilationUnit_use(EObject eobject, EReference ref){		
-		return pluginScope(eobject, ref);
+		return projectScope(eobject, ref);
 	}
 	
 	public IScope scope_FunctionBinarySection_lib(EObject eobject, EReference ref){		
-		return pluginScope(eobject, ref);
+		return projectScope(eobject, ref);
 	}
 }

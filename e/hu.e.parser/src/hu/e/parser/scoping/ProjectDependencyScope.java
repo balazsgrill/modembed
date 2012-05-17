@@ -24,7 +24,7 @@ import org.eclipse.xtext.scoping.impl.AbstractScope;
  * @author balazs.grill
  *
  */
-public class PluginDependencyScope extends AbstractScope {
+public class ProjectDependencyScope extends AbstractScope {
 
 	private final List<IEObjectDescription> descs = new ArrayList<IEObjectDescription>();
 	
@@ -32,7 +32,7 @@ public class PluginDependencyScope extends AbstractScope {
 	 * @param parent
 	 * @param ignoreCase
 	 */
-	public PluginDependencyScope(URI context,ResourceSet resourceset, IScope parent) {
+	public ProjectDependencyScope(URI context,ResourceSet resourceset, IScope parent) {
 		super(parent, false);
 		String projname = context.trimFragment().segment(1);
 		

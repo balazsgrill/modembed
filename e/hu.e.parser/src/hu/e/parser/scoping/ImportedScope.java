@@ -4,6 +4,7 @@
 package hu.e.parser.scoping;
 
 
+import hu.e.parser.eSyntax.AnnotationDefinition;
 import hu.e.parser.eSyntax.CompilationUnit;
 import hu.e.parser.eSyntax.Library;
 import hu.e.parser.eSyntax.LibraryItem;
@@ -11,8 +12,11 @@ import hu.e.parser.eSyntax.Type;
 import hu.e.parser.eSyntax.Variable;
 
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
+import java.util.Set;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.resource.EObjectDescription;
@@ -33,6 +37,9 @@ public class ImportedScope extends AbstractScope {
 			return ((Type) tli).getName();
 		if (tli instanceof Variable)
 			return ((Variable) tli).getName();
+		if (tli instanceof AnnotationDefinition){
+			return ((AnnotationDefinition) tli).getName();
+		}
 		return null;
 	}
 	
@@ -52,17 +59,27 @@ public class ImportedScope extends AbstractScope {
 		super(parent, false);
 		CompilationUnit cu = getUnit(element);
 		if (cu != null){
-			List<Library> uses = Collections.emptyList();
-			uses = cu.getUse();
+			Set<Library> visited = new HashSet<Library>();
+			Queue<Library> uses = new LinkedList<Library>();
+			uses.addAll(cu.getUse());
 			
-			for(Library lib : uses){
-				for(LibraryItem li : lib.getItems()){
-					String name = getName(li);
-					if (name != null && clazz.isInstance(li)){
-						descs.add(EObjectDescription.create(name, li));
+			while(!uses.isEmpty()){
+				Library lib = uses.poll();
+				
+				if (!visited.contains(lib)){
+					visited.add(lib);
+					
+					for(LibraryItem li : lib.getItems()){
+						String name = getName(li);
+						if (name != null && clazz.isInstance(li)){
+							descs.add(EObjectDescription.create(name, li));
+						}
 					}
+					
+					uses.addAll(lib.getOverrides());
 				}
 			}
+			
 		}
 	}
 	
