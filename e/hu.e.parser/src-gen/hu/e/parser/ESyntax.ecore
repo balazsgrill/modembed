@@ -133,7 +133,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="BinaryType">
     <eLiterals name="DEFAULT" literal="default"/>
-    <eLiterals name="HEXFILE" value="1" literal="hexfile"/>
+    <eLiterals name="INTELHEXFILE" value="1" literal="intelHexfile"/>
+    <eLiterals name="SRECHEXFILE" value="2" literal="SRECHexfile"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BinarySection">
     <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//XExpression"
@@ -143,7 +144,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="startAddr" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="memwidth" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pointersize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pointerType" eType="#//TypeDef"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="addressType" eType="#//TypeDef"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mems" upperBound="-1" eType="#//FunctionMemory"

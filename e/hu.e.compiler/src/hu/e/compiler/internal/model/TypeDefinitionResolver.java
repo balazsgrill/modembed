@@ -23,11 +23,11 @@ public class TypeDefinitionResolver {
 
 	private final int memwidth;
 	
-	private final int pointerwidth;
+	private final TypeDef pointerType;
 	
-	public TypeDefinitionResolver(int memwidth, int pointerwidth) {
+	public TypeDefinitionResolver(int memwidth, TypeDef pointerType) {
 		this.memwidth = memwidth;
-		this.pointerwidth = pointerwidth;
+		this.pointerType = pointerType;
 	}
 	
 	public int getSize(ISymbolManager sm, TypeDef td) throws ECompilerException{
@@ -48,7 +48,7 @@ public class TypeDefinitionResolver {
 			return size;
 		}
 		if (td instanceof PointerTypeDef){
-			return pointerwidth;
+			return getSize(sm, pointerType);
 		}
 		if (td instanceof RefTypeDef){
 			return getSize(sm, ((RefTypeDef) td).getType().getDef());

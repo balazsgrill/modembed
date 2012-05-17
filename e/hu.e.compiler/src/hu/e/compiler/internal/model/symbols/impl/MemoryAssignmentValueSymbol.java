@@ -23,12 +23,15 @@ public class MemoryAssignmentValueSymbol implements IReferenceSymbol {
 	
 	private final int offset;
 	
+	private final TypeDef type;
+	
 	/**
 	 * 
 	 */
-	public MemoryAssignmentValueSymbol(MemoryAssignment assignment, int offset) {
+	public MemoryAssignmentValueSymbol(MemoryAssignment assignment, int offset, TypeDef type) {
 		this.assignment = assignment;
 		this.offset = offset;
+		this.type = type;
 	}
 
 	public MemoryAssignment getAssignment() {
@@ -56,7 +59,7 @@ public class MemoryAssignmentValueSymbol implements IReferenceSymbol {
 	 */
 	@Override
 	public TypeDef getType() throws ECompilerException {
-		return null;
+		return type;
 	}
 
 	/* (non-Javadoc)

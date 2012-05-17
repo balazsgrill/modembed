@@ -29,11 +29,8 @@ public class FunctionCompiler {
 	public FunctionCompiler(FunctionBinarySection link) {
 		this.link = link;
 		int memwidth = ECompiler.convertLiteral(link.getMemwidth());
-		int pointersize = ECompiler.convertLiteral(link.getPointersize());
 		
-		pointersize = (pointersize/memwidth) + ((pointersize%memwidth==0) ? 0 : 1);
-		
-		memman = new TypeDefinitionResolver(memwidth,pointersize);
+		memman = new TypeDefinitionResolver(memwidth,link.getPointerType());
 		linker = new ComponentLinker(link);
 	}
 	
@@ -43,7 +40,7 @@ public class FunctionCompiler {
 		root.setName("GLOBAL");
 		pl.setStep(root);
 		pl.setName(link.getName());
-		CodePlatform platform = new CodePlatform(link.getAddressType(), linker, link.getLib());
+		CodePlatform platform = new CodePlatform(link, linker);
 		SymbolManager sm = new SymbolManager(platform,parentsm,memman, root);
 
 //		for(Variable v : linker.getGlobals()){

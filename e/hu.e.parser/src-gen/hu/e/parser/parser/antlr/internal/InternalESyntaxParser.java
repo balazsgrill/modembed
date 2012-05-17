@@ -23,7 +23,7 @@ import java.util.HashMap;
 @SuppressWarnings("all")
 public class InternalESyntaxParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_HEXINT", "RULE_BINARY", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'.'", "'annotation'", "'#'", "'module'", "'extends'", "','", "';'", "'use'", "'ref'", "'config'", "'library'", "'overrides'", "'type'", "'='", "'pointer'", "'of'", "'array'", "'['", "']'", "'bits'", "'struct'", "'{'", "'}'", "'const'", "'reg'", "':'", "'label'", "'<'", "'>'", "'('", "')'", "'returns'", "'operator'", "'binary'", "'at'", "'program'", "'startAddr'", "'memwidth'", "'pointersize'", "'addressType'", "'lib'", "'link'", "'mem'", "'..'", "'data'", "'include'", "'sizeof'", "'->'", "'isliteral'", "'if'", "'else'", "'while'", "'unsigned'", "'signed'", "'real'", "'default'", "'var'", "'SET'", "'ADD'", "'SUBTRACT'", "'AND'", "'OR'", "'XOR'", "'EQUALS'", "'BRANCH'", "'UC_GOTO'", "'NOT'", "'INDIRECTION'", "'CLEAR'", "'INCREMENT'", "'DECREMENT'", "'DIV'", "'MOD'", "'LT'", "'LTE'", "'GT'", "'GTE'", "'hexfile'", "'-'", "'!'", "'&'", "'@'", "'*'", "'/'", "'%'", "'+'", "'=='", "'!='", "'>='", "'<='", "'||'", "'&&'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_HEXINT", "RULE_BINARY", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'.'", "'annotation'", "'#'", "'module'", "'extends'", "','", "';'", "'use'", "'ref'", "'config'", "'library'", "'overrides'", "'type'", "'='", "'pointer'", "'of'", "'array'", "'['", "']'", "'bits'", "'struct'", "'{'", "'}'", "'const'", "'reg'", "':'", "'label'", "'<'", "'>'", "'('", "')'", "'returns'", "'operator'", "'binary'", "'at'", "'program'", "'startAddr'", "'memwidth'", "'pointerType'", "'addressType'", "'lib'", "'link'", "'mem'", "'..'", "'data'", "'include'", "'sizeof'", "'->'", "'isliteral'", "'if'", "'else'", "'while'", "'unsigned'", "'signed'", "'real'", "'default'", "'var'", "'SET'", "'ADD'", "'SUBTRACT'", "'AND'", "'OR'", "'XOR'", "'EQUALS'", "'BRANCH'", "'UC_GOTO'", "'NOT'", "'INDIRECTION'", "'CLEAR'", "'INCREMENT'", "'DECREMENT'", "'DIV'", "'MOD'", "'LT'", "'LTE'", "'GT'", "'GTE'", "'intelHexfile'", "'SRECHexfile'", "'-'", "'!'", "'&'", "'@'", "'*'", "'/'", "'%'", "'+'", "'=='", "'!='", "'>='", "'<='", "'||'", "'&&'"
     };
     public static final int RULE_ID=4;
     public static final int T__29=29;
@@ -98,6 +98,7 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
     public static final int T__103=103;
     public static final int T__59=59;
     public static final int T__104=104;
+    public static final int T__105=105;
     public static final int RULE_INT=5;
     public static final int T__50=50;
     public static final int T__42=42;
@@ -4565,7 +4566,7 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
                         if ( (LA17_7==RULE_ID) ) {
                             alt17=3;
                         }
-                        else if ( (LA17_7==19||LA17_7==26||LA17_7==30||LA17_7==34||(LA17_7>=40 && LA17_7<=42)||LA17_7==60||LA17_7==91||(LA17_7>=95 && LA17_7<=104)) ) {
+                        else if ( (LA17_7==19||LA17_7==26||LA17_7==30||LA17_7==34||(LA17_7>=40 && LA17_7<=42)||LA17_7==60||LA17_7==92||(LA17_7>=96 && LA17_7<=105)) ) {
                             alt17=4;
                         }
                         else {
@@ -4593,8 +4594,7 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
                 case 41:
                 case 42:
                 case 60:
-                case 91:
-                case 95:
+                case 92:
                 case 96:
                 case 97:
                 case 98:
@@ -4604,6 +4604,7 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
                 case 102:
                 case 103:
                 case 104:
+                case 105:
                     {
                     alt17=4;
                     }
@@ -4632,10 +4633,10 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
             case 61:
             case 62:
             case 64:
-            case 91:
             case 92:
             case 93:
             case 94:
+            case 95:
                 {
                 alt17=4;
                 }
@@ -5760,7 +5761,7 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
             int alt22=2;
             int LA22_0 = input.LA(1);
 
-            if ( ((LA22_0>=RULE_ID && LA22_0<=RULE_BINARY)||LA22_0==42||LA22_0==59||LA22_0==61||(LA22_0>=91 && LA22_0<=94)) ) {
+            if ( ((LA22_0>=RULE_ID && LA22_0<=RULE_BINARY)||LA22_0==42||LA22_0==59||LA22_0==61||(LA22_0>=92 && LA22_0<=95)) ) {
                 alt22=1;
             }
             switch (alt22) {
@@ -6313,8 +6314,7 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
                         case 41:
                         case 42:
                         case 60:
-                        case 91:
-                        case 95:
+                        case 92:
                         case 96:
                         case 97:
                         case 98:
@@ -6324,6 +6324,7 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
                         case 102:
                         case 103:
                         case 104:
+                        case 105:
                             {
                             alt25=1;
                             }
@@ -6340,7 +6341,7 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
                             if ( (LA25_4==RULE_ID) ) {
                                 int LA25_5 = input.LA(4);
 
-                                if ( (LA25_5==19||LA25_5==26||LA25_5==30||LA25_5==34||(LA25_5>=40 && LA25_5<=42)||LA25_5==60||LA25_5==91||(LA25_5>=95 && LA25_5<=104)) ) {
+                                if ( (LA25_5==19||LA25_5==26||LA25_5==30||LA25_5==34||(LA25_5>=40 && LA25_5<=42)||LA25_5==60||LA25_5==92||(LA25_5>=96 && LA25_5<=105)) ) {
                                     alt25=1;
                                 }
                                 else if ( (LA25_5==RULE_ID) ) {
@@ -6379,10 +6380,10 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
                     case 42:
                     case 59:
                     case 61:
-                    case 91:
                     case 92:
                     case 93:
                     case 94:
+                    case 95:
                         {
                         alt25=1;
                         }
@@ -6601,7 +6602,7 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
                 int alt27=2;
                 int LA27_0 = input.LA(1);
 
-                if ( ((LA27_0>=RULE_ID && LA27_0<=RULE_BINARY)||LA27_0==15||LA27_0==27||LA27_0==29||LA27_0==33||(LA27_0>=39 && LA27_0<=40)||LA27_0==42||LA27_0==59||(LA27_0>=61 && LA27_0<=62)||(LA27_0>=64 && LA27_0<=67)||(LA27_0>=91 && LA27_0<=94)) ) {
+                if ( ((LA27_0>=RULE_ID && LA27_0<=RULE_BINARY)||LA27_0==15||LA27_0==27||LA27_0==29||LA27_0==33||(LA27_0>=39 && LA27_0<=40)||LA27_0==42||LA27_0==59||(LA27_0>=61 && LA27_0<=62)||(LA27_0>=64 && LA27_0<=67)||(LA27_0>=92 && LA27_0<=95)) ) {
                     alt27=1;
                 }
 
@@ -7311,7 +7312,7 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
             int alt32=2;
             int LA32_0 = input.LA(1);
 
-            if ( (LA32_0==68||LA32_0==90) ) {
+            if ( (LA32_0==68||(LA32_0>=90 && LA32_0<=91)) ) {
                 alt32=1;
             }
             switch (alt32) {
@@ -7775,7 +7776,7 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFunctionBinarySection"
-    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:2656:1: ruleFunctionBinarySection returns [EObject current=null] : (otherlv_0= 'program' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' otherlv_3= 'startAddr' otherlv_4= '=' ( (lv_startAddr_5_0= ruleLITERAL ) ) otherlv_6= ';' otherlv_7= 'memwidth' otherlv_8= '=' ( (lv_memwidth_9_0= ruleLITERAL ) ) otherlv_10= ';' otherlv_11= 'pointersize' otherlv_12= '=' ( (lv_pointersize_13_0= ruleLITERAL ) ) otherlv_14= ';' otherlv_15= 'addressType' otherlv_16= '=' ( (lv_addressType_17_0= ruleTypeDef ) ) otherlv_18= ';' ( ( (lv_mems_19_0= ruleFunctionMemory ) ) otherlv_20= ';' )+ otherlv_21= ')' otherlv_22= '{' ( (otherlv_23= 'lib' ( ( ruleQualifiedName ) ) otherlv_25= ';' ) | ( (lv_instances_26_0= ruleLinkedInstance ) ) )* otherlv_27= 'link' otherlv_28= '{' ( (lv_do_29_0= ruleOperationBlock ) ) otherlv_30= '}' otherlv_31= '}' ) ;
+    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:2656:1: ruleFunctionBinarySection returns [EObject current=null] : (otherlv_0= 'program' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' otherlv_3= 'startAddr' otherlv_4= '=' ( (lv_startAddr_5_0= ruleLITERAL ) ) otherlv_6= ';' otherlv_7= 'memwidth' otherlv_8= '=' ( (lv_memwidth_9_0= ruleLITERAL ) ) otherlv_10= ';' otherlv_11= 'pointerType' otherlv_12= '=' ( (lv_pointerType_13_0= ruleTypeDef ) ) otherlv_14= ';' otherlv_15= 'addressType' otherlv_16= '=' ( (lv_addressType_17_0= ruleTypeDef ) ) otherlv_18= ';' ( ( (lv_mems_19_0= ruleFunctionMemory ) ) otherlv_20= ';' )+ otherlv_21= ')' otherlv_22= '{' ( (otherlv_23= 'lib' ( ( ruleQualifiedName ) ) otherlv_25= ';' ) | ( (lv_instances_26_0= ruleLinkedInstance ) ) )* otherlv_27= 'link' otherlv_28= '{' ( (lv_do_29_0= ruleOperationBlock ) ) otherlv_30= '}' otherlv_31= '}' ) ;
     public final EObject ruleFunctionBinarySection() throws RecognitionException {
         EObject current = null;
 
@@ -7807,7 +7808,7 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
 
         AntlrDatatypeRuleToken lv_memwidth_9_0 = null;
 
-        AntlrDatatypeRuleToken lv_pointersize_13_0 = null;
+        EObject lv_pointerType_13_0 = null;
 
         EObject lv_addressType_17_0 = null;
 
@@ -7821,11 +7822,11 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:2659:28: ( (otherlv_0= 'program' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' otherlv_3= 'startAddr' otherlv_4= '=' ( (lv_startAddr_5_0= ruleLITERAL ) ) otherlv_6= ';' otherlv_7= 'memwidth' otherlv_8= '=' ( (lv_memwidth_9_0= ruleLITERAL ) ) otherlv_10= ';' otherlv_11= 'pointersize' otherlv_12= '=' ( (lv_pointersize_13_0= ruleLITERAL ) ) otherlv_14= ';' otherlv_15= 'addressType' otherlv_16= '=' ( (lv_addressType_17_0= ruleTypeDef ) ) otherlv_18= ';' ( ( (lv_mems_19_0= ruleFunctionMemory ) ) otherlv_20= ';' )+ otherlv_21= ')' otherlv_22= '{' ( (otherlv_23= 'lib' ( ( ruleQualifiedName ) ) otherlv_25= ';' ) | ( (lv_instances_26_0= ruleLinkedInstance ) ) )* otherlv_27= 'link' otherlv_28= '{' ( (lv_do_29_0= ruleOperationBlock ) ) otherlv_30= '}' otherlv_31= '}' ) )
-            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:2660:1: (otherlv_0= 'program' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' otherlv_3= 'startAddr' otherlv_4= '=' ( (lv_startAddr_5_0= ruleLITERAL ) ) otherlv_6= ';' otherlv_7= 'memwidth' otherlv_8= '=' ( (lv_memwidth_9_0= ruleLITERAL ) ) otherlv_10= ';' otherlv_11= 'pointersize' otherlv_12= '=' ( (lv_pointersize_13_0= ruleLITERAL ) ) otherlv_14= ';' otherlv_15= 'addressType' otherlv_16= '=' ( (lv_addressType_17_0= ruleTypeDef ) ) otherlv_18= ';' ( ( (lv_mems_19_0= ruleFunctionMemory ) ) otherlv_20= ';' )+ otherlv_21= ')' otherlv_22= '{' ( (otherlv_23= 'lib' ( ( ruleQualifiedName ) ) otherlv_25= ';' ) | ( (lv_instances_26_0= ruleLinkedInstance ) ) )* otherlv_27= 'link' otherlv_28= '{' ( (lv_do_29_0= ruleOperationBlock ) ) otherlv_30= '}' otherlv_31= '}' )
+            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:2659:28: ( (otherlv_0= 'program' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' otherlv_3= 'startAddr' otherlv_4= '=' ( (lv_startAddr_5_0= ruleLITERAL ) ) otherlv_6= ';' otherlv_7= 'memwidth' otherlv_8= '=' ( (lv_memwidth_9_0= ruleLITERAL ) ) otherlv_10= ';' otherlv_11= 'pointerType' otherlv_12= '=' ( (lv_pointerType_13_0= ruleTypeDef ) ) otherlv_14= ';' otherlv_15= 'addressType' otherlv_16= '=' ( (lv_addressType_17_0= ruleTypeDef ) ) otherlv_18= ';' ( ( (lv_mems_19_0= ruleFunctionMemory ) ) otherlv_20= ';' )+ otherlv_21= ')' otherlv_22= '{' ( (otherlv_23= 'lib' ( ( ruleQualifiedName ) ) otherlv_25= ';' ) | ( (lv_instances_26_0= ruleLinkedInstance ) ) )* otherlv_27= 'link' otherlv_28= '{' ( (lv_do_29_0= ruleOperationBlock ) ) otherlv_30= '}' otherlv_31= '}' ) )
+            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:2660:1: (otherlv_0= 'program' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' otherlv_3= 'startAddr' otherlv_4= '=' ( (lv_startAddr_5_0= ruleLITERAL ) ) otherlv_6= ';' otherlv_7= 'memwidth' otherlv_8= '=' ( (lv_memwidth_9_0= ruleLITERAL ) ) otherlv_10= ';' otherlv_11= 'pointerType' otherlv_12= '=' ( (lv_pointerType_13_0= ruleTypeDef ) ) otherlv_14= ';' otherlv_15= 'addressType' otherlv_16= '=' ( (lv_addressType_17_0= ruleTypeDef ) ) otherlv_18= ';' ( ( (lv_mems_19_0= ruleFunctionMemory ) ) otherlv_20= ';' )+ otherlv_21= ')' otherlv_22= '{' ( (otherlv_23= 'lib' ( ( ruleQualifiedName ) ) otherlv_25= ';' ) | ( (lv_instances_26_0= ruleLinkedInstance ) ) )* otherlv_27= 'link' otherlv_28= '{' ( (lv_do_29_0= ruleOperationBlock ) ) otherlv_30= '}' otherlv_31= '}' )
             {
-            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:2660:1: (otherlv_0= 'program' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' otherlv_3= 'startAddr' otherlv_4= '=' ( (lv_startAddr_5_0= ruleLITERAL ) ) otherlv_6= ';' otherlv_7= 'memwidth' otherlv_8= '=' ( (lv_memwidth_9_0= ruleLITERAL ) ) otherlv_10= ';' otherlv_11= 'pointersize' otherlv_12= '=' ( (lv_pointersize_13_0= ruleLITERAL ) ) otherlv_14= ';' otherlv_15= 'addressType' otherlv_16= '=' ( (lv_addressType_17_0= ruleTypeDef ) ) otherlv_18= ';' ( ( (lv_mems_19_0= ruleFunctionMemory ) ) otherlv_20= ';' )+ otherlv_21= ')' otherlv_22= '{' ( (otherlv_23= 'lib' ( ( ruleQualifiedName ) ) otherlv_25= ';' ) | ( (lv_instances_26_0= ruleLinkedInstance ) ) )* otherlv_27= 'link' otherlv_28= '{' ( (lv_do_29_0= ruleOperationBlock ) ) otherlv_30= '}' otherlv_31= '}' )
-            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:2660:3: otherlv_0= 'program' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' otherlv_3= 'startAddr' otherlv_4= '=' ( (lv_startAddr_5_0= ruleLITERAL ) ) otherlv_6= ';' otherlv_7= 'memwidth' otherlv_8= '=' ( (lv_memwidth_9_0= ruleLITERAL ) ) otherlv_10= ';' otherlv_11= 'pointersize' otherlv_12= '=' ( (lv_pointersize_13_0= ruleLITERAL ) ) otherlv_14= ';' otherlv_15= 'addressType' otherlv_16= '=' ( (lv_addressType_17_0= ruleTypeDef ) ) otherlv_18= ';' ( ( (lv_mems_19_0= ruleFunctionMemory ) ) otherlv_20= ';' )+ otherlv_21= ')' otherlv_22= '{' ( (otherlv_23= 'lib' ( ( ruleQualifiedName ) ) otherlv_25= ';' ) | ( (lv_instances_26_0= ruleLinkedInstance ) ) )* otherlv_27= 'link' otherlv_28= '{' ( (lv_do_29_0= ruleOperationBlock ) ) otherlv_30= '}' otherlv_31= '}'
+            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:2660:1: (otherlv_0= 'program' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' otherlv_3= 'startAddr' otherlv_4= '=' ( (lv_startAddr_5_0= ruleLITERAL ) ) otherlv_6= ';' otherlv_7= 'memwidth' otherlv_8= '=' ( (lv_memwidth_9_0= ruleLITERAL ) ) otherlv_10= ';' otherlv_11= 'pointerType' otherlv_12= '=' ( (lv_pointerType_13_0= ruleTypeDef ) ) otherlv_14= ';' otherlv_15= 'addressType' otherlv_16= '=' ( (lv_addressType_17_0= ruleTypeDef ) ) otherlv_18= ';' ( ( (lv_mems_19_0= ruleFunctionMemory ) ) otherlv_20= ';' )+ otherlv_21= ')' otherlv_22= '{' ( (otherlv_23= 'lib' ( ( ruleQualifiedName ) ) otherlv_25= ';' ) | ( (lv_instances_26_0= ruleLinkedInstance ) ) )* otherlv_27= 'link' otherlv_28= '{' ( (lv_do_29_0= ruleOperationBlock ) ) otherlv_30= '}' otherlv_31= '}' )
+            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:2660:3: otherlv_0= 'program' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' otherlv_3= 'startAddr' otherlv_4= '=' ( (lv_startAddr_5_0= ruleLITERAL ) ) otherlv_6= ';' otherlv_7= 'memwidth' otherlv_8= '=' ( (lv_memwidth_9_0= ruleLITERAL ) ) otherlv_10= ';' otherlv_11= 'pointerType' otherlv_12= '=' ( (lv_pointerType_13_0= ruleTypeDef ) ) otherlv_14= ';' otherlv_15= 'addressType' otherlv_16= '=' ( (lv_addressType_17_0= ruleTypeDef ) ) otherlv_18= ';' ( ( (lv_mems_19_0= ruleFunctionMemory ) ) otherlv_20= ';' )+ otherlv_21= ')' otherlv_22= '{' ( (otherlv_23= 'lib' ( ( ruleQualifiedName ) ) otherlv_25= ';' ) | ( (lv_instances_26_0= ruleLinkedInstance ) ) )* otherlv_27= 'link' otherlv_28= '{' ( (lv_do_29_0= ruleOperationBlock ) ) otherlv_30= '}' otherlv_31= '}'
             {
             otherlv_0=(Token)match(input,48,FOLLOW_48_in_ruleFunctionBinarySection6109); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -7978,7 +7979,7 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
             otherlv_11=(Token)match(input,51,FOLLOW_51_in_ruleFunctionBinarySection6269); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-                  	newLeafNode(otherlv_11, grammarAccess.getFunctionBinarySectionAccess().getPointersizeKeyword_11());
+                  	newLeafNode(otherlv_11, grammarAccess.getFunctionBinarySectionAccess().getPointerTypeKeyword_11());
                   
             }
             otherlv_12=(Token)match(input,26,FOLLOW_26_in_ruleFunctionBinarySection6281); if (state.failed) return current;
@@ -7987,19 +7988,19 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
                   	newLeafNode(otherlv_12, grammarAccess.getFunctionBinarySectionAccess().getEqualsSignKeyword_12());
                   
             }
-            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:2754:1: ( (lv_pointersize_13_0= ruleLITERAL ) )
-            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:2755:1: (lv_pointersize_13_0= ruleLITERAL )
+            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:2754:1: ( (lv_pointerType_13_0= ruleTypeDef ) )
+            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:2755:1: (lv_pointerType_13_0= ruleTypeDef )
             {
-            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:2755:1: (lv_pointersize_13_0= ruleLITERAL )
-            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:2756:3: lv_pointersize_13_0= ruleLITERAL
+            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:2755:1: (lv_pointerType_13_0= ruleTypeDef )
+            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:2756:3: lv_pointerType_13_0= ruleTypeDef
             {
             if ( state.backtracking==0 ) {
                
-              	        newCompositeNode(grammarAccess.getFunctionBinarySectionAccess().getPointersizeLITERALParserRuleCall_13_0()); 
+              	        newCompositeNode(grammarAccess.getFunctionBinarySectionAccess().getPointerTypeTypeDefParserRuleCall_13_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleLITERAL_in_ruleFunctionBinarySection6302);
-            lv_pointersize_13_0=ruleLITERAL();
+            pushFollow(FOLLOW_ruleTypeDef_in_ruleFunctionBinarySection6302);
+            lv_pointerType_13_0=ruleTypeDef();
 
             state._fsp--;
             if (state.failed) return current;
@@ -8010,9 +8011,9 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
               	        }
                      		set(
                      			current, 
-                     			"pointersize",
-                      		lv_pointersize_13_0, 
-                      		"LITERAL");
+                     			"pointerType",
+                      		lv_pointerType_13_0, 
+                      		"TypeDef");
               	        afterParserOrEnumRuleCall();
               	    
             }
@@ -9198,7 +9199,7 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
                 int alt40=2;
                 int LA40_0 = input.LA(1);
 
-                if ( ((LA40_0>=RULE_ID && LA40_0<=RULE_BINARY)||LA40_0==42||LA40_0==59||LA40_0==61||(LA40_0>=91 && LA40_0<=94)) ) {
+                if ( ((LA40_0>=RULE_ID && LA40_0<=RULE_BINARY)||LA40_0==42||LA40_0==59||LA40_0==61||(LA40_0>=92 && LA40_0<=95)) ) {
                     alt40=1;
                 }
 
@@ -10025,7 +10026,7 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
                 if ( (LA42_0==18) ) {
                     int LA42_1 = input.LA(2);
 
-                    if ( ((LA42_1>=RULE_ID && LA42_1<=RULE_BINARY)||LA42_1==42||LA42_1==59||LA42_1==61||(LA42_1>=91 && LA42_1<=94)) ) {
+                    if ( ((LA42_1>=RULE_ID && LA42_1<=RULE_BINARY)||LA42_1==42||LA42_1==59||LA42_1==61||(LA42_1>=92 && LA42_1<=95)) ) {
                         alt42=1;
                     }
 
@@ -10203,7 +10204,7 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
                 int alt44=2;
                 int LA44_0 = input.LA(1);
 
-                if ( ((LA44_0>=91 && LA44_0<=94)) ) {
+                if ( ((LA44_0>=92 && LA44_0<=95)) ) {
                     alt44=1;
                 }
 
@@ -10773,7 +10774,7 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
             do {
                 int alt47=2;
                 switch ( input.LA(1) ) {
-                case 95:
+                case 96:
                     {
                     int LA47_2 = input.LA(2);
 
@@ -10784,7 +10785,7 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 96:
+                case 97:
                     {
                     int LA47_3 = input.LA(2);
 
@@ -10795,7 +10796,7 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 97:
+                case 98:
                     {
                     int LA47_4 = input.LA(2);
 
@@ -11016,10 +11017,10 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
                 int alt48=2;
                 int LA48_0 = input.LA(1);
 
-                if ( (LA48_0==98) && (synpred2_InternalESyntax())) {
+                if ( (LA48_0==99) && (synpred2_InternalESyntax())) {
                     alt48=1;
                 }
-                else if ( (LA48_0==91) && (synpred2_InternalESyntax())) {
+                else if ( (LA48_0==92) && (synpred2_InternalESyntax())) {
                     alt48=1;
                 }
 
@@ -11231,16 +11232,16 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
                 int alt49=2;
                 int LA49_0 = input.LA(1);
 
-                if ( (LA49_0==99) && (synpred3_InternalESyntax())) {
-                    alt49=1;
-                }
-                else if ( (LA49_0==100) && (synpred3_InternalESyntax())) {
+                if ( (LA49_0==100) && (synpred3_InternalESyntax())) {
                     alt49=1;
                 }
                 else if ( (LA49_0==101) && (synpred3_InternalESyntax())) {
                     alt49=1;
                 }
                 else if ( (LA49_0==102) && (synpred3_InternalESyntax())) {
+                    alt49=1;
+                }
+                else if ( (LA49_0==103) && (synpred3_InternalESyntax())) {
                     alt49=1;
                 }
                 else if ( (LA49_0==41) && (synpred3_InternalESyntax())) {
@@ -11458,10 +11459,10 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
                 int alt50=2;
                 int LA50_0 = input.LA(1);
 
-                if ( (LA50_0==103) && (synpred4_InternalESyntax())) {
+                if ( (LA50_0==104) && (synpred4_InternalESyntax())) {
                     alt50=1;
                 }
-                else if ( (LA50_0==104) && (synpred4_InternalESyntax())) {
+                else if ( (LA50_0==105) && (synpred4_InternalESyntax())) {
                     alt50=1;
                 }
 
@@ -11967,10 +11968,10 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
             case 42:
             case 59:
             case 61:
-            case 91:
             case 92:
             case 93:
             case 94:
+            case 95:
                 {
                 alt52=2;
                 }
@@ -13709,35 +13710,45 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBinaryType"
-    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4711:1: ruleBinaryType returns [Enumerator current=null] : ( (enumLiteral_0= 'default' ) | (enumLiteral_1= 'hexfile' ) ) ;
+    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4711:1: ruleBinaryType returns [Enumerator current=null] : ( (enumLiteral_0= 'default' ) | (enumLiteral_1= 'intelHexfile' ) | (enumLiteral_2= 'SRECHexfile' ) ) ;
     public final Enumerator ruleBinaryType() throws RecognitionException {
         Enumerator current = null;
 
         Token enumLiteral_0=null;
         Token enumLiteral_1=null;
+        Token enumLiteral_2=null;
 
          enterRule(); 
         try {
-            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4713:28: ( ( (enumLiteral_0= 'default' ) | (enumLiteral_1= 'hexfile' ) ) )
-            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4714:1: ( (enumLiteral_0= 'default' ) | (enumLiteral_1= 'hexfile' ) )
+            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4713:28: ( ( (enumLiteral_0= 'default' ) | (enumLiteral_1= 'intelHexfile' ) | (enumLiteral_2= 'SRECHexfile' ) ) )
+            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4714:1: ( (enumLiteral_0= 'default' ) | (enumLiteral_1= 'intelHexfile' ) | (enumLiteral_2= 'SRECHexfile' ) )
             {
-            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4714:1: ( (enumLiteral_0= 'default' ) | (enumLiteral_1= 'hexfile' ) )
-            int alt57=2;
-            int LA57_0 = input.LA(1);
-
-            if ( (LA57_0==68) ) {
+            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4714:1: ( (enumLiteral_0= 'default' ) | (enumLiteral_1= 'intelHexfile' ) | (enumLiteral_2= 'SRECHexfile' ) )
+            int alt57=3;
+            switch ( input.LA(1) ) {
+            case 68:
+                {
                 alt57=1;
-            }
-            else if ( (LA57_0==90) ) {
+                }
+                break;
+            case 90:
+                {
                 alt57=2;
-            }
-            else {
+                }
+                break;
+            case 91:
+                {
+                alt57=3;
+                }
+                break;
+            default:
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
                     new NoViableAltException("", 57, 0, input);
 
                 throw nvae;
             }
+
             switch (alt57) {
                 case 1 :
                     // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4714:2: (enumLiteral_0= 'default' )
@@ -13759,16 +13770,35 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4720:6: (enumLiteral_1= 'hexfile' )
+                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4720:6: (enumLiteral_1= 'intelHexfile' )
                     {
-                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4720:6: (enumLiteral_1= 'hexfile' )
-                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4720:8: enumLiteral_1= 'hexfile'
+                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4720:6: (enumLiteral_1= 'intelHexfile' )
+                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4720:8: enumLiteral_1= 'intelHexfile'
                     {
                     enumLiteral_1=(Token)match(input,90,FOLLOW_90_in_ruleBinaryType10822); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                              current = grammarAccess.getBinaryTypeAccess().getHEXFILEEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-                              newLeafNode(enumLiteral_1, grammarAccess.getBinaryTypeAccess().getHEXFILEEnumLiteralDeclaration_1()); 
+                              current = grammarAccess.getBinaryTypeAccess().getINTELHEXFILEEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+                              newLeafNode(enumLiteral_1, grammarAccess.getBinaryTypeAccess().getINTELHEXFILEEnumLiteralDeclaration_1()); 
+                          
+                    }
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4726:6: (enumLiteral_2= 'SRECHexfile' )
+                    {
+                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4726:6: (enumLiteral_2= 'SRECHexfile' )
+                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4726:8: enumLiteral_2= 'SRECHexfile'
+                    {
+                    enumLiteral_2=(Token)match(input,91,FOLLOW_91_in_ruleBinaryType10839); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                              current = grammarAccess.getBinaryTypeAccess().getSRECHEXFILEEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+                              newLeafNode(enumLiteral_2, grammarAccess.getBinaryTypeAccess().getSRECHEXFILEEnumLiteralDeclaration_2()); 
                           
                     }
 
@@ -13800,7 +13830,7 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleUNARY_OPERATOR"
-    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4730:1: ruleUNARY_OPERATOR returns [Enumerator current=null] : ( (enumLiteral_0= '-' ) | (enumLiteral_1= '!' ) | (enumLiteral_2= '&' ) | (enumLiteral_3= '@' ) ) ;
+    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4736:1: ruleUNARY_OPERATOR returns [Enumerator current=null] : ( (enumLiteral_0= '-' ) | (enumLiteral_1= '!' ) | (enumLiteral_2= '&' ) | (enumLiteral_3= '@' ) ) ;
     public final Enumerator ruleUNARY_OPERATOR() throws RecognitionException {
         Enumerator current = null;
 
@@ -13811,28 +13841,28 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4732:28: ( ( (enumLiteral_0= '-' ) | (enumLiteral_1= '!' ) | (enumLiteral_2= '&' ) | (enumLiteral_3= '@' ) ) )
-            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4733:1: ( (enumLiteral_0= '-' ) | (enumLiteral_1= '!' ) | (enumLiteral_2= '&' ) | (enumLiteral_3= '@' ) )
+            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4738:28: ( ( (enumLiteral_0= '-' ) | (enumLiteral_1= '!' ) | (enumLiteral_2= '&' ) | (enumLiteral_3= '@' ) ) )
+            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4739:1: ( (enumLiteral_0= '-' ) | (enumLiteral_1= '!' ) | (enumLiteral_2= '&' ) | (enumLiteral_3= '@' ) )
             {
-            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4733:1: ( (enumLiteral_0= '-' ) | (enumLiteral_1= '!' ) | (enumLiteral_2= '&' ) | (enumLiteral_3= '@' ) )
+            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4739:1: ( (enumLiteral_0= '-' ) | (enumLiteral_1= '!' ) | (enumLiteral_2= '&' ) | (enumLiteral_3= '@' ) )
             int alt58=4;
             switch ( input.LA(1) ) {
-            case 91:
+            case 92:
                 {
                 alt58=1;
                 }
                 break;
-            case 92:
+            case 93:
                 {
                 alt58=2;
                 }
                 break;
-            case 93:
+            case 94:
                 {
                 alt58=3;
                 }
                 break;
-            case 94:
+            case 95:
                 {
                 alt58=4;
                 }
@@ -13847,12 +13877,12 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
 
             switch (alt58) {
                 case 1 :
-                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4733:2: (enumLiteral_0= '-' )
+                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4739:2: (enumLiteral_0= '-' )
                     {
-                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4733:2: (enumLiteral_0= '-' )
-                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4733:4: enumLiteral_0= '-'
+                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4739:2: (enumLiteral_0= '-' )
+                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4739:4: enumLiteral_0= '-'
                     {
-                    enumLiteral_0=(Token)match(input,91,FOLLOW_91_in_ruleUNARY_OPERATOR10867); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,92,FOLLOW_92_in_ruleUNARY_OPERATOR10884); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getUNARY_OPERATORAccess().getMINUSEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -13866,12 +13896,12 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4739:6: (enumLiteral_1= '!' )
+                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4745:6: (enumLiteral_1= '!' )
                     {
-                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4739:6: (enumLiteral_1= '!' )
-                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4739:8: enumLiteral_1= '!'
+                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4745:6: (enumLiteral_1= '!' )
+                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4745:8: enumLiteral_1= '!'
                     {
-                    enumLiteral_1=(Token)match(input,92,FOLLOW_92_in_ruleUNARY_OPERATOR10884); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,93,FOLLOW_93_in_ruleUNARY_OPERATOR10901); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getUNARY_OPERATORAccess().getNOTEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -13885,12 +13915,12 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4745:6: (enumLiteral_2= '&' )
+                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4751:6: (enumLiteral_2= '&' )
                     {
-                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4745:6: (enumLiteral_2= '&' )
-                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4745:8: enumLiteral_2= '&'
+                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4751:6: (enumLiteral_2= '&' )
+                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4751:8: enumLiteral_2= '&'
                     {
-                    enumLiteral_2=(Token)match(input,93,FOLLOW_93_in_ruleUNARY_OPERATOR10901); if (state.failed) return current;
+                    enumLiteral_2=(Token)match(input,94,FOLLOW_94_in_ruleUNARY_OPERATOR10918); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getUNARY_OPERATORAccess().getREFERENCEEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
@@ -13904,12 +13934,12 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4751:6: (enumLiteral_3= '@' )
+                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4757:6: (enumLiteral_3= '@' )
                     {
-                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4751:6: (enumLiteral_3= '@' )
-                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4751:8: enumLiteral_3= '@'
+                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4757:6: (enumLiteral_3= '@' )
+                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4757:8: enumLiteral_3= '@'
                     {
-                    enumLiteral_3=(Token)match(input,94,FOLLOW_94_in_ruleUNARY_OPERATOR10918); if (state.failed) return current;
+                    enumLiteral_3=(Token)match(input,95,FOLLOW_95_in_ruleUNARY_OPERATOR10935); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getUNARY_OPERATORAccess().getDEREFERENCEEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
@@ -13945,7 +13975,7 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMULTIPLICATIVE_OPERATOR"
-    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4761:1: ruleMULTIPLICATIVE_OPERATOR returns [Enumerator current=null] : ( (enumLiteral_0= '*' ) | (enumLiteral_1= '/' ) | (enumLiteral_2= '%' ) ) ;
+    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4767:1: ruleMULTIPLICATIVE_OPERATOR returns [Enumerator current=null] : ( (enumLiteral_0= '*' ) | (enumLiteral_1= '/' ) | (enumLiteral_2= '%' ) ) ;
     public final Enumerator ruleMULTIPLICATIVE_OPERATOR() throws RecognitionException {
         Enumerator current = null;
 
@@ -13955,23 +13985,23 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4763:28: ( ( (enumLiteral_0= '*' ) | (enumLiteral_1= '/' ) | (enumLiteral_2= '%' ) ) )
-            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4764:1: ( (enumLiteral_0= '*' ) | (enumLiteral_1= '/' ) | (enumLiteral_2= '%' ) )
+            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4769:28: ( ( (enumLiteral_0= '*' ) | (enumLiteral_1= '/' ) | (enumLiteral_2= '%' ) ) )
+            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4770:1: ( (enumLiteral_0= '*' ) | (enumLiteral_1= '/' ) | (enumLiteral_2= '%' ) )
             {
-            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4764:1: ( (enumLiteral_0= '*' ) | (enumLiteral_1= '/' ) | (enumLiteral_2= '%' ) )
+            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4770:1: ( (enumLiteral_0= '*' ) | (enumLiteral_1= '/' ) | (enumLiteral_2= '%' ) )
             int alt59=3;
             switch ( input.LA(1) ) {
-            case 95:
+            case 96:
                 {
                 alt59=1;
                 }
                 break;
-            case 96:
+            case 97:
                 {
                 alt59=2;
                 }
                 break;
-            case 97:
+            case 98:
                 {
                 alt59=3;
                 }
@@ -13986,12 +14016,12 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
 
             switch (alt59) {
                 case 1 :
-                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4764:2: (enumLiteral_0= '*' )
+                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4770:2: (enumLiteral_0= '*' )
                     {
-                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4764:2: (enumLiteral_0= '*' )
-                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4764:4: enumLiteral_0= '*'
+                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4770:2: (enumLiteral_0= '*' )
+                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4770:4: enumLiteral_0= '*'
                     {
-                    enumLiteral_0=(Token)match(input,95,FOLLOW_95_in_ruleMULTIPLICATIVE_OPERATOR10963); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,96,FOLLOW_96_in_ruleMULTIPLICATIVE_OPERATOR10980); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getMULTIPLICATIVE_OPERATORAccess().getMULEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -14005,12 +14035,12 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4770:6: (enumLiteral_1= '/' )
+                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4776:6: (enumLiteral_1= '/' )
                     {
-                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4770:6: (enumLiteral_1= '/' )
-                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4770:8: enumLiteral_1= '/'
+                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4776:6: (enumLiteral_1= '/' )
+                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4776:8: enumLiteral_1= '/'
                     {
-                    enumLiteral_1=(Token)match(input,96,FOLLOW_96_in_ruleMULTIPLICATIVE_OPERATOR10980); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,97,FOLLOW_97_in_ruleMULTIPLICATIVE_OPERATOR10997); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getMULTIPLICATIVE_OPERATORAccess().getDIVEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -14024,12 +14054,12 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4776:6: (enumLiteral_2= '%' )
+                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4782:6: (enumLiteral_2= '%' )
                     {
-                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4776:6: (enumLiteral_2= '%' )
-                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4776:8: enumLiteral_2= '%'
+                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4782:6: (enumLiteral_2= '%' )
+                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4782:8: enumLiteral_2= '%'
                     {
-                    enumLiteral_2=(Token)match(input,97,FOLLOW_97_in_ruleMULTIPLICATIVE_OPERATOR10997); if (state.failed) return current;
+                    enumLiteral_2=(Token)match(input,98,FOLLOW_98_in_ruleMULTIPLICATIVE_OPERATOR11014); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getMULTIPLICATIVE_OPERATORAccess().getMODEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
@@ -14065,7 +14095,7 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleADDITIVE_OPERATOR"
-    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4786:1: ruleADDITIVE_OPERATOR returns [Enumerator current=null] : ( (enumLiteral_0= '+' ) | (enumLiteral_1= '-' ) ) ;
+    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4792:1: ruleADDITIVE_OPERATOR returns [Enumerator current=null] : ( (enumLiteral_0= '+' ) | (enumLiteral_1= '-' ) ) ;
     public final Enumerator ruleADDITIVE_OPERATOR() throws RecognitionException {
         Enumerator current = null;
 
@@ -14074,17 +14104,17 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4788:28: ( ( (enumLiteral_0= '+' ) | (enumLiteral_1= '-' ) ) )
-            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4789:1: ( (enumLiteral_0= '+' ) | (enumLiteral_1= '-' ) )
+            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4794:28: ( ( (enumLiteral_0= '+' ) | (enumLiteral_1= '-' ) ) )
+            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4795:1: ( (enumLiteral_0= '+' ) | (enumLiteral_1= '-' ) )
             {
-            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4789:1: ( (enumLiteral_0= '+' ) | (enumLiteral_1= '-' ) )
+            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4795:1: ( (enumLiteral_0= '+' ) | (enumLiteral_1= '-' ) )
             int alt60=2;
             int LA60_0 = input.LA(1);
 
-            if ( (LA60_0==98) ) {
+            if ( (LA60_0==99) ) {
                 alt60=1;
             }
-            else if ( (LA60_0==91) ) {
+            else if ( (LA60_0==92) ) {
                 alt60=2;
             }
             else {
@@ -14096,12 +14126,12 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
             }
             switch (alt60) {
                 case 1 :
-                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4789:2: (enumLiteral_0= '+' )
+                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4795:2: (enumLiteral_0= '+' )
                     {
-                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4789:2: (enumLiteral_0= '+' )
-                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4789:4: enumLiteral_0= '+'
+                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4795:2: (enumLiteral_0= '+' )
+                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4795:4: enumLiteral_0= '+'
                     {
-                    enumLiteral_0=(Token)match(input,98,FOLLOW_98_in_ruleADDITIVE_OPERATOR11042); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,99,FOLLOW_99_in_ruleADDITIVE_OPERATOR11059); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getADDITIVE_OPERATORAccess().getADDEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -14115,12 +14145,12 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4795:6: (enumLiteral_1= '-' )
+                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4801:6: (enumLiteral_1= '-' )
                     {
-                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4795:6: (enumLiteral_1= '-' )
-                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4795:8: enumLiteral_1= '-'
+                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4801:6: (enumLiteral_1= '-' )
+                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4801:8: enumLiteral_1= '-'
                     {
-                    enumLiteral_1=(Token)match(input,91,FOLLOW_91_in_ruleADDITIVE_OPERATOR11059); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,92,FOLLOW_92_in_ruleADDITIVE_OPERATOR11076); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getADDITIVE_OPERATORAccess().getMINUSEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -14156,7 +14186,7 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEQUALITY_OPERATOR"
-    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4805:1: ruleEQUALITY_OPERATOR returns [Enumerator current=null] : ( (enumLiteral_0= '==' ) | (enumLiteral_1= '!=' ) | (enumLiteral_2= '>=' ) | (enumLiteral_3= '<=' ) | (enumLiteral_4= '>' ) | (enumLiteral_5= '<' ) ) ;
+    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4811:1: ruleEQUALITY_OPERATOR returns [Enumerator current=null] : ( (enumLiteral_0= '==' ) | (enumLiteral_1= '!=' ) | (enumLiteral_2= '>=' ) | (enumLiteral_3= '<=' ) | (enumLiteral_4= '>' ) | (enumLiteral_5= '<' ) ) ;
     public final Enumerator ruleEQUALITY_OPERATOR() throws RecognitionException {
         Enumerator current = null;
 
@@ -14169,28 +14199,28 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4807:28: ( ( (enumLiteral_0= '==' ) | (enumLiteral_1= '!=' ) | (enumLiteral_2= '>=' ) | (enumLiteral_3= '<=' ) | (enumLiteral_4= '>' ) | (enumLiteral_5= '<' ) ) )
-            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4808:1: ( (enumLiteral_0= '==' ) | (enumLiteral_1= '!=' ) | (enumLiteral_2= '>=' ) | (enumLiteral_3= '<=' ) | (enumLiteral_4= '>' ) | (enumLiteral_5= '<' ) )
+            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4813:28: ( ( (enumLiteral_0= '==' ) | (enumLiteral_1= '!=' ) | (enumLiteral_2= '>=' ) | (enumLiteral_3= '<=' ) | (enumLiteral_4= '>' ) | (enumLiteral_5= '<' ) ) )
+            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4814:1: ( (enumLiteral_0= '==' ) | (enumLiteral_1= '!=' ) | (enumLiteral_2= '>=' ) | (enumLiteral_3= '<=' ) | (enumLiteral_4= '>' ) | (enumLiteral_5= '<' ) )
             {
-            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4808:1: ( (enumLiteral_0= '==' ) | (enumLiteral_1= '!=' ) | (enumLiteral_2= '>=' ) | (enumLiteral_3= '<=' ) | (enumLiteral_4= '>' ) | (enumLiteral_5= '<' ) )
+            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4814:1: ( (enumLiteral_0= '==' ) | (enumLiteral_1= '!=' ) | (enumLiteral_2= '>=' ) | (enumLiteral_3= '<=' ) | (enumLiteral_4= '>' ) | (enumLiteral_5= '<' ) )
             int alt61=6;
             switch ( input.LA(1) ) {
-            case 99:
+            case 100:
                 {
                 alt61=1;
                 }
                 break;
-            case 100:
+            case 101:
                 {
                 alt61=2;
                 }
                 break;
-            case 101:
+            case 102:
                 {
                 alt61=3;
                 }
                 break;
-            case 102:
+            case 103:
                 {
                 alt61=4;
                 }
@@ -14215,12 +14245,12 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
 
             switch (alt61) {
                 case 1 :
-                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4808:2: (enumLiteral_0= '==' )
+                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4814:2: (enumLiteral_0= '==' )
                     {
-                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4808:2: (enumLiteral_0= '==' )
-                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4808:4: enumLiteral_0= '=='
+                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4814:2: (enumLiteral_0= '==' )
+                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4814:4: enumLiteral_0= '=='
                     {
-                    enumLiteral_0=(Token)match(input,99,FOLLOW_99_in_ruleEQUALITY_OPERATOR11104); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,100,FOLLOW_100_in_ruleEQUALITY_OPERATOR11121); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getEQUALITY_OPERATORAccess().getEQUALSEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -14234,12 +14264,12 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4814:6: (enumLiteral_1= '!=' )
+                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4820:6: (enumLiteral_1= '!=' )
                     {
-                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4814:6: (enumLiteral_1= '!=' )
-                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4814:8: enumLiteral_1= '!='
+                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4820:6: (enumLiteral_1= '!=' )
+                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4820:8: enumLiteral_1= '!='
                     {
-                    enumLiteral_1=(Token)match(input,100,FOLLOW_100_in_ruleEQUALITY_OPERATOR11121); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,101,FOLLOW_101_in_ruleEQUALITY_OPERATOR11138); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getEQUALITY_OPERATORAccess().getNOTEQUALSEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -14253,12 +14283,12 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4820:6: (enumLiteral_2= '>=' )
+                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4826:6: (enumLiteral_2= '>=' )
                     {
-                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4820:6: (enumLiteral_2= '>=' )
-                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4820:8: enumLiteral_2= '>='
+                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4826:6: (enumLiteral_2= '>=' )
+                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4826:8: enumLiteral_2= '>='
                     {
-                    enumLiteral_2=(Token)match(input,101,FOLLOW_101_in_ruleEQUALITY_OPERATOR11138); if (state.failed) return current;
+                    enumLiteral_2=(Token)match(input,102,FOLLOW_102_in_ruleEQUALITY_OPERATOR11155); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getEQUALITY_OPERATORAccess().getGTEEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
@@ -14272,12 +14302,12 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4826:6: (enumLiteral_3= '<=' )
+                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4832:6: (enumLiteral_3= '<=' )
                     {
-                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4826:6: (enumLiteral_3= '<=' )
-                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4826:8: enumLiteral_3= '<='
+                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4832:6: (enumLiteral_3= '<=' )
+                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4832:8: enumLiteral_3= '<='
                     {
-                    enumLiteral_3=(Token)match(input,102,FOLLOW_102_in_ruleEQUALITY_OPERATOR11155); if (state.failed) return current;
+                    enumLiteral_3=(Token)match(input,103,FOLLOW_103_in_ruleEQUALITY_OPERATOR11172); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getEQUALITY_OPERATORAccess().getLTEEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
@@ -14291,12 +14321,12 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4832:6: (enumLiteral_4= '>' )
+                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4838:6: (enumLiteral_4= '>' )
                     {
-                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4832:6: (enumLiteral_4= '>' )
-                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4832:8: enumLiteral_4= '>'
+                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4838:6: (enumLiteral_4= '>' )
+                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4838:8: enumLiteral_4= '>'
                     {
-                    enumLiteral_4=(Token)match(input,41,FOLLOW_41_in_ruleEQUALITY_OPERATOR11172); if (state.failed) return current;
+                    enumLiteral_4=(Token)match(input,41,FOLLOW_41_in_ruleEQUALITY_OPERATOR11189); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getEQUALITY_OPERATORAccess().getGTEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
@@ -14310,12 +14340,12 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4838:6: (enumLiteral_5= '<' )
+                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4844:6: (enumLiteral_5= '<' )
                     {
-                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4838:6: (enumLiteral_5= '<' )
-                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4838:8: enumLiteral_5= '<'
+                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4844:6: (enumLiteral_5= '<' )
+                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4844:8: enumLiteral_5= '<'
                     {
-                    enumLiteral_5=(Token)match(input,40,FOLLOW_40_in_ruleEQUALITY_OPERATOR11189); if (state.failed) return current;
+                    enumLiteral_5=(Token)match(input,40,FOLLOW_40_in_ruleEQUALITY_OPERATOR11206); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getEQUALITY_OPERATORAccess().getLTEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
@@ -14351,7 +14381,7 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBOOLEAN_OPERATOR"
-    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4848:1: ruleBOOLEAN_OPERATOR returns [Enumerator current=null] : ( (enumLiteral_0= '||' ) | (enumLiteral_1= '&&' ) ) ;
+    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4854:1: ruleBOOLEAN_OPERATOR returns [Enumerator current=null] : ( (enumLiteral_0= '||' ) | (enumLiteral_1= '&&' ) ) ;
     public final Enumerator ruleBOOLEAN_OPERATOR() throws RecognitionException {
         Enumerator current = null;
 
@@ -14360,17 +14390,17 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4850:28: ( ( (enumLiteral_0= '||' ) | (enumLiteral_1= '&&' ) ) )
-            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4851:1: ( (enumLiteral_0= '||' ) | (enumLiteral_1= '&&' ) )
+            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4856:28: ( ( (enumLiteral_0= '||' ) | (enumLiteral_1= '&&' ) ) )
+            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4857:1: ( (enumLiteral_0= '||' ) | (enumLiteral_1= '&&' ) )
             {
-            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4851:1: ( (enumLiteral_0= '||' ) | (enumLiteral_1= '&&' ) )
+            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4857:1: ( (enumLiteral_0= '||' ) | (enumLiteral_1= '&&' ) )
             int alt62=2;
             int LA62_0 = input.LA(1);
 
-            if ( (LA62_0==103) ) {
+            if ( (LA62_0==104) ) {
                 alt62=1;
             }
-            else if ( (LA62_0==104) ) {
+            else if ( (LA62_0==105) ) {
                 alt62=2;
             }
             else {
@@ -14382,12 +14412,12 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
             }
             switch (alt62) {
                 case 1 :
-                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4851:2: (enumLiteral_0= '||' )
+                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4857:2: (enumLiteral_0= '||' )
                     {
-                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4851:2: (enumLiteral_0= '||' )
-                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4851:4: enumLiteral_0= '||'
+                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4857:2: (enumLiteral_0= '||' )
+                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4857:4: enumLiteral_0= '||'
                     {
-                    enumLiteral_0=(Token)match(input,103,FOLLOW_103_in_ruleBOOLEAN_OPERATOR11234); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,104,FOLLOW_104_in_ruleBOOLEAN_OPERATOR11251); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getBOOLEAN_OPERATORAccess().getOREnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -14401,12 +14431,12 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4857:6: (enumLiteral_1= '&&' )
+                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4863:6: (enumLiteral_1= '&&' )
                     {
-                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4857:6: (enumLiteral_1= '&&' )
-                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4857:8: enumLiteral_1= '&&'
+                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4863:6: (enumLiteral_1= '&&' )
+                    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:4863:8: enumLiteral_1= '&&'
                     {
-                    enumLiteral_1=(Token)match(input,104,FOLLOW_104_in_ruleBOOLEAN_OPERATOR11251); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,105,FOLLOW_105_in_ruleBOOLEAN_OPERATOR11268); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getBOOLEAN_OPERATORAccess().getANDEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -14652,7 +14682,7 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
     static final String DFA41_minS =
         "\1\4\3\uffff\1\15\2\uffff\1\4\2\uffff\1\22";
     static final String DFA41_maxS =
-        "\1\75\3\uffff\1\150\2\uffff\1\4\2\uffff\1\150";
+        "\1\75\3\uffff\1\151\2\uffff\1\4\2\uffff\1\151";
     static final String DFA41_acceptS =
         "\1\uffff\1\1\1\2\1\3\1\uffff\1\7\1\6\1\uffff\1\4\1\5\1\uffff";
     static final String DFA41_specialS =
@@ -14663,14 +14693,14 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
             "",
             "",
             "\1\7\4\uffff\2\10\12\uffff\2\10\2\uffff\1\6\1\10\4\uffff\2"+
-            "\10\1\11\1\10\20\uffff\1\10\36\uffff\1\10\3\uffff\12\10",
+            "\10\1\11\1\10\20\uffff\1\10\37\uffff\1\10\3\uffff\12\10",
             "",
             "",
             "\1\12",
             "",
             "",
             "\2\10\12\uffff\2\10\2\uffff\1\6\1\10\4\uffff\2\10\1\11\1\10"+
-            "\20\uffff\1\10\36\uffff\1\10\3\uffff\12\10"
+            "\20\uffff\1\10\37\uffff\1\10\3\uffff\12\10"
     };
 
     static final short[] DFA41_eot = DFA.unpackEncodedString(DFA41_eotS);
@@ -14818,7 +14848,7 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleArrayTypeDef_in_entryRuleArrayTypeDef2667 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleArrayTypeDef2677 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_29_in_ruleArrayTypeDef2714 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_30_in_ruleArrayTypeDef2726 = new BitSet(new long[]{0x28000402280000F0L,0x000000007800000EL});
+    public static final BitSet FOLLOW_30_in_ruleArrayTypeDef2726 = new BitSet(new long[]{0x28000402280000F0L,0x00000000F000000EL});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleArrayTypeDef2747 = new BitSet(new long[]{0x0000000080000000L});
     public static final BitSet FOLLOW_31_in_ruleArrayTypeDef2759 = new BitSet(new long[]{0x0000000010000000L});
     public static final BitSet FOLLOW_28_in_ruleArrayTypeDef2771 = new BitSet(new long[]{0x0000000228000010L,0x000000000000000EL});
@@ -14848,14 +14878,14 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_36_in_ruleConstantVariable3398 = new BitSet(new long[]{0x0000000228000010L,0x000000000000000EL});
     public static final BitSet FOLLOW_ruleTypeDef_in_ruleConstantVariable3419 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_RULE_ID_in_ruleConstantVariable3436 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_26_in_ruleConstantVariable3453 = new BitSet(new long[]{0x28000402280000F0L,0x000000007800000EL});
+    public static final BitSet FOLLOW_26_in_ruleConstantVariable3453 = new BitSet(new long[]{0x28000402280000F0L,0x00000000F000000EL});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleConstantVariable3474 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleRegisterVariable_in_entryRuleRegisterVariable3510 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleRegisterVariable3520 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_37_in_ruleRegisterVariable3566 = new BitSet(new long[]{0x0000000228000010L,0x000000000000000EL});
     public static final BitSet FOLLOW_ruleTypeDef_in_ruleRegisterVariable3587 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_RULE_ID_in_ruleRegisterVariable3604 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_38_in_ruleRegisterVariable3621 = new BitSet(new long[]{0x28000402280000F0L,0x000000007800000EL});
+    public static final BitSet FOLLOW_38_in_ruleRegisterVariable3621 = new BitSet(new long[]{0x28000402280000F0L,0x00000000F000000EL});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleRegisterVariable3642 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleOperationStep_in_entryRuleOperationStep3678 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleOperationStep3688 = new BitSet(new long[]{0x0000000000000002L});
@@ -14895,9 +14925,9 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleOperationCall_in_entryRuleOperationCall4596 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleOperationCall4606 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleReferenceID_in_ruleOperationCall4654 = new BitSet(new long[]{0x0000040000000000L});
-    public static final BitSet FOLLOW_42_in_ruleOperationCall4666 = new BitSet(new long[]{0x28000C02280000F0L,0x000000007800000EL});
+    public static final BitSet FOLLOW_42_in_ruleOperationCall4666 = new BitSet(new long[]{0x28000C02280000F0L,0x00000000F000000EL});
     public static final BitSet FOLLOW_ruleOperationCallParameter_in_ruleOperationCall4688 = new BitSet(new long[]{0x0000080000040000L});
-    public static final BitSet FOLLOW_18_in_ruleOperationCall4701 = new BitSet(new long[]{0x28000402280000F0L,0x000000007800000EL});
+    public static final BitSet FOLLOW_18_in_ruleOperationCall4701 = new BitSet(new long[]{0x28000402280000F0L,0x00000000F000000EL});
     public static final BitSet FOLLOW_ruleOperationCallParameter_in_ruleOperationCall4722 = new BitSet(new long[]{0x0000080000040000L});
     public static final BitSet FOLLOW_43_in_ruleOperationCall4738 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleOperationCallParameter_in_entryRuleOperationCallParameter4774 = new BitSet(new long[]{0x0000000000000000L});
@@ -14911,16 +14941,16 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_18_in_ruleOperation4977 = new BitSet(new long[]{0x0000001228000010L,0x000000000000003EL});
     public static final BitSet FOLLOW_ruleParameterVariable_in_ruleOperation4998 = new BitSet(new long[]{0x0000080000040000L});
     public static final BitSet FOLLOW_43_in_ruleOperation5014 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_34_in_ruleOperation5026 = new BitSet(new long[]{0x6800058A280080F0L,0x000000007800000FL});
+    public static final BitSet FOLLOW_34_in_ruleOperation5026 = new BitSet(new long[]{0x6800058A280080F0L,0x00000000F000000FL});
     public static final BitSet FOLLOW_ruleOperationBlock_in_ruleOperation5047 = new BitSet(new long[]{0x0000000800000000L});
     public static final BitSet FOLLOW_35_in_ruleOperation5059 = new BitSet(new long[]{0x0000100000000002L});
-    public static final BitSet FOLLOW_44_in_ruleOperation5072 = new BitSet(new long[]{0x28000402280000F0L,0x000000007800000EL});
+    public static final BitSet FOLLOW_44_in_ruleOperation5072 = new BitSet(new long[]{0x28000402280000F0L,0x00000000F000000EL});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleOperation5094 = new BitSet(new long[]{0x0000000000080000L});
     public static final BitSet FOLLOW_ruleVariable_in_ruleOperation5121 = new BitSet(new long[]{0x0000000000080000L});
     public static final BitSet FOLLOW_19_in_ruleOperation5134 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleOperationBlock_in_entryRuleOperationBlock5172 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleOperationBlock5182 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOperationStep_in_ruleOperationBlock5237 = new BitSet(new long[]{0x68000582280080F2L,0x000000007800000FL});
+    public static final BitSet FOLLOW_ruleOperationStep_in_ruleOperationBlock5237 = new BitSet(new long[]{0x68000582280080F2L,0x00000000F000000FL});
     public static final BitSet FOLLOW_ruleParameterVariable_in_entryRuleParameterVariable5274 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleParameterVariable5284 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleParameterKind_in_ruleParameterVariable5339 = new BitSet(new long[]{0x0000000228000010L,0x000000000000000EL});
@@ -14941,7 +14971,7 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleLinkedBinary_in_entryRuleLinkedBinary5659 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleLinkedBinary5669 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_46_in_ruleLinkedBinary5706 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleLinkedBinary5727 = new BitSet(new long[]{0x0000000000080000L,0x0000000004000010L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleLinkedBinary5727 = new BitSet(new long[]{0x0000000000080000L,0x000000000C000010L});
     public static final BitSet FOLLOW_ruleBinaryType_in_ruleLinkedBinary5748 = new BitSet(new long[]{0x0000000000080000L});
     public static final BitSet FOLLOW_19_in_ruleLinkedBinary5761 = new BitSet(new long[]{0x0601000000100002L});
     public static final BitSet FOLLOW_20_in_ruleLinkedBinary5774 = new BitSet(new long[]{0x0000000000000010L});
@@ -14953,7 +14983,7 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleFunctionBinarySection_in_ruleBinarySection5927 = new BitSet(new long[]{0x0000800000000000L});
     public static final BitSet FOLLOW_ruleConstantBinarySection_in_ruleBinarySection5954 = new BitSet(new long[]{0x0000800000000000L});
     public static final BitSet FOLLOW_ruleReferenceBinarySection_in_ruleBinarySection5981 = new BitSet(new long[]{0x0000800000000000L});
-    public static final BitSet FOLLOW_47_in_ruleBinarySection5993 = new BitSet(new long[]{0x28000402280000F0L,0x000000007800000EL});
+    public static final BitSet FOLLOW_47_in_ruleBinarySection5993 = new BitSet(new long[]{0x28000402280000F0L,0x00000000F000000EL});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleBinarySection6014 = new BitSet(new long[]{0x0000000000080000L});
     public static final BitSet FOLLOW_19_in_ruleBinarySection6026 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleFunctionBinarySection_in_entryRuleFunctionBinarySection6062 = new BitSet(new long[]{0x0000000000000000L});
@@ -14970,8 +15000,8 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleLITERAL_in_ruleFunctionBinarySection6245 = new BitSet(new long[]{0x0000000000080000L});
     public static final BitSet FOLLOW_19_in_ruleFunctionBinarySection6257 = new BitSet(new long[]{0x0008000000000000L});
     public static final BitSet FOLLOW_51_in_ruleFunctionBinarySection6269 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_26_in_ruleFunctionBinarySection6281 = new BitSet(new long[]{0x00000000000000E0L});
-    public static final BitSet FOLLOW_ruleLITERAL_in_ruleFunctionBinarySection6302 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_26_in_ruleFunctionBinarySection6281 = new BitSet(new long[]{0x0000000228000010L,0x000000000000000EL});
+    public static final BitSet FOLLOW_ruleTypeDef_in_ruleFunctionBinarySection6302 = new BitSet(new long[]{0x0000000000080000L});
     public static final BitSet FOLLOW_19_in_ruleFunctionBinarySection6314 = new BitSet(new long[]{0x0010000000000000L});
     public static final BitSet FOLLOW_52_in_ruleFunctionBinarySection6326 = new BitSet(new long[]{0x0000000004000000L});
     public static final BitSet FOLLOW_26_in_ruleFunctionBinarySection6338 = new BitSet(new long[]{0x0000000228000010L,0x000000000000000EL});
@@ -14986,7 +15016,7 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_19_in_ruleFunctionBinarySection6480 = new BitSet(new long[]{0x0060000000000010L});
     public static final BitSet FOLLOW_ruleLinkedInstance_in_ruleFunctionBinarySection6508 = new BitSet(new long[]{0x0060000000000010L});
     public static final BitSet FOLLOW_54_in_ruleFunctionBinarySection6522 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_34_in_ruleFunctionBinarySection6534 = new BitSet(new long[]{0x6800058A280080F0L,0x000000007800000FL});
+    public static final BitSet FOLLOW_34_in_ruleFunctionBinarySection6534 = new BitSet(new long[]{0x6800058A280080F0L,0x00000000F000000FL});
     public static final BitSet FOLLOW_ruleOperationBlock_in_ruleFunctionBinarySection6555 = new BitSet(new long[]{0x0000000800000000L});
     public static final BitSet FOLLOW_35_in_ruleFunctionBinarySection6567 = new BitSet(new long[]{0x0000000800000000L});
     public static final BitSet FOLLOW_35_in_ruleFunctionBinarySection6579 = new BitSet(new long[]{0x0000000000000002L});
@@ -15007,7 +15037,7 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleInstanceConfig_in_entryRuleInstanceConfig6943 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleInstanceConfig6953 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_ruleInstanceConfig6998 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_26_in_ruleInstanceConfig7010 = new BitSet(new long[]{0x28000402280000F0L,0x000000007800000EL});
+    public static final BitSet FOLLOW_26_in_ruleInstanceConfig7010 = new BitSet(new long[]{0x28000402280000F0L,0x00000000F000000EL});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleInstanceConfig7031 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleFunctionMemory_in_entryRuleFunctionMemory7067 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleFunctionMemory7077 = new BitSet(new long[]{0x0000000000000002L});
@@ -15018,9 +15048,9 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleConstantBinarySection_in_entryRuleConstantBinarySection7204 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleConstantBinarySection7214 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_57_in_ruleConstantBinarySection7251 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_34_in_ruleConstantBinarySection7263 = new BitSet(new long[]{0x28000402280000F0L,0x000000007800000EL});
+    public static final BitSet FOLLOW_34_in_ruleConstantBinarySection7263 = new BitSet(new long[]{0x28000402280000F0L,0x00000000F000000EL});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleConstantBinarySection7285 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_19_in_ruleConstantBinarySection7297 = new BitSet(new long[]{0x2800040A280000F0L,0x000000007800000EL});
+    public static final BitSet FOLLOW_19_in_ruleConstantBinarySection7297 = new BitSet(new long[]{0x2800040A280000F0L,0x00000000F000000EL});
     public static final BitSet FOLLOW_35_in_ruleConstantBinarySection7311 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleReferenceBinarySection_in_entryRuleReferenceBinarySection7347 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleReferenceBinarySection7357 = new BitSet(new long[]{0x0000000000000002L});
@@ -15047,15 +15077,15 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleXStructExpression_in_entryRuleXStructExpression7925 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXStructExpression7935 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleReferenceID_in_ruleXStructExpression7983 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_34_in_ruleXStructExpression7995 = new BitSet(new long[]{0x28000402280000F0L,0x000000007800000EL});
+    public static final BitSet FOLLOW_34_in_ruleXStructExpression7995 = new BitSet(new long[]{0x28000402280000F0L,0x00000000F000000EL});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXStructExpression8016 = new BitSet(new long[]{0x0000000800040000L});
-    public static final BitSet FOLLOW_18_in_ruleXStructExpression8029 = new BitSet(new long[]{0x28000402280000F0L,0x000000007800000EL});
+    public static final BitSet FOLLOW_18_in_ruleXStructExpression8029 = new BitSet(new long[]{0x28000402280000F0L,0x00000000F000000EL});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXStructExpression8050 = new BitSet(new long[]{0x0000000800040000L});
     public static final BitSet FOLLOW_18_in_ruleXStructExpression8065 = new BitSet(new long[]{0x0000000800000000L});
     public static final BitSet FOLLOW_35_in_ruleXStructExpression8079 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXExpression1_in_entryRuleXExpression18115 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXExpression18125 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleUNARY_OPERATOR_in_ruleXExpression18171 = new BitSet(new long[]{0x28000402280000F0L,0x000000007800000EL});
+    public static final BitSet FOLLOW_ruleUNARY_OPERATOR_in_ruleXExpression18171 = new BitSet(new long[]{0x28000402280000F0L,0x00000000F000000EL});
     public static final BitSet FOLLOW_ruleXExpression0_in_ruleXExpression18193 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXExpression0_in_entryRuleXExpression08229 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXExpression08239 = new BitSet(new long[]{0x0000000000000002L});
@@ -15065,33 +15095,33 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleXExpressionM1_in_entryRuleXExpressionM18358 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXExpressionM18368 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXPrimaryExpression_in_ruleXExpressionM18414 = new BitSet(new long[]{0x0000000040000002L});
-    public static final BitSet FOLLOW_30_in_ruleXExpressionM18427 = new BitSet(new long[]{0x28000402280000F0L,0x000000007800000EL});
+    public static final BitSet FOLLOW_30_in_ruleXExpressionM18427 = new BitSet(new long[]{0x28000402280000F0L,0x00000000F000000EL});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXExpressionM18448 = new BitSet(new long[]{0x0000000080000000L});
     public static final BitSet FOLLOW_31_in_ruleXExpressionM18460 = new BitSet(new long[]{0x0000000040000002L});
     public static final BitSet FOLLOW_ruleXExpression2_in_entryRuleXExpression28498 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXExpression28508 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression1_in_ruleXExpression28554 = new BitSet(new long[]{0x0000000000000002L,0x0000000380000000L});
-    public static final BitSet FOLLOW_ruleMULTIPLICATIVE_OPERATOR_in_ruleXExpression28586 = new BitSet(new long[]{0x28000402280000F0L,0x000000007800000EL});
-    public static final BitSet FOLLOW_ruleXExpression2_in_ruleXExpression28607 = new BitSet(new long[]{0x0000000000000002L,0x0000000380000000L});
+    public static final BitSet FOLLOW_ruleXExpression1_in_ruleXExpression28554 = new BitSet(new long[]{0x0000000000000002L,0x0000000700000000L});
+    public static final BitSet FOLLOW_ruleMULTIPLICATIVE_OPERATOR_in_ruleXExpression28586 = new BitSet(new long[]{0x28000402280000F0L,0x00000000F000000EL});
+    public static final BitSet FOLLOW_ruleXExpression2_in_ruleXExpression28607 = new BitSet(new long[]{0x0000000000000002L,0x0000000700000000L});
     public static final BitSet FOLLOW_ruleXExpression3_in_entryRuleXExpression38645 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXExpression38655 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression2_in_ruleXExpression38701 = new BitSet(new long[]{0x0000000000000002L,0x0000000408000000L});
-    public static final BitSet FOLLOW_ruleADDITIVE_OPERATOR_in_ruleXExpression38733 = new BitSet(new long[]{0x28000402280000F0L,0x000000007800000EL});
-    public static final BitSet FOLLOW_ruleXExpression2_in_ruleXExpression38754 = new BitSet(new long[]{0x0000000000000002L,0x0000000408000000L});
+    public static final BitSet FOLLOW_ruleXExpression2_in_ruleXExpression38701 = new BitSet(new long[]{0x0000000000000002L,0x0000000810000000L});
+    public static final BitSet FOLLOW_ruleADDITIVE_OPERATOR_in_ruleXExpression38733 = new BitSet(new long[]{0x28000402280000F0L,0x00000000F000000EL});
+    public static final BitSet FOLLOW_ruleXExpression2_in_ruleXExpression38754 = new BitSet(new long[]{0x0000000000000002L,0x0000000810000000L});
     public static final BitSet FOLLOW_ruleXExpression4_in_entryRuleXExpression48792 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXExpression48802 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression3_in_ruleXExpression48848 = new BitSet(new long[]{0x0000030000000002L,0x0000007800000000L});
-    public static final BitSet FOLLOW_ruleEQUALITY_OPERATOR_in_ruleXExpression48880 = new BitSet(new long[]{0x28000402280000F0L,0x000000007800000EL});
-    public static final BitSet FOLLOW_ruleXExpression3_in_ruleXExpression48901 = new BitSet(new long[]{0x0000030000000002L,0x0000007800000000L});
+    public static final BitSet FOLLOW_ruleXExpression3_in_ruleXExpression48848 = new BitSet(new long[]{0x0000030000000002L,0x000000F000000000L});
+    public static final BitSet FOLLOW_ruleEQUALITY_OPERATOR_in_ruleXExpression48880 = new BitSet(new long[]{0x28000402280000F0L,0x00000000F000000EL});
+    public static final BitSet FOLLOW_ruleXExpression3_in_ruleXExpression48901 = new BitSet(new long[]{0x0000030000000002L,0x000000F000000000L});
     public static final BitSet FOLLOW_ruleXExpression5_in_entryRuleXExpression58939 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXExpression58949 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression4_in_ruleXExpression58995 = new BitSet(new long[]{0x0000000000000002L,0x0000018000000000L});
-    public static final BitSet FOLLOW_ruleBOOLEAN_OPERATOR_in_ruleXExpression59027 = new BitSet(new long[]{0x28000402280000F0L,0x000000007800000EL});
-    public static final BitSet FOLLOW_ruleXExpression4_in_ruleXExpression59048 = new BitSet(new long[]{0x0000000000000002L,0x0000018000000000L});
+    public static final BitSet FOLLOW_ruleXExpression4_in_ruleXExpression58995 = new BitSet(new long[]{0x0000000000000002L,0x0000030000000000L});
+    public static final BitSet FOLLOW_ruleBOOLEAN_OPERATOR_in_ruleXExpression59027 = new BitSet(new long[]{0x28000402280000F0L,0x00000000F000000EL});
+    public static final BitSet FOLLOW_ruleXExpression4_in_ruleXExpression59048 = new BitSet(new long[]{0x0000000000000002L,0x0000030000000000L});
     public static final BitSet FOLLOW_ruleXExpression6_in_entryRuleXExpression69086 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXExpression69096 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleVariableReference_in_ruleXExpression69153 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_ruleOpSingleAssign_in_ruleXExpression69169 = new BitSet(new long[]{0x28000402280000F0L,0x000000007800000EL});
+    public static final BitSet FOLLOW_ruleOpSingleAssign_in_ruleXExpression69169 = new BitSet(new long[]{0x28000402280000F0L,0x00000000F000000EL});
     public static final BitSet FOLLOW_ruleXExpression5_in_ruleXExpression69191 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXExpressionLiteral_in_entryRuleXExpressionLiteral9227 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXExpressionLiteral9237 = new BitSet(new long[]{0x0000000000000002L});
@@ -15116,28 +15146,28 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleXIfExpression_in_entryRuleXIfExpression9734 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXIfExpression9744 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_62_in_ruleXIfExpression9781 = new BitSet(new long[]{0x0000040000000000L});
-    public static final BitSet FOLLOW_42_in_ruleXIfExpression9793 = new BitSet(new long[]{0x28000402280000F0L,0x000000007800000EL});
+    public static final BitSet FOLLOW_42_in_ruleXIfExpression9793 = new BitSet(new long[]{0x28000402280000F0L,0x00000000F000000EL});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXIfExpression9814 = new BitSet(new long[]{0x0000080000000000L});
     public static final BitSet FOLLOW_43_in_ruleXIfExpression9826 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_34_in_ruleXIfExpression9838 = new BitSet(new long[]{0x6800058A280080F0L,0x000000007800000FL});
+    public static final BitSet FOLLOW_34_in_ruleXIfExpression9838 = new BitSet(new long[]{0x6800058A280080F0L,0x00000000F000000FL});
     public static final BitSet FOLLOW_ruleOperationBlock_in_ruleXIfExpression9859 = new BitSet(new long[]{0x0000000800000000L});
     public static final BitSet FOLLOW_35_in_ruleXIfExpression9871 = new BitSet(new long[]{0x8000000000000002L});
     public static final BitSet FOLLOW_63_in_ruleXIfExpression9892 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_34_in_ruleXIfExpression9905 = new BitSet(new long[]{0x6800058A280080F0L,0x000000007800000FL});
+    public static final BitSet FOLLOW_34_in_ruleXIfExpression9905 = new BitSet(new long[]{0x6800058A280080F0L,0x00000000F000000FL});
     public static final BitSet FOLLOW_ruleOperationBlock_in_ruleXIfExpression9926 = new BitSet(new long[]{0x0000000800000000L});
     public static final BitSet FOLLOW_35_in_ruleXIfExpression9938 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXWhileExpression_in_entryRuleXWhileExpression9976 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXWhileExpression9986 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_64_in_ruleXWhileExpression10023 = new BitSet(new long[]{0x0000040000000000L});
-    public static final BitSet FOLLOW_42_in_ruleXWhileExpression10035 = new BitSet(new long[]{0x28000402280000F0L,0x000000007800000EL});
+    public static final BitSet FOLLOW_42_in_ruleXWhileExpression10035 = new BitSet(new long[]{0x28000402280000F0L,0x00000000F000000EL});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXWhileExpression10056 = new BitSet(new long[]{0x0000080000000000L});
     public static final BitSet FOLLOW_43_in_ruleXWhileExpression10068 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_34_in_ruleXWhileExpression10080 = new BitSet(new long[]{0x6800058A280080F0L,0x000000007800000FL});
+    public static final BitSet FOLLOW_34_in_ruleXWhileExpression10080 = new BitSet(new long[]{0x6800058A280080F0L,0x00000000F000000FL});
     public static final BitSet FOLLOW_ruleOperationBlock_in_ruleXWhileExpression10101 = new BitSet(new long[]{0x0000000800000000L});
     public static final BitSet FOLLOW_35_in_ruleXWhileExpression10113 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXParenthesizedExpression_in_entryRuleXParenthesizedExpression10149 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXParenthesizedExpression10159 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_42_in_ruleXParenthesizedExpression10196 = new BitSet(new long[]{0x28000402280000F0L,0x000000007800000EL});
+    public static final BitSet FOLLOW_42_in_ruleXParenthesizedExpression10196 = new BitSet(new long[]{0x28000402280000F0L,0x00000000F000000EL});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXParenthesizedExpression10217 = new BitSet(new long[]{0x0000080000000000L});
     public static final BitSet FOLLOW_43_in_ruleXParenthesizedExpression10229 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_65_in_rulePrimitiveKind10279 = new BitSet(new long[]{0x0000000000000002L});
@@ -15168,23 +15198,24 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_89_in_ruleOperationRole10760 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_68_in_ruleBinaryType10805 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_90_in_ruleBinaryType10822 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_91_in_ruleUNARY_OPERATOR10867 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_91_in_ruleBinaryType10839 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_92_in_ruleUNARY_OPERATOR10884 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_93_in_ruleUNARY_OPERATOR10901 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_94_in_ruleUNARY_OPERATOR10918 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_95_in_ruleMULTIPLICATIVE_OPERATOR10963 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_95_in_ruleUNARY_OPERATOR10935 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_96_in_ruleMULTIPLICATIVE_OPERATOR10980 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_97_in_ruleMULTIPLICATIVE_OPERATOR10997 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_98_in_ruleADDITIVE_OPERATOR11042 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_91_in_ruleADDITIVE_OPERATOR11059 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_99_in_ruleEQUALITY_OPERATOR11104 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_98_in_ruleMULTIPLICATIVE_OPERATOR11014 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_99_in_ruleADDITIVE_OPERATOR11059 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_92_in_ruleADDITIVE_OPERATOR11076 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_100_in_ruleEQUALITY_OPERATOR11121 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_101_in_ruleEQUALITY_OPERATOR11138 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_102_in_ruleEQUALITY_OPERATOR11155 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_41_in_ruleEQUALITY_OPERATOR11172 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_40_in_ruleEQUALITY_OPERATOR11189 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_103_in_ruleBOOLEAN_OPERATOR11234 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_103_in_ruleEQUALITY_OPERATOR11172 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_41_in_ruleEQUALITY_OPERATOR11189 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_40_in_ruleEQUALITY_OPERATOR11206 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_104_in_ruleBOOLEAN_OPERATOR11251 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_105_in_ruleBOOLEAN_OPERATOR11268 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleMULTIPLICATIVE_OPERATOR_in_synpred1_InternalESyntax8569 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleADDITIVE_OPERATOR_in_synpred2_InternalESyntax8716 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleEQUALITY_OPERATOR_in_synpred3_InternalESyntax8863 = new BitSet(new long[]{0x0000000000000002L});

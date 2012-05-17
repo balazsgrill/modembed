@@ -1272,9 +1272,9 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getFunctionBinarySection_Pointersize()
+  public EReference getFunctionBinarySection_PointerType()
   {
-    return (EAttribute)functionBinarySectionEClass.getEStructuralFeatures().get(3);
+    return (EReference)functionBinarySectionEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -2358,7 +2358,7 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     createEAttribute(functionBinarySectionEClass, FUNCTION_BINARY_SECTION__NAME);
     createEAttribute(functionBinarySectionEClass, FUNCTION_BINARY_SECTION__START_ADDR);
     createEAttribute(functionBinarySectionEClass, FUNCTION_BINARY_SECTION__MEMWIDTH);
-    createEAttribute(functionBinarySectionEClass, FUNCTION_BINARY_SECTION__POINTERSIZE);
+    createEReference(functionBinarySectionEClass, FUNCTION_BINARY_SECTION__POINTER_TYPE);
     createEReference(functionBinarySectionEClass, FUNCTION_BINARY_SECTION__ADDRESS_TYPE);
     createEReference(functionBinarySectionEClass, FUNCTION_BINARY_SECTION__MEMS);
     createEReference(functionBinarySectionEClass, FUNCTION_BINARY_SECTION__LIB);
@@ -2654,7 +2654,7 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     initEAttribute(getFunctionBinarySection_Name(), ecorePackage.getEString(), "name", null, 0, 1, FunctionBinarySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getFunctionBinarySection_StartAddr(), ecorePackage.getEString(), "startAddr", null, 0, 1, FunctionBinarySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getFunctionBinarySection_Memwidth(), ecorePackage.getEString(), "memwidth", null, 0, 1, FunctionBinarySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getFunctionBinarySection_Pointersize(), ecorePackage.getEString(), "pointersize", null, 0, 1, FunctionBinarySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFunctionBinarySection_PointerType(), this.getTypeDef(), null, "pointerType", null, 0, 1, FunctionBinarySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFunctionBinarySection_AddressType(), this.getTypeDef(), null, "addressType", null, 0, 1, FunctionBinarySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFunctionBinarySection_Mems(), this.getFunctionMemory(), null, "mems", null, 0, -1, FunctionBinarySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFunctionBinarySection_Lib(), this.getLibrary(), null, "lib", null, 0, -1, FunctionBinarySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2809,7 +2809,8 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
 
     initEEnum(binaryTypeEEnum, BinaryType.class, "BinaryType");
     addEEnumLiteral(binaryTypeEEnum, BinaryType.DEFAULT);
-    addEEnumLiteral(binaryTypeEEnum, BinaryType.HEXFILE);
+    addEEnumLiteral(binaryTypeEEnum, BinaryType.INTELHEXFILE);
+    addEEnumLiteral(binaryTypeEEnum, BinaryType.SRECHEXFILE);
 
     initEEnum(unarY_OPERATOREEnum, hu.e.parser.eSyntax.UNARY_OPERATOR.class, "UNARY_OPERATOR");
     addEEnumLiteral(unarY_OPERATOREEnum, hu.e.parser.eSyntax.UNARY_OPERATOR.MINUS);

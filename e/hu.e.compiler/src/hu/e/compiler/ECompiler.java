@@ -67,7 +67,7 @@ public class ECompiler {
 		for(EObject eo : r.getContents()){
 			if (eo instanceof LinkedBinary){
 				LinkedBinary b = (LinkedBinary)eo;
-				if (BinaryType.HEXFILE == b.getType()){
+				if (BinaryType.INTELHEXFILE == b.getType()){
 					
 					IFile hf = getHexFileSibling(f, b.getName()+".hex");
 					Resource hr = resourceset.createResource(URI.createPlatformResourceURI(hf.getFullPath().toString(),true));

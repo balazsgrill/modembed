@@ -216,7 +216,7 @@ public class ESyntaxParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFunctionBinarySectionAccess().getNameAssignment_1(), "rule__FunctionBinarySection__NameAssignment_1");
 					put(grammarAccess.getFunctionBinarySectionAccess().getStartAddrAssignment_5(), "rule__FunctionBinarySection__StartAddrAssignment_5");
 					put(grammarAccess.getFunctionBinarySectionAccess().getMemwidthAssignment_9(), "rule__FunctionBinarySection__MemwidthAssignment_9");
-					put(grammarAccess.getFunctionBinarySectionAccess().getPointersizeAssignment_13(), "rule__FunctionBinarySection__PointersizeAssignment_13");
+					put(grammarAccess.getFunctionBinarySectionAccess().getPointerTypeAssignment_13(), "rule__FunctionBinarySection__PointerTypeAssignment_13");
 					put(grammarAccess.getFunctionBinarySectionAccess().getAddressTypeAssignment_17(), "rule__FunctionBinarySection__AddressTypeAssignment_17");
 					put(grammarAccess.getFunctionBinarySectionAccess().getMemsAssignment_19_0(), "rule__FunctionBinarySection__MemsAssignment_19_0");
 					put(grammarAccess.getFunctionBinarySectionAccess().getLibAssignment_22_0_1(), "rule__FunctionBinarySection__LibAssignment_22_0_1");

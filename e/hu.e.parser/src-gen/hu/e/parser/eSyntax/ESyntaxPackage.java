@@ -1064,13 +1064,13 @@ public interface ESyntaxPackage extends EPackage
   int FUNCTION_BINARY_SECTION__MEMWIDTH = BINARY_SECTION_FEATURE_COUNT + 2;
 
   /**
-   * The feature id for the '<em><b>Pointersize</b></em>' attribute.
+   * The feature id for the '<em><b>Pointer Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FUNCTION_BINARY_SECTION__POINTERSIZE = BINARY_SECTION_FEATURE_COUNT + 3;
+  int FUNCTION_BINARY_SECTION__POINTER_TYPE = BINARY_SECTION_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Address Type</b></em>' containment reference.
@@ -3048,15 +3048,15 @@ public interface ESyntaxPackage extends EPackage
   EAttribute getFunctionBinarySection_Memwidth();
 
   /**
-   * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.FunctionBinarySection#getPointersize <em>Pointersize</em>}'.
+   * Returns the meta object for the containment reference '{@link hu.e.parser.eSyntax.FunctionBinarySection#getPointerType <em>Pointer Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Pointersize</em>'.
-   * @see hu.e.parser.eSyntax.FunctionBinarySection#getPointersize()
+   * @return the meta object for the containment reference '<em>Pointer Type</em>'.
+   * @see hu.e.parser.eSyntax.FunctionBinarySection#getPointerType()
    * @see #getFunctionBinarySection()
    * @generated
    */
-  EAttribute getFunctionBinarySection_Pointersize();
+  EReference getFunctionBinarySection_PointerType();
 
   /**
    * Returns the meta object for the containment reference '{@link hu.e.parser.eSyntax.FunctionBinarySection#getAddressType <em>Address Type</em>}'.
@@ -4666,12 +4666,12 @@ public interface ESyntaxPackage extends EPackage
     EAttribute FUNCTION_BINARY_SECTION__MEMWIDTH = eINSTANCE.getFunctionBinarySection_Memwidth();
 
     /**
-     * The meta object literal for the '<em><b>Pointersize</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Pointer Type</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute FUNCTION_BINARY_SECTION__POINTERSIZE = eINSTANCE.getFunctionBinarySection_Pointersize();
+    EReference FUNCTION_BINARY_SECTION__POINTER_TYPE = eINSTANCE.getFunctionBinarySection_PointerType();
 
     /**
      * The meta object literal for the '<em><b>Address Type</b></em>' containment reference feature.

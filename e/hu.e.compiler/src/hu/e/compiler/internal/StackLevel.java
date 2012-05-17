@@ -42,7 +42,7 @@ public class StackLevel {
 		MemoryAssignment ma = ListFactory.eINSTANCE.createMemoryAssignment();
 		ma.setName("buffer");
 		ma.setSize(memman.getSize(sm, type));
-		return new MemoryAssignmentValueSymbol(ma, 0);
+		return new MemoryAssignmentValueSymbol(ma, 0, sm.getCodePlatform().getPointerType());
 	}
 	
 	public void release(){

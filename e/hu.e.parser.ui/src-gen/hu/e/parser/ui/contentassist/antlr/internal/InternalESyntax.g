@@ -2644,10 +2644,17 @@ rule__BinaryType__Alternatives
 )
 
     |(
-{ before(grammarAccess.getBinaryTypeAccess().getHEXFILEEnumLiteralDeclaration_1()); }
-(	'hexfile' 
+{ before(grammarAccess.getBinaryTypeAccess().getINTELHEXFILEEnumLiteralDeclaration_1()); }
+(	'intelHexfile' 
 )
-{ after(grammarAccess.getBinaryTypeAccess().getHEXFILEEnumLiteralDeclaration_1()); }
+{ after(grammarAccess.getBinaryTypeAccess().getINTELHEXFILEEnumLiteralDeclaration_1()); }
+)
+
+    |(
+{ before(grammarAccess.getBinaryTypeAccess().getSRECHEXFILEEnumLiteralDeclaration_2()); }
+(	'SRECHexfile' 
+)
+{ after(grammarAccess.getBinaryTypeAccess().getSRECHEXFILEEnumLiteralDeclaration_2()); }
 )
 
 ;
@@ -8721,11 +8728,11 @@ rule__FunctionBinarySection__Group__11__Impl
     }
 :
 (
-{ before(grammarAccess.getFunctionBinarySectionAccess().getPointersizeKeyword_11()); }
+{ before(grammarAccess.getFunctionBinarySectionAccess().getPointerTypeKeyword_11()); }
 
-	'pointersize' 
+	'pointerType' 
 
-{ after(grammarAccess.getFunctionBinarySectionAccess().getPointersizeKeyword_11()); }
+{ after(grammarAccess.getFunctionBinarySectionAccess().getPointerTypeKeyword_11()); }
 )
 
 ;
@@ -8783,9 +8790,9 @@ rule__FunctionBinarySection__Group__13__Impl
     }
 :
 (
-{ before(grammarAccess.getFunctionBinarySectionAccess().getPointersizeAssignment_13()); }
-(rule__FunctionBinarySection__PointersizeAssignment_13)
-{ after(grammarAccess.getFunctionBinarySectionAccess().getPointersizeAssignment_13()); }
+{ before(grammarAccess.getFunctionBinarySectionAccess().getPointerTypeAssignment_13()); }
+(rule__FunctionBinarySection__PointerTypeAssignment_13)
+{ after(grammarAccess.getFunctionBinarySectionAccess().getPointerTypeAssignment_13()); }
 )
 
 ;
@@ -13599,14 +13606,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__FunctionBinarySection__PointersizeAssignment_13
+rule__FunctionBinarySection__PointerTypeAssignment_13
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getFunctionBinarySectionAccess().getPointersizeLITERALParserRuleCall_13_0()); }
-	ruleLITERAL{ after(grammarAccess.getFunctionBinarySectionAccess().getPointersizeLITERALParserRuleCall_13_0()); }
+{ before(grammarAccess.getFunctionBinarySectionAccess().getPointerTypeTypeDefParserRuleCall_13_0()); }
+	ruleTypeDef{ after(grammarAccess.getFunctionBinarySectionAccess().getPointerTypeTypeDefParserRuleCall_13_0()); }
 )
 
 ;

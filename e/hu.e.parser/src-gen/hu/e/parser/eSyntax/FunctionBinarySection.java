@@ -19,7 +19,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getName <em>Name</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getStartAddr <em>Start Addr</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getMemwidth <em>Memwidth</em>}</li>
- *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getPointersize <em>Pointersize</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getPointerType <em>Pointer Type</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getAddressType <em>Address Type</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getMems <em>Mems</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getLib <em>Lib</em>}</li>
@@ -113,30 +113,30 @@ public interface FunctionBinarySection extends BinarySection
   void setMemwidth(String value);
 
   /**
-   * Returns the value of the '<em><b>Pointersize</b></em>' attribute.
+   * Returns the value of the '<em><b>Pointer Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Pointersize</em>' attribute isn't clear,
+   * If the meaning of the '<em>Pointer Type</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Pointersize</em>' attribute.
-   * @see #setPointersize(String)
-   * @see hu.e.parser.eSyntax.ESyntaxPackage#getFunctionBinarySection_Pointersize()
-   * @model
+   * @return the value of the '<em>Pointer Type</em>' containment reference.
+   * @see #setPointerType(TypeDef)
+   * @see hu.e.parser.eSyntax.ESyntaxPackage#getFunctionBinarySection_PointerType()
+   * @model containment="true"
    * @generated
    */
-  String getPointersize();
+  TypeDef getPointerType();
 
   /**
-   * Sets the value of the '{@link hu.e.parser.eSyntax.FunctionBinarySection#getPointersize <em>Pointersize</em>}' attribute.
+   * Sets the value of the '{@link hu.e.parser.eSyntax.FunctionBinarySection#getPointerType <em>Pointer Type</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Pointersize</em>' attribute.
-   * @see #getPointersize()
+   * @param value the new value of the '<em>Pointer Type</em>' containment reference.
+   * @see #getPointerType()
    * @generated
    */
-  void setPointersize(String value);
+  void setPointerType(TypeDef value);
 
   /**
    * Returns the value of the '<em><b>Address Type</b></em>' containment reference.

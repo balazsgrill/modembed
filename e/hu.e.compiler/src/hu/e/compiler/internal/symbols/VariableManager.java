@@ -72,11 +72,11 @@ public class VariableManager implements IVariableManager {
 				rootstep.getVariables().add(ma);
 				globals.put(var, ma);
 			}
-			return new MemoryAssignmentValueSymbol(globals.get(var),0);
+			return new MemoryAssignmentValueSymbol(globals.get(var),0, sm.getCodePlatform().getPointerType());
 		}
 		for(StackLevel sl : stack){
 			MemoryAssignment addr = sl.getAddress(var);
-			if (addr != null) return new MemoryAssignmentValueSymbol(addr, 0);
+			if (addr != null) return new MemoryAssignmentValueSymbol(addr, 0, sm.getCodePlatform().getPointerType());
 		}
 		return null;
 	}

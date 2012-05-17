@@ -510,7 +510,7 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	 *         name=ID 
 	 *         startAddr=LITERAL 
 	 *         memwidth=LITERAL 
-	 *         pointersize=LITERAL 
+	 *         pointerType=TypeDef 
 	 *         addressType=TypeDef 
 	 *         mems+=FunctionMemory+ 
 	 *         (lib+=[Library|QualifiedName] | instances+=LinkedInstance)* 
@@ -617,7 +617,7 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	 *         name=ID 
 	 *         startAddr=LITERAL 
 	 *         memwidth=LITERAL 
-	 *         pointersize=LITERAL 
+	 *         pointerType=TypeDef 
 	 *         addressType=TypeDef 
 	 *         mems+=FunctionMemory+ 
 	 *         (lib+=[Library|QualifiedName] | instances+=LinkedInstance)* 

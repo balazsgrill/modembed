@@ -224,7 +224,7 @@ LinkedBinary:
 ;
 
 enum BinaryType:
-	DEFAULT='default' | HEXFILE='hexfile'
+	DEFAULT='default' | INTELHEXFILE='intelHexfile' | SRECHEXFILE='SRECHexfile'
 ;
 
 BinarySection:
@@ -235,7 +235,7 @@ FunctionBinarySection:
 	'program' name=ID '('
 		'startAddr' '=' startAddr=LITERAL ';'
 		'memwidth' '=' memwidth=LITERAL ';'
-		'pointersize' '=' pointersize=LITERAL ';'
+		'pointerType' '=' pointerType=TypeDef ';'
 		'addressType' '=' addressType=TypeDef ';'
 		(mems+=FunctionMemory ';')+
 	')' '{'

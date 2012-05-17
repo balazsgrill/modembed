@@ -3,6 +3,7 @@
  */
 package hu.e.compiler.internal.linking;
 
+import hu.e.parser.eSyntax.FunctionBinarySection;
 import hu.e.parser.eSyntax.Library;
 import hu.e.parser.eSyntax.RefTypeDef;
 import hu.e.parser.eSyntax.TypeDef;
@@ -21,15 +22,21 @@ public class CodePlatform {
 	private final Collection<Library> usedlibs;
 	
 	private final TypeDef addressType;
+	private final TypeDef pointerType;
 	
-	public CodePlatform(TypeDef addressType, ComponentLinker linker, Collection<Library> usedlibs) {
+	public CodePlatform(FunctionBinarySection link, ComponentLinker linker) {
 		this.linker = linker;
-		this.usedlibs = usedlibs;
-		this.addressType = addressType;
+		this.usedlibs = link.getLib();
+		this.addressType = link.getAddressType();
+		this.pointerType = link.getPointerType();
 	}
 	
 	public TypeDef getAddressType() {
 		return addressType;
+	}
+	
+	public TypeDef getPointerType() {
+		return pointerType;
 	}
 	
 	private OperationFinder opfinder = null;

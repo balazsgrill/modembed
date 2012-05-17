@@ -887,8 +887,12 @@
           <literal value="default"/>
         </elements>
         <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.e.hu/parser/ESyntax#//BinaryType/HEXFILE"/>
-          <literal value="hexfile"/>
+          <enumLiteral href="http://www.e.hu/parser/ESyntax#//BinaryType/INTELHEXFILE"/>
+          <literal value="intelHexfile"/>
+        </elements>
+        <elements xsi:type="xtext:EnumLiteralDeclaration">
+          <enumLiteral href="http://www.e.hu/parser/ESyntax#//BinaryType/SRECHEXFILE"/>
+          <literal value="SRECHexfile"/>
         </elements>
       </alternatives>
     </rules>
@@ -931,10 +935,10 @@
           <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.5"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value=";"/>
-        <elements xsi:type="xtext:Keyword" value="pointersize"/>
+        <elements xsi:type="xtext:Keyword" value="pointerType"/>
         <elements xsi:type="xtext:Keyword" value="="/>
-        <elements xsi:type="xtext:Assignment" feature="pointersize" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.5"/>
+        <elements xsi:type="xtext:Assignment" feature="pointerType" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.15"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value=";"/>
         <elements xsi:type="xtext:Keyword" value="addressType"/>

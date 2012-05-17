@@ -34,14 +34,24 @@ public enum BinaryType implements Enumerator
   DEFAULT(0, "DEFAULT", "default"),
 
   /**
-   * The '<em><b>HEXFILE</b></em>' literal object.
+   * The '<em><b>INTELHEXFILE</b></em>' literal object.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #HEXFILE_VALUE
+   * @see #INTELHEXFILE_VALUE
    * @generated
    * @ordered
    */
-  HEXFILE(1, "HEXFILE", "hexfile");
+  INTELHEXFILE(1, "INTELHEXFILE", "intelHexfile"),
+
+  /**
+   * The '<em><b>SRECHEXFILE</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #SRECHEXFILE_VALUE
+   * @generated
+   * @ordered
+   */
+  SRECHEXFILE(2, "SRECHEXFILE", "SRECHexfile");
 
   /**
    * The '<em><b>DEFAULT</b></em>' literal value.
@@ -59,19 +69,34 @@ public enum BinaryType implements Enumerator
   public static final int DEFAULT_VALUE = 0;
 
   /**
-   * The '<em><b>HEXFILE</b></em>' literal value.
+   * The '<em><b>INTELHEXFILE</b></em>' literal value.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of '<em><b>HEXFILE</b></em>' literal object isn't clear,
+   * If the meaning of '<em><b>INTELHEXFILE</b></em>' literal object isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @see #HEXFILE
-   * @model literal="hexfile"
+   * @see #INTELHEXFILE
+   * @model literal="intelHexfile"
    * @generated
    * @ordered
    */
-  public static final int HEXFILE_VALUE = 1;
+  public static final int INTELHEXFILE_VALUE = 1;
+
+  /**
+   * The '<em><b>SRECHEXFILE</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of '<em><b>SRECHEXFILE</b></em>' literal object isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @see #SRECHEXFILE
+   * @model literal="SRECHexfile"
+   * @generated
+   * @ordered
+   */
+  public static final int SRECHEXFILE_VALUE = 2;
 
   /**
    * An array of all the '<em><b>Binary Type</b></em>' enumerators.
@@ -83,7 +108,8 @@ public enum BinaryType implements Enumerator
     new BinaryType[]
     {
       DEFAULT,
-      HEXFILE,
+      INTELHEXFILE,
+      SRECHEXFILE,
     };
 
   /**
@@ -143,7 +169,8 @@ public enum BinaryType implements Enumerator
     switch (value)
     {
       case DEFAULT_VALUE: return DEFAULT;
-      case HEXFILE_VALUE: return HEXFILE;
+      case INTELHEXFILE_VALUE: return INTELHEXFILE;
+      case SRECHEXFILE_VALUE: return SRECHEXFILE;
     }
     return null;
   }

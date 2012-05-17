@@ -2743,9 +2743,9 @@ ruleFunctionBinarySection returns [EObject current=null]
     {
     	newLeafNode(otherlv_10, grammarAccess.getFunctionBinarySectionAccess().getSemicolonKeyword_10());
     }
-	otherlv_11='pointersize' 
+	otherlv_11='pointerType' 
     {
-    	newLeafNode(otherlv_11, grammarAccess.getFunctionBinarySectionAccess().getPointersizeKeyword_11());
+    	newLeafNode(otherlv_11, grammarAccess.getFunctionBinarySectionAccess().getPointerTypeKeyword_11());
     }
 	otherlv_12='=' 
     {
@@ -2754,17 +2754,17 @@ ruleFunctionBinarySection returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getFunctionBinarySectionAccess().getPointersizeLITERALParserRuleCall_13_0()); 
+	        newCompositeNode(grammarAccess.getFunctionBinarySectionAccess().getPointerTypeTypeDefParserRuleCall_13_0()); 
 	    }
-		lv_pointersize_13_0=ruleLITERAL		{
+		lv_pointerType_13_0=ruleTypeDef		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getFunctionBinarySectionRule());
 	        }
        		set(
        			$current, 
-       			"pointersize",
-        		lv_pointersize_13_0, 
-        		"LITERAL");
+       			"pointerType",
+        		lv_pointerType_13_0, 
+        		"TypeDef");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4717,10 +4717,16 @@ ruleBinaryType returns [Enumerator current=null]
         newLeafNode(enumLiteral_0, grammarAccess.getBinaryTypeAccess().getDEFAULTEnumLiteralDeclaration_0()); 
     }
 )
-    |(	enumLiteral_1='hexfile' 
+    |(	enumLiteral_1='intelHexfile' 
 	{
-        $current = grammarAccess.getBinaryTypeAccess().getHEXFILEEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_1, grammarAccess.getBinaryTypeAccess().getHEXFILEEnumLiteralDeclaration_1()); 
+        $current = grammarAccess.getBinaryTypeAccess().getINTELHEXFILEEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_1, grammarAccess.getBinaryTypeAccess().getINTELHEXFILEEnumLiteralDeclaration_1()); 
+    }
+)
+    |(	enumLiteral_2='SRECHexfile' 
+	{
+        $current = grammarAccess.getBinaryTypeAccess().getSRECHEXFILEEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_2, grammarAccess.getBinaryTypeAccess().getSRECHEXFILEEnumLiteralDeclaration_2()); 
     }
 ));
 

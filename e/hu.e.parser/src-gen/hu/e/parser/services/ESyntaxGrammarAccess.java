@@ -1649,10 +1649,10 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cMemwidthAssignment_9 = (Assignment)cGroup.eContents().get(9);
 		private final RuleCall cMemwidthLITERALParserRuleCall_9_0 = (RuleCall)cMemwidthAssignment_9.eContents().get(0);
 		private final Keyword cSemicolonKeyword_10 = (Keyword)cGroup.eContents().get(10);
-		private final Keyword cPointersizeKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Keyword cPointerTypeKeyword_11 = (Keyword)cGroup.eContents().get(11);
 		private final Keyword cEqualsSignKeyword_12 = (Keyword)cGroup.eContents().get(12);
-		private final Assignment cPointersizeAssignment_13 = (Assignment)cGroup.eContents().get(13);
-		private final RuleCall cPointersizeLITERALParserRuleCall_13_0 = (RuleCall)cPointersizeAssignment_13.eContents().get(0);
+		private final Assignment cPointerTypeAssignment_13 = (Assignment)cGroup.eContents().get(13);
+		private final RuleCall cPointerTypeTypeDefParserRuleCall_13_0 = (RuleCall)cPointerTypeAssignment_13.eContents().get(0);
 		private final Keyword cSemicolonKeyword_14 = (Keyword)cGroup.eContents().get(14);
 		private final Keyword cAddressTypeKeyword_15 = (Keyword)cGroup.eContents().get(15);
 		private final Keyword cEqualsSignKeyword_16 = (Keyword)cGroup.eContents().get(16);
@@ -1682,13 +1682,13 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_27 = (Keyword)cGroup.eContents().get(27);
 		
 		//FunctionBinarySection:
-		//	"program" name=ID "(" "startAddr" "=" startAddr=LITERAL ";" "memwidth" "=" memwidth=LITERAL ";" "pointersize" "="
-		//	pointersize=LITERAL ";" "addressType" "=" addressType=TypeDef ";" (mems+=FunctionMemory ";")+ ")" "{" ("lib"
+		//	"program" name=ID "(" "startAddr" "=" startAddr=LITERAL ";" "memwidth" "=" memwidth=LITERAL ";" "pointerType" "="
+		//	pointerType=TypeDef ";" "addressType" "=" addressType=TypeDef ";" (mems+=FunctionMemory ";")+ ")" "{" ("lib"
 		//	lib+=[Library|QualifiedName] ";" | instances+=LinkedInstance)* "link" "{" do=OperationBlock "}" "}";
 		public ParserRule getRule() { return rule; }
 
-		//"program" name=ID "(" "startAddr" "=" startAddr=LITERAL ";" "memwidth" "=" memwidth=LITERAL ";" "pointersize" "="
-		//pointersize=LITERAL ";" "addressType" "=" addressType=TypeDef ";" (mems+=FunctionMemory ";")+ ")" "{" ("lib"
+		//"program" name=ID "(" "startAddr" "=" startAddr=LITERAL ";" "memwidth" "=" memwidth=LITERAL ";" "pointerType" "="
+		//pointerType=TypeDef ";" "addressType" "=" addressType=TypeDef ";" (mems+=FunctionMemory ";")+ ")" "{" ("lib"
 		//lib+=[Library|QualifiedName] ";" | instances+=LinkedInstance)* "link" "{" do=OperationBlock "}" "}"
 		public Group getGroup() { return cGroup; }
 
@@ -1734,17 +1734,17 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		//";"
 		public Keyword getSemicolonKeyword_10() { return cSemicolonKeyword_10; }
 
-		//"pointersize"
-		public Keyword getPointersizeKeyword_11() { return cPointersizeKeyword_11; }
+		//"pointerType"
+		public Keyword getPointerTypeKeyword_11() { return cPointerTypeKeyword_11; }
 
 		//"="
 		public Keyword getEqualsSignKeyword_12() { return cEqualsSignKeyword_12; }
 
-		//pointersize=LITERAL
-		public Assignment getPointersizeAssignment_13() { return cPointersizeAssignment_13; }
+		//pointerType=TypeDef
+		public Assignment getPointerTypeAssignment_13() { return cPointerTypeAssignment_13; }
 
-		//LITERAL
-		public RuleCall getPointersizeLITERALParserRuleCall_13_0() { return cPointersizeLITERALParserRuleCall_13_0; }
+		//TypeDef
+		public RuleCall getPointerTypeTypeDefParserRuleCall_13_0() { return cPointerTypeTypeDefParserRuleCall_13_0; }
 
 		//";"
 		public Keyword getSemicolonKeyword_14() { return cSemicolonKeyword_14; }
@@ -3030,14 +3030,16 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final EnumLiteralDeclaration cDEFAULTEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
 		private final Keyword cDEFAULTDefaultKeyword_0_0 = (Keyword)cDEFAULTEnumLiteralDeclaration_0.eContents().get(0);
-		private final EnumLiteralDeclaration cHEXFILEEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
-		private final Keyword cHEXFILEHexfileKeyword_1_0 = (Keyword)cHEXFILEEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cINTELHEXFILEEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cINTELHEXFILEIntelHexfileKeyword_1_0 = (Keyword)cINTELHEXFILEEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cSRECHEXFILEEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cSRECHEXFILESRECHexfileKeyword_2_0 = (Keyword)cSRECHEXFILEEnumLiteralDeclaration_2.eContents().get(0);
 		
 		//enum BinaryType:
-		//	DEFAULT="default" | HEXFILE="hexfile";
+		//	DEFAULT="default" | INTELHEXFILE="intelHexfile" | SRECHEXFILE="SRECHexfile";
 		public EnumRule getRule() { return rule; }
 
-		//DEFAULT="default" | HEXFILE="hexfile"
+		//DEFAULT="default" | INTELHEXFILE="intelHexfile" | SRECHEXFILE="SRECHexfile"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//DEFAULT="default"
@@ -3046,11 +3048,17 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		//"default"
 		public Keyword getDEFAULTDefaultKeyword_0_0() { return cDEFAULTDefaultKeyword_0_0; }
 
-		//HEXFILE="hexfile"
-		public EnumLiteralDeclaration getHEXFILEEnumLiteralDeclaration_1() { return cHEXFILEEnumLiteralDeclaration_1; }
+		//INTELHEXFILE="intelHexfile"
+		public EnumLiteralDeclaration getINTELHEXFILEEnumLiteralDeclaration_1() { return cINTELHEXFILEEnumLiteralDeclaration_1; }
 
-		//"hexfile"
-		public Keyword getHEXFILEHexfileKeyword_1_0() { return cHEXFILEHexfileKeyword_1_0; }
+		//"intelHexfile"
+		public Keyword getINTELHEXFILEIntelHexfileKeyword_1_0() { return cINTELHEXFILEIntelHexfileKeyword_1_0; }
+
+		//SRECHEXFILE="SRECHexfile"
+		public EnumLiteralDeclaration getSRECHEXFILEEnumLiteralDeclaration_2() { return cSRECHEXFILEEnumLiteralDeclaration_2; }
+
+		//"SRECHexfile"
+		public Keyword getSRECHEXFILESRECHexfileKeyword_2_0() { return cSRECHEXFILESRECHexfileKeyword_2_0; }
 	}
 
 	public class UNARY_OPERATORElements extends AbstractEnumRuleElementFinder {
@@ -3772,7 +3780,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//enum BinaryType:
-	//	DEFAULT="default" | HEXFILE="hexfile";
+	//	DEFAULT="default" | INTELHEXFILE="intelHexfile" | SRECHEXFILE="SRECHexfile";
 	public BinaryTypeElements getBinaryTypeAccess() {
 		return (unknownRuleBinaryType != null) ? unknownRuleBinaryType : (unknownRuleBinaryType = new BinaryTypeElements());
 	}
@@ -3792,8 +3800,8 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//FunctionBinarySection:
-	//	"program" name=ID "(" "startAddr" "=" startAddr=LITERAL ";" "memwidth" "=" memwidth=LITERAL ";" "pointersize" "="
-	//	pointersize=LITERAL ";" "addressType" "=" addressType=TypeDef ";" (mems+=FunctionMemory ";")+ ")" "{" ("lib"
+	//	"program" name=ID "(" "startAddr" "=" startAddr=LITERAL ";" "memwidth" "=" memwidth=LITERAL ";" "pointerType" "="
+	//	pointerType=TypeDef ";" "addressType" "=" addressType=TypeDef ";" (mems+=FunctionMemory ";")+ ")" "{" ("lib"
 	//	lib+=[Library|QualifiedName] ";" | instances+=LinkedInstance)* "link" "{" do=OperationBlock "}" "}";
 	public FunctionBinarySectionElements getFunctionBinarySectionAccess() {
 		return (pFunctionBinarySection != null) ? pFunctionBinarySection : (pFunctionBinarySection = new FunctionBinarySectionElements());
