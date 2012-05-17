@@ -12,6 +12,7 @@ import hu.e.parser.eSyntax.FunctionMemory;
 import hu.e.parser.eSyntax.Library;
 import hu.e.parser.eSyntax.LinkedInstance;
 import hu.e.parser.eSyntax.OperationBlock;
+import hu.e.parser.eSyntax.TypeDef;
 
 import java.util.Collection;
 
@@ -40,6 +41,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link hu.e.parser.eSyntax.impl.FunctionBinarySectionImpl#getStartAddr <em>Start Addr</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.impl.FunctionBinarySectionImpl#getMemwidth <em>Memwidth</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.impl.FunctionBinarySectionImpl#getPointersize <em>Pointersize</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.impl.FunctionBinarySectionImpl#getAddressType <em>Address Type</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.impl.FunctionBinarySectionImpl#getMems <em>Mems</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.impl.FunctionBinarySectionImpl#getLib <em>Lib</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.impl.FunctionBinarySectionImpl#getInstances <em>Instances</em>}</li>
@@ -130,6 +132,16 @@ public class FunctionBinarySectionImpl extends BinarySectionImpl implements Func
    * @ordered
    */
   protected String pointersize = POINTERSIZE_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getAddressType() <em>Address Type</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAddressType()
+   * @generated
+   * @ordered
+   */
+  protected TypeDef addressType;
 
   /**
    * The cached value of the '{@link #getMems() <em>Mems</em>}' containment reference list.
@@ -289,6 +301,54 @@ public class FunctionBinarySectionImpl extends BinarySectionImpl implements Func
    * <!-- end-user-doc -->
    * @generated
    */
+  public TypeDef getAddressType()
+  {
+    return addressType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetAddressType(TypeDef newAddressType, NotificationChain msgs)
+  {
+    TypeDef oldAddressType = addressType;
+    addressType = newAddressType;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ESyntaxPackage.FUNCTION_BINARY_SECTION__ADDRESS_TYPE, oldAddressType, newAddressType);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setAddressType(TypeDef newAddressType)
+  {
+    if (newAddressType != addressType)
+    {
+      NotificationChain msgs = null;
+      if (addressType != null)
+        msgs = ((InternalEObject)addressType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ESyntaxPackage.FUNCTION_BINARY_SECTION__ADDRESS_TYPE, null, msgs);
+      if (newAddressType != null)
+        msgs = ((InternalEObject)newAddressType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ESyntaxPackage.FUNCTION_BINARY_SECTION__ADDRESS_TYPE, null, msgs);
+      msgs = basicSetAddressType(newAddressType, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.FUNCTION_BINARY_SECTION__ADDRESS_TYPE, newAddressType, newAddressType));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<FunctionMemory> getMems()
   {
     if (mems == null)
@@ -384,6 +444,8 @@ public class FunctionBinarySectionImpl extends BinarySectionImpl implements Func
   {
     switch (featureID)
     {
+      case ESyntaxPackage.FUNCTION_BINARY_SECTION__ADDRESS_TYPE:
+        return basicSetAddressType(null, msgs);
       case ESyntaxPackage.FUNCTION_BINARY_SECTION__MEMS:
         return ((InternalEList<?>)getMems()).basicRemove(otherEnd, msgs);
       case ESyntaxPackage.FUNCTION_BINARY_SECTION__INSTANCES:
@@ -412,6 +474,8 @@ public class FunctionBinarySectionImpl extends BinarySectionImpl implements Func
         return getMemwidth();
       case ESyntaxPackage.FUNCTION_BINARY_SECTION__POINTERSIZE:
         return getPointersize();
+      case ESyntaxPackage.FUNCTION_BINARY_SECTION__ADDRESS_TYPE:
+        return getAddressType();
       case ESyntaxPackage.FUNCTION_BINARY_SECTION__MEMS:
         return getMems();
       case ESyntaxPackage.FUNCTION_BINARY_SECTION__LIB:
@@ -446,6 +510,9 @@ public class FunctionBinarySectionImpl extends BinarySectionImpl implements Func
         return;
       case ESyntaxPackage.FUNCTION_BINARY_SECTION__POINTERSIZE:
         setPointersize((String)newValue);
+        return;
+      case ESyntaxPackage.FUNCTION_BINARY_SECTION__ADDRESS_TYPE:
+        setAddressType((TypeDef)newValue);
         return;
       case ESyntaxPackage.FUNCTION_BINARY_SECTION__MEMS:
         getMems().clear();
@@ -488,6 +555,9 @@ public class FunctionBinarySectionImpl extends BinarySectionImpl implements Func
       case ESyntaxPackage.FUNCTION_BINARY_SECTION__POINTERSIZE:
         setPointersize(POINTERSIZE_EDEFAULT);
         return;
+      case ESyntaxPackage.FUNCTION_BINARY_SECTION__ADDRESS_TYPE:
+        setAddressType((TypeDef)null);
+        return;
       case ESyntaxPackage.FUNCTION_BINARY_SECTION__MEMS:
         getMems().clear();
         return;
@@ -522,6 +592,8 @@ public class FunctionBinarySectionImpl extends BinarySectionImpl implements Func
         return MEMWIDTH_EDEFAULT == null ? memwidth != null : !MEMWIDTH_EDEFAULT.equals(memwidth);
       case ESyntaxPackage.FUNCTION_BINARY_SECTION__POINTERSIZE:
         return POINTERSIZE_EDEFAULT == null ? pointersize != null : !POINTERSIZE_EDEFAULT.equals(pointersize);
+      case ESyntaxPackage.FUNCTION_BINARY_SECTION__ADDRESS_TYPE:
+        return addressType != null;
       case ESyntaxPackage.FUNCTION_BINARY_SECTION__MEMS:
         return mems != null && !mems.isEmpty();
       case ESyntaxPackage.FUNCTION_BINARY_SECTION__LIB:

@@ -20,6 +20,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getStartAddr <em>Start Addr</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getMemwidth <em>Memwidth</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getPointersize <em>Pointersize</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getAddressType <em>Address Type</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getMems <em>Mems</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getLib <em>Lib</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getInstances <em>Instances</em>}</li>
@@ -136,6 +137,32 @@ public interface FunctionBinarySection extends BinarySection
    * @generated
    */
   void setPointersize(String value);
+
+  /**
+   * Returns the value of the '<em><b>Address Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Address Type</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Address Type</em>' containment reference.
+   * @see #setAddressType(TypeDef)
+   * @see hu.e.parser.eSyntax.ESyntaxPackage#getFunctionBinarySection_AddressType()
+   * @model containment="true"
+   * @generated
+   */
+  TypeDef getAddressType();
+
+  /**
+   * Sets the value of the '{@link hu.e.parser.eSyntax.FunctionBinarySection#getAddressType <em>Address Type</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Address Type</em>' containment reference.
+   * @see #getAddressType()
+   * @generated
+   */
+  void setAddressType(TypeDef value);
 
   /**
    * Returns the value of the '<em><b>Mems</b></em>' containment reference list.

@@ -2773,39 +2773,69 @@ ruleFunctionBinarySection returns [EObject current=null]
     {
     	newLeafNode(otherlv_14, grammarAccess.getFunctionBinarySectionAccess().getSemicolonKeyword_14());
     }
+	otherlv_15='addressType' 
+    {
+    	newLeafNode(otherlv_15, grammarAccess.getFunctionBinarySectionAccess().getAddressTypeKeyword_15());
+    }
+	otherlv_16='=' 
+    {
+    	newLeafNode(otherlv_16, grammarAccess.getFunctionBinarySectionAccess().getEqualsSignKeyword_16());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getFunctionBinarySectionAccess().getAddressTypeTypeDefParserRuleCall_17_0()); 
+	    }
+		lv_addressType_17_0=ruleTypeDef		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getFunctionBinarySectionRule());
+	        }
+       		set(
+       			$current, 
+       			"addressType",
+        		lv_addressType_17_0, 
+        		"TypeDef");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_18=';' 
+    {
+    	newLeafNode(otherlv_18, grammarAccess.getFunctionBinarySectionAccess().getSemicolonKeyword_18());
+    }
 ((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getFunctionBinarySectionAccess().getMemsFunctionMemoryParserRuleCall_15_0_0()); 
+	        newCompositeNode(grammarAccess.getFunctionBinarySectionAccess().getMemsFunctionMemoryParserRuleCall_19_0_0()); 
 	    }
-		lv_mems_15_0=ruleFunctionMemory		{
+		lv_mems_19_0=ruleFunctionMemory		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getFunctionBinarySectionRule());
 	        }
        		add(
        			$current, 
        			"mems",
-        		lv_mems_15_0, 
+        		lv_mems_19_0, 
         		"FunctionMemory");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_16=';' 
+)	otherlv_20=';' 
     {
-    	newLeafNode(otherlv_16, grammarAccess.getFunctionBinarySectionAccess().getSemicolonKeyword_15_1());
+    	newLeafNode(otherlv_20, grammarAccess.getFunctionBinarySectionAccess().getSemicolonKeyword_19_1());
     }
-)+	otherlv_17=')' 
+)+	otherlv_21=')' 
     {
-    	newLeafNode(otherlv_17, grammarAccess.getFunctionBinarySectionAccess().getRightParenthesisKeyword_16());
+    	newLeafNode(otherlv_21, grammarAccess.getFunctionBinarySectionAccess().getRightParenthesisKeyword_20());
     }
-	otherlv_18='{' 
+	otherlv_22='{' 
     {
-    	newLeafNode(otherlv_18, grammarAccess.getFunctionBinarySectionAccess().getLeftCurlyBracketKeyword_17());
+    	newLeafNode(otherlv_22, grammarAccess.getFunctionBinarySectionAccess().getLeftCurlyBracketKeyword_21());
     }
-((	otherlv_19='lib' 
+((	otherlv_23='lib' 
     {
-    	newLeafNode(otherlv_19, grammarAccess.getFunctionBinarySectionAccess().getLibKeyword_18_0_0());
+    	newLeafNode(otherlv_23, grammarAccess.getFunctionBinarySectionAccess().getLibKeyword_22_0_0());
     }
 (
 (
@@ -2815,69 +2845,69 @@ ruleFunctionBinarySection returns [EObject current=null]
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getFunctionBinarySectionAccess().getLibLibraryCrossReference_18_0_1_0()); 
+	        newCompositeNode(grammarAccess.getFunctionBinarySectionAccess().getLibLibraryCrossReference_22_0_1_0()); 
 	    }
 		ruleQualifiedName		{ 
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_21=';' 
+)	otherlv_25=';' 
     {
-    	newLeafNode(otherlv_21, grammarAccess.getFunctionBinarySectionAccess().getSemicolonKeyword_18_0_2());
+    	newLeafNode(otherlv_25, grammarAccess.getFunctionBinarySectionAccess().getSemicolonKeyword_22_0_2());
     }
 )
     |(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getFunctionBinarySectionAccess().getInstancesLinkedInstanceParserRuleCall_18_1_0()); 
+	        newCompositeNode(grammarAccess.getFunctionBinarySectionAccess().getInstancesLinkedInstanceParserRuleCall_22_1_0()); 
 	    }
-		lv_instances_22_0=ruleLinkedInstance		{
+		lv_instances_26_0=ruleLinkedInstance		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getFunctionBinarySectionRule());
 	        }
        		add(
        			$current, 
        			"instances",
-        		lv_instances_22_0, 
+        		lv_instances_26_0, 
         		"LinkedInstance");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-))*	otherlv_23='link' 
+))*	otherlv_27='link' 
     {
-    	newLeafNode(otherlv_23, grammarAccess.getFunctionBinarySectionAccess().getLinkKeyword_19());
+    	newLeafNode(otherlv_27, grammarAccess.getFunctionBinarySectionAccess().getLinkKeyword_23());
     }
-	otherlv_24='{' 
+	otherlv_28='{' 
     {
-    	newLeafNode(otherlv_24, grammarAccess.getFunctionBinarySectionAccess().getLeftCurlyBracketKeyword_20());
+    	newLeafNode(otherlv_28, grammarAccess.getFunctionBinarySectionAccess().getLeftCurlyBracketKeyword_24());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getFunctionBinarySectionAccess().getDoOperationBlockParserRuleCall_21_0()); 
+	        newCompositeNode(grammarAccess.getFunctionBinarySectionAccess().getDoOperationBlockParserRuleCall_25_0()); 
 	    }
-		lv_do_25_0=ruleOperationBlock		{
+		lv_do_29_0=ruleOperationBlock		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getFunctionBinarySectionRule());
 	        }
        		set(
        			$current, 
        			"do",
-        		lv_do_25_0, 
+        		lv_do_29_0, 
         		"OperationBlock");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_26='}' 
+)	otherlv_30='}' 
     {
-    	newLeafNode(otherlv_26, grammarAccess.getFunctionBinarySectionAccess().getRightCurlyBracketKeyword_22());
+    	newLeafNode(otherlv_30, grammarAccess.getFunctionBinarySectionAccess().getRightCurlyBracketKeyword_26());
     }
-	otherlv_27='}' 
+	otherlv_31='}' 
     {
-    	newLeafNode(otherlv_27, grammarAccess.getFunctionBinarySectionAccess().getRightCurlyBracketKeyword_23());
+    	newLeafNode(otherlv_31, grammarAccess.getFunctionBinarySectionAccess().getRightCurlyBracketKeyword_27());
     }
 )
 ;

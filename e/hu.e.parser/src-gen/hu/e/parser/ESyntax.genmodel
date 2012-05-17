@@ -159,6 +159,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//FunctionBinarySection/startAddr"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//FunctionBinarySection/memwidth"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//FunctionBinarySection/pointersize"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//FunctionBinarySection/addressType"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//FunctionBinarySection/mems"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ESyntax.ecore#//FunctionBinarySection/lib"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//FunctionBinarySection/instances"/>

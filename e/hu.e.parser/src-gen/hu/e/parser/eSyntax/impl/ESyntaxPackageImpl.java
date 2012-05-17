@@ -1282,7 +1282,7 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getFunctionBinarySection_Mems()
+  public EReference getFunctionBinarySection_AddressType()
   {
     return (EReference)functionBinarySectionEClass.getEStructuralFeatures().get(4);
   }
@@ -1292,7 +1292,7 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getFunctionBinarySection_Lib()
+  public EReference getFunctionBinarySection_Mems()
   {
     return (EReference)functionBinarySectionEClass.getEStructuralFeatures().get(5);
   }
@@ -1302,7 +1302,7 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getFunctionBinarySection_Instances()
+  public EReference getFunctionBinarySection_Lib()
   {
     return (EReference)functionBinarySectionEClass.getEStructuralFeatures().get(6);
   }
@@ -1312,9 +1312,19 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getFunctionBinarySection_Do()
+  public EReference getFunctionBinarySection_Instances()
   {
     return (EReference)functionBinarySectionEClass.getEStructuralFeatures().get(7);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getFunctionBinarySection_Do()
+  {
+    return (EReference)functionBinarySectionEClass.getEStructuralFeatures().get(8);
   }
 
   /**
@@ -2349,6 +2359,7 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     createEAttribute(functionBinarySectionEClass, FUNCTION_BINARY_SECTION__START_ADDR);
     createEAttribute(functionBinarySectionEClass, FUNCTION_BINARY_SECTION__MEMWIDTH);
     createEAttribute(functionBinarySectionEClass, FUNCTION_BINARY_SECTION__POINTERSIZE);
+    createEReference(functionBinarySectionEClass, FUNCTION_BINARY_SECTION__ADDRESS_TYPE);
     createEReference(functionBinarySectionEClass, FUNCTION_BINARY_SECTION__MEMS);
     createEReference(functionBinarySectionEClass, FUNCTION_BINARY_SECTION__LIB);
     createEReference(functionBinarySectionEClass, FUNCTION_BINARY_SECTION__INSTANCES);
@@ -2644,6 +2655,7 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     initEAttribute(getFunctionBinarySection_StartAddr(), ecorePackage.getEString(), "startAddr", null, 0, 1, FunctionBinarySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getFunctionBinarySection_Memwidth(), ecorePackage.getEString(), "memwidth", null, 0, 1, FunctionBinarySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getFunctionBinarySection_Pointersize(), ecorePackage.getEString(), "pointersize", null, 0, 1, FunctionBinarySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFunctionBinarySection_AddressType(), this.getTypeDef(), null, "addressType", null, 0, 1, FunctionBinarySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFunctionBinarySection_Mems(), this.getFunctionMemory(), null, "mems", null, 0, -1, FunctionBinarySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFunctionBinarySection_Lib(), this.getLibrary(), null, "lib", null, 0, -1, FunctionBinarySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFunctionBinarySection_Instances(), this.getLinkedInstance(), null, "instances", null, 0, -1, FunctionBinarySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

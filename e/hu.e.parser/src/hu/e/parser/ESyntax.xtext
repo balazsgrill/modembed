@@ -236,6 +236,7 @@ FunctionBinarySection:
 		'startAddr' '=' startAddr=LITERAL ';'
 		'memwidth' '=' memwidth=LITERAL ';'
 		'pointersize' '=' pointersize=LITERAL ';'
+		'addressType' '=' addressType=TypeDef ';'
 		(mems+=FunctionMemory ';')+
 	')' '{'
 		(

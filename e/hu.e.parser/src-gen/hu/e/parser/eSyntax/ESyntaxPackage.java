@@ -1073,13 +1073,22 @@ public interface ESyntaxPackage extends EPackage
   int FUNCTION_BINARY_SECTION__POINTERSIZE = BINARY_SECTION_FEATURE_COUNT + 3;
 
   /**
+   * The feature id for the '<em><b>Address Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_BINARY_SECTION__ADDRESS_TYPE = BINARY_SECTION_FEATURE_COUNT + 4;
+
+  /**
    * The feature id for the '<em><b>Mems</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FUNCTION_BINARY_SECTION__MEMS = BINARY_SECTION_FEATURE_COUNT + 4;
+  int FUNCTION_BINARY_SECTION__MEMS = BINARY_SECTION_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Lib</b></em>' reference list.
@@ -1088,7 +1097,7 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FUNCTION_BINARY_SECTION__LIB = BINARY_SECTION_FEATURE_COUNT + 5;
+  int FUNCTION_BINARY_SECTION__LIB = BINARY_SECTION_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Instances</b></em>' containment reference list.
@@ -1097,7 +1106,7 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FUNCTION_BINARY_SECTION__INSTANCES = BINARY_SECTION_FEATURE_COUNT + 6;
+  int FUNCTION_BINARY_SECTION__INSTANCES = BINARY_SECTION_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Do</b></em>' containment reference.
@@ -1106,7 +1115,7 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FUNCTION_BINARY_SECTION__DO = BINARY_SECTION_FEATURE_COUNT + 7;
+  int FUNCTION_BINARY_SECTION__DO = BINARY_SECTION_FEATURE_COUNT + 8;
 
   /**
    * The number of structural features of the '<em>Function Binary Section</em>' class.
@@ -1115,7 +1124,7 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FUNCTION_BINARY_SECTION_FEATURE_COUNT = BINARY_SECTION_FEATURE_COUNT + 8;
+  int FUNCTION_BINARY_SECTION_FEATURE_COUNT = BINARY_SECTION_FEATURE_COUNT + 9;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.impl.LinkedInstanceImpl <em>Linked Instance</em>}' class.
@@ -3050,6 +3059,17 @@ public interface ESyntaxPackage extends EPackage
   EAttribute getFunctionBinarySection_Pointersize();
 
   /**
+   * Returns the meta object for the containment reference '{@link hu.e.parser.eSyntax.FunctionBinarySection#getAddressType <em>Address Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Address Type</em>'.
+   * @see hu.e.parser.eSyntax.FunctionBinarySection#getAddressType()
+   * @see #getFunctionBinarySection()
+   * @generated
+   */
+  EReference getFunctionBinarySection_AddressType();
+
+  /**
    * Returns the meta object for the containment reference list '{@link hu.e.parser.eSyntax.FunctionBinarySection#getMems <em>Mems</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4652,6 +4672,14 @@ public interface ESyntaxPackage extends EPackage
      * @generated
      */
     EAttribute FUNCTION_BINARY_SECTION__POINTERSIZE = eINSTANCE.getFunctionBinarySection_Pointersize();
+
+    /**
+     * The meta object literal for the '<em><b>Address Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FUNCTION_BINARY_SECTION__ADDRESS_TYPE = eINSTANCE.getFunctionBinarySection_AddressType();
 
     /**
      * The meta object literal for the '<em><b>Mems</b></em>' containment reference list feature.
