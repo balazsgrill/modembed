@@ -20,9 +20,16 @@ public class CodePlatform {
 	private final ComponentLinker linker;
 	private final Collection<Library> usedlibs;
 	
-	public CodePlatform(ComponentLinker linker, Collection<Library> usedlibs) {
+	private final TypeDef addressType;
+	
+	public CodePlatform(TypeDef addressType, ComponentLinker linker, Collection<Library> usedlibs) {
 		this.linker = linker;
 		this.usedlibs = usedlibs;
+		this.addressType = addressType;
+	}
+	
+	public TypeDef getAddressType() {
+		return addressType;
 	}
 	
 	private OperationFinder opfinder = null;

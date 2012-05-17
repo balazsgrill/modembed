@@ -6,12 +6,9 @@ package hu.e.compiler.internal.model.symbols.impl;
 import hu.e.compiler.ECompilerException;
 import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.compiler.internal.model.symbols.ISymbol;
-import hu.e.compiler.list.ProgramStep;
+import hu.e.compiler.list.SequenceStep;
 import hu.e.parser.eSyntax.StructTypeDefMember;
 import hu.e.parser.eSyntax.TypeDef;
-
-import java.util.Collections;
-import java.util.List;
 
 /**
  * @author balazs.grill
@@ -43,8 +40,8 @@ public class ArrayLiteralSymbol implements ISymbol {
 	}
 
 	@Override
-	public List<ProgramStep> getSteps() {
-		return Collections.emptyList();
+	public void addSteps(SequenceStep sequence) {
+		
 	}
 
 	@Override

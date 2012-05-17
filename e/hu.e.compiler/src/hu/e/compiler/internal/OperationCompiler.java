@@ -73,22 +73,30 @@ public class OperationCompiler {
 		this.platform = platform;
 	}
 	
-	public ProgramStep compile(final ISymbolManager sm){
+	public MemoryAssignment createResultBuffer(SequenceStep step){
+		if(operation.getReturnvar() != null){
+			//needs a result buffer
+			MemoryAssignment ma = ListFactory.eINSTANCE.createMemoryAssignment();
+			ma.setName("result");
+			step.getVariables().add(ma);
+			return ma;
+		}
+		return null;
+	}
+	
+	public ProgramStep compile(final ISymbolManager sm, MemoryAssignment resultbuffer){
 		SequenceStep result = ListFactory.eINSTANCE.createSequenceStep();
 		result.setName(((CompilationUnit)operation.eContainer()).getName() +"."+ operation.getName());
 		List<ProgramStep> steps = result.getSteps();
-		if(operation.getReturnvar() != null){
-			//needs a result buffer
+		
+		if (resultbuffer != null){
 			try {
-				MemoryAssignment ma = ListFactory.eINSTANCE.createMemoryAssignment();
-				ma.setName("result");
-				sm.getVariableManager().define(sm, operation.getReturnvar(),ma);
-				result.getVariables().add(ma);
+				sm.getVariableManager().define(sm, operation.getReturnvar(),resultbuffer);
 			} catch (ECompilerException e) {
 				steps.add(CompilationErrorEntry.create(e));
 			}
 		}
-		
+
 		OperationBlock block = operation.getBlock();
 		if (block == null){
 			steps.add(CompilationErrorEntry.error(block,  "Null block!"));

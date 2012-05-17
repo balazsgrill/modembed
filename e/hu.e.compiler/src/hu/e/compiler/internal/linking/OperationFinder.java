@@ -6,6 +6,7 @@ package hu.e.compiler.internal.linking;
 import hu.e.compiler.ECompilerException;
 import hu.e.compiler.internal.OperationCompiler;
 import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
+import hu.e.compiler.internal.model.symbols.IReferenceSymbol;
 import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.compiler.internal.model.symbols.IVariableSymbol;
 import hu.e.compiler.internal.model.symbols.impl.StructLiteralSymbol;
@@ -139,6 +140,10 @@ public class OperationFinder {
 				
 				if (!isAssignableTo(pv.getType(), s.getType())) return false;
 			}else if (s instanceof StructLiteralSymbol){
+				if (pv.getKind() == ParameterKind.VAR) return false;
+				
+				if (!isAssignableTo(pv.getType(), s.getType())) return false;
+			}else if (s instanceof IReferenceSymbol){
 				if (pv.getKind() == ParameterKind.VAR) return false;
 				
 				if (!isAssignableTo(pv.getType(), s.getType())) return false;

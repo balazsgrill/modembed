@@ -6,6 +6,7 @@ import hu.e.compiler.internal.linking.OperationFinder;
 import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.compiler.internal.model.symbols.IVariableSymbol;
 import hu.e.compiler.internal.model.symbols.impl.OperatedSymbol;
+import hu.e.compiler.list.SequenceStep;
 import hu.e.parser.eSyntax.OperationRole;
 import hu.e.parser.eSyntax.TypeDef;
 import hu.e.parser.eSyntax.Variable;
@@ -26,7 +27,7 @@ public interface ISymbolManager {
 	
 	public OperationFinder getOpFinder();
 	
-	public OperatedSymbol executeOperator(OperationRole role, EObject context, ISymbol...symbols) throws ECompilerException;
+	public OperatedSymbol executeOperator(OperationRole role, EObject context, SequenceStep step, ISymbol...symbols) throws ECompilerException;
 	
 	public TypeDef getResultType(OperationRole role, ISymbol...symbols) throws ECompilerException;
 	

@@ -19,6 +19,7 @@ import hu.e.compiler.internal.model.symbols.impl.OperationSymbol;
 import hu.e.compiler.internal.model.symbols.impl.StructLiteralSymbol;
 import hu.e.compiler.internal.model.symbols.impl.VariableSymbol;
 import hu.e.compiler.list.ProgramStep;
+import hu.e.compiler.list.SequenceStep;
 import hu.e.parser.eSyntax.ADDITIVE_OPERATOR;
 import hu.e.parser.eSyntax.ArrayTypeDef;
 import hu.e.parser.eSyntax.BOOLEAN_OPERATOR;
@@ -296,7 +297,7 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 	}
 	
 	@Override
-	public OperatedSymbol executeOperator(OperationRole role, EObject context,
+	public OperatedSymbol executeOperator(OperationRole role, EObject context, SequenceStep step,
 			ISymbol... symbols) throws ECompilerException {
 		OperationFinder opfinder = getOpFinder();
 		OperationCompiler oc = opfinder.getOperationCompiler(getCodePlatform(), role, symbols);
@@ -312,7 +313,7 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 			sb.append(")");
 			throw new ECompilerException(context, sb.toString());
 		}
-		return new OperatedSymbol(Collections.singletonList(oc.compile(this)),oc.getReturns(this));
+		return new OperatedSymbol(Collections.singletonList(oc.compile(this, oc.createResultBuffer(step))),oc.getReturns(this));
 	}
 	
 	private String getTypeName(TypeDef td){

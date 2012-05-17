@@ -3,16 +3,13 @@
  */
 package hu.e.compiler.internal.model.symbols.impl;
 
-import java.util.Collections;
-import java.util.List;
-
 import hu.e.compiler.ECompilerException;
 import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.compiler.internal.model.symbols.IReferenceSymbol;
 import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.compiler.list.MemoryAssignment;
-import hu.e.compiler.list.ProgramStep;
 import hu.e.compiler.list.ReferableValue;
+import hu.e.compiler.list.SequenceStep;
 import hu.e.parser.eSyntax.StructTypeDefMember;
 import hu.e.parser.eSyntax.TypeDef;
 
@@ -50,8 +47,8 @@ public class MemoryAssignmentValueSymbol implements IReferenceSymbol {
 	 * @see hu.e.compiler.internal.model.symbols.ISymbol#getSteps()
 	 */
 	@Override
-	public List<ProgramStep> getSteps() {
-		return Collections.emptyList();
+	public void addSteps(SequenceStep sequence) {
+
 	}
 
 	/* (non-Javadoc)

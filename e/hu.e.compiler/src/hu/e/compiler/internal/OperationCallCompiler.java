@@ -10,7 +10,9 @@ import hu.e.compiler.internal.model.CompilationErrorEntry;
 import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.compiler.internal.model.symbols.impl.LiteralSymbol;
+import hu.e.compiler.list.ListFactory;
 import hu.e.compiler.list.ProgramStep;
+import hu.e.compiler.list.SequenceStep;
 import hu.e.parser.eSyntax.Operation;
 import hu.e.parser.eSyntax.OperationCall;
 import hu.e.parser.eSyntax.OperationCallParameter;
@@ -18,7 +20,7 @@ import hu.e.parser.eSyntax.ParameterVariable;
 import hu.e.parser.eSyntax.Variable;
 import hu.e.parser.eSyntax.XExpression;
 
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
@@ -32,7 +34,7 @@ public class OperationCallCompiler {
 	
 	private final ISymbolManager sm;
 	
-	private final List<ProgramStep> before = new ArrayList<ProgramStep>();
+	private final SequenceStep callstep = ListFactory.eINSTANCE.createSequenceStep();
 	
 	public OperationCallCompiler(CodePlatform platform, OperationCall call, ISymbolManager sm) {
 		this.sm = sm;
@@ -43,6 +45,7 @@ public class OperationCallCompiler {
 //			Variable newvar = operation.getParams().get(i);
 //			parameters.put(newvar, parameters.get(oldvar));
 //		}
+		callstep.setName("Call "+call.getOperation().getName());
 		this.oc = new OperationCompiler(platform, op);
 		Iterator<OperationCallParameter> pexs = call.getParams().iterator();
 		for(Variable pvar : op.getParams()){
@@ -53,7 +56,7 @@ public class OperationCallCompiler {
 			if (ocp == null){
 				//default value
 				if (p.getDefault() == null || "".equals(p.getDefault())){
-					before.add(CompilationErrorEntry.error(call, "Invalid number of parameters for "+call.getOperation().getName()));
+					callstep.getSteps().add(CompilationErrorEntry.error(call, "Invalid number of parameters for "+call.getOperation().getName()));
 				}
 				oc.addParameter(pvar, new LiteralSymbol(null, ECompiler.convertLiteral(p.getDefault())));
 			}else{
@@ -62,9 +65,9 @@ public class OperationCallCompiler {
 					try{
 						ISymbol s = sm.resolve((XExpression)ocp);
 						oc.addParameter(pvar, s);
-						before.addAll(s.getSteps());
+						s.addSteps(callstep);
 					}catch(ECompilerException e){
-						before.add(CompilationErrorEntry.create(e));
+						callstep.getSteps().add(CompilationErrorEntry.create(e));
 					}
 				}
 			}
@@ -72,9 +75,8 @@ public class OperationCallCompiler {
 	}
 	
 	public List<ProgramStep> compile(){
-		List<ProgramStep> ps = new ArrayList<ProgramStep>(before);
-		ps.add(oc.compile(sm));
-		return ps;
+		callstep.getSteps().add(oc.compile(sm, oc.createResultBuffer(callstep)));
+		return Collections.singletonList((ProgramStep)callstep);
 	}
 	
 	public ISymbol getReturns() throws ECompilerException{

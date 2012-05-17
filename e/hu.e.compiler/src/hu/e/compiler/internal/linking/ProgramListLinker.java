@@ -23,9 +23,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
-
 /**
  * @author balazs.grill
  *
@@ -44,7 +41,7 @@ public class ProgramListLinker {
 		public final MemoryManager memman;
 		
 		public LinkingContext(
-				MemoryManager memman, ScriptEngine engine) {
+				MemoryManager memman) {
 			super();
 			this.addresses = new LinkedHashMap<MemoryAssignment, Integer>();
 			this.memman = memman;
@@ -57,9 +54,7 @@ public class ProgramListLinker {
 		/*
 		 * Create context
 		 */
-		ScriptEngineManager factory = new ScriptEngineManager();
-		ScriptEngine engine = factory.getEngineByName("JavaScript");
-		LinkingContext context = new LinkingContext(memman, engine);
+		LinkingContext context = new LinkingContext(memman);
 		
 		Map<LabelStep, Integer> labels = new HashMap<LabelStep, Integer>();
 		

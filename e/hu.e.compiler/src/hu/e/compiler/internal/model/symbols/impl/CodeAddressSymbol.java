@@ -8,13 +8,10 @@ import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.compiler.internal.model.symbols.IReferenceSymbol;
 import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.compiler.list.LabelStep;
-import hu.e.compiler.list.ProgramStep;
 import hu.e.compiler.list.ReferableValue;
+import hu.e.compiler.list.SequenceStep;
 import hu.e.parser.eSyntax.StructTypeDefMember;
 import hu.e.parser.eSyntax.TypeDef;
-
-import java.util.Collections;
-import java.util.List;
 
 /**
  * @author balazs.grill
@@ -24,12 +21,20 @@ public class CodeAddressSymbol implements IReferenceSymbol {
 
 	private final LabelStep step;
 	
-	public CodeAddressSymbol(LabelStep step) {
+	private final TypeDef addressType;
+	
+	public CodeAddressSymbol(LabelStep step, TypeDef addressType) {
 		this.step = step;
+		this.addressType = addressType;
 	}
 	
 	public LabelStep getStep() {
 		return step;
+	}
+	
+	@Override
+	public String toString() {
+		return "label "+step.toString();
 	}
 	
 	/* (non-Javadoc)
@@ -44,8 +49,7 @@ public class CodeAddressSymbol implements IReferenceSymbol {
 	 * @see hu.e.compiler.internal.model.symbols.ISymbol#getSteps()
 	 */
 	@Override
-	public List<ProgramStep> getSteps() {
-		return Collections.emptyList();
+	public void addSteps(SequenceStep sequence) {
 	}
 
 	/* (non-Javadoc)
@@ -53,7 +57,7 @@ public class CodeAddressSymbol implements IReferenceSymbol {
 	 */
 	@Override
 	public TypeDef getType() {
-		return null;
+		return addressType;
 	}
 
 	@Override

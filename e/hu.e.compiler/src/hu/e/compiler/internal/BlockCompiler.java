@@ -25,6 +25,7 @@ import hu.e.parser.eSyntax.Library;
 import hu.e.parser.eSyntax.OperationBlock;
 import hu.e.parser.eSyntax.OperationRole;
 import hu.e.parser.eSyntax.OperationStep;
+import hu.e.parser.eSyntax.TypeDef;
 import hu.e.parser.eSyntax.Variable;
 import hu.e.parser.eSyntax.XExpression;
 import hu.e.parser.eSyntax.XIfExpression;
@@ -99,7 +100,7 @@ public class BlockCompiler {
 			if (step instanceof XExpression){
 				try {
 					ISymbol s = sm.resolve((XExpression)step);
-					result.getSteps().addAll(s.getSteps());
+					s.addSteps(result);
 				} catch (ECompilerException e) {
 					result.getSteps().add(CompilationErrorEntry.create(e));
 				}
@@ -107,7 +108,7 @@ public class BlockCompiler {
 			if (step instanceof XIfExpression){
 				try{
 					ISymbol symbol = sm.resolve(((XIfExpression) step).getIf());
-					result.getSteps().addAll(symbol.getSteps());
+					symbol.addSteps(result);
 
 					if (symbol.isLiteral()){
 						//Literal condition, decide in compile time
@@ -127,18 +128,20 @@ public class BlockCompiler {
 						OperationBlock trueBlock = ((XIfExpression) step).getThen();
 						OperationBlock falseBlock = ((XIfExpression) step).getElse();
 
+						TypeDef addressType = sm.getCodePlatform().getAddressType();
+						
 						if (falseBlock == null){
-							result.getSteps().addAll(sm.executeOperator(OperationRole.BRANCH, step, v, 
-									new CodeAddressSymbol(trueLabel), new CodeAddressSymbol(endLabel)).getSteps());
+							sm.executeOperator(OperationRole.BRANCH, step, result, v, 
+									new CodeAddressSymbol(trueLabel, addressType), new CodeAddressSymbol(endLabel, addressType)).addSteps(result);
 							result.getSteps().add(trueLabel);
 							result.getSteps().add(new BlockCompiler(trueBlock).compile(sm));
 							result.getSteps().add(endLabel);
 						}else{
-							result.getSteps().addAll(sm.executeOperator(OperationRole.BRANCH,step, v, 
-									new CodeAddressSymbol(trueLabel), new CodeAddressSymbol(falseLabel)).getSteps());
+							sm.executeOperator(OperationRole.BRANCH,step, result, v, 
+									new CodeAddressSymbol(trueLabel, addressType), new CodeAddressSymbol(falseLabel, addressType)).addSteps(result);
 							result.getSteps().add(trueLabel);
 							result.getSteps().add(new BlockCompiler(trueBlock).compile(sm));
-							result.getSteps().addAll(sm.executeOperator(OperationRole.UC_GOTO,step, new CodeAddressSymbol(endLabel)).getSteps());
+							sm.executeOperator(OperationRole.UC_GOTO,step, result, new CodeAddressSymbol(endLabel, addressType)).addSteps(result);
 							result.getSteps().add(falseLabel);
 							result.getSteps().add(new BlockCompiler(falseBlock).compile(sm));
 							result.getSteps().add(endLabel);

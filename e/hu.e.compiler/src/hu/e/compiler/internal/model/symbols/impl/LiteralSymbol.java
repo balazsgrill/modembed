@@ -7,15 +7,12 @@ import hu.e.compiler.ECompilerException;
 import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
 import hu.e.compiler.internal.model.symbols.ISymbol;
-import hu.e.compiler.list.ProgramStep;
+import hu.e.compiler.list.SequenceStep;
 import hu.e.parser.eSyntax.DataTypeDef;
 import hu.e.parser.eSyntax.ESyntaxFactory;
 import hu.e.parser.eSyntax.PrimitiveKind;
 import hu.e.parser.eSyntax.StructTypeDefMember;
 import hu.e.parser.eSyntax.TypeDef;
-
-import java.util.Collections;
-import java.util.List;
 
 /**
  * @author balazs.grill
@@ -59,8 +56,8 @@ public class LiteralSymbol implements ILiteralSymbol {
 	}
 
 	@Override
-	public List<ProgramStep> getSteps() {
-		return Collections.emptyList();
+	public void addSteps(SequenceStep sequence) {
+
 	}
 
 	@Override

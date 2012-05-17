@@ -45,7 +45,7 @@ public class SymbolManager extends AbstractSymbolManager {
 		if (ref instanceof Label){
 			LabelStep ls = getVariableManager().getLabelStep((Label)ref);
 			if (ls != null)
-				return new CodeAddressSymbol(ls);
+				return new CodeAddressSymbol(ls, getCodePlatform().getAddressType());
 		}
 		ISymbol s = parent.getSymbol(ref);
 		if (s != null) return s;

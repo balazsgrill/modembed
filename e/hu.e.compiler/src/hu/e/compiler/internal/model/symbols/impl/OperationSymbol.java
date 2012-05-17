@@ -21,7 +21,6 @@ import hu.e.parser.eSyntax.StructTypeDefMember;
 import hu.e.parser.eSyntax.TypeDef;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
@@ -54,9 +53,6 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
 		this.sm = sm;
 		//this.eo = eo;
 		
-		if (!isLiteral())
-			compile();
-		
 	}
 	
 	public ISymbol getA() {
@@ -72,7 +68,7 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
 	}
 
 	private final List<ProgramStep> steps = new ArrayList<ProgramStep>();
-	private final List<MemoryAssignment> memassignments = new ArrayList<MemoryAssignment>();
+	private MemoryAssignment resultbuffer = null;
 	
 	private ISymbol result = null;
 	
@@ -81,14 +77,18 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
 			throw new ECompilerException(context, "Cannot define runtime variables in compiletime context!");
 		}
 		MemoryAssignmentValueSymbol symbol = sm.getVariableManager().allocate(sm, type);
-		memassignments.add(symbol.getAssignment());
+		//memassignments.add(symbol.getAssignment());
+		resultbuffer = symbol.getAssignment();
 		IVariableSymbol v = VariableSymbol.create(symbol, type);
 		return v;
 	}
 	
-	private ISymbol execute(OperationRole role, ISymbol...symbols) throws ECompilerException{
-		OperatedSymbol os = sm.executeOperator(role,context, symbols);
-		steps.addAll(os.getSteps());
+	private ISymbol execute(OperationRole role, SequenceStep step, ISymbol...symbols) throws ECompilerException{
+		OperatedSymbol os = sm.executeOperator(role,context,step, symbols);
+		SequenceStep ss = ListFactory.eINSTANCE.createSequenceStep();
+		ss.setName(os.toString());
+		os.addSteps(ss);
+		steps.add(ss);
 		return os.getSymbol();
 	}
 	
@@ -111,14 +111,14 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
 		throw new ECompilerException(context, "Runtime "+op+" operator is not yet supported.");
 	}
 	
-	private void compile() throws ECompilerException{
+	private void compile(SequenceStep step) throws ECompilerException{
 		TypeDef type = getType();
 		
 		//sm.getVariableManager().startBlock();
 		switch(op){
 		case SET:
 			result = (IVariableSymbol)a;
-			execute(OperationRole.SET, a, b);
+			execute(OperationRole.SET, step, a, b);
 			break;
 		
 		case ADD:
@@ -129,8 +129,8 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
 		case MUL:
 		case OR:
 			result = createBuffer(type);
-			execute(OperationRole.SET, result,a);
-			execute(getRole(op), result,b);
+			execute(OperationRole.SET,step, result,a);
+			execute(getRole(op),step, result,b);
 			break;
 		
 		case GT:
@@ -139,7 +139,7 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
 		case LTE:
 		case NOTEQUALS:
 		case EQUALS:
-			result = (IVariableSymbol)execute(getRole(op), a,b);
+			result = (IVariableSymbol)execute(getRole(op),step, a,b);
 			break;
 		case REFERENCE:
 			if (a instanceof IVariableSymbol){
@@ -207,16 +207,24 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
 	}
 
 	@Override
-	public List<ProgramStep> getSteps() {
+	public void addSteps(SequenceStep sequence) throws ECompilerException {
 		SequenceStep step = ListFactory.eINSTANCE.createSequenceStep();
 		step.setName(toString());
-		List<ProgramStep> ps = new ArrayList<ProgramStep>();
-		ps.addAll(a.getSteps());
-		if (b != null) ps.addAll(b.getSteps());
-		ps.addAll(steps);
-		step.getSteps().addAll(ps);
-		step.getVariables().addAll(memassignments);
-		return Arrays.asList((ProgramStep)step);
+		sequence.getSteps().add(step);
+		
+		if (!isLiteral())
+			compile(step);
+		
+		a.addSteps(step);
+		if (b != null){
+			b.addSteps(step);
+		}
+		step.getSteps().addAll(steps);
+		
+		if (resultbuffer != null){
+			sequence.getVariables().add(resultbuffer);
+		}
+
 	}
 	
 	private TypeDef getLiteralType() throws ECompilerException{
@@ -250,14 +258,14 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
 		case DIV:
 		case MUL:
 		case OR:
-//			if (b != null){
-//				int sizeb = 0;
-//				int sizea = sm.getVariableManager().getMemoryManager().getSize(sm, a.getType());
-//				sizeb = sm.getVariableManager().getMemoryManager().getSize(sm, b.getType());
-//				return sizea > sizeb ? a.getType() : b.getType();
-//			}else{
-//				return a.getType();
-//			}
+			if (b != null){
+				int sizeb = 0;
+				int sizea = sm.getVariableManager().getTypeResolver().getSize(sm, a.getType());
+				sizeb = sm.getVariableManager().getTypeResolver().getSize(sm, b.getType());
+				return sizea > sizeb ? a.getType() : b.getType();
+			}else{
+				return a.getType();
+			}
 		
 		case GT:
 		case GTE:

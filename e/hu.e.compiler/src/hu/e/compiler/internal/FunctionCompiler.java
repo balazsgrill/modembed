@@ -43,7 +43,8 @@ public class FunctionCompiler {
 		root.setName("GLOBAL");
 		pl.setStep(root);
 		pl.setName(link.getName());
-		SymbolManager sm = new SymbolManager(new CodePlatform(linker, link.getLib()),parentsm,memman, root);
+		CodePlatform platform = new CodePlatform(link.getAddressType(), linker, link.getLib());
+		SymbolManager sm = new SymbolManager(platform,parentsm,memman, root);
 
 //		for(Variable v : linker.getGlobals()){
 //			try {

@@ -9,6 +9,7 @@ import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
 import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.compiler.internal.model.symbols.IVariableSymbol;
 import hu.e.compiler.list.ProgramStep;
+import hu.e.compiler.list.SequenceStep;
 import hu.e.parser.eSyntax.StructTypeDefMember;
 import hu.e.parser.eSyntax.TypeDef;
 
@@ -52,8 +53,8 @@ public class OperatedSymbol implements ILiteralSymbol, IVariableSymbol {
 	 * @see hu.e.compiler.internal.model.ISymbol#getSteps()
 	 */
 	@Override
-	public List<ProgramStep> getSteps() {
-		return steps;
+	public void addSteps(SequenceStep sequence) {
+		sequence.getSteps().addAll(steps);
 	}
 
 	@Override
