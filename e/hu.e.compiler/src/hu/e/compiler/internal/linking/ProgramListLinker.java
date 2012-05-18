@@ -3,6 +3,7 @@
  */
 package hu.e.compiler.internal.linking;
 
+import hu.e.compiler.IOptimizerContext;
 import hu.e.compiler.internal.MemoryManager;
 import hu.e.compiler.internal.model.InstructionWordInstance;
 import hu.e.compiler.list.InstructionStep;
@@ -35,7 +36,7 @@ public class ProgramListLinker {
 		this.plist = plist;
 	}
 	
-	private class LinkingContext{
+	private class LinkingContext implements IOptimizerContext{
 		
 		public final Map<MemoryAssignment, Integer> addresses;
 		public final MemoryManager memman;
@@ -45,6 +46,15 @@ public class ProgramListLinker {
 			super();
 			this.addresses = new LinkedHashMap<MemoryAssignment, Integer>();
 			this.memman = memman;
+		}
+
+		@Override
+		public long getMappedAddress(MemoryAssignment ma) {
+			Integer addr = addresses.get(ma);
+			if (addr != null){
+				return addr.longValue();
+			}
+			return -1;
 		}
 		
 	}
@@ -58,6 +68,7 @@ public class ProgramListLinker {
 		
 		Map<LabelStep, Integer> labels = new HashMap<LabelStep, Integer>();
 		
+		mapMemory(context, plist.getStep());
 		List<ProgramStep> allsteps = flatten(context, plist.getStep());
 		List<InstructionStep> instructions = new ArrayList<InstructionStep>();
 		int progsize = 0;
@@ -114,15 +125,7 @@ public class ProgramListLinker {
 		return data;
 	}
 	
-	private List<ProgramStep> flatten(LinkingContext context, ProgramStep step){
-		List<ProgramStep> steps = new ArrayList<ProgramStep>();
-		
-		if (step instanceof InstructionStep){
-			steps.add(step);
-		}
-		if (step instanceof LabelStep){
-			steps.add(step);
-		}
+	private void mapMemory(LinkingContext context, ProgramStep step){
 		if (step instanceof SequenceStep){
 			SequenceStep sequence = (SequenceStep)step;
 			Set<Integer> as = new HashSet<Integer>();
@@ -134,11 +137,27 @@ public class ProgramListLinker {
 			}
 
 			for(ProgramStep ps : ((SequenceStep) step).getSteps()){
-				steps.addAll(flatten(context, ps));
+				mapMemory(context, ps);
 			}
 
 			for(Integer addr : as){
 				context.memman.release(addr);
+			}
+		}
+	}
+	
+	private List<ProgramStep> flatten(LinkingContext context, ProgramStep step){
+		List<ProgramStep> steps = new ArrayList<ProgramStep>();
+		
+		if (step instanceof InstructionStep){
+			steps.add(step);
+		}
+		if (step instanceof LabelStep){
+			steps.add(step);
+		}
+		if (step instanceof SequenceStep){
+			for(ProgramStep ps : ((SequenceStep) step).getSteps()){
+				steps.addAll(flatten(context, ps));
 			}
 		}
 

@@ -9,6 +9,7 @@
 -->
 
 <plugin>
+   <extension-point id="optimizers" name="Compiler Optimizers" schema="schema/hu.e.compiler.optimizers.exsd"/>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
