@@ -38,5 +38,11 @@
          </resource>
       </project>
    </extension>
+   <extension
+         point="hu.e.compiler.optimizers">
+      <optimizer
+            class="hu.modembed.pic.ui.optimizer.PIC16SelectBankOptimizer">
+      </optimizer>
+   </extension>
 
 </plugin>
