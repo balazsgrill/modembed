@@ -218,6 +218,8 @@ litigation.
       <import feature="org.eclipse.emf.ecore" version="2.6.0" match="greaterOrEqual"/>
       <import feature="org.eclipse.emf.edit" version="2.6.0" match="greaterOrEqual"/>
       <import feature="org.eclipse.platform" version="3.6.0" match="greaterOrEqual"/>
+      <import feature="org.eclipse.xtext.runtime" version="2.0.0" match="greaterOrEqual"/>
+      <import feature="org.eclipse.xtext.ui" version="2.0.0" match="greaterOrEqual"/>
    </requires>
 
    <plugin
@@ -280,6 +282,41 @@ litigation.
          download-size="0"
          install-size="0"
          version="0.6.9"
+         unpack="false"/>
+
+   <plugin
+         id="hu.e.compiler"
+         download-size="0"
+         install-size="0"
+         version="0.3.0"
+         unpack="false"/>
+
+   <plugin
+         id="hu.e.compiler.list.edit"
+         download-size="0"
+         install-size="0"
+         version="0.3.0"
+         unpack="false"/>
+
+   <plugin
+         id="hu.e.compiler.list.editor"
+         download-size="0"
+         install-size="0"
+         version="0.3.0"
+         unpack="false"/>
+
+   <plugin
+         id="hu.e.parser"
+         download-size="0"
+         install-size="0"
+         version="0.3.0"
+         unpack="false"/>
+
+   <plugin
+         id="hu.e.parser.ui"
+         download-size="0"
+         install-size="0"
+         version="0.3.0"
          unpack="false"/>
 
 </feature>
