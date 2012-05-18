@@ -3,9 +3,9 @@
  */
 package hu.e.compiler.internal.linking;
 
-import hu.e.compiler.IOptimizerContext;
 import hu.e.compiler.internal.MemoryManager;
 import hu.e.compiler.internal.model.InstructionWordInstance;
+import hu.e.compiler.list.AnnotationStep;
 import hu.e.compiler.list.InstructionStep;
 import hu.e.compiler.list.LabelStep;
 import hu.e.compiler.list.MemoryAssignment;
@@ -14,6 +14,7 @@ import hu.e.compiler.list.ProgramStep;
 import hu.e.compiler.list.ReferableValue;
 import hu.e.compiler.list.Reference;
 import hu.e.compiler.list.SequenceStep;
+import hu.e.compiler.optimizer.IOptimizerContext;
 import hu.modembed.hexfile.persistence.HexFileResource;
 
 import java.util.ArrayList;
@@ -148,6 +149,10 @@ public class ProgramListLinker {
 	
 	private List<ProgramStep> flatten(LinkingContext context, ProgramStep step){
 		List<ProgramStep> steps = new ArrayList<ProgramStep>();
+		
+		if (step instanceof AnnotationStep){
+			steps.add(step);
+		}
 		
 		if (step instanceof InstructionStep){
 			steps.add(step);

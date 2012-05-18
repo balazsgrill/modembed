@@ -52,7 +52,7 @@
          <attribute name="class" type="string" use="required">
             <annotation>
                <documentation>
-                  A class extending the hu.e.compiler.IOptimizer interface
+                  A class extending the hu.e.compiler.IOptimizer interface. The Optimizer can be executed in different phases. The phase is determined by the implemented interfaces of the optimizer. See IFlatProgramOptimizer and IStructuredProgramOptimizer for details.
                </documentation>
                <appInfo>
                   <meta.attribute kind="java" basedOn=":hu.e.compiler.IOptimizer"/>

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package hu.e.compiler;
+package hu.e.compiler.optimizer;
 
 import hu.e.compiler.list.MemoryAssignment;
 

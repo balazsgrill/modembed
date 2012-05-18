@@ -14,4 +14,5 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: hu.e.compiler,
  hu.e.compiler.list,
  hu.e.compiler.list.impl,
- hu.e.compiler.list.util
+ hu.e.compiler.list.util,
+ hu.e.compiler.optimizer
