@@ -41,6 +41,7 @@ public class ProgramListLinker {
 		
 		public final Map<MemoryAssignment, Integer> addresses;
 		public final MemoryManager memman;
+		public final Map<LabelStep, Integer> labels = new HashMap<LabelStep, Integer>();
 		
 		public LinkingContext(
 				MemoryManager memman) {
@@ -58,6 +59,34 @@ public class ProgramListLinker {
 			return -1;
 		}
 		
+		@Override
+		public long getInstructionValue(InstructionStep s) {
+			
+			int d = 0;
+			d = (int) s.getCode();
+			for(Reference lr : s.getRefs()){
+				int v = -1;
+				
+				ReferableValue rv = lr.getValue();
+				if (rv instanceof LabelStep){
+					if (!labels.containsKey(rv)) return -1;
+					v = labels.get(rv);
+				}
+				if (rv instanceof MemoryAssignment){
+					if (!addresses.containsKey(rv)) return -1;
+					v = addresses.get(rv);
+				}
+				
+				if (v == -1){
+					throw new IllegalArgumentException("Could not resolve value of "+rv);
+				}
+				
+				d += InstructionWordInstance.getItemValue(v, lr.getShift(), lr.getStart(), lr.getSize());
+			}
+			
+			return d;
+		}
+		
 	}
 	
 	public byte[] link(MemoryManager memman, int startAddr){
@@ -67,7 +96,7 @@ public class ProgramListLinker {
 		 */
 		LinkingContext context = new LinkingContext(memman);
 		
-		Map<LabelStep, Integer> labels = new HashMap<LabelStep, Integer>();
+		
 		
 		mapMemory(context, plist.getStep());
 		List<ProgramStep> allsteps = flatten(context, plist.getStep());
@@ -81,7 +110,7 @@ public class ProgramListLinker {
 				progsize += (w/8) + (((w%8)==0)?0:1); 
 			}
 			if (ps instanceof LabelStep){
-				labels.put((LabelStep)ps, instructions.size()+startAddr);
+				context.labels.put((LabelStep)ps, instructions.size()+startAddr);
 			}
 		}
 		
@@ -91,33 +120,16 @@ public class ProgramListLinker {
 		for(InstructionStep s : instructions){
 			int w = s.getWidth();
 			int wordbytes = (w/8) + (((w%8)==0)?0:1); 
-			int d = 0;
-			d = (int) s.getCode();
-			for(Reference lr : s.getRefs()){
-				int v = -1;
-				
-				ReferableValue rv = lr.getValue();
-				if (rv instanceof LabelStep){
-					v = labels.get(rv);
-				}
-				if (rv instanceof MemoryAssignment){
-					v = context.addresses.get(rv);
-				}
-				
-				if (v == -1){
-					throw new IllegalArgumentException("Could not resolve value of "+rv);
-				}
-				
-				d += InstructionWordInstance.getItemValue(v, lr.getShift(), lr.getStart(), lr.getSize());
-			}
+			long d = context.getInstructionValue(s);
+			
 			for(int j=0;j<wordbytes;j++){
 				int b = (int)(d&0xFF);
 				d = d>>8;
-			//Reversed byte order (for now, it seems that 
-			// forward byte order should be used)
-			//int index = i + (wordbytes-1-j);
-			int index = i + j;
-			data[index] = HexFileResource.intToByte(b);
+				//Reversed byte order (for now, it seems that 
+				// forward byte order should be used)
+				//int index = i + (wordbytes-1-j);
+				int index = i + j;
+				data[index] = HexFileResource.intToByte(b);
 			}
 			i+=wordbytes;
 			

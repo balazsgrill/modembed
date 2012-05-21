@@ -4,6 +4,7 @@
 package hu.modembed.pic.ui.optimizer;
 
 import hu.e.compiler.list.AnnotationStep;
+import hu.e.compiler.list.InstructionStep;
 import hu.e.compiler.list.LabelStep;
 import hu.e.compiler.list.ProgramStep;
 import hu.e.compiler.optimizer.IFlatProgramOptimizer;
@@ -35,11 +36,29 @@ public class PIC16SelectBankOptimizer implements IFlatProgramOptimizer {
 					checkNext = true;
 				}
 			}else if (checkNext){
-				if (currentBank == null){
-					ss.add(ps);
+
+				if (ps instanceof InstructionStep){
+					long data = context.getInstructionValue((InstructionStep)ps);
+					if (data == -1){
+						ss.add(ps);
+					}else{
+						//Bank select operation
+						//<b000000001:9 f:5>
+						//check if this is a SELECTB
+						if ((data & 0xFE0) == 0x20){
+							int bank = (int) (data & 0x1F);
+							if ((currentBank == null) || (bank != currentBank)){
+								ss.add(ps);
+							}
+							currentBank = bank;
+						}else{
+							ss.add(ps);
+						}
+					}
 				}else{
-					//TODO: extract selected Bank here
+					ss.add(ps);
 				}
+
 			}else{
 				if (ps instanceof LabelStep){
 					currentBank = null;
