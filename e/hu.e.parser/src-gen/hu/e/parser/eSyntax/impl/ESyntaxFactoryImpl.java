@@ -97,6 +97,7 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
       case ESyntaxPackage.LINKED_BINARY: return createLinkedBinary();
       case ESyntaxPackage.BINARY_SECTION: return createBinarySection();
       case ESyntaxPackage.FUNCTION_BINARY_SECTION: return createFunctionBinarySection();
+      case ESyntaxPackage.OPTIMIZER_CALL: return createOptimizerCall();
       case ESyntaxPackage.LINKED_INSTANCE: return createLinkedInstance();
       case ESyntaxPackage.REFERENCE_LINK: return createReferenceLink();
       case ESyntaxPackage.INSTANCE_CONFIG: return createInstanceConfig();
@@ -505,6 +506,17 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
   {
     FunctionBinarySectionImpl functionBinarySection = new FunctionBinarySectionImpl();
     return functionBinarySection;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public OptimizerCall createOptimizerCall()
+  {
+    OptimizerCallImpl optimizerCall = new OptimizerCallImpl();
+    return optimizerCall;
   }
 
   /**

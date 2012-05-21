@@ -238,6 +238,7 @@ FunctionBinarySection:
 		'pointerType' '=' pointerType=TypeDef ';'
 		'addressType' '=' addressType=TypeDef ';'
 		(mems+=FunctionMemory ';')+
+		(optimizercalls+=OptimizerCall ';')*
 	')' '{'
 		(
 		('lib' lib+=[Library|QualifiedName] ';') |
@@ -247,6 +248,10 @@ FunctionBinarySection:
 		'link' '{' do=OperationBlock '}'
 	'}'
 ; 
+
+OptimizerCall:
+	'optimize' optimizer=STRING
+;
 
 LinkedInstance:
 	type=[Module|QualifiedName] name=ID '{'

@@ -172,7 +172,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXTopLevelExpression()
    * @generated
    */
-  int XTOP_LEVEL_EXPRESSION = 47;
+  int XTOP_LEVEL_EXPRESSION = 48;
 
   /**
    * The number of structural features of the '<em>XTop Level Expression</em>' class.
@@ -802,7 +802,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXPrimaryExpression()
    * @generated
    */
-  int XPRIMARY_EXPRESSION = 35;
+  int XPRIMARY_EXPRESSION = 36;
 
   /**
    * The number of structural features of the '<em>XPrimary Expression</em>' class.
@@ -1091,13 +1091,22 @@ public interface ESyntaxPackage extends EPackage
   int FUNCTION_BINARY_SECTION__MEMS = BINARY_SECTION_FEATURE_COUNT + 5;
 
   /**
+   * The feature id for the '<em><b>Optimizercalls</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_BINARY_SECTION__OPTIMIZERCALLS = BINARY_SECTION_FEATURE_COUNT + 6;
+
+  /**
    * The feature id for the '<em><b>Lib</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FUNCTION_BINARY_SECTION__LIB = BINARY_SECTION_FEATURE_COUNT + 6;
+  int FUNCTION_BINARY_SECTION__LIB = BINARY_SECTION_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Instances</b></em>' containment reference list.
@@ -1106,7 +1115,7 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FUNCTION_BINARY_SECTION__INSTANCES = BINARY_SECTION_FEATURE_COUNT + 7;
+  int FUNCTION_BINARY_SECTION__INSTANCES = BINARY_SECTION_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Do</b></em>' containment reference.
@@ -1115,7 +1124,7 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FUNCTION_BINARY_SECTION__DO = BINARY_SECTION_FEATURE_COUNT + 8;
+  int FUNCTION_BINARY_SECTION__DO = BINARY_SECTION_FEATURE_COUNT + 9;
 
   /**
    * The number of structural features of the '<em>Function Binary Section</em>' class.
@@ -1124,7 +1133,35 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FUNCTION_BINARY_SECTION_FEATURE_COUNT = BINARY_SECTION_FEATURE_COUNT + 9;
+  int FUNCTION_BINARY_SECTION_FEATURE_COUNT = BINARY_SECTION_FEATURE_COUNT + 10;
+
+  /**
+   * The meta object id for the '{@link hu.e.parser.eSyntax.impl.OptimizerCallImpl <em>Optimizer Call</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.e.parser.eSyntax.impl.OptimizerCallImpl
+   * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getOptimizerCall()
+   * @generated
+   */
+  int OPTIMIZER_CALL = 28;
+
+  /**
+   * The feature id for the '<em><b>Optimizer</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPTIMIZER_CALL__OPTIMIZER = 0;
+
+  /**
+   * The number of structural features of the '<em>Optimizer Call</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPTIMIZER_CALL_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.impl.LinkedInstanceImpl <em>Linked Instance</em>}' class.
@@ -1134,7 +1171,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getLinkedInstance()
    * @generated
    */
-  int LINKED_INSTANCE = 28;
+  int LINKED_INSTANCE = 29;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' reference.
@@ -1189,7 +1226,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getReferenceLink()
    * @generated
    */
-  int REFERENCE_LINK = 29;
+  int REFERENCE_LINK = 30;
 
   /**
    * The feature id for the '<em><b>Ref</b></em>' reference.
@@ -1226,7 +1263,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getInstanceConfig()
    * @generated
    */
-  int INSTANCE_CONFIG = 30;
+  int INSTANCE_CONFIG = 31;
 
   /**
    * The feature id for the '<em><b>Conf</b></em>' reference.
@@ -1263,7 +1300,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getFunctionMemory()
    * @generated
    */
-  int FUNCTION_MEMORY = 31;
+  int FUNCTION_MEMORY = 32;
 
   /**
    * The feature id for the '<em><b>Start</b></em>' attribute.
@@ -1300,7 +1337,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getConstantBinarySection()
    * @generated
    */
-  int CONSTANT_BINARY_SECTION = 32;
+  int CONSTANT_BINARY_SECTION = 33;
 
   /**
    * The feature id for the '<em><b>Start</b></em>' containment reference.
@@ -1337,7 +1374,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getReferenceBinarySection()
    * @generated
    */
-  int REFERENCE_BINARY_SECTION = 33;
+  int REFERENCE_BINARY_SECTION = 34;
 
   /**
    * The feature id for the '<em><b>Start</b></em>' containment reference.
@@ -1374,7 +1411,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXExpression()
    * @generated
    */
-  int XEXPRESSION = 34;
+  int XEXPRESSION = 35;
 
   /**
    * The number of structural features of the '<em>XExpression</em>' class.
@@ -1393,7 +1430,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXSizeOfExpression()
    * @generated
    */
-  int XSIZE_OF_EXPRESSION = 36;
+  int XSIZE_OF_EXPRESSION = 37;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -1421,7 +1458,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXStructExpression()
    * @generated
    */
-  int XSTRUCT_EXPRESSION = 37;
+  int XSTRUCT_EXPRESSION = 38;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' reference.
@@ -1458,7 +1495,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXExpression1()
    * @generated
    */
-  int XEXPRESSION1 = 38;
+  int XEXPRESSION1 = 39;
 
   /**
    * The feature id for the '<em><b>Operator</b></em>' attribute list.
@@ -1495,7 +1532,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXExpression0()
    * @generated
    */
-  int XEXPRESSION0 = 39;
+  int XEXPRESSION0 = 40;
 
   /**
    * The feature id for the '<em><b>A</b></em>' containment reference.
@@ -1532,7 +1569,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXExpressionM1()
    * @generated
    */
-  int XEXPRESSION_M1 = 40;
+  int XEXPRESSION_M1 = 41;
 
   /**
    * The feature id for the '<em><b>A</b></em>' containment reference.
@@ -1569,7 +1606,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXExpression2()
    * @generated
    */
-  int XEXPRESSION2 = 41;
+  int XEXPRESSION2 = 42;
 
   /**
    * The feature id for the '<em><b>A</b></em>' containment reference.
@@ -1615,7 +1652,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXExpression3()
    * @generated
    */
-  int XEXPRESSION3 = 42;
+  int XEXPRESSION3 = 43;
 
   /**
    * The feature id for the '<em><b>A</b></em>' containment reference.
@@ -1661,7 +1698,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXExpression4()
    * @generated
    */
-  int XEXPRESSION4 = 43;
+  int XEXPRESSION4 = 44;
 
   /**
    * The feature id for the '<em><b>A</b></em>' containment reference.
@@ -1707,7 +1744,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXExpression5()
    * @generated
    */
-  int XEXPRESSION5 = 44;
+  int XEXPRESSION5 = 45;
 
   /**
    * The feature id for the '<em><b>A</b></em>' containment reference.
@@ -1753,7 +1790,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXExpression6()
    * @generated
    */
-  int XEXPRESSION6 = 45;
+  int XEXPRESSION6 = 46;
 
   /**
    * The feature id for the '<em><b>Ref</b></em>' containment reference list.
@@ -1790,7 +1827,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXExpressionLiteral()
    * @generated
    */
-  int XEXPRESSION_LITERAL = 46;
+  int XEXPRESSION_LITERAL = 47;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1818,7 +1855,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXIsLiteralExpression()
    * @generated
    */
-  int XIS_LITERAL_EXPRESSION = 48;
+  int XIS_LITERAL_EXPRESSION = 49;
 
   /**
    * The feature id for the '<em><b>Ref</b></em>' containment reference.
@@ -1846,7 +1883,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXIfExpression()
    * @generated
    */
-  int XIF_EXPRESSION = 49;
+  int XIF_EXPRESSION = 50;
 
   /**
    * The feature id for the '<em><b>If</b></em>' containment reference.
@@ -1892,7 +1929,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXWhileExpression()
    * @generated
    */
-  int XWHILE_EXPRESSION = 50;
+  int XWHILE_EXPRESSION = 51;
 
   /**
    * The feature id for the '<em><b>Cond</b></em>' containment reference.
@@ -1929,7 +1966,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXParenthesizedExpression()
    * @generated
    */
-  int XPARENTHESIZED_EXPRESSION = 51;
+  int XPARENTHESIZED_EXPRESSION = 52;
 
   /**
    * The feature id for the '<em><b>A</b></em>' containment reference.
@@ -1957,7 +1994,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getConfigVariable()
    * @generated
    */
-  int CONFIG_VARIABLE = 52;
+  int CONFIG_VARIABLE = 53;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1994,7 +2031,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getStructTypeDefMember()
    * @generated
    */
-  int STRUCT_TYPE_DEF_MEMBER = 53;
+  int STRUCT_TYPE_DEF_MEMBER = 54;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2031,7 +2068,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getConstantVariable()
    * @generated
    */
-  int CONSTANT_VARIABLE = 54;
+  int CONSTANT_VARIABLE = 55;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2077,7 +2114,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getRegisterVariable()
    * @generated
    */
-  int REGISTER_VARIABLE = 55;
+  int REGISTER_VARIABLE = 56;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2123,7 +2160,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getLabel()
    * @generated
    */
-  int LABEL = 56;
+  int LABEL = 57;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2160,7 +2197,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getOperation()
    * @generated
    */
-  int OPERATION = 57;
+  int OPERATION = 58;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2233,7 +2270,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getParameterVariable()
    * @generated
    */
-  int PARAMETER_VARIABLE = 58;
+  int PARAMETER_VARIABLE = 59;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2288,7 +2325,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getPrimitiveKind()
    * @generated
    */
-  int PRIMITIVE_KIND = 59;
+  int PRIMITIVE_KIND = 60;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.ParameterKind <em>Parameter Kind</em>}' enum.
@@ -2298,7 +2335,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getParameterKind()
    * @generated
    */
-  int PARAMETER_KIND = 60;
+  int PARAMETER_KIND = 61;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.OperationRole <em>Operation Role</em>}' enum.
@@ -2308,7 +2345,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getOperationRole()
    * @generated
    */
-  int OPERATION_ROLE = 61;
+  int OPERATION_ROLE = 62;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.BinaryType <em>Binary Type</em>}' enum.
@@ -2318,7 +2355,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getBinaryType()
    * @generated
    */
-  int BINARY_TYPE = 62;
+  int BINARY_TYPE = 63;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.UNARY_OPERATOR <em>UNARY OPERATOR</em>}' enum.
@@ -2328,7 +2365,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getUNARY_OPERATOR()
    * @generated
    */
-  int UNARY_OPERATOR = 63;
+  int UNARY_OPERATOR = 64;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.MULTIPLICATIVE_OPERATOR <em>MULTIPLICATIVE OPERATOR</em>}' enum.
@@ -2338,7 +2375,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getMULTIPLICATIVE_OPERATOR()
    * @generated
    */
-  int MULTIPLICATIVE_OPERATOR = 64;
+  int MULTIPLICATIVE_OPERATOR = 65;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.ADDITIVE_OPERATOR <em>ADDITIVE OPERATOR</em>}' enum.
@@ -2348,7 +2385,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getADDITIVE_OPERATOR()
    * @generated
    */
-  int ADDITIVE_OPERATOR = 65;
+  int ADDITIVE_OPERATOR = 66;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.EQUALITY_OPERATOR <em>EQUALITY OPERATOR</em>}' enum.
@@ -2358,7 +2395,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getEQUALITY_OPERATOR()
    * @generated
    */
-  int EQUALITY_OPERATOR = 66;
+  int EQUALITY_OPERATOR = 67;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.BOOLEAN_OPERATOR <em>BOOLEAN OPERATOR</em>}' enum.
@@ -2368,7 +2405,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getBOOLEAN_OPERATOR()
    * @generated
    */
-  int BOOLEAN_OPERATOR = 67;
+  int BOOLEAN_OPERATOR = 68;
 
 
   /**
@@ -3081,6 +3118,17 @@ public interface ESyntaxPackage extends EPackage
   EReference getFunctionBinarySection_Mems();
 
   /**
+   * Returns the meta object for the containment reference list '{@link hu.e.parser.eSyntax.FunctionBinarySection#getOptimizercalls <em>Optimizercalls</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Optimizercalls</em>'.
+   * @see hu.e.parser.eSyntax.FunctionBinarySection#getOptimizercalls()
+   * @see #getFunctionBinarySection()
+   * @generated
+   */
+  EReference getFunctionBinarySection_Optimizercalls();
+
+  /**
    * Returns the meta object for the reference list '{@link hu.e.parser.eSyntax.FunctionBinarySection#getLib <em>Lib</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3112,6 +3160,27 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    */
   EReference getFunctionBinarySection_Do();
+
+  /**
+   * Returns the meta object for class '{@link hu.e.parser.eSyntax.OptimizerCall <em>Optimizer Call</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Optimizer Call</em>'.
+   * @see hu.e.parser.eSyntax.OptimizerCall
+   * @generated
+   */
+  EClass getOptimizerCall();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.OptimizerCall#getOptimizer <em>Optimizer</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Optimizer</em>'.
+   * @see hu.e.parser.eSyntax.OptimizerCall#getOptimizer()
+   * @see #getOptimizerCall()
+   * @generated
+   */
+  EAttribute getOptimizerCall_Optimizer();
 
   /**
    * Returns the meta object for class '{@link hu.e.parser.eSyntax.LinkedInstance <em>Linked Instance</em>}'.
@@ -4690,6 +4759,14 @@ public interface ESyntaxPackage extends EPackage
     EReference FUNCTION_BINARY_SECTION__MEMS = eINSTANCE.getFunctionBinarySection_Mems();
 
     /**
+     * The meta object literal for the '<em><b>Optimizercalls</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FUNCTION_BINARY_SECTION__OPTIMIZERCALLS = eINSTANCE.getFunctionBinarySection_Optimizercalls();
+
+    /**
      * The meta object literal for the '<em><b>Lib</b></em>' reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4712,6 +4789,24 @@ public interface ESyntaxPackage extends EPackage
      * @generated
      */
     EReference FUNCTION_BINARY_SECTION__DO = eINSTANCE.getFunctionBinarySection_Do();
+
+    /**
+     * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.OptimizerCallImpl <em>Optimizer Call</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.e.parser.eSyntax.impl.OptimizerCallImpl
+     * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getOptimizerCall()
+     * @generated
+     */
+    EClass OPTIMIZER_CALL = eINSTANCE.getOptimizerCall();
+
+    /**
+     * The meta object literal for the '<em><b>Optimizer</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute OPTIMIZER_CALL__OPTIMIZER = eINSTANCE.getOptimizerCall_Optimizer();
 
     /**
      * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.LinkedInstanceImpl <em>Linked Instance</em>}' class.

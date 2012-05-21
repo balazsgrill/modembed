@@ -22,7 +22,7 @@ import hu.e.parser.eSyntax.Variable;
  */
 public class ComponentLinker {
 
-	/*
+	/**
 	 * Shortcut for: Base library -> highest level library that overrides base library
 	 */
 	private final Map<Library, Library> libraries = new HashMap<Library, Library>();

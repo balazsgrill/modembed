@@ -279,6 +279,15 @@ public interface ESyntaxFactory extends EFactory
   FunctionBinarySection createFunctionBinarySection();
 
   /**
+   * Returns a new object of class '<em>Optimizer Call</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Optimizer Call</em>'.
+   * @generated
+   */
+  OptimizerCall createOptimizerCall();
+
+  /**
    * Returns a new object of class '<em>Linked Instance</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

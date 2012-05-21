@@ -3,6 +3,9 @@ library pic16.bankselect;
 use microchip.pic16;
 use microchip.pic16.enchanced;
 
+/*
+ * Optimizer: microchip.optimize.bankselect.pic16
+ */
 annotation bankSelectOptimization;
 
 SELECTB(address f){

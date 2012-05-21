@@ -22,6 +22,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getPointerType <em>Pointer Type</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getAddressType <em>Address Type</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getMems <em>Mems</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getOptimizercalls <em>Optimizercalls</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getLib <em>Lib</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getInstances <em>Instances</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getDo <em>Do</em>}</li>
@@ -179,6 +180,22 @@ public interface FunctionBinarySection extends BinarySection
    * @generated
    */
   EList<FunctionMemory> getMems();
+
+  /**
+   * Returns the value of the '<em><b>Optimizercalls</b></em>' containment reference list.
+   * The list contents are of type {@link hu.e.parser.eSyntax.OptimizerCall}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Optimizercalls</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Optimizercalls</em>' containment reference list.
+   * @see hu.e.parser.eSyntax.ESyntaxPackage#getFunctionBinarySection_Optimizercalls()
+   * @model containment="true"
+   * @generated
+   */
+  EList<OptimizerCall> getOptimizercalls();
 
   /**
    * Returns the value of the '<em><b>Lib</b></em>' reference list.

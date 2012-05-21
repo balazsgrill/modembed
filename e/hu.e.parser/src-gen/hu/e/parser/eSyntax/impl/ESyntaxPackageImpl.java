@@ -38,6 +38,7 @@ import hu.e.parser.eSyntax.OperationCallParameter;
 import hu.e.parser.eSyntax.OperationRole;
 import hu.e.parser.eSyntax.OperationStep;
 import hu.e.parser.eSyntax.OperatorDefinition;
+import hu.e.parser.eSyntax.OptimizerCall;
 import hu.e.parser.eSyntax.ParameterKind;
 import hu.e.parser.eSyntax.ParameterVariable;
 import hu.e.parser.eSyntax.PointerTypeDef;
@@ -283,6 +284,13 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * @generated
    */
   private EClass functionBinarySectionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass optimizerCallEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1302,7 +1310,7 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getFunctionBinarySection_Lib()
+  public EReference getFunctionBinarySection_Optimizercalls()
   {
     return (EReference)functionBinarySectionEClass.getEStructuralFeatures().get(6);
   }
@@ -1312,7 +1320,7 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getFunctionBinarySection_Instances()
+  public EReference getFunctionBinarySection_Lib()
   {
     return (EReference)functionBinarySectionEClass.getEStructuralFeatures().get(7);
   }
@@ -1322,9 +1330,39 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getFunctionBinarySection_Do()
+  public EReference getFunctionBinarySection_Instances()
   {
     return (EReference)functionBinarySectionEClass.getEStructuralFeatures().get(8);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getFunctionBinarySection_Do()
+  {
+    return (EReference)functionBinarySectionEClass.getEStructuralFeatures().get(9);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getOptimizerCall()
+  {
+    return optimizerCallEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getOptimizerCall_Optimizer()
+  {
+    return (EAttribute)optimizerCallEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2361,9 +2399,13 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     createEReference(functionBinarySectionEClass, FUNCTION_BINARY_SECTION__POINTER_TYPE);
     createEReference(functionBinarySectionEClass, FUNCTION_BINARY_SECTION__ADDRESS_TYPE);
     createEReference(functionBinarySectionEClass, FUNCTION_BINARY_SECTION__MEMS);
+    createEReference(functionBinarySectionEClass, FUNCTION_BINARY_SECTION__OPTIMIZERCALLS);
     createEReference(functionBinarySectionEClass, FUNCTION_BINARY_SECTION__LIB);
     createEReference(functionBinarySectionEClass, FUNCTION_BINARY_SECTION__INSTANCES);
     createEReference(functionBinarySectionEClass, FUNCTION_BINARY_SECTION__DO);
+
+    optimizerCallEClass = createEClass(OPTIMIZER_CALL);
+    createEAttribute(optimizerCallEClass, OPTIMIZER_CALL__OPTIMIZER);
 
     linkedInstanceEClass = createEClass(LINKED_INSTANCE);
     createEReference(linkedInstanceEClass, LINKED_INSTANCE__TYPE);
@@ -2657,9 +2699,13 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     initEReference(getFunctionBinarySection_PointerType(), this.getTypeDef(), null, "pointerType", null, 0, 1, FunctionBinarySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFunctionBinarySection_AddressType(), this.getTypeDef(), null, "addressType", null, 0, 1, FunctionBinarySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFunctionBinarySection_Mems(), this.getFunctionMemory(), null, "mems", null, 0, -1, FunctionBinarySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFunctionBinarySection_Optimizercalls(), this.getOptimizerCall(), null, "optimizercalls", null, 0, -1, FunctionBinarySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFunctionBinarySection_Lib(), this.getLibrary(), null, "lib", null, 0, -1, FunctionBinarySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFunctionBinarySection_Instances(), this.getLinkedInstance(), null, "instances", null, 0, -1, FunctionBinarySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFunctionBinarySection_Do(), this.getOperationBlock(), null, "do", null, 0, 1, FunctionBinarySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(optimizerCallEClass, OptimizerCall.class, "OptimizerCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getOptimizerCall_Optimizer(), ecorePackage.getEString(), "optimizer", null, 0, 1, OptimizerCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(linkedInstanceEClass, LinkedInstance.class, "LinkedInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getLinkedInstance_Type(), this.getModule(), null, "type", null, 0, 1, LinkedInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

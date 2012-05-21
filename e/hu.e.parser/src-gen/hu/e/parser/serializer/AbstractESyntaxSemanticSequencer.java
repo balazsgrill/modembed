@@ -25,6 +25,7 @@ import hu.e.parser.eSyntax.Operation;
 import hu.e.parser.eSyntax.OperationBlock;
 import hu.e.parser.eSyntax.OperationCall;
 import hu.e.parser.eSyntax.OperatorDefinition;
+import hu.e.parser.eSyntax.OptimizerCall;
 import hu.e.parser.eSyntax.ParameterVariable;
 import hu.e.parser.eSyntax.PointerTypeDef;
 import hu.e.parser.eSyntax.RefTypeDef;
@@ -251,6 +252,12 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 				if(context == grammarAccess.getLibraryItemRule() ||
 				   context == grammarAccess.getOperatorDefinitionRule()) {
 					sequence_OperatorDefinition(context, (OperatorDefinition) semanticObject); 
+					return; 
+				}
+				else break;
+			case ESyntaxPackage.OPTIMIZER_CALL:
+				if(context == grammarAccess.getOptimizerCallRule()) {
+					sequence_OptimizerCall(context, (OptimizerCall) semanticObject); 
 					return; 
 				}
 				else break;
@@ -513,6 +520,7 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	 *         pointerType=TypeDef 
 	 *         addressType=TypeDef 
 	 *         mems+=FunctionMemory+ 
+	 *         optimizercalls+=OptimizerCall* 
 	 *         (lib+=[Library|QualifiedName] | instances+=LinkedInstance)* 
 	 *         do=OperationBlock 
 	 *         start=XExpression
@@ -620,6 +628,7 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	 *         pointerType=TypeDef 
 	 *         addressType=TypeDef 
 	 *         mems+=FunctionMemory+ 
+	 *         optimizercalls+=OptimizerCall* 
 	 *         (lib+=[Library|QualifiedName] | instances+=LinkedInstance)* 
 	 *         do=OperationBlock
 	 *     )
@@ -782,6 +791,22 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	 */
 	protected void sequence_OperatorDefinition(EObject context, OperatorDefinition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     optimizer=STRING
+	 */
+	protected void sequence_OptimizerCall(EObject context, OptimizerCall semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.OPTIMIZER_CALL__OPTIMIZER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.OPTIMIZER_CALL__OPTIMIZER));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getOptimizerCallAccess().getOptimizerSTRINGTerminalRuleCall_1_0(), semanticObject.getOptimizer());
+		feeder.finish();
 	}
 	
 	

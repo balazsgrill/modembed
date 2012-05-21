@@ -46,7 +46,7 @@ public class ESyntaxParser extends AbstractContentAssistParser {
 					put(grammarAccess.getWordSectionAccess().getAlternatives_0(), "rule__WordSection__Alternatives_0");
 					put(grammarAccess.getOperationAccess().getAlternatives_8_1(), "rule__Operation__Alternatives_8_1");
 					put(grammarAccess.getBinarySectionAccess().getAlternatives_0(), "rule__BinarySection__Alternatives_0");
-					put(grammarAccess.getFunctionBinarySectionAccess().getAlternatives_22(), "rule__FunctionBinarySection__Alternatives_22");
+					put(grammarAccess.getFunctionBinarySectionAccess().getAlternatives_23(), "rule__FunctionBinarySection__Alternatives_23");
 					put(grammarAccess.getLinkedInstanceAccess().getAlternatives_3_0(), "rule__LinkedInstance__Alternatives_3_0");
 					put(grammarAccess.getXPrimaryExpressionAccess().getAlternatives(), "rule__XPrimaryExpression__Alternatives");
 					put(grammarAccess.getXTopLevelExpressionAccess().getAlternatives(), "rule__XTopLevelExpression__Alternatives");
@@ -115,7 +115,9 @@ public class ESyntaxParser extends AbstractContentAssistParser {
 					put(grammarAccess.getBinarySectionAccess().getGroup(), "rule__BinarySection__Group__0");
 					put(grammarAccess.getFunctionBinarySectionAccess().getGroup(), "rule__FunctionBinarySection__Group__0");
 					put(grammarAccess.getFunctionBinarySectionAccess().getGroup_19(), "rule__FunctionBinarySection__Group_19__0");
-					put(grammarAccess.getFunctionBinarySectionAccess().getGroup_22_0(), "rule__FunctionBinarySection__Group_22_0__0");
+					put(grammarAccess.getFunctionBinarySectionAccess().getGroup_20(), "rule__FunctionBinarySection__Group_20__0");
+					put(grammarAccess.getFunctionBinarySectionAccess().getGroup_23_0(), "rule__FunctionBinarySection__Group_23_0__0");
+					put(grammarAccess.getOptimizerCallAccess().getGroup(), "rule__OptimizerCall__Group__0");
 					put(grammarAccess.getLinkedInstanceAccess().getGroup(), "rule__LinkedInstance__Group__0");
 					put(grammarAccess.getLinkedInstanceAccess().getGroup_3(), "rule__LinkedInstance__Group_3__0");
 					put(grammarAccess.getReferenceLinkAccess().getGroup(), "rule__ReferenceLink__Group__0");
@@ -219,9 +221,11 @@ public class ESyntaxParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFunctionBinarySectionAccess().getPointerTypeAssignment_13(), "rule__FunctionBinarySection__PointerTypeAssignment_13");
 					put(grammarAccess.getFunctionBinarySectionAccess().getAddressTypeAssignment_17(), "rule__FunctionBinarySection__AddressTypeAssignment_17");
 					put(grammarAccess.getFunctionBinarySectionAccess().getMemsAssignment_19_0(), "rule__FunctionBinarySection__MemsAssignment_19_0");
-					put(grammarAccess.getFunctionBinarySectionAccess().getLibAssignment_22_0_1(), "rule__FunctionBinarySection__LibAssignment_22_0_1");
-					put(grammarAccess.getFunctionBinarySectionAccess().getInstancesAssignment_22_1(), "rule__FunctionBinarySection__InstancesAssignment_22_1");
-					put(grammarAccess.getFunctionBinarySectionAccess().getDoAssignment_25(), "rule__FunctionBinarySection__DoAssignment_25");
+					put(grammarAccess.getFunctionBinarySectionAccess().getOptimizercallsAssignment_20_0(), "rule__FunctionBinarySection__OptimizercallsAssignment_20_0");
+					put(grammarAccess.getFunctionBinarySectionAccess().getLibAssignment_23_0_1(), "rule__FunctionBinarySection__LibAssignment_23_0_1");
+					put(grammarAccess.getFunctionBinarySectionAccess().getInstancesAssignment_23_1(), "rule__FunctionBinarySection__InstancesAssignment_23_1");
+					put(grammarAccess.getFunctionBinarySectionAccess().getDoAssignment_26(), "rule__FunctionBinarySection__DoAssignment_26");
+					put(grammarAccess.getOptimizerCallAccess().getOptimizerAssignment_1(), "rule__OptimizerCall__OptimizerAssignment_1");
 					put(grammarAccess.getLinkedInstanceAccess().getTypeAssignment_0(), "rule__LinkedInstance__TypeAssignment_0");
 					put(grammarAccess.getLinkedInstanceAccess().getNameAssignment_1(), "rule__LinkedInstance__NameAssignment_1");
 					put(grammarAccess.getLinkedInstanceAccess().getLinksAssignment_3_0_0(), "rule__LinkedInstance__LinksAssignment_3_0_0");

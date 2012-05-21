@@ -150,12 +150,17 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mems" upperBound="-1" eType="#//FunctionMemory"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="optimizercalls" upperBound="-1"
+        eType="#//OptimizerCall" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="lib" unique="false" upperBound="-1"
         eType="#//Library"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="instances" upperBound="-1"
         eType="#//LinkedInstance" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="do" eType="#//OperationBlock"
         containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OptimizerCall">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="optimizer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LinkedInstance">
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//Module"/>

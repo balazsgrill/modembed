@@ -12,6 +12,7 @@ import hu.e.parser.eSyntax.FunctionMemory;
 import hu.e.parser.eSyntax.Library;
 import hu.e.parser.eSyntax.LinkedInstance;
 import hu.e.parser.eSyntax.OperationBlock;
+import hu.e.parser.eSyntax.OptimizerCall;
 import hu.e.parser.eSyntax.TypeDef;
 
 import java.util.Collection;
@@ -43,6 +44,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link hu.e.parser.eSyntax.impl.FunctionBinarySectionImpl#getPointerType <em>Pointer Type</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.impl.FunctionBinarySectionImpl#getAddressType <em>Address Type</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.impl.FunctionBinarySectionImpl#getMems <em>Mems</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.impl.FunctionBinarySectionImpl#getOptimizercalls <em>Optimizercalls</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.impl.FunctionBinarySectionImpl#getLib <em>Lib</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.impl.FunctionBinarySectionImpl#getInstances <em>Instances</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.impl.FunctionBinarySectionImpl#getDo <em>Do</em>}</li>
@@ -142,6 +144,16 @@ public class FunctionBinarySectionImpl extends BinarySectionImpl implements Func
    * @ordered
    */
   protected EList<FunctionMemory> mems;
+
+  /**
+   * The cached value of the '{@link #getOptimizercalls() <em>Optimizercalls</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getOptimizercalls()
+   * @generated
+   * @ordered
+   */
+  protected EList<OptimizerCall> optimizercalls;
 
   /**
    * The cached value of the '{@link #getLib() <em>Lib</em>}' reference list.
@@ -378,6 +390,20 @@ public class FunctionBinarySectionImpl extends BinarySectionImpl implements Func
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<OptimizerCall> getOptimizercalls()
+  {
+    if (optimizercalls == null)
+    {
+      optimizercalls = new EObjectContainmentEList<OptimizerCall>(OptimizerCall.class, this, ESyntaxPackage.FUNCTION_BINARY_SECTION__OPTIMIZERCALLS);
+    }
+    return optimizercalls;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<Library> getLib()
   {
     if (lib == null)
@@ -465,6 +491,8 @@ public class FunctionBinarySectionImpl extends BinarySectionImpl implements Func
         return basicSetAddressType(null, msgs);
       case ESyntaxPackage.FUNCTION_BINARY_SECTION__MEMS:
         return ((InternalEList<?>)getMems()).basicRemove(otherEnd, msgs);
+      case ESyntaxPackage.FUNCTION_BINARY_SECTION__OPTIMIZERCALLS:
+        return ((InternalEList<?>)getOptimizercalls()).basicRemove(otherEnd, msgs);
       case ESyntaxPackage.FUNCTION_BINARY_SECTION__INSTANCES:
         return ((InternalEList<?>)getInstances()).basicRemove(otherEnd, msgs);
       case ESyntaxPackage.FUNCTION_BINARY_SECTION__DO:
@@ -495,6 +523,8 @@ public class FunctionBinarySectionImpl extends BinarySectionImpl implements Func
         return getAddressType();
       case ESyntaxPackage.FUNCTION_BINARY_SECTION__MEMS:
         return getMems();
+      case ESyntaxPackage.FUNCTION_BINARY_SECTION__OPTIMIZERCALLS:
+        return getOptimizercalls();
       case ESyntaxPackage.FUNCTION_BINARY_SECTION__LIB:
         return getLib();
       case ESyntaxPackage.FUNCTION_BINARY_SECTION__INSTANCES:
@@ -534,6 +564,10 @@ public class FunctionBinarySectionImpl extends BinarySectionImpl implements Func
       case ESyntaxPackage.FUNCTION_BINARY_SECTION__MEMS:
         getMems().clear();
         getMems().addAll((Collection<? extends FunctionMemory>)newValue);
+        return;
+      case ESyntaxPackage.FUNCTION_BINARY_SECTION__OPTIMIZERCALLS:
+        getOptimizercalls().clear();
+        getOptimizercalls().addAll((Collection<? extends OptimizerCall>)newValue);
         return;
       case ESyntaxPackage.FUNCTION_BINARY_SECTION__LIB:
         getLib().clear();
@@ -578,6 +612,9 @@ public class FunctionBinarySectionImpl extends BinarySectionImpl implements Func
       case ESyntaxPackage.FUNCTION_BINARY_SECTION__MEMS:
         getMems().clear();
         return;
+      case ESyntaxPackage.FUNCTION_BINARY_SECTION__OPTIMIZERCALLS:
+        getOptimizercalls().clear();
+        return;
       case ESyntaxPackage.FUNCTION_BINARY_SECTION__LIB:
         getLib().clear();
         return;
@@ -613,6 +650,8 @@ public class FunctionBinarySectionImpl extends BinarySectionImpl implements Func
         return addressType != null;
       case ESyntaxPackage.FUNCTION_BINARY_SECTION__MEMS:
         return mems != null && !mems.isEmpty();
+      case ESyntaxPackage.FUNCTION_BINARY_SECTION__OPTIMIZERCALLS:
+        return optimizercalls != null && !optimizercalls.isEmpty();
       case ESyntaxPackage.FUNCTION_BINARY_SECTION__LIB:
         return lib != null && !lib.isEmpty();
       case ESyntaxPackage.FUNCTION_BINARY_SECTION__INSTANCES:

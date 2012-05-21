@@ -41,7 +41,8 @@
    <extension
          point="hu.e.compiler.optimizers">
       <optimizer
-            class="hu.modembed.pic.ui.optimizer.PIC16SelectBankOptimizer">
+            class="hu.modembed.pic.ui.optimizer.PIC16SelectBankOptimizer"
+            id="microchip.optimize.bankselect.pic16">
       </optimizer>
    </extension>
 

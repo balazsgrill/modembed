@@ -162,9 +162,13 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//FunctionBinarySection/pointerType"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//FunctionBinarySection/addressType"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//FunctionBinarySection/mems"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//FunctionBinarySection/optimizercalls"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ESyntax.ecore#//FunctionBinarySection/lib"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//FunctionBinarySection/instances"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//FunctionBinarySection/do"/>
+    </genClasses>
+    <genClasses ecoreClass="ESyntax.ecore#//OptimizerCall">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//OptimizerCall/optimizer"/>
     </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//LinkedInstance">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ESyntax.ecore#//LinkedInstance/type"/>

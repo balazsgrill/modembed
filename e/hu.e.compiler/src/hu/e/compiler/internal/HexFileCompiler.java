@@ -10,24 +10,31 @@ import hexfile.HexfileFactory;
 import hu.e.compiler.ECompiler;
 import hu.e.compiler.ECompilerException;
 import hu.e.compiler.internal.linking.CodePlatform;
+import hu.e.compiler.internal.linking.OptimizerRegistry;
 import hu.e.compiler.internal.linking.ProgramListLinker;
+import hu.e.compiler.internal.model.CompilationErrorEntry;
 import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
 import hu.e.compiler.internal.symbols.RootSymbolManager;
 import hu.e.compiler.list.ProgramList;
+import hu.e.compiler.list.SequenceStep;
+import hu.e.compiler.optimizer.IOptimizer;
 import hu.e.parser.eSyntax.BinarySection;
 import hu.e.parser.eSyntax.ConstantBinarySection;
 import hu.e.parser.eSyntax.DataTypeDef;
 import hu.e.parser.eSyntax.FunctionBinarySection;
 import hu.e.parser.eSyntax.FunctionMemory;
 import hu.e.parser.eSyntax.LinkedBinary;
+import hu.e.parser.eSyntax.OptimizerCall;
 import hu.e.parser.eSyntax.ReferenceBinarySection;
 import hu.e.parser.eSyntax.TypeDef;
 import hu.e.parser.eSyntax.XExpression;
 import hu.modembed.hexfile.persistence.HexFileResource;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -101,7 +108,17 @@ public class HexFileCompiler {
 						memman.addSegment(ECompiler.convertLiteral(fm.getStart()), ECompiler.convertLiteral(fm.getEnd()));
 					}
 					
-					ProgramListLinker linker = new ProgramListLinker(plist);
+					List<IOptimizer> optimizers = new ArrayList<IOptimizer>();
+					for(OptimizerCall oc : functionBs.getOptimizercalls()){
+						String id = oc.getOptimizer();
+						IOptimizer optimizer = OptimizerRegistry.getInstance().get(id);
+						if (optimizer == null){
+							((SequenceStep)plist.getStep()).getSteps().add(CompilationErrorEntry.error(oc, "Cannot find optimizer: "+id));
+							optimizers.add(optimizer);
+						}
+					}
+					
+					ProgramListLinker linker = new ProgramListLinker(plist, optimizers);
 					
 					int startAddr = ECompiler.convertLiteral(((FunctionBinarySection) bs).getStartAddr());
 					

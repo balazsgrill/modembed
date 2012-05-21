@@ -14,7 +14,10 @@ import hu.e.compiler.list.ProgramStep;
 import hu.e.compiler.list.ReferableValue;
 import hu.e.compiler.list.Reference;
 import hu.e.compiler.list.SequenceStep;
+import hu.e.compiler.optimizer.IFlatProgramOptimizer;
+import hu.e.compiler.optimizer.IOptimizer;
 import hu.e.compiler.optimizer.IOptimizerContext;
+import hu.e.compiler.optimizer.IStructuredProgramOptimizer;
 import hu.modembed.hexfile.persistence.HexFileResource;
 
 import java.util.ArrayList;
@@ -33,8 +36,11 @@ public class ProgramListLinker {
 
 	private final ProgramList plist;
 	
-	public ProgramListLinker(ProgramList plist) {
+	private final List<IOptimizer> optimizers;
+	
+	public ProgramListLinker(ProgramList plist, List<IOptimizer> optimizers) {
 		this.plist = plist;
+		this.optimizers = optimizers;
 	}
 	
 	private class LinkingContext implements IOptimizerContext{
@@ -97,9 +103,21 @@ public class ProgramListLinker {
 		LinkingContext context = new LinkingContext(memman);
 		
 		
-		
 		mapMemory(context, plist.getStep());
+		ProgramList plist = this.plist;
+		
+		for (IOptimizer o : optimizers){
+			if (o instanceof IStructuredProgramOptimizer){
+				plist = ((IStructuredProgramOptimizer) o).optimize(context, plist);
+			}
+		}
+		
 		List<ProgramStep> allsteps = flatten(context, plist.getStep());
+		for (IOptimizer o : optimizers){
+			if (o instanceof IFlatProgramOptimizer){
+				allsteps = ((IFlatProgramOptimizer) o).optimize(context, allsteps);
+			}
+		}
 		List<InstructionStep> instructions = new ArrayList<InstructionStep>();
 		int progsize = 0;
 		

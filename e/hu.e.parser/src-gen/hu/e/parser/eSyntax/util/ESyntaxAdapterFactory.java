@@ -219,6 +219,11 @@ public class ESyntaxAdapterFactory extends AdapterFactoryImpl
         return createFunctionBinarySectionAdapter();
       }
       @Override
+      public Adapter caseOptimizerCall(OptimizerCall object)
+      {
+        return createOptimizerCallAdapter();
+      }
+      @Override
       public Adapter caseLinkedInstance(LinkedInstance object)
       {
         return createLinkedInstanceAdapter();
@@ -811,6 +816,21 @@ public class ESyntaxAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createFunctionBinarySectionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.e.parser.eSyntax.OptimizerCall <em>Optimizer Call</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.e.parser.eSyntax.OptimizerCall
+   * @generated
+   */
+  public Adapter createOptimizerCallAdapter()
   {
     return null;
   }
