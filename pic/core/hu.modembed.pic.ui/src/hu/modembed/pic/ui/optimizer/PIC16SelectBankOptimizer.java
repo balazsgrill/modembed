@@ -25,6 +25,7 @@ public class PIC16SelectBankOptimizer implements IFlatProgramOptimizer {
 	public List<ProgramStep> optimize(IOptimizerContext context,
 			List<ProgramStep> steps) {
 		List<ProgramStep> ss = new ArrayList<ProgramStep>();
+		System.out.println("Input "+steps.size()+" long");
 		
 		boolean checkNext = false;
 		Integer currentBank = null;
@@ -49,6 +50,8 @@ public class PIC16SelectBankOptimizer implements IFlatProgramOptimizer {
 							int bank = (int) (data & 0x1F);
 							if ((currentBank == null) || (bank != currentBank)){
 								ss.add(ps);
+							}else{
+								System.out.println(currentBank+" is already selected");
 							}
 							currentBank = bank;
 						}else{
@@ -67,6 +70,7 @@ public class PIC16SelectBankOptimizer implements IFlatProgramOptimizer {
 			}
 		}
 		
+		System.out.println("Output "+ss.size()+" long");
 		return ss;
 	}
 

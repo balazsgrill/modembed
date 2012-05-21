@@ -114,6 +114,7 @@ public class HexFileCompiler {
 						IOptimizer optimizer = OptimizerRegistry.getInstance().get(id);
 						if (optimizer == null){
 							((SequenceStep)plist.getStep()).getSteps().add(CompilationErrorEntry.error(oc, "Cannot find optimizer: "+id));
+						}else{
 							optimizers.add(optimizer);
 						}
 					}
