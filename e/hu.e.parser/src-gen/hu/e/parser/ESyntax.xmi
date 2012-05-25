@@ -13,8 +13,7 @@
       </type>
       <alternatives xsi:type="xtext:Alternatives">
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.8"/>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.12"/>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.40"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.39"/>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="QualifiedName">
@@ -27,18 +26,6 @@
           <elements xsi:type="xtext:Keyword" value="."/>
           <elements xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
         </elements>
-      </alternatives>
-    </rules>
-    <rules xsi:type="xtext:ParserRule" name="ReferenceID">
-      <type metamodel="/0/@metamodelDeclarations.0">
-        <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </type>
-      <alternatives xsi:type="xtext:Group">
-        <elements xsi:type="xtext:Group" cardinality="?">
-          <elements xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
-          <elements xsi:type="xtext:Keyword" value="."/>
-        </elements>
-        <elements xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:TerminalRule" name="HEXINT">
@@ -75,12 +62,23 @@
         </elements>
       </alternatives>
     </rules>
+    <rules xsi:type="xtext:TerminalRule" name="REAL">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:RuleCall" rule="/1/@rules.1"/>
+        <elements xsi:type="xtext:Keyword" value="."/>
+        <elements xsi:type="xtext:RuleCall" cardinality="?" rule="/1/@rules.1"/>
+      </alternatives>
+    </rules>
     <rules xsi:type="xtext:ParserRule" name="LITERAL">
       <type metamodel="/0/@metamodelDeclarations.0">
         <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
         <elements xsi:type="xtext:RuleCall" rule="/1/@rules.1"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.2"/>
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.3"/>
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.4"/>
       </alternatives>
@@ -109,117 +107,6 @@
             </type>
             <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
           </terminal>
-        </elements>
-      </alternatives>
-    </rules>
-    <rules xsi:type="xtext:ParserRule" name="Module">
-      <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.e.hu/parser/ESyntax#//Module"/>
-      </type>
-      <alternatives xsi:type="xtext:Group">
-        <elements xsi:type="xtext:Keyword" value="module"/>
-        <elements xsi:type="xtext:Assignment" feature="name" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.1"/>
-        </elements>
-        <elements xsi:type="xtext:Group" cardinality="?">
-          <elements xsi:type="xtext:Keyword" value="extends"/>
-          <elements xsi:type="xtext:Assignment" feature="extends" operator="+=">
-            <terminal xsi:type="xtext:CrossReference">
-              <type metamodel="/0/@metamodelDeclarations.1">
-                <classifier xsi:type="ecore:EClass" href="http://www.e.hu/parser/ESyntax#//Module"/>
-              </type>
-              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.1"/>
-            </terminal>
-          </elements>
-          <elements xsi:type="xtext:Group" cardinality="*">
-            <elements xsi:type="xtext:Keyword" value=","/>
-            <elements xsi:type="xtext:Assignment" feature="extends" operator="+=">
-              <terminal xsi:type="xtext:CrossReference">
-                <type metamodel="/0/@metamodelDeclarations.1">
-                  <classifier xsi:type="ecore:EClass" href="http://www.e.hu/parser/ESyntax#//Module"/>
-                </type>
-                <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.1"/>
-              </terminal>
-            </elements>
-          </elements>
-        </elements>
-        <elements xsi:type="xtext:Keyword" value=";"/>
-        <elements xsi:type="xtext:Group" cardinality="*">
-          <elements xsi:type="xtext:Keyword" value="use"/>
-          <elements xsi:type="xtext:Assignment" feature="use" operator="+=">
-            <terminal xsi:type="xtext:CrossReference">
-              <type metamodel="/0/@metamodelDeclarations.1">
-                <classifier xsi:type="ecore:EClass" href="http://www.e.hu/parser/ESyntax#//Library"/>
-              </type>
-              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.1"/>
-            </terminal>
-          </elements>
-          <elements xsi:type="xtext:Keyword" value=";"/>
-        </elements>
-        <elements xsi:type="xtext:Assignment" cardinality="*" feature="items" operator="+=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.9"/>
-        </elements>
-      </alternatives>
-    </rules>
-    <rules xsi:type="xtext:ParserRule" name="ModuleItem">
-      <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.e.hu/parser/ESyntax#//ModuleItem"/>
-      </type>
-      <alternatives xsi:type="xtext:Alternatives">
-        <elements xsi:type="xtext:Group">
-          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.30"/>
-          <elements xsi:type="xtext:Keyword" value=";"/>
-        </elements>
-        <elements xsi:type="xtext:Group">
-          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.11"/>
-          <elements xsi:type="xtext:Keyword" value=";"/>
-        </elements>
-        <elements xsi:type="xtext:Group">
-          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.23"/>
-          <elements xsi:type="xtext:Keyword" value=";"/>
-        </elements>
-        <elements xsi:type="xtext:Group">
-          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.10"/>
-          <elements xsi:type="xtext:Keyword" value=";"/>
-        </elements>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.34"/>
-      </alternatives>
-    </rules>
-    <rules xsi:type="xtext:ParserRule" name="InstanceReference">
-      <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.e.hu/parser/ESyntax#//InstanceReference"/>
-      </type>
-      <alternatives xsi:type="xtext:Group">
-        <elements xsi:type="xtext:Keyword" value="ref"/>
-        <elements xsi:type="xtext:Assignment" feature="type" operator="=">
-          <terminal xsi:type="xtext:CrossReference">
-            <type metamodel="/0/@metamodelDeclarations.1">
-              <classifier xsi:type="ecore:EClass" href="http://www.e.hu/parser/ESyntax#//Module"/>
-            </type>
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.2"/>
-          </terminal>
-        </elements>
-        <elements xsi:type="xtext:Assignment" feature="name" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
-        </elements>
-      </alternatives>
-    </rules>
-    <rules xsi:type="xtext:ParserRule" name="ConfigVariable">
-      <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.e.hu/parser/ESyntax#//Variable"/>
-      </type>
-      <alternatives xsi:type="xtext:Group">
-        <elements xsi:type="xtext:Action">
-          <type metamodel="/0/@metamodelDeclarations.1">
-            <classifier xsi:type="ecore:EClass" href="http://www.e.hu/parser/ESyntax#//ConfigVariable"/>
-          </type>
-        </elements>
-        <elements xsi:type="xtext:Keyword" value="config"/>
-        <elements xsi:type="xtext:Assignment" feature="type" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.15"/>
-        </elements>
-        <elements xsi:type="xtext:Assignment" feature="name" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
         </elements>
       </alternatives>
     </rules>
@@ -268,7 +155,7 @@
           <elements xsi:type="xtext:Keyword" value=";"/>
         </elements>
         <elements xsi:type="xtext:Assignment" cardinality="*" feature="items" operator="+=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.13"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.9"/>
         </elements>
       </alternatives>
     </rules>
@@ -277,21 +164,21 @@
         <classifier xsi:type="ecore:EClass" href="http://www.e.hu/parser/ESyntax#//LibraryItem"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.14"/>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.34"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.10"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.33"/>
         <elements xsi:type="xtext:Group">
-          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.30"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.28"/>
           <elements xsi:type="xtext:Keyword" value=";"/>
         </elements>
         <elements xsi:type="xtext:Group">
-          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.23"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.21"/>
           <elements xsi:type="xtext:Keyword" value=";"/>
         </elements>
         <elements xsi:type="xtext:Group">
-          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.24"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.22"/>
           <elements xsi:type="xtext:Keyword" value=";"/>
         </elements>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.39"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.38"/>
         <elements xsi:type="xtext:Group">
           <elements xsi:type="xtext:RuleCall" rule="/0/@rules.6"/>
           <elements xsi:type="xtext:Keyword" value=";"/>
@@ -309,7 +196,7 @@
         </elements>
         <elements xsi:type="xtext:Keyword" value="="/>
         <elements xsi:type="xtext:Assignment" feature="def" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.15"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.11"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value=";"/>
       </alternatives>
@@ -319,11 +206,11 @@
         <classifier xsi:type="ecore:EClass" href="http://www.e.hu/parser/ESyntax#//TypeDef"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.15"/>
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.19"/>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.21"/>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.16"/>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.17"/>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.18"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.12"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.13"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.14"/>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="PointerTypeDef">
@@ -334,7 +221,7 @@
         <elements xsi:type="xtext:Keyword" value="pointer"/>
         <elements xsi:type="xtext:Keyword" value="of"/>
         <elements xsi:type="xtext:Assignment" feature="def" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.15"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.11"/>
         </elements>
       </alternatives>
     </rules>
@@ -346,12 +233,12 @@
         <elements xsi:type="xtext:Keyword" value="array"/>
         <elements xsi:type="xtext:Keyword" value="["/>
         <elements xsi:type="xtext:Assignment" feature="size" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.51"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.47"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value="]"/>
         <elements xsi:type="xtext:Keyword" value="of"/>
         <elements xsi:type="xtext:Assignment" feature="def" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.15"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.11"/>
         </elements>
       </alternatives>
     </rules>
@@ -364,7 +251,7 @@
           <type metamodel="/0/@metamodelDeclarations.1">
             <classifier xsi:type="ecore:EClass" href="http://www.e.hu/parser/ESyntax#//Type"/>
           </type>
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.2"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.1"/>
         </terminal>
       </alternatives>
     </rules>
@@ -372,9 +259,35 @@
       <type metamodel="/0/@metamodelDeclarations.1">
         <classifier xsi:type="ecore:EClass" href="http://www.e.hu/parser/ESyntax#//DataTypeDef"/>
       </type>
+      <alternatives xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.17"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.16"/>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="FixedDataTypeDef">
+      <type metamodel="/0/@metamodelDeclarations.1">
+        <classifier xsi:type="ecore:EClass" href="http://www.e.hu/parser/ESyntax#//FixedDataTypeDef"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="fixed"/>
+        <elements xsi:type="xtext:Assignment" feature="bits" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.1"/>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value="bits"/>
+        <elements xsi:type="xtext:Keyword" value="scale"/>
+        <elements xsi:type="xtext:Keyword" value="="/>
+        <elements xsi:type="xtext:Assignment" feature="scale" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.4"/>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="IntegerDataTypeDef">
+      <type metamodel="/0/@metamodelDeclarations.1">
+        <classifier xsi:type="ecore:EClass" href="http://www.e.hu/parser/ESyntax#//IntegerDataTypeDef"/>
+      </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Assignment" feature="kind" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.20"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.18"/>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="bits" operator="=">
           <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.1"/>
@@ -382,22 +295,18 @@
         <elements xsi:type="xtext:Keyword" value="bits"/>
       </alternatives>
     </rules>
-    <rules xsi:type="xtext:EnumRule" name="PrimitiveKind">
+    <rules xsi:type="xtext:EnumRule" name="IntegerKind">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EEnum" href="http://www.e.hu/parser/ESyntax#//PrimitiveKind"/>
+        <classifier xsi:type="ecore:EEnum" href="http://www.e.hu/parser/ESyntax#//IntegerKind"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
         <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.e.hu/parser/ESyntax#//PrimitiveKind/UNSIGNED"/>
+          <enumLiteral href="http://www.e.hu/parser/ESyntax#//IntegerKind/UNSIGNED"/>
           <literal value="unsigned"/>
         </elements>
         <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.e.hu/parser/ESyntax#//PrimitiveKind/SIGNED"/>
+          <enumLiteral href="http://www.e.hu/parser/ESyntax#//IntegerKind/SIGNED"/>
           <literal value="signed"/>
-        </elements>
-        <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.e.hu/parser/ESyntax#//PrimitiveKind/REAL"/>
-          <literal value="real"/>
         </elements>
       </alternatives>
     </rules>
@@ -414,12 +323,12 @@
         <elements xsi:type="xtext:Keyword" value="struct"/>
         <elements xsi:type="xtext:Keyword" value="{"/>
         <elements xsi:type="xtext:Assignment" feature="members" operator="+=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.22"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.20"/>
         </elements>
         <elements xsi:type="xtext:Group" cardinality="*">
           <elements xsi:type="xtext:Keyword" value=","/>
           <elements xsi:type="xtext:Assignment" feature="members" operator="+=">
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.22"/>
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.20"/>
           </elements>
         </elements>
         <elements xsi:type="xtext:Keyword" value="}"/>
@@ -436,7 +345,7 @@
           </type>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="type" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.15"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.11"/>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="name" operator="=">
           <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
@@ -455,14 +364,14 @@
         </elements>
         <elements xsi:type="xtext:Keyword" value="const"/>
         <elements xsi:type="xtext:Assignment" feature="type" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.15"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.11"/>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="name" operator="=">
           <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value="="/>
         <elements xsi:type="xtext:Assignment" feature="value" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.51"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.47"/>
         </elements>
       </alternatives>
     </rules>
@@ -478,14 +387,14 @@
         </elements>
         <elements xsi:type="xtext:Keyword" value="reg"/>
         <elements xsi:type="xtext:Assignment" feature="type" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.15"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.11"/>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="name" operator="=">
           <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value=":"/>
         <elements xsi:type="xtext:Assignment" feature="addr" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.51"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.47"/>
         </elements>
       </alternatives>
     </rules>
@@ -494,13 +403,13 @@
         <classifier xsi:type="ecore:EClass" href="http://www.e.hu/parser/ESyntax#//OperationStep"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.27"/>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.26"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.25"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.24"/>
         <elements xsi:type="xtext:Group">
-          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.30"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.28"/>
           <elements xsi:type="xtext:Keyword" value=";"/>
         </elements>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.69"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.65"/>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="Label">
@@ -527,7 +436,7 @@
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Keyword" value="&lt;"/>
         <elements xsi:type="xtext:Assignment" cardinality="+" feature="sections" operator="+=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.28"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.26"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value=">"/>
       </alternatives>
@@ -538,8 +447,8 @@
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Alternatives">
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.27"/>
           <elements xsi:type="xtext:RuleCall" rule="/0/@rules.29"/>
-          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.31"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value=":"/>
         <elements xsi:type="xtext:Assignment" feature="size" operator="=">
@@ -567,7 +476,7 @@
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Assignment" feature="type" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.15"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.11"/>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="name" operator="=">
           <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
@@ -583,7 +492,7 @@
           <type metamodel="/0/@metamodelDeclarations.1">
             <classifier xsi:type="ecore:EClass" href="http://www.e.hu/parser/ESyntax#//Variable"/>
           </type>
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.2"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.1"/>
         </terminal>
       </alternatives>
     </rules>
@@ -597,18 +506,18 @@
             <type metamodel="/0/@metamodelDeclarations.1">
               <classifier xsi:type="ecore:EClass" href="http://www.e.hu/parser/ESyntax#//Operation"/>
             </type>
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.2"/>
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.1"/>
           </terminal>
         </elements>
         <elements xsi:type="xtext:Keyword" value="("/>
         <elements xsi:type="xtext:Group" cardinality="?">
           <elements xsi:type="xtext:Assignment" feature="params" operator="+=">
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.33"/>
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.31"/>
           </elements>
           <elements xsi:type="xtext:Group" cardinality="*">
             <elements xsi:type="xtext:Keyword" value=","/>
             <elements xsi:type="xtext:Assignment" feature="params" operator="+=">
-              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.33"/>
+              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.31"/>
             </elements>
           </elements>
         </elements>
@@ -619,11 +528,39 @@
       <type metamodel="/0/@metamodelDeclarations.1">
         <classifier xsi:type="ecore:EClass" href="http://www.e.hu/parser/ESyntax#//OperationCallParameter"/>
       </type>
-      <alternatives xsi:type="xtext:RuleCall" rule="/0/@rules.51"/>
+      <alternatives xsi:type="xtext:RuleCall" rule="/0/@rules.47"/>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="OperationSignature">
+      <type metamodel="/0/@metamodelDeclarations.1">
+        <classifier xsi:type="ecore:EClass" href="http://www.e.hu/parser/ESyntax#//Variable"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Action">
+          <type metamodel="/0/@metamodelDeclarations.1">
+            <classifier xsi:type="ecore:EClass" href="http://www.e.hu/parser/ESyntax#//OperationSignature"/>
+          </type>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="name" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value="("/>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Assignment" feature="params" operator="+=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.35"/>
+          </elements>
+          <elements xsi:type="xtext:Group" cardinality="*">
+            <elements xsi:type="xtext:Keyword" value=","/>
+            <elements xsi:type="xtext:Assignment" feature="params" operator="+=">
+              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.35"/>
+            </elements>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value=")"/>
+      </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="Operation">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.e.hu/parser/ESyntax#//Variable"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.e.hu/parser/ESyntax#//OperationSignature"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Action">
@@ -637,29 +574,29 @@
         <elements xsi:type="xtext:Keyword" value="("/>
         <elements xsi:type="xtext:Group" cardinality="?">
           <elements xsi:type="xtext:Assignment" feature="params" operator="+=">
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.36"/>
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.35"/>
           </elements>
           <elements xsi:type="xtext:Group" cardinality="*">
             <elements xsi:type="xtext:Keyword" value=","/>
             <elements xsi:type="xtext:Assignment" feature="params" operator="+=">
-              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.36"/>
+              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.35"/>
             </elements>
           </elements>
         </elements>
         <elements xsi:type="xtext:Keyword" value=")"/>
         <elements xsi:type="xtext:Keyword" value="{"/>
         <elements xsi:type="xtext:Assignment" feature="block" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.35"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.34"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value="}"/>
         <elements xsi:type="xtext:Group" cardinality="?">
           <elements xsi:type="xtext:Keyword" value="returns"/>
           <elements xsi:type="xtext:Alternatives">
             <elements xsi:type="xtext:Assignment" feature="return" operator="=">
-              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.51"/>
+              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.47"/>
             </elements>
             <elements xsi:type="xtext:Assignment" feature="returnvar" operator="=">
-              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.30"/>
+              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.28"/>
             </elements>
           </elements>
           <elements xsi:type="xtext:Keyword" value=";"/>
@@ -677,7 +614,7 @@
           </type>
         </elements>
         <elements xsi:type="xtext:Assignment" cardinality="*" feature="steps" operator="+=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.25"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.23"/>
         </elements>
       </alternatives>
     </rules>
@@ -692,10 +629,10 @@
           </type>
         </elements>
         <elements xsi:type="xtext:Assignment" cardinality="?" feature="kind" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.37"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.36"/>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="type" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.15"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.11"/>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="name" operator="=">
           <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
@@ -821,7 +758,7 @@
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Keyword" value="operator"/>
         <elements xsi:type="xtext:Assignment" feature="role" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.38"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.37"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value="{"/>
         <elements xsi:type="xtext:Assignment" feature="candidate" operator="+=">
@@ -829,7 +766,7 @@
             <type metamodel="/0/@metamodelDeclarations.1">
               <classifier xsi:type="ecore:EClass" href="http://www.e.hu/parser/ESyntax#//Operation"/>
             </type>
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.2"/>
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.1"/>
           </terminal>
         </elements>
         <elements xsi:type="xtext:Group" cardinality="*">
@@ -839,7 +776,7 @@
               <type metamodel="/0/@metamodelDeclarations.1">
                 <classifier xsi:type="ecore:EClass" href="http://www.e.hu/parser/ESyntax#//Operation"/>
               </type>
-              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.2"/>
+              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.1"/>
             </terminal>
           </elements>
         </elements>
@@ -857,7 +794,7 @@
           <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.1"/>
         </elements>
         <elements xsi:type="xtext:Assignment" cardinality="?" feature="type" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.41"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.40"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value=";"/>
         <elements xsi:type="xtext:Group" cardinality="*">
@@ -873,7 +810,7 @@
           <elements xsi:type="xtext:Keyword" value=";"/>
         </elements>
         <elements xsi:type="xtext:Assignment" cardinality="*" feature="sections" operator="+=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.42"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.41"/>
         </elements>
       </alternatives>
     </rules>
@@ -902,13 +839,13 @@
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Alternatives">
-          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.43"/>
-          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.49"/>
-          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.50"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.42"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.45"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.46"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value="at"/>
         <elements xsi:type="xtext:Assignment" feature="start" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.51"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.47"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value=";"/>
       </alternatives>
@@ -938,50 +875,45 @@
         <elements xsi:type="xtext:Keyword" value="pointerType"/>
         <elements xsi:type="xtext:Keyword" value="="/>
         <elements xsi:type="xtext:Assignment" feature="pointerType" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.15"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.11"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value=";"/>
         <elements xsi:type="xtext:Keyword" value="addressType"/>
         <elements xsi:type="xtext:Keyword" value="="/>
         <elements xsi:type="xtext:Assignment" feature="addressType" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.15"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.11"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value=";"/>
         <elements xsi:type="xtext:Group" cardinality="+">
           <elements xsi:type="xtext:Assignment" feature="mems" operator="+=">
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.48"/>
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.44"/>
           </elements>
           <elements xsi:type="xtext:Keyword" value=";"/>
         </elements>
         <elements xsi:type="xtext:Group" cardinality="*">
           <elements xsi:type="xtext:Assignment" feature="optimizercalls" operator="+=">
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.44"/>
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.43"/>
           </elements>
           <elements xsi:type="xtext:Keyword" value=";"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value=")"/>
         <elements xsi:type="xtext:Keyword" value="{"/>
-        <elements xsi:type="xtext:Alternatives" cardinality="*">
-          <elements xsi:type="xtext:Group">
-            <elements xsi:type="xtext:Keyword" value="lib"/>
-            <elements xsi:type="xtext:Assignment" feature="lib" operator="+=">
-              <terminal xsi:type="xtext:CrossReference">
-                <type metamodel="/0/@metamodelDeclarations.1">
-                  <classifier xsi:type="ecore:EClass" href="http://www.e.hu/parser/ESyntax#//Library"/>
-                </type>
-                <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.1"/>
-              </terminal>
-            </elements>
-            <elements xsi:type="xtext:Keyword" value=";"/>
+        <elements xsi:type="xtext:Group" cardinality="*">
+          <elements xsi:type="xtext:Keyword" value="lib"/>
+          <elements xsi:type="xtext:Assignment" feature="lib" operator="+=">
+            <terminal xsi:type="xtext:CrossReference">
+              <type metamodel="/0/@metamodelDeclarations.1">
+                <classifier xsi:type="ecore:EClass" href="http://www.e.hu/parser/ESyntax#//Library"/>
+              </type>
+              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.1"/>
+            </terminal>
           </elements>
-          <elements xsi:type="xtext:Assignment" feature="instances" operator="+=">
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.45"/>
-          </elements>
+          <elements xsi:type="xtext:Keyword" value=";"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value="link"/>
         <elements xsi:type="xtext:Keyword" value="{"/>
         <elements xsi:type="xtext:Assignment" feature="do" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.35"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.34"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value="}"/>
         <elements xsi:type="xtext:Keyword" value="}"/>
@@ -995,80 +927,6 @@
         <elements xsi:type="xtext:Keyword" value="optimize"/>
         <elements xsi:type="xtext:Assignment" feature="optimizer" operator="=">
           <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.2"/>
-        </elements>
-      </alternatives>
-    </rules>
-    <rules xsi:type="xtext:ParserRule" name="LinkedInstance">
-      <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.e.hu/parser/ESyntax#//LinkedInstance"/>
-      </type>
-      <alternatives xsi:type="xtext:Group">
-        <elements xsi:type="xtext:Assignment" feature="type" operator="=">
-          <terminal xsi:type="xtext:CrossReference">
-            <type metamodel="/0/@metamodelDeclarations.1">
-              <classifier xsi:type="ecore:EClass" href="http://www.e.hu/parser/ESyntax#//Module"/>
-            </type>
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.1"/>
-          </terminal>
-        </elements>
-        <elements xsi:type="xtext:Assignment" feature="name" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
-        </elements>
-        <elements xsi:type="xtext:Keyword" value="{"/>
-        <elements xsi:type="xtext:Group" cardinality="*">
-          <elements xsi:type="xtext:Alternatives">
-            <elements xsi:type="xtext:Assignment" feature="links" operator="+=">
-              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.46"/>
-            </elements>
-            <elements xsi:type="xtext:Assignment" feature="confs" operator="+=">
-              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.47"/>
-            </elements>
-          </elements>
-          <elements xsi:type="xtext:Keyword" value=";"/>
-        </elements>
-        <elements xsi:type="xtext:Keyword" value="}"/>
-      </alternatives>
-    </rules>
-    <rules xsi:type="xtext:ParserRule" name="ReferenceLink">
-      <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.e.hu/parser/ESyntax#//ReferenceLink"/>
-      </type>
-      <alternatives xsi:type="xtext:Group">
-        <elements xsi:type="xtext:Assignment" feature="ref" operator="=">
-          <terminal xsi:type="xtext:CrossReference">
-            <type metamodel="/0/@metamodelDeclarations.1">
-              <classifier xsi:type="ecore:EClass" href="http://www.e.hu/parser/ESyntax#//InstanceReference"/>
-            </type>
-            <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
-          </terminal>
-        </elements>
-        <elements xsi:type="xtext:Keyword" value=":"/>
-        <elements xsi:type="xtext:Assignment" feature="inst" operator="=">
-          <terminal xsi:type="xtext:CrossReference">
-            <type metamodel="/0/@metamodelDeclarations.1">
-              <classifier xsi:type="ecore:EClass" href="http://www.e.hu/parser/ESyntax#//LinkedInstance"/>
-            </type>
-            <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
-          </terminal>
-        </elements>
-      </alternatives>
-    </rules>
-    <rules xsi:type="xtext:ParserRule" name="InstanceConfig">
-      <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.e.hu/parser/ESyntax#//InstanceConfig"/>
-      </type>
-      <alternatives xsi:type="xtext:Group">
-        <elements xsi:type="xtext:Assignment" feature="conf" operator="=">
-          <terminal xsi:type="xtext:CrossReference">
-            <type metamodel="/0/@metamodelDeclarations.1">
-              <classifier xsi:type="ecore:EClass" href="http://www.e.hu/parser/ESyntax#//ConfigVariable"/>
-            </type>
-            <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
-          </terminal>
-        </elements>
-        <elements xsi:type="xtext:Keyword" value="="/>
-        <elements xsi:type="xtext:Assignment" feature="value" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.51"/>
         </elements>
       </alternatives>
     </rules>
@@ -1096,7 +954,7 @@
         <elements xsi:type="xtext:Keyword" value="{"/>
         <elements xsi:type="xtext:Group" cardinality="+">
           <elements xsi:type="xtext:Assignment" feature="data" operator="+=">
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.51"/>
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.47"/>
           </elements>
           <elements xsi:type="xtext:Keyword" value=";"/>
         </elements>
@@ -1123,20 +981,20 @@
       <type metamodel="/0/@metamodelDeclarations.1">
         <classifier xsi:type="ecore:EClass" href="http://www.e.hu/parser/ESyntax#//XExpression"/>
       </type>
-      <alternatives xsi:type="xtext:RuleCall" rule="/0/@rules.66"/>
+      <alternatives xsi:type="xtext:RuleCall" rule="/0/@rules.62"/>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="XPrimaryExpression">
       <type metamodel="/0/@metamodelDeclarations.1">
         <classifier xsi:type="ecore:EClass" href="http://www.e.hu/parser/ESyntax#//XPrimaryExpression"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.68"/>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.74"/>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.71"/>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.31"/>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.32"/>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.54"/>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.53"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.64"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.70"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.67"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.29"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.30"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.50"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.49"/>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="XSizeOfExpression">
@@ -1147,7 +1005,7 @@
         <elements xsi:type="xtext:Keyword" value="sizeof"/>
         <elements xsi:type="xtext:Keyword" value="("/>
         <elements xsi:type="xtext:Assignment" feature="type" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.15"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.11"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value=")"/>
       </alternatives>
@@ -1162,17 +1020,17 @@
             <type metamodel="/0/@metamodelDeclarations.1">
               <classifier xsi:type="ecore:EClass" href="http://www.e.hu/parser/ESyntax#//Type"/>
             </type>
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.2"/>
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.1"/>
           </terminal>
         </elements>
         <elements xsi:type="xtext:Keyword" value="{"/>
         <elements xsi:type="xtext:Assignment" feature="values" operator="+=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.51"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.47"/>
         </elements>
         <elements xsi:type="xtext:Group" cardinality="*">
           <elements xsi:type="xtext:Keyword" value=","/>
           <elements xsi:type="xtext:Assignment" feature="values" operator="+=">
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.51"/>
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.47"/>
           </elements>
         </elements>
         <elements xsi:type="xtext:Keyword" cardinality="?" value=","/>
@@ -1185,10 +1043,10 @@
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Assignment" cardinality="*" feature="operator" operator="+=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.58"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.54"/>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="a" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.56"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.52"/>
         </elements>
       </alternatives>
     </rules>
@@ -1198,7 +1056,7 @@
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Assignment" feature="a" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.57"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.53"/>
         </elements>
         <elements xsi:type="xtext:Group" cardinality="*">
           <elements xsi:type="xtext:Keyword" value="->"/>
@@ -1214,12 +1072,12 @@
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Assignment" feature="a" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.52"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.48"/>
         </elements>
         <elements xsi:type="xtext:Group" cardinality="*">
           <elements xsi:type="xtext:Keyword" value="["/>
           <elements xsi:type="xtext:Assignment" feature="index" operator="+=">
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.51"/>
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.47"/>
           </elements>
           <elements xsi:type="xtext:Keyword" value="]"/>
         </elements>
@@ -1254,14 +1112,14 @@
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Assignment" feature="a" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.55"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.51"/>
         </elements>
         <elements xsi:type="xtext:Group" cardinality="*">
           <elements xsi:type="xtext:Assignment" predicated="true" feature="op" operator="+=">
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.60"/>
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.56"/>
           </elements>
           <elements xsi:type="xtext:Assignment" feature="b" operator="+=">
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.59"/>
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.55"/>
           </elements>
         </elements>
       </alternatives>
@@ -1290,15 +1148,18 @@
         <classifier xsi:type="ecore:EClass" href="http://www.e.hu/parser/ESyntax#//XExpression3"/>
       </type>
       <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Assignment" cardinality="?" feature="op" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.58"/>
+        </elements>
         <elements xsi:type="xtext:Assignment" feature="a" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.59"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.55"/>
         </elements>
         <elements xsi:type="xtext:Group" cardinality="*">
           <elements xsi:type="xtext:Assignment" predicated="true" feature="op" operator="+=">
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.62"/>
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.58"/>
           </elements>
           <elements xsi:type="xtext:Assignment" feature="b" operator="+=">
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.59"/>
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.55"/>
           </elements>
         </elements>
       </alternatives>
@@ -1324,14 +1185,14 @@
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Assignment" feature="a" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.61"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.57"/>
         </elements>
         <elements xsi:type="xtext:Group" cardinality="*">
           <elements xsi:type="xtext:Assignment" predicated="true" feature="op" operator="+=">
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.64"/>
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.60"/>
           </elements>
           <elements xsi:type="xtext:Assignment" feature="b" operator="+=">
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.61"/>
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.57"/>
           </elements>
         </elements>
       </alternatives>
@@ -1373,14 +1234,14 @@
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Assignment" feature="a" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.63"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.59"/>
         </elements>
         <elements xsi:type="xtext:Group" cardinality="*">
           <elements xsi:type="xtext:Assignment" predicated="true" feature="op" operator="+=">
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.67"/>
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.63"/>
           </elements>
           <elements xsi:type="xtext:Assignment" feature="b" operator="+=">
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.63"/>
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.59"/>
           </elements>
         </elements>
       </alternatives>
@@ -1392,12 +1253,12 @@
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Group" cardinality="*">
           <elements xsi:type="xtext:Assignment" predicated="true" feature="ref" operator="+=">
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.31"/>
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.29"/>
           </elements>
-          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.70"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.66"/>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="a" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.65"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.61"/>
         </elements>
       </alternatives>
     </rules>
@@ -1434,11 +1295,11 @@
           <elements xsi:type="xtext:Keyword" value=";"/>
         </elements>
         <elements xsi:type="xtext:Group">
-          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.51"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.47"/>
           <elements xsi:type="xtext:Keyword" value=";"/>
         </elements>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.72"/>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.73"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.68"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.69"/>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="OpSingleAssign">
@@ -1455,7 +1316,7 @@
         <elements xsi:type="xtext:Keyword" value="isliteral"/>
         <elements xsi:type="xtext:Keyword" value="("/>
         <elements xsi:type="xtext:Assignment" feature="ref" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.31"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.29"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value=")"/>
       </alternatives>
@@ -1468,19 +1329,19 @@
         <elements xsi:type="xtext:Keyword" value="if"/>
         <elements xsi:type="xtext:Keyword" value="("/>
         <elements xsi:type="xtext:Assignment" feature="if" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.51"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.47"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value=")"/>
         <elements xsi:type="xtext:Keyword" value="{"/>
         <elements xsi:type="xtext:Assignment" feature="then" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.35"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.34"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value="}"/>
         <elements xsi:type="xtext:Group" cardinality="?">
           <elements xsi:type="xtext:Keyword" predicated="true" value="else"/>
           <elements xsi:type="xtext:Keyword" value="{"/>
           <elements xsi:type="xtext:Assignment" feature="else" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.35"/>
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.34"/>
           </elements>
           <elements xsi:type="xtext:Keyword" value="}"/>
         </elements>
@@ -1494,12 +1355,12 @@
         <elements xsi:type="xtext:Keyword" value="while"/>
         <elements xsi:type="xtext:Keyword" value="("/>
         <elements xsi:type="xtext:Assignment" feature="cond" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.51"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.47"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value=")"/>
         <elements xsi:type="xtext:Keyword" value="{"/>
         <elements xsi:type="xtext:Assignment" feature="do" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.35"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.34"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value="}"/>
       </alternatives>
@@ -1511,7 +1372,7 @@
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Keyword" value="("/>
         <elements xsi:type="xtext:Assignment" feature="a" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.51"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.47"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value=")"/>
       </alternatives>

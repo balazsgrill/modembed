@@ -24,7 +24,6 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getMems <em>Mems</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getOptimizercalls <em>Optimizercalls</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getLib <em>Lib</em>}</li>
- *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getInstances <em>Instances</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.FunctionBinarySection#getDo <em>Do</em>}</li>
  * </ul>
  * </p>
@@ -212,22 +211,6 @@ public interface FunctionBinarySection extends BinarySection
    * @generated
    */
   EList<Library> getLib();
-
-  /**
-   * Returns the value of the '<em><b>Instances</b></em>' containment reference list.
-   * The list contents are of type {@link hu.e.parser.eSyntax.LinkedInstance}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Instances</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Instances</em>' containment reference list.
-   * @see hu.e.parser.eSyntax.ESyntaxPackage#getFunctionBinarySection_Instances()
-   * @model containment="true"
-   * @generated
-   */
-  EList<LinkedInstance> getInstances();
 
   /**
    * Returns the value of the '<em><b>Do</b></em>' containment reference.

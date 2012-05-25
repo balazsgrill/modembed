@@ -14,14 +14,14 @@ import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the literals of the enumeration '<em><b>Primitive Kind</b></em>',
+ * A representation of the literals of the enumeration '<em><b>Integer Kind</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see hu.e.parser.eSyntax.ESyntaxPackage#getPrimitiveKind()
+ * @see hu.e.parser.eSyntax.ESyntaxPackage#getIntegerKind()
  * @model
  * @generated
  */
-public enum PrimitiveKind implements Enumerator
+public enum IntegerKind implements Enumerator
 {
   /**
    * The '<em><b>UNSIGNED</b></em>' literal object.
@@ -41,17 +41,7 @@ public enum PrimitiveKind implements Enumerator
    * @generated
    * @ordered
    */
-  SIGNED(1, "SIGNED", "signed"),
-
-  /**
-   * The '<em><b>REAL</b></em>' literal object.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #REAL_VALUE
-   * @generated
-   * @ordered
-   */
-  REAL(2, "REAL", "real");
+  SIGNED(1, "SIGNED", "signed");
 
   /**
    * The '<em><b>UNSIGNED</b></em>' literal value.
@@ -84,53 +74,37 @@ public enum PrimitiveKind implements Enumerator
   public static final int SIGNED_VALUE = 1;
 
   /**
-   * The '<em><b>REAL</b></em>' literal value.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of '<em><b>REAL</b></em>' literal object isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @see #REAL
-   * @model literal="real"
-   * @generated
-   * @ordered
-   */
-  public static final int REAL_VALUE = 2;
-
-  /**
-   * An array of all the '<em><b>Primitive Kind</b></em>' enumerators.
+   * An array of all the '<em><b>Integer Kind</b></em>' enumerators.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private static final PrimitiveKind[] VALUES_ARRAY =
-    new PrimitiveKind[]
+  private static final IntegerKind[] VALUES_ARRAY =
+    new IntegerKind[]
     {
       UNSIGNED,
       SIGNED,
-      REAL,
     };
 
   /**
-   * A public read-only list of all the '<em><b>Primitive Kind</b></em>' enumerators.
+   * A public read-only list of all the '<em><b>Integer Kind</b></em>' enumerators.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  public static final List<PrimitiveKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+  public static final List<IntegerKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
   /**
-   * Returns the '<em><b>Primitive Kind</b></em>' literal with the specified literal value.
+   * Returns the '<em><b>Integer Kind</b></em>' literal with the specified literal value.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  public static PrimitiveKind get(String literal)
+  public static IntegerKind get(String literal)
   {
     for (int i = 0; i < VALUES_ARRAY.length; ++i)
     {
-      PrimitiveKind result = VALUES_ARRAY[i];
+      IntegerKind result = VALUES_ARRAY[i];
       if (result.toString().equals(literal))
       {
         return result;
@@ -140,16 +114,16 @@ public enum PrimitiveKind implements Enumerator
   }
 
   /**
-   * Returns the '<em><b>Primitive Kind</b></em>' literal with the specified name.
+   * Returns the '<em><b>Integer Kind</b></em>' literal with the specified name.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  public static PrimitiveKind getByName(String name)
+  public static IntegerKind getByName(String name)
   {
     for (int i = 0; i < VALUES_ARRAY.length; ++i)
     {
-      PrimitiveKind result = VALUES_ARRAY[i];
+      IntegerKind result = VALUES_ARRAY[i];
       if (result.getName().equals(name))
       {
         return result;
@@ -159,18 +133,17 @@ public enum PrimitiveKind implements Enumerator
   }
 
   /**
-   * Returns the '<em><b>Primitive Kind</b></em>' literal with the specified integer value.
+   * Returns the '<em><b>Integer Kind</b></em>' literal with the specified integer value.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  public static PrimitiveKind get(int value)
+  public static IntegerKind get(int value)
   {
     switch (value)
     {
       case UNSIGNED_VALUE: return UNSIGNED;
       case SIGNED_VALUE: return SIGNED;
-      case REAL_VALUE: return REAL;
     }
     return null;
   }
@@ -202,7 +175,7 @@ public enum PrimitiveKind implements Enumerator
    * <!-- end-user-doc -->
    * @generated
    */
-  private PrimitiveKind(int value, String name, String literal)
+  private IntegerKind(int value, String name, String literal)
   {
     this.value = value;
     this.name = name;
@@ -251,4 +224,4 @@ public enum PrimitiveKind implements Enumerator
     return literal;
   }
   
-} //PrimitiveKind
+} //IntegerKind

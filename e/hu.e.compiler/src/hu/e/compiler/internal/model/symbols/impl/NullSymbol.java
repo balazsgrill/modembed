@@ -3,6 +3,8 @@
  */
 package hu.e.compiler.internal.model.symbols.impl;
 
+import java.math.BigDecimal;
+
 import hu.e.compiler.ECompilerException;
 import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
@@ -25,6 +27,11 @@ public class NullSymbol implements ILiteralSymbol {
 		return true;
 	}
 
+	@Override
+	public String toString() {
+		return "<NULL>";
+	}
+	
 	/* (non-Javadoc)
 	 * @see hu.e.compiler.internal.model.symbols.ISymbol#getSteps()
 	 */
@@ -41,7 +48,7 @@ public class NullSymbol implements ILiteralSymbol {
 	}
 
 	@Override
-	public long getValue() throws ECompilerException {
+	public BigDecimal getValue() throws ECompilerException {
 		throw new ECompilerException(null, "Null symbol");
 	}
 

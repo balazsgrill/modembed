@@ -8,10 +8,9 @@
     copyrightFields="false" editPluginID="hu.e.parser.edit" editorPluginID="hu.e.parser.editor">
   <genPackages prefix="ESyntax" basePackage="hu.e.parser" disposableProviderFactory="true"
       ecorePackage="ESyntax.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ESyntax.ecore#//PrimitiveKind">
-      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//PrimitiveKind/UNSIGNED"/>
-      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//PrimitiveKind/SIGNED"/>
-      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//PrimitiveKind/REAL"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ESyntax.ecore#//IntegerKind">
+      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//IntegerKind/UNSIGNED"/>
+      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//IntegerKind/SIGNED"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="ESyntax.ecore#//ParameterKind">
       <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//ParameterKind/ANY"/>
@@ -82,19 +81,6 @@
     <genClasses ecoreClass="ESyntax.ecore#//Annotation">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ESyntax.ecore#//Annotation/definition"/>
     </genClasses>
-    <genClasses ecoreClass="ESyntax.ecore#//Module">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ESyntax.ecore#//Module/extends"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//Module/items"/>
-    </genClasses>
-    <genClasses ecoreClass="ESyntax.ecore#//ModuleItem">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//ModuleItem/name"/>
-    </genClasses>
-    <genClasses ecoreClass="ESyntax.ecore#//InstanceReference">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ESyntax.ecore#//InstanceReference/type"/>
-    </genClasses>
-    <genClasses ecoreClass="ESyntax.ecore#//Variable">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//Variable/type"/>
-    </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//Library">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ESyntax.ecore#//Library/overrides"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//Library/items"/>
@@ -116,11 +102,20 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ESyntax.ecore#//RefTypeDef/type"/>
     </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//DataTypeDef">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//DataTypeDef/kind"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//DataTypeDef/bits"/>
+    </genClasses>
+    <genClasses ecoreClass="ESyntax.ecore#//FixedDataTypeDef">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//FixedDataTypeDef/scale"/>
+    </genClasses>
+    <genClasses ecoreClass="ESyntax.ecore#//IntegerDataTypeDef">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//IntegerDataTypeDef/kind"/>
     </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//StructTypeDef">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//StructTypeDef/members"/>
+    </genClasses>
+    <genClasses ecoreClass="ESyntax.ecore#//Variable">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//Variable/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//Variable/name"/>
     </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//OperationStep"/>
     <genClasses ecoreClass="ESyntax.ecore#//InstructionWord">
@@ -141,6 +136,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//OperationCall/params"/>
     </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//OperationCallParameter"/>
+    <genClasses ecoreClass="ESyntax.ecore#//OperationSignature">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//OperationSignature/params"/>
+    </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//OperationBlock">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//OperationBlock/steps"/>
     </genClasses>
@@ -164,25 +162,10 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//FunctionBinarySection/mems"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//FunctionBinarySection/optimizercalls"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ESyntax.ecore#//FunctionBinarySection/lib"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//FunctionBinarySection/instances"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//FunctionBinarySection/do"/>
     </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//OptimizerCall">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//OptimizerCall/optimizer"/>
-    </genClasses>
-    <genClasses ecoreClass="ESyntax.ecore#//LinkedInstance">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ESyntax.ecore#//LinkedInstance/type"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//LinkedInstance/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//LinkedInstance/links"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//LinkedInstance/confs"/>
-    </genClasses>
-    <genClasses ecoreClass="ESyntax.ecore#//ReferenceLink">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ESyntax.ecore#//ReferenceLink/ref"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ESyntax.ecore#//ReferenceLink/inst"/>
-    </genClasses>
-    <genClasses ecoreClass="ESyntax.ecore#//InstanceConfig">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ESyntax.ecore#//InstanceConfig/conf"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//InstanceConfig/value"/>
     </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//FunctionMemory">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//FunctionMemory/start"/>
@@ -221,8 +204,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XExpression2/b"/>
     </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//XExpression3">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XExpression3/a"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//XExpression3/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XExpression3/a"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XExpression3/b"/>
     </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//XExpression4">
@@ -258,7 +241,6 @@
     <genClasses ecoreClass="ESyntax.ecore#//XParenthesizedExpression">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XParenthesizedExpression/a"/>
     </genClasses>
-    <genClasses ecoreClass="ESyntax.ecore#//ConfigVariable"/>
     <genClasses ecoreClass="ESyntax.ecore#//StructTypeDefMember"/>
     <genClasses ecoreClass="ESyntax.ecore#//ConstantVariable">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//ConstantVariable/value"/>
@@ -268,7 +250,6 @@
     </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//Label"/>
     <genClasses ecoreClass="ESyntax.ecore#//Operation">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//Operation/params"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//Operation/block"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//Operation/return"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//Operation/returnvar"/>

@@ -3,10 +3,14 @@
  */
 package hu.e.compiler.internal.model;
 
+import java.math.BigDecimal;
+
 import hu.e.compiler.ECompilerException;
 import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
 import hu.e.parser.eSyntax.ArrayTypeDef;
 import hu.e.parser.eSyntax.DataTypeDef;
+import hu.e.parser.eSyntax.FixedDataTypeDef;
+import hu.e.parser.eSyntax.IntegerDataTypeDef;
 import hu.e.parser.eSyntax.Library;
 import hu.e.parser.eSyntax.PointerTypeDef;
 import hu.e.parser.eSyntax.RefTypeDef;
@@ -30,6 +34,24 @@ public class TypeDefinitionResolver {
 		this.pointerType = pointerType;
 	}
 	
+	public static long getRawValue(TypeDef td, BigDecimal value){
+		if (td == null) return value.longValue();
+		if (td instanceof IntegerDataTypeDef){
+			switch(((IntegerDataTypeDef) td).getKind()){
+			case SIGNED:
+				//TODO
+			case UNSIGNED:
+				return value.longValue();
+			}
+		}
+		if (td instanceof FixedDataTypeDef){
+			BigDecimal bd = ((FixedDataTypeDef) td).getScale();
+			//TODO
+		}
+		
+		return value.longValue();
+	}
+	
 	public int getSize(ISymbolManager sm, TypeDef td) throws ECompilerException{
 		if (td instanceof DataTypeDef){
 			boolean full = ((((DataTypeDef) td).getBits()%memwidth) == 0);
@@ -38,7 +60,7 @@ public class TypeDefinitionResolver {
 		if (td instanceof ArrayTypeDef){
 			int baseSize = getSize(sm, ((ArrayTypeDef) td).getDef());
 			ILiteralSymbol length = (ILiteralSymbol)sm.resolve(null, ((ArrayTypeDef)td).getSize());
-			return baseSize*(int)length.getValue();
+			return baseSize*(int)length.getValue().intValue();
 		}
 		if (td instanceof StructTypeDef){
 			int size = 0;
@@ -60,7 +82,12 @@ public class TypeDefinitionResolver {
 		if (td == null) return "null";
 		
 		if (td instanceof DataTypeDef){
-			return ((DataTypeDef) td).getKind()+"("+((DataTypeDef) td).getBits()+" bits)";
+			if (td instanceof IntegerDataTypeDef){
+				return ((IntegerDataTypeDef) td).getKind()+"("+((DataTypeDef) td).getBits()+" bits)";
+			}
+			if (td instanceof FixedDataTypeDef){
+				return "fixed "+((DataTypeDef) td).getBits()+"("+((DataTypeDef) td).getBits()+" bits scaled "+((FixedDataTypeDef) td).getScale()+")";
+			}
 		}
 		
 		if (td instanceof PointerTypeDef){

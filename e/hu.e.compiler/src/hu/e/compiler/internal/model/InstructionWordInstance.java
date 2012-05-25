@@ -79,7 +79,7 @@ public class InstructionWordInstance{
 					ref.setOffset(((IReferenceSymbol) vs).getOffset());
 					labelRefs.add(ref);
 				} else{	
-					v = ((ILiteralSymbol)vs).getValue();
+					v = TypeDefinitionResolver.getRawValue(vs.getType(), ((ILiteralSymbol)vs).getValue());
 					value += getItemValue(v, shift, s, size);
 				}
 

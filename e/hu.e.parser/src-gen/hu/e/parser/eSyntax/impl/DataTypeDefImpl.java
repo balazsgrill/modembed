@@ -8,7 +8,6 @@ package hu.e.parser.eSyntax.impl;
 
 import hu.e.parser.eSyntax.DataTypeDef;
 import hu.e.parser.eSyntax.ESyntaxPackage;
-import hu.e.parser.eSyntax.PrimitiveKind;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -23,7 +22,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.e.parser.eSyntax.impl.DataTypeDefImpl#getKind <em>Kind</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.impl.DataTypeDefImpl#getBits <em>Bits</em>}</li>
  * </ul>
  * </p>
@@ -32,26 +30,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class DataTypeDefImpl extends TypeDefImpl implements DataTypeDef
 {
-  /**
-   * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getKind()
-   * @generated
-   * @ordered
-   */
-  protected static final PrimitiveKind KIND_EDEFAULT = PrimitiveKind.UNSIGNED;
-
-  /**
-   * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getKind()
-   * @generated
-   * @ordered
-   */
-  protected PrimitiveKind kind = KIND_EDEFAULT;
-
   /**
    * The default value of the '{@link #getBits() <em>Bits</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -98,29 +76,6 @@ public class DataTypeDefImpl extends TypeDefImpl implements DataTypeDef
    * <!-- end-user-doc -->
    * @generated
    */
-  public PrimitiveKind getKind()
-  {
-    return kind;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setKind(PrimitiveKind newKind)
-  {
-    PrimitiveKind oldKind = kind;
-    kind = newKind == null ? KIND_EDEFAULT : newKind;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.DATA_TYPE_DEF__KIND, oldKind, kind));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public int getBits()
   {
     return bits;
@@ -149,8 +104,6 @@ public class DataTypeDefImpl extends TypeDefImpl implements DataTypeDef
   {
     switch (featureID)
     {
-      case ESyntaxPackage.DATA_TYPE_DEF__KIND:
-        return getKind();
       case ESyntaxPackage.DATA_TYPE_DEF__BITS:
         return getBits();
     }
@@ -167,9 +120,6 @@ public class DataTypeDefImpl extends TypeDefImpl implements DataTypeDef
   {
     switch (featureID)
     {
-      case ESyntaxPackage.DATA_TYPE_DEF__KIND:
-        setKind((PrimitiveKind)newValue);
-        return;
       case ESyntaxPackage.DATA_TYPE_DEF__BITS:
         setBits((Integer)newValue);
         return;
@@ -187,9 +137,6 @@ public class DataTypeDefImpl extends TypeDefImpl implements DataTypeDef
   {
     switch (featureID)
     {
-      case ESyntaxPackage.DATA_TYPE_DEF__KIND:
-        setKind(KIND_EDEFAULT);
-        return;
       case ESyntaxPackage.DATA_TYPE_DEF__BITS:
         setBits(BITS_EDEFAULT);
         return;
@@ -207,8 +154,6 @@ public class DataTypeDefImpl extends TypeDefImpl implements DataTypeDef
   {
     switch (featureID)
     {
-      case ESyntaxPackage.DATA_TYPE_DEF__KIND:
-        return kind != KIND_EDEFAULT;
       case ESyntaxPackage.DATA_TYPE_DEF__BITS:
         return bits != BITS_EDEFAULT;
     }
@@ -226,9 +171,7 @@ public class DataTypeDefImpl extends TypeDefImpl implements DataTypeDef
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (kind: ");
-    result.append(kind);
-    result.append(", bits: ");
+    result.append(" (bits: ");
     result.append(bits);
     result.append(')');
     return result.toString();

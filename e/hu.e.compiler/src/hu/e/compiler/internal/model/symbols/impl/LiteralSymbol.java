@@ -8,11 +8,10 @@ import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
 import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.compiler.list.SequenceStep;
-import hu.e.parser.eSyntax.DataTypeDef;
-import hu.e.parser.eSyntax.ESyntaxFactory;
-import hu.e.parser.eSyntax.PrimitiveKind;
 import hu.e.parser.eSyntax.StructTypeDefMember;
 import hu.e.parser.eSyntax.TypeDef;
+
+import java.math.BigDecimal;
 
 /**
  * @author balazs.grill
@@ -20,22 +19,27 @@ import hu.e.parser.eSyntax.TypeDef;
  */
 public class LiteralSymbol implements ILiteralSymbol {
 
-	private final long value;
+	private final BigDecimal value;
 	
 	private final TypeDef td;
 	
-	public LiteralSymbol(TypeDef td, long value) {
+	public LiteralSymbol(TypeDef td, long value){
+		this(td, new BigDecimal(value));
+	}
+	
+	public LiteralSymbol(TypeDef td, BigDecimal value) {
 		if (td == null){
-			DataTypeDef dtd = ESyntaxFactory.eINSTANCE.createDataTypeDef();
-			int bits = 0;
-			long v = 1;
-			while(v <= Math.abs(value)){
-				bits++;
-				v = v<<1;
-			}
-			dtd.setBits(bits);
-			dtd.setKind((value >= 0) ? PrimitiveKind.UNSIGNED : PrimitiveKind.SIGNED);
-			this.td = dtd;
+//			DataTypeDef dtd = ESyntaxFactory.eINSTANCE.createDataTypeDef();
+//			int bits = 0;
+//			long v = 1;
+//			while(v <= Math.abs(value)){
+//				bits++;
+//				v = v<<1;
+//			}
+//			dtd.setBits(bits);
+//			dtd.setKind((value >= 0) ? PrimitiveKind.UNSIGNED : PrimitiveKind.SIGNED);
+//			this.td = dtd;
+			this.td = null;
 		}else{
 			this.td = td;
 		}
@@ -46,7 +50,7 @@ public class LiteralSymbol implements ILiteralSymbol {
 	 * @see hu.e.compiler.internal.model.ISymbol#getValue()
 	 */
 	@Override
-	public long getValue() {
+	public BigDecimal getValue() {
 		return value;
 	}
 

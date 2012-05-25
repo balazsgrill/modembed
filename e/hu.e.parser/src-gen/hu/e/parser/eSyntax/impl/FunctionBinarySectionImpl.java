@@ -10,7 +10,6 @@ import hu.e.parser.eSyntax.ESyntaxPackage;
 import hu.e.parser.eSyntax.FunctionBinarySection;
 import hu.e.parser.eSyntax.FunctionMemory;
 import hu.e.parser.eSyntax.Library;
-import hu.e.parser.eSyntax.LinkedInstance;
 import hu.e.parser.eSyntax.OperationBlock;
 import hu.e.parser.eSyntax.OptimizerCall;
 import hu.e.parser.eSyntax.TypeDef;
@@ -46,7 +45,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link hu.e.parser.eSyntax.impl.FunctionBinarySectionImpl#getMems <em>Mems</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.impl.FunctionBinarySectionImpl#getOptimizercalls <em>Optimizercalls</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.impl.FunctionBinarySectionImpl#getLib <em>Lib</em>}</li>
- *   <li>{@link hu.e.parser.eSyntax.impl.FunctionBinarySectionImpl#getInstances <em>Instances</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.impl.FunctionBinarySectionImpl#getDo <em>Do</em>}</li>
  * </ul>
  * </p>
@@ -164,16 +162,6 @@ public class FunctionBinarySectionImpl extends BinarySectionImpl implements Func
    * @ordered
    */
   protected EList<Library> lib;
-
-  /**
-   * The cached value of the '{@link #getInstances() <em>Instances</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getInstances()
-   * @generated
-   * @ordered
-   */
-  protected EList<LinkedInstance> instances;
 
   /**
    * The cached value of the '{@link #getDo() <em>Do</em>}' containment reference.
@@ -418,20 +406,6 @@ public class FunctionBinarySectionImpl extends BinarySectionImpl implements Func
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<LinkedInstance> getInstances()
-  {
-    if (instances == null)
-    {
-      instances = new EObjectContainmentEList<LinkedInstance>(LinkedInstance.class, this, ESyntaxPackage.FUNCTION_BINARY_SECTION__INSTANCES);
-    }
-    return instances;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public OperationBlock getDo()
   {
     return do_;
@@ -493,8 +467,6 @@ public class FunctionBinarySectionImpl extends BinarySectionImpl implements Func
         return ((InternalEList<?>)getMems()).basicRemove(otherEnd, msgs);
       case ESyntaxPackage.FUNCTION_BINARY_SECTION__OPTIMIZERCALLS:
         return ((InternalEList<?>)getOptimizercalls()).basicRemove(otherEnd, msgs);
-      case ESyntaxPackage.FUNCTION_BINARY_SECTION__INSTANCES:
-        return ((InternalEList<?>)getInstances()).basicRemove(otherEnd, msgs);
       case ESyntaxPackage.FUNCTION_BINARY_SECTION__DO:
         return basicSetDo(null, msgs);
     }
@@ -527,8 +499,6 @@ public class FunctionBinarySectionImpl extends BinarySectionImpl implements Func
         return getOptimizercalls();
       case ESyntaxPackage.FUNCTION_BINARY_SECTION__LIB:
         return getLib();
-      case ESyntaxPackage.FUNCTION_BINARY_SECTION__INSTANCES:
-        return getInstances();
       case ESyntaxPackage.FUNCTION_BINARY_SECTION__DO:
         return getDo();
     }
@@ -573,10 +543,6 @@ public class FunctionBinarySectionImpl extends BinarySectionImpl implements Func
         getLib().clear();
         getLib().addAll((Collection<? extends Library>)newValue);
         return;
-      case ESyntaxPackage.FUNCTION_BINARY_SECTION__INSTANCES:
-        getInstances().clear();
-        getInstances().addAll((Collection<? extends LinkedInstance>)newValue);
-        return;
       case ESyntaxPackage.FUNCTION_BINARY_SECTION__DO:
         setDo((OperationBlock)newValue);
         return;
@@ -618,9 +584,6 @@ public class FunctionBinarySectionImpl extends BinarySectionImpl implements Func
       case ESyntaxPackage.FUNCTION_BINARY_SECTION__LIB:
         getLib().clear();
         return;
-      case ESyntaxPackage.FUNCTION_BINARY_SECTION__INSTANCES:
-        getInstances().clear();
-        return;
       case ESyntaxPackage.FUNCTION_BINARY_SECTION__DO:
         setDo((OperationBlock)null);
         return;
@@ -654,8 +617,6 @@ public class FunctionBinarySectionImpl extends BinarySectionImpl implements Func
         return optimizercalls != null && !optimizercalls.isEmpty();
       case ESyntaxPackage.FUNCTION_BINARY_SECTION__LIB:
         return lib != null && !lib.isEmpty();
-      case ESyntaxPackage.FUNCTION_BINARY_SECTION__INSTANCES:
-        return instances != null && !instances.isEmpty();
       case ESyntaxPackage.FUNCTION_BINARY_SECTION__DO:
         return do_ != null;
     }

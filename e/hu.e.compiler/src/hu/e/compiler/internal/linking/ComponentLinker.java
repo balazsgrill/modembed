@@ -3,18 +3,17 @@
  */
 package hu.e.compiler.internal.linking;
 
+import hu.e.parser.eSyntax.FunctionBinarySection;
+import hu.e.parser.eSyntax.Library;
+import hu.e.parser.eSyntax.LibraryItem;
+import hu.e.parser.eSyntax.Variable;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import hu.e.parser.eSyntax.FunctionBinarySection;
-import hu.e.parser.eSyntax.Library;
-import hu.e.parser.eSyntax.LibraryItem;
-import hu.e.parser.eSyntax.LinkedInstance;
-import hu.e.parser.eSyntax.Variable;
 
 /**
  * @author balazs.grill
@@ -26,8 +25,6 @@ public class ComponentLinker {
 	 * Shortcut for: Base library -> highest level library that overrides base library
 	 */
 	private final Map<Library, Library> libraries = new HashMap<Library, Library>();
-	
-	private final Map<String, LinkedInstance> instances = new HashMap<String, LinkedInstance>();
 	
 	/**
 	 * Returns the full path from the highest level library to the given interface library
@@ -75,9 +72,6 @@ public class ComponentLinker {
 			putLib(l, l);
 		}
 		
-		for(LinkedInstance li : section.getInstances()){
-			instances.put(li.getName(), li);
-		}
 	}
 
 	public Collection<Variable> getGlobals() {

@@ -14,6 +14,7 @@ import hu.e.compiler.internal.linking.OptimizerRegistry;
 import hu.e.compiler.internal.linking.ProgramListLinker;
 import hu.e.compiler.internal.model.CompilationErrorEntry;
 import hu.e.compiler.internal.model.ISymbolManager;
+import hu.e.compiler.internal.model.TypeDefinitionResolver;
 import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
 import hu.e.compiler.internal.symbols.RootSymbolManager;
 import hu.e.compiler.list.ProgramList;
@@ -65,7 +66,7 @@ public class HexFileCompiler {
 		for(BinarySection bs : lb.getSections()){
 			if (bs instanceof ConstantBinarySection){
 				try{
-					long start = ((ILiteralSymbol)sm.resolve(null, bs.getStart())).getValue();
+					long start = ((ILiteralSymbol)sm.resolve(null, bs.getStart())).getValue().longValue();
 					Entry entry = HexfileFactory.eINSTANCE.createEntry();
 					entry.setAddress((int)start);
 					ConstantBinarySection c = (ConstantBinarySection)bs;
@@ -76,7 +77,7 @@ public class HexFileCompiler {
 						if (td instanceof DataTypeDef){
 							int bits = ((DataTypeDef) td).getBits();
 							int bytes = (bits/8) + ((bits%8==0)?0:1) ;
-							long v = s.getValue();
+							long v = TypeDefinitionResolver.getRawValue(td, s.getValue());
 							for (int i=0;i<bytes;i++){
 								int b = (int)v%256;
 								v = v/256;
@@ -96,7 +97,7 @@ public class HexFileCompiler {
 			if (bs instanceof FunctionBinarySection){
 				try{
 					FunctionBinarySection functionBs = (FunctionBinarySection)bs;
-					int start = (int)((ILiteralSymbol)sm.resolve(null, bs.getStart())).getValue();
+					int start = (int)((ILiteralSymbol)sm.resolve(null, bs.getStart())).getValue().intValue();
 					Entry entry = HexfileFactory.eINSTANCE.createEntry();
 					entry.setAddress(start);
 					FunctionCompiler fc = new FunctionCompiler(functionBs);
@@ -132,7 +133,7 @@ public class HexFileCompiler {
 			}
 			if (bs instanceof ReferenceBinarySection){
 				try{
-					int start = (int)((ILiteralSymbol)sm.resolve(null, bs.getStart())).getValue();
+					int start = (int)((ILiteralSymbol)sm.resolve(null, bs.getStart())).getValue().intValue();
 					LinkedBinary included = ((ReferenceBinarySection) bs).getInc();
 					HexFileCompiler includedcompiler = new HexFileCompiler(included);
 					HexFile includedhexfile = includedcompiler.create();

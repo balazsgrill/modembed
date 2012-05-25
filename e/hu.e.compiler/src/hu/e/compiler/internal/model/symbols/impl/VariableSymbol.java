@@ -84,7 +84,7 @@ public class VariableSymbol implements IVariableSymbol{
 		ArrayTypeDef atd = getArrayTypeDef(getType());
 		
 		if (atd == null) return null;
-		int length = (int)((ILiteralSymbol)sm.resolve(null, atd.getSize())).getValue();
+		int length = (int)((ILiteralSymbol)sm.resolve(null, atd.getSize())).getValue().intValue();
 
 		if (index < 0)
 			return null;

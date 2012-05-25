@@ -8,8 +8,10 @@ import hu.e.compiler.ECompilerException;
 import hu.e.compiler.internal.linking.CodePlatform;
 import hu.e.compiler.internal.model.CompilationErrorEntry;
 import hu.e.compiler.internal.model.ISymbolManager;
+import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
 import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.compiler.internal.model.symbols.impl.LiteralSymbol;
+import hu.e.compiler.internal.model.symbols.impl.TypeCastedLiteralSymbol;
 import hu.e.compiler.list.ListFactory;
 import hu.e.compiler.list.ProgramStep;
 import hu.e.compiler.list.SequenceStep;
@@ -64,6 +66,9 @@ public class OperationCallCompiler {
 				if (ocp instanceof XExpression){
 					try{
 						ISymbol s = sm.resolve(callstep, (XExpression)ocp);
+						if (s.isLiteral() && s instanceof ILiteralSymbol){
+							s = new TypeCastedLiteralSymbol(p.getType(), (ILiteralSymbol)s);
+						}
 						oc.addParameter(pvar, s);
 						s.addSteps(callstep);
 					}catch(ECompilerException e){

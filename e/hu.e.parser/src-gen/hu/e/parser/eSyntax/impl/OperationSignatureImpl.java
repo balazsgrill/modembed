@@ -7,32 +7,42 @@
 package hu.e.parser.eSyntax.impl;
 
 import hu.e.parser.eSyntax.ESyntaxPackage;
+import hu.e.parser.eSyntax.OperationSignature;
+import hu.e.parser.eSyntax.OperationStep;
 import hu.e.parser.eSyntax.TypeDef;
 import hu.e.parser.eSyntax.Variable;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Variable</b></em>'.
+ * An implementation of the model object '<em><b>Operation Signature</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.e.parser.eSyntax.impl.VariableImpl#getType <em>Type</em>}</li>
- *   <li>{@link hu.e.parser.eSyntax.impl.VariableImpl#getName <em>Name</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.impl.OperationSignatureImpl#getType <em>Type</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.impl.OperationSignatureImpl#getName <em>Name</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.impl.OperationSignatureImpl#getParams <em>Params</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class VariableImpl extends LibraryItemImpl implements Variable
+public class OperationSignatureImpl extends LibraryItemImpl implements OperationSignature
 {
   /**
    * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
@@ -65,11 +75,21 @@ public class VariableImpl extends LibraryItemImpl implements Variable
   protected String name = NAME_EDEFAULT;
 
   /**
+   * The cached value of the '{@link #getParams() <em>Params</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getParams()
+   * @generated
+   * @ordered
+   */
+  protected EList<Variable> params;
+
+  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected VariableImpl()
+  protected OperationSignatureImpl()
   {
     super();
   }
@@ -82,7 +102,7 @@ public class VariableImpl extends LibraryItemImpl implements Variable
   @Override
   protected EClass eStaticClass()
   {
-    return ESyntaxPackage.Literals.VARIABLE;
+    return ESyntaxPackage.Literals.OPERATION_SIGNATURE;
   }
 
   /**
@@ -106,7 +126,7 @@ public class VariableImpl extends LibraryItemImpl implements Variable
     type = newType;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ESyntaxPackage.VARIABLE__TYPE, oldType, newType);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ESyntaxPackage.OPERATION_SIGNATURE__TYPE, oldType, newType);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -123,14 +143,14 @@ public class VariableImpl extends LibraryItemImpl implements Variable
     {
       NotificationChain msgs = null;
       if (type != null)
-        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ESyntaxPackage.VARIABLE__TYPE, null, msgs);
+        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ESyntaxPackage.OPERATION_SIGNATURE__TYPE, null, msgs);
       if (newType != null)
-        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ESyntaxPackage.VARIABLE__TYPE, null, msgs);
+        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ESyntaxPackage.OPERATION_SIGNATURE__TYPE, null, msgs);
       msgs = basicSetType(newType, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.VARIABLE__TYPE, newType, newType));
+      eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.OPERATION_SIGNATURE__TYPE, newType, newType));
   }
 
   /**
@@ -153,7 +173,21 @@ public class VariableImpl extends LibraryItemImpl implements Variable
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.VARIABLE__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.OPERATION_SIGNATURE__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<Variable> getParams()
+  {
+    if (params == null)
+    {
+      params = new EObjectContainmentEList<Variable>(Variable.class, this, ESyntaxPackage.OPERATION_SIGNATURE__PARAMS);
+    }
+    return params;
   }
 
   /**
@@ -166,8 +200,10 @@ public class VariableImpl extends LibraryItemImpl implements Variable
   {
     switch (featureID)
     {
-      case ESyntaxPackage.VARIABLE__TYPE:
+      case ESyntaxPackage.OPERATION_SIGNATURE__TYPE:
         return basicSetType(null, msgs);
+      case ESyntaxPackage.OPERATION_SIGNATURE__PARAMS:
+        return ((InternalEList<?>)getParams()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -182,10 +218,12 @@ public class VariableImpl extends LibraryItemImpl implements Variable
   {
     switch (featureID)
     {
-      case ESyntaxPackage.VARIABLE__TYPE:
+      case ESyntaxPackage.OPERATION_SIGNATURE__TYPE:
         return getType();
-      case ESyntaxPackage.VARIABLE__NAME:
+      case ESyntaxPackage.OPERATION_SIGNATURE__NAME:
         return getName();
+      case ESyntaxPackage.OPERATION_SIGNATURE__PARAMS:
+        return getParams();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -195,16 +233,21 @@ public class VariableImpl extends LibraryItemImpl implements Variable
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case ESyntaxPackage.VARIABLE__TYPE:
+      case ESyntaxPackage.OPERATION_SIGNATURE__TYPE:
         setType((TypeDef)newValue);
         return;
-      case ESyntaxPackage.VARIABLE__NAME:
+      case ESyntaxPackage.OPERATION_SIGNATURE__NAME:
         setName((String)newValue);
+        return;
+      case ESyntaxPackage.OPERATION_SIGNATURE__PARAMS:
+        getParams().clear();
+        getParams().addAll((Collection<? extends Variable>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -220,11 +263,14 @@ public class VariableImpl extends LibraryItemImpl implements Variable
   {
     switch (featureID)
     {
-      case ESyntaxPackage.VARIABLE__TYPE:
+      case ESyntaxPackage.OPERATION_SIGNATURE__TYPE:
         setType((TypeDef)null);
         return;
-      case ESyntaxPackage.VARIABLE__NAME:
+      case ESyntaxPackage.OPERATION_SIGNATURE__NAME:
         setName(NAME_EDEFAULT);
+        return;
+      case ESyntaxPackage.OPERATION_SIGNATURE__PARAMS:
+        getParams().clear();
         return;
     }
     super.eUnset(featureID);
@@ -240,12 +286,68 @@ public class VariableImpl extends LibraryItemImpl implements Variable
   {
     switch (featureID)
     {
-      case ESyntaxPackage.VARIABLE__TYPE:
+      case ESyntaxPackage.OPERATION_SIGNATURE__TYPE:
         return type != null;
-      case ESyntaxPackage.VARIABLE__NAME:
+      case ESyntaxPackage.OPERATION_SIGNATURE__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case ESyntaxPackage.OPERATION_SIGNATURE__PARAMS:
+        return params != null && !params.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == OperationStep.class)
+    {
+      switch (derivedFeatureID)
+      {
+        default: return -1;
+      }
+    }
+    if (baseClass == Variable.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case ESyntaxPackage.OPERATION_SIGNATURE__TYPE: return ESyntaxPackage.VARIABLE__TYPE;
+        case ESyntaxPackage.OPERATION_SIGNATURE__NAME: return ESyntaxPackage.VARIABLE__NAME;
+        default: return -1;
+      }
+    }
+    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == OperationStep.class)
+    {
+      switch (baseFeatureID)
+      {
+        default: return -1;
+      }
+    }
+    if (baseClass == Variable.class)
+    {
+      switch (baseFeatureID)
+      {
+        case ESyntaxPackage.VARIABLE__TYPE: return ESyntaxPackage.OPERATION_SIGNATURE__TYPE;
+        case ESyntaxPackage.VARIABLE__NAME: return ESyntaxPackage.OPERATION_SIGNATURE__NAME;
+        default: return -1;
+      }
+    }
+    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
   }
 
   /**
@@ -265,4 +367,4 @@ public class VariableImpl extends LibraryItemImpl implements Variable
     return result.toString();
   }
 
-} //VariableImpl
+} //OperationSignatureImpl

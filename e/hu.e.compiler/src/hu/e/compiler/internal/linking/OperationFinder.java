@@ -11,6 +11,9 @@ import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.compiler.internal.model.symbols.IVariableSymbol;
 import hu.e.compiler.internal.model.symbols.impl.StructLiteralSymbol;
 import hu.e.parser.eSyntax.DataTypeDef;
+import hu.e.parser.eSyntax.FixedDataTypeDef;
+import hu.e.parser.eSyntax.IntegerDataTypeDef;
+import hu.e.parser.eSyntax.IntegerKind;
 import hu.e.parser.eSyntax.Library;
 import hu.e.parser.eSyntax.LibraryItem;
 import hu.e.parser.eSyntax.Operation;
@@ -21,6 +24,7 @@ import hu.e.parser.eSyntax.ParameterVariable;
 import hu.e.parser.eSyntax.RefTypeDef;
 import hu.e.parser.eSyntax.TypeDef;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -120,12 +124,34 @@ public class OperationFinder {
 		return false;
 	}
 	
+	private boolean isAssignableTo(TypeDef to, BigDecimal value){
+		if (to instanceof RefTypeDef){
+			return isAssignableTo(((RefTypeDef) to).getType().getDef(), value);
+		}
+		if (to instanceof DataTypeDef){
+			
+			if (to instanceof IntegerDataTypeDef){
+				if (value.scale() > 0) return false;
+				if (((IntegerDataTypeDef) to).getKind() == IntegerKind.UNSIGNED){
+					return value.signum() >= 0; 
+				}else{
+					return true;
+				}
+			}
+			
+			if (to instanceof FixedDataTypeDef){
+				//TODO
+			}
+			
+		}
+		return false;
+	}
+	
 	private boolean isAssignableToData(DataTypeDef to, DataTypeDef what){
 		return what.getBits() <= to.getBits();
 	}
 	
 	private boolean checkOperation(Operation op, ISymbol...symbols) throws ECompilerException{
-		//if (op.eIsProxy()) op = (Operation) EcoreUtil2.resolve(op, pack);
 		if (op.getParams().size() != symbols.length) return false;
 		for(int i=0;i<symbols.length;i++){
 			ParameterVariable pv = (ParameterVariable)op.getParams().get(i);
@@ -134,7 +160,7 @@ public class OperationFinder {
 			if (s instanceof ILiteralSymbol && s.isLiteral()){
 				if (pv.getKind() == ParameterKind.VAR) return false;
 			
-				if (!isAssignableTo(pv.getType(), s.getType())) return false;
+				if (!isAssignableTo(pv.getType(), ((ILiteralSymbol)s).getValue())) return false;
 			}else if (s instanceof IVariableSymbol){
 				if (pv.getKind() == ParameterKind.CONST) return false;
 				

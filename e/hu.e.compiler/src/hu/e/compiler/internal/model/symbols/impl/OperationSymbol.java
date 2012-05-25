@@ -20,6 +20,7 @@ import hu.e.parser.eSyntax.OperationRole;
 import hu.e.parser.eSyntax.StructTypeDefMember;
 import hu.e.parser.eSyntax.TypeDef;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -154,7 +155,7 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
 	}
 	
 	@Override
-	public long getValue() throws ECompilerException {
+	public BigDecimal getValue() throws ECompilerException {
 		if (isLiteral()){
 			if (this.a instanceof IReferenceSymbol) throw new ECompilerException(context, "Cannot execute operation on a link-time symbol!");
 			if (this.b instanceof IReferenceSymbol) throw new ECompilerException(context, "Cannot execute operation on a link-time symbol!");
@@ -163,35 +164,35 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
 			ILiteralSymbol b = (this.b == null)? null : (ILiteralSymbol)this.b;
 			switch(op){
 			case UNARYMINUS:
-				return -a.getValue();
-			case NOT:
-				return ~a.getValue();
+				return a.getValue().negate();
+//			case NOT:
+//				return ~a.getValue();
 			case ADD:
-				return a.getValue()+b.getValue();
-			case AND:
-				return a.getValue() & b.getValue();
+				return a.getValue().add(b.getValue());
+//			case AND:
+//				return a.getValue() & b.getValue();
 			case DIV:
-				return a.getValue() / b.getValue();
+				return a.getValue().divide(b.getValue());
 			case EQUALS:
-				return (a.getValue() == b.getValue()) ? 1 : 0;
+				return (a.getValue().compareTo(b.getValue())) == 0 ? new BigDecimal(1) : new BigDecimal(0);
 			case GT:
-				return (a.getValue() > b.getValue()) ? 1 : 0;
+				return (a.getValue().compareTo(b.getValue())) == 1 ? new BigDecimal(1) : new BigDecimal(0);
 			case GTE:
-				return (a.getValue() >= b.getValue()) ? 1 : 0;
+				return (a.getValue().compareTo(b.getValue())) >= 0 ? new BigDecimal(1) : new BigDecimal(0);
 			case LT:
-				return (a.getValue() < b.getValue()) ? 1 : 0;
+				return (a.getValue().compareTo(b.getValue())) == -1 ? new BigDecimal(1) : new BigDecimal(0);
 			case LTE:
-				return (a.getValue() <= b.getValue()) ? 1 : 0;
+				return (a.getValue().compareTo(b.getValue())) <= 0 ? new BigDecimal(1) : new BigDecimal(0);
 			case MINUS:
-				return a.getValue()-b.getValue();
-			case MOD:
-				return a.getValue() % b.getValue();
+				return a.getValue().subtract(b.getValue());
+//			case MOD:
+//				return a.getValue() % b.getValue();
 			case MUL:
-				return a.getValue()*b.getValue();
+				return a.getValue().multiply(b.getValue());
 			case NOTEQUALS:
-				return (a.getValue() != b.getValue()) ? 1 : 0;
-			case OR:
-				return a.getValue() | b.getValue();
+				return (a.getValue().compareTo(b.getValue())) != 0 ? new BigDecimal(1) : new BigDecimal(0);
+//			case OR:
+//				return a.getValue() | b.getValue();
 			}
 			throw new ECompilerException(context, "Unknown operator: "+op);
 		}else{

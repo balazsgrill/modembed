@@ -35,8 +35,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.e.parser.eSyntax.impl.XExpression3Impl#getA <em>A</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.impl.XExpression3Impl#getOp <em>Op</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.impl.XExpression3Impl#getA <em>A</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.impl.XExpression3Impl#getB <em>B</em>}</li>
  * </ul>
  * </p>
@@ -46,16 +46,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class XExpression3Impl extends MinimalEObjectImpl.Container implements XExpression3
 {
   /**
-   * The cached value of the '{@link #getA() <em>A</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getA()
-   * @generated
-   * @ordered
-   */
-  protected XExpression2 a;
-
-  /**
    * The cached value of the '{@link #getOp() <em>Op</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -64,6 +54,16 @@ public class XExpression3Impl extends MinimalEObjectImpl.Container implements XE
    * @ordered
    */
   protected EList<ADDITIVE_OPERATOR> op;
+
+  /**
+   * The cached value of the '{@link #getA() <em>A</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getA()
+   * @generated
+   * @ordered
+   */
+  protected XExpression2 a;
 
   /**
    * The cached value of the '{@link #getB() <em>B</em>}' containment reference list.
@@ -94,6 +94,20 @@ public class XExpression3Impl extends MinimalEObjectImpl.Container implements XE
   protected EClass eStaticClass()
   {
     return ESyntaxPackage.Literals.XEXPRESSION3;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<ADDITIVE_OPERATOR> getOp()
+  {
+    if (op == null)
+    {
+      op = new EDataTypeEList<ADDITIVE_OPERATOR>(ADDITIVE_OPERATOR.class, this, ESyntaxPackage.XEXPRESSION3__OP);
+    }
+    return op;
   }
 
   /**
@@ -149,20 +163,6 @@ public class XExpression3Impl extends MinimalEObjectImpl.Container implements XE
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ADDITIVE_OPERATOR> getOp()
-  {
-    if (op == null)
-    {
-      op = new EDataTypeEList<ADDITIVE_OPERATOR>(ADDITIVE_OPERATOR.class, this, ESyntaxPackage.XEXPRESSION3__OP);
-    }
-    return op;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EList<XExpression2> getB()
   {
     if (b == null)
@@ -200,10 +200,10 @@ public class XExpression3Impl extends MinimalEObjectImpl.Container implements XE
   {
     switch (featureID)
     {
-      case ESyntaxPackage.XEXPRESSION3__A:
-        return getA();
       case ESyntaxPackage.XEXPRESSION3__OP:
         return getOp();
+      case ESyntaxPackage.XEXPRESSION3__A:
+        return getA();
       case ESyntaxPackage.XEXPRESSION3__B:
         return getB();
     }
@@ -221,12 +221,12 @@ public class XExpression3Impl extends MinimalEObjectImpl.Container implements XE
   {
     switch (featureID)
     {
-      case ESyntaxPackage.XEXPRESSION3__A:
-        setA((XExpression2)newValue);
-        return;
       case ESyntaxPackage.XEXPRESSION3__OP:
         getOp().clear();
         getOp().addAll((Collection<? extends ADDITIVE_OPERATOR>)newValue);
+        return;
+      case ESyntaxPackage.XEXPRESSION3__A:
+        setA((XExpression2)newValue);
         return;
       case ESyntaxPackage.XEXPRESSION3__B:
         getB().clear();
@@ -246,11 +246,11 @@ public class XExpression3Impl extends MinimalEObjectImpl.Container implements XE
   {
     switch (featureID)
     {
-      case ESyntaxPackage.XEXPRESSION3__A:
-        setA((XExpression2)null);
-        return;
       case ESyntaxPackage.XEXPRESSION3__OP:
         getOp().clear();
+        return;
+      case ESyntaxPackage.XEXPRESSION3__A:
+        setA((XExpression2)null);
         return;
       case ESyntaxPackage.XEXPRESSION3__B:
         getB().clear();
@@ -269,10 +269,10 @@ public class XExpression3Impl extends MinimalEObjectImpl.Container implements XE
   {
     switch (featureID)
     {
-      case ESyntaxPackage.XEXPRESSION3__A:
-        return a != null;
       case ESyntaxPackage.XEXPRESSION3__OP:
         return op != null && !op.isEmpty();
+      case ESyntaxPackage.XEXPRESSION3__A:
+        return a != null;
       case ESyntaxPackage.XEXPRESSION3__B:
         return b != null && !b.isEmpty();
     }

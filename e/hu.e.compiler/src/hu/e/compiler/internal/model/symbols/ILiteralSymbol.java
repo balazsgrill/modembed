@@ -3,6 +3,8 @@
  */
 package hu.e.compiler.internal.model.symbols;
 
+import java.math.BigDecimal;
+
 import hu.e.compiler.ECompilerException;
 
 /**
@@ -11,6 +13,6 @@ import hu.e.compiler.ECompilerException;
  */
 public interface ILiteralSymbol extends ISymbol{
 
-	public long getValue() throws ECompilerException;
+	public BigDecimal getValue() throws ECompilerException;
 	
 }

@@ -72,10 +72,6 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
       case ESyntaxPackage.COMPILATION_UNIT: return createCompilationUnit();
       case ESyntaxPackage.ANNOTATION_DEFINITION: return createAnnotationDefinition();
       case ESyntaxPackage.ANNOTATION: return createAnnotation();
-      case ESyntaxPackage.MODULE: return createModule();
-      case ESyntaxPackage.MODULE_ITEM: return createModuleItem();
-      case ESyntaxPackage.INSTANCE_REFERENCE: return createInstanceReference();
-      case ESyntaxPackage.VARIABLE: return createVariable();
       case ESyntaxPackage.LIBRARY: return createLibrary();
       case ESyntaxPackage.LIBRARY_ITEM: return createLibraryItem();
       case ESyntaxPackage.TYPE: return createType();
@@ -84,7 +80,10 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
       case ESyntaxPackage.ARRAY_TYPE_DEF: return createArrayTypeDef();
       case ESyntaxPackage.REF_TYPE_DEF: return createRefTypeDef();
       case ESyntaxPackage.DATA_TYPE_DEF: return createDataTypeDef();
+      case ESyntaxPackage.FIXED_DATA_TYPE_DEF: return createFixedDataTypeDef();
+      case ESyntaxPackage.INTEGER_DATA_TYPE_DEF: return createIntegerDataTypeDef();
       case ESyntaxPackage.STRUCT_TYPE_DEF: return createStructTypeDef();
+      case ESyntaxPackage.VARIABLE: return createVariable();
       case ESyntaxPackage.OPERATION_STEP: return createOperationStep();
       case ESyntaxPackage.INSTRUCTION_WORD: return createInstructionWord();
       case ESyntaxPackage.WORD_SECTION: return createWordSection();
@@ -92,15 +91,13 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
       case ESyntaxPackage.VARIABLE_REFERENCE: return createVariableReference();
       case ESyntaxPackage.OPERATION_CALL: return createOperationCall();
       case ESyntaxPackage.OPERATION_CALL_PARAMETER: return createOperationCallParameter();
+      case ESyntaxPackage.OPERATION_SIGNATURE: return createOperationSignature();
       case ESyntaxPackage.OPERATION_BLOCK: return createOperationBlock();
       case ESyntaxPackage.OPERATOR_DEFINITION: return createOperatorDefinition();
       case ESyntaxPackage.LINKED_BINARY: return createLinkedBinary();
       case ESyntaxPackage.BINARY_SECTION: return createBinarySection();
       case ESyntaxPackage.FUNCTION_BINARY_SECTION: return createFunctionBinarySection();
       case ESyntaxPackage.OPTIMIZER_CALL: return createOptimizerCall();
-      case ESyntaxPackage.LINKED_INSTANCE: return createLinkedInstance();
-      case ESyntaxPackage.REFERENCE_LINK: return createReferenceLink();
-      case ESyntaxPackage.INSTANCE_CONFIG: return createInstanceConfig();
       case ESyntaxPackage.FUNCTION_MEMORY: return createFunctionMemory();
       case ESyntaxPackage.CONSTANT_BINARY_SECTION: return createConstantBinarySection();
       case ESyntaxPackage.REFERENCE_BINARY_SECTION: return createReferenceBinarySection();
@@ -122,7 +119,6 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
       case ESyntaxPackage.XIF_EXPRESSION: return createXIfExpression();
       case ESyntaxPackage.XWHILE_EXPRESSION: return createXWhileExpression();
       case ESyntaxPackage.XPARENTHESIZED_EXPRESSION: return createXParenthesizedExpression();
-      case ESyntaxPackage.CONFIG_VARIABLE: return createConfigVariable();
       case ESyntaxPackage.STRUCT_TYPE_DEF_MEMBER: return createStructTypeDefMember();
       case ESyntaxPackage.CONSTANT_VARIABLE: return createConstantVariable();
       case ESyntaxPackage.REGISTER_VARIABLE: return createRegisterVariable();
@@ -144,8 +140,8 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
   {
     switch (eDataType.getClassifierID())
     {
-      case ESyntaxPackage.PRIMITIVE_KIND:
-        return createPrimitiveKindFromString(eDataType, initialValue);
+      case ESyntaxPackage.INTEGER_KIND:
+        return createIntegerKindFromString(eDataType, initialValue);
       case ESyntaxPackage.PARAMETER_KIND:
         return createParameterKindFromString(eDataType, initialValue);
       case ESyntaxPackage.OPERATION_ROLE:
@@ -177,8 +173,8 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
   {
     switch (eDataType.getClassifierID())
     {
-      case ESyntaxPackage.PRIMITIVE_KIND:
-        return convertPrimitiveKindToString(eDataType, instanceValue);
+      case ESyntaxPackage.INTEGER_KIND:
+        return convertIntegerKindToString(eDataType, instanceValue);
       case ESyntaxPackage.PARAMETER_KIND:
         return convertParameterKindToString(eDataType, instanceValue);
       case ESyntaxPackage.OPERATION_ROLE:
@@ -231,50 +227,6 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
   {
     AnnotationImpl annotation = new AnnotationImpl();
     return annotation;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Module createModule()
-  {
-    ModuleImpl module = new ModuleImpl();
-    return module;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ModuleItem createModuleItem()
-  {
-    ModuleItemImpl moduleItem = new ModuleItemImpl();
-    return moduleItem;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public InstanceReference createInstanceReference()
-  {
-    InstanceReferenceImpl instanceReference = new InstanceReferenceImpl();
-    return instanceReference;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Variable createVariable()
-  {
-    VariableImpl variable = new VariableImpl();
-    return variable;
   }
 
   /**
@@ -370,10 +322,43 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public FixedDataTypeDef createFixedDataTypeDef()
+  {
+    FixedDataTypeDefImpl fixedDataTypeDef = new FixedDataTypeDefImpl();
+    return fixedDataTypeDef;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public IntegerDataTypeDef createIntegerDataTypeDef()
+  {
+    IntegerDataTypeDefImpl integerDataTypeDef = new IntegerDataTypeDefImpl();
+    return integerDataTypeDef;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public StructTypeDef createStructTypeDef()
   {
     StructTypeDefImpl structTypeDef = new StructTypeDefImpl();
     return structTypeDef;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Variable createVariable()
+  {
+    VariableImpl variable = new VariableImpl();
+    return variable;
   }
 
   /**
@@ -458,6 +443,17 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public OperationSignature createOperationSignature()
+  {
+    OperationSignatureImpl operationSignature = new OperationSignatureImpl();
+    return operationSignature;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public OperationBlock createOperationBlock()
   {
     OperationBlockImpl operationBlock = new OperationBlockImpl();
@@ -517,39 +513,6 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
   {
     OptimizerCallImpl optimizerCall = new OptimizerCallImpl();
     return optimizerCall;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public LinkedInstance createLinkedInstance()
-  {
-    LinkedInstanceImpl linkedInstance = new LinkedInstanceImpl();
-    return linkedInstance;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ReferenceLink createReferenceLink()
-  {
-    ReferenceLinkImpl referenceLink = new ReferenceLinkImpl();
-    return referenceLink;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public InstanceConfig createInstanceConfig()
-  {
-    InstanceConfigImpl instanceConfig = new InstanceConfigImpl();
-    return instanceConfig;
   }
 
   /**
@@ -788,17 +751,6 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ConfigVariable createConfigVariable()
-  {
-    ConfigVariableImpl configVariable = new ConfigVariableImpl();
-    return configVariable;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public StructTypeDefMember createStructTypeDefMember()
   {
     StructTypeDefMemberImpl structTypeDefMember = new StructTypeDefMemberImpl();
@@ -865,9 +817,9 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public PrimitiveKind createPrimitiveKindFromString(EDataType eDataType, String initialValue)
+  public IntegerKind createIntegerKindFromString(EDataType eDataType, String initialValue)
   {
-    PrimitiveKind result = PrimitiveKind.get(initialValue);
+    IntegerKind result = IntegerKind.get(initialValue);
     if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
     return result;
   }
@@ -877,7 +829,7 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public String convertPrimitiveKindToString(EDataType eDataType, Object instanceValue)
+  public String convertIntegerKindToString(EDataType eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }

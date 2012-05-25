@@ -7,47 +7,57 @@
 package hu.e.parser.eSyntax.impl;
 
 import hu.e.parser.eSyntax.ESyntaxPackage;
-import hu.e.parser.eSyntax.InstanceReference;
-import hu.e.parser.eSyntax.Module;
+import hu.e.parser.eSyntax.FixedDataTypeDef;
+
+import java.math.BigDecimal;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Instance Reference</b></em>'.
+ * An implementation of the model object '<em><b>Fixed Data Type Def</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.e.parser.eSyntax.impl.InstanceReferenceImpl#getType <em>Type</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.impl.FixedDataTypeDefImpl#getScale <em>Scale</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class InstanceReferenceImpl extends ModuleItemImpl implements InstanceReference
+public class FixedDataTypeDefImpl extends DataTypeDefImpl implements FixedDataTypeDef
 {
   /**
-   * The cached value of the '{@link #getType() <em>Type</em>}' reference.
+   * The default value of the '{@link #getScale() <em>Scale</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getType()
+   * @see #getScale()
    * @generated
    * @ordered
    */
-  protected Module type;
+  protected static final BigDecimal SCALE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getScale() <em>Scale</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getScale()
+   * @generated
+   * @ordered
+   */
+  protected BigDecimal scale = SCALE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected InstanceReferenceImpl()
+  protected FixedDataTypeDefImpl()
   {
     super();
   }
@@ -60,7 +70,7 @@ public class InstanceReferenceImpl extends ModuleItemImpl implements InstanceRef
   @Override
   protected EClass eStaticClass()
   {
-    return ESyntaxPackage.Literals.INSTANCE_REFERENCE;
+    return ESyntaxPackage.Literals.FIXED_DATA_TYPE_DEF;
   }
 
   /**
@@ -68,19 +78,9 @@ public class InstanceReferenceImpl extends ModuleItemImpl implements InstanceRef
    * <!-- end-user-doc -->
    * @generated
    */
-  public Module getType()
+  public BigDecimal getScale()
   {
-    if (type != null && type.eIsProxy())
-    {
-      InternalEObject oldType = (InternalEObject)type;
-      type = (Module)eResolveProxy(oldType);
-      if (type != oldType)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ESyntaxPackage.INSTANCE_REFERENCE__TYPE, oldType, type));
-      }
-    }
-    return type;
+    return scale;
   }
 
   /**
@@ -88,22 +88,12 @@ public class InstanceReferenceImpl extends ModuleItemImpl implements InstanceRef
    * <!-- end-user-doc -->
    * @generated
    */
-  public Module basicGetType()
+  public void setScale(BigDecimal newScale)
   {
-    return type;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setType(Module newType)
-  {
-    Module oldType = type;
-    type = newType;
+    BigDecimal oldScale = scale;
+    scale = newScale;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.INSTANCE_REFERENCE__TYPE, oldType, type));
+      eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.FIXED_DATA_TYPE_DEF__SCALE, oldScale, scale));
   }
 
   /**
@@ -116,9 +106,8 @@ public class InstanceReferenceImpl extends ModuleItemImpl implements InstanceRef
   {
     switch (featureID)
     {
-      case ESyntaxPackage.INSTANCE_REFERENCE__TYPE:
-        if (resolve) return getType();
-        return basicGetType();
+      case ESyntaxPackage.FIXED_DATA_TYPE_DEF__SCALE:
+        return getScale();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -133,8 +122,8 @@ public class InstanceReferenceImpl extends ModuleItemImpl implements InstanceRef
   {
     switch (featureID)
     {
-      case ESyntaxPackage.INSTANCE_REFERENCE__TYPE:
-        setType((Module)newValue);
+      case ESyntaxPackage.FIXED_DATA_TYPE_DEF__SCALE:
+        setScale((BigDecimal)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -150,8 +139,8 @@ public class InstanceReferenceImpl extends ModuleItemImpl implements InstanceRef
   {
     switch (featureID)
     {
-      case ESyntaxPackage.INSTANCE_REFERENCE__TYPE:
-        setType((Module)null);
+      case ESyntaxPackage.FIXED_DATA_TYPE_DEF__SCALE:
+        setScale(SCALE_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -167,10 +156,27 @@ public class InstanceReferenceImpl extends ModuleItemImpl implements InstanceRef
   {
     switch (featureID)
     {
-      case ESyntaxPackage.INSTANCE_REFERENCE__TYPE:
-        return type != null;
+      case ESyntaxPackage.FIXED_DATA_TYPE_DEF__SCALE:
+        return SCALE_EDEFAULT == null ? scale != null : !SCALE_EDEFAULT.equals(scale);
     }
     return super.eIsSet(featureID);
   }
 
-} //InstanceReferenceImpl
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (scale: ");
+    result.append(scale);
+    result.append(')');
+    return result.toString();
+  }
+
+} //FixedDataTypeDefImpl

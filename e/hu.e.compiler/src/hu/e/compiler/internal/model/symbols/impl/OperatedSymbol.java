@@ -13,6 +13,7 @@ import hu.e.compiler.list.SequenceStep;
 import hu.e.parser.eSyntax.StructTypeDefMember;
 import hu.e.parser.eSyntax.TypeDef;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -37,7 +38,7 @@ public class OperatedSymbol implements ILiteralSymbol, IVariableSymbol {
 	 * @see hu.e.compiler.internal.model.ISymbol#getValue()
 	 */
 	@Override
-	public long getValue() throws ECompilerException {
+	public BigDecimal getValue() throws ECompilerException {
 		return ((ILiteralSymbol)symbol).getValue();
 	}
 

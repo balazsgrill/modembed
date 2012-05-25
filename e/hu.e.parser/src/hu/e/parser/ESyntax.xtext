@@ -5,16 +5,16 @@ import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 generate eSyntax "http://www.e.hu/parser/ESyntax"
 
 CompilationUnit:
-	Module | Library | LinkedBinary
+	/*Module |*/ Library | LinkedBinary /*| Interface*/
 ;	
 
 QualifiedName:
 	ID ('.' ID)*
 ;
 
-ReferenceID:
-	(ID '.')? ID
-;
+//ReferenceID:
+//	ID ('->' ID)*
+//;
 
 /***********************
  * LITERALS *
@@ -24,7 +24,9 @@ terminal HEXINT returns ecore::EInt: '0x'('0'..'9'|'a'..'f'|'A'..'F')+;
 
 terminal BINARY returns ecore::EInt: 'b'('0'|'1')+;
 
-LITERAL: INT | HEXINT | BINARY;
+terminal REAL returns ecore::EBigDecimal: INT '.' INT?;
+
+LITERAL: (INT | HEXINT | BINARY | REAL);
 
 /**********************
  * Annotations
@@ -42,29 +44,47 @@ Annotation:
  * CLASSES *
  ***********************/
 
-Module:
-	'module' name=QualifiedName
-	('extends' extends+=[Module|QualifiedName] (',' extends+=[Module|QualifiedName])*)?
-	';'
-	('use' use+=[Library|QualifiedName]';')*
-	(items+=ModuleItem)*
-;
-
-ModuleItem:
-	Variable';' | 
-	ConfigVariable';' |
-	ConstantVariable';' |
-	InstanceReference';' |
-	Operation
-;
-
-InstanceReference:
-	'ref' type=[Module|ReferenceID] name=ID
-;
-
-ConfigVariable returns Variable:
-	{ConfigVariable} 'config' type=TypeDef name=ID
-;
+//Interface:
+//	'interface' name=QualifiedName ';'
+//	('use' use+=[Library|QualifiedName]';')*
+//	
+//	(operations+=OperationSignature ';')*
+//;
+//
+//Module:
+//	'module' name=QualifiedName
+//	';'
+//	('use' use+=[Library|QualifiedName]';')*
+//	(items+=ModuleItem)*
+//;
+//
+//ModuleItem:
+//	Variable';' | 
+//	ConfigVariable';' |
+//	ConstantVariable';' |
+//	Instance';' |
+//	Socket';' |
+//	InterfaceImplementation |
+//	Operation
+//;
+//
+//InterfaceImplementation:
+//	'implement' type=[Interface|QualifiedName] name=ID '{'
+//		(operations += Operation)*
+//	'}'
+//;
+//
+//Socket:
+//	'socket' type=[Interface|QualifiedName] name=ID
+//;
+//
+//Instance:
+//	'instance' type=[Module|QualifiedName] name=ID 
+//;
+//
+//ConfigVariable returns Variable:
+//	{ConfigVariable} 'config' type=TypeDef name=ID
+//;
 
 /***********************
  * LIBRARY *
@@ -103,15 +123,27 @@ ArrayTypeDef:
 ;
 
 RefTypeDef:
-	type=[Type|ReferenceID]
+	type=[Type|QualifiedName]
 ;	
 	
 DataTypeDef:
-	kind=PrimitiveKind bits=INT 'bits' 
+	IntegerDataTypeDef | FixedDataTypeDef //| FloatDataTypeDef
 	;
 
-enum PrimitiveKind:
-	UNSIGNED='unsigned' | SIGNED='signed' | REAL='real'
+//FloatDataTypeDef:
+//	'float' bits=INT 'bits'
+//;
+
+FixedDataTypeDef:
+	'fixed' bits=INT 'bits' 'scale' '=' scale=REAL
+;
+
+IntegerDataTypeDef:
+	kind=IntegerKind bits=INT 'bits'
+;
+
+enum IntegerKind:
+	UNSIGNED='unsigned' | SIGNED='signed'
 ;
 	
 StructTypeDef:
@@ -163,11 +195,11 @@ Variable:
 ;
 
 VariableReference:
-	var=[Variable|ReferenceID]
+	var=[Variable|QualifiedName]
 ;
 
 OperationCall:
-	operation=[Operation|ReferenceID] '('
+	operation=[Operation|QualifiedName] '('
 		(params+=OperationCallParameter (',' params+=OperationCallParameter)*)?
 	')'
 ;
@@ -176,7 +208,13 @@ OperationCallParameter:
 	XExpression
 ;
 
-Operation returns Variable:
+OperationSignature returns Variable:
+	{OperationSignature} name=ID '('
+		(params+=ParameterVariable (',' params+=ParameterVariable)*)?
+	')'
+; 
+
+Operation returns OperationSignature:
 	{Operation} name=ID '('
 		(params+=ParameterVariable (',' params+=ParameterVariable)*)?
 	')''{'
@@ -209,7 +247,7 @@ enum OperationRole:
 
 OperatorDefinition:
 	'operator' role=OperationRole '{'
-		candidate+=[Operation|ReferenceID] (',' candidate+=[Operation|ReferenceID])* (',')?
+		candidate+=[Operation|QualifiedName] (',' candidate+=[Operation|QualifiedName])* (',')?
 	'}'
 ;
 
@@ -241,8 +279,8 @@ FunctionBinarySection:
 		(optimizercalls+=OptimizerCall ';')*
 	')' '{'
 		(
-		('lib' lib+=[Library|QualifiedName] ';') |
-		(instances+=LinkedInstance )
+		('lib' lib+=[Library|QualifiedName] ';') 
+		//| (instances+=LinkedInstance )
 		)*
 		
 		'link' '{' do=OperationBlock '}'
@@ -253,21 +291,21 @@ OptimizerCall:
 	'optimize' optimizer=STRING
 ;
 
-LinkedInstance:
-	type=[Module|QualifiedName] name=ID '{'
-			( 
-			(links+=ReferenceLink | confs+=InstanceConfig)	
-			';')*
-		'}'
-;
-
-ReferenceLink:
-	ref=[InstanceReference|ID] ':' inst=[LinkedInstance|ID]
-;
-
-InstanceConfig:
-	conf=[ConfigVariable|ID] '=' value=XExpression
-;
+//LinkedInstance returns Instance:
+//	{LinkedInstance} type=[Module|QualifiedName] name=ID '{'
+//			( 
+//			(links+=ReferenceLink | confs+=InstanceConfig)	
+//			';')*
+//		'}'
+//;
+//
+//ReferenceLink:
+//	ref=[Socket|ID] ':' inst=[LinkedInstance|ID]
+//;
+//
+//InstanceConfig:
+//	conf=[ConfigVariable|ID] '=' value=XExpression
+//;
 
 FunctionMemory:
 	'mem' start=LITERAL '..' end=LITERAL
@@ -298,7 +336,7 @@ XSizeOfExpression:
 ;
 
 XStructExpression:
-	type=[Type|ReferenceID] '{' values+=XExpression (',' values+=XExpression)* (',')? '}'
+	type=[Type|QualifiedName] '{' values+=XExpression (',' values+=XExpression)* (',')? '}'
 ;
 
 XExpression1:
@@ -326,7 +364,7 @@ enum MULTIPLICATIVE_OPERATOR:
 ;
 
 XExpression3:
-	a = XExpression2 (=> op+=ADDITIVE_OPERATOR b+= XExpression2)*
+	(op+=ADDITIVE_OPERATOR)? a = XExpression2 (=> op+=ADDITIVE_OPERATOR b+= XExpression2)*
 ;
 
 enum ADDITIVE_OPERATOR:

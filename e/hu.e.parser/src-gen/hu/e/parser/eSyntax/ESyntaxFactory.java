@@ -54,42 +54,6 @@ public interface ESyntaxFactory extends EFactory
   Annotation createAnnotation();
 
   /**
-   * Returns a new object of class '<em>Module</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Module</em>'.
-   * @generated
-   */
-  Module createModule();
-
-  /**
-   * Returns a new object of class '<em>Module Item</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Module Item</em>'.
-   * @generated
-   */
-  ModuleItem createModuleItem();
-
-  /**
-   * Returns a new object of class '<em>Instance Reference</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Instance Reference</em>'.
-   * @generated
-   */
-  InstanceReference createInstanceReference();
-
-  /**
-   * Returns a new object of class '<em>Variable</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Variable</em>'.
-   * @generated
-   */
-  Variable createVariable();
-
-  /**
    * Returns a new object of class '<em>Library</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -162,6 +126,24 @@ public interface ESyntaxFactory extends EFactory
   DataTypeDef createDataTypeDef();
 
   /**
+   * Returns a new object of class '<em>Fixed Data Type Def</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Fixed Data Type Def</em>'.
+   * @generated
+   */
+  FixedDataTypeDef createFixedDataTypeDef();
+
+  /**
+   * Returns a new object of class '<em>Integer Data Type Def</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Integer Data Type Def</em>'.
+   * @generated
+   */
+  IntegerDataTypeDef createIntegerDataTypeDef();
+
+  /**
    * Returns a new object of class '<em>Struct Type Def</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -169,6 +151,15 @@ public interface ESyntaxFactory extends EFactory
    * @generated
    */
   StructTypeDef createStructTypeDef();
+
+  /**
+   * Returns a new object of class '<em>Variable</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Variable</em>'.
+   * @generated
+   */
+  Variable createVariable();
 
   /**
    * Returns a new object of class '<em>Operation Step</em>'.
@@ -234,6 +225,15 @@ public interface ESyntaxFactory extends EFactory
   OperationCallParameter createOperationCallParameter();
 
   /**
+   * Returns a new object of class '<em>Operation Signature</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Operation Signature</em>'.
+   * @generated
+   */
+  OperationSignature createOperationSignature();
+
+  /**
    * Returns a new object of class '<em>Operation Block</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -286,33 +286,6 @@ public interface ESyntaxFactory extends EFactory
    * @generated
    */
   OptimizerCall createOptimizerCall();
-
-  /**
-   * Returns a new object of class '<em>Linked Instance</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Linked Instance</em>'.
-   * @generated
-   */
-  LinkedInstance createLinkedInstance();
-
-  /**
-   * Returns a new object of class '<em>Reference Link</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Reference Link</em>'.
-   * @generated
-   */
-  ReferenceLink createReferenceLink();
-
-  /**
-   * Returns a new object of class '<em>Instance Config</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Instance Config</em>'.
-   * @generated
-   */
-  InstanceConfig createInstanceConfig();
 
   /**
    * Returns a new object of class '<em>Function Memory</em>'.
@@ -502,15 +475,6 @@ public interface ESyntaxFactory extends EFactory
    * @generated
    */
   XParenthesizedExpression createXParenthesizedExpression();
-
-  /**
-   * Returns a new object of class '<em>Config Variable</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Config Variable</em>'.
-   * @generated
-   */
-  ConfigVariable createConfigVariable();
 
   /**
    * Returns a new object of class '<em>Struct Type Def Member</em>'.

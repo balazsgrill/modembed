@@ -14,22 +14,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="Annotation" eSuperTypes="#//XTopLevelExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="definition" eType="#//AnnotationDefinition"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Module" eSuperTypes="#//CompilationUnit">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="extends" unique="false"
-        upperBound="-1" eType="#//Module"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="items" upperBound="-1"
-        eType="#//ModuleItem" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ModuleItem">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="InstanceReference" eSuperTypes="#//ModuleItem">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//Module"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Variable" eSuperTypes="#//ModuleItem #//LibraryItem #//OperationStep">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//TypeDef"
-        containment="true"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Library" eSuperTypes="#//CompilationUnit">
     <eStructuralFeatures xsi:type="ecore:EReference" name="overrides" unique="false"
         upperBound="-1" eType="#//Library"/>
@@ -57,17 +41,26 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//Type"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataTypeDef" eSuperTypes="#//TypeDef">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//PrimitiveKind"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="bits" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="PrimitiveKind">
+  <eClassifiers xsi:type="ecore:EClass" name="FixedDataTypeDef" eSuperTypes="#//DataTypeDef">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="scale" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IntegerDataTypeDef" eSuperTypes="#//DataTypeDef">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//IntegerKind"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="IntegerKind">
     <eLiterals name="UNSIGNED" literal="unsigned"/>
     <eLiterals name="SIGNED" value="1" literal="signed"/>
-    <eLiterals name="REAL" value="2" literal="real"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StructTypeDef" eSuperTypes="#//TypeDef">
     <eStructuralFeatures xsi:type="ecore:EReference" name="members" upperBound="-1"
         eType="#//Variable" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Variable" eSuperTypes="#//LibraryItem #//OperationStep">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//TypeDef"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OperationStep"/>
   <eClassifiers xsi:type="ecore:EClass" name="InstructionWord" eSuperTypes="#//OperationStep">
@@ -90,6 +83,10 @@
         eType="#//OperationCallParameter" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OperationCallParameter"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OperationSignature" eSuperTypes="#//LibraryItem #//Variable">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="params" upperBound="-1"
+        eType="#//Variable" containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OperationBlock">
     <eStructuralFeatures xsi:type="ecore:EReference" name="steps" upperBound="-1"
         eType="#//OperationStep" containment="true"/>
@@ -154,30 +151,11 @@
         eType="#//OptimizerCall" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="lib" unique="false" upperBound="-1"
         eType="#//Library"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="instances" upperBound="-1"
-        eType="#//LinkedInstance" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="do" eType="#//OperationBlock"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OptimizerCall">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="optimizer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="LinkedInstance">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//Module"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="links" upperBound="-1"
-        eType="#//ReferenceLink" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="confs" upperBound="-1"
-        eType="#//InstanceConfig" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ReferenceLink">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ref" eType="#//InstanceReference"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="inst" eType="#//LinkedInstance"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="InstanceConfig">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="conf" eType="#//ConfigVariable"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//XExpression"
-        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FunctionMemory">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="start" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -239,10 +217,10 @@
     <eLiterals name="MOD" value="2" literal="%"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="XExpression3">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="a" eType="#//XExpression2"
-        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" unique="false" upperBound="-1"
         eType="#//ADDITIVE_OPERATOR"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="a" eType="#//XExpression2"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="b" upperBound="-1" eType="#//XExpression2"
         containment="true"/>
   </eClassifiers>
@@ -310,7 +288,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="a" eType="#//XExpression"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ConfigVariable" eSuperTypes="#//Variable"/>
   <eClassifiers xsi:type="ecore:EClass" name="StructTypeDefMember" eSuperTypes="#//Variable"/>
   <eClassifiers xsi:type="ecore:EClass" name="ConstantVariable" eSuperTypes="#//Variable">
     <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//XExpression"
@@ -321,9 +298,7 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Label" eSuperTypes="#//Variable"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Operation" eSuperTypes="#//Variable">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="params" upperBound="-1"
-        eType="#//Variable" containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Operation" eSuperTypes="#//OperationSignature">
     <eStructuralFeatures xsi:type="ecore:EReference" name="block" eType="#//OperationBlock"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="return" eType="#//XExpression"
