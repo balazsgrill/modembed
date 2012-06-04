@@ -18,8 +18,8 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link hu.e.parser.eSyntax.XExpression3#getOp <em>Op</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.XExpression3#getA <em>A</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.XExpression3#getOp <em>Op</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.XExpression3#getB <em>B</em>}</li>
  * </ul>
  * </p>
@@ -30,24 +30,6 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface XExpression3 extends EObject
 {
-  /**
-   * Returns the value of the '<em><b>Op</b></em>' attribute list.
-   * The list contents are of type {@link hu.e.parser.eSyntax.ADDITIVE_OPERATOR}.
-   * The literals are from the enumeration {@link hu.e.parser.eSyntax.ADDITIVE_OPERATOR}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Op</em>' attribute list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Op</em>' attribute list.
-   * @see hu.e.parser.eSyntax.ADDITIVE_OPERATOR
-   * @see hu.e.parser.eSyntax.ESyntaxPackage#getXExpression3_Op()
-   * @model unique="false"
-   * @generated
-   */
-  EList<ADDITIVE_OPERATOR> getOp();
-
   /**
    * Returns the value of the '<em><b>A</b></em>' containment reference.
    * <!-- begin-user-doc -->
@@ -73,6 +55,24 @@ public interface XExpression3 extends EObject
    * @generated
    */
   void setA(XExpression2 value);
+
+  /**
+   * Returns the value of the '<em><b>Op</b></em>' attribute list.
+   * The list contents are of type {@link hu.e.parser.eSyntax.ADDITIVE_OPERATOR}.
+   * The literals are from the enumeration {@link hu.e.parser.eSyntax.ADDITIVE_OPERATOR}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Op</em>' attribute list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Op</em>' attribute list.
+   * @see hu.e.parser.eSyntax.ADDITIVE_OPERATOR
+   * @see hu.e.parser.eSyntax.ESyntaxPackage#getXExpression3_Op()
+   * @model unique="false"
+   * @generated
+   */
+  EList<ADDITIVE_OPERATOR> getOp();
 
   /**
    * Returns the value of the '<em><b>B</b></em>' containment reference list.

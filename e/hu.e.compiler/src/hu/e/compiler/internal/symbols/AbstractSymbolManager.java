@@ -17,6 +17,8 @@ import hu.e.compiler.internal.model.symbols.impl.MemoryAssignmentValueSymbol;
 import hu.e.compiler.internal.model.symbols.impl.OperatedSymbol;
 import hu.e.compiler.internal.model.symbols.impl.OperationSymbol;
 import hu.e.compiler.internal.model.symbols.impl.StructLiteralSymbol;
+import hu.e.compiler.internal.model.symbols.impl.TypeCastedLiteralSymbol;
+import hu.e.compiler.internal.model.symbols.impl.TypeCastedVariableSymbol;
 import hu.e.compiler.internal.model.symbols.impl.VariableSymbol;
 import hu.e.compiler.list.ProgramStep;
 import hu.e.compiler.list.SequenceStep;
@@ -82,6 +84,14 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 		
 		for(VariableReference vr : x.getRef()){
 			a = new OperationSymbol(x, getSymbol(vr.getVar()), OPERATION.SET, a, this);
+		}
+		
+		if (x.getType() != null){
+			if (a instanceof ILiteralSymbol){
+				a = new TypeCastedLiteralSymbol(x.getType(), (ILiteralSymbol)a);
+			}else if (a instanceof IVariableSymbol){
+				a = new TypeCastedVariableSymbol(x.getType(), (IVariableSymbol)a);
+			}
 		}
 		
 		return a;

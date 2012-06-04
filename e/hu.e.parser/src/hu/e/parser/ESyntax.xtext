@@ -324,7 +324,7 @@ ReferenceBinarySection:
  **********************/
  
 XExpression:
-	XExpression6;
+	XExpression6 (':' type=TypeDef)?;
 
 XPrimaryExpression:
 	XExpressionLiteral | XParenthesizedExpression | XIsLiteralExpression | VariableReference | OperationCall
@@ -364,7 +364,7 @@ enum MULTIPLICATIVE_OPERATOR:
 ;
 
 XExpression3:
-	(op+=ADDITIVE_OPERATOR)? a = XExpression2 (=> op+=ADDITIVE_OPERATOR b+= XExpression2)*
+	a = XExpression2 (=> op+=ADDITIVE_OPERATOR b+= XExpression2)*
 ;
 
 enum ADDITIVE_OPERATOR:

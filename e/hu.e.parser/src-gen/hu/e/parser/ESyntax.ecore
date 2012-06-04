@@ -217,10 +217,10 @@
     <eLiterals name="MOD" value="2" literal="%"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="XExpression3">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" unique="false" upperBound="-1"
-        eType="#//ADDITIVE_OPERATOR"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="a" eType="#//XExpression2"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" unique="false" upperBound="-1"
+        eType="#//ADDITIVE_OPERATOR"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="b" upperBound="-1" eType="#//XExpression2"
         containment="true"/>
   </eClassifiers>
@@ -253,6 +253,8 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="XExpression6" eSuperTypes="#//XExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//TypeDef"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ref" upperBound="-1" eType="#//VariableReference"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="a" eType="#//XExpression5"

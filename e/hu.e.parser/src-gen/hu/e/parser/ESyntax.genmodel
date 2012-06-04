@@ -204,8 +204,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XExpression2/b"/>
     </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//XExpression3">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//XExpression3/op"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XExpression3/a"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//XExpression3/op"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XExpression3/b"/>
     </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//XExpression4">
@@ -219,6 +219,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XExpression5/b"/>
     </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//XExpression6">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XExpression6/type"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XExpression6/ref"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XExpression6/a"/>
     </genClasses>

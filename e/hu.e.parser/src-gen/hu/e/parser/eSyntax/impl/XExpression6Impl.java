@@ -7,6 +7,7 @@
 package hu.e.parser.eSyntax.impl;
 
 import hu.e.parser.eSyntax.ESyntaxPackage;
+import hu.e.parser.eSyntax.TypeDef;
 import hu.e.parser.eSyntax.VariableReference;
 import hu.e.parser.eSyntax.XExpression5;
 import hu.e.parser.eSyntax.XExpression6;
@@ -33,6 +34,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link hu.e.parser.eSyntax.impl.XExpression6Impl#getType <em>Type</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.impl.XExpression6Impl#getRef <em>Ref</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.impl.XExpression6Impl#getA <em>A</em>}</li>
  * </ul>
@@ -42,6 +44,16 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class XExpression6Impl extends XExpressionImpl implements XExpression6
 {
+  /**
+   * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getType()
+   * @generated
+   * @ordered
+   */
+  protected TypeDef type;
+
   /**
    * The cached value of the '{@link #getRef() <em>Ref</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -81,6 +93,54 @@ public class XExpression6Impl extends XExpressionImpl implements XExpression6
   protected EClass eStaticClass()
   {
     return ESyntaxPackage.Literals.XEXPRESSION6;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TypeDef getType()
+  {
+    return type;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetType(TypeDef newType, NotificationChain msgs)
+  {
+    TypeDef oldType = type;
+    type = newType;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ESyntaxPackage.XEXPRESSION6__TYPE, oldType, newType);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setType(TypeDef newType)
+  {
+    if (newType != type)
+    {
+      NotificationChain msgs = null;
+      if (type != null)
+        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ESyntaxPackage.XEXPRESSION6__TYPE, null, msgs);
+      if (newType != null)
+        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ESyntaxPackage.XEXPRESSION6__TYPE, null, msgs);
+      msgs = basicSetType(newType, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.XEXPRESSION6__TYPE, newType, newType));
   }
 
   /**
@@ -155,6 +215,8 @@ public class XExpression6Impl extends XExpressionImpl implements XExpression6
   {
     switch (featureID)
     {
+      case ESyntaxPackage.XEXPRESSION6__TYPE:
+        return basicSetType(null, msgs);
       case ESyntaxPackage.XEXPRESSION6__REF:
         return ((InternalEList<?>)getRef()).basicRemove(otherEnd, msgs);
       case ESyntaxPackage.XEXPRESSION6__A:
@@ -173,6 +235,8 @@ public class XExpression6Impl extends XExpressionImpl implements XExpression6
   {
     switch (featureID)
     {
+      case ESyntaxPackage.XEXPRESSION6__TYPE:
+        return getType();
       case ESyntaxPackage.XEXPRESSION6__REF:
         return getRef();
       case ESyntaxPackage.XEXPRESSION6__A:
@@ -192,6 +256,9 @@ public class XExpression6Impl extends XExpressionImpl implements XExpression6
   {
     switch (featureID)
     {
+      case ESyntaxPackage.XEXPRESSION6__TYPE:
+        setType((TypeDef)newValue);
+        return;
       case ESyntaxPackage.XEXPRESSION6__REF:
         getRef().clear();
         getRef().addAll((Collection<? extends VariableReference>)newValue);
@@ -213,6 +280,9 @@ public class XExpression6Impl extends XExpressionImpl implements XExpression6
   {
     switch (featureID)
     {
+      case ESyntaxPackage.XEXPRESSION6__TYPE:
+        setType((TypeDef)null);
+        return;
       case ESyntaxPackage.XEXPRESSION6__REF:
         getRef().clear();
         return;
@@ -233,6 +303,8 @@ public class XExpression6Impl extends XExpressionImpl implements XExpression6
   {
     switch (featureID)
     {
+      case ESyntaxPackage.XEXPRESSION6__TYPE:
+        return type != null;
       case ESyntaxPackage.XEXPRESSION6__REF:
         return ref != null && !ref.isEmpty();
       case ESyntaxPackage.XEXPRESSION6__A:

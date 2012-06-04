@@ -350,12 +350,15 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 				}
 				else break;
 			case ESyntaxPackage.XEXPRESSION6:
-				if(context == grammarAccess.getOperationCallParameterRule() ||
+				if(context == grammarAccess.getXExpression6Rule()) {
+					sequence_XExpression6(context, (XExpression6) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getOperationCallParameterRule() ||
 				   context == grammarAccess.getOperationStepRule() ||
 				   context == grammarAccess.getXExpressionRule() ||
-				   context == grammarAccess.getXExpression6Rule() ||
 				   context == grammarAccess.getXTopLevelExpressionRule()) {
-					sequence_XExpression6(context, (XExpression6) semanticObject); 
+					sequence_XExpression(context, (XExpression6) semanticObject); 
 					return; 
 				}
 				else break;
@@ -926,7 +929,7 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (op+=ADDITIVE_OPERATOR? a=XExpression2 (op+=ADDITIVE_OPERATOR b+=XExpression2)*)
+	 *     (a=XExpression2 (op+=ADDITIVE_OPERATOR b+=XExpression2)*)
 	 */
 	protected void sequence_XExpression3(EObject context, XExpression3 semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -981,6 +984,15 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	 *     (a=XPrimaryExpression index+=XExpression*)
 	 */
 	protected void sequence_XExpressionM1(EObject context, XExpressionM1 semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (ref+=VariableReference* a=XExpression5 type=TypeDef?)
+	 */
+	protected void sequence_XExpression(EObject context, XExpression6 semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

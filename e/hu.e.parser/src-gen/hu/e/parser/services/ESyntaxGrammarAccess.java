@@ -1884,16 +1884,36 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class XExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "XExpression");
-		private final RuleCall cXExpression6ParserRuleCall = (RuleCall)rule.eContents().get(1);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cXExpression6ParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cColonKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Assignment cTypeAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cTypeTypeDefParserRuleCall_1_1_0 = (RuleCall)cTypeAssignment_1_1.eContents().get(0);
 		
 		/// ********************
 		// * INFIX SYNTAX
 		// ********************** / XExpression:
-		//	XExpression6;
+		//	XExpression6 (":" type=TypeDef)?;
 		public ParserRule getRule() { return rule; }
 
+		//XExpression6 (":" type=TypeDef)?
+		public Group getGroup() { return cGroup; }
+
 		//XExpression6
-		public RuleCall getXExpression6ParserRuleCall() { return cXExpression6ParserRuleCall; }
+		public RuleCall getXExpression6ParserRuleCall_0() { return cXExpression6ParserRuleCall_0; }
+
+		//(":" type=TypeDef)?
+		public Group getGroup_1() { return cGroup_1; }
+
+		//":"
+		public Keyword getColonKeyword_1_0() { return cColonKeyword_1_0; }
+
+		//type=TypeDef
+		public Assignment getTypeAssignment_1_1() { return cTypeAssignment_1_1; }
+
+		//TypeDef
+		public RuleCall getTypeTypeDefParserRuleCall_1_1_0() { return cTypeTypeDefParserRuleCall_1_1_0; }
 	}
 
 	public class XPrimaryExpressionElements extends AbstractParserRuleElementFinder {
@@ -2177,49 +2197,41 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	public class XExpression3Elements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "XExpression3");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cOpAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cOpADDITIVE_OPERATOREnumRuleCall_0_0 = (RuleCall)cOpAssignment_0.eContents().get(0);
-		private final Assignment cAAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cAXExpression2ParserRuleCall_1_0 = (RuleCall)cAAssignment_1.eContents().get(0);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Assignment cOpAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
-		private final RuleCall cOpADDITIVE_OPERATOREnumRuleCall_2_0_0 = (RuleCall)cOpAssignment_2_0.eContents().get(0);
-		private final Assignment cBAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cBXExpression2ParserRuleCall_2_1_0 = (RuleCall)cBAssignment_2_1.eContents().get(0);
+		private final Assignment cAAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cAXExpression2ParserRuleCall_0_0 = (RuleCall)cAAssignment_0.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Assignment cOpAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
+		private final RuleCall cOpADDITIVE_OPERATOREnumRuleCall_1_0_0 = (RuleCall)cOpAssignment_1_0.eContents().get(0);
+		private final Assignment cBAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cBXExpression2ParserRuleCall_1_1_0 = (RuleCall)cBAssignment_1_1.eContents().get(0);
 		
 		//XExpression3:
-		//	op+=ADDITIVE_OPERATOR? a=XExpression2 (=> op+=ADDITIVE_OPERATOR b+=XExpression2)*;
+		//	a=XExpression2 (=> op+=ADDITIVE_OPERATOR b+=XExpression2)*;
 		public ParserRule getRule() { return rule; }
 
-		//op+=ADDITIVE_OPERATOR? a=XExpression2 (=> op+=ADDITIVE_OPERATOR b+=XExpression2)*
+		//a=XExpression2 (=> op+=ADDITIVE_OPERATOR b+=XExpression2)*
 		public Group getGroup() { return cGroup; }
 
-		//op+=ADDITIVE_OPERATOR?
-		public Assignment getOpAssignment_0() { return cOpAssignment_0; }
-
-		//ADDITIVE_OPERATOR
-		public RuleCall getOpADDITIVE_OPERATOREnumRuleCall_0_0() { return cOpADDITIVE_OPERATOREnumRuleCall_0_0; }
-
 		//a=XExpression2
-		public Assignment getAAssignment_1() { return cAAssignment_1; }
+		public Assignment getAAssignment_0() { return cAAssignment_0; }
 
 		//XExpression2
-		public RuleCall getAXExpression2ParserRuleCall_1_0() { return cAXExpression2ParserRuleCall_1_0; }
+		public RuleCall getAXExpression2ParserRuleCall_0_0() { return cAXExpression2ParserRuleCall_0_0; }
 
 		//(=> op+=ADDITIVE_OPERATOR b+=XExpression2)*
-		public Group getGroup_2() { return cGroup_2; }
+		public Group getGroup_1() { return cGroup_1; }
 
 		//=> op+=ADDITIVE_OPERATOR
-		public Assignment getOpAssignment_2_0() { return cOpAssignment_2_0; }
+		public Assignment getOpAssignment_1_0() { return cOpAssignment_1_0; }
 
 		//ADDITIVE_OPERATOR
-		public RuleCall getOpADDITIVE_OPERATOREnumRuleCall_2_0_0() { return cOpADDITIVE_OPERATOREnumRuleCall_2_0_0; }
+		public RuleCall getOpADDITIVE_OPERATOREnumRuleCall_1_0_0() { return cOpADDITIVE_OPERATOREnumRuleCall_1_0_0; }
 
 		//b+=XExpression2
-		public Assignment getBAssignment_2_1() { return cBAssignment_2_1; }
+		public Assignment getBAssignment_1_1() { return cBAssignment_1_1; }
 
 		//XExpression2
-		public RuleCall getBXExpression2ParserRuleCall_2_1_0() { return cBXExpression2ParserRuleCall_2_1_0; }
+		public RuleCall getBXExpression2ParserRuleCall_1_1_0() { return cBXExpression2ParserRuleCall_1_1_0; }
 	}
 
 	public class XExpression4Elements extends AbstractParserRuleElementFinder {
@@ -3705,7 +3717,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	/// ********************
 	// * INFIX SYNTAX
 	// ********************** / XExpression:
-	//	XExpression6;
+	//	XExpression6 (":" type=TypeDef)?;
 	public XExpressionElements getXExpressionAccess() {
 		return (pXExpression != null) ? pXExpression : (pXExpression = new XExpressionElements());
 	}
@@ -3806,7 +3818,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//XExpression3:
-	//	op+=ADDITIVE_OPERATOR? a=XExpression2 (=> op+=ADDITIVE_OPERATOR b+=XExpression2)*;
+	//	a=XExpression2 (=> op+=ADDITIVE_OPERATOR b+=XExpression2)*;
 	public XExpression3Elements getXExpression3Access() {
 		return (pXExpression3 != null) ? pXExpression3 : (pXExpression3 = new XExpression3Elements());
 	}

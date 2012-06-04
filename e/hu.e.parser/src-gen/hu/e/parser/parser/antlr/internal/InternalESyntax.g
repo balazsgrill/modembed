@@ -2871,16 +2871,38 @@ ruleXExpression returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-
+(
     { 
-        newCompositeNode(grammarAccess.getXExpressionAccess().getXExpression6ParserRuleCall()); 
+        newCompositeNode(grammarAccess.getXExpressionAccess().getXExpression6ParserRuleCall_0()); 
     }
     this_XExpression6_0=ruleXExpression6
     { 
         $current = $this_XExpression6_0.current; 
         afterParserOrEnumRuleCall();
     }
+(	otherlv_1=':' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getXExpressionAccess().getColonKeyword_1_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getXExpressionAccess().getTypeTypeDefParserRuleCall_1_1_0()); 
+	    }
+		lv_type_2_0=ruleTypeDef		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getXExpressionRule());
+	        }
+       		set(
+       			$current, 
+       			"type",
+        		lv_type_2_0, 
+        		"TypeDef");
+	        afterParserOrEnumRuleCall();
+	    }
 
+)
+))?)
 ;
 
 
@@ -3395,34 +3417,16 @@ ruleXExpression3 returns [EObject current=null]
 ((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getXExpression3Access().getOpADDITIVE_OPERATOREnumRuleCall_0_0()); 
+	        newCompositeNode(grammarAccess.getXExpression3Access().getAXExpression2ParserRuleCall_0_0()); 
 	    }
-		lv_op_0_0=ruleADDITIVE_OPERATOR		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getXExpression3Rule());
-	        }
-       		add(
-       			$current, 
-       			"op",
-        		lv_op_0_0, 
-        		"ADDITIVE_OPERATOR");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)?(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getXExpression3Access().getAXExpression2ParserRuleCall_1_0()); 
-	    }
-		lv_a_1_0=ruleXExpression2		{
+		lv_a_0_0=ruleXExpression2		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getXExpression3Rule());
 	        }
        		set(
        			$current, 
        			"a",
-        		lv_a_1_0, 
+        		lv_a_0_0, 
         		"XExpression2");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -3435,16 +3439,16 @@ ruleADDITIVE_OPERATOR
 )=>
 (
 		{ 
-	        newCompositeNode(grammarAccess.getXExpression3Access().getOpADDITIVE_OPERATOREnumRuleCall_2_0_0()); 
+	        newCompositeNode(grammarAccess.getXExpression3Access().getOpADDITIVE_OPERATOREnumRuleCall_1_0_0()); 
 	    }
-		lv_op_2_0=ruleADDITIVE_OPERATOR		{
+		lv_op_1_0=ruleADDITIVE_OPERATOR		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getXExpression3Rule());
 	        }
        		add(
        			$current, 
        			"op",
-        		lv_op_2_0, 
+        		lv_op_1_0, 
         		"ADDITIVE_OPERATOR");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -3453,16 +3457,16 @@ ruleADDITIVE_OPERATOR
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getXExpression3Access().getBXExpression2ParserRuleCall_2_1_0()); 
+	        newCompositeNode(grammarAccess.getXExpression3Access().getBXExpression2ParserRuleCall_1_1_0()); 
 	    }
-		lv_b_3_0=ruleXExpression2		{
+		lv_b_2_0=ruleXExpression2		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getXExpression3Rule());
 	        }
        		add(
        			$current, 
        			"b",
-        		lv_b_3_0, 
+        		lv_b_2_0, 
         		"XExpression2");
 	        afterParserOrEnumRuleCall();
 	    }

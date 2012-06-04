@@ -1508,22 +1508,22 @@ public interface ESyntaxPackage extends EPackage
   int XEXPRESSION3 = 40;
 
   /**
-   * The feature id for the '<em><b>Op</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int XEXPRESSION3__OP = 0;
-
-  /**
    * The feature id for the '<em><b>A</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int XEXPRESSION3__A = 1;
+  int XEXPRESSION3__A = 0;
+
+  /**
+   * The feature id for the '<em><b>Op</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int XEXPRESSION3__OP = 1;
 
   /**
    * The feature id for the '<em><b>B</b></em>' containment reference list.
@@ -1646,13 +1646,22 @@ public interface ESyntaxPackage extends EPackage
   int XEXPRESSION6 = 43;
 
   /**
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int XEXPRESSION6__TYPE = XEXPRESSION_FEATURE_COUNT + 0;
+
+  /**
    * The feature id for the '<em><b>Ref</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int XEXPRESSION6__REF = XEXPRESSION_FEATURE_COUNT + 0;
+  int XEXPRESSION6__REF = XEXPRESSION_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>A</b></em>' containment reference.
@@ -1661,7 +1670,7 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    * @ordered
    */
-  int XEXPRESSION6__A = XEXPRESSION_FEATURE_COUNT + 1;
+  int XEXPRESSION6__A = XEXPRESSION_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>XExpression6</em>' class.
@@ -1670,7 +1679,7 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    * @ordered
    */
-  int XEXPRESSION6_FEATURE_COUNT = XEXPRESSION_FEATURE_COUNT + 2;
+  int XEXPRESSION6_FEATURE_COUNT = XEXPRESSION_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.impl.XExpressionLiteralImpl <em>XExpression Literal</em>}' class.
@@ -3273,17 +3282,6 @@ public interface ESyntaxPackage extends EPackage
   EClass getXExpression3();
 
   /**
-   * Returns the meta object for the attribute list '{@link hu.e.parser.eSyntax.XExpression3#getOp <em>Op</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Op</em>'.
-   * @see hu.e.parser.eSyntax.XExpression3#getOp()
-   * @see #getXExpression3()
-   * @generated
-   */
-  EAttribute getXExpression3_Op();
-
-  /**
    * Returns the meta object for the containment reference '{@link hu.e.parser.eSyntax.XExpression3#getA <em>A</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3293,6 +3291,17 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    */
   EReference getXExpression3_A();
+
+  /**
+   * Returns the meta object for the attribute list '{@link hu.e.parser.eSyntax.XExpression3#getOp <em>Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Op</em>'.
+   * @see hu.e.parser.eSyntax.XExpression3#getOp()
+   * @see #getXExpression3()
+   * @generated
+   */
+  EAttribute getXExpression3_Op();
 
   /**
    * Returns the meta object for the containment reference list '{@link hu.e.parser.eSyntax.XExpression3#getB <em>B</em>}'.
@@ -3400,6 +3409,17 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    */
   EClass getXExpression6();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.e.parser.eSyntax.XExpression6#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Type</em>'.
+   * @see hu.e.parser.eSyntax.XExpression6#getType()
+   * @see #getXExpression6()
+   * @generated
+   */
+  EReference getXExpression6_Type();
 
   /**
    * Returns the meta object for the containment reference list '{@link hu.e.parser.eSyntax.XExpression6#getRef <em>Ref</em>}'.
@@ -4696,20 +4716,20 @@ public interface ESyntaxPackage extends EPackage
     EClass XEXPRESSION3 = eINSTANCE.getXExpression3();
 
     /**
-     * The meta object literal for the '<em><b>Op</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute XEXPRESSION3__OP = eINSTANCE.getXExpression3_Op();
-
-    /**
      * The meta object literal for the '<em><b>A</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference XEXPRESSION3__A = eINSTANCE.getXExpression3_A();
+
+    /**
+     * The meta object literal for the '<em><b>Op</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute XEXPRESSION3__OP = eINSTANCE.getXExpression3_Op();
 
     /**
      * The meta object literal for the '<em><b>B</b></em>' containment reference list feature.
@@ -4796,6 +4816,14 @@ public interface ESyntaxPackage extends EPackage
      * @generated
      */
     EClass XEXPRESSION6 = eINSTANCE.getXExpression6();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference XEXPRESSION6__TYPE = eINSTANCE.getXExpression6_Type();
 
     /**
      * The meta object literal for the '<em><b>Ref</b></em>' containment reference list feature.

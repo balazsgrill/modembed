@@ -1598,9 +1598,9 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getXExpression3_Op()
+  public EReference getXExpression3_A()
   {
-    return (EAttribute)xExpression3EClass.getEStructuralFeatures().get(0);
+    return (EReference)xExpression3EClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1608,9 +1608,9 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getXExpression3_A()
+  public EAttribute getXExpression3_Op()
   {
-    return (EReference)xExpression3EClass.getEStructuralFeatures().get(1);
+    return (EAttribute)xExpression3EClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1718,7 +1718,7 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getXExpression6_Ref()
+  public EReference getXExpression6_Type()
   {
     return (EReference)xExpression6EClass.getEStructuralFeatures().get(0);
   }
@@ -1728,9 +1728,19 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getXExpression6_A()
+  public EReference getXExpression6_Ref()
   {
     return (EReference)xExpression6EClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getXExpression6_A()
+  {
+    return (EReference)xExpression6EClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -2262,8 +2272,8 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     createEReference(xExpression2EClass, XEXPRESSION2__B);
 
     xExpression3EClass = createEClass(XEXPRESSION3);
-    createEAttribute(xExpression3EClass, XEXPRESSION3__OP);
     createEReference(xExpression3EClass, XEXPRESSION3__A);
+    createEAttribute(xExpression3EClass, XEXPRESSION3__OP);
     createEReference(xExpression3EClass, XEXPRESSION3__B);
 
     xExpression4EClass = createEClass(XEXPRESSION4);
@@ -2277,6 +2287,7 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     createEReference(xExpression5EClass, XEXPRESSION5__B);
 
     xExpression6EClass = createEClass(XEXPRESSION6);
+    createEReference(xExpression6EClass, XEXPRESSION6__TYPE);
     createEReference(xExpression6EClass, XEXPRESSION6__REF);
     createEReference(xExpression6EClass, XEXPRESSION6__A);
 
@@ -2543,8 +2554,8 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     initEReference(getXExpression2_B(), this.getXExpression2(), null, "b", null, 0, -1, XExpression2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(xExpression3EClass, XExpression3.class, "XExpression3", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getXExpression3_Op(), this.getADDITIVE_OPERATOR(), "op", null, 0, -1, XExpression3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getXExpression3_A(), this.getXExpression2(), null, "a", null, 0, 1, XExpression3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getXExpression3_Op(), this.getADDITIVE_OPERATOR(), "op", null, 0, -1, XExpression3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getXExpression3_B(), this.getXExpression2(), null, "b", null, 0, -1, XExpression3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(xExpression4EClass, XExpression4.class, "XExpression4", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2558,6 +2569,7 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     initEReference(getXExpression5_B(), this.getXExpression4(), null, "b", null, 0, -1, XExpression5.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(xExpression6EClass, XExpression6.class, "XExpression6", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getXExpression6_Type(), this.getTypeDef(), null, "type", null, 0, 1, XExpression6.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getXExpression6_Ref(), this.getVariableReference(), null, "ref", null, 0, -1, XExpression6.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getXExpression6_A(), this.getXExpression5(), null, "a", null, 0, 1, XExpression6.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
