@@ -54,38 +54,18 @@ import org.eclipse.xtext.serializer.acceptor.ISemanticSequenceAcceptor;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.diagnostic.ISemanticSequencerDiagnosticProvider;
 import org.eclipse.xtext.serializer.diagnostic.ISerializationDiagnostic.Acceptor;
-import org.eclipse.xtext.serializer.sequencer.AbstractSemanticSequencer;
+import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.GenericSequencer;
 import org.eclipse.xtext.serializer.sequencer.ISemanticNodeProvider.INodesForEObjectProvider;
 import org.eclipse.xtext.serializer.sequencer.ISemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 
-@SuppressWarnings("restriction")
-public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer {
+@SuppressWarnings("all")
+public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 
 	@Inject
-	protected ESyntaxGrammarAccess grammarAccess;
-	
-	@Inject
-	protected ISemanticSequencerDiagnosticProvider diagnosticProvider;
-	
-	@Inject
-	protected ITransientValueService transientValues;
-	
-	@Inject
-	@GenericSequencer
-	protected Provider<ISemanticSequencer> genericSequencerProvider;
-	
-	protected ISemanticSequencer genericSequencer;
-	
-	
-	@Override
-	public void init(ISemanticSequencer sequencer, ISemanticSequenceAcceptor sequenceAcceptor, Acceptor errorAcceptor) {
-		super.init(sequencer, sequenceAcceptor, errorAcceptor);
-		this.genericSequencer = genericSequencerProvider.get();
-		this.genericSequencer.init(sequencer, sequenceAcceptor, errorAcceptor);
-	}
+	private ESyntaxGrammarAccess grammarAccess;
 	
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == ESyntaxPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
@@ -113,7 +93,7 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 				else break;
 			case ESyntaxPackage.CONSTANT_BINARY_SECTION:
 				if(context == grammarAccess.getBinarySectionRule()) {
-					sequence_BinarySection(context, (ConstantBinarySection) semanticObject); 
+					sequence_BinarySection_ConstantBinarySection(context, (ConstantBinarySection) semanticObject); 
 					return; 
 				}
 				else if(context == grammarAccess.getConstantBinarySectionRule()) {
@@ -138,7 +118,7 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 				else break;
 			case ESyntaxPackage.FUNCTION_BINARY_SECTION:
 				if(context == grammarAccess.getBinarySectionRule()) {
-					sequence_BinarySection(context, (FunctionBinarySection) semanticObject); 
+					sequence_BinarySection_FunctionBinarySection(context, (FunctionBinarySection) semanticObject); 
 					return; 
 				}
 				else if(context == grammarAccess.getFunctionBinarySectionRule()) {
@@ -194,7 +174,7 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 					return; 
 				}
 				else if(context == grammarAccess.getWordSectionRule()) {
-					sequence_WordSection(context, (LiteralValue) semanticObject); 
+					sequence_LiteralValue_WordSection(context, (LiteralValue) semanticObject); 
 					return; 
 				}
 				else break;
@@ -259,7 +239,7 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 				else break;
 			case ESyntaxPackage.REFERENCE_BINARY_SECTION:
 				if(context == grammarAccess.getBinarySectionRule()) {
-					sequence_BinarySection(context, (ReferenceBinarySection) semanticObject); 
+					sequence_BinarySection_ReferenceBinarySection(context, (ReferenceBinarySection) semanticObject); 
 					return; 
 				}
 				else if(context == grammarAccess.getReferenceBinarySectionRule()) {
@@ -309,7 +289,7 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 					return; 
 				}
 				else if(context == grammarAccess.getWordSectionRule()) {
-					sequence_WordSection(context, (VariableReference) semanticObject); 
+					sequence_VariableReference_WordSection(context, (VariableReference) semanticObject); 
 					return; 
 				}
 				else break;
@@ -358,7 +338,7 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 				   context == grammarAccess.getOperationStepRule() ||
 				   context == grammarAccess.getXExpressionRule() ||
 				   context == grammarAccess.getXTopLevelExpressionRule()) {
-					sequence_XExpression(context, (XExpression6) semanticObject); 
+					sequence_XExpression_XExpression6(context, (XExpression6) semanticObject); 
 					return; 
 				}
 				else break;
@@ -478,7 +458,7 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	 * Constraint:
 	 *     (data+=XExpression+ start=XExpression)
 	 */
-	protected void sequence_BinarySection(EObject context, ConstantBinarySection semanticObject) {
+	protected void sequence_BinarySection_ConstantBinarySection(EObject context, ConstantBinarySection semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -498,7 +478,7 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	 *         start=XExpression
 	 *     )
 	 */
-	protected void sequence_BinarySection(EObject context, FunctionBinarySection semanticObject) {
+	protected void sequence_BinarySection_FunctionBinarySection(EObject context, FunctionBinarySection semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -507,7 +487,7 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	 * Constraint:
 	 *     (inc=[LinkedBinary|QualifiedName] start=XExpression)
 	 */
-	protected void sequence_BinarySection(EObject context, ReferenceBinarySection semanticObject) {
+	protected void sequence_BinarySection_ReferenceBinarySection(EObject context, ReferenceBinarySection semanticObject) {
 		if(errorAcceptor != null) {
 			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.BINARY_SECTION__START) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.BINARY_SECTION__START));
@@ -670,6 +650,15 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	 *     value=LITERAL
 	 */
 	protected void sequence_LiteralValue(EObject context, LiteralValue semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (value=LITERAL size=INT shift=INT?)
+	 */
+	protected void sequence_LiteralValue_WordSection(EObject context, LiteralValue semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -865,6 +854,15 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	
 	/**
 	 * Constraint:
+	 *     (var=[Variable|QualifiedName] size=INT shift=INT?)
+	 */
+	protected void sequence_VariableReference_WordSection(EObject context, VariableReference semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (type=TypeDef name=ID)
 	 */
 	protected void sequence_Variable(EObject context, Variable semanticObject) {
@@ -879,24 +877,6 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 		feeder.accept(grammarAccess.getVariableAccess().getTypeTypeDefParserRuleCall_0_0(), semanticObject.getType());
 		feeder.accept(grammarAccess.getVariableAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (value=LITERAL size=INT shift=INT?)
-	 */
-	protected void sequence_WordSection(EObject context, LiteralValue semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (var=[Variable|QualifiedName] size=INT shift=INT?)
-	 */
-	protected void sequence_WordSection(EObject context, VariableReference semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -992,7 +972,7 @@ public class AbstractESyntaxSemanticSequencer extends AbstractSemanticSequencer 
 	 * Constraint:
 	 *     (ref+=VariableReference* a=XExpression5 type=TypeDef?)
 	 */
-	protected void sequence_XExpression(EObject context, XExpression6 semanticObject) {
+	protected void sequence_XExpression_XExpression6(EObject context, XExpression6 semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

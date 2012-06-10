@@ -22,5 +22,6 @@ Import-Package: org.apache.log4j,
  org.apache.commons.logging
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: hu.e.parser.ui.contentassist.antlr,
- hu.e.parser.ui.internal
+ hu.e.parser.ui.internal,
+ hu.e.parser.ui.contentassist
 Bundle-Activator: hu.e.parser.ui.internal.ESyntaxActivator

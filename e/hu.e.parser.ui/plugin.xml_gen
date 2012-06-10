@@ -151,6 +151,28 @@
     </extension>
 
 
+    <!-- marker definitions for hu.e.parser.ESyntax -->
+    <extension
+            id="esyntax.check.fast"
+            name="ESyntax Problem"
+            point="org.eclipse.core.resources.markers">
+        <super type="org.eclipse.xtext.ui.check.fast"/>
+        <persistent value="true"/>
+    </extension>
+    <extension
+            id="esyntax.check.normal"
+            name="ESyntax Problem"
+            point="org.eclipse.core.resources.markers">
+        <super type="org.eclipse.xtext.ui.check.normal"/>
+        <persistent value="true"/>
+    </extension>
+    <extension
+            id="esyntax.check.expensive"
+            name="ESyntax Problem"
+            point="org.eclipse.core.resources.markers">
+        <super type="org.eclipse.xtext.ui.check.expensive"/>
+        <persistent value="true"/>
+    </extension>
 
    <extension
          point="org.eclipse.xtext.builder.participant">
@@ -216,14 +238,34 @@
 			</command>
 		</menuContribution>
 	</extension>
-   <!-- quickfix marker resolution generator -->
-   <extension
-         point="org.eclipse.ui.ide.markerResolution">
-      <markerResolutionGenerator
-            class="hu.e.parser.ui.ESyntaxExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator">
-      </markerResolutionGenerator>
-   </extension>
-
+    <!-- quickfix marker resolution generator for hu.e.parser.ESyntax -->
+    <extension
+            point="org.eclipse.ui.ide.markerResolution">
+        <markerResolutionGenerator
+            class="hu.e.parser.ui.ESyntaxExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+            markerType="hu.e.parser.ui.esyntax.check.fast">
+            <attribute
+                name="FIXABLE_KEY"
+                value="true">
+            </attribute>
+        </markerResolutionGenerator>
+        <markerResolutionGenerator
+            class="hu.e.parser.ui.ESyntaxExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+            markerType="hu.e.parser.ui.esyntax.check.normal">
+            <attribute
+                name="FIXABLE_KEY"
+                value="true">
+            </attribute>
+        </markerResolutionGenerator>
+        <markerResolutionGenerator
+            class="hu.e.parser.ui.ESyntaxExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+            markerType="hu.e.parser.ui.esyntax.check.expensive">
+            <attribute
+                name="FIXABLE_KEY"
+                value="true">
+            </attribute>
+        </markerResolutionGenerator>
+    </extension>
    	<!-- Rename Refactoring -->
 	<extension point="org.eclipse.ui.handlers">
 		<handler 

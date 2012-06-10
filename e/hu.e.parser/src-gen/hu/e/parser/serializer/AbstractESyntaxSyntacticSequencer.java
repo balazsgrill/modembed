@@ -13,8 +13,8 @@ import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISyn
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
 import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 
-@SuppressWarnings("restriction")
-public class AbstractESyntaxSyntacticSequencer extends AbstractSyntacticSequencer {
+@SuppressWarnings("all")
+public abstract class AbstractESyntaxSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected ESyntaxGrammarAccess grammarAccess;
 	protected AbstractElementAlias match_OperatorDefinition_CommaKeyword_5_q;
@@ -34,6 +34,11 @@ public class AbstractESyntaxSyntacticSequencer extends AbstractSyntacticSequence
 		return "";
 	}
 	
+	/**
+	 * OpSingleAssign:
+	 * 	'='
+	 * ;
+	 */
 	protected String getOpSingleAssignToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (node != null)
 			return getTokenText(node);

@@ -8,6 +8,8 @@ import org.osgi.framework.Bundle;
 
 import com.google.inject.Injector;
 
+import hu.e.parser.ui.internal.ESyntaxActivator;
+
 /**
  * This class was generated. Customizations should only happen in a newly
  * introduced subclass. 
@@ -16,12 +18,12 @@ public class ESyntaxExecutableExtensionFactory extends AbstractGuiceAwareExecuta
 
 	@Override
 	protected Bundle getBundle() {
-		return hu.e.parser.ui.internal.ESyntaxActivator.getInstance().getBundle();
+		return ESyntaxActivator.getInstance().getBundle();
 	}
 	
 	@Override
 	protected Injector getInjector() {
-		return hu.e.parser.ui.internal.ESyntaxActivator.getInstance().getInjector("hu.e.parser.ESyntax");
+		return ESyntaxActivator.getInstance().getInjector(ESyntaxActivator.HU_E_PARSER_ESYNTAX);
 	}
 	
 }
