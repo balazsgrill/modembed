@@ -8,6 +8,7 @@ import hu.e.compiler.ECompilerException;
 import hu.e.compiler.internal.model.symbols.ILinkTimeSymbol;
 import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
 import hu.e.compiler.internal.model.symbols.ISymbol;
+import hu.e.compiler.internal.model.symbols.SymbolContext;
 import hu.e.compiler.list.InstructionArgument;
 import hu.e.compiler.list.InstructionStep;
 import hu.e.compiler.list.ListFactory;
@@ -67,8 +68,8 @@ public class InstructionWordInstance{
 				ISymbol vs = sm.getSymbol(var);
 				if (vs == null)
 					throw new ECompilerException(ws, "Cannot resolve symbol: "+((VariableReference)ws).getVar());
-				if (!vs.isLiteral())
-					throw new ECompilerException(ws, "Instruction word can only contain compile-time variables!");
+				if (!vs.isAssignableAt(SymbolContext.LINKTIME))
+					throw new ECompilerException(ws, "Instruction word can only contain compile-time variables: "+vs);
 
 				if (vs instanceof ILinkTimeSymbol){
 					InstructionArgument arg = ListFactory.eINSTANCE.createInstructionArgument();

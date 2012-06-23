@@ -7,6 +7,7 @@ import hu.e.compiler.ECompilerException;
 import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
 import hu.e.compiler.internal.model.symbols.ISymbol;
+import hu.e.compiler.internal.model.symbols.SymbolContext;
 import hu.e.compiler.list.SequenceStep;
 import hu.e.parser.eSyntax.StructTypeDefMember;
 import hu.e.parser.eSyntax.TypeDef;
@@ -55,8 +56,8 @@ public class LiteralSymbol implements ILiteralSymbol {
 	}
 
 	@Override
-	public boolean isLiteral() {
-		return true;
+	public boolean isAssignableAt(SymbolContext context) {
+		return SymbolContext.COMPILETIME.isAssignableAt(context);
 	}
 
 	@Override

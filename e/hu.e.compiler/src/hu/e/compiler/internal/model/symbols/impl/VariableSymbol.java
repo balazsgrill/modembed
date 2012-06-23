@@ -10,6 +10,7 @@ import hu.e.compiler.internal.model.TypeDefinitionResolver;
 import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
 import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.compiler.internal.model.symbols.IVariableSymbol;
+import hu.e.compiler.internal.model.symbols.SymbolContext;
 import hu.e.compiler.list.SequenceStep;
 import hu.e.parser.eSyntax.ArrayTypeDef;
 import hu.e.parser.eSyntax.RefTypeDef;
@@ -45,8 +46,8 @@ public class VariableSymbol implements IVariableSymbol{
 	}
 
 	@Override
-	public boolean isLiteral() {
-		return false;
+	public boolean isAssignableAt(SymbolContext context) {
+		return SymbolContext.RUNTIME.isAssignableAt(context);
 	}
 
 	@Override

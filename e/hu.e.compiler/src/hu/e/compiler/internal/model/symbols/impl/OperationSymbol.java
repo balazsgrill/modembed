@@ -11,6 +11,9 @@ import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
 import hu.e.compiler.internal.model.symbols.ILinkTimeSymbol;
 import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.compiler.internal.model.symbols.IVariableSymbol;
+import hu.e.compiler.internal.model.symbols.SymbolContext;
+import hu.e.compiler.list.LinkTimeOperation;
+import hu.e.compiler.list.LinkTimeValue;
 import hu.e.compiler.list.ListFactory;
 import hu.e.compiler.list.MemoryAssignment;
 import hu.e.compiler.list.ProgramStep;
@@ -30,7 +33,7 @@ import org.eclipse.emf.ecore.EObject;
  * @author balazs.grill
  *
  */
-public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
+public class OperationSymbol implements ILiteralSymbol, IVariableSymbol, ILinkTimeSymbol{
 
 	private final ISymbol a; 
 	private final OPERATION op; 
@@ -124,19 +127,24 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
 		throw new ECompilerException(context, "Runtime "+op+" operator is not yet supported.");
 	}
 	
-	private boolean isLinkTimeLiteral(){
-		if (b == null) return a.isLiteral();
-		return a.isLiteral() && b.isLiteral();
-	}
-	
 	private void linkTimeCompile() throws ECompilerException{
-		throw new ECompilerException(context, "Link time operation is not yet supported!");
+		LinkTimeOperation operation = null;
+		switch (op) {
+		case ADD:
+			operation = LinkTimeOperation.ADD;
+			break;
+		default:
+			throw new ECompilerException(context, "Operation "+op+" is not supported at link time.");
+		}
+		
+		ISymbol[] args = (b == null) ? new ISymbol[]{a} : new ISymbol[]{a,b};
+		result = new LinkTimeExpressionSymbol(getType(), operation, args);
 	}
 	
 	private void compile(SequenceStep step) throws ECompilerException{
 		TypeDef type = getType();
 		
-		if (isLinkTimeLiteral()) {
+		if (isAssignableAt(SymbolContext.LINKTIME)) {
 			linkTimeCompile();
 			return;
 		}
@@ -182,7 +190,7 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
 	
 	@Override
 	public BigDecimal getValue() throws ECompilerException {
-		if (isLiteral()){
+		if (isAssignableAt(SymbolContext.COMPILETIME)){
 			
 			ILiteralSymbol a = (ILiteralSymbol)this.a;
 			ILiteralSymbol b = (this.b == null)? null : (ILiteralSymbol)this.b;
@@ -236,14 +244,11 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
 			throw new ECompilerException(context, "This is a runtime operation!");
 		}
 	}
-
+	
 	@Override
-	public boolean isLiteral() {
-		if (this.a instanceof ILinkTimeSymbol) return false;
-		if (this.b instanceof ILinkTimeSymbol) return false;
-		
-		if (b == null) return a.isLiteral();
-		return a.isLiteral() && b.isLiteral();
+	public boolean isAssignableAt(SymbolContext context) {
+		if (b == null) return a.isAssignableAt(context);
+		return a.isAssignableAt(context) && b.isAssignableAt(context);
 	}
 
 	@Override
@@ -252,7 +257,7 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
 		step.setName(toString());
 		sequence.getSteps().add(step);
 		
-		if (!isLiteral())
+		if (!isAssignableAt(SymbolContext.COMPILETIME))
 			compile(step);
 		
 		a.addSteps(step);
@@ -287,7 +292,7 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
 	
 	@Override
 	public TypeDef getType() throws ECompilerException {
-		if (isLiteral()){
+		if (isAssignableAt(SymbolContext.LINKTIME)){
 			return getLiteralType();
 		}
 		switch(op){
@@ -324,7 +329,7 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
 
 	@Override
 	public String toString() {
-		if (isLiteral()){
+		if (isAssignableAt(SymbolContext.COMPILETIME)){
 			try {
 				return ""+getValue();
 			} catch (ECompilerException e) {
@@ -353,6 +358,20 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
 			throws ECompilerException {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public LinkTimeValue getLinkTimeValue() throws ECompilerException {
+		if (result instanceof ILinkTimeSymbol)
+			return ((ILinkTimeSymbol) result).getLinkTimeValue();
+		throw new ECompilerException(context, "Not a link-time expression");
+	}
+
+	@Override
+	public int getOffset() {
+		if (result instanceof ILinkTimeSymbol)
+			return ((ILinkTimeSymbol) result).getOffset();
+		return 0;
 	}
 	
 }

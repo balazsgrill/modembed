@@ -10,6 +10,7 @@ import hu.e.compiler.internal.model.InstructionWordInstance;
 import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
 import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.compiler.internal.model.symbols.IVariableSymbol;
+import hu.e.compiler.internal.model.symbols.SymbolContext;
 import hu.e.compiler.internal.model.symbols.impl.CodeAddressSymbol;
 import hu.e.compiler.list.AnnotationStep;
 import hu.e.compiler.list.LabelStep;
@@ -110,7 +111,7 @@ public class BlockCompiler {
 					ISymbol symbol = sm.resolve(result, ((XIfExpression) step).getIf());
 					symbol.addSteps(result);
 
-					if (symbol.isLiteral()){
+					if (symbol.isAssignableAt(SymbolContext.COMPILETIME)){
 						//Literal condition, decide in compile time
 						long v = ((ILiteralSymbol)symbol).getValue().longValue();
 						OperationBlock ifblock = (v==0) ? ((XIfExpression) step).getElse() : ((XIfExpression) step).getThen();

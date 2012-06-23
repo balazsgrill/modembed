@@ -3,6 +3,7 @@
  */
 package hu.e.compiler.internal.model.symbols;
 
+import hu.e.compiler.ECompilerException;
 import hu.e.compiler.list.LinkTimeValue;
 
 /**
@@ -11,7 +12,7 @@ import hu.e.compiler.list.LinkTimeValue;
  */
 public interface ILinkTimeSymbol extends ISymbol {
 
-	public LinkTimeValue getLinkTimeValue();
+	public LinkTimeValue getLinkTimeValue() throws ECompilerException;
 	
 	public int getOffset();
 	

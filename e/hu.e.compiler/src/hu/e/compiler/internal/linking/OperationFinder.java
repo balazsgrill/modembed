@@ -9,6 +9,7 @@ import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
 import hu.e.compiler.internal.model.symbols.ILinkTimeSymbol;
 import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.compiler.internal.model.symbols.IVariableSymbol;
+import hu.e.compiler.internal.model.symbols.SymbolContext;
 import hu.e.compiler.internal.model.symbols.impl.StructLiteralSymbol;
 import hu.e.parser.eSyntax.DataTypeDef;
 import hu.e.parser.eSyntax.FixedDataTypeDef;
@@ -157,7 +158,7 @@ public class OperationFinder {
 			ParameterVariable pv = (ParameterVariable)op.getParams().get(i);
 			ISymbol s = symbols[i];
 			
-			if (s instanceof ILiteralSymbol && s.isLiteral()){
+			if (s instanceof ILiteralSymbol && s.isAssignableAt(SymbolContext.LINKTIME)){
 				if (pv.getKind() == ParameterKind.VAR) return false;
 			
 				if (!isAssignableTo(pv.getType(), ((ILiteralSymbol)s).getValue())) return false;

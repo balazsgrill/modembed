@@ -8,6 +8,7 @@ import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
 import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.compiler.internal.model.symbols.IVariableSymbol;
+import hu.e.compiler.internal.model.symbols.SymbolContext;
 import hu.e.compiler.list.ProgramStep;
 import hu.e.compiler.list.SequenceStep;
 import hu.e.parser.eSyntax.StructTypeDefMember;
@@ -42,12 +43,9 @@ public class OperatedSymbol implements ILiteralSymbol, IVariableSymbol {
 		return ((ILiteralSymbol)symbol).getValue();
 	}
 
-	/* (non-Javadoc)
-	 * @see hu.e.compiler.internal.model.ISymbol#isLiteral()
-	 */
 	@Override
-	public boolean isLiteral() {
-		return symbol.isLiteral();
+	public boolean isAssignableAt(SymbolContext context) {
+		return symbol.isAssignableAt(context);
 	}
 
 	/* (non-Javadoc)

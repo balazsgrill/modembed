@@ -11,6 +11,7 @@ import hu.e.compiler.internal.model.OPERATION;
 import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
 import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.compiler.internal.model.symbols.IVariableSymbol;
+import hu.e.compiler.internal.model.symbols.SymbolContext;
 import hu.e.compiler.internal.model.symbols.impl.ArrayLiteralSymbol;
 import hu.e.compiler.internal.model.symbols.impl.LiteralSymbol;
 import hu.e.compiler.internal.model.symbols.impl.MemoryAssignmentValueSymbol;
@@ -221,7 +222,7 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 		ISymbol a = resolve(context, x.getA());
 		for(XExpression index : x.getIndex()){
 			ISymbol i = resolve(context, index);
-			if (i.isLiteral()){
+			if (i.isAssignableAt(SymbolContext.COMPILETIME)){
 				a = a.getElement(this, (int)((ILiteralSymbol)i).getValue().intValue());
 			}else{
 				throw new ECompilerException(index, "TODO: Only compile-time indexing is supported for now");
@@ -252,7 +253,7 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 		if (x instanceof XIsLiteralExpression){
 			ISymbol s = getSymbol(((XIsLiteralExpression) x).getRef().getVar());
 			if (s == null) throw new ECompilerException(x, "Symbol cannot be resolved!");
-			return new LiteralSymbol(null, s.isLiteral()? 1 : 0);
+			return new LiteralSymbol(null, s.isAssignableAt(SymbolContext.COMPILETIME)? 1 : 0);
 		}
 		
 		if (x instanceof OperationCall){

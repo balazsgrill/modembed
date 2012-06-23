@@ -16,7 +16,7 @@ import hu.e.parser.eSyntax.TypeDef;
  */
 public interface ISymbol {
 	
-	public boolean isLiteral();
+	public boolean isAssignableAt(SymbolContext context);
 	
 	public void addSteps(SequenceStep sequence) throws ECompilerException;
 	

@@ -7,6 +7,7 @@ import hu.e.compiler.ECompilerException;
 import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.compiler.internal.model.symbols.ILinkTimeSymbol;
 import hu.e.compiler.internal.model.symbols.ISymbol;
+import hu.e.compiler.internal.model.symbols.SymbolContext;
 import hu.e.compiler.list.LinkTimeValue;
 import hu.e.compiler.list.ListFactory;
 import hu.e.compiler.list.MemoryAssignment;
@@ -40,12 +41,9 @@ public class MemoryAssignmentValueSymbol implements ILinkTimeSymbol {
 		return assignment;
 	}
 	
-	/* (non-Javadoc)
-	 * @see hu.e.compiler.internal.model.symbols.ISymbol#isLiteral()
-	 */
 	@Override
-	public boolean isLiteral() {
-		return true;
+	public boolean isAssignableAt(SymbolContext context) {
+		return SymbolContext.LINKTIME.isAssignableAt(context);
 	}
 
 	/* (non-Javadoc)
