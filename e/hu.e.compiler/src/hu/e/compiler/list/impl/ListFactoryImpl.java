@@ -69,6 +69,8 @@ public class ListFactoryImpl extends EFactoryImpl implements ListFactory {
 			case ListPackage.STATUS_STEP: return createStatusStep();
 			case ListPackage.MEMORY_ASSIGNMENT: return createMemoryAssignment();
 			case ListPackage.ANNOTATION_STEP: return createAnnotationStep();
+			case ListPackage.LINK_TIME_CONSTANT: return createLinkTimeConstant();
+			case ListPackage.LINK_TIME_EXPRESSION: return createLinkTimeExpression();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -84,6 +86,8 @@ public class ListFactoryImpl extends EFactoryImpl implements ListFactory {
 		switch (eDataType.getClassifierID()) {
 			case ListPackage.SEVERITY:
 				return createSeverityFromString(eDataType, initialValue);
+			case ListPackage.LINK_TIME_OPERATION:
+				return createLinkTimeOperationFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -99,6 +103,8 @@ public class ListFactoryImpl extends EFactoryImpl implements ListFactory {
 		switch (eDataType.getClassifierID()) {
 			case ListPackage.SEVERITY:
 				return convertSeverityToString(eDataType, instanceValue);
+			case ListPackage.LINK_TIME_OPERATION:
+				return convertLinkTimeOperationToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -189,6 +195,26 @@ public class ListFactoryImpl extends EFactoryImpl implements ListFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public LinkTimeConstant createLinkTimeConstant() {
+		LinkTimeConstantImpl linkTimeConstant = new LinkTimeConstantImpl();
+		return linkTimeConstant;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public LinkTimeExpression createLinkTimeExpression() {
+		LinkTimeExpressionImpl linkTimeExpression = new LinkTimeExpressionImpl();
+		return linkTimeExpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Severity createSeverityFromString(EDataType eDataType, String initialValue) {
 		Severity result = Severity.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
@@ -201,6 +227,26 @@ public class ListFactoryImpl extends EFactoryImpl implements ListFactory {
 	 * @generated
 	 */
 	public String convertSeverityToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public LinkTimeOperation createLinkTimeOperationFromString(EDataType eDataType, String initialValue) {
+		LinkTimeOperation result = LinkTimeOperation.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertLinkTimeOperationToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

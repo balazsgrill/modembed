@@ -8,6 +8,9 @@ import hu.e.compiler.internal.model.InstructionWordInstance;
 import hu.e.compiler.list.AnnotationStep;
 import hu.e.compiler.list.InstructionStep;
 import hu.e.compiler.list.LabelStep;
+import hu.e.compiler.list.LinkTimeConstant;
+import hu.e.compiler.list.LinkTimeExpression;
+import hu.e.compiler.list.LinkTimeValue;
 import hu.e.compiler.list.MemoryAssignment;
 import hu.e.compiler.list.ProgramList;
 import hu.e.compiler.list.ProgramStep;
@@ -65,27 +68,47 @@ public class ProgramListLinker {
 			return -1;
 		}
 		
+		private long getValue(LinkTimeValue lr){
+			if (lr instanceof Reference){
+				ReferableValue rv = ((Reference)lr).getValue();
+				if (rv instanceof LabelStep){
+					if (!labels.containsKey(rv)) return -1;
+					return labels.get(rv);
+				}
+				if (rv instanceof MemoryAssignment){
+					if (!addresses.containsKey(rv)) return -1;
+					return addresses.get(rv);
+				}
+				
+				
+				throw new IllegalArgumentException("Could not resolve value of "+rv);
+				
+			}
+			if (lr instanceof LinkTimeConstant){
+				return ((LinkTimeConstant) lr).getValue();
+			}
+			
+			if (lr instanceof LinkTimeExpression){
+				switch(((LinkTimeExpression) lr).getOperation()){
+				case ADD:
+					long v = 0;
+					for(LinkTimeValue arg : ((LinkTimeExpression) lr).getArguments()){
+						v += getValue(arg);
+					}
+					return v;
+				}
+			}
+			
+			throw new IllegalArgumentException("Could not resolve value of "+lr);
+		}
+		
 		@Override
 		public long getInstructionValue(InstructionStep s) {
 			
 			int d = 0;
 			d = (int) s.getCode();
-			for(Reference lr : s.getRefs()){
-				int v = -1;
-				
-				ReferableValue rv = lr.getValue();
-				if (rv instanceof LabelStep){
-					if (!labels.containsKey(rv)) return -1;
-					v = labels.get(rv);
-				}
-				if (rv instanceof MemoryAssignment){
-					if (!addresses.containsKey(rv)) return -1;
-					v = addresses.get(rv);
-				}
-				
-				if (v == -1){
-					throw new IllegalArgumentException("Could not resolve value of "+rv);
-				}
+			for(LinkTimeValue lr : s.getRefs()){
+				long v = getValue(lr);
 				
 				d += InstructionWordInstance.getItemValue(v, lr.getShift(), lr.getStart(), lr.getSize());
 			}

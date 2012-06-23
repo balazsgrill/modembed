@@ -107,6 +107,7 @@ public class ListSwitch<T> extends Switch<T> {
 			case ListPackage.REFERENCE: {
 				Reference reference = (Reference)theEObject;
 				T result = caseReference(reference);
+				if (result == null) result = caseLinkTimeValue(reference);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -134,6 +135,26 @@ public class ListSwitch<T> extends Switch<T> {
 				AnnotationStep annotationStep = (AnnotationStep)theEObject;
 				T result = caseAnnotationStep(annotationStep);
 				if (result == null) result = caseProgramStep(annotationStep);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ListPackage.LINK_TIME_VALUE: {
+				LinkTimeValue linkTimeValue = (LinkTimeValue)theEObject;
+				T result = caseLinkTimeValue(linkTimeValue);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ListPackage.LINK_TIME_CONSTANT: {
+				LinkTimeConstant linkTimeConstant = (LinkTimeConstant)theEObject;
+				T result = caseLinkTimeConstant(linkTimeConstant);
+				if (result == null) result = caseLinkTimeValue(linkTimeConstant);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ListPackage.LINK_TIME_EXPRESSION: {
+				LinkTimeExpression linkTimeExpression = (LinkTimeExpression)theEObject;
+				T result = caseLinkTimeExpression(linkTimeExpression);
+				if (result == null) result = caseLinkTimeValue(linkTimeExpression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -288,6 +309,51 @@ public class ListSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseAnnotationStep(AnnotationStep object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Link Time Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Link Time Value</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLinkTimeValue(LinkTimeValue object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Link Time Constant</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Link Time Constant</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLinkTimeConstant(LinkTimeConstant object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Link Time Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Link Time Expression</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLinkTimeExpression(LinkTimeExpression object) {
 		return null;
 	}
 

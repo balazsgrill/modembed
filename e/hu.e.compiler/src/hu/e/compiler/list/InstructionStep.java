@@ -55,7 +55,7 @@ public interface InstructionStep extends ProgramStep {
 
 	/**
 	 * Returns the value of the '<em><b>Refs</b></em>' containment reference list.
-	 * The list contents are of type {@link hu.e.compiler.list.Reference}.
+	 * The list contents are of type {@link hu.e.compiler.list.LinkTimeValue}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Refs</em>' containment reference list isn't clear,
@@ -67,7 +67,7 @@ public interface InstructionStep extends ProgramStep {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Reference> getRefs();
+	EList<LinkTimeValue> getRefs();
 
 	/**
 	 * Returns the value of the '<em><b>Width</b></em>' attribute.

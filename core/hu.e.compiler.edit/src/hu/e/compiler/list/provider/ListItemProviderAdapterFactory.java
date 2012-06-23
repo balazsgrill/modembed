@@ -260,6 +260,52 @@ public class ListItemProviderAdapterFactory extends ListAdapterFactory implement
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link hu.e.compiler.list.LinkTimeConstant} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected LinkTimeConstantItemProvider linkTimeConstantItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link hu.e.compiler.list.LinkTimeConstant}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createLinkTimeConstantAdapter() {
+		if (linkTimeConstantItemProvider == null) {
+			linkTimeConstantItemProvider = new LinkTimeConstantItemProvider(this);
+		}
+
+		return linkTimeConstantItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link hu.e.compiler.list.LinkTimeExpression} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected LinkTimeExpressionItemProvider linkTimeExpressionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link hu.e.compiler.list.LinkTimeExpression}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createLinkTimeExpressionAdapter() {
+		if (linkTimeExpressionItemProvider == null) {
+			linkTimeExpressionItemProvider = new LinkTimeExpressionItemProvider(this);
+		}
+
+		return linkTimeExpressionItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -366,6 +412,8 @@ public class ListItemProviderAdapterFactory extends ListAdapterFactory implement
 		if (statusStepItemProvider != null) statusStepItemProvider.dispose();
 		if (memoryAssignmentItemProvider != null) memoryAssignmentItemProvider.dispose();
 		if (annotationStepItemProvider != null) annotationStepItemProvider.dispose();
+		if (linkTimeConstantItemProvider != null) linkTimeConstantItemProvider.dispose();
+		if (linkTimeExpressionItemProvider != null) linkTimeExpressionItemProvider.dispose();
 	}
 
 }

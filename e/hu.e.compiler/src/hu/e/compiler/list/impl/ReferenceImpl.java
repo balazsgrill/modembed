@@ -11,12 +11,9 @@ import hu.e.compiler.list.ReferableValue;
 import hu.e.compiler.list.Reference;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,57 +22,13 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.e.compiler.list.impl.ReferenceImpl#getShift <em>Shift</em>}</li>
- *   <li>{@link hu.e.compiler.list.impl.ReferenceImpl#getSize <em>Size</em>}</li>
  *   <li>{@link hu.e.compiler.list.impl.ReferenceImpl#getValue <em>Value</em>}</li>
- *   <li>{@link hu.e.compiler.list.impl.ReferenceImpl#getStart <em>Start</em>}</li>
- *   <li>{@link hu.e.compiler.list.impl.ReferenceImpl#getOffset <em>Offset</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ReferenceImpl extends EObjectImpl implements Reference {
-	/**
-	 * The default value of the '{@link #getShift() <em>Shift</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShift()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int SHIFT_EDEFAULT = 0;
-
-	/**
-	 * The cached value of the '{@link #getShift() <em>Shift</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShift()
-	 * @generated
-	 * @ordered
-	 */
-	protected int shift = SHIFT_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getSize() <em>Size</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSize()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int SIZE_EDEFAULT = 0;
-
-	/**
-	 * The cached value of the '{@link #getSize() <em>Size</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSize()
-	 * @generated
-	 * @ordered
-	 */
-	protected int size = SIZE_EDEFAULT;
-
+public class ReferenceImpl extends LinkTimeValueImpl implements Reference {
 	/**
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -85,46 +38,6 @@ public class ReferenceImpl extends EObjectImpl implements Reference {
 	 * @ordered
 	 */
 	protected ReferableValue value;
-
-	/**
-	 * The default value of the '{@link #getStart() <em>Start</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStart()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int START_EDEFAULT = 0;
-
-	/**
-	 * The cached value of the '{@link #getStart() <em>Start</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStart()
-	 * @generated
-	 * @ordered
-	 */
-	protected int start = START_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getOffset() <em>Offset</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOffset()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int OFFSET_EDEFAULT = 0;
-
-	/**
-	 * The cached value of the '{@link #getOffset() <em>Offset</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOffset()
-	 * @generated
-	 * @ordered
-	 */
-	protected int offset = OFFSET_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -143,48 +56,6 @@ public class ReferenceImpl extends EObjectImpl implements Reference {
 	@Override
 	protected EClass eStaticClass() {
 		return ListPackage.Literals.REFERENCE;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public int getShift() {
-		return shift;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setShift(int newShift) {
-		int oldShift = shift;
-		shift = newShift;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ListPackage.REFERENCE__SHIFT, oldShift, shift));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public int getSize() {
-		return size;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSize(int newSize) {
-		int oldSize = size;
-		size = newSize;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ListPackage.REFERENCE__SIZE, oldSize, size));
 	}
 
 	/**
@@ -230,62 +101,12 @@ public class ReferenceImpl extends EObjectImpl implements Reference {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getStart() {
-		return start;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setStart(int newStart) {
-		int oldStart = start;
-		start = newStart;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ListPackage.REFERENCE__START, oldStart, start));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public int getOffset() {
-		return offset;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setOffset(int newOffset) {
-		int oldOffset = offset;
-		offset = newOffset;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ListPackage.REFERENCE__OFFSET, oldOffset, offset));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ListPackage.REFERENCE__SHIFT:
-				return getShift();
-			case ListPackage.REFERENCE__SIZE:
-				return getSize();
 			case ListPackage.REFERENCE__VALUE:
 				if (resolve) return getValue();
 				return basicGetValue();
-			case ListPackage.REFERENCE__START:
-				return getStart();
-			case ListPackage.REFERENCE__OFFSET:
-				return getOffset();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -298,20 +119,8 @@ public class ReferenceImpl extends EObjectImpl implements Reference {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ListPackage.REFERENCE__SHIFT:
-				setShift((Integer)newValue);
-				return;
-			case ListPackage.REFERENCE__SIZE:
-				setSize((Integer)newValue);
-				return;
 			case ListPackage.REFERENCE__VALUE:
 				setValue((ReferableValue)newValue);
-				return;
-			case ListPackage.REFERENCE__START:
-				setStart((Integer)newValue);
-				return;
-			case ListPackage.REFERENCE__OFFSET:
-				setOffset((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -325,20 +134,8 @@ public class ReferenceImpl extends EObjectImpl implements Reference {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ListPackage.REFERENCE__SHIFT:
-				setShift(SHIFT_EDEFAULT);
-				return;
-			case ListPackage.REFERENCE__SIZE:
-				setSize(SIZE_EDEFAULT);
-				return;
 			case ListPackage.REFERENCE__VALUE:
 				setValue((ReferableValue)null);
-				return;
-			case ListPackage.REFERENCE__START:
-				setStart(START_EDEFAULT);
-				return;
-			case ListPackage.REFERENCE__OFFSET:
-				setOffset(OFFSET_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -352,40 +149,10 @@ public class ReferenceImpl extends EObjectImpl implements Reference {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ListPackage.REFERENCE__SHIFT:
-				return shift != SHIFT_EDEFAULT;
-			case ListPackage.REFERENCE__SIZE:
-				return size != SIZE_EDEFAULT;
 			case ListPackage.REFERENCE__VALUE:
 				return value != null;
-			case ListPackage.REFERENCE__START:
-				return start != START_EDEFAULT;
-			case ListPackage.REFERENCE__OFFSET:
-				return offset != OFFSET_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (shift: ");
-		result.append(shift);
-		result.append(", size: ");
-		result.append(size);
-		result.append(", start: ");
-		result.append(start);
-		result.append(", offset: ");
-		result.append(offset);
-		result.append(')');
-		return result.toString();
 	}
 
 } //ReferenceImpl

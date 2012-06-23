@@ -98,6 +98,24 @@ public interface ListFactory extends EFactory {
 	AnnotationStep createAnnotationStep();
 
 	/**
+	 * Returns a new object of class '<em>Link Time Constant</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Link Time Constant</em>'.
+	 * @generated
+	 */
+	LinkTimeConstant createLinkTimeConstant();
+
+	/**
+	 * Returns a new object of class '<em>Link Time Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Link Time Expression</em>'.
+	 * @generated
+	 */
+	LinkTimeExpression createLinkTimeExpression();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

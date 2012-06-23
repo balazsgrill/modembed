@@ -228,6 +228,61 @@ public interface ListPackage extends EPackage {
 	int LABEL_STEP_FEATURE_COUNT = PROGRAM_STEP_FEATURE_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link hu.e.compiler.list.impl.LinkTimeValueImpl <em>Link Time Value</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.e.compiler.list.impl.LinkTimeValueImpl
+	 * @see hu.e.compiler.list.impl.ListPackageImpl#getLinkTimeValue()
+	 * @generated
+	 */
+	int LINK_TIME_VALUE = 10;
+
+	/**
+	 * The feature id for the '<em><b>Shift</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_TIME_VALUE__SHIFT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_TIME_VALUE__SIZE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Start</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_TIME_VALUE__START = 2;
+
+	/**
+	 * The feature id for the '<em><b>Offset</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_TIME_VALUE__OFFSET = 3;
+
+	/**
+	 * The number of structural features of the '<em>Link Time Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_TIME_VALUE_FEATURE_COUNT = 4;
+
+	/**
 	 * The meta object id for the '{@link hu.e.compiler.list.impl.ReferenceImpl <em>Reference</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -244,7 +299,7 @@ public interface ListPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE__SHIFT = 0;
+	int REFERENCE__SHIFT = LINK_TIME_VALUE__SHIFT;
 
 	/**
 	 * The feature id for the '<em><b>Size</b></em>' attribute.
@@ -253,16 +308,7 @@ public interface ListPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE__SIZE = 1;
-
-	/**
-	 * The feature id for the '<em><b>Value</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE__VALUE = 2;
+	int REFERENCE__SIZE = LINK_TIME_VALUE__SIZE;
 
 	/**
 	 * The feature id for the '<em><b>Start</b></em>' attribute.
@@ -271,7 +317,7 @@ public interface ListPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE__START = 3;
+	int REFERENCE__START = LINK_TIME_VALUE__START;
 
 	/**
 	 * The feature id for the '<em><b>Offset</b></em>' attribute.
@@ -280,7 +326,16 @@ public interface ListPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE__OFFSET = 4;
+	int REFERENCE__OFFSET = LINK_TIME_VALUE__OFFSET;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFERENCE__VALUE = LINK_TIME_VALUE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Reference</em>' class.
@@ -289,7 +344,7 @@ public interface ListPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_FEATURE_COUNT = 5;
+	int REFERENCE_FEATURE_COUNT = LINK_TIME_VALUE_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link hu.e.compiler.list.impl.StatusStepImpl <em>Status Step</em>}' class.
@@ -413,6 +468,143 @@ public interface ListPackage extends EPackage {
 	int ANNOTATION_STEP_FEATURE_COUNT = PROGRAM_STEP_FEATURE_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link hu.e.compiler.list.impl.LinkTimeConstantImpl <em>Link Time Constant</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.e.compiler.list.impl.LinkTimeConstantImpl
+	 * @see hu.e.compiler.list.impl.ListPackageImpl#getLinkTimeConstant()
+	 * @generated
+	 */
+	int LINK_TIME_CONSTANT = 11;
+
+	/**
+	 * The feature id for the '<em><b>Shift</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_TIME_CONSTANT__SHIFT = LINK_TIME_VALUE__SHIFT;
+
+	/**
+	 * The feature id for the '<em><b>Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_TIME_CONSTANT__SIZE = LINK_TIME_VALUE__SIZE;
+
+	/**
+	 * The feature id for the '<em><b>Start</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_TIME_CONSTANT__START = LINK_TIME_VALUE__START;
+
+	/**
+	 * The feature id for the '<em><b>Offset</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_TIME_CONSTANT__OFFSET = LINK_TIME_VALUE__OFFSET;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_TIME_CONSTANT__VALUE = LINK_TIME_VALUE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Link Time Constant</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_TIME_CONSTANT_FEATURE_COUNT = LINK_TIME_VALUE_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link hu.e.compiler.list.impl.LinkTimeExpressionImpl <em>Link Time Expression</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.e.compiler.list.impl.LinkTimeExpressionImpl
+	 * @see hu.e.compiler.list.impl.ListPackageImpl#getLinkTimeExpression()
+	 * @generated
+	 */
+	int LINK_TIME_EXPRESSION = 12;
+
+	/**
+	 * The feature id for the '<em><b>Shift</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_TIME_EXPRESSION__SHIFT = LINK_TIME_VALUE__SHIFT;
+
+	/**
+	 * The feature id for the '<em><b>Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_TIME_EXPRESSION__SIZE = LINK_TIME_VALUE__SIZE;
+
+	/**
+	 * The feature id for the '<em><b>Start</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_TIME_EXPRESSION__START = LINK_TIME_VALUE__START;
+
+	/**
+	 * The feature id for the '<em><b>Offset</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_TIME_EXPRESSION__OFFSET = LINK_TIME_VALUE__OFFSET;
+
+	/**
+	 * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_TIME_EXPRESSION__ARGUMENTS = LINK_TIME_VALUE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Operation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_TIME_EXPRESSION__OPERATION = LINK_TIME_VALUE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Link Time Expression</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_TIME_EXPRESSION_FEATURE_COUNT = LINK_TIME_VALUE_FEATURE_COUNT + 2;
+
+	/**
 	 * The meta object id for the '{@link hu.e.compiler.list.Severity <em>Severity</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -420,7 +612,18 @@ public interface ListPackage extends EPackage {
 	 * @see hu.e.compiler.list.impl.ListPackageImpl#getSeverity()
 	 * @generated
 	 */
-	int SEVERITY = 10;
+	int SEVERITY = 13;
+
+
+	/**
+	 * The meta object id for the '{@link hu.e.compiler.list.LinkTimeOperation <em>Link Time Operation</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.e.compiler.list.LinkTimeOperation
+	 * @see hu.e.compiler.list.impl.ListPackageImpl#getLinkTimeOperation()
+	 * @generated
+	 */
+	int LINK_TIME_OPERATION = 14;
 
 
 	/**
@@ -572,28 +775,6 @@ public interface ListPackage extends EPackage {
 	EClass getReference();
 
 	/**
-	 * Returns the meta object for the attribute '{@link hu.e.compiler.list.Reference#getShift <em>Shift</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Shift</em>'.
-	 * @see hu.e.compiler.list.Reference#getShift()
-	 * @see #getReference()
-	 * @generated
-	 */
-	EAttribute getReference_Shift();
-
-	/**
-	 * Returns the meta object for the attribute '{@link hu.e.compiler.list.Reference#getSize <em>Size</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Size</em>'.
-	 * @see hu.e.compiler.list.Reference#getSize()
-	 * @see #getReference()
-	 * @generated
-	 */
-	EAttribute getReference_Size();
-
-	/**
 	 * Returns the meta object for the reference '{@link hu.e.compiler.list.Reference#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -603,28 +784,6 @@ public interface ListPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getReference_Value();
-
-	/**
-	 * Returns the meta object for the attribute '{@link hu.e.compiler.list.Reference#getStart <em>Start</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Start</em>'.
-	 * @see hu.e.compiler.list.Reference#getStart()
-	 * @see #getReference()
-	 * @generated
-	 */
-	EAttribute getReference_Start();
-
-	/**
-	 * Returns the meta object for the attribute '{@link hu.e.compiler.list.Reference#getOffset <em>Offset</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Offset</em>'.
-	 * @see hu.e.compiler.list.Reference#getOffset()
-	 * @see #getReference()
-	 * @generated
-	 */
-	EAttribute getReference_Offset();
 
 	/**
 	 * Returns the meta object for class '{@link hu.e.compiler.list.StatusStep <em>Status Step</em>}'.
@@ -722,6 +881,113 @@ public interface ListPackage extends EPackage {
 	EAttribute getAnnotationStep_Key();
 
 	/**
+	 * Returns the meta object for class '{@link hu.e.compiler.list.LinkTimeValue <em>Link Time Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Link Time Value</em>'.
+	 * @see hu.e.compiler.list.LinkTimeValue
+	 * @generated
+	 */
+	EClass getLinkTimeValue();
+
+	/**
+	 * Returns the meta object for the attribute '{@link hu.e.compiler.list.LinkTimeValue#getShift <em>Shift</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Shift</em>'.
+	 * @see hu.e.compiler.list.LinkTimeValue#getShift()
+	 * @see #getLinkTimeValue()
+	 * @generated
+	 */
+	EAttribute getLinkTimeValue_Shift();
+
+	/**
+	 * Returns the meta object for the attribute '{@link hu.e.compiler.list.LinkTimeValue#getSize <em>Size</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Size</em>'.
+	 * @see hu.e.compiler.list.LinkTimeValue#getSize()
+	 * @see #getLinkTimeValue()
+	 * @generated
+	 */
+	EAttribute getLinkTimeValue_Size();
+
+	/**
+	 * Returns the meta object for the attribute '{@link hu.e.compiler.list.LinkTimeValue#getStart <em>Start</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Start</em>'.
+	 * @see hu.e.compiler.list.LinkTimeValue#getStart()
+	 * @see #getLinkTimeValue()
+	 * @generated
+	 */
+	EAttribute getLinkTimeValue_Start();
+
+	/**
+	 * Returns the meta object for the attribute '{@link hu.e.compiler.list.LinkTimeValue#getOffset <em>Offset</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Offset</em>'.
+	 * @see hu.e.compiler.list.LinkTimeValue#getOffset()
+	 * @see #getLinkTimeValue()
+	 * @generated
+	 */
+	EAttribute getLinkTimeValue_Offset();
+
+	/**
+	 * Returns the meta object for class '{@link hu.e.compiler.list.LinkTimeConstant <em>Link Time Constant</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Link Time Constant</em>'.
+	 * @see hu.e.compiler.list.LinkTimeConstant
+	 * @generated
+	 */
+	EClass getLinkTimeConstant();
+
+	/**
+	 * Returns the meta object for the attribute '{@link hu.e.compiler.list.LinkTimeConstant#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see hu.e.compiler.list.LinkTimeConstant#getValue()
+	 * @see #getLinkTimeConstant()
+	 * @generated
+	 */
+	EAttribute getLinkTimeConstant_Value();
+
+	/**
+	 * Returns the meta object for class '{@link hu.e.compiler.list.LinkTimeExpression <em>Link Time Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Link Time Expression</em>'.
+	 * @see hu.e.compiler.list.LinkTimeExpression
+	 * @generated
+	 */
+	EClass getLinkTimeExpression();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link hu.e.compiler.list.LinkTimeExpression#getArguments <em>Arguments</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Arguments</em>'.
+	 * @see hu.e.compiler.list.LinkTimeExpression#getArguments()
+	 * @see #getLinkTimeExpression()
+	 * @generated
+	 */
+	EReference getLinkTimeExpression_Arguments();
+
+	/**
+	 * Returns the meta object for the attribute '{@link hu.e.compiler.list.LinkTimeExpression#getOperation <em>Operation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Operation</em>'.
+	 * @see hu.e.compiler.list.LinkTimeExpression#getOperation()
+	 * @see #getLinkTimeExpression()
+	 * @generated
+	 */
+	EAttribute getLinkTimeExpression_Operation();
+
+	/**
 	 * Returns the meta object for enum '{@link hu.e.compiler.list.Severity <em>Severity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -730,6 +996,16 @@ public interface ListPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getSeverity();
+
+	/**
+	 * Returns the meta object for enum '{@link hu.e.compiler.list.LinkTimeOperation <em>Link Time Operation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Link Time Operation</em>'.
+	 * @see hu.e.compiler.list.LinkTimeOperation
+	 * @generated
+	 */
+	EEnum getLinkTimeOperation();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -878,44 +1154,12 @@ public interface ListPackage extends EPackage {
 		EClass REFERENCE = eINSTANCE.getReference();
 
 		/**
-		 * The meta object literal for the '<em><b>Shift</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute REFERENCE__SHIFT = eINSTANCE.getReference_Shift();
-
-		/**
-		 * The meta object literal for the '<em><b>Size</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute REFERENCE__SIZE = eINSTANCE.getReference_Size();
-
-		/**
 		 * The meta object literal for the '<em><b>Value</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference REFERENCE__VALUE = eINSTANCE.getReference_Value();
-
-		/**
-		 * The meta object literal for the '<em><b>Start</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute REFERENCE__START = eINSTANCE.getReference_Start();
-
-		/**
-		 * The meta object literal for the '<em><b>Offset</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute REFERENCE__OFFSET = eINSTANCE.getReference_Offset();
 
 		/**
 		 * The meta object literal for the '{@link hu.e.compiler.list.impl.StatusStepImpl <em>Status Step</em>}' class.
@@ -998,6 +1242,92 @@ public interface ListPackage extends EPackage {
 		EAttribute ANNOTATION_STEP__KEY = eINSTANCE.getAnnotationStep_Key();
 
 		/**
+		 * The meta object literal for the '{@link hu.e.compiler.list.impl.LinkTimeValueImpl <em>Link Time Value</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.e.compiler.list.impl.LinkTimeValueImpl
+		 * @see hu.e.compiler.list.impl.ListPackageImpl#getLinkTimeValue()
+		 * @generated
+		 */
+		EClass LINK_TIME_VALUE = eINSTANCE.getLinkTimeValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Shift</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LINK_TIME_VALUE__SHIFT = eINSTANCE.getLinkTimeValue_Shift();
+
+		/**
+		 * The meta object literal for the '<em><b>Size</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LINK_TIME_VALUE__SIZE = eINSTANCE.getLinkTimeValue_Size();
+
+		/**
+		 * The meta object literal for the '<em><b>Start</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LINK_TIME_VALUE__START = eINSTANCE.getLinkTimeValue_Start();
+
+		/**
+		 * The meta object literal for the '<em><b>Offset</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LINK_TIME_VALUE__OFFSET = eINSTANCE.getLinkTimeValue_Offset();
+
+		/**
+		 * The meta object literal for the '{@link hu.e.compiler.list.impl.LinkTimeConstantImpl <em>Link Time Constant</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.e.compiler.list.impl.LinkTimeConstantImpl
+		 * @see hu.e.compiler.list.impl.ListPackageImpl#getLinkTimeConstant()
+		 * @generated
+		 */
+		EClass LINK_TIME_CONSTANT = eINSTANCE.getLinkTimeConstant();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LINK_TIME_CONSTANT__VALUE = eINSTANCE.getLinkTimeConstant_Value();
+
+		/**
+		 * The meta object literal for the '{@link hu.e.compiler.list.impl.LinkTimeExpressionImpl <em>Link Time Expression</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.e.compiler.list.impl.LinkTimeExpressionImpl
+		 * @see hu.e.compiler.list.impl.ListPackageImpl#getLinkTimeExpression()
+		 * @generated
+		 */
+		EClass LINK_TIME_EXPRESSION = eINSTANCE.getLinkTimeExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Arguments</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LINK_TIME_EXPRESSION__ARGUMENTS = eINSTANCE.getLinkTimeExpression_Arguments();
+
+		/**
+		 * The meta object literal for the '<em><b>Operation</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LINK_TIME_EXPRESSION__OPERATION = eINSTANCE.getLinkTimeExpression_Operation();
+
+		/**
 		 * The meta object literal for the '{@link hu.e.compiler.list.Severity <em>Severity</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1006,6 +1336,16 @@ public interface ListPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum SEVERITY = eINSTANCE.getSeverity();
+
+		/**
+		 * The meta object literal for the '{@link hu.e.compiler.list.LinkTimeOperation <em>Link Time Operation</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.e.compiler.list.LinkTimeOperation
+		 * @see hu.e.compiler.list.impl.ListPackageImpl#getLinkTimeOperation()
+		 * @generated
+		 */
+		EEnum LINK_TIME_OPERATION = eINSTANCE.getLinkTimeOperation();
 
 	}
 

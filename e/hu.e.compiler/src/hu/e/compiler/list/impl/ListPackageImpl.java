@@ -9,6 +9,10 @@ package hu.e.compiler.list.impl;
 import hu.e.compiler.list.AnnotationStep;
 import hu.e.compiler.list.InstructionStep;
 import hu.e.compiler.list.LabelStep;
+import hu.e.compiler.list.LinkTimeConstant;
+import hu.e.compiler.list.LinkTimeExpression;
+import hu.e.compiler.list.LinkTimeOperation;
+import hu.e.compiler.list.LinkTimeValue;
 import hu.e.compiler.list.ListFactory;
 import hu.e.compiler.list.ListPackage;
 import hu.e.compiler.list.MemoryAssignment;
@@ -109,7 +113,35 @@ public class ListPackageImpl extends EPackageImpl implements ListPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass linkTimeValueEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass linkTimeConstantEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass linkTimeExpressionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum severityEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum linkTimeOperationEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -303,44 +335,8 @@ public class ListPackageImpl extends EPackageImpl implements ListPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getReference_Shift() {
-		return (EAttribute)referenceEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getReference_Size() {
-		return (EAttribute)referenceEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getReference_Value() {
-		return (EReference)referenceEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getReference_Start() {
-		return (EAttribute)referenceEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getReference_Offset() {
-		return (EAttribute)referenceEClass.getEStructuralFeatures().get(4);
+		return (EReference)referenceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -429,8 +425,107 @@ public class ListPackageImpl extends EPackageImpl implements ListPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getLinkTimeValue() {
+		return linkTimeValueEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLinkTimeValue_Shift() {
+		return (EAttribute)linkTimeValueEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLinkTimeValue_Size() {
+		return (EAttribute)linkTimeValueEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLinkTimeValue_Start() {
+		return (EAttribute)linkTimeValueEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLinkTimeValue_Offset() {
+		return (EAttribute)linkTimeValueEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getLinkTimeConstant() {
+		return linkTimeConstantEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLinkTimeConstant_Value() {
+		return (EAttribute)linkTimeConstantEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getLinkTimeExpression() {
+		return linkTimeExpressionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getLinkTimeExpression_Arguments() {
+		return (EReference)linkTimeExpressionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLinkTimeExpression_Operation() {
+		return (EAttribute)linkTimeExpressionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getSeverity() {
 		return severityEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getLinkTimeOperation() {
+		return linkTimeOperationEEnum;
 	}
 
 	/**
@@ -480,11 +575,7 @@ public class ListPackageImpl extends EPackageImpl implements ListPackage {
 		labelStepEClass = createEClass(LABEL_STEP);
 
 		referenceEClass = createEClass(REFERENCE);
-		createEAttribute(referenceEClass, REFERENCE__SHIFT);
-		createEAttribute(referenceEClass, REFERENCE__SIZE);
 		createEReference(referenceEClass, REFERENCE__VALUE);
-		createEAttribute(referenceEClass, REFERENCE__START);
-		createEAttribute(referenceEClass, REFERENCE__OFFSET);
 
 		statusStepEClass = createEClass(STATUS_STEP);
 		createEAttribute(statusStepEClass, STATUS_STEP__SEVERITY);
@@ -499,8 +590,22 @@ public class ListPackageImpl extends EPackageImpl implements ListPackage {
 		annotationStepEClass = createEClass(ANNOTATION_STEP);
 		createEAttribute(annotationStepEClass, ANNOTATION_STEP__KEY);
 
+		linkTimeValueEClass = createEClass(LINK_TIME_VALUE);
+		createEAttribute(linkTimeValueEClass, LINK_TIME_VALUE__SHIFT);
+		createEAttribute(linkTimeValueEClass, LINK_TIME_VALUE__SIZE);
+		createEAttribute(linkTimeValueEClass, LINK_TIME_VALUE__START);
+		createEAttribute(linkTimeValueEClass, LINK_TIME_VALUE__OFFSET);
+
+		linkTimeConstantEClass = createEClass(LINK_TIME_CONSTANT);
+		createEAttribute(linkTimeConstantEClass, LINK_TIME_CONSTANT__VALUE);
+
+		linkTimeExpressionEClass = createEClass(LINK_TIME_EXPRESSION);
+		createEReference(linkTimeExpressionEClass, LINK_TIME_EXPRESSION__ARGUMENTS);
+		createEAttribute(linkTimeExpressionEClass, LINK_TIME_EXPRESSION__OPERATION);
+
 		// Create enums
 		severityEEnum = createEEnum(SEVERITY);
+		linkTimeOperationEEnum = createEEnum(LINK_TIME_OPERATION);
 	}
 
 	/**
@@ -535,9 +640,12 @@ public class ListPackageImpl extends EPackageImpl implements ListPackage {
 		sequenceStepEClass.getESuperTypes().add(this.getProgramStep());
 		labelStepEClass.getESuperTypes().add(this.getProgramStep());
 		labelStepEClass.getESuperTypes().add(this.getReferableValue());
+		referenceEClass.getESuperTypes().add(this.getLinkTimeValue());
 		statusStepEClass.getESuperTypes().add(this.getProgramStep());
 		memoryAssignmentEClass.getESuperTypes().add(this.getReferableValue());
 		annotationStepEClass.getESuperTypes().add(this.getProgramStep());
+		linkTimeConstantEClass.getESuperTypes().add(this.getLinkTimeValue());
+		linkTimeExpressionEClass.getESuperTypes().add(this.getLinkTimeValue());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(programListEClass, ProgramList.class, "ProgramList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -548,7 +656,7 @@ public class ListPackageImpl extends EPackageImpl implements ListPackage {
 
 		initEClass(instructionStepEClass, InstructionStep.class, "InstructionStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getInstructionStep_Code(), ecorePackage.getELong(), "code", null, 0, 1, InstructionStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getInstructionStep_Refs(), this.getReference(), null, "refs", null, 0, -1, InstructionStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInstructionStep_Refs(), this.getLinkTimeValue(), null, "refs", null, 0, -1, InstructionStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getInstructionStep_Width(), ecorePackage.getEInt(), "width", null, 0, 1, InstructionStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sequenceStepEClass, SequenceStep.class, "SequenceStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -559,11 +667,7 @@ public class ListPackageImpl extends EPackageImpl implements ListPackage {
 		initEClass(labelStepEClass, LabelStep.class, "LabelStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(referenceEClass, Reference.class, "Reference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getReference_Shift(), ecorePackage.getEInt(), "shift", null, 0, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getReference_Size(), ecorePackage.getEInt(), "size", null, 0, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getReference_Value(), this.getReferableValue(), null, "value", null, 0, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getReference_Start(), ecorePackage.getEInt(), "start", null, 0, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getReference_Offset(), ecorePackage.getEInt(), "offset", "0", 0, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(statusStepEClass, StatusStep.class, "StatusStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStatusStep_Severity(), this.getSeverity(), "severity", null, 0, 1, StatusStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -578,12 +682,28 @@ public class ListPackageImpl extends EPackageImpl implements ListPackage {
 		initEClass(annotationStepEClass, AnnotationStep.class, "AnnotationStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAnnotationStep_Key(), ecorePackage.getEString(), "key", null, 0, 1, AnnotationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(linkTimeValueEClass, LinkTimeValue.class, "LinkTimeValue", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getLinkTimeValue_Shift(), ecorePackage.getEInt(), "shift", null, 0, 1, LinkTimeValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLinkTimeValue_Size(), ecorePackage.getEInt(), "size", null, 0, 1, LinkTimeValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLinkTimeValue_Start(), ecorePackage.getEInt(), "start", null, 0, 1, LinkTimeValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLinkTimeValue_Offset(), ecorePackage.getEInt(), "offset", "0", 0, 1, LinkTimeValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(linkTimeConstantEClass, LinkTimeConstant.class, "LinkTimeConstant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getLinkTimeConstant_Value(), ecorePackage.getEInt(), "value", null, 0, 1, LinkTimeConstant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(linkTimeExpressionEClass, LinkTimeExpression.class, "LinkTimeExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getLinkTimeExpression_Arguments(), this.getLinkTimeValue(), null, "arguments", null, 0, -1, LinkTimeExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLinkTimeExpression_Operation(), this.getLinkTimeOperation(), "operation", null, 0, 1, LinkTimeExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		// Initialize enums and add enum literals
 		initEEnum(severityEEnum, Severity.class, "Severity");
 		addEEnumLiteral(severityEEnum, Severity.DEBUG);
 		addEEnumLiteral(severityEEnum, Severity.INFO);
 		addEEnumLiteral(severityEEnum, Severity.WARNING);
 		addEEnumLiteral(severityEEnum, Severity.ERROR);
+
+		initEEnum(linkTimeOperationEEnum, LinkTimeOperation.class, "LinkTimeOperation");
+		addEEnumLiteral(linkTimeOperationEEnum, LinkTimeOperation.ADD);
 
 		// Create resource
 		createResource(eNS_URI);

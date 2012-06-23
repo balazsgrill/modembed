@@ -7,8 +7,8 @@
 package hu.e.compiler.list.impl;
 
 import hu.e.compiler.list.InstructionStep;
+import hu.e.compiler.list.LinkTimeValue;
 import hu.e.compiler.list.ListPackage;
-import hu.e.compiler.list.Reference;
 
 import java.util.Collection;
 
@@ -65,7 +65,7 @@ public class InstructionStepImpl extends ProgramStepImpl implements InstructionS
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Reference> refs;
+	protected EList<LinkTimeValue> refs;
 
 	/**
 	 * The default value of the '{@link #getWidth() <em>Width</em>}' attribute.
@@ -132,9 +132,9 @@ public class InstructionStepImpl extends ProgramStepImpl implements InstructionS
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Reference> getRefs() {
+	public EList<LinkTimeValue> getRefs() {
 		if (refs == null) {
-			refs = new EObjectContainmentEList<Reference>(Reference.class, this, ListPackage.INSTRUCTION_STEP__REFS);
+			refs = new EObjectContainmentEList<LinkTimeValue>(LinkTimeValue.class, this, ListPackage.INSTRUCTION_STEP__REFS);
 		}
 		return refs;
 	}
@@ -206,7 +206,7 @@ public class InstructionStepImpl extends ProgramStepImpl implements InstructionS
 				return;
 			case ListPackage.INSTRUCTION_STEP__REFS:
 				getRefs().clear();
-				getRefs().addAll((Collection<? extends Reference>)newValue);
+				getRefs().addAll((Collection<? extends LinkTimeValue>)newValue);
 				return;
 			case ListPackage.INSTRUCTION_STEP__WIDTH:
 				setWidth((Integer)newValue);

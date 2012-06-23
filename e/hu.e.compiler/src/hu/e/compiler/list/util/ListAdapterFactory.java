@@ -112,6 +112,18 @@ public class ListAdapterFactory extends AdapterFactoryImpl {
 				return createAnnotationStepAdapter();
 			}
 			@Override
+			public Adapter caseLinkTimeValue(LinkTimeValue object) {
+				return createLinkTimeValueAdapter();
+			}
+			@Override
+			public Adapter caseLinkTimeConstant(LinkTimeConstant object) {
+				return createLinkTimeConstantAdapter();
+			}
+			@Override
+			public Adapter caseLinkTimeExpression(LinkTimeExpression object) {
+				return createLinkTimeExpressionAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -268,6 +280,48 @@ public class ListAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAnnotationStepAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.e.compiler.list.LinkTimeValue <em>Link Time Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.e.compiler.list.LinkTimeValue
+	 * @generated
+	 */
+	public Adapter createLinkTimeValueAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.e.compiler.list.LinkTimeConstant <em>Link Time Constant</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.e.compiler.list.LinkTimeConstant
+	 * @generated
+	 */
+	public Adapter createLinkTimeConstantAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.e.compiler.list.LinkTimeExpression <em>Link Time Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.e.compiler.list.LinkTimeExpression
+	 * @generated
+	 */
+	public Adapter createLinkTimeExpressionAdapter() {
 		return null;
 	}
 
