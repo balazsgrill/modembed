@@ -108,6 +108,18 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
 		case EQUALS: return OperationRole.EQUALS;
 		case NOTEQUALS : break;
 		case OR: return OperationRole.OR;
+		case BRANCH:
+			break;
+		case DEREFERENCE:
+			break;
+		case NOT:
+			break;
+		case REFERENCE:
+			break;
+		case SET:
+			break;
+		case UNARYMINUS:
+			break;
 		}
 		throw new ECompilerException(context, "Runtime "+op+" operator is not yet supported.");
 	}
@@ -169,10 +181,10 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
 //				return ~a.getValue();
 			case ADD:
 				return a.getValue().add(b.getValue());
-//			case AND:
-//				return a.getValue() & b.getValue();
+			case AND:
+				return BigDecimal.valueOf(a.getValue().longValue() & b.getValue().longValue());
 			case DIV:
-				return a.getValue().divide(b.getValue());
+				return a.getValue().divide(b.getValue(),BigDecimal.ROUND_HALF_UP);
 			case EQUALS:
 				return (a.getValue().compareTo(b.getValue())) == 0 ? new BigDecimal(1) : new BigDecimal(0);
 			case GT:
@@ -185,14 +197,26 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
 				return (a.getValue().compareTo(b.getValue())) <= 0 ? new BigDecimal(1) : new BigDecimal(0);
 			case MINUS:
 				return a.getValue().subtract(b.getValue());
-//			case MOD:
-//				return a.getValue() % b.getValue();
+			case MOD:
+				return BigDecimal.valueOf(a.getValue().longValue() % b.getValue().longValue());
 			case MUL:
 				return a.getValue().multiply(b.getValue());
 			case NOTEQUALS:
 				return (a.getValue().compareTo(b.getValue())) != 0 ? new BigDecimal(1) : new BigDecimal(0);
-//			case OR:
-//				return a.getValue() | b.getValue();
+			case OR:
+				return BigDecimal.valueOf(a.getValue().longValue() | b.getValue().longValue());
+			case BRANCH:
+				break;
+			case DEREFERENCE:
+				break;
+			case NOT:
+				break;
+			case REFERENCE:
+				break;
+			case SET:
+				break;
+			default:
+				break;
 			}
 			throw new ECompilerException(context, "Unknown operator: "+op);
 		}else{
