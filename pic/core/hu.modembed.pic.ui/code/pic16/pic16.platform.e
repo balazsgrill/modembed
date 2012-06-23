@@ -33,6 +33,33 @@ add_u8(var uint8 d, uint8 v){
 	ADDWF(&d,F);
 }
 
+set_u16(var uint16 d, uint16 v){
+	if (isliteral(v)){
+		if (0 == v){
+			SELECTB(&d);
+			CLRF(&d);
+			SELECTB((&d) + 1);
+			CLRF((&d) + 1);
+		}else{
+			MOVLW(v && 0xFF);
+			SELECTB(&d);
+			MOVWF(&d);
+			MOVLW(v / 255);
+			SELECTB((&d)+1);
+			MOVWF((&d)+1);
+		}
+	}else{
+		SELECTB(&v);
+		MOVF(&v,W);
+		SELECTB(&d);
+		MOVWF(&d);
+		SELECTB((&v)+1);
+		MOVF((&v)+1,W);
+		SELECTB((&d)+1);
+		MOVWF((&d)+1);
+	}
+}
+
 set_u8 (var uint8 d, uint8 v){
 	if (isliteral(v)){
 		if (0 == v){
@@ -106,5 +133,6 @@ operator SUBTRACT{
 }
 
 operator SET{
-	set_u8
+	set_u8,
+	set_u16
 }
