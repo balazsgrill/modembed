@@ -124,6 +124,10 @@ public class ListAdapterFactory extends AdapterFactoryImpl {
 				return createLinkTimeExpressionAdapter();
 			}
 			@Override
+			public Adapter caseInstructionArgument(InstructionArgument object) {
+				return createInstructionArgumentAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -322,6 +326,20 @@ public class ListAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createLinkTimeExpressionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.e.compiler.list.InstructionArgument <em>Instruction Argument</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.e.compiler.list.InstructionArgument
+	 * @generated
+	 */
+	public Adapter createInstructionArgumentAdapter() {
 		return null;
 	}
 

@@ -5,10 +5,12 @@ package hu.e.compiler.internal.model.symbols.impl;
 
 import hu.e.compiler.ECompilerException;
 import hu.e.compiler.internal.model.ISymbolManager;
-import hu.e.compiler.internal.model.symbols.IReferenceSymbol;
+import hu.e.compiler.internal.model.symbols.ILinkTimeSymbol;
 import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.compiler.list.LabelStep;
-import hu.e.compiler.list.ReferableValue;
+import hu.e.compiler.list.LinkTimeValue;
+import hu.e.compiler.list.ListFactory;
+import hu.e.compiler.list.Reference;
 import hu.e.compiler.list.SequenceStep;
 import hu.e.parser.eSyntax.StructTypeDefMember;
 import hu.e.parser.eSyntax.TypeDef;
@@ -17,7 +19,7 @@ import hu.e.parser.eSyntax.TypeDef;
  * @author balazs.grill
  *
  */
-public class CodeAddressSymbol implements IReferenceSymbol {
+public class CodeAddressSymbol implements ILinkTimeSymbol {
 
 	private final LabelStep step;
 	
@@ -73,8 +75,10 @@ public class CodeAddressSymbol implements IReferenceSymbol {
 	}
 
 	@Override
-	public ReferableValue getReferableValue() {
-		return getStep();
+	public LinkTimeValue getLinkTimeValue() {
+		Reference ref = ListFactory.eINSTANCE.createReference();
+		ref.setValue(getStep());
+		return ref;
 	}
 
 	@Override

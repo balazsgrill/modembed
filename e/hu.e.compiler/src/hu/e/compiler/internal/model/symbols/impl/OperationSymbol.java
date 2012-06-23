@@ -8,7 +8,7 @@ import hu.e.compiler.internal.linking.CodePlatform;
 import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.compiler.internal.model.OPERATION;
 import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
-import hu.e.compiler.internal.model.symbols.IReferenceSymbol;
+import hu.e.compiler.internal.model.symbols.ILinkTimeSymbol;
 import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.compiler.internal.model.symbols.IVariableSymbol;
 import hu.e.compiler.list.ListFactory;
@@ -124,8 +124,22 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
 		throw new ECompilerException(context, "Runtime "+op+" operator is not yet supported.");
 	}
 	
+	private boolean isLinkTimeLiteral(){
+		if (b == null) return a.isLiteral();
+		return a.isLiteral() && b.isLiteral();
+	}
+	
+	private void linkTimeCompile() throws ECompilerException{
+		throw new ECompilerException(context, "Link time operation is not yet supported!");
+	}
+	
 	private void compile(SequenceStep step) throws ECompilerException{
 		TypeDef type = getType();
+		
+		if (isLinkTimeLiteral()) {
+			linkTimeCompile();
+			return;
+		}
 		
 		//sm.getVariableManager().startBlock();
 		switch(op){
@@ -169,8 +183,6 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
 	@Override
 	public BigDecimal getValue() throws ECompilerException {
 		if (isLiteral()){
-			if (this.a instanceof IReferenceSymbol) throw new ECompilerException(context, "Cannot execute operation on a link-time symbol!");
-			if (this.b instanceof IReferenceSymbol) throw new ECompilerException(context, "Cannot execute operation on a link-time symbol!");
 			
 			ILiteralSymbol a = (ILiteralSymbol)this.a;
 			ILiteralSymbol b = (this.b == null)? null : (ILiteralSymbol)this.b;
@@ -227,6 +239,9 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol{
 
 	@Override
 	public boolean isLiteral() {
+		if (this.a instanceof ILinkTimeSymbol) return false;
+		if (this.b instanceof ILinkTimeSymbol) return false;
+		
 		if (b == null) return a.isLiteral();
 		return a.isLiteral() && b.isLiteral();
 	}

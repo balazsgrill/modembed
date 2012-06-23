@@ -71,6 +71,7 @@ public class ListFactoryImpl extends EFactoryImpl implements ListFactory {
 			case ListPackage.ANNOTATION_STEP: return createAnnotationStep();
 			case ListPackage.LINK_TIME_CONSTANT: return createLinkTimeConstant();
 			case ListPackage.LINK_TIME_EXPRESSION: return createLinkTimeExpression();
+			case ListPackage.INSTRUCTION_ARGUMENT: return createInstructionArgument();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -208,6 +209,16 @@ public class ListFactoryImpl extends EFactoryImpl implements ListFactory {
 	public LinkTimeExpression createLinkTimeExpression() {
 		LinkTimeExpressionImpl linkTimeExpression = new LinkTimeExpressionImpl();
 		return linkTimeExpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InstructionArgument createInstructionArgument() {
+		InstructionArgumentImpl instructionArgument = new InstructionArgumentImpl();
+		return instructionArgument;
 	}
 
 	/**

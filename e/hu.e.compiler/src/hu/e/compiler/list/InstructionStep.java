@@ -17,7 +17,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  *   <li>{@link hu.e.compiler.list.InstructionStep#getCode <em>Code</em>}</li>
- *   <li>{@link hu.e.compiler.list.InstructionStep#getRefs <em>Refs</em>}</li>
+ *   <li>{@link hu.e.compiler.list.InstructionStep#getArgs <em>Args</em>}</li>
  *   <li>{@link hu.e.compiler.list.InstructionStep#getWidth <em>Width</em>}</li>
  * </ul>
  * </p>
@@ -54,20 +54,20 @@ public interface InstructionStep extends ProgramStep {
 	void setCode(long value);
 
 	/**
-	 * Returns the value of the '<em><b>Refs</b></em>' containment reference list.
-	 * The list contents are of type {@link hu.e.compiler.list.LinkTimeValue}.
+	 * Returns the value of the '<em><b>Args</b></em>' containment reference list.
+	 * The list contents are of type {@link hu.e.compiler.list.InstructionArgument}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Refs</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Args</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Refs</em>' containment reference list.
-	 * @see hu.e.compiler.list.ListPackage#getInstructionStep_Refs()
+	 * @return the value of the '<em>Args</em>' containment reference list.
+	 * @see hu.e.compiler.list.ListPackage#getInstructionStep_Args()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<LinkTimeValue> getRefs();
+	EList<InstructionArgument> getArgs();
 
 	/**
 	 * Returns the value of the '<em><b>Width</b></em>' attribute.

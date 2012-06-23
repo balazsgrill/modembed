@@ -6,8 +6,8 @@
  */
 package hu.e.compiler.list.impl;
 
+import hu.e.compiler.list.InstructionArgument;
 import hu.e.compiler.list.InstructionStep;
-import hu.e.compiler.list.LinkTimeValue;
 import hu.e.compiler.list.ListPackage;
 
 import java.util.Collection;
@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link hu.e.compiler.list.impl.InstructionStepImpl#getCode <em>Code</em>}</li>
- *   <li>{@link hu.e.compiler.list.impl.InstructionStepImpl#getRefs <em>Refs</em>}</li>
+ *   <li>{@link hu.e.compiler.list.impl.InstructionStepImpl#getArgs <em>Args</em>}</li>
  *   <li>{@link hu.e.compiler.list.impl.InstructionStepImpl#getWidth <em>Width</em>}</li>
  * </ul>
  * </p>
@@ -58,14 +58,14 @@ public class InstructionStepImpl extends ProgramStepImpl implements InstructionS
 	protected long code = CODE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getRefs() <em>Refs</em>}' containment reference list.
+	 * The cached value of the '{@link #getArgs() <em>Args</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRefs()
+	 * @see #getArgs()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<LinkTimeValue> refs;
+	protected EList<InstructionArgument> args;
 
 	/**
 	 * The default value of the '{@link #getWidth() <em>Width</em>}' attribute.
@@ -132,11 +132,11 @@ public class InstructionStepImpl extends ProgramStepImpl implements InstructionS
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<LinkTimeValue> getRefs() {
-		if (refs == null) {
-			refs = new EObjectContainmentEList<LinkTimeValue>(LinkTimeValue.class, this, ListPackage.INSTRUCTION_STEP__REFS);
+	public EList<InstructionArgument> getArgs() {
+		if (args == null) {
+			args = new EObjectContainmentEList<InstructionArgument>(InstructionArgument.class, this, ListPackage.INSTRUCTION_STEP__ARGS);
 		}
-		return refs;
+		return args;
 	}
 
 	/**
@@ -168,8 +168,8 @@ public class InstructionStepImpl extends ProgramStepImpl implements InstructionS
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ListPackage.INSTRUCTION_STEP__REFS:
-				return ((InternalEList<?>)getRefs()).basicRemove(otherEnd, msgs);
+			case ListPackage.INSTRUCTION_STEP__ARGS:
+				return ((InternalEList<?>)getArgs()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -184,8 +184,8 @@ public class InstructionStepImpl extends ProgramStepImpl implements InstructionS
 		switch (featureID) {
 			case ListPackage.INSTRUCTION_STEP__CODE:
 				return getCode();
-			case ListPackage.INSTRUCTION_STEP__REFS:
-				return getRefs();
+			case ListPackage.INSTRUCTION_STEP__ARGS:
+				return getArgs();
 			case ListPackage.INSTRUCTION_STEP__WIDTH:
 				return getWidth();
 		}
@@ -204,9 +204,9 @@ public class InstructionStepImpl extends ProgramStepImpl implements InstructionS
 			case ListPackage.INSTRUCTION_STEP__CODE:
 				setCode((Long)newValue);
 				return;
-			case ListPackage.INSTRUCTION_STEP__REFS:
-				getRefs().clear();
-				getRefs().addAll((Collection<? extends LinkTimeValue>)newValue);
+			case ListPackage.INSTRUCTION_STEP__ARGS:
+				getArgs().clear();
+				getArgs().addAll((Collection<? extends InstructionArgument>)newValue);
 				return;
 			case ListPackage.INSTRUCTION_STEP__WIDTH:
 				setWidth((Integer)newValue);
@@ -226,8 +226,8 @@ public class InstructionStepImpl extends ProgramStepImpl implements InstructionS
 			case ListPackage.INSTRUCTION_STEP__CODE:
 				setCode(CODE_EDEFAULT);
 				return;
-			case ListPackage.INSTRUCTION_STEP__REFS:
-				getRefs().clear();
+			case ListPackage.INSTRUCTION_STEP__ARGS:
+				getArgs().clear();
 				return;
 			case ListPackage.INSTRUCTION_STEP__WIDTH:
 				setWidth(WIDTH_EDEFAULT);
@@ -246,8 +246,8 @@ public class InstructionStepImpl extends ProgramStepImpl implements InstructionS
 		switch (featureID) {
 			case ListPackage.INSTRUCTION_STEP__CODE:
 				return code != CODE_EDEFAULT;
-			case ListPackage.INSTRUCTION_STEP__REFS:
-				return refs != null && !refs.isEmpty();
+			case ListPackage.INSTRUCTION_STEP__ARGS:
+				return args != null && !args.isEmpty();
 			case ListPackage.INSTRUCTION_STEP__WIDTH:
 				return width != WIDTH_EDEFAULT;
 		}

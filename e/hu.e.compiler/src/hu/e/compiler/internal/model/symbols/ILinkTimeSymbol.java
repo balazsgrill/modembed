@@ -3,15 +3,15 @@
  */
 package hu.e.compiler.internal.model.symbols;
 
-import hu.e.compiler.list.ReferableValue;
+import hu.e.compiler.list.LinkTimeValue;
 
 /**
  * @author balazs.grill
  *
  */
-public interface IReferenceSymbol extends ISymbol {
+public interface ILinkTimeSymbol extends ISymbol {
 
-	public ReferableValue getReferableValue();
+	public LinkTimeValue getLinkTimeValue();
 	
 	public int getOffset();
 	

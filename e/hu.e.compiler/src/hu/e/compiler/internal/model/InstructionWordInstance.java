@@ -5,12 +5,12 @@ package hu.e.compiler.internal.model;
 
 import hu.e.compiler.ECompiler;
 import hu.e.compiler.ECompilerException;
+import hu.e.compiler.internal.model.symbols.ILinkTimeSymbol;
 import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
-import hu.e.compiler.internal.model.symbols.IReferenceSymbol;
 import hu.e.compiler.internal.model.symbols.ISymbol;
+import hu.e.compiler.list.InstructionArgument;
 import hu.e.compiler.list.InstructionStep;
 import hu.e.compiler.list.ListFactory;
-import hu.e.compiler.list.Reference;
 import hu.e.parser.eSyntax.InstructionWord;
 import hu.e.parser.eSyntax.LiteralValue;
 import hu.e.parser.eSyntax.Variable;
@@ -34,7 +34,7 @@ public class InstructionWordInstance{
 		return v;
 	}
 	
-	private final List<Reference> labelRefs = new ArrayList<Reference>();
+	private final List<InstructionArgument> arguments = new ArrayList<InstructionArgument>();
 	
 	private long value;
 	private int size;
@@ -70,14 +70,14 @@ public class InstructionWordInstance{
 				if (!vs.isLiteral())
 					throw new ECompilerException(ws, "Instruction word can only contain compile-time variables!");
 
-				if (vs instanceof IReferenceSymbol){
-					Reference ref = ListFactory.eINSTANCE.createReference();
-					ref.setShift(shift);
-					ref.setSize(size);
-					ref.setStart(s);
-					ref.setValue(((IReferenceSymbol) vs).getReferableValue());
-					ref.setOffset(((IReferenceSymbol) vs).getOffset());
-					labelRefs.add(ref);
+				if (vs instanceof ILinkTimeSymbol){
+					InstructionArgument arg = ListFactory.eINSTANCE.createInstructionArgument();
+					arg.setShift(shift);
+					arg.setSize(size);
+					arg.setStart(s);
+					arg.setOffset(((ILinkTimeSymbol) vs).getOffset());
+					arg.setValue(((ILinkTimeSymbol) vs).getLinkTimeValue());
+					arguments.add(arg);
 				} else{	
 					v = TypeDefinitionResolver.getRawValue(vs.getType(), ((ILiteralSymbol)vs).getValue());
 					value += getItemValue(v, shift, s, size);
@@ -102,8 +102,7 @@ public class InstructionWordInstance{
 	public InstructionStep create() throws ECompilerException{
 		InstructionStep is = ListFactory.eINSTANCE.createInstructionStep();
 		is.setCode(getValue());
-		is.setWidth(getWidth());
-		is.getRefs().addAll(labelRefs);
+		is.getArgs().addAll(arguments);
 		return is;
 	}
 	

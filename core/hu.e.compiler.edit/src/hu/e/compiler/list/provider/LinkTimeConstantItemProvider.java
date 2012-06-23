@@ -103,7 +103,7 @@ public class LinkTimeConstantItemProvider
 	@Override
 	public String getText(Object object) {
 		LinkTimeConstant linkTimeConstant = (LinkTimeConstant)object;
-		return getString("_UI_LinkTimeConstant_type") + " " + linkTimeConstant.getShift();
+		return getString("_UI_LinkTimeConstant_type") + " " + linkTimeConstant.getValue();
 	}
 
 	/**

@@ -125,7 +125,7 @@ public class InstructionStepItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ListPackage.Literals.INSTRUCTION_STEP__REFS);
+			childrenFeatures.add(ListPackage.Literals.INSTRUCTION_STEP__ARGS);
 		}
 		return childrenFeatures;
 	}
@@ -182,7 +182,7 @@ public class InstructionStepItemProvider
 			case ListPackage.INSTRUCTION_STEP__WIDTH:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case ListPackage.INSTRUCTION_STEP__REFS:
+			case ListPackage.INSTRUCTION_STEP__ARGS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}

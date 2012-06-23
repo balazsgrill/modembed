@@ -136,13 +136,13 @@ public interface ListPackage extends EPackage {
 	int INSTRUCTION_STEP__CODE = PROGRAM_STEP_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Refs</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Args</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INSTRUCTION_STEP__REFS = PROGRAM_STEP_FEATURE_COUNT + 1;
+	int INSTRUCTION_STEP__ARGS = PROGRAM_STEP_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Width</b></em>' attribute.
@@ -238,49 +238,13 @@ public interface ListPackage extends EPackage {
 	int LINK_TIME_VALUE = 10;
 
 	/**
-	 * The feature id for the '<em><b>Shift</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINK_TIME_VALUE__SHIFT = 0;
-
-	/**
-	 * The feature id for the '<em><b>Size</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINK_TIME_VALUE__SIZE = 1;
-
-	/**
-	 * The feature id for the '<em><b>Start</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINK_TIME_VALUE__START = 2;
-
-	/**
-	 * The feature id for the '<em><b>Offset</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINK_TIME_VALUE__OFFSET = 3;
-
-	/**
 	 * The number of structural features of the '<em>Link Time Value</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LINK_TIME_VALUE_FEATURE_COUNT = 4;
+	int LINK_TIME_VALUE_FEATURE_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link hu.e.compiler.list.impl.ReferenceImpl <em>Reference</em>}' class.
@@ -291,42 +255,6 @@ public interface ListPackage extends EPackage {
 	 * @generated
 	 */
 	int REFERENCE = 5;
-
-	/**
-	 * The feature id for the '<em><b>Shift</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE__SHIFT = LINK_TIME_VALUE__SHIFT;
-
-	/**
-	 * The feature id for the '<em><b>Size</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE__SIZE = LINK_TIME_VALUE__SIZE;
-
-	/**
-	 * The feature id for the '<em><b>Start</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE__START = LINK_TIME_VALUE__START;
-
-	/**
-	 * The feature id for the '<em><b>Offset</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE__OFFSET = LINK_TIME_VALUE__OFFSET;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' reference.
@@ -478,42 +406,6 @@ public interface ListPackage extends EPackage {
 	int LINK_TIME_CONSTANT = 11;
 
 	/**
-	 * The feature id for the '<em><b>Shift</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINK_TIME_CONSTANT__SHIFT = LINK_TIME_VALUE__SHIFT;
-
-	/**
-	 * The feature id for the '<em><b>Size</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINK_TIME_CONSTANT__SIZE = LINK_TIME_VALUE__SIZE;
-
-	/**
-	 * The feature id for the '<em><b>Start</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINK_TIME_CONSTANT__START = LINK_TIME_VALUE__START;
-
-	/**
-	 * The feature id for the '<em><b>Offset</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINK_TIME_CONSTANT__OFFSET = LINK_TIME_VALUE__OFFSET;
-
-	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -540,42 +432,6 @@ public interface ListPackage extends EPackage {
 	 * @generated
 	 */
 	int LINK_TIME_EXPRESSION = 12;
-
-	/**
-	 * The feature id for the '<em><b>Shift</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINK_TIME_EXPRESSION__SHIFT = LINK_TIME_VALUE__SHIFT;
-
-	/**
-	 * The feature id for the '<em><b>Size</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINK_TIME_EXPRESSION__SIZE = LINK_TIME_VALUE__SIZE;
-
-	/**
-	 * The feature id for the '<em><b>Start</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINK_TIME_EXPRESSION__START = LINK_TIME_VALUE__START;
-
-	/**
-	 * The feature id for the '<em><b>Offset</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINK_TIME_EXPRESSION__OFFSET = LINK_TIME_VALUE__OFFSET;
 
 	/**
 	 * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
@@ -605,6 +461,70 @@ public interface ListPackage extends EPackage {
 	int LINK_TIME_EXPRESSION_FEATURE_COUNT = LINK_TIME_VALUE_FEATURE_COUNT + 2;
 
 	/**
+	 * The meta object id for the '{@link hu.e.compiler.list.impl.InstructionArgumentImpl <em>Instruction Argument</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.e.compiler.list.impl.InstructionArgumentImpl
+	 * @see hu.e.compiler.list.impl.ListPackageImpl#getInstructionArgument()
+	 * @generated
+	 */
+	int INSTRUCTION_ARGUMENT = 13;
+
+	/**
+	 * The feature id for the '<em><b>Shift</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION_ARGUMENT__SHIFT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION_ARGUMENT__SIZE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Start</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION_ARGUMENT__START = 2;
+
+	/**
+	 * The feature id for the '<em><b>Offset</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION_ARGUMENT__OFFSET = 3;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION_ARGUMENT__VALUE = 4;
+
+	/**
+	 * The number of structural features of the '<em>Instruction Argument</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION_ARGUMENT_FEATURE_COUNT = 5;
+
+	/**
 	 * The meta object id for the '{@link hu.e.compiler.list.Severity <em>Severity</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -612,7 +532,7 @@ public interface ListPackage extends EPackage {
 	 * @see hu.e.compiler.list.impl.ListPackageImpl#getSeverity()
 	 * @generated
 	 */
-	int SEVERITY = 13;
+	int SEVERITY = 14;
 
 
 	/**
@@ -623,7 +543,7 @@ public interface ListPackage extends EPackage {
 	 * @see hu.e.compiler.list.impl.ListPackageImpl#getLinkTimeOperation()
 	 * @generated
 	 */
-	int LINK_TIME_OPERATION = 14;
+	int LINK_TIME_OPERATION = 15;
 
 
 	/**
@@ -690,15 +610,15 @@ public interface ListPackage extends EPackage {
 	EAttribute getInstructionStep_Code();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link hu.e.compiler.list.InstructionStep#getRefs <em>Refs</em>}'.
+	 * Returns the meta object for the containment reference list '{@link hu.e.compiler.list.InstructionStep#getArgs <em>Args</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Refs</em>'.
-	 * @see hu.e.compiler.list.InstructionStep#getRefs()
+	 * @return the meta object for the containment reference list '<em>Args</em>'.
+	 * @see hu.e.compiler.list.InstructionStep#getArgs()
 	 * @see #getInstructionStep()
 	 * @generated
 	 */
-	EReference getInstructionStep_Refs();
+	EReference getInstructionStep_Args();
 
 	/**
 	 * Returns the meta object for the attribute '{@link hu.e.compiler.list.InstructionStep#getWidth <em>Width</em>}'.
@@ -891,50 +811,6 @@ public interface ListPackage extends EPackage {
 	EClass getLinkTimeValue();
 
 	/**
-	 * Returns the meta object for the attribute '{@link hu.e.compiler.list.LinkTimeValue#getShift <em>Shift</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Shift</em>'.
-	 * @see hu.e.compiler.list.LinkTimeValue#getShift()
-	 * @see #getLinkTimeValue()
-	 * @generated
-	 */
-	EAttribute getLinkTimeValue_Shift();
-
-	/**
-	 * Returns the meta object for the attribute '{@link hu.e.compiler.list.LinkTimeValue#getSize <em>Size</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Size</em>'.
-	 * @see hu.e.compiler.list.LinkTimeValue#getSize()
-	 * @see #getLinkTimeValue()
-	 * @generated
-	 */
-	EAttribute getLinkTimeValue_Size();
-
-	/**
-	 * Returns the meta object for the attribute '{@link hu.e.compiler.list.LinkTimeValue#getStart <em>Start</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Start</em>'.
-	 * @see hu.e.compiler.list.LinkTimeValue#getStart()
-	 * @see #getLinkTimeValue()
-	 * @generated
-	 */
-	EAttribute getLinkTimeValue_Start();
-
-	/**
-	 * Returns the meta object for the attribute '{@link hu.e.compiler.list.LinkTimeValue#getOffset <em>Offset</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Offset</em>'.
-	 * @see hu.e.compiler.list.LinkTimeValue#getOffset()
-	 * @see #getLinkTimeValue()
-	 * @generated
-	 */
-	EAttribute getLinkTimeValue_Offset();
-
-	/**
 	 * Returns the meta object for class '{@link hu.e.compiler.list.LinkTimeConstant <em>Link Time Constant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -986,6 +862,71 @@ public interface ListPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getLinkTimeExpression_Operation();
+
+	/**
+	 * Returns the meta object for class '{@link hu.e.compiler.list.InstructionArgument <em>Instruction Argument</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Instruction Argument</em>'.
+	 * @see hu.e.compiler.list.InstructionArgument
+	 * @generated
+	 */
+	EClass getInstructionArgument();
+
+	/**
+	 * Returns the meta object for the attribute '{@link hu.e.compiler.list.InstructionArgument#getShift <em>Shift</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Shift</em>'.
+	 * @see hu.e.compiler.list.InstructionArgument#getShift()
+	 * @see #getInstructionArgument()
+	 * @generated
+	 */
+	EAttribute getInstructionArgument_Shift();
+
+	/**
+	 * Returns the meta object for the attribute '{@link hu.e.compiler.list.InstructionArgument#getSize <em>Size</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Size</em>'.
+	 * @see hu.e.compiler.list.InstructionArgument#getSize()
+	 * @see #getInstructionArgument()
+	 * @generated
+	 */
+	EAttribute getInstructionArgument_Size();
+
+	/**
+	 * Returns the meta object for the attribute '{@link hu.e.compiler.list.InstructionArgument#getStart <em>Start</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Start</em>'.
+	 * @see hu.e.compiler.list.InstructionArgument#getStart()
+	 * @see #getInstructionArgument()
+	 * @generated
+	 */
+	EAttribute getInstructionArgument_Start();
+
+	/**
+	 * Returns the meta object for the attribute '{@link hu.e.compiler.list.InstructionArgument#getOffset <em>Offset</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Offset</em>'.
+	 * @see hu.e.compiler.list.InstructionArgument#getOffset()
+	 * @see #getInstructionArgument()
+	 * @generated
+	 */
+	EAttribute getInstructionArgument_Offset();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link hu.e.compiler.list.InstructionArgument#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Value</em>'.
+	 * @see hu.e.compiler.list.InstructionArgument#getValue()
+	 * @see #getInstructionArgument()
+	 * @generated
+	 */
+	EReference getInstructionArgument_Value();
 
 	/**
 	 * Returns the meta object for enum '{@link hu.e.compiler.list.Severity <em>Severity</em>}'.
@@ -1084,12 +1025,12 @@ public interface ListPackage extends EPackage {
 		EAttribute INSTRUCTION_STEP__CODE = eINSTANCE.getInstructionStep_Code();
 
 		/**
-		 * The meta object literal for the '<em><b>Refs</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Args</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference INSTRUCTION_STEP__REFS = eINSTANCE.getInstructionStep_Refs();
+		EReference INSTRUCTION_STEP__ARGS = eINSTANCE.getInstructionStep_Args();
 
 		/**
 		 * The meta object literal for the '<em><b>Width</b></em>' attribute feature.
@@ -1252,38 +1193,6 @@ public interface ListPackage extends EPackage {
 		EClass LINK_TIME_VALUE = eINSTANCE.getLinkTimeValue();
 
 		/**
-		 * The meta object literal for the '<em><b>Shift</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute LINK_TIME_VALUE__SHIFT = eINSTANCE.getLinkTimeValue_Shift();
-
-		/**
-		 * The meta object literal for the '<em><b>Size</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute LINK_TIME_VALUE__SIZE = eINSTANCE.getLinkTimeValue_Size();
-
-		/**
-		 * The meta object literal for the '<em><b>Start</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute LINK_TIME_VALUE__START = eINSTANCE.getLinkTimeValue_Start();
-
-		/**
-		 * The meta object literal for the '<em><b>Offset</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute LINK_TIME_VALUE__OFFSET = eINSTANCE.getLinkTimeValue_Offset();
-
-		/**
 		 * The meta object literal for the '{@link hu.e.compiler.list.impl.LinkTimeConstantImpl <em>Link Time Constant</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1326,6 +1235,56 @@ public interface ListPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute LINK_TIME_EXPRESSION__OPERATION = eINSTANCE.getLinkTimeExpression_Operation();
+
+		/**
+		 * The meta object literal for the '{@link hu.e.compiler.list.impl.InstructionArgumentImpl <em>Instruction Argument</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.e.compiler.list.impl.InstructionArgumentImpl
+		 * @see hu.e.compiler.list.impl.ListPackageImpl#getInstructionArgument()
+		 * @generated
+		 */
+		EClass INSTRUCTION_ARGUMENT = eINSTANCE.getInstructionArgument();
+
+		/**
+		 * The meta object literal for the '<em><b>Shift</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INSTRUCTION_ARGUMENT__SHIFT = eINSTANCE.getInstructionArgument_Shift();
+
+		/**
+		 * The meta object literal for the '<em><b>Size</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INSTRUCTION_ARGUMENT__SIZE = eINSTANCE.getInstructionArgument_Size();
+
+		/**
+		 * The meta object literal for the '<em><b>Start</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INSTRUCTION_ARGUMENT__START = eINSTANCE.getInstructionArgument_Start();
+
+		/**
+		 * The meta object literal for the '<em><b>Offset</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INSTRUCTION_ARGUMENT__OFFSET = eINSTANCE.getInstructionArgument_Offset();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INSTRUCTION_ARGUMENT__VALUE = eINSTANCE.getInstructionArgument_Value();
 
 		/**
 		 * The meta object literal for the '{@link hu.e.compiler.list.Severity <em>Severity</em>}' enum.

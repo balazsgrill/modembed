@@ -306,6 +306,29 @@ public class ListItemProviderAdapterFactory extends ListAdapterFactory implement
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link hu.e.compiler.list.InstructionArgument} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected InstructionArgumentItemProvider instructionArgumentItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link hu.e.compiler.list.InstructionArgument}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createInstructionArgumentAdapter() {
+		if (instructionArgumentItemProvider == null) {
+			instructionArgumentItemProvider = new InstructionArgumentItemProvider(this);
+		}
+
+		return instructionArgumentItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -414,6 +437,7 @@ public class ListItemProviderAdapterFactory extends ListAdapterFactory implement
 		if (annotationStepItemProvider != null) annotationStepItemProvider.dispose();
 		if (linkTimeConstantItemProvider != null) linkTimeConstantItemProvider.dispose();
 		if (linkTimeExpressionItemProvider != null) linkTimeExpressionItemProvider.dispose();
+		if (instructionArgumentItemProvider != null) instructionArgumentItemProvider.dispose();
 	}
 
 }

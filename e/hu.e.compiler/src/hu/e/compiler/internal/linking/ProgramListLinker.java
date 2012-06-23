@@ -6,6 +6,7 @@ package hu.e.compiler.internal.linking;
 import hu.e.compiler.internal.MemoryManager;
 import hu.e.compiler.internal.model.InstructionWordInstance;
 import hu.e.compiler.list.AnnotationStep;
+import hu.e.compiler.list.InstructionArgument;
 import hu.e.compiler.list.InstructionStep;
 import hu.e.compiler.list.LabelStep;
 import hu.e.compiler.list.LinkTimeConstant;
@@ -107,8 +108,8 @@ public class ProgramListLinker {
 			
 			int d = 0;
 			d = (int) s.getCode();
-			for(LinkTimeValue lr : s.getRefs()){
-				long v = getValue(lr);
+			for(InstructionArgument lr : s.getArgs()){
+				long v = getValue(lr.getValue());
 				
 				d += InstructionWordInstance.getItemValue(v, lr.getShift(), lr.getStart(), lr.getSize());
 			}

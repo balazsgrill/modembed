@@ -109,8 +109,7 @@ public class ReferenceItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		Reference reference = (Reference)object;
-		return getString("_UI_Reference_type") + " " + reference.getShift();
+		return getString("_UI_Reference_type");
 	}
 
 	/**

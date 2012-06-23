@@ -116,6 +116,15 @@ public interface ListFactory extends EFactory {
 	LinkTimeExpression createLinkTimeExpression();
 
 	/**
+	 * Returns a new object of class '<em>Instruction Argument</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Instruction Argument</em>'.
+	 * @generated
+	 */
+	InstructionArgument createInstructionArgument();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

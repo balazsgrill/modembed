@@ -59,100 +59,8 @@ public class LinkTimeValueItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addShiftPropertyDescriptor(object);
-			addSizePropertyDescriptor(object);
-			addStartPropertyDescriptor(object);
-			addOffsetPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Shift feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addShiftPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_LinkTimeValue_shift_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_LinkTimeValue_shift_feature", "_UI_LinkTimeValue_type"),
-				 ListPackage.Literals.LINK_TIME_VALUE__SHIFT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Size feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSizePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_LinkTimeValue_size_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_LinkTimeValue_size_feature", "_UI_LinkTimeValue_type"),
-				 ListPackage.Literals.LINK_TIME_VALUE__SIZE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Start feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addStartPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_LinkTimeValue_start_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_LinkTimeValue_start_feature", "_UI_LinkTimeValue_type"),
-				 ListPackage.Literals.LINK_TIME_VALUE__START,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Offset feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addOffsetPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_LinkTimeValue_offset_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_LinkTimeValue_offset_feature", "_UI_LinkTimeValue_type"),
-				 ListPackage.Literals.LINK_TIME_VALUE__OFFSET,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -163,8 +71,7 @@ public class LinkTimeValueItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		LinkTimeValue linkTimeValue = (LinkTimeValue)object;
-		return getString("_UI_LinkTimeValue_type") + " " + linkTimeValue.getShift();
+		return getString("_UI_LinkTimeValue_type");
 	}
 
 	/**
@@ -177,15 +84,6 @@ public class LinkTimeValueItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(LinkTimeValue.class)) {
-			case ListPackage.LINK_TIME_VALUE__SHIFT:
-			case ListPackage.LINK_TIME_VALUE__SIZE:
-			case ListPackage.LINK_TIME_VALUE__START:
-			case ListPackage.LINK_TIME_VALUE__OFFSET:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 

@@ -9,7 +9,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="ProgramStep" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="InstructionStep" eSuperTypes="#//ProgramStep">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="refs" upperBound="-1" eType="#//LinkTimeValue"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="args" upperBound="-1" eType="#//InstructionArgument"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
@@ -42,13 +42,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="AnnotationStep" eSuperTypes="#//ProgramStep">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="LinkTimeValue" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="shift" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="start" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="offset" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
-        defaultValueLiteral="0"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LinkTimeValue" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="LinkTimeConstant" eSuperTypes="#//LinkTimeValue">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
@@ -59,5 +53,14 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="LinkTimeOperation">
     <eLiterals name="Add"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InstructionArgument">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="shift" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="start" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="offset" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="0"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//LinkTimeValue"
+        containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

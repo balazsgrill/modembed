@@ -4,6 +4,7 @@ package hu.e.compiler.list.provider;
 
 
 import hu.e.compiler.list.LinkTimeExpression;
+import hu.e.compiler.list.LinkTimeOperation;
 import hu.e.compiler.list.ListPackage;
 
 import java.util.Collection;
@@ -135,8 +136,11 @@ public class LinkTimeExpressionItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		LinkTimeExpression linkTimeExpression = (LinkTimeExpression)object;
-		return getString("_UI_LinkTimeExpression_type") + " " + linkTimeExpression.getShift();
+		LinkTimeOperation labelValue = ((LinkTimeExpression)object).getOperation();
+		String label = labelValue == null ? null : labelValue.toString();
+		return label == null || label.length() == 0 ?
+			getString("_UI_LinkTimeExpression_type") :
+			getString("_UI_LinkTimeExpression_type") + " " + label;
 	}
 
 	/**
