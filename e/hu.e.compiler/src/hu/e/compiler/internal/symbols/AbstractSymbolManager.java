@@ -101,7 +101,7 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 		}
 		
 		if (x.getType() != null){
-			if (a instanceof ILiteralSymbol){
+			if (a instanceof ILiteralSymbol && a.isAssignableAt(SymbolContext.COMPILETIME)){
 				a = new TypeCastedLiteralSymbol(x.getType(), (ILiteralSymbol)a);
 			}else if (a instanceof IVariableSymbol){
 				a = new TypeCastedVariableSymbol(x.getType(), (IVariableSymbol)a);
