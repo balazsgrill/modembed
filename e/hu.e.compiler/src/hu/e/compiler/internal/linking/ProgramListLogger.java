@@ -3,10 +3,13 @@
  */
 package hu.e.compiler.internal.linking;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import hu.e.compiler.list.Severity;
 import hu.e.compiler.list.StatusStep;
+
+import java.util.ArrayList;
+import java.util.EnumSet;
+import java.util.List;
+import java.util.Set;
 
 /**
  * @author balazs.grill
@@ -14,10 +17,13 @@ import hu.e.compiler.list.StatusStep;
  */
 public class ProgramListLogger {
 
+	private final Set<?> values = EnumSet.of(Severity.ERROR, Severity.WARNING);
+	
 	private final List<StatusStep> statuses = new ArrayList<StatusStep>();
 	
 	public void add(StatusStep status){
-		statuses.add(status);
+		if (values.contains(status.getSeverity()))
+			statuses.add(status);
 	}
 	
 	public void print(){
@@ -40,6 +46,9 @@ public class ProgramListLogger {
 			sb.append(step.getMessage());
 			sb.append("\n");
 		}
+		sb.append("Overall ");
+		sb.append(statuses.size());
+		sb.append(" messages.\n");
 		System.out.println(sb.toString());
 	}
 	

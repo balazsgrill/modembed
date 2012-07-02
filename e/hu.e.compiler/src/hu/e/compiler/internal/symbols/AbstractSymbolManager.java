@@ -75,6 +75,19 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 		return platform;
 	}
 	
+	public TypeDef computeType(XExpression x){
+		return computeType((XExpression6)x);
+	}
+	
+	public TypeDef computeType(XExpression6 x){
+		if (x.getType() != null){
+			return x.getType();
+		}
+		
+		//TODO insert type inference here
+		return null;
+	}
+	
 	@Override
 	public ISymbol resolve(SequenceStep context, XExpression x) throws ECompilerException{
 		return resolve(context, (XExpression6)x);
@@ -324,7 +337,7 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 			sb.append(")");
 			throw new ECompilerException(context, sb.toString());
 		}
-		return new OperatedSymbol(Collections.singletonList(oc.compile(this, oc.createResultBuffer(step))),oc.getReturns(this));
+		return new OperatedSymbol(Collections.singletonList(oc.compile(this, oc.createResultBuffer(step))),oc.getReturns(step, this));
 	}
 	
 	private String getTypeName(TypeDef td){
@@ -349,7 +362,7 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 			Operation op = opfinder.getOperation(role, symbols);
 			if (op != null){
 				if (op.getReturn() != null){
-					return resolve(null, op.getReturn()).getType();
+					return computeType(op.getReturn());
 				}
 				if (op.getReturnvar() != null){
 					return op.getReturnvar().getType();

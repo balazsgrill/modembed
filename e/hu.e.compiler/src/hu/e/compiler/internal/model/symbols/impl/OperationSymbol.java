@@ -88,8 +88,11 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol, ILinkTi
 	}
 	
 	private ISymbol execute(OperationRole role, SequenceStep step, ISymbol...symbols) throws ECompilerException{
-		OperatedSymbol os = sm.executeOperator(role,context,step, symbols);
 		SequenceStep ss = ListFactory.eINSTANCE.createSequenceStep();
+		for(ISymbol s : symbols){
+			s.addSteps(ss);
+		}
+		OperatedSymbol os = sm.executeOperator(role,context,step, symbols);
 		ss.setName(os.toString());
 		os.addSteps(ss);
 		steps.add(ss);
@@ -249,8 +252,12 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol, ILinkTi
 		return a.isAssignableAt(context) && b.isAssignableAt(context);
 	}
 
+	private boolean compiled = false;
+	
 	@Override
 	public void addSteps(SequenceStep sequence) throws ECompilerException {
+		if (compiled) return;
+		compiled = true;
 		SequenceStep step = ListFactory.eINSTANCE.createSequenceStep();
 		step.setName(toString());
 		sequence.getSteps().add(step);
@@ -339,6 +346,8 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol, ILinkTi
 	
 	@Override
 	public ISymbol getAddressSymbol() throws ECompilerException {
+		if (!compiled)
+			throw new ECompilerException(context, "Operation symbol "+this+" is not yet compiled!");
 		if (result instanceof IVariableSymbol)
 			return ((IVariableSymbol)result).getAddressSymbol();
 		throw new ECompilerException(context, "Literal value does not have an address.");

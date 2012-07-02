@@ -89,6 +89,11 @@ public class OperationCompiler {
 		result.setName(((CompilationUnit)operation.eContainer()).getName() +"."+ operation.getName());
 		List<ProgramStep> steps = result.getSteps();
 		
+		for(Variable v : parameters.keySet()){
+			ISymbol symbol = parameters.get(v);
+			steps.add(CompilationErrorEntry.info(v, v.getName()+" = "+symbol.toString()));
+		}
+		
 		if (resultbuffer != null){
 			try {
 				sm.getVariableManager().define(sm, operation.getReturnvar(),resultbuffer);
@@ -107,9 +112,9 @@ public class OperationCompiler {
 		return result;
 	}
 	
-	public ISymbol getReturns(ISymbolManager sm) throws ECompilerException{
+	public ISymbol getReturns(SequenceStep steps, ISymbolManager sm) throws ECompilerException{
 		if (operation.getReturn() != null){
-			return new WrappedSymbolManager(sm).resolve(null, operation.getReturn());
+			return new WrappedSymbolManager(sm).resolve(steps, operation.getReturn());
 		}
 		if (operation.getReturnvar() != null){
 			return sm.getSymbol(operation.getReturnvar());

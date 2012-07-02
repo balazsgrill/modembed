@@ -51,7 +51,6 @@ public class MemoryAssignmentValueSymbol implements ILinkTimeSymbol {
 	 */
 	@Override
 	public void addSteps(SequenceStep sequence) {
-
 	}
 
 	/* (non-Javadoc)

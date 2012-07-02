@@ -4,6 +4,8 @@
 package hu.e.compiler;
 
 import hu.e.compiler.internal.HexFileCompiler;
+import hu.e.compiler.internal.linking.ProgramListDiagnoser;
+import hu.e.compiler.internal.linking.ProgramListDiagnoser.UncontainedEntry;
 import hu.e.compiler.list.ProgramList;
 import hu.e.parser.eSyntax.BinaryType;
 import hu.e.parser.eSyntax.LinkedBinary;
@@ -58,7 +60,6 @@ public class ECompiler {
 		}
 		return null;
 	}
-
 	
 	public void compile(Resource r, IFile f) throws CoreException{
 		
@@ -87,6 +88,10 @@ public class ECompiler {
 						Resource lr = resourceset.createResource(URI.createPlatformResourceURI(lf.getFullPath().toString(),true));
 						lr.getContents().clear();
 						lr.getContents().add(pl);
+						for(UncontainedEntry entry : ProgramListDiagnoser.getUncontainedEntries(pl)){
+							System.err.println("Uncontained entry: "+entry);
+							entry.parent.eSet(entry.ref, null);
+						}
 						try {
 							lr.save(null);
 						} catch (IOException e) {

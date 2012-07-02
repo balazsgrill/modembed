@@ -44,7 +44,9 @@ public class LinkTimeExpressionSymbol implements ILinkTimeSymbol {
 	 */
 	@Override
 	public void addSteps(SequenceStep sequence) throws ECompilerException {
-
+		for(ISymbol s : arguments){
+			s.addSteps(sequence);
+		}
 	}
 
 	/* (non-Javadoc)

@@ -86,7 +86,7 @@ public class OperationCallCompiler {
 	}
 	
 	public ISymbol getReturns() throws ECompilerException{
-		return oc.getReturns(sm);
+		return oc.getReturns(callstep, sm);
 	}
 	
 }
