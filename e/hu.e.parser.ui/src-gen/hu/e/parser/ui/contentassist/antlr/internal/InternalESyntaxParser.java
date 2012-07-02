@@ -36933,9 +36933,9 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
     static final String DFA6_specialS =
         "\10\uffff}>";
     static final String[] DFA6_transitionS = {
-            "\4\5\1\4\6\uffff\2\3\31\uffff\4\5\11\uffff\1\1\4\uffff\1\5\6"+
-            "\uffff\1\3\1\uffff\1\3\2\uffff\1\3\2\uffff\1\3\4\uffff\1\2\1"+
-            "\5\21\uffff\1\5\1\uffff\2\5\1\uffff\1\5",
+            "\4\5\1\4\6\uffff\2\3\31\uffff\4\5\11\uffff\1\1\4\uffff\1\5"+
+            "\6\uffff\1\3\1\uffff\1\3\2\uffff\1\3\2\uffff\1\3\4\uffff\1\2"+
+            "\1\5\21\uffff\1\5\1\uffff\2\5\1\uffff\1\5",
             "",
             "",
             "",
@@ -36995,8 +36995,9 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
     static final String DFA8_specialS =
         "\6\uffff}>";
     static final String[] DFA8_transitionS = {
-            "\4\2\1\1\6\uffff\2\3\31\uffff\4\2\25\uffff\1\3\1\uffff\1\3\2"+
-            "\uffff\1\3\2\uffff\1\3\5\uffff\1\2\21\uffff\1\2\1\uffff\1\2",
+            "\4\2\1\1\6\uffff\2\3\31\uffff\4\2\25\uffff\1\3\1\uffff\1\3"+
+            "\2\uffff\1\3\2\uffff\1\3\5\uffff\1\2\21\uffff\1\2\1\uffff\1"+
+            "\2",
             "\1\3\5\uffff\1\2\33\uffff\1\2\3\uffff\14\2\1\4\3\uffff\1\2"+
             "\7\uffff\1\2\5\uffff\1\2\2\uffff\1\2\1\uffff\1\2\22\uffff\1"+
             "\2",
@@ -37058,16 +37059,16 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
             "",
             "",
             "",
-            "\1\11\3\uffff\14\11\1\6\3\uffff\1\11\1\uffff\1\11\5\uffff\2"+
-            "\11\4\uffff\1\10\1\11\1\uffff\1\11\1\uffff\1\7\1\11\21\uffff"+
+            "\1\11\3\uffff\14\11\1\6\3\uffff\1\11\1\uffff\1\11\5\uffff"+
+            "\2\11\4\uffff\1\10\1\11\1\uffff\1\11\1\uffff\1\7\1\11\21\uffff"+
             "\1\11",
             "",
             "\1\12",
             "",
             "",
             "",
-            "\1\11\3\uffff\14\11\1\6\3\uffff\1\11\1\uffff\1\11\5\uffff\2"+
-            "\11\4\uffff\1\10\1\11\1\uffff\1\11\1\uffff\1\7\1\11\21\uffff"+
+            "\1\11\3\uffff\14\11\1\6\3\uffff\1\11\1\uffff\1\11\5\uffff"+
+            "\2\11\4\uffff\1\10\1\11\1\uffff\1\11\1\uffff\1\7\1\11\21\uffff"+
             "\1\11"
     };
 

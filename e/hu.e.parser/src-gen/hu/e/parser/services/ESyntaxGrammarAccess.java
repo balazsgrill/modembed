@@ -47,6 +47,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cIDTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
 		
 		//QualifiedName:
+		//
 		//	ID ("." ID)*;
 		public ParserRule getRule() { return rule; }
 
@@ -75,6 +76,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cREALTerminalRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
 		//LITERAL:
+		//
 		//	INT | HEXINT | BINARY | REAL;
 		public ParserRule getRule() { return rule; }
 
@@ -104,6 +106,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		/// **********************
 		// * Annotations
 		// *********************** / AnnotationDefinition:
+		//
 		//	"annotation" name=ID;
 		public ParserRule getRule() { return rule; }
 
@@ -129,6 +132,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cDefinitionAnnotationDefinitionIDTerminalRuleCall_1_0_1 = (RuleCall)cDefinitionAnnotationDefinitionCrossReference_1_0.eContents().get(1);
 		
 		//Annotation:
+		//
 		//	"#" definition=[AnnotationDefinition];
 		public ParserRule getRule() { return rule; }
 
@@ -177,54 +181,75 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		/// ***********************
 		// * CLASSES *
 		// *********************** / //Interface:
-		////	'interface' name=QualifiedName ';'
+		// //	'interface' name=QualifiedName ';'
+		//
+		//
 		////	('use' use+=[Library|QualifiedName]';')*
-		////	
-		////	(operations+=OperationSignature ';')*
-		////;
-		////
-		////Module:
+		// //	
+		// //	(operations+=OperationSignature ';')*
+		// //;
+		// //
+		// //Module:
+		//
+		//
 		////	'module' name=QualifiedName
-		////	';'
-		////	('use' use+=[Library|QualifiedName]';')*
-		////	(items+=ModuleItem)*
-		////;
-		////
+		// //	';'
+		// //	('use' use+=[Library|QualifiedName]';')*
+		// //	(items+=ModuleItem)*
+		// //;
+		// //
+		//
+		//
 		////ModuleItem:
-		////	Variable';' | 
-		////	ConfigVariable';' |
-		////	ConstantVariable';' |
-		////	Instance';' |
-		////	Socket';' |
+		// //	Variable';' | 
+		// //	ConfigVariable';' |
+		// //	ConstantVariable';' |
+		// //	Instance';' |
+		// //	Socket';' |
+		//
+		//
 		////	InterfaceImplementation |
-		////	Operation
-		////;
-		////
-		////InterfaceImplementation:
+		// //	Operation
+		// //;
+		// //
+		// //InterfaceImplementation:
+		//
+		//
 		////	'implement' type=[Interface|QualifiedName] name=ID '{'
-		////		(operations += Operation)*
-		////	'}'
-		////;
-		////
-		////Socket:
+		// //		(operations += Operation)*
+		// //	'}'
+		// //;
+		// //
+		// //Socket:
+		//
+		//
 		////	'socket' type=[Interface|QualifiedName] name=ID
-		////;
-		////
-		////Instance:
+		// //;
+		// //
+		// //Instance:
+		//
+		//
 		////	'instance' type=[Module|QualifiedName] name=ID 
-		////;
-		////
-		////ConfigVariable returns Variable:
+		// //;
+		// //
+		// //ConfigVariable returns Variable:
+		//
+		//
 		////	{ConfigVariable} 'config' type=TypeDef name=ID
-		////;
+		// //;
+		//
+		//
 		/// ***********************
 		// * LIBRARY *
 		// *********************** / Library:
+		//
 		//	"library" name=QualifiedName ("overrides" overrides+=[Library|QualifiedName] (","
+		//
 		//	overrides+=[Library|QualifiedName])*)? ";" ("use" use+=[Library|QualifiedName] ";")* items+=LibraryItem*;
 		public ParserRule getRule() { return rule; }
 
 		//"library" name=QualifiedName ("overrides" overrides+=[Library|QualifiedName] ("," overrides+=[Library|QualifiedName])*)?
+		//
 		//";" ("use" use+=[Library|QualifiedName] ";")* items+=LibraryItem*
 		public Group getGroup() { return cGroup; }
 
@@ -315,11 +340,14 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSemicolonKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
 		
 		//LibraryItem:
+		//
 		//	Type | Operation | Variable ";" | ConstantVariable ";" | RegisterVariable ";" | OperatorDefinition |
+		//
 		//	AnnotationDefinition ";";
 		public ParserRule getRule() { return rule; }
 
 		//Type | Operation | Variable ";" | ConstantVariable ";" | RegisterVariable ";" | OperatorDefinition |
+		//
 		//AnnotationDefinition ";"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
@@ -383,6 +411,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		/// ***********************
 		// * DATATYPES *
 		// *********************** / Type:
+		//
 		//	"type" name=ID "=" def=TypeDef ";";
 		public ParserRule getRule() { return rule; }
 
@@ -421,6 +450,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cRefTypeDefParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		
 		//TypeDef:
+		//
 		//	DataTypeDef | StructTypeDef | PointerTypeDef | ArrayTypeDef | RefTypeDef;
 		public ParserRule getRule() { return rule; }
 
@@ -452,6 +482,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cDefTypeDefParserRuleCall_2_0 = (RuleCall)cDefAssignment_2.eContents().get(0);
 		
 		//PointerTypeDef:
+		//
 		//	"pointer" "of" def=TypeDef;
 		public ParserRule getRule() { return rule; }
 
@@ -484,6 +515,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cDefTypeDefParserRuleCall_5_0 = (RuleCall)cDefAssignment_5.eContents().get(0);
 		
 		//ArrayTypeDef:
+		//
 		//	"array" "[" size=XExpression "]" "of" def=TypeDef;
 		public ParserRule getRule() { return rule; }
 
@@ -522,6 +554,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cTypeTypeQualifiedNameParserRuleCall_0_1 = (RuleCall)cTypeTypeCrossReference_0.eContents().get(1);
 		
 		//RefTypeDef:
+		//
 		//	type=[Type|QualifiedName];
 		public ParserRule getRule() { return rule; }
 
@@ -542,19 +575,20 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cFixedDataTypeDefParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//DataTypeDef:
+		//
 		//	IntegerDataTypeDef | //| FloatDataTypeDef
-		//	FixedDataTypeDef;
+		// FixedDataTypeDef;
 		public ParserRule getRule() { return rule; }
 
 		//IntegerDataTypeDef | //| FloatDataTypeDef
-		//FixedDataTypeDef
+		// FixedDataTypeDef
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//IntegerDataTypeDef
 		public RuleCall getIntegerDataTypeDefParserRuleCall_0() { return cIntegerDataTypeDefParserRuleCall_0; }
 
 		////| FloatDataTypeDef
-		//FixedDataTypeDef
+		// FixedDataTypeDef
 		public RuleCall getFixedDataTypeDefParserRuleCall_1() { return cFixedDataTypeDefParserRuleCall_1; }
 	}
 
@@ -571,9 +605,10 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cScaleREALTerminalRuleCall_5_0 = (RuleCall)cScaleAssignment_5.eContents().get(0);
 		
 		////FloatDataTypeDef:
-		////	'float' bits=INT 'bits'
-		////;
-		//FixedDataTypeDef:
+		// //	'float' bits=INT 'bits'
+		// //;
+		// FixedDataTypeDef:
+		//
 		//	"fixed" bits=INT "bits" "scale" "=" scale=REAL;
 		public ParserRule getRule() { return rule; }
 
@@ -615,6 +650,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cBitsKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
 		//IntegerDataTypeDef:
+		//
 		//	kind=IntegerKind bits=INT "bits";
 		public ParserRule getRule() { return rule; }
 
@@ -652,6 +688,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//StructTypeDef:
+		//
 		//	{StructTypeDef} "struct" "{" members+=StructTypeDefMember ("," members+=StructTypeDefMember)* "}";
 		public ParserRule getRule() { return rule; }
 
@@ -699,6 +736,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		
 		//StructTypeDefMember returns Variable:
+		//
 		//	{StructTypeDefMember} type=TypeDef name=ID;
 		public ParserRule getRule() { return rule; }
 
@@ -737,6 +775,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		/// *************************
 		// * GLOBAL VARIABLES
 		// ************************* / ConstantVariable returns Variable:
+		//
 		//	{ConstantVariable} "const" type=TypeDef name=ID "=" value=XExpression;
 		public ParserRule getRule() { return rule; }
 
@@ -785,6 +824,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cAddrXExpressionParserRuleCall_5_0 = (RuleCall)cAddrAssignment_5.eContents().get(0);
 		
 		//RegisterVariable returns Variable:
+		//
 		//	{RegisterVariable} "reg" type=TypeDef name=ID ":" addr=XExpression;
 		public ParserRule getRule() { return rule; }
 
@@ -832,6 +872,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		/// ***********************
 		// * Operation *
 		// *********************** / OperationStep:
+		//
 		//	InstructionWord | Label | Variable ";" | XTopLevelExpression;
 		public ParserRule getRule() { return rule; }
 
@@ -867,6 +908,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSemicolonKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//Label returns Variable:
+		//
 		//	{Label} "label" name=ID ";";
 		public ParserRule getRule() { return rule; }
 
@@ -898,6 +940,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cGreaterThanSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
 		//InstructionWord:
+		//
 		//	"<" sections+=WordSection+ ">";
 		public ParserRule getRule() { return rule; }
 
@@ -932,6 +975,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cShiftINTTerminalRuleCall_3_1_0 = (RuleCall)cShiftAssignment_3_1.eContents().get(0);
 		
 		//WordSection:
+		//
 		//	(LiteralValue | VariableReference) ":" size=INT (":" shift=INT)?;
 		public ParserRule getRule() { return rule; }
 
@@ -975,6 +1019,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cValueLITERALParserRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
 		
 		//LiteralValue:
+		//
 		//	value=LITERAL;
 		public ParserRule getRule() { return rule; }
 
@@ -994,6 +1039,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		
 		//Variable:
+		//
 		//	type=TypeDef name=ID;
 		public ParserRule getRule() { return rule; }
 
@@ -1020,6 +1066,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cVarVariableQualifiedNameParserRuleCall_0_1 = (RuleCall)cVarVariableCrossReference_0.eContents().get(1);
 		
 		//VariableReference:
+		//
 		//	var=[Variable|QualifiedName];
 		public ParserRule getRule() { return rule; }
 
@@ -1050,6 +1097,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//OperationCall:
+		//
 		//	operation=[Operation|QualifiedName] "(" (params+=OperationCallParameter ("," params+=OperationCallParameter)*)? ")";
 		public ParserRule getRule() { return rule; }
 
@@ -1098,6 +1146,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cXExpressionParserRuleCall = (RuleCall)rule.eContents().get(1);
 		
 		//OperationCallParameter:
+		//
 		//	XExpression;
 		public ParserRule getRule() { return rule; }
 
@@ -1122,6 +1171,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//OperationSignature returns Variable:
+		//
 		//	{OperationSignature} name=ID "(" (params+=ParameterVariable ("," params+=ParameterVariable)*)? ")";
 		public ParserRule getRule() { return rule; }
 
@@ -1194,11 +1244,14 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSemicolonKeyword_8_2 = (Keyword)cGroup_8.eContents().get(2);
 		
 		//Operation returns OperationSignature:
-		//	{Operation} name=ID "(" (params+=ParameterVariable ("," params+=ParameterVariable)*)? ")" "{" block=OperationBlock "}"
-		//	("returns" (return=XExpression | returnvar=Variable) ";")?;
+		//
+		//	{Operation} name=ID "(" (params+=ParameterVariable ("," params+=ParameterVariable)*)? ")" "{" block=OperationBlock
+		//
+		//	"}" ("returns" (return=XExpression | returnvar=Variable) ";")?;
 		public ParserRule getRule() { return rule; }
 
 		//{Operation} name=ID "(" (params+=ParameterVariable ("," params+=ParameterVariable)*)? ")" "{" block=OperationBlock "}"
+		//
 		//("returns" (return=XExpression | returnvar=Variable) ";")?
 		public Group getGroup() { return cGroup; }
 
@@ -1283,6 +1336,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cStepsOperationStepParserRuleCall_1_0 = (RuleCall)cStepsAssignment_1.eContents().get(0);
 		
 		//OperationBlock:
+		//
 		//	{OperationBlock} steps+=OperationStep*;
 		public ParserRule getRule() { return rule; }
 
@@ -1315,6 +1369,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cDefaultLITERALParserRuleCall_4_1_0 = (RuleCall)cDefaultAssignment_4_1.eContents().get(0);
 		
 		//ParameterVariable returns Variable:
+		//
 		//	{ParameterVariable} kind=ParameterKind? type=TypeDef name=ID ("=" default=LITERAL)?;
 		public ParserRule getRule() { return rule; }
 
@@ -1374,11 +1429,14 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//OperatorDefinition:
+		//
 		//	"operator" role=OperationRole "{" candidate+=[Operation|QualifiedName] ("," candidate+=[Operation|QualifiedName])*
+		//
 		//	","? "}";
 		public ParserRule getRule() { return rule; }
 
 		//"operator" role=OperationRole "{" candidate+=[Operation|QualifiedName] ("," candidate+=[Operation|QualifiedName])* ","?
+		//
 		//"}"
 		public Group getGroup() { return cGroup; }
 
@@ -1446,6 +1504,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		/// ********************
 		// * BINARY and LINKING
 		// ******************** / LinkedBinary:
+		//
 		//	"binary" name=QualifiedName type=BinaryType? ";" ("use" use+=[Library|QualifiedName] ";")* sections+=BinarySection*;
 		public ParserRule getRule() { return rule; }
 
@@ -1508,6 +1567,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSemicolonKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//BinarySection:
+		//
 		//	(FunctionBinarySection | ConstantBinarySection | ReferenceBinarySection) "at" start=XExpression ";";
 		public ParserRule getRule() { return rule; }
 
@@ -1590,16 +1650,25 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_28 = (Keyword)cGroup.eContents().get(28);
 		
 		//FunctionBinarySection:
+		//
 		//	"program" name=ID "(" "startAddr" "=" startAddr=LITERAL ";" "memwidth" "=" memwidth=LITERAL ";" "pointerType" "="
+		//
 		//	pointerType=TypeDef ";" "addressType" "=" addressType=TypeDef ";" (mems+=FunctionMemory ";")+
-		//	(optimizercalls+=OptimizerCall ";")* ")" "{" ("lib" lib+=[Library|QualifiedName] ";")* //| (instances+=LinkedInstance )
-		//	"link" "{" do=OperationBlock "}" "}";
+		//
+		//	(optimizercalls+=OptimizerCall ";")* ")" "{" ("lib" lib+=[Library|QualifiedName] ";")*
+		//
+		//	//| (instances+=LinkedInstance )
+		// "link" "{" do=OperationBlock "}" "}";
 		public ParserRule getRule() { return rule; }
 
 		//"program" name=ID "(" "startAddr" "=" startAddr=LITERAL ";" "memwidth" "=" memwidth=LITERAL ";" "pointerType" "="
+		//
 		//pointerType=TypeDef ";" "addressType" "=" addressType=TypeDef ";" (mems+=FunctionMemory ";")+
-		//(optimizercalls+=OptimizerCall ";")* ")" "{" ("lib" lib+=[Library|QualifiedName] ";")* //| (instances+=LinkedInstance )
-		//"link" "{" do=OperationBlock "}" "}"
+		//
+		//(optimizercalls+=OptimizerCall ";")* ")" "{" ("lib" lib+=[Library|QualifiedName] ";")*
+		//
+		////| (instances+=LinkedInstance )
+		// "link" "{" do=OperationBlock "}" "}"
 		public Group getGroup() { return cGroup; }
 
 		//"program"
@@ -1749,6 +1818,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cOptimizerSTRINGTerminalRuleCall_1_0 = (RuleCall)cOptimizerAssignment_1.eContents().get(0);
 		
 		//OptimizerCall:
+		//
 		//	"optimize" optimizer=STRING;
 		public ParserRule getRule() { return rule; }
 
@@ -1776,21 +1846,28 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cEndLITERALParserRuleCall_3_0 = (RuleCall)cEndAssignment_3.eContents().get(0);
 		
 		////LinkedInstance returns Instance:
-		////	{LinkedInstance} type=[Module|QualifiedName] name=ID '{'
-		////			( 
+		// //	{LinkedInstance} type=[Module|QualifiedName] name=ID '{'
+		// //			( 
+		//
+		//
 		////			(links+=ReferenceLink | confs+=InstanceConfig)	
-		////			';')*
-		////		'}'
-		////;
-		////
-		////ReferenceLink:
+		// //			';')*
+		// //		'}'
+		// //;
+		// //
+		// //ReferenceLink:
+		//
+		//
 		////	ref=[Socket|ID] ':' inst=[LinkedInstance|ID]
-		////;
-		////
-		////InstanceConfig:
+		// //;
+		// //
+		// //InstanceConfig:
+		//
+		//
 		////	conf=[ConfigVariable|ID] '=' value=XExpression
-		////;
-		//FunctionMemory:
+		// //;
+		// FunctionMemory:
+		//
 		//	"mem" start=LITERAL ".." end=LITERAL;
 		public ParserRule getRule() { return rule; }
 
@@ -1828,6 +1905,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//ConstantBinarySection:
+		//
 		//	"data" "{" (data+=XExpression ";")+ "}";
 		public ParserRule getRule() { return rule; }
 
@@ -1865,6 +1943,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cIncLinkedBinaryQualifiedNameParserRuleCall_1_0_1 = (RuleCall)cIncLinkedBinaryCrossReference_1_0.eContents().get(1);
 		
 		//ReferenceBinarySection:
+		//
 		//	"include" inc=[LinkedBinary|QualifiedName];
 		public ParserRule getRule() { return rule; }
 
@@ -1896,6 +1975,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		/// ********************
 		// * INFIX SYNTAX
 		// ********************** / XExpression:
+		//
 		//	XExpression6 (":" type=TypeDef)?;
 		public ParserRule getRule() { return rule; }
 
@@ -1930,11 +2010,14 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cXSizeOfExpressionParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
 		
 		//XPrimaryExpression:
+		//
 		//	XExpressionLiteral | XParenthesizedExpression | XIsLiteralExpression | VariableReference | OperationCall |
+		//
 		//	XStructExpression | XSizeOfExpression;
 		public ParserRule getRule() { return rule; }
 
 		//XExpressionLiteral | XParenthesizedExpression | XIsLiteralExpression | VariableReference | OperationCall |
+		//
 		//XStructExpression | XSizeOfExpression
 		public Alternatives getAlternatives() { return cAlternatives; }
 
@@ -1970,6 +2053,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//XSizeOfExpression:
+		//
 		//	"sizeof" "(" type=TypeDef ")";
 		public ParserRule getRule() { return rule; }
 
@@ -2009,6 +2093,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//XStructExpression:
+		//
 		//	type=[Type|QualifiedName] "{" values+=XExpression ("," values+=XExpression)* ","? "}";
 		public ParserRule getRule() { return rule; }
 
@@ -2061,6 +2146,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cAXExpression0ParserRuleCall_1_0 = (RuleCall)cAAssignment_1.eContents().get(0);
 		
 		//XExpression1:
+		//
 		//	operator+=UNARY_OPERATOR* a=XExpression0;
 		public ParserRule getRule() { return rule; }
 
@@ -2091,6 +2177,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cMemberIDTerminalRuleCall_1_1_0 = (RuleCall)cMemberAssignment_1_1.eContents().get(0);
 		
 		//XExpression0:
+		//
 		//	a=XExpressionM1 ("->" member+=ID)*;
 		public ParserRule getRule() { return rule; }
 
@@ -2128,6 +2215,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightSquareBracketKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
 		
 		//XExpressionM1:
+		//
 		//	a=XPrimaryExpression ("[" index+=XExpression "]")*;
 		public ParserRule getRule() { return rule; }
 
@@ -2168,6 +2256,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cBXExpression2ParserRuleCall_1_1_0 = (RuleCall)cBAssignment_1_1.eContents().get(0);
 		
 		//XExpression2:
+		//
 		//	a=XExpression1 (=> op+=MULTIPLICATIVE_OPERATOR b+=XExpression2)*;
 		public ParserRule getRule() { return rule; }
 
@@ -2208,6 +2297,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cBXExpression2ParserRuleCall_1_1_0 = (RuleCall)cBAssignment_1_1.eContents().get(0);
 		
 		//XExpression3:
+		//
 		//	a=XExpression2 (=> op+=ADDITIVE_OPERATOR b+=XExpression2)*;
 		public ParserRule getRule() { return rule; }
 
@@ -2248,6 +2338,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cBXExpression3ParserRuleCall_1_1_0 = (RuleCall)cBAssignment_1_1.eContents().get(0);
 		
 		//XExpression4:
+		//
 		//	a=XExpression3 (=> op+=EQUALITY_OPERATOR b+=XExpression3)*;
 		public ParserRule getRule() { return rule; }
 
@@ -2288,6 +2379,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cBXExpression4ParserRuleCall_1_1_0 = (RuleCall)cBAssignment_1_1.eContents().get(0);
 		
 		//XExpression5:
+		//
 		//	a=XExpression4 (=> op+=BOOLEAN_OPERATOR b+=XExpression4)*;
 		public ParserRule getRule() { return rule; }
 
@@ -2327,6 +2419,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cAXExpression5ParserRuleCall_1_0 = (RuleCall)cAAssignment_1.eContents().get(0);
 		
 		//XExpression6:
+		//
 		//	(=> ref+=VariableReference OpSingleAssign)* a=XExpression5;
 		public ParserRule getRule() { return rule; }
 
@@ -2358,6 +2451,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cValueLITERALParserRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
 		
 		//XExpressionLiteral:
+		//
 		//	value=LITERAL;
 		public ParserRule getRule() { return rule; }
 
@@ -2381,6 +2475,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cXWhileExpressionParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
 		//XTopLevelExpression:
+		//
 		//	Annotation ";" | XExpression ";" | XIfExpression | XWhileExpression;
 		public ParserRule getRule() { return rule; }
 
@@ -2417,6 +2512,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cEqualsSignKeyword = (Keyword)rule.eContents().get(1);
 		
 		//OpSingleAssign:
+		//
 		//	"=";
 		public ParserRule getRule() { return rule; }
 
@@ -2434,6 +2530,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//XIsLiteralExpression:
+		//
 		//	"isliteral" "(" ref=VariableReference ")";
 		public ParserRule getRule() { return rule; }
 
@@ -2476,6 +2573,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_7_3 = (Keyword)cGroup_7.eContents().get(3);
 		
 		//XIfExpression:
+		//
 		//	"if" "(" if=XExpression ")" "{" then=OperationBlock "}" ("else" "{" else=OperationBlock "}")?;
 		public ParserRule getRule() { return rule; }
 
@@ -2542,6 +2640,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//XWhileExpression:
+		//
 		//	"while" "(" cond=XExpression ")" "{" do=OperationBlock "}";
 		public ParserRule getRule() { return rule; }
 
@@ -2585,6 +2684,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
 		//XParenthesizedExpression:
+		//
 		//	"(" a=XExpression ")";
 		public ParserRule getRule() { return rule; }
 
@@ -2614,6 +2714,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSIGNEDSignedKeyword_1_0 = (Keyword)cSIGNEDEnumLiteralDeclaration_1.eContents().get(0);
 		
 		//enum IntegerKind:
+		//
 		//	UNSIGNED="unsigned" | SIGNED="signed";
 		public EnumRule getRule() { return rule; }
 
@@ -2644,6 +2745,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cCONSTConstKeyword_2_0 = (Keyword)cCONSTEnumLiteralDeclaration_2.eContents().get(0);
 		
 		//enum ParameterKind:
+		//
 		//	ANY="default" | VAR="var" | CONST="const";
 		public EnumRule getRule() { return rule; }
 
@@ -2716,11 +2818,14 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		/// ****************
 		// * OPERATORS
 		// ****************** / enum OperationRole:
+		//
 		//	SET | ADD | SUBTRACT | AND | OR | XOR | EQUALS | BRANCH | UC_GOTO | NOT | INDIRECTION | CLEAR | INCREMENT | DECREMENT
+		//
 		//	| DIV | MOD | LT | LTE | GT | GTE;
 		public EnumRule getRule() { return rule; }
 
 		//SET | ADD | SUBTRACT | AND | OR | XOR | EQUALS | BRANCH | UC_GOTO | NOT | INDIRECTION | CLEAR | INCREMENT | DECREMENT |
+		//
 		//DIV | MOD | LT | LTE | GT | GTE
 		public Alternatives getAlternatives() { return cAlternatives; }
 
@@ -2856,6 +2961,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSRECHEXFILESRECHexfileKeyword_2_0 = (Keyword)cSRECHEXFILEEnumLiteralDeclaration_2.eContents().get(0);
 		
 		//enum BinaryType:
+		//
 		//	DEFAULT="default" | INTELHEXFILE="intelHexfile" | SRECHEXFILE="SRECHexfile";
 		public EnumRule getRule() { return rule; }
 
@@ -2894,6 +3000,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cDEREFERENCECommercialAtKeyword_3_0 = (Keyword)cDEREFERENCEEnumLiteralDeclaration_3.eContents().get(0);
 		
 		//enum UNARY_OPERATOR:
+		//
 		//	MINUS="-" | NOT="!" | REFERENCE="&" | DEREFERENCE="@";
 		public EnumRule getRule() { return rule; }
 
@@ -2936,6 +3043,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cMODPercentSignKeyword_2_0 = (Keyword)cMODEnumLiteralDeclaration_2.eContents().get(0);
 		
 		//enum MULTIPLICATIVE_OPERATOR:
+		//
 		//	MUL="*" | DIV="/" | MOD="%";
 		public EnumRule getRule() { return rule; }
 
@@ -2970,6 +3078,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cMINUSHyphenMinusKeyword_1_0 = (Keyword)cMINUSEnumLiteralDeclaration_1.eContents().get(0);
 		
 		//enum ADDITIVE_OPERATOR:
+		//
 		//	ADD="+" | MINUS="-";
 		public EnumRule getRule() { return rule; }
 
@@ -3006,6 +3115,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cLTLessThanSignKeyword_5_0 = (Keyword)cLTEnumLiteralDeclaration_5.eContents().get(0);
 		
 		//enum EQUALITY_OPERATOR:
+		//
 		//	EQUALS="==" | NOTEQUALS="!=" | GTE=">=" | LTE="<=" | GT=">" | LT="<";
 		public EnumRule getRule() { return rule; }
 
@@ -3058,6 +3168,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cANDAmpersandAmpersandKeyword_1_0 = (Keyword)cANDEnumLiteralDeclaration_1.eContents().get(0);
 		
 		//enum BOOLEAN_OPERATOR:
+		//
 		//	OR="||" | AND="&&";
 		public EnumRule getRule() { return rule; }
 
@@ -3197,6 +3308,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//QualifiedName:
+	//
 	//	ID ("." ID)*;
 	public QualifiedNameElements getQualifiedNameAccess() {
 		return (pQualifiedName != null) ? pQualifiedName : (pQualifiedName = new QualifiedNameElements());
@@ -3207,29 +3319,35 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	////ReferenceID:
-	////	ID ('->' ID)*
-	////;
-	/// ***********************
+	// //	ID ('->' ID)*
+	// //;
+	// / ***********************
 	// * LITERALS *
-	// *********************** / terminal HEXINT returns ecore::EInt:
+	// *********************** / terminal HEXINT
+	//
+	//returns ecore::EInt:
+	//
 	//	"0x" ("0".."9" | "a".."f" | "A".."F")+;
 	public TerminalRule getHEXINTRule() {
 		return (tHEXINT != null) ? tHEXINT : (tHEXINT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "HEXINT"));
 	} 
 
 	//terminal BINARY returns ecore::EInt:
+	//
 	//	"b" ("0" | "1")+;
 	public TerminalRule getBINARYRule() {
 		return (tBINARY != null) ? tBINARY : (tBINARY = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "BINARY"));
 	} 
 
 	//terminal REAL returns ecore::EBigDecimal:
+	//
 	//	INT "." INT?;
 	public TerminalRule getREALRule() {
 		return (tREAL != null) ? tREAL : (tREAL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "REAL"));
 	} 
 
 	//LITERAL:
+	//
 	//	INT | HEXINT | BINARY | REAL;
 	public LITERALElements getLITERALAccess() {
 		return (pLITERAL != null) ? pLITERAL : (pLITERAL = new LITERALElements());
@@ -3242,6 +3360,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	/// **********************
 	// * Annotations
 	// *********************** / AnnotationDefinition:
+	//
 	//	"annotation" name=ID;
 	public AnnotationDefinitionElements getAnnotationDefinitionAccess() {
 		return (pAnnotationDefinition != null) ? pAnnotationDefinition : (pAnnotationDefinition = new AnnotationDefinitionElements());
@@ -3252,6 +3371,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Annotation:
+	//
 	//	"#" definition=[AnnotationDefinition];
 	public AnnotationElements getAnnotationAccess() {
 		return (pAnnotation != null) ? pAnnotation : (pAnnotation = new AnnotationElements());
@@ -3264,50 +3384,70 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	/// ***********************
 	// * CLASSES *
 	// *********************** / //Interface:
-	////	'interface' name=QualifiedName ';'
+	// //	'interface' name=QualifiedName ';'
+	//
+	//
 	////	('use' use+=[Library|QualifiedName]';')*
-	////	
-	////	(operations+=OperationSignature ';')*
-	////;
-	////
-	////Module:
+	// //	
+	// //	(operations+=OperationSignature ';')*
+	// //;
+	// //
+	// //Module:
+	//
+	//
 	////	'module' name=QualifiedName
-	////	';'
-	////	('use' use+=[Library|QualifiedName]';')*
-	////	(items+=ModuleItem)*
-	////;
-	////
+	// //	';'
+	// //	('use' use+=[Library|QualifiedName]';')*
+	// //	(items+=ModuleItem)*
+	// //;
+	// //
+	//
+	//
 	////ModuleItem:
-	////	Variable';' | 
-	////	ConfigVariable';' |
-	////	ConstantVariable';' |
-	////	Instance';' |
-	////	Socket';' |
+	// //	Variable';' | 
+	// //	ConfigVariable';' |
+	// //	ConstantVariable';' |
+	// //	Instance';' |
+	// //	Socket';' |
+	//
+	//
 	////	InterfaceImplementation |
-	////	Operation
-	////;
-	////
-	////InterfaceImplementation:
+	// //	Operation
+	// //;
+	// //
+	// //InterfaceImplementation:
+	//
+	//
 	////	'implement' type=[Interface|QualifiedName] name=ID '{'
-	////		(operations += Operation)*
-	////	'}'
-	////;
-	////
-	////Socket:
+	// //		(operations += Operation)*
+	// //	'}'
+	// //;
+	// //
+	// //Socket:
+	//
+	//
 	////	'socket' type=[Interface|QualifiedName] name=ID
-	////;
-	////
-	////Instance:
+	// //;
+	// //
+	// //Instance:
+	//
+	//
 	////	'instance' type=[Module|QualifiedName] name=ID 
-	////;
-	////
-	////ConfigVariable returns Variable:
+	// //;
+	// //
+	// //ConfigVariable returns Variable:
+	//
+	//
 	////	{ConfigVariable} 'config' type=TypeDef name=ID
-	////;
+	// //;
+	//
+	//
 	/// ***********************
 	// * LIBRARY *
 	// *********************** / Library:
+	//
 	//	"library" name=QualifiedName ("overrides" overrides+=[Library|QualifiedName] (","
+	//
 	//	overrides+=[Library|QualifiedName])*)? ";" ("use" use+=[Library|QualifiedName] ";")* items+=LibraryItem*;
 	public LibraryElements getLibraryAccess() {
 		return (pLibrary != null) ? pLibrary : (pLibrary = new LibraryElements());
@@ -3318,7 +3458,9 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//LibraryItem:
+	//
 	//	Type | Operation | Variable ";" | ConstantVariable ";" | RegisterVariable ";" | OperatorDefinition |
+	//
 	//	AnnotationDefinition ";";
 	public LibraryItemElements getLibraryItemAccess() {
 		return (pLibraryItem != null) ? pLibraryItem : (pLibraryItem = new LibraryItemElements());
@@ -3331,6 +3473,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	/// ***********************
 	// * DATATYPES *
 	// *********************** / Type:
+	//
 	//	"type" name=ID "=" def=TypeDef ";";
 	public TypeElements getTypeAccess() {
 		return (pType != null) ? pType : (pType = new TypeElements());
@@ -3341,6 +3484,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//TypeDef:
+	//
 	//	DataTypeDef | StructTypeDef | PointerTypeDef | ArrayTypeDef | RefTypeDef;
 	public TypeDefElements getTypeDefAccess() {
 		return (pTypeDef != null) ? pTypeDef : (pTypeDef = new TypeDefElements());
@@ -3351,6 +3495,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//PointerTypeDef:
+	//
 	//	"pointer" "of" def=TypeDef;
 	public PointerTypeDefElements getPointerTypeDefAccess() {
 		return (pPointerTypeDef != null) ? pPointerTypeDef : (pPointerTypeDef = new PointerTypeDefElements());
@@ -3361,6 +3506,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ArrayTypeDef:
+	//
 	//	"array" "[" size=XExpression "]" "of" def=TypeDef;
 	public ArrayTypeDefElements getArrayTypeDefAccess() {
 		return (pArrayTypeDef != null) ? pArrayTypeDef : (pArrayTypeDef = new ArrayTypeDefElements());
@@ -3371,6 +3517,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//RefTypeDef:
+	//
 	//	type=[Type|QualifiedName];
 	public RefTypeDefElements getRefTypeDefAccess() {
 		return (pRefTypeDef != null) ? pRefTypeDef : (pRefTypeDef = new RefTypeDefElements());
@@ -3381,8 +3528,9 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//DataTypeDef:
+	//
 	//	IntegerDataTypeDef | //| FloatDataTypeDef
-	//	FixedDataTypeDef;
+	// FixedDataTypeDef;
 	public DataTypeDefElements getDataTypeDefAccess() {
 		return (pDataTypeDef != null) ? pDataTypeDef : (pDataTypeDef = new DataTypeDefElements());
 	}
@@ -3392,9 +3540,10 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	////FloatDataTypeDef:
-	////	'float' bits=INT 'bits'
-	////;
-	//FixedDataTypeDef:
+	// //	'float' bits=INT 'bits'
+	// //;
+	// FixedDataTypeDef:
+	//
 	//	"fixed" bits=INT "bits" "scale" "=" scale=REAL;
 	public FixedDataTypeDefElements getFixedDataTypeDefAccess() {
 		return (pFixedDataTypeDef != null) ? pFixedDataTypeDef : (pFixedDataTypeDef = new FixedDataTypeDefElements());
@@ -3405,6 +3554,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//IntegerDataTypeDef:
+	//
 	//	kind=IntegerKind bits=INT "bits";
 	public IntegerDataTypeDefElements getIntegerDataTypeDefAccess() {
 		return (pIntegerDataTypeDef != null) ? pIntegerDataTypeDef : (pIntegerDataTypeDef = new IntegerDataTypeDefElements());
@@ -3415,6 +3565,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//enum IntegerKind:
+	//
 	//	UNSIGNED="unsigned" | SIGNED="signed";
 	public IntegerKindElements getIntegerKindAccess() {
 		return (unknownRuleIntegerKind != null) ? unknownRuleIntegerKind : (unknownRuleIntegerKind = new IntegerKindElements());
@@ -3425,6 +3576,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//StructTypeDef:
+	//
 	//	{StructTypeDef} "struct" "{" members+=StructTypeDefMember ("," members+=StructTypeDefMember)* "}";
 	public StructTypeDefElements getStructTypeDefAccess() {
 		return (pStructTypeDef != null) ? pStructTypeDef : (pStructTypeDef = new StructTypeDefElements());
@@ -3435,6 +3587,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//StructTypeDefMember returns Variable:
+	//
 	//	{StructTypeDefMember} type=TypeDef name=ID;
 	public StructTypeDefMemberElements getStructTypeDefMemberAccess() {
 		return (pStructTypeDefMember != null) ? pStructTypeDefMember : (pStructTypeDefMember = new StructTypeDefMemberElements());
@@ -3447,6 +3600,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	/// *************************
 	// * GLOBAL VARIABLES
 	// ************************* / ConstantVariable returns Variable:
+	//
 	//	{ConstantVariable} "const" type=TypeDef name=ID "=" value=XExpression;
 	public ConstantVariableElements getConstantVariableAccess() {
 		return (pConstantVariable != null) ? pConstantVariable : (pConstantVariable = new ConstantVariableElements());
@@ -3457,6 +3611,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//RegisterVariable returns Variable:
+	//
 	//	{RegisterVariable} "reg" type=TypeDef name=ID ":" addr=XExpression;
 	public RegisterVariableElements getRegisterVariableAccess() {
 		return (pRegisterVariable != null) ? pRegisterVariable : (pRegisterVariable = new RegisterVariableElements());
@@ -3469,6 +3624,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	/// ***********************
 	// * Operation *
 	// *********************** / OperationStep:
+	//
 	//	InstructionWord | Label | Variable ";" | XTopLevelExpression;
 	public OperationStepElements getOperationStepAccess() {
 		return (pOperationStep != null) ? pOperationStep : (pOperationStep = new OperationStepElements());
@@ -3479,6 +3635,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Label returns Variable:
+	//
 	//	{Label} "label" name=ID ";";
 	public LabelElements getLabelAccess() {
 		return (pLabel != null) ? pLabel : (pLabel = new LabelElements());
@@ -3489,6 +3646,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//InstructionWord:
+	//
 	//	"<" sections+=WordSection+ ">";
 	public InstructionWordElements getInstructionWordAccess() {
 		return (pInstructionWord != null) ? pInstructionWord : (pInstructionWord = new InstructionWordElements());
@@ -3499,6 +3657,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//WordSection:
+	//
 	//	(LiteralValue | VariableReference) ":" size=INT (":" shift=INT)?;
 	public WordSectionElements getWordSectionAccess() {
 		return (pWordSection != null) ? pWordSection : (pWordSection = new WordSectionElements());
@@ -3509,6 +3668,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//LiteralValue:
+	//
 	//	value=LITERAL;
 	public LiteralValueElements getLiteralValueAccess() {
 		return (pLiteralValue != null) ? pLiteralValue : (pLiteralValue = new LiteralValueElements());
@@ -3519,6 +3679,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Variable:
+	//
 	//	type=TypeDef name=ID;
 	public VariableElements getVariableAccess() {
 		return (pVariable != null) ? pVariable : (pVariable = new VariableElements());
@@ -3529,6 +3690,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//VariableReference:
+	//
 	//	var=[Variable|QualifiedName];
 	public VariableReferenceElements getVariableReferenceAccess() {
 		return (pVariableReference != null) ? pVariableReference : (pVariableReference = new VariableReferenceElements());
@@ -3539,6 +3701,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//OperationCall:
+	//
 	//	operation=[Operation|QualifiedName] "(" (params+=OperationCallParameter ("," params+=OperationCallParameter)*)? ")";
 	public OperationCallElements getOperationCallAccess() {
 		return (pOperationCall != null) ? pOperationCall : (pOperationCall = new OperationCallElements());
@@ -3549,6 +3712,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//OperationCallParameter:
+	//
 	//	XExpression;
 	public OperationCallParameterElements getOperationCallParameterAccess() {
 		return (pOperationCallParameter != null) ? pOperationCallParameter : (pOperationCallParameter = new OperationCallParameterElements());
@@ -3559,6 +3723,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//OperationSignature returns Variable:
+	//
 	//	{OperationSignature} name=ID "(" (params+=ParameterVariable ("," params+=ParameterVariable)*)? ")";
 	public OperationSignatureElements getOperationSignatureAccess() {
 		return (pOperationSignature != null) ? pOperationSignature : (pOperationSignature = new OperationSignatureElements());
@@ -3569,8 +3734,10 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Operation returns OperationSignature:
-	//	{Operation} name=ID "(" (params+=ParameterVariable ("," params+=ParameterVariable)*)? ")" "{" block=OperationBlock "}"
-	//	("returns" (return=XExpression | returnvar=Variable) ";")?;
+	//
+	//	{Operation} name=ID "(" (params+=ParameterVariable ("," params+=ParameterVariable)*)? ")" "{" block=OperationBlock
+	//
+	//	"}" ("returns" (return=XExpression | returnvar=Variable) ";")?;
 	public OperationElements getOperationAccess() {
 		return (pOperation != null) ? pOperation : (pOperation = new OperationElements());
 	}
@@ -3580,6 +3747,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//OperationBlock:
+	//
 	//	{OperationBlock} steps+=OperationStep*;
 	public OperationBlockElements getOperationBlockAccess() {
 		return (pOperationBlock != null) ? pOperationBlock : (pOperationBlock = new OperationBlockElements());
@@ -3590,6 +3758,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ParameterVariable returns Variable:
+	//
 	//	{ParameterVariable} kind=ParameterKind? type=TypeDef name=ID ("=" default=LITERAL)?;
 	public ParameterVariableElements getParameterVariableAccess() {
 		return (pParameterVariable != null) ? pParameterVariable : (pParameterVariable = new ParameterVariableElements());
@@ -3600,6 +3769,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//enum ParameterKind:
+	//
 	//	ANY="default" | VAR="var" | CONST="const";
 	public ParameterKindElements getParameterKindAccess() {
 		return (unknownRuleParameterKind != null) ? unknownRuleParameterKind : (unknownRuleParameterKind = new ParameterKindElements());
@@ -3612,7 +3782,9 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	/// ****************
 	// * OPERATORS
 	// ****************** / enum OperationRole:
+	//
 	//	SET | ADD | SUBTRACT | AND | OR | XOR | EQUALS | BRANCH | UC_GOTO | NOT | INDIRECTION | CLEAR | INCREMENT | DECREMENT
+	//
 	//	| DIV | MOD | LT | LTE | GT | GTE;
 	public OperationRoleElements getOperationRoleAccess() {
 		return (unknownRuleOperationRole != null) ? unknownRuleOperationRole : (unknownRuleOperationRole = new OperationRoleElements());
@@ -3623,7 +3795,9 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//OperatorDefinition:
+	//
 	//	"operator" role=OperationRole "{" candidate+=[Operation|QualifiedName] ("," candidate+=[Operation|QualifiedName])*
+	//
 	//	","? "}";
 	public OperatorDefinitionElements getOperatorDefinitionAccess() {
 		return (pOperatorDefinition != null) ? pOperatorDefinition : (pOperatorDefinition = new OperatorDefinitionElements());
@@ -3636,6 +3810,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	/// ********************
 	// * BINARY and LINKING
 	// ******************** / LinkedBinary:
+	//
 	//	"binary" name=QualifiedName type=BinaryType? ";" ("use" use+=[Library|QualifiedName] ";")* sections+=BinarySection*;
 	public LinkedBinaryElements getLinkedBinaryAccess() {
 		return (pLinkedBinary != null) ? pLinkedBinary : (pLinkedBinary = new LinkedBinaryElements());
@@ -3646,6 +3821,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//enum BinaryType:
+	//
 	//	DEFAULT="default" | INTELHEXFILE="intelHexfile" | SRECHEXFILE="SRECHexfile";
 	public BinaryTypeElements getBinaryTypeAccess() {
 		return (unknownRuleBinaryType != null) ? unknownRuleBinaryType : (unknownRuleBinaryType = new BinaryTypeElements());
@@ -3656,6 +3832,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//BinarySection:
+	//
 	//	(FunctionBinarySection | ConstantBinarySection | ReferenceBinarySection) "at" start=XExpression ";";
 	public BinarySectionElements getBinarySectionAccess() {
 		return (pBinarySection != null) ? pBinarySection : (pBinarySection = new BinarySectionElements());
@@ -3666,10 +3843,15 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//FunctionBinarySection:
+	//
 	//	"program" name=ID "(" "startAddr" "=" startAddr=LITERAL ";" "memwidth" "=" memwidth=LITERAL ";" "pointerType" "="
+	//
 	//	pointerType=TypeDef ";" "addressType" "=" addressType=TypeDef ";" (mems+=FunctionMemory ";")+
-	//	(optimizercalls+=OptimizerCall ";")* ")" "{" ("lib" lib+=[Library|QualifiedName] ";")* //| (instances+=LinkedInstance )
-	//	"link" "{" do=OperationBlock "}" "}";
+	//
+	//	(optimizercalls+=OptimizerCall ";")* ")" "{" ("lib" lib+=[Library|QualifiedName] ";")*
+	//
+	//	//| (instances+=LinkedInstance )
+	// "link" "{" do=OperationBlock "}" "}";
 	public FunctionBinarySectionElements getFunctionBinarySectionAccess() {
 		return (pFunctionBinarySection != null) ? pFunctionBinarySection : (pFunctionBinarySection = new FunctionBinarySectionElements());
 	}
@@ -3679,6 +3861,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//OptimizerCall:
+	//
 	//	"optimize" optimizer=STRING;
 	public OptimizerCallElements getOptimizerCallAccess() {
 		return (pOptimizerCall != null) ? pOptimizerCall : (pOptimizerCall = new OptimizerCallElements());
@@ -3689,21 +3872,28 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	////LinkedInstance returns Instance:
-	////	{LinkedInstance} type=[Module|QualifiedName] name=ID '{'
-	////			( 
+	// //	{LinkedInstance} type=[Module|QualifiedName] name=ID '{'
+	// //			( 
+	//
+	//
 	////			(links+=ReferenceLink | confs+=InstanceConfig)	
-	////			';')*
-	////		'}'
-	////;
-	////
-	////ReferenceLink:
+	// //			';')*
+	// //		'}'
+	// //;
+	// //
+	// //ReferenceLink:
+	//
+	//
 	////	ref=[Socket|ID] ':' inst=[LinkedInstance|ID]
-	////;
-	////
-	////InstanceConfig:
+	// //;
+	// //
+	// //InstanceConfig:
+	//
+	//
 	////	conf=[ConfigVariable|ID] '=' value=XExpression
-	////;
-	//FunctionMemory:
+	// //;
+	// FunctionMemory:
+	//
 	//	"mem" start=LITERAL ".." end=LITERAL;
 	public FunctionMemoryElements getFunctionMemoryAccess() {
 		return (pFunctionMemory != null) ? pFunctionMemory : (pFunctionMemory = new FunctionMemoryElements());
@@ -3714,6 +3904,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ConstantBinarySection:
+	//
 	//	"data" "{" (data+=XExpression ";")+ "}";
 	public ConstantBinarySectionElements getConstantBinarySectionAccess() {
 		return (pConstantBinarySection != null) ? pConstantBinarySection : (pConstantBinarySection = new ConstantBinarySectionElements());
@@ -3724,6 +3915,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ReferenceBinarySection:
+	//
 	//	"include" inc=[LinkedBinary|QualifiedName];
 	public ReferenceBinarySectionElements getReferenceBinarySectionAccess() {
 		return (pReferenceBinarySection != null) ? pReferenceBinarySection : (pReferenceBinarySection = new ReferenceBinarySectionElements());
@@ -3736,6 +3928,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	/// ********************
 	// * INFIX SYNTAX
 	// ********************** / XExpression:
+	//
 	//	XExpression6 (":" type=TypeDef)?;
 	public XExpressionElements getXExpressionAccess() {
 		return (pXExpression != null) ? pXExpression : (pXExpression = new XExpressionElements());
@@ -3746,7 +3939,9 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//XPrimaryExpression:
+	//
 	//	XExpressionLiteral | XParenthesizedExpression | XIsLiteralExpression | VariableReference | OperationCall |
+	//
 	//	XStructExpression | XSizeOfExpression;
 	public XPrimaryExpressionElements getXPrimaryExpressionAccess() {
 		return (pXPrimaryExpression != null) ? pXPrimaryExpression : (pXPrimaryExpression = new XPrimaryExpressionElements());
@@ -3757,6 +3952,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//XSizeOfExpression:
+	//
 	//	"sizeof" "(" type=TypeDef ")";
 	public XSizeOfExpressionElements getXSizeOfExpressionAccess() {
 		return (pXSizeOfExpression != null) ? pXSizeOfExpression : (pXSizeOfExpression = new XSizeOfExpressionElements());
@@ -3767,6 +3963,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//XStructExpression:
+	//
 	//	type=[Type|QualifiedName] "{" values+=XExpression ("," values+=XExpression)* ","? "}";
 	public XStructExpressionElements getXStructExpressionAccess() {
 		return (pXStructExpression != null) ? pXStructExpression : (pXStructExpression = new XStructExpressionElements());
@@ -3777,6 +3974,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//XExpression1:
+	//
 	//	operator+=UNARY_OPERATOR* a=XExpression0;
 	public XExpression1Elements getXExpression1Access() {
 		return (pXExpression1 != null) ? pXExpression1 : (pXExpression1 = new XExpression1Elements());
@@ -3787,6 +3985,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//XExpression0:
+	//
 	//	a=XExpressionM1 ("->" member+=ID)*;
 	public XExpression0Elements getXExpression0Access() {
 		return (pXExpression0 != null) ? pXExpression0 : (pXExpression0 = new XExpression0Elements());
@@ -3797,6 +3996,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//XExpressionM1:
+	//
 	//	a=XPrimaryExpression ("[" index+=XExpression "]")*;
 	public XExpressionM1Elements getXExpressionM1Access() {
 		return (pXExpressionM1 != null) ? pXExpressionM1 : (pXExpressionM1 = new XExpressionM1Elements());
@@ -3807,6 +4007,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//enum UNARY_OPERATOR:
+	//
 	//	MINUS="-" | NOT="!" | REFERENCE="&" | DEREFERENCE="@";
 	public UNARY_OPERATORElements getUNARY_OPERATORAccess() {
 		return (unknownRuleUNARY_OPERATOR != null) ? unknownRuleUNARY_OPERATOR : (unknownRuleUNARY_OPERATOR = new UNARY_OPERATORElements());
@@ -3817,6 +4018,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//XExpression2:
+	//
 	//	a=XExpression1 (=> op+=MULTIPLICATIVE_OPERATOR b+=XExpression2)*;
 	public XExpression2Elements getXExpression2Access() {
 		return (pXExpression2 != null) ? pXExpression2 : (pXExpression2 = new XExpression2Elements());
@@ -3827,6 +4029,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//enum MULTIPLICATIVE_OPERATOR:
+	//
 	//	MUL="*" | DIV="/" | MOD="%";
 	public MULTIPLICATIVE_OPERATORElements getMULTIPLICATIVE_OPERATORAccess() {
 		return (unknownRuleMULTIPLICATIVE_OPERATOR != null) ? unknownRuleMULTIPLICATIVE_OPERATOR : (unknownRuleMULTIPLICATIVE_OPERATOR = new MULTIPLICATIVE_OPERATORElements());
@@ -3837,6 +4040,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//XExpression3:
+	//
 	//	a=XExpression2 (=> op+=ADDITIVE_OPERATOR b+=XExpression2)*;
 	public XExpression3Elements getXExpression3Access() {
 		return (pXExpression3 != null) ? pXExpression3 : (pXExpression3 = new XExpression3Elements());
@@ -3847,6 +4051,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//enum ADDITIVE_OPERATOR:
+	//
 	//	ADD="+" | MINUS="-";
 	public ADDITIVE_OPERATORElements getADDITIVE_OPERATORAccess() {
 		return (unknownRuleADDITIVE_OPERATOR != null) ? unknownRuleADDITIVE_OPERATOR : (unknownRuleADDITIVE_OPERATOR = new ADDITIVE_OPERATORElements());
@@ -3857,6 +4062,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//XExpression4:
+	//
 	//	a=XExpression3 (=> op+=EQUALITY_OPERATOR b+=XExpression3)*;
 	public XExpression4Elements getXExpression4Access() {
 		return (pXExpression4 != null) ? pXExpression4 : (pXExpression4 = new XExpression4Elements());
@@ -3867,6 +4073,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//enum EQUALITY_OPERATOR:
+	//
 	//	EQUALS="==" | NOTEQUALS="!=" | GTE=">=" | LTE="<=" | GT=">" | LT="<";
 	public EQUALITY_OPERATORElements getEQUALITY_OPERATORAccess() {
 		return (unknownRuleEQUALITY_OPERATOR != null) ? unknownRuleEQUALITY_OPERATOR : (unknownRuleEQUALITY_OPERATOR = new EQUALITY_OPERATORElements());
@@ -3877,6 +4084,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//XExpression5:
+	//
 	//	a=XExpression4 (=> op+=BOOLEAN_OPERATOR b+=XExpression4)*;
 	public XExpression5Elements getXExpression5Access() {
 		return (pXExpression5 != null) ? pXExpression5 : (pXExpression5 = new XExpression5Elements());
@@ -3887,6 +4095,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//XExpression6:
+	//
 	//	(=> ref+=VariableReference OpSingleAssign)* a=XExpression5;
 	public XExpression6Elements getXExpression6Access() {
 		return (pXExpression6 != null) ? pXExpression6 : (pXExpression6 = new XExpression6Elements());
@@ -3897,6 +4106,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//enum BOOLEAN_OPERATOR:
+	//
 	//	OR="||" | AND="&&";
 	public BOOLEAN_OPERATORElements getBOOLEAN_OPERATORAccess() {
 		return (unknownRuleBOOLEAN_OPERATOR != null) ? unknownRuleBOOLEAN_OPERATOR : (unknownRuleBOOLEAN_OPERATOR = new BOOLEAN_OPERATORElements());
@@ -3907,6 +4117,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//XExpressionLiteral:
+	//
 	//	value=LITERAL;
 	public XExpressionLiteralElements getXExpressionLiteralAccess() {
 		return (pXExpressionLiteral != null) ? pXExpressionLiteral : (pXExpressionLiteral = new XExpressionLiteralElements());
@@ -3917,6 +4128,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//XTopLevelExpression:
+	//
 	//	Annotation ";" | XExpression ";" | XIfExpression | XWhileExpression;
 	public XTopLevelExpressionElements getXTopLevelExpressionAccess() {
 		return (pXTopLevelExpression != null) ? pXTopLevelExpression : (pXTopLevelExpression = new XTopLevelExpressionElements());
@@ -3927,6 +4139,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//OpSingleAssign:
+	//
 	//	"=";
 	public OpSingleAssignElements getOpSingleAssignAccess() {
 		return (pOpSingleAssign != null) ? pOpSingleAssign : (pOpSingleAssign = new OpSingleAssignElements());
@@ -3937,6 +4150,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//XIsLiteralExpression:
+	//
 	//	"isliteral" "(" ref=VariableReference ")";
 	public XIsLiteralExpressionElements getXIsLiteralExpressionAccess() {
 		return (pXIsLiteralExpression != null) ? pXIsLiteralExpression : (pXIsLiteralExpression = new XIsLiteralExpressionElements());
@@ -3947,6 +4161,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//XIfExpression:
+	//
 	//	"if" "(" if=XExpression ")" "{" then=OperationBlock "}" ("else" "{" else=OperationBlock "}")?;
 	public XIfExpressionElements getXIfExpressionAccess() {
 		return (pXIfExpression != null) ? pXIfExpression : (pXIfExpression = new XIfExpressionElements());
@@ -3957,6 +4172,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//XWhileExpression:
+	//
 	//	"while" "(" cond=XExpression ")" "{" do=OperationBlock "}";
 	public XWhileExpressionElements getXWhileExpressionAccess() {
 		return (pXWhileExpression != null) ? pXWhileExpression : (pXWhileExpression = new XWhileExpressionElements());
@@ -3967,6 +4183,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//XParenthesizedExpression:
+	//
 	//	"(" a=XExpression ")";
 	public XParenthesizedExpressionElements getXParenthesizedExpressionAccess() {
 		return (pXParenthesizedExpression != null) ? pXParenthesizedExpression : (pXParenthesizedExpression = new XParenthesizedExpressionElements());
@@ -3977,43 +4194,51 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//terminal ID:
+	//
 	//	"^"? ("a".."z" | "A".."Z" | "_") ("a".."z" | "A".."Z" | "_" | "0".."9")*;
 	public TerminalRule getIDRule() {
 		return gaTerminals.getIDRule();
 	} 
 
 	//terminal INT returns ecore::EInt:
+	//
 	//	"0".."9"+;
 	public TerminalRule getINTRule() {
 		return gaTerminals.getINTRule();
 	} 
 
 	//terminal STRING:
+	//
 	//	"\"" ("\\" ("b" | "t" | "n" | "f" | "r" | "u" | "\"" | "\'" | "\\") | !("\\" | "\""))* "\"" | "\'" ("\\" ("b" | "t" |
+	//
 	//	"n" | "f" | "r" | "u" | "\"" | "\'" | "\\") | !("\\" | "\'"))* "\'";
 	public TerminalRule getSTRINGRule() {
 		return gaTerminals.getSTRINGRule();
 	} 
 
 	//terminal ML_COMMENT:
+	//
 	//	"/ *"->"* /";
 	public TerminalRule getML_COMMENTRule() {
 		return gaTerminals.getML_COMMENTRule();
 	} 
 
 	//terminal SL_COMMENT:
+	//
 	//	"//" !("\n" | "\r")* ("\r"? "\n")?;
 	public TerminalRule getSL_COMMENTRule() {
 		return gaTerminals.getSL_COMMENTRule();
 	} 
 
 	//terminal WS:
+	//
 	//	(" " | "\t" | "\r" | "\n")+;
 	public TerminalRule getWSRule() {
 		return gaTerminals.getWSRule();
 	} 
 
 	//terminal ANY_OTHER:
+	//
 	//	.;
 	public TerminalRule getANY_OTHERRule() {
 		return gaTerminals.getANY_OTHERRule();

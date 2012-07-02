@@ -13199,9 +13199,9 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
     static final String DFA12_specialS =
         "\10\uffff}>";
     static final String[] DFA12_transitionS = {
-            "\1\4\4\5\7\uffff\1\5\7\uffff\1\3\1\uffff\1\3\2\uffff\1\3\2\uffff"+
-            "\1\3\5\uffff\1\2\1\1\1\uffff\1\5\21\uffff\1\5\1\uffff\2\5\1"+
-            "\uffff\1\5\2\3\30\uffff\4\5",
+            "\1\4\4\5\7\uffff\1\5\7\uffff\1\3\1\uffff\1\3\2\uffff\1\3\2"+
+            "\uffff\1\3\5\uffff\1\2\1\1\1\uffff\1\5\21\uffff\1\5\1\uffff"+
+            "\2\5\1\uffff\1\5\2\3\30\uffff\4\5",
             "",
             "",
             "",
@@ -13324,15 +13324,15 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
             "",
             "",
             "",
-            "\1\6\4\uffff\2\7\6\uffff\2\7\4\uffff\1\11\1\7\2\uffff\1\7\1"+
-            "\uffff\2\7\1\10\1\7\21\uffff\1\7\36\uffff\1\7\3\uffff\12\7",
+            "\1\6\4\uffff\2\7\6\uffff\2\7\4\uffff\1\11\1\7\2\uffff\1\7"+
+            "\1\uffff\2\7\1\10\1\7\21\uffff\1\7\36\uffff\1\7\3\uffff\12\7",
             "",
             "\1\12",
             "",
             "",
             "",
-            "\1\6\4\uffff\2\7\6\uffff\2\7\4\uffff\1\11\1\7\2\uffff\1\7\1"+
-            "\uffff\2\7\1\10\1\7\21\uffff\1\7\36\uffff\1\7\3\uffff\12\7"
+            "\1\6\4\uffff\2\7\6\uffff\2\7\4\uffff\1\11\1\7\2\uffff\1\7"+
+            "\1\uffff\2\7\1\10\1\7\21\uffff\1\7\36\uffff\1\7\3\uffff\12\7"
     };
 
     static final short[] DFA36_eot = DFA.unpackEncodedString(DFA36_eotS);
