@@ -179,67 +179,6 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cItemsLibraryItemParserRuleCall_5_0 = (RuleCall)cItemsAssignment_5.eContents().get(0);
 		
 		/// ***********************
-		// * CLASSES *
-		// *********************** / //Interface:
-		// //	'interface' name=QualifiedName ';'
-		//
-		//
-		////	('use' use+=[Library|QualifiedName]';')*
-		// //	
-		// //	(operations+=OperationSignature ';')*
-		// //;
-		// //
-		// //Module:
-		//
-		//
-		////	'module' name=QualifiedName
-		// //	';'
-		// //	('use' use+=[Library|QualifiedName]';')*
-		// //	(items+=ModuleItem)*
-		// //;
-		// //
-		//
-		//
-		////ModuleItem:
-		// //	Variable';' | 
-		// //	ConfigVariable';' |
-		// //	ConstantVariable';' |
-		// //	Instance';' |
-		// //	Socket';' |
-		//
-		//
-		////	InterfaceImplementation |
-		// //	Operation
-		// //;
-		// //
-		// //InterfaceImplementation:
-		//
-		//
-		////	'implement' type=[Interface|QualifiedName] name=ID '{'
-		// //		(operations += Operation)*
-		// //	'}'
-		// //;
-		// //
-		// //Socket:
-		//
-		//
-		////	'socket' type=[Interface|QualifiedName] name=ID
-		// //;
-		// //
-		// //Instance:
-		//
-		//
-		////	'instance' type=[Module|QualifiedName] name=ID 
-		// //;
-		// //
-		// //ConfigVariable returns Variable:
-		//
-		//
-		////	{ConfigVariable} 'config' type=TypeDef name=ID
-		// //;
-		//
-		//
-		/// ***********************
 		// * LIBRARY *
 		// *********************** / Library:
 		//
@@ -2804,16 +2743,20 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cDECREMENTDECREMENTKeyword_13_0 = (Keyword)cDECREMENTEnumLiteralDeclaration_13.eContents().get(0);
 		private final EnumLiteralDeclaration cDIVEnumLiteralDeclaration_14 = (EnumLiteralDeclaration)cAlternatives.eContents().get(14);
 		private final Keyword cDIVDIVKeyword_14_0 = (Keyword)cDIVEnumLiteralDeclaration_14.eContents().get(0);
-		private final EnumLiteralDeclaration cMODEnumLiteralDeclaration_15 = (EnumLiteralDeclaration)cAlternatives.eContents().get(15);
-		private final Keyword cMODMODKeyword_15_0 = (Keyword)cMODEnumLiteralDeclaration_15.eContents().get(0);
-		private final EnumLiteralDeclaration cLTEnumLiteralDeclaration_16 = (EnumLiteralDeclaration)cAlternatives.eContents().get(16);
-		private final Keyword cLTLTKeyword_16_0 = (Keyword)cLTEnumLiteralDeclaration_16.eContents().get(0);
-		private final EnumLiteralDeclaration cLTEEnumLiteralDeclaration_17 = (EnumLiteralDeclaration)cAlternatives.eContents().get(17);
-		private final Keyword cLTELTEKeyword_17_0 = (Keyword)cLTEEnumLiteralDeclaration_17.eContents().get(0);
-		private final EnumLiteralDeclaration cGTEnumLiteralDeclaration_18 = (EnumLiteralDeclaration)cAlternatives.eContents().get(18);
-		private final Keyword cGTGTKeyword_18_0 = (Keyword)cGTEnumLiteralDeclaration_18.eContents().get(0);
-		private final EnumLiteralDeclaration cGTEEnumLiteralDeclaration_19 = (EnumLiteralDeclaration)cAlternatives.eContents().get(19);
-		private final Keyword cGTEGTEKeyword_19_0 = (Keyword)cGTEEnumLiteralDeclaration_19.eContents().get(0);
+		private final EnumLiteralDeclaration cMULEnumLiteralDeclaration_15 = (EnumLiteralDeclaration)cAlternatives.eContents().get(15);
+		private final Keyword cMULMULKeyword_15_0 = (Keyword)cMULEnumLiteralDeclaration_15.eContents().get(0);
+		private final EnumLiteralDeclaration cMODEnumLiteralDeclaration_16 = (EnumLiteralDeclaration)cAlternatives.eContents().get(16);
+		private final Keyword cMODMODKeyword_16_0 = (Keyword)cMODEnumLiteralDeclaration_16.eContents().get(0);
+		private final EnumLiteralDeclaration cLTEnumLiteralDeclaration_17 = (EnumLiteralDeclaration)cAlternatives.eContents().get(17);
+		private final Keyword cLTLTKeyword_17_0 = (Keyword)cLTEnumLiteralDeclaration_17.eContents().get(0);
+		private final EnumLiteralDeclaration cLTEEnumLiteralDeclaration_18 = (EnumLiteralDeclaration)cAlternatives.eContents().get(18);
+		private final Keyword cLTELTEKeyword_18_0 = (Keyword)cLTEEnumLiteralDeclaration_18.eContents().get(0);
+		private final EnumLiteralDeclaration cGTEnumLiteralDeclaration_19 = (EnumLiteralDeclaration)cAlternatives.eContents().get(19);
+		private final Keyword cGTGTKeyword_19_0 = (Keyword)cGTEnumLiteralDeclaration_19.eContents().get(0);
+		private final EnumLiteralDeclaration cGTEEnumLiteralDeclaration_20 = (EnumLiteralDeclaration)cAlternatives.eContents().get(20);
+		private final Keyword cGTEGTEKeyword_20_0 = (Keyword)cGTEEnumLiteralDeclaration_20.eContents().get(0);
+		private final EnumLiteralDeclaration cNOTEQUALSEnumLiteralDeclaration_21 = (EnumLiteralDeclaration)cAlternatives.eContents().get(21);
+		private final Keyword cNOTEQUALSNOTEQUALSKeyword_21_0 = (Keyword)cNOTEQUALSEnumLiteralDeclaration_21.eContents().get(0);
 		
 		/// ****************
 		// * OPERATORS
@@ -2821,12 +2764,12 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		//
 		//	SET | ADD | SUBTRACT | AND | OR | XOR | EQUALS | BRANCH | UC_GOTO | NOT | INDIRECTION | CLEAR | INCREMENT | DECREMENT
 		//
-		//	| DIV | MOD | LT | LTE | GT | GTE;
+		//	| DIV | MUL | MOD | LT | LTE | GT | GTE | NOTEQUALS;
 		public EnumRule getRule() { return rule; }
 
 		//SET | ADD | SUBTRACT | AND | OR | XOR | EQUALS | BRANCH | UC_GOTO | NOT | INDIRECTION | CLEAR | INCREMENT | DECREMENT |
 		//
-		//DIV | MOD | LT | LTE | GT | GTE
+		//DIV | MUL | MOD | LT | LTE | GT | GTE | NOTEQUALS
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//SET
@@ -2919,35 +2862,47 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		//"DIV"
 		public Keyword getDIVDIVKeyword_14_0() { return cDIVDIVKeyword_14_0; }
 
+		//MUL
+		public EnumLiteralDeclaration getMULEnumLiteralDeclaration_15() { return cMULEnumLiteralDeclaration_15; }
+
+		//"MUL"
+		public Keyword getMULMULKeyword_15_0() { return cMULMULKeyword_15_0; }
+
 		//MOD
-		public EnumLiteralDeclaration getMODEnumLiteralDeclaration_15() { return cMODEnumLiteralDeclaration_15; }
+		public EnumLiteralDeclaration getMODEnumLiteralDeclaration_16() { return cMODEnumLiteralDeclaration_16; }
 
 		//"MOD"
-		public Keyword getMODMODKeyword_15_0() { return cMODMODKeyword_15_0; }
+		public Keyword getMODMODKeyword_16_0() { return cMODMODKeyword_16_0; }
 
 		//LT
-		public EnumLiteralDeclaration getLTEnumLiteralDeclaration_16() { return cLTEnumLiteralDeclaration_16; }
+		public EnumLiteralDeclaration getLTEnumLiteralDeclaration_17() { return cLTEnumLiteralDeclaration_17; }
 
 		//"LT"
-		public Keyword getLTLTKeyword_16_0() { return cLTLTKeyword_16_0; }
+		public Keyword getLTLTKeyword_17_0() { return cLTLTKeyword_17_0; }
 
 		//LTE
-		public EnumLiteralDeclaration getLTEEnumLiteralDeclaration_17() { return cLTEEnumLiteralDeclaration_17; }
+		public EnumLiteralDeclaration getLTEEnumLiteralDeclaration_18() { return cLTEEnumLiteralDeclaration_18; }
 
 		//"LTE"
-		public Keyword getLTELTEKeyword_17_0() { return cLTELTEKeyword_17_0; }
+		public Keyword getLTELTEKeyword_18_0() { return cLTELTEKeyword_18_0; }
 
 		//GT
-		public EnumLiteralDeclaration getGTEnumLiteralDeclaration_18() { return cGTEnumLiteralDeclaration_18; }
+		public EnumLiteralDeclaration getGTEnumLiteralDeclaration_19() { return cGTEnumLiteralDeclaration_19; }
 
 		//"GT"
-		public Keyword getGTGTKeyword_18_0() { return cGTGTKeyword_18_0; }
+		public Keyword getGTGTKeyword_19_0() { return cGTGTKeyword_19_0; }
 
 		//GTE
-		public EnumLiteralDeclaration getGTEEnumLiteralDeclaration_19() { return cGTEEnumLiteralDeclaration_19; }
+		public EnumLiteralDeclaration getGTEEnumLiteralDeclaration_20() { return cGTEEnumLiteralDeclaration_20; }
 
 		//"GTE"
-		public Keyword getGTEGTEKeyword_19_0() { return cGTEGTEKeyword_19_0; }
+		public Keyword getGTEGTEKeyword_20_0() { return cGTEGTEKeyword_20_0; }
+
+		//NOTEQUALS
+		public EnumLiteralDeclaration getNOTEQUALSEnumLiteralDeclaration_21() { return cNOTEQUALSEnumLiteralDeclaration_21; }
+
+		//"NOTEQUALS"
+		public Keyword getNOTEQUALSNOTEQUALSKeyword_21_0() { return cNOTEQUALSNOTEQUALSKeyword_21_0; }
 	}
 
 	public class BinaryTypeElements extends AbstractEnumRuleElementFinder {
@@ -3382,67 +3337,6 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	/// ***********************
-	// * CLASSES *
-	// *********************** / //Interface:
-	// //	'interface' name=QualifiedName ';'
-	//
-	//
-	////	('use' use+=[Library|QualifiedName]';')*
-	// //	
-	// //	(operations+=OperationSignature ';')*
-	// //;
-	// //
-	// //Module:
-	//
-	//
-	////	'module' name=QualifiedName
-	// //	';'
-	// //	('use' use+=[Library|QualifiedName]';')*
-	// //	(items+=ModuleItem)*
-	// //;
-	// //
-	//
-	//
-	////ModuleItem:
-	// //	Variable';' | 
-	// //	ConfigVariable';' |
-	// //	ConstantVariable';' |
-	// //	Instance';' |
-	// //	Socket';' |
-	//
-	//
-	////	InterfaceImplementation |
-	// //	Operation
-	// //;
-	// //
-	// //InterfaceImplementation:
-	//
-	//
-	////	'implement' type=[Interface|QualifiedName] name=ID '{'
-	// //		(operations += Operation)*
-	// //	'}'
-	// //;
-	// //
-	// //Socket:
-	//
-	//
-	////	'socket' type=[Interface|QualifiedName] name=ID
-	// //;
-	// //
-	// //Instance:
-	//
-	//
-	////	'instance' type=[Module|QualifiedName] name=ID 
-	// //;
-	// //
-	// //ConfigVariable returns Variable:
-	//
-	//
-	////	{ConfigVariable} 'config' type=TypeDef name=ID
-	// //;
-	//
-	//
-	/// ***********************
 	// * LIBRARY *
 	// *********************** / Library:
 	//
@@ -3785,7 +3679,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	//
 	//	SET | ADD | SUBTRACT | AND | OR | XOR | EQUALS | BRANCH | UC_GOTO | NOT | INDIRECTION | CLEAR | INCREMENT | DECREMENT
 	//
-	//	| DIV | MOD | LT | LTE | GT | GTE;
+	//	| DIV | MUL | MOD | LT | LTE | GT | GTE | NOTEQUALS;
 	public OperationRoleElements getOperationRoleAccess() {
 		return (unknownRuleOperationRole != null) ? unknownRuleOperationRole : (unknownRuleOperationRole = new OperationRoleElements());
 	}

@@ -41,52 +41,6 @@ Annotation:
 ;
 
 /***********************
- * CLASSES *
- ***********************/
-
-//Interface:
-//	'interface' name=QualifiedName ';'
-//	('use' use+=[Library|QualifiedName]';')*
-//	
-//	(operations+=OperationSignature ';')*
-//;
-//
-//Module:
-//	'module' name=QualifiedName
-//	';'
-//	('use' use+=[Library|QualifiedName]';')*
-//	(items+=ModuleItem)*
-//;
-//
-//ModuleItem:
-//	Variable';' | 
-//	ConfigVariable';' |
-//	ConstantVariable';' |
-//	Instance';' |
-//	Socket';' |
-//	InterfaceImplementation |
-//	Operation
-//;
-//
-//InterfaceImplementation:
-//	'implement' type=[Interface|QualifiedName] name=ID '{'
-//		(operations += Operation)*
-//	'}'
-//;
-//
-//Socket:
-//	'socket' type=[Interface|QualifiedName] name=ID
-//;
-//
-//Instance:
-//	'instance' type=[Module|QualifiedName] name=ID 
-//;
-//
-//ConfigVariable returns Variable:
-//	{ConfigVariable} 'config' type=TypeDef name=ID
-//;
-
-/***********************
  * LIBRARY *
  ***********************/
 
@@ -241,8 +195,8 @@ enum ParameterKind:
 enum OperationRole:
 	SET='SET' | ADD='ADD' | SUBTRACT='SUBTRACT' | AND='AND' | OR='OR' | XOR='XOR' |
 	EQUALS='EQUALS' | BRANCH='BRANCH' | UC_GOTO='UC_GOTO' | NOT='NOT' | INDIRECTION='INDIRECTION' |
-	CLEAR='CLEAR' | INCREMENT='INCREMENT' | DECREMENT='DECREMENT' | DIV='DIV' | MOD='MOD'
-	| LT='LT' | LTE='LTE' | GT='GT' | GTE='GTE'
+	CLEAR='CLEAR' | INCREMENT='INCREMENT' | DECREMENT='DECREMENT' | DIV='DIV' | MUL='MUL' | MOD='MOD'
+	| LT='LT' | LTE='LTE' | GT='GT' | GTE='GTE' | NOTEQUALS='NOTEQUALS'
 ;
 
 OperatorDefinition:

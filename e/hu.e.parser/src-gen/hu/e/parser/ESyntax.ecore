@@ -110,11 +110,13 @@
     <eLiterals name="INCREMENT" value="12" literal="INCREMENT"/>
     <eLiterals name="DECREMENT" value="13" literal="DECREMENT"/>
     <eLiterals name="DIV" value="14" literal="DIV"/>
-    <eLiterals name="MOD" value="15" literal="MOD"/>
-    <eLiterals name="LT" value="16" literal="LT"/>
-    <eLiterals name="LTE" value="17" literal="LTE"/>
-    <eLiterals name="GT" value="18" literal="GT"/>
-    <eLiterals name="GTE" value="19" literal="GTE"/>
+    <eLiterals name="MUL" value="15" literal="MUL"/>
+    <eLiterals name="MOD" value="16" literal="MOD"/>
+    <eLiterals name="LT" value="17" literal="LT"/>
+    <eLiterals name="LTE" value="18" literal="LTE"/>
+    <eLiterals name="GT" value="19" literal="GT"/>
+    <eLiterals name="GTE" value="20" literal="GTE"/>
+    <eLiterals name="NOTEQUALS" value="21" literal="NOTEQUALS"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OperatorDefinition" eSuperTypes="#//LibraryItem">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="role" eType="#//OperationRole"/>

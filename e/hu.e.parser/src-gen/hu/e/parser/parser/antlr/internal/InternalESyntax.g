@@ -4261,34 +4261,46 @@ ruleOperationRole returns [Enumerator current=null]
         newLeafNode(enumLiteral_14, grammarAccess.getOperationRoleAccess().getDIVEnumLiteralDeclaration_14()); 
     }
 )
-    |(	enumLiteral_15='MOD' 
+    |(	enumLiteral_15='MUL' 
 	{
-        $current = grammarAccess.getOperationRoleAccess().getMODEnumLiteralDeclaration_15().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_15, grammarAccess.getOperationRoleAccess().getMODEnumLiteralDeclaration_15()); 
+        $current = grammarAccess.getOperationRoleAccess().getMULEnumLiteralDeclaration_15().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_15, grammarAccess.getOperationRoleAccess().getMULEnumLiteralDeclaration_15()); 
     }
 )
-    |(	enumLiteral_16='LT' 
+    |(	enumLiteral_16='MOD' 
 	{
-        $current = grammarAccess.getOperationRoleAccess().getLTEnumLiteralDeclaration_16().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_16, grammarAccess.getOperationRoleAccess().getLTEnumLiteralDeclaration_16()); 
+        $current = grammarAccess.getOperationRoleAccess().getMODEnumLiteralDeclaration_16().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_16, grammarAccess.getOperationRoleAccess().getMODEnumLiteralDeclaration_16()); 
     }
 )
-    |(	enumLiteral_17='LTE' 
+    |(	enumLiteral_17='LT' 
 	{
-        $current = grammarAccess.getOperationRoleAccess().getLTEEnumLiteralDeclaration_17().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_17, grammarAccess.getOperationRoleAccess().getLTEEnumLiteralDeclaration_17()); 
+        $current = grammarAccess.getOperationRoleAccess().getLTEnumLiteralDeclaration_17().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_17, grammarAccess.getOperationRoleAccess().getLTEnumLiteralDeclaration_17()); 
     }
 )
-    |(	enumLiteral_18='GT' 
+    |(	enumLiteral_18='LTE' 
 	{
-        $current = grammarAccess.getOperationRoleAccess().getGTEnumLiteralDeclaration_18().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_18, grammarAccess.getOperationRoleAccess().getGTEnumLiteralDeclaration_18()); 
+        $current = grammarAccess.getOperationRoleAccess().getLTEEnumLiteralDeclaration_18().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_18, grammarAccess.getOperationRoleAccess().getLTEEnumLiteralDeclaration_18()); 
     }
 )
-    |(	enumLiteral_19='GTE' 
+    |(	enumLiteral_19='GT' 
 	{
-        $current = grammarAccess.getOperationRoleAccess().getGTEEnumLiteralDeclaration_19().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_19, grammarAccess.getOperationRoleAccess().getGTEEnumLiteralDeclaration_19()); 
+        $current = grammarAccess.getOperationRoleAccess().getGTEnumLiteralDeclaration_19().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_19, grammarAccess.getOperationRoleAccess().getGTEnumLiteralDeclaration_19()); 
+    }
+)
+    |(	enumLiteral_20='GTE' 
+	{
+        $current = grammarAccess.getOperationRoleAccess().getGTEEnumLiteralDeclaration_20().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_20, grammarAccess.getOperationRoleAccess().getGTEEnumLiteralDeclaration_20()); 
+    }
+)
+    |(	enumLiteral_21='NOTEQUALS' 
+	{
+        $current = grammarAccess.getOperationRoleAccess().getNOTEQUALSEnumLiteralDeclaration_21().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_21, grammarAccess.getOperationRoleAccess().getNOTEQUALSEnumLiteralDeclaration_21()); 
     }
 ));
 

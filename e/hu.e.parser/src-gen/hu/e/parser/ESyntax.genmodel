@@ -32,11 +32,13 @@
       <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//OperationRole/INCREMENT"/>
       <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//OperationRole/DECREMENT"/>
       <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//OperationRole/DIV"/>
+      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//OperationRole/MUL"/>
       <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//OperationRole/MOD"/>
       <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//OperationRole/LT"/>
       <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//OperationRole/LTE"/>
       <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//OperationRole/GT"/>
       <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//OperationRole/GTE"/>
+      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//OperationRole/NOTEQUALS"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="ESyntax.ecore#//BinaryType">
       <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//BinaryType/DEFAULT"/>

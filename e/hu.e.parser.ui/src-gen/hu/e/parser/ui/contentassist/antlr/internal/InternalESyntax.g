@@ -2385,38 +2385,52 @@ rule__OperationRole__Alternatives
 )
 
     |(
-{ before(grammarAccess.getOperationRoleAccess().getMODEnumLiteralDeclaration_15()); }
+{ before(grammarAccess.getOperationRoleAccess().getMULEnumLiteralDeclaration_15()); }
+(	'MUL' 
+)
+{ after(grammarAccess.getOperationRoleAccess().getMULEnumLiteralDeclaration_15()); }
+)
+
+    |(
+{ before(grammarAccess.getOperationRoleAccess().getMODEnumLiteralDeclaration_16()); }
 (	'MOD' 
 )
-{ after(grammarAccess.getOperationRoleAccess().getMODEnumLiteralDeclaration_15()); }
+{ after(grammarAccess.getOperationRoleAccess().getMODEnumLiteralDeclaration_16()); }
 )
 
     |(
-{ before(grammarAccess.getOperationRoleAccess().getLTEnumLiteralDeclaration_16()); }
+{ before(grammarAccess.getOperationRoleAccess().getLTEnumLiteralDeclaration_17()); }
 (	'LT' 
 )
-{ after(grammarAccess.getOperationRoleAccess().getLTEnumLiteralDeclaration_16()); }
+{ after(grammarAccess.getOperationRoleAccess().getLTEnumLiteralDeclaration_17()); }
 )
 
     |(
-{ before(grammarAccess.getOperationRoleAccess().getLTEEnumLiteralDeclaration_17()); }
+{ before(grammarAccess.getOperationRoleAccess().getLTEEnumLiteralDeclaration_18()); }
 (	'LTE' 
 )
-{ after(grammarAccess.getOperationRoleAccess().getLTEEnumLiteralDeclaration_17()); }
+{ after(grammarAccess.getOperationRoleAccess().getLTEEnumLiteralDeclaration_18()); }
 )
 
     |(
-{ before(grammarAccess.getOperationRoleAccess().getGTEnumLiteralDeclaration_18()); }
+{ before(grammarAccess.getOperationRoleAccess().getGTEnumLiteralDeclaration_19()); }
 (	'GT' 
 )
-{ after(grammarAccess.getOperationRoleAccess().getGTEnumLiteralDeclaration_18()); }
+{ after(grammarAccess.getOperationRoleAccess().getGTEnumLiteralDeclaration_19()); }
 )
 
     |(
-{ before(grammarAccess.getOperationRoleAccess().getGTEEnumLiteralDeclaration_19()); }
+{ before(grammarAccess.getOperationRoleAccess().getGTEEnumLiteralDeclaration_20()); }
 (	'GTE' 
 )
-{ after(grammarAccess.getOperationRoleAccess().getGTEEnumLiteralDeclaration_19()); }
+{ after(grammarAccess.getOperationRoleAccess().getGTEEnumLiteralDeclaration_20()); }
+)
+
+    |(
+{ before(grammarAccess.getOperationRoleAccess().getNOTEQUALSEnumLiteralDeclaration_21()); }
+(	'NOTEQUALS' 
+)
+{ after(grammarAccess.getOperationRoleAccess().getNOTEQUALSEnumLiteralDeclaration_21()); }
 )
 
 ;

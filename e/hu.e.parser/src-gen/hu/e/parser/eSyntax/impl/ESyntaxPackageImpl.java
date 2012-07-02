@@ -2634,11 +2634,13 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     addEEnumLiteral(operationRoleEEnum, OperationRole.INCREMENT);
     addEEnumLiteral(operationRoleEEnum, OperationRole.DECREMENT);
     addEEnumLiteral(operationRoleEEnum, OperationRole.DIV);
+    addEEnumLiteral(operationRoleEEnum, OperationRole.MUL);
     addEEnumLiteral(operationRoleEEnum, OperationRole.MOD);
     addEEnumLiteral(operationRoleEEnum, OperationRole.LT);
     addEEnumLiteral(operationRoleEEnum, OperationRole.LTE);
     addEEnumLiteral(operationRoleEEnum, OperationRole.GT);
     addEEnumLiteral(operationRoleEEnum, OperationRole.GTE);
+    addEEnumLiteral(operationRoleEEnum, OperationRole.NOTEQUALS);
 
     initEEnum(binaryTypeEEnum, BinaryType.class, "BinaryType");
     addEEnumLiteral(binaryTypeEEnum, BinaryType.DEFAULT);

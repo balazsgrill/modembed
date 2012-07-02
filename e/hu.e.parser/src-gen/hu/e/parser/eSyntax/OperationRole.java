@@ -170,6 +170,16 @@ public enum OperationRole implements Enumerator
   DIV(14, "DIV", "DIV"),
 
   /**
+   * The '<em><b>MUL</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #MUL_VALUE
+   * @generated
+   * @ordered
+   */
+  MUL(15, "MUL", "MUL"),
+
+  /**
    * The '<em><b>MOD</b></em>' literal object.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -177,7 +187,7 @@ public enum OperationRole implements Enumerator
    * @generated
    * @ordered
    */
-  MOD(15, "MOD", "MOD"),
+  MOD(16, "MOD", "MOD"),
 
   /**
    * The '<em><b>LT</b></em>' literal object.
@@ -187,7 +197,7 @@ public enum OperationRole implements Enumerator
    * @generated
    * @ordered
    */
-  LT(16, "LT", "LT"),
+  LT(17, "LT", "LT"),
 
   /**
    * The '<em><b>LTE</b></em>' literal object.
@@ -197,7 +207,7 @@ public enum OperationRole implements Enumerator
    * @generated
    * @ordered
    */
-  LTE(17, "LTE", "LTE"),
+  LTE(18, "LTE", "LTE"),
 
   /**
    * The '<em><b>GT</b></em>' literal object.
@@ -207,7 +217,7 @@ public enum OperationRole implements Enumerator
    * @generated
    * @ordered
    */
-  GT(18, "GT", "GT"),
+  GT(19, "GT", "GT"),
 
   /**
    * The '<em><b>GTE</b></em>' literal object.
@@ -217,7 +227,17 @@ public enum OperationRole implements Enumerator
    * @generated
    * @ordered
    */
-  GTE(19, "GTE", "GTE");
+  GTE(20, "GTE", "GTE"),
+
+  /**
+   * The '<em><b>NOTEQUALS</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #NOTEQUALS_VALUE
+   * @generated
+   * @ordered
+   */
+  NOTEQUALS(21, "NOTEQUALS", "NOTEQUALS");
 
   /**
    * The '<em><b>SET</b></em>' literal value.
@@ -445,6 +465,21 @@ public enum OperationRole implements Enumerator
   public static final int DIV_VALUE = 14;
 
   /**
+   * The '<em><b>MUL</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of '<em><b>MUL</b></em>' literal object isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @see #MUL
+   * @model
+   * @generated
+   * @ordered
+   */
+  public static final int MUL_VALUE = 15;
+
+  /**
    * The '<em><b>MOD</b></em>' literal value.
    * <!-- begin-user-doc -->
    * <p>
@@ -457,7 +492,7 @@ public enum OperationRole implements Enumerator
    * @generated
    * @ordered
    */
-  public static final int MOD_VALUE = 15;
+  public static final int MOD_VALUE = 16;
 
   /**
    * The '<em><b>LT</b></em>' literal value.
@@ -472,7 +507,7 @@ public enum OperationRole implements Enumerator
    * @generated
    * @ordered
    */
-  public static final int LT_VALUE = 16;
+  public static final int LT_VALUE = 17;
 
   /**
    * The '<em><b>LTE</b></em>' literal value.
@@ -487,7 +522,7 @@ public enum OperationRole implements Enumerator
    * @generated
    * @ordered
    */
-  public static final int LTE_VALUE = 17;
+  public static final int LTE_VALUE = 18;
 
   /**
    * The '<em><b>GT</b></em>' literal value.
@@ -502,7 +537,7 @@ public enum OperationRole implements Enumerator
    * @generated
    * @ordered
    */
-  public static final int GT_VALUE = 18;
+  public static final int GT_VALUE = 19;
 
   /**
    * The '<em><b>GTE</b></em>' literal value.
@@ -517,7 +552,22 @@ public enum OperationRole implements Enumerator
    * @generated
    * @ordered
    */
-  public static final int GTE_VALUE = 19;
+  public static final int GTE_VALUE = 20;
+
+  /**
+   * The '<em><b>NOTEQUALS</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of '<em><b>NOTEQUALS</b></em>' literal object isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @see #NOTEQUALS
+   * @model
+   * @generated
+   * @ordered
+   */
+  public static final int NOTEQUALS_VALUE = 21;
 
   /**
    * An array of all the '<em><b>Operation Role</b></em>' enumerators.
@@ -543,11 +593,13 @@ public enum OperationRole implements Enumerator
       INCREMENT,
       DECREMENT,
       DIV,
+      MUL,
       MOD,
       LT,
       LTE,
       GT,
       GTE,
+      NOTEQUALS,
     };
 
   /**
@@ -621,11 +673,13 @@ public enum OperationRole implements Enumerator
       case INCREMENT_VALUE: return INCREMENT;
       case DECREMENT_VALUE: return DECREMENT;
       case DIV_VALUE: return DIV;
+      case MUL_VALUE: return MUL;
       case MOD_VALUE: return MOD;
       case LT_VALUE: return LT;
       case LTE_VALUE: return LTE;
       case GT_VALUE: return GT;
       case GTE_VALUE: return GTE;
+      case NOTEQUALS_VALUE: return NOTEQUALS;
     }
     return null;
   }

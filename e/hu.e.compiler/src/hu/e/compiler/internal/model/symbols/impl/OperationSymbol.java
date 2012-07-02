@@ -107,16 +107,14 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol, ILinkTi
 		case LTE: return OperationRole.LTE;
 		case GTE: return OperationRole.GT;
 		case GT: return OperationRole.GTE;
-		case MUL: break;
+		case MUL: return OperationRole.MUL;
 		case EQUALS: return OperationRole.EQUALS;
-		case NOTEQUALS : break;
+		case NOTEQUALS : return OperationRole.NOTEQUALS;
 		case OR: return OperationRole.OR;
-		case BRANCH:
-			break;
+		case BRANCH: return OperationRole.BRANCH;
 		case DEREFERENCE:
 			break;
-		case NOT:
-			break;
+		case NOT: return OperationRole.NOT;
 		case REFERENCE:
 			break;
 		case SET:
