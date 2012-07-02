@@ -18,6 +18,7 @@ import hu.e.compiler.list.ProgramStep;
 import hu.e.compiler.list.ReferableValue;
 import hu.e.compiler.list.Reference;
 import hu.e.compiler.list.SequenceStep;
+import hu.e.compiler.list.StatusStep;
 import hu.e.compiler.optimizer.IFlatProgramOptimizer;
 import hu.e.compiler.optimizer.IOptimizer;
 import hu.e.compiler.optimizer.IOptimizerContext;
@@ -52,6 +53,7 @@ public class ProgramListLinker {
 		public final Map<MemoryAssignment, Integer> addresses;
 		public final MemoryManager memman;
 		public final Map<LabelStep, Integer> labels = new HashMap<LabelStep, Integer>();
+		public final ProgramListLogger logger = new ProgramListLogger();
 		
 		public LinkingContext(
 				MemoryManager memman) {
@@ -125,8 +127,7 @@ public class ProgramListLinker {
 		 * Create context
 		 */
 		LinkingContext context = new LinkingContext(memman);
-		
-		
+			
 		mapMemory(context, plist.getStep());
 		ProgramList plist = this.plist;
 		
@@ -142,6 +143,9 @@ public class ProgramListLinker {
 				allsteps = ((IFlatProgramOptimizer) o).optimize(context, allsteps);
 			}
 		}
+		
+		context.logger.print();
+		
 		List<InstructionStep> instructions = new ArrayList<InstructionStep>();
 		int progsize = 0;
 		
@@ -218,6 +222,9 @@ public class ProgramListLinker {
 			for(ProgramStep ps : ((SequenceStep) step).getSteps()){
 				steps.addAll(flatten(context, ps));
 			}
+		}
+		if (step instanceof StatusStep){
+			context.logger.add((StatusStep)step);
 		}
 
 		return steps;
