@@ -5,6 +5,7 @@ package hu.e.compiler.internal.model.symbols.impl;
 
 import hu.e.compiler.ECompilerException;
 import hu.e.compiler.internal.model.ISymbolManager;
+import hu.e.compiler.internal.model.TypeDefinitionResolver;
 import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
 import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.compiler.internal.model.symbols.SymbolContext;
@@ -26,6 +27,11 @@ public class TypeCastedLiteralSymbol implements ILiteralSymbol {
 	public TypeCastedLiteralSymbol(TypeDef td, ILiteralSymbol symbol) {
 		this.td = td;
 		this.symbol = symbol;
+	}
+	
+	@Override
+	public String toString() {
+		return TypeDefinitionResolver.getTypeDefString(td)+":"+symbol.toString();
 	}
 	
 	@Override

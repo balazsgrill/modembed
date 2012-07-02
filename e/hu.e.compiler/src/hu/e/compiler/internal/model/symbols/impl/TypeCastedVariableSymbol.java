@@ -5,6 +5,7 @@ package hu.e.compiler.internal.model.symbols.impl;
 
 import hu.e.compiler.ECompilerException;
 import hu.e.compiler.internal.model.ISymbolManager;
+import hu.e.compiler.internal.model.TypeDefinitionResolver;
 import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.compiler.internal.model.symbols.IVariableSymbol;
 import hu.e.compiler.internal.model.symbols.SymbolContext;
@@ -24,6 +25,11 @@ public class TypeCastedVariableSymbol implements IVariableSymbol {
 	public TypeCastedVariableSymbol(TypeDef td, IVariableSymbol symbol) {
 		this.td = td;
 		this.symbol = symbol;
+	}
+	
+	@Override
+	public String toString() {
+		return TypeDefinitionResolver.getTypeDefString(td)+":"+symbol.toString();
 	}
 	
 	@Override
