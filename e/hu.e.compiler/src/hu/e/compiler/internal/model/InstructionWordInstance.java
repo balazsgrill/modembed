@@ -104,6 +104,7 @@ public class InstructionWordInstance{
 		InstructionStep is = ListFactory.eINSTANCE.createInstructionStep();
 		is.setCode(getValue());
 		is.getArgs().addAll(arguments);
+		is.setWidth(getWidth());
 		return is;
 	}
 	
