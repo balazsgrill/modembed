@@ -15,6 +15,26 @@ type address = unsigned 12 bits;
  */
 type codeaddr = unsigned 13 bits;
 
+/***************
+ * CORE registers
+ *****************/
+
+reg uint8 INDF0 	: 0x00;
+reg uint8 INDF1 	: 0x01;
+reg uint8 PCL 		: 0x02;
+reg uint8 STATUS 	: 0x03;
+const bit Z = 2;
+const bit C = 0;
+
+reg uint8 FSR0L 	: 0x04;
+reg uint8 FSR0H		: 0x05;
+reg uint8 FSR1L		: 0x06;
+reg uint8 FSR1H		: 0x07;
+reg uint8 BSR		: 0x08;
+reg uint8 WREG		: 0x09;
+reg uint8 PCLATH	: 0x0A;
+reg uint8 INTCON	: 0x0B;
+
 const bool W = 0;
 const bool F = 1;
 
