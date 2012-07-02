@@ -20,6 +20,7 @@ import hu.e.compiler.list.ProgramStep;
 import hu.e.compiler.list.SequenceStep;
 import hu.e.parser.eSyntax.Annotation;
 import hu.e.parser.eSyntax.AnnotationDefinition;
+import hu.e.parser.eSyntax.ErrorLevels;
 import hu.e.parser.eSyntax.InstructionWord;
 import hu.e.parser.eSyntax.Label;
 import hu.e.parser.eSyntax.Library;
@@ -28,6 +29,7 @@ import hu.e.parser.eSyntax.OperationRole;
 import hu.e.parser.eSyntax.OperationStep;
 import hu.e.parser.eSyntax.TypeDef;
 import hu.e.parser.eSyntax.Variable;
+import hu.e.parser.eSyntax.XErrorExpression;
 import hu.e.parser.eSyntax.XExpression;
 import hu.e.parser.eSyntax.XIfExpression;
 
@@ -104,6 +106,15 @@ public class BlockCompiler {
 					s.addSteps(result);
 				} catch (ECompilerException e) {
 					result.getSteps().add(CompilationErrorEntry.create(e));
+				}
+			}
+			if (step instanceof XErrorExpression){
+				ErrorLevels level = ((XErrorExpression) step).getLevel();
+				String msg = ((XErrorExpression) step).getMsg();
+				switch(level){
+				case ERROR: result.getSteps().add(CompilationErrorEntry.error(step, msg)); break;
+				case WARNING: result.getSteps().add(CompilationErrorEntry.warning(step, msg)); break;
+				case INFO: result.getSteps().add(CompilationErrorEntry.info(step, msg)); break;
 				}
 			}
 			if (step instanceof XIfExpression){

@@ -72,6 +72,11 @@
       <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//BOOLEAN_OPERATOR/OR"/>
       <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//BOOLEAN_OPERATOR/AND"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ESyntax.ecore#//ErrorLevels">
+      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//ErrorLevels/ERROR"/>
+      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//ErrorLevels/WARNING"/>
+      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//ErrorLevels/INFO"/>
+    </genEnums>
     <genClasses ecoreClass="ESyntax.ecore#//CompilationUnit">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//CompilationUnit/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ESyntax.ecore#//CompilationUnit/use"/>
@@ -228,6 +233,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//XExpressionLiteral/value"/>
     </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//XTopLevelExpression"/>
+    <genClasses ecoreClass="ESyntax.ecore#//XErrorExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//XErrorExpression/level"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//XErrorExpression/msg"/>
+    </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//XIsLiteralExpression">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XIsLiteralExpression/ref"/>
     </genClasses>

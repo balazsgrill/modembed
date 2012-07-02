@@ -351,7 +351,15 @@ XExpressionLiteral:
 ;
 
 XTopLevelExpression:
-	Annotation ';' | XExpression ';' | XIfExpression | XWhileExpression
+	Annotation ';' | XExpression ';' | XIfExpression | XWhileExpression | XErrorExpression
+;
+
+XErrorExpression:
+	level=ErrorLevels msg=STRING ';'
+;
+
+enum ErrorLevels:
+	ERROR = 'error' | WARNING = 'warning' | INFO = 'info'
 ;
 
 OpSingleAssign:

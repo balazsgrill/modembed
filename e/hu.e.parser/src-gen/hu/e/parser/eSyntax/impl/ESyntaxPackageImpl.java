@@ -13,6 +13,7 @@ import hu.e.parser.eSyntax.ConstantVariable;
 import hu.e.parser.eSyntax.DataTypeDef;
 import hu.e.parser.eSyntax.ESyntaxFactory;
 import hu.e.parser.eSyntax.ESyntaxPackage;
+import hu.e.parser.eSyntax.ErrorLevels;
 import hu.e.parser.eSyntax.FixedDataTypeDef;
 import hu.e.parser.eSyntax.FunctionBinarySection;
 import hu.e.parser.eSyntax.FunctionMemory;
@@ -46,6 +47,7 @@ import hu.e.parser.eSyntax.TypeDef;
 import hu.e.parser.eSyntax.Variable;
 import hu.e.parser.eSyntax.VariableReference;
 import hu.e.parser.eSyntax.WordSection;
+import hu.e.parser.eSyntax.XErrorExpression;
 import hu.e.parser.eSyntax.XExpression;
 import hu.e.parser.eSyntax.XExpression0;
 import hu.e.parser.eSyntax.XExpression1;
@@ -408,6 +410,13 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass xErrorExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass xIsLiteralExpressionEClass = null;
 
   /**
@@ -535,6 +544,13 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * @generated
    */
   private EEnum booleaN_OPERATOREEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum errorLevelsEEnum = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -1774,6 +1790,36 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getXErrorExpression()
+  {
+    return xErrorExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getXErrorExpression_Level()
+  {
+    return (EAttribute)xErrorExpressionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getXErrorExpression_Msg()
+  {
+    return (EAttribute)xErrorExpressionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getXIsLiteralExpression()
   {
     return xIsLiteralExpressionEClass;
@@ -2104,6 +2150,16 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EEnum getErrorLevels()
+  {
+    return errorLevelsEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public ESyntaxFactory getESyntaxFactory()
   {
     return (ESyntaxFactory)getEFactoryInstance();
@@ -2292,6 +2348,10 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
 
     xTopLevelExpressionEClass = createEClass(XTOP_LEVEL_EXPRESSION);
 
+    xErrorExpressionEClass = createEClass(XERROR_EXPRESSION);
+    createEAttribute(xErrorExpressionEClass, XERROR_EXPRESSION__LEVEL);
+    createEAttribute(xErrorExpressionEClass, XERROR_EXPRESSION__MSG);
+
     xIsLiteralExpressionEClass = createEClass(XIS_LITERAL_EXPRESSION);
     createEReference(xIsLiteralExpressionEClass, XIS_LITERAL_EXPRESSION__REF);
 
@@ -2336,6 +2396,7 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     additivE_OPERATOREEnum = createEEnum(ADDITIVE_OPERATOR);
     equalitY_OPERATOREEnum = createEEnum(EQUALITY_OPERATOR);
     booleaN_OPERATOREEnum = createEEnum(BOOLEAN_OPERATOR);
+    errorLevelsEEnum = createEEnum(ERROR_LEVELS);
   }
 
   /**
@@ -2399,6 +2460,7 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     xExpression6EClass.getESuperTypes().add(this.getXExpression());
     xExpressionLiteralEClass.getESuperTypes().add(this.getXPrimaryExpression());
     xTopLevelExpressionEClass.getESuperTypes().add(this.getOperationStep());
+    xErrorExpressionEClass.getESuperTypes().add(this.getXTopLevelExpression());
     xIsLiteralExpressionEClass.getESuperTypes().add(this.getXPrimaryExpression());
     xIfExpressionEClass.getESuperTypes().add(this.getXTopLevelExpression());
     xWhileExpressionEClass.getESuperTypes().add(this.getXTopLevelExpression());
@@ -2574,6 +2636,10 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
 
     initEClass(xTopLevelExpressionEClass, XTopLevelExpression.class, "XTopLevelExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+    initEClass(xErrorExpressionEClass, XErrorExpression.class, "XErrorExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getXErrorExpression_Level(), this.getErrorLevels(), "level", null, 0, 1, XErrorExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getXErrorExpression_Msg(), ecorePackage.getEString(), "msg", null, 0, 1, XErrorExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(xIsLiteralExpressionEClass, XIsLiteralExpression.class, "XIsLiteralExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getXIsLiteralExpression_Ref(), this.getVariableReference(), null, "ref", null, 0, 1, XIsLiteralExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -2673,6 +2739,11 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     initEEnum(booleaN_OPERATOREEnum, hu.e.parser.eSyntax.BOOLEAN_OPERATOR.class, "BOOLEAN_OPERATOR");
     addEEnumLiteral(booleaN_OPERATOREEnum, hu.e.parser.eSyntax.BOOLEAN_OPERATOR.OR);
     addEEnumLiteral(booleaN_OPERATOREEnum, hu.e.parser.eSyntax.BOOLEAN_OPERATOR.AND);
+
+    initEEnum(errorLevelsEEnum, ErrorLevels.class, "ErrorLevels");
+    addEEnumLiteral(errorLevelsEEnum, ErrorLevels.ERROR);
+    addEEnumLiteral(errorLevelsEEnum, ErrorLevels.WARNING);
+    addEEnumLiteral(errorLevelsEEnum, ErrorLevels.INFO);
 
     // Create resource
     createResource(eNS_URI);

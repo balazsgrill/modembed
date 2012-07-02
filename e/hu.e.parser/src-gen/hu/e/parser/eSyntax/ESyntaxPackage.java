@@ -1706,6 +1706,43 @@ public interface ESyntaxPackage extends EPackage
   int XEXPRESSION_LITERAL_FEATURE_COUNT = XPRIMARY_EXPRESSION_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link hu.e.parser.eSyntax.impl.XErrorExpressionImpl <em>XError Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.e.parser.eSyntax.impl.XErrorExpressionImpl
+   * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXErrorExpression()
+   * @generated
+   */
+  int XERROR_EXPRESSION = 46;
+
+  /**
+   * The feature id for the '<em><b>Level</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int XERROR_EXPRESSION__LEVEL = XTOP_LEVEL_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Msg</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int XERROR_EXPRESSION__MSG = XTOP_LEVEL_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>XError Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int XERROR_EXPRESSION_FEATURE_COUNT = XTOP_LEVEL_EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.impl.XIsLiteralExpressionImpl <em>XIs Literal Expression</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1713,7 +1750,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXIsLiteralExpression()
    * @generated
    */
-  int XIS_LITERAL_EXPRESSION = 46;
+  int XIS_LITERAL_EXPRESSION = 47;
 
   /**
    * The feature id for the '<em><b>Ref</b></em>' containment reference.
@@ -1741,7 +1778,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXIfExpression()
    * @generated
    */
-  int XIF_EXPRESSION = 47;
+  int XIF_EXPRESSION = 48;
 
   /**
    * The feature id for the '<em><b>If</b></em>' containment reference.
@@ -1787,7 +1824,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXWhileExpression()
    * @generated
    */
-  int XWHILE_EXPRESSION = 48;
+  int XWHILE_EXPRESSION = 49;
 
   /**
    * The feature id for the '<em><b>Cond</b></em>' containment reference.
@@ -1824,7 +1861,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXParenthesizedExpression()
    * @generated
    */
-  int XPARENTHESIZED_EXPRESSION = 49;
+  int XPARENTHESIZED_EXPRESSION = 50;
 
   /**
    * The feature id for the '<em><b>A</b></em>' containment reference.
@@ -1852,7 +1889,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getStructTypeDefMember()
    * @generated
    */
-  int STRUCT_TYPE_DEF_MEMBER = 50;
+  int STRUCT_TYPE_DEF_MEMBER = 51;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -1889,7 +1926,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getConstantVariable()
    * @generated
    */
-  int CONSTANT_VARIABLE = 51;
+  int CONSTANT_VARIABLE = 52;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -1935,7 +1972,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getRegisterVariable()
    * @generated
    */
-  int REGISTER_VARIABLE = 52;
+  int REGISTER_VARIABLE = 53;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -1981,7 +2018,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getLabel()
    * @generated
    */
-  int LABEL = 53;
+  int LABEL = 54;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -2018,7 +2055,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getOperation()
    * @generated
    */
-  int OPERATION = 54;
+  int OPERATION = 55;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -2091,7 +2128,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getParameterVariable()
    * @generated
    */
-  int PARAMETER_VARIABLE = 55;
+  int PARAMETER_VARIABLE = 56;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -2146,7 +2183,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getIntegerKind()
    * @generated
    */
-  int INTEGER_KIND = 56;
+  int INTEGER_KIND = 57;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.ParameterKind <em>Parameter Kind</em>}' enum.
@@ -2156,7 +2193,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getParameterKind()
    * @generated
    */
-  int PARAMETER_KIND = 57;
+  int PARAMETER_KIND = 58;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.OperationRole <em>Operation Role</em>}' enum.
@@ -2166,7 +2203,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getOperationRole()
    * @generated
    */
-  int OPERATION_ROLE = 58;
+  int OPERATION_ROLE = 59;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.BinaryType <em>Binary Type</em>}' enum.
@@ -2176,7 +2213,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getBinaryType()
    * @generated
    */
-  int BINARY_TYPE = 59;
+  int BINARY_TYPE = 60;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.UNARY_OPERATOR <em>UNARY OPERATOR</em>}' enum.
@@ -2186,7 +2223,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getUNARY_OPERATOR()
    * @generated
    */
-  int UNARY_OPERATOR = 60;
+  int UNARY_OPERATOR = 61;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.MULTIPLICATIVE_OPERATOR <em>MULTIPLICATIVE OPERATOR</em>}' enum.
@@ -2196,7 +2233,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getMULTIPLICATIVE_OPERATOR()
    * @generated
    */
-  int MULTIPLICATIVE_OPERATOR = 61;
+  int MULTIPLICATIVE_OPERATOR = 62;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.ADDITIVE_OPERATOR <em>ADDITIVE OPERATOR</em>}' enum.
@@ -2206,7 +2243,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getADDITIVE_OPERATOR()
    * @generated
    */
-  int ADDITIVE_OPERATOR = 62;
+  int ADDITIVE_OPERATOR = 63;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.EQUALITY_OPERATOR <em>EQUALITY OPERATOR</em>}' enum.
@@ -2216,7 +2253,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getEQUALITY_OPERATOR()
    * @generated
    */
-  int EQUALITY_OPERATOR = 63;
+  int EQUALITY_OPERATOR = 64;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.BOOLEAN_OPERATOR <em>BOOLEAN OPERATOR</em>}' enum.
@@ -2226,7 +2263,17 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getBOOLEAN_OPERATOR()
    * @generated
    */
-  int BOOLEAN_OPERATOR = 64;
+  int BOOLEAN_OPERATOR = 65;
+
+  /**
+   * The meta object id for the '{@link hu.e.parser.eSyntax.ErrorLevels <em>Error Levels</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.e.parser.eSyntax.ErrorLevels
+   * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getErrorLevels()
+   * @generated
+   */
+  int ERROR_LEVELS = 66;
 
 
   /**
@@ -3471,6 +3518,38 @@ public interface ESyntaxPackage extends EPackage
   EClass getXTopLevelExpression();
 
   /**
+   * Returns the meta object for class '{@link hu.e.parser.eSyntax.XErrorExpression <em>XError Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>XError Expression</em>'.
+   * @see hu.e.parser.eSyntax.XErrorExpression
+   * @generated
+   */
+  EClass getXErrorExpression();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.XErrorExpression#getLevel <em>Level</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Level</em>'.
+   * @see hu.e.parser.eSyntax.XErrorExpression#getLevel()
+   * @see #getXErrorExpression()
+   * @generated
+   */
+  EAttribute getXErrorExpression_Level();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.XErrorExpression#getMsg <em>Msg</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Msg</em>'.
+   * @see hu.e.parser.eSyntax.XErrorExpression#getMsg()
+   * @see #getXErrorExpression()
+   * @generated
+   */
+  EAttribute getXErrorExpression_Msg();
+
+  /**
    * Returns the meta object for class '{@link hu.e.parser.eSyntax.XIsLiteralExpression <em>XIs Literal Expression</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3813,6 +3892,16 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    */
   EEnum getBOOLEAN_OPERATOR();
+
+  /**
+   * Returns the meta object for enum '{@link hu.e.parser.eSyntax.ErrorLevels <em>Error Levels</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Error Levels</em>'.
+   * @see hu.e.parser.eSyntax.ErrorLevels
+   * @generated
+   */
+  EEnum getErrorLevels();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -4866,6 +4955,32 @@ public interface ESyntaxPackage extends EPackage
     EClass XTOP_LEVEL_EXPRESSION = eINSTANCE.getXTopLevelExpression();
 
     /**
+     * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.XErrorExpressionImpl <em>XError Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.e.parser.eSyntax.impl.XErrorExpressionImpl
+     * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXErrorExpression()
+     * @generated
+     */
+    EClass XERROR_EXPRESSION = eINSTANCE.getXErrorExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Level</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute XERROR_EXPRESSION__LEVEL = eINSTANCE.getXErrorExpression_Level();
+
+    /**
+     * The meta object literal for the '<em><b>Msg</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute XERROR_EXPRESSION__MSG = eINSTANCE.getXErrorExpression_Msg();
+
+    /**
      * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.XIsLiteralExpressionImpl <em>XIs Literal Expression</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5166,6 +5281,16 @@ public interface ESyntaxPackage extends EPackage
      * @generated
      */
     EEnum BOOLEAN_OPERATOR = eINSTANCE.getBOOLEAN_OPERATOR();
+
+    /**
+     * The meta object literal for the '{@link hu.e.parser.eSyntax.ErrorLevels <em>Error Levels</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.e.parser.eSyntax.ErrorLevels
+     * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getErrorLevels()
+     * @generated
+     */
+    EEnum ERROR_LEVELS = eINSTANCE.getErrorLevels();
 
   }
 

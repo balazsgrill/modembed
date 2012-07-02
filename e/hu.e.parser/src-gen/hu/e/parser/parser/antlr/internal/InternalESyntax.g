@@ -3806,6 +3806,77 @@ ruleXTopLevelExpression returns [EObject current=null]
         $current = $this_XWhileExpression_5.current; 
         afterParserOrEnumRuleCall();
     }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getXTopLevelExpressionAccess().getXErrorExpressionParserRuleCall_4()); 
+    }
+    this_XErrorExpression_6=ruleXErrorExpression
+    { 
+        $current = $this_XErrorExpression_6.current; 
+        afterParserOrEnumRuleCall();
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRuleXErrorExpression
+entryRuleXErrorExpression returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getXErrorExpressionRule()); }
+	 iv_ruleXErrorExpression=ruleXErrorExpression 
+	 { $current=$iv_ruleXErrorExpression.current; } 
+	 EOF 
+;
+
+// Rule XErrorExpression
+ruleXErrorExpression returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+(
+		{ 
+	        newCompositeNode(grammarAccess.getXErrorExpressionAccess().getLevelErrorLevelsEnumRuleCall_0_0()); 
+	    }
+		lv_level_0_0=ruleErrorLevels		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getXErrorExpressionRule());
+	        }
+       		set(
+       			$current, 
+       			"level",
+        		lv_level_0_0, 
+        		"ErrorLevels");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(
+(
+		lv_msg_1_0=RULE_STRING
+		{
+			newLeafNode(lv_msg_1_0, grammarAccess.getXErrorExpressionAccess().getMsgSTRINGTerminalRuleCall_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getXErrorExpressionRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"msg",
+        		lv_msg_1_0, 
+        		"STRING");
+	    }
+
+)
+)	otherlv_2=';' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getXErrorExpressionAccess().getSemicolonKeyword_2());
+    }
 )
 ;
 
@@ -4463,6 +4534,31 @@ ruleBOOLEAN_OPERATOR returns [Enumerator current=null]
 	{
         $current = grammarAccess.getBOOLEAN_OPERATORAccess().getANDEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
         newLeafNode(enumLiteral_1, grammarAccess.getBOOLEAN_OPERATORAccess().getANDEnumLiteralDeclaration_1()); 
+    }
+));
+
+
+
+// Rule ErrorLevels
+ruleErrorLevels returns [Enumerator current=null] 
+    @init { enterRule(); }
+    @after { leaveRule(); }:
+((	enumLiteral_0='error' 
+	{
+        $current = grammarAccess.getErrorLevelsAccess().getERROREnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_0, grammarAccess.getErrorLevelsAccess().getERROREnumLiteralDeclaration_0()); 
+    }
+)
+    |(	enumLiteral_1='warning' 
+	{
+        $current = grammarAccess.getErrorLevelsAccess().getWARNINGEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_1, grammarAccess.getErrorLevelsAccess().getWARNINGEnumLiteralDeclaration_1()); 
+    }
+)
+    |(	enumLiteral_2='info' 
+	{
+        $current = grammarAccess.getErrorLevelsAccess().getINFOEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_2, grammarAccess.getErrorLevelsAccess().getINFOEnumLiteralDeclaration_2()); 
     }
 ));
 

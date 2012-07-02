@@ -437,6 +437,15 @@ public interface ESyntaxFactory extends EFactory
   XTopLevelExpression createXTopLevelExpression();
 
   /**
+   * Returns a new object of class '<em>XError Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>XError Expression</em>'.
+   * @generated
+   */
+  XErrorExpression createXErrorExpression();
+
+  /**
    * Returns a new object of class '<em>XIs Literal Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

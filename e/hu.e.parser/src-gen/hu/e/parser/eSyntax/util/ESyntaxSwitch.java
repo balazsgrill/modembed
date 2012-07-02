@@ -434,6 +434,15 @@ public class ESyntaxSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case ESyntaxPackage.XERROR_EXPRESSION:
+      {
+        XErrorExpression xErrorExpression = (XErrorExpression)theEObject;
+        T result = caseXErrorExpression(xErrorExpression);
+        if (result == null) result = caseXTopLevelExpression(xErrorExpression);
+        if (result == null) result = caseOperationStep(xErrorExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case ESyntaxPackage.XIS_LITERAL_EXPRESSION:
       {
         XIsLiteralExpression xIsLiteralExpression = (XIsLiteralExpression)theEObject;
@@ -1265,6 +1274,22 @@ public class ESyntaxSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseXTopLevelExpression(XTopLevelExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>XError Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>XError Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseXErrorExpression(XErrorExpression object)
   {
     return null;
   }

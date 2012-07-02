@@ -111,6 +111,7 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
       case ESyntaxPackage.XEXPRESSION6: return createXExpression6();
       case ESyntaxPackage.XEXPRESSION_LITERAL: return createXExpressionLiteral();
       case ESyntaxPackage.XTOP_LEVEL_EXPRESSION: return createXTopLevelExpression();
+      case ESyntaxPackage.XERROR_EXPRESSION: return createXErrorExpression();
       case ESyntaxPackage.XIS_LITERAL_EXPRESSION: return createXIsLiteralExpression();
       case ESyntaxPackage.XIF_EXPRESSION: return createXIfExpression();
       case ESyntaxPackage.XWHILE_EXPRESSION: return createXWhileExpression();
@@ -154,6 +155,8 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
         return createEQUALITY_OPERATORFromString(eDataType, initialValue);
       case ESyntaxPackage.BOOLEAN_OPERATOR:
         return createBOOLEAN_OPERATORFromString(eDataType, initialValue);
+      case ESyntaxPackage.ERROR_LEVELS:
+        return createErrorLevelsFromString(eDataType, initialValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -187,6 +190,8 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
         return convertEQUALITY_OPERATORToString(eDataType, instanceValue);
       case ESyntaxPackage.BOOLEAN_OPERATOR:
         return convertBOOLEAN_OPERATORToString(eDataType, instanceValue);
+      case ESyntaxPackage.ERROR_LEVELS:
+        return convertErrorLevelsToString(eDataType, instanceValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -703,6 +708,17 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public XErrorExpression createXErrorExpression()
+  {
+    XErrorExpressionImpl xErrorExpression = new XErrorExpressionImpl();
+    return xErrorExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public XIsLiteralExpression createXIsLiteralExpression()
   {
     XIsLiteralExpressionImpl xIsLiteralExpression = new XIsLiteralExpressionImpl();
@@ -1002,6 +1018,28 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
    * @generated
    */
   public String convertBOOLEAN_OPERATORToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ErrorLevels createErrorLevelsFromString(EDataType eDataType, String initialValue)
+  {
+    ErrorLevels result = ErrorLevels.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertErrorLevelsToString(EDataType eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }

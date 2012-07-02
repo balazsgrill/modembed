@@ -33,6 +33,7 @@ import hu.e.parser.eSyntax.StructTypeDefMember;
 import hu.e.parser.eSyntax.Type;
 import hu.e.parser.eSyntax.Variable;
 import hu.e.parser.eSyntax.VariableReference;
+import hu.e.parser.eSyntax.XErrorExpression;
 import hu.e.parser.eSyntax.XExpression0;
 import hu.e.parser.eSyntax.XExpression1;
 import hu.e.parser.eSyntax.XExpression2;
@@ -290,6 +291,14 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 				}
 				else if(context == grammarAccess.getWordSectionRule()) {
 					sequence_VariableReference_WordSection(context, (VariableReference) semanticObject); 
+					return; 
+				}
+				else break;
+			case ESyntaxPackage.XERROR_EXPRESSION:
+				if(context == grammarAccess.getOperationStepRule() ||
+				   context == grammarAccess.getXErrorExpressionRule() ||
+				   context == grammarAccess.getXTopLevelExpressionRule()) {
+					sequence_XErrorExpression(context, (XErrorExpression) semanticObject); 
 					return; 
 				}
 				else break;
@@ -876,6 +885,25 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getVariableAccess().getTypeTypeDefParserRuleCall_0_0(), semanticObject.getType());
 		feeder.accept(grammarAccess.getVariableAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (level=ErrorLevels msg=STRING)
+	 */
+	protected void sequence_XErrorExpression(EObject context, XErrorExpression semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.XERROR_EXPRESSION__LEVEL) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.XERROR_EXPRESSION__LEVEL));
+			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.XERROR_EXPRESSION__MSG) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.XERROR_EXPRESSION__MSG));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getXErrorExpressionAccess().getLevelErrorLevelsEnumRuleCall_0_0(), semanticObject.getLevel());
+		feeder.accept(grammarAccess.getXErrorExpressionAccess().getMsgSTRINGTerminalRuleCall_1_0(), semanticObject.getMsg());
 		feeder.finish();
 	}
 	

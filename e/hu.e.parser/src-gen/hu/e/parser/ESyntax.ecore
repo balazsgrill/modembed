@@ -268,6 +268,15 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="XTopLevelExpression" eSuperTypes="#//OperationStep"/>
+  <eClassifiers xsi:type="ecore:EClass" name="XErrorExpression" eSuperTypes="#//XTopLevelExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="level" eType="#//ErrorLevels"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="msg" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ErrorLevels">
+    <eLiterals name="ERROR" literal="error"/>
+    <eLiterals name="WARNING" value="1" literal="warning"/>
+    <eLiterals name="INFO" value="2" literal="info"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="XIsLiteralExpression" eSuperTypes="#//XPrimaryExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ref" eType="#//VariableReference"
         containment="true"/>

@@ -2412,13 +2412,14 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSemicolonKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
 		private final RuleCall cXIfExpressionParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cXWhileExpressionParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cXErrorExpressionParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		
 		//XTopLevelExpression:
 		//
-		//	Annotation ";" | XExpression ";" | XIfExpression | XWhileExpression;
+		//	Annotation ";" | XExpression ";" | XIfExpression | XWhileExpression | XErrorExpression;
 		public ParserRule getRule() { return rule; }
 
-		//Annotation ";" | XExpression ";" | XIfExpression | XWhileExpression
+		//Annotation ";" | XExpression ";" | XIfExpression | XWhileExpression | XErrorExpression
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//Annotation ";"
@@ -2444,6 +2445,42 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 
 		//XWhileExpression
 		public RuleCall getXWhileExpressionParserRuleCall_3() { return cXWhileExpressionParserRuleCall_3; }
+
+		//XErrorExpression
+		public RuleCall getXErrorExpressionParserRuleCall_4() { return cXErrorExpressionParserRuleCall_4; }
+	}
+
+	public class XErrorExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "XErrorExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cLevelAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cLevelErrorLevelsEnumRuleCall_0_0 = (RuleCall)cLevelAssignment_0.eContents().get(0);
+		private final Assignment cMsgAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cMsgSTRINGTerminalRuleCall_1_0 = (RuleCall)cMsgAssignment_1.eContents().get(0);
+		private final Keyword cSemicolonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		
+		//XErrorExpression:
+		//
+		//	level=ErrorLevels msg=STRING ";";
+		public ParserRule getRule() { return rule; }
+
+		//level=ErrorLevels msg=STRING ";"
+		public Group getGroup() { return cGroup; }
+
+		//level=ErrorLevels
+		public Assignment getLevelAssignment_0() { return cLevelAssignment_0; }
+
+		//ErrorLevels
+		public RuleCall getLevelErrorLevelsEnumRuleCall_0_0() { return cLevelErrorLevelsEnumRuleCall_0_0; }
+
+		//msg=STRING
+		public Assignment getMsgAssignment_1() { return cMsgAssignment_1; }
+
+		//STRING
+		public RuleCall getMsgSTRINGTerminalRuleCall_1_0() { return cMsgSTRINGTerminalRuleCall_1_0; }
+
+		//";"
+		public Keyword getSemicolonKeyword_2() { return cSemicolonKeyword_2; }
 	}
 
 	public class OpSingleAssignElements extends AbstractParserRuleElementFinder {
@@ -3142,6 +3179,43 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		//"&&"
 		public Keyword getANDAmpersandAmpersandKeyword_1_0() { return cANDAmpersandAmpersandKeyword_1_0; }
 	}
+
+	public class ErrorLevelsElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "ErrorLevels");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cERROREnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cERRORErrorKeyword_0_0 = (Keyword)cERROREnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cWARNINGEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cWARNINGWarningKeyword_1_0 = (Keyword)cWARNINGEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cINFOEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cINFOInfoKeyword_2_0 = (Keyword)cINFOEnumLiteralDeclaration_2.eContents().get(0);
+		
+		//enum ErrorLevels:
+		//
+		//	ERROR="error" | WARNING="warning" | INFO="info";
+		public EnumRule getRule() { return rule; }
+
+		//ERROR="error" | WARNING="warning" | INFO="info"
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//ERROR="error"
+		public EnumLiteralDeclaration getERROREnumLiteralDeclaration_0() { return cERROREnumLiteralDeclaration_0; }
+
+		//"error"
+		public Keyword getERRORErrorKeyword_0_0() { return cERRORErrorKeyword_0_0; }
+
+		//WARNING="warning"
+		public EnumLiteralDeclaration getWARNINGEnumLiteralDeclaration_1() { return cWARNINGEnumLiteralDeclaration_1; }
+
+		//"warning"
+		public Keyword getWARNINGWarningKeyword_1_0() { return cWARNINGWarningKeyword_1_0; }
+
+		//INFO="info"
+		public EnumLiteralDeclaration getINFOEnumLiteralDeclaration_2() { return cINFOEnumLiteralDeclaration_2; }
+
+		//"info"
+		public Keyword getINFOInfoKeyword_2_0() { return cINFOInfoKeyword_2_0; }
+	}
 	
 	private CompilationUnitElements pCompilationUnit;
 	private QualifiedNameElements pQualifiedName;
@@ -3209,6 +3283,8 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	private BOOLEAN_OPERATORElements unknownRuleBOOLEAN_OPERATOR;
 	private XExpressionLiteralElements pXExpressionLiteral;
 	private XTopLevelExpressionElements pXTopLevelExpression;
+	private XErrorExpressionElements pXErrorExpression;
+	private ErrorLevelsElements unknownRuleErrorLevels;
 	private OpSingleAssignElements pOpSingleAssign;
 	private XIsLiteralExpressionElements pXIsLiteralExpression;
 	private XIfExpressionElements pXIfExpression;
@@ -4023,13 +4099,35 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 
 	//XTopLevelExpression:
 	//
-	//	Annotation ";" | XExpression ";" | XIfExpression | XWhileExpression;
+	//	Annotation ";" | XExpression ";" | XIfExpression | XWhileExpression | XErrorExpression;
 	public XTopLevelExpressionElements getXTopLevelExpressionAccess() {
 		return (pXTopLevelExpression != null) ? pXTopLevelExpression : (pXTopLevelExpression = new XTopLevelExpressionElements());
 	}
 	
 	public ParserRule getXTopLevelExpressionRule() {
 		return getXTopLevelExpressionAccess().getRule();
+	}
+
+	//XErrorExpression:
+	//
+	//	level=ErrorLevels msg=STRING ";";
+	public XErrorExpressionElements getXErrorExpressionAccess() {
+		return (pXErrorExpression != null) ? pXErrorExpression : (pXErrorExpression = new XErrorExpressionElements());
+	}
+	
+	public ParserRule getXErrorExpressionRule() {
+		return getXErrorExpressionAccess().getRule();
+	}
+
+	//enum ErrorLevels:
+	//
+	//	ERROR="error" | WARNING="warning" | INFO="info";
+	public ErrorLevelsElements getErrorLevelsAccess() {
+		return (unknownRuleErrorLevels != null) ? unknownRuleErrorLevels : (unknownRuleErrorLevels = new ErrorLevelsElements());
+	}
+	
+	public EnumRule getErrorLevelsRule() {
+		return getErrorLevelsAccess().getRule();
 	}
 
 	//OpSingleAssign:
