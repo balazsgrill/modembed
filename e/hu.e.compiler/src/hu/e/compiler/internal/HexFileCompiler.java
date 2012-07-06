@@ -64,11 +64,12 @@ public class HexFileCompiler {
 		HexFile result = HexfileFactory.eINSTANCE.createHexFile();
 		result.setAddressType(AddressType.EXTENDED_LINEAR);
 		for(BinarySection bs : lb.getSections()){
+			int sectionwidth = ECompiler.convertLiteral(bs.getWidth());
 			if (bs instanceof ConstantBinarySection){
 				try{
 					long start = ((ILiteralSymbol)sm.resolve(null, bs.getStart())).getValue().longValue();
 					Entry entry = HexfileFactory.eINSTANCE.createEntry();
-					entry.setAddress((int)start);
+					entry.setAddress((int)start*sectionwidth);
 					ConstantBinarySection c = (ConstantBinarySection)bs;
 					byte[] data = new byte[0];
 					for(XExpression x : c.getData()){
@@ -99,7 +100,7 @@ public class HexFileCompiler {
 					FunctionBinarySection functionBs = (FunctionBinarySection)bs;
 					int start = (int)((ILiteralSymbol)sm.resolve(null, bs.getStart())).getValue().intValue();
 					Entry entry = HexfileFactory.eINSTANCE.createEntry();
-					entry.setAddress(start);
+					entry.setAddress(start*sectionwidth);
 					FunctionCompiler fc = new FunctionCompiler(functionBs);
 					ProgramList plist = fc.compile(sm); 
 					lists.add(plist);
