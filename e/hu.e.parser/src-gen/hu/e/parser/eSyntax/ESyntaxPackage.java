@@ -996,13 +996,22 @@ public interface ESyntaxPackage extends EPackage
   int BINARY_SECTION__START = 0;
 
   /**
+   * The feature id for the '<em><b>Width</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BINARY_SECTION__WIDTH = 1;
+
+  /**
    * The number of structural features of the '<em>Binary Section</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BINARY_SECTION_FEATURE_COUNT = 1;
+  int BINARY_SECTION_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.impl.FunctionBinarySectionImpl <em>Function Binary Section</em>}' class.
@@ -1022,6 +1031,15 @@ public interface ESyntaxPackage extends EPackage
    * @ordered
    */
   int FUNCTION_BINARY_SECTION__START = BINARY_SECTION__START;
+
+  /**
+   * The feature id for the '<em><b>Width</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_BINARY_SECTION__WIDTH = BINARY_SECTION__WIDTH;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1198,6 +1216,15 @@ public interface ESyntaxPackage extends EPackage
   int CONSTANT_BINARY_SECTION__START = BINARY_SECTION__START;
 
   /**
+   * The feature id for the '<em><b>Width</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONSTANT_BINARY_SECTION__WIDTH = BINARY_SECTION__WIDTH;
+
+  /**
    * The feature id for the '<em><b>Data</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1233,6 +1260,15 @@ public interface ESyntaxPackage extends EPackage
    * @ordered
    */
   int REFERENCE_BINARY_SECTION__START = BINARY_SECTION__START;
+
+  /**
+   * The feature id for the '<em><b>Width</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REFERENCE_BINARY_SECTION__WIDTH = BINARY_SECTION__WIDTH;
 
   /**
    * The feature id for the '<em><b>Inc</b></em>' reference.
@@ -2899,6 +2935,17 @@ public interface ESyntaxPackage extends EPackage
   EReference getBinarySection_Start();
 
   /**
+   * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.BinarySection#getWidth <em>Width</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Width</em>'.
+   * @see hu.e.parser.eSyntax.BinarySection#getWidth()
+   * @see #getBinarySection()
+   * @generated
+   */
+  EAttribute getBinarySection_Width();
+
+  /**
    * Returns the meta object for class '{@link hu.e.parser.eSyntax.FunctionBinarySection <em>Function Binary Section</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4451,6 +4498,14 @@ public interface ESyntaxPackage extends EPackage
      * @generated
      */
     EReference BINARY_SECTION__START = eINSTANCE.getBinarySection_Start();
+
+    /**
+     * The meta object literal for the '<em><b>Width</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BINARY_SECTION__WIDTH = eINSTANCE.getBinarySection_Width();
 
     /**
      * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.FunctionBinarySectionImpl <em>Function Binary Section</em>}' class.

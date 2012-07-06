@@ -7391,6 +7391,7 @@ rule__BinarySection__Group__3
     }
 :
 	rule__BinarySection__Group__3__Impl
+	rule__BinarySection__Group__4
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -7402,17 +7403,80 @@ rule__BinarySection__Group__3__Impl
     }
 :
 (
-{ before(grammarAccess.getBinarySectionAccess().getSemicolonKeyword_3()); }
+{ before(grammarAccess.getBinarySectionAccess().getWidthKeyword_3()); }
 
-	';' 
+	'width' 
 
-{ after(grammarAccess.getBinarySectionAccess().getSemicolonKeyword_3()); }
+{ after(grammarAccess.getBinarySectionAccess().getWidthKeyword_3()); }
 )
 
 ;
 finally {
 	restoreStackSize(stackSize);
 }
+
+
+rule__BinarySection__Group__4
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__BinarySection__Group__4__Impl
+	rule__BinarySection__Group__5
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__BinarySection__Group__4__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getBinarySectionAccess().getWidthAssignment_4()); }
+(rule__BinarySection__WidthAssignment_4)
+{ after(grammarAccess.getBinarySectionAccess().getWidthAssignment_4()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__BinarySection__Group__5
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__BinarySection__Group__5__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__BinarySection__Group__5__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getBinarySectionAccess().getSemicolonKeyword_5()); }
+
+	';' 
+
+{ after(grammarAccess.getBinarySectionAccess().getSemicolonKeyword_5()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
+
 
 
 
@@ -12450,6 +12514,21 @@ rule__BinarySection__StartAssignment_2
 (
 { before(grammarAccess.getBinarySectionAccess().getStartXExpressionParserRuleCall_2_0()); }
 	ruleXExpression{ after(grammarAccess.getBinarySectionAccess().getStartXExpressionParserRuleCall_2_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__BinarySection__WidthAssignment_4
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getBinarySectionAccess().getWidthLITERALParserRuleCall_4_0()); }
+	ruleLITERAL{ after(grammarAccess.getBinarySectionAccess().getWidthLITERALParserRuleCall_4_0()); }
 )
 
 ;

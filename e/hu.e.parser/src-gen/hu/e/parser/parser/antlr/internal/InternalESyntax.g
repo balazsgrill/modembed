@@ -2367,9 +2367,31 @@ ruleBinarySection returns [EObject current=null]
 	    }
 
 )
-)	otherlv_5=';' 
+)	otherlv_5='width' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getBinarySectionAccess().getSemicolonKeyword_3());
+    	newLeafNode(otherlv_5, grammarAccess.getBinarySectionAccess().getWidthKeyword_3());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getBinarySectionAccess().getWidthLITERALParserRuleCall_4_0()); 
+	    }
+		lv_width_6_0=ruleLITERAL		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getBinarySectionRule());
+	        }
+       		set(
+       			$current, 
+       			"width",
+        		lv_width_6_0, 
+        		"LITERAL");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_7=';' 
+    {
+    	newLeafNode(otherlv_7, grammarAccess.getBinarySectionAccess().getSemicolonKeyword_5());
     }
 )
 ;

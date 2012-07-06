@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link hu.e.parser.eSyntax.impl.BinarySectionImpl#getStart <em>Start</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.impl.BinarySectionImpl#getWidth <em>Width</em>}</li>
  * </ul>
  * </p>
  *
@@ -39,6 +40,26 @@ public class BinarySectionImpl extends MinimalEObjectImpl.Container implements B
    * @ordered
    */
   protected XExpression start;
+
+  /**
+   * The default value of the '{@link #getWidth() <em>Width</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getWidth()
+   * @generated
+   * @ordered
+   */
+  protected static final String WIDTH_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getWidth() <em>Width</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getWidth()
+   * @generated
+   * @ordered
+   */
+  protected String width = WIDTH_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -114,6 +135,29 @@ public class BinarySectionImpl extends MinimalEObjectImpl.Container implements B
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getWidth()
+  {
+    return width;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setWidth(String newWidth)
+  {
+    String oldWidth = width;
+    width = newWidth;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.BINARY_SECTION__WIDTH, oldWidth, width));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -137,6 +181,8 @@ public class BinarySectionImpl extends MinimalEObjectImpl.Container implements B
     {
       case ESyntaxPackage.BINARY_SECTION__START:
         return getStart();
+      case ESyntaxPackage.BINARY_SECTION__WIDTH:
+        return getWidth();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -153,6 +199,9 @@ public class BinarySectionImpl extends MinimalEObjectImpl.Container implements B
     {
       case ESyntaxPackage.BINARY_SECTION__START:
         setStart((XExpression)newValue);
+        return;
+      case ESyntaxPackage.BINARY_SECTION__WIDTH:
+        setWidth((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -171,6 +220,9 @@ public class BinarySectionImpl extends MinimalEObjectImpl.Container implements B
       case ESyntaxPackage.BINARY_SECTION__START:
         setStart((XExpression)null);
         return;
+      case ESyntaxPackage.BINARY_SECTION__WIDTH:
+        setWidth(WIDTH_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -187,8 +239,27 @@ public class BinarySectionImpl extends MinimalEObjectImpl.Container implements B
     {
       case ESyntaxPackage.BINARY_SECTION__START:
         return start != null;
+      case ESyntaxPackage.BINARY_SECTION__WIDTH:
+        return WIDTH_EDEFAULT == null ? width != null : !WIDTH_EDEFAULT.equals(width);
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (width: ");
+    result.append(width);
+    result.append(')');
+    return result.toString();
   }
 
 } //BinarySectionImpl

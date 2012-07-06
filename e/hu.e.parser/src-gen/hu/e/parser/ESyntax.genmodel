@@ -158,6 +158,7 @@
     </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//BinarySection">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//BinarySection/start"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//BinarySection/width"/>
     </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//FunctionBinarySection">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//FunctionBinarySection/name"/>

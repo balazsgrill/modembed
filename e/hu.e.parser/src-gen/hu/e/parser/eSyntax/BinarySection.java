@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link hu.e.parser.eSyntax.BinarySection#getStart <em>Start</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.BinarySection#getWidth <em>Width</em>}</li>
  * </ul>
  * </p>
  *
@@ -47,5 +48,31 @@ public interface BinarySection extends EObject
    * @generated
    */
   void setStart(XExpression value);
+
+  /**
+   * Returns the value of the '<em><b>Width</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Width</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Width</em>' attribute.
+   * @see #setWidth(String)
+   * @see hu.e.parser.eSyntax.ESyntaxPackage#getBinarySection_Width()
+   * @model
+   * @generated
+   */
+  String getWidth();
+
+  /**
+   * Sets the value of the '{@link hu.e.parser.eSyntax.BinarySection#getWidth <em>Width</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Width</em>' attribute.
+   * @see #getWidth()
+   * @generated
+   */
+  void setWidth(String value);
 
 } // BinarySection

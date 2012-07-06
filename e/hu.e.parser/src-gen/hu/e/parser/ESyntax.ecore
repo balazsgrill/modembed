@@ -136,6 +136,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="BinarySection">
     <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//XExpression"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FunctionBinarySection" eSuperTypes="#//BinarySection">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

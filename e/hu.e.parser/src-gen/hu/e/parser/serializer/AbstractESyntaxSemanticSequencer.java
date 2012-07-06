@@ -465,7 +465,7 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 	
 	/**
 	 * Constraint:
-	 *     (data+=XExpression+ start=XExpression)
+	 *     (data+=XExpression+ start=XExpression width=LITERAL)
 	 */
 	protected void sequence_BinarySection_ConstantBinarySection(EObject context, ConstantBinarySection semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -484,7 +484,8 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 	 *         optimizercalls+=OptimizerCall* 
 	 *         lib+=[Library|QualifiedName]* 
 	 *         do=OperationBlock 
-	 *         start=XExpression
+	 *         start=XExpression 
+	 *         width=LITERAL
 	 *     )
 	 */
 	protected void sequence_BinarySection_FunctionBinarySection(EObject context, FunctionBinarySection semanticObject) {
@@ -494,12 +495,14 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 	
 	/**
 	 * Constraint:
-	 *     (inc=[LinkedBinary|QualifiedName] start=XExpression)
+	 *     (inc=[LinkedBinary|QualifiedName] start=XExpression width=LITERAL)
 	 */
 	protected void sequence_BinarySection_ReferenceBinarySection(EObject context, ReferenceBinarySection semanticObject) {
 		if(errorAcceptor != null) {
 			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.BINARY_SECTION__START) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.BINARY_SECTION__START));
+			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.BINARY_SECTION__WIDTH) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.BINARY_SECTION__WIDTH));
 			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.REFERENCE_BINARY_SECTION__INC) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.REFERENCE_BINARY_SECTION__INC));
 		}
@@ -507,6 +510,7 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getReferenceBinarySectionAccess().getIncLinkedBinaryQualifiedNameParserRuleCall_1_0_1(), semanticObject.getInc());
 		feeder.accept(grammarAccess.getBinarySectionAccess().getStartXExpressionParserRuleCall_2_0(), semanticObject.getStart());
+		feeder.accept(grammarAccess.getBinarySectionAccess().getWidthLITERALParserRuleCall_4_0(), semanticObject.getWidth());
 		feeder.finish();
 	}
 	

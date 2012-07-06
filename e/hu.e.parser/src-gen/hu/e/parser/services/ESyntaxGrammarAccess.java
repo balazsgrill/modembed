@@ -1503,14 +1503,21 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cAtKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cStartAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cStartXExpressionParserRuleCall_2_0 = (RuleCall)cStartAssignment_2.eContents().get(0);
-		private final Keyword cSemicolonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cWidthKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cWidthAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cWidthLITERALParserRuleCall_4_0 = (RuleCall)cWidthAssignment_4.eContents().get(0);
+		private final Keyword cSemicolonKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//BinarySection:
 		//
-		//	(FunctionBinarySection | ConstantBinarySection | ReferenceBinarySection) "at" start=XExpression ";";
+		//	(FunctionBinarySection | ConstantBinarySection | ReferenceBinarySection) "at" start=XExpression "width" width=LITERAL
+		//
+		//	";";
 		public ParserRule getRule() { return rule; }
 
-		//(FunctionBinarySection | ConstantBinarySection | ReferenceBinarySection) "at" start=XExpression ";"
+		//(FunctionBinarySection | ConstantBinarySection | ReferenceBinarySection) "at" start=XExpression "width" width=LITERAL
+		//
+		//";"
 		public Group getGroup() { return cGroup; }
 
 		//FunctionBinarySection | ConstantBinarySection | ReferenceBinarySection
@@ -1534,8 +1541,17 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		//XExpression
 		public RuleCall getStartXExpressionParserRuleCall_2_0() { return cStartXExpressionParserRuleCall_2_0; }
 
+		//"width"
+		public Keyword getWidthKeyword_3() { return cWidthKeyword_3; }
+
+		//width=LITERAL
+		public Assignment getWidthAssignment_4() { return cWidthAssignment_4; }
+
+		//LITERAL
+		public RuleCall getWidthLITERALParserRuleCall_4_0() { return cWidthLITERALParserRuleCall_4_0; }
+
 		//";"
-		public Keyword getSemicolonKeyword_3() { return cSemicolonKeyword_3; }
+		public Keyword getSemicolonKeyword_5() { return cSemicolonKeyword_5; }
 	}
 
 	public class FunctionBinarySectionElements extends AbstractParserRuleElementFinder {
@@ -1784,28 +1800,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cEndAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cEndLITERALParserRuleCall_3_0 = (RuleCall)cEndAssignment_3.eContents().get(0);
 		
-		////LinkedInstance returns Instance:
-		// //	{LinkedInstance} type=[Module|QualifiedName] name=ID '{'
-		// //			( 
-		//
-		//
-		////			(links+=ReferenceLink | confs+=InstanceConfig)	
-		// //			';')*
-		// //		'}'
-		// //;
-		// //
-		// //ReferenceLink:
-		//
-		//
-		////	ref=[Socket|ID] ':' inst=[LinkedInstance|ID]
-		// //;
-		// //
-		// //InstanceConfig:
-		//
-		//
-		////	conf=[ConfigVariable|ID] '=' value=XExpression
-		// //;
-		// FunctionMemory:
+		//FunctionMemory:
 		//
 		//	"mem" start=LITERAL ".." end=LITERAL;
 		public ParserRule getRule() { return rule; }
@@ -3803,7 +3798,9 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 
 	//BinarySection:
 	//
-	//	(FunctionBinarySection | ConstantBinarySection | ReferenceBinarySection) "at" start=XExpression ";";
+	//	(FunctionBinarySection | ConstantBinarySection | ReferenceBinarySection) "at" start=XExpression "width" width=LITERAL
+	//
+	//	";";
 	public BinarySectionElements getBinarySectionAccess() {
 		return (pBinarySection != null) ? pBinarySection : (pBinarySection = new BinarySectionElements());
 	}
@@ -3841,28 +3838,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		return getOptimizerCallAccess().getRule();
 	}
 
-	////LinkedInstance returns Instance:
-	// //	{LinkedInstance} type=[Module|QualifiedName] name=ID '{'
-	// //			( 
-	//
-	//
-	////			(links+=ReferenceLink | confs+=InstanceConfig)	
-	// //			';')*
-	// //		'}'
-	// //;
-	// //
-	// //ReferenceLink:
-	//
-	//
-	////	ref=[Socket|ID] ':' inst=[LinkedInstance|ID]
-	// //;
-	// //
-	// //InstanceConfig:
-	//
-	//
-	////	conf=[ConfigVariable|ID] '=' value=XExpression
-	// //;
-	// FunctionMemory:
+	//FunctionMemory:
 	//
 	//	"mem" start=LITERAL ".." end=LITERAL;
 	public FunctionMemoryElements getFunctionMemoryAccess() {

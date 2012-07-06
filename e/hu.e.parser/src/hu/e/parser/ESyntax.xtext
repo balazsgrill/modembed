@@ -220,7 +220,8 @@ enum BinaryType:
 ;
 
 BinarySection:
-	(FunctionBinarySection | ConstantBinarySection | ReferenceBinarySection) 'at' start=XExpression ';'
+	(FunctionBinarySection | ConstantBinarySection | ReferenceBinarySection) 
+	'at' start=XExpression  'width' width=LITERAL ';'
 ;
  
 FunctionBinarySection:
@@ -244,22 +245,6 @@ FunctionBinarySection:
 OptimizerCall:
 	'optimize' optimizer=STRING
 ;
-
-//LinkedInstance returns Instance:
-//	{LinkedInstance} type=[Module|QualifiedName] name=ID '{'
-//			( 
-//			(links+=ReferenceLink | confs+=InstanceConfig)	
-//			';')*
-//		'}'
-//;
-//
-//ReferenceLink:
-//	ref=[Socket|ID] ':' inst=[LinkedInstance|ID]
-//;
-//
-//InstanceConfig:
-//	conf=[ConfigVariable|ID] '=' value=XExpression
-//;
 
 FunctionMemory:
 	'mem' start=LITERAL '..' end=LITERAL

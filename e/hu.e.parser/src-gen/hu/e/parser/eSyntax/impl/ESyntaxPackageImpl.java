@@ -1210,6 +1210,16 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getBinarySection_Width()
+  {
+    return (EAttribute)binarySectionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getFunctionBinarySection()
   {
     return functionBinarySectionEClass;
@@ -2270,6 +2280,7 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
 
     binarySectionEClass = createEClass(BINARY_SECTION);
     createEReference(binarySectionEClass, BINARY_SECTION__START);
+    createEAttribute(binarySectionEClass, BINARY_SECTION__WIDTH);
 
     functionBinarySectionEClass = createEClass(FUNCTION_BINARY_SECTION);
     createEAttribute(functionBinarySectionEClass, FUNCTION_BINARY_SECTION__NAME);
@@ -2558,6 +2569,7 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
 
     initEClass(binarySectionEClass, BinarySection.class, "BinarySection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getBinarySection_Start(), this.getXExpression(), null, "start", null, 0, 1, BinarySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getBinarySection_Width(), ecorePackage.getEString(), "width", null, 0, 1, BinarySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(functionBinarySectionEClass, FunctionBinarySection.class, "FunctionBinarySection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getFunctionBinarySection_Name(), ecorePackage.getEString(), "name", null, 0, 1, FunctionBinarySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
