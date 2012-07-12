@@ -58,6 +58,7 @@ public class ESyntaxParser extends AbstractContentAssistParser {
 					put(grammarAccess.getEQUALITY_OPERATORAccess().getAlternatives(), "rule__EQUALITY_OPERATOR__Alternatives");
 					put(grammarAccess.getBOOLEAN_OPERATORAccess().getAlternatives(), "rule__BOOLEAN_OPERATOR__Alternatives");
 					put(grammarAccess.getErrorLevelsAccess().getAlternatives(), "rule__ErrorLevels__Alternatives");
+					put(grammarAccess.getOpSingleAssignAccess().getAlternatives(), "rule__OpSingleAssign__Alternatives");
 					put(grammarAccess.getQualifiedNameAccess().getGroup(), "rule__QualifiedName__Group__0");
 					put(grammarAccess.getQualifiedNameAccess().getGroup_1(), "rule__QualifiedName__Group_1__0");
 					put(grammarAccess.getAnnotationDefinitionAccess().getGroup(), "rule__AnnotationDefinition__Group__0");
@@ -240,6 +241,7 @@ public class ESyntaxParser extends AbstractContentAssistParser {
 					put(grammarAccess.getXExpression5Access().getOpAssignment_1_0(), "rule__XExpression5__OpAssignment_1_0");
 					put(grammarAccess.getXExpression5Access().getBAssignment_1_1(), "rule__XExpression5__BAssignment_1_1");
 					put(grammarAccess.getXExpression6Access().getRefAssignment_0_0(), "rule__XExpression6__RefAssignment_0_0");
+					put(grammarAccess.getXExpression6Access().getOpAssignment_0_1(), "rule__XExpression6__OpAssignment_0_1");
 					put(grammarAccess.getXExpression6Access().getAAssignment_1(), "rule__XExpression6__AAssignment_1");
 					put(grammarAccess.getXExpressionLiteralAccess().getValueAssignment(), "rule__XExpressionLiteral__ValueAssignment");
 					put(grammarAccess.getXErrorExpressionAccess().getLevelAssignment_0(), "rule__XErrorExpression__LevelAssignment_0");

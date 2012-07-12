@@ -157,6 +157,8 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
         return createBOOLEAN_OPERATORFromString(eDataType, initialValue);
       case ESyntaxPackage.ERROR_LEVELS:
         return createErrorLevelsFromString(eDataType, initialValue);
+      case ESyntaxPackage.OP_SINGLE_ASSIGN:
+        return createOpSingleAssignFromString(eDataType, initialValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -192,6 +194,8 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
         return convertBOOLEAN_OPERATORToString(eDataType, instanceValue);
       case ESyntaxPackage.ERROR_LEVELS:
         return convertErrorLevelsToString(eDataType, instanceValue);
+      case ESyntaxPackage.OP_SINGLE_ASSIGN:
+        return convertOpSingleAssignToString(eDataType, instanceValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -1040,6 +1044,28 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
    * @generated
    */
   public String convertErrorLevelsToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public OpSingleAssign createOpSingleAssignFromString(EDataType eDataType, String initialValue)
+  {
+    OpSingleAssign result = OpSingleAssign.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertOpSingleAssignToString(EDataType eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }

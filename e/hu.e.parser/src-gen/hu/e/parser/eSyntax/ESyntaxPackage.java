@@ -1696,13 +1696,22 @@ public interface ESyntaxPackage extends EPackage
   int XEXPRESSION6__REF = XEXPRESSION_FEATURE_COUNT + 1;
 
   /**
+   * The feature id for the '<em><b>Op</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int XEXPRESSION6__OP = XEXPRESSION_FEATURE_COUNT + 2;
+
+  /**
    * The feature id for the '<em><b>A</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int XEXPRESSION6__A = XEXPRESSION_FEATURE_COUNT + 2;
+  int XEXPRESSION6__A = XEXPRESSION_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>XExpression6</em>' class.
@@ -1711,7 +1720,7 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    * @ordered
    */
-  int XEXPRESSION6_FEATURE_COUNT = XEXPRESSION_FEATURE_COUNT + 3;
+  int XEXPRESSION6_FEATURE_COUNT = XEXPRESSION_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.impl.XExpressionLiteralImpl <em>XExpression Literal</em>}' class.
@@ -2310,6 +2319,16 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    */
   int ERROR_LEVELS = 66;
+
+  /**
+   * The meta object id for the '{@link hu.e.parser.eSyntax.OpSingleAssign <em>Op Single Assign</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.e.parser.eSyntax.OpSingleAssign
+   * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getOpSingleAssign()
+   * @generated
+   */
+  int OP_SINGLE_ASSIGN = 67;
 
 
   /**
@@ -3523,6 +3542,17 @@ public interface ESyntaxPackage extends EPackage
   EReference getXExpression6_Ref();
 
   /**
+   * Returns the meta object for the attribute list '{@link hu.e.parser.eSyntax.XExpression6#getOp <em>Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Op</em>'.
+   * @see hu.e.parser.eSyntax.XExpression6#getOp()
+   * @see #getXExpression6()
+   * @generated
+   */
+  EAttribute getXExpression6_Op();
+
+  /**
    * Returns the meta object for the containment reference '{@link hu.e.parser.eSyntax.XExpression6#getA <em>A</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3949,6 +3979,16 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    */
   EEnum getErrorLevels();
+
+  /**
+   * Returns the meta object for enum '{@link hu.e.parser.eSyntax.OpSingleAssign <em>Op Single Assign</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Op Single Assign</em>'.
+   * @see hu.e.parser.eSyntax.OpSingleAssign
+   * @generated
+   */
+  EEnum getOpSingleAssign();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -4974,6 +5014,14 @@ public interface ESyntaxPackage extends EPackage
     EReference XEXPRESSION6__REF = eINSTANCE.getXExpression6_Ref();
 
     /**
+     * The meta object literal for the '<em><b>Op</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute XEXPRESSION6__OP = eINSTANCE.getXExpression6_Op();
+
+    /**
      * The meta object literal for the '<em><b>A</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5346,6 +5394,16 @@ public interface ESyntaxPackage extends EPackage
      * @generated
      */
     EEnum ERROR_LEVELS = eINSTANCE.getErrorLevels();
+
+    /**
+     * The meta object literal for the '{@link hu.e.parser.eSyntax.OpSingleAssign <em>Op Single Assign</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.e.parser.eSyntax.OpSingleAssign
+     * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getOpSingleAssign()
+     * @generated
+     */
+    EEnum OP_SINGLE_ASSIGN = eINSTANCE.getOpSingleAssign();
 
   }
 

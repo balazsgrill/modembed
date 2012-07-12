@@ -2348,19 +2348,20 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_0 = (Group)cGroup.eContents().get(0);
 		private final Assignment cRefAssignment_0_0 = (Assignment)cGroup_0.eContents().get(0);
 		private final RuleCall cRefVariableReferenceParserRuleCall_0_0_0 = (RuleCall)cRefAssignment_0_0.eContents().get(0);
-		private final RuleCall cOpSingleAssignParserRuleCall_0_1 = (RuleCall)cGroup_0.eContents().get(1);
+		private final Assignment cOpAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final RuleCall cOpOpSingleAssignEnumRuleCall_0_1_0 = (RuleCall)cOpAssignment_0_1.eContents().get(0);
 		private final Assignment cAAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cAXExpression5ParserRuleCall_1_0 = (RuleCall)cAAssignment_1.eContents().get(0);
 		
 		//XExpression6:
 		//
-		//	(=> ref+=VariableReference OpSingleAssign)* a=XExpression5;
+		//	(=> ref+=VariableReference op+=OpSingleAssign)* a=XExpression5;
 		public ParserRule getRule() { return rule; }
 
-		//(=> ref+=VariableReference OpSingleAssign)* a=XExpression5
+		//(=> ref+=VariableReference op+=OpSingleAssign)* a=XExpression5
 		public Group getGroup() { return cGroup; }
 
-		//(=> ref+=VariableReference OpSingleAssign)*
+		//(=> ref+=VariableReference op+=OpSingleAssign)*
 		public Group getGroup_0() { return cGroup_0; }
 
 		//=> ref+=VariableReference
@@ -2369,8 +2370,11 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		//VariableReference
 		public RuleCall getRefVariableReferenceParserRuleCall_0_0_0() { return cRefVariableReferenceParserRuleCall_0_0_0; }
 
+		//op+=OpSingleAssign
+		public Assignment getOpAssignment_0_1() { return cOpAssignment_0_1; }
+
 		//OpSingleAssign
-		public RuleCall getOpSingleAssignParserRuleCall_0_1() { return cOpSingleAssignParserRuleCall_0_1; }
+		public RuleCall getOpOpSingleAssignEnumRuleCall_0_1_0() { return cOpOpSingleAssignEnumRuleCall_0_1_0; }
 
 		//a=XExpression5
 		public Assignment getAAssignment_1() { return cAAssignment_1; }
@@ -2476,19 +2480,6 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 
 		//";"
 		public Keyword getSemicolonKeyword_2() { return cSemicolonKeyword_2; }
-	}
-
-	public class OpSingleAssignElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "OpSingleAssign");
-		private final Keyword cEqualsSignKeyword = (Keyword)rule.eContents().get(1);
-		
-		//OpSingleAssign:
-		//
-		//	"=";
-		public ParserRule getRule() { return rule; }
-
-		//"="
-		public Keyword getEqualsSignKeyword() { return cEqualsSignKeyword; }
 	}
 
 	public class XIsLiteralExpressionElements extends AbstractParserRuleElementFinder {
@@ -3211,6 +3202,43 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		//"info"
 		public Keyword getINFOInfoKeyword_2_0() { return cINFOInfoKeyword_2_0; }
 	}
+
+	public class OpSingleAssignElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "OpSingleAssign");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cASSIGNEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cASSIGNEqualsSignKeyword_0_0 = (Keyword)cASSIGNEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cASSIGNADDEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cASSIGNADDPlusSignEqualsSignKeyword_1_0 = (Keyword)cASSIGNADDEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cASSIGNSUBTRACTEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cASSIGNSUBTRACTHyphenMinusEqualsSignKeyword_2_0 = (Keyword)cASSIGNSUBTRACTEnumLiteralDeclaration_2.eContents().get(0);
+		
+		//enum OpSingleAssign:
+		//
+		//	ASSIGN="=" | ASSIGNADD="+=" | ASSIGNSUBTRACT="-=";
+		public EnumRule getRule() { return rule; }
+
+		//ASSIGN="=" | ASSIGNADD="+=" | ASSIGNSUBTRACT="-="
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//ASSIGN="="
+		public EnumLiteralDeclaration getASSIGNEnumLiteralDeclaration_0() { return cASSIGNEnumLiteralDeclaration_0; }
+
+		//"="
+		public Keyword getASSIGNEqualsSignKeyword_0_0() { return cASSIGNEqualsSignKeyword_0_0; }
+
+		//ASSIGNADD="+="
+		public EnumLiteralDeclaration getASSIGNADDEnumLiteralDeclaration_1() { return cASSIGNADDEnumLiteralDeclaration_1; }
+
+		//"+="
+		public Keyword getASSIGNADDPlusSignEqualsSignKeyword_1_0() { return cASSIGNADDPlusSignEqualsSignKeyword_1_0; }
+
+		//ASSIGNSUBTRACT="-="
+		public EnumLiteralDeclaration getASSIGNSUBTRACTEnumLiteralDeclaration_2() { return cASSIGNSUBTRACTEnumLiteralDeclaration_2; }
+
+		//"-="
+		public Keyword getASSIGNSUBTRACTHyphenMinusEqualsSignKeyword_2_0() { return cASSIGNSUBTRACTHyphenMinusEqualsSignKeyword_2_0; }
+	}
 	
 	private CompilationUnitElements pCompilationUnit;
 	private QualifiedNameElements pQualifiedName;
@@ -3280,7 +3308,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	private XTopLevelExpressionElements pXTopLevelExpression;
 	private XErrorExpressionElements pXErrorExpression;
 	private ErrorLevelsElements unknownRuleErrorLevels;
-	private OpSingleAssignElements pOpSingleAssign;
+	private OpSingleAssignElements unknownRuleOpSingleAssign;
 	private XIsLiteralExpressionElements pXIsLiteralExpression;
 	private XIfExpressionElements pXIfExpression;
 	private XWhileExpressionElements pXWhileExpression;
@@ -4042,7 +4070,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 
 	//XExpression6:
 	//
-	//	(=> ref+=VariableReference OpSingleAssign)* a=XExpression5;
+	//	(=> ref+=VariableReference op+=OpSingleAssign)* a=XExpression5;
 	public XExpression6Elements getXExpression6Access() {
 		return (pXExpression6 != null) ? pXExpression6 : (pXExpression6 = new XExpression6Elements());
 	}
@@ -4106,14 +4134,14 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		return getErrorLevelsAccess().getRule();
 	}
 
-	//OpSingleAssign:
+	//enum OpSingleAssign:
 	//
-	//	"=";
+	//	ASSIGN="=" | ASSIGNADD="+=" | ASSIGNSUBTRACT="-=";
 	public OpSingleAssignElements getOpSingleAssignAccess() {
-		return (pOpSingleAssign != null) ? pOpSingleAssign : (pOpSingleAssign = new OpSingleAssignElements());
+		return (unknownRuleOpSingleAssign != null) ? unknownRuleOpSingleAssign : (unknownRuleOpSingleAssign = new OpSingleAssignElements());
 	}
 	
-	public ParserRule getOpSingleAssignRule() {
+	public EnumRule getOpSingleAssignRule() {
 		return getOpSingleAssignAccess().getRule();
 	}
 

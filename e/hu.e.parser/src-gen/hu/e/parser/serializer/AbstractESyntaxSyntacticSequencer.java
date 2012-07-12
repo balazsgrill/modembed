@@ -29,21 +29,9 @@ public abstract class AbstractESyntaxSyntacticSequencer extends AbstractSyntacti
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if(ruleCall.getRule() == grammarAccess.getOpSingleAssignRule())
-			return getOpSingleAssignToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
-	/**
-	 * OpSingleAssign:
-	 * 	'='
-	 * ;
-	 */
-	protected String getOpSingleAssignToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "=";
-	}
 	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {

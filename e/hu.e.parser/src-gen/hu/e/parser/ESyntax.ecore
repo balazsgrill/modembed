@@ -258,6 +258,8 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ref" upperBound="-1" eType="#//VariableReference"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" unique="false" upperBound="-1"
+        eType="#//OpSingleAssign"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="a" eType="#//XExpression5"
         containment="true"/>
   </eClassifiers>
@@ -277,6 +279,11 @@
     <eLiterals name="ERROR" literal="error"/>
     <eLiterals name="WARNING" value="1" literal="warning"/>
     <eLiterals name="INFO" value="2" literal="info"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="OpSingleAssign">
+    <eLiterals name="ASSIGN" literal="="/>
+    <eLiterals name="ASSIGNADD" value="1" literal="+="/>
+    <eLiterals name="ASSIGNSUBTRACT" value="2" literal="-="/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="XIsLiteralExpression" eSuperTypes="#//XPrimaryExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ref" eType="#//VariableReference"

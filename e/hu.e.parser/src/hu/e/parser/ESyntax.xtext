@@ -324,7 +324,7 @@ XExpression5:
 ;
 
 XExpression6:
-	(=> ref+=VariableReference OpSingleAssign)* a=XExpression5
+	(=> ref+=VariableReference op+=OpSingleAssign)* a=XExpression5
 ;
 
 enum BOOLEAN_OPERATOR:
@@ -347,8 +347,8 @@ enum ErrorLevels:
 	ERROR = 'error' | WARNING = 'warning' | INFO = 'info'
 ;
 
-OpSingleAssign:
-	'='
+enum OpSingleAssign:
+	ASSIGN = '=' | ASSIGNADD= '+=' | ASSIGNSUBTRACT = '-='
 ;
 
 XIsLiteralExpression:

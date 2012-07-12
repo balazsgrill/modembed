@@ -25,6 +25,7 @@ import hu.e.parser.eSyntax.Library;
 import hu.e.parser.eSyntax.LibraryItem;
 import hu.e.parser.eSyntax.LinkedBinary;
 import hu.e.parser.eSyntax.LiteralValue;
+import hu.e.parser.eSyntax.OpSingleAssign;
 import hu.e.parser.eSyntax.Operation;
 import hu.e.parser.eSyntax.OperationBlock;
 import hu.e.parser.eSyntax.OperationCall;
@@ -551,6 +552,13 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * @generated
    */
   private EEnum errorLevelsEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum opSingleAssignEEnum = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -1760,9 +1768,19 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getXExpression6_Op()
+  {
+    return (EAttribute)xExpression6EClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getXExpression6_A()
   {
-    return (EReference)xExpression6EClass.getEStructuralFeatures().get(2);
+    return (EReference)xExpression6EClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -2170,6 +2188,16 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EEnum getOpSingleAssign()
+  {
+    return opSingleAssignEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public ESyntaxFactory getESyntaxFactory()
   {
     return (ESyntaxFactory)getEFactoryInstance();
@@ -2352,6 +2380,7 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     xExpression6EClass = createEClass(XEXPRESSION6);
     createEReference(xExpression6EClass, XEXPRESSION6__TYPE);
     createEReference(xExpression6EClass, XEXPRESSION6__REF);
+    createEAttribute(xExpression6EClass, XEXPRESSION6__OP);
     createEReference(xExpression6EClass, XEXPRESSION6__A);
 
     xExpressionLiteralEClass = createEClass(XEXPRESSION_LITERAL);
@@ -2408,6 +2437,7 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     equalitY_OPERATOREEnum = createEEnum(EQUALITY_OPERATOR);
     booleaN_OPERATOREEnum = createEEnum(BOOLEAN_OPERATOR);
     errorLevelsEEnum = createEEnum(ERROR_LEVELS);
+    opSingleAssignEEnum = createEEnum(OP_SINGLE_ASSIGN);
   }
 
   /**
@@ -2641,6 +2671,7 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     initEClass(xExpression6EClass, XExpression6.class, "XExpression6", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getXExpression6_Type(), this.getTypeDef(), null, "type", null, 0, 1, XExpression6.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getXExpression6_Ref(), this.getVariableReference(), null, "ref", null, 0, -1, XExpression6.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getXExpression6_Op(), this.getOpSingleAssign(), "op", null, 0, -1, XExpression6.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getXExpression6_A(), this.getXExpression5(), null, "a", null, 0, 1, XExpression6.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(xExpressionLiteralEClass, XExpressionLiteral.class, "XExpressionLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2756,6 +2787,11 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     addEEnumLiteral(errorLevelsEEnum, ErrorLevels.ERROR);
     addEEnumLiteral(errorLevelsEEnum, ErrorLevels.WARNING);
     addEEnumLiteral(errorLevelsEEnum, ErrorLevels.INFO);
+
+    initEEnum(opSingleAssignEEnum, OpSingleAssign.class, "OpSingleAssign");
+    addEEnumLiteral(opSingleAssignEEnum, OpSingleAssign.ASSIGN);
+    addEEnumLiteral(opSingleAssignEEnum, OpSingleAssign.ASSIGNADD);
+    addEEnumLiteral(opSingleAssignEEnum, OpSingleAssign.ASSIGNSUBTRACT);
 
     // Create resource
     createResource(eNS_URI);

@@ -77,6 +77,11 @@
       <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//ErrorLevels/WARNING"/>
       <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//ErrorLevels/INFO"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ESyntax.ecore#//OpSingleAssign">
+      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//OpSingleAssign/ASSIGN"/>
+      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//OpSingleAssign/ASSIGNADD"/>
+      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//OpSingleAssign/ASSIGNSUBTRACT"/>
+    </genEnums>
     <genClasses ecoreClass="ESyntax.ecore#//CompilationUnit">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//CompilationUnit/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ESyntax.ecore#//CompilationUnit/use"/>
@@ -228,6 +233,7 @@
     <genClasses ecoreClass="ESyntax.ecore#//XExpression6">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XExpression6/type"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XExpression6/ref"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//XExpression6/op"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XExpression6/a"/>
     </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//XExpressionLiteral">

@@ -14,6 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link hu.e.parser.eSyntax.XExpression6#getType <em>Type</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.XExpression6#getRef <em>Ref</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.XExpression6#getOp <em>Op</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.XExpression6#getA <em>A</em>}</li>
  * </ul>
  * </p>
@@ -65,6 +66,24 @@ public interface XExpression6 extends XExpression
    * @generated
    */
   EList<VariableReference> getRef();
+
+  /**
+   * Returns the value of the '<em><b>Op</b></em>' attribute list.
+   * The list contents are of type {@link hu.e.parser.eSyntax.OpSingleAssign}.
+   * The literals are from the enumeration {@link hu.e.parser.eSyntax.OpSingleAssign}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Op</em>' attribute list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Op</em>' attribute list.
+   * @see hu.e.parser.eSyntax.OpSingleAssign
+   * @see hu.e.parser.eSyntax.ESyntaxPackage#getXExpression6_Op()
+   * @model unique="false"
+   * @generated
+   */
+  EList<OpSingleAssign> getOp();
 
   /**
    * Returns the value of the '<em><b>A</b></em>' containment reference.

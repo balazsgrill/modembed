@@ -3,6 +3,7 @@
 package hu.e.parser.eSyntax.impl;
 
 import hu.e.parser.eSyntax.ESyntaxPackage;
+import hu.e.parser.eSyntax.OpSingleAssign;
 import hu.e.parser.eSyntax.TypeDef;
 import hu.e.parser.eSyntax.VariableReference;
 import hu.e.parser.eSyntax.XExpression5;
@@ -20,6 +21,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -32,6 +34,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link hu.e.parser.eSyntax.impl.XExpression6Impl#getType <em>Type</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.impl.XExpression6Impl#getRef <em>Ref</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.impl.XExpression6Impl#getOp <em>Op</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.impl.XExpression6Impl#getA <em>A</em>}</li>
  * </ul>
  * </p>
@@ -59,6 +62,16 @@ public class XExpression6Impl extends XExpressionImpl implements XExpression6
    * @ordered
    */
   protected EList<VariableReference> ref;
+
+  /**
+   * The cached value of the '{@link #getOp() <em>Op</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getOp()
+   * @generated
+   * @ordered
+   */
+  protected EList<OpSingleAssign> op;
 
   /**
    * The cached value of the '{@link #getA() <em>A</em>}' containment reference.
@@ -158,6 +171,20 @@ public class XExpression6Impl extends XExpressionImpl implements XExpression6
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<OpSingleAssign> getOp()
+  {
+    if (op == null)
+    {
+      op = new EDataTypeEList<OpSingleAssign>(OpSingleAssign.class, this, ESyntaxPackage.XEXPRESSION6__OP);
+    }
+    return op;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public XExpression5 getA()
   {
     return a;
@@ -235,6 +262,8 @@ public class XExpression6Impl extends XExpressionImpl implements XExpression6
         return getType();
       case ESyntaxPackage.XEXPRESSION6__REF:
         return getRef();
+      case ESyntaxPackage.XEXPRESSION6__OP:
+        return getOp();
       case ESyntaxPackage.XEXPRESSION6__A:
         return getA();
     }
@@ -259,6 +288,10 @@ public class XExpression6Impl extends XExpressionImpl implements XExpression6
         getRef().clear();
         getRef().addAll((Collection<? extends VariableReference>)newValue);
         return;
+      case ESyntaxPackage.XEXPRESSION6__OP:
+        getOp().clear();
+        getOp().addAll((Collection<? extends OpSingleAssign>)newValue);
+        return;
       case ESyntaxPackage.XEXPRESSION6__A:
         setA((XExpression5)newValue);
         return;
@@ -282,6 +315,9 @@ public class XExpression6Impl extends XExpressionImpl implements XExpression6
       case ESyntaxPackage.XEXPRESSION6__REF:
         getRef().clear();
         return;
+      case ESyntaxPackage.XEXPRESSION6__OP:
+        getOp().clear();
+        return;
       case ESyntaxPackage.XEXPRESSION6__A:
         setA((XExpression5)null);
         return;
@@ -303,10 +339,29 @@ public class XExpression6Impl extends XExpressionImpl implements XExpression6
         return type != null;
       case ESyntaxPackage.XEXPRESSION6__REF:
         return ref != null && !ref.isEmpty();
+      case ESyntaxPackage.XEXPRESSION6__OP:
+        return op != null && !op.isEmpty();
       case ESyntaxPackage.XEXPRESSION6__A:
         return a != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (op: ");
+    result.append(op);
+    result.append(')');
+    return result.toString();
   }
 
 } //XExpression6Impl

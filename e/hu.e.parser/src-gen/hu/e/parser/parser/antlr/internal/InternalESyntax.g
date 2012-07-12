@@ -3695,15 +3695,25 @@ ruleVariableReference
 	    }
 
 )
+)(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getXExpression6Access().getOpOpSingleAssignEnumRuleCall_0_1_0()); 
+	    }
+		lv_op_1_0=ruleOpSingleAssign		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getXExpression6Rule());
+	        }
+       		add(
+       			$current, 
+       			"op",
+        		lv_op_1_0, 
+        		"OpSingleAssign");
+	        afterParserOrEnumRuleCall();
+	    }
+
 )
-    { 
-        newCompositeNode(grammarAccess.getXExpression6Access().getOpSingleAssignParserRuleCall_0_1()); 
-    }
-ruleOpSingleAssign
-    { 
-        afterParserOrEnumRuleCall();
-    }
-)*(
+))*(
 (
 		{ 
 	        newCompositeNode(grammarAccess.getXExpression6Access().getAXExpression5ParserRuleCall_1_0()); 
@@ -3901,33 +3911,6 @@ ruleXErrorExpression returns [EObject current=null]
     }
 )
 ;
-
-
-
-
-
-// Entry rule entryRuleOpSingleAssign
-entryRuleOpSingleAssign returns [String current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getOpSingleAssignRule()); } 
-	 iv_ruleOpSingleAssign=ruleOpSingleAssign 
-	 { $current=$iv_ruleOpSingleAssign.current.getText(); }  
-	 EOF 
-;
-
-// Rule OpSingleAssign
-ruleOpSingleAssign returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-
-	kw='=' 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getOpSingleAssignAccess().getEqualsSignKeyword()); 
-    }
-
-    ;
 
 
 
@@ -4581,6 +4564,31 @@ ruleErrorLevels returns [Enumerator current=null]
 	{
         $current = grammarAccess.getErrorLevelsAccess().getINFOEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
         newLeafNode(enumLiteral_2, grammarAccess.getErrorLevelsAccess().getINFOEnumLiteralDeclaration_2()); 
+    }
+));
+
+
+
+// Rule OpSingleAssign
+ruleOpSingleAssign returns [Enumerator current=null] 
+    @init { enterRule(); }
+    @after { leaveRule(); }:
+((	enumLiteral_0='=' 
+	{
+        $current = grammarAccess.getOpSingleAssignAccess().getASSIGNEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_0, grammarAccess.getOpSingleAssignAccess().getASSIGNEnumLiteralDeclaration_0()); 
+    }
+)
+    |(	enumLiteral_1='+=' 
+	{
+        $current = grammarAccess.getOpSingleAssignAccess().getASSIGNADDEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_1, grammarAccess.getOpSingleAssignAccess().getASSIGNADDEnumLiteralDeclaration_1()); 
+    }
+)
+    |(	enumLiteral_2='-=' 
+	{
+        $current = grammarAccess.getOpSingleAssignAccess().getASSIGNSUBTRACTEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_2, grammarAccess.getOpSingleAssignAccess().getASSIGNSUBTRACTEnumLiteralDeclaration_2()); 
     }
 ));
 
