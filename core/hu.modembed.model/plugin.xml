@@ -44,5 +44,13 @@
             class="hu.modembed.model.comm.rs232.Rs232Package"
             genModel="model/modembedmodel.genmodel"/>
    </extension>
+   <extension
+         point="org.eclipse.emf.ecore.generated_package">
+      <package
+            class="hu.modembed.model.core.assembler.AssemblerPackage"
+            genModel="model/modembedmodel.genmodel"
+            uri="http://modembed.hu/core/assembler">
+      </package>
+   </extension>
 
 </plugin>

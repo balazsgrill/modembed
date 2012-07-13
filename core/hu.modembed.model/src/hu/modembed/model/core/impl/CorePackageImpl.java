@@ -24,6 +24,8 @@ import hu.modembed.model.core.MODembedElement;
 import hu.modembed.model.core.NamedElement;
 import hu.modembed.model.core.PackagedElement;
 
+import hu.modembed.model.core.assembler.AssemblerPackage;
+import hu.modembed.model.core.assembler.impl.AssemblerPackageImpl;
 import hu.modembed.model.network.NetworkPackage;
 
 import hu.modembed.model.network.impl.NetworkPackageImpl;
@@ -121,6 +123,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		isInited = true;
 
 		// Obtain or create and register interdependencies
+		AssemblerPackageImpl theAssemblerPackage = (AssemblerPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AssemblerPackage.eNS_URI) instanceof AssemblerPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AssemblerPackage.eNS_URI) : AssemblerPackage.eINSTANCE);
 		NetworkPackageImpl theNetworkPackage = (NetworkPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(NetworkPackage.eNS_URI) instanceof NetworkPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(NetworkPackage.eNS_URI) : NetworkPackage.eINSTANCE);
 		Rs232PackageImpl theRs232Package = (Rs232PackageImpl)(EPackage.Registry.INSTANCE.getEPackage(Rs232Package.eNS_URI) instanceof Rs232PackageImpl ? EPackage.Registry.INSTANCE.getEPackage(Rs232Package.eNS_URI) : Rs232Package.eINSTANCE);
 		CommPackageImpl theCommPackage = (CommPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CommPackage.eNS_URI) instanceof CommPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CommPackage.eNS_URI) : CommPackage.eINSTANCE);
@@ -133,6 +136,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 
 		// Create package meta-data objects
 		theCorePackage.createPackageContents();
+		theAssemblerPackage.createPackageContents();
 		theNetworkPackage.createPackageContents();
 		theRs232Package.createPackageContents();
 		theCommPackage.createPackageContents();
@@ -145,6 +149,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 
 		// Initialize created meta-data
 		theCorePackage.initializePackageContents();
+		theAssemblerPackage.initializePackageContents();
 		theNetworkPackage.initializePackageContents();
 		theRs232Package.initializePackageContents();
 		theCommPackage.initializePackageContents();
@@ -279,6 +284,12 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		setName(eNAME);
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
+
+		// Obtain other dependent packages
+		AssemblerPackage theAssemblerPackage = (AssemblerPackage)EPackage.Registry.INSTANCE.getEPackage(AssemblerPackage.eNS_URI);
+
+		// Add subpackages
+		getESubpackages().add(theAssemblerPackage);
 
 		// Create type parameters
 

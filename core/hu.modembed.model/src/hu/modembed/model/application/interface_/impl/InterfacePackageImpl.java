@@ -31,6 +31,8 @@ import hu.modembed.model.comm.impl.CommPackageImpl;
 
 import hu.modembed.model.core.CorePackage;
 
+import hu.modembed.model.core.assembler.AssemblerPackage;
+import hu.modembed.model.core.assembler.impl.AssemblerPackageImpl;
 import hu.modembed.model.core.impl.CorePackageImpl;
 
 import hu.modembed.model.network.NetworkPackage;
@@ -130,6 +132,7 @@ public class InterfacePackageImpl extends EPackageImpl implements InterfacePacka
 
 		// Obtain or create and register interdependencies
 		CorePackageImpl theCorePackage = (CorePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI) instanceof CorePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI) : CorePackage.eINSTANCE);
+		AssemblerPackageImpl theAssemblerPackage = (AssemblerPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AssemblerPackage.eNS_URI) instanceof AssemblerPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AssemblerPackage.eNS_URI) : AssemblerPackage.eINSTANCE);
 		NetworkPackageImpl theNetworkPackage = (NetworkPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(NetworkPackage.eNS_URI) instanceof NetworkPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(NetworkPackage.eNS_URI) : NetworkPackage.eINSTANCE);
 		Rs232PackageImpl theRs232Package = (Rs232PackageImpl)(EPackage.Registry.INSTANCE.getEPackage(Rs232Package.eNS_URI) instanceof Rs232PackageImpl ? EPackage.Registry.INSTANCE.getEPackage(Rs232Package.eNS_URI) : Rs232Package.eINSTANCE);
 		CommPackageImpl theCommPackage = (CommPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CommPackage.eNS_URI) instanceof CommPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CommPackage.eNS_URI) : CommPackage.eINSTANCE);
@@ -142,6 +145,7 @@ public class InterfacePackageImpl extends EPackageImpl implements InterfacePacka
 		// Create package meta-data objects
 		theInterfacePackage.createPackageContents();
 		theCorePackage.createPackageContents();
+		theAssemblerPackage.createPackageContents();
 		theNetworkPackage.createPackageContents();
 		theRs232Package.createPackageContents();
 		theCommPackage.createPackageContents();
@@ -154,6 +158,7 @@ public class InterfacePackageImpl extends EPackageImpl implements InterfacePacka
 		// Initialize created meta-data
 		theInterfacePackage.initializePackageContents();
 		theCorePackage.initializePackageContents();
+		theAssemblerPackage.initializePackageContents();
 		theNetworkPackage.initializePackageContents();
 		theRs232Package.initializePackageContents();
 		theCommPackage.initializePackageContents();

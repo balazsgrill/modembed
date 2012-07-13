@@ -20,6 +20,8 @@ import hu.modembed.model.comm.CommPackage;
 import hu.modembed.model.comm.impl.CommPackageImpl;
 import hu.modembed.model.core.CorePackage;
 
+import hu.modembed.model.core.assembler.AssemblerPackage;
+import hu.modembed.model.core.assembler.impl.AssemblerPackageImpl;
 import hu.modembed.model.core.impl.CorePackageImpl;
 
 import hu.modembed.model.network.Connection;
@@ -122,6 +124,7 @@ public class NetworkPackageImpl extends EPackageImpl implements NetworkPackage {
 
 		// Obtain or create and register interdependencies
 		CorePackageImpl theCorePackage = (CorePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI) instanceof CorePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI) : CorePackage.eINSTANCE);
+		AssemblerPackageImpl theAssemblerPackage = (AssemblerPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AssemblerPackage.eNS_URI) instanceof AssemblerPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AssemblerPackage.eNS_URI) : AssemblerPackage.eINSTANCE);
 		Rs232PackageImpl theRs232Package = (Rs232PackageImpl)(EPackage.Registry.INSTANCE.getEPackage(Rs232Package.eNS_URI) instanceof Rs232PackageImpl ? EPackage.Registry.INSTANCE.getEPackage(Rs232Package.eNS_URI) : Rs232Package.eINSTANCE);
 		CommPackageImpl theCommPackage = (CommPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CommPackage.eNS_URI) instanceof CommPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CommPackage.eNS_URI) : CommPackage.eINSTANCE);
 		hu.modembed.model.comm.rs232.impl.Rs232PackageImpl theRs232Package_1 = (hu.modembed.model.comm.rs232.impl.Rs232PackageImpl)(EPackage.Registry.INSTANCE.getEPackage(hu.modembed.model.comm.rs232.Rs232Package.eNS_URI) instanceof hu.modembed.model.comm.rs232.impl.Rs232PackageImpl ? EPackage.Registry.INSTANCE.getEPackage(hu.modembed.model.comm.rs232.Rs232Package.eNS_URI) : hu.modembed.model.comm.rs232.Rs232Package.eINSTANCE);
@@ -134,6 +137,7 @@ public class NetworkPackageImpl extends EPackageImpl implements NetworkPackage {
 		// Create package meta-data objects
 		theNetworkPackage.createPackageContents();
 		theCorePackage.createPackageContents();
+		theAssemblerPackage.createPackageContents();
 		theRs232Package.createPackageContents();
 		theCommPackage.createPackageContents();
 		theRs232Package_1.createPackageContents();
@@ -146,6 +150,7 @@ public class NetworkPackageImpl extends EPackageImpl implements NetworkPackage {
 		// Initialize created meta-data
 		theNetworkPackage.initializePackageContents();
 		theCorePackage.initializePackageContents();
+		theAssemblerPackage.initializePackageContents();
 		theRs232Package.initializePackageContents();
 		theCommPackage.initializePackageContents();
 		theRs232Package_1.initializePackageContents();

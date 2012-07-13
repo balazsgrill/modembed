@@ -109,6 +109,9 @@
          <adapterfactory
                class="hu.modembed.model.network.rs232.provider.Rs232ItemProviderAdapterFactory">
          </adapterfactory>
+         <adapterfactory
+               class="hu.modembed.model.core.assembler.provider.AssemblerItemProviderAdapterFactory">
+         </adapterfactory>
       </model>
    </extension>
    <extension

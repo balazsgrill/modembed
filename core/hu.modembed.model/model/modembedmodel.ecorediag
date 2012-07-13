@@ -121,6 +121,18 @@
       <element xmi:type="ecore:EClass" href="modembedmodel.ecore#//core/PackagedElement"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NtQlYvv_EeCFv4ML3i8yTQ" x="100" y="200"/>
     </children>
+    <children xmi:type="notation:Node" xmi:id="_UJ8jYMzhEeG5jt0sNZMiHw" type="1002">
+      <children xmi:type="notation:Node" xmi:id="_UJ8jZMzhEeG5jt0sNZMiHw" type="4006"/>
+      <children xmi:type="notation:Node" xmi:id="_UKGUYMzhEeG5jt0sNZMiHw" type="5003">
+        <styles xmi:type="notation:DrawerStyle" xmi:id="_UKGUYczhEeG5jt0sNZMiHw"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_UKGUYszhEeG5jt0sNZMiHw"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_UKGUY8zhEeG5jt0sNZMiHw"/>
+      </children>
+      <styles xmi:type="notation:ShapeStyle" xmi:id="_UJ8jYczhEeG5jt0sNZMiHw" fontColor="4210752" fontHeight="10" fillColor="13150135" lineColor="4210752"/>
+      <styles xmi:type="notation:MultiDiagramLinkStyle" xmi:id="_UJ8jYszhEeG5jt0sNZMiHw"/>
+      <element xmi:type="ecore:EPackage" href="modembedmodel.ecore#//core/assembler"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UJ8jY8zhEeG5jt0sNZMiHw" x="24" y="456"/>
+    </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_qMgpsfv-EeCFv4ML3i8yTQ"/>
     <element xmi:type="ecore:EPackage" href="modembedmodel.ecore#//core"/>
     <edges xmi:type="notation:Edge" xmi:id="_zhKE4Pv-EeCFv4ML3i8yTQ" type="3003" source="_xJKSwPv-EeCFv4ML3i8yTQ" target="_NtQlYPv_EeCFv4ML3i8yTQ">
@@ -1742,6 +1754,116 @@
       <styles xmi:type="notation:FontStyle" xmi:id="__ubmMh_xEeGQgth60MxBBQ"/>
       <element xsi:nil="true"/>
       <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__ubmMx_xEeGQgth60MxBBQ" points="[-8, -20, -2, 87]$[-8, -79, -2, 28]"/>
+    </edges>
+  </notation:Diagram>
+  <notation:Diagram xmi:id="_V6vyoMzhEeG5jt0sNZMiHw" type="EcoreTools" name="assembler_Diagram0" measurementUnit="Pixel">
+    <children xmi:type="notation:Node" xmi:id="_W6hNkMzhEeG5jt0sNZMiHw" type="1001">
+      <children xmi:type="notation:Node" xmi:id="_W6hNk8zhEeG5jt0sNZMiHw" type="4001"/>
+      <children xmi:type="notation:Node" xmi:id="_W60IgMzhEeG5jt0sNZMiHw" type="5001">
+        <styles xmi:type="notation:DrawerStyle" xmi:id="_W60IgczhEeG5jt0sNZMiHw"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_W60IgszhEeG5jt0sNZMiHw"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_W60Ig8zhEeG5jt0sNZMiHw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_W60IhMzhEeG5jt0sNZMiHw" type="5002">
+        <styles xmi:type="notation:DrawerStyle" xmi:id="_W60IhczhEeG5jt0sNZMiHw"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_W60IhszhEeG5jt0sNZMiHw"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_W60Ih8zhEeG5jt0sNZMiHw"/>
+      </children>
+      <styles xmi:type="notation:ShapeStyle" xmi:id="_W6hNkczhEeG5jt0sNZMiHw" fontColor="4210752" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+      <element xmi:type="ecore:EClass" href="modembedmodel.ecore#//core/assembler/InstructionSet"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_W6hNkszhEeG5jt0sNZMiHw" x="120" y="216"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_fL84QMzhEeG5jt0sNZMiHw" type="1001">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_fMPzMMzhEeG5jt0sNZMiHw" source="Shortcut">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_fMPzMczhEeG5jt0sNZMiHw" key="modelID" value="EcoreTools"/>
+      </eAnnotations>
+      <children xmi:type="notation:Node" xmi:id="_fMGCMMzhEeG5jt0sNZMiHw" type="4001"/>
+      <children xmi:type="notation:Node" xmi:id="_fMGCMczhEeG5jt0sNZMiHw" type="5001">
+        <styles xmi:type="notation:DrawerStyle" xmi:id="_fMGCMszhEeG5jt0sNZMiHw"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_fMGCM8zhEeG5jt0sNZMiHw"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_fMGCNMzhEeG5jt0sNZMiHw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_fMGCNczhEeG5jt0sNZMiHw" type="5002">
+        <styles xmi:type="notation:DrawerStyle" xmi:id="_fMGCNszhEeG5jt0sNZMiHw"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_fMGCN8zhEeG5jt0sNZMiHw"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_fMGCOMzhEeG5jt0sNZMiHw"/>
+      </children>
+      <styles xmi:type="notation:ShapeStyle" xmi:id="_fL84QczhEeG5jt0sNZMiHw" fontColor="4210752" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+      <element xmi:type="ecore:EClass" href="modembedmodel.ecore#//core/PackagedElement"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fL84QszhEeG5jt0sNZMiHw" x="108" y="36"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_kmi4sMzhEeG5jt0sNZMiHw" type="1001">
+      <children xmi:type="notation:Node" xmi:id="_kmi4s8zhEeG5jt0sNZMiHw" type="4001"/>
+      <children xmi:type="notation:Node" xmi:id="_kmi4tMzhEeG5jt0sNZMiHw" type="5001">
+        <children xmi:type="notation:Node" xmi:id="_r5F5QMzhEeG5jt0sNZMiHw" type="2001">
+          <element xmi:type="ecore:EAttribute" href="modembedmodel.ecore#//core/assembler/Instruction/code"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_r5F5QczhEeG5jt0sNZMiHw"/>
+        </children>
+        <styles xmi:type="notation:DrawerStyle" xmi:id="_kmi4tczhEeG5jt0sNZMiHw"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_kmi4tszhEeG5jt0sNZMiHw"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_kmi4t8zhEeG5jt0sNZMiHw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_kmi4uMzhEeG5jt0sNZMiHw" type="5002">
+        <styles xmi:type="notation:DrawerStyle" xmi:id="_kmi4uczhEeG5jt0sNZMiHw"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_kmi4uszhEeG5jt0sNZMiHw"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_kmi4u8zhEeG5jt0sNZMiHw"/>
+      </children>
+      <styles xmi:type="notation:ShapeStyle" xmi:id="_kmi4sczhEeG5jt0sNZMiHw" fontColor="4210752" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+      <element xmi:type="ecore:EClass" href="modembedmodel.ecore#//core/assembler/Instruction"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_kmi4sszhEeG5jt0sNZMiHw" x="348" y="216"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_mIS_UMzhEeG5jt0sNZMiHw" type="1001">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_mJLwIMzhEeG5jt0sNZMiHw" source="Shortcut">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_mJLwIczhEeG5jt0sNZMiHw" key="modelID" value="EcoreTools"/>
+      </eAnnotations>
+      <children xmi:type="notation:Node" xmi:id="_mIS_U8zhEeG5jt0sNZMiHw" type="4001"/>
+      <children xmi:type="notation:Node" xmi:id="_mIS_VMzhEeG5jt0sNZMiHw" type="5001">
+        <styles xmi:type="notation:DrawerStyle" xmi:id="_mIS_VczhEeG5jt0sNZMiHw"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_mIS_VszhEeG5jt0sNZMiHw"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_mIS_V8zhEeG5jt0sNZMiHw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_mIS_WMzhEeG5jt0sNZMiHw" type="5002">
+        <styles xmi:type="notation:DrawerStyle" xmi:id="_mIS_WczhEeG5jt0sNZMiHw"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_mIS_WszhEeG5jt0sNZMiHw"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_mIS_W8zhEeG5jt0sNZMiHw"/>
+      </children>
+      <styles xmi:type="notation:ShapeStyle" xmi:id="_mIS_UczhEeG5jt0sNZMiHw" fontColor="4210752" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+      <element xmi:type="ecore:EClass" href="modembedmodel.ecore#//core/NamedElement"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mIS_UszhEeG5jt0sNZMiHw" x="324" y="24"/>
+    </children>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_V6vyoczhEeG5jt0sNZMiHw"/>
+    <element xmi:type="ecore:EPackage" href="modembedmodel.ecore#//core/assembler"/>
+    <edges xmi:type="notation:Edge" xmi:id="_gCyZoMzhEeG5jt0sNZMiHw" type="3003" source="_W6hNkMzhEeG5jt0sNZMiHw" target="_fL84QMzhEeG5jt0sNZMiHw">
+      <styles xmi:type="notation:ConnectorStyle" xmi:id="_gCyZoczhEeG5jt0sNZMiHw" routing="Rectilinear" lineColor="4210752"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_gCyZoszhEeG5jt0sNZMiHw"/>
+      <element xsi:nil="true"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_gCyZo8zhEeG5jt0sNZMiHw" points="[-3, -20, -2, 152]$[-3, -144, -2, 28]"/>
+    </edges>
+    <edges xmi:type="notation:Edge" xmi:id="_mJCmMMzhEeG5jt0sNZMiHw" type="3003" source="_fL84QMzhEeG5jt0sNZMiHw" target="_mIS_UMzhEeG5jt0sNZMiHw">
+      <styles xmi:type="notation:ConnectorStyle" xmi:id="_mJCmMczhEeG5jt0sNZMiHw" routing="Rectilinear" lineColor="4210752"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_mJCmMszhEeG5jt0sNZMiHw"/>
+      <element xsi:nil="true"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_mJCmM8zhEeG5jt0sNZMiHw" points="[-61, -24, 109, 41]$[-169, -65, 1, 0]"/>
+    </edges>
+    <edges xmi:type="notation:Edge" xmi:id="_n7CIQMzhEeG5jt0sNZMiHw" type="3003" source="_kmi4sMzhEeG5jt0sNZMiHw" target="_mIS_UMzhEeG5jt0sNZMiHw">
+      <styles xmi:type="notation:ConnectorStyle" xmi:id="_n7CIQczhEeG5jt0sNZMiHw" routing="Rectilinear" lineColor="4210752"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_n7CIQszhEeG5jt0sNZMiHw"/>
+      <element xsi:nil="true"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_n7CIQ8zhEeG5jt0sNZMiHw" points="[10, -20, -162, 267]$[127, -318, -45, -31]"/>
+    </edges>
+    <edges xmi:type="notation:Edge" xmi:id="_oz8tQMzhEeG5jt0sNZMiHw" type="3002" source="_W6hNkMzhEeG5jt0sNZMiHw" target="_kmi4sMzhEeG5jt0sNZMiHw">
+      <children xmi:type="notation:Node" xmi:id="_oz8tRMzhEeG5jt0sNZMiHw" type="4011">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_oz8tRczhEeG5jt0sNZMiHw" x="-33" y="-12"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_oz8tRszhEeG5jt0sNZMiHw" type="4012">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_oz8tR8zhEeG5jt0sNZMiHw" x="-6" y="12"/>
+      </children>
+      <styles xmi:type="notation:ConnectorStyle" xmi:id="_oz8tQczhEeG5jt0sNZMiHw" lineColor="4210752"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_oz8tQszhEeG5jt0sNZMiHw" fontColor="4210752" fontHeight="10"/>
+      <element xmi:type="ecore:EReference" href="modembedmodel.ecore#//core/assembler/InstructionSet/instructions"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_oz8tQ8zhEeG5jt0sNZMiHw" points="[13, 7, -142, 2]$[156, 25, 1, 20]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_o0GeQMzhEeG5jt0sNZMiHw" id="(0.8725490196078431,0.38095238095238093)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_o0GeQczhEeG5jt0sNZMiHw" id="(0.14705882352941177,0.5238095238095238)"/>
     </edges>
   </notation:Diagram>
 </xmi:XMI>
