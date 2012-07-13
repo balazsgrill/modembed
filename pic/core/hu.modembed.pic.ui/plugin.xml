@@ -36,6 +36,10 @@
                path="/"
                resource="code/pic16/pic16.bankselect.e">
          </resource>
+         <resource
+               path="/"
+               resource="code/pic16/pic16.model.xmi">
+         </resource>
       </project>
    </extension>
    <extension

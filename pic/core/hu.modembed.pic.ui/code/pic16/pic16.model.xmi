@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="ASCII"?>
+<core:Package xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assembler="http://modembed.hu/core/assembler" xmlns:core="http://modembed.hu/core" name="root">
+  <contents xsi:type="assembler:InstructionSet" name="PIC16InstructionSet">
+    <instructions name="ADDWF" code="&lt;b000111:6 d:1 f:7>"/>
+    <instructions name="ANDWF" code="&lt;b000101:6 d:1 f:7>"/>
+    <instructions name="CLRF" code="&lt;b0000011:7 f:7>"/>
+    <instructions name="CLRW" code="&lt;b000001:6 b00000000:8>"/>
+    <instructions name="COMF" code="&lt;b001001:6 d:1 f:7>"/>
+    <instructions name="DECF" code="&lt;b000011:6 d:1 f:7>"/>
+    <instructions name="DECFSZ" code="&lt;b001011:6 d:1 f:7>"/>
+    <instructions name="INCF" code="&lt;b001010:6 d:1 f:7>"/>
+    <instructions name="INCFSZ" code="&lt;b001111:6 d:1 f:7>"/>
+    <instructions name="IORWF" code="&lt;b000100:6 d:1 f:7>"/>
+    <instructions name="MOVF" code="&lt;b001000:6 d:1 f:7>"/>
+    <instructions name="MOVWF" code="&lt;b000000:6 1:1 f:7>"/>
+    <instructions name="NOP" code="&lt;0:14>"/>
+    <instructions name="RLF" code="&lt;b001101:6 d:1 f:7>"/>
+    <instructions name="RRF" code="&lt;b001100:6 d:1 f:7>"/>
+    <instructions name="SUBWF" code="&lt;b000010:6 d:1 f:7>"/>
+    <instructions name="SWAPF" code="&lt;b001110:6 d:1 f:7>"/>
+    <instructions name="XORWF" code="&lt;b000110:6 d:1 f:7>"/>
+    <instructions name="BCF" code="&lt;b01:2 b00:2 b:3 f:7>"/>
+    <instructions name="BSF" code="&lt;b01:2 b01:2 b:3 f:7>"/>
+    <instructions name="BTFSC" code="&lt;b01:2 b10:2 b:3 f:7>"/>
+    <instructions name="BTFSS" code="&lt;b01:2 b11:2 b:3 f:7>"/>
+    <instructions name="ADDLW" code="&lt;b11:2 b1110:4 k:8>"/>
+    <instructions name="ANDLW" code="&lt;b11:2 b1001:4 k:8>"/>
+    <instructions name="IORLW" code="&lt;b11:2 b1000:4 k:8>"/>
+    <instructions name="MOVLW" code="&lt;b11:2 b0000:4 k:8>"/>
+    <instructions name="RETLW" code="&lt;b11:2 b0100:4 k:8>"/>
+    <instructions name="SUBLW" code="&lt;b11:2 b1100:4 k:8>"/>
+    <instructions name="XORLW" code="&lt;b11:2 b1010:4 k:8>"/>
+    <instructions name="CALL" code="&lt;b100:3 k:11>"/>
+    <instructions name="GOTO" code="&lt;b101:3 k:11>"/>
+    <instructions name="CLRWDT" code="&lt;b00000001100100:14>"/>
+    <instructions name="RETFIE" code="&lt;b00000000001001:14>"/>
+    <instructions name="RETURN" code="&lt;b00000000001000:14>"/>
+    <instructions name="SLEEP" code="&lt;b00000001100011:14>"/>
+    <instructions name="ADDWFC" code="&lt;b111101:6 d:1 f:7>"/>
+    <instructions name="ASRF" code="&lt;b110111:6 d:1 f:7>"/>
+    <instructions name="LSLF" code="&lt;b111101:6 d:1 f:7>"/>
+    <instructions name="LSRF" code="&lt;b111101:6 d:1 f:7>"/>
+    <instructions name="SUBWFB" code="&lt;b111011:6 d:1 f:7>"/>
+    <instructions name="MOVLB" code="&lt;b000000001:9 k:5>"/>
+    <instructions name="MOVLP" code="&lt;b1100011:7 k:7>"/>
+    <instructions name="BRA" code="&lt;b11001:5 k:9>"/>
+    <instructions name="BRW" code="&lt;b00000000001011:14>"/>
+    <instructions name="CALLW" code="&lt;b00000000001010:14>"/>
+    <instructions name="CLRWDT" code="&lt;b00000001100100:14>"/>
+    <instructions name="OPTION" code="&lt;b00000001100010:14>"/>
+    <instructions name="RESET" code="&lt;b00000000000001:14>"/>
+    <instructions name="TRIS" code="&lt;b00000001100:11 f:3>"/>
+    <instructions name="ADDFSR" code="&lt;b1100010:7 n:1 k:6>"/>
+  </contents>
+</core:Package>
