@@ -5,6 +5,7 @@ package hu.modembed.ui.disassemble;
 
 import hexfile.Entry;
 import hexfile.HexFile;
+import hu.modembed.hexfile.persistence.HexFileResource;
 import hu.modembed.model.core.assembler.InstructionSet;
 import hu.modembed.ui.MODembedUI;
 
@@ -76,12 +77,28 @@ public class DisassembleLaunchDelegate implements ILaunchConfigurationDelegate, 
 				
 				StringBuilder sb = new StringBuilder();
 				
+				Disassembler disass = new Disassembler(iset);
+				int bytes = disass.getInstructionWidth();
+				bytes = bytes/8 + ((bytes%8)==0 ? 0 : 1);
+				
 				for (Entry entry : hfile.getEntries()){
-					int address = entry.getAddress();
+					int address = entry.getAddress()/bytes;
 					System.out.println("Disassembling entry at "+address);
 					sb.append("#Entry 0x"+Integer.toHexString(address)+"\n");
 					
-					
+					byte[] data = entry.getData();
+					for(int i=0;i<data.length/bytes;i++){
+						sb.append("0x");
+						sb.append(Integer.toHexString(i));
+						sb.append(": ");
+						long op = 0;
+						for(int j=0;j<bytes;j++){
+							int v = HexFileResource.byteToInt(data[i*bytes + j]);
+							op += v<<(j*8);
+						}
+						sb.append(disass.parseInstruction(op));
+						sb.append("\n");
+					}
 				}
 				
 				try {
