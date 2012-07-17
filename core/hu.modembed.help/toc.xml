@@ -1,9 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?NLS TYPE="org.eclipse.help.toc"?>
-
-<toc label="MODembed user guide">
-   <topic href="html/concepts/maintopic.html" label="Concepts">
-   </topic>
-   <topic href="html/e/e.html" label="The &quot;e&quot; language">
-   </topic>
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<toc topic="contents/00-Main.html" label="MODembed User's Guide" >
+	<topic href="contents/01-Introduction.html#Introduction" label="Introduction" >
+		<topic href="contents/01-Introduction.html#Motivation" label="Motivation" >
+		</topic>
+		<topic href="contents/01-Introduction.html#Links" label="References" >
+		</topic>
+	</topic>
+	<topic href="contents/02-Tutorial.html#Tutorial" label="Tutorial" >
+		<topic href="contents/02-Tutorial.html#Tutorial_2" label="Setting up the workspace" >
+		</topic>
+		<topic href="contents/02-Tutorial.html#Tutorial_3" label="Creating your own Embedded Project" >
+		</topic>
+		<topic href="contents/02-Tutorial.html#Tutorial_4" label="Configure project" >
+		</topic>
+		<topic href="contents/02-Tutorial.html#Tutorial_5" label="Import PIC device library" >
+		</topic>
+		<topic href="contents/02-Tutorial.html#Tutorial_6" label="Write your program" >
+		</topic>
+	</topic>
 </toc>
