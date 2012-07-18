@@ -3673,11 +3673,7 @@ ruleXExpression6 returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-((((
-(
-ruleVariableReference
-)
-)=>
+(((
 (
 		{ 
 	        newCompositeNode(grammarAccess.getXExpression6Access().getRefVariableReferenceParserRuleCall_0_0_0()); 
@@ -3686,7 +3682,7 @@ ruleVariableReference
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getXExpression6Rule());
 	        }
-       		add(
+       		set(
        			$current, 
        			"ref",
         		lv_ref_0_0, 
@@ -3704,7 +3700,7 @@ ruleVariableReference
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getXExpression6Rule());
 	        }
-       		add(
+       		set(
        			$current, 
        			"op",
         		lv_op_1_0, 
@@ -3713,7 +3709,7 @@ ruleVariableReference
 	    }
 
 )
-))*(
+))?(
 (
 		{ 
 	        newCompositeNode(grammarAccess.getXExpression6Access().getAXExpression5ParserRuleCall_1_0()); 

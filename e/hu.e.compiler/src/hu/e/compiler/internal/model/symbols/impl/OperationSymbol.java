@@ -7,8 +7,8 @@ import hu.e.compiler.ECompilerException;
 import hu.e.compiler.internal.linking.CodePlatform;
 import hu.e.compiler.internal.model.ISymbolManager;
 import hu.e.compiler.internal.model.OPERATION;
-import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
 import hu.e.compiler.internal.model.symbols.ILinkTimeSymbol;
+import hu.e.compiler.internal.model.symbols.ILiteralSymbol;
 import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.compiler.internal.model.symbols.IVariableSymbol;
 import hu.e.compiler.internal.model.symbols.SymbolContext;
@@ -101,8 +101,10 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol, ILinkTi
 	
 	private OperationRole getRole(OPERATION op) throws ECompilerException{
 		switch(op){
+		case ADDSET:
 		case ADD: return OperationRole.ADD;
 		case AND: return OperationRole.AND;
+		case SUBTRACTSET:
 		case MINUS: return OperationRole.SUBTRACT;
 		case MOD: return OperationRole.MOD;
 		case DIV: return OperationRole.DIV;
@@ -121,8 +123,10 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol, ILinkTi
 		case REFERENCE:
 			break;
 		case SET:
-			break;
+			return OperationRole.SET;
 		case UNARYMINUS:
+			break;
+		default:
 			break;
 		}
 		throw new ECompilerException(context, "Runtime "+op+" operator is not yet supported.");
@@ -153,8 +157,10 @@ public class OperationSymbol implements ILiteralSymbol, IVariableSymbol, ILinkTi
 		//sm.getVariableManager().startBlock();
 		switch(op){
 		case SET:
+		case SUBTRACTSET:
+		case ADDSET:
 			result = (IVariableSymbol)a;
-			execute(OperationRole.SET, step, a, b);
+			execute(getRole(op), step, a, b);
 			break;
 		
 		case ADD:

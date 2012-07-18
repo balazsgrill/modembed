@@ -1687,7 +1687,7 @@ public interface ESyntaxPackage extends EPackage
   int XEXPRESSION6__TYPE = XEXPRESSION_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Ref</b></em>' containment reference list.
+   * The feature id for the '<em><b>Ref</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1696,7 +1696,7 @@ public interface ESyntaxPackage extends EPackage
   int XEXPRESSION6__REF = XEXPRESSION_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Op</b></em>' attribute list.
+   * The feature id for the '<em><b>Op</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -3531,10 +3531,10 @@ public interface ESyntaxPackage extends EPackage
   EReference getXExpression6_Type();
 
   /**
-   * Returns the meta object for the containment reference list '{@link hu.e.parser.eSyntax.XExpression6#getRef <em>Ref</em>}'.
+   * Returns the meta object for the containment reference '{@link hu.e.parser.eSyntax.XExpression6#getRef <em>Ref</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Ref</em>'.
+   * @return the meta object for the containment reference '<em>Ref</em>'.
    * @see hu.e.parser.eSyntax.XExpression6#getRef()
    * @see #getXExpression6()
    * @generated
@@ -3542,10 +3542,10 @@ public interface ESyntaxPackage extends EPackage
   EReference getXExpression6_Ref();
 
   /**
-   * Returns the meta object for the attribute list '{@link hu.e.parser.eSyntax.XExpression6#getOp <em>Op</em>}'.
+   * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.XExpression6#getOp <em>Op</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Op</em>'.
+   * @return the meta object for the attribute '<em>Op</em>'.
    * @see hu.e.parser.eSyntax.XExpression6#getOp()
    * @see #getXExpression6()
    * @generated
@@ -5006,7 +5006,7 @@ public interface ESyntaxPackage extends EPackage
     EReference XEXPRESSION6__TYPE = eINSTANCE.getXExpression6_Type();
 
     /**
-     * The meta object literal for the '<em><b>Ref</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Ref</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -5014,7 +5014,7 @@ public interface ESyntaxPackage extends EPackage
     EReference XEXPRESSION6__REF = eINSTANCE.getXExpression6_Ref();
 
     /**
-     * The meta object literal for the '<em><b>Op</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated

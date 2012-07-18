@@ -10482,7 +10482,7 @@ rule__XExpression6__Group__0__Impl
 :
 (
 { before(grammarAccess.getXExpression6Access().getGroup_0()); }
-(rule__XExpression6__Group_0__0)*
+(rule__XExpression6__Group_0__0)?
 { after(grammarAccess.getXExpression6Access().getGroup_0()); }
 )
 

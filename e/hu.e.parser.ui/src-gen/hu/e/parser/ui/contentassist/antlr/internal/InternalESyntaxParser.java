@@ -29997,43 +29997,38 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__XExpression6__Group__0__Impl"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10478:1: rule__XExpression6__Group__0__Impl : ( ( rule__XExpression6__Group_0__0 )* ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10478:1: rule__XExpression6__Group__0__Impl : ( ( rule__XExpression6__Group_0__0 )? ) ;
     public final void rule__XExpression6__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10482:1: ( ( ( rule__XExpression6__Group_0__0 )* ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10483:1: ( ( rule__XExpression6__Group_0__0 )* )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10482:1: ( ( ( rule__XExpression6__Group_0__0 )? ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10483:1: ( ( rule__XExpression6__Group_0__0 )? )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10483:1: ( ( rule__XExpression6__Group_0__0 )* )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10484:1: ( rule__XExpression6__Group_0__0 )*
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10483:1: ( ( rule__XExpression6__Group_0__0 )? )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10484:1: ( rule__XExpression6__Group_0__0 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXExpression6Access().getGroup_0()); 
             }
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10485:1: ( rule__XExpression6__Group_0__0 )*
-            loop58:
-            do {
-                int alt58=2;
-                alt58 = dfa58.predict(input);
-                switch (alt58) {
-            	case 1 :
-            	    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10485:2: rule__XExpression6__Group_0__0
-            	    {
-            	    pushFollow(FOLLOW_rule__XExpression6__Group_0__0_in_rule__XExpression6__Group__0__Impl21326);
-            	    rule__XExpression6__Group_0__0();
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10485:1: ( rule__XExpression6__Group_0__0 )?
+            int alt58=2;
+            alt58 = dfa58.predict(input);
+            switch (alt58) {
+                case 1 :
+                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10485:2: rule__XExpression6__Group_0__0
+                    {
+                    pushFollow(FOLLOW_rule__XExpression6__Group_0__0_in_rule__XExpression6__Group__0__Impl21326);
+                    rule__XExpression6__Group_0__0();
 
-            	    state._fsp--;
-            	    if (state.failed) return ;
+                    state._fsp--;
+                    if (state.failed) return ;
 
-            	    }
-            	    break;
+                    }
+                    break;
 
-            	default :
-            	    break loop58;
-                }
-            } while (true);
+            }
 
             if ( state.backtracking==0 ) {
                after(grammarAccess.getXExpression6Access().getGroup_0()); 
@@ -38172,26 +38167,26 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
     static final String DFA58_eotS =
         "\6\uffff";
     static final String DFA58_eofS =
-        "\2\uffff\1\1\2\uffff\1\1";
+        "\1\uffff\1\2\3\uffff\1\2";
     static final String DFA58_minS =
-        "\1\4\1\uffff\1\53\1\10\1\uffff\1\53";
+        "\1\4\1\53\1\uffff\1\10\1\uffff\1\53";
     static final String DFA58_maxS =
-        "\1\155\1\uffff\1\154\1\10\1\uffff\1\154";
+        "\1\155\1\154\1\uffff\1\10\1\uffff\1\154";
     static final String DFA58_acceptS =
-        "\1\uffff\1\2\2\uffff\1\1\1\uffff";
+        "\2\uffff\1\2\1\uffff\1\1\1\uffff";
     static final String DFA58_specialS =
         "\6\uffff}>";
     static final String[] DFA58_transitionS = {
-            "\4\1\1\2\42\uffff\4\1\51\uffff\1\1\22\uffff\1\1\1\uffff\1\1",
+            "\4\2\1\1\42\uffff\4\2\51\uffff\1\2\22\uffff\1\2\1\uffff\1\2",
+            "\1\2\3\uffff\14\2\3\uffff\3\4\1\3\3\uffff\1\2\1\uffff\1\2"+
+            "\5\uffff\2\2\4\uffff\2\2\1\uffff\1\2\1\uffff\2\2\4\uffff\1\2"+
+            "\15\uffff\1\2",
             "",
-            "\1\1\3\uffff\14\1\3\uffff\3\4\1\3\3\uffff\1\1\1\uffff\1\1"+
-            "\5\uffff\2\1\4\uffff\2\1\1\uffff\1\1\1\uffff\2\1\4\uffff\1\1"+
-            "\15\uffff\1\1",
             "\1\5",
             "",
-            "\1\1\3\uffff\14\1\3\uffff\3\4\1\3\3\uffff\1\1\1\uffff\1\1"+
-            "\5\uffff\2\1\4\uffff\2\1\1\uffff\1\1\1\uffff\2\1\4\uffff\1\1"+
-            "\15\uffff\1\1"
+            "\1\2\3\uffff\14\2\3\uffff\3\4\1\3\3\uffff\1\2\1\uffff\1\2"+
+            "\5\uffff\2\2\4\uffff\2\2\1\uffff\1\2\1\uffff\2\2\4\uffff\1\2"+
+            "\15\uffff\1\2"
     };
 
     static final short[] DFA58_eot = DFA.unpackEncodedString(DFA58_eotS);
@@ -38224,7 +38219,7 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
             this.transition = DFA58_transition;
         }
         public String getDescription() {
-            return "()* loopback of 10485:1: ( rule__XExpression6__Group_0__0 )*";
+            return "10485:1: ( rule__XExpression6__Group_0__0 )?";
         }
     }
  
@@ -39166,7 +39161,7 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__XExpression5__BAssignment_1_1_in_rule__XExpression5__Group_1__1__Impl21262 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__XExpression6__Group__0__Impl_in_rule__XExpression6__Group__021296 = new BitSet(new long[]{0x00007800000001F0L,0x0000280001000000L});
     public static final BitSet FOLLOW_rule__XExpression6__Group__1_in_rule__XExpression6__Group__021299 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__XExpression6__Group_0__0_in_rule__XExpression6__Group__0__Impl21326 = new BitSet(new long[]{0x0000000000000102L});
+    public static final BitSet FOLLOW_rule__XExpression6__Group_0__0_in_rule__XExpression6__Group__0__Impl21326 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__XExpression6__Group__1__Impl_in_rule__XExpression6__Group__121357 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__XExpression6__AAssignment_1_in_rule__XExpression6__Group__1__Impl21384 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__XExpression6__Group_0__0__Impl_in_rule__XExpression6__Group_0__021418 = new BitSet(new long[]{0xC000000000000000L,0x0000000000000001L});

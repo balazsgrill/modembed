@@ -11,6 +11,8 @@ public enum OPERATION {
 	
 	//
 	SET,
+	ADDSET,
+	SUBTRACTSET,
 	
 	//Branch
 	BRANCH,

@@ -324,7 +324,7 @@ XExpression5:
 ;
 
 XExpression6:
-	(=> ref+=VariableReference op+=OpSingleAssign)* a=XExpression5
+	(ref=VariableReference op=OpSingleAssign)? a=XExpression5
 ;
 
 enum BOOLEAN_OPERATOR:

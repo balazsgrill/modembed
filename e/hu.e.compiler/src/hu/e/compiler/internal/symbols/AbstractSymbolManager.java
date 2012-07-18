@@ -28,6 +28,7 @@ import hu.e.parser.eSyntax.ArrayTypeDef;
 import hu.e.parser.eSyntax.BOOLEAN_OPERATOR;
 import hu.e.parser.eSyntax.EQUALITY_OPERATOR;
 import hu.e.parser.eSyntax.MULTIPLICATIVE_OPERATOR;
+import hu.e.parser.eSyntax.OpSingleAssign;
 import hu.e.parser.eSyntax.Operation;
 import hu.e.parser.eSyntax.OperationCall;
 import hu.e.parser.eSyntax.OperationRole;
@@ -93,11 +94,23 @@ public abstract class AbstractSymbolManager implements ISymbolManager {
 		return resolve(context, (XExpression6)x);
 	}
 	
+	private OPERATION getOp(EObject x, OpSingleAssign op) throws ECompilerException{
+		switch(op){
+		case ASSIGN: return OPERATION.SET;
+		case ASSIGNADD: return OPERATION.ADDSET;
+		case ASSIGNSUBTRACT: return OPERATION.SUBTRACTSET;
+		}
+		throw new ECompilerException(x, "Unsupported operator: "+op);
+	}
+	
 	private ISymbol resolve(SequenceStep context, XExpression6 x) throws ECompilerException{
 		ISymbol a = resolve(context, x.getA());
 		
-		for(VariableReference vr : x.getRef()){
-			a = new OperationSymbol(x, getSymbol(vr.getVar()), OPERATION.SET, a, this);
+		VariableReference vr = x.getRef();
+		OpSingleAssign op = x.getOp();
+		
+		if (vr != null){
+			a = new OperationSymbol(x, getSymbol(vr.getVar()), getOp(x, op), a, this);
 		}
 		
 		if (x.getType() != null){

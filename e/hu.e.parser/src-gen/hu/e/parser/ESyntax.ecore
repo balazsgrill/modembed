@@ -256,10 +256,9 @@
   <eClassifiers xsi:type="ecore:EClass" name="XExpression6" eSuperTypes="#//XExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//TypeDef"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ref" upperBound="-1" eType="#//VariableReference"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ref" eType="#//VariableReference"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" unique="false" upperBound="-1"
-        eType="#//OpSingleAssign"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="#//OpSingleAssign"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="a" eType="#//XExpression5"
         containment="true"/>
   </eClassifiers>

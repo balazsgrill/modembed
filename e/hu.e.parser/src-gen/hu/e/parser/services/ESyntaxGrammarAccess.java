@@ -2355,22 +2355,22 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//XExpression6:
 		//
-		//	(=> ref+=VariableReference op+=OpSingleAssign)* a=XExpression5;
+		//	(ref=VariableReference op=OpSingleAssign)? a=XExpression5;
 		public ParserRule getRule() { return rule; }
 
-		//(=> ref+=VariableReference op+=OpSingleAssign)* a=XExpression5
+		//(ref=VariableReference op=OpSingleAssign)? a=XExpression5
 		public Group getGroup() { return cGroup; }
 
-		//(=> ref+=VariableReference op+=OpSingleAssign)*
+		//(ref=VariableReference op=OpSingleAssign)?
 		public Group getGroup_0() { return cGroup_0; }
 
-		//=> ref+=VariableReference
+		//ref=VariableReference
 		public Assignment getRefAssignment_0_0() { return cRefAssignment_0_0; }
 
 		//VariableReference
 		public RuleCall getRefVariableReferenceParserRuleCall_0_0_0() { return cRefVariableReferenceParserRuleCall_0_0_0; }
 
-		//op+=OpSingleAssign
+		//op=OpSingleAssign
 		public Assignment getOpAssignment_0_1() { return cOpAssignment_0_1; }
 
 		//OpSingleAssign
@@ -4070,7 +4070,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 
 	//XExpression6:
 	//
-	//	(=> ref+=VariableReference op+=OpSingleAssign)* a=XExpression5;
+	//	(ref=VariableReference op=OpSingleAssign)? a=XExpression5;
 	public XExpression6Elements getXExpression6Access() {
 		return (pXExpression6 != null) ? pXExpression6 : (pXExpression6 = new XExpression6Elements());
 	}

@@ -968,7 +968,7 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 	
 	/**
 	 * Constraint:
-	 *     ((ref+=VariableReference op+=OpSingleAssign)* a=XExpression5)
+	 *     ((ref=VariableReference op=OpSingleAssign)? a=XExpression5)
 	 */
 	protected void sequence_XExpression6(EObject context, XExpression6 semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1002,7 +1002,7 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 	
 	/**
 	 * Constraint:
-	 *     ((ref+=VariableReference op+=OpSingleAssign)* a=XExpression5 type=TypeDef?)
+	 *     ((ref=VariableReference op=OpSingleAssign)? a=XExpression5 type=TypeDef?)
 	 */
 	protected void sequence_XExpression_XExpression6(EObject context, XExpression6 semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

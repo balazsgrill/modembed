@@ -2,7 +2,6 @@
  */
 package hu.e.parser.eSyntax;
 
-import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -52,38 +51,59 @@ public interface XExpression6 extends XExpression
   void setType(TypeDef value);
 
   /**
-   * Returns the value of the '<em><b>Ref</b></em>' containment reference list.
-   * The list contents are of type {@link hu.e.parser.eSyntax.VariableReference}.
+   * Returns the value of the '<em><b>Ref</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Ref</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Ref</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Ref</em>' containment reference list.
+   * @return the value of the '<em>Ref</em>' containment reference.
+   * @see #setRef(VariableReference)
    * @see hu.e.parser.eSyntax.ESyntaxPackage#getXExpression6_Ref()
    * @model containment="true"
    * @generated
    */
-  EList<VariableReference> getRef();
+  VariableReference getRef();
 
   /**
-   * Returns the value of the '<em><b>Op</b></em>' attribute list.
-   * The list contents are of type {@link hu.e.parser.eSyntax.OpSingleAssign}.
+   * Sets the value of the '{@link hu.e.parser.eSyntax.XExpression6#getRef <em>Ref</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Ref</em>' containment reference.
+   * @see #getRef()
+   * @generated
+   */
+  void setRef(VariableReference value);
+
+  /**
+   * Returns the value of the '<em><b>Op</b></em>' attribute.
    * The literals are from the enumeration {@link hu.e.parser.eSyntax.OpSingleAssign}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Op</em>' attribute list isn't clear,
+   * If the meaning of the '<em>Op</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Op</em>' attribute list.
+   * @return the value of the '<em>Op</em>' attribute.
    * @see hu.e.parser.eSyntax.OpSingleAssign
+   * @see #setOp(OpSingleAssign)
    * @see hu.e.parser.eSyntax.ESyntaxPackage#getXExpression6_Op()
-   * @model unique="false"
+   * @model
    * @generated
    */
-  EList<OpSingleAssign> getOp();
+  OpSingleAssign getOp();
+
+  /**
+   * Sets the value of the '{@link hu.e.parser.eSyntax.XExpression6#getOp <em>Op</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Op</em>' attribute.
+   * @see hu.e.parser.eSyntax.OpSingleAssign
+   * @see #getOp()
+   * @generated
+   */
+  void setOp(OpSingleAssign value);
 
   /**
    * Returns the value of the '<em><b>A</b></em>' containment reference.

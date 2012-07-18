@@ -9,21 +9,13 @@ import hu.e.parser.eSyntax.VariableReference;
 import hu.e.parser.eSyntax.XExpression5;
 import hu.e.parser.eSyntax.XExpression6;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EDataTypeEList;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -54,24 +46,34 @@ public class XExpression6Impl extends XExpressionImpl implements XExpression6
   protected TypeDef type;
 
   /**
-   * The cached value of the '{@link #getRef() <em>Ref</em>}' containment reference list.
+   * The cached value of the '{@link #getRef() <em>Ref</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getRef()
    * @generated
    * @ordered
    */
-  protected EList<VariableReference> ref;
+  protected VariableReference ref;
 
   /**
-   * The cached value of the '{@link #getOp() <em>Op</em>}' attribute list.
+   * The default value of the '{@link #getOp() <em>Op</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getOp()
    * @generated
    * @ordered
    */
-  protected EList<OpSingleAssign> op;
+  protected static final OpSingleAssign OP_EDEFAULT = OpSingleAssign.ASSIGN;
+
+  /**
+   * The cached value of the '{@link #getOp() <em>Op</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getOp()
+   * @generated
+   * @ordered
+   */
+  protected OpSingleAssign op = OP_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getA() <em>A</em>}' containment reference.
@@ -157,12 +159,8 @@ public class XExpression6Impl extends XExpressionImpl implements XExpression6
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<VariableReference> getRef()
+  public VariableReference getRef()
   {
-    if (ref == null)
-    {
-      ref = new EObjectContainmentEList<VariableReference>(VariableReference.class, this, ESyntaxPackage.XEXPRESSION6__REF);
-    }
     return ref;
   }
 
@@ -171,13 +169,60 @@ public class XExpression6Impl extends XExpressionImpl implements XExpression6
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<OpSingleAssign> getOp()
+  public NotificationChain basicSetRef(VariableReference newRef, NotificationChain msgs)
   {
-    if (op == null)
+    VariableReference oldRef = ref;
+    ref = newRef;
+    if (eNotificationRequired())
     {
-      op = new EDataTypeEList<OpSingleAssign>(OpSingleAssign.class, this, ESyntaxPackage.XEXPRESSION6__OP);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ESyntaxPackage.XEXPRESSION6__REF, oldRef, newRef);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setRef(VariableReference newRef)
+  {
+    if (newRef != ref)
+    {
+      NotificationChain msgs = null;
+      if (ref != null)
+        msgs = ((InternalEObject)ref).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ESyntaxPackage.XEXPRESSION6__REF, null, msgs);
+      if (newRef != null)
+        msgs = ((InternalEObject)newRef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ESyntaxPackage.XEXPRESSION6__REF, null, msgs);
+      msgs = basicSetRef(newRef, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.XEXPRESSION6__REF, newRef, newRef));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public OpSingleAssign getOp()
+  {
     return op;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setOp(OpSingleAssign newOp)
+  {
+    OpSingleAssign oldOp = op;
+    op = newOp == null ? OP_EDEFAULT : newOp;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.XEXPRESSION6__OP, oldOp, op));
   }
 
   /**
@@ -241,7 +286,7 @@ public class XExpression6Impl extends XExpressionImpl implements XExpression6
       case ESyntaxPackage.XEXPRESSION6__TYPE:
         return basicSetType(null, msgs);
       case ESyntaxPackage.XEXPRESSION6__REF:
-        return ((InternalEList<?>)getRef()).basicRemove(otherEnd, msgs);
+        return basicSetRef(null, msgs);
       case ESyntaxPackage.XEXPRESSION6__A:
         return basicSetA(null, msgs);
     }
@@ -275,7 +320,6 @@ public class XExpression6Impl extends XExpressionImpl implements XExpression6
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -285,12 +329,10 @@ public class XExpression6Impl extends XExpressionImpl implements XExpression6
         setType((TypeDef)newValue);
         return;
       case ESyntaxPackage.XEXPRESSION6__REF:
-        getRef().clear();
-        getRef().addAll((Collection<? extends VariableReference>)newValue);
+        setRef((VariableReference)newValue);
         return;
       case ESyntaxPackage.XEXPRESSION6__OP:
-        getOp().clear();
-        getOp().addAll((Collection<? extends OpSingleAssign>)newValue);
+        setOp((OpSingleAssign)newValue);
         return;
       case ESyntaxPackage.XEXPRESSION6__A:
         setA((XExpression5)newValue);
@@ -313,10 +355,10 @@ public class XExpression6Impl extends XExpressionImpl implements XExpression6
         setType((TypeDef)null);
         return;
       case ESyntaxPackage.XEXPRESSION6__REF:
-        getRef().clear();
+        setRef((VariableReference)null);
         return;
       case ESyntaxPackage.XEXPRESSION6__OP:
-        getOp().clear();
+        setOp(OP_EDEFAULT);
         return;
       case ESyntaxPackage.XEXPRESSION6__A:
         setA((XExpression5)null);
@@ -338,9 +380,9 @@ public class XExpression6Impl extends XExpressionImpl implements XExpression6
       case ESyntaxPackage.XEXPRESSION6__TYPE:
         return type != null;
       case ESyntaxPackage.XEXPRESSION6__REF:
-        return ref != null && !ref.isEmpty();
+        return ref != null;
       case ESyntaxPackage.XEXPRESSION6__OP:
-        return op != null && !op.isEmpty();
+        return op != OP_EDEFAULT;
       case ESyntaxPackage.XEXPRESSION6__A:
         return a != null;
     }
