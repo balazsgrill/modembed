@@ -30,4 +30,10 @@
 			</topic>
 		</topic>
 	</topic>
+	<topic href="contents/04.LanguageReference.html#LanguageReference" label="Language Reference" >
+		<topic href="contents/04.LanguageReference.html#LanguageReference_1" label="Library" >
+		</topic>
+		<topic href="contents/04.LanguageReference.html#LanguageReference_2" label="Binary" >
+		</topic>
+	</topic>
 </toc>

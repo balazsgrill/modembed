@@ -1,0 +1,15 @@
+chapter:LanguageReference[Language Reference]
+
+section[Library]
+
+code[
+Library:
+	'library' name=QualifiedName
+	('overrides' overrides+=\[Library|QualifiedName\] (',' overrides+=\[Library|QualifiedName\])*)?
+	';'
+	('use' use+=\[Library|QualifiedName\]';')*
+	(items+=LibraryItem)*
+;
+]
+
+section[Binary]
