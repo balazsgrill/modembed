@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: hu.e.parser
 Bundle-Vendor: Cubussapiens.hu
-Bundle-Version: 0.3.0
+Bundle-Version: 0.7.0
 Bundle-SymbolicName: hu.e.parser; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.xtext;bundle-version="2.0.0";visibility:=reexport,
