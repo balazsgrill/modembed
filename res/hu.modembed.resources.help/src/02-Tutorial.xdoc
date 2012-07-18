@@ -3,6 +3,10 @@ chapter:Tutorial[Tutorial]
 The following step-by-step guide will introduce you to the tool's features, by implementing a led blinking
 software on a PIC16F1824 device.
 
+Before continuing, please be warned: MODembed is in an early experimental state, which means it can has
+(and probably has a lot) bugs which may cause undetected errors in the compilation resulting damage in
+your hardware! Please give it a try, be very careful and notify me if you find any bugs.
+
 section[Setting up the workspace]
 
 First of all, you should import some provided libraries to the workspace. These libraries define some
@@ -55,9 +59,74 @@ use microchip.pic16.enchanced;
 use microchip.PIC16F1824;
 
 main(){
+	TRISA = 0;
 	label start;
+	PORTA = 0xFF;
+	NOP();
+	PORTA = 0;
 	GOTO(start);
 }
 ]
 
+You may noted that the code mixes assembly calls (like NOP and GOTO) with high-level operations like
+assignments. This is the nature of "e". You can choose the most efficient or easy way of doing things.
 
+section[Building your program]
+
+Here comes the hardest part. The compiler doesn't know anything about the architecture. It has to be
+configured to be able to create a HEX file you can program to your microcontroller. The "binary" language
+structure is somewhat similar to the linker scripts in other toolchains.
+
+The binary configuration shall be placed in its own "e" file:
+
+code[e][
+binary blink intelHexfile;
+
+use e.platform;
+use microchip.PIC16F1824;
+use microchip.pic16.enchanced;
+use main;
+
+program main(
+	startAddr = 0;
+	memwidth = 8;
+	pointerType = address;
+	addressType = codeaddr;
+	mem 0x20..0x7f;
+	mem 0xA0..0xEF;
+	mem 0x120..0x16F;
+	optimize "microchip.optimize.bankselect.pic16";
+){
+	lib microchip.pic16.enchanced;
+	lib pic16.platform;
+	link{
+		main();
+	}
+} at 0 width 2;
+data {
+	0xC1E4:uint16;
+	0xDCFF:uint16;
+} at configStartAddress width 2;
+] 
+
+The binary structure is further described in the Language Reference.
+
+If you finished all the steps described above, the program shall already be compiled and available in
+your project: 
+
+img[tutorial/tutorial-14.png][The compiler produces the HEX file automatically][][]
+
+section[Validate your program]
+
+MODembed is still in a very early experimental state, which means it is not always a good idea to burn
+the program onto your hardware before you check that it compiled the way you wanted it to. Along with
+the HEX file, the compiler produces an ".lst" file for every code[e][program] section in the binary.
+This file contains a graph model of the program and describes what exactly had been produced by the compiler:
+
+img[tutorial/tutorial-15.png][The program tree][][]
+img[tutorial/tutorial-16.png][Compiler messages][][]
+
+If the compiler finds a problem during the compilation process it puts an error entry in the tree, which
+is also shown on the compiler messages tab. If there are no error messages in the list it means that
+the compiler did not found any error. This doesn't means that there are no errors in your code or it
+cannot damage your hardware. You still need to be careful when trying out programs compiled with MODembed. 

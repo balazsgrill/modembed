@@ -3,7 +3,11 @@ document[MODembed User's Guide]
 authors[Balázs Grill]
 
 codelanguage-def[e][
-	library, use, label
+	library, use, label,
+	binary, program, startAddr,
+	memwidth, pointerType, addressType,
+	mem, optimize, lib, link, at, width,
+	include, data
 ]
 
 codelanguage-def[Java]

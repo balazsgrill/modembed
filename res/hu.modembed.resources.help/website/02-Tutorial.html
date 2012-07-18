@@ -16,11 +16,13 @@
 		<img src="triangle.gif" style="height:12px; margin-right: 2px; "  /><img src="triangle-90.gif" style="display:none; margin-right: 2px" height="12px" />
 		<a href="02-Tutorial.php">Tutorial</a></div>
 		<ul style="display: none;" id="subToc_02-Tutorial.html">
-		<li id="02-Tutorial.html#Tutorial_2.html" ><a href="02-Tutorial.php#Tutorial_2.php" >Setting up the workspace</a></li>
-		<li id="02-Tutorial.html#Tutorial_3.html" ><a href="02-Tutorial.php#Tutorial_3.php" >Creating your own Embedded Project</a></li>
-		<li id="02-Tutorial.html#Tutorial_4.html" ><a href="02-Tutorial.php#Tutorial_4.php" >Configure project</a></li>
-		<li id="02-Tutorial.html#Tutorial_5.html" ><a href="02-Tutorial.php#Tutorial_5.php" >Import PIC device library</a></li>
-		<li id="02-Tutorial.html#Tutorial_6.html" ><a href="02-Tutorial.php#Tutorial_6.php" >Write your program</a></li>
+		<li id="02-Tutorial.html#Tutorial_3.html" ><a href="02-Tutorial.php#Tutorial_3.php" >Setting up the workspace</a></li>
+		<li id="02-Tutorial.html#Tutorial_4.html" ><a href="02-Tutorial.php#Tutorial_4.php" >Creating your own Embedded Project</a></li>
+		<li id="02-Tutorial.html#Tutorial_5.html" ><a href="02-Tutorial.php#Tutorial_5.php" >Configure project</a></li>
+		<li id="02-Tutorial.html#Tutorial_6.html" ><a href="02-Tutorial.php#Tutorial_6.php" >Import PIC device library</a></li>
+		<li id="02-Tutorial.html#Tutorial_7.html" ><a href="02-Tutorial.php#Tutorial_7.php" >Write your program</a></li>
+		<li id="02-Tutorial.html#Tutorial_8.html" ><a href="02-Tutorial.php#Tutorial_8.php" >Building your program</a></li>
+		<li id="02-Tutorial.html#Tutorial_9.html" ><a href="02-Tutorial.php#Tutorial_9.php" >Validate your program</a></li>
 		</ul>
 		</li>
 		</ul>
@@ -30,11 +32,13 @@
 		<h1>Tutorial</h1>
 				<div class="toc">
 				  <ul>
-				    <li><a href="02-Tutorial.php#Tutorial_2.php" >Setting up the workspace</a></li>
-				    <li><a href="02-Tutorial.php#Tutorial_3.php" >Creating your own Embedded Project</a></li>
-				    <li><a href="02-Tutorial.php#Tutorial_4.php" >Configure project</a></li>
-				    <li><a href="02-Tutorial.php#Tutorial_5.php" >Import PIC device library</a></li>
-				    <li><a href="02-Tutorial.php#Tutorial_6.php" >Write your program</a></li>
+				    <li><a href="02-Tutorial.php#Tutorial_3.php" >Setting up the workspace</a></li>
+				    <li><a href="02-Tutorial.php#Tutorial_4.php" >Creating your own Embedded Project</a></li>
+				    <li><a href="02-Tutorial.php#Tutorial_5.php" >Configure project</a></li>
+				    <li><a href="02-Tutorial.php#Tutorial_6.php" >Import PIC device library</a></li>
+				    <li><a href="02-Tutorial.php#Tutorial_7.php" >Write your program</a></li>
+				    <li><a href="02-Tutorial.php#Tutorial_8.php" >Building your program</a></li>
+				    <li><a href="02-Tutorial.php#Tutorial_9.php" >Validate your program</a></li>
 				  </ul>
 				</div>
 				
@@ -42,7 +46,12 @@
 		The following step-by-step guide will introduce you to the tool's features, by implementing a led blinking
 		software on a PIC16F1824 device.
 		</p>
-		<a name="Tutorial_2" ></a>
+		<p>
+		Before continuing, please be warned: MODembed is in an early experimental state, which means it can has
+		(and probably has a lot) bugs which may cause undetected errors in the compilation resulting damage in
+		your hardware! Please give it a try, be very careful and notify me if you find any bugs.
+		</p>
+		<a name="Tutorial_3" ></a>
 		<span style="float:left; border-top: 1px dotted #d4d4dd; margin-left: 0; margin-top: 5px;
 			padding: 5px 0;
 			padding-top: 5px;"></span><a style="float: right" href="#">Top</a>
@@ -86,7 +95,7 @@
 			</div>
 			</div>
 			</p>
-		<a name="Tutorial_3" ></a>
+		<a name="Tutorial_4" ></a>
 		<span style="float:left; border-top: 1px dotted #d4d4dd; margin-left: 0; margin-top: 5px;
 			padding: 5px 0;
 			padding-top: 5px;"></span><a style="float: right" href="#">Top</a>
@@ -129,7 +138,7 @@
 			</div>
 			</div>
 			</p>
-		<a name="Tutorial_4" ></a>
+		<a name="Tutorial_5" ></a>
 		<span style="float:left; border-top: 1px dotted #d4d4dd; margin-left: 0; margin-top: 5px;
 			padding: 5px 0;
 			padding-top: 5px;"></span><a style="float: right" href="#">Top</a>
@@ -161,7 +170,7 @@
 			</div>
 			</div>
 			</p>
-		<a name="Tutorial_5" ></a>
+		<a name="Tutorial_6" ></a>
 		<span style="float:left; border-top: 1px dotted #d4d4dd; margin-left: 0; margin-top: 5px;
 			padding: 5px 0;
 			padding-top: 5px;"></span><a style="float: right" href="#">Top</a>
@@ -207,7 +216,7 @@
 			</div>
 			</div>
 			</p>
-		<a name="Tutorial_6" ></a>
+		<a name="Tutorial_7" ></a>
 		<span style="float:left; border-top: 1px dotted #d4d4dd; margin-left: 0; margin-top: 5px;
 			padding: 5px 0;
 			padding-top: 5px;"></span><a style="float: right" href="#">Top</a>
@@ -255,12 +264,129 @@
 						<span class="keyword">use</span>&nbsp;microchip.PIC16F1824;<br/>
 						<br/>
 						main(){<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;TRISA&nbsp;=&nbsp;0;<br/>
 						&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">label</span>&nbsp;start;<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;PORTA&nbsp;=&nbsp;0xFF;<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;NOP();<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;PORTA&nbsp;=&nbsp;0;<br/>
 						&nbsp;&nbsp;&nbsp;&nbsp;GOTO(start);<br/>
 						}
 					</p>
 				</div>
 			</div>
+			</p>
+			<p>
+			You may noted that the code mixes assembly calls (like NOP and GOTO) with high-level operations like
+			assignments. This is the nature of &quot;e&quot;. You can choose the most efficient or easy way of doing things.
+			</p>
+		<a name="Tutorial_8" ></a>
+		<span style="float:left; border-top: 1px dotted #d4d4dd; margin-left: 0; margin-top: 5px;
+			padding: 5px 0;
+			padding-top: 5px;"></span><a style="float: right" href="#">Top</a>
+			<br style="clear:both"></br>
+			<h1>Building your program</h1>
+			<p>
+			Here comes the hardest part. The compiler doesn't know anything about the architecture. It has to be
+			configured to be able to create a HEX file you can program to your microcontroller. The &quot;binary&quot; language
+			structure is somewhat similar to the linker scripts in other toolchains.
+			</p>
+			<p>
+			The binary configuration shall be placed in its own &quot;e&quot; file:
+			</p>
+			<p>
+			<div class="literallayout">
+				<div class="incode">
+					<p class="code">
+						<span class="keyword">binary</span>&nbsp;blink&nbsp;intelHexfile;<br/>
+						<br/>
+						<span class="keyword">use</span>&nbsp;e.platform;<br/>
+						<span class="keyword">use</span>&nbsp;microchip.PIC16F1824;<br/>
+						<span class="keyword">use</span>&nbsp;microchip.pic16.enchanced;<br/>
+						<span class="keyword">use</span>&nbsp;main;<br/>
+						<br/>
+						<span class="keyword">program</span>&nbsp;main(<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">startAddr</span>&nbsp;=&nbsp;0;<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">memwidth</span>&nbsp;=&nbsp;8;<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">pointerType</span>&nbsp;=&nbsp;address;<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">addressType</span>&nbsp;=&nbsp;codeaddr;<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">mem</span>&nbsp;0x20..0x7f;<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">mem</span>&nbsp;0xA0..0xEF;<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">mem</span>&nbsp;0x120..0x16F;<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">optimize</span>&nbsp;<span class="string">"microchip.optimize.bankselect.pic16"</span>;<br/>
+						){<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">lib</span>&nbsp;microchip.pic16.enchanced;<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">lib</span>&nbsp;pic16.platform;<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">link</span>{<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;main();<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+						}&nbsp;<span class="keyword">at</span>&nbsp;0&nbsp;<span class="keyword">width</span>&nbsp;2;<br/>
+						<span class="keyword">data</span>&nbsp;{<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;0xC1E4:uint16;<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;0xDCFF:uint16;<br/>
+						}&nbsp;<span class="keyword">at</span>&nbsp;configStartAddress&nbsp;<span class="keyword">width</span>&nbsp;2;
+					</p>
+				</div>
+			</div>
+			</p>
+			<p>
+			The binary structure is further described in the Language Reference.
+			</p>
+			<p>
+			If you finished all the steps described above, the program shall already be compiled and available in
+			your project: 
+			</p>
+			<p>
+			<div class="image" >
+			<a class="gallery" rel="prettyPhoto[all]" title="The compiler produces the HEX file automatically" href="tutorial/tutorial-14.png">
+				<img src="tutorial/tutorial-14.png" 
+					width="600px"
+				/>
+			</a>
+			<div class="caption">
+				The compiler produces the HEX file automatically
+			</div>
+			</div>
+			</p>
+		<a name="Tutorial_9" ></a>
+		<span style="float:left; border-top: 1px dotted #d4d4dd; margin-left: 0; margin-top: 5px;
+			padding: 5px 0;
+			padding-top: 5px;"></span><a style="float: right" href="#">Top</a>
+			<br style="clear:both"></br>
+			<h1>Validate your program</h1>
+			<p>
+			MODembed is still in a very early experimental state, which means it is not always a good idea to burn
+			the program onto your hardware before you check that it compiled the way you wanted it to. Along with
+			the HEX file, the compiler produces an &quot;.lst&quot; file for every <span class="inlinecode"><span class="keyword">program</span></span> section in the binary.
+			This file contains a graph model of the program and describes what exactly had been produced by the compiler:
+			</p>
+			<p>
+			<div class="image" >
+			<a class="gallery" rel="prettyPhoto[all]" title="The program tree" href="tutorial/tutorial-15.png">
+				<img src="tutorial/tutorial-15.png" 
+					width="600px"
+				/>
+			</a>
+			<div class="caption">
+				The program tree
+			</div>
+			</div>
+			
+			<div class="image" >
+			<a class="gallery" rel="prettyPhoto[all]" title="Compiler messages" href="tutorial/tutorial-16.png">
+				<img src="tutorial/tutorial-16.png" 
+					width="600px"
+				/>
+			</a>
+			<div class="caption">
+				Compiler messages
+			</div>
+			</div>
+			</p>
+			<p>
+			If the compiler finds a problem during the compilation process it puts an error entry in the tree, which
+			is also shown on the compiler messages tab. If there are no error messages in the list it means that
+			the compiler did not found any error. This doesn't means that there are no errors in your code or it
+			cannot damage your hardware. You still need to be careful when trying out programs compiled with MODembed. 
 			</p>
 		<div id="disqus_thread"></div>
 		<script type="text/javascript" src="documentationRoot.js"></script>
