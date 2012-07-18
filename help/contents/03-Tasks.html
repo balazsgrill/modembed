@@ -1,0 +1,154 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" >
+<title>Tasks</title>
+
+<link href="book.css" rel="stylesheet" type="text/css">
+<link href="code.css" rel="stylesheet" type="text/css">
+<link rel="home" href="xtext.html" title="">
+</head>
+<body>
+<a name="Tasks"></a>
+<h1>Tasks</h1>
+<a name="Tasks_Disassembler"></a>
+<h2>Using the built-in disassembler</h2>
+<p>
+There is a generic disassembler available in the tool, which can generate the list of instructions from
+any HEX file. 
+</p>
+<a name="Tasks_Disassembler_2"></a>
+<h3>Model-based disassembling</h3>
+<p>
+MODembed is really architecture-independent, therefore it does not know any architecture by itself. To
+decode instructions from a hex file, it needs to know the possible instructions. The knowledge about
+instructions are stored by Instruction Set Models. If you imported the PIC16 library project, you can
+find a model file in it:
+</p>
+<p>
+<div class="image" >
+<img src="tasks/disassembler/disassembler_02.png" 
+/>
+<div class="caption">
+PIC16 Instruction set model file
+</div>
+</div>
+</p>
+<p>
+By opening the file you can review the Instructions supported by the PIC16 architecture:
+</p>
+<p>
+<div class="image" >
+<img src="tasks/disassembler/disassembler_03.png" 
+/>
+<div class="caption">
+PIC16 Instruction set model file
+</div>
+</div>
+</p>
+<p>
+To disassemble a hex file, you can use this one or create your own.
+</p>
+<a name="Tasks_Disassembler_3"></a>
+<h3>Creating Disassembler launch configuration</h3>
+<p>
+Disassembler actions are handled as eclipse launch configurations:
+</p>
+<p>
+<div class="image" >
+<img src="tasks/disassembler/disassembler_01.png" 
+/>
+<div class="caption">
+Open launch configurations
+</div>
+</div>
+</p>
+<p>
+Select "Disassemble hex file" and press "New".
+</p>
+<p>
+<div class="image" >
+<img src="tasks/disassembler/disassembler_04.png" 
+/>
+<div class="caption">
+Empty launch configuration
+</div>
+</div>
+</p>
+<p>
+Select input file from the workspace
+</p>
+<p>
+<div class="image" >
+<img src="tasks/disassembler/disassembler_05.png" 
+/>
+<div class="caption">
+Select hex file
+</div>
+</div>
+</p>
+<p>
+Select the instruction set model by browsing to the Model element in the XMI file 
+</p>
+<p>
+<div class="image" >
+<img src="tasks/disassembler/disassembler_06.png" 
+/>
+<div class="caption">
+Select Instruction set
+</div>
+</div>
+</p>
+<p>
+Give a workspace-relative path to the output file
+</p>
+<p>
+<div class="image" >
+<img src="tasks/disassembler/disassembler_07.png" 
+/>
+<div class="caption">
+Enter path to output file
+</div>
+</div>
+</p>
+<p>
+When you hit "Run", the given output file is created listing the found instructions:
+</p>
+<p>
+<div class="literallayout">
+<div class="incode">
+<p class="code">
+#Entry&nbsp;0x0
+<br/>
+0x0:&nbsp;MOVLB&nbsp;k=0x1
+<br/>
+0x1:&nbsp;CLRF&nbsp;f=0xc
+<br/>
+0x2:&nbsp;MOVLW&nbsp;k=0xff
+<br/>
+0x3:&nbsp;MOVLB&nbsp;k=0x0
+<br/>
+0x4:&nbsp;MOVWF&nbsp;f=0xc
+<br/>
+0x5:&nbsp;NOP
+<br/>
+0x6:&nbsp;CLRF&nbsp;f=0xc
+<br/>
+0x7:&nbsp;GOTO&nbsp;k=0x2
+<br/>
+#Entry&nbsp;0x8007
+<br/>
+0x0:&nbsp;CLRF&nbsp;f=0x64
+<br/>
+0x1:&nbsp;BTFSS&nbsp;b=0x1&nbsp;f=0x7f
+<br/>
+</p>
+</div>
+</div>
+</p>
+<p>
+Please note that the disassembler does not produce a compilable code, it just helps the validation or
+reverse-engineering of a hex file. Also, it tries to find instructions in every section of the hex file,
+like in the example it found instructions in the configuration area.
+</p>
+</body>
+</html>
