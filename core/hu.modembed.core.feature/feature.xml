@@ -230,12 +230,6 @@ litigation.
          unpack="false"/>
 
    <plugin
-         id="hu.modembed.help"
-         download-size="0"
-         install-size="0"
-         version="0.7.0"/>
-
-   <plugin
          id="hu.modembed.hexfile.model"
          download-size="0"
          install-size="0"
@@ -317,6 +311,13 @@ litigation.
          download-size="0"
          install-size="0"
          version="0.7.0"
+         unpack="false"/>
+
+   <plugin
+         id="hu.modembed.resources.help"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
          unpack="false"/>
 
 </feature>
