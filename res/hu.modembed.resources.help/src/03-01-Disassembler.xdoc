@@ -1,0 +1,62 @@
+section:Tasks_Disassembler[Using the built-in disassembler]
+
+There is a generic disassembler available in the tool, which can generate the list of instructions from
+any HEX file. 
+
+section2[Model-based disassembling]
+
+MODembed is really architecture-independent, therefore it does not know any architecture by itself. To
+decode instructions from a hex file, it needs to know the possible instructions. The knowledge about
+instructions are stored by Instruction Set Models. If you imported the PIC16 library project, you can
+find a model file in it:
+
+img[tasks/disassembler/disassembler_02.png][PIC16 Instruction set model file][][]
+
+By opening the file you can review the Instructions supported by the PIC16 architecture:
+
+img[tasks/disassembler/disassembler_03.png][PIC16 Instruction set model file][][]
+
+To disassemble a hex file, you can use this one or create your own.
+
+section2[Creating Disassembler launch configuration]
+
+Disassembler actions are handled as eclipse launch configurations:
+
+img[tasks/disassembler/disassembler_01.png][Open launch configurations][][]
+
+Select "Disassemble hex file" and press "New".
+
+img[tasks/disassembler/disassembler_04.png][Empty launch configuration][][]
+
+Select input file from the workspace
+
+img[tasks/disassembler/disassembler_05.png][Select hex file][][]
+
+Select the instruction set model by browsing to the Model element in the XMI file 
+
+img[tasks/disassembler/disassembler_06.png][Select Instruction set][][]
+
+Give a workspace-relative path to the output file
+
+img[tasks/disassembler/disassembler_07.png][Enter path to output file][][]
+
+When you hit "Run", the given output file is created listing the found instructions:
+
+code[
+#Entry 0x0
+0x0: MOVLB k=0x1
+0x1: CLRF f=0xc
+0x2: MOVLW k=0xff
+0x3: MOVLB k=0x0
+0x4: MOVWF f=0xc
+0x5: NOP
+0x6: CLRF f=0xc
+0x7: GOTO k=0x2
+#Entry 0x8007
+0x0: CLRF f=0x64
+0x1: BTFSS b=0x1 f=0x7f
+]
+
+Please note that the disassembler does not produce a compilable code, it just helps the validation or
+reverse-engineering of a hex file. Also, it tries to find instructions in every section of the hex file,
+like in the example it found instructions in the configuration area.

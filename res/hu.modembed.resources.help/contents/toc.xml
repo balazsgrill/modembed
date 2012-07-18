@@ -22,4 +22,12 @@
 		<topic href="contents/02-Tutorial.html#Tutorial_9" label="Validate your program" >
 		</topic>
 	</topic>
+	<topic href="contents/03-Tasks.html#Tasks" label="Tasks" >
+		<topic href="contents/03-Tasks.html#Tasks_Disassembler" label="Using the built-in disassembler" >
+			<topic href="contents/03-Tasks.html#Tasks_Disassembler_2" label="Model-based disassembling" >
+			</topic>
+			<topic href="contents/03-Tasks.html#Tasks_Disassembler_3" label="Creating Disassembler launch configuration" >
+			</topic>
+		</topic>
+	</topic>
 </toc>
