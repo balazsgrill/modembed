@@ -52,8 +52,9 @@ public class OperatedSymbol implements ILiteralSymbol, IVariableSymbol {
 	 * @see hu.e.compiler.internal.model.ISymbol#getSteps()
 	 */
 	@Override
-	public void addSteps(SequenceStep sequence) {
+	public void addSteps(SequenceStep sequence) throws ECompilerException {
 		sequence.getSteps().addAll(steps);
+		symbol.addSteps(sequence);
 	}
 
 	@Override
@@ -68,7 +69,7 @@ public class OperatedSymbol implements ILiteralSymbol, IVariableSymbol {
 
 	@Override
 	public String toString() {
-		return "{}"+symbol.toString();
+		return "{"+steps.size()+"}"+symbol.toString();
 	}
 
 	@Override

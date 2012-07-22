@@ -108,7 +108,7 @@ public class OperationCompiler {
 		}
 		BlockCompiler bc = new BlockCompiler(block);
 		steps.add(bc.compile(new WrappedSymbolManager(sm)));
-
+		
 		return result;
 	}
 	
