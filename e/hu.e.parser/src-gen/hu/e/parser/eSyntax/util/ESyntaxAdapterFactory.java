@@ -325,6 +325,11 @@ public class ESyntaxAdapterFactory extends AdapterFactoryImpl
         return createXWhileExpressionAdapter();
       }
       @Override
+      public Adapter caseXForExpression(XForExpression object)
+      {
+        return createXForExpressionAdapter();
+      }
+      @Override
       public Adapter caseXParenthesizedExpression(XParenthesizedExpression object)
       {
         return createXParenthesizedExpressionAdapter();
@@ -1127,6 +1132,21 @@ public class ESyntaxAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createXWhileExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.e.parser.eSyntax.XForExpression <em>XFor Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.e.parser.eSyntax.XForExpression
+   * @generated
+   */
+  public Adapter createXForExpressionAdapter()
   {
     return null;
   }

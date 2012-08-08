@@ -115,6 +115,7 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
       case ESyntaxPackage.XIS_LITERAL_EXPRESSION: return createXIsLiteralExpression();
       case ESyntaxPackage.XIF_EXPRESSION: return createXIfExpression();
       case ESyntaxPackage.XWHILE_EXPRESSION: return createXWhileExpression();
+      case ESyntaxPackage.XFOR_EXPRESSION: return createXForExpression();
       case ESyntaxPackage.XPARENTHESIZED_EXPRESSION: return createXParenthesizedExpression();
       case ESyntaxPackage.STRUCT_TYPE_DEF_MEMBER: return createStructTypeDefMember();
       case ESyntaxPackage.CONSTANT_VARIABLE: return createConstantVariable();
@@ -749,6 +750,17 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
   {
     XWhileExpressionImpl xWhileExpression = new XWhileExpressionImpl();
     return xWhileExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public XForExpression createXForExpression()
+  {
+    XForExpressionImpl xForExpression = new XForExpressionImpl();
+    return xForExpression;
   }
 
   /**

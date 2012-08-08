@@ -1899,6 +1899,70 @@ public interface ESyntaxPackage extends EPackage
   int XWHILE_EXPRESSION_FEATURE_COUNT = XTOP_LEVEL_EXPRESSION_FEATURE_COUNT + 2;
 
   /**
+   * The meta object id for the '{@link hu.e.parser.eSyntax.impl.XForExpressionImpl <em>XFor Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.e.parser.eSyntax.impl.XForExpressionImpl
+   * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXForExpression()
+   * @generated
+   */
+  int XFOR_EXPRESSION = 50;
+
+  /**
+   * The feature id for the '<em><b>Var</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int XFOR_EXPRESSION__VAR = XTOP_LEVEL_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>From</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int XFOR_EXPRESSION__FROM = XTOP_LEVEL_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>By</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int XFOR_EXPRESSION__BY = XTOP_LEVEL_EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>To</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int XFOR_EXPRESSION__TO = XTOP_LEVEL_EXPRESSION_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Do</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int XFOR_EXPRESSION__DO = XTOP_LEVEL_EXPRESSION_FEATURE_COUNT + 4;
+
+  /**
+   * The number of structural features of the '<em>XFor Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int XFOR_EXPRESSION_FEATURE_COUNT = XTOP_LEVEL_EXPRESSION_FEATURE_COUNT + 5;
+
+  /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.impl.XParenthesizedExpressionImpl <em>XParenthesized Expression</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1906,7 +1970,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXParenthesizedExpression()
    * @generated
    */
-  int XPARENTHESIZED_EXPRESSION = 50;
+  int XPARENTHESIZED_EXPRESSION = 51;
 
   /**
    * The feature id for the '<em><b>A</b></em>' containment reference.
@@ -1934,7 +1998,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getStructTypeDefMember()
    * @generated
    */
-  int STRUCT_TYPE_DEF_MEMBER = 51;
+  int STRUCT_TYPE_DEF_MEMBER = 52;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -1971,7 +2035,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getConstantVariable()
    * @generated
    */
-  int CONSTANT_VARIABLE = 52;
+  int CONSTANT_VARIABLE = 53;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -2017,7 +2081,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getRegisterVariable()
    * @generated
    */
-  int REGISTER_VARIABLE = 53;
+  int REGISTER_VARIABLE = 54;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -2063,7 +2127,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getLabel()
    * @generated
    */
-  int LABEL = 54;
+  int LABEL = 55;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -2100,7 +2164,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getOperation()
    * @generated
    */
-  int OPERATION = 55;
+  int OPERATION = 56;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -2173,7 +2237,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getParameterVariable()
    * @generated
    */
-  int PARAMETER_VARIABLE = 56;
+  int PARAMETER_VARIABLE = 57;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -2228,7 +2292,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getIntegerKind()
    * @generated
    */
-  int INTEGER_KIND = 57;
+  int INTEGER_KIND = 58;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.ParameterKind <em>Parameter Kind</em>}' enum.
@@ -2238,7 +2302,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getParameterKind()
    * @generated
    */
-  int PARAMETER_KIND = 58;
+  int PARAMETER_KIND = 59;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.OperationRole <em>Operation Role</em>}' enum.
@@ -2248,7 +2312,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getOperationRole()
    * @generated
    */
-  int OPERATION_ROLE = 59;
+  int OPERATION_ROLE = 60;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.BinaryType <em>Binary Type</em>}' enum.
@@ -2258,7 +2322,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getBinaryType()
    * @generated
    */
-  int BINARY_TYPE = 60;
+  int BINARY_TYPE = 61;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.UNARY_OPERATOR <em>UNARY OPERATOR</em>}' enum.
@@ -2268,7 +2332,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getUNARY_OPERATOR()
    * @generated
    */
-  int UNARY_OPERATOR = 61;
+  int UNARY_OPERATOR = 62;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.MULTIPLICATIVE_OPERATOR <em>MULTIPLICATIVE OPERATOR</em>}' enum.
@@ -2278,7 +2342,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getMULTIPLICATIVE_OPERATOR()
    * @generated
    */
-  int MULTIPLICATIVE_OPERATOR = 62;
+  int MULTIPLICATIVE_OPERATOR = 63;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.ADDITIVE_OPERATOR <em>ADDITIVE OPERATOR</em>}' enum.
@@ -2288,7 +2352,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getADDITIVE_OPERATOR()
    * @generated
    */
-  int ADDITIVE_OPERATOR = 63;
+  int ADDITIVE_OPERATOR = 64;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.EQUALITY_OPERATOR <em>EQUALITY OPERATOR</em>}' enum.
@@ -2298,7 +2362,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getEQUALITY_OPERATOR()
    * @generated
    */
-  int EQUALITY_OPERATOR = 64;
+  int EQUALITY_OPERATOR = 65;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.BOOLEAN_OPERATOR <em>BOOLEAN OPERATOR</em>}' enum.
@@ -2308,7 +2372,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getBOOLEAN_OPERATOR()
    * @generated
    */
-  int BOOLEAN_OPERATOR = 65;
+  int BOOLEAN_OPERATOR = 66;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.ErrorLevels <em>Error Levels</em>}' enum.
@@ -2318,7 +2382,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getErrorLevels()
    * @generated
    */
-  int ERROR_LEVELS = 66;
+  int ERROR_LEVELS = 67;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.OpSingleAssign <em>Op Single Assign</em>}' enum.
@@ -2328,7 +2392,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getOpSingleAssign()
    * @generated
    */
-  int OP_SINGLE_ASSIGN = 67;
+  int OP_SINGLE_ASSIGN = 68;
 
 
   /**
@@ -3721,6 +3785,71 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    */
   EReference getXWhileExpression_Do();
+
+  /**
+   * Returns the meta object for class '{@link hu.e.parser.eSyntax.XForExpression <em>XFor Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>XFor Expression</em>'.
+   * @see hu.e.parser.eSyntax.XForExpression
+   * @generated
+   */
+  EClass getXForExpression();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.e.parser.eSyntax.XForExpression#getVar <em>Var</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Var</em>'.
+   * @see hu.e.parser.eSyntax.XForExpression#getVar()
+   * @see #getXForExpression()
+   * @generated
+   */
+  EReference getXForExpression_Var();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.e.parser.eSyntax.XForExpression#getFrom <em>From</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>From</em>'.
+   * @see hu.e.parser.eSyntax.XForExpression#getFrom()
+   * @see #getXForExpression()
+   * @generated
+   */
+  EReference getXForExpression_From();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.e.parser.eSyntax.XForExpression#getBy <em>By</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>By</em>'.
+   * @see hu.e.parser.eSyntax.XForExpression#getBy()
+   * @see #getXForExpression()
+   * @generated
+   */
+  EReference getXForExpression_By();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.e.parser.eSyntax.XForExpression#getTo <em>To</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>To</em>'.
+   * @see hu.e.parser.eSyntax.XForExpression#getTo()
+   * @see #getXForExpression()
+   * @generated
+   */
+  EReference getXForExpression_To();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.e.parser.eSyntax.XForExpression#getDo <em>Do</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Do</em>'.
+   * @see hu.e.parser.eSyntax.XForExpression#getDo()
+   * @see #getXForExpression()
+   * @generated
+   */
+  EReference getXForExpression_Do();
 
   /**
    * Returns the meta object for class '{@link hu.e.parser.eSyntax.XParenthesizedExpression <em>XParenthesized Expression</em>}'.
@@ -5160,6 +5289,56 @@ public interface ESyntaxPackage extends EPackage
      * @generated
      */
     EReference XWHILE_EXPRESSION__DO = eINSTANCE.getXWhileExpression_Do();
+
+    /**
+     * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.XForExpressionImpl <em>XFor Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.e.parser.eSyntax.impl.XForExpressionImpl
+     * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXForExpression()
+     * @generated
+     */
+    EClass XFOR_EXPRESSION = eINSTANCE.getXForExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Var</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference XFOR_EXPRESSION__VAR = eINSTANCE.getXForExpression_Var();
+
+    /**
+     * The meta object literal for the '<em><b>From</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference XFOR_EXPRESSION__FROM = eINSTANCE.getXForExpression_From();
+
+    /**
+     * The meta object literal for the '<em><b>By</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference XFOR_EXPRESSION__BY = eINSTANCE.getXForExpression_By();
+
+    /**
+     * The meta object literal for the '<em><b>To</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference XFOR_EXPRESSION__TO = eINSTANCE.getXForExpression_To();
+
+    /**
+     * The meta object literal for the '<em><b>Do</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference XFOR_EXPRESSION__DO = eINSTANCE.getXForExpression_Do();
 
     /**
      * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.XParenthesizedExpressionImpl <em>XParenthesized Expression</em>}' class.

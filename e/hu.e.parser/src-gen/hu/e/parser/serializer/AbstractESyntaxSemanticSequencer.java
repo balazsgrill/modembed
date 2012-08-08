@@ -43,6 +43,7 @@ import hu.e.parser.eSyntax.XExpression5;
 import hu.e.parser.eSyntax.XExpression6;
 import hu.e.parser.eSyntax.XExpressionLiteral;
 import hu.e.parser.eSyntax.XExpressionM1;
+import hu.e.parser.eSyntax.XForExpression;
 import hu.e.parser.eSyntax.XIfExpression;
 import hu.e.parser.eSyntax.XIsLiteralExpression;
 import hu.e.parser.eSyntax.XParenthesizedExpression;
@@ -361,6 +362,14 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 			case ESyntaxPackage.XEXPRESSION_M1:
 				if(context == grammarAccess.getXExpressionM1Rule()) {
 					sequence_XExpressionM1(context, (XExpressionM1) semanticObject); 
+					return; 
+				}
+				else break;
+			case ESyntaxPackage.XFOR_EXPRESSION:
+				if(context == grammarAccess.getOperationStepRule() ||
+				   context == grammarAccess.getXForExpressionRule() ||
+				   context == grammarAccess.getXTopLevelExpressionRule()) {
+					sequence_XForExpression(context, (XForExpression) semanticObject); 
 					return; 
 				}
 				else break;
@@ -1006,6 +1015,34 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 	 */
 	protected void sequence_XExpression_XExpression6(EObject context, XExpression6 semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (var=Variable from=XExpression by=XExpression to=XExpression do=OperationBlock)
+	 */
+	protected void sequence_XForExpression(EObject context, XForExpression semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.XFOR_EXPRESSION__VAR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.XFOR_EXPRESSION__VAR));
+			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.XFOR_EXPRESSION__FROM) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.XFOR_EXPRESSION__FROM));
+			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.XFOR_EXPRESSION__BY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.XFOR_EXPRESSION__BY));
+			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.XFOR_EXPRESSION__TO) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.XFOR_EXPRESSION__TO));
+			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.XFOR_EXPRESSION__DO) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.XFOR_EXPRESSION__DO));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getXForExpressionAccess().getVarVariableParserRuleCall_2_0(), semanticObject.getVar());
+		feeder.accept(grammarAccess.getXForExpressionAccess().getFromXExpressionParserRuleCall_3_0(), semanticObject.getFrom());
+		feeder.accept(grammarAccess.getXForExpressionAccess().getByXExpressionParserRuleCall_5_0(), semanticObject.getBy());
+		feeder.accept(grammarAccess.getXForExpressionAccess().getToXExpressionParserRuleCall_7_0(), semanticObject.getTo());
+		feeder.accept(grammarAccess.getXForExpressionAccess().getDoOperationBlockParserRuleCall_10_0(), semanticObject.getDo());
+		feeder.finish();
 	}
 	
 	

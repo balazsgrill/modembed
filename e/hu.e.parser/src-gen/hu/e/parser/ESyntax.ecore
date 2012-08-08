@@ -302,6 +302,18 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="do" eType="#//OperationBlock"
         containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="XForExpression" eSuperTypes="#//XTopLevelExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="var" eType="#//Variable"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from" eType="#//XExpression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="by" eType="#//XExpression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//XExpression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="do" eType="#//OperationBlock"
+        containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="XParenthesizedExpression" eSuperTypes="#//XPrimaryExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="a" eType="#//XExpression"
         containment="true"/>

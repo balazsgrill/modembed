@@ -336,7 +336,7 @@ XExpressionLiteral:
 ;
 
 XTopLevelExpression:
-	Annotation ';' | XExpression ';' | XIfExpression | XWhileExpression | XErrorExpression
+	Annotation ';' | XExpression ';' | XIfExpression | XWhileExpression | XErrorExpression | XForExpression
 ;
 
 XErrorExpression:
@@ -369,6 +369,12 @@ XWhileExpression:
 	'}'
 ;	
 	
+XForExpression:
+	'for' '(' var=Variable from=XExpression ';' by=XExpression ';' to=XExpression ')' '{'
+		do=OperationBlock
+	'}'
+;
+
 XParenthesizedExpression:
 	'(' a=XExpression ')';
 

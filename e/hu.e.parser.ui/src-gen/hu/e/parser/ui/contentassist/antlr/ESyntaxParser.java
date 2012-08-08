@@ -141,6 +141,7 @@ public class ESyntaxParser extends AbstractContentAssistParser {
 					put(grammarAccess.getXIfExpressionAccess().getGroup(), "rule__XIfExpression__Group__0");
 					put(grammarAccess.getXIfExpressionAccess().getGroup_7(), "rule__XIfExpression__Group_7__0");
 					put(grammarAccess.getXWhileExpressionAccess().getGroup(), "rule__XWhileExpression__Group__0");
+					put(grammarAccess.getXForExpressionAccess().getGroup(), "rule__XForExpression__Group__0");
 					put(grammarAccess.getXParenthesizedExpressionAccess().getGroup(), "rule__XParenthesizedExpression__Group__0");
 					put(grammarAccess.getAnnotationDefinitionAccess().getNameAssignment_1(), "rule__AnnotationDefinition__NameAssignment_1");
 					put(grammarAccess.getAnnotationAccess().getDefinitionAssignment_1(), "rule__Annotation__DefinitionAssignment_1");
@@ -252,6 +253,11 @@ public class ESyntaxParser extends AbstractContentAssistParser {
 					put(grammarAccess.getXIfExpressionAccess().getElseAssignment_7_2(), "rule__XIfExpression__ElseAssignment_7_2");
 					put(grammarAccess.getXWhileExpressionAccess().getCondAssignment_2(), "rule__XWhileExpression__CondAssignment_2");
 					put(grammarAccess.getXWhileExpressionAccess().getDoAssignment_5(), "rule__XWhileExpression__DoAssignment_5");
+					put(grammarAccess.getXForExpressionAccess().getVarAssignment_2(), "rule__XForExpression__VarAssignment_2");
+					put(grammarAccess.getXForExpressionAccess().getFromAssignment_3(), "rule__XForExpression__FromAssignment_3");
+					put(grammarAccess.getXForExpressionAccess().getByAssignment_5(), "rule__XForExpression__ByAssignment_5");
+					put(grammarAccess.getXForExpressionAccess().getToAssignment_7(), "rule__XForExpression__ToAssignment_7");
+					put(grammarAccess.getXForExpressionAccess().getDoAssignment_10(), "rule__XForExpression__DoAssignment_10");
 					put(grammarAccess.getXParenthesizedExpressionAccess().getAAssignment_1(), "rule__XParenthesizedExpression__AAssignment_1");
 				}
 			};

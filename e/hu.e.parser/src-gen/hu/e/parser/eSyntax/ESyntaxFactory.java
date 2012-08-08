@@ -473,6 +473,15 @@ public interface ESyntaxFactory extends EFactory
   XWhileExpression createXWhileExpression();
 
   /**
+   * Returns a new object of class '<em>XFor Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>XFor Expression</em>'.
+   * @generated
+   */
+  XForExpression createXForExpression();
+
+  /**
    * Returns a new object of class '<em>XParenthesized Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

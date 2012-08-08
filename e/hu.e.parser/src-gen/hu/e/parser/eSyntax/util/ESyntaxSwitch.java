@@ -469,6 +469,15 @@ public class ESyntaxSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case ESyntaxPackage.XFOR_EXPRESSION:
+      {
+        XForExpression xForExpression = (XForExpression)theEObject;
+        T result = caseXForExpression(xForExpression);
+        if (result == null) result = caseXTopLevelExpression(xForExpression);
+        if (result == null) result = caseOperationStep(xForExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case ESyntaxPackage.XPARENTHESIZED_EXPRESSION:
       {
         XParenthesizedExpression xParenthesizedExpression = (XParenthesizedExpression)theEObject;
@@ -1338,6 +1347,22 @@ public class ESyntaxSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseXWhileExpression(XWhileExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>XFor Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>XFor Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseXForExpression(XForExpression object)
   {
     return null;
   }

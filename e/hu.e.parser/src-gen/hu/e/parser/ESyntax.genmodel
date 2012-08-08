@@ -256,6 +256,13 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XWhileExpression/cond"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XWhileExpression/do"/>
     </genClasses>
+    <genClasses ecoreClass="ESyntax.ecore#//XForExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XForExpression/var"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XForExpression/from"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XForExpression/by"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XForExpression/to"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XForExpression/do"/>
+    </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//XParenthesizedExpression">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XParenthesizedExpression/a"/>
     </genClasses>

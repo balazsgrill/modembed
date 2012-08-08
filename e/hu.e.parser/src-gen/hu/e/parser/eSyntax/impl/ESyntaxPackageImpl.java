@@ -59,6 +59,7 @@ import hu.e.parser.eSyntax.XExpression5;
 import hu.e.parser.eSyntax.XExpression6;
 import hu.e.parser.eSyntax.XExpressionLiteral;
 import hu.e.parser.eSyntax.XExpressionM1;
+import hu.e.parser.eSyntax.XForExpression;
 import hu.e.parser.eSyntax.XIfExpression;
 import hu.e.parser.eSyntax.XIsLiteralExpression;
 import hu.e.parser.eSyntax.XParenthesizedExpression;
@@ -433,6 +434,13 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * @generated
    */
   private EClass xWhileExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass xForExpressionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1938,6 +1946,66 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getXForExpression()
+  {
+    return xForExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getXForExpression_Var()
+  {
+    return (EReference)xForExpressionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getXForExpression_From()
+  {
+    return (EReference)xForExpressionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getXForExpression_By()
+  {
+    return (EReference)xForExpressionEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getXForExpression_To()
+  {
+    return (EReference)xForExpressionEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getXForExpression_Do()
+  {
+    return (EReference)xForExpressionEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getXParenthesizedExpression()
   {
     return xParenthesizedExpressionEClass;
@@ -2404,6 +2472,13 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     createEReference(xWhileExpressionEClass, XWHILE_EXPRESSION__COND);
     createEReference(xWhileExpressionEClass, XWHILE_EXPRESSION__DO);
 
+    xForExpressionEClass = createEClass(XFOR_EXPRESSION);
+    createEReference(xForExpressionEClass, XFOR_EXPRESSION__VAR);
+    createEReference(xForExpressionEClass, XFOR_EXPRESSION__FROM);
+    createEReference(xForExpressionEClass, XFOR_EXPRESSION__BY);
+    createEReference(xForExpressionEClass, XFOR_EXPRESSION__TO);
+    createEReference(xForExpressionEClass, XFOR_EXPRESSION__DO);
+
     xParenthesizedExpressionEClass = createEClass(XPARENTHESIZED_EXPRESSION);
     createEReference(xParenthesizedExpressionEClass, XPARENTHESIZED_EXPRESSION__A);
 
@@ -2505,6 +2580,7 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     xIsLiteralExpressionEClass.getESuperTypes().add(this.getXPrimaryExpression());
     xIfExpressionEClass.getESuperTypes().add(this.getXTopLevelExpression());
     xWhileExpressionEClass.getESuperTypes().add(this.getXTopLevelExpression());
+    xForExpressionEClass.getESuperTypes().add(this.getXTopLevelExpression());
     xParenthesizedExpressionEClass.getESuperTypes().add(this.getXPrimaryExpression());
     structTypeDefMemberEClass.getESuperTypes().add(this.getVariable());
     constantVariableEClass.getESuperTypes().add(this.getVariable());
@@ -2694,6 +2770,13 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     initEClass(xWhileExpressionEClass, XWhileExpression.class, "XWhileExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getXWhileExpression_Cond(), this.getXExpression(), null, "cond", null, 0, 1, XWhileExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getXWhileExpression_Do(), this.getOperationBlock(), null, "do", null, 0, 1, XWhileExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(xForExpressionEClass, XForExpression.class, "XForExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getXForExpression_Var(), this.getVariable(), null, "var", null, 0, 1, XForExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getXForExpression_From(), this.getXExpression(), null, "from", null, 0, 1, XForExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getXForExpression_By(), this.getXExpression(), null, "by", null, 0, 1, XForExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getXForExpression_To(), this.getXExpression(), null, "to", null, 0, 1, XForExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getXForExpression_Do(), this.getOperationBlock(), null, "do", null, 0, 1, XForExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(xParenthesizedExpressionEClass, XParenthesizedExpression.class, "XParenthesizedExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getXParenthesizedExpression_A(), this.getXExpression(), null, "a", null, 0, 1, XParenthesizedExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
