@@ -12,6 +12,8 @@ import hu.e.compiler.internal.model.symbols.ISymbol;
 import hu.e.compiler.internal.model.symbols.IVariableSymbol;
 import hu.e.compiler.internal.model.symbols.SymbolContext;
 import hu.e.compiler.internal.model.symbols.impl.CodeAddressSymbol;
+import hu.e.compiler.internal.model.symbols.impl.LiteralSymbol;
+import hu.e.compiler.internal.symbols.VariableOverrideSymbolManager;
 import hu.e.compiler.list.AnnotationStep;
 import hu.e.compiler.list.LabelStep;
 import hu.e.compiler.list.ListFactory;
@@ -31,8 +33,10 @@ import hu.e.parser.eSyntax.TypeDef;
 import hu.e.parser.eSyntax.Variable;
 import hu.e.parser.eSyntax.XErrorExpression;
 import hu.e.parser.eSyntax.XExpression;
+import hu.e.parser.eSyntax.XForExpression;
 import hu.e.parser.eSyntax.XIfExpression;
 
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -115,6 +119,43 @@ public class BlockCompiler {
 				case ERROR: result.getSteps().add(CompilationErrorEntry.error(step, msg)); break;
 				case WARNING: result.getSteps().add(CompilationErrorEntry.warning(step, msg)); break;
 				case INFO: result.getSteps().add(CompilationErrorEntry.info(step, msg)); break;
+				}
+			}
+			if (step instanceof XForExpression){
+				Variable var = ((XForExpression) step).getVar();
+				try{
+					ISymbol from = sm.resolve(result, ((XForExpression) step).getFrom());
+					ISymbol by = sm.resolve(result, ((XForExpression) step).getBy());
+					ISymbol to = sm.resolve(result, ((XForExpression) step).getTo());
+					
+					if (!from.isAssignableAt(SymbolContext.COMPILETIME)) throw new ECompilerException(((XForExpression) step).getFrom(), "TODO: runtime for cycles are not supported!");
+					if (!by.isAssignableAt(SymbolContext.COMPILETIME)) throw new ECompilerException(((XForExpression) step).getBy(), "TODO: runtime for cycles are not supported!");
+					if (!to.isAssignableAt(SymbolContext.COMPILETIME)) throw new ECompilerException(((XForExpression) step).getTo(), "TODO: runtime for cycles are not supported!");
+					
+					BigDecimal fromv = ((ILiteralSymbol)from).getValue();
+					BigDecimal byv = ((ILiteralSymbol)by).getValue();
+					BigDecimal tov = ((ILiteralSymbol)to).getValue();
+					
+					OperationBlock block = ((XForExpression) step).getDo();
+					VariableOverrideSymbolManager symbolman = new VariableOverrideSymbolManager(sm);
+					BlockCompiler bc = new BlockCompiler(block);
+					
+					BigDecimal iter = fromv;
+					BigDecimal diff = null;
+					for(iter = fromv; !iter.equals(tov) ; iter = iter.add(byv)){
+						symbolman.overrides.put(var, new LiteralSymbol(var.getType(), iter));
+						
+						result.getSteps().add(bc.compile(symbolman));
+						
+						BigDecimal newdiff = tov.subtract(iter);
+						if (diff != null && newdiff.compareTo(diff) >= 0){
+							throw new ECompilerException(step, "Infinite compile-time for cycle detected!");
+						}
+						diff = newdiff;
+					}
+
+				}catch(ECompilerException e){
+					result.getSteps().add(CompilationErrorEntry.create(e));
 				}
 			}
 			if (step instanceof XIfExpression){
