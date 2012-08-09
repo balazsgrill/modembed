@@ -251,13 +251,6 @@ litigation.
          unpack="false"/>
 
    <plugin
-         id="hu.modembed.model.edit"
-         download-size="0"
-         install-size="0"
-         version="0.7.0"
-         unpack="false"/>
-
-   <plugin
          id="hu.modembed.model.editor"
          download-size="0"
          install-size="0"
