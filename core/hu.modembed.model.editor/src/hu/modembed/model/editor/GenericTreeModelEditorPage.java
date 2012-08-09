@@ -6,19 +6,20 @@ package hu.modembed.model.editor;
 import java.util.Collection;
 import java.util.EventObject;
 
+import org.eclipse.core.databinding.observable.map.IObservableMap;
+import org.eclipse.core.databinding.observable.masterdetail.MasterDetailObservables;
+import org.eclipse.core.databinding.observable.set.IObservableSet;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.command.CommandStack;
 import org.eclipse.emf.common.command.CommandStackListener;
-import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.domain.EditingDomain;
-import org.eclipse.emf.edit.ui.celleditor.AdapterFactoryTreeEditor;
 import org.eclipse.emf.edit.ui.dnd.EditingDomainViewerDropAdapter;
 import org.eclipse.emf.edit.ui.dnd.LocalTransfer;
 import org.eclipse.emf.edit.ui.dnd.ViewerDragAdapter;
-import org.eclipse.emf.edit.ui.provider.AdapterFactoryContentProvider;
-import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.jface.action.MenuManager;
+import org.eclipse.jface.databinding.viewers.ObservableListTreeContentProvider;
+import org.eclipse.jface.databinding.viewers.ObservableMapLabelProvider;
 import org.eclipse.jface.viewers.ISelectionProvider;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.TreeViewer;
@@ -36,16 +37,14 @@ public class GenericTreeModelEditorPage implements IModelEditorPage, CommandStac
 
 	private Resource resource;
 	private EditingDomain editingDomain;
-	private AdapterFactory adapterFactory;
 	
 	/* (non-Javadoc)
 	 * @see hu.modembed.model.editor.IModelEditorPage#init(org.eclipse.emf.ecore.resource.Resource, org.eclipse.emf.edit.domain.EditingDomain)
 	 */
 	@Override
-	public void init(Resource resource, EditingDomain editingDomain, AdapterFactory adapterFactory) {
+	public void init(Resource resource, EditingDomain editingDomain) {
 		this.resource = resource;
 		this.editingDomain = editingDomain;
-		this.adapterFactory = adapterFactory;
 	}
 	
 	private TreeViewer selectionViewer;
@@ -57,13 +56,16 @@ public class GenericTreeModelEditorPage implements IModelEditorPage, CommandStac
 	public void createControls(Composite parent) {
 		parent.setLayout(new FillLayout());
 		selectionViewer = new TreeViewer(parent);
-		selectionViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
-
-		selectionViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
+		ObservableListTreeContentProvider contentProvider = new ObservableListTreeContentProvider(new EObjectContentListObservableFactory(editingDomain), null);
+		IObservableSet knownelements = contentProvider.getKnownElements();
+		IObservableMap labels = MasterDetailObservables.detailValues(
+				knownelements, new ElementLabelValueFactory(editingDomain), String.class);
+		
+		
+		selectionViewer.setContentProvider(contentProvider);
+		selectionViewer.setLabelProvider(new ObservableMapLabelProvider(labels));
 		selectionViewer.setInput(resource);
 		selectionViewer.setSelection(new StructuredSelection(editingDomain.getResourceSet().getResources().get(0)), true);
-
-		new AdapterFactoryTreeEditor(selectionViewer.getTree(), adapterFactory);
 
 		editingDomain.getCommandStack().addCommandStackListener(this);
 	}
@@ -123,8 +125,6 @@ public class GenericTreeModelEditorPage implements IModelEditorPage, CommandStac
 	public void commandStackChanged(EventObject event) {
 		Command mostRecentCommand = ((CommandStack)event.getSource()).getMostRecentCommand();
 		  if (mostRecentCommand != null) {
-			  selectionViewer.refresh();
-			  
 			  setSelectionToViewer(mostRecentCommand.getAffectedObjects());
 		  }
 		

@@ -9,9 +9,9 @@ import hu.modembed.ui.MODembedUI;
 import java.io.IOException;
 import java.util.Collection;
 import java.util.EventObject;
-import java.util.HashMap;
 
 import org.eclipse.core.resources.IMarker;
+import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.command.BasicCommandStack;
@@ -20,10 +20,8 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.domain.IEditingDomainProvider;
-import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.ui.provider.UnwrappingSelectionProvider;
 import org.eclipse.emf.edit.ui.util.EditUIUtil;
 import org.eclipse.jface.action.IMenuListener;
@@ -41,6 +39,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IEditorSite;
+import org.eclipse.ui.IFileEditorInput;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.ide.IGotoMarker;
@@ -61,7 +60,7 @@ public class GenericModelEditor extends EditorPart
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private AdapterFactoryEditingDomain editingDomain;
+	private EditingDomain editingDomain;
 	
 	private Resource resource;
 	
@@ -73,12 +72,7 @@ public class GenericModelEditor extends EditorPart
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ComposedAdapterFactory adapterFactory;
-	
-	public GenericModelEditor() {
-		super();
-		initializeEditingDomain();
-	}
+	//protected ComposedAdapterFactory adapterFactory;
 	
 	/**
 	 * This sets up the editing domain for the model editor.
@@ -86,32 +80,22 @@ public class GenericModelEditor extends EditorPart
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private void initializeEditingDomain() {
-		// Create an adapter factory that yields item providers.
-		//
-		adapterFactory = MODembedUI.getDefault().createAdapterFactory();
+	private void initializeEditingDomain(IResource resource) {
 
-		// Create the command stack that will notify this editor as commands are executed.
-		//
-		BasicCommandStack commandStack = new BasicCommandStack();
+		editingDomain = MODembedUI.getDefault().createEditingDomain(resource.getProject());
+		
+		editingDomain.getCommandStack().addCommandStackListener
+		(new CommandStackListener() {
+			 public void commandStackChanged(final EventObject event) {
+				 PlatformUI.getWorkbench().getDisplay().asyncExec
+					 (new Runnable() {
+						  public void run() {
+							  firePropertyChange(IEditorPart.PROP_DIRTY);
+						  }
+					  });
+			 }
+		 });
 
-		// Add a listener to set the most recent command's affected objects to be the selection of the viewer with focus.
-		//
-		commandStack.addCommandStackListener
-			(new CommandStackListener() {
-				 public void commandStackChanged(final EventObject event) {
-					 PlatformUI.getWorkbench().getDisplay().asyncExec
-						 (new Runnable() {
-							  public void run() {
-								  firePropertyChange(IEditorPart.PROP_DIRTY);
-							  }
-						  });
-				 }
-			 });
-
-		// Create the editing domain with a special command stack.
-		//
-		editingDomain = new AdapterFactoryEditingDomain(adapterFactory, commandStack, new HashMap<Resource, Boolean>());
 	}
 	
 	/**
@@ -138,6 +122,8 @@ public class GenericModelEditor extends EditorPart
 	 * This is the method called to load a resource into the editing domain's resource set based on the editor's input.
 	 */
 	private void createModel() {
+		initializeEditingDomain(((IFileEditorInput)getEditorInput()).getFile());
+		
 		URI resourceURI = EditUIUtil.getURI(getEditorInput());
 		//Exception exception = null;
 		
@@ -193,6 +179,8 @@ public class GenericModelEditor extends EditorPart
 		setSite(site);
 		setInputWithNotify(input);
 		setPartName(input.getName());
+		
+		createModel();
 		//site.getPage().addPartListener(partListener);
 		//ResourcesPlugin.getWorkspace().addResourceChangeListener(resourceChangeListener, IResourceChangeEvent.POST_CHANGE);
 	}
@@ -220,7 +208,6 @@ public class GenericModelEditor extends EditorPart
 	 */
 	@Override
 	public void createPartControl(Composite parent) {
-		createModel();
 		
 		propertySheetPage =
 			new GenericModelPropertyPage(editingDomain);
@@ -232,7 +219,7 @@ public class GenericModelEditor extends EditorPart
 		IModelEditorPage[] pages = cpages.toArray(new IModelEditorPage[cpages.size()]);
 		
 		for(IModelEditorPage page : pages){
-			page.init(resource, editingDomain, adapterFactory);
+			page.init(resource, editingDomain);
 		}
 		
 		MenuManager contextMenu = createContextMenu();

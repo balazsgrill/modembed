@@ -3,7 +3,6 @@
  */
 package hu.modembed.model.editor;
 
-import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.jface.action.MenuManager;
@@ -16,7 +15,7 @@ import org.eclipse.swt.widgets.Composite;
  */
 public interface IModelEditorPage {
 
-	public void init(Resource resource, EditingDomain editingdomain, AdapterFactory adapterFactory);
+	public void init(Resource resource, EditingDomain editingdomain);
 	
 	public void createControls(Composite parent);
 	
