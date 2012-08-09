@@ -24,7 +24,7 @@ public class GenerateDeviceDescription {
 		project.open(new NullProgressMonitor());
 		project.refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
 		
-		for(IResource r : project.getFolder("16xxxx").members()){
+		for(IResource r : project.getFolder("18xxxx").members()){
 			if ((r instanceof IFile) && r.getFileExtension().toUpperCase().endsWith("PIC")){
 				new LibraryGenerator((IFile) r);
 			}
