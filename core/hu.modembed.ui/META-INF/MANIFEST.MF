@@ -25,5 +25,6 @@ Require-Bundle: org.eclipse.ui,
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: hu.modembed.ui,
+ hu.modembed.ui.databinding,
  hu.modembed.ui.dialogs,
  hu.modembed.ui.widgets
