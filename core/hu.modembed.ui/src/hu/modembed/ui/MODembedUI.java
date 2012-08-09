@@ -5,10 +5,14 @@ import hu.modembed.ui.internal.ModelDescriptionRegistry;
 import java.net.URL;
 
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IProject;
 import org.eclipse.emf.common.notify.AdapterFactory;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory;
 import org.eclipse.emf.edit.provider.resource.ResourceItemProviderAdapterFactory;
+import org.eclipse.emf.transaction.impl.TransactionalEditingDomainImpl;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
@@ -56,6 +60,13 @@ public class MODembedUI extends AbstractUIPlugin {
 		reg.put(IMAGE_ELEMENT_FOLDER, ImageDescriptor.createFromURL(getBundle().getEntry("icons/elements/folder.gif")));
 		reg.put(IMAGE_ELEMENT_INSTRUCTION, ImageDescriptor.createFromURL(getBundle().getEntry("icons/elements/instruction_obj.gif")));
 		reg.put(IMAGE_ELEMENT_MODULE, ImageDescriptor.createFromURL(getBundle().getEntry("icons/elements/module.png")));
+	}
+	
+	public EditingDomain createEditingDomain(IProject project){
+		
+		EditingDomain editingDomain = TransactionalEditingDomainImpl.FactoryImpl.INSTANCE.createEditingDomain(new ResourceSetImpl());
+		
+		return editingDomain;
 	}
 	
 	public Image getSharedImage(URL url){
