@@ -4,7 +4,6 @@
 package hu.modembed.model.editor.properties;
 
 import hu.modembed.model.editor.IPropertyEditor;
-import hu.modembed.ui.MODembedUI;
 import hu.modembed.ui.dialogs.SelectObjectDialog;
 
 import java.util.Collection;
@@ -15,8 +14,9 @@ import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.edit.domain.EditingDomain;
-import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.jface.dialogs.Dialog;
+import org.eclipse.jface.viewers.ILabelProvider;
+import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CLabel;
 import org.eclipse.swt.events.SelectionAdapter;
@@ -45,7 +45,7 @@ public class EReferenceEditor implements IPropertyEditor {
 		this.reference = reference;
 	}
 	
-	private static final AdapterFactoryLabelProvider lp = new AdapterFactoryLabelProvider(MODembedUI.getDefault().createAdapterFactory());
+	private static final ILabelProvider lp = new LabelProvider();
 	
 	private static void setItem(CLabel label, Object item){
 		if (item == null){

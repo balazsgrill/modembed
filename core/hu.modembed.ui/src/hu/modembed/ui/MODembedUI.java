@@ -1,17 +1,15 @@
 package hu.modembed.ui;
 
-import hu.modembed.ui.internal.ModelDescriptionRegistry;
+import hu.modembed.ui.internal.DynamicECoreRegistry;
 
 import java.net.URL;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
-import org.eclipse.emf.common.notify.AdapterFactory;
+import org.eclipse.core.runtime.CoreException;
+import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.edit.domain.EditingDomain;
-import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
-import org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory;
-import org.eclipse.emf.edit.provider.resource.ResourceItemProviderAdapterFactory;
 import org.eclipse.emf.transaction.impl.TransactionalEditingDomainImpl;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.resource.ImageDescriptor;
@@ -63,8 +61,17 @@ public class MODembedUI extends AbstractUIPlugin {
 	}
 	
 	public EditingDomain createEditingDomain(IProject project){
+		ResourceSetImpl rs = new ResourceSetImpl();
 		
-		EditingDomain editingDomain = TransactionalEditingDomainImpl.FactoryImpl.INSTANCE.createEditingDomain(new ResourceSetImpl());
+		try {
+			for(EPackage pack : ecoreRegistry.getPackagesFor(project)){
+				rs.getPackageRegistry().put(pack.getNsURI(), pack);
+			}
+		} catch (CoreException e) {
+			getLog().log(e.getStatus());
+		}
+		
+		EditingDomain editingDomain = TransactionalEditingDomainImpl.FactoryImpl.INSTANCE.createEditingDomain(rs);
 		
 		return editingDomain;
 	}
@@ -80,26 +87,7 @@ public class MODembedUI extends AbstractUIPlugin {
 		return im;
 	}
 	
-	private ModelDescriptionRegistry modescreg = null;
-	public AdapterFactory[] getAdapterFactories(){
-		if (modescreg == null){
-			modescreg = new ModelDescriptionRegistry();
-		}
-		return modescreg.getAdapterFactories();
-	}
-	
-	public ComposedAdapterFactory createAdapterFactory(){
-		ComposedAdapterFactory adapterFactory = new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
-
-		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
-		
-		for(AdapterFactory af : MODembedUI.getDefault().getAdapterFactories()){
-			adapterFactory.addAdapterFactory(af);
-		}
-		
-		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
-		return adapterFactory;
-	}
+	private DynamicECoreRegistry ecoreRegistry;
 	
 	/*
 	 * (non-Javadoc)
@@ -108,6 +96,7 @@ public class MODembedUI extends AbstractUIPlugin {
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
 		plugin = this;
+		ecoreRegistry = new DynamicECoreRegistry();
 	}
 
 	/*

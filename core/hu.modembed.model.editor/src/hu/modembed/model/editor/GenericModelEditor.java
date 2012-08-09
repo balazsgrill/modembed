@@ -22,12 +22,9 @@ import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.domain.IEditingDomainProvider;
-import org.eclipse.emf.edit.ui.provider.UnwrappingSelectionProvider;
 import org.eclipse.emf.edit.ui.util.EditUIUtil;
 import org.eclipse.jface.action.IMenuListener;
 import org.eclipse.jface.action.IMenuManager;
-import org.eclipse.jface.action.MenuManager;
-import org.eclipse.jface.action.Separator;
 import org.eclipse.jface.viewers.ISelectionProvider;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CTabFolder;
@@ -98,24 +95,24 @@ public class GenericModelEditor extends EditorPart
 
 	}
 	
-	/**
-	 * This creates a context menu for the viewer and adds a listener as well registering the menu for extension.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private MenuManager createContextMenu() {
-		MenuManager contextMenu = new MenuManager("#PopUp");
-		contextMenu.add(new Separator("additions"));
-		contextMenu.setRemoveAllWhenShown(true);
-		contextMenu.addMenuListener(this);
-//		Menu menu = contextMenu.createContextMenu(viewer.getControl());
-//		viewer.getControl().setMenu(menu);
-		
-		getSite().registerContextMenu(contextMenu, new UnwrappingSelectionProvider(selectionProvider));
-
-		return contextMenu;
-	}
+//	/**
+//	 * This creates a context menu for the viewer and adds a listener as well registering the menu for extension.
+//	 * <!-- begin-user-doc -->
+//	 * <!-- end-user-doc -->
+//	 * @generated
+//	 */
+//	private MenuManager createContextMenu() {
+//		MenuManager contextMenu = new MenuManager("#PopUp");
+//		contextMenu.add(new Separator("additions"));
+//		contextMenu.setRemoveAllWhenShown(true);
+//		contextMenu.addMenuListener(this);
+////		Menu menu = contextMenu.createContextMenu(viewer.getControl());
+////		viewer.getControl().setMenu(menu);
+//		
+//		getSite().registerContextMenu(contextMenu, new UnwrappingSelectionProvider(selectionProvider));
+//
+//		return contextMenu;
+//	}
 
 	
 	/**
@@ -222,12 +219,12 @@ public class GenericModelEditor extends EditorPart
 			page.init(resource, editingDomain);
 		}
 		
-		MenuManager contextMenu = createContextMenu();
+		//MenuManager contextMenu = createContextMenu();
 		
 		if (pages.length == 1){
 			
 			pages[0].createControls(parent);
-			pages[0].setContextMenu(contextMenu);
+			//pages[0].setContextMenu(contextMenu);
 			setActiveEditorPage(pages[0]);
 		}else{
 			
@@ -242,7 +239,7 @@ public class GenericModelEditor extends EditorPart
 				item.setControl(c);
 				
 				page.createControls(c);
-				page.setContextMenu(contextMenu);
+				//page.setContextMenu(contextMenu);
 				item.setText(page.toString());
 				item.setData(page);
 				if (first){

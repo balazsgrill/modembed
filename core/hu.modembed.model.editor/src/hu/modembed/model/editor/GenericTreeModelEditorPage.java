@@ -14,20 +14,14 @@ import org.eclipse.emf.common.command.CommandStack;
 import org.eclipse.emf.common.command.CommandStackListener;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.domain.EditingDomain;
-import org.eclipse.emf.edit.ui.dnd.EditingDomainViewerDropAdapter;
-import org.eclipse.emf.edit.ui.dnd.LocalTransfer;
-import org.eclipse.emf.edit.ui.dnd.ViewerDragAdapter;
 import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.databinding.viewers.ObservableListTreeContentProvider;
 import org.eclipse.jface.databinding.viewers.ObservableMapLabelProvider;
 import org.eclipse.jface.viewers.ISelectionProvider;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.TreeViewer;
-import org.eclipse.swt.dnd.DND;
-import org.eclipse.swt.dnd.Transfer;
 import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Menu;
 
 /**
  * @author balazs.grill
@@ -67,6 +61,11 @@ public class GenericTreeModelEditorPage implements IModelEditorPage, CommandStac
 		selectionViewer.setInput(resource);
 		selectionViewer.setSelection(new StructuredSelection(editingDomain.getResourceSet().getResources().get(0)), true);
 
+		MenuManager mm = new MenuManager();
+		mm.setRemoveAllWhenShown(true);
+		mm.addMenuListener(new GenericModelContextMenuListener(selectionViewer, editingDomain));
+		selectionViewer.getControl().setMenu(mm.createContextMenu(selectionViewer.getControl()));
+		
 		editingDomain.getCommandStack().addCommandStackListener(this);
 	}
 	
@@ -79,16 +78,16 @@ public class GenericTreeModelEditorPage implements IModelEditorPage, CommandStac
 
 	}
 
-	@Override
-	public void setContextMenu(MenuManager contextMenu) {
-		Menu menu = contextMenu.createContextMenu(selectionViewer.getControl());
-		selectionViewer.getControl().setMenu(menu);
-
-		int dndOperations = DND.DROP_COPY | DND.DROP_MOVE | DND.DROP_LINK;
-		Transfer[] transfers = new Transfer[] { LocalTransfer.getInstance() };
-		selectionViewer.addDragSupport(dndOperations, transfers, new ViewerDragAdapter(selectionViewer));
-		selectionViewer.addDropSupport(dndOperations, transfers, new EditingDomainViewerDropAdapter(editingDomain, selectionViewer));
-	}
+//	@Override
+//	public void setContextMenu(MenuManager contextMenu) {
+//		Menu menu = contextMenu.createContextMenu(selectionViewer.getControl());
+//		selectionViewer.getControl().setMenu(menu);
+//
+//		int dndOperations = DND.DROP_COPY | DND.DROP_MOVE | DND.DROP_LINK;
+//		Transfer[] transfers = new Transfer[] { LocalTransfer.getInstance() };
+//		selectionViewer.addDragSupport(dndOperations, transfers, new ViewerDragAdapter(selectionViewer));
+//		selectionViewer.addDropSupport(dndOperations, transfers, new EditingDomainViewerDropAdapter(editingDomain, selectionViewer));
+//	}
 
 	@Override
 	public ISelectionProvider getSelectionProvider() {

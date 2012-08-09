@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
-   <extension-point id="hu.modembed.ui.model.descriptors" name="Model Descriptors" schema="schema/hu.modembed.ui.model.descriptors.exsd"/>
    <extension
          id="nature"
          point="org.eclipse.core.resources.natures">
@@ -95,24 +94,6 @@
             id="hu.modembed.ui.perspective"
             name="Embedded development">
       </perspective>
-   </extension>
-   <extension
-         point="hu.modembed.ui.model.descriptors">
-      <model
-            name="Core model">
-         <adapterfactory
-               class="hu.modembed.model.core.provider.CoreItemProviderAdapterFactory">
-         </adapterfactory>
-         <adapterfactory
-               class="hu.modembed.model.network.provider.NetworkItemProviderAdapterFactory">
-         </adapterfactory>
-         <adapterfactory
-               class="hu.modembed.model.network.rs232.provider.Rs232ItemProviderAdapterFactory">
-         </adapterfactory>
-         <adapterfactory
-               class="hu.modembed.model.core.assembler.provider.AssemblerItemProviderAdapterFactory">
-         </adapterfactory>
-      </model>
    </extension>
    <extension
          point="org.eclipse.ui.importWizards">
