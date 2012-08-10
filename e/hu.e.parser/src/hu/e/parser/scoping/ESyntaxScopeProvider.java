@@ -63,6 +63,10 @@ public class ESyntaxScopeProvider extends AbstractDeclarativeScopeProvider {
 		return importedScope(eobject, ref);
 	}
 	
+	public IScope scope_XStructExpression_type(EObject eobject, EReference ref){
+		return importedScope(eobject, ref);
+	}
+	
 	public IScope scope_XExpression0_member(EObject eobject, EReference ref){
 		return new StructMemberScope(eobject, delegateGetScope(eobject, ref));
 	}
