@@ -8,12 +8,14 @@ import hu.modembed.model.editor.IPropertyEditor;
 import java.util.Collection;
 import java.util.Collections;
 
+import org.eclipse.core.databinding.DataBindingContext;
+import org.eclipse.core.databinding.observable.value.IObservableValue;
+import org.eclipse.emf.databinding.edit.EMFEditObservables;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.domain.EditingDomain;
+import org.eclipse.jface.databinding.swt.WidgetProperties;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.events.ModifyEvent;
-import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
@@ -46,13 +48,10 @@ public class EAttributeEditor implements IPropertyEditor {
 		text.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 2, 1));
 		text.setText(eobject.eGet(attrib)+"");
 		
-		text.addModifyListener(new ModifyListener() {
-			
-			@Override
-			public void modifyText(ModifyEvent e) {
-				edomain.getCommandStack().execute(new EAttributeChangeCommand(eobject, attrib, text.getText()));
-			}
-		});
+		DataBindingContext dbc = new DataBindingContext();
+		IObservableValue modelvalue = EMFEditObservables.observeValue(edomain, eobject, attrib);
+		
+		dbc.bindValue(WidgetProperties.text(SWT.Modify).observe(text), modelvalue);
 		
 		return new Control[]{l, text};
 	}

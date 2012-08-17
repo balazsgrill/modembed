@@ -3,6 +3,9 @@
  */
 package hu.modembed.model.editor;
 
+import hu.modembed.ui.databinding.EObjectContentListObservableFactory;
+import hu.modembed.ui.databinding.ElementLabelValueFactory;
+
 import java.util.Collection;
 import java.util.EventObject;
 

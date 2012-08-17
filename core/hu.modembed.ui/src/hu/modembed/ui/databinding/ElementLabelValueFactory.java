@@ -1,9 +1,8 @@
 /**
  * 
  */
-package hu.modembed.model.editor;
+package hu.modembed.ui.databinding;
 
-import hu.modembed.ui.databinding.UtilObservables;
 
 import java.util.ArrayList;
 import java.util.List;

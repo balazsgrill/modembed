@@ -4,22 +4,28 @@
 package hu.modembed.model.editor.properties;
 
 import hu.modembed.model.editor.IPropertyEditor;
+import hu.modembed.ui.databinding.ElementLabelValueFactory;
 import hu.modembed.ui.dialogs.SelectObjectDialog;
 
 import java.util.Collection;
 import java.util.Collections;
 
+import org.eclipse.core.databinding.observable.list.IObservableList;
+import org.eclipse.core.databinding.observable.map.IObservableMap;
+import org.eclipse.core.databinding.observable.masterdetail.MasterDetailObservables;
 import org.eclipse.emf.common.command.Command;
+import org.eclipse.emf.databinding.edit.EMFEditProperties;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.MenuManager;
+import org.eclipse.jface.databinding.viewers.ObservableListContentProvider;
+import org.eclipse.jface.databinding.viewers.ObservableMapLabelProvider;
 import org.eclipse.jface.dialogs.Dialog;
-import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.jface.viewers.LabelProvider;
-import org.eclipse.jface.viewers.TreeViewer;
+import org.eclipse.jface.viewers.ListViewer;
+import org.eclipse.jface.viewers.StructuredViewer;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
@@ -38,8 +44,6 @@ public class ManyEReferenceEditor implements IPropertyEditor {
 	public ManyEReferenceEditor(EReference reference) {
 		this.reference = reference;
 	}
-	
-	private static final ILabelProvider lp = new LabelProvider();
 	
 	/* (non-Javadoc)
 	 * @see hu.modembed.model.editor.IPropertyEditor#createControls(org.eclipse.swt.widgets.Composite, org.eclipse.emf.ecore.EObject, org.eclipse.emf.edit.domain.EditingDomain)
@@ -61,18 +65,24 @@ public class ManyEReferenceEditor implements IPropertyEditor {
 		l.setText(reference.getName()+": ");
 		l.setLayoutData(new GridData(SWT.FILL, SWT.TOP, true, false));
 		
-		final TreeViewer viewer = new TreeViewer(c);
+		final StructuredViewer viewer = new ListViewer(c);
 		viewer.getControl().setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
-		viewer.setContentProvider(new EReferenceContentProvider(reference));
-		viewer.setLabelProvider(lp);
-		viewer.setInput(eobject);
+		
+		IObservableList content = EMFEditProperties.list(edomain, reference).observe(eobject);
+		
+		ObservableListContentProvider cp = new ObservableListContentProvider();
+		IObservableMap labels = MasterDetailObservables.detailValues(cp.getKnownElements(), new ElementLabelValueFactory(edomain), String.class);
+		
+		viewer.setContentProvider(cp);
+		viewer.setLabelProvider(new ObservableMapLabelProvider(labels));
+		viewer.setInput(content);
 		
 		MenuManager menumanager = new MenuManager();
-		viewer.getTree().setMenu(menumanager.createContextMenu(viewer.getTree()));
+		viewer.getControl().setMenu(menumanager.createContextMenu(viewer.getControl()));
 		menumanager.add(new Action("Add..") {
 			@Override
 			public void run() {
-				SelectObjectDialog dialog = new SelectObjectDialog(viewer.getControl().getShell(),eobject.eResource().getResourceSet(), eobject, reference, true);
+				SelectObjectDialog dialog = new SelectObjectDialog(viewer.getControl().getShell(),edomain, eobject, reference, true);
 				if (dialog.open() == Dialog.OK){
 					Object[] sel = dialog.getResult();
 					if (sel.length > 0){
