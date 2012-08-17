@@ -88,7 +88,6 @@ public class ManyEReferenceEditor implements IPropertyEditor {
 					if (sel.length > 0){
 						Command cmd = new EReferenceAddCommand(eobject, reference, sel);
 						edomain.getCommandStack().execute(cmd);
-						viewer.refresh();
 					}
 				}
 			}
@@ -100,7 +99,6 @@ public class ManyEReferenceEditor implements IPropertyEditor {
 				if (elements.length > 0){
 					Command cmd = new EReferenceRemoveCommand(eobject, reference, elements);
 					edomain.getCommandStack().execute(cmd);
-					viewer.refresh();
 				}
 			}
 		});

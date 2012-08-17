@@ -17,6 +17,10 @@ import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.ui.IWorkbenchCommandConstants;
+import org.eclipse.ui.PlatformUI;
+import org.eclipse.ui.menus.CommandContributionItem;
+import org.eclipse.ui.menus.CommandContributionItemParameter;
 
 
 /**
@@ -52,6 +56,9 @@ public class GenericModelContextMenuListener implements IMenuListener {
 					}
 				}
 				
+				String commandID = IWorkbenchCommandConstants.EDIT_DELETE;
+				CommandContributionItemParameter param = new CommandContributionItemParameter(PlatformUI.getWorkbench(),commandID, commandID, CommandContributionItem.STYLE_PUSH);
+				manager.add(new CommandContributionItem(param));
 			}
 		}
 
