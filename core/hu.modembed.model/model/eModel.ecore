@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="emodel" nsURI="http://emodel/1.0" nsPrefix="emodel">
+  <eClassifiers xsi:type="ecore:EClass" name="Library" eSuperTypes="modembedmodel.ecore#//core/Package modembedmodel.ecore#//core/NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Type" eSuperTypes="modembedmodel.ecore#//core/PackagedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="definition" lowerBound="1"
+        eType="#//types/TypeDefinition" containment="true"/>
+  </eClassifiers>
+  <eSubpackages name="types">
+    <eClassifiers xsi:type="ecore:EClass" name="TypeDefinition" abstract="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeDefinition" abstract="true"
+        eSuperTypes="#//types/TypeDefinition"/>
+    <eClassifiers xsi:type="ecore:EClass" name="CompositeTypeDefinition" abstract="true"
+        eSuperTypes="#//types/TypeDefinition"/>
+    <eClassifiers xsi:type="ecore:EClass" name="UnsignedTypeDefinition" eSuperTypes="#//types/PrimitiveTypeDefinition">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="bits" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ReferenceTypeDefinition" eSuperTypes="#//types/CompositeTypeDefinition">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"
+          eType="#//Type"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PointerTypeDefinition" eSuperTypes="#//types/CompositeTypeDefinition">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="pointerType" lowerBound="1"
+          eType="#//types/TypeDefinition" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ArrayDefinition" eSuperTypes="#//types/CompositeTypeDefinition"/>
+    <eClassifiers xsi:type="ecore:EClass" name="StructureTypeDefinition" eSuperTypes="#//types/CompositeTypeDefinition">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+          eType="#//types/StructureTypeElement" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="StructureTypeElement" eSuperTypes="modembedmodel.ecore#//core/NamedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"
+          eType="#//types/TypeDefinition" containment="true"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="expressions">
+    <eClassifiers xsi:type="ecore:EClass" name="Expression" abstract="true" eSuperTypes="#//expressions/ExecutionStep"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Instruction" eSuperTypes="#//expressions/ExecutionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1"
+          eType="#//expressions/Expression" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ExecutionStep" abstract="true"/>
+    <eClassifiers xsi:type="ecore:EEnum" name="BinaryOperator">
+      <eLiterals name="ADD"/>
+      <eLiterals name="SET" value="1"/>
+      <eLiterals name="ADDSET" value="2"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="UnaryOperator">
+      <eLiterals name="NEGATE"/>
+      <eLiterals name="REFERENCE" value="1"/>
+      <eLiterals name="DEREFERENCE" value="2"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="BinaryExpression" eSuperTypes="#//expressions/Expression">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="leftOperand" lowerBound="1"
+          eType="#//expressions/Expression" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="rightOperand" lowerBound="1"
+          eType="#//expressions/Expression" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" lowerBound="1"
+          eType="#//expressions/BinaryOperator"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="UnaryExpression" eSuperTypes="#//expressions/Expression">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="operand" lowerBound="1"
+          eType="#//expressions/Expression" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="#//expressions/UnaryOperator"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="LiteralExpression" abstract="true"
+        eSuperTypes="#//expressions/Expression">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//types/TypeDefinition"
+          containment="true"/>
+    </eClassifiers>
+  </eSubpackages>
+</ecore:EPackage>
