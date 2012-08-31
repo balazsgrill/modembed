@@ -1,10 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="emodel" nsURI="http://emodel/1.0" nsPrefix="emodel">
-  <eClassifiers xsi:type="ecore:EClass" name="Library" eSuperTypes="modembedmodel.ecore#//core/Package modembedmodel.ecore#//core/NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Library" eSuperTypes="modembedmodel.ecore#//core/Package modembedmodel.ecore#//core/NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="uses" upperBound="-1" eType="#//Library"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Type" eSuperTypes="modembedmodel.ecore#//core/PackagedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="definition" lowerBound="1"
         eType="#//types/TypeDefinition" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Function" eSuperTypes="modembedmodel.ecore#//core/PackagedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+        eType="#//FunctionParameter" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="overrides" eType="#//Function"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="result" eType="#//FunctionResult"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="implementation" eType="#//expressions/ExecutionBlock"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Variable" eSuperTypes="modembedmodel.ecore#//core/NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//types/TypeDefinition"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FunctionParameter" eSuperTypes="#//Variable"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FunctionResult" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ResultBuffer" eSuperTypes="#//FunctionResult #//Variable"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ResultExpression" eSuperTypes="#//FunctionResult">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" lowerBound="1"
+        eType="#//expressions/Expression" containment="true"/>
   </eClassifiers>
   <eSubpackages name="types">
     <eClassifiers xsi:type="ecore:EClass" name="TypeDefinition" abstract="true"/>
@@ -44,6 +66,15 @@
       <eLiterals name="ADD"/>
       <eLiterals name="SET" value="1"/>
       <eLiterals name="ADDSET" value="2"/>
+      <eLiterals name="SUBTRACT" value="3"/>
+      <eLiterals name="SUBTRACTSET" value="4"/>
+      <eLiterals name="AND" value="5"/>
+      <eLiterals name="ANDSET" value="6"/>
+      <eLiterals name="OR" value="7"/>
+      <eLiterals name="ORSET" value="8"/>
+      <eLiterals name="MULTIPLY" value="9"/>
+      <eLiterals name="DIVIDE" value="10"/>
+      <eLiterals name="MODULO" value="11"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="UnaryOperator">
       <eLiterals name="NEGATE"/>
@@ -66,6 +97,22 @@
     <eClassifiers xsi:type="ecore:EClass" name="LiteralExpression" abstract="true"
         eSuperTypes="#//expressions/Expression">
       <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//types/TypeDefinition"
+          containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ExecutionBlock" eSuperTypes="#//expressions/ExecutionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="steps" upperBound="-1"
+          eType="#//expressions/ExecutionStep" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="FunctionCall" eSuperTypes="#//expressions/Expression">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+          eType="#//expressions/Expression" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ConditionalExecutionStep" eSuperTypes="#//expressions/ExecutionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="condition" lowerBound="1"
+          eType="#//expressions/Expression" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="true" eType="#//expressions/ExecutionStep"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="false" eType="#//expressions/ExecutionStep"
           containment="true"/>
     </eClassifiers>
   </eSubpackages>
