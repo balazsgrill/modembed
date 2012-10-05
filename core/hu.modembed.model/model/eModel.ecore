@@ -9,19 +9,26 @@
         eType="#//types/TypeDefinition" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Function" eSuperTypes="modembedmodel.ecore#//core/PackagedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arguments" upperBound="-1"
         eType="#//FunctionParameter" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="overrides" eType="#//Function"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="result" eType="#//FunctionResult"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="implementation" eType="#//expressions/ExecutionBlock"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="implementation" eType="#//expressions/ExecutionStep"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Variable" eSuperTypes="modembedmodel.ecore#//core/NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//types/TypeDefinition"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//types/TypeDefinition"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The Type of the variable. Can be null (void)."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FunctionParameter" eSuperTypes="#//Variable"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FunctionParameter" eSuperTypes="#//Variable">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lazy" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FunctionResult" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="ResultBuffer" eSuperTypes="#//FunctionResult #//Variable"/>
   <eClassifiers xsi:type="ecore:EClass" name="ResultExpression" eSuperTypes="#//FunctionResult">
@@ -45,7 +52,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="pointerType" lowerBound="1"
           eType="#//types/TypeDefinition" containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ArrayDefinition" eSuperTypes="#//types/CompositeTypeDefinition"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ArrayDefinition" eSuperTypes="#//types/PointerTypeDefinition"/>
     <eClassifiers xsi:type="ecore:EClass" name="StructureTypeDefinition" eSuperTypes="#//types/CompositeTypeDefinition">
       <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
           eType="#//types/StructureTypeElement" containment="true"/>
@@ -75,11 +82,20 @@
       <eLiterals name="MULTIPLY" value="9"/>
       <eLiterals name="DIVIDE" value="10"/>
       <eLiterals name="MODULO" value="11"/>
+      <eLiterals name="XOR" value="12"/>
+      <eLiterals name="XORSET" value="13"/>
+      <eLiterals name="EQUAL" value="14"/>
+      <eLiterals name="NOTEQUAL" value="15"/>
+      <eLiterals name="GREATERTHAN" value="16"/>
+      <eLiterals name="LOWERTHAN" value="17"/>
+      <eLiterals name="GREATEROREQUAL" value="18"/>
+      <eLiterals name="LOWEROREQUAL" value="19"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="UnaryOperator">
       <eLiterals name="NEGATE"/>
       <eLiterals name="REFERENCE" value="1"/>
       <eLiterals name="DEREFERENCE" value="2"/>
+      <eLiterals name="NOT" value="3"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="BinaryExpression" eSuperTypes="#//expressions/Expression">
       <eStructuralFeatures xsi:type="ecore:EReference" name="leftOperand" lowerBound="1"
@@ -105,15 +121,30 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="FunctionCall" eSuperTypes="#//expressions/Expression">
       <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
-          eType="#//expressions/Expression" containment="true"/>
+          eType="#//expressions/ExecutionStep" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="function" lowerBound="1"
+          eType="#//Function"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ConditionalExecutionStep" eSuperTypes="#//expressions/ExecutionStep">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="condition" lowerBound="1"
-          eType="#//expressions/Expression" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="true" eType="#//expressions/ExecutionStep"
-          containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="false" eType="#//expressions/ExecutionStep"
-          containment="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="VariableReference" eSuperTypes="#//expressions/Expression">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="variable" lowerBound="1"
+          eType="#//Variable"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PrimitiveLiteralExpression" abstract="true"
+        eSuperTypes="#//expressions/LiteralExpression"/>
+    <eClassifiers xsi:type="ecore:EClass" name="IntegerLiteralExpression" eSuperTypes="#//expressions/PrimitiveLiteralExpression">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigInteger"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CompilationLogStep" eSuperTypes="#//expressions/ExecutionStep">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="severity" lowerBound="1"
+          eType="#//expressions/CompilationLogStepSeverity"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="message" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="CompilationLogStepSeverity">
+      <eLiterals name="INFO"/>
+      <eLiterals name="DEBUG" value="1"/>
+      <eLiterals name="WARNING" value="2"/>
+      <eLiterals name="ERROR" value="3"/>
     </eClassifiers>
   </eSubpackages>
 </ecore:EPackage>
