@@ -110,6 +110,11 @@ public class ESyntaxAdapterFactory extends AdapterFactoryImpl
         return createTypeDefAdapter();
       }
       @Override
+      public Adapter caseUnspecifiedTypeDef(UnspecifiedTypeDef object)
+      {
+        return createUnspecifiedTypeDefAdapter();
+      }
+      @Override
       public Adapter casePointerTypeDef(PointerTypeDef object)
       {
         return createPointerTypeDefAdapter();
@@ -170,19 +175,19 @@ public class ESyntaxAdapterFactory extends AdapterFactoryImpl
         return createOperationCallParameterAdapter();
       }
       @Override
-      public Adapter caseOperationSignature(OperationSignature object)
+      public Adapter caseOperation(Operation object)
       {
-        return createOperationSignatureAdapter();
-      }
-      @Override
-      public Adapter caseOperationBlock(OperationBlock object)
-      {
-        return createOperationBlockAdapter();
+        return createOperationAdapter();
       }
       @Override
       public Adapter caseXExpression(XExpression object)
       {
         return createXExpressionAdapter();
+      }
+      @Override
+      public Adapter caseXExpressionBlock(XExpressionBlock object)
+      {
+        return createXExpressionBlockAdapter();
       }
       @Override
       public Adapter caseXPrimaryExpression(XPrimaryExpression object)
@@ -285,14 +290,14 @@ public class ESyntaxAdapterFactory extends AdapterFactoryImpl
         return createLabelAdapter();
       }
       @Override
-      public Adapter caseOperation(Operation object)
-      {
-        return createOperationAdapter();
-      }
-      @Override
       public Adapter caseParameterVariable(ParameterVariable object)
       {
         return createParameterVariableAdapter();
+      }
+      @Override
+      public Adapter caseOperationBlock(OperationBlock object)
+      {
+        return createOperationBlockAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -417,6 +422,21 @@ public class ESyntaxAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createTypeDefAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.e.parser.eSyntax.UnspecifiedTypeDef <em>Unspecified Type Def</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.e.parser.eSyntax.UnspecifiedTypeDef
+   * @generated
+   */
+  public Adapter createUnspecifiedTypeDefAdapter()
   {
     return null;
   }
@@ -602,31 +622,16 @@ public class ESyntaxAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link hu.e.parser.eSyntax.OperationSignature <em>Operation Signature</em>}'.
+   * Creates a new adapter for an object of class '{@link hu.e.parser.eSyntax.Operation <em>Operation</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see hu.e.parser.eSyntax.OperationSignature
+   * @see hu.e.parser.eSyntax.Operation
    * @generated
    */
-  public Adapter createOperationSignatureAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link hu.e.parser.eSyntax.OperationBlock <em>Operation Block</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see hu.e.parser.eSyntax.OperationBlock
-   * @generated
-   */
-  public Adapter createOperationBlockAdapter()
+  public Adapter createOperationAdapter()
   {
     return null;
   }
@@ -642,6 +647,21 @@ public class ESyntaxAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createXExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.e.parser.eSyntax.XExpressionBlock <em>XExpression Block</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.e.parser.eSyntax.XExpressionBlock
+   * @generated
+   */
+  public Adapter createXExpressionBlockAdapter()
   {
     return null;
   }
@@ -947,21 +967,6 @@ public class ESyntaxAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link hu.e.parser.eSyntax.Operation <em>Operation</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see hu.e.parser.eSyntax.Operation
-   * @generated
-   */
-  public Adapter createOperationAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link hu.e.parser.eSyntax.ParameterVariable <em>Parameter Variable</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -972,6 +977,21 @@ public class ESyntaxAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createParameterVariableAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.e.parser.eSyntax.OperationBlock <em>Operation Block</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.e.parser.eSyntax.OperationBlock
+   * @generated
+   */
+  public Adapter createOperationBlockAdapter()
   {
     return null;
   }

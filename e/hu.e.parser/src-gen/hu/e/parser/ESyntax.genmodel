@@ -54,9 +54,7 @@
       <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//OpSingleAssign/ASSIGNSUBTRACT"/>
     </genEnums>
     <genClasses ecoreClass="ESyntax.ecore#//CompilationUnit"/>
-    <genClasses ecoreClass="ESyntax.ecore#//AnnotationDefinition">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//AnnotationDefinition/name"/>
-    </genClasses>
+    <genClasses ecoreClass="ESyntax.ecore#//AnnotationDefinition"/>
     <genClasses ecoreClass="ESyntax.ecore#//Annotation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//Annotation/definition"/>
     </genClasses>
@@ -65,18 +63,20 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//Library/use"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//Library/items"/>
     </genClasses>
-    <genClasses ecoreClass="ESyntax.ecore#//LibraryItem"/>
+    <genClasses ecoreClass="ESyntax.ecore#//LibraryItem">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//LibraryItem/name"/>
+    </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//Type">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//Type/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//Type/def"/>
     </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//TypeDef"/>
+    <genClasses ecoreClass="ESyntax.ecore#//UnspecifiedTypeDef"/>
     <genClasses ecoreClass="ESyntax.ecore#//PointerTypeDef">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//PointerTypeDef/def"/>
     </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//ArrayTypeDef">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//ArrayTypeDef/size"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//ArrayTypeDef/def"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//ArrayTypeDef/size"/>
     </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//RefTypeDef">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//RefTypeDef/type"/>
@@ -95,7 +95,6 @@
     </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//Variable">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//Variable/type"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//Variable/name"/>
     </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//OperationStep"/>
     <genClasses ecoreClass="ESyntax.ecore#//VariableReference">
@@ -106,11 +105,15 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//OperationCall/params"/>
     </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//OperationCallParameter"/>
-    <genClasses ecoreClass="ESyntax.ecore#//OperationSignature"/>
-    <genClasses ecoreClass="ESyntax.ecore#//OperationBlock">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//OperationBlock/steps"/>
+    <genClasses ecoreClass="ESyntax.ecore#//Operation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//Operation/overrides"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//Operation/params"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//Operation/content"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//Operation/return"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//Operation/returnvar"/>
     </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//XExpression"/>
+    <genClasses ecoreClass="ESyntax.ecore#//XExpressionBlock"/>
     <genClasses ecoreClass="ESyntax.ecore#//XPrimaryExpression"/>
     <genClasses ecoreClass="ESyntax.ecore#//XSizeOfExpression">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XSizeOfExpression/type"/>
@@ -178,17 +181,13 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//RegisterVariable/addr"/>
     </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//Label"/>
-    <genClasses ecoreClass="ESyntax.ecore#//Operation">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//Operation/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//Operation/params"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//Operation/block"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//Operation/return"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//Operation/returnvar"/>
-    </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//ParameterVariable">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//ParameterVariable/lazy"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//ParameterVariable/kind"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//ParameterVariable/default"/>
+    </genClasses>
+    <genClasses ecoreClass="ESyntax.ecore#//OperationBlock">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//OperationBlock/steps"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

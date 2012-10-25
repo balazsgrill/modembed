@@ -86,6 +86,15 @@ public interface ESyntaxFactory extends EFactory
   TypeDef createTypeDef();
 
   /**
+   * Returns a new object of class '<em>Unspecified Type Def</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Unspecified Type Def</em>'.
+   * @generated
+   */
+  UnspecifiedTypeDef createUnspecifiedTypeDef();
+
+  /**
    * Returns a new object of class '<em>Pointer Type Def</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -194,22 +203,13 @@ public interface ESyntaxFactory extends EFactory
   OperationCallParameter createOperationCallParameter();
 
   /**
-   * Returns a new object of class '<em>Operation Signature</em>'.
+   * Returns a new object of class '<em>Operation</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Operation Signature</em>'.
+   * @return a new object of class '<em>Operation</em>'.
    * @generated
    */
-  OperationSignature createOperationSignature();
-
-  /**
-   * Returns a new object of class '<em>Operation Block</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Operation Block</em>'.
-   * @generated
-   */
-  OperationBlock createOperationBlock();
+  Operation createOperation();
 
   /**
    * Returns a new object of class '<em>XExpression</em>'.
@@ -219,6 +219,15 @@ public interface ESyntaxFactory extends EFactory
    * @generated
    */
   XExpression createXExpression();
+
+  /**
+   * Returns a new object of class '<em>XExpression Block</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>XExpression Block</em>'.
+   * @generated
+   */
+  XExpressionBlock createXExpressionBlock();
 
   /**
    * Returns a new object of class '<em>XPrimary Expression</em>'.
@@ -401,15 +410,6 @@ public interface ESyntaxFactory extends EFactory
   Label createLabel();
 
   /**
-   * Returns a new object of class '<em>Operation</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Operation</em>'.
-   * @generated
-   */
-  Operation createOperation();
-
-  /**
    * Returns a new object of class '<em>Parameter Variable</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -417,6 +417,15 @@ public interface ESyntaxFactory extends EFactory
    * @generated
    */
   ParameterVariable createParameterVariable();
+
+  /**
+   * Returns a new object of class '<em>Operation Block</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Operation Block</em>'.
+   * @generated
+   */
+  OperationBlock createOperationBlock();
 
   /**
    * Returns the package supported by this factory.

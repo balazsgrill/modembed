@@ -126,6 +126,14 @@ public class ESyntaxSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case ESyntaxPackage.UNSPECIFIED_TYPE_DEF:
+      {
+        UnspecifiedTypeDef unspecifiedTypeDef = (UnspecifiedTypeDef)theEObject;
+        T result = caseUnspecifiedTypeDef(unspecifiedTypeDef);
+        if (result == null) result = caseTypeDef(unspecifiedTypeDef);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case ESyntaxPackage.POINTER_TYPE_DEF:
       {
         PointerTypeDef pointerTypeDef = (PointerTypeDef)theEObject;
@@ -223,18 +231,11 @@ public class ESyntaxSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case ESyntaxPackage.OPERATION_SIGNATURE:
+      case ESyntaxPackage.OPERATION:
       {
-        OperationSignature operationSignature = (OperationSignature)theEObject;
-        T result = caseOperationSignature(operationSignature);
-        if (result == null) result = caseLibraryItem(operationSignature);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case ESyntaxPackage.OPERATION_BLOCK:
-      {
-        OperationBlock operationBlock = (OperationBlock)theEObject;
-        T result = caseOperationBlock(operationBlock);
+        Operation operation = (Operation)theEObject;
+        T result = caseOperation(operation);
+        if (result == null) result = caseLibraryItem(operation);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -245,6 +246,14 @@ public class ESyntaxSwitch<T> extends Switch<T>
         if (result == null) result = caseOperationCallParameter(xExpression);
         if (result == null) result = caseXTopLevelExpression(xExpression);
         if (result == null) result = caseOperationStep(xExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ESyntaxPackage.XEXPRESSION_BLOCK:
+      {
+        XExpressionBlock xExpressionBlock = (XExpressionBlock)theEObject;
+        T result = caseXExpressionBlock(xExpressionBlock);
+        if (result == null) result = caseXPrimaryExpression(xExpressionBlock);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -412,15 +421,6 @@ public class ESyntaxSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case ESyntaxPackage.OPERATION:
-      {
-        Operation operation = (Operation)theEObject;
-        T result = caseOperation(operation);
-        if (result == null) result = caseOperationSignature(operation);
-        if (result == null) result = caseLibraryItem(operation);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case ESyntaxPackage.PARAMETER_VARIABLE:
       {
         ParameterVariable parameterVariable = (ParameterVariable)theEObject;
@@ -428,6 +428,15 @@ public class ESyntaxSwitch<T> extends Switch<T>
         if (result == null) result = caseVariable(parameterVariable);
         if (result == null) result = caseLibraryItem(parameterVariable);
         if (result == null) result = caseOperationStep(parameterVariable);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ESyntaxPackage.OPERATION_BLOCK:
+      {
+        OperationBlock operationBlock = (OperationBlock)theEObject;
+        T result = caseOperationBlock(operationBlock);
+        if (result == null) result = caseXExpressionBlock(operationBlock);
+        if (result == null) result = caseXPrimaryExpression(operationBlock);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -543,6 +552,22 @@ public class ESyntaxSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseTypeDef(TypeDef object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Unspecified Type Def</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Unspecified Type Def</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseUnspecifiedTypeDef(UnspecifiedTypeDef object)
   {
     return null;
   }
@@ -740,33 +765,17 @@ public class ESyntaxSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Operation Signature</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Operation</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Operation Signature</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Operation</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseOperationSignature(OperationSignature object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Operation Block</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Operation Block</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseOperationBlock(OperationBlock object)
+  public T caseOperation(Operation object)
   {
     return null;
   }
@@ -783,6 +792,22 @@ public class ESyntaxSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseXExpression(XExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>XExpression Block</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>XExpression Block</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseXExpressionBlock(XExpressionBlock object)
   {
     return null;
   }
@@ -1108,22 +1133,6 @@ public class ESyntaxSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Operation</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Operation</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseOperation(Operation object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Parameter Variable</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -1135,6 +1144,22 @@ public class ESyntaxSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseParameterVariable(ParameterVariable object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Operation Block</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Operation Block</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseOperationBlock(OperationBlock object)
   {
     return null;
   }

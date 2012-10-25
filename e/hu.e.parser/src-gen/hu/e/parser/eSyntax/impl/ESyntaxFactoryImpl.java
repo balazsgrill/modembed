@@ -72,6 +72,7 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
       case ESyntaxPackage.LIBRARY_ITEM: return createLibraryItem();
       case ESyntaxPackage.TYPE: return createType();
       case ESyntaxPackage.TYPE_DEF: return createTypeDef();
+      case ESyntaxPackage.UNSPECIFIED_TYPE_DEF: return createUnspecifiedTypeDef();
       case ESyntaxPackage.POINTER_TYPE_DEF: return createPointerTypeDef();
       case ESyntaxPackage.ARRAY_TYPE_DEF: return createArrayTypeDef();
       case ESyntaxPackage.REF_TYPE_DEF: return createRefTypeDef();
@@ -84,9 +85,9 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
       case ESyntaxPackage.VARIABLE_REFERENCE: return createVariableReference();
       case ESyntaxPackage.OPERATION_CALL: return createOperationCall();
       case ESyntaxPackage.OPERATION_CALL_PARAMETER: return createOperationCallParameter();
-      case ESyntaxPackage.OPERATION_SIGNATURE: return createOperationSignature();
-      case ESyntaxPackage.OPERATION_BLOCK: return createOperationBlock();
+      case ESyntaxPackage.OPERATION: return createOperation();
       case ESyntaxPackage.XEXPRESSION: return createXExpression();
+      case ESyntaxPackage.XEXPRESSION_BLOCK: return createXExpressionBlock();
       case ESyntaxPackage.XPRIMARY_EXPRESSION: return createXPrimaryExpression();
       case ESyntaxPackage.XSIZE_OF_EXPRESSION: return createXSizeOfExpression();
       case ESyntaxPackage.XSTRUCT_EXPRESSION: return createXStructExpression();
@@ -107,8 +108,8 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
       case ESyntaxPackage.CONSTANT_VARIABLE: return createConstantVariable();
       case ESyntaxPackage.REGISTER_VARIABLE: return createRegisterVariable();
       case ESyntaxPackage.LABEL: return createLabel();
-      case ESyntaxPackage.OPERATION: return createOperation();
       case ESyntaxPackage.PARAMETER_VARIABLE: return createParameterVariable();
+      case ESyntaxPackage.OPERATION_BLOCK: return createOperationBlock();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -262,6 +263,17 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public UnspecifiedTypeDef createUnspecifiedTypeDef()
+  {
+    UnspecifiedTypeDefImpl unspecifiedTypeDef = new UnspecifiedTypeDefImpl();
+    return unspecifiedTypeDef;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public PointerTypeDef createPointerTypeDef()
   {
     PointerTypeDefImpl pointerTypeDef = new PointerTypeDefImpl();
@@ -394,21 +406,10 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public OperationSignature createOperationSignature()
+  public Operation createOperation()
   {
-    OperationSignatureImpl operationSignature = new OperationSignatureImpl();
-    return operationSignature;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public OperationBlock createOperationBlock()
-  {
-    OperationBlockImpl operationBlock = new OperationBlockImpl();
-    return operationBlock;
+    OperationImpl operation = new OperationImpl();
+    return operation;
   }
 
   /**
@@ -420,6 +421,17 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
   {
     XExpressionImpl xExpression = new XExpressionImpl();
     return xExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public XExpressionBlock createXExpressionBlock()
+  {
+    XExpressionBlockImpl xExpressionBlock = new XExpressionBlockImpl();
+    return xExpressionBlock;
   }
 
   /**
@@ -647,10 +659,10 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Operation createOperation()
+  public ParameterVariable createParameterVariable()
   {
-    OperationImpl operation = new OperationImpl();
-    return operation;
+    ParameterVariableImpl parameterVariable = new ParameterVariableImpl();
+    return parameterVariable;
   }
 
   /**
@@ -658,10 +670,10 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ParameterVariable createParameterVariable()
+  public OperationBlock createOperationBlock()
   {
-    ParameterVariableImpl parameterVariable = new ParameterVariableImpl();
-    return parameterVariable;
+    OperationBlockImpl operationBlock = new OperationBlockImpl();
+    return operationBlock;
   }
 
   /**

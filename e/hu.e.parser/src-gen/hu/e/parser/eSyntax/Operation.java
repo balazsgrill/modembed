@@ -12,9 +12,9 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link hu.e.parser.eSyntax.Operation#getName <em>Name</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.Operation#getOverrides <em>Overrides</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.Operation#getParams <em>Params</em>}</li>
- *   <li>{@link hu.e.parser.eSyntax.Operation#getBlock <em>Block</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.Operation#getContent <em>Content</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.Operation#getReturn <em>Return</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.Operation#getReturnvar <em>Returnvar</em>}</li>
  * </ul>
@@ -24,33 +24,33 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Operation extends OperationSignature
+public interface Operation extends LibraryItem
 {
   /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Overrides</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Name</em>' attribute isn't clear,
+   * If the meaning of the '<em>Overrides</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see hu.e.parser.eSyntax.ESyntaxPackage#getOperation_Name()
+   * @return the value of the '<em>Overrides</em>' attribute.
+   * @see #setOverrides(String)
+   * @see hu.e.parser.eSyntax.ESyntaxPackage#getOperation_Overrides()
    * @model
    * @generated
    */
-  String getName();
+  String getOverrides();
 
   /**
-   * Sets the value of the '{@link hu.e.parser.eSyntax.Operation#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link hu.e.parser.eSyntax.Operation#getOverrides <em>Overrides</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
+   * @param value the new value of the '<em>Overrides</em>' attribute.
+   * @see #getOverrides()
    * @generated
    */
-  void setName(String value);
+  void setOverrides(String value);
 
   /**
    * Returns the value of the '<em><b>Params</b></em>' containment reference list.
@@ -69,30 +69,30 @@ public interface Operation extends OperationSignature
   EList<Variable> getParams();
 
   /**
-   * Returns the value of the '<em><b>Block</b></em>' containment reference.
+   * Returns the value of the '<em><b>Content</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Block</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Content</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Block</em>' containment reference.
-   * @see #setBlock(OperationBlock)
-   * @see hu.e.parser.eSyntax.ESyntaxPackage#getOperation_Block()
+   * @return the value of the '<em>Content</em>' containment reference.
+   * @see #setContent(XExpression)
+   * @see hu.e.parser.eSyntax.ESyntaxPackage#getOperation_Content()
    * @model containment="true"
    * @generated
    */
-  OperationBlock getBlock();
+  XExpression getContent();
 
   /**
-   * Sets the value of the '{@link hu.e.parser.eSyntax.Operation#getBlock <em>Block</em>}' containment reference.
+   * Sets the value of the '{@link hu.e.parser.eSyntax.Operation#getContent <em>Content</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Block</em>' containment reference.
-   * @see #getBlock()
+   * @param value the new value of the '<em>Content</em>' containment reference.
+   * @see #getContent()
    * @generated
    */
-  void setBlock(OperationBlock value);
+  void setContent(XExpression value);
 
   /**
    * Returns the value of the '<em><b>Return</b></em>' containment reference.

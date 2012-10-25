@@ -14,8 +14,6 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.xtext.naming.QualifiedName;
-import org.eclipse.xtext.resource.EObjectDescription;
 import org.eclipse.xtext.resource.IEObjectDescription;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.impl.AbstractScope;
@@ -42,9 +40,9 @@ public class ProjectDependencyScope extends AbstractScope {
 					Resource r = resourceset.getResource(uri, true);
 					for(EObject eo : r.getContents()){
 						if (eo instanceof CompilationUnit){
-							String name = ((CompilationUnit) eo).getName();
-							QualifiedName qname = QualifiedName.create(name.split("\\."));
-							descs.add(EObjectDescription.create(qname, eo));
+//							String name = ((CompilationUnit) eo).getName();
+//							QualifiedName qname = QualifiedName.create(name.split("\\."));
+//							descs.add(EObjectDescription.create(qname, eo));
 						}
 					}
 				}catch(Exception e){

@@ -4,7 +4,6 @@ package hu.e.parser.eSyntax.impl;
 
 import hu.e.parser.eSyntax.ESyntaxPackage;
 import hu.e.parser.eSyntax.Operation;
-import hu.e.parser.eSyntax.OperationBlock;
 import hu.e.parser.eSyntax.Variable;
 import hu.e.parser.eSyntax.XExpression;
 
@@ -30,9 +29,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.e.parser.eSyntax.impl.OperationImpl#getName <em>Name</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.impl.OperationImpl#getOverrides <em>Overrides</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.impl.OperationImpl#getParams <em>Params</em>}</li>
- *   <li>{@link hu.e.parser.eSyntax.impl.OperationImpl#getBlock <em>Block</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.impl.OperationImpl#getContent <em>Content</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.impl.OperationImpl#getReturn <em>Return</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.impl.OperationImpl#getReturnvar <em>Returnvar</em>}</li>
  * </ul>
@@ -40,27 +39,27 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class OperationImpl extends OperationSignatureImpl implements Operation
+public class OperationImpl extends LibraryItemImpl implements Operation
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The default value of the '{@link #getOverrides() <em>Overrides</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getOverrides()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
+  protected static final String OVERRIDES_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getOverrides() <em>Overrides</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getOverrides()
    * @generated
    * @ordered
    */
-  protected String name = NAME_EDEFAULT;
+  protected String overrides = OVERRIDES_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getParams() <em>Params</em>}' containment reference list.
@@ -73,14 +72,14 @@ public class OperationImpl extends OperationSignatureImpl implements Operation
   protected EList<Variable> params;
 
   /**
-   * The cached value of the '{@link #getBlock() <em>Block</em>}' containment reference.
+   * The cached value of the '{@link #getContent() <em>Content</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getBlock()
+   * @see #getContent()
    * @generated
    * @ordered
    */
-  protected OperationBlock block;
+  protected XExpression content;
 
   /**
    * The cached value of the '{@link #getReturn() <em>Return</em>}' containment reference.
@@ -128,9 +127,9 @@ public class OperationImpl extends OperationSignatureImpl implements Operation
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getName()
+  public String getOverrides()
   {
-    return name;
+    return overrides;
   }
 
   /**
@@ -138,12 +137,12 @@ public class OperationImpl extends OperationSignatureImpl implements Operation
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setName(String newName)
+  public void setOverrides(String newOverrides)
   {
-    String oldName = name;
-    name = newName;
+    String oldOverrides = overrides;
+    overrides = newOverrides;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.OPERATION__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.OPERATION__OVERRIDES, oldOverrides, overrides));
   }
 
   /**
@@ -165,9 +164,9 @@ public class OperationImpl extends OperationSignatureImpl implements Operation
    * <!-- end-user-doc -->
    * @generated
    */
-  public OperationBlock getBlock()
+  public XExpression getContent()
   {
-    return block;
+    return content;
   }
 
   /**
@@ -175,13 +174,13 @@ public class OperationImpl extends OperationSignatureImpl implements Operation
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetBlock(OperationBlock newBlock, NotificationChain msgs)
+  public NotificationChain basicSetContent(XExpression newContent, NotificationChain msgs)
   {
-    OperationBlock oldBlock = block;
-    block = newBlock;
+    XExpression oldContent = content;
+    content = newContent;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ESyntaxPackage.OPERATION__BLOCK, oldBlock, newBlock);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ESyntaxPackage.OPERATION__CONTENT, oldContent, newContent);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -192,20 +191,20 @@ public class OperationImpl extends OperationSignatureImpl implements Operation
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setBlock(OperationBlock newBlock)
+  public void setContent(XExpression newContent)
   {
-    if (newBlock != block)
+    if (newContent != content)
     {
       NotificationChain msgs = null;
-      if (block != null)
-        msgs = ((InternalEObject)block).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ESyntaxPackage.OPERATION__BLOCK, null, msgs);
-      if (newBlock != null)
-        msgs = ((InternalEObject)newBlock).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ESyntaxPackage.OPERATION__BLOCK, null, msgs);
-      msgs = basicSetBlock(newBlock, msgs);
+      if (content != null)
+        msgs = ((InternalEObject)content).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ESyntaxPackage.OPERATION__CONTENT, null, msgs);
+      if (newContent != null)
+        msgs = ((InternalEObject)newContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ESyntaxPackage.OPERATION__CONTENT, null, msgs);
+      msgs = basicSetContent(newContent, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.OPERATION__BLOCK, newBlock, newBlock));
+      eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.OPERATION__CONTENT, newContent, newContent));
   }
 
   /**
@@ -316,8 +315,8 @@ public class OperationImpl extends OperationSignatureImpl implements Operation
     {
       case ESyntaxPackage.OPERATION__PARAMS:
         return ((InternalEList<?>)getParams()).basicRemove(otherEnd, msgs);
-      case ESyntaxPackage.OPERATION__BLOCK:
-        return basicSetBlock(null, msgs);
+      case ESyntaxPackage.OPERATION__CONTENT:
+        return basicSetContent(null, msgs);
       case ESyntaxPackage.OPERATION__RETURN:
         return basicSetReturn(null, msgs);
       case ESyntaxPackage.OPERATION__RETURNVAR:
@@ -336,12 +335,12 @@ public class OperationImpl extends OperationSignatureImpl implements Operation
   {
     switch (featureID)
     {
-      case ESyntaxPackage.OPERATION__NAME:
-        return getName();
+      case ESyntaxPackage.OPERATION__OVERRIDES:
+        return getOverrides();
       case ESyntaxPackage.OPERATION__PARAMS:
         return getParams();
-      case ESyntaxPackage.OPERATION__BLOCK:
-        return getBlock();
+      case ESyntaxPackage.OPERATION__CONTENT:
+        return getContent();
       case ESyntaxPackage.OPERATION__RETURN:
         return getReturn();
       case ESyntaxPackage.OPERATION__RETURNVAR:
@@ -361,15 +360,15 @@ public class OperationImpl extends OperationSignatureImpl implements Operation
   {
     switch (featureID)
     {
-      case ESyntaxPackage.OPERATION__NAME:
-        setName((String)newValue);
+      case ESyntaxPackage.OPERATION__OVERRIDES:
+        setOverrides((String)newValue);
         return;
       case ESyntaxPackage.OPERATION__PARAMS:
         getParams().clear();
         getParams().addAll((Collection<? extends Variable>)newValue);
         return;
-      case ESyntaxPackage.OPERATION__BLOCK:
-        setBlock((OperationBlock)newValue);
+      case ESyntaxPackage.OPERATION__CONTENT:
+        setContent((XExpression)newValue);
         return;
       case ESyntaxPackage.OPERATION__RETURN:
         setReturn((XExpression)newValue);
@@ -391,14 +390,14 @@ public class OperationImpl extends OperationSignatureImpl implements Operation
   {
     switch (featureID)
     {
-      case ESyntaxPackage.OPERATION__NAME:
-        setName(NAME_EDEFAULT);
+      case ESyntaxPackage.OPERATION__OVERRIDES:
+        setOverrides(OVERRIDES_EDEFAULT);
         return;
       case ESyntaxPackage.OPERATION__PARAMS:
         getParams().clear();
         return;
-      case ESyntaxPackage.OPERATION__BLOCK:
-        setBlock((OperationBlock)null);
+      case ESyntaxPackage.OPERATION__CONTENT:
+        setContent((XExpression)null);
         return;
       case ESyntaxPackage.OPERATION__RETURN:
         setReturn((XExpression)null);
@@ -420,12 +419,12 @@ public class OperationImpl extends OperationSignatureImpl implements Operation
   {
     switch (featureID)
     {
-      case ESyntaxPackage.OPERATION__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case ESyntaxPackage.OPERATION__OVERRIDES:
+        return OVERRIDES_EDEFAULT == null ? overrides != null : !OVERRIDES_EDEFAULT.equals(overrides);
       case ESyntaxPackage.OPERATION__PARAMS:
         return params != null && !params.isEmpty();
-      case ESyntaxPackage.OPERATION__BLOCK:
-        return block != null;
+      case ESyntaxPackage.OPERATION__CONTENT:
+        return content != null;
       case ESyntaxPackage.OPERATION__RETURN:
         return return_ != null;
       case ESyntaxPackage.OPERATION__RETURNVAR:
@@ -445,8 +444,8 @@ public class OperationImpl extends OperationSignatureImpl implements Operation
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
+    result.append(" (overrides: ");
+    result.append(overrides);
     result.append(')');
     return result.toString();
   }

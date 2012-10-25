@@ -69,15 +69,19 @@ Type:
 	'type' name=ID '=' def=TypeDef ';';
 
 TypeDef:
-	DataTypeDef | StructTypeDef | PointerTypeDef | ArrayTypeDef | RefTypeDef
+	DataTypeDef | StructTypeDef | PointerTypeDef | ArrayTypeDef | RefTypeDef | UnspecifiedTypeDef
 ;
 	
+UnspecifiedTypeDef :
+	{UnspecifiedTypeDef} 'void'
+;	
+	
 PointerTypeDef:
-	'pointer' 'of' def=TypeDef
+	 'pointer' '<'def=TypeDef'>'
 ;	
 	
 ArrayTypeDef:
-	'array' '[' size=XExpression ']' 'of' def=TypeDef
+	'array' '<' def=TypeDef '>' ('[' size=XExpression ']')?
 ;
 
 RefTypeDef:
@@ -156,20 +160,16 @@ OperationCallParameter:
 	XExpression
 ;
 
-Operation returns OperationSignature:
-	{Operation} name=ID '('
+Operation:
+	{Operation} name=ID (overrides=QualifiedName)? '('
 		(params+=ParameterVariable (',' params+=ParameterVariable)*)?
-	')''{'
-		block=OperationBlock
-	'}' ('returns' (return=XExpression | returnvar=Variable) ';')?
-;
-
-OperationBlock:
-	{OperationBlock} (steps+=OperationStep)*
+	')'
+	content = XExpression 
+	 ('returns' (return=XExpression | returnvar=Variable) ';')?
 ;
 
 ParameterVariable returns Variable:
-	{ParameterVariable} lazy?='lazy' (kind=ParameterKind)? type=TypeDef name=ID ('=' default=LITERAL)?  
+	{ParameterVariable} lazy?='lazy' (kind=ParameterKind)? name=ID ('=' default=LITERAL)?  
 ;
 
 enum ParameterKind:
@@ -183,9 +183,13 @@ enum ParameterKind:
 XExpression:
 	XExpression6 (':' type=TypeDef)?;
 
+XExpressionBlock:
+	'{' {OperationBlock} (steps+=OperationStep)* '}'
+;
+
 XPrimaryExpression:
 	XExpressionLiteral | XParenthesizedExpression | XIsLiteralExpression | VariableReference | OperationCall
-	 | XStructExpression | XSizeOfExpression
+	 | XStructExpression | XSizeOfExpression | XExpressionBlock
 ;
 
 XSizeOfExpression:
