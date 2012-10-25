@@ -5,11 +5,15 @@ import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 generate eSyntax "http://www.e.hu/parser/ESyntax"
 
 CompilationUnit:
-	/*Module |*/ Library | LinkedBinary /*| Interface*/
+	/*Module |*/ Library /* | LinkedBinary /*| Interface*/
 ;	
 
-QualifiedName:
+LibraryName:
 	ID ('.' ID)*
+;
+
+QualifiedName:
+	(LibraryName '::')? ID
 ;
 
 //ReferenceID:
@@ -37,7 +41,7 @@ AnnotationDefinition:
 ;
 
 Annotation:
-	'#' definition=[AnnotationDefinition|ID]
+	'#' definition=ID
 ;
 
 /***********************
@@ -45,17 +49,17 @@ Annotation:
  ***********************/
 
 Library:
-	'library' name=QualifiedName
-	('overrides' overrides+=[Library|QualifiedName] (',' overrides+=[Library|QualifiedName])*)?
+	'library' name=LibraryName
+	//('overrides' overrides+=[Library|QualifiedName] (',' overrides+=[Library|QualifiedName])*)?
 	';'
-	('use' use+=[Library|QualifiedName]';')*
+	('use' use+=LibraryName';')*
 	(items+=LibraryItem)*
 ;
 
 LibraryItem:
 	Type | Operation | Variable';' | 
 	ConstantVariable';' | RegisterVariable';' 
-	| OperatorDefinition | AnnotationDefinition ';'
+	| AnnotationDefinition ';'
 	;
 
 /***********************
@@ -77,7 +81,7 @@ ArrayTypeDef:
 ;
 
 RefTypeDef:
-	type=[Type|QualifiedName]
+	type=QualifiedName
 ;	
 	
 DataTypeDef:
@@ -127,33 +131,23 @@ RegisterVariable returns Variable:
  ***********************/
 
 OperationStep:
-	InstructionWord | Label | (Variable';') | XTopLevelExpression
+	Label | (Variable';') | XTopLevelExpression
 ;
 
 Label returns Variable:
 	{Label} 'label' name=ID ';'
 ;
 
-InstructionWord:
-	'<' (sections+=WordSection)+ '>'
-;
-
-WordSection:
-	(LiteralValue | VariableReference ) ':' size=INT (':' shift=INT)? ;
-
-LiteralValue:
-	value=LITERAL;
-
 Variable:
 	type=TypeDef name=ID
 ;
 
 VariableReference:
-	var=[Variable|QualifiedName]
+	var=QualifiedName
 ;
 
 OperationCall:
-	operation=[Operation|QualifiedName] '('
+	operation=QualifiedName '('
 		(params+=OperationCallParameter (',' params+=OperationCallParameter)*)?
 	')'
 ;
@@ -161,12 +155,6 @@ OperationCall:
 OperationCallParameter:
 	XExpression
 ;
-
-OperationSignature returns Variable:
-	{OperationSignature} name=ID '('
-		(params+=ParameterVariable (',' params+=ParameterVariable)*)?
-	')'
-; 
 
 Operation returns OperationSignature:
 	{Operation} name=ID '('
@@ -181,81 +169,11 @@ OperationBlock:
 ;
 
 ParameterVariable returns Variable:
-	{ParameterVariable} (kind=ParameterKind)? type=TypeDef name=ID ('=' default=LITERAL)?  
+	{ParameterVariable} lazy?='lazy' (kind=ParameterKind)? type=TypeDef name=ID ('=' default=LITERAL)?  
 ;
 
 enum ParameterKind:
 	ANY='default' | VAR='var' | CONST='const'
-;
-
-/****************
- * OPERATORS
- ******************/
-
-enum OperationRole:
-	SET='SET' | ADD='ADD' | SUBTRACT='SUBTRACT' | AND='AND' | OR='OR' | XOR='XOR' |
-	EQUALS='EQUALS' | BRANCH='BRANCH' | UC_GOTO='UC_GOTO' | NOT='NOT' | INDIRECTION='INDIRECTION' |
-	CLEAR='CLEAR' | INCREMENT='INCREMENT' | DECREMENT='DECREMENT' | DIV='DIV' | MUL='MUL' | MOD='MOD'
-	| LT='LT' | LTE='LTE' | GT='GT' | GTE='GTE' | NOTEQUALS='NOTEQUALS'
-;
-
-OperatorDefinition:
-	'operator' role=OperationRole '{'
-		candidate+=[Operation|QualifiedName] (',' candidate+=[Operation|QualifiedName])* (',')?
-	'}'
-;
-
-/********************
- * BINARY and LINKING
- ********************/
-
-LinkedBinary:
-	'binary' name=QualifiedName (type=BinaryType)? ';'
-	('use' use+=[Library|QualifiedName]';')*
-		(sections+=BinarySection)*
-;
-
-enum BinaryType:
-	DEFAULT='default' | INTELHEXFILE='intelHexfile' | SRECHEXFILE='SRECHexfile'
-;
-
-BinarySection:
-	(FunctionBinarySection | ConstantBinarySection | ReferenceBinarySection) 
-	'at' start=XExpression  'width' width=LITERAL ';'
-;
- 
-FunctionBinarySection:
-	'program' name=ID '('
-		'startAddr' '=' startAddr=LITERAL ';'
-		'memwidth' '=' memwidth=LITERAL ';'
-		'pointerType' '=' pointerType=TypeDef ';'
-		'addressType' '=' addressType=TypeDef ';'
-		(mems+=FunctionMemory ';')+
-		(optimizercalls+=OptimizerCall ';')*
-	')' '{'
-		(
-		('lib' lib+=[Library|QualifiedName] ';') 
-		//| (instances+=LinkedInstance )
-		)*
-		
-		'link' '{' do=OperationBlock '}'
-	'}'
-; 
-
-OptimizerCall:
-	'optimize' optimizer=STRING
-;
-
-FunctionMemory:
-	'mem' start=LITERAL '..' end=LITERAL
-;
- 
-ConstantBinarySection:
-	'data' '{' (data+=XExpression ';')+ '}'
-; 
-
-ReferenceBinarySection:
-	'include' inc=[LinkedBinary|QualifiedName]
 ;
 
 /********************
@@ -275,7 +193,7 @@ XSizeOfExpression:
 ;
 
 XStructExpression:
-	type=[Type|QualifiedName] '{' values+=XExpression (',' values+=XExpression)* (',')? '}'
+	'[' values+=XExpression (',' values+=XExpression)* (',')? ']'
 ;
 
 XExpression1:
@@ -336,7 +254,7 @@ XExpressionLiteral:
 ;
 
 XTopLevelExpression:
-	Annotation ';' | XExpression ';' | XIfExpression | XWhileExpression | XErrorExpression | XForExpression
+	Annotation ';' | XExpression ';' | XErrorExpression ';' 
 ;
 
 XErrorExpression:
@@ -355,24 +273,6 @@ XIsLiteralExpression:
 	'isliteral' '('
 		ref = VariableReference
 	')'
-;
-
-XIfExpression:
-	'if' '(' if=XExpression ')' '{'
-	then=OperationBlock
-	'}'
-	(=> 'else' '{' else=OperationBlock '}')?;
-	
-XWhileExpression:
-	'while' '(' cond=XExpression ')' '{'
-		do=OperationBlock
-	'}'
-;	
-	
-XForExpression:
-	'for' '(' var=Variable from=XExpression ';' by=XExpression ';' to=XExpression ')' '{'
-		do=OperationBlock
-	'}'
 ;
 
 XParenthesizedExpression:

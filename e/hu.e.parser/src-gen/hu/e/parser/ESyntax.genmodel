@@ -16,35 +16,6 @@
       <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//ParameterKind/VAR"/>
       <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//ParameterKind/CONST"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ESyntax.ecore#//OperationRole">
-      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//OperationRole/SET"/>
-      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//OperationRole/ADD"/>
-      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//OperationRole/SUBTRACT"/>
-      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//OperationRole/AND"/>
-      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//OperationRole/OR"/>
-      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//OperationRole/XOR"/>
-      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//OperationRole/EQUALS"/>
-      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//OperationRole/BRANCH"/>
-      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//OperationRole/UC_GOTO"/>
-      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//OperationRole/NOT"/>
-      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//OperationRole/INDIRECTION"/>
-      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//OperationRole/CLEAR"/>
-      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//OperationRole/INCREMENT"/>
-      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//OperationRole/DECREMENT"/>
-      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//OperationRole/DIV"/>
-      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//OperationRole/MUL"/>
-      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//OperationRole/MOD"/>
-      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//OperationRole/LT"/>
-      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//OperationRole/LTE"/>
-      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//OperationRole/GT"/>
-      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//OperationRole/GTE"/>
-      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//OperationRole/NOTEQUALS"/>
-    </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ESyntax.ecore#//BinaryType">
-      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//BinaryType/DEFAULT"/>
-      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//BinaryType/INTELHEXFILE"/>
-      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//BinaryType/SRECHEXFILE"/>
-    </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="ESyntax.ecore#//UNARY_OPERATOR">
       <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//UNARY_OPERATOR/MINUS"/>
       <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//UNARY_OPERATOR/NOT"/>
@@ -82,18 +53,16 @@
       <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//OpSingleAssign/ASSIGNADD"/>
       <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//OpSingleAssign/ASSIGNSUBTRACT"/>
     </genEnums>
-    <genClasses ecoreClass="ESyntax.ecore#//CompilationUnit">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//CompilationUnit/name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ESyntax.ecore#//CompilationUnit/use"/>
-    </genClasses>
+    <genClasses ecoreClass="ESyntax.ecore#//CompilationUnit"/>
     <genClasses ecoreClass="ESyntax.ecore#//AnnotationDefinition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//AnnotationDefinition/name"/>
     </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//Annotation">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ESyntax.ecore#//Annotation/definition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//Annotation/definition"/>
     </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//Library">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ESyntax.ecore#//Library/overrides"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//Library/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//Library/use"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//Library/items"/>
     </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//LibraryItem"/>
@@ -110,7 +79,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//ArrayTypeDef/def"/>
     </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//RefTypeDef">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ESyntax.ecore#//RefTypeDef/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//RefTypeDef/type"/>
     </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//DataTypeDef">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//DataTypeDef/bits"/>
@@ -129,65 +98,17 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//Variable/name"/>
     </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//OperationStep"/>
-    <genClasses ecoreClass="ESyntax.ecore#//InstructionWord">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//InstructionWord/sections"/>
-    </genClasses>
-    <genClasses ecoreClass="ESyntax.ecore#//WordSection">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//WordSection/size"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//WordSection/shift"/>
-    </genClasses>
-    <genClasses ecoreClass="ESyntax.ecore#//LiteralValue">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//LiteralValue/value"/>
-    </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//VariableReference">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ESyntax.ecore#//VariableReference/var"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//VariableReference/var"/>
     </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//OperationCall">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ESyntax.ecore#//OperationCall/operation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//OperationCall/operation"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//OperationCall/params"/>
     </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//OperationCallParameter"/>
-    <genClasses ecoreClass="ESyntax.ecore#//OperationSignature">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//OperationSignature/params"/>
-    </genClasses>
+    <genClasses ecoreClass="ESyntax.ecore#//OperationSignature"/>
     <genClasses ecoreClass="ESyntax.ecore#//OperationBlock">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//OperationBlock/steps"/>
-    </genClasses>
-    <genClasses ecoreClass="ESyntax.ecore#//OperatorDefinition">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//OperatorDefinition/role"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ESyntax.ecore#//OperatorDefinition/candidate"/>
-    </genClasses>
-    <genClasses ecoreClass="ESyntax.ecore#//LinkedBinary">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//LinkedBinary/type"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//LinkedBinary/sections"/>
-    </genClasses>
-    <genClasses ecoreClass="ESyntax.ecore#//BinarySection">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//BinarySection/start"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//BinarySection/width"/>
-    </genClasses>
-    <genClasses ecoreClass="ESyntax.ecore#//FunctionBinarySection">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//FunctionBinarySection/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//FunctionBinarySection/startAddr"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//FunctionBinarySection/memwidth"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//FunctionBinarySection/pointerType"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//FunctionBinarySection/addressType"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//FunctionBinarySection/mems"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//FunctionBinarySection/optimizercalls"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ESyntax.ecore#//FunctionBinarySection/lib"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//FunctionBinarySection/do"/>
-    </genClasses>
-    <genClasses ecoreClass="ESyntax.ecore#//OptimizerCall">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//OptimizerCall/optimizer"/>
-    </genClasses>
-    <genClasses ecoreClass="ESyntax.ecore#//FunctionMemory">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//FunctionMemory/start"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//FunctionMemory/end"/>
-    </genClasses>
-    <genClasses ecoreClass="ESyntax.ecore#//ConstantBinarySection">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//ConstantBinarySection/data"/>
-    </genClasses>
-    <genClasses ecoreClass="ESyntax.ecore#//ReferenceBinarySection">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ESyntax.ecore#//ReferenceBinarySection/inc"/>
     </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//XExpression"/>
     <genClasses ecoreClass="ESyntax.ecore#//XPrimaryExpression"/>
@@ -195,7 +116,6 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XSizeOfExpression/type"/>
     </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//XStructExpression">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XStructExpression/type"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XStructExpression/values"/>
     </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//XExpression1">
@@ -247,22 +167,6 @@
     <genClasses ecoreClass="ESyntax.ecore#//XIsLiteralExpression">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XIsLiteralExpression/ref"/>
     </genClasses>
-    <genClasses ecoreClass="ESyntax.ecore#//XIfExpression">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XIfExpression/if"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XIfExpression/then"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XIfExpression/else"/>
-    </genClasses>
-    <genClasses ecoreClass="ESyntax.ecore#//XWhileExpression">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XWhileExpression/cond"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XWhileExpression/do"/>
-    </genClasses>
-    <genClasses ecoreClass="ESyntax.ecore#//XForExpression">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XForExpression/var"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XForExpression/from"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XForExpression/by"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XForExpression/to"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XForExpression/do"/>
-    </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//XParenthesizedExpression">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XParenthesizedExpression/a"/>
     </genClasses>
@@ -275,11 +179,14 @@
     </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//Label"/>
     <genClasses ecoreClass="ESyntax.ecore#//Operation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//Operation/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//Operation/params"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//Operation/block"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//Operation/return"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//Operation/returnvar"/>
     </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//ParameterVariable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//ParameterVariable/lazy"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//ParameterVariable/kind"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//ParameterVariable/default"/>
     </genClasses>

@@ -12,7 +12,8 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link hu.e.parser.eSyntax.Library#getOverrides <em>Overrides</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.Library#getName <em>Name</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.Library#getUse <em>Use</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.Library#getItems <em>Items</em>}</li>
  * </ul>
  * </p>
@@ -24,20 +25,46 @@ import org.eclipse.emf.common.util.EList;
 public interface Library extends CompilationUnit
 {
   /**
-   * Returns the value of the '<em><b>Overrides</b></em>' reference list.
-   * The list contents are of type {@link hu.e.parser.eSyntax.Library}.
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Overrides</em>' reference list isn't clear,
+   * If the meaning of the '<em>Name</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Overrides</em>' reference list.
-   * @see hu.e.parser.eSyntax.ESyntaxPackage#getLibrary_Overrides()
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see hu.e.parser.eSyntax.ESyntaxPackage#getLibrary_Name()
    * @model
    * @generated
    */
-  EList<Library> getOverrides();
+  String getName();
+
+  /**
+   * Sets the value of the '{@link hu.e.parser.eSyntax.Library#getName <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
+   * @generated
+   */
+  void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Use</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Use</em>' attribute list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Use</em>' attribute list.
+   * @see hu.e.parser.eSyntax.ESyntaxPackage#getLibrary_Use()
+   * @model unique="false"
+   * @generated
+   */
+  EList<String> getUse();
 
   /**
    * Returns the value of the '<em><b>Items</b></em>' containment reference list.

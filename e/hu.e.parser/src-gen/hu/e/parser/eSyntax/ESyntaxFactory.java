@@ -167,33 +167,6 @@ public interface ESyntaxFactory extends EFactory
   OperationStep createOperationStep();
 
   /**
-   * Returns a new object of class '<em>Instruction Word</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Instruction Word</em>'.
-   * @generated
-   */
-  InstructionWord createInstructionWord();
-
-  /**
-   * Returns a new object of class '<em>Word Section</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Word Section</em>'.
-   * @generated
-   */
-  WordSection createWordSection();
-
-  /**
-   * Returns a new object of class '<em>Literal Value</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Literal Value</em>'.
-   * @generated
-   */
-  LiteralValue createLiteralValue();
-
-  /**
    * Returns a new object of class '<em>Variable Reference</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -237,78 +210,6 @@ public interface ESyntaxFactory extends EFactory
    * @generated
    */
   OperationBlock createOperationBlock();
-
-  /**
-   * Returns a new object of class '<em>Operator Definition</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Operator Definition</em>'.
-   * @generated
-   */
-  OperatorDefinition createOperatorDefinition();
-
-  /**
-   * Returns a new object of class '<em>Linked Binary</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Linked Binary</em>'.
-   * @generated
-   */
-  LinkedBinary createLinkedBinary();
-
-  /**
-   * Returns a new object of class '<em>Binary Section</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Binary Section</em>'.
-   * @generated
-   */
-  BinarySection createBinarySection();
-
-  /**
-   * Returns a new object of class '<em>Function Binary Section</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Function Binary Section</em>'.
-   * @generated
-   */
-  FunctionBinarySection createFunctionBinarySection();
-
-  /**
-   * Returns a new object of class '<em>Optimizer Call</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Optimizer Call</em>'.
-   * @generated
-   */
-  OptimizerCall createOptimizerCall();
-
-  /**
-   * Returns a new object of class '<em>Function Memory</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Function Memory</em>'.
-   * @generated
-   */
-  FunctionMemory createFunctionMemory();
-
-  /**
-   * Returns a new object of class '<em>Constant Binary Section</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Constant Binary Section</em>'.
-   * @generated
-   */
-  ConstantBinarySection createConstantBinarySection();
-
-  /**
-   * Returns a new object of class '<em>Reference Binary Section</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Reference Binary Section</em>'.
-   * @generated
-   */
-  ReferenceBinarySection createReferenceBinarySection();
 
   /**
    * Returns a new object of class '<em>XExpression</em>'.
@@ -453,33 +354,6 @@ public interface ESyntaxFactory extends EFactory
    * @generated
    */
   XIsLiteralExpression createXIsLiteralExpression();
-
-  /**
-   * Returns a new object of class '<em>XIf Expression</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>XIf Expression</em>'.
-   * @generated
-   */
-  XIfExpression createXIfExpression();
-
-  /**
-   * Returns a new object of class '<em>XWhile Expression</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>XWhile Expression</em>'.
-   * @generated
-   */
-  XWhileExpression createXWhileExpression();
-
-  /**
-   * Returns a new object of class '<em>XFor Expression</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>XFor Expression</em>'.
-   * @generated
-   */
-  XForExpression createXForExpression();
 
   /**
    * Returns a new object of class '<em>XParenthesized Expression</em>'.

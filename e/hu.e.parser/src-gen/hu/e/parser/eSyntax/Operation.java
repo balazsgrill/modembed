@@ -2,6 +2,7 @@
  */
 package hu.e.parser.eSyntax;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -11,6 +12,8 @@ package hu.e.parser.eSyntax;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link hu.e.parser.eSyntax.Operation#getName <em>Name</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.Operation#getParams <em>Params</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.Operation#getBlock <em>Block</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.Operation#getReturn <em>Return</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.Operation#getReturnvar <em>Returnvar</em>}</li>
@@ -23,6 +26,48 @@ package hu.e.parser.eSyntax;
  */
 public interface Operation extends OperationSignature
 {
+  /**
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Name</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see hu.e.parser.eSyntax.ESyntaxPackage#getOperation_Name()
+   * @model
+   * @generated
+   */
+  String getName();
+
+  /**
+   * Sets the value of the '{@link hu.e.parser.eSyntax.Operation#getName <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
+   * @generated
+   */
+  void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Params</b></em>' containment reference list.
+   * The list contents are of type {@link hu.e.parser.eSyntax.Variable}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Params</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Params</em>' containment reference list.
+   * @see hu.e.parser.eSyntax.ESyntaxPackage#getOperation_Params()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Variable> getParams();
+
   /**
    * Returns the value of the '<em><b>Block</b></em>' containment reference.
    * <!-- begin-user-doc -->

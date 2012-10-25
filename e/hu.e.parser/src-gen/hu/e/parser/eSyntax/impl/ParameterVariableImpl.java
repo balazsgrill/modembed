@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link hu.e.parser.eSyntax.impl.ParameterVariableImpl#isLazy <em>Lazy</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.impl.ParameterVariableImpl#getKind <em>Kind</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.impl.ParameterVariableImpl#getDefault <em>Default</em>}</li>
  * </ul>
@@ -28,6 +29,26 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class ParameterVariableImpl extends VariableImpl implements ParameterVariable
 {
+  /**
+   * The default value of the '{@link #isLazy() <em>Lazy</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isLazy()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean LAZY_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isLazy() <em>Lazy</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isLazy()
+   * @generated
+   * @ordered
+   */
+  protected boolean lazy = LAZY_EDEFAULT;
+
   /**
    * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -94,6 +115,29 @@ public class ParameterVariableImpl extends VariableImpl implements ParameterVari
    * <!-- end-user-doc -->
    * @generated
    */
+  public boolean isLazy()
+  {
+    return lazy;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setLazy(boolean newLazy)
+  {
+    boolean oldLazy = lazy;
+    lazy = newLazy;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.PARAMETER_VARIABLE__LAZY, oldLazy, lazy));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public ParameterKind getKind()
   {
     return kind;
@@ -145,6 +189,8 @@ public class ParameterVariableImpl extends VariableImpl implements ParameterVari
   {
     switch (featureID)
     {
+      case ESyntaxPackage.PARAMETER_VARIABLE__LAZY:
+        return isLazy();
       case ESyntaxPackage.PARAMETER_VARIABLE__KIND:
         return getKind();
       case ESyntaxPackage.PARAMETER_VARIABLE__DEFAULT:
@@ -163,6 +209,9 @@ public class ParameterVariableImpl extends VariableImpl implements ParameterVari
   {
     switch (featureID)
     {
+      case ESyntaxPackage.PARAMETER_VARIABLE__LAZY:
+        setLazy((Boolean)newValue);
+        return;
       case ESyntaxPackage.PARAMETER_VARIABLE__KIND:
         setKind((ParameterKind)newValue);
         return;
@@ -183,6 +232,9 @@ public class ParameterVariableImpl extends VariableImpl implements ParameterVari
   {
     switch (featureID)
     {
+      case ESyntaxPackage.PARAMETER_VARIABLE__LAZY:
+        setLazy(LAZY_EDEFAULT);
+        return;
       case ESyntaxPackage.PARAMETER_VARIABLE__KIND:
         setKind(KIND_EDEFAULT);
         return;
@@ -203,6 +255,8 @@ public class ParameterVariableImpl extends VariableImpl implements ParameterVari
   {
     switch (featureID)
     {
+      case ESyntaxPackage.PARAMETER_VARIABLE__LAZY:
+        return lazy != LAZY_EDEFAULT;
       case ESyntaxPackage.PARAMETER_VARIABLE__KIND:
         return kind != KIND_EDEFAULT;
       case ESyntaxPackage.PARAMETER_VARIABLE__DEFAULT:
@@ -222,7 +276,9 @@ public class ParameterVariableImpl extends VariableImpl implements ParameterVari
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (kind: ");
+    result.append(" (lazy: ");
+    result.append(lazy);
+    result.append(", kind: ");
     result.append(kind);
     result.append(", default: ");
     result.append(default_);

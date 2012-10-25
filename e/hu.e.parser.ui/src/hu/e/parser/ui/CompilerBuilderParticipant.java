@@ -3,7 +3,6 @@
  */
 package hu.e.parser.ui;
 
-import hu.e.compiler.ECompiler;
 import hu.e.parser.ui.internal.ESyntaxActivator;
 
 import org.eclipse.core.resources.IContainer;
@@ -44,10 +43,10 @@ public class CompilerBuilderParticipant implements IXtextBuilderParticipant {
 					if (resource.getName().endsWith(".e")){
 						Resource res = context.getResourceSet().
 								getResource(URI.createPlatformResourceURI(resource.getFullPath().toString(), true), true);
-						ECompiler compiler = new ECompiler();
+						//ECompiler compiler = new ECompiler();
 						System.out.println("Compile "+resource);
 						try{
-							compiler.compile(res, (IFile)resource);
+							//compiler.compile(res, (IFile)resource);
 						}catch (final Exception e) {
 							e.printStackTrace();
 							Display.getDefault().asyncExec(new Runnable() {

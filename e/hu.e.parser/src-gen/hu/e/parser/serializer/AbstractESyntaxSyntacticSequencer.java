@@ -17,14 +17,12 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public abstract class AbstractESyntaxSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected ESyntaxGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_OperatorDefinition_CommaKeyword_5_q;
-	protected AbstractElementAlias match_XStructExpression_CommaKeyword_4_q;
+	protected AbstractElementAlias match_XStructExpression_CommaKeyword_3_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (ESyntaxGrammarAccess) access;
-		match_OperatorDefinition_CommaKeyword_5_q = new TokenAlias(false, true, grammarAccess.getOperatorDefinitionAccess().getCommaKeyword_5());
-		match_XStructExpression_CommaKeyword_4_q = new TokenAlias(false, true, grammarAccess.getXStructExpressionAccess().getCommaKeyword_4());
+		match_XStructExpression_CommaKeyword_3_q = new TokenAlias(false, true, grammarAccess.getXStructExpressionAccess().getCommaKeyword_3());
 	}
 	
 	@Override
@@ -39,10 +37,8 @@ public abstract class AbstractESyntaxSyntacticSequencer extends AbstractSyntacti
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if(match_OperatorDefinition_CommaKeyword_5_q.equals(syntax))
-				emit_OperatorDefinition_CommaKeyword_5_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_XStructExpression_CommaKeyword_4_q.equals(syntax))
-				emit_XStructExpression_CommaKeyword_4_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			if(match_XStructExpression_CommaKeyword_3_q.equals(syntax))
+				emit_XStructExpression_CommaKeyword_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -51,15 +47,7 @@ public abstract class AbstractESyntaxSyntacticSequencer extends AbstractSyntacti
 	 * Syntax:
 	 *     ','?
 	 */
-	protected void emit_OperatorDefinition_CommaKeyword_5_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Syntax:
-	 *     ','?
-	 */
-	protected void emit_XStructExpression_CommaKeyword_4_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_XStructExpression_CommaKeyword_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
