@@ -9,10 +9,15 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="contents" upperBound="-1"
           eType="#//core/PackagedElement" containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="MODembedElement" abstract="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="MODembedElement" abstract="true">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="origins" upperBound="-1"
+          eType="#//core/MODembedElement"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="PackagedElement" abstract="true" eSuperTypes="#//core/NamedElement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="RootElement" abstract="true" eSuperTypes="#//core/NamedElement"/>
     <eSubpackages name="assembler" nsURI="http://modembed.hu/core/assembler" nsPrefix="assembler">
-      <eClassifiers xsi:type="ecore:EClass" name="InstructionSet" eSuperTypes="#//core/PackagedElement">
+      <eClassifiers xsi:type="ecore:EClass" name="InstructionSet" eSuperTypes="#//core/RootElement">
         <eStructuralFeatures xsi:type="ecore:EReference" name="instructions" upperBound="-1"
             eType="#//core/assembler/Instruction" containment="true"/>
       </eClassifiers>
@@ -144,7 +149,7 @@
     </eSubpackages>
   </eSubpackages>
   <eSubpackages name="emodel" nsURI="http://emodel/1.0" nsPrefix="emodel">
-    <eClassifiers xsi:type="ecore:EClass" name="Library" eSuperTypes="#//core/Package #//core/NamedElement">
+    <eClassifiers xsi:type="ecore:EClass" name="Library" eSuperTypes="#//core/RootElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="uses" upperBound="-1"
           eType="#//emodel/Library"/>
     </eClassifiers>
