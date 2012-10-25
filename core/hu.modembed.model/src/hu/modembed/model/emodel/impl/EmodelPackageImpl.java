@@ -4,10 +4,23 @@ package hu.modembed.model.emodel.impl;
 
 import hu.modembed.model.application.ApplicationPackage;
 
+import hu.modembed.model.application.code.CodePackage;
+import hu.modembed.model.application.code.impl.CodePackageImpl;
+import hu.modembed.model.application.composition.CompositionPackage;
+import hu.modembed.model.application.composition.impl.CompositionPackageImpl;
+import hu.modembed.model.application.datatypes.DatatypesPackage;
+import hu.modembed.model.application.datatypes.impl.DatatypesPackageImpl;
+import hu.modembed.model.application.impl.ApplicationPackageImpl;
+import hu.modembed.model.application.interface_.InterfacePackage;
+import hu.modembed.model.application.interface_.impl.InterfacePackageImpl;
 import hu.modembed.model.comm.CommPackage;
 
+import hu.modembed.model.comm.impl.CommPackageImpl;
 import hu.modembed.model.core.CorePackage;
 
+import hu.modembed.model.core.assembler.AssemblerPackage;
+import hu.modembed.model.core.assembler.impl.AssemblerPackageImpl;
+import hu.modembed.model.core.impl.CorePackageImpl;
 import hu.modembed.model.emodel.EmodelFactory;
 import hu.modembed.model.emodel.EmodelPackage;
 import hu.modembed.model.emodel.Function;
@@ -29,6 +42,9 @@ import hu.modembed.model.emodel.types.impl.TypesPackageImpl;
 
 import hu.modembed.model.network.NetworkPackage;
 
+import hu.modembed.model.network.impl.NetworkPackageImpl;
+import hu.modembed.model.network.rs232.Rs232Package;
+import hu.modembed.model.network.rs232.impl.Rs232PackageImpl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -145,23 +161,50 @@ public class EmodelPackageImpl extends EPackageImpl implements EmodelPackage {
 
 		isInited = true;
 
-		// Initialize simple dependencies
-		CorePackage.eINSTANCE.eClass();
-		NetworkPackage.eINSTANCE.eClass();
-		CommPackage.eINSTANCE.eClass();
-		ApplicationPackage.eINSTANCE.eClass();
-
 		// Obtain or create and register interdependencies
+		CorePackageImpl theCorePackage = (CorePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI) instanceof CorePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI) : CorePackage.eINSTANCE);
+		AssemblerPackageImpl theAssemblerPackage = (AssemblerPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AssemblerPackage.eNS_URI) instanceof AssemblerPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AssemblerPackage.eNS_URI) : AssemblerPackage.eINSTANCE);
+		NetworkPackageImpl theNetworkPackage = (NetworkPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(NetworkPackage.eNS_URI) instanceof NetworkPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(NetworkPackage.eNS_URI) : NetworkPackage.eINSTANCE);
+		Rs232PackageImpl theRs232Package = (Rs232PackageImpl)(EPackage.Registry.INSTANCE.getEPackage(Rs232Package.eNS_URI) instanceof Rs232PackageImpl ? EPackage.Registry.INSTANCE.getEPackage(Rs232Package.eNS_URI) : Rs232Package.eINSTANCE);
+		CommPackageImpl theCommPackage = (CommPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CommPackage.eNS_URI) instanceof CommPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CommPackage.eNS_URI) : CommPackage.eINSTANCE);
+		hu.modembed.model.comm.rs232.impl.Rs232PackageImpl theRs232Package_1 = (hu.modembed.model.comm.rs232.impl.Rs232PackageImpl)(EPackage.Registry.INSTANCE.getEPackage(hu.modembed.model.comm.rs232.Rs232Package.eNS_URI) instanceof hu.modembed.model.comm.rs232.impl.Rs232PackageImpl ? EPackage.Registry.INSTANCE.getEPackage(hu.modembed.model.comm.rs232.Rs232Package.eNS_URI) : hu.modembed.model.comm.rs232.Rs232Package.eINSTANCE);
+		ApplicationPackageImpl theApplicationPackage = (ApplicationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI) instanceof ApplicationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI) : ApplicationPackage.eINSTANCE);
+		InterfacePackageImpl theInterfacePackage = (InterfacePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InterfacePackage.eNS_URI) instanceof InterfacePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InterfacePackage.eNS_URI) : InterfacePackage.eINSTANCE);
+		DatatypesPackageImpl theDatatypesPackage = (DatatypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI) instanceof DatatypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI) : DatatypesPackage.eINSTANCE);
+		CompositionPackageImpl theCompositionPackage = (CompositionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CompositionPackage.eNS_URI) instanceof CompositionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CompositionPackage.eNS_URI) : CompositionPackage.eINSTANCE);
+		CodePackageImpl theCodePackage = (CodePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CodePackage.eNS_URI) instanceof CodePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CodePackage.eNS_URI) : CodePackage.eINSTANCE);
 		TypesPackageImpl theTypesPackage = (TypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) instanceof TypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) : TypesPackage.eINSTANCE);
 		ExpressionsPackageImpl theExpressionsPackage = (ExpressionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI) instanceof ExpressionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI) : ExpressionsPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theEmodelPackage.createPackageContents();
+		theCorePackage.createPackageContents();
+		theAssemblerPackage.createPackageContents();
+		theNetworkPackage.createPackageContents();
+		theRs232Package.createPackageContents();
+		theCommPackage.createPackageContents();
+		theRs232Package_1.createPackageContents();
+		theApplicationPackage.createPackageContents();
+		theInterfacePackage.createPackageContents();
+		theDatatypesPackage.createPackageContents();
+		theCompositionPackage.createPackageContents();
+		theCodePackage.createPackageContents();
 		theTypesPackage.createPackageContents();
 		theExpressionsPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theEmodelPackage.initializePackageContents();
+		theCorePackage.initializePackageContents();
+		theAssemblerPackage.initializePackageContents();
+		theNetworkPackage.initializePackageContents();
+		theRs232Package.initializePackageContents();
+		theCommPackage.initializePackageContents();
+		theRs232Package_1.initializePackageContents();
+		theApplicationPackage.initializePackageContents();
+		theInterfacePackage.initializePackageContents();
+		theDatatypesPackage.initializePackageContents();
+		theCompositionPackage.initializePackageContents();
+		theCodePackage.initializePackageContents();
 		theTypesPackage.initializePackageContents();
 		theExpressionsPackage.initializePackageContents();
 

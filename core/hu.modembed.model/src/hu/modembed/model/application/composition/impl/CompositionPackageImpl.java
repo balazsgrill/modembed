@@ -38,6 +38,12 @@ import hu.modembed.model.core.assembler.AssemblerPackage;
 import hu.modembed.model.core.assembler.impl.AssemblerPackageImpl;
 import hu.modembed.model.core.impl.CorePackageImpl;
 
+import hu.modembed.model.emodel.EmodelPackage;
+import hu.modembed.model.emodel.expressions.ExpressionsPackage;
+import hu.modembed.model.emodel.expressions.impl.ExpressionsPackageImpl;
+import hu.modembed.model.emodel.impl.EmodelPackageImpl;
+import hu.modembed.model.emodel.types.TypesPackage;
+import hu.modembed.model.emodel.types.impl.TypesPackageImpl;
 import hu.modembed.model.network.NetworkPackage;
 
 import hu.modembed.model.network.impl.NetworkPackageImpl;
@@ -137,6 +143,9 @@ public class CompositionPackageImpl extends EPackageImpl implements CompositionP
 		InterfacePackageImpl theInterfacePackage = (InterfacePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InterfacePackage.eNS_URI) instanceof InterfacePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InterfacePackage.eNS_URI) : InterfacePackage.eINSTANCE);
 		DatatypesPackageImpl theDatatypesPackage = (DatatypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI) instanceof DatatypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI) : DatatypesPackage.eINSTANCE);
 		CodePackageImpl theCodePackage = (CodePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CodePackage.eNS_URI) instanceof CodePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CodePackage.eNS_URI) : CodePackage.eINSTANCE);
+		EmodelPackageImpl theEmodelPackage = (EmodelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EmodelPackage.eNS_URI) instanceof EmodelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EmodelPackage.eNS_URI) : EmodelPackage.eINSTANCE);
+		TypesPackageImpl theTypesPackage = (TypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) instanceof TypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) : TypesPackage.eINSTANCE);
+		ExpressionsPackageImpl theExpressionsPackage = (ExpressionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI) instanceof ExpressionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI) : ExpressionsPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theCompositionPackage.createPackageContents();
@@ -150,6 +159,9 @@ public class CompositionPackageImpl extends EPackageImpl implements CompositionP
 		theInterfacePackage.createPackageContents();
 		theDatatypesPackage.createPackageContents();
 		theCodePackage.createPackageContents();
+		theEmodelPackage.createPackageContents();
+		theTypesPackage.createPackageContents();
+		theExpressionsPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theCompositionPackage.initializePackageContents();
@@ -163,6 +175,9 @@ public class CompositionPackageImpl extends EPackageImpl implements CompositionP
 		theInterfacePackage.initializePackageContents();
 		theDatatypesPackage.initializePackageContents();
 		theCodePackage.initializePackageContents();
+		theEmodelPackage.initializePackageContents();
+		theTypesPackage.initializePackageContents();
+		theExpressionsPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theCompositionPackage.freeze();

@@ -35,6 +35,12 @@ import hu.modembed.model.core.assembler.InstructionSet;
 
 import hu.modembed.model.core.impl.CorePackageImpl;
 
+import hu.modembed.model.emodel.EmodelPackage;
+import hu.modembed.model.emodel.expressions.ExpressionsPackage;
+import hu.modembed.model.emodel.expressions.impl.ExpressionsPackageImpl;
+import hu.modembed.model.emodel.impl.EmodelPackageImpl;
+import hu.modembed.model.emodel.types.TypesPackage;
+import hu.modembed.model.emodel.types.impl.TypesPackageImpl;
 import hu.modembed.model.network.NetworkPackage;
 
 import hu.modembed.model.network.impl.NetworkPackageImpl;
@@ -128,6 +134,9 @@ public class AssemblerPackageImpl extends EPackageImpl implements AssemblerPacka
 		DatatypesPackageImpl theDatatypesPackage = (DatatypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI) instanceof DatatypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI) : DatatypesPackage.eINSTANCE);
 		CompositionPackageImpl theCompositionPackage = (CompositionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CompositionPackage.eNS_URI) instanceof CompositionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CompositionPackage.eNS_URI) : CompositionPackage.eINSTANCE);
 		CodePackageImpl theCodePackage = (CodePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CodePackage.eNS_URI) instanceof CodePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CodePackage.eNS_URI) : CodePackage.eINSTANCE);
+		EmodelPackageImpl theEmodelPackage = (EmodelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EmodelPackage.eNS_URI) instanceof EmodelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EmodelPackage.eNS_URI) : EmodelPackage.eINSTANCE);
+		TypesPackageImpl theTypesPackage = (TypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) instanceof TypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) : TypesPackage.eINSTANCE);
+		ExpressionsPackageImpl theExpressionsPackage = (ExpressionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI) instanceof ExpressionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI) : ExpressionsPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theAssemblerPackage.createPackageContents();
@@ -141,6 +150,9 @@ public class AssemblerPackageImpl extends EPackageImpl implements AssemblerPacka
 		theDatatypesPackage.createPackageContents();
 		theCompositionPackage.createPackageContents();
 		theCodePackage.createPackageContents();
+		theEmodelPackage.createPackageContents();
+		theTypesPackage.createPackageContents();
+		theExpressionsPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theAssemblerPackage.initializePackageContents();
@@ -154,6 +166,9 @@ public class AssemblerPackageImpl extends EPackageImpl implements AssemblerPacka
 		theDatatypesPackage.initializePackageContents();
 		theCompositionPackage.initializePackageContents();
 		theCodePackage.initializePackageContents();
+		theEmodelPackage.initializePackageContents();
+		theTypesPackage.initializePackageContents();
+		theExpressionsPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theAssemblerPackage.freeze();

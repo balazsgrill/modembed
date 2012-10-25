@@ -6,7 +6,7 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: hu.modembed.model.application,
  hu.modembed.model.application.code,
  hu.modembed.model.application.code.impl,
@@ -50,6 +50,5 @@ Export-Package: hu.modembed.model.application,
  hu.modembed.model.network.rs232.util,
  hu.modembed.model.network.util
 Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.emf.ecore;visibility:=reexport,
- hu.modembed.model;visibility:=reexport
+ org.eclipse.emf.ecore;visibility:=reexport
 Bundle-ActivationPolicy: lazy
