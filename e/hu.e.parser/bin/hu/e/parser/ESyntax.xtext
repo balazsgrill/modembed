@@ -1,0 +1,285 @@
+grammar hu.e.parser.ESyntax with org.eclipse.xtext.common.Terminals
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+generate eSyntax "http://www.e.hu/parser/ESyntax"
+
+CompilationUnit:
+	/*Module |*/ Library /* | LinkedBinary /*| Interface*/
+;	
+
+LibraryName:
+	ID ('.' ID)*
+;
+
+QualifiedName:
+	(LibraryName '::')? ID
+;
+
+//ReferenceID:
+//	ID ('->' ID)*
+//;
+
+/***********************
+ * LITERALS *
+ ***********************/
+
+terminal HEXINT returns ecore::EInt: '0x'('0'..'9'|'a'..'f'|'A'..'F')+;
+
+terminal BINARY returns ecore::EInt: 'b'('0'|'1')+;
+
+terminal REAL returns ecore::EBigDecimal: INT '.' INT?;
+
+LITERAL: (INT | HEXINT | BINARY | REAL);
+
+/**********************
+ * Annotations
+ ***********************/
+
+AnnotationDefinition:
+	'annotation' name=ID
+;
+
+Annotation:
+	'#' definition=ID
+;
+
+/***********************
+ * LIBRARY *
+ ***********************/
+
+Library:
+	'library' name=LibraryName
+	//('overrides' overrides+=[Library|QualifiedName] (',' overrides+=[Library|QualifiedName])*)?
+	';'
+	('use' use+=LibraryName';')*
+	(items+=LibraryItem)*
+;
+
+LibraryItem:
+	Type | Operation | Variable';' | 
+	ConstantVariable';' | RegisterVariable';' 
+	| AnnotationDefinition ';'
+	;
+
+/***********************
+ * DATATYPES *
+ ***********************/	
+Type:
+	'type' name=ID '=' def=TypeDef ';';
+
+TypeDef:
+	DataTypeDef | StructTypeDef | PointerTypeDef | ArrayTypeDef | RefTypeDef | UnspecifiedTypeDef
+;
+	
+UnspecifiedTypeDef :
+	{UnspecifiedTypeDef} 'void'
+;	
+	
+PointerTypeDef:
+	 'pointer' '<'def=TypeDef'>'
+;	
+	
+ArrayTypeDef:
+	'array' '<' def=TypeDef '>' ('[' size=XExpression ']')?
+;
+
+RefTypeDef:
+	type=QualifiedName
+;	
+	
+DataTypeDef:
+	IntegerDataTypeDef | FixedDataTypeDef //| FloatDataTypeDef
+	;
+
+//FloatDataTypeDef:
+//	'float' bits=INT 'bits'
+//;
+
+FixedDataTypeDef:
+	'fixed' bits=INT 'bits' 'scale' '=' scale=REAL
+;
+
+IntegerDataTypeDef:
+	kind=IntegerKind bits=INT 'bits'
+;
+
+enum IntegerKind:
+	UNSIGNED='unsigned' | SIGNED='signed'
+;
+	
+StructTypeDef:
+	{StructTypeDef} 'struct' '{'
+		(members += StructTypeDefMember)
+		(',' members += StructTypeDefMember)*
+	'}';
+
+StructTypeDefMember returns Variable:
+	{StructTypeDefMember} type=TypeDef name=ID
+;
+
+/*************************
+ * GLOBAL VARIABLES
+ *************************/
+
+ConstantVariable returns Variable: 
+	{ConstantVariable} 'const' type=TypeDef name=ID '=' value=XExpression
+;
+
+RegisterVariable returns Variable:
+	{RegisterVariable} 'reg' type=TypeDef name=ID ':' addr=XExpression
+;
+
+/***********************
+ * Operation *
+ ***********************/
+
+OperationStep:
+	Label | (Variable';') | XTopLevelExpression
+;
+
+Label returns Variable:
+	{Label} 'label' name=ID ';'
+;
+
+Variable:
+	type=TypeDef name=ID
+;
+
+VariableReference:
+	var=QualifiedName
+;
+
+OperationCall:
+	operation=QualifiedName '('
+		(params+=OperationCallParameter (',' params+=OperationCallParameter)*)?
+	')'
+;
+
+OperationCallParameter:
+	XExpression
+;
+
+Operation:
+	{Operation} name=ID (overrides=QualifiedName)? '('
+		(params+=ParameterVariable (',' params+=ParameterVariable)*)?
+	')'
+	content = XExpression 
+	 ('returns' (return=XExpression | returnvar=Variable) ';')?
+;
+
+ParameterVariable returns Variable:
+	{ParameterVariable} lazy?='lazy' (kind=ParameterKind)? name=ID ('=' default=LITERAL)?  
+;
+
+enum ParameterKind:
+	ANY='default' | VAR='var' | CONST='const'
+;
+
+/********************
+ * INFIX SYNTAX
+ **********************/
+ 
+XExpression:
+	XExpression6 (':' type=TypeDef)?;
+
+XExpressionBlock:
+	'{' {OperationBlock} (steps+=OperationStep)* '}'
+;
+
+XPrimaryExpression:
+	XExpressionLiteral | XParenthesizedExpression | XIsLiteralExpression | VariableReference | OperationCall
+	 | XStructExpression | XSizeOfExpression | XExpressionBlock
+;
+
+XSizeOfExpression:
+	'sizeof' '(' type = TypeDef ')'
+;
+
+XStructExpression:
+	'[' values+=XExpression (',' values+=XExpression)* (',')? ']'
+;
+
+XExpression1:
+	(operator += UNARY_OPERATOR)* a=XExpression0
+;
+
+XExpression0:
+	a=XExpressionM1 ('->' member+=ID)*
+;
+
+XExpressionM1:
+	a=XPrimaryExpression ('[' index+=XExpression ']')*
+;
+
+enum UNARY_OPERATOR:
+	MINUS='-' | NOT='!' | REFERENCE='&' | DEREFERENCE='@'
+;
+
+XExpression2:
+	a = XExpression1 (=> op+=MULTIPLICATIVE_OPERATOR b+= XExpression2)*
+;
+
+enum MULTIPLICATIVE_OPERATOR:
+	MUL='*' | DIV='/' | MOD='%'
+;
+
+XExpression3:
+	a = XExpression2 (=> op+=ADDITIVE_OPERATOR b+= XExpression2)*
+;
+
+enum ADDITIVE_OPERATOR:
+	ADD='+' | 
+	MINUS='-'
+;
+
+XExpression4:
+	a = XExpression3 (=> op+=EQUALITY_OPERATOR b+=XExpression3)*
+;
+
+enum EQUALITY_OPERATOR:
+	EQUALS='==' | NOTEQUALS='!=' | GTE='>=' | LTE='<=' | GT='>' | LT='<'
+;
+
+XExpression5:
+	a = XExpression4 (=> op+=BOOLEAN_OPERATOR b+=XExpression4)*
+;
+
+XExpression6:
+	(ref=VariableReference op=OpSingleAssign)? a=XExpression5
+;
+
+enum BOOLEAN_OPERATOR:
+	OR='||' | AND='&&' 
+;
+
+XExpressionLiteral:
+	value=LITERAL
+;
+
+XTopLevelExpression:
+	Annotation ';' | XExpression ';' | XErrorExpression ';' 
+;
+
+XErrorExpression:
+	level=ErrorLevels msg=STRING ';'
+;
+
+enum ErrorLevels:
+	ERROR = 'error' | WARNING = 'warning' | INFO = 'info'
+;
+
+enum OpSingleAssign:
+	ASSIGN = '=' | ASSIGNADD= '+=' | ASSIGNSUBTRACT = '-='
+;
+
+XIsLiteralExpression:
+	'isliteral' '('
+		ref = VariableReference
+	')'
+;
+
+XParenthesizedExpression:
+	'(' a=XExpression ')';
+
+	

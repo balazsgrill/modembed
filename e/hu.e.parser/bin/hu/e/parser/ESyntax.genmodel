@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/hu.e.parser/src-gen" editDirectory="/hu.e.parser.edit/src"
+    editorDirectory="/hu.e.parser.editor/src" modelPluginID="hu.e.parser" forceOverwrite="true"
+    modelName="ESyntax" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="hu.e.parser.edit"
+    editorPluginID="hu.e.parser.editor" runtimeVersion="2.8">
+  <genPackages prefix="ESyntax" basePackage="hu.e.parser" disposableProviderFactory="true"
+      ecorePackage="ESyntax.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ESyntax.ecore#//IntegerKind">
+      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//IntegerKind/UNSIGNED"/>
+      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//IntegerKind/SIGNED"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ESyntax.ecore#//ParameterKind">
+      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//ParameterKind/ANY"/>
+      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//ParameterKind/VAR"/>
+      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//ParameterKind/CONST"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ESyntax.ecore#//UNARY_OPERATOR">
+      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//UNARY_OPERATOR/MINUS"/>
+      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//UNARY_OPERATOR/NOT"/>
+      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//UNARY_OPERATOR/REFERENCE"/>
+      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//UNARY_OPERATOR/DEREFERENCE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ESyntax.ecore#//MULTIPLICATIVE_OPERATOR">
+      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//MULTIPLICATIVE_OPERATOR/MUL"/>
+      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//MULTIPLICATIVE_OPERATOR/DIV"/>
+      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//MULTIPLICATIVE_OPERATOR/MOD"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ESyntax.ecore#//ADDITIVE_OPERATOR">
+      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//ADDITIVE_OPERATOR/ADD"/>
+      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//ADDITIVE_OPERATOR/MINUS"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ESyntax.ecore#//EQUALITY_OPERATOR">
+      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//EQUALITY_OPERATOR/EQUALS"/>
+      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//EQUALITY_OPERATOR/NOTEQUALS"/>
+      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//EQUALITY_OPERATOR/GTE"/>
+      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//EQUALITY_OPERATOR/LTE"/>
+      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//EQUALITY_OPERATOR/GT"/>
+      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//EQUALITY_OPERATOR/LT"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ESyntax.ecore#//BOOLEAN_OPERATOR">
+      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//BOOLEAN_OPERATOR/OR"/>
+      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//BOOLEAN_OPERATOR/AND"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ESyntax.ecore#//ErrorLevels">
+      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//ErrorLevels/ERROR"/>
+      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//ErrorLevels/WARNING"/>
+      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//ErrorLevels/INFO"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ESyntax.ecore#//OpSingleAssign">
+      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//OpSingleAssign/ASSIGN"/>
+      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//OpSingleAssign/ASSIGNADD"/>
+      <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//OpSingleAssign/ASSIGNSUBTRACT"/>
+    </genEnums>
+    <genClasses ecoreClass="ESyntax.ecore#//CompilationUnit"/>
+    <genClasses ecoreClass="ESyntax.ecore#//AnnotationDefinition"/>
+    <genClasses ecoreClass="ESyntax.ecore#//Annotation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//Annotation/definition"/>
+    </genClasses>
+    <genClasses ecoreClass="ESyntax.ecore#//Library">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//Library/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//Library/use"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//Library/items"/>
+    </genClasses>
+    <genClasses ecoreClass="ESyntax.ecore#//LibraryItem">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//LibraryItem/name"/>
+    </genClasses>
+    <genClasses ecoreClass="ESyntax.ecore#//Type">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//Type/def"/>
+    </genClasses>
+    <genClasses ecoreClass="ESyntax.ecore#//TypeDef"/>
+    <genClasses ecoreClass="ESyntax.ecore#//UnspecifiedTypeDef"/>
+    <genClasses ecoreClass="ESyntax.ecore#//PointerTypeDef">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//PointerTypeDef/def"/>
+    </genClasses>
+    <genClasses ecoreClass="ESyntax.ecore#//ArrayTypeDef">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//ArrayTypeDef/def"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//ArrayTypeDef/size"/>
+    </genClasses>
+    <genClasses ecoreClass="ESyntax.ecore#//RefTypeDef">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//RefTypeDef/type"/>
+    </genClasses>
+    <genClasses ecoreClass="ESyntax.ecore#//DataTypeDef">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//DataTypeDef/bits"/>
+    </genClasses>
+    <genClasses ecoreClass="ESyntax.ecore#//FixedDataTypeDef">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//FixedDataTypeDef/scale"/>
+    </genClasses>
+    <genClasses ecoreClass="ESyntax.ecore#//IntegerDataTypeDef">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//IntegerDataTypeDef/kind"/>
+    </genClasses>
+    <genClasses ecoreClass="ESyntax.ecore#//StructTypeDef">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//StructTypeDef/members"/>
+    </genClasses>
+    <genClasses ecoreClass="ESyntax.ecore#//Variable">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//Variable/type"/>
+    </genClasses>
+    <genClasses ecoreClass="ESyntax.ecore#//OperationStep"/>
+    <genClasses ecoreClass="ESyntax.ecore#//VariableReference">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//VariableReference/var"/>
+    </genClasses>
+    <genClasses ecoreClass="ESyntax.ecore#//OperationCall">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//OperationCall/operation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//OperationCall/params"/>
+    </genClasses>
+    <genClasses ecoreClass="ESyntax.ecore#//OperationCallParameter"/>
+    <genClasses ecoreClass="ESyntax.ecore#//Operation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//Operation/overrides"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//Operation/params"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//Operation/content"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//Operation/return"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//Operation/returnvar"/>
+    </genClasses>
+    <genClasses ecoreClass="ESyntax.ecore#//XExpression"/>
+    <genClasses ecoreClass="ESyntax.ecore#//XExpressionBlock"/>
+    <genClasses ecoreClass="ESyntax.ecore#//XPrimaryExpression"/>
+    <genClasses ecoreClass="ESyntax.ecore#//XSizeOfExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XSizeOfExpression/type"/>
+    </genClasses>
+    <genClasses ecoreClass="ESyntax.ecore#//XStructExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XStructExpression/values"/>
+    </genClasses>
+    <genClasses ecoreClass="ESyntax.ecore#//XExpression1">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//XExpression1/operator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XExpression1/a"/>
+    </genClasses>
+    <genClasses ecoreClass="ESyntax.ecore#//XExpression0">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XExpression0/a"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//XExpression0/member"/>
+    </genClasses>
+    <genClasses ecoreClass="ESyntax.ecore#//XExpressionM1">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XExpressionM1/a"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XExpressionM1/index"/>
+    </genClasses>
+    <genClasses ecoreClass="ESyntax.ecore#//XExpression2">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XExpression2/a"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//XExpression2/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XExpression2/b"/>
+    </genClasses>
+    <genClasses ecoreClass="ESyntax.ecore#//XExpression3">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XExpression3/a"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//XExpression3/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XExpression3/b"/>
+    </genClasses>
+    <genClasses ecoreClass="ESyntax.ecore#//XExpression4">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XExpression4/a"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//XExpression4/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XExpression4/b"/>
+    </genClasses>
+    <genClasses ecoreClass="ESyntax.ecore#//XExpression5">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XExpression5/a"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//XExpression5/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XExpression5/b"/>
+    </genClasses>
+    <genClasses ecoreClass="ESyntax.ecore#//XExpression6">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XExpression6/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XExpression6/ref"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//XExpression6/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XExpression6/a"/>
+    </genClasses>
+    <genClasses ecoreClass="ESyntax.ecore#//XExpressionLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//XExpressionLiteral/value"/>
+    </genClasses>
+    <genClasses ecoreClass="ESyntax.ecore#//XTopLevelExpression"/>
+    <genClasses ecoreClass="ESyntax.ecore#//XErrorExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//XErrorExpression/level"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//XErrorExpression/msg"/>
+    </genClasses>
+    <genClasses ecoreClass="ESyntax.ecore#//XIsLiteralExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XIsLiteralExpression/ref"/>
+    </genClasses>
+    <genClasses ecoreClass="ESyntax.ecore#//XParenthesizedExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//XParenthesizedExpression/a"/>
+    </genClasses>
+    <genClasses ecoreClass="ESyntax.ecore#//StructTypeDefMember"/>
+    <genClasses ecoreClass="ESyntax.ecore#//ConstantVariable">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//ConstantVariable/value"/>
+    </genClasses>
+    <genClasses ecoreClass="ESyntax.ecore#//RegisterVariable">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//RegisterVariable/addr"/>
+    </genClasses>
+    <genClasses ecoreClass="ESyntax.ecore#//Label"/>
+    <genClasses ecoreClass="ESyntax.ecore#//ParameterVariable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//ParameterVariable/lazy"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//ParameterVariable/kind"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//ParameterVariable/default"/>
+    </genClasses>
+    <genClasses ecoreClass="ESyntax.ecore#//OperationBlock">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//OperationBlock/steps"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
