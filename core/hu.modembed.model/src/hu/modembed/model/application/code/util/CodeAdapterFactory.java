@@ -1,18 +1,10 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package hu.modembed.model.application.code.util;
 
 import hu.modembed.model.application.Component;
 
 import hu.modembed.model.application.code.*;
-
-import hu.modembed.model.core.MODembedElement;
-import hu.modembed.model.core.NamedElement;
-import hu.modembed.model.core.PackagedElement;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
@@ -82,18 +74,6 @@ public class CodeAdapterFactory extends AdapterFactoryImpl {
 				return createCodeComponentAdapter();
 			}
 			@Override
-			public Adapter caseMODembedElement(MODembedElement object) {
-				return createMODembedElementAdapter();
-			}
-			@Override
-			public Adapter caseNamedElement(NamedElement object) {
-				return createNamedElementAdapter();
-			}
-			@Override
-			public Adapter casePackagedElement(PackagedElement object) {
-				return createPackagedElementAdapter();
-			}
-			@Override
 			public Adapter caseComponent(Component object) {
 				return createComponentAdapter();
 			}
@@ -128,48 +108,6 @@ public class CodeAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCodeComponentAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link hu.modembed.model.core.MODembedElement <em>MO Dembed Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see hu.modembed.model.core.MODembedElement
-	 * @generated
-	 */
-	public Adapter createMODembedElementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link hu.modembed.model.core.NamedElement <em>Named Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see hu.modembed.model.core.NamedElement
-	 * @generated
-	 */
-	public Adapter createNamedElementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link hu.modembed.model.core.PackagedElement <em>Packaged Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see hu.modembed.model.core.PackagedElement
-	 * @generated
-	 */
-	public Adapter createPackagedElementAdapter() {
 		return null;
 	}
 

@@ -2,6 +2,8 @@
  */
 package hu.modembed.model.emodel.expressions;
 
+import hu.modembed.model.core.CorePackage;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -67,13 +69,31 @@ public interface ExpressionsPackage extends EPackage {
 	int EXECUTION_STEP = 2;
 
 	/**
+	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXECUTION_STEP__ORIGINS = CorePackage.MO_DEMBED_ELEMENT__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXECUTION_STEP__DESCRIPTION = CorePackage.MO_DEMBED_ELEMENT__DESCRIPTION;
+
+	/**
 	 * The number of structural features of the '<em>Execution Step</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTION_STEP_FEATURE_COUNT = 0;
+	int EXECUTION_STEP_FEATURE_COUNT = CorePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link hu.modembed.model.emodel.expressions.impl.ExpressionImpl <em>Expression</em>}' class.
@@ -86,6 +106,24 @@ public interface ExpressionsPackage extends EPackage {
 	int EXPRESSION = 0;
 
 	/**
+	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPRESSION__ORIGINS = EXECUTION_STEP__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPRESSION__DESCRIPTION = EXECUTION_STEP__DESCRIPTION;
+
+	/**
 	 * The number of structural features of the '<em>Expression</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -95,115 +133,105 @@ public interface ExpressionsPackage extends EPackage {
 	int EXPRESSION_FEATURE_COUNT = EXECUTION_STEP_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link hu.modembed.model.emodel.expressions.impl.InstructionImpl <em>Instruction</em>}' class.
+	 * The meta object id for the '{@link hu.modembed.model.emodel.expressions.impl.CallImpl <em>Call</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see hu.modembed.model.emodel.expressions.impl.InstructionImpl
-	 * @see hu.modembed.model.emodel.expressions.impl.ExpressionsPackageImpl#getInstruction()
+	 * @see hu.modembed.model.emodel.expressions.impl.CallImpl
+	 * @see hu.modembed.model.emodel.expressions.impl.ExpressionsPackageImpl#getCall()
 	 * @generated
 	 */
-	int INSTRUCTION = 1;
+	int CALL = 5;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' containment reference.
+	 * The feature id for the '<em><b>Origins</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INSTRUCTION__VALUE = EXECUTION_STEP_FEATURE_COUNT + 0;
+	int CALL__ORIGINS = EXPRESSION__ORIGINS;
 
 	/**
-	 * The number of structural features of the '<em>Instruction</em>' class.
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INSTRUCTION_FEATURE_COUNT = EXECUTION_STEP_FEATURE_COUNT + 1;
+	int CALL__DESCRIPTION = EXPRESSION__DESCRIPTION;
 
 	/**
-	 * The meta object id for the '{@link hu.modembed.model.emodel.expressions.impl.BinaryExpressionImpl <em>Binary Expression</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see hu.modembed.model.emodel.expressions.impl.BinaryExpressionImpl
-	 * @see hu.modembed.model.emodel.expressions.impl.ExpressionsPackageImpl#getBinaryExpression()
-	 * @generated
-	 */
-	int BINARY_EXPRESSION = 3;
-
-	/**
-	 * The feature id for the '<em><b>Left Operand</b></em>' containment reference.
+	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BINARY_EXPRESSION__LEFT_OPERAND = EXPRESSION_FEATURE_COUNT + 0;
+	int CALL__PARAMETERS = EXPRESSION_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Right Operand</b></em>' containment reference.
+	 * The number of structural features of the '<em>Call</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BINARY_EXPRESSION__RIGHT_OPERAND = EXPRESSION_FEATURE_COUNT + 1;
+	int CALL_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Operator</b></em>' attribute.
+	 * The meta object id for the '{@link hu.modembed.model.emodel.expressions.impl.InstructionCallImpl <em>Instruction Call</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.modembed.model.emodel.expressions.impl.InstructionCallImpl
+	 * @see hu.modembed.model.emodel.expressions.impl.ExpressionsPackageImpl#getInstructionCall()
+	 * @generated
+	 */
+	int INSTRUCTION_CALL = 1;
+
+	/**
+	 * The feature id for the '<em><b>Origins</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BINARY_EXPRESSION__OPERATOR = EXPRESSION_FEATURE_COUNT + 2;
+	int INSTRUCTION_CALL__ORIGINS = CALL__ORIGINS;
 
 	/**
-	 * The number of structural features of the '<em>Binary Expression</em>' class.
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BINARY_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 3;
+	int INSTRUCTION_CALL__DESCRIPTION = CALL__DESCRIPTION;
 
 	/**
-	 * The meta object id for the '{@link hu.modembed.model.emodel.expressions.impl.UnaryExpressionImpl <em>Unary Expression</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see hu.modembed.model.emodel.expressions.impl.UnaryExpressionImpl
-	 * @see hu.modembed.model.emodel.expressions.impl.ExpressionsPackageImpl#getUnaryExpression()
-	 * @generated
-	 */
-	int UNARY_EXPRESSION = 4;
-
-	/**
-	 * The feature id for the '<em><b>Operand</b></em>' containment reference.
+	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNARY_EXPRESSION__OPERAND = EXPRESSION_FEATURE_COUNT + 0;
+	int INSTRUCTION_CALL__PARAMETERS = CALL__PARAMETERS;
 
 	/**
-	 * The feature id for the '<em><b>Operator</b></em>' attribute.
+	 * The feature id for the '<em><b>Instruction</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNARY_EXPRESSION__OPERATOR = EXPRESSION_FEATURE_COUNT + 1;
+	int INSTRUCTION_CALL__INSTRUCTION = CALL_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Unary Expression</em>' class.
+	 * The number of structural features of the '<em>Instruction Call</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNARY_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
+	int INSTRUCTION_CALL_FEATURE_COUNT = CALL_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link hu.modembed.model.emodel.expressions.impl.LiteralExpressionImpl <em>Literal Expression</em>}' class.
@@ -213,7 +241,25 @@ public interface ExpressionsPackage extends EPackage {
 	 * @see hu.modembed.model.emodel.expressions.impl.ExpressionsPackageImpl#getLiteralExpression()
 	 * @generated
 	 */
-	int LITERAL_EXPRESSION = 5;
+	int LITERAL_EXPRESSION = 3;
+
+	/**
+	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LITERAL_EXPRESSION__ORIGINS = EXPRESSION__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LITERAL_EXPRESSION__DESCRIPTION = EXPRESSION__DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -241,7 +287,25 @@ public interface ExpressionsPackage extends EPackage {
 	 * @see hu.modembed.model.emodel.expressions.impl.ExpressionsPackageImpl#getExecutionBlock()
 	 * @generated
 	 */
-	int EXECUTION_BLOCK = 6;
+	int EXECUTION_BLOCK = 4;
+
+	/**
+	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXECUTION_BLOCK__ORIGINS = EXECUTION_STEP__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXECUTION_BLOCK__DESCRIPTION = EXECUTION_STEP__DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Steps</b></em>' containment reference list.
@@ -262,43 +326,6 @@ public interface ExpressionsPackage extends EPackage {
 	int EXECUTION_BLOCK_FEATURE_COUNT = EXECUTION_STEP_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link hu.modembed.model.emodel.expressions.impl.FunctionCallImpl <em>Function Call</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see hu.modembed.model.emodel.expressions.impl.FunctionCallImpl
-	 * @see hu.modembed.model.emodel.expressions.impl.ExpressionsPackageImpl#getFunctionCall()
-	 * @generated
-	 */
-	int FUNCTION_CALL = 7;
-
-	/**
-	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FUNCTION_CALL__PARAMETERS = EXPRESSION_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Function</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FUNCTION_CALL__FUNCTION = EXPRESSION_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Function Call</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FUNCTION_CALL_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
-
-	/**
 	 * The meta object id for the '{@link hu.modembed.model.emodel.expressions.impl.VariableReferenceImpl <em>Variable Reference</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -306,7 +333,25 @@ public interface ExpressionsPackage extends EPackage {
 	 * @see hu.modembed.model.emodel.expressions.impl.ExpressionsPackageImpl#getVariableReference()
 	 * @generated
 	 */
-	int VARIABLE_REFERENCE = 8;
+	int VARIABLE_REFERENCE = 6;
+
+	/**
+	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIABLE_REFERENCE__ORIGINS = EXPRESSION__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIABLE_REFERENCE__DESCRIPTION = EXPRESSION__DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Variable</b></em>' reference.
@@ -334,7 +379,25 @@ public interface ExpressionsPackage extends EPackage {
 	 * @see hu.modembed.model.emodel.expressions.impl.ExpressionsPackageImpl#getPrimitiveLiteralExpression()
 	 * @generated
 	 */
-	int PRIMITIVE_LITERAL_EXPRESSION = 9;
+	int PRIMITIVE_LITERAL_EXPRESSION = 7;
+
+	/**
+	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRIMITIVE_LITERAL_EXPRESSION__ORIGINS = LITERAL_EXPRESSION__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRIMITIVE_LITERAL_EXPRESSION__DESCRIPTION = LITERAL_EXPRESSION__DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -362,7 +425,25 @@ public interface ExpressionsPackage extends EPackage {
 	 * @see hu.modembed.model.emodel.expressions.impl.ExpressionsPackageImpl#getIntegerLiteralExpression()
 	 * @generated
 	 */
-	int INTEGER_LITERAL_EXPRESSION = 10;
+	int INTEGER_LITERAL_EXPRESSION = 8;
+
+	/**
+	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTEGER_LITERAL_EXPRESSION__ORIGINS = PRIMITIVE_LITERAL_EXPRESSION__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTEGER_LITERAL_EXPRESSION__DESCRIPTION = PRIMITIVE_LITERAL_EXPRESSION__DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -399,7 +480,25 @@ public interface ExpressionsPackage extends EPackage {
 	 * @see hu.modembed.model.emodel.expressions.impl.ExpressionsPackageImpl#getCompilationLogStep()
 	 * @generated
 	 */
-	int COMPILATION_LOG_STEP = 11;
+	int COMPILATION_LOG_STEP = 9;
+
+	/**
+	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPILATION_LOG_STEP__ORIGINS = EXECUTION_STEP__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPILATION_LOG_STEP__DESCRIPTION = EXECUTION_STEP__DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Severity</b></em>' attribute.
@@ -429,24 +528,59 @@ public interface ExpressionsPackage extends EPackage {
 	int COMPILATION_LOG_STEP_FEATURE_COUNT = EXECUTION_STEP_FEATURE_COUNT + 2;
 
 	/**
-	 * The meta object id for the '{@link hu.modembed.model.emodel.expressions.BinaryOperator <em>Binary Operator</em>}' enum.
+	 * The meta object id for the '{@link hu.modembed.model.emodel.expressions.impl.FunctionCallImpl <em>Function Call</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see hu.modembed.model.emodel.expressions.BinaryOperator
-	 * @see hu.modembed.model.emodel.expressions.impl.ExpressionsPackageImpl#getBinaryOperator()
+	 * @see hu.modembed.model.emodel.expressions.impl.FunctionCallImpl
+	 * @see hu.modembed.model.emodel.expressions.impl.ExpressionsPackageImpl#getFunctionCall()
 	 * @generated
 	 */
-	int BINARY_OPERATOR = 12;
+	int FUNCTION_CALL = 10;
 
 	/**
-	 * The meta object id for the '{@link hu.modembed.model.emodel.expressions.UnaryOperator <em>Unary Operator</em>}' enum.
+	 * The feature id for the '<em><b>Origins</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see hu.modembed.model.emodel.expressions.UnaryOperator
-	 * @see hu.modembed.model.emodel.expressions.impl.ExpressionsPackageImpl#getUnaryOperator()
 	 * @generated
+	 * @ordered
 	 */
-	int UNARY_OPERATOR = 13;
+	int FUNCTION_CALL__ORIGINS = CALL__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_CALL__DESCRIPTION = CALL__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_CALL__PARAMETERS = CALL__PARAMETERS;
+
+	/**
+	 * The feature id for the '<em><b>Function</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_CALL__FUNCTION = CALL_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Function Call</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_CALL_FEATURE_COUNT = CALL_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link hu.modembed.model.emodel.expressions.CompilationLogStepSeverity <em>Compilation Log Step Severity</em>}' enum.
@@ -456,7 +590,7 @@ public interface ExpressionsPackage extends EPackage {
 	 * @see hu.modembed.model.emodel.expressions.impl.ExpressionsPackageImpl#getCompilationLogStepSeverity()
 	 * @generated
 	 */
-	int COMPILATION_LOG_STEP_SEVERITY = 14;
+	int COMPILATION_LOG_STEP_SEVERITY = 11;
 
 
 	/**
@@ -470,25 +604,25 @@ public interface ExpressionsPackage extends EPackage {
 	EClass getExpression();
 
 	/**
-	 * Returns the meta object for class '{@link hu.modembed.model.emodel.expressions.Instruction <em>Instruction</em>}'.
+	 * Returns the meta object for class '{@link hu.modembed.model.emodel.expressions.InstructionCall <em>Instruction Call</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Instruction</em>'.
-	 * @see hu.modembed.model.emodel.expressions.Instruction
+	 * @return the meta object for class '<em>Instruction Call</em>'.
+	 * @see hu.modembed.model.emodel.expressions.InstructionCall
 	 * @generated
 	 */
-	EClass getInstruction();
+	EClass getInstructionCall();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link hu.modembed.model.emodel.expressions.Instruction#getValue <em>Value</em>}'.
+	 * Returns the meta object for the reference '{@link hu.modembed.model.emodel.expressions.InstructionCall#getInstruction <em>Instruction</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Value</em>'.
-	 * @see hu.modembed.model.emodel.expressions.Instruction#getValue()
-	 * @see #getInstruction()
+	 * @return the meta object for the reference '<em>Instruction</em>'.
+	 * @see hu.modembed.model.emodel.expressions.InstructionCall#getInstruction()
+	 * @see #getInstructionCall()
 	 * @generated
 	 */
-	EReference getInstruction_Value();
+	EReference getInstructionCall_Instruction();
 
 	/**
 	 * Returns the meta object for class '{@link hu.modembed.model.emodel.expressions.ExecutionStep <em>Execution Step</em>}'.
@@ -499,81 +633,6 @@ public interface ExpressionsPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getExecutionStep();
-
-	/**
-	 * Returns the meta object for class '{@link hu.modembed.model.emodel.expressions.BinaryExpression <em>Binary Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Binary Expression</em>'.
-	 * @see hu.modembed.model.emodel.expressions.BinaryExpression
-	 * @generated
-	 */
-	EClass getBinaryExpression();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link hu.modembed.model.emodel.expressions.BinaryExpression#getLeftOperand <em>Left Operand</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Left Operand</em>'.
-	 * @see hu.modembed.model.emodel.expressions.BinaryExpression#getLeftOperand()
-	 * @see #getBinaryExpression()
-	 * @generated
-	 */
-	EReference getBinaryExpression_LeftOperand();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link hu.modembed.model.emodel.expressions.BinaryExpression#getRightOperand <em>Right Operand</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Right Operand</em>'.
-	 * @see hu.modembed.model.emodel.expressions.BinaryExpression#getRightOperand()
-	 * @see #getBinaryExpression()
-	 * @generated
-	 */
-	EReference getBinaryExpression_RightOperand();
-
-	/**
-	 * Returns the meta object for the attribute '{@link hu.modembed.model.emodel.expressions.BinaryExpression#getOperator <em>Operator</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Operator</em>'.
-	 * @see hu.modembed.model.emodel.expressions.BinaryExpression#getOperator()
-	 * @see #getBinaryExpression()
-	 * @generated
-	 */
-	EAttribute getBinaryExpression_Operator();
-
-	/**
-	 * Returns the meta object for class '{@link hu.modembed.model.emodel.expressions.UnaryExpression <em>Unary Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Unary Expression</em>'.
-	 * @see hu.modembed.model.emodel.expressions.UnaryExpression
-	 * @generated
-	 */
-	EClass getUnaryExpression();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link hu.modembed.model.emodel.expressions.UnaryExpression#getOperand <em>Operand</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Operand</em>'.
-	 * @see hu.modembed.model.emodel.expressions.UnaryExpression#getOperand()
-	 * @see #getUnaryExpression()
-	 * @generated
-	 */
-	EReference getUnaryExpression_Operand();
-
-	/**
-	 * Returns the meta object for the attribute '{@link hu.modembed.model.emodel.expressions.UnaryExpression#getOperator <em>Operator</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Operator</em>'.
-	 * @see hu.modembed.model.emodel.expressions.UnaryExpression#getOperator()
-	 * @see #getUnaryExpression()
-	 * @generated
-	 */
-	EAttribute getUnaryExpression_Operator();
 
 	/**
 	 * Returns the meta object for class '{@link hu.modembed.model.emodel.expressions.LiteralExpression <em>Literal Expression</em>}'.
@@ -618,36 +677,25 @@ public interface ExpressionsPackage extends EPackage {
 	EReference getExecutionBlock_Steps();
 
 	/**
-	 * Returns the meta object for class '{@link hu.modembed.model.emodel.expressions.FunctionCall <em>Function Call</em>}'.
+	 * Returns the meta object for class '{@link hu.modembed.model.emodel.expressions.Call <em>Call</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Function Call</em>'.
-	 * @see hu.modembed.model.emodel.expressions.FunctionCall
+	 * @return the meta object for class '<em>Call</em>'.
+	 * @see hu.modembed.model.emodel.expressions.Call
 	 * @generated
 	 */
-	EClass getFunctionCall();
+	EClass getCall();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link hu.modembed.model.emodel.expressions.FunctionCall#getParameters <em>Parameters</em>}'.
+	 * Returns the meta object for the containment reference list '{@link hu.modembed.model.emodel.expressions.Call#getParameters <em>Parameters</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Parameters</em>'.
-	 * @see hu.modembed.model.emodel.expressions.FunctionCall#getParameters()
-	 * @see #getFunctionCall()
+	 * @see hu.modembed.model.emodel.expressions.Call#getParameters()
+	 * @see #getCall()
 	 * @generated
 	 */
-	EReference getFunctionCall_Parameters();
-
-	/**
-	 * Returns the meta object for the reference '{@link hu.modembed.model.emodel.expressions.FunctionCall#getFunction <em>Function</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Function</em>'.
-	 * @see hu.modembed.model.emodel.expressions.FunctionCall#getFunction()
-	 * @see #getFunctionCall()
-	 * @generated
-	 */
-	EReference getFunctionCall_Function();
+	EReference getCall_Parameters();
 
 	/**
 	 * Returns the meta object for class '{@link hu.modembed.model.emodel.expressions.VariableReference <em>Variable Reference</em>}'.
@@ -734,24 +782,25 @@ public interface ExpressionsPackage extends EPackage {
 	EAttribute getCompilationLogStep_Message();
 
 	/**
-	 * Returns the meta object for enum '{@link hu.modembed.model.emodel.expressions.BinaryOperator <em>Binary Operator</em>}'.
+	 * Returns the meta object for class '{@link hu.modembed.model.emodel.expressions.FunctionCall <em>Function Call</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Binary Operator</em>'.
-	 * @see hu.modembed.model.emodel.expressions.BinaryOperator
+	 * @return the meta object for class '<em>Function Call</em>'.
+	 * @see hu.modembed.model.emodel.expressions.FunctionCall
 	 * @generated
 	 */
-	EEnum getBinaryOperator();
+	EClass getFunctionCall();
 
 	/**
-	 * Returns the meta object for enum '{@link hu.modembed.model.emodel.expressions.UnaryOperator <em>Unary Operator</em>}'.
+	 * Returns the meta object for the reference '{@link hu.modembed.model.emodel.expressions.FunctionCall#getFunction <em>Function</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Unary Operator</em>'.
-	 * @see hu.modembed.model.emodel.expressions.UnaryOperator
+	 * @return the meta object for the reference '<em>Function</em>'.
+	 * @see hu.modembed.model.emodel.expressions.FunctionCall#getFunction()
+	 * @see #getFunctionCall()
 	 * @generated
 	 */
-	EEnum getUnaryOperator();
+	EReference getFunctionCall_Function();
 
 	/**
 	 * Returns the meta object for enum '{@link hu.modembed.model.emodel.expressions.CompilationLogStepSeverity <em>Compilation Log Step Severity</em>}'.
@@ -796,22 +845,22 @@ public interface ExpressionsPackage extends EPackage {
 		EClass EXPRESSION = eINSTANCE.getExpression();
 
 		/**
-		 * The meta object literal for the '{@link hu.modembed.model.emodel.expressions.impl.InstructionImpl <em>Instruction</em>}' class.
+		 * The meta object literal for the '{@link hu.modembed.model.emodel.expressions.impl.InstructionCallImpl <em>Instruction Call</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see hu.modembed.model.emodel.expressions.impl.InstructionImpl
-		 * @see hu.modembed.model.emodel.expressions.impl.ExpressionsPackageImpl#getInstruction()
+		 * @see hu.modembed.model.emodel.expressions.impl.InstructionCallImpl
+		 * @see hu.modembed.model.emodel.expressions.impl.ExpressionsPackageImpl#getInstructionCall()
 		 * @generated
 		 */
-		EClass INSTRUCTION = eINSTANCE.getInstruction();
+		EClass INSTRUCTION_CALL = eINSTANCE.getInstructionCall();
 
 		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Instruction</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference INSTRUCTION__VALUE = eINSTANCE.getInstruction_Value();
+		EReference INSTRUCTION_CALL__INSTRUCTION = eINSTANCE.getInstructionCall_Instruction();
 
 		/**
 		 * The meta object literal for the '{@link hu.modembed.model.emodel.expressions.impl.ExecutionStepImpl <em>Execution Step</em>}' class.
@@ -822,66 +871,6 @@ public interface ExpressionsPackage extends EPackage {
 		 * @generated
 		 */
 		EClass EXECUTION_STEP = eINSTANCE.getExecutionStep();
-
-		/**
-		 * The meta object literal for the '{@link hu.modembed.model.emodel.expressions.impl.BinaryExpressionImpl <em>Binary Expression</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see hu.modembed.model.emodel.expressions.impl.BinaryExpressionImpl
-		 * @see hu.modembed.model.emodel.expressions.impl.ExpressionsPackageImpl#getBinaryExpression()
-		 * @generated
-		 */
-		EClass BINARY_EXPRESSION = eINSTANCE.getBinaryExpression();
-
-		/**
-		 * The meta object literal for the '<em><b>Left Operand</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference BINARY_EXPRESSION__LEFT_OPERAND = eINSTANCE.getBinaryExpression_LeftOperand();
-
-		/**
-		 * The meta object literal for the '<em><b>Right Operand</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference BINARY_EXPRESSION__RIGHT_OPERAND = eINSTANCE.getBinaryExpression_RightOperand();
-
-		/**
-		 * The meta object literal for the '<em><b>Operator</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute BINARY_EXPRESSION__OPERATOR = eINSTANCE.getBinaryExpression_Operator();
-
-		/**
-		 * The meta object literal for the '{@link hu.modembed.model.emodel.expressions.impl.UnaryExpressionImpl <em>Unary Expression</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see hu.modembed.model.emodel.expressions.impl.UnaryExpressionImpl
-		 * @see hu.modembed.model.emodel.expressions.impl.ExpressionsPackageImpl#getUnaryExpression()
-		 * @generated
-		 */
-		EClass UNARY_EXPRESSION = eINSTANCE.getUnaryExpression();
-
-		/**
-		 * The meta object literal for the '<em><b>Operand</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference UNARY_EXPRESSION__OPERAND = eINSTANCE.getUnaryExpression_Operand();
-
-		/**
-		 * The meta object literal for the '<em><b>Operator</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute UNARY_EXPRESSION__OPERATOR = eINSTANCE.getUnaryExpression_Operator();
 
 		/**
 		 * The meta object literal for the '{@link hu.modembed.model.emodel.expressions.impl.LiteralExpressionImpl <em>Literal Expression</em>}' class.
@@ -920,14 +909,14 @@ public interface ExpressionsPackage extends EPackage {
 		EReference EXECUTION_BLOCK__STEPS = eINSTANCE.getExecutionBlock_Steps();
 
 		/**
-		 * The meta object literal for the '{@link hu.modembed.model.emodel.expressions.impl.FunctionCallImpl <em>Function Call</em>}' class.
+		 * The meta object literal for the '{@link hu.modembed.model.emodel.expressions.impl.CallImpl <em>Call</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see hu.modembed.model.emodel.expressions.impl.FunctionCallImpl
-		 * @see hu.modembed.model.emodel.expressions.impl.ExpressionsPackageImpl#getFunctionCall()
+		 * @see hu.modembed.model.emodel.expressions.impl.CallImpl
+		 * @see hu.modembed.model.emodel.expressions.impl.ExpressionsPackageImpl#getCall()
 		 * @generated
 		 */
-		EClass FUNCTION_CALL = eINSTANCE.getFunctionCall();
+		EClass CALL = eINSTANCE.getCall();
 
 		/**
 		 * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
@@ -935,15 +924,7 @@ public interface ExpressionsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference FUNCTION_CALL__PARAMETERS = eINSTANCE.getFunctionCall_Parameters();
-
-		/**
-		 * The meta object literal for the '<em><b>Function</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference FUNCTION_CALL__FUNCTION = eINSTANCE.getFunctionCall_Function();
+		EReference CALL__PARAMETERS = eINSTANCE.getCall_Parameters();
 
 		/**
 		 * The meta object literal for the '{@link hu.modembed.model.emodel.expressions.impl.VariableReferenceImpl <em>Variable Reference</em>}' class.
@@ -1018,24 +999,22 @@ public interface ExpressionsPackage extends EPackage {
 		EAttribute COMPILATION_LOG_STEP__MESSAGE = eINSTANCE.getCompilationLogStep_Message();
 
 		/**
-		 * The meta object literal for the '{@link hu.modembed.model.emodel.expressions.BinaryOperator <em>Binary Operator</em>}' enum.
+		 * The meta object literal for the '{@link hu.modembed.model.emodel.expressions.impl.FunctionCallImpl <em>Function Call</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see hu.modembed.model.emodel.expressions.BinaryOperator
-		 * @see hu.modembed.model.emodel.expressions.impl.ExpressionsPackageImpl#getBinaryOperator()
+		 * @see hu.modembed.model.emodel.expressions.impl.FunctionCallImpl
+		 * @see hu.modembed.model.emodel.expressions.impl.ExpressionsPackageImpl#getFunctionCall()
 		 * @generated
 		 */
-		EEnum BINARY_OPERATOR = eINSTANCE.getBinaryOperator();
+		EClass FUNCTION_CALL = eINSTANCE.getFunctionCall();
 
 		/**
-		 * The meta object literal for the '{@link hu.modembed.model.emodel.expressions.UnaryOperator <em>Unary Operator</em>}' enum.
+		 * The meta object literal for the '<em><b>Function</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see hu.modembed.model.emodel.expressions.UnaryOperator
-		 * @see hu.modembed.model.emodel.expressions.impl.ExpressionsPackageImpl#getUnaryOperator()
 		 * @generated
 		 */
-		EEnum UNARY_OPERATOR = eINSTANCE.getUnaryOperator();
+		EReference FUNCTION_CALL__FUNCTION = eINSTANCE.getFunctionCall_Function();
 
 		/**
 		 * The meta object literal for the '{@link hu.modembed.model.emodel.expressions.CompilationLogStepSeverity <em>Compilation Log Step Severity</em>}' enum.

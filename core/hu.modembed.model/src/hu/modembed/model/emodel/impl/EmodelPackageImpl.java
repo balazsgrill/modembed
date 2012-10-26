@@ -5,28 +5,42 @@ package hu.modembed.model.emodel.impl;
 import hu.modembed.model.application.ApplicationPackage;
 
 import hu.modembed.model.application.code.CodePackage;
+
 import hu.modembed.model.application.code.impl.CodePackageImpl;
+
 import hu.modembed.model.application.composition.CompositionPackage;
+
 import hu.modembed.model.application.composition.impl.CompositionPackageImpl;
-import hu.modembed.model.application.datatypes.DatatypesPackage;
-import hu.modembed.model.application.datatypes.impl.DatatypesPackageImpl;
+
 import hu.modembed.model.application.impl.ApplicationPackageImpl;
+
 import hu.modembed.model.application.interface_.InterfacePackage;
+
 import hu.modembed.model.application.interface_.impl.InterfacePackageImpl;
+
 import hu.modembed.model.comm.CommPackage;
 
 import hu.modembed.model.comm.impl.CommPackageImpl;
+
 import hu.modembed.model.core.CorePackage;
 
 import hu.modembed.model.core.assembler.AssemblerPackage;
+
 import hu.modembed.model.core.assembler.impl.AssemblerPackageImpl;
+
 import hu.modembed.model.core.impl.CorePackageImpl;
+
+import hu.modembed.model.emodel.ConstantVariable;
 import hu.modembed.model.emodel.EmodelFactory;
 import hu.modembed.model.emodel.EmodelPackage;
 import hu.modembed.model.emodel.Function;
 import hu.modembed.model.emodel.FunctionParameter;
 import hu.modembed.model.emodel.FunctionResult;
+import hu.modembed.model.emodel.GlobalVariable;
+import hu.modembed.model.emodel.HeapVariable;
 import hu.modembed.model.emodel.Library;
+import hu.modembed.model.emodel.LibraryElement;
+import hu.modembed.model.emodel.RegisterVariable;
 import hu.modembed.model.emodel.ResultBuffer;
 import hu.modembed.model.emodel.ResultExpression;
 import hu.modembed.model.emodel.Type;
@@ -43,8 +57,11 @@ import hu.modembed.model.emodel.types.impl.TypesPackageImpl;
 import hu.modembed.model.network.NetworkPackage;
 
 import hu.modembed.model.network.impl.NetworkPackageImpl;
+
 import hu.modembed.model.network.rs232.Rs232Package;
+
 import hu.modembed.model.network.rs232.impl.Rs232PackageImpl;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -116,6 +133,41 @@ public class EmodelPackageImpl extends EPackageImpl implements EmodelPackage {
 	private EClass resultExpressionEClass = null;
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass libraryElementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass globalVariableEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass heapVariableEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass registerVariableEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass constantVariableEClass = null;
+
+	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
@@ -170,7 +222,6 @@ public class EmodelPackageImpl extends EPackageImpl implements EmodelPackage {
 		hu.modembed.model.comm.rs232.impl.Rs232PackageImpl theRs232Package_1 = (hu.modembed.model.comm.rs232.impl.Rs232PackageImpl)(EPackage.Registry.INSTANCE.getEPackage(hu.modembed.model.comm.rs232.Rs232Package.eNS_URI) instanceof hu.modembed.model.comm.rs232.impl.Rs232PackageImpl ? EPackage.Registry.INSTANCE.getEPackage(hu.modembed.model.comm.rs232.Rs232Package.eNS_URI) : hu.modembed.model.comm.rs232.Rs232Package.eINSTANCE);
 		ApplicationPackageImpl theApplicationPackage = (ApplicationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI) instanceof ApplicationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI) : ApplicationPackage.eINSTANCE);
 		InterfacePackageImpl theInterfacePackage = (InterfacePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InterfacePackage.eNS_URI) instanceof InterfacePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InterfacePackage.eNS_URI) : InterfacePackage.eINSTANCE);
-		DatatypesPackageImpl theDatatypesPackage = (DatatypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI) instanceof DatatypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI) : DatatypesPackage.eINSTANCE);
 		CompositionPackageImpl theCompositionPackage = (CompositionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CompositionPackage.eNS_URI) instanceof CompositionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CompositionPackage.eNS_URI) : CompositionPackage.eINSTANCE);
 		CodePackageImpl theCodePackage = (CodePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CodePackage.eNS_URI) instanceof CodePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CodePackage.eNS_URI) : CodePackage.eINSTANCE);
 		TypesPackageImpl theTypesPackage = (TypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) instanceof TypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) : TypesPackage.eINSTANCE);
@@ -186,7 +237,6 @@ public class EmodelPackageImpl extends EPackageImpl implements EmodelPackage {
 		theRs232Package_1.createPackageContents();
 		theApplicationPackage.createPackageContents();
 		theInterfacePackage.createPackageContents();
-		theDatatypesPackage.createPackageContents();
 		theCompositionPackage.createPackageContents();
 		theCodePackage.createPackageContents();
 		theTypesPackage.createPackageContents();
@@ -202,7 +252,6 @@ public class EmodelPackageImpl extends EPackageImpl implements EmodelPackage {
 		theRs232Package_1.initializePackageContents();
 		theApplicationPackage.initializePackageContents();
 		theInterfacePackage.initializePackageContents();
-		theDatatypesPackage.initializePackageContents();
 		theCompositionPackage.initializePackageContents();
 		theCodePackage.initializePackageContents();
 		theTypesPackage.initializePackageContents();
@@ -233,6 +282,15 @@ public class EmodelPackageImpl extends EPackageImpl implements EmodelPackage {
 	 */
 	public EReference getLibrary_Uses() {
 		return (EReference)libraryEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getLibrary_Content() {
+		return (EReference)libraryEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -375,6 +433,69 @@ public class EmodelPackageImpl extends EPackageImpl implements EmodelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getLibraryElement() {
+		return libraryElementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getGlobalVariable() {
+		return globalVariableEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getHeapVariable() {
+		return heapVariableEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getRegisterVariable() {
+		return registerVariableEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRegisterVariable_Address() {
+		return (EReference)registerVariableEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getConstantVariable() {
+		return constantVariableEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getConstantVariable_Value() {
+		return (EReference)constantVariableEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EmodelFactory getEmodelFactory() {
 		return (EmodelFactory)getEFactoryInstance();
 	}
@@ -400,6 +521,7 @@ public class EmodelPackageImpl extends EPackageImpl implements EmodelPackage {
 		// Create classes and their features
 		libraryEClass = createEClass(LIBRARY);
 		createEReference(libraryEClass, LIBRARY__USES);
+		createEReference(libraryEClass, LIBRARY__CONTENT);
 
 		typeEClass = createEClass(TYPE);
 		createEReference(typeEClass, TYPE__DEFINITION);
@@ -422,6 +544,18 @@ public class EmodelPackageImpl extends EPackageImpl implements EmodelPackage {
 
 		resultExpressionEClass = createEClass(RESULT_EXPRESSION);
 		createEReference(resultExpressionEClass, RESULT_EXPRESSION__EXPRESSION);
+
+		libraryElementEClass = createEClass(LIBRARY_ELEMENT);
+
+		globalVariableEClass = createEClass(GLOBAL_VARIABLE);
+
+		heapVariableEClass = createEClass(HEAP_VARIABLE);
+
+		registerVariableEClass = createEClass(REGISTER_VARIABLE);
+		createEReference(registerVariableEClass, REGISTER_VARIABLE__ADDRESS);
+
+		constantVariableEClass = createEClass(CONSTANT_VARIABLE);
+		createEReference(constantVariableEClass, CONSTANT_VARIABLE__VALUE);
 	}
 
 	/**
@@ -461,19 +595,27 @@ public class EmodelPackageImpl extends EPackageImpl implements EmodelPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		libraryEClass.getESuperTypes().add(theCorePackage.getPackage());
-		libraryEClass.getESuperTypes().add(theCorePackage.getNamedElement());
-		typeEClass.getESuperTypes().add(theCorePackage.getPackagedElement());
-		functionEClass.getESuperTypes().add(theCorePackage.getPackagedElement());
+		libraryEClass.getESuperTypes().add(theCorePackage.getRootElement());
+		typeEClass.getESuperTypes().add(theCorePackage.getNamedElement());
+		typeEClass.getESuperTypes().add(this.getLibraryElement());
+		functionEClass.getESuperTypes().add(this.getLibraryElement());
 		variableEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		functionParameterEClass.getESuperTypes().add(this.getVariable());
+		functionResultEClass.getESuperTypes().add(theCorePackage.getMODembedElement());
 		resultBufferEClass.getESuperTypes().add(this.getFunctionResult());
 		resultBufferEClass.getESuperTypes().add(this.getVariable());
 		resultExpressionEClass.getESuperTypes().add(this.getFunctionResult());
+		libraryElementEClass.getESuperTypes().add(theCorePackage.getNamedElement());
+		globalVariableEClass.getESuperTypes().add(this.getVariable());
+		globalVariableEClass.getESuperTypes().add(this.getLibraryElement());
+		heapVariableEClass.getESuperTypes().add(this.getGlobalVariable());
+		registerVariableEClass.getESuperTypes().add(this.getGlobalVariable());
+		constantVariableEClass.getESuperTypes().add(this.getGlobalVariable());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(libraryEClass, Library.class, "Library", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLibrary_Uses(), this.getLibrary(), null, "uses", null, 0, -1, Library.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLibrary_Content(), this.getLibraryElement(), null, "content", null, 0, -1, Library.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(typeEClass, Type.class, "Type", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getType_Definition(), theTypesPackage.getTypeDefinition(), null, "definition", null, 1, 1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -496,6 +638,18 @@ public class EmodelPackageImpl extends EPackageImpl implements EmodelPackage {
 
 		initEClass(resultExpressionEClass, ResultExpression.class, "ResultExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getResultExpression_Expression(), theExpressionsPackage.getExpression(), null, "expression", null, 1, 1, ResultExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(libraryElementEClass, LibraryElement.class, "LibraryElement", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(globalVariableEClass, GlobalVariable.class, "GlobalVariable", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(heapVariableEClass, HeapVariable.class, "HeapVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(registerVariableEClass, RegisterVariable.class, "RegisterVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRegisterVariable_Address(), theExpressionsPackage.getExpression(), null, "address", null, 1, 1, RegisterVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(constantVariableEClass, ConstantVariable.class, "ConstantVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getConstantVariable_Value(), theExpressionsPackage.getExpression(), null, "value", null, 1, 1, ConstantVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

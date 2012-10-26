@@ -2,6 +2,8 @@
  */
 package hu.modembed.model.emodel.expressions.util;
 
+import hu.modembed.model.core.MODembedElement;
+
 import hu.modembed.model.emodel.expressions.*;
 
 import org.eclipse.emf.common.notify.Adapter;
@@ -72,20 +74,12 @@ public class ExpressionsAdapterFactory extends AdapterFactoryImpl {
 				return createExpressionAdapter();
 			}
 			@Override
-			public Adapter caseInstruction(Instruction object) {
-				return createInstructionAdapter();
+			public Adapter caseInstructionCall(InstructionCall object) {
+				return createInstructionCallAdapter();
 			}
 			@Override
 			public Adapter caseExecutionStep(ExecutionStep object) {
 				return createExecutionStepAdapter();
-			}
-			@Override
-			public Adapter caseBinaryExpression(BinaryExpression object) {
-				return createBinaryExpressionAdapter();
-			}
-			@Override
-			public Adapter caseUnaryExpression(UnaryExpression object) {
-				return createUnaryExpressionAdapter();
 			}
 			@Override
 			public Adapter caseLiteralExpression(LiteralExpression object) {
@@ -96,8 +90,8 @@ public class ExpressionsAdapterFactory extends AdapterFactoryImpl {
 				return createExecutionBlockAdapter();
 			}
 			@Override
-			public Adapter caseFunctionCall(FunctionCall object) {
-				return createFunctionCallAdapter();
+			public Adapter caseCall(Call object) {
+				return createCallAdapter();
 			}
 			@Override
 			public Adapter caseVariableReference(VariableReference object) {
@@ -114,6 +108,14 @@ public class ExpressionsAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseCompilationLogStep(CompilationLogStep object) {
 				return createCompilationLogStepAdapter();
+			}
+			@Override
+			public Adapter caseFunctionCall(FunctionCall object) {
+				return createFunctionCallAdapter();
+			}
+			@Override
+			public Adapter caseMODembedElement(MODembedElement object) {
+				return createMODembedElementAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -150,16 +152,16 @@ public class ExpressionsAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link hu.modembed.model.emodel.expressions.Instruction <em>Instruction</em>}'.
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.emodel.expressions.InstructionCall <em>Instruction Call</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see hu.modembed.model.emodel.expressions.Instruction
+	 * @see hu.modembed.model.emodel.expressions.InstructionCall
 	 * @generated
 	 */
-	public Adapter createInstructionAdapter() {
+	public Adapter createInstructionCallAdapter() {
 		return null;
 	}
 
@@ -174,34 +176,6 @@ public class ExpressionsAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createExecutionStepAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link hu.modembed.model.emodel.expressions.BinaryExpression <em>Binary Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see hu.modembed.model.emodel.expressions.BinaryExpression
-	 * @generated
-	 */
-	public Adapter createBinaryExpressionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link hu.modembed.model.emodel.expressions.UnaryExpression <em>Unary Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see hu.modembed.model.emodel.expressions.UnaryExpression
-	 * @generated
-	 */
-	public Adapter createUnaryExpressionAdapter() {
 		return null;
 	}
 
@@ -234,16 +208,16 @@ public class ExpressionsAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link hu.modembed.model.emodel.expressions.FunctionCall <em>Function Call</em>}'.
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.emodel.expressions.Call <em>Call</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see hu.modembed.model.emodel.expressions.FunctionCall
+	 * @see hu.modembed.model.emodel.expressions.Call
 	 * @generated
 	 */
-	public Adapter createFunctionCallAdapter() {
+	public Adapter createCallAdapter() {
 		return null;
 	}
 
@@ -300,6 +274,34 @@ public class ExpressionsAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCompilationLogStepAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.emodel.expressions.FunctionCall <em>Function Call</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.modembed.model.emodel.expressions.FunctionCall
+	 * @generated
+	 */
+	public Adapter createFunctionCallAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.core.MODembedElement <em>MO Dembed Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.modembed.model.core.MODembedElement
+	 * @generated
+	 */
+	public Adapter createMODembedElementAdapter() {
 		return null;
 	}
 

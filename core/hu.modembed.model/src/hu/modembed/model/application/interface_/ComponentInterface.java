@@ -1,12 +1,8 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package hu.modembed.model.application.interface_;
 
-import hu.modembed.model.core.PackagedElement;
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,5 +14,5 @@ import hu.modembed.model.core.PackagedElement;
  * @model abstract="true"
  * @generated
  */
-public interface ComponentInterface extends PackagedElement {
+public interface ComponentInterface extends EObject {
 } // ComponentInterface

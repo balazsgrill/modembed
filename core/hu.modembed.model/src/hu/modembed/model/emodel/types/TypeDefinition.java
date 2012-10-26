@@ -2,7 +2,7 @@
  */
 package hu.modembed.model.emodel.types;
 
-import org.eclipse.emf.ecore.EObject;
+import hu.modembed.model.core.MODembedElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,5 +14,5 @@ import org.eclipse.emf.ecore.EObject;
  * @model abstract="true"
  * @generated
  */
-public interface TypeDefinition extends EObject {
+public interface TypeDefinition extends MODembedElement {
 } // TypeDefinition

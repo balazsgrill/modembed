@@ -2,12 +2,12 @@
  */
 package hu.modembed.model.emodel.expressions.impl;
 
+import hu.modembed.model.core.impl.MODembedElementImpl;
+
 import hu.modembed.model.emodel.expressions.ExecutionStep;
 import hu.modembed.model.emodel.expressions.ExpressionsPackage;
 
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *
  * @generated
  */
-public abstract class ExecutionStepImpl extends EObjectImpl implements ExecutionStep {
+public abstract class ExecutionStepImpl extends MODembedElementImpl implements ExecutionStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

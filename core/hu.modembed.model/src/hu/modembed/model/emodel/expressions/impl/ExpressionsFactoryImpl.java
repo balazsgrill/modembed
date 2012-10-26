@@ -57,14 +57,12 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case ExpressionsPackage.INSTRUCTION: return createInstruction();
-			case ExpressionsPackage.BINARY_EXPRESSION: return createBinaryExpression();
-			case ExpressionsPackage.UNARY_EXPRESSION: return createUnaryExpression();
+			case ExpressionsPackage.INSTRUCTION_CALL: return createInstructionCall();
 			case ExpressionsPackage.EXECUTION_BLOCK: return createExecutionBlock();
-			case ExpressionsPackage.FUNCTION_CALL: return createFunctionCall();
 			case ExpressionsPackage.VARIABLE_REFERENCE: return createVariableReference();
 			case ExpressionsPackage.INTEGER_LITERAL_EXPRESSION: return createIntegerLiteralExpression();
 			case ExpressionsPackage.COMPILATION_LOG_STEP: return createCompilationLogStep();
+			case ExpressionsPackage.FUNCTION_CALL: return createFunctionCall();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -78,10 +76,6 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case ExpressionsPackage.BINARY_OPERATOR:
-				return createBinaryOperatorFromString(eDataType, initialValue);
-			case ExpressionsPackage.UNARY_OPERATOR:
-				return createUnaryOperatorFromString(eDataType, initialValue);
 			case ExpressionsPackage.COMPILATION_LOG_STEP_SEVERITY:
 				return createCompilationLogStepSeverityFromString(eDataType, initialValue);
 			default:
@@ -97,10 +91,6 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case ExpressionsPackage.BINARY_OPERATOR:
-				return convertBinaryOperatorToString(eDataType, instanceValue);
-			case ExpressionsPackage.UNARY_OPERATOR:
-				return convertUnaryOperatorToString(eDataType, instanceValue);
 			case ExpressionsPackage.COMPILATION_LOG_STEP_SEVERITY:
 				return convertCompilationLogStepSeverityToString(eDataType, instanceValue);
 			default:
@@ -113,29 +103,9 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Instruction createInstruction() {
-		InstructionImpl instruction = new InstructionImpl();
-		return instruction;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public BinaryExpression createBinaryExpression() {
-		BinaryExpressionImpl binaryExpression = new BinaryExpressionImpl();
-		return binaryExpression;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public UnaryExpression createUnaryExpression() {
-		UnaryExpressionImpl unaryExpression = new UnaryExpressionImpl();
-		return unaryExpression;
+	public InstructionCall createInstructionCall() {
+		InstructionCallImpl instructionCall = new InstructionCallImpl();
+		return instructionCall;
 	}
 
 	/**
@@ -146,16 +116,6 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 	public ExecutionBlock createExecutionBlock() {
 		ExecutionBlockImpl executionBlock = new ExecutionBlockImpl();
 		return executionBlock;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public FunctionCall createFunctionCall() {
-		FunctionCallImpl functionCall = new FunctionCallImpl();
-		return functionCall;
 	}
 
 	/**
@@ -193,39 +153,9 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public BinaryOperator createBinaryOperatorFromString(EDataType eDataType, String initialValue) {
-		BinaryOperator result = BinaryOperator.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertBinaryOperatorToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public UnaryOperator createUnaryOperatorFromString(EDataType eDataType, String initialValue) {
-		UnaryOperator result = UnaryOperator.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertUnaryOperatorToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+	public FunctionCall createFunctionCall() {
+		FunctionCallImpl functionCall = new FunctionCallImpl();
+		return functionCall;
 	}
 
 	/**

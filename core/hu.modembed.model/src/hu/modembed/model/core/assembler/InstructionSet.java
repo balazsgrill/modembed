@@ -2,7 +2,7 @@
  */
 package hu.modembed.model.core.assembler;
 
-import hu.modembed.model.core.PackagedElement;
+import hu.modembed.model.core.RootElement;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -22,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface InstructionSet extends PackagedElement {
+public interface InstructionSet extends RootElement {
 	/**
 	 * Returns the value of the '<em><b>Instructions</b></em>' containment reference list.
 	 * The list contents are of type {@link hu.modembed.model.core.assembler.Instruction}.

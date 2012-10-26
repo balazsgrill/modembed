@@ -2,6 +2,8 @@
  */
 package hu.modembed.model.emodel.expressions.util;
 
+import hu.modembed.model.core.MODembedElement;
+
 import hu.modembed.model.emodel.expressions.*;
 
 import org.eclipse.emf.ecore.EObject;
@@ -70,35 +72,24 @@ public class ExpressionsSwitch<T> extends Switch<T> {
 				Expression expression = (Expression)theEObject;
 				T result = caseExpression(expression);
 				if (result == null) result = caseExecutionStep(expression);
+				if (result == null) result = caseMODembedElement(expression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ExpressionsPackage.INSTRUCTION: {
-				Instruction instruction = (Instruction)theEObject;
-				T result = caseInstruction(instruction);
-				if (result == null) result = caseExecutionStep(instruction);
+			case ExpressionsPackage.INSTRUCTION_CALL: {
+				InstructionCall instructionCall = (InstructionCall)theEObject;
+				T result = caseInstructionCall(instructionCall);
+				if (result == null) result = caseCall(instructionCall);
+				if (result == null) result = caseExpression(instructionCall);
+				if (result == null) result = caseExecutionStep(instructionCall);
+				if (result == null) result = caseMODembedElement(instructionCall);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case ExpressionsPackage.EXECUTION_STEP: {
 				ExecutionStep executionStep = (ExecutionStep)theEObject;
 				T result = caseExecutionStep(executionStep);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ExpressionsPackage.BINARY_EXPRESSION: {
-				BinaryExpression binaryExpression = (BinaryExpression)theEObject;
-				T result = caseBinaryExpression(binaryExpression);
-				if (result == null) result = caseExpression(binaryExpression);
-				if (result == null) result = caseExecutionStep(binaryExpression);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ExpressionsPackage.UNARY_EXPRESSION: {
-				UnaryExpression unaryExpression = (UnaryExpression)theEObject;
-				T result = caseUnaryExpression(unaryExpression);
-				if (result == null) result = caseExpression(unaryExpression);
-				if (result == null) result = caseExecutionStep(unaryExpression);
+				if (result == null) result = caseMODembedElement(executionStep);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -107,6 +98,7 @@ public class ExpressionsSwitch<T> extends Switch<T> {
 				T result = caseLiteralExpression(literalExpression);
 				if (result == null) result = caseExpression(literalExpression);
 				if (result == null) result = caseExecutionStep(literalExpression);
+				if (result == null) result = caseMODembedElement(literalExpression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -114,14 +106,16 @@ public class ExpressionsSwitch<T> extends Switch<T> {
 				ExecutionBlock executionBlock = (ExecutionBlock)theEObject;
 				T result = caseExecutionBlock(executionBlock);
 				if (result == null) result = caseExecutionStep(executionBlock);
+				if (result == null) result = caseMODembedElement(executionBlock);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ExpressionsPackage.FUNCTION_CALL: {
-				FunctionCall functionCall = (FunctionCall)theEObject;
-				T result = caseFunctionCall(functionCall);
-				if (result == null) result = caseExpression(functionCall);
-				if (result == null) result = caseExecutionStep(functionCall);
+			case ExpressionsPackage.CALL: {
+				Call call = (Call)theEObject;
+				T result = caseCall(call);
+				if (result == null) result = caseExpression(call);
+				if (result == null) result = caseExecutionStep(call);
+				if (result == null) result = caseMODembedElement(call);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -130,6 +124,7 @@ public class ExpressionsSwitch<T> extends Switch<T> {
 				T result = caseVariableReference(variableReference);
 				if (result == null) result = caseExpression(variableReference);
 				if (result == null) result = caseExecutionStep(variableReference);
+				if (result == null) result = caseMODembedElement(variableReference);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -139,6 +134,7 @@ public class ExpressionsSwitch<T> extends Switch<T> {
 				if (result == null) result = caseLiteralExpression(primitiveLiteralExpression);
 				if (result == null) result = caseExpression(primitiveLiteralExpression);
 				if (result == null) result = caseExecutionStep(primitiveLiteralExpression);
+				if (result == null) result = caseMODembedElement(primitiveLiteralExpression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -149,6 +145,7 @@ public class ExpressionsSwitch<T> extends Switch<T> {
 				if (result == null) result = caseLiteralExpression(integerLiteralExpression);
 				if (result == null) result = caseExpression(integerLiteralExpression);
 				if (result == null) result = caseExecutionStep(integerLiteralExpression);
+				if (result == null) result = caseMODembedElement(integerLiteralExpression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -156,6 +153,17 @@ public class ExpressionsSwitch<T> extends Switch<T> {
 				CompilationLogStep compilationLogStep = (CompilationLogStep)theEObject;
 				T result = caseCompilationLogStep(compilationLogStep);
 				if (result == null) result = caseExecutionStep(compilationLogStep);
+				if (result == null) result = caseMODembedElement(compilationLogStep);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ExpressionsPackage.FUNCTION_CALL: {
+				FunctionCall functionCall = (FunctionCall)theEObject;
+				T result = caseFunctionCall(functionCall);
+				if (result == null) result = caseCall(functionCall);
+				if (result == null) result = caseExpression(functionCall);
+				if (result == null) result = caseExecutionStep(functionCall);
+				if (result == null) result = caseMODembedElement(functionCall);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -179,17 +187,17 @@ public class ExpressionsSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Instruction</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Instruction Call</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Instruction</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Instruction Call</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseInstruction(Instruction object) {
+	public T caseInstructionCall(InstructionCall object) {
 		return null;
 	}
 
@@ -205,36 +213,6 @@ public class ExpressionsSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseExecutionStep(ExecutionStep object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Binary Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Binary Expression</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseBinaryExpression(BinaryExpression object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Unary Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Unary Expression</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseUnaryExpression(UnaryExpression object) {
 		return null;
 	}
 
@@ -269,17 +247,17 @@ public class ExpressionsSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Function Call</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Call</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Function Call</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Call</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseFunctionCall(FunctionCall object) {
+	public T caseCall(Call object) {
 		return null;
 	}
 
@@ -340,6 +318,36 @@ public class ExpressionsSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseCompilationLogStep(CompilationLogStep object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Function Call</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Function Call</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFunctionCall(FunctionCall object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>MO Dembed Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>MO Dembed Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMODembedElement(MODembedElement object) {
 		return null;
 	}
 

@@ -4,7 +4,7 @@ package hu.modembed.model.core.assembler.util;
 
 import hu.modembed.model.core.MODembedElement;
 import hu.modembed.model.core.NamedElement;
-import hu.modembed.model.core.PackagedElement;
+import hu.modembed.model.core.RootElement;
 
 import hu.modembed.model.core.assembler.*;
 
@@ -73,7 +73,7 @@ public class AssemblerSwitch<T> extends Switch<T> {
 			case AssemblerPackage.INSTRUCTION_SET: {
 				InstructionSet instructionSet = (InstructionSet)theEObject;
 				T result = caseInstructionSet(instructionSet);
-				if (result == null) result = casePackagedElement(instructionSet);
+				if (result == null) result = caseRootElement(instructionSet);
 				if (result == null) result = caseNamedElement(instructionSet);
 				if (result == null) result = caseMODembedElement(instructionSet);
 				if (result == null) result = defaultCase(theEObject);
@@ -152,17 +152,17 @@ public class AssemblerSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Packaged Element</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Root Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Packaged Element</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Root Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePackagedElement(PackagedElement object) {
+	public T caseRootElement(RootElement object) {
 		return null;
 	}
 

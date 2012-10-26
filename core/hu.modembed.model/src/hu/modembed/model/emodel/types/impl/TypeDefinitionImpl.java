@@ -2,12 +2,12 @@
  */
 package hu.modembed.model.emodel.types.impl;
 
+import hu.modembed.model.core.impl.MODembedElementImpl;
+
 import hu.modembed.model.emodel.types.TypeDefinition;
 import hu.modembed.model.emodel.types.TypesPackage;
 
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *
  * @generated
  */
-public abstract class TypeDefinitionImpl extends EObjectImpl implements TypeDefinition {
+public abstract class TypeDefinitionImpl extends MODembedElementImpl implements TypeDefinition {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

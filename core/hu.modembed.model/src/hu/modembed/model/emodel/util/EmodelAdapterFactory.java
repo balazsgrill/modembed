@@ -4,7 +4,7 @@ package hu.modembed.model.emodel.util;
 
 import hu.modembed.model.core.MODembedElement;
 import hu.modembed.model.core.NamedElement;
-import hu.modembed.model.core.PackagedElement;
+import hu.modembed.model.core.RootElement;
 
 import hu.modembed.model.emodel.*;
 
@@ -104,6 +104,26 @@ public class EmodelAdapterFactory extends AdapterFactoryImpl {
 				return createResultExpressionAdapter();
 			}
 			@Override
+			public Adapter caseLibraryElement(LibraryElement object) {
+				return createLibraryElementAdapter();
+			}
+			@Override
+			public Adapter caseGlobalVariable(GlobalVariable object) {
+				return createGlobalVariableAdapter();
+			}
+			@Override
+			public Adapter caseHeapVariable(HeapVariable object) {
+				return createHeapVariableAdapter();
+			}
+			@Override
+			public Adapter caseRegisterVariable(RegisterVariable object) {
+				return createRegisterVariableAdapter();
+			}
+			@Override
+			public Adapter caseConstantVariable(ConstantVariable object) {
+				return createConstantVariableAdapter();
+			}
+			@Override
 			public Adapter caseMODembedElement(MODembedElement object) {
 				return createMODembedElementAdapter();
 			}
@@ -112,12 +132,8 @@ public class EmodelAdapterFactory extends AdapterFactoryImpl {
 				return createNamedElementAdapter();
 			}
 			@Override
-			public Adapter casePackagedElement(PackagedElement object) {
-				return createPackagedElementAdapter();
-			}
-			@Override
-			public Adapter casePackage(hu.modembed.model.core.Package object) {
-				return createPackageAdapter();
+			public Adapter caseRootElement(RootElement object) {
+				return createRootElementAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -252,6 +268,76 @@ public class EmodelAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.emodel.LibraryElement <em>Library Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.modembed.model.emodel.LibraryElement
+	 * @generated
+	 */
+	public Adapter createLibraryElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.emodel.GlobalVariable <em>Global Variable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.modembed.model.emodel.GlobalVariable
+	 * @generated
+	 */
+	public Adapter createGlobalVariableAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.emodel.HeapVariable <em>Heap Variable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.modembed.model.emodel.HeapVariable
+	 * @generated
+	 */
+	public Adapter createHeapVariableAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.emodel.RegisterVariable <em>Register Variable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.modembed.model.emodel.RegisterVariable
+	 * @generated
+	 */
+	public Adapter createRegisterVariableAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.emodel.ConstantVariable <em>Constant Variable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.modembed.model.emodel.ConstantVariable
+	 * @generated
+	 */
+	public Adapter createConstantVariableAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link hu.modembed.model.core.MODembedElement <em>MO Dembed Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -280,30 +366,16 @@ public class EmodelAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link hu.modembed.model.core.PackagedElement <em>Packaged Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.core.RootElement <em>Root Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see hu.modembed.model.core.PackagedElement
+	 * @see hu.modembed.model.core.RootElement
 	 * @generated
 	 */
-	public Adapter createPackagedElementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link hu.modembed.model.core.Package <em>Package</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see hu.modembed.model.core.Package
-	 * @generated
-	 */
-	public Adapter createPackageAdapter() {
+	public Adapter createRootElementAdapter() {
 		return null;
 	}
 

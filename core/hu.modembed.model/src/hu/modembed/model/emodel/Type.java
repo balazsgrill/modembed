@@ -2,7 +2,7 @@
  */
 package hu.modembed.model.emodel;
 
-import hu.modembed.model.core.PackagedElement;
+import hu.modembed.model.core.NamedElement;
 
 import hu.modembed.model.emodel.types.TypeDefinition;
 
@@ -22,7 +22,7 @@ import hu.modembed.model.emodel.types.TypeDefinition;
  * @model
  * @generated
  */
-public interface Type extends PackagedElement {
+public interface Type extends NamedElement, LibraryElement {
 	/**
 	 * Returns the value of the '<em><b>Definition</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

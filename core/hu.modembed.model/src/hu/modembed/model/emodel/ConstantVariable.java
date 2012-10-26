@@ -1,25 +1,26 @@
 /**
  */
-package hu.modembed.model.emodel.expressions;
+package hu.modembed.model.emodel;
 
+import hu.modembed.model.emodel.expressions.Expression;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Instruction</b></em>'.
+ * A representation of the model object '<em><b>Constant Variable</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link hu.modembed.model.emodel.expressions.Instruction#getValue <em>Value</em>}</li>
+ *   <li>{@link hu.modembed.model.emodel.ConstantVariable#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
- * @see hu.modembed.model.emodel.expressions.ExpressionsPackage#getInstruction()
+ * @see hu.modembed.model.emodel.EmodelPackage#getConstantVariable()
  * @model
  * @generated
  */
-public interface Instruction extends ExecutionStep {
+public interface ConstantVariable extends GlobalVariable {
 	/**
 	 * Returns the value of the '<em><b>Value</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -30,14 +31,14 @@ public interface Instruction extends ExecutionStep {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Value</em>' containment reference.
 	 * @see #setValue(Expression)
-	 * @see hu.modembed.model.emodel.expressions.ExpressionsPackage#getInstruction_Value()
+	 * @see hu.modembed.model.emodel.EmodelPackage#getConstantVariable_Value()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	Expression getValue();
 
 	/**
-	 * Sets the value of the '{@link hu.modembed.model.emodel.expressions.Instruction#getValue <em>Value</em>}' containment reference.
+	 * Sets the value of the '{@link hu.modembed.model.emodel.ConstantVariable#getValue <em>Value</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Value</em>' containment reference.
@@ -46,4 +47,4 @@ public interface Instruction extends ExecutionStep {
 	 */
 	void setValue(Expression value);
 
-} // Instruction
+} // ConstantVariable

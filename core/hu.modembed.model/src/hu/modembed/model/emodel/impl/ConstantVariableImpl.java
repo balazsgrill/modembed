@@ -1,10 +1,11 @@
 /**
  */
-package hu.modembed.model.emodel.expressions.impl;
+package hu.modembed.model.emodel.impl;
+
+import hu.modembed.model.emodel.ConstantVariable;
+import hu.modembed.model.emodel.EmodelPackage;
 
 import hu.modembed.model.emodel.expressions.Expression;
-import hu.modembed.model.emodel.expressions.ExpressionsPackage;
-import hu.modembed.model.emodel.expressions.Instruction;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -16,18 +17,18 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Instruction</b></em>'.
+ * An implementation of the model object '<em><b>Constant Variable</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.modembed.model.emodel.expressions.impl.InstructionImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link hu.modembed.model.emodel.impl.ConstantVariableImpl#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class InstructionImpl extends ExecutionStepImpl implements Instruction {
+public class ConstantVariableImpl extends GlobalVariableImpl implements ConstantVariable {
 	/**
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -43,7 +44,7 @@ public class InstructionImpl extends ExecutionStepImpl implements Instruction {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected InstructionImpl() {
+	protected ConstantVariableImpl() {
 		super();
 	}
 
@@ -54,7 +55,7 @@ public class InstructionImpl extends ExecutionStepImpl implements Instruction {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ExpressionsPackage.Literals.INSTRUCTION;
+		return EmodelPackage.Literals.CONSTANT_VARIABLE;
 	}
 
 	/**
@@ -75,7 +76,7 @@ public class InstructionImpl extends ExecutionStepImpl implements Instruction {
 		Expression oldValue = value;
 		value = newValue;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ExpressionsPackage.INSTRUCTION__VALUE, oldValue, newValue);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EmodelPackage.CONSTANT_VARIABLE__VALUE, oldValue, newValue);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -90,14 +91,14 @@ public class InstructionImpl extends ExecutionStepImpl implements Instruction {
 		if (newValue != value) {
 			NotificationChain msgs = null;
 			if (value != null)
-				msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ExpressionsPackage.INSTRUCTION__VALUE, null, msgs);
+				msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EmodelPackage.CONSTANT_VARIABLE__VALUE, null, msgs);
 			if (newValue != null)
-				msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ExpressionsPackage.INSTRUCTION__VALUE, null, msgs);
+				msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EmodelPackage.CONSTANT_VARIABLE__VALUE, null, msgs);
 			msgs = basicSetValue(newValue, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ExpressionsPackage.INSTRUCTION__VALUE, newValue, newValue));
+			eNotify(new ENotificationImpl(this, Notification.SET, EmodelPackage.CONSTANT_VARIABLE__VALUE, newValue, newValue));
 	}
 
 	/**
@@ -108,7 +109,7 @@ public class InstructionImpl extends ExecutionStepImpl implements Instruction {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ExpressionsPackage.INSTRUCTION__VALUE:
+			case EmodelPackage.CONSTANT_VARIABLE__VALUE:
 				return basicSetValue(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -122,7 +123,7 @@ public class InstructionImpl extends ExecutionStepImpl implements Instruction {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ExpressionsPackage.INSTRUCTION__VALUE:
+			case EmodelPackage.CONSTANT_VARIABLE__VALUE:
 				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -136,7 +137,7 @@ public class InstructionImpl extends ExecutionStepImpl implements Instruction {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ExpressionsPackage.INSTRUCTION__VALUE:
+			case EmodelPackage.CONSTANT_VARIABLE__VALUE:
 				setValue((Expression)newValue);
 				return;
 		}
@@ -151,7 +152,7 @@ public class InstructionImpl extends ExecutionStepImpl implements Instruction {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ExpressionsPackage.INSTRUCTION__VALUE:
+			case EmodelPackage.CONSTANT_VARIABLE__VALUE:
 				setValue((Expression)null);
 				return;
 		}
@@ -166,10 +167,10 @@ public class InstructionImpl extends ExecutionStepImpl implements Instruction {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ExpressionsPackage.INSTRUCTION__VALUE:
+			case EmodelPackage.CONSTANT_VARIABLE__VALUE:
 				return value != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //InstructionImpl
+} //ConstantVariableImpl

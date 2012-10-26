@@ -1,16 +1,10 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package hu.modembed.model.comm.impl;
 
 import hu.modembed.model.comm.CommPackage;
 import hu.modembed.model.comm.CommunicationProtocol;
 import hu.modembed.model.comm.Frame;
-
-import hu.modembed.model.core.impl.PackagedElementImpl;
 
 import java.util.Collection;
 
@@ -20,6 +14,8 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -37,7 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public abstract class CommunicationProtocolImpl extends PackagedElementImpl implements CommunicationProtocol {
+public abstract class CommunicationProtocolImpl extends EObjectImpl implements CommunicationProtocol {
 	/**
 	 * The cached value of the '{@link #getFrames() <em>Frames</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

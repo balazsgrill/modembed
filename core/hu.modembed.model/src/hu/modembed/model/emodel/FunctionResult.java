@@ -2,7 +2,7 @@
  */
 package hu.modembed.model.emodel;
 
-import org.eclipse.emf.ecore.EObject;
+import hu.modembed.model.core.MODembedElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,5 +14,5 @@ import org.eclipse.emf.ecore.EObject;
  * @model abstract="true"
  * @generated
  */
-public interface FunctionResult extends EObject {
+public interface FunctionResult extends MODembedElement {
 } // FunctionResult

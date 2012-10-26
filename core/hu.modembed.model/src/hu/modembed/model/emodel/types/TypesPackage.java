@@ -68,13 +68,31 @@ public interface TypesPackage extends EPackage {
 	int TYPE_DEFINITION = 0;
 
 	/**
+	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE_DEFINITION__ORIGINS = CorePackage.MO_DEMBED_ELEMENT__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE_DEFINITION__DESCRIPTION = CorePackage.MO_DEMBED_ELEMENT__DESCRIPTION;
+
+	/**
 	 * The number of structural features of the '<em>Type Definition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_DEFINITION_FEATURE_COUNT = 0;
+	int TYPE_DEFINITION_FEATURE_COUNT = CorePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link hu.modembed.model.emodel.types.impl.PrimitiveTypeDefinitionImpl <em>Primitive Type Definition</em>}' class.
@@ -85,6 +103,24 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 */
 	int PRIMITIVE_TYPE_DEFINITION = 1;
+
+	/**
+	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRIMITIVE_TYPE_DEFINITION__ORIGINS = TYPE_DEFINITION__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRIMITIVE_TYPE_DEFINITION__DESCRIPTION = TYPE_DEFINITION__DESCRIPTION;
 
 	/**
 	 * The number of structural features of the '<em>Primitive Type Definition</em>' class.
@@ -106,6 +142,24 @@ public interface TypesPackage extends EPackage {
 	int COMPOSITE_TYPE_DEFINITION = 2;
 
 	/**
+	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_TYPE_DEFINITION__ORIGINS = TYPE_DEFINITION__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_TYPE_DEFINITION__DESCRIPTION = TYPE_DEFINITION__DESCRIPTION;
+
+	/**
 	 * The number of structural features of the '<em>Composite Type Definition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -123,6 +177,24 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 */
 	int UNSIGNED_TYPE_DEFINITION = 3;
+
+	/**
+	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNSIGNED_TYPE_DEFINITION__ORIGINS = PRIMITIVE_TYPE_DEFINITION__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNSIGNED_TYPE_DEFINITION__DESCRIPTION = PRIMITIVE_TYPE_DEFINITION__DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Bits</b></em>' attribute.
@@ -153,6 +225,24 @@ public interface TypesPackage extends EPackage {
 	int REFERENCE_TYPE_DEFINITION = 4;
 
 	/**
+	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFERENCE_TYPE_DEFINITION__ORIGINS = COMPOSITE_TYPE_DEFINITION__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFERENCE_TYPE_DEFINITION__DESCRIPTION = COMPOSITE_TYPE_DEFINITION__DESCRIPTION;
+
+	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -179,6 +269,24 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 */
 	int POINTER_TYPE_DEFINITION = 5;
+
+	/**
+	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POINTER_TYPE_DEFINITION__ORIGINS = COMPOSITE_TYPE_DEFINITION__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POINTER_TYPE_DEFINITION__DESCRIPTION = COMPOSITE_TYPE_DEFINITION__DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Pointer Type</b></em>' containment reference.
@@ -209,6 +317,24 @@ public interface TypesPackage extends EPackage {
 	int ARRAY_DEFINITION = 6;
 
 	/**
+	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARRAY_DEFINITION__ORIGINS = POINTER_TYPE_DEFINITION__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARRAY_DEFINITION__DESCRIPTION = POINTER_TYPE_DEFINITION__DESCRIPTION;
+
+	/**
 	 * The feature id for the '<em><b>Pointer Type</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -237,6 +363,24 @@ public interface TypesPackage extends EPackage {
 	int STRUCTURE_TYPE_DEFINITION = 7;
 
 	/**
+	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURE_TYPE_DEFINITION__ORIGINS = COMPOSITE_TYPE_DEFINITION__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURE_TYPE_DEFINITION__DESCRIPTION = COMPOSITE_TYPE_DEFINITION__DESCRIPTION;
+
+	/**
 	 * The feature id for the '<em><b>Elements</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -263,6 +407,24 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 */
 	int STRUCTURE_TYPE_ELEMENT = 8;
+
+	/**
+	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURE_TYPE_ELEMENT__ORIGINS = CorePackage.NAMED_ELEMENT__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURE_TYPE_ELEMENT__DESCRIPTION = CorePackage.NAMED_ELEMENT__DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.

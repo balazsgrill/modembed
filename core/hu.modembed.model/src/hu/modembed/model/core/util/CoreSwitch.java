@@ -1,15 +1,8 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package hu.modembed.model.core.util;
 
-import hu.modembed.model.core.CorePackage;
-import hu.modembed.model.core.MODembedElement;
-import hu.modembed.model.core.NamedElement;
-import hu.modembed.model.core.PackagedElement;
+import hu.modembed.model.core.*;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -80,26 +73,17 @@ public class CoreSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CorePackage.PACKAGE: {
-				hu.modembed.model.core.Package package_ = (hu.modembed.model.core.Package)theEObject;
-				T result = casePackage(package_);
-				if (result == null) result = casePackagedElement(package_);
-				if (result == null) result = caseNamedElement(package_);
-				if (result == null) result = caseMODembedElement(package_);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case CorePackage.MO_DEMBED_ELEMENT: {
 				MODembedElement moDembedElement = (MODembedElement)theEObject;
 				T result = caseMODembedElement(moDembedElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CorePackage.PACKAGED_ELEMENT: {
-				PackagedElement packagedElement = (PackagedElement)theEObject;
-				T result = casePackagedElement(packagedElement);
-				if (result == null) result = caseNamedElement(packagedElement);
-				if (result == null) result = caseMODembedElement(packagedElement);
+			case CorePackage.ROOT_ELEMENT: {
+				RootElement rootElement = (RootElement)theEObject;
+				T result = caseRootElement(rootElement);
+				if (result == null) result = caseNamedElement(rootElement);
+				if (result == null) result = caseMODembedElement(rootElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -123,21 +107,6 @@ public class CoreSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Package</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Package</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T casePackage(hu.modembed.model.core.Package object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>MO Dembed Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -153,17 +122,17 @@ public class CoreSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Packaged Element</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Root Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Packaged Element</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Root Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePackagedElement(PackagedElement object) {
+	public T caseRootElement(RootElement object) {
 		return null;
 	}
 

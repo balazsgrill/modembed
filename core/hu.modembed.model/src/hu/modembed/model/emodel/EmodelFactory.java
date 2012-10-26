@@ -85,6 +85,33 @@ public interface EmodelFactory extends EFactory {
 	ResultExpression createResultExpression();
 
 	/**
+	 * Returns a new object of class '<em>Heap Variable</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Heap Variable</em>'.
+	 * @generated
+	 */
+	HeapVariable createHeapVariable();
+
+	/**
+	 * Returns a new object of class '<em>Register Variable</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Register Variable</em>'.
+	 * @generated
+	 */
+	RegisterVariable createRegisterVariable();
+
+	/**
+	 * Returns a new object of class '<em>Constant Variable</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Constant Variable</em>'.
+	 * @generated
+	 */
+	ConstantVariable createConstantVariable();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

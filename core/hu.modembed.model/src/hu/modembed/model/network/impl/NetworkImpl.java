@@ -1,12 +1,8 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package hu.modembed.model.network.impl;
 
-import hu.modembed.model.core.impl.PackagedElementImpl;
+import hu.modembed.model.core.impl.RootElementImpl;
 
 import hu.modembed.model.network.Connection;
 import hu.modembed.model.network.Network;
@@ -39,7 +35,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class NetworkImpl extends PackagedElementImpl implements Network {
+public class NetworkImpl extends RootElementImpl implements Network {
 	/**
 	 * The cached value of the '{@link #getNodes() <em>Nodes</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

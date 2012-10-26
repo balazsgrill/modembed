@@ -5,26 +5,34 @@ package hu.modembed.model.emodel.expressions.impl;
 import hu.modembed.model.application.ApplicationPackage;
 
 import hu.modembed.model.application.code.CodePackage;
+
 import hu.modembed.model.application.code.impl.CodePackageImpl;
+
 import hu.modembed.model.application.composition.CompositionPackage;
+
 import hu.modembed.model.application.composition.impl.CompositionPackageImpl;
-import hu.modembed.model.application.datatypes.DatatypesPackage;
-import hu.modembed.model.application.datatypes.impl.DatatypesPackageImpl;
+
 import hu.modembed.model.application.impl.ApplicationPackageImpl;
+
 import hu.modembed.model.application.interface_.InterfacePackage;
+
 import hu.modembed.model.application.interface_.impl.InterfacePackageImpl;
+
 import hu.modembed.model.comm.CommPackage;
 
 import hu.modembed.model.comm.impl.CommPackageImpl;
+
 import hu.modembed.model.core.CorePackage;
 
 import hu.modembed.model.core.assembler.AssemblerPackage;
+
 import hu.modembed.model.core.assembler.impl.AssemblerPackageImpl;
+
 import hu.modembed.model.core.impl.CorePackageImpl;
+
 import hu.modembed.model.emodel.EmodelPackage;
 
-import hu.modembed.model.emodel.expressions.BinaryExpression;
-import hu.modembed.model.emodel.expressions.BinaryOperator;
+import hu.modembed.model.emodel.expressions.Call;
 import hu.modembed.model.emodel.expressions.CompilationLogStep;
 import hu.modembed.model.emodel.expressions.CompilationLogStepSeverity;
 import hu.modembed.model.emodel.expressions.ExecutionBlock;
@@ -33,12 +41,10 @@ import hu.modembed.model.emodel.expressions.Expression;
 import hu.modembed.model.emodel.expressions.ExpressionsFactory;
 import hu.modembed.model.emodel.expressions.ExpressionsPackage;
 import hu.modembed.model.emodel.expressions.FunctionCall;
-import hu.modembed.model.emodel.expressions.Instruction;
+import hu.modembed.model.emodel.expressions.InstructionCall;
 import hu.modembed.model.emodel.expressions.IntegerLiteralExpression;
 import hu.modembed.model.emodel.expressions.LiteralExpression;
 import hu.modembed.model.emodel.expressions.PrimitiveLiteralExpression;
-import hu.modembed.model.emodel.expressions.UnaryExpression;
-import hu.modembed.model.emodel.expressions.UnaryOperator;
 import hu.modembed.model.emodel.expressions.VariableReference;
 
 import hu.modembed.model.emodel.impl.EmodelPackageImpl;
@@ -50,8 +56,11 @@ import hu.modembed.model.emodel.types.impl.TypesPackageImpl;
 import hu.modembed.model.network.NetworkPackage;
 
 import hu.modembed.model.network.impl.NetworkPackageImpl;
+
 import hu.modembed.model.network.rs232.Rs232Package;
+
 import hu.modembed.model.network.rs232.impl.Rs232PackageImpl;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -79,7 +88,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass instructionEClass = null;
+	private EClass instructionCallEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -87,20 +96,6 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * @generated
 	 */
 	private EClass executionStepEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass binaryExpressionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass unaryExpressionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -121,7 +116,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass functionCallEClass = null;
+	private EClass callEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -156,14 +151,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum binaryOperatorEEnum = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EEnum unaryOperatorEEnum = null;
+	private EClass functionCallEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -227,7 +215,6 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 		hu.modembed.model.comm.rs232.impl.Rs232PackageImpl theRs232Package_1 = (hu.modembed.model.comm.rs232.impl.Rs232PackageImpl)(EPackage.Registry.INSTANCE.getEPackage(hu.modembed.model.comm.rs232.Rs232Package.eNS_URI) instanceof hu.modembed.model.comm.rs232.impl.Rs232PackageImpl ? EPackage.Registry.INSTANCE.getEPackage(hu.modembed.model.comm.rs232.Rs232Package.eNS_URI) : hu.modembed.model.comm.rs232.Rs232Package.eINSTANCE);
 		ApplicationPackageImpl theApplicationPackage = (ApplicationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI) instanceof ApplicationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI) : ApplicationPackage.eINSTANCE);
 		InterfacePackageImpl theInterfacePackage = (InterfacePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InterfacePackage.eNS_URI) instanceof InterfacePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InterfacePackage.eNS_URI) : InterfacePackage.eINSTANCE);
-		DatatypesPackageImpl theDatatypesPackage = (DatatypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI) instanceof DatatypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI) : DatatypesPackage.eINSTANCE);
 		CompositionPackageImpl theCompositionPackage = (CompositionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CompositionPackage.eNS_URI) instanceof CompositionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CompositionPackage.eNS_URI) : CompositionPackage.eINSTANCE);
 		CodePackageImpl theCodePackage = (CodePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CodePackage.eNS_URI) instanceof CodePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CodePackage.eNS_URI) : CodePackage.eINSTANCE);
 		EmodelPackageImpl theEmodelPackage = (EmodelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EmodelPackage.eNS_URI) instanceof EmodelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EmodelPackage.eNS_URI) : EmodelPackage.eINSTANCE);
@@ -243,7 +230,6 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 		theRs232Package_1.createPackageContents();
 		theApplicationPackage.createPackageContents();
 		theInterfacePackage.createPackageContents();
-		theDatatypesPackage.createPackageContents();
 		theCompositionPackage.createPackageContents();
 		theCodePackage.createPackageContents();
 		theEmodelPackage.createPackageContents();
@@ -259,7 +245,6 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 		theRs232Package_1.initializePackageContents();
 		theApplicationPackage.initializePackageContents();
 		theInterfacePackage.initializePackageContents();
-		theDatatypesPackage.initializePackageContents();
 		theCompositionPackage.initializePackageContents();
 		theCodePackage.initializePackageContents();
 		theEmodelPackage.initializePackageContents();
@@ -288,8 +273,8 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getInstruction() {
-		return instructionEClass;
+	public EClass getInstructionCall() {
+		return instructionCallEClass;
 	}
 
 	/**
@@ -297,8 +282,8 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getInstruction_Value() {
-		return (EReference)instructionEClass.getEStructuralFeatures().get(0);
+	public EReference getInstructionCall_Instruction() {
+		return (EReference)instructionCallEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -308,69 +293,6 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 */
 	public EClass getExecutionStep() {
 		return executionStepEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getBinaryExpression() {
-		return binaryExpressionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getBinaryExpression_LeftOperand() {
-		return (EReference)binaryExpressionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getBinaryExpression_RightOperand() {
-		return (EReference)binaryExpressionEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getBinaryExpression_Operator() {
-		return (EAttribute)binaryExpressionEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getUnaryExpression() {
-		return unaryExpressionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getUnaryExpression_Operand() {
-		return (EReference)unaryExpressionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getUnaryExpression_Operator() {
-		return (EAttribute)unaryExpressionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -414,8 +336,8 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getFunctionCall() {
-		return functionCallEClass;
+	public EClass getCall() {
+		return callEClass;
 	}
 
 	/**
@@ -423,17 +345,8 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getFunctionCall_Parameters() {
-		return (EReference)functionCallEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getFunctionCall_Function() {
-		return (EReference)functionCallEClass.getEStructuralFeatures().get(1);
+	public EReference getCall_Parameters() {
+		return (EReference)callEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -513,8 +426,8 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EEnum getBinaryOperator() {
-		return binaryOperatorEEnum;
+	public EClass getFunctionCall() {
+		return functionCallEClass;
 	}
 
 	/**
@@ -522,8 +435,8 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EEnum getUnaryOperator() {
-		return unaryOperatorEEnum;
+	public EReference getFunctionCall_Function() {
+		return (EReference)functionCallEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -565,19 +478,10 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 		// Create classes and their features
 		expressionEClass = createEClass(EXPRESSION);
 
-		instructionEClass = createEClass(INSTRUCTION);
-		createEReference(instructionEClass, INSTRUCTION__VALUE);
+		instructionCallEClass = createEClass(INSTRUCTION_CALL);
+		createEReference(instructionCallEClass, INSTRUCTION_CALL__INSTRUCTION);
 
 		executionStepEClass = createEClass(EXECUTION_STEP);
-
-		binaryExpressionEClass = createEClass(BINARY_EXPRESSION);
-		createEReference(binaryExpressionEClass, BINARY_EXPRESSION__LEFT_OPERAND);
-		createEReference(binaryExpressionEClass, BINARY_EXPRESSION__RIGHT_OPERAND);
-		createEAttribute(binaryExpressionEClass, BINARY_EXPRESSION__OPERATOR);
-
-		unaryExpressionEClass = createEClass(UNARY_EXPRESSION);
-		createEReference(unaryExpressionEClass, UNARY_EXPRESSION__OPERAND);
-		createEAttribute(unaryExpressionEClass, UNARY_EXPRESSION__OPERATOR);
 
 		literalExpressionEClass = createEClass(LITERAL_EXPRESSION);
 		createEReference(literalExpressionEClass, LITERAL_EXPRESSION__TYPE);
@@ -585,9 +489,8 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 		executionBlockEClass = createEClass(EXECUTION_BLOCK);
 		createEReference(executionBlockEClass, EXECUTION_BLOCK__STEPS);
 
-		functionCallEClass = createEClass(FUNCTION_CALL);
-		createEReference(functionCallEClass, FUNCTION_CALL__PARAMETERS);
-		createEReference(functionCallEClass, FUNCTION_CALL__FUNCTION);
+		callEClass = createEClass(CALL);
+		createEReference(callEClass, CALL__PARAMETERS);
 
 		variableReferenceEClass = createEClass(VARIABLE_REFERENCE);
 		createEReference(variableReferenceEClass, VARIABLE_REFERENCE__VARIABLE);
@@ -601,9 +504,10 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 		createEAttribute(compilationLogStepEClass, COMPILATION_LOG_STEP__SEVERITY);
 		createEAttribute(compilationLogStepEClass, COMPILATION_LOG_STEP__MESSAGE);
 
+		functionCallEClass = createEClass(FUNCTION_CALL);
+		createEReference(functionCallEClass, FUNCTION_CALL__FUNCTION);
+
 		// Create enums
-		binaryOperatorEEnum = createEEnum(BINARY_OPERATOR);
-		unaryOperatorEEnum = createEEnum(UNARY_OPERATOR);
 		compilationLogStepSeverityEEnum = createEEnum(COMPILATION_LOG_STEP_SEVERITY);
 	}
 
@@ -631,6 +535,8 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
+		AssemblerPackage theAssemblerPackage = (AssemblerPackage)EPackage.Registry.INSTANCE.getEPackage(AssemblerPackage.eNS_URI);
+		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 		TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
 		EmodelPackage theEmodelPackage = (EmodelPackage)EPackage.Registry.INSTANCE.getEPackage(EmodelPackage.eNS_URI);
 
@@ -640,33 +546,24 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 
 		// Add supertypes to classes
 		expressionEClass.getESuperTypes().add(this.getExecutionStep());
-		instructionEClass.getESuperTypes().add(this.getExecutionStep());
-		binaryExpressionEClass.getESuperTypes().add(this.getExpression());
-		unaryExpressionEClass.getESuperTypes().add(this.getExpression());
+		instructionCallEClass.getESuperTypes().add(this.getCall());
+		executionStepEClass.getESuperTypes().add(theCorePackage.getMODembedElement());
 		literalExpressionEClass.getESuperTypes().add(this.getExpression());
 		executionBlockEClass.getESuperTypes().add(this.getExecutionStep());
-		functionCallEClass.getESuperTypes().add(this.getExpression());
+		callEClass.getESuperTypes().add(this.getExpression());
 		variableReferenceEClass.getESuperTypes().add(this.getExpression());
 		primitiveLiteralExpressionEClass.getESuperTypes().add(this.getLiteralExpression());
 		integerLiteralExpressionEClass.getESuperTypes().add(this.getPrimitiveLiteralExpression());
 		compilationLogStepEClass.getESuperTypes().add(this.getExecutionStep());
+		functionCallEClass.getESuperTypes().add(this.getCall());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(expressionEClass, Expression.class, "Expression", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(instructionEClass, Instruction.class, "Instruction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getInstruction_Value(), this.getExpression(), null, "value", null, 1, 1, Instruction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(instructionCallEClass, InstructionCall.class, "InstructionCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getInstructionCall_Instruction(), theAssemblerPackage.getInstruction(), null, "instruction", null, 1, 1, InstructionCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(executionStepEClass, ExecutionStep.class, "ExecutionStep", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(binaryExpressionEClass, BinaryExpression.class, "BinaryExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBinaryExpression_LeftOperand(), this.getExpression(), null, "leftOperand", null, 1, 1, BinaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBinaryExpression_RightOperand(), this.getExpression(), null, "rightOperand", null, 1, 1, BinaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getBinaryExpression_Operator(), this.getBinaryOperator(), "operator", null, 1, 1, BinaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(unaryExpressionEClass, UnaryExpression.class, "UnaryExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getUnaryExpression_Operand(), this.getExpression(), null, "operand", null, 1, 1, UnaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getUnaryExpression_Operator(), this.getUnaryOperator(), "operator", null, 0, 1, UnaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(literalExpressionEClass, LiteralExpression.class, "LiteralExpression", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLiteralExpression_Type(), theTypesPackage.getTypeDefinition(), null, "type", null, 0, 1, LiteralExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -674,9 +571,8 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 		initEClass(executionBlockEClass, ExecutionBlock.class, "ExecutionBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getExecutionBlock_Steps(), this.getExecutionStep(), null, "steps", null, 0, -1, ExecutionBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(functionCallEClass, FunctionCall.class, "FunctionCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFunctionCall_Parameters(), this.getExecutionStep(), null, "parameters", null, 0, -1, FunctionCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFunctionCall_Function(), theEmodelPackage.getFunction(), null, "function", null, 1, 1, FunctionCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(callEClass, Call.class, "Call", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getCall_Parameters(), this.getExecutionStep(), null, "parameters", null, 0, -1, Call.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(variableReferenceEClass, VariableReference.class, "VariableReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getVariableReference_Variable(), theEmodelPackage.getVariable(), null, "variable", null, 1, 1, VariableReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -690,35 +586,10 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 		initEAttribute(getCompilationLogStep_Severity(), this.getCompilationLogStepSeverity(), "severity", null, 1, 1, CompilationLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCompilationLogStep_Message(), ecorePackage.getEString(), "message", null, 1, 1, CompilationLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(functionCallEClass, FunctionCall.class, "FunctionCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getFunctionCall_Function(), theEmodelPackage.getFunction(), null, "function", null, 1, 1, FunctionCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		// Initialize enums and add enum literals
-		initEEnum(binaryOperatorEEnum, BinaryOperator.class, "BinaryOperator");
-		addEEnumLiteral(binaryOperatorEEnum, BinaryOperator.ADD);
-		addEEnumLiteral(binaryOperatorEEnum, BinaryOperator.SET);
-		addEEnumLiteral(binaryOperatorEEnum, BinaryOperator.ADDSET);
-		addEEnumLiteral(binaryOperatorEEnum, BinaryOperator.SUBTRACT);
-		addEEnumLiteral(binaryOperatorEEnum, BinaryOperator.SUBTRACTSET);
-		addEEnumLiteral(binaryOperatorEEnum, BinaryOperator.AND);
-		addEEnumLiteral(binaryOperatorEEnum, BinaryOperator.ANDSET);
-		addEEnumLiteral(binaryOperatorEEnum, BinaryOperator.OR);
-		addEEnumLiteral(binaryOperatorEEnum, BinaryOperator.ORSET);
-		addEEnumLiteral(binaryOperatorEEnum, BinaryOperator.MULTIPLY);
-		addEEnumLiteral(binaryOperatorEEnum, BinaryOperator.DIVIDE);
-		addEEnumLiteral(binaryOperatorEEnum, BinaryOperator.MODULO);
-		addEEnumLiteral(binaryOperatorEEnum, BinaryOperator.XOR);
-		addEEnumLiteral(binaryOperatorEEnum, BinaryOperator.XORSET);
-		addEEnumLiteral(binaryOperatorEEnum, BinaryOperator.EQUAL);
-		addEEnumLiteral(binaryOperatorEEnum, BinaryOperator.NOTEQUAL);
-		addEEnumLiteral(binaryOperatorEEnum, BinaryOperator.GREATERTHAN);
-		addEEnumLiteral(binaryOperatorEEnum, BinaryOperator.LOWERTHAN);
-		addEEnumLiteral(binaryOperatorEEnum, BinaryOperator.GREATEROREQUAL);
-		addEEnumLiteral(binaryOperatorEEnum, BinaryOperator.LOWEROREQUAL);
-
-		initEEnum(unaryOperatorEEnum, UnaryOperator.class, "UnaryOperator");
-		addEEnumLiteral(unaryOperatorEEnum, UnaryOperator.NEGATE);
-		addEEnumLiteral(unaryOperatorEEnum, UnaryOperator.REFERENCE);
-		addEEnumLiteral(unaryOperatorEEnum, UnaryOperator.DEREFERENCE);
-		addEEnumLiteral(unaryOperatorEEnum, UnaryOperator.NOT);
-
 		initEEnum(compilationLogStepSeverityEEnum, CompilationLogStepSeverity.class, "CompilationLogStepSeverity");
 		addEEnumLiteral(compilationLogStepSeverityEEnum, CompilationLogStepSeverity.INFO);
 		addEEnumLiteral(compilationLogStepSeverityEEnum, CompilationLogStepSeverity.DEBUG);

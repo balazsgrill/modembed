@@ -2,7 +2,7 @@
  */
 package hu.modembed.model.emodel.impl;
 
-import hu.modembed.model.core.impl.PackagedElementImpl;
+import hu.modembed.model.core.impl.NamedElementImpl;
 
 import hu.modembed.model.emodel.EmodelPackage;
 import hu.modembed.model.emodel.Type;
@@ -30,7 +30,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class TypeImpl extends PackagedElementImpl implements Type {
+public class TypeImpl extends NamedElementImpl implements Type {
 	/**
 	 * The cached value of the '{@link #getDefinition() <em>Definition</em>}' containment reference.
 	 * <!-- begin-user-doc -->

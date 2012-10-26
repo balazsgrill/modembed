@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package hu.modembed.model.core;
 
@@ -24,15 +20,6 @@ public interface CoreFactory extends EFactory {
 	 * @generated
 	 */
 	CoreFactory eINSTANCE = hu.modembed.model.core.impl.CoreFactoryImpl.init();
-
-	/**
-	 * Returns a new object of class '<em>Package</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Package</em>'.
-	 * @generated
-	 */
-	Package createPackage();
 
 	/**
 	 * Returns the package supported by this factory.

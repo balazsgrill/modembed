@@ -1,12 +1,8 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package hu.modembed.model.network;
 
-import hu.modembed.model.core.PackagedElement;
+import hu.modembed.model.core.RootElement;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -27,7 +23,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Network extends PackagedElement {
+public interface Network extends RootElement {
 	/**
 	 * Returns the value of the '<em><b>Nodes</b></em>' containment reference list.
 	 * The list contents are of type {@link hu.modembed.model.network.NetworkNode}.

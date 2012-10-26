@@ -63,6 +63,9 @@ public class EmodelFactoryImpl extends EFactoryImpl implements EmodelFactory {
 			case EmodelPackage.FUNCTION_PARAMETER: return createFunctionParameter();
 			case EmodelPackage.RESULT_BUFFER: return createResultBuffer();
 			case EmodelPackage.RESULT_EXPRESSION: return createResultExpression();
+			case EmodelPackage.HEAP_VARIABLE: return createHeapVariable();
+			case EmodelPackage.REGISTER_VARIABLE: return createRegisterVariable();
+			case EmodelPackage.CONSTANT_VARIABLE: return createConstantVariable();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -136,6 +139,36 @@ public class EmodelFactoryImpl extends EFactoryImpl implements EmodelFactory {
 	public ResultExpression createResultExpression() {
 		ResultExpressionImpl resultExpression = new ResultExpressionImpl();
 		return resultExpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public HeapVariable createHeapVariable() {
+		HeapVariableImpl heapVariable = new HeapVariableImpl();
+		return heapVariable;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RegisterVariable createRegisterVariable() {
+		RegisterVariableImpl registerVariable = new RegisterVariableImpl();
+		return registerVariable;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ConstantVariable createConstantVariable() {
+		ConstantVariableImpl constantVariable = new ConstantVariableImpl();
+		return constantVariable;
 	}
 
 	/**

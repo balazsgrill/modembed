@@ -1,14 +1,10 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
-package hu.modembed.model.application.datatypes.impl;
+package hu.modembed.model.emodel.expressions.impl;
 
-import hu.modembed.model.application.datatypes.DatatypesPackage;
-import hu.modembed.model.application.datatypes.StructElement;
-import hu.modembed.model.application.datatypes.StructType;
+import hu.modembed.model.emodel.expressions.Call;
+import hu.modembed.model.emodel.expressions.ExecutionStep;
+import hu.modembed.model.emodel.expressions.ExpressionsPackage;
 
 import java.util.Collection;
 
@@ -24,34 +20,34 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Struct Type</b></em>'.
+ * An implementation of the model object '<em><b>Call</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.modembed.model.application.datatypes.impl.StructTypeImpl#getElements <em>Elements</em>}</li>
+ *   <li>{@link hu.modembed.model.emodel.expressions.impl.CallImpl#getParameters <em>Parameters</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class StructTypeImpl extends StructuredTypeImpl implements StructType {
+public abstract class CallImpl extends ExpressionImpl implements Call {
 	/**
-	 * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
+	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getElements()
+	 * @see #getParameters()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<StructElement> elements;
+	protected EList<ExecutionStep> parameters;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected StructTypeImpl() {
+	protected CallImpl() {
 		super();
 	}
 
@@ -62,7 +58,7 @@ public class StructTypeImpl extends StructuredTypeImpl implements StructType {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return DatatypesPackage.Literals.STRUCT_TYPE;
+		return ExpressionsPackage.Literals.CALL;
 	}
 
 	/**
@@ -70,11 +66,11 @@ public class StructTypeImpl extends StructuredTypeImpl implements StructType {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<StructElement> getElements() {
-		if (elements == null) {
-			elements = new EObjectContainmentEList<StructElement>(StructElement.class, this, DatatypesPackage.STRUCT_TYPE__ELEMENTS);
+	public EList<ExecutionStep> getParameters() {
+		if (parameters == null) {
+			parameters = new EObjectContainmentEList<ExecutionStep>(ExecutionStep.class, this, ExpressionsPackage.CALL__PARAMETERS);
 		}
-		return elements;
+		return parameters;
 	}
 
 	/**
@@ -85,8 +81,8 @@ public class StructTypeImpl extends StructuredTypeImpl implements StructType {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case DatatypesPackage.STRUCT_TYPE__ELEMENTS:
-				return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
+			case ExpressionsPackage.CALL__PARAMETERS:
+				return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -99,8 +95,8 @@ public class StructTypeImpl extends StructuredTypeImpl implements StructType {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DatatypesPackage.STRUCT_TYPE__ELEMENTS:
-				return getElements();
+			case ExpressionsPackage.CALL__PARAMETERS:
+				return getParameters();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -114,9 +110,9 @@ public class StructTypeImpl extends StructuredTypeImpl implements StructType {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DatatypesPackage.STRUCT_TYPE__ELEMENTS:
-				getElements().clear();
-				getElements().addAll((Collection<? extends StructElement>)newValue);
+			case ExpressionsPackage.CALL__PARAMETERS:
+				getParameters().clear();
+				getParameters().addAll((Collection<? extends ExecutionStep>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -130,8 +126,8 @@ public class StructTypeImpl extends StructuredTypeImpl implements StructType {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DatatypesPackage.STRUCT_TYPE__ELEMENTS:
-				getElements().clear();
+			case ExpressionsPackage.CALL__PARAMETERS:
+				getParameters().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -145,10 +141,10 @@ public class StructTypeImpl extends StructuredTypeImpl implements StructType {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DatatypesPackage.STRUCT_TYPE__ELEMENTS:
-				return elements != null && !elements.isEmpty();
+			case ExpressionsPackage.CALL__PARAMETERS:
+				return parameters != null && !parameters.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //StructTypeImpl
+} //CallImpl

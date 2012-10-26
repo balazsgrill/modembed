@@ -4,7 +4,7 @@ package hu.modembed.model.emodel.util;
 
 import hu.modembed.model.core.MODembedElement;
 import hu.modembed.model.core.NamedElement;
-import hu.modembed.model.core.PackagedElement;
+import hu.modembed.model.core.RootElement;
 
 import hu.modembed.model.emodel.*;
 
@@ -73,8 +73,7 @@ public class EmodelSwitch<T> extends Switch<T> {
 			case EmodelPackage.LIBRARY: {
 				Library library = (Library)theEObject;
 				T result = caseLibrary(library);
-				if (result == null) result = casePackage(library);
-				if (result == null) result = casePackagedElement(library);
+				if (result == null) result = caseRootElement(library);
 				if (result == null) result = caseNamedElement(library);
 				if (result == null) result = caseMODembedElement(library);
 				if (result == null) result = defaultCase(theEObject);
@@ -83,7 +82,7 @@ public class EmodelSwitch<T> extends Switch<T> {
 			case EmodelPackage.TYPE: {
 				Type type = (Type)theEObject;
 				T result = caseType(type);
-				if (result == null) result = casePackagedElement(type);
+				if (result == null) result = caseLibraryElement(type);
 				if (result == null) result = caseNamedElement(type);
 				if (result == null) result = caseMODembedElement(type);
 				if (result == null) result = defaultCase(theEObject);
@@ -92,7 +91,7 @@ public class EmodelSwitch<T> extends Switch<T> {
 			case EmodelPackage.FUNCTION: {
 				Function function = (Function)theEObject;
 				T result = caseFunction(function);
-				if (result == null) result = casePackagedElement(function);
+				if (result == null) result = caseLibraryElement(function);
 				if (result == null) result = caseNamedElement(function);
 				if (result == null) result = caseMODembedElement(function);
 				if (result == null) result = defaultCase(theEObject);
@@ -118,6 +117,7 @@ public class EmodelSwitch<T> extends Switch<T> {
 			case EmodelPackage.FUNCTION_RESULT: {
 				FunctionResult functionResult = (FunctionResult)theEObject;
 				T result = caseFunctionResult(functionResult);
+				if (result == null) result = caseMODembedElement(functionResult);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -135,6 +135,58 @@ public class EmodelSwitch<T> extends Switch<T> {
 				ResultExpression resultExpression = (ResultExpression)theEObject;
 				T result = caseResultExpression(resultExpression);
 				if (result == null) result = caseFunctionResult(resultExpression);
+				if (result == null) result = caseMODembedElement(resultExpression);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case EmodelPackage.LIBRARY_ELEMENT: {
+				LibraryElement libraryElement = (LibraryElement)theEObject;
+				T result = caseLibraryElement(libraryElement);
+				if (result == null) result = caseNamedElement(libraryElement);
+				if (result == null) result = caseMODembedElement(libraryElement);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case EmodelPackage.GLOBAL_VARIABLE: {
+				GlobalVariable globalVariable = (GlobalVariable)theEObject;
+				T result = caseGlobalVariable(globalVariable);
+				if (result == null) result = caseVariable(globalVariable);
+				if (result == null) result = caseLibraryElement(globalVariable);
+				if (result == null) result = caseNamedElement(globalVariable);
+				if (result == null) result = caseMODembedElement(globalVariable);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case EmodelPackage.HEAP_VARIABLE: {
+				HeapVariable heapVariable = (HeapVariable)theEObject;
+				T result = caseHeapVariable(heapVariable);
+				if (result == null) result = caseGlobalVariable(heapVariable);
+				if (result == null) result = caseVariable(heapVariable);
+				if (result == null) result = caseLibraryElement(heapVariable);
+				if (result == null) result = caseNamedElement(heapVariable);
+				if (result == null) result = caseMODembedElement(heapVariable);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case EmodelPackage.REGISTER_VARIABLE: {
+				RegisterVariable registerVariable = (RegisterVariable)theEObject;
+				T result = caseRegisterVariable(registerVariable);
+				if (result == null) result = caseGlobalVariable(registerVariable);
+				if (result == null) result = caseVariable(registerVariable);
+				if (result == null) result = caseLibraryElement(registerVariable);
+				if (result == null) result = caseNamedElement(registerVariable);
+				if (result == null) result = caseMODembedElement(registerVariable);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case EmodelPackage.CONSTANT_VARIABLE: {
+				ConstantVariable constantVariable = (ConstantVariable)theEObject;
+				T result = caseConstantVariable(constantVariable);
+				if (result == null) result = caseGlobalVariable(constantVariable);
+				if (result == null) result = caseVariable(constantVariable);
+				if (result == null) result = caseLibraryElement(constantVariable);
+				if (result == null) result = caseNamedElement(constantVariable);
+				if (result == null) result = caseMODembedElement(constantVariable);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -263,6 +315,81 @@ public class EmodelSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Library Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Library Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLibraryElement(LibraryElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Global Variable</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Global Variable</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseGlobalVariable(GlobalVariable object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Heap Variable</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Heap Variable</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseHeapVariable(HeapVariable object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Register Variable</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Register Variable</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRegisterVariable(RegisterVariable object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Constant Variable</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Constant Variable</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseConstantVariable(ConstantVariable object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>MO Dembed Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -293,32 +420,17 @@ public class EmodelSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Packaged Element</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Root Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Packaged Element</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Root Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePackagedElement(PackagedElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Package</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Package</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T casePackage(hu.modembed.model.core.Package object) {
+	public T caseRootElement(RootElement object) {
 		return null;
 	}
 

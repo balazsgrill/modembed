@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package hu.modembed.model.application.code;
 
@@ -69,15 +65,6 @@ public interface CodePackage extends EPackage {
 	 * @generated
 	 */
 	int CODE_COMPONENT = 0;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CODE_COMPONENT__NAME = ApplicationPackage.COMPONENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Uses</b></em>' containment reference list.

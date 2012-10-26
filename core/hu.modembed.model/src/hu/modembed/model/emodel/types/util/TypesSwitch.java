@@ -72,6 +72,7 @@ public class TypesSwitch<T> extends Switch<T> {
 			case TypesPackage.TYPE_DEFINITION: {
 				TypeDefinition typeDefinition = (TypeDefinition)theEObject;
 				T result = caseTypeDefinition(typeDefinition);
+				if (result == null) result = caseMODembedElement(typeDefinition);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -79,6 +80,7 @@ public class TypesSwitch<T> extends Switch<T> {
 				PrimitiveTypeDefinition primitiveTypeDefinition = (PrimitiveTypeDefinition)theEObject;
 				T result = casePrimitiveTypeDefinition(primitiveTypeDefinition);
 				if (result == null) result = caseTypeDefinition(primitiveTypeDefinition);
+				if (result == null) result = caseMODembedElement(primitiveTypeDefinition);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -86,6 +88,7 @@ public class TypesSwitch<T> extends Switch<T> {
 				CompositeTypeDefinition compositeTypeDefinition = (CompositeTypeDefinition)theEObject;
 				T result = caseCompositeTypeDefinition(compositeTypeDefinition);
 				if (result == null) result = caseTypeDefinition(compositeTypeDefinition);
+				if (result == null) result = caseMODembedElement(compositeTypeDefinition);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -94,6 +97,7 @@ public class TypesSwitch<T> extends Switch<T> {
 				T result = caseUnsignedTypeDefinition(unsignedTypeDefinition);
 				if (result == null) result = casePrimitiveTypeDefinition(unsignedTypeDefinition);
 				if (result == null) result = caseTypeDefinition(unsignedTypeDefinition);
+				if (result == null) result = caseMODembedElement(unsignedTypeDefinition);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -102,6 +106,7 @@ public class TypesSwitch<T> extends Switch<T> {
 				T result = caseReferenceTypeDefinition(referenceTypeDefinition);
 				if (result == null) result = caseCompositeTypeDefinition(referenceTypeDefinition);
 				if (result == null) result = caseTypeDefinition(referenceTypeDefinition);
+				if (result == null) result = caseMODembedElement(referenceTypeDefinition);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -110,6 +115,7 @@ public class TypesSwitch<T> extends Switch<T> {
 				T result = casePointerTypeDefinition(pointerTypeDefinition);
 				if (result == null) result = caseCompositeTypeDefinition(pointerTypeDefinition);
 				if (result == null) result = caseTypeDefinition(pointerTypeDefinition);
+				if (result == null) result = caseMODembedElement(pointerTypeDefinition);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -119,6 +125,7 @@ public class TypesSwitch<T> extends Switch<T> {
 				if (result == null) result = casePointerTypeDefinition(arrayDefinition);
 				if (result == null) result = caseCompositeTypeDefinition(arrayDefinition);
 				if (result == null) result = caseTypeDefinition(arrayDefinition);
+				if (result == null) result = caseMODembedElement(arrayDefinition);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -127,6 +134,7 @@ public class TypesSwitch<T> extends Switch<T> {
 				T result = caseStructureTypeDefinition(structureTypeDefinition);
 				if (result == null) result = caseCompositeTypeDefinition(structureTypeDefinition);
 				if (result == null) result = caseTypeDefinition(structureTypeDefinition);
+				if (result == null) result = caseMODembedElement(structureTypeDefinition);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

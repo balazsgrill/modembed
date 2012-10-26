@@ -6,7 +6,7 @@ import hu.modembed.model.core.assembler.AssemblerPackage;
 import hu.modembed.model.core.assembler.Instruction;
 import hu.modembed.model.core.assembler.InstructionSet;
 
-import hu.modembed.model.core.impl.PackagedElementImpl;
+import hu.modembed.model.core.impl.RootElementImpl;
 
 import java.util.Collection;
 
@@ -33,7 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class InstructionSetImpl extends PackagedElementImpl implements InstructionSet {
+public class InstructionSetImpl extends RootElementImpl implements InstructionSet {
 	/**
 	 * The cached value of the '{@link #getInstructions() <em>Instructions</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

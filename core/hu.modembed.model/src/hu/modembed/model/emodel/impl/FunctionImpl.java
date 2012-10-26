@@ -2,7 +2,7 @@
  */
 package hu.modembed.model.emodel.impl;
 
-import hu.modembed.model.core.impl.PackagedElementImpl;
+import hu.modembed.model.core.impl.NamedElementImpl;
 
 import hu.modembed.model.emodel.EmodelPackage;
 import hu.modembed.model.emodel.Function;
@@ -42,7 +42,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class FunctionImpl extends PackagedElementImpl implements Function {
+public class FunctionImpl extends NamedElementImpl implements Function {
 	/**
 	 * The cached value of the '{@link #getArguments() <em>Arguments</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

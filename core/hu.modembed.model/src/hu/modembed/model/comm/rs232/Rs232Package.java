@@ -1,14 +1,11 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package hu.modembed.model.comm.rs232;
 
 import hu.modembed.model.comm.CommPackage;
 
 import hu.modembed.model.core.CorePackage;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -73,6 +70,24 @@ public interface Rs232Package extends EPackage {
 	int RS232_FRAME = 0;
 
 	/**
+	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RS232_FRAME__ORIGINS = CommPackage.FRAME__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RS232_FRAME__DESCRIPTION = CommPackage.FRAME__DESCRIPTION;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -128,6 +143,24 @@ public interface Rs232Package extends EPackage {
 	int FIELD = 1;
 
 	/**
+	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIELD__ORIGINS = CorePackage.NAMED_ELEMENT__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIELD__DESCRIPTION = CorePackage.NAMED_ELEMENT__DESCRIPTION;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -172,15 +205,6 @@ public interface Rs232Package extends EPackage {
 	 * @generated
 	 */
 	int RS232_PROTOCOL = 2;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RS232_PROTOCOL__NAME = CommPackage.COMMUNICATION_PROTOCOL__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Frames</b></em>' containment reference list.

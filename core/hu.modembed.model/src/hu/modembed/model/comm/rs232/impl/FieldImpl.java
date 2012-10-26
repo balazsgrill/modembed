@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package hu.modembed.model.comm.rs232.impl;
 
@@ -10,12 +6,12 @@ import hu.modembed.model.comm.rs232.Field;
 import hu.modembed.model.comm.rs232.Rs232Package;
 
 import hu.modembed.model.core.impl.NamedElementImpl;
+
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 /**
  * <!-- begin-user-doc -->

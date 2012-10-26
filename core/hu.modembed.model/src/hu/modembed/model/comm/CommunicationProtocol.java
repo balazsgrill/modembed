@@ -1,14 +1,10 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package hu.modembed.model.comm;
 
-import hu.modembed.model.core.PackagedElement;
-
 import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * @model abstract="true"
  * @generated
  */
-public interface CommunicationProtocol extends PackagedElement {
+public interface CommunicationProtocol extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Frames</b></em>' containment reference list.
 	 * The list contents are of type {@link hu.modembed.model.comm.Frame}.

@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package hu.modembed.model.application.code.impl;
 
@@ -15,10 +11,6 @@ import hu.modembed.model.application.code.CodePackage;
 import hu.modembed.model.application.composition.CompositionPackage;
 
 import hu.modembed.model.application.composition.impl.CompositionPackageImpl;
-
-import hu.modembed.model.application.datatypes.DatatypesPackage;
-
-import hu.modembed.model.application.datatypes.impl.DatatypesPackageImpl;
 
 import hu.modembed.model.application.impl.ApplicationPackageImpl;
 
@@ -33,15 +25,23 @@ import hu.modembed.model.comm.impl.CommPackageImpl;
 import hu.modembed.model.core.CorePackage;
 
 import hu.modembed.model.core.assembler.AssemblerPackage;
+
 import hu.modembed.model.core.assembler.impl.AssemblerPackageImpl;
+
 import hu.modembed.model.core.impl.CorePackageImpl;
 
 import hu.modembed.model.emodel.EmodelPackage;
+
 import hu.modembed.model.emodel.expressions.ExpressionsPackage;
+
 import hu.modembed.model.emodel.expressions.impl.ExpressionsPackageImpl;
+
 import hu.modembed.model.emodel.impl.EmodelPackageImpl;
+
 import hu.modembed.model.emodel.types.TypesPackage;
+
 import hu.modembed.model.emodel.types.impl.TypesPackageImpl;
+
 import hu.modembed.model.network.NetworkPackage;
 
 import hu.modembed.model.network.impl.NetworkPackageImpl;
@@ -125,7 +125,6 @@ public class CodePackageImpl extends EPackageImpl implements CodePackage {
 		hu.modembed.model.comm.rs232.impl.Rs232PackageImpl theRs232Package_1 = (hu.modembed.model.comm.rs232.impl.Rs232PackageImpl)(EPackage.Registry.INSTANCE.getEPackage(hu.modembed.model.comm.rs232.Rs232Package.eNS_URI) instanceof hu.modembed.model.comm.rs232.impl.Rs232PackageImpl ? EPackage.Registry.INSTANCE.getEPackage(hu.modembed.model.comm.rs232.Rs232Package.eNS_URI) : hu.modembed.model.comm.rs232.Rs232Package.eINSTANCE);
 		ApplicationPackageImpl theApplicationPackage = (ApplicationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI) instanceof ApplicationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI) : ApplicationPackage.eINSTANCE);
 		InterfacePackageImpl theInterfacePackage = (InterfacePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InterfacePackage.eNS_URI) instanceof InterfacePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InterfacePackage.eNS_URI) : InterfacePackage.eINSTANCE);
-		DatatypesPackageImpl theDatatypesPackage = (DatatypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI) instanceof DatatypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI) : DatatypesPackage.eINSTANCE);
 		CompositionPackageImpl theCompositionPackage = (CompositionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CompositionPackage.eNS_URI) instanceof CompositionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CompositionPackage.eNS_URI) : CompositionPackage.eINSTANCE);
 		EmodelPackageImpl theEmodelPackage = (EmodelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EmodelPackage.eNS_URI) instanceof EmodelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EmodelPackage.eNS_URI) : EmodelPackage.eINSTANCE);
 		TypesPackageImpl theTypesPackage = (TypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) instanceof TypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) : TypesPackage.eINSTANCE);
@@ -141,7 +140,6 @@ public class CodePackageImpl extends EPackageImpl implements CodePackage {
 		theRs232Package_1.createPackageContents();
 		theApplicationPackage.createPackageContents();
 		theInterfacePackage.createPackageContents();
-		theDatatypesPackage.createPackageContents();
 		theCompositionPackage.createPackageContents();
 		theEmodelPackage.createPackageContents();
 		theTypesPackage.createPackageContents();
@@ -157,7 +155,6 @@ public class CodePackageImpl extends EPackageImpl implements CodePackage {
 		theRs232Package_1.initializePackageContents();
 		theApplicationPackage.initializePackageContents();
 		theInterfacePackage.initializePackageContents();
-		theDatatypesPackage.initializePackageContents();
 		theCompositionPackage.initializePackageContents();
 		theEmodelPackage.initializePackageContents();
 		theTypesPackage.initializePackageContents();

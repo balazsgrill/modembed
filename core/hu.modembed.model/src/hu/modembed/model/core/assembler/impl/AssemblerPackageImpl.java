@@ -12,10 +12,6 @@ import hu.modembed.model.application.composition.CompositionPackage;
 
 import hu.modembed.model.application.composition.impl.CompositionPackageImpl;
 
-import hu.modembed.model.application.datatypes.DatatypesPackage;
-
-import hu.modembed.model.application.datatypes.impl.DatatypesPackageImpl;
-
 import hu.modembed.model.application.impl.ApplicationPackageImpl;
 
 import hu.modembed.model.application.interface_.InterfacePackage;
@@ -36,11 +32,17 @@ import hu.modembed.model.core.assembler.InstructionSet;
 import hu.modembed.model.core.impl.CorePackageImpl;
 
 import hu.modembed.model.emodel.EmodelPackage;
+
 import hu.modembed.model.emodel.expressions.ExpressionsPackage;
+
 import hu.modembed.model.emodel.expressions.impl.ExpressionsPackageImpl;
+
 import hu.modembed.model.emodel.impl.EmodelPackageImpl;
+
 import hu.modembed.model.emodel.types.TypesPackage;
+
 import hu.modembed.model.emodel.types.impl.TypesPackageImpl;
+
 import hu.modembed.model.network.NetworkPackage;
 
 import hu.modembed.model.network.impl.NetworkPackageImpl;
@@ -131,7 +133,6 @@ public class AssemblerPackageImpl extends EPackageImpl implements AssemblerPacka
 		hu.modembed.model.comm.rs232.impl.Rs232PackageImpl theRs232Package_1 = (hu.modembed.model.comm.rs232.impl.Rs232PackageImpl)(EPackage.Registry.INSTANCE.getEPackage(hu.modembed.model.comm.rs232.Rs232Package.eNS_URI) instanceof hu.modembed.model.comm.rs232.impl.Rs232PackageImpl ? EPackage.Registry.INSTANCE.getEPackage(hu.modembed.model.comm.rs232.Rs232Package.eNS_URI) : hu.modembed.model.comm.rs232.Rs232Package.eINSTANCE);
 		ApplicationPackageImpl theApplicationPackage = (ApplicationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI) instanceof ApplicationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI) : ApplicationPackage.eINSTANCE);
 		InterfacePackageImpl theInterfacePackage = (InterfacePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InterfacePackage.eNS_URI) instanceof InterfacePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InterfacePackage.eNS_URI) : InterfacePackage.eINSTANCE);
-		DatatypesPackageImpl theDatatypesPackage = (DatatypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI) instanceof DatatypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI) : DatatypesPackage.eINSTANCE);
 		CompositionPackageImpl theCompositionPackage = (CompositionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CompositionPackage.eNS_URI) instanceof CompositionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CompositionPackage.eNS_URI) : CompositionPackage.eINSTANCE);
 		CodePackageImpl theCodePackage = (CodePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CodePackage.eNS_URI) instanceof CodePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CodePackage.eNS_URI) : CodePackage.eINSTANCE);
 		EmodelPackageImpl theEmodelPackage = (EmodelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EmodelPackage.eNS_URI) instanceof EmodelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EmodelPackage.eNS_URI) : EmodelPackage.eINSTANCE);
@@ -147,7 +148,6 @@ public class AssemblerPackageImpl extends EPackageImpl implements AssemblerPacka
 		theRs232Package_1.createPackageContents();
 		theApplicationPackage.createPackageContents();
 		theInterfacePackage.createPackageContents();
-		theDatatypesPackage.createPackageContents();
 		theCompositionPackage.createPackageContents();
 		theCodePackage.createPackageContents();
 		theEmodelPackage.createPackageContents();
@@ -163,7 +163,6 @@ public class AssemblerPackageImpl extends EPackageImpl implements AssemblerPacka
 		theRs232Package_1.initializePackageContents();
 		theApplicationPackage.initializePackageContents();
 		theInterfacePackage.initializePackageContents();
-		theDatatypesPackage.initializePackageContents();
 		theCompositionPackage.initializePackageContents();
 		theCodePackage.initializePackageContents();
 		theEmodelPackage.initializePackageContents();
@@ -281,7 +280,7 @@ public class AssemblerPackageImpl extends EPackageImpl implements AssemblerPacka
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		instructionSetEClass.getESuperTypes().add(theCorePackage.getPackagedElement());
+		instructionSetEClass.getESuperTypes().add(theCorePackage.getRootElement());
 		instructionEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 
 		// Initialize classes and features; add operations and parameters

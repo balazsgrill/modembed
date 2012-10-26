@@ -64,13 +64,6 @@
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
-            uri="http://modembed.hu/application/datatypes"
-            class="hu.modembed.model.application.datatypes.DatatypesPackage"
-            genModel="model/modembedmodel.genmodel"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <package
             uri="http://modembed.hu/application/composition"
             class="hu.modembed.model.application.composition.CompositionPackage"
             genModel="model/modembedmodel.genmodel"/>

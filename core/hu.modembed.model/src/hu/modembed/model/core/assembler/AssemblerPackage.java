@@ -68,13 +68,31 @@ public interface AssemblerPackage extends EPackage {
 	int INSTRUCTION_SET = 0;
 
 	/**
+	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION_SET__ORIGINS = CorePackage.ROOT_ELEMENT__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION_SET__DESCRIPTION = CorePackage.ROOT_ELEMENT__DESCRIPTION;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INSTRUCTION_SET__NAME = CorePackage.PACKAGED_ELEMENT__NAME;
+	int INSTRUCTION_SET__NAME = CorePackage.ROOT_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Instructions</b></em>' containment reference list.
@@ -83,7 +101,7 @@ public interface AssemblerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INSTRUCTION_SET__INSTRUCTIONS = CorePackage.PACKAGED_ELEMENT_FEATURE_COUNT + 0;
+	int INSTRUCTION_SET__INSTRUCTIONS = CorePackage.ROOT_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Instruction Set</em>' class.
@@ -92,7 +110,7 @@ public interface AssemblerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INSTRUCTION_SET_FEATURE_COUNT = CorePackage.PACKAGED_ELEMENT_FEATURE_COUNT + 1;
+	int INSTRUCTION_SET_FEATURE_COUNT = CorePackage.ROOT_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link hu.modembed.model.core.assembler.impl.InstructionImpl <em>Instruction</em>}' class.
@@ -103,6 +121,24 @@ public interface AssemblerPackage extends EPackage {
 	 * @generated
 	 */
 	int INSTRUCTION = 1;
+
+	/**
+	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION__ORIGINS = CorePackage.NAMED_ELEMENT__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION__DESCRIPTION = CorePackage.NAMED_ELEMENT__DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.

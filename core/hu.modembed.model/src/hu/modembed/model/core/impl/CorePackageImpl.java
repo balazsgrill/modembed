@@ -1,37 +1,49 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package hu.modembed.model.core.impl;
 
 import hu.modembed.model.application.ApplicationPackage;
+
 import hu.modembed.model.application.code.CodePackage;
+
 import hu.modembed.model.application.code.impl.CodePackageImpl;
+
 import hu.modembed.model.application.composition.CompositionPackage;
+
 import hu.modembed.model.application.composition.impl.CompositionPackageImpl;
-import hu.modembed.model.application.datatypes.DatatypesPackage;
-import hu.modembed.model.application.datatypes.impl.DatatypesPackageImpl;
+
 import hu.modembed.model.application.impl.ApplicationPackageImpl;
+
 import hu.modembed.model.application.interface_.InterfacePackage;
+
 import hu.modembed.model.application.interface_.impl.InterfacePackageImpl;
+
 import hu.modembed.model.comm.CommPackage;
+
 import hu.modembed.model.comm.impl.CommPackageImpl;
+
 import hu.modembed.model.core.CoreFactory;
 import hu.modembed.model.core.CorePackage;
 import hu.modembed.model.core.MODembedElement;
 import hu.modembed.model.core.NamedElement;
-import hu.modembed.model.core.PackagedElement;
+import hu.modembed.model.core.RootElement;
 
 import hu.modembed.model.core.assembler.AssemblerPackage;
+
 import hu.modembed.model.core.assembler.impl.AssemblerPackageImpl;
+
 import hu.modembed.model.emodel.EmodelPackage;
+
 import hu.modembed.model.emodel.expressions.ExpressionsPackage;
+
 import hu.modembed.model.emodel.expressions.impl.ExpressionsPackageImpl;
+
 import hu.modembed.model.emodel.impl.EmodelPackageImpl;
+
 import hu.modembed.model.emodel.types.TypesPackage;
+
 import hu.modembed.model.emodel.types.impl.TypesPackageImpl;
+
 import hu.modembed.model.network.NetworkPackage;
 
 import hu.modembed.model.network.impl.NetworkPackageImpl;
@@ -66,13 +78,6 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass packageEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass moDembedElementEClass = null;
 
 	/**
@@ -80,7 +85,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass packagedElementEClass = null;
+	private EClass rootElementEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -136,7 +141,6 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		hu.modembed.model.comm.rs232.impl.Rs232PackageImpl theRs232Package_1 = (hu.modembed.model.comm.rs232.impl.Rs232PackageImpl)(EPackage.Registry.INSTANCE.getEPackage(hu.modembed.model.comm.rs232.Rs232Package.eNS_URI) instanceof hu.modembed.model.comm.rs232.impl.Rs232PackageImpl ? EPackage.Registry.INSTANCE.getEPackage(hu.modembed.model.comm.rs232.Rs232Package.eNS_URI) : hu.modembed.model.comm.rs232.Rs232Package.eINSTANCE);
 		ApplicationPackageImpl theApplicationPackage = (ApplicationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI) instanceof ApplicationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI) : ApplicationPackage.eINSTANCE);
 		InterfacePackageImpl theInterfacePackage = (InterfacePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InterfacePackage.eNS_URI) instanceof InterfacePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InterfacePackage.eNS_URI) : InterfacePackage.eINSTANCE);
-		DatatypesPackageImpl theDatatypesPackage = (DatatypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI) instanceof DatatypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI) : DatatypesPackage.eINSTANCE);
 		CompositionPackageImpl theCompositionPackage = (CompositionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CompositionPackage.eNS_URI) instanceof CompositionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CompositionPackage.eNS_URI) : CompositionPackage.eINSTANCE);
 		CodePackageImpl theCodePackage = (CodePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CodePackage.eNS_URI) instanceof CodePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CodePackage.eNS_URI) : CodePackage.eINSTANCE);
 		EmodelPackageImpl theEmodelPackage = (EmodelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EmodelPackage.eNS_URI) instanceof EmodelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EmodelPackage.eNS_URI) : EmodelPackage.eINSTANCE);
@@ -152,7 +156,6 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		theRs232Package_1.createPackageContents();
 		theApplicationPackage.createPackageContents();
 		theInterfacePackage.createPackageContents();
-		theDatatypesPackage.createPackageContents();
 		theCompositionPackage.createPackageContents();
 		theCodePackage.createPackageContents();
 		theEmodelPackage.createPackageContents();
@@ -168,7 +171,6 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		theRs232Package_1.initializePackageContents();
 		theApplicationPackage.initializePackageContents();
 		theInterfacePackage.initializePackageContents();
-		theDatatypesPackage.initializePackageContents();
 		theCompositionPackage.initializePackageContents();
 		theCodePackage.initializePackageContents();
 		theEmodelPackage.initializePackageContents();
@@ -207,24 +209,6 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getPackage() {
-		return packageEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getPackage_Contents() {
-		return (EReference)packageEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getMODembedElement() {
 		return moDembedElementEClass;
 	}
@@ -234,8 +218,26 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getPackagedElement() {
-		return packagedElementEClass;
+	public EReference getMODembedElement_Origins() {
+		return (EReference)moDembedElementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getMODembedElement_Description() {
+		return (EAttribute)moDembedElementEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getRootElement() {
+		return rootElementEClass;
 	}
 
 	/**
@@ -269,12 +271,11 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		namedElementEClass = createEClass(NAMED_ELEMENT);
 		createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
 
-		packageEClass = createEClass(PACKAGE);
-		createEReference(packageEClass, PACKAGE__CONTENTS);
-
 		moDembedElementEClass = createEClass(MO_DEMBED_ELEMENT);
+		createEReference(moDembedElementEClass, MO_DEMBED_ELEMENT__ORIGINS);
+		createEAttribute(moDembedElementEClass, MO_DEMBED_ELEMENT__DESCRIPTION);
 
-		packagedElementEClass = createEClass(PACKAGED_ELEMENT);
+		rootElementEClass = createEClass(ROOT_ELEMENT);
 	}
 
 	/**
@@ -312,19 +313,17 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 
 		// Add supertypes to classes
 		namedElementEClass.getESuperTypes().add(this.getMODembedElement());
-		packageEClass.getESuperTypes().add(this.getPackagedElement());
-		packagedElementEClass.getESuperTypes().add(this.getNamedElement());
+		rootElementEClass.getESuperTypes().add(this.getNamedElement());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(namedElementEClass, NamedElement.class, "NamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNamedElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, NamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(packageEClass, hu.modembed.model.core.Package.class, "Package", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPackage_Contents(), this.getPackagedElement(), null, "contents", null, 0, -1, hu.modembed.model.core.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(moDembedElementEClass, MODembedElement.class, "MODembedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMODembedElement_Origins(), this.getMODembedElement(), null, "origins", null, 0, -1, MODembedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMODembedElement_Description(), ecorePackage.getEString(), "description", null, 0, 1, MODembedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(packagedElementEClass, PackagedElement.class, "PackagedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(rootElementEClass, RootElement.class, "RootElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

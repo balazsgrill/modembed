@@ -2,8 +2,6 @@
  */
 package hu.modembed.model.emodel;
 
-import hu.modembed.model.core.PackagedElement;
-
 import hu.modembed.model.emodel.expressions.ExecutionStep;
 
 import org.eclipse.emf.common.util.EList;
@@ -27,7 +25,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Function extends PackagedElement {
+public interface Function extends LibraryElement {
 	/**
 	 * Returns the value of the '<em><b>Arguments</b></em>' containment reference list.
 	 * The list contents are of type {@link hu.modembed.model.emodel.FunctionParameter}.

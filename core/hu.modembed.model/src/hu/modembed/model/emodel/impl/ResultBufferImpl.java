@@ -3,7 +3,6 @@
 package hu.modembed.model.emodel.impl;
 
 import hu.modembed.model.core.CorePackage;
-import hu.modembed.model.core.MODembedElement;
 import hu.modembed.model.core.NamedElement;
 
 import hu.modembed.model.emodel.EmodelPackage;
@@ -237,11 +236,6 @@ public class ResultBufferImpl extends FunctionResultImpl implements ResultBuffer
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == MODembedElement.class) {
-			switch (derivedFeatureID) {
-				default: return -1;
-			}
-		}
 		if (baseClass == NamedElement.class) {
 			switch (derivedFeatureID) {
 				case EmodelPackage.RESULT_BUFFER__NAME: return CorePackage.NAMED_ELEMENT__NAME;
@@ -264,11 +258,6 @@ public class ResultBufferImpl extends FunctionResultImpl implements ResultBuffer
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == MODembedElement.class) {
-			switch (baseFeatureID) {
-				default: return -1;
-			}
-		}
 		if (baseClass == NamedElement.class) {
 			switch (baseFeatureID) {
 				case CorePackage.NAMED_ELEMENT__NAME: return EmodelPackage.RESULT_BUFFER__NAME;

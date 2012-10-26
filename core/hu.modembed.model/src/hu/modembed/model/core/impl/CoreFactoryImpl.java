@@ -1,15 +1,8 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package hu.modembed.model.core.impl;
 
-import hu.modembed.model.core.CoreFactory;
-import hu.modembed.model.core.CorePackage;
-import hu.modembed.model.core.MODembedElement;
-import hu.modembed.model.core.PackagedElement;
+import hu.modembed.model.core.*;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -63,20 +56,9 @@ public class CoreFactoryImpl extends EFactoryImpl implements CoreFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case CorePackage.PACKAGE: return createPackage();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public hu.modembed.model.core.Package createPackage() {
-		PackageImpl package_ = new PackageImpl();
-		return package_;
 	}
 
 	/**

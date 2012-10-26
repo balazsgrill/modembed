@@ -22,31 +22,13 @@ public interface ExpressionsFactory extends EFactory {
 	ExpressionsFactory eINSTANCE = hu.modembed.model.emodel.expressions.impl.ExpressionsFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Instruction</em>'.
+	 * Returns a new object of class '<em>Instruction Call</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Instruction</em>'.
+	 * @return a new object of class '<em>Instruction Call</em>'.
 	 * @generated
 	 */
-	Instruction createInstruction();
-
-	/**
-	 * Returns a new object of class '<em>Binary Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Binary Expression</em>'.
-	 * @generated
-	 */
-	BinaryExpression createBinaryExpression();
-
-	/**
-	 * Returns a new object of class '<em>Unary Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Unary Expression</em>'.
-	 * @generated
-	 */
-	UnaryExpression createUnaryExpression();
+	InstructionCall createInstructionCall();
 
 	/**
 	 * Returns a new object of class '<em>Execution Block</em>'.
@@ -56,15 +38,6 @@ public interface ExpressionsFactory extends EFactory {
 	 * @generated
 	 */
 	ExecutionBlock createExecutionBlock();
-
-	/**
-	 * Returns a new object of class '<em>Function Call</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Function Call</em>'.
-	 * @generated
-	 */
-	FunctionCall createFunctionCall();
 
 	/**
 	 * Returns a new object of class '<em>Variable Reference</em>'.
@@ -92,6 +65,15 @@ public interface ExpressionsFactory extends EFactory {
 	 * @generated
 	 */
 	CompilationLogStep createCompilationLogStep();
+
+	/**
+	 * Returns a new object of class '<em>Function Call</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Function Call</em>'.
+	 * @generated
+	 */
+	FunctionCall createFunctionCall();
 
 	/**
 	 * Returns the package supported by this factory.
