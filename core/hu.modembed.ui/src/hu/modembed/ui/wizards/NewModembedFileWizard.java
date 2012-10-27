@@ -3,9 +3,6 @@
  */
 package hu.modembed.ui.wizards;
 
-import hu.modembed.model.core.CoreFactory;
-import hu.modembed.model.core.Package;
-
 import java.io.IOException;
 
 import org.eclipse.core.resources.IFile;
@@ -67,9 +64,9 @@ public class NewModembedFileWizard extends BasicNewResourceWizard{
 		}
         ResourceSet rs = new ResourceSetImpl();
         Resource r = rs.createResource(URI.createPlatformResourceURI(file.getFullPath().toString(), true));
-        Package pack = CoreFactory.eINSTANCE.createPackage();
-        pack.setName("root");
-        r.getContents().add(pack);
+        //Package pack = CoreFactory.eINSTANCE.createPackage();
+        //pack.setName("root");
+        //r.getContents().add(pack);
         try {
 			r.save(null);
 		} catch (IOException e1) {

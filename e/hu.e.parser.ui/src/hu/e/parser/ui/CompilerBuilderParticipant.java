@@ -3,6 +3,8 @@
  */
 package hu.e.parser.ui;
 
+import hu.e.parser.convert.LibraryConverter;
+import hu.e.parser.eSyntax.Library;
 import hu.e.parser.ui.internal.ESyntaxActivator;
 
 import org.eclipse.core.resources.IContainer;
@@ -15,6 +17,7 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.jface.dialogs.ErrorDialog;
 import org.eclipse.swt.widgets.Display;
@@ -43,10 +46,14 @@ public class CompilerBuilderParticipant implements IXtextBuilderParticipant {
 					if (resource.getName().endsWith(".e")){
 						Resource res = context.getResourceSet().
 								getResource(URI.createPlatformResourceURI(resource.getFullPath().toString(), true), true);
-						//ECompiler compiler = new ECompiler();
-						System.out.println("Compile "+resource);
+						LibraryConverter converter = new LibraryConverter(resource.getProject());
+						System.out.println("Parse "+resource);
 						try{
-							//compiler.compile(res, (IFile)resource);
+							for(EObject l : res.getContents()){
+								if (l instanceof Library){
+									converter.convert((Library)l);
+								}
+							}
 						}catch (final Exception e) {
 							e.printStackTrace();
 							Display.getDefault().asyncExec(new Runnable() {
