@@ -4,23 +4,16 @@ package hu.e.parser.eSyntax.impl;
 
 import hu.e.parser.eSyntax.ESyntaxPackage;
 import hu.e.parser.eSyntax.Operation;
-import hu.e.parser.eSyntax.Variable;
+import hu.e.parser.eSyntax.OperationTypeDef;
 import hu.e.parser.eSyntax.XExpression;
-
-import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,11 +22,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link hu.e.parser.eSyntax.impl.OperationImpl#getType <em>Type</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.impl.OperationImpl#getOverrides <em>Overrides</em>}</li>
- *   <li>{@link hu.e.parser.eSyntax.impl.OperationImpl#getParams <em>Params</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.impl.OperationImpl#getContent <em>Content</em>}</li>
- *   <li>{@link hu.e.parser.eSyntax.impl.OperationImpl#getReturn <em>Return</em>}</li>
- *   <li>{@link hu.e.parser.eSyntax.impl.OperationImpl#getReturnvar <em>Returnvar</em>}</li>
  * </ul>
  * </p>
  *
@@ -41,6 +32,16 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class OperationImpl extends LibraryItemImpl implements Operation
 {
+  /**
+   * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getType()
+   * @generated
+   * @ordered
+   */
+  protected OperationTypeDef type;
+
   /**
    * The default value of the '{@link #getOverrides() <em>Overrides</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -62,16 +63,6 @@ public class OperationImpl extends LibraryItemImpl implements Operation
   protected String overrides = OVERRIDES_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getParams() <em>Params</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getParams()
-   * @generated
-   * @ordered
-   */
-  protected EList<Variable> params;
-
-  /**
    * The cached value of the '{@link #getContent() <em>Content</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -80,26 +71,6 @@ public class OperationImpl extends LibraryItemImpl implements Operation
    * @ordered
    */
   protected XExpression content;
-
-  /**
-   * The cached value of the '{@link #getReturn() <em>Return</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getReturn()
-   * @generated
-   * @ordered
-   */
-  protected XExpression return_;
-
-  /**
-   * The cached value of the '{@link #getReturnvar() <em>Returnvar</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getReturnvar()
-   * @generated
-   * @ordered
-   */
-  protected Variable returnvar;
 
   /**
    * <!-- begin-user-doc -->
@@ -127,6 +98,54 @@ public class OperationImpl extends LibraryItemImpl implements Operation
    * <!-- end-user-doc -->
    * @generated
    */
+  public OperationTypeDef getType()
+  {
+    return type;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetType(OperationTypeDef newType, NotificationChain msgs)
+  {
+    OperationTypeDef oldType = type;
+    type = newType;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ESyntaxPackage.OPERATION__TYPE, oldType, newType);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setType(OperationTypeDef newType)
+  {
+    if (newType != type)
+    {
+      NotificationChain msgs = null;
+      if (type != null)
+        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ESyntaxPackage.OPERATION__TYPE, null, msgs);
+      if (newType != null)
+        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ESyntaxPackage.OPERATION__TYPE, null, msgs);
+      msgs = basicSetType(newType, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.OPERATION__TYPE, newType, newType));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public String getOverrides()
   {
     return overrides;
@@ -143,20 +162,6 @@ public class OperationImpl extends LibraryItemImpl implements Operation
     overrides = newOverrides;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.OPERATION__OVERRIDES, oldOverrides, overrides));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<Variable> getParams()
-  {
-    if (params == null)
-    {
-      params = new EObjectContainmentEList<Variable>(Variable.class, this, ESyntaxPackage.OPERATION__PARAMS);
-    }
-    return params;
   }
 
   /**
@@ -212,115 +217,15 @@ public class OperationImpl extends LibraryItemImpl implements Operation
    * <!-- end-user-doc -->
    * @generated
    */
-  public XExpression getReturn()
-  {
-    return return_;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetReturn(XExpression newReturn, NotificationChain msgs)
-  {
-    XExpression oldReturn = return_;
-    return_ = newReturn;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ESyntaxPackage.OPERATION__RETURN, oldReturn, newReturn);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setReturn(XExpression newReturn)
-  {
-    if (newReturn != return_)
-    {
-      NotificationChain msgs = null;
-      if (return_ != null)
-        msgs = ((InternalEObject)return_).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ESyntaxPackage.OPERATION__RETURN, null, msgs);
-      if (newReturn != null)
-        msgs = ((InternalEObject)newReturn).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ESyntaxPackage.OPERATION__RETURN, null, msgs);
-      msgs = basicSetReturn(newReturn, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.OPERATION__RETURN, newReturn, newReturn));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Variable getReturnvar()
-  {
-    return returnvar;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetReturnvar(Variable newReturnvar, NotificationChain msgs)
-  {
-    Variable oldReturnvar = returnvar;
-    returnvar = newReturnvar;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ESyntaxPackage.OPERATION__RETURNVAR, oldReturnvar, newReturnvar);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setReturnvar(Variable newReturnvar)
-  {
-    if (newReturnvar != returnvar)
-    {
-      NotificationChain msgs = null;
-      if (returnvar != null)
-        msgs = ((InternalEObject)returnvar).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ESyntaxPackage.OPERATION__RETURNVAR, null, msgs);
-      if (newReturnvar != null)
-        msgs = ((InternalEObject)newReturnvar).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ESyntaxPackage.OPERATION__RETURNVAR, null, msgs);
-      msgs = basicSetReturnvar(newReturnvar, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.OPERATION__RETURNVAR, newReturnvar, newReturnvar));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
     {
-      case ESyntaxPackage.OPERATION__PARAMS:
-        return ((InternalEList<?>)getParams()).basicRemove(otherEnd, msgs);
+      case ESyntaxPackage.OPERATION__TYPE:
+        return basicSetType(null, msgs);
       case ESyntaxPackage.OPERATION__CONTENT:
         return basicSetContent(null, msgs);
-      case ESyntaxPackage.OPERATION__RETURN:
-        return basicSetReturn(null, msgs);
-      case ESyntaxPackage.OPERATION__RETURNVAR:
-        return basicSetReturnvar(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -335,16 +240,12 @@ public class OperationImpl extends LibraryItemImpl implements Operation
   {
     switch (featureID)
     {
+      case ESyntaxPackage.OPERATION__TYPE:
+        return getType();
       case ESyntaxPackage.OPERATION__OVERRIDES:
         return getOverrides();
-      case ESyntaxPackage.OPERATION__PARAMS:
-        return getParams();
       case ESyntaxPackage.OPERATION__CONTENT:
         return getContent();
-      case ESyntaxPackage.OPERATION__RETURN:
-        return getReturn();
-      case ESyntaxPackage.OPERATION__RETURNVAR:
-        return getReturnvar();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -354,27 +255,19 @@ public class OperationImpl extends LibraryItemImpl implements Operation
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
+      case ESyntaxPackage.OPERATION__TYPE:
+        setType((OperationTypeDef)newValue);
+        return;
       case ESyntaxPackage.OPERATION__OVERRIDES:
         setOverrides((String)newValue);
         return;
-      case ESyntaxPackage.OPERATION__PARAMS:
-        getParams().clear();
-        getParams().addAll((Collection<? extends Variable>)newValue);
-        return;
       case ESyntaxPackage.OPERATION__CONTENT:
         setContent((XExpression)newValue);
-        return;
-      case ESyntaxPackage.OPERATION__RETURN:
-        setReturn((XExpression)newValue);
-        return;
-      case ESyntaxPackage.OPERATION__RETURNVAR:
-        setReturnvar((Variable)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -390,20 +283,14 @@ public class OperationImpl extends LibraryItemImpl implements Operation
   {
     switch (featureID)
     {
+      case ESyntaxPackage.OPERATION__TYPE:
+        setType((OperationTypeDef)null);
+        return;
       case ESyntaxPackage.OPERATION__OVERRIDES:
         setOverrides(OVERRIDES_EDEFAULT);
         return;
-      case ESyntaxPackage.OPERATION__PARAMS:
-        getParams().clear();
-        return;
       case ESyntaxPackage.OPERATION__CONTENT:
         setContent((XExpression)null);
-        return;
-      case ESyntaxPackage.OPERATION__RETURN:
-        setReturn((XExpression)null);
-        return;
-      case ESyntaxPackage.OPERATION__RETURNVAR:
-        setReturnvar((Variable)null);
         return;
     }
     super.eUnset(featureID);
@@ -419,16 +306,12 @@ public class OperationImpl extends LibraryItemImpl implements Operation
   {
     switch (featureID)
     {
+      case ESyntaxPackage.OPERATION__TYPE:
+        return type != null;
       case ESyntaxPackage.OPERATION__OVERRIDES:
         return OVERRIDES_EDEFAULT == null ? overrides != null : !OVERRIDES_EDEFAULT.equals(overrides);
-      case ESyntaxPackage.OPERATION__PARAMS:
-        return params != null && !params.isEmpty();
       case ESyntaxPackage.OPERATION__CONTENT:
         return content != null;
-      case ESyntaxPackage.OPERATION__RETURN:
-        return return_ != null;
-      case ESyntaxPackage.OPERATION__RETURNVAR:
-        return returnvar != null;
     }
     return super.eIsSet(featureID);
   }

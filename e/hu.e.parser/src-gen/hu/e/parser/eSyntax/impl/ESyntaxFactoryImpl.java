@@ -85,7 +85,10 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
       case ESyntaxPackage.VARIABLE_REFERENCE: return createVariableReference();
       case ESyntaxPackage.OPERATION_CALL: return createOperationCall();
       case ESyntaxPackage.OPERATION_CALL_PARAMETER: return createOperationCallParameter();
+      case ESyntaxPackage.OPERATION_TYPE_DEF: return createOperationTypeDef();
       case ESyntaxPackage.OPERATION: return createOperation();
+      case ESyntaxPackage.OPERATION_PARAMETER: return createOperationParameter();
+      case ESyntaxPackage.LAZY_PARAMETER: return createLazyParameter();
       case ESyntaxPackage.XEXPRESSION: return createXExpression();
       case ESyntaxPackage.XEXPRESSION_BLOCK: return createXExpressionBlock();
       case ESyntaxPackage.XPRIMARY_EXPRESSION: return createXPrimaryExpression();
@@ -406,10 +409,43 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public OperationTypeDef createOperationTypeDef()
+  {
+    OperationTypeDefImpl operationTypeDef = new OperationTypeDefImpl();
+    return operationTypeDef;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Operation createOperation()
   {
     OperationImpl operation = new OperationImpl();
     return operation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public OperationParameter createOperationParameter()
+  {
+    OperationParameterImpl operationParameter = new OperationParameterImpl();
+    return operationParameter;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public LazyParameter createLazyParameter()
+  {
+    LazyParameterImpl lazyParameter = new LazyParameterImpl();
+    return lazyParameter;
   }
 
   /**

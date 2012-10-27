@@ -10,10 +10,12 @@ import hu.e.parser.eSyntax.ESyntaxPackage;
 import hu.e.parser.eSyntax.FixedDataTypeDef;
 import hu.e.parser.eSyntax.IntegerDataTypeDef;
 import hu.e.parser.eSyntax.Label;
+import hu.e.parser.eSyntax.LazyParameter;
 import hu.e.parser.eSyntax.Library;
 import hu.e.parser.eSyntax.Operation;
 import hu.e.parser.eSyntax.OperationBlock;
 import hu.e.parser.eSyntax.OperationCall;
+import hu.e.parser.eSyntax.OperationTypeDef;
 import hu.e.parser.eSyntax.ParameterVariable;
 import hu.e.parser.eSyntax.PointerTypeDef;
 import hu.e.parser.eSyntax.RefTypeDef;
@@ -111,6 +113,13 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 					return; 
 				}
 				else break;
+			case ESyntaxPackage.LAZY_PARAMETER:
+				if(context == grammarAccess.getLazyParameterRule() ||
+				   context == grammarAccess.getOperationParameterRule()) {
+					sequence_LazyParameter(context, (LazyParameter) semanticObject); 
+					return; 
+				}
+				else break;
 			case ESyntaxPackage.LIBRARY:
 				if(context == grammarAccess.getCompilationUnitRule() ||
 				   context == grammarAccess.getLibraryRule()) {
@@ -139,8 +148,15 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 					return; 
 				}
 				else break;
+			case ESyntaxPackage.OPERATION_TYPE_DEF:
+				if(context == grammarAccess.getOperationTypeDefRule()) {
+					sequence_OperationTypeDef(context, (OperationTypeDef) semanticObject); 
+					return; 
+				}
+				else break;
 			case ESyntaxPackage.PARAMETER_VARIABLE:
-				if(context == grammarAccess.getParameterVariableRule()) {
+				if(context == grammarAccess.getOperationParameterRule() ||
+				   context == grammarAccess.getParameterVariableRule()) {
 					sequence_ParameterVariable(context, (ParameterVariable) semanticObject); 
 					return; 
 				}
@@ -422,6 +438,25 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 	
 	/**
 	 * Constraint:
+	 *     (paramname=ID type=OperationTypeDef)
+	 */
+	protected void sequence_LazyParameter(EObject context, LazyParameter semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.LAZY_PARAMETER__PARAMNAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.LAZY_PARAMETER__PARAMNAME));
+			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.LAZY_PARAMETER__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.LAZY_PARAMETER__TYPE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getLazyParameterAccess().getParamnameIDTerminalRuleCall_1_0(), semanticObject.getParamname());
+		feeder.accept(grammarAccess.getLazyParameterAccess().getTypeOperationTypeDefParserRuleCall_2_0(), semanticObject.getType());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (name=LibraryName use+=LibraryName* items+=LibraryItem*)
 	 */
 	protected void sequence_Library(EObject context, Library semanticObject) {
@@ -440,13 +475,16 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 	
 	/**
 	 * Constraint:
-	 *     (
-	 *         name=ID 
-	 *         overrides=QualifiedName? 
-	 *         (params+=ParameterVariable params+=ParameterVariable*)? 
-	 *         content=XExpression 
-	 *         (return=XExpression | returnvar=Variable)?
-	 *     )
+	 *     (resultType=TypeDef (params+=ParameterVariable params+=OperationParameter*)?)
+	 */
+	protected void sequence_OperationTypeDef(EObject context, OperationTypeDef semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID type=OperationTypeDef overrides=QualifiedName? content=XExpression)
 	 */
 	protected void sequence_Operation(EObject context, Operation semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -455,7 +493,7 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 	
 	/**
 	 * Constraint:
-	 *     (lazy?='lazy' kind=ParameterKind? name=ID default=LITERAL?)
+	 *     (kind=ParameterKind? type=TypeDef name=ID default=LITERAL?)
 	 */
 	protected void sequence_ParameterVariable(EObject context, ParameterVariable semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

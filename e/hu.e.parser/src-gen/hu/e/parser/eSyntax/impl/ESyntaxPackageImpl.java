@@ -15,6 +15,7 @@ import hu.e.parser.eSyntax.FixedDataTypeDef;
 import hu.e.parser.eSyntax.IntegerDataTypeDef;
 import hu.e.parser.eSyntax.IntegerKind;
 import hu.e.parser.eSyntax.Label;
+import hu.e.parser.eSyntax.LazyParameter;
 import hu.e.parser.eSyntax.Library;
 import hu.e.parser.eSyntax.LibraryItem;
 import hu.e.parser.eSyntax.OpSingleAssign;
@@ -22,7 +23,9 @@ import hu.e.parser.eSyntax.Operation;
 import hu.e.parser.eSyntax.OperationBlock;
 import hu.e.parser.eSyntax.OperationCall;
 import hu.e.parser.eSyntax.OperationCallParameter;
+import hu.e.parser.eSyntax.OperationParameter;
 import hu.e.parser.eSyntax.OperationStep;
+import hu.e.parser.eSyntax.OperationTypeDef;
 import hu.e.parser.eSyntax.ParameterKind;
 import hu.e.parser.eSyntax.ParameterVariable;
 import hu.e.parser.eSyntax.PointerTypeDef;
@@ -215,7 +218,28 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass operationTypeDefEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass operationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass operationParameterEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass lazyParameterEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -896,6 +920,36 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getOperationTypeDef()
+  {
+    return operationTypeDefEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getOperationTypeDef_ResultType()
+  {
+    return (EReference)operationTypeDefEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getOperationTypeDef_Params()
+  {
+    return (EReference)operationTypeDefEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getOperation()
   {
     return operationEClass;
@@ -906,9 +960,9 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getOperation_Overrides()
+  public EReference getOperation_Type()
   {
-    return (EAttribute)operationEClass.getEStructuralFeatures().get(0);
+    return (EReference)operationEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -916,9 +970,9 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getOperation_Params()
+  public EAttribute getOperation_Overrides()
   {
-    return (EReference)operationEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)operationEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -936,9 +990,9 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getOperation_Return()
+  public EClass getOperationParameter()
   {
-    return (EReference)operationEClass.getEStructuralFeatures().get(3);
+    return operationParameterEClass;
   }
 
   /**
@@ -946,9 +1000,29 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getOperation_Returnvar()
+  public EClass getLazyParameter()
   {
-    return (EReference)operationEClass.getEStructuralFeatures().get(4);
+    return lazyParameterEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getLazyParameter_Paramname()
+  {
+    return (EAttribute)lazyParameterEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getLazyParameter_Type()
+  {
+    return (EReference)lazyParameterEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1496,7 +1570,7 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getParameterVariable_Lazy()
+  public EAttribute getParameterVariable_Kind()
   {
     return (EAttribute)parameterVariableEClass.getEStructuralFeatures().get(0);
   }
@@ -1506,19 +1580,9 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getParameterVariable_Kind()
-  {
-    return (EAttribute)parameterVariableEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EAttribute getParameterVariable_Default()
   {
-    return (EAttribute)parameterVariableEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)parameterVariableEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1719,12 +1783,20 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
 
     operationCallParameterEClass = createEClass(OPERATION_CALL_PARAMETER);
 
+    operationTypeDefEClass = createEClass(OPERATION_TYPE_DEF);
+    createEReference(operationTypeDefEClass, OPERATION_TYPE_DEF__RESULT_TYPE);
+    createEReference(operationTypeDefEClass, OPERATION_TYPE_DEF__PARAMS);
+
     operationEClass = createEClass(OPERATION);
+    createEReference(operationEClass, OPERATION__TYPE);
     createEAttribute(operationEClass, OPERATION__OVERRIDES);
-    createEReference(operationEClass, OPERATION__PARAMS);
     createEReference(operationEClass, OPERATION__CONTENT);
-    createEReference(operationEClass, OPERATION__RETURN);
-    createEReference(operationEClass, OPERATION__RETURNVAR);
+
+    operationParameterEClass = createEClass(OPERATION_PARAMETER);
+
+    lazyParameterEClass = createEClass(LAZY_PARAMETER);
+    createEAttribute(lazyParameterEClass, LAZY_PARAMETER__PARAMNAME);
+    createEReference(lazyParameterEClass, LAZY_PARAMETER__TYPE);
 
     xExpressionEClass = createEClass(XEXPRESSION);
 
@@ -1802,7 +1874,6 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     labelEClass = createEClass(LABEL);
 
     parameterVariableEClass = createEClass(PARAMETER_VARIABLE);
-    createEAttribute(parameterVariableEClass, PARAMETER_VARIABLE__LAZY);
     createEAttribute(parameterVariableEClass, PARAMETER_VARIABLE__KIND);
     createEAttribute(parameterVariableEClass, PARAMETER_VARIABLE__DEFAULT);
 
@@ -1864,9 +1935,11 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     structTypeDefEClass.getESuperTypes().add(this.getTypeDef());
     variableEClass.getESuperTypes().add(this.getLibraryItem());
     variableEClass.getESuperTypes().add(this.getOperationStep());
+    variableEClass.getESuperTypes().add(this.getOperationParameter());
     variableReferenceEClass.getESuperTypes().add(this.getXPrimaryExpression());
     operationCallEClass.getESuperTypes().add(this.getXPrimaryExpression());
     operationEClass.getESuperTypes().add(this.getLibraryItem());
+    lazyParameterEClass.getESuperTypes().add(this.getOperationParameter());
     xExpressionEClass.getESuperTypes().add(this.getOperationCallParameter());
     xExpressionEClass.getESuperTypes().add(this.getXTopLevelExpression());
     xExpressionBlockEClass.getESuperTypes().add(this.getXPrimaryExpression());
@@ -1944,12 +2017,20 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
 
     initEClass(operationCallParameterEClass, OperationCallParameter.class, "OperationCallParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+    initEClass(operationTypeDefEClass, OperationTypeDef.class, "OperationTypeDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getOperationTypeDef_ResultType(), this.getTypeDef(), null, "resultType", null, 0, 1, OperationTypeDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getOperationTypeDef_Params(), this.getOperationParameter(), null, "params", null, 0, -1, OperationTypeDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(operationEClass, Operation.class, "Operation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getOperation_Type(), this.getOperationTypeDef(), null, "type", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getOperation_Overrides(), ecorePackage.getEString(), "overrides", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getOperation_Params(), this.getVariable(), null, "params", null, 0, -1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getOperation_Content(), this.getXExpression(), null, "content", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getOperation_Return(), this.getXExpression(), null, "return", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getOperation_Returnvar(), this.getVariable(), null, "returnvar", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(operationParameterEClass, OperationParameter.class, "OperationParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(lazyParameterEClass, LazyParameter.class, "LazyParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getLazyParameter_Paramname(), ecorePackage.getEString(), "paramname", null, 0, 1, LazyParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLazyParameter_Type(), this.getOperationTypeDef(), null, "type", null, 0, 1, LazyParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(xExpressionEClass, XExpression.class, "XExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -2027,7 +2108,6 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     initEClass(labelEClass, Label.class, "Label", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(parameterVariableEClass, ParameterVariable.class, "ParameterVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getParameterVariable_Lazy(), ecorePackage.getEBoolean(), "lazy", null, 0, 1, ParameterVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getParameterVariable_Kind(), this.getParameterKind(), "kind", null, 0, 1, ParameterVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getParameterVariable_Default(), ecorePackage.getEString(), "default", null, 0, 1, ParameterVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

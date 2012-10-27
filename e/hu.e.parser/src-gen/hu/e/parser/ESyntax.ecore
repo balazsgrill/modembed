@@ -52,7 +52,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="members" upperBound="-1"
         eType="#//Variable" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Variable" eSuperTypes="#//LibraryItem #//OperationStep">
+  <eClassifiers xsi:type="ecore:EClass" name="Variable" eSuperTypes="#//LibraryItem #//OperationStep #//OperationParameter">
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//TypeDef"
         containment="true"/>
   </eClassifiers>
@@ -66,15 +66,23 @@
         eType="#//OperationCallParameter" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OperationCallParameter"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Operation" eSuperTypes="#//LibraryItem">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="overrides" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OperationTypeDef">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resultType" eType="#//TypeDef"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="params" upperBound="-1"
-        eType="#//Variable" containment="true"/>
+        eType="#//OperationParameter" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Operation" eSuperTypes="#//LibraryItem">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//OperationTypeDef"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="overrides" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="#//XExpression"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="return" eType="#//XExpression"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="returnvar" eType="#//Variable"
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OperationParameter"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LazyParameter" eSuperTypes="#//OperationParameter">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="paramname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//OperationTypeDef"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ParameterKind">
@@ -216,7 +224,6 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Label" eSuperTypes="#//Variable"/>
   <eClassifiers xsi:type="ecore:EClass" name="ParameterVariable" eSuperTypes="#//Variable">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lazy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//ParameterKind"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="default" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>

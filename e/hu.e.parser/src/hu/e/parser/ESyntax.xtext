@@ -160,16 +160,27 @@ OperationCallParameter:
 	XExpression
 ;
 
+OperationTypeDef:
+	resultType=TypeDef '('
+		(params+=ParameterVariable (',' params+=OperationParameter)*)? 
+	 ')'
+;
+
 Operation:
-	{Operation} name=ID (overrides=QualifiedName)? '('
-		(params+=ParameterVariable (',' params+=ParameterVariable)*)?
-	')'
+	'function' name=ID type=OperationTypeDef ('overrides' overrides=QualifiedName)? 
 	content = XExpression 
-	 ('returns' (return=XExpression | returnvar=Variable) ';')?
+;
+
+OperationParameter:
+	ParameterVariable | LazyParameter
+;
+
+LazyParameter:
+	'lazy' paramname=ID type=OperationTypeDef
 ;
 
 ParameterVariable returns Variable:
-	{ParameterVariable} lazy?='lazy' (kind=ParameterKind)? name=ID ('=' default=LITERAL)?  
+	{ParameterVariable} (kind=ParameterKind)? type=TypeDef name=ID ('=' default=LITERAL)?  
 ;
 
 enum ParameterKind:

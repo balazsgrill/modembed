@@ -203,6 +203,15 @@ public interface ESyntaxFactory extends EFactory
   OperationCallParameter createOperationCallParameter();
 
   /**
+   * Returns a new object of class '<em>Operation Type Def</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Operation Type Def</em>'.
+   * @generated
+   */
+  OperationTypeDef createOperationTypeDef();
+
+  /**
    * Returns a new object of class '<em>Operation</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -210,6 +219,24 @@ public interface ESyntaxFactory extends EFactory
    * @generated
    */
   Operation createOperation();
+
+  /**
+   * Returns a new object of class '<em>Operation Parameter</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Operation Parameter</em>'.
+   * @generated
+   */
+  OperationParameter createOperationParameter();
+
+  /**
+   * Returns a new object of class '<em>Lazy Parameter</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Lazy Parameter</em>'.
+   * @generated
+   */
+  LazyParameter createLazyParameter();
 
   /**
    * Returns a new object of class '<em>XExpression</em>'.

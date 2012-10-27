@@ -175,9 +175,24 @@ public class ESyntaxAdapterFactory extends AdapterFactoryImpl
         return createOperationCallParameterAdapter();
       }
       @Override
+      public Adapter caseOperationTypeDef(OperationTypeDef object)
+      {
+        return createOperationTypeDefAdapter();
+      }
+      @Override
       public Adapter caseOperation(Operation object)
       {
         return createOperationAdapter();
+      }
+      @Override
+      public Adapter caseOperationParameter(OperationParameter object)
+      {
+        return createOperationParameterAdapter();
+      }
+      @Override
+      public Adapter caseLazyParameter(LazyParameter object)
+      {
+        return createLazyParameterAdapter();
       }
       @Override
       public Adapter caseXExpression(XExpression object)
@@ -622,6 +637,21 @@ public class ESyntaxAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link hu.e.parser.eSyntax.OperationTypeDef <em>Operation Type Def</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.e.parser.eSyntax.OperationTypeDef
+   * @generated
+   */
+  public Adapter createOperationTypeDefAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link hu.e.parser.eSyntax.Operation <em>Operation</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -632,6 +662,36 @@ public class ESyntaxAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createOperationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.e.parser.eSyntax.OperationParameter <em>Operation Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.e.parser.eSyntax.OperationParameter
+   * @generated
+   */
+  public Adapter createOperationParameterAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.e.parser.eSyntax.LazyParameter <em>Lazy Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.e.parser.eSyntax.LazyParameter
+   * @generated
+   */
+  public Adapter createLazyParameterAdapter()
   {
     return null;
   }

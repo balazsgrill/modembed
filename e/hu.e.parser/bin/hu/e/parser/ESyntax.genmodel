@@ -105,12 +105,19 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//OperationCall/params"/>
     </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//OperationCallParameter"/>
+    <genClasses ecoreClass="ESyntax.ecore#//OperationTypeDef">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//OperationTypeDef/resultType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//OperationTypeDef/params"/>
+    </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//Operation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//Operation/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//Operation/overrides"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//Operation/params"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//Operation/content"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//Operation/return"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//Operation/returnvar"/>
+    </genClasses>
+    <genClasses ecoreClass="ESyntax.ecore#//OperationParameter"/>
+    <genClasses ecoreClass="ESyntax.ecore#//LazyParameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//LazyParameter/paramname"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//LazyParameter/type"/>
     </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//XExpression"/>
     <genClasses ecoreClass="ESyntax.ecore#//XExpressionBlock"/>
@@ -182,7 +189,6 @@
     </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//Label"/>
     <genClasses ecoreClass="ESyntax.ecore#//ParameterVariable">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//ParameterVariable/lazy"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//ParameterVariable/kind"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//ParameterVariable/default"/>
     </genClasses>

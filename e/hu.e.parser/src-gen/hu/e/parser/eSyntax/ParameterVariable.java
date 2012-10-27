@@ -11,7 +11,6 @@ package hu.e.parser.eSyntax;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link hu.e.parser.eSyntax.ParameterVariable#isLazy <em>Lazy</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.ParameterVariable#getKind <em>Kind</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.ParameterVariable#getDefault <em>Default</em>}</li>
  * </ul>
@@ -23,32 +22,6 @@ package hu.e.parser.eSyntax;
  */
 public interface ParameterVariable extends Variable
 {
-  /**
-   * Returns the value of the '<em><b>Lazy</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Lazy</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Lazy</em>' attribute.
-   * @see #setLazy(boolean)
-   * @see hu.e.parser.eSyntax.ESyntaxPackage#getParameterVariable_Lazy()
-   * @model
-   * @generated
-   */
-  boolean isLazy();
-
-  /**
-   * Sets the value of the '{@link hu.e.parser.eSyntax.ParameterVariable#isLazy <em>Lazy</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Lazy</em>' attribute.
-   * @see #isLazy()
-   * @generated
-   */
-  void setLazy(boolean value);
-
   /**
    * Returns the value of the '<em><b>Kind</b></em>' attribute.
    * The literals are from the enumeration {@link hu.e.parser.eSyntax.ParameterKind}.

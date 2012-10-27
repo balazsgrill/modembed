@@ -198,6 +198,7 @@ public class ESyntaxSwitch<T> extends Switch<T>
         T result = caseVariable(variable);
         if (result == null) result = caseLibraryItem(variable);
         if (result == null) result = caseOperationStep(variable);
+        if (result == null) result = caseOperationParameter(variable);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -231,11 +232,33 @@ public class ESyntaxSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case ESyntaxPackage.OPERATION_TYPE_DEF:
+      {
+        OperationTypeDef operationTypeDef = (OperationTypeDef)theEObject;
+        T result = caseOperationTypeDef(operationTypeDef);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case ESyntaxPackage.OPERATION:
       {
         Operation operation = (Operation)theEObject;
         T result = caseOperation(operation);
         if (result == null) result = caseLibraryItem(operation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ESyntaxPackage.OPERATION_PARAMETER:
+      {
+        OperationParameter operationParameter = (OperationParameter)theEObject;
+        T result = caseOperationParameter(operationParameter);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ESyntaxPackage.LAZY_PARAMETER:
+      {
+        LazyParameter lazyParameter = (LazyParameter)theEObject;
+        T result = caseLazyParameter(lazyParameter);
+        if (result == null) result = caseOperationParameter(lazyParameter);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -388,6 +411,7 @@ public class ESyntaxSwitch<T> extends Switch<T>
         if (result == null) result = caseVariable(structTypeDefMember);
         if (result == null) result = caseLibraryItem(structTypeDefMember);
         if (result == null) result = caseOperationStep(structTypeDefMember);
+        if (result == null) result = caseOperationParameter(structTypeDefMember);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -398,6 +422,7 @@ public class ESyntaxSwitch<T> extends Switch<T>
         if (result == null) result = caseVariable(constantVariable);
         if (result == null) result = caseLibraryItem(constantVariable);
         if (result == null) result = caseOperationStep(constantVariable);
+        if (result == null) result = caseOperationParameter(constantVariable);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -408,6 +433,7 @@ public class ESyntaxSwitch<T> extends Switch<T>
         if (result == null) result = caseVariable(registerVariable);
         if (result == null) result = caseLibraryItem(registerVariable);
         if (result == null) result = caseOperationStep(registerVariable);
+        if (result == null) result = caseOperationParameter(registerVariable);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -418,6 +444,7 @@ public class ESyntaxSwitch<T> extends Switch<T>
         if (result == null) result = caseVariable(label);
         if (result == null) result = caseLibraryItem(label);
         if (result == null) result = caseOperationStep(label);
+        if (result == null) result = caseOperationParameter(label);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -428,6 +455,7 @@ public class ESyntaxSwitch<T> extends Switch<T>
         if (result == null) result = caseVariable(parameterVariable);
         if (result == null) result = caseLibraryItem(parameterVariable);
         if (result == null) result = caseOperationStep(parameterVariable);
+        if (result == null) result = caseOperationParameter(parameterVariable);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -765,6 +793,22 @@ public class ESyntaxSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Operation Type Def</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Operation Type Def</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseOperationTypeDef(OperationTypeDef object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Operation</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -776,6 +820,38 @@ public class ESyntaxSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseOperation(Operation object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Operation Parameter</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Operation Parameter</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseOperationParameter(OperationParameter object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Lazy Parameter</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Lazy Parameter</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLazyParameter(LazyParameter object)
   {
     return null;
   }
