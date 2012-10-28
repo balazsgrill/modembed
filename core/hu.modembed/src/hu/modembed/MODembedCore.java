@@ -11,6 +11,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EPackage.Registry;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.osgi.framework.BundleContext;
 
@@ -74,7 +75,12 @@ public class MODembedCore extends Plugin {
 		List<EClass> subs = new ArrayList<EClass>();
 		subs.add(base);
 
-		for (Object oo : resourceSet.getPackageRegistry().values()) {
+		Registry reg = Registry.INSTANCE;
+		if (resourceSet != null){
+			reg = resourceSet.getPackageRegistry();
+		}
+		
+		for (Object oo : reg.values()) {
 
 			if (oo instanceof EPackage) {
 				Iterator<EObject> iter = ((EPackage) oo).eContents().iterator();

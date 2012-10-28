@@ -3,10 +3,13 @@
  */
 package hu.modembed.ui.wizards;
 
+import hu.modembed.model.core.RootElement;
+
 import java.io.IOException;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
@@ -26,10 +29,13 @@ import org.eclipse.ui.wizards.newresource.BasicNewResourceWizard;
 public class NewModembedFileWizard extends BasicNewResourceWizard{
 
 	private WizardNewFileCreationPage mainPage;
+	private RootTypeSelectorPage typePage;
 	
 	@Override
 	public void addPages() {
 		super.addPages();
+		typePage = new RootTypeSelectorPage("page0");
+		addPage(typePage);
 		mainPage = new WizardNewFileCreationPage("newFilePage1", getSelection());//$NON-NLS-1$
         mainPage.setTitle("New model file");
         mainPage.setDescription("This wizard create a new MODembed model");
@@ -54,6 +60,14 @@ public class NewModembedFileWizard extends BasicNewResourceWizard{
 //	   setDefaultPageImageDescriptor(desc);
     }
 
+    private String fileNameWithoutExt(String name){
+    	int i = name.lastIndexOf('.');
+    	if (i != -1){
+    		return name.substring(0, i-1);
+    	}
+    	return name;
+    }
+    
     /* (non-Javadoc)
      * Method declared on IWizard.
      */
@@ -64,9 +78,10 @@ public class NewModembedFileWizard extends BasicNewResourceWizard{
 		}
         ResourceSet rs = new ResourceSetImpl();
         Resource r = rs.createResource(URI.createPlatformResourceURI(file.getFullPath().toString(), true));
-        //Package pack = CoreFactory.eINSTANCE.createPackage();
-        //pack.setName("root");
-        //r.getContents().add(pack);
+        EClass ec = typePage.eclass;
+        RootElement element = (RootElement)ec.getEPackage().getEFactoryInstance().create(ec);
+        element.setName(fileNameWithoutExt(file.getName()));
+        r.getContents().add(element);
         try {
 			r.save(null);
 		} catch (IOException e1) {
