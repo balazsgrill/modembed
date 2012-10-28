@@ -3,6 +3,7 @@
 package hu.modembed.model.core.assembler;
 
 import hu.modembed.model.core.NamedElement;
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -12,7 +13,8 @@ import hu.modembed.model.core.NamedElement;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link hu.modembed.model.core.assembler.Instruction#getCode <em>Code</em>}</li>
+ *   <li>{@link hu.modembed.model.core.assembler.Instruction#getSections <em>Sections</em>}</li>
+ *   <li>{@link hu.modembed.model.core.assembler.Instruction#getParameters <em>Parameters</em>}</li>
  * </ul>
  * </p>
  *
@@ -22,29 +24,35 @@ import hu.modembed.model.core.NamedElement;
  */
 public interface Instruction extends NamedElement {
 	/**
-	 * Returns the value of the '<em><b>Code</b></em>' attribute.
+	 * Returns the value of the '<em><b>Sections</b></em>' containment reference list.
+	 * The list contents are of type {@link hu.modembed.model.core.assembler.InstructionSection}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Code</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Sections</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Code</em>' attribute.
-	 * @see #setCode(String)
-	 * @see hu.modembed.model.core.assembler.AssemblerPackage#getInstruction_Code()
-	 * @model
+	 * @return the value of the '<em>Sections</em>' containment reference list.
+	 * @see hu.modembed.model.core.assembler.AssemblerPackage#getInstruction_Sections()
+	 * @model containment="true"
 	 * @generated
 	 */
-	String getCode();
+	EList<InstructionSection> getSections();
 
 	/**
-	 * Sets the value of the '{@link hu.modembed.model.core.assembler.Instruction#getCode <em>Code</em>}' attribute.
+	 * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
+	 * The list contents are of type {@link hu.modembed.model.core.assembler.InstructionParameter}.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Parameters</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Code</em>' attribute.
-	 * @see #getCode()
+	 * @return the value of the '<em>Parameters</em>' containment reference list.
+	 * @see hu.modembed.model.core.assembler.AssemblerPackage#getInstruction_Parameters()
+	 * @model containment="true"
 	 * @generated
 	 */
-	void setCode(String value);
+	EList<InstructionParameter> getParameters();
 
 } // Instruction

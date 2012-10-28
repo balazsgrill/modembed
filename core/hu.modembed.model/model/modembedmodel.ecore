@@ -17,7 +17,32 @@
             eType="#//core/assembler/Instruction" containment="true"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Instruction" eSuperTypes="#//core/NamedElement">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="sections" upperBound="-1"
+            eType="#//core/assembler/InstructionSection" containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+            eType="#//core/assembler/InstructionParameter" containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="InstructionParameter" eSuperTypes="#//core/MODembedElement">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EChar"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="InstructionSection" abstract="true"
+          eSuperTypes="#//core/MODembedElement">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="start" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="shift" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="ConstantSection" eSuperTypes="#//core/assembler/InstructionSection">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="ParameterSection" eSuperTypes="#//core/assembler/InstructionSection">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" lowerBound="1"
+            eType="#//core/assembler/InstructionParameter"/>
       </eClassifiers>
     </eSubpackages>
   </eSubpackages>

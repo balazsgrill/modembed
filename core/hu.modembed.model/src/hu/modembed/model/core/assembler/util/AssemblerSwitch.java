@@ -87,6 +87,36 @@ public class AssemblerSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case AssemblerPackage.INSTRUCTION_PARAMETER: {
+				InstructionParameter instructionParameter = (InstructionParameter)theEObject;
+				T result = caseInstructionParameter(instructionParameter);
+				if (result == null) result = caseMODembedElement(instructionParameter);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case AssemblerPackage.INSTRUCTION_SECTION: {
+				InstructionSection instructionSection = (InstructionSection)theEObject;
+				T result = caseInstructionSection(instructionSection);
+				if (result == null) result = caseMODembedElement(instructionSection);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case AssemblerPackage.CONSTANT_SECTION: {
+				ConstantSection constantSection = (ConstantSection)theEObject;
+				T result = caseConstantSection(constantSection);
+				if (result == null) result = caseInstructionSection(constantSection);
+				if (result == null) result = caseMODembedElement(constantSection);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case AssemblerPackage.PARAMETER_SECTION: {
+				ParameterSection parameterSection = (ParameterSection)theEObject;
+				T result = caseParameterSection(parameterSection);
+				if (result == null) result = caseInstructionSection(parameterSection);
+				if (result == null) result = caseMODembedElement(parameterSection);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -118,6 +148,66 @@ public class AssemblerSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseInstruction(Instruction object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Instruction Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Instruction Parameter</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseInstructionParameter(InstructionParameter object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Instruction Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Instruction Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseInstructionSection(InstructionSection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Constant Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Constant Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseConstantSection(ConstantSection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Parameter Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Parameter Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseParameterSection(ParameterSection object) {
 		return null;
 	}
 

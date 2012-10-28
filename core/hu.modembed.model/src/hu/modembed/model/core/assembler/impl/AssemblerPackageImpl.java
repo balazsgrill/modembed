@@ -26,9 +26,13 @@ import hu.modembed.model.core.CorePackage;
 
 import hu.modembed.model.core.assembler.AssemblerFactory;
 import hu.modembed.model.core.assembler.AssemblerPackage;
+import hu.modembed.model.core.assembler.ConstantSection;
 import hu.modembed.model.core.assembler.Instruction;
+import hu.modembed.model.core.assembler.InstructionParameter;
+import hu.modembed.model.core.assembler.InstructionSection;
 import hu.modembed.model.core.assembler.InstructionSet;
 
+import hu.modembed.model.core.assembler.ParameterSection;
 import hu.modembed.model.core.impl.CorePackageImpl;
 
 import hu.modembed.model.emodel.EmodelPackage;
@@ -78,6 +82,34 @@ public class AssemblerPackageImpl extends EPackageImpl implements AssemblerPacka
 	 * @generated
 	 */
 	private EClass instructionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass instructionParameterEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass instructionSectionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass constantSectionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass parameterSectionEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -210,8 +242,116 @@ public class AssemblerPackageImpl extends EPackageImpl implements AssemblerPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getInstruction_Code() {
-		return (EAttribute)instructionEClass.getEStructuralFeatures().get(0);
+	public EReference getInstruction_Sections() {
+		return (EReference)instructionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getInstruction_Parameters() {
+		return (EReference)instructionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getInstructionParameter() {
+		return instructionParameterEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getInstructionParameter_Id() {
+		return (EAttribute)instructionParameterEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getInstructionParameter_DefaultValue() {
+		return (EAttribute)instructionParameterEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getInstructionSection() {
+		return instructionSectionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getInstructionSection_Start() {
+		return (EAttribute)instructionSectionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getInstructionSection_Size() {
+		return (EAttribute)instructionSectionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getInstructionSection_Shift() {
+		return (EAttribute)instructionSectionEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getConstantSection() {
+		return constantSectionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getConstantSection_Value() {
+		return (EAttribute)constantSectionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getParameterSection() {
+		return parameterSectionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getParameterSection_Parameter() {
+		return (EReference)parameterSectionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -246,7 +386,23 @@ public class AssemblerPackageImpl extends EPackageImpl implements AssemblerPacka
 		createEReference(instructionSetEClass, INSTRUCTION_SET__INSTRUCTIONS);
 
 		instructionEClass = createEClass(INSTRUCTION);
-		createEAttribute(instructionEClass, INSTRUCTION__CODE);
+		createEReference(instructionEClass, INSTRUCTION__SECTIONS);
+		createEReference(instructionEClass, INSTRUCTION__PARAMETERS);
+
+		instructionParameterEClass = createEClass(INSTRUCTION_PARAMETER);
+		createEAttribute(instructionParameterEClass, INSTRUCTION_PARAMETER__ID);
+		createEAttribute(instructionParameterEClass, INSTRUCTION_PARAMETER__DEFAULT_VALUE);
+
+		instructionSectionEClass = createEClass(INSTRUCTION_SECTION);
+		createEAttribute(instructionSectionEClass, INSTRUCTION_SECTION__START);
+		createEAttribute(instructionSectionEClass, INSTRUCTION_SECTION__SIZE);
+		createEAttribute(instructionSectionEClass, INSTRUCTION_SECTION__SHIFT);
+
+		constantSectionEClass = createEClass(CONSTANT_SECTION);
+		createEAttribute(constantSectionEClass, CONSTANT_SECTION__VALUE);
+
+		parameterSectionEClass = createEClass(PARAMETER_SECTION);
+		createEReference(parameterSectionEClass, PARAMETER_SECTION__PARAMETER);
 	}
 
 	/**
@@ -282,13 +438,33 @@ public class AssemblerPackageImpl extends EPackageImpl implements AssemblerPacka
 		// Add supertypes to classes
 		instructionSetEClass.getESuperTypes().add(theCorePackage.getRootElement());
 		instructionEClass.getESuperTypes().add(theCorePackage.getNamedElement());
+		instructionParameterEClass.getESuperTypes().add(theCorePackage.getMODembedElement());
+		instructionSectionEClass.getESuperTypes().add(theCorePackage.getMODembedElement());
+		constantSectionEClass.getESuperTypes().add(this.getInstructionSection());
+		parameterSectionEClass.getESuperTypes().add(this.getInstructionSection());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(instructionSetEClass, InstructionSet.class, "InstructionSet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getInstructionSet_Instructions(), this.getInstruction(), null, "instructions", null, 0, -1, InstructionSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(instructionEClass, Instruction.class, "Instruction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getInstruction_Code(), ecorePackage.getEString(), "code", null, 0, 1, Instruction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInstruction_Sections(), this.getInstructionSection(), null, "sections", null, 0, -1, Instruction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInstruction_Parameters(), this.getInstructionParameter(), null, "parameters", null, 0, -1, Instruction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(instructionParameterEClass, InstructionParameter.class, "InstructionParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getInstructionParameter_Id(), ecorePackage.getEChar(), "id", null, 1, 1, InstructionParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getInstructionParameter_DefaultValue(), ecorePackage.getEInt(), "defaultValue", null, 0, 1, InstructionParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(instructionSectionEClass, InstructionSection.class, "InstructionSection", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getInstructionSection_Start(), ecorePackage.getEInt(), "start", null, 1, 1, InstructionSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getInstructionSection_Size(), ecorePackage.getEInt(), "size", null, 1, 1, InstructionSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getInstructionSection_Shift(), ecorePackage.getEInt(), "shift", null, 1, 1, InstructionSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(constantSectionEClass, ConstantSection.class, "ConstantSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getConstantSection_Value(), ecorePackage.getEInt(), "value", null, 1, 1, ConstantSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(parameterSectionEClass, ParameterSection.class, "ParameterSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getParameterSection_Parameter(), this.getInstructionParameter(), null, "parameter", null, 1, 1, ParameterSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 	}
 
 } //AssemblerPackageImpl

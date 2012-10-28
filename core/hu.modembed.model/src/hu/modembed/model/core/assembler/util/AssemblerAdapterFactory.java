@@ -80,6 +80,22 @@ public class AssemblerAdapterFactory extends AdapterFactoryImpl {
 				return createInstructionAdapter();
 			}
 			@Override
+			public Adapter caseInstructionParameter(InstructionParameter object) {
+				return createInstructionParameterAdapter();
+			}
+			@Override
+			public Adapter caseInstructionSection(InstructionSection object) {
+				return createInstructionSectionAdapter();
+			}
+			@Override
+			public Adapter caseConstantSection(ConstantSection object) {
+				return createConstantSectionAdapter();
+			}
+			@Override
+			public Adapter caseParameterSection(ParameterSection object) {
+				return createParameterSectionAdapter();
+			}
+			@Override
 			public Adapter caseMODembedElement(MODembedElement object) {
 				return createMODembedElementAdapter();
 			}
@@ -136,6 +152,62 @@ public class AssemblerAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createInstructionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.core.assembler.InstructionParameter <em>Instruction Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.modembed.model.core.assembler.InstructionParameter
+	 * @generated
+	 */
+	public Adapter createInstructionParameterAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.core.assembler.InstructionSection <em>Instruction Section</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.modembed.model.core.assembler.InstructionSection
+	 * @generated
+	 */
+	public Adapter createInstructionSectionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.core.assembler.ConstantSection <em>Constant Section</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.modembed.model.core.assembler.ConstantSection
+	 * @generated
+	 */
+	public Adapter createConstantSectionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.core.assembler.ParameterSection <em>Parameter Section</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.modembed.model.core.assembler.ParameterSection
+	 * @generated
+	 */
+	public Adapter createParameterSectionAdapter() {
 		return null;
 	}
 
