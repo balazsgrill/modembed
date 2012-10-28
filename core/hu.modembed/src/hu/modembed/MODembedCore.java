@@ -1,9 +1,17 @@
 package hu.modembed;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 import hu.modembed.impl.ReferencedResourceProvider;
 
 import org.eclipse.core.runtime.Plugin;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.osgi.framework.BundleContext;
 
 public class MODembedCore extends Plugin {
@@ -60,6 +68,27 @@ public class MODembedCore extends Plugin {
 			resourceProvider = new ReferencedResourceProvider();//PDEReferencedResourceProvider();
 		}
 		return resourceProvider;
+	}
+	
+	public static List<EClass> getAllSubTypes(ResourceSet resourceSet, EClass base) {
+		List<EClass> subs = new ArrayList<EClass>();
+		subs.add(base);
+
+		for (Object oo : resourceSet.getPackageRegistry().values()) {
+
+			if (oo instanceof EPackage) {
+				Iterator<EObject> iter = ((EPackage) oo).eContents().iterator();
+				while (iter.hasNext()) {
+					EObject o = iter.next();
+					if (o instanceof EClass) {
+						EClass cls = (EClass) o;
+						if (cls.getEAllSuperTypes().contains(base))
+							subs.add(cls);
+					}
+				}
+			}
+		}
+		return subs;
 	}
 	
 }
