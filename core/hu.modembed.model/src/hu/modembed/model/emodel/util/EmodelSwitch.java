@@ -92,6 +92,8 @@ public class EmodelSwitch<T> extends Switch<T> {
 				Function function = (Function)theEObject;
 				T result = caseFunction(function);
 				if (result == null) result = caseLibraryElement(function);
+				if (result == null) result = caseFunctionDeclaration(function);
+				if (result == null) result = caseVariable(function);
 				if (result == null) result = caseNamedElement(function);
 				if (result == null) result = caseMODembedElement(function);
 				if (result == null) result = defaultCase(theEObject);
@@ -108,6 +110,7 @@ public class EmodelSwitch<T> extends Switch<T> {
 			case EmodelPackage.FUNCTION_PARAMETER: {
 				FunctionParameter functionParameter = (FunctionParameter)theEObject;
 				T result = caseFunctionParameter(functionParameter);
+				if (result == null) result = caseVariable(functionParameter);
 				if (result == null) result = caseNamedElement(functionParameter);
 				if (result == null) result = caseMODembedElement(functionParameter);
 				if (result == null) result = defaultCase(theEObject);
@@ -203,8 +206,19 @@ public class EmodelSwitch<T> extends Switch<T> {
 				LazyParameter lazyParameter = (LazyParameter)theEObject;
 				T result = caseLazyParameter(lazyParameter);
 				if (result == null) result = caseFunctionParameter(lazyParameter);
+				if (result == null) result = caseFunctionDeclaration(lazyParameter);
+				if (result == null) result = caseVariable(lazyParameter);
 				if (result == null) result = caseNamedElement(lazyParameter);
 				if (result == null) result = caseMODembedElement(lazyParameter);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case EmodelPackage.FUNCTION_DECLARATION: {
+				FunctionDeclaration functionDeclaration = (FunctionDeclaration)theEObject;
+				T result = caseFunctionDeclaration(functionDeclaration);
+				if (result == null) result = caseVariable(functionDeclaration);
+				if (result == null) result = caseNamedElement(functionDeclaration);
+				if (result == null) result = caseMODembedElement(functionDeclaration);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -434,6 +448,21 @@ public class EmodelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseLazyParameter(LazyParameter object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Function Declaration</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Function Declaration</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFunctionDeclaration(FunctionDeclaration object) {
 		return null;
 	}
 

@@ -15,6 +15,6 @@ import hu.modembed.model.core.NamedElement;
  * @model abstract="true"
  * @generated
  */
-public interface FunctionParameter extends NamedElement {
+public interface FunctionParameter extends NamedElement, Variable {
 
 } // FunctionParameter

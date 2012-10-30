@@ -260,13 +260,22 @@ public interface EmodelPackage extends EPackage {
 	int FUNCTION__NAME = LIBRARY_ELEMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Type</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION__TYPE = LIBRARY_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION__ARGUMENTS = LIBRARY_ELEMENT_FEATURE_COUNT + 0;
+	int FUNCTION__ARGUMENTS = LIBRARY_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Overrides</b></em>' reference.
@@ -275,7 +284,7 @@ public interface EmodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION__OVERRIDES = LIBRARY_ELEMENT_FEATURE_COUNT + 1;
+	int FUNCTION__OVERRIDES = LIBRARY_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Result</b></em>' containment reference.
@@ -284,7 +293,7 @@ public interface EmodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION__RESULT = LIBRARY_ELEMENT_FEATURE_COUNT + 2;
+	int FUNCTION__RESULT = LIBRARY_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Implementation</b></em>' containment reference.
@@ -293,7 +302,7 @@ public interface EmodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION__IMPLEMENTATION = LIBRARY_ELEMENT_FEATURE_COUNT + 3;
+	int FUNCTION__IMPLEMENTATION = LIBRARY_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Function</em>' class.
@@ -302,7 +311,7 @@ public interface EmodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION_FEATURE_COUNT = LIBRARY_ELEMENT_FEATURE_COUNT + 4;
+	int FUNCTION_FEATURE_COUNT = LIBRARY_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link hu.modembed.model.emodel.impl.VariableImpl <em>Variable</em>}' class.
@@ -397,13 +406,22 @@ public interface EmodelPackage extends EPackage {
 	int FUNCTION_PARAMETER__NAME = CorePackage.NAMED_ELEMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Type</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_PARAMETER__TYPE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Function Parameter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION_PARAMETER_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int FUNCTION_PARAMETER_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link hu.modembed.model.emodel.impl.FunctionResultImpl <em>Function Result</em>}' class.
@@ -826,7 +844,7 @@ public interface EmodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE_PARAMETER__TYPE = FUNCTION_PARAMETER_FEATURE_COUNT + 0;
+	int VARIABLE_PARAMETER__TYPE = FUNCTION_PARAMETER__TYPE;
 
 	/**
 	 * The number of structural features of the '<em>Variable Parameter</em>' class.
@@ -835,7 +853,7 @@ public interface EmodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE_PARAMETER_FEATURE_COUNT = FUNCTION_PARAMETER_FEATURE_COUNT + 1;
+	int VARIABLE_PARAMETER_FEATURE_COUNT = FUNCTION_PARAMETER_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link hu.modembed.model.emodel.impl.LazyParameterImpl <em>Lazy Parameter</em>}' class.
@@ -875,13 +893,22 @@ public interface EmodelPackage extends EPackage {
 	int LAZY_PARAMETER__NAME = FUNCTION_PARAMETER__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Type</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LAZY_PARAMETER__PARAMETERS = FUNCTION_PARAMETER_FEATURE_COUNT + 0;
+	int LAZY_PARAMETER__TYPE = FUNCTION_PARAMETER__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LAZY_PARAMETER__ARGUMENTS = FUNCTION_PARAMETER_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Lazy Parameter</em>' class.
@@ -891,6 +918,71 @@ public interface EmodelPackage extends EPackage {
 	 * @ordered
 	 */
 	int LAZY_PARAMETER_FEATURE_COUNT = FUNCTION_PARAMETER_FEATURE_COUNT + 1;
+
+
+	/**
+	 * The meta object id for the '{@link hu.modembed.model.emodel.impl.FunctionDeclarationImpl <em>Function Declaration</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.modembed.model.emodel.impl.FunctionDeclarationImpl
+	 * @see hu.modembed.model.emodel.impl.EmodelPackageImpl#getFunctionDeclaration()
+	 * @generated
+	 */
+	int FUNCTION_DECLARATION = 15;
+
+	/**
+	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_DECLARATION__ORIGINS = VARIABLE__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_DECLARATION__DESCRIPTION = VARIABLE__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_DECLARATION__NAME = VARIABLE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_DECLARATION__TYPE = VARIABLE__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_DECLARATION__ARGUMENTS = VARIABLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Function Declaration</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_DECLARATION_FEATURE_COUNT = VARIABLE_FEATURE_COUNT + 1;
 
 
 	/**
@@ -955,17 +1047,6 @@ public interface EmodelPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getFunction();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link hu.modembed.model.emodel.Function#getArguments <em>Arguments</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Arguments</em>'.
-	 * @see hu.modembed.model.emodel.Function#getArguments()
-	 * @see #getFunction()
-	 * @generated
-	 */
-	EReference getFunction_Arguments();
 
 	/**
 	 * Returns the meta object for the reference '{@link hu.modembed.model.emodel.Function#getOverrides <em>Overrides</em>}'.
@@ -1165,15 +1246,25 @@ public interface EmodelPackage extends EPackage {
 	EClass getLazyParameter();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link hu.modembed.model.emodel.LazyParameter#getParameters <em>Parameters</em>}'.
+	 * Returns the meta object for class '{@link hu.modembed.model.emodel.FunctionDeclaration <em>Function Declaration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Parameters</em>'.
-	 * @see hu.modembed.model.emodel.LazyParameter#getParameters()
-	 * @see #getLazyParameter()
+	 * @return the meta object for class '<em>Function Declaration</em>'.
+	 * @see hu.modembed.model.emodel.FunctionDeclaration
 	 * @generated
 	 */
-	EReference getLazyParameter_Parameters();
+	EClass getFunctionDeclaration();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link hu.modembed.model.emodel.FunctionDeclaration#getArguments <em>Arguments</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Arguments</em>'.
+	 * @see hu.modembed.model.emodel.FunctionDeclaration#getArguments()
+	 * @see #getFunctionDeclaration()
+	 * @generated
+	 */
+	EReference getFunctionDeclaration_Arguments();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1250,14 +1341,6 @@ public interface EmodelPackage extends EPackage {
 		 * @generated
 		 */
 		EClass FUNCTION = eINSTANCE.getFunction();
-
-		/**
-		 * The meta object literal for the '<em><b>Arguments</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference FUNCTION__ARGUMENTS = eINSTANCE.getFunction_Arguments();
 
 		/**
 		 * The meta object literal for the '<em><b>Overrides</b></em>' reference feature.
@@ -1436,12 +1519,22 @@ public interface EmodelPackage extends EPackage {
 		EClass LAZY_PARAMETER = eINSTANCE.getLazyParameter();
 
 		/**
-		 * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
+		 * The meta object literal for the '{@link hu.modembed.model.emodel.impl.FunctionDeclarationImpl <em>Function Declaration</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.modembed.model.emodel.impl.FunctionDeclarationImpl
+		 * @see hu.modembed.model.emodel.impl.EmodelPackageImpl#getFunctionDeclaration()
+		 * @generated
+		 */
+		EClass FUNCTION_DECLARATION = eINSTANCE.getFunctionDeclaration();
+
+		/**
+		 * The meta object literal for the '<em><b>Arguments</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference LAZY_PARAMETER__PARAMETERS = eINSTANCE.getLazyParameter_Parameters();
+		EReference FUNCTION_DECLARATION__ARGUMENTS = eINSTANCE.getFunctionDeclaration_Arguments();
 
 	}
 

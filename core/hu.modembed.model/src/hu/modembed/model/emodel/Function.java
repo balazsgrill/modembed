@@ -14,7 +14,6 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link hu.modembed.model.emodel.Function#getArguments <em>Arguments</em>}</li>
  *   <li>{@link hu.modembed.model.emodel.Function#getOverrides <em>Overrides</em>}</li>
  *   <li>{@link hu.modembed.model.emodel.Function#getResult <em>Result</em>}</li>
  *   <li>{@link hu.modembed.model.emodel.Function#getImplementation <em>Implementation</em>}</li>
@@ -25,23 +24,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Function extends LibraryElement {
-	/**
-	 * Returns the value of the '<em><b>Arguments</b></em>' containment reference list.
-	 * The list contents are of type {@link hu.modembed.model.emodel.FunctionParameter}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Arguments</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Arguments</em>' containment reference list.
-	 * @see hu.modembed.model.emodel.EmodelPackage#getFunction_Arguments()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<FunctionParameter> getArguments();
-
+public interface Function extends LibraryElement, FunctionDeclaration {
 	/**
 	 * Returns the value of the '<em><b>Overrides</b></em>' reference.
 	 * <!-- begin-user-doc -->

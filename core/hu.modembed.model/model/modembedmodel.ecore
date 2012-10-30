@@ -157,9 +157,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="definition" lowerBound="1"
           eType="#//emodel/types/TypeDefinition" containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Function" eSuperTypes="#//emodel/LibraryElement">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="arguments" upperBound="-1"
-          eType="#//emodel/FunctionParameter" containment="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Function" eSuperTypes="#//emodel/LibraryElement #//emodel/FunctionDeclaration">
       <eStructuralFeatures xsi:type="ecore:EReference" name="overrides" eType="#//emodel/Function"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="result" eType="#//emodel/FunctionResult"
           containment="true"/>
@@ -175,7 +173,7 @@
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="FunctionParameter" abstract="true"
-        eSuperTypes="#//core/NamedElement"/>
+        eSuperTypes="#//core/NamedElement #//emodel/Variable"/>
     <eClassifiers xsi:type="ecore:EClass" name="FunctionResult" abstract="true" eSuperTypes="#//core/MODembedElement"/>
     <eClassifiers xsi:type="ecore:EClass" name="ResultBuffer" eSuperTypes="#//emodel/FunctionResult #//emodel/Variable"/>
     <eClassifiers xsi:type="ecore:EClass" name="ResultExpression" eSuperTypes="#//emodel/FunctionResult">
@@ -194,9 +192,11 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1"
           eType="#//emodel/expressions/Expression" containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="VariableParameter" eSuperTypes="#//emodel/FunctionParameter #//emodel/Variable"/>
-    <eClassifiers xsi:type="ecore:EClass" name="LazyParameter" eSuperTypes="#//emodel/FunctionParameter">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+    <eClassifiers xsi:type="ecore:EClass" name="VariableParameter" eSuperTypes="#//emodel/FunctionParameter"/>
+    <eClassifiers xsi:type="ecore:EClass" name="LazyParameter" eSuperTypes="#//emodel/FunctionParameter #//emodel/FunctionDeclaration"/>
+    <eClassifiers xsi:type="ecore:EClass" name="FunctionDeclaration" abstract="true"
+        eSuperTypes="#//emodel/Variable">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="arguments" upperBound="-1"
           eType="#//emodel/FunctionParameter" containment="true"/>
     </eClassifiers>
     <eSubpackages name="types" nsURI="http://emodel/1.0/types" nsPrefix="types">

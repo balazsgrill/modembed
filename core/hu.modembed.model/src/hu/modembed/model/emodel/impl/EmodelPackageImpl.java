@@ -34,6 +34,7 @@ import hu.modembed.model.emodel.ConstantVariable;
 import hu.modembed.model.emodel.EmodelFactory;
 import hu.modembed.model.emodel.EmodelPackage;
 import hu.modembed.model.emodel.Function;
+import hu.modembed.model.emodel.FunctionDeclaration;
 import hu.modembed.model.emodel.FunctionParameter;
 import hu.modembed.model.emodel.FunctionResult;
 import hu.modembed.model.emodel.GlobalVariable;
@@ -182,6 +183,13 @@ public class EmodelPackageImpl extends EPackageImpl implements EmodelPackage {
 	 * @generated
 	 */
 	private EClass lazyParameterEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass functionDeclarationEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -341,7 +349,7 @@ public class EmodelPackageImpl extends EPackageImpl implements EmodelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getFunction_Arguments() {
+	public EReference getFunction_Overrides() {
 		return (EReference)functionEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -350,7 +358,7 @@ public class EmodelPackageImpl extends EPackageImpl implements EmodelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getFunction_Overrides() {
+	public EReference getFunction_Result() {
 		return (EReference)functionEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -359,17 +367,8 @@ public class EmodelPackageImpl extends EPackageImpl implements EmodelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getFunction_Result() {
-		return (EReference)functionEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getFunction_Implementation() {
-		return (EReference)functionEClass.getEStructuralFeatures().get(3);
+		return (EReference)functionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -521,8 +520,17 @@ public class EmodelPackageImpl extends EPackageImpl implements EmodelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getLazyParameter_Parameters() {
-		return (EReference)lazyParameterEClass.getEStructuralFeatures().get(0);
+	public EClass getFunctionDeclaration() {
+		return functionDeclarationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getFunctionDeclaration_Arguments() {
+		return (EReference)functionDeclarationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -561,7 +569,6 @@ public class EmodelPackageImpl extends EPackageImpl implements EmodelPackage {
 		createEReference(typeEClass, TYPE__DEFINITION);
 
 		functionEClass = createEClass(FUNCTION);
-		createEReference(functionEClass, FUNCTION__ARGUMENTS);
 		createEReference(functionEClass, FUNCTION__OVERRIDES);
 		createEReference(functionEClass, FUNCTION__RESULT);
 		createEReference(functionEClass, FUNCTION__IMPLEMENTATION);
@@ -593,7 +600,9 @@ public class EmodelPackageImpl extends EPackageImpl implements EmodelPackage {
 		variableParameterEClass = createEClass(VARIABLE_PARAMETER);
 
 		lazyParameterEClass = createEClass(LAZY_PARAMETER);
-		createEReference(lazyParameterEClass, LAZY_PARAMETER__PARAMETERS);
+
+		functionDeclarationEClass = createEClass(FUNCTION_DECLARATION);
+		createEReference(functionDeclarationEClass, FUNCTION_DECLARATION__ARGUMENTS);
 	}
 
 	/**
@@ -637,8 +646,10 @@ public class EmodelPackageImpl extends EPackageImpl implements EmodelPackage {
 		typeEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		typeEClass.getESuperTypes().add(this.getLibraryElement());
 		functionEClass.getESuperTypes().add(this.getLibraryElement());
+		functionEClass.getESuperTypes().add(this.getFunctionDeclaration());
 		variableEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		functionParameterEClass.getESuperTypes().add(theCorePackage.getNamedElement());
+		functionParameterEClass.getESuperTypes().add(this.getVariable());
 		functionResultEClass.getESuperTypes().add(theCorePackage.getMODembedElement());
 		resultBufferEClass.getESuperTypes().add(this.getFunctionResult());
 		resultBufferEClass.getESuperTypes().add(this.getVariable());
@@ -650,8 +661,9 @@ public class EmodelPackageImpl extends EPackageImpl implements EmodelPackage {
 		registerVariableEClass.getESuperTypes().add(this.getGlobalVariable());
 		constantVariableEClass.getESuperTypes().add(this.getGlobalVariable());
 		variableParameterEClass.getESuperTypes().add(this.getFunctionParameter());
-		variableParameterEClass.getESuperTypes().add(this.getVariable());
 		lazyParameterEClass.getESuperTypes().add(this.getFunctionParameter());
+		lazyParameterEClass.getESuperTypes().add(this.getFunctionDeclaration());
+		functionDeclarationEClass.getESuperTypes().add(this.getVariable());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(libraryEClass, Library.class, "Library", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -662,7 +674,6 @@ public class EmodelPackageImpl extends EPackageImpl implements EmodelPackage {
 		initEReference(getType_Definition(), theTypesPackage.getTypeDefinition(), null, "definition", null, 1, 1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(functionEClass, Function.class, "Function", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFunction_Arguments(), this.getFunctionParameter(), null, "arguments", null, 0, -1, Function.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFunction_Overrides(), this.getFunction(), null, "overrides", null, 0, 1, Function.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFunction_Result(), this.getFunctionResult(), null, "result", null, 0, 1, Function.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFunction_Implementation(), theExpressionsPackage.getExecutionStep(), null, "implementation", null, 0, 1, Function.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -694,7 +705,9 @@ public class EmodelPackageImpl extends EPackageImpl implements EmodelPackage {
 		initEClass(variableParameterEClass, VariableParameter.class, "VariableParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(lazyParameterEClass, LazyParameter.class, "LazyParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getLazyParameter_Parameters(), this.getFunctionParameter(), null, "parameters", null, 0, -1, LazyParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(functionDeclarationEClass, FunctionDeclaration.class, "FunctionDeclaration", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getFunctionDeclaration_Arguments(), this.getFunctionParameter(), null, "arguments", null, 0, -1, FunctionDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

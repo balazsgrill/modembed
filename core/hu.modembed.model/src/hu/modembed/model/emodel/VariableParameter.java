@@ -13,5 +13,5 @@ package hu.modembed.model.emodel;
  * @model
  * @generated
  */
-public interface VariableParameter extends FunctionParameter, Variable {
+public interface VariableParameter extends FunctionParameter {
 } // VariableParameter

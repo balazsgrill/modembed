@@ -101,6 +101,10 @@ public class LibraryConverter {
 			return to;
 		}
 		
+		if (item instanceof Operation){
+			return FunctionConverter.convert((Operation)item, scope);
+		}
+		
 		if (item instanceof Variable){
 			
 			if (item instanceof ConstantVariable){
@@ -123,10 +127,6 @@ public class LibraryConverter {
 				return hv;
 			}
 			
-		}
-		
-		if (item instanceof Operation){
-			return FunctionConverter.convert((Operation)item, scope);
 		}
 		
 		return null;
