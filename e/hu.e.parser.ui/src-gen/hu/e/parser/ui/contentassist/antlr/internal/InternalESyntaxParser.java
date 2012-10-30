@@ -15300,7 +15300,7 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
             int alt26=2;
             int LA26_0 = input.LA(1);
 
-            if ( (LA26_0==RULE_ID||(LA26_0>=14 && LA26_0<=18)||(LA26_0>=49 && LA26_0<=51)||LA26_0==54||LA26_0==57) ) {
+            if ( (LA26_0==RULE_ID||(LA26_0>=14 && LA26_0<=18)||(LA26_0>=49 && LA26_0<=51)||LA26_0==54||LA26_0==57||LA26_0==68) ) {
                 alt26=1;
             }
             switch (alt26) {
@@ -24401,28 +24401,28 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OperationTypeDef__ParamsAssignment_2_0"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:8561:1: rule__OperationTypeDef__ParamsAssignment_2_0 : ( ruleParameterVariable ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:8561:1: rule__OperationTypeDef__ParamsAssignment_2_0 : ( ruleOperationParameter ) ;
     public final void rule__OperationTypeDef__ParamsAssignment_2_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:8565:1: ( ( ruleParameterVariable ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:8566:1: ( ruleParameterVariable )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:8565:1: ( ( ruleOperationParameter ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:8566:1: ( ruleOperationParameter )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:8566:1: ( ruleParameterVariable )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:8567:1: ruleParameterVariable
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:8566:1: ( ruleOperationParameter )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:8567:1: ruleOperationParameter
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getOperationTypeDefAccess().getParamsParameterVariableParserRuleCall_2_0_0()); 
+               before(grammarAccess.getOperationTypeDefAccess().getParamsOperationParameterParserRuleCall_2_0_0()); 
             }
-            pushFollow(FOLLOW_ruleParameterVariable_in_rule__OperationTypeDef__ParamsAssignment_2_017356);
-            ruleParameterVariable();
+            pushFollow(FOLLOW_ruleOperationParameter_in_rule__OperationTypeDef__ParamsAssignment_2_017356);
+            ruleOperationParameter();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getOperationTypeDefAccess().getParamsParameterVariableParserRuleCall_2_0_0()); 
+               after(grammarAccess.getOperationTypeDefAccess().getParamsOperationParameterParserRuleCall_2_0_0()); 
             }
 
             }
@@ -27014,10 +27014,10 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__OperationTypeDef__Group__0__Impl_in_rule__OperationTypeDef__Group__010716 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
     public static final BitSet FOLLOW_rule__OperationTypeDef__Group__1_in_rule__OperationTypeDef__Group__010719 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__OperationTypeDef__ResultTypeAssignment_0_in_rule__OperationTypeDef__Group__0__Impl10746 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__OperationTypeDef__Group__1__Impl_in_rule__OperationTypeDef__Group__110776 = new BitSet(new long[]{0x024E00000007C100L,0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__OperationTypeDef__Group__1__Impl_in_rule__OperationTypeDef__Group__110776 = new BitSet(new long[]{0x024E00000007C100L,0x0000000000000012L});
     public static final BitSet FOLLOW_rule__OperationTypeDef__Group__2_in_rule__OperationTypeDef__Group__110779 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_64_in_rule__OperationTypeDef__Group__1__Impl10807 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__OperationTypeDef__Group__2__Impl_in_rule__OperationTypeDef__Group__210838 = new BitSet(new long[]{0x024E00000007C100L,0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__OperationTypeDef__Group__2__Impl_in_rule__OperationTypeDef__Group__210838 = new BitSet(new long[]{0x024E00000007C100L,0x0000000000000012L});
     public static final BitSet FOLLOW_rule__OperationTypeDef__Group__3_in_rule__OperationTypeDef__Group__210841 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__OperationTypeDef__Group_2__0_in_rule__OperationTypeDef__Group__2__Impl10868 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__OperationTypeDef__Group__3__Impl_in_rule__OperationTypeDef__Group__310899 = new BitSet(new long[]{0x0000000000000002L});
@@ -27280,7 +27280,7 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_ruleOperationCallParameter_in_rule__OperationCall__ParamsAssignment_2_017263 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleOperationCallParameter_in_rule__OperationCall__ParamsAssignment_2_1_117294 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleTypeDef_in_rule__OperationTypeDef__ResultTypeAssignment_017325 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleParameterVariable_in_rule__OperationTypeDef__ParamsAssignment_2_017356 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOperationParameter_in_rule__OperationTypeDef__ParamsAssignment_2_017356 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleOperationParameter_in_rule__OperationTypeDef__ParamsAssignment_2_1_117387 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_rule__Operation__NameAssignment_117418 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleOperationTypeDef_in_rule__Operation__TypeAssignment_217449 = new BitSet(new long[]{0x0000000000000002L});

@@ -475,7 +475,7 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 	
 	/**
 	 * Constraint:
-	 *     (resultType=TypeDef (params+=ParameterVariable params+=OperationParameter*)?)
+	 *     (resultType=TypeDef (params+=OperationParameter params+=OperationParameter*)?)
 	 */
 	protected void sequence_OperationTypeDef(EObject context, OperationTypeDef semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

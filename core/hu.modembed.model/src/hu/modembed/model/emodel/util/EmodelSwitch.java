@@ -108,7 +108,6 @@ public class EmodelSwitch<T> extends Switch<T> {
 			case EmodelPackage.FUNCTION_PARAMETER: {
 				FunctionParameter functionParameter = (FunctionParameter)theEObject;
 				T result = caseFunctionParameter(functionParameter);
-				if (result == null) result = caseVariable(functionParameter);
 				if (result == null) result = caseNamedElement(functionParameter);
 				if (result == null) result = caseMODembedElement(functionParameter);
 				if (result == null) result = defaultCase(theEObject);
@@ -187,6 +186,25 @@ public class EmodelSwitch<T> extends Switch<T> {
 				if (result == null) result = caseLibraryElement(constantVariable);
 				if (result == null) result = caseNamedElement(constantVariable);
 				if (result == null) result = caseMODembedElement(constantVariable);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case EmodelPackage.VARIABLE_PARAMETER: {
+				VariableParameter variableParameter = (VariableParameter)theEObject;
+				T result = caseVariableParameter(variableParameter);
+				if (result == null) result = caseFunctionParameter(variableParameter);
+				if (result == null) result = caseVariable(variableParameter);
+				if (result == null) result = caseNamedElement(variableParameter);
+				if (result == null) result = caseMODembedElement(variableParameter);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case EmodelPackage.LAZY_PARAMETER: {
+				LazyParameter lazyParameter = (LazyParameter)theEObject;
+				T result = caseLazyParameter(lazyParameter);
+				if (result == null) result = caseFunctionParameter(lazyParameter);
+				if (result == null) result = caseNamedElement(lazyParameter);
+				if (result == null) result = caseMODembedElement(lazyParameter);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -386,6 +404,36 @@ public class EmodelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseConstantVariable(ConstantVariable object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Variable Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Variable Parameter</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseVariableParameter(VariableParameter object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Lazy Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Lazy Parameter</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLazyParameter(LazyParameter object) {
 		return null;
 	}
 

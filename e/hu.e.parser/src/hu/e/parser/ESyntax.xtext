@@ -162,7 +162,7 @@ OperationCallParameter:
 
 OperationTypeDef:
 	resultType=TypeDef '('
-		(params+=ParameterVariable (',' params+=OperationParameter)*)? 
+		(params+=OperationParameter (',' params+=OperationParameter)*)? 
 	 ')'
 ;
 

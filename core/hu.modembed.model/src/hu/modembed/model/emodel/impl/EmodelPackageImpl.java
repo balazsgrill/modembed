@@ -38,6 +38,7 @@ import hu.modembed.model.emodel.FunctionParameter;
 import hu.modembed.model.emodel.FunctionResult;
 import hu.modembed.model.emodel.GlobalVariable;
 import hu.modembed.model.emodel.HeapVariable;
+import hu.modembed.model.emodel.LazyParameter;
 import hu.modembed.model.emodel.Library;
 import hu.modembed.model.emodel.LibraryElement;
 import hu.modembed.model.emodel.RegisterVariable;
@@ -46,6 +47,7 @@ import hu.modembed.model.emodel.ResultExpression;
 import hu.modembed.model.emodel.Type;
 import hu.modembed.model.emodel.Variable;
 
+import hu.modembed.model.emodel.VariableParameter;
 import hu.modembed.model.emodel.expressions.ExpressionsPackage;
 
 import hu.modembed.model.emodel.expressions.impl.ExpressionsPackageImpl;
@@ -166,6 +168,20 @@ public class EmodelPackageImpl extends EPackageImpl implements EmodelPackage {
 	 * @generated
 	 */
 	private EClass constantVariableEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass variableParameterEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass lazyParameterEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -388,15 +404,6 @@ public class EmodelPackageImpl extends EPackageImpl implements EmodelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFunctionParameter_Lazy() {
-		return (EAttribute)functionParameterEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getFunctionResult() {
 		return functionResultEClass;
 	}
@@ -496,6 +503,33 @@ public class EmodelPackageImpl extends EPackageImpl implements EmodelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getVariableParameter() {
+		return variableParameterEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getLazyParameter() {
+		return lazyParameterEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getLazyParameter_Parameters() {
+		return (EReference)lazyParameterEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EmodelFactory getEmodelFactory() {
 		return (EmodelFactory)getEFactoryInstance();
 	}
@@ -536,7 +570,6 @@ public class EmodelPackageImpl extends EPackageImpl implements EmodelPackage {
 		createEReference(variableEClass, VARIABLE__TYPE);
 
 		functionParameterEClass = createEClass(FUNCTION_PARAMETER);
-		createEAttribute(functionParameterEClass, FUNCTION_PARAMETER__LAZY);
 
 		functionResultEClass = createEClass(FUNCTION_RESULT);
 
@@ -556,6 +589,11 @@ public class EmodelPackageImpl extends EPackageImpl implements EmodelPackage {
 
 		constantVariableEClass = createEClass(CONSTANT_VARIABLE);
 		createEReference(constantVariableEClass, CONSTANT_VARIABLE__VALUE);
+
+		variableParameterEClass = createEClass(VARIABLE_PARAMETER);
+
+		lazyParameterEClass = createEClass(LAZY_PARAMETER);
+		createEReference(lazyParameterEClass, LAZY_PARAMETER__PARAMETERS);
 	}
 
 	/**
@@ -600,7 +638,7 @@ public class EmodelPackageImpl extends EPackageImpl implements EmodelPackage {
 		typeEClass.getESuperTypes().add(this.getLibraryElement());
 		functionEClass.getESuperTypes().add(this.getLibraryElement());
 		variableEClass.getESuperTypes().add(theCorePackage.getNamedElement());
-		functionParameterEClass.getESuperTypes().add(this.getVariable());
+		functionParameterEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		functionResultEClass.getESuperTypes().add(theCorePackage.getMODembedElement());
 		resultBufferEClass.getESuperTypes().add(this.getFunctionResult());
 		resultBufferEClass.getESuperTypes().add(this.getVariable());
@@ -611,6 +649,9 @@ public class EmodelPackageImpl extends EPackageImpl implements EmodelPackage {
 		heapVariableEClass.getESuperTypes().add(this.getGlobalVariable());
 		registerVariableEClass.getESuperTypes().add(this.getGlobalVariable());
 		constantVariableEClass.getESuperTypes().add(this.getGlobalVariable());
+		variableParameterEClass.getESuperTypes().add(this.getFunctionParameter());
+		variableParameterEClass.getESuperTypes().add(this.getVariable());
+		lazyParameterEClass.getESuperTypes().add(this.getFunctionParameter());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(libraryEClass, Library.class, "Library", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -629,8 +670,7 @@ public class EmodelPackageImpl extends EPackageImpl implements EmodelPackage {
 		initEClass(variableEClass, Variable.class, "Variable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getVariable_Type(), theTypesPackage.getTypeDefinition(), null, "type", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(functionParameterEClass, FunctionParameter.class, "FunctionParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getFunctionParameter_Lazy(), ecorePackage.getEBoolean(), "lazy", "false", 1, 1, FunctionParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(functionParameterEClass, FunctionParameter.class, "FunctionParameter", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(functionResultEClass, FunctionResult.class, "FunctionResult", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -650,6 +690,11 @@ public class EmodelPackageImpl extends EPackageImpl implements EmodelPackage {
 
 		initEClass(constantVariableEClass, ConstantVariable.class, "ConstantVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getConstantVariable_Value(), theExpressionsPackage.getExpression(), null, "value", null, 1, 1, ConstantVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(variableParameterEClass, VariableParameter.class, "VariableParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(lazyParameterEClass, LazyParameter.class, "LazyParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getLazyParameter_Parameters(), this.getFunctionParameter(), null, "parameters", null, 0, -1, LazyParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

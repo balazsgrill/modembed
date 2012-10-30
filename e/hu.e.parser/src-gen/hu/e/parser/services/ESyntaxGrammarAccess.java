@@ -995,7 +995,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
 		private final Assignment cParamsAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
-		private final RuleCall cParamsParameterVariableParserRuleCall_2_0_0 = (RuleCall)cParamsAssignment_2_0.eContents().get(0);
+		private final RuleCall cParamsOperationParameterParserRuleCall_2_0_0 = (RuleCall)cParamsAssignment_2_0.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
 		private final Keyword cCommaKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Assignment cParamsAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
@@ -1004,10 +1004,10 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//OperationTypeDef:
 		//
-		//	resultType=TypeDef "(" (params+=ParameterVariable ("," params+=OperationParameter)*)? ")";
+		//	resultType=TypeDef "(" (params+=OperationParameter ("," params+=OperationParameter)*)? ")";
 		public ParserRule getRule() { return rule; }
 
-		//resultType=TypeDef "(" (params+=ParameterVariable ("," params+=OperationParameter)*)? ")"
+		//resultType=TypeDef "(" (params+=OperationParameter ("," params+=OperationParameter)*)? ")"
 		public Group getGroup() { return cGroup; }
 
 		//resultType=TypeDef
@@ -1019,14 +1019,14 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		//"("
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
 
-		//(params+=ParameterVariable ("," params+=OperationParameter)*)?
+		//(params+=OperationParameter ("," params+=OperationParameter)*)?
 		public Group getGroup_2() { return cGroup_2; }
 
-		//params+=ParameterVariable
+		//params+=OperationParameter
 		public Assignment getParamsAssignment_2_0() { return cParamsAssignment_2_0; }
 
-		//ParameterVariable
-		public RuleCall getParamsParameterVariableParserRuleCall_2_0_0() { return cParamsParameterVariableParserRuleCall_2_0_0; }
+		//OperationParameter
+		public RuleCall getParamsOperationParameterParserRuleCall_2_0_0() { return cParamsOperationParameterParserRuleCall_2_0_0; }
 
 		//("," params+=OperationParameter)*
 		public Group getGroup_2_1() { return cGroup_2_1; }
@@ -2682,7 +2682,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 
 	//OperationTypeDef:
 	//
-	//	resultType=TypeDef "(" (params+=ParameterVariable ("," params+=OperationParameter)*)? ")";
+	//	resultType=TypeDef "(" (params+=OperationParameter ("," params+=OperationParameter)*)? ")";
 	public OperationTypeDefElements getOperationTypeDefAccess() {
 		return (pOperationTypeDef != null) ? pOperationTypeDef : (pOperationTypeDef = new OperationTypeDefElements());
 	}

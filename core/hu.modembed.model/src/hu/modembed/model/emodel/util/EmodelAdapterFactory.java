@@ -124,6 +124,14 @@ public class EmodelAdapterFactory extends AdapterFactoryImpl {
 				return createConstantVariableAdapter();
 			}
 			@Override
+			public Adapter caseVariableParameter(VariableParameter object) {
+				return createVariableParameterAdapter();
+			}
+			@Override
+			public Adapter caseLazyParameter(LazyParameter object) {
+				return createLazyParameterAdapter();
+			}
+			@Override
 			public Adapter caseMODembedElement(MODembedElement object) {
 				return createMODembedElementAdapter();
 			}
@@ -334,6 +342,34 @@ public class EmodelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createConstantVariableAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.emodel.VariableParameter <em>Variable Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.modembed.model.emodel.VariableParameter
+	 * @generated
+	 */
+	public Adapter createVariableParameterAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.emodel.LazyParameter <em>Lazy Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.modembed.model.emodel.LazyParameter
+	 * @generated
+	 */
+	public Adapter createLazyParameterAdapter() {
 		return null;
 	}
 

@@ -8564,8 +8564,8 @@ rule__OperationTypeDef__ParamsAssignment_2_0
     }
 :
 (
-{ before(grammarAccess.getOperationTypeDefAccess().getParamsParameterVariableParserRuleCall_2_0_0()); }
-	ruleParameterVariable{ after(grammarAccess.getOperationTypeDefAccess().getParamsParameterVariableParserRuleCall_2_0_0()); }
+{ before(grammarAccess.getOperationTypeDefAccess().getParamsOperationParameterParserRuleCall_2_0_0()); }
+	ruleOperationParameter{ after(grammarAccess.getOperationTypeDefAccess().getParamsOperationParameterParserRuleCall_2_0_0()); }
 )
 
 ;

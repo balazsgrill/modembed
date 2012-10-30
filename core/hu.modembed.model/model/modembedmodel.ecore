@@ -174,11 +174,8 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="FunctionParameter" eSuperTypes="#//emodel/Variable">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="lazy" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-          defaultValueLiteral="false"/>
-    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="FunctionParameter" abstract="true"
+        eSuperTypes="#//core/NamedElement"/>
     <eClassifiers xsi:type="ecore:EClass" name="FunctionResult" abstract="true" eSuperTypes="#//core/MODembedElement"/>
     <eClassifiers xsi:type="ecore:EClass" name="ResultBuffer" eSuperTypes="#//emodel/FunctionResult #//emodel/Variable"/>
     <eClassifiers xsi:type="ecore:EClass" name="ResultExpression" eSuperTypes="#//emodel/FunctionResult">
@@ -196,6 +193,11 @@
     <eClassifiers xsi:type="ecore:EClass" name="ConstantVariable" eSuperTypes="#//emodel/GlobalVariable">
       <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1"
           eType="#//emodel/expressions/Expression" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="VariableParameter" eSuperTypes="#//emodel/FunctionParameter #//emodel/Variable"/>
+    <eClassifiers xsi:type="ecore:EClass" name="LazyParameter" eSuperTypes="#//emodel/FunctionParameter">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+          eType="#//emodel/FunctionParameter" containment="true"/>
     </eClassifiers>
     <eSubpackages name="types" nsURI="http://emodel/1.0/types" nsPrefix="types">
       <eClassifiers xsi:type="ecore:EClass" name="TypeDefinition" abstract="true"

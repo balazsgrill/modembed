@@ -58,15 +58,6 @@ public interface EmodelFactory extends EFactory {
 	Variable createVariable();
 
 	/**
-	 * Returns a new object of class '<em>Function Parameter</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Function Parameter</em>'.
-	 * @generated
-	 */
-	FunctionParameter createFunctionParameter();
-
-	/**
 	 * Returns a new object of class '<em>Result Buffer</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -110,6 +101,24 @@ public interface EmodelFactory extends EFactory {
 	 * @generated
 	 */
 	ConstantVariable createConstantVariable();
+
+	/**
+	 * Returns a new object of class '<em>Variable Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Variable Parameter</em>'.
+	 * @generated
+	 */
+	VariableParameter createVariableParameter();
+
+	/**
+	 * Returns a new object of class '<em>Lazy Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Lazy Parameter</em>'.
+	 * @generated
+	 */
+	LazyParameter createLazyParameter();
 
 	/**
 	 * Returns the package supported by this factory.

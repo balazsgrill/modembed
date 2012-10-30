@@ -5,11 +5,13 @@ package hu.e.parser.convert;
 
 
 import hu.e.parser.convert.impl.ExpressionConverter;
+import hu.e.parser.convert.impl.FunctionConverter;
 import hu.e.parser.convert.impl.LibraryReferenceScope;
 import hu.e.parser.convert.impl.TypeConverter;
 import hu.e.parser.eSyntax.ConstantVariable;
 import hu.e.parser.eSyntax.Library;
 import hu.e.parser.eSyntax.LibraryItem;
+import hu.e.parser.eSyntax.Operation;
 import hu.e.parser.eSyntax.RegisterVariable;
 import hu.e.parser.eSyntax.Type;
 import hu.e.parser.eSyntax.Variable;
@@ -118,8 +120,13 @@ public class LibraryConverter {
 				HeapVariable hv = EmodelFactory.eINSTANCE.createHeapVariable();
 				hv.setName(item.getName());
 				hv.setType(TypeConverter.convertTypeDef(((Variable) item).getType(), scope));
+				return hv;
 			}
 			
+		}
+		
+		if (item instanceof Operation){
+			return FunctionConverter.convert((Operation)item, scope);
 		}
 		
 		return null;

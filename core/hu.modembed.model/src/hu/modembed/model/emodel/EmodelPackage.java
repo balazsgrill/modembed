@@ -376,7 +376,7 @@ public interface EmodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION_PARAMETER__ORIGINS = VARIABLE__ORIGINS;
+	int FUNCTION_PARAMETER__ORIGINS = CorePackage.NAMED_ELEMENT__ORIGINS;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -385,7 +385,7 @@ public interface EmodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION_PARAMETER__DESCRIPTION = VARIABLE__DESCRIPTION;
+	int FUNCTION_PARAMETER__DESCRIPTION = CorePackage.NAMED_ELEMENT__DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -394,25 +394,7 @@ public interface EmodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION_PARAMETER__NAME = VARIABLE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FUNCTION_PARAMETER__TYPE = VARIABLE__TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Lazy</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FUNCTION_PARAMETER__LAZY = VARIABLE_FEATURE_COUNT + 0;
+	int FUNCTION_PARAMETER__NAME = CorePackage.NAMED_ELEMENT__NAME;
 
 	/**
 	 * The number of structural features of the '<em>Function Parameter</em>' class.
@@ -421,7 +403,7 @@ public interface EmodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION_PARAMETER_FEATURE_COUNT = VARIABLE_FEATURE_COUNT + 1;
+	int FUNCTION_PARAMETER_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link hu.modembed.model.emodel.impl.FunctionResultImpl <em>Function Result</em>}' class.
@@ -801,6 +783,117 @@ public interface EmodelPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link hu.modembed.model.emodel.impl.VariableParameterImpl <em>Variable Parameter</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.modembed.model.emodel.impl.VariableParameterImpl
+	 * @see hu.modembed.model.emodel.impl.EmodelPackageImpl#getVariableParameter()
+	 * @generated
+	 */
+	int VARIABLE_PARAMETER = 13;
+
+	/**
+	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIABLE_PARAMETER__ORIGINS = FUNCTION_PARAMETER__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIABLE_PARAMETER__DESCRIPTION = FUNCTION_PARAMETER__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIABLE_PARAMETER__NAME = FUNCTION_PARAMETER__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIABLE_PARAMETER__TYPE = FUNCTION_PARAMETER_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Variable Parameter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIABLE_PARAMETER_FEATURE_COUNT = FUNCTION_PARAMETER_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link hu.modembed.model.emodel.impl.LazyParameterImpl <em>Lazy Parameter</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.modembed.model.emodel.impl.LazyParameterImpl
+	 * @see hu.modembed.model.emodel.impl.EmodelPackageImpl#getLazyParameter()
+	 * @generated
+	 */
+	int LAZY_PARAMETER = 14;
+
+	/**
+	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LAZY_PARAMETER__ORIGINS = FUNCTION_PARAMETER__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LAZY_PARAMETER__DESCRIPTION = FUNCTION_PARAMETER__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LAZY_PARAMETER__NAME = FUNCTION_PARAMETER__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LAZY_PARAMETER__PARAMETERS = FUNCTION_PARAMETER_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Lazy Parameter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LAZY_PARAMETER_FEATURE_COUNT = FUNCTION_PARAMETER_FEATURE_COUNT + 1;
+
+
+	/**
 	 * Returns the meta object for class '{@link hu.modembed.model.emodel.Library <em>Library</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -939,17 +1032,6 @@ public interface EmodelPackage extends EPackage {
 	EClass getFunctionParameter();
 
 	/**
-	 * Returns the meta object for the attribute '{@link hu.modembed.model.emodel.FunctionParameter#isLazy <em>Lazy</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Lazy</em>'.
-	 * @see hu.modembed.model.emodel.FunctionParameter#isLazy()
-	 * @see #getFunctionParameter()
-	 * @generated
-	 */
-	EAttribute getFunctionParameter_Lazy();
-
-	/**
 	 * Returns the meta object for class '{@link hu.modembed.model.emodel.FunctionResult <em>Function Result</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1061,6 +1143,37 @@ public interface EmodelPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getConstantVariable_Value();
+
+	/**
+	 * Returns the meta object for class '{@link hu.modembed.model.emodel.VariableParameter <em>Variable Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Variable Parameter</em>'.
+	 * @see hu.modembed.model.emodel.VariableParameter
+	 * @generated
+	 */
+	EClass getVariableParameter();
+
+	/**
+	 * Returns the meta object for class '{@link hu.modembed.model.emodel.LazyParameter <em>Lazy Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Lazy Parameter</em>'.
+	 * @see hu.modembed.model.emodel.LazyParameter
+	 * @generated
+	 */
+	EClass getLazyParameter();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link hu.modembed.model.emodel.LazyParameter#getParameters <em>Parameters</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Parameters</em>'.
+	 * @see hu.modembed.model.emodel.LazyParameter#getParameters()
+	 * @see #getLazyParameter()
+	 * @generated
+	 */
+	EReference getLazyParameter_Parameters();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1199,14 +1312,6 @@ public interface EmodelPackage extends EPackage {
 		EClass FUNCTION_PARAMETER = eINSTANCE.getFunctionParameter();
 
 		/**
-		 * The meta object literal for the '<em><b>Lazy</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute FUNCTION_PARAMETER__LAZY = eINSTANCE.getFunctionParameter_Lazy();
-
-		/**
 		 * The meta object literal for the '{@link hu.modembed.model.emodel.impl.FunctionResultImpl <em>Function Result</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1309,6 +1414,34 @@ public interface EmodelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CONSTANT_VARIABLE__VALUE = eINSTANCE.getConstantVariable_Value();
+
+		/**
+		 * The meta object literal for the '{@link hu.modembed.model.emodel.impl.VariableParameterImpl <em>Variable Parameter</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.modembed.model.emodel.impl.VariableParameterImpl
+		 * @see hu.modembed.model.emodel.impl.EmodelPackageImpl#getVariableParameter()
+		 * @generated
+		 */
+		EClass VARIABLE_PARAMETER = eINSTANCE.getVariableParameter();
+
+		/**
+		 * The meta object literal for the '{@link hu.modembed.model.emodel.impl.LazyParameterImpl <em>Lazy Parameter</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.modembed.model.emodel.impl.LazyParameterImpl
+		 * @see hu.modembed.model.emodel.impl.EmodelPackageImpl#getLazyParameter()
+		 * @generated
+		 */
+		EClass LAZY_PARAMETER = eINSTANCE.getLazyParameter();
+
+		/**
+		 * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LAZY_PARAMETER__PARAMETERS = eINSTANCE.getLazyParameter_Parameters();
 
 	}
 

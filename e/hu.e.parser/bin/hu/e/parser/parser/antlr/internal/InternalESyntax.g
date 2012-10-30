@@ -1705,9 +1705,9 @@ ruleOperationTypeDef returns [EObject current=null]
 ((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getOperationTypeDefAccess().getParamsParameterVariableParserRuleCall_2_0_0()); 
+	        newCompositeNode(grammarAccess.getOperationTypeDefAccess().getParamsOperationParameterParserRuleCall_2_0_0()); 
 	    }
-		lv_params_2_0=ruleParameterVariable		{
+		lv_params_2_0=ruleOperationParameter		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getOperationTypeDefRule());
 	        }
@@ -1715,7 +1715,7 @@ ruleOperationTypeDef returns [EObject current=null]
        			$current, 
        			"params",
         		lv_params_2_0, 
-        		"ParameterVariable");
+        		"OperationParameter");
 	        afterParserOrEnumRuleCall();
 	    }
 

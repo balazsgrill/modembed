@@ -60,12 +60,13 @@ public class EmodelFactoryImpl extends EFactoryImpl implements EmodelFactory {
 			case EmodelPackage.TYPE: return createType();
 			case EmodelPackage.FUNCTION: return createFunction();
 			case EmodelPackage.VARIABLE: return createVariable();
-			case EmodelPackage.FUNCTION_PARAMETER: return createFunctionParameter();
 			case EmodelPackage.RESULT_BUFFER: return createResultBuffer();
 			case EmodelPackage.RESULT_EXPRESSION: return createResultExpression();
 			case EmodelPackage.HEAP_VARIABLE: return createHeapVariable();
 			case EmodelPackage.REGISTER_VARIABLE: return createRegisterVariable();
 			case EmodelPackage.CONSTANT_VARIABLE: return createConstantVariable();
+			case EmodelPackage.VARIABLE_PARAMETER: return createVariableParameter();
+			case EmodelPackage.LAZY_PARAMETER: return createLazyParameter();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -116,16 +117,6 @@ public class EmodelFactoryImpl extends EFactoryImpl implements EmodelFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FunctionParameter createFunctionParameter() {
-		FunctionParameterImpl functionParameter = new FunctionParameterImpl();
-		return functionParameter;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public ResultBuffer createResultBuffer() {
 		ResultBufferImpl resultBuffer = new ResultBufferImpl();
 		return resultBuffer;
@@ -169,6 +160,26 @@ public class EmodelFactoryImpl extends EFactoryImpl implements EmodelFactory {
 	public ConstantVariable createConstantVariable() {
 		ConstantVariableImpl constantVariable = new ConstantVariableImpl();
 		return constantVariable;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public VariableParameter createVariableParameter() {
+		VariableParameterImpl variableParameter = new VariableParameterImpl();
+		return variableParameter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public LazyParameter createLazyParameter() {
+		LazyParameterImpl lazyParameter = new LazyParameterImpl();
+		return lazyParameter;
 	}
 
 	/**
