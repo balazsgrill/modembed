@@ -6,7 +6,7 @@ package hu.e.parser.convert;
 
 import hu.e.parser.convert.impl.ExpressionConverter;
 import hu.e.parser.convert.impl.FunctionConverter;
-import hu.e.parser.convert.impl.LibraryReferenceScope;
+import hu.e.parser.convert.impl.RootReferenceScope;
 import hu.e.parser.convert.impl.TypeConverter;
 import hu.e.parser.eSyntax.ConstantVariable;
 import hu.e.parser.eSyntax.Library;
@@ -15,6 +15,7 @@ import hu.e.parser.eSyntax.Operation;
 import hu.e.parser.eSyntax.RegisterVariable;
 import hu.e.parser.eSyntax.Type;
 import hu.e.parser.eSyntax.Variable;
+import hu.modembed.model.core.RootElement;
 import hu.modembed.model.emodel.EmodelFactory;
 import hu.modembed.model.emodel.HeapVariable;
 import hu.modembed.model.emodel.LibraryElement;
@@ -28,6 +29,8 @@ import java.util.List;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IResource;
+import org.eclipse.core.resources.IResourceVisitor;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.URI;
@@ -77,16 +80,33 @@ public class LibraryConverter {
 			e.printStackTrace();
 		}
 		
+		final List<IFile> possibleFiles = new LinkedList<IFile>();
+		final String filename = name+".xmi";
+		
 		for(IProject p : projects){
-			IFolder folder = p.getFolder(MODELS_FOLDER);
-			if (folder.exists()){
-				IFile file = folder.getFile(name+".xmi");
-				if (file.exists()){
-					return URI.createPlatformResourceURI(file.getFullPath().toString(), true);
-				}
+			try {
+				p.accept(new IResourceVisitor() {
+					
+					@Override
+					public boolean visit(IResource resource) throws CoreException {
+						if (resource instanceof IFile){
+							if (filename.equals(resource.getName())){
+								possibleFiles.add((IFile)resource);
+							}
+							return false;
+						}
+						return true;
+					}
+				});
+			} catch (CoreException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
 		}
 		
+		if (!possibleFiles.isEmpty()){
+			return URI.createPlatformResourceURI(possibleFiles.get(0).getFullPath().toString(), true);
+		}
 		return null;
 	}
 	
@@ -138,17 +158,17 @@ public class LibraryConverter {
 		hu.modembed.model.emodel.Library result = EmodelFactory.eINSTANCE.createLibrary();
 		result.setName(library.getName());
 		
-		List<hu.modembed.model.emodel.Library> libs = new ArrayList<hu.modembed.model.emodel.Library>();
+		List<RootElement> libs = new ArrayList<RootElement>();
 		libs.add(result);
 		
 		for(String use : library.getUse()){
 			URI useduri = getReferredLibURI(use);
-			hu.modembed.model.emodel.Library usedlib = null;
+			RootElement usedlib = null;
 			if (useduri != null){
 				Resource ur = resourceSet.getResource(useduri, true);
 				for(EObject eo : ur.getContents()){
-					if (eo instanceof hu.modembed.model.emodel.Library){
-						usedlib = (hu.modembed.model.emodel.Library)eo;
+					if (eo instanceof RootElement){
+						usedlib = (RootElement)eo;
 					}
 				}
 			}
@@ -159,7 +179,7 @@ public class LibraryConverter {
 			}
 		}
 		
-		ICrossReferenceScope scope = new LibraryReferenceScope(libs);
+		ICrossReferenceScope scope = new RootReferenceScope(libs);
 		
 		for(LibraryItem item : library.getItems()){
 			LibraryElement le = convertElement(item, scope);
