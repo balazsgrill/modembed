@@ -4,15 +4,12 @@ package hu.modembed.model.emodel.impl;
 
 import hu.modembed.model.emodel.ConstantVariable;
 import hu.modembed.model.emodel.EmodelPackage;
-
-import hu.modembed.model.emodel.expressions.Expression;
+import hu.modembed.model.emodel.expressions.ExecutionStep;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -37,7 +34,7 @@ public class ConstantVariableImpl extends GlobalVariableImpl implements Constant
 	 * @generated
 	 * @ordered
 	 */
-	protected Expression value;
+	protected ExecutionStep value;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -63,7 +60,7 @@ public class ConstantVariableImpl extends GlobalVariableImpl implements Constant
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Expression getValue() {
+	public ExecutionStep getValue() {
 		return value;
 	}
 
@@ -72,8 +69,8 @@ public class ConstantVariableImpl extends GlobalVariableImpl implements Constant
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetValue(Expression newValue, NotificationChain msgs) {
-		Expression oldValue = value;
+	public NotificationChain basicSetValue(ExecutionStep newValue, NotificationChain msgs) {
+		ExecutionStep oldValue = value;
 		value = newValue;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EmodelPackage.CONSTANT_VARIABLE__VALUE, oldValue, newValue);
@@ -87,7 +84,7 @@ public class ConstantVariableImpl extends GlobalVariableImpl implements Constant
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setValue(Expression newValue) {
+	public void setValue(ExecutionStep newValue) {
 		if (newValue != value) {
 			NotificationChain msgs = null;
 			if (value != null)
@@ -138,7 +135,7 @@ public class ConstantVariableImpl extends GlobalVariableImpl implements Constant
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case EmodelPackage.CONSTANT_VARIABLE__VALUE:
-				setValue((Expression)newValue);
+				setValue((ExecutionStep)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -153,7 +150,7 @@ public class ConstantVariableImpl extends GlobalVariableImpl implements Constant
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case EmodelPackage.CONSTANT_VARIABLE__VALUE:
-				setValue((Expression)null);
+				setValue((ExecutionStep)null);
 				return;
 		}
 		super.eUnset(featureID);

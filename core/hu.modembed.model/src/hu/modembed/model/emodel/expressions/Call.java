@@ -2,6 +2,7 @@
  */
 package hu.modembed.model.emodel.expressions;
 
+import hu.modembed.model.emodel.CallableElement;
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -13,11 +14,12 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  *   <li>{@link hu.modembed.model.emodel.expressions.Call#getParameters <em>Parameters</em>}</li>
+ *   <li>{@link hu.modembed.model.emodel.expressions.Call#getFunction <em>Function</em>}</li>
  * </ul>
  * </p>
  *
  * @see hu.modembed.model.emodel.expressions.ExpressionsPackage#getCall()
- * @model abstract="true"
+ * @model
  * @generated
  */
 public interface Call extends Expression {
@@ -36,5 +38,31 @@ public interface Call extends Expression {
 	 * @generated
 	 */
 	EList<ExecutionStep> getParameters();
+
+	/**
+	 * Returns the value of the '<em><b>Function</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Function</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Function</em>' reference.
+	 * @see #setFunction(CallableElement)
+	 * @see hu.modembed.model.emodel.expressions.ExpressionsPackage#getCall_Function()
+	 * @model required="true"
+	 * @generated
+	 */
+	CallableElement getFunction();
+
+	/**
+	 * Sets the value of the '{@link hu.modembed.model.emodel.expressions.Call#getFunction <em>Function</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Function</em>' reference.
+	 * @see #getFunction()
+	 * @generated
+	 */
+	void setFunction(CallableElement value);
 
 } // Call

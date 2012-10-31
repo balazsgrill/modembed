@@ -74,10 +74,6 @@ public class ExpressionsAdapterFactory extends AdapterFactoryImpl {
 				return createExpressionAdapter();
 			}
 			@Override
-			public Adapter caseInstructionCall(InstructionCall object) {
-				return createInstructionCallAdapter();
-			}
-			@Override
 			public Adapter caseExecutionStep(ExecutionStep object) {
 				return createExecutionStepAdapter();
 			}
@@ -108,10 +104,6 @@ public class ExpressionsAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseCompilationLogStep(CompilationLogStep object) {
 				return createCompilationLogStepAdapter();
-			}
-			@Override
-			public Adapter caseFunctionCall(FunctionCall object) {
-				return createFunctionCallAdapter();
 			}
 			@Override
 			public Adapter caseMODembedElement(MODembedElement object) {
@@ -148,20 +140,6 @@ public class ExpressionsAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createExpressionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link hu.modembed.model.emodel.expressions.InstructionCall <em>Instruction Call</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see hu.modembed.model.emodel.expressions.InstructionCall
-	 * @generated
-	 */
-	public Adapter createInstructionCallAdapter() {
 		return null;
 	}
 
@@ -274,20 +252,6 @@ public class ExpressionsAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCompilationLogStepAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link hu.modembed.model.emodel.expressions.FunctionCall <em>Function Call</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see hu.modembed.model.emodel.expressions.FunctionCall
-	 * @generated
-	 */
-	public Adapter createFunctionCallAdapter() {
 		return null;
 	}
 

@@ -2,7 +2,7 @@
  */
 package hu.modembed.model.emodel;
 
-import hu.modembed.model.emodel.expressions.Expression;
+import hu.modembed.model.emodel.expressions.ExecutionStep;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,12 +30,12 @@ public interface ConstantVariable extends GlobalVariable {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Value</em>' containment reference.
-	 * @see #setValue(Expression)
+	 * @see #setValue(ExecutionStep)
 	 * @see hu.modembed.model.emodel.EmodelPackage#getConstantVariable_Value()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	Expression getValue();
+	ExecutionStep getValue();
 
 	/**
 	 * Sets the value of the '{@link hu.modembed.model.emodel.ConstantVariable#getValue <em>Value</em>}' containment reference.
@@ -45,6 +45,6 @@ public interface ConstantVariable extends GlobalVariable {
 	 * @see #getValue()
 	 * @generated
 	 */
-	void setValue(Expression value);
+	void setValue(ExecutionStep value);
 
 } // ConstantVariable

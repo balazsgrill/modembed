@@ -2,7 +2,6 @@
  */
 package hu.modembed.model.emodel;
 
-import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->

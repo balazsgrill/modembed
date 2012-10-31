@@ -4,6 +4,7 @@ package hu.modembed.model.emodel.impl;
 
 import hu.modembed.model.core.impl.NamedElementImpl;
 
+import hu.modembed.model.emodel.CallableElement;
 import hu.modembed.model.emodel.EmodelPackage;
 import hu.modembed.model.emodel.Function;
 import hu.modembed.model.emodel.FunctionDeclaration;
@@ -429,6 +430,11 @@ public class FunctionImpl extends NamedElementImpl implements Function {
 				default: return -1;
 			}
 		}
+		if (baseClass == CallableElement.class) {
+			switch (derivedFeatureID) {
+				default: return -1;
+			}
+		}
 		if (baseClass == FunctionDeclaration.class) {
 			switch (derivedFeatureID) {
 				case EmodelPackage.FUNCTION__ARGUMENTS: return EmodelPackage.FUNCTION_DECLARATION__ARGUMENTS;
@@ -448,6 +454,11 @@ public class FunctionImpl extends NamedElementImpl implements Function {
 		if (baseClass == Variable.class) {
 			switch (baseFeatureID) {
 				case EmodelPackage.VARIABLE__TYPE: return EmodelPackage.FUNCTION__TYPE;
+				default: return -1;
+			}
+		}
+		if (baseClass == CallableElement.class) {
+			switch (baseFeatureID) {
 				default: return -1;
 			}
 		}

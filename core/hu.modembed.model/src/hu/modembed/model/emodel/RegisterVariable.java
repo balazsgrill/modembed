@@ -2,7 +2,7 @@
  */
 package hu.modembed.model.emodel;
 
-import hu.modembed.model.emodel.expressions.Expression;
+import hu.modembed.model.emodel.expressions.ExecutionStep;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,12 +30,12 @@ public interface RegisterVariable extends GlobalVariable {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Address</em>' containment reference.
-	 * @see #setAddress(Expression)
+	 * @see #setAddress(ExecutionStep)
 	 * @see hu.modembed.model.emodel.EmodelPackage#getRegisterVariable_Address()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	Expression getAddress();
+	ExecutionStep getAddress();
 
 	/**
 	 * Sets the value of the '{@link hu.modembed.model.emodel.RegisterVariable#getAddress <em>Address</em>}' containment reference.
@@ -45,6 +45,6 @@ public interface RegisterVariable extends GlobalVariable {
 	 * @see #getAddress()
 	 * @generated
 	 */
-	void setAddress(Expression value);
+	void setAddress(ExecutionStep value);
 
 } // RegisterVariable

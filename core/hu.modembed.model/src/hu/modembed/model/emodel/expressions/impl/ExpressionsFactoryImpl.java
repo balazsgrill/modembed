@@ -57,12 +57,11 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case ExpressionsPackage.INSTRUCTION_CALL: return createInstructionCall();
 			case ExpressionsPackage.EXECUTION_BLOCK: return createExecutionBlock();
+			case ExpressionsPackage.CALL: return createCall();
 			case ExpressionsPackage.VARIABLE_REFERENCE: return createVariableReference();
 			case ExpressionsPackage.INTEGER_LITERAL_EXPRESSION: return createIntegerLiteralExpression();
 			case ExpressionsPackage.COMPILATION_LOG_STEP: return createCompilationLogStep();
-			case ExpressionsPackage.FUNCTION_CALL: return createFunctionCall();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -103,9 +102,9 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public InstructionCall createInstructionCall() {
-		InstructionCallImpl instructionCall = new InstructionCallImpl();
-		return instructionCall;
+	public ExecutionBlock createExecutionBlock() {
+		ExecutionBlockImpl executionBlock = new ExecutionBlockImpl();
+		return executionBlock;
 	}
 
 	/**
@@ -113,9 +112,9 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ExecutionBlock createExecutionBlock() {
-		ExecutionBlockImpl executionBlock = new ExecutionBlockImpl();
-		return executionBlock;
+	public Call createCall() {
+		CallImpl call = new CallImpl();
+		return call;
 	}
 
 	/**
@@ -146,16 +145,6 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 	public CompilationLogStep createCompilationLogStep() {
 		CompilationLogStepImpl compilationLogStep = new CompilationLogStepImpl();
 		return compilationLogStep;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public FunctionCall createFunctionCall() {
-		FunctionCallImpl functionCall = new FunctionCallImpl();
-		return functionCall;
 	}
 
 	/**

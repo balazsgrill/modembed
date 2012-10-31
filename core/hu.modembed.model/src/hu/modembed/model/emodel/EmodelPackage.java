@@ -4,7 +4,6 @@ package hu.modembed.model.emodel;
 
 import hu.modembed.model.core.CorePackage;
 
-import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -986,6 +985,53 @@ public interface EmodelPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link hu.modembed.model.emodel.impl.CallableElementImpl <em>Callable Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.modembed.model.emodel.impl.CallableElementImpl
+	 * @see hu.modembed.model.emodel.impl.EmodelPackageImpl#getCallableElement()
+	 * @generated
+	 */
+	int CALLABLE_ELEMENT = 16;
+
+	/**
+	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALLABLE_ELEMENT__ORIGINS = CorePackage.NAMED_ELEMENT__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALLABLE_ELEMENT__DESCRIPTION = CorePackage.NAMED_ELEMENT__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALLABLE_ELEMENT__NAME = CorePackage.NAMED_ELEMENT__NAME;
+
+	/**
+	 * The number of structural features of the '<em>Callable Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALLABLE_ELEMENT_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+
+	/**
 	 * Returns the meta object for class '{@link hu.modembed.model.emodel.Library <em>Library</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1267,6 +1313,16 @@ public interface EmodelPackage extends EPackage {
 	EReference getFunctionDeclaration_Arguments();
 
 	/**
+	 * Returns the meta object for class '{@link hu.modembed.model.emodel.CallableElement <em>Callable Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Callable Element</em>'.
+	 * @see hu.modembed.model.emodel.CallableElement
+	 * @generated
+	 */
+	EClass getCallableElement();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1535,6 +1591,16 @@ public interface EmodelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference FUNCTION_DECLARATION__ARGUMENTS = eINSTANCE.getFunctionDeclaration_Arguments();
+
+		/**
+		 * The meta object literal for the '{@link hu.modembed.model.emodel.impl.CallableElementImpl <em>Callable Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.modembed.model.emodel.impl.CallableElementImpl
+		 * @see hu.modembed.model.emodel.impl.EmodelPackageImpl#getCallableElement()
+		 * @generated
+		 */
+		EClass CALLABLE_ELEMENT = eINSTANCE.getCallableElement();
 
 	}
 

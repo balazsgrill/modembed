@@ -4,15 +4,12 @@ package hu.modembed.model.emodel.impl;
 
 import hu.modembed.model.emodel.EmodelPackage;
 import hu.modembed.model.emodel.RegisterVariable;
-
-import hu.modembed.model.emodel.expressions.Expression;
+import hu.modembed.model.emodel.expressions.ExecutionStep;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -37,7 +34,7 @@ public class RegisterVariableImpl extends GlobalVariableImpl implements Register
 	 * @generated
 	 * @ordered
 	 */
-	protected Expression address;
+	protected ExecutionStep address;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -63,7 +60,7 @@ public class RegisterVariableImpl extends GlobalVariableImpl implements Register
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Expression getAddress() {
+	public ExecutionStep getAddress() {
 		return address;
 	}
 
@@ -72,8 +69,8 @@ public class RegisterVariableImpl extends GlobalVariableImpl implements Register
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetAddress(Expression newAddress, NotificationChain msgs) {
-		Expression oldAddress = address;
+	public NotificationChain basicSetAddress(ExecutionStep newAddress, NotificationChain msgs) {
+		ExecutionStep oldAddress = address;
 		address = newAddress;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EmodelPackage.REGISTER_VARIABLE__ADDRESS, oldAddress, newAddress);
@@ -87,7 +84,7 @@ public class RegisterVariableImpl extends GlobalVariableImpl implements Register
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAddress(Expression newAddress) {
+	public void setAddress(ExecutionStep newAddress) {
 		if (newAddress != address) {
 			NotificationChain msgs = null;
 			if (address != null)
@@ -138,7 +135,7 @@ public class RegisterVariableImpl extends GlobalVariableImpl implements Register
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case EmodelPackage.REGISTER_VARIABLE__ADDRESS:
-				setAddress((Expression)newValue);
+				setAddress((ExecutionStep)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -153,7 +150,7 @@ public class RegisterVariableImpl extends GlobalVariableImpl implements Register
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case EmodelPackage.REGISTER_VARIABLE__ADDRESS:
-				setAddress((Expression)null);
+				setAddress((ExecutionStep)null);
 				return;
 		}
 		super.eUnset(featureID);

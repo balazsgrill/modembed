@@ -2,6 +2,7 @@
  */
 package hu.modembed.model.emodel.impl;
 
+import hu.modembed.model.emodel.CallableElement;
 import hu.modembed.model.emodel.EmodelPackage;
 import hu.modembed.model.emodel.FunctionDeclaration;
 import hu.modembed.model.emodel.FunctionParameter;
@@ -154,6 +155,11 @@ public class LazyParameterImpl extends FunctionParameterImpl implements LazyPara
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == CallableElement.class) {
+			switch (derivedFeatureID) {
+				default: return -1;
+			}
+		}
 		if (baseClass == FunctionDeclaration.class) {
 			switch (derivedFeatureID) {
 				case EmodelPackage.LAZY_PARAMETER__ARGUMENTS: return EmodelPackage.FUNCTION_DECLARATION__ARGUMENTS;
@@ -170,6 +176,11 @@ public class LazyParameterImpl extends FunctionParameterImpl implements LazyPara
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == CallableElement.class) {
+			switch (baseFeatureID) {
+				default: return -1;
+			}
+		}
 		if (baseClass == FunctionDeclaration.class) {
 			switch (baseFeatureID) {
 				case EmodelPackage.FUNCTION_DECLARATION__ARGUMENTS: return EmodelPackage.LAZY_PARAMETER__ARGUMENTS;

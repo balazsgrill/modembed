@@ -430,6 +430,7 @@ public class AssemblerPackageImpl extends EPackageImpl implements AssemblerPacka
 
 		// Obtain other dependent packages
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
+		EmodelPackage theEmodelPackage = (EmodelPackage)EPackage.Registry.INSTANCE.getEPackage(EmodelPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -438,6 +439,7 @@ public class AssemblerPackageImpl extends EPackageImpl implements AssemblerPacka
 		// Add supertypes to classes
 		instructionSetEClass.getESuperTypes().add(theCorePackage.getRootElement());
 		instructionEClass.getESuperTypes().add(theCorePackage.getNamedElement());
+		instructionEClass.getESuperTypes().add(theEmodelPackage.getCallableElement());
 		instructionParameterEClass.getESuperTypes().add(theCorePackage.getMODembedElement());
 		instructionSectionEClass.getESuperTypes().add(theCorePackage.getMODembedElement());
 		constantSectionEClass.getESuperTypes().add(this.getInstructionSection());

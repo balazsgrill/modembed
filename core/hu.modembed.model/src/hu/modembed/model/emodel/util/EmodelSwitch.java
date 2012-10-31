@@ -94,6 +94,7 @@ public class EmodelSwitch<T> extends Switch<T> {
 				if (result == null) result = caseLibraryElement(function);
 				if (result == null) result = caseFunctionDeclaration(function);
 				if (result == null) result = caseVariable(function);
+				if (result == null) result = caseCallableElement(function);
 				if (result == null) result = caseNamedElement(function);
 				if (result == null) result = caseMODembedElement(function);
 				if (result == null) result = defaultCase(theEObject);
@@ -208,6 +209,7 @@ public class EmodelSwitch<T> extends Switch<T> {
 				if (result == null) result = caseFunctionParameter(lazyParameter);
 				if (result == null) result = caseFunctionDeclaration(lazyParameter);
 				if (result == null) result = caseVariable(lazyParameter);
+				if (result == null) result = caseCallableElement(lazyParameter);
 				if (result == null) result = caseNamedElement(lazyParameter);
 				if (result == null) result = caseMODembedElement(lazyParameter);
 				if (result == null) result = defaultCase(theEObject);
@@ -217,8 +219,17 @@ public class EmodelSwitch<T> extends Switch<T> {
 				FunctionDeclaration functionDeclaration = (FunctionDeclaration)theEObject;
 				T result = caseFunctionDeclaration(functionDeclaration);
 				if (result == null) result = caseVariable(functionDeclaration);
+				if (result == null) result = caseCallableElement(functionDeclaration);
 				if (result == null) result = caseNamedElement(functionDeclaration);
 				if (result == null) result = caseMODembedElement(functionDeclaration);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case EmodelPackage.CALLABLE_ELEMENT: {
+				CallableElement callableElement = (CallableElement)theEObject;
+				T result = caseCallableElement(callableElement);
+				if (result == null) result = caseNamedElement(callableElement);
+				if (result == null) result = caseMODembedElement(callableElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -463,6 +474,21 @@ public class EmodelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseFunctionDeclaration(FunctionDeclaration object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Callable Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Callable Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCallableElement(CallableElement object) {
 		return null;
 	}
 

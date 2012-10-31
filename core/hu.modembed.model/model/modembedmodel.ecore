@@ -16,7 +16,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="instructions" upperBound="-1"
             eType="#//core/assembler/Instruction" containment="true"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Instruction" eSuperTypes="#//core/NamedElement">
+      <eClassifiers xsi:type="ecore:EClass" name="Instruction" eSuperTypes="#//core/NamedElement #//emodel/CallableElement">
         <eStructuralFeatures xsi:type="ecore:EReference" name="sections" upperBound="-1"
             eType="#//core/assembler/InstructionSection" containment="true"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
@@ -186,19 +186,20 @@
     <eClassifiers xsi:type="ecore:EClass" name="HeapVariable" eSuperTypes="#//emodel/GlobalVariable"/>
     <eClassifiers xsi:type="ecore:EClass" name="RegisterVariable" eSuperTypes="#//emodel/GlobalVariable">
       <eStructuralFeatures xsi:type="ecore:EReference" name="address" lowerBound="1"
-          eType="#//emodel/expressions/Expression" containment="true"/>
+          eType="#//emodel/expressions/ExecutionStep" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ConstantVariable" eSuperTypes="#//emodel/GlobalVariable">
       <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1"
-          eType="#//emodel/expressions/Expression" containment="true"/>
+          eType="#//emodel/expressions/ExecutionStep" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="VariableParameter" eSuperTypes="#//emodel/FunctionParameter"/>
     <eClassifiers xsi:type="ecore:EClass" name="LazyParameter" eSuperTypes="#//emodel/FunctionParameter #//emodel/FunctionDeclaration"/>
     <eClassifiers xsi:type="ecore:EClass" name="FunctionDeclaration" abstract="true"
-        eSuperTypes="#//emodel/Variable">
+        eSuperTypes="#//emodel/Variable #//emodel/CallableElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="arguments" upperBound="-1"
           eType="#//emodel/FunctionParameter" containment="true"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CallableElement" abstract="true" eSuperTypes="#//core/NamedElement"/>
     <eSubpackages name="types" nsURI="http://emodel/1.0/types" nsPrefix="types">
       <eClassifiers xsi:type="ecore:EClass" name="TypeDefinition" abstract="true"
           eSuperTypes="#//core/MODembedElement"/>
@@ -229,10 +230,6 @@
     </eSubpackages>
     <eSubpackages name="expressions" nsURI="http://emodel/1.0/expressions" nsPrefix="expressions">
       <eClassifiers xsi:type="ecore:EClass" name="Expression" abstract="true" eSuperTypes="#//emodel/expressions/ExecutionStep"/>
-      <eClassifiers xsi:type="ecore:EClass" name="InstructionCall" eSuperTypes="#//emodel/expressions/Call">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="instruction" lowerBound="1"
-            eType="#//core/assembler/Instruction"/>
-      </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="ExecutionStep" abstract="true" eSuperTypes="#//core/MODembedElement"/>
       <eClassifiers xsi:type="ecore:EClass" name="LiteralExpression" abstract="true"
           eSuperTypes="#//emodel/expressions/Expression">
@@ -243,9 +240,11 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="steps" upperBound="-1"
             eType="#//emodel/expressions/ExecutionStep" containment="true"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Call" abstract="true" eSuperTypes="#//emodel/expressions/Expression">
+      <eClassifiers xsi:type="ecore:EClass" name="Call" eSuperTypes="#//emodel/expressions/Expression">
         <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
             eType="#//emodel/expressions/ExecutionStep" containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="function" lowerBound="1"
+            eType="#//emodel/CallableElement"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="VariableReference" eSuperTypes="#//emodel/expressions/Expression">
         <eStructuralFeatures xsi:type="ecore:EReference" name="variable" lowerBound="1"
@@ -267,10 +266,6 @@
         <eLiterals name="DEBUG" value="1"/>
         <eLiterals name="WARNING" value="2"/>
         <eLiterals name="ERROR" value="3"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="FunctionCall" eSuperTypes="#//emodel/expressions/Call">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="function" lowerBound="1"
-            eType="#//emodel/Function"/>
       </eClassifiers>
     </eSubpackages>
   </eSubpackages>

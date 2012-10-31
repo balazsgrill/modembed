@@ -20,7 +20,7 @@ import org.eclipse.emf.common.util.EList;
  * @model abstract="true"
  * @generated
  */
-public interface FunctionDeclaration extends Variable {
+public interface FunctionDeclaration extends Variable, CallableElement {
 	/**
 	 * Returns the value of the '<em><b>Arguments</b></em>' containment reference list.
 	 * The list contents are of type {@link hu.modembed.model.emodel.FunctionParameter}.

@@ -76,16 +76,6 @@ public class ExpressionsSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ExpressionsPackage.INSTRUCTION_CALL: {
-				InstructionCall instructionCall = (InstructionCall)theEObject;
-				T result = caseInstructionCall(instructionCall);
-				if (result == null) result = caseCall(instructionCall);
-				if (result == null) result = caseExpression(instructionCall);
-				if (result == null) result = caseExecutionStep(instructionCall);
-				if (result == null) result = caseMODembedElement(instructionCall);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case ExpressionsPackage.EXECUTION_STEP: {
 				ExecutionStep executionStep = (ExecutionStep)theEObject;
 				T result = caseExecutionStep(executionStep);
@@ -157,16 +147,6 @@ public class ExpressionsSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ExpressionsPackage.FUNCTION_CALL: {
-				FunctionCall functionCall = (FunctionCall)theEObject;
-				T result = caseFunctionCall(functionCall);
-				if (result == null) result = caseCall(functionCall);
-				if (result == null) result = caseExpression(functionCall);
-				if (result == null) result = caseExecutionStep(functionCall);
-				if (result == null) result = caseMODembedElement(functionCall);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -183,21 +163,6 @@ public class ExpressionsSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseExpression(Expression object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Instruction Call</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Instruction Call</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseInstructionCall(InstructionCall object) {
 		return null;
 	}
 
@@ -318,21 +283,6 @@ public class ExpressionsSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseCompilationLogStep(CompilationLogStep object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Function Call</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Function Call</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseFunctionCall(FunctionCall object) {
 		return null;
 	}
 

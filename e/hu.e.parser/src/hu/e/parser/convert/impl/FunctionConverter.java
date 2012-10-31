@@ -34,7 +34,7 @@ public class FunctionConverter {
 			OperationTypeDef ot = ((LazyParameter) op).getType();
 			lp.setType(TypeConverter.convertTypeDef(ot.getResultType(), scope));
 			for(OperationParameter lop : ot.getParams()){
-				lp.getParameters().add(convert(lop, scope));
+				lp.getArguments().add(convert(lop, scope));
 			}
 			return lp;
 		}
@@ -47,10 +47,13 @@ public class FunctionConverter {
 		func.setName(operation.getName());
 		
 		OperationTypeDef ot = operation.getType();
+		func.setType(TypeConverter.convertTypeDef(ot.getResultType(), scope));
 		for(OperationParameter op : ot.getParams()){
 			FunctionParameter fp = convert(op, scope);
 			func.getArguments().add(fp);
 		}
+		
+		func.setImplementation(ExpressionConverter.convert(operation.getContent(), scope));
 		
 		return func;
 	}

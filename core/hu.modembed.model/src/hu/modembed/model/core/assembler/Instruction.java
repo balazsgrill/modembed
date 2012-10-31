@@ -3,6 +3,7 @@
 package hu.modembed.model.core.assembler;
 
 import hu.modembed.model.core.NamedElement;
+import hu.modembed.model.emodel.CallableElement;
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -22,7 +23,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Instruction extends NamedElement {
+public interface Instruction extends NamedElement, CallableElement {
 	/**
 	 * Returns the value of the '<em><b>Sections</b></em>' containment reference list.
 	 * The list contents are of type {@link hu.modembed.model.core.assembler.InstructionSection}.
