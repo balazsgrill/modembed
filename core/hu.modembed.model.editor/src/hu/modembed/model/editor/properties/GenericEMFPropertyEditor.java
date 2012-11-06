@@ -5,9 +5,11 @@ package hu.modembed.model.editor.properties;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import java.util.Set;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -37,12 +39,16 @@ public class GenericEMFPropertyEditor implements IPropertyEditor {
 	@Override
 	public Collection<IPropertyEditor> getChildren(EObject eobject) {
 		List<IPropertyEditor> editors = new ArrayList<IPropertyEditor>();
+		Set<EClass> visited = new HashSet<EClass>();
 		Queue<EClass> q = new LinkedList<EClass>();
 		q.add(eobject.eClass());
 		while(!q.isEmpty()){
 			EClass ec = q.poll();
-			q.addAll(ec.getESuperTypes());
-			editors.add(new EClassPropertyEditor(ec));
+			if (!visited.contains(ec)){
+				q.addAll(ec.getESuperTypes());
+				editors.add(new EClassPropertyEditor(ec));
+				visited.add(ec);
+			}
 		}
 		return editors;
 	}

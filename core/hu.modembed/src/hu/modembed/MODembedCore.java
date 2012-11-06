@@ -75,10 +75,12 @@ public class MODembedCore extends Plugin {
 		List<EClass> subs = new ArrayList<EClass>();
 		subs.add(base);
 
-		Registry reg = Registry.INSTANCE;
-		if (resourceSet != null){
-			reg = resourceSet.getPackageRegistry();
-		}
+		Registry reg = null;//Registry.INSTANCE;
+//		if (resourceSet != null){
+//			reg = resourceSet.getPackageRegistry();
+//		}else{
+			reg = Registry.INSTANCE;
+//		}
 		
 		for (Object oo : reg.values()) {
 
