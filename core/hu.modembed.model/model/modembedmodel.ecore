@@ -44,6 +44,21 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" lowerBound="1"
             eType="#//core/assembler/InstructionParameter"/>
       </eClassifiers>
+      <eSubpackages name="code" nsURI="http://modembed.hu/core/assembler/code" nsPrefix="assemblercode">
+        <eClassifiers xsi:type="ecore:EClass" name="AssemblerObject" eSuperTypes="#//core/RootElement">
+          <eStructuralFeatures xsi:type="ecore:EReference" name="instructions" upperBound="-1"
+              eType="#//core/assembler/code/InstructionCall" containment="true"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="InstructionCall" eSuperTypes="#//core/MODembedElement">
+          <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+              eType="#//core/assembler/code/InstructionCallParameter" containment="true"/>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="instruction" eType="#//core/assembler/Instruction"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="InstructionCallParameter" eSuperTypes="#//core/MODembedElement">
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="definition" eType="#//core/assembler/InstructionParameter"/>
+        </eClassifiers>
+      </eSubpackages>
     </eSubpackages>
   </eSubpackages>
   <eSubpackages name="network" nsURI="http://modembed.hu/network" nsPrefix="network">
@@ -138,11 +153,6 @@
       <eClassifiers xsi:type="ecore:EClass" name="Connection">
         <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//application/Port"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//application/Port"/>
-      </eClassifiers>
-    </eSubpackages>
-    <eSubpackages name="code" nsURI="http://modembed.hu/application/code" nsPrefix="code">
-      <eClassifiers xsi:type="ecore:EClass" name="CodeComponent" eSuperTypes="#//application/Component">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="qualifiedName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eClassifiers>
     </eSubpackages>
   </eSubpackages>

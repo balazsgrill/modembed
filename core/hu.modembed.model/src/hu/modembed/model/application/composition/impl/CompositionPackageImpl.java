@@ -3,59 +3,36 @@
 package hu.modembed.model.application.composition.impl;
 
 import hu.modembed.model.application.ApplicationPackage;
-
-import hu.modembed.model.application.code.CodePackage;
-
-import hu.modembed.model.application.code.impl.CodePackageImpl;
-
 import hu.modembed.model.application.composition.CompositeComponent;
 import hu.modembed.model.application.composition.CompositionFactory;
 import hu.modembed.model.application.composition.CompositionPackage;
 import hu.modembed.model.application.composition.Connection;
 import hu.modembed.model.application.composition.SubComponent;
-
 import hu.modembed.model.application.impl.ApplicationPackageImpl;
-
 import hu.modembed.model.application.interface_.InterfacePackage;
-
 import hu.modembed.model.application.interface_.impl.InterfacePackageImpl;
-
 import hu.modembed.model.comm.CommPackage;
-
 import hu.modembed.model.comm.impl.CommPackageImpl;
-
 import hu.modembed.model.core.CorePackage;
-
 import hu.modembed.model.core.assembler.AssemblerPackage;
-
+import hu.modembed.model.core.assembler.code.CodePackage;
+import hu.modembed.model.core.assembler.code.impl.CodePackageImpl;
 import hu.modembed.model.core.assembler.impl.AssemblerPackageImpl;
-
 import hu.modembed.model.core.impl.CorePackageImpl;
-
 import hu.modembed.model.emodel.EmodelPackage;
-
 import hu.modembed.model.emodel.expressions.ExpressionsPackage;
-
 import hu.modembed.model.emodel.expressions.impl.ExpressionsPackageImpl;
-
 import hu.modembed.model.emodel.impl.EmodelPackageImpl;
-
 import hu.modembed.model.emodel.types.TypesPackage;
-
 import hu.modembed.model.emodel.types.impl.TypesPackageImpl;
-
 import hu.modembed.model.network.NetworkPackage;
-
 import hu.modembed.model.network.impl.NetworkPackageImpl;
-
 import hu.modembed.model.network.rs232.Rs232Package;
-
 import hu.modembed.model.network.rs232.impl.Rs232PackageImpl;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -135,13 +112,13 @@ public class CompositionPackageImpl extends EPackageImpl implements CompositionP
 		// Obtain or create and register interdependencies
 		CorePackageImpl theCorePackage = (CorePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI) instanceof CorePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI) : CorePackage.eINSTANCE);
 		AssemblerPackageImpl theAssemblerPackage = (AssemblerPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AssemblerPackage.eNS_URI) instanceof AssemblerPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AssemblerPackage.eNS_URI) : AssemblerPackage.eINSTANCE);
+		CodePackageImpl theCodePackage = (CodePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CodePackage.eNS_URI) instanceof CodePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CodePackage.eNS_URI) : CodePackage.eINSTANCE);
 		NetworkPackageImpl theNetworkPackage = (NetworkPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(NetworkPackage.eNS_URI) instanceof NetworkPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(NetworkPackage.eNS_URI) : NetworkPackage.eINSTANCE);
 		Rs232PackageImpl theRs232Package = (Rs232PackageImpl)(EPackage.Registry.INSTANCE.getEPackage(Rs232Package.eNS_URI) instanceof Rs232PackageImpl ? EPackage.Registry.INSTANCE.getEPackage(Rs232Package.eNS_URI) : Rs232Package.eINSTANCE);
 		CommPackageImpl theCommPackage = (CommPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CommPackage.eNS_URI) instanceof CommPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CommPackage.eNS_URI) : CommPackage.eINSTANCE);
 		hu.modembed.model.comm.rs232.impl.Rs232PackageImpl theRs232Package_1 = (hu.modembed.model.comm.rs232.impl.Rs232PackageImpl)(EPackage.Registry.INSTANCE.getEPackage(hu.modembed.model.comm.rs232.Rs232Package.eNS_URI) instanceof hu.modembed.model.comm.rs232.impl.Rs232PackageImpl ? EPackage.Registry.INSTANCE.getEPackage(hu.modembed.model.comm.rs232.Rs232Package.eNS_URI) : hu.modembed.model.comm.rs232.Rs232Package.eINSTANCE);
 		ApplicationPackageImpl theApplicationPackage = (ApplicationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI) instanceof ApplicationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI) : ApplicationPackage.eINSTANCE);
 		InterfacePackageImpl theInterfacePackage = (InterfacePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InterfacePackage.eNS_URI) instanceof InterfacePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InterfacePackage.eNS_URI) : InterfacePackage.eINSTANCE);
-		CodePackageImpl theCodePackage = (CodePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CodePackage.eNS_URI) instanceof CodePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CodePackage.eNS_URI) : CodePackage.eINSTANCE);
 		EmodelPackageImpl theEmodelPackage = (EmodelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EmodelPackage.eNS_URI) instanceof EmodelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EmodelPackage.eNS_URI) : EmodelPackage.eINSTANCE);
 		TypesPackageImpl theTypesPackage = (TypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) instanceof TypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) : TypesPackage.eINSTANCE);
 		ExpressionsPackageImpl theExpressionsPackage = (ExpressionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI) instanceof ExpressionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI) : ExpressionsPackage.eINSTANCE);
@@ -150,13 +127,13 @@ public class CompositionPackageImpl extends EPackageImpl implements CompositionP
 		theCompositionPackage.createPackageContents();
 		theCorePackage.createPackageContents();
 		theAssemblerPackage.createPackageContents();
+		theCodePackage.createPackageContents();
 		theNetworkPackage.createPackageContents();
 		theRs232Package.createPackageContents();
 		theCommPackage.createPackageContents();
 		theRs232Package_1.createPackageContents();
 		theApplicationPackage.createPackageContents();
 		theInterfacePackage.createPackageContents();
-		theCodePackage.createPackageContents();
 		theEmodelPackage.createPackageContents();
 		theTypesPackage.createPackageContents();
 		theExpressionsPackage.createPackageContents();
@@ -165,13 +142,13 @@ public class CompositionPackageImpl extends EPackageImpl implements CompositionP
 		theCompositionPackage.initializePackageContents();
 		theCorePackage.initializePackageContents();
 		theAssemblerPackage.initializePackageContents();
+		theCodePackage.initializePackageContents();
 		theNetworkPackage.initializePackageContents();
 		theRs232Package.initializePackageContents();
 		theCommPackage.initializePackageContents();
 		theRs232Package_1.initializePackageContents();
 		theApplicationPackage.initializePackageContents();
 		theInterfacePackage.initializePackageContents();
-		theCodePackage.initializePackageContents();
 		theEmodelPackage.initializePackageContents();
 		theTypesPackage.initializePackageContents();
 		theExpressionsPackage.initializePackageContents();

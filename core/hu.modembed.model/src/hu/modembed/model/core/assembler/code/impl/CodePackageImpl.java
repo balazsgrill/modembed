@@ -1,12 +1,8 @@
 /**
  */
-package hu.modembed.model.application.code.impl;
+package hu.modembed.model.core.assembler.code.impl;
 
 import hu.modembed.model.application.ApplicationPackage;
-
-import hu.modembed.model.application.code.CodeComponent;
-import hu.modembed.model.application.code.CodeFactory;
-import hu.modembed.model.application.code.CodePackage;
 
 import hu.modembed.model.application.composition.CompositionPackage;
 
@@ -25,6 +21,12 @@ import hu.modembed.model.comm.impl.CommPackageImpl;
 import hu.modembed.model.core.CorePackage;
 
 import hu.modembed.model.core.assembler.AssemblerPackage;
+
+import hu.modembed.model.core.assembler.code.AssemblerObject;
+import hu.modembed.model.core.assembler.code.CodeFactory;
+import hu.modembed.model.core.assembler.code.CodePackage;
+import hu.modembed.model.core.assembler.code.InstructionCall;
+import hu.modembed.model.core.assembler.code.InstructionCallParameter;
 
 import hu.modembed.model.core.assembler.impl.AssemblerPackageImpl;
 
@@ -53,6 +55,7 @@ import hu.modembed.model.network.rs232.impl.Rs232PackageImpl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
@@ -68,7 +71,21 @@ public class CodePackageImpl extends EPackageImpl implements CodePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass codeComponentEClass = null;
+	private EClass assemblerObjectEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass instructionCallEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass instructionCallParameterEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -81,7 +98,7 @@ public class CodePackageImpl extends EPackageImpl implements CodePackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
-	 * @see hu.modembed.model.application.code.CodePackage#eNS_URI
+	 * @see hu.modembed.model.core.assembler.code.CodePackage#eNS_URI
 	 * @see #init()
 	 * @generated
 	 */
@@ -174,8 +191,8 @@ public class CodePackageImpl extends EPackageImpl implements CodePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getCodeComponent() {
-		return codeComponentEClass;
+	public EClass getAssemblerObject() {
+		return assemblerObjectEClass;
 	}
 
 	/**
@@ -183,8 +200,62 @@ public class CodePackageImpl extends EPackageImpl implements CodePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCodeComponent_QualifiedName() {
-		return (EAttribute)codeComponentEClass.getEStructuralFeatures().get(0);
+	public EReference getAssemblerObject_Instructions() {
+		return (EReference)assemblerObjectEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getInstructionCall() {
+		return instructionCallEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getInstructionCall_Parameters() {
+		return (EReference)instructionCallEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getInstructionCall_Instruction() {
+		return (EReference)instructionCallEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getInstructionCallParameter() {
+		return instructionCallParameterEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getInstructionCallParameter_Value() {
+		return (EAttribute)instructionCallParameterEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getInstructionCallParameter_Definition() {
+		return (EReference)instructionCallParameterEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -215,8 +286,16 @@ public class CodePackageImpl extends EPackageImpl implements CodePackage {
 		isCreated = true;
 
 		// Create classes and their features
-		codeComponentEClass = createEClass(CODE_COMPONENT);
-		createEAttribute(codeComponentEClass, CODE_COMPONENT__QUALIFIED_NAME);
+		assemblerObjectEClass = createEClass(ASSEMBLER_OBJECT);
+		createEReference(assemblerObjectEClass, ASSEMBLER_OBJECT__INSTRUCTIONS);
+
+		instructionCallEClass = createEClass(INSTRUCTION_CALL);
+		createEReference(instructionCallEClass, INSTRUCTION_CALL__PARAMETERS);
+		createEReference(instructionCallEClass, INSTRUCTION_CALL__INSTRUCTION);
+
+		instructionCallParameterEClass = createEClass(INSTRUCTION_CALL_PARAMETER);
+		createEAttribute(instructionCallParameterEClass, INSTRUCTION_CALL_PARAMETER__VALUE);
+		createEReference(instructionCallParameterEClass, INSTRUCTION_CALL_PARAMETER__DEFINITION);
 	}
 
 	/**
@@ -243,18 +322,29 @@ public class CodePackageImpl extends EPackageImpl implements CodePackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		ApplicationPackage theApplicationPackage = (ApplicationPackage)EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI);
+		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
+		AssemblerPackage theAssemblerPackage = (AssemblerPackage)EPackage.Registry.INSTANCE.getEPackage(AssemblerPackage.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		codeComponentEClass.getESuperTypes().add(theApplicationPackage.getComponent());
+		assemblerObjectEClass.getESuperTypes().add(theCorePackage.getRootElement());
+		instructionCallEClass.getESuperTypes().add(theCorePackage.getMODembedElement());
+		instructionCallParameterEClass.getESuperTypes().add(theCorePackage.getMODembedElement());
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(codeComponentEClass, CodeComponent.class, "CodeComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCodeComponent_QualifiedName(), ecorePackage.getEString(), "qualifiedName", null, 0, 1, CodeComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(assemblerObjectEClass, AssemblerObject.class, "AssemblerObject", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAssemblerObject_Instructions(), this.getInstructionCall(), null, "instructions", null, 0, -1, AssemblerObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(instructionCallEClass, InstructionCall.class, "InstructionCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getInstructionCall_Parameters(), this.getInstructionCallParameter(), null, "parameters", null, 0, -1, InstructionCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInstructionCall_Instruction(), theAssemblerPackage.getInstruction(), null, "instruction", null, 0, 1, InstructionCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(instructionCallParameterEClass, InstructionCallParameter.class, "InstructionCallParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getInstructionCallParameter_Value(), ecorePackage.getELong(), "value", null, 0, 1, InstructionCallParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInstructionCallParameter_Definition(), theAssemblerPackage.getInstructionParameter(), null, "definition", null, 0, 1, InstructionCallParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 	}
 
 } //CodePackageImpl

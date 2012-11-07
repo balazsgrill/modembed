@@ -1,8 +1,8 @@
 /**
  */
-package hu.modembed.model.application.code.impl;
+package hu.modembed.model.core.assembler.code.impl;
 
-import hu.modembed.model.application.code.*;
+import hu.modembed.model.core.assembler.code.*;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -27,7 +27,7 @@ public class CodeFactoryImpl extends EFactoryImpl implements CodeFactory {
 	 */
 	public static CodeFactory init() {
 		try {
-			CodeFactory theCodeFactory = (CodeFactory)EPackage.Registry.INSTANCE.getEFactory("http://modembed.hu/application/code"); 
+			CodeFactory theCodeFactory = (CodeFactory)EPackage.Registry.INSTANCE.getEFactory("http://modembed.hu/core/assembler/code"); 
 			if (theCodeFactory != null) {
 				return theCodeFactory;
 			}
@@ -56,7 +56,9 @@ public class CodeFactoryImpl extends EFactoryImpl implements CodeFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case CodePackage.CODE_COMPONENT: return createCodeComponent();
+			case CodePackage.ASSEMBLER_OBJECT: return createAssemblerObject();
+			case CodePackage.INSTRUCTION_CALL: return createInstructionCall();
+			case CodePackage.INSTRUCTION_CALL_PARAMETER: return createInstructionCallParameter();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -67,9 +69,29 @@ public class CodeFactoryImpl extends EFactoryImpl implements CodeFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CodeComponent createCodeComponent() {
-		CodeComponentImpl codeComponent = new CodeComponentImpl();
-		return codeComponent;
+	public AssemblerObject createAssemblerObject() {
+		AssemblerObjectImpl assemblerObject = new AssemblerObjectImpl();
+		return assemblerObject;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InstructionCall createInstructionCall() {
+		InstructionCallImpl instructionCall = new InstructionCallImpl();
+		return instructionCall;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InstructionCallParameter createInstructionCallParameter() {
+		InstructionCallParameterImpl instructionCallParameter = new InstructionCallParameterImpl();
+		return instructionCallParameter;
 	}
 
 	/**
