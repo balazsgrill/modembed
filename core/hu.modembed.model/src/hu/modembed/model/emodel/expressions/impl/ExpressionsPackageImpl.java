@@ -27,6 +27,7 @@ import hu.modembed.model.emodel.expressions.ExpressionsFactory;
 import hu.modembed.model.emodel.expressions.ExpressionsPackage;
 import hu.modembed.model.emodel.expressions.IntegerLiteralExpression;
 import hu.modembed.model.emodel.expressions.LiteralExpression;
+import hu.modembed.model.emodel.expressions.LocalVariable;
 import hu.modembed.model.emodel.expressions.PrimitiveLiteralExpression;
 import hu.modembed.model.emodel.expressions.VariableReference;
 import hu.modembed.model.emodel.impl.EmodelPackageImpl;
@@ -113,6 +114,13 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * @generated
 	 */
 	private EClass compilationLogStepEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass localVariableEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -378,6 +386,15 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getLocalVariable() {
+		return localVariableEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getCompilationLogStepSeverity() {
 		return compilationLogStepSeverityEEnum;
 	}
@@ -436,6 +453,8 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 		createEAttribute(compilationLogStepEClass, COMPILATION_LOG_STEP__SEVERITY);
 		createEAttribute(compilationLogStepEClass, COMPILATION_LOG_STEP__MESSAGE);
 
+		localVariableEClass = createEClass(LOCAL_VARIABLE);
+
 		// Create enums
 		compilationLogStepSeverityEEnum = createEEnum(COMPILATION_LOG_STEP_SEVERITY);
 	}
@@ -482,6 +501,8 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 		primitiveLiteralExpressionEClass.getESuperTypes().add(this.getLiteralExpression());
 		integerLiteralExpressionEClass.getESuperTypes().add(this.getPrimitiveLiteralExpression());
 		compilationLogStepEClass.getESuperTypes().add(this.getExecutionStep());
+		localVariableEClass.getESuperTypes().add(this.getExecutionStep());
+		localVariableEClass.getESuperTypes().add(theEmodelPackage.getVariable());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(expressionEClass, Expression.class, "Expression", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -509,6 +530,8 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 		initEClass(compilationLogStepEClass, CompilationLogStep.class, "CompilationLogStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCompilationLogStep_Severity(), this.getCompilationLogStepSeverity(), "severity", null, 1, 1, CompilationLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCompilationLogStep_Message(), ecorePackage.getEString(), "message", null, 1, 1, CompilationLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(localVariableEClass, LocalVariable.class, "LocalVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(compilationLogStepSeverityEEnum, CompilationLogStepSeverity.class, "CompilationLogStepSeverity");

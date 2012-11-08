@@ -18,3 +18,7 @@ type uint32 = unsigned 32 bits;
  * the index of one bit in a byte
  */
 type bit = unsigned 3 bits;
+
+function ADD void(void a, void b){}
+
+function SET void(void s){}

@@ -277,6 +277,7 @@
         <eLiterals name="WARNING" value="2"/>
         <eLiterals name="ERROR" value="3"/>
       </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="LocalVariable" eSuperTypes="#//emodel/expressions/ExecutionStep #//emodel/Variable"/>
     </eSubpackages>
   </eSubpackages>
 </ecore:EPackage>

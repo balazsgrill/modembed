@@ -482,6 +482,61 @@ public interface ExpressionsPackage extends EPackage {
 	int COMPILATION_LOG_STEP_FEATURE_COUNT = EXECUTION_STEP_FEATURE_COUNT + 2;
 
 	/**
+	 * The meta object id for the '{@link hu.modembed.model.emodel.expressions.impl.LocalVariableImpl <em>Local Variable</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.modembed.model.emodel.expressions.impl.LocalVariableImpl
+	 * @see hu.modembed.model.emodel.expressions.impl.ExpressionsPackageImpl#getLocalVariable()
+	 * @generated
+	 */
+	int LOCAL_VARIABLE = 9;
+
+	/**
+	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCAL_VARIABLE__ORIGINS = EXECUTION_STEP__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCAL_VARIABLE__DESCRIPTION = EXECUTION_STEP__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCAL_VARIABLE__NAME = EXECUTION_STEP_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCAL_VARIABLE__TYPE = EXECUTION_STEP_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Local Variable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCAL_VARIABLE_FEATURE_COUNT = EXECUTION_STEP_FEATURE_COUNT + 2;
+
+	/**
 	 * The meta object id for the '{@link hu.modembed.model.emodel.expressions.CompilationLogStepSeverity <em>Compilation Log Step Severity</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -489,7 +544,7 @@ public interface ExpressionsPackage extends EPackage {
 	 * @see hu.modembed.model.emodel.expressions.impl.ExpressionsPackageImpl#getCompilationLogStepSeverity()
 	 * @generated
 	 */
-	int COMPILATION_LOG_STEP_SEVERITY = 9;
+	int COMPILATION_LOG_STEP_SEVERITY = 10;
 
 
 	/**
@@ -669,6 +724,16 @@ public interface ExpressionsPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getCompilationLogStep_Message();
+
+	/**
+	 * Returns the meta object for class '{@link hu.modembed.model.emodel.expressions.LocalVariable <em>Local Variable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Local Variable</em>'.
+	 * @see hu.modembed.model.emodel.expressions.LocalVariable
+	 * @generated
+	 */
+	EClass getLocalVariable();
 
 	/**
 	 * Returns the meta object for enum '{@link hu.modembed.model.emodel.expressions.CompilationLogStepSeverity <em>Compilation Log Step Severity</em>}'.
@@ -855,6 +920,16 @@ public interface ExpressionsPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute COMPILATION_LOG_STEP__MESSAGE = eINSTANCE.getCompilationLogStep_Message();
+
+		/**
+		 * The meta object literal for the '{@link hu.modembed.model.emodel.expressions.impl.LocalVariableImpl <em>Local Variable</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.modembed.model.emodel.expressions.impl.LocalVariableImpl
+		 * @see hu.modembed.model.emodel.expressions.impl.ExpressionsPackageImpl#getLocalVariable()
+		 * @generated
+		 */
+		EClass LOCAL_VARIABLE = eINSTANCE.getLocalVariable();
 
 		/**
 		 * The meta object literal for the '{@link hu.modembed.model.emodel.expressions.CompilationLogStepSeverity <em>Compilation Log Step Severity</em>}' enum.

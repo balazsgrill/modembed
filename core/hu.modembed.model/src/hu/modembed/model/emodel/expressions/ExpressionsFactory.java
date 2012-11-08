@@ -67,6 +67,15 @@ public interface ExpressionsFactory extends EFactory {
 	CompilationLogStep createCompilationLogStep();
 
 	/**
+	 * Returns a new object of class '<em>Local Variable</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Local Variable</em>'.
+	 * @generated
+	 */
+	LocalVariable createLocalVariable();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

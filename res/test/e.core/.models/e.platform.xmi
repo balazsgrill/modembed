@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ASCII"?>
+<emodel:Library xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:emodel="http://emodel/1.0" xmlns:expressions="http://emodel/1.0/expressions" xmlns:types="http://emodel/1.0/types" name="e.platform">
+  <content xsi:type="emodel:Type" name="uint8">
+    <definition xsi:type="types:UnsignedTypeDefinition" bits="8"/>
+  </content>
+  <content xsi:type="emodel:Type" name="bool">
+    <definition xsi:type="types:UnsignedTypeDefinition" bits="1"/>
+  </content>
+  <content xsi:type="emodel:Type" name="uint16">
+    <definition xsi:type="types:UnsignedTypeDefinition" bits="16"/>
+  </content>
+  <content xsi:type="emodel:Type" name="uint32">
+    <definition xsi:type="types:UnsignedTypeDefinition" bits="32"/>
+  </content>
+  <content xsi:type="emodel:Type" name="bit">
+    <definition xsi:type="types:UnsignedTypeDefinition" bits="3"/>
+  </content>
+  <content xsi:type="emodel:Function" name="ADD">
+    <arguments xsi:type="emodel:VariableParameter" name="a"/>
+    <arguments xsi:type="emodel:VariableParameter" name="b"/>
+    <implementation xsi:type="expressions:ExecutionBlock"/>
+  </content>
+  <content xsi:type="emodel:Function" name="SET">
+    <arguments xsi:type="emodel:VariableParameter" name="s"/>
+    <implementation xsi:type="expressions:ExecutionBlock"/>
+  </content>
+</emodel:Library>

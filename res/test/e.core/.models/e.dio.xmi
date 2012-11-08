@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ASCII"?>
+<emodel:Library xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:emodel="http://emodel/1.0" xmlns:expressions="http://emodel/1.0/expressions" xmlns:types="http://emodel/1.0/types" name="e.dio">
+  <content xsi:type="emodel:Type" name="ChannelID">
+    <definition xsi:type="types:UnsignedTypeDefinition" bits="8"/>
+  </content>
+  <content xsi:type="emodel:Function" name="DIO_Read">
+    <arguments xsi:type="emodel:VariableParameter" name="channel">
+      <type xsi:type="types:ReferenceTypeDefinition" type="//@content.0"/>
+    </arguments>
+    <arguments xsi:type="emodel:VariableParameter" name="v">
+      <type xsi:type="types:ReferenceTypeDefinition">
+        <type href="e.platform.xmi#//@content.0"/>
+      </type>
+    </arguments>
+    <arguments xsi:type="emodel:VariableParameter" name="b">
+      <type xsi:type="types:ReferenceTypeDefinition">
+        <type href="e.platform.xmi#//@content.4"/>
+      </type>
+    </arguments>
+    <implementation xsi:type="expressions:ExecutionBlock"/>
+  </content>
+  <content xsi:type="emodel:Function" name="DIO_Set">
+    <arguments xsi:type="emodel:VariableParameter" name="channel">
+      <type xsi:type="types:ReferenceTypeDefinition" type="//@content.0"/>
+    </arguments>
+    <arguments xsi:type="emodel:VariableParameter" name="v">
+      <type xsi:type="types:ReferenceTypeDefinition">
+        <type href="e.platform.xmi#//@content.0"/>
+      </type>
+    </arguments>
+    <arguments xsi:type="emodel:VariableParameter" name="b">
+      <type xsi:type="types:ReferenceTypeDefinition">
+        <type href="e.platform.xmi#//@content.4"/>
+      </type>
+    </arguments>
+    <implementation xsi:type="expressions:ExecutionBlock"/>
+  </content>
+</emodel:Library>
