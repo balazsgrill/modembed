@@ -15,6 +15,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  *   <li>{@link hu.modembed.model.core.assembler.InstructionSet#getInstructions <em>Instructions</em>}</li>
+ *   <li>{@link hu.modembed.model.core.assembler.InstructionSet#getExtend <em>Extend</em>}</li>
  * </ul>
  * </p>
  *
@@ -38,5 +39,31 @@ public interface InstructionSet extends RootElement {
 	 * @generated
 	 */
 	EList<Instruction> getInstructions();
+
+	/**
+	 * Returns the value of the '<em><b>Extend</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Extend</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Extend</em>' reference.
+	 * @see #setExtend(InstructionSet)
+	 * @see hu.modembed.model.core.assembler.AssemblerPackage#getInstructionSet_Extend()
+	 * @model
+	 * @generated
+	 */
+	InstructionSet getExtend();
+
+	/**
+	 * Sets the value of the '{@link hu.modembed.model.core.assembler.InstructionSet#getExtend <em>Extend</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Extend</em>' reference.
+	 * @see #getExtend()
+	 * @generated
+	 */
+	void setExtend(InstructionSet value);
 
 } // InstructionSet

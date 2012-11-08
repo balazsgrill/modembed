@@ -104,13 +104,22 @@ public interface AssemblerPackage extends EPackage {
 	int INSTRUCTION_SET__INSTRUCTIONS = CorePackage.ROOT_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Extend</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION_SET__EXTEND = CorePackage.ROOT_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Instruction Set</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INSTRUCTION_SET_FEATURE_COUNT = CorePackage.ROOT_ELEMENT_FEATURE_COUNT + 1;
+	int INSTRUCTION_SET_FEATURE_COUNT = CorePackage.ROOT_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link hu.modembed.model.core.assembler.impl.InstructionImpl <em>Instruction</em>}' class.
@@ -465,6 +474,17 @@ public interface AssemblerPackage extends EPackage {
 	EReference getInstructionSet_Instructions();
 
 	/**
+	 * Returns the meta object for the reference '{@link hu.modembed.model.core.assembler.InstructionSet#getExtend <em>Extend</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Extend</em>'.
+	 * @see hu.modembed.model.core.assembler.InstructionSet#getExtend()
+	 * @see #getInstructionSet()
+	 * @generated
+	 */
+	EReference getInstructionSet_Extend();
+
+	/**
 	 * Returns the meta object for class '{@link hu.modembed.model.core.assembler.Instruction <em>Instruction</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -652,6 +672,14 @@ public interface AssemblerPackage extends EPackage {
 		 * @generated
 		 */
 		EReference INSTRUCTION_SET__INSTRUCTIONS = eINSTANCE.getInstructionSet_Instructions();
+
+		/**
+		 * The meta object literal for the '<em><b>Extend</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INSTRUCTION_SET__EXTEND = eINSTANCE.getInstructionSet_Extend();
 
 		/**
 		 * The meta object literal for the '{@link hu.modembed.model.core.assembler.impl.InstructionImpl <em>Instruction</em>}' class.

@@ -14,6 +14,10 @@ import hu.modembed.model.application.interface_.InterfacePackage;
 
 import hu.modembed.model.application.interface_.impl.InterfacePackageImpl;
 
+import hu.modembed.model.architecture.ArchitecturePackage;
+import hu.modembed.model.architecture.impl.ArchitecturePackageImpl;
+import hu.modembed.model.architecture.linking.LinkingPackage;
+import hu.modembed.model.architecture.linking.impl.LinkingPackageImpl;
 import hu.modembed.model.comm.CommPackage;
 
 import hu.modembed.model.comm.impl.CommPackageImpl;
@@ -146,6 +150,8 @@ public class CodePackageImpl extends EPackageImpl implements CodePackage {
 		EmodelPackageImpl theEmodelPackage = (EmodelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EmodelPackage.eNS_URI) instanceof EmodelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EmodelPackage.eNS_URI) : EmodelPackage.eINSTANCE);
 		TypesPackageImpl theTypesPackage = (TypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) instanceof TypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) : TypesPackage.eINSTANCE);
 		ExpressionsPackageImpl theExpressionsPackage = (ExpressionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI) instanceof ExpressionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI) : ExpressionsPackage.eINSTANCE);
+		ArchitecturePackageImpl theArchitecturePackage = (ArchitecturePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ArchitecturePackage.eNS_URI) instanceof ArchitecturePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ArchitecturePackage.eNS_URI) : ArchitecturePackage.eINSTANCE);
+		LinkingPackageImpl theLinkingPackage = (LinkingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(LinkingPackage.eNS_URI) instanceof LinkingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(LinkingPackage.eNS_URI) : LinkingPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theCodePackage.createPackageContents();
@@ -161,6 +167,8 @@ public class CodePackageImpl extends EPackageImpl implements CodePackage {
 		theEmodelPackage.createPackageContents();
 		theTypesPackage.createPackageContents();
 		theExpressionsPackage.createPackageContents();
+		theArchitecturePackage.createPackageContents();
+		theLinkingPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theCodePackage.initializePackageContents();
@@ -176,6 +184,8 @@ public class CodePackageImpl extends EPackageImpl implements CodePackage {
 		theEmodelPackage.initializePackageContents();
 		theTypesPackage.initializePackageContents();
 		theExpressionsPackage.initializePackageContents();
+		theArchitecturePackage.initializePackageContents();
+		theLinkingPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theCodePackage.freeze();

@@ -8,6 +8,10 @@ import hu.modembed.model.application.composition.impl.CompositionPackageImpl;
 import hu.modembed.model.application.impl.ApplicationPackageImpl;
 import hu.modembed.model.application.interface_.InterfacePackage;
 import hu.modembed.model.application.interface_.impl.InterfacePackageImpl;
+import hu.modembed.model.architecture.ArchitecturePackage;
+import hu.modembed.model.architecture.impl.ArchitecturePackageImpl;
+import hu.modembed.model.architecture.linking.LinkingPackage;
+import hu.modembed.model.architecture.linking.impl.LinkingPackageImpl;
 import hu.modembed.model.comm.CommPackage;
 import hu.modembed.model.comm.impl.CommPackageImpl;
 import hu.modembed.model.core.CorePackage;
@@ -147,6 +151,8 @@ public class AssemblerPackageImpl extends EPackageImpl implements AssemblerPacka
 		EmodelPackageImpl theEmodelPackage = (EmodelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EmodelPackage.eNS_URI) instanceof EmodelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EmodelPackage.eNS_URI) : EmodelPackage.eINSTANCE);
 		TypesPackageImpl theTypesPackage = (TypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) instanceof TypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) : TypesPackage.eINSTANCE);
 		ExpressionsPackageImpl theExpressionsPackage = (ExpressionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI) instanceof ExpressionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI) : ExpressionsPackage.eINSTANCE);
+		ArchitecturePackageImpl theArchitecturePackage = (ArchitecturePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ArchitecturePackage.eNS_URI) instanceof ArchitecturePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ArchitecturePackage.eNS_URI) : ArchitecturePackage.eINSTANCE);
+		LinkingPackageImpl theLinkingPackage = (LinkingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(LinkingPackage.eNS_URI) instanceof LinkingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(LinkingPackage.eNS_URI) : LinkingPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theAssemblerPackage.createPackageContents();
@@ -162,6 +168,8 @@ public class AssemblerPackageImpl extends EPackageImpl implements AssemblerPacka
 		theEmodelPackage.createPackageContents();
 		theTypesPackage.createPackageContents();
 		theExpressionsPackage.createPackageContents();
+		theArchitecturePackage.createPackageContents();
+		theLinkingPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theAssemblerPackage.initializePackageContents();
@@ -177,6 +185,8 @@ public class AssemblerPackageImpl extends EPackageImpl implements AssemblerPacka
 		theEmodelPackage.initializePackageContents();
 		theTypesPackage.initializePackageContents();
 		theExpressionsPackage.initializePackageContents();
+		theArchitecturePackage.initializePackageContents();
+		theLinkingPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theAssemblerPackage.freeze();
@@ -203,6 +213,15 @@ public class AssemblerPackageImpl extends EPackageImpl implements AssemblerPacka
 	 */
 	public EReference getInstructionSet_Instructions() {
 		return (EReference)instructionSetEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getInstructionSet_Extend() {
+		return (EReference)instructionSetEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -361,6 +380,7 @@ public class AssemblerPackageImpl extends EPackageImpl implements AssemblerPacka
 		// Create classes and their features
 		instructionSetEClass = createEClass(INSTRUCTION_SET);
 		createEReference(instructionSetEClass, INSTRUCTION_SET__INSTRUCTIONS);
+		createEReference(instructionSetEClass, INSTRUCTION_SET__EXTEND);
 
 		instructionEClass = createEClass(INSTRUCTION);
 		createEReference(instructionEClass, INSTRUCTION__SECTIONS);
@@ -429,6 +449,7 @@ public class AssemblerPackageImpl extends EPackageImpl implements AssemblerPacka
 		// Initialize classes and features; add operations and parameters
 		initEClass(instructionSetEClass, InstructionSet.class, "InstructionSet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getInstructionSet_Instructions(), this.getInstruction(), null, "instructions", null, 0, -1, InstructionSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInstructionSet_Extend(), this.getInstructionSet(), null, "extend", null, 0, 1, InstructionSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(instructionEClass, Instruction.class, "Instruction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getInstruction_Sections(), this.getInstructionSection(), null, "sections", null, 0, -1, Instruction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

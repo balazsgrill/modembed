@@ -10,6 +10,7 @@ import hu.modembed.model.core.impl.RootElementImpl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -17,6 +18,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -28,6 +30,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link hu.modembed.model.core.assembler.impl.InstructionSetImpl#getInstructions <em>Instructions</em>}</li>
+ *   <li>{@link hu.modembed.model.core.assembler.impl.InstructionSetImpl#getExtend <em>Extend</em>}</li>
  * </ul>
  * </p>
  *
@@ -43,6 +46,16 @@ public class InstructionSetImpl extends RootElementImpl implements InstructionSe
 	 * @ordered
 	 */
 	protected EList<Instruction> instructions;
+
+	/**
+	 * The cached value of the '{@link #getExtend() <em>Extend</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getExtend()
+	 * @generated
+	 * @ordered
+	 */
+	protected InstructionSet extend;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -80,6 +93,44 @@ public class InstructionSetImpl extends RootElementImpl implements InstructionSe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public InstructionSet getExtend() {
+		if (extend != null && extend.eIsProxy()) {
+			InternalEObject oldExtend = (InternalEObject)extend;
+			extend = (InstructionSet)eResolveProxy(oldExtend);
+			if (extend != oldExtend) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AssemblerPackage.INSTRUCTION_SET__EXTEND, oldExtend, extend));
+			}
+		}
+		return extend;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InstructionSet basicGetExtend() {
+		return extend;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setExtend(InstructionSet newExtend) {
+		InstructionSet oldExtend = extend;
+		extend = newExtend;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AssemblerPackage.INSTRUCTION_SET__EXTEND, oldExtend, extend));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -99,6 +150,9 @@ public class InstructionSetImpl extends RootElementImpl implements InstructionSe
 		switch (featureID) {
 			case AssemblerPackage.INSTRUCTION_SET__INSTRUCTIONS:
 				return getInstructions();
+			case AssemblerPackage.INSTRUCTION_SET__EXTEND:
+				if (resolve) return getExtend();
+				return basicGetExtend();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -116,6 +170,9 @@ public class InstructionSetImpl extends RootElementImpl implements InstructionSe
 				getInstructions().clear();
 				getInstructions().addAll((Collection<? extends Instruction>)newValue);
 				return;
+			case AssemblerPackage.INSTRUCTION_SET__EXTEND:
+				setExtend((InstructionSet)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -131,6 +188,9 @@ public class InstructionSetImpl extends RootElementImpl implements InstructionSe
 			case AssemblerPackage.INSTRUCTION_SET__INSTRUCTIONS:
 				getInstructions().clear();
 				return;
+			case AssemblerPackage.INSTRUCTION_SET__EXTEND:
+				setExtend((InstructionSet)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -145,6 +205,8 @@ public class InstructionSetImpl extends RootElementImpl implements InstructionSe
 		switch (featureID) {
 			case AssemblerPackage.INSTRUCTION_SET__INSTRUCTIONS:
 				return instructions != null && !instructions.isEmpty();
+			case AssemblerPackage.INSTRUCTION_SET__EXTEND:
+				return extend != null;
 		}
 		return super.eIsSet(featureID);
 	}

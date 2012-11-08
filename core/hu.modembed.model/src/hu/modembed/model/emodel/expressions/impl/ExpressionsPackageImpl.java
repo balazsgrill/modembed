@@ -8,6 +8,10 @@ import hu.modembed.model.application.composition.impl.CompositionPackageImpl;
 import hu.modembed.model.application.impl.ApplicationPackageImpl;
 import hu.modembed.model.application.interface_.InterfacePackage;
 import hu.modembed.model.application.interface_.impl.InterfacePackageImpl;
+import hu.modembed.model.architecture.ArchitecturePackage;
+import hu.modembed.model.architecture.impl.ArchitecturePackageImpl;
+import hu.modembed.model.architecture.linking.LinkingPackage;
+import hu.modembed.model.architecture.linking.impl.LinkingPackageImpl;
 import hu.modembed.model.comm.CommPackage;
 import hu.modembed.model.comm.impl.CommPackageImpl;
 import hu.modembed.model.core.CorePackage;
@@ -188,6 +192,8 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 		CompositionPackageImpl theCompositionPackage = (CompositionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CompositionPackage.eNS_URI) instanceof CompositionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CompositionPackage.eNS_URI) : CompositionPackage.eINSTANCE);
 		EmodelPackageImpl theEmodelPackage = (EmodelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EmodelPackage.eNS_URI) instanceof EmodelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EmodelPackage.eNS_URI) : EmodelPackage.eINSTANCE);
 		TypesPackageImpl theTypesPackage = (TypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) instanceof TypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) : TypesPackage.eINSTANCE);
+		ArchitecturePackageImpl theArchitecturePackage = (ArchitecturePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ArchitecturePackage.eNS_URI) instanceof ArchitecturePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ArchitecturePackage.eNS_URI) : ArchitecturePackage.eINSTANCE);
+		LinkingPackageImpl theLinkingPackage = (LinkingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(LinkingPackage.eNS_URI) instanceof LinkingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(LinkingPackage.eNS_URI) : LinkingPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theExpressionsPackage.createPackageContents();
@@ -203,6 +209,8 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 		theCompositionPackage.createPackageContents();
 		theEmodelPackage.createPackageContents();
 		theTypesPackage.createPackageContents();
+		theArchitecturePackage.createPackageContents();
+		theLinkingPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theExpressionsPackage.initializePackageContents();
@@ -218,6 +226,8 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 		theCompositionPackage.initializePackageContents();
 		theEmodelPackage.initializePackageContents();
 		theTypesPackage.initializePackageContents();
+		theArchitecturePackage.initializePackageContents();
+		theLinkingPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theExpressionsPackage.freeze();

@@ -15,6 +15,7 @@
       <eClassifiers xsi:type="ecore:EClass" name="InstructionSet" eSuperTypes="#//core/RootElement">
         <eStructuralFeatures xsi:type="ecore:EReference" name="instructions" upperBound="-1"
             eType="#//core/assembler/Instruction" containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="extend" eType="#//core/assembler/InstructionSet"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Instruction" eSuperTypes="#//core/NamedElement #//emodel/CallableElement">
         <eStructuralFeatures xsi:type="ecore:EReference" name="sections" upperBound="-1"
@@ -278,6 +279,48 @@
         <eLiterals name="ERROR" value="3"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="LocalVariable" eSuperTypes="#//emodel/expressions/ExecutionStep #//emodel/Variable"/>
+    </eSubpackages>
+  </eSubpackages>
+  <eSubpackages name="architecture" nsURI="http://modembed.hu/architecture" nsPrefix="architecture">
+    <eClassifiers xsi:type="ecore:EClass" name="Architecture" eSuperTypes="#//core/RootElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="heapPointerType" eType="#//emodel/Type"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="codePointerType" eType="#//emodel/Type"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="instructionSet" eType="#//core/assembler/InstructionSet"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="memory" upperBound="-1"
+          eType="#//architecture/MemorySection" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MemorySection" eSuperTypes="#//core/MODembedElement">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="program" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          defaultValueLiteral="false"/>
+    </eClassifiers>
+    <eSubpackages name="linking" nsURI="http://modembed.hu/architecture/linking" nsPrefix="linking">
+      <eClassifiers xsi:type="ecore:EClass" name="ProgramLinking" eSuperTypes="#//architecture/linking/LinkingElement">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="architecture" eType="#//architecture/Architecture"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="mainFunction" eType="#//emodel/Function"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="startAddress" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"
+            defaultValueLiteral="0"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="LinkingElement" abstract="true"
+          eSuperTypes="#//core/RootElement"/>
+      <eClassifiers xsi:type="ecore:EClass" name="LinkRawData" eSuperTypes="#//architecture/linking/LinkingElement"/>
+      <eClassifiers xsi:type="ecore:EClass" name="BinaryTarget" eSuperTypes="#//core/RootElement">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1"
+            eType="#//architecture/linking/BinaryTargetType" defaultValueLiteral="Raw"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="sections" upperBound="-1"
+            eType="#//architecture/linking/BinarySection" containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EEnum" name="BinaryTargetType">
+        <eLiterals name="Raw"/>
+        <eLiterals name="IntelHexFile" value="1"/>
+        <eLiterals name="MotorolaHexFile" value="2"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="BinarySection" eSuperTypes="#//core/MODembedElement">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="element" eType="#//architecture/linking/LinkingElement"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="address" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+      </eClassifiers>
     </eSubpackages>
   </eSubpackages>
 </ecore:EPackage>

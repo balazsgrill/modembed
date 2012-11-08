@@ -11,17 +11,19 @@
             uri="http://modembed.hu/core"
             class="hu.modembed.model.core.CorePackage"
             genModel="model/modembedmodel.genmodel"/>
-      <package
-            class="hu.modembed.model.core.assembler.code.CodePackage"
-            genModel="model/modembedmodel.genmodel"
-            uri="http://modembed.hu/core/assembler/code">
-      </package>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
             uri="http://modembed.hu/core/assembler"
             class="hu.modembed.model.core.assembler.AssemblerPackage"
+            genModel="model/modembedmodel.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://modembed.hu/core/assembler/code"
+            class="hu.modembed.model.core.assembler.code.CodePackage"
             genModel="model/modembedmodel.genmodel"/>
    </extension>
 
@@ -92,6 +94,20 @@
       <package
             uri="http://emodel/1.0/expressions"
             class="hu.modembed.model.emodel.expressions.ExpressionsPackage"
+            genModel="model/modembedmodel.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://modembed.hu/architecture"
+            class="hu.modembed.model.architecture.ArchitecturePackage"
+            genModel="model/modembedmodel.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://modembed.hu/architecture/linking"
+            class="hu.modembed.model.architecture.linking.LinkingPackage"
             genModel="model/modembedmodel.genmodel"/>
    </extension>
 
