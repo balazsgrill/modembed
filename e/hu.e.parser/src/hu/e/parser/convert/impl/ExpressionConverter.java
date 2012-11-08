@@ -40,6 +40,7 @@ import hu.modembed.model.emodel.expressions.ExecutionStep;
 import hu.modembed.model.emodel.expressions.ExpressionsFactory;
 import hu.modembed.model.emodel.expressions.ExpressionsPackage;
 import hu.modembed.model.emodel.expressions.IntegerLiteralExpression;
+import hu.modembed.model.emodel.expressions.LocalVariable;
 import hu.modembed.model.emodel.expressions.VariableReference;
 
 import java.math.BigInteger;
@@ -232,8 +233,9 @@ public class ExpressionConverter {
 		}
 		if (x instanceof OperationBlock){
 			ExecutionBlock block = ExpressionsFactory.eINSTANCE.createExecutionBlock();
+			ICrossReferenceScope sscope = new ExecutionBlockCrossReferenceScope(block, scope);
 			for(OperationStep step : ((OperationBlock) x).getSteps()){
-				block.getSteps().add(convert(step, scope));
+				block.getSteps().add(convert(step, sscope));
 			}
 			return block;
 		}
@@ -300,7 +302,11 @@ public class ExpressionConverter {
 	
 	public static ExecutionStep convert(OperationStep x, ICrossReferenceScope scope){
 		if (x instanceof Variable){
-			//TODO
+			Variable v = (Variable)x;
+			LocalVariable lv = ExpressionsFactory.eINSTANCE.createLocalVariable();
+			lv.setName(v.getName());
+			lv.setType(TypeConverter.convertTypeDef(v.getType(), scope));
+			return lv;
 		}
 		if (x instanceof Annotation){
 			//TODO

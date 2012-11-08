@@ -22,5 +22,12 @@ public final class CrossReferenceEntry {
 		this.reference = reference;
 		this.id = id;
 	}
+
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append(referer.eClass().getName()+"/"+reference.getName()+"->"+id);
+		return sb.toString();
+	}
 	
 }

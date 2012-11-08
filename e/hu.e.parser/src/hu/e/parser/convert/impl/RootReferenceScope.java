@@ -34,7 +34,7 @@ public class RootReferenceScope extends AbstractCrossReferenceScope {
 	}
 	
 	@Override
-	protected List<EObject> resolve(String id) {
+	public List<EObject> resolve(String id) {
 		List<EObject> result = new LinkedList<EObject>();
 		for(RootElement l : libraries){
 			search(l, id, result);

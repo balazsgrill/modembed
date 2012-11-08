@@ -45,6 +45,7 @@ public class FunctionConverter {
 	public static Function convert(Operation operation, ICrossReferenceScope scope){
 		Function func = EmodelFactory.eINSTANCE.createFunction();
 		func.setName(operation.getName());
+		ICrossReferenceScope funcscope = new FunctionCrossReferenceScope(func, scope);
 		
 		OperationTypeDef ot = operation.getType();
 		func.setType(TypeConverter.convertTypeDef(ot.getResultType(), scope));
@@ -53,7 +54,7 @@ public class FunctionConverter {
 			func.getArguments().add(fp);
 		}
 		
-		func.setImplementation(ExpressionConverter.convert(operation.getContent(), scope));
+		func.setImplementation(ExpressionConverter.convert(operation.getContent(), funcscope));
 		
 		return func;
 	}

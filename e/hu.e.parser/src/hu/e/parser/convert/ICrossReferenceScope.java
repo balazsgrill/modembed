@@ -3,6 +3,8 @@
  */
 package hu.e.parser.convert;
 
+import java.util.List;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 
@@ -22,5 +24,9 @@ public interface ICrossReferenceScope {
 	public void addCrossReference(EObject referer, EReference reference, String id);
 	
 	public void resolveReferences();
+	
+	public void addSubScope(ICrossReferenceScope subscope);
+	
+	public List<EObject> resolve(String id);
 	
 }

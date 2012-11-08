@@ -14,29 +14,40 @@ public abstract class AbstractCrossReferenceScope implements ICrossReferenceScop
 
 	protected final List<CrossReferenceEntry> entries = new ArrayList<CrossReferenceEntry>();
 	
+	private final List<ICrossReferenceScope> subScopes = new ArrayList<ICrossReferenceScope>(); 
+	
 	@Override
 	public void addCrossReference(EObject referer, EReference reference,
 			String id) {
 		this.entries.add(new CrossReferenceEntry(referer, reference, id));
 	}
 
-	protected abstract List<EObject> resolve(String id);
+	@Override
+	public void addSubScope(ICrossReferenceScope subscope) {
+		this.subScopes.add(subscope);
+	}
 	
 	@Override
 	public void resolveReferences() {
 		List<CrossReferenceEntry> failedEntries = new LinkedList<CrossReferenceEntry>();
 		for(CrossReferenceEntry entry : entries){
+			System.out.print("Resolving: "+entry+"..");
 			List<EObject> rs = filter(resolve(entry.id), entry.reference.getEReferenceType());
 			if (rs.isEmpty()){
 				//throw new RuntimeException("Cannot resolve "+entry.id);
 				failedEntries.add(entry);
+				System.out.println("FAIL");
 			}else{
 				//if (rs.size() > 1) throw new RuntimeException(entry.id+" is ambivalent!");
 				entry.referer.eSet(entry.reference, rs.get(0));
+				System.out.println("OK");
 			}
 		}
 		entries.clear();
 		entries.addAll(failedEntries);
+		for(ICrossReferenceScope sub : subScopes){
+			sub.resolveReferences();
+		}
 	}
 	
 	private List<EObject> filter(List<EObject> ls, EClass ec){
