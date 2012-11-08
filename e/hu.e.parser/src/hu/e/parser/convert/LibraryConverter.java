@@ -15,26 +15,18 @@ import hu.e.parser.eSyntax.Operation;
 import hu.e.parser.eSyntax.RegisterVariable;
 import hu.e.parser.eSyntax.Type;
 import hu.e.parser.eSyntax.Variable;
-import hu.modembed.model.core.RootElement;
 import hu.modembed.model.emodel.EmodelFactory;
 import hu.modembed.model.emodel.HeapVariable;
 import hu.modembed.model.emodel.LibraryElement;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
-import org.eclipse.core.resources.IResource;
-import org.eclipse.core.resources.IResourceVisitor;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
@@ -68,46 +60,6 @@ public class LibraryConverter {
 		}
 		IFile file = folder.getFile(name+".xmi");
 		return URI.createPlatformResourceURI(file.getFullPath().toString(), true);
-	}
-	
-	private URI getReferredLibURI(String name){
-		List<IProject> projects = new LinkedList<IProject>();
-		projects.add(project);
-		try {
-			projects.addAll(Arrays.asList(project.getDescription().getReferencedProjects()));
-		} catch (CoreException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		final List<IFile> possibleFiles = new LinkedList<IFile>();
-		final String filename = name+".xmi";
-		
-		for(IProject p : projects){
-			try {
-				p.accept(new IResourceVisitor() {
-					
-					@Override
-					public boolean visit(IResource resource) throws CoreException {
-						if (resource instanceof IFile){
-							if (filename.equals(resource.getName())){
-								possibleFiles.add((IFile)resource);
-							}
-							return false;
-						}
-						return true;
-					}
-				});
-			} catch (CoreException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		
-		if (!possibleFiles.isEmpty()){
-			return URI.createPlatformResourceURI(possibleFiles.get(0).getFullPath().toString(), true);
-		}
-		return null;
 	}
 	
 	private LibraryElement convertElement(LibraryItem item, ICrossReferenceScope scope){
@@ -158,28 +110,7 @@ public class LibraryConverter {
 		hu.modembed.model.emodel.Library result = EmodelFactory.eINSTANCE.createLibrary();
 		result.setName(library.getName());
 		
-		List<RootElement> libs = new ArrayList<RootElement>();
-		libs.add(result);
-		
-		for(String use : library.getUse()){
-			URI useduri = getReferredLibURI(use);
-			RootElement usedlib = null;
-			if (useduri != null){
-				Resource ur = resourceSet.getResource(useduri, true);
-				for(EObject eo : ur.getContents()){
-					if (eo instanceof RootElement){
-						usedlib = (RootElement)eo;
-					}
-				}
-			}
-			if (usedlib != null){
-				libs.add(usedlib);
-			}else{
-				//TODO Cannot resolve library!
-			}
-		}
-		
-		ICrossReferenceScope scope = new RootReferenceScope(libs);
+		ICrossReferenceScope scope = new RootReferenceScope(project, resourceSet, result, library.getUse());
 		
 		for(LibraryItem item : library.getItems()){
 			LibraryElement le = convertElement(item, scope);

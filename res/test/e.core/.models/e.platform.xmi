@@ -21,6 +21,7 @@
     <implementation xsi:type="expressions:ExecutionBlock"/>
   </content>
   <content xsi:type="emodel:Function" name="SET">
+    <arguments xsi:type="emodel:VariableParameter" name="d"/>
     <arguments xsi:type="emodel:VariableParameter" name="s"/>
     <implementation xsi:type="expressions:ExecutionBlock"/>
   </content>
