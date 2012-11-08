@@ -21,6 +21,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link hu.modembed.model.architecture.impl.MemorySectionImpl#isProgram <em>Program</em>}</li>
+ *   <li>{@link hu.modembed.model.architecture.impl.MemorySectionImpl#getStartAddress <em>Start Address</em>}</li>
+ *   <li>{@link hu.modembed.model.architecture.impl.MemorySectionImpl#getLength <em>Length</em>}</li>
  * </ul>
  * </p>
  *
@@ -46,6 +48,46 @@ public class MemorySectionImpl extends MODembedElementImpl implements MemorySect
 	 * @ordered
 	 */
 	protected boolean program = PROGRAM_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getStartAddress() <em>Start Address</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStartAddress()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final long START_ADDRESS_EDEFAULT = 0L;
+
+	/**
+	 * The cached value of the '{@link #getStartAddress() <em>Start Address</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStartAddress()
+	 * @generated
+	 * @ordered
+	 */
+	protected long startAddress = START_ADDRESS_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getLength() <em>Length</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLength()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final long LENGTH_EDEFAULT = 0L;
+
+	/**
+	 * The cached value of the '{@link #getLength() <em>Length</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLength()
+	 * @generated
+	 * @ordered
+	 */
+	protected long length = LENGTH_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -92,11 +134,57 @@ public class MemorySectionImpl extends MODembedElementImpl implements MemorySect
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public long getStartAddress() {
+		return startAddress;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setStartAddress(long newStartAddress) {
+		long oldStartAddress = startAddress;
+		startAddress = newStartAddress;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ArchitecturePackage.MEMORY_SECTION__START_ADDRESS, oldStartAddress, startAddress));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public long getLength() {
+		return length;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setLength(long newLength) {
+		long oldLength = length;
+		length = newLength;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ArchitecturePackage.MEMORY_SECTION__LENGTH, oldLength, length));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ArchitecturePackage.MEMORY_SECTION__PROGRAM:
 				return isProgram();
+			case ArchitecturePackage.MEMORY_SECTION__START_ADDRESS:
+				return getStartAddress();
+			case ArchitecturePackage.MEMORY_SECTION__LENGTH:
+				return getLength();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -111,6 +199,12 @@ public class MemorySectionImpl extends MODembedElementImpl implements MemorySect
 		switch (featureID) {
 			case ArchitecturePackage.MEMORY_SECTION__PROGRAM:
 				setProgram((Boolean)newValue);
+				return;
+			case ArchitecturePackage.MEMORY_SECTION__START_ADDRESS:
+				setStartAddress((Long)newValue);
+				return;
+			case ArchitecturePackage.MEMORY_SECTION__LENGTH:
+				setLength((Long)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -127,6 +221,12 @@ public class MemorySectionImpl extends MODembedElementImpl implements MemorySect
 			case ArchitecturePackage.MEMORY_SECTION__PROGRAM:
 				setProgram(PROGRAM_EDEFAULT);
 				return;
+			case ArchitecturePackage.MEMORY_SECTION__START_ADDRESS:
+				setStartAddress(START_ADDRESS_EDEFAULT);
+				return;
+			case ArchitecturePackage.MEMORY_SECTION__LENGTH:
+				setLength(LENGTH_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -141,6 +241,10 @@ public class MemorySectionImpl extends MODembedElementImpl implements MemorySect
 		switch (featureID) {
 			case ArchitecturePackage.MEMORY_SECTION__PROGRAM:
 				return program != PROGRAM_EDEFAULT;
+			case ArchitecturePackage.MEMORY_SECTION__START_ADDRESS:
+				return startAddress != START_ADDRESS_EDEFAULT;
+			case ArchitecturePackage.MEMORY_SECTION__LENGTH:
+				return length != LENGTH_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -157,6 +261,10 @@ public class MemorySectionImpl extends MODembedElementImpl implements MemorySect
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (program: ");
 		result.append(program);
+		result.append(", startAddress: ");
+		result.append(startAddress);
+		result.append(", length: ");
+		result.append(length);
 		result.append(')');
 		return result.toString();
 	}

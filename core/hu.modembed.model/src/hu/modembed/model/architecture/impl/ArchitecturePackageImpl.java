@@ -258,6 +258,24 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getMemorySection_StartAddress() {
+		return (EAttribute)memorySectionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getMemorySection_Length() {
+		return (EAttribute)memorySectionEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ArchitectureFactory getArchitectureFactory() {
 		return (ArchitectureFactory)getEFactoryInstance();
 	}
@@ -289,6 +307,8 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 
 		memorySectionEClass = createEClass(MEMORY_SECTION);
 		createEAttribute(memorySectionEClass, MEMORY_SECTION__PROGRAM);
+		createEAttribute(memorySectionEClass, MEMORY_SECTION__START_ADDRESS);
+		createEAttribute(memorySectionEClass, MEMORY_SECTION__LENGTH);
 	}
 
 	/**
@@ -340,6 +360,8 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 
 		initEClass(memorySectionEClass, MemorySection.class, "MemorySection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMemorySection_Program(), ecorePackage.getEBoolean(), "program", "false", 1, 1, MemorySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMemorySection_StartAddress(), ecorePackage.getELong(), "startAddress", null, 1, 1, MemorySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMemorySection_Length(), ecorePackage.getELong(), "length", null, 1, 1, MemorySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

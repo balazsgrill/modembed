@@ -293,6 +293,10 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="program" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
           defaultValueLiteral="false"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="startAddress" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="length" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
     </eClassifiers>
     <eSubpackages name="linking" nsURI="http://modembed.hu/architecture/linking" nsPrefix="linking">
       <eClassifiers xsi:type="ecore:EClass" name="ProgramLinking" eSuperTypes="#//architecture/linking/LinkingElement">

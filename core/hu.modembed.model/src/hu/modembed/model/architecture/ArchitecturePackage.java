@@ -177,13 +177,31 @@ public interface ArchitecturePackage extends EPackage {
 	int MEMORY_SECTION__PROGRAM = CorePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Start Address</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEMORY_SECTION__START_ADDRESS = CorePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Length</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEMORY_SECTION__LENGTH = CorePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Memory Section</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MEMORY_SECTION_FEATURE_COUNT = CorePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 1;
+	int MEMORY_SECTION_FEATURE_COUNT = CorePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 3;
 
 
 	/**
@@ -260,6 +278,28 @@ public interface ArchitecturePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getMemorySection_Program();
+
+	/**
+	 * Returns the meta object for the attribute '{@link hu.modembed.model.architecture.MemorySection#getStartAddress <em>Start Address</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Start Address</em>'.
+	 * @see hu.modembed.model.architecture.MemorySection#getStartAddress()
+	 * @see #getMemorySection()
+	 * @generated
+	 */
+	EAttribute getMemorySection_StartAddress();
+
+	/**
+	 * Returns the meta object for the attribute '{@link hu.modembed.model.architecture.MemorySection#getLength <em>Length</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Length</em>'.
+	 * @see hu.modembed.model.architecture.MemorySection#getLength()
+	 * @see #getMemorySection()
+	 * @generated
+	 */
+	EAttribute getMemorySection_Length();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -342,6 +382,22 @@ public interface ArchitecturePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute MEMORY_SECTION__PROGRAM = eINSTANCE.getMemorySection_Program();
+
+		/**
+		 * The meta object literal for the '<em><b>Start Address</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MEMORY_SECTION__START_ADDRESS = eINSTANCE.getMemorySection_StartAddress();
+
+		/**
+		 * The meta object literal for the '<em><b>Length</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MEMORY_SECTION__LENGTH = eINSTANCE.getMemorySection_Length();
 
 	}
 
