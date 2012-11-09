@@ -11,8 +11,4 @@ Require-Bundle: org.eclipse.core.runtime,
  hu.modembed.hexfile.persistence;bundle-version="0.1.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: hu.e.compiler,
- hu.e.compiler.list,
- hu.e.compiler.list.impl,
- hu.e.compiler.list.util,
- hu.e.compiler.optimizer
+Export-Package: hu.e.compiler
