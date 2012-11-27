@@ -4,6 +4,7 @@
 package hu.e.parser.ui;
 
 import hu.e.parser.convert.LibraryConverter;
+import hu.e.parser.eSyntax.InstructionSetNotation;
 import hu.e.parser.eSyntax.Library;
 import hu.e.parser.ui.internal.ESyntaxActivator;
 
@@ -52,6 +53,9 @@ public class CompilerBuilderParticipant implements IXtextBuilderParticipant {
 							for(EObject l : res.getContents()){
 								if (l instanceof Library){
 									converter.convert((Library)l);
+								}
+								if (l instanceof InstructionSetNotation){
+									converter.convert((InstructionSetNotation)l);
 								}
 							}
 						}catch (final Exception e) {

@@ -90,6 +90,26 @@ public class ESyntaxAdapterFactory extends AdapterFactoryImpl
         return createAnnotationAdapter();
       }
       @Override
+      public Adapter caseInstructionSetNotation(InstructionSetNotation object)
+      {
+        return createInstructionSetNotationAdapter();
+      }
+      @Override
+      public Adapter caseInstructionNotation(InstructionNotation object)
+      {
+        return createInstructionNotationAdapter();
+      }
+      @Override
+      public Adapter caseInstructionParameterNotation(InstructionParameterNotation object)
+      {
+        return createInstructionParameterNotationAdapter();
+      }
+      @Override
+      public Adapter caseInsctructionSectionNotation(InsctructionSectionNotation object)
+      {
+        return createInsctructionSectionNotationAdapter();
+      }
+      @Override
       public Adapter caseLibrary(Library object)
       {
         return createLibraryAdapter();
@@ -377,6 +397,66 @@ public class ESyntaxAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createAnnotationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.e.parser.eSyntax.InstructionSetNotation <em>Instruction Set Notation</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.e.parser.eSyntax.InstructionSetNotation
+   * @generated
+   */
+  public Adapter createInstructionSetNotationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.e.parser.eSyntax.InstructionNotation <em>Instruction Notation</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.e.parser.eSyntax.InstructionNotation
+   * @generated
+   */
+  public Adapter createInstructionNotationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.e.parser.eSyntax.InstructionParameterNotation <em>Instruction Parameter Notation</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.e.parser.eSyntax.InstructionParameterNotation
+   * @generated
+   */
+  public Adapter createInstructionParameterNotationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.e.parser.eSyntax.InsctructionSectionNotation <em>Insctruction Section Notation</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.e.parser.eSyntax.InsctructionSectionNotation
+   * @generated
+   */
+  public Adapter createInsctructionSectionNotationAdapter()
   {
     return null;
   }

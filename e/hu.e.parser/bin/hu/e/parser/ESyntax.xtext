@@ -5,7 +5,7 @@ import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 generate eSyntax "http://www.e.hu/parser/ESyntax"
 
 CompilationUnit:
-	/*Module |*/ Library /* | LinkedBinary /*| Interface*/
+	Library | InstructionSetNotation
 ;	
 
 LibraryName:
@@ -30,6 +30,8 @@ terminal BINARY returns ecore::EInt: 'b'('0'|'1')+;
 
 terminal REAL returns ecore::EBigDecimal: INT '.' INT?;
 
+//terminal CHAR returns ecore::EString: 'a'..'z'|'A'..'Z';
+
 LITERAL: (INT | HEXINT | BINARY | REAL);
 
 /**********************
@@ -42,6 +44,29 @@ AnnotationDefinition:
 
 Annotation:
 	'#' definition=ID
+;
+
+/**********************
+ * InstructionSet
+ **********************/
+
+InstructionSetNotation:
+	'instructionset' name=LibraryName
+	('extends' extends=LibraryName)? ';'
+	
+	(instructions += InstructionNotation)*
+;
+
+InstructionNotation:
+	name=ID  (params+=InstructionParameterNotation)* '<' (sections+=InsctructionSectionNotation)* '>'
+;
+
+InstructionParameterNotation:
+	name=ID ('=' default=LITERAL)? 
+;
+
+InsctructionSectionNotation:
+	(('$'param=ID) | (value=LITERAL)) ':' size=LITERAL (':' shift=LITERAL)?
 ;
 
 /***********************

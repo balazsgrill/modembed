@@ -50,6 +50,42 @@ public interface ESyntaxFactory extends EFactory
   Annotation createAnnotation();
 
   /**
+   * Returns a new object of class '<em>Instruction Set Notation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Instruction Set Notation</em>'.
+   * @generated
+   */
+  InstructionSetNotation createInstructionSetNotation();
+
+  /**
+   * Returns a new object of class '<em>Instruction Notation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Instruction Notation</em>'.
+   * @generated
+   */
+  InstructionNotation createInstructionNotation();
+
+  /**
+   * Returns a new object of class '<em>Instruction Parameter Notation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Instruction Parameter Notation</em>'.
+   * @generated
+   */
+  InstructionParameterNotation createInstructionParameterNotation();
+
+  /**
+   * Returns a new object of class '<em>Insctruction Section Notation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Insctruction Section Notation</em>'.
+   * @generated
+   */
+  InsctructionSectionNotation createInsctructionSectionNotation();
+
+  /**
    * Returns a new object of class '<em>Library</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

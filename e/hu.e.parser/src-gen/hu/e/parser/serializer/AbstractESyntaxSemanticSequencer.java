@@ -8,6 +8,10 @@ import hu.e.parser.eSyntax.ArrayTypeDef;
 import hu.e.parser.eSyntax.ConstantVariable;
 import hu.e.parser.eSyntax.ESyntaxPackage;
 import hu.e.parser.eSyntax.FixedDataTypeDef;
+import hu.e.parser.eSyntax.InsctructionSectionNotation;
+import hu.e.parser.eSyntax.InstructionNotation;
+import hu.e.parser.eSyntax.InstructionParameterNotation;
+import hu.e.parser.eSyntax.InstructionSetNotation;
 import hu.e.parser.eSyntax.IntegerDataTypeDef;
 import hu.e.parser.eSyntax.Label;
 import hu.e.parser.eSyntax.LazyParameter;
@@ -95,6 +99,31 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 				   context == grammarAccess.getFixedDataTypeDefRule() ||
 				   context == grammarAccess.getTypeDefRule()) {
 					sequence_FixedDataTypeDef(context, (FixedDataTypeDef) semanticObject); 
+					return; 
+				}
+				else break;
+			case ESyntaxPackage.INSCTRUCTION_SECTION_NOTATION:
+				if(context == grammarAccess.getInsctructionSectionNotationRule()) {
+					sequence_InsctructionSectionNotation(context, (InsctructionSectionNotation) semanticObject); 
+					return; 
+				}
+				else break;
+			case ESyntaxPackage.INSTRUCTION_NOTATION:
+				if(context == grammarAccess.getInstructionNotationRule()) {
+					sequence_InstructionNotation(context, (InstructionNotation) semanticObject); 
+					return; 
+				}
+				else break;
+			case ESyntaxPackage.INSTRUCTION_PARAMETER_NOTATION:
+				if(context == grammarAccess.getInstructionParameterNotationRule()) {
+					sequence_InstructionParameterNotation(context, (InstructionParameterNotation) semanticObject); 
+					return; 
+				}
+				else break;
+			case ESyntaxPackage.INSTRUCTION_SET_NOTATION:
+				if(context == grammarAccess.getCompilationUnitRule() ||
+				   context == grammarAccess.getInstructionSetNotationRule()) {
+					sequence_InstructionSetNotation(context, (InstructionSetNotation) semanticObject); 
 					return; 
 				}
 				else break;
@@ -405,6 +434,42 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 		feeder.accept(grammarAccess.getFixedDataTypeDefAccess().getBitsINTTerminalRuleCall_1_0(), semanticObject.getBits());
 		feeder.accept(grammarAccess.getFixedDataTypeDefAccess().getScaleREALTerminalRuleCall_5_0(), semanticObject.getScale());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     ((param=ID | value=LITERAL) size=LITERAL shift=LITERAL?)
+	 */
+	protected void sequence_InsctructionSectionNotation(EObject context, InsctructionSectionNotation semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID params+=InstructionParameterNotation* sections+=InsctructionSectionNotation*)
+	 */
+	protected void sequence_InstructionNotation(EObject context, InstructionNotation semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID default=LITERAL?)
+	 */
+	protected void sequence_InstructionParameterNotation(EObject context, InstructionParameterNotation semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=LibraryName extends=LibraryName? instructions+=InstructionNotation*)
+	 */
+	protected void sequence_InstructionSetNotation(EObject context, InstructionSetNotation semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

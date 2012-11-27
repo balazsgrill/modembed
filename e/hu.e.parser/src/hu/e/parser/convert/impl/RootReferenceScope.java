@@ -5,7 +5,6 @@ package hu.e.parser.convert.impl;
 
 import hu.modembed.model.core.NamedElement;
 import hu.modembed.model.core.RootElement;
-import hu.modembed.model.emodel.Library;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -33,7 +32,7 @@ public class RootReferenceScope extends AbstractCrossReferenceScope {
 	private final ResourceSet resourceSet;
 	private final IProject project;
 	
-	public RootReferenceScope(IProject project, ResourceSet resourceSet, Library library, List<String> libraries) {
+	public RootReferenceScope(IProject project, ResourceSet resourceSet, RootElement library, List<String> libraries) {
 		this.libraries = new ArrayList<RootElement>(libraries.size()+1);
 		this.libraries.add(library);
 		this.resourceSet = resourceSet;

@@ -12,6 +12,10 @@ import hu.e.parser.eSyntax.ESyntaxFactory;
 import hu.e.parser.eSyntax.ESyntaxPackage;
 import hu.e.parser.eSyntax.ErrorLevels;
 import hu.e.parser.eSyntax.FixedDataTypeDef;
+import hu.e.parser.eSyntax.InsctructionSectionNotation;
+import hu.e.parser.eSyntax.InstructionNotation;
+import hu.e.parser.eSyntax.InstructionParameterNotation;
+import hu.e.parser.eSyntax.InstructionSetNotation;
 import hu.e.parser.eSyntax.IntegerDataTypeDef;
 import hu.e.parser.eSyntax.IntegerKind;
 import hu.e.parser.eSyntax.Label;
@@ -93,6 +97,34 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * @generated
    */
   private EClass annotationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass instructionSetNotationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass instructionNotationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass instructionParameterNotationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass insctructionSectionNotationEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -550,6 +582,16 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getCompilationUnit_Name()
+  {
+    return (EAttribute)compilationUnitEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getAnnotationDefinition()
   {
     return annotationDefinitionEClass;
@@ -580,6 +622,156 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getInstructionSetNotation()
+  {
+    return instructionSetNotationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getInstructionSetNotation_Extends()
+  {
+    return (EAttribute)instructionSetNotationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getInstructionSetNotation_Instructions()
+  {
+    return (EReference)instructionSetNotationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getInstructionNotation()
+  {
+    return instructionNotationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getInstructionNotation_Name()
+  {
+    return (EAttribute)instructionNotationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getInstructionNotation_Params()
+  {
+    return (EReference)instructionNotationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getInstructionNotation_Sections()
+  {
+    return (EReference)instructionNotationEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getInstructionParameterNotation()
+  {
+    return instructionParameterNotationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getInstructionParameterNotation_Name()
+  {
+    return (EAttribute)instructionParameterNotationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getInstructionParameterNotation_Default()
+  {
+    return (EAttribute)instructionParameterNotationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getInsctructionSectionNotation()
+  {
+    return insctructionSectionNotationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getInsctructionSectionNotation_Param()
+  {
+    return (EAttribute)insctructionSectionNotationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getInsctructionSectionNotation_Value()
+  {
+    return (EAttribute)insctructionSectionNotationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getInsctructionSectionNotation_Size()
+  {
+    return (EAttribute)insctructionSectionNotationEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getInsctructionSectionNotation_Shift()
+  {
+    return (EAttribute)insctructionSectionNotationEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getLibrary()
   {
     return libraryEClass;
@@ -590,7 +782,7 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getLibrary_Name()
+  public EAttribute getLibrary_Use()
   {
     return (EAttribute)libraryEClass.getEStructuralFeatures().get(0);
   }
@@ -600,19 +792,9 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getLibrary_Use()
-  {
-    return (EAttribute)libraryEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getLibrary_Items()
   {
-    return (EReference)libraryEClass.getEStructuralFeatures().get(2);
+    return (EReference)libraryEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1726,14 +1908,33 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
 
     // Create classes and their features
     compilationUnitEClass = createEClass(COMPILATION_UNIT);
+    createEAttribute(compilationUnitEClass, COMPILATION_UNIT__NAME);
 
     annotationDefinitionEClass = createEClass(ANNOTATION_DEFINITION);
 
     annotationEClass = createEClass(ANNOTATION);
     createEAttribute(annotationEClass, ANNOTATION__DEFINITION);
 
+    instructionSetNotationEClass = createEClass(INSTRUCTION_SET_NOTATION);
+    createEAttribute(instructionSetNotationEClass, INSTRUCTION_SET_NOTATION__EXTENDS);
+    createEReference(instructionSetNotationEClass, INSTRUCTION_SET_NOTATION__INSTRUCTIONS);
+
+    instructionNotationEClass = createEClass(INSTRUCTION_NOTATION);
+    createEAttribute(instructionNotationEClass, INSTRUCTION_NOTATION__NAME);
+    createEReference(instructionNotationEClass, INSTRUCTION_NOTATION__PARAMS);
+    createEReference(instructionNotationEClass, INSTRUCTION_NOTATION__SECTIONS);
+
+    instructionParameterNotationEClass = createEClass(INSTRUCTION_PARAMETER_NOTATION);
+    createEAttribute(instructionParameterNotationEClass, INSTRUCTION_PARAMETER_NOTATION__NAME);
+    createEAttribute(instructionParameterNotationEClass, INSTRUCTION_PARAMETER_NOTATION__DEFAULT);
+
+    insctructionSectionNotationEClass = createEClass(INSCTRUCTION_SECTION_NOTATION);
+    createEAttribute(insctructionSectionNotationEClass, INSCTRUCTION_SECTION_NOTATION__PARAM);
+    createEAttribute(insctructionSectionNotationEClass, INSCTRUCTION_SECTION_NOTATION__VALUE);
+    createEAttribute(insctructionSectionNotationEClass, INSCTRUCTION_SECTION_NOTATION__SIZE);
+    createEAttribute(insctructionSectionNotationEClass, INSCTRUCTION_SECTION_NOTATION__SHIFT);
+
     libraryEClass = createEClass(LIBRARY);
-    createEAttribute(libraryEClass, LIBRARY__NAME);
     createEAttribute(libraryEClass, LIBRARY__USE);
     createEReference(libraryEClass, LIBRARY__ITEMS);
 
@@ -1923,6 +2124,7 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     // Add supertypes to classes
     annotationDefinitionEClass.getESuperTypes().add(this.getLibraryItem());
     annotationEClass.getESuperTypes().add(this.getXTopLevelExpression());
+    instructionSetNotationEClass.getESuperTypes().add(this.getCompilationUnit());
     libraryEClass.getESuperTypes().add(this.getCompilationUnit());
     typeEClass.getESuperTypes().add(this.getLibraryItem());
     unspecifiedTypeDefEClass.getESuperTypes().add(this.getTypeDef());
@@ -1960,14 +2162,33 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
 
     // Initialize classes and features; add operations and parameters
     initEClass(compilationUnitEClass, CompilationUnit.class, "CompilationUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getCompilationUnit_Name(), ecorePackage.getEString(), "name", null, 0, 1, CompilationUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(annotationDefinitionEClass, AnnotationDefinition.class, "AnnotationDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(annotationEClass, Annotation.class, "Annotation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAnnotation_Definition(), ecorePackage.getEString(), "definition", null, 0, 1, Annotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(instructionSetNotationEClass, InstructionSetNotation.class, "InstructionSetNotation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getInstructionSetNotation_Extends(), ecorePackage.getEString(), "extends", null, 0, 1, InstructionSetNotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInstructionSetNotation_Instructions(), this.getInstructionNotation(), null, "instructions", null, 0, -1, InstructionSetNotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(instructionNotationEClass, InstructionNotation.class, "InstructionNotation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getInstructionNotation_Name(), ecorePackage.getEString(), "name", null, 0, 1, InstructionNotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInstructionNotation_Params(), this.getInstructionParameterNotation(), null, "params", null, 0, -1, InstructionNotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInstructionNotation_Sections(), this.getInsctructionSectionNotation(), null, "sections", null, 0, -1, InstructionNotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(instructionParameterNotationEClass, InstructionParameterNotation.class, "InstructionParameterNotation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getInstructionParameterNotation_Name(), ecorePackage.getEString(), "name", null, 0, 1, InstructionParameterNotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getInstructionParameterNotation_Default(), ecorePackage.getEString(), "default", null, 0, 1, InstructionParameterNotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(insctructionSectionNotationEClass, InsctructionSectionNotation.class, "InsctructionSectionNotation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getInsctructionSectionNotation_Param(), ecorePackage.getEString(), "param", null, 0, 1, InsctructionSectionNotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getInsctructionSectionNotation_Value(), ecorePackage.getEString(), "value", null, 0, 1, InsctructionSectionNotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getInsctructionSectionNotation_Size(), ecorePackage.getEString(), "size", null, 0, 1, InsctructionSectionNotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getInsctructionSectionNotation_Shift(), ecorePackage.getEString(), "shift", null, 0, 1, InsctructionSectionNotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(libraryEClass, Library.class, "Library", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getLibrary_Name(), ecorePackage.getEString(), "name", null, 0, 1, Library.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getLibrary_Use(), ecorePackage.getEString(), "use", null, 0, -1, Library.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getLibrary_Items(), this.getLibraryItem(), null, "items", null, 0, -1, Library.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

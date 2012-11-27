@@ -73,6 +73,7 @@ public class InternalESyntaxLexer extends Lexer {
     public static final int T__33=33;
     public static final int T__71=71;
     public static final int T__34=34;
+    public static final int T__72=72;
     public static final int T__35=35;
     public static final int T__36=36;
     public static final int T__70=70;
@@ -81,6 +82,8 @@ public class InternalESyntaxLexer extends Lexer {
     public static final int T__39=39;
     public static final int RULE_BINARY=6;
     public static final int RULE_WS=12;
+    public static final int T__74=74;
+    public static final int T__73=73;
 
     // delegates
     // delegators
@@ -738,10 +741,10 @@ public class InternalESyntaxLexer extends Lexer {
         try {
             int _type = T__45;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:42:7: ( 'library' )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:42:9: 'library'
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:42:7: ( 'instructionset' )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:42:9: 'instructionset'
             {
-            match("library"); 
+            match("instructionset"); 
 
 
             }
@@ -779,10 +782,10 @@ public class InternalESyntaxLexer extends Lexer {
         try {
             int _type = T__47;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:44:7: ( 'use' )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:44:9: 'use'
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:44:7: ( 'extends' )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:44:9: 'extends'
             {
-            match("use"); 
+            match("extends"); 
 
 
             }
@@ -800,11 +803,10 @@ public class InternalESyntaxLexer extends Lexer {
         try {
             int _type = T__48;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:45:7: ( 'type' )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:45:9: 'type'
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:45:7: ( ':' )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:45:9: ':'
             {
-            match("type"); 
-
+            match(':'); 
 
             }
 
@@ -821,11 +823,10 @@ public class InternalESyntaxLexer extends Lexer {
         try {
             int _type = T__49;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:46:7: ( 'void' )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:46:9: 'void'
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:46:7: ( '$' )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:46:9: '$'
             {
-            match("void"); 
-
+            match('$'); 
 
             }
 
@@ -842,10 +843,10 @@ public class InternalESyntaxLexer extends Lexer {
         try {
             int _type = T__50;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:47:7: ( 'pointer' )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:47:9: 'pointer'
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:47:7: ( 'library' )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:47:9: 'library'
             {
-            match("pointer"); 
+            match("library"); 
 
 
             }
@@ -863,10 +864,10 @@ public class InternalESyntaxLexer extends Lexer {
         try {
             int _type = T__51;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:48:7: ( 'array' )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:48:9: 'array'
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:48:7: ( 'use' )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:48:9: 'use'
             {
-            match("array"); 
+            match("use"); 
 
 
             }
@@ -884,10 +885,11 @@ public class InternalESyntaxLexer extends Lexer {
         try {
             int _type = T__52;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:49:7: ( '[' )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:49:9: '['
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:49:7: ( 'type' )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:49:9: 'type'
             {
-            match('['); 
+            match("type"); 
+
 
             }
 
@@ -904,10 +906,11 @@ public class InternalESyntaxLexer extends Lexer {
         try {
             int _type = T__53;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:50:7: ( ']' )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:50:9: ']'
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:50:7: ( 'void' )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:50:9: 'void'
             {
-            match(']'); 
+            match("void"); 
+
 
             }
 
@@ -924,10 +927,10 @@ public class InternalESyntaxLexer extends Lexer {
         try {
             int _type = T__54;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:51:7: ( 'fixed' )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:51:9: 'fixed'
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:51:7: ( 'pointer' )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:51:9: 'pointer'
             {
-            match("fixed"); 
+            match("pointer"); 
 
 
             }
@@ -945,10 +948,10 @@ public class InternalESyntaxLexer extends Lexer {
         try {
             int _type = T__55;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:52:7: ( 'bits' )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:52:9: 'bits'
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:52:7: ( 'array' )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:52:9: 'array'
             {
-            match("bits"); 
+            match("array"); 
 
 
             }
@@ -966,11 +969,10 @@ public class InternalESyntaxLexer extends Lexer {
         try {
             int _type = T__56;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:53:7: ( 'scale' )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:53:9: 'scale'
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:53:7: ( '[' )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:53:9: '['
             {
-            match("scale"); 
-
+            match('['); 
 
             }
 
@@ -987,11 +989,10 @@ public class InternalESyntaxLexer extends Lexer {
         try {
             int _type = T__57;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:54:7: ( 'struct' )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:54:9: 'struct'
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:54:7: ( ']' )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:54:9: ']'
             {
-            match("struct"); 
-
+            match(']'); 
 
             }
 
@@ -1008,10 +1009,11 @@ public class InternalESyntaxLexer extends Lexer {
         try {
             int _type = T__58;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:55:7: ( '{' )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:55:9: '{'
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:55:7: ( 'fixed' )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:55:9: 'fixed'
             {
-            match('{'); 
+            match("fixed"); 
+
 
             }
 
@@ -1028,10 +1030,11 @@ public class InternalESyntaxLexer extends Lexer {
         try {
             int _type = T__59;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:56:7: ( '}' )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:56:9: '}'
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:56:7: ( 'bits' )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:56:9: 'bits'
             {
-            match('}'); 
+            match("bits"); 
+
 
             }
 
@@ -1048,10 +1051,11 @@ public class InternalESyntaxLexer extends Lexer {
         try {
             int _type = T__60;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:57:7: ( ',' )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:57:9: ','
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:57:7: ( 'scale' )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:57:9: 'scale'
             {
-            match(','); 
+            match("scale"); 
+
 
             }
 
@@ -1068,10 +1072,10 @@ public class InternalESyntaxLexer extends Lexer {
         try {
             int _type = T__61;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:58:7: ( 'reg' )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:58:9: 'reg'
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:58:7: ( 'struct' )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:58:9: 'struct'
             {
-            match("reg"); 
+            match("struct"); 
 
 
             }
@@ -1089,10 +1093,10 @@ public class InternalESyntaxLexer extends Lexer {
         try {
             int _type = T__62;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:59:7: ( ':' )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:59:9: ':'
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:59:7: ( '{' )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:59:9: '{'
             {
-            match(':'); 
+            match('{'); 
 
             }
 
@@ -1109,11 +1113,10 @@ public class InternalESyntaxLexer extends Lexer {
         try {
             int _type = T__63;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:60:7: ( 'label' )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:60:9: 'label'
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:60:7: ( '}' )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:60:9: '}'
             {
-            match("label"); 
-
+            match('}'); 
 
             }
 
@@ -1130,10 +1133,10 @@ public class InternalESyntaxLexer extends Lexer {
         try {
             int _type = T__64;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:61:7: ( '(' )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:61:9: '('
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:61:7: ( ',' )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:61:9: ','
             {
-            match('('); 
+            match(','); 
 
             }
 
@@ -1150,10 +1153,11 @@ public class InternalESyntaxLexer extends Lexer {
         try {
             int _type = T__65;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:62:7: ( ')' )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:62:9: ')'
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:62:7: ( 'reg' )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:62:9: 'reg'
             {
-            match(')'); 
+            match("reg"); 
+
 
             }
 
@@ -1170,10 +1174,10 @@ public class InternalESyntaxLexer extends Lexer {
         try {
             int _type = T__66;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:63:7: ( 'function' )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:63:9: 'function'
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:63:7: ( 'label' )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:63:9: 'label'
             {
-            match("function"); 
+            match("label"); 
 
 
             }
@@ -1191,11 +1195,10 @@ public class InternalESyntaxLexer extends Lexer {
         try {
             int _type = T__67;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:64:7: ( 'overrides' )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:64:9: 'overrides'
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:64:7: ( '(' )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:64:9: '('
             {
-            match("overrides"); 
-
+            match('('); 
 
             }
 
@@ -1212,11 +1215,10 @@ public class InternalESyntaxLexer extends Lexer {
         try {
             int _type = T__68;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:65:7: ( 'lazy' )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:65:9: 'lazy'
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:65:7: ( ')' )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:65:9: ')'
             {
-            match("lazy"); 
-
+            match(')'); 
 
             }
 
@@ -1233,10 +1235,10 @@ public class InternalESyntaxLexer extends Lexer {
         try {
             int _type = T__69;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:66:7: ( 'sizeof' )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:66:9: 'sizeof'
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:66:7: ( 'function' )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:66:9: 'function'
             {
-            match("sizeof"); 
+            match("function"); 
 
 
             }
@@ -1254,10 +1256,10 @@ public class InternalESyntaxLexer extends Lexer {
         try {
             int _type = T__70;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:67:7: ( '->' )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:67:9: '->'
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:67:7: ( 'overrides' )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:67:9: 'overrides'
             {
-            match("->"); 
+            match("overrides"); 
 
 
             }
@@ -1275,10 +1277,10 @@ public class InternalESyntaxLexer extends Lexer {
         try {
             int _type = T__71;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:68:7: ( 'isliteral' )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:68:9: 'isliteral'
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:68:7: ( 'lazy' )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:68:9: 'lazy'
             {
-            match("isliteral"); 
+            match("lazy"); 
 
 
             }
@@ -1291,17 +1293,80 @@ public class InternalESyntaxLexer extends Lexer {
     }
     // $ANTLR end "T__71"
 
+    // $ANTLR start "T__72"
+    public final void mT__72() throws RecognitionException {
+        try {
+            int _type = T__72;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:69:7: ( 'sizeof' )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:69:9: 'sizeof'
+            {
+            match("sizeof"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__72"
+
+    // $ANTLR start "T__73"
+    public final void mT__73() throws RecognitionException {
+        try {
+            int _type = T__73;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:70:7: ( '->' )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:70:9: '->'
+            {
+            match("->"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__73"
+
+    // $ANTLR start "T__74"
+    public final void mT__74() throws RecognitionException {
+        try {
+            int _type = T__74;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:71:7: ( 'isliteral' )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:71:9: 'isliteral'
+            {
+            match("isliteral"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__74"
+
     // $ANTLR start "RULE_HEXINT"
     public final void mRULE_HEXINT() throws RecognitionException {
         try {
             int _type = RULE_HEXINT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:9207:13: ( '0x' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+ )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:9207:15: '0x' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10297:13: ( '0x' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+ )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10297:15: '0x' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+
             {
             match("0x"); 
 
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:9207:20: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10297:20: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+
             int cnt1=0;
             loop1:
             do {
@@ -1355,11 +1420,11 @@ public class InternalESyntaxLexer extends Lexer {
         try {
             int _type = RULE_BINARY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:9209:13: ( 'b' ( '0' | '1' )+ )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:9209:15: 'b' ( '0' | '1' )+
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10299:13: ( 'b' ( '0' | '1' )+ )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10299:15: 'b' ( '0' | '1' )+
             {
             match('b'); 
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:9209:19: ( '0' | '1' )+
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10299:19: ( '0' | '1' )+
             int cnt2=0;
             loop2:
             do {
@@ -1413,12 +1478,12 @@ public class InternalESyntaxLexer extends Lexer {
         try {
             int _type = RULE_REAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:9211:11: ( RULE_INT '.' ( RULE_INT )? )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:9211:13: RULE_INT '.' ( RULE_INT )?
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10301:11: ( RULE_INT '.' ( RULE_INT )? )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10301:13: RULE_INT '.' ( RULE_INT )?
             {
             mRULE_INT(); 
             match('.'); 
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:9211:26: ( RULE_INT )?
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10301:26: ( RULE_INT )?
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -1427,7 +1492,7 @@ public class InternalESyntaxLexer extends Lexer {
             }
             switch (alt3) {
                 case 1 :
-                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:9211:26: RULE_INT
+                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10301:26: RULE_INT
                     {
                     mRULE_INT(); 
 
@@ -1452,10 +1517,10 @@ public class InternalESyntaxLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:9213:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:9213:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10303:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10303:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:9213:11: ( '^' )?
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10303:11: ( '^' )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -1464,7 +1529,7 @@ public class InternalESyntaxLexer extends Lexer {
             }
             switch (alt4) {
                 case 1 :
-                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:9213:11: '^'
+                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10303:11: '^'
                     {
                     match('^'); 
 
@@ -1482,7 +1547,7 @@ public class InternalESyntaxLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:9213:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10303:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop5:
             do {
                 int alt5=2;
@@ -1531,10 +1596,10 @@ public class InternalESyntaxLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:9215:10: ( ( '0' .. '9' )+ )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:9215:12: ( '0' .. '9' )+
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10305:10: ( ( '0' .. '9' )+ )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10305:12: ( '0' .. '9' )+
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:9215:12: ( '0' .. '9' )+
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10305:12: ( '0' .. '9' )+
             int cnt6=0;
             loop6:
             do {
@@ -1548,7 +1613,7 @@ public class InternalESyntaxLexer extends Lexer {
 
                 switch (alt6) {
             	case 1 :
-            	    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:9215:13: '0' .. '9'
+            	    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10305:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1580,10 +1645,10 @@ public class InternalESyntaxLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:9217:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:9217:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10307:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10307:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:9217:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10307:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -1601,10 +1666,10 @@ public class InternalESyntaxLexer extends Lexer {
             }
             switch (alt9) {
                 case 1 :
-                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:9217:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10307:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:9217:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10307:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop7:
                     do {
                         int alt7=3;
@@ -1620,7 +1685,7 @@ public class InternalESyntaxLexer extends Lexer {
 
                         switch (alt7) {
                     	case 1 :
-                    	    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:9217:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10307:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -1636,7 +1701,7 @@ public class InternalESyntaxLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:9217:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10307:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1661,10 +1726,10 @@ public class InternalESyntaxLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:9217:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10307:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:9217:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10307:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop8:
                     do {
                         int alt8=3;
@@ -1680,7 +1745,7 @@ public class InternalESyntaxLexer extends Lexer {
 
                         switch (alt8) {
                     	case 1 :
-                    	    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:9217:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10307:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -1696,7 +1761,7 @@ public class InternalESyntaxLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:9217:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10307:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1739,12 +1804,12 @@ public class InternalESyntaxLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:9219:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:9219:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10309:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10309:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:9219:24: ( options {greedy=false; } : . )*
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10309:24: ( options {greedy=false; } : . )*
             loop10:
             do {
                 int alt10=2;
@@ -1769,7 +1834,7 @@ public class InternalESyntaxLexer extends Lexer {
 
                 switch (alt10) {
             	case 1 :
-            	    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:9219:52: .
+            	    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10309:52: .
             	    {
             	    matchAny(); 
 
@@ -1799,12 +1864,12 @@ public class InternalESyntaxLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:9221:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:9221:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10311:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10311:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:9221:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10311:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop11:
             do {
                 int alt11=2;
@@ -1817,7 +1882,7 @@ public class InternalESyntaxLexer extends Lexer {
 
                 switch (alt11) {
             	case 1 :
-            	    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:9221:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10311:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1837,7 +1902,7 @@ public class InternalESyntaxLexer extends Lexer {
                 }
             } while (true);
 
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:9221:40: ( ( '\\r' )? '\\n' )?
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10311:40: ( ( '\\r' )? '\\n' )?
             int alt13=2;
             int LA13_0 = input.LA(1);
 
@@ -1846,9 +1911,9 @@ public class InternalESyntaxLexer extends Lexer {
             }
             switch (alt13) {
                 case 1 :
-                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:9221:41: ( '\\r' )? '\\n'
+                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10311:41: ( '\\r' )? '\\n'
                     {
-                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:9221:41: ( '\\r' )?
+                    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10311:41: ( '\\r' )?
                     int alt12=2;
                     int LA12_0 = input.LA(1);
 
@@ -1857,7 +1922,7 @@ public class InternalESyntaxLexer extends Lexer {
                     }
                     switch (alt12) {
                         case 1 :
-                            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:9221:41: '\\r'
+                            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10311:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1889,10 +1954,10 @@ public class InternalESyntaxLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:9223:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:9223:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10313:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10313:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:9223:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10313:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt14=0;
             loop14:
             do {
@@ -1946,8 +2011,8 @@ public class InternalESyntaxLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:9225:16: ( . )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:9225:18: .
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10315:16: ( . )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:10315:18: .
             {
             matchAny(); 
 
@@ -1962,8 +2027,8 @@ public class InternalESyntaxLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1:8: ( T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | RULE_HEXINT | RULE_BINARY | RULE_REAL | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt15=68;
+        // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1:8: ( T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | RULE_HEXINT | RULE_BINARY | RULE_REAL | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt15=71;
         alt15 = dfa15.predict(input);
         switch (alt15) {
             case 1 :
@@ -2373,70 +2438,91 @@ public class InternalESyntaxLexer extends Lexer {
                 }
                 break;
             case 59 :
-                // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1:358: RULE_HEXINT
+                // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1:358: T__72
+                {
+                mT__72(); 
+
+                }
+                break;
+            case 60 :
+                // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1:364: T__73
+                {
+                mT__73(); 
+
+                }
+                break;
+            case 61 :
+                // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1:370: T__74
+                {
+                mT__74(); 
+
+                }
+                break;
+            case 62 :
+                // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1:376: RULE_HEXINT
                 {
                 mRULE_HEXINT(); 
 
                 }
                 break;
-            case 60 :
-                // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1:370: RULE_BINARY
+            case 63 :
+                // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1:388: RULE_BINARY
                 {
                 mRULE_BINARY(); 
 
                 }
                 break;
-            case 61 :
-                // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1:382: RULE_REAL
+            case 64 :
+                // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1:400: RULE_REAL
                 {
                 mRULE_REAL(); 
 
                 }
                 break;
-            case 62 :
-                // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1:392: RULE_ID
+            case 65 :
+                // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1:410: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 63 :
-                // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1:400: RULE_INT
+            case 66 :
+                // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1:418: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 64 :
-                // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1:409: RULE_STRING
+            case 67 :
+                // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1:427: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 65 :
-                // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1:421: RULE_ML_COMMENT
+            case 68 :
+                // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1:439: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 66 :
-                // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1:437: RULE_SL_COMMENT
+            case 69 :
+                // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1:455: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 67 :
-                // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1:453: RULE_WS
+            case 70 :
+                // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1:471: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 68 :
-                // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1:461: RULE_ANY_OTHER
+            case 71 :
+                // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:1:479: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -2450,207 +2536,209 @@ public class InternalESyntaxLexer extends Lexer {
 
     protected DFA15 dfa15 = new DFA15(this);
     static final String DFA15_eotS =
-        "\1\uffff\5\62\1\74\1\76\1\100\2\uffff\1\105\1\uffff\1\110\1\112"+
-        "\1\114\1\116\1\57\3\62\1\uffff\1\126\1\62\1\uffff\1\62\1\uffff\2"+
-        "\62\2\uffff\2\62\3\uffff\1\62\2\uffff\1\62\2\155\1\57\1\uffff\2"+
-        "\57\2\uffff\2\62\1\uffff\7\62\26\uffff\4\62\3\uffff\2\62\1\uffff"+
-        "\2\62\1\uffff\2\62\2\uffff\3\62\1\u008a\3\uffff\1\62\2\uffff\1\62"+
-        "\3\uffff\1\155\2\uffff\1\62\1\u008e\5\62\1\u0094\20\62\1\uffff\1"+
-        "\u00a5\2\62\1\uffff\5\62\1\uffff\1\u00ad\3\62\1\u00b1\5\62\1\u00b7"+
-        "\1\u00b8\3\62\1\u00bc\1\uffff\4\62\1\u00c1\2\62\1\uffff\1\u00c4"+
-        "\1\u00c5\1\62\1\uffff\2\62\1\u00c9\1\62\1\u00cb\2\uffff\1\62\1\u00cd"+
-        "\1\62\1\uffff\2\62\1\u00d1\1\u00d2\1\uffff\1\u00d3\1\62\2\uffff"+
-        "\3\62\1\uffff\1\62\1\uffff\1\62\1\uffff\3\62\3\uffff\1\u00dd\1\u00de"+
-        "\2\62\1\u00e1\1\u00e2\2\62\1\u00e5\2\uffff\2\62\2\uffff\1\u00e8"+
-        "\1\62\1\uffff\1\u00ea\1\62\1\uffff\1\u00ec\1\uffff\1\u00ed\2\uffff";
+        "\1\uffff\5\63\1\75\1\77\1\101\2\uffff\1\106\1\uffff\1\111\1\113"+
+        "\1\115\1\117\1\60\3\63\1\uffff\1\130\1\63\3\uffff\3\63\2\uffff\2"+
+        "\63\3\uffff\1\63\2\uffff\1\63\2\160\1\60\1\uffff\2\60\2\uffff\2"+
+        "\63\1\uffff\7\63\26\uffff\5\63\3\uffff\2\63\3\uffff\4\63\2\uffff"+
+        "\3\63\1\u008f\3\uffff\1\63\2\uffff\1\63\3\uffff\1\160\2\uffff\1"+
+        "\63\1\u0093\5\63\1\u0099\22\63\1\uffff\1\u00ac\2\63\1\uffff\5\63"+
+        "\1\uffff\1\u00b4\4\63\1\u00b9\6\63\1\u00c0\1\u00c1\3\63\1\u00c5"+
+        "\1\uffff\4\63\1\u00ca\2\63\1\uffff\1\u00cd\1\u00ce\2\63\1\uffff"+
+        "\3\63\1\u00d4\1\63\1\u00d6\2\uffff\1\63\1\u00d8\1\63\1\uffff\2\63"+
+        "\1\u00dc\1\u00dd\1\uffff\1\u00de\1\63\2\uffff\5\63\1\uffff\1\63"+
+        "\1\uffff\1\63\1\uffff\3\63\3\uffff\1\u00ea\1\u00eb\1\u00ec\3\63"+
+        "\1\u00f0\1\u00f1\2\63\1\u00f4\3\uffff\3\63\2\uffff\1\u00f8\1\63"+
+        "\1\uffff\1\63\1\u00fb\1\63\1\uffff\1\u00fd\1\63\1\uffff\1\u00ff"+
+        "\1\uffff\1\63\1\uffff\2\63\1\u0103\1\uffff";
     static final String DFA15_eofS =
-        "\u00ee\uffff";
+        "\u0104\uffff";
     static final String DFA15_minS =
         "\1\0\1\156\1\143\1\145\1\141\1\157\2\75\1\46\2\uffff\1\52\1\uffff"+
-        "\4\75\1\174\1\162\1\141\1\156\1\uffff\1\72\1\156\1\uffff\1\141\1"+
-        "\uffff\1\171\1\157\2\uffff\1\151\1\60\3\uffff\1\145\2\uffff\1\166"+
-        "\2\56\1\101\1\uffff\2\0\2\uffff\1\163\1\145\1\uffff\1\147\1\141"+
-        "\1\162\1\146\1\162\1\151\1\156\26\uffff\2\162\1\146\1\154\3\uffff"+
-        "\1\156\1\162\1\uffff\2\142\1\uffff\1\160\1\151\2\uffff\1\170\1\156"+
+        "\4\75\1\174\1\162\1\141\1\156\1\uffff\1\72\1\156\3\uffff\1\141\1"+
+        "\171\1\157\2\uffff\1\151\1\60\3\uffff\1\145\2\uffff\1\166\2\56\1"+
+        "\101\1\uffff\2\0\2\uffff\1\163\1\145\1\uffff\1\147\1\141\1\162\1"+
+        "\146\1\162\1\151\1\156\26\uffff\1\162\1\164\1\162\1\146\1\154\3"+
+        "\uffff\1\156\1\162\3\uffff\2\142\1\160\1\151\2\uffff\1\170\1\156"+
         "\1\164\1\60\3\uffff\1\147\2\uffff\1\145\3\uffff\1\56\2\uffff\1\151"+
-        "\1\60\1\156\1\145\1\154\1\165\1\141\1\60\1\144\1\163\1\157\1\156"+
-        "\1\157\1\151\1\157\1\141\1\162\1\145\1\171\1\145\1\156\1\145\1\143"+
-        "\1\163\1\uffff\1\60\1\162\1\147\1\uffff\1\145\1\157\1\145\1\143"+
-        "\1\165\1\uffff\1\60\1\164\1\162\1\151\1\60\2\164\1\171\1\141\1\154"+
-        "\2\60\1\164\1\144\1\164\1\60\1\uffff\1\162\1\156\1\144\1\146\1\60"+
-        "\1\164\1\154\1\uffff\2\60\1\156\1\uffff\1\145\1\141\1\60\1\162\1"+
-        "\60\2\uffff\1\145\1\60\1\151\1\uffff\1\151\1\145\2\60\1\uffff\1"+
-        "\60\1\164\2\uffff\1\147\1\162\1\164\1\uffff\1\171\1\uffff\1\162"+
-        "\1\uffff\1\157\2\144\3\uffff\2\60\1\141\1\151\2\60\1\156\1\145\1"+
-        "\60\2\uffff\1\154\1\157\2\uffff\1\60\1\163\1\uffff\1\60\1\156\1"+
-        "\uffff\1\60\1\uffff\1\60\2\uffff";
+        "\1\60\1\156\1\145\1\154\1\165\1\141\1\60\1\144\1\163\1\157\1\145"+
+        "\1\156\1\157\1\164\1\151\1\157\1\141\1\162\1\145\1\171\1\145\1\156"+
+        "\1\145\1\143\1\163\1\uffff\1\60\1\162\1\147\1\uffff\1\145\1\157"+
+        "\1\145\1\143\1\165\1\uffff\1\60\1\164\1\162\1\156\1\151\1\60\1\162"+
+        "\2\164\1\171\1\141\1\154\2\60\1\164\1\144\1\164\1\60\1\uffff\1\162"+
+        "\1\156\1\144\1\146\1\60\1\164\1\154\1\uffff\2\60\1\144\1\156\1\uffff"+
+        "\1\165\1\145\1\141\1\60\1\162\1\60\2\uffff\1\145\1\60\1\151\1\uffff"+
+        "\1\151\1\145\2\60\1\uffff\1\60\1\164\2\uffff\1\163\1\147\1\143\1"+
+        "\162\1\164\1\uffff\1\171\1\uffff\1\162\1\uffff\1\157\2\144\3\uffff"+
+        "\3\60\1\164\1\141\1\151\2\60\1\156\1\145\1\60\3\uffff\1\151\1\154"+
+        "\1\157\2\uffff\1\60\1\163\1\uffff\1\157\1\60\1\156\1\uffff\1\60"+
+        "\1\156\1\uffff\1\60\1\uffff\1\163\1\uffff\1\145\1\164\1\60\1\uffff";
     static final String DFA15_maxS =
         "\1\uffff\1\163\1\164\1\145\2\157\1\76\1\75\1\46\2\uffff\1\57\1"+
-        "\uffff\4\75\1\174\1\162\1\141\1\163\1\uffff\1\72\1\162\1\uffff\1"+
-        "\151\1\uffff\1\171\1\157\2\uffff\1\165\1\151\3\uffff\1\145\2\uffff"+
-        "\1\166\1\170\1\71\1\172\1\uffff\2\uffff\2\uffff\1\163\1\145\1\uffff"+
-        "\1\172\1\141\1\162\1\146\1\162\1\151\1\156\26\uffff\2\162\1\146"+
-        "\1\154\3\uffff\1\156\1\162\1\uffff\1\142\1\172\1\uffff\1\160\1\151"+
-        "\2\uffff\1\170\1\156\1\164\1\172\3\uffff\1\147\2\uffff\1\145\3\uffff"+
-        "\1\71\2\uffff\1\151\1\172\1\156\1\145\1\154\1\165\1\141\1\172\1"+
-        "\144\1\163\1\157\1\156\1\157\1\151\1\157\1\141\1\162\1\145\1\171"+
-        "\1\145\1\156\1\145\1\143\1\163\1\uffff\1\172\1\162\1\147\1\uffff"+
-        "\1\145\1\157\1\145\1\143\1\165\1\uffff\1\172\1\164\1\162\1\151\1"+
-        "\172\2\164\1\171\1\141\1\154\2\172\1\164\1\144\1\164\1\172\1\uffff"+
-        "\1\162\1\156\1\144\1\146\1\172\1\164\1\154\1\uffff\2\172\1\156\1"+
-        "\uffff\1\145\1\141\1\172\1\162\1\172\2\uffff\1\145\1\172\1\151\1"+
-        "\uffff\1\151\1\145\2\172\1\uffff\1\172\1\164\2\uffff\1\147\1\162"+
-        "\1\164\1\uffff\1\171\1\uffff\1\162\1\uffff\1\157\2\144\3\uffff\2"+
-        "\172\1\141\1\151\2\172\1\156\1\145\1\172\2\uffff\1\154\1\157\2\uffff"+
-        "\1\172\1\163\1\uffff\1\172\1\156\1\uffff\1\172\1\uffff\1\172\2\uffff";
+        "\uffff\4\75\1\174\1\170\1\141\1\163\1\uffff\1\72\1\162\3\uffff\1"+
+        "\151\1\171\1\157\2\uffff\1\165\1\151\3\uffff\1\145\2\uffff\1\166"+
+        "\1\170\1\71\1\172\1\uffff\2\uffff\2\uffff\1\163\1\145\1\uffff\1"+
+        "\172\1\141\1\162\1\146\1\162\1\151\1\156\26\uffff\1\162\1\164\1"+
+        "\162\1\163\1\154\3\uffff\1\156\1\162\3\uffff\1\142\1\172\1\160\1"+
+        "\151\2\uffff\1\170\1\156\1\164\1\172\3\uffff\1\147\2\uffff\1\145"+
+        "\3\uffff\1\71\2\uffff\1\151\1\172\1\156\1\145\1\154\1\165\1\141"+
+        "\1\172\1\144\1\163\1\157\1\145\1\156\1\157\1\164\1\151\1\157\1\141"+
+        "\1\162\1\145\1\171\1\145\1\156\1\145\1\143\1\163\1\uffff\1\172\1"+
+        "\162\1\147\1\uffff\1\145\1\157\1\145\1\143\1\165\1\uffff\1\172\1"+
+        "\164\1\162\1\156\1\151\1\172\1\162\2\164\1\171\1\141\1\154\2\172"+
+        "\1\164\1\144\1\164\1\172\1\uffff\1\162\1\156\1\144\1\146\1\172\1"+
+        "\164\1\154\1\uffff\2\172\1\144\1\156\1\uffff\1\165\1\145\1\141\1"+
+        "\172\1\162\1\172\2\uffff\1\145\1\172\1\151\1\uffff\1\151\1\145\2"+
+        "\172\1\uffff\1\172\1\164\2\uffff\1\163\1\147\1\143\1\162\1\164\1"+
+        "\uffff\1\171\1\uffff\1\162\1\uffff\1\157\2\144\3\uffff\3\172\1\164"+
+        "\1\141\1\151\2\172\1\156\1\145\1\172\3\uffff\1\151\1\154\1\157\2"+
+        "\uffff\1\172\1\163\1\uffff\1\157\1\172\1\156\1\uffff\1\172\1\156"+
+        "\1\uffff\1\172\1\uffff\1\163\1\uffff\1\145\1\164\1\172\1\uffff";
     static final String DFA15_acceptS =
-        "\11\uffff\1\11\1\12\1\uffff\1\14\10\uffff\1\34\2\uffff\1\37\1\uffff"+
-        "\1\41\2\uffff\1\47\1\50\2\uffff\1\55\1\56\1\57\1\uffff\1\63\1\64"+
-        "\4\uffff\1\76\2\uffff\1\103\1\104\2\uffff\1\76\7\uffff\1\33\1\71"+
-        "\1\6\1\17\1\7\1\25\1\10\1\11\1\12\1\101\1\102\1\13\1\14\1\32\1\15"+
-        "\1\16\1\31\1\20\1\22\1\21\1\23\1\24\4\uffff\1\34\1\35\1\61\2\uffff"+
-        "\1\37\2\uffff\1\41\2\uffff\1\47\1\50\4\uffff\1\55\1\56\1\57\1\uffff"+
-        "\1\63\1\64\1\uffff\1\73\1\77\1\75\1\uffff\1\100\1\103\30\uffff\1"+
-        "\74\3\uffff\1\42\5\uffff\1\4\20\uffff\1\60\7\uffff\1\44\3\uffff"+
-        "\1\30\5\uffff\1\67\1\43\3\uffff\1\52\4\uffff\1\53\2\uffff\1\5\1"+
-        "\26\3\uffff\1\46\1\uffff\1\62\1\uffff\1\51\3\uffff\1\2\1\70\1\54"+
-        "\11\uffff\1\3\1\27\2\uffff\1\40\1\45\2\uffff\1\1\2\uffff\1\65\1"+
-        "\uffff\1\72\1\uffff\1\66\1\36";
+        "\11\uffff\1\11\1\12\1\uffff\1\14\10\uffff\1\34\2\uffff\1\37\1\41"+
+        "\1\44\3\uffff\1\53\1\54\2\uffff\1\61\1\62\1\63\1\uffff\1\66\1\67"+
+        "\4\uffff\1\101\2\uffff\1\106\1\107\2\uffff\1\101\7\uffff\1\33\1"+
+        "\74\1\6\1\17\1\7\1\25\1\10\1\11\1\12\1\104\1\105\1\13\1\14\1\32"+
+        "\1\15\1\16\1\31\1\20\1\22\1\21\1\23\1\24\5\uffff\1\34\1\35\1\43"+
+        "\2\uffff\1\37\1\41\1\44\4\uffff\1\53\1\54\4\uffff\1\61\1\62\1\63"+
+        "\1\uffff\1\66\1\67\1\uffff\1\76\1\102\1\100\1\uffff\1\103\1\106"+
+        "\32\uffff\1\77\3\uffff\1\46\5\uffff\1\4\22\uffff\1\64\7\uffff\1"+
+        "\50\4\uffff\1\30\6\uffff\1\72\1\47\3\uffff\1\56\4\uffff\1\57\2\uffff"+
+        "\1\5\1\26\5\uffff\1\52\1\uffff\1\65\1\uffff\1\55\3\uffff\1\2\1\73"+
+        "\1\60\13\uffff\1\3\1\42\1\27\3\uffff\1\45\1\51\2\uffff\1\1\3\uffff"+
+        "\1\70\2\uffff\1\75\1\uffff\1\71\1\uffff\1\36\3\uffff\1\40";
     static final String DFA15_specialS =
-        "\1\1\53\uffff\1\0\1\2\u00c0\uffff}>";
+        "\1\1\54\uffff\1\0\1\2\u00d5\uffff}>";
     static final String[] DFA15_transitionS = {
-            "\11\57\2\56\2\57\1\56\22\57\1\56\1\7\1\54\1\30\1\57\1\14\1"+
-            "\10\1\55\1\45\1\46\1\12\1\15\1\43\1\6\1\25\1\13\1\50\11\51\1"+
-            "\26\1\32\1\20\1\16\1\17\1\57\1\11\32\53\1\35\1\57\1\36\1\52"+
-            "\1\53\1\57\1\27\1\40\1\5\1\3\1\22\1\37\2\53\1\24\2\53\1\31\2"+
-            "\53\1\47\1\34\1\53\1\44\1\2\1\33\1\1\1\4\1\23\3\53\1\41\1\21"+
-            "\1\42\uff82\57",
-            "\1\60\4\uffff\1\61",
-            "\1\64\5\uffff\1\63\12\uffff\1\65",
-            "\1\66",
-            "\1\67\15\uffff\1\70",
-            "\1\71",
-            "\1\72\1\73",
-            "\1\75",
-            "\1\77",
+            "\11\60\2\57\2\60\1\57\22\60\1\57\1\7\1\55\1\30\1\32\1\14\1"+
+            "\10\1\56\1\46\1\47\1\12\1\15\1\44\1\6\1\25\1\13\1\51\11\52\1"+
+            "\26\1\31\1\20\1\16\1\17\1\60\1\11\32\54\1\36\1\60\1\37\1\53"+
+            "\1\54\1\60\1\27\1\41\1\5\1\3\1\22\1\40\2\54\1\24\2\54\1\33\2"+
+            "\54\1\50\1\35\1\54\1\45\1\2\1\34\1\1\1\4\1\23\3\54\1\42\1\21"+
+            "\1\43\uff82\60",
+            "\1\61\4\uffff\1\62",
+            "\1\65\5\uffff\1\64\12\uffff\1\66",
+            "\1\67",
+            "\1\70\15\uffff\1\71",
+            "\1\72",
+            "\1\73\1\74",
+            "\1\76",
+            "\1\100",
             "",
             "",
-            "\1\103\4\uffff\1\104",
+            "\1\104\4\uffff\1\105",
             "",
-            "\1\107",
-            "\1\111",
-            "\1\113",
-            "\1\115",
-            "\1\117",
+            "\1\110",
+            "\1\112",
+            "\1\114",
+            "\1\116",
             "\1\120",
-            "\1\121",
-            "\1\122\4\uffff\1\123",
+            "\1\121\5\uffff\1\122",
+            "\1\123",
+            "\1\124\4\uffff\1\125",
             "",
-            "\1\125",
-            "\1\127\3\uffff\1\130",
-            "",
-            "\1\133\7\uffff\1\132",
-            "",
-            "\1\135",
-            "\1\136",
-            "",
-            "",
-            "\1\141\13\uffff\1\142",
-            "\2\144\67\uffff\1\143",
+            "\1\127",
+            "\1\131\3\uffff\1\132",
             "",
             "",
             "",
-            "\1\150",
+            "\1\137\7\uffff\1\136",
+            "\1\140",
+            "\1\141",
+            "",
+            "",
+            "\1\144\13\uffff\1\145",
+            "\2\147\67\uffff\1\146",
+            "",
             "",
             "",
             "\1\153",
-            "\1\156\1\uffff\12\157\76\uffff\1\154",
-            "\1\156\1\uffff\12\157",
-            "\32\62\4\uffff\1\62\1\uffff\32\62",
-            "",
-            "\0\160",
-            "\0\160",
             "",
             "",
-            "\1\162",
-            "\1\163",
+            "\1\156",
+            "\1\161\1\uffff\12\162\76\uffff\1\157",
+            "\1\161\1\uffff\12\162",
+            "\32\63\4\uffff\1\63\1\uffff\32\63",
             "",
-            "\1\164\22\uffff\1\165",
+            "\0\163",
+            "\0\163",
+            "",
+            "",
+            "\1\165",
             "\1\166",
-            "\1\167",
-            "\1\170",
+            "",
+            "\1\167\22\uffff\1\170",
             "\1\171",
             "\1\172",
             "\1\173",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
             "\1\174",
             "\1\175",
             "\1\176",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\177",
-            "",
-            "",
-            "",
             "\1\u0080",
             "\1\u0081",
+            "\1\u0082\14\uffff\1\u0083",
+            "\1\u0084",
             "",
-            "\1\u0082",
-            "\1\u0083\27\uffff\1\u0084",
+            "",
             "",
             "\1\u0085",
             "\1\u0086",
             "",
             "",
+            "",
             "\1\u0087",
-            "\1\u0088",
-            "\1\u0089",
-            "\2\144\10\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
-            "",
-            "",
-            "",
+            "\1\u0088\27\uffff\1\u0089",
+            "\1\u008a",
             "\1\u008b",
             "",
             "",
             "\1\u008c",
-            "",
-            "",
-            "",
-            "\1\156\1\uffff\12\157",
-            "",
-            "",
             "\1\u008d",
-            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
-            "\1\u008f",
+            "\1\u008e",
+            "\2\147\10\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+            "",
+            "",
+            "",
             "\1\u0090",
+            "",
+            "",
             "\1\u0091",
+            "",
+            "",
+            "",
+            "\1\161\1\uffff\12\162",
+            "",
+            "",
             "\1\u0092",
-            "\1\u0093",
-            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
+            "\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+            "\1\u0094",
             "\1\u0095",
             "\1\u0096",
             "\1\u0097",
             "\1\u0098",
-            "\1\u0099",
+            "\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
             "\1\u009a",
             "\1\u009b",
             "\1\u009c",
@@ -2662,105 +2750,129 @@ public class InternalESyntaxLexer extends Lexer {
             "\1\u00a2",
             "\1\u00a3",
             "\1\u00a4",
-            "",
-            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
+            "\1\u00a5",
             "\1\u00a6",
             "\1\u00a7",
-            "",
             "\1\u00a8",
             "\1\u00a9",
             "\1\u00aa",
             "\1\u00ab",
-            "\1\u00ac",
             "",
-            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
+            "\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+            "\1\u00ad",
             "\1\u00ae",
+            "",
             "\1\u00af",
             "\1\u00b0",
-            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
+            "\1\u00b1",
             "\1\u00b2",
             "\1\u00b3",
-            "\1\u00b4",
+            "",
+            "\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
             "\1\u00b5",
             "\1\u00b6",
-            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
-            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
-            "\1\u00b9",
+            "\1\u00b7",
+            "\1\u00b8",
+            "\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
             "\1\u00ba",
             "\1\u00bb",
-            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
-            "",
+            "\1\u00bc",
             "\1\u00bd",
             "\1\u00be",
             "\1\u00bf",
-            "\1\u00c0",
-            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
+            "\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+            "\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
             "\1\u00c2",
             "\1\u00c3",
+            "\1\u00c4",
+            "\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
             "",
-            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
-            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
             "\1\u00c6",
-            "",
             "\1\u00c7",
             "\1\u00c8",
-            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
-            "\1\u00ca",
-            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
-            "",
-            "",
+            "\1\u00c9",
+            "\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+            "\1\u00cb",
             "\1\u00cc",
-            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
-            "\1\u00ce",
             "",
+            "\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+            "\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
             "\1\u00cf",
             "\1\u00d0",
-            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
-            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
             "",
-            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
-            "\1\u00d4",
-            "",
-            "",
+            "\1\u00d1",
+            "\1\u00d2",
+            "\1\u00d3",
+            "\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
             "\1\u00d5",
-            "\1\u00d6",
+            "\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+            "",
+            "",
             "\1\u00d7",
-            "",
-            "\1\u00d8",
-            "",
+            "\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
             "\1\u00d9",
             "",
             "\1\u00da",
             "\1\u00db",
-            "\1\u00dc",
+            "\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+            "\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
             "",
-            "",
-            "",
-            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
-            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
+            "\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
             "\1\u00df",
+            "",
+            "",
             "\1\u00e0",
-            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
-            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
+            "\1\u00e1",
+            "\1\u00e2",
             "\1\u00e3",
             "\1\u00e4",
-            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
             "",
+            "\1\u00e5",
             "",
             "\1\u00e6",
+            "",
             "\1\u00e7",
-            "",
-            "",
-            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
+            "\1\u00e8",
             "\1\u00e9",
             "",
-            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
-            "\1\u00eb",
             "",
-            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
             "",
-            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
+            "\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+            "\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+            "\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+            "\1\u00ed",
+            "\1\u00ee",
+            "\1\u00ef",
+            "\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+            "\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+            "\1\u00f2",
+            "\1\u00f3",
+            "\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
             "",
+            "",
+            "",
+            "\1\u00f5",
+            "\1\u00f6",
+            "\1\u00f7",
+            "",
+            "",
+            "\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+            "\1\u00f9",
+            "",
+            "\1\u00fa",
+            "\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+            "\1\u00fc",
+            "",
+            "\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+            "\1\u00fe",
+            "",
+            "\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+            "",
+            "\1\u0100",
+            "",
+            "\1\u0101",
+            "\1\u0102",
+            "\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
             ""
     };
 
@@ -2794,19 +2906,19 @@ public class InternalESyntaxLexer extends Lexer {
             this.transition = DFA15_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | RULE_HEXINT | RULE_BINARY | RULE_REAL | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | RULE_HEXINT | RULE_BINARY | RULE_REAL | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA15_44 = input.LA(1);
+                        int LA15_45 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA15_44>='\u0000' && LA15_44<='\uFFFF')) ) {s = 112;}
+                        if ( ((LA15_45>='\u0000' && LA15_45<='\uFFFF')) ) {s = 115;}
 
-                        else s = 47;
+                        else s = 48;
 
                         if ( s>=0 ) return s;
                         break;
@@ -2862,61 +2974,63 @@ public class InternalESyntaxLexer extends Lexer {
 
                         else if ( (LA15_0=='#') ) {s = 24;}
 
-                        else if ( (LA15_0=='l') ) {s = 25;}
+                        else if ( (LA15_0==';') ) {s = 25;}
 
-                        else if ( (LA15_0==';') ) {s = 26;}
+                        else if ( (LA15_0=='$') ) {s = 26;}
 
-                        else if ( (LA15_0=='t') ) {s = 27;}
+                        else if ( (LA15_0=='l') ) {s = 27;}
 
-                        else if ( (LA15_0=='p') ) {s = 28;}
+                        else if ( (LA15_0=='t') ) {s = 28;}
 
-                        else if ( (LA15_0=='[') ) {s = 29;}
+                        else if ( (LA15_0=='p') ) {s = 29;}
 
-                        else if ( (LA15_0==']') ) {s = 30;}
+                        else if ( (LA15_0=='[') ) {s = 30;}
 
-                        else if ( (LA15_0=='f') ) {s = 31;}
+                        else if ( (LA15_0==']') ) {s = 31;}
 
-                        else if ( (LA15_0=='b') ) {s = 32;}
+                        else if ( (LA15_0=='f') ) {s = 32;}
 
-                        else if ( (LA15_0=='{') ) {s = 33;}
+                        else if ( (LA15_0=='b') ) {s = 33;}
 
-                        else if ( (LA15_0=='}') ) {s = 34;}
+                        else if ( (LA15_0=='{') ) {s = 34;}
 
-                        else if ( (LA15_0==',') ) {s = 35;}
+                        else if ( (LA15_0=='}') ) {s = 35;}
 
-                        else if ( (LA15_0=='r') ) {s = 36;}
+                        else if ( (LA15_0==',') ) {s = 36;}
 
-                        else if ( (LA15_0=='(') ) {s = 37;}
+                        else if ( (LA15_0=='r') ) {s = 37;}
 
-                        else if ( (LA15_0==')') ) {s = 38;}
+                        else if ( (LA15_0=='(') ) {s = 38;}
 
-                        else if ( (LA15_0=='o') ) {s = 39;}
+                        else if ( (LA15_0==')') ) {s = 39;}
 
-                        else if ( (LA15_0=='0') ) {s = 40;}
+                        else if ( (LA15_0=='o') ) {s = 40;}
 
-                        else if ( ((LA15_0>='1' && LA15_0<='9')) ) {s = 41;}
+                        else if ( (LA15_0=='0') ) {s = 41;}
 
-                        else if ( (LA15_0=='^') ) {s = 42;}
+                        else if ( ((LA15_0>='1' && LA15_0<='9')) ) {s = 42;}
 
-                        else if ( ((LA15_0>='A' && LA15_0<='Z')||LA15_0=='_'||(LA15_0>='g' && LA15_0<='h')||(LA15_0>='j' && LA15_0<='k')||(LA15_0>='m' && LA15_0<='n')||LA15_0=='q'||(LA15_0>='x' && LA15_0<='z')) ) {s = 43;}
+                        else if ( (LA15_0=='^') ) {s = 43;}
 
-                        else if ( (LA15_0=='\"') ) {s = 44;}
+                        else if ( ((LA15_0>='A' && LA15_0<='Z')||LA15_0=='_'||(LA15_0>='g' && LA15_0<='h')||(LA15_0>='j' && LA15_0<='k')||(LA15_0>='m' && LA15_0<='n')||LA15_0=='q'||(LA15_0>='x' && LA15_0<='z')) ) {s = 44;}
 
-                        else if ( (LA15_0=='\'') ) {s = 45;}
+                        else if ( (LA15_0=='\"') ) {s = 45;}
 
-                        else if ( ((LA15_0>='\t' && LA15_0<='\n')||LA15_0=='\r'||LA15_0==' ') ) {s = 46;}
+                        else if ( (LA15_0=='\'') ) {s = 46;}
 
-                        else if ( ((LA15_0>='\u0000' && LA15_0<='\b')||(LA15_0>='\u000B' && LA15_0<='\f')||(LA15_0>='\u000E' && LA15_0<='\u001F')||LA15_0=='$'||LA15_0=='?'||LA15_0=='\\'||LA15_0=='`'||(LA15_0>='~' && LA15_0<='\uFFFF')) ) {s = 47;}
+                        else if ( ((LA15_0>='\t' && LA15_0<='\n')||LA15_0=='\r'||LA15_0==' ') ) {s = 47;}
+
+                        else if ( ((LA15_0>='\u0000' && LA15_0<='\b')||(LA15_0>='\u000B' && LA15_0<='\f')||(LA15_0>='\u000E' && LA15_0<='\u001F')||LA15_0=='?'||LA15_0=='\\'||LA15_0=='`'||(LA15_0>='~' && LA15_0<='\uFFFF')) ) {s = 48;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 2 : 
-                        int LA15_45 = input.LA(1);
+                        int LA15_46 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA15_45>='\u0000' && LA15_45<='\uFFFF')) ) {s = 112;}
+                        if ( ((LA15_46>='\u0000' && LA15_46<='\uFFFF')) ) {s = 115;}
 
-                        else s = 47;
+                        else s = 48;
 
                         if ( s>=0 ) return s;
                         break;

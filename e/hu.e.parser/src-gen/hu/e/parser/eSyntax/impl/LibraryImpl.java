@@ -8,15 +8,12 @@ import hu.e.parser.eSyntax.LibraryItem;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -29,7 +26,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.e.parser.eSyntax.impl.LibraryImpl#getName <em>Name</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.impl.LibraryImpl#getUse <em>Use</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.impl.LibraryImpl#getItems <em>Items</em>}</li>
  * </ul>
@@ -39,26 +35,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class LibraryImpl extends CompilationUnitImpl implements Library
 {
-  /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getUse() <em>Use</em>}' attribute list.
    * <!-- begin-user-doc -->
@@ -98,29 +74,6 @@ public class LibraryImpl extends CompilationUnitImpl implements Library
   protected EClass eStaticClass()
   {
     return ESyntaxPackage.Literals.LIBRARY;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.LIBRARY__NAME, oldName, name));
   }
 
   /**
@@ -177,8 +130,6 @@ public class LibraryImpl extends CompilationUnitImpl implements Library
   {
     switch (featureID)
     {
-      case ESyntaxPackage.LIBRARY__NAME:
-        return getName();
       case ESyntaxPackage.LIBRARY__USE:
         return getUse();
       case ESyntaxPackage.LIBRARY__ITEMS:
@@ -198,9 +149,6 @@ public class LibraryImpl extends CompilationUnitImpl implements Library
   {
     switch (featureID)
     {
-      case ESyntaxPackage.LIBRARY__NAME:
-        setName((String)newValue);
-        return;
       case ESyntaxPackage.LIBRARY__USE:
         getUse().clear();
         getUse().addAll((Collection<? extends String>)newValue);
@@ -223,9 +171,6 @@ public class LibraryImpl extends CompilationUnitImpl implements Library
   {
     switch (featureID)
     {
-      case ESyntaxPackage.LIBRARY__NAME:
-        setName(NAME_EDEFAULT);
-        return;
       case ESyntaxPackage.LIBRARY__USE:
         getUse().clear();
         return;
@@ -246,8 +191,6 @@ public class LibraryImpl extends CompilationUnitImpl implements Library
   {
     switch (featureID)
     {
-      case ESyntaxPackage.LIBRARY__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case ESyntaxPackage.LIBRARY__USE:
         return use != null && !use.isEmpty();
       case ESyntaxPackage.LIBRARY__ITEMS:
@@ -267,9 +210,7 @@ public class LibraryImpl extends CompilationUnitImpl implements Library
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(", use: ");
+    result.append(" (use: ");
     result.append(use);
     result.append(')');
     return result.toString();

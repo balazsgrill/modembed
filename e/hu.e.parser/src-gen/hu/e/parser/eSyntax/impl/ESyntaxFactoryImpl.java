@@ -68,6 +68,10 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
       case ESyntaxPackage.COMPILATION_UNIT: return createCompilationUnit();
       case ESyntaxPackage.ANNOTATION_DEFINITION: return createAnnotationDefinition();
       case ESyntaxPackage.ANNOTATION: return createAnnotation();
+      case ESyntaxPackage.INSTRUCTION_SET_NOTATION: return createInstructionSetNotation();
+      case ESyntaxPackage.INSTRUCTION_NOTATION: return createInstructionNotation();
+      case ESyntaxPackage.INSTRUCTION_PARAMETER_NOTATION: return createInstructionParameterNotation();
+      case ESyntaxPackage.INSCTRUCTION_SECTION_NOTATION: return createInsctructionSectionNotation();
       case ESyntaxPackage.LIBRARY: return createLibrary();
       case ESyntaxPackage.LIBRARY_ITEM: return createLibraryItem();
       case ESyntaxPackage.TYPE: return createType();
@@ -215,6 +219,50 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
   {
     AnnotationImpl annotation = new AnnotationImpl();
     return annotation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InstructionSetNotation createInstructionSetNotation()
+  {
+    InstructionSetNotationImpl instructionSetNotation = new InstructionSetNotationImpl();
+    return instructionSetNotation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InstructionNotation createInstructionNotation()
+  {
+    InstructionNotationImpl instructionNotation = new InstructionNotationImpl();
+    return instructionNotation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InstructionParameterNotation createInstructionParameterNotation()
+  {
+    InstructionParameterNotationImpl instructionParameterNotation = new InstructionParameterNotationImpl();
+    return instructionParameterNotation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InsctructionSectionNotation createInsctructionSectionNotation()
+  {
+    InsctructionSectionNotationImpl insctructionSectionNotation = new InsctructionSectionNotationImpl();
+    return insctructionSectionNotation;
   }
 
   /**

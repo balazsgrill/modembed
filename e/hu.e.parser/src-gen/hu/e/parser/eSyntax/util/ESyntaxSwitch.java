@@ -96,6 +96,35 @@ public class ESyntaxSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case ESyntaxPackage.INSTRUCTION_SET_NOTATION:
+      {
+        InstructionSetNotation instructionSetNotation = (InstructionSetNotation)theEObject;
+        T result = caseInstructionSetNotation(instructionSetNotation);
+        if (result == null) result = caseCompilationUnit(instructionSetNotation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ESyntaxPackage.INSTRUCTION_NOTATION:
+      {
+        InstructionNotation instructionNotation = (InstructionNotation)theEObject;
+        T result = caseInstructionNotation(instructionNotation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ESyntaxPackage.INSTRUCTION_PARAMETER_NOTATION:
+      {
+        InstructionParameterNotation instructionParameterNotation = (InstructionParameterNotation)theEObject;
+        T result = caseInstructionParameterNotation(instructionParameterNotation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ESyntaxPackage.INSCTRUCTION_SECTION_NOTATION:
+      {
+        InsctructionSectionNotation insctructionSectionNotation = (InsctructionSectionNotation)theEObject;
+        T result = caseInsctructionSectionNotation(insctructionSectionNotation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case ESyntaxPackage.LIBRARY:
       {
         Library library = (Library)theEObject;
@@ -516,6 +545,70 @@ public class ESyntaxSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseAnnotation(Annotation object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Instruction Set Notation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Instruction Set Notation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInstructionSetNotation(InstructionSetNotation object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Instruction Notation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Instruction Notation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInstructionNotation(InstructionNotation object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Instruction Parameter Notation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Instruction Parameter Notation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInstructionParameterNotation(InstructionParameterNotation object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Insctruction Section Notation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Insctruction Section Notation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInsctructionSectionNotation(InsctructionSectionNotation object)
   {
     return null;
   }

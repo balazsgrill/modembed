@@ -37,7 +37,9 @@ public class ESyntaxParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
+					put(grammarAccess.getCompilationUnitAccess().getAlternatives(), "rule__CompilationUnit__Alternatives");
 					put(grammarAccess.getLITERALAccess().getAlternatives(), "rule__LITERAL__Alternatives");
+					put(grammarAccess.getInsctructionSectionNotationAccess().getAlternatives_0(), "rule__InsctructionSectionNotation__Alternatives_0");
 					put(grammarAccess.getLibraryItemAccess().getAlternatives(), "rule__LibraryItem__Alternatives");
 					put(grammarAccess.getTypeDefAccess().getAlternatives(), "rule__TypeDef__Alternatives");
 					put(grammarAccess.getDataTypeDefAccess().getAlternatives(), "rule__DataTypeDef__Alternatives");
@@ -60,6 +62,14 @@ public class ESyntaxParser extends AbstractContentAssistParser {
 					put(grammarAccess.getQualifiedNameAccess().getGroup_0(), "rule__QualifiedName__Group_0__0");
 					put(grammarAccess.getAnnotationDefinitionAccess().getGroup(), "rule__AnnotationDefinition__Group__0");
 					put(grammarAccess.getAnnotationAccess().getGroup(), "rule__Annotation__Group__0");
+					put(grammarAccess.getInstructionSetNotationAccess().getGroup(), "rule__InstructionSetNotation__Group__0");
+					put(grammarAccess.getInstructionSetNotationAccess().getGroup_2(), "rule__InstructionSetNotation__Group_2__0");
+					put(grammarAccess.getInstructionNotationAccess().getGroup(), "rule__InstructionNotation__Group__0");
+					put(grammarAccess.getInstructionParameterNotationAccess().getGroup(), "rule__InstructionParameterNotation__Group__0");
+					put(grammarAccess.getInstructionParameterNotationAccess().getGroup_1(), "rule__InstructionParameterNotation__Group_1__0");
+					put(grammarAccess.getInsctructionSectionNotationAccess().getGroup(), "rule__InsctructionSectionNotation__Group__0");
+					put(grammarAccess.getInsctructionSectionNotationAccess().getGroup_0_0(), "rule__InsctructionSectionNotation__Group_0_0__0");
+					put(grammarAccess.getInsctructionSectionNotationAccess().getGroup_3(), "rule__InsctructionSectionNotation__Group_3__0");
 					put(grammarAccess.getLibraryAccess().getGroup(), "rule__Library__Group__0");
 					put(grammarAccess.getLibraryAccess().getGroup_3(), "rule__Library__Group_3__0");
 					put(grammarAccess.getLibraryItemAccess().getGroup_2(), "rule__LibraryItem__Group_2__0");
@@ -121,6 +131,18 @@ public class ESyntaxParser extends AbstractContentAssistParser {
 					put(grammarAccess.getXParenthesizedExpressionAccess().getGroup(), "rule__XParenthesizedExpression__Group__0");
 					put(grammarAccess.getAnnotationDefinitionAccess().getNameAssignment_1(), "rule__AnnotationDefinition__NameAssignment_1");
 					put(grammarAccess.getAnnotationAccess().getDefinitionAssignment_1(), "rule__Annotation__DefinitionAssignment_1");
+					put(grammarAccess.getInstructionSetNotationAccess().getNameAssignment_1(), "rule__InstructionSetNotation__NameAssignment_1");
+					put(grammarAccess.getInstructionSetNotationAccess().getExtendsAssignment_2_1(), "rule__InstructionSetNotation__ExtendsAssignment_2_1");
+					put(grammarAccess.getInstructionSetNotationAccess().getInstructionsAssignment_4(), "rule__InstructionSetNotation__InstructionsAssignment_4");
+					put(grammarAccess.getInstructionNotationAccess().getNameAssignment_0(), "rule__InstructionNotation__NameAssignment_0");
+					put(grammarAccess.getInstructionNotationAccess().getParamsAssignment_1(), "rule__InstructionNotation__ParamsAssignment_1");
+					put(grammarAccess.getInstructionNotationAccess().getSectionsAssignment_3(), "rule__InstructionNotation__SectionsAssignment_3");
+					put(grammarAccess.getInstructionParameterNotationAccess().getNameAssignment_0(), "rule__InstructionParameterNotation__NameAssignment_0");
+					put(grammarAccess.getInstructionParameterNotationAccess().getDefaultAssignment_1_1(), "rule__InstructionParameterNotation__DefaultAssignment_1_1");
+					put(grammarAccess.getInsctructionSectionNotationAccess().getParamAssignment_0_0_1(), "rule__InsctructionSectionNotation__ParamAssignment_0_0_1");
+					put(grammarAccess.getInsctructionSectionNotationAccess().getValueAssignment_0_1(), "rule__InsctructionSectionNotation__ValueAssignment_0_1");
+					put(grammarAccess.getInsctructionSectionNotationAccess().getSizeAssignment_2(), "rule__InsctructionSectionNotation__SizeAssignment_2");
+					put(grammarAccess.getInsctructionSectionNotationAccess().getShiftAssignment_3_1(), "rule__InsctructionSectionNotation__ShiftAssignment_3_1");
 					put(grammarAccess.getLibraryAccess().getNameAssignment_1(), "rule__Library__NameAssignment_1");
 					put(grammarAccess.getLibraryAccess().getUseAssignment_3_1(), "rule__Library__UseAssignment_3_1");
 					put(grammarAccess.getLibraryAccess().getItemsAssignment_4(), "rule__Library__ItemsAssignment_4");

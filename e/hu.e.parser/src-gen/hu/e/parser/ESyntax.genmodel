@@ -53,13 +53,33 @@
       <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//OpSingleAssign/ASSIGNADD"/>
       <genEnumLiterals ecoreEnumLiteral="ESyntax.ecore#//OpSingleAssign/ASSIGNSUBTRACT"/>
     </genEnums>
-    <genClasses ecoreClass="ESyntax.ecore#//CompilationUnit"/>
+    <genClasses ecoreClass="ESyntax.ecore#//CompilationUnit">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//CompilationUnit/name"/>
+    </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//AnnotationDefinition"/>
     <genClasses ecoreClass="ESyntax.ecore#//Annotation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//Annotation/definition"/>
     </genClasses>
+    <genClasses ecoreClass="ESyntax.ecore#//InstructionSetNotation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//InstructionSetNotation/extends"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//InstructionSetNotation/instructions"/>
+    </genClasses>
+    <genClasses ecoreClass="ESyntax.ecore#//InstructionNotation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//InstructionNotation/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//InstructionNotation/params"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//InstructionNotation/sections"/>
+    </genClasses>
+    <genClasses ecoreClass="ESyntax.ecore#//InstructionParameterNotation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//InstructionParameterNotation/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//InstructionParameterNotation/default"/>
+    </genClasses>
+    <genClasses ecoreClass="ESyntax.ecore#//InsctructionSectionNotation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//InsctructionSectionNotation/param"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//InsctructionSectionNotation/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//InsctructionSectionNotation/size"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//InsctructionSectionNotation/shift"/>
+    </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//Library">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//Library/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//Library/use"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//Library/items"/>
     </genClasses>
