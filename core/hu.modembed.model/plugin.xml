@@ -29,6 +29,13 @@
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
+            uri="http://modembed.hu/core/workflow"
+            class="hu.modembed.model.core.workflow.WorkflowPackage"
+            genModel="model/modembedmodel.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
             uri="http://modembed.hu/network"
             class="hu.modembed.model.network.NetworkPackage"
             genModel="model/modembedmodel.genmodel"/>

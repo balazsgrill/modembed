@@ -20,6 +20,8 @@ import hu.modembed.model.core.assembler.code.CodePackage;
 import hu.modembed.model.core.assembler.code.impl.CodePackageImpl;
 import hu.modembed.model.core.assembler.impl.AssemblerPackageImpl;
 import hu.modembed.model.core.impl.CorePackageImpl;
+import hu.modembed.model.core.workflow.WorkflowPackage;
+import hu.modembed.model.core.workflow.impl.WorkflowPackageImpl;
 import hu.modembed.model.emodel.EmodelPackage;
 import hu.modembed.model.emodel.expressions.ExpressionsPackage;
 import hu.modembed.model.emodel.expressions.impl.ExpressionsPackageImpl;
@@ -125,6 +127,7 @@ public class NetworkPackageImpl extends EPackageImpl implements NetworkPackage {
 		CorePackageImpl theCorePackage = (CorePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI) instanceof CorePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI) : CorePackage.eINSTANCE);
 		AssemblerPackageImpl theAssemblerPackage = (AssemblerPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AssemblerPackage.eNS_URI) instanceof AssemblerPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AssemblerPackage.eNS_URI) : AssemblerPackage.eINSTANCE);
 		CodePackageImpl theCodePackage = (CodePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CodePackage.eNS_URI) instanceof CodePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CodePackage.eNS_URI) : CodePackage.eINSTANCE);
+		WorkflowPackageImpl theWorkflowPackage = (WorkflowPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(WorkflowPackage.eNS_URI) instanceof WorkflowPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(WorkflowPackage.eNS_URI) : WorkflowPackage.eINSTANCE);
 		Rs232PackageImpl theRs232Package = (Rs232PackageImpl)(EPackage.Registry.INSTANCE.getEPackage(Rs232Package.eNS_URI) instanceof Rs232PackageImpl ? EPackage.Registry.INSTANCE.getEPackage(Rs232Package.eNS_URI) : Rs232Package.eINSTANCE);
 		CommPackageImpl theCommPackage = (CommPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CommPackage.eNS_URI) instanceof CommPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CommPackage.eNS_URI) : CommPackage.eINSTANCE);
 		hu.modembed.model.comm.rs232.impl.Rs232PackageImpl theRs232Package_1 = (hu.modembed.model.comm.rs232.impl.Rs232PackageImpl)(EPackage.Registry.INSTANCE.getEPackage(hu.modembed.model.comm.rs232.Rs232Package.eNS_URI) instanceof hu.modembed.model.comm.rs232.impl.Rs232PackageImpl ? EPackage.Registry.INSTANCE.getEPackage(hu.modembed.model.comm.rs232.Rs232Package.eNS_URI) : hu.modembed.model.comm.rs232.Rs232Package.eINSTANCE);
@@ -142,6 +145,7 @@ public class NetworkPackageImpl extends EPackageImpl implements NetworkPackage {
 		theCorePackage.createPackageContents();
 		theAssemblerPackage.createPackageContents();
 		theCodePackage.createPackageContents();
+		theWorkflowPackage.createPackageContents();
 		theRs232Package.createPackageContents();
 		theCommPackage.createPackageContents();
 		theRs232Package_1.createPackageContents();
@@ -159,6 +163,7 @@ public class NetworkPackageImpl extends EPackageImpl implements NetworkPackage {
 		theCorePackage.initializePackageContents();
 		theAssemblerPackage.initializePackageContents();
 		theCodePackage.initializePackageContents();
+		theWorkflowPackage.initializePackageContents();
 		theRs232Package.initializePackageContents();
 		theCommPackage.initializePackageContents();
 		theRs232Package_1.initializePackageContents();

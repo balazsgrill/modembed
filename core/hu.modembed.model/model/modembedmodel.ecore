@@ -61,6 +61,23 @@
         </eClassifiers>
       </eSubpackages>
     </eSubpackages>
+    <eSubpackages name="workflow" nsURI="http://modembed.hu/core/workflow" nsPrefix="workflow">
+      <eClassifiers xsi:type="ecore:EClass" name="Workflow" eSuperTypes="#//core/RootElement">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="tasks" upperBound="-1"
+            eType="#//core/workflow/WorkflowTask" containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="WorkflowTask" abstract="true" eSuperTypes="#//core/MODembedElement"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Task" eSuperTypes="#//core/workflow/WorkflowTask">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+            eType="#//core/workflow/TaskParameter" containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="TaskParameter" eSuperTypes="#//core/MODembedElement">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" upperBound="-1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eClassifiers>
+    </eSubpackages>
   </eSubpackages>
   <eSubpackages name="network" nsURI="http://modembed.hu/network" nsPrefix="network">
     <eClassifiers xsi:type="ecore:EClass" name="NetworkNode" eSuperTypes="#//core/NamedElement">
