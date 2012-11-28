@@ -1782,6 +1782,22 @@
       <element xmi:type="ecore:EPackage" href="modembedmodel.ecore#//core/assembler/code"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bLkuwyjFEeKBmcJnzZTn0g" x="785" y="30"/>
     </children>
+    <children xmi:type="notation:Node" xmi:id="_94V2wDlCEeKh1cZjOXPEYA" type="1001">
+      <children xmi:type="notation:Node" xmi:id="_94oxsDlCEeKh1cZjOXPEYA" type="4001"/>
+      <children xmi:type="notation:Node" xmi:id="_940-8DlCEeKh1cZjOXPEYA" type="5001">
+        <styles xmi:type="notation:DrawerStyle" xmi:id="_940-8TlCEeKh1cZjOXPEYA"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_940-8jlCEeKh1cZjOXPEYA"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_940-8zlCEeKh1cZjOXPEYA"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_941mADlCEeKh1cZjOXPEYA" type="5002">
+        <styles xmi:type="notation:DrawerStyle" xmi:id="_941mATlCEeKh1cZjOXPEYA"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_941mAjlCEeKh1cZjOXPEYA"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_941mAzlCEeKh1cZjOXPEYA"/>
+      </children>
+      <styles xmi:type="notation:ShapeStyle" xmi:id="_94V2wTlCEeKh1cZjOXPEYA" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+      <element xmi:type="ecore:EClass" href="modembedmodel.ecore#//core/assembler/InstructionWord"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_94V2wjlCEeKh1cZjOXPEYA" x="635" y="455"/>
+    </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_V6vyoczhEeG5jt0sNZMiHw"/>
     <element xmi:type="ecore:EPackage" href="modembedmodel.ecore#//core/assembler"/>
     <edges xmi:type="notation:Edge" xmi:id="_gCyZoMzhEeG5jt0sNZMiHw" type="3003" source="_W6hNkMzhEeG5jt0sNZMiHw" target="_EPRdoB6qEeKuqNpoJ10xlQ">
@@ -1858,7 +1874,7 @@
       <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_6Wy8oSEaEeKhxspDUyGZKg" id="(0.5,0.0)"/>
       <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_MtwiUCEaEeKhxspDUyGZKg" id="(0.7449664429530202,1.0)"/>
     </edges>
-    <edges xmi:type="notation:Edge" xmi:id="_QLje4CEaEeKhxspDUyGZKg" type="3002" source="_kmi4sMzhEeG5jt0sNZMiHw" target="_4LIy0CEZEeKhxspDUyGZKg">
+    <edges xmi:type="notation:Edge" xmi:id="_QLje4CEaEeKhxspDUyGZKg" type="3002" source="_94V2wDlCEeKh1cZjOXPEYA" target="_4LIy0CEZEeKhxspDUyGZKg">
       <children xmi:type="notation:Node" xmi:id="_QLkF8CEaEeKhxspDUyGZKg" type="4011">
         <layoutConstraint xmi:type="notation:Location" xmi:id="_QLkF8SEaEeKhxspDUyGZKg" x="-10" y="-10"/>
       </children>
@@ -1867,9 +1883,8 @@
       </children>
       <styles xmi:type="notation:ConnectorStyle" xmi:id="_QLje4SEaEeKhxspDUyGZKg" lineColor="4210752"/>
       <styles xmi:type="notation:FontStyle" xmi:id="_QLje4iEaEeKhxspDUyGZKg" fontColor="4210752" fontName="Ubuntu" fontHeight="10"/>
-      <element xmi:type="ecore:EReference" href="modembedmodel.ecore#//core/assembler/Instruction/sections"/>
-      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_QLje4yEaEeKhxspDUyGZKg" points="[0, 0, -334, 180]$[334, -61, 0, 119]$[334, -180, 0, 0]"/>
-      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_6WsO8CEaEeKhxspDUyGZKg" id="(0.803921568627451,0.0)"/>
+      <element xmi:type="ecore:EReference" href="modembedmodel.ecore#//core/assembler/InstructionWord/sections"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_QLje4yEaEeKhxspDUyGZKg" points="[36, -20, -80, 186]$[116, -65, 0, 141]$[116, -206, 0, 0]"/>
       <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_6WsO8SEaEeKhxspDUyGZKg" id="(0.4921875,1.0)"/>
     </edges>
     <edges xmi:type="notation:Edge" xmi:id="_Sa32ICEaEeKhxspDUyGZKg" type="3002" source="_kmi4sMzhEeG5jt0sNZMiHw" target="_g16Y0CEZEeKhxspDUyGZKg">
@@ -1945,6 +1960,26 @@
       <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__RYoAynFEeKptJLKjBHZ3w" points="[0, -20, 2, -15]$[0, -20, 2, -15]"/>
       <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="__Rf8wCnFEeKptJLKjBHZ3w" id="(0.8137254901960784,0.5238095238095238)"/>
       <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="__Rf8wSnFEeKptJLKjBHZ3w" id="(0.7941176470588235,0.38095238095238093)"/>
+    </edges>
+    <edges xmi:type="notation:Edge" xmi:id="_A1TXIDlDEeKh1cZjOXPEYA" type="3002" source="_kmi4sMzhEeG5jt0sNZMiHw" target="_94V2wDlCEeKh1cZjOXPEYA">
+      <children xmi:type="notation:Node" xmi:id="_A1VMUDlDEeKh1cZjOXPEYA" type="4011">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_A1VMUTlDEeKh1cZjOXPEYA" x="-10" y="-10"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_A1WacDlDEeKh1cZjOXPEYA" type="4012">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_A1WacTlDEeKh1cZjOXPEYA" x="10" y="10"/>
+      </children>
+      <styles xmi:type="notation:ConnectorStyle" xmi:id="_A1TXITlDEeKh1cZjOXPEYA" lineColor="4210752"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_A1TXIjlDEeKh1cZjOXPEYA" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
+      <element xmi:type="ecore:EReference" href="modembedmodel.ecore#//core/assembler/Instruction/words"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_A1TXIzlDEeKh1cZjOXPEYA" points="[50, 1, -163, 1]$[214, 21, 1, 21]"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_A1aE0DlDEeKh1cZjOXPEYA" id="(0.21052631578947367,0.4883720930232558)"/>
+    </edges>
+    <edges xmi:type="notation:Edge" xmi:id="_D6UAQDlDEeKh1cZjOXPEYA" type="3003" source="_94V2wDlCEeKh1cZjOXPEYA" target="_HhBXsCEaEeKhxspDUyGZKg">
+      <styles xmi:type="notation:ConnectorStyle" xmi:id="_D6UAQTlDEeKh1cZjOXPEYA" routing="Rectilinear" lineColor="4210752"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_D6UAQjlDEeKh1cZjOXPEYA" fontName="Segoe UI"/>
+      <element xsi:nil="true"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_D6UAQzlDEeKh1cZjOXPEYA" points="[19, -20, 149, 391]$[19, -235, 149, 176]$[-66, -235, 64, 176]$[-66, -416, 64, -5]$[-99, -416, 31, -5]"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_D6Y4wDlDEeKh1cZjOXPEYA" id="(0.7919463087248322,0.6206896551724138)"/>
     </edges>
   </notation:Diagram>
   <notation:Diagram xmi:id="_0TYWwB6rEeKuqNpoJ10xlQ" type="EcoreTools" name="emodel_Diagram0" measurementUnit="Pixel">

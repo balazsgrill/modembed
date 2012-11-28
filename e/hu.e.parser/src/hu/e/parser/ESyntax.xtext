@@ -58,7 +58,11 @@ InstructionSetNotation:
 ;
 
 InstructionNotation:
-	name=ID  (params+=InstructionParameterNotation)* '<' (sections+=InsctructionSectionNotation)* '>'
+	name=ID  (params+=InstructionParameterNotation)* (words+=InstructionWordNotation)+
+;
+
+InstructionWordNotation:
+	'<' (sections+=InsctructionSectionNotation)+ '>'
 ;
 
 InstructionParameterNotation:

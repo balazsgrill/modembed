@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link hu.e.parser.eSyntax.InstructionNotation#getName <em>Name</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.InstructionNotation#getParams <em>Params</em>}</li>
- *   <li>{@link hu.e.parser.eSyntax.InstructionNotation#getSections <em>Sections</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.InstructionNotation#getWords <em>Words</em>}</li>
  * </ul>
  * </p>
  *
@@ -69,19 +69,19 @@ public interface InstructionNotation extends EObject
   EList<InstructionParameterNotation> getParams();
 
   /**
-   * Returns the value of the '<em><b>Sections</b></em>' containment reference list.
-   * The list contents are of type {@link hu.e.parser.eSyntax.InsctructionSectionNotation}.
+   * Returns the value of the '<em><b>Words</b></em>' containment reference list.
+   * The list contents are of type {@link hu.e.parser.eSyntax.InstructionWordNotation}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Sections</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Words</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Sections</em>' containment reference list.
-   * @see hu.e.parser.eSyntax.ESyntaxPackage#getInstructionNotation_Sections()
+   * @return the value of the '<em>Words</em>' containment reference list.
+   * @see hu.e.parser.eSyntax.ESyntaxPackage#getInstructionNotation_Words()
    * @model containment="true"
    * @generated
    */
-  EList<InsctructionSectionNotation> getSections();
+  EList<InstructionWordNotation> getWords();
 
 } // InstructionNotation

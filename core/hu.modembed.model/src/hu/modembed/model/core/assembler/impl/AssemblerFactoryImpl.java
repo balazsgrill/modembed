@@ -61,6 +61,7 @@ public class AssemblerFactoryImpl extends EFactoryImpl implements AssemblerFacto
 			case AssemblerPackage.INSTRUCTION_PARAMETER: return createInstructionParameter();
 			case AssemblerPackage.CONSTANT_SECTION: return createConstantSection();
 			case AssemblerPackage.PARAMETER_SECTION: return createParameterSection();
+			case AssemblerPackage.INSTRUCTION_WORD: return createInstructionWord();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -114,6 +115,16 @@ public class AssemblerFactoryImpl extends EFactoryImpl implements AssemblerFacto
 	public ParameterSection createParameterSection() {
 		ParameterSectionImpl parameterSection = new ParameterSectionImpl();
 		return parameterSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InstructionWord createInstructionWord() {
+		InstructionWordImpl instructionWord = new InstructionWordImpl();
+		return instructionWord;
 	}
 
 	/**

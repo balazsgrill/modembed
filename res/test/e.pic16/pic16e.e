@@ -1,21 +1,12 @@
-library microchip.pic16.enchanced overrides microchip.pic16;
+instructionset microchip.pic16.enchanced.instruction extends microchip.pic16.instructions;
 
-use microchip.pic16;
-use e.platform;
-
-/*
- * Add with carry W and f
- */
-ADDWFC(address f, bool d=1){
-	<b111101:6 d:1 f:7>
-}
+/* Add with carry W and f */
+ADDWFC f d=1	<b111101:6 $d:1 $f:7>
 
 /*
  * Arithmetic right shift
  */
-ASRF(address f, bool d=1){
-	<b110111:6 d:1 f:7>
-}
+ASRF f d=1		<b110111:6 $d:1 $f:7>
 
 /*
  * Logical left shift

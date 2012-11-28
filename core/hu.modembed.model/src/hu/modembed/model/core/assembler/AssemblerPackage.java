@@ -159,22 +159,22 @@ public interface AssemblerPackage extends EPackage {
 	int INSTRUCTION__NAME = CorePackage.NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Sections</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INSTRUCTION__SECTIONS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INSTRUCTION__PARAMETERS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int INSTRUCTION__PARAMETERS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Words</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION__WORDS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Instruction</em>' class.
@@ -453,6 +453,53 @@ public interface AssemblerPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link hu.modembed.model.core.assembler.impl.InstructionWordImpl <em>Instruction Word</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.modembed.model.core.assembler.impl.InstructionWordImpl
+	 * @see hu.modembed.model.core.assembler.impl.AssemblerPackageImpl#getInstructionWord()
+	 * @generated
+	 */
+	int INSTRUCTION_WORD = 6;
+
+	/**
+	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION_WORD__ORIGINS = CorePackage.MO_DEMBED_ELEMENT__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION_WORD__DESCRIPTION = CorePackage.MO_DEMBED_ELEMENT__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Sections</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION_WORD__SECTIONS = CorePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Instruction Word</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION_WORD_FEATURE_COUNT = CorePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 1;
+
+
+	/**
 	 * Returns the meta object for class '{@link hu.modembed.model.core.assembler.InstructionSet <em>Instruction Set</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -495,17 +542,6 @@ public interface AssemblerPackage extends EPackage {
 	EClass getInstruction();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link hu.modembed.model.core.assembler.Instruction#getSections <em>Sections</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Sections</em>'.
-	 * @see hu.modembed.model.core.assembler.Instruction#getSections()
-	 * @see #getInstruction()
-	 * @generated
-	 */
-	EReference getInstruction_Sections();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link hu.modembed.model.core.assembler.Instruction#getParameters <em>Parameters</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -515,6 +551,17 @@ public interface AssemblerPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getInstruction_Parameters();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link hu.modembed.model.core.assembler.Instruction#getWords <em>Words</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Words</em>'.
+	 * @see hu.modembed.model.core.assembler.Instruction#getWords()
+	 * @see #getInstruction()
+	 * @generated
+	 */
+	EReference getInstruction_Words();
 
 	/**
 	 * Returns the meta object for class '{@link hu.modembed.model.core.assembler.InstructionParameter <em>Instruction Parameter</em>}'.
@@ -634,6 +681,27 @@ public interface AssemblerPackage extends EPackage {
 	EReference getParameterSection_Parameter();
 
 	/**
+	 * Returns the meta object for class '{@link hu.modembed.model.core.assembler.InstructionWord <em>Instruction Word</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Instruction Word</em>'.
+	 * @see hu.modembed.model.core.assembler.InstructionWord
+	 * @generated
+	 */
+	EClass getInstructionWord();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link hu.modembed.model.core.assembler.InstructionWord#getSections <em>Sections</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Sections</em>'.
+	 * @see hu.modembed.model.core.assembler.InstructionWord#getSections()
+	 * @see #getInstructionWord()
+	 * @generated
+	 */
+	EReference getInstructionWord_Sections();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -692,20 +760,20 @@ public interface AssemblerPackage extends EPackage {
 		EClass INSTRUCTION = eINSTANCE.getInstruction();
 
 		/**
-		 * The meta object literal for the '<em><b>Sections</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference INSTRUCTION__SECTIONS = eINSTANCE.getInstruction_Sections();
-
-		/**
 		 * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference INSTRUCTION__PARAMETERS = eINSTANCE.getInstruction_Parameters();
+
+		/**
+		 * The meta object literal for the '<em><b>Words</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INSTRUCTION__WORDS = eINSTANCE.getInstruction_Words();
 
 		/**
 		 * The meta object literal for the '{@link hu.modembed.model.core.assembler.impl.InstructionParameterImpl <em>Instruction Parameter</em>}' class.
@@ -802,6 +870,24 @@ public interface AssemblerPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PARAMETER_SECTION__PARAMETER = eINSTANCE.getParameterSection_Parameter();
+
+		/**
+		 * The meta object literal for the '{@link hu.modembed.model.core.assembler.impl.InstructionWordImpl <em>Instruction Word</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.modembed.model.core.assembler.impl.InstructionWordImpl
+		 * @see hu.modembed.model.core.assembler.impl.AssemblerPackageImpl#getInstructionWord()
+		 * @generated
+		 */
+		EClass INSTRUCTION_WORD = eINSTANCE.getInstructionWord();
+
+		/**
+		 * The meta object literal for the '<em><b>Sections</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INSTRUCTION_WORD__SECTIONS = eINSTANCE.getInstructionWord_Sections();
 
 	}
 

@@ -119,6 +119,13 @@ public class AssemblerSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case AssemblerPackage.INSTRUCTION_WORD: {
+				InstructionWord instructionWord = (InstructionWord)theEObject;
+				T result = caseInstructionWord(instructionWord);
+				if (result == null) result = caseMODembedElement(instructionWord);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -210,6 +217,21 @@ public class AssemblerSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseParameterSection(ParameterSection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Instruction Word</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Instruction Word</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseInstructionWord(InstructionWord object) {
 		return null;
 	}
 

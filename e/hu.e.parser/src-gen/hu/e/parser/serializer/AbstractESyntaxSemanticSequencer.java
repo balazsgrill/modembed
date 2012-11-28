@@ -12,6 +12,7 @@ import hu.e.parser.eSyntax.InsctructionSectionNotation;
 import hu.e.parser.eSyntax.InstructionNotation;
 import hu.e.parser.eSyntax.InstructionParameterNotation;
 import hu.e.parser.eSyntax.InstructionSetNotation;
+import hu.e.parser.eSyntax.InstructionWordNotation;
 import hu.e.parser.eSyntax.IntegerDataTypeDef;
 import hu.e.parser.eSyntax.Label;
 import hu.e.parser.eSyntax.LazyParameter;
@@ -124,6 +125,12 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 				if(context == grammarAccess.getCompilationUnitRule() ||
 				   context == grammarAccess.getInstructionSetNotationRule()) {
 					sequence_InstructionSetNotation(context, (InstructionSetNotation) semanticObject); 
+					return; 
+				}
+				else break;
+			case ESyntaxPackage.INSTRUCTION_WORD_NOTATION:
+				if(context == grammarAccess.getInstructionWordNotationRule()) {
+					sequence_InstructionWordNotation(context, (InstructionWordNotation) semanticObject); 
 					return; 
 				}
 				else break;
@@ -448,7 +455,7 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 	
 	/**
 	 * Constraint:
-	 *     (name=ID params+=InstructionParameterNotation* sections+=InsctructionSectionNotation*)
+	 *     (name=ID params+=InstructionParameterNotation* words+=InstructionWordNotation+)
 	 */
 	protected void sequence_InstructionNotation(EObject context, InstructionNotation semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -469,6 +476,15 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 	 *     (name=LibraryName extends=LibraryName? instructions+=InstructionNotation*)
 	 */
 	protected void sequence_InstructionSetNotation(EObject context, InstructionSetNotation semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     sections+=InsctructionSectionNotation+
+	 */
+	protected void sequence_InstructionWordNotation(EObject context, InstructionWordNotation semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="ASCII"?>
+<assembler:InstructionSet xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assembler="http://modembed.hu/core/assembler" name="microchip.pic16.enchanced.instruction">
+  <instructions name="ADDWFC">
+    <parameters id="102"/>
+    <parameters id="100" defaultValue="1"/>
+    <words>
+      <sections xsi:type="assembler:ConstantSection" size="6" value="61"/>
+      <sections xsi:type="assembler:ParameterSection" start="6" size="1" parameter="//@instructions.0/@parameters.1"/>
+      <sections xsi:type="assembler:ParameterSection" start="7" size="7" parameter="//@instructions.0/@parameters.0"/>
+    </words>
+  </instructions>
+  <instructions name="ASRF">
+    <parameters id="102"/>
+    <parameters id="100" defaultValue="1"/>
+    <words>
+      <sections xsi:type="assembler:ConstantSection" size="6" value="55"/>
+      <sections xsi:type="assembler:ParameterSection" start="6" size="1" parameter="//@instructions.1/@parameters.1"/>
+      <sections xsi:type="assembler:ParameterSection" start="7" size="7" parameter="//@instructions.1/@parameters.0"/>
+    </words>
+  </instructions>
+  <instructions name="LSLF"/>
+  <instructions name="address">
+    <parameters id="102"/>
+  </instructions>
+  <instructions name="bool">
+    <parameters id="100" defaultValue="1"/>
+  </instructions>
+  <instructions name="d"/>
+  <instructions name="f"/>
+  <instructions name="LSRF"/>
+  <instructions name="address">
+    <parameters id="102"/>
+  </instructions>
+  <instructions name="bool">
+    <parameters id="100" defaultValue="1"/>
+  </instructions>
+  <instructions name="d"/>
+  <instructions name="f"/>
+  <instructions name="SUBWFB"/>
+  <instructions name="address">
+    <parameters id="102"/>
+  </instructions>
+  <instructions name="bool">
+    <parameters id="100" defaultValue="1"/>
+  </instructions>
+  <instructions name="d"/>
+  <instructions name="f"/>
+  <instructions name="MOVLB"/>
+  <instructions name="uint8">
+    <parameters id="107"/>
+  </instructions>
+  <instructions name="k"/>
+  <instructions name="MOVLP"/>
+  <instructions name="uint8">
+    <parameters id="107"/>
+  </instructions>
+  <instructions name="k"/>
+  <instructions name="BRA"/>
+  <instructions name="codeaddr">
+    <parameters id="107"/>
+  </instructions>
+  <instructions name="k"/>
+  <instructions name="BRW"/>
+  <instructions name="CALLW"/>
+  <instructions name="CLRWDT"/>
+  <instructions name="OPTION"/>
+  <instructions name="RESET"/>
+  <instructions name="TRIS"/>
+  <instructions name="address">
+    <parameters id="102"/>
+  </instructions>
+  <instructions name="f"/>
+  <instructions name="ADDFSR"/>
+  <instructions name="bool">
+    <parameters id="110"/>
+  </instructions>
+  <instructions name="uint8">
+    <parameters id="107"/>
+  </instructions>
+  <instructions name="n"/>
+  <instructions name="k"/>
+</assembler:InstructionSet>

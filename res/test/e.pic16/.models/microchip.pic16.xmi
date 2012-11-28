@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="ASCII"?>
+<emodel:Library xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:emodel="http://emodel/1.0" xmlns:expressions="http://emodel/1.0/expressions" xmlns:types="http://emodel/1.0/types" name="microchip.pic16">
+  <content xsi:type="emodel:Type" name="address">
+    <definition xsi:type="types:UnsignedTypeDefinition" bits="12"/>
+  </content>
+  <content xsi:type="emodel:Type" name="codeaddr">
+    <definition xsi:type="types:UnsignedTypeDefinition" bits="13"/>
+  </content>
+  <content xsi:type="emodel:ConstantVariable" name="W">
+    <type xsi:type="types:ReferenceTypeDefinition">
+      <type href="../../e.core/.models/e.platform.xmi#//@content.1"/>
+    </type>
+    <value xsi:type="expressions:IntegerLiteralExpression" value="0"/>
+  </content>
+  <content xsi:type="emodel:ConstantVariable" name="F">
+    <type xsi:type="types:ReferenceTypeDefinition">
+      <type href="../../e.core/.models/e.platform.xmi#//@content.1"/>
+    </type>
+    <value xsi:type="expressions:IntegerLiteralExpression" value="1"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable" name="address">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable" name="bool">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable" name="address">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable" name="bool">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable" name="address">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable" name="address">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable" name="bool">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable" name="address">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable" name="bool">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable" name="address">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable" name="bool">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable" name="address">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable" name="bool">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable" name="address">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable" name="bool">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable" name="address">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable" name="bool">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable" name="address">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable" name="bool">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable" name="address">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable" name="address">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable" name="bool">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable" name="address">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable" name="bool">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable" name="address">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable" name="bool">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable" name="address">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable" name="bool">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable" name="address">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable" name="bool">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable" name="address">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable" name="bit">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable" name="address">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable" name="bit">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable" name="address">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable" name="bit">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable" name="address">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable" name="bit">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable" name="uint8">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable" name="uint8">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable" name="uint8">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable" name="uint8">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable" name="uint8">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable" name="uint8">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable" name="uint8">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable" name="codeaddr">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable" name="codeaddr">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+</emodel:Library>

@@ -18,10 +18,10 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="extend" eType="#//core/assembler/InstructionSet"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Instruction" eSuperTypes="#//core/NamedElement #//emodel/CallableElement">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="sections" upperBound="-1"
-            eType="#//core/assembler/InstructionSection" containment="true"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
             eType="#//core/assembler/InstructionParameter" containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="words" upperBound="-1"
+            eType="#//core/assembler/InstructionWord" containment="true"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="InstructionParameter" eSuperTypes="#//core/MODembedElement">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1"
@@ -44,6 +44,10 @@
       <eClassifiers xsi:type="ecore:EClass" name="ParameterSection" eSuperTypes="#//core/assembler/InstructionSection">
         <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" lowerBound="1"
             eType="#//core/assembler/InstructionParameter"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="InstructionWord" eSuperTypes="#//core/MODembedElement">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="sections" upperBound="-1"
+            eType="#//core/assembler/InstructionSection" containment="true"/>
       </eClassifiers>
       <eSubpackages name="code" nsURI="http://modembed.hu/core/assembler/code" nsPrefix="assemblercode">
         <eClassifiers xsi:type="ecore:EClass" name="AssemblerObject" eSuperTypes="#//core/RootElement">

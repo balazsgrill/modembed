@@ -3,9 +3,9 @@
 package hu.e.parser.eSyntax.impl;
 
 import hu.e.parser.eSyntax.ESyntaxPackage;
-import hu.e.parser.eSyntax.InsctructionSectionNotation;
 import hu.e.parser.eSyntax.InstructionNotation;
 import hu.e.parser.eSyntax.InstructionParameterNotation;
+import hu.e.parser.eSyntax.InstructionWordNotation;
 
 import java.util.Collection;
 
@@ -32,7 +32,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link hu.e.parser.eSyntax.impl.InstructionNotationImpl#getName <em>Name</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.impl.InstructionNotationImpl#getParams <em>Params</em>}</li>
- *   <li>{@link hu.e.parser.eSyntax.impl.InstructionNotationImpl#getSections <em>Sections</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.impl.InstructionNotationImpl#getWords <em>Words</em>}</li>
  * </ul>
  * </p>
  *
@@ -71,14 +71,14 @@ public class InstructionNotationImpl extends MinimalEObjectImpl.Container implem
   protected EList<InstructionParameterNotation> params;
 
   /**
-   * The cached value of the '{@link #getSections() <em>Sections</em>}' containment reference list.
+   * The cached value of the '{@link #getWords() <em>Words</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSections()
+   * @see #getWords()
    * @generated
    * @ordered
    */
-  protected EList<InsctructionSectionNotation> sections;
+  protected EList<InstructionWordNotation> words;
 
   /**
    * <!-- begin-user-doc -->
@@ -143,13 +143,13 @@ public class InstructionNotationImpl extends MinimalEObjectImpl.Container implem
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<InsctructionSectionNotation> getSections()
+  public EList<InstructionWordNotation> getWords()
   {
-    if (sections == null)
+    if (words == null)
     {
-      sections = new EObjectContainmentEList<InsctructionSectionNotation>(InsctructionSectionNotation.class, this, ESyntaxPackage.INSTRUCTION_NOTATION__SECTIONS);
+      words = new EObjectContainmentEList<InstructionWordNotation>(InstructionWordNotation.class, this, ESyntaxPackage.INSTRUCTION_NOTATION__WORDS);
     }
-    return sections;
+    return words;
   }
 
   /**
@@ -164,8 +164,8 @@ public class InstructionNotationImpl extends MinimalEObjectImpl.Container implem
     {
       case ESyntaxPackage.INSTRUCTION_NOTATION__PARAMS:
         return ((InternalEList<?>)getParams()).basicRemove(otherEnd, msgs);
-      case ESyntaxPackage.INSTRUCTION_NOTATION__SECTIONS:
-        return ((InternalEList<?>)getSections()).basicRemove(otherEnd, msgs);
+      case ESyntaxPackage.INSTRUCTION_NOTATION__WORDS:
+        return ((InternalEList<?>)getWords()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -184,8 +184,8 @@ public class InstructionNotationImpl extends MinimalEObjectImpl.Container implem
         return getName();
       case ESyntaxPackage.INSTRUCTION_NOTATION__PARAMS:
         return getParams();
-      case ESyntaxPackage.INSTRUCTION_NOTATION__SECTIONS:
-        return getSections();
+      case ESyntaxPackage.INSTRUCTION_NOTATION__WORDS:
+        return getWords();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -208,9 +208,9 @@ public class InstructionNotationImpl extends MinimalEObjectImpl.Container implem
         getParams().clear();
         getParams().addAll((Collection<? extends InstructionParameterNotation>)newValue);
         return;
-      case ESyntaxPackage.INSTRUCTION_NOTATION__SECTIONS:
-        getSections().clear();
-        getSections().addAll((Collection<? extends InsctructionSectionNotation>)newValue);
+      case ESyntaxPackage.INSTRUCTION_NOTATION__WORDS:
+        getWords().clear();
+        getWords().addAll((Collection<? extends InstructionWordNotation>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -232,8 +232,8 @@ public class InstructionNotationImpl extends MinimalEObjectImpl.Container implem
       case ESyntaxPackage.INSTRUCTION_NOTATION__PARAMS:
         getParams().clear();
         return;
-      case ESyntaxPackage.INSTRUCTION_NOTATION__SECTIONS:
-        getSections().clear();
+      case ESyntaxPackage.INSTRUCTION_NOTATION__WORDS:
+        getWords().clear();
         return;
     }
     super.eUnset(featureID);
@@ -253,8 +253,8 @@ public class InstructionNotationImpl extends MinimalEObjectImpl.Container implem
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case ESyntaxPackage.INSTRUCTION_NOTATION__PARAMS:
         return params != null && !params.isEmpty();
-      case ESyntaxPackage.INSTRUCTION_NOTATION__SECTIONS:
-        return sections != null && !sections.isEmpty();
+      case ESyntaxPackage.INSTRUCTION_NOTATION__WORDS:
+        return words != null && !words.isEmpty();
     }
     return super.eIsSet(featureID);
   }

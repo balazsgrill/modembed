@@ -242,17 +242,15 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
 		private final Assignment cParamsAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cParamsInstructionParameterNotationParserRuleCall_1_0 = (RuleCall)cParamsAssignment_1.eContents().get(0);
-		private final Keyword cLessThanSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cSectionsAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cSectionsInsctructionSectionNotationParserRuleCall_3_0 = (RuleCall)cSectionsAssignment_3.eContents().get(0);
-		private final Keyword cGreaterThanSignKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cWordsAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cWordsInstructionWordNotationParserRuleCall_2_0 = (RuleCall)cWordsAssignment_2.eContents().get(0);
 		
 		//InstructionNotation:
 		//
-		//	name=ID params+=InstructionParameterNotation* "<" sections+=InsctructionSectionNotation* ">";
+		//	name=ID params+=InstructionParameterNotation* words+=InstructionWordNotation+;
 		public ParserRule getRule() { return rule; }
 
-		//name=ID params+=InstructionParameterNotation* "<" sections+=InsctructionSectionNotation* ">"
+		//name=ID params+=InstructionParameterNotation* words+=InstructionWordNotation+
 		public Group getGroup() { return cGroup; }
 
 		//name=ID
@@ -267,17 +265,40 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		//InstructionParameterNotation
 		public RuleCall getParamsInstructionParameterNotationParserRuleCall_1_0() { return cParamsInstructionParameterNotationParserRuleCall_1_0; }
 
-		//"<"
-		public Keyword getLessThanSignKeyword_2() { return cLessThanSignKeyword_2; }
+		//words+=InstructionWordNotation+
+		public Assignment getWordsAssignment_2() { return cWordsAssignment_2; }
 
-		//sections+=InsctructionSectionNotation*
-		public Assignment getSectionsAssignment_3() { return cSectionsAssignment_3; }
+		//InstructionWordNotation
+		public RuleCall getWordsInstructionWordNotationParserRuleCall_2_0() { return cWordsInstructionWordNotationParserRuleCall_2_0; }
+	}
+
+	public class InstructionWordNotationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "InstructionWordNotation");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cLessThanSignKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cSectionsAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cSectionsInsctructionSectionNotationParserRuleCall_1_0 = (RuleCall)cSectionsAssignment_1.eContents().get(0);
+		private final Keyword cGreaterThanSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		
+		//InstructionWordNotation:
+		//
+		//	"<" sections+=InsctructionSectionNotation+ ">";
+		public ParserRule getRule() { return rule; }
+
+		//"<" sections+=InsctructionSectionNotation+ ">"
+		public Group getGroup() { return cGroup; }
+
+		//"<"
+		public Keyword getLessThanSignKeyword_0() { return cLessThanSignKeyword_0; }
+
+		//sections+=InsctructionSectionNotation+
+		public Assignment getSectionsAssignment_1() { return cSectionsAssignment_1; }
 
 		//InsctructionSectionNotation
-		public RuleCall getSectionsInsctructionSectionNotationParserRuleCall_3_0() { return cSectionsInsctructionSectionNotationParserRuleCall_3_0; }
+		public RuleCall getSectionsInsctructionSectionNotationParserRuleCall_1_0() { return cSectionsInsctructionSectionNotationParserRuleCall_1_0; }
 
 		//">"
-		public Keyword getGreaterThanSignKeyword_4() { return cGreaterThanSignKeyword_4; }
+		public Keyword getGreaterThanSignKeyword_2() { return cGreaterThanSignKeyword_2; }
 	}
 
 	public class InstructionParameterNotationElements extends AbstractParserRuleElementFinder {
@@ -2454,6 +2475,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	private AnnotationElements pAnnotation;
 	private InstructionSetNotationElements pInstructionSetNotation;
 	private InstructionNotationElements pInstructionNotation;
+	private InstructionWordNotationElements pInstructionWordNotation;
 	private InstructionParameterNotationElements pInstructionParameterNotation;
 	private InsctructionSectionNotationElements pInsctructionSectionNotation;
 	private LibraryElements pLibrary;
@@ -2660,13 +2682,24 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 
 	//InstructionNotation:
 	//
-	//	name=ID params+=InstructionParameterNotation* "<" sections+=InsctructionSectionNotation* ">";
+	//	name=ID params+=InstructionParameterNotation* words+=InstructionWordNotation+;
 	public InstructionNotationElements getInstructionNotationAccess() {
 		return (pInstructionNotation != null) ? pInstructionNotation : (pInstructionNotation = new InstructionNotationElements());
 	}
 	
 	public ParserRule getInstructionNotationRule() {
 		return getInstructionNotationAccess().getRule();
+	}
+
+	//InstructionWordNotation:
+	//
+	//	"<" sections+=InsctructionSectionNotation+ ">";
+	public InstructionWordNotationElements getInstructionWordNotationAccess() {
+		return (pInstructionWordNotation != null) ? pInstructionWordNotation : (pInstructionWordNotation = new InstructionWordNotationElements());
+	}
+	
+	public ParserRule getInstructionWordNotationRule() {
+		return getInstructionWordNotationAccess().getRule();
 	}
 
 	//InstructionParameterNotation:

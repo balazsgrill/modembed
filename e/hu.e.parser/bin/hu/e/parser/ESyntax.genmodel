@@ -67,7 +67,10 @@
     <genClasses ecoreClass="ESyntax.ecore#//InstructionNotation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//InstructionNotation/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//InstructionNotation/params"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//InstructionNotation/sections"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//InstructionNotation/words"/>
+    </genClasses>
+    <genClasses ecoreClass="ESyntax.ecore#//InstructionWordNotation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//InstructionWordNotation/sections"/>
     </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//InstructionParameterNotation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//InstructionParameterNotation/name"/>

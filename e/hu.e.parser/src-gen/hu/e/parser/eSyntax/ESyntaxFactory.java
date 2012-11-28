@@ -68,6 +68,15 @@ public interface ESyntaxFactory extends EFactory
   InstructionNotation createInstructionNotation();
 
   /**
+   * Returns a new object of class '<em>Instruction Word Notation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Instruction Word Notation</em>'.
+   * @generated
+   */
+  InstructionWordNotation createInstructionWordNotation();
+
+  /**
    * Returns a new object of class '<em>Instruction Parameter Notation</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

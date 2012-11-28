@@ -22,6 +22,7 @@ import hu.modembed.model.core.assembler.Instruction;
 import hu.modembed.model.core.assembler.InstructionParameter;
 import hu.modembed.model.core.assembler.InstructionSection;
 import hu.modembed.model.core.assembler.InstructionSet;
+import hu.modembed.model.core.assembler.InstructionWord;
 import hu.modembed.model.core.assembler.ParameterSection;
 import hu.modembed.model.core.assembler.code.CodePackage;
 import hu.modembed.model.core.assembler.code.impl.CodePackageImpl;
@@ -93,6 +94,13 @@ public class AssemblerPackageImpl extends EPackageImpl implements AssemblerPacka
 	 * @generated
 	 */
 	private EClass parameterSectionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass instructionWordEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -243,7 +251,7 @@ public class AssemblerPackageImpl extends EPackageImpl implements AssemblerPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getInstruction_Sections() {
+	public EReference getInstruction_Parameters() {
 		return (EReference)instructionEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -252,7 +260,7 @@ public class AssemblerPackageImpl extends EPackageImpl implements AssemblerPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getInstruction_Parameters() {
+	public EReference getInstruction_Words() {
 		return (EReference)instructionEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -360,6 +368,24 @@ public class AssemblerPackageImpl extends EPackageImpl implements AssemblerPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getInstructionWord() {
+		return instructionWordEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getInstructionWord_Sections() {
+		return (EReference)instructionWordEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public AssemblerFactory getAssemblerFactory() {
 		return (AssemblerFactory)getEFactoryInstance();
 	}
@@ -388,8 +414,8 @@ public class AssemblerPackageImpl extends EPackageImpl implements AssemblerPacka
 		createEReference(instructionSetEClass, INSTRUCTION_SET__EXTEND);
 
 		instructionEClass = createEClass(INSTRUCTION);
-		createEReference(instructionEClass, INSTRUCTION__SECTIONS);
 		createEReference(instructionEClass, INSTRUCTION__PARAMETERS);
+		createEReference(instructionEClass, INSTRUCTION__WORDS);
 
 		instructionParameterEClass = createEClass(INSTRUCTION_PARAMETER);
 		createEAttribute(instructionParameterEClass, INSTRUCTION_PARAMETER__ID);
@@ -405,6 +431,9 @@ public class AssemblerPackageImpl extends EPackageImpl implements AssemblerPacka
 
 		parameterSectionEClass = createEClass(PARAMETER_SECTION);
 		createEReference(parameterSectionEClass, PARAMETER_SECTION__PARAMETER);
+
+		instructionWordEClass = createEClass(INSTRUCTION_WORD);
+		createEReference(instructionWordEClass, INSTRUCTION_WORD__SECTIONS);
 	}
 
 	/**
@@ -450,6 +479,7 @@ public class AssemblerPackageImpl extends EPackageImpl implements AssemblerPacka
 		instructionSectionEClass.getESuperTypes().add(theCorePackage.getMODembedElement());
 		constantSectionEClass.getESuperTypes().add(this.getInstructionSection());
 		parameterSectionEClass.getESuperTypes().add(this.getInstructionSection());
+		instructionWordEClass.getESuperTypes().add(theCorePackage.getMODembedElement());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(instructionSetEClass, InstructionSet.class, "InstructionSet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -457,8 +487,8 @@ public class AssemblerPackageImpl extends EPackageImpl implements AssemblerPacka
 		initEReference(getInstructionSet_Extend(), this.getInstructionSet(), null, "extend", null, 0, 1, InstructionSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(instructionEClass, Instruction.class, "Instruction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getInstruction_Sections(), this.getInstructionSection(), null, "sections", null, 0, -1, Instruction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getInstruction_Parameters(), this.getInstructionParameter(), null, "parameters", null, 0, -1, Instruction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInstruction_Words(), this.getInstructionWord(), null, "words", null, 0, -1, Instruction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(instructionParameterEClass, InstructionParameter.class, "InstructionParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getInstructionParameter_Id(), ecorePackage.getEChar(), "id", null, 1, 1, InstructionParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -474,6 +504,9 @@ public class AssemblerPackageImpl extends EPackageImpl implements AssemblerPacka
 
 		initEClass(parameterSectionEClass, ParameterSection.class, "ParameterSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getParameterSection_Parameter(), this.getInstructionParameter(), null, "parameter", null, 1, 1, ParameterSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(instructionWordEClass, InstructionWord.class, "InstructionWord", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getInstructionWord_Sections(), this.getInstructionSection(), null, "sections", null, 0, -1, InstructionWord.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 	}
 
 } //AssemblerPackageImpl

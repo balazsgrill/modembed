@@ -65,6 +65,7 @@ public class ESyntaxParser extends AbstractContentAssistParser {
 					put(grammarAccess.getInstructionSetNotationAccess().getGroup(), "rule__InstructionSetNotation__Group__0");
 					put(grammarAccess.getInstructionSetNotationAccess().getGroup_2(), "rule__InstructionSetNotation__Group_2__0");
 					put(grammarAccess.getInstructionNotationAccess().getGroup(), "rule__InstructionNotation__Group__0");
+					put(grammarAccess.getInstructionWordNotationAccess().getGroup(), "rule__InstructionWordNotation__Group__0");
 					put(grammarAccess.getInstructionParameterNotationAccess().getGroup(), "rule__InstructionParameterNotation__Group__0");
 					put(grammarAccess.getInstructionParameterNotationAccess().getGroup_1(), "rule__InstructionParameterNotation__Group_1__0");
 					put(grammarAccess.getInsctructionSectionNotationAccess().getGroup(), "rule__InsctructionSectionNotation__Group__0");
@@ -136,7 +137,8 @@ public class ESyntaxParser extends AbstractContentAssistParser {
 					put(grammarAccess.getInstructionSetNotationAccess().getInstructionsAssignment_4(), "rule__InstructionSetNotation__InstructionsAssignment_4");
 					put(grammarAccess.getInstructionNotationAccess().getNameAssignment_0(), "rule__InstructionNotation__NameAssignment_0");
 					put(grammarAccess.getInstructionNotationAccess().getParamsAssignment_1(), "rule__InstructionNotation__ParamsAssignment_1");
-					put(grammarAccess.getInstructionNotationAccess().getSectionsAssignment_3(), "rule__InstructionNotation__SectionsAssignment_3");
+					put(grammarAccess.getInstructionNotationAccess().getWordsAssignment_2(), "rule__InstructionNotation__WordsAssignment_2");
+					put(grammarAccess.getInstructionWordNotationAccess().getSectionsAssignment_1(), "rule__InstructionWordNotation__SectionsAssignment_1");
 					put(grammarAccess.getInstructionParameterNotationAccess().getNameAssignment_0(), "rule__InstructionParameterNotation__NameAssignment_0");
 					put(grammarAccess.getInstructionParameterNotationAccess().getDefaultAssignment_1_1(), "rule__InstructionParameterNotation__DefaultAssignment_1_1");
 					put(grammarAccess.getInsctructionSectionNotationAccess().getParamAssignment_0_0_1(), "rule__InsctructionSectionNotation__ParamAssignment_0_0_1");

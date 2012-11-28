@@ -13,6 +13,7 @@ import hu.e.parser.eSyntax.InsctructionSectionNotation;
 import hu.e.parser.eSyntax.InstructionNotation;
 import hu.e.parser.eSyntax.InstructionParameterNotation;
 import hu.e.parser.eSyntax.InstructionSetNotation;
+import hu.e.parser.eSyntax.InstructionWordNotation;
 import hu.e.parser.eSyntax.Library;
 import hu.e.parser.eSyntax.LibraryItem;
 import hu.e.parser.eSyntax.Operation;
@@ -26,6 +27,7 @@ import hu.modembed.model.core.assembler.Instruction;
 import hu.modembed.model.core.assembler.InstructionParameter;
 import hu.modembed.model.core.assembler.InstructionSection;
 import hu.modembed.model.core.assembler.InstructionSet;
+import hu.modembed.model.core.assembler.InstructionWord;
 import hu.modembed.model.core.assembler.ParameterSection;
 import hu.modembed.model.emodel.EmodelFactory;
 import hu.modembed.model.emodel.HeapVariable;
@@ -145,27 +147,31 @@ public class LibraryConverter {
 		}
 		
 		int start = 0;
-		for(InsctructionSectionNotation sn : in.getSections()){
-			InstructionSection s = null;
-			if (null != sn.getParam()){
-				//Parameters
-				ParameterSection ps = AssemblerFactory.eINSTANCE.createParameterSection();
-				ps.setParameter(params.get(sn.getParam().charAt(0)));
-				s = ps;
-			}else{
-				//Constant
-				ConstantSection cs = AssemblerFactory.eINSTANCE.createConstantSection();
-				cs.setValue(convertLiteral(sn.getValue()));
-				s = cs;
+		for(InstructionWordNotation wn : in.getWords()){
+			InstructionWord w = AssemblerFactory.eINSTANCE.createInstructionWord();
+			for(InsctructionSectionNotation sn : wn.getSections()){
+				InstructionSection s = null;
+				if (null != sn.getParam()){
+					//Parameters
+					ParameterSection ps = AssemblerFactory.eINSTANCE.createParameterSection();
+					ps.setParameter(params.get(sn.getParam().charAt(0)));
+					s = ps;
+				}else{
+					//Constant
+					ConstantSection cs = AssemblerFactory.eINSTANCE.createConstantSection();
+					cs.setValue(convertLiteral(sn.getValue()));
+					s = cs;
+				}
+
+				if (s != null){
+					s.setStart(start);
+					s.setSize(convertLiteral(sn.getSize()));
+					s.setShift(convertLiteral(sn.getShift()));
+					w.getSections().add(s);
+					start += s.getSize();
+				}
 			}
-			
-			if (s != null){
-				s.setStart(start);
-				s.setSize(convertLiteral(sn.getSize()));
-				s.setShift(convertLiteral(sn.getShift()));
-				result.getSections().add(s);
-				start += s.getSize();
-			}
+			result.getWords().add(w);
 		}
 		
 		return result;

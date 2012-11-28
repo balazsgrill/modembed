@@ -465,31 +465,70 @@ ruleInstructionNotation returns [EObject current=null]
 	    }
 
 )
-)*	otherlv_2='<' 
-    {
-    	newLeafNode(otherlv_2, grammarAccess.getInstructionNotationAccess().getLessThanSignKeyword_2());
-    }
-(
+)*(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getInstructionNotationAccess().getSectionsInsctructionSectionNotationParserRuleCall_3_0()); 
+	        newCompositeNode(grammarAccess.getInstructionNotationAccess().getWordsInstructionWordNotationParserRuleCall_2_0()); 
 	    }
-		lv_sections_3_0=ruleInsctructionSectionNotation		{
+		lv_words_2_0=ruleInstructionWordNotation		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getInstructionNotationRule());
 	        }
        		add(
        			$current, 
+       			"words",
+        		lv_words_2_0, 
+        		"InstructionWordNotation");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)+)
+;
+
+
+
+
+
+// Entry rule entryRuleInstructionWordNotation
+entryRuleInstructionWordNotation returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getInstructionWordNotationRule()); }
+	 iv_ruleInstructionWordNotation=ruleInstructionWordNotation 
+	 { $current=$iv_ruleInstructionWordNotation.current; } 
+	 EOF 
+;
+
+// Rule InstructionWordNotation
+ruleInstructionWordNotation returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='<' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getInstructionWordNotationAccess().getLessThanSignKeyword_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getInstructionWordNotationAccess().getSectionsInsctructionSectionNotationParserRuleCall_1_0()); 
+	    }
+		lv_sections_1_0=ruleInsctructionSectionNotation		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getInstructionWordNotationRule());
+	        }
+       		add(
+       			$current, 
        			"sections",
-        		lv_sections_3_0, 
+        		lv_sections_1_0, 
         		"InsctructionSectionNotation");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)*	otherlv_4='>' 
+)+	otherlv_2='>' 
     {
-    	newLeafNode(otherlv_4, grammarAccess.getInstructionNotationAccess().getGreaterThanSignKeyword_4());
+    	newLeafNode(otherlv_2, grammarAccess.getInstructionWordNotationAccess().getGreaterThanSignKeyword_2());
     }
 )
 ;
