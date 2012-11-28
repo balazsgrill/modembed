@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<assembler:InstructionSet xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assembler="http://modembed.hu/core/assembler" name="microchip.pic16.enchanced.instruction">
+<assembler:InstructionSet xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assembler="http://modembed.hu/core/assembler" name="microchip.pic16.enchanced.instructions">
   <instructions name="ADDWFC">
     <parameters id="102"/>
     <parameters id="100" defaultValue="1"/>
