@@ -8,7 +8,6 @@ import hu.modembed.model.editor.IPropertyEditor;
 import java.util.Collection;
 import java.util.Collections;
 
-import org.eclipse.core.databinding.Binding;
 import org.eclipse.core.databinding.DataBindingContext;
 import org.eclipse.core.databinding.observable.value.IObservableValue;
 import org.eclipse.emf.databinding.EMFUpdateValueStrategy;

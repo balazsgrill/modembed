@@ -1,2 +1,40 @@
 <?xml version="1.0" encoding="ASCII"?>
-<emodel:Library xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:emodel="http://emodel/1.0" name="pic16.platform"/>
+<emodel:Library xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:emodel="http://emodel/1.0" xmlns:types="http://emodel/1.0/types" name="pic16.platform">
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable" name="d">
+    <type xsi:type="types:ReferenceTypeDefinition">
+      <type href="../../e.core/.models/e.platform.xmi#//@content.0"/>
+    </type>
+  </content>
+  <content xsi:type="emodel:HeapVariable" name="v">
+    <type xsi:type="types:ReferenceTypeDefinition">
+      <type href="../../e.core/.models/e.platform.xmi#//@content.0"/>
+    </type>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+  <content xsi:type="emodel:HeapVariable">
+    <type xsi:type="types:ReferenceTypeDefinition"/>
+  </content>
+</emodel:Library>

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="ASCII"?>
-<emodel:Library xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:emodel="http://emodel/1.0" xmlns:types="http://emodel/1.0/types" name="pic16.bankselect">
-  <content xsi:type="emodel:HeapVariable" name="address">
-    <type xsi:type="types:ReferenceTypeDefinition"/>
-  </content>
-  <content xsi:type="emodel:HeapVariable">
-    <type xsi:type="types:ReferenceTypeDefinition"/>
-  </content>
-</emodel:Library>

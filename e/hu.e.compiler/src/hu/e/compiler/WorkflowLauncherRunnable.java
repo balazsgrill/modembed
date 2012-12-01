@@ -104,8 +104,8 @@ public class WorkflowLauncherRunnable{
 	public WorkflowLauncherRunnable(URI workflow) {
 		this.resourceSet = new ResourceSetImpl();
 		
-		String fileString = URI.decode(workflow.path());
-		IFile file = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(fileString));
+		String fileString = workflow.toPlatformString(true);
+		IFile file = (IFile)ResourcesPlugin.getWorkspace().getRoot().findMember(fileString);
 		this.workflowFile = file;
 		
 		Resource r = resourceSet.getResource(workflow, true);
