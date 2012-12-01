@@ -63,7 +63,7 @@ public class NewModembedFileWizard extends BasicNewResourceWizard{
     private String fileNameWithoutExt(String name){
     	int i = name.lastIndexOf('.');
     	if (i != -1){
-    		return name.substring(0, i-1);
+    		return name.substring(0, i);
     	}
     	return name;
     }
