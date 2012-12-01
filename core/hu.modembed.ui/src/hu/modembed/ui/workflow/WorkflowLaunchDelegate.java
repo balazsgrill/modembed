@@ -11,6 +11,7 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.jobs.Job;
+import org.eclipse.debug.core.DebugException;
 import org.eclipse.debug.core.ILaunch;
 import org.eclipse.debug.core.ILaunchConfiguration;
 import org.eclipse.debug.core.model.ILaunchConfigurationDelegate;
@@ -27,7 +28,7 @@ public class WorkflowLaunchDelegate implements ILaunchConfigurationDelegate, IWo
 	 */
 	@Override
 	public void launch(ILaunchConfiguration configuration, String mode,
-			ILaunch launch, IProgressMonitor monitor) throws CoreException {
+			final ILaunch launch, IProgressMonitor monitor) throws CoreException {
 		
 		String wfuri = configuration.getAttribute(WORKFLOW_URI, "");
 		try{
@@ -37,11 +38,15 @@ public class WorkflowLaunchDelegate implements ILaunchConfigurationDelegate, IWo
 				
 				@Override
 				protected IStatus run(IProgressMonitor monitor) {
-					
+					try {
+						launch.terminate();
+					} catch (DebugException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 					WorkflowLauncherRunnable runnable = new WorkflowLauncherRunnable(uri);
-					runnable.execute(monitor);
+					return runnable.execute(monitor);
 					
-					return Status.OK_STATUS;
 				}
 			};
 			job.setUser(true);

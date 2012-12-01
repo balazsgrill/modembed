@@ -7,6 +7,8 @@ public class ECompilerPlugin implements BundleActivator {
 
 	private static BundleContext context;
 
+	public static final String PLUGIN_ID = "hu.e.compiler";
+	
 	static BundleContext getContext() {
 		return context;
 	}

@@ -3,8 +3,6 @@
  */
 package hu.e.compiler;
 
-import java.util.Map;
-
 import org.eclipse.core.runtime.IProgressMonitor;
 
 /**
@@ -13,6 +11,6 @@ import org.eclipse.core.runtime.IProgressMonitor;
  */
 public interface IModembedTask {
 
-	public void execute(ITaskContext context, IProgressMonitor monitor, Map<String, String> parameters);
+	public void execute(ITaskContext context, IProgressMonitor monitor);
 	
 }

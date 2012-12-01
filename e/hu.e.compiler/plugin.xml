@@ -10,6 +10,14 @@
 
 <plugin>
    <extension-point id="optimizers" name="Compiler Optimizers" schema="schema/hu.e.compiler.optimizers.exsd"/>
+   <extension-point id="tasks" name="Workflow tasks" schema="schema/tasks.exsd"/>
+   <extension
+         point="hu.e.compiler.tasks">
+      <taskType
+            class="hu.e.compiler.tasks.DisassembleHexFileTask"
+            id="e.hex.disassemble">
+      </taskType>
+   </extension>
 
 
 </plugin>
