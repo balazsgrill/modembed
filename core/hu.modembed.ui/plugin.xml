@@ -120,6 +120,14 @@
             name="Disassemble HEX file"
             public="true">
       </launchConfigurationType>
+      <launchConfigurationType
+            delegate="hu.modembed.ui.workflow.WorkflowLaunchDelegate"
+            delegateName="Execute a workflow model"
+            id="hu.modembed.ui.launchWorkflow"
+            modes="run"
+            name="Execute workflow"
+            public="true">
+      </launchConfigurationType>
    </extension>
    <extension
          point="org.eclipse.debug.ui.launchConfigurationTabGroups">
@@ -130,6 +138,11 @@
          <launchMode
                mode="run">
          </launchMode>
+      </launchConfigurationTabGroup>
+      <launchConfigurationTabGroup
+            class="hu.modembed.ui.workflow.WorkflowLaunchConfigurationTabGroup"
+            id="hu.modembed.ui.launchWorkflowTabGroup"
+            type="hu.modembed.ui.launchWorkflow">
       </launchConfigurationTabGroup>
    </extension>
 
