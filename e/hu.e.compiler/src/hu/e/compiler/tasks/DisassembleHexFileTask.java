@@ -3,11 +3,14 @@
  */
 package hu.e.compiler.tasks;
 
+import hexfile.Entry;
 import hexfile.HexFile;
 import hu.e.compiler.IModembedTask;
 import hu.e.compiler.ITaskContext;
 import hu.modembed.model.architecture.Architecture;
-import hu.modembed.model.core.assembler.InstructionSet;
+import hu.modembed.model.architecture.MemorySection;
+import hu.modembed.model.core.assembler.code.AssemblerObject;
+import hu.modembed.model.core.assembler.code.CodeFactory;
 
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.URI;
@@ -37,12 +40,29 @@ public class DisassembleHexFileTask implements IModembedTask {
 		HexFile hfile = (HexFile)hexres.getContents().get(0);
 		
 		String outputmodel = context.getParameterValue(OUTPUT).get(0);
+		Resource outputres = context.getOutput(context.getModelURI(outputmodel));
+		AssemblerObject output = CodeFactory.eINSTANCE.createAssemblerObject();
+		output.setName(outputmodel);
+		outputres.getContents().add(output);
 		
 		String archmodel = context.getParameterValue(ARCH).get(0);
 		Resource archres = context.getInput(context.getModelURI(archmodel));
 		Architecture arch = (Architecture)archres.getContents().get(0);
 		
+		Disassembler disassembler = new Disassembler(arch.getInstructionSet());
 		
+		for(MemorySection memsection : arch.getMemory()){
+			if (memsection.isProgram()){
+				//Only program memory parts need to be disassembled
+				
+				for(Entry entry : hfile.getEntries()){
+					if (entry.getAddress() >= memsection.getStartAddress() && entry.getAddress() < memsection.getLength()){
+						disassembler.disassemble(entry.getData());
+					}
+				}
+				
+			}
+		}
 	}
 
 
