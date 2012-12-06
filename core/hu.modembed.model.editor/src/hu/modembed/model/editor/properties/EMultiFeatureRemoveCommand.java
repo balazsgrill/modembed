@@ -8,33 +8,33 @@ import java.util.List;
 
 import org.eclipse.emf.common.command.AbstractCommand;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EStructuralFeature;
 
 /**
  * @author balazs.grill
  *
  */
-public class EReferenceRemoveCommand extends AbstractCommand {
+public class EMultiFeatureRemoveCommand extends AbstractCommand {
 
 	private final EObject eobject;
-	private final EReference reference;
+	private final EStructuralFeature feature;
 	private final Object[] removed;
 	
-	public EReferenceRemoveCommand(EObject eobject, EReference reference, Object[] removed) {
+	public EMultiFeatureRemoveCommand(EObject eobject, EStructuralFeature feature, Object[] removed) {
 		this.eobject = eobject;
-		this.reference = reference;
+		this.feature = feature;
 		this.removed = removed;
 	}
 	
 	@Override
 	protected boolean prepare() {
-		return reference.isMany();
+		return feature.isMany();
 	}
 	
 	@Override
 	public void undo() {
 		@SuppressWarnings("unchecked")
-		List<Object> list = (List<Object>) eobject.eGet(reference);
+		List<Object> list = (List<Object>) eobject.eGet(feature);
 		list.addAll(Arrays.asList(removed));
 	}
 	
@@ -44,7 +44,7 @@ public class EReferenceRemoveCommand extends AbstractCommand {
 	@Override
 	public void execute() {
 		@SuppressWarnings("unchecked")
-		List<Object> list = (List<Object>) eobject.eGet(reference);
+		List<Object> list = (List<Object>) eobject.eGet(feature);
 		list.removeAll(Arrays.asList(removed));
 	}
 

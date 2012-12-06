@@ -4,26 +4,25 @@
 package hu.modembed.model.editor.properties;
 
 import hu.modembed.model.editor.IPropertyEditor;
-import hu.modembed.ui.databinding.ElementLabelValueFactory;
-import hu.modembed.ui.dialogs.SelectObjectDialog;
 
 import java.util.Collection;
 import java.util.Collections;
 
 import org.eclipse.core.databinding.observable.list.IObservableList;
-import org.eclipse.core.databinding.observable.map.IObservableMap;
-import org.eclipse.core.databinding.observable.masterdetail.MasterDetailObservables;
 import org.eclipse.emf.common.command.Command;
+import org.eclipse.emf.databinding.EMFUpdateValueStrategy;
 import org.eclipse.emf.databinding.edit.EMFEditProperties;
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.databinding.viewers.ObservableListContentProvider;
-import org.eclipse.jface.databinding.viewers.ObservableMapLabelProvider;
 import org.eclipse.jface.dialogs.Dialog;
+import org.eclipse.jface.dialogs.IInputValidator;
+import org.eclipse.jface.dialogs.InputDialog;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.viewers.ListViewer;
 import org.eclipse.jface.viewers.StructuredViewer;
 import org.eclipse.swt.SWT;
@@ -37,12 +36,12 @@ import org.eclipse.swt.widgets.Label;
  * @author balazs.grill
  *
  */
-public class ManyEReferenceEditor implements IPropertyEditor {
+public class ManyEAttributeEditor implements IPropertyEditor {
 
-	private final EReference reference;
+	private final EAttribute attribute;
 	
-	public ManyEReferenceEditor(EReference reference) {
-		this.reference = reference;
+	public ManyEAttributeEditor(EAttribute attribute) {
+		this.attribute = attribute;
 	}
 	
 	/* (non-Javadoc)
@@ -62,19 +61,20 @@ public class ManyEReferenceEditor implements IPropertyEditor {
 		c.setLayout(gl);
 		
 		Label l = new Label(c, SWT.NONE);
-		l.setText(reference.getName()+": ");
+		l.setText(attribute.getName()+": ");
 		l.setLayoutData(new GridData(SWT.FILL, SWT.TOP, true, false));
 		
 		final StructuredViewer viewer = new ListViewer(c);
 		viewer.getControl().setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 		
-		IObservableList content = EMFEditProperties.list(edomain, reference).observe(eobject);
+		IObservableList content = EMFEditProperties.list(edomain, attribute).observe(eobject);
 		
 		ObservableListContentProvider cp = new ObservableListContentProvider();
-		IObservableMap labels = MasterDetailObservables.detailValues(cp.getKnownElements(), new ElementLabelValueFactory(edomain), String.class);
+		final EMFUpdateValueStrategy updateValueStrategy = new EMFUpdateValueStrategy();
+		//IObservableMap labels = MasterDetailObservables.detailValues(cp.getKnownElements(), new ElementLabelValueFactory(edomain), String.class);
 		
 		viewer.setContentProvider(cp);
-		viewer.setLabelProvider(new ObservableMapLabelProvider(labels));
+		viewer.setLabelProvider(new LabelProvider());
 		viewer.setInput(content);
 		
 		MenuManager menumanager = new MenuManager();
@@ -82,11 +82,22 @@ public class ManyEReferenceEditor implements IPropertyEditor {
 		menumanager.add(new Action("Add..") {
 			@Override
 			public void run() {
-				SelectObjectDialog dialog = new SelectObjectDialog(viewer.getControl().getShell(),edomain, eobject, reference, true);
+				InputDialog dialog = new InputDialog(viewer.getControl().getShell(), "Add value", "Please input new Value", "", new IInputValidator() {
+					
+					@Override
+					public String isValid(String newText) {
+						if (updateValueStrategy.convert(newText) == null){
+							return "Invalid value";
+						}
+						return null;
+					}
+				});
+				//SelectObjectDialog dialog = new SelectObjectDialog(viewer.getControl().getShell(),edomain, eobject, reference, true);
 				if (dialog.open() == Dialog.OK){
-					Object[] sel = dialog.getResult();
-					if (sel.length > 0){
-						Command cmd = new EMultiFeatureAddCommand(eobject, reference, sel);
+					String value = dialog.getValue();
+					Object addValue = updateValueStrategy.convert(value);
+					if (addValue != null){
+						Command cmd = new EMultiFeatureAddCommand(eobject, attribute, new Object[]{addValue});
 						edomain.getCommandStack().execute(cmd);
 					}
 				}
@@ -97,7 +108,7 @@ public class ManyEReferenceEditor implements IPropertyEditor {
 			public void run() {
 				Object[] elements = ((IStructuredSelection)viewer.getSelection()).toArray();
 				if (elements.length > 0){
-					Command cmd = new EMultiFeatureRemoveCommand(eobject, reference, elements);
+					Command cmd = new EMultiFeatureRemoveCommand(eobject, attribute, elements);
 					edomain.getCommandStack().execute(cmd);
 				}
 			}
