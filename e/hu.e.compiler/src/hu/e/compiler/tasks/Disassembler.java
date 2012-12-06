@@ -93,7 +93,8 @@ public class Disassembler {
 				int wordlength = descriptor.wordlengths[i]; 
 				for(int j=0;j<wordlength;j++){
 					int bytevalue = HexFileResource.byteToInt(data[index]);
-					wordvalue |= ((long)bytevalue)<<( (wordlength-j-1)*8 ); //BigEndian byte order
+					//wordvalue |= ((long)bytevalue)<<( (wordlength-j-1)*8 ); //BigEndian byte order
+					wordvalue |= ((long)bytevalue)<<( (j)*8 ); //LittleEndian byte order
 					index++;
 				}
 				words[i] = wordvalue;
