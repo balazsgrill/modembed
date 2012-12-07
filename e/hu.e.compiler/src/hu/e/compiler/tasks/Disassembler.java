@@ -4,14 +4,16 @@
 package hu.e.compiler.tasks;
 
 import hu.modembed.hexfile.persistence.HexFileResource;
-import hu.modembed.model.core.assembler.AssemblerFactory;
 import hu.modembed.model.core.assembler.ConstantSection;
 import hu.modembed.model.core.assembler.Instruction;
+import hu.modembed.model.core.assembler.InstructionParameter;
 import hu.modembed.model.core.assembler.InstructionSection;
 import hu.modembed.model.core.assembler.InstructionSet;
 import hu.modembed.model.core.assembler.InstructionWord;
+import hu.modembed.model.core.assembler.ParameterSection;
 import hu.modembed.model.core.assembler.code.CodeFactory;
 import hu.modembed.model.core.assembler.code.InstructionCall;
+import hu.modembed.model.core.assembler.code.InstructionCallParameter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,7 +40,7 @@ public class Disassembler {
 		public int bytelength(){
 			int length = 0;
 			for(int i=0;i<wordlengths.length;i++){
-				length += wordlengths[i];
+				length += ((wordlengths[i]-1)/8)+1;
 			}
 			return length;
 		}
@@ -62,12 +64,12 @@ public class Disassembler {
 					//Sections are listed backwards in the model
 					
 					InstructionSection section = sections.get(j);
-					length += section.getSize();
 					if (section instanceof ConstantSection){
 						int sectionvalue = ((ConstantSection) section).getValue();
-						mask |= mask(section.getSize(), section.getStart());
-						value |= ((long)sectionvalue) << section.getStart();
+						mask |= mask(section.getSize(), length);
+						value |= ((long)sectionvalue) << length;
 					}
+					length += section.getSize();
 				}
 				
 				wordmasks[i] = mask;
@@ -90,22 +92,52 @@ public class Disassembler {
 			int index = startIndex;
 			for(int i=0;i<words.length;i++){
 				long wordvalue = 0;
-				int wordlength = descriptor.wordlengths[i]; 
+				int wordlength = ((descriptor.wordlengths[i]-1)/8)+1; 
 				for(int j=0;j<wordlength;j++){
 					int bytevalue = HexFileResource.byteToInt(data[index]);
-					//wordvalue |= ((long)bytevalue)<<( (wordlength-j-1)*8 ); //BigEndian byte order
-					wordvalue |= ((long)bytevalue)<<( (j)*8 ); //LittleEndian byte order
+					//wordvalue |= ((long)bytevalue)<<( (wordlength-j-1)*8 ); //LittleEndian byte order
+					wordvalue |= ((long)bytevalue)<<( j*8 ); //BigEndian byte order
 					index++;
 				}
 				words[i] = wordvalue;
 			}
 		}
 		
+		public long getParameterValue(InstructionParameter p){
+			long value = 0;
+			for(int i=0;i<words.length;i++){
+				InstructionWord iword = descriptor.instruction.getWords().get(i);
+				List<InstructionSection> sections = iword.getSections();
+				int length = 0;
+				for(int j=sections.size()-1;j>=0;j--){
+					InstructionSection section = sections.get(j);
+					if (section instanceof ParameterSection){
+						ParameterSection psection = ((ParameterSection) section); 
+						if (p.equals(psection.getParameter())){
+							long mask = mask(psection.getSize(), length);
+							long psectionvalue = (words[i] & mask);
+							psectionvalue = psectionvalue >> length;
+							value |= psectionvalue << psection.getShift();
+						}
+					}
+					length += section.getSize();
+				}
+			}
+			return value;
+		}
+		
 		public boolean check(){
 			for(int i=0;i<words.length;i++){
-				if((words[i] | descriptor.wordmasks[i]) != descriptor.wordvalues[i]) return false;
+				long maskedWord = words[i] & descriptor.wordmasks[i]; 
+				if(maskedWord != descriptor.wordvalues[i]) return false;
 			}
 			return true;
+		}
+		
+		public String getHexCode(){
+			StringBuilder sb = new StringBuilder();
+			for(long word : words) sb.append(Long.toHexString(word));
+			return sb.toString();
 		}
 		
 	}
@@ -151,7 +183,17 @@ public class Disassembler {
 
 					if (ii.check()){
 						call = CodeFactory.eINSTANCE.createInstructionCall();
-						System.out.println(ii.descriptor.instruction.getName());
+						call.setInstruction(ii.descriptor.instruction);
+						call.setDescription(ii.getHexCode());
+						
+						for(InstructionParameter param : ii.descriptor.instruction.getParameters()){
+							InstructionCallParameter callparam = CodeFactory.eINSTANCE.createInstructionCallParameter();
+							callparam.setDefinition(param);
+							callparam.setValue(ii.getParameterValue(param));
+							call.getParameters().add(callparam);
+						}
+						
+						//System.out.println(ii.descriptor.instruction.getName());
 						index += ii.descriptor.bytelength();
 					}
 				}
@@ -161,6 +203,8 @@ public class Disassembler {
 				//Skip byte
 				System.out.println("UNKOWN");
 				index++;
+			}else{
+				result.add(call);
 			}
 		}
 		

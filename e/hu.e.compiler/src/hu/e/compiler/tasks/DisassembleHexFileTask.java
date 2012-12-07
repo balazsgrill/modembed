@@ -57,7 +57,7 @@ public class DisassembleHexFileTask implements IModembedTask {
 				
 				for(Entry entry : hfile.getEntries()){
 					if (entry.getAddress() >= memsection.getStartAddress() && entry.getAddress() < memsection.getLength()){
-						disassembler.disassemble(entry.getData());
+						output.getInstructions().addAll(disassembler.disassemble(entry.getData()));
 					}
 				}
 				

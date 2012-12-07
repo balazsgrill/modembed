@@ -8,6 +8,7 @@ import hu.modembed.model.core.workflow.TaskParameter;
 import hu.modembed.model.core.workflow.Workflow;
 import hu.modembed.model.core.workflow.WorkflowTask;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedList;
@@ -133,8 +134,18 @@ public class WorkflowLauncherRunnable{
 
 					IModembedTask wtask = createTask(((Task) task).getType());
 					wtask.execute(context, subprogress);
-
+					
 					status.add(context.status);
+					
+					if (context.status.isOK()){
+						for(Resource r : context.outputs){
+							try {
+								r.save(null);
+							} catch (IOException e) {
+								status.add(new Status(IStatus.ERROR, ECompilerPlugin.PLUGIN_ID, "Could not save output model", e));
+							}
+						}
+					}
 				}catch(CoreException e){
 					status.add(e.getStatus());
 				}
