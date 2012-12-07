@@ -84,6 +84,17 @@ public class RootReferenceScope extends AbstractCrossReferenceScope {
 				}
 			}
 		}else{
+			URI uri = getReferredLibURI(id);
+			if (uri != null){
+				Resource r = resourceSet.getResource(uri, true);
+				if (r != null){
+					for(EObject eo : r.getContents()){
+						if (eo instanceof RootElement){
+							if (id.equals(((RootElement) eo).getName())) result.add(eo);
+						}
+					}
+				}
+			}
 			for(RootElement l : libraries){
 				search(l, id, result);
 			}

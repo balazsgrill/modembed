@@ -183,7 +183,7 @@ public class LibraryConverter {
 		
 		ICrossReferenceScope scope = new RootReferenceScope(project, resourceSet, result, Collections.<String>emptyList());
 		if (isetn.getExtends() != null){
-			scope.addCrossReference(result, AssemblerPackage.eINSTANCE.getInstructionSet_Extend(), isetn.getName());
+			scope.addCrossReference(result, AssemblerPackage.eINSTANCE.getInstructionSet_Extend(), isetn.getExtends());
 		}
 		
 		for(InstructionNotation in : isetn.getInstructions()){

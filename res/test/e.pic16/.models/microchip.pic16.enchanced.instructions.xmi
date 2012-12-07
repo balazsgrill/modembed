@@ -107,4 +107,5 @@
       <sections xsi:type="assembler:ParameterSection" start="8" size="6" parameter="//@instructions.14/@parameters.1"/>
     </words>
   </instructions>
+  <extend href="microchip.pic16.instructions.xmi#/"/>
 </assembler:InstructionSet>
