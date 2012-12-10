@@ -31,7 +31,6 @@ public class DisassembleHexFileTask implements IModembedTask {
 	 */
 	@Override
 	public void execute(ITaskContext context, IProgressMonitor monitor) {
-		System.out.println("Disassembling...");
 
 		//Read input hex:
 		String inputfile = context.getParameterValue(INPUT).get(0);

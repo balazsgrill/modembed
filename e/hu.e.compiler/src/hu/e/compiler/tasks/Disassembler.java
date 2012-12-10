@@ -142,7 +142,7 @@ public class Disassembler {
 		
 	}
 	
-	private static long mask(int size, int start){
+	public static long mask(int size, int start){
 		long v = 0;
 		for(int i=0;i<size;i++){
 			v += 1l<<i;
