@@ -56,7 +56,7 @@ public class AssembleHexFileTask implements IModembedTask {
 		Architecture arch = (Architecture)archres.getContents().get(0);
 
 		HexFile hexfile = HexfileFactory.eINSTANCE.createHexFile();
-		hexfile.setAddressType(AddressType.EXTENDED_SEGMENT);
+		hexfile.setAddressType(AddressType.EXTENDED_LINEAR);
 		Resource hexfileRes = context.getOutput(context.getFileURI(context.getParameterValue(OUTPUT).get(0)));
 		hexfileRes.getContents().add(hexfile);
 		
@@ -76,10 +76,13 @@ public class AssembleHexFileTask implements IModembedTask {
 			}
 			
 			Instruction i = call.getInstruction();
-			for(InstructionWord w : i.getWords()){
+			List<InstructionWord> words = i.getWords();
+			for(InstructionWord w : words){
 				long wordvalue = 0;
 				int length = 0;
-				for(InstructionSection s : w.getSections()){
+				List<InstructionSection> sections = w.getSections();
+				for(int k=sections.size()-1;k>=0;k--){
+					InstructionSection s = sections.get(k);
 					long svalue = 0;
 					if (s instanceof ConstantSection){
 						svalue = ((ConstantSection) s).getValue();
