@@ -6,6 +6,11 @@
 	<version>0.8.0</version>
 	<packaging>pom</packaging>
 
+	<modules>
+		<module>../hu.modembed.hexfile.model</module>
+		<module>../hu.modembed.hexfile.persistence</module>
+	</modules>
+
 	<properties>
 		<tycho-version>0.16.0</tycho-version>
 	</properties>
