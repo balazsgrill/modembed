@@ -9,6 +9,15 @@
 	<modules>
 		<module>../hu.modembed.hexfile.model</module>
 		<module>../hu.modembed.hexfile.persistence</module>
+		<module>../hu.modembed</module>
+		<module>../hu.modembed.model</module>
+		<module>../hu.modembed.model.editor</module>
+		<module>../hu.modembed.ui</module>
+		<module>../hu.modembed.ui.launch</module>
+		<module>../../e/hu.e.parser</module>
+		<module>../../e/hu.e.parser.ui</module>
+		<module>../../e/hu.e.compiler</module>
+		<module>../hu.modembed.core.feature</module>
 	</modules>
 
 	<properties>

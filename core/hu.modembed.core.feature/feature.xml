@@ -247,7 +247,7 @@ litigation.
          id="hu.modembed.model"
          download-size="0"
          install-size="0"
-         version="0.7.0"
+         version="1.0.0.qualifier"
          unpack="false"/>
 
    <plugin
@@ -275,42 +275,21 @@ litigation.
          id="hu.e.compiler"
          download-size="0"
          install-size="0"
-         version="0.7.0"
-         unpack="false"/>
-
-   <plugin
-         id="hu.e.compiler.list.edit"
-         download-size="0"
-         install-size="0"
-         version="0.7.0"
-         unpack="false"/>
-
-   <plugin
-         id="hu.e.compiler.list.editor"
-         download-size="0"
-         install-size="0"
-         version="0.7.0"
+         version="0.8.0"
          unpack="false"/>
 
    <plugin
          id="hu.e.parser"
          download-size="0"
          install-size="0"
-         version="0.7.0"
+         version="0.8.0"
          unpack="false"/>
 
    <plugin
          id="hu.e.parser.ui"
          download-size="0"
          install-size="0"
-         version="0.7.0"
-         unpack="false"/>
-
-   <plugin
-         id="hu.modembed.resources.help"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
+         version="0.8.0"
          unpack="false"/>
 
 </feature>
