@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Export-Package: hu.modembed.hexfile.persistence
+Require-Bundle: hu.modembed.hexfile.model;bundle-version="0.1.0",org.e
+ clipse.emf.ecore
+Bundle-Version: 0.7.0
+Bundle-Name: Persistence
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: hu.modembed.hexfile.persistence;singleton:=true
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+

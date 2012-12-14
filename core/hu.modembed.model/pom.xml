@@ -11,6 +11,6 @@
 	</parent>
 	<groupId>hu.modembed</groupId>
 	<artifactId>hu.modembed.model</artifactId>
-	<version>0.7.0</version>
+	<version>1.0.0.qualifier</version>
 	<packaging>eclipse-plugin</packaging>
 </project>
