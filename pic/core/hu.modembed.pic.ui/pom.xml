@@ -10,7 +10,7 @@
 		<relativePath>../../../core/hu.modembed.releng/pom.xml</relativePath>
 	</parent>
 	<groupId>hu.modembed</groupId>
-	<artifactId>hu.modembed.pic.hu</artifactId>
+	<artifactId>hu.modembed.pic.ui</artifactId>
 	<version>0.7.0</version>
 	<packaging>eclipse-plugin</packaging>
 </project>
