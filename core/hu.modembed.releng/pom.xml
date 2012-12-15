@@ -18,6 +18,14 @@
 		<module>../../e/hu.e.parser.ui</module>
 		<module>../../e/hu.e.compiler</module>
 		<module>../hu.modembed.core.feature</module>
+		
+		<module>../hu.modembed.pic.ui</module>
+		<module>../hu.modembed.pic.feature</module>
+		
+		<module>../hu.modembed.pic.pk2cmd</module>
+		<module>../hu.modembed.pic.pk2cmd.win32</module>
+		<module>../hu.modembed.pic.pk2cmd.linux.x86</module>
+		<module>../hu.modembed.pic.pk2cmd.feature</module>
 	</modules>
 
 	<properties>
