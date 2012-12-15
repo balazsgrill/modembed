@@ -19,13 +19,13 @@
 		<module>../../e/hu.e.compiler</module>
 		<module>../hu.modembed.core.feature</module>
 		
-		<module>../hu.modembed.pic.ui</module>
-		<module>../hu.modembed.pic.feature</module>
+		<module>../../pic/core/hu.modembed.pic.ui</module>
+		<module>../../pic/core/hu.modembed.pic.feature</module>
 		
-		<module>../hu.modembed.pic.pk2cmd</module>
-		<module>../hu.modembed.pic.pk2cmd.win32</module>
-		<module>../hu.modembed.pic.pk2cmd.linux.x86</module>
-		<module>../hu.modembed.pic.pk2cmd.feature</module>
+		<module>../../pic/pk2cmd/hu.modembed.pic.pk2cmd</module>
+		<module>../../pic/pk2cmd/hu.modembed.pic.pk2cmd.win32</module>
+		<module>../../pic/pk2cmd/hu.modembed.pic.pk2cmd.linux.x86</module>
+		<module>../../pic/pk2cmd/hu.modembed.pic.pk2cmd.feature</module>
 	</modules>
 
 	<properties>
