@@ -7,7 +7,7 @@
 		<artifactId>hu.modembed-parent</artifactId>
 		<groupId>hu.modembed</groupId>
 		<version>0.8.0</version>
-		<relativePath>../hu.modembed.releng/pom.xml</relativePath>
+		<relativePath>../../../core/hu.modembed.releng/pom.xml</relativePath>
 	</parent>
 	<groupId>hu.modembed</groupId>
 	<artifactId>hu.modembed.pic.pk2cmd.win32</artifactId>
