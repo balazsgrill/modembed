@@ -8,6 +8,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.junit,
  org.eclipse.core.resources,
  hu.modembed;bundle-version="0.7.0",
+ hu.modembed.ui;bundle-version="0.7.0",
  hu.modembed.hexfile.model;bundle-version="0.7.0",
  hu.modembed.hexfile.persistence;bundle-version="0.7.0",
  hu.modembed.model;bundle-version="1.0.0"

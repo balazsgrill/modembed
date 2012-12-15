@@ -21,10 +21,22 @@
 				<artifactId>tycho-surefire-plugin</artifactId>
 				<version>${tycho-version}</version>
 				<configuration>
-					<!-- testSuite>org.eclipse.equinox.p2.tests</testSuite-->
-					<testClass>hu.modembed.test.ParsingTests</testClass>
+					<testSuite>hu.modembed.test</testSuite>
+					<testClass>hu.modembed.test.ModembedTests</testClass>
 					<argLine>-Xmx512m</argLine>
 					<appArgLine>-nl en</appArgLine>
+					<dependencies>
+           				<dependency>
+              				<type>eclipse-feature</type>
+              				<artifactId>org.eclipse.rcp</artifactId>
+              				<version>0.0.0</version>
+            			</dependency>
+           				<dependency>
+              				<type>eclipse-feature</type>
+              				<artifactId>org.eclipse.xtext.ui</artifactId>
+              				<version>0.0.0</version>
+            			</dependency>
+          			</dependencies>
 					<bundleStartLevel>
 						<bundle>
 							<id>org.eclipse.equinox.ds</id>
