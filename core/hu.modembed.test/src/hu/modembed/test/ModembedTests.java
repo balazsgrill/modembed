@@ -5,7 +5,7 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
-@SuiteClasses({ ParsingTests.class })
+@SuiteClasses({ ParsingTests.class, AssemblerTest.class })
 public class ModembedTests {
 
 }

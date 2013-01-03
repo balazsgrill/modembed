@@ -41,7 +41,13 @@ public final class IncludedProject {
 		String icon = ce.getAttribute("icon");
 		Bundle bundle = Platform.getBundle(ce.getContributor().getName());
 		if (bundle != null){
-			this.icon = bundle.getEntry(icon);
+			URL iconurl = null;
+			try{
+				iconurl = bundle.getEntry(icon);
+			}catch(Exception e){
+				//
+			}
+			this.icon = iconurl;
 		}else{
 			this.icon = null;
 		}

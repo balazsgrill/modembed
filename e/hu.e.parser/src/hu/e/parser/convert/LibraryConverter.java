@@ -177,7 +177,7 @@ public class LibraryConverter {
 		return result;
 	}
 	
-	public void convert(InstructionSetNotation isetn){
+	public boolean convert(InstructionSetNotation isetn){
 		InstructionSet result = AssemblerFactory.eINSTANCE.createInstructionSet();
 		result.setName(isetn.getName());
 		
@@ -190,7 +190,7 @@ public class LibraryConverter {
 			result.getInstructions().add(convertInstruction(in));
 		}
 		
-		scope.resolveReferences();
+		boolean fail = scope.resolveReferences();
 		
 		URI uri = getLibURI(result.getName());
 		Resource r = resourceSet.createResource(uri);
@@ -201,9 +201,10 @@ public class LibraryConverter {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return fail;
 	}
 	
-	public void convert(Library library){
+	public boolean convert(Library library){
 		hu.modembed.model.emodel.Library result = EmodelFactory.eINSTANCE.createLibrary();
 		result.setName(library.getName());
 		
@@ -216,7 +217,7 @@ public class LibraryConverter {
 			}
 		}
 		
-		scope.resolveReferences();
+		boolean fail = scope.resolveReferences();
 		
 		URI uri = getLibURI(result.getName());
 		Resource r = resourceSet.createResource(uri);
@@ -227,6 +228,8 @@ public class LibraryConverter {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		return fail;
 	}
 	
 }

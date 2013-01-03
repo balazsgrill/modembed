@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="hu.modembed.ui.includedCode">
+      <project
+            id="test1"
+            name="test1">
+         <dependency
+               project="microchip.pic16">
+         </dependency>
+         <resource
+               path="/"
+               resource="tests/t1_assemble/16f1824_blink_wo_Config.hex">
+         </resource>
+         <resource
+               path="/"
+               resource="tests/t1_assemble/pic16f1824.arch.xmi">
+         </resource>
+         <resource
+               path="/"
+               resource="tests/t1_assemble/build.xmi">
+         </resource>
+      </project>
+   </extension>
+
+</plugin>

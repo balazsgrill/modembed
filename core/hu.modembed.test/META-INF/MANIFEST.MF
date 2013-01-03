@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: MODembed tests
-Bundle-SymbolicName: hu.modembed.test
+Bundle-SymbolicName: hu.modembed.test;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: hu.modembed.test.Activator
 Require-Bundle: org.eclipse.core.runtime,
@@ -11,6 +11,7 @@ Require-Bundle: org.eclipse.core.runtime,
  hu.modembed.ui;bundle-version="0.7.0",
  hu.modembed.hexfile.model;bundle-version="0.7.0",
  hu.modembed.hexfile.persistence;bundle-version="0.7.0",
- hu.modembed.model;bundle-version="1.0.0"
+ hu.modembed.model;bundle-version="1.0.0",
+ hu.e.compiler;bundle-version="0.8.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

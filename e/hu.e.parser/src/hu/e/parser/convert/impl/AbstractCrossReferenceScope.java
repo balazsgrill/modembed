@@ -28,7 +28,7 @@ public abstract class AbstractCrossReferenceScope implements ICrossReferenceScop
 	}
 	
 	@Override
-	public void resolveReferences() {
+	public boolean resolveReferences() {
 		List<CrossReferenceEntry> failedEntries = new LinkedList<CrossReferenceEntry>();
 		for(CrossReferenceEntry entry : entries){
 			System.out.print("Resolving: "+entry+"..");
@@ -45,9 +45,11 @@ public abstract class AbstractCrossReferenceScope implements ICrossReferenceScop
 		}
 		entries.clear();
 		entries.addAll(failedEntries);
+		boolean fail = !failedEntries.isEmpty();
 		for(ICrossReferenceScope sub : subScopes){
-			sub.resolveReferences();
+			fail = sub.resolveReferences() | fail;
 		}
+		return fail;
 	}
 	
 	private List<EObject> filter(List<EObject> ls, EClass ec){

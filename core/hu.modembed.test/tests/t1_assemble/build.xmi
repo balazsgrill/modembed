@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ASCII"?>
+<workflow:Workflow xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:workflow="http://modembed.hu/core/workflow" name="build">
+  <tasks xsi:type="workflow:Task" type="e.hex.disassemble">
+    <parameters name="input">
+      <value>16f1824_blink_wo_Config.hex</value>
+    </parameters>
+    <parameters name="output">
+      <value>disassembled</value>
+    </parameters>
+    <parameters name="arch">
+      <value>pic16f1824.arch</value>
+    </parameters>
+  </tasks>
+  <tasks xsi:type="workflow:Task" type="e.hex.assemble">
+    <parameters name="input">
+      <value>disassembled</value>
+    </parameters>
+    <parameters name="arch">
+      <value>pic16f1824.arch</value>
+    </parameters>
+    <parameters name="output">
+      <value>output.hex</value>
+    </parameters>
+  </tasks>
+</workflow:Workflow>
