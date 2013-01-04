@@ -22,6 +22,21 @@
                resource="tests/t1_assemble/build.xmi">
          </resource>
       </project>
+      <project
+            id="test2"
+            name="test2">
+         <dependency
+               project="microchip.pic16">
+         </dependency>
+         <resource
+               path="/"
+               resource="tests/t2_createAssemblerObject/blink.e">
+         </resource>
+         <resource
+               path="/"
+               resource="tests/t2_createAssemblerObject/build.e">
+         </resource>
+      </project>
    </extension>
 
 </plugin>

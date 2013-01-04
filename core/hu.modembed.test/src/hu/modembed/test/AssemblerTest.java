@@ -9,6 +9,7 @@ import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.URI;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -23,7 +24,7 @@ public class AssemblerTest {
 	}
 	
 	@Test
-	public void test() throws Exception{
+	public void test_Assembly() throws Exception{
 		IProject testproject = ResourcesPlugin.getWorkspace().getRoot().getProject("test1");
 		assertTrue(testproject.exists());
 		
@@ -38,4 +39,13 @@ public class AssemblerTest {
 		assertTrue("output does not match input!", ModembedTests.modelsAreEquivalent(input, output));
 	}
 
+	@Test
+	public void test_createAssemblerObject() throws Exception{
+		IProject testproject = ResourcesPlugin.getWorkspace().getRoot().getProject("test2");
+		assertTrue(testproject.exists());
+		
+		IStatus status = WorkflowLauncherRunnable.create(testproject, "build").execute(new NullProgressMonitor());
+		Assert.assertThat(status, StatusMatcher.instance);
+	}
+	
 }

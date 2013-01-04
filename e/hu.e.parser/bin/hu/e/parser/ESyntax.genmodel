@@ -64,7 +64,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//WorkflowNotation/steps"/>
     </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//WorkflowStepNotation">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//WorkflowStepNotation/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//WorkflowStepNotation/type"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//WorkflowStepNotation/params"/>
     </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//WorkflowStepParameterNotation">

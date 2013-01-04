@@ -20,6 +20,9 @@ import hu.e.parser.eSyntax.Operation;
 import hu.e.parser.eSyntax.RegisterVariable;
 import hu.e.parser.eSyntax.Type;
 import hu.e.parser.eSyntax.Variable;
+import hu.e.parser.eSyntax.WorkflowNotation;
+import hu.e.parser.eSyntax.WorkflowStepNotation;
+import hu.e.parser.eSyntax.WorkflowStepParameterNotation;
 import hu.modembed.model.core.CoreFactory;
 import hu.modembed.model.core.MODembedElement;
 import hu.modembed.model.core.TextOrigin;
@@ -32,6 +35,10 @@ import hu.modembed.model.core.assembler.InstructionSection;
 import hu.modembed.model.core.assembler.InstructionSet;
 import hu.modembed.model.core.assembler.InstructionWord;
 import hu.modembed.model.core.assembler.ParameterSection;
+import hu.modembed.model.core.workflow.Task;
+import hu.modembed.model.core.workflow.TaskParameter;
+import hu.modembed.model.core.workflow.Workflow;
+import hu.modembed.model.core.workflow.WorkflowFactory;
 import hu.modembed.model.emodel.EmodelFactory;
 import hu.modembed.model.emodel.HeapVariable;
 import hu.modembed.model.emodel.LibraryElement;
@@ -207,6 +214,45 @@ public class LibraryConverter {
 		
 		addOrigin(result, in);
 		return result;
+	}
+	
+	public List<UnresolvedCrossReference> convert(WorkflowNotation wfn){
+		Workflow result = WorkflowFactory.eINSTANCE.createWorkflow();
+		result.setName(wfn.getName());
+		addOrigin(result, wfn);
+		
+		for(WorkflowStepNotation sn : wfn.getSteps()){
+			Task task = WorkflowFactory.eINSTANCE.createTask();
+			task.setType(sn.getType());
+			addOrigin(task, sn);
+			result.getTasks().add(task);
+			
+			for(WorkflowStepParameterNotation pn : sn.getParams()){
+				TaskParameter tp = null;
+				for(TaskParameter p : task.getParameters()){
+					if (p.getName().equals(pn.getParameter())){
+						tp = p;
+					}
+				}
+				if (tp == null){
+					tp = WorkflowFactory.eINSTANCE.createTaskParameter();
+					tp.setName(pn.getParameter());
+					task.getParameters().add(tp);
+				}
+				tp.getValue().add(pn.getValue());
+			}
+		}
+		
+		URI uri = getLibURI(result.getName());
+		Resource r = resourceSet.createResource(uri);
+		r.getContents().add(result);
+		try {
+			r.save(null);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return Collections.emptyList();
 	}
 	
 	public List<UnresolvedCrossReference> convert(InstructionSetNotation isetn){

@@ -684,7 +684,7 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getWorkflowStepNotation_Name()
+  public EAttribute getWorkflowStepNotation_Type()
   {
     return (EAttribute)workflowStepNotationEClass.getEStructuralFeatures().get(0);
   }
@@ -2051,7 +2051,7 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     createEReference(workflowNotationEClass, WORKFLOW_NOTATION__STEPS);
 
     workflowStepNotationEClass = createEClass(WORKFLOW_STEP_NOTATION);
-    createEAttribute(workflowStepNotationEClass, WORKFLOW_STEP_NOTATION__NAME);
+    createEAttribute(workflowStepNotationEClass, WORKFLOW_STEP_NOTATION__TYPE);
     createEReference(workflowStepNotationEClass, WORKFLOW_STEP_NOTATION__PARAMS);
 
     workflowStepParameterNotationEClass = createEClass(WORKFLOW_STEP_PARAMETER_NOTATION);
@@ -2320,7 +2320,7 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     initEReference(getWorkflowNotation_Steps(), this.getWorkflowStepNotation(), null, "steps", null, 0, -1, WorkflowNotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(workflowStepNotationEClass, WorkflowStepNotation.class, "WorkflowStepNotation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getWorkflowStepNotation_Name(), ecorePackage.getEString(), "name", null, 0, 1, WorkflowStepNotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getWorkflowStepNotation_Type(), ecorePackage.getEString(), "type", null, 0, 1, WorkflowStepNotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getWorkflowStepNotation_Params(), this.getWorkflowStepParameterNotation(), null, "params", null, 0, -1, WorkflowStepNotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(workflowStepParameterNotationEClass, WorkflowStepParameterNotation.class, "WorkflowStepParameterNotation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

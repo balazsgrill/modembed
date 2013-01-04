@@ -56,7 +56,7 @@ WorkflowNotation:
 ;
 
 WorkflowStepNotation:
-	name=LibraryName '{'
+	type=LibraryName '{'
 		(params += WorkflowStepParameterNotation)*
 	'}'
 ;

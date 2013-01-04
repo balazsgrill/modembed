@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.e.parser.eSyntax.impl.WorkflowStepNotationImpl#getName <em>Name</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.impl.WorkflowStepNotationImpl#getType <em>Type</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.impl.WorkflowStepNotationImpl#getParams <em>Params</em>}</li>
  * </ul>
  * </p>
@@ -39,24 +39,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class WorkflowStepNotationImpl extends MinimalEObjectImpl.Container implements WorkflowStepNotation
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The default value of the '{@link #getType() <em>Type</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getType()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
+  protected static final String TYPE_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getType()
    * @generated
    * @ordered
    */
-  protected String name = NAME_EDEFAULT;
+  protected String type = TYPE_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getParams() <em>Params</em>}' containment reference list.
@@ -94,9 +94,9 @@ public class WorkflowStepNotationImpl extends MinimalEObjectImpl.Container imple
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getName()
+  public String getType()
   {
-    return name;
+    return type;
   }
 
   /**
@@ -104,12 +104,12 @@ public class WorkflowStepNotationImpl extends MinimalEObjectImpl.Container imple
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setName(String newName)
+  public void setType(String newType)
   {
-    String oldName = name;
-    name = newName;
+    String oldType = type;
+    type = newType;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.WORKFLOW_STEP_NOTATION__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.WORKFLOW_STEP_NOTATION__TYPE, oldType, type));
   }
 
   /**
@@ -152,8 +152,8 @@ public class WorkflowStepNotationImpl extends MinimalEObjectImpl.Container imple
   {
     switch (featureID)
     {
-      case ESyntaxPackage.WORKFLOW_STEP_NOTATION__NAME:
-        return getName();
+      case ESyntaxPackage.WORKFLOW_STEP_NOTATION__TYPE:
+        return getType();
       case ESyntaxPackage.WORKFLOW_STEP_NOTATION__PARAMS:
         return getParams();
     }
@@ -171,8 +171,8 @@ public class WorkflowStepNotationImpl extends MinimalEObjectImpl.Container imple
   {
     switch (featureID)
     {
-      case ESyntaxPackage.WORKFLOW_STEP_NOTATION__NAME:
-        setName((String)newValue);
+      case ESyntaxPackage.WORKFLOW_STEP_NOTATION__TYPE:
+        setType((String)newValue);
         return;
       case ESyntaxPackage.WORKFLOW_STEP_NOTATION__PARAMS:
         getParams().clear();
@@ -192,8 +192,8 @@ public class WorkflowStepNotationImpl extends MinimalEObjectImpl.Container imple
   {
     switch (featureID)
     {
-      case ESyntaxPackage.WORKFLOW_STEP_NOTATION__NAME:
-        setName(NAME_EDEFAULT);
+      case ESyntaxPackage.WORKFLOW_STEP_NOTATION__TYPE:
+        setType(TYPE_EDEFAULT);
         return;
       case ESyntaxPackage.WORKFLOW_STEP_NOTATION__PARAMS:
         getParams().clear();
@@ -212,8 +212,8 @@ public class WorkflowStepNotationImpl extends MinimalEObjectImpl.Container imple
   {
     switch (featureID)
     {
-      case ESyntaxPackage.WORKFLOW_STEP_NOTATION__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case ESyntaxPackage.WORKFLOW_STEP_NOTATION__TYPE:
+        return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
       case ESyntaxPackage.WORKFLOW_STEP_NOTATION__PARAMS:
         return params != null && !params.isEmpty();
     }
@@ -231,8 +231,8 @@ public class WorkflowStepNotationImpl extends MinimalEObjectImpl.Container imple
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
+    result.append(" (type: ");
+    result.append(type);
     result.append(')');
     return result.toString();
   }

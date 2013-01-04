@@ -1215,13 +1215,13 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleWorkflowStepNotation"
-    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:416:1: ruleWorkflowStepNotation returns [EObject current=null] : ( ( (lv_name_0_0= ruleLibraryName ) ) otherlv_1= '{' ( (lv_params_2_0= ruleWorkflowStepParameterNotation ) )* otherlv_3= '}' ) ;
+    // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:416:1: ruleWorkflowStepNotation returns [EObject current=null] : ( ( (lv_type_0_0= ruleLibraryName ) ) otherlv_1= '{' ( (lv_params_2_0= ruleWorkflowStepParameterNotation ) )* otherlv_3= '}' ) ;
     public final EObject ruleWorkflowStepNotation() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
         Token otherlv_3=null;
-        AntlrDatatypeRuleToken lv_name_0_0 = null;
+        AntlrDatatypeRuleToken lv_type_0_0 = null;
 
         EObject lv_params_2_0 = null;
 
@@ -1229,25 +1229,25 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:419:28: ( ( ( (lv_name_0_0= ruleLibraryName ) ) otherlv_1= '{' ( (lv_params_2_0= ruleWorkflowStepParameterNotation ) )* otherlv_3= '}' ) )
-            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:420:1: ( ( (lv_name_0_0= ruleLibraryName ) ) otherlv_1= '{' ( (lv_params_2_0= ruleWorkflowStepParameterNotation ) )* otherlv_3= '}' )
+            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:419:28: ( ( ( (lv_type_0_0= ruleLibraryName ) ) otherlv_1= '{' ( (lv_params_2_0= ruleWorkflowStepParameterNotation ) )* otherlv_3= '}' ) )
+            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:420:1: ( ( (lv_type_0_0= ruleLibraryName ) ) otherlv_1= '{' ( (lv_params_2_0= ruleWorkflowStepParameterNotation ) )* otherlv_3= '}' )
             {
-            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:420:1: ( ( (lv_name_0_0= ruleLibraryName ) ) otherlv_1= '{' ( (lv_params_2_0= ruleWorkflowStepParameterNotation ) )* otherlv_3= '}' )
-            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:420:2: ( (lv_name_0_0= ruleLibraryName ) ) otherlv_1= '{' ( (lv_params_2_0= ruleWorkflowStepParameterNotation ) )* otherlv_3= '}'
+            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:420:1: ( ( (lv_type_0_0= ruleLibraryName ) ) otherlv_1= '{' ( (lv_params_2_0= ruleWorkflowStepParameterNotation ) )* otherlv_3= '}' )
+            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:420:2: ( (lv_type_0_0= ruleLibraryName ) ) otherlv_1= '{' ( (lv_params_2_0= ruleWorkflowStepParameterNotation ) )* otherlv_3= '}'
             {
-            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:420:2: ( (lv_name_0_0= ruleLibraryName ) )
-            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:421:1: (lv_name_0_0= ruleLibraryName )
+            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:420:2: ( (lv_type_0_0= ruleLibraryName ) )
+            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:421:1: (lv_type_0_0= ruleLibraryName )
             {
-            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:421:1: (lv_name_0_0= ruleLibraryName )
-            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:422:3: lv_name_0_0= ruleLibraryName
+            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:421:1: (lv_type_0_0= ruleLibraryName )
+            // ../hu.e.parser/src-gen/hu/e/parser/parser/antlr/internal/InternalESyntax.g:422:3: lv_type_0_0= ruleLibraryName
             {
             if ( state.backtracking==0 ) {
                
-              	        newCompositeNode(grammarAccess.getWorkflowStepNotationAccess().getNameLibraryNameParserRuleCall_0_0()); 
+              	        newCompositeNode(grammarAccess.getWorkflowStepNotationAccess().getTypeLibraryNameParserRuleCall_0_0()); 
               	    
             }
             pushFollow(FOLLOW_ruleLibraryName_in_ruleWorkflowStepNotation1073);
-            lv_name_0_0=ruleLibraryName();
+            lv_type_0_0=ruleLibraryName();
 
             state._fsp--;
             if (state.failed) return current;
@@ -1258,8 +1258,8 @@ public class InternalESyntaxParser extends AbstractInternalAntlrParser {
               	        }
                      		set(
                      			current, 
-                     			"name",
-                      		lv_name_0_0, 
+                     			"type",
+                      		lv_type_0_0, 
                       		"LibraryName");
               	        afterParserOrEnumRuleCall();
               	    

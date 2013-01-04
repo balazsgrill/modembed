@@ -3016,9 +3016,9 @@ rule__WorkflowStepNotation__Group__0__Impl
     }
 :
 (
-{ before(grammarAccess.getWorkflowStepNotationAccess().getNameAssignment_0()); }
-(rule__WorkflowStepNotation__NameAssignment_0)
-{ after(grammarAccess.getWorkflowStepNotationAccess().getNameAssignment_0()); }
+{ before(grammarAccess.getWorkflowStepNotationAccess().getTypeAssignment_0()); }
+(rule__WorkflowStepNotation__TypeAssignment_0)
+{ after(grammarAccess.getWorkflowStepNotationAccess().getTypeAssignment_0()); }
 )
 
 ;
@@ -9565,14 +9565,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__WorkflowStepNotation__NameAssignment_0
+rule__WorkflowStepNotation__TypeAssignment_0
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getWorkflowStepNotationAccess().getNameLibraryNameParserRuleCall_0_0()); }
-	ruleLibraryName{ after(grammarAccess.getWorkflowStepNotationAccess().getNameLibraryNameParserRuleCall_0_0()); }
+{ before(grammarAccess.getWorkflowStepNotationAccess().getTypeLibraryNameParserRuleCall_0_0()); }
+	ruleLibraryName{ after(grammarAccess.getWorkflowStepNotationAccess().getTypeLibraryNameParserRuleCall_0_0()); }
 )
 
 ;

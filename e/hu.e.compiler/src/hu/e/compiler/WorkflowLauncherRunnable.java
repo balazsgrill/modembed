@@ -102,6 +102,11 @@ public class WorkflowLauncherRunnable{
 		
 	}
 	
+	public static WorkflowLauncherRunnable create(IProject project, String workflowname){
+		URI uri = TaskUtils.findModelURI(project, workflowname);
+		return (uri == null) ? null : new WorkflowLauncherRunnable(uri);
+	}
+	
 	public WorkflowLauncherRunnable(URI workflow) {
 		this.resourceSet = new ResourceSetImpl();
 		

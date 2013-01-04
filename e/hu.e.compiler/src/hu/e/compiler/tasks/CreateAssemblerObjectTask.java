@@ -87,13 +87,17 @@ public class CreateAssemblerObjectTask implements IModembedTask {
 				int i = 0;
 				for (ExecutionStep param : ((Call) step).getParameters()){
 					if (param instanceof IntegerLiteralExpression){
-						InstructionCallParameter icallp = CodeFactory.eINSTANCE.createInstructionCallParameter();
-						InstructionParameter ip = ins.getParameters().get(i);
-						i++;
-						icallp.setDefinition(ip);
-						icallp.setValue(((IntegerLiteralExpression) param).getValue().longValue());
-						icall.getParameters().add(icallp);
-						TaskUtils.addOrigin(icallp, param);
+						if (i >= ins.getParameters().size()){
+							context.logStatus(new Status(IStatus.ERROR, ECompilerPlugin.PLUGIN_ID, "Too many parameters given for "+ins.getName()+"!"));
+						}else{
+							InstructionCallParameter icallp = CodeFactory.eINSTANCE.createInstructionCallParameter();
+							InstructionParameter ip = ins.getParameters().get(i);
+							i++;
+							icallp.setDefinition(ip);
+							icallp.setValue(((IntegerLiteralExpression) param).getValue().longValue());
+							icall.getParameters().add(icallp);
+							TaskUtils.addOrigin(icallp, param);
+						}
 					}else{
 						context.logStatus(new Status(IStatus.ERROR, ECompilerPlugin.PLUGIN_ID, "Only integer parameters are supported!"));
 					}

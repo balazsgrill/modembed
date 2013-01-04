@@ -9591,26 +9591,26 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WorkflowStepNotation__Group__0__Impl"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:3013:1: rule__WorkflowStepNotation__Group__0__Impl : ( ( rule__WorkflowStepNotation__NameAssignment_0 ) ) ;
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:3013:1: rule__WorkflowStepNotation__Group__0__Impl : ( ( rule__WorkflowStepNotation__TypeAssignment_0 ) ) ;
     public final void rule__WorkflowStepNotation__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:3017:1: ( ( ( rule__WorkflowStepNotation__NameAssignment_0 ) ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:3018:1: ( ( rule__WorkflowStepNotation__NameAssignment_0 ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:3017:1: ( ( ( rule__WorkflowStepNotation__TypeAssignment_0 ) ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:3018:1: ( ( rule__WorkflowStepNotation__TypeAssignment_0 ) )
             {
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:3018:1: ( ( rule__WorkflowStepNotation__NameAssignment_0 ) )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:3019:1: ( rule__WorkflowStepNotation__NameAssignment_0 )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:3018:1: ( ( rule__WorkflowStepNotation__TypeAssignment_0 ) )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:3019:1: ( rule__WorkflowStepNotation__TypeAssignment_0 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getWorkflowStepNotationAccess().getNameAssignment_0()); 
+               before(grammarAccess.getWorkflowStepNotationAccess().getTypeAssignment_0()); 
             }
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:3020:1: ( rule__WorkflowStepNotation__NameAssignment_0 )
-            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:3020:2: rule__WorkflowStepNotation__NameAssignment_0
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:3020:1: ( rule__WorkflowStepNotation__TypeAssignment_0 )
+            // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:3020:2: rule__WorkflowStepNotation__TypeAssignment_0
             {
-            pushFollow(FOLLOW_rule__WorkflowStepNotation__NameAssignment_0_in_rule__WorkflowStepNotation__Group__0__Impl6486);
-            rule__WorkflowStepNotation__NameAssignment_0();
+            pushFollow(FOLLOW_rule__WorkflowStepNotation__TypeAssignment_0_in_rule__WorkflowStepNotation__Group__0__Impl6486);
+            rule__WorkflowStepNotation__TypeAssignment_0();
 
             state._fsp--;
             if (state.failed) return ;
@@ -9618,7 +9618,7 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getWorkflowStepNotationAccess().getNameAssignment_0()); 
+               after(grammarAccess.getWorkflowStepNotationAccess().getTypeAssignment_0()); 
             }
 
             }
@@ -27344,9 +27344,9 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__WorkflowNotation__StepsAssignment_3"
 
 
-    // $ANTLR start "rule__WorkflowStepNotation__NameAssignment_0"
-    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:9568:1: rule__WorkflowStepNotation__NameAssignment_0 : ( ruleLibraryName ) ;
-    public final void rule__WorkflowStepNotation__NameAssignment_0() throws RecognitionException {
+    // $ANTLR start "rule__WorkflowStepNotation__TypeAssignment_0"
+    // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:9568:1: rule__WorkflowStepNotation__TypeAssignment_0 : ( ruleLibraryName ) ;
+    public final void rule__WorkflowStepNotation__TypeAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -27358,15 +27358,15 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
             // ../hu.e.parser.ui/src-gen/hu/e/parser/ui/contentassist/antlr/internal/InternalESyntax.g:9574:1: ruleLibraryName
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getWorkflowStepNotationAccess().getNameLibraryNameParserRuleCall_0_0()); 
+               before(grammarAccess.getWorkflowStepNotationAccess().getTypeLibraryNameParserRuleCall_0_0()); 
             }
-            pushFollow(FOLLOW_ruleLibraryName_in_rule__WorkflowStepNotation__NameAssignment_019371);
+            pushFollow(FOLLOW_ruleLibraryName_in_rule__WorkflowStepNotation__TypeAssignment_019371);
             ruleLibraryName();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getWorkflowStepNotationAccess().getNameLibraryNameParserRuleCall_0_0()); 
+               after(grammarAccess.getWorkflowStepNotationAccess().getTypeLibraryNameParserRuleCall_0_0()); 
             }
 
             }
@@ -27386,7 +27386,7 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__WorkflowStepNotation__NameAssignment_0"
+    // $ANTLR end "rule__WorkflowStepNotation__TypeAssignment_0"
 
 
     // $ANTLR start "rule__WorkflowStepNotation__ParamsAssignment_2"
@@ -31929,7 +31929,7 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__WorkflowNotation__StepsAssignment_3_in_rule__WorkflowNotation__Group__3__Impl6417 = new BitSet(new long[]{0x0000000000000102L});
     public static final BitSet FOLLOW_rule__WorkflowStepNotation__Group__0__Impl_in_rule__WorkflowStepNotation__Group__06456 = new BitSet(new long[]{0x0000800000000000L});
     public static final BitSet FOLLOW_rule__WorkflowStepNotation__Group__1_in_rule__WorkflowStepNotation__Group__06459 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__WorkflowStepNotation__NameAssignment_0_in_rule__WorkflowStepNotation__Group__0__Impl6486 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__WorkflowStepNotation__TypeAssignment_0_in_rule__WorkflowStepNotation__Group__0__Impl6486 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__WorkflowStepNotation__Group__1__Impl_in_rule__WorkflowStepNotation__Group__16516 = new BitSet(new long[]{0x0001000000000100L});
     public static final BitSet FOLLOW_rule__WorkflowStepNotation__Group__2_in_rule__WorkflowStepNotation__Group__16519 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_47_in_rule__WorkflowStepNotation__Group__1__Impl6547 = new BitSet(new long[]{0x0000000000000002L});
@@ -32473,7 +32473,7 @@ public class InternalESyntaxParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_RULE_ID_in_rule__Annotation__DefinitionAssignment_119278 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleLibraryName_in_rule__WorkflowNotation__NameAssignment_119309 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleWorkflowStepNotation_in_rule__WorkflowNotation__StepsAssignment_319340 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLibraryName_in_rule__WorkflowStepNotation__NameAssignment_019371 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLibraryName_in_rule__WorkflowStepNotation__TypeAssignment_019371 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleWorkflowStepParameterNotation_in_rule__WorkflowStepNotation__ParamsAssignment_219402 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_rule__WorkflowStepParameterNotation__ParameterAssignment_019433 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_STRING_in_rule__WorkflowStepParameterNotation__ValueAssignment_2_019464 = new BitSet(new long[]{0x0000000000000002L});

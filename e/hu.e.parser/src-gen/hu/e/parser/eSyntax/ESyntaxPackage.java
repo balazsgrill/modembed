@@ -255,13 +255,13 @@ public interface ESyntaxPackage extends EPackage
   int WORKFLOW_STEP_NOTATION = 4;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The feature id for the '<em><b>Type</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int WORKFLOW_STEP_NOTATION__NAME = 0;
+  int WORKFLOW_STEP_NOTATION__TYPE = 0;
 
   /**
    * The feature id for the '<em><b>Params</b></em>' containment reference list.
@@ -2151,15 +2151,15 @@ public interface ESyntaxPackage extends EPackage
   EClass getWorkflowStepNotation();
 
   /**
-   * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.WorkflowStepNotation#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.WorkflowStepNotation#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see hu.e.parser.eSyntax.WorkflowStepNotation#getName()
+   * @return the meta object for the attribute '<em>Type</em>'.
+   * @see hu.e.parser.eSyntax.WorkflowStepNotation#getType()
    * @see #getWorkflowStepNotation()
    * @generated
    */
-  EAttribute getWorkflowStepNotation_Name();
+  EAttribute getWorkflowStepNotation_Type();
 
   /**
    * Returns the meta object for the containment reference list '{@link hu.e.parser.eSyntax.WorkflowStepNotation#getParams <em>Params</em>}'.
@@ -3651,12 +3651,12 @@ public interface ESyntaxPackage extends EPackage
     EClass WORKFLOW_STEP_NOTATION = eINSTANCE.getWorkflowStepNotation();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute WORKFLOW_STEP_NOTATION__NAME = eINSTANCE.getWorkflowStepNotation_Name();
+    EAttribute WORKFLOW_STEP_NOTATION__TYPE = eINSTANCE.getWorkflowStepNotation_Type();
 
     /**
      * The meta object literal for the '<em><b>Params</b></em>' containment reference list feature.

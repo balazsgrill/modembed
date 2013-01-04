@@ -420,16 +420,16 @@ ruleWorkflowStepNotation returns [EObject current=null]
 ((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getWorkflowStepNotationAccess().getNameLibraryNameParserRuleCall_0_0()); 
+	        newCompositeNode(grammarAccess.getWorkflowStepNotationAccess().getTypeLibraryNameParserRuleCall_0_0()); 
 	    }
-		lv_name_0_0=ruleLibraryName		{
+		lv_type_0_0=ruleLibraryName		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getWorkflowStepNotationRule());
 	        }
        		set(
        			$current, 
-       			"name",
-        		lv_name_0_0, 
+       			"type",
+        		lv_type_0_0, 
         		"LibraryName");
 	        afterParserOrEnumRuleCall();
 	    }

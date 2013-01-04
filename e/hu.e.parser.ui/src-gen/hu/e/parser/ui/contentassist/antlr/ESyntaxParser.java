@@ -138,7 +138,7 @@ public class ESyntaxParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAnnotationAccess().getDefinitionAssignment_1(), "rule__Annotation__DefinitionAssignment_1");
 					put(grammarAccess.getWorkflowNotationAccess().getNameAssignment_1(), "rule__WorkflowNotation__NameAssignment_1");
 					put(grammarAccess.getWorkflowNotationAccess().getStepsAssignment_3(), "rule__WorkflowNotation__StepsAssignment_3");
-					put(grammarAccess.getWorkflowStepNotationAccess().getNameAssignment_0(), "rule__WorkflowStepNotation__NameAssignment_0");
+					put(grammarAccess.getWorkflowStepNotationAccess().getTypeAssignment_0(), "rule__WorkflowStepNotation__TypeAssignment_0");
 					put(grammarAccess.getWorkflowStepNotationAccess().getParamsAssignment_2(), "rule__WorkflowStepNotation__ParamsAssignment_2");
 					put(grammarAccess.getWorkflowStepParameterNotationAccess().getParameterAssignment_0(), "rule__WorkflowStepParameterNotation__ParameterAssignment_0");
 					put(grammarAccess.getWorkflowStepParameterNotationAccess().getValueAssignment_2_0(), "rule__WorkflowStepParameterNotation__ValueAssignment_2_0");

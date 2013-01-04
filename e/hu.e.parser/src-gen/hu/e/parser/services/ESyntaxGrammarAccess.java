@@ -226,8 +226,8 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	public class WorkflowStepNotationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "WorkflowStepNotation");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cNameLibraryNameParserRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
+		private final Assignment cTypeAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cTypeLibraryNameParserRuleCall_0_0 = (RuleCall)cTypeAssignment_0.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cParamsAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cParamsWorkflowStepParameterNotationParserRuleCall_2_0 = (RuleCall)cParamsAssignment_2.eContents().get(0);
@@ -235,17 +235,17 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//WorkflowStepNotation:
 		//
-		//	name=LibraryName "{" params+=WorkflowStepParameterNotation* "}";
+		//	type=LibraryName "{" params+=WorkflowStepParameterNotation* "}";
 		public ParserRule getRule() { return rule; }
 
-		//name=LibraryName "{" params+=WorkflowStepParameterNotation* "}"
+		//type=LibraryName "{" params+=WorkflowStepParameterNotation* "}"
 		public Group getGroup() { return cGroup; }
 
-		//name=LibraryName
-		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
+		//type=LibraryName
+		public Assignment getTypeAssignment_0() { return cTypeAssignment_0; }
 
 		//LibraryName
-		public RuleCall getNameLibraryNameParserRuleCall_0_0() { return cNameLibraryNameParserRuleCall_0_0; }
+		public RuleCall getTypeLibraryNameParserRuleCall_0_0() { return cTypeLibraryNameParserRuleCall_0_0; }
 
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
@@ -2810,7 +2810,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 
 	//WorkflowStepNotation:
 	//
-	//	name=LibraryName "{" params+=WorkflowStepParameterNotation* "}";
+	//	type=LibraryName "{" params+=WorkflowStepParameterNotation* "}";
 	public WorkflowStepNotationElements getWorkflowStepNotationAccess() {
 		return (pWorkflowStepNotation != null) ? pWorkflowStepNotation : (pWorkflowStepNotation = new WorkflowStepNotationElements());
 	}

@@ -759,7 +759,7 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 	
 	/**
 	 * Constraint:
-	 *     (name=LibraryName params+=WorkflowStepParameterNotation*)
+	 *     (type=LibraryName params+=WorkflowStepParameterNotation*)
 	 */
 	protected void sequence_WorkflowStepNotation(EObject context, WorkflowStepNotation semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
