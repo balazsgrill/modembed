@@ -1,6 +1,5 @@
 package hu.modembed.test;
 
-import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 import hu.e.compiler.WorkflowLauncherRunnable;
 
@@ -10,8 +9,6 @@ import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.URI;
-import org.hamcrest.BaseMatcher;
-import org.hamcrest.Description;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -35,20 +32,7 @@ public class AssemblerTest {
 		WorkflowLauncherRunnable launch = new WorkflowLauncherRunnable(URI.createPlatformResourceURI(workflow.getFullPath().toString(), true));
 		
 		IStatus status = launch.execute(new NullProgressMonitor());
-		assertThat("Could not execute workflow!", status, new BaseMatcher<IStatus>() {
-			@Override
-			public boolean matches(Object item) {
-				if (item instanceof IStatus){
-					return ((IStatus) item).isOK();
-				}
-				return false;
-			}
-
-			@Override
-			public void describeTo(Description description) {
-				
-			}
-		});
+		assertTrue("Could not execute workflow!", status.isOK());
 		
 		IFile output = testproject.getFile("output.hex");
 		assertTrue("output does not match input!", ModembedTests.modelsAreEquivalent(input, output));
