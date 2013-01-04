@@ -4,6 +4,7 @@
 package hu.e.parser.convert.impl;
 
 import hu.e.parser.convert.ICrossReferenceScope;
+import hu.e.parser.convert.LibraryConverter;
 import hu.e.parser.eSyntax.ADDITIVE_OPERATOR;
 import hu.e.parser.eSyntax.Annotation;
 import hu.e.parser.eSyntax.BOOLEAN_OPERATOR;
@@ -54,7 +55,11 @@ public class ExpressionConverter {
 	
 	public static ExecutionStep convert(XExpression xpression, ICrossReferenceScope scope){
 		if (xpression instanceof XExpression6){
-			return convert((XExpression6)xpression, scope);
+			ExecutionStep es = convert((XExpression6)xpression, scope);
+			if (es != null){
+				LibraryConverter.addOrigin(es, xpression);
+			}
+			return es;
 		}
 		return null;
 	}

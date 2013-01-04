@@ -4,17 +4,21 @@
 package hu.e.parser.ui;
 
 import hu.e.parser.convert.LibraryConverter;
+import hu.e.parser.convert.UnresolvedCrossReference;
 import hu.e.parser.eSyntax.InstructionSetNotation;
 import hu.e.parser.eSyntax.Library;
 import hu.e.parser.ui.internal.ESyntaxActivator;
 
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 import java.util.Set;
 
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IMarker;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IResourceVisitor;
@@ -36,7 +40,10 @@ import org.eclipse.xtext.builder.IXtextBuilderParticipant;
  */
 public class CompilerBuilderParticipant implements IXtextBuilderParticipant {
 
-	private boolean attemptConvert(IBuildContext context, IFile resource){
+	public static final String MARKER_TYPE = "hu.e.parser.ui.unresolvedReferenceMarker";
+	public static final String REFERENCE_ID = "referenceId";
+	
+	private List<UnresolvedCrossReference> attemptConvert(IBuildContext context, IFile resource){
 		Resource res = context.getResourceSet().
 				getResource(URI.createPlatformResourceURI(resource.getFullPath().toString(), true), true);
 		LibraryConverter converter = new LibraryConverter(resource.getProject());
@@ -49,7 +56,7 @@ public class CompilerBuilderParticipant implements IXtextBuilderParticipant {
 				if (l instanceof InstructionSetNotation){
 					return converter.convert((InstructionSetNotation)l);
 				}
-				return false;
+				return Collections.emptyList();
 			}
 		}catch (final Exception e) {
 			e.printStackTrace();
@@ -61,9 +68,9 @@ public class CompilerBuilderParticipant implements IXtextBuilderParticipant {
 							new Status(IStatus.ERROR, ESyntaxActivator.PLUGIN_PREFERENCE_SCOPE,e.getMessage(),e));
 				}
 			});
-			return true;
+			return Collections.emptyList();
 		}
-		return false;
+		return Collections.emptyList();
 	}
 	
 	/* (non-Javadoc)
@@ -95,10 +102,25 @@ public class CompilerBuilderParticipant implements IXtextBuilderParticipant {
 
 		while(!files.isEmpty()){
 			IFile f = files.poll();
-			boolean fail = attemptConvert(context, f);
-			if (fail && !attempted.contains(f)){
-				files.add(f);
-				attempted.add(f);
+			f.deleteMarkers(MARKER_TYPE, true, IResource.DEPTH_INFINITE);
+			List<UnresolvedCrossReference> fail = attemptConvert(context, f);
+			if (!fail.isEmpty()){
+				if (!attempted.contains(f)){
+					//First attempt failed, retry 
+					files.add(f);
+					attempted.add(f);
+				}else{
+					//second attempt failed, add markers
+					for(UnresolvedCrossReference unref : fail){
+						IMarker marker = f.createMarker(MARKER_TYPE);
+						marker.setAttribute(IMarker.SEVERITY, IMarker.SEVERITY_ERROR);
+						marker.setAttribute(IMarker.LINE_NUMBER, unref.line);
+						marker.setAttribute(IMarker.MESSAGE, "Could not resolve reference '"+unref.id+"'");
+						marker.setAttribute(IMarker.CHAR_START,unref.charStart);
+						marker.setAttribute(IMarker.CHAR_END,unref.charEnd);
+						marker.setAttribute(REFERENCE_ID, unref.id);
+					}
+				}
 			}
 		}
 		

@@ -4,6 +4,7 @@
 package hu.e.parser.convert.impl;
 
 import hu.e.parser.convert.ICrossReferenceScope;
+import hu.e.parser.convert.LibraryConverter;
 import hu.e.parser.eSyntax.LazyParameter;
 import hu.e.parser.eSyntax.Operation;
 import hu.e.parser.eSyntax.OperationParameter;
@@ -25,6 +26,7 @@ public class FunctionConverter {
 			VariableParameter vp = EmodelFactory.eINSTANCE.createVariableParameter();
 			vp.setName(((ParameterVariable) op).getName());
 			vp.setType(TypeConverter.convertTypeDef(((ParameterVariable) op).getType(), scope));
+			LibraryConverter.addOrigin(vp, op);
 			//TODO FIXME Parameter Kind is discared!
 			return vp;
 		}
@@ -36,6 +38,7 @@ public class FunctionConverter {
 			for(OperationParameter lop : ot.getParams()){
 				lp.getArguments().add(convert(lop, scope));
 			}
+			LibraryConverter.addOrigin(lp, op);
 			return lp;
 		}
 		return null;
@@ -45,6 +48,7 @@ public class FunctionConverter {
 	public static Function convert(Operation operation, ICrossReferenceScope scope){
 		Function func = EmodelFactory.eINSTANCE.createFunction();
 		func.setName(operation.getName());
+		LibraryConverter.addOrigin(func, operation);
 		ICrossReferenceScope funcscope = new FunctionCrossReferenceScope(func, scope);
 		
 		OperationTypeDef ot = operation.getType();

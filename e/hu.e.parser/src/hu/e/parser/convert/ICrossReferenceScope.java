@@ -24,10 +24,10 @@ public interface ICrossReferenceScope {
 	public void addCrossReference(EObject referer, EReference reference, String id);
 	
 	/**
-	 * Returns true if there are unresolved references left
+	 * Returns the unresolved crossreferences
 	 * @return
 	 */
-	public boolean resolveReferences();
+	public List<UnresolvedCrossReference> resolveReferences();
 	
 	public void addSubScope(ICrossReferenceScope subscope);
 	

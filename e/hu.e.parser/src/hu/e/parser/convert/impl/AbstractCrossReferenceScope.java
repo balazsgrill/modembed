@@ -9,6 +9,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 
 import hu.e.parser.convert.ICrossReferenceScope;
+import hu.e.parser.convert.UnresolvedCrossReference;
 
 public abstract class AbstractCrossReferenceScope implements ICrossReferenceScope {
 
@@ -28,7 +29,7 @@ public abstract class AbstractCrossReferenceScope implements ICrossReferenceScop
 	}
 	
 	@Override
-	public boolean resolveReferences() {
+	public List<UnresolvedCrossReference> resolveReferences() {
 		List<CrossReferenceEntry> failedEntries = new LinkedList<CrossReferenceEntry>();
 		for(CrossReferenceEntry entry : entries){
 			System.out.print("Resolving: "+entry+"..");
@@ -45,11 +46,14 @@ public abstract class AbstractCrossReferenceScope implements ICrossReferenceScop
 		}
 		entries.clear();
 		entries.addAll(failedEntries);
-		boolean fail = !failedEntries.isEmpty();
-		for(ICrossReferenceScope sub : subScopes){
-			fail = sub.resolveReferences() | fail;
+		List<UnresolvedCrossReference> unresolved = new ArrayList<UnresolvedCrossReference>(failedEntries.size());
+		for(CrossReferenceEntry f : failedEntries){
+			unresolved.add(f.createUnresolved());
 		}
-		return fail;
+		for(ICrossReferenceScope sub : subScopes){
+			unresolved.addAll(sub.resolveReferences());
+		}
+		return unresolved;
 	}
 	
 	private List<EObject> filter(List<EObject> ls, EClass ec){

@@ -39,6 +39,7 @@ import hu.modembed.model.emodel.LibraryElement;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.eclipse.core.resources.IFile;
@@ -75,6 +76,8 @@ public class LibraryConverter {
 		ICompositeNode node = NodeModelUtils.findActualNodeFor(origin);
 		if (node != null){
 			to.setLine(node.getStartLine());
+			to.setCharStart(node.getOffset());
+			to.setCharEnd(to.getCharStart()+node.getLength());
 		}
 		
 		return to;
@@ -206,7 +209,7 @@ public class LibraryConverter {
 		return result;
 	}
 	
-	public boolean convert(InstructionSetNotation isetn){
+	public List<UnresolvedCrossReference> convert(InstructionSetNotation isetn){
 		InstructionSet result = AssemblerFactory.eINSTANCE.createInstructionSet();
 		result.setName(isetn.getName());
 		addOrigin(result, isetn);
@@ -220,7 +223,7 @@ public class LibraryConverter {
 			result.getInstructions().add(convertInstruction(in));
 		}
 		
-		boolean fail = scope.resolveReferences();
+		List<UnresolvedCrossReference> fail = scope.resolveReferences();
 		
 		URI uri = getLibURI(result.getName());
 		Resource r = resourceSet.createResource(uri);
@@ -234,7 +237,7 @@ public class LibraryConverter {
 		return fail;
 	}
 	
-	public boolean convert(Library library){
+	public List<UnresolvedCrossReference> convert(Library library){
 		hu.modembed.model.emodel.Library result = EmodelFactory.eINSTANCE.createLibrary();
 		result.setName(library.getName());
 		addOrigin(result, library);
@@ -248,7 +251,7 @@ public class LibraryConverter {
 			}
 		}
 		
-		boolean fail = scope.resolveReferences();
+		List<UnresolvedCrossReference> fail = scope.resolveReferences();
 		
 		URI uri = getLibURI(result.getName());
 		Resource r = resourceSet.createResource(uri);
