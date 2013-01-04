@@ -25,6 +25,10 @@
             class="hu.e.compiler.tasks.MergeHexFileTask"
             id="e.hex.merge">
       </taskType>
+      <taskType
+            class="hu.e.compiler.tasks.CreateAssemblerObjectTask"
+            id="createAssemblerObject">
+      </taskType>
    </extension>
 
 
