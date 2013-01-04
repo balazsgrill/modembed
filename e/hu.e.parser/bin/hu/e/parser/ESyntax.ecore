@@ -8,6 +8,19 @@
   <eClassifiers xsi:type="ecore:EClass" name="Annotation" eSuperTypes="#//XTopLevelExpression">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="definition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WorkflowNotation" eSuperTypes="#//CompilationUnit">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="steps" upperBound="-1"
+        eType="#//WorkflowStepNotation" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WorkflowStepNotation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="params" upperBound="-1"
+        eType="#//WorkflowStepParameterNotation" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WorkflowStepParameterNotation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="parameter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InstructionSetNotation" eSuperTypes="#//CompilationUnit">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="extends" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="instructions" upperBound="-1"

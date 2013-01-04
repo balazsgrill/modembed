@@ -68,6 +68,9 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
       case ESyntaxPackage.COMPILATION_UNIT: return createCompilationUnit();
       case ESyntaxPackage.ANNOTATION_DEFINITION: return createAnnotationDefinition();
       case ESyntaxPackage.ANNOTATION: return createAnnotation();
+      case ESyntaxPackage.WORKFLOW_NOTATION: return createWorkflowNotation();
+      case ESyntaxPackage.WORKFLOW_STEP_NOTATION: return createWorkflowStepNotation();
+      case ESyntaxPackage.WORKFLOW_STEP_PARAMETER_NOTATION: return createWorkflowStepParameterNotation();
       case ESyntaxPackage.INSTRUCTION_SET_NOTATION: return createInstructionSetNotation();
       case ESyntaxPackage.INSTRUCTION_NOTATION: return createInstructionNotation();
       case ESyntaxPackage.INSTRUCTION_WORD_NOTATION: return createInstructionWordNotation();
@@ -220,6 +223,39 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
   {
     AnnotationImpl annotation = new AnnotationImpl();
     return annotation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public WorkflowNotation createWorkflowNotation()
+  {
+    WorkflowNotationImpl workflowNotation = new WorkflowNotationImpl();
+    return workflowNotation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public WorkflowStepNotation createWorkflowStepNotation()
+  {
+    WorkflowStepNotationImpl workflowStepNotation = new WorkflowStepNotationImpl();
+    return workflowStepNotation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public WorkflowStepParameterNotation createWorkflowStepParameterNotation()
+  {
+    WorkflowStepParameterNotationImpl workflowStepParameterNotation = new WorkflowStepParameterNotationImpl();
+    return workflowStepParameterNotation;
   }
 
   /**

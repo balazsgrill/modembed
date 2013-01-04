@@ -225,6 +225,90 @@ finally {
 
 
 
+// Entry rule entryRuleWorkflowNotation
+entryRuleWorkflowNotation 
+:
+{ before(grammarAccess.getWorkflowNotationRule()); }
+	 ruleWorkflowNotation
+{ after(grammarAccess.getWorkflowNotationRule()); } 
+	 EOF 
+;
+
+// Rule WorkflowNotation
+ruleWorkflowNotation
+    @init {
+		int stackSize = keepStackSize();
+    }
+	:
+(
+{ before(grammarAccess.getWorkflowNotationAccess().getGroup()); }
+(rule__WorkflowNotation__Group__0)
+{ after(grammarAccess.getWorkflowNotationAccess().getGroup()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
+// Entry rule entryRuleWorkflowStepNotation
+entryRuleWorkflowStepNotation 
+:
+{ before(grammarAccess.getWorkflowStepNotationRule()); }
+	 ruleWorkflowStepNotation
+{ after(grammarAccess.getWorkflowStepNotationRule()); } 
+	 EOF 
+;
+
+// Rule WorkflowStepNotation
+ruleWorkflowStepNotation
+    @init {
+		int stackSize = keepStackSize();
+    }
+	:
+(
+{ before(grammarAccess.getWorkflowStepNotationAccess().getGroup()); }
+(rule__WorkflowStepNotation__Group__0)
+{ after(grammarAccess.getWorkflowStepNotationAccess().getGroup()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
+// Entry rule entryRuleWorkflowStepParameterNotation
+entryRuleWorkflowStepParameterNotation 
+:
+{ before(grammarAccess.getWorkflowStepParameterNotationRule()); }
+	 ruleWorkflowStepParameterNotation
+{ after(grammarAccess.getWorkflowStepParameterNotationRule()); } 
+	 EOF 
+;
+
+// Rule WorkflowStepParameterNotation
+ruleWorkflowStepParameterNotation
+    @init {
+		int stackSize = keepStackSize();
+    }
+	:
+(
+{ before(grammarAccess.getWorkflowStepParameterNotationAccess().getGroup()); }
+(rule__WorkflowStepParameterNotation__Group__0)
+{ after(grammarAccess.getWorkflowStepParameterNotationAccess().getGroup()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
 // Entry rule entryRuleInstructionSetNotation
 entryRuleInstructionSetNotation 
 :
@@ -1786,6 +1870,12 @@ rule__CompilationUnit__Alternatives
 { after(grammarAccess.getCompilationUnitAccess().getInstructionSetNotationParserRuleCall_1()); }
 )
 
+    |(
+{ before(grammarAccess.getCompilationUnitAccess().getWorkflowNotationParserRuleCall_2()); }
+	ruleWorkflowNotation
+{ after(grammarAccess.getCompilationUnitAccess().getWorkflowNotationParserRuleCall_2()); }
+)
+
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -1818,6 +1908,28 @@ rule__LITERAL__Alternatives
 { before(grammarAccess.getLITERALAccess().getREALTerminalRuleCall_3()); }
 	RULE_REAL
 { after(grammarAccess.getLITERALAccess().getREALTerminalRuleCall_3()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__WorkflowStepParameterNotation__Alternatives_2
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getWorkflowStepParameterNotationAccess().getValueAssignment_2_0()); }
+(rule__WorkflowStepParameterNotation__ValueAssignment_2_0)
+{ after(grammarAccess.getWorkflowStepParameterNotationAccess().getValueAssignment_2_0()); }
+)
+
+    |(
+{ before(grammarAccess.getWorkflowStepParameterNotationAccess().getValueAssignment_2_1()); }
+(rule__WorkflowStepParameterNotation__ValueAssignment_2_1)
+{ after(grammarAccess.getWorkflowStepParameterNotationAccess().getValueAssignment_2_1()); }
 )
 
 ;
@@ -2753,6 +2865,354 @@ rule__Annotation__Group__1__Impl
 finally {
 	restoreStackSize(stackSize);
 }
+
+
+
+
+
+
+rule__WorkflowNotation__Group__0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__WorkflowNotation__Group__0__Impl
+	rule__WorkflowNotation__Group__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__WorkflowNotation__Group__0__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getWorkflowNotationAccess().getWorkflowKeyword_0()); }
+
+	'workflow' 
+
+{ after(grammarAccess.getWorkflowNotationAccess().getWorkflowKeyword_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__WorkflowNotation__Group__1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__WorkflowNotation__Group__1__Impl
+	rule__WorkflowNotation__Group__2
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__WorkflowNotation__Group__1__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getWorkflowNotationAccess().getNameAssignment_1()); }
+(rule__WorkflowNotation__NameAssignment_1)
+{ after(grammarAccess.getWorkflowNotationAccess().getNameAssignment_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__WorkflowNotation__Group__2
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__WorkflowNotation__Group__2__Impl
+	rule__WorkflowNotation__Group__3
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__WorkflowNotation__Group__2__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getWorkflowNotationAccess().getSemicolonKeyword_2()); }
+
+	';' 
+
+{ after(grammarAccess.getWorkflowNotationAccess().getSemicolonKeyword_2()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__WorkflowNotation__Group__3
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__WorkflowNotation__Group__3__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__WorkflowNotation__Group__3__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getWorkflowNotationAccess().getStepsAssignment_3()); }
+(rule__WorkflowNotation__StepsAssignment_3)*
+{ after(grammarAccess.getWorkflowNotationAccess().getStepsAssignment_3()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
+
+
+
+
+
+
+
+rule__WorkflowStepNotation__Group__0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__WorkflowStepNotation__Group__0__Impl
+	rule__WorkflowStepNotation__Group__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__WorkflowStepNotation__Group__0__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getWorkflowStepNotationAccess().getNameAssignment_0()); }
+(rule__WorkflowStepNotation__NameAssignment_0)
+{ after(grammarAccess.getWorkflowStepNotationAccess().getNameAssignment_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__WorkflowStepNotation__Group__1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__WorkflowStepNotation__Group__1__Impl
+	rule__WorkflowStepNotation__Group__2
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__WorkflowStepNotation__Group__1__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getWorkflowStepNotationAccess().getLeftCurlyBracketKeyword_1()); }
+
+	'{' 
+
+{ after(grammarAccess.getWorkflowStepNotationAccess().getLeftCurlyBracketKeyword_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__WorkflowStepNotation__Group__2
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__WorkflowStepNotation__Group__2__Impl
+	rule__WorkflowStepNotation__Group__3
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__WorkflowStepNotation__Group__2__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getWorkflowStepNotationAccess().getParamsAssignment_2()); }
+(rule__WorkflowStepNotation__ParamsAssignment_2)*
+{ after(grammarAccess.getWorkflowStepNotationAccess().getParamsAssignment_2()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__WorkflowStepNotation__Group__3
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__WorkflowStepNotation__Group__3__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__WorkflowStepNotation__Group__3__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getWorkflowStepNotationAccess().getRightCurlyBracketKeyword_3()); }
+
+	'}' 
+
+{ after(grammarAccess.getWorkflowStepNotationAccess().getRightCurlyBracketKeyword_3()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
+
+
+
+
+
+
+
+rule__WorkflowStepParameterNotation__Group__0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__WorkflowStepParameterNotation__Group__0__Impl
+	rule__WorkflowStepParameterNotation__Group__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__WorkflowStepParameterNotation__Group__0__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getWorkflowStepParameterNotationAccess().getParameterAssignment_0()); }
+(rule__WorkflowStepParameterNotation__ParameterAssignment_0)
+{ after(grammarAccess.getWorkflowStepParameterNotationAccess().getParameterAssignment_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__WorkflowStepParameterNotation__Group__1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__WorkflowStepParameterNotation__Group__1__Impl
+	rule__WorkflowStepParameterNotation__Group__2
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__WorkflowStepParameterNotation__Group__1__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getWorkflowStepParameterNotationAccess().getEqualsSignKeyword_1()); }
+
+	'=' 
+
+{ after(grammarAccess.getWorkflowStepParameterNotationAccess().getEqualsSignKeyword_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__WorkflowStepParameterNotation__Group__2
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__WorkflowStepParameterNotation__Group__2__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__WorkflowStepParameterNotation__Group__2__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getWorkflowStepParameterNotationAccess().getAlternatives_2()); }
+(rule__WorkflowStepParameterNotation__Alternatives_2)
+{ after(grammarAccess.getWorkflowStepParameterNotationAccess().getAlternatives_2()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
 
 
 
@@ -9068,6 +9528,111 @@ rule__Annotation__DefinitionAssignment_1
 (
 { before(grammarAccess.getAnnotationAccess().getDefinitionIDTerminalRuleCall_1_0()); }
 	RULE_ID{ after(grammarAccess.getAnnotationAccess().getDefinitionIDTerminalRuleCall_1_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__WorkflowNotation__NameAssignment_1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getWorkflowNotationAccess().getNameLibraryNameParserRuleCall_1_0()); }
+	ruleLibraryName{ after(grammarAccess.getWorkflowNotationAccess().getNameLibraryNameParserRuleCall_1_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__WorkflowNotation__StepsAssignment_3
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getWorkflowNotationAccess().getStepsWorkflowStepNotationParserRuleCall_3_0()); }
+	ruleWorkflowStepNotation{ after(grammarAccess.getWorkflowNotationAccess().getStepsWorkflowStepNotationParserRuleCall_3_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__WorkflowStepNotation__NameAssignment_0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getWorkflowStepNotationAccess().getNameLibraryNameParserRuleCall_0_0()); }
+	ruleLibraryName{ after(grammarAccess.getWorkflowStepNotationAccess().getNameLibraryNameParserRuleCall_0_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__WorkflowStepNotation__ParamsAssignment_2
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getWorkflowStepNotationAccess().getParamsWorkflowStepParameterNotationParserRuleCall_2_0()); }
+	ruleWorkflowStepParameterNotation{ after(grammarAccess.getWorkflowStepNotationAccess().getParamsWorkflowStepParameterNotationParserRuleCall_2_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__WorkflowStepParameterNotation__ParameterAssignment_0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getWorkflowStepParameterNotationAccess().getParameterIDTerminalRuleCall_0_0()); }
+	RULE_ID{ after(grammarAccess.getWorkflowStepParameterNotationAccess().getParameterIDTerminalRuleCall_0_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__WorkflowStepParameterNotation__ValueAssignment_2_0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getWorkflowStepParameterNotationAccess().getValueSTRINGTerminalRuleCall_2_0_0()); }
+	RULE_STRING{ after(grammarAccess.getWorkflowStepParameterNotationAccess().getValueSTRINGTerminalRuleCall_2_0_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__WorkflowStepParameterNotation__ValueAssignment_2_1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getWorkflowStepParameterNotationAccess().getValueLibraryNameParserRuleCall_2_1_0()); }
+	ruleLibraryName{ after(grammarAccess.getWorkflowStepParameterNotationAccess().getValueLibraryNameParserRuleCall_2_1_0()); }
 )
 
 ;

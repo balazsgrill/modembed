@@ -39,6 +39,7 @@ public class ESyntaxParser extends AbstractContentAssistParser {
 				{
 					put(grammarAccess.getCompilationUnitAccess().getAlternatives(), "rule__CompilationUnit__Alternatives");
 					put(grammarAccess.getLITERALAccess().getAlternatives(), "rule__LITERAL__Alternatives");
+					put(grammarAccess.getWorkflowStepParameterNotationAccess().getAlternatives_2(), "rule__WorkflowStepParameterNotation__Alternatives_2");
 					put(grammarAccess.getInsctructionSectionNotationAccess().getAlternatives_0(), "rule__InsctructionSectionNotation__Alternatives_0");
 					put(grammarAccess.getLibraryItemAccess().getAlternatives(), "rule__LibraryItem__Alternatives");
 					put(grammarAccess.getTypeDefAccess().getAlternatives(), "rule__TypeDef__Alternatives");
@@ -62,6 +63,9 @@ public class ESyntaxParser extends AbstractContentAssistParser {
 					put(grammarAccess.getQualifiedNameAccess().getGroup_0(), "rule__QualifiedName__Group_0__0");
 					put(grammarAccess.getAnnotationDefinitionAccess().getGroup(), "rule__AnnotationDefinition__Group__0");
 					put(grammarAccess.getAnnotationAccess().getGroup(), "rule__Annotation__Group__0");
+					put(grammarAccess.getWorkflowNotationAccess().getGroup(), "rule__WorkflowNotation__Group__0");
+					put(grammarAccess.getWorkflowStepNotationAccess().getGroup(), "rule__WorkflowStepNotation__Group__0");
+					put(grammarAccess.getWorkflowStepParameterNotationAccess().getGroup(), "rule__WorkflowStepParameterNotation__Group__0");
 					put(grammarAccess.getInstructionSetNotationAccess().getGroup(), "rule__InstructionSetNotation__Group__0");
 					put(grammarAccess.getInstructionSetNotationAccess().getGroup_2(), "rule__InstructionSetNotation__Group_2__0");
 					put(grammarAccess.getInstructionNotationAccess().getGroup(), "rule__InstructionNotation__Group__0");
@@ -132,6 +136,13 @@ public class ESyntaxParser extends AbstractContentAssistParser {
 					put(grammarAccess.getXParenthesizedExpressionAccess().getGroup(), "rule__XParenthesizedExpression__Group__0");
 					put(grammarAccess.getAnnotationDefinitionAccess().getNameAssignment_1(), "rule__AnnotationDefinition__NameAssignment_1");
 					put(grammarAccess.getAnnotationAccess().getDefinitionAssignment_1(), "rule__Annotation__DefinitionAssignment_1");
+					put(grammarAccess.getWorkflowNotationAccess().getNameAssignment_1(), "rule__WorkflowNotation__NameAssignment_1");
+					put(grammarAccess.getWorkflowNotationAccess().getStepsAssignment_3(), "rule__WorkflowNotation__StepsAssignment_3");
+					put(grammarAccess.getWorkflowStepNotationAccess().getNameAssignment_0(), "rule__WorkflowStepNotation__NameAssignment_0");
+					put(grammarAccess.getWorkflowStepNotationAccess().getParamsAssignment_2(), "rule__WorkflowStepNotation__ParamsAssignment_2");
+					put(grammarAccess.getWorkflowStepParameterNotationAccess().getParameterAssignment_0(), "rule__WorkflowStepParameterNotation__ParameterAssignment_0");
+					put(grammarAccess.getWorkflowStepParameterNotationAccess().getValueAssignment_2_0(), "rule__WorkflowStepParameterNotation__ValueAssignment_2_0");
+					put(grammarAccess.getWorkflowStepParameterNotationAccess().getValueAssignment_2_1(), "rule__WorkflowStepParameterNotation__ValueAssignment_2_1");
 					put(grammarAccess.getInstructionSetNotationAccess().getNameAssignment_1(), "rule__InstructionSetNotation__NameAssignment_1");
 					put(grammarAccess.getInstructionSetNotationAccess().getExtendsAssignment_2_1(), "rule__InstructionSetNotation__ExtendsAssignment_2_1");
 					put(grammarAccess.getInstructionSetNotationAccess().getInstructionsAssignment_4(), "rule__InstructionSetNotation__InstructionsAssignment_4");

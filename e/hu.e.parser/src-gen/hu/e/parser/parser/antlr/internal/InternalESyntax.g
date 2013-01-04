@@ -97,6 +97,16 @@ ruleCompilationUnit returns [EObject current=null]
         $current = $this_InstructionSetNotation_1.current; 
         afterParserOrEnumRuleCall();
     }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getCompilationUnitAccess().getWorkflowNotationParserRuleCall_2()); 
+    }
+    this_WorkflowNotation_2=ruleWorkflowNotation
+    { 
+        $current = $this_WorkflowNotation_2.current; 
+        afterParserOrEnumRuleCall();
+    }
 )
 ;
 
@@ -322,6 +332,216 @@ ruleAnnotation returns [EObject current=null]
 
 )
 ))
+;
+
+
+
+
+
+// Entry rule entryRuleWorkflowNotation
+entryRuleWorkflowNotation returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getWorkflowNotationRule()); }
+	 iv_ruleWorkflowNotation=ruleWorkflowNotation 
+	 { $current=$iv_ruleWorkflowNotation.current; } 
+	 EOF 
+;
+
+// Rule WorkflowNotation
+ruleWorkflowNotation returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='workflow' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getWorkflowNotationAccess().getWorkflowKeyword_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getWorkflowNotationAccess().getNameLibraryNameParserRuleCall_1_0()); 
+	    }
+		lv_name_1_0=ruleLibraryName		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getWorkflowNotationRule());
+	        }
+       		set(
+       			$current, 
+       			"name",
+        		lv_name_1_0, 
+        		"LibraryName");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_2=';' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getWorkflowNotationAccess().getSemicolonKeyword_2());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getWorkflowNotationAccess().getStepsWorkflowStepNotationParserRuleCall_3_0()); 
+	    }
+		lv_steps_3_0=ruleWorkflowStepNotation		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getWorkflowNotationRule());
+	        }
+       		add(
+       			$current, 
+       			"steps",
+        		lv_steps_3_0, 
+        		"WorkflowStepNotation");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)*)
+;
+
+
+
+
+
+// Entry rule entryRuleWorkflowStepNotation
+entryRuleWorkflowStepNotation returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getWorkflowStepNotationRule()); }
+	 iv_ruleWorkflowStepNotation=ruleWorkflowStepNotation 
+	 { $current=$iv_ruleWorkflowStepNotation.current; } 
+	 EOF 
+;
+
+// Rule WorkflowStepNotation
+ruleWorkflowStepNotation returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+(
+		{ 
+	        newCompositeNode(grammarAccess.getWorkflowStepNotationAccess().getNameLibraryNameParserRuleCall_0_0()); 
+	    }
+		lv_name_0_0=ruleLibraryName		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getWorkflowStepNotationRule());
+	        }
+       		set(
+       			$current, 
+       			"name",
+        		lv_name_0_0, 
+        		"LibraryName");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_1='{' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getWorkflowStepNotationAccess().getLeftCurlyBracketKeyword_1());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getWorkflowStepNotationAccess().getParamsWorkflowStepParameterNotationParserRuleCall_2_0()); 
+	    }
+		lv_params_2_0=ruleWorkflowStepParameterNotation		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getWorkflowStepNotationRule());
+	        }
+       		add(
+       			$current, 
+       			"params",
+        		lv_params_2_0, 
+        		"WorkflowStepParameterNotation");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)*	otherlv_3='}' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getWorkflowStepNotationAccess().getRightCurlyBracketKeyword_3());
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRuleWorkflowStepParameterNotation
+entryRuleWorkflowStepParameterNotation returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getWorkflowStepParameterNotationRule()); }
+	 iv_ruleWorkflowStepParameterNotation=ruleWorkflowStepParameterNotation 
+	 { $current=$iv_ruleWorkflowStepParameterNotation.current; } 
+	 EOF 
+;
+
+// Rule WorkflowStepParameterNotation
+ruleWorkflowStepParameterNotation returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+(
+		lv_parameter_0_0=RULE_ID
+		{
+			newLeafNode(lv_parameter_0_0, grammarAccess.getWorkflowStepParameterNotationAccess().getParameterIDTerminalRuleCall_0_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getWorkflowStepParameterNotationRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"parameter",
+        		lv_parameter_0_0, 
+        		"ID");
+	    }
+
+)
+)	otherlv_1='=' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getWorkflowStepParameterNotationAccess().getEqualsSignKeyword_1());
+    }
+((
+(
+		lv_value_2_0=RULE_STRING
+		{
+			newLeafNode(lv_value_2_0, grammarAccess.getWorkflowStepParameterNotationAccess().getValueSTRINGTerminalRuleCall_2_0_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getWorkflowStepParameterNotationRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"value",
+        		lv_value_2_0, 
+        		"STRING");
+	    }
+
+)
+)
+    |(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getWorkflowStepParameterNotationAccess().getValueLibraryNameParserRuleCall_2_1_0()); 
+	    }
+		lv_value_3_0=ruleLibraryName		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getWorkflowStepParameterNotationRule());
+	        }
+       		set(
+       			$current, 
+       			"value",
+        		lv_value_3_0, 
+        		"LibraryName");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)))
 ;
 
 

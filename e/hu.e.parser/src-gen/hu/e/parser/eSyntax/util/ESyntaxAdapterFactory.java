@@ -90,6 +90,21 @@ public class ESyntaxAdapterFactory extends AdapterFactoryImpl
         return createAnnotationAdapter();
       }
       @Override
+      public Adapter caseWorkflowNotation(WorkflowNotation object)
+      {
+        return createWorkflowNotationAdapter();
+      }
+      @Override
+      public Adapter caseWorkflowStepNotation(WorkflowStepNotation object)
+      {
+        return createWorkflowStepNotationAdapter();
+      }
+      @Override
+      public Adapter caseWorkflowStepParameterNotation(WorkflowStepParameterNotation object)
+      {
+        return createWorkflowStepParameterNotationAdapter();
+      }
+      @Override
       public Adapter caseInstructionSetNotation(InstructionSetNotation object)
       {
         return createInstructionSetNotationAdapter();
@@ -402,6 +417,51 @@ public class ESyntaxAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createAnnotationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.e.parser.eSyntax.WorkflowNotation <em>Workflow Notation</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.e.parser.eSyntax.WorkflowNotation
+   * @generated
+   */
+  public Adapter createWorkflowNotationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.e.parser.eSyntax.WorkflowStepNotation <em>Workflow Step Notation</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.e.parser.eSyntax.WorkflowStepNotation
+   * @generated
+   */
+  public Adapter createWorkflowStepNotationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.e.parser.eSyntax.WorkflowStepParameterNotation <em>Workflow Step Parameter Notation</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.e.parser.eSyntax.WorkflowStepParameterNotation
+   * @generated
+   */
+  public Adapter createWorkflowStepParameterNotationAdapter()
   {
     return null;
   }

@@ -31,6 +31,9 @@ import hu.e.parser.eSyntax.Type;
 import hu.e.parser.eSyntax.UnspecifiedTypeDef;
 import hu.e.parser.eSyntax.Variable;
 import hu.e.parser.eSyntax.VariableReference;
+import hu.e.parser.eSyntax.WorkflowNotation;
+import hu.e.parser.eSyntax.WorkflowStepNotation;
+import hu.e.parser.eSyntax.WorkflowStepParameterNotation;
 import hu.e.parser.eSyntax.XErrorExpression;
 import hu.e.parser.eSyntax.XExpression0;
 import hu.e.parser.eSyntax.XExpression1;
@@ -257,6 +260,25 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 				if(context == grammarAccess.getVariableReferenceRule() ||
 				   context == grammarAccess.getXPrimaryExpressionRule()) {
 					sequence_VariableReference(context, (VariableReference) semanticObject); 
+					return; 
+				}
+				else break;
+			case ESyntaxPackage.WORKFLOW_NOTATION:
+				if(context == grammarAccess.getCompilationUnitRule() ||
+				   context == grammarAccess.getWorkflowNotationRule()) {
+					sequence_WorkflowNotation(context, (WorkflowNotation) semanticObject); 
+					return; 
+				}
+				else break;
+			case ESyntaxPackage.WORKFLOW_STEP_NOTATION:
+				if(context == grammarAccess.getWorkflowStepNotationRule()) {
+					sequence_WorkflowStepNotation(context, (WorkflowStepNotation) semanticObject); 
+					return; 
+				}
+				else break;
+			case ESyntaxPackage.WORKFLOW_STEP_PARAMETER_NOTATION:
+				if(context == grammarAccess.getWorkflowStepParameterNotationRule()) {
+					sequence_WorkflowStepParameterNotation(context, (WorkflowStepParameterNotation) semanticObject); 
 					return; 
 				}
 				else break;
@@ -723,6 +745,33 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 		feeder.accept(grammarAccess.getVariableAccess().getTypeTypeDefParserRuleCall_0_0(), semanticObject.getType());
 		feeder.accept(grammarAccess.getVariableAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=LibraryName steps+=WorkflowStepNotation*)
+	 */
+	protected void sequence_WorkflowNotation(EObject context, WorkflowNotation semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=LibraryName params+=WorkflowStepParameterNotation*)
+	 */
+	protected void sequence_WorkflowStepNotation(EObject context, WorkflowStepNotation semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (parameter=ID (value=STRING | value=LibraryName))
+	 */
+	protected void sequence_WorkflowStepParameterNotation(EObject context, WorkflowStepParameterNotation semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

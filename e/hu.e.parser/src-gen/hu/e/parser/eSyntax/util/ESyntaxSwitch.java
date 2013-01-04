@@ -96,6 +96,28 @@ public class ESyntaxSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case ESyntaxPackage.WORKFLOW_NOTATION:
+      {
+        WorkflowNotation workflowNotation = (WorkflowNotation)theEObject;
+        T result = caseWorkflowNotation(workflowNotation);
+        if (result == null) result = caseCompilationUnit(workflowNotation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ESyntaxPackage.WORKFLOW_STEP_NOTATION:
+      {
+        WorkflowStepNotation workflowStepNotation = (WorkflowStepNotation)theEObject;
+        T result = caseWorkflowStepNotation(workflowStepNotation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ESyntaxPackage.WORKFLOW_STEP_PARAMETER_NOTATION:
+      {
+        WorkflowStepParameterNotation workflowStepParameterNotation = (WorkflowStepParameterNotation)theEObject;
+        T result = caseWorkflowStepParameterNotation(workflowStepParameterNotation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case ESyntaxPackage.INSTRUCTION_SET_NOTATION:
       {
         InstructionSetNotation instructionSetNotation = (InstructionSetNotation)theEObject;
@@ -552,6 +574,54 @@ public class ESyntaxSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseAnnotation(Annotation object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Workflow Notation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Workflow Notation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWorkflowNotation(WorkflowNotation object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Workflow Step Notation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Workflow Step Notation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWorkflowStepNotation(WorkflowStepNotation object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Workflow Step Parameter Notation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Workflow Step Parameter Notation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWorkflowStepParameterNotation(WorkflowStepParameterNotation object)
   {
     return null;
   }

@@ -50,6 +50,33 @@ public interface ESyntaxFactory extends EFactory
   Annotation createAnnotation();
 
   /**
+   * Returns a new object of class '<em>Workflow Notation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Workflow Notation</em>'.
+   * @generated
+   */
+  WorkflowNotation createWorkflowNotation();
+
+  /**
+   * Returns a new object of class '<em>Workflow Step Notation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Workflow Step Notation</em>'.
+   * @generated
+   */
+  WorkflowStepNotation createWorkflowStepNotation();
+
+  /**
+   * Returns a new object of class '<em>Workflow Step Parameter Notation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Workflow Step Parameter Notation</em>'.
+   * @generated
+   */
+  WorkflowStepParameterNotation createWorkflowStepParameterNotation();
+
+  /**
    * Returns a new object of class '<em>Instruction Set Notation</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

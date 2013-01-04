@@ -60,6 +60,17 @@
     <genClasses ecoreClass="ESyntax.ecore#//Annotation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//Annotation/definition"/>
     </genClasses>
+    <genClasses ecoreClass="ESyntax.ecore#//WorkflowNotation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//WorkflowNotation/steps"/>
+    </genClasses>
+    <genClasses ecoreClass="ESyntax.ecore#//WorkflowStepNotation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//WorkflowStepNotation/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//WorkflowStepNotation/params"/>
+    </genClasses>
+    <genClasses ecoreClass="ESyntax.ecore#//WorkflowStepParameterNotation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//WorkflowStepParameterNotation/parameter"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//WorkflowStepParameterNotation/value"/>
+    </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//InstructionSetNotation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//InstructionSetNotation/extends"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//InstructionSetNotation/instructions"/>

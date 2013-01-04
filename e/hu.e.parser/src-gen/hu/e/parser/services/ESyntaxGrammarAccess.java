@@ -24,13 +24,14 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cLibraryParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cInstructionSetNotationParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cWorkflowNotationParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//CompilationUnit:
 		//
-		//	Library | InstructionSetNotation;
+		//	Library | InstructionSetNotation | WorkflowNotation;
 		public ParserRule getRule() { return rule; }
 
-		//Library | InstructionSetNotation
+		//Library | InstructionSetNotation | WorkflowNotation
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//Library
@@ -38,6 +39,9 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 
 		//InstructionSetNotation
 		public RuleCall getInstructionSetNotationParserRuleCall_1() { return cInstructionSetNotationParserRuleCall_1; }
+
+		//WorkflowNotation
+		public RuleCall getWorkflowNotationParserRuleCall_2() { return cWorkflowNotationParserRuleCall_2; }
 	}
 
 	public class LibraryNameElements extends AbstractParserRuleElementFinder {
@@ -178,6 +182,127 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 
 		//ID
 		public RuleCall getDefinitionIDTerminalRuleCall_1_0() { return cDefinitionIDTerminalRuleCall_1_0; }
+	}
+
+	public class WorkflowNotationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "WorkflowNotation");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cWorkflowKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameLibraryNameParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cSemicolonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cStepsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cStepsWorkflowStepNotationParserRuleCall_3_0 = (RuleCall)cStepsAssignment_3.eContents().get(0);
+		
+		/// **********************
+		// * Workflow notation
+		// ********************** / WorkflowNotation:
+		//
+		//	"workflow" name=LibraryName ";" steps+=WorkflowStepNotation*;
+		public ParserRule getRule() { return rule; }
+
+		//"workflow" name=LibraryName ";" steps+=WorkflowStepNotation*
+		public Group getGroup() { return cGroup; }
+
+		//"workflow"
+		public Keyword getWorkflowKeyword_0() { return cWorkflowKeyword_0; }
+
+		//name=LibraryName
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+
+		//LibraryName
+		public RuleCall getNameLibraryNameParserRuleCall_1_0() { return cNameLibraryNameParserRuleCall_1_0; }
+
+		//";"
+		public Keyword getSemicolonKeyword_2() { return cSemicolonKeyword_2; }
+
+		//steps+=WorkflowStepNotation*
+		public Assignment getStepsAssignment_3() { return cStepsAssignment_3; }
+
+		//WorkflowStepNotation
+		public RuleCall getStepsWorkflowStepNotationParserRuleCall_3_0() { return cStepsWorkflowStepNotationParserRuleCall_3_0; }
+	}
+
+	public class WorkflowStepNotationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "WorkflowStepNotation");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cNameLibraryNameParserRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cParamsAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cParamsWorkflowStepParameterNotationParserRuleCall_2_0 = (RuleCall)cParamsAssignment_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//WorkflowStepNotation:
+		//
+		//	name=LibraryName "{" params+=WorkflowStepParameterNotation* "}";
+		public ParserRule getRule() { return rule; }
+
+		//name=LibraryName "{" params+=WorkflowStepParameterNotation* "}"
+		public Group getGroup() { return cGroup; }
+
+		//name=LibraryName
+		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
+
+		//LibraryName
+		public RuleCall getNameLibraryNameParserRuleCall_0_0() { return cNameLibraryNameParserRuleCall_0_0; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+
+		//params+=WorkflowStepParameterNotation*
+		public Assignment getParamsAssignment_2() { return cParamsAssignment_2; }
+
+		//WorkflowStepParameterNotation
+		public RuleCall getParamsWorkflowStepParameterNotationParserRuleCall_2_0() { return cParamsWorkflowStepParameterNotationParserRuleCall_2_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
+	}
+
+	public class WorkflowStepParameterNotationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "WorkflowStepParameterNotation");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cParameterAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cParameterIDTerminalRuleCall_0_0 = (RuleCall)cParameterAssignment_0.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
+		private final Assignment cValueAssignment_2_0 = (Assignment)cAlternatives_2.eContents().get(0);
+		private final RuleCall cValueSTRINGTerminalRuleCall_2_0_0 = (RuleCall)cValueAssignment_2_0.eContents().get(0);
+		private final Assignment cValueAssignment_2_1 = (Assignment)cAlternatives_2.eContents().get(1);
+		private final RuleCall cValueLibraryNameParserRuleCall_2_1_0 = (RuleCall)cValueAssignment_2_1.eContents().get(0);
+		
+		//WorkflowStepParameterNotation:
+		//
+		//	parameter=ID "=" (value=STRING | value=LibraryName);
+		public ParserRule getRule() { return rule; }
+
+		//parameter=ID "=" (value=STRING | value=LibraryName)
+		public Group getGroup() { return cGroup; }
+
+		//parameter=ID
+		public Assignment getParameterAssignment_0() { return cParameterAssignment_0; }
+
+		//ID
+		public RuleCall getParameterIDTerminalRuleCall_0_0() { return cParameterIDTerminalRuleCall_0_0; }
+
+		//"="
+		public Keyword getEqualsSignKeyword_1() { return cEqualsSignKeyword_1; }
+
+		//value=STRING | value=LibraryName
+		public Alternatives getAlternatives_2() { return cAlternatives_2; }
+
+		//value=STRING
+		public Assignment getValueAssignment_2_0() { return cValueAssignment_2_0; }
+
+		//STRING
+		public RuleCall getValueSTRINGTerminalRuleCall_2_0_0() { return cValueSTRINGTerminalRuleCall_2_0_0; }
+
+		//value=LibraryName
+		public Assignment getValueAssignment_2_1() { return cValueAssignment_2_1; }
+
+		//LibraryName
+		public RuleCall getValueLibraryNameParserRuleCall_2_1_0() { return cValueLibraryNameParserRuleCall_2_1_0; }
 	}
 
 	public class InstructionSetNotationElements extends AbstractParserRuleElementFinder {
@@ -2473,6 +2598,9 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	private LITERALElements pLITERAL;
 	private AnnotationDefinitionElements pAnnotationDefinition;
 	private AnnotationElements pAnnotation;
+	private WorkflowNotationElements pWorkflowNotation;
+	private WorkflowStepNotationElements pWorkflowStepNotation;
+	private WorkflowStepParameterNotationElements pWorkflowStepParameterNotation;
 	private InstructionSetNotationElements pInstructionSetNotation;
 	private InstructionNotationElements pInstructionNotation;
 	private InstructionWordNotationElements pInstructionWordNotation;
@@ -2572,7 +2700,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//CompilationUnit:
 	//
-	//	Library | InstructionSetNotation;
+	//	Library | InstructionSetNotation | WorkflowNotation;
 	public CompilationUnitElements getCompilationUnitAccess() {
 		return (pCompilationUnit != null) ? pCompilationUnit : (pCompilationUnit = new CompilationUnitElements());
 	}
@@ -2665,6 +2793,41 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getAnnotationRule() {
 		return getAnnotationAccess().getRule();
+	}
+
+	/// **********************
+	// * Workflow notation
+	// ********************** / WorkflowNotation:
+	//
+	//	"workflow" name=LibraryName ";" steps+=WorkflowStepNotation*;
+	public WorkflowNotationElements getWorkflowNotationAccess() {
+		return (pWorkflowNotation != null) ? pWorkflowNotation : (pWorkflowNotation = new WorkflowNotationElements());
+	}
+	
+	public ParserRule getWorkflowNotationRule() {
+		return getWorkflowNotationAccess().getRule();
+	}
+
+	//WorkflowStepNotation:
+	//
+	//	name=LibraryName "{" params+=WorkflowStepParameterNotation* "}";
+	public WorkflowStepNotationElements getWorkflowStepNotationAccess() {
+		return (pWorkflowStepNotation != null) ? pWorkflowStepNotation : (pWorkflowStepNotation = new WorkflowStepNotationElements());
+	}
+	
+	public ParserRule getWorkflowStepNotationRule() {
+		return getWorkflowStepNotationAccess().getRule();
+	}
+
+	//WorkflowStepParameterNotation:
+	//
+	//	parameter=ID "=" (value=STRING | value=LibraryName);
+	public WorkflowStepParameterNotationElements getWorkflowStepParameterNotationAccess() {
+		return (pWorkflowStepParameterNotation != null) ? pWorkflowStepParameterNotation : (pWorkflowStepParameterNotation = new WorkflowStepParameterNotationElements());
+	}
+	
+	public ParserRule getWorkflowStepParameterNotationRule() {
+		return getWorkflowStepParameterNotationAccess().getRule();
 	}
 
 	/// **********************

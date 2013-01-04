@@ -43,6 +43,9 @@ import hu.e.parser.eSyntax.TypeDef;
 import hu.e.parser.eSyntax.UnspecifiedTypeDef;
 import hu.e.parser.eSyntax.Variable;
 import hu.e.parser.eSyntax.VariableReference;
+import hu.e.parser.eSyntax.WorkflowNotation;
+import hu.e.parser.eSyntax.WorkflowStepNotation;
+import hu.e.parser.eSyntax.WorkflowStepParameterNotation;
 import hu.e.parser.eSyntax.XErrorExpression;
 import hu.e.parser.eSyntax.XExpression;
 import hu.e.parser.eSyntax.XExpression0;
@@ -98,6 +101,27 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * @generated
    */
   private EClass annotationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass workflowNotationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass workflowStepNotationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass workflowStepParameterNotationEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -623,6 +647,86 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
   public EAttribute getAnnotation_Definition()
   {
     return (EAttribute)annotationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getWorkflowNotation()
+  {
+    return workflowNotationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getWorkflowNotation_Steps()
+  {
+    return (EReference)workflowNotationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getWorkflowStepNotation()
+  {
+    return workflowStepNotationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getWorkflowStepNotation_Name()
+  {
+    return (EAttribute)workflowStepNotationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getWorkflowStepNotation_Params()
+  {
+    return (EReference)workflowStepNotationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getWorkflowStepParameterNotation()
+  {
+    return workflowStepParameterNotationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getWorkflowStepParameterNotation_Parameter()
+  {
+    return (EAttribute)workflowStepParameterNotationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getWorkflowStepParameterNotation_Value()
+  {
+    return (EAttribute)workflowStepParameterNotationEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1943,6 +2047,17 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     annotationEClass = createEClass(ANNOTATION);
     createEAttribute(annotationEClass, ANNOTATION__DEFINITION);
 
+    workflowNotationEClass = createEClass(WORKFLOW_NOTATION);
+    createEReference(workflowNotationEClass, WORKFLOW_NOTATION__STEPS);
+
+    workflowStepNotationEClass = createEClass(WORKFLOW_STEP_NOTATION);
+    createEAttribute(workflowStepNotationEClass, WORKFLOW_STEP_NOTATION__NAME);
+    createEReference(workflowStepNotationEClass, WORKFLOW_STEP_NOTATION__PARAMS);
+
+    workflowStepParameterNotationEClass = createEClass(WORKFLOW_STEP_PARAMETER_NOTATION);
+    createEAttribute(workflowStepParameterNotationEClass, WORKFLOW_STEP_PARAMETER_NOTATION__PARAMETER);
+    createEAttribute(workflowStepParameterNotationEClass, WORKFLOW_STEP_PARAMETER_NOTATION__VALUE);
+
     instructionSetNotationEClass = createEClass(INSTRUCTION_SET_NOTATION);
     createEAttribute(instructionSetNotationEClass, INSTRUCTION_SET_NOTATION__EXTENDS);
     createEReference(instructionSetNotationEClass, INSTRUCTION_SET_NOTATION__INSTRUCTIONS);
@@ -2155,6 +2270,7 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     // Add supertypes to classes
     annotationDefinitionEClass.getESuperTypes().add(this.getLibraryItem());
     annotationEClass.getESuperTypes().add(this.getXTopLevelExpression());
+    workflowNotationEClass.getESuperTypes().add(this.getCompilationUnit());
     instructionSetNotationEClass.getESuperTypes().add(this.getCompilationUnit());
     libraryEClass.getESuperTypes().add(this.getCompilationUnit());
     typeEClass.getESuperTypes().add(this.getLibraryItem());
@@ -2199,6 +2315,17 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
 
     initEClass(annotationEClass, Annotation.class, "Annotation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAnnotation_Definition(), ecorePackage.getEString(), "definition", null, 0, 1, Annotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(workflowNotationEClass, WorkflowNotation.class, "WorkflowNotation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getWorkflowNotation_Steps(), this.getWorkflowStepNotation(), null, "steps", null, 0, -1, WorkflowNotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(workflowStepNotationEClass, WorkflowStepNotation.class, "WorkflowStepNotation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getWorkflowStepNotation_Name(), ecorePackage.getEString(), "name", null, 0, 1, WorkflowStepNotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getWorkflowStepNotation_Params(), this.getWorkflowStepParameterNotation(), null, "params", null, 0, -1, WorkflowStepNotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(workflowStepParameterNotationEClass, WorkflowStepParameterNotation.class, "WorkflowStepParameterNotation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getWorkflowStepParameterNotation_Parameter(), ecorePackage.getEString(), "parameter", null, 0, 1, WorkflowStepParameterNotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getWorkflowStepParameterNotation_Value(), ecorePackage.getEString(), "value", null, 0, 1, WorkflowStepParameterNotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(instructionSetNotationEClass, InstructionSetNotation.class, "InstructionSetNotation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getInstructionSetNotation_Extends(), ecorePackage.getEString(), "extends", null, 0, 1, InstructionSetNotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
