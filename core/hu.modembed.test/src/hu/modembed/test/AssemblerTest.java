@@ -17,10 +17,19 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.hamcrest.BaseMatcher;
 import org.hamcrest.Description;
+import org.junit.Before;
 import org.junit.Test;
 
 public class AssemblerTest {
 
+	/**
+	 * @throws java.lang.Exception
+	 */
+	@Before
+	public void setUp() throws Exception {
+		ModembedTests.testSetUp();
+	}
+	
 	@Test
 	public void test() throws Exception{
 		IProject testproject = ResourcesPlugin.getWorkspace().getRoot().getProject("test1");

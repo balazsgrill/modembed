@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
 <architecture:Architecture xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:architecture="http://modembed.hu/architecture" name="pic16f1824.arch">
-  <instructionSet href="../e.pic16/.models/microchip.pic16.enchanced.instructions.xmi#/"/>
+  <instructionSet href="../microchip.pic16/.models/microchip.pic16.enchanced.instructions.xmi#/"/>
   <memory program="true" length="1024"/>
 </architecture:Architecture>
