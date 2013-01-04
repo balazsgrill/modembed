@@ -68,7 +68,7 @@ public interface AssemblerPackage extends EPackage {
 	int INSTRUCTION_SET = 0;
 
 	/**
-	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -132,7 +132,7 @@ public interface AssemblerPackage extends EPackage {
 	int INSTRUCTION = 1;
 
 	/**
-	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -197,7 +197,7 @@ public interface AssemblerPackage extends EPackage {
 	int INSTRUCTION_PARAMETER = 2;
 
 	/**
-	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -252,7 +252,7 @@ public interface AssemblerPackage extends EPackage {
 	int INSTRUCTION_SECTION = 3;
 
 	/**
-	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -316,7 +316,7 @@ public interface AssemblerPackage extends EPackage {
 	int CONSTANT_SECTION = 4;
 
 	/**
-	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -389,7 +389,7 @@ public interface AssemblerPackage extends EPackage {
 	int PARAMETER_SECTION = 5;
 
 	/**
-	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -463,7 +463,7 @@ public interface AssemblerPackage extends EPackage {
 	int INSTRUCTION_WORD = 6;
 
 	/**
-	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated

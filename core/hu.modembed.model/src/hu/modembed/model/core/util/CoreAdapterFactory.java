@@ -80,6 +80,18 @@ public class CoreAdapterFactory extends AdapterFactoryImpl {
 				return createRootElementAdapter();
 			}
 			@Override
+			public Adapter caseOrigin(Origin object) {
+				return createOriginAdapter();
+			}
+			@Override
+			public Adapter caseModelOrigin(ModelOrigin object) {
+				return createModelOriginAdapter();
+			}
+			@Override
+			public Adapter caseTextOrigin(TextOrigin object) {
+				return createTextOriginAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -138,6 +150,48 @@ public class CoreAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createRootElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.core.Origin <em>Origin</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.modembed.model.core.Origin
+	 * @generated
+	 */
+	public Adapter createOriginAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.core.ModelOrigin <em>Model Origin</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.modembed.model.core.ModelOrigin
+	 * @generated
+	 */
+	public Adapter createModelOriginAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.core.TextOrigin <em>Text Origin</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.modembed.model.core.TextOrigin
+	 * @generated
+	 */
+	public Adapter createTextOriginAdapter() {
 		return null;
 	}
 

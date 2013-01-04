@@ -56,9 +56,31 @@ public class CoreFactoryImpl extends EFactoryImpl implements CoreFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case CorePackage.MODEL_ORIGIN: return createModelOrigin();
+			case CorePackage.TEXT_ORIGIN: return createTextOrigin();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ModelOrigin createModelOrigin() {
+		ModelOriginImpl modelOrigin = new ModelOriginImpl();
+		return modelOrigin;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TextOrigin createTextOrigin() {
+		TextOriginImpl textOrigin = new TextOriginImpl();
+		return textOrigin;
 	}
 
 	/**

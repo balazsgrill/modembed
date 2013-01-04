@@ -22,6 +22,24 @@ public interface CoreFactory extends EFactory {
 	CoreFactory eINSTANCE = hu.modembed.model.core.impl.CoreFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Model Origin</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Model Origin</em>'.
+	 * @generated
+	 */
+	ModelOrigin createModelOrigin();
+
+	/**
+	 * Returns a new object of class '<em>Text Origin</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Text Origin</em>'.
+	 * @generated
+	 */
+	TextOrigin createTextOrigin();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

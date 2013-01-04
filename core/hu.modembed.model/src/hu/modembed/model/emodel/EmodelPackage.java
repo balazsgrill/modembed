@@ -67,7 +67,7 @@ public interface EmodelPackage extends EPackage {
 	int LIBRARY = 0;
 
 	/**
-	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -131,7 +131,7 @@ public interface EmodelPackage extends EPackage {
 	int TYPE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -186,7 +186,7 @@ public interface EmodelPackage extends EPackage {
 	int LIBRARY_ELEMENT = 8;
 
 	/**
-	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -232,7 +232,7 @@ public interface EmodelPackage extends EPackage {
 	int FUNCTION = 2;
 
 	/**
-	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -323,7 +323,7 @@ public interface EmodelPackage extends EPackage {
 	int VARIABLE = 3;
 
 	/**
-	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -378,7 +378,7 @@ public interface EmodelPackage extends EPackage {
 	int FUNCTION_PARAMETER = 4;
 
 	/**
-	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -433,7 +433,7 @@ public interface EmodelPackage extends EPackage {
 	int FUNCTION_RESULT = 5;
 
 	/**
-	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -470,7 +470,7 @@ public interface EmodelPackage extends EPackage {
 	int RESULT_BUFFER = 6;
 
 	/**
-	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -525,7 +525,7 @@ public interface EmodelPackage extends EPackage {
 	int RESULT_EXPRESSION = 7;
 
 	/**
-	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -571,7 +571,7 @@ public interface EmodelPackage extends EPackage {
 	int GLOBAL_VARIABLE = 9;
 
 	/**
-	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -626,7 +626,7 @@ public interface EmodelPackage extends EPackage {
 	int HEAP_VARIABLE = 10;
 
 	/**
-	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -681,7 +681,7 @@ public interface EmodelPackage extends EPackage {
 	int REGISTER_VARIABLE = 11;
 
 	/**
-	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -745,7 +745,7 @@ public interface EmodelPackage extends EPackage {
 	int CONSTANT_VARIABLE = 12;
 
 	/**
-	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -810,7 +810,7 @@ public interface EmodelPackage extends EPackage {
 	int VARIABLE_PARAMETER = 13;
 
 	/**
-	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -865,7 +865,7 @@ public interface EmodelPackage extends EPackage {
 	int LAZY_PARAMETER = 14;
 
 	/**
-	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -930,7 +930,7 @@ public interface EmodelPackage extends EPackage {
 	int FUNCTION_DECLARATION = 15;
 
 	/**
-	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -995,7 +995,7 @@ public interface EmodelPackage extends EPackage {
 	int CALLABLE_ELEMENT = 16;
 
 	/**
-	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated

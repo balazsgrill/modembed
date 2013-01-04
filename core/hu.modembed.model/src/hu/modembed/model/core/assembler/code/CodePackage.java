@@ -68,7 +68,7 @@ public interface CodePackage extends EPackage {
 	int ASSEMBLER_OBJECT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -123,7 +123,7 @@ public interface CodePackage extends EPackage {
 	int INSTRUCTION_CALL = 1;
 
 	/**
-	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -178,7 +178,7 @@ public interface CodePackage extends EPackage {
 	int INSTRUCTION_CALL_PARAMETER = 2;
 
 	/**
-	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated

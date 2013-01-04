@@ -4,19 +4,19 @@ package hu.modembed.model.core.impl;
 
 import hu.modembed.model.core.CorePackage;
 import hu.modembed.model.core.MODembedElement;
+import hu.modembed.model.core.Origin;
 
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,14 +34,14 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  */
 public abstract class MODembedElementImpl extends EObjectImpl implements MODembedElement {
 	/**
-	 * The cached value of the '{@link #getOrigins() <em>Origins</em>}' reference list.
+	 * The cached value of the '{@link #getOrigins() <em>Origins</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getOrigins()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<MODembedElement> origins;
+	protected EList<Origin> origins;
 
 	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
@@ -87,9 +87,9 @@ public abstract class MODembedElementImpl extends EObjectImpl implements MODembe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<MODembedElement> getOrigins() {
+	public EList<Origin> getOrigins() {
 		if (origins == null) {
-			origins = new EObjectResolvingEList<MODembedElement>(MODembedElement.class, this, CorePackage.MO_DEMBED_ELEMENT__ORIGINS);
+			origins = new EObjectContainmentEList<Origin>(Origin.class, this, CorePackage.MO_DEMBED_ELEMENT__ORIGINS);
 		}
 		return origins;
 	}
@@ -121,6 +121,20 @@ public abstract class MODembedElementImpl extends EObjectImpl implements MODembe
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case CorePackage.MO_DEMBED_ELEMENT__ORIGINS:
+				return ((InternalEList<?>)getOrigins()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CorePackage.MO_DEMBED_ELEMENT__ORIGINS:
@@ -142,7 +156,7 @@ public abstract class MODembedElementImpl extends EObjectImpl implements MODembe
 		switch (featureID) {
 			case CorePackage.MO_DEMBED_ELEMENT__ORIGINS:
 				getOrigins().clear();
-				getOrigins().addAll((Collection<? extends MODembedElement>)newValue);
+				getOrigins().addAll((Collection<? extends Origin>)newValue);
 				return;
 			case CorePackage.MO_DEMBED_ELEMENT__DESCRIPTION:
 				setDescription((String)newValue);

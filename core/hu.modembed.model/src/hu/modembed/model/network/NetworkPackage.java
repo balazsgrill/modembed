@@ -67,7 +67,7 @@ public interface NetworkPackage extends EPackage {
 	int NETWORK_NODE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -122,7 +122,7 @@ public interface NetworkPackage extends EPackage {
 	int NETWORK = 1;
 
 	/**
-	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -186,7 +186,7 @@ public interface NetworkPackage extends EPackage {
 	int CONNECTION = 2;
 
 	/**
-	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -241,7 +241,7 @@ public interface NetworkPackage extends EPackage {
 	int NETWORK_INTERFACE = 3;
 
 	/**
-	 * The feature id for the '<em><b>Origins</b></em>' reference list.
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated

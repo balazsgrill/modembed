@@ -25,20 +25,20 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface MODembedElement extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Origins</b></em>' reference list.
-	 * The list contents are of type {@link hu.modembed.model.core.MODembedElement}.
+	 * Returns the value of the '<em><b>Origins</b></em>' containment reference list.
+	 * The list contents are of type {@link hu.modembed.model.core.Origin}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Origins</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Origins</em>' reference list.
+	 * @return the value of the '<em>Origins</em>' containment reference list.
 	 * @see hu.modembed.model.core.CorePackage#getMODembedElement_Origins()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
-	EList<MODembedElement> getOrigins();
+	EList<Origin> getOrigins();
 
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.

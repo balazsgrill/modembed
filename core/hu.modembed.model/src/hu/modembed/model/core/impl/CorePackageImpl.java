@@ -17,8 +17,11 @@ import hu.modembed.model.comm.impl.CommPackageImpl;
 import hu.modembed.model.core.CoreFactory;
 import hu.modembed.model.core.CorePackage;
 import hu.modembed.model.core.MODembedElement;
+import hu.modembed.model.core.ModelOrigin;
 import hu.modembed.model.core.NamedElement;
+import hu.modembed.model.core.Origin;
 import hu.modembed.model.core.RootElement;
+import hu.modembed.model.core.TextOrigin;
 import hu.modembed.model.core.assembler.AssemblerPackage;
 import hu.modembed.model.core.assembler.code.CodePackage;
 import hu.modembed.model.core.assembler.code.impl.CodePackageImpl;
@@ -69,6 +72,27 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * @generated
 	 */
 	private EClass rootElementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass originEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass modelOriginEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass textOriginEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -237,6 +261,78 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getOrigin() {
+		return originEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getModelOrigin() {
+		return modelOriginEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getModelOrigin_Element() {
+		return (EReference)modelOriginEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getTextOrigin() {
+		return textOriginEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTextOrigin_Path() {
+		return (EAttribute)textOriginEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTextOrigin_Line() {
+		return (EAttribute)textOriginEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTextOrigin_CharStart() {
+		return (EAttribute)textOriginEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTextOrigin_CharEnd() {
+		return (EAttribute)textOriginEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public CoreFactory getCoreFactory() {
 		return (CoreFactory)getEFactoryInstance();
 	}
@@ -268,6 +364,17 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		createEAttribute(moDembedElementEClass, MO_DEMBED_ELEMENT__DESCRIPTION);
 
 		rootElementEClass = createEClass(ROOT_ELEMENT);
+
+		originEClass = createEClass(ORIGIN);
+
+		modelOriginEClass = createEClass(MODEL_ORIGIN);
+		createEReference(modelOriginEClass, MODEL_ORIGIN__ELEMENT);
+
+		textOriginEClass = createEClass(TEXT_ORIGIN);
+		createEAttribute(textOriginEClass, TEXT_ORIGIN__PATH);
+		createEAttribute(textOriginEClass, TEXT_ORIGIN__LINE);
+		createEAttribute(textOriginEClass, TEXT_ORIGIN__CHAR_START);
+		createEAttribute(textOriginEClass, TEXT_ORIGIN__CHAR_END);
 	}
 
 	/**
@@ -308,16 +415,29 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		// Add supertypes to classes
 		namedElementEClass.getESuperTypes().add(this.getMODembedElement());
 		rootElementEClass.getESuperTypes().add(this.getNamedElement());
+		modelOriginEClass.getESuperTypes().add(this.getOrigin());
+		textOriginEClass.getESuperTypes().add(this.getOrigin());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(namedElementEClass, NamedElement.class, "NamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNamedElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, NamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(moDembedElementEClass, MODembedElement.class, "MODembedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMODembedElement_Origins(), this.getMODembedElement(), null, "origins", null, 0, -1, MODembedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMODembedElement_Origins(), this.getOrigin(), null, "origins", null, 0, -1, MODembedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMODembedElement_Description(), ecorePackage.getEString(), "description", null, 0, 1, MODembedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(rootElementEClass, RootElement.class, "RootElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(originEClass, Origin.class, "Origin", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(modelOriginEClass, ModelOrigin.class, "ModelOrigin", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getModelOrigin_Element(), this.getMODembedElement(), null, "element", null, 1, 1, ModelOrigin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(textOriginEClass, TextOrigin.class, "TextOrigin", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTextOrigin_Path(), ecorePackage.getEString(), "path", null, 1, 1, TextOrigin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTextOrigin_Line(), ecorePackage.getEInt(), "line", null, 0, 1, TextOrigin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTextOrigin_CharStart(), ecorePackage.getEInt(), "charStart", null, 0, 1, TextOrigin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTextOrigin_CharEnd(), ecorePackage.getEInt(), "charEnd", null, 0, 1, TextOrigin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

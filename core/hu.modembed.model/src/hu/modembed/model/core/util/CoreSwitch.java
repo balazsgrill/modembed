@@ -87,6 +87,26 @@ public class CoreSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case CorePackage.ORIGIN: {
+				Origin origin = (Origin)theEObject;
+				T result = caseOrigin(origin);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CorePackage.MODEL_ORIGIN: {
+				ModelOrigin modelOrigin = (ModelOrigin)theEObject;
+				T result = caseModelOrigin(modelOrigin);
+				if (result == null) result = caseOrigin(modelOrigin);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CorePackage.TEXT_ORIGIN: {
+				TextOrigin textOrigin = (TextOrigin)theEObject;
+				T result = caseTextOrigin(textOrigin);
+				if (result == null) result = caseOrigin(textOrigin);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -133,6 +153,51 @@ public class CoreSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseRootElement(RootElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Origin</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Origin</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOrigin(Origin object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Model Origin</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Model Origin</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseModelOrigin(ModelOrigin object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Text Origin</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Text Origin</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTextOrigin(TextOrigin object) {
 		return null;
 	}
 
