@@ -13,6 +13,7 @@ import hu.e.parser.eSyntax.MULTIPLICATIVE_OPERATOR;
 import hu.e.parser.eSyntax.OpSingleAssign;
 import hu.e.parser.eSyntax.OperationBlock;
 import hu.e.parser.eSyntax.OperationCall;
+import hu.e.parser.eSyntax.OperationCallParameter;
 import hu.e.parser.eSyntax.OperationStep;
 import hu.e.parser.eSyntax.UNARY_OPERATOR;
 import hu.e.parser.eSyntax.Variable;
@@ -223,10 +224,19 @@ public class ExpressionConverter {
 		return step;
 	}
 
+	private static ExecutionStep convert(OperationCall call, ICrossReferenceScope scope){
+		Call c = ExpressionsFactory.eINSTANCE.createCall();
+		scope.addCrossReference(c, ExpressionsPackage.eINSTANCE.getCall_Function(), call.getOperation());
+		for(OperationCallParameter cp : call.getParams()){
+			c.getParameters().add(convert((XExpression)cp, scope));
+		}
+		return c;
+	}
+	
 	private static ExecutionStep convert(XPrimaryExpression x,
 			ICrossReferenceScope scope) {
 		if (x instanceof OperationCall){
-			
+			return convert((OperationCall)x, scope);
 		}
 		if (x instanceof hu.e.parser.eSyntax.VariableReference){
 			return vref((hu.e.parser.eSyntax.VariableReference) x, scope);
