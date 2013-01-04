@@ -20,6 +20,9 @@ import hu.e.parser.eSyntax.Operation;
 import hu.e.parser.eSyntax.RegisterVariable;
 import hu.e.parser.eSyntax.Type;
 import hu.e.parser.eSyntax.Variable;
+import hu.modembed.model.core.CoreFactory;
+import hu.modembed.model.core.MODembedElement;
+import hu.modembed.model.core.TextOrigin;
 import hu.modembed.model.core.assembler.AssemblerFactory;
 import hu.modembed.model.core.assembler.AssemblerPackage;
 import hu.modembed.model.core.assembler.ConstantSection;
@@ -44,9 +47,12 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.xtext.nodemodel.ICompositeNode;
+import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 
 /**
  * @author balazs.grill
@@ -59,6 +65,24 @@ public class LibraryConverter {
 	private final ResourceSet resourceSet;
 	
 	private final IProject project;
+	
+	public static TextOrigin createOrigin(EObject origin){
+		URI uri = origin.eResource().getURI();
+		String path = uri.toPlatformString(true);
+		TextOrigin to = CoreFactory.eINSTANCE.createTextOrigin();
+		to.setPath(path);
+		
+		ICompositeNode node = NodeModelUtils.findActualNodeFor(origin);
+		if (node != null){
+			to.setLine(node.getStartLine());
+		}
+		
+		return to;
+	}
+	
+	public static void addOrigin(MODembedElement element, EObject origin){
+		element.getOrigins().add(createOrigin(origin));
+	}
 	
 	public LibraryConverter(IProject project) {
 		this.resourceSet = new ResourceSetImpl();
@@ -87,6 +111,7 @@ public class LibraryConverter {
 			to.setName(from.getName());
 			to.setDefinition(TypeConverter.convertTypeDef(from.getDef(), scope));
 			
+			addOrigin(to, from);
 			return to;
 		}
 		
@@ -101,18 +126,21 @@ public class LibraryConverter {
 				cv.setName(item.getName());
 				cv.setType(TypeConverter.convertTypeDef(((Variable) item).getType(), scope));
 				cv.setValue(ExpressionConverter.convert(((ConstantVariable) item).getValue(), scope));
+				addOrigin(cv, item);
 				return cv;
 			}else if (item instanceof RegisterVariable){
 				hu.modembed.model.emodel.RegisterVariable rv = EmodelFactory.eINSTANCE.createRegisterVariable();
 				rv.setName(item.getName());
 				rv.setType(TypeConverter.convertTypeDef(((Variable) item).getType(), scope));
 				rv.setAddress(ExpressionConverter.convert(((RegisterVariable) item).getAddr(), scope));
+				addOrigin(rv, item);
 				return rv;
 			}else{
 				//Heap variable
 				HeapVariable hv = EmodelFactory.eINSTANCE.createHeapVariable();
 				hv.setName(item.getName());
 				hv.setType(TypeConverter.convertTypeDef(((Variable) item).getType(), scope));
+				addOrigin(hv, item);
 				return hv;
 			}
 			
@@ -174,12 +202,14 @@ public class LibraryConverter {
 			result.getWords().add(w);
 		}
 		
+		addOrigin(result, in);
 		return result;
 	}
 	
 	public boolean convert(InstructionSetNotation isetn){
 		InstructionSet result = AssemblerFactory.eINSTANCE.createInstructionSet();
 		result.setName(isetn.getName());
+		addOrigin(result, isetn);
 		
 		ICrossReferenceScope scope = new RootReferenceScope(project, resourceSet, result, Collections.<String>emptyList());
 		if (isetn.getExtends() != null){
@@ -207,6 +237,7 @@ public class LibraryConverter {
 	public boolean convert(Library library){
 		hu.modembed.model.emodel.Library result = EmodelFactory.eINSTANCE.createLibrary();
 		result.setName(library.getName());
+		addOrigin(result, library);
 		
 		ICrossReferenceScope scope = new RootReferenceScope(project, resourceSet, result, library.getUse());
 		
