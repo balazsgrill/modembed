@@ -1,40 +1,52 @@
 <?xml version="1.0" encoding="ASCII"?>
-<emodel:Library xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:emodel="http://emodel/1.0" xmlns:types="http://emodel/1.0/types" name="pic16.platform">
+<emodel:Library xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://modembed.hu/core" xmlns:emodel="http://emodel/1.0" xmlns:types="http://emodel/1.0/types" name="pic16.platform">
+  <origins xsi:type="core:TextOrigin" path="/e.pic16/pic16.platform.e" line="1" charEnd="390"/>
   <content xsi:type="emodel:HeapVariable">
+    <origins xsi:type="core:TextOrigin" path="/e.pic16/pic16.platform.e" line="9" charStart="125" charEnd="136"/>
     <type xsi:type="types:ReferenceTypeDefinition"/>
   </content>
   <content xsi:type="emodel:HeapVariable" name="d">
+    <origins xsi:type="core:TextOrigin" path="/e.pic16/pic16.platform.e" line="9" charStart="137" charEnd="145"/>
     <type xsi:type="types:ReferenceTypeDefinition">
       <type href="../../e.core/.models/e.platform.xmi#//@content.0"/>
     </type>
   </content>
   <content xsi:type="emodel:HeapVariable" name="v">
+    <origins xsi:type="core:TextOrigin" path="/e.pic16/pic16.platform.e" line="9" charStart="146" charEnd="155"/>
     <type xsi:type="types:ReferenceTypeDefinition">
       <type href="../../e.core/.models/e.platform.xmi#//@content.0"/>
     </type>
   </content>
   <content xsi:type="emodel:HeapVariable">
+    <origins xsi:type="core:TextOrigin" path="/e.pic16/pic16.platform.e" line="10" charStart="158" charEnd="172"/>
     <type xsi:type="types:ReferenceTypeDefinition"/>
   </content>
   <content xsi:type="emodel:HeapVariable">
+    <origins xsi:type="core:TextOrigin" path="/e.pic16/pic16.platform.e" line="10" charStart="172" charEnd="176"/>
     <type xsi:type="types:ReferenceTypeDefinition"/>
   </content>
   <content xsi:type="emodel:HeapVariable">
+    <origins xsi:type="core:TextOrigin" path="/e.pic16/pic16.platform.e" line="11" charStart="180" charEnd="188"/>
     <type xsi:type="types:ReferenceTypeDefinition"/>
   </content>
   <content xsi:type="emodel:HeapVariable">
+    <origins xsi:type="core:TextOrigin" path="/e.pic16/pic16.platform.e" line="11" charStart="189" charEnd="192"/>
     <type xsi:type="types:ReferenceTypeDefinition"/>
   </content>
   <content xsi:type="emodel:HeapVariable">
+    <origins xsi:type="core:TextOrigin" path="/e.pic16/pic16.platform.e" line="12" charStart="197" charEnd="206"/>
     <type xsi:type="types:ReferenceTypeDefinition"/>
   </content>
   <content xsi:type="emodel:HeapVariable">
+    <origins xsi:type="core:TextOrigin" path="/e.pic16/pic16.platform.e" line="12" charStart="206" charEnd="209"/>
     <type xsi:type="types:ReferenceTypeDefinition"/>
   </content>
   <content xsi:type="emodel:HeapVariable">
+    <origins xsi:type="core:TextOrigin" path="/e.pic16/pic16.platform.e" line="13" charStart="214" charEnd="220"/>
     <type xsi:type="types:ReferenceTypeDefinition"/>
   </content>
   <content xsi:type="emodel:HeapVariable">
+    <origins xsi:type="core:TextOrigin" path="/e.pic16/pic16.platform.e" line="13" charStart="220" charEnd="223"/>
     <type xsi:type="types:ReferenceTypeDefinition"/>
   </content>
 </emodel:Library>

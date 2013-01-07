@@ -1,38 +1,52 @@
 <?xml version="1.0" encoding="ASCII"?>
-<emodel:Library xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:emodel="http://emodel/1.0" xmlns:expressions="http://emodel/1.0/expressions" xmlns:types="http://emodel/1.0/types" name="e.dio">
+<emodel:Library xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://modembed.hu/core" xmlns:emodel="http://emodel/1.0" xmlns:expressions="http://emodel/1.0/expressions" xmlns:types="http://emodel/1.0/types" name="e.dio">
+  <origins xsi:type="core:TextOrigin" path="/e.core/dio.e" line="1" charEnd="203"/>
   <content xsi:type="emodel:Type" name="ChannelID">
+    <origins xsi:type="core:TextOrigin" path="/e.core/dio.e" line="5" charStart="37" charEnd="70"/>
     <definition xsi:type="types:UnsignedTypeDefinition" bits="8"/>
   </content>
   <content xsi:type="emodel:Function" name="DIO_Read">
+    <origins xsi:type="core:TextOrigin" path="/e.core/dio.e" line="7" charStart="74" charEnd="137"/>
     <arguments xsi:type="emodel:VariableParameter" name="channel">
+      <origins xsi:type="core:TextOrigin" path="/e.core/dio.e" line="7" charStart="97" charEnd="114"/>
       <type xsi:type="types:ReferenceTypeDefinition" type="//@content.0"/>
     </arguments>
     <arguments xsi:type="emodel:VariableParameter" name="v">
+      <origins xsi:type="core:TextOrigin" path="/e.core/dio.e" line="7" charStart="116" charEnd="123"/>
       <type xsi:type="types:ReferenceTypeDefinition">
         <type href="e.platform.xmi#//@content.0"/>
       </type>
     </arguments>
     <arguments xsi:type="emodel:VariableParameter" name="b">
+      <origins xsi:type="core:TextOrigin" path="/e.core/dio.e" line="7" charStart="125" charEnd="134"/>
       <type xsi:type="types:ReferenceTypeDefinition">
         <type href="e.platform.xmi#//@content.4"/>
       </type>
     </arguments>
-    <implementation xsi:type="expressions:ExecutionBlock"/>
+    <implementation xsi:type="expressions:ExecutionBlock">
+      <origins xsi:type="core:TextOrigin" path="/e.core/dio.e" line="7" charStart="135" charEnd="137"/>
+    </implementation>
   </content>
   <content xsi:type="emodel:Function" name="DIO_Set">
+    <origins xsi:type="core:TextOrigin" path="/e.core/dio.e" line="9" charStart="141" charEnd="203"/>
     <arguments xsi:type="emodel:VariableParameter" name="channel">
+      <origins xsi:type="core:TextOrigin" path="/e.core/dio.e" line="9" charStart="163" charEnd="180"/>
       <type xsi:type="types:ReferenceTypeDefinition" type="//@content.0"/>
     </arguments>
     <arguments xsi:type="emodel:VariableParameter" name="v">
+      <origins xsi:type="core:TextOrigin" path="/e.core/dio.e" line="9" charStart="182" charEnd="189"/>
       <type xsi:type="types:ReferenceTypeDefinition">
         <type href="e.platform.xmi#//@content.0"/>
       </type>
     </arguments>
     <arguments xsi:type="emodel:VariableParameter" name="b">
+      <origins xsi:type="core:TextOrigin" path="/e.core/dio.e" line="9" charStart="191" charEnd="200"/>
       <type xsi:type="types:ReferenceTypeDefinition">
         <type href="e.platform.xmi#//@content.4"/>
       </type>
     </arguments>
-    <implementation xsi:type="expressions:ExecutionBlock"/>
+    <implementation xsi:type="expressions:ExecutionBlock">
+      <origins xsi:type="core:TextOrigin" path="/e.core/dio.e" line="9" charStart="201" charEnd="203"/>
+    </implementation>
   </content>
 </emodel:Library>

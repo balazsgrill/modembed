@@ -4,6 +4,14 @@
    <extension
          point="hu.modembed.ui.includedCode">
       <project
+            id="test0"
+            name="test0">
+         <resource
+               path="/"
+               resource="tests/t0_parse/parseTest.e">
+         </resource>
+      </project>
+      <project
             id="test1"
             name="test1">
          <dependency

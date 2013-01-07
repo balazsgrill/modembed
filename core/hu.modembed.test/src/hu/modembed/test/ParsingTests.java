@@ -5,11 +5,15 @@ package hu.modembed.test;
 
 import static org.junit.Assert.fail;
 
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IMarker;
+import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IStatus;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -27,6 +31,15 @@ public class ParsingTests {
 		ModembedTests.testSetUp();
 	}
 
+	@Test
+	public void test0() throws CoreException {
+		IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject("test0");
+		IFolder folder = project.getFolder(".models");
+		IFile file = folder.getFile("parseTest.xmi");
+		
+		Assert.assertTrue(file.exists());
+	}
+	
 	@Test
 	public void test() throws CoreException {
 		
