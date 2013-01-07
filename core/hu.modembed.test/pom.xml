@@ -28,7 +28,17 @@
 					<dependencies>
            				<dependency>
               				<type>eclipse-feature</type>
-              				<artifactId>org.eclipse.rcp</artifactId>
+              				<artifactId>org.eclipse.platform</artifactId>
+              				<version>0.0.0</version>
+            			</dependency>
+            			<dependency>
+              				<type>eclipse-feature</type>
+              				<artifactId>org.eclipse.jdt</artifactId>
+              				<version>0.0.0</version>
+            			</dependency>
+            			<dependency>
+              				<type>eclipse-feature</type>
+              				<artifactId>org.eclipse.emf</artifactId>
               				<version>0.0.0</version>
             			</dependency>
            				<dependency>
