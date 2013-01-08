@@ -3,6 +3,9 @@
  */
 package hu.e.compiler.tasks;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import hu.e.compiler.ECompilerPlugin;
 import hu.e.compiler.IModembedTask;
 import hu.e.compiler.ITaskContext;
@@ -17,10 +20,13 @@ import hu.modembed.model.emodel.CallableElement;
 import hu.modembed.model.emodel.Function;
 import hu.modembed.model.emodel.Library;
 import hu.modembed.model.emodel.LibraryElement;
+import hu.modembed.model.emodel.Variable;
 import hu.modembed.model.emodel.expressions.Call;
 import hu.modembed.model.emodel.expressions.ExecutionBlock;
 import hu.modembed.model.emodel.expressions.ExecutionStep;
 import hu.modembed.model.emodel.expressions.IntegerLiteralExpression;
+import hu.modembed.model.emodel.expressions.LocalVariable;
+import hu.modembed.model.emodel.expressions.VariableReference;
 
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
@@ -37,6 +43,27 @@ public class CreateAssemblerObjectTask implements IModembedTask {
 	public static final String INPUT = "input";
 	public static final String OUTPUT = "output";
 	public static final String ENTRY = "entry";
+	
+	private class AssemblingContext{
+		
+		public final Map<LocalVariable, Integer> labels = new HashMap<LocalVariable, Integer>();
+		
+		public final Map<InstructionCallParameter, LocalVariable> references = new HashMap<InstructionCallParameter, LocalVariable>();
+		
+		public void resolve(ITaskContext context){
+			for(InstructionCallParameter icallp : references.keySet()){
+				LocalVariable lv = references.get(icallp);
+				Integer address = labels.get(lv);
+				if (address == null){
+					context.logStatus(new Status(IStatus.ERROR, ECompilerPlugin.PLUGIN_ID, "Could not find label: "+lv));
+				}else{
+					icallp.setValue(address);
+				}
+			}
+		}
+	}
+	
+	
 	
 	@Override
 	public void execute(ITaskContext context, IProgressMonitor monitor) {
@@ -65,15 +92,25 @@ public class CreateAssemblerObjectTask implements IModembedTask {
 			TaskUtils.addOrigin(object, mainfunc);
 			outr.getContents().add(object);
 			
+			AssemblingContext ac = new AssemblingContext();
 			ExecutionStep step = mainfunc.getImplementation();
-			processStep(step, context, object);		
+			processStep(ac, step, context, object);	
+			ac.resolve(context);
 		}
 	}
 
-	private void processStep(ExecutionStep step, ITaskContext context, AssemblerObject result){
+	private void processStep(AssemblingContext ac, ExecutionStep step, ITaskContext context, AssemblerObject result){
+		if (step instanceof LocalVariable){
+			if (((LocalVariable) step).getType() == null){
+				// This is a label
+				ac.labels.put((LocalVariable)step, result.getInstructions().size());
+			}else{
+				context.logStatus(new Status(IStatus.ERROR, ECompilerPlugin.PLUGIN_ID, "Variables are not supported!"));
+			}
+		}else
 		if (step instanceof ExecutionBlock){
 			for(ExecutionStep sstep : ((ExecutionBlock) step).getSteps()){
-				processStep(sstep, context, result);
+				processStep(ac, sstep, context, result);
 			}
 		}else if (step instanceof Call){
 			CallableElement callable = ((Call) step).getFunction();
@@ -98,7 +135,19 @@ public class CreateAssemblerObjectTask implements IModembedTask {
 							icall.getParameters().add(icallp);
 							TaskUtils.addOrigin(icallp, param);
 						}
-					}else{
+					}else if (param instanceof VariableReference){
+						InstructionCallParameter icallp = CodeFactory.eINSTANCE.createInstructionCallParameter();
+						InstructionParameter ip = ins.getParameters().get(i);
+						i++;
+						icallp.setDefinition(ip);
+						Variable v = ((VariableReference) param).getVariable();
+						if (v instanceof LocalVariable){
+							ac.references.put(icallp, (LocalVariable)v);
+						}
+						icall.getParameters().add(icallp);
+						TaskUtils.addOrigin(icallp, param);
+					}
+					else{
 						context.logStatus(new Status(IStatus.ERROR, ECompilerPlugin.PLUGIN_ID, "Only integer parameters are supported!"));
 					}
 				}

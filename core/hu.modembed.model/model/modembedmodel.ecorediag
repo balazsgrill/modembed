@@ -3126,7 +3126,7 @@
       </children>
       <styles xmi:type="notation:ShapeStyle" xmi:id="_sXtjYSmxEeKptJLKjBHZ3w" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
       <element xmi:type="ecore:EClass" href="modembedmodel.ecore#//emodel/expressions/LocalVariable"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sXtjYimxEeKptJLKjBHZ3w" x="40" y="195"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sXtjYimxEeKptJLKjBHZ3w" x="60" y="125"/>
     </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_JHNFkR9dEeKsFLvWggXljg"/>
     <element xmi:type="ecore:EPackage" href="modembedmodel.ecore#//emodel/expressions"/>

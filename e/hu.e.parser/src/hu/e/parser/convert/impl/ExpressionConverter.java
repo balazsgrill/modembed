@@ -10,6 +10,7 @@ import hu.e.parser.eSyntax.Annotation;
 import hu.e.parser.eSyntax.BOOLEAN_OPERATOR;
 import hu.e.parser.eSyntax.EQUALITY_OPERATOR;
 import hu.e.parser.eSyntax.ErrorLevels;
+import hu.e.parser.eSyntax.Label;
 import hu.e.parser.eSyntax.MULTIPLICATIVE_OPERATOR;
 import hu.e.parser.eSyntax.OpSingleAssign;
 import hu.e.parser.eSyntax.OperationBlock;
@@ -320,7 +321,9 @@ public class ExpressionConverter {
 			Variable v = (Variable)x;
 			LocalVariable lv = ExpressionsFactory.eINSTANCE.createLocalVariable();
 			lv.setName(v.getName());
-			lv.setType(TypeConverter.convertTypeDef(v.getType(), scope));
+			if (!(x instanceof Label)){
+				lv.setType(TypeConverter.convertTypeDef(v.getType(), scope));
+			}
 			return lv;
 		}
 		if (x instanceof Annotation){
