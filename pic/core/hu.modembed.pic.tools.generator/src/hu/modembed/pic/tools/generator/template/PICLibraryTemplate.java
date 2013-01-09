@@ -19,19 +19,15 @@ public class PICLibraryTemplate
   protected final String TEXT_2 = NL + " * ";
   protected final String TEXT_3 = NL + " * Architecture: ";
   protected final String TEXT_4 = NL + " */" + NL + "library microchip.";
-  protected final String TEXT_5 = ";" + NL + "" + NL + "\tuse e.platform;";
-  protected final String TEXT_6 = NL + "\tuse microchip.pic18;";
-  protected final String TEXT_7 = NL + "\tuse microchip.pic16.enchanced;";
-  protected final String TEXT_8 = NL + "\tuse microchip.pic16;";
-  protected final String TEXT_9 = NL + NL + "/********************" + NL + " * Special function registers" + NL + " ********************/" + NL;
-  protected final String TEXT_10 = NL + NL + "/*" + NL + " * ";
-  protected final String TEXT_11 = NL + " * ";
-  protected final String TEXT_12 = NL + " */" + NL + "reg ";
-  protected final String TEXT_13 = " ";
-  protected final String TEXT_14 = " : 0x";
-  protected final String TEXT_15 = "; ";
-  protected final String TEXT_16 = NL;
-  protected final String TEXT_17 = NL;
+  protected final String TEXT_5 = ";" + NL + "" + NL + "\tuse e.platform;" + NL + "" + NL + "/********************" + NL + " * Special function registers" + NL + " ********************/" + NL;
+  protected final String TEXT_6 = NL + NL + "/*" + NL + " * ";
+  protected final String TEXT_7 = NL + " * ";
+  protected final String TEXT_8 = NL + " */" + NL + "reg ";
+  protected final String TEXT_9 = " ";
+  protected final String TEXT_10 = " : 0x";
+  protected final String TEXT_11 = "; ";
+  protected final String TEXT_12 = NL;
+  protected final String TEXT_13 = NL;
 
   public String generate(Object argument)
   {
@@ -47,16 +43,6 @@ public class PICLibraryTemplate
     stringBuffer.append(TEXT_4);
     stringBuffer.append(pic.getAttribute("edc:name"));
     stringBuffer.append(TEXT_5);
-     	if(arch.startsWith("18")){ 
-    stringBuffer.append(TEXT_6);
-    	}
-    	if(arch.startsWith("16E")){ 
-    stringBuffer.append(TEXT_7);
-     	}
-    	if(arch.startsWith("16")){ 
-    stringBuffer.append(TEXT_8);
-     	}else{}
-    stringBuffer.append(TEXT_9);
     
 	Element dataspace = (Element)pic.getElementsByTagName("edc:DataSpace").item(0);
 	Element regardlessOfMode = (Element)dataspace.getElementsByTagName("edc:RegardlessOfMode").item(0);
@@ -75,17 +61,17 @@ public class PICLibraryTemplate
 				size = size/8;
 				String type = (size==2) ? "uint16" :"uint8";
 
-    stringBuffer.append(TEXT_10);
+    stringBuffer.append(TEXT_6);
     stringBuffer.append(item.getAttribute("edc:name"));
-    stringBuffer.append(TEXT_11);
+    stringBuffer.append(TEXT_7);
     stringBuffer.append(item.getAttribute("edc:desc"));
-    stringBuffer.append(TEXT_12);
+    stringBuffer.append(TEXT_8);
     stringBuffer.append(type);
-    stringBuffer.append(TEXT_13);
+    stringBuffer.append(TEXT_9);
     stringBuffer.append(item.getAttribute("edc:cname"));
-    stringBuffer.append(TEXT_14);
+    stringBuffer.append(TEXT_10);
     stringBuffer.append(Integer.toHexString(beginAddr));
-    stringBuffer.append(TEXT_15);
+    stringBuffer.append(TEXT_11);
     
 				beginAddr += size;
 			}
@@ -100,8 +86,8 @@ public class PICLibraryTemplate
 		}
 	}
 
-    stringBuffer.append(TEXT_16);
-    stringBuffer.append(TEXT_17);
+    stringBuffer.append(TEXT_12);
+    stringBuffer.append(TEXT_13);
     return stringBuffer.toString();
   }
 }

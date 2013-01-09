@@ -10,15 +10,6 @@ class="PICLibraryTemplate" %>
 library microchip.<%=pic.getAttribute("edc:name")%>;
 
 	use e.platform;
-<% 	if(arch.startsWith("18")){ %>
-	use microchip.pic18;
-<%	}%>
-<%	if(arch.startsWith("16E")){ %>
-	use microchip.pic16.enchanced;
-<% 	}%>
-<%	if(arch.startsWith("16")){ %>
-	use microchip.pic16;
-<% 	}else{}%>
 
 /********************
  * Special function registers
