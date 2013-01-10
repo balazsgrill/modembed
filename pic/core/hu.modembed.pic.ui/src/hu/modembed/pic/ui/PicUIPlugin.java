@@ -50,7 +50,7 @@ public class PicUIPlugin extends AbstractUIPlugin {
 	public static Map<String, URL> getAvailablePICs(){
 		if (piclibs != null) return piclibs;
 		Map<String, URL> urls = new HashMap<String, URL>();
-		Enumeration<URL> es = getDefault().getBundle().findEntries("lib", "*.e", true);
+		Enumeration<URL> es = getDefault().getBundle().findEntries("gen-lib", "*.e", true);
 		
 		while(es.hasMoreElements()){
 			URL url = es.nextElement();
