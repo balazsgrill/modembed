@@ -15,18 +15,12 @@
     <!-- ================================= 
           target: default              
          ================================= -->
-    <target name="default" depends="depends" description="description">
+    <target name="default" description="description">
     	<echo>Generating PIC Libraries..</echo>
         <mkdir dir="gen-lib"/>
-    	<style basedir="device-descriptors/16xxxx" destdir="gen-lib/16xxxx" 
+    	<xslt basedir="device-descriptors/16xxxx" destdir="gen-lib/16xxxx" 
     		extension="e" style="device-descriptors/piclibgenerator.xsl">
-    	</style>
-    </target>
-
-    <!-- - - - - - - - - - - - - - - - - - 
-          target: depends                      
-         - - - - - - - - - - - - - - - - - -->
-    <target name="depends">
+    	</xslt>
     </target>
 
 </project>
