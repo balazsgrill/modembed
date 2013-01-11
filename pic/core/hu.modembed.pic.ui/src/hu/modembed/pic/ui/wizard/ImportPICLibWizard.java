@@ -3,17 +3,14 @@
  */
 package hu.modembed.pic.ui.wizard;
 
+import hu.modembed.pic.ui.ImportPICLibraryTask;
 import hu.modembed.pic.ui.PicUIPlugin;
 
-import java.io.IOException;
 import java.net.URL;
 
 import org.eclipse.core.resources.IContainer;
-import org.eclipse.core.resources.IFile;
-import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -43,21 +40,17 @@ public class ImportPICLibWizard extends Wizard implements IImportWizard {
 	@Override
 	public boolean performFinish() {
 		final URL url = page.getSelection();
-		IContainer container = page.getDestinationContainer();
-		String filename = PicUIPlugin.getNameOfURL(url)+".e";
-		final IFile file = container.getFile(new Path(filename));
+		final IContainer container = page.getDestinationContainer();
 		
 		Job job = new Job("Importing"){
 			@Override
 			protected IStatus run(IProgressMonitor monitor) {
 				try {
-					file.create(url.openStream(), true, monitor);
-				} catch (CoreException e) {
-					return e.getStatus();
-				} catch (IOException e) {
-					return new Status(IStatus.ERROR, PicUIPlugin.PLUGIN_ID, "Could not create file!",e);
-				}
-				return Status.OK_STATUS;
+					new ImportPICLibraryTask(url, container).run(monitor);
+					return Status.OK_STATUS;
+				} catch (Exception e) {
+					return new Status(IStatus.ERROR, PicUIPlugin.PLUGIN_ID, e.getMessage(), e);
+				} 
 			}
 		};
 		job.setUser(true);

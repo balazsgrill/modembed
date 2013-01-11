@@ -1,5 +1,6 @@
 package hu.modembed.test;
 
+import static org.junit.Assert.fail;
 import hu.modembed.includedcode.CreateProjectInWorkspaceTask;
 import hu.modembed.includedcode.IncludedProject;
 import hu.modembed.includedcode.IncludedProjectsRegistry;
@@ -8,12 +9,14 @@ import java.io.IOException;
 import java.util.Collections;
 
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IMarker;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.IncrementalProjectBuilder;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.compare.diff.metamodel.DiffModel;
 import org.eclipse.emf.compare.diff.service.DiffService;
@@ -42,6 +45,12 @@ public class ModembedTests {
 		return diff.getDifferences().isEmpty();
 	}
 	
+	public static void build() throws CoreException{
+		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
+		root.refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
+		ResourcesPlugin.getWorkspace().build(IncrementalProjectBuilder.FULL_BUILD, new NullProgressMonitor());
+	}
+	
 	public static void testSetUp() throws CoreException{
 		//Clean workspace
 		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
@@ -60,8 +69,17 @@ public class ModembedTests {
 			task.run(new NullProgressMonitor());
 		}
 		
-		root.refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
-		ResourcesPlugin.getWorkspace().build(IncrementalProjectBuilder.FULL_BUILD, new NullProgressMonitor());
+		build();
+	}
+	
+	public static void checkMarkers() throws CoreException{
+		for(IMarker m : ResourcesPlugin.getWorkspace().getRoot().findMarkers(null, true, IResource.DEPTH_INFINITE)){
+			if (IStatus.OK != m.getAttribute(IMarker.SEVERITY, IStatus.OK)){
+				String msg = m.getAttribute(IMarker.MESSAGE, "Error");
+				String loc = m.getAttribute(IMarker.LOCATION, "");
+				fail(msg+" "+loc);
+			}
+		}
 	}
 	
 }

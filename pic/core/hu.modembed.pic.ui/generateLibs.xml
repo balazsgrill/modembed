@@ -19,7 +19,7 @@
     	<echo>Generating PIC Libraries..</echo>
         <mkdir dir="gen-lib"/>
     	<xslt basedir="device-descriptors/16xxxx" destdir="gen-lib/16xxxx" 
-    		extension="e" style="device-descriptors/piclibgenerator.xsl">
+    		extension=".e" style="device-descriptors/piclibgenerator.xsl">
     	</xslt>
     </target>
 
