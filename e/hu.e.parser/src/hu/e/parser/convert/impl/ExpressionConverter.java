@@ -79,9 +79,9 @@ public class ExpressionConverter {
 	
 	public static PlatformOperations getOp(OpSingleAssign a){
 		switch(a){
-		case ASSIGN: return PlatformOperations.SET;
-		case ASSIGNADD:
-		case ASSIGNSUBTRACT:
+		case ASSIGN: return PlatformOperations.ASSIGN;
+		case ASSIGNADD: return PlatformOperations.ASSIGNADD;
+		case ASSIGNSUBTRACT: return PlatformOperations.ASSIGNSUBTRACT;
 		}
 		return null;
 	}
@@ -104,8 +104,8 @@ public class ExpressionConverter {
 	
 	public static PlatformOperations getOp(BOOLEAN_OPERATOR op){
 		switch(op){
-		case AND:
-		case OR:
+		case AND: return PlatformOperations.AND;
+		case OR: return PlatformOperations.OR;
 		}
 		return null;
 	}
@@ -138,12 +138,12 @@ public class ExpressionConverter {
 	
 	private static PlatformOperations getOp(EQUALITY_OPERATOR op) {
 		switch(op){
-		case EQUALS:
-		case GT:
-		case GTE:
-		case LT:
-		case LTE:
-		case NOTEQUALS:
+		case EQUALS: return PlatformOperations.EQUALS;
+		case GT: return PlatformOperations.GT;
+		case GTE: return PlatformOperations.GTE;
+		case LT: return PlatformOperations.LT;
+		case LTE: return PlatformOperations.LTE;
+		case NOTEQUALS: return PlatformOperations.NOTEQUALS;
 		}
 		return null;
 	}
@@ -163,8 +163,8 @@ public class ExpressionConverter {
 
 	private static PlatformOperations getOp(ADDITIVE_OPERATOR op) {
 		switch(op){
-		case ADD:
-		case MINUS:
+		case ADD: return PlatformOperations.ADD;
+		case MINUS: return PlatformOperations.MINUS;
 		}
 		return null;
 	}
@@ -187,8 +187,11 @@ public class ExpressionConverter {
 			MULTIPLICATIVE_OPERATOR op) {
 		switch(op){
 		case DIV:
+			return PlatformOperations.DIV;
 		case MOD:
+			return PlatformOperations.MOD;
 		case MUL:
+			return PlatformOperations.MUL;
 		}
 		return null;
 	}
@@ -208,9 +211,13 @@ public class ExpressionConverter {
 	private static PlatformOperations getOp(UNARY_OPERATOR op) {
 		switch(op){
 		case DEREFERENCE:
+			return PlatformOperations.DEREFERENCE;
 		case MINUS:
+			return PlatformOperations.UNARY_MINUS;
 		case NOT:
+			return PlatformOperations.NOT;
 		case REFERENCE:	
+			return PlatformOperations.REFERENCE;
 		}
 		return null;
 	}

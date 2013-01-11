@@ -22,3 +22,5 @@ type bit = unsigned 3 bits;
 function ADD void(void a, void b){}
 
 function SET void(void d, void s){}
+
+function REFERENCE void(void d){}

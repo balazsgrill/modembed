@@ -7,7 +7,7 @@
  * <xsl:value-of select="@edc:desc" />
  * Architecture: <xsl:value-of select="@edc:arch" />
  */
-library microchip.<xsl:value-of select="@edc:name" />{
+library microchip.<xsl:value-of select="@edc:name" />;
 use e.platform;
 <xsl:for-each select="edc:DataSpace/edc:RegardlessOfMode/edc:SFRDataSector">
 /**************************************
@@ -42,7 +42,7 @@ use e.platform;
  * <xsl:value-of select="@edc:desc" />
  * Size: <xsl:value-of select="$size"/> bits
  */
-register uint<xsl:value-of select="$size"/><xsl:text> </xsl:text><xsl:value-of select="@edc:cname" /> : 0x<xsl:value-of select="$hexAddress"/>;
+reg uint<xsl:value-of select="$size"/><xsl:text> </xsl:text><xsl:value-of select="@edc:cname" /> : 0x<xsl:value-of select="$hexAddress"/>;
 	</xsl:when>
 	<xsl:when test="name(.) = 'edc:JoinedSFRDef'">
 /*
@@ -50,13 +50,12 @@ register uint<xsl:value-of select="$size"/><xsl:text> </xsl:text><xsl:value-of s
  * <xsl:value-of select="@edc:desc" />
  * Size: <xsl:value-of select="$size"/> bits
  */
-register uint<xsl:value-of select="$size"/><xsl:text> </xsl:text><xsl:value-of select="@edc:cname" /> : 0x<xsl:value-of select="$hexAddress"/>;
+reg uint<xsl:value-of select="$size"/><xsl:text> </xsl:text><xsl:value-of select="@edc:cname" /> : 0x<xsl:value-of select="$hexAddress"/>;
 	</xsl:when>
 </xsl:choose>
 
 	</xsl:for-each>
 </xsl:for-each>
-}
 </xsl:template>
 	
 <xsl:template name="address">
