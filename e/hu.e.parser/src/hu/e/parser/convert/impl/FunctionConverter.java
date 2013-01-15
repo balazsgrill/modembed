@@ -11,6 +11,7 @@ import hu.e.parser.eSyntax.OperationParameter;
 import hu.e.parser.eSyntax.OperationTypeDef;
 import hu.e.parser.eSyntax.ParameterVariable;
 import hu.modembed.model.emodel.EmodelFactory;
+import hu.modembed.model.emodel.EmodelPackage;
 import hu.modembed.model.emodel.Function;
 import hu.modembed.model.emodel.FunctionParameter;
 import hu.modembed.model.emodel.VariableParameter;
@@ -50,6 +51,11 @@ public class FunctionConverter {
 		func.setName(operation.getName());
 		LibraryConverter.addOrigin(func, operation);
 		ICrossReferenceScope funcscope = new FunctionCrossReferenceScope(func, scope);
+		
+		String overrides = operation.getOverrides();
+		if (overrides != null){
+			scope.addCrossReference(func, EmodelPackage.eINSTANCE.getFunction_Overrides(), overrides);
+		}
 		
 		OperationTypeDef ot = operation.getType();
 		func.setType(TypeConverter.convertTypeDef(ot.getResultType(), scope));
