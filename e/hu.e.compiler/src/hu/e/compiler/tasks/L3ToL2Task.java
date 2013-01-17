@@ -6,13 +6,17 @@ package hu.e.compiler.tasks;
 import hu.e.compiler.IModembedTask;
 import hu.e.compiler.ITaskContext;
 import hu.e.compiler.TaskUtils;
-import hu.modembed.model.emodel.EmodelFactory;
 import hu.modembed.model.emodel.Function;
 import hu.modembed.model.emodel.Library;
 import hu.modembed.model.emodel.LibraryElement;
+import hu.modembed.model.emodel.VariableParameterKind;
+import hu.modembed.model.emodel.expressions.Call;
+import hu.modembed.model.emodel.expressions.ExecutionBlock;
+import hu.modembed.model.emodel.expressions.ExecutionStep;
+import hu.modembed.model.emodel.types.TypeDefinition;
 
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -32,6 +36,19 @@ public class L3ToL2Task implements IModembedTask{
 	public static final String INPUT = "input";
 	public static final String OUTPUT = "output";
 	
+	private class ParameterType{
+		public final VariableParameterKind kind;
+		public final TypeDefinition type;
+		
+		public ParameterType(ExecutionStep step) {
+			VariableParameterKind kind = null;
+			TypeDefinition type = null;
+			
+			this.kind = kind;
+			this.type = type;
+		}
+	}
+	
 	private class Linker{
 		
 		/**
@@ -48,6 +65,31 @@ public class L3ToL2Task implements IModembedTask{
 						overrides.put(o, f);
 					}
 				}
+			}
+		}
+		
+		public void process(ExecutionStep step){
+			if (step instanceof Call){
+				for(ExecutionStep param : ((Call) step).getParameters()){
+					process(param);
+				}
+				process((Call)step);
+			}
+			if (step instanceof ExecutionBlock){
+				for(ExecutionStep s : ((ExecutionBlock) step).getSteps()){
+					process(s);
+				}
+			}
+		}
+		
+		public void process(Call call){
+			if (call.getFunction() instanceof Function){
+				Function abstractfunction = (Function)call.getFunction();
+				//collect call signature
+				List<ParameterType> types = new ArrayList<L3ToL2Task.ParameterType>();
+				
+			}else{
+				/* Instruction calls shall not be changed */
 			}
 		}
 		
@@ -73,7 +115,12 @@ public class L3ToL2Task implements IModembedTask{
 		outr.getContents().add(outlib);
 		TaskUtils.addOrigin(outlib, inlib);
 		
-		
+		Linker linker = new Linker(outlib);
+		for(LibraryElement element : outlib.getContent()){
+			if (element instanceof Function){
+				linker.process(((Function) element).getImplementation());
+			}
+		}
 		
 		monitor.done();
 	}
