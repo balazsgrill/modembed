@@ -9,12 +9,14 @@ import hu.e.parser.eSyntax.LazyParameter;
 import hu.e.parser.eSyntax.Operation;
 import hu.e.parser.eSyntax.OperationParameter;
 import hu.e.parser.eSyntax.OperationTypeDef;
+import hu.e.parser.eSyntax.ParameterKind;
 import hu.e.parser.eSyntax.ParameterVariable;
 import hu.modembed.model.emodel.EmodelFactory;
 import hu.modembed.model.emodel.EmodelPackage;
 import hu.modembed.model.emodel.Function;
 import hu.modembed.model.emodel.FunctionParameter;
 import hu.modembed.model.emodel.VariableParameter;
+import hu.modembed.model.emodel.VariableParameterKind;
 
 /**
  * @author balazs.grill
@@ -22,13 +24,22 @@ import hu.modembed.model.emodel.VariableParameter;
  */
 public class FunctionConverter {
 
+	private static VariableParameterKind kind(ParameterKind kind){
+		switch(kind){
+		case ANY: return VariableParameterKind.ANY;
+		case CONST: return VariableParameterKind.CONST;
+		case VAR: return VariableParameterKind.VAR;
+		default: return VariableParameterKind.ANY;
+		}
+	}
+	
 	private static FunctionParameter convert(OperationParameter op, ICrossReferenceScope scope){
 		if (op instanceof ParameterVariable){
 			VariableParameter vp = EmodelFactory.eINSTANCE.createVariableParameter();
 			vp.setName(((ParameterVariable) op).getName());
 			vp.setType(TypeConverter.convertTypeDef(((ParameterVariable) op).getType(), scope));
+			vp.setKind(kind(((ParameterVariable) op).getKind()));
 			LibraryConverter.addOrigin(vp, op);
-			//TODO FIXME Parameter Kind is discared!
 			return vp;
 		}
 		if (op instanceof LazyParameter){
