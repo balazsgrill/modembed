@@ -31,7 +31,6 @@ public class L3ToL2Task implements IModembedTask{
 
 	public static final String INPUT = "input";
 	public static final String OUTPUT = "output";
-	public static final String LIBRARY = "library";
 	
 	private class Linker{
 		
@@ -40,7 +39,7 @@ public class L3ToL2Task implements IModembedTask{
 		 */
 		private final Multimap<Function, Function> overrides = ArrayListMultimap.create();
 		
-		public void addLibrary(Library library){
+		public Linker(Library library){
 			for(LibraryElement le : library.getContent()){
 				if (le instanceof Function){
 					Function f = (Function)le;
@@ -58,14 +57,6 @@ public class L3ToL2Task implements IModembedTask{
 	public void execute(ITaskContext context, IProgressMonitor monitor) {
 		monitor.beginTask("Integrating model", 3);
 		
-		Linker linker = new Linker();
-		for(String libmodel : context.getParameterValue(LIBRARY)){
-			Resource libr = context.getInput(context.getModelURI(libmodel));
-			EObject lib = libr.getContents().get(0);
-			if (lib instanceof Library){
-				linker.addLibrary((Library)lib);
-			}
-		}
 		
 		String inputmodel = context.getParameterValue(INPUT).get(0);
 		String outputmodel = context.getParameterValue(OUTPUT).get(0);
@@ -77,27 +68,12 @@ public class L3ToL2Task implements IModembedTask{
 		Assert.isLegal(lib instanceof Library);
 		Library inlib = (Library)lib;
 		
-		Library outlib = EmodelFactory.eINSTANCE.createLibrary();
+		Library outlib = EcoreUtil.copy(inlib);
 		outlib.setName(outputmodel);
 		outr.getContents().add(outlib);
 		TaskUtils.addOrigin(outlib, inlib);
 		
-		Queue<Function> copyAndLink = new LinkedList<Function>();
 		
-		for(LibraryElement le : inlib.getContent()){
-			if (le instanceof Function){
-				copyAndLink.add((Function)le);
-			}
-		}
-		
-		while(!copyAndLink.isEmpty()){
-			Function func = copyAndLink.poll();
-			Function conv = EcoreUtil.copy(func);
-			conv.getOrigins().clear();
-			TaskUtils.addOrigin(conv, func);
-			
-			outlib.getContent().add(func);
-		}
 		
 		monitor.done();
 	}

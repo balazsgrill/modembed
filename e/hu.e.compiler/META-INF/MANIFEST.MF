@@ -2,14 +2,14 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Compiler
 Bundle-SymbolicName: hu.e.compiler;singleton:=true
-Bundle-Version: 0.8.0
+Bundle-Version: 0.8.0.qualifier
 Bundle-Activator: hu.e.compiler.ECompilerPlugin
 Require-Bundle: org.eclipse.core.runtime,
  hu.e.parser;bundle-version="0.1.9",
  org.eclipse.core.resources;bundle-version="3.7.100",
  hu.modembed.hexfile.model;bundle-version="0.1.0",
  hu.modembed.hexfile.persistence;bundle-version="0.1.0",
- hu.modembed.model;bundle-version="1.0.0"
+ hu.modembed.model;bundle-version="0.8.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: hu.e.compiler,
