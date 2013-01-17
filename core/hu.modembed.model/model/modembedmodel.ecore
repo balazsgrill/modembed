@@ -236,7 +236,9 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1"
           eType="#//emodel/expressions/ExecutionStep" containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="VariableParameter" eSuperTypes="#//emodel/FunctionParameter"/>
+    <eClassifiers xsi:type="ecore:EClass" name="VariableParameter" eSuperTypes="#//emodel/FunctionParameter">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//emodel/VariableParameterKind"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="LazyParameter" eSuperTypes="#//emodel/FunctionParameter #//emodel/FunctionDeclaration"/>
     <eClassifiers xsi:type="ecore:EClass" name="FunctionDeclaration" abstract="true"
         eSuperTypes="#//emodel/Variable #//emodel/CallableElement">
@@ -244,6 +246,11 @@
           eType="#//emodel/FunctionParameter" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="CallableElement" abstract="true" eSuperTypes="#//core/NamedElement"/>
+    <eClassifiers xsi:type="ecore:EEnum" name="VariableParameterKind">
+      <eLiterals name="ANY"/>
+      <eLiterals name="CONST" value="1"/>
+      <eLiterals name="VAR" value="2"/>
+    </eClassifiers>
     <eSubpackages name="types" nsURI="http://emodel/1.0/types" nsPrefix="types">
       <eClassifiers xsi:type="ecore:EClass" name="TypeDefinition" abstract="true"
           eSuperTypes="#//core/MODembedElement"/>

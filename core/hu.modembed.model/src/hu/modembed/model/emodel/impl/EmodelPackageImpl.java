@@ -41,6 +41,7 @@ import hu.modembed.model.emodel.ResultExpression;
 import hu.modembed.model.emodel.Type;
 import hu.modembed.model.emodel.Variable;
 import hu.modembed.model.emodel.VariableParameter;
+import hu.modembed.model.emodel.VariableParameterKind;
 import hu.modembed.model.emodel.expressions.ExpressionsPackage;
 import hu.modembed.model.emodel.expressions.impl.ExpressionsPackageImpl;
 import hu.modembed.model.emodel.types.TypesPackage;
@@ -50,7 +51,9 @@ import hu.modembed.model.network.impl.NetworkPackageImpl;
 import hu.modembed.model.network.rs232.Rs232Package;
 import hu.modembed.model.network.rs232.impl.Rs232PackageImpl;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
@@ -180,6 +183,13 @@ public class EmodelPackageImpl extends EPackageImpl implements EmodelPackage {
 	 * @generated
 	 */
 	private EClass callableElementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum variableParameterKindEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -510,6 +520,15 @@ public class EmodelPackageImpl extends EPackageImpl implements EmodelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getVariableParameter_Kind() {
+		return (EAttribute)variableParameterEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getLazyParameter() {
 		return lazyParameterEClass;
 	}
@@ -539,6 +558,15 @@ public class EmodelPackageImpl extends EPackageImpl implements EmodelPackage {
 	 */
 	public EClass getCallableElement() {
 		return callableElementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getVariableParameterKind() {
+		return variableParameterKindEEnum;
 	}
 
 	/**
@@ -606,6 +634,7 @@ public class EmodelPackageImpl extends EPackageImpl implements EmodelPackage {
 		createEReference(constantVariableEClass, CONSTANT_VARIABLE__VALUE);
 
 		variableParameterEClass = createEClass(VARIABLE_PARAMETER);
+		createEAttribute(variableParameterEClass, VARIABLE_PARAMETER__KIND);
 
 		lazyParameterEClass = createEClass(LAZY_PARAMETER);
 
@@ -613,6 +642,9 @@ public class EmodelPackageImpl extends EPackageImpl implements EmodelPackage {
 		createEReference(functionDeclarationEClass, FUNCTION_DECLARATION__ARGUMENTS);
 
 		callableElementEClass = createEClass(CALLABLE_ELEMENT);
+
+		// Create enums
+		variableParameterKindEEnum = createEEnum(VARIABLE_PARAMETER_KIND);
 	}
 
 	/**
@@ -715,6 +747,7 @@ public class EmodelPackageImpl extends EPackageImpl implements EmodelPackage {
 		initEReference(getConstantVariable_Value(), theExpressionsPackage.getExecutionStep(), null, "value", null, 1, 1, ConstantVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(variableParameterEClass, VariableParameter.class, "VariableParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getVariableParameter_Kind(), this.getVariableParameterKind(), "kind", null, 0, 1, VariableParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(lazyParameterEClass, LazyParameter.class, "LazyParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -722,6 +755,12 @@ public class EmodelPackageImpl extends EPackageImpl implements EmodelPackage {
 		initEReference(getFunctionDeclaration_Arguments(), this.getFunctionParameter(), null, "arguments", null, 0, -1, FunctionDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(callableElementEClass, CallableElement.class, "CallableElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		// Initialize enums and add enum literals
+		initEEnum(variableParameterKindEEnum, VariableParameterKind.class, "VariableParameterKind");
+		addEEnumLiteral(variableParameterKindEEnum, VariableParameterKind.ANY);
+		addEEnumLiteral(variableParameterKindEEnum, VariableParameterKind.CONST);
+		addEEnumLiteral(variableParameterKindEEnum, VariableParameterKind.VAR);
 
 		// Create resource
 		createResource(eNS_URI);

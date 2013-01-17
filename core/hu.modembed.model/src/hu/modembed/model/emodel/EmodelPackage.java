@@ -4,7 +4,9 @@ package hu.modembed.model.emodel;
 
 import hu.modembed.model.core.CorePackage;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -846,13 +848,22 @@ public interface EmodelPackage extends EPackage {
 	int VARIABLE_PARAMETER__TYPE = FUNCTION_PARAMETER__TYPE;
 
 	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIABLE_PARAMETER__KIND = FUNCTION_PARAMETER_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Variable Parameter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE_PARAMETER_FEATURE_COUNT = FUNCTION_PARAMETER_FEATURE_COUNT + 0;
+	int VARIABLE_PARAMETER_FEATURE_COUNT = FUNCTION_PARAMETER_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link hu.modembed.model.emodel.impl.LazyParameterImpl <em>Lazy Parameter</em>}' class.
@@ -1029,6 +1040,17 @@ public interface EmodelPackage extends EPackage {
 	 * @ordered
 	 */
 	int CALLABLE_ELEMENT_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+
+	/**
+	 * The meta object id for the '{@link hu.modembed.model.emodel.VariableParameterKind <em>Variable Parameter Kind</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.modembed.model.emodel.VariableParameterKind
+	 * @see hu.modembed.model.emodel.impl.EmodelPackageImpl#getVariableParameterKind()
+	 * @generated
+	 */
+	int VARIABLE_PARAMETER_KIND = 17;
 
 
 	/**
@@ -1282,6 +1304,17 @@ public interface EmodelPackage extends EPackage {
 	EClass getVariableParameter();
 
 	/**
+	 * Returns the meta object for the attribute '{@link hu.modembed.model.emodel.VariableParameter#getKind <em>Kind</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Kind</em>'.
+	 * @see hu.modembed.model.emodel.VariableParameter#getKind()
+	 * @see #getVariableParameter()
+	 * @generated
+	 */
+	EAttribute getVariableParameter_Kind();
+
+	/**
 	 * Returns the meta object for class '{@link hu.modembed.model.emodel.LazyParameter <em>Lazy Parameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1321,6 +1354,16 @@ public interface EmodelPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getCallableElement();
+
+	/**
+	 * Returns the meta object for enum '{@link hu.modembed.model.emodel.VariableParameterKind <em>Variable Parameter Kind</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Variable Parameter Kind</em>'.
+	 * @see hu.modembed.model.emodel.VariableParameterKind
+	 * @generated
+	 */
+	EEnum getVariableParameterKind();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1565,6 +1608,14 @@ public interface EmodelPackage extends EPackage {
 		EClass VARIABLE_PARAMETER = eINSTANCE.getVariableParameter();
 
 		/**
+		 * The meta object literal for the '<em><b>Kind</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VARIABLE_PARAMETER__KIND = eINSTANCE.getVariableParameter_Kind();
+
+		/**
 		 * The meta object literal for the '{@link hu.modembed.model.emodel.impl.LazyParameterImpl <em>Lazy Parameter</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1601,6 +1652,16 @@ public interface EmodelPackage extends EPackage {
 		 * @generated
 		 */
 		EClass CALLABLE_ELEMENT = eINSTANCE.getCallableElement();
+
+		/**
+		 * The meta object literal for the '{@link hu.modembed.model.emodel.VariableParameterKind <em>Variable Parameter Kind</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.modembed.model.emodel.VariableParameterKind
+		 * @see hu.modembed.model.emodel.impl.EmodelPackageImpl#getVariableParameterKind()
+		 * @generated
+		 */
+		EEnum VARIABLE_PARAMETER_KIND = eINSTANCE.getVariableParameterKind();
 
 	}
 

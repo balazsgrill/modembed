@@ -5,6 +5,7 @@ package hu.modembed.model.emodel.impl;
 import hu.modembed.model.emodel.*;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -69,6 +70,36 @@ public class EmodelFactoryImpl extends EFactoryImpl implements EmodelFactory {
 			case EmodelPackage.LAZY_PARAMETER: return createLazyParameter();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object createFromString(EDataType eDataType, String initialValue) {
+		switch (eDataType.getClassifierID()) {
+			case EmodelPackage.VARIABLE_PARAMETER_KIND:
+				return createVariableParameterKindFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String convertToString(EDataType eDataType, Object instanceValue) {
+		switch (eDataType.getClassifierID()) {
+			case EmodelPackage.VARIABLE_PARAMETER_KIND:
+				return convertVariableParameterKindToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -180,6 +211,26 @@ public class EmodelFactoryImpl extends EFactoryImpl implements EmodelFactory {
 	public LazyParameter createLazyParameter() {
 		LazyParameterImpl lazyParameter = new LazyParameterImpl();
 		return lazyParameter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public VariableParameterKind createVariableParameterKindFromString(EDataType eDataType, String initialValue) {
+		VariableParameterKind result = VariableParameterKind.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertVariableParameterKindToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

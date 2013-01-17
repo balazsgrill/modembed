@@ -2256,6 +2256,10 @@
     <children xmi:type="notation:Node" xmi:id="_BzjHICKREeKEUY3q7a0REw" type="1001">
       <children xmi:type="notation:Node" xmi:id="_BzljYCKREeKEUY3q7a0REw" type="4001"/>
       <children xmi:type="notation:Node" xmi:id="_BzsRECKREeKEUY3q7a0REw" type="5001">
+        <children xmi:type="notation:Node" xmi:id="_mRuJIGCyEeKQPvJ3sVuzWA" type="2001">
+          <element xmi:type="ecore:EAttribute" href="modembedmodel.ecore#//emodel/VariableParameter/kind"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_mRuJIWCyEeKQPvJ3sVuzWA"/>
+        </children>
         <styles xmi:type="notation:DrawerStyle" xmi:id="_BzsRESKREeKEUY3q7a0REw"/>
         <styles xmi:type="notation:SortingStyle" xmi:id="_BzsREiKREeKEUY3q7a0REw"/>
         <styles xmi:type="notation:FilteringStyle" xmi:id="_BzsREyKREeKEUY3q7a0REw"/>
@@ -2335,6 +2339,29 @@
       <styles xmi:type="notation:ShapeStyle" xmi:id="_sTrzkSNREeKtJPTY6QfS2Q" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
       <element xmi:type="ecore:EClass" href="modembedmodel.ecore#//emodel/CallableElement"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sTrzkiNREeKtJPTY6QfS2Q" x="1005" y="165"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_hvTt4GCyEeKQPvJ3sVuzWA" type="1005">
+      <children xmi:type="notation:Node" xmi:id="_hvX_UGCyEeKQPvJ3sVuzWA" type="4010"/>
+      <children xmi:type="notation:Node" xmi:id="_hvYmYGCyEeKQPvJ3sVuzWA" type="5008">
+        <children xmi:type="notation:Node" xmi:id="_jhKtEGCyEeKQPvJ3sVuzWA" type="2006">
+          <element xmi:type="ecore:EEnumLiteral" href="modembedmodel.ecore#//emodel/VariableParameterKind/ANY"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_jhKtEWCyEeKQPvJ3sVuzWA"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_kU9hgGCyEeKQPvJ3sVuzWA" type="2006">
+          <element xmi:type="ecore:EEnumLiteral" href="modembedmodel.ecore#//emodel/VariableParameterKind/CONST"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_kU9hgWCyEeKQPvJ3sVuzWA"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_liBxkGCyEeKQPvJ3sVuzWA" type="2006">
+          <element xmi:type="ecore:EEnumLiteral" href="modembedmodel.ecore#//emodel/VariableParameterKind/VAR"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_liBxkWCyEeKQPvJ3sVuzWA"/>
+        </children>
+        <styles xmi:type="notation:DrawerStyle" xmi:id="_hvYmYWCyEeKQPvJ3sVuzWA"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_hvYmYmCyEeKQPvJ3sVuzWA"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_hvYmY2CyEeKQPvJ3sVuzWA"/>
+      </children>
+      <styles xmi:type="notation:ShapeStyle" xmi:id="_hvUU8GCyEeKQPvJ3sVuzWA" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+      <element xmi:type="ecore:EEnum" href="modembedmodel.ecore#//emodel/VariableParameterKind"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hvUU8WCyEeKQPvJ3sVuzWA" x="1366" y="219"/>
     </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_0TYWwR6rEeKuqNpoJ10xlQ"/>
     <element xmi:type="ecore:EPackage" href="modembedmodel.ecore#//emodel"/>
