@@ -44,6 +44,9 @@ import hu.modembed.model.emodel.expressions.ExpressionsPackage;
 import hu.modembed.model.emodel.expressions.IntegerLiteralExpression;
 import hu.modembed.model.emodel.expressions.LocalVariable;
 import hu.modembed.model.emodel.expressions.VariableReference;
+import hu.modembed.model.emodel.types.PrimitiveTypeDefinition;
+import hu.modembed.model.emodel.types.TypesFactory;
+import hu.modembed.model.emodel.types.UnsignedTypeDefinition;
 
 import java.math.BigInteger;
 
@@ -295,6 +298,23 @@ public class ExpressionConverter {
 		}
 	}
 	
+	public static PrimitiveTypeDefinition getType(int integer){
+		if (integer >= 0){
+			int bits = 1;
+			long v = 2;
+			while(v < integer){
+				bits++;
+				v *= 2;
+			}
+			UnsignedTypeDefinition utd = TypesFactory.eINSTANCE.createUnsignedTypeDefinition();
+			utd.setBits(bits);
+			return utd;
+		}else{
+			//TODO Signed type!
+			return null;
+		}
+	}
+	
 	public static ExecutionStep convert(XExpressionLiteral x){
 		String value = x.getValue();
 		if (value.startsWith("0x")){
@@ -303,6 +323,7 @@ public class ExpressionConverter {
 				int v = Integer.parseInt(value, 16);
 				IntegerLiteralExpression i = ExpressionsFactory.eINSTANCE.createIntegerLiteralExpression();
 				i.setValue(BigInteger.valueOf(v));
+				i.setType(getType(v));
 				return i;
 			}catch(NumberFormatException e){
 				
@@ -312,6 +333,7 @@ public class ExpressionConverter {
 			int v = Integer.parseInt(value);
 			IntegerLiteralExpression i = ExpressionsFactory.eINSTANCE.createIntegerLiteralExpression();
 			i.setValue(BigInteger.valueOf(v));
+			i.setType(getType(v));
 			return i;
 		}catch(NumberFormatException e){
 			
