@@ -11,6 +11,6 @@
 	</parent>
 	<groupId>hu.modembed</groupId>
 	<artifactId>hu.e.parser.ui</artifactId>
-	<version>0.8.0</version>
+	<version>0.8.0-SNAPSHOT</version>
 	<packaging>eclipse-plugin</packaging>
 </project>
