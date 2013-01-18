@@ -175,6 +175,11 @@ public class ESyntaxAdapterFactory extends AdapterFactoryImpl
         return createDataTypeDefAdapter();
       }
       @Override
+      public Adapter caseLabelDataTypeDef(LabelDataTypeDef object)
+      {
+        return createLabelDataTypeDefAdapter();
+      }
+      @Override
       public Adapter caseFixedDataTypeDef(FixedDataTypeDef object)
       {
         return createFixedDataTypeDefAdapter();
@@ -338,11 +343,6 @@ public class ESyntaxAdapterFactory extends AdapterFactoryImpl
       public Adapter caseRegisterVariable(RegisterVariable object)
       {
         return createRegisterVariableAdapter();
-      }
-      @Override
-      public Adapter caseLabel(Label object)
-      {
-        return createLabelAdapter();
       }
       @Override
       public Adapter caseParameterVariable(ParameterVariable object)
@@ -672,6 +672,21 @@ public class ESyntaxAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createDataTypeDefAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.e.parser.eSyntax.LabelDataTypeDef <em>Label Data Type Def</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.e.parser.eSyntax.LabelDataTypeDef
+   * @generated
+   */
+  public Adapter createLabelDataTypeDefAdapter()
   {
     return null;
   }
@@ -1167,21 +1182,6 @@ public class ESyntaxAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createRegisterVariableAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link hu.e.parser.eSyntax.Label <em>Label</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see hu.e.parser.eSyntax.Label
-   * @generated
-   */
-  public Adapter createLabelAdapter()
   {
     return null;
   }

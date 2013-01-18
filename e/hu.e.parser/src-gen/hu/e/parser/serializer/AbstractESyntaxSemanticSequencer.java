@@ -14,7 +14,7 @@ import hu.e.parser.eSyntax.InstructionParameterNotation;
 import hu.e.parser.eSyntax.InstructionSetNotation;
 import hu.e.parser.eSyntax.InstructionWordNotation;
 import hu.e.parser.eSyntax.IntegerDataTypeDef;
-import hu.e.parser.eSyntax.Label;
+import hu.e.parser.eSyntax.LabelDataTypeDef;
 import hu.e.parser.eSyntax.LazyParameter;
 import hu.e.parser.eSyntax.Library;
 import hu.e.parser.eSyntax.Operation;
@@ -145,10 +145,11 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 					return; 
 				}
 				else break;
-			case ESyntaxPackage.LABEL:
-				if(context == grammarAccess.getLabelRule() ||
-				   context == grammarAccess.getOperationStepRule()) {
-					sequence_Label(context, (Label) semanticObject); 
+			case ESyntaxPackage.LABEL_DATA_TYPE_DEF:
+				if(context == grammarAccess.getDataTypeDefRule() ||
+				   context == grammarAccess.getLabelDataTypeDefRule() ||
+				   context == grammarAccess.getTypeDefRule()) {
+					sequence_LabelDataTypeDef(context, (LabelDataTypeDef) semanticObject); 
 					return; 
 				}
 				else break;
@@ -453,8 +454,8 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 	 */
 	protected void sequence_FixedDataTypeDef(EObject context, FixedDataTypeDef semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.DATA_TYPE_DEF__BITS) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.DATA_TYPE_DEF__BITS));
+			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.FIXED_DATA_TYPE_DEF__BITS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.FIXED_DATA_TYPE_DEF__BITS));
 			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.FIXED_DATA_TYPE_DEF__SCALE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.FIXED_DATA_TYPE_DEF__SCALE));
 		}
@@ -517,10 +518,10 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 	 */
 	protected void sequence_IntegerDataTypeDef(EObject context, IntegerDataTypeDef semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.DATA_TYPE_DEF__BITS) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.DATA_TYPE_DEF__BITS));
 			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.INTEGER_DATA_TYPE_DEF__KIND) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.INTEGER_DATA_TYPE_DEF__KIND));
+			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.INTEGER_DATA_TYPE_DEF__BITS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.INTEGER_DATA_TYPE_DEF__BITS));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
@@ -532,9 +533,9 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 	
 	/**
 	 * Constraint:
-	 *     name=ID
+	 *     {LabelDataTypeDef}
 	 */
-	protected void sequence_Label(EObject context, Label semanticObject) {
+	protected void sequence_LabelDataTypeDef(EObject context, LabelDataTypeDef semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

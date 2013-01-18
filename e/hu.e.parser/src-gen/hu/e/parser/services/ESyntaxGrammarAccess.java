@@ -880,23 +880,48 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cIntegerDataTypeDefParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cFixedDataTypeDefParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cLabelDataTypeDefParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//DataTypeDef:
 		//
-		//	IntegerDataTypeDef | //| FloatDataTypeDef
-		// FixedDataTypeDef;
+		//	IntegerDataTypeDef | FixedDataTypeDef | //| FloatDataTypeDef
+		// LabelDataTypeDef;
 		public ParserRule getRule() { return rule; }
 
-		//IntegerDataTypeDef | //| FloatDataTypeDef
-		// FixedDataTypeDef
+		//IntegerDataTypeDef | FixedDataTypeDef | //| FloatDataTypeDef
+		// LabelDataTypeDef
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//IntegerDataTypeDef
 		public RuleCall getIntegerDataTypeDefParserRuleCall_0() { return cIntegerDataTypeDefParserRuleCall_0; }
 
-		////| FloatDataTypeDef
-		// FixedDataTypeDef
+		//FixedDataTypeDef
 		public RuleCall getFixedDataTypeDefParserRuleCall_1() { return cFixedDataTypeDefParserRuleCall_1; }
+
+		////| FloatDataTypeDef
+		// LabelDataTypeDef
+		public RuleCall getLabelDataTypeDefParserRuleCall_2() { return cLabelDataTypeDefParserRuleCall_2; }
+	}
+
+	public class LabelDataTypeDefElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "LabelDataTypeDef");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cLabelDataTypeDefAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cLabelKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		
+		//LabelDataTypeDef:
+		//
+		//	{LabelDataTypeDef} "label";
+		public ParserRule getRule() { return rule; }
+
+		//{LabelDataTypeDef} "label"
+		public Group getGroup() { return cGroup; }
+
+		//{LabelDataTypeDef}
+		public Action getLabelDataTypeDefAction_0() { return cLabelDataTypeDefAction_0; }
+
+		//"label"
+		public Keyword getLabelKeyword_1() { return cLabelKeyword_1; }
 	}
 
 	public class FixedDataTypeDefElements extends AbstractParserRuleElementFinder {
@@ -1169,69 +1194,32 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	public class OperationStepElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "OperationStep");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cLabelParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final RuleCall cVariableParserRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
-		private final Keyword cSemicolonKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
-		private final RuleCall cXTopLevelExpressionParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final RuleCall cVariableParserRuleCall_0_0 = (RuleCall)cGroup_0.eContents().get(0);
+		private final Keyword cSemicolonKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
+		private final RuleCall cXTopLevelExpressionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		/// ***********************
 		// * Operation *
 		// *********************** / OperationStep:
 		//
-		//	Label | Variable ";" | XTopLevelExpression;
+		//	Variable ";" | XTopLevelExpression;
 		public ParserRule getRule() { return rule; }
 
-		//Label | Variable ";" | XTopLevelExpression
+		//Variable ";" | XTopLevelExpression
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//Label
-		public RuleCall getLabelParserRuleCall_0() { return cLabelParserRuleCall_0; }
-
 		//Variable ";"
-		public Group getGroup_1() { return cGroup_1; }
+		public Group getGroup_0() { return cGroup_0; }
 
 		//Variable
-		public RuleCall getVariableParserRuleCall_1_0() { return cVariableParserRuleCall_1_0; }
+		public RuleCall getVariableParserRuleCall_0_0() { return cVariableParserRuleCall_0_0; }
 
 		//";"
-		public Keyword getSemicolonKeyword_1_1() { return cSemicolonKeyword_1_1; }
+		public Keyword getSemicolonKeyword_0_1() { return cSemicolonKeyword_0_1; }
 
 		//XTopLevelExpression
-		public RuleCall getXTopLevelExpressionParserRuleCall_2() { return cXTopLevelExpressionParserRuleCall_2; }
-	}
-
-	public class LabelElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Label");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cLabelAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cLabelKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		private final Keyword cSemicolonKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		
-		//Label returns Variable:
-		//
-		//	{Label} "label" name=ID ";";
-		public ParserRule getRule() { return rule; }
-
-		//{Label} "label" name=ID ";"
-		public Group getGroup() { return cGroup; }
-
-		//{Label}
-		public Action getLabelAction_0() { return cLabelAction_0; }
-
-		//"label"
-		public Keyword getLabelKeyword_1() { return cLabelKeyword_1; }
-
-		//name=ID
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
-
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
-
-		//";"
-		public Keyword getSemicolonKeyword_3() { return cSemicolonKeyword_3; }
+		public RuleCall getXTopLevelExpressionParserRuleCall_1() { return cXTopLevelExpressionParserRuleCall_1; }
 	}
 
 	public class VariableElements extends AbstractParserRuleElementFinder {
@@ -2615,6 +2603,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	private ArrayTypeDefElements pArrayTypeDef;
 	private RefTypeDefElements pRefTypeDef;
 	private DataTypeDefElements pDataTypeDef;
+	private LabelDataTypeDefElements pLabelDataTypeDef;
 	private FixedDataTypeDefElements pFixedDataTypeDef;
 	private IntegerDataTypeDefElements pIntegerDataTypeDef;
 	private IntegerKindElements unknownRuleIntegerKind;
@@ -2623,7 +2612,6 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	private ConstantVariableElements pConstantVariable;
 	private RegisterVariableElements pRegisterVariable;
 	private OperationStepElements pOperationStep;
-	private LabelElements pLabel;
 	private VariableElements pVariable;
 	private VariableReferenceElements pVariableReference;
 	private OperationCallElements pOperationCall;
@@ -2986,14 +2974,25 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 
 	//DataTypeDef:
 	//
-	//	IntegerDataTypeDef | //| FloatDataTypeDef
-	// FixedDataTypeDef;
+	//	IntegerDataTypeDef | FixedDataTypeDef | //| FloatDataTypeDef
+	// LabelDataTypeDef;
 	public DataTypeDefElements getDataTypeDefAccess() {
 		return (pDataTypeDef != null) ? pDataTypeDef : (pDataTypeDef = new DataTypeDefElements());
 	}
 	
 	public ParserRule getDataTypeDefRule() {
 		return getDataTypeDefAccess().getRule();
+	}
+
+	//LabelDataTypeDef:
+	//
+	//	{LabelDataTypeDef} "label";
+	public LabelDataTypeDefElements getLabelDataTypeDefAccess() {
+		return (pLabelDataTypeDef != null) ? pLabelDataTypeDef : (pLabelDataTypeDef = new LabelDataTypeDefElements());
+	}
+	
+	public ParserRule getLabelDataTypeDefRule() {
+		return getLabelDataTypeDefAccess().getRule();
 	}
 
 	////FloatDataTypeDef:
@@ -3082,24 +3081,13 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	// * Operation *
 	// *********************** / OperationStep:
 	//
-	//	Label | Variable ";" | XTopLevelExpression;
+	//	Variable ";" | XTopLevelExpression;
 	public OperationStepElements getOperationStepAccess() {
 		return (pOperationStep != null) ? pOperationStep : (pOperationStep = new OperationStepElements());
 	}
 	
 	public ParserRule getOperationStepRule() {
 		return getOperationStepAccess().getRule();
-	}
-
-	//Label returns Variable:
-	//
-	//	{Label} "label" name=ID ";";
-	public LabelElements getLabelAccess() {
-		return (pLabel != null) ? pLabel : (pLabel = new LabelElements());
-	}
-	
-	public ParserRule getLabelRule() {
-		return getLabelAccess().getRule();
 	}
 
 	//Variable:

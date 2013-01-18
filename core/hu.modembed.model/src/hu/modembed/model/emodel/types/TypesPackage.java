@@ -455,6 +455,44 @@ public interface TypesPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link hu.modembed.model.emodel.types.impl.CodeLabelTypeDefinitionImpl <em>Code Label Type Definition</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.modembed.model.emodel.types.impl.CodeLabelTypeDefinitionImpl
+	 * @see hu.modembed.model.emodel.types.impl.TypesPackageImpl#getCodeLabelTypeDefinition()
+	 * @generated
+	 */
+	int CODE_LABEL_TYPE_DEFINITION = 9;
+
+	/**
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CODE_LABEL_TYPE_DEFINITION__ORIGINS = PRIMITIVE_TYPE_DEFINITION__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CODE_LABEL_TYPE_DEFINITION__DESCRIPTION = PRIMITIVE_TYPE_DEFINITION__DESCRIPTION;
+
+	/**
+	 * The number of structural features of the '<em>Code Label Type Definition</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CODE_LABEL_TYPE_DEFINITION_FEATURE_COUNT = PRIMITIVE_TYPE_DEFINITION_FEATURE_COUNT + 0;
+
+
+	/**
 	 * Returns the meta object for class '{@link hu.modembed.model.emodel.types.TypeDefinition <em>Type Definition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -598,6 +636,16 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getStructureTypeElement_Type();
+
+	/**
+	 * Returns the meta object for class '{@link hu.modembed.model.emodel.types.CodeLabelTypeDefinition <em>Code Label Type Definition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Code Label Type Definition</em>'.
+	 * @see hu.modembed.model.emodel.types.CodeLabelTypeDefinition
+	 * @generated
+	 */
+	EClass getCodeLabelTypeDefinition();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -750,6 +798,16 @@ public interface TypesPackage extends EPackage {
 		 * @generated
 		 */
 		EReference STRUCTURE_TYPE_ELEMENT__TYPE = eINSTANCE.getStructureTypeElement_Type();
+
+		/**
+		 * The meta object literal for the '{@link hu.modembed.model.emodel.types.impl.CodeLabelTypeDefinitionImpl <em>Code Label Type Definition</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.modembed.model.emodel.types.impl.CodeLabelTypeDefinitionImpl
+		 * @see hu.modembed.model.emodel.types.impl.TypesPackageImpl#getCodeLabelTypeDefinition()
+		 * @generated
+		 */
+		EClass CODE_LABEL_TYPE_DEFINITION = eINSTANCE.getCodeLabelTypeDefinition();
 
 	}
 

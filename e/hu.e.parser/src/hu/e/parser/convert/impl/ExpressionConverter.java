@@ -10,7 +10,6 @@ import hu.e.parser.eSyntax.Annotation;
 import hu.e.parser.eSyntax.BOOLEAN_OPERATOR;
 import hu.e.parser.eSyntax.EQUALITY_OPERATOR;
 import hu.e.parser.eSyntax.ErrorLevels;
-import hu.e.parser.eSyntax.Label;
 import hu.e.parser.eSyntax.MULTIPLICATIVE_OPERATOR;
 import hu.e.parser.eSyntax.OpSingleAssign;
 import hu.e.parser.eSyntax.OperationBlock;
@@ -225,7 +224,7 @@ public class ExpressionConverter {
 	private static ExecutionStep convert(XExpression0 x,
 			ICrossReferenceScope scope) {
 		ExecutionStep step = convert(x.getA(), scope);
-		//TODO resolve memebers
+		//TODO resolve members
 		return step;
 	}
 
@@ -328,9 +327,7 @@ public class ExpressionConverter {
 			Variable v = (Variable)x;
 			LocalVariable lv = ExpressionsFactory.eINSTANCE.createLocalVariable();
 			lv.setName(v.getName());
-			if (!(x instanceof Label)){
-				lv.setType(TypeConverter.convertTypeDef(v.getType(), scope));
-			}
+			lv.setType(TypeConverter.convertTypeDef(v.getType(), scope));
 			return lv;
 		}
 		if (x instanceof Annotation){

@@ -85,6 +85,7 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
       case ESyntaxPackage.ARRAY_TYPE_DEF: return createArrayTypeDef();
       case ESyntaxPackage.REF_TYPE_DEF: return createRefTypeDef();
       case ESyntaxPackage.DATA_TYPE_DEF: return createDataTypeDef();
+      case ESyntaxPackage.LABEL_DATA_TYPE_DEF: return createLabelDataTypeDef();
       case ESyntaxPackage.FIXED_DATA_TYPE_DEF: return createFixedDataTypeDef();
       case ESyntaxPackage.INTEGER_DATA_TYPE_DEF: return createIntegerDataTypeDef();
       case ESyntaxPackage.STRUCT_TYPE_DEF: return createStructTypeDef();
@@ -118,7 +119,6 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
       case ESyntaxPackage.STRUCT_TYPE_DEF_MEMBER: return createStructTypeDefMember();
       case ESyntaxPackage.CONSTANT_VARIABLE: return createConstantVariable();
       case ESyntaxPackage.REGISTER_VARIABLE: return createRegisterVariable();
-      case ESyntaxPackage.LABEL: return createLabel();
       case ESyntaxPackage.PARAMETER_VARIABLE: return createParameterVariable();
       case ESyntaxPackage.OPERATION_BLOCK: return createOperationBlock();
       default:
@@ -410,6 +410,17 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
   {
     DataTypeDefImpl dataTypeDef = new DataTypeDefImpl();
     return dataTypeDef;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public LabelDataTypeDef createLabelDataTypeDef()
+  {
+    LabelDataTypeDefImpl labelDataTypeDef = new LabelDataTypeDefImpl();
+    return labelDataTypeDef;
   }
 
   /**
@@ -773,17 +784,6 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
   {
     RegisterVariableImpl registerVariable = new RegisterVariableImpl();
     return registerVariable;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Label createLabel()
-  {
-    LabelImpl label = new LabelImpl();
-    return label;
   }
 
   /**

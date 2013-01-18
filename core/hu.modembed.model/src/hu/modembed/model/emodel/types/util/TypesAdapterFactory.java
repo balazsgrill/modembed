@@ -107,6 +107,10 @@ public class TypesAdapterFactory extends AdapterFactoryImpl {
 				return createStructureTypeElementAdapter();
 			}
 			@Override
+			public Adapter caseCodeLabelTypeDefinition(CodeLabelTypeDefinition object) {
+				return createCodeLabelTypeDefinitionAdapter();
+			}
+			@Override
 			public Adapter caseMODembedElement(MODembedElement object) {
 				return createMODembedElementAdapter();
 			}
@@ -257,6 +261,20 @@ public class TypesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createStructureTypeElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.emodel.types.CodeLabelTypeDefinition <em>Code Label Type Definition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.modembed.model.emodel.types.CodeLabelTypeDefinition
+	 * @generated
+	 */
+	public Adapter createCodeLabelTypeDefinitionAdapter() {
 		return null;
 	}
 

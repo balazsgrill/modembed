@@ -76,6 +76,15 @@ public interface TypesFactory extends EFactory {
 	StructureTypeElement createStructureTypeElement();
 
 	/**
+	 * Returns a new object of class '<em>Code Label Type Definition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Code Label Type Definition</em>'.
+	 * @generated
+	 */
+	CodeLabelTypeDefinition createCodeLabelTypeDefinition();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

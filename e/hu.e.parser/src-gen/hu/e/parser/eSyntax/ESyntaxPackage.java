@@ -149,7 +149,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getOperationStep()
    * @generated
    */
-  int OPERATION_STEP = 24;
+  int OPERATION_STEP = 25;
 
   /**
    * The number of structural features of the '<em>Operation Step</em>' class.
@@ -168,7 +168,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXTopLevelExpression()
    * @generated
    */
-  int XTOP_LEVEL_EXPRESSION = 46;
+  int XTOP_LEVEL_EXPRESSION = 47;
 
   /**
    * The number of structural features of the '<em>XTop Level Expression</em>' class.
@@ -755,22 +755,32 @@ public interface ESyntaxPackage extends EPackage
   int DATA_TYPE_DEF = 19;
 
   /**
-   * The feature id for the '<em><b>Bits</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DATA_TYPE_DEF__BITS = TYPE_DEF_FEATURE_COUNT + 0;
-
-  /**
    * The number of structural features of the '<em>Data Type Def</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DATA_TYPE_DEF_FEATURE_COUNT = TYPE_DEF_FEATURE_COUNT + 1;
+  int DATA_TYPE_DEF_FEATURE_COUNT = TYPE_DEF_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link hu.e.parser.eSyntax.impl.LabelDataTypeDefImpl <em>Label Data Type Def</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.e.parser.eSyntax.impl.LabelDataTypeDefImpl
+   * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getLabelDataTypeDef()
+   * @generated
+   */
+  int LABEL_DATA_TYPE_DEF = 20;
+
+  /**
+   * The number of structural features of the '<em>Label Data Type Def</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LABEL_DATA_TYPE_DEF_FEATURE_COUNT = DATA_TYPE_DEF_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.impl.FixedDataTypeDefImpl <em>Fixed Data Type Def</em>}' class.
@@ -780,7 +790,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getFixedDataTypeDef()
    * @generated
    */
-  int FIXED_DATA_TYPE_DEF = 20;
+  int FIXED_DATA_TYPE_DEF = 21;
 
   /**
    * The feature id for the '<em><b>Bits</b></em>' attribute.
@@ -789,7 +799,7 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FIXED_DATA_TYPE_DEF__BITS = DATA_TYPE_DEF__BITS;
+  int FIXED_DATA_TYPE_DEF__BITS = DATA_TYPE_DEF_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Scale</b></em>' attribute.
@@ -798,7 +808,7 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FIXED_DATA_TYPE_DEF__SCALE = DATA_TYPE_DEF_FEATURE_COUNT + 0;
+  int FIXED_DATA_TYPE_DEF__SCALE = DATA_TYPE_DEF_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Fixed Data Type Def</em>' class.
@@ -807,7 +817,7 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FIXED_DATA_TYPE_DEF_FEATURE_COUNT = DATA_TYPE_DEF_FEATURE_COUNT + 1;
+  int FIXED_DATA_TYPE_DEF_FEATURE_COUNT = DATA_TYPE_DEF_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.impl.IntegerDataTypeDefImpl <em>Integer Data Type Def</em>}' class.
@@ -817,16 +827,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getIntegerDataTypeDef()
    * @generated
    */
-  int INTEGER_DATA_TYPE_DEF = 21;
-
-  /**
-   * The feature id for the '<em><b>Bits</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INTEGER_DATA_TYPE_DEF__BITS = DATA_TYPE_DEF__BITS;
+  int INTEGER_DATA_TYPE_DEF = 22;
 
   /**
    * The feature id for the '<em><b>Kind</b></em>' attribute.
@@ -838,13 +839,22 @@ public interface ESyntaxPackage extends EPackage
   int INTEGER_DATA_TYPE_DEF__KIND = DATA_TYPE_DEF_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Bits</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTEGER_DATA_TYPE_DEF__BITS = DATA_TYPE_DEF_FEATURE_COUNT + 1;
+
+  /**
    * The number of structural features of the '<em>Integer Data Type Def</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INTEGER_DATA_TYPE_DEF_FEATURE_COUNT = DATA_TYPE_DEF_FEATURE_COUNT + 1;
+  int INTEGER_DATA_TYPE_DEF_FEATURE_COUNT = DATA_TYPE_DEF_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.impl.StructTypeDefImpl <em>Struct Type Def</em>}' class.
@@ -854,7 +864,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getStructTypeDef()
    * @generated
    */
-  int STRUCT_TYPE_DEF = 22;
+  int STRUCT_TYPE_DEF = 23;
 
   /**
    * The feature id for the '<em><b>Members</b></em>' containment reference list.
@@ -882,7 +892,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getVariable()
    * @generated
    */
-  int VARIABLE = 23;
+  int VARIABLE = 24;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -919,7 +929,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXPrimaryExpression()
    * @generated
    */
-  int XPRIMARY_EXPRESSION = 34;
+  int XPRIMARY_EXPRESSION = 35;
 
   /**
    * The number of structural features of the '<em>XPrimary Expression</em>' class.
@@ -938,7 +948,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getVariableReference()
    * @generated
    */
-  int VARIABLE_REFERENCE = 25;
+  int VARIABLE_REFERENCE = 26;
 
   /**
    * The feature id for the '<em><b>Var</b></em>' attribute.
@@ -966,7 +976,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getOperationCall()
    * @generated
    */
-  int OPERATION_CALL = 26;
+  int OPERATION_CALL = 27;
 
   /**
    * The feature id for the '<em><b>Operation</b></em>' attribute.
@@ -1003,7 +1013,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getOperationCallParameter()
    * @generated
    */
-  int OPERATION_CALL_PARAMETER = 27;
+  int OPERATION_CALL_PARAMETER = 28;
 
   /**
    * The number of structural features of the '<em>Operation Call Parameter</em>' class.
@@ -1022,7 +1032,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getOperationTypeDef()
    * @generated
    */
-  int OPERATION_TYPE_DEF = 28;
+  int OPERATION_TYPE_DEF = 29;
 
   /**
    * The feature id for the '<em><b>Result Type</b></em>' containment reference.
@@ -1059,7 +1069,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getOperation()
    * @generated
    */
-  int OPERATION = 29;
+  int OPERATION = 30;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1114,7 +1124,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getOperationParameter()
    * @generated
    */
-  int OPERATION_PARAMETER = 30;
+  int OPERATION_PARAMETER = 31;
 
   /**
    * The number of structural features of the '<em>Operation Parameter</em>' class.
@@ -1133,7 +1143,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getLazyParameter()
    * @generated
    */
-  int LAZY_PARAMETER = 31;
+  int LAZY_PARAMETER = 32;
 
   /**
    * The feature id for the '<em><b>Paramname</b></em>' attribute.
@@ -1170,7 +1180,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXExpression()
    * @generated
    */
-  int XEXPRESSION = 32;
+  int XEXPRESSION = 33;
 
   /**
    * The number of structural features of the '<em>XExpression</em>' class.
@@ -1189,7 +1199,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXExpressionBlock()
    * @generated
    */
-  int XEXPRESSION_BLOCK = 33;
+  int XEXPRESSION_BLOCK = 34;
 
   /**
    * The number of structural features of the '<em>XExpression Block</em>' class.
@@ -1208,7 +1218,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXSizeOfExpression()
    * @generated
    */
-  int XSIZE_OF_EXPRESSION = 35;
+  int XSIZE_OF_EXPRESSION = 36;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -1236,7 +1246,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXStructExpression()
    * @generated
    */
-  int XSTRUCT_EXPRESSION = 36;
+  int XSTRUCT_EXPRESSION = 37;
 
   /**
    * The feature id for the '<em><b>Values</b></em>' containment reference list.
@@ -1264,7 +1274,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXExpression1()
    * @generated
    */
-  int XEXPRESSION1 = 37;
+  int XEXPRESSION1 = 38;
 
   /**
    * The feature id for the '<em><b>Operator</b></em>' attribute list.
@@ -1301,7 +1311,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXExpression0()
    * @generated
    */
-  int XEXPRESSION0 = 38;
+  int XEXPRESSION0 = 39;
 
   /**
    * The feature id for the '<em><b>A</b></em>' containment reference.
@@ -1338,7 +1348,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXExpressionM1()
    * @generated
    */
-  int XEXPRESSION_M1 = 39;
+  int XEXPRESSION_M1 = 40;
 
   /**
    * The feature id for the '<em><b>A</b></em>' containment reference.
@@ -1375,7 +1385,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXExpression2()
    * @generated
    */
-  int XEXPRESSION2 = 40;
+  int XEXPRESSION2 = 41;
 
   /**
    * The feature id for the '<em><b>A</b></em>' containment reference.
@@ -1421,7 +1431,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXExpression3()
    * @generated
    */
-  int XEXPRESSION3 = 41;
+  int XEXPRESSION3 = 42;
 
   /**
    * The feature id for the '<em><b>A</b></em>' containment reference.
@@ -1467,7 +1477,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXExpression4()
    * @generated
    */
-  int XEXPRESSION4 = 42;
+  int XEXPRESSION4 = 43;
 
   /**
    * The feature id for the '<em><b>A</b></em>' containment reference.
@@ -1513,7 +1523,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXExpression5()
    * @generated
    */
-  int XEXPRESSION5 = 43;
+  int XEXPRESSION5 = 44;
 
   /**
    * The feature id for the '<em><b>A</b></em>' containment reference.
@@ -1559,7 +1569,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXExpression6()
    * @generated
    */
-  int XEXPRESSION6 = 44;
+  int XEXPRESSION6 = 45;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -1614,7 +1624,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXExpressionLiteral()
    * @generated
    */
-  int XEXPRESSION_LITERAL = 45;
+  int XEXPRESSION_LITERAL = 46;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1642,7 +1652,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXErrorExpression()
    * @generated
    */
-  int XERROR_EXPRESSION = 47;
+  int XERROR_EXPRESSION = 48;
 
   /**
    * The feature id for the '<em><b>Level</b></em>' attribute.
@@ -1679,7 +1689,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXIsLiteralExpression()
    * @generated
    */
-  int XIS_LITERAL_EXPRESSION = 48;
+  int XIS_LITERAL_EXPRESSION = 49;
 
   /**
    * The feature id for the '<em><b>Ref</b></em>' containment reference.
@@ -1707,7 +1717,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXParenthesizedExpression()
    * @generated
    */
-  int XPARENTHESIZED_EXPRESSION = 49;
+  int XPARENTHESIZED_EXPRESSION = 50;
 
   /**
    * The feature id for the '<em><b>A</b></em>' containment reference.
@@ -1735,7 +1745,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getStructTypeDefMember()
    * @generated
    */
-  int STRUCT_TYPE_DEF_MEMBER = 50;
+  int STRUCT_TYPE_DEF_MEMBER = 51;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1772,7 +1782,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getConstantVariable()
    * @generated
    */
-  int CONSTANT_VARIABLE = 51;
+  int CONSTANT_VARIABLE = 52;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1818,7 +1828,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getRegisterVariable()
    * @generated
    */
-  int REGISTER_VARIABLE = 52;
+  int REGISTER_VARIABLE = 53;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1855,43 +1865,6 @@ public interface ESyntaxPackage extends EPackage
    * @ordered
    */
   int REGISTER_VARIABLE_FEATURE_COUNT = VARIABLE_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link hu.e.parser.eSyntax.impl.LabelImpl <em>Label</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see hu.e.parser.eSyntax.impl.LabelImpl
-   * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getLabel()
-   * @generated
-   */
-  int LABEL = 53;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LABEL__NAME = VARIABLE__NAME;
-
-  /**
-   * The feature id for the '<em><b>Type</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LABEL__TYPE = VARIABLE__TYPE;
-
-  /**
-   * The number of structural features of the '<em>Label</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LABEL_FEATURE_COUNT = VARIABLE_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.impl.ParameterVariableImpl <em>Parameter Variable</em>}' class.
@@ -2565,15 +2538,14 @@ public interface ESyntaxPackage extends EPackage
   EClass getDataTypeDef();
 
   /**
-   * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.DataTypeDef#getBits <em>Bits</em>}'.
+   * Returns the meta object for class '{@link hu.e.parser.eSyntax.LabelDataTypeDef <em>Label Data Type Def</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Bits</em>'.
-   * @see hu.e.parser.eSyntax.DataTypeDef#getBits()
-   * @see #getDataTypeDef()
+   * @return the meta object for class '<em>Label Data Type Def</em>'.
+   * @see hu.e.parser.eSyntax.LabelDataTypeDef
    * @generated
    */
-  EAttribute getDataTypeDef_Bits();
+  EClass getLabelDataTypeDef();
 
   /**
    * Returns the meta object for class '{@link hu.e.parser.eSyntax.FixedDataTypeDef <em>Fixed Data Type Def</em>}'.
@@ -2584,6 +2556,17 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    */
   EClass getFixedDataTypeDef();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.FixedDataTypeDef#getBits <em>Bits</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Bits</em>'.
+   * @see hu.e.parser.eSyntax.FixedDataTypeDef#getBits()
+   * @see #getFixedDataTypeDef()
+   * @generated
+   */
+  EAttribute getFixedDataTypeDef_Bits();
 
   /**
    * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.FixedDataTypeDef#getScale <em>Scale</em>}'.
@@ -2616,6 +2599,17 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    */
   EAttribute getIntegerDataTypeDef_Kind();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.IntegerDataTypeDef#getBits <em>Bits</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Bits</em>'.
+   * @see hu.e.parser.eSyntax.IntegerDataTypeDef#getBits()
+   * @see #getIntegerDataTypeDef()
+   * @generated
+   */
+  EAttribute getIntegerDataTypeDef_Bits();
 
   /**
    * Returns the meta object for class '{@link hu.e.parser.eSyntax.StructTypeDef <em>Struct Type Def</em>}'.
@@ -3401,16 +3395,6 @@ public interface ESyntaxPackage extends EPackage
   EReference getRegisterVariable_Addr();
 
   /**
-   * Returns the meta object for class '{@link hu.e.parser.eSyntax.Label <em>Label</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Label</em>'.
-   * @see hu.e.parser.eSyntax.Label
-   * @generated
-   */
-  EClass getLabel();
-
-  /**
    * Returns the meta object for class '{@link hu.e.parser.eSyntax.ParameterVariable <em>Parameter Variable</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3993,12 +3977,14 @@ public interface ESyntaxPackage extends EPackage
     EClass DATA_TYPE_DEF = eINSTANCE.getDataTypeDef();
 
     /**
-     * The meta object literal for the '<em><b>Bits</b></em>' attribute feature.
+     * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.LabelDataTypeDefImpl <em>Label Data Type Def</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see hu.e.parser.eSyntax.impl.LabelDataTypeDefImpl
+     * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getLabelDataTypeDef()
      * @generated
      */
-    EAttribute DATA_TYPE_DEF__BITS = eINSTANCE.getDataTypeDef_Bits();
+    EClass LABEL_DATA_TYPE_DEF = eINSTANCE.getLabelDataTypeDef();
 
     /**
      * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.FixedDataTypeDefImpl <em>Fixed Data Type Def</em>}' class.
@@ -4009,6 +3995,14 @@ public interface ESyntaxPackage extends EPackage
      * @generated
      */
     EClass FIXED_DATA_TYPE_DEF = eINSTANCE.getFixedDataTypeDef();
+
+    /**
+     * The meta object literal for the '<em><b>Bits</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FIXED_DATA_TYPE_DEF__BITS = eINSTANCE.getFixedDataTypeDef_Bits();
 
     /**
      * The meta object literal for the '<em><b>Scale</b></em>' attribute feature.
@@ -4035,6 +4029,14 @@ public interface ESyntaxPackage extends EPackage
      * @generated
      */
     EAttribute INTEGER_DATA_TYPE_DEF__KIND = eINSTANCE.getIntegerDataTypeDef_Kind();
+
+    /**
+     * The meta object literal for the '<em><b>Bits</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute INTEGER_DATA_TYPE_DEF__BITS = eINSTANCE.getIntegerDataTypeDef_Bits();
 
     /**
      * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.StructTypeDefImpl <em>Struct Type Def</em>}' class.
@@ -4689,16 +4691,6 @@ public interface ESyntaxPackage extends EPackage
      * @generated
      */
     EReference REGISTER_VARIABLE__ADDR = eINSTANCE.getRegisterVariable_Addr();
-
-    /**
-     * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.LabelImpl <em>Label</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see hu.e.parser.eSyntax.impl.LabelImpl
-     * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getLabel()
-     * @generated
-     */
-    EClass LABEL = eINSTANCE.getLabel();
 
     /**
      * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.ParameterVariableImpl <em>Parameter Variable</em>}' class.

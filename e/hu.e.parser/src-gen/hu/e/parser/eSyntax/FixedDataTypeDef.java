@@ -12,6 +12,7 @@ import java.math.BigDecimal;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link hu.e.parser.eSyntax.FixedDataTypeDef#getBits <em>Bits</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.FixedDataTypeDef#getScale <em>Scale</em>}</li>
  * </ul>
  * </p>
@@ -22,6 +23,32 @@ import java.math.BigDecimal;
  */
 public interface FixedDataTypeDef extends DataTypeDef
 {
+  /**
+   * Returns the value of the '<em><b>Bits</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Bits</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Bits</em>' attribute.
+   * @see #setBits(int)
+   * @see hu.e.parser.eSyntax.ESyntaxPackage#getFixedDataTypeDef_Bits()
+   * @model
+   * @generated
+   */
+  int getBits();
+
+  /**
+   * Sets the value of the '{@link hu.e.parser.eSyntax.FixedDataTypeDef#getBits <em>Bits</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Bits</em>' attribute.
+   * @see #getBits()
+   * @generated
+   */
+  void setBits(int value);
+
   /**
    * Returns the value of the '<em><b>Scale</b></em>' attribute.
    * <!-- begin-user-doc -->

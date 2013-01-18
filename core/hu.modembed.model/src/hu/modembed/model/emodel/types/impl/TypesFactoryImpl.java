@@ -62,6 +62,7 @@ public class TypesFactoryImpl extends EFactoryImpl implements TypesFactory {
 			case TypesPackage.ARRAY_DEFINITION: return createArrayDefinition();
 			case TypesPackage.STRUCTURE_TYPE_DEFINITION: return createStructureTypeDefinition();
 			case TypesPackage.STRUCTURE_TYPE_ELEMENT: return createStructureTypeElement();
+			case TypesPackage.CODE_LABEL_TYPE_DEFINITION: return createCodeLabelTypeDefinition();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -125,6 +126,16 @@ public class TypesFactoryImpl extends EFactoryImpl implements TypesFactory {
 	public StructureTypeElement createStructureTypeElement() {
 		StructureTypeElementImpl structureTypeElement = new StructureTypeElementImpl();
 		return structureTypeElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CodeLabelTypeDefinition createCodeLabelTypeDefinition() {
+		CodeLabelTypeDefinitionImpl codeLabelTypeDefinition = new CodeLabelTypeDefinitionImpl();
+		return codeLabelTypeDefinition;
 	}
 
 	/**

@@ -137,8 +137,12 @@ RefTypeDef:
 ;	
 	
 DataTypeDef:
-	IntegerDataTypeDef | FixedDataTypeDef //| FloatDataTypeDef
+	IntegerDataTypeDef | FixedDataTypeDef | LabelDataTypeDef //| FloatDataTypeDef
 	;
+
+LabelDataTypeDef:
+	{LabelDataTypeDef} 'label'
+;
 
 //FloatDataTypeDef:
 //	'float' bits=INT 'bits'
@@ -183,11 +187,7 @@ RegisterVariable returns Variable:
  ***********************/
 
 OperationStep:
-	Label | (Variable';') | XTopLevelExpression
-;
-
-Label returns Variable:
-	{Label} 'label' name=ID ';'
+	(Variable';') | XTopLevelExpression
 ;
 
 Variable:

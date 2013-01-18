@@ -203,6 +203,15 @@ public interface ESyntaxFactory extends EFactory
   DataTypeDef createDataTypeDef();
 
   /**
+   * Returns a new object of class '<em>Label Data Type Def</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Label Data Type Def</em>'.
+   * @generated
+   */
+  LabelDataTypeDef createLabelDataTypeDef();
+
+  /**
    * Returns a new object of class '<em>Fixed Data Type Def</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -498,15 +507,6 @@ public interface ESyntaxFactory extends EFactory
    * @generated
    */
   RegisterVariable createRegisterVariable();
-
-  /**
-   * Returns a new object of class '<em>Label</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Label</em>'.
-   * @generated
-   */
-  Label createLabel();
 
   /**
    * Returns a new object of class '<em>Parameter Variable</em>'.

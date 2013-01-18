@@ -27,6 +27,7 @@ import hu.modembed.model.emodel.expressions.ExecutionStep;
 import hu.modembed.model.emodel.expressions.IntegerLiteralExpression;
 import hu.modembed.model.emodel.expressions.LocalVariable;
 import hu.modembed.model.emodel.expressions.VariableReference;
+import hu.modembed.model.emodel.types.CodeLabelTypeDefinition;
 
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
@@ -101,7 +102,7 @@ public class CreateAssemblerObjectTask implements IModembedTask {
 
 	private void processStep(AssemblingContext ac, ExecutionStep step, ITaskContext context, AssemblerObject result){
 		if (step instanceof LocalVariable){
-			if (((LocalVariable) step).getType() == null){
+			if (((LocalVariable) step).getType() instanceof CodeLabelTypeDefinition){
 				// This is a label
 				ac.labels.put((LocalVariable)step, result.getInstructions().size());
 			}else{

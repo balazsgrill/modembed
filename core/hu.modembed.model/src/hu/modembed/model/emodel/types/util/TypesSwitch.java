@@ -146,6 +146,15 @@ public class TypesSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case TypesPackage.CODE_LABEL_TYPE_DEFINITION: {
+				CodeLabelTypeDefinition codeLabelTypeDefinition = (CodeLabelTypeDefinition)theEObject;
+				T result = caseCodeLabelTypeDefinition(codeLabelTypeDefinition);
+				if (result == null) result = casePrimitiveTypeDefinition(codeLabelTypeDefinition);
+				if (result == null) result = caseTypeDefinition(codeLabelTypeDefinition);
+				if (result == null) result = caseMODembedElement(codeLabelTypeDefinition);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -282,6 +291,21 @@ public class TypesSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseStructureTypeElement(StructureTypeElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Code Label Type Definition</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Code Label Type Definition</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCodeLabelTypeDefinition(CodeLabelTypeDefinition object) {
 		return null;
 	}
 

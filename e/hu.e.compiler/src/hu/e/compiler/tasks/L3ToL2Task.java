@@ -9,14 +9,16 @@ import hu.e.compiler.TaskUtils;
 import hu.modembed.model.emodel.Function;
 import hu.modembed.model.emodel.Library;
 import hu.modembed.model.emodel.LibraryElement;
-import hu.modembed.model.emodel.VariableParameterKind;
 import hu.modembed.model.emodel.expressions.Call;
 import hu.modembed.model.emodel.expressions.ExecutionBlock;
 import hu.modembed.model.emodel.expressions.ExecutionStep;
 import hu.modembed.model.emodel.types.TypeDefinition;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -36,27 +38,16 @@ public class L3ToL2Task implements IModembedTask{
 	public static final String INPUT = "input";
 	public static final String OUTPUT = "output";
 	
-	private class ParameterType{
-		public final VariableParameterKind kind;
-		public final TypeDefinition type;
-		
-		public ParameterType(ExecutionStep step) {
-			VariableParameterKind kind = null;
-			TypeDefinition type = null;
-			
-			this.kind = kind;
-			this.type = type;
-		}
-	}
-	
 	private class Linker{
 		
 		/**
 		 * Base -> Overridden
 		 */
 		private final Multimap<Function, Function> overrides = ArrayListMultimap.create();
+		//private final ITaskContext context;
 		
-		public Linker(Library library){
+		public Linker(ITaskContext context, Library library){
+			//this.context = context;
 			for(LibraryElement le : library.getContent()){
 				if (le instanceof Function){
 					Function f = (Function)le;
@@ -86,7 +77,39 @@ public class L3ToL2Task implements IModembedTask{
 			if (call.getFunction() instanceof Function){
 				Function abstractfunction = (Function)call.getFunction();
 				//collect call signature
-				List<ParameterType> types = new ArrayList<L3ToL2Task.ParameterType>();
+				List<TypeDefinition> types = new ArrayList<TypeDefinition>();
+				for(ExecutionStep p : call.getParameters()){
+					process(p);
+					types.add(TaskUtils.inferType(p));
+				}
+				TypeDefinition[] signature = types.toArray(new TypeDefinition[types.size()]);
+				
+				//Find most specific function with compatible signature
+				List<Function> available = new ArrayList<Function>(1);
+				Queue<Function> candidates = new LinkedList<Function>();
+				candidates.add(abstractfunction);
+				while(!candidates.isEmpty()){
+					Function f = candidates.poll();
+					
+					if (TaskUtils.checkSignature(f, signature)){
+						Collection<Function> functions = overrides.get(f);
+						if (functions.isEmpty()){
+							//Found a function!
+							available.add(f);
+						}else{
+							//Check overriding implementations
+							candidates.addAll(functions);
+						}
+					}
+				}
+				
+				//Apply function to call
+				if (available.isEmpty()){
+					//TODO report error
+				}else{
+					call.setFunction(available.get(0));
+					//TODO first chosen, check if there is no other available
+				}
 				
 			}else{
 				/* Instruction calls shall not be changed */
@@ -115,7 +138,7 @@ public class L3ToL2Task implements IModembedTask{
 		outr.getContents().add(outlib);
 		TaskUtils.addOrigin(outlib, inlib);
 		
-		Linker linker = new Linker(outlib);
+		Linker linker = new Linker(context, outlib);
 		for(LibraryElement element : outlib.getContent()){
 			if (element instanceof Function){
 				linker.process(((Function) element).getImplementation());

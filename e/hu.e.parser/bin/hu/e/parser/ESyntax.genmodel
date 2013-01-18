@@ -115,14 +115,15 @@
     <genClasses ecoreClass="ESyntax.ecore#//RefTypeDef">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//RefTypeDef/type"/>
     </genClasses>
-    <genClasses ecoreClass="ESyntax.ecore#//DataTypeDef">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//DataTypeDef/bits"/>
-    </genClasses>
+    <genClasses ecoreClass="ESyntax.ecore#//DataTypeDef"/>
+    <genClasses ecoreClass="ESyntax.ecore#//LabelDataTypeDef"/>
     <genClasses ecoreClass="ESyntax.ecore#//FixedDataTypeDef">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//FixedDataTypeDef/bits"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//FixedDataTypeDef/scale"/>
     </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//IntegerDataTypeDef">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//IntegerDataTypeDef/kind"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//IntegerDataTypeDef/bits"/>
     </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//StructTypeDef">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//StructTypeDef/members"/>
@@ -221,7 +222,6 @@
     <genClasses ecoreClass="ESyntax.ecore#//RegisterVariable">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//RegisterVariable/addr"/>
     </genClasses>
-    <genClasses ecoreClass="ESyntax.ecore#//Label"/>
     <genClasses ecoreClass="ESyntax.ecore#//ParameterVariable">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//ParameterVariable/kind"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//ParameterVariable/default"/>

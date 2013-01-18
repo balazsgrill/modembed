@@ -19,7 +19,7 @@ import hu.e.parser.eSyntax.InstructionSetNotation;
 import hu.e.parser.eSyntax.InstructionWordNotation;
 import hu.e.parser.eSyntax.IntegerDataTypeDef;
 import hu.e.parser.eSyntax.IntegerKind;
-import hu.e.parser.eSyntax.Label;
+import hu.e.parser.eSyntax.LabelDataTypeDef;
 import hu.e.parser.eSyntax.LazyParameter;
 import hu.e.parser.eSyntax.Library;
 import hu.e.parser.eSyntax.LibraryItem;
@@ -220,6 +220,13 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * @generated
    */
   private EClass dataTypeDefEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass labelDataTypeDefEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -451,13 +458,6 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * @generated
    */
   private EClass registerVariableEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass labelEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1074,9 +1074,9 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getDataTypeDef_Bits()
+  public EClass getLabelDataTypeDef()
   {
-    return (EAttribute)dataTypeDefEClass.getEStructuralFeatures().get(0);
+    return labelDataTypeDefEClass;
   }
 
   /**
@@ -1094,9 +1094,19 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getFixedDataTypeDef_Scale()
+  public EAttribute getFixedDataTypeDef_Bits()
   {
     return (EAttribute)fixedDataTypeDefEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFixedDataTypeDef_Scale()
+  {
+    return (EAttribute)fixedDataTypeDefEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1117,6 +1127,16 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
   public EAttribute getIntegerDataTypeDef_Kind()
   {
     return (EAttribute)integerDataTypeDefEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getIntegerDataTypeDef_Bits()
+  {
+    return (EAttribute)integerDataTypeDefEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1864,16 +1884,6 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getLabel()
-  {
-    return labelEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getParameterVariable()
   {
     return parameterVariableEClass;
@@ -2105,13 +2115,16 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     createEAttribute(refTypeDefEClass, REF_TYPE_DEF__TYPE);
 
     dataTypeDefEClass = createEClass(DATA_TYPE_DEF);
-    createEAttribute(dataTypeDefEClass, DATA_TYPE_DEF__BITS);
+
+    labelDataTypeDefEClass = createEClass(LABEL_DATA_TYPE_DEF);
 
     fixedDataTypeDefEClass = createEClass(FIXED_DATA_TYPE_DEF);
+    createEAttribute(fixedDataTypeDefEClass, FIXED_DATA_TYPE_DEF__BITS);
     createEAttribute(fixedDataTypeDefEClass, FIXED_DATA_TYPE_DEF__SCALE);
 
     integerDataTypeDefEClass = createEClass(INTEGER_DATA_TYPE_DEF);
     createEAttribute(integerDataTypeDefEClass, INTEGER_DATA_TYPE_DEF__KIND);
+    createEAttribute(integerDataTypeDefEClass, INTEGER_DATA_TYPE_DEF__BITS);
 
     structTypeDefEClass = createEClass(STRUCT_TYPE_DEF);
     createEReference(structTypeDefEClass, STRUCT_TYPE_DEF__MEMBERS);
@@ -2218,8 +2231,6 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     registerVariableEClass = createEClass(REGISTER_VARIABLE);
     createEReference(registerVariableEClass, REGISTER_VARIABLE__ADDR);
 
-    labelEClass = createEClass(LABEL);
-
     parameterVariableEClass = createEClass(PARAMETER_VARIABLE);
     createEAttribute(parameterVariableEClass, PARAMETER_VARIABLE__KIND);
     createEAttribute(parameterVariableEClass, PARAMETER_VARIABLE__DEFAULT);
@@ -2279,6 +2290,7 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     arrayTypeDefEClass.getESuperTypes().add(this.getTypeDef());
     refTypeDefEClass.getESuperTypes().add(this.getTypeDef());
     dataTypeDefEClass.getESuperTypes().add(this.getTypeDef());
+    labelDataTypeDefEClass.getESuperTypes().add(this.getDataTypeDef());
     fixedDataTypeDefEClass.getESuperTypes().add(this.getDataTypeDef());
     integerDataTypeDefEClass.getESuperTypes().add(this.getDataTypeDef());
     structTypeDefEClass.getESuperTypes().add(this.getTypeDef());
@@ -2303,7 +2315,6 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     structTypeDefMemberEClass.getESuperTypes().add(this.getVariable());
     constantVariableEClass.getESuperTypes().add(this.getVariable());
     registerVariableEClass.getESuperTypes().add(this.getVariable());
-    labelEClass.getESuperTypes().add(this.getVariable());
     parameterVariableEClass.getESuperTypes().add(this.getVariable());
     operationBlockEClass.getESuperTypes().add(this.getXExpressionBlock());
 
@@ -2374,13 +2385,16 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     initEAttribute(getRefTypeDef_Type(), ecorePackage.getEString(), "type", null, 0, 1, RefTypeDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(dataTypeDefEClass, DataTypeDef.class, "DataTypeDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDataTypeDef_Bits(), ecorePackage.getEInt(), "bits", null, 0, 1, DataTypeDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(labelDataTypeDefEClass, LabelDataTypeDef.class, "LabelDataTypeDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(fixedDataTypeDefEClass, FixedDataTypeDef.class, "FixedDataTypeDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getFixedDataTypeDef_Bits(), ecorePackage.getEInt(), "bits", null, 0, 1, FixedDataTypeDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getFixedDataTypeDef_Scale(), ecorePackage.getEBigDecimal(), "scale", null, 0, 1, FixedDataTypeDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(integerDataTypeDefEClass, IntegerDataTypeDef.class, "IntegerDataTypeDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getIntegerDataTypeDef_Kind(), this.getIntegerKind(), "kind", null, 0, 1, IntegerDataTypeDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getIntegerDataTypeDef_Bits(), ecorePackage.getEInt(), "bits", null, 0, 1, IntegerDataTypeDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(structTypeDefEClass, StructTypeDef.class, "StructTypeDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getStructTypeDef_Members(), this.getVariable(), null, "members", null, 0, -1, StructTypeDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2486,8 +2500,6 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
 
     initEClass(registerVariableEClass, RegisterVariable.class, "RegisterVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getRegisterVariable_Addr(), this.getXExpression(), null, "addr", null, 0, 1, RegisterVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(labelEClass, Label.class, "Label", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(parameterVariableEClass, ParameterVariable.class, "ParameterVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getParameterVariable_Kind(), this.getParameterKind(), "kind", null, 0, 1, ParameterVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

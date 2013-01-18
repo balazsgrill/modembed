@@ -224,6 +224,15 @@ public class ESyntaxSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case ESyntaxPackage.LABEL_DATA_TYPE_DEF:
+      {
+        LabelDataTypeDef labelDataTypeDef = (LabelDataTypeDef)theEObject;
+        T result = caseLabelDataTypeDef(labelDataTypeDef);
+        if (result == null) result = caseDataTypeDef(labelDataTypeDef);
+        if (result == null) result = caseTypeDef(labelDataTypeDef);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case ESyntaxPackage.FIXED_DATA_TYPE_DEF:
       {
         FixedDataTypeDef fixedDataTypeDef = (FixedDataTypeDef)theEObject;
@@ -492,17 +501,6 @@ public class ESyntaxSwitch<T> extends Switch<T>
         if (result == null) result = caseLibraryItem(registerVariable);
         if (result == null) result = caseOperationStep(registerVariable);
         if (result == null) result = caseOperationParameter(registerVariable);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case ESyntaxPackage.LABEL:
-      {
-        Label label = (Label)theEObject;
-        T result = caseLabel(label);
-        if (result == null) result = caseVariable(label);
-        if (result == null) result = caseLibraryItem(label);
-        if (result == null) result = caseOperationStep(label);
-        if (result == null) result = caseOperationParameter(label);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -846,6 +844,22 @@ public class ESyntaxSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseDataTypeDef(DataTypeDef object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Label Data Type Def</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Label Data Type Def</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLabelDataTypeDef(LabelDataTypeDef object)
   {
     return null;
   }
@@ -1374,22 +1388,6 @@ public class ESyntaxSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseRegisterVariable(RegisterVariable object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Label</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Label</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseLabel(Label object)
   {
     return null;
   }

@@ -8,12 +8,14 @@ import hu.e.parser.convert.ICrossReferenceScope;
 import hu.e.parser.eSyntax.ArrayTypeDef;
 import hu.e.parser.eSyntax.FixedDataTypeDef;
 import hu.e.parser.eSyntax.IntegerDataTypeDef;
+import hu.e.parser.eSyntax.LabelDataTypeDef;
 import hu.e.parser.eSyntax.PointerTypeDef;
 import hu.e.parser.eSyntax.RefTypeDef;
 import hu.e.parser.eSyntax.StructTypeDef;
 import hu.e.parser.eSyntax.TypeDef;
 import hu.e.parser.eSyntax.UnspecifiedTypeDef;
 import hu.modembed.model.emodel.types.ArrayDefinition;
+import hu.modembed.model.emodel.types.CodeLabelTypeDefinition;
 import hu.modembed.model.emodel.types.PointerTypeDefinition;
 import hu.modembed.model.emodel.types.ReferenceTypeDefinition;
 import hu.modembed.model.emodel.types.TypeDefinition;
@@ -58,6 +60,11 @@ public class TypeConverter {
 		
 		if (tdef instanceof FixedDataTypeDef){
 			//TODO
+		}
+		
+		if (tdef instanceof LabelDataTypeDef){
+			CodeLabelTypeDefinition cldt = TypesFactory.eINSTANCE.createCodeLabelTypeDefinition();
+			return cldt;
 		}
 		
 		if (tdef instanceof IntegerDataTypeDef){

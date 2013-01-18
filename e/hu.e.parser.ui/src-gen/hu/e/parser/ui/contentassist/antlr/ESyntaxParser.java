@@ -86,6 +86,7 @@ public class ESyntaxParser extends AbstractContentAssistParser {
 					put(grammarAccess.getPointerTypeDefAccess().getGroup(), "rule__PointerTypeDef__Group__0");
 					put(grammarAccess.getArrayTypeDefAccess().getGroup(), "rule__ArrayTypeDef__Group__0");
 					put(grammarAccess.getArrayTypeDefAccess().getGroup_4(), "rule__ArrayTypeDef__Group_4__0");
+					put(grammarAccess.getLabelDataTypeDefAccess().getGroup(), "rule__LabelDataTypeDef__Group__0");
 					put(grammarAccess.getFixedDataTypeDefAccess().getGroup(), "rule__FixedDataTypeDef__Group__0");
 					put(grammarAccess.getIntegerDataTypeDefAccess().getGroup(), "rule__IntegerDataTypeDef__Group__0");
 					put(grammarAccess.getStructTypeDefAccess().getGroup(), "rule__StructTypeDef__Group__0");
@@ -93,8 +94,7 @@ public class ESyntaxParser extends AbstractContentAssistParser {
 					put(grammarAccess.getStructTypeDefMemberAccess().getGroup(), "rule__StructTypeDefMember__Group__0");
 					put(grammarAccess.getConstantVariableAccess().getGroup(), "rule__ConstantVariable__Group__0");
 					put(grammarAccess.getRegisterVariableAccess().getGroup(), "rule__RegisterVariable__Group__0");
-					put(grammarAccess.getOperationStepAccess().getGroup_1(), "rule__OperationStep__Group_1__0");
-					put(grammarAccess.getLabelAccess().getGroup(), "rule__Label__Group__0");
+					put(grammarAccess.getOperationStepAccess().getGroup_0(), "rule__OperationStep__Group_0__0");
 					put(grammarAccess.getVariableAccess().getGroup(), "rule__Variable__Group__0");
 					put(grammarAccess.getOperationCallAccess().getGroup(), "rule__OperationCall__Group__0");
 					put(grammarAccess.getOperationCallAccess().getGroup_2(), "rule__OperationCall__Group_2__0");
@@ -179,7 +179,6 @@ public class ESyntaxParser extends AbstractContentAssistParser {
 					put(grammarAccess.getRegisterVariableAccess().getTypeAssignment_2(), "rule__RegisterVariable__TypeAssignment_2");
 					put(grammarAccess.getRegisterVariableAccess().getNameAssignment_3(), "rule__RegisterVariable__NameAssignment_3");
 					put(grammarAccess.getRegisterVariableAccess().getAddrAssignment_5(), "rule__RegisterVariable__AddrAssignment_5");
-					put(grammarAccess.getLabelAccess().getNameAssignment_2(), "rule__Label__NameAssignment_2");
 					put(grammarAccess.getVariableAccess().getTypeAssignment_0(), "rule__Variable__TypeAssignment_0");
 					put(grammarAccess.getVariableAccess().getNameAssignment_1(), "rule__Variable__NameAssignment_1");
 					put(grammarAccess.getVariableReferenceAccess().getVarAssignment(), "rule__VariableReference__VarAssignment");

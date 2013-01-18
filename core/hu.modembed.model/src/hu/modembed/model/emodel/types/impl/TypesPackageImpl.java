@@ -27,6 +27,7 @@ import hu.modembed.model.emodel.expressions.ExpressionsPackage;
 import hu.modembed.model.emodel.expressions.impl.ExpressionsPackageImpl;
 import hu.modembed.model.emodel.impl.EmodelPackageImpl;
 import hu.modembed.model.emodel.types.ArrayDefinition;
+import hu.modembed.model.emodel.types.CodeLabelTypeDefinition;
 import hu.modembed.model.emodel.types.CompositeTypeDefinition;
 import hu.modembed.model.emodel.types.PointerTypeDefinition;
 import hu.modembed.model.emodel.types.PrimitiveTypeDefinition;
@@ -117,6 +118,13 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 	 * @generated
 	 */
 	private EClass structureTypeElementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass codeLabelTypeDefinitionEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -357,6 +365,15 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getCodeLabelTypeDefinition() {
+		return codeLabelTypeDefinitionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public TypesFactory getTypesFactory() {
 		return (TypesFactory)getEFactoryInstance();
 	}
@@ -402,6 +419,8 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 
 		structureTypeElementEClass = createEClass(STRUCTURE_TYPE_ELEMENT);
 		createEReference(structureTypeElementEClass, STRUCTURE_TYPE_ELEMENT__TYPE);
+
+		codeLabelTypeDefinitionEClass = createEClass(CODE_LABEL_TYPE_DEFINITION);
 	}
 
 	/**
@@ -445,6 +464,7 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 		arrayDefinitionEClass.getESuperTypes().add(this.getPointerTypeDefinition());
 		structureTypeDefinitionEClass.getESuperTypes().add(this.getCompositeTypeDefinition());
 		structureTypeElementEClass.getESuperTypes().add(theCorePackage.getNamedElement());
+		codeLabelTypeDefinitionEClass.getESuperTypes().add(this.getPrimitiveTypeDefinition());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(typeDefinitionEClass, TypeDefinition.class, "TypeDefinition", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -469,6 +489,8 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 
 		initEClass(structureTypeElementEClass, StructureTypeElement.class, "StructureTypeElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getStructureTypeElement_Type(), this.getTypeDefinition(), null, "type", null, 1, 1, StructureTypeElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(codeLabelTypeDefinitionEClass, CodeLabelTypeDefinition.class, "CodeLabelTypeDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 	}
 
 } //TypesPackageImpl
