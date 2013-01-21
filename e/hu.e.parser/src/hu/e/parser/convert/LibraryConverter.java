@@ -60,6 +60,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.xtext.nodemodel.ICompositeNode;
+import org.eclipse.xtext.nodemodel.ILeafNode;
 import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 
 /**
@@ -90,8 +91,46 @@ public class LibraryConverter {
 		return to;
 	}
 	
+	private static String parseComment(String comment){
+		StringBuilder sb = new StringBuilder();
+		if (comment.startsWith("//")){
+			sb.append(comment.substring(2));
+			sb.append("\n");
+		}else if (comment.startsWith("/*")){
+			comment = comment.substring(2, comment.length()-4);
+			String[] lines = comment.split("\n");
+			for(String line : lines){
+				line = line.trim();
+				while(line.startsWith("*")){
+					line = line.substring(1).trim();
+				}
+				if (!"".equals(line)){
+					sb.append(line);
+					sb.append("\n");
+				}
+			}
+		}
+		return sb.toString();
+	}
+	
+	public static String getDescription(EObject element){
+		ICompositeNode node = NodeModelUtils.findActualNodeFor(element);
+		boolean got = false;
+		StringBuilder sb = new StringBuilder();
+		for(ILeafNode ln : node.getLeafNodes()) if (!got){
+			if (ln.isHidden()){
+				String text = ln.getText();
+				sb.append(parseComment(text));
+			}else{
+				got = true;
+			}
+		}
+		return sb.toString();
+	}
+	
 	public static void addOrigin(MODembedElement element, EObject origin){
 		element.getOrigins().add(createOrigin(origin));
+		element.setDescription(getDescription(origin));
 	}
 	
 	public LibraryConverter(IProject project) {

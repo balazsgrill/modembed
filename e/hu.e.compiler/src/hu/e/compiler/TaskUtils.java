@@ -31,6 +31,8 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IResourceVisitor;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.URI;
 
 /**
@@ -63,6 +65,8 @@ public class TaskUtils {
 	}
 	
 	public static boolean canCast(TypeDefinition from, TypeDefinition to){
+		if (to == null) return true;
+		
 		if (to instanceof ReferenceTypeDefinition){
 			return canCast(from, ((ReferenceTypeDefinition) to).getType().getDefinition());
 		}
@@ -84,6 +88,10 @@ public class TaskUtils {
 			return to instanceof CodeLabelTypeDefinition;
 		}
 		return false;
+	}
+	
+	public static IStatus error(String msg){
+		return new Status(IStatus.ERROR, ECompilerPlugin.PLUGIN_ID, msg);
 	}
 	
 	public static TypeDefinition inferType(ExecutionStep step){
