@@ -3,6 +3,7 @@
  */
 package hu.e.compiler;
 
+import hu.e.compiler.tasks.internal.TypeSignature;
 import hu.modembed.model.core.CoreFactory;
 import hu.modembed.model.core.MODembedElement;
 import hu.modembed.model.core.ModelOrigin;
@@ -11,6 +12,8 @@ import hu.modembed.model.emodel.Function;
 import hu.modembed.model.emodel.FunctionParameter;
 import hu.modembed.model.emodel.LazyParameter;
 import hu.modembed.model.emodel.Variable;
+import hu.modembed.model.emodel.VariableParameter;
+import hu.modembed.model.emodel.VariableParameterKind;
 import hu.modembed.model.emodel.expressions.Call;
 import hu.modembed.model.emodel.expressions.ExecutionStep;
 import hu.modembed.model.emodel.expressions.LiteralExpression;
@@ -19,7 +22,6 @@ import hu.modembed.model.emodel.types.CodeLabelTypeDefinition;
 import hu.modembed.model.emodel.types.PointerTypeDefinition;
 import hu.modembed.model.emodel.types.ReferenceTypeDefinition;
 import hu.modembed.model.emodel.types.TypeDefinition;
-import hu.modembed.model.emodel.types.TypesFactory;
 import hu.modembed.model.emodel.types.UnsignedTypeDefinition;
 
 import java.util.Arrays;
@@ -47,8 +49,17 @@ public class TaskUtils {
 		element.getOrigins().add(o);
 	}
 	
-	public static boolean checkSignature(Function function, TypeDefinition...typeDefinitions){
-		if (function.getArguments().size() != typeDefinitions.length) return false;
+	public static boolean canAssign(VariableParameterKind from, VariableParameterKind to){
+		switch(to){
+		case ANY: return true;
+		case CONST: return from == VariableParameterKind.CONST; 
+		case VAR:  return from == VariableParameterKind.VAR;
+		default: return false;
+		}
+	}
+	
+	public static boolean checkSignature(Function function, TypeSignature...signature){
+		if (function.getArguments().size() != signature.length) return false;
 		
 		int i = 0;
 		for(i=0;i<function.getArguments().size();i++){
@@ -56,8 +67,11 @@ public class TaskUtils {
 			if (fp instanceof LazyParameter){
 				
 			}else{
+				VariableParameter vp = (VariableParameter)fp;
+				VariableParameterKind kind = vp.getKind();
 				TypeDefinition td = fp.getType();
-				if (!canCast(typeDefinitions[i], td)) return false;
+				if (!canAssign(signature[i].getKind(), kind)) return false;
+				if (!canCast(signature[i].getType(), td)) return false;
 			}
 		}
 		
@@ -94,22 +108,23 @@ public class TaskUtils {
 		return new Status(IStatus.ERROR, ECompilerPlugin.PLUGIN_ID, msg);
 	}
 	
-	public static TypeDefinition inferType(ExecutionStep step){
+	public static TypeSignature inferType(ExecutionStep step){
 		if (step instanceof VariableReference){
 			Variable v = ((VariableReference) step).getVariable();
 			if (v != null){
-				PointerTypeDefinition pdef = TypesFactory.eINSTANCE.createPointerTypeDefinition();
-				pdef.setPointerType(v.getType());
-				return pdef;
+				//PointerTypeDefinition pdef = TypesFactory.eINSTANCE.createPointerTypeDefinition();
+				//pdef.setPointerType(v.getType());
+				//return pdef;
+				return new TypeSignature(v.getType(), VariableParameterKind.VAR);
 			}
 		}
 		if (step instanceof LiteralExpression){
-			return ((LiteralExpression) step).getType();
+			return new TypeSignature(((LiteralExpression) step).getType(), VariableParameterKind.CONST);
 		}
 		if (step instanceof Call){
 			CallableElement called = ((Call) step).getFunction();
 			if (called instanceof Function){
-				return ((Function) called).getType();
+				return new TypeSignature(((Function) called).getType(), VariableParameterKind.ANY);
 			}
 		}
 		return null;

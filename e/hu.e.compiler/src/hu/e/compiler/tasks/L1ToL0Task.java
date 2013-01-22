@@ -13,10 +13,12 @@ import hu.e.compiler.ITaskContext;
 import hu.e.compiler.TaskUtils;
 import hu.modembed.model.architecture.Architecture;
 import hu.modembed.model.architecture.MemorySection;
+import hu.modembed.model.emodel.EmodelFactory;
 import hu.modembed.model.emodel.Function;
 import hu.modembed.model.emodel.Library;
 import hu.modembed.model.emodel.LibraryElement;
 import hu.modembed.model.emodel.Variable;
+import hu.modembed.model.emodel.expressions.ExecutionStep;
 
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -49,18 +51,12 @@ public class L1ToL0Task implements IModembedTask {
 			}
 		}
 		
-		public void begin(){
-			
-		}
 		
-		public void allocate(Variable v){
-			
-		}
 		
-		public void end(){
-			
-		}
-		
+	}
+	
+	private ExecutionStep linearize(ExecutionStep step){
+		return null;
 	}
 	
 	/* (non-Javadoc)
@@ -83,7 +79,7 @@ public class L1ToL0Task implements IModembedTask {
 		Assert.isLegal(lib instanceof Library);
 		Library inlib = (Library)lib;
 		
-		Library outlib = EcoreUtil.copy(inlib);
+		Library outlib = EmodelFactory.eINSTANCE.createLibrary();//EcoreUtil.copy(inlib);
 		outlib.setName(outputmodel);
 		outr.getContents().add(outlib);
 		TaskUtils.addOrigin(outlib, inlib);
@@ -102,7 +98,11 @@ public class L1ToL0Task implements IModembedTask {
 			return;
 		}
 		
+		Function result = EmodelFactory.eINSTANCE.createFunction();
+		result.setName(main.getName());
+		TaskUtils.addOrigin(result, main);
 		
+		MemoryManager memman = new MemoryManager(arch);
 	}
 
 }

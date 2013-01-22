@@ -6,13 +6,13 @@ package hu.e.compiler.tasks;
 import hu.e.compiler.IModembedTask;
 import hu.e.compiler.ITaskContext;
 import hu.e.compiler.TaskUtils;
+import hu.e.compiler.tasks.internal.TypeSignature;
 import hu.modembed.model.emodel.Function;
 import hu.modembed.model.emodel.Library;
 import hu.modembed.model.emodel.LibraryElement;
 import hu.modembed.model.emodel.expressions.Call;
 import hu.modembed.model.emodel.expressions.ExecutionBlock;
 import hu.modembed.model.emodel.expressions.ExecutionStep;
-import hu.modembed.model.emodel.types.TypeDefinition;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -77,12 +77,12 @@ public class L3ToL2Task implements IModembedTask{
 			if (call.getFunction() instanceof Function){
 				Function abstractfunction = (Function)call.getFunction();
 				//collect call signature
-				List<TypeDefinition> types = new ArrayList<TypeDefinition>();
+				List<TypeSignature> types = new ArrayList<TypeSignature>();
 				for(ExecutionStep p : call.getParameters()){
 					process(p);
 					types.add(TaskUtils.inferType(p));
 				}
-				TypeDefinition[] signature = types.toArray(new TypeDefinition[types.size()]);
+				TypeSignature[] signature = types.toArray(new TypeSignature[types.size()]);
 				
 				//Find most specific function with compatible signature
 				List<Function> available = new ArrayList<Function>(1);
