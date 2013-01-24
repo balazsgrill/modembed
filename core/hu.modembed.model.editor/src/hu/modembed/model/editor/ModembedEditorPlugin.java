@@ -6,6 +6,7 @@
  */
 package hu.modembed.model.editor;
 
+import hu.modembed.model.editor.grass.GrassModelEditorPage;
 import hu.modembed.model.editor.internal.PageDescriptor;
 import hu.modembed.model.editor.internal.PageRegistry;
 
@@ -45,6 +46,7 @@ public final class ModembedEditorPlugin extends EMFPlugin {
 		}
 		
 		pages.add(new GenericTreeModelEditorPage());
+		pages.add(new GrassModelEditorPage());
 		return pages;
 	}
 	
