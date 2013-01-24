@@ -12,6 +12,9 @@ import java.util.EventObject;
 
 import org.eclipse.core.resources.IMarker;
 import org.eclipse.core.resources.IResource;
+import org.eclipse.core.resources.IResourceChangeEvent;
+import org.eclipse.core.resources.IResourceChangeListener;
+import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.command.BasicCommandStack;
@@ -62,6 +65,21 @@ public class GenericModelEditor extends EditorPart
 	private Resource resource;
 	
 	private WrappedSelectionProvider selectionProvider = new WrappedSelectionProvider();
+	
+	private final IResourceChangeListener resourceChangeListener = new IResourceChangeListener() {
+		
+		@Override
+		public void resourceChanged(IResourceChangeEvent event) {
+			//TODO check if this particular resource is affected?
+			resource.unload();
+			try {
+				resource.load(null);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	};
 	
 	/**
 	 * This is the one adapter factory used for providing views of the model.
@@ -179,9 +197,16 @@ public class GenericModelEditor extends EditorPart
 		
 		createModel();
 		//site.getPage().addPartListener(partListener);
-		//ResourcesPlugin.getWorkspace().addResourceChangeListener(resourceChangeListener, IResourceChangeEvent.POST_CHANGE);
+		ResourcesPlugin.getWorkspace().addResourceChangeListener(resourceChangeListener, IResourceChangeEvent.POST_CHANGE);
 	}
 
+	@Override
+	public void dispose() {
+		ResourcesPlugin.getWorkspace().removeResourceChangeListener(resourceChangeListener);
+		resource.unload();
+		super.dispose();
+	}
+	
 	/* (non-Javadoc)
 	 * @see org.eclipse.ui.part.EditorPart#isDirty()
 	 */
