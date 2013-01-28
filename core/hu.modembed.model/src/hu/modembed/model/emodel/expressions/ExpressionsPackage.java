@@ -226,13 +226,22 @@ public interface ExpressionsPackage extends EPackage {
 	int EXECUTION_BLOCK__STEPS = EXECUTION_STEP_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Result</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXECUTION_BLOCK__RESULT = EXECUTION_STEP_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Execution Block</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTION_BLOCK_FEATURE_COUNT = EXECUTION_STEP_FEATURE_COUNT + 1;
+	int EXECUTION_BLOCK_FEATURE_COUNT = EXECUTION_STEP_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
@@ -610,6 +619,17 @@ public interface ExpressionsPackage extends EPackage {
 	EReference getExecutionBlock_Steps();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link hu.modembed.model.emodel.expressions.ExecutionBlock#getResult <em>Result</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Result</em>'.
+	 * @see hu.modembed.model.emodel.expressions.ExecutionBlock#getResult()
+	 * @see #getExecutionBlock()
+	 * @generated
+	 */
+	EReference getExecutionBlock_Result();
+
+	/**
 	 * Returns the meta object for class '{@link hu.modembed.model.emodel.expressions.Call <em>Call</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -822,6 +842,14 @@ public interface ExpressionsPackage extends EPackage {
 		 * @generated
 		 */
 		EReference EXECUTION_BLOCK__STEPS = eINSTANCE.getExecutionBlock_Steps();
+
+		/**
+		 * The meta object literal for the '<em><b>Result</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EXECUTION_BLOCK__RESULT = eINSTANCE.getExecutionBlock_Result();
 
 		/**
 		 * The meta object literal for the '{@link hu.modembed.model.emodel.expressions.impl.CallImpl <em>Call</em>}' class.

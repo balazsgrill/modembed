@@ -3336,6 +3336,19 @@
       <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_u4e3AymxEeKptJLKjBHZ3w" points="[27, -20, -161, 124]$[189, -127, 1, 17]"/>
       <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_u4h6UCmxEeKptJLKjBHZ3w" id="(0.18627450980392157,0.7166666666666667)"/>
     </edges>
+    <edges xmi:type="notation:Edge" xmi:id="_GlUN0GkuEeK8pNRtrhplQQ" type="3002" source="_JH63RB9dEeKsFLvWggXljg" target="_JHbIAB9dEeKsFLvWggXljg">
+      <children xmi:type="notation:Node" xmi:id="_GlcwsGkuEeK8pNRtrhplQQ" type="4011">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_GlcwsWkuEeK8pNRtrhplQQ" x="-10" y="-10"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_GldXwGkuEeK8pNRtrhplQQ" type="4012">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_GldXwWkuEeK8pNRtrhplQQ" x="-10" y="11"/>
+      </children>
+      <styles xmi:type="notation:ConnectorStyle" xmi:id="_GlUN0WkuEeK8pNRtrhplQQ" lineColor="4210752"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_GlUN0mkuEeK8pNRtrhplQQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
+      <element xmi:type="ecore:EReference" href="modembedmodel.ecore#//emodel/expressions/ExecutionBlock/result"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GlUN02kuEeK8pNRtrhplQQ" points="[-52, 5, 88, -6]$[-138, 21, 2, 10]"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GlhCIGkuEeK8pNRtrhplQQ" id="(0.7745098039215687,0.7674418604651163)"/>
+    </edges>
   </notation:Diagram>
   <notation:Diagram xmi:id="_bQu5ACEZEeKhxspDUyGZKg" type="EcoreTools" name="core_Diagram0" measurementUnit="Pixel">
     <children xmi:type="notation:Node" xmi:id="_bQ2NwCEZEeKhxspDUyGZKg" type="1001">
