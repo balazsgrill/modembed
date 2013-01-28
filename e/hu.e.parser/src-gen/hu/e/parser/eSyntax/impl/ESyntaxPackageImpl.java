@@ -1934,6 +1934,16 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getOperationBlock_Result()
+  {
+    return (EReference)operationBlockEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EEnum getIntegerKind()
   {
     return integerKindEEnum;
@@ -2237,6 +2247,7 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
 
     operationBlockEClass = createEClass(OPERATION_BLOCK);
     createEReference(operationBlockEClass, OPERATION_BLOCK__STEPS);
+    createEReference(operationBlockEClass, OPERATION_BLOCK__RESULT);
 
     // Create enums
     integerKindEEnum = createEEnum(INTEGER_KIND);
@@ -2507,6 +2518,7 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
 
     initEClass(operationBlockEClass, OperationBlock.class, "OperationBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getOperationBlock_Steps(), this.getOperationStep(), null, "steps", null, 0, -1, OperationBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getOperationBlock_Result(), this.getXExpression(), null, "result", null, 0, 1, OperationBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Initialize enums and add enum literals
     initEEnum(integerKindEEnum, IntegerKind.class, "IntegerKind");

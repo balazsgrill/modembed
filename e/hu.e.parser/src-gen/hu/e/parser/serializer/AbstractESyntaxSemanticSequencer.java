@@ -860,7 +860,7 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 	
 	/**
 	 * Constraint:
-	 *     (steps+=OperationStep*)
+	 *     (steps+=OperationStep* result=XExpression?)
 	 */
 	protected void sequence_XExpressionBlock(EObject context, OperationBlock semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

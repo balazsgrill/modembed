@@ -243,7 +243,7 @@ XExpression:
 	XExpression6 (':' type=TypeDef)?;
 
 XExpressionBlock:
-	'{' {OperationBlock} (steps+=OperationStep)* '}'
+	'{' {OperationBlock} (steps+=OperationStep)*  ('return' result=XExpression)? '}'
 ;
 
 XPrimaryExpression:

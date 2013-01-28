@@ -228,6 +228,7 @@
     </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//OperationBlock">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//OperationBlock/steps"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//OperationBlock/result"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

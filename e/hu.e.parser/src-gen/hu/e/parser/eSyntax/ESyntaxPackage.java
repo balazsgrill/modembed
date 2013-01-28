@@ -1941,13 +1941,22 @@ public interface ESyntaxPackage extends EPackage
   int OPERATION_BLOCK__STEPS = XEXPRESSION_BLOCK_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Result</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERATION_BLOCK__RESULT = XEXPRESSION_BLOCK_FEATURE_COUNT + 1;
+
+  /**
    * The number of structural features of the '<em>Operation Block</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int OPERATION_BLOCK_FEATURE_COUNT = XEXPRESSION_BLOCK_FEATURE_COUNT + 1;
+  int OPERATION_BLOCK_FEATURE_COUNT = XEXPRESSION_BLOCK_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.IntegerKind <em>Integer Kind</em>}' enum.
@@ -3448,6 +3457,17 @@ public interface ESyntaxPackage extends EPackage
   EReference getOperationBlock_Steps();
 
   /**
+   * Returns the meta object for the containment reference '{@link hu.e.parser.eSyntax.OperationBlock#getResult <em>Result</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Result</em>'.
+   * @see hu.e.parser.eSyntax.OperationBlock#getResult()
+   * @see #getOperationBlock()
+   * @generated
+   */
+  EReference getOperationBlock_Result();
+
+  /**
    * Returns the meta object for enum '{@link hu.e.parser.eSyntax.IntegerKind <em>Integer Kind</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4735,6 +4755,14 @@ public interface ESyntaxPackage extends EPackage
      * @generated
      */
     EReference OPERATION_BLOCK__STEPS = eINSTANCE.getOperationBlock_Steps();
+
+    /**
+     * The meta object literal for the '<em><b>Result</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OPERATION_BLOCK__RESULT = eINSTANCE.getOperationBlock_Result();
 
     /**
      * The meta object literal for the '{@link hu.e.parser.eSyntax.IntegerKind <em>Integer Kind</em>}' enum.

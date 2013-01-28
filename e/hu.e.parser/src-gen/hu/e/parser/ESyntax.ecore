@@ -270,5 +270,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="OperationBlock" eSuperTypes="#//XExpressionBlock">
     <eStructuralFeatures xsi:type="ecore:EReference" name="steps" upperBound="-1"
         eType="#//OperationStep" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="result" eType="#//XExpression"
+        containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -2736,9 +2736,31 @@ ruleXExpressionBlock returns [EObject current=null]
 	    }
 
 )
-)*	otherlv_3='}' 
+)*(	otherlv_3='return' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getXExpressionBlockAccess().getRightCurlyBracketKeyword_3());
+    	newLeafNode(otherlv_3, grammarAccess.getXExpressionBlockAccess().getReturnKeyword_3_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getXExpressionBlockAccess().getResultXExpressionParserRuleCall_3_1_0()); 
+	    }
+		lv_result_4_0=ruleXExpression		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getXExpressionBlockRule());
+	        }
+       		set(
+       			$current, 
+       			"result",
+        		lv_result_4_0, 
+        		"XExpression");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?	otherlv_5='}' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getXExpressionBlockAccess().getRightCurlyBracketKeyword_4());
     }
 )
 ;

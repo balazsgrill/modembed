@@ -1605,14 +1605,18 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cOperationBlockAction_1 = (Action)cGroup.eContents().get(1);
 		private final Assignment cStepsAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cStepsOperationStepParserRuleCall_2_0 = (RuleCall)cStepsAssignment_2.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cReturnKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cResultAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cResultXExpressionParserRuleCall_3_1_0 = (RuleCall)cResultAssignment_3_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//XExpressionBlock:
 		//
-		//	"{" {OperationBlock} steps+=OperationStep* "}";
+		//	"{" {OperationBlock} steps+=OperationStep* ("return" result=XExpression)? "}";
 		public ParserRule getRule() { return rule; }
 
-		//"{" {OperationBlock} steps+=OperationStep* "}"
+		//"{" {OperationBlock} steps+=OperationStep* ("return" result=XExpression)? "}"
 		public Group getGroup() { return cGroup; }
 
 		//"{"
@@ -1627,8 +1631,20 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		//OperationStep
 		public RuleCall getStepsOperationStepParserRuleCall_2_0() { return cStepsOperationStepParserRuleCall_2_0; }
 
+		//("return" result=XExpression)?
+		public Group getGroup_3() { return cGroup_3; }
+
+		//"return"
+		public Keyword getReturnKeyword_3_0() { return cReturnKeyword_3_0; }
+
+		//result=XExpression
+		public Assignment getResultAssignment_3_1() { return cResultAssignment_3_1; }
+
+		//XExpression
+		public RuleCall getResultXExpressionParserRuleCall_3_1_0() { return cResultXExpressionParserRuleCall_3_1_0; }
+
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
 
 	public class XPrimaryExpressionElements extends AbstractParserRuleElementFinder {
@@ -3215,7 +3231,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 
 	//XExpressionBlock:
 	//
-	//	"{" {OperationBlock} steps+=OperationStep* "}";
+	//	"{" {OperationBlock} steps+=OperationStep* ("return" result=XExpression)? "}";
 	public XExpressionBlockElements getXExpressionBlockAccess() {
 		return (pXExpressionBlock != null) ? pXExpressionBlock : (pXExpressionBlock = new XExpressionBlockElements());
 	}
