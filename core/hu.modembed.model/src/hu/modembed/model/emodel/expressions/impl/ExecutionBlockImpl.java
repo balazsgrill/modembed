@@ -54,7 +54,7 @@ public class ExecutionBlockImpl extends ExecutionStepImpl implements ExecutionBl
 	 * @generated
 	 * @ordered
 	 */
-	protected Expression result;
+	protected ExecutionStep result;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -92,7 +92,7 @@ public class ExecutionBlockImpl extends ExecutionStepImpl implements ExecutionBl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Expression getResult() {
+	public ExecutionStep getResult() {
 		return result;
 	}
 
@@ -101,8 +101,8 @@ public class ExecutionBlockImpl extends ExecutionStepImpl implements ExecutionBl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetResult(Expression newResult, NotificationChain msgs) {
-		Expression oldResult = result;
+	public NotificationChain basicSetResult(ExecutionStep newResult, NotificationChain msgs) {
+		ExecutionStep oldResult = result;
 		result = newResult;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ExpressionsPackage.EXECUTION_BLOCK__RESULT, oldResult, newResult);
@@ -116,7 +116,7 @@ public class ExecutionBlockImpl extends ExecutionStepImpl implements ExecutionBl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setResult(Expression newResult) {
+	public void setResult(ExecutionStep newResult) {
 		if (newResult != result) {
 			NotificationChain msgs = null;
 			if (result != null)
@@ -176,7 +176,7 @@ public class ExecutionBlockImpl extends ExecutionStepImpl implements ExecutionBl
 				getSteps().addAll((Collection<? extends ExecutionStep>)newValue);
 				return;
 			case ExpressionsPackage.EXECUTION_BLOCK__RESULT:
-				setResult((Expression)newValue);
+				setResult((ExecutionStep)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -194,7 +194,7 @@ public class ExecutionBlockImpl extends ExecutionStepImpl implements ExecutionBl
 				getSteps().clear();
 				return;
 			case ExpressionsPackage.EXECUTION_BLOCK__RESULT:
-				setResult((Expression)null);
+				setResult((ExecutionStep)null);
 				return;
 		}
 		super.eUnset(featureID);

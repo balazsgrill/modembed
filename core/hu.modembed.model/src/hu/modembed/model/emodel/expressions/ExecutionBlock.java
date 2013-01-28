@@ -47,12 +47,12 @@ public interface ExecutionBlock extends ExecutionStep {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Result</em>' containment reference.
-	 * @see #setResult(Expression)
+	 * @see #setResult(ExecutionStep)
 	 * @see hu.modembed.model.emodel.expressions.ExpressionsPackage#getExecutionBlock_Result()
 	 * @model containment="true"
 	 * @generated
 	 */
-	Expression getResult();
+	ExecutionStep getResult();
 
 	/**
 	 * Sets the value of the '{@link hu.modembed.model.emodel.expressions.ExecutionBlock#getResult <em>Result</em>}' containment reference.
@@ -62,6 +62,6 @@ public interface ExecutionBlock extends ExecutionStep {
 	 * @see #getResult()
 	 * @generated
 	 */
-	void setResult(Expression value);
+	void setResult(ExecutionStep value);
 
 } // ExecutionBlock

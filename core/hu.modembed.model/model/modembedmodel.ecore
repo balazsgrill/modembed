@@ -291,7 +291,7 @@
       <eClassifiers xsi:type="ecore:EClass" name="ExecutionBlock" eSuperTypes="#//emodel/expressions/ExecutionStep">
         <eStructuralFeatures xsi:type="ecore:EReference" name="steps" upperBound="-1"
             eType="#//emodel/expressions/ExecutionStep" containment="true"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="result" eType="#//emodel/expressions/Expression"
+        <eStructuralFeatures xsi:type="ecore:EReference" name="result" eType="#//emodel/expressions/ExecutionStep"
             containment="true"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Call" eSuperTypes="#//emodel/expressions/Expression">

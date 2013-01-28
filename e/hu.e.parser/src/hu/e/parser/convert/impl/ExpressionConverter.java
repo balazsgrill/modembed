@@ -258,6 +258,9 @@ public class ExpressionConverter {
 		}
 		if (x instanceof OperationBlock){
 			ExecutionBlock block = ExpressionsFactory.eINSTANCE.createExecutionBlock();
+			if (((OperationBlock) x).getResult() != null){
+				block.setResult(convert(((OperationBlock) x).getResult(), scope));
+			}
 			ICrossReferenceScope sscope = new ExecutionBlockCrossReferenceScope(block, scope);
 			for(OperationStep step : ((OperationBlock) x).getSteps()){
 				block.getSteps().add(convert(step, sscope));
