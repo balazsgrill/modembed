@@ -35,6 +35,7 @@ import hu.modembed.model.emodel.expressions.IntegerLiteralExpression;
 import hu.modembed.model.emodel.expressions.LiteralExpression;
 import hu.modembed.model.emodel.expressions.LocalVariable;
 import hu.modembed.model.emodel.expressions.PrimitiveLiteralExpression;
+import hu.modembed.model.emodel.expressions.ResultVariableReference;
 import hu.modembed.model.emodel.expressions.VariableReference;
 import hu.modembed.model.emodel.impl.EmodelPackageImpl;
 import hu.modembed.model.emodel.types.TypesPackage;
@@ -127,6 +128,13 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * @generated
 	 */
 	private EClass localVariableEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass resultVariableReferenceEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -302,15 +310,6 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getExecutionBlock_Result() {
-		return (EReference)executionBlockEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getCall() {
 		return callEClass;
 	}
@@ -331,6 +330,15 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 */
 	public EReference getCall_Function() {
 		return (EReference)callEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getCall_Result() {
+		return (EReference)callEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -419,6 +427,15 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getResultVariableReference() {
+		return resultVariableReferenceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getCompilationLogStepSeverity() {
 		return compilationLogStepSeverityEEnum;
 	}
@@ -460,11 +477,11 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 
 		executionBlockEClass = createEClass(EXECUTION_BLOCK);
 		createEReference(executionBlockEClass, EXECUTION_BLOCK__STEPS);
-		createEReference(executionBlockEClass, EXECUTION_BLOCK__RESULT);
 
 		callEClass = createEClass(CALL);
 		createEReference(callEClass, CALL__PARAMETERS);
 		createEReference(callEClass, CALL__FUNCTION);
+		createEReference(callEClass, CALL__RESULT);
 
 		variableReferenceEClass = createEClass(VARIABLE_REFERENCE);
 		createEReference(variableReferenceEClass, VARIABLE_REFERENCE__VARIABLE);
@@ -479,6 +496,8 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 		createEAttribute(compilationLogStepEClass, COMPILATION_LOG_STEP__MESSAGE);
 
 		localVariableEClass = createEClass(LOCAL_VARIABLE);
+
+		resultVariableReferenceEClass = createEClass(RESULT_VARIABLE_REFERENCE);
 
 		// Create enums
 		compilationLogStepSeverityEEnum = createEEnum(COMPILATION_LOG_STEP_SEVERITY);
@@ -528,6 +547,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 		compilationLogStepEClass.getESuperTypes().add(this.getExecutionStep());
 		localVariableEClass.getESuperTypes().add(this.getExecutionStep());
 		localVariableEClass.getESuperTypes().add(theEmodelPackage.getVariable());
+		resultVariableReferenceEClass.getESuperTypes().add(this.getExpression());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(expressionEClass, Expression.class, "Expression", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -539,11 +559,11 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 
 		initEClass(executionBlockEClass, ExecutionBlock.class, "ExecutionBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getExecutionBlock_Steps(), this.getExecutionStep(), null, "steps", null, 0, -1, ExecutionBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getExecutionBlock_Result(), this.getExecutionStep(), null, "result", null, 0, 1, ExecutionBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(callEClass, Call.class, "Call", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCall_Parameters(), this.getExecutionStep(), null, "parameters", null, 0, -1, Call.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCall_Function(), theEmodelPackage.getCallableElement(), null, "function", null, 1, 1, Call.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCall_Result(), this.getExecutionStep(), null, "result", null, 0, 1, Call.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(variableReferenceEClass, VariableReference.class, "VariableReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getVariableReference_Variable(), theEmodelPackage.getVariable(), null, "variable", null, 1, 1, VariableReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -558,6 +578,8 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 		initEAttribute(getCompilationLogStep_Message(), ecorePackage.getEString(), "message", null, 1, 1, CompilationLogStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(localVariableEClass, LocalVariable.class, "LocalVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(resultVariableReferenceEClass, ResultVariableReference.class, "ResultVariableReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(compilationLogStepSeverityEEnum, CompilationLogStepSeverity.class, "CompilationLogStepSeverity");

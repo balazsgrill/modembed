@@ -96,6 +96,7 @@ public class ESyntaxParser extends AbstractContentAssistParser {
 					put(grammarAccess.getRegisterVariableAccess().getGroup(), "rule__RegisterVariable__Group__0");
 					put(grammarAccess.getOperationStepAccess().getGroup_0(), "rule__OperationStep__Group_0__0");
 					put(grammarAccess.getVariableAccess().getGroup(), "rule__Variable__Group__0");
+					put(grammarAccess.getResultVariableReferenceAccess().getGroup(), "rule__ResultVariableReference__Group__0");
 					put(grammarAccess.getOperationCallAccess().getGroup(), "rule__OperationCall__Group__0");
 					put(grammarAccess.getOperationCallAccess().getGroup_2(), "rule__OperationCall__Group_2__0");
 					put(grammarAccess.getOperationCallAccess().getGroup_2_1(), "rule__OperationCall__Group_2_1__0");
@@ -110,7 +111,6 @@ public class ESyntaxParser extends AbstractContentAssistParser {
 					put(grammarAccess.getXExpressionAccess().getGroup(), "rule__XExpression__Group__0");
 					put(grammarAccess.getXExpressionAccess().getGroup_1(), "rule__XExpression__Group_1__0");
 					put(grammarAccess.getXExpressionBlockAccess().getGroup(), "rule__XExpressionBlock__Group__0");
-					put(grammarAccess.getXExpressionBlockAccess().getGroup_3(), "rule__XExpressionBlock__Group_3__0");
 					put(grammarAccess.getXSizeOfExpressionAccess().getGroup(), "rule__XSizeOfExpression__Group__0");
 					put(grammarAccess.getXStructExpressionAccess().getGroup(), "rule__XStructExpression__Group__0");
 					put(grammarAccess.getXStructExpressionAccess().getGroup_2(), "rule__XStructExpression__Group_2__0");
@@ -201,7 +201,6 @@ public class ESyntaxParser extends AbstractContentAssistParser {
 					put(grammarAccess.getParameterVariableAccess().getDefaultAssignment_4_1(), "rule__ParameterVariable__DefaultAssignment_4_1");
 					put(grammarAccess.getXExpressionAccess().getTypeAssignment_1_1(), "rule__XExpression__TypeAssignment_1_1");
 					put(grammarAccess.getXExpressionBlockAccess().getStepsAssignment_2(), "rule__XExpressionBlock__StepsAssignment_2");
-					put(grammarAccess.getXExpressionBlockAccess().getResultAssignment_3_1(), "rule__XExpressionBlock__ResultAssignment_3_1");
 					put(grammarAccess.getXSizeOfExpressionAccess().getTypeAssignment_2(), "rule__XSizeOfExpression__TypeAssignment_2");
 					put(grammarAccess.getXStructExpressionAccess().getValuesAssignment_1(), "rule__XStructExpression__ValuesAssignment_1");
 					put(grammarAccess.getXStructExpressionAccess().getValuesAssignment_2_1(), "rule__XStructExpression__ValuesAssignment_2_1");

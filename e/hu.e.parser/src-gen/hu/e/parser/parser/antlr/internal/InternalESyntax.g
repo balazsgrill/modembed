@@ -2094,6 +2094,37 @@ ruleVariable returns [EObject current=null]
 
 
 
+// Entry rule entryRuleResultVariableReference
+entryRuleResultVariableReference returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getResultVariableReferenceRule()); }
+	 iv_ruleResultVariableReference=ruleResultVariableReference 
+	 { $current=$iv_ruleResultVariableReference.current; } 
+	 EOF 
+;
+
+// Rule ResultVariableReference
+ruleResultVariableReference returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getResultVariableReferenceAccess().getResultVariableReferenceAction_0(),
+            $current);
+    }
+)	otherlv_1='result' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getResultVariableReferenceAccess().getResultKeyword_1());
+    }
+)
+;
+
+
+
+
+
 // Entry rule entryRuleVariableReference
 entryRuleVariableReference returns [EObject current=null] 
 	:
@@ -2736,31 +2767,9 @@ ruleXExpressionBlock returns [EObject current=null]
 	    }
 
 )
-)*(	otherlv_3='return' 
+)*	otherlv_3='}' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getXExpressionBlockAccess().getReturnKeyword_3_0());
-    }
-(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getXExpressionBlockAccess().getResultXExpressionParserRuleCall_3_1_0()); 
-	    }
-		lv_result_4_0=ruleXExpression		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getXExpressionBlockRule());
-	        }
-       		set(
-       			$current, 
-       			"result",
-        		lv_result_4_0, 
-        		"XExpression");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-))?	otherlv_5='}' 
-    {
-    	newLeafNode(otherlv_5, grammarAccess.getXExpressionBlockAccess().getRightCurlyBracketKeyword_4());
+    	newLeafNode(otherlv_3, grammarAccess.getXExpressionBlockAccess().getRightCurlyBracketKeyword_3());
     }
 )
 ;
@@ -2860,6 +2869,16 @@ ruleXPrimaryExpression returns [EObject current=null]
     this_XExpressionBlock_7=ruleXExpressionBlock
     { 
         $current = $this_XExpressionBlock_7.current; 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getXPrimaryExpressionAccess().getResultVariableReferenceParserRuleCall_8()); 
+    }
+    this_ResultVariableReference_8=ruleResultVariableReference
+    { 
+        $current = $this_ResultVariableReference_8.current; 
         afterParserOrEnumRuleCall();
     }
 )

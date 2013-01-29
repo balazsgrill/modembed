@@ -257,6 +257,15 @@ public interface ESyntaxFactory extends EFactory
   OperationStep createOperationStep();
 
   /**
+   * Returns a new object of class '<em>Result Variable Reference</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Result Variable Reference</em>'.
+   * @generated
+   */
+  ResultVariableReference createResultVariableReference();
+
+  /**
    * Returns a new object of class '<em>Variable Reference</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

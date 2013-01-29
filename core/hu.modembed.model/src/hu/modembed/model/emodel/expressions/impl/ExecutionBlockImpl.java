@@ -29,7 +29,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link hu.modembed.model.emodel.expressions.impl.ExecutionBlockImpl#getSteps <em>Steps</em>}</li>
- *   <li>{@link hu.modembed.model.emodel.expressions.impl.ExecutionBlockImpl#getResult <em>Result</em>}</li>
  * </ul>
  * </p>
  *
@@ -45,16 +44,6 @@ public class ExecutionBlockImpl extends ExecutionStepImpl implements ExecutionBl
 	 * @ordered
 	 */
 	protected EList<ExecutionStep> steps;
-
-	/**
-	 * The cached value of the '{@link #getResult() <em>Result</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getResult()
-	 * @generated
-	 * @ordered
-	 */
-	protected ExecutionStep result;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -92,56 +81,11 @@ public class ExecutionBlockImpl extends ExecutionStepImpl implements ExecutionBl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ExecutionStep getResult() {
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetResult(ExecutionStep newResult, NotificationChain msgs) {
-		ExecutionStep oldResult = result;
-		result = newResult;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ExpressionsPackage.EXECUTION_BLOCK__RESULT, oldResult, newResult);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setResult(ExecutionStep newResult) {
-		if (newResult != result) {
-			NotificationChain msgs = null;
-			if (result != null)
-				msgs = ((InternalEObject)result).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ExpressionsPackage.EXECUTION_BLOCK__RESULT, null, msgs);
-			if (newResult != null)
-				msgs = ((InternalEObject)newResult).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ExpressionsPackage.EXECUTION_BLOCK__RESULT, null, msgs);
-			msgs = basicSetResult(newResult, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ExpressionsPackage.EXECUTION_BLOCK__RESULT, newResult, newResult));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case ExpressionsPackage.EXECUTION_BLOCK__STEPS:
 				return ((InternalEList<?>)getSteps()).basicRemove(otherEnd, msgs);
-			case ExpressionsPackage.EXECUTION_BLOCK__RESULT:
-				return basicSetResult(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -156,8 +100,6 @@ public class ExecutionBlockImpl extends ExecutionStepImpl implements ExecutionBl
 		switch (featureID) {
 			case ExpressionsPackage.EXECUTION_BLOCK__STEPS:
 				return getSteps();
-			case ExpressionsPackage.EXECUTION_BLOCK__RESULT:
-				return getResult();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -175,9 +117,6 @@ public class ExecutionBlockImpl extends ExecutionStepImpl implements ExecutionBl
 				getSteps().clear();
 				getSteps().addAll((Collection<? extends ExecutionStep>)newValue);
 				return;
-			case ExpressionsPackage.EXECUTION_BLOCK__RESULT:
-				setResult((ExecutionStep)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -193,9 +132,6 @@ public class ExecutionBlockImpl extends ExecutionStepImpl implements ExecutionBl
 			case ExpressionsPackage.EXECUTION_BLOCK__STEPS:
 				getSteps().clear();
 				return;
-			case ExpressionsPackage.EXECUTION_BLOCK__RESULT:
-				setResult((ExecutionStep)null);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -210,8 +146,6 @@ public class ExecutionBlockImpl extends ExecutionStepImpl implements ExecutionBl
 		switch (featureID) {
 			case ExpressionsPackage.EXECUTION_BLOCK__STEPS:
 				return steps != null && !steps.isEmpty();
-			case ExpressionsPackage.EXECUTION_BLOCK__RESULT:
-				return result != null;
 		}
 		return super.eIsSet(featureID);
 	}

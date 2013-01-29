@@ -76,6 +76,15 @@ public interface ExpressionsFactory extends EFactory {
 	LocalVariable createLocalVariable();
 
 	/**
+	 * Returns a new object of class '<em>Result Variable Reference</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Result Variable Reference</em>'.
+	 * @generated
+	 */
+	ResultVariableReference createResultVariableReference();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

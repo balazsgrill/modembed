@@ -98,6 +98,7 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OperationStep"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ResultVariableReference" eSuperTypes="#//XPrimaryExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="VariableReference" eSuperTypes="#//XPrimaryExpression">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="var" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
@@ -270,7 +271,5 @@
   <eClassifiers xsi:type="ecore:EClass" name="OperationBlock" eSuperTypes="#//XExpressionBlock">
     <eStructuralFeatures xsi:type="ecore:EReference" name="steps" upperBound="-1"
         eType="#//OperationStep" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="result" eType="#//XExpression"
-        containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

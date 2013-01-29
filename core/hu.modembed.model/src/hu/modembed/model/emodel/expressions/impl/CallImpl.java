@@ -30,6 +30,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link hu.modembed.model.emodel.expressions.impl.CallImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link hu.modembed.model.emodel.expressions.impl.CallImpl#getFunction <em>Function</em>}</li>
+ *   <li>{@link hu.modembed.model.emodel.expressions.impl.CallImpl#getResult <em>Result</em>}</li>
  * </ul>
  * </p>
  *
@@ -55,6 +56,16 @@ public class CallImpl extends ExpressionImpl implements Call {
 	 * @ordered
 	 */
 	protected CallableElement function;
+
+	/**
+	 * The cached value of the '{@link #getResult() <em>Result</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getResult()
+	 * @generated
+	 * @ordered
+	 */
+	protected ExecutionStep result;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -130,11 +141,56 @@ public class CallImpl extends ExpressionImpl implements Call {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ExecutionStep getResult() {
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetResult(ExecutionStep newResult, NotificationChain msgs) {
+		ExecutionStep oldResult = result;
+		result = newResult;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ExpressionsPackage.CALL__RESULT, oldResult, newResult);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setResult(ExecutionStep newResult) {
+		if (newResult != result) {
+			NotificationChain msgs = null;
+			if (result != null)
+				msgs = ((InternalEObject)result).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ExpressionsPackage.CALL__RESULT, null, msgs);
+			if (newResult != null)
+				msgs = ((InternalEObject)newResult).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ExpressionsPackage.CALL__RESULT, null, msgs);
+			msgs = basicSetResult(newResult, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ExpressionsPackage.CALL__RESULT, newResult, newResult));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case ExpressionsPackage.CALL__PARAMETERS:
 				return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
+			case ExpressionsPackage.CALL__RESULT:
+				return basicSetResult(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -152,6 +208,8 @@ public class CallImpl extends ExpressionImpl implements Call {
 			case ExpressionsPackage.CALL__FUNCTION:
 				if (resolve) return getFunction();
 				return basicGetFunction();
+			case ExpressionsPackage.CALL__RESULT:
+				return getResult();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -172,6 +230,9 @@ public class CallImpl extends ExpressionImpl implements Call {
 			case ExpressionsPackage.CALL__FUNCTION:
 				setFunction((CallableElement)newValue);
 				return;
+			case ExpressionsPackage.CALL__RESULT:
+				setResult((ExecutionStep)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -190,6 +251,9 @@ public class CallImpl extends ExpressionImpl implements Call {
 			case ExpressionsPackage.CALL__FUNCTION:
 				setFunction((CallableElement)null);
 				return;
+			case ExpressionsPackage.CALL__RESULT:
+				setResult((ExecutionStep)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -206,6 +270,8 @@ public class CallImpl extends ExpressionImpl implements Call {
 				return parameters != null && !parameters.isEmpty();
 			case ExpressionsPackage.CALL__FUNCTION:
 				return function != null;
+			case ExpressionsPackage.CALL__RESULT:
+				return result != null;
 		}
 		return super.eIsSet(featureID);
 	}

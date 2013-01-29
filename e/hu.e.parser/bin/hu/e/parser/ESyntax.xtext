@@ -194,6 +194,10 @@ Variable:
 	type=TypeDef name=ID
 ;
 
+ResultVariableReference:
+	{ResultVariableReference} 'result'
+;
+
 VariableReference:
 	var=QualifiedName
 ;
@@ -243,12 +247,12 @@ XExpression:
 	XExpression6 (':' type=TypeDef)?;
 
 XExpressionBlock:
-	'{' {OperationBlock} (steps+=OperationStep)*  ('return' result=XExpression)? '}'
+	'{' {OperationBlock} (steps+=OperationStep)* '}'
 ;
 
 XPrimaryExpression:
 	XExpressionLiteral | XParenthesizedExpression | XIsLiteralExpression | VariableReference | OperationCall
-	 | XStructExpression | XSizeOfExpression | XExpressionBlock
+	 | XStructExpression | XSizeOfExpression | XExpressionBlock | ResultVariableReference
 ;
 
 XSizeOfExpression:

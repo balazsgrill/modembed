@@ -291,14 +291,14 @@
       <eClassifiers xsi:type="ecore:EClass" name="ExecutionBlock" eSuperTypes="#//emodel/expressions/ExecutionStep">
         <eStructuralFeatures xsi:type="ecore:EReference" name="steps" upperBound="-1"
             eType="#//emodel/expressions/ExecutionStep" containment="true"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="result" eType="#//emodel/expressions/ExecutionStep"
-            containment="true"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Call" eSuperTypes="#//emodel/expressions/Expression">
         <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
             eType="#//emodel/expressions/ExecutionStep" containment="true"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="function" lowerBound="1"
             eType="#//emodel/CallableElement"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="result" eType="#//emodel/expressions/ExecutionStep"
+            containment="true"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="VariableReference" eSuperTypes="#//emodel/expressions/Expression">
         <eStructuralFeatures xsi:type="ecore:EReference" name="variable" lowerBound="1"
@@ -322,6 +322,7 @@
         <eLiterals name="ERROR" value="3"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="LocalVariable" eSuperTypes="#//emodel/expressions/ExecutionStep #//emodel/Variable"/>
+      <eClassifiers xsi:type="ecore:EClass" name="ResultVariableReference" eSuperTypes="#//emodel/expressions/Expression"/>
     </eSubpackages>
   </eSubpackages>
   <eSubpackages name="architecture" nsURI="http://modembed.hu/architecture" nsPrefix="architecture">

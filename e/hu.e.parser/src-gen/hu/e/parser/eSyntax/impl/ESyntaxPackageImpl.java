@@ -36,6 +36,7 @@ import hu.e.parser.eSyntax.ParameterVariable;
 import hu.e.parser.eSyntax.PointerTypeDef;
 import hu.e.parser.eSyntax.RefTypeDef;
 import hu.e.parser.eSyntax.RegisterVariable;
+import hu.e.parser.eSyntax.ResultVariableReference;
 import hu.e.parser.eSyntax.StructTypeDef;
 import hu.e.parser.eSyntax.StructTypeDefMember;
 import hu.e.parser.eSyntax.Type;
@@ -262,6 +263,13 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * @generated
    */
   private EClass operationStepEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass resultVariableReferenceEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1194,6 +1202,16 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getResultVariableReference()
+  {
+    return resultVariableReferenceEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getVariableReference()
   {
     return variableReferenceEClass;
@@ -1934,16 +1952,6 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getOperationBlock_Result()
-  {
-    return (EReference)operationBlockEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EEnum getIntegerKind()
   {
     return integerKindEEnum;
@@ -2144,6 +2152,8 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
 
     operationStepEClass = createEClass(OPERATION_STEP);
 
+    resultVariableReferenceEClass = createEClass(RESULT_VARIABLE_REFERENCE);
+
     variableReferenceEClass = createEClass(VARIABLE_REFERENCE);
     createEAttribute(variableReferenceEClass, VARIABLE_REFERENCE__VAR);
 
@@ -2247,7 +2257,6 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
 
     operationBlockEClass = createEClass(OPERATION_BLOCK);
     createEReference(operationBlockEClass, OPERATION_BLOCK__STEPS);
-    createEReference(operationBlockEClass, OPERATION_BLOCK__RESULT);
 
     // Create enums
     integerKindEEnum = createEEnum(INTEGER_KIND);
@@ -2308,6 +2317,7 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     variableEClass.getESuperTypes().add(this.getLibraryItem());
     variableEClass.getESuperTypes().add(this.getOperationStep());
     variableEClass.getESuperTypes().add(this.getOperationParameter());
+    resultVariableReferenceEClass.getESuperTypes().add(this.getXPrimaryExpression());
     variableReferenceEClass.getESuperTypes().add(this.getXPrimaryExpression());
     operationCallEClass.getESuperTypes().add(this.getXPrimaryExpression());
     operationEClass.getESuperTypes().add(this.getLibraryItem());
@@ -2415,6 +2425,8 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
 
     initEClass(operationStepEClass, OperationStep.class, "OperationStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+    initEClass(resultVariableReferenceEClass, ResultVariableReference.class, "ResultVariableReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
     initEClass(variableReferenceEClass, VariableReference.class, "VariableReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getVariableReference_Var(), ecorePackage.getEString(), "var", null, 0, 1, VariableReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -2518,7 +2530,6 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
 
     initEClass(operationBlockEClass, OperationBlock.class, "OperationBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getOperationBlock_Steps(), this.getOperationStep(), null, "steps", null, 0, -1, OperationBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getOperationBlock_Result(), this.getXExpression(), null, "result", null, 0, 1, OperationBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Initialize enums and add enum literals
     initEEnum(integerKindEEnum, IntegerKind.class, "IntegerKind");

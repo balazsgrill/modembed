@@ -25,6 +25,7 @@ import hu.e.parser.eSyntax.ParameterVariable;
 import hu.e.parser.eSyntax.PointerTypeDef;
 import hu.e.parser.eSyntax.RefTypeDef;
 import hu.e.parser.eSyntax.RegisterVariable;
+import hu.e.parser.eSyntax.ResultVariableReference;
 import hu.e.parser.eSyntax.StructTypeDef;
 import hu.e.parser.eSyntax.StructTypeDefMember;
 import hu.e.parser.eSyntax.Type;
@@ -219,6 +220,13 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 				if(context == grammarAccess.getLibraryItemRule() ||
 				   context == grammarAccess.getRegisterVariableRule()) {
 					sequence_RegisterVariable(context, (RegisterVariable) semanticObject); 
+					return; 
+				}
+				else break;
+			case ESyntaxPackage.RESULT_VARIABLE_REFERENCE:
+				if(context == grammarAccess.getResultVariableReferenceRule() ||
+				   context == grammarAccess.getXPrimaryExpressionRule()) {
+					sequence_ResultVariableReference(context, (ResultVariableReference) semanticObject); 
 					return; 
 				}
 				else break;
@@ -660,6 +668,15 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 	
 	/**
 	 * Constraint:
+	 *     {ResultVariableReference}
+	 */
+	protected void sequence_ResultVariableReference(EObject context, ResultVariableReference semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (type=TypeDef name=ID)
 	 */
 	protected void sequence_StructTypeDefMember(EObject context, StructTypeDefMember semanticObject) {
@@ -860,7 +877,7 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 	
 	/**
 	 * Constraint:
-	 *     (steps+=OperationStep* result=XExpression?)
+	 *     (steps+=OperationStep*)
 	 */
 	protected void sequence_XExpressionBlock(EObject context, OperationBlock semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

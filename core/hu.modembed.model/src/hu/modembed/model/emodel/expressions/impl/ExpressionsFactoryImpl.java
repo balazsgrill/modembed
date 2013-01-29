@@ -63,6 +63,7 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 			case ExpressionsPackage.INTEGER_LITERAL_EXPRESSION: return createIntegerLiteralExpression();
 			case ExpressionsPackage.COMPILATION_LOG_STEP: return createCompilationLogStep();
 			case ExpressionsPackage.LOCAL_VARIABLE: return createLocalVariable();
+			case ExpressionsPackage.RESULT_VARIABLE_REFERENCE: return createResultVariableReference();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -156,6 +157,16 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 	public LocalVariable createLocalVariable() {
 		LocalVariableImpl localVariable = new LocalVariableImpl();
 		return localVariable;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ResultVariableReference createResultVariableReference() {
+		ResultVariableReferenceImpl resultVariableReference = new ResultVariableReferenceImpl();
+		return resultVariableReference;
 	}
 
 	/**

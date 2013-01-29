@@ -226,22 +226,13 @@ public interface ExpressionsPackage extends EPackage {
 	int EXECUTION_BLOCK__STEPS = EXECUTION_STEP_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Result</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXECUTION_BLOCK__RESULT = EXECUTION_STEP_FEATURE_COUNT + 1;
-
-	/**
 	 * The number of structural features of the '<em>Execution Block</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTION_BLOCK_FEATURE_COUNT = EXECUTION_STEP_FEATURE_COUNT + 2;
+	int EXECUTION_BLOCK_FEATURE_COUNT = EXECUTION_STEP_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
@@ -280,13 +271,22 @@ public interface ExpressionsPackage extends EPackage {
 	int CALL__FUNCTION = EXPRESSION_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Result</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALL__RESULT = EXPRESSION_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Call</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CALL_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
+	int CALL_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link hu.modembed.model.emodel.expressions.impl.VariableReferenceImpl <em>Variable Reference</em>}' class.
@@ -546,6 +546,43 @@ public interface ExpressionsPackage extends EPackage {
 	int LOCAL_VARIABLE_FEATURE_COUNT = EXECUTION_STEP_FEATURE_COUNT + 2;
 
 	/**
+	 * The meta object id for the '{@link hu.modembed.model.emodel.expressions.impl.ResultVariableReferenceImpl <em>Result Variable Reference</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.modembed.model.emodel.expressions.impl.ResultVariableReferenceImpl
+	 * @see hu.modembed.model.emodel.expressions.impl.ExpressionsPackageImpl#getResultVariableReference()
+	 * @generated
+	 */
+	int RESULT_VARIABLE_REFERENCE = 10;
+
+	/**
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESULT_VARIABLE_REFERENCE__ORIGINS = EXPRESSION__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESULT_VARIABLE_REFERENCE__DESCRIPTION = EXPRESSION__DESCRIPTION;
+
+	/**
+	 * The number of structural features of the '<em>Result Variable Reference</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESULT_VARIABLE_REFERENCE_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link hu.modembed.model.emodel.expressions.CompilationLogStepSeverity <em>Compilation Log Step Severity</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -553,7 +590,7 @@ public interface ExpressionsPackage extends EPackage {
 	 * @see hu.modembed.model.emodel.expressions.impl.ExpressionsPackageImpl#getCompilationLogStepSeverity()
 	 * @generated
 	 */
-	int COMPILATION_LOG_STEP_SEVERITY = 10;
+	int COMPILATION_LOG_STEP_SEVERITY = 11;
 
 
 	/**
@@ -619,17 +656,6 @@ public interface ExpressionsPackage extends EPackage {
 	EReference getExecutionBlock_Steps();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link hu.modembed.model.emodel.expressions.ExecutionBlock#getResult <em>Result</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Result</em>'.
-	 * @see hu.modembed.model.emodel.expressions.ExecutionBlock#getResult()
-	 * @see #getExecutionBlock()
-	 * @generated
-	 */
-	EReference getExecutionBlock_Result();
-
-	/**
 	 * Returns the meta object for class '{@link hu.modembed.model.emodel.expressions.Call <em>Call</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -660,6 +686,17 @@ public interface ExpressionsPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getCall_Function();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link hu.modembed.model.emodel.expressions.Call#getResult <em>Result</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Result</em>'.
+	 * @see hu.modembed.model.emodel.expressions.Call#getResult()
+	 * @see #getCall()
+	 * @generated
+	 */
+	EReference getCall_Result();
 
 	/**
 	 * Returns the meta object for class '{@link hu.modembed.model.emodel.expressions.VariableReference <em>Variable Reference</em>}'.
@@ -756,6 +793,16 @@ public interface ExpressionsPackage extends EPackage {
 	EClass getLocalVariable();
 
 	/**
+	 * Returns the meta object for class '{@link hu.modembed.model.emodel.expressions.ResultVariableReference <em>Result Variable Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Result Variable Reference</em>'.
+	 * @see hu.modembed.model.emodel.expressions.ResultVariableReference
+	 * @generated
+	 */
+	EClass getResultVariableReference();
+
+	/**
 	 * Returns the meta object for enum '{@link hu.modembed.model.emodel.expressions.CompilationLogStepSeverity <em>Compilation Log Step Severity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -844,14 +891,6 @@ public interface ExpressionsPackage extends EPackage {
 		EReference EXECUTION_BLOCK__STEPS = eINSTANCE.getExecutionBlock_Steps();
 
 		/**
-		 * The meta object literal for the '<em><b>Result</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference EXECUTION_BLOCK__RESULT = eINSTANCE.getExecutionBlock_Result();
-
-		/**
 		 * The meta object literal for the '{@link hu.modembed.model.emodel.expressions.impl.CallImpl <em>Call</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -876,6 +915,14 @@ public interface ExpressionsPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CALL__FUNCTION = eINSTANCE.getCall_Function();
+
+		/**
+		 * The meta object literal for the '<em><b>Result</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CALL__RESULT = eINSTANCE.getCall_Result();
 
 		/**
 		 * The meta object literal for the '{@link hu.modembed.model.emodel.expressions.impl.VariableReferenceImpl <em>Variable Reference</em>}' class.
@@ -958,6 +1005,16 @@ public interface ExpressionsPackage extends EPackage {
 		 * @generated
 		 */
 		EClass LOCAL_VARIABLE = eINSTANCE.getLocalVariable();
+
+		/**
+		 * The meta object literal for the '{@link hu.modembed.model.emodel.expressions.impl.ResultVariableReferenceImpl <em>Result Variable Reference</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.modembed.model.emodel.expressions.impl.ResultVariableReferenceImpl
+		 * @see hu.modembed.model.emodel.expressions.impl.ExpressionsPackageImpl#getResultVariableReference()
+		 * @generated
+		 */
+		EClass RESULT_VARIABLE_REFERENCE = eINSTANCE.getResultVariableReference();
 
 		/**
 		 * The meta object literal for the '{@link hu.modembed.model.emodel.expressions.CompilationLogStepSeverity <em>Compilation Log Step Severity</em>}' enum.
