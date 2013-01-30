@@ -3,26 +3,34 @@
  */
 package hu.e.compiler.tasks;
 
-import java.util.List;
-
 import hu.e.compiler.IModembedTask;
 import hu.e.compiler.ITaskContext;
 import hu.e.compiler.TaskUtils;
+import hu.e.compiler.tasks.internal.AbstractConverter;
+import hu.modembed.model.emodel.EmodelFactory;
 import hu.modembed.model.emodel.Function;
+import hu.modembed.model.emodel.FunctionParameter;
 import hu.modembed.model.emodel.Library;
 import hu.modembed.model.emodel.LibraryElement;
+import hu.modembed.model.emodel.Variable;
+import hu.modembed.model.emodel.VariableParameter;
 import hu.modembed.model.emodel.expressions.Call;
-import hu.modembed.model.emodel.expressions.CompilationLogStep;
 import hu.modembed.model.emodel.expressions.ExecutionBlock;
 import hu.modembed.model.emodel.expressions.ExecutionStep;
 import hu.modembed.model.emodel.expressions.ExpressionsFactory;
+import hu.modembed.model.emodel.expressions.ExpressionsPackage;
 import hu.modembed.model.emodel.expressions.LocalVariable;
+import hu.modembed.model.emodel.expressions.ResultVariableReference;
+import hu.modembed.model.emodel.expressions.VariableReference;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Stack;
 
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * @author balazs.grill
@@ -32,30 +40,153 @@ public class L2ToL1Task implements IModembedTask {
 
 	public static final String INPUT = "input";
 	public static final String OUTPUT = "output";
-
-	private List<ExecutionStep> flatten(Call call){
-		return null;
-	}
+	public static final String ENTRY = "entry";
 	
-	private ExecutionStep convert(ExecutionStep step){
-		if (step instanceof ExecutionBlock){
-			ExecutionBlock result = ExpressionsFactory.eINSTANCE.createExecutionBlock();
-			TaskUtils.addOrigin(result, step);
-			for(ExecutionStep bs : ((ExecutionBlock) step).getSteps()){
-				result.getSteps().add(convert(bs));
+	private class FunctionFlattener extends AbstractConverter{
+		
+		private class VariableStack{
+			
+			private final VariableStack parent;
+			
+			private Variable result;
+			private final Map<Variable, Variable> variableMap = new HashMap<Variable, Variable>();
+			private final Map<FunctionParameter, ExecutionStep> parameterStep = new HashMap<FunctionParameter, ExecutionStep>();
+			
+			public VariableStack(VariableStack parent) {
+				this.parent = parent;
 			}
-			return result;
+			
+			public void put(FunctionParameter parameter, ExecutionStep step){
+				parameterStep.put(parameter, step);
+			}
+			
+			public void putVariable(Variable var, Variable localVar){
+				variableMap.put(var, localVar);
+			}
+			
+			public ExecutionStep get(Variable var){
+				if (variableMap.containsKey(var)) {
+					VariableReference ref = ExpressionsFactory.eINSTANCE.createVariableReference();
+					ref.setVariable(variableMap.get(var));
+					return ref;
+				}
+				if (parameterStep.containsKey(var)){
+					return copy(parameterStep.get(var));
+				}
+				if (parent != null) return parent.get(var);
+				return null;
+			}
+			
+			public Variable getResult() {
+				if (result != null) return result;
+				if (parent != null) return parent.getResult();
+				return null;
+			}
+			
+			public void setResult(Variable result) {
+				this.result = result;
+			}
+			
 		}
 		
-		if (step instanceof CompilationLogStep){
-			return EcoreUtil.copy(step);
+		private final Stack<VariableStack> stack = new Stack<L2ToL1Task.FunctionFlattener.VariableStack>();
+		
+		private VariableStack current(){
+			return stack.peek();
 		}
 		
-		if (step instanceof LocalVariable){
-			return EcoreUtil.copy(step);
+		private void push(){
+			VariableStack parent = current();
+			stack.push(new VariableStack(parent));
 		}
 		
-		return null;
+		private void pop(){
+			stack.pop();
+		}
+		
+		private Function flatten(Function input){
+			Function func = EmodelFactory.eINSTANCE.createFunction();
+			func.setName(input.getName());
+			TaskUtils.addOrigin(func, input);
+			ExecutionStep impl = input.getImplementation();
+			
+			stack.push(new VariableStack(null)); //Push root stack level
+			func.setImplementation(copy(impl));
+			stack.pop();
+			
+			return func;
+		}
+		
+		@Override
+		protected EObject internalCopy(EObject step){
+			if (step instanceof LocalVariable){
+				LocalVariable lv = ExpressionsFactory.eINSTANCE.createLocalVariable();
+				lv.setName(((LocalVariable) step).getName());
+				lv.setType(copy(((LocalVariable) step).getType()));
+				current().putVariable((LocalVariable)step, lv);
+				return lv;
+			}
+			if (step instanceof ResultVariableReference){
+				VariableReference ref = ExpressionsFactory.eINSTANCE.createVariableReference();
+				ref.setVariable(current().getResult());
+				return ref;
+			}
+			if (step instanceof VariableReference){
+				Variable vf = ((VariableReference) step).getVariable();
+				ExecutionStep v = current().get(vf);
+				if (v != null){
+					return v;
+				}else{
+					VariableReference ref = ExpressionsFactory.eINSTANCE.createVariableReference();
+					addReference(ref, ExpressionsPackage.eINSTANCE.getVariableReference_Variable(), vf);
+					return ref;
+				}
+			}
+			if (step instanceof Call){
+				Call call = (Call)step;
+				if (call.getFunction() instanceof Function){
+					ExecutionBlock callcontext = ExpressionsFactory.eINSTANCE.createExecutionBlock();
+					LocalVariable resultVar = null;
+					
+					Function f = (Function)call.getFunction();
+					push();
+					
+					if (f.getType() != null){
+						resultVar = ExpressionsFactory.eINSTANCE.createLocalVariable();
+						resultVar.setName("result");
+						resultVar.setType(copy(f.getType()));
+						callcontext.getSteps().add(resultVar);
+						current().setResult(resultVar);
+					}
+					int parami = 0;
+					for(FunctionParameter fp : f.getArguments()){
+						if (fp instanceof VariableParameter){
+							//TODO check if call parameter is another call
+							//TODO lazy parameter support
+							current().put(fp, call.getParameters().get(parami));
+							parami++;
+						}
+					}
+					
+					ExecutionStep result = copy(f.getImplementation());
+					callcontext.getSteps().add(result);
+					
+					pop();
+					
+					return callcontext;
+				}
+			}
+			if (step instanceof ExecutionBlock){
+				ExecutionBlock eb = ExpressionsFactory.eINSTANCE.createExecutionBlock();
+				for(ExecutionStep ebs : ((ExecutionBlock) step).getSteps()){
+					eb.getSteps().add(copy(ebs));
+				}
+				return eb;
+			}
+			return super.internalCopy(step);
+		}
+		
+		
 	}
 	
 	/* (non-Javadoc)
@@ -65,6 +196,7 @@ public class L2ToL1Task implements IModembedTask {
 	public void execute(ITaskContext context, IProgressMonitor monitor) {
 		String inputmodel = context.getParameterValue(INPUT).get(0);
 		String outputmodel = context.getParameterValue(OUTPUT).get(0);
+		String entry = context.getParameterValue(ENTRY).get(0);
 		
 		Resource inr = context.getInput(context.getModelURI(inputmodel));
 		Resource outr = context.getOutput(context.getModelURI(outputmodel));
@@ -73,16 +205,29 @@ public class L2ToL1Task implements IModembedTask {
 		Assert.isLegal(lib instanceof Library);
 		Library inlib = (Library)lib;
 		
-		Library outlib = EcoreUtil.copy(inlib);
+		Library outlib = EmodelFactory.eINSTANCE.createLibrary();
 		outlib.setName(outputmodel);
 		outr.getContents().add(outlib);
 		TaskUtils.addOrigin(outlib, inlib); 
 		
-		for(LibraryElement le : outlib.getContent()){
+		FunctionFlattener flattener = new FunctionFlattener();
+		Function main = null;
+		
+		for(LibraryElement le : inlib.getContent()){
 			if (le instanceof Function){
-				((Function) le).setImplementation(convert(((Function) le).getImplementation()));
+				if (entry.equals(le.getName())){
+					main = (Function)le;
+				}
+			}else{
+				outlib.getContent().add(flattener.copy(le));
 			}
 		}
+		
+		if (main != null){
+			outlib.getContent().add(flattener.flatten(main));
+		}
+		
+		flattener.resolveCrossReferences();
 		
 	}
 
