@@ -4,6 +4,7 @@
 package hu.e.compiler;
 
 import hu.e.compiler.tasks.internal.TypeSignature;
+import hu.modembed.model.architecture.Architecture;
 import hu.modembed.model.core.CoreFactory;
 import hu.modembed.model.core.MODembedElement;
 import hu.modembed.model.core.ModelOrigin;
@@ -56,6 +57,23 @@ public class TaskUtils {
 		case VAR:  return from == VariableParameterKind.VAR;
 		default: return false;
 		}
+	}
+	
+	public static int inferSize(TypeDefinition type, Architecture arch){
+		if (type instanceof PointerTypeDefinition){
+			return inferSize(arch.getHeapPointerType().getDefinition(), arch);
+		}
+		if (type instanceof ReferenceTypeDefinition){
+			return inferSize(((ReferenceTypeDefinition) type).getType().getDefinition(), arch);
+		}
+		if (type instanceof UnsignedTypeDefinition){
+			return ((UnsignedTypeDefinition) type).getBits()/8;
+		}
+		if (type instanceof CodeLabelTypeDefinition){
+			return inferSize(arch.getCodePointerType().getDefinition(), arch);
+		}
+		//TODO structure
+		return 0;
 	}
 	
 	public static boolean checkSignature(Function function, TypeSignature...signature){

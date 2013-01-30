@@ -41,6 +41,10 @@
             class="hu.e.compiler.tasks.L2ToL1Task"
             id="L2toL1">
       </taskType>
+      <taskType
+            class="hu.e.compiler.tasks.L1ToL0Task"
+            id="L1toL0">
+      </taskType>
    </extension>
 
 
