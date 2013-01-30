@@ -18,7 +18,6 @@ import hu.modembed.model.emodel.expressions.Call;
 import hu.modembed.model.emodel.expressions.ExecutionBlock;
 import hu.modembed.model.emodel.expressions.ExecutionStep;
 import hu.modembed.model.emodel.expressions.ExpressionsFactory;
-import hu.modembed.model.emodel.expressions.ExpressionsPackage;
 import hu.modembed.model.emodel.expressions.LocalVariable;
 import hu.modembed.model.emodel.expressions.ResultVariableReference;
 import hu.modembed.model.emodel.expressions.VariableReference;
@@ -120,10 +119,8 @@ public class L2ToL1Task implements IModembedTask {
 		@Override
 		protected EObject internalCopy(EObject step){
 			if (step instanceof LocalVariable){
-				LocalVariable lv = ExpressionsFactory.eINSTANCE.createLocalVariable();
-				lv.setName(((LocalVariable) step).getName());
-				lv.setType(copy(((LocalVariable) step).getType()));
-				current().putVariable((LocalVariable)step, lv);
+				EObject lv = super.internalCopy(step);
+				current().putVariable((LocalVariable)step, (LocalVariable)lv);
 				return lv;
 			}
 			if (step instanceof ResultVariableReference){
@@ -137,9 +134,7 @@ public class L2ToL1Task implements IModembedTask {
 				if (v != null){
 					return v;
 				}else{
-					VariableReference ref = ExpressionsFactory.eINSTANCE.createVariableReference();
-					addReference(ref, ExpressionsPackage.eINSTANCE.getVariableReference_Variable(), vf);
-					return ref;
+					return super.internalCopy(step);
 				}
 			}
 			if (step instanceof Call){
