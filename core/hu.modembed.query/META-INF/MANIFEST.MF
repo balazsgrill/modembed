@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: hu.modembed.query
+Bundle-SymbolicName: hu.modembed.query;singleton:=true
+Bundle-Version: 0.0.1.qualifier
+Export-Package: hu.modembed.query.proba,
+ hu.modembed.query.types
+Require-Bundle: org.eclipse.pde.core,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.transaction,
+ org.eclipse.incquery.runtime,
+ org.eclipse.xtext.xbase.lib,
+ hu.modembed.model
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

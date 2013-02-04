@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+
+   <extension
+         id="hu.modembed.query.types"
+         point="org.eclipse.incquery.runtime.matcherfactory">
+      <matcher
+            factoryProvider="hu.modembed.query.types.TypesMatcherFactory$Provider"
+            id="hu.modembed.query.types">
+      </matcher>
+   </extension>
+   <extension
+         id="hu.modembed.query.proba"
+         point="org.eclipse.incquery.runtime.matcherfactory">
+      <matcher
+            factoryProvider="hu.modembed.query.proba.ProbaMatcherFactory$Provider"
+            id="hu.modembed.query.proba">
+      </matcher>
+   </extension>
+
+</plugin>

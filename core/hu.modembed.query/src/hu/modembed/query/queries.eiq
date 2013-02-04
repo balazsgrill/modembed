@@ -1,0 +1,16 @@
+package hu.modembed.query
+
+import "http://emodel/1.0"
+import "http://modembed.hu/core/assembler/code"
+
+@QueryExplorer
+pattern types(T) = {
+	Type(T);
+}
+
+@QueryExplorer
+pattern proba(ao, i) = {
+	AssemblerObject(ao);
+	AssemblerObject.instructions(ao, ins);
+	InstructionCall.instruction(ins, i);
+}

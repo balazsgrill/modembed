@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="ASCII"?>
+<eMFPatternLanguage:PatternModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:eMFPatternLanguage="http://www.eclipse.org/incquery/patternlanguage/emf/EMFPatternLanguage" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:patternLanguage="http://www.eclipse.org/incquery/patternlanguage/PatternLanguage">
+  <patterns name="hu.modembed.query.types" fileName="platform:/resource/hu.modembed.query/src/hu/modembed/query/queries.eiq">
+    <annotations name="QueryExplorer"/>
+    <parameters name="T"/>
+    <bodies>
+      <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
+        <type xsi:type="eMFPatternLanguage:ClassType">
+          <classname xsi:type="ecore:EClass" href="http://modembed.hu/core/assembler/code#//emodel/Type"/>
+        </type>
+        <var var="T"/>
+      </constraints>
+    </bodies>
+  </patterns>
+  <patterns name="hu.modembed.query.proba" fileName="platform:/resource/hu.modembed.query/src/hu/modembed/query/queries.eiq">
+    <annotations name="QueryExplorer"/>
+    <parameters name="ao"/>
+    <parameters name="i"/>
+    <bodies>
+      <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
+        <type xsi:type="eMFPatternLanguage:ClassType">
+          <classname xsi:type="ecore:EClass" href="http://modembed.hu/core/assembler/code#//core/assembler/code/AssemblerObject"/>
+        </type>
+        <var var="ao"/>
+      </constraints>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http://modembed.hu/core/assembler/code#//core/assembler/code/AssemblerObject"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EReference" href="http://modembed.hu/core/assembler/code#//core/assembler/code/AssemblerObject/instructions"/>
+            </type>
+          </tail>
+          <src var="ao"/>
+          <dst xsi:type="patternLanguage:VariableValue">
+            <value var="ins"/>
+          </dst>
+        </head>
+      </constraints>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http://modembed.hu/core/assembler/code#//core/assembler/code/InstructionCall"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EReference" href="http://modembed.hu/core/assembler/code#//core/assembler/code/InstructionCall/instruction"/>
+            </type>
+          </tail>
+          <src var="ins"/>
+          <dst xsi:type="patternLanguage:VariableValue">
+            <value var="i"/>
+          </dst>
+        </head>
+      </constraints>
+    </bodies>
+  </patterns>
+  <importPackages xsi:type="eMFPatternLanguage:PackageImport">
+    <ePackage href="http://modembed.hu/core/assembler/code#//emodel"/>
+  </importPackages>
+  <importPackages xsi:type="eMFPatternLanguage:PackageImport">
+    <ePackage href="http://modembed.hu/core/assembler/code#//core/assembler/code"/>
+  </importPackages>
+</eMFPatternLanguage:PatternModel>
