@@ -1,6 +1,18 @@
 = Introduction =
 
-MODembed is an experimental IDE aiming to provide a more advanced toolchain for embedded software development. It provides a clear and simple language designed to help the developer to solve problems in his/her way. The language is truly platform and architecture independent, the way it compiles to binary is also described by the language itself.
+MODembed is an experimental IDE aiming to provide a more advanced toolchain for embedded software development. It provides a model-based approach for defining the whole compilation process.
+
+== Model-based approach ==
+
+What do I mean on modal-based approach? In software, everything can be viewed as a model. For example a C file (or set of files) is an abstract behavioral model of a program that can be executed on a specific platform. However, the model is not complete, you cannot execute a C file by itself. The missing part is the model of the platform, the environment the code will be compiled to. This model is only known by the C compiler.
+
+The MODembed toolchain tries to remove this additional knowledge from the compiler and put it into a platform model. Using this concept, the input of the compilation would be not only the code, but also the architecture model.  
+
+=== Program-model and textual notation ===
+
+=== Architecture models ===
+
+=== Compilation workflow ===
 
 == Motivation ==
 
