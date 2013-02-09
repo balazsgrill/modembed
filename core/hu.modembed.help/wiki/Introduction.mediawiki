@@ -1,0 +1,12 @@
+= Introduction =
+
+MODembed is an experimental IDE aiming to provide a more advanced toolchain for embedded software development. It provides a clear and simple language designed to help the developer to solve problems in his/her way. The language is truly platform and architecture independent, the way it compiles to binary is also described by the language itself.
+
+== Motivation ==
+
+Why would anybody want a new language? What is the problem with the existing ones? Two languages dominate
+the low-end microcontrollers (along with many platform-specific languages): C and Assembler. Assembler is not a real language, it is too low-level to provide a useful way to solve complex problem. Nowadays a developer can expect a high-level language which make things easier. For most, C is the only answer. However, C is a complex language, which is hard to analyze and compile to low-power microcontrollers (and I don't like it personally).
+
+== Links ==
+
+The project is hosted on "GitHub":https://github.com/balazsgrill/modembed you can find there more information, follow the development of the project, or even download the code. 
