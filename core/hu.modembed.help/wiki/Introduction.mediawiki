@@ -6,19 +6,8 @@ MODembed is an experimental IDE aiming to provide a more advanced toolchain for 
 
 What do I mean on modal-based approach? In software, everything can be viewed as a model. For example a C file (or set of files) is an abstract behavioral model of a program that can be executed on a specific platform. However, the model is not complete, you cannot execute a C file by itself. The missing part is the model of the platform, the environment the code will be compiled to. This model is only known by the C compiler.
 
-The MODembed toolchain tries to remove this additional knowledge from the compiler and put it into a platform model. Using this concept, the input of the compilation would be not only the code, but also the architecture model.  
-
-=== Program-model and textual notation ===
-
-=== Architecture models ===
-
-=== Compilation workflow ===
-
-== Motivation ==
-
-Why would anybody want a new language? What is the problem with the existing ones? Two languages dominate
-the low-end microcontrollers (along with many platform-specific languages): C and Assembler. Assembler is not a real language, it is too low-level to provide a useful way to solve complex problem. Nowadays a developer can expect a high-level language which make things easier. For most, C is the only answer. However, C is a complex language, which is hard to analyze and compile to low-power microcontrollers (and I don't like it personally).
+The MODembed toolchain tries to remove this additional knowledge from the compiler and put it into a platform model. Using this concept, the input of the compilation would be not only the code, but also the architecture model. Moreover, this approach adds the possibility of using higher-level models which are transformed automatically into these lower level program models - similarly to C code generation from UML models.
 
 == Links ==
 
-The project is hosted on "GitHub":https://github.com/balazsgrill/modembed you can find there more information, follow the development of the project, or even download the code. 
+* [https://github.com/balazsgrill/modembed] - Project host page on GitHub  
