@@ -19,6 +19,7 @@
 		<module>../../e/hu.e.parser.ui</module>
 		<module>../../e/hu.e.compiler</module>
 		<module>../hu.modembed.core.feature</module>
+		<module>../hu.modembed.help</module>
 		
 		<module>../../pic/core/hu.modembed.pic.ui</module>
 		<module>../../pic/core/hu.modembed.pic.feature</module>

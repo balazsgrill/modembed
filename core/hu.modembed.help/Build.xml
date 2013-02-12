@@ -34,10 +34,16 @@
 			<!--stylesheet url="styles/help.css"/-->
 			<!--stylesheet url="styles/main.css"/-->
 		</wikitext-to-eclipse-help>
-		<move todir="${basedir}/help">
+		<copy todir="${basedir}/help">
 			<fileset dir="${basedir}/wiki">
 				<exclude name="*.mediawiki"/>
 			</fileset>
-		</move>
+		</copy>
+		<delete>
+			<fileset dir="${basedir}/wiki">
+				<include name="*.html"/>
+				<include name="*-toc.xml"/>
+			</fileset>
+		</delete>
 	</target>
 </project>
