@@ -292,4 +292,10 @@ litigation.
          version="0.8.0.qualifier"
          unpack="false"/>
 
+   <plugin
+         id="hu.modembed.help"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
 </feature>
