@@ -1,6 +1,7 @@
 package hu.modembed.test;
 
 import static org.junit.Assert.fail;
+import hu.e.compiler.WorkflowLauncherRunnable;
 import hu.modembed.includedcode.CreateProjectInWorkspaceTask;
 import hu.modembed.includedcode.IncludedProject;
 import hu.modembed.includedcode.IncludedProjectsRegistry;
@@ -31,7 +32,7 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
-@SuiteClasses({ ParsingTests.class, AssemblerTest.class })
+@SuiteClasses({ ParsingTests.class, AssemblerTest.class, CompilerTests.class })
 public class ModembedTests {
 
 	public static boolean modelsAreEquivalent(IFile file1, IFile file2) throws InterruptedException, IOException{
@@ -49,6 +50,10 @@ public class ModembedTests {
 		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
 		root.refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
 		ResourcesPlugin.getWorkspace().build(IncrementalProjectBuilder.FULL_BUILD, new NullProgressMonitor());
+	}
+	
+	public static IStatus executeWorkflow(IProject project, String workflow){
+		return WorkflowLauncherRunnable.create(project, "build").execute(new NullProgressMonitor());
 	}
 	
 	public static void testSetUp() throws CoreException{
@@ -72,12 +77,13 @@ public class ModembedTests {
 		build();
 	}
 	
-	public static void checkMarkers() throws CoreException{
-		for(IMarker m : ResourcesPlugin.getWorkspace().getRoot().findMarkers(null, true, IResource.DEPTH_INFINITE)){
+	public static void checkMarkers(IProject project) throws CoreException{
+		for(IMarker m : project.findMarkers(null, true, IResource.DEPTH_INFINITE)){
 			if (IStatus.OK != m.getAttribute(IMarker.SEVERITY, IStatus.OK)){
 				String msg = m.getAttribute(IMarker.MESSAGE, "Error");
-				String loc = m.getAttribute(IMarker.LOCATION, "");
-				fail(msg+" "+loc);
+				String loc = m.getAttribute(IMarker.LOCATION, "Unknown location");
+				String ln = m.getAttribute(IMarker.LINE_NUMBER, "");
+				fail(msg+" at "+loc+" "+ln);
 			}
 		}
 	}

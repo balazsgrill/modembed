@@ -209,7 +209,7 @@ public class WorkflowLauncherRunnable{
 			}
 		}
 		
-		possibleFiles.add(project.getFile(filename));
+		possibleFiles.add(project.getFolder(".temp").getFile(filename));
 		
 		if (!possibleFiles.isEmpty()){
 			return URI.createPlatformResourceURI(possibleFiles.get(0).getFullPath().toString(), true);

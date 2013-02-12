@@ -60,7 +60,7 @@ public class AssemblerTest {
 		new ImportPICLibraryTask("PIC16F1824", project).run(new NullProgressMonitor());
 		Assert.assertTrue(project.getFile("PIC16F1824.e").exists());
 		ModembedTests.build();
-		ModembedTests.checkMarkers();
+		ModembedTests.checkMarkers(project);
 	}
 	
 }

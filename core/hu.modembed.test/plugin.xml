@@ -45,6 +45,28 @@
                resource="tests/t2_createAssemblerObject/build.e">
          </resource>
       </project>
+      <project
+            id="test3"
+            name="test3">
+         <dependency
+               project="microchip.pic16">
+         </dependency>
+         <resource
+               path="/"
+               resource="tests/t3_compile/blink.e">
+         </resource>
+         <resource
+               path="/"
+               resource="tests/t3_compile/compile.e">
+         </resource>
+         <dependency
+               project="e.core">
+         </dependency>
+         <resource
+               path="/"
+               resource="tests/t3_compile/pic16f1824.arch.xmi">
+         </resource>
+      </project>
    </extension>
 
 </plugin>

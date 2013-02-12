@@ -33,11 +33,7 @@ public class ParsingTests {
 		IFile file = folder.getFile("parseTest.xmi");
 		
 		Assert.assertTrue(file.exists());
-	}
-	
-	@Test
-	public void test() throws CoreException {
-		ModembedTests.checkMarkers();
+		ModembedTests.checkMarkers(project);
 	}
 
 }
