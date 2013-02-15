@@ -26,7 +26,7 @@
             <phase>generate-sources</phase>
             <configuration>
               <target>
-                <ant antfile="Build.xml" inheritRefs="true" />
+                <ant antfile="BuildHelp.xml" inheritRefs="true" />
               </target>
             </configuration>
             <goals>
