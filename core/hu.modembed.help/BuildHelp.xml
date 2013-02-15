@@ -45,5 +45,6 @@
 				<include name="*-toc.xml"/>
 			</fileset>
 		</delete>
+		<xslt style="integrate_toc.xsl" in="toc.xml" out="help_toc.xml"></xslt>
 	</target>
 </project>

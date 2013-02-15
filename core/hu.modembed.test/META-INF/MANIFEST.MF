@@ -5,7 +5,7 @@ Bundle-SymbolicName: hu.modembed.test;singleton:=true
 Bundle-Version: 0.8.0.qualifier
 Bundle-Activator: hu.modembed.test.Activator
 Require-Bundle: org.eclipse.core.runtime,
- org.junit,
+ org.junit;bundle-version="4.7.0",
  org.eclipse.core.resources,
  hu.modembed;bundle-version="0.7.0",
  hu.modembed.ui;bundle-version="0.7.0",

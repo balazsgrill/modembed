@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<toc topic="help/Main.html" label="MODembed User's Guide" >
-   <link toc="help/Introduction-toc.xml"/>
-   <link toc="help/Tutorial-toc.xml"/>
+<toc label="MODembed User&apos;s Guide" topic="help/Introduction.html">
+    <link toc="help/Introduction-toc.xml"/>
+	<link toc="help/Tutorial-toc.xml"/>
 </toc>
