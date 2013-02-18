@@ -3,7 +3,6 @@
  */
 package hu.modembed.ui.wizards.included;
 
-import hu.modembed.includedcode.CategoryElement;
 import hu.modembed.includedcode.IncludedProject;
 import hu.modembed.includedcode.IncludedProjectsRegistry;
 import hu.modembed.ui.MODembedUI;
