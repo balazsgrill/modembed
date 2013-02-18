@@ -6,6 +6,7 @@
    <extension
          point="hu.modembed.ui.includedCode">
       <project
+            category="hu.modembed.category.core"
             icon="icons/e.core.png"
             id="e.core"
             name="Core platform">
@@ -18,6 +19,10 @@
                resource="core/dio.e">
          </resource>
       </project>
+      <category
+            id="hu.modembed.category.core"
+            name="Generic">
+      </category>
    </extension>
 
 </plugin>

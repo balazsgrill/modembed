@@ -3,19 +3,20 @@
  */
 package hu.modembed.ui.wizards.included;
 
+import hu.modembed.includedcode.CategoryElement;
 import hu.modembed.includedcode.IncludedProject;
 import hu.modembed.includedcode.IncludedProjectsRegistry;
 import hu.modembed.ui.MODembedUI;
+import hu.modembed.ui.TreeContentProvider;
 
 import java.net.URL;
 
-import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.StructuredSelection;
-import org.eclipse.jface.viewers.TableViewer;
+import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Composite;
@@ -46,10 +47,10 @@ public class IncludedProjectsSelectionWizardPage extends WizardPage {
 	 */
 	@Override
 	public void createControl(Composite parent) {
-		TableViewer tv = new TableViewer(parent);
+		TreeViewer tv = new TreeViewer(parent);
 		setControl(tv.getControl());
 
-		tv.setContentProvider(new ArrayContentProvider());
+		tv.setContentProvider(new TreeContentProvider());
 		tv.setLabelProvider(new LabelProvider(){
 			@Override
 			public Image getImage(Object element) {
@@ -57,10 +58,13 @@ public class IncludedProjectsSelectionWizardPage extends WizardPage {
 					URL url = ((IncludedProject) element).getIcon();
 					if (url != null) return MODembedUI.getDefault().getSharedImage(url);
 				}
+				if (element instanceof CategoryElement){
+					return MODembedUI.getDefault().getImageRegistry().get(MODembedUI.IMAGE_ELEMENT_FOLDER);
+				}
 				return super.getImage(element);
 			}
 		});
-		tv.setInput(IncludedProjectsRegistry.getInstance().getProjects().toArray());
+		tv.setInput(IncludedProjectsRegistry.getInstance().getProjectTree());
 		
 		tv.addSelectionChangedListener(new ISelectionChangedListener() {
 			

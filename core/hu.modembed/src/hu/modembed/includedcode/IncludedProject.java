@@ -35,10 +35,13 @@ public final class IncludedProject {
 	
 	private final URL icon;
 	
+	private final String category;
+	
 	protected IncludedProject(IConfigurationElement ce) {
 		ID = ce.getAttribute("id");
 		name = ce.getAttribute("name");
 		String icon = ce.getAttribute("icon");
+		category = ce.getAttribute("category");
 		Bundle bundle = Platform.getBundle(ce.getContributor().getName());
 		if (bundle != null){
 			URL iconurl = null;
@@ -64,6 +67,10 @@ public final class IncludedProject {
 				MODembedCore.getDefault().getLog().log(new Status(IStatus.ERROR, c.getContributor().getName(), "Could not resolve Resource "+resource,e));
 			}
 		}
+	}
+	
+	public String getCategory() {
+		return category;
 	}
 	
 	public URL getIcon() {

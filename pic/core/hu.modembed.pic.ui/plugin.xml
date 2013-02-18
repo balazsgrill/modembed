@@ -14,6 +14,7 @@
    <extension
          point="hu.modembed.ui.includedCode">
       <project
+            category="hu.modembed.pic.ui.category"
             icon="icons/microchip.png"
             id="microchip.pic16"
             name="PIC16 midrange architecture code">
@@ -33,6 +34,10 @@
                resource="code/pic16/pic16.platform.e">
          </resource>
       </project>
+      <category
+            id="hu.modembed.pic.ui.category"
+            name="PIC">
+      </category>
    </extension>
 
 </plugin>
