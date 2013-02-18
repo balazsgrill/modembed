@@ -22,6 +22,7 @@
 		<module>../hu.modembed.help</module>
 		
 		<module>../../pic/core/hu.modembed.pic.ui</module>
+		<module>../../pic/core/hu.modembed.pic.midrange</module>
 		<module>../../pic/core/hu.modembed.pic.feature</module>
 		
 		<module>../../pic/pickit2/hu.modembed.pic.pk2cmd</module>
