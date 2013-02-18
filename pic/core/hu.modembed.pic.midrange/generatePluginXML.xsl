@@ -16,6 +16,7 @@
  		<project>
  			<xsl:attribute name="id">microchip.<xsl:value-of select="@edc:name"/></xsl:attribute>
  			<xsl:attribute name="name">Device-specific libraries for <xsl:value-of select="@edc:name"/></xsl:attribute>
+ 			<xsl:attribute name="category">hu.modembed.pic.midrange.category</xsl:attribute>
  			<dependency project="e.core">
          	</dependency>
          	<dependency project="microchip.pic16">

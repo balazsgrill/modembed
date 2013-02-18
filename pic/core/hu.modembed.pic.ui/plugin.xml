@@ -2,16 +2,6 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension
-         point="org.eclipse.ui.importWizards">
-      <wizard
-            category="hu.modembed.ui.category"
-            class="hu.modembed.pic.ui.wizard.ImportPICLibWizard"
-            icon="icons/microchip.png"
-            id="hu.modembed.pic.ui.importLib"
-            name="Import PIC library">
-      </wizard>
-   </extension>
-   <extension
          point="hu.modembed.ui.includedCode">
       <project
             category="hu.modembed.pic.ui.category"
@@ -37,6 +27,11 @@
       <category
             id="hu.modembed.pic.ui.category"
             name="PIC">
+      </category>
+      <category
+            id="hu.modembed.pic.midrange.category"
+            name="PIC midrange libraries"
+            parent="hu.modembed.pic.ui.category">
       </category>
    </extension>
 
