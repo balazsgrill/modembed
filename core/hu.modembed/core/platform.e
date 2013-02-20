@@ -24,3 +24,8 @@ function ADD void(void a, void b){}
 function ASSIGN void(void d, void s){}
 
 function REFERENCE void(void d){}
+
+/*
+ * Infinite loop
+ */
+function loop void(lazy do void()){}

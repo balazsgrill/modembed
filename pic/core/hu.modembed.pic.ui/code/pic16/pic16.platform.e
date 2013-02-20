@@ -16,3 +16,9 @@ function uint8_ASSIGN_v void(var uint8 d, var uint8 v) overrides ASSIGN{
 	SELECTB(d);
 	MOVWF(d);
 }
+
+function pic16_loop void(lazy do void()) overrides loop{
+	label start;
+	do();
+	GOTO(start);
+}

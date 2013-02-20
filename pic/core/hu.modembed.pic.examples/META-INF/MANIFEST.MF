@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: PIC Examples
+Bundle-SymbolicName: hu.modembed.pic.examples;singleton:=true
+Bundle-Version: 0.8.0.qualifier
+Require-Bundle: hu.modembed;bundle-version="0.8.0",
+ hu.modembed.pic.midrange;bundle-version="0.8.0"
