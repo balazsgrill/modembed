@@ -15,7 +15,7 @@
  		<xsl:comment><xsl:value-of select="@edc:name" /></xsl:comment>
  		<project>
  			<xsl:attribute name="id">microchip.<xsl:value-of select="@edc:name"/></xsl:attribute>
- 			<xsl:attribute name="name">Device-specific libraries for <xsl:value-of select="@edc:name"/></xsl:attribute>
+ 			<xsl:attribute name="name"><xsl:value-of select="@edc:name"/> device-specific libraries</xsl:attribute>
  			<xsl:attribute name="category">hu.modembed.pic.midrange.category</xsl:attribute>
  			<dependency project="e.core">
          	</dependency>
