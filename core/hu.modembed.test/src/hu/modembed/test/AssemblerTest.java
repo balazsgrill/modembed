@@ -2,7 +2,6 @@ package hu.modembed.test;
 
 import static org.junit.Assert.assertTrue;
 import hu.e.compiler.WorkflowLauncherRunnable;
-import hu.modembed.pic.ui.ImportPICLibraryTask;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
@@ -47,20 +46,6 @@ public class AssemblerTest {
 		
 		IStatus status = WorkflowLauncherRunnable.create(testproject, "build").execute(new NullProgressMonitor());
 		Assert.assertThat(status, StatusMatcher.instance);
-	}
-	
-	@Test
-	public void test_checkPICImport() throws Exception{
-		IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject("test_picLib");
-		if (!project.exists()){
-			project.create(new NullProgressMonitor());
-			project.open(new NullProgressMonitor());
-		}
-		
-		new ImportPICLibraryTask("PIC16F1824", project).run(new NullProgressMonitor());
-		Assert.assertTrue(project.getFile("PIC16F1824.e").exists());
-		ModembedTests.build();
-		ModembedTests.checkMarkers(project);
 	}
 	
 }

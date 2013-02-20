@@ -66,6 +66,9 @@
                path="/"
                resource="tests/t3_compile/pic16f1824.arch.xmi">
          </resource>
+         <dependency
+               project="microchip.PIC16F1824">
+         </dependency>
       </project>
    </extension>
 

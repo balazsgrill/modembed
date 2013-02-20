@@ -1,11 +1,9 @@
 package hu.modembed.test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
+import hu.e.compiler.WorkflowLauncherRunnable;
 
 import java.lang.reflect.InvocationTargetException;
-
-import hu.e.compiler.WorkflowLauncherRunnable;
-import hu.modembed.pic.ui.ImportPICLibraryTask;
 
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
@@ -28,8 +26,6 @@ public class CompilerTests {
 		IProject testproject = ResourcesPlugin.getWorkspace().getRoot().getProject("test3");
 		assertTrue(testproject.exists());
 		
-		new ImportPICLibraryTask("PIC16F1824", testproject).run(new NullProgressMonitor());
-		Assert.assertTrue(testproject.getFile("PIC16F1824.e").exists());
 		ModembedTests.build();
 		ModembedTests.checkMarkers(testproject);
 		
