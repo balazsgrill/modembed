@@ -11,8 +11,10 @@ import hu.modembed.model.core.workflow.WorkflowTask;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
@@ -48,6 +50,53 @@ public class WorkflowLauncherRunnable{
 	private final Workflow workflow;
 	private final IFile workflowFile;
 	
+	private final Set<IWorkflowLauncherListener> listeners = new LinkedHashSet<IWorkflowLauncherListener>();
+	
+	public void addListener(IWorkflowLauncherListener listener){
+		this.listeners.add(listener);
+	}
+	
+	public void removeListener(IWorkflowLauncherListener listener){
+		this.listeners.remove(listener);
+	}
+	
+	private final IWorkflowLauncherListener listener = new IWorkflowLauncherListener() {
+		
+		@Override
+		public void taskStarted(WorkflowTask task) {
+			for(IWorkflowLauncherListener l : listeners){
+				l.taskStarted(task);
+			}
+		}
+		
+		@Override
+		public void started() {
+			for(IWorkflowLauncherListener l : listeners){
+				l.started();
+			}
+		}
+		
+		@Override
+		public void outputSaving(URI document) {
+			for(IWorkflowLauncherListener l : listeners){
+				l.outputSaving(document);
+			}
+		}
+		
+		@Override
+		public void log(IStatus status) {
+			for(IWorkflowLauncherListener l : listeners){
+				l.log(status);
+			}
+		}
+		
+		@Override
+		public void ended() {
+			for(IWorkflowLauncherListener l : listeners){
+				l.ended();
+			}
+		}
+	};
 	
 	private class TaskContext implements ITaskContext{
 
@@ -127,6 +176,7 @@ public class WorkflowLauncherRunnable{
 	
 	public IStatus execute(IProgressMonitor monitor){
 		monitor.beginTask("Executing workflow..", workflow.getTasks().size()*100);
+		listener.started();
 		
 		MultiStatus status = new MultiStatus(ECompilerPlugin.PLUGIN_ID, 0, "Status", null);
 		
@@ -137,26 +187,33 @@ public class WorkflowLauncherRunnable{
 					IProgressMonitor subprogress = new SubProgressMonitor(monitor, 100);
 					TaskContext context = new TaskContext((Task)task);
 
+					listener.taskStarted(task);
 					IModembedTask wtask = createTask(((Task) task).getType());
 					wtask.execute(context, subprogress);
 					
+					listener.log(context.status);
 					status.add(context.status);
 					
 					if (context.status.isOK()){
 						for(Resource r : context.outputs){
 							try {
+								listener.outputSaving(r.getURI());
 								r.save(null);
 							} catch (IOException e) {
-								status.add(new Status(IStatus.ERROR, ECompilerPlugin.PLUGIN_ID, "Could not save output model", e));
+								IStatus s = new Status(IStatus.ERROR, ECompilerPlugin.PLUGIN_ID, "Could not save output model", e);
+								listener.log(s);
+								status.add(s);
 							}
 						}
 					}
 				}catch(CoreException e){
+					listener.log(e.getStatus());
 					status.add(e.getStatus());
 				}
 			}
 		}
 		
+		listener.ended();
 		monitor.done();
 		return status;
 	}

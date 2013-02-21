@@ -44,7 +44,9 @@ public class WorkflowLaunchDelegate implements ILaunchConfigurationDelegate, IWo
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
+					
 					WorkflowLauncherRunnable runnable = new WorkflowLauncherRunnable(uri);
+					runnable.addListener(new ConsoleWorkflowLauncherListener());
 					return runnable.execute(monitor);
 					
 				}
