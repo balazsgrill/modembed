@@ -1,5 +1,6 @@
 package hu.modembed.ui;
 
+import hu.modembed.MODembedCore;
 import hu.modembed.ui.internal.DynamicECoreRegistry;
 
 import java.net.URL;
@@ -8,7 +9,7 @@ import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.transaction.impl.TransactionalEditingDomainImpl;
 import org.eclipse.jface.dialogs.MessageDialog;
@@ -61,7 +62,7 @@ public class MODembedUI extends AbstractUIPlugin {
 	}
 	
 	public EditingDomain createEditingDomain(IProject project){
-		ResourceSetImpl rs = new ResourceSetImpl();
+		ResourceSet rs = MODembedCore.createResourceSet();
 		
 		try {
 			for(EPackage pack : ecoreRegistry.getPackagesFor(project)){

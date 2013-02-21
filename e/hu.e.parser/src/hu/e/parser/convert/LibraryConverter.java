@@ -23,6 +23,7 @@ import hu.e.parser.eSyntax.Variable;
 import hu.e.parser.eSyntax.WorkflowNotation;
 import hu.e.parser.eSyntax.WorkflowStepNotation;
 import hu.e.parser.eSyntax.WorkflowStepParameterNotation;
+import hu.modembed.MODembedCore;
 import hu.modembed.model.core.CoreFactory;
 import hu.modembed.model.core.MODembedElement;
 import hu.modembed.model.core.TextOrigin;
@@ -58,7 +59,6 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.xtext.nodemodel.ICompositeNode;
 import org.eclipse.xtext.nodemodel.ILeafNode;
 import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
@@ -134,7 +134,7 @@ public class LibraryConverter {
 	}
 	
 	public LibraryConverter(IProject project) {
-		this.resourceSet = new ResourceSetImpl();
+		this.resourceSet = MODembedCore.createResourceSet();
 		this.project = project;
 	}
 	

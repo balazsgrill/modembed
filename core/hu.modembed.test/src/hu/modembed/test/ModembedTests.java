@@ -2,6 +2,7 @@ package hu.modembed.test;
 
 import static org.junit.Assert.fail;
 import hu.e.compiler.WorkflowLauncherRunnable;
+import hu.modembed.MODembedCore;
 import hu.modembed.includedcode.CreateProjectInWorkspaceTask;
 import hu.modembed.includedcode.IncludedProject;
 import hu.modembed.includedcode.IncludedProjectsRegistry;
@@ -26,7 +27,6 @@ import org.eclipse.emf.compare.match.service.MatchService;
 import org.eclipse.emf.compare.util.EclipseModelUtils;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
@@ -36,7 +36,7 @@ import org.junit.runners.Suite.SuiteClasses;
 public class ModembedTests {
 
 	public static boolean modelsAreEquivalent(IFile file1, IFile file2) throws InterruptedException, IOException{
-		ResourceSet rs = new ResourceSetImpl();
+		ResourceSet rs = MODembedCore.createResourceSet();
 		EObject e1 = EclipseModelUtils.load(file1, rs);
 		EObject e2 = EclipseModelUtils.load(file2, rs);
 		

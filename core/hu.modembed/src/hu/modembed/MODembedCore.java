@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EPackage.Registry;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.osgi.framework.BundleContext;
 
 public class MODembedCore extends Plugin {
@@ -60,6 +61,11 @@ public class MODembedCore extends Plugin {
 			else uri = uri.appendSegment(s);
 		}
 		return uri;
+	}
+	
+	public static ResourceSet createResourceSet(){
+		ResourceSetImpl resourceSet = new ResourceSetImpl();
+		return resourceSet;
 	}
 	
 	IReferencedResourceProvider resourceProvider;

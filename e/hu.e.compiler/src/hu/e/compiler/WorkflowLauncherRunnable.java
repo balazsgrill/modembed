@@ -3,6 +3,7 @@
  */
 package hu.e.compiler;
 
+import hu.modembed.MODembedCore;
 import hu.modembed.model.core.workflow.Task;
 import hu.modembed.model.core.workflow.TaskParameter;
 import hu.modembed.model.core.workflow.Workflow;
@@ -34,7 +35,6 @@ import org.eclipse.core.runtime.SubProgressMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 
 
 /**
@@ -157,7 +157,7 @@ public class WorkflowLauncherRunnable{
 	}
 	
 	public WorkflowLauncherRunnable(URI workflow) {
-		this.resourceSet = new ResourceSetImpl();
+		this.resourceSet = MODembedCore.createResourceSet();
 		
 		String fileString = workflow.toPlatformString(true);
 		IFile file = (IFile)ResourcesPlugin.getWorkspace().getRoot().findMember(fileString);

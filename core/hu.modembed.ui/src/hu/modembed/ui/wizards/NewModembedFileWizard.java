@@ -3,6 +3,7 @@
  */
 package hu.modembed.ui.wizards;
 
+import hu.modembed.MODembedCore;
 import hu.modembed.model.core.RootElement;
 
 import java.io.IOException;
@@ -12,7 +13,6 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPage;
@@ -76,7 +76,7 @@ public class NewModembedFileWizard extends BasicNewResourceWizard{
         if (file == null) {
 			return false;
 		}
-        ResourceSet rs = new ResourceSetImpl();
+        ResourceSet rs = MODembedCore.createResourceSet();
         Resource r = rs.createResource(URI.createPlatformResourceURI(file.getFullPath().toString(), true));
         EClass ec = typePage.eclass;
         RootElement element = (RootElement)ec.getEPackage().getEFactoryInstance().create(ec);
