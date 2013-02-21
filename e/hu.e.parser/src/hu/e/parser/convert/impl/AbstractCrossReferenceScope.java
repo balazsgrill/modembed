@@ -32,16 +32,16 @@ public abstract class AbstractCrossReferenceScope implements ICrossReferenceScop
 	public List<UnresolvedCrossReference> resolveReferences() {
 		List<CrossReferenceEntry> failedEntries = new LinkedList<CrossReferenceEntry>();
 		for(CrossReferenceEntry entry : entries){
-			System.out.print("Resolving: "+entry+"..");
+			//System.out.print("Resolving: "+entry+"..");
 			List<EObject> rs = filter(resolve(entry.id), entry.reference.getEReferenceType());
 			if (rs.isEmpty()){
 				//throw new RuntimeException("Cannot resolve "+entry.id);
 				failedEntries.add(entry);
-				System.out.println("FAIL");
+				//System.out.println("FAIL");
 			}else{
 				//if (rs.size() > 1) throw new RuntimeException(entry.id+" is ambivalent!");
 				entry.referer.eSet(entry.reference, rs.get(0));
-				System.out.println("OK");
+				//System.out.println("OK");
 			}
 		}
 		entries.clear();

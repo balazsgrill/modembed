@@ -117,7 +117,7 @@ public class RootReferenceScope extends AbstractCrossReferenceScope {
 		
 		for(IProject p : projects){
 			try {
-				p.accept(new IResourceVisitor() {
+				if (p.exists()) p.accept(new IResourceVisitor() {
 					
 					@Override
 					public boolean visit(IResource resource) throws CoreException {
