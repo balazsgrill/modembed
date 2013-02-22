@@ -18,6 +18,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.compare.match;bundle-version="1.3.0",
  hu.modembed.pic.ui;bundle-version="0.7.0",
  hu.e.parser;bundle-version="0.8.0",
- hu.e.parser.ui;bundle-version="0.8.0"
+ hu.e.parser.ui;bundle-version="0.8.0",
+ hu.modembed.pic.examples;bundle-version="0.8.0",
+ hu.modembed.pic.midrange;bundle-version="0.8.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
