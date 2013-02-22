@@ -10,10 +10,10 @@ import hu.e.compiler.tasks.internal.AbstractConverter;
 import hu.modembed.model.emodel.EmodelFactory;
 import hu.modembed.model.emodel.Function;
 import hu.modembed.model.emodel.FunctionParameter;
+import hu.modembed.model.emodel.LazyParameter;
 import hu.modembed.model.emodel.Library;
 import hu.modembed.model.emodel.LibraryElement;
 import hu.modembed.model.emodel.Variable;
-import hu.modembed.model.emodel.VariableParameter;
 import hu.modembed.model.emodel.expressions.Call;
 import hu.modembed.model.emodel.expressions.ExecutionBlock;
 import hu.modembed.model.emodel.expressions.ExecutionStep;
@@ -139,6 +139,29 @@ public class L2ToL1Task implements IModembedTask {
 			}
 			if (step instanceof Call){
 				Call call = (Call)step;
+				if (call.getFunction() instanceof LazyParameter){
+					ExecutionBlock callcontext = ExpressionsFactory.eINSTANCE.createExecutionBlock();
+					LocalVariable resultVar = null;
+					
+					push();
+
+					LazyParameter lp = (LazyParameter)call.getFunction();
+
+					if (lp.getType() != null){
+						resultVar = ExpressionsFactory.eINSTANCE.createLocalVariable();
+						resultVar.setName("result");
+						resultVar.setType(copy(lp.getType()));
+						callcontext.getSteps().add(resultVar);
+						current().setResult(resultVar);
+					}
+					ExecutionStep es = current().get(lp); /* Note: this is already copied */
+					
+					callcontext.getSteps().add(es);
+					
+					pop();
+					
+					return callcontext;
+				}
 				if (call.getFunction() instanceof Function){
 					ExecutionBlock callcontext = ExpressionsFactory.eINSTANCE.createExecutionBlock();
 					LocalVariable resultVar = null;
@@ -155,12 +178,10 @@ public class L2ToL1Task implements IModembedTask {
 					}
 					int parami = 0;
 					for(FunctionParameter fp : f.getArguments()){
-						if (fp instanceof VariableParameter){
-							//TODO check if call parameter is another call
-							//TODO lazy parameter support
-							current().put(fp, call.getParameters().get(parami));
-							parami++;
-						}
+						//TODO check if call parameter is another call
+						ExecutionStep paramvalue = call.getParameters().get(parami); 
+						current().put(fp, paramvalue);
+						parami++;
 					}
 					
 					ExecutionStep result = copy(f.getImplementation());

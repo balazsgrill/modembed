@@ -64,6 +64,7 @@ public class L1ToL0Task implements IModembedTask {
 			}
 			if (element instanceof VariableReference){
 				Variable v = ((VariableReference) element).getVariable();
+				if (v == null) return null;
 				if (v instanceof RegisterVariable){
 					return copy(((RegisterVariable) v).getAddress());
 				}

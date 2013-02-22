@@ -86,7 +86,9 @@ public abstract class AbstractConverter {
 							@SuppressWarnings("unchecked")
 							List<EObject> resultList = (List<EObject>) result.eGet(feature);
 							for(Object o : (List<?>)element.eGet(feature)){
-								resultList.add(copy((EObject)o));
+								EObject copied = copy((EObject)o);
+								if (copied != null)
+									resultList.add(copied);
 							}
 						}else{
 							Object o = element.eGet(feature);
