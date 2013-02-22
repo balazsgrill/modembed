@@ -24,6 +24,9 @@
     	<xslt basedir="../hu.modembed.pic.ui/device-descriptors/16xxxx" destdir="gen-lib" 
     		extension=".e" style="../hu.modembed.pic.ui/device-descriptors/piclibgenerator.xsl">
     	</xslt>
+    	<xslt basedir="../hu.modembed.pic.ui/device-descriptors/16xxxx" destdir="gen-lib" 
+    	    extension=".arch.xmi" style="../hu.modembed.pic.ui/device-descriptors/picarchgenerator.xsl">
+    	</xslt>
     	
     	<fileset dir="../hu.modembed.pic.ui/device-descriptors/16xxxx" id="devicefiles">
     	    <include name="*.PIC"/>
