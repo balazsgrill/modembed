@@ -9,6 +9,7 @@ import hu.modembed.includedcode.IncludedProjectsRegistry;
 
 import java.io.IOException;
 import java.util.Collections;
+import java.util.List;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IMarker;
@@ -35,6 +36,8 @@ import org.junit.runners.Suite.SuiteClasses;
 @SuiteClasses({ ParsingTests.class, AssemblerTest.class, CompilerTests.class })
 public class ModembedTests {
 
+	public static final String TEST_CATEGORY = "hu.modembed.test.category"; 
+	
 	public static boolean modelsAreEquivalent(IFile file1, IFile file2) throws InterruptedException, IOException{
 		ResourceSet rs = MODembedCore.createResourceSet();
 		EObject e1 = EclipseModelUtils.load(file1, rs);
@@ -67,8 +70,11 @@ public class ModembedTests {
 		}
 		root.refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
 
+		List<IncludedProject> projects = IncludedProjectsRegistry.getInstance().getAllProjectsByCategory(TEST_CATEGORY);
+		projects = IncludedProjectsRegistry.getInstance().resolveDependencies(projects);
+		
 		//Import projects
-		for(IncludedProject ip : IncludedProjectsRegistry.getInstance().getProjects()){
+		for(IncludedProject ip : projects){
 			System.out.println("Importing "+ip.getName());
 			CreateProjectInWorkspaceTask task = new CreateProjectInWorkspaceTask(ip);
 			task.run(new NullProgressMonitor());

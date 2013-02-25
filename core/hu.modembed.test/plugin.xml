@@ -4,6 +4,7 @@
    <extension
          point="hu.modembed.ui.includedCode">
       <project
+            category="hu.modembed.test.category"
             id="test0"
             name="test0">
          <resource
@@ -12,6 +13,7 @@
          </resource>
       </project>
       <project
+            category="hu.modembed.test.category"
             id="test1"
             name="test1">
          <dependency
@@ -31,6 +33,7 @@
          </resource>
       </project>
       <project
+            category="hu.modembed.test.category"
             id="test2"
             name="test2">
          <dependency
@@ -46,6 +49,7 @@
          </resource>
       </project>
       <project
+            category="hu.modembed.test.category"
             id="test3"
             name="test3">
          <dependency
@@ -70,6 +74,10 @@
                project="microchip.PIC16F1824">
          </dependency>
       </project>
+      <category
+            id="hu.modembed.test.category"
+            name="Test projects">
+      </category>
    </extension>
 
 </plugin>
