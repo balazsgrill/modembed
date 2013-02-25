@@ -38,7 +38,7 @@ public class CategoryElement {
 	
 	@Override
 	public String toString() {
-		return name+" (CATEGORY)";
+		return name;
 	}
 	
 }

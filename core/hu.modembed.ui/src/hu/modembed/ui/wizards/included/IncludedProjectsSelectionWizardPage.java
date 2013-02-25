@@ -66,8 +66,9 @@ public class IncludedProjectsSelectionWizardPage extends WizardPage {
 				if (element instanceof IncludedProject){
 					URL url = ((IncludedProject) element).getIcon();
 					if (url != null) return MODembedUI.getDefault().getSharedImage(url);
+					return MODembedUI.getDefault().getImageRegistry().get(MODembedUI.IMAGE_ELEMENT_FOLDER);
 				}
-				return MODembedUI.getDefault().getImageRegistry().get(MODembedUI.IMAGE_ELEMENT_FOLDER);
+				return MODembedUI.getDefault().getImageRegistry().get(MODembedUI.IMAGE_ELEMENT_FOLDERS);
 			}
 		});
 		tv.setInput(IncludedProjectsRegistry.getInstance().getProjectTree());

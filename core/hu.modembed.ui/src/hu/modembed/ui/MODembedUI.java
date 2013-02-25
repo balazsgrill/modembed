@@ -49,6 +49,7 @@ public class MODembedUI extends AbstractUIPlugin {
 
 	public static String IMAGE_ELEMENT_ARCH = PLUGIN_ID+".elements.image.arch";
 	public static String IMAGE_ELEMENT_FOLDER = PLUGIN_ID+".elements.image.folder";
+	public static String IMAGE_ELEMENT_FOLDERS = PLUGIN_ID+".elements.image.folders";
 	public static String IMAGE_ELEMENT_INSTRUCTION = PLUGIN_ID+".elements.image.instruction";
 	public static String IMAGE_ELEMENT_MODULE = PLUGIN_ID+".elements.image.module";
 	
@@ -59,6 +60,7 @@ public class MODembedUI extends AbstractUIPlugin {
 		reg.put(IMAGE_ELEMENT_FOLDER, ImageDescriptor.createFromURL(getBundle().getEntry("icons/elements/folder.gif")));
 		reg.put(IMAGE_ELEMENT_INSTRUCTION, ImageDescriptor.createFromURL(getBundle().getEntry("icons/elements/instruction_obj.gif")));
 		reg.put(IMAGE_ELEMENT_MODULE, ImageDescriptor.createFromURL(getBundle().getEntry("icons/elements/module.png")));
+		reg.put(IMAGE_ELEMENT_FOLDERS, ImageDescriptor.createFromURL(getBundle().getEntry("icons/elements/folders.gif")));
 	}
 	
 	public EditingDomain createEditingDomain(IProject project){
