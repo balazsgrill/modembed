@@ -43,13 +43,13 @@ Now, it is time to start the real work by creating a source file to contain your
 
 This file will be a library, which defines your main function:
 
-<code>
-library main;
 
-use e.platform;
-use microchip.PIC16F1824;
+ library main;
+ 
+ use e.platform;
+ use microchip.PIC16F1824;
+ 
+ main(){
+ 
+ }
 
-main(){
-
-}
-</code>
