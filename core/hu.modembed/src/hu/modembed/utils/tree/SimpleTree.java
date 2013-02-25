@@ -68,4 +68,14 @@ public class SimpleTree<T> implements ITree<T> {
 	public boolean removeChild(ITree<T> child) {
 		return children.remove(child);
 	}
+
+	@Override
+	public ITree<T> findNode(T node) {
+		if (this.node.equals(node)) return this;
+		for(ITree<T> child : children){
+			ITree<T> c = child.findNode(node);
+			if (c != null) return c;
+		}
+		return null;
+	}
 }

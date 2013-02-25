@@ -127,6 +127,36 @@ public final class IncludedProjectsRegistry {
 		
 	}
 	
+	private CategoryElement findCategory(String categoryId){
+		for(CategoryElement ce : categories){
+			if (categoryId.equals(ce.getId())) return ce;
+		}
+		return null;
+	}
+	
+	private void putTreeToProjectList(ITree<Object> tree, List<IncludedProject> projects){
+		Object o = tree.getNode();
+		if (o instanceof IncludedProject){
+			projects.add((IncludedProject)o);
+		}else{
+			for(ITree<Object> subtree : tree){
+				putTreeToProjectList(subtree, projects);
+			}
+		}
+	}
+	
+	public List<IncludedProject> getAllProjectsByCategory(String categoryId){
+		List<IncludedProject> result = new LinkedList<IncludedProject>();
+		CategoryElement start = findCategory(categoryId);
+		
+		ITree<Object> tree = projectTree.findNode(start);
+		if (tree != null){
+			putTreeToProjectList(tree, result);
+		}
+		
+		return result;
+	}
+	
 	public List<IncludedProject> resolveDependencies(Collection<IncludedProject> projects){
 		Set<IncludedProject> all = new HashSet<IncludedProject>();
 		Queue<IncludedProject> queue = new LinkedList<IncludedProject>(projects);

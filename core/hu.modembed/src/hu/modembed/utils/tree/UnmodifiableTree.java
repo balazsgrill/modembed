@@ -76,5 +76,12 @@ public class UnmodifiableTree<T> implements ITree<T>{
 		}
 		return super.equals(obj);
 	}
+
+	@Override
+	public ITree<T> findNode(T node) {
+		ITree<T> t = tree.findNode(node);
+		if (t != null) return new UnmodifiableTree<T>(t);
+		return null;
+	}
 	
 }

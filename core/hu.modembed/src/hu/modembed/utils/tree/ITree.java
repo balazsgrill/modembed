@@ -17,4 +17,6 @@ public interface ITree<T> extends Iterable<ITree<T>>{
 	
 	public boolean removeChild(ITree<T> child);
 	
+	public ITree<T> findNode(T node);
+	
 }
