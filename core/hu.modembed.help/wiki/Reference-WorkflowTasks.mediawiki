@@ -1,0 +1,155 @@
+= Workflow task reference =
+
+== Program model constraints ==
+
+A Program model library (Library) is a very generic language to describe any program. The majority of the compilation is the decrementing of this generality into more and more specific description of the program, but in the same language. This requires to present levels of constraints to the models. The task steps assume a constraint level on their input, and ensures another constraint level on their output (in case no error were reported during the task execution). A constrained model will be denoted like the following: Library{Ln}, whener Ln denotes the assumed constraint level, as defined by the following list:
+
+; L4 : No constraints, every feature is allowed
+; L3 : Self-contained - no reference to another Library model (except Origin definition)
+; L2 : All constraints of L3 
+: No abstract function calls - every function call is assumed to refer to the final function definition, it cannot be overridden
+: Function calls must be type-safe - function parameters cannot be in '''void''' type and function argument type must be compatible with parameter type.
+; L1 : All constraints of L2
+: Flat function structure - Cannot contain calls to other functions (all function is inlined), only instruction calls, variable definitions and blocks are acceptable inside a function definition.
+; L0 : All constraints of L1
+: Variables are mapped - No variable declaration (except for labels)
+
+== Generic compiler tasks ==
+
+=== Integrate program model ===
+
+Takes a set of program models and creates a self-contained equivalent model.
+
+; Identifier : compiler.integrate
+; Inputs : input = Library{L4}*
+; Outputs : output = Library{L3}
+
+Example:
+
+ compiler.integrate{
+ 	input = blink.main
+ 	input = e.platform
+ 	input = microchip.PIC16F1824
+ 	input = pic16.platform
+ 	output = blink.l3
+ }
+
+=== Resolve function calls ===
+
+Resolves all abstract function calls in a Library to an appropriate function implementation.
+
+; Identifier : compiler.resolve
+; Inputs : input = Library{L3}
+; Outputs : output = Library{L2}
+
+Example:
+
+ compiler.resolve{
+ 	input = blink.l3
+ 	output = blink.l2
+ }
+ 
+=== Flatten function structure ===
+ 
+Takes the given entry function from the input model and generates a flat structure by including the implementation of every called function. Every other function definition are removed from the model.
+
+; Identifier : compiler.flatten
+; Inputs : input = Library{L2}
+: entry = "Function name"
+; Outputs : output = Library{L1}
+
+Example:
+
+ compiler.flatten{
+ 	input = blink.l2
+ 	output = blink.l1
+ 	entry = "main"
+ }
+ 
+=== Map variables ===
+
+Maps every variable allocation in the given model to the device memory and exchanges all variable reference to the appropriate address literal. Memory structure is defined by the given architecture model.
+
+; Identifier : compiler.map
+; Inputs : input = Library{L1}
+: entry = "Function name"
+: architecture = Architecture
+; Outputs : output = Library{L0}
+
+Example:
+
+ compiler.map{
+ 	input = blink.l1
+ 	output = blink.l0
+ 	entry = "main"
+ 	architecture = pic16f1824.arch
+ }
+
+=== Produce instruction list ===
+
+Produces a list of instruction calls from the given program model.
+
+; Identifier : compiler.toasm
+; Inputs : input = Library{L0}
+: entry = "Function name"
+; Output : AssemblerObject
+
+Example:
+
+ compiler.toasm{
+ 	input = blink.l0
+ 	entry = "main"
+ 	output = blink.asm
+ } 
+ 
+== HEX file manipulation tasks ==
+
+=== Assemble HEX file ===
+
+Convert a list of instruction calls into a HEX file
+
+; Identifier : hex.assemble
+; Inputs : input = AssemblerObject
+: architecture = Architecture
+; Outputs : output = "file.hex"
+
+Example:
+
+ hex.assemble{
+ 	input = blink.asm
+ 	output = "blink.hex"
+ 	architecture = pic16f1824.arch
+ }
+
+=== Disassemble HEX file ===
+
+Parse a HEX file and produce a list of instruction calls
+
+; Identifier : hex.disassemble
+; Inputs : input = "file.hex"
+: arch = Architecture
+; Outputs : output = AssemblerObject
+
+Example:
+
+ hex.disassemble{
+ 	input = "blink.hex"
+ 	output = blink.asm
+ 	architecture = pic16f1824.arch
+ }
+
+=== Merge HEX files ===
+
+Merge contents of a list of HEX file to a single HEX file
+
+; Identifier : hex.merge
+; Inputs : input = "file.hex"*
+; Outputs : output = "merged.hex"
+
+Example:
+
+ hex.merge{
+ 	input = "blink.hex"
+ 	input = "pic-config.hex"
+ 	output = "blink-full.hex"
+ }

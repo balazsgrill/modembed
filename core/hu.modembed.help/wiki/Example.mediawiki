@@ -1,0 +1,4 @@
+= Examples guide =
+
+The following step-by step guide will show the method of importing one of the provided examples into the workspace then compiling it.
+
