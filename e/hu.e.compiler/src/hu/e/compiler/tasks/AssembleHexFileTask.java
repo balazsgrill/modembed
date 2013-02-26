@@ -39,7 +39,7 @@ public class AssembleHexFileTask implements IModembedTask {
 
 	public static final String INPUT = "input";
 	public static final String OUTPUT = "output";
-	public static final String ARCH = "arch";
+	public static final String ARCH = "architecture";
 	
 	/* (non-Javadoc)
 	 * @see hu.e.compiler.IModembedTask#execute(hu.e.compiler.ITaskContext, org.eclipse.core.runtime.IProgressMonitor)

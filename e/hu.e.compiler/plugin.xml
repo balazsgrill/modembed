@@ -15,35 +15,35 @@
          point="hu.e.compiler.tasks">
       <taskType
             class="hu.e.compiler.tasks.DisassembleHexFileTask"
-            id="e.hex.disassemble">
+            id="hex.disassemble">
       </taskType>
       <taskType
             class="hu.e.compiler.tasks.AssembleHexFileTask"
-            id="e.hex.assemble">
+            id="hex.assemble">
       </taskType>
       <taskType
             class="hu.e.compiler.tasks.MergeHexFileTask"
-            id="e.hex.merge">
+            id="hex.merge">
       </taskType>
       <taskType
             class="hu.e.compiler.tasks.CreateAssemblerObjectTask"
-            id="createAssemblerObject">
+            id="compiler.toasm">
       </taskType>
       <taskType
             class="hu.e.compiler.tasks.L4ToL3Task"
-            id="L4toL3">
+            id="compiler.integrate">
       </taskType>
       <taskType
             class="hu.e.compiler.tasks.L3ToL2Task"
-            id="L3toL2">
+            id="compiler.resolve">
       </taskType>
       <taskType
             class="hu.e.compiler.tasks.L2ToL1Task"
-            id="L2toL1">
+            id="compiler.flatten">
       </taskType>
       <taskType
             class="hu.e.compiler.tasks.L1ToL0Task"
-            id="L1toL0">
+            id="compiler.map">
       </taskType>
    </extension>
 
