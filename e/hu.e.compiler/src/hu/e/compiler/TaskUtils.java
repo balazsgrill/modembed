@@ -8,6 +8,8 @@ import hu.modembed.model.architecture.Architecture;
 import hu.modembed.model.core.CoreFactory;
 import hu.modembed.model.core.MODembedElement;
 import hu.modembed.model.core.ModelOrigin;
+import hu.modembed.model.core.Origin;
+import hu.modembed.model.core.TextOrigin;
 import hu.modembed.model.emodel.CallableElement;
 import hu.modembed.model.emodel.Function;
 import hu.modembed.model.emodel.FunctionParameter;
@@ -28,6 +30,7 @@ import hu.modembed.model.emodel.types.UnsignedTypeDefinition;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
@@ -37,6 +40,7 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * @author balazs.grill
@@ -48,6 +52,42 @@ public class TaskUtils {
 		ModelOrigin o = CoreFactory.eINSTANCE.createModelOrigin();
 		o.setElement(origin);
 		element.getOrigins().add(o);
+	}
+	
+	public static IStatus error(String msg, MODembedElement source){
+		return new Status(IStatus.ERROR, ECompilerPlugin.PLUGIN_ID, msg+" at "+printOrigin(findOrigin(source)));
+	}
+	
+	public static String printOrigin(TextOrigin to){
+		if (to == null){
+			return "Unknown location";
+		}
+		return "line "+to.getLine()+" in "+to.getPath();
+	}
+	
+	public static TextOrigin findOrigin(MODembedElement element){
+		Queue<MODembedElement> elements = new LinkedList<MODembedElement>();
+		elements.add(element);
+		
+		while(!elements.isEmpty()){
+			MODembedElement me = elements.poll();
+			
+			EObject parent = me.eContainer();
+			if (parent instanceof MODembedElement){
+				elements.add((MODembedElement)parent);
+			}
+			
+			for(Origin o : me.getOrigins()){
+				if (o instanceof TextOrigin){
+					return (TextOrigin)o;
+				}
+				if (o instanceof ModelOrigin){
+					elements.add(((ModelOrigin) o).getElement());
+				}
+			}
+		}
+		
+		return null;
 	}
 	
 	public static boolean canAssign(VariableParameterKind from, VariableParameterKind to){

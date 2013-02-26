@@ -9,6 +9,7 @@ import hexfile.HexFile;
 import hexfile.HexfileFactory;
 import hu.e.compiler.IModembedTask;
 import hu.e.compiler.ITaskContext;
+import hu.e.compiler.TaskUtils;
 import hu.modembed.hexfile.persistence.HexFileResource;
 import hu.modembed.model.architecture.Architecture;
 import hu.modembed.model.architecture.MemorySection;
@@ -71,11 +72,15 @@ public class AssembleHexFileTask implements IModembedTask {
 		List<Integer> bytes = new ArrayList<Integer>();
 		for(InstructionCall call : calls){
 			Map<InstructionParameter, Long> paramvalues = new HashMap<InstructionParameter, Long>();
+			
+			Instruction i = call.getInstruction();
+			for(InstructionParameter ip : i.getParameters()){
+				paramvalues.put(ip, Long.valueOf(ip.getDefaultValue()));
+			}
 			for(InstructionCallParameter icp : call.getParameters()){
 				paramvalues.put(icp.getDefinition(), icp.getValue());
 			}
 			
-			Instruction i = call.getInstruction();
 			List<InstructionWord> words = i.getWords();
 			for(InstructionWord w : words){
 				long wordvalue = 0;
@@ -88,7 +93,13 @@ public class AssembleHexFileTask implements IModembedTask {
 						svalue = ((ConstantSection) s).getValue();
 					}
 					if (s instanceof ParameterSection){
-						svalue = paramvalues.get(((ParameterSection) s).getParameter());
+						InstructionParameter iparameter = ((ParameterSection) s).getParameter();
+						Long lvalue = paramvalues.get(iparameter);
+						if (lvalue == null){
+							context.logStatus(TaskUtils.error("Parameter "+iparameter.getId()+" doesn't have a valid value.", s));
+						}else{
+							svalue = lvalue.longValue();
+						}
 					}
 					svalue = svalue << length;
 					svalue = svalue >> s.getShift();
