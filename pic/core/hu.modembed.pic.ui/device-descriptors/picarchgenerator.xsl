@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
-	xmlns:edc="http://crownking/edc" xmlns:architecture="http://modembed.hu/architecture">
+	xmlns:edc="http://crownking/edc" xmlns:architecture="http://modembed.hu/architecture" xmlns:pic="http://hu.modembed/pic">
 <xsl:output method="xml" encoding="utf-8" indent="yes" />
 	
 <xsl:template match="edc:PIC">
-	<architecture:Architecture xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:architecture="http://modembed.hu/architecture">
+	<pic:PICArchitecture xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:architecture="http://modembed.hu/architecture"  xmlns:pic="http://hu.modembed/pic">
 		<xsl:attribute name="name"><xsl:value-of select="@edc:name" />.arch</xsl:attribute>
-		<instructionSet href="../microchip.pic16/.models/microchip.pic16.enchanced.instructions.xmi#/"/>
+		<architecture:instructionSet href="../microchip.pic16/.models/microchip.pic16.enchanced.instructions.xmi#/"/>
 		<xsl:for-each select="edc:ProgramSpace/edc:CodeSector">
 			<xsl:variable name="beginAddr">
 					<xsl:call-template name="hex2dec">
@@ -18,10 +18,10 @@
        					<xsl:with-param name="num" select="substring(@edc:endaddr,3)" />
     				</xsl:call-template>
 			</xsl:variable>
-			<memory program="true">
+			<architecture:memory program="true">
 				<xsl:attribute name="startAddress"><xsl:value-of select="$beginAddr" /></xsl:attribute>
 				<xsl:attribute name="length"><xsl:value-of select="$endAddr - $beginAddr" /></xsl:attribute>
-			</memory>
+			</architecture:memory>
 		</xsl:for-each>
 		<xsl:for-each select="edc:DataSpace/edc:RegardlessOfMode/edc:GPRDataSector[not(@edc:shadowidref)]">
 				<xsl:variable name="beginAddr">
@@ -34,12 +34,19 @@
        					<xsl:with-param name="num" select="substring(@edc:endaddr,3)" />
     				</xsl:call-template>
 				</xsl:variable>
-				<memory program="false">
+				<architecture:memory program="false">
 					<xsl:attribute name="startAddress"><xsl:value-of select="$beginAddr" /></xsl:attribute>
 					<xsl:attribute name="length"><xsl:value-of select="$endAddr - $beginAddr" /></xsl:attribute>
-				</memory>
+				</architecture:memory>
 		</xsl:for-each>
-	</architecture:Architecture>
+		
+		<xsl:variable name="configStart">
+			<xsl:call-template name="hex2dec">
+				<xsl:with-param name="num" select="substring(edc:ProgramSpace/edc:ConfigFuseSector/@edc:beginaddr, 3)"></xsl:with-param>
+			</xsl:call-template>
+		</xsl:variable>
+		
+	</pic:PICArchitecture>
 </xsl:template>
 	
 <xsl:template name="address">
