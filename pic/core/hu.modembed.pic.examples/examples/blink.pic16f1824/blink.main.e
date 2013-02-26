@@ -14,6 +14,7 @@ function main void(){
 	PORTA = 0;
 	TRISA = 0;
 	
+	SELECTB(LATA);
 	loop({
 		NOP();
 		NOP();

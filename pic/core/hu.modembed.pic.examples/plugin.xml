@@ -19,6 +19,10 @@
                path="/"
                resource="examples/blink.pic16f1824/blink.main.e">
          </resource>
+         <resource
+               path="/"
+               resource="examples/blink.pic16f1824/compile.e">
+         </resource>
       </project>
    </extension>
 
