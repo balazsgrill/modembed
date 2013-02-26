@@ -1,28 +1,28 @@
 workflow compile;
 
-L4toL3{
+compiler.integrate{
 	input = blink
 	input = e.platform
 	input = microchip.PIC16F1824
 	input = pic16.platform
 	output = blink.l3
 }
-L3toL2{
+compiler.resolve{
 	input = blink.l3
 	output = blink.l2
 }
-L2toL1{
+compiler.flatten{
 	input = blink.l2
 	output = blink.l1
 	entry = "main"
 }
-L1toL0{
+compiler.map{
 	input = blink.l1
 	output = blink.l0
 	entry = "main"
 	architecture = pic16f1824.arch
 }
-createAssemblerObject{
+compiler.toasm{
 	input = blink.l0
 	entry = "main"
 	output = blink.assemblerObject

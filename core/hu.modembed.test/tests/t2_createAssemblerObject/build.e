@@ -1,6 +1,6 @@
 workflow build;
 
-createAssemblerObject{
+compiler.toasm{
 	input = blink
 	entry = "main"
 	output = blink.assemblerObject
