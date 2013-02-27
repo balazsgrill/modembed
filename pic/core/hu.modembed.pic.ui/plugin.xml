@@ -34,5 +34,12 @@
             parent="hu.modembed.pic.ui.category">
       </category>
    </extension>
+   <extension
+         point="hu.e.compiler.tasks">
+      <taskType
+            class="hu.modembed.pic.ui.tasks.ExtractConfigValuesTask"
+            id="pic.config.extract">
+      </taskType>
+   </extension>
 
 </plugin>
