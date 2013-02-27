@@ -9,6 +9,7 @@ import hu.modembed.model.core.CoreFactory;
 import hu.modembed.model.core.MODembedElement;
 import hu.modembed.model.core.ModelOrigin;
 import hu.modembed.model.core.Origin;
+import hu.modembed.model.core.RootElement;
 import hu.modembed.model.core.TextOrigin;
 import hu.modembed.model.emodel.CallableElement;
 import hu.modembed.model.emodel.Function;
@@ -40,7 +41,9 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
 
 /**
  * @author balazs.grill
@@ -48,6 +51,53 @@ import org.eclipse.emf.ecore.EObject;
  */
 public class TaskUtils {
 
+	public static <T> T getInputModel(ITaskContext context, String value, Class<T> clazz){
+		boolean modembedType = RootElement.class.isAssignableFrom(clazz);
+		URI uri = modembedType ? context.getModelURI(value) : context.getFileURI(value);
+		Resource r = context.getInput(uri);
+		if (r != null){
+			EObject eo = r.getContents().get(0);
+			if (clazz.isInstance(eo)) return clazz.cast(eo);
+			context.logStatus(error("Type of input is invalid: '"+value+"' (expected: "+clazz.getName()+", found: "+eo.eClass().getName()+")"));
+			return null;
+		}else{
+			context.logStatus(error("Invalid input value: "+value));
+			return null;
+		}
+	}
+	
+	public static EObject createOutputModel(ITaskContext context, String value, EClass eclass){
+		boolean modembedType = RootElement.class.isAssignableFrom(eclass.getInstanceClass());
+		URI uri = modembedType ? context.getModelURI(value) : context.getFileURI(value);
+		Resource r = context.getOutput(uri);
+		if (r != null){
+			EObject eo = eclass.getEPackage().getEFactoryInstance().create(eclass);
+			r.getContents().add(eo);
+			return eo;
+		}else{
+			context.logStatus(error("Invalid input value: "+value));
+			return null;
+		}
+	}
+	
+	public static <T> T getInput(ITaskContext context, String parameter, Class<T> clazz){
+		List<String> values = context.getParameterValue(parameter);
+		if (values.isEmpty()){
+			context.logStatus(error("Input parameter '"+parameter+"' does not have a value set."));
+			return null;
+		}
+		return getInputModel(context, values.get(0), clazz);
+	}
+	
+	public static EObject createOutput(ITaskContext context, String parameter, EClass eclass){
+		List<String> values = context.getParameterValue(parameter);
+		if (values.isEmpty()){
+			context.logStatus(error("Output parameter '"+parameter+"' does not have a value set."));
+			return null;
+		}
+		return createOutputModel(context, values.get(0), eclass);
+	}
+	
 	public static void addOrigin(MODembedElement element, MODembedElement origin){
 		ModelOrigin o = CoreFactory.eINSTANCE.createModelOrigin();
 		o.setElement(origin);

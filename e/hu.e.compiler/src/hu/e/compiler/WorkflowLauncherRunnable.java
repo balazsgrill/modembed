@@ -144,7 +144,7 @@ public class WorkflowLauncherRunnable{
 
 		@Override
 		public URI getFileURI(String path) {
-			IContainer container = workflowFile.getParent();
+			IContainer container = workflowFile.getProject();
 			IFile file = container.getFile(new Path(path));
 			return URI.createPlatformResourceURI(file.getFullPath().toString(), true);
 		}
