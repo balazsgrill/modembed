@@ -277,5 +277,9 @@ public class TaskUtils {
 		}
 		return null;
 	}
+
+	public static IStatus error(Exception e) {
+		return new Status(IStatus.ERROR, ECompilerPlugin.PLUGIN_ID, e.getMessage(), e);
+	}
 	
 }

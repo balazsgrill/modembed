@@ -186,25 +186,40 @@ public class WorkflowLauncherRunnable{
 				try{
 					IProgressMonitor subprogress = new SubProgressMonitor(monitor, 100);
 					TaskContext context = new TaskContext((Task)task);
-
+					
 					listener.taskStarted(task);
-					IModembedTask wtask = createTask(((Task) task).getType());
-					wtask.execute(context, subprogress);
-					
-					listener.log(context.status);
-					status.add(context.status);
-					
-					if (context.status.isOK()){
-						for(Resource r : context.outputs){
-							try {
-								listener.outputSaving(r.getURI());
-								r.save(null);
-							} catch (IOException e) {
-								IStatus s = new Status(IStatus.ERROR, ECompilerPlugin.PLUGIN_ID, "Could not save output model", e);
-								listener.log(s);
-								status.add(s);
+					if (status.isOK()){
+						
+						IModembedTask wtask = createTask(((Task) task).getType());
+						try{
+							wtask.execute(context, subprogress);
+						}catch(Exception e){
+							IStatus error = TaskUtils.error(e);
+							status.add(error);
+						}
+
+						listener.log(context.status);
+						status.add(context.status);
+
+						if (context.status.isOK()){
+							for(Resource r : context.outputs){
+								try {
+									listener.outputSaving(r.getURI());
+									r.save(null);
+								} catch (IOException e) {
+									IStatus s = new Status(IStatus.ERROR, ECompilerPlugin.PLUGIN_ID, "Could not save output model", e);
+									listener.log(s);
+									status.add(s);
+								}
 							}
 						}
+						
+					}else{
+						/**
+						 * Skipping
+						 */
+						IStatus skip = new Status(IStatus.CANCEL, ECompilerPlugin.PLUGIN_ID, "Skipping execution because of previous error.");
+						listener.log(skip);
 					}
 				}catch(CoreException e){
 					listener.log(e.getStatus());
