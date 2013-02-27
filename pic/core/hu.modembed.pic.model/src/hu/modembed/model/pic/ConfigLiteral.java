@@ -2,6 +2,7 @@
  */
 package hu.modembed.model.pic;
 
+import hu.modembed.model.core.NamedElement;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -20,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface ConfigLiteral extends EObject {
+public interface ConfigLiteral extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->

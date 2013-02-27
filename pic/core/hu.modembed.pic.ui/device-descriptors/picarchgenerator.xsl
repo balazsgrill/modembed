@@ -6,7 +6,7 @@
 <xsl:template match="edc:PIC">
 	<pic:PICArchitecture xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:architecture="http://modembed.hu/architecture"  xmlns:pic="http://hu.modembed/pic">
 		<xsl:attribute name="name"><xsl:value-of select="@edc:name" />.arch</xsl:attribute>
-		<architecture:instructionSet href="../microchip.pic16/.models/microchip.pic16.enchanced.instructions.xmi#/"/>
+		<instructionSet href="../microchip.pic16/.models/microchip.pic16.enchanced.instructions.xmi#/"/>
 		<xsl:for-each select="edc:ProgramSpace/edc:CodeSector">
 			<xsl:variable name="beginAddr">
 					<xsl:call-template name="hex2dec">
@@ -18,10 +18,10 @@
        					<xsl:with-param name="num" select="substring(@edc:endaddr,3)" />
     				</xsl:call-template>
 			</xsl:variable>
-			<architecture:memory program="true">
+			<memory program="true">
 				<xsl:attribute name="startAddress"><xsl:value-of select="$beginAddr" /></xsl:attribute>
 				<xsl:attribute name="length"><xsl:value-of select="$endAddr - $beginAddr" /></xsl:attribute>
-			</architecture:memory>
+			</memory>
 		</xsl:for-each>
 		<xsl:for-each select="edc:DataSpace/edc:RegardlessOfMode/edc:GPRDataSector[not(@edc:shadowidref)]">
 				<xsl:variable name="beginAddr">
@@ -34,10 +34,10 @@
        					<xsl:with-param name="num" select="substring(@edc:endaddr,3)" />
     				</xsl:call-template>
 				</xsl:variable>
-				<architecture:memory program="false">
+				<memory program="false">
 					<xsl:attribute name="startAddress"><xsl:value-of select="$beginAddr" /></xsl:attribute>
 					<xsl:attribute name="length"><xsl:value-of select="$endAddr - $beginAddr" /></xsl:attribute>
-				</architecture:memory>
+				</memory>
 		</xsl:for-each>
 		
 		<xsl:variable name="configStart">
@@ -45,12 +45,80 @@
 				<xsl:with-param name="num" select="substring(edc:ProgramSpace/edc:ConfigFuseSector/@edc:beginaddr, 3)"></xsl:with-param>
 			</xsl:call-template>
 		</xsl:variable>
+		<xsl:for-each select="edc:ProgramSpace/edc:ConfigFuseSector/edc:DCRDef">
+		<configWords>
+			<xsl:attribute name="name"><xsl:value-of select="@edc:cname"/></xsl:attribute>
+			<xsl:attribute name="description"><xsl:value-of select="@edc:desc"/></xsl:attribute>
+			<xsl:attribute name="address">
+				<xsl:call-template name="address">
+					<xsl:with-param name="beginAddr" select="$configStart"></xsl:with-param>
+					<xsl:with-param name="wordsize" select="16"></xsl:with-param>
+				</xsl:call-template>
+			</xsl:attribute>
+			<xsl:attribute name="size">
+				<xsl:call-template name="size"></xsl:call-template>
+			</xsl:attribute>
+			<xsl:attribute name="defaultValue">
+				<xsl:choose>
+					<xsl:when test="starts-with(@edc:default, '0x')">
+						<xsl:call-template name="hex2dec">
+							<xsl:with-param name="num" select="substring(@edc:default,3)"></xsl:with-param>
+						</xsl:call-template>
+					</xsl:when>
+					<xsl:otherwise><xsl:value-of select="@edc:default"/></xsl:otherwise>
+				</xsl:choose>
+			</xsl:attribute>
+			<xsl:for-each select="edc:DCRModeList/edc:DCRMode/edc:DCRFieldDef">
+			<fields>
+				<xsl:attribute name="name"><xsl:value-of select="@edc:cname"/></xsl:attribute>
+				<xsl:attribute name="description"><xsl:value-of select="@edc:desc"/></xsl:attribute>
+				<xsl:attribute name="start">
+					<xsl:call-template name="address">
+						<xsl:with-param name="beginAddr" select="0"></xsl:with-param>
+						<xsl:with-param name="wordsize" select="1"></xsl:with-param>
+					</xsl:call-template>
+				</xsl:attribute>
+				<xsl:attribute name="size">
+					<xsl:choose>
+						<xsl:when test="starts-with(@edc:nzwidth, '0x')">
+							<xsl:call-template name="hex2dec">
+								<xsl:with-param name="num" select="substring(@edc:nzwidth,3)"></xsl:with-param>
+							</xsl:call-template>
+						</xsl:when>
+						<xsl:otherwise><xsl:value-of select="@edc:nzwidth"/></xsl:otherwise>
+					</xsl:choose>
+				</xsl:attribute>
+				<xsl:for-each select="edc:DCRFieldSemantic">
+				<literals>
+					<xsl:attribute name="name"><xsl:value-of select="@edc:cname"/></xsl:attribute>
+					<xsl:attribute name="description"><xsl:value-of select="@edc:desc"/></xsl:attribute>
+					<xsl:variable name="valueText">
+						<xsl:value-of select="substring-after(@edc:when,'== ')"></xsl:value-of>
+					</xsl:variable>
+					<xsl:attribute name="value">
+						<xsl:choose>
+						<xsl:when test="starts-with($valueText, '0x')">
+							<xsl:call-template name="hex2dec">
+								<xsl:with-param name="num" select="substring($valueText,3)"></xsl:with-param>
+							</xsl:call-template>
+						</xsl:when>
+						<xsl:otherwise><xsl:value-of select="$valueText"/></xsl:otherwise>
+					</xsl:choose>
+					</xsl:attribute>
+				</literals>
+				</xsl:for-each>
+			</fields>
+			</xsl:for-each>
+		</configWords>
+		</xsl:for-each>
 		
 	</pic:PICArchitecture>
 </xsl:template>
 	
 <xsl:template name="address">
 	<xsl:param name="node" select="." />
+	<xsl:param name="beginAddr" />
+	<xsl:param name="wordsize" select="8" />
 	
 	<xsl:variable name="index">
 		<xsl:value-of select="count($node/preceding-sibling::*)"></xsl:value-of>
@@ -60,37 +128,30 @@
 			<xsl:variable name="previous">
 				<xsl:call-template name="address">
 					<xsl:with-param name="node" select="$node/preceding-sibling::*[1]"/>
+					<xsl:with-param name="beginAddr" select="$beginAddr"/>
+					<xsl:with-param name="wordsize" select="$wordsize"/>
 				</xsl:call-template>
 			</xsl:variable>
 			<xsl:variable name="prev_size">
 				<xsl:call-template name="size">
 					<xsl:with-param name="node" select="$node/preceding-sibling::*[1]"/>
+					<xsl:with-param name="wordsize" select="$wordsize"/>
 				</xsl:call-template>
 			</xsl:variable>
-			<xsl:value-of select="$previous + ($prev_size div 8)"></xsl:value-of>
+			<xsl:value-of select="$previous + ($prev_size div $wordsize)"/>
 		</xsl:when>
 		<xsl:otherwise>
-			<xsl:variable name="baseAddrText"><xsl:value-of select="$node/../@edc:beginaddr"/></xsl:variable>  
-			<xsl:variable name="baseAddr">
-				<xsl:choose>
-					<xsl:when test="starts-with($baseAddrText,'0x')">
-						<xsl:call-template name="hex2dec">
-       						<xsl:with-param name="num" select="substring($baseAddrText,3)" />
-    					</xsl:call-template>
-					</xsl:when>
-					<xsl:otherwise><xsl:value-of select="$baseAddrText"></xsl:value-of></xsl:otherwise>
-				</xsl:choose>
-			</xsl:variable>
-			<xsl:value-of select="$baseAddr"/>
+			<xsl:value-of select="$beginAddr"/>
 		</xsl:otherwise>
 	</xsl:choose>
 </xsl:template>	
 	
 <xsl:template name="size">
 	<xsl:param name="node" select="." />
+	<xsl:param name="wordsize" select="8"/>
 	<xsl:choose>
-		<xsl:when test="name($node) = 'edc:Mirror'"><xsl:value-of select="$node/@edc:nzsize * 8"/></xsl:when>
-		<xsl:when test="name($node) = 'edc:AdjustPoint'"><xsl:value-of select="$node/@edc:offset * 8"/></xsl:when>
+		<xsl:when test="name($node) = 'edc:Mirror'"><xsl:value-of select="$node/@edc:nzsize * $wordsize"/></xsl:when>
+		<xsl:when test="name($node) = 'edc:AdjustPoint'"><xsl:value-of select="$node/@edc:offset * $wordsize"/></xsl:when>
 		<xsl:when test="starts-with($node/@edc:nzwidth,'0x')">
 			<xsl:call-template name="hex2dec">
        			<xsl:with-param name="num" select="substring($node/@edc:nzwidth,3)" />

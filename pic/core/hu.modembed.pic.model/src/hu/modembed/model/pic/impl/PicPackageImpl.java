@@ -330,6 +330,7 @@ public class PicPackageImpl extends EPackageImpl implements PicPackage {
 		picArchitectureEClass.getESuperTypes().add(theArchitecturePackage.getArchitecture());
 		configWordEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		configFieldEClass.getESuperTypes().add(theCorePackage.getNamedElement());
+		configLiteralEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(picArchitectureEClass, PICArchitecture.class, "PICArchitecture", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

@@ -2,6 +2,7 @@
  */
 package hu.modembed.model.pic.impl;
 
+import hu.modembed.model.core.impl.NamedElementImpl;
 import hu.modembed.model.pic.ConfigLiteral;
 import hu.modembed.model.pic.PicPackage;
 
@@ -25,7 +26,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *
  * @generated
  */
-public class ConfigLiteralImpl extends EObjectImpl implements ConfigLiteral {
+public class ConfigLiteralImpl extends NamedElementImpl implements ConfigLiteral {
 	/**
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->

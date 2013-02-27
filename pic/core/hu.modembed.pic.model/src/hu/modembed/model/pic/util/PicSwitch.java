@@ -101,6 +101,8 @@ public class PicSwitch<T> extends Switch<T> {
 			case PicPackage.CONFIG_LITERAL: {
 				ConfigLiteral configLiteral = (ConfigLiteral)theEObject;
 				T result = caseConfigLiteral(configLiteral);
+				if (result == null) result = caseNamedElement(configLiteral);
+				if (result == null) result = caseMODembedElement(configLiteral);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
