@@ -18,6 +18,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link hu.modembed.model.pic.ConfigWord#getSize <em>Size</em>}</li>
  *   <li>{@link hu.modembed.model.pic.ConfigWord#getDefaultValue <em>Default Value</em>}</li>
  *   <li>{@link hu.modembed.model.pic.ConfigWord#getFields <em>Fields</em>}</li>
+ *   <li>{@link hu.modembed.model.pic.ConfigWord#getImplMask <em>Impl Mask</em>}</li>
  * </ul>
  * </p>
  *
@@ -119,5 +120,31 @@ public interface ConfigWord extends NamedElement {
 	 * @generated
 	 */
 	EList<ConfigField> getFields();
+
+	/**
+	 * Returns the value of the '<em><b>Impl Mask</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Impl Mask</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Impl Mask</em>' attribute.
+	 * @see #setImplMask(long)
+	 * @see hu.modembed.model.pic.PicPackage#getConfigWord_ImplMask()
+	 * @model
+	 * @generated
+	 */
+	long getImplMask();
+
+	/**
+	 * Sets the value of the '{@link hu.modembed.model.pic.ConfigWord#getImplMask <em>Impl Mask</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Impl Mask</em>' attribute.
+	 * @see #getImplMask()
+	 * @generated
+	 */
+	void setImplMask(long value);
 
 } // ConfigWord

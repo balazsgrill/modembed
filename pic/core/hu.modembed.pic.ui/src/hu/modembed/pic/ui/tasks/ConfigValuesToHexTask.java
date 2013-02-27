@@ -54,6 +54,7 @@ public class ConfigValuesToHexTask implements IModembedTask {
 			endAddress = Math.max(endAddress, end);
 			
 			long wordValue = word.getDefaultValue();
+			long implMask = ConfigUtils.configImplMask(word.getImplMask());
 			for(ConfigField cf : word.getFields()){
 				for(ConfigurationSelection cs : config.getValues()){
 					if (cs.getSelection() != null && cf.equals(cs.getField())){
@@ -62,7 +63,7 @@ public class ConfigValuesToHexTask implements IModembedTask {
 					}
 				}
 			}
-			values[i] = wordValue;
+			values[i] = wordValue & implMask;
 			i++;
 		}
 		
@@ -83,6 +84,7 @@ public class ConfigValuesToHexTask implements IModembedTask {
 				i++;
 			}
 			entry.setData(data);
+			entry.setAddress((int)startAddress);
 		}
 		
 	}

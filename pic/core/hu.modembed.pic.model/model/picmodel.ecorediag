@@ -70,6 +70,10 @@
           <element xmi:type="ecore:EAttribute" href="picmodel.ecore#//ConfigWord/defaultValue"/>
           <layoutConstraint xmi:type="notation:Location" xmi:id="_Tb9A0YAeEeK1iIme7inEvQ"/>
         </children>
+        <children xmi:type="notation:Node" xmi:id="_r85HUIDfEeKHi6BlOfdypQ" type="2001">
+          <element xmi:type="ecore:EAttribute" href="picmodel.ecore#//ConfigWord/implMask"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_r85HUYDfEeKHi6BlOfdypQ"/>
+        </children>
         <styles xmi:type="notation:DrawerStyle" xmi:id="_r-afcIAdEeK1iIme7inEvQ"/>
         <styles xmi:type="notation:SortingStyle" xmi:id="_r-afcYAdEeK1iIme7inEvQ"/>
         <styles xmi:type="notation:FilteringStyle" xmi:id="_r-afcoAdEeK1iIme7inEvQ"/>

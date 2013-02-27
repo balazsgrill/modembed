@@ -11,6 +11,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="fields" upperBound="-1"
         eType="#//ConfigField" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="implMask" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConfigField" eSuperTypes="../../hu.modembed.model/model/modembedmodel.ecore#//core/NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="literals" upperBound="-1"

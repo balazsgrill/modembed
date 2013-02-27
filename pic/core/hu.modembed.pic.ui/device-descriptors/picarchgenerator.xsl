@@ -68,6 +68,16 @@
 					<xsl:otherwise><xsl:value-of select="@edc:default"/></xsl:otherwise>
 				</xsl:choose>
 			</xsl:attribute>
+			<xsl:attribute name="implMask">
+				<xsl:choose>
+					<xsl:when test="starts-with(@edc:impl, '0x')">
+						<xsl:call-template name="hex2dec">
+							<xsl:with-param name="num" select="substring(@edc:impl,3)"></xsl:with-param>
+						</xsl:call-template>
+					</xsl:when>
+					<xsl:otherwise><xsl:value-of select="@edc:impl"/></xsl:otherwise>
+				</xsl:choose>
+			</xsl:attribute>
 			<xsl:for-each select="edc:DCRModeList/edc:DCRMode/edc:DCRFieldDef">
 			<fields>
 				<xsl:attribute name="name"><xsl:value-of select="@edc:cname"/></xsl:attribute>

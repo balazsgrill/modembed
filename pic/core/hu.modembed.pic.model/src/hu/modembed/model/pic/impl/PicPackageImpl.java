@@ -207,6 +207,15 @@ public class PicPackageImpl extends EPackageImpl implements PicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getConfigWord_ImplMask() {
+		return (EAttribute)configWordEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getConfigField() {
 		return configFieldEClass;
 	}
@@ -292,6 +301,7 @@ public class PicPackageImpl extends EPackageImpl implements PicPackage {
 		createEAttribute(configWordEClass, CONFIG_WORD__SIZE);
 		createEAttribute(configWordEClass, CONFIG_WORD__DEFAULT_VALUE);
 		createEReference(configWordEClass, CONFIG_WORD__FIELDS);
+		createEAttribute(configWordEClass, CONFIG_WORD__IMPL_MASK);
 
 		configFieldEClass = createEClass(CONFIG_FIELD);
 		createEReference(configFieldEClass, CONFIG_FIELD__LITERALS);
@@ -352,6 +362,7 @@ public class PicPackageImpl extends EPackageImpl implements PicPackage {
 		initEAttribute(getConfigWord_Size(), ecorePackage.getELong(), "size", null, 0, 1, ConfigWord.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getConfigWord_DefaultValue(), ecorePackage.getELong(), "defaultValue", null, 0, 1, ConfigWord.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getConfigWord_Fields(), this.getConfigField(), null, "fields", null, 0, -1, ConfigWord.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getConfigWord_ImplMask(), ecorePackage.getELong(), "implMask", null, 0, 1, ConfigWord.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(configFieldEClass, ConfigField.class, "ConfigField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getConfigField_Literals(), this.getConfigLiteral(), null, "literals", null, 0, -1, ConfigField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

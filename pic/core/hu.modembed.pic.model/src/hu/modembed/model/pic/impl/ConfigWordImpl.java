@@ -34,6 +34,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link hu.modembed.model.pic.impl.ConfigWordImpl#getSize <em>Size</em>}</li>
  *   <li>{@link hu.modembed.model.pic.impl.ConfigWordImpl#getDefaultValue <em>Default Value</em>}</li>
  *   <li>{@link hu.modembed.model.pic.impl.ConfigWordImpl#getFields <em>Fields</em>}</li>
+ *   <li>{@link hu.modembed.model.pic.impl.ConfigWordImpl#getImplMask <em>Impl Mask</em>}</li>
  * </ul>
  * </p>
  *
@@ -109,6 +110,26 @@ public class ConfigWordImpl extends NamedElementImpl implements ConfigWord {
 	 * @ordered
 	 */
 	protected EList<ConfigField> fields;
+
+	/**
+	 * The default value of the '{@link #getImplMask() <em>Impl Mask</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getImplMask()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final long IMPL_MASK_EDEFAULT = 0L;
+
+	/**
+	 * The cached value of the '{@link #getImplMask() <em>Impl Mask</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getImplMask()
+	 * @generated
+	 * @ordered
+	 */
+	protected long implMask = IMPL_MASK_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -209,6 +230,27 @@ public class ConfigWordImpl extends NamedElementImpl implements ConfigWord {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public long getImplMask() {
+		return implMask;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setImplMask(long newImplMask) {
+		long oldImplMask = implMask;
+		implMask = newImplMask;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PicPackage.CONFIG_WORD__IMPL_MASK, oldImplMask, implMask));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -234,6 +276,8 @@ public class ConfigWordImpl extends NamedElementImpl implements ConfigWord {
 				return getDefaultValue();
 			case PicPackage.CONFIG_WORD__FIELDS:
 				return getFields();
+			case PicPackage.CONFIG_WORD__IMPL_MASK:
+				return getImplMask();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -260,6 +304,9 @@ public class ConfigWordImpl extends NamedElementImpl implements ConfigWord {
 				getFields().clear();
 				getFields().addAll((Collection<? extends ConfigField>)newValue);
 				return;
+			case PicPackage.CONFIG_WORD__IMPL_MASK:
+				setImplMask((Long)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -284,6 +331,9 @@ public class ConfigWordImpl extends NamedElementImpl implements ConfigWord {
 			case PicPackage.CONFIG_WORD__FIELDS:
 				getFields().clear();
 				return;
+			case PicPackage.CONFIG_WORD__IMPL_MASK:
+				setImplMask(IMPL_MASK_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -304,6 +354,8 @@ public class ConfigWordImpl extends NamedElementImpl implements ConfigWord {
 				return defaultValue != DEFAULT_VALUE_EDEFAULT;
 			case PicPackage.CONFIG_WORD__FIELDS:
 				return fields != null && !fields.isEmpty();
+			case PicPackage.CONFIG_WORD__IMPL_MASK:
+				return implMask != IMPL_MASK_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -324,6 +376,8 @@ public class ConfigWordImpl extends NamedElementImpl implements ConfigWord {
 		result.append(size);
 		result.append(", defaultValue: ");
 		result.append(defaultValue);
+		result.append(", implMask: ");
+		result.append(implMask);
 		result.append(')');
 		return result.toString();
 	}

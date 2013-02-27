@@ -33,6 +33,16 @@ public class ConfigUtils {
 		return mask;
 	}
 	
+	public static long configImplMask(long implMask){
+		long mask = 0;
+		for(int i=0;i<63;i++){
+			long nmask = mask | (1<<i);
+			if (nmask > implMask) return mask;
+			mask = nmask;
+		}
+		return implMask;
+	}
+	
 	public static long insertValue(long value, long start, int size, long insertedValue){
 		long ivalue = insertedValue<<start;
 		long mask = mask(size)<<start;

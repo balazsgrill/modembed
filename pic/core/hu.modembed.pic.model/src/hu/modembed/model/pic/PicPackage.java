@@ -224,13 +224,22 @@ public interface PicPackage extends EPackage {
 	int CONFIG_WORD__FIELDS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Impl Mask</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFIG_WORD__IMPL_MASK = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Config Word</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONFIG_WORD_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int CONFIG_WORD_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link hu.modembed.model.pic.impl.ConfigFieldImpl <em>Config Field</em>}' class.
@@ -437,6 +446,17 @@ public interface PicPackage extends EPackage {
 	EReference getConfigWord_Fields();
 
 	/**
+	 * Returns the meta object for the attribute '{@link hu.modembed.model.pic.ConfigWord#getImplMask <em>Impl Mask</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Impl Mask</em>'.
+	 * @see hu.modembed.model.pic.ConfigWord#getImplMask()
+	 * @see #getConfigWord()
+	 * @generated
+	 */
+	EAttribute getConfigWord_ImplMask();
+
+	/**
 	 * Returns the meta object for class '{@link hu.modembed.model.pic.ConfigField <em>Config Field</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -581,6 +601,14 @@ public interface PicPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CONFIG_WORD__FIELDS = eINSTANCE.getConfigWord_Fields();
+
+		/**
+		 * The meta object literal for the '<em><b>Impl Mask</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONFIG_WORD__IMPL_MASK = eINSTANCE.getConfigWord_ImplMask();
 
 		/**
 		 * The meta object literal for the '{@link hu.modembed.model.pic.impl.ConfigFieldImpl <em>Config Field</em>}' class.
