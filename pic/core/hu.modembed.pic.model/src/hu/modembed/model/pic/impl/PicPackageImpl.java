@@ -21,6 +21,8 @@ import hu.modembed.model.pic.PICArchitecture;
 import hu.modembed.model.pic.PicFactory;
 import hu.modembed.model.pic.PicPackage;
 
+import hu.modembed.model.pic.configValue.ConfigValuePackage;
+import hu.modembed.model.pic.configValue.impl.ConfigValuePackageImpl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -117,11 +119,16 @@ public class PicPackageImpl extends EPackageImpl implements PicPackage {
 		EmodelPackage.eINSTANCE.eClass();
 		ArchitecturePackage.eINSTANCE.eClass();
 
+		// Obtain or create and register interdependencies
+		ConfigValuePackageImpl theConfigValuePackage = (ConfigValuePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ConfigValuePackage.eNS_URI) instanceof ConfigValuePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ConfigValuePackage.eNS_URI) : ConfigValuePackage.eINSTANCE);
+
 		// Create package meta-data objects
 		thePicPackage.createPackageContents();
+		theConfigValuePackage.createPackageContents();
 
 		// Initialize created meta-data
 		thePicPackage.initializePackageContents();
+		theConfigValuePackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		thePicPackage.freeze();
@@ -319,8 +326,12 @@ public class PicPackageImpl extends EPackageImpl implements PicPackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
+		ConfigValuePackage theConfigValuePackage = (ConfigValuePackage)EPackage.Registry.INSTANCE.getEPackage(ConfigValuePackage.eNS_URI);
 		ArchitecturePackage theArchitecturePackage = (ArchitecturePackage)EPackage.Registry.INSTANCE.getEPackage(ArchitecturePackage.eNS_URI);
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
+
+		// Add subpackages
+		getESubpackages().add(theConfigValuePackage);
 
 		// Create type parameters
 

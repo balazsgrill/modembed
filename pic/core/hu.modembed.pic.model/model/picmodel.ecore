@@ -21,4 +21,16 @@
   <eClassifiers xsi:type="ecore:EClass" name="ConfigLiteral" eSuperTypes="../../hu.modembed.model/model/modembedmodel.ecore#//core/NamedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
   </eClassifiers>
+  <eSubpackages name="configValue" nsURI="http://hu.modembed/pic/configValue" nsPrefix="configValue">
+    <eClassifiers xsi:type="ecore:EClass" name="PICConfigurationValue" eSuperTypes="../../hu.modembed.model/model/modembedmodel.ecore#//core/RootElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="values" upperBound="-1"
+          eType="#//configValue/ConfigurationSelection" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="definition" eType="#//PICArchitecture"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ConfigurationSelection" eSuperTypes="../../hu.modembed.model/model/modembedmodel.ecore#//core/MODembedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="field" lowerBound="1"
+          eType="#//ConfigField"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="selection" eType="#//ConfigLiteral"/>
+    </eClassifiers>
+  </eSubpackages>
 </ecore:EPackage>
