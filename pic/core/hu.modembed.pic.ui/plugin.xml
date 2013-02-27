@@ -40,6 +40,10 @@
             class="hu.modembed.pic.ui.tasks.ExtractConfigValuesTask"
             id="pic.config.extract">
       </taskType>
+      <taskType
+            class="hu.modembed.pic.ui.tasks.ConfigValuesToHexTask"
+            id="pic.config.tohex">
+      </taskType>
    </extension>
 
 </plugin>
