@@ -3,8 +3,10 @@ package hu.modembed.test;
 import static org.junit.Assert.assertTrue;
 import hu.e.compiler.WorkflowLauncherRunnable;
 
+import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 
+import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
@@ -33,4 +35,21 @@ public class CompilerTests {
 		Assert.assertThat(status, StatusMatcher.instance);
 	}
 
+	@Test
+	public void test4_picConfig() throws CoreException, InterruptedException, IOException{
+		IProject testproject = ResourcesPlugin.getWorkspace().getRoot().getProject("test4");
+		assertTrue(testproject.exists());
+		
+		IFile input = testproject.getFile("16f1824_blink.hex");
+		
+		ModembedTests.build();
+		ModembedTests.checkMarkers(testproject);
+		
+		IStatus status = WorkflowLauncherRunnable.create(testproject, "compile").execute(new NullProgressMonitor());
+		Assert.assertThat(status, StatusMatcher.instance);
+		
+		IFile output = testproject.getFile("blink_w_config.hex");
+		assertTrue("output does not match input!", ModembedTests.modelsAreEquivalent(input, output));
+	}
+	
 }

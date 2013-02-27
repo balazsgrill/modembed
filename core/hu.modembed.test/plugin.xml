@@ -6,7 +6,7 @@
       <project
             category="hu.modembed.test.category"
             id="test0"
-            name="test0">
+            name="Test0 - Parsing">
          <resource
                path="/"
                resource="tests/t0_parse/parseTest.e">
@@ -15,7 +15,7 @@
       <project
             category="hu.modembed.test.category"
             id="test1"
-            name="test1">
+            name="Test1 - Assembling">
          <dependency
                project="microchip.pic16">
          </dependency>
@@ -35,7 +35,7 @@
       <project
             category="hu.modembed.test.category"
             id="test2"
-            name="test2">
+            name="Test2 - Library{L0} to ASM">
          <dependency
                project="microchip.pic16">
          </dependency>
@@ -51,7 +51,7 @@
       <project
             category="hu.modembed.test.category"
             id="test3"
-            name="test3">
+            name="Test3 - Compilation">
          <dependency
                project="microchip.pic16">
          </dependency>
@@ -78,6 +78,32 @@
             id="hu.modembed.test.category"
             name="Test projects">
       </category>
+      <project
+            category="hu.modembed.test.category"
+            id="test4"
+            name="Test4 - PIC configuration">
+         <dependency
+               project="e.core">
+         </dependency>
+         <dependency
+               project="microchip.pic16">
+         </dependency>
+         <dependency
+               project="microchip.PIC16F1824">
+         </dependency>
+         <resource
+               path="/"
+               resource="tests/t4_picConfig/16f1824_blink.hex">
+         </resource>
+         <resource
+               path="/"
+               resource="tests/t4_picConfig/16f1824_blink_wo_Config.hex">
+         </resource>
+         <resource
+               path="/"
+               resource="tests/t4_picConfig/compile.e">
+         </resource>
+      </project>
    </extension>
 
 </plugin>
