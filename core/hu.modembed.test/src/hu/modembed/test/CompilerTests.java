@@ -1,7 +1,6 @@
 package hu.modembed.test;
 
 import static org.junit.Assert.assertTrue;
-import hu.e.compiler.WorkflowLauncherRunnable;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
@@ -11,7 +10,6 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.NullProgressMonitor;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -31,7 +29,7 @@ public class CompilerTests {
 		ModembedTests.build();
 		ModembedTests.checkMarkers(testproject);
 		
-		IStatus status = WorkflowLauncherRunnable.create(testproject, "compile").execute(new NullProgressMonitor());
+		IStatus status = ModembedTests.executeWorkflow(testproject, "compile");
 		Assert.assertThat(status, StatusMatcher.instance);
 	}
 
@@ -45,7 +43,7 @@ public class CompilerTests {
 		ModembedTests.build();
 		ModembedTests.checkMarkers(testproject);
 		
-		IStatus status = WorkflowLauncherRunnable.create(testproject, "compile").execute(new NullProgressMonitor());
+		IStatus status = ModembedTests.executeWorkflow(testproject, "compile");
 		Assert.assertThat(status, StatusMatcher.instance);
 		
 		IFile output = testproject.getFile("blink_w_config.hex");
@@ -62,7 +60,7 @@ public class CompilerTests {
 		ModembedTests.build();
 		ModembedTests.checkMarkers(testproject);
 		
-		IStatus status = WorkflowLauncherRunnable.create(testproject, "compile").execute(new NullProgressMonitor());
+		IStatus status = ModembedTests.executeWorkflow(testproject, "compile");
 		Assert.assertThat(status, StatusMatcher.instance);
 		
 		IFile output = testproject.getFile("fishlamp_2.hex");

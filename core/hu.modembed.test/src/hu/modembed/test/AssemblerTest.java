@@ -1,14 +1,11 @@
 package hu.modembed.test;
 
 import static org.junit.Assert.assertTrue;
-import hu.e.compiler.WorkflowLauncherRunnable;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.NullProgressMonitor;
-import org.eclipse.emf.common.util.URI;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -29,10 +26,8 @@ public class AssemblerTest {
 		assertTrue(testproject.exists());
 		
 		IFile input = testproject.getFile("16f1824_blink_wo_Config.hex");
-		IFile workflow = testproject.getFile("build.xmi");
-		WorkflowLauncherRunnable launch = new WorkflowLauncherRunnable(URI.createPlatformResourceURI(workflow.getFullPath().toString(), true));
 		
-		IStatus status = launch.execute(new NullProgressMonitor());
+		IStatus status = ModembedTests.executeWorkflow(testproject, "build");
 		assertTrue("Could not execute workflow!", status.isOK());
 		
 		IFile output = testproject.getFile("output.hex");
@@ -44,7 +39,7 @@ public class AssemblerTest {
 		IProject testproject = ResourcesPlugin.getWorkspace().getRoot().getProject("test2");
 		assertTrue(testproject.exists());
 		
-		IStatus status = WorkflowLauncherRunnable.create(testproject, "build").execute(new NullProgressMonitor());
+		IStatus status = ModembedTests.executeWorkflow(testproject, "build");
 		Assert.assertThat(status, StatusMatcher.instance);
 	}
 	

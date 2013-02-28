@@ -56,7 +56,9 @@ public class ModembedTests {
 	}
 	
 	public static IStatus executeWorkflow(IProject project, String workflow){
-		return WorkflowLauncherRunnable.create(project, "build").execute(new NullProgressMonitor());
+		WorkflowLauncherRunnable launcher = WorkflowLauncherRunnable.create(project, workflow);
+		launcher.addListener(new SysoutWorkflowLauncherListener());
+		return launcher.execute(new SysoutProgressMonitor());
 	}
 	
 	public static void testSetUp() throws CoreException{
