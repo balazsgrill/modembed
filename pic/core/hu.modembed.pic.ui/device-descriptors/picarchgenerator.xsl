@@ -6,7 +6,18 @@
 <xsl:template match="edc:PIC">
 	<pic:PICArchitecture xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:architecture="http://modembed.hu/architecture"  xmlns:pic="http://hu.modembed/pic">
 		<xsl:attribute name="name"><xsl:value-of select="@edc:name" />.arch</xsl:attribute>
-		<instructionSet href="../microchip.pic16/.models/microchip.pic16.enchanced.instructions.xmi#/"/>
+		<xsl:attribute name="description"><xsl:value-of select="@edc:desc" /></xsl:attribute>
+		<xsl:choose>
+			<xsl:when test="@edc:arch = '18xxxx'">
+				<instructionSet href="../microchip.pic18/.models/microchip.pic18.instructions.xmi#/"/>
+			</xsl:when>
+			<xsl:when test="@edc:arch = '16xxxx'">
+				<instructionSet href="../microchip.pic16/.models/microchip.pic16.instructions.xmi#/"/>
+			</xsl:when>
+			<xsl:when test="@edc:arch = '16Exxx'">
+				<instructionSet href="../microchip.pic16/.models/microchip.pic16.enchanced.instructions.xmi#/"/>
+			</xsl:when>
+		</xsl:choose>
 		<xsl:for-each select="edc:ProgramSpace/edc:CodeSector">
 			<xsl:variable name="beginAddr">
 					<xsl:call-template name="hex2dec">
@@ -45,6 +56,22 @@
 				<xsl:with-param name="num" select="substring(edc:ProgramSpace/edc:ConfigFuseSector/@edc:beginaddr, 3)"></xsl:with-param>
 			</xsl:call-template>
 		</xsl:variable>
+		<xsl:variable name="configWordWidthText">
+			<xsl:value-of select="edc:ProgramSpace/edc:ConfigFuseSector/edc:DCRDef[1]/@edc:nzwidth"></xsl:value-of>
+		</xsl:variable>
+		<xsl:variable name="configWordWidth">
+			<xsl:choose>
+				<xsl:when test="starts-with($configWordWidthText,'0x')">
+					<xsl:call-template name="hex2dec">
+						<xsl:with-param name="num" select="substring($configWordWidthText,3)"></xsl:with-param>
+					</xsl:call-template>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:value-of select="$configWordWidthText"></xsl:value-of>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:variable>
+		<xsl:comment>Configuration word width is <xsl:value-of select="$configWordWidth" /> bits.</xsl:comment>
 		<xsl:for-each select="edc:ProgramSpace/edc:ConfigFuseSector/edc:DCRDef">
 		<configWords>
 			<xsl:attribute name="name"><xsl:value-of select="@edc:cname"/></xsl:attribute>
@@ -52,7 +79,7 @@
 			<xsl:attribute name="address">
 				<xsl:call-template name="address">
 					<xsl:with-param name="beginAddr" select="$configStart"></xsl:with-param>
-					<xsl:with-param name="wordsize" select="16"></xsl:with-param>
+					<xsl:with-param name="wordsize" select="$configWordWidth"></xsl:with-param>
 				</xsl:call-template>
 			</xsl:attribute>
 			<xsl:attribute name="size">
