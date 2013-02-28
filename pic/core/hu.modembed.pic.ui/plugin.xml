@@ -46,6 +46,11 @@
                resource="code/pic18/pic18.e">
          </resource>
       </project>
+      <category
+            id="hu.modembed.pic.pic18.category"
+            name="PIC18 libraries"
+            parent="hu.modembed.pic.ui.category">
+      </category>
    </extension>
    <extension
          point="hu.e.compiler.tasks">
