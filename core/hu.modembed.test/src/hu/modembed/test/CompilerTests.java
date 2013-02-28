@@ -52,4 +52,21 @@ public class CompilerTests {
 		assertTrue("output does not match input!", ModembedTests.modelsAreEquivalent(input, output));
 	}
 	
+	@Test
+	public void test5_pic18_asmAndConfig() throws InterruptedException, IOException, CoreException{
+		IProject testproject = ResourcesPlugin.getWorkspace().getRoot().getProject("test5");
+		assertTrue(testproject.exists());
+		
+		IFile input = testproject.getFile("fishlamp.hex");
+		
+		ModembedTests.build();
+		ModembedTests.checkMarkers(testproject);
+		
+		IStatus status = WorkflowLauncherRunnable.create(testproject, "compile").execute(new NullProgressMonitor());
+		Assert.assertThat(status, StatusMatcher.instance);
+		
+		IFile output = testproject.getFile("fishlamp_2.hex");
+		assertTrue("output does not match input!", ModembedTests.modelsAreEquivalent(input, output));
+	}
+	
 }
