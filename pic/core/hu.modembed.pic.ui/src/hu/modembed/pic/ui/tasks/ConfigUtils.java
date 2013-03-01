@@ -6,6 +6,8 @@ package hu.modembed.pic.ui.tasks;
 import hexfile.Entry;
 import hexfile.HexFile;
 import hu.modembed.hexfile.persistence.HexFileResource;
+import hu.modembed.model.pic.ConfigField;
+import hu.modembed.model.pic.ConfigWord;
 
 /**
  * @author balazs.grill
@@ -33,14 +35,30 @@ public class ConfigUtils {
 		return mask;
 	}
 	
-	public static long configImplMask(long implMask){
+	public static long allFieldMask(ConfigWord word){
+		long v = 0;
+		for(ConfigField f : word.getFields()){
+			v |= mask(f.getSize()) << f.getStart();
+		}
+		return v;
+	}
+	
+	/**
+	 * Heuristic method to calculate implemented bits mask of a configuration word.
+	 * 
+	 * @param word
+	 * @return
+	 */
+	public static long configImplMask(ConfigWord word){
+		long implMask = word.getImplMask();
+		long fieldMask = allFieldMask(word);
 		long mask = 0;
 		for(int i=0;i<63;i++){
 			long nmask = mask | (1<<i);
-			if (nmask > implMask) return mask;
+			if (nmask > implMask) return mask | fieldMask;
 			mask = nmask;
 		}
-		return implMask;
+		return implMask | fieldMask;
 	}
 	
 	public static long insertValue(long value, long start, int size, long insertedValue){

@@ -38,7 +38,6 @@ public class ConfigValuesToHexTask implements IModembedTask {
 
 		HexFile hexFile = (HexFile)TaskUtils.createOutput(context, OUTPUT, HexfilePackage.eINSTANCE.getHexFile());
 		Entry entry = HexfileFactory.eINSTANCE.createEntry();
-		entry.setBlocksize(2);
 		hexFile.getEntries().add(entry);
 		
 		PICArchitecture architecture = config.getDefinition();
@@ -49,12 +48,15 @@ public class ConfigValuesToHexTask implements IModembedTask {
 		
 		for(ConfigWord word : architecture.getConfigWords()){
 			int size = (int)((word.getSize()-1)/8+1);
+			if (size != 1){
+				entry.setBlocksize(size);
+			}
 			startAddress = Math.min(startAddress, word.getAddress()*size);
 			long end = word.getAddress()*size+size;
 			endAddress = Math.max(endAddress, end);
 			
 			long wordValue = word.getDefaultValue();
-			long implMask = ConfigUtils.configImplMask(word.getImplMask());
+			long implMask = ConfigUtils.configImplMask(word);
 			for(ConfigField cf : word.getFields()){
 				for(ConfigurationSelection cs : config.getValues()){
 					if (cs.getSelection() != null && cf.equals(cs.getField())){
