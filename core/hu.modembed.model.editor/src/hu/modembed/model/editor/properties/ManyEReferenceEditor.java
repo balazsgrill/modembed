@@ -86,7 +86,7 @@ public class ManyEReferenceEditor implements IPropertyEditor {
 				if (dialog.open() == Dialog.OK){
 					Object[] sel = dialog.getResult();
 					if (sel.length > 0){
-						Command cmd = new EReferenceAddCommand(eobject, reference, sel);
+						Command cmd = new EMultiFeatureAddCommand(eobject, reference, sel);
 						edomain.getCommandStack().execute(cmd);
 					}
 				}
@@ -97,7 +97,7 @@ public class ManyEReferenceEditor implements IPropertyEditor {
 			public void run() {
 				Object[] elements = ((IStructuredSelection)viewer.getSelection()).toArray();
 				if (elements.length > 0){
-					Command cmd = new EReferenceRemoveCommand(eobject, reference, elements);
+					Command cmd = new EMultiFeatureRemoveCommand(eobject, reference, elements);
 					edomain.getCommandStack().execute(cmd);
 				}
 			}

@@ -5,11 +5,15 @@ import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 generate eSyntax "http://www.e.hu/parser/ESyntax"
 
 CompilationUnit:
-	/*Module |*/ Library | LinkedBinary /*| Interface*/
+	Library | InstructionSetNotation | WorkflowNotation
 ;	
 
-QualifiedName:
+LibraryName:
 	ID ('.' ID)*
+;
+
+QualifiedName:
+	(LibraryName '::')? ID
 ;
 
 //ReferenceID:
@@ -26,6 +30,8 @@ terminal BINARY returns ecore::EInt: 'b'('0'|'1')+;
 
 terminal REAL returns ecore::EBigDecimal: INT '.' INT?;
 
+//terminal CHAR returns ecore::EString: 'a'..'z'|'A'..'Z';
+
 LITERAL: (INT | HEXINT | BINARY | REAL);
 
 /**********************
@@ -37,7 +43,53 @@ AnnotationDefinition:
 ;
 
 Annotation:
-	'#' definition=[AnnotationDefinition|ID]
+	'#' definition=ID
+;
+
+/**********************
+ * Workflow notation
+ **********************/
+
+WorkflowNotation:
+	'workflow' name=LibraryName ';'
+	(steps += WorkflowStepNotation)*
+;
+
+WorkflowStepNotation:
+	type=LibraryName '{'
+		(params += WorkflowStepParameterNotation)*
+	'}'
+;
+
+WorkflowStepParameterNotation:
+	parameter=ID '=' (value=STRING | value=LibraryName)
+;
+
+/**********************
+ * InstructionSet
+ **********************/
+
+InstructionSetNotation:
+	'instructionset' name=LibraryName
+	('extends' extends=LibraryName)? ';'
+	
+	(instructions += InstructionNotation)*
+;
+
+InstructionNotation:
+	name=ID  (params+=InstructionParameterNotation)* (words+=InstructionWordNotation)+
+;
+
+InstructionWordNotation:
+	'<' (sections+=InsctructionSectionNotation)+ '>'
+;
+
+InstructionParameterNotation:
+	name=ID ('=' default=LITERAL)? 
+;
+
+InsctructionSectionNotation:
+	(('$'param=ID) | (value=LITERAL)) ':' size=LITERAL (':' shift=LITERAL)?
 ;
 
 /***********************
@@ -45,17 +97,17 @@ Annotation:
  ***********************/
 
 Library:
-	'library' name=QualifiedName
-	('overrides' overrides+=[Library|QualifiedName] (',' overrides+=[Library|QualifiedName])*)?
+	'library' name=LibraryName
+	//('overrides' overrides+=[Library|QualifiedName] (',' overrides+=[Library|QualifiedName])*)?
 	';'
-	('use' use+=[Library|QualifiedName]';')*
+	('use' use+=LibraryName';')*
 	(items+=LibraryItem)*
 ;
 
 LibraryItem:
 	Type | Operation | Variable';' | 
 	ConstantVariable';' | RegisterVariable';' 
-	| OperatorDefinition | AnnotationDefinition ';'
+	| AnnotationDefinition ';'
 	;
 
 /***********************
@@ -65,24 +117,32 @@ Type:
 	'type' name=ID '=' def=TypeDef ';';
 
 TypeDef:
-	DataTypeDef | StructTypeDef | PointerTypeDef | ArrayTypeDef | RefTypeDef
+	DataTypeDef | StructTypeDef | PointerTypeDef | ArrayTypeDef | RefTypeDef | UnspecifiedTypeDef
 ;
 	
+UnspecifiedTypeDef :
+	{UnspecifiedTypeDef} 'void'
+;	
+	
 PointerTypeDef:
-	'pointer' 'of' def=TypeDef
+	 'pointer' '<'def=TypeDef'>'
 ;	
 	
 ArrayTypeDef:
-	'array' '[' size=XExpression ']' 'of' def=TypeDef
+	'array' '<' def=TypeDef '>' ('[' size=XExpression ']')?
 ;
 
 RefTypeDef:
-	type=[Type|QualifiedName]
+	type=QualifiedName
 ;	
 	
 DataTypeDef:
-	IntegerDataTypeDef | FixedDataTypeDef //| FloatDataTypeDef
+	IntegerDataTypeDef | FixedDataTypeDef | LabelDataTypeDef //| FloatDataTypeDef
 	;
+
+LabelDataTypeDef:
+	{LabelDataTypeDef} 'label'
+;
 
 //FloatDataTypeDef:
 //	'float' bits=INT 'bits'
@@ -127,33 +187,23 @@ RegisterVariable returns Variable:
  ***********************/
 
 OperationStep:
-	InstructionWord | Label | (Variable';') | XTopLevelExpression
+	(Variable';') | XTopLevelExpression
 ;
-
-Label returns Variable:
-	{Label} 'label' name=ID ';'
-;
-
-InstructionWord:
-	'<' (sections+=WordSection)+ '>'
-;
-
-WordSection:
-	(LiteralValue | VariableReference ) ':' size=INT (':' shift=INT)? ;
-
-LiteralValue:
-	value=LITERAL;
 
 Variable:
 	type=TypeDef name=ID
 ;
 
+ResultVariableReference:
+	{ResultVariableReference} 'result'
+;
+
 VariableReference:
-	var=[Variable|QualifiedName]
+	var=QualifiedName
 ;
 
 OperationCall:
-	operation=[Operation|QualifiedName] '('
+	operation=QualifiedName '('
 		(params+=OperationCallParameter (',' params+=OperationCallParameter)*)?
 	')'
 ;
@@ -162,22 +212,23 @@ OperationCallParameter:
 	XExpression
 ;
 
-OperationSignature returns Variable:
-	{OperationSignature} name=ID '('
-		(params+=ParameterVariable (',' params+=ParameterVariable)*)?
-	')'
-; 
-
-Operation returns OperationSignature:
-	{Operation} name=ID '('
-		(params+=ParameterVariable (',' params+=ParameterVariable)*)?
-	')''{'
-		block=OperationBlock
-	'}' ('returns' (return=XExpression | returnvar=Variable) ';')?
+OperationTypeDef:
+	resultType=TypeDef '('
+		(params+=OperationParameter (',' params+=OperationParameter)*)? 
+	 ')'
 ;
 
-OperationBlock:
-	{OperationBlock} (steps+=OperationStep)*
+Operation:
+	'function' name=ID type=OperationTypeDef ('overrides' overrides=QualifiedName)? 
+	content = XExpression 
+;
+
+OperationParameter:
+	ParameterVariable | LazyParameter
+;
+
+LazyParameter:
+	'lazy' paramname=ID type=OperationTypeDef
 ;
 
 ParameterVariable returns Variable:
@@ -188,76 +239,6 @@ enum ParameterKind:
 	ANY='default' | VAR='var' | CONST='const'
 ;
 
-/****************
- * OPERATORS
- ******************/
-
-enum OperationRole:
-	SET='SET' | ADD='ADD' | SUBTRACT='SUBTRACT' | AND='AND' | OR='OR' | XOR='XOR' |
-	EQUALS='EQUALS' | BRANCH='BRANCH' | UC_GOTO='UC_GOTO' | NOT='NOT' | INDIRECTION='INDIRECTION' |
-	CLEAR='CLEAR' | INCREMENT='INCREMENT' | DECREMENT='DECREMENT' | DIV='DIV' | MUL='MUL' | MOD='MOD'
-	| LT='LT' | LTE='LTE' | GT='GT' | GTE='GTE' | NOTEQUALS='NOTEQUALS'
-;
-
-OperatorDefinition:
-	'operator' role=OperationRole '{'
-		candidate+=[Operation|QualifiedName] (',' candidate+=[Operation|QualifiedName])* (',')?
-	'}'
-;
-
-/********************
- * BINARY and LINKING
- ********************/
-
-LinkedBinary:
-	'binary' name=QualifiedName (type=BinaryType)? ';'
-	('use' use+=[Library|QualifiedName]';')*
-		(sections+=BinarySection)*
-;
-
-enum BinaryType:
-	DEFAULT='default' | INTELHEXFILE='intelHexfile' | SRECHEXFILE='SRECHexfile'
-;
-
-BinarySection:
-	(FunctionBinarySection | ConstantBinarySection | ReferenceBinarySection) 
-	'at' start=XExpression  'width' width=LITERAL ';'
-;
- 
-FunctionBinarySection:
-	'program' name=ID '('
-		'startAddr' '=' startAddr=LITERAL ';'
-		'memwidth' '=' memwidth=LITERAL ';'
-		'pointerType' '=' pointerType=TypeDef ';'
-		'addressType' '=' addressType=TypeDef ';'
-		(mems+=FunctionMemory ';')+
-		(optimizercalls+=OptimizerCall ';')*
-	')' '{'
-		(
-		('lib' lib+=[Library|QualifiedName] ';') 
-		//| (instances+=LinkedInstance )
-		)*
-		
-		'link' '{' do=OperationBlock '}'
-	'}'
-; 
-
-OptimizerCall:
-	'optimize' optimizer=STRING
-;
-
-FunctionMemory:
-	'mem' start=LITERAL '..' end=LITERAL
-;
- 
-ConstantBinarySection:
-	'data' '{' (data+=XExpression ';')+ '}'
-; 
-
-ReferenceBinarySection:
-	'include' inc=[LinkedBinary|QualifiedName]
-;
-
 /********************
  * INFIX SYNTAX
  **********************/
@@ -265,9 +246,13 @@ ReferenceBinarySection:
 XExpression:
 	XExpression6 (':' type=TypeDef)?;
 
+XExpressionBlock:
+	'{' {OperationBlock} (steps+=OperationStep)* '}'
+;
+
 XPrimaryExpression:
 	XExpressionLiteral | XParenthesizedExpression | XIsLiteralExpression | VariableReference | OperationCall
-	 | XStructExpression | XSizeOfExpression
+	 | XStructExpression | XSizeOfExpression | XExpressionBlock | ResultVariableReference
 ;
 
 XSizeOfExpression:
@@ -275,7 +260,7 @@ XSizeOfExpression:
 ;
 
 XStructExpression:
-	type=[Type|QualifiedName] '{' values+=XExpression (',' values+=XExpression)* (',')? '}'
+	'[' values+=XExpression (',' values+=XExpression)* (',')? ']'
 ;
 
 XExpression1:
@@ -336,7 +321,7 @@ XExpressionLiteral:
 ;
 
 XTopLevelExpression:
-	Annotation ';' | XExpression ';' | XIfExpression | XWhileExpression | XErrorExpression | XForExpression
+	Annotation ';' | XExpression ';' | XErrorExpression ';' 
 ;
 
 XErrorExpression:
@@ -355,24 +340,6 @@ XIsLiteralExpression:
 	'isliteral' '('
 		ref = VariableReference
 	')'
-;
-
-XIfExpression:
-	'if' '(' if=XExpression ')' '{'
-	then=OperationBlock
-	'}'
-	(=> 'else' '{' else=OperationBlock '}')?;
-	
-XWhileExpression:
-	'while' '(' cond=XExpression ')' '{'
-		do=OperationBlock
-	'}'
-;	
-	
-XForExpression:
-	'for' '(' var=Variable from=XExpression ';' by=XExpression ';' to=XExpression ')' '{'
-		do=OperationBlock
-	'}'
 ;
 
 XParenthesizedExpression:

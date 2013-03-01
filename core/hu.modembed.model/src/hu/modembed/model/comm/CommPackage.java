@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package hu.modembed.model.comm;
 
@@ -71,6 +67,24 @@ public interface CommPackage extends EPackage {
 	int FRAME = 0;
 
 	/**
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FRAME__ORIGINS = CorePackage.NAMED_ELEMENT__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FRAME__DESCRIPTION = CorePackage.NAMED_ELEMENT__DESCRIPTION;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -99,22 +113,13 @@ public interface CommPackage extends EPackage {
 	int COMMUNICATION_PROTOCOL = 1;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_PROTOCOL__NAME = CorePackage.PACKAGED_ELEMENT__NAME;
-
-	/**
 	 * The feature id for the '<em><b>Frames</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_PROTOCOL__FRAMES = CorePackage.PACKAGED_ELEMENT_FEATURE_COUNT + 0;
+	int COMMUNICATION_PROTOCOL__FRAMES = 0;
 
 	/**
 	 * The number of structural features of the '<em>Communication Protocol</em>' class.
@@ -123,7 +128,7 @@ public interface CommPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_PROTOCOL_FEATURE_COUNT = CorePackage.PACKAGED_ELEMENT_FEATURE_COUNT + 1;
+	int COMMUNICATION_PROTOCOL_FEATURE_COUNT = 1;
 
 
 	/**

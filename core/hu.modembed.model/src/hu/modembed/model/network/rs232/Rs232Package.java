@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package hu.modembed.model.network.rs232;
 
@@ -71,6 +67,24 @@ public interface Rs232Package extends EPackage {
 	int RS232_INTERFACE = 0;
 
 	/**
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RS232_INTERFACE__ORIGINS = NetworkPackage.NETWORK_INTERFACE__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RS232_INTERFACE__DESCRIPTION = NetworkPackage.NETWORK_INTERFACE__DESCRIPTION;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -97,6 +111,24 @@ public interface Rs232Package extends EPackage {
 	 * @generated
 	 */
 	int RS232_CONNECTION = 1;
+
+	/**
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RS232_CONNECTION__ORIGINS = NetworkPackage.CONNECTION__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RS232_CONNECTION__DESCRIPTION = NetworkPackage.CONNECTION__DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.

@@ -1,17 +1,13 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package hu.modembed.model.application.interface_.impl;
 
 import hu.modembed.model.application.interface_.ComponentInterface;
 import hu.modembed.model.application.interface_.InterfacePackage;
 
-import hu.modembed.model.core.impl.PackagedElementImpl;
-
 import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,7 +18,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public abstract class ComponentInterfaceImpl extends PackagedElementImpl implements ComponentInterface {
+public abstract class ComponentInterfaceImpl extends EObjectImpl implements ComponentInterface {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

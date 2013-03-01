@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package hu.modembed.model.application.impl;
 
@@ -13,14 +9,13 @@ import hu.modembed.model.application.Port;
 
 import hu.modembed.model.application.interface_.Operation;
 
-import hu.modembed.model.core.impl.PackagedElementImpl;
-
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -37,7 +32,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class ApplicationImpl extends PackagedElementImpl implements Application {
+public class ApplicationImpl extends EObjectImpl implements Application {
 	/**
 	 * The cached value of the '{@link #getMainComp() <em>Main Comp</em>}' reference.
 	 * <!-- begin-user-doc -->

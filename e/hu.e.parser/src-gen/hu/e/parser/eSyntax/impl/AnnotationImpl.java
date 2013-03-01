@@ -3,13 +3,11 @@
 package hu.e.parser.eSyntax.impl;
 
 import hu.e.parser.eSyntax.Annotation;
-import hu.e.parser.eSyntax.AnnotationDefinition;
 import hu.e.parser.eSyntax.ESyntaxPackage;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -29,14 +27,24 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class AnnotationImpl extends XTopLevelExpressionImpl implements Annotation
 {
   /**
-   * The cached value of the '{@link #getDefinition() <em>Definition</em>}' reference.
+   * The default value of the '{@link #getDefinition() <em>Definition</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getDefinition()
    * @generated
    * @ordered
    */
-  protected AnnotationDefinition definition;
+  protected static final String DEFINITION_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getDefinition() <em>Definition</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDefinition()
+   * @generated
+   * @ordered
+   */
+  protected String definition = DEFINITION_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -64,27 +72,7 @@ public class AnnotationImpl extends XTopLevelExpressionImpl implements Annotatio
    * <!-- end-user-doc -->
    * @generated
    */
-  public AnnotationDefinition getDefinition()
-  {
-    if (definition != null && definition.eIsProxy())
-    {
-      InternalEObject oldDefinition = (InternalEObject)definition;
-      definition = (AnnotationDefinition)eResolveProxy(oldDefinition);
-      if (definition != oldDefinition)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ESyntaxPackage.ANNOTATION__DEFINITION, oldDefinition, definition));
-      }
-    }
-    return definition;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public AnnotationDefinition basicGetDefinition()
+  public String getDefinition()
   {
     return definition;
   }
@@ -94,9 +82,9 @@ public class AnnotationImpl extends XTopLevelExpressionImpl implements Annotatio
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setDefinition(AnnotationDefinition newDefinition)
+  public void setDefinition(String newDefinition)
   {
-    AnnotationDefinition oldDefinition = definition;
+    String oldDefinition = definition;
     definition = newDefinition;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.ANNOTATION__DEFINITION, oldDefinition, definition));
@@ -113,8 +101,7 @@ public class AnnotationImpl extends XTopLevelExpressionImpl implements Annotatio
     switch (featureID)
     {
       case ESyntaxPackage.ANNOTATION__DEFINITION:
-        if (resolve) return getDefinition();
-        return basicGetDefinition();
+        return getDefinition();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -130,7 +117,7 @@ public class AnnotationImpl extends XTopLevelExpressionImpl implements Annotatio
     switch (featureID)
     {
       case ESyntaxPackage.ANNOTATION__DEFINITION:
-        setDefinition((AnnotationDefinition)newValue);
+        setDefinition((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -147,7 +134,7 @@ public class AnnotationImpl extends XTopLevelExpressionImpl implements Annotatio
     switch (featureID)
     {
       case ESyntaxPackage.ANNOTATION__DEFINITION:
-        setDefinition((AnnotationDefinition)null);
+        setDefinition(DEFINITION_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -164,9 +151,26 @@ public class AnnotationImpl extends XTopLevelExpressionImpl implements Annotatio
     switch (featureID)
     {
       case ESyntaxPackage.ANNOTATION__DEFINITION:
-        return definition != null;
+        return DEFINITION_EDEFAULT == null ? definition != null : !DEFINITION_EDEFAULT.equals(definition);
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (definition: ");
+    result.append(definition);
+    result.append(')');
+    return result.toString();
   }
 
 } //AnnotationImpl

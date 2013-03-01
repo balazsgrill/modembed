@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="ASCII"?>
+<assembler:InstructionSet xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assembler="http://modembed.hu/core/assembler" xmlns:core="http://modembed.hu/core" name="microchip.pic16.enchanced.instructions">
+  <origins xsi:type="core:TextOrigin" path="/e.pic16/pic16e.e" line="1" charEnd="1033"/>
+  <instructions name="ADDWFC">
+    <origins xsi:type="core:TextOrigin" path="/e.pic16/pic16e.e" line="4" charStart="125" charEnd="159"/>
+    <parameters id="102"/>
+    <parameters id="100" defaultValue="1"/>
+    <words>
+      <sections xsi:type="assembler:ConstantSection" size="6" value="61"/>
+      <sections xsi:type="assembler:ParameterSection" start="6" size="1" parameter="//@instructions.0/@parameters.1"/>
+      <sections xsi:type="assembler:ParameterSection" start="7" size="7" parameter="//@instructions.0/@parameters.0"/>
+    </words>
+  </instructions>
+  <instructions name="ASRF">
+    <origins xsi:type="core:TextOrigin" path="/e.pic16/pic16e.e" line="7" charStart="193" charEnd="226"/>
+    <parameters id="102"/>
+    <parameters id="100" defaultValue="1"/>
+    <words>
+      <sections xsi:type="assembler:ConstantSection" size="6" value="55"/>
+      <sections xsi:type="assembler:ParameterSection" start="6" size="1" parameter="//@instructions.1/@parameters.1"/>
+      <sections xsi:type="assembler:ParameterSection" start="7" size="7" parameter="//@instructions.1/@parameters.0"/>
+    </words>
+  </instructions>
+  <instructions name="LSLF">
+    <origins xsi:type="core:TextOrigin" path="/e.pic16/pic16e.e" line="10" charStart="256" charEnd="289"/>
+    <parameters id="102"/>
+    <parameters id="100" defaultValue="1"/>
+    <words>
+      <sections xsi:type="assembler:ConstantSection" size="6" value="61"/>
+      <sections xsi:type="assembler:ParameterSection" start="6" size="1" parameter="//@instructions.2/@parameters.1"/>
+      <sections xsi:type="assembler:ParameterSection" start="7" size="7" parameter="//@instructions.2/@parameters.0"/>
+    </words>
+  </instructions>
+  <instructions name="LSRF">
+    <origins xsi:type="core:TextOrigin" path="/e.pic16/pic16e.e" line="13" charStart="320" charEnd="353"/>
+    <parameters id="102"/>
+    <parameters id="100" defaultValue="1"/>
+    <words>
+      <sections xsi:type="assembler:ConstantSection" size="6" value="61"/>
+      <sections xsi:type="assembler:ParameterSection" start="6" size="1" parameter="//@instructions.3/@parameters.1"/>
+      <sections xsi:type="assembler:ParameterSection" start="7" size="7" parameter="//@instructions.3/@parameters.0"/>
+    </words>
+  </instructions>
+  <instructions name="SUBWFB">
+    <origins xsi:type="core:TextOrigin" path="/e.pic16/pic16e.e" line="16" charStart="394" charEnd="428"/>
+    <parameters id="102"/>
+    <parameters id="100" defaultValue="1"/>
+    <words>
+      <sections xsi:type="assembler:ConstantSection" size="6" value="59"/>
+      <sections xsi:type="assembler:ParameterSection" start="6" size="1" parameter="//@instructions.4/@parameters.1"/>
+      <sections xsi:type="assembler:ParameterSection" start="7" size="7" parameter="//@instructions.4/@parameters.0"/>
+    </words>
+  </instructions>
+  <instructions name="MOVLB">
+    <origins xsi:type="core:TextOrigin" path="/e.pic16/pic16e.e" line="19" charStart="459" charEnd="488"/>
+    <parameters id="107"/>
+    <words>
+      <sections xsi:type="assembler:ConstantSection" size="9" value="1"/>
+      <sections xsi:type="assembler:ParameterSection" start="9" size="5" parameter="//@instructions.5/@parameters.0"/>
+    </words>
+  </instructions>
+  <instructions name="MOVLP">
+    <origins xsi:type="core:TextOrigin" path="/e.pic16/pic16e.e" line="22" charStart="522" charEnd="549"/>
+    <parameters id="107"/>
+    <words>
+      <sections xsi:type="assembler:ConstantSection" size="7" value="99"/>
+      <sections xsi:type="assembler:ParameterSection" start="7" size="7" parameter="//@instructions.6/@parameters.0"/>
+    </words>
+  </instructions>
+  <instructions name="BRA">
+    <origins xsi:type="core:TextOrigin" path="/e.pic16/pic16e.e" line="25" charStart="576" charEnd="599"/>
+    <parameters id="107"/>
+    <words>
+      <sections xsi:type="assembler:ConstantSection" size="5" value="25"/>
+      <sections xsi:type="assembler:ParameterSection" start="5" size="9" parameter="//@instructions.7/@parameters.0"/>
+    </words>
+  </instructions>
+  <instructions name="BRW">
+    <origins xsi:type="core:TextOrigin" path="/e.pic16/pic16e.e" line="28" charStart="633" charEnd="660"/>
+    <words>
+      <sections xsi:type="assembler:ConstantSection" size="14" value="11"/>
+    </words>
+  </instructions>
+  <instructions name="CALLW">
+    <origins xsi:type="core:TextOrigin" path="/e.pic16/pic16e.e" line="31" charStart="694" charEnd="722"/>
+    <words>
+      <sections xsi:type="assembler:ConstantSection" size="14" value="10"/>
+    </words>
+  </instructions>
+  <instructions name="CLRWDT">
+    <origins xsi:type="core:TextOrigin" path="/e.pic16/pic16e.e" line="34" charStart="754" charEnd="783"/>
+    <words>
+      <sections xsi:type="assembler:ConstantSection" size="14" value="100"/>
+    </words>
+  </instructions>
+  <instructions name="OPTION">
+    <origins xsi:type="core:TextOrigin" path="/e.pic16/pic16e.e" line="37" charStart="817" charEnd="846"/>
+    <words>
+      <sections xsi:type="assembler:ConstantSection" size="14" value="98"/>
+    </words>
+  </instructions>
+  <instructions name="RESET">
+    <origins xsi:type="core:TextOrigin" path="/e.pic16/pic16e.e" line="40" charStart="870" charEnd="898"/>
+    <words>
+      <sections xsi:type="assembler:ConstantSection" size="14" value="1"/>
+    </words>
+  </instructions>
+  <instructions name="TRIS">
+    <origins xsi:type="core:TextOrigin" path="/e.pic16/pic16e.e" line="43" charStart="935" charEnd="966"/>
+    <parameters id="102"/>
+    <words>
+      <sections xsi:type="assembler:ConstantSection" size="11" value="12"/>
+      <sections xsi:type="assembler:ParameterSection" start="11" size="3" parameter="//@instructions.13/@parameters.0"/>
+    </words>
+  </instructions>
+  <instructions name="ADDFSR">
+    <origins xsi:type="core:TextOrigin" path="/e.pic16/pic16e.e" line="46" charStart="999" charEnd="1033"/>
+    <parameters id="110"/>
+    <parameters id="107"/>
+    <words>
+      <sections xsi:type="assembler:ConstantSection" size="7" value="98"/>
+      <sections xsi:type="assembler:ParameterSection" start="7" size="1" parameter="//@instructions.14/@parameters.0"/>
+      <sections xsi:type="assembler:ParameterSection" start="8" size="6" parameter="//@instructions.14/@parameters.1"/>
+    </words>
+  </instructions>
+  <extend href="microchip.pic16.instructions.xmi#/"/>
+</assembler:InstructionSet>

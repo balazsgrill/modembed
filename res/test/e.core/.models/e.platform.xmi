@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ASCII"?>
+<emodel:Library xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://modembed.hu/core" xmlns:emodel="http://emodel/1.0" xmlns:expressions="http://emodel/1.0/expressions" xmlns:types="http://emodel/1.0/types" name="e.platform">
+  <origins xsi:type="core:TextOrigin" path="/e.core/platform.e" line="1" charEnd="379"/>
+  <content xsi:type="emodel:Type" name="uint8">
+    <origins xsi:type="core:TextOrigin" path="/e.core/platform.e" line="6" charStart="60" charEnd="89"/>
+    <definition xsi:type="types:UnsignedTypeDefinition" bits="8"/>
+  </content>
+  <content xsi:type="emodel:Type" name="bool">
+    <origins xsi:type="core:TextOrigin" path="/e.core/platform.e" line="11" charStart="128" charEnd="156"/>
+    <definition xsi:type="types:UnsignedTypeDefinition" bits="1"/>
+  </content>
+  <content xsi:type="emodel:Type" name="uint16">
+    <origins xsi:type="core:TextOrigin" path="/e.core/platform.e" line="13" charStart="160" charEnd="191"/>
+    <definition xsi:type="types:UnsignedTypeDefinition" bits="16"/>
+  </content>
+  <content xsi:type="emodel:Type" name="uint32">
+    <origins xsi:type="core:TextOrigin" path="/e.core/platform.e" line="15" charStart="195" charEnd="226"/>
+    <definition xsi:type="types:UnsignedTypeDefinition" bits="32"/>
+  </content>
+  <content xsi:type="emodel:Type" name="bit">
+    <origins xsi:type="core:TextOrigin" path="/e.core/platform.e" line="20" charStart="274" charEnd="301"/>
+    <definition xsi:type="types:UnsignedTypeDefinition" bits="3"/>
+  </content>
+  <content xsi:type="emodel:Function" name="ADD">
+    <origins xsi:type="core:TextOrigin" path="/e.core/platform.e" line="22" charStart="305" charEnd="340"/>
+    <arguments xsi:type="emodel:VariableParameter" name="a">
+      <origins xsi:type="core:TextOrigin" path="/e.core/platform.e" line="22" charStart="323" charEnd="329"/>
+    </arguments>
+    <arguments xsi:type="emodel:VariableParameter" name="b">
+      <origins xsi:type="core:TextOrigin" path="/e.core/platform.e" line="22" charStart="331" charEnd="337"/>
+    </arguments>
+    <implementation xsi:type="expressions:ExecutionBlock">
+      <origins xsi:type="core:TextOrigin" path="/e.core/platform.e" line="22" charStart="338" charEnd="340"/>
+    </implementation>
+  </content>
+  <content xsi:type="emodel:Function" name="SET">
+    <origins xsi:type="core:TextOrigin" path="/e.core/platform.e" line="24" charStart="344" charEnd="379"/>
+    <arguments xsi:type="emodel:VariableParameter" name="d">
+      <origins xsi:type="core:TextOrigin" path="/e.core/platform.e" line="24" charStart="362" charEnd="368"/>
+    </arguments>
+    <arguments xsi:type="emodel:VariableParameter" name="s">
+      <origins xsi:type="core:TextOrigin" path="/e.core/platform.e" line="24" charStart="370" charEnd="376"/>
+    </arguments>
+    <implementation xsi:type="expressions:ExecutionBlock">
+      <origins xsi:type="core:TextOrigin" path="/e.core/platform.e" line="24" charStart="377" charEnd="379"/>
+    </implementation>
+  </content>
+</emodel:Library>

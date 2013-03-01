@@ -3,13 +3,11 @@
 package hu.e.parser.eSyntax.impl;
 
 import hu.e.parser.eSyntax.ESyntaxPackage;
-import hu.e.parser.eSyntax.Variable;
 import hu.e.parser.eSyntax.VariableReference;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -26,17 +24,27 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class VariableReferenceImpl extends WordSectionImpl implements VariableReference
+public class VariableReferenceImpl extends XPrimaryExpressionImpl implements VariableReference
 {
   /**
-   * The cached value of the '{@link #getVar() <em>Var</em>}' reference.
+   * The default value of the '{@link #getVar() <em>Var</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getVar()
    * @generated
    * @ordered
    */
-  protected Variable var;
+  protected static final String VAR_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getVar() <em>Var</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVar()
+   * @generated
+   * @ordered
+   */
+  protected String var = VAR_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -64,27 +72,7 @@ public class VariableReferenceImpl extends WordSectionImpl implements VariableRe
    * <!-- end-user-doc -->
    * @generated
    */
-  public Variable getVar()
-  {
-    if (var != null && var.eIsProxy())
-    {
-      InternalEObject oldVar = (InternalEObject)var;
-      var = (Variable)eResolveProxy(oldVar);
-      if (var != oldVar)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ESyntaxPackage.VARIABLE_REFERENCE__VAR, oldVar, var));
-      }
-    }
-    return var;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Variable basicGetVar()
+  public String getVar()
   {
     return var;
   }
@@ -94,9 +82,9 @@ public class VariableReferenceImpl extends WordSectionImpl implements VariableRe
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setVar(Variable newVar)
+  public void setVar(String newVar)
   {
-    Variable oldVar = var;
+    String oldVar = var;
     var = newVar;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.VARIABLE_REFERENCE__VAR, oldVar, var));
@@ -113,8 +101,7 @@ public class VariableReferenceImpl extends WordSectionImpl implements VariableRe
     switch (featureID)
     {
       case ESyntaxPackage.VARIABLE_REFERENCE__VAR:
-        if (resolve) return getVar();
-        return basicGetVar();
+        return getVar();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -130,7 +117,7 @@ public class VariableReferenceImpl extends WordSectionImpl implements VariableRe
     switch (featureID)
     {
       case ESyntaxPackage.VARIABLE_REFERENCE__VAR:
-        setVar((Variable)newValue);
+        setVar((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -147,7 +134,7 @@ public class VariableReferenceImpl extends WordSectionImpl implements VariableRe
     switch (featureID)
     {
       case ESyntaxPackage.VARIABLE_REFERENCE__VAR:
-        setVar((Variable)null);
+        setVar(VAR_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -164,9 +151,26 @@ public class VariableReferenceImpl extends WordSectionImpl implements VariableRe
     switch (featureID)
     {
       case ESyntaxPackage.VARIABLE_REFERENCE__VAR:
-        return var != null;
+        return VAR_EDEFAULT == null ? var != null : !VAR_EDEFAULT.equals(var);
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (var: ");
+    result.append(var);
+    result.append(')');
+    return result.toString();
   }
 
 } //VariableReferenceImpl

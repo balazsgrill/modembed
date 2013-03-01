@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: PIC midrange libraries
+Bundle-SymbolicName: hu.modembed.pic.midrange;singleton:=true
+Bundle-Version: 0.8.0.qualifier

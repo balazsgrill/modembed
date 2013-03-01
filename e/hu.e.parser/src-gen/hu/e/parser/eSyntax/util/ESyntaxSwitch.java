@@ -96,6 +96,64 @@ public class ESyntaxSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case ESyntaxPackage.WORKFLOW_NOTATION:
+      {
+        WorkflowNotation workflowNotation = (WorkflowNotation)theEObject;
+        T result = caseWorkflowNotation(workflowNotation);
+        if (result == null) result = caseCompilationUnit(workflowNotation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ESyntaxPackage.WORKFLOW_STEP_NOTATION:
+      {
+        WorkflowStepNotation workflowStepNotation = (WorkflowStepNotation)theEObject;
+        T result = caseWorkflowStepNotation(workflowStepNotation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ESyntaxPackage.WORKFLOW_STEP_PARAMETER_NOTATION:
+      {
+        WorkflowStepParameterNotation workflowStepParameterNotation = (WorkflowStepParameterNotation)theEObject;
+        T result = caseWorkflowStepParameterNotation(workflowStepParameterNotation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ESyntaxPackage.INSTRUCTION_SET_NOTATION:
+      {
+        InstructionSetNotation instructionSetNotation = (InstructionSetNotation)theEObject;
+        T result = caseInstructionSetNotation(instructionSetNotation);
+        if (result == null) result = caseCompilationUnit(instructionSetNotation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ESyntaxPackage.INSTRUCTION_NOTATION:
+      {
+        InstructionNotation instructionNotation = (InstructionNotation)theEObject;
+        T result = caseInstructionNotation(instructionNotation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ESyntaxPackage.INSTRUCTION_WORD_NOTATION:
+      {
+        InstructionWordNotation instructionWordNotation = (InstructionWordNotation)theEObject;
+        T result = caseInstructionWordNotation(instructionWordNotation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ESyntaxPackage.INSTRUCTION_PARAMETER_NOTATION:
+      {
+        InstructionParameterNotation instructionParameterNotation = (InstructionParameterNotation)theEObject;
+        T result = caseInstructionParameterNotation(instructionParameterNotation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ESyntaxPackage.INSCTRUCTION_SECTION_NOTATION:
+      {
+        InsctructionSectionNotation insctructionSectionNotation = (InsctructionSectionNotation)theEObject;
+        T result = caseInsctructionSectionNotation(insctructionSectionNotation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case ESyntaxPackage.LIBRARY:
       {
         Library library = (Library)theEObject;
@@ -123,6 +181,14 @@ public class ESyntaxSwitch<T> extends Switch<T>
       {
         TypeDef typeDef = (TypeDef)theEObject;
         T result = caseTypeDef(typeDef);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ESyntaxPackage.UNSPECIFIED_TYPE_DEF:
+      {
+        UnspecifiedTypeDef unspecifiedTypeDef = (UnspecifiedTypeDef)theEObject;
+        T result = caseUnspecifiedTypeDef(unspecifiedTypeDef);
+        if (result == null) result = caseTypeDef(unspecifiedTypeDef);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -158,6 +224,15 @@ public class ESyntaxSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case ESyntaxPackage.LABEL_DATA_TYPE_DEF:
+      {
+        LabelDataTypeDef labelDataTypeDef = (LabelDataTypeDef)theEObject;
+        T result = caseLabelDataTypeDef(labelDataTypeDef);
+        if (result == null) result = caseDataTypeDef(labelDataTypeDef);
+        if (result == null) result = caseTypeDef(labelDataTypeDef);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case ESyntaxPackage.FIXED_DATA_TYPE_DEF:
       {
         FixedDataTypeDef fixedDataTypeDef = (FixedDataTypeDef)theEObject;
@@ -190,6 +265,7 @@ public class ESyntaxSwitch<T> extends Switch<T>
         T result = caseVariable(variable);
         if (result == null) result = caseLibraryItem(variable);
         if (result == null) result = caseOperationStep(variable);
+        if (result == null) result = caseOperationParameter(variable);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -200,26 +276,11 @@ public class ESyntaxSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case ESyntaxPackage.INSTRUCTION_WORD:
+      case ESyntaxPackage.RESULT_VARIABLE_REFERENCE:
       {
-        InstructionWord instructionWord = (InstructionWord)theEObject;
-        T result = caseInstructionWord(instructionWord);
-        if (result == null) result = caseOperationStep(instructionWord);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case ESyntaxPackage.WORD_SECTION:
-      {
-        WordSection wordSection = (WordSection)theEObject;
-        T result = caseWordSection(wordSection);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case ESyntaxPackage.LITERAL_VALUE:
-      {
-        LiteralValue literalValue = (LiteralValue)theEObject;
-        T result = caseLiteralValue(literalValue);
-        if (result == null) result = caseWordSection(literalValue);
+        ResultVariableReference resultVariableReference = (ResultVariableReference)theEObject;
+        T result = caseResultVariableReference(resultVariableReference);
+        if (result == null) result = caseXPrimaryExpression(resultVariableReference);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -227,7 +288,6 @@ public class ESyntaxSwitch<T> extends Switch<T>
       {
         VariableReference variableReference = (VariableReference)theEObject;
         T result = caseVariableReference(variableReference);
-        if (result == null) result = caseWordSection(variableReference);
         if (result == null) result = caseXPrimaryExpression(variableReference);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -247,81 +307,33 @@ public class ESyntaxSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case ESyntaxPackage.OPERATION_SIGNATURE:
+      case ESyntaxPackage.OPERATION_TYPE_DEF:
       {
-        OperationSignature operationSignature = (OperationSignature)theEObject;
-        T result = caseOperationSignature(operationSignature);
-        if (result == null) result = caseVariable(operationSignature);
-        if (result == null) result = caseLibraryItem(operationSignature);
-        if (result == null) result = caseOperationStep(operationSignature);
+        OperationTypeDef operationTypeDef = (OperationTypeDef)theEObject;
+        T result = caseOperationTypeDef(operationTypeDef);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case ESyntaxPackage.OPERATION_BLOCK:
+      case ESyntaxPackage.OPERATION:
       {
-        OperationBlock operationBlock = (OperationBlock)theEObject;
-        T result = caseOperationBlock(operationBlock);
+        Operation operation = (Operation)theEObject;
+        T result = caseOperation(operation);
+        if (result == null) result = caseLibraryItem(operation);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case ESyntaxPackage.OPERATOR_DEFINITION:
+      case ESyntaxPackage.OPERATION_PARAMETER:
       {
-        OperatorDefinition operatorDefinition = (OperatorDefinition)theEObject;
-        T result = caseOperatorDefinition(operatorDefinition);
-        if (result == null) result = caseLibraryItem(operatorDefinition);
+        OperationParameter operationParameter = (OperationParameter)theEObject;
+        T result = caseOperationParameter(operationParameter);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case ESyntaxPackage.LINKED_BINARY:
+      case ESyntaxPackage.LAZY_PARAMETER:
       {
-        LinkedBinary linkedBinary = (LinkedBinary)theEObject;
-        T result = caseLinkedBinary(linkedBinary);
-        if (result == null) result = caseCompilationUnit(linkedBinary);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case ESyntaxPackage.BINARY_SECTION:
-      {
-        BinarySection binarySection = (BinarySection)theEObject;
-        T result = caseBinarySection(binarySection);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case ESyntaxPackage.FUNCTION_BINARY_SECTION:
-      {
-        FunctionBinarySection functionBinarySection = (FunctionBinarySection)theEObject;
-        T result = caseFunctionBinarySection(functionBinarySection);
-        if (result == null) result = caseBinarySection(functionBinarySection);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case ESyntaxPackage.OPTIMIZER_CALL:
-      {
-        OptimizerCall optimizerCall = (OptimizerCall)theEObject;
-        T result = caseOptimizerCall(optimizerCall);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case ESyntaxPackage.FUNCTION_MEMORY:
-      {
-        FunctionMemory functionMemory = (FunctionMemory)theEObject;
-        T result = caseFunctionMemory(functionMemory);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case ESyntaxPackage.CONSTANT_BINARY_SECTION:
-      {
-        ConstantBinarySection constantBinarySection = (ConstantBinarySection)theEObject;
-        T result = caseConstantBinarySection(constantBinarySection);
-        if (result == null) result = caseBinarySection(constantBinarySection);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case ESyntaxPackage.REFERENCE_BINARY_SECTION:
-      {
-        ReferenceBinarySection referenceBinarySection = (ReferenceBinarySection)theEObject;
-        T result = caseReferenceBinarySection(referenceBinarySection);
-        if (result == null) result = caseBinarySection(referenceBinarySection);
+        LazyParameter lazyParameter = (LazyParameter)theEObject;
+        T result = caseLazyParameter(lazyParameter);
+        if (result == null) result = caseOperationParameter(lazyParameter);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -332,6 +344,14 @@ public class ESyntaxSwitch<T> extends Switch<T>
         if (result == null) result = caseOperationCallParameter(xExpression);
         if (result == null) result = caseXTopLevelExpression(xExpression);
         if (result == null) result = caseOperationStep(xExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ESyntaxPackage.XEXPRESSION_BLOCK:
+      {
+        XExpressionBlock xExpressionBlock = (XExpressionBlock)theEObject;
+        T result = caseXExpressionBlock(xExpressionBlock);
+        if (result == null) result = caseXPrimaryExpression(xExpressionBlock);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -451,33 +471,6 @@ public class ESyntaxSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case ESyntaxPackage.XIF_EXPRESSION:
-      {
-        XIfExpression xIfExpression = (XIfExpression)theEObject;
-        T result = caseXIfExpression(xIfExpression);
-        if (result == null) result = caseXTopLevelExpression(xIfExpression);
-        if (result == null) result = caseOperationStep(xIfExpression);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case ESyntaxPackage.XWHILE_EXPRESSION:
-      {
-        XWhileExpression xWhileExpression = (XWhileExpression)theEObject;
-        T result = caseXWhileExpression(xWhileExpression);
-        if (result == null) result = caseXTopLevelExpression(xWhileExpression);
-        if (result == null) result = caseOperationStep(xWhileExpression);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case ESyntaxPackage.XFOR_EXPRESSION:
-      {
-        XForExpression xForExpression = (XForExpression)theEObject;
-        T result = caseXForExpression(xForExpression);
-        if (result == null) result = caseXTopLevelExpression(xForExpression);
-        if (result == null) result = caseOperationStep(xForExpression);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case ESyntaxPackage.XPARENTHESIZED_EXPRESSION:
       {
         XParenthesizedExpression xParenthesizedExpression = (XParenthesizedExpression)theEObject;
@@ -493,6 +486,7 @@ public class ESyntaxSwitch<T> extends Switch<T>
         if (result == null) result = caseVariable(structTypeDefMember);
         if (result == null) result = caseLibraryItem(structTypeDefMember);
         if (result == null) result = caseOperationStep(structTypeDefMember);
+        if (result == null) result = caseOperationParameter(structTypeDefMember);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -503,6 +497,7 @@ public class ESyntaxSwitch<T> extends Switch<T>
         if (result == null) result = caseVariable(constantVariable);
         if (result == null) result = caseLibraryItem(constantVariable);
         if (result == null) result = caseOperationStep(constantVariable);
+        if (result == null) result = caseOperationParameter(constantVariable);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -513,27 +508,7 @@ public class ESyntaxSwitch<T> extends Switch<T>
         if (result == null) result = caseVariable(registerVariable);
         if (result == null) result = caseLibraryItem(registerVariable);
         if (result == null) result = caseOperationStep(registerVariable);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case ESyntaxPackage.LABEL:
-      {
-        Label label = (Label)theEObject;
-        T result = caseLabel(label);
-        if (result == null) result = caseVariable(label);
-        if (result == null) result = caseLibraryItem(label);
-        if (result == null) result = caseOperationStep(label);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case ESyntaxPackage.OPERATION:
-      {
-        Operation operation = (Operation)theEObject;
-        T result = caseOperation(operation);
-        if (result == null) result = caseOperationSignature(operation);
-        if (result == null) result = caseVariable(operation);
-        if (result == null) result = caseLibraryItem(operation);
-        if (result == null) result = caseOperationStep(operation);
+        if (result == null) result = caseOperationParameter(registerVariable);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -544,6 +519,16 @@ public class ESyntaxSwitch<T> extends Switch<T>
         if (result == null) result = caseVariable(parameterVariable);
         if (result == null) result = caseLibraryItem(parameterVariable);
         if (result == null) result = caseOperationStep(parameterVariable);
+        if (result == null) result = caseOperationParameter(parameterVariable);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ESyntaxPackage.OPERATION_BLOCK:
+      {
+        OperationBlock operationBlock = (OperationBlock)theEObject;
+        T result = caseOperationBlock(operationBlock);
+        if (result == null) result = caseXExpressionBlock(operationBlock);
+        if (result == null) result = caseXPrimaryExpression(operationBlock);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -595,6 +580,134 @@ public class ESyntaxSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseAnnotation(Annotation object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Workflow Notation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Workflow Notation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWorkflowNotation(WorkflowNotation object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Workflow Step Notation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Workflow Step Notation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWorkflowStepNotation(WorkflowStepNotation object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Workflow Step Parameter Notation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Workflow Step Parameter Notation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWorkflowStepParameterNotation(WorkflowStepParameterNotation object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Instruction Set Notation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Instruction Set Notation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInstructionSetNotation(InstructionSetNotation object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Instruction Notation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Instruction Notation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInstructionNotation(InstructionNotation object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Instruction Word Notation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Instruction Word Notation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInstructionWordNotation(InstructionWordNotation object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Instruction Parameter Notation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Instruction Parameter Notation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInstructionParameterNotation(InstructionParameterNotation object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Insctruction Section Notation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Insctruction Section Notation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInsctructionSectionNotation(InsctructionSectionNotation object)
   {
     return null;
   }
@@ -664,6 +777,22 @@ public class ESyntaxSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Unspecified Type Def</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Unspecified Type Def</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseUnspecifiedTypeDef(UnspecifiedTypeDef object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Pointer Type Def</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -723,6 +852,22 @@ public class ESyntaxSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseDataTypeDef(DataTypeDef object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Label Data Type Def</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Label Data Type Def</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLabelDataTypeDef(LabelDataTypeDef object)
   {
     return null;
   }
@@ -808,49 +953,17 @@ public class ESyntaxSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Instruction Word</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Result Variable Reference</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Instruction Word</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Result Variable Reference</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseInstructionWord(InstructionWord object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Word Section</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Word Section</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseWordSection(WordSection object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Literal Value</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Literal Value</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseLiteralValue(LiteralValue object)
+  public T caseResultVariableReference(ResultVariableReference object)
   {
     return null;
   }
@@ -904,161 +1017,65 @@ public class ESyntaxSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Operation Signature</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Operation Type Def</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Operation Signature</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Operation Type Def</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseOperationSignature(OperationSignature object)
+  public T caseOperationTypeDef(OperationTypeDef object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Operation Block</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Operation</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Operation Block</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Operation</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseOperationBlock(OperationBlock object)
+  public T caseOperation(Operation object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Operator Definition</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Operation Parameter</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Operator Definition</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Operation Parameter</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseOperatorDefinition(OperatorDefinition object)
+  public T caseOperationParameter(OperationParameter object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Linked Binary</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Lazy Parameter</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Linked Binary</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Lazy Parameter</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseLinkedBinary(LinkedBinary object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Binary Section</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Binary Section</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseBinarySection(BinarySection object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Function Binary Section</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Function Binary Section</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseFunctionBinarySection(FunctionBinarySection object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Optimizer Call</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Optimizer Call</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseOptimizerCall(OptimizerCall object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Function Memory</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Function Memory</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseFunctionMemory(FunctionMemory object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Constant Binary Section</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Constant Binary Section</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseConstantBinarySection(ConstantBinarySection object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Reference Binary Section</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Reference Binary Section</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseReferenceBinarySection(ReferenceBinarySection object)
+  public T caseLazyParameter(LazyParameter object)
   {
     return null;
   }
@@ -1075,6 +1092,22 @@ public class ESyntaxSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseXExpression(XExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>XExpression Block</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>XExpression Block</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseXExpressionBlock(XExpressionBlock object)
   {
     return null;
   }
@@ -1320,54 +1353,6 @@ public class ESyntaxSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>XIf Expression</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>XIf Expression</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseXIfExpression(XIfExpression object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>XWhile Expression</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>XWhile Expression</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseXWhileExpression(XWhileExpression object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>XFor Expression</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>XFor Expression</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseXForExpression(XForExpression object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>XParenthesized Expression</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -1432,38 +1417,6 @@ public class ESyntaxSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Label</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Label</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseLabel(Label object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Operation</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Operation</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseOperation(Operation object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Parameter Variable</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -1475,6 +1428,22 @@ public class ESyntaxSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseParameterVariable(ParameterVariable object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Operation Block</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Operation Block</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseOperationBlock(OperationBlock object)
   {
     return null;
   }

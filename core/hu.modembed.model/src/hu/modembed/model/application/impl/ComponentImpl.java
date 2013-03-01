@@ -1,16 +1,10 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package hu.modembed.model.application.impl;
 
 import hu.modembed.model.application.ApplicationPackage;
 import hu.modembed.model.application.Component;
 import hu.modembed.model.application.Port;
-
-import hu.modembed.model.core.impl.PackagedElementImpl;
 
 import java.util.Collection;
 
@@ -20,6 +14,8 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -38,7 +34,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public abstract class ComponentImpl extends PackagedElementImpl implements Component {
+public abstract class ComponentImpl extends EObjectImpl implements Component {
 	/**
 	 * The cached value of the '{@link #getUses() <em>Uses</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

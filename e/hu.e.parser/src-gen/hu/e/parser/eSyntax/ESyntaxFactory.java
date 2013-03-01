@@ -50,6 +50,78 @@ public interface ESyntaxFactory extends EFactory
   Annotation createAnnotation();
 
   /**
+   * Returns a new object of class '<em>Workflow Notation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Workflow Notation</em>'.
+   * @generated
+   */
+  WorkflowNotation createWorkflowNotation();
+
+  /**
+   * Returns a new object of class '<em>Workflow Step Notation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Workflow Step Notation</em>'.
+   * @generated
+   */
+  WorkflowStepNotation createWorkflowStepNotation();
+
+  /**
+   * Returns a new object of class '<em>Workflow Step Parameter Notation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Workflow Step Parameter Notation</em>'.
+   * @generated
+   */
+  WorkflowStepParameterNotation createWorkflowStepParameterNotation();
+
+  /**
+   * Returns a new object of class '<em>Instruction Set Notation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Instruction Set Notation</em>'.
+   * @generated
+   */
+  InstructionSetNotation createInstructionSetNotation();
+
+  /**
+   * Returns a new object of class '<em>Instruction Notation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Instruction Notation</em>'.
+   * @generated
+   */
+  InstructionNotation createInstructionNotation();
+
+  /**
+   * Returns a new object of class '<em>Instruction Word Notation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Instruction Word Notation</em>'.
+   * @generated
+   */
+  InstructionWordNotation createInstructionWordNotation();
+
+  /**
+   * Returns a new object of class '<em>Instruction Parameter Notation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Instruction Parameter Notation</em>'.
+   * @generated
+   */
+  InstructionParameterNotation createInstructionParameterNotation();
+
+  /**
+   * Returns a new object of class '<em>Insctruction Section Notation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Insctruction Section Notation</em>'.
+   * @generated
+   */
+  InsctructionSectionNotation createInsctructionSectionNotation();
+
+  /**
    * Returns a new object of class '<em>Library</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -86,6 +158,15 @@ public interface ESyntaxFactory extends EFactory
   TypeDef createTypeDef();
 
   /**
+   * Returns a new object of class '<em>Unspecified Type Def</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Unspecified Type Def</em>'.
+   * @generated
+   */
+  UnspecifiedTypeDef createUnspecifiedTypeDef();
+
+  /**
    * Returns a new object of class '<em>Pointer Type Def</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -120,6 +201,15 @@ public interface ESyntaxFactory extends EFactory
    * @generated
    */
   DataTypeDef createDataTypeDef();
+
+  /**
+   * Returns a new object of class '<em>Label Data Type Def</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Label Data Type Def</em>'.
+   * @generated
+   */
+  LabelDataTypeDef createLabelDataTypeDef();
 
   /**
    * Returns a new object of class '<em>Fixed Data Type Def</em>'.
@@ -167,31 +257,13 @@ public interface ESyntaxFactory extends EFactory
   OperationStep createOperationStep();
 
   /**
-   * Returns a new object of class '<em>Instruction Word</em>'.
+   * Returns a new object of class '<em>Result Variable Reference</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Instruction Word</em>'.
+   * @return a new object of class '<em>Result Variable Reference</em>'.
    * @generated
    */
-  InstructionWord createInstructionWord();
-
-  /**
-   * Returns a new object of class '<em>Word Section</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Word Section</em>'.
-   * @generated
-   */
-  WordSection createWordSection();
-
-  /**
-   * Returns a new object of class '<em>Literal Value</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Literal Value</em>'.
-   * @generated
-   */
-  LiteralValue createLiteralValue();
+  ResultVariableReference createResultVariableReference();
 
   /**
    * Returns a new object of class '<em>Variable Reference</em>'.
@@ -221,94 +293,40 @@ public interface ESyntaxFactory extends EFactory
   OperationCallParameter createOperationCallParameter();
 
   /**
-   * Returns a new object of class '<em>Operation Signature</em>'.
+   * Returns a new object of class '<em>Operation Type Def</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Operation Signature</em>'.
+   * @return a new object of class '<em>Operation Type Def</em>'.
    * @generated
    */
-  OperationSignature createOperationSignature();
+  OperationTypeDef createOperationTypeDef();
 
   /**
-   * Returns a new object of class '<em>Operation Block</em>'.
+   * Returns a new object of class '<em>Operation</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Operation Block</em>'.
+   * @return a new object of class '<em>Operation</em>'.
    * @generated
    */
-  OperationBlock createOperationBlock();
+  Operation createOperation();
 
   /**
-   * Returns a new object of class '<em>Operator Definition</em>'.
+   * Returns a new object of class '<em>Operation Parameter</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Operator Definition</em>'.
+   * @return a new object of class '<em>Operation Parameter</em>'.
    * @generated
    */
-  OperatorDefinition createOperatorDefinition();
+  OperationParameter createOperationParameter();
 
   /**
-   * Returns a new object of class '<em>Linked Binary</em>'.
+   * Returns a new object of class '<em>Lazy Parameter</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Linked Binary</em>'.
+   * @return a new object of class '<em>Lazy Parameter</em>'.
    * @generated
    */
-  LinkedBinary createLinkedBinary();
-
-  /**
-   * Returns a new object of class '<em>Binary Section</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Binary Section</em>'.
-   * @generated
-   */
-  BinarySection createBinarySection();
-
-  /**
-   * Returns a new object of class '<em>Function Binary Section</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Function Binary Section</em>'.
-   * @generated
-   */
-  FunctionBinarySection createFunctionBinarySection();
-
-  /**
-   * Returns a new object of class '<em>Optimizer Call</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Optimizer Call</em>'.
-   * @generated
-   */
-  OptimizerCall createOptimizerCall();
-
-  /**
-   * Returns a new object of class '<em>Function Memory</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Function Memory</em>'.
-   * @generated
-   */
-  FunctionMemory createFunctionMemory();
-
-  /**
-   * Returns a new object of class '<em>Constant Binary Section</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Constant Binary Section</em>'.
-   * @generated
-   */
-  ConstantBinarySection createConstantBinarySection();
-
-  /**
-   * Returns a new object of class '<em>Reference Binary Section</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Reference Binary Section</em>'.
-   * @generated
-   */
-  ReferenceBinarySection createReferenceBinarySection();
+  LazyParameter createLazyParameter();
 
   /**
    * Returns a new object of class '<em>XExpression</em>'.
@@ -318,6 +336,15 @@ public interface ESyntaxFactory extends EFactory
    * @generated
    */
   XExpression createXExpression();
+
+  /**
+   * Returns a new object of class '<em>XExpression Block</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>XExpression Block</em>'.
+   * @generated
+   */
+  XExpressionBlock createXExpressionBlock();
 
   /**
    * Returns a new object of class '<em>XPrimary Expression</em>'.
@@ -455,33 +482,6 @@ public interface ESyntaxFactory extends EFactory
   XIsLiteralExpression createXIsLiteralExpression();
 
   /**
-   * Returns a new object of class '<em>XIf Expression</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>XIf Expression</em>'.
-   * @generated
-   */
-  XIfExpression createXIfExpression();
-
-  /**
-   * Returns a new object of class '<em>XWhile Expression</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>XWhile Expression</em>'.
-   * @generated
-   */
-  XWhileExpression createXWhileExpression();
-
-  /**
-   * Returns a new object of class '<em>XFor Expression</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>XFor Expression</em>'.
-   * @generated
-   */
-  XForExpression createXForExpression();
-
-  /**
    * Returns a new object of class '<em>XParenthesized Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -518,24 +518,6 @@ public interface ESyntaxFactory extends EFactory
   RegisterVariable createRegisterVariable();
 
   /**
-   * Returns a new object of class '<em>Label</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Label</em>'.
-   * @generated
-   */
-  Label createLabel();
-
-  /**
-   * Returns a new object of class '<em>Operation</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Operation</em>'.
-   * @generated
-   */
-  Operation createOperation();
-
-  /**
    * Returns a new object of class '<em>Parameter Variable</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -543,6 +525,15 @@ public interface ESyntaxFactory extends EFactory
    * @generated
    */
   ParameterVariable createParameterVariable();
+
+  /**
+   * Returns a new object of class '<em>Operation Block</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Operation Block</em>'.
+   * @generated
+   */
+  OperationBlock createOperationBlock();
 
   /**
    * Returns the package supported by this factory.

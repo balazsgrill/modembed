@@ -6,19 +6,24 @@ package hu.modembed.ui.wizards.included;
 import hu.modembed.includedcode.IncludedProject;
 import hu.modembed.includedcode.IncludedProjectsRegistry;
 import hu.modembed.ui.MODembedUI;
+import hu.modembed.ui.TreeContentProvider;
 
 import java.net.URL;
 
-import org.eclipse.jface.viewers.ArrayContentProvider;
+import org.eclipse.core.databinding.observable.list.IObservableList;
+import org.eclipse.core.databinding.observable.list.WritableList;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
-import org.eclipse.jface.viewers.StructuredSelection;
-import org.eclipse.jface.viewers.TableViewer;
+import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.wizard.WizardPage;
+import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.ui.dialogs.FilteredTree;
+import org.eclipse.ui.dialogs.PatternFilter;
 
 /**
  * @author balazs.grill
@@ -31,13 +36,13 @@ public class IncludedProjectsSelectionWizardPage extends WizardPage {
 		setDescription("Select projects below to be imported");
 	}
 	
-	private IStructuredSelection selection = new StructuredSelection();
+	private IObservableList selection = new WritableList();
 	
 	private void validate(){
 		setPageComplete(!selection.isEmpty());
 	}
 	
-	public IStructuredSelection getSelection() {
+	public IObservableList getSelection() {
 		return selection;
 	}
 	
@@ -46,27 +51,34 @@ public class IncludedProjectsSelectionWizardPage extends WizardPage {
 	 */
 	@Override
 	public void createControl(Composite parent) {
-		TableViewer tv = new TableViewer(parent);
-		setControl(tv.getControl());
-
-		tv.setContentProvider(new ArrayContentProvider());
+		final PatternFilter patternFilter = new PatternFilter();
+		
+		final FilteredTree tree = new FilteredTree(parent,SWT.H_SCROLL|SWT.V_SCROLL|SWT.BORDER,patternFilter, true);
+		TreeViewer tv = tree.getViewer();
+		
+		tv.getControl().setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+		setControl(tree);
+		
+		tv.setContentProvider(new TreeContentProvider());
 		tv.setLabelProvider(new LabelProvider(){
 			@Override
 			public Image getImage(Object element) {
 				if (element instanceof IncludedProject){
 					URL url = ((IncludedProject) element).getIcon();
 					if (url != null) return MODembedUI.getDefault().getSharedImage(url);
+					return MODembedUI.getDefault().getImageRegistry().get(MODembedUI.IMAGE_ELEMENT_FOLDER);
 				}
-				return super.getImage(element);
+				return MODembedUI.getDefault().getImageRegistry().get(MODembedUI.IMAGE_ELEMENT_FOLDERS);
 			}
 		});
-		tv.setInput(IncludedProjectsRegistry.getInstance().getProjects().toArray());
+		tv.setInput(IncludedProjectsRegistry.getInstance().getProjectTree());
 		
 		tv.addSelectionChangedListener(new ISelectionChangedListener() {
 			
 			@Override
 			public void selectionChanged(SelectionChangedEvent event) {
-				selection = (IStructuredSelection)event.getSelection();
+				selection.clear();
+				selection.addAll(((IStructuredSelection)event.getSelection()).toList());
 				validate();
 			}
 		});

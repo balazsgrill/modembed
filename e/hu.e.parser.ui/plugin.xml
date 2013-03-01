@@ -232,5 +232,22 @@
             extensions="e">
     </provider>
   </extension>
+  <extension
+        id="unresolvedReferenceMarker"
+        name="Unresolved reference marker"
+        point="org.eclipse.core.resources.markers">
+     <persistent
+           value="true">
+     </persistent>
+     <super
+           type="org.eclipse.core.resources.problemmarker">
+     </super>
+     <attribute
+           name="referenceId">
+     </attribute>
+     <super
+           type="org.eclipse.core.resources.textmarker">
+     </super>
+  </extension>
 
 </plugin>

@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package hu.modembed.model.application.interface_.util;
 
@@ -10,7 +6,6 @@ import hu.modembed.model.application.interface_.*;
 
 import hu.modembed.model.core.MODembedElement;
 import hu.modembed.model.core.NamedElement;
-import hu.modembed.model.core.PackagedElement;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -77,9 +72,6 @@ public class InterfaceSwitch<T> extends Switch<T> {
 			case InterfacePackage.COMPONENT_INTERFACE: {
 				ComponentInterface componentInterface = (ComponentInterface)theEObject;
 				T result = caseComponentInterface(componentInterface);
-				if (result == null) result = casePackagedElement(componentInterface);
-				if (result == null) result = caseNamedElement(componentInterface);
-				if (result == null) result = caseMODembedElement(componentInterface);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -87,9 +79,6 @@ public class InterfaceSwitch<T> extends Switch<T> {
 				OperationInterface operationInterface = (OperationInterface)theEObject;
 				T result = caseOperationInterface(operationInterface);
 				if (result == null) result = caseComponentInterface(operationInterface);
-				if (result == null) result = casePackagedElement(operationInterface);
-				if (result == null) result = caseNamedElement(operationInterface);
-				if (result == null) result = caseMODembedElement(operationInterface);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -200,21 +189,6 @@ public class InterfaceSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseNamedElement(NamedElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Packaged Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Packaged Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T casePackagedElement(PackagedElement object) {
 		return null;
 	}
 

@@ -3,13 +3,10 @@
  */
 package hu.modembed.model.editor;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import hu.modembed.MODembedCore;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.jface.action.IMenuListener;
@@ -50,7 +47,7 @@ public class GenericModelContextMenuListener implements IMenuListener {
 				EClass eclass = ((EObject) element).eClass();
 				for(EReference ref : eclass.getEAllContainments()){
 					EClass type = ref.getEReferenceType();
-					for(EClass t : getAllSubTypes(type)){
+					for(EClass t : MODembedCore.getAllSubTypes(edomain.getResourceSet(), type)){
 						if (!t.isAbstract())
 							manager.add(new NewElementAction(edomain, (EObject)element, t, ref));
 					}
@@ -64,25 +61,5 @@ public class GenericModelContextMenuListener implements IMenuListener {
 
 	}
 
-	private List<EClass> getAllSubTypes(EClass base) {
-		List<EClass> subs = new ArrayList<EClass>();
-		subs.add(base);
-
-		for (Object oo : edomain.getResourceSet().getPackageRegistry().values()) {
-
-			if (oo instanceof EPackage) {
-				Iterator<EObject> iter = ((EPackage) oo).eContents().iterator();
-				while (iter.hasNext()) {
-					EObject o = iter.next();
-					if (o instanceof EClass) {
-						EClass cls = (EClass) o;
-						if (cls.getEAllSuperTypes().contains(base))
-							subs.add(cls);
-					}
-				}
-			}
-		}
-		return subs;
-	}
 	
 }

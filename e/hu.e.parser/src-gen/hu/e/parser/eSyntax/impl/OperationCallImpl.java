@@ -3,7 +3,6 @@
 package hu.e.parser.eSyntax.impl;
 
 import hu.e.parser.eSyntax.ESyntaxPackage;
-import hu.e.parser.eSyntax.Operation;
 import hu.e.parser.eSyntax.OperationCall;
 import hu.e.parser.eSyntax.OperationCallParameter;
 
@@ -39,14 +38,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class OperationCallImpl extends XPrimaryExpressionImpl implements OperationCall
 {
   /**
-   * The cached value of the '{@link #getOperation() <em>Operation</em>}' reference.
+   * The default value of the '{@link #getOperation() <em>Operation</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getOperation()
    * @generated
    * @ordered
    */
-  protected Operation operation;
+  protected static final String OPERATION_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getOperation() <em>Operation</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getOperation()
+   * @generated
+   * @ordered
+   */
+  protected String operation = OPERATION_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getParams() <em>Params</em>}' containment reference list.
@@ -84,27 +93,7 @@ public class OperationCallImpl extends XPrimaryExpressionImpl implements Operati
    * <!-- end-user-doc -->
    * @generated
    */
-  public Operation getOperation()
-  {
-    if (operation != null && operation.eIsProxy())
-    {
-      InternalEObject oldOperation = (InternalEObject)operation;
-      operation = (Operation)eResolveProxy(oldOperation);
-      if (operation != oldOperation)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ESyntaxPackage.OPERATION_CALL__OPERATION, oldOperation, operation));
-      }
-    }
-    return operation;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Operation basicGetOperation()
+  public String getOperation()
   {
     return operation;
   }
@@ -114,9 +103,9 @@ public class OperationCallImpl extends XPrimaryExpressionImpl implements Operati
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setOperation(Operation newOperation)
+  public void setOperation(String newOperation)
   {
-    Operation oldOperation = operation;
+    String oldOperation = operation;
     operation = newOperation;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.OPERATION_CALL__OPERATION, oldOperation, operation));
@@ -163,8 +152,7 @@ public class OperationCallImpl extends XPrimaryExpressionImpl implements Operati
     switch (featureID)
     {
       case ESyntaxPackage.OPERATION_CALL__OPERATION:
-        if (resolve) return getOperation();
-        return basicGetOperation();
+        return getOperation();
       case ESyntaxPackage.OPERATION_CALL__PARAMS:
         return getParams();
     }
@@ -183,7 +171,7 @@ public class OperationCallImpl extends XPrimaryExpressionImpl implements Operati
     switch (featureID)
     {
       case ESyntaxPackage.OPERATION_CALL__OPERATION:
-        setOperation((Operation)newValue);
+        setOperation((String)newValue);
         return;
       case ESyntaxPackage.OPERATION_CALL__PARAMS:
         getParams().clear();
@@ -204,7 +192,7 @@ public class OperationCallImpl extends XPrimaryExpressionImpl implements Operati
     switch (featureID)
     {
       case ESyntaxPackage.OPERATION_CALL__OPERATION:
-        setOperation((Operation)null);
+        setOperation(OPERATION_EDEFAULT);
         return;
       case ESyntaxPackage.OPERATION_CALL__PARAMS:
         getParams().clear();
@@ -224,11 +212,28 @@ public class OperationCallImpl extends XPrimaryExpressionImpl implements Operati
     switch (featureID)
     {
       case ESyntaxPackage.OPERATION_CALL__OPERATION:
-        return operation != null;
+        return OPERATION_EDEFAULT == null ? operation != null : !OPERATION_EDEFAULT.equals(operation);
       case ESyntaxPackage.OPERATION_CALL__PARAMS:
         return params != null && !params.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (operation: ");
+    result.append(operation);
+    result.append(')');
+    return result.toString();
   }
 
 } //OperationCallImpl

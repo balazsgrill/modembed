@@ -4,20 +4,13 @@ package hu.e.parser.eSyntax.impl;
 
 import hu.e.parser.eSyntax.CompilationUnit;
 import hu.e.parser.eSyntax.ESyntaxPackage;
-import hu.e.parser.eSyntax.Library;
-
-import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,7 +20,6 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link hu.e.parser.eSyntax.impl.CompilationUnitImpl#getName <em>Name</em>}</li>
- *   <li>{@link hu.e.parser.eSyntax.impl.CompilationUnitImpl#getUse <em>Use</em>}</li>
  * </ul>
  * </p>
  *
@@ -54,16 +46,6 @@ public class CompilationUnitImpl extends MinimalEObjectImpl.Container implements
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getUse() <em>Use</em>}' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getUse()
-   * @generated
-   * @ordered
-   */
-  protected EList<Library> use;
 
   /**
    * <!-- begin-user-doc -->
@@ -114,20 +96,6 @@ public class CompilationUnitImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Library> getUse()
-  {
-    if (use == null)
-    {
-      use = new EObjectResolvingEList<Library>(Library.class, this, ESyntaxPackage.COMPILATION_UNIT__USE);
-    }
-    return use;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -135,8 +103,6 @@ public class CompilationUnitImpl extends MinimalEObjectImpl.Container implements
     {
       case ESyntaxPackage.COMPILATION_UNIT__NAME:
         return getName();
-      case ESyntaxPackage.COMPILATION_UNIT__USE:
-        return getUse();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -146,7 +112,6 @@ public class CompilationUnitImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -154,10 +119,6 @@ public class CompilationUnitImpl extends MinimalEObjectImpl.Container implements
     {
       case ESyntaxPackage.COMPILATION_UNIT__NAME:
         setName((String)newValue);
-        return;
-      case ESyntaxPackage.COMPILATION_UNIT__USE:
-        getUse().clear();
-        getUse().addAll((Collection<? extends Library>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -176,9 +137,6 @@ public class CompilationUnitImpl extends MinimalEObjectImpl.Container implements
       case ESyntaxPackage.COMPILATION_UNIT__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case ESyntaxPackage.COMPILATION_UNIT__USE:
-        getUse().clear();
-        return;
     }
     super.eUnset(featureID);
   }
@@ -195,8 +153,6 @@ public class CompilationUnitImpl extends MinimalEObjectImpl.Container implements
     {
       case ESyntaxPackage.COMPILATION_UNIT__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case ESyntaxPackage.COMPILATION_UNIT__USE:
-        return use != null && !use.isEmpty();
     }
     return super.eIsSet(featureID);
   }

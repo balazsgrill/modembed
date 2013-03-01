@@ -58,6 +58,10 @@ public class AssemblerFactoryImpl extends EFactoryImpl implements AssemblerFacto
 		switch (eClass.getClassifierID()) {
 			case AssemblerPackage.INSTRUCTION_SET: return createInstructionSet();
 			case AssemblerPackage.INSTRUCTION: return createInstruction();
+			case AssemblerPackage.INSTRUCTION_PARAMETER: return createInstructionParameter();
+			case AssemblerPackage.CONSTANT_SECTION: return createConstantSection();
+			case AssemblerPackage.PARAMETER_SECTION: return createParameterSection();
+			case AssemblerPackage.INSTRUCTION_WORD: return createInstructionWord();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -81,6 +85,46 @@ public class AssemblerFactoryImpl extends EFactoryImpl implements AssemblerFacto
 	public Instruction createInstruction() {
 		InstructionImpl instruction = new InstructionImpl();
 		return instruction;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InstructionParameter createInstructionParameter() {
+		InstructionParameterImpl instructionParameter = new InstructionParameterImpl();
+		return instructionParameter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ConstantSection createConstantSection() {
+		ConstantSectionImpl constantSection = new ConstantSectionImpl();
+		return constantSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ParameterSection createParameterSection() {
+		ParameterSectionImpl parameterSection = new ParameterSectionImpl();
+		return parameterSection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InstructionWord createInstructionWord() {
+		InstructionWordImpl instructionWord = new InstructionWordImpl();
+		return instructionWord;
 	}
 
 	/**

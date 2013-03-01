@@ -5,34 +5,36 @@ import com.google.inject.Provider;
 import hu.e.parser.eSyntax.Annotation;
 import hu.e.parser.eSyntax.AnnotationDefinition;
 import hu.e.parser.eSyntax.ArrayTypeDef;
-import hu.e.parser.eSyntax.ConstantBinarySection;
 import hu.e.parser.eSyntax.ConstantVariable;
 import hu.e.parser.eSyntax.ESyntaxPackage;
 import hu.e.parser.eSyntax.FixedDataTypeDef;
-import hu.e.parser.eSyntax.FunctionBinarySection;
-import hu.e.parser.eSyntax.FunctionMemory;
-import hu.e.parser.eSyntax.InstructionWord;
+import hu.e.parser.eSyntax.InsctructionSectionNotation;
+import hu.e.parser.eSyntax.InstructionNotation;
+import hu.e.parser.eSyntax.InstructionParameterNotation;
+import hu.e.parser.eSyntax.InstructionSetNotation;
+import hu.e.parser.eSyntax.InstructionWordNotation;
 import hu.e.parser.eSyntax.IntegerDataTypeDef;
-import hu.e.parser.eSyntax.Label;
+import hu.e.parser.eSyntax.LabelDataTypeDef;
+import hu.e.parser.eSyntax.LazyParameter;
 import hu.e.parser.eSyntax.Library;
-import hu.e.parser.eSyntax.LinkedBinary;
-import hu.e.parser.eSyntax.LiteralValue;
 import hu.e.parser.eSyntax.Operation;
 import hu.e.parser.eSyntax.OperationBlock;
 import hu.e.parser.eSyntax.OperationCall;
-import hu.e.parser.eSyntax.OperationSignature;
-import hu.e.parser.eSyntax.OperatorDefinition;
-import hu.e.parser.eSyntax.OptimizerCall;
+import hu.e.parser.eSyntax.OperationTypeDef;
 import hu.e.parser.eSyntax.ParameterVariable;
 import hu.e.parser.eSyntax.PointerTypeDef;
 import hu.e.parser.eSyntax.RefTypeDef;
-import hu.e.parser.eSyntax.ReferenceBinarySection;
 import hu.e.parser.eSyntax.RegisterVariable;
+import hu.e.parser.eSyntax.ResultVariableReference;
 import hu.e.parser.eSyntax.StructTypeDef;
 import hu.e.parser.eSyntax.StructTypeDefMember;
 import hu.e.parser.eSyntax.Type;
+import hu.e.parser.eSyntax.UnspecifiedTypeDef;
 import hu.e.parser.eSyntax.Variable;
 import hu.e.parser.eSyntax.VariableReference;
+import hu.e.parser.eSyntax.WorkflowNotation;
+import hu.e.parser.eSyntax.WorkflowStepNotation;
+import hu.e.parser.eSyntax.WorkflowStepParameterNotation;
 import hu.e.parser.eSyntax.XErrorExpression;
 import hu.e.parser.eSyntax.XExpression0;
 import hu.e.parser.eSyntax.XExpression1;
@@ -43,13 +45,10 @@ import hu.e.parser.eSyntax.XExpression5;
 import hu.e.parser.eSyntax.XExpression6;
 import hu.e.parser.eSyntax.XExpressionLiteral;
 import hu.e.parser.eSyntax.XExpressionM1;
-import hu.e.parser.eSyntax.XForExpression;
-import hu.e.parser.eSyntax.XIfExpression;
 import hu.e.parser.eSyntax.XIsLiteralExpression;
 import hu.e.parser.eSyntax.XParenthesizedExpression;
 import hu.e.parser.eSyntax.XSizeOfExpression;
 import hu.e.parser.eSyntax.XStructExpression;
-import hu.e.parser.eSyntax.XWhileExpression;
 import hu.e.parser.services.ESyntaxGrammarAccess;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.serializer.acceptor.ISemanticSequenceAcceptor;
@@ -93,16 +92,6 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 					return; 
 				}
 				else break;
-			case ESyntaxPackage.CONSTANT_BINARY_SECTION:
-				if(context == grammarAccess.getBinarySectionRule()) {
-					sequence_BinarySection_ConstantBinarySection(context, (ConstantBinarySection) semanticObject); 
-					return; 
-				}
-				else if(context == grammarAccess.getConstantBinarySectionRule()) {
-					sequence_ConstantBinarySection(context, (ConstantBinarySection) semanticObject); 
-					return; 
-				}
-				else break;
 			case ESyntaxPackage.CONSTANT_VARIABLE:
 				if(context == grammarAccess.getConstantVariableRule() ||
 				   context == grammarAccess.getLibraryItemRule()) {
@@ -118,26 +107,34 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 					return; 
 				}
 				else break;
-			case ESyntaxPackage.FUNCTION_BINARY_SECTION:
-				if(context == grammarAccess.getBinarySectionRule()) {
-					sequence_BinarySection_FunctionBinarySection(context, (FunctionBinarySection) semanticObject); 
-					return; 
-				}
-				else if(context == grammarAccess.getFunctionBinarySectionRule()) {
-					sequence_FunctionBinarySection(context, (FunctionBinarySection) semanticObject); 
+			case ESyntaxPackage.INSCTRUCTION_SECTION_NOTATION:
+				if(context == grammarAccess.getInsctructionSectionNotationRule()) {
+					sequence_InsctructionSectionNotation(context, (InsctructionSectionNotation) semanticObject); 
 					return; 
 				}
 				else break;
-			case ESyntaxPackage.FUNCTION_MEMORY:
-				if(context == grammarAccess.getFunctionMemoryRule()) {
-					sequence_FunctionMemory(context, (FunctionMemory) semanticObject); 
+			case ESyntaxPackage.INSTRUCTION_NOTATION:
+				if(context == grammarAccess.getInstructionNotationRule()) {
+					sequence_InstructionNotation(context, (InstructionNotation) semanticObject); 
 					return; 
 				}
 				else break;
-			case ESyntaxPackage.INSTRUCTION_WORD:
-				if(context == grammarAccess.getInstructionWordRule() ||
-				   context == grammarAccess.getOperationStepRule()) {
-					sequence_InstructionWord(context, (InstructionWord) semanticObject); 
+			case ESyntaxPackage.INSTRUCTION_PARAMETER_NOTATION:
+				if(context == grammarAccess.getInstructionParameterNotationRule()) {
+					sequence_InstructionParameterNotation(context, (InstructionParameterNotation) semanticObject); 
+					return; 
+				}
+				else break;
+			case ESyntaxPackage.INSTRUCTION_SET_NOTATION:
+				if(context == grammarAccess.getCompilationUnitRule() ||
+				   context == grammarAccess.getInstructionSetNotationRule()) {
+					sequence_InstructionSetNotation(context, (InstructionSetNotation) semanticObject); 
+					return; 
+				}
+				else break;
+			case ESyntaxPackage.INSTRUCTION_WORD_NOTATION:
+				if(context == grammarAccess.getInstructionWordNotationRule()) {
+					sequence_InstructionWordNotation(context, (InstructionWordNotation) semanticObject); 
 					return; 
 				}
 				else break;
@@ -149,10 +146,18 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 					return; 
 				}
 				else break;
-			case ESyntaxPackage.LABEL:
-				if(context == grammarAccess.getLabelRule() ||
-				   context == grammarAccess.getOperationStepRule()) {
-					sequence_Label(context, (Label) semanticObject); 
+			case ESyntaxPackage.LABEL_DATA_TYPE_DEF:
+				if(context == grammarAccess.getDataTypeDefRule() ||
+				   context == grammarAccess.getLabelDataTypeDefRule() ||
+				   context == grammarAccess.getTypeDefRule()) {
+					sequence_LabelDataTypeDef(context, (LabelDataTypeDef) semanticObject); 
+					return; 
+				}
+				else break;
+			case ESyntaxPackage.LAZY_PARAMETER:
+				if(context == grammarAccess.getLazyParameterRule() ||
+				   context == grammarAccess.getOperationParameterRule()) {
+					sequence_LazyParameter(context, (LazyParameter) semanticObject); 
 					return; 
 				}
 				else break;
@@ -160,23 +165,6 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 				if(context == grammarAccess.getCompilationUnitRule() ||
 				   context == grammarAccess.getLibraryRule()) {
 					sequence_Library(context, (Library) semanticObject); 
-					return; 
-				}
-				else break;
-			case ESyntaxPackage.LINKED_BINARY:
-				if(context == grammarAccess.getCompilationUnitRule() ||
-				   context == grammarAccess.getLinkedBinaryRule()) {
-					sequence_LinkedBinary(context, (LinkedBinary) semanticObject); 
-					return; 
-				}
-				else break;
-			case ESyntaxPackage.LITERAL_VALUE:
-				if(context == grammarAccess.getLiteralValueRule()) {
-					sequence_LiteralValue(context, (LiteralValue) semanticObject); 
-					return; 
-				}
-				else if(context == grammarAccess.getWordSectionRule()) {
-					sequence_LiteralValue_WordSection(context, (LiteralValue) semanticObject); 
 					return; 
 				}
 				else break;
@@ -188,8 +176,9 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 				}
 				else break;
 			case ESyntaxPackage.OPERATION_BLOCK:
-				if(context == grammarAccess.getOperationBlockRule()) {
-					sequence_OperationBlock(context, (OperationBlock) semanticObject); 
+				if(context == grammarAccess.getXExpressionBlockRule() ||
+				   context == grammarAccess.getXPrimaryExpressionRule()) {
+					sequence_XExpressionBlock(context, (OperationBlock) semanticObject); 
 					return; 
 				}
 				else break;
@@ -200,27 +189,15 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 					return; 
 				}
 				else break;
-			case ESyntaxPackage.OPERATION_SIGNATURE:
-				if(context == grammarAccess.getOperationSignatureRule()) {
-					sequence_OperationSignature(context, (OperationSignature) semanticObject); 
-					return; 
-				}
-				else break;
-			case ESyntaxPackage.OPERATOR_DEFINITION:
-				if(context == grammarAccess.getLibraryItemRule() ||
-				   context == grammarAccess.getOperatorDefinitionRule()) {
-					sequence_OperatorDefinition(context, (OperatorDefinition) semanticObject); 
-					return; 
-				}
-				else break;
-			case ESyntaxPackage.OPTIMIZER_CALL:
-				if(context == grammarAccess.getOptimizerCallRule()) {
-					sequence_OptimizerCall(context, (OptimizerCall) semanticObject); 
+			case ESyntaxPackage.OPERATION_TYPE_DEF:
+				if(context == grammarAccess.getOperationTypeDefRule()) {
+					sequence_OperationTypeDef(context, (OperationTypeDef) semanticObject); 
 					return; 
 				}
 				else break;
 			case ESyntaxPackage.PARAMETER_VARIABLE:
-				if(context == grammarAccess.getParameterVariableRule()) {
+				if(context == grammarAccess.getOperationParameterRule() ||
+				   context == grammarAccess.getParameterVariableRule()) {
 					sequence_ParameterVariable(context, (ParameterVariable) semanticObject); 
 					return; 
 				}
@@ -239,20 +216,17 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 					return; 
 				}
 				else break;
-			case ESyntaxPackage.REFERENCE_BINARY_SECTION:
-				if(context == grammarAccess.getBinarySectionRule()) {
-					sequence_BinarySection_ReferenceBinarySection(context, (ReferenceBinarySection) semanticObject); 
-					return; 
-				}
-				else if(context == grammarAccess.getReferenceBinarySectionRule()) {
-					sequence_ReferenceBinarySection(context, (ReferenceBinarySection) semanticObject); 
-					return; 
-				}
-				else break;
 			case ESyntaxPackage.REGISTER_VARIABLE:
 				if(context == grammarAccess.getLibraryItemRule() ||
 				   context == grammarAccess.getRegisterVariableRule()) {
 					sequence_RegisterVariable(context, (RegisterVariable) semanticObject); 
+					return; 
+				}
+				else break;
+			case ESyntaxPackage.RESULT_VARIABLE_REFERENCE:
+				if(context == grammarAccess.getResultVariableReferenceRule() ||
+				   context == grammarAccess.getXPrimaryExpressionRule()) {
+					sequence_ResultVariableReference(context, (ResultVariableReference) semanticObject); 
 					return; 
 				}
 				else break;
@@ -276,6 +250,13 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 					return; 
 				}
 				else break;
+			case ESyntaxPackage.UNSPECIFIED_TYPE_DEF:
+				if(context == grammarAccess.getTypeDefRule() ||
+				   context == grammarAccess.getUnspecifiedTypeDefRule()) {
+					sequence_UnspecifiedTypeDef(context, (UnspecifiedTypeDef) semanticObject); 
+					return; 
+				}
+				else break;
 			case ESyntaxPackage.VARIABLE:
 				if(context == grammarAccess.getLibraryItemRule() ||
 				   context == grammarAccess.getOperationStepRule() ||
@@ -290,8 +271,23 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 					sequence_VariableReference(context, (VariableReference) semanticObject); 
 					return; 
 				}
-				else if(context == grammarAccess.getWordSectionRule()) {
-					sequence_VariableReference_WordSection(context, (VariableReference) semanticObject); 
+				else break;
+			case ESyntaxPackage.WORKFLOW_NOTATION:
+				if(context == grammarAccess.getCompilationUnitRule() ||
+				   context == grammarAccess.getWorkflowNotationRule()) {
+					sequence_WorkflowNotation(context, (WorkflowNotation) semanticObject); 
+					return; 
+				}
+				else break;
+			case ESyntaxPackage.WORKFLOW_STEP_NOTATION:
+				if(context == grammarAccess.getWorkflowStepNotationRule()) {
+					sequence_WorkflowStepNotation(context, (WorkflowStepNotation) semanticObject); 
+					return; 
+				}
+				else break;
+			case ESyntaxPackage.WORKFLOW_STEP_PARAMETER_NOTATION:
+				if(context == grammarAccess.getWorkflowStepParameterNotationRule()) {
+					sequence_WorkflowStepParameterNotation(context, (WorkflowStepParameterNotation) semanticObject); 
 					return; 
 				}
 				else break;
@@ -365,22 +361,6 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 					return; 
 				}
 				else break;
-			case ESyntaxPackage.XFOR_EXPRESSION:
-				if(context == grammarAccess.getOperationStepRule() ||
-				   context == grammarAccess.getXForExpressionRule() ||
-				   context == grammarAccess.getXTopLevelExpressionRule()) {
-					sequence_XForExpression(context, (XForExpression) semanticObject); 
-					return; 
-				}
-				else break;
-			case ESyntaxPackage.XIF_EXPRESSION:
-				if(context == grammarAccess.getOperationStepRule() ||
-				   context == grammarAccess.getXIfExpressionRule() ||
-				   context == grammarAccess.getXTopLevelExpressionRule()) {
-					sequence_XIfExpression(context, (XIfExpression) semanticObject); 
-					return; 
-				}
-				else break;
 			case ESyntaxPackage.XIS_LITERAL_EXPRESSION:
 				if(context == grammarAccess.getXIsLiteralExpressionRule() ||
 				   context == grammarAccess.getXPrimaryExpressionRule()) {
@@ -409,14 +389,6 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 					return; 
 				}
 				else break;
-			case ESyntaxPackage.XWHILE_EXPRESSION:
-				if(context == grammarAccess.getOperationStepRule() ||
-				   context == grammarAccess.getXTopLevelExpressionRule() ||
-				   context == grammarAccess.getXWhileExpressionRule()) {
-					sequence_XWhileExpression(context, (XWhileExpression) semanticObject); 
-					return; 
-				}
-				else break;
 			}
 		if (errorAcceptor != null) errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
@@ -427,8 +399,8 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 	 */
 	protected void sequence_AnnotationDefinition(EObject context, AnnotationDefinition semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.ANNOTATION_DEFINITION__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.ANNOTATION_DEFINITION__NAME));
+			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.LIBRARY_ITEM__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.LIBRARY_ITEM__NAME));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
@@ -439,7 +411,7 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 	
 	/**
 	 * Constraint:
-	 *     definition=[AnnotationDefinition|ID]
+	 *     definition=ID
 	 */
 	protected void sequence_Annotation(EObject context, Annotation semanticObject) {
 		if(errorAcceptor != null) {
@@ -448,87 +420,16 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getAnnotationAccess().getDefinitionAnnotationDefinitionIDTerminalRuleCall_1_0_1(), semanticObject.getDefinition());
+		feeder.accept(grammarAccess.getAnnotationAccess().getDefinitionIDTerminalRuleCall_1_0(), semanticObject.getDefinition());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (size=XExpression def=TypeDef)
+	 *     (def=TypeDef size=XExpression?)
 	 */
 	protected void sequence_ArrayTypeDef(EObject context, ArrayTypeDef semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.ARRAY_TYPE_DEF__SIZE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.ARRAY_TYPE_DEF__SIZE));
-			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.ARRAY_TYPE_DEF__DEF) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.ARRAY_TYPE_DEF__DEF));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getArrayTypeDefAccess().getSizeXExpressionParserRuleCall_2_0(), semanticObject.getSize());
-		feeder.accept(grammarAccess.getArrayTypeDefAccess().getDefTypeDefParserRuleCall_5_0(), semanticObject.getDef());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (data+=XExpression+ start=XExpression width=LITERAL)
-	 */
-	protected void sequence_BinarySection_ConstantBinarySection(EObject context, ConstantBinarySection semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (
-	 *         name=ID 
-	 *         startAddr=LITERAL 
-	 *         memwidth=LITERAL 
-	 *         pointerType=TypeDef 
-	 *         addressType=TypeDef 
-	 *         mems+=FunctionMemory+ 
-	 *         optimizercalls+=OptimizerCall* 
-	 *         lib+=[Library|QualifiedName]* 
-	 *         do=OperationBlock 
-	 *         start=XExpression 
-	 *         width=LITERAL
-	 *     )
-	 */
-	protected void sequence_BinarySection_FunctionBinarySection(EObject context, FunctionBinarySection semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (inc=[LinkedBinary|QualifiedName] start=XExpression width=LITERAL)
-	 */
-	protected void sequence_BinarySection_ReferenceBinarySection(EObject context, ReferenceBinarySection semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.BINARY_SECTION__START) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.BINARY_SECTION__START));
-			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.BINARY_SECTION__WIDTH) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.BINARY_SECTION__WIDTH));
-			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.REFERENCE_BINARY_SECTION__INC) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.REFERENCE_BINARY_SECTION__INC));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getReferenceBinarySectionAccess().getIncLinkedBinaryQualifiedNameParserRuleCall_1_0_1(), semanticObject.getInc());
-		feeder.accept(grammarAccess.getBinarySectionAccess().getStartXExpressionParserRuleCall_2_0(), semanticObject.getStart());
-		feeder.accept(grammarAccess.getBinarySectionAccess().getWidthLITERALParserRuleCall_4_0(), semanticObject.getWidth());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     data+=XExpression+
-	 */
-	protected void sequence_ConstantBinarySection(EObject context, ConstantBinarySection semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -539,10 +440,10 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 	 */
 	protected void sequence_ConstantVariable(EObject context, ConstantVariable semanticObject) {
 		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.LIBRARY_ITEM__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.LIBRARY_ITEM__NAME));
 			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.VARIABLE__TYPE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.VARIABLE__TYPE));
-			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.VARIABLE__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.VARIABLE__NAME));
 			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.CONSTANT_VARIABLE__VALUE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.CONSTANT_VARIABLE__VALUE));
 		}
@@ -561,8 +462,8 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 	 */
 	protected void sequence_FixedDataTypeDef(EObject context, FixedDataTypeDef semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.DATA_TYPE_DEF__BITS) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.DATA_TYPE_DEF__BITS));
+			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.FIXED_DATA_TYPE_DEF__BITS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.FIXED_DATA_TYPE_DEF__BITS));
 			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.FIXED_DATA_TYPE_DEF__SCALE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.FIXED_DATA_TYPE_DEF__SCALE));
 		}
@@ -576,47 +477,45 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 	
 	/**
 	 * Constraint:
-	 *     (
-	 *         name=ID 
-	 *         startAddr=LITERAL 
-	 *         memwidth=LITERAL 
-	 *         pointerType=TypeDef 
-	 *         addressType=TypeDef 
-	 *         mems+=FunctionMemory+ 
-	 *         optimizercalls+=OptimizerCall* 
-	 *         lib+=[Library|QualifiedName]* 
-	 *         do=OperationBlock
-	 *     )
+	 *     ((param=ID | value=LITERAL) size=LITERAL shift=LITERAL?)
 	 */
-	protected void sequence_FunctionBinarySection(EObject context, FunctionBinarySection semanticObject) {
+	protected void sequence_InsctructionSectionNotation(EObject context, InsctructionSectionNotation semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (start=LITERAL end=LITERAL)
+	 *     (name=ID params+=InstructionParameterNotation* words+=InstructionWordNotation+)
 	 */
-	protected void sequence_FunctionMemory(EObject context, FunctionMemory semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.FUNCTION_MEMORY__START) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.FUNCTION_MEMORY__START));
-			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.FUNCTION_MEMORY__END) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.FUNCTION_MEMORY__END));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getFunctionMemoryAccess().getStartLITERALParserRuleCall_1_0(), semanticObject.getStart());
-		feeder.accept(grammarAccess.getFunctionMemoryAccess().getEndLITERALParserRuleCall_3_0(), semanticObject.getEnd());
-		feeder.finish();
+	protected void sequence_InstructionNotation(EObject context, InstructionNotation semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     sections+=WordSection+
+	 *     (name=ID default=LITERAL?)
 	 */
-	protected void sequence_InstructionWord(EObject context, InstructionWord semanticObject) {
+	protected void sequence_InstructionParameterNotation(EObject context, InstructionParameterNotation semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=LibraryName extends=LibraryName? instructions+=InstructionNotation*)
+	 */
+	protected void sequence_InstructionSetNotation(EObject context, InstructionSetNotation semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     sections+=InsctructionSectionNotation+
+	 */
+	protected void sequence_InstructionWordNotation(EObject context, InstructionWordNotation semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -627,10 +526,10 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 	 */
 	protected void sequence_IntegerDataTypeDef(EObject context, IntegerDataTypeDef semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.DATA_TYPE_DEF__BITS) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.DATA_TYPE_DEF__BITS));
 			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.INTEGER_DATA_TYPE_DEF__KIND) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.INTEGER_DATA_TYPE_DEF__KIND));
+			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.INTEGER_DATA_TYPE_DEF__BITS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.INTEGER_DATA_TYPE_DEF__BITS));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
@@ -642,16 +541,35 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 	
 	/**
 	 * Constraint:
-	 *     name=ID
+	 *     {LabelDataTypeDef}
 	 */
-	protected void sequence_Label(EObject context, Label semanticObject) {
+	protected void sequence_LabelDataTypeDef(EObject context, LabelDataTypeDef semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (name=QualifiedName (overrides+=[Library|QualifiedName] overrides+=[Library|QualifiedName]*)? use+=[Library|QualifiedName]* items+=LibraryItem*)
+	 *     (paramname=ID type=OperationTypeDef)
+	 */
+	protected void sequence_LazyParameter(EObject context, LazyParameter semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.LAZY_PARAMETER__PARAMNAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.LAZY_PARAMETER__PARAMNAME));
+			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.LAZY_PARAMETER__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.LAZY_PARAMETER__TYPE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getLazyParameterAccess().getParamnameIDTerminalRuleCall_1_0(), semanticObject.getParamname());
+		feeder.accept(grammarAccess.getLazyParameterAccess().getTypeOperationTypeDefParserRuleCall_2_0(), semanticObject.getType());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=LibraryName use+=LibraryName* items+=LibraryItem*)
 	 */
 	protected void sequence_Library(EObject context, Library semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -660,43 +578,7 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 	
 	/**
 	 * Constraint:
-	 *     (name=QualifiedName type=BinaryType? use+=[Library|QualifiedName]* sections+=BinarySection*)
-	 */
-	protected void sequence_LinkedBinary(EObject context, LinkedBinary semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     value=LITERAL
-	 */
-	protected void sequence_LiteralValue(EObject context, LiteralValue semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (value=LITERAL size=INT shift=INT?)
-	 */
-	protected void sequence_LiteralValue_WordSection(EObject context, LiteralValue semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (steps+=OperationStep*)
-	 */
-	protected void sequence_OperationBlock(EObject context, OperationBlock semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (operation=[Operation|QualifiedName] (params+=OperationCallParameter params+=OperationCallParameter*)?)
+	 *     (operation=QualifiedName (params+=OperationCallParameter params+=OperationCallParameter*)?)
 	 */
 	protected void sequence_OperationCall(EObject context, OperationCall semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -705,44 +587,19 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 	
 	/**
 	 * Constraint:
-	 *     (name=ID (params+=ParameterVariable params+=ParameterVariable*)?)
+	 *     (resultType=TypeDef (params+=OperationParameter params+=OperationParameter*)?)
 	 */
-	protected void sequence_OperationSignature(EObject context, OperationSignature semanticObject) {
+	protected void sequence_OperationTypeDef(EObject context, OperationTypeDef semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (name=ID (params+=ParameterVariable params+=ParameterVariable*)? block=OperationBlock (return=XExpression | returnvar=Variable)?)
+	 *     (name=ID type=OperationTypeDef overrides=QualifiedName? content=XExpression)
 	 */
 	protected void sequence_Operation(EObject context, Operation semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (role=OperationRole candidate+=[Operation|QualifiedName] candidate+=[Operation|QualifiedName]*)
-	 */
-	protected void sequence_OperatorDefinition(EObject context, OperatorDefinition semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     optimizer=STRING
-	 */
-	protected void sequence_OptimizerCall(EObject context, OptimizerCall semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.OPTIMIZER_CALL__OPTIMIZER) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.OPTIMIZER_CALL__OPTIMIZER));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getOptimizerCallAccess().getOptimizerSTRINGTerminalRuleCall_1_0(), semanticObject.getOptimizer());
-		feeder.finish();
 	}
 	
 	
@@ -773,7 +630,7 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 	
 	/**
 	 * Constraint:
-	 *     type=[Type|QualifiedName]
+	 *     type=QualifiedName
 	 */
 	protected void sequence_RefTypeDef(EObject context, RefTypeDef semanticObject) {
 		if(errorAcceptor != null) {
@@ -782,17 +639,8 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getRefTypeDefAccess().getTypeTypeQualifiedNameParserRuleCall_0_1(), semanticObject.getType());
+		feeder.accept(grammarAccess.getRefTypeDefAccess().getTypeQualifiedNameParserRuleCall_0(), semanticObject.getType());
 		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     inc=[LinkedBinary|QualifiedName]
-	 */
-	protected void sequence_ReferenceBinarySection(EObject context, ReferenceBinarySection semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -802,10 +650,10 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 	 */
 	protected void sequence_RegisterVariable(EObject context, RegisterVariable semanticObject) {
 		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.LIBRARY_ITEM__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.LIBRARY_ITEM__NAME));
 			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.VARIABLE__TYPE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.VARIABLE__TYPE));
-			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.VARIABLE__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.VARIABLE__NAME));
 			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.REGISTER_VARIABLE__ADDR) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.REGISTER_VARIABLE__ADDR));
 		}
@@ -820,14 +668,23 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 	
 	/**
 	 * Constraint:
+	 *     {ResultVariableReference}
+	 */
+	protected void sequence_ResultVariableReference(EObject context, ResultVariableReference semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (type=TypeDef name=ID)
 	 */
 	protected void sequence_StructTypeDefMember(EObject context, StructTypeDefMember semanticObject) {
 		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.LIBRARY_ITEM__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.LIBRARY_ITEM__NAME));
 			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.VARIABLE__TYPE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.VARIABLE__TYPE));
-			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.VARIABLE__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.VARIABLE__NAME));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
@@ -852,8 +709,8 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 	 */
 	protected void sequence_Type(EObject context, Type semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.TYPE__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.TYPE__NAME));
+			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.LIBRARY_ITEM__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.LIBRARY_ITEM__NAME));
 			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.TYPE__DEF) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.TYPE__DEF));
 		}
@@ -867,19 +724,26 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 	
 	/**
 	 * Constraint:
-	 *     var=[Variable|QualifiedName]
+	 *     {UnspecifiedTypeDef}
 	 */
-	protected void sequence_VariableReference(EObject context, VariableReference semanticObject) {
+	protected void sequence_UnspecifiedTypeDef(EObject context, UnspecifiedTypeDef semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (var=[Variable|QualifiedName] size=INT shift=INT?)
+	 *     var=QualifiedName
 	 */
-	protected void sequence_VariableReference_WordSection(EObject context, VariableReference semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+	protected void sequence_VariableReference(EObject context, VariableReference semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.VARIABLE_REFERENCE__VAR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.VARIABLE_REFERENCE__VAR));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getVariableReferenceAccess().getVarQualifiedNameParserRuleCall_0(), semanticObject.getVar());
+		feeder.finish();
 	}
 	
 	
@@ -889,16 +753,43 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 	 */
 	protected void sequence_Variable(EObject context, Variable semanticObject) {
 		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.LIBRARY_ITEM__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.LIBRARY_ITEM__NAME));
 			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.VARIABLE__TYPE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.VARIABLE__TYPE));
-			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.VARIABLE__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.VARIABLE__NAME));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getVariableAccess().getTypeTypeDefParserRuleCall_0_0(), semanticObject.getType());
 		feeder.accept(grammarAccess.getVariableAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=LibraryName steps+=WorkflowStepNotation*)
+	 */
+	protected void sequence_WorkflowNotation(EObject context, WorkflowNotation semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (type=LibraryName params+=WorkflowStepParameterNotation*)
+	 */
+	protected void sequence_WorkflowStepNotation(EObject context, WorkflowStepNotation semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (parameter=ID (value=STRING | value=LibraryName))
+	 */
+	protected void sequence_WorkflowStepParameterNotation(EObject context, WorkflowStepParameterNotation semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -986,6 +877,15 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 	
 	/**
 	 * Constraint:
+	 *     (steps+=OperationStep*)
+	 */
+	protected void sequence_XExpressionBlock(EObject context, OperationBlock semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     value=LITERAL
 	 */
 	protected void sequence_XExpressionLiteral(EObject context, XExpressionLiteral semanticObject) {
@@ -1014,43 +914,6 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 	 *     ((ref=VariableReference op=OpSingleAssign)? a=XExpression5 type=TypeDef?)
 	 */
 	protected void sequence_XExpression_XExpression6(EObject context, XExpression6 semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (var=Variable from=XExpression by=XExpression to=XExpression do=OperationBlock)
-	 */
-	protected void sequence_XForExpression(EObject context, XForExpression semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.XFOR_EXPRESSION__VAR) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.XFOR_EXPRESSION__VAR));
-			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.XFOR_EXPRESSION__FROM) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.XFOR_EXPRESSION__FROM));
-			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.XFOR_EXPRESSION__BY) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.XFOR_EXPRESSION__BY));
-			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.XFOR_EXPRESSION__TO) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.XFOR_EXPRESSION__TO));
-			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.XFOR_EXPRESSION__DO) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.XFOR_EXPRESSION__DO));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getXForExpressionAccess().getVarVariableParserRuleCall_2_0(), semanticObject.getVar());
-		feeder.accept(grammarAccess.getXForExpressionAccess().getFromXExpressionParserRuleCall_3_0(), semanticObject.getFrom());
-		feeder.accept(grammarAccess.getXForExpressionAccess().getByXExpressionParserRuleCall_5_0(), semanticObject.getBy());
-		feeder.accept(grammarAccess.getXForExpressionAccess().getToXExpressionParserRuleCall_7_0(), semanticObject.getTo());
-		feeder.accept(grammarAccess.getXForExpressionAccess().getDoOperationBlockParserRuleCall_10_0(), semanticObject.getDo());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (if=XExpression then=OperationBlock else=OperationBlock?)
-	 */
-	protected void sequence_XIfExpression(EObject context, XIfExpression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1105,28 +968,9 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 	
 	/**
 	 * Constraint:
-	 *     (type=[Type|QualifiedName] values+=XExpression values+=XExpression*)
+	 *     (values+=XExpression values+=XExpression*)
 	 */
 	protected void sequence_XStructExpression(EObject context, XStructExpression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (cond=XExpression do=OperationBlock)
-	 */
-	protected void sequence_XWhileExpression(EObject context, XWhileExpression semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.XWHILE_EXPRESSION__COND) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.XWHILE_EXPRESSION__COND));
-			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.XWHILE_EXPRESSION__DO) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.XWHILE_EXPRESSION__DO));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getXWhileExpressionAccess().getCondXExpressionParserRuleCall_2_0(), semanticObject.getCond());
-		feeder.accept(grammarAccess.getXWhileExpressionAccess().getDoOperationBlockParserRuleCall_5_0(), semanticObject.getDo());
-		feeder.finish();
 	}
 }

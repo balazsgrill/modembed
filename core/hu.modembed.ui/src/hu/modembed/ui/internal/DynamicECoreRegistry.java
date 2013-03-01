@@ -3,6 +3,8 @@
  */
 package hu.modembed.ui.internal;
 
+import hu.modembed.MODembedCore;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +20,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 
 /**
  * @author balazs.grill
@@ -26,7 +27,7 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
  */
 public class DynamicECoreRegistry {
 
-	private final ResourceSet resourceSet = new ResourceSetImpl();
+	private final ResourceSet resourceSet = MODembedCore.createResourceSet();
 	
 	public List<EPackage> getPackagesFor(IProject project) throws CoreException{
 		List<EPackage> result = new ArrayList<EPackage>();

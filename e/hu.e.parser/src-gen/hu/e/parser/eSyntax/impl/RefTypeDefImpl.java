@@ -4,12 +4,10 @@ package hu.e.parser.eSyntax.impl;
 
 import hu.e.parser.eSyntax.ESyntaxPackage;
 import hu.e.parser.eSyntax.RefTypeDef;
-import hu.e.parser.eSyntax.Type;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -29,14 +27,24 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class RefTypeDefImpl extends TypeDefImpl implements RefTypeDef
 {
   /**
-   * The cached value of the '{@link #getType() <em>Type</em>}' reference.
+   * The default value of the '{@link #getType() <em>Type</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getType()
    * @generated
    * @ordered
    */
-  protected Type type;
+  protected static final String TYPE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getType()
+   * @generated
+   * @ordered
+   */
+  protected String type = TYPE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -64,27 +72,7 @@ public class RefTypeDefImpl extends TypeDefImpl implements RefTypeDef
    * <!-- end-user-doc -->
    * @generated
    */
-  public Type getType()
-  {
-    if (type != null && type.eIsProxy())
-    {
-      InternalEObject oldType = (InternalEObject)type;
-      type = (Type)eResolveProxy(oldType);
-      if (type != oldType)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ESyntaxPackage.REF_TYPE_DEF__TYPE, oldType, type));
-      }
-    }
-    return type;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Type basicGetType()
+  public String getType()
   {
     return type;
   }
@@ -94,9 +82,9 @@ public class RefTypeDefImpl extends TypeDefImpl implements RefTypeDef
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setType(Type newType)
+  public void setType(String newType)
   {
-    Type oldType = type;
+    String oldType = type;
     type = newType;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.REF_TYPE_DEF__TYPE, oldType, type));
@@ -113,8 +101,7 @@ public class RefTypeDefImpl extends TypeDefImpl implements RefTypeDef
     switch (featureID)
     {
       case ESyntaxPackage.REF_TYPE_DEF__TYPE:
-        if (resolve) return getType();
-        return basicGetType();
+        return getType();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -130,7 +117,7 @@ public class RefTypeDefImpl extends TypeDefImpl implements RefTypeDef
     switch (featureID)
     {
       case ESyntaxPackage.REF_TYPE_DEF__TYPE:
-        setType((Type)newValue);
+        setType((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -147,7 +134,7 @@ public class RefTypeDefImpl extends TypeDefImpl implements RefTypeDef
     switch (featureID)
     {
       case ESyntaxPackage.REF_TYPE_DEF__TYPE:
-        setType((Type)null);
+        setType(TYPE_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -164,9 +151,26 @@ public class RefTypeDefImpl extends TypeDefImpl implements RefTypeDef
     switch (featureID)
     {
       case ESyntaxPackage.REF_TYPE_DEF__TYPE:
-        return type != null;
+        return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (type: ");
+    result.append(type);
+    result.append(')');
+    return result.toString();
   }
 
 } //RefTypeDefImpl
