@@ -16,6 +16,7 @@ hex.disassemble{
 hex.assemble{
 	input = fishlamp.asm
 	output = "fishlamp.out.hex"
+	architecture = PIC18F14K50.arch
 }
 pic.config.tohex{
 	input = fishlamp.config

@@ -53,7 +53,23 @@ public class SysoutWorkflowLauncherListener implements
 	 */
 	@Override
 	public void log(IStatus status) {
-		System.out.println("["+time()+"] - "+status.toString());
+		String severity = "UNKNOWN";
+		switch(status.getSeverity()){
+		case IStatus.CANCEL:
+			severity = "CANCEL";break;
+		case IStatus.ERROR:
+			severity = "ERROR";break;
+		case IStatus.WARNING:
+			severity = "WARNING";break;
+		case IStatus.INFO:
+			severity = "INFO";break;
+		case IStatus.OK:
+			severity = "OK";break;
+		}
+		System.out.println("["+time()+"] - "+severity);
+		if (status.getException() != null){
+			status.getException().printStackTrace();
+		}
 
 	}
 
