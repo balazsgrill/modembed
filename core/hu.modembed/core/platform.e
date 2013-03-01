@@ -12,6 +12,8 @@ type bool = unsigned 1 bits;
 
 type uint16 = unsigned 16 bits;
 
+type uint24 = unsigned 24 bits;
+
 type uint32 = unsigned 32 bits;
 
 /*
