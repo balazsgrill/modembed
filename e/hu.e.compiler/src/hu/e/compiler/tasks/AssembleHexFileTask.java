@@ -7,9 +7,11 @@ import hexfile.AddressType;
 import hexfile.Entry;
 import hexfile.HexFile;
 import hexfile.HexfileFactory;
+import hexfile.HexfilePackage;
 import hu.e.compiler.IModembedTask;
 import hu.e.compiler.ITaskContext;
 import hu.e.compiler.TaskUtils;
+import hu.e.compiler.tasks.disassembler.Disassembler;
 import hu.modembed.hexfile.persistence.HexFileResource;
 import hu.modembed.model.architecture.Architecture;
 import hu.modembed.model.architecture.MemorySection;
@@ -30,7 +32,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.emf.ecore.resource.Resource;
 
 /**
  * @author balazs.grill
@@ -47,19 +48,14 @@ public class AssembleHexFileTask implements IModembedTask {
 	 */
 	@Override
 	public void execute(ITaskContext context, IProgressMonitor monitor) {
+		AssemblerObject assem = TaskUtils.getInput(context, INPUT, AssemblerObject.class);
+		if (assem == null) return; 
 		
-		String input = context.getParameterValue(INPUT).get(0);
-		Resource inputmodel = context.getInput(context.getModelURI(input));
-		AssemblerObject assem = (AssemblerObject) inputmodel.getContents().get(0);
-		
-		String archmodel = context.getParameterValue(ARCH).get(0);
-		Resource archres = context.getInput(context.getModelURI(archmodel));
-		Architecture arch = (Architecture)archres.getContents().get(0);
+		Architecture arch = TaskUtils.getInput(context, ARCH, Architecture.class);
+		if (arch == null) return;
 
-		HexFile hexfile = HexfileFactory.eINSTANCE.createHexFile();
+		HexFile hexfile = (HexFile) TaskUtils.createOutput(context, OUTPUT, HexfilePackage.eINSTANCE.getHexFile());
 		hexfile.setAddressType(AddressType.EXTENDED_LINEAR);
-		Resource hexfileRes = context.getOutput(context.getFileURI(context.getParameterValue(OUTPUT).get(0)));
-		hexfileRes.getContents().add(hexfile);
 		
 		List<MemorySection> programSections = new LinkedList<MemorySection>();
 		

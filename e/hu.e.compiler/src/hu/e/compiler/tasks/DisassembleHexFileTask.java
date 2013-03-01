@@ -7,6 +7,7 @@ import hexfile.Entry;
 import hexfile.HexFile;
 import hu.e.compiler.IModembedTask;
 import hu.e.compiler.ITaskContext;
+import hu.e.compiler.tasks.disassembler.Disassembler;
 import hu.modembed.model.architecture.Architecture;
 import hu.modembed.model.architecture.MemorySection;
 import hu.modembed.model.core.assembler.code.AssemblerObject;

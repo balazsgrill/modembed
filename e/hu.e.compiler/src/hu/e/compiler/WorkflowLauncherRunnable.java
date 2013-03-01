@@ -195,6 +195,7 @@ public class WorkflowLauncherRunnable{
 							wtask.execute(context, subprogress);
 						}catch(Exception e){
 							IStatus error = TaskUtils.error(e);
+							listener.log(error);
 							status.add(error);
 						}
 

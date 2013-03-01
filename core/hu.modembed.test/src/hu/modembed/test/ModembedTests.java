@@ -21,6 +21,7 @@ import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.emf.compare.diff.metamodel.DiffElement;
 import org.eclipse.emf.compare.diff.metamodel.DiffModel;
 import org.eclipse.emf.compare.diff.service.DiffService;
 import org.eclipse.emf.compare.match.metamodel.MatchModel;
@@ -45,6 +46,12 @@ public class ModembedTests {
 		
 		MatchModel mm = MatchService.doMatch(e1, e2, Collections.<String,Object>emptyMap());
 		DiffModel diff = DiffService.doDiff(mm);
+		
+		if (!diff.getDifferences().isEmpty()){
+			for(DiffElement de : diff.getDifferences()){
+				System.out.println(de);
+			}
+		}
 		
 		return diff.getDifferences().isEmpty();
 	}
