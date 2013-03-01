@@ -32,3 +32,13 @@ hex.assemble{
 	output = "blink.hex"
 	architecture = PIC16F1824.arch
 }
+
+pic.config.tohex{
+	input = blink.config
+	output = "config.hex"
+}
+hex.merge{
+	input = "blink.hex"
+	input = "config.hex"
+	output = "blink_release.hex"
+}

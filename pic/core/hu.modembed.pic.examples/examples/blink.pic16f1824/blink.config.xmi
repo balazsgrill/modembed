@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="ASCII"?>
+<configValue:PICConfigurationValue xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:configValue="http://hu.modembed/pic/configValue" name="blink.config">
+  <values>
+    <field href="../microchip.PIC16F1824/PIC16F1824.arch.xmi#//@configWords.0/@fields.0"/>
+    <selection href="../microchip.PIC16F1824/PIC16F1824.arch.xmi#//@configWords.0/@fields.0/@literals.3"/>
+  </values>
+  <definition href="../microchip.PIC16F1824/PIC16F1824.arch.xmi#/"/>
+</configValue:PICConfigurationValue>
