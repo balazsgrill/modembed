@@ -74,11 +74,13 @@ public class RootReferenceScope extends AbstractCrossReferenceScope {
 			String[] ss = id.split("::");
 			if (ss.length == 2){
 				URI uri = getReferredLibURI(ss[0]);
-				Resource r = resourceSet.getResource(uri, true);
-				if (r != null){
-					for(EObject eo : r.getContents()){
-						if (eo instanceof RootElement){
-							search((RootElement)eo, ss[1], result);
+				if (uri != null){
+					Resource r = resourceSet.getResource(uri, true);
+					if (r != null){
+						for(EObject eo : r.getContents()){
+							if (eo instanceof RootElement){
+								search((RootElement)eo, ss[1], result);
+							}
 						}
 					}
 				}

@@ -13,6 +13,12 @@
             id="e.examples.blink.pic16f1824"
             name="PIC16F1824 blinker example">
          <dependency
+               project="e.core">
+         </dependency>
+         <dependency
+               project="microchip.pic16">
+         </dependency>
+         <dependency
                project="microchip.PIC16F1824">
          </dependency>
          <resource
@@ -22,6 +28,10 @@
          <resource
                path="/"
                resource="examples/blink.pic16f1824/compile.e">
+         </resource>
+         <resource
+               path="/"
+               resource="examples/blink.pic16f1824/blink.config.xmi">
          </resource>
       </project>
    </extension>
