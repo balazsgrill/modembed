@@ -7,10 +7,10 @@ ADDWFC f d=1	<b111101:6 $d:1 $f:7>
 ASRF f d=1		<b110111:6 $d:1 $f:7>
 
 /* Logical left shift */
-LSLF f d=1		<b111101:6 $d:1 $f:7>
+LSLF f d=1		<b110101:6 $d:1 $f:7>
 
 /* Logical right shift */
-LSRF f d=1		<b111101:6 $d:1 $f:7>
+LSRF f d=1		<b110110:6 $d:1 $f:7>
 
 /* Subtract with Borrow W from f */
 SUBWFB f d=1	<b111011:6 $d:1 $f:7>
@@ -31,9 +31,6 @@ BRW				<b00000000001011:14>
 
 /* Call subroutine with W */
 CALLW			<b00000000001010:14>
-
-/* Clear watchdog timer */
-CLRWDT			<b00000001100100:14>
 
 /* Load OPTION_REG with W */
 OPTION			<b00000001100010:14>
