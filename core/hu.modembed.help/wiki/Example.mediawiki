@@ -2,3 +2,25 @@
 
 The following step-by step guide will show the method of importing one of the provided examples into the workspace then compiling it.
 
+== Import example project ==
+
+* Select from the menu: "File/Import.."
+* Find "MODembed/Import common code project" wizard, press Next
+* Select project to import, for example "PIC/Examples/PIC16F1824 blinker example"
+* Press Next
+* Notice, that not only the selected project, but its dependencies are marked to be imported
+* Press Finish
+* Wait for operation to finish
+
+Now you can see the imported projects in your workspace.
+
+== Compile example project ==
+
+To compile the project, you should execute the provided compile workflow:
+
+* Select from the menu: "Run/Run Configurations.."
+* Select "Execute workflow" from the list on the left
+* Press "New launch configuration"
+* Insert a desired name, for example "Compile example"
+* Select workflow model: "platform:/resource/e.examples.blink.pic16f1824/.models/compile.xmi#/"
+* The workflow compiles the project to a HEX file, "blink.hex" which can be programmed to a device

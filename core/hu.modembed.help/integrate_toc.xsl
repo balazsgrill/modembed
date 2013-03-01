@@ -14,7 +14,11 @@
 	</xsl:template>
 	
 	<xsl:template match="topic">
-		<xsl:copy-of select="."></xsl:copy-of>
+		<topic>
+			<xsl:attribute name="label"><xsl:value-of select="@label"></xsl:value-of></xsl:attribute>
+			<xsl:attribute name="href"><xsl:value-of select="@href"></xsl:value-of></xsl:attribute>
+			<xsl:apply-templates></xsl:apply-templates>
+		</topic>
 	</xsl:template>
 	
 	<xsl:template match="link">
