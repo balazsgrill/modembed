@@ -1,9 +1,19 @@
 package hu.modembed;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 import hu.modembed.impl.ReferencedResourceProvider;
 
 import org.eclipse.core.runtime.Plugin;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EPackage.Registry;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.osgi.framework.BundleContext;
 
 public class MODembedCore extends Plugin {
@@ -53,6 +63,11 @@ public class MODembedCore extends Plugin {
 		return uri;
 	}
 	
+	public static ResourceSet createResourceSet(){
+		ResourceSetImpl resourceSet = new ResourceSetImpl();
+		return resourceSet;
+	}
+	
 	IReferencedResourceProvider resourceProvider;
 	
 	public IReferencedResourceProvider getResourceProvider() {
@@ -60,6 +75,34 @@ public class MODembedCore extends Plugin {
 			resourceProvider = new ReferencedResourceProvider();//PDEReferencedResourceProvider();
 		}
 		return resourceProvider;
+	}
+	
+	public static List<EClass> getAllSubTypes(ResourceSet resourceSet, EClass base) {
+		List<EClass> subs = new ArrayList<EClass>();
+		subs.add(base);
+
+		Registry reg = null;//Registry.INSTANCE;
+//		if (resourceSet != null){
+//			reg = resourceSet.getPackageRegistry();
+//		}else{
+			reg = Registry.INSTANCE;
+//		}
+		
+		for (Object oo : reg.values()) {
+
+			if (oo instanceof EPackage) {
+				Iterator<EObject> iter = ((EPackage) oo).eContents().iterator();
+				while (iter.hasNext()) {
+					EObject o = iter.next();
+					if (o instanceof EClass) {
+						EClass cls = (EClass) o;
+						if (cls.getEAllSuperTypes().contains(base))
+							subs.add(cls);
+					}
+				}
+			}
+		}
+		return subs;
 	}
 	
 }

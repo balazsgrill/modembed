@@ -12,6 +12,7 @@ package hu.e.parser.eSyntax;
  * The following features are supported:
  * <ul>
  *   <li>{@link hu.e.parser.eSyntax.IntegerDataTypeDef#getKind <em>Kind</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.IntegerDataTypeDef#getBits <em>Bits</em>}</li>
  * </ul>
  * </p>
  *
@@ -49,5 +50,31 @@ public interface IntegerDataTypeDef extends DataTypeDef
    * @generated
    */
   void setKind(IntegerKind value);
+
+  /**
+   * Returns the value of the '<em><b>Bits</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Bits</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Bits</em>' attribute.
+   * @see #setBits(int)
+   * @see hu.e.parser.eSyntax.ESyntaxPackage#getIntegerDataTypeDef_Bits()
+   * @model
+   * @generated
+   */
+  int getBits();
+
+  /**
+   * Sets the value of the '{@link hu.e.parser.eSyntax.IntegerDataTypeDef#getBits <em>Bits</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Bits</em>' attribute.
+   * @see #getBits()
+   * @generated
+   */
+  void setBits(int value);
 
 } // IntegerDataTypeDef

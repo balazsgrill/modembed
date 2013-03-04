@@ -3,51 +3,47 @@
 package hu.modembed.model.core.assembler.impl;
 
 import hu.modembed.model.application.ApplicationPackage;
-
-import hu.modembed.model.application.code.CodePackage;
-
-import hu.modembed.model.application.code.impl.CodePackageImpl;
-
 import hu.modembed.model.application.composition.CompositionPackage;
-
 import hu.modembed.model.application.composition.impl.CompositionPackageImpl;
-
-import hu.modembed.model.application.datatypes.DatatypesPackage;
-
-import hu.modembed.model.application.datatypes.impl.DatatypesPackageImpl;
-
 import hu.modembed.model.application.impl.ApplicationPackageImpl;
-
 import hu.modembed.model.application.interface_.InterfacePackage;
-
 import hu.modembed.model.application.interface_.impl.InterfacePackageImpl;
-
+import hu.modembed.model.architecture.ArchitecturePackage;
+import hu.modembed.model.architecture.impl.ArchitecturePackageImpl;
+import hu.modembed.model.architecture.linking.LinkingPackage;
+import hu.modembed.model.architecture.linking.impl.LinkingPackageImpl;
 import hu.modembed.model.comm.CommPackage;
-
 import hu.modembed.model.comm.impl.CommPackageImpl;
-
 import hu.modembed.model.core.CorePackage;
-
 import hu.modembed.model.core.assembler.AssemblerFactory;
 import hu.modembed.model.core.assembler.AssemblerPackage;
+import hu.modembed.model.core.assembler.ConstantSection;
 import hu.modembed.model.core.assembler.Instruction;
+import hu.modembed.model.core.assembler.InstructionParameter;
+import hu.modembed.model.core.assembler.InstructionSection;
 import hu.modembed.model.core.assembler.InstructionSet;
-
+import hu.modembed.model.core.assembler.InstructionWord;
+import hu.modembed.model.core.assembler.ParameterSection;
+import hu.modembed.model.core.assembler.code.CodePackage;
+import hu.modembed.model.core.assembler.code.impl.CodePackageImpl;
 import hu.modembed.model.core.impl.CorePackageImpl;
-
+import hu.modembed.model.core.workflow.WorkflowPackage;
+import hu.modembed.model.core.workflow.impl.WorkflowPackageImpl;
+import hu.modembed.model.emodel.EmodelPackage;
+import hu.modembed.model.emodel.expressions.ExpressionsPackage;
+import hu.modembed.model.emodel.expressions.impl.ExpressionsPackageImpl;
+import hu.modembed.model.emodel.impl.EmodelPackageImpl;
+import hu.modembed.model.emodel.types.TypesPackage;
+import hu.modembed.model.emodel.types.impl.TypesPackageImpl;
 import hu.modembed.model.network.NetworkPackage;
-
 import hu.modembed.model.network.impl.NetworkPackageImpl;
-
 import hu.modembed.model.network.rs232.Rs232Package;
-
 import hu.modembed.model.network.rs232.impl.Rs232PackageImpl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -70,6 +66,41 @@ public class AssemblerPackageImpl extends EPackageImpl implements AssemblerPacka
 	 * @generated
 	 */
 	private EClass instructionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass instructionParameterEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass instructionSectionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass constantSectionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass parameterSectionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass instructionWordEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -119,41 +150,56 @@ public class AssemblerPackageImpl extends EPackageImpl implements AssemblerPacka
 
 		// Obtain or create and register interdependencies
 		CorePackageImpl theCorePackage = (CorePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI) instanceof CorePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI) : CorePackage.eINSTANCE);
+		CodePackageImpl theCodePackage = (CodePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CodePackage.eNS_URI) instanceof CodePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CodePackage.eNS_URI) : CodePackage.eINSTANCE);
+		WorkflowPackageImpl theWorkflowPackage = (WorkflowPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(WorkflowPackage.eNS_URI) instanceof WorkflowPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(WorkflowPackage.eNS_URI) : WorkflowPackage.eINSTANCE);
 		NetworkPackageImpl theNetworkPackage = (NetworkPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(NetworkPackage.eNS_URI) instanceof NetworkPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(NetworkPackage.eNS_URI) : NetworkPackage.eINSTANCE);
 		Rs232PackageImpl theRs232Package = (Rs232PackageImpl)(EPackage.Registry.INSTANCE.getEPackage(Rs232Package.eNS_URI) instanceof Rs232PackageImpl ? EPackage.Registry.INSTANCE.getEPackage(Rs232Package.eNS_URI) : Rs232Package.eINSTANCE);
 		CommPackageImpl theCommPackage = (CommPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CommPackage.eNS_URI) instanceof CommPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CommPackage.eNS_URI) : CommPackage.eINSTANCE);
 		hu.modembed.model.comm.rs232.impl.Rs232PackageImpl theRs232Package_1 = (hu.modembed.model.comm.rs232.impl.Rs232PackageImpl)(EPackage.Registry.INSTANCE.getEPackage(hu.modembed.model.comm.rs232.Rs232Package.eNS_URI) instanceof hu.modembed.model.comm.rs232.impl.Rs232PackageImpl ? EPackage.Registry.INSTANCE.getEPackage(hu.modembed.model.comm.rs232.Rs232Package.eNS_URI) : hu.modembed.model.comm.rs232.Rs232Package.eINSTANCE);
 		ApplicationPackageImpl theApplicationPackage = (ApplicationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI) instanceof ApplicationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI) : ApplicationPackage.eINSTANCE);
 		InterfacePackageImpl theInterfacePackage = (InterfacePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InterfacePackage.eNS_URI) instanceof InterfacePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InterfacePackage.eNS_URI) : InterfacePackage.eINSTANCE);
-		DatatypesPackageImpl theDatatypesPackage = (DatatypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI) instanceof DatatypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI) : DatatypesPackage.eINSTANCE);
 		CompositionPackageImpl theCompositionPackage = (CompositionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CompositionPackage.eNS_URI) instanceof CompositionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CompositionPackage.eNS_URI) : CompositionPackage.eINSTANCE);
-		CodePackageImpl theCodePackage = (CodePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CodePackage.eNS_URI) instanceof CodePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CodePackage.eNS_URI) : CodePackage.eINSTANCE);
+		EmodelPackageImpl theEmodelPackage = (EmodelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EmodelPackage.eNS_URI) instanceof EmodelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EmodelPackage.eNS_URI) : EmodelPackage.eINSTANCE);
+		TypesPackageImpl theTypesPackage = (TypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) instanceof TypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) : TypesPackage.eINSTANCE);
+		ExpressionsPackageImpl theExpressionsPackage = (ExpressionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI) instanceof ExpressionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI) : ExpressionsPackage.eINSTANCE);
+		ArchitecturePackageImpl theArchitecturePackage = (ArchitecturePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ArchitecturePackage.eNS_URI) instanceof ArchitecturePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ArchitecturePackage.eNS_URI) : ArchitecturePackage.eINSTANCE);
+		LinkingPackageImpl theLinkingPackage = (LinkingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(LinkingPackage.eNS_URI) instanceof LinkingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(LinkingPackage.eNS_URI) : LinkingPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theAssemblerPackage.createPackageContents();
 		theCorePackage.createPackageContents();
+		theCodePackage.createPackageContents();
+		theWorkflowPackage.createPackageContents();
 		theNetworkPackage.createPackageContents();
 		theRs232Package.createPackageContents();
 		theCommPackage.createPackageContents();
 		theRs232Package_1.createPackageContents();
 		theApplicationPackage.createPackageContents();
 		theInterfacePackage.createPackageContents();
-		theDatatypesPackage.createPackageContents();
 		theCompositionPackage.createPackageContents();
-		theCodePackage.createPackageContents();
+		theEmodelPackage.createPackageContents();
+		theTypesPackage.createPackageContents();
+		theExpressionsPackage.createPackageContents();
+		theArchitecturePackage.createPackageContents();
+		theLinkingPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theAssemblerPackage.initializePackageContents();
 		theCorePackage.initializePackageContents();
+		theCodePackage.initializePackageContents();
+		theWorkflowPackage.initializePackageContents();
 		theNetworkPackage.initializePackageContents();
 		theRs232Package.initializePackageContents();
 		theCommPackage.initializePackageContents();
 		theRs232Package_1.initializePackageContents();
 		theApplicationPackage.initializePackageContents();
 		theInterfacePackage.initializePackageContents();
-		theDatatypesPackage.initializePackageContents();
 		theCompositionPackage.initializePackageContents();
-		theCodePackage.initializePackageContents();
+		theEmodelPackage.initializePackageContents();
+		theTypesPackage.initializePackageContents();
+		theExpressionsPackage.initializePackageContents();
+		theArchitecturePackage.initializePackageContents();
+		theLinkingPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theAssemblerPackage.freeze();
@@ -187,6 +233,15 @@ public class AssemblerPackageImpl extends EPackageImpl implements AssemblerPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getInstructionSet_Extend() {
+		return (EReference)instructionSetEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getInstruction() {
 		return instructionEClass;
 	}
@@ -196,8 +251,134 @@ public class AssemblerPackageImpl extends EPackageImpl implements AssemblerPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getInstruction_Code() {
-		return (EAttribute)instructionEClass.getEStructuralFeatures().get(0);
+	public EReference getInstruction_Parameters() {
+		return (EReference)instructionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getInstruction_Words() {
+		return (EReference)instructionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getInstructionParameter() {
+		return instructionParameterEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getInstructionParameter_Id() {
+		return (EAttribute)instructionParameterEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getInstructionParameter_DefaultValue() {
+		return (EAttribute)instructionParameterEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getInstructionSection() {
+		return instructionSectionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getInstructionSection_Start() {
+		return (EAttribute)instructionSectionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getInstructionSection_Size() {
+		return (EAttribute)instructionSectionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getInstructionSection_Shift() {
+		return (EAttribute)instructionSectionEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getConstantSection() {
+		return constantSectionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getConstantSection_Value() {
+		return (EAttribute)constantSectionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getParameterSection() {
+		return parameterSectionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getParameterSection_Parameter() {
+		return (EReference)parameterSectionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getInstructionWord() {
+		return instructionWordEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getInstructionWord_Sections() {
+		return (EReference)instructionWordEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -230,9 +411,29 @@ public class AssemblerPackageImpl extends EPackageImpl implements AssemblerPacka
 		// Create classes and their features
 		instructionSetEClass = createEClass(INSTRUCTION_SET);
 		createEReference(instructionSetEClass, INSTRUCTION_SET__INSTRUCTIONS);
+		createEReference(instructionSetEClass, INSTRUCTION_SET__EXTEND);
 
 		instructionEClass = createEClass(INSTRUCTION);
-		createEAttribute(instructionEClass, INSTRUCTION__CODE);
+		createEReference(instructionEClass, INSTRUCTION__PARAMETERS);
+		createEReference(instructionEClass, INSTRUCTION__WORDS);
+
+		instructionParameterEClass = createEClass(INSTRUCTION_PARAMETER);
+		createEAttribute(instructionParameterEClass, INSTRUCTION_PARAMETER__ID);
+		createEAttribute(instructionParameterEClass, INSTRUCTION_PARAMETER__DEFAULT_VALUE);
+
+		instructionSectionEClass = createEClass(INSTRUCTION_SECTION);
+		createEAttribute(instructionSectionEClass, INSTRUCTION_SECTION__START);
+		createEAttribute(instructionSectionEClass, INSTRUCTION_SECTION__SIZE);
+		createEAttribute(instructionSectionEClass, INSTRUCTION_SECTION__SHIFT);
+
+		constantSectionEClass = createEClass(CONSTANT_SECTION);
+		createEAttribute(constantSectionEClass, CONSTANT_SECTION__VALUE);
+
+		parameterSectionEClass = createEClass(PARAMETER_SECTION);
+		createEReference(parameterSectionEClass, PARAMETER_SECTION__PARAMETER);
+
+		instructionWordEClass = createEClass(INSTRUCTION_WORD);
+		createEReference(instructionWordEClass, INSTRUCTION_WORD__SECTIONS);
 	}
 
 	/**
@@ -259,22 +460,53 @@ public class AssemblerPackageImpl extends EPackageImpl implements AssemblerPacka
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
+		CodePackage theCodePackage = (CodePackage)EPackage.Registry.INSTANCE.getEPackage(CodePackage.eNS_URI);
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
+		EmodelPackage theEmodelPackage = (EmodelPackage)EPackage.Registry.INSTANCE.getEPackage(EmodelPackage.eNS_URI);
+
+		// Add subpackages
+		getESubpackages().add(theCodePackage);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		instructionSetEClass.getESuperTypes().add(theCorePackage.getPackagedElement());
+		instructionSetEClass.getESuperTypes().add(theCorePackage.getRootElement());
 		instructionEClass.getESuperTypes().add(theCorePackage.getNamedElement());
+		instructionEClass.getESuperTypes().add(theEmodelPackage.getCallableElement());
+		instructionParameterEClass.getESuperTypes().add(theCorePackage.getMODembedElement());
+		instructionSectionEClass.getESuperTypes().add(theCorePackage.getMODembedElement());
+		constantSectionEClass.getESuperTypes().add(this.getInstructionSection());
+		parameterSectionEClass.getESuperTypes().add(this.getInstructionSection());
+		instructionWordEClass.getESuperTypes().add(theCorePackage.getMODembedElement());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(instructionSetEClass, InstructionSet.class, "InstructionSet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getInstructionSet_Instructions(), this.getInstruction(), null, "instructions", null, 0, -1, InstructionSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInstructionSet_Extend(), this.getInstructionSet(), null, "extend", null, 0, 1, InstructionSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(instructionEClass, Instruction.class, "Instruction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getInstruction_Code(), ecorePackage.getEString(), "code", null, 0, 1, Instruction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInstruction_Parameters(), this.getInstructionParameter(), null, "parameters", null, 0, -1, Instruction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInstruction_Words(), this.getInstructionWord(), null, "words", null, 0, -1, Instruction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(instructionParameterEClass, InstructionParameter.class, "InstructionParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getInstructionParameter_Id(), ecorePackage.getEChar(), "id", null, 1, 1, InstructionParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getInstructionParameter_DefaultValue(), ecorePackage.getEInt(), "defaultValue", null, 0, 1, InstructionParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(instructionSectionEClass, InstructionSection.class, "InstructionSection", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getInstructionSection_Start(), ecorePackage.getEInt(), "start", null, 1, 1, InstructionSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getInstructionSection_Size(), ecorePackage.getEInt(), "size", null, 1, 1, InstructionSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getInstructionSection_Shift(), ecorePackage.getEInt(), "shift", null, 1, 1, InstructionSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(constantSectionEClass, ConstantSection.class, "ConstantSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getConstantSection_Value(), ecorePackage.getEInt(), "value", null, 1, 1, ConstantSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(parameterSectionEClass, ParameterSection.class, "ParameterSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getParameterSection_Parameter(), this.getInstructionParameter(), null, "parameter", null, 1, 1, ParameterSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(instructionWordEClass, InstructionWord.class, "InstructionWord", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getInstructionWord_Sections(), this.getInstructionSection(), null, "sections", null, 0, -1, InstructionWord.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 	}
 
 } //AssemblerPackageImpl

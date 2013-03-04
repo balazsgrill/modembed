@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/hu.modembed.pic.model/src" modelPluginID="hu.modembed.pic.model"
+    modelName="Picmodel" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    copyrightFields="false" usedGenPackages="../../hu.modembed.model/model/modembedmodel.genmodel#//model">
+  <foreignModel>picmodel.ecore</foreignModel>
+  <genPackages prefix="Pic" basePackage="hu.modembed.model" disposableProviderFactory="true"
+      ecorePackage="picmodel.ecore#/">
+    <genClasses ecoreClass="picmodel.ecore#//PICArchitecture">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference picmodel.ecore#//PICArchitecture/configWords"/>
+    </genClasses>
+    <genClasses ecoreClass="picmodel.ecore#//ConfigWord">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute picmodel.ecore#//ConfigWord/address"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute picmodel.ecore#//ConfigWord/size"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute picmodel.ecore#//ConfigWord/defaultValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference picmodel.ecore#//ConfigWord/fields"/>
+    </genClasses>
+    <genClasses ecoreClass="picmodel.ecore#//ConfigField">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference picmodel.ecore#//ConfigField/literals"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute picmodel.ecore#//ConfigField/size"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute picmodel.ecore#//ConfigField/start"/>
+    </genClasses>
+    <genClasses ecoreClass="picmodel.ecore#//ConfigLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute picmodel.ecore#//ConfigLiteral/value"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

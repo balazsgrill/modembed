@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Pic UI
 Bundle-SymbolicName: hu.modembed.pic.ui;singleton:=true
-Bundle-Version: 0.7.0
+Bundle-Version: 0.8.0.qualifier
 Bundle-Activator: hu.modembed.pic.ui.PicUIPlugin
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
@@ -14,7 +14,9 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.emf.edit.ui;bundle-version="2.6.0",
  org.eclipse.emf.ecore.xmi;bundle-version="2.6.0",
  hu.modembed;bundle-version="0.6.9",
- hu.e.compiler;bundle-version="0.3.0"
+ hu.e.compiler;bundle-version="0.3.0",
+ hu.modembed.pic.model;bundle-version="0.8.0",
+ hu.modembed.hexfile.persistence;bundle-version="0.8.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: hu.modembed.pic.ui

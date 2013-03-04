@@ -19,32 +19,32 @@ package hu.e.parser.eSyntax;
  * @model
  * @generated
  */
-public interface VariableReference extends WordSection, XPrimaryExpression
+public interface VariableReference extends XPrimaryExpression
 {
   /**
-   * Returns the value of the '<em><b>Var</b></em>' reference.
+   * Returns the value of the '<em><b>Var</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Var</em>' reference isn't clear,
+   * If the meaning of the '<em>Var</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Var</em>' reference.
-   * @see #setVar(Variable)
+   * @return the value of the '<em>Var</em>' attribute.
+   * @see #setVar(String)
    * @see hu.e.parser.eSyntax.ESyntaxPackage#getVariableReference_Var()
    * @model
    * @generated
    */
-  Variable getVar();
+  String getVar();
 
   /**
-   * Sets the value of the '{@link hu.e.parser.eSyntax.VariableReference#getVar <em>Var</em>}' reference.
+   * Sets the value of the '{@link hu.e.parser.eSyntax.VariableReference#getVar <em>Var</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Var</em>' reference.
+   * @param value the new value of the '<em>Var</em>' attribute.
    * @see #getVar()
    * @generated
    */
-  void setVar(Variable value);
+  void setVar(String value);
 
 } // VariableReference

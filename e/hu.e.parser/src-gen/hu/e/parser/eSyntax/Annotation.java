@@ -22,29 +22,29 @@ package hu.e.parser.eSyntax;
 public interface Annotation extends XTopLevelExpression
 {
   /**
-   * Returns the value of the '<em><b>Definition</b></em>' reference.
+   * Returns the value of the '<em><b>Definition</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Definition</em>' reference isn't clear,
+   * If the meaning of the '<em>Definition</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Definition</em>' reference.
-   * @see #setDefinition(AnnotationDefinition)
+   * @return the value of the '<em>Definition</em>' attribute.
+   * @see #setDefinition(String)
    * @see hu.e.parser.eSyntax.ESyntaxPackage#getAnnotation_Definition()
    * @model
    * @generated
    */
-  AnnotationDefinition getDefinition();
+  String getDefinition();
 
   /**
-   * Sets the value of the '{@link hu.e.parser.eSyntax.Annotation#getDefinition <em>Definition</em>}' reference.
+   * Sets the value of the '{@link hu.e.parser.eSyntax.Annotation#getDefinition <em>Definition</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Definition</em>' reference.
+   * @param value the new value of the '<em>Definition</em>' attribute.
    * @see #getDefinition()
    * @generated
    */
-  void setDefinition(AnnotationDefinition value);
+  void setDefinition(String value);
 
 } // Annotation

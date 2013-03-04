@@ -58,7 +58,7 @@ public class Disassembler {
 		private final char[] params;
 		
 		public InstructionDescriptor(Instruction i){
-			this(i.getName(), i.getCode());
+			this(i.getName(), "");
 		}
 		
 		public InstructionDescriptor(String name, String mask) {

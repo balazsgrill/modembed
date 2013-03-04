@@ -1,14 +1,10 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package hu.modembed.model.application;
 
 import hu.modembed.model.application.interface_.Operation;
 
-import hu.modembed.model.core.PackagedElement;
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,7 +24,7 @@ import hu.modembed.model.core.PackagedElement;
  * @model
  * @generated
  */
-public interface Application extends PackagedElement {
+public interface Application extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Main Comp</b></em>' reference.
 	 * <!-- begin-user-doc -->

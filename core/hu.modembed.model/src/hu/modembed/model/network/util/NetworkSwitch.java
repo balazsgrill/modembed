@@ -1,14 +1,10 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package hu.modembed.model.network.util;
 
 import hu.modembed.model.core.MODembedElement;
 import hu.modembed.model.core.NamedElement;
-import hu.modembed.model.core.PackagedElement;
+import hu.modembed.model.core.RootElement;
 
 import hu.modembed.model.network.*;
 
@@ -85,7 +81,7 @@ public class NetworkSwitch<T> extends Switch<T> {
 			case NetworkPackage.NETWORK: {
 				Network network = (Network)theEObject;
 				T result = caseNetwork(network);
-				if (result == null) result = casePackagedElement(network);
+				if (result == null) result = caseRootElement(network);
 				if (result == null) result = caseNamedElement(network);
 				if (result == null) result = caseMODembedElement(network);
 				if (result == null) result = defaultCase(theEObject);
@@ -202,17 +198,17 @@ public class NetworkSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Packaged Element</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Root Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Packaged Element</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Root Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePackagedElement(PackagedElement object) {
+	public T caseRootElement(RootElement object) {
 		return null;
 	}
 

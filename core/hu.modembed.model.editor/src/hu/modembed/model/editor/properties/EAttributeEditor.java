@@ -10,6 +10,7 @@ import java.util.Collections;
 
 import org.eclipse.core.databinding.DataBindingContext;
 import org.eclipse.core.databinding.observable.value.IObservableValue;
+import org.eclipse.emf.databinding.EMFUpdateValueStrategy;
 import org.eclipse.emf.databinding.edit.EMFEditObservables;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EObject;
@@ -51,7 +52,11 @@ public class EAttributeEditor implements IPropertyEditor {
 		DataBindingContext dbc = new DataBindingContext();
 		IObservableValue modelvalue = EMFEditObservables.observeValue(edomain, eobject, attrib);
 		
-		dbc.bindValue(WidgetProperties.text(SWT.Modify).observe(text), modelvalue);
+		//Binding binding = 
+		dbc.bindValue(WidgetProperties.text(SWT.Modify).observe(text),
+				modelvalue,
+				new EMFUpdateValueStrategy(),
+				new EMFUpdateValueStrategy());
 		
 		return new Control[]{l, text};
 	}

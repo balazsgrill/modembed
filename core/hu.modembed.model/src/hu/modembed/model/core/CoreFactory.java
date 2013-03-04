@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package hu.modembed.model.core;
 
@@ -26,13 +22,22 @@ public interface CoreFactory extends EFactory {
 	CoreFactory eINSTANCE = hu.modembed.model.core.impl.CoreFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Package</em>'.
+	 * Returns a new object of class '<em>Model Origin</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Package</em>'.
+	 * @return a new object of class '<em>Model Origin</em>'.
 	 * @generated
 	 */
-	Package createPackage();
+	ModelOrigin createModelOrigin();
+
+	/**
+	 * Returns a new object of class '<em>Text Origin</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Text Origin</em>'.
+	 * @generated
+	 */
+	TextOrigin createTextOrigin();
 
 	/**
 	 * Returns the package supported by this factory.

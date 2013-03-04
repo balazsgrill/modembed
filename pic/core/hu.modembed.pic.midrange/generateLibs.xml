@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ====================================================================== 
+     2013.01.09. 15:37:56                                                        
+
+     Generate PicLibs   
+     This build script generates PIC libraries based on the device descriptor XMLs
+                   
+     balazs.grill                                                                
+     ====================================================================== -->
+<project name="generateLibs" default="default">
+    <description>
+            This build script generates PIC libraries based on the device descriptor XMLs
+    </description>
+	
+	<property name="picxml">PICs.xml</property>
+	
+    <!-- ================================= 
+          target: default              
+         ================================= -->
+	
+    <target name="default" description="description">
+    	<echo>Generating PIC Libraries..</echo>
+        <mkdir dir="gen-lib"/>
+    	<xslt basedir="../hu.modembed.pic.ui/device-descriptors/16xxxx" destdir="gen-lib" 
+    		extension=".e" style="../hu.modembed.pic.ui/device-descriptors/piclibgenerator.xsl">
+    	</xslt>
+    	<xslt basedir="../hu.modembed.pic.ui/device-descriptors/16xxxx" destdir="gen-lib" 
+    	    extension=".arch.xmi" style="../hu.modembed.pic.ui/device-descriptors/picarchgenerator.xsl">
+    	</xslt>
+    	
+    	<fileset dir="../hu.modembed.pic.ui/device-descriptors/16xxxx" id="devicefiles">
+    	    <include name="*.PIC"/>
+    	</fileset>
+    	<pathconvert pathsep="&lt;/file&gt;${line.separator}&lt;file&gt;" property="devices" refid="devicefiles"/>
+    	
+    	<echo file="${picxml}">&lt;?xml version="1.0" encoding="UTF-8"?&gt;${line.separator}&lt;list&gt;${line.separator}</echo>
+    	<echo file="${picxml}" append="true">&lt;file&gt;</echo>
+    	<echo file="${picxml}" append="true">${devices}</echo>
+    	<echo file="${picxml}" append="true">&lt;/file&gt;${line.separator}</echo>
+       	<echo file="${picxml}" append="true">&lt;/list&gt;</echo>
+    	
+    	<xslt in="${picxml}" out="plugin.xml" style="generatePluginXML.xsl" />
+    </target>
+	
+</project>

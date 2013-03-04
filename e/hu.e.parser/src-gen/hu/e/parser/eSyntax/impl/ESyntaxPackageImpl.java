@@ -5,49 +5,48 @@ package hu.e.parser.eSyntax.impl;
 import hu.e.parser.eSyntax.Annotation;
 import hu.e.parser.eSyntax.AnnotationDefinition;
 import hu.e.parser.eSyntax.ArrayTypeDef;
-import hu.e.parser.eSyntax.BinarySection;
-import hu.e.parser.eSyntax.BinaryType;
 import hu.e.parser.eSyntax.CompilationUnit;
-import hu.e.parser.eSyntax.ConstantBinarySection;
 import hu.e.parser.eSyntax.ConstantVariable;
 import hu.e.parser.eSyntax.DataTypeDef;
 import hu.e.parser.eSyntax.ESyntaxFactory;
 import hu.e.parser.eSyntax.ESyntaxPackage;
 import hu.e.parser.eSyntax.ErrorLevels;
 import hu.e.parser.eSyntax.FixedDataTypeDef;
-import hu.e.parser.eSyntax.FunctionBinarySection;
-import hu.e.parser.eSyntax.FunctionMemory;
-import hu.e.parser.eSyntax.InstructionWord;
+import hu.e.parser.eSyntax.InsctructionSectionNotation;
+import hu.e.parser.eSyntax.InstructionNotation;
+import hu.e.parser.eSyntax.InstructionParameterNotation;
+import hu.e.parser.eSyntax.InstructionSetNotation;
+import hu.e.parser.eSyntax.InstructionWordNotation;
 import hu.e.parser.eSyntax.IntegerDataTypeDef;
 import hu.e.parser.eSyntax.IntegerKind;
-import hu.e.parser.eSyntax.Label;
+import hu.e.parser.eSyntax.LabelDataTypeDef;
+import hu.e.parser.eSyntax.LazyParameter;
 import hu.e.parser.eSyntax.Library;
 import hu.e.parser.eSyntax.LibraryItem;
-import hu.e.parser.eSyntax.LinkedBinary;
-import hu.e.parser.eSyntax.LiteralValue;
 import hu.e.parser.eSyntax.OpSingleAssign;
 import hu.e.parser.eSyntax.Operation;
 import hu.e.parser.eSyntax.OperationBlock;
 import hu.e.parser.eSyntax.OperationCall;
 import hu.e.parser.eSyntax.OperationCallParameter;
-import hu.e.parser.eSyntax.OperationRole;
-import hu.e.parser.eSyntax.OperationSignature;
+import hu.e.parser.eSyntax.OperationParameter;
 import hu.e.parser.eSyntax.OperationStep;
-import hu.e.parser.eSyntax.OperatorDefinition;
-import hu.e.parser.eSyntax.OptimizerCall;
+import hu.e.parser.eSyntax.OperationTypeDef;
 import hu.e.parser.eSyntax.ParameterKind;
 import hu.e.parser.eSyntax.ParameterVariable;
 import hu.e.parser.eSyntax.PointerTypeDef;
 import hu.e.parser.eSyntax.RefTypeDef;
-import hu.e.parser.eSyntax.ReferenceBinarySection;
 import hu.e.parser.eSyntax.RegisterVariable;
+import hu.e.parser.eSyntax.ResultVariableReference;
 import hu.e.parser.eSyntax.StructTypeDef;
 import hu.e.parser.eSyntax.StructTypeDefMember;
 import hu.e.parser.eSyntax.Type;
 import hu.e.parser.eSyntax.TypeDef;
+import hu.e.parser.eSyntax.UnspecifiedTypeDef;
 import hu.e.parser.eSyntax.Variable;
 import hu.e.parser.eSyntax.VariableReference;
-import hu.e.parser.eSyntax.WordSection;
+import hu.e.parser.eSyntax.WorkflowNotation;
+import hu.e.parser.eSyntax.WorkflowStepNotation;
+import hu.e.parser.eSyntax.WorkflowStepParameterNotation;
 import hu.e.parser.eSyntax.XErrorExpression;
 import hu.e.parser.eSyntax.XExpression;
 import hu.e.parser.eSyntax.XExpression0;
@@ -57,17 +56,15 @@ import hu.e.parser.eSyntax.XExpression3;
 import hu.e.parser.eSyntax.XExpression4;
 import hu.e.parser.eSyntax.XExpression5;
 import hu.e.parser.eSyntax.XExpression6;
+import hu.e.parser.eSyntax.XExpressionBlock;
 import hu.e.parser.eSyntax.XExpressionLiteral;
 import hu.e.parser.eSyntax.XExpressionM1;
-import hu.e.parser.eSyntax.XForExpression;
-import hu.e.parser.eSyntax.XIfExpression;
 import hu.e.parser.eSyntax.XIsLiteralExpression;
 import hu.e.parser.eSyntax.XParenthesizedExpression;
 import hu.e.parser.eSyntax.XPrimaryExpression;
 import hu.e.parser.eSyntax.XSizeOfExpression;
 import hu.e.parser.eSyntax.XStructExpression;
 import hu.e.parser.eSyntax.XTopLevelExpression;
-import hu.e.parser.eSyntax.XWhileExpression;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -111,6 +108,62 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass workflowNotationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass workflowStepNotationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass workflowStepParameterNotationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass instructionSetNotationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass instructionNotationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass instructionWordNotationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass instructionParameterNotationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass insctructionSectionNotationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass libraryEClass = null;
 
   /**
@@ -139,6 +192,13 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass unspecifiedTypeDefEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass pointerTypeDefEClass = null;
 
   /**
@@ -161,6 +221,13 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * @generated
    */
   private EClass dataTypeDefEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass labelDataTypeDefEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -202,21 +269,7 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass instructionWordEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass wordSectionEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass literalValueEClass = null;
+  private EClass resultVariableReferenceEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -244,70 +297,28 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass operationSignatureEClass = null;
+  private EClass operationTypeDefEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass operationBlockEClass = null;
+  private EClass operationEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass operatorDefinitionEClass = null;
+  private EClass operationParameterEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass linkedBinaryEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass binarySectionEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass functionBinarySectionEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass optimizerCallEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass functionMemoryEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass constantBinarySectionEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass referenceBinarySectionEClass = null;
+  private EClass lazyParameterEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -315,6 +326,13 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * @generated
    */
   private EClass xExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass xExpressionBlockEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -426,27 +444,6 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass xIfExpressionEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass xWhileExpressionEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass xForExpressionEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass xParenthesizedExpressionEClass = null;
 
   /**
@@ -475,21 +472,14 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass labelEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass operationEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass parameterVariableEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass operationBlockEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -504,20 +494,6 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * @generated
    */
   private EEnum parameterKindEEnum = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EEnum operationRoleEEnum = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EEnum binaryTypeEEnum = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -656,29 +632,9 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getCompilationUnit_Use()
-  {
-    return (EReference)compilationUnitEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getAnnotationDefinition()
   {
     return annotationDefinitionEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getAnnotationDefinition_Name()
-  {
-    return (EAttribute)annotationDefinitionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -696,9 +652,259 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAnnotation_Definition()
+  public EAttribute getAnnotation_Definition()
   {
-    return (EReference)annotationEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)annotationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getWorkflowNotation()
+  {
+    return workflowNotationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getWorkflowNotation_Steps()
+  {
+    return (EReference)workflowNotationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getWorkflowStepNotation()
+  {
+    return workflowStepNotationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getWorkflowStepNotation_Type()
+  {
+    return (EAttribute)workflowStepNotationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getWorkflowStepNotation_Params()
+  {
+    return (EReference)workflowStepNotationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getWorkflowStepParameterNotation()
+  {
+    return workflowStepParameterNotationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getWorkflowStepParameterNotation_Parameter()
+  {
+    return (EAttribute)workflowStepParameterNotationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getWorkflowStepParameterNotation_Value()
+  {
+    return (EAttribute)workflowStepParameterNotationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getInstructionSetNotation()
+  {
+    return instructionSetNotationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getInstructionSetNotation_Extends()
+  {
+    return (EAttribute)instructionSetNotationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getInstructionSetNotation_Instructions()
+  {
+    return (EReference)instructionSetNotationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getInstructionNotation()
+  {
+    return instructionNotationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getInstructionNotation_Name()
+  {
+    return (EAttribute)instructionNotationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getInstructionNotation_Params()
+  {
+    return (EReference)instructionNotationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getInstructionNotation_Words()
+  {
+    return (EReference)instructionNotationEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getInstructionWordNotation()
+  {
+    return instructionWordNotationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getInstructionWordNotation_Sections()
+  {
+    return (EReference)instructionWordNotationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getInstructionParameterNotation()
+  {
+    return instructionParameterNotationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getInstructionParameterNotation_Name()
+  {
+    return (EAttribute)instructionParameterNotationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getInstructionParameterNotation_Default()
+  {
+    return (EAttribute)instructionParameterNotationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getInsctructionSectionNotation()
+  {
+    return insctructionSectionNotationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getInsctructionSectionNotation_Param()
+  {
+    return (EAttribute)insctructionSectionNotationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getInsctructionSectionNotation_Value()
+  {
+    return (EAttribute)insctructionSectionNotationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getInsctructionSectionNotation_Size()
+  {
+    return (EAttribute)insctructionSectionNotationEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getInsctructionSectionNotation_Shift()
+  {
+    return (EAttribute)insctructionSectionNotationEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -716,9 +922,9 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getLibrary_Overrides()
+  public EAttribute getLibrary_Use()
   {
-    return (EReference)libraryEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)libraryEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -746,6 +952,16 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getLibraryItem_Name()
+  {
+    return (EAttribute)libraryItemEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getType()
   {
     return typeEClass;
@@ -756,19 +972,9 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getType_Name()
-  {
-    return (EAttribute)typeEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getType_Def()
   {
-    return (EReference)typeEClass.getEStructuralFeatures().get(1);
+    return (EReference)typeEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -779,6 +985,16 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
   public EClass getTypeDef()
   {
     return typeDefEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getUnspecifiedTypeDef()
+  {
+    return unspecifiedTypeDefEClass;
   }
 
   /**
@@ -816,7 +1032,7 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getArrayTypeDef_Size()
+  public EReference getArrayTypeDef_Def()
   {
     return (EReference)arrayTypeDefEClass.getEStructuralFeatures().get(0);
   }
@@ -826,7 +1042,7 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getArrayTypeDef_Def()
+  public EReference getArrayTypeDef_Size()
   {
     return (EReference)arrayTypeDefEClass.getEStructuralFeatures().get(1);
   }
@@ -846,9 +1062,9 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRefTypeDef_Type()
+  public EAttribute getRefTypeDef_Type()
   {
-    return (EReference)refTypeDefEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)refTypeDefEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -866,9 +1082,9 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getDataTypeDef_Bits()
+  public EClass getLabelDataTypeDef()
   {
-    return (EAttribute)dataTypeDefEClass.getEStructuralFeatures().get(0);
+    return labelDataTypeDefEClass;
   }
 
   /**
@@ -886,9 +1102,19 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getFixedDataTypeDef_Scale()
+  public EAttribute getFixedDataTypeDef_Bits()
   {
     return (EAttribute)fixedDataTypeDefEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFixedDataTypeDef_Scale()
+  {
+    return (EAttribute)fixedDataTypeDefEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -909,6 +1135,16 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
   public EAttribute getIntegerDataTypeDef_Kind()
   {
     return (EAttribute)integerDataTypeDefEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getIntegerDataTypeDef_Bits()
+  {
+    return (EAttribute)integerDataTypeDefEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -956,16 +1192,6 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getVariable_Name()
-  {
-    return (EAttribute)variableEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getOperationStep()
   {
     return operationStepEClass;
@@ -976,69 +1202,9 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getInstructionWord()
+  public EClass getResultVariableReference()
   {
-    return instructionWordEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getInstructionWord_Sections()
-  {
-    return (EReference)instructionWordEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getWordSection()
-  {
-    return wordSectionEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getWordSection_Size()
-  {
-    return (EAttribute)wordSectionEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getWordSection_Shift()
-  {
-    return (EAttribute)wordSectionEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getLiteralValue()
-  {
-    return literalValueEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getLiteralValue_Value()
-  {
-    return (EAttribute)literalValueEClass.getEStructuralFeatures().get(0);
+    return resultVariableReferenceEClass;
   }
 
   /**
@@ -1056,9 +1222,9 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getVariableReference_Var()
+  public EAttribute getVariableReference_Var()
   {
-    return (EReference)variableReferenceEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)variableReferenceEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1076,9 +1242,9 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getOperationCall_Operation()
+  public EAttribute getOperationCall_Operation()
   {
-    return (EReference)operationCallEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)operationCallEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1106,9 +1272,9 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getOperationSignature()
+  public EClass getOperationTypeDef()
   {
-    return operationSignatureEClass;
+    return operationTypeDefEClass;
   }
 
   /**
@@ -1116,9 +1282,9 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getOperationSignature_Params()
+  public EReference getOperationTypeDef_ResultType()
   {
-    return (EReference)operationSignatureEClass.getEStructuralFeatures().get(0);
+    return (EReference)operationTypeDefEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1126,9 +1292,9 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getOperationBlock()
+  public EReference getOperationTypeDef_Params()
   {
-    return operationBlockEClass;
+    return (EReference)operationTypeDefEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1136,9 +1302,9 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getOperationBlock_Steps()
+  public EClass getOperation()
   {
-    return (EReference)operationBlockEClass.getEStructuralFeatures().get(0);
+    return operationEClass;
   }
 
   /**
@@ -1146,9 +1312,9 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getOperatorDefinition()
+  public EReference getOperation_Type()
   {
-    return operatorDefinitionEClass;
+    return (EReference)operationEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1156,9 +1322,9 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getOperatorDefinition_Role()
+  public EAttribute getOperation_Overrides()
   {
-    return (EAttribute)operatorDefinitionEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)operationEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1166,9 +1332,9 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getOperatorDefinition_Candidate()
+  public EReference getOperation_Content()
   {
-    return (EReference)operatorDefinitionEClass.getEStructuralFeatures().get(1);
+    return (EReference)operationEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1176,9 +1342,9 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getLinkedBinary()
+  public EClass getOperationParameter()
   {
-    return linkedBinaryEClass;
+    return operationParameterEClass;
   }
 
   /**
@@ -1186,9 +1352,9 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getLinkedBinary_Type()
+  public EClass getLazyParameter()
   {
-    return (EAttribute)linkedBinaryEClass.getEStructuralFeatures().get(0);
+    return lazyParameterEClass;
   }
 
   /**
@@ -1196,9 +1362,9 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getLinkedBinary_Sections()
+  public EAttribute getLazyParameter_Paramname()
   {
-    return (EReference)linkedBinaryEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)lazyParameterEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1206,219 +1372,9 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getBinarySection()
+  public EReference getLazyParameter_Type()
   {
-    return binarySectionEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getBinarySection_Start()
-  {
-    return (EReference)binarySectionEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getBinarySection_Width()
-  {
-    return (EAttribute)binarySectionEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getFunctionBinarySection()
-  {
-    return functionBinarySectionEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getFunctionBinarySection_Name()
-  {
-    return (EAttribute)functionBinarySectionEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getFunctionBinarySection_StartAddr()
-  {
-    return (EAttribute)functionBinarySectionEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getFunctionBinarySection_Memwidth()
-  {
-    return (EAttribute)functionBinarySectionEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getFunctionBinarySection_PointerType()
-  {
-    return (EReference)functionBinarySectionEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getFunctionBinarySection_AddressType()
-  {
-    return (EReference)functionBinarySectionEClass.getEStructuralFeatures().get(4);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getFunctionBinarySection_Mems()
-  {
-    return (EReference)functionBinarySectionEClass.getEStructuralFeatures().get(5);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getFunctionBinarySection_Optimizercalls()
-  {
-    return (EReference)functionBinarySectionEClass.getEStructuralFeatures().get(6);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getFunctionBinarySection_Lib()
-  {
-    return (EReference)functionBinarySectionEClass.getEStructuralFeatures().get(7);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getFunctionBinarySection_Do()
-  {
-    return (EReference)functionBinarySectionEClass.getEStructuralFeatures().get(8);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getOptimizerCall()
-  {
-    return optimizerCallEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getOptimizerCall_Optimizer()
-  {
-    return (EAttribute)optimizerCallEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getFunctionMemory()
-  {
-    return functionMemoryEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getFunctionMemory_Start()
-  {
-    return (EAttribute)functionMemoryEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getFunctionMemory_End()
-  {
-    return (EAttribute)functionMemoryEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getConstantBinarySection()
-  {
-    return constantBinarySectionEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getConstantBinarySection_Data()
-  {
-    return (EReference)constantBinarySectionEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getReferenceBinarySection()
-  {
-    return referenceBinarySectionEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getReferenceBinarySection_Inc()
-  {
-    return (EReference)referenceBinarySectionEClass.getEStructuralFeatures().get(0);
+    return (EReference)lazyParameterEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1429,6 +1385,16 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
   public EClass getXExpression()
   {
     return xExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getXExpressionBlock()
+  {
+    return xExpressionBlockEClass;
   }
 
   /**
@@ -1476,19 +1442,9 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getXStructExpression_Type()
-  {
-    return (EReference)xStructExpressionEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getXStructExpression_Values()
   {
-    return (EReference)xStructExpressionEClass.getEStructuralFeatures().get(1);
+    return (EReference)xStructExpressionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1876,136 +1832,6 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getXIfExpression()
-  {
-    return xIfExpressionEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getXIfExpression_If()
-  {
-    return (EReference)xIfExpressionEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getXIfExpression_Then()
-  {
-    return (EReference)xIfExpressionEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getXIfExpression_Else()
-  {
-    return (EReference)xIfExpressionEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getXWhileExpression()
-  {
-    return xWhileExpressionEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getXWhileExpression_Cond()
-  {
-    return (EReference)xWhileExpressionEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getXWhileExpression_Do()
-  {
-    return (EReference)xWhileExpressionEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getXForExpression()
-  {
-    return xForExpressionEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getXForExpression_Var()
-  {
-    return (EReference)xForExpressionEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getXForExpression_From()
-  {
-    return (EReference)xForExpressionEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getXForExpression_By()
-  {
-    return (EReference)xForExpressionEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getXForExpression_To()
-  {
-    return (EReference)xForExpressionEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getXForExpression_Do()
-  {
-    return (EReference)xForExpressionEClass.getEStructuralFeatures().get(4);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getXParenthesizedExpression()
   {
     return xParenthesizedExpressionEClass;
@@ -2076,56 +1902,6 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getLabel()
-  {
-    return labelEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getOperation()
-  {
-    return operationEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getOperation_Block()
-  {
-    return (EReference)operationEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getOperation_Return()
-  {
-    return (EReference)operationEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getOperation_Returnvar()
-  {
-    return (EReference)operationEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getParameterVariable()
   {
     return parameterVariableEClass;
@@ -2156,6 +1932,26 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getOperationBlock()
+  {
+    return operationBlockEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getOperationBlock_Steps()
+  {
+    return (EReference)operationBlockEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EEnum getIntegerKind()
   {
     return integerKindEEnum;
@@ -2169,26 +1965,6 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
   public EEnum getParameterKind()
   {
     return parameterKindEEnum;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EEnum getOperationRole()
-  {
-    return operationRoleEEnum;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EEnum getBinaryType()
-  {
-    return binaryTypeEEnum;
   }
 
   /**
@@ -2293,116 +2069,118 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     // Create classes and their features
     compilationUnitEClass = createEClass(COMPILATION_UNIT);
     createEAttribute(compilationUnitEClass, COMPILATION_UNIT__NAME);
-    createEReference(compilationUnitEClass, COMPILATION_UNIT__USE);
 
     annotationDefinitionEClass = createEClass(ANNOTATION_DEFINITION);
-    createEAttribute(annotationDefinitionEClass, ANNOTATION_DEFINITION__NAME);
 
     annotationEClass = createEClass(ANNOTATION);
-    createEReference(annotationEClass, ANNOTATION__DEFINITION);
+    createEAttribute(annotationEClass, ANNOTATION__DEFINITION);
+
+    workflowNotationEClass = createEClass(WORKFLOW_NOTATION);
+    createEReference(workflowNotationEClass, WORKFLOW_NOTATION__STEPS);
+
+    workflowStepNotationEClass = createEClass(WORKFLOW_STEP_NOTATION);
+    createEAttribute(workflowStepNotationEClass, WORKFLOW_STEP_NOTATION__TYPE);
+    createEReference(workflowStepNotationEClass, WORKFLOW_STEP_NOTATION__PARAMS);
+
+    workflowStepParameterNotationEClass = createEClass(WORKFLOW_STEP_PARAMETER_NOTATION);
+    createEAttribute(workflowStepParameterNotationEClass, WORKFLOW_STEP_PARAMETER_NOTATION__PARAMETER);
+    createEAttribute(workflowStepParameterNotationEClass, WORKFLOW_STEP_PARAMETER_NOTATION__VALUE);
+
+    instructionSetNotationEClass = createEClass(INSTRUCTION_SET_NOTATION);
+    createEAttribute(instructionSetNotationEClass, INSTRUCTION_SET_NOTATION__EXTENDS);
+    createEReference(instructionSetNotationEClass, INSTRUCTION_SET_NOTATION__INSTRUCTIONS);
+
+    instructionNotationEClass = createEClass(INSTRUCTION_NOTATION);
+    createEAttribute(instructionNotationEClass, INSTRUCTION_NOTATION__NAME);
+    createEReference(instructionNotationEClass, INSTRUCTION_NOTATION__PARAMS);
+    createEReference(instructionNotationEClass, INSTRUCTION_NOTATION__WORDS);
+
+    instructionWordNotationEClass = createEClass(INSTRUCTION_WORD_NOTATION);
+    createEReference(instructionWordNotationEClass, INSTRUCTION_WORD_NOTATION__SECTIONS);
+
+    instructionParameterNotationEClass = createEClass(INSTRUCTION_PARAMETER_NOTATION);
+    createEAttribute(instructionParameterNotationEClass, INSTRUCTION_PARAMETER_NOTATION__NAME);
+    createEAttribute(instructionParameterNotationEClass, INSTRUCTION_PARAMETER_NOTATION__DEFAULT);
+
+    insctructionSectionNotationEClass = createEClass(INSCTRUCTION_SECTION_NOTATION);
+    createEAttribute(insctructionSectionNotationEClass, INSCTRUCTION_SECTION_NOTATION__PARAM);
+    createEAttribute(insctructionSectionNotationEClass, INSCTRUCTION_SECTION_NOTATION__VALUE);
+    createEAttribute(insctructionSectionNotationEClass, INSCTRUCTION_SECTION_NOTATION__SIZE);
+    createEAttribute(insctructionSectionNotationEClass, INSCTRUCTION_SECTION_NOTATION__SHIFT);
 
     libraryEClass = createEClass(LIBRARY);
-    createEReference(libraryEClass, LIBRARY__OVERRIDES);
+    createEAttribute(libraryEClass, LIBRARY__USE);
     createEReference(libraryEClass, LIBRARY__ITEMS);
 
     libraryItemEClass = createEClass(LIBRARY_ITEM);
+    createEAttribute(libraryItemEClass, LIBRARY_ITEM__NAME);
 
     typeEClass = createEClass(TYPE);
-    createEAttribute(typeEClass, TYPE__NAME);
     createEReference(typeEClass, TYPE__DEF);
 
     typeDefEClass = createEClass(TYPE_DEF);
+
+    unspecifiedTypeDefEClass = createEClass(UNSPECIFIED_TYPE_DEF);
 
     pointerTypeDefEClass = createEClass(POINTER_TYPE_DEF);
     createEReference(pointerTypeDefEClass, POINTER_TYPE_DEF__DEF);
 
     arrayTypeDefEClass = createEClass(ARRAY_TYPE_DEF);
-    createEReference(arrayTypeDefEClass, ARRAY_TYPE_DEF__SIZE);
     createEReference(arrayTypeDefEClass, ARRAY_TYPE_DEF__DEF);
+    createEReference(arrayTypeDefEClass, ARRAY_TYPE_DEF__SIZE);
 
     refTypeDefEClass = createEClass(REF_TYPE_DEF);
-    createEReference(refTypeDefEClass, REF_TYPE_DEF__TYPE);
+    createEAttribute(refTypeDefEClass, REF_TYPE_DEF__TYPE);
 
     dataTypeDefEClass = createEClass(DATA_TYPE_DEF);
-    createEAttribute(dataTypeDefEClass, DATA_TYPE_DEF__BITS);
+
+    labelDataTypeDefEClass = createEClass(LABEL_DATA_TYPE_DEF);
 
     fixedDataTypeDefEClass = createEClass(FIXED_DATA_TYPE_DEF);
+    createEAttribute(fixedDataTypeDefEClass, FIXED_DATA_TYPE_DEF__BITS);
     createEAttribute(fixedDataTypeDefEClass, FIXED_DATA_TYPE_DEF__SCALE);
 
     integerDataTypeDefEClass = createEClass(INTEGER_DATA_TYPE_DEF);
     createEAttribute(integerDataTypeDefEClass, INTEGER_DATA_TYPE_DEF__KIND);
+    createEAttribute(integerDataTypeDefEClass, INTEGER_DATA_TYPE_DEF__BITS);
 
     structTypeDefEClass = createEClass(STRUCT_TYPE_DEF);
     createEReference(structTypeDefEClass, STRUCT_TYPE_DEF__MEMBERS);
 
     variableEClass = createEClass(VARIABLE);
     createEReference(variableEClass, VARIABLE__TYPE);
-    createEAttribute(variableEClass, VARIABLE__NAME);
 
     operationStepEClass = createEClass(OPERATION_STEP);
 
-    instructionWordEClass = createEClass(INSTRUCTION_WORD);
-    createEReference(instructionWordEClass, INSTRUCTION_WORD__SECTIONS);
-
-    wordSectionEClass = createEClass(WORD_SECTION);
-    createEAttribute(wordSectionEClass, WORD_SECTION__SIZE);
-    createEAttribute(wordSectionEClass, WORD_SECTION__SHIFT);
-
-    literalValueEClass = createEClass(LITERAL_VALUE);
-    createEAttribute(literalValueEClass, LITERAL_VALUE__VALUE);
+    resultVariableReferenceEClass = createEClass(RESULT_VARIABLE_REFERENCE);
 
     variableReferenceEClass = createEClass(VARIABLE_REFERENCE);
-    createEReference(variableReferenceEClass, VARIABLE_REFERENCE__VAR);
+    createEAttribute(variableReferenceEClass, VARIABLE_REFERENCE__VAR);
 
     operationCallEClass = createEClass(OPERATION_CALL);
-    createEReference(operationCallEClass, OPERATION_CALL__OPERATION);
+    createEAttribute(operationCallEClass, OPERATION_CALL__OPERATION);
     createEReference(operationCallEClass, OPERATION_CALL__PARAMS);
 
     operationCallParameterEClass = createEClass(OPERATION_CALL_PARAMETER);
 
-    operationSignatureEClass = createEClass(OPERATION_SIGNATURE);
-    createEReference(operationSignatureEClass, OPERATION_SIGNATURE__PARAMS);
+    operationTypeDefEClass = createEClass(OPERATION_TYPE_DEF);
+    createEReference(operationTypeDefEClass, OPERATION_TYPE_DEF__RESULT_TYPE);
+    createEReference(operationTypeDefEClass, OPERATION_TYPE_DEF__PARAMS);
 
-    operationBlockEClass = createEClass(OPERATION_BLOCK);
-    createEReference(operationBlockEClass, OPERATION_BLOCK__STEPS);
+    operationEClass = createEClass(OPERATION);
+    createEReference(operationEClass, OPERATION__TYPE);
+    createEAttribute(operationEClass, OPERATION__OVERRIDES);
+    createEReference(operationEClass, OPERATION__CONTENT);
 
-    operatorDefinitionEClass = createEClass(OPERATOR_DEFINITION);
-    createEAttribute(operatorDefinitionEClass, OPERATOR_DEFINITION__ROLE);
-    createEReference(operatorDefinitionEClass, OPERATOR_DEFINITION__CANDIDATE);
+    operationParameterEClass = createEClass(OPERATION_PARAMETER);
 
-    linkedBinaryEClass = createEClass(LINKED_BINARY);
-    createEAttribute(linkedBinaryEClass, LINKED_BINARY__TYPE);
-    createEReference(linkedBinaryEClass, LINKED_BINARY__SECTIONS);
-
-    binarySectionEClass = createEClass(BINARY_SECTION);
-    createEReference(binarySectionEClass, BINARY_SECTION__START);
-    createEAttribute(binarySectionEClass, BINARY_SECTION__WIDTH);
-
-    functionBinarySectionEClass = createEClass(FUNCTION_BINARY_SECTION);
-    createEAttribute(functionBinarySectionEClass, FUNCTION_BINARY_SECTION__NAME);
-    createEAttribute(functionBinarySectionEClass, FUNCTION_BINARY_SECTION__START_ADDR);
-    createEAttribute(functionBinarySectionEClass, FUNCTION_BINARY_SECTION__MEMWIDTH);
-    createEReference(functionBinarySectionEClass, FUNCTION_BINARY_SECTION__POINTER_TYPE);
-    createEReference(functionBinarySectionEClass, FUNCTION_BINARY_SECTION__ADDRESS_TYPE);
-    createEReference(functionBinarySectionEClass, FUNCTION_BINARY_SECTION__MEMS);
-    createEReference(functionBinarySectionEClass, FUNCTION_BINARY_SECTION__OPTIMIZERCALLS);
-    createEReference(functionBinarySectionEClass, FUNCTION_BINARY_SECTION__LIB);
-    createEReference(functionBinarySectionEClass, FUNCTION_BINARY_SECTION__DO);
-
-    optimizerCallEClass = createEClass(OPTIMIZER_CALL);
-    createEAttribute(optimizerCallEClass, OPTIMIZER_CALL__OPTIMIZER);
-
-    functionMemoryEClass = createEClass(FUNCTION_MEMORY);
-    createEAttribute(functionMemoryEClass, FUNCTION_MEMORY__START);
-    createEAttribute(functionMemoryEClass, FUNCTION_MEMORY__END);
-
-    constantBinarySectionEClass = createEClass(CONSTANT_BINARY_SECTION);
-    createEReference(constantBinarySectionEClass, CONSTANT_BINARY_SECTION__DATA);
-
-    referenceBinarySectionEClass = createEClass(REFERENCE_BINARY_SECTION);
-    createEReference(referenceBinarySectionEClass, REFERENCE_BINARY_SECTION__INC);
+    lazyParameterEClass = createEClass(LAZY_PARAMETER);
+    createEAttribute(lazyParameterEClass, LAZY_PARAMETER__PARAMNAME);
+    createEReference(lazyParameterEClass, LAZY_PARAMETER__TYPE);
 
     xExpressionEClass = createEClass(XEXPRESSION);
+
+    xExpressionBlockEClass = createEClass(XEXPRESSION_BLOCK);
 
     xPrimaryExpressionEClass = createEClass(XPRIMARY_EXPRESSION);
 
@@ -2410,7 +2188,6 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     createEReference(xSizeOfExpressionEClass, XSIZE_OF_EXPRESSION__TYPE);
 
     xStructExpressionEClass = createEClass(XSTRUCT_EXPRESSION);
-    createEReference(xStructExpressionEClass, XSTRUCT_EXPRESSION__TYPE);
     createEReference(xStructExpressionEClass, XSTRUCT_EXPRESSION__VALUES);
 
     xExpression1EClass = createEClass(XEXPRESSION1);
@@ -2463,22 +2240,6 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     xIsLiteralExpressionEClass = createEClass(XIS_LITERAL_EXPRESSION);
     createEReference(xIsLiteralExpressionEClass, XIS_LITERAL_EXPRESSION__REF);
 
-    xIfExpressionEClass = createEClass(XIF_EXPRESSION);
-    createEReference(xIfExpressionEClass, XIF_EXPRESSION__IF);
-    createEReference(xIfExpressionEClass, XIF_EXPRESSION__THEN);
-    createEReference(xIfExpressionEClass, XIF_EXPRESSION__ELSE);
-
-    xWhileExpressionEClass = createEClass(XWHILE_EXPRESSION);
-    createEReference(xWhileExpressionEClass, XWHILE_EXPRESSION__COND);
-    createEReference(xWhileExpressionEClass, XWHILE_EXPRESSION__DO);
-
-    xForExpressionEClass = createEClass(XFOR_EXPRESSION);
-    createEReference(xForExpressionEClass, XFOR_EXPRESSION__VAR);
-    createEReference(xForExpressionEClass, XFOR_EXPRESSION__FROM);
-    createEReference(xForExpressionEClass, XFOR_EXPRESSION__BY);
-    createEReference(xForExpressionEClass, XFOR_EXPRESSION__TO);
-    createEReference(xForExpressionEClass, XFOR_EXPRESSION__DO);
-
     xParenthesizedExpressionEClass = createEClass(XPARENTHESIZED_EXPRESSION);
     createEReference(xParenthesizedExpressionEClass, XPARENTHESIZED_EXPRESSION__A);
 
@@ -2490,22 +2251,16 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     registerVariableEClass = createEClass(REGISTER_VARIABLE);
     createEReference(registerVariableEClass, REGISTER_VARIABLE__ADDR);
 
-    labelEClass = createEClass(LABEL);
-
-    operationEClass = createEClass(OPERATION);
-    createEReference(operationEClass, OPERATION__BLOCK);
-    createEReference(operationEClass, OPERATION__RETURN);
-    createEReference(operationEClass, OPERATION__RETURNVAR);
-
     parameterVariableEClass = createEClass(PARAMETER_VARIABLE);
     createEAttribute(parameterVariableEClass, PARAMETER_VARIABLE__KIND);
     createEAttribute(parameterVariableEClass, PARAMETER_VARIABLE__DEFAULT);
 
+    operationBlockEClass = createEClass(OPERATION_BLOCK);
+    createEReference(operationBlockEClass, OPERATION_BLOCK__STEPS);
+
     // Create enums
     integerKindEEnum = createEEnum(INTEGER_KIND);
     parameterKindEEnum = createEEnum(PARAMETER_KIND);
-    operationRoleEEnum = createEEnum(OPERATION_ROLE);
-    binaryTypeEEnum = createEEnum(BINARY_TYPE);
     unarY_OPERATOREEnum = createEEnum(UNARY_OPERATOR);
     multiplicativE_OPERATOREEnum = createEEnum(MULTIPLICATIVE_OPERATOR);
     additivE_OPERATOREEnum = createEEnum(ADDITIVE_OPERATOR);
@@ -2546,31 +2301,30 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     // Add supertypes to classes
     annotationDefinitionEClass.getESuperTypes().add(this.getLibraryItem());
     annotationEClass.getESuperTypes().add(this.getXTopLevelExpression());
+    workflowNotationEClass.getESuperTypes().add(this.getCompilationUnit());
+    instructionSetNotationEClass.getESuperTypes().add(this.getCompilationUnit());
     libraryEClass.getESuperTypes().add(this.getCompilationUnit());
     typeEClass.getESuperTypes().add(this.getLibraryItem());
+    unspecifiedTypeDefEClass.getESuperTypes().add(this.getTypeDef());
     pointerTypeDefEClass.getESuperTypes().add(this.getTypeDef());
     arrayTypeDefEClass.getESuperTypes().add(this.getTypeDef());
     refTypeDefEClass.getESuperTypes().add(this.getTypeDef());
     dataTypeDefEClass.getESuperTypes().add(this.getTypeDef());
+    labelDataTypeDefEClass.getESuperTypes().add(this.getDataTypeDef());
     fixedDataTypeDefEClass.getESuperTypes().add(this.getDataTypeDef());
     integerDataTypeDefEClass.getESuperTypes().add(this.getDataTypeDef());
     structTypeDefEClass.getESuperTypes().add(this.getTypeDef());
     variableEClass.getESuperTypes().add(this.getLibraryItem());
     variableEClass.getESuperTypes().add(this.getOperationStep());
-    instructionWordEClass.getESuperTypes().add(this.getOperationStep());
-    literalValueEClass.getESuperTypes().add(this.getWordSection());
-    variableReferenceEClass.getESuperTypes().add(this.getWordSection());
+    variableEClass.getESuperTypes().add(this.getOperationParameter());
+    resultVariableReferenceEClass.getESuperTypes().add(this.getXPrimaryExpression());
     variableReferenceEClass.getESuperTypes().add(this.getXPrimaryExpression());
     operationCallEClass.getESuperTypes().add(this.getXPrimaryExpression());
-    operationSignatureEClass.getESuperTypes().add(this.getLibraryItem());
-    operationSignatureEClass.getESuperTypes().add(this.getVariable());
-    operatorDefinitionEClass.getESuperTypes().add(this.getLibraryItem());
-    linkedBinaryEClass.getESuperTypes().add(this.getCompilationUnit());
-    functionBinarySectionEClass.getESuperTypes().add(this.getBinarySection());
-    constantBinarySectionEClass.getESuperTypes().add(this.getBinarySection());
-    referenceBinarySectionEClass.getESuperTypes().add(this.getBinarySection());
+    operationEClass.getESuperTypes().add(this.getLibraryItem());
+    lazyParameterEClass.getESuperTypes().add(this.getOperationParameter());
     xExpressionEClass.getESuperTypes().add(this.getOperationCallParameter());
     xExpressionEClass.getESuperTypes().add(this.getXTopLevelExpression());
+    xExpressionBlockEClass.getESuperTypes().add(this.getXPrimaryExpression());
     xSizeOfExpressionEClass.getESuperTypes().add(this.getXPrimaryExpression());
     xStructExpressionEClass.getESuperTypes().add(this.getXPrimaryExpression());
     xExpression6EClass.getESuperTypes().add(this.getXExpression());
@@ -2578,130 +2332,128 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     xTopLevelExpressionEClass.getESuperTypes().add(this.getOperationStep());
     xErrorExpressionEClass.getESuperTypes().add(this.getXTopLevelExpression());
     xIsLiteralExpressionEClass.getESuperTypes().add(this.getXPrimaryExpression());
-    xIfExpressionEClass.getESuperTypes().add(this.getXTopLevelExpression());
-    xWhileExpressionEClass.getESuperTypes().add(this.getXTopLevelExpression());
-    xForExpressionEClass.getESuperTypes().add(this.getXTopLevelExpression());
     xParenthesizedExpressionEClass.getESuperTypes().add(this.getXPrimaryExpression());
     structTypeDefMemberEClass.getESuperTypes().add(this.getVariable());
     constantVariableEClass.getESuperTypes().add(this.getVariable());
     registerVariableEClass.getESuperTypes().add(this.getVariable());
-    labelEClass.getESuperTypes().add(this.getVariable());
-    operationEClass.getESuperTypes().add(this.getOperationSignature());
     parameterVariableEClass.getESuperTypes().add(this.getVariable());
+    operationBlockEClass.getESuperTypes().add(this.getXExpressionBlock());
 
     // Initialize classes and features; add operations and parameters
     initEClass(compilationUnitEClass, CompilationUnit.class, "CompilationUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getCompilationUnit_Name(), ecorePackage.getEString(), "name", null, 0, 1, CompilationUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getCompilationUnit_Use(), this.getLibrary(), null, "use", null, 0, -1, CompilationUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(annotationDefinitionEClass, AnnotationDefinition.class, "AnnotationDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAnnotationDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, AnnotationDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(annotationEClass, Annotation.class, "Annotation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAnnotation_Definition(), this.getAnnotationDefinition(), null, "definition", null, 0, 1, Annotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAnnotation_Definition(), ecorePackage.getEString(), "definition", null, 0, 1, Annotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(workflowNotationEClass, WorkflowNotation.class, "WorkflowNotation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getWorkflowNotation_Steps(), this.getWorkflowStepNotation(), null, "steps", null, 0, -1, WorkflowNotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(workflowStepNotationEClass, WorkflowStepNotation.class, "WorkflowStepNotation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getWorkflowStepNotation_Type(), ecorePackage.getEString(), "type", null, 0, 1, WorkflowStepNotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getWorkflowStepNotation_Params(), this.getWorkflowStepParameterNotation(), null, "params", null, 0, -1, WorkflowStepNotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(workflowStepParameterNotationEClass, WorkflowStepParameterNotation.class, "WorkflowStepParameterNotation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getWorkflowStepParameterNotation_Parameter(), ecorePackage.getEString(), "parameter", null, 0, 1, WorkflowStepParameterNotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getWorkflowStepParameterNotation_Value(), ecorePackage.getEString(), "value", null, 0, 1, WorkflowStepParameterNotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(instructionSetNotationEClass, InstructionSetNotation.class, "InstructionSetNotation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getInstructionSetNotation_Extends(), ecorePackage.getEString(), "extends", null, 0, 1, InstructionSetNotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInstructionSetNotation_Instructions(), this.getInstructionNotation(), null, "instructions", null, 0, -1, InstructionSetNotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(instructionNotationEClass, InstructionNotation.class, "InstructionNotation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getInstructionNotation_Name(), ecorePackage.getEString(), "name", null, 0, 1, InstructionNotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInstructionNotation_Params(), this.getInstructionParameterNotation(), null, "params", null, 0, -1, InstructionNotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInstructionNotation_Words(), this.getInstructionWordNotation(), null, "words", null, 0, -1, InstructionNotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(instructionWordNotationEClass, InstructionWordNotation.class, "InstructionWordNotation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getInstructionWordNotation_Sections(), this.getInsctructionSectionNotation(), null, "sections", null, 0, -1, InstructionWordNotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(instructionParameterNotationEClass, InstructionParameterNotation.class, "InstructionParameterNotation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getInstructionParameterNotation_Name(), ecorePackage.getEString(), "name", null, 0, 1, InstructionParameterNotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getInstructionParameterNotation_Default(), ecorePackage.getEString(), "default", null, 0, 1, InstructionParameterNotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(insctructionSectionNotationEClass, InsctructionSectionNotation.class, "InsctructionSectionNotation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getInsctructionSectionNotation_Param(), ecorePackage.getEString(), "param", null, 0, 1, InsctructionSectionNotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getInsctructionSectionNotation_Value(), ecorePackage.getEString(), "value", null, 0, 1, InsctructionSectionNotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getInsctructionSectionNotation_Size(), ecorePackage.getEString(), "size", null, 0, 1, InsctructionSectionNotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getInsctructionSectionNotation_Shift(), ecorePackage.getEString(), "shift", null, 0, 1, InsctructionSectionNotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(libraryEClass, Library.class, "Library", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getLibrary_Overrides(), this.getLibrary(), null, "overrides", null, 0, -1, Library.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getLibrary_Use(), ecorePackage.getEString(), "use", null, 0, -1, Library.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getLibrary_Items(), this.getLibraryItem(), null, "items", null, 0, -1, Library.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(libraryItemEClass, LibraryItem.class, "LibraryItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getLibraryItem_Name(), ecorePackage.getEString(), "name", null, 0, 1, LibraryItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(typeEClass, Type.class, "Type", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getType_Name(), ecorePackage.getEString(), "name", null, 0, 1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getType_Def(), this.getTypeDef(), null, "def", null, 0, 1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(typeDefEClass, TypeDef.class, "TypeDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(unspecifiedTypeDefEClass, UnspecifiedTypeDef.class, "UnspecifiedTypeDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(pointerTypeDefEClass, PointerTypeDef.class, "PointerTypeDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getPointerTypeDef_Def(), this.getTypeDef(), null, "def", null, 0, 1, PointerTypeDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(arrayTypeDefEClass, ArrayTypeDef.class, "ArrayTypeDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getArrayTypeDef_Size(), this.getXExpression(), null, "size", null, 0, 1, ArrayTypeDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getArrayTypeDef_Def(), this.getTypeDef(), null, "def", null, 0, 1, ArrayTypeDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getArrayTypeDef_Size(), this.getXExpression(), null, "size", null, 0, 1, ArrayTypeDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(refTypeDefEClass, RefTypeDef.class, "RefTypeDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getRefTypeDef_Type(), this.getType(), null, "type", null, 0, 1, RefTypeDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRefTypeDef_Type(), ecorePackage.getEString(), "type", null, 0, 1, RefTypeDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(dataTypeDefEClass, DataTypeDef.class, "DataTypeDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDataTypeDef_Bits(), ecorePackage.getEInt(), "bits", null, 0, 1, DataTypeDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(labelDataTypeDefEClass, LabelDataTypeDef.class, "LabelDataTypeDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(fixedDataTypeDefEClass, FixedDataTypeDef.class, "FixedDataTypeDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getFixedDataTypeDef_Bits(), ecorePackage.getEInt(), "bits", null, 0, 1, FixedDataTypeDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getFixedDataTypeDef_Scale(), ecorePackage.getEBigDecimal(), "scale", null, 0, 1, FixedDataTypeDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(integerDataTypeDefEClass, IntegerDataTypeDef.class, "IntegerDataTypeDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getIntegerDataTypeDef_Kind(), this.getIntegerKind(), "kind", null, 0, 1, IntegerDataTypeDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getIntegerDataTypeDef_Bits(), ecorePackage.getEInt(), "bits", null, 0, 1, IntegerDataTypeDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(structTypeDefEClass, StructTypeDef.class, "StructTypeDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getStructTypeDef_Members(), this.getVariable(), null, "members", null, 0, -1, StructTypeDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(variableEClass, Variable.class, "Variable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getVariable_Type(), this.getTypeDef(), null, "type", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getVariable_Name(), ecorePackage.getEString(), "name", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(operationStepEClass, OperationStep.class, "OperationStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(instructionWordEClass, InstructionWord.class, "InstructionWord", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getInstructionWord_Sections(), this.getWordSection(), null, "sections", null, 0, -1, InstructionWord.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(wordSectionEClass, WordSection.class, "WordSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getWordSection_Size(), ecorePackage.getEInt(), "size", null, 0, 1, WordSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getWordSection_Shift(), ecorePackage.getEInt(), "shift", null, 0, 1, WordSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(literalValueEClass, LiteralValue.class, "LiteralValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getLiteralValue_Value(), ecorePackage.getEString(), "value", null, 0, 1, LiteralValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(resultVariableReferenceEClass, ResultVariableReference.class, "ResultVariableReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(variableReferenceEClass, VariableReference.class, "VariableReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getVariableReference_Var(), this.getVariable(), null, "var", null, 0, 1, VariableReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getVariableReference_Var(), ecorePackage.getEString(), "var", null, 0, 1, VariableReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(operationCallEClass, OperationCall.class, "OperationCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getOperationCall_Operation(), this.getOperation(), null, "operation", null, 0, 1, OperationCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getOperationCall_Operation(), ecorePackage.getEString(), "operation", null, 0, 1, OperationCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getOperationCall_Params(), this.getOperationCallParameter(), null, "params", null, 0, -1, OperationCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(operationCallParameterEClass, OperationCallParameter.class, "OperationCallParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(operationSignatureEClass, OperationSignature.class, "OperationSignature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getOperationSignature_Params(), this.getVariable(), null, "params", null, 0, -1, OperationSignature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(operationTypeDefEClass, OperationTypeDef.class, "OperationTypeDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getOperationTypeDef_ResultType(), this.getTypeDef(), null, "resultType", null, 0, 1, OperationTypeDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getOperationTypeDef_Params(), this.getOperationParameter(), null, "params", null, 0, -1, OperationTypeDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(operationBlockEClass, OperationBlock.class, "OperationBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getOperationBlock_Steps(), this.getOperationStep(), null, "steps", null, 0, -1, OperationBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(operationEClass, Operation.class, "Operation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getOperation_Type(), this.getOperationTypeDef(), null, "type", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getOperation_Overrides(), ecorePackage.getEString(), "overrides", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getOperation_Content(), this.getXExpression(), null, "content", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(operatorDefinitionEClass, OperatorDefinition.class, "OperatorDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getOperatorDefinition_Role(), this.getOperationRole(), "role", null, 0, 1, OperatorDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getOperatorDefinition_Candidate(), this.getOperation(), null, "candidate", null, 0, -1, OperatorDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(operationParameterEClass, OperationParameter.class, "OperationParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(linkedBinaryEClass, LinkedBinary.class, "LinkedBinary", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getLinkedBinary_Type(), this.getBinaryType(), "type", null, 0, 1, LinkedBinary.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getLinkedBinary_Sections(), this.getBinarySection(), null, "sections", null, 0, -1, LinkedBinary.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(binarySectionEClass, BinarySection.class, "BinarySection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getBinarySection_Start(), this.getXExpression(), null, "start", null, 0, 1, BinarySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getBinarySection_Width(), ecorePackage.getEString(), "width", null, 0, 1, BinarySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(functionBinarySectionEClass, FunctionBinarySection.class, "FunctionBinarySection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getFunctionBinarySection_Name(), ecorePackage.getEString(), "name", null, 0, 1, FunctionBinarySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getFunctionBinarySection_StartAddr(), ecorePackage.getEString(), "startAddr", null, 0, 1, FunctionBinarySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getFunctionBinarySection_Memwidth(), ecorePackage.getEString(), "memwidth", null, 0, 1, FunctionBinarySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFunctionBinarySection_PointerType(), this.getTypeDef(), null, "pointerType", null, 0, 1, FunctionBinarySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFunctionBinarySection_AddressType(), this.getTypeDef(), null, "addressType", null, 0, 1, FunctionBinarySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFunctionBinarySection_Mems(), this.getFunctionMemory(), null, "mems", null, 0, -1, FunctionBinarySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFunctionBinarySection_Optimizercalls(), this.getOptimizerCall(), null, "optimizercalls", null, 0, -1, FunctionBinarySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFunctionBinarySection_Lib(), this.getLibrary(), null, "lib", null, 0, -1, FunctionBinarySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFunctionBinarySection_Do(), this.getOperationBlock(), null, "do", null, 0, 1, FunctionBinarySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(optimizerCallEClass, OptimizerCall.class, "OptimizerCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getOptimizerCall_Optimizer(), ecorePackage.getEString(), "optimizer", null, 0, 1, OptimizerCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(functionMemoryEClass, FunctionMemory.class, "FunctionMemory", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getFunctionMemory_Start(), ecorePackage.getEString(), "start", null, 0, 1, FunctionMemory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getFunctionMemory_End(), ecorePackage.getEString(), "end", null, 0, 1, FunctionMemory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(constantBinarySectionEClass, ConstantBinarySection.class, "ConstantBinarySection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getConstantBinarySection_Data(), this.getXExpression(), null, "data", null, 0, -1, ConstantBinarySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(referenceBinarySectionEClass, ReferenceBinarySection.class, "ReferenceBinarySection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getReferenceBinarySection_Inc(), this.getLinkedBinary(), null, "inc", null, 0, 1, ReferenceBinarySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(lazyParameterEClass, LazyParameter.class, "LazyParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getLazyParameter_Paramname(), ecorePackage.getEString(), "paramname", null, 0, 1, LazyParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLazyParameter_Type(), this.getOperationTypeDef(), null, "type", null, 0, 1, LazyParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(xExpressionEClass, XExpression.class, "XExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(xExpressionBlockEClass, XExpressionBlock.class, "XExpressionBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(xPrimaryExpressionEClass, XPrimaryExpression.class, "XPrimaryExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -2709,7 +2461,6 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     initEReference(getXSizeOfExpression_Type(), this.getTypeDef(), null, "type", null, 0, 1, XSizeOfExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(xStructExpressionEClass, XStructExpression.class, "XStructExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getXStructExpression_Type(), this.getType(), null, "type", null, 0, 1, XStructExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getXStructExpression_Values(), this.getXExpression(), null, "values", null, 0, -1, XStructExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(xExpression1EClass, XExpression1.class, "XExpression1", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2762,22 +2513,6 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     initEClass(xIsLiteralExpressionEClass, XIsLiteralExpression.class, "XIsLiteralExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getXIsLiteralExpression_Ref(), this.getVariableReference(), null, "ref", null, 0, 1, XIsLiteralExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(xIfExpressionEClass, XIfExpression.class, "XIfExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getXIfExpression_If(), this.getXExpression(), null, "if", null, 0, 1, XIfExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getXIfExpression_Then(), this.getOperationBlock(), null, "then", null, 0, 1, XIfExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getXIfExpression_Else(), this.getOperationBlock(), null, "else", null, 0, 1, XIfExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(xWhileExpressionEClass, XWhileExpression.class, "XWhileExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getXWhileExpression_Cond(), this.getXExpression(), null, "cond", null, 0, 1, XWhileExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getXWhileExpression_Do(), this.getOperationBlock(), null, "do", null, 0, 1, XWhileExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(xForExpressionEClass, XForExpression.class, "XForExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getXForExpression_Var(), this.getVariable(), null, "var", null, 0, 1, XForExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getXForExpression_From(), this.getXExpression(), null, "from", null, 0, 1, XForExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getXForExpression_By(), this.getXExpression(), null, "by", null, 0, 1, XForExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getXForExpression_To(), this.getXExpression(), null, "to", null, 0, 1, XForExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getXForExpression_Do(), this.getOperationBlock(), null, "do", null, 0, 1, XForExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
     initEClass(xParenthesizedExpressionEClass, XParenthesizedExpression.class, "XParenthesizedExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getXParenthesizedExpression_A(), this.getXExpression(), null, "a", null, 0, 1, XParenthesizedExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -2789,16 +2524,12 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     initEClass(registerVariableEClass, RegisterVariable.class, "RegisterVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getRegisterVariable_Addr(), this.getXExpression(), null, "addr", null, 0, 1, RegisterVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(labelEClass, Label.class, "Label", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(operationEClass, Operation.class, "Operation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getOperation_Block(), this.getOperationBlock(), null, "block", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getOperation_Return(), this.getXExpression(), null, "return", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getOperation_Returnvar(), this.getVariable(), null, "returnvar", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
     initEClass(parameterVariableEClass, ParameterVariable.class, "ParameterVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getParameterVariable_Kind(), this.getParameterKind(), "kind", null, 0, 1, ParameterVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getParameterVariable_Default(), ecorePackage.getEString(), "default", null, 0, 1, ParameterVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(operationBlockEClass, OperationBlock.class, "OperationBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getOperationBlock_Steps(), this.getOperationStep(), null, "steps", null, 0, -1, OperationBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Initialize enums and add enum literals
     initEEnum(integerKindEEnum, IntegerKind.class, "IntegerKind");
@@ -2809,35 +2540,6 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
     addEEnumLiteral(parameterKindEEnum, ParameterKind.ANY);
     addEEnumLiteral(parameterKindEEnum, ParameterKind.VAR);
     addEEnumLiteral(parameterKindEEnum, ParameterKind.CONST);
-
-    initEEnum(operationRoleEEnum, OperationRole.class, "OperationRole");
-    addEEnumLiteral(operationRoleEEnum, OperationRole.SET);
-    addEEnumLiteral(operationRoleEEnum, OperationRole.ADD);
-    addEEnumLiteral(operationRoleEEnum, OperationRole.SUBTRACT);
-    addEEnumLiteral(operationRoleEEnum, OperationRole.AND);
-    addEEnumLiteral(operationRoleEEnum, OperationRole.OR);
-    addEEnumLiteral(operationRoleEEnum, OperationRole.XOR);
-    addEEnumLiteral(operationRoleEEnum, OperationRole.EQUALS);
-    addEEnumLiteral(operationRoleEEnum, OperationRole.BRANCH);
-    addEEnumLiteral(operationRoleEEnum, OperationRole.UC_GOTO);
-    addEEnumLiteral(operationRoleEEnum, OperationRole.NOT);
-    addEEnumLiteral(operationRoleEEnum, OperationRole.INDIRECTION);
-    addEEnumLiteral(operationRoleEEnum, OperationRole.CLEAR);
-    addEEnumLiteral(operationRoleEEnum, OperationRole.INCREMENT);
-    addEEnumLiteral(operationRoleEEnum, OperationRole.DECREMENT);
-    addEEnumLiteral(operationRoleEEnum, OperationRole.DIV);
-    addEEnumLiteral(operationRoleEEnum, OperationRole.MUL);
-    addEEnumLiteral(operationRoleEEnum, OperationRole.MOD);
-    addEEnumLiteral(operationRoleEEnum, OperationRole.LT);
-    addEEnumLiteral(operationRoleEEnum, OperationRole.LTE);
-    addEEnumLiteral(operationRoleEEnum, OperationRole.GT);
-    addEEnumLiteral(operationRoleEEnum, OperationRole.GTE);
-    addEEnumLiteral(operationRoleEEnum, OperationRole.NOTEQUALS);
-
-    initEEnum(binaryTypeEEnum, BinaryType.class, "BinaryType");
-    addEEnumLiteral(binaryTypeEEnum, BinaryType.DEFAULT);
-    addEEnumLiteral(binaryTypeEEnum, BinaryType.INTELHEXFILE);
-    addEEnumLiteral(binaryTypeEEnum, BinaryType.SRECHEXFILE);
 
     initEEnum(unarY_OPERATOREEnum, hu.e.parser.eSyntax.UNARY_OPERATOR.class, "UNARY_OPERATOR");
     addEEnumLiteral(unarY_OPERATOREEnum, hu.e.parser.eSyntax.UNARY_OPERATOR.MINUS);

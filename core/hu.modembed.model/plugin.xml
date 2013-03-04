@@ -2,10 +2,6 @@
 <?eclipse version="3.0"?>
 
 <!--
- <copyright>
- </copyright>
-
- $Id$
 -->
 
 <plugin>
@@ -14,6 +10,27 @@
       <package
             uri="http://modembed.hu/core"
             class="hu.modembed.model.core.CorePackage"
+            genModel="model/modembedmodel.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://modembed.hu/core/assembler"
+            class="hu.modembed.model.core.assembler.AssemblerPackage"
+            genModel="model/modembedmodel.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://modembed.hu/core/assembler/code"
+            class="hu.modembed.model.core.assembler.code.CodePackage"
+            genModel="model/modembedmodel.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://modembed.hu/core/workflow"
+            class="hu.modembed.model.core.workflow.WorkflowPackage"
             genModel="model/modembedmodel.genmodel"/>
    </extension>
 
@@ -44,13 +61,61 @@
             class="hu.modembed.model.comm.rs232.Rs232Package"
             genModel="model/modembedmodel.genmodel"/>
    </extension>
-   <extension
-         point="org.eclipse.emf.ecore.generated_package">
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
       <package
-            class="hu.modembed.model.core.assembler.AssemblerPackage"
-            genModel="model/modembedmodel.genmodel"
-            uri="http://modembed.hu/core/assembler">
-      </package>
+            uri="http://modembed.hu/application"
+            class="hu.modembed.model.application.ApplicationPackage"
+            genModel="model/modembedmodel.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://modembed.hu/application/interface"
+            class="hu.modembed.model.application.interface_.InterfacePackage"
+            genModel="model/modembedmodel.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://modembed.hu/application/composition"
+            class="hu.modembed.model.application.composition.CompositionPackage"
+            genModel="model/modembedmodel.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://emodel/1.0"
+            class="hu.modembed.model.emodel.EmodelPackage"
+            genModel="model/modembedmodel.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://emodel/1.0/types"
+            class="hu.modembed.model.emodel.types.TypesPackage"
+            genModel="model/modembedmodel.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://emodel/1.0/expressions"
+            class="hu.modembed.model.emodel.expressions.ExpressionsPackage"
+            genModel="model/modembedmodel.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://modembed.hu/architecture"
+            class="hu.modembed.model.architecture.ArchitecturePackage"
+            genModel="model/modembedmodel.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://modembed.hu/architecture/linking"
+            class="hu.modembed.model.architecture.linking.LinkingPackage"
+            genModel="model/modembedmodel.genmodel"/>
    </extension>
 
 </plugin>

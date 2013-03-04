@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package hu.modembed.model.comm.util;
 
@@ -10,7 +6,6 @@ import hu.modembed.model.comm.*;
 
 import hu.modembed.model.core.MODembedElement;
 import hu.modembed.model.core.NamedElement;
-import hu.modembed.model.core.PackagedElement;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -85,9 +80,6 @@ public class CommSwitch<T> extends Switch<T> {
 			case CommPackage.COMMUNICATION_PROTOCOL: {
 				CommunicationProtocol communicationProtocol = (CommunicationProtocol)theEObject;
 				T result = caseCommunicationProtocol(communicationProtocol);
-				if (result == null) result = casePackagedElement(communicationProtocol);
-				if (result == null) result = caseNamedElement(communicationProtocol);
-				if (result == null) result = caseMODembedElement(communicationProtocol);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -152,21 +144,6 @@ public class CommSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseNamedElement(NamedElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Packaged Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Packaged Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T casePackagedElement(PackagedElement object) {
 		return null;
 	}
 

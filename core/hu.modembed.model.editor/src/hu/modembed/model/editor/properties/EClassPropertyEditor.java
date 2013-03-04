@@ -51,7 +51,11 @@ public class EClassPropertyEditor implements IPropertyEditor {
 		List<IPropertyEditor> editors = new ArrayList<IPropertyEditor>();
 		
 		for(EAttribute a : eclass.getEAttributes()){
-			editors.add(new EAttributeEditor(a));
+			if (a.isMany()){
+				editors.add(new ManyEAttributeEditor(a));
+			}else{
+				editors.add(new EAttributeEditor(a));
+			}
 		}
 		
 		for(EReference r : eclass.getEReferences()){

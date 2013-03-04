@@ -5,6 +5,7 @@ package hu.modembed.ui.wizards.included;
 
 import hu.modembed.includedcode.CreateProjectInWorkspaceTask;
 import hu.modembed.includedcode.IncludedProject;
+import hu.modembed.includedcode.IncludedProjectsRegistry;
 import hu.modembed.ui.MODembedUI;
 
 import java.util.ArrayList;
@@ -30,6 +31,7 @@ public class ImportIncludedProjectWizard extends Wizard implements
 		IImportWizard {
 
 	IncludedProjectsSelectionWizardPage page1;
+	ImportProjectListReviewWizardPage page2;
 	
 	/* (non-Javadoc)
 	 * @see org.eclipse.ui.IWorkbenchWizard#init(org.eclipse.ui.IWorkbench, org.eclipse.jface.viewers.IStructuredSelection)
@@ -37,12 +39,14 @@ public class ImportIncludedProjectWizard extends Wizard implements
 	@Override
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		page1 = new IncludedProjectsSelectionWizardPage("page1");
+		page2 = new ImportProjectListReviewWizardPage("page2", page1.getSelection());
 		setWindowTitle("Import embedded projects");
 	}
 
 	@Override
 	public void addPages() {
 		addPage(page1);
+		addPage(page2);
 	}
 	
 	/* (non-Javadoc)
@@ -50,16 +54,22 @@ public class ImportIncludedProjectWizard extends Wizard implements
 	 */
 	@Override
 	public boolean performFinish() {
-		final Object[] selection = page1.getSelection().toArray();
+		final Object[] selection = page2.getSelection().toArray();
 		Job job = new Job("Importing code") {
 			
 			@Override
 			protected IStatus run(IProgressMonitor monitor) {
-				List<CreateProjectInWorkspaceTask> tasks = new ArrayList<CreateProjectInWorkspaceTask>();
+				List<IncludedProject> projects = new ArrayList<IncludedProject>(selection.length);
 				for (Object o : selection){
 					if (o instanceof IncludedProject){
-						tasks.add(new CreateProjectInWorkspaceTask((IncludedProject)o));
+						projects.add((IncludedProject)o);
 					}
+				}
+				projects = IncludedProjectsRegistry.getInstance().resolveDependencies(projects);
+				
+				List<CreateProjectInWorkspaceTask> tasks = new ArrayList<CreateProjectInWorkspaceTask>();
+				for (IncludedProject o : projects){
+					tasks.add(new CreateProjectInWorkspaceTask(o));
 				}
 				
 				monitor.beginTask("Importing projects..", tasks.size()*10);

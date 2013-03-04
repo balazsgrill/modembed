@@ -40,6 +40,42 @@ public interface AssemblerFactory extends EFactory {
 	Instruction createInstruction();
 
 	/**
+	 * Returns a new object of class '<em>Instruction Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Instruction Parameter</em>'.
+	 * @generated
+	 */
+	InstructionParameter createInstructionParameter();
+
+	/**
+	 * Returns a new object of class '<em>Constant Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Constant Section</em>'.
+	 * @generated
+	 */
+	ConstantSection createConstantSection();
+
+	/**
+	 * Returns a new object of class '<em>Parameter Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Parameter Section</em>'.
+	 * @generated
+	 */
+	ParameterSection createParameterSection();
+
+	/**
+	 * Returns a new object of class '<em>Instruction Word</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Instruction Word</em>'.
+	 * @generated
+	 */
+	InstructionWord createInstructionWord();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

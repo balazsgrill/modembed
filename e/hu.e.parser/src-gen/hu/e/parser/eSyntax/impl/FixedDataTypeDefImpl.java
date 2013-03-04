@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link hu.e.parser.eSyntax.impl.FixedDataTypeDefImpl#getBits <em>Bits</em>}</li>
  *   <li>{@link hu.e.parser.eSyntax.impl.FixedDataTypeDefImpl#getScale <em>Scale</em>}</li>
  * </ul>
  * </p>
@@ -28,6 +29,26 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class FixedDataTypeDefImpl extends DataTypeDefImpl implements FixedDataTypeDef
 {
+  /**
+   * The default value of the '{@link #getBits() <em>Bits</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getBits()
+   * @generated
+   * @ordered
+   */
+  protected static final int BITS_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getBits() <em>Bits</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getBits()
+   * @generated
+   * @ordered
+   */
+  protected int bits = BITS_EDEFAULT;
+
   /**
    * The default value of the '{@link #getScale() <em>Scale</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -74,6 +95,29 @@ public class FixedDataTypeDefImpl extends DataTypeDefImpl implements FixedDataTy
    * <!-- end-user-doc -->
    * @generated
    */
+  public int getBits()
+  {
+    return bits;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setBits(int newBits)
+  {
+    int oldBits = bits;
+    bits = newBits;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ESyntaxPackage.FIXED_DATA_TYPE_DEF__BITS, oldBits, bits));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public BigDecimal getScale()
   {
     return scale;
@@ -102,6 +146,8 @@ public class FixedDataTypeDefImpl extends DataTypeDefImpl implements FixedDataTy
   {
     switch (featureID)
     {
+      case ESyntaxPackage.FIXED_DATA_TYPE_DEF__BITS:
+        return getBits();
       case ESyntaxPackage.FIXED_DATA_TYPE_DEF__SCALE:
         return getScale();
     }
@@ -118,6 +164,9 @@ public class FixedDataTypeDefImpl extends DataTypeDefImpl implements FixedDataTy
   {
     switch (featureID)
     {
+      case ESyntaxPackage.FIXED_DATA_TYPE_DEF__BITS:
+        setBits((Integer)newValue);
+        return;
       case ESyntaxPackage.FIXED_DATA_TYPE_DEF__SCALE:
         setScale((BigDecimal)newValue);
         return;
@@ -135,6 +184,9 @@ public class FixedDataTypeDefImpl extends DataTypeDefImpl implements FixedDataTy
   {
     switch (featureID)
     {
+      case ESyntaxPackage.FIXED_DATA_TYPE_DEF__BITS:
+        setBits(BITS_EDEFAULT);
+        return;
       case ESyntaxPackage.FIXED_DATA_TYPE_DEF__SCALE:
         setScale(SCALE_EDEFAULT);
         return;
@@ -152,6 +204,8 @@ public class FixedDataTypeDefImpl extends DataTypeDefImpl implements FixedDataTy
   {
     switch (featureID)
     {
+      case ESyntaxPackage.FIXED_DATA_TYPE_DEF__BITS:
+        return bits != BITS_EDEFAULT;
       case ESyntaxPackage.FIXED_DATA_TYPE_DEF__SCALE:
         return SCALE_EDEFAULT == null ? scale != null : !SCALE_EDEFAULT.equals(scale);
     }
@@ -169,7 +223,9 @@ public class FixedDataTypeDefImpl extends DataTypeDefImpl implements FixedDataTy
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (scale: ");
+    result.append(" (bits: ");
+    result.append(bits);
+    result.append(", scale: ");
     result.append(scale);
     result.append(')');
     return result.toString();

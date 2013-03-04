@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package hu.modembed.model.application;
 
@@ -71,22 +67,13 @@ public interface ApplicationPackage extends EPackage {
 	int COMPONENT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT__NAME = CorePackage.PACKAGED_ELEMENT__NAME;
-
-	/**
 	 * The feature id for the '<em><b>Uses</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__USES = CorePackage.PACKAGED_ELEMENT_FEATURE_COUNT + 0;
+	int COMPONENT__USES = 0;
 
 	/**
 	 * The feature id for the '<em><b>Implements</b></em>' containment reference list.
@@ -95,7 +82,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__IMPLEMENTS = CorePackage.PACKAGED_ELEMENT_FEATURE_COUNT + 1;
+	int COMPONENT__IMPLEMENTS = 1;
 
 	/**
 	 * The number of structural features of the '<em>Component</em>' class.
@@ -104,7 +91,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_FEATURE_COUNT = CorePackage.PACKAGED_ELEMENT_FEATURE_COUNT + 2;
+	int COMPONENT_FEATURE_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link hu.modembed.model.application.impl.PortImpl <em>Port</em>}' class.
@@ -115,6 +102,24 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 */
 	int PORT = 1;
+
+	/**
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT__ORIGINS = CorePackage.NAMED_ELEMENT__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT__DESCRIPTION = CorePackage.NAMED_ELEMENT__DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -143,7 +148,6 @@ public interface ApplicationPackage extends EPackage {
 	 */
 	int PORT_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
-
 	/**
 	 * The meta object id for the '{@link hu.modembed.model.application.impl.ApplicationImpl <em>Application</em>}' class.
 	 * <!-- begin-user-doc -->
@@ -155,22 +159,13 @@ public interface ApplicationPackage extends EPackage {
 	int APPLICATION = 2;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int APPLICATION__NAME = CorePackage.PACKAGED_ELEMENT__NAME;
-
-	/**
 	 * The feature id for the '<em><b>Main Comp</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION__MAIN_COMP = CorePackage.PACKAGED_ELEMENT_FEATURE_COUNT + 0;
+	int APPLICATION__MAIN_COMP = 0;
 
 	/**
 	 * The feature id for the '<em><b>Main Port</b></em>' reference.
@@ -179,7 +174,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION__MAIN_PORT = CorePackage.PACKAGED_ELEMENT_FEATURE_COUNT + 1;
+	int APPLICATION__MAIN_PORT = 1;
 
 	/**
 	 * The feature id for the '<em><b>Main</b></em>' reference.
@@ -188,7 +183,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION__MAIN = CorePackage.PACKAGED_ELEMENT_FEATURE_COUNT + 2;
+	int APPLICATION__MAIN = 2;
 
 	/**
 	 * The number of structural features of the '<em>Application</em>' class.
@@ -197,7 +192,7 @@ public interface ApplicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION_FEATURE_COUNT = CorePackage.PACKAGED_ELEMENT_FEATURE_COUNT + 3;
+	int APPLICATION_FEATURE_COUNT = 3;
 
 
 	/**

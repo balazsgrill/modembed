@@ -4,10 +4,11 @@ package hu.modembed.model.core.assembler.util;
 
 import hu.modembed.model.core.MODembedElement;
 import hu.modembed.model.core.NamedElement;
-import hu.modembed.model.core.PackagedElement;
+import hu.modembed.model.core.RootElement;
 
 import hu.modembed.model.core.assembler.*;
 
+import hu.modembed.model.emodel.CallableElement;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 
@@ -80,6 +81,26 @@ public class AssemblerAdapterFactory extends AdapterFactoryImpl {
 				return createInstructionAdapter();
 			}
 			@Override
+			public Adapter caseInstructionParameter(InstructionParameter object) {
+				return createInstructionParameterAdapter();
+			}
+			@Override
+			public Adapter caseInstructionSection(InstructionSection object) {
+				return createInstructionSectionAdapter();
+			}
+			@Override
+			public Adapter caseConstantSection(ConstantSection object) {
+				return createConstantSectionAdapter();
+			}
+			@Override
+			public Adapter caseParameterSection(ParameterSection object) {
+				return createParameterSectionAdapter();
+			}
+			@Override
+			public Adapter caseInstructionWord(InstructionWord object) {
+				return createInstructionWordAdapter();
+			}
+			@Override
 			public Adapter caseMODembedElement(MODembedElement object) {
 				return createMODembedElementAdapter();
 			}
@@ -88,8 +109,12 @@ public class AssemblerAdapterFactory extends AdapterFactoryImpl {
 				return createNamedElementAdapter();
 			}
 			@Override
-			public Adapter casePackagedElement(PackagedElement object) {
-				return createPackagedElementAdapter();
+			public Adapter caseRootElement(RootElement object) {
+				return createRootElementAdapter();
+			}
+			@Override
+			public Adapter caseCallableElement(CallableElement object) {
+				return createCallableElementAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -140,6 +165,76 @@ public class AssemblerAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.core.assembler.InstructionParameter <em>Instruction Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.modembed.model.core.assembler.InstructionParameter
+	 * @generated
+	 */
+	public Adapter createInstructionParameterAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.core.assembler.InstructionSection <em>Instruction Section</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.modembed.model.core.assembler.InstructionSection
+	 * @generated
+	 */
+	public Adapter createInstructionSectionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.core.assembler.ConstantSection <em>Constant Section</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.modembed.model.core.assembler.ConstantSection
+	 * @generated
+	 */
+	public Adapter createConstantSectionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.core.assembler.ParameterSection <em>Parameter Section</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.modembed.model.core.assembler.ParameterSection
+	 * @generated
+	 */
+	public Adapter createParameterSectionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.core.assembler.InstructionWord <em>Instruction Word</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.modembed.model.core.assembler.InstructionWord
+	 * @generated
+	 */
+	public Adapter createInstructionWordAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link hu.modembed.model.core.MODembedElement <em>MO Dembed Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -168,16 +263,30 @@ public class AssemblerAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link hu.modembed.model.core.PackagedElement <em>Packaged Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.core.RootElement <em>Root Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see hu.modembed.model.core.PackagedElement
+	 * @see hu.modembed.model.core.RootElement
 	 * @generated
 	 */
-	public Adapter createPackagedElementAdapter() {
+	public Adapter createRootElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.emodel.CallableElement <em>Callable Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.modembed.model.emodel.CallableElement
+	 * @generated
+	 */
+	public Adapter createCallableElementAdapter() {
 		return null;
 	}
 

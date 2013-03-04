@@ -77,22 +77,13 @@ public interface ESyntaxPackage extends EPackage
   int COMPILATION_UNIT__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Use</b></em>' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPILATION_UNIT__USE = 1;
-
-  /**
    * The number of structural features of the '<em>Compilation Unit</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPILATION_UNIT_FEATURE_COUNT = 2;
+  int COMPILATION_UNIT_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.impl.LibraryItemImpl <em>Library Item</em>}' class.
@@ -102,7 +93,16 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getLibraryItem()
    * @generated
    */
-  int LIBRARY_ITEM = 4;
+  int LIBRARY_ITEM = 12;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIBRARY_ITEM__NAME = 0;
 
   /**
    * The number of structural features of the '<em>Library Item</em>' class.
@@ -111,7 +111,7 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LIBRARY_ITEM_FEATURE_COUNT = 0;
+  int LIBRARY_ITEM_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.impl.AnnotationDefinitionImpl <em>Annotation Definition</em>}' class.
@@ -130,7 +130,7 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANNOTATION_DEFINITION__NAME = LIBRARY_ITEM_FEATURE_COUNT + 0;
+  int ANNOTATION_DEFINITION__NAME = LIBRARY_ITEM__NAME;
 
   /**
    * The number of structural features of the '<em>Annotation Definition</em>' class.
@@ -139,7 +139,7 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANNOTATION_DEFINITION_FEATURE_COUNT = LIBRARY_ITEM_FEATURE_COUNT + 1;
+  int ANNOTATION_DEFINITION_FEATURE_COUNT = LIBRARY_ITEM_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.impl.OperationStepImpl <em>Operation Step</em>}' class.
@@ -149,7 +149,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getOperationStep()
    * @generated
    */
-  int OPERATION_STEP = 15;
+  int OPERATION_STEP = 25;
 
   /**
    * The number of structural features of the '<em>Operation Step</em>' class.
@@ -168,7 +168,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXTopLevelExpression()
    * @generated
    */
-  int XTOP_LEVEL_EXPRESSION = 45;
+  int XTOP_LEVEL_EXPRESSION = 48;
 
   /**
    * The number of structural features of the '<em>XTop Level Expression</em>' class.
@@ -190,7 +190,7 @@ public interface ESyntaxPackage extends EPackage
   int ANNOTATION = 2;
 
   /**
-   * The feature id for the '<em><b>Definition</b></em>' reference.
+   * The feature id for the '<em><b>Definition</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -208,6 +208,329 @@ public interface ESyntaxPackage extends EPackage
   int ANNOTATION_FEATURE_COUNT = XTOP_LEVEL_EXPRESSION_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link hu.e.parser.eSyntax.impl.WorkflowNotationImpl <em>Workflow Notation</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.e.parser.eSyntax.impl.WorkflowNotationImpl
+   * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getWorkflowNotation()
+   * @generated
+   */
+  int WORKFLOW_NOTATION = 3;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WORKFLOW_NOTATION__NAME = COMPILATION_UNIT__NAME;
+
+  /**
+   * The feature id for the '<em><b>Steps</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WORKFLOW_NOTATION__STEPS = COMPILATION_UNIT_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Workflow Notation</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WORKFLOW_NOTATION_FEATURE_COUNT = COMPILATION_UNIT_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link hu.e.parser.eSyntax.impl.WorkflowStepNotationImpl <em>Workflow Step Notation</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.e.parser.eSyntax.impl.WorkflowStepNotationImpl
+   * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getWorkflowStepNotation()
+   * @generated
+   */
+  int WORKFLOW_STEP_NOTATION = 4;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WORKFLOW_STEP_NOTATION__TYPE = 0;
+
+  /**
+   * The feature id for the '<em><b>Params</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WORKFLOW_STEP_NOTATION__PARAMS = 1;
+
+  /**
+   * The number of structural features of the '<em>Workflow Step Notation</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WORKFLOW_STEP_NOTATION_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link hu.e.parser.eSyntax.impl.WorkflowStepParameterNotationImpl <em>Workflow Step Parameter Notation</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.e.parser.eSyntax.impl.WorkflowStepParameterNotationImpl
+   * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getWorkflowStepParameterNotation()
+   * @generated
+   */
+  int WORKFLOW_STEP_PARAMETER_NOTATION = 5;
+
+  /**
+   * The feature id for the '<em><b>Parameter</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WORKFLOW_STEP_PARAMETER_NOTATION__PARAMETER = 0;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WORKFLOW_STEP_PARAMETER_NOTATION__VALUE = 1;
+
+  /**
+   * The number of structural features of the '<em>Workflow Step Parameter Notation</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WORKFLOW_STEP_PARAMETER_NOTATION_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link hu.e.parser.eSyntax.impl.InstructionSetNotationImpl <em>Instruction Set Notation</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.e.parser.eSyntax.impl.InstructionSetNotationImpl
+   * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getInstructionSetNotation()
+   * @generated
+   */
+  int INSTRUCTION_SET_NOTATION = 6;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INSTRUCTION_SET_NOTATION__NAME = COMPILATION_UNIT__NAME;
+
+  /**
+   * The feature id for the '<em><b>Extends</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INSTRUCTION_SET_NOTATION__EXTENDS = COMPILATION_UNIT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Instructions</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INSTRUCTION_SET_NOTATION__INSTRUCTIONS = COMPILATION_UNIT_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Instruction Set Notation</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INSTRUCTION_SET_NOTATION_FEATURE_COUNT = COMPILATION_UNIT_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link hu.e.parser.eSyntax.impl.InstructionNotationImpl <em>Instruction Notation</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.e.parser.eSyntax.impl.InstructionNotationImpl
+   * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getInstructionNotation()
+   * @generated
+   */
+  int INSTRUCTION_NOTATION = 7;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INSTRUCTION_NOTATION__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Params</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INSTRUCTION_NOTATION__PARAMS = 1;
+
+  /**
+   * The feature id for the '<em><b>Words</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INSTRUCTION_NOTATION__WORDS = 2;
+
+  /**
+   * The number of structural features of the '<em>Instruction Notation</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INSTRUCTION_NOTATION_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link hu.e.parser.eSyntax.impl.InstructionWordNotationImpl <em>Instruction Word Notation</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.e.parser.eSyntax.impl.InstructionWordNotationImpl
+   * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getInstructionWordNotation()
+   * @generated
+   */
+  int INSTRUCTION_WORD_NOTATION = 8;
+
+  /**
+   * The feature id for the '<em><b>Sections</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INSTRUCTION_WORD_NOTATION__SECTIONS = 0;
+
+  /**
+   * The number of structural features of the '<em>Instruction Word Notation</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INSTRUCTION_WORD_NOTATION_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link hu.e.parser.eSyntax.impl.InstructionParameterNotationImpl <em>Instruction Parameter Notation</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.e.parser.eSyntax.impl.InstructionParameterNotationImpl
+   * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getInstructionParameterNotation()
+   * @generated
+   */
+  int INSTRUCTION_PARAMETER_NOTATION = 9;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INSTRUCTION_PARAMETER_NOTATION__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Default</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INSTRUCTION_PARAMETER_NOTATION__DEFAULT = 1;
+
+  /**
+   * The number of structural features of the '<em>Instruction Parameter Notation</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INSTRUCTION_PARAMETER_NOTATION_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link hu.e.parser.eSyntax.impl.InsctructionSectionNotationImpl <em>Insctruction Section Notation</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.e.parser.eSyntax.impl.InsctructionSectionNotationImpl
+   * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getInsctructionSectionNotation()
+   * @generated
+   */
+  int INSCTRUCTION_SECTION_NOTATION = 10;
+
+  /**
+   * The feature id for the '<em><b>Param</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INSCTRUCTION_SECTION_NOTATION__PARAM = 0;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INSCTRUCTION_SECTION_NOTATION__VALUE = 1;
+
+  /**
+   * The feature id for the '<em><b>Size</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INSCTRUCTION_SECTION_NOTATION__SIZE = 2;
+
+  /**
+   * The feature id for the '<em><b>Shift</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INSCTRUCTION_SECTION_NOTATION__SHIFT = 3;
+
+  /**
+   * The number of structural features of the '<em>Insctruction Section Notation</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INSCTRUCTION_SECTION_NOTATION_FEATURE_COUNT = 4;
+
+  /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.impl.LibraryImpl <em>Library</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -215,7 +538,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getLibrary()
    * @generated
    */
-  int LIBRARY = 3;
+  int LIBRARY = 11;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -227,22 +550,13 @@ public interface ESyntaxPackage extends EPackage
   int LIBRARY__NAME = COMPILATION_UNIT__NAME;
 
   /**
-   * The feature id for the '<em><b>Use</b></em>' reference list.
+   * The feature id for the '<em><b>Use</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LIBRARY__USE = COMPILATION_UNIT__USE;
-
-  /**
-   * The feature id for the '<em><b>Overrides</b></em>' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LIBRARY__OVERRIDES = COMPILATION_UNIT_FEATURE_COUNT + 0;
+  int LIBRARY__USE = COMPILATION_UNIT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Items</b></em>' containment reference list.
@@ -270,7 +584,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getType()
    * @generated
    */
-  int TYPE = 5;
+  int TYPE = 13;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -279,7 +593,7 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TYPE__NAME = LIBRARY_ITEM_FEATURE_COUNT + 0;
+  int TYPE__NAME = LIBRARY_ITEM__NAME;
 
   /**
    * The feature id for the '<em><b>Def</b></em>' containment reference.
@@ -288,7 +602,7 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TYPE__DEF = LIBRARY_ITEM_FEATURE_COUNT + 1;
+  int TYPE__DEF = LIBRARY_ITEM_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Type</em>' class.
@@ -297,7 +611,7 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TYPE_FEATURE_COUNT = LIBRARY_ITEM_FEATURE_COUNT + 2;
+  int TYPE_FEATURE_COUNT = LIBRARY_ITEM_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.impl.TypeDefImpl <em>Type Def</em>}' class.
@@ -307,7 +621,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getTypeDef()
    * @generated
    */
-  int TYPE_DEF = 6;
+  int TYPE_DEF = 14;
 
   /**
    * The number of structural features of the '<em>Type Def</em>' class.
@@ -319,6 +633,25 @@ public interface ESyntaxPackage extends EPackage
   int TYPE_DEF_FEATURE_COUNT = 0;
 
   /**
+   * The meta object id for the '{@link hu.e.parser.eSyntax.impl.UnspecifiedTypeDefImpl <em>Unspecified Type Def</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.e.parser.eSyntax.impl.UnspecifiedTypeDefImpl
+   * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getUnspecifiedTypeDef()
+   * @generated
+   */
+  int UNSPECIFIED_TYPE_DEF = 15;
+
+  /**
+   * The number of structural features of the '<em>Unspecified Type Def</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNSPECIFIED_TYPE_DEF_FEATURE_COUNT = TYPE_DEF_FEATURE_COUNT + 0;
+
+  /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.impl.PointerTypeDefImpl <em>Pointer Type Def</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -326,7 +659,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getPointerTypeDef()
    * @generated
    */
-  int POINTER_TYPE_DEF = 7;
+  int POINTER_TYPE_DEF = 16;
 
   /**
    * The feature id for the '<em><b>Def</b></em>' containment reference.
@@ -354,16 +687,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getArrayTypeDef()
    * @generated
    */
-  int ARRAY_TYPE_DEF = 8;
-
-  /**
-   * The feature id for the '<em><b>Size</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ARRAY_TYPE_DEF__SIZE = TYPE_DEF_FEATURE_COUNT + 0;
+  int ARRAY_TYPE_DEF = 17;
 
   /**
    * The feature id for the '<em><b>Def</b></em>' containment reference.
@@ -372,7 +696,16 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ARRAY_TYPE_DEF__DEF = TYPE_DEF_FEATURE_COUNT + 1;
+  int ARRAY_TYPE_DEF__DEF = TYPE_DEF_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Size</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARRAY_TYPE_DEF__SIZE = TYPE_DEF_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Array Type Def</em>' class.
@@ -391,10 +724,10 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getRefTypeDef()
    * @generated
    */
-  int REF_TYPE_DEF = 9;
+  int REF_TYPE_DEF = 18;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' reference.
+   * The feature id for the '<em><b>Type</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -419,16 +752,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getDataTypeDef()
    * @generated
    */
-  int DATA_TYPE_DEF = 10;
-
-  /**
-   * The feature id for the '<em><b>Bits</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DATA_TYPE_DEF__BITS = TYPE_DEF_FEATURE_COUNT + 0;
+  int DATA_TYPE_DEF = 19;
 
   /**
    * The number of structural features of the '<em>Data Type Def</em>' class.
@@ -437,7 +761,26 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DATA_TYPE_DEF_FEATURE_COUNT = TYPE_DEF_FEATURE_COUNT + 1;
+  int DATA_TYPE_DEF_FEATURE_COUNT = TYPE_DEF_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link hu.e.parser.eSyntax.impl.LabelDataTypeDefImpl <em>Label Data Type Def</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.e.parser.eSyntax.impl.LabelDataTypeDefImpl
+   * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getLabelDataTypeDef()
+   * @generated
+   */
+  int LABEL_DATA_TYPE_DEF = 20;
+
+  /**
+   * The number of structural features of the '<em>Label Data Type Def</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LABEL_DATA_TYPE_DEF_FEATURE_COUNT = DATA_TYPE_DEF_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.impl.FixedDataTypeDefImpl <em>Fixed Data Type Def</em>}' class.
@@ -447,7 +790,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getFixedDataTypeDef()
    * @generated
    */
-  int FIXED_DATA_TYPE_DEF = 11;
+  int FIXED_DATA_TYPE_DEF = 21;
 
   /**
    * The feature id for the '<em><b>Bits</b></em>' attribute.
@@ -456,7 +799,7 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FIXED_DATA_TYPE_DEF__BITS = DATA_TYPE_DEF__BITS;
+  int FIXED_DATA_TYPE_DEF__BITS = DATA_TYPE_DEF_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Scale</b></em>' attribute.
@@ -465,7 +808,7 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FIXED_DATA_TYPE_DEF__SCALE = DATA_TYPE_DEF_FEATURE_COUNT + 0;
+  int FIXED_DATA_TYPE_DEF__SCALE = DATA_TYPE_DEF_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Fixed Data Type Def</em>' class.
@@ -474,7 +817,7 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FIXED_DATA_TYPE_DEF_FEATURE_COUNT = DATA_TYPE_DEF_FEATURE_COUNT + 1;
+  int FIXED_DATA_TYPE_DEF_FEATURE_COUNT = DATA_TYPE_DEF_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.impl.IntegerDataTypeDefImpl <em>Integer Data Type Def</em>}' class.
@@ -484,16 +827,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getIntegerDataTypeDef()
    * @generated
    */
-  int INTEGER_DATA_TYPE_DEF = 12;
-
-  /**
-   * The feature id for the '<em><b>Bits</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INTEGER_DATA_TYPE_DEF__BITS = DATA_TYPE_DEF__BITS;
+  int INTEGER_DATA_TYPE_DEF = 22;
 
   /**
    * The feature id for the '<em><b>Kind</b></em>' attribute.
@@ -505,13 +839,22 @@ public interface ESyntaxPackage extends EPackage
   int INTEGER_DATA_TYPE_DEF__KIND = DATA_TYPE_DEF_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Bits</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTEGER_DATA_TYPE_DEF__BITS = DATA_TYPE_DEF_FEATURE_COUNT + 1;
+
+  /**
    * The number of structural features of the '<em>Integer Data Type Def</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INTEGER_DATA_TYPE_DEF_FEATURE_COUNT = DATA_TYPE_DEF_FEATURE_COUNT + 1;
+  int INTEGER_DATA_TYPE_DEF_FEATURE_COUNT = DATA_TYPE_DEF_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.impl.StructTypeDefImpl <em>Struct Type Def</em>}' class.
@@ -521,7 +864,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getStructTypeDef()
    * @generated
    */
-  int STRUCT_TYPE_DEF = 13;
+  int STRUCT_TYPE_DEF = 23;
 
   /**
    * The feature id for the '<em><b>Members</b></em>' containment reference list.
@@ -549,7 +892,16 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getVariable()
    * @generated
    */
-  int VARIABLE = 14;
+  int VARIABLE = 24;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE__NAME = LIBRARY_ITEM__NAME;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -561,179 +913,13 @@ public interface ESyntaxPackage extends EPackage
   int VARIABLE__TYPE = LIBRARY_ITEM_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE__NAME = LIBRARY_ITEM_FEATURE_COUNT + 1;
-
-  /**
    * The number of structural features of the '<em>Variable</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VARIABLE_FEATURE_COUNT = LIBRARY_ITEM_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link hu.e.parser.eSyntax.impl.InstructionWordImpl <em>Instruction Word</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see hu.e.parser.eSyntax.impl.InstructionWordImpl
-   * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getInstructionWord()
-   * @generated
-   */
-  int INSTRUCTION_WORD = 16;
-
-  /**
-   * The feature id for the '<em><b>Sections</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INSTRUCTION_WORD__SECTIONS = OPERATION_STEP_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Instruction Word</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INSTRUCTION_WORD_FEATURE_COUNT = OPERATION_STEP_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link hu.e.parser.eSyntax.impl.WordSectionImpl <em>Word Section</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see hu.e.parser.eSyntax.impl.WordSectionImpl
-   * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getWordSection()
-   * @generated
-   */
-  int WORD_SECTION = 17;
-
-  /**
-   * The feature id for the '<em><b>Size</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WORD_SECTION__SIZE = 0;
-
-  /**
-   * The feature id for the '<em><b>Shift</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WORD_SECTION__SHIFT = 1;
-
-  /**
-   * The number of structural features of the '<em>Word Section</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WORD_SECTION_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link hu.e.parser.eSyntax.impl.LiteralValueImpl <em>Literal Value</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see hu.e.parser.eSyntax.impl.LiteralValueImpl
-   * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getLiteralValue()
-   * @generated
-   */
-  int LITERAL_VALUE = 18;
-
-  /**
-   * The feature id for the '<em><b>Size</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LITERAL_VALUE__SIZE = WORD_SECTION__SIZE;
-
-  /**
-   * The feature id for the '<em><b>Shift</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LITERAL_VALUE__SHIFT = WORD_SECTION__SHIFT;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LITERAL_VALUE__VALUE = WORD_SECTION_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Literal Value</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LITERAL_VALUE_FEATURE_COUNT = WORD_SECTION_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link hu.e.parser.eSyntax.impl.VariableReferenceImpl <em>Variable Reference</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see hu.e.parser.eSyntax.impl.VariableReferenceImpl
-   * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getVariableReference()
-   * @generated
-   */
-  int VARIABLE_REFERENCE = 19;
-
-  /**
-   * The feature id for the '<em><b>Size</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE_REFERENCE__SIZE = WORD_SECTION__SIZE;
-
-  /**
-   * The feature id for the '<em><b>Shift</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE_REFERENCE__SHIFT = WORD_SECTION__SHIFT;
-
-  /**
-   * The feature id for the '<em><b>Var</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE_REFERENCE__VAR = WORD_SECTION_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Variable Reference</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE_REFERENCE_FEATURE_COUNT = WORD_SECTION_FEATURE_COUNT + 1;
+  int VARIABLE_FEATURE_COUNT = LIBRARY_ITEM_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.impl.XPrimaryExpressionImpl <em>XPrimary Expression</em>}' class.
@@ -743,7 +929,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXPrimaryExpression()
    * @generated
    */
-  int XPRIMARY_EXPRESSION = 33;
+  int XPRIMARY_EXPRESSION = 36;
 
   /**
    * The number of structural features of the '<em>XPrimary Expression</em>' class.
@@ -755,6 +941,53 @@ public interface ESyntaxPackage extends EPackage
   int XPRIMARY_EXPRESSION_FEATURE_COUNT = 0;
 
   /**
+   * The meta object id for the '{@link hu.e.parser.eSyntax.impl.ResultVariableReferenceImpl <em>Result Variable Reference</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.e.parser.eSyntax.impl.ResultVariableReferenceImpl
+   * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getResultVariableReference()
+   * @generated
+   */
+  int RESULT_VARIABLE_REFERENCE = 26;
+
+  /**
+   * The number of structural features of the '<em>Result Variable Reference</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RESULT_VARIABLE_REFERENCE_FEATURE_COUNT = XPRIMARY_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link hu.e.parser.eSyntax.impl.VariableReferenceImpl <em>Variable Reference</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.e.parser.eSyntax.impl.VariableReferenceImpl
+   * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getVariableReference()
+   * @generated
+   */
+  int VARIABLE_REFERENCE = 27;
+
+  /**
+   * The feature id for the '<em><b>Var</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_REFERENCE__VAR = XPRIMARY_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Variable Reference</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_REFERENCE_FEATURE_COUNT = XPRIMARY_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.impl.OperationCallImpl <em>Operation Call</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -762,10 +995,10 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getOperationCall()
    * @generated
    */
-  int OPERATION_CALL = 20;
+  int OPERATION_CALL = 28;
 
   /**
-   * The feature id for the '<em><b>Operation</b></em>' reference.
+   * The feature id for the '<em><b>Operation</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -799,7 +1032,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getOperationCallParameter()
    * @generated
    */
-  int OPERATION_CALL_PARAMETER = 21;
+  int OPERATION_CALL_PARAMETER = 29;
 
   /**
    * The number of structural features of the '<em>Operation Call Parameter</em>' class.
@@ -811,32 +1044,23 @@ public interface ESyntaxPackage extends EPackage
   int OPERATION_CALL_PARAMETER_FEATURE_COUNT = 0;
 
   /**
-   * The meta object id for the '{@link hu.e.parser.eSyntax.impl.OperationSignatureImpl <em>Operation Signature</em>}' class.
+   * The meta object id for the '{@link hu.e.parser.eSyntax.impl.OperationTypeDefImpl <em>Operation Type Def</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see hu.e.parser.eSyntax.impl.OperationSignatureImpl
-   * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getOperationSignature()
+   * @see hu.e.parser.eSyntax.impl.OperationTypeDefImpl
+   * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getOperationTypeDef()
    * @generated
    */
-  int OPERATION_SIGNATURE = 22;
+  int OPERATION_TYPE_DEF = 30;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' containment reference.
+   * The feature id for the '<em><b>Result Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int OPERATION_SIGNATURE__TYPE = LIBRARY_ITEM_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OPERATION_SIGNATURE__NAME = LIBRARY_ITEM_FEATURE_COUNT + 1;
+  int OPERATION_TYPE_DEF__RESULT_TYPE = 0;
 
   /**
    * The feature id for the '<em><b>Params</b></em>' containment reference list.
@@ -845,91 +1069,26 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OPERATION_SIGNATURE__PARAMS = LIBRARY_ITEM_FEATURE_COUNT + 2;
+  int OPERATION_TYPE_DEF__PARAMS = 1;
 
   /**
-   * The number of structural features of the '<em>Operation Signature</em>' class.
+   * The number of structural features of the '<em>Operation Type Def</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int OPERATION_SIGNATURE_FEATURE_COUNT = LIBRARY_ITEM_FEATURE_COUNT + 3;
+  int OPERATION_TYPE_DEF_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link hu.e.parser.eSyntax.impl.OperationBlockImpl <em>Operation Block</em>}' class.
+   * The meta object id for the '{@link hu.e.parser.eSyntax.impl.OperationImpl <em>Operation</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see hu.e.parser.eSyntax.impl.OperationBlockImpl
-   * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getOperationBlock()
+   * @see hu.e.parser.eSyntax.impl.OperationImpl
+   * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getOperation()
    * @generated
    */
-  int OPERATION_BLOCK = 23;
-
-  /**
-   * The feature id for the '<em><b>Steps</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OPERATION_BLOCK__STEPS = 0;
-
-  /**
-   * The number of structural features of the '<em>Operation Block</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OPERATION_BLOCK_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link hu.e.parser.eSyntax.impl.OperatorDefinitionImpl <em>Operator Definition</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see hu.e.parser.eSyntax.impl.OperatorDefinitionImpl
-   * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getOperatorDefinition()
-   * @generated
-   */
-  int OPERATOR_DEFINITION = 24;
-
-  /**
-   * The feature id for the '<em><b>Role</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OPERATOR_DEFINITION__ROLE = LIBRARY_ITEM_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Candidate</b></em>' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OPERATOR_DEFINITION__CANDIDATE = LIBRARY_ITEM_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>Operator Definition</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OPERATOR_DEFINITION_FEATURE_COUNT = LIBRARY_ITEM_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link hu.e.parser.eSyntax.impl.LinkedBinaryImpl <em>Linked Binary</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see hu.e.parser.eSyntax.impl.LinkedBinaryImpl
-   * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getLinkedBinary()
-   * @generated
-   */
-  int LINKED_BINARY = 25;
+  int OPERATION = 31;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -938,355 +1097,99 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LINKED_BINARY__NAME = COMPILATION_UNIT__NAME;
+  int OPERATION__NAME = LIBRARY_ITEM__NAME;
 
   /**
-   * The feature id for the '<em><b>Use</b></em>' reference list.
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LINKED_BINARY__USE = COMPILATION_UNIT__USE;
+  int OPERATION__TYPE = LIBRARY_ITEM_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * The feature id for the '<em><b>Overrides</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LINKED_BINARY__TYPE = COMPILATION_UNIT_FEATURE_COUNT + 0;
+  int OPERATION__OVERRIDES = LIBRARY_ITEM_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Sections</b></em>' containment reference list.
+   * The feature id for the '<em><b>Content</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LINKED_BINARY__SECTIONS = COMPILATION_UNIT_FEATURE_COUNT + 1;
+  int OPERATION__CONTENT = LIBRARY_ITEM_FEATURE_COUNT + 2;
 
   /**
-   * The number of structural features of the '<em>Linked Binary</em>' class.
+   * The number of structural features of the '<em>Operation</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LINKED_BINARY_FEATURE_COUNT = COMPILATION_UNIT_FEATURE_COUNT + 2;
+  int OPERATION_FEATURE_COUNT = LIBRARY_ITEM_FEATURE_COUNT + 3;
 
   /**
-   * The meta object id for the '{@link hu.e.parser.eSyntax.impl.BinarySectionImpl <em>Binary Section</em>}' class.
+   * The meta object id for the '{@link hu.e.parser.eSyntax.impl.OperationParameterImpl <em>Operation Parameter</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see hu.e.parser.eSyntax.impl.BinarySectionImpl
-   * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getBinarySection()
+   * @see hu.e.parser.eSyntax.impl.OperationParameterImpl
+   * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getOperationParameter()
    * @generated
    */
-  int BINARY_SECTION = 26;
+  int OPERATION_PARAMETER = 32;
 
   /**
-   * The feature id for the '<em><b>Start</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BINARY_SECTION__START = 0;
-
-  /**
-   * The feature id for the '<em><b>Width</b></em>' attribute.
+   * The number of structural features of the '<em>Operation Parameter</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BINARY_SECTION__WIDTH = 1;
+  int OPERATION_PARAMETER_FEATURE_COUNT = 0;
 
   /**
-   * The number of structural features of the '<em>Binary Section</em>' class.
+   * The meta object id for the '{@link hu.e.parser.eSyntax.impl.LazyParameterImpl <em>Lazy Parameter</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.e.parser.eSyntax.impl.LazyParameterImpl
+   * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getLazyParameter()
+   * @generated
+   */
+  int LAZY_PARAMETER = 33;
+
+  /**
+   * The feature id for the '<em><b>Paramname</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BINARY_SECTION_FEATURE_COUNT = 2;
+  int LAZY_PARAMETER__PARAMNAME = OPERATION_PARAMETER_FEATURE_COUNT + 0;
 
   /**
-   * The meta object id for the '{@link hu.e.parser.eSyntax.impl.FunctionBinarySectionImpl <em>Function Binary Section</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see hu.e.parser.eSyntax.impl.FunctionBinarySectionImpl
-   * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getFunctionBinarySection()
-   * @generated
-   */
-  int FUNCTION_BINARY_SECTION = 27;
-
-  /**
-   * The feature id for the '<em><b>Start</b></em>' containment reference.
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FUNCTION_BINARY_SECTION__START = BINARY_SECTION__START;
+  int LAZY_PARAMETER__TYPE = OPERATION_PARAMETER_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Width</b></em>' attribute.
+   * The number of structural features of the '<em>Lazy Parameter</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FUNCTION_BINARY_SECTION__WIDTH = BINARY_SECTION__WIDTH;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_BINARY_SECTION__NAME = BINARY_SECTION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Start Addr</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_BINARY_SECTION__START_ADDR = BINARY_SECTION_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Memwidth</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_BINARY_SECTION__MEMWIDTH = BINARY_SECTION_FEATURE_COUNT + 2;
-
-  /**
-   * The feature id for the '<em><b>Pointer Type</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_BINARY_SECTION__POINTER_TYPE = BINARY_SECTION_FEATURE_COUNT + 3;
-
-  /**
-   * The feature id for the '<em><b>Address Type</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_BINARY_SECTION__ADDRESS_TYPE = BINARY_SECTION_FEATURE_COUNT + 4;
-
-  /**
-   * The feature id for the '<em><b>Mems</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_BINARY_SECTION__MEMS = BINARY_SECTION_FEATURE_COUNT + 5;
-
-  /**
-   * The feature id for the '<em><b>Optimizercalls</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_BINARY_SECTION__OPTIMIZERCALLS = BINARY_SECTION_FEATURE_COUNT + 6;
-
-  /**
-   * The feature id for the '<em><b>Lib</b></em>' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_BINARY_SECTION__LIB = BINARY_SECTION_FEATURE_COUNT + 7;
-
-  /**
-   * The feature id for the '<em><b>Do</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_BINARY_SECTION__DO = BINARY_SECTION_FEATURE_COUNT + 8;
-
-  /**
-   * The number of structural features of the '<em>Function Binary Section</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_BINARY_SECTION_FEATURE_COUNT = BINARY_SECTION_FEATURE_COUNT + 9;
-
-  /**
-   * The meta object id for the '{@link hu.e.parser.eSyntax.impl.OptimizerCallImpl <em>Optimizer Call</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see hu.e.parser.eSyntax.impl.OptimizerCallImpl
-   * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getOptimizerCall()
-   * @generated
-   */
-  int OPTIMIZER_CALL = 28;
-
-  /**
-   * The feature id for the '<em><b>Optimizer</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OPTIMIZER_CALL__OPTIMIZER = 0;
-
-  /**
-   * The number of structural features of the '<em>Optimizer Call</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OPTIMIZER_CALL_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link hu.e.parser.eSyntax.impl.FunctionMemoryImpl <em>Function Memory</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see hu.e.parser.eSyntax.impl.FunctionMemoryImpl
-   * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getFunctionMemory()
-   * @generated
-   */
-  int FUNCTION_MEMORY = 29;
-
-  /**
-   * The feature id for the '<em><b>Start</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_MEMORY__START = 0;
-
-  /**
-   * The feature id for the '<em><b>End</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_MEMORY__END = 1;
-
-  /**
-   * The number of structural features of the '<em>Function Memory</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_MEMORY_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link hu.e.parser.eSyntax.impl.ConstantBinarySectionImpl <em>Constant Binary Section</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see hu.e.parser.eSyntax.impl.ConstantBinarySectionImpl
-   * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getConstantBinarySection()
-   * @generated
-   */
-  int CONSTANT_BINARY_SECTION = 30;
-
-  /**
-   * The feature id for the '<em><b>Start</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONSTANT_BINARY_SECTION__START = BINARY_SECTION__START;
-
-  /**
-   * The feature id for the '<em><b>Width</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONSTANT_BINARY_SECTION__WIDTH = BINARY_SECTION__WIDTH;
-
-  /**
-   * The feature id for the '<em><b>Data</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONSTANT_BINARY_SECTION__DATA = BINARY_SECTION_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Constant Binary Section</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONSTANT_BINARY_SECTION_FEATURE_COUNT = BINARY_SECTION_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link hu.e.parser.eSyntax.impl.ReferenceBinarySectionImpl <em>Reference Binary Section</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see hu.e.parser.eSyntax.impl.ReferenceBinarySectionImpl
-   * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getReferenceBinarySection()
-   * @generated
-   */
-  int REFERENCE_BINARY_SECTION = 31;
-
-  /**
-   * The feature id for the '<em><b>Start</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REFERENCE_BINARY_SECTION__START = BINARY_SECTION__START;
-
-  /**
-   * The feature id for the '<em><b>Width</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REFERENCE_BINARY_SECTION__WIDTH = BINARY_SECTION__WIDTH;
-
-  /**
-   * The feature id for the '<em><b>Inc</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REFERENCE_BINARY_SECTION__INC = BINARY_SECTION_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Reference Binary Section</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REFERENCE_BINARY_SECTION_FEATURE_COUNT = BINARY_SECTION_FEATURE_COUNT + 1;
+  int LAZY_PARAMETER_FEATURE_COUNT = OPERATION_PARAMETER_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.impl.XExpressionImpl <em>XExpression</em>}' class.
@@ -1296,7 +1199,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXExpression()
    * @generated
    */
-  int XEXPRESSION = 32;
+  int XEXPRESSION = 34;
 
   /**
    * The number of structural features of the '<em>XExpression</em>' class.
@@ -1308,6 +1211,25 @@ public interface ESyntaxPackage extends EPackage
   int XEXPRESSION_FEATURE_COUNT = OPERATION_CALL_PARAMETER_FEATURE_COUNT + 0;
 
   /**
+   * The meta object id for the '{@link hu.e.parser.eSyntax.impl.XExpressionBlockImpl <em>XExpression Block</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.e.parser.eSyntax.impl.XExpressionBlockImpl
+   * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXExpressionBlock()
+   * @generated
+   */
+  int XEXPRESSION_BLOCK = 35;
+
+  /**
+   * The number of structural features of the '<em>XExpression Block</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int XEXPRESSION_BLOCK_FEATURE_COUNT = XPRIMARY_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.impl.XSizeOfExpressionImpl <em>XSize Of Expression</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1315,7 +1237,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXSizeOfExpression()
    * @generated
    */
-  int XSIZE_OF_EXPRESSION = 34;
+  int XSIZE_OF_EXPRESSION = 37;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -1343,16 +1265,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXStructExpression()
    * @generated
    */
-  int XSTRUCT_EXPRESSION = 35;
-
-  /**
-   * The feature id for the '<em><b>Type</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int XSTRUCT_EXPRESSION__TYPE = XPRIMARY_EXPRESSION_FEATURE_COUNT + 0;
+  int XSTRUCT_EXPRESSION = 38;
 
   /**
    * The feature id for the '<em><b>Values</b></em>' containment reference list.
@@ -1361,7 +1274,7 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    * @ordered
    */
-  int XSTRUCT_EXPRESSION__VALUES = XPRIMARY_EXPRESSION_FEATURE_COUNT + 1;
+  int XSTRUCT_EXPRESSION__VALUES = XPRIMARY_EXPRESSION_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>XStruct Expression</em>' class.
@@ -1370,7 +1283,7 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    * @ordered
    */
-  int XSTRUCT_EXPRESSION_FEATURE_COUNT = XPRIMARY_EXPRESSION_FEATURE_COUNT + 2;
+  int XSTRUCT_EXPRESSION_FEATURE_COUNT = XPRIMARY_EXPRESSION_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.impl.XExpression1Impl <em>XExpression1</em>}' class.
@@ -1380,7 +1293,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXExpression1()
    * @generated
    */
-  int XEXPRESSION1 = 36;
+  int XEXPRESSION1 = 39;
 
   /**
    * The feature id for the '<em><b>Operator</b></em>' attribute list.
@@ -1417,7 +1330,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXExpression0()
    * @generated
    */
-  int XEXPRESSION0 = 37;
+  int XEXPRESSION0 = 40;
 
   /**
    * The feature id for the '<em><b>A</b></em>' containment reference.
@@ -1454,7 +1367,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXExpressionM1()
    * @generated
    */
-  int XEXPRESSION_M1 = 38;
+  int XEXPRESSION_M1 = 41;
 
   /**
    * The feature id for the '<em><b>A</b></em>' containment reference.
@@ -1491,7 +1404,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXExpression2()
    * @generated
    */
-  int XEXPRESSION2 = 39;
+  int XEXPRESSION2 = 42;
 
   /**
    * The feature id for the '<em><b>A</b></em>' containment reference.
@@ -1537,7 +1450,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXExpression3()
    * @generated
    */
-  int XEXPRESSION3 = 40;
+  int XEXPRESSION3 = 43;
 
   /**
    * The feature id for the '<em><b>A</b></em>' containment reference.
@@ -1583,7 +1496,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXExpression4()
    * @generated
    */
-  int XEXPRESSION4 = 41;
+  int XEXPRESSION4 = 44;
 
   /**
    * The feature id for the '<em><b>A</b></em>' containment reference.
@@ -1629,7 +1542,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXExpression5()
    * @generated
    */
-  int XEXPRESSION5 = 42;
+  int XEXPRESSION5 = 45;
 
   /**
    * The feature id for the '<em><b>A</b></em>' containment reference.
@@ -1675,7 +1588,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXExpression6()
    * @generated
    */
-  int XEXPRESSION6 = 43;
+  int XEXPRESSION6 = 46;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -1730,7 +1643,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXExpressionLiteral()
    * @generated
    */
-  int XEXPRESSION_LITERAL = 44;
+  int XEXPRESSION_LITERAL = 47;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1758,7 +1671,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXErrorExpression()
    * @generated
    */
-  int XERROR_EXPRESSION = 46;
+  int XERROR_EXPRESSION = 49;
 
   /**
    * The feature id for the '<em><b>Level</b></em>' attribute.
@@ -1795,7 +1708,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXIsLiteralExpression()
    * @generated
    */
-  int XIS_LITERAL_EXPRESSION = 47;
+  int XIS_LITERAL_EXPRESSION = 50;
 
   /**
    * The feature id for the '<em><b>Ref</b></em>' containment reference.
@@ -1814,153 +1727,6 @@ public interface ESyntaxPackage extends EPackage
    * @ordered
    */
   int XIS_LITERAL_EXPRESSION_FEATURE_COUNT = XPRIMARY_EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link hu.e.parser.eSyntax.impl.XIfExpressionImpl <em>XIf Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see hu.e.parser.eSyntax.impl.XIfExpressionImpl
-   * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXIfExpression()
-   * @generated
-   */
-  int XIF_EXPRESSION = 48;
-
-  /**
-   * The feature id for the '<em><b>If</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int XIF_EXPRESSION__IF = XTOP_LEVEL_EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Then</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int XIF_EXPRESSION__THEN = XTOP_LEVEL_EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Else</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int XIF_EXPRESSION__ELSE = XTOP_LEVEL_EXPRESSION_FEATURE_COUNT + 2;
-
-  /**
-   * The number of structural features of the '<em>XIf Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int XIF_EXPRESSION_FEATURE_COUNT = XTOP_LEVEL_EXPRESSION_FEATURE_COUNT + 3;
-
-  /**
-   * The meta object id for the '{@link hu.e.parser.eSyntax.impl.XWhileExpressionImpl <em>XWhile Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see hu.e.parser.eSyntax.impl.XWhileExpressionImpl
-   * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXWhileExpression()
-   * @generated
-   */
-  int XWHILE_EXPRESSION = 49;
-
-  /**
-   * The feature id for the '<em><b>Cond</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int XWHILE_EXPRESSION__COND = XTOP_LEVEL_EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Do</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int XWHILE_EXPRESSION__DO = XTOP_LEVEL_EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>XWhile Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int XWHILE_EXPRESSION_FEATURE_COUNT = XTOP_LEVEL_EXPRESSION_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link hu.e.parser.eSyntax.impl.XForExpressionImpl <em>XFor Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see hu.e.parser.eSyntax.impl.XForExpressionImpl
-   * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXForExpression()
-   * @generated
-   */
-  int XFOR_EXPRESSION = 50;
-
-  /**
-   * The feature id for the '<em><b>Var</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int XFOR_EXPRESSION__VAR = XTOP_LEVEL_EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>From</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int XFOR_EXPRESSION__FROM = XTOP_LEVEL_EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>By</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int XFOR_EXPRESSION__BY = XTOP_LEVEL_EXPRESSION_FEATURE_COUNT + 2;
-
-  /**
-   * The feature id for the '<em><b>To</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int XFOR_EXPRESSION__TO = XTOP_LEVEL_EXPRESSION_FEATURE_COUNT + 3;
-
-  /**
-   * The feature id for the '<em><b>Do</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int XFOR_EXPRESSION__DO = XTOP_LEVEL_EXPRESSION_FEATURE_COUNT + 4;
-
-  /**
-   * The number of structural features of the '<em>XFor Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int XFOR_EXPRESSION_FEATURE_COUNT = XTOP_LEVEL_EXPRESSION_FEATURE_COUNT + 5;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.impl.XParenthesizedExpressionImpl <em>XParenthesized Expression</em>}' class.
@@ -2001,15 +1767,6 @@ public interface ESyntaxPackage extends EPackage
   int STRUCT_TYPE_DEF_MEMBER = 52;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STRUCT_TYPE_DEF_MEMBER__TYPE = VARIABLE__TYPE;
-
-  /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2017,6 +1774,15 @@ public interface ESyntaxPackage extends EPackage
    * @ordered
    */
   int STRUCT_TYPE_DEF_MEMBER__NAME = VARIABLE__NAME;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRUCT_TYPE_DEF_MEMBER__TYPE = VARIABLE__TYPE;
 
   /**
    * The number of structural features of the '<em>Struct Type Def Member</em>' class.
@@ -2038,15 +1804,6 @@ public interface ESyntaxPackage extends EPackage
   int CONSTANT_VARIABLE = 53;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONSTANT_VARIABLE__TYPE = VARIABLE__TYPE;
-
-  /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2054,6 +1811,15 @@ public interface ESyntaxPackage extends EPackage
    * @ordered
    */
   int CONSTANT_VARIABLE__NAME = VARIABLE__NAME;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONSTANT_VARIABLE__TYPE = VARIABLE__TYPE;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -2084,15 +1850,6 @@ public interface ESyntaxPackage extends EPackage
   int REGISTER_VARIABLE = 54;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REGISTER_VARIABLE__TYPE = VARIABLE__TYPE;
-
-  /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2100,6 +1857,15 @@ public interface ESyntaxPackage extends EPackage
    * @ordered
    */
   int REGISTER_VARIABLE__NAME = VARIABLE__NAME;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REGISTER_VARIABLE__TYPE = VARIABLE__TYPE;
 
   /**
    * The feature id for the '<em><b>Addr</b></em>' containment reference.
@@ -2120,116 +1886,6 @@ public interface ESyntaxPackage extends EPackage
   int REGISTER_VARIABLE_FEATURE_COUNT = VARIABLE_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link hu.e.parser.eSyntax.impl.LabelImpl <em>Label</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see hu.e.parser.eSyntax.impl.LabelImpl
-   * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getLabel()
-   * @generated
-   */
-  int LABEL = 55;
-
-  /**
-   * The feature id for the '<em><b>Type</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LABEL__TYPE = VARIABLE__TYPE;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LABEL__NAME = VARIABLE__NAME;
-
-  /**
-   * The number of structural features of the '<em>Label</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LABEL_FEATURE_COUNT = VARIABLE_FEATURE_COUNT + 0;
-
-  /**
-   * The meta object id for the '{@link hu.e.parser.eSyntax.impl.OperationImpl <em>Operation</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see hu.e.parser.eSyntax.impl.OperationImpl
-   * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getOperation()
-   * @generated
-   */
-  int OPERATION = 56;
-
-  /**
-   * The feature id for the '<em><b>Type</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OPERATION__TYPE = OPERATION_SIGNATURE__TYPE;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OPERATION__NAME = OPERATION_SIGNATURE__NAME;
-
-  /**
-   * The feature id for the '<em><b>Params</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OPERATION__PARAMS = OPERATION_SIGNATURE__PARAMS;
-
-  /**
-   * The feature id for the '<em><b>Block</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OPERATION__BLOCK = OPERATION_SIGNATURE_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Return</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OPERATION__RETURN = OPERATION_SIGNATURE_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Returnvar</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OPERATION__RETURNVAR = OPERATION_SIGNATURE_FEATURE_COUNT + 2;
-
-  /**
-   * The number of structural features of the '<em>Operation</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OPERATION_FEATURE_COUNT = OPERATION_SIGNATURE_FEATURE_COUNT + 3;
-
-  /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.impl.ParameterVariableImpl <em>Parameter Variable</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2237,16 +1893,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getParameterVariable()
    * @generated
    */
-  int PARAMETER_VARIABLE = 57;
-
-  /**
-   * The feature id for the '<em><b>Type</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PARAMETER_VARIABLE__TYPE = VARIABLE__TYPE;
+  int PARAMETER_VARIABLE = 55;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2256,6 +1903,15 @@ public interface ESyntaxPackage extends EPackage
    * @ordered
    */
   int PARAMETER_VARIABLE__NAME = VARIABLE__NAME;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARAMETER_VARIABLE__TYPE = VARIABLE__TYPE;
 
   /**
    * The feature id for the '<em><b>Kind</b></em>' attribute.
@@ -2285,6 +1941,34 @@ public interface ESyntaxPackage extends EPackage
   int PARAMETER_VARIABLE_FEATURE_COUNT = VARIABLE_FEATURE_COUNT + 2;
 
   /**
+   * The meta object id for the '{@link hu.e.parser.eSyntax.impl.OperationBlockImpl <em>Operation Block</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see hu.e.parser.eSyntax.impl.OperationBlockImpl
+   * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getOperationBlock()
+   * @generated
+   */
+  int OPERATION_BLOCK = 56;
+
+  /**
+   * The feature id for the '<em><b>Steps</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERATION_BLOCK__STEPS = XEXPRESSION_BLOCK_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Operation Block</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERATION_BLOCK_FEATURE_COUNT = XEXPRESSION_BLOCK_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.IntegerKind <em>Integer Kind</em>}' enum.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2292,7 +1976,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getIntegerKind()
    * @generated
    */
-  int INTEGER_KIND = 58;
+  int INTEGER_KIND = 57;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.ParameterKind <em>Parameter Kind</em>}' enum.
@@ -2302,27 +1986,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getParameterKind()
    * @generated
    */
-  int PARAMETER_KIND = 59;
-
-  /**
-   * The meta object id for the '{@link hu.e.parser.eSyntax.OperationRole <em>Operation Role</em>}' enum.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see hu.e.parser.eSyntax.OperationRole
-   * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getOperationRole()
-   * @generated
-   */
-  int OPERATION_ROLE = 60;
-
-  /**
-   * The meta object id for the '{@link hu.e.parser.eSyntax.BinaryType <em>Binary Type</em>}' enum.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see hu.e.parser.eSyntax.BinaryType
-   * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getBinaryType()
-   * @generated
-   */
-  int BINARY_TYPE = 61;
+  int PARAMETER_KIND = 58;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.UNARY_OPERATOR <em>UNARY OPERATOR</em>}' enum.
@@ -2332,7 +1996,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getUNARY_OPERATOR()
    * @generated
    */
-  int UNARY_OPERATOR = 62;
+  int UNARY_OPERATOR = 59;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.MULTIPLICATIVE_OPERATOR <em>MULTIPLICATIVE OPERATOR</em>}' enum.
@@ -2342,7 +2006,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getMULTIPLICATIVE_OPERATOR()
    * @generated
    */
-  int MULTIPLICATIVE_OPERATOR = 63;
+  int MULTIPLICATIVE_OPERATOR = 60;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.ADDITIVE_OPERATOR <em>ADDITIVE OPERATOR</em>}' enum.
@@ -2352,7 +2016,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getADDITIVE_OPERATOR()
    * @generated
    */
-  int ADDITIVE_OPERATOR = 64;
+  int ADDITIVE_OPERATOR = 61;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.EQUALITY_OPERATOR <em>EQUALITY OPERATOR</em>}' enum.
@@ -2362,7 +2026,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getEQUALITY_OPERATOR()
    * @generated
    */
-  int EQUALITY_OPERATOR = 65;
+  int EQUALITY_OPERATOR = 62;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.BOOLEAN_OPERATOR <em>BOOLEAN OPERATOR</em>}' enum.
@@ -2372,7 +2036,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getBOOLEAN_OPERATOR()
    * @generated
    */
-  int BOOLEAN_OPERATOR = 66;
+  int BOOLEAN_OPERATOR = 63;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.ErrorLevels <em>Error Levels</em>}' enum.
@@ -2382,7 +2046,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getErrorLevels()
    * @generated
    */
-  int ERROR_LEVELS = 67;
+  int ERROR_LEVELS = 64;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.OpSingleAssign <em>Op Single Assign</em>}' enum.
@@ -2392,7 +2056,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getOpSingleAssign()
    * @generated
    */
-  int OP_SINGLE_ASSIGN = 68;
+  int OP_SINGLE_ASSIGN = 65;
 
 
   /**
@@ -2417,17 +2081,6 @@ public interface ESyntaxPackage extends EPackage
   EAttribute getCompilationUnit_Name();
 
   /**
-   * Returns the meta object for the reference list '{@link hu.e.parser.eSyntax.CompilationUnit#getUse <em>Use</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Use</em>'.
-   * @see hu.e.parser.eSyntax.CompilationUnit#getUse()
-   * @see #getCompilationUnit()
-   * @generated
-   */
-  EReference getCompilationUnit_Use();
-
-  /**
    * Returns the meta object for class '{@link hu.e.parser.eSyntax.AnnotationDefinition <em>Annotation Definition</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2436,17 +2089,6 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    */
   EClass getAnnotationDefinition();
-
-  /**
-   * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.AnnotationDefinition#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see hu.e.parser.eSyntax.AnnotationDefinition#getName()
-   * @see #getAnnotationDefinition()
-   * @generated
-   */
-  EAttribute getAnnotationDefinition_Name();
 
   /**
    * Returns the meta object for class '{@link hu.e.parser.eSyntax.Annotation <em>Annotation</em>}'.
@@ -2459,15 +2101,282 @@ public interface ESyntaxPackage extends EPackage
   EClass getAnnotation();
 
   /**
-   * Returns the meta object for the reference '{@link hu.e.parser.eSyntax.Annotation#getDefinition <em>Definition</em>}'.
+   * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.Annotation#getDefinition <em>Definition</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Definition</em>'.
+   * @return the meta object for the attribute '<em>Definition</em>'.
    * @see hu.e.parser.eSyntax.Annotation#getDefinition()
    * @see #getAnnotation()
    * @generated
    */
-  EReference getAnnotation_Definition();
+  EAttribute getAnnotation_Definition();
+
+  /**
+   * Returns the meta object for class '{@link hu.e.parser.eSyntax.WorkflowNotation <em>Workflow Notation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Workflow Notation</em>'.
+   * @see hu.e.parser.eSyntax.WorkflowNotation
+   * @generated
+   */
+  EClass getWorkflowNotation();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link hu.e.parser.eSyntax.WorkflowNotation#getSteps <em>Steps</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Steps</em>'.
+   * @see hu.e.parser.eSyntax.WorkflowNotation#getSteps()
+   * @see #getWorkflowNotation()
+   * @generated
+   */
+  EReference getWorkflowNotation_Steps();
+
+  /**
+   * Returns the meta object for class '{@link hu.e.parser.eSyntax.WorkflowStepNotation <em>Workflow Step Notation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Workflow Step Notation</em>'.
+   * @see hu.e.parser.eSyntax.WorkflowStepNotation
+   * @generated
+   */
+  EClass getWorkflowStepNotation();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.WorkflowStepNotation#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Type</em>'.
+   * @see hu.e.parser.eSyntax.WorkflowStepNotation#getType()
+   * @see #getWorkflowStepNotation()
+   * @generated
+   */
+  EAttribute getWorkflowStepNotation_Type();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link hu.e.parser.eSyntax.WorkflowStepNotation#getParams <em>Params</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Params</em>'.
+   * @see hu.e.parser.eSyntax.WorkflowStepNotation#getParams()
+   * @see #getWorkflowStepNotation()
+   * @generated
+   */
+  EReference getWorkflowStepNotation_Params();
+
+  /**
+   * Returns the meta object for class '{@link hu.e.parser.eSyntax.WorkflowStepParameterNotation <em>Workflow Step Parameter Notation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Workflow Step Parameter Notation</em>'.
+   * @see hu.e.parser.eSyntax.WorkflowStepParameterNotation
+   * @generated
+   */
+  EClass getWorkflowStepParameterNotation();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.WorkflowStepParameterNotation#getParameter <em>Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Parameter</em>'.
+   * @see hu.e.parser.eSyntax.WorkflowStepParameterNotation#getParameter()
+   * @see #getWorkflowStepParameterNotation()
+   * @generated
+   */
+  EAttribute getWorkflowStepParameterNotation_Parameter();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.WorkflowStepParameterNotation#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see hu.e.parser.eSyntax.WorkflowStepParameterNotation#getValue()
+   * @see #getWorkflowStepParameterNotation()
+   * @generated
+   */
+  EAttribute getWorkflowStepParameterNotation_Value();
+
+  /**
+   * Returns the meta object for class '{@link hu.e.parser.eSyntax.InstructionSetNotation <em>Instruction Set Notation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Instruction Set Notation</em>'.
+   * @see hu.e.parser.eSyntax.InstructionSetNotation
+   * @generated
+   */
+  EClass getInstructionSetNotation();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.InstructionSetNotation#getExtends <em>Extends</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Extends</em>'.
+   * @see hu.e.parser.eSyntax.InstructionSetNotation#getExtends()
+   * @see #getInstructionSetNotation()
+   * @generated
+   */
+  EAttribute getInstructionSetNotation_Extends();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link hu.e.parser.eSyntax.InstructionSetNotation#getInstructions <em>Instructions</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Instructions</em>'.
+   * @see hu.e.parser.eSyntax.InstructionSetNotation#getInstructions()
+   * @see #getInstructionSetNotation()
+   * @generated
+   */
+  EReference getInstructionSetNotation_Instructions();
+
+  /**
+   * Returns the meta object for class '{@link hu.e.parser.eSyntax.InstructionNotation <em>Instruction Notation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Instruction Notation</em>'.
+   * @see hu.e.parser.eSyntax.InstructionNotation
+   * @generated
+   */
+  EClass getInstructionNotation();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.InstructionNotation#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see hu.e.parser.eSyntax.InstructionNotation#getName()
+   * @see #getInstructionNotation()
+   * @generated
+   */
+  EAttribute getInstructionNotation_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link hu.e.parser.eSyntax.InstructionNotation#getParams <em>Params</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Params</em>'.
+   * @see hu.e.parser.eSyntax.InstructionNotation#getParams()
+   * @see #getInstructionNotation()
+   * @generated
+   */
+  EReference getInstructionNotation_Params();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link hu.e.parser.eSyntax.InstructionNotation#getWords <em>Words</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Words</em>'.
+   * @see hu.e.parser.eSyntax.InstructionNotation#getWords()
+   * @see #getInstructionNotation()
+   * @generated
+   */
+  EReference getInstructionNotation_Words();
+
+  /**
+   * Returns the meta object for class '{@link hu.e.parser.eSyntax.InstructionWordNotation <em>Instruction Word Notation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Instruction Word Notation</em>'.
+   * @see hu.e.parser.eSyntax.InstructionWordNotation
+   * @generated
+   */
+  EClass getInstructionWordNotation();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link hu.e.parser.eSyntax.InstructionWordNotation#getSections <em>Sections</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Sections</em>'.
+   * @see hu.e.parser.eSyntax.InstructionWordNotation#getSections()
+   * @see #getInstructionWordNotation()
+   * @generated
+   */
+  EReference getInstructionWordNotation_Sections();
+
+  /**
+   * Returns the meta object for class '{@link hu.e.parser.eSyntax.InstructionParameterNotation <em>Instruction Parameter Notation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Instruction Parameter Notation</em>'.
+   * @see hu.e.parser.eSyntax.InstructionParameterNotation
+   * @generated
+   */
+  EClass getInstructionParameterNotation();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.InstructionParameterNotation#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see hu.e.parser.eSyntax.InstructionParameterNotation#getName()
+   * @see #getInstructionParameterNotation()
+   * @generated
+   */
+  EAttribute getInstructionParameterNotation_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.InstructionParameterNotation#getDefault <em>Default</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Default</em>'.
+   * @see hu.e.parser.eSyntax.InstructionParameterNotation#getDefault()
+   * @see #getInstructionParameterNotation()
+   * @generated
+   */
+  EAttribute getInstructionParameterNotation_Default();
+
+  /**
+   * Returns the meta object for class '{@link hu.e.parser.eSyntax.InsctructionSectionNotation <em>Insctruction Section Notation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Insctruction Section Notation</em>'.
+   * @see hu.e.parser.eSyntax.InsctructionSectionNotation
+   * @generated
+   */
+  EClass getInsctructionSectionNotation();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.InsctructionSectionNotation#getParam <em>Param</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Param</em>'.
+   * @see hu.e.parser.eSyntax.InsctructionSectionNotation#getParam()
+   * @see #getInsctructionSectionNotation()
+   * @generated
+   */
+  EAttribute getInsctructionSectionNotation_Param();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.InsctructionSectionNotation#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see hu.e.parser.eSyntax.InsctructionSectionNotation#getValue()
+   * @see #getInsctructionSectionNotation()
+   * @generated
+   */
+  EAttribute getInsctructionSectionNotation_Value();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.InsctructionSectionNotation#getSize <em>Size</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Size</em>'.
+   * @see hu.e.parser.eSyntax.InsctructionSectionNotation#getSize()
+   * @see #getInsctructionSectionNotation()
+   * @generated
+   */
+  EAttribute getInsctructionSectionNotation_Size();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.InsctructionSectionNotation#getShift <em>Shift</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Shift</em>'.
+   * @see hu.e.parser.eSyntax.InsctructionSectionNotation#getShift()
+   * @see #getInsctructionSectionNotation()
+   * @generated
+   */
+  EAttribute getInsctructionSectionNotation_Shift();
 
   /**
    * Returns the meta object for class '{@link hu.e.parser.eSyntax.Library <em>Library</em>}'.
@@ -2480,15 +2389,15 @@ public interface ESyntaxPackage extends EPackage
   EClass getLibrary();
 
   /**
-   * Returns the meta object for the reference list '{@link hu.e.parser.eSyntax.Library#getOverrides <em>Overrides</em>}'.
+   * Returns the meta object for the attribute list '{@link hu.e.parser.eSyntax.Library#getUse <em>Use</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Overrides</em>'.
-   * @see hu.e.parser.eSyntax.Library#getOverrides()
+   * @return the meta object for the attribute list '<em>Use</em>'.
+   * @see hu.e.parser.eSyntax.Library#getUse()
    * @see #getLibrary()
    * @generated
    */
-  EReference getLibrary_Overrides();
+  EAttribute getLibrary_Use();
 
   /**
    * Returns the meta object for the containment reference list '{@link hu.e.parser.eSyntax.Library#getItems <em>Items</em>}'.
@@ -2512,6 +2421,17 @@ public interface ESyntaxPackage extends EPackage
   EClass getLibraryItem();
 
   /**
+   * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.LibraryItem#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see hu.e.parser.eSyntax.LibraryItem#getName()
+   * @see #getLibraryItem()
+   * @generated
+   */
+  EAttribute getLibraryItem_Name();
+
+  /**
    * Returns the meta object for class '{@link hu.e.parser.eSyntax.Type <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2520,17 +2440,6 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    */
   EClass getType();
-
-  /**
-   * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.Type#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see hu.e.parser.eSyntax.Type#getName()
-   * @see #getType()
-   * @generated
-   */
-  EAttribute getType_Name();
 
   /**
    * Returns the meta object for the containment reference '{@link hu.e.parser.eSyntax.Type#getDef <em>Def</em>}'.
@@ -2552,6 +2461,16 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    */
   EClass getTypeDef();
+
+  /**
+   * Returns the meta object for class '{@link hu.e.parser.eSyntax.UnspecifiedTypeDef <em>Unspecified Type Def</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Unspecified Type Def</em>'.
+   * @see hu.e.parser.eSyntax.UnspecifiedTypeDef
+   * @generated
+   */
+  EClass getUnspecifiedTypeDef();
 
   /**
    * Returns the meta object for class '{@link hu.e.parser.eSyntax.PointerTypeDef <em>Pointer Type Def</em>}'.
@@ -2585,17 +2504,6 @@ public interface ESyntaxPackage extends EPackage
   EClass getArrayTypeDef();
 
   /**
-   * Returns the meta object for the containment reference '{@link hu.e.parser.eSyntax.ArrayTypeDef#getSize <em>Size</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Size</em>'.
-   * @see hu.e.parser.eSyntax.ArrayTypeDef#getSize()
-   * @see #getArrayTypeDef()
-   * @generated
-   */
-  EReference getArrayTypeDef_Size();
-
-  /**
    * Returns the meta object for the containment reference '{@link hu.e.parser.eSyntax.ArrayTypeDef#getDef <em>Def</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2605,6 +2513,17 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    */
   EReference getArrayTypeDef_Def();
+
+  /**
+   * Returns the meta object for the containment reference '{@link hu.e.parser.eSyntax.ArrayTypeDef#getSize <em>Size</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Size</em>'.
+   * @see hu.e.parser.eSyntax.ArrayTypeDef#getSize()
+   * @see #getArrayTypeDef()
+   * @generated
+   */
+  EReference getArrayTypeDef_Size();
 
   /**
    * Returns the meta object for class '{@link hu.e.parser.eSyntax.RefTypeDef <em>Ref Type Def</em>}'.
@@ -2617,15 +2536,15 @@ public interface ESyntaxPackage extends EPackage
   EClass getRefTypeDef();
 
   /**
-   * Returns the meta object for the reference '{@link hu.e.parser.eSyntax.RefTypeDef#getType <em>Type</em>}'.
+   * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.RefTypeDef#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Type</em>'.
+   * @return the meta object for the attribute '<em>Type</em>'.
    * @see hu.e.parser.eSyntax.RefTypeDef#getType()
    * @see #getRefTypeDef()
    * @generated
    */
-  EReference getRefTypeDef_Type();
+  EAttribute getRefTypeDef_Type();
 
   /**
    * Returns the meta object for class '{@link hu.e.parser.eSyntax.DataTypeDef <em>Data Type Def</em>}'.
@@ -2638,15 +2557,14 @@ public interface ESyntaxPackage extends EPackage
   EClass getDataTypeDef();
 
   /**
-   * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.DataTypeDef#getBits <em>Bits</em>}'.
+   * Returns the meta object for class '{@link hu.e.parser.eSyntax.LabelDataTypeDef <em>Label Data Type Def</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Bits</em>'.
-   * @see hu.e.parser.eSyntax.DataTypeDef#getBits()
-   * @see #getDataTypeDef()
+   * @return the meta object for class '<em>Label Data Type Def</em>'.
+   * @see hu.e.parser.eSyntax.LabelDataTypeDef
    * @generated
    */
-  EAttribute getDataTypeDef_Bits();
+  EClass getLabelDataTypeDef();
 
   /**
    * Returns the meta object for class '{@link hu.e.parser.eSyntax.FixedDataTypeDef <em>Fixed Data Type Def</em>}'.
@@ -2657,6 +2575,17 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    */
   EClass getFixedDataTypeDef();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.FixedDataTypeDef#getBits <em>Bits</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Bits</em>'.
+   * @see hu.e.parser.eSyntax.FixedDataTypeDef#getBits()
+   * @see #getFixedDataTypeDef()
+   * @generated
+   */
+  EAttribute getFixedDataTypeDef_Bits();
 
   /**
    * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.FixedDataTypeDef#getScale <em>Scale</em>}'.
@@ -2689,6 +2618,17 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    */
   EAttribute getIntegerDataTypeDef_Kind();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.IntegerDataTypeDef#getBits <em>Bits</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Bits</em>'.
+   * @see hu.e.parser.eSyntax.IntegerDataTypeDef#getBits()
+   * @see #getIntegerDataTypeDef()
+   * @generated
+   */
+  EAttribute getIntegerDataTypeDef_Bits();
 
   /**
    * Returns the meta object for class '{@link hu.e.parser.eSyntax.StructTypeDef <em>Struct Type Def</em>}'.
@@ -2733,17 +2673,6 @@ public interface ESyntaxPackage extends EPackage
   EReference getVariable_Type();
 
   /**
-   * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.Variable#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see hu.e.parser.eSyntax.Variable#getName()
-   * @see #getVariable()
-   * @generated
-   */
-  EAttribute getVariable_Name();
-
-  /**
    * Returns the meta object for class '{@link hu.e.parser.eSyntax.OperationStep <em>Operation Step</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2754,78 +2683,14 @@ public interface ESyntaxPackage extends EPackage
   EClass getOperationStep();
 
   /**
-   * Returns the meta object for class '{@link hu.e.parser.eSyntax.InstructionWord <em>Instruction Word</em>}'.
+   * Returns the meta object for class '{@link hu.e.parser.eSyntax.ResultVariableReference <em>Result Variable Reference</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Instruction Word</em>'.
-   * @see hu.e.parser.eSyntax.InstructionWord
+   * @return the meta object for class '<em>Result Variable Reference</em>'.
+   * @see hu.e.parser.eSyntax.ResultVariableReference
    * @generated
    */
-  EClass getInstructionWord();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link hu.e.parser.eSyntax.InstructionWord#getSections <em>Sections</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Sections</em>'.
-   * @see hu.e.parser.eSyntax.InstructionWord#getSections()
-   * @see #getInstructionWord()
-   * @generated
-   */
-  EReference getInstructionWord_Sections();
-
-  /**
-   * Returns the meta object for class '{@link hu.e.parser.eSyntax.WordSection <em>Word Section</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Word Section</em>'.
-   * @see hu.e.parser.eSyntax.WordSection
-   * @generated
-   */
-  EClass getWordSection();
-
-  /**
-   * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.WordSection#getSize <em>Size</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Size</em>'.
-   * @see hu.e.parser.eSyntax.WordSection#getSize()
-   * @see #getWordSection()
-   * @generated
-   */
-  EAttribute getWordSection_Size();
-
-  /**
-   * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.WordSection#getShift <em>Shift</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Shift</em>'.
-   * @see hu.e.parser.eSyntax.WordSection#getShift()
-   * @see #getWordSection()
-   * @generated
-   */
-  EAttribute getWordSection_Shift();
-
-  /**
-   * Returns the meta object for class '{@link hu.e.parser.eSyntax.LiteralValue <em>Literal Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Literal Value</em>'.
-   * @see hu.e.parser.eSyntax.LiteralValue
-   * @generated
-   */
-  EClass getLiteralValue();
-
-  /**
-   * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.LiteralValue#getValue <em>Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
-   * @see hu.e.parser.eSyntax.LiteralValue#getValue()
-   * @see #getLiteralValue()
-   * @generated
-   */
-  EAttribute getLiteralValue_Value();
+  EClass getResultVariableReference();
 
   /**
    * Returns the meta object for class '{@link hu.e.parser.eSyntax.VariableReference <em>Variable Reference</em>}'.
@@ -2838,15 +2703,15 @@ public interface ESyntaxPackage extends EPackage
   EClass getVariableReference();
 
   /**
-   * Returns the meta object for the reference '{@link hu.e.parser.eSyntax.VariableReference#getVar <em>Var</em>}'.
+   * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.VariableReference#getVar <em>Var</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Var</em>'.
+   * @return the meta object for the attribute '<em>Var</em>'.
    * @see hu.e.parser.eSyntax.VariableReference#getVar()
    * @see #getVariableReference()
    * @generated
    */
-  EReference getVariableReference_Var();
+  EAttribute getVariableReference_Var();
 
   /**
    * Returns the meta object for class '{@link hu.e.parser.eSyntax.OperationCall <em>Operation Call</em>}'.
@@ -2859,15 +2724,15 @@ public interface ESyntaxPackage extends EPackage
   EClass getOperationCall();
 
   /**
-   * Returns the meta object for the reference '{@link hu.e.parser.eSyntax.OperationCall#getOperation <em>Operation</em>}'.
+   * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.OperationCall#getOperation <em>Operation</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Operation</em>'.
+   * @return the meta object for the attribute '<em>Operation</em>'.
    * @see hu.e.parser.eSyntax.OperationCall#getOperation()
    * @see #getOperationCall()
    * @generated
    */
-  EReference getOperationCall_Operation();
+  EAttribute getOperationCall_Operation();
 
   /**
    * Returns the meta object for the containment reference list '{@link hu.e.parser.eSyntax.OperationCall#getParams <em>Params</em>}'.
@@ -2891,346 +2756,121 @@ public interface ESyntaxPackage extends EPackage
   EClass getOperationCallParameter();
 
   /**
-   * Returns the meta object for class '{@link hu.e.parser.eSyntax.OperationSignature <em>Operation Signature</em>}'.
+   * Returns the meta object for class '{@link hu.e.parser.eSyntax.OperationTypeDef <em>Operation Type Def</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Operation Signature</em>'.
-   * @see hu.e.parser.eSyntax.OperationSignature
+   * @return the meta object for class '<em>Operation Type Def</em>'.
+   * @see hu.e.parser.eSyntax.OperationTypeDef
    * @generated
    */
-  EClass getOperationSignature();
+  EClass getOperationTypeDef();
 
   /**
-   * Returns the meta object for the containment reference list '{@link hu.e.parser.eSyntax.OperationSignature#getParams <em>Params</em>}'.
+   * Returns the meta object for the containment reference '{@link hu.e.parser.eSyntax.OperationTypeDef#getResultType <em>Result Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Result Type</em>'.
+   * @see hu.e.parser.eSyntax.OperationTypeDef#getResultType()
+   * @see #getOperationTypeDef()
+   * @generated
+   */
+  EReference getOperationTypeDef_ResultType();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link hu.e.parser.eSyntax.OperationTypeDef#getParams <em>Params</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Params</em>'.
-   * @see hu.e.parser.eSyntax.OperationSignature#getParams()
-   * @see #getOperationSignature()
+   * @see hu.e.parser.eSyntax.OperationTypeDef#getParams()
+   * @see #getOperationTypeDef()
    * @generated
    */
-  EReference getOperationSignature_Params();
+  EReference getOperationTypeDef_Params();
 
   /**
-   * Returns the meta object for class '{@link hu.e.parser.eSyntax.OperationBlock <em>Operation Block</em>}'.
+   * Returns the meta object for class '{@link hu.e.parser.eSyntax.Operation <em>Operation</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Operation Block</em>'.
-   * @see hu.e.parser.eSyntax.OperationBlock
+   * @return the meta object for class '<em>Operation</em>'.
+   * @see hu.e.parser.eSyntax.Operation
    * @generated
    */
-  EClass getOperationBlock();
+  EClass getOperation();
 
   /**
-   * Returns the meta object for the containment reference list '{@link hu.e.parser.eSyntax.OperationBlock#getSteps <em>Steps</em>}'.
+   * Returns the meta object for the containment reference '{@link hu.e.parser.eSyntax.Operation#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Steps</em>'.
-   * @see hu.e.parser.eSyntax.OperationBlock#getSteps()
-   * @see #getOperationBlock()
+   * @return the meta object for the containment reference '<em>Type</em>'.
+   * @see hu.e.parser.eSyntax.Operation#getType()
+   * @see #getOperation()
    * @generated
    */
-  EReference getOperationBlock_Steps();
+  EReference getOperation_Type();
 
   /**
-   * Returns the meta object for class '{@link hu.e.parser.eSyntax.OperatorDefinition <em>Operator Definition</em>}'.
+   * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.Operation#getOverrides <em>Overrides</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Operator Definition</em>'.
-   * @see hu.e.parser.eSyntax.OperatorDefinition
+   * @return the meta object for the attribute '<em>Overrides</em>'.
+   * @see hu.e.parser.eSyntax.Operation#getOverrides()
+   * @see #getOperation()
    * @generated
    */
-  EClass getOperatorDefinition();
+  EAttribute getOperation_Overrides();
 
   /**
-   * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.OperatorDefinition#getRole <em>Role</em>}'.
+   * Returns the meta object for the containment reference '{@link hu.e.parser.eSyntax.Operation#getContent <em>Content</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Role</em>'.
-   * @see hu.e.parser.eSyntax.OperatorDefinition#getRole()
-   * @see #getOperatorDefinition()
+   * @return the meta object for the containment reference '<em>Content</em>'.
+   * @see hu.e.parser.eSyntax.Operation#getContent()
+   * @see #getOperation()
    * @generated
    */
-  EAttribute getOperatorDefinition_Role();
+  EReference getOperation_Content();
 
   /**
-   * Returns the meta object for the reference list '{@link hu.e.parser.eSyntax.OperatorDefinition#getCandidate <em>Candidate</em>}'.
+   * Returns the meta object for class '{@link hu.e.parser.eSyntax.OperationParameter <em>Operation Parameter</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Candidate</em>'.
-   * @see hu.e.parser.eSyntax.OperatorDefinition#getCandidate()
-   * @see #getOperatorDefinition()
+   * @return the meta object for class '<em>Operation Parameter</em>'.
+   * @see hu.e.parser.eSyntax.OperationParameter
    * @generated
    */
-  EReference getOperatorDefinition_Candidate();
+  EClass getOperationParameter();
 
   /**
-   * Returns the meta object for class '{@link hu.e.parser.eSyntax.LinkedBinary <em>Linked Binary</em>}'.
+   * Returns the meta object for class '{@link hu.e.parser.eSyntax.LazyParameter <em>Lazy Parameter</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Linked Binary</em>'.
-   * @see hu.e.parser.eSyntax.LinkedBinary
+   * @return the meta object for class '<em>Lazy Parameter</em>'.
+   * @see hu.e.parser.eSyntax.LazyParameter
    * @generated
    */
-  EClass getLinkedBinary();
+  EClass getLazyParameter();
 
   /**
-   * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.LinkedBinary#getType <em>Type</em>}'.
+   * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.LazyParameter#getParamname <em>Paramname</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Type</em>'.
-   * @see hu.e.parser.eSyntax.LinkedBinary#getType()
-   * @see #getLinkedBinary()
+   * @return the meta object for the attribute '<em>Paramname</em>'.
+   * @see hu.e.parser.eSyntax.LazyParameter#getParamname()
+   * @see #getLazyParameter()
    * @generated
    */
-  EAttribute getLinkedBinary_Type();
+  EAttribute getLazyParameter_Paramname();
 
   /**
-   * Returns the meta object for the containment reference list '{@link hu.e.parser.eSyntax.LinkedBinary#getSections <em>Sections</em>}'.
+   * Returns the meta object for the containment reference '{@link hu.e.parser.eSyntax.LazyParameter#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Sections</em>'.
-   * @see hu.e.parser.eSyntax.LinkedBinary#getSections()
-   * @see #getLinkedBinary()
+   * @return the meta object for the containment reference '<em>Type</em>'.
+   * @see hu.e.parser.eSyntax.LazyParameter#getType()
+   * @see #getLazyParameter()
    * @generated
    */
-  EReference getLinkedBinary_Sections();
-
-  /**
-   * Returns the meta object for class '{@link hu.e.parser.eSyntax.BinarySection <em>Binary Section</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Binary Section</em>'.
-   * @see hu.e.parser.eSyntax.BinarySection
-   * @generated
-   */
-  EClass getBinarySection();
-
-  /**
-   * Returns the meta object for the containment reference '{@link hu.e.parser.eSyntax.BinarySection#getStart <em>Start</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Start</em>'.
-   * @see hu.e.parser.eSyntax.BinarySection#getStart()
-   * @see #getBinarySection()
-   * @generated
-   */
-  EReference getBinarySection_Start();
-
-  /**
-   * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.BinarySection#getWidth <em>Width</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Width</em>'.
-   * @see hu.e.parser.eSyntax.BinarySection#getWidth()
-   * @see #getBinarySection()
-   * @generated
-   */
-  EAttribute getBinarySection_Width();
-
-  /**
-   * Returns the meta object for class '{@link hu.e.parser.eSyntax.FunctionBinarySection <em>Function Binary Section</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Function Binary Section</em>'.
-   * @see hu.e.parser.eSyntax.FunctionBinarySection
-   * @generated
-   */
-  EClass getFunctionBinarySection();
-
-  /**
-   * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.FunctionBinarySection#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see hu.e.parser.eSyntax.FunctionBinarySection#getName()
-   * @see #getFunctionBinarySection()
-   * @generated
-   */
-  EAttribute getFunctionBinarySection_Name();
-
-  /**
-   * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.FunctionBinarySection#getStartAddr <em>Start Addr</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Start Addr</em>'.
-   * @see hu.e.parser.eSyntax.FunctionBinarySection#getStartAddr()
-   * @see #getFunctionBinarySection()
-   * @generated
-   */
-  EAttribute getFunctionBinarySection_StartAddr();
-
-  /**
-   * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.FunctionBinarySection#getMemwidth <em>Memwidth</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Memwidth</em>'.
-   * @see hu.e.parser.eSyntax.FunctionBinarySection#getMemwidth()
-   * @see #getFunctionBinarySection()
-   * @generated
-   */
-  EAttribute getFunctionBinarySection_Memwidth();
-
-  /**
-   * Returns the meta object for the containment reference '{@link hu.e.parser.eSyntax.FunctionBinarySection#getPointerType <em>Pointer Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Pointer Type</em>'.
-   * @see hu.e.parser.eSyntax.FunctionBinarySection#getPointerType()
-   * @see #getFunctionBinarySection()
-   * @generated
-   */
-  EReference getFunctionBinarySection_PointerType();
-
-  /**
-   * Returns the meta object for the containment reference '{@link hu.e.parser.eSyntax.FunctionBinarySection#getAddressType <em>Address Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Address Type</em>'.
-   * @see hu.e.parser.eSyntax.FunctionBinarySection#getAddressType()
-   * @see #getFunctionBinarySection()
-   * @generated
-   */
-  EReference getFunctionBinarySection_AddressType();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link hu.e.parser.eSyntax.FunctionBinarySection#getMems <em>Mems</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Mems</em>'.
-   * @see hu.e.parser.eSyntax.FunctionBinarySection#getMems()
-   * @see #getFunctionBinarySection()
-   * @generated
-   */
-  EReference getFunctionBinarySection_Mems();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link hu.e.parser.eSyntax.FunctionBinarySection#getOptimizercalls <em>Optimizercalls</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Optimizercalls</em>'.
-   * @see hu.e.parser.eSyntax.FunctionBinarySection#getOptimizercalls()
-   * @see #getFunctionBinarySection()
-   * @generated
-   */
-  EReference getFunctionBinarySection_Optimizercalls();
-
-  /**
-   * Returns the meta object for the reference list '{@link hu.e.parser.eSyntax.FunctionBinarySection#getLib <em>Lib</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Lib</em>'.
-   * @see hu.e.parser.eSyntax.FunctionBinarySection#getLib()
-   * @see #getFunctionBinarySection()
-   * @generated
-   */
-  EReference getFunctionBinarySection_Lib();
-
-  /**
-   * Returns the meta object for the containment reference '{@link hu.e.parser.eSyntax.FunctionBinarySection#getDo <em>Do</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Do</em>'.
-   * @see hu.e.parser.eSyntax.FunctionBinarySection#getDo()
-   * @see #getFunctionBinarySection()
-   * @generated
-   */
-  EReference getFunctionBinarySection_Do();
-
-  /**
-   * Returns the meta object for class '{@link hu.e.parser.eSyntax.OptimizerCall <em>Optimizer Call</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Optimizer Call</em>'.
-   * @see hu.e.parser.eSyntax.OptimizerCall
-   * @generated
-   */
-  EClass getOptimizerCall();
-
-  /**
-   * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.OptimizerCall#getOptimizer <em>Optimizer</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Optimizer</em>'.
-   * @see hu.e.parser.eSyntax.OptimizerCall#getOptimizer()
-   * @see #getOptimizerCall()
-   * @generated
-   */
-  EAttribute getOptimizerCall_Optimizer();
-
-  /**
-   * Returns the meta object for class '{@link hu.e.parser.eSyntax.FunctionMemory <em>Function Memory</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Function Memory</em>'.
-   * @see hu.e.parser.eSyntax.FunctionMemory
-   * @generated
-   */
-  EClass getFunctionMemory();
-
-  /**
-   * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.FunctionMemory#getStart <em>Start</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Start</em>'.
-   * @see hu.e.parser.eSyntax.FunctionMemory#getStart()
-   * @see #getFunctionMemory()
-   * @generated
-   */
-  EAttribute getFunctionMemory_Start();
-
-  /**
-   * Returns the meta object for the attribute '{@link hu.e.parser.eSyntax.FunctionMemory#getEnd <em>End</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>End</em>'.
-   * @see hu.e.parser.eSyntax.FunctionMemory#getEnd()
-   * @see #getFunctionMemory()
-   * @generated
-   */
-  EAttribute getFunctionMemory_End();
-
-  /**
-   * Returns the meta object for class '{@link hu.e.parser.eSyntax.ConstantBinarySection <em>Constant Binary Section</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Constant Binary Section</em>'.
-   * @see hu.e.parser.eSyntax.ConstantBinarySection
-   * @generated
-   */
-  EClass getConstantBinarySection();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link hu.e.parser.eSyntax.ConstantBinarySection#getData <em>Data</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Data</em>'.
-   * @see hu.e.parser.eSyntax.ConstantBinarySection#getData()
-   * @see #getConstantBinarySection()
-   * @generated
-   */
-  EReference getConstantBinarySection_Data();
-
-  /**
-   * Returns the meta object for class '{@link hu.e.parser.eSyntax.ReferenceBinarySection <em>Reference Binary Section</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Reference Binary Section</em>'.
-   * @see hu.e.parser.eSyntax.ReferenceBinarySection
-   * @generated
-   */
-  EClass getReferenceBinarySection();
-
-  /**
-   * Returns the meta object for the reference '{@link hu.e.parser.eSyntax.ReferenceBinarySection#getInc <em>Inc</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Inc</em>'.
-   * @see hu.e.parser.eSyntax.ReferenceBinarySection#getInc()
-   * @see #getReferenceBinarySection()
-   * @generated
-   */
-  EReference getReferenceBinarySection_Inc();
+  EReference getLazyParameter_Type();
 
   /**
    * Returns the meta object for class '{@link hu.e.parser.eSyntax.XExpression <em>XExpression</em>}'.
@@ -3241,6 +2881,16 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    */
   EClass getXExpression();
+
+  /**
+   * Returns the meta object for class '{@link hu.e.parser.eSyntax.XExpressionBlock <em>XExpression Block</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>XExpression Block</em>'.
+   * @see hu.e.parser.eSyntax.XExpressionBlock
+   * @generated
+   */
+  EClass getXExpressionBlock();
 
   /**
    * Returns the meta object for class '{@link hu.e.parser.eSyntax.XPrimaryExpression <em>XPrimary Expression</em>}'.
@@ -3282,17 +2932,6 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    */
   EClass getXStructExpression();
-
-  /**
-   * Returns the meta object for the reference '{@link hu.e.parser.eSyntax.XStructExpression#getType <em>Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Type</em>'.
-   * @see hu.e.parser.eSyntax.XStructExpression#getType()
-   * @see #getXStructExpression()
-   * @generated
-   */
-  EReference getXStructExpression_Type();
 
   /**
    * Returns the meta object for the containment reference list '{@link hu.e.parser.eSyntax.XStructExpression#getValues <em>Values</em>}'.
@@ -3712,146 +3351,6 @@ public interface ESyntaxPackage extends EPackage
   EReference getXIsLiteralExpression_Ref();
 
   /**
-   * Returns the meta object for class '{@link hu.e.parser.eSyntax.XIfExpression <em>XIf Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>XIf Expression</em>'.
-   * @see hu.e.parser.eSyntax.XIfExpression
-   * @generated
-   */
-  EClass getXIfExpression();
-
-  /**
-   * Returns the meta object for the containment reference '{@link hu.e.parser.eSyntax.XIfExpression#getIf <em>If</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>If</em>'.
-   * @see hu.e.parser.eSyntax.XIfExpression#getIf()
-   * @see #getXIfExpression()
-   * @generated
-   */
-  EReference getXIfExpression_If();
-
-  /**
-   * Returns the meta object for the containment reference '{@link hu.e.parser.eSyntax.XIfExpression#getThen <em>Then</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Then</em>'.
-   * @see hu.e.parser.eSyntax.XIfExpression#getThen()
-   * @see #getXIfExpression()
-   * @generated
-   */
-  EReference getXIfExpression_Then();
-
-  /**
-   * Returns the meta object for the containment reference '{@link hu.e.parser.eSyntax.XIfExpression#getElse <em>Else</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Else</em>'.
-   * @see hu.e.parser.eSyntax.XIfExpression#getElse()
-   * @see #getXIfExpression()
-   * @generated
-   */
-  EReference getXIfExpression_Else();
-
-  /**
-   * Returns the meta object for class '{@link hu.e.parser.eSyntax.XWhileExpression <em>XWhile Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>XWhile Expression</em>'.
-   * @see hu.e.parser.eSyntax.XWhileExpression
-   * @generated
-   */
-  EClass getXWhileExpression();
-
-  /**
-   * Returns the meta object for the containment reference '{@link hu.e.parser.eSyntax.XWhileExpression#getCond <em>Cond</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Cond</em>'.
-   * @see hu.e.parser.eSyntax.XWhileExpression#getCond()
-   * @see #getXWhileExpression()
-   * @generated
-   */
-  EReference getXWhileExpression_Cond();
-
-  /**
-   * Returns the meta object for the containment reference '{@link hu.e.parser.eSyntax.XWhileExpression#getDo <em>Do</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Do</em>'.
-   * @see hu.e.parser.eSyntax.XWhileExpression#getDo()
-   * @see #getXWhileExpression()
-   * @generated
-   */
-  EReference getXWhileExpression_Do();
-
-  /**
-   * Returns the meta object for class '{@link hu.e.parser.eSyntax.XForExpression <em>XFor Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>XFor Expression</em>'.
-   * @see hu.e.parser.eSyntax.XForExpression
-   * @generated
-   */
-  EClass getXForExpression();
-
-  /**
-   * Returns the meta object for the containment reference '{@link hu.e.parser.eSyntax.XForExpression#getVar <em>Var</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Var</em>'.
-   * @see hu.e.parser.eSyntax.XForExpression#getVar()
-   * @see #getXForExpression()
-   * @generated
-   */
-  EReference getXForExpression_Var();
-
-  /**
-   * Returns the meta object for the containment reference '{@link hu.e.parser.eSyntax.XForExpression#getFrom <em>From</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>From</em>'.
-   * @see hu.e.parser.eSyntax.XForExpression#getFrom()
-   * @see #getXForExpression()
-   * @generated
-   */
-  EReference getXForExpression_From();
-
-  /**
-   * Returns the meta object for the containment reference '{@link hu.e.parser.eSyntax.XForExpression#getBy <em>By</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>By</em>'.
-   * @see hu.e.parser.eSyntax.XForExpression#getBy()
-   * @see #getXForExpression()
-   * @generated
-   */
-  EReference getXForExpression_By();
-
-  /**
-   * Returns the meta object for the containment reference '{@link hu.e.parser.eSyntax.XForExpression#getTo <em>To</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>To</em>'.
-   * @see hu.e.parser.eSyntax.XForExpression#getTo()
-   * @see #getXForExpression()
-   * @generated
-   */
-  EReference getXForExpression_To();
-
-  /**
-   * Returns the meta object for the containment reference '{@link hu.e.parser.eSyntax.XForExpression#getDo <em>Do</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Do</em>'.
-   * @see hu.e.parser.eSyntax.XForExpression#getDo()
-   * @see #getXForExpression()
-   * @generated
-   */
-  EReference getXForExpression_Do();
-
-  /**
    * Returns the meta object for class '{@link hu.e.parser.eSyntax.XParenthesizedExpression <em>XParenthesized Expression</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3925,59 +3424,6 @@ public interface ESyntaxPackage extends EPackage
   EReference getRegisterVariable_Addr();
 
   /**
-   * Returns the meta object for class '{@link hu.e.parser.eSyntax.Label <em>Label</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Label</em>'.
-   * @see hu.e.parser.eSyntax.Label
-   * @generated
-   */
-  EClass getLabel();
-
-  /**
-   * Returns the meta object for class '{@link hu.e.parser.eSyntax.Operation <em>Operation</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Operation</em>'.
-   * @see hu.e.parser.eSyntax.Operation
-   * @generated
-   */
-  EClass getOperation();
-
-  /**
-   * Returns the meta object for the containment reference '{@link hu.e.parser.eSyntax.Operation#getBlock <em>Block</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Block</em>'.
-   * @see hu.e.parser.eSyntax.Operation#getBlock()
-   * @see #getOperation()
-   * @generated
-   */
-  EReference getOperation_Block();
-
-  /**
-   * Returns the meta object for the containment reference '{@link hu.e.parser.eSyntax.Operation#getReturn <em>Return</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Return</em>'.
-   * @see hu.e.parser.eSyntax.Operation#getReturn()
-   * @see #getOperation()
-   * @generated
-   */
-  EReference getOperation_Return();
-
-  /**
-   * Returns the meta object for the containment reference '{@link hu.e.parser.eSyntax.Operation#getReturnvar <em>Returnvar</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Returnvar</em>'.
-   * @see hu.e.parser.eSyntax.Operation#getReturnvar()
-   * @see #getOperation()
-   * @generated
-   */
-  EReference getOperation_Returnvar();
-
-  /**
    * Returns the meta object for class '{@link hu.e.parser.eSyntax.ParameterVariable <em>Parameter Variable</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4010,6 +3456,27 @@ public interface ESyntaxPackage extends EPackage
   EAttribute getParameterVariable_Default();
 
   /**
+   * Returns the meta object for class '{@link hu.e.parser.eSyntax.OperationBlock <em>Operation Block</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Operation Block</em>'.
+   * @see hu.e.parser.eSyntax.OperationBlock
+   * @generated
+   */
+  EClass getOperationBlock();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link hu.e.parser.eSyntax.OperationBlock#getSteps <em>Steps</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Steps</em>'.
+   * @see hu.e.parser.eSyntax.OperationBlock#getSteps()
+   * @see #getOperationBlock()
+   * @generated
+   */
+  EReference getOperationBlock_Steps();
+
+  /**
    * Returns the meta object for enum '{@link hu.e.parser.eSyntax.IntegerKind <em>Integer Kind</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4028,26 +3495,6 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    */
   EEnum getParameterKind();
-
-  /**
-   * Returns the meta object for enum '{@link hu.e.parser.eSyntax.OperationRole <em>Operation Role</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for enum '<em>Operation Role</em>'.
-   * @see hu.e.parser.eSyntax.OperationRole
-   * @generated
-   */
-  EEnum getOperationRole();
-
-  /**
-   * Returns the meta object for enum '{@link hu.e.parser.eSyntax.BinaryType <em>Binary Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for enum '<em>Binary Type</em>'.
-   * @see hu.e.parser.eSyntax.BinaryType
-   * @generated
-   */
-  EEnum getBinaryType();
 
   /**
    * Returns the meta object for enum '{@link hu.e.parser.eSyntax.UNARY_OPERATOR <em>UNARY OPERATOR</em>}'.
@@ -4161,14 +3608,6 @@ public interface ESyntaxPackage extends EPackage
     EAttribute COMPILATION_UNIT__NAME = eINSTANCE.getCompilationUnit_Name();
 
     /**
-     * The meta object literal for the '<em><b>Use</b></em>' reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference COMPILATION_UNIT__USE = eINSTANCE.getCompilationUnit_Use();
-
-    /**
      * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.AnnotationDefinitionImpl <em>Annotation Definition</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4177,14 +3616,6 @@ public interface ESyntaxPackage extends EPackage
      * @generated
      */
     EClass ANNOTATION_DEFINITION = eINSTANCE.getAnnotationDefinition();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ANNOTATION_DEFINITION__NAME = eINSTANCE.getAnnotationDefinition_Name();
 
     /**
      * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.AnnotationImpl <em>Annotation</em>}' class.
@@ -4197,12 +3628,228 @@ public interface ESyntaxPackage extends EPackage
     EClass ANNOTATION = eINSTANCE.getAnnotation();
 
     /**
-     * The meta object literal for the '<em><b>Definition</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Definition</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ANNOTATION__DEFINITION = eINSTANCE.getAnnotation_Definition();
+    EAttribute ANNOTATION__DEFINITION = eINSTANCE.getAnnotation_Definition();
+
+    /**
+     * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.WorkflowNotationImpl <em>Workflow Notation</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.e.parser.eSyntax.impl.WorkflowNotationImpl
+     * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getWorkflowNotation()
+     * @generated
+     */
+    EClass WORKFLOW_NOTATION = eINSTANCE.getWorkflowNotation();
+
+    /**
+     * The meta object literal for the '<em><b>Steps</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WORKFLOW_NOTATION__STEPS = eINSTANCE.getWorkflowNotation_Steps();
+
+    /**
+     * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.WorkflowStepNotationImpl <em>Workflow Step Notation</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.e.parser.eSyntax.impl.WorkflowStepNotationImpl
+     * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getWorkflowStepNotation()
+     * @generated
+     */
+    EClass WORKFLOW_STEP_NOTATION = eINSTANCE.getWorkflowStepNotation();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute WORKFLOW_STEP_NOTATION__TYPE = eINSTANCE.getWorkflowStepNotation_Type();
+
+    /**
+     * The meta object literal for the '<em><b>Params</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WORKFLOW_STEP_NOTATION__PARAMS = eINSTANCE.getWorkflowStepNotation_Params();
+
+    /**
+     * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.WorkflowStepParameterNotationImpl <em>Workflow Step Parameter Notation</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.e.parser.eSyntax.impl.WorkflowStepParameterNotationImpl
+     * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getWorkflowStepParameterNotation()
+     * @generated
+     */
+    EClass WORKFLOW_STEP_PARAMETER_NOTATION = eINSTANCE.getWorkflowStepParameterNotation();
+
+    /**
+     * The meta object literal for the '<em><b>Parameter</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute WORKFLOW_STEP_PARAMETER_NOTATION__PARAMETER = eINSTANCE.getWorkflowStepParameterNotation_Parameter();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute WORKFLOW_STEP_PARAMETER_NOTATION__VALUE = eINSTANCE.getWorkflowStepParameterNotation_Value();
+
+    /**
+     * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.InstructionSetNotationImpl <em>Instruction Set Notation</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.e.parser.eSyntax.impl.InstructionSetNotationImpl
+     * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getInstructionSetNotation()
+     * @generated
+     */
+    EClass INSTRUCTION_SET_NOTATION = eINSTANCE.getInstructionSetNotation();
+
+    /**
+     * The meta object literal for the '<em><b>Extends</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute INSTRUCTION_SET_NOTATION__EXTENDS = eINSTANCE.getInstructionSetNotation_Extends();
+
+    /**
+     * The meta object literal for the '<em><b>Instructions</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INSTRUCTION_SET_NOTATION__INSTRUCTIONS = eINSTANCE.getInstructionSetNotation_Instructions();
+
+    /**
+     * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.InstructionNotationImpl <em>Instruction Notation</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.e.parser.eSyntax.impl.InstructionNotationImpl
+     * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getInstructionNotation()
+     * @generated
+     */
+    EClass INSTRUCTION_NOTATION = eINSTANCE.getInstructionNotation();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute INSTRUCTION_NOTATION__NAME = eINSTANCE.getInstructionNotation_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Params</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INSTRUCTION_NOTATION__PARAMS = eINSTANCE.getInstructionNotation_Params();
+
+    /**
+     * The meta object literal for the '<em><b>Words</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INSTRUCTION_NOTATION__WORDS = eINSTANCE.getInstructionNotation_Words();
+
+    /**
+     * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.InstructionWordNotationImpl <em>Instruction Word Notation</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.e.parser.eSyntax.impl.InstructionWordNotationImpl
+     * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getInstructionWordNotation()
+     * @generated
+     */
+    EClass INSTRUCTION_WORD_NOTATION = eINSTANCE.getInstructionWordNotation();
+
+    /**
+     * The meta object literal for the '<em><b>Sections</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INSTRUCTION_WORD_NOTATION__SECTIONS = eINSTANCE.getInstructionWordNotation_Sections();
+
+    /**
+     * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.InstructionParameterNotationImpl <em>Instruction Parameter Notation</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.e.parser.eSyntax.impl.InstructionParameterNotationImpl
+     * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getInstructionParameterNotation()
+     * @generated
+     */
+    EClass INSTRUCTION_PARAMETER_NOTATION = eINSTANCE.getInstructionParameterNotation();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute INSTRUCTION_PARAMETER_NOTATION__NAME = eINSTANCE.getInstructionParameterNotation_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Default</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute INSTRUCTION_PARAMETER_NOTATION__DEFAULT = eINSTANCE.getInstructionParameterNotation_Default();
+
+    /**
+     * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.InsctructionSectionNotationImpl <em>Insctruction Section Notation</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.e.parser.eSyntax.impl.InsctructionSectionNotationImpl
+     * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getInsctructionSectionNotation()
+     * @generated
+     */
+    EClass INSCTRUCTION_SECTION_NOTATION = eINSTANCE.getInsctructionSectionNotation();
+
+    /**
+     * The meta object literal for the '<em><b>Param</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute INSCTRUCTION_SECTION_NOTATION__PARAM = eINSTANCE.getInsctructionSectionNotation_Param();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute INSCTRUCTION_SECTION_NOTATION__VALUE = eINSTANCE.getInsctructionSectionNotation_Value();
+
+    /**
+     * The meta object literal for the '<em><b>Size</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute INSCTRUCTION_SECTION_NOTATION__SIZE = eINSTANCE.getInsctructionSectionNotation_Size();
+
+    /**
+     * The meta object literal for the '<em><b>Shift</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute INSCTRUCTION_SECTION_NOTATION__SHIFT = eINSTANCE.getInsctructionSectionNotation_Shift();
 
     /**
      * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.LibraryImpl <em>Library</em>}' class.
@@ -4215,12 +3862,12 @@ public interface ESyntaxPackage extends EPackage
     EClass LIBRARY = eINSTANCE.getLibrary();
 
     /**
-     * The meta object literal for the '<em><b>Overrides</b></em>' reference list feature.
+     * The meta object literal for the '<em><b>Use</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference LIBRARY__OVERRIDES = eINSTANCE.getLibrary_Overrides();
+    EAttribute LIBRARY__USE = eINSTANCE.getLibrary_Use();
 
     /**
      * The meta object literal for the '<em><b>Items</b></em>' containment reference list feature.
@@ -4241,6 +3888,14 @@ public interface ESyntaxPackage extends EPackage
     EClass LIBRARY_ITEM = eINSTANCE.getLibraryItem();
 
     /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LIBRARY_ITEM__NAME = eINSTANCE.getLibraryItem_Name();
+
+    /**
      * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.TypeImpl <em>Type</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4249,14 +3904,6 @@ public interface ESyntaxPackage extends EPackage
      * @generated
      */
     EClass TYPE = eINSTANCE.getType();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TYPE__NAME = eINSTANCE.getType_Name();
 
     /**
      * The meta object literal for the '<em><b>Def</b></em>' containment reference feature.
@@ -4275,6 +3922,16 @@ public interface ESyntaxPackage extends EPackage
      * @generated
      */
     EClass TYPE_DEF = eINSTANCE.getTypeDef();
+
+    /**
+     * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.UnspecifiedTypeDefImpl <em>Unspecified Type Def</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.e.parser.eSyntax.impl.UnspecifiedTypeDefImpl
+     * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getUnspecifiedTypeDef()
+     * @generated
+     */
+    EClass UNSPECIFIED_TYPE_DEF = eINSTANCE.getUnspecifiedTypeDef();
 
     /**
      * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.PointerTypeDefImpl <em>Pointer Type Def</em>}' class.
@@ -4305,20 +3962,20 @@ public interface ESyntaxPackage extends EPackage
     EClass ARRAY_TYPE_DEF = eINSTANCE.getArrayTypeDef();
 
     /**
-     * The meta object literal for the '<em><b>Size</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ARRAY_TYPE_DEF__SIZE = eINSTANCE.getArrayTypeDef_Size();
-
-    /**
      * The meta object literal for the '<em><b>Def</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference ARRAY_TYPE_DEF__DEF = eINSTANCE.getArrayTypeDef_Def();
+
+    /**
+     * The meta object literal for the '<em><b>Size</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ARRAY_TYPE_DEF__SIZE = eINSTANCE.getArrayTypeDef_Size();
 
     /**
      * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.RefTypeDefImpl <em>Ref Type Def</em>}' class.
@@ -4331,12 +3988,12 @@ public interface ESyntaxPackage extends EPackage
     EClass REF_TYPE_DEF = eINSTANCE.getRefTypeDef();
 
     /**
-     * The meta object literal for the '<em><b>Type</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference REF_TYPE_DEF__TYPE = eINSTANCE.getRefTypeDef_Type();
+    EAttribute REF_TYPE_DEF__TYPE = eINSTANCE.getRefTypeDef_Type();
 
     /**
      * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.DataTypeDefImpl <em>Data Type Def</em>}' class.
@@ -4349,12 +4006,14 @@ public interface ESyntaxPackage extends EPackage
     EClass DATA_TYPE_DEF = eINSTANCE.getDataTypeDef();
 
     /**
-     * The meta object literal for the '<em><b>Bits</b></em>' attribute feature.
+     * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.LabelDataTypeDefImpl <em>Label Data Type Def</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see hu.e.parser.eSyntax.impl.LabelDataTypeDefImpl
+     * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getLabelDataTypeDef()
      * @generated
      */
-    EAttribute DATA_TYPE_DEF__BITS = eINSTANCE.getDataTypeDef_Bits();
+    EClass LABEL_DATA_TYPE_DEF = eINSTANCE.getLabelDataTypeDef();
 
     /**
      * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.FixedDataTypeDefImpl <em>Fixed Data Type Def</em>}' class.
@@ -4365,6 +4024,14 @@ public interface ESyntaxPackage extends EPackage
      * @generated
      */
     EClass FIXED_DATA_TYPE_DEF = eINSTANCE.getFixedDataTypeDef();
+
+    /**
+     * The meta object literal for the '<em><b>Bits</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FIXED_DATA_TYPE_DEF__BITS = eINSTANCE.getFixedDataTypeDef_Bits();
 
     /**
      * The meta object literal for the '<em><b>Scale</b></em>' attribute feature.
@@ -4391,6 +4058,14 @@ public interface ESyntaxPackage extends EPackage
      * @generated
      */
     EAttribute INTEGER_DATA_TYPE_DEF__KIND = eINSTANCE.getIntegerDataTypeDef_Kind();
+
+    /**
+     * The meta object literal for the '<em><b>Bits</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute INTEGER_DATA_TYPE_DEF__BITS = eINSTANCE.getIntegerDataTypeDef_Bits();
 
     /**
      * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.StructTypeDefImpl <em>Struct Type Def</em>}' class.
@@ -4429,14 +4104,6 @@ public interface ESyntaxPackage extends EPackage
     EReference VARIABLE__TYPE = eINSTANCE.getVariable_Type();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute VARIABLE__NAME = eINSTANCE.getVariable_Name();
-
-    /**
      * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.OperationStepImpl <em>Operation Step</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4447,66 +4114,14 @@ public interface ESyntaxPackage extends EPackage
     EClass OPERATION_STEP = eINSTANCE.getOperationStep();
 
     /**
-     * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.InstructionWordImpl <em>Instruction Word</em>}' class.
+     * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.ResultVariableReferenceImpl <em>Result Variable Reference</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see hu.e.parser.eSyntax.impl.InstructionWordImpl
-     * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getInstructionWord()
+     * @see hu.e.parser.eSyntax.impl.ResultVariableReferenceImpl
+     * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getResultVariableReference()
      * @generated
      */
-    EClass INSTRUCTION_WORD = eINSTANCE.getInstructionWord();
-
-    /**
-     * The meta object literal for the '<em><b>Sections</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference INSTRUCTION_WORD__SECTIONS = eINSTANCE.getInstructionWord_Sections();
-
-    /**
-     * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.WordSectionImpl <em>Word Section</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see hu.e.parser.eSyntax.impl.WordSectionImpl
-     * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getWordSection()
-     * @generated
-     */
-    EClass WORD_SECTION = eINSTANCE.getWordSection();
-
-    /**
-     * The meta object literal for the '<em><b>Size</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute WORD_SECTION__SIZE = eINSTANCE.getWordSection_Size();
-
-    /**
-     * The meta object literal for the '<em><b>Shift</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute WORD_SECTION__SHIFT = eINSTANCE.getWordSection_Shift();
-
-    /**
-     * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.LiteralValueImpl <em>Literal Value</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see hu.e.parser.eSyntax.impl.LiteralValueImpl
-     * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getLiteralValue()
-     * @generated
-     */
-    EClass LITERAL_VALUE = eINSTANCE.getLiteralValue();
-
-    /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute LITERAL_VALUE__VALUE = eINSTANCE.getLiteralValue_Value();
+    EClass RESULT_VARIABLE_REFERENCE = eINSTANCE.getResultVariableReference();
 
     /**
      * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.VariableReferenceImpl <em>Variable Reference</em>}' class.
@@ -4519,12 +4134,12 @@ public interface ESyntaxPackage extends EPackage
     EClass VARIABLE_REFERENCE = eINSTANCE.getVariableReference();
 
     /**
-     * The meta object literal for the '<em><b>Var</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Var</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference VARIABLE_REFERENCE__VAR = eINSTANCE.getVariableReference_Var();
+    EAttribute VARIABLE_REFERENCE__VAR = eINSTANCE.getVariableReference_Var();
 
     /**
      * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.OperationCallImpl <em>Operation Call</em>}' class.
@@ -4537,12 +4152,12 @@ public interface ESyntaxPackage extends EPackage
     EClass OPERATION_CALL = eINSTANCE.getOperationCall();
 
     /**
-     * The meta object literal for the '<em><b>Operation</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Operation</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference OPERATION_CALL__OPERATION = eINSTANCE.getOperationCall_Operation();
+    EAttribute OPERATION_CALL__OPERATION = eINSTANCE.getOperationCall_Operation();
 
     /**
      * The meta object literal for the '<em><b>Params</b></em>' containment reference list feature.
@@ -4563,14 +4178,22 @@ public interface ESyntaxPackage extends EPackage
     EClass OPERATION_CALL_PARAMETER = eINSTANCE.getOperationCallParameter();
 
     /**
-     * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.OperationSignatureImpl <em>Operation Signature</em>}' class.
+     * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.OperationTypeDefImpl <em>Operation Type Def</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see hu.e.parser.eSyntax.impl.OperationSignatureImpl
-     * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getOperationSignature()
+     * @see hu.e.parser.eSyntax.impl.OperationTypeDefImpl
+     * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getOperationTypeDef()
      * @generated
      */
-    EClass OPERATION_SIGNATURE = eINSTANCE.getOperationSignature();
+    EClass OPERATION_TYPE_DEF = eINSTANCE.getOperationTypeDef();
+
+    /**
+     * The meta object literal for the '<em><b>Result Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OPERATION_TYPE_DEF__RESULT_TYPE = eINSTANCE.getOperationTypeDef_ResultType();
 
     /**
      * The meta object literal for the '<em><b>Params</b></em>' containment reference list feature.
@@ -4578,265 +4201,77 @@ public interface ESyntaxPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference OPERATION_SIGNATURE__PARAMS = eINSTANCE.getOperationSignature_Params();
+    EReference OPERATION_TYPE_DEF__PARAMS = eINSTANCE.getOperationTypeDef_Params();
 
     /**
-     * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.OperationBlockImpl <em>Operation Block</em>}' class.
+     * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.OperationImpl <em>Operation</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see hu.e.parser.eSyntax.impl.OperationBlockImpl
-     * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getOperationBlock()
+     * @see hu.e.parser.eSyntax.impl.OperationImpl
+     * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getOperation()
      * @generated
      */
-    EClass OPERATION_BLOCK = eINSTANCE.getOperationBlock();
+    EClass OPERATION = eINSTANCE.getOperation();
 
     /**
-     * The meta object literal for the '<em><b>Steps</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference OPERATION_BLOCK__STEPS = eINSTANCE.getOperationBlock_Steps();
-
-    /**
-     * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.OperatorDefinitionImpl <em>Operator Definition</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see hu.e.parser.eSyntax.impl.OperatorDefinitionImpl
-     * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getOperatorDefinition()
-     * @generated
-     */
-    EClass OPERATOR_DEFINITION = eINSTANCE.getOperatorDefinition();
-
-    /**
-     * The meta object literal for the '<em><b>Role</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute OPERATOR_DEFINITION__ROLE = eINSTANCE.getOperatorDefinition_Role();
+    EReference OPERATION__TYPE = eINSTANCE.getOperation_Type();
 
     /**
-     * The meta object literal for the '<em><b>Candidate</b></em>' reference list feature.
+     * The meta object literal for the '<em><b>Overrides</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference OPERATOR_DEFINITION__CANDIDATE = eINSTANCE.getOperatorDefinition_Candidate();
+    EAttribute OPERATION__OVERRIDES = eINSTANCE.getOperation_Overrides();
 
     /**
-     * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.LinkedBinaryImpl <em>Linked Binary</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see hu.e.parser.eSyntax.impl.LinkedBinaryImpl
-     * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getLinkedBinary()
-     * @generated
-     */
-    EClass LINKED_BINARY = eINSTANCE.getLinkedBinary();
-
-    /**
-     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Content</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute LINKED_BINARY__TYPE = eINSTANCE.getLinkedBinary_Type();
+    EReference OPERATION__CONTENT = eINSTANCE.getOperation_Content();
 
     /**
-     * The meta object literal for the '<em><b>Sections</b></em>' containment reference list feature.
+     * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.OperationParameterImpl <em>Operation Parameter</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.e.parser.eSyntax.impl.OperationParameterImpl
+     * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getOperationParameter()
+     * @generated
+     */
+    EClass OPERATION_PARAMETER = eINSTANCE.getOperationParameter();
+
+    /**
+     * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.LazyParameterImpl <em>Lazy Parameter</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.e.parser.eSyntax.impl.LazyParameterImpl
+     * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getLazyParameter()
+     * @generated
+     */
+    EClass LAZY_PARAMETER = eINSTANCE.getLazyParameter();
+
+    /**
+     * The meta object literal for the '<em><b>Paramname</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference LINKED_BINARY__SECTIONS = eINSTANCE.getLinkedBinary_Sections();
+    EAttribute LAZY_PARAMETER__PARAMNAME = eINSTANCE.getLazyParameter_Paramname();
 
     /**
-     * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.BinarySectionImpl <em>Binary Section</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see hu.e.parser.eSyntax.impl.BinarySectionImpl
-     * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getBinarySection()
-     * @generated
-     */
-    EClass BINARY_SECTION = eINSTANCE.getBinarySection();
-
-    /**
-     * The meta object literal for the '<em><b>Start</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference BINARY_SECTION__START = eINSTANCE.getBinarySection_Start();
-
-    /**
-     * The meta object literal for the '<em><b>Width</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute BINARY_SECTION__WIDTH = eINSTANCE.getBinarySection_Width();
-
-    /**
-     * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.FunctionBinarySectionImpl <em>Function Binary Section</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see hu.e.parser.eSyntax.impl.FunctionBinarySectionImpl
-     * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getFunctionBinarySection()
-     * @generated
-     */
-    EClass FUNCTION_BINARY_SECTION = eINSTANCE.getFunctionBinarySection();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FUNCTION_BINARY_SECTION__NAME = eINSTANCE.getFunctionBinarySection_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Start Addr</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FUNCTION_BINARY_SECTION__START_ADDR = eINSTANCE.getFunctionBinarySection_StartAddr();
-
-    /**
-     * The meta object literal for the '<em><b>Memwidth</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FUNCTION_BINARY_SECTION__MEMWIDTH = eINSTANCE.getFunctionBinarySection_Memwidth();
-
-    /**
-     * The meta object literal for the '<em><b>Pointer Type</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FUNCTION_BINARY_SECTION__POINTER_TYPE = eINSTANCE.getFunctionBinarySection_PointerType();
-
-    /**
-     * The meta object literal for the '<em><b>Address Type</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FUNCTION_BINARY_SECTION__ADDRESS_TYPE = eINSTANCE.getFunctionBinarySection_AddressType();
-
-    /**
-     * The meta object literal for the '<em><b>Mems</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FUNCTION_BINARY_SECTION__MEMS = eINSTANCE.getFunctionBinarySection_Mems();
-
-    /**
-     * The meta object literal for the '<em><b>Optimizercalls</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FUNCTION_BINARY_SECTION__OPTIMIZERCALLS = eINSTANCE.getFunctionBinarySection_Optimizercalls();
-
-    /**
-     * The meta object literal for the '<em><b>Lib</b></em>' reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FUNCTION_BINARY_SECTION__LIB = eINSTANCE.getFunctionBinarySection_Lib();
-
-    /**
-     * The meta object literal for the '<em><b>Do</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FUNCTION_BINARY_SECTION__DO = eINSTANCE.getFunctionBinarySection_Do();
-
-    /**
-     * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.OptimizerCallImpl <em>Optimizer Call</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see hu.e.parser.eSyntax.impl.OptimizerCallImpl
-     * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getOptimizerCall()
-     * @generated
-     */
-    EClass OPTIMIZER_CALL = eINSTANCE.getOptimizerCall();
-
-    /**
-     * The meta object literal for the '<em><b>Optimizer</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute OPTIMIZER_CALL__OPTIMIZER = eINSTANCE.getOptimizerCall_Optimizer();
-
-    /**
-     * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.FunctionMemoryImpl <em>Function Memory</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see hu.e.parser.eSyntax.impl.FunctionMemoryImpl
-     * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getFunctionMemory()
-     * @generated
-     */
-    EClass FUNCTION_MEMORY = eINSTANCE.getFunctionMemory();
-
-    /**
-     * The meta object literal for the '<em><b>Start</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FUNCTION_MEMORY__START = eINSTANCE.getFunctionMemory_Start();
-
-    /**
-     * The meta object literal for the '<em><b>End</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FUNCTION_MEMORY__END = eINSTANCE.getFunctionMemory_End();
-
-    /**
-     * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.ConstantBinarySectionImpl <em>Constant Binary Section</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see hu.e.parser.eSyntax.impl.ConstantBinarySectionImpl
-     * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getConstantBinarySection()
-     * @generated
-     */
-    EClass CONSTANT_BINARY_SECTION = eINSTANCE.getConstantBinarySection();
-
-    /**
-     * The meta object literal for the '<em><b>Data</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference CONSTANT_BINARY_SECTION__DATA = eINSTANCE.getConstantBinarySection_Data();
-
-    /**
-     * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.ReferenceBinarySectionImpl <em>Reference Binary Section</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see hu.e.parser.eSyntax.impl.ReferenceBinarySectionImpl
-     * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getReferenceBinarySection()
-     * @generated
-     */
-    EClass REFERENCE_BINARY_SECTION = eINSTANCE.getReferenceBinarySection();
-
-    /**
-     * The meta object literal for the '<em><b>Inc</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference REFERENCE_BINARY_SECTION__INC = eINSTANCE.getReferenceBinarySection_Inc();
+    EReference LAZY_PARAMETER__TYPE = eINSTANCE.getLazyParameter_Type();
 
     /**
      * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.XExpressionImpl <em>XExpression</em>}' class.
@@ -4847,6 +4282,16 @@ public interface ESyntaxPackage extends EPackage
      * @generated
      */
     EClass XEXPRESSION = eINSTANCE.getXExpression();
+
+    /**
+     * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.XExpressionBlockImpl <em>XExpression Block</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.e.parser.eSyntax.impl.XExpressionBlockImpl
+     * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXExpressionBlock()
+     * @generated
+     */
+    EClass XEXPRESSION_BLOCK = eINSTANCE.getXExpressionBlock();
 
     /**
      * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.XPrimaryExpressionImpl <em>XPrimary Expression</em>}' class.
@@ -4885,14 +4330,6 @@ public interface ESyntaxPackage extends EPackage
      * @generated
      */
     EClass XSTRUCT_EXPRESSION = eINSTANCE.getXStructExpression();
-
-    /**
-     * The meta object literal for the '<em><b>Type</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference XSTRUCT_EXPRESSION__TYPE = eINSTANCE.getXStructExpression_Type();
 
     /**
      * The meta object literal for the '<em><b>Values</b></em>' containment reference list feature.
@@ -5231,116 +4668,6 @@ public interface ESyntaxPackage extends EPackage
     EReference XIS_LITERAL_EXPRESSION__REF = eINSTANCE.getXIsLiteralExpression_Ref();
 
     /**
-     * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.XIfExpressionImpl <em>XIf Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see hu.e.parser.eSyntax.impl.XIfExpressionImpl
-     * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXIfExpression()
-     * @generated
-     */
-    EClass XIF_EXPRESSION = eINSTANCE.getXIfExpression();
-
-    /**
-     * The meta object literal for the '<em><b>If</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference XIF_EXPRESSION__IF = eINSTANCE.getXIfExpression_If();
-
-    /**
-     * The meta object literal for the '<em><b>Then</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference XIF_EXPRESSION__THEN = eINSTANCE.getXIfExpression_Then();
-
-    /**
-     * The meta object literal for the '<em><b>Else</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference XIF_EXPRESSION__ELSE = eINSTANCE.getXIfExpression_Else();
-
-    /**
-     * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.XWhileExpressionImpl <em>XWhile Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see hu.e.parser.eSyntax.impl.XWhileExpressionImpl
-     * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXWhileExpression()
-     * @generated
-     */
-    EClass XWHILE_EXPRESSION = eINSTANCE.getXWhileExpression();
-
-    /**
-     * The meta object literal for the '<em><b>Cond</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference XWHILE_EXPRESSION__COND = eINSTANCE.getXWhileExpression_Cond();
-
-    /**
-     * The meta object literal for the '<em><b>Do</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference XWHILE_EXPRESSION__DO = eINSTANCE.getXWhileExpression_Do();
-
-    /**
-     * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.XForExpressionImpl <em>XFor Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see hu.e.parser.eSyntax.impl.XForExpressionImpl
-     * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXForExpression()
-     * @generated
-     */
-    EClass XFOR_EXPRESSION = eINSTANCE.getXForExpression();
-
-    /**
-     * The meta object literal for the '<em><b>Var</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference XFOR_EXPRESSION__VAR = eINSTANCE.getXForExpression_Var();
-
-    /**
-     * The meta object literal for the '<em><b>From</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference XFOR_EXPRESSION__FROM = eINSTANCE.getXForExpression_From();
-
-    /**
-     * The meta object literal for the '<em><b>By</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference XFOR_EXPRESSION__BY = eINSTANCE.getXForExpression_By();
-
-    /**
-     * The meta object literal for the '<em><b>To</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference XFOR_EXPRESSION__TO = eINSTANCE.getXForExpression_To();
-
-    /**
-     * The meta object literal for the '<em><b>Do</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference XFOR_EXPRESSION__DO = eINSTANCE.getXForExpression_Do();
-
-    /**
      * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.XParenthesizedExpressionImpl <em>XParenthesized Expression</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5405,50 +4732,6 @@ public interface ESyntaxPackage extends EPackage
     EReference REGISTER_VARIABLE__ADDR = eINSTANCE.getRegisterVariable_Addr();
 
     /**
-     * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.LabelImpl <em>Label</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see hu.e.parser.eSyntax.impl.LabelImpl
-     * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getLabel()
-     * @generated
-     */
-    EClass LABEL = eINSTANCE.getLabel();
-
-    /**
-     * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.OperationImpl <em>Operation</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see hu.e.parser.eSyntax.impl.OperationImpl
-     * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getOperation()
-     * @generated
-     */
-    EClass OPERATION = eINSTANCE.getOperation();
-
-    /**
-     * The meta object literal for the '<em><b>Block</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference OPERATION__BLOCK = eINSTANCE.getOperation_Block();
-
-    /**
-     * The meta object literal for the '<em><b>Return</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference OPERATION__RETURN = eINSTANCE.getOperation_Return();
-
-    /**
-     * The meta object literal for the '<em><b>Returnvar</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference OPERATION__RETURNVAR = eINSTANCE.getOperation_Returnvar();
-
-    /**
      * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.ParameterVariableImpl <em>Parameter Variable</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5475,6 +4758,24 @@ public interface ESyntaxPackage extends EPackage
     EAttribute PARAMETER_VARIABLE__DEFAULT = eINSTANCE.getParameterVariable_Default();
 
     /**
+     * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.OperationBlockImpl <em>Operation Block</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see hu.e.parser.eSyntax.impl.OperationBlockImpl
+     * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getOperationBlock()
+     * @generated
+     */
+    EClass OPERATION_BLOCK = eINSTANCE.getOperationBlock();
+
+    /**
+     * The meta object literal for the '<em><b>Steps</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OPERATION_BLOCK__STEPS = eINSTANCE.getOperationBlock_Steps();
+
+    /**
      * The meta object literal for the '{@link hu.e.parser.eSyntax.IntegerKind <em>Integer Kind</em>}' enum.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5493,26 +4794,6 @@ public interface ESyntaxPackage extends EPackage
      * @generated
      */
     EEnum PARAMETER_KIND = eINSTANCE.getParameterKind();
-
-    /**
-     * The meta object literal for the '{@link hu.e.parser.eSyntax.OperationRole <em>Operation Role</em>}' enum.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see hu.e.parser.eSyntax.OperationRole
-     * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getOperationRole()
-     * @generated
-     */
-    EEnum OPERATION_ROLE = eINSTANCE.getOperationRole();
-
-    /**
-     * The meta object literal for the '{@link hu.e.parser.eSyntax.BinaryType <em>Binary Type</em>}' enum.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see hu.e.parser.eSyntax.BinaryType
-     * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getBinaryType()
-     * @generated
-     */
-    EEnum BINARY_TYPE = eINSTANCE.getBinaryType();
 
     /**
      * The meta object literal for the '{@link hu.e.parser.eSyntax.UNARY_OPERATOR <em>UNARY OPERATOR</em>}' enum.

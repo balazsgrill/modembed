@@ -68,36 +68,39 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
       case ESyntaxPackage.COMPILATION_UNIT: return createCompilationUnit();
       case ESyntaxPackage.ANNOTATION_DEFINITION: return createAnnotationDefinition();
       case ESyntaxPackage.ANNOTATION: return createAnnotation();
+      case ESyntaxPackage.WORKFLOW_NOTATION: return createWorkflowNotation();
+      case ESyntaxPackage.WORKFLOW_STEP_NOTATION: return createWorkflowStepNotation();
+      case ESyntaxPackage.WORKFLOW_STEP_PARAMETER_NOTATION: return createWorkflowStepParameterNotation();
+      case ESyntaxPackage.INSTRUCTION_SET_NOTATION: return createInstructionSetNotation();
+      case ESyntaxPackage.INSTRUCTION_NOTATION: return createInstructionNotation();
+      case ESyntaxPackage.INSTRUCTION_WORD_NOTATION: return createInstructionWordNotation();
+      case ESyntaxPackage.INSTRUCTION_PARAMETER_NOTATION: return createInstructionParameterNotation();
+      case ESyntaxPackage.INSCTRUCTION_SECTION_NOTATION: return createInsctructionSectionNotation();
       case ESyntaxPackage.LIBRARY: return createLibrary();
       case ESyntaxPackage.LIBRARY_ITEM: return createLibraryItem();
       case ESyntaxPackage.TYPE: return createType();
       case ESyntaxPackage.TYPE_DEF: return createTypeDef();
+      case ESyntaxPackage.UNSPECIFIED_TYPE_DEF: return createUnspecifiedTypeDef();
       case ESyntaxPackage.POINTER_TYPE_DEF: return createPointerTypeDef();
       case ESyntaxPackage.ARRAY_TYPE_DEF: return createArrayTypeDef();
       case ESyntaxPackage.REF_TYPE_DEF: return createRefTypeDef();
       case ESyntaxPackage.DATA_TYPE_DEF: return createDataTypeDef();
+      case ESyntaxPackage.LABEL_DATA_TYPE_DEF: return createLabelDataTypeDef();
       case ESyntaxPackage.FIXED_DATA_TYPE_DEF: return createFixedDataTypeDef();
       case ESyntaxPackage.INTEGER_DATA_TYPE_DEF: return createIntegerDataTypeDef();
       case ESyntaxPackage.STRUCT_TYPE_DEF: return createStructTypeDef();
       case ESyntaxPackage.VARIABLE: return createVariable();
       case ESyntaxPackage.OPERATION_STEP: return createOperationStep();
-      case ESyntaxPackage.INSTRUCTION_WORD: return createInstructionWord();
-      case ESyntaxPackage.WORD_SECTION: return createWordSection();
-      case ESyntaxPackage.LITERAL_VALUE: return createLiteralValue();
+      case ESyntaxPackage.RESULT_VARIABLE_REFERENCE: return createResultVariableReference();
       case ESyntaxPackage.VARIABLE_REFERENCE: return createVariableReference();
       case ESyntaxPackage.OPERATION_CALL: return createOperationCall();
       case ESyntaxPackage.OPERATION_CALL_PARAMETER: return createOperationCallParameter();
-      case ESyntaxPackage.OPERATION_SIGNATURE: return createOperationSignature();
-      case ESyntaxPackage.OPERATION_BLOCK: return createOperationBlock();
-      case ESyntaxPackage.OPERATOR_DEFINITION: return createOperatorDefinition();
-      case ESyntaxPackage.LINKED_BINARY: return createLinkedBinary();
-      case ESyntaxPackage.BINARY_SECTION: return createBinarySection();
-      case ESyntaxPackage.FUNCTION_BINARY_SECTION: return createFunctionBinarySection();
-      case ESyntaxPackage.OPTIMIZER_CALL: return createOptimizerCall();
-      case ESyntaxPackage.FUNCTION_MEMORY: return createFunctionMemory();
-      case ESyntaxPackage.CONSTANT_BINARY_SECTION: return createConstantBinarySection();
-      case ESyntaxPackage.REFERENCE_BINARY_SECTION: return createReferenceBinarySection();
+      case ESyntaxPackage.OPERATION_TYPE_DEF: return createOperationTypeDef();
+      case ESyntaxPackage.OPERATION: return createOperation();
+      case ESyntaxPackage.OPERATION_PARAMETER: return createOperationParameter();
+      case ESyntaxPackage.LAZY_PARAMETER: return createLazyParameter();
       case ESyntaxPackage.XEXPRESSION: return createXExpression();
+      case ESyntaxPackage.XEXPRESSION_BLOCK: return createXExpressionBlock();
       case ESyntaxPackage.XPRIMARY_EXPRESSION: return createXPrimaryExpression();
       case ESyntaxPackage.XSIZE_OF_EXPRESSION: return createXSizeOfExpression();
       case ESyntaxPackage.XSTRUCT_EXPRESSION: return createXStructExpression();
@@ -113,16 +116,12 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
       case ESyntaxPackage.XTOP_LEVEL_EXPRESSION: return createXTopLevelExpression();
       case ESyntaxPackage.XERROR_EXPRESSION: return createXErrorExpression();
       case ESyntaxPackage.XIS_LITERAL_EXPRESSION: return createXIsLiteralExpression();
-      case ESyntaxPackage.XIF_EXPRESSION: return createXIfExpression();
-      case ESyntaxPackage.XWHILE_EXPRESSION: return createXWhileExpression();
-      case ESyntaxPackage.XFOR_EXPRESSION: return createXForExpression();
       case ESyntaxPackage.XPARENTHESIZED_EXPRESSION: return createXParenthesizedExpression();
       case ESyntaxPackage.STRUCT_TYPE_DEF_MEMBER: return createStructTypeDefMember();
       case ESyntaxPackage.CONSTANT_VARIABLE: return createConstantVariable();
       case ESyntaxPackage.REGISTER_VARIABLE: return createRegisterVariable();
-      case ESyntaxPackage.LABEL: return createLabel();
-      case ESyntaxPackage.OPERATION: return createOperation();
       case ESyntaxPackage.PARAMETER_VARIABLE: return createParameterVariable();
+      case ESyntaxPackage.OPERATION_BLOCK: return createOperationBlock();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -142,10 +141,6 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
         return createIntegerKindFromString(eDataType, initialValue);
       case ESyntaxPackage.PARAMETER_KIND:
         return createParameterKindFromString(eDataType, initialValue);
-      case ESyntaxPackage.OPERATION_ROLE:
-        return createOperationRoleFromString(eDataType, initialValue);
-      case ESyntaxPackage.BINARY_TYPE:
-        return createBinaryTypeFromString(eDataType, initialValue);
       case ESyntaxPackage.UNARY_OPERATOR:
         return createUNARY_OPERATORFromString(eDataType, initialValue);
       case ESyntaxPackage.MULTIPLICATIVE_OPERATOR:
@@ -179,10 +174,6 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
         return convertIntegerKindToString(eDataType, instanceValue);
       case ESyntaxPackage.PARAMETER_KIND:
         return convertParameterKindToString(eDataType, instanceValue);
-      case ESyntaxPackage.OPERATION_ROLE:
-        return convertOperationRoleToString(eDataType, instanceValue);
-      case ESyntaxPackage.BINARY_TYPE:
-        return convertBinaryTypeToString(eDataType, instanceValue);
       case ESyntaxPackage.UNARY_OPERATOR:
         return convertUNARY_OPERATORToString(eDataType, instanceValue);
       case ESyntaxPackage.MULTIPLICATIVE_OPERATOR:
@@ -240,6 +231,94 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public WorkflowNotation createWorkflowNotation()
+  {
+    WorkflowNotationImpl workflowNotation = new WorkflowNotationImpl();
+    return workflowNotation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public WorkflowStepNotation createWorkflowStepNotation()
+  {
+    WorkflowStepNotationImpl workflowStepNotation = new WorkflowStepNotationImpl();
+    return workflowStepNotation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public WorkflowStepParameterNotation createWorkflowStepParameterNotation()
+  {
+    WorkflowStepParameterNotationImpl workflowStepParameterNotation = new WorkflowStepParameterNotationImpl();
+    return workflowStepParameterNotation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InstructionSetNotation createInstructionSetNotation()
+  {
+    InstructionSetNotationImpl instructionSetNotation = new InstructionSetNotationImpl();
+    return instructionSetNotation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InstructionNotation createInstructionNotation()
+  {
+    InstructionNotationImpl instructionNotation = new InstructionNotationImpl();
+    return instructionNotation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InstructionWordNotation createInstructionWordNotation()
+  {
+    InstructionWordNotationImpl instructionWordNotation = new InstructionWordNotationImpl();
+    return instructionWordNotation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InstructionParameterNotation createInstructionParameterNotation()
+  {
+    InstructionParameterNotationImpl instructionParameterNotation = new InstructionParameterNotationImpl();
+    return instructionParameterNotation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InsctructionSectionNotation createInsctructionSectionNotation()
+  {
+    InsctructionSectionNotationImpl insctructionSectionNotation = new InsctructionSectionNotationImpl();
+    return insctructionSectionNotation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Library createLibrary()
   {
     LibraryImpl library = new LibraryImpl();
@@ -284,6 +363,17 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public UnspecifiedTypeDef createUnspecifiedTypeDef()
+  {
+    UnspecifiedTypeDefImpl unspecifiedTypeDef = new UnspecifiedTypeDefImpl();
+    return unspecifiedTypeDef;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public PointerTypeDef createPointerTypeDef()
   {
     PointerTypeDefImpl pointerTypeDef = new PointerTypeDefImpl();
@@ -321,6 +411,17 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
   {
     DataTypeDefImpl dataTypeDef = new DataTypeDefImpl();
     return dataTypeDef;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public LabelDataTypeDef createLabelDataTypeDef()
+  {
+    LabelDataTypeDefImpl labelDataTypeDef = new LabelDataTypeDefImpl();
+    return labelDataTypeDef;
   }
 
   /**
@@ -383,32 +484,10 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public InstructionWord createInstructionWord()
+  public ResultVariableReference createResultVariableReference()
   {
-    InstructionWordImpl instructionWord = new InstructionWordImpl();
-    return instructionWord;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public WordSection createWordSection()
-  {
-    WordSectionImpl wordSection = new WordSectionImpl();
-    return wordSection;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public LiteralValue createLiteralValue()
-  {
-    LiteralValueImpl literalValue = new LiteralValueImpl();
-    return literalValue;
+    ResultVariableReferenceImpl resultVariableReference = new ResultVariableReferenceImpl();
+    return resultVariableReference;
   }
 
   /**
@@ -449,10 +528,10 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public OperationSignature createOperationSignature()
+  public OperationTypeDef createOperationTypeDef()
   {
-    OperationSignatureImpl operationSignature = new OperationSignatureImpl();
-    return operationSignature;
+    OperationTypeDefImpl operationTypeDef = new OperationTypeDefImpl();
+    return operationTypeDef;
   }
 
   /**
@@ -460,10 +539,10 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public OperationBlock createOperationBlock()
+  public Operation createOperation()
   {
-    OperationBlockImpl operationBlock = new OperationBlockImpl();
-    return operationBlock;
+    OperationImpl operation = new OperationImpl();
+    return operation;
   }
 
   /**
@@ -471,10 +550,10 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public OperatorDefinition createOperatorDefinition()
+  public OperationParameter createOperationParameter()
   {
-    OperatorDefinitionImpl operatorDefinition = new OperatorDefinitionImpl();
-    return operatorDefinition;
+    OperationParameterImpl operationParameter = new OperationParameterImpl();
+    return operationParameter;
   }
 
   /**
@@ -482,76 +561,10 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public LinkedBinary createLinkedBinary()
+  public LazyParameter createLazyParameter()
   {
-    LinkedBinaryImpl linkedBinary = new LinkedBinaryImpl();
-    return linkedBinary;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public BinarySection createBinarySection()
-  {
-    BinarySectionImpl binarySection = new BinarySectionImpl();
-    return binarySection;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public FunctionBinarySection createFunctionBinarySection()
-  {
-    FunctionBinarySectionImpl functionBinarySection = new FunctionBinarySectionImpl();
-    return functionBinarySection;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public OptimizerCall createOptimizerCall()
-  {
-    OptimizerCallImpl optimizerCall = new OptimizerCallImpl();
-    return optimizerCall;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public FunctionMemory createFunctionMemory()
-  {
-    FunctionMemoryImpl functionMemory = new FunctionMemoryImpl();
-    return functionMemory;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ConstantBinarySection createConstantBinarySection()
-  {
-    ConstantBinarySectionImpl constantBinarySection = new ConstantBinarySectionImpl();
-    return constantBinarySection;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ReferenceBinarySection createReferenceBinarySection()
-  {
-    ReferenceBinarySectionImpl referenceBinarySection = new ReferenceBinarySectionImpl();
-    return referenceBinarySection;
+    LazyParameterImpl lazyParameter = new LazyParameterImpl();
+    return lazyParameter;
   }
 
   /**
@@ -563,6 +576,17 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
   {
     XExpressionImpl xExpression = new XExpressionImpl();
     return xExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public XExpressionBlock createXExpressionBlock()
+  {
+    XExpressionBlockImpl xExpressionBlock = new XExpressionBlockImpl();
+    return xExpressionBlock;
   }
 
   /**
@@ -735,39 +759,6 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public XIfExpression createXIfExpression()
-  {
-    XIfExpressionImpl xIfExpression = new XIfExpressionImpl();
-    return xIfExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public XWhileExpression createXWhileExpression()
-  {
-    XWhileExpressionImpl xWhileExpression = new XWhileExpressionImpl();
-    return xWhileExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public XForExpression createXForExpression()
-  {
-    XForExpressionImpl xForExpression = new XForExpressionImpl();
-    return xForExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public XParenthesizedExpression createXParenthesizedExpression()
   {
     XParenthesizedExpressionImpl xParenthesizedExpression = new XParenthesizedExpressionImpl();
@@ -812,32 +803,21 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Label createLabel()
-  {
-    LabelImpl label = new LabelImpl();
-    return label;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Operation createOperation()
-  {
-    OperationImpl operation = new OperationImpl();
-    return operation;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public ParameterVariable createParameterVariable()
   {
     ParameterVariableImpl parameterVariable = new ParameterVariableImpl();
     return parameterVariable;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public OperationBlock createOperationBlock()
+  {
+    OperationBlockImpl operationBlock = new OperationBlockImpl();
+    return operationBlock;
   }
 
   /**
@@ -880,50 +860,6 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
    * @generated
    */
   public String convertParameterKindToString(EDataType eDataType, Object instanceValue)
-  {
-    return instanceValue == null ? null : instanceValue.toString();
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public OperationRole createOperationRoleFromString(EDataType eDataType, String initialValue)
-  {
-    OperationRole result = OperationRole.get(initialValue);
-    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-    return result;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String convertOperationRoleToString(EDataType eDataType, Object instanceValue)
-  {
-    return instanceValue == null ? null : instanceValue.toString();
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public BinaryType createBinaryTypeFromString(EDataType eDataType, String initialValue)
-  {
-    BinaryType result = BinaryType.get(initialValue);
-    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-    return result;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String convertBinaryTypeToString(EDataType eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }

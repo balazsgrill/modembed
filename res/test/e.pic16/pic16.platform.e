@@ -1,4 +1,4 @@
-library pic16.platform overrides e.platform;
+library pic16.platform;
 
 use e.platform;
 use microchip.pic16;

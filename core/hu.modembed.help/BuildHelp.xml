@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ====================================================================== 
+     2013.02.09. 14:16:13                                                        
+
+     MODembed-wikiHelp    
+     Generate eclipse help using WikiText
+                   
+     balazs.grill                                                                
+     ====================================================================== -->
+<project name="MODembed-wikiHelp" default="generate-help">
+    <description>
+            description
+    </description>
+
+	<property name="wikitext.standalone" value="wikitext/libs"/><!-- path to wikitext standalone package -->
+
+	<path id="wikitext.classpath">
+		<fileset dir="${wikitext.standalone}">
+			<include name="org.eclipse.mylyn.wikitext.*core*.jar"/>
+		</fileset>
+	</path>
+	
+	<taskdef classpathref="wikitext.classpath" resource="org/eclipse/mylyn/wikitext/core/util/anttask/tasks.properties" />
+	
+	<target name="generate-help" description="Generate Eclipse help from textile source">
+		<wikitext-to-eclipse-help markupLanguage="MediaWiki" 
+			multipleOutputFiles="false"
+			navigationImages="true"
+			internallinkpattern="{0}.html"
+			helpPrefix="help">
+			<fileset dir="${basedir}/wiki">
+    			<include name="*.mediawiki"/>
+			</fileset>
+			<!--stylesheet url="styles/help.css"/-->
+			<!--stylesheet url="styles/main.css"/-->
+		</wikitext-to-eclipse-help>
+		<copy todir="${basedir}/help">
+			<fileset dir="${basedir}/wiki">
+				<exclude name="*.mediawiki"/>
+			</fileset>
+		</copy>
+		<delete>
+			<fileset dir="${basedir}/wiki">
+				<include name="*.html"/>
+				<include name="*-toc.xml"/>
+			</fileset>
+		</delete>
+		<xslt style="integrate_toc.xsl" in="toc.xml" out="help_toc.xml"></xslt>
+	</target>
+</project>

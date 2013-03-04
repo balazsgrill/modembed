@@ -4,8 +4,6 @@ package hu.e.parser.eSyntax;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Operation Block</b></em>'.
@@ -22,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface OperationBlock extends EObject
+public interface OperationBlock extends XExpressionBlock
 {
   /**
    * Returns the value of the '<em><b>Steps</b></em>' containment reference list.

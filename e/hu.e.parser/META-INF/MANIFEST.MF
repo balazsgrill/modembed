@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: hu.e.parser
 Bundle-Vendor: Cubussapiens.hu
-Bundle-Version: 0.7.0
+Bundle-Version: 0.8.0.qualifier
 Bundle-SymbolicName: hu.e.parser; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.xtext;bundle-version="2.0.0";visibility:=reexport,
@@ -18,20 +18,23 @@ Require-Bundle: org.eclipse.xtext;bundle-version="2.0.0";visibility:=reexport,
  org.antlr.runtime,
  org.eclipse.xtext.common.types,
  hu.modembed;bundle-version="0.5.1",
- org.eclipse.core.runtime;bundle-version="3.7.0"
+ org.eclipse.core.runtime;bundle-version="3.7.0",
+ hu.modembed.model;bundle-version="0.8.0",
+ org.eclipse.core.resources
 Import-Package: org.apache.commons.logging,
  org.apache.log4j,
  org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: hu.e.parser,
- hu.e.parser.services,
+ hu.e.parser.convert,
  hu.e.parser.eSyntax,
  hu.e.parser.eSyntax.impl,
  hu.e.parser.eSyntax.util,
- hu.e.parser.serializer,
+ hu.e.parser.formatting,
+ hu.e.parser.generator,
  hu.e.parser.parser.antlr,
  hu.e.parser.parser.antlr.internal,
- hu.e.parser.validation,
  hu.e.parser.scoping,
- hu.e.parser.generator,
- hu.e.parser.formatting
+ hu.e.parser.serializer,
+ hu.e.parser.services,
+ hu.e.parser.validation

@@ -2,18 +2,9 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension
-         point="org.eclipse.ui.importWizards">
-      <wizard
-            category="hu.modembed.ui.category"
-            class="hu.modembed.pic.ui.wizard.ImportPICLibWizard"
-            icon="icons/microchip.png"
-            id="hu.modembed.pic.ui.importLib"
-            name="Import PIC library">
-      </wizard>
-   </extension>
-   <extension
          point="hu.modembed.ui.includedCode">
       <project
+            category="hu.modembed.pic.ui.category"
             icon="icons/microchip.png"
             id="microchip.pic16"
             name="PIC16 midrange architecture code">
@@ -32,22 +23,45 @@
                path="/"
                resource="code/pic16/pic16.platform.e">
          </resource>
+      </project>
+      <category
+            id="hu.modembed.pic.ui.category"
+            name="PIC">
+      </category>
+      <category
+            id="hu.modembed.pic.midrange.category"
+            name="PIC midrange libraries"
+            parent="hu.modembed.pic.ui.category">
+      </category>
+      <project
+            category="hu.modembed.pic.ui.category"
+            icon="icons/microchip.png"
+            id="microchip.pic18"
+            name="PIC18 high-end architecture code">
+         <dependency
+               project="e.core">
+         </dependency>
          <resource
                path="/"
-               resource="code/pic16/pic16.bankselect.e">
-         </resource>
-         <resource
-               path="/"
-               resource="code/pic16/pic16.model.xmi">
+               resource="code/pic18/pic18.e">
          </resource>
       </project>
+      <category
+            id="hu.modembed.pic.pic18.category"
+            name="PIC18 libraries"
+            parent="hu.modembed.pic.ui.category">
+      </category>
    </extension>
    <extension
-         point="hu.e.compiler.optimizers">
-      <optimizer
-            class="hu.modembed.pic.ui.optimizer.PIC16SelectBankOptimizer"
-            id="microchip.optimize.bankselect.pic16">
-      </optimizer>
+         point="hu.e.compiler.tasks">
+      <taskType
+            class="hu.modembed.pic.ui.tasks.ExtractConfigValuesTask"
+            id="pic.config.extract">
+      </taskType>
+      <taskType
+            class="hu.modembed.pic.ui.tasks.ConfigValuesToHexTask"
+            id="pic.config.tohex">
+      </taskType>
    </extension>
 
 </plugin>

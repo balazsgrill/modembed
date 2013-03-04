@@ -61,7 +61,7 @@ public class ImportedScope extends AbstractScope {
 		if (cu != null){
 			Set<Library> visited = new HashSet<Library>();
 			Queue<Library> uses = new LinkedList<Library>();
-			uses.addAll(cu.getUse());
+			//uses.addAll(cu.getUse());
 			
 			while(!uses.isEmpty()){
 				Library lib = uses.poll();
@@ -76,7 +76,7 @@ public class ImportedScope extends AbstractScope {
 						}
 					}
 					
-					uses.addAll(lib.getOverrides());
+					//uses.addAll(lib.getOverrides());
 				}
 			}
 			

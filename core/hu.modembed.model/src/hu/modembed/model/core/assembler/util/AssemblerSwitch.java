@@ -4,10 +4,11 @@ package hu.modembed.model.core.assembler.util;
 
 import hu.modembed.model.core.MODembedElement;
 import hu.modembed.model.core.NamedElement;
-import hu.modembed.model.core.PackagedElement;
+import hu.modembed.model.core.RootElement;
 
 import hu.modembed.model.core.assembler.*;
 
+import hu.modembed.model.emodel.CallableElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -73,7 +74,7 @@ public class AssemblerSwitch<T> extends Switch<T> {
 			case AssemblerPackage.INSTRUCTION_SET: {
 				InstructionSet instructionSet = (InstructionSet)theEObject;
 				T result = caseInstructionSet(instructionSet);
-				if (result == null) result = casePackagedElement(instructionSet);
+				if (result == null) result = caseRootElement(instructionSet);
 				if (result == null) result = caseNamedElement(instructionSet);
 				if (result == null) result = caseMODembedElement(instructionSet);
 				if (result == null) result = defaultCase(theEObject);
@@ -82,8 +83,46 @@ public class AssemblerSwitch<T> extends Switch<T> {
 			case AssemblerPackage.INSTRUCTION: {
 				Instruction instruction = (Instruction)theEObject;
 				T result = caseInstruction(instruction);
+				if (result == null) result = caseCallableElement(instruction);
 				if (result == null) result = caseNamedElement(instruction);
 				if (result == null) result = caseMODembedElement(instruction);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case AssemblerPackage.INSTRUCTION_PARAMETER: {
+				InstructionParameter instructionParameter = (InstructionParameter)theEObject;
+				T result = caseInstructionParameter(instructionParameter);
+				if (result == null) result = caseMODembedElement(instructionParameter);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case AssemblerPackage.INSTRUCTION_SECTION: {
+				InstructionSection instructionSection = (InstructionSection)theEObject;
+				T result = caseInstructionSection(instructionSection);
+				if (result == null) result = caseMODembedElement(instructionSection);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case AssemblerPackage.CONSTANT_SECTION: {
+				ConstantSection constantSection = (ConstantSection)theEObject;
+				T result = caseConstantSection(constantSection);
+				if (result == null) result = caseInstructionSection(constantSection);
+				if (result == null) result = caseMODembedElement(constantSection);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case AssemblerPackage.PARAMETER_SECTION: {
+				ParameterSection parameterSection = (ParameterSection)theEObject;
+				T result = caseParameterSection(parameterSection);
+				if (result == null) result = caseInstructionSection(parameterSection);
+				if (result == null) result = caseMODembedElement(parameterSection);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case AssemblerPackage.INSTRUCTION_WORD: {
+				InstructionWord instructionWord = (InstructionWord)theEObject;
+				T result = caseInstructionWord(instructionWord);
+				if (result == null) result = caseMODembedElement(instructionWord);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -122,6 +161,81 @@ public class AssemblerSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Instruction Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Instruction Parameter</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseInstructionParameter(InstructionParameter object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Instruction Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Instruction Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseInstructionSection(InstructionSection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Constant Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Constant Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseConstantSection(ConstantSection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Parameter Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Parameter Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseParameterSection(ParameterSection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Instruction Word</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Instruction Word</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseInstructionWord(InstructionWord object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>MO Dembed Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -152,17 +266,32 @@ public class AssemblerSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Packaged Element</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Root Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Packaged Element</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Root Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePackagedElement(PackagedElement object) {
+	public T caseRootElement(RootElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Callable Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Callable Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCallableElement(CallableElement object) {
 		return null;
 	}
 

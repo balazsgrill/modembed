@@ -1,14 +1,10 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package hu.modembed.model.application;
 
-import hu.modembed.model.core.PackagedElement;
-
 import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,7 +23,7 @@ import org.eclipse.emf.common.util.EList;
  * @model abstract="true"
  * @generated
  */
-public interface Component extends PackagedElement {
+public interface Component extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Uses</b></em>' containment reference list.
 	 * The list contents are of type {@link hu.modembed.model.application.Port}.
