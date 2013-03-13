@@ -45,6 +45,10 @@
                path="/"
                resource="code/pic18/pic18.e">
          </resource>
+         <resource
+               path="/"
+               resource="code/pic18/pic18.platform.e">
+         </resource>
       </project>
       <category
             id="hu.modembed.pic.pic18.category"
