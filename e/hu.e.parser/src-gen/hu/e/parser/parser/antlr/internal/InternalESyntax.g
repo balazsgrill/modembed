@@ -2094,37 +2094,6 @@ ruleVariable returns [EObject current=null]
 
 
 
-// Entry rule entryRuleResultVariableReference
-entryRuleResultVariableReference returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getResultVariableReferenceRule()); }
-	 iv_ruleResultVariableReference=ruleResultVariableReference 
-	 { $current=$iv_ruleResultVariableReference.current; } 
-	 EOF 
-;
-
-// Rule ResultVariableReference
-ruleResultVariableReference returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-((
-    {
-        $current = forceCreateModelElement(
-            grammarAccess.getResultVariableReferenceAccess().getResultVariableReferenceAction_0(),
-            $current);
-    }
-)	otherlv_1='result' 
-    {
-    	newLeafNode(otherlv_1, grammarAccess.getResultVariableReferenceAccess().getResultKeyword_1());
-    }
-)
-;
-
-
-
-
-
 // Entry rule entryRuleVariableReference
 entryRuleVariableReference returns [EObject current=null] 
 	:
@@ -2139,25 +2108,41 @@ ruleVariableReference returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
+((
 (
+		lv_var_0_0=	'result' 
+    {
+        newLeafNode(lv_var_0_0, grammarAccess.getVariableReferenceAccess().getVarResultKeyword_0_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getVariableReferenceRule());
+	        }
+       		setWithLastConsumed($current, "var", lv_var_0_0, "result");
+	    }
+
+)
+)
+    |(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getVariableReferenceAccess().getVarQualifiedNameParserRuleCall_0()); 
+	        newCompositeNode(grammarAccess.getVariableReferenceAccess().getVarQualifiedNameParserRuleCall_1_0()); 
 	    }
-		lv_var_0_0=ruleQualifiedName		{
+		lv_var_1_0=ruleQualifiedName		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getVariableReferenceRule());
 	        }
        		set(
        			$current, 
        			"var",
-        		lv_var_0_0, 
+        		lv_var_1_0, 
         		"QualifiedName");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)
+))
 ;
 
 
@@ -2869,16 +2854,6 @@ ruleXPrimaryExpression returns [EObject current=null]
     this_XExpressionBlock_7=ruleXExpressionBlock
     { 
         $current = $this_XExpressionBlock_7.current; 
-        afterParserOrEnumRuleCall();
-    }
-
-    |
-    { 
-        newCompositeNode(grammarAccess.getXPrimaryExpressionAccess().getResultVariableReferenceParserRuleCall_8()); 
-    }
-    this_ResultVariableReference_8=ruleResultVariableReference
-    { 
-        $current = $this_ResultVariableReference_8.current; 
         afterParserOrEnumRuleCall();
     }
 )

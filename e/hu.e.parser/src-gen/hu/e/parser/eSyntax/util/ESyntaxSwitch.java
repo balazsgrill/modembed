@@ -276,14 +276,6 @@ public class ESyntaxSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case ESyntaxPackage.RESULT_VARIABLE_REFERENCE:
-      {
-        ResultVariableReference resultVariableReference = (ResultVariableReference)theEObject;
-        T result = caseResultVariableReference(resultVariableReference);
-        if (result == null) result = caseXPrimaryExpression(resultVariableReference);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case ESyntaxPackage.VARIABLE_REFERENCE:
       {
         VariableReference variableReference = (VariableReference)theEObject;
@@ -948,22 +940,6 @@ public class ESyntaxSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseOperationStep(OperationStep object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Result Variable Reference</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Result Variable Reference</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseResultVariableReference(ResultVariableReference object)
   {
     return null;
   }

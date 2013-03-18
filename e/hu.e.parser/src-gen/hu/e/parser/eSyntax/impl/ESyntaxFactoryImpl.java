@@ -91,7 +91,6 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
       case ESyntaxPackage.STRUCT_TYPE_DEF: return createStructTypeDef();
       case ESyntaxPackage.VARIABLE: return createVariable();
       case ESyntaxPackage.OPERATION_STEP: return createOperationStep();
-      case ESyntaxPackage.RESULT_VARIABLE_REFERENCE: return createResultVariableReference();
       case ESyntaxPackage.VARIABLE_REFERENCE: return createVariableReference();
       case ESyntaxPackage.OPERATION_CALL: return createOperationCall();
       case ESyntaxPackage.OPERATION_CALL_PARAMETER: return createOperationCallParameter();
@@ -477,17 +476,6 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
   {
     OperationStepImpl operationStep = new OperationStepImpl();
     return operationStep;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ResultVariableReference createResultVariableReference()
-  {
-    ResultVariableReferenceImpl resultVariableReference = new ResultVariableReferenceImpl();
-    return resultVariableReference;
   }
 
   /**

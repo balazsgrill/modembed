@@ -98,7 +98,6 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OperationStep"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ResultVariableReference" eSuperTypes="#//XPrimaryExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="VariableReference" eSuperTypes="#//XPrimaryExpression">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="var" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>

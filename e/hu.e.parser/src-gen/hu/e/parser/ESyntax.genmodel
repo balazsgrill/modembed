@@ -132,7 +132,6 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//Variable/type"/>
     </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//OperationStep"/>
-    <genClasses ecoreClass="ESyntax.ecore#//ResultVariableReference"/>
     <genClasses ecoreClass="ESyntax.ecore#//VariableReference">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//VariableReference/var"/>
     </genClasses>

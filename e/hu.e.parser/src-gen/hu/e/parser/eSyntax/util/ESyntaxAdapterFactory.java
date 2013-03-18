@@ -205,11 +205,6 @@ public class ESyntaxAdapterFactory extends AdapterFactoryImpl
         return createOperationStepAdapter();
       }
       @Override
-      public Adapter caseResultVariableReference(ResultVariableReference object)
-      {
-        return createResultVariableReferenceAdapter();
-      }
-      @Override
       public Adapter caseVariableReference(VariableReference object)
       {
         return createVariableReferenceAdapter();
@@ -767,21 +762,6 @@ public class ESyntaxAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createOperationStepAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link hu.e.parser.eSyntax.ResultVariableReference <em>Result Variable Reference</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see hu.e.parser.eSyntax.ResultVariableReference
-   * @generated
-   */
-  public Adapter createResultVariableReferenceAdapter()
   {
     return null;
   }

@@ -16,7 +16,6 @@ import hu.e.parser.eSyntax.OperationBlock;
 import hu.e.parser.eSyntax.OperationCall;
 import hu.e.parser.eSyntax.OperationCallParameter;
 import hu.e.parser.eSyntax.OperationStep;
-import hu.e.parser.eSyntax.ResultVariableReference;
 import hu.e.parser.eSyntax.UNARY_OPERATOR;
 import hu.e.parser.eSyntax.Variable;
 import hu.e.parser.eSyntax.XErrorExpression;
@@ -256,9 +255,6 @@ public class ExpressionConverter {
 		}
 		if (x instanceof hu.e.parser.eSyntax.VariableReference){
 			return vref((hu.e.parser.eSyntax.VariableReference) x, scope);
-		}
-		if (x instanceof ResultVariableReference){
-			//TODO
 		}
 		if (x instanceof OperationBlock){
 			ExecutionBlock block = ExpressionsFactory.eINSTANCE.createExecutionBlock();

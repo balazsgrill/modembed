@@ -25,7 +25,6 @@ import hu.e.parser.eSyntax.ParameterVariable;
 import hu.e.parser.eSyntax.PointerTypeDef;
 import hu.e.parser.eSyntax.RefTypeDef;
 import hu.e.parser.eSyntax.RegisterVariable;
-import hu.e.parser.eSyntax.ResultVariableReference;
 import hu.e.parser.eSyntax.StructTypeDef;
 import hu.e.parser.eSyntax.StructTypeDefMember;
 import hu.e.parser.eSyntax.Type;
@@ -220,13 +219,6 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 				if(context == grammarAccess.getLibraryItemRule() ||
 				   context == grammarAccess.getRegisterVariableRule()) {
 					sequence_RegisterVariable(context, (RegisterVariable) semanticObject); 
-					return; 
-				}
-				else break;
-			case ESyntaxPackage.RESULT_VARIABLE_REFERENCE:
-				if(context == grammarAccess.getResultVariableReferenceRule() ||
-				   context == grammarAccess.getXPrimaryExpressionRule()) {
-					sequence_ResultVariableReference(context, (ResultVariableReference) semanticObject); 
 					return; 
 				}
 				else break;
@@ -668,15 +660,6 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 	
 	/**
 	 * Constraint:
-	 *     {ResultVariableReference}
-	 */
-	protected void sequence_ResultVariableReference(EObject context, ResultVariableReference semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
 	 *     (type=TypeDef name=ID)
 	 */
 	protected void sequence_StructTypeDefMember(EObject context, StructTypeDefMember semanticObject) {
@@ -733,17 +716,10 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 	
 	/**
 	 * Constraint:
-	 *     var=QualifiedName
+	 *     (var='result' | var=QualifiedName)
 	 */
 	protected void sequence_VariableReference(EObject context, VariableReference semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.VARIABLE_REFERENCE__VAR) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.VARIABLE_REFERENCE__VAR));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getVariableReferenceAccess().getVarQualifiedNameParserRuleCall_0(), semanticObject.getVar());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

@@ -168,7 +168,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXTopLevelExpression()
    * @generated
    */
-  int XTOP_LEVEL_EXPRESSION = 48;
+  int XTOP_LEVEL_EXPRESSION = 47;
 
   /**
    * The number of structural features of the '<em>XTop Level Expression</em>' class.
@@ -929,7 +929,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXPrimaryExpression()
    * @generated
    */
-  int XPRIMARY_EXPRESSION = 36;
+  int XPRIMARY_EXPRESSION = 35;
 
   /**
    * The number of structural features of the '<em>XPrimary Expression</em>' class.
@@ -941,25 +941,6 @@ public interface ESyntaxPackage extends EPackage
   int XPRIMARY_EXPRESSION_FEATURE_COUNT = 0;
 
   /**
-   * The meta object id for the '{@link hu.e.parser.eSyntax.impl.ResultVariableReferenceImpl <em>Result Variable Reference</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see hu.e.parser.eSyntax.impl.ResultVariableReferenceImpl
-   * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getResultVariableReference()
-   * @generated
-   */
-  int RESULT_VARIABLE_REFERENCE = 26;
-
-  /**
-   * The number of structural features of the '<em>Result Variable Reference</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RESULT_VARIABLE_REFERENCE_FEATURE_COUNT = XPRIMARY_EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.impl.VariableReferenceImpl <em>Variable Reference</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -967,7 +948,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getVariableReference()
    * @generated
    */
-  int VARIABLE_REFERENCE = 27;
+  int VARIABLE_REFERENCE = 26;
 
   /**
    * The feature id for the '<em><b>Var</b></em>' attribute.
@@ -995,7 +976,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getOperationCall()
    * @generated
    */
-  int OPERATION_CALL = 28;
+  int OPERATION_CALL = 27;
 
   /**
    * The feature id for the '<em><b>Operation</b></em>' attribute.
@@ -1032,7 +1013,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getOperationCallParameter()
    * @generated
    */
-  int OPERATION_CALL_PARAMETER = 29;
+  int OPERATION_CALL_PARAMETER = 28;
 
   /**
    * The number of structural features of the '<em>Operation Call Parameter</em>' class.
@@ -1051,7 +1032,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getOperationTypeDef()
    * @generated
    */
-  int OPERATION_TYPE_DEF = 30;
+  int OPERATION_TYPE_DEF = 29;
 
   /**
    * The feature id for the '<em><b>Result Type</b></em>' containment reference.
@@ -1088,7 +1069,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getOperation()
    * @generated
    */
-  int OPERATION = 31;
+  int OPERATION = 30;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1143,7 +1124,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getOperationParameter()
    * @generated
    */
-  int OPERATION_PARAMETER = 32;
+  int OPERATION_PARAMETER = 31;
 
   /**
    * The number of structural features of the '<em>Operation Parameter</em>' class.
@@ -1162,7 +1143,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getLazyParameter()
    * @generated
    */
-  int LAZY_PARAMETER = 33;
+  int LAZY_PARAMETER = 32;
 
   /**
    * The feature id for the '<em><b>Paramname</b></em>' attribute.
@@ -1199,7 +1180,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXExpression()
    * @generated
    */
-  int XEXPRESSION = 34;
+  int XEXPRESSION = 33;
 
   /**
    * The number of structural features of the '<em>XExpression</em>' class.
@@ -1218,7 +1199,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXExpressionBlock()
    * @generated
    */
-  int XEXPRESSION_BLOCK = 35;
+  int XEXPRESSION_BLOCK = 34;
 
   /**
    * The number of structural features of the '<em>XExpression Block</em>' class.
@@ -1237,7 +1218,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXSizeOfExpression()
    * @generated
    */
-  int XSIZE_OF_EXPRESSION = 37;
+  int XSIZE_OF_EXPRESSION = 36;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -1265,7 +1246,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXStructExpression()
    * @generated
    */
-  int XSTRUCT_EXPRESSION = 38;
+  int XSTRUCT_EXPRESSION = 37;
 
   /**
    * The feature id for the '<em><b>Values</b></em>' containment reference list.
@@ -1293,7 +1274,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXExpression1()
    * @generated
    */
-  int XEXPRESSION1 = 39;
+  int XEXPRESSION1 = 38;
 
   /**
    * The feature id for the '<em><b>Operator</b></em>' attribute list.
@@ -1330,7 +1311,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXExpression0()
    * @generated
    */
-  int XEXPRESSION0 = 40;
+  int XEXPRESSION0 = 39;
 
   /**
    * The feature id for the '<em><b>A</b></em>' containment reference.
@@ -1367,7 +1348,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXExpressionM1()
    * @generated
    */
-  int XEXPRESSION_M1 = 41;
+  int XEXPRESSION_M1 = 40;
 
   /**
    * The feature id for the '<em><b>A</b></em>' containment reference.
@@ -1404,7 +1385,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXExpression2()
    * @generated
    */
-  int XEXPRESSION2 = 42;
+  int XEXPRESSION2 = 41;
 
   /**
    * The feature id for the '<em><b>A</b></em>' containment reference.
@@ -1450,7 +1431,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXExpression3()
    * @generated
    */
-  int XEXPRESSION3 = 43;
+  int XEXPRESSION3 = 42;
 
   /**
    * The feature id for the '<em><b>A</b></em>' containment reference.
@@ -1496,7 +1477,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXExpression4()
    * @generated
    */
-  int XEXPRESSION4 = 44;
+  int XEXPRESSION4 = 43;
 
   /**
    * The feature id for the '<em><b>A</b></em>' containment reference.
@@ -1542,7 +1523,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXExpression5()
    * @generated
    */
-  int XEXPRESSION5 = 45;
+  int XEXPRESSION5 = 44;
 
   /**
    * The feature id for the '<em><b>A</b></em>' containment reference.
@@ -1588,7 +1569,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXExpression6()
    * @generated
    */
-  int XEXPRESSION6 = 46;
+  int XEXPRESSION6 = 45;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -1643,7 +1624,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXExpressionLiteral()
    * @generated
    */
-  int XEXPRESSION_LITERAL = 47;
+  int XEXPRESSION_LITERAL = 46;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1671,7 +1652,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXErrorExpression()
    * @generated
    */
-  int XERROR_EXPRESSION = 49;
+  int XERROR_EXPRESSION = 48;
 
   /**
    * The feature id for the '<em><b>Level</b></em>' attribute.
@@ -1708,7 +1689,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXIsLiteralExpression()
    * @generated
    */
-  int XIS_LITERAL_EXPRESSION = 50;
+  int XIS_LITERAL_EXPRESSION = 49;
 
   /**
    * The feature id for the '<em><b>Ref</b></em>' containment reference.
@@ -1736,7 +1717,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getXParenthesizedExpression()
    * @generated
    */
-  int XPARENTHESIZED_EXPRESSION = 51;
+  int XPARENTHESIZED_EXPRESSION = 50;
 
   /**
    * The feature id for the '<em><b>A</b></em>' containment reference.
@@ -1764,7 +1745,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getStructTypeDefMember()
    * @generated
    */
-  int STRUCT_TYPE_DEF_MEMBER = 52;
+  int STRUCT_TYPE_DEF_MEMBER = 51;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1801,7 +1782,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getConstantVariable()
    * @generated
    */
-  int CONSTANT_VARIABLE = 53;
+  int CONSTANT_VARIABLE = 52;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1847,7 +1828,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getRegisterVariable()
    * @generated
    */
-  int REGISTER_VARIABLE = 54;
+  int REGISTER_VARIABLE = 53;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1893,7 +1874,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getParameterVariable()
    * @generated
    */
-  int PARAMETER_VARIABLE = 55;
+  int PARAMETER_VARIABLE = 54;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1948,7 +1929,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getOperationBlock()
    * @generated
    */
-  int OPERATION_BLOCK = 56;
+  int OPERATION_BLOCK = 55;
 
   /**
    * The feature id for the '<em><b>Steps</b></em>' containment reference list.
@@ -1976,7 +1957,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getIntegerKind()
    * @generated
    */
-  int INTEGER_KIND = 57;
+  int INTEGER_KIND = 56;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.ParameterKind <em>Parameter Kind</em>}' enum.
@@ -1986,7 +1967,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getParameterKind()
    * @generated
    */
-  int PARAMETER_KIND = 58;
+  int PARAMETER_KIND = 57;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.UNARY_OPERATOR <em>UNARY OPERATOR</em>}' enum.
@@ -1996,7 +1977,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getUNARY_OPERATOR()
    * @generated
    */
-  int UNARY_OPERATOR = 59;
+  int UNARY_OPERATOR = 58;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.MULTIPLICATIVE_OPERATOR <em>MULTIPLICATIVE OPERATOR</em>}' enum.
@@ -2006,7 +1987,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getMULTIPLICATIVE_OPERATOR()
    * @generated
    */
-  int MULTIPLICATIVE_OPERATOR = 60;
+  int MULTIPLICATIVE_OPERATOR = 59;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.ADDITIVE_OPERATOR <em>ADDITIVE OPERATOR</em>}' enum.
@@ -2016,7 +1997,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getADDITIVE_OPERATOR()
    * @generated
    */
-  int ADDITIVE_OPERATOR = 61;
+  int ADDITIVE_OPERATOR = 60;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.EQUALITY_OPERATOR <em>EQUALITY OPERATOR</em>}' enum.
@@ -2026,7 +2007,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getEQUALITY_OPERATOR()
    * @generated
    */
-  int EQUALITY_OPERATOR = 62;
+  int EQUALITY_OPERATOR = 61;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.BOOLEAN_OPERATOR <em>BOOLEAN OPERATOR</em>}' enum.
@@ -2036,7 +2017,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getBOOLEAN_OPERATOR()
    * @generated
    */
-  int BOOLEAN_OPERATOR = 63;
+  int BOOLEAN_OPERATOR = 62;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.ErrorLevels <em>Error Levels</em>}' enum.
@@ -2046,7 +2027,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getErrorLevels()
    * @generated
    */
-  int ERROR_LEVELS = 64;
+  int ERROR_LEVELS = 63;
 
   /**
    * The meta object id for the '{@link hu.e.parser.eSyntax.OpSingleAssign <em>Op Single Assign</em>}' enum.
@@ -2056,7 +2037,7 @@ public interface ESyntaxPackage extends EPackage
    * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getOpSingleAssign()
    * @generated
    */
-  int OP_SINGLE_ASSIGN = 65;
+  int OP_SINGLE_ASSIGN = 64;
 
 
   /**
@@ -2681,16 +2662,6 @@ public interface ESyntaxPackage extends EPackage
    * @generated
    */
   EClass getOperationStep();
-
-  /**
-   * Returns the meta object for class '{@link hu.e.parser.eSyntax.ResultVariableReference <em>Result Variable Reference</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Result Variable Reference</em>'.
-   * @see hu.e.parser.eSyntax.ResultVariableReference
-   * @generated
-   */
-  EClass getResultVariableReference();
 
   /**
    * Returns the meta object for class '{@link hu.e.parser.eSyntax.VariableReference <em>Variable Reference</em>}'.
@@ -4112,16 +4083,6 @@ public interface ESyntaxPackage extends EPackage
      * @generated
      */
     EClass OPERATION_STEP = eINSTANCE.getOperationStep();
-
-    /**
-     * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.ResultVariableReferenceImpl <em>Result Variable Reference</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see hu.e.parser.eSyntax.impl.ResultVariableReferenceImpl
-     * @see hu.e.parser.eSyntax.impl.ESyntaxPackageImpl#getResultVariableReference()
-     * @generated
-     */
-    EClass RESULT_VARIABLE_REFERENCE = eINSTANCE.getResultVariableReference();
 
     /**
      * The meta object literal for the '{@link hu.e.parser.eSyntax.impl.VariableReferenceImpl <em>Variable Reference</em>}' class.
