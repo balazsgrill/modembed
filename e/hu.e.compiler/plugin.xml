@@ -45,6 +45,10 @@
             class="hu.e.compiler.tasks.L1ToL0Task"
             id="compiler.map">
       </taskType>
+      <taskType
+            class="hu.e.compiler.tasks.optimizers.ConstantExpressionOptimizer"
+            id="optimize.constants">
+      </taskType>
    </extension>
 
 

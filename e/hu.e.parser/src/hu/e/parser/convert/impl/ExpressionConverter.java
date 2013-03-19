@@ -5,6 +5,7 @@ package hu.e.parser.convert.impl;
 
 import hu.e.parser.convert.ICrossReferenceScope;
 import hu.e.parser.convert.LibraryConverter;
+import hu.e.parser.convert.PlatformOperations;
 import hu.e.parser.eSyntax.ADDITIVE_OPERATOR;
 import hu.e.parser.eSyntax.Annotation;
 import hu.e.parser.eSyntax.BOOLEAN_OPERATOR;

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package hu.e.parser.convert.impl;
+package hu.e.parser.convert;
 
 /**
  * @author balazs.grill
