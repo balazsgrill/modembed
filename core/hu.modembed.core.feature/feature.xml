@@ -5,7 +5,7 @@
       version="0.8.0.qualifier"
       plugin="hu.modembed.ui">
 
-   <description url="http://gbalage.github.com/modembed">
+   <description url="http://balazsgrill.github.com/modembed">
       Model-based development environment for embedded systems.
    </description>
 
@@ -209,7 +209,7 @@ litigation.
    </license>
 
    <url>
-      <update label="MODembed update site" url="http://gbalage.github.com/modembed/updatesite"/>
+      <update label="MODembed update site" url="http://modembed-updatesite.balazs-grill.cloudbees.net/"/>
    </url>
 
    <requires>
@@ -282,20 +282,20 @@ litigation.
          id="hu.e.parser"
          download-size="0"
          install-size="0"
-         version="0.8.0.qualifier"
+         version="0.8.1.qualifier"
          unpack="false"/>
 
    <plugin
          id="hu.e.parser.ui"
          download-size="0"
          install-size="0"
-         version="0.8.0.qualifier"
+         version="0.8.1.qualifier"
          unpack="false"/>
 
    <plugin
          id="hu.modembed.help"
          download-size="0"
          install-size="0"
-         version="0.0.0"/>
+         version="0.8.0.qualifier"/>
 
 </feature>
