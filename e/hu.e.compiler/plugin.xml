@@ -49,6 +49,10 @@
             class="hu.e.compiler.tasks.optimizers.ConstantExpressionOptimizer"
             id="optimize.constants">
       </taskType>
+      <taskType
+            class="hu.e.compiler.tasks.optimizers.StripOptimizer"
+            id="optimize.strip">
+      </taskType>
    </extension>
 
 

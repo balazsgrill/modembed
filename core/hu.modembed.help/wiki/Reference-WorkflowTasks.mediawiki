@@ -163,9 +163,9 @@ Compute and resolve all constant-only expressions. It can optionally resolve var
 ; Identifier : optimize.constants
 ; Inputs : input = Library{Ln}
 : map = MemoryMap?
-; output = Library{Ln}
+; Outputs : output = Library{Ln}
 
-Examples:
+Example:
 
  optimize.constants{
  	input = blink.l1
@@ -173,3 +173,19 @@ Examples:
  	output = blink.l0
  }
 
+=== Strip unused elements from model ===
+
+Produce a copy of the input model, but without all elements which are not used by the given entry point.
+
+; Identifier : optimize.strip
+; Inputs : input = Library{Ln}
+: entry = "main"
+; Outputs : output = Library{Ln}
+
+Example:
+
+ optimize.strip{
+ 	input = blink.l0
+ 	entry = "main"
+ 	output = blink.l0.strip
+ }
