@@ -66,28 +66,28 @@ Example:
  	entry = "main"
  }
  
-=== Map variables ===
+=== Map heap allocation ===
 
-Maps every variable allocation in the given model to the device memory and exchanges all variable reference to the appropriate address literal. Memory structure is defined by the given architecture model.
+Maps every variable allocation in the given model to the device memory and exchanges all variable reference to the appropriate address literal, generating a memory map model. Memory structure is defined by the given architecture model.
 
 ; Identifier : compiler.map
 ; Inputs : input = Library{L1}
 : entry = "Function name"
 : architecture = Architecture
-; Outputs : output = Library{L0}
+; Outputs : output = MemoryMap
 
 Example:
 
  compiler.map{
  	input = blink.l1
- 	output = blink.l0
+ 	output = blink.map
  	entry = "main"
  	architecture = pic16f1824.arch
  }
 
 === Produce instruction list ===
 
-Produces a list of instruction calls from the given program model.
+Produces a list of instruction calls from the given program model. Library{L0} can be produced by optimize.constants with a memory map.
 
 ; Identifier : compiler.toasm
 ; Inputs : input = Library{L0}
@@ -153,3 +153,23 @@ Example:
  	input = "pic-config.hex"
  	output = "blink-full.hex"
  }
+ 
+== Optimization tasks ==
+ 
+=== Compile-time execution of constant expressions ===
+ 
+Compute and resolve all constant-only expressions. It can optionally resolve variable reference expressions to their mapped address. It does not affect the constraint level of the Library it processes, with the exception that it will produce an L0 model from an L1 if there is a proper MemoryMap is given to it.
+
+; Identifier : optimize.constants
+; Inputs : input = Library{Ln}
+: map = MemoryMap?
+; output = Library{Ln}
+
+Examples:
+
+ optimize.constants{
+ 	input = blink.l1
+ 	map = blink.map
+ 	output = blink.l0
+ }
+
