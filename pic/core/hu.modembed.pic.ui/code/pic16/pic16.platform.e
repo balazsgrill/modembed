@@ -6,41 +6,41 @@ use e.platform;
 
 function uint8_ASSIGNADD void(var uint8 d, const uint8 v) overrides ASSIGNADD{
 	MOVLW(v);
-	SELECTB(d);
-	ADDWF(d);
+	SELECTB(&d);
+	ADDWF(&d);
 }
 
 function uint8_ASSIGNADD_v void(var uint8 d, var uint8 v) overrides ASSIGNADD{
-	SELECTB(v);
-	MOVF(v, 0);
-	SELECTB(d);
-	ADDWF(d);
+	SELECTB(&v);
+	MOVF(&v, 0);
+	SELECTB(&d);
+	ADDWF(&d);
 }
 
 function uint8_ASSIGN void(var uint8 d, const uint8 v) overrides ASSIGN{
 	MOVLW(v);
-	SELECTB(d);
-	MOVWF(d);
+	SELECTB(&d);
+	MOVWF(&d);
 }
 
 function uint8_ASSIGN_v void(var uint8 d, var uint8 v) overrides ASSIGN{
-	SELECTB(v);
-	MOVF(v, 0);
-	SELECTB(d);
-	MOVWF(d);
+	SELECTB(&v);
+	MOVF(&v, 0);
+	SELECTB(&d);
+	MOVWF(&d);
 }
 
 function uint8_ASSIGNSUBTRACT void(var uint8 d, const uint8 v) overrides ASSIGNSUBTRACT{
 	MOVLW(v);
-	SELECTB(d);
-	SUBWF(d);
+	SELECTB(&d);
+	SUBWF(&d);
 }
 
 function uint8_ASSIGNSUBTRACT_v void(var uint8 d, const uint8 v) overrides ASSIGNSUBTRACT{
-	SELECTB(v);
-	MOVF(v, 0);
-	SELECTB(d);
-	SUBWF(d);
+	SELECTB(&v);
+	MOVF(&v, 0);
+	SELECTB(&d);
+	SUBWF(&d);
 }
 
 function uint8_ADD uint8(uint8 d, uint8 v) overrides ADD{
