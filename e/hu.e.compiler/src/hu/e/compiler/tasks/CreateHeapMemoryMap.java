@@ -6,25 +6,22 @@ package hu.e.compiler.tasks;
 import hu.e.compiler.IModembedTask;
 import hu.e.compiler.ITaskContext;
 import hu.e.compiler.TaskUtils;
-import hu.e.compiler.tasks.internal.AbstractConverter;
 import hu.modembed.model.architecture.Architecture;
 import hu.modembed.model.architecture.MemorySection;
-import hu.modembed.model.emodel.EmodelFactory;
 import hu.modembed.model.emodel.Function;
 import hu.modembed.model.emodel.HeapVariable;
 import hu.modembed.model.emodel.Library;
 import hu.modembed.model.emodel.LibraryElement;
-import hu.modembed.model.emodel.RegisterVariable;
 import hu.modembed.model.emodel.Variable;
 import hu.modembed.model.emodel.expressions.ExecutionBlock;
 import hu.modembed.model.emodel.expressions.ExecutionStep;
-import hu.modembed.model.emodel.expressions.ExpressionsFactory;
-import hu.modembed.model.emodel.expressions.IntegerLiteralExpression;
 import hu.modembed.model.emodel.expressions.LocalVariable;
-import hu.modembed.model.emodel.expressions.VariableReference;
+import hu.modembed.model.emodel.memorymap.HeapLevel;
+import hu.modembed.model.emodel.memorymap.HeapVariableMapping;
+import hu.modembed.model.emodel.memorymap.MemoryMap;
+import hu.modembed.model.emodel.memorymap.MemorymapFactory;
 import hu.modembed.model.emodel.types.CodeLabelTypeDefinition;
 
-import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -40,49 +37,20 @@ import org.eclipse.emf.ecore.resource.Resource;
  * @author balazs.grill
  *
  */
-public class L1ToL0Task implements IModembedTask {
+public class CreateHeapMemoryMap implements IModembedTask {
 
 	public static final String INPUT = "input";
 	public static final String OUTPUT = "output";
 	public static final String ENTRY = "entry";
 	public static final String ARCH = "architecture";
 	
-	private class VariableResolver extends AbstractConverter{
-		
-		private final VariableAllocation allocation;
-		
-		public VariableResolver(VariableAllocation allocation) {
-			this.allocation = allocation;
-		}
-		
-		@Override
-		protected EObject internalCopy(EObject element) {
-			if (element instanceof LocalVariable){
-				if (!(((LocalVariable) element).getType() instanceof CodeLabelTypeDefinition)){
-					return null; //Remove variable declarations
-				}
-			}
-			if (element instanceof VariableReference){
-				Variable v = ((VariableReference) element).getVariable();
-				if (v == null) return null;
-				if (v instanceof RegisterVariable){
-					return copy(((RegisterVariable) v).getAddress());
-				}
-				if (!(v.getType() instanceof CodeLabelTypeDefinition)){
-					long address = allocation.getAddress(v);
-					IntegerLiteralExpression i = ExpressionsFactory.eINSTANCE.createIntegerLiteralExpression();
-					i.setValue(BigInteger.valueOf(address));
-					i.setType(v.getType());
-					TaskUtils.addOrigin(i, (VariableReference)element);
-					return i;
-				}
-			}
-			return super.internalCopy(element);
-		}
-		
-	}
-	
 	private class VariableAllocation{
+		
+		private final MemoryMap map;
+		
+		public MemoryMap getMap() {
+			return map;
+		}
 		
 		private class Address{
 			private final int section;
@@ -122,11 +90,16 @@ public class L1ToL0Task implements IModembedTask {
 		
 		private final Map<Variable, Address> vars = new HashMap<Variable, Address>();
 		private final Stack<Address> stack = new Stack<Address>();
+		private final Stack<HeapLevel> heapStack = new Stack<HeapLevel>();
 		private Address current = new Address(0,0);
 		
 		private final Architecture arch;
 		
 		public VariableAllocation(Architecture arch) {
+			map = MemorymapFactory.eINSTANCE.createMemoryMap();
+			HeapLevel root = MemorymapFactory.eINSTANCE.createHeapLevel();
+			map.setRoot(root);
+			heapStack.push(root);
 			this.arch = arch;
 			for(MemorySection msec : arch.getMemory()){
 				if (!msec.isProgram()){
@@ -135,24 +108,35 @@ public class L1ToL0Task implements IModembedTask {
 			}
 		}
 		
-		public long getAddress(Variable v){
-			Address address = vars.get(v);
-			return address.getAddress();
-		}
+//		public long getAddress(Variable v){
+//			Address address = vars.get(v);
+//			return address.getAddress();
+//		}
 		
 		public void addVariable(Variable v){
 			int size = TaskUtils.inferSize(v.getType(), arch);
 			current = current.allocate(size);
 			vars.put(v, current);
+			
+			HeapVariableMapping mapping = MemorymapFactory.eINSTANCE.createHeapVariableMapping();
+			mapping.setVariable(v);
+			mapping.setAddress(current.getAddress());
+			TaskUtils.addOrigin(mapping, v);
+			
 			current = current.add(size);
 		}
 		
-		public void push(){
+		public void push(ExecutionBlock block){
 			stack.push(current);
+			HeapLevel level = MemorymapFactory.eINSTANCE.createHeapLevel();
+			heapStack.peek().getSubLevels().add(level);
+			heapStack.push(level);
+			TaskUtils.addOrigin(level, block);
 		}
 		
 		public void pop(){
 			current = stack.pop();
+			heapStack.pop();
 		}
 		
 		public void visit(ExecutionStep step){
@@ -161,7 +145,7 @@ public class L1ToL0Task implements IModembedTask {
 				addVariable((LocalVariable)step);
 			}
 			if (step instanceof ExecutionBlock){
-				push();
+				push((ExecutionBlock)step);
 				for(ExecutionStep s : ((ExecutionBlock) step).getSteps()){
 					visit(s);
 				}
@@ -191,11 +175,6 @@ public class L1ToL0Task implements IModembedTask {
 		Assert.isLegal(lib instanceof Library);
 		Library inlib = (Library)lib;
 		
-		Library outlib = EmodelFactory.eINSTANCE.createLibrary();
-		outlib.setName(outputmodel);
-		outr.getContents().add(outlib);
-		TaskUtils.addOrigin(outlib, inlib);
-		
 		Function main = null;
 		for(LibraryElement le : inlib.getContent()){
 			if (le instanceof Function){
@@ -218,10 +197,10 @@ public class L1ToL0Task implements IModembedTask {
 		}
 		allocator.visit(main.getImplementation());
 		
-		VariableResolver resolver = new VariableResolver(allocator);
-		outlib.getContent().add(resolver.copy(main));
-		resolver.resolveCrossReferences();
-		
+		MemoryMap map = allocator.getMap();
+		map.setName(outputmodel);
+		outr.getContents().add(map);
+		TaskUtils.addOrigin(map, inlib);
 	}
 
 }

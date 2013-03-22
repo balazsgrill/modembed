@@ -6,8 +6,10 @@ package hu.e.compiler.tasks.optimizers;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 import hu.e.compiler.IModembedTask;
 import hu.e.compiler.ITaskContext;
@@ -19,11 +21,17 @@ import hu.modembed.model.emodel.Function;
 import hu.modembed.model.emodel.FunctionParameter;
 import hu.modembed.model.emodel.LazyParameter;
 import hu.modembed.model.emodel.Library;
+import hu.modembed.model.emodel.RegisterVariable;
+import hu.modembed.model.emodel.Variable;
 import hu.modembed.model.emodel.expressions.Call;
 import hu.modembed.model.emodel.expressions.ExecutionStep;
 import hu.modembed.model.emodel.expressions.ExpressionsFactory;
 import hu.modembed.model.emodel.expressions.IntegerLiteralExpression;
 import hu.modembed.model.emodel.expressions.LiteralExpression;
+import hu.modembed.model.emodel.expressions.VariableReference;
+import hu.modembed.model.emodel.memorymap.HeapLevel;
+import hu.modembed.model.emodel.memorymap.HeapVariableMapping;
+import hu.modembed.model.emodel.memorymap.MemoryMap;
 
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -38,13 +46,36 @@ public class ConstantExpressionOptimizer implements IModembedTask {
 
 	public static final String INPUT = "input";
 	public static final String OUTPUT = "output";
+	public static final String MAP = "map";
 	
 	private class ConstantResolver extends AbstractConverter{
+		
+		private final Map<Variable, Long> vars = new HashMap<Variable, Long>();
+		
+		public ConstantResolver(MemoryMap map) {
+			if (map != null){
+				visit(map.getRoot());
+			}
+		}
+		
+		private void visit(HeapLevel level){
+			if (level == null) return;
+			for(HeapVariableMapping m : level.getMappings()){
+				vars.put(m.getVariable(), m.getAddress());
+			}
+			for(HeapLevel sl : level.getSubLevels()){
+				visit(sl);
+			}
+		}
 		
 		private PlatformOperations asOperation(CallableElement callable){
 			if (callable instanceof Function){
 				String name = callable.getName();
-				return PlatformOperations.valueOf(name);
+				try{
+					return PlatformOperations.valueOf(name);
+				}catch(IllegalArgumentException e){
+					return null;
+				}
 			}
 			return null;
 		}
@@ -147,11 +178,28 @@ public class ConstantExpressionOptimizer implements IModembedTask {
 			if (element instanceof Call){
 				PlatformOperations op = asOperation(((Call) element).getFunction());
 				if (op != null){
+					if (op == PlatformOperations.REFERENCE){
+						List<ExecutionStep> args = ((Call) element).getParameters();
+						if (args.size() == 1 && args.get(0) instanceof VariableReference){
+							VariableReference vref = (VariableReference)args.get(0);
+							Variable v = vref.getVariable();
+							if (v instanceof RegisterVariable){
+								return copy(((RegisterVariable) v).getAddress());
+							}
+							if (vars.containsKey(v)){
+								return toExpression(BigDecimal.valueOf(vars.get(v)));
+							}else{
+								return super.internalCopy(element);
+							}
+						}
+					}
+					
 					List<ExecutionStep> arguments = new LinkedList<ExecutionStep>();
 					for(ExecutionStep arg : ((Call) element).getParameters()){
 						ExecutionStep e = copy(arg);
 						arguments.add(e);
 					}
+					
 					if (check((Function)((Call) element).getFunction(), arguments)){
 						ExecutionStep es = toLiteral(op, arguments);
 						if (es != null) return es;
@@ -172,6 +220,7 @@ public class ConstantExpressionOptimizer implements IModembedTask {
 
 		String inputmodel = context.getParameterValue(INPUT).get(0);
 		String outputmodel = context.getParameterValue(OUTPUT).get(0);
+		String mapmodel = context.getParameterValue(MAP).isEmpty() ? null : context.getParameterValue(MAP).get(0); 
 		
 		Resource inr = context.getInput(context.getModelURI(inputmodel));
 		monitor.worked(1);
@@ -179,11 +228,17 @@ public class ConstantExpressionOptimizer implements IModembedTask {
 		Resource outr = context.getOutput(context.getModelURI(outputmodel));
 		monitor.worked(1);
 		
+		MemoryMap map = null;
+		if (mapmodel != null){
+			Resource mapr = context.getInput(context.getModelURI(mapmodel));
+			map = (MemoryMap)mapr.getContents().get(0);
+		}
+		
 		EObject lib = inr.getContents().get(0);
 		Assert.isLegal(lib instanceof Library);
 		Library inlib = (Library)lib;
 		
-		ConstantResolver resolver = new ConstantResolver();
+		ConstantResolver resolver = new ConstantResolver(map);
 		
 		Library outlib = resolver.copy(inlib);
 		outlib.setName(outputmodel);

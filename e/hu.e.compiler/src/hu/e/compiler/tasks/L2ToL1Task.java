@@ -163,10 +163,13 @@ public class L2ToL1Task implements IModembedTask {
 					return callcontext;
 				}
 				if (call.getFunction() instanceof Function){
+					Function f = (Function)call.getFunction();
+					if (isEmpty(f.getImplementation())){
+						return super.internalCopy(call);
+					}
+					
 					ExecutionBlock callcontext = ExpressionsFactory.eINSTANCE.createExecutionBlock();
 					LocalVariable resultVar = null;
-					
-					Function f = (Function)call.getFunction();
 					push();
 					
 					if (f.getType() != null){
@@ -202,7 +205,12 @@ public class L2ToL1Task implements IModembedTask {
 			return super.internalCopy(step);
 		}
 		
-		
+		private boolean isEmpty(ExecutionStep block){
+			if (block instanceof ExecutionBlock){
+				if (((ExecutionBlock)block).getSteps().isEmpty()) return true;
+			}
+			return false;
+		}
 	}
 	
 	/* (non-Javadoc)

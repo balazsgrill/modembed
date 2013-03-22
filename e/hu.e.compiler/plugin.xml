@@ -42,7 +42,7 @@
             id="compiler.flatten">
       </taskType>
       <taskType
-            class="hu.e.compiler.tasks.L1ToL0Task"
+            class="hu.e.compiler.tasks.CreateHeapMemoryMap"
             id="compiler.map">
       </taskType>
       <taskType
