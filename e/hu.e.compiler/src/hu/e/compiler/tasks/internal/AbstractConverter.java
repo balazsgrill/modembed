@@ -72,7 +72,7 @@ public abstract class AbstractConverter {
 		converted.put(element, result);
 		
 		if (element instanceof MODembedElement){
-			TaskUtils.addOrigin((MODembedElement) element, (MODembedElement)result);
+			TaskUtils.addOrigin((MODembedElement) result, (MODembedElement)element);
 		}
 		
 		for(EStructuralFeature feature: eclass.getEAllStructuralFeatures()){
