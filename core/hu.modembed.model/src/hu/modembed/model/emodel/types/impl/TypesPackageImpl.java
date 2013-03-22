@@ -26,6 +26,8 @@ import hu.modembed.model.emodel.EmodelPackage;
 import hu.modembed.model.emodel.expressions.ExpressionsPackage;
 import hu.modembed.model.emodel.expressions.impl.ExpressionsPackageImpl;
 import hu.modembed.model.emodel.impl.EmodelPackageImpl;
+import hu.modembed.model.emodel.memorymap.MemorymapPackage;
+import hu.modembed.model.emodel.memorymap.impl.MemorymapPackageImpl;
 import hu.modembed.model.emodel.types.ArrayDefinition;
 import hu.modembed.model.emodel.types.CodeLabelTypeDefinition;
 import hu.modembed.model.emodel.types.CompositeTypeDefinition;
@@ -186,6 +188,7 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 		CompositionPackageImpl theCompositionPackage = (CompositionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CompositionPackage.eNS_URI) instanceof CompositionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CompositionPackage.eNS_URI) : CompositionPackage.eINSTANCE);
 		EmodelPackageImpl theEmodelPackage = (EmodelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EmodelPackage.eNS_URI) instanceof EmodelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EmodelPackage.eNS_URI) : EmodelPackage.eINSTANCE);
 		ExpressionsPackageImpl theExpressionsPackage = (ExpressionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI) instanceof ExpressionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI) : ExpressionsPackage.eINSTANCE);
+		MemorymapPackageImpl theMemorymapPackage = (MemorymapPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(MemorymapPackage.eNS_URI) instanceof MemorymapPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(MemorymapPackage.eNS_URI) : MemorymapPackage.eINSTANCE);
 		ArchitecturePackageImpl theArchitecturePackage = (ArchitecturePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ArchitecturePackage.eNS_URI) instanceof ArchitecturePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ArchitecturePackage.eNS_URI) : ArchitecturePackage.eINSTANCE);
 		LinkingPackageImpl theLinkingPackage = (LinkingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(LinkingPackage.eNS_URI) instanceof LinkingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(LinkingPackage.eNS_URI) : LinkingPackage.eINSTANCE);
 
@@ -204,6 +207,7 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 		theCompositionPackage.createPackageContents();
 		theEmodelPackage.createPackageContents();
 		theExpressionsPackage.createPackageContents();
+		theMemorymapPackage.createPackageContents();
 		theArchitecturePackage.createPackageContents();
 		theLinkingPackage.createPackageContents();
 
@@ -222,6 +226,7 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 		theCompositionPackage.initializePackageContents();
 		theEmodelPackage.initializePackageContents();
 		theExpressionsPackage.initializePackageContents();
+		theMemorymapPackage.initializePackageContents();
 		theArchitecturePackage.initializePackageContents();
 		theLinkingPackage.initializePackageContents();
 

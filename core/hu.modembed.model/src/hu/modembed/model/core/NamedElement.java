@@ -8,6 +8,10 @@ package hu.modembed.model.core;
  * A representation of the model object '<em><b>Named Element</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * A Modelelement, which can be identified by a name. The name is unique locally.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>

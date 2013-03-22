@@ -38,6 +38,8 @@ import hu.modembed.model.emodel.expressions.PrimitiveLiteralExpression;
 import hu.modembed.model.emodel.expressions.ResultVariableReference;
 import hu.modembed.model.emodel.expressions.VariableReference;
 import hu.modembed.model.emodel.impl.EmodelPackageImpl;
+import hu.modembed.model.emodel.memorymap.MemorymapPackage;
+import hu.modembed.model.emodel.memorymap.impl.MemorymapPackageImpl;
 import hu.modembed.model.emodel.types.TypesPackage;
 import hu.modembed.model.emodel.types.impl.TypesPackageImpl;
 import hu.modembed.model.network.NetworkPackage;
@@ -203,6 +205,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 		CompositionPackageImpl theCompositionPackage = (CompositionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CompositionPackage.eNS_URI) instanceof CompositionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CompositionPackage.eNS_URI) : CompositionPackage.eINSTANCE);
 		EmodelPackageImpl theEmodelPackage = (EmodelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EmodelPackage.eNS_URI) instanceof EmodelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EmodelPackage.eNS_URI) : EmodelPackage.eINSTANCE);
 		TypesPackageImpl theTypesPackage = (TypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) instanceof TypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) : TypesPackage.eINSTANCE);
+		MemorymapPackageImpl theMemorymapPackage = (MemorymapPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(MemorymapPackage.eNS_URI) instanceof MemorymapPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(MemorymapPackage.eNS_URI) : MemorymapPackage.eINSTANCE);
 		ArchitecturePackageImpl theArchitecturePackage = (ArchitecturePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ArchitecturePackage.eNS_URI) instanceof ArchitecturePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ArchitecturePackage.eNS_URI) : ArchitecturePackage.eINSTANCE);
 		LinkingPackageImpl theLinkingPackage = (LinkingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(LinkingPackage.eNS_URI) instanceof LinkingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(LinkingPackage.eNS_URI) : LinkingPackage.eINSTANCE);
 
@@ -221,6 +224,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 		theCompositionPackage.createPackageContents();
 		theEmodelPackage.createPackageContents();
 		theTypesPackage.createPackageContents();
+		theMemorymapPackage.createPackageContents();
 		theArchitecturePackage.createPackageContents();
 		theLinkingPackage.createPackageContents();
 
@@ -239,6 +243,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 		theCompositionPackage.initializePackageContents();
 		theEmodelPackage.initializePackageContents();
 		theTypesPackage.initializePackageContents();
+		theMemorymapPackage.initializePackageContents();
 		theArchitecturePackage.initializePackageContents();
 		theLinkingPackage.initializePackageContents();
 

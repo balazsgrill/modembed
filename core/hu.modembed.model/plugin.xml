@@ -106,6 +106,13 @@
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
+            uri="http://emodel/1.0/memorymap"
+            class="hu.modembed.model.emodel.memorymap.MemorymapPackage"
+            genModel="model/modembedmodel.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
             uri="http://modembed.hu/architecture"
             class="hu.modembed.model.architecture.ArchitecturePackage"
             genModel="model/modembedmodel.genmodel"/>

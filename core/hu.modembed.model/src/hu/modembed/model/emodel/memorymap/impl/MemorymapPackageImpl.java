@@ -1,6 +1,6 @@
 /**
  */
-package hu.modembed.model.architecture.impl;
+package hu.modembed.model.emodel.memorymap.impl;
 
 import hu.modembed.model.application.ApplicationPackage;
 
@@ -14,13 +14,14 @@ import hu.modembed.model.application.interface_.InterfacePackage;
 
 import hu.modembed.model.application.interface_.impl.InterfacePackageImpl;
 
-import hu.modembed.model.architecture.Architecture;
-import hu.modembed.model.architecture.ArchitectureFactory;
 import hu.modembed.model.architecture.ArchitecturePackage;
-import hu.modembed.model.architecture.MemorySection;
+
+import hu.modembed.model.architecture.impl.ArchitecturePackageImpl;
 
 import hu.modembed.model.architecture.linking.LinkingPackage;
+
 import hu.modembed.model.architecture.linking.impl.LinkingPackageImpl;
+
 import hu.modembed.model.comm.CommPackage;
 
 import hu.modembed.model.comm.impl.CommPackageImpl;
@@ -38,7 +39,9 @@ import hu.modembed.model.core.assembler.impl.AssemblerPackageImpl;
 import hu.modembed.model.core.impl.CorePackageImpl;
 
 import hu.modembed.model.core.workflow.WorkflowPackage;
+
 import hu.modembed.model.core.workflow.impl.WorkflowPackageImpl;
+
 import hu.modembed.model.emodel.EmodelPackage;
 
 import hu.modembed.model.emodel.expressions.ExpressionsPackage;
@@ -47,8 +50,12 @@ import hu.modembed.model.emodel.expressions.impl.ExpressionsPackageImpl;
 
 import hu.modembed.model.emodel.impl.EmodelPackageImpl;
 
+import hu.modembed.model.emodel.memorymap.HeapLevel;
+import hu.modembed.model.emodel.memorymap.HeapVariableMapping;
+import hu.modembed.model.emodel.memorymap.MemoryMap;
+import hu.modembed.model.emodel.memorymap.MemorymapFactory;
 import hu.modembed.model.emodel.memorymap.MemorymapPackage;
-import hu.modembed.model.emodel.memorymap.impl.MemorymapPackageImpl;
+
 import hu.modembed.model.emodel.types.TypesPackage;
 
 import hu.modembed.model.emodel.types.impl.TypesPackageImpl;
@@ -74,20 +81,27 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ArchitecturePackageImpl extends EPackageImpl implements ArchitecturePackage {
+public class MemorymapPackageImpl extends EPackageImpl implements MemorymapPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass architectureEClass = null;
+	private EClass memoryMapEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass memorySectionEClass = null;
+	private EClass heapLevelEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass heapVariableMappingEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -100,12 +114,12 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
-	 * @see hu.modembed.model.architecture.ArchitecturePackage#eNS_URI
+	 * @see hu.modembed.model.emodel.memorymap.MemorymapPackage#eNS_URI
 	 * @see #init()
 	 * @generated
 	 */
-	private ArchitecturePackageImpl() {
-		super(eNS_URI, ArchitectureFactory.eINSTANCE);
+	private MemorymapPackageImpl() {
+		super(eNS_URI, MemorymapFactory.eINSTANCE);
 	}
 
 	/**
@@ -118,7 +132,7 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
 	 * 
-	 * <p>This method is used to initialize {@link ArchitecturePackage#eINSTANCE} when that field is accessed.
+	 * <p>This method is used to initialize {@link MemorymapPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -127,11 +141,11 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
-	public static ArchitecturePackage init() {
-		if (isInited) return (ArchitecturePackage)EPackage.Registry.INSTANCE.getEPackage(ArchitecturePackage.eNS_URI);
+	public static MemorymapPackage init() {
+		if (isInited) return (MemorymapPackage)EPackage.Registry.INSTANCE.getEPackage(MemorymapPackage.eNS_URI);
 
 		// Obtain or create and register package
-		ArchitecturePackageImpl theArchitecturePackage = (ArchitecturePackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ArchitecturePackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ArchitecturePackageImpl());
+		MemorymapPackageImpl theMemorymapPackage = (MemorymapPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof MemorymapPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new MemorymapPackageImpl());
 
 		isInited = true;
 
@@ -150,11 +164,11 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 		EmodelPackageImpl theEmodelPackage = (EmodelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EmodelPackage.eNS_URI) instanceof EmodelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EmodelPackage.eNS_URI) : EmodelPackage.eINSTANCE);
 		TypesPackageImpl theTypesPackage = (TypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) instanceof TypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) : TypesPackage.eINSTANCE);
 		ExpressionsPackageImpl theExpressionsPackage = (ExpressionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI) instanceof ExpressionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI) : ExpressionsPackage.eINSTANCE);
-		MemorymapPackageImpl theMemorymapPackage = (MemorymapPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(MemorymapPackage.eNS_URI) instanceof MemorymapPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(MemorymapPackage.eNS_URI) : MemorymapPackage.eINSTANCE);
+		ArchitecturePackageImpl theArchitecturePackage = (ArchitecturePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ArchitecturePackage.eNS_URI) instanceof ArchitecturePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ArchitecturePackage.eNS_URI) : ArchitecturePackage.eINSTANCE);
 		LinkingPackageImpl theLinkingPackage = (LinkingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(LinkingPackage.eNS_URI) instanceof LinkingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(LinkingPackage.eNS_URI) : LinkingPackage.eINSTANCE);
 
 		// Create package meta-data objects
-		theArchitecturePackage.createPackageContents();
+		theMemorymapPackage.createPackageContents();
 		theCorePackage.createPackageContents();
 		theAssemblerPackage.createPackageContents();
 		theCodePackage.createPackageContents();
@@ -169,11 +183,11 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 		theEmodelPackage.createPackageContents();
 		theTypesPackage.createPackageContents();
 		theExpressionsPackage.createPackageContents();
-		theMemorymapPackage.createPackageContents();
+		theArchitecturePackage.createPackageContents();
 		theLinkingPackage.createPackageContents();
 
 		// Initialize created meta-data
-		theArchitecturePackage.initializePackageContents();
+		theMemorymapPackage.initializePackageContents();
 		theCorePackage.initializePackageContents();
 		theAssemblerPackage.initializePackageContents();
 		theCodePackage.initializePackageContents();
@@ -188,16 +202,16 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 		theEmodelPackage.initializePackageContents();
 		theTypesPackage.initializePackageContents();
 		theExpressionsPackage.initializePackageContents();
-		theMemorymapPackage.initializePackageContents();
+		theArchitecturePackage.initializePackageContents();
 		theLinkingPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
-		theArchitecturePackage.freeze();
+		theMemorymapPackage.freeze();
 
   
 		// Update the registry and return the package
-		EPackage.Registry.INSTANCE.put(ArchitecturePackage.eNS_URI, theArchitecturePackage);
-		return theArchitecturePackage;
+		EPackage.Registry.INSTANCE.put(MemorymapPackage.eNS_URI, theMemorymapPackage);
+		return theMemorymapPackage;
 	}
 
 	/**
@@ -205,8 +219,8 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getArchitecture() {
-		return architectureEClass;
+	public EClass getMemoryMap() {
+		return memoryMapEClass;
 	}
 
 	/**
@@ -214,8 +228,8 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getArchitecture_HeapPointerType() {
-		return (EReference)architectureEClass.getEStructuralFeatures().get(0);
+	public EReference getMemoryMap_Root() {
+		return (EReference)memoryMapEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -223,8 +237,8 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getArchitecture_CodePointerType() {
-		return (EReference)architectureEClass.getEStructuralFeatures().get(1);
+	public EClass getHeapLevel() {
+		return heapLevelEClass;
 	}
 
 	/**
@@ -232,8 +246,8 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getArchitecture_InstructionSet() {
-		return (EReference)architectureEClass.getEStructuralFeatures().get(2);
+	public EReference getHeapLevel_Mappings() {
+		return (EReference)heapLevelEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -241,8 +255,8 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getArchitecture_Memory() {
-		return (EReference)architectureEClass.getEStructuralFeatures().get(3);
+	public EReference getHeapLevel_SubLevels() {
+		return (EReference)heapLevelEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -250,8 +264,8 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getMemorySection() {
-		return memorySectionEClass;
+	public EClass getHeapVariableMapping() {
+		return heapVariableMappingEClass;
 	}
 
 	/**
@@ -259,8 +273,8 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getMemorySection_Program() {
-		return (EAttribute)memorySectionEClass.getEStructuralFeatures().get(0);
+	public EReference getHeapVariableMapping_Variable() {
+		return (EReference)heapVariableMappingEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -268,8 +282,8 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getMemorySection_StartAddress() {
-		return (EAttribute)memorySectionEClass.getEStructuralFeatures().get(1);
+	public EAttribute getHeapVariableMapping_Address() {
+		return (EAttribute)heapVariableMappingEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -277,17 +291,8 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getMemorySection_Length() {
-		return (EAttribute)memorySectionEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ArchitectureFactory getArchitectureFactory() {
-		return (ArchitectureFactory)getEFactoryInstance();
+	public MemorymapFactory getMemorymapFactory() {
+		return (MemorymapFactory)getEFactoryInstance();
 	}
 
 	/**
@@ -309,16 +314,16 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 		isCreated = true;
 
 		// Create classes and their features
-		architectureEClass = createEClass(ARCHITECTURE);
-		createEReference(architectureEClass, ARCHITECTURE__HEAP_POINTER_TYPE);
-		createEReference(architectureEClass, ARCHITECTURE__CODE_POINTER_TYPE);
-		createEReference(architectureEClass, ARCHITECTURE__INSTRUCTION_SET);
-		createEReference(architectureEClass, ARCHITECTURE__MEMORY);
+		memoryMapEClass = createEClass(MEMORY_MAP);
+		createEReference(memoryMapEClass, MEMORY_MAP__ROOT);
 
-		memorySectionEClass = createEClass(MEMORY_SECTION);
-		createEAttribute(memorySectionEClass, MEMORY_SECTION__PROGRAM);
-		createEAttribute(memorySectionEClass, MEMORY_SECTION__START_ADDRESS);
-		createEAttribute(memorySectionEClass, MEMORY_SECTION__LENGTH);
+		heapLevelEClass = createEClass(HEAP_LEVEL);
+		createEReference(heapLevelEClass, HEAP_LEVEL__MAPPINGS);
+		createEReference(heapLevelEClass, HEAP_LEVEL__SUB_LEVELS);
+
+		heapVariableMappingEClass = createEClass(HEAP_VARIABLE_MAPPING);
+		createEReference(heapVariableMappingEClass, HEAP_VARIABLE_MAPPING__VARIABLE);
+		createEAttribute(heapVariableMappingEClass, HEAP_VARIABLE_MAPPING__ADDRESS);
 	}
 
 	/**
@@ -345,36 +350,29 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		LinkingPackage theLinkingPackage = (LinkingPackage)EPackage.Registry.INSTANCE.getEPackage(LinkingPackage.eNS_URI);
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 		EmodelPackage theEmodelPackage = (EmodelPackage)EPackage.Registry.INSTANCE.getEPackage(EmodelPackage.eNS_URI);
-		AssemblerPackage theAssemblerPackage = (AssemblerPackage)EPackage.Registry.INSTANCE.getEPackage(AssemblerPackage.eNS_URI);
-
-		// Add subpackages
-		getESubpackages().add(theLinkingPackage);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		architectureEClass.getESuperTypes().add(theCorePackage.getRootElement());
-		memorySectionEClass.getESuperTypes().add(theCorePackage.getMODembedElement());
+		memoryMapEClass.getESuperTypes().add(theCorePackage.getRootElement());
+		heapLevelEClass.getESuperTypes().add(theCorePackage.getMODembedElement());
+		heapVariableMappingEClass.getESuperTypes().add(theCorePackage.getMODembedElement());
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(architectureEClass, Architecture.class, "Architecture", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getArchitecture_HeapPointerType(), theEmodelPackage.getType(), null, "heapPointerType", null, 0, 1, Architecture.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getArchitecture_CodePointerType(), theEmodelPackage.getType(), null, "codePointerType", null, 0, 1, Architecture.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getArchitecture_InstructionSet(), theAssemblerPackage.getInstructionSet(), null, "instructionSet", null, 0, 1, Architecture.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getArchitecture_Memory(), this.getMemorySection(), null, "memory", null, 0, -1, Architecture.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(memoryMapEClass, MemoryMap.class, "MemoryMap", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMemoryMap_Root(), this.getHeapLevel(), null, "root", null, 0, 1, MemoryMap.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(memorySectionEClass, MemorySection.class, "MemorySection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getMemorySection_Program(), ecorePackage.getEBoolean(), "program", "false", 1, 1, MemorySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMemorySection_StartAddress(), ecorePackage.getELong(), "startAddress", null, 1, 1, MemorySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMemorySection_Length(), ecorePackage.getELong(), "length", null, 1, 1, MemorySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(heapLevelEClass, HeapLevel.class, "HeapLevel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getHeapLevel_Mappings(), this.getHeapVariableMapping(), null, "mappings", null, 0, -1, HeapLevel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getHeapLevel_SubLevels(), this.getHeapLevel(), null, "subLevels", null, 0, -1, HeapLevel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		// Create resource
-		createResource(eNS_URI);
+		initEClass(heapVariableMappingEClass, HeapVariableMapping.class, "HeapVariableMapping", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getHeapVariableMapping_Variable(), theEmodelPackage.getVariable(), null, "variable", null, 1, 1, HeapVariableMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getHeapVariableMapping_Address(), ecorePackage.getELong(), "address", null, 1, 1, HeapVariableMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 	}
 
-} //ArchitecturePackageImpl
+} //MemorymapPackageImpl

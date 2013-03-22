@@ -342,6 +342,24 @@
       <eClassifiers xsi:type="ecore:EClass" name="LocalVariable" eSuperTypes="#//emodel/expressions/ExecutionStep #//emodel/Variable"/>
       <eClassifiers xsi:type="ecore:EClass" name="ResultVariableReference" eSuperTypes="#//emodel/expressions/Expression"/>
     </eSubpackages>
+    <eSubpackages name="memorymap" nsURI="http://emodel/1.0/memorymap" nsPrefix="memorymap">
+      <eClassifiers xsi:type="ecore:EClass" name="MemoryMap" eSuperTypes="#//core/RootElement">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="root" eType="#//emodel/memorymap/HeapLevel"
+            containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="HeapLevel" eSuperTypes="#//core/MODembedElement">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="mappings" upperBound="-1"
+            eType="#//emodel/memorymap/HeapVariableMapping" containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="subLevels" upperBound="-1"
+            eType="#//emodel/memorymap/HeapLevel" containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="HeapVariableMapping" eSuperTypes="#//core/MODembedElement">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="variable" lowerBound="1"
+            eType="#//emodel/Variable"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="address" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+      </eClassifiers>
+    </eSubpackages>
   </eSubpackages>
   <eSubpackages name="architecture" nsURI="http://modembed.hu/architecture" nsPrefix="architecture">
     <eClassifiers xsi:type="ecore:EClass" name="Architecture" eSuperTypes="#//core/RootElement">
