@@ -23,6 +23,8 @@ import hu.modembed.model.core.assembler.InstructionParameter;
 import hu.modembed.model.core.assembler.InstructionSection;
 import hu.modembed.model.core.assembler.InstructionSet;
 import hu.modembed.model.core.assembler.InstructionWord;
+import hu.modembed.model.core.assembler.InstructionWordCondition;
+import hu.modembed.model.core.assembler.InstructionWordMaskedValueCondition;
 import hu.modembed.model.core.assembler.ParameterSection;
 import hu.modembed.model.core.assembler.code.CodePackage;
 import hu.modembed.model.core.assembler.code.impl.CodePackageImpl;
@@ -103,6 +105,20 @@ public class AssemblerPackageImpl extends EPackageImpl implements AssemblerPacka
 	 * @generated
 	 */
 	private EClass instructionWordEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass instructionWordConditionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass instructionWordMaskedValueConditionEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -391,6 +407,60 @@ public class AssemblerPackageImpl extends EPackageImpl implements AssemblerPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getInstructionWord_Condition() {
+		return (EReference)instructionWordEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getInstructionWordCondition() {
+		return instructionWordConditionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getInstructionWordMaskedValueCondition() {
+		return instructionWordMaskedValueConditionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getInstructionWordMaskedValueCondition_Mask() {
+		return (EAttribute)instructionWordMaskedValueConditionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getInstructionWordMaskedValueCondition_Value() {
+		return (EAttribute)instructionWordMaskedValueConditionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getInstructionWordMaskedValueCondition_Argument() {
+		return (EReference)instructionWordMaskedValueConditionEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public AssemblerFactory getAssemblerFactory() {
 		return (AssemblerFactory)getEFactoryInstance();
 	}
@@ -439,6 +509,14 @@ public class AssemblerPackageImpl extends EPackageImpl implements AssemblerPacka
 
 		instructionWordEClass = createEClass(INSTRUCTION_WORD);
 		createEReference(instructionWordEClass, INSTRUCTION_WORD__SECTIONS);
+		createEReference(instructionWordEClass, INSTRUCTION_WORD__CONDITION);
+
+		instructionWordConditionEClass = createEClass(INSTRUCTION_WORD_CONDITION);
+
+		instructionWordMaskedValueConditionEClass = createEClass(INSTRUCTION_WORD_MASKED_VALUE_CONDITION);
+		createEAttribute(instructionWordMaskedValueConditionEClass, INSTRUCTION_WORD_MASKED_VALUE_CONDITION__MASK);
+		createEAttribute(instructionWordMaskedValueConditionEClass, INSTRUCTION_WORD_MASKED_VALUE_CONDITION__VALUE);
+		createEReference(instructionWordMaskedValueConditionEClass, INSTRUCTION_WORD_MASKED_VALUE_CONDITION__ARGUMENT);
 	}
 
 	/**
@@ -485,6 +563,8 @@ public class AssemblerPackageImpl extends EPackageImpl implements AssemblerPacka
 		constantSectionEClass.getESuperTypes().add(this.getInstructionSection());
 		parameterSectionEClass.getESuperTypes().add(this.getInstructionSection());
 		instructionWordEClass.getESuperTypes().add(theCorePackage.getMODembedElement());
+		instructionWordConditionEClass.getESuperTypes().add(theCorePackage.getMODembedElement());
+		instructionWordMaskedValueConditionEClass.getESuperTypes().add(this.getInstructionWordCondition());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(instructionSetEClass, InstructionSet.class, "InstructionSet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -512,6 +592,14 @@ public class AssemblerPackageImpl extends EPackageImpl implements AssemblerPacka
 
 		initEClass(instructionWordEClass, InstructionWord.class, "InstructionWord", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getInstructionWord_Sections(), this.getInstructionSection(), null, "sections", null, 0, -1, InstructionWord.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInstructionWord_Condition(), this.getInstructionWordCondition(), null, "condition", null, 0, -1, InstructionWord.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(instructionWordConditionEClass, InstructionWordCondition.class, "InstructionWordCondition", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(instructionWordMaskedValueConditionEClass, InstructionWordMaskedValueCondition.class, "InstructionWordMaskedValueCondition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getInstructionWordMaskedValueCondition_Mask(), ecorePackage.getELong(), "mask", null, 0, 1, InstructionWordMaskedValueCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getInstructionWordMaskedValueCondition_Value(), ecorePackage.getELong(), "value", null, 0, 1, InstructionWordMaskedValueCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInstructionWordMaskedValueCondition_Argument(), this.getInstructionParameter(), null, "argument", null, 1, 1, InstructionWordMaskedValueCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 	}
 
 } //AssemblerPackageImpl

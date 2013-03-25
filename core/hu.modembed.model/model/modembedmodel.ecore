@@ -78,6 +78,17 @@
       <eClassifiers xsi:type="ecore:EClass" name="InstructionWord" eSuperTypes="#//core/MODembedElement">
         <eStructuralFeatures xsi:type="ecore:EReference" name="sections" upperBound="-1"
             eType="#//core/assembler/InstructionSection" containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="condition" upperBound="-1"
+            eType="#//core/assembler/InstructionWordCondition" containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="InstructionWordCondition" abstract="true"
+          eSuperTypes="#//core/MODembedElement"/>
+      <eClassifiers xsi:type="ecore:EClass" name="InstructionWordMaskedValueCondition"
+          eSuperTypes="#//core/assembler/InstructionWordCondition">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="mask" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="argument" lowerBound="1"
+            eType="#//core/assembler/InstructionParameter"/>
       </eClassifiers>
       <eSubpackages name="code" nsURI="http://modembed.hu/core/assembler/code" nsPrefix="assemblercode">
         <eClassifiers xsi:type="ecore:EClass" name="AssemblerObject" eSuperTypes="#//core/RootElement">

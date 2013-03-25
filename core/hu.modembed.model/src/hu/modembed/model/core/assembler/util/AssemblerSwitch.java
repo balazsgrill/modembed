@@ -126,6 +126,21 @@ public class AssemblerSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case AssemblerPackage.INSTRUCTION_WORD_CONDITION: {
+				InstructionWordCondition instructionWordCondition = (InstructionWordCondition)theEObject;
+				T result = caseInstructionWordCondition(instructionWordCondition);
+				if (result == null) result = caseMODembedElement(instructionWordCondition);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case AssemblerPackage.INSTRUCTION_WORD_MASKED_VALUE_CONDITION: {
+				InstructionWordMaskedValueCondition instructionWordMaskedValueCondition = (InstructionWordMaskedValueCondition)theEObject;
+				T result = caseInstructionWordMaskedValueCondition(instructionWordMaskedValueCondition);
+				if (result == null) result = caseInstructionWordCondition(instructionWordMaskedValueCondition);
+				if (result == null) result = caseMODembedElement(instructionWordMaskedValueCondition);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -232,6 +247,36 @@ public class AssemblerSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseInstructionWord(InstructionWord object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Instruction Word Condition</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Instruction Word Condition</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseInstructionWordCondition(InstructionWordCondition object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Instruction Word Masked Value Condition</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Instruction Word Masked Value Condition</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseInstructionWordMaskedValueCondition(InstructionWordMaskedValueCondition object) {
 		return null;
 	}
 

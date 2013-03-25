@@ -490,13 +490,124 @@ public interface AssemblerPackage extends EPackage {
 	int INSTRUCTION_WORD__SECTIONS = CorePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Condition</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION_WORD__CONDITION = CorePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Instruction Word</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INSTRUCTION_WORD_FEATURE_COUNT = CorePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 1;
+	int INSTRUCTION_WORD_FEATURE_COUNT = CorePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 2;
+
+
+	/**
+	 * The meta object id for the '{@link hu.modembed.model.core.assembler.impl.InstructionWordConditionImpl <em>Instruction Word Condition</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.modembed.model.core.assembler.impl.InstructionWordConditionImpl
+	 * @see hu.modembed.model.core.assembler.impl.AssemblerPackageImpl#getInstructionWordCondition()
+	 * @generated
+	 */
+	int INSTRUCTION_WORD_CONDITION = 7;
+
+	/**
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION_WORD_CONDITION__ORIGINS = CorePackage.MO_DEMBED_ELEMENT__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION_WORD_CONDITION__DESCRIPTION = CorePackage.MO_DEMBED_ELEMENT__DESCRIPTION;
+
+	/**
+	 * The number of structural features of the '<em>Instruction Word Condition</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION_WORD_CONDITION_FEATURE_COUNT = CorePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link hu.modembed.model.core.assembler.impl.InstructionWordMaskedValueConditionImpl <em>Instruction Word Masked Value Condition</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.modembed.model.core.assembler.impl.InstructionWordMaskedValueConditionImpl
+	 * @see hu.modembed.model.core.assembler.impl.AssemblerPackageImpl#getInstructionWordMaskedValueCondition()
+	 * @generated
+	 */
+	int INSTRUCTION_WORD_MASKED_VALUE_CONDITION = 8;
+
+	/**
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION_WORD_MASKED_VALUE_CONDITION__ORIGINS = INSTRUCTION_WORD_CONDITION__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION_WORD_MASKED_VALUE_CONDITION__DESCRIPTION = INSTRUCTION_WORD_CONDITION__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Mask</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION_WORD_MASKED_VALUE_CONDITION__MASK = INSTRUCTION_WORD_CONDITION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION_WORD_MASKED_VALUE_CONDITION__VALUE = INSTRUCTION_WORD_CONDITION_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Argument</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION_WORD_MASKED_VALUE_CONDITION__ARGUMENT = INSTRUCTION_WORD_CONDITION_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Instruction Word Masked Value Condition</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION_WORD_MASKED_VALUE_CONDITION_FEATURE_COUNT = INSTRUCTION_WORD_CONDITION_FEATURE_COUNT + 3;
 
 
 	/**
@@ -702,6 +813,70 @@ public interface AssemblerPackage extends EPackage {
 	EReference getInstructionWord_Sections();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link hu.modembed.model.core.assembler.InstructionWord#getCondition <em>Condition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Condition</em>'.
+	 * @see hu.modembed.model.core.assembler.InstructionWord#getCondition()
+	 * @see #getInstructionWord()
+	 * @generated
+	 */
+	EReference getInstructionWord_Condition();
+
+	/**
+	 * Returns the meta object for class '{@link hu.modembed.model.core.assembler.InstructionWordCondition <em>Instruction Word Condition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Instruction Word Condition</em>'.
+	 * @see hu.modembed.model.core.assembler.InstructionWordCondition
+	 * @generated
+	 */
+	EClass getInstructionWordCondition();
+
+	/**
+	 * Returns the meta object for class '{@link hu.modembed.model.core.assembler.InstructionWordMaskedValueCondition <em>Instruction Word Masked Value Condition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Instruction Word Masked Value Condition</em>'.
+	 * @see hu.modembed.model.core.assembler.InstructionWordMaskedValueCondition
+	 * @generated
+	 */
+	EClass getInstructionWordMaskedValueCondition();
+
+	/**
+	 * Returns the meta object for the attribute '{@link hu.modembed.model.core.assembler.InstructionWordMaskedValueCondition#getMask <em>Mask</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Mask</em>'.
+	 * @see hu.modembed.model.core.assembler.InstructionWordMaskedValueCondition#getMask()
+	 * @see #getInstructionWordMaskedValueCondition()
+	 * @generated
+	 */
+	EAttribute getInstructionWordMaskedValueCondition_Mask();
+
+	/**
+	 * Returns the meta object for the attribute '{@link hu.modembed.model.core.assembler.InstructionWordMaskedValueCondition#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see hu.modembed.model.core.assembler.InstructionWordMaskedValueCondition#getValue()
+	 * @see #getInstructionWordMaskedValueCondition()
+	 * @generated
+	 */
+	EAttribute getInstructionWordMaskedValueCondition_Value();
+
+	/**
+	 * Returns the meta object for the reference '{@link hu.modembed.model.core.assembler.InstructionWordMaskedValueCondition#getArgument <em>Argument</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Argument</em>'.
+	 * @see hu.modembed.model.core.assembler.InstructionWordMaskedValueCondition#getArgument()
+	 * @see #getInstructionWordMaskedValueCondition()
+	 * @generated
+	 */
+	EReference getInstructionWordMaskedValueCondition_Argument();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -888,6 +1063,58 @@ public interface AssemblerPackage extends EPackage {
 		 * @generated
 		 */
 		EReference INSTRUCTION_WORD__SECTIONS = eINSTANCE.getInstructionWord_Sections();
+
+		/**
+		 * The meta object literal for the '<em><b>Condition</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INSTRUCTION_WORD__CONDITION = eINSTANCE.getInstructionWord_Condition();
+
+		/**
+		 * The meta object literal for the '{@link hu.modembed.model.core.assembler.impl.InstructionWordConditionImpl <em>Instruction Word Condition</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.modembed.model.core.assembler.impl.InstructionWordConditionImpl
+		 * @see hu.modembed.model.core.assembler.impl.AssemblerPackageImpl#getInstructionWordCondition()
+		 * @generated
+		 */
+		EClass INSTRUCTION_WORD_CONDITION = eINSTANCE.getInstructionWordCondition();
+
+		/**
+		 * The meta object literal for the '{@link hu.modembed.model.core.assembler.impl.InstructionWordMaskedValueConditionImpl <em>Instruction Word Masked Value Condition</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.modembed.model.core.assembler.impl.InstructionWordMaskedValueConditionImpl
+		 * @see hu.modembed.model.core.assembler.impl.AssemblerPackageImpl#getInstructionWordMaskedValueCondition()
+		 * @generated
+		 */
+		EClass INSTRUCTION_WORD_MASKED_VALUE_CONDITION = eINSTANCE.getInstructionWordMaskedValueCondition();
+
+		/**
+		 * The meta object literal for the '<em><b>Mask</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INSTRUCTION_WORD_MASKED_VALUE_CONDITION__MASK = eINSTANCE.getInstructionWordMaskedValueCondition_Mask();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INSTRUCTION_WORD_MASKED_VALUE_CONDITION__VALUE = eINSTANCE.getInstructionWordMaskedValueCondition_Value();
+
+		/**
+		 * The meta object literal for the '<em><b>Argument</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INSTRUCTION_WORD_MASKED_VALUE_CONDITION__ARGUMENT = eINSTANCE.getInstructionWordMaskedValueCondition_Argument();
 
 	}
 

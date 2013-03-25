@@ -76,6 +76,15 @@ public interface AssemblerFactory extends EFactory {
 	InstructionWord createInstructionWord();
 
 	/**
+	 * Returns a new object of class '<em>Instruction Word Masked Value Condition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Instruction Word Masked Value Condition</em>'.
+	 * @generated
+	 */
+	InstructionWordMaskedValueCondition createInstructionWordMaskedValueCondition();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

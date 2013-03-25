@@ -101,6 +101,14 @@ public class AssemblerAdapterFactory extends AdapterFactoryImpl {
 				return createInstructionWordAdapter();
 			}
 			@Override
+			public Adapter caseInstructionWordCondition(InstructionWordCondition object) {
+				return createInstructionWordConditionAdapter();
+			}
+			@Override
+			public Adapter caseInstructionWordMaskedValueCondition(InstructionWordMaskedValueCondition object) {
+				return createInstructionWordMaskedValueConditionAdapter();
+			}
+			@Override
 			public Adapter caseMODembedElement(MODembedElement object) {
 				return createMODembedElementAdapter();
 			}
@@ -231,6 +239,34 @@ public class AssemblerAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createInstructionWordAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.core.assembler.InstructionWordCondition <em>Instruction Word Condition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.modembed.model.core.assembler.InstructionWordCondition
+	 * @generated
+	 */
+	public Adapter createInstructionWordConditionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.core.assembler.InstructionWordMaskedValueCondition <em>Instruction Word Masked Value Condition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.modembed.model.core.assembler.InstructionWordMaskedValueCondition
+	 * @generated
+	 */
+	public Adapter createInstructionWordMaskedValueConditionAdapter() {
 		return null;
 	}
 

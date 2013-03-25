@@ -6,6 +6,7 @@ import hu.modembed.model.core.assembler.AssemblerPackage;
 import hu.modembed.model.core.assembler.InstructionSection;
 import hu.modembed.model.core.assembler.InstructionWord;
 
+import hu.modembed.model.core.assembler.InstructionWordCondition;
 import hu.modembed.model.core.impl.MODembedElementImpl;
 
 import java.util.Collection;
@@ -28,6 +29,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link hu.modembed.model.core.assembler.impl.InstructionWordImpl#getSections <em>Sections</em>}</li>
+ *   <li>{@link hu.modembed.model.core.assembler.impl.InstructionWordImpl#getCondition <em>Condition</em>}</li>
  * </ul>
  * </p>
  *
@@ -43,6 +45,16 @@ public class InstructionWordImpl extends MODembedElementImpl implements Instruct
 	 * @ordered
 	 */
 	protected EList<InstructionSection> sections;
+
+	/**
+	 * The cached value of the '{@link #getCondition() <em>Condition</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCondition()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<InstructionWordCondition> condition;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -80,11 +92,25 @@ public class InstructionWordImpl extends MODembedElementImpl implements Instruct
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<InstructionWordCondition> getCondition() {
+		if (condition == null) {
+			condition = new EObjectContainmentEList<InstructionWordCondition>(InstructionWordCondition.class, this, AssemblerPackage.INSTRUCTION_WORD__CONDITION);
+		}
+		return condition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case AssemblerPackage.INSTRUCTION_WORD__SECTIONS:
 				return ((InternalEList<?>)getSections()).basicRemove(otherEnd, msgs);
+			case AssemblerPackage.INSTRUCTION_WORD__CONDITION:
+				return ((InternalEList<?>)getCondition()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -99,6 +125,8 @@ public class InstructionWordImpl extends MODembedElementImpl implements Instruct
 		switch (featureID) {
 			case AssemblerPackage.INSTRUCTION_WORD__SECTIONS:
 				return getSections();
+			case AssemblerPackage.INSTRUCTION_WORD__CONDITION:
+				return getCondition();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -116,6 +144,10 @@ public class InstructionWordImpl extends MODembedElementImpl implements Instruct
 				getSections().clear();
 				getSections().addAll((Collection<? extends InstructionSection>)newValue);
 				return;
+			case AssemblerPackage.INSTRUCTION_WORD__CONDITION:
+				getCondition().clear();
+				getCondition().addAll((Collection<? extends InstructionWordCondition>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -131,6 +163,9 @@ public class InstructionWordImpl extends MODembedElementImpl implements Instruct
 			case AssemblerPackage.INSTRUCTION_WORD__SECTIONS:
 				getSections().clear();
 				return;
+			case AssemblerPackage.INSTRUCTION_WORD__CONDITION:
+				getCondition().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -145,6 +180,8 @@ public class InstructionWordImpl extends MODembedElementImpl implements Instruct
 		switch (featureID) {
 			case AssemblerPackage.INSTRUCTION_WORD__SECTIONS:
 				return sections != null && !sections.isEmpty();
+			case AssemblerPackage.INSTRUCTION_WORD__CONDITION:
+				return condition != null && !condition.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

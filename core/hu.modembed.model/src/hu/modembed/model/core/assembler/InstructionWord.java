@@ -15,6 +15,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  *   <li>{@link hu.modembed.model.core.assembler.InstructionWord#getSections <em>Sections</em>}</li>
+ *   <li>{@link hu.modembed.model.core.assembler.InstructionWord#getCondition <em>Condition</em>}</li>
  * </ul>
  * </p>
  *
@@ -38,5 +39,21 @@ public interface InstructionWord extends MODembedElement {
 	 * @generated
 	 */
 	EList<InstructionSection> getSections();
+
+	/**
+	 * Returns the value of the '<em><b>Condition</b></em>' containment reference list.
+	 * The list contents are of type {@link hu.modembed.model.core.assembler.InstructionWordCondition}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Condition</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Condition</em>' containment reference list.
+	 * @see hu.modembed.model.core.assembler.AssemblerPackage#getInstructionWord_Condition()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<InstructionWordCondition> getCondition();
 
 } // InstructionWord
