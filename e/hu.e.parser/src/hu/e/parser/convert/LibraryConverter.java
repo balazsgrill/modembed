@@ -13,6 +13,7 @@ import hu.e.parser.eSyntax.InsctructionSectionNotation;
 import hu.e.parser.eSyntax.InstructionNotation;
 import hu.e.parser.eSyntax.InstructionParameterNotation;
 import hu.e.parser.eSyntax.InstructionSetNotation;
+import hu.e.parser.eSyntax.InstructionWordConditionNotation;
 import hu.e.parser.eSyntax.InstructionWordNotation;
 import hu.e.parser.eSyntax.Library;
 import hu.e.parser.eSyntax.LibraryItem;
@@ -35,6 +36,7 @@ import hu.modembed.model.core.assembler.InstructionParameter;
 import hu.modembed.model.core.assembler.InstructionSection;
 import hu.modembed.model.core.assembler.InstructionSet;
 import hu.modembed.model.core.assembler.InstructionWord;
+import hu.modembed.model.core.assembler.InstructionWordMaskedValueCondition;
 import hu.modembed.model.core.assembler.ParameterSection;
 import hu.modembed.model.core.workflow.Task;
 import hu.modembed.model.core.workflow.TaskParameter;
@@ -247,6 +249,14 @@ public class LibraryConverter {
 					w.getSections().add(s);
 					start += s.getSize();
 				}
+			}
+			for(InstructionWordConditionNotation condition : wn.getConditions()){
+				InstructionWordMaskedValueCondition c = AssemblerFactory.eINSTANCE.createInstructionWordMaskedValueCondition();
+				Character p = condition.getParam().charAt(0);
+				c.setArgument(params.get(p));
+				c.setMask(convertLiteral(condition.getMask()));
+				c.setValue(convertLiteral(condition.getValue()));
+				w.getCondition().add(c);
 			}
 			result.getWords().add(w);
 		}

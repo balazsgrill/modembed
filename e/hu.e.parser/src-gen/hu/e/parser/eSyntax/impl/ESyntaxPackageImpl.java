@@ -16,6 +16,7 @@ import hu.e.parser.eSyntax.InsctructionSectionNotation;
 import hu.e.parser.eSyntax.InstructionNotation;
 import hu.e.parser.eSyntax.InstructionParameterNotation;
 import hu.e.parser.eSyntax.InstructionSetNotation;
+import hu.e.parser.eSyntax.InstructionWordConditionNotation;
 import hu.e.parser.eSyntax.InstructionWordNotation;
 import hu.e.parser.eSyntax.IntegerDataTypeDef;
 import hu.e.parser.eSyntax.IntegerKind;
@@ -143,6 +144,13 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
    * @generated
    */
   private EClass instructionWordNotationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass instructionWordConditionNotationEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -817,6 +825,56 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
   public EReference getInstructionWordNotation_Sections()
   {
     return (EReference)instructionWordNotationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getInstructionWordNotation_Conditions()
+  {
+    return (EReference)instructionWordNotationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getInstructionWordConditionNotation()
+  {
+    return instructionWordConditionNotationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getInstructionWordConditionNotation_Param()
+  {
+    return (EAttribute)instructionWordConditionNotationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getInstructionWordConditionNotation_Mask()
+  {
+    return (EAttribute)instructionWordConditionNotationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getInstructionWordConditionNotation_Value()
+  {
+    return (EAttribute)instructionWordConditionNotationEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -2079,6 +2137,12 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
 
     instructionWordNotationEClass = createEClass(INSTRUCTION_WORD_NOTATION);
     createEReference(instructionWordNotationEClass, INSTRUCTION_WORD_NOTATION__SECTIONS);
+    createEReference(instructionWordNotationEClass, INSTRUCTION_WORD_NOTATION__CONDITIONS);
+
+    instructionWordConditionNotationEClass = createEClass(INSTRUCTION_WORD_CONDITION_NOTATION);
+    createEAttribute(instructionWordConditionNotationEClass, INSTRUCTION_WORD_CONDITION_NOTATION__PARAM);
+    createEAttribute(instructionWordConditionNotationEClass, INSTRUCTION_WORD_CONDITION_NOTATION__MASK);
+    createEAttribute(instructionWordConditionNotationEClass, INSTRUCTION_WORD_CONDITION_NOTATION__VALUE);
 
     instructionParameterNotationEClass = createEClass(INSTRUCTION_PARAMETER_NOTATION);
     createEAttribute(instructionParameterNotationEClass, INSTRUCTION_PARAMETER_NOTATION__NAME);
@@ -2349,6 +2413,12 @@ public class ESyntaxPackageImpl extends EPackageImpl implements ESyntaxPackage
 
     initEClass(instructionWordNotationEClass, InstructionWordNotation.class, "InstructionWordNotation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getInstructionWordNotation_Sections(), this.getInsctructionSectionNotation(), null, "sections", null, 0, -1, InstructionWordNotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInstructionWordNotation_Conditions(), this.getInstructionWordConditionNotation(), null, "conditions", null, 0, -1, InstructionWordNotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(instructionWordConditionNotationEClass, InstructionWordConditionNotation.class, "InstructionWordConditionNotation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getInstructionWordConditionNotation_Param(), ecorePackage.getEString(), "param", null, 0, 1, InstructionWordConditionNotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getInstructionWordConditionNotation_Mask(), ecorePackage.getEString(), "mask", null, 0, 1, InstructionWordConditionNotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getInstructionWordConditionNotation_Value(), ecorePackage.getEString(), "value", null, 0, 1, InstructionWordConditionNotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(instructionParameterNotationEClass, InstructionParameterNotation.class, "InstructionParameterNotation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getInstructionParameterNotation_Name(), ecorePackage.getEString(), "name", null, 0, 1, InstructionParameterNotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

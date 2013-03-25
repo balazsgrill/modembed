@@ -4,6 +4,7 @@ package hu.e.parser.eSyntax.impl;
 
 import hu.e.parser.eSyntax.ESyntaxPackage;
 import hu.e.parser.eSyntax.InsctructionSectionNotation;
+import hu.e.parser.eSyntax.InstructionWordConditionNotation;
 import hu.e.parser.eSyntax.InstructionWordNotation;
 
 import java.util.Collection;
@@ -28,6 +29,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link hu.e.parser.eSyntax.impl.InstructionWordNotationImpl#getSections <em>Sections</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.impl.InstructionWordNotationImpl#getConditions <em>Conditions</em>}</li>
  * </ul>
  * </p>
  *
@@ -44,6 +46,16 @@ public class InstructionWordNotationImpl extends MinimalEObjectImpl.Container im
    * @ordered
    */
   protected EList<InsctructionSectionNotation> sections;
+
+  /**
+   * The cached value of the '{@link #getConditions() <em>Conditions</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getConditions()
+   * @generated
+   * @ordered
+   */
+  protected EList<InstructionWordConditionNotation> conditions;
 
   /**
    * <!-- begin-user-doc -->
@@ -85,6 +97,20 @@ public class InstructionWordNotationImpl extends MinimalEObjectImpl.Container im
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<InstructionWordConditionNotation> getConditions()
+  {
+    if (conditions == null)
+    {
+      conditions = new EObjectContainmentEList<InstructionWordConditionNotation>(InstructionWordConditionNotation.class, this, ESyntaxPackage.INSTRUCTION_WORD_NOTATION__CONDITIONS);
+    }
+    return conditions;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -92,6 +118,8 @@ public class InstructionWordNotationImpl extends MinimalEObjectImpl.Container im
     {
       case ESyntaxPackage.INSTRUCTION_WORD_NOTATION__SECTIONS:
         return ((InternalEList<?>)getSections()).basicRemove(otherEnd, msgs);
+      case ESyntaxPackage.INSTRUCTION_WORD_NOTATION__CONDITIONS:
+        return ((InternalEList<?>)getConditions()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -108,6 +136,8 @@ public class InstructionWordNotationImpl extends MinimalEObjectImpl.Container im
     {
       case ESyntaxPackage.INSTRUCTION_WORD_NOTATION__SECTIONS:
         return getSections();
+      case ESyntaxPackage.INSTRUCTION_WORD_NOTATION__CONDITIONS:
+        return getConditions();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -127,6 +157,10 @@ public class InstructionWordNotationImpl extends MinimalEObjectImpl.Container im
         getSections().clear();
         getSections().addAll((Collection<? extends InsctructionSectionNotation>)newValue);
         return;
+      case ESyntaxPackage.INSTRUCTION_WORD_NOTATION__CONDITIONS:
+        getConditions().clear();
+        getConditions().addAll((Collection<? extends InstructionWordConditionNotation>)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -144,6 +178,9 @@ public class InstructionWordNotationImpl extends MinimalEObjectImpl.Container im
       case ESyntaxPackage.INSTRUCTION_WORD_NOTATION__SECTIONS:
         getSections().clear();
         return;
+      case ESyntaxPackage.INSTRUCTION_WORD_NOTATION__CONDITIONS:
+        getConditions().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -160,6 +197,8 @@ public class InstructionWordNotationImpl extends MinimalEObjectImpl.Container im
     {
       case ESyntaxPackage.INSTRUCTION_WORD_NOTATION__SECTIONS:
         return sections != null && !sections.isEmpty();
+      case ESyntaxPackage.INSTRUCTION_WORD_NOTATION__CONDITIONS:
+        return conditions != null && !conditions.isEmpty();
     }
     return super.eIsSet(featureID);
   }

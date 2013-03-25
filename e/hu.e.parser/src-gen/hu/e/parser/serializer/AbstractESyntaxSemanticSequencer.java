@@ -12,6 +12,7 @@ import hu.e.parser.eSyntax.InsctructionSectionNotation;
 import hu.e.parser.eSyntax.InstructionNotation;
 import hu.e.parser.eSyntax.InstructionParameterNotation;
 import hu.e.parser.eSyntax.InstructionSetNotation;
+import hu.e.parser.eSyntax.InstructionWordConditionNotation;
 import hu.e.parser.eSyntax.InstructionWordNotation;
 import hu.e.parser.eSyntax.IntegerDataTypeDef;
 import hu.e.parser.eSyntax.LabelDataTypeDef;
@@ -128,6 +129,12 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 				if(context == grammarAccess.getCompilationUnitRule() ||
 				   context == grammarAccess.getInstructionSetNotationRule()) {
 					sequence_InstructionSetNotation(context, (InstructionSetNotation) semanticObject); 
+					return; 
+				}
+				else break;
+			case ESyntaxPackage.INSTRUCTION_WORD_CONDITION_NOTATION:
+				if(context == grammarAccess.getInstructionWordConditionNotationRule()) {
+					sequence_InstructionWordConditionNotation(context, (InstructionWordConditionNotation) semanticObject); 
 					return; 
 				}
 				else break;
@@ -505,7 +512,29 @@ public abstract class AbstractESyntaxSemanticSequencer extends AbstractDelegatin
 	
 	/**
 	 * Constraint:
-	 *     sections+=InsctructionSectionNotation+
+	 *     (param=ID mask=LITERAL value=LITERAL)
+	 */
+	protected void sequence_InstructionWordConditionNotation(EObject context, InstructionWordConditionNotation semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.INSTRUCTION_WORD_CONDITION_NOTATION__PARAM) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.INSTRUCTION_WORD_CONDITION_NOTATION__PARAM));
+			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.INSTRUCTION_WORD_CONDITION_NOTATION__MASK) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.INSTRUCTION_WORD_CONDITION_NOTATION__MASK));
+			if(transientValues.isValueTransient(semanticObject, ESyntaxPackage.Literals.INSTRUCTION_WORD_CONDITION_NOTATION__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ESyntaxPackage.Literals.INSTRUCTION_WORD_CONDITION_NOTATION__VALUE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getInstructionWordConditionNotationAccess().getParamIDTerminalRuleCall_1_0(), semanticObject.getParam());
+		feeder.accept(grammarAccess.getInstructionWordConditionNotationAccess().getMaskLITERALParserRuleCall_3_0(), semanticObject.getMask());
+		feeder.accept(grammarAccess.getInstructionWordConditionNotationAccess().getValueLITERALParserRuleCall_5_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (sections+=InsctructionSectionNotation+ conditions+=InstructionWordConditionNotation*)
 	 */
 	protected void sequence_InstructionWordNotation(EObject context, InstructionWordNotation semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

@@ -74,6 +74,7 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
       case ESyntaxPackage.INSTRUCTION_SET_NOTATION: return createInstructionSetNotation();
       case ESyntaxPackage.INSTRUCTION_NOTATION: return createInstructionNotation();
       case ESyntaxPackage.INSTRUCTION_WORD_NOTATION: return createInstructionWordNotation();
+      case ESyntaxPackage.INSTRUCTION_WORD_CONDITION_NOTATION: return createInstructionWordConditionNotation();
       case ESyntaxPackage.INSTRUCTION_PARAMETER_NOTATION: return createInstructionParameterNotation();
       case ESyntaxPackage.INSCTRUCTION_SECTION_NOTATION: return createInsctructionSectionNotation();
       case ESyntaxPackage.LIBRARY: return createLibrary();
@@ -289,6 +290,17 @@ public class ESyntaxFactoryImpl extends EFactoryImpl implements ESyntaxFactory
   {
     InstructionWordNotationImpl instructionWordNotation = new InstructionWordNotationImpl();
     return instructionWordNotation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InstructionWordConditionNotation createInstructionWordConditionNotation()
+  {
+    InstructionWordConditionNotationImpl instructionWordConditionNotation = new InstructionWordConditionNotationImpl();
+    return instructionWordConditionNotation;
   }
 
   /**

@@ -140,6 +140,13 @@ public class ESyntaxSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case ESyntaxPackage.INSTRUCTION_WORD_CONDITION_NOTATION:
+      {
+        InstructionWordConditionNotation instructionWordConditionNotation = (InstructionWordConditionNotation)theEObject;
+        T result = caseInstructionWordConditionNotation(instructionWordConditionNotation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case ESyntaxPackage.INSTRUCTION_PARAMETER_NOTATION:
       {
         InstructionParameterNotation instructionParameterNotation = (InstructionParameterNotation)theEObject;
@@ -668,6 +675,22 @@ public class ESyntaxSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseInstructionWordNotation(InstructionWordNotation object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Instruction Word Condition Notation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Instruction Word Condition Notation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInstructionWordConditionNotation(InstructionWordConditionNotation object)
   {
     return null;
   }

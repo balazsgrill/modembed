@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link hu.e.parser.eSyntax.InstructionWordNotation#getSections <em>Sections</em>}</li>
+ *   <li>{@link hu.e.parser.eSyntax.InstructionWordNotation#getConditions <em>Conditions</em>}</li>
  * </ul>
  * </p>
  *
@@ -39,5 +40,21 @@ public interface InstructionWordNotation extends EObject
    * @generated
    */
   EList<InsctructionSectionNotation> getSections();
+
+  /**
+   * Returns the value of the '<em><b>Conditions</b></em>' containment reference list.
+   * The list contents are of type {@link hu.e.parser.eSyntax.InstructionWordConditionNotation}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Conditions</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Conditions</em>' containment reference list.
+   * @see hu.e.parser.eSyntax.ESyntaxPackage#getInstructionWordNotation_Conditions()
+   * @model containment="true"
+   * @generated
+   */
+  EList<InstructionWordConditionNotation> getConditions();
 
 } // InstructionWordNotation

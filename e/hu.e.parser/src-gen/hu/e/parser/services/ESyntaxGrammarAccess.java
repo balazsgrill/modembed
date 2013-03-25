@@ -404,13 +404,15 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cSectionsAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cSectionsInsctructionSectionNotationParserRuleCall_1_0 = (RuleCall)cSectionsAssignment_1.eContents().get(0);
 		private final Keyword cGreaterThanSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cConditionsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cConditionsInstructionWordConditionNotationParserRuleCall_3_0 = (RuleCall)cConditionsAssignment_3.eContents().get(0);
 		
 		//InstructionWordNotation:
 		//
-		//	"<" sections+=InsctructionSectionNotation+ ">";
+		//	"<" sections+=InsctructionSectionNotation+ ">" conditions+=InstructionWordConditionNotation*;
 		public ParserRule getRule() { return rule; }
 
-		//"<" sections+=InsctructionSectionNotation+ ">"
+		//"<" sections+=InsctructionSectionNotation+ ">" conditions+=InstructionWordConditionNotation*
 		public Group getGroup() { return cGroup; }
 
 		//"<"
@@ -424,6 +426,61 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 
 		//">"
 		public Keyword getGreaterThanSignKeyword_2() { return cGreaterThanSignKeyword_2; }
+
+		//conditions+=InstructionWordConditionNotation*
+		public Assignment getConditionsAssignment_3() { return cConditionsAssignment_3; }
+
+		//InstructionWordConditionNotation
+		public RuleCall getConditionsInstructionWordConditionNotationParserRuleCall_3_0() { return cConditionsInstructionWordConditionNotationParserRuleCall_3_0; }
+	}
+
+	public class InstructionWordConditionNotationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "InstructionWordConditionNotation");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cQuestionMarkKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cParamAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cParamIDTerminalRuleCall_1_0 = (RuleCall)cParamAssignment_1.eContents().get(0);
+		private final Keyword cAmpersandKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cMaskAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cMaskLITERALParserRuleCall_3_0 = (RuleCall)cMaskAssignment_3.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cValueAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cValueLITERALParserRuleCall_5_0 = (RuleCall)cValueAssignment_5.eContents().get(0);
+		
+		//InstructionWordConditionNotation:
+		//
+		//	"?" param=ID "&" mask=LITERAL "=" value=LITERAL;
+		public ParserRule getRule() { return rule; }
+
+		//"?" param=ID "&" mask=LITERAL "=" value=LITERAL
+		public Group getGroup() { return cGroup; }
+
+		//"?"
+		public Keyword getQuestionMarkKeyword_0() { return cQuestionMarkKeyword_0; }
+
+		//param=ID
+		public Assignment getParamAssignment_1() { return cParamAssignment_1; }
+
+		//ID
+		public RuleCall getParamIDTerminalRuleCall_1_0() { return cParamIDTerminalRuleCall_1_0; }
+
+		//"&"
+		public Keyword getAmpersandKeyword_2() { return cAmpersandKeyword_2; }
+
+		//mask=LITERAL
+		public Assignment getMaskAssignment_3() { return cMaskAssignment_3; }
+
+		//LITERAL
+		public RuleCall getMaskLITERALParserRuleCall_3_0() { return cMaskLITERALParserRuleCall_3_0; }
+
+		//"="
+		public Keyword getEqualsSignKeyword_4() { return cEqualsSignKeyword_4; }
+
+		//value=LITERAL
+		public Assignment getValueAssignment_5() { return cValueAssignment_5; }
+
+		//LITERAL
+		public RuleCall getValueLITERALParserRuleCall_5_0() { return cValueLITERALParserRuleCall_5_0; }
 	}
 
 	public class InstructionParameterNotationElements extends AbstractParserRuleElementFinder {
@@ -2604,6 +2661,7 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 	private InstructionSetNotationElements pInstructionSetNotation;
 	private InstructionNotationElements pInstructionNotation;
 	private InstructionWordNotationElements pInstructionWordNotation;
+	private InstructionWordConditionNotationElements pInstructionWordConditionNotation;
 	private InstructionParameterNotationElements pInstructionParameterNotation;
 	private InsctructionSectionNotationElements pInsctructionSectionNotation;
 	private LibraryElements pLibrary;
@@ -2856,13 +2914,24 @@ public class ESyntaxGrammarAccess extends AbstractGrammarElementFinder {
 
 	//InstructionWordNotation:
 	//
-	//	"<" sections+=InsctructionSectionNotation+ ">";
+	//	"<" sections+=InsctructionSectionNotation+ ">" conditions+=InstructionWordConditionNotation*;
 	public InstructionWordNotationElements getInstructionWordNotationAccess() {
 		return (pInstructionWordNotation != null) ? pInstructionWordNotation : (pInstructionWordNotation = new InstructionWordNotationElements());
 	}
 	
 	public ParserRule getInstructionWordNotationRule() {
 		return getInstructionWordNotationAccess().getRule();
+	}
+
+	//InstructionWordConditionNotation:
+	//
+	//	"?" param=ID "&" mask=LITERAL "=" value=LITERAL;
+	public InstructionWordConditionNotationElements getInstructionWordConditionNotationAccess() {
+		return (pInstructionWordConditionNotation != null) ? pInstructionWordConditionNotation : (pInstructionWordConditionNotation = new InstructionWordConditionNotationElements());
+	}
+	
+	public ParserRule getInstructionWordConditionNotationRule() {
+		return getInstructionWordConditionNotationAccess().getRule();
 	}
 
 	//InstructionParameterNotation:

@@ -750,7 +750,112 @@ ruleInstructionWordNotation returns [EObject current=null]
     {
     	newLeafNode(otherlv_2, grammarAccess.getInstructionWordNotationAccess().getGreaterThanSignKeyword_2());
     }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getInstructionWordNotationAccess().getConditionsInstructionWordConditionNotationParserRuleCall_3_0()); 
+	    }
+		lv_conditions_3_0=ruleInstructionWordConditionNotation		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getInstructionWordNotationRule());
+	        }
+       		add(
+       			$current, 
+       			"conditions",
+        		lv_conditions_3_0, 
+        		"InstructionWordConditionNotation");
+	        afterParserOrEnumRuleCall();
+	    }
+
 )
+)*)
+;
+
+
+
+
+
+// Entry rule entryRuleInstructionWordConditionNotation
+entryRuleInstructionWordConditionNotation returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getInstructionWordConditionNotationRule()); }
+	 iv_ruleInstructionWordConditionNotation=ruleInstructionWordConditionNotation 
+	 { $current=$iv_ruleInstructionWordConditionNotation.current; } 
+	 EOF 
+;
+
+// Rule InstructionWordConditionNotation
+ruleInstructionWordConditionNotation returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='?' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getInstructionWordConditionNotationAccess().getQuestionMarkKeyword_0());
+    }
+(
+(
+		lv_param_1_0=RULE_ID
+		{
+			newLeafNode(lv_param_1_0, grammarAccess.getInstructionWordConditionNotationAccess().getParamIDTerminalRuleCall_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getInstructionWordConditionNotationRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"param",
+        		lv_param_1_0, 
+        		"ID");
+	    }
+
+)
+)	otherlv_2='&' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getInstructionWordConditionNotationAccess().getAmpersandKeyword_2());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getInstructionWordConditionNotationAccess().getMaskLITERALParserRuleCall_3_0()); 
+	    }
+		lv_mask_3_0=ruleLITERAL		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getInstructionWordConditionNotationRule());
+	        }
+       		set(
+       			$current, 
+       			"mask",
+        		lv_mask_3_0, 
+        		"LITERAL");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_4='=' 
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getInstructionWordConditionNotationAccess().getEqualsSignKeyword_4());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getInstructionWordConditionNotationAccess().getValueLITERALParserRuleCall_5_0()); 
+	    }
+		lv_value_5_0=ruleLITERAL		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getInstructionWordConditionNotationRule());
+	        }
+       		set(
+       			$current, 
+       			"value",
+        		lv_value_5_0, 
+        		"LITERAL");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))
 ;
 
 

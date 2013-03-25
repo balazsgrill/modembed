@@ -82,6 +82,12 @@
     </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//InstructionWordNotation">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//InstructionWordNotation/sections"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ESyntax.ecore#//InstructionWordNotation/conditions"/>
+    </genClasses>
+    <genClasses ecoreClass="ESyntax.ecore#//InstructionWordConditionNotation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//InstructionWordConditionNotation/param"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//InstructionWordConditionNotation/mask"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//InstructionWordConditionNotation/value"/>
     </genClasses>
     <genClasses ecoreClass="ESyntax.ecore#//InstructionParameterNotation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ESyntax.ecore#//InstructionParameterNotation/name"/>

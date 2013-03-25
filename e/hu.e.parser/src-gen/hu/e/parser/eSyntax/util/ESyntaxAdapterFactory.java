@@ -120,6 +120,11 @@ public class ESyntaxAdapterFactory extends AdapterFactoryImpl
         return createInstructionWordNotationAdapter();
       }
       @Override
+      public Adapter caseInstructionWordConditionNotation(InstructionWordConditionNotation object)
+      {
+        return createInstructionWordConditionNotationAdapter();
+      }
+      @Override
       public Adapter caseInstructionParameterNotation(InstructionParameterNotation object)
       {
         return createInstructionParameterNotationAdapter();
@@ -507,6 +512,21 @@ public class ESyntaxAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createInstructionWordNotationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link hu.e.parser.eSyntax.InstructionWordConditionNotation <em>Instruction Word Condition Notation</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see hu.e.parser.eSyntax.InstructionWordConditionNotation
+   * @generated
+   */
+  public Adapter createInstructionWordConditionNotationAdapter()
   {
     return null;
   }

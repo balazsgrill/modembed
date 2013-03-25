@@ -81,7 +81,11 @@ InstructionNotation:
 ;
 
 InstructionWordNotation:
-	'<' (sections+=InsctructionSectionNotation)+ '>'
+	'<' (sections+=InsctructionSectionNotation)+ '>' (conditions += InstructionWordConditionNotation)*
+;
+
+InstructionWordConditionNotation:
+	'?' param=ID '&' mask=LITERAL '=' value=LITERAL
 ;
 
 InstructionParameterNotation:
