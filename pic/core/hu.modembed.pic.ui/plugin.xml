@@ -23,6 +23,10 @@
                path="/"
                resource="code/pic16/pic16.platform.e">
          </resource>
+         <resource
+               path="/"
+               resource="code/pic16/pic16e.platform.e">
+         </resource>
       </project>
       <category
             id="hu.modembed.pic.ui.category"

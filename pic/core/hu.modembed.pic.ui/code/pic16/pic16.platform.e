@@ -1,8 +1,17 @@
 library pic16.platform;
 
 use microchip.pic16.instructions;
-use microchip.pic16.enchanced.instructions;
 use e.platform;
+
+reg uint8 BSR : 0x08;
+
+/*
+ * Selecting BANK for the given address
+ */
+function SELECTB void(const pointer<void> addr){
+	MOVLW(addr/128);
+	MOVWF(&BSR);
+}
 
 function uint8_ASSIGNADD void(var uint8 d, const uint8 v) overrides ASSIGNADD{
 	MOVLW(v);
