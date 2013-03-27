@@ -3,14 +3,6 @@
  */
 package hu.e.compiler.tasks.optimizers;
 
-import java.math.BigDecimal;
-import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-
 import hu.e.compiler.IModembedTask;
 import hu.e.compiler.ITaskContext;
 import hu.e.compiler.TaskUtils;
@@ -32,6 +24,16 @@ import hu.modembed.model.emodel.expressions.VariableReference;
 import hu.modembed.model.emodel.memorymap.HeapLevel;
 import hu.modembed.model.emodel.memorymap.HeapVariableMapping;
 import hu.modembed.model.emodel.memorymap.MemoryMap;
+import hu.modembed.model.emodel.types.PointerTypeDefinition;
+import hu.modembed.model.emodel.types.TypesFactory;
+
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -184,10 +186,20 @@ public class ConstantExpressionOptimizer implements IModembedTask {
 							VariableReference vref = (VariableReference)args.get(0);
 							Variable v = vref.getVariable();
 							if (v instanceof RegisterVariable){
-								return copy(((RegisterVariable) v).getAddress());
+								ExecutionStep address = copy(((RegisterVariable) v).getAddress());
+								if (address instanceof LiteralExpression){
+									PointerTypeDefinition ptd = TypesFactory.eINSTANCE.createPointerTypeDefinition();
+									ptd.setPointerType(copy(v.getType()));
+									((LiteralExpression) address).setType(ptd);
+								}
+								return address;
 							}
 							if (vars.containsKey(v)){
-								return toExpression(BigDecimal.valueOf(vars.get(v)));
+								PointerTypeDefinition ptd = TypesFactory.eINSTANCE.createPointerTypeDefinition();
+								ptd.setPointerType(copy(v.getType()));
+								LiteralExpression le = toExpression(BigDecimal.valueOf(vars.get(v)));
+								le.setType(ptd);
+								return le;
 							}else{
 								return super.internalCopy(element);
 							}
