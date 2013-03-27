@@ -5,6 +5,7 @@ compiler.integrate{
 	input = e.platform
 	input = microchip.PIC16F1824
 	input = pic16.platform
+	input = pic16e.platform
 	output = blink.l3
 }
 optimize.constants{

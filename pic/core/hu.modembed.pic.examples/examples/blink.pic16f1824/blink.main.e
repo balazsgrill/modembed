@@ -1,6 +1,7 @@
 library blink.main;
 
 use e.platform;
+use pic16.platform;
 use microchip.pic16.instructions;
 use microchip.pic16.enchanced.instructions;
 use microchip.PIC16F1824;
