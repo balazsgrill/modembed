@@ -10,6 +10,4 @@ Require-Bundle: org.eclipse.core.runtime,
  hu.modembed.hexfile.persistence;bundle-version="0.1.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
-Export-Package: hu.modembed.pic.simulator,
- hu.modembed.pic.simulator.baseline,
- hu.modembed.pic.simulator.generic
+Export-Package: hu.modembed.pic.simulator
