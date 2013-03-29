@@ -98,6 +98,7 @@ public class DeviceSimulator {
 			}else{
 				InstructionCall instructioncall = getInstruction((int)pc);
 				// Null is considered as a NOP instruction
+				programCounter.set(pc+1);
 				if (instructioncall != null){
 					execute(instructioncall);
 				}

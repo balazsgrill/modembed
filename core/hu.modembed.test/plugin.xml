@@ -126,6 +126,28 @@
                resource="tests/t5_pic18asm/compile.e">
          </resource>
       </project>
+      <project
+            category="hu.modembed.test.category"
+            id="test6"
+            name="Test simulator">
+         <dependency
+               project="e.core">
+         </dependency>
+         <dependency
+               project="microchip.pic16">
+         </dependency>
+         <dependency
+               project="microchip.PIC16F1824">
+         </dependency>
+         <resource
+               path="/"
+               resource="tests/t6_simulate/addNumbers.e">
+         </resource>
+         <resource
+               path="/"
+               resource="tests/t6_simulate/compile.e">
+         </resource>
+      </project>
    </extension>
 
 </plugin>
