@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Simulator
 Bundle-SymbolicName: hu.modembed.pic.simulator;singleton:=true
-Bundle-Version: 0.1.0
+Bundle-Version: 0.8.1.qualifier
 Bundle-Activator: hu.modembed.pic.simulator.PicSimulator
 Bundle-Vendor: Cubussapiens.hu
 Require-Bundle: org.eclipse.core.runtime,
