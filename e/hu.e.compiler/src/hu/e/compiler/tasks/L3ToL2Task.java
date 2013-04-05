@@ -73,6 +73,20 @@ public class L3ToL2Task implements IModembedTask{
 			}
 		}
 		
+		private String toString(Function function, TypeSignature[] signature){
+			StringBuilder sb = new StringBuilder();
+			sb.append(function.getName());
+			sb.append("(");
+			boolean first = true;
+			for(TypeSignature ts : signature){
+				if (first) first = false;
+				else sb.append(", ");
+				sb.append(ts);
+			}
+			sb.append(")");
+			return sb.toString();
+		}
+		
 		public void process(Call call){
 			if (call.getFunction() instanceof Function){
 				Function abstractfunction = (Function)call.getFunction();
@@ -106,6 +120,7 @@ public class L3ToL2Task implements IModembedTask{
 				//Apply function to call
 				if (available.isEmpty()){
 					//TODO report error
+					System.out.println("Could not find implementation for "+toString(abstractfunction, signature));
 				}else{
 					call.setFunction(available.get(0));
 					//TODO first chosen, check if there is no other available
@@ -120,7 +135,7 @@ public class L3ToL2Task implements IModembedTask{
 	
 	@Override
 	public void execute(ITaskContext context, IProgressMonitor monitor) {
-		monitor.beginTask("Integrating model", 3);
+		monitor.beginTask("Resolving calls", 3);
 		
 		
 		String inputmodel = context.getParameterValue(INPUT).get(0);

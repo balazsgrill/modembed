@@ -175,6 +175,7 @@ public class TaskUtils {
 			if (fp instanceof LazyParameter){
 				
 			}else{
+				if (signature[i] == null) return false;
 				VariableParameter vp = (VariableParameter)fp;
 				VariableParameterKind kind = vp.getKind();
 				TypeDefinition td = fp.getType();
@@ -232,7 +233,7 @@ public class TaskUtils {
 		if (step instanceof Call){
 			CallableElement called = ((Call) step).getFunction();
 			if (called instanceof Function){
-				return new TypeSignature(((Function) called).getType(), VariableParameterKind.ANY);
+				return new TypeSignature(((Function) called).getType(), VariableParameterKind.VAR);
 			}
 		}
 		return null;
@@ -280,6 +281,22 @@ public class TaskUtils {
 
 	public static IStatus error(Exception e) {
 		return new Status(IStatus.ERROR, ECompilerPlugin.PLUGIN_ID, e.getMessage(), e);
+	}
+
+	public static String printType(TypeDefinition type) {
+		if(type instanceof PointerTypeDefinition){
+			return "pointer<"+printType(((PointerTypeDefinition) type).getPointerType())+">";
+		}
+		if (type instanceof ReferenceTypeDefinition){
+			return ((ReferenceTypeDefinition) type).getType().getName();
+		}
+		if (type instanceof CodeLabelTypeDefinition){
+			return "label";
+		}
+		if (type instanceof UnsignedTypeDefinition){
+			return "unsigned "+((UnsignedTypeDefinition)type).getBits()+" bits";
+		}
+		return "void";
 	}
 	
 }

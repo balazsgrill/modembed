@@ -1,4 +1,4 @@
-library blink.main;
+library addNumbers;
 
 use e.platform;
 use pic16.platform;

@@ -3,6 +3,7 @@
  */
 package hu.e.compiler.tasks.internal;
 
+import hu.e.compiler.TaskUtils;
 import hu.modembed.model.emodel.VariableParameterKind;
 import hu.modembed.model.emodel.types.TypeDefinition;
 
@@ -26,6 +27,11 @@ public class TypeSignature {
 	
 	public VariableParameterKind getKind() {
 		return kind;
+	}
+	
+	@Override
+	public String toString() {
+		return kind+" "+TaskUtils.printType(type);
 	}
 	
 }

@@ -70,7 +70,8 @@ public class L2ToL1Task implements IModembedTask {
 					return ref;
 				}
 				if (parameterStep.containsKey(var)){
-					return copy(parameterStep.get(var));
+					ExecutionStep step = parameterStep.get(var);
+					return step.eResource() != null ? copy(step) : step;
 				}
 				if (parent != null) return parent.get(var);
 				return null;
@@ -103,7 +104,10 @@ public class L2ToL1Task implements IModembedTask {
 			stack.pop();
 		}
 		
+		private boolean enableFlatten = false;
+		
 		private Function flatten(Function input){
+			enableFlatten = true;
 			Function func = EmodelFactory.eINSTANCE.createFunction();
 			func.setName(input.getName());
 			TaskUtils.addOrigin(func, input);
@@ -113,19 +117,63 @@ public class L2ToL1Task implements IModembedTask {
 			func.setImplementation(copy(impl));
 			stack.pop();
 			
+			enableFlatten = false;
 			return func;
+		}
+		
+		private ExecutionStep insertCall(ExecutionBlock callContext, Call call, int i){
+			Function f = (Function)call.getFunction();
+			if (isEmpty(f.getImplementation())){
+				return call;
+			}
+			
+			ExecutionBlock functionContext = ExpressionsFactory.eINSTANCE.createExecutionBlock();
+			LocalVariable resultVar = null;
+			push();
+
+			if (f.getType() != null){
+				resultVar = ExpressionsFactory.eINSTANCE.createLocalVariable();
+				resultVar.setName("result_"+i);
+				resultVar.setType(copy(f.getType()));
+				callContext.getSteps().add(resultVar);
+				current().setResult(resultVar);
+			}
+			int parami = 0;
+			for(FunctionParameter fp : f.getArguments()){
+				ExecutionStep paramvalue = call.getParameters().get(parami);
+				if (paramvalue instanceof Call){
+					//check if call parameter is another call
+					current().put(fp, insertCall(functionContext, (Call)paramvalue, parami));
+				}else{
+					current().put(fp, paramvalue);
+				}
+				parami++;
+			}
+
+			ExecutionStep result = copy(f.getImplementation());
+			functionContext.getSteps().add(result);
+
+			pop();
+
+			callContext.getSteps().add(functionContext);
+			VariableReference vref = ExpressionsFactory.eINSTANCE.createVariableReference();
+			vref.setVariable(resultVar);
+			return vref;
 		}
 		
 		@Override
 		protected EObject internalCopy(EObject step){
+			if (!enableFlatten) return super.internalCopy(step);
 			if (step instanceof LocalVariable){
 				EObject lv = super.internalCopy(step);
 				current().putVariable((LocalVariable)step, (LocalVariable)lv);
 				return lv;
 			}
 			if (step instanceof ResultVariableReference){
+				Variable v = current().getResult();
+				if (v == null) return super.internalCopy(step);
 				VariableReference ref = ExpressionsFactory.eINSTANCE.createVariableReference();
-				ref.setVariable(current().getResult());
+				ref.setVariable(v);
 				return ref;
 			}
 			if (step instanceof VariableReference){
@@ -137,7 +185,7 @@ public class L2ToL1Task implements IModembedTask {
 					return super.internalCopy(step);
 				}
 			}
-			if (step instanceof Call){
+			if (step instanceof Call){	
 				Call call = (Call)step;
 				if (call.getFunction() instanceof LazyParameter){
 					ExecutionBlock callcontext = ExpressionsFactory.eINSTANCE.createExecutionBlock();
@@ -181,9 +229,13 @@ public class L2ToL1Task implements IModembedTask {
 					}
 					int parami = 0;
 					for(FunctionParameter fp : f.getArguments()){
-						//TODO check if call parameter is another call
-						ExecutionStep paramvalue = call.getParameters().get(parami); 
-						current().put(fp, paramvalue);
+						ExecutionStep paramvalue = call.getParameters().get(parami);
+						if (paramvalue instanceof Call){
+							//check if call parameter is another call
+							current().put(fp, insertCall(callcontext, (Call)paramvalue, parami));
+						}else{
+							current().put(fp, paramvalue);
+						}
 						parami++;
 					}
 					
@@ -239,14 +291,18 @@ public class L2ToL1Task implements IModembedTask {
 		
 		for(LibraryElement le : inlib.getContent()){
 			if (le instanceof Function){
+				//outlib.getContent().add(flattener.flatten((Function)le));
 				if (entry.equals(le.getName())){
 					main = (Function)le;
+				}else{
+					outlib.getContent().add(flattener.copy(le));
 				}
 			}else{
 				outlib.getContent().add(flattener.copy(le));
 			}
 		}
 		
+	
 		if (main != null){
 			outlib.getContent().add(flattener.flatten(main));
 		}

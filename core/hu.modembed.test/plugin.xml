@@ -129,7 +129,7 @@
       <project
             category="hu.modembed.test.category"
             id="test6"
-            name="Test simulator">
+            name="Test6 - Simulator">
          <dependency
                project="e.core">
          </dependency>

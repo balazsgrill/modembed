@@ -40,10 +40,12 @@ import hu.modembed.model.emodel.expressions.CompilationLogStep;
 import hu.modembed.model.emodel.expressions.CompilationLogStepSeverity;
 import hu.modembed.model.emodel.expressions.ExecutionBlock;
 import hu.modembed.model.emodel.expressions.ExecutionStep;
+import hu.modembed.model.emodel.expressions.Expression;
 import hu.modembed.model.emodel.expressions.ExpressionsFactory;
 import hu.modembed.model.emodel.expressions.ExpressionsPackage;
 import hu.modembed.model.emodel.expressions.IntegerLiteralExpression;
 import hu.modembed.model.emodel.expressions.LocalVariable;
+import hu.modembed.model.emodel.expressions.ResultVariableReference;
 import hu.modembed.model.emodel.expressions.VariableReference;
 import hu.modembed.model.emodel.types.PrimitiveTypeDefinition;
 import hu.modembed.model.emodel.types.TypesFactory;
@@ -74,7 +76,11 @@ public class ExpressionConverter {
 		return call;
 	}
 	
-	public static VariableReference vref(hu.e.parser.eSyntax.VariableReference vref, ICrossReferenceScope scope){
+	public static Expression vref(hu.e.parser.eSyntax.VariableReference vref, ICrossReferenceScope scope){
+		if ("result".equals(vref.getVar())){
+			ResultVariableReference resultRef = ExpressionsFactory.eINSTANCE.createResultVariableReference();
+			return resultRef;
+		}
 		VariableReference ref = ExpressionsFactory.eINSTANCE.createVariableReference();
 		scope.addCrossReference(ref, ExpressionsPackage.eINSTANCE.getVariableReference_Variable(), vref.getVar());
 		return ref;
@@ -94,7 +100,7 @@ public class ExpressionConverter {
 		if (x.getRef() != null){
 			PlatformOperations pop = getOp(x.getOp());
 			Call call = createCall(pop, scope);
-			VariableReference ref = vref(x.getRef(), scope);
+			Expression ref = vref(x.getRef(), scope);
 			call.getParameters().add(ref);
 			call.getParameters().add(step);
 			step = call;

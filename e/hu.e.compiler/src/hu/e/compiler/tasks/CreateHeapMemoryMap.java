@@ -122,6 +122,7 @@ public class CreateHeapMemoryMap implements IModembedTask {
 			mapping.setVariable(v);
 			mapping.setAddress(current.getAddress());
 			TaskUtils.addOrigin(mapping, v);
+			heapStack.peek().getMappings().add(mapping);
 			
 			current = current.add(size);
 		}

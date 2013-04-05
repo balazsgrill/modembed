@@ -15,7 +15,6 @@ import hu.modembed.model.emodel.EmodelFactory;
 import hu.modembed.model.emodel.EmodelPackage;
 import hu.modembed.model.emodel.Function;
 import hu.modembed.model.emodel.FunctionParameter;
-import hu.modembed.model.emodel.ResultBuffer;
 import hu.modembed.model.emodel.VariableParameter;
 import hu.modembed.model.emodel.VariableParameterKind;
 
@@ -74,15 +73,6 @@ public class FunctionConverter {
 		for(OperationParameter op : ot.getParams()){
 			FunctionParameter fp = convert(op, scope);
 			func.getArguments().add(fp);
-		}
-		
-		if (func.getType() != null){
-			ResultBuffer resultbuffer = EmodelFactory.eINSTANCE.createResultBuffer();
-			resultbuffer.setName("result");
-			resultbuffer.setType(TypeConverter.convertTypeDef(ot.getResultType(), scope));
-			resultbuffer.setDescription("Result buffer");
-			funcscope.setResultBuffer(resultbuffer);
-			func.setResult(resultbuffer);
 		}
 		
 		func.setImplementation(ExpressionConverter.convert(operation.getContent(), funcscope));
