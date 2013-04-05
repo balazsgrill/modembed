@@ -418,4 +418,8 @@
       </eClassifiers>
     </eSubpackages>
   </eSubpackages>
+  <eSubpackages name="behavior" nsURI="http://modembed.hu/behavior" nsPrefix="behavior">
+    <eClassifiers xsi:type="ecore:EClass" name="SequentialBehavior" eSuperTypes="#//core/NamedElement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Symbol" eSuperTypes="#//core/NamedElement"/>
+  </eSubpackages>
 </ecore:EPackage>
