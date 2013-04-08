@@ -320,6 +320,24 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getOperationArgument_Type() {
+		return (EReference)operationArgumentEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getOperationArgument_IndirectionLevel() {
+		return (EAttribute)operationArgumentEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getInstructionCallOperationStep() {
 		return instructionCallOperationStepEClass;
 	}
@@ -415,6 +433,8 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 		createEReference(operationDefinitionEClass, OPERATION_DEFINITION__STEPS);
 
 		operationArgumentEClass = createEClass(OPERATION_ARGUMENT);
+		createEReference(operationArgumentEClass, OPERATION_ARGUMENT__TYPE);
+		createEAttribute(operationArgumentEClass, OPERATION_ARGUMENT__INDIRECTION_LEVEL);
 
 		instructionCallOperationStepEClass = createEClass(INSTRUCTION_CALL_OPERATION_STEP);
 		createEReference(instructionCallOperationStepEClass, INSTRUCTION_CALL_OPERATION_STEP__INSTRUCTION);
@@ -452,6 +472,7 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 
 		// Obtain other dependent packages
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
+		TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
 		AssemblerPackage theAssemblerPackage = (AssemblerPackage)EPackage.Registry.INSTANCE.getEPackage(AssemblerPackage.eNS_URI);
 
 		// Create type parameters
@@ -476,6 +497,8 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 		initEReference(getOperationDefinition_Steps(), this.getOperationStep(), null, "steps", null, 0, -1, OperationDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(operationArgumentEClass, OperationArgument.class, "OperationArgument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getOperationArgument_Type(), theTypesPackage.getTypeDefinition(), null, "type", null, 0, 1, OperationArgument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getOperationArgument_IndirectionLevel(), ecorePackage.getEInt(), "indirectionLevel", null, 0, 1, OperationArgument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(instructionCallOperationStepEClass, InstructionCallOperationStep.class, "InstructionCallOperationStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getInstructionCallOperationStep_Instruction(), theAssemblerPackage.getInstruction(), null, "instruction", null, 0, 1, InstructionCallOperationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

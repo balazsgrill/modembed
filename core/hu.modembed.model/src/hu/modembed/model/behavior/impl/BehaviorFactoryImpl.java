@@ -62,6 +62,8 @@ public class BehaviorFactoryImpl extends EFactoryImpl implements BehaviorFactory
 			case BehaviorPackage.ATOMIC_OPERATION_EXECUTION: return createAtomicOperationExecution();
 			case BehaviorPackage.BEHAVIOR_CALL: return createBehaviorCall();
 			case BehaviorPackage.SYMBOL_MAPPING: return createSymbolMapping();
+			case BehaviorPackage.SYMBOL_VALUE_MAP: return createSymbolValueMap();
+			case BehaviorPackage.SYMBOL_VALUE_ASSIGNMENT: return createSymbolValueAssignment();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -125,6 +127,26 @@ public class BehaviorFactoryImpl extends EFactoryImpl implements BehaviorFactory
 	public SymbolMapping createSymbolMapping() {
 		SymbolMappingImpl symbolMapping = new SymbolMappingImpl();
 		return symbolMapping;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SymbolValueMap createSymbolValueMap() {
+		SymbolValueMapImpl symbolValueMap = new SymbolValueMapImpl();
+		return symbolValueMap;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SymbolValueAssignment createSymbolValueAssignment() {
+		SymbolValueAssignmentImpl symbolValueAssignment = new SymbolValueAssignmentImpl();
+		return symbolValueAssignment;
 	}
 
 	/**

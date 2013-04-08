@@ -32,6 +32,8 @@ import hu.modembed.model.behavior.SequentialBehavior;
 import hu.modembed.model.behavior.Symbol;
 import hu.modembed.model.behavior.SymbolMapping;
 
+import hu.modembed.model.behavior.SymbolValueAssignment;
+import hu.modembed.model.behavior.SymbolValueMap;
 import hu.modembed.model.comm.CommPackage;
 
 import hu.modembed.model.comm.impl.CommPackageImpl;
@@ -140,6 +142,20 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 	 * @generated
 	 */
 	private EClass symbolMappingEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass symbolValueMapEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass symbolValueAssignmentEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -416,6 +432,60 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getSymbolValueMap() {
+		return symbolValueMapEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSymbolValueMap_Values() {
+		return (EReference)symbolValueMapEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getSymbolValueAssignment() {
+		return symbolValueAssignmentEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSymbolValueAssignment_Symbol() {
+		return (EReference)symbolValueAssignmentEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSymbolValueAssignment_Value() {
+		return (EAttribute)symbolValueAssignmentEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSymbolValueAssignment_IndirectionLevel() {
+		return (EAttribute)symbolValueAssignmentEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public BehaviorFactory getBehaviorFactory() {
 		return (BehaviorFactory)getEFactoryInstance();
 	}
@@ -462,6 +532,14 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 		symbolMappingEClass = createEClass(SYMBOL_MAPPING);
 		createEReference(symbolMappingEClass, SYMBOL_MAPPING__LOCAL);
 		createEReference(symbolMappingEClass, SYMBOL_MAPPING__REMOTE);
+
+		symbolValueMapEClass = createEClass(SYMBOL_VALUE_MAP);
+		createEReference(symbolValueMapEClass, SYMBOL_VALUE_MAP__VALUES);
+
+		symbolValueAssignmentEClass = createEClass(SYMBOL_VALUE_ASSIGNMENT);
+		createEReference(symbolValueAssignmentEClass, SYMBOL_VALUE_ASSIGNMENT__SYMBOL);
+		createEAttribute(symbolValueAssignmentEClass, SYMBOL_VALUE_ASSIGNMENT__VALUE);
+		createEAttribute(symbolValueAssignmentEClass, SYMBOL_VALUE_ASSIGNMENT__INDIRECTION_LEVEL);
 	}
 
 	/**
@@ -503,6 +581,8 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 		atomicOperationExecutionEClass.getESuperTypes().add(this.getSequentialAction());
 		behaviorCallEClass.getESuperTypes().add(this.getSequentialAction());
 		symbolMappingEClass.getESuperTypes().add(theCorePackage.getMODembedElement());
+		symbolValueMapEClass.getESuperTypes().add(theCorePackage.getRootElement());
+		symbolValueAssignmentEClass.getESuperTypes().add(theCorePackage.getMODembedElement());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(sequentialBehaviorEClass, SequentialBehavior.class, "SequentialBehavior", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -528,6 +608,14 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 		initEClass(symbolMappingEClass, SymbolMapping.class, "SymbolMapping", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSymbolMapping_Local(), this.getSymbol(), null, "local", null, 0, 1, SymbolMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSymbolMapping_Remote(), this.getSymbol(), null, "remote", null, 0, 1, SymbolMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(symbolValueMapEClass, SymbolValueMap.class, "SymbolValueMap", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSymbolValueMap_Values(), this.getSymbolValueAssignment(), null, "values", null, 0, -1, SymbolValueMap.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(symbolValueAssignmentEClass, SymbolValueAssignment.class, "SymbolValueAssignment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSymbolValueAssignment_Symbol(), this.getSymbol(), null, "symbol", null, 0, 1, SymbolValueAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSymbolValueAssignment_Value(), ecorePackage.getELong(), "value", null, 0, 1, SymbolValueAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSymbolValueAssignment_IndirectionLevel(), ecorePackage.getEInt(), "indirectionLevel", null, 0, 1, SymbolValueAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

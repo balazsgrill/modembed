@@ -449,6 +449,15 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="local" eType="#//behavior/Symbol"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="remote" eType="#//behavior/Symbol"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SymbolValueMap" eSuperTypes="#//core/RootElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="values" upperBound="-1"
+          eType="#//behavior/SymbolValueAssignment" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SymbolValueAssignment" eSuperTypes="#//core/MODembedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="symbol" eType="#//behavior/Symbol"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="indirectionLevel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
   </eSubpackages>
   <eSubpackages name="platform" nsURI="http://modembed.hu/platform" nsPrefix="platform">
     <eClassifiers xsi:type="ecore:EClass" name="PlatformDefinition" eSuperTypes="#//core/RootElement">
@@ -462,7 +471,10 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="steps" upperBound="-1"
           eType="#//platform/OperationStep" containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="OperationArgument" eSuperTypes="#//core/NamedElement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="OperationArgument" eSuperTypes="#//core/NamedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//emodel/types/TypeDefinition"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="indirectionLevel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="InstructionCallOperationStep" eSuperTypes="#//platform/OperationStep">
       <eStructuralFeatures xsi:type="ecore:EReference" name="instruction" eType="#//core/assembler/Instruction"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="arguments" upperBound="-1"

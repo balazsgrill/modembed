@@ -127,6 +127,22 @@ public class BehaviorSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case BehaviorPackage.SYMBOL_VALUE_MAP: {
+				SymbolValueMap symbolValueMap = (SymbolValueMap)theEObject;
+				T result = caseSymbolValueMap(symbolValueMap);
+				if (result == null) result = caseRootElement(symbolValueMap);
+				if (result == null) result = caseNamedElement(symbolValueMap);
+				if (result == null) result = caseMODembedElement(symbolValueMap);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case BehaviorPackage.SYMBOL_VALUE_ASSIGNMENT: {
+				SymbolValueAssignment symbolValueAssignment = (SymbolValueAssignment)theEObject;
+				T result = caseSymbolValueAssignment(symbolValueAssignment);
+				if (result == null) result = caseMODembedElement(symbolValueAssignment);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -233,6 +249,36 @@ public class BehaviorSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSymbolMapping(SymbolMapping object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Symbol Value Map</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Symbol Value Map</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSymbolValueMap(SymbolValueMap object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Symbol Value Assignment</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Symbol Value Assignment</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSymbolValueAssignment(SymbolValueAssignment object) {
 		return null;
 	}
 

@@ -102,6 +102,14 @@ public class BehaviorAdapterFactory extends AdapterFactoryImpl {
 				return createSymbolMappingAdapter();
 			}
 			@Override
+			public Adapter caseSymbolValueMap(SymbolValueMap object) {
+				return createSymbolValueMapAdapter();
+			}
+			@Override
+			public Adapter caseSymbolValueAssignment(SymbolValueAssignment object) {
+				return createSymbolValueAssignmentAdapter();
+			}
+			@Override
 			public Adapter caseMODembedElement(MODembedElement object) {
 				return createMODembedElementAdapter();
 			}
@@ -228,6 +236,34 @@ public class BehaviorAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSymbolMappingAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.behavior.SymbolValueMap <em>Symbol Value Map</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.modembed.model.behavior.SymbolValueMap
+	 * @generated
+	 */
+	public Adapter createSymbolValueMapAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.behavior.SymbolValueAssignment <em>Symbol Value Assignment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.modembed.model.behavior.SymbolValueAssignment
+	 * @generated
+	 */
+	public Adapter createSymbolValueAssignmentAdapter() {
 		return null;
 	}
 

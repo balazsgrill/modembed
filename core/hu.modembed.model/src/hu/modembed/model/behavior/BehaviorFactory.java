@@ -76,6 +76,24 @@ public interface BehaviorFactory extends EFactory {
 	SymbolMapping createSymbolMapping();
 
 	/**
+	 * Returns a new object of class '<em>Symbol Value Map</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Symbol Value Map</em>'.
+	 * @generated
+	 */
+	SymbolValueMap createSymbolValueMap();
+
+	/**
+	 * Returns a new object of class '<em>Symbol Value Assignment</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Symbol Value Assignment</em>'.
+	 * @generated
+	 */
+	SymbolValueAssignment createSymbolValueAssignment();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

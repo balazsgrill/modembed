@@ -428,6 +428,126 @@ public interface BehaviorPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link hu.modembed.model.behavior.impl.SymbolValueMapImpl <em>Symbol Value Map</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.modembed.model.behavior.impl.SymbolValueMapImpl
+	 * @see hu.modembed.model.behavior.impl.BehaviorPackageImpl#getSymbolValueMap()
+	 * @generated
+	 */
+	int SYMBOL_VALUE_MAP = 7;
+
+	/**
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_VALUE_MAP__ORIGINS = CorePackage.ROOT_ELEMENT__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_VALUE_MAP__DESCRIPTION = CorePackage.ROOT_ELEMENT__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_VALUE_MAP__NAME = CorePackage.ROOT_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Values</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_VALUE_MAP__VALUES = CorePackage.ROOT_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Symbol Value Map</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_VALUE_MAP_FEATURE_COUNT = CorePackage.ROOT_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link hu.modembed.model.behavior.impl.SymbolValueAssignmentImpl <em>Symbol Value Assignment</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.modembed.model.behavior.impl.SymbolValueAssignmentImpl
+	 * @see hu.modembed.model.behavior.impl.BehaviorPackageImpl#getSymbolValueAssignment()
+	 * @generated
+	 */
+	int SYMBOL_VALUE_ASSIGNMENT = 8;
+
+	/**
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_VALUE_ASSIGNMENT__ORIGINS = CorePackage.MO_DEMBED_ELEMENT__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_VALUE_ASSIGNMENT__DESCRIPTION = CorePackage.MO_DEMBED_ELEMENT__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Symbol</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_VALUE_ASSIGNMENT__SYMBOL = CorePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_VALUE_ASSIGNMENT__VALUE = CorePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Indirection Level</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_VALUE_ASSIGNMENT__INDIRECTION_LEVEL = CorePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Symbol Value Assignment</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_VALUE_ASSIGNMENT_FEATURE_COUNT = CorePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 3;
+
+
+	/**
 	 * Returns the meta object for class '{@link hu.modembed.model.behavior.SequentialBehavior <em>Sequential Behavior</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -608,6 +728,70 @@ public interface BehaviorPackage extends EPackage {
 	EReference getSymbolMapping_Remote();
 
 	/**
+	 * Returns the meta object for class '{@link hu.modembed.model.behavior.SymbolValueMap <em>Symbol Value Map</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Symbol Value Map</em>'.
+	 * @see hu.modembed.model.behavior.SymbolValueMap
+	 * @generated
+	 */
+	EClass getSymbolValueMap();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link hu.modembed.model.behavior.SymbolValueMap#getValues <em>Values</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Values</em>'.
+	 * @see hu.modembed.model.behavior.SymbolValueMap#getValues()
+	 * @see #getSymbolValueMap()
+	 * @generated
+	 */
+	EReference getSymbolValueMap_Values();
+
+	/**
+	 * Returns the meta object for class '{@link hu.modembed.model.behavior.SymbolValueAssignment <em>Symbol Value Assignment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Symbol Value Assignment</em>'.
+	 * @see hu.modembed.model.behavior.SymbolValueAssignment
+	 * @generated
+	 */
+	EClass getSymbolValueAssignment();
+
+	/**
+	 * Returns the meta object for the reference '{@link hu.modembed.model.behavior.SymbolValueAssignment#getSymbol <em>Symbol</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Symbol</em>'.
+	 * @see hu.modembed.model.behavior.SymbolValueAssignment#getSymbol()
+	 * @see #getSymbolValueAssignment()
+	 * @generated
+	 */
+	EReference getSymbolValueAssignment_Symbol();
+
+	/**
+	 * Returns the meta object for the attribute '{@link hu.modembed.model.behavior.SymbolValueAssignment#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see hu.modembed.model.behavior.SymbolValueAssignment#getValue()
+	 * @see #getSymbolValueAssignment()
+	 * @generated
+	 */
+	EAttribute getSymbolValueAssignment_Value();
+
+	/**
+	 * Returns the meta object for the attribute '{@link hu.modembed.model.behavior.SymbolValueAssignment#getIndirectionLevel <em>Indirection Level</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Indirection Level</em>'.
+	 * @see hu.modembed.model.behavior.SymbolValueAssignment#getIndirectionLevel()
+	 * @see #getSymbolValueAssignment()
+	 * @generated
+	 */
+	EAttribute getSymbolValueAssignment_IndirectionLevel();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -778,6 +962,58 @@ public interface BehaviorPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SYMBOL_MAPPING__REMOTE = eINSTANCE.getSymbolMapping_Remote();
+
+		/**
+		 * The meta object literal for the '{@link hu.modembed.model.behavior.impl.SymbolValueMapImpl <em>Symbol Value Map</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.modembed.model.behavior.impl.SymbolValueMapImpl
+		 * @see hu.modembed.model.behavior.impl.BehaviorPackageImpl#getSymbolValueMap()
+		 * @generated
+		 */
+		EClass SYMBOL_VALUE_MAP = eINSTANCE.getSymbolValueMap();
+
+		/**
+		 * The meta object literal for the '<em><b>Values</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SYMBOL_VALUE_MAP__VALUES = eINSTANCE.getSymbolValueMap_Values();
+
+		/**
+		 * The meta object literal for the '{@link hu.modembed.model.behavior.impl.SymbolValueAssignmentImpl <em>Symbol Value Assignment</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.modembed.model.behavior.impl.SymbolValueAssignmentImpl
+		 * @see hu.modembed.model.behavior.impl.BehaviorPackageImpl#getSymbolValueAssignment()
+		 * @generated
+		 */
+		EClass SYMBOL_VALUE_ASSIGNMENT = eINSTANCE.getSymbolValueAssignment();
+
+		/**
+		 * The meta object literal for the '<em><b>Symbol</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SYMBOL_VALUE_ASSIGNMENT__SYMBOL = eINSTANCE.getSymbolValueAssignment_Symbol();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SYMBOL_VALUE_ASSIGNMENT__VALUE = eINSTANCE.getSymbolValueAssignment_Value();
+
+		/**
+		 * The meta object literal for the '<em><b>Indirection Level</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SYMBOL_VALUE_ASSIGNMENT__INDIRECTION_LEVEL = eINSTANCE.getSymbolValueAssignment_IndirectionLevel();
 
 	}
 

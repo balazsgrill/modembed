@@ -214,13 +214,31 @@ public interface PlatformPackage extends EPackage {
 	int OPERATION_ARGUMENT__NAME = CorePackage.NAMED_ELEMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_ARGUMENT__TYPE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Indirection Level</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_ARGUMENT__INDIRECTION_LEVEL = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Operation Argument</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_ARGUMENT_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int OPERATION_ARGUMENT_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link hu.modembed.model.platform.impl.OperationStepImpl <em>Operation Step</em>}' class.
@@ -445,6 +463,28 @@ public interface PlatformPackage extends EPackage {
 	EClass getOperationArgument();
 
 	/**
+	 * Returns the meta object for the reference '{@link hu.modembed.model.platform.OperationArgument#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Type</em>'.
+	 * @see hu.modembed.model.platform.OperationArgument#getType()
+	 * @see #getOperationArgument()
+	 * @generated
+	 */
+	EReference getOperationArgument_Type();
+
+	/**
+	 * Returns the meta object for the attribute '{@link hu.modembed.model.platform.OperationArgument#getIndirectionLevel <em>Indirection Level</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Indirection Level</em>'.
+	 * @see hu.modembed.model.platform.OperationArgument#getIndirectionLevel()
+	 * @see #getOperationArgument()
+	 * @generated
+	 */
+	EAttribute getOperationArgument_IndirectionLevel();
+
+	/**
 	 * Returns the meta object for class '{@link hu.modembed.model.platform.InstructionCallOperationStep <em>Instruction Call Operation Step</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -601,6 +641,22 @@ public interface PlatformPackage extends EPackage {
 		 * @generated
 		 */
 		EClass OPERATION_ARGUMENT = eINSTANCE.getOperationArgument();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OPERATION_ARGUMENT__TYPE = eINSTANCE.getOperationArgument_Type();
+
+		/**
+		 * The meta object literal for the '<em><b>Indirection Level</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OPERATION_ARGUMENT__INDIRECTION_LEVEL = eINSTANCE.getOperationArgument_IndirectionLevel();
 
 		/**
 		 * The meta object literal for the '{@link hu.modembed.model.platform.impl.InstructionCallOperationStepImpl <em>Instruction Call Operation Step</em>}' class.
