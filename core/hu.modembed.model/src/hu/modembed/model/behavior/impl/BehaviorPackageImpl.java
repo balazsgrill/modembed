@@ -488,7 +488,6 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		EmodelPackage theEmodelPackage = (EmodelPackage)EPackage.Registry.INSTANCE.getEPackage(EmodelPackage.eNS_URI);
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 		TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
 
@@ -497,7 +496,7 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		sequentialBehaviorEClass.getESuperTypes().add(theEmodelPackage.getLibraryElement());
+		sequentialBehaviorEClass.getESuperTypes().add(theCorePackage.getRootElement());
 		symbolEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		sequentialActionEClass.getESuperTypes().add(theCorePackage.getMODembedElement());
 		codeSymbolPlacementEClass.getESuperTypes().add(this.getSequentialAction());

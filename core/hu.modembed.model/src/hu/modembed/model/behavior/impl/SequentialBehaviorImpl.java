@@ -7,6 +7,7 @@ import hu.modembed.model.behavior.SequentialAction;
 import hu.modembed.model.behavior.SequentialBehavior;
 import hu.modembed.model.behavior.Symbol;
 
+import hu.modembed.model.core.impl.RootElementImpl;
 import hu.modembed.model.core.impl.NamedElementImpl;
 
 import java.util.Collection;
@@ -35,7 +36,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class SequentialBehaviorImpl extends NamedElementImpl implements SequentialBehavior {
+public class SequentialBehaviorImpl extends RootElementImpl implements SequentialBehavior {
 	/**
 	 * The cached value of the '{@link #getSymbols() <em>Symbols</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

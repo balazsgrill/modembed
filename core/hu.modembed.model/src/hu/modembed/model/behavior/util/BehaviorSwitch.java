@@ -7,6 +7,7 @@ import hu.modembed.model.behavior.*;
 import hu.modembed.model.core.MODembedElement;
 import hu.modembed.model.core.NamedElement;
 
+import hu.modembed.model.core.RootElement;
 import hu.modembed.model.emodel.LibraryElement;
 
 import org.eclipse.emf.ecore.EObject;
@@ -74,7 +75,7 @@ public class BehaviorSwitch<T> extends Switch<T> {
 			case BehaviorPackage.SEQUENTIAL_BEHAVIOR: {
 				SequentialBehavior sequentialBehavior = (SequentialBehavior)theEObject;
 				T result = caseSequentialBehavior(sequentialBehavior);
-				if (result == null) result = caseLibraryElement(sequentialBehavior);
+				if (result == null) result = caseRootElement(sequentialBehavior);
 				if (result == null) result = caseNamedElement(sequentialBehavior);
 				if (result == null) result = caseMODembedElement(sequentialBehavior);
 				if (result == null) result = defaultCase(theEObject);
@@ -266,17 +267,17 @@ public class BehaviorSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Library Element</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Root Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Library Element</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Root Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseLibraryElement(LibraryElement object) {
+	public T caseRootElement(RootElement object) {
 		return null;
 	}
 

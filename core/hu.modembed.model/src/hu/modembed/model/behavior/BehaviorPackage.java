@@ -76,7 +76,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SEQUENTIAL_BEHAVIOR__ORIGINS = EmodelPackage.LIBRARY_ELEMENT__ORIGINS;
+	int SEQUENTIAL_BEHAVIOR__ORIGINS = CorePackage.ROOT_ELEMENT__ORIGINS;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -85,7 +85,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SEQUENTIAL_BEHAVIOR__DESCRIPTION = EmodelPackage.LIBRARY_ELEMENT__DESCRIPTION;
+	int SEQUENTIAL_BEHAVIOR__DESCRIPTION = CorePackage.ROOT_ELEMENT__DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -94,7 +94,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SEQUENTIAL_BEHAVIOR__NAME = EmodelPackage.LIBRARY_ELEMENT__NAME;
+	int SEQUENTIAL_BEHAVIOR__NAME = CorePackage.ROOT_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Symbols</b></em>' containment reference list.
@@ -103,7 +103,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SEQUENTIAL_BEHAVIOR__SYMBOLS = EmodelPackage.LIBRARY_ELEMENT_FEATURE_COUNT + 0;
+	int SEQUENTIAL_BEHAVIOR__SYMBOLS = CorePackage.ROOT_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
@@ -112,7 +112,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SEQUENTIAL_BEHAVIOR__ACTIONS = EmodelPackage.LIBRARY_ELEMENT_FEATURE_COUNT + 1;
+	int SEQUENTIAL_BEHAVIOR__ACTIONS = CorePackage.ROOT_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Sequential Behavior</em>' class.
@@ -121,7 +121,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SEQUENTIAL_BEHAVIOR_FEATURE_COUNT = EmodelPackage.LIBRARY_ELEMENT_FEATURE_COUNT + 2;
+	int SEQUENTIAL_BEHAVIOR_FEATURE_COUNT = CorePackage.ROOT_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link hu.modembed.model.behavior.impl.SymbolImpl <em>Symbol</em>}' class.

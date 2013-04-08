@@ -419,7 +419,7 @@
     </eSubpackages>
   </eSubpackages>
   <eSubpackages name="behavior" nsURI="http://modembed.hu/behavior" nsPrefix="behavior">
-    <eClassifiers xsi:type="ecore:EClass" name="SequentialBehavior" eSuperTypes="#//emodel/LibraryElement">
+    <eClassifiers xsi:type="ecore:EClass" name="SequentialBehavior" eSuperTypes="#//core/RootElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="symbols" upperBound="-1"
           eType="#//behavior/Symbol" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="actions" upperBound="-1"

@@ -2,6 +2,7 @@
  */
 package hu.modembed.model.behavior;
 
+import hu.modembed.model.core.RootElement;
 import hu.modembed.model.emodel.LibraryElement;
 
 import org.eclipse.emf.common.util.EList;
@@ -23,7 +24,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface SequentialBehavior extends LibraryElement {
+public interface SequentialBehavior extends RootElement {
 	/**
 	 * Returns the value of the '<em><b>Symbols</b></em>' containment reference list.
 	 * The list contents are of type {@link hu.modembed.model.behavior.Symbol}.
