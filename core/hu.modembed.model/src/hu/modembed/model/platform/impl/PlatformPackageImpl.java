@@ -311,6 +311,15 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getOperationDefinition_Operation() {
+		return (EAttribute)operationDefinitionEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getOperationArgument() {
 		return operationArgumentEClass;
 	}
@@ -431,6 +440,7 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 		operationDefinitionEClass = createEClass(OPERATION_DEFINITION);
 		createEReference(operationDefinitionEClass, OPERATION_DEFINITION__ARGUMENTS);
 		createEReference(operationDefinitionEClass, OPERATION_DEFINITION__STEPS);
+		createEAttribute(operationDefinitionEClass, OPERATION_DEFINITION__OPERATION);
 
 		operationArgumentEClass = createEClass(OPERATION_ARGUMENT);
 		createEReference(operationArgumentEClass, OPERATION_ARGUMENT__TYPE);
@@ -495,6 +505,7 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 		initEClass(operationDefinitionEClass, OperationDefinition.class, "OperationDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getOperationDefinition_Arguments(), this.getOperationArgument(), null, "arguments", null, 0, -1, OperationDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getOperationDefinition_Steps(), this.getOperationStep(), null, "steps", null, 0, -1, OperationDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getOperationDefinition_Operation(), ecorePackage.getEString(), "operation", null, 0, 1, OperationDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(operationArgumentEClass, OperationArgument.class, "OperationArgument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getOperationArgument_Type(), theTypesPackage.getTypeDefinition(), null, "type", null, 0, 1, OperationArgument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

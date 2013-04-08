@@ -168,13 +168,22 @@ public interface PlatformPackage extends EPackage {
 	int OPERATION_DEFINITION__STEPS = CorePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Operation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_DEFINITION__OPERATION = CorePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Operation Definition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_DEFINITION_FEATURE_COUNT = CorePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 2;
+	int OPERATION_DEFINITION_FEATURE_COUNT = CorePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link hu.modembed.model.platform.impl.OperationArgumentImpl <em>Operation Argument</em>}' class.
@@ -453,6 +462,17 @@ public interface PlatformPackage extends EPackage {
 	EReference getOperationDefinition_Steps();
 
 	/**
+	 * Returns the meta object for the attribute '{@link hu.modembed.model.platform.OperationDefinition#getOperation <em>Operation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Operation</em>'.
+	 * @see hu.modembed.model.platform.OperationDefinition#getOperation()
+	 * @see #getOperationDefinition()
+	 * @generated
+	 */
+	EAttribute getOperationDefinition_Operation();
+
+	/**
 	 * Returns the meta object for class '{@link hu.modembed.model.platform.OperationArgument <em>Operation Argument</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -631,6 +651,14 @@ public interface PlatformPackage extends EPackage {
 		 * @generated
 		 */
 		EReference OPERATION_DEFINITION__STEPS = eINSTANCE.getOperationDefinition_Steps();
+
+		/**
+		 * The meta object literal for the '<em><b>Operation</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OPERATION_DEFINITION__OPERATION = eINSTANCE.getOperationDefinition_Operation();
 
 		/**
 		 * The meta object literal for the '{@link hu.modembed.model.platform.impl.OperationArgumentImpl <em>Operation Argument</em>}' class.

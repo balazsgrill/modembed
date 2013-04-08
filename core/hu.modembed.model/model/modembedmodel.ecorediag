@@ -5385,11 +5385,15 @@
       </children>
       <styles xmi:type="notation:ShapeStyle" xmi:id="_RzCQsaAnEeKwS919NblGIA" fontColor="4210752" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
       <element xmi:type="ecore:EClass" href="modembedmodel.ecore#//platform/PlatformDefinition"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RzCQsqAnEeKwS919NblGIA" x="40" y="155"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RzCQsqAnEeKwS919NblGIA" x="40" y="165"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_pBcRAKAnEeKwS919NblGIA" type="1001">
       <children xmi:type="notation:Node" xmi:id="_pBeGMKAnEeKwS919NblGIA" type="4001"/>
       <children xmi:type="notation:Node" xmi:id="_pBeGMaAnEeKwS919NblGIA" type="5001">
+        <children xmi:type="notation:Node" xmi:id="_TTD8YKBQEeKwS919NblGIA" type="2001">
+          <element xmi:type="ecore:EAttribute" href="modembedmodel.ecore#//platform/OperationDefinition/operation"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_TTD8YaBQEeKwS919NblGIA"/>
+        </children>
         <styles xmi:type="notation:DrawerStyle" xmi:id="_pBeGMqAnEeKwS919NblGIA"/>
         <styles xmi:type="notation:SortingStyle" xmi:id="_pBeGM6AnEeKwS919NblGIA"/>
         <styles xmi:type="notation:FilteringStyle" xmi:id="_pBeGNKAnEeKwS919NblGIA"/>

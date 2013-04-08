@@ -16,6 +16,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link hu.modembed.model.platform.OperationDefinition#getArguments <em>Arguments</em>}</li>
  *   <li>{@link hu.modembed.model.platform.OperationDefinition#getSteps <em>Steps</em>}</li>
+ *   <li>{@link hu.modembed.model.platform.OperationDefinition#getOperation <em>Operation</em>}</li>
  * </ul>
  * </p>
  *
@@ -55,5 +56,31 @@ public interface OperationDefinition extends MODembedElement {
 	 * @generated
 	 */
 	EList<OperationStep> getSteps();
+
+	/**
+	 * Returns the value of the '<em><b>Operation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Operation</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Operation</em>' attribute.
+	 * @see #setOperation(String)
+	 * @see hu.modembed.model.platform.PlatformPackage#getOperationDefinition_Operation()
+	 * @model
+	 * @generated
+	 */
+	String getOperation();
+
+	/**
+	 * Sets the value of the '{@link hu.modembed.model.platform.OperationDefinition#getOperation <em>Operation</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Operation</em>' attribute.
+	 * @see #getOperation()
+	 * @generated
+	 */
+	void setOperation(String value);
 
 } // OperationDefinition
