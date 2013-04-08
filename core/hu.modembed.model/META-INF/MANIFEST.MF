@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: hu.modembed.model;singleton:=true
-Bundle-Version: 0.8.1.qualifier
+Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
@@ -22,6 +22,9 @@ Export-Package: hu.modembed.model.application,
  hu.modembed.model.architecture.linking.impl,
  hu.modembed.model.architecture.linking.util,
  hu.modembed.model.architecture.util,
+ hu.modembed.model.behavior,
+ hu.modembed.model.behavior.impl,
+ hu.modembed.model.behavior.util,
  hu.modembed.model.comm,
  hu.modembed.model.comm.impl,
  hu.modembed.model.comm.rs232,
@@ -57,7 +60,10 @@ Export-Package: hu.modembed.model.application,
  hu.modembed.model.network.rs232,
  hu.modembed.model.network.rs232.impl,
  hu.modembed.model.network.rs232.util,
- hu.modembed.model.network.util
+ hu.modembed.model.network.util,
+ hu.modembed.model.platform,
+ hu.modembed.model.platform.impl,
+ hu.modembed.model.platform.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport
 Bundle-ActivationPolicy: lazy

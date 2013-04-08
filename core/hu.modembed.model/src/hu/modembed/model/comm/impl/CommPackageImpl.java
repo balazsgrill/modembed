@@ -12,6 +12,8 @@ import hu.modembed.model.architecture.ArchitecturePackage;
 import hu.modembed.model.architecture.impl.ArchitecturePackageImpl;
 import hu.modembed.model.architecture.linking.LinkingPackage;
 import hu.modembed.model.architecture.linking.impl.LinkingPackageImpl;
+import hu.modembed.model.behavior.BehaviorPackage;
+import hu.modembed.model.behavior.impl.BehaviorPackageImpl;
 import hu.modembed.model.comm.CommFactory;
 import hu.modembed.model.comm.CommPackage;
 import hu.modembed.model.comm.CommunicationProtocol;
@@ -37,6 +39,8 @@ import hu.modembed.model.network.impl.NetworkPackageImpl;
 import hu.modembed.model.network.rs232.Rs232Package;
 import hu.modembed.model.network.rs232.impl.Rs232PackageImpl;
 
+import hu.modembed.model.platform.PlatformPackage;
+import hu.modembed.model.platform.impl.PlatformPackageImpl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -126,6 +130,8 @@ public class CommPackageImpl extends EPackageImpl implements CommPackage {
 		MemorymapPackageImpl theMemorymapPackage = (MemorymapPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(MemorymapPackage.eNS_URI) instanceof MemorymapPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(MemorymapPackage.eNS_URI) : MemorymapPackage.eINSTANCE);
 		ArchitecturePackageImpl theArchitecturePackage = (ArchitecturePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ArchitecturePackage.eNS_URI) instanceof ArchitecturePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ArchitecturePackage.eNS_URI) : ArchitecturePackage.eINSTANCE);
 		LinkingPackageImpl theLinkingPackage = (LinkingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(LinkingPackage.eNS_URI) instanceof LinkingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(LinkingPackage.eNS_URI) : LinkingPackage.eINSTANCE);
+		BehaviorPackageImpl theBehaviorPackage = (BehaviorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) instanceof BehaviorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) : BehaviorPackage.eINSTANCE);
+		PlatformPackageImpl thePlatformPackage = (PlatformPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PlatformPackage.eNS_URI) instanceof PlatformPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PlatformPackage.eNS_URI) : PlatformPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theCommPackage.createPackageContents();
@@ -145,6 +151,8 @@ public class CommPackageImpl extends EPackageImpl implements CommPackage {
 		theMemorymapPackage.createPackageContents();
 		theArchitecturePackage.createPackageContents();
 		theLinkingPackage.createPackageContents();
+		theBehaviorPackage.createPackageContents();
+		thePlatformPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theCommPackage.initializePackageContents();
@@ -164,6 +172,8 @@ public class CommPackageImpl extends EPackageImpl implements CommPackage {
 		theMemorymapPackage.initializePackageContents();
 		theArchitecturePackage.initializePackageContents();
 		theLinkingPackage.initializePackageContents();
+		theBehaviorPackage.initializePackageContents();
+		thePlatformPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theCommPackage.freeze();

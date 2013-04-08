@@ -21,6 +21,8 @@ import hu.modembed.model.architecture.MemorySection;
 
 import hu.modembed.model.architecture.linking.LinkingPackage;
 import hu.modembed.model.architecture.linking.impl.LinkingPackageImpl;
+import hu.modembed.model.behavior.BehaviorPackage;
+import hu.modembed.model.behavior.impl.BehaviorPackageImpl;
 import hu.modembed.model.comm.CommPackage;
 
 import hu.modembed.model.comm.impl.CommPackageImpl;
@@ -61,6 +63,8 @@ import hu.modembed.model.network.rs232.Rs232Package;
 
 import hu.modembed.model.network.rs232.impl.Rs232PackageImpl;
 
+import hu.modembed.model.platform.PlatformPackage;
+import hu.modembed.model.platform.impl.PlatformPackageImpl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -152,6 +156,8 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 		ExpressionsPackageImpl theExpressionsPackage = (ExpressionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI) instanceof ExpressionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI) : ExpressionsPackage.eINSTANCE);
 		MemorymapPackageImpl theMemorymapPackage = (MemorymapPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(MemorymapPackage.eNS_URI) instanceof MemorymapPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(MemorymapPackage.eNS_URI) : MemorymapPackage.eINSTANCE);
 		LinkingPackageImpl theLinkingPackage = (LinkingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(LinkingPackage.eNS_URI) instanceof LinkingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(LinkingPackage.eNS_URI) : LinkingPackage.eINSTANCE);
+		BehaviorPackageImpl theBehaviorPackage = (BehaviorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) instanceof BehaviorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) : BehaviorPackage.eINSTANCE);
+		PlatformPackageImpl thePlatformPackage = (PlatformPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PlatformPackage.eNS_URI) instanceof PlatformPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PlatformPackage.eNS_URI) : PlatformPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theArchitecturePackage.createPackageContents();
@@ -171,6 +177,8 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 		theExpressionsPackage.createPackageContents();
 		theMemorymapPackage.createPackageContents();
 		theLinkingPackage.createPackageContents();
+		theBehaviorPackage.createPackageContents();
+		thePlatformPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theArchitecturePackage.initializePackageContents();
@@ -190,6 +198,8 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 		theExpressionsPackage.initializePackageContents();
 		theMemorymapPackage.initializePackageContents();
 		theLinkingPackage.initializePackageContents();
+		theBehaviorPackage.initializePackageContents();
+		thePlatformPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theArchitecturePackage.freeze();
