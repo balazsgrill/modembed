@@ -118,7 +118,7 @@ public class CompileToDevice implements IModembedTask {
 									
 									OperationArgument oa = ipm.getValue();
 									int argi = operation.getArguments().indexOf(oa);
-									if (argi > 0){
+									if (argi >= 0){
 										valueMappings.put(icp, new SymbolValue(symbols.get(argi), ipm.getBitOffset()));
 									}
 								}
@@ -197,7 +197,7 @@ public class CompileToDevice implements IModembedTask {
 	
 	private boolean check(OperationArgument arg, SymbolSignature signature){
 		if (arg.getIndirectionLevel() == signature.indirectionLevel){
-			TaskUtils.canCast(signature.type, arg.getType());
+			return TaskUtils.canCast(signature.type, arg.getType());
 		}
 		return false;
 	}
