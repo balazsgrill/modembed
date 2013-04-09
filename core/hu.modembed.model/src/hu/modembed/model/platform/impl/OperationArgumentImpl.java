@@ -9,6 +9,7 @@ import hu.modembed.model.platform.OperationArgument;
 import hu.modembed.model.platform.PlatformPackage;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -29,7 +30,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class OperationArgumentImpl extends NamedElementImpl implements OperationArgument {
 	/**
-	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
+	 * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getType()
@@ -81,14 +82,6 @@ public class OperationArgumentImpl extends NamedElementImpl implements Operation
 	 * @generated
 	 */
 	public TypeDefinition getType() {
-		if (type != null && type.eIsProxy()) {
-			InternalEObject oldType = (InternalEObject)type;
-			type = (TypeDefinition)eResolveProxy(oldType);
-			if (type != oldType) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PlatformPackage.OPERATION_ARGUMENT__TYPE, oldType, type));
-			}
-		}
 		return type;
 	}
 
@@ -97,8 +90,14 @@ public class OperationArgumentImpl extends NamedElementImpl implements Operation
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TypeDefinition basicGetType() {
-		return type;
+	public NotificationChain basicSetType(TypeDefinition newType, NotificationChain msgs) {
+		TypeDefinition oldType = type;
+		type = newType;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PlatformPackage.OPERATION_ARGUMENT__TYPE, oldType, newType);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -107,10 +106,17 @@ public class OperationArgumentImpl extends NamedElementImpl implements Operation
 	 * @generated
 	 */
 	public void setType(TypeDefinition newType) {
-		TypeDefinition oldType = type;
-		type = newType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PlatformPackage.OPERATION_ARGUMENT__TYPE, oldType, type));
+		if (newType != type) {
+			NotificationChain msgs = null;
+			if (type != null)
+				msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PlatformPackage.OPERATION_ARGUMENT__TYPE, null, msgs);
+			if (newType != null)
+				msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PlatformPackage.OPERATION_ARGUMENT__TYPE, null, msgs);
+			msgs = basicSetType(newType, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PlatformPackage.OPERATION_ARGUMENT__TYPE, newType, newType));
 	}
 
 	/**
@@ -140,11 +146,24 @@ public class OperationArgumentImpl extends NamedElementImpl implements Operation
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case PlatformPackage.OPERATION_ARGUMENT__TYPE:
+				return basicSetType(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case PlatformPackage.OPERATION_ARGUMENT__TYPE:
-				if (resolve) return getType();
-				return basicGetType();
+				return getType();
 			case PlatformPackage.OPERATION_ARGUMENT__INDIRECTION_LEVEL:
 				return getIndirectionLevel();
 		}

@@ -223,7 +223,7 @@ public interface PlatformPackage extends EPackage {
 	int OPERATION_ARGUMENT__NAME = CorePackage.NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * The feature id for the '<em><b>Type</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -483,10 +483,10 @@ public interface PlatformPackage extends EPackage {
 	EClass getOperationArgument();
 
 	/**
-	 * Returns the meta object for the reference '{@link hu.modembed.model.platform.OperationArgument#getType <em>Type</em>}'.
+	 * Returns the meta object for the containment reference '{@link hu.modembed.model.platform.OperationArgument#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Type</em>'.
+	 * @return the meta object for the containment reference '<em>Type</em>'.
 	 * @see hu.modembed.model.platform.OperationArgument#getType()
 	 * @see #getOperationArgument()
 	 * @generated
@@ -671,7 +671,7 @@ public interface PlatformPackage extends EPackage {
 		EClass OPERATION_ARGUMENT = eINSTANCE.getOperationArgument();
 
 		/**
-		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
