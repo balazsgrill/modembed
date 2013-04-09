@@ -29,6 +29,7 @@ import org.eclipse.emf.compare.match.service.MatchService;
 import org.eclipse.emf.compare.util.EclipseModelUtils;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.junit.Assert;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
@@ -101,6 +102,23 @@ public class ModembedTests {
 				fail(msg+" at "+loc+" "+ln);
 			}
 		}
+	}
+	
+	public static IProject loadAndCompileProject(String testID) throws CoreException{
+		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
+		root.refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
+		
+		IProject project = root.getProject(testID);
+		Assert.assertTrue(project.exists());
+		if (!project.isOpen()) project.open(new NullProgressMonitor());
+		
+		ModembedTests.build();
+		root.refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
+		
+		IStatus status = ModembedTests.executeWorkflow(project, "compile");
+		Assert.assertThat(status, StatusMatcher.instance);
+		
+		return project;
 	}
 	
 }

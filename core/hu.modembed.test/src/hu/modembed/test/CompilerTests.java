@@ -67,4 +67,9 @@ public class CompilerTests {
 		assertTrue("output does not match input!", ModembedTests.modelsAreEquivalent(input, output));
 	}
 	
+	@Test
+	public void test_compileToDevice() throws Exception{
+		ModembedTests.loadAndCompileProject("test.compileToDevice");
+	}
+	
 }

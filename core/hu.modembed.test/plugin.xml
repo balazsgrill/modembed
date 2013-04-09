@@ -148,6 +148,33 @@
                resource="tests/t6_simulate/compile.e">
          </resource>
       </project>
+      <project
+            category="hu.modembed.test.category"
+            id="test.compileToDevice"
+            name="Compile to device-specific code">
+         <dependency
+               project="e.core">
+         </dependency>
+         <dependency
+               project="microchip.pic16">
+         </dependency>
+         <resource
+               path="/"
+               resource="tests/test.compileToDevice/main.xmi">
+         </resource>
+         <resource
+               path="/"
+               resource="tests/test.compileToDevice/pic16.platformDef.xmi">
+         </resource>
+         <resource
+               path="/"
+               resource="tests/test.compileToDevice/main.map.xmi">
+         </resource>
+         <resource
+               path="/"
+               resource="tests/test.compileToDevice/compile.e">
+         </resource>
+      </project>
    </extension>
 
 </plugin>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ASCII"?>
+<behavior:SequentialBehavior xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:behavior="http://modembed.hu/behavior" xmlns:types="http://emodel/1.0/types" name="main">
+  <symbols name="var">
+    <type xsi:type="types:ReferenceTypeDefinition">
+      <type href="../e.core/.models/e.platform.xmi#//@content.0"/>
+    </type>
+  </symbols>
+  <symbols name="value">
+    <type xsi:type="types:ReferenceTypeDefinition">
+      <type href="../e.core/.models/e.platform.xmi#//@content.0"/>
+    </type>
+  </symbols>
+  <actions xsi:type="behavior:AtomicOperationExecution" arguments="//@symbols.0 //@symbols.1" operation="assign"/>
+</behavior:SequentialBehavior>

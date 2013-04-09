@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ASCII"?>
+<behavior:SymbolValueMap xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:behavior="http://modembed.hu/behavior" name="main.map">
+  <values value="2" indirectionLevel="1">
+    <symbol href="main.xmi#//@symbols.0"/>
+  </values>
+  <values value="5">
+    <symbol href="main.xmi#//@symbols.1"/>
+  </values>
+</behavior:SymbolValueMap>
