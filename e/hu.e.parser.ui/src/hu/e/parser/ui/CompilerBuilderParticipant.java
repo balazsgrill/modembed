@@ -6,7 +6,6 @@ package hu.e.parser.ui;
 import hu.e.parser.convert.LibraryConverter;
 import hu.e.parser.convert.UnresolvedCrossReference;
 import hu.e.parser.eSyntax.InstructionSetNotation;
-import hu.e.parser.eSyntax.Library;
 import hu.e.parser.ui.internal.ESyntaxActivator;
 
 import java.util.Collections;
@@ -50,9 +49,9 @@ public class CompilerBuilderParticipant implements IXtextBuilderParticipant {
 		System.out.println("Parse "+resource);
 		try{
 			for(EObject l : res.getContents()){
-				if (l instanceof Library){
-					return converter.convert((Library)l);
-				}
+//				if (l instanceof Library){
+//					return converter.convert((Library)l);
+//				}
 				if (l instanceof InstructionSetNotation){
 					return converter.convert((InstructionSetNotation)l);
 				}
