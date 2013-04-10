@@ -8,58 +8,51 @@
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
-            uri="http://modembed.hu/core"
-            class="hu.modembed.model.core.CorePackage"
-            genModel="model/modembedmodel.genmodel"/>
+            uri="http://modembed.hu/infrastructure"
+            class="hu.modembed.model.modembed.infrastructure.InfrastructurePackage"
+            genModel="model/modembed.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
-            uri="http://modembed.hu/core/assembler"
-            class="hu.modembed.model.core.assembler.AssemblerPackage"
-            genModel="model/modembedmodel.genmodel"/>
+            uri="http://modembed.hu/infrastructure/traceability"
+            class="hu.modembed.model.modembed.infrastructure.traceability.TraceabilityPackage"
+            genModel="model/modembed.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
-            uri="http://modembed.hu/core/assembler/code"
-            class="hu.modembed.model.core.assembler.code.CodePackage"
-            genModel="model/modembedmodel.genmodel"/>
+            uri="http://modembed.hu/core/instructionset"
+            class="hu.modembed.model.modembed.core.instructionset.InstructionsetPackage"
+            genModel="model/modembed.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
-            uri="http://modembed.hu/core/workflow"
-            class="hu.modembed.model.core.workflow.WorkflowPackage"
-            genModel="model/modembedmodel.genmodel"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <package
-            uri="http://modembed.hu/architecture"
-            class="hu.modembed.model.architecture.ArchitecturePackage"
-            genModel="model/modembedmodel.genmodel"/>
+            uri="http://modembed.hu/core/object"
+            class="hu.modembed.model.modembed.core.object.ObjectPackage"
+            genModel="model/modembed.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
             uri="http://modembed.hu/abstraction/types"
-            class="hu.modembed.model.abstraction.types.TypesPackage"
-            genModel="model/modembedmodel.genmodel"/>
+            class="hu.modembed.model.modembed.abstraction.types.TypesPackage"
+            genModel="model/modembed.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
-            uri="http://modembed.hu/behavior"
-            class="hu.modembed.model.abstraction.behavior.BehaviorPackage"
-            genModel="model/modembedmodel.genmodel"/>
+            uri="http://modembed.hu/abstraction/behavior"
+            class="hu.modembed.model.modembed.abstraction.behavior.BehaviorPackage"
+            genModel="model/modembed.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
-            uri="http://modembed.hu/platform"
-            class="hu.modembed.model.abstraction.behavior.platform.PlatformPackage"
-            genModel="model/modembedmodel.genmodel"/>
+            uri="http://modembed.hu/abstraction/behavior/platform"
+            class="hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage"
+            genModel="model/modembed.genmodel"/>
    </extension>
 
 </plugin>
