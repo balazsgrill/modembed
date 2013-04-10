@@ -4,9 +4,9 @@
 package hu.e.parser.convert.impl;
 
 import hu.e.parser.convert.UnresolvedCrossReference;
-import hu.modembed.model.core.MODembedElement;
-import hu.modembed.model.core.Origin;
-import hu.modembed.model.core.TextOrigin;
+import hu.modembed.model.modembed.infrastructure.MODembedElement;
+import hu.modembed.model.modembed.infrastructure.traceability.Origin;
+import hu.modembed.model.modembed.infrastructure.traceability.TextOrigin;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;

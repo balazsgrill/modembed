@@ -13,21 +13,18 @@ import hu.e.compiler.ITaskContext;
 import hu.e.compiler.TaskUtils;
 import hu.e.compiler.tasks.disassembler.Disassembler;
 import hu.modembed.hexfile.persistence.HexFileResource;
-import hu.modembed.model.architecture.Architecture;
-import hu.modembed.model.architecture.MemorySection;
-import hu.modembed.model.core.assembler.ConstantSection;
-import hu.modembed.model.core.assembler.Instruction;
-import hu.modembed.model.core.assembler.InstructionParameter;
-import hu.modembed.model.core.assembler.InstructionSection;
-import hu.modembed.model.core.assembler.InstructionWord;
-import hu.modembed.model.core.assembler.ParameterSection;
-import hu.modembed.model.core.assembler.code.AssemblerObject;
-import hu.modembed.model.core.assembler.code.InstructionCall;
-import hu.modembed.model.core.assembler.code.InstructionCallParameter;
+import hu.modembed.model.modembed.core.instructionset.ConstantSection;
+import hu.modembed.model.modembed.core.instructionset.Instruction;
+import hu.modembed.model.modembed.core.instructionset.InstructionParameter;
+import hu.modembed.model.modembed.core.instructionset.InstructionSection;
+import hu.modembed.model.modembed.core.instructionset.InstructionWord;
+import hu.modembed.model.modembed.core.instructionset.ParameterSection;
+import hu.modembed.model.modembed.core.object.AssemblerObject;
+import hu.modembed.model.modembed.core.object.InstructionCall;
+import hu.modembed.model.modembed.core.object.InstructionCallParameter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -51,17 +48,17 @@ public class AssembleHexFileTask implements IModembedTask {
 		AssemblerObject assem = TaskUtils.getInput(context, INPUT, AssemblerObject.class);
 		if (assem == null) return; 
 		
-		Architecture arch = TaskUtils.getInput(context, ARCH, Architecture.class);
-		if (arch == null) return;
+		//Architecture arch = TaskUtils.getInput(context, ARCH, Architecture.class);
+		//if (arch == null) return;
 
 		HexFile hexfile = (HexFile) TaskUtils.createOutput(context, OUTPUT, HexfilePackage.eINSTANCE.getHexFile());
 		hexfile.setAddressType(AddressType.EXTENDED_LINEAR);
 		
-		List<MemorySection> programSections = new LinkedList<MemorySection>();
-		
-		for(MemorySection ms : arch.getMemory()){
-			if (ms.isProgram()) programSections.add(ms);
-		}
+//		List<MemorySection> programSections = new LinkedList<MemorySection>();
+//		
+//		for(MemorySection ms : arch.getMemory()){
+//			if (ms.isProgram()) programSections.add(ms);
+//		}
 		
 		List<InstructionCall> calls = assem.getInstructions();
 		
@@ -115,7 +112,7 @@ public class AssembleHexFileTask implements IModembedTask {
 		
 		Entry entry = HexfileFactory.eINSTANCE.createEntry();
 		hexfile.getEntries().add(entry);
-		entry.setAddress((int)programSections.get(0).getStartAddress());
+		//entry.setAddress((int)programSections.get(0).getStartAddress());
 		
 		byte[] data = new byte[bytes.size()];
 		for(int i=0;i<bytes.size();i++){

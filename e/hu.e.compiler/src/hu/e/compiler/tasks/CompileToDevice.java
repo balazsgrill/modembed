@@ -6,27 +6,27 @@ package hu.e.compiler.tasks;
 import hu.e.compiler.IModembedTask;
 import hu.e.compiler.ITaskContext;
 import hu.e.compiler.TaskUtils;
-import hu.modembed.model.abstraction.behavior.AtomicOperationExecution;
-import hu.modembed.model.abstraction.behavior.BehaviorCall;
-import hu.modembed.model.abstraction.behavior.CodeSymbolPlacement;
-import hu.modembed.model.abstraction.behavior.SequentialAction;
-import hu.modembed.model.abstraction.behavior.SequentialBehavior;
-import hu.modembed.model.abstraction.behavior.Symbol;
-import hu.modembed.model.abstraction.behavior.SymbolValueAssignment;
-import hu.modembed.model.abstraction.behavior.SymbolValueMap;
-import hu.modembed.model.abstraction.behavior.platform.InstructionCallOperationStep;
-import hu.modembed.model.abstraction.behavior.platform.InstructionParameterMapping;
-import hu.modembed.model.abstraction.behavior.platform.OperationArgument;
-import hu.modembed.model.abstraction.behavior.platform.OperationDefinition;
-import hu.modembed.model.abstraction.behavior.platform.OperationStep;
-import hu.modembed.model.abstraction.behavior.platform.PlatformDefinition;
-import hu.modembed.model.abstraction.types.TypeDefinition;
-import hu.modembed.model.core.assembler.InstructionParameter;
-import hu.modembed.model.core.assembler.code.AssemblerObject;
-import hu.modembed.model.core.assembler.code.CodeFactory;
-import hu.modembed.model.core.assembler.code.CodePackage;
-import hu.modembed.model.core.assembler.code.InstructionCall;
-import hu.modembed.model.core.assembler.code.InstructionCallParameter;
+import hu.modembed.model.modembed.abstraction.behavior.AtomicOperationExecution;
+import hu.modembed.model.modembed.abstraction.behavior.BehaviorCall;
+import hu.modembed.model.modembed.abstraction.behavior.CodeSymbolPlacement;
+import hu.modembed.model.modembed.abstraction.behavior.SequentialAction;
+import hu.modembed.model.modembed.abstraction.behavior.SequentialBehavior;
+import hu.modembed.model.modembed.abstraction.behavior.Symbol;
+import hu.modembed.model.modembed.abstraction.behavior.SymbolValueAssignment;
+import hu.modembed.model.modembed.abstraction.behavior.SymbolValueMap;
+import hu.modembed.model.modembed.abstraction.behavior.platform.InstructionCallOperationStep;
+import hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterMapping;
+import hu.modembed.model.modembed.abstraction.behavior.platform.OperationArgument;
+import hu.modembed.model.modembed.abstraction.behavior.platform.OperationDefinition;
+import hu.modembed.model.modembed.abstraction.behavior.platform.OperationStep;
+import hu.modembed.model.modembed.abstraction.behavior.platform.PlatformDefinition;
+import hu.modembed.model.modembed.abstraction.types.TypeDefinition;
+import hu.modembed.model.modembed.core.instructionset.InstructionParameter;
+import hu.modembed.model.modembed.core.object.AssemblerObject;
+import hu.modembed.model.modembed.core.object.InstructionCall;
+import hu.modembed.model.modembed.core.object.InstructionCallParameter;
+import hu.modembed.model.modembed.core.object.ObjectFactory;
+import hu.modembed.model.modembed.core.object.ObjectPackage;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -78,7 +78,7 @@ public class CompileToDevice implements IModembedTask {
 		PlatformDefinition platform = TaskUtils.getInput(context, PLATFORM, PlatformDefinition.class);
 		SymbolValueMap symmap = TaskUtils.getInput(context, SYMBOLMAP, SymbolValueMap.class);
 
-		AssemblerObject output = (AssemblerObject) TaskUtils.createOutput(context, OUTPUT, CodePackage.eINSTANCE.getAssemblerObject());
+		AssemblerObject output = (AssemblerObject) TaskUtils.createOutput(context, OUTPUT, ObjectPackage.eINSTANCE.getAssemblerObject());
 		
 		Map<Symbol, Long> codeSymbols = new HashMap<Symbol, Long>();
 		Map<InstructionCallParameter, SymbolValue> valueMappings = new LinkedHashMap<InstructionCallParameter, SymbolValue>();
@@ -106,13 +106,13 @@ public class CompileToDevice implements IModembedTask {
 					for(OperationStep step : operation.getSteps()){
 						if (step instanceof InstructionCallOperationStep){
 							InstructionCallOperationStep icop = (InstructionCallOperationStep)step;
-							InstructionCall ic = CodeFactory.eINSTANCE.createInstructionCall();
+							InstructionCall ic = ObjectFactory.eINSTANCE.createInstructionCall();
 							ic.setInstruction(icop.getInstruction());
 							int i=0;
 							for(InstructionParameter ip : ic.getInstruction().getParameters()){
 								if (i < icop.getArguments().size()){
 									InstructionParameterMapping ipm = icop.getArguments().get(i);
-									InstructionCallParameter icp =  CodeFactory.eINSTANCE.createInstructionCallParameter();
+									InstructionCallParameter icp =  ObjectFactory.eINSTANCE.createInstructionCallParameter();
 									icp.setDefinition(ip);
 									ic.getParameters().add(icp);
 									

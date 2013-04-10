@@ -6,12 +6,11 @@ import hu.e.compiler.TaskUtils;
 import hu.e.compiler.tasks.internal.AbstractConverter;
 import hu.e.parser.eSyntax.Library;
 import hu.e.parser.eSyntax.RegisterVariable;
-import hu.modembed.model.abstraction.types.Type;
+import hu.modembed.model.modembed.abstraction.types.Type;
 
 import java.util.HashSet;
 import java.util.Set;
 
-import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;

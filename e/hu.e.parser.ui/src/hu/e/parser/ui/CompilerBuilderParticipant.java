@@ -7,7 +7,6 @@ import hu.e.parser.convert.LibraryConverter;
 import hu.e.parser.convert.UnresolvedCrossReference;
 import hu.e.parser.eSyntax.InstructionSetNotation;
 import hu.e.parser.eSyntax.Library;
-import hu.e.parser.eSyntax.WorkflowNotation;
 import hu.e.parser.ui.internal.ESyntaxActivator;
 
 import java.util.Collections;
@@ -57,9 +56,9 @@ public class CompilerBuilderParticipant implements IXtextBuilderParticipant {
 				if (l instanceof InstructionSetNotation){
 					return converter.convert((InstructionSetNotation)l);
 				}
-				if (l instanceof WorkflowNotation){
-					return converter.convert((WorkflowNotation)l);
-				}
+//				if (l instanceof WorkflowNotation){
+//					return converter.convert((WorkflowNotation)l);
+//				}
 				return Collections.emptyList();
 			}
 		}catch (final Exception e) {

@@ -1,10 +1,10 @@
 package hu.e.compiler.tasks.disassembler;
 
 import hu.modembed.hexfile.persistence.HexFileResource;
-import hu.modembed.model.core.assembler.InstructionParameter;
-import hu.modembed.model.core.assembler.InstructionSection;
-import hu.modembed.model.core.assembler.InstructionWord;
-import hu.modembed.model.core.assembler.ParameterSection;
+import hu.modembed.model.modembed.core.instructionset.InstructionParameter;
+import hu.modembed.model.modembed.core.instructionset.InstructionSection;
+import hu.modembed.model.modembed.core.instructionset.InstructionWord;
+import hu.modembed.model.modembed.core.instructionset.ParameterSection;
 
 import java.util.List;
 

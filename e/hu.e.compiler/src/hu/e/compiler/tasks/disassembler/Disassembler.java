@@ -6,11 +6,11 @@ package hu.e.compiler.tasks.disassembler;
 import hu.e.compiler.tasks.disassembler.detectors.DecisionTreeBasedInstructionDetector;
 import hu.e.compiler.tasks.disassembler.detectors.IInstructionDetector;
 import hu.modembed.hexfile.persistence.HexFileResource;
-import hu.modembed.model.core.assembler.InstructionParameter;
-import hu.modembed.model.core.assembler.InstructionSet;
-import hu.modembed.model.core.assembler.code.CodeFactory;
-import hu.modembed.model.core.assembler.code.InstructionCall;
-import hu.modembed.model.core.assembler.code.InstructionCallParameter;
+import hu.modembed.model.modembed.core.instructionset.InstructionParameter;
+import hu.modembed.model.modembed.core.instructionset.InstructionSet;
+import hu.modembed.model.modembed.core.object.InstructionCall;
+import hu.modembed.model.modembed.core.object.InstructionCallParameter;
+import hu.modembed.model.modembed.core.object.ObjectFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -62,12 +62,12 @@ public class Disassembler {
 			InstructionInstance ii = instructionDetector.getNextInstance(data, index);
 
 			if (ii != null){
-				call = CodeFactory.eINSTANCE.createInstructionCall();
+				call = ObjectFactory.eINSTANCE.createInstructionCall();
 				call.setInstruction(ii.descriptor.instruction);
 				call.setDescription(ii.getHexCode());
 
 				for(InstructionParameter param : ii.descriptor.instruction.getParameters()){
-					InstructionCallParameter callparam = CodeFactory.eINSTANCE.createInstructionCallParameter();
+					InstructionCallParameter callparam = ObjectFactory.eINSTANCE.createInstructionCallParameter();
 					callparam.setDefinition(param);
 					callparam.setValue(ii.getParameterValue(param));
 					call.getParameters().add(callparam);

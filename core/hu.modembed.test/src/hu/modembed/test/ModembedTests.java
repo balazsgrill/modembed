@@ -1,7 +1,6 @@
 package hu.modembed.test;
 
 import static org.junit.Assert.fail;
-import hu.e.compiler.WorkflowLauncherRunnable;
 import hu.modembed.MODembedCore;
 import hu.modembed.includedcode.CreateProjectInWorkspaceTask;
 import hu.modembed.includedcode.IncludedProject;
@@ -64,9 +63,10 @@ public class ModembedTests {
 	}
 	
 	public static IStatus executeWorkflow(IProject project, String workflow){
-		WorkflowLauncherRunnable launcher = WorkflowLauncherRunnable.create(project, workflow);
-		launcher.addListener(new SysoutWorkflowLauncherListener());
-		return launcher.execute(new SysoutProgressMonitor());
+//		WorkflowLauncherRunnable launcher = WorkflowLauncherRunnable.create(project, workflow);
+//		launcher.addListener(new SysoutWorkflowLauncherListener());
+//		return launcher.execute(new SysoutProgressMonitor());
+		return null;
 	}
 	
 	public static void testSetUp() throws CoreException{

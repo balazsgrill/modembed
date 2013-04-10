@@ -3,11 +3,11 @@
  */
 package hu.modembed.simulator;
 
-import hu.modembed.model.core.assembler.Instruction;
-import hu.modembed.model.core.assembler.InstructionParameter;
-import hu.modembed.model.core.assembler.code.AssemblerObject;
-import hu.modembed.model.core.assembler.code.InstructionCall;
-import hu.modembed.model.core.assembler.code.InstructionCallParameter;
+import hu.modembed.model.modembed.core.instructionset.Instruction;
+import hu.modembed.model.modembed.core.instructionset.InstructionParameter;
+import hu.modembed.model.modembed.core.object.AssemblerObject;
+import hu.modembed.model.modembed.core.object.InstructionCall;
+import hu.modembed.model.modembed.core.object.InstructionCallParameter;
 
 import java.lang.reflect.Method;
 import java.util.HashMap;

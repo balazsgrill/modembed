@@ -5,8 +5,8 @@ package hu.e.compiler.tasks.disassembler.detectors;
 
 import hu.e.compiler.tasks.disassembler.InstructionDescriptor;
 import hu.e.compiler.tasks.disassembler.InstructionInstance;
-import hu.modembed.model.core.assembler.Instruction;
-import hu.modembed.model.core.assembler.InstructionSet;
+import hu.modembed.model.modembed.core.instructionset.Instruction;
+import hu.modembed.model.modembed.core.instructionset.InstructionSet;
 
 import java.util.ArrayList;
 import java.util.List;

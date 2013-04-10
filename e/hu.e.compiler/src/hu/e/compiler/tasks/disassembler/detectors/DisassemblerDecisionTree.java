@@ -4,7 +4,7 @@
 package hu.e.compiler.tasks.disassembler.detectors;
 
 import hu.modembed.hexfile.persistence.HexFileResource;
-import hu.modembed.model.core.assembler.Instruction;
+import hu.modembed.model.modembed.core.instructionset.Instruction;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

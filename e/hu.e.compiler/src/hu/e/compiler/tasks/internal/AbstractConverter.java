@@ -4,8 +4,8 @@
 package hu.e.compiler.tasks.internal;
 
 import hu.e.compiler.TaskUtils;
-import hu.modembed.model.core.CorePackage;
-import hu.modembed.model.core.MODembedElement;
+import hu.modembed.model.modembed.infrastructure.InfrastructurePackage;
+import hu.modembed.model.modembed.infrastructure.MODembedElement;
 
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -76,7 +76,7 @@ public abstract class AbstractConverter {
 		}
 		
 		for(EStructuralFeature feature: eclass.getEAllStructuralFeatures()){
-			if (!CorePackage.eINSTANCE.getMODembedElement_Origins().equals(feature)){
+			if (!InfrastructurePackage.eINSTANCE.getMODembedElement_Origins().equals(feature)){
 				if (feature instanceof EAttribute){
 					result.eSet(feature, element.eGet(feature));
 				}

@@ -3,13 +3,13 @@
  */
 package hu.modembed.ui.disassemble;
 
+import hu.modembed.model.modembed.core.instructionset.Instruction;
+import hu.modembed.model.modembed.core.instructionset.InstructionSet;
+
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
-
-import hu.modembed.model.core.assembler.Instruction;
-import hu.modembed.model.core.assembler.InstructionSet;
 
 /**
  * @author balage

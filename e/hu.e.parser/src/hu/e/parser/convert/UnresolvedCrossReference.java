@@ -3,7 +3,7 @@
  */
 package hu.e.parser.convert;
 
-import hu.modembed.model.core.TextOrigin;
+import hu.modembed.model.modembed.infrastructure.traceability.TextOrigin;
 
 
 /**
@@ -27,8 +27,10 @@ public class UnresolvedCrossReference {
 	public UnresolvedCrossReference(String id, TextOrigin origin) {
 		this.id = id;
 		this.line = origin.getLine();
-		this.charStart = origin.getCharStart();
-		this.charEnd = origin.getCharEnd();
+//		this.charStart = origin.getCharStart();
+//		this.charEnd = origin.getCharEnd();
+		this.charStart = 0;
+		this.charEnd = 1;
 	}
 	
 }

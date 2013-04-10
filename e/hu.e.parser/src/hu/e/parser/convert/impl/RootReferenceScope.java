@@ -3,8 +3,8 @@
  */
 package hu.e.parser.convert.impl;
 
-import hu.modembed.model.core.NamedElement;
-import hu.modembed.model.core.RootElement;
+import hu.modembed.model.modembed.infrastructure.NamedElement;
+import hu.modembed.model.modembed.infrastructure.RootElement;
 
 import java.util.ArrayList;
 import java.util.Arrays;

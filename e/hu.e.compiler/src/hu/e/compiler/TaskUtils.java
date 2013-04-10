@@ -3,18 +3,17 @@
  */
 package hu.e.compiler;
 
-import hu.modembed.model.abstraction.types.CodeLabelTypeDefinition;
-import hu.modembed.model.abstraction.types.PointerTypeDefinition;
-import hu.modembed.model.abstraction.types.ReferenceTypeDefinition;
-import hu.modembed.model.abstraction.types.TypeDefinition;
-import hu.modembed.model.abstraction.types.UnsignedTypeDefinition;
-import hu.modembed.model.architecture.Architecture;
-import hu.modembed.model.core.CoreFactory;
-import hu.modembed.model.core.MODembedElement;
-import hu.modembed.model.core.ModelOrigin;
-import hu.modembed.model.core.Origin;
-import hu.modembed.model.core.RootElement;
-import hu.modembed.model.core.TextOrigin;
+import hu.modembed.model.modembed.abstraction.types.CodeLabelTypeDefinition;
+import hu.modembed.model.modembed.abstraction.types.PointerTypeDefinition;
+import hu.modembed.model.modembed.abstraction.types.ReferenceTypeDefinition;
+import hu.modembed.model.modembed.abstraction.types.TypeDefinition;
+import hu.modembed.model.modembed.abstraction.types.UnsignedTypeDefinition;
+import hu.modembed.model.modembed.infrastructure.MODembedElement;
+import hu.modembed.model.modembed.infrastructure.RootElement;
+import hu.modembed.model.modembed.infrastructure.traceability.ModelOrigin;
+import hu.modembed.model.modembed.infrastructure.traceability.Origin;
+import hu.modembed.model.modembed.infrastructure.traceability.TextOrigin;
+import hu.modembed.model.modembed.infrastructure.traceability.TraceabilityFactory;
 
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -87,7 +86,7 @@ public class TaskUtils {
 	}
 	
 	public static void addOrigin(MODembedElement element, MODembedElement origin){
-		ModelOrigin o = CoreFactory.eINSTANCE.createModelOrigin();
+		ModelOrigin o = TraceabilityFactory.eINSTANCE.createModelOrigin();
 		o.setElement(origin);
 		element.getOrigins().add(o);
 	}
@@ -100,7 +99,7 @@ public class TaskUtils {
 		if (to == null){
 			return "Unknown location";
 		}
-		return "line "+to.getLine()+" in "+to.getPath();
+		return "line "+to.getLine()+" in "+to.getFileName();
 	}
 	
 	public static TextOrigin findOrigin(MODembedElement element){
@@ -128,19 +127,19 @@ public class TaskUtils {
 		return null;
 	}
 	
-	public static int inferSize(TypeDefinition type, Architecture arch){
-		if (type instanceof PointerTypeDefinition){
-			return inferSize(arch.getHeapPointerType().getDefinition(), arch);
-		}
+	public static int inferSize(TypeDefinition type){
+//		if (type instanceof PointerTypeDefinition){
+//			return inferSize(arch.getHeapPointerType().getDefinition(), arch);
+//		}
 		if (type instanceof ReferenceTypeDefinition){
-			return inferSize(((ReferenceTypeDefinition) type).getType().getDefinition(), arch);
+			return inferSize(((ReferenceTypeDefinition) type).getType().getDefinition());
 		}
 		if (type instanceof UnsignedTypeDefinition){
 			return ((UnsignedTypeDefinition) type).getBits()/8;
 		}
-		if (type instanceof CodeLabelTypeDefinition){
-			return inferSize(arch.getCodePointerType().getDefinition(), arch);
-		}
+//		if (type instanceof CodeLabelTypeDefinition){
+//			return inferSize(arch.getCodePointerType().getDefinition(), arch);
+//		}
 		//TODO structure
 		return 0;
 	}

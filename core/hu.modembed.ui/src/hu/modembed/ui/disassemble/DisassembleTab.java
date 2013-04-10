@@ -3,7 +3,7 @@
  */
 package hu.modembed.ui.disassemble;
 
-import hu.modembed.model.core.assembler.InstructionSet;
+import hu.modembed.model.modembed.core.instructionset.InstructionSet;
 import hu.modembed.ui.MODembedUI;
 import hu.modembed.ui.WorkbenchModelContentProvider;
 import hu.modembed.ui.WorkbenchModelLabelProvider;

@@ -12,27 +12,20 @@ import hu.e.parser.eSyntax.InstructionSetNotation;
 import hu.e.parser.eSyntax.InstructionWordConditionNotation;
 import hu.e.parser.eSyntax.InstructionWordNotation;
 import hu.e.parser.eSyntax.Library;
-import hu.e.parser.eSyntax.WorkflowNotation;
-import hu.e.parser.eSyntax.WorkflowStepNotation;
-import hu.e.parser.eSyntax.WorkflowStepParameterNotation;
 import hu.modembed.MODembedCore;
-import hu.modembed.model.core.CoreFactory;
-import hu.modembed.model.core.MODembedElement;
-import hu.modembed.model.core.TextOrigin;
-import hu.modembed.model.core.assembler.AssemblerFactory;
-import hu.modembed.model.core.assembler.AssemblerPackage;
-import hu.modembed.model.core.assembler.ConstantSection;
-import hu.modembed.model.core.assembler.Instruction;
-import hu.modembed.model.core.assembler.InstructionParameter;
-import hu.modembed.model.core.assembler.InstructionSection;
-import hu.modembed.model.core.assembler.InstructionSet;
-import hu.modembed.model.core.assembler.InstructionWord;
-import hu.modembed.model.core.assembler.InstructionWordMaskedValueCondition;
-import hu.modembed.model.core.assembler.ParameterSection;
-import hu.modembed.model.core.workflow.Task;
-import hu.modembed.model.core.workflow.TaskParameter;
-import hu.modembed.model.core.workflow.Workflow;
-import hu.modembed.model.core.workflow.WorkflowFactory;
+import hu.modembed.model.modembed.core.instructionset.ConstantSection;
+import hu.modembed.model.modembed.core.instructionset.Instruction;
+import hu.modembed.model.modembed.core.instructionset.InstructionParameter;
+import hu.modembed.model.modembed.core.instructionset.InstructionSection;
+import hu.modembed.model.modembed.core.instructionset.InstructionSet;
+import hu.modembed.model.modembed.core.instructionset.InstructionWord;
+import hu.modembed.model.modembed.core.instructionset.InstructionWordMaskedValueCondition;
+import hu.modembed.model.modembed.core.instructionset.InstructionsetFactory;
+import hu.modembed.model.modembed.core.instructionset.InstructionsetPackage;
+import hu.modembed.model.modembed.core.instructionset.ParameterSection;
+import hu.modembed.model.modembed.infrastructure.MODembedElement;
+import hu.modembed.model.modembed.infrastructure.traceability.TextOrigin;
+import hu.modembed.model.modembed.infrastructure.traceability.TraceabilityFactory;
 
 import java.io.IOException;
 import java.util.Collections;
@@ -68,14 +61,14 @@ public class LibraryConverter {
 	public static TextOrigin createOrigin(EObject origin){
 		URI uri = origin.eResource().getURI();
 		String path = uri.toPlatformString(true);
-		TextOrigin to = CoreFactory.eINSTANCE.createTextOrigin();
-		to.setPath(path);
+		TextOrigin to = TraceabilityFactory.eINSTANCE.createTextOrigin();
+		to.setFileName(path);
 		
 		ICompositeNode node = NodeModelUtils.findActualNodeFor(origin);
 		if (node != null){
 			to.setLine(node.getStartLine());
-			to.setCharStart(node.getOffset());
-			to.setCharEnd(to.getCharStart()+node.getLength());
+//			to.setCharStart(node.getOffset());
+//			to.setCharEnd(to.getCharStart()+node.getLength());
 		}
 		
 		return to;
@@ -155,12 +148,12 @@ public class LibraryConverter {
 	}
 	
 	public Instruction convertInstruction(InstructionNotation in){
-		Instruction result = AssemblerFactory.eINSTANCE.createInstruction();
+		Instruction result = InstructionsetFactory.eINSTANCE.createInstruction();
 		result.setName(in.getName());
 		
 		Map<Character, InstructionParameter> params = new HashMap<Character, InstructionParameter>();
 		for(InstructionParameterNotation pn : in.getParams()) {
-			InstructionParameter p = AssemblerFactory.eINSTANCE.createInstructionParameter();
+			InstructionParameter p = InstructionsetFactory.eINSTANCE.createInstructionParameter();
 			p.setId(pn.getName().charAt(0));
 			p.setDefaultValue(convertLiteral(pn.getDefault()));
 			params.put(p.getId(), p);
@@ -169,17 +162,17 @@ public class LibraryConverter {
 		
 		int start = 0;
 		for(InstructionWordNotation wn : in.getWords()){
-			InstructionWord w = AssemblerFactory.eINSTANCE.createInstructionWord();
+			InstructionWord w = InstructionsetFactory.eINSTANCE.createInstructionWord();
 			for(InsctructionSectionNotation sn : wn.getSections()){
 				InstructionSection s = null;
 				if (null != sn.getParam()){
 					//Parameters
-					ParameterSection ps = AssemblerFactory.eINSTANCE.createParameterSection();
+					ParameterSection ps = InstructionsetFactory.eINSTANCE.createParameterSection();
 					ps.setParameter(params.get(sn.getParam().charAt(0)));
 					s = ps;
 				}else{
 					//Constant
-					ConstantSection cs = AssemblerFactory.eINSTANCE.createConstantSection();
+					ConstantSection cs = InstructionsetFactory.eINSTANCE.createConstantSection();
 					cs.setValue(convertLiteral(sn.getValue()));
 					s = cs;
 				}
@@ -193,7 +186,7 @@ public class LibraryConverter {
 				}
 			}
 			for(InstructionWordConditionNotation condition : wn.getConditions()){
-				InstructionWordMaskedValueCondition c = AssemblerFactory.eINSTANCE.createInstructionWordMaskedValueCondition();
+				InstructionWordMaskedValueCondition c = InstructionsetFactory.eINSTANCE.createInstructionWordMaskedValueCondition();
 				Character p = condition.getParam().charAt(0);
 				c.setArgument(params.get(p));
 				c.setMask(convertLiteral(condition.getMask()));
@@ -207,53 +200,53 @@ public class LibraryConverter {
 		return result;
 	}
 	
-	public List<UnresolvedCrossReference> convert(WorkflowNotation wfn){
-		Workflow result = WorkflowFactory.eINSTANCE.createWorkflow();
-		result.setName(wfn.getName());
-		addOrigin(result, wfn);
-		
-		for(WorkflowStepNotation sn : wfn.getSteps()){
-			Task task = WorkflowFactory.eINSTANCE.createTask();
-			task.setType(sn.getType());
-			addOrigin(task, sn);
-			result.getTasks().add(task);
-			
-			for(WorkflowStepParameterNotation pn : sn.getParams()){
-				TaskParameter tp = null;
-				for(TaskParameter p : task.getParameters()){
-					if (p.getName().equals(pn.getParameter())){
-						tp = p;
-					}
-				}
-				if (tp == null){
-					tp = WorkflowFactory.eINSTANCE.createTaskParameter();
-					tp.setName(pn.getParameter());
-					task.getParameters().add(tp);
-				}
-				tp.getValue().add(pn.getValue());
-			}
-		}
-		
-		URI uri = getLibURI(result.getName());
-		Resource r = resourceSet.createResource(uri);
-		r.getContents().add(result);
-		try {
-			r.save(null);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return Collections.emptyList();
-	}
+//	public List<UnresolvedCrossReference> convert(WorkflowNotation wfn){
+//		Workflow result = WorkflowFactory.eINSTANCE.createWorkflow();
+//		result.setName(wfn.getName());
+//		addOrigin(result, wfn);
+//		
+//		for(WorkflowStepNotation sn : wfn.getSteps()){
+//			Task task = WorkflowFactory.eINSTANCE.createTask();
+//			task.setType(sn.getType());
+//			addOrigin(task, sn);
+//			result.getTasks().add(task);
+//			
+//			for(WorkflowStepParameterNotation pn : sn.getParams()){
+//				TaskParameter tp = null;
+//				for(TaskParameter p : task.getParameters()){
+//					if (p.getName().equals(pn.getParameter())){
+//						tp = p;
+//					}
+//				}
+//				if (tp == null){
+//					tp = WorkflowFactory.eINSTANCE.createTaskParameter();
+//					tp.setName(pn.getParameter());
+//					task.getParameters().add(tp);
+//				}
+//				tp.getValue().add(pn.getValue());
+//			}
+//		}
+//		
+//		URI uri = getLibURI(result.getName());
+//		Resource r = resourceSet.createResource(uri);
+//		r.getContents().add(result);
+//		try {
+//			r.save(null);
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		return Collections.emptyList();
+//	}
 	
 	public List<UnresolvedCrossReference> convert(InstructionSetNotation isetn){
-		InstructionSet result = AssemblerFactory.eINSTANCE.createInstructionSet();
+		InstructionSet result = InstructionsetFactory.eINSTANCE.createInstructionSet();
 		result.setName(isetn.getName());
 		addOrigin(result, isetn);
 		
 		ICrossReferenceScope scope = new RootReferenceScope(project, resourceSet, result, Collections.<String>emptyList());
 		if (isetn.getExtends() != null){
-			scope.addCrossReference(result, AssemblerPackage.eINSTANCE.getInstructionSet_Extend(), isetn.getExtends());
+			scope.addCrossReference(result, InstructionsetPackage.eINSTANCE.getInstructionSet_Extend(), isetn.getExtends());
 		}
 		
 		for(InstructionNotation in : isetn.getInstructions()){

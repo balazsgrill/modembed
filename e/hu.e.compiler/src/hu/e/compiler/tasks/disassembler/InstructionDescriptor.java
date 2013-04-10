@@ -1,9 +1,9 @@
 package hu.e.compiler.tasks.disassembler;
 
-import hu.modembed.model.core.assembler.ConstantSection;
-import hu.modembed.model.core.assembler.Instruction;
-import hu.modembed.model.core.assembler.InstructionSection;
-import hu.modembed.model.core.assembler.InstructionWord;
+import hu.modembed.model.modembed.core.instructionset.ConstantSection;
+import hu.modembed.model.modembed.core.instructionset.Instruction;
+import hu.modembed.model.modembed.core.instructionset.InstructionSection;
+import hu.modembed.model.modembed.core.instructionset.InstructionWord;
 
 import java.util.List;
 

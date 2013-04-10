@@ -6,7 +6,7 @@ package hu.modembed.ui.disassemble;
 import hexfile.Entry;
 import hexfile.HexFile;
 import hu.modembed.hexfile.persistence.HexFileResource;
-import hu.modembed.model.core.assembler.InstructionSet;
+import hu.modembed.model.modembed.core.instructionset.InstructionSet;
 import hu.modembed.ui.MODembedUI;
 
 import org.eclipse.core.resources.IFile;

@@ -14,14 +14,14 @@ import hu.e.parser.eSyntax.RefTypeDef;
 import hu.e.parser.eSyntax.StructTypeDef;
 import hu.e.parser.eSyntax.TypeDef;
 import hu.e.parser.eSyntax.UnspecifiedTypeDef;
-import hu.modembed.model.abstraction.types.ArrayDefinition;
-import hu.modembed.model.abstraction.types.CodeLabelTypeDefinition;
-import hu.modembed.model.abstraction.types.PointerTypeDefinition;
-import hu.modembed.model.abstraction.types.ReferenceTypeDefinition;
-import hu.modembed.model.abstraction.types.TypeDefinition;
-import hu.modembed.model.abstraction.types.TypesFactory;
-import hu.modembed.model.abstraction.types.TypesPackage;
-import hu.modembed.model.abstraction.types.UnsignedTypeDefinition;
+import hu.modembed.model.modembed.abstraction.types.ArrayDefinition;
+import hu.modembed.model.modembed.abstraction.types.CodeLabelTypeDefinition;
+import hu.modembed.model.modembed.abstraction.types.PointerTypeDefinition;
+import hu.modembed.model.modembed.abstraction.types.ReferenceTypeDefinition;
+import hu.modembed.model.modembed.abstraction.types.TypeDefinition;
+import hu.modembed.model.modembed.abstraction.types.TypesFactory;
+import hu.modembed.model.modembed.abstraction.types.TypesPackage;
+import hu.modembed.model.modembed.abstraction.types.UnsignedTypeDefinition;
 
 /**
  * @author balazs.grill
