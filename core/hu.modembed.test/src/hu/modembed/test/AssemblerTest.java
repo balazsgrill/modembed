@@ -6,7 +6,6 @@ import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IStatus;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -32,15 +31,6 @@ public class AssemblerTest {
 		
 		IFile output = testproject.getFile("output.hex");
 		assertTrue("output does not match input!", ModembedTests.modelsAreEquivalent(input, output));
-	}
-
-	@Test
-	public void test_createAssemblerObject() throws Exception{
-		IProject testproject = ResourcesPlugin.getWorkspace().getRoot().getProject("test2");
-		assertTrue(testproject.exists());
-		
-		IStatus status = ModembedTests.executeWorkflow(testproject, "build");
-		Assert.assertThat(status, StatusMatcher.instance);
 	}
 	
 }

@@ -8,7 +8,6 @@ import hu.modembed.model.core.RootElement;
 
 import hu.modembed.model.core.assembler.*;
 
-import hu.modembed.model.emodel.CallableElement;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 
@@ -119,10 +118,6 @@ public class AssemblerAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseRootElement(RootElement object) {
 				return createRootElementAdapter();
-			}
-			@Override
-			public Adapter caseCallableElement(CallableElement object) {
-				return createCallableElementAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -309,20 +304,6 @@ public class AssemblerAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createRootElementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link hu.modembed.model.emodel.CallableElement <em>Callable Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see hu.modembed.model.emodel.CallableElement
-	 * @generated
-	 */
-	public Adapter createCallableElementAdapter() {
 		return null;
 	}
 

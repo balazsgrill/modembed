@@ -47,7 +47,7 @@
             eType="#//core/assembler/Instruction" containment="true"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="extend" eType="#//core/assembler/InstructionSet"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Instruction" eSuperTypes="#//core/NamedElement #//emodel/CallableElement">
+      <eClassifiers xsi:type="ecore:EClass" name="Instruction" eSuperTypes="#//core/NamedElement">
         <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
             eType="#//core/assembler/InstructionParameter" containment="true"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="words" upperBound="-1"
@@ -124,258 +124,10 @@
       </eClassifiers>
     </eSubpackages>
   </eSubpackages>
-  <eSubpackages name="network" nsURI="http://modembed.hu/network" nsPrefix="network">
-    <eClassifiers xsi:type="ecore:EClass" name="NetworkNode" eSuperTypes="#//core/NamedElement">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="interfaces" upperBound="-1"
-          eType="#//network/NetworkInterface" containment="true"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Network" eSuperTypes="#//core/RootElement">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="nodes" upperBound="-1"
-          eType="#//network/NetworkNode" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="connections" upperBound="-1"
-          eType="#//network/Connection" containment="true"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Connection" abstract="true" eSuperTypes="#//core/NamedElement">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="nodes" upperBound="-1"
-          eType="#//network/NetworkInterface">
-        <eAnnotations source="reference">
-          <details key="scope" value=".."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="NetworkInterface" abstract="true"
-        eSuperTypes="#//core/NamedElement"/>
-    <eSubpackages name="rs232" nsURI="http://modembed.hu/network/rs232" nsPrefix="rs232">
-      <eClassifiers xsi:type="ecore:EClass" name="RS232Interface" eSuperTypes="#//network/NetworkInterface"/>
-      <eClassifiers xsi:type="ecore:EClass" name="RS232Connection" eSuperTypes="#//network/Connection">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="baudRate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-      </eClassifiers>
-    </eSubpackages>
-  </eSubpackages>
-  <eSubpackages name="comm" nsURI="http://modembed.hu/comm" nsPrefix="comm">
-    <eClassifiers xsi:type="ecore:EClass" name="Frame" abstract="true" eSuperTypes="#//core/NamedElement"/>
-    <eClassifiers xsi:type="ecore:EClass" name="CommunicationProtocol" abstract="true">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="frames" upperBound="-1"
-          eType="#//comm/Frame" containment="true"/>
-    </eClassifiers>
-    <eSubpackages name="rs232" nsURI="http://modembed.hu/comm/rs232" nsPrefix="commrs232">
-      <eClassifiers xsi:type="ecore:EClass" name="RS232Frame" eSuperTypes="#//comm/Frame">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="numOfBytes" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="fields" upperBound="-1"
-            eType="#//comm/rs232/Field" containment="true"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Field" eSuperTypes="#//core/NamedElement">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="start" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="length" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="RS232Protocol" eSuperTypes="#//comm/CommunicationProtocol">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="idBitLength" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-      </eClassifiers>
-    </eSubpackages>
-  </eSubpackages>
-  <eSubpackages name="application" nsURI="http://modembed.hu/application" nsPrefix="app">
-    <eClassifiers xsi:type="ecore:EClass" name="Component" abstract="true">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="uses" upperBound="-1"
-          eType="#//application/Port" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="implements" upperBound="-1"
-          eType="#//application/Port" containment="true"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Port" eSuperTypes="#//core/NamedElement">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="interface" eType="#//application/interface/ComponentInterface"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Application">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="mainComp" eType="#//application/Component"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="mainPort" eType="#//application/Port"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="main" eType="#//application/interface/Operation"/>
-    </eClassifiers>
-    <eSubpackages name="interface" nsURI="http://modembed.hu/application/interface"
-        nsPrefix="interface">
-      <eClassifiers xsi:type="ecore:EClass" name="ComponentInterface" abstract="true"/>
-      <eClassifiers xsi:type="ecore:EClass" name="OperationInterface" eSuperTypes="#//application/interface/ComponentInterface">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="operations" upperBound="-1"
-            eType="#//application/interface/Operation" containment="true"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Operation" eSuperTypes="#//core/NamedElement">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="arguments" upperBound="-1"
-            eType="#//application/interface/Argument" containment="true"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Argument" eSuperTypes="#//core/NamedElement"/>
-    </eSubpackages>
-    <eSubpackages name="composition" nsURI="http://modembed.hu/application/composition"
-        nsPrefix="composition">
-      <eClassifiers xsi:type="ecore:EClass" name="CompositeComponent" eSuperTypes="#//application/Component">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="components" upperBound="-1"
-            eType="#//application/composition/SubComponent" containment="true"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="connections" upperBound="-1"
-            eType="#//application/composition/Connection" containment="true"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="SubComponent" eSuperTypes="#//core/NamedElement">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//application/Component"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Connection">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//application/Port"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//application/Port"/>
-      </eClassifiers>
-    </eSubpackages>
-  </eSubpackages>
-  <eSubpackages name="emodel" nsURI="http://emodel/1.0" nsPrefix="emodel">
-    <eClassifiers xsi:type="ecore:EClass" name="Library" eSuperTypes="#//core/RootElement">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="uses" upperBound="-1"
-          eType="#//emodel/Library"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="content" upperBound="-1"
-          eType="#//emodel/LibraryElement" containment="true"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Type" eSuperTypes="#//core/NamedElement #//emodel/LibraryElement">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="definition" lowerBound="1"
-          eType="#//emodel/types/TypeDefinition" containment="true"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Function" eSuperTypes="#//emodel/LibraryElement #//emodel/FunctionDeclaration">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="overrides" eType="#//emodel/Function"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="result" eType="#//emodel/FunctionResult"
-          containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="implementation" eType="#//emodel/expressions/ExecutionStep"
-          containment="true"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Variable" eSuperTypes="#//core/NamedElement">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//emodel/types/TypeDefinition"
-          containment="true">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The Type of the variable. Can be null (void)."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="FunctionParameter" abstract="true"
-        eSuperTypes="#//core/NamedElement #//emodel/Variable"/>
-    <eClassifiers xsi:type="ecore:EClass" name="FunctionResult" abstract="true" eSuperTypes="#//core/MODembedElement"/>
-    <eClassifiers xsi:type="ecore:EClass" name="ResultBuffer" eSuperTypes="#//emodel/FunctionResult #//emodel/Variable"/>
-    <eClassifiers xsi:type="ecore:EClass" name="ResultExpression" eSuperTypes="#//emodel/FunctionResult">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="expression" lowerBound="1"
-          eType="#//emodel/expressions/Expression" containment="true"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="LibraryElement" abstract="true" interface="true"
-        eSuperTypes="#//core/NamedElement"/>
-    <eClassifiers xsi:type="ecore:EClass" name="GlobalVariable" abstract="true" eSuperTypes="#//emodel/Variable #//emodel/LibraryElement"/>
-    <eClassifiers xsi:type="ecore:EClass" name="HeapVariable" eSuperTypes="#//emodel/GlobalVariable"/>
-    <eClassifiers xsi:type="ecore:EClass" name="RegisterVariable" eSuperTypes="#//emodel/GlobalVariable">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="address" lowerBound="1"
-          eType="#//emodel/expressions/ExecutionStep" containment="true"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ConstantVariable" eSuperTypes="#//emodel/GlobalVariable">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1"
-          eType="#//emodel/expressions/ExecutionStep" containment="true"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="VariableParameter" eSuperTypes="#//emodel/FunctionParameter">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//emodel/VariableParameterKind"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="LazyParameter" eSuperTypes="#//emodel/FunctionParameter #//emodel/FunctionDeclaration"/>
-    <eClassifiers xsi:type="ecore:EClass" name="FunctionDeclaration" abstract="true"
-        eSuperTypes="#//emodel/Variable #//emodel/CallableElement">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="arguments" upperBound="-1"
-          eType="#//emodel/FunctionParameter" containment="true"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="CallableElement" abstract="true" eSuperTypes="#//core/NamedElement"/>
-    <eClassifiers xsi:type="ecore:EEnum" name="VariableParameterKind">
-      <eLiterals name="ANY"/>
-      <eLiterals name="CONST" value="1"/>
-      <eLiterals name="VAR" value="2"/>
-    </eClassifiers>
-    <eSubpackages name="types" nsURI="http://emodel/1.0/types" nsPrefix="types">
-      <eClassifiers xsi:type="ecore:EClass" name="TypeDefinition" abstract="true"
-          eSuperTypes="#//core/MODembedElement"/>
-      <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeDefinition" abstract="true"
-          eSuperTypes="#//emodel/types/TypeDefinition"/>
-      <eClassifiers xsi:type="ecore:EClass" name="CompositeTypeDefinition" abstract="true"
-          eSuperTypes="#//emodel/types/TypeDefinition"/>
-      <eClassifiers xsi:type="ecore:EClass" name="UnsignedTypeDefinition" eSuperTypes="#//emodel/types/PrimitiveTypeDefinition">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="bits" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="ReferenceTypeDefinition" eSuperTypes="#//emodel/types/CompositeTypeDefinition">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"
-            eType="#//emodel/Type"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="PointerTypeDefinition" eSuperTypes="#//emodel/types/CompositeTypeDefinition">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="pointerType" lowerBound="1"
-            eType="#//emodel/types/TypeDefinition" containment="true"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="ArrayDefinition" eSuperTypes="#//emodel/types/PointerTypeDefinition"/>
-      <eClassifiers xsi:type="ecore:EClass" name="StructureTypeDefinition" eSuperTypes="#//emodel/types/CompositeTypeDefinition">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
-            eType="#//emodel/types/StructureTypeElement" containment="true"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="StructureTypeElement" eSuperTypes="#//core/NamedElement">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"
-            eType="#//emodel/types/TypeDefinition" containment="true"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="CodeLabelTypeDefinition" eSuperTypes="#//emodel/types/PrimitiveTypeDefinition"/>
-    </eSubpackages>
-    <eSubpackages name="expressions" nsURI="http://emodel/1.0/expressions" nsPrefix="expressions">
-      <eClassifiers xsi:type="ecore:EClass" name="Expression" abstract="true" eSuperTypes="#//emodel/expressions/ExecutionStep"/>
-      <eClassifiers xsi:type="ecore:EClass" name="ExecutionStep" abstract="true" eSuperTypes="#//core/MODembedElement"/>
-      <eClassifiers xsi:type="ecore:EClass" name="LiteralExpression" abstract="true"
-          eSuperTypes="#//emodel/expressions/Expression">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//emodel/types/TypeDefinition"
-            containment="true"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="ExecutionBlock" eSuperTypes="#//emodel/expressions/ExecutionStep">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="steps" upperBound="-1"
-            eType="#//emodel/expressions/ExecutionStep" containment="true"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Call" eSuperTypes="#//emodel/expressions/Expression">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
-            eType="#//emodel/expressions/ExecutionStep" containment="true"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="function" lowerBound="1"
-            eType="#//emodel/CallableElement"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="result" eType="#//emodel/expressions/ExecutionStep"
-            containment="true"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="VariableReference" eSuperTypes="#//emodel/expressions/Expression">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="variable" lowerBound="1"
-            eType="#//emodel/Variable"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="PrimitiveLiteralExpression" abstract="true"
-          eSuperTypes="#//emodel/expressions/LiteralExpression"/>
-      <eClassifiers xsi:type="ecore:EClass" name="IntegerLiteralExpression" eSuperTypes="#//emodel/expressions/PrimitiveLiteralExpression">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigInteger"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="CompilationLogStep" eSuperTypes="#//emodel/expressions/ExecutionStep">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="severity" lowerBound="1"
-            eType="#//emodel/expressions/CompilationLogStepSeverity"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="message" lowerBound="1"
-            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EEnum" name="CompilationLogStepSeverity">
-        <eLiterals name="INFO"/>
-        <eLiterals name="DEBUG" value="1"/>
-        <eLiterals name="WARNING" value="2"/>
-        <eLiterals name="ERROR" value="3"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="LocalVariable" eSuperTypes="#//emodel/expressions/ExecutionStep #//emodel/Variable"/>
-      <eClassifiers xsi:type="ecore:EClass" name="ResultVariableReference" eSuperTypes="#//emodel/expressions/Expression"/>
-    </eSubpackages>
-    <eSubpackages name="memorymap" nsURI="http://emodel/1.0/memorymap" nsPrefix="memorymap">
-      <eClassifiers xsi:type="ecore:EClass" name="MemoryMap" eSuperTypes="#//core/RootElement">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="root" eType="#//emodel/memorymap/HeapLevel"
-            containment="true"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="HeapLevel" eSuperTypes="#//core/MODembedElement">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="mappings" upperBound="-1"
-            eType="#//emodel/memorymap/HeapVariableMapping" containment="true"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="subLevels" upperBound="-1"
-            eType="#//emodel/memorymap/HeapLevel" containment="true"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="HeapVariableMapping" eSuperTypes="#//core/MODembedElement">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="variable" lowerBound="1"
-            eType="#//emodel/Variable"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="address" lowerBound="1"
-            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
-      </eClassifiers>
-    </eSubpackages>
-  </eSubpackages>
   <eSubpackages name="architecture" nsURI="http://modembed.hu/architecture" nsPrefix="architecture">
     <eClassifiers xsi:type="ecore:EClass" name="Architecture" eSuperTypes="#//core/RootElement">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="heapPointerType" eType="#//emodel/Type"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="codePointerType" eType="#//emodel/Type"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="heapPointerType" eType="#//abstraction/types/Type"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="codePointerType" eType="#//abstraction/types/Type"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="instructionSet" eType="#//core/assembler/InstructionSet"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="memory" upperBound="-1"
           eType="#//architecture/MemorySection" containment="true"/>
@@ -389,103 +141,114 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="length" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
     </eClassifiers>
-    <eSubpackages name="linking" nsURI="http://modembed.hu/architecture/linking" nsPrefix="linking">
-      <eClassifiers xsi:type="ecore:EClass" name="ProgramLinking" eSuperTypes="#//architecture/linking/LinkingElement">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="architecture" eType="#//architecture/Architecture"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="mainFunction" eType="#//emodel/Function"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="startAddress" lowerBound="1"
-            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"
-            defaultValueLiteral="0"/>
+  </eSubpackages>
+  <eSubpackages name="abstraction" nsURI="http://modembed.hu/abstraction" nsPrefix="abstraction">
+    <eSubpackages name="types" nsURI="http://modembed.hu/abstraction/types" nsPrefix="types">
+      <eClassifiers xsi:type="ecore:EClass" name="TypeDefinition" abstract="true"
+          eSuperTypes="#//core/MODembedElement"/>
+      <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeDefinition" abstract="true"
+          eSuperTypes="#//abstraction/types/TypeDefinition"/>
+      <eClassifiers xsi:type="ecore:EClass" name="CompositeTypeDefinition" abstract="true"
+          eSuperTypes="#//abstraction/types/TypeDefinition"/>
+      <eClassifiers xsi:type="ecore:EClass" name="UnsignedTypeDefinition" eSuperTypes="#//abstraction/types/PrimitiveTypeDefinition">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="bits" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="LinkingElement" abstract="true"
-          eSuperTypes="#//core/RootElement"/>
-      <eClassifiers xsi:type="ecore:EClass" name="LinkRawData" eSuperTypes="#//architecture/linking/LinkingElement"/>
-      <eClassifiers xsi:type="ecore:EClass" name="BinaryTarget" eSuperTypes="#//core/RootElement">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1"
-            eType="#//architecture/linking/BinaryTargetType" defaultValueLiteral="Raw"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="sections" upperBound="-1"
-            eType="#//architecture/linking/BinarySection" containment="true"/>
+      <eClassifiers xsi:type="ecore:EClass" name="ReferenceTypeDefinition" eSuperTypes="#//abstraction/types/CompositeTypeDefinition">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"
+            eType="#//abstraction/types/Type"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EEnum" name="BinaryTargetType">
-        <eLiterals name="Raw"/>
-        <eLiterals name="IntelHexFile" value="1"/>
-        <eLiterals name="MotorolaHexFile" value="2"/>
+      <eClassifiers xsi:type="ecore:EClass" name="PointerTypeDefinition" eSuperTypes="#//abstraction/types/CompositeTypeDefinition">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="pointerType" lowerBound="1"
+            eType="#//abstraction/types/TypeDefinition" containment="true"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="BinarySection" eSuperTypes="#//core/MODembedElement">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="element" eType="#//architecture/linking/LinkingElement"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="address" lowerBound="1"
-            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+      <eClassifiers xsi:type="ecore:EClass" name="ArrayDefinition" eSuperTypes="#//abstraction/types/PointerTypeDefinition"/>
+      <eClassifiers xsi:type="ecore:EClass" name="StructureTypeDefinition" eSuperTypes="#//abstraction/types/CompositeTypeDefinition">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+            eType="#//abstraction/types/StructureTypeElement" containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="StructureTypeElement" eSuperTypes="#//core/NamedElement">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"
+            eType="#//abstraction/types/TypeDefinition" containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="CodeLabelTypeDefinition" eSuperTypes="#//abstraction/types/PrimitiveTypeDefinition"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Type" eSuperTypes="#//core/RootElement">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="definition" lowerBound="1"
+            eType="#//abstraction/types/TypeDefinition" containment="true"/>
       </eClassifiers>
     </eSubpackages>
-  </eSubpackages>
-  <eSubpackages name="behavior" nsURI="http://modembed.hu/behavior" nsPrefix="behavior">
-    <eClassifiers xsi:type="ecore:EClass" name="SequentialBehavior" eSuperTypes="#//core/RootElement">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="symbols" upperBound="-1"
-          eType="#//behavior/Symbol" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="actions" upperBound="-1"
-          eType="#//behavior/SequentialAction" containment="true"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Symbol" eSuperTypes="#//core/NamedElement">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//emodel/types/TypeDefinition"
-          containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="external" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="SequentialAction" abstract="true"
-        eSuperTypes="#//core/MODembedElement"/>
-    <eClassifiers xsi:type="ecore:EClass" name="CodeSymbolPlacement" eSuperTypes="#//behavior/SequentialAction">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="symbol" eType="#//behavior/Symbol"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="AtomicOperationExecution" eSuperTypes="#//behavior/SequentialAction">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="arguments" upperBound="-1"
-          eType="#//behavior/Symbol"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="operation" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="BehaviorCall" eSuperTypes="#//behavior/SequentialAction">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="argumentMappings" upperBound="-1"
-          eType="#//behavior/SymbolMapping" containment="true"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="SymbolMapping" eSuperTypes="#//core/MODembedElement">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="local" eType="#//behavior/Symbol"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="remote" eType="#//behavior/Symbol"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="SymbolValueMap" eSuperTypes="#//core/RootElement">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="values" upperBound="-1"
-          eType="#//behavior/SymbolValueAssignment" containment="true"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="SymbolValueAssignment" eSuperTypes="#//core/MODembedElement">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="symbol" eType="#//behavior/Symbol"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="indirectionLevel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    </eClassifiers>
-  </eSubpackages>
-  <eSubpackages name="platform" nsURI="http://modembed.hu/platform" nsPrefix="platform">
-    <eClassifiers xsi:type="ecore:EClass" name="PlatformDefinition" eSuperTypes="#//core/RootElement">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="refine" eType="#//platform/PlatformDefinition"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="operations" upperBound="-1"
-          eType="#//platform/OperationDefinition" containment="true"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="OperationDefinition" eSuperTypes="#//core/MODembedElement">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="arguments" upperBound="-1"
-          eType="#//platform/OperationArgument" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="steps" upperBound="-1"
-          eType="#//platform/OperationStep" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="operation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="OperationArgument" eSuperTypes="#//core/NamedElement">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//emodel/types/TypeDefinition"
-          containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="indirectionLevel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="InstructionCallOperationStep" eSuperTypes="#//platform/OperationStep">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="instruction" eType="#//core/assembler/Instruction"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="arguments" upperBound="-1"
-          eType="#//platform/InstructionParameterMapping" containment="true"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="OperationStep" abstract="true" eSuperTypes="#//core/MODembedElement"/>
-    <eClassifiers xsi:type="ecore:EClass" name="InstructionParameterMapping" eSuperTypes="#//core/MODembedElement">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//platform/OperationArgument"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="bitOffset" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    </eClassifiers>
+    <eSubpackages name="behavior" nsURI="http://modembed.hu/behavior" nsPrefix="behavior">
+      <eClassifiers xsi:type="ecore:EClass" name="SequentialBehavior" eSuperTypes="#//core/RootElement">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="symbols" upperBound="-1"
+            eType="#//abstraction/behavior/Symbol" containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="actions" upperBound="-1"
+            eType="#//abstraction/behavior/SequentialAction" containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="Symbol" eSuperTypes="#//core/NamedElement">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//abstraction/types/TypeDefinition"
+            containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="external" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="SequentialAction" abstract="true"
+          eSuperTypes="#//core/MODembedElement"/>
+      <eClassifiers xsi:type="ecore:EClass" name="CodeSymbolPlacement" eSuperTypes="#//abstraction/behavior/SequentialAction">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="symbol" eType="#//abstraction/behavior/Symbol"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="AtomicOperationExecution" eSuperTypes="#//abstraction/behavior/SequentialAction">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="arguments" upperBound="-1"
+            eType="#//abstraction/behavior/Symbol"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="operation" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="BehaviorCall" eSuperTypes="#//abstraction/behavior/SequentialAction">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="argumentMappings" upperBound="-1"
+            eType="#//abstraction/behavior/SymbolMapping" containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="SymbolMapping" eSuperTypes="#//core/MODembedElement">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="local" eType="#//abstraction/behavior/Symbol"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="remote" eType="#//abstraction/behavior/Symbol"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="SymbolValueMap" eSuperTypes="#//core/RootElement">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="values" upperBound="-1"
+            eType="#//abstraction/behavior/SymbolValueAssignment" containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="SymbolValueAssignment" eSuperTypes="#//core/MODembedElement">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="symbol" eType="#//abstraction/behavior/Symbol"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="indirectionLevel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </eClassifiers>
+      <eSubpackages name="platform" nsURI="http://modembed.hu/platform" nsPrefix="platform">
+        <eClassifiers xsi:type="ecore:EClass" name="PlatformDefinition" eSuperTypes="#//core/RootElement">
+          <eStructuralFeatures xsi:type="ecore:EReference" name="refine" eType="#//abstraction/behavior/platform/PlatformDefinition"/>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="operations" upperBound="-1"
+              eType="#//abstraction/behavior/platform/OperationDefinition" containment="true"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="OperationDefinition" eSuperTypes="#//core/MODembedElement">
+          <eStructuralFeatures xsi:type="ecore:EReference" name="arguments" upperBound="-1"
+              eType="#//abstraction/behavior/platform/OperationArgument" containment="true"/>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="steps" upperBound="-1"
+              eType="#//abstraction/behavior/platform/OperationStep" containment="true"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="operation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="OperationArgument" eSuperTypes="#//core/NamedElement">
+          <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//abstraction/types/TypeDefinition"
+              containment="true"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="indirectionLevel"
+              eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="InstructionCallOperationStep"
+            eSuperTypes="#//abstraction/behavior/platform/OperationStep">
+          <eStructuralFeatures xsi:type="ecore:EReference" name="instruction" eType="#//core/assembler/Instruction"/>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="arguments" upperBound="-1"
+              eType="#//abstraction/behavior/platform/InstructionParameterMapping"
+              containment="true"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="OperationStep" abstract="true"
+            eSuperTypes="#//core/MODembedElement"/>
+        <eClassifiers xsi:type="ecore:EClass" name="InstructionParameterMapping" eSuperTypes="#//core/MODembedElement">
+          <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//abstraction/behavior/platform/OperationArgument"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="bitOffset" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        </eClassifiers>
+      </eSubpackages>
+    </eSubpackages>
   </eSubpackages>
 </ecore:EPackage>

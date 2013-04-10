@@ -32,48 +32,6 @@
                resource="tests/t1_assemble/build.xmi">
          </resource>
       </project>
-      <project
-            category="hu.modembed.test.category"
-            id="test2"
-            name="Test2 - Library{L0} to ASM">
-         <dependency
-               project="microchip.pic16">
-         </dependency>
-         <resource
-               path="/"
-               resource="tests/t2_createAssemblerObject/blink.e">
-         </resource>
-         <resource
-               path="/"
-               resource="tests/t2_createAssemblerObject/build.e">
-         </resource>
-      </project>
-      <project
-            category="hu.modembed.test.category"
-            id="test3"
-            name="Test3 - Compilation">
-         <dependency
-               project="microchip.pic16">
-         </dependency>
-         <resource
-               path="/"
-               resource="tests/t3_compile/blink.e">
-         </resource>
-         <resource
-               path="/"
-               resource="tests/t3_compile/compile.e">
-         </resource>
-         <dependency
-               project="e.core">
-         </dependency>
-         <resource
-               path="/"
-               resource="tests/t3_compile/pic16f1824.arch.xmi">
-         </resource>
-         <dependency
-               project="microchip.PIC16F1824">
-         </dependency>
-      </project>
       <category
             id="hu.modembed.test.category"
             name="Test projects">

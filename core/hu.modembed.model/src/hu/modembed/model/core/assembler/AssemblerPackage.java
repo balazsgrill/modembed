@@ -185,7 +185,6 @@ public interface AssemblerPackage extends EPackage {
 	 */
 	int INSTRUCTION_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
-
 	/**
 	 * The meta object id for the '{@link hu.modembed.model.core.assembler.impl.InstructionParameterImpl <em>Instruction Parameter</em>}' class.
 	 * <!-- begin-user-doc -->
@@ -451,7 +450,6 @@ public interface AssemblerPackage extends EPackage {
 	 */
 	int PARAMETER_SECTION_FEATURE_COUNT = INSTRUCTION_SECTION_FEATURE_COUNT + 1;
 
-
 	/**
 	 * The meta object id for the '{@link hu.modembed.model.core.assembler.impl.InstructionWordImpl <em>Instruction Word</em>}' class.
 	 * <!-- begin-user-doc -->
@@ -506,7 +504,6 @@ public interface AssemblerPackage extends EPackage {
 	 * @ordered
 	 */
 	int INSTRUCTION_WORD_FEATURE_COUNT = CorePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 2;
-
 
 	/**
 	 * The meta object id for the '{@link hu.modembed.model.core.assembler.impl.InstructionWordConditionImpl <em>Instruction Word Condition</em>}' class.

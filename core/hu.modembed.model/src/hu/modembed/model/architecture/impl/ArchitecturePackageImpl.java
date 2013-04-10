@@ -2,30 +2,22 @@
  */
 package hu.modembed.model.architecture.impl;
 
-import hu.modembed.model.application.ApplicationPackage;
+import hu.modembed.model.abstraction.behavior.BehaviorPackage;
 
-import hu.modembed.model.application.composition.CompositionPackage;
+import hu.modembed.model.abstraction.behavior.impl.BehaviorPackageImpl;
 
-import hu.modembed.model.application.composition.impl.CompositionPackageImpl;
+import hu.modembed.model.abstraction.behavior.platform.PlatformPackage;
 
-import hu.modembed.model.application.impl.ApplicationPackageImpl;
+import hu.modembed.model.abstraction.behavior.platform.impl.PlatformPackageImpl;
 
-import hu.modembed.model.application.interface_.InterfacePackage;
+import hu.modembed.model.abstraction.types.TypesPackage;
 
-import hu.modembed.model.application.interface_.impl.InterfacePackageImpl;
+import hu.modembed.model.abstraction.types.impl.TypesPackageImpl;
 
 import hu.modembed.model.architecture.Architecture;
 import hu.modembed.model.architecture.ArchitectureFactory;
 import hu.modembed.model.architecture.ArchitecturePackage;
 import hu.modembed.model.architecture.MemorySection;
-
-import hu.modembed.model.architecture.linking.LinkingPackage;
-import hu.modembed.model.architecture.linking.impl.LinkingPackageImpl;
-import hu.modembed.model.behavior.BehaviorPackage;
-import hu.modembed.model.behavior.impl.BehaviorPackageImpl;
-import hu.modembed.model.comm.CommPackage;
-
-import hu.modembed.model.comm.impl.CommPackageImpl;
 
 import hu.modembed.model.core.CorePackage;
 
@@ -40,31 +32,9 @@ import hu.modembed.model.core.assembler.impl.AssemblerPackageImpl;
 import hu.modembed.model.core.impl.CorePackageImpl;
 
 import hu.modembed.model.core.workflow.WorkflowPackage;
+
 import hu.modembed.model.core.workflow.impl.WorkflowPackageImpl;
-import hu.modembed.model.emodel.EmodelPackage;
 
-import hu.modembed.model.emodel.expressions.ExpressionsPackage;
-
-import hu.modembed.model.emodel.expressions.impl.ExpressionsPackageImpl;
-
-import hu.modembed.model.emodel.impl.EmodelPackageImpl;
-
-import hu.modembed.model.emodel.memorymap.MemorymapPackage;
-import hu.modembed.model.emodel.memorymap.impl.MemorymapPackageImpl;
-import hu.modembed.model.emodel.types.TypesPackage;
-
-import hu.modembed.model.emodel.types.impl.TypesPackageImpl;
-
-import hu.modembed.model.network.NetworkPackage;
-
-import hu.modembed.model.network.impl.NetworkPackageImpl;
-
-import hu.modembed.model.network.rs232.Rs232Package;
-
-import hu.modembed.model.network.rs232.impl.Rs232PackageImpl;
-
-import hu.modembed.model.platform.PlatformPackage;
-import hu.modembed.model.platform.impl.PlatformPackageImpl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -144,18 +114,7 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 		AssemblerPackageImpl theAssemblerPackage = (AssemblerPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AssemblerPackage.eNS_URI) instanceof AssemblerPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AssemblerPackage.eNS_URI) : AssemblerPackage.eINSTANCE);
 		CodePackageImpl theCodePackage = (CodePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CodePackage.eNS_URI) instanceof CodePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CodePackage.eNS_URI) : CodePackage.eINSTANCE);
 		WorkflowPackageImpl theWorkflowPackage = (WorkflowPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(WorkflowPackage.eNS_URI) instanceof WorkflowPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(WorkflowPackage.eNS_URI) : WorkflowPackage.eINSTANCE);
-		NetworkPackageImpl theNetworkPackage = (NetworkPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(NetworkPackage.eNS_URI) instanceof NetworkPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(NetworkPackage.eNS_URI) : NetworkPackage.eINSTANCE);
-		Rs232PackageImpl theRs232Package = (Rs232PackageImpl)(EPackage.Registry.INSTANCE.getEPackage(Rs232Package.eNS_URI) instanceof Rs232PackageImpl ? EPackage.Registry.INSTANCE.getEPackage(Rs232Package.eNS_URI) : Rs232Package.eINSTANCE);
-		CommPackageImpl theCommPackage = (CommPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CommPackage.eNS_URI) instanceof CommPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CommPackage.eNS_URI) : CommPackage.eINSTANCE);
-		hu.modembed.model.comm.rs232.impl.Rs232PackageImpl theRs232Package_1 = (hu.modembed.model.comm.rs232.impl.Rs232PackageImpl)(EPackage.Registry.INSTANCE.getEPackage(hu.modembed.model.comm.rs232.Rs232Package.eNS_URI) instanceof hu.modembed.model.comm.rs232.impl.Rs232PackageImpl ? EPackage.Registry.INSTANCE.getEPackage(hu.modembed.model.comm.rs232.Rs232Package.eNS_URI) : hu.modembed.model.comm.rs232.Rs232Package.eINSTANCE);
-		ApplicationPackageImpl theApplicationPackage = (ApplicationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI) instanceof ApplicationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI) : ApplicationPackage.eINSTANCE);
-		InterfacePackageImpl theInterfacePackage = (InterfacePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InterfacePackage.eNS_URI) instanceof InterfacePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InterfacePackage.eNS_URI) : InterfacePackage.eINSTANCE);
-		CompositionPackageImpl theCompositionPackage = (CompositionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CompositionPackage.eNS_URI) instanceof CompositionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CompositionPackage.eNS_URI) : CompositionPackage.eINSTANCE);
-		EmodelPackageImpl theEmodelPackage = (EmodelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EmodelPackage.eNS_URI) instanceof EmodelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EmodelPackage.eNS_URI) : EmodelPackage.eINSTANCE);
 		TypesPackageImpl theTypesPackage = (TypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) instanceof TypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) : TypesPackage.eINSTANCE);
-		ExpressionsPackageImpl theExpressionsPackage = (ExpressionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI) instanceof ExpressionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI) : ExpressionsPackage.eINSTANCE);
-		MemorymapPackageImpl theMemorymapPackage = (MemorymapPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(MemorymapPackage.eNS_URI) instanceof MemorymapPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(MemorymapPackage.eNS_URI) : MemorymapPackage.eINSTANCE);
-		LinkingPackageImpl theLinkingPackage = (LinkingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(LinkingPackage.eNS_URI) instanceof LinkingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(LinkingPackage.eNS_URI) : LinkingPackage.eINSTANCE);
 		BehaviorPackageImpl theBehaviorPackage = (BehaviorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) instanceof BehaviorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) : BehaviorPackage.eINSTANCE);
 		PlatformPackageImpl thePlatformPackage = (PlatformPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PlatformPackage.eNS_URI) instanceof PlatformPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PlatformPackage.eNS_URI) : PlatformPackage.eINSTANCE);
 
@@ -165,18 +124,7 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 		theAssemblerPackage.createPackageContents();
 		theCodePackage.createPackageContents();
 		theWorkflowPackage.createPackageContents();
-		theNetworkPackage.createPackageContents();
-		theRs232Package.createPackageContents();
-		theCommPackage.createPackageContents();
-		theRs232Package_1.createPackageContents();
-		theApplicationPackage.createPackageContents();
-		theInterfacePackage.createPackageContents();
-		theCompositionPackage.createPackageContents();
-		theEmodelPackage.createPackageContents();
 		theTypesPackage.createPackageContents();
-		theExpressionsPackage.createPackageContents();
-		theMemorymapPackage.createPackageContents();
-		theLinkingPackage.createPackageContents();
 		theBehaviorPackage.createPackageContents();
 		thePlatformPackage.createPackageContents();
 
@@ -186,18 +134,7 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 		theAssemblerPackage.initializePackageContents();
 		theCodePackage.initializePackageContents();
 		theWorkflowPackage.initializePackageContents();
-		theNetworkPackage.initializePackageContents();
-		theRs232Package.initializePackageContents();
-		theCommPackage.initializePackageContents();
-		theRs232Package_1.initializePackageContents();
-		theApplicationPackage.initializePackageContents();
-		theInterfacePackage.initializePackageContents();
-		theCompositionPackage.initializePackageContents();
-		theEmodelPackage.initializePackageContents();
 		theTypesPackage.initializePackageContents();
-		theExpressionsPackage.initializePackageContents();
-		theMemorymapPackage.initializePackageContents();
-		theLinkingPackage.initializePackageContents();
 		theBehaviorPackage.initializePackageContents();
 		thePlatformPackage.initializePackageContents();
 
@@ -355,13 +292,9 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		LinkingPackage theLinkingPackage = (LinkingPackage)EPackage.Registry.INSTANCE.getEPackage(LinkingPackage.eNS_URI);
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
-		EmodelPackage theEmodelPackage = (EmodelPackage)EPackage.Registry.INSTANCE.getEPackage(EmodelPackage.eNS_URI);
+		TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
 		AssemblerPackage theAssemblerPackage = (AssemblerPackage)EPackage.Registry.INSTANCE.getEPackage(AssemblerPackage.eNS_URI);
-
-		// Add subpackages
-		getESubpackages().add(theLinkingPackage);
 
 		// Create type parameters
 
@@ -373,8 +306,8 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(architectureEClass, Architecture.class, "Architecture", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getArchitecture_HeapPointerType(), theEmodelPackage.getType(), null, "heapPointerType", null, 0, 1, Architecture.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getArchitecture_CodePointerType(), theEmodelPackage.getType(), null, "codePointerType", null, 0, 1, Architecture.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getArchitecture_HeapPointerType(), theTypesPackage.getType(), null, "heapPointerType", null, 0, 1, Architecture.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getArchitecture_CodePointerType(), theTypesPackage.getType(), null, "codePointerType", null, 0, 1, Architecture.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getArchitecture_InstructionSet(), theAssemblerPackage.getInstructionSet(), null, "instructionSet", null, 0, 1, Architecture.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getArchitecture_Memory(), this.getMemorySection(), null, "memory", null, 0, -1, Architecture.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

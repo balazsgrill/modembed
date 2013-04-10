@@ -6,14 +6,18 @@ import hu.modembed.model.core.assembler.AssemblerPackage;
 import hu.modembed.model.core.assembler.Instruction;
 import hu.modembed.model.core.assembler.InstructionParameter;
 import hu.modembed.model.core.assembler.InstructionWord;
+
 import hu.modembed.model.core.impl.NamedElementImpl;
 
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 

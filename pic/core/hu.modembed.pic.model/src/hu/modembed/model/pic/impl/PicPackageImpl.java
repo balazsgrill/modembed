@@ -2,32 +2,23 @@
  */
 package hu.modembed.model.pic.impl;
 
-import hu.modembed.model.application.ApplicationPackage;
-
+import hu.modembed.model.abstraction.behavior.BehaviorPackage;
+import hu.modembed.model.abstraction.types.TypesPackage;
 import hu.modembed.model.architecture.ArchitecturePackage;
-
-import hu.modembed.model.comm.CommPackage;
-
 import hu.modembed.model.core.CorePackage;
-
-import hu.modembed.model.emodel.EmodelPackage;
-
-import hu.modembed.model.network.NetworkPackage;
-
 import hu.modembed.model.pic.ConfigField;
 import hu.modembed.model.pic.ConfigLiteral;
 import hu.modembed.model.pic.ConfigWord;
 import hu.modembed.model.pic.PICArchitecture;
 import hu.modembed.model.pic.PicFactory;
 import hu.modembed.model.pic.PicPackage;
-
 import hu.modembed.model.pic.configValue.ConfigValuePackage;
 import hu.modembed.model.pic.configValue.impl.ConfigValuePackageImpl;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -113,11 +104,9 @@ public class PicPackageImpl extends EPackageImpl implements PicPackage {
 
 		// Initialize simple dependencies
 		CorePackage.eINSTANCE.eClass();
-		NetworkPackage.eINSTANCE.eClass();
-		CommPackage.eINSTANCE.eClass();
-		ApplicationPackage.eINSTANCE.eClass();
-		EmodelPackage.eINSTANCE.eClass();
 		ArchitecturePackage.eINSTANCE.eClass();
+		TypesPackage.eINSTANCE.eClass();
+		BehaviorPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		ConfigValuePackageImpl theConfigValuePackage = (ConfigValuePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ConfigValuePackage.eNS_URI) instanceof ConfigValuePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ConfigValuePackage.eNS_URI) : ConfigValuePackage.eINSTANCE);

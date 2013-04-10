@@ -4,13 +4,9 @@ import hu.e.compiler.IModembedTask;
 import hu.e.compiler.ITaskContext;
 import hu.e.compiler.TaskUtils;
 import hu.e.compiler.tasks.internal.AbstractConverter;
-import hu.modembed.model.emodel.Function;
-import hu.modembed.model.emodel.GlobalVariable;
-import hu.modembed.model.emodel.Library;
-import hu.modembed.model.emodel.LibraryElement;
-import hu.modembed.model.emodel.RegisterVariable;
-import hu.modembed.model.emodel.Type;
-import hu.modembed.model.emodel.expressions.LocalVariable;
+import hu.e.parser.eSyntax.Library;
+import hu.e.parser.eSyntax.RegisterVariable;
+import hu.modembed.model.abstraction.types.Type;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -19,6 +15,8 @@ import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+
+import com.google.common.base.Function;
 
 public class StripOptimizer implements IModembedTask {
 
@@ -31,8 +29,8 @@ public class StripOptimizer implements IModembedTask {
 	static{
 		strippedElements.add(Function.class);
 		strippedElements.add(Type.class);
-		strippedElements.add(LocalVariable.class);
-		strippedElements.add(GlobalVariable.class);
+//		strippedElements.add(LocalVariable.class);
+//		strippedElements.add(GlobalVariable.class);
 		strippedElements.add(RegisterVariable.class);
 	}
 	
@@ -76,14 +74,14 @@ public class StripOptimizer implements IModembedTask {
 		
 		ModelStripper stripper = new ModelStripper();
 		
-		LibraryElement entryelement = null;
-		for(LibraryElement e : input.getContent()){
-			if (entry.equals(e.getName())){
-				entryelement = e;
-			}
-		}
-		Assert.isNotNull(entryelement, "Could not find element "+entry);
-		stripper.visit(entryelement);
+//		LibraryElement entryelement = null;
+//		for(LibraryElement e : input.getContent()){
+//			if (entry.equals(e.getName())){
+//				entryelement = e;
+//			}
+//		}
+//		Assert.isNotNull(entryelement, "Could not find element "+entry);
+//		stripper.visit(entryelement);
 		
 		Library output = stripper.copy(input);
 		stripper.resolveCrossReferences();

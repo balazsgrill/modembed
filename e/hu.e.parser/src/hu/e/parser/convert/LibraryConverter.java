@@ -4,11 +4,7 @@
 package hu.e.parser.convert;
 
 
-import hu.e.parser.convert.impl.ExpressionConverter;
-import hu.e.parser.convert.impl.FunctionConverter;
 import hu.e.parser.convert.impl.RootReferenceScope;
-import hu.e.parser.convert.impl.TypeConverter;
-import hu.e.parser.eSyntax.ConstantVariable;
 import hu.e.parser.eSyntax.InsctructionSectionNotation;
 import hu.e.parser.eSyntax.InstructionNotation;
 import hu.e.parser.eSyntax.InstructionParameterNotation;
@@ -16,11 +12,6 @@ import hu.e.parser.eSyntax.InstructionSetNotation;
 import hu.e.parser.eSyntax.InstructionWordConditionNotation;
 import hu.e.parser.eSyntax.InstructionWordNotation;
 import hu.e.parser.eSyntax.Library;
-import hu.e.parser.eSyntax.LibraryItem;
-import hu.e.parser.eSyntax.Operation;
-import hu.e.parser.eSyntax.RegisterVariable;
-import hu.e.parser.eSyntax.Type;
-import hu.e.parser.eSyntax.Variable;
 import hu.e.parser.eSyntax.WorkflowNotation;
 import hu.e.parser.eSyntax.WorkflowStepNotation;
 import hu.e.parser.eSyntax.WorkflowStepParameterNotation;
@@ -42,9 +33,6 @@ import hu.modembed.model.core.workflow.Task;
 import hu.modembed.model.core.workflow.TaskParameter;
 import hu.modembed.model.core.workflow.Workflow;
 import hu.modembed.model.core.workflow.WorkflowFactory;
-import hu.modembed.model.emodel.EmodelFactory;
-import hu.modembed.model.emodel.HeapVariable;
-import hu.modembed.model.emodel.LibraryElement;
 
 import java.io.IOException;
 import java.util.Collections;
@@ -152,52 +140,6 @@ public class LibraryConverter {
 		}
 		IFile file = folder.getFile(name+".xmi");
 		return URI.createPlatformResourceURI(file.getFullPath().toString(), true);
-	}
-	
-	private LibraryElement convertElement(LibraryItem item, ICrossReferenceScope scope){
-		if (item instanceof Type){
-			Type from = (Type)item;
-			hu.modembed.model.emodel.Type to = EmodelFactory.eINSTANCE.createType();
-			
-			to.setName(from.getName());
-			to.setDefinition(TypeConverter.convertTypeDef(from.getDef(), scope));
-			
-			addOrigin(to, from);
-			return to;
-		}
-		
-		if (item instanceof Operation){
-			return FunctionConverter.convert((Operation)item, scope);
-		}
-		
-		if (item instanceof Variable){
-			
-			if (item instanceof ConstantVariable){
-				hu.modembed.model.emodel.ConstantVariable cv = EmodelFactory.eINSTANCE.createConstantVariable();
-				cv.setName(item.getName());
-				cv.setType(TypeConverter.convertTypeDef(((Variable) item).getType(), scope));
-				cv.setValue(ExpressionConverter.convert(((ConstantVariable) item).getValue(), scope));
-				addOrigin(cv, item);
-				return cv;
-			}else if (item instanceof RegisterVariable){
-				hu.modembed.model.emodel.RegisterVariable rv = EmodelFactory.eINSTANCE.createRegisterVariable();
-				rv.setName(item.getName());
-				rv.setType(TypeConverter.convertTypeDef(((Variable) item).getType(), scope));
-				rv.setAddress(ExpressionConverter.convert(((RegisterVariable) item).getAddr(), scope));
-				addOrigin(rv, item);
-				return rv;
-			}else{
-				//Heap variable
-				HeapVariable hv = EmodelFactory.eINSTANCE.createHeapVariable();
-				hv.setName(item.getName());
-				hv.setType(TypeConverter.convertTypeDef(((Variable) item).getType(), scope));
-				addOrigin(hv, item);
-				return hv;
-			}
-			
-		}
-		
-		return null;
 	}
 	
 	public static int convertLiteral(String lit){
@@ -333,32 +275,33 @@ public class LibraryConverter {
 	}
 	
 	public List<UnresolvedCrossReference> convert(Library library){
-		hu.modembed.model.emodel.Library result = EmodelFactory.eINSTANCE.createLibrary();
-		result.setName(library.getName());
-		addOrigin(result, library);
+		//hu.modembed.model.emodel.Library result = EmodelFactory.eINSTANCE.createLibrary();
+//		result.setName(library.getName());
+//		addOrigin(result, library);
+//		
+//		ICrossReferenceScope scope = new RootReferenceScope(project, resourceSet, result, library.getUse());
+//		
+//		for(LibraryItem item : library.getItems()){
+//			//LibraryElement le = convertElement(item, scope);
+//			//if (le != null){
+//				//result.getContent().add(le);
+//			}
+//		}
+//		
+//		List<UnresolvedCrossReference> fail = scope.resolveReferences();
+//		
+//		URI uri = getLibURI(result.getName());
+//		Resource r = resourceSet.createResource(uri);
+//		r.getContents().add(result);
+//		try {
+//			r.save(null);
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 		
-		ICrossReferenceScope scope = new RootReferenceScope(project, resourceSet, result, library.getUse());
-		
-		for(LibraryItem item : library.getItems()){
-			LibraryElement le = convertElement(item, scope);
-			if (le != null){
-				result.getContent().add(le);
-			}
-		}
-		
-		List<UnresolvedCrossReference> fail = scope.resolveReferences();
-		
-		URI uri = getLibURI(result.getName());
-		Resource r = resourceSet.createResource(uri);
-		r.getContents().add(result);
-		try {
-			r.save(null);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		return fail;
+		//return fail;
+		return null;
 	}
 	
 }

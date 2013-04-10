@@ -2,6 +2,8 @@
  */
 package hu.modembed.model.architecture.impl;
 
+import hu.modembed.model.abstraction.types.Type;
+
 import hu.modembed.model.architecture.Architecture;
 import hu.modembed.model.architecture.ArchitecturePackage;
 import hu.modembed.model.architecture.MemorySection;
@@ -9,8 +11,6 @@ import hu.modembed.model.architecture.MemorySection;
 import hu.modembed.model.core.assembler.InstructionSet;
 
 import hu.modembed.model.core.impl.RootElementImpl;
-
-import hu.modembed.model.emodel.Type;
 
 import java.util.Collection;
 

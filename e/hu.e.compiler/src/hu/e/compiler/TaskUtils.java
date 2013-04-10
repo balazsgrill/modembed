@@ -3,7 +3,11 @@
  */
 package hu.e.compiler;
 
-import hu.e.compiler.tasks.internal.TypeSignature;
+import hu.modembed.model.abstraction.types.CodeLabelTypeDefinition;
+import hu.modembed.model.abstraction.types.PointerTypeDefinition;
+import hu.modembed.model.abstraction.types.ReferenceTypeDefinition;
+import hu.modembed.model.abstraction.types.TypeDefinition;
+import hu.modembed.model.abstraction.types.UnsignedTypeDefinition;
 import hu.modembed.model.architecture.Architecture;
 import hu.modembed.model.core.CoreFactory;
 import hu.modembed.model.core.MODembedElement;
@@ -11,22 +15,6 @@ import hu.modembed.model.core.ModelOrigin;
 import hu.modembed.model.core.Origin;
 import hu.modembed.model.core.RootElement;
 import hu.modembed.model.core.TextOrigin;
-import hu.modembed.model.emodel.CallableElement;
-import hu.modembed.model.emodel.Function;
-import hu.modembed.model.emodel.FunctionParameter;
-import hu.modembed.model.emodel.LazyParameter;
-import hu.modembed.model.emodel.Variable;
-import hu.modembed.model.emodel.VariableParameter;
-import hu.modembed.model.emodel.VariableParameterKind;
-import hu.modembed.model.emodel.expressions.Call;
-import hu.modembed.model.emodel.expressions.ExecutionStep;
-import hu.modembed.model.emodel.expressions.LiteralExpression;
-import hu.modembed.model.emodel.expressions.VariableReference;
-import hu.modembed.model.emodel.types.CodeLabelTypeDefinition;
-import hu.modembed.model.emodel.types.PointerTypeDefinition;
-import hu.modembed.model.emodel.types.ReferenceTypeDefinition;
-import hu.modembed.model.emodel.types.TypeDefinition;
-import hu.modembed.model.emodel.types.UnsignedTypeDefinition;
 
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -140,15 +128,6 @@ public class TaskUtils {
 		return null;
 	}
 	
-	public static boolean canAssign(VariableParameterKind from, VariableParameterKind to){
-		switch(to){
-		case ANY: return true;
-		case CONST: return from == VariableParameterKind.CONST; 
-		case VAR:  return from == VariableParameterKind.VAR;
-		default: return false;
-		}
-	}
-	
 	public static int inferSize(TypeDefinition type, Architecture arch){
 		if (type instanceof PointerTypeDefinition){
 			return inferSize(arch.getHeapPointerType().getDefinition(), arch);
@@ -164,27 +143,6 @@ public class TaskUtils {
 		}
 		//TODO structure
 		return 0;
-	}
-	
-	public static boolean checkSignature(Function function, TypeSignature...signature){
-		if (function.getArguments().size() != signature.length) return false;
-		
-		int i = 0;
-		for(i=0;i<function.getArguments().size();i++){
-			FunctionParameter fp = function.getArguments().get(i);
-			if (fp instanceof LazyParameter){
-				
-			}else{
-				if (signature[i] == null) return false;
-				VariableParameter vp = (VariableParameter)fp;
-				VariableParameterKind kind = vp.getKind();
-				TypeDefinition td = fp.getType();
-				if (!canAssign(signature[i].getKind(), kind)) return false;
-				if (!canCast(signature[i].getType(), td)) return false;
-			}
-		}
-		
-		return true;
 	}
 	
 	public static boolean canCast(TypeDefinition from, TypeDefinition to){
@@ -215,28 +173,6 @@ public class TaskUtils {
 	
 	public static IStatus error(String msg){
 		return new Status(IStatus.ERROR, ECompilerPlugin.PLUGIN_ID, msg);
-	}
-	
-	public static TypeSignature inferType(ExecutionStep step){
-		if (step instanceof VariableReference){
-			Variable v = ((VariableReference) step).getVariable();
-			if (v != null){
-				//PointerTypeDefinition pdef = TypesFactory.eINSTANCE.createPointerTypeDefinition();
-				//pdef.setPointerType(v.getType());
-				//return pdef;
-				return new TypeSignature(v.getType(), VariableParameterKind.VAR);
-			}
-		}
-		if (step instanceof LiteralExpression){
-			return new TypeSignature(((LiteralExpression) step).getType(), VariableParameterKind.CONST);
-		}
-		if (step instanceof Call){
-			CallableElement called = ((Call) step).getFunction();
-			if (called instanceof Function){
-				return new TypeSignature(((Function) called).getType(), VariableParameterKind.VAR);
-			}
-		}
-		return null;
 	}
 	
 	public static URI findModelURI(IProject project, String name){

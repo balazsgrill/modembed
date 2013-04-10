@@ -33,7 +33,7 @@ public interface MODembedElement extends EObject {
 	 * The list contents are of type {@link hu.modembed.model.core.Origin}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Origins</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Origins</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
@@ -47,10 +47,6 @@ public interface MODembedElement extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Description</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The description of the element

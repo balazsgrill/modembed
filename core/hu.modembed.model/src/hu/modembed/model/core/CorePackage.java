@@ -184,7 +184,6 @@ public interface CorePackage extends EPackage {
 	 */
 	int ROOT_ELEMENT_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
-
 	/**
 	 * The meta object id for the '{@link hu.modembed.model.core.impl.OriginImpl <em>Origin</em>}' class.
 	 * <!-- begin-user-doc -->

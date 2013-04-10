@@ -35,18 +35,6 @@ terminal REAL returns ecore::EBigDecimal: INT '.' INT?;
 LITERAL: (INT | HEXINT | BINARY | REAL);
 
 /**********************
- * Annotations
- ***********************/
-
-AnnotationDefinition:
-	'annotation' name=ID
-;
-
-Annotation:
-	'#' definition=ID
-;
-
-/**********************
  * Workflow notation
  **********************/
 
@@ -62,7 +50,7 @@ WorkflowStepNotation:
 ;
 
 WorkflowStepParameterNotation:
-	parameter=ID '=' (value=STRING | value=LibraryName)
+	parameter=ID '=' (value=STRING | value=QualifiedName)
 ;
 
 /**********************
@@ -111,7 +99,6 @@ Library:
 LibraryItem:
 	Type | Operation | Variable';' | 
 	ConstantVariable';' | RegisterVariable';' 
-	| AnnotationDefinition ';'
 	;
 
 /***********************
@@ -121,7 +108,7 @@ Type:
 	'type' name=ID '=' def=TypeDef ';';
 
 TypeDef:
-	DataTypeDef | StructTypeDef | PointerTypeDef | ArrayTypeDef | RefTypeDef | UnspecifiedTypeDef
+	DataTypeDef | TupleTypeDef | PointerTypeDef | ArrayTypeDef | RefTypeDef | UnspecifiedTypeDef | FunctionTypeDef
 ;
 	
 UnspecifiedTypeDef :
@@ -163,15 +150,13 @@ IntegerDataTypeDef:
 enum IntegerKind:
 	UNSIGNED='unsigned' | SIGNED='signed'
 ;
-	
-StructTypeDef:
-	{StructTypeDef} 'struct' '{'
-		(members += StructTypeDefMember)
-		(',' members += StructTypeDefMember)*
-	'}';
 
-StructTypeDefMember returns Variable:
-	{StructTypeDefMember} type=TypeDef name=ID
+FunctionTypeDef:
+	'func' from=TypeDef '->' to=TypeDef
+;
+
+TupleTypeDef:
+	{TupleTypeDef} 'tuple' '{' (members+=TypeDef)* '}' 
 ;
 
 /*************************
@@ -321,7 +306,7 @@ XExpressionLiteral:
 ;
 
 XTopLevelExpression:
-	Annotation ';' | XExpression ';' | XErrorExpression ';' 
+	XExpression ';' 
 ;
 
 XErrorExpression:

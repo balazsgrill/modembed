@@ -2,11 +2,11 @@
  */
 package hu.modembed.model.architecture;
 
+import hu.modembed.model.abstraction.types.Type;
+
 import hu.modembed.model.core.RootElement;
 
 import hu.modembed.model.core.assembler.InstructionSet;
-
-import hu.modembed.model.emodel.Type;
 
 import org.eclipse.emf.common.util.EList;
 

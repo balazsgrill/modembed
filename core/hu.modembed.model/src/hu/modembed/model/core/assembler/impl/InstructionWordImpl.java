@@ -5,8 +5,8 @@ package hu.modembed.model.core.assembler.impl;
 import hu.modembed.model.core.assembler.AssemblerPackage;
 import hu.modembed.model.core.assembler.InstructionSection;
 import hu.modembed.model.core.assembler.InstructionWord;
-
 import hu.modembed.model.core.assembler.InstructionWordCondition;
+
 import hu.modembed.model.core.impl.MODembedElementImpl;
 
 import java.util.Collection;
