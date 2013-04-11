@@ -109,6 +109,16 @@ package core{
         	ref instructionset.InstructionParameter definition;
       	}
 		
+		class ProgramLinkMap extends infrastructure.RootElement {
+			val LinkMapping[*] mapping;
+		}
+		
+		class LinkMapping extends infrastructure.MODembedElement {
+			
+			ref AssemblerObject object;
+			attr long startAddress;
+		}
+		
 	}
 	
 }

@@ -24,5 +24,12 @@
             name="Generic">
       </category>
    </extension>
+   <extension
+         point="org.eclipse.epsilon.common.dt.tool">
+      <tool
+            class="hu.modembed.utils.MODembedTool"
+            defaultName="modembedTool">
+      </tool>
+   </extension>
 
 </plugin>

@@ -97,6 +97,14 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="definition" eType="#//core/instructionset/InstructionParameter"/>
       </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="ProgramLinkMap" eSuperTypes="#//infrastructure/RootElement">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="mapping" upperBound="-1"
+            eType="#//core/object/LinkMapping" containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="LinkMapping" eSuperTypes="#//infrastructure/MODembedElement">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="object" eType="#//core/object/AssemblerObject"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="startAddress" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+      </eClassifiers>
     </eSubpackages>
   </eSubpackages>
   <eSubpackages name="abstraction" nsURI="http://modembed.hu/abstraction" nsPrefix="abstraction">
