@@ -93,6 +93,22 @@ public class ObjectSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ObjectPackage.PROGRAM_LINK_MAP: {
+				ProgramLinkMap programLinkMap = (ProgramLinkMap)theEObject;
+				T result = caseProgramLinkMap(programLinkMap);
+				if (result == null) result = caseRootElement(programLinkMap);
+				if (result == null) result = caseNamedElement(programLinkMap);
+				if (result == null) result = caseMODembedElement(programLinkMap);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ObjectPackage.LINK_MAPPING: {
+				LinkMapping linkMapping = (LinkMapping)theEObject;
+				T result = caseLinkMapping(linkMapping);
+				if (result == null) result = caseMODembedElement(linkMapping);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -139,6 +155,36 @@ public class ObjectSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseInstructionCallParameter(InstructionCallParameter object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Program Link Map</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Program Link Map</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseProgramLinkMap(ProgramLinkMap object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Link Mapping</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Link Mapping</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLinkMapping(LinkMapping object) {
 		return null;
 	}
 

@@ -63,9 +63,8 @@ package core{
     	}
 
     	abstract class InstructionSection extends infrastructure.MODembedElement {
-      		attr int[1] start;
       		attr int[1] size;
-      		attr int[1] shift;
+      		attr int shift;
     	}
 
     	class ConstantSection extends InstructionSection {

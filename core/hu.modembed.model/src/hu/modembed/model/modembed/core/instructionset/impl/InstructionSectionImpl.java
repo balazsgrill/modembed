@@ -20,7 +20,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.modembed.model.modembed.core.instructionset.impl.InstructionSectionImpl#getStart <em>Start</em>}</li>
  *   <li>{@link hu.modembed.model.modembed.core.instructionset.impl.InstructionSectionImpl#getSize <em>Size</em>}</li>
  *   <li>{@link hu.modembed.model.modembed.core.instructionset.impl.InstructionSectionImpl#getShift <em>Shift</em>}</li>
  * </ul>
@@ -29,26 +28,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public abstract class InstructionSectionImpl extends MODembedElementImpl implements InstructionSection {
-	/**
-	 * The default value of the '{@link #getStart() <em>Start</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStart()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int START_EDEFAULT = 0;
-
-	/**
-	 * The cached value of the '{@link #getStart() <em>Start</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStart()
-	 * @generated
-	 * @ordered
-	 */
-	protected int start = START_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getSize() <em>Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -113,27 +92,6 @@ public abstract class InstructionSectionImpl extends MODembedElementImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getStart() {
-		return start;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setStart(int newStart) {
-		int oldStart = start;
-		start = newStart;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InstructionsetPackage.INSTRUCTION_SECTION__START, oldStart, start));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public int getSize() {
 		return size;
 	}
@@ -179,8 +137,6 @@ public abstract class InstructionSectionImpl extends MODembedElementImpl impleme
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case InstructionsetPackage.INSTRUCTION_SECTION__START:
-				return getStart();
 			case InstructionsetPackage.INSTRUCTION_SECTION__SIZE:
 				return getSize();
 			case InstructionsetPackage.INSTRUCTION_SECTION__SHIFT:
@@ -197,9 +153,6 @@ public abstract class InstructionSectionImpl extends MODembedElementImpl impleme
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case InstructionsetPackage.INSTRUCTION_SECTION__START:
-				setStart((Integer)newValue);
-				return;
 			case InstructionsetPackage.INSTRUCTION_SECTION__SIZE:
 				setSize((Integer)newValue);
 				return;
@@ -218,9 +171,6 @@ public abstract class InstructionSectionImpl extends MODembedElementImpl impleme
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case InstructionsetPackage.INSTRUCTION_SECTION__START:
-				setStart(START_EDEFAULT);
-				return;
 			case InstructionsetPackage.INSTRUCTION_SECTION__SIZE:
 				setSize(SIZE_EDEFAULT);
 				return;
@@ -239,8 +189,6 @@ public abstract class InstructionSectionImpl extends MODembedElementImpl impleme
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case InstructionsetPackage.INSTRUCTION_SECTION__START:
-				return start != START_EDEFAULT;
 			case InstructionsetPackage.INSTRUCTION_SECTION__SIZE:
 				return size != SIZE_EDEFAULT;
 			case InstructionsetPackage.INSTRUCTION_SECTION__SHIFT:
@@ -259,9 +207,7 @@ public abstract class InstructionSectionImpl extends MODembedElementImpl impleme
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (start: ");
-		result.append(start);
-		result.append(", size: ");
+		result.append(" (size: ");
 		result.append(size);
 		result.append(", shift: ");
 		result.append(shift);

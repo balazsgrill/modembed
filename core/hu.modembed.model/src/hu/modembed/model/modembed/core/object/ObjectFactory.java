@@ -49,6 +49,24 @@ public interface ObjectFactory extends EFactory {
 	InstructionCallParameter createInstructionCallParameter();
 
 	/**
+	 * Returns a new object of class '<em>Program Link Map</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Program Link Map</em>'.
+	 * @generated
+	 */
+	ProgramLinkMap createProgramLinkMap();
+
+	/**
+	 * Returns a new object of class '<em>Link Mapping</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Link Mapping</em>'.
+	 * @generated
+	 */
+	LinkMapping createLinkMapping();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

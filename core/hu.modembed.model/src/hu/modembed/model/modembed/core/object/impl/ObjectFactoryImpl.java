@@ -59,6 +59,8 @@ public class ObjectFactoryImpl extends EFactoryImpl implements ObjectFactory {
 			case ObjectPackage.ASSEMBLER_OBJECT: return createAssemblerObject();
 			case ObjectPackage.INSTRUCTION_CALL: return createInstructionCall();
 			case ObjectPackage.INSTRUCTION_CALL_PARAMETER: return createInstructionCallParameter();
+			case ObjectPackage.PROGRAM_LINK_MAP: return createProgramLinkMap();
+			case ObjectPackage.LINK_MAPPING: return createLinkMapping();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -92,6 +94,26 @@ public class ObjectFactoryImpl extends EFactoryImpl implements ObjectFactory {
 	public InstructionCallParameter createInstructionCallParameter() {
 		InstructionCallParameterImpl instructionCallParameter = new InstructionCallParameterImpl();
 		return instructionCallParameter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProgramLinkMap createProgramLinkMap() {
+		ProgramLinkMapImpl programLinkMap = new ProgramLinkMapImpl();
+		return programLinkMap;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public LinkMapping createLinkMapping() {
+		LinkMappingImpl linkMapping = new LinkMappingImpl();
+		return linkMapping;
 	}
 
 	/**

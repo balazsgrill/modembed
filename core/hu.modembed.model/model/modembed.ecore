@@ -52,12 +52,9 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="InstructionSection" abstract="true"
           eSuperTypes="#//infrastructure/MODembedElement">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="start" lowerBound="1"
-            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" lowerBound="1"
             eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="shift" lowerBound="1"
-            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="shift" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="ConstantSection" eSuperTypes="#//core/instructionset/InstructionSection">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1"

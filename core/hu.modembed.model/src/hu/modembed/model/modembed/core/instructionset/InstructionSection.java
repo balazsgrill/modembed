@@ -12,7 +12,6 @@ import hu.modembed.model.modembed.infrastructure.MODembedElement;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link hu.modembed.model.modembed.core.instructionset.InstructionSection#getStart <em>Start</em>}</li>
  *   <li>{@link hu.modembed.model.modembed.core.instructionset.InstructionSection#getSize <em>Size</em>}</li>
  *   <li>{@link hu.modembed.model.modembed.core.instructionset.InstructionSection#getShift <em>Shift</em>}</li>
  * </ul>
@@ -23,32 +22,6 @@ import hu.modembed.model.modembed.infrastructure.MODembedElement;
  * @generated
  */
 public interface InstructionSection extends MODembedElement {
-	/**
-	 * Returns the value of the '<em><b>Start</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Start</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Start</em>' attribute.
-	 * @see #setStart(int)
-	 * @see hu.modembed.model.modembed.core.instructionset.InstructionsetPackage#getInstructionSection_Start()
-	 * @model required="true"
-	 * @generated
-	 */
-	int getStart();
-
-	/**
-	 * Sets the value of the '{@link hu.modembed.model.modembed.core.instructionset.InstructionSection#getStart <em>Start</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Start</em>' attribute.
-	 * @see #getStart()
-	 * @generated
-	 */
-	void setStart(int value);
-
 	/**
 	 * Returns the value of the '<em><b>Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -86,7 +59,7 @@ public interface InstructionSection extends MODembedElement {
 	 * @return the value of the '<em>Shift</em>' attribute.
 	 * @see #setShift(int)
 	 * @see hu.modembed.model.modembed.core.instructionset.InstructionsetPackage#getInstructionSection_Shift()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
 	int getShift();

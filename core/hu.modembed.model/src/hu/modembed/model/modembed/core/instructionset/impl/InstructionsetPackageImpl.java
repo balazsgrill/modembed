@@ -291,7 +291,7 @@ public class InstructionsetPackageImpl extends EPackageImpl implements Instructi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getInstructionSection_Start() {
+	public EAttribute getInstructionSection_Size() {
 		return (EAttribute)instructionSectionEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -300,17 +300,8 @@ public class InstructionsetPackageImpl extends EPackageImpl implements Instructi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getInstructionSection_Size() {
-		return (EAttribute)instructionSectionEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getInstructionSection_Shift() {
-		return (EAttribute)instructionSectionEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)instructionSectionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -462,7 +453,6 @@ public class InstructionsetPackageImpl extends EPackageImpl implements Instructi
 		createEAttribute(instructionParameterEClass, INSTRUCTION_PARAMETER__DEFAULT_VALUE);
 
 		instructionSectionEClass = createEClass(INSTRUCTION_SECTION);
-		createEAttribute(instructionSectionEClass, INSTRUCTION_SECTION__START);
 		createEAttribute(instructionSectionEClass, INSTRUCTION_SECTION__SIZE);
 		createEAttribute(instructionSectionEClass, INSTRUCTION_SECTION__SHIFT);
 
@@ -539,9 +529,8 @@ public class InstructionsetPackageImpl extends EPackageImpl implements Instructi
 		initEAttribute(getInstructionParameter_DefaultValue(), ecorePackage.getEInt(), "defaultValue", null, 0, 1, InstructionParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(instructionSectionEClass, InstructionSection.class, "InstructionSection", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getInstructionSection_Start(), ecorePackage.getEInt(), "start", null, 1, 1, InstructionSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getInstructionSection_Size(), ecorePackage.getEInt(), "size", null, 1, 1, InstructionSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getInstructionSection_Shift(), ecorePackage.getEInt(), "shift", null, 1, 1, InstructionSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getInstructionSection_Shift(), ecorePackage.getEInt(), "shift", null, 0, 1, InstructionSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(constantSectionEClass, ConstantSection.class, "ConstantSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getConstantSection_Value(), ecorePackage.getEInt(), "value", null, 1, 1, ConstantSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

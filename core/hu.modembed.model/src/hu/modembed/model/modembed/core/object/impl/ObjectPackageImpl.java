@@ -21,9 +21,11 @@ import hu.modembed.model.modembed.core.instructionset.impl.InstructionsetPackage
 import hu.modembed.model.modembed.core.object.AssemblerObject;
 import hu.modembed.model.modembed.core.object.InstructionCall;
 import hu.modembed.model.modembed.core.object.InstructionCallParameter;
+import hu.modembed.model.modembed.core.object.LinkMapping;
 import hu.modembed.model.modembed.core.object.ObjectFactory;
 import hu.modembed.model.modembed.core.object.ObjectPackage;
 
+import hu.modembed.model.modembed.core.object.ProgramLinkMap;
 import hu.modembed.model.modembed.infrastructure.InfrastructurePackage;
 
 import hu.modembed.model.modembed.infrastructure.impl.InfrastructurePackageImpl;
@@ -66,6 +68,20 @@ public class ObjectPackageImpl extends EPackageImpl implements ObjectPackage {
 	 * @generated
 	 */
 	private EClass instructionCallParameterEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass programLinkMapEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass linkMappingEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -225,6 +241,51 @@ public class ObjectPackageImpl extends EPackageImpl implements ObjectPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getProgramLinkMap() {
+		return programLinkMapEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getProgramLinkMap_Mapping() {
+		return (EReference)programLinkMapEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getLinkMapping() {
+		return linkMappingEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getLinkMapping_Object() {
+		return (EReference)linkMappingEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLinkMapping_StartAddress() {
+		return (EAttribute)linkMappingEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ObjectFactory getObjectFactory() {
 		return (ObjectFactory)getEFactoryInstance();
 	}
@@ -258,6 +319,13 @@ public class ObjectPackageImpl extends EPackageImpl implements ObjectPackage {
 		instructionCallParameterEClass = createEClass(INSTRUCTION_CALL_PARAMETER);
 		createEAttribute(instructionCallParameterEClass, INSTRUCTION_CALL_PARAMETER__VALUE);
 		createEReference(instructionCallParameterEClass, INSTRUCTION_CALL_PARAMETER__DEFINITION);
+
+		programLinkMapEClass = createEClass(PROGRAM_LINK_MAP);
+		createEReference(programLinkMapEClass, PROGRAM_LINK_MAP__MAPPING);
+
+		linkMappingEClass = createEClass(LINK_MAPPING);
+		createEReference(linkMappingEClass, LINK_MAPPING__OBJECT);
+		createEAttribute(linkMappingEClass, LINK_MAPPING__START_ADDRESS);
 	}
 
 	/**
@@ -295,6 +363,8 @@ public class ObjectPackageImpl extends EPackageImpl implements ObjectPackage {
 		assemblerObjectEClass.getESuperTypes().add(theInfrastructurePackage.getRootElement());
 		instructionCallEClass.getESuperTypes().add(theInfrastructurePackage.getMODembedElement());
 		instructionCallParameterEClass.getESuperTypes().add(theInfrastructurePackage.getMODembedElement());
+		programLinkMapEClass.getESuperTypes().add(theInfrastructurePackage.getRootElement());
+		linkMappingEClass.getESuperTypes().add(theInfrastructurePackage.getMODembedElement());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(assemblerObjectEClass, AssemblerObject.class, "AssemblerObject", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -307,6 +377,13 @@ public class ObjectPackageImpl extends EPackageImpl implements ObjectPackage {
 		initEClass(instructionCallParameterEClass, InstructionCallParameter.class, "InstructionCallParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getInstructionCallParameter_Value(), ecorePackage.getELong(), "value", null, 0, 1, InstructionCallParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getInstructionCallParameter_Definition(), theInstructionsetPackage.getInstructionParameter(), null, "definition", null, 0, 1, InstructionCallParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(programLinkMapEClass, ProgramLinkMap.class, "ProgramLinkMap", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getProgramLinkMap_Mapping(), this.getLinkMapping(), null, "mapping", null, 0, -1, ProgramLinkMap.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(linkMappingEClass, LinkMapping.class, "LinkMapping", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getLinkMapping_Object(), this.getAssemblerObject(), null, "object", null, 0, 1, LinkMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLinkMapping_StartAddress(), ecorePackage.getELong(), "startAddress", null, 0, 1, LinkMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

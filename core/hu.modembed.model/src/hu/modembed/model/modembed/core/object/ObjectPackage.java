@@ -224,6 +224,117 @@ public interface ObjectPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link hu.modembed.model.modembed.core.object.impl.ProgramLinkMapImpl <em>Program Link Map</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.modembed.model.modembed.core.object.impl.ProgramLinkMapImpl
+	 * @see hu.modembed.model.modembed.core.object.impl.ObjectPackageImpl#getProgramLinkMap()
+	 * @generated
+	 */
+	int PROGRAM_LINK_MAP = 3;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROGRAM_LINK_MAP__DESCRIPTION = InfrastructurePackage.ROOT_ELEMENT__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROGRAM_LINK_MAP__ORIGINS = InfrastructurePackage.ROOT_ELEMENT__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROGRAM_LINK_MAP__NAME = InfrastructurePackage.ROOT_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Mapping</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROGRAM_LINK_MAP__MAPPING = InfrastructurePackage.ROOT_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Program Link Map</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROGRAM_LINK_MAP_FEATURE_COUNT = InfrastructurePackage.ROOT_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link hu.modembed.model.modembed.core.object.impl.LinkMappingImpl <em>Link Mapping</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.modembed.model.modembed.core.object.impl.LinkMappingImpl
+	 * @see hu.modembed.model.modembed.core.object.impl.ObjectPackageImpl#getLinkMapping()
+	 * @generated
+	 */
+	int LINK_MAPPING = 4;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_MAPPING__DESCRIPTION = InfrastructurePackage.MO_DEMBED_ELEMENT__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_MAPPING__ORIGINS = InfrastructurePackage.MO_DEMBED_ELEMENT__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Object</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_MAPPING__OBJECT = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Start Address</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_MAPPING__START_ADDRESS = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Link Mapping</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_MAPPING_FEATURE_COUNT = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 2;
+
+
+	/**
 	 * Returns the meta object for class '{@link hu.modembed.model.modembed.core.object.AssemblerObject <em>Assembler Object</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -307,6 +418,59 @@ public interface ObjectPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getInstructionCallParameter_Definition();
+
+	/**
+	 * Returns the meta object for class '{@link hu.modembed.model.modembed.core.object.ProgramLinkMap <em>Program Link Map</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Program Link Map</em>'.
+	 * @see hu.modembed.model.modembed.core.object.ProgramLinkMap
+	 * @generated
+	 */
+	EClass getProgramLinkMap();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link hu.modembed.model.modembed.core.object.ProgramLinkMap#getMapping <em>Mapping</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Mapping</em>'.
+	 * @see hu.modembed.model.modembed.core.object.ProgramLinkMap#getMapping()
+	 * @see #getProgramLinkMap()
+	 * @generated
+	 */
+	EReference getProgramLinkMap_Mapping();
+
+	/**
+	 * Returns the meta object for class '{@link hu.modembed.model.modembed.core.object.LinkMapping <em>Link Mapping</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Link Mapping</em>'.
+	 * @see hu.modembed.model.modembed.core.object.LinkMapping
+	 * @generated
+	 */
+	EClass getLinkMapping();
+
+	/**
+	 * Returns the meta object for the reference '{@link hu.modembed.model.modembed.core.object.LinkMapping#getObject <em>Object</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Object</em>'.
+	 * @see hu.modembed.model.modembed.core.object.LinkMapping#getObject()
+	 * @see #getLinkMapping()
+	 * @generated
+	 */
+	EReference getLinkMapping_Object();
+
+	/**
+	 * Returns the meta object for the attribute '{@link hu.modembed.model.modembed.core.object.LinkMapping#getStartAddress <em>Start Address</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Start Address</em>'.
+	 * @see hu.modembed.model.modembed.core.object.LinkMapping#getStartAddress()
+	 * @see #getLinkMapping()
+	 * @generated
+	 */
+	EAttribute getLinkMapping_StartAddress();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -399,6 +563,50 @@ public interface ObjectPackage extends EPackage {
 		 * @generated
 		 */
 		EReference INSTRUCTION_CALL_PARAMETER__DEFINITION = eINSTANCE.getInstructionCallParameter_Definition();
+
+		/**
+		 * The meta object literal for the '{@link hu.modembed.model.modembed.core.object.impl.ProgramLinkMapImpl <em>Program Link Map</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.modembed.model.modembed.core.object.impl.ProgramLinkMapImpl
+		 * @see hu.modembed.model.modembed.core.object.impl.ObjectPackageImpl#getProgramLinkMap()
+		 * @generated
+		 */
+		EClass PROGRAM_LINK_MAP = eINSTANCE.getProgramLinkMap();
+
+		/**
+		 * The meta object literal for the '<em><b>Mapping</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROGRAM_LINK_MAP__MAPPING = eINSTANCE.getProgramLinkMap_Mapping();
+
+		/**
+		 * The meta object literal for the '{@link hu.modembed.model.modembed.core.object.impl.LinkMappingImpl <em>Link Mapping</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.modembed.model.modembed.core.object.impl.LinkMappingImpl
+		 * @see hu.modembed.model.modembed.core.object.impl.ObjectPackageImpl#getLinkMapping()
+		 * @generated
+		 */
+		EClass LINK_MAPPING = eINSTANCE.getLinkMapping();
+
+		/**
+		 * The meta object literal for the '<em><b>Object</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LINK_MAPPING__OBJECT = eINSTANCE.getLinkMapping_Object();
+
+		/**
+		 * The meta object literal for the '<em><b>Start Address</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LINK_MAPPING__START_ADDRESS = eINSTANCE.getLinkMapping_StartAddress();
 
 	}
 

@@ -269,22 +269,13 @@ public interface InstructionsetPackage extends EPackage {
 	int INSTRUCTION_SECTION__ORIGINS = InfrastructurePackage.MO_DEMBED_ELEMENT__ORIGINS;
 
 	/**
-	 * The feature id for the '<em><b>Start</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INSTRUCTION_SECTION__START = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INSTRUCTION_SECTION__SIZE = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 1;
+	int INSTRUCTION_SECTION__SIZE = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Shift</b></em>' attribute.
@@ -293,7 +284,7 @@ public interface InstructionsetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INSTRUCTION_SECTION__SHIFT = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 2;
+	int INSTRUCTION_SECTION__SHIFT = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Instruction Section</em>' class.
@@ -302,7 +293,7 @@ public interface InstructionsetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INSTRUCTION_SECTION_FEATURE_COUNT = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 3;
+	int INSTRUCTION_SECTION_FEATURE_COUNT = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link hu.modembed.model.modembed.core.instructionset.impl.ConstantSectionImpl <em>Constant Section</em>}' class.
@@ -331,15 +322,6 @@ public interface InstructionsetPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONSTANT_SECTION__ORIGINS = INSTRUCTION_SECTION__ORIGINS;
-
-	/**
-	 * The feature id for the '<em><b>Start</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONSTANT_SECTION__START = INSTRUCTION_SECTION__START;
 
 	/**
 	 * The feature id for the '<em><b>Size</b></em>' attribute.
@@ -404,15 +386,6 @@ public interface InstructionsetPackage extends EPackage {
 	 * @ordered
 	 */
 	int PARAMETER_SECTION__ORIGINS = INSTRUCTION_SECTION__ORIGINS;
-
-	/**
-	 * The feature id for the '<em><b>Start</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARAMETER_SECTION__START = INSTRUCTION_SECTION__START;
 
 	/**
 	 * The feature id for the '<em><b>Size</b></em>' attribute.
@@ -714,17 +687,6 @@ public interface InstructionsetPackage extends EPackage {
 	EClass getInstructionSection();
 
 	/**
-	 * Returns the meta object for the attribute '{@link hu.modembed.model.modembed.core.instructionset.InstructionSection#getStart <em>Start</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Start</em>'.
-	 * @see hu.modembed.model.modembed.core.instructionset.InstructionSection#getStart()
-	 * @see #getInstructionSection()
-	 * @generated
-	 */
-	EAttribute getInstructionSection_Start();
-
-	/**
 	 * Returns the meta object for the attribute '{@link hu.modembed.model.modembed.core.instructionset.InstructionSection#getSize <em>Size</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -982,14 +944,6 @@ public interface InstructionsetPackage extends EPackage {
 		 * @generated
 		 */
 		EClass INSTRUCTION_SECTION = eINSTANCE.getInstructionSection();
-
-		/**
-		 * The meta object literal for the '<em><b>Start</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute INSTRUCTION_SECTION__START = eINSTANCE.getInstructionSection_Start();
 
 		/**
 		 * The meta object literal for the '<em><b>Size</b></em>' attribute feature.
