@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+	<extension point="org.emftext.access.syntax.ui">
+		<metaInformationProvider class="hu.modembed.model.textnotations.instructionset.ui.InstructionsetUIMetaInformation" id="hu.modembed.model.textnotations.instructionset.ui.InstructionsetUIMetaInformation">
+		</metaInformationProvider>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors">
+		<editor class="hu.modembed.model.textnotations.instructionset.ui.InstructionsetEditor" contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor" extensions="instructionset" icon="icons/editor_icon.gif" id="hu.modembed.model.textnotations.instructionset.ui.InstructionsetEditor" name="EMFText instructionset Editor">
+			<contentTypeBinding contentTypeId="hu.modembed.model.textnotations.instructionset">
+			</contentTypeBinding>
+		</editor>
+	</extension>
+	
+	<extension point="org.eclipse.core.runtime.preferences">
+		<initializer class="hu.modembed.model.textnotations.instructionset.ui.InstructionsetPreferenceInitializer">
+		</initializer>
+	</extension>
+	
+	<extension point="org.eclipse.ui.preferencePages">
+		<page name="Instructionset Text Editor" id="hu.modembed.model.textnotations.instructionset.ui.InstructionsetPreferencePage" class="hu.modembed.model.textnotations.instructionset.ui.InstructionsetPreferencePage" category="org.eclipse.ui.preferencePages.GeneralTextEditor">
+		</page>
+		<page name="Syntax Coloring" id="hu.modembed.model.textnotations.instructionset.ui.InstructionsetSyntaxColoringPreferencePage" class="hu.modembed.model.textnotations.instructionset.ui.InstructionsetSyntaxColoringPreferencePage" category="hu.modembed.model.textnotations.instructionset.ui.InstructionsetPreferencePage">
+		</page>
+		<page name="Brackets" id="hu.modembed.model.textnotations.instructionset.ui.InstructionsetBracketPreferencePage" class="hu.modembed.model.textnotations.instructionset.ui.InstructionsetBracketPreferencePage" category="hu.modembed.model.textnotations.instructionset.ui.InstructionsetPreferencePage">
+		</page>
+	</extension>
+	
+	<extension point="org.eclipse.ui.newWizards">
+		<category id="org.emftext.runtime.ui.EMFTextFileCategory" name="EMFText File">
+		</category>
+		<wizard category="org.emftext.runtime.ui.EMFTextFileCategory" icon="/icons/default_new_icon.gif" class="hu.modembed.model.textnotations.instructionset.ui.InstructionsetNewFileWizard" id="hu.modembed.model.textnotations.instructionset.ui.InstructionsetNewFileWizard" name="EMFText .instructionset file">
+		</wizard>
+		<category id="org.emftext.runtime.ui.EMFTextProjectCategory" name="EMFText Project">
+		</category>
+		<wizard category="org.emftext.runtime.ui.EMFTextProjectCategory" icon="/icons/default_new_icon.gif" class="hu.modembed.model.textnotations.instructionset.ui.InstructionsetNewProjectWizard" id="hu.modembed.model.textnotations.instructionset.ui.InstructionsetNewProjectWizard" name="EMFText instructionset project" project="true">
+		</wizard>
+	</extension>
+	
+	<extension point="org.eclipse.ui.ide.markerResolution">
+		<markerResolutionGenerator class="hu.modembed.model.textnotations.instructionset.ui.InstructionsetMarkerResolutionGenerator" markerType="hu.modembed.model.textnotations.instructionset.problem">
+		</markerResolutionGenerator>
+	</extension>
+	
+	<extension point="org.eclipse.core.filebuffers.annotationModelCreation">
+		<factory class="hu.modembed.model.textnotations.instructionset.ui.InstructionsetAnnotationModelFactory" extensions="instructionset">
+		</factory>
+	</extension>
+	
+	<extension point="org.eclipse.core.contenttype.contentTypes">
+		<content-type id="hu.modembed.model.textnotations.instructionset" name=".instructionset File" base-type="org.eclipse.core.runtime.text" file-extensions="instructionset">
+		</content-type>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.documentProviders">
+		<provider class="org.eclipse.ui.editors.text.TextFileDocumentProvider" extensions="instructionset" id="hu.modembed.model.textnotations.instructionset.ui.provider">
+		</provider>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.annotationTypes">
+		<type name="hu.modembed.model.textnotations.instructionset.ui.occurences">
+		</type>
+		<type name="hu.modembed.model.textnotations.instructionset.ui.occurences.declaration" super="hu.modembed.model.textnotations.instructionset.ui.occurences">
+		</type>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.markerAnnotationSpecification">
+		<specification annotationType="hu.modembed.model.textnotations.instructionset.ui.occurences" label="Occurrences (in .instructionset files)" icon="/icons/occurrence_icon.gif" textPreferenceKey="instructionset.occurrenceIndication" textPreferenceValue="false" highlightPreferenceKey="instructionset.occurrenceHighlighting" highlightPreferenceValue="true" contributesToHeader="false" overviewRulerPreferenceKey="instructionset.occurrenceIndicationInOverviewRuler" overviewRulerPreferenceValue="true" verticalRulerPreferenceKey="instructionset.occurrenceIndicationInVerticalRuler" verticalRulerPreferenceValue="false" colorPreferenceKey="instructionset.occurrenceIndicationColor" colorPreferenceValue="212,212,212" presentationLayer="4" showInNextPrevDropdownToolbarActionKey="instructionset.showOccurrenceInNextPrevDropdownToolbarAction" showInNextPrevDropdownToolbarAction="true" isGoToNextNavigationTargetKey="instructionset.isOccurrenceGoToNextNavigationTarget" isGoToNextNavigationTarget="false" isGoToPreviousNavigationTargetKey="instructionset.isOccurrenceGoToPreviousNavigationTarget" isGoToPreviousNavigationTarget="false" textStylePreferenceKey="instructionset.occurrenceTextStyle" textStylePreferenceValue="NONE">
+		</specification>
+		<specification annotationType="hu.modembed.model.textnotations.instructionset.ui.occurences.declaration" label="Declarations (in .instructionset files)" textPreferenceKey="instructionset.declarationIndication" textPreferenceValue="false" highlightPreferenceKey="instructionset.declarationHighlighting" highlightPreferenceValue="true" overviewRulerPreferenceKey="instructionset.declarationIndicationInOverviewRuler" overviewRulerPreferenceValue="true" verticalRulerPreferenceKey="instructionset.declarationIndicationInVerticalRuler" verticalRulerPreferenceValue="false" colorPreferenceKey="instructionset.declarationIndicationColor" colorPreferenceValue="240,216,168" presentationLayer="4" textStylePreferenceKey="instructionset.declarationTextStyle" textStylePreferenceValue="NONE">
+		</specification>
+	</extension>
+	
+	<extension point="org.eclipse.debug.ui.launchConfigurationTypeImages">
+		<launchConfigurationTypeImage icon="/icons/launch_type_icon.gif" configTypeID="hu.modembed.model.textnotations.instructionset.ui.launchConfigurationType" id="hu.modembed.model.modembed.core.instructionset.launchImage">
+		</launchConfigurationTypeImage>
+	</extension>
+	
+	<extension point="org.eclipse.debug.ui.launchConfigurationTabGroups">
+		<launchConfigurationTabGroup type="hu.modembed.model.textnotations.instructionset.ui.launchConfigurationType" class="hu.modembed.model.textnotations.instructionset.ui.launch.InstructionsetLaunchConfigurationTabGroup" id="hu.modembed.model.modembed.core.instructionset.launchConfigurationTabGroup" helpContextId="hu.modembed.model.modembed.core.instructionset.launchConfigHelpContext">
+			<launchMode mode="debug" perspective="org.eclipse.debug.ui.DebugPerspective" description="Debug instructionset model.">
+			</launchMode>
+			<launchMode mode="run" description="Run instructionset model.">
+			</launchMode>
+		</launchConfigurationTabGroup>
+	</extension>
+	
+	<extension point="org.eclipse.debug.ui.launchShortcuts">
+		<shortcut label="instructionset Application" icon="/icons/launch_shortcut_icon.gif" helpContextId="hu.modembed.model.modembed.core.instructionset.launch" modes="run,debug" class="hu.modembed.model.textnotations.instructionset.ui.launch.InstructionsetLaunchShortcut" description="Launch a instructionset model" id="hu.modembed.model.modembed.core.instructionset.launchShortcut">
+			<description description="Run instructionset model" mode="run">
+			</description>
+			<description description="Debug instructionset model" mode="debug">
+			</description>
+			<contextualLaunch>
+				<enablement>
+					<with variable="selection">
+						<count value="1">
+						</count>
+						<iterate>
+							<test property="hu.modembed.model.modembed.core.instructionset.isLaunchable">
+							</test>
+						</iterate>
+					</with>
+				</enablement>
+			</contextualLaunch>
+			<configurationType id="hu.modembed.model.textnotations.instructionset.ui.launchConfigurationType">
+			</configurationType>
+		</shortcut>
+	</extension>
+	
+	<extension point="org.eclipse.core.expressions.propertyTesters">
+		<propertyTester id="hu.modembed.model.modembed.core.instructionset.PropertyTester" type="java.lang.Object" namespace="hu.modembed.model.modembed.core.instructionset" properties="isLaunchable" class="hu.modembed.model.textnotations.instructionset.ui.InstructionsetPropertyTester">
+		</propertyTester>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.annotationTypes">
+		<type name="hu.modembed.model.textnotations.instructionset.ui.debug.lineBreakpoint" markerType="hu.modembed.model.textnotations.instructionset.debug.lineBreakpoint.marker" super="org.eclipse.debug.core.breakpoint">
+		</type>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.markerAnnotationSpecification">
+		<specification annotationType="hu.modembed.model.textnotations.instructionset.ui.debug.lineBreakpoint" label="Breakpoints (in .instructionset files)" icon="/icons/breakpoint_icon.gif" textPreferenceKey="hu.modembed.model.textnotations.instructionset.ui.lineBreakpoint" textPreferenceValue="false" highlightPreferenceKey="hu.modembed.model.textnotations.instructionset.ui.lineBreakpointHighlighting" highlightPreferenceValue="true" contributesToHeader="false" overviewRulerPreferenceKey="hu.modembed.model.textnotations.instructionset.ui.lineBreakpointIndicationInOverviewRuler" overviewRulerPreferenceValue="true" verticalRulerPreferenceKey="hu.modembed.model.textnotations.instructionset.ui.lineBreakpointIndicationInVerticalRuler" verticalRulerPreferenceValue="false" colorPreferenceKey="hu.modembed.model.textnotations.instructionset.ui.lineBreakpointColor" colorPreferenceValue="212,212,212" presentationLayer="4" showInNextPrevDropdownToolbarActionKey="hu.modembed.model.textnotations.instructionset.ui.showLineBreakpointInNextPrevDropdownToolbarAction" showInNextPrevDropdownToolbarAction="true" isGoToNextNavigationTargetKey="hu.modembed.model.textnotations.instructionset.ui.isLineBreakpointGoToNextNavigationTarget" isGoToNextNavigationTarget="false" isGoToPreviousNavigationTargetKey="hu.modembed.model.textnotations.instructionset.ui.isLineBreakpointGoToPreviousNavigationTarget" isGoToPreviousNavigationTarget="false" textStylePreferenceKey="hu.modembed.model.textnotations.instructionset.ui.lineBreakpointTextStyle" textStylePreferenceValue="NONE">
+		</specification>
+	</extension>
+	
+	<extension point="org.eclipse.core.runtime.adapters">
+		<factory adaptableType="hu.modembed.model.textnotations.instructionset.ui.InstructionsetEditor" class="hu.modembed.model.textnotations.instructionset.ui.debug.InstructionsetAdapterFactory">
+			<adapter type="org.eclipse.debug.ui.actions.IToggleBreakpointsTarget">
+			</adapter>
+		</factory>
+		<factory adaptableType="hu.modembed.model.textnotations.instructionset.debug.InstructionsetDebugVariable" class="hu.modembed.model.textnotations.instructionset.ui.debug.InstructionsetAdapterFactory">
+			<adapter type="org.eclipse.debug.internal.ui.viewers.model.provisional.IElementLabelProvider">
+			</adapter>
+		</factory>
+		<factory adaptableType="hu.modembed.model.textnotations.instructionset.debug.InstructionsetDebugVariable" class="hu.modembed.model.textnotations.instructionset.ui.debug.InstructionsetAdapterFactory">
+			<adapter type="org.eclipse.debug.internal.ui.viewers.model.provisional.IElementContentProvider">
+			</adapter>
+		</factory>
+	</extension>
+	
+	<extension point="org.eclipse.ui.popupMenus">
+		<viewerContribution id="hu.modembed.model.textnotations.instructionset.ui.RulerPopupActions" targetID="hu.modembed.model.textnotations.instructionset.EditorRuler">
+			<action id="hu.modembed.model.textnotations.instructionset.ui.toggleBreakpointAction" icon="icons/breakpoint_icon.gif" label="Toggle Breakpoint" class="org.eclipse.debug.ui.actions.RulerToggleBreakpointActionDelegate" menubarPath="debug">
+			</action>
+		</viewerContribution>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editorActions">
+		<editorContribution targetID="hu.modembed.model.textnotations.instructionset.ui.InstructionsetEditor" id="hu.modembed.model.textnotations.instructionset.ui.BreakpointRulerActions">
+			<action id="hu.modembed.model.textnotations.instructionset.ui.debug.RulerToggleBreakpointAction" label="Add breakpoint" class="org.eclipse.debug.ui.actions.RulerToggleBreakpointActionDelegate" actionID="RulerDoubleClick">
+			</action>
+		</editorContribution>
+	</extension>
+	
+	<extension point="org.eclipse.debug.ui.debugModelPresentations">
+		<debugModelPresentation id="hu.modembed.model.textnotations.instructionset.debugModel" class="hu.modembed.model.textnotations.instructionset.ui.debug.InstructionsetDebugModelPresentation">
+		</debugModelPresentation>
+	</extension>
+	
+</plugin>

@@ -4,6 +4,10 @@ START InstructionSet
 
 OPTIONS { 
     usePredefinedTokens = "true"; 
+    basePackage = "hu.modembed.model.textnotations.instructionset";
+    uiBasePackage = "hu.modembed.model.textnotations.instructionset.ui";
+    resourcePluginID = "hu.modembed.model.textnotations.instructionset";
+    resourceUIPluginID = "hu.modembed.model.textnotations.instructionset.ui";
 }
 
 TOKENS { 
