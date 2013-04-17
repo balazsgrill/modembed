@@ -15,7 +15,7 @@ import java.util.List;
  */
 public class MODembedTool {
 
-	public Object createDisassember(InstructionSet instructionSet){
+	public Object createDisassembler(InstructionSet instructionSet){
 		return new Disassembler(instructionSet);
 	}
 

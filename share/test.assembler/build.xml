@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="test.assembler" default="run">
+
+	<include file="../e.core/compiler.xml"/>
+
+	<target name="run">
+		<epsilon.emf.loadModel
+			name="input_hex"
+			modelfile="16f1824_blink_wo_Config.hex"
+			read="true"
+			store="false"
+		/>
+		<epsilon.emf.loadModel
+			name="instructionSet"
+			modelfile="../microchip.pic16/microchip.pic16.instructionset"
+			read="true"
+			store="false"
+		/>
+		<epsilon.emf.loadModel
+			name="asm"
+			modelfile="blink.asm.model"
+			read="false"
+			store="true"
+		/>
+		<compiler.disassemble 
+			input="input_hex"
+			instructionset="instructionSet"
+			output="asm"
+			/>
+	</target>
+	
+</project>

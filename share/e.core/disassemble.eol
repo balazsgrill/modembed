@@ -1,0 +1,12 @@
+
+/* var instructionSet : InstructionSet is assumed */
+/* var hexFile : HexFile is assumed */
+/* var output : AssemblerObject is assumed */
+
+var mtool = new Native("hu.modembed.utils.MODembedTool");
+var disassembler = mtool.createDisassembler(instructionSet);
+
+var entry = heyFile.entries[0];
+
+output = new object!AssemblerObject;
+output.instructions = disassembler.disassemble(entry.data);
