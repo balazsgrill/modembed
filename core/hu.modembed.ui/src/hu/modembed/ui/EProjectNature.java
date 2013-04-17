@@ -12,7 +12,6 @@ import org.eclipse.core.resources.IProjectDescription;
 import org.eclipse.core.resources.IProjectNature;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.NullProgressMonitor;
-import org.eclipse.xtext.ui.XtextProjectHelper;
 
 /**
  * @author balazs.grill
@@ -24,14 +23,14 @@ public class EProjectNature implements IProjectNature{
 	public void configure() throws CoreException {
 		IProjectDescription pd = getProject().getDescription();
 		
-		String xtextnature = XtextProjectHelper.NATURE_ID;
+		//String xtextnature = XtextProjectHelper.NATURE_ID;
 		
 		List<String> natures = new ArrayList<String>(Arrays.asList(pd.getNatureIds()));
 		
-		if (!natures.contains(xtextnature)){
-			natures.add(xtextnature);
-			pd.setNatureIds(natures.toArray(new String[natures.size()]));
-		}
+		//if (!natures.contains(xtextnature)){
+			//natures.add(xtextnature);
+			//pd.setNatureIds(natures.toArray(new String[natures.size()]));
+		//}
 		
 		getProject().setDescription(pd, new NullProgressMonitor());
 	}
