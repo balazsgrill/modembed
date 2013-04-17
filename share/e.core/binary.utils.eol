@@ -1,0 +1,27 @@
+operation Integer shift(by: Integer) : Integer {
+	var left = by >= 0;
+	var n = by.abs();
+	var l = self;
+	var i = 0;
+	while(i < n){
+		if (left){
+			l = l*2;
+		}else{
+			l = l/2;
+		}
+		i = i+1;
+	}
+	return l;
+}
+
+operation mask(size : Integer, start : Integer) : Integer{
+	var v = 0;
+	var s = 1;
+	var i = 0;
+	while(i < size){
+		v = v + s;
+		s = s*2;
+		i = i+1;
+	}
+	return v.shift(start);
+}

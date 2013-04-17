@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	
+	<!-- = = = = = = = = = = = = = = = = =
+          macrodef: compiler.assemble          
+         = = = = = = = = = = = = = = = = = -->
+    <macrodef name="compiler.assemble">
+        <attribute name="input" />
+    	<attribute name="output" />
+        <sequential>
+        	<epsilon.etl src="compiler.assemble.etl">
+        		<model ref="@{input}" as="asm"/>
+        		<model ref="@{output}" as="hex"/>
+        	</epsilon.etl>
+        </sequential>
+    </macrodef>
+
+
+</project>
