@@ -4,6 +4,8 @@
 package hu.modembed.utils;
 
 import hu.modembed.hexfile.persistence.HexFileResource;
+import hu.modembed.model.modembed.core.instructionset.InstructionSet;
+import hu.modembed.utils.disassembler.Disassembler;
 
 import java.util.List;
 
@@ -13,6 +15,12 @@ import java.util.List;
  */
 public class MODembedTool {
 
+	public Object createDisassember(InstructionSet instructionSet){
+		return new Disassembler(instructionSet);
+	}
+
+	
+	
 	public byte[] numberListToByteArray(List<?> list){
 		byte[] data = new byte[list.size()];
 		for(int i = 0;i<data.length;i++){
