@@ -43,7 +43,6 @@
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//core/instructionset/Instruction/words"/>
         </genClasses>
         <genClasses ecoreClass="modembed.ecore#//core/instructionset/InstructionParameter">
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.ecore#//core/instructionset/InstructionParameter/id"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.ecore#//core/instructionset/InstructionParameter/defaultValue"/>
         </genClasses>
         <genClasses image="false" ecoreClass="modembed.ecore#//core/instructionset/InstructionSection">

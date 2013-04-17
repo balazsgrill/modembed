@@ -27,7 +27,6 @@ public class InstructionsetTokenResolverFactory implements hu.modembed.model.tex
 		registerTokenResolver("QUALIFIEDID", new hu.modembed.model.textnotations.instructionset.analysis.InstructionsetQUALIFIEDIDTokenResolver());
 		registerTokenResolver("INT", new hu.modembed.model.textnotations.instructionset.analysis.InstructionsetINTTokenResolver());
 		registerTokenResolver("BINARY", new hu.modembed.model.textnotations.instructionset.analysis.InstructionsetBINARYTokenResolver());
-		registerTokenResolver("TEXT", new hu.modembed.model.textnotations.instructionset.analysis.InstructionsetTEXTTokenResolver());
 	}
 	
 	public hu.modembed.model.textnotations.instructionset.IInstructionsetTokenResolver createTokenResolver(String tokenName) {

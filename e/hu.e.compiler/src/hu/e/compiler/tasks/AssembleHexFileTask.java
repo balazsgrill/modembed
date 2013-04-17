@@ -89,7 +89,7 @@ public class AssembleHexFileTask implements IModembedTask {
 						InstructionParameter iparameter = ((ParameterSection) s).getParameter();
 						Long lvalue = paramvalues.get(iparameter);
 						if (lvalue == null){
-							context.logStatus(TaskUtils.error("Parameter "+iparameter.getId()+" doesn't have a valid value.", s));
+							context.logStatus(TaskUtils.error("Parameter "+iparameter.getName()+" doesn't have a valid value.", s));
 						}else{
 							svalue = lvalue.longValue();
 						}

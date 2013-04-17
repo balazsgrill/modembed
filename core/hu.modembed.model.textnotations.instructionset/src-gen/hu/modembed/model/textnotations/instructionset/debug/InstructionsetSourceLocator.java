@@ -6,10 +6,7 @@
  */
 package hu.modembed.model.textnotations.instructionset.debug;
 
-public class InstructionsetSourceLocator extends org.eclipse.debug.core.sourcelookup.AbstractSourceLookupDirector {
-	
-	public void initializeParticipants() {
-		addParticipants(new org.eclipse.debug.core.sourcelookup.ISourceLookupParticipant[]{new hu.modembed.model.textnotations.instructionset.debug.InstructionsetSourceLookupParticipant()});
-	}
-	
+public class InstructionsetSourceLocator {
+	// The generator for this class is currently disabled by option
+	// 'disableDebugSupport' in the .cs file.
 }

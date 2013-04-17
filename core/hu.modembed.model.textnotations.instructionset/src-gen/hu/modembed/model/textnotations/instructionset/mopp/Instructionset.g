@@ -346,7 +346,7 @@ options {
 				break;
 			}
 		}
-		int followSetID = 33;
+		int followSetID = 39;
 		int i;
 		for (i = tokenIndexOfLastCompleteElement; i < tokenStream.size(); i++) {
 			org.antlr.runtime3_4_0.CommonToken nextToken = (org.antlr.runtime3_4_0.CommonToken) tokenStream.get(i);
@@ -701,7 +701,7 @@ parse_hu_modembed_model_modembed_core_instructionset_Instruction returns [hu.mod
 }
 :
 	(
-		a0 = TEXT		
+		a0 = IDENTIFIER		
 		{
 			if (terminateParsing) {
 				throw new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetTerminateParsingException();
@@ -711,7 +711,7 @@ parse_hu_modembed_model_modembed_core_instructionset_Instruction returns [hu.mod
 				startIncompleteElement(element);
 			}
 			if (a0 != null) {
-				hu.modembed.model.textnotations.instructionset.IInstructionsetTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("TEXT");
+				hu.modembed.model.textnotations.instructionset.IInstructionsetTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("IDENTIFIER");
 				tokenResolver.setOptions(getOptions());
 				hu.modembed.model.textnotations.instructionset.IInstructionsetTokenResolveResult result = getFreshTokenResolveResult();
 				tokenResolver.resolve(a0.getText(), element.eClass().getEStructuralFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.INSTRUCTION__NAME), result);
@@ -733,54 +733,28 @@ parse_hu_modembed_model_modembed_core_instructionset_Instruction returns [hu.mod
 	)
 	{
 		// expected elements (follow set)
-		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstruction(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[10]);
-		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstruction(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[11]);
-		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionSet(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[12]);
+		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[10]);
 	}
 	
-	(
-		(
-			(
-				a1_0 = parse_hu_modembed_model_modembed_core_instructionset_InstructionParameter				{
-					if (terminateParsing) {
-						throw new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetTerminateParsingException();
-					}
-					if (element == null) {
-						element = hu.modembed.model.modembed.core.instructionset.InstructionsetFactory.eINSTANCE.createInstruction();
-						startIncompleteElement(element);
-					}
-					if (a1_0 != null) {
-						if (a1_0 != null) {
-							Object value = a1_0;
-							addObjectToList(element, hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.INSTRUCTION__PARAMETERS, value);
-							completedElement(value, true);
-						}
-						collectHiddenTokens(element);
-						retrieveLayoutInformation(element, hu.modembed.model.textnotations.instructionset.grammar.InstructionsetGrammarInformationProvider.INSTRUCTIONSET_1_0_0_1_0_0_0, a1_0, true);
-						copyLocalizationInfos(a1_0, element);
-					}
-				}
-			)
-			{
-				// expected elements (follow set)
-				addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstruction(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[13]);
-				addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstruction(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[14]);
-				addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionSet(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[15]);
-			}
-			
-		)
-		
-	)*	{
+	a1 = '(' {
+		if (element == null) {
+			element = hu.modembed.model.modembed.core.instructionset.InstructionsetFactory.eINSTANCE.createInstruction();
+			startIncompleteElement(element);
+		}
+		collectHiddenTokens(element);
+		retrieveLayoutInformation(element, hu.modembed.model.textnotations.instructionset.grammar.InstructionsetGrammarInformationProvider.INSTRUCTIONSET_1_0_0_1, null, true);
+		copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken)a1, element);
+	}
+	{
 		// expected elements (follow set)
-		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstruction(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[16]);
-		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstruction(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[17]);
-		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionSet(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[18]);
+		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstruction(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[11]);
+		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[12]);
 	}
 	
 	(
 		(
 			(
-				a2_0 = parse_hu_modembed_model_modembed_core_instructionset_InstructionWord				{
+				a2_0 = parse_hu_modembed_model_modembed_core_instructionset_InstructionParameter				{
 					if (terminateParsing) {
 						throw new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetTerminateParsingException();
 					}
@@ -791,7 +765,7 @@ parse_hu_modembed_model_modembed_core_instructionset_Instruction returns [hu.mod
 					if (a2_0 != null) {
 						if (a2_0 != null) {
 							Object value = a2_0;
-							addObjectToList(element, hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.INSTRUCTION__WORDS, value);
+							addObjectToList(element, hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.INSTRUCTION__PARAMETERS, value);
 							completedElement(value, true);
 						}
 						collectHiddenTokens(element);
@@ -802,8 +776,60 @@ parse_hu_modembed_model_modembed_core_instructionset_Instruction returns [hu.mod
 			)
 			{
 				// expected elements (follow set)
+				addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstruction(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[13]);
+				addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[14]);
+			}
+			
+		)
+		
+	)*	{
+		// expected elements (follow set)
+		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstruction(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[15]);
+		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[16]);
+	}
+	
+	a3 = ')' {
+		if (element == null) {
+			element = hu.modembed.model.modembed.core.instructionset.InstructionsetFactory.eINSTANCE.createInstruction();
+			startIncompleteElement(element);
+		}
+		collectHiddenTokens(element);
+		retrieveLayoutInformation(element, hu.modembed.model.textnotations.instructionset.grammar.InstructionsetGrammarInformationProvider.INSTRUCTIONSET_1_0_0_3, null, true);
+		copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken)a3, element);
+	}
+	{
+		// expected elements (follow set)
+		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstruction(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[17]);
+		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[18]);
+	}
+	
+	(
+		(
+			(
+				a4_0 = parse_hu_modembed_model_modembed_core_instructionset_InstructionWord				{
+					if (terminateParsing) {
+						throw new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetTerminateParsingException();
+					}
+					if (element == null) {
+						element = hu.modembed.model.modembed.core.instructionset.InstructionsetFactory.eINSTANCE.createInstruction();
+						startIncompleteElement(element);
+					}
+					if (a4_0 != null) {
+						if (a4_0 != null) {
+							Object value = a4_0;
+							addObjectToList(element, hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.INSTRUCTION__WORDS, value);
+							completedElement(value, true);
+						}
+						collectHiddenTokens(element);
+						retrieveLayoutInformation(element, hu.modembed.model.textnotations.instructionset.grammar.InstructionsetGrammarInformationProvider.INSTRUCTIONSET_1_0_0_4_0_0_0, a4_0, true);
+						copyLocalizationInfos(a4_0, element);
+					}
+				}
+			)
+			{
+				// expected elements (follow set)
 				addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstruction(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[19]);
-				addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionSet(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[20]);
+				addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[20]);
 			}
 			
 		)
@@ -811,7 +837,21 @@ parse_hu_modembed_model_modembed_core_instructionset_Instruction returns [hu.mod
 	)*	{
 		// expected elements (follow set)
 		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstruction(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[21]);
-		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionSet(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[22]);
+		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[22]);
+	}
+	
+	a5 = ';' {
+		if (element == null) {
+			element = hu.modembed.model.modembed.core.instructionset.InstructionsetFactory.eINSTANCE.createInstruction();
+			startIncompleteElement(element);
+		}
+		collectHiddenTokens(element);
+		retrieveLayoutInformation(element, hu.modembed.model.textnotations.instructionset.grammar.InstructionsetGrammarInformationProvider.INSTRUCTIONSET_1_0_0_5, null, true);
+		copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken)a5, element);
+	}
+	{
+		// expected elements (follow set)
+		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionSet(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[23]);
 	}
 	
 ;
@@ -834,15 +874,15 @@ parse_hu_modembed_model_modembed_core_instructionset_InstructionParameter return
 				hu.modembed.model.textnotations.instructionset.IInstructionsetTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("IDENTIFIER");
 				tokenResolver.setOptions(getOptions());
 				hu.modembed.model.textnotations.instructionset.IInstructionsetTokenResolveResult result = getFreshTokenResolveResult();
-				tokenResolver.resolve(a0.getText(), element.eClass().getEStructuralFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.INSTRUCTION_PARAMETER__ID), result);
+				tokenResolver.resolve(a0.getText(), element.eClass().getEStructuralFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.INSTRUCTION_PARAMETER__NAME), result);
 				Object resolvedObject = result.getResolvedToken();
 				if (resolvedObject == null) {
 					addErrorToResource(result.getErrorMessage(), ((org.antlr.runtime3_4_0.CommonToken) a0).getLine(), ((org.antlr.runtime3_4_0.CommonToken) a0).getCharPositionInLine(), ((org.antlr.runtime3_4_0.CommonToken) a0).getStartIndex(), ((org.antlr.runtime3_4_0.CommonToken) a0).getStopIndex());
 				}
-				java.lang.Character resolved = (java.lang.Character) resolvedObject;
+				java.lang.String resolved = (java.lang.String) resolvedObject;
 				if (resolved != null) {
 					Object value = resolved;
-					element.eSet(element.eClass().getEStructuralFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.INSTRUCTION_PARAMETER__ID), value);
+					element.eSet(element.eClass().getEStructuralFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.INSTRUCTION_PARAMETER__NAME), value);
 					completedElement(value, false);
 				}
 				collectHiddenTokens(element);
@@ -853,16 +893,29 @@ parse_hu_modembed_model_modembed_core_instructionset_InstructionParameter return
 	)
 	{
 		// expected elements (follow set)
-		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[23]);
-		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstruction(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[24]);
+		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[24]);
 		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstruction(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[25]);
-		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionSet(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[26]);
+		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[26]);
 	}
 	
 	(
 		(
+			a1 = '=' {
+				if (element == null) {
+					element = hu.modembed.model.modembed.core.instructionset.InstructionsetFactory.eINSTANCE.createInstructionParameter();
+					startIncompleteElement(element);
+				}
+				collectHiddenTokens(element);
+				retrieveLayoutInformation(element, hu.modembed.model.textnotations.instructionset.grammar.InstructionsetGrammarInformationProvider.INSTRUCTIONSET_2_0_0_1_0_0_0, null, true);
+				copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken)a1, element);
+			}
+			{
+				// expected elements (follow set)
+				addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[27]);
+			}
+			
 			(
-				a1 = INT				
+				a2 = INT				
 				{
 					if (terminateParsing) {
 						throw new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetTerminateParsingException();
@@ -871,14 +924,14 @@ parse_hu_modembed_model_modembed_core_instructionset_InstructionParameter return
 						element = hu.modembed.model.modembed.core.instructionset.InstructionsetFactory.eINSTANCE.createInstructionParameter();
 						startIncompleteElement(element);
 					}
-					if (a1 != null) {
+					if (a2 != null) {
 						hu.modembed.model.textnotations.instructionset.IInstructionsetTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("INT");
 						tokenResolver.setOptions(getOptions());
 						hu.modembed.model.textnotations.instructionset.IInstructionsetTokenResolveResult result = getFreshTokenResolveResult();
-						tokenResolver.resolve(a1.getText(), element.eClass().getEStructuralFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.INSTRUCTION_PARAMETER__DEFAULT_VALUE), result);
+						tokenResolver.resolve(a2.getText(), element.eClass().getEStructuralFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.INSTRUCTION_PARAMETER__DEFAULT_VALUE), result);
 						Object resolvedObject = result.getResolvedToken();
 						if (resolvedObject == null) {
-							addErrorToResource(result.getErrorMessage(), ((org.antlr.runtime3_4_0.CommonToken) a1).getLine(), ((org.antlr.runtime3_4_0.CommonToken) a1).getCharPositionInLine(), ((org.antlr.runtime3_4_0.CommonToken) a1).getStartIndex(), ((org.antlr.runtime3_4_0.CommonToken) a1).getStopIndex());
+							addErrorToResource(result.getErrorMessage(), ((org.antlr.runtime3_4_0.CommonToken) a2).getLine(), ((org.antlr.runtime3_4_0.CommonToken) a2).getCharPositionInLine(), ((org.antlr.runtime3_4_0.CommonToken) a2).getStartIndex(), ((org.antlr.runtime3_4_0.CommonToken) a2).getStopIndex());
 						}
 						java.lang.Integer resolved = (java.lang.Integer) resolvedObject;
 						if (resolved != null) {
@@ -887,16 +940,15 @@ parse_hu_modembed_model_modembed_core_instructionset_InstructionParameter return
 							completedElement(value, false);
 						}
 						collectHiddenTokens(element);
-						retrieveLayoutInformation(element, hu.modembed.model.textnotations.instructionset.grammar.InstructionsetGrammarInformationProvider.INSTRUCTIONSET_2_0_0_1_0_0_0, resolved, true);
-						copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken) a1, element);
+						retrieveLayoutInformation(element, hu.modembed.model.textnotations.instructionset.grammar.InstructionsetGrammarInformationProvider.INSTRUCTIONSET_2_0_0_1_0_0_1, resolved, true);
+						copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken) a2, element);
 					}
 				}
 			)
 			{
 				// expected elements (follow set)
-				addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstruction(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[27]);
 				addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstruction(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[28]);
-				addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionSet(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[29]);
+				addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[29]);
 			}
 			
 		)
@@ -904,8 +956,7 @@ parse_hu_modembed_model_modembed_core_instructionset_InstructionParameter return
 	)?	{
 		// expected elements (follow set)
 		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstruction(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[30]);
-		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstruction(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[31]);
-		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionSet(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[32]);
+		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[31]);
 	}
 	
 ;
@@ -925,34 +976,56 @@ parse_hu_modembed_model_modembed_core_instructionset_InstructionWord returns [hu
 	}
 	{
 		// expected elements (follow set)
+		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionWord(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[32]);
 		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionWord(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[33]);
-		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionWord(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[34]);
+	}
+	
+	(
+		a1_0 = parse_hu_modembed_model_modembed_core_instructionset_InstructionSection		{
+			if (terminateParsing) {
+				throw new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetTerminateParsingException();
+			}
+			if (element == null) {
+				element = hu.modembed.model.modembed.core.instructionset.InstructionsetFactory.eINSTANCE.createInstructionWord();
+				startIncompleteElement(element);
+			}
+			if (a1_0 != null) {
+				if (a1_0 != null) {
+					Object value = a1_0;
+					addObjectToList(element, hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.INSTRUCTION_WORD__SECTIONS, value);
+					completedElement(value, true);
+				}
+				collectHiddenTokens(element);
+				retrieveLayoutInformation(element, hu.modembed.model.textnotations.instructionset.grammar.InstructionsetGrammarInformationProvider.INSTRUCTIONSET_3_0_0_1, a1_0, true);
+				copyLocalizationInfos(a1_0, element);
+			}
+		}
+	)
+	{
+		// expected elements (follow set)
+		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[34]);
 		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[35]);
 	}
 	
 	(
 		(
-			(
-				a1_0 = parse_hu_modembed_model_modembed_core_instructionset_ConstantSection				{
-					if (terminateParsing) {
-						throw new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetTerminateParsingException();
-					}
-					if (element == null) {
-						element = hu.modembed.model.modembed.core.instructionset.InstructionsetFactory.eINSTANCE.createInstructionWord();
-						startIncompleteElement(element);
-					}
-					if (a1_0 != null) {
-						if (a1_0 != null) {
-							Object value = a1_0;
-							addObjectToList(element, hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.INSTRUCTION_WORD__SECTIONS, value);
-							completedElement(value, true);
-						}
-						collectHiddenTokens(element);
-						retrieveLayoutInformation(element, hu.modembed.model.textnotations.instructionset.grammar.InstructionsetGrammarInformationProvider.INSTRUCTIONSET_3_0_0_1_0_0_0, a1_0, true);
-						copyLocalizationInfos(a1_0, element);
-					}
+			a2 = '|' {
+				if (element == null) {
+					element = hu.modembed.model.modembed.core.instructionset.InstructionsetFactory.eINSTANCE.createInstructionWord();
+					startIncompleteElement(element);
 				}
-				|				a1_1 = parse_hu_modembed_model_modembed_core_instructionset_ParameterSection				{
+				collectHiddenTokens(element);
+				retrieveLayoutInformation(element, hu.modembed.model.textnotations.instructionset.grammar.InstructionsetGrammarInformationProvider.INSTRUCTIONSET_3_0_0_2_0_0_0, null, true);
+				copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken)a2, element);
+			}
+			{
+				// expected elements (follow set)
+				addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionWord(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[36]);
+				addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionWord(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[37]);
+			}
+			
+			(
+				a3_0 = parse_hu_modembed_model_modembed_core_instructionset_InstructionSection				{
 					if (terminateParsing) {
 						throw new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetTerminateParsingException();
 					}
@@ -960,47 +1033,45 @@ parse_hu_modembed_model_modembed_core_instructionset_InstructionWord returns [hu
 						element = hu.modembed.model.modembed.core.instructionset.InstructionsetFactory.eINSTANCE.createInstructionWord();
 						startIncompleteElement(element);
 					}
-					if (a1_1 != null) {
-						if (a1_1 != null) {
-							Object value = a1_1;
+					if (a3_0 != null) {
+						if (a3_0 != null) {
+							Object value = a3_0;
 							addObjectToList(element, hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.INSTRUCTION_WORD__SECTIONS, value);
 							completedElement(value, true);
 						}
 						collectHiddenTokens(element);
-						retrieveLayoutInformation(element, hu.modembed.model.textnotations.instructionset.grammar.InstructionsetGrammarInformationProvider.INSTRUCTIONSET_3_0_0_1_0_0_0, a1_1, true);
-						copyLocalizationInfos(a1_1, element);
+						retrieveLayoutInformation(element, hu.modembed.model.textnotations.instructionset.grammar.InstructionsetGrammarInformationProvider.INSTRUCTIONSET_3_0_0_2_0_0_1, a3_0, true);
+						copyLocalizationInfos(a3_0, element);
 					}
 				}
 			)
 			{
 				// expected elements (follow set)
-				addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionWord(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[36]);
-				addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionWord(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[37]);
 				addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[38]);
+				addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[39]);
 			}
 			
 		)
 		
 	)*	{
 		// expected elements (follow set)
-		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionWord(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[39]);
-		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionWord(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[40]);
+		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[40]);
 		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[41]);
 	}
 	
-	a2 = '>' {
+	a4 = '>' {
 		if (element == null) {
 			element = hu.modembed.model.modembed.core.instructionset.InstructionsetFactory.eINSTANCE.createInstructionWord();
 			startIncompleteElement(element);
 		}
 		collectHiddenTokens(element);
-		retrieveLayoutInformation(element, hu.modembed.model.textnotations.instructionset.grammar.InstructionsetGrammarInformationProvider.INSTRUCTIONSET_3_0_0_2, null, true);
-		copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken)a2, element);
+		retrieveLayoutInformation(element, hu.modembed.model.textnotations.instructionset.grammar.InstructionsetGrammarInformationProvider.INSTRUCTIONSET_3_0_0_3, null, true);
+		copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken)a4, element);
 	}
 	{
 		// expected elements (follow set)
 		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstruction(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[42]);
-		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionSet(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[43]);
+		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[43]);
 	}
 	
 ;
@@ -1060,7 +1131,7 @@ parse_hu_modembed_model_modembed_core_instructionset_ConstantSection returns [hu
 	}
 	
 	(
-		a2 = BINARY		
+		a2 = INT		
 		{
 			if (terminateParsing) {
 				throw new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetTerminateParsingException();
@@ -1070,7 +1141,7 @@ parse_hu_modembed_model_modembed_core_instructionset_ConstantSection returns [hu
 				startIncompleteElement(element);
 			}
 			if (a2 != null) {
-				hu.modembed.model.textnotations.instructionset.IInstructionsetTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("BINARY");
+				hu.modembed.model.textnotations.instructionset.IInstructionsetTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("INT");
 				tokenResolver.setOptions(getOptions());
 				hu.modembed.model.textnotations.instructionset.IInstructionsetTokenResolveResult result = getFreshTokenResolveResult();
 				tokenResolver.resolve(a2.getText(), element.eClass().getEStructuralFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.CONSTANT_SECTION__SIZE), result);
@@ -1093,9 +1164,8 @@ parse_hu_modembed_model_modembed_core_instructionset_ConstantSection returns [hu
 	{
 		// expected elements (follow set)
 		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[46]);
-		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionWord(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[47]);
-		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionWord(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[48]);
-		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[49]);
+		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[47]);
+		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[48]);
 	}
 	
 	(
@@ -1111,11 +1181,11 @@ parse_hu_modembed_model_modembed_core_instructionset_ConstantSection returns [hu
 			}
 			{
 				// expected elements (follow set)
-				addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[50]);
+				addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[49]);
 			}
 			
 			(
-				a4 = BINARY				
+				a4 = INT				
 				{
 					if (terminateParsing) {
 						throw new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetTerminateParsingException();
@@ -1125,7 +1195,7 @@ parse_hu_modembed_model_modembed_core_instructionset_ConstantSection returns [hu
 						startIncompleteElement(element);
 					}
 					if (a4 != null) {
-						hu.modembed.model.textnotations.instructionset.IInstructionsetTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("BINARY");
+						hu.modembed.model.textnotations.instructionset.IInstructionsetTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("INT");
 						tokenResolver.setOptions(getOptions());
 						hu.modembed.model.textnotations.instructionset.IInstructionsetTokenResolveResult result = getFreshTokenResolveResult();
 						tokenResolver.resolve(a4.getText(), element.eClass().getEStructuralFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.CONSTANT_SECTION__SHIFT), result);
@@ -1147,18 +1217,16 @@ parse_hu_modembed_model_modembed_core_instructionset_ConstantSection returns [hu
 			)
 			{
 				// expected elements (follow set)
-				addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionWord(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[51]);
-				addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionWord(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[52]);
-				addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[53]);
+				addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[50]);
+				addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[51]);
 			}
 			
 		)
 		
 	)?	{
 		// expected elements (follow set)
-		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionWord(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[54]);
-		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionWord(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[55]);
-		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[56]);
+		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[52]);
+		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[53]);
 	}
 	
 ;
@@ -1204,7 +1272,7 @@ parse_hu_modembed_model_modembed_core_instructionset_ParameterSection returns [h
 	)
 	{
 		// expected elements (follow set)
-		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[57]);
+		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[54]);
 	}
 	
 	a1 = ':' {
@@ -1218,11 +1286,11 @@ parse_hu_modembed_model_modembed_core_instructionset_ParameterSection returns [h
 	}
 	{
 		// expected elements (follow set)
-		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[58]);
+		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[55]);
 	}
 	
 	(
-		a2 = BINARY		
+		a2 = INT		
 		{
 			if (terminateParsing) {
 				throw new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetTerminateParsingException();
@@ -1232,7 +1300,7 @@ parse_hu_modembed_model_modembed_core_instructionset_ParameterSection returns [h
 				startIncompleteElement(element);
 			}
 			if (a2 != null) {
-				hu.modembed.model.textnotations.instructionset.IInstructionsetTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("BINARY");
+				hu.modembed.model.textnotations.instructionset.IInstructionsetTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("INT");
 				tokenResolver.setOptions(getOptions());
 				hu.modembed.model.textnotations.instructionset.IInstructionsetTokenResolveResult result = getFreshTokenResolveResult();
 				tokenResolver.resolve(a2.getText(), element.eClass().getEStructuralFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.PARAMETER_SECTION__SIZE), result);
@@ -1254,10 +1322,9 @@ parse_hu_modembed_model_modembed_core_instructionset_ParameterSection returns [h
 	)
 	{
 		// expected elements (follow set)
-		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[59]);
-		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionWord(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[60]);
-		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionWord(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[61]);
-		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[62]);
+		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[56]);
+		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[57]);
+		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[58]);
 	}
 	
 	(
@@ -1273,11 +1340,11 @@ parse_hu_modembed_model_modembed_core_instructionset_ParameterSection returns [h
 			}
 			{
 				// expected elements (follow set)
-				addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[63]);
+				addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[59]);
 			}
 			
 			(
-				a4 = BINARY				
+				a4 = INT				
 				{
 					if (terminateParsing) {
 						throw new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetTerminateParsingException();
@@ -1287,7 +1354,7 @@ parse_hu_modembed_model_modembed_core_instructionset_ParameterSection returns [h
 						startIncompleteElement(element);
 					}
 					if (a4 != null) {
-						hu.modembed.model.textnotations.instructionset.IInstructionsetTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("BINARY");
+						hu.modembed.model.textnotations.instructionset.IInstructionsetTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("INT");
 						tokenResolver.setOptions(getOptions());
 						hu.modembed.model.textnotations.instructionset.IInstructionsetTokenResolveResult result = getFreshTokenResolveResult();
 						tokenResolver.resolve(a4.getText(), element.eClass().getEStructuralFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.PARAMETER_SECTION__SHIFT), result);
@@ -1309,24 +1376,33 @@ parse_hu_modembed_model_modembed_core_instructionset_ParameterSection returns [h
 			)
 			{
 				// expected elements (follow set)
-				addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionWord(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[64]);
-				addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionWord(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[65]);
-				addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[66]);
+				addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[60]);
+				addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[61]);
 			}
 			
 		)
 		
 	)?	{
 		// expected elements (follow set)
-		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionWord(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[67]);
-		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionWord(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[68]);
-		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[69]);
+		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[62]);
+		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[63]);
 	}
 	
 ;
 
-CHAR:
-	(('a'..'z'|'A'..'Z'))
+parse_hu_modembed_model_modembed_core_instructionset_InstructionSection returns [hu.modembed.model.modembed.core.instructionset.InstructionSection element = null]
+:
+	c0 = parse_hu_modembed_model_modembed_core_instructionset_ConstantSection{ element = c0; /* this is a subclass or primitive expression choice */ }
+	|	c1 = parse_hu_modembed_model_modembed_core_instructionset_ParameterSection{ element = c1; /* this is a subclass or primitive expression choice */ }
+	
+;
+
+SL_COMMENT:
+	('//'(~('\n'|'\r'|'\uffff'))* )
+	{ _channel = 99; }
+;
+ML_COMMENT:
+	('/*'.*'*/')
 	{ _channel = 99; }
 ;
 IDENTIFIER:
@@ -1341,15 +1417,8 @@ INT:
 BINARY:
 	('0b'('0'|'1')*)
 ;
-TEXT:
-	(('A'..'Z' | 'a'..'z' | '0'..'9' | '_' | '-' )+)
-;
 WHITESPACE:
-	((' ' | '\t' | '\f'))
-	{ _channel = 99; }
-;
-LINEBREAK:
-	(('\r\n' | '\r' | '\n'))
+	((' '|'\t'|'\f'|'\r'|'\n')+)
 	{ _channel = 99; }
 ;
 

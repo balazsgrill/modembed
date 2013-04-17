@@ -148,7 +148,6 @@ public class InstructionsetEditor extends org.eclipse.ui.editors.text.TextEditor
 	private void initializeResourceObject(org.eclipse.ui.IEditorInput editorInput) {
 		org.eclipse.ui.part.FileEditorInput input = (org.eclipse.ui.part.FileEditorInput) editorInput;
 		org.eclipse.core.resources.IFile inputFile = input.getFile();
-		hu.modembed.model.textnotations.instructionset.mopp.InstructionsetNature.activate(inputFile.getProject());
 		String path = inputFile.getFullPath().toString();
 		org.eclipse.emf.common.util.URI uri = org.eclipse.emf.common.util.URI.createPlatformResourceURI(path, true);
 		org.eclipse.emf.ecore.resource.ResourceSet resourceSet = editingDomain.getResourceSet();

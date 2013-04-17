@@ -57,8 +57,7 @@ package core{
       		val InstructionWord[*] words;
     	}
 
-    	class InstructionParameter extends infrastructure.MODembedElement {
-      		attr char[1] ~id;
+    	class InstructionParameter extends infrastructure.NamedElement {
       		attr int defaultValue;
     	}
 

@@ -101,9 +101,8 @@ public class InstructionsetBuilderAdapter extends org.eclipse.core.resources.Inc
 			return false;
 		}
 		if (resource instanceof org.eclipse.core.resources.IFile && resource.getName().endsWith("." + new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetMetaInformation().getSyntaxName())) {
-			// First, call the default generated builder that is usually customized to add
-			// compilation-like behavior.
-			build((org.eclipse.core.resources.IFile) resource, resourceSet, monitor);
+			// Calling the default generated builder is disabled because of syntax option
+			// 'disableBuilder'.
 			// Second, call the task item builder that searches for task items in DSL
 			// documents and creates task markers.
 			runTaskItemBuilder((org.eclipse.core.resources.IFile) resource, resourceSet, monitor);

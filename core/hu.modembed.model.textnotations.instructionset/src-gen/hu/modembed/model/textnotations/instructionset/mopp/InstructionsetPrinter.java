@@ -267,18 +267,21 @@ public class InstructionsetPrinter implements hu.modembed.model.textnotations.in
 		java.io.StringWriter sWriter = null;
 		java.io.PrintWriter out1 = null;
 		java.util.Map<String, Integer> printCountingMap1 = null;
-		// DEFINITION PART BEGINS (PlaceholderUsingDefaultToken)
+		// DEFINITION PART BEGINS (PlaceholderUsingSpecifiedToken)
 		count = printCountingMap.get("name");
 		if (count > 0) {
 			Object o = element.eGet(element.eClass().getEStructuralFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.INSTRUCTION__NAME));
 			if (o != null) {
-				hu.modembed.model.textnotations.instructionset.IInstructionsetTokenResolver resolver = tokenResolverFactory.createTokenResolver("TEXT");
+				hu.modembed.model.textnotations.instructionset.IInstructionsetTokenResolver resolver = tokenResolverFactory.createTokenResolver("IDENTIFIER");
 				resolver.setOptions(getOptions());
 				out.print(resolver.deResolve((Object) o, element.eClass().getEStructuralFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.INSTRUCTION__NAME), element));
 				out.print(" ");
 			}
 			printCountingMap.put("name", count - 1);
 		}
+		// DEFINITION PART BEGINS (CsString)
+		out.print("(");
+		out.print(" ");
 		// DEFINITION PART BEGINS (CompoundDefinition)
 		iterate = true;
 		while (iterate) {
@@ -296,6 +299,9 @@ public class InstructionsetPrinter implements hu.modembed.model.textnotations.in
 				printCountingMap.putAll(printCountingMap1);
 			}
 		}
+		// DEFINITION PART BEGINS (CsString)
+		out.print(")");
+		out.print(" ");
 		// DEFINITION PART BEGINS (CompoundDefinition)
 		iterate = true;
 		while (iterate) {
@@ -313,6 +319,9 @@ public class InstructionsetPrinter implements hu.modembed.model.textnotations.in
 				printCountingMap.putAll(printCountingMap1);
 			}
 		}
+		// DEFINITION PART BEGINS (CsString)
+		out.print(";");
+		out.print(" ");
 	}
 	
 	public void print_hu_modembed_model_modembed_core_instructionset_Instruction_0(hu.modembed.model.modembed.core.instructionset.Instruction element, String outertab, java.io.PrintWriter out, java.util.Map<String, Integer> printCountingMap) {
@@ -371,8 +380,8 @@ public class InstructionsetPrinter implements hu.modembed.model.textnotations.in
 		printCountingMap.put("description", temp == null ? 0 : 1);
 		temp = element.eGet(element.eClass().getEStructuralFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.INSTRUCTION_PARAMETER__ORIGINS));
 		printCountingMap.put("origins", temp == null ? 0 : ((java.util.Collection<?>) temp).size());
-		temp = element.eGet(element.eClass().getEStructuralFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.INSTRUCTION_PARAMETER__ID));
-		printCountingMap.put("id", temp == null ? 0 : 1);
+		temp = element.eGet(element.eClass().getEStructuralFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.INSTRUCTION_PARAMETER__NAME));
+		printCountingMap.put("name", temp == null ? 0 : 1);
 		temp = element.eGet(element.eClass().getEStructuralFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.INSTRUCTION_PARAMETER__DEFAULT_VALUE));
 		printCountingMap.put("defaultValue", temp == null ? 0 : 1);
 		// print collected hidden tokens
@@ -381,16 +390,16 @@ public class InstructionsetPrinter implements hu.modembed.model.textnotations.in
 		java.io.PrintWriter out1 = null;
 		java.util.Map<String, Integer> printCountingMap1 = null;
 		// DEFINITION PART BEGINS (PlaceholderUsingSpecifiedToken)
-		count = printCountingMap.get("id");
+		count = printCountingMap.get("name");
 		if (count > 0) {
-			Object o = element.eGet(element.eClass().getEStructuralFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.INSTRUCTION_PARAMETER__ID));
+			Object o = element.eGet(element.eClass().getEStructuralFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.INSTRUCTION_PARAMETER__NAME));
 			if (o != null) {
 				hu.modembed.model.textnotations.instructionset.IInstructionsetTokenResolver resolver = tokenResolverFactory.createTokenResolver("IDENTIFIER");
 				resolver.setOptions(getOptions());
-				out.print(resolver.deResolve((Object) o, element.eClass().getEStructuralFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.INSTRUCTION_PARAMETER__ID), element));
+				out.print(resolver.deResolve((Object) o, element.eClass().getEStructuralFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.INSTRUCTION_PARAMETER__NAME), element));
 				out.print(" ");
 			}
-			printCountingMap.put("id", count - 1);
+			printCountingMap.put("name", count - 1);
 		}
 		// DEFINITION PART BEGINS (CompoundDefinition)
 		sWriter = new java.io.StringWriter();
@@ -409,6 +418,9 @@ public class InstructionsetPrinter implements hu.modembed.model.textnotations.in
 	
 	public void print_hu_modembed_model_modembed_core_instructionset_InstructionParameter_0(hu.modembed.model.modembed.core.instructionset.InstructionParameter element, String outertab, java.io.PrintWriter out, java.util.Map<String, Integer> printCountingMap) {
 		int count;
+		// DEFINITION PART BEGINS (CsString)
+		out.print("=");
+		out.print(" ");
 		// DEFINITION PART BEGINS (PlaceholderUsingSpecifiedToken)
 		count = printCountingMap.get("defaultValue");
 		if (count > 0) {
@@ -442,6 +454,7 @@ public class InstructionsetPrinter implements hu.modembed.model.textnotations.in
 		temp = element.eGet(element.eClass().getEStructuralFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.INSTRUCTION_WORD__CONDITION));
 		printCountingMap.put("condition", temp == null ? 0 : ((java.util.Collection<?>) temp).size());
 		// print collected hidden tokens
+		int count;
 		boolean iterate = true;
 		java.io.StringWriter sWriter = null;
 		java.io.PrintWriter out1 = null;
@@ -449,6 +462,22 @@ public class InstructionsetPrinter implements hu.modembed.model.textnotations.in
 		// DEFINITION PART BEGINS (CsString)
 		out.print("<");
 		out.print(" ");
+		// DEFINITION PART BEGINS (Containment)
+		count = printCountingMap.get("sections");
+		if (count > 0) {
+			Object o = element.eGet(element.eClass().getEStructuralFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.INSTRUCTION_WORD__SECTIONS));
+			java.util.List<?> list = (java.util.List<?>) o;
+			int index = list.size() - count;
+			if (index >= 0) {
+				o = list.get(index);
+			} else {
+				o = null;
+			}
+			if (o != null) {
+				doPrint((org.eclipse.emf.ecore.EObject) o, out, localtab);
+			}
+			printCountingMap.put("sections", count - 1);
+		}
 		// DEFINITION PART BEGINS (CompoundDefinition)
 		iterate = true;
 		while (iterate) {
@@ -474,6 +503,9 @@ public class InstructionsetPrinter implements hu.modembed.model.textnotations.in
 	public void print_hu_modembed_model_modembed_core_instructionset_InstructionWord_0(hu.modembed.model.modembed.core.instructionset.InstructionWord element, String outertab, java.io.PrintWriter out, java.util.Map<String, Integer> printCountingMap) {
 		String localtab = outertab;
 		int count;
+		// DEFINITION PART BEGINS (CsString)
+		out.print("|");
+		out.print(" ");
 		// DEFINITION PART BEGINS (Containment)
 		count = printCountingMap.get("sections");
 		if (count > 0) {
@@ -537,7 +569,7 @@ public class InstructionsetPrinter implements hu.modembed.model.textnotations.in
 		if (count > 0) {
 			Object o = element.eGet(element.eClass().getEStructuralFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.CONSTANT_SECTION__SIZE));
 			if (o != null) {
-				hu.modembed.model.textnotations.instructionset.IInstructionsetTokenResolver resolver = tokenResolverFactory.createTokenResolver("BINARY");
+				hu.modembed.model.textnotations.instructionset.IInstructionsetTokenResolver resolver = tokenResolverFactory.createTokenResolver("INT");
 				resolver.setOptions(getOptions());
 				out.print(resolver.deResolve((Object) o, element.eClass().getEStructuralFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.CONSTANT_SECTION__SIZE), element));
 				out.print(" ");
@@ -569,7 +601,7 @@ public class InstructionsetPrinter implements hu.modembed.model.textnotations.in
 		if (count > 0) {
 			Object o = element.eGet(element.eClass().getEStructuralFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.CONSTANT_SECTION__SHIFT));
 			if (o != null) {
-				hu.modembed.model.textnotations.instructionset.IInstructionsetTokenResolver resolver = tokenResolverFactory.createTokenResolver("BINARY");
+				hu.modembed.model.textnotations.instructionset.IInstructionsetTokenResolver resolver = tokenResolverFactory.createTokenResolver("INT");
 				resolver.setOptions(getOptions());
 				out.print(resolver.deResolve((Object) o, element.eClass().getEStructuralFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.CONSTANT_SECTION__SHIFT), element));
 				out.print(" ");
@@ -623,7 +655,7 @@ public class InstructionsetPrinter implements hu.modembed.model.textnotations.in
 		if (count > 0) {
 			Object o = element.eGet(element.eClass().getEStructuralFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.PARAMETER_SECTION__SIZE));
 			if (o != null) {
-				hu.modembed.model.textnotations.instructionset.IInstructionsetTokenResolver resolver = tokenResolverFactory.createTokenResolver("BINARY");
+				hu.modembed.model.textnotations.instructionset.IInstructionsetTokenResolver resolver = tokenResolverFactory.createTokenResolver("INT");
 				resolver.setOptions(getOptions());
 				out.print(resolver.deResolve((Object) o, element.eClass().getEStructuralFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.PARAMETER_SECTION__SIZE), element));
 				out.print(" ");
@@ -655,7 +687,7 @@ public class InstructionsetPrinter implements hu.modembed.model.textnotations.in
 		if (count > 0) {
 			Object o = element.eGet(element.eClass().getEStructuralFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.PARAMETER_SECTION__SHIFT));
 			if (o != null) {
-				hu.modembed.model.textnotations.instructionset.IInstructionsetTokenResolver resolver = tokenResolverFactory.createTokenResolver("BINARY");
+				hu.modembed.model.textnotations.instructionset.IInstructionsetTokenResolver resolver = tokenResolverFactory.createTokenResolver("INT");
 				resolver.setOptions(getOptions());
 				out.print(resolver.deResolve((Object) o, element.eClass().getEStructuralFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.PARAMETER_SECTION__SHIFT), element));
 				out.print(" ");

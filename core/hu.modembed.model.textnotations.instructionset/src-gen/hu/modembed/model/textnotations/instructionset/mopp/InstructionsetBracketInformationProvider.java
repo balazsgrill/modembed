@@ -36,6 +36,7 @@ public class InstructionsetBracketInformationProvider {
 	
 	public java.util.Collection<hu.modembed.model.textnotations.instructionset.IInstructionsetBracketPair> getBracketPairs() {
 		java.util.Collection<hu.modembed.model.textnotations.instructionset.IInstructionsetBracketPair> result = new java.util.ArrayList<hu.modembed.model.textnotations.instructionset.IInstructionsetBracketPair>();
+		result.add(new BracketPair("(", ")", true));
 		result.add(new BracketPair("<", ">", true));
 		return result;
 	}

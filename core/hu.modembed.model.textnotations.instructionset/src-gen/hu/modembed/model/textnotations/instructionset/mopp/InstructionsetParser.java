@@ -13,24 +13,27 @@ import java.util.HashMap;
 @SuppressWarnings({"all", "warnings", "unchecked"})
 public class InstructionsetParser extends InstructionsetANTLRParserBase {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "BINARY", "CHAR", "IDENTIFIER", "INT", "LINEBREAK", "QUALIFIEDID", "TEXT", "WHITESPACE", "':'", "';'", "'<'", "'>'", "'extends'", "'instructionset'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "BINARY", "IDENTIFIER", "INT", "ML_COMMENT", "QUALIFIEDID", "SL_COMMENT", "WHITESPACE", "'('", "')'", "':'", "';'", "'<'", "'='", "'>'", "'extends'", "'instructionset'", "'|'"
     };
 
     public static final int EOF=-1;
+    public static final int T__11=11;
     public static final int T__12=12;
     public static final int T__13=13;
     public static final int T__14=14;
     public static final int T__15=15;
     public static final int T__16=16;
     public static final int T__17=17;
+    public static final int T__18=18;
+    public static final int T__19=19;
+    public static final int T__20=20;
     public static final int BINARY=4;
-    public static final int CHAR=5;
-    public static final int IDENTIFIER=6;
-    public static final int INT=7;
-    public static final int LINEBREAK=8;
-    public static final int QUALIFIEDID=9;
-    public static final int TEXT=10;
-    public static final int WHITESPACE=11;
+    public static final int IDENTIFIER=5;
+    public static final int INT=6;
+    public static final int ML_COMMENT=7;
+    public static final int QUALIFIEDID=8;
+    public static final int SL_COMMENT=9;
+    public static final int WHITESPACE=10;
 
     // delegates
     public InstructionsetANTLRParserBase[] getDelegates() {
@@ -45,7 +48,7 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
     }
     public InstructionsetParser(TokenStream input, RecognizerSharedState state) {
         super(input, state);
-        this.state.initializeRuleMemo(16 + 1);
+        this.state.initializeRuleMemo(17 + 1);
          
 
     }
@@ -376,7 +379,7 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
     				break;
     			}
     		}
-    		int followSetID = 33;
+    		int followSetID = 39;
     		int i;
     		for (i = tokenIndexOfLastCompleteElement; i < tokenStream.size(); i++) {
     			org.antlr.runtime3_4_0.CommonToken nextToken = (org.antlr.runtime3_4_0.CommonToken) tokenStream.get(i);
@@ -626,7 +629,7 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
             // Instructionset.g:533:2: (a0= 'instructionset' (a1= QUALIFIEDID ) a2= ';' ( (a3= 'extends' (a4= QUALIFIEDID ) ) )? ( ( (a5_0= parse_hu_modembed_model_modembed_core_instructionset_Instruction ) ) )* )
             // Instructionset.g:534:2: a0= 'instructionset' (a1= QUALIFIEDID ) a2= ';' ( (a3= 'extends' (a4= QUALIFIEDID ) ) )? ( ( (a5_0= parse_hu_modembed_model_modembed_core_instructionset_Instruction ) ) )*
             {
-            a0=(Token)match(input,17,FOLLOW_17_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionSet115); if (state.failed) return element;
+            a0=(Token)match(input,19,FOLLOW_19_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionSet115); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             		if (element == null) {
@@ -685,7 +688,7 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
             		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[2]);
             	}
 
-            a2=(Token)match(input,13,FOLLOW_13_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionSet154); if (state.failed) return element;
+            a2=(Token)match(input,14,FOLLOW_14_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionSet154); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             		if (element == null) {
@@ -707,7 +710,7 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
             int alt1=2;
             int LA1_0 = input.LA(1);
 
-            if ( (LA1_0==16) ) {
+            if ( (LA1_0==18) ) {
                 alt1=1;
             }
             switch (alt1) {
@@ -717,7 +720,7 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
                     // Instructionset.g:600:3: (a3= 'extends' (a4= QUALIFIEDID ) )
                     // Instructionset.g:601:4: a3= 'extends' (a4= QUALIFIEDID )
                     {
-                    a3=(Token)match(input,16,FOLLOW_16_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionSet177); if (state.failed) return element;
+                    a3=(Token)match(input,18,FOLLOW_18_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionSet177); if (state.failed) return element;
 
                     if ( state.backtracking==0 ) {
                     				if (element == null) {
@@ -800,7 +803,7 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
                 int alt2=2;
                 int LA2_0 = input.LA(1);
 
-                if ( (LA2_0==TEXT) ) {
+                if ( (LA2_0==IDENTIFIER) ) {
                     alt2=1;
                 }
 
@@ -886,16 +889,19 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
 
 
     // $ANTLR start "parse_hu_modembed_model_modembed_core_instructionset_Instruction"
-    // Instructionset.g:699:1: parse_hu_modembed_model_modembed_core_instructionset_Instruction returns [hu.modembed.model.modembed.core.instructionset.Instruction element = null] : (a0= TEXT ) ( ( (a1_0= parse_hu_modembed_model_modembed_core_instructionset_InstructionParameter ) ) )* ( ( (a2_0= parse_hu_modembed_model_modembed_core_instructionset_InstructionWord ) ) )* ;
+    // Instructionset.g:699:1: parse_hu_modembed_model_modembed_core_instructionset_Instruction returns [hu.modembed.model.modembed.core.instructionset.Instruction element = null] : (a0= IDENTIFIER ) a1= '(' ( ( (a2_0= parse_hu_modembed_model_modembed_core_instructionset_InstructionParameter ) ) )* a3= ')' ( ( (a4_0= parse_hu_modembed_model_modembed_core_instructionset_InstructionWord ) ) )* a5= ';' ;
     public final hu.modembed.model.modembed.core.instructionset.Instruction parse_hu_modembed_model_modembed_core_instructionset_Instruction() throws RecognitionException {
         hu.modembed.model.modembed.core.instructionset.Instruction element =  null;
 
         int parse_hu_modembed_model_modembed_core_instructionset_Instruction_StartIndex = input.index();
 
         Token a0=null;
-        hu.modembed.model.modembed.core.instructionset.InstructionParameter a1_0 =null;
+        Token a1=null;
+        Token a3=null;
+        Token a5=null;
+        hu.modembed.model.modembed.core.instructionset.InstructionParameter a2_0 =null;
 
-        hu.modembed.model.modembed.core.instructionset.InstructionWord a2_0 =null;
+        hu.modembed.model.modembed.core.instructionset.InstructionWord a4_0 =null;
 
 
 
@@ -903,13 +909,13 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 3) ) { return element; }
 
-            // Instructionset.g:702:2: ( (a0= TEXT ) ( ( (a1_0= parse_hu_modembed_model_modembed_core_instructionset_InstructionParameter ) ) )* ( ( (a2_0= parse_hu_modembed_model_modembed_core_instructionset_InstructionWord ) ) )* )
-            // Instructionset.g:703:2: (a0= TEXT ) ( ( (a1_0= parse_hu_modembed_model_modembed_core_instructionset_InstructionParameter ) ) )* ( ( (a2_0= parse_hu_modembed_model_modembed_core_instructionset_InstructionWord ) ) )*
+            // Instructionset.g:702:2: ( (a0= IDENTIFIER ) a1= '(' ( ( (a2_0= parse_hu_modembed_model_modembed_core_instructionset_InstructionParameter ) ) )* a3= ')' ( ( (a4_0= parse_hu_modembed_model_modembed_core_instructionset_InstructionWord ) ) )* a5= ';' )
+            // Instructionset.g:703:2: (a0= IDENTIFIER ) a1= '(' ( ( (a2_0= parse_hu_modembed_model_modembed_core_instructionset_InstructionParameter ) ) )* a3= ')' ( ( (a4_0= parse_hu_modembed_model_modembed_core_instructionset_InstructionWord ) ) )* a5= ';'
             {
-            // Instructionset.g:703:2: (a0= TEXT )
-            // Instructionset.g:704:3: a0= TEXT
+            // Instructionset.g:703:2: (a0= IDENTIFIER )
+            // Instructionset.g:704:3: a0= IDENTIFIER
             {
-            a0=(Token)match(input,TEXT,FOLLOW_TEXT_in_parse_hu_modembed_model_modembed_core_instructionset_Instruction324); if (state.failed) return element;
+            a0=(Token)match(input,IDENTIFIER,FOLLOW_IDENTIFIER_in_parse_hu_modembed_model_modembed_core_instructionset_Instruction324); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             			if (terminateParsing) {
@@ -920,7 +926,7 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
             				startIncompleteElement(element);
             			}
             			if (a0 != null) {
-            				hu.modembed.model.textnotations.instructionset.IInstructionsetTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("TEXT");
+            				hu.modembed.model.textnotations.instructionset.IInstructionsetTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("IDENTIFIER");
             				tokenResolver.setOptions(getOptions());
             				hu.modembed.model.textnotations.instructionset.IInstructionsetTokenResolveResult result = getFreshTokenResolveResult();
             				tokenResolver.resolve(a0.getText(), element.eClass().getEStructuralFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.INSTRUCTION__NAME), result);
@@ -945,12 +951,28 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
 
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
-            		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstruction(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[10]);
-            		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstruction(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[11]);
-            		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionSet(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[12]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[10]);
             	}
 
-            // Instructionset.g:741:2: ( ( (a1_0= parse_hu_modembed_model_modembed_core_instructionset_InstructionParameter ) ) )*
+            a1=(Token)match(input,11,FOLLOW_11_in_parse_hu_modembed_model_modembed_core_instructionset_Instruction345); if (state.failed) return element;
+
+            if ( state.backtracking==0 ) {
+            		if (element == null) {
+            			element = hu.modembed.model.modembed.core.instructionset.InstructionsetFactory.eINSTANCE.createInstruction();
+            			startIncompleteElement(element);
+            		}
+            		collectHiddenTokens(element);
+            		retrieveLayoutInformation(element, hu.modembed.model.textnotations.instructionset.grammar.InstructionsetGrammarInformationProvider.INSTRUCTIONSET_1_0_0_1, null, true);
+            		copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken)a1, element);
+            	}
+
+            if ( state.backtracking==0 ) {
+            		// expected elements (follow set)
+            		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstruction(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[11]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[12]);
+            	}
+
+            // Instructionset.g:754:2: ( ( (a2_0= parse_hu_modembed_model_modembed_core_instructionset_InstructionParameter ) ) )*
             loop3:
             do {
                 int alt3=2;
@@ -963,16 +985,16 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
 
                 switch (alt3) {
             	case 1 :
-            	    // Instructionset.g:742:3: ( (a1_0= parse_hu_modembed_model_modembed_core_instructionset_InstructionParameter ) )
+            	    // Instructionset.g:755:3: ( (a2_0= parse_hu_modembed_model_modembed_core_instructionset_InstructionParameter ) )
             	    {
-            	    // Instructionset.g:742:3: ( (a1_0= parse_hu_modembed_model_modembed_core_instructionset_InstructionParameter ) )
-            	    // Instructionset.g:743:4: (a1_0= parse_hu_modembed_model_modembed_core_instructionset_InstructionParameter )
+            	    // Instructionset.g:755:3: ( (a2_0= parse_hu_modembed_model_modembed_core_instructionset_InstructionParameter ) )
+            	    // Instructionset.g:756:4: (a2_0= parse_hu_modembed_model_modembed_core_instructionset_InstructionParameter )
             	    {
-            	    // Instructionset.g:743:4: (a1_0= parse_hu_modembed_model_modembed_core_instructionset_InstructionParameter )
-            	    // Instructionset.g:744:5: a1_0= parse_hu_modembed_model_modembed_core_instructionset_InstructionParameter
+            	    // Instructionset.g:756:4: (a2_0= parse_hu_modembed_model_modembed_core_instructionset_InstructionParameter )
+            	    // Instructionset.g:757:5: a2_0= parse_hu_modembed_model_modembed_core_instructionset_InstructionParameter
             	    {
-            	    pushFollow(FOLLOW_parse_hu_modembed_model_modembed_core_instructionset_InstructionParameter_in_parse_hu_modembed_model_modembed_core_instructionset_Instruction360);
-            	    a1_0=parse_hu_modembed_model_modembed_core_instructionset_InstructionParameter();
+            	    pushFollow(FOLLOW_parse_hu_modembed_model_modembed_core_instructionset_InstructionParameter_in_parse_hu_modembed_model_modembed_core_instructionset_Instruction374);
+            	    a2_0=parse_hu_modembed_model_modembed_core_instructionset_InstructionParameter();
 
             	    state._fsp--;
             	    if (state.failed) return element;
@@ -985,15 +1007,15 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
             	    						element = hu.modembed.model.modembed.core.instructionset.InstructionsetFactory.eINSTANCE.createInstruction();
             	    						startIncompleteElement(element);
             	    					}
-            	    					if (a1_0 != null) {
-            	    						if (a1_0 != null) {
-            	    							Object value = a1_0;
+            	    					if (a2_0 != null) {
+            	    						if (a2_0 != null) {
+            	    							Object value = a2_0;
             	    							addObjectToList(element, hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.INSTRUCTION__PARAMETERS, value);
             	    							completedElement(value, true);
             	    						}
             	    						collectHiddenTokens(element);
-            	    						retrieveLayoutInformation(element, hu.modembed.model.textnotations.instructionset.grammar.InstructionsetGrammarInformationProvider.INSTRUCTIONSET_1_0_0_1_0_0_0, a1_0, true);
-            	    						copyLocalizationInfos(a1_0, element);
+            	    						retrieveLayoutInformation(element, hu.modembed.model.textnotations.instructionset.grammar.InstructionsetGrammarInformationProvider.INSTRUCTIONSET_1_0_0_2_0_0_0, a2_0, true);
+            	    						copyLocalizationInfos(a2_0, element);
             	    					}
             	    				}
 
@@ -1003,8 +1025,7 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
             	    if ( state.backtracking==0 ) {
             	    				// expected elements (follow set)
             	    				addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstruction(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[13]);
-            	    				addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstruction(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[14]);
-            	    				addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionSet(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[15]);
+            	    				addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[14]);
             	    			}
 
             	    }
@@ -1021,34 +1042,51 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
 
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
-            		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstruction(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[16]);
-            		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstruction(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[17]);
-            		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionSet(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[18]);
+            		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstruction(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[15]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[16]);
             	}
 
-            // Instructionset.g:780:2: ( ( (a2_0= parse_hu_modembed_model_modembed_core_instructionset_InstructionWord ) ) )*
+            a3=(Token)match(input,12,FOLLOW_12_in_parse_hu_modembed_model_modembed_core_instructionset_Instruction415); if (state.failed) return element;
+
+            if ( state.backtracking==0 ) {
+            		if (element == null) {
+            			element = hu.modembed.model.modembed.core.instructionset.InstructionsetFactory.eINSTANCE.createInstruction();
+            			startIncompleteElement(element);
+            		}
+            		collectHiddenTokens(element);
+            		retrieveLayoutInformation(element, hu.modembed.model.textnotations.instructionset.grammar.InstructionsetGrammarInformationProvider.INSTRUCTIONSET_1_0_0_3, null, true);
+            		copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken)a3, element);
+            	}
+
+            if ( state.backtracking==0 ) {
+            		// expected elements (follow set)
+            		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstruction(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[17]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[18]);
+            	}
+
+            // Instructionset.g:806:2: ( ( (a4_0= parse_hu_modembed_model_modembed_core_instructionset_InstructionWord ) ) )*
             loop4:
             do {
                 int alt4=2;
                 int LA4_0 = input.LA(1);
 
-                if ( (LA4_0==14) ) {
+                if ( (LA4_0==15) ) {
                     alt4=1;
                 }
 
 
                 switch (alt4) {
             	case 1 :
-            	    // Instructionset.g:781:3: ( (a2_0= parse_hu_modembed_model_modembed_core_instructionset_InstructionWord ) )
+            	    // Instructionset.g:807:3: ( (a4_0= parse_hu_modembed_model_modembed_core_instructionset_InstructionWord ) )
             	    {
-            	    // Instructionset.g:781:3: ( (a2_0= parse_hu_modembed_model_modembed_core_instructionset_InstructionWord ) )
-            	    // Instructionset.g:782:4: (a2_0= parse_hu_modembed_model_modembed_core_instructionset_InstructionWord )
+            	    // Instructionset.g:807:3: ( (a4_0= parse_hu_modembed_model_modembed_core_instructionset_InstructionWord ) )
+            	    // Instructionset.g:808:4: (a4_0= parse_hu_modembed_model_modembed_core_instructionset_InstructionWord )
             	    {
-            	    // Instructionset.g:782:4: (a2_0= parse_hu_modembed_model_modembed_core_instructionset_InstructionWord )
-            	    // Instructionset.g:783:5: a2_0= parse_hu_modembed_model_modembed_core_instructionset_InstructionWord
+            	    // Instructionset.g:808:4: (a4_0= parse_hu_modembed_model_modembed_core_instructionset_InstructionWord )
+            	    // Instructionset.g:809:5: a4_0= parse_hu_modembed_model_modembed_core_instructionset_InstructionWord
             	    {
-            	    pushFollow(FOLLOW_parse_hu_modembed_model_modembed_core_instructionset_InstructionWord_in_parse_hu_modembed_model_modembed_core_instructionset_Instruction416);
-            	    a2_0=parse_hu_modembed_model_modembed_core_instructionset_InstructionWord();
+            	    pushFollow(FOLLOW_parse_hu_modembed_model_modembed_core_instructionset_InstructionWord_in_parse_hu_modembed_model_modembed_core_instructionset_Instruction444);
+            	    a4_0=parse_hu_modembed_model_modembed_core_instructionset_InstructionWord();
 
             	    state._fsp--;
             	    if (state.failed) return element;
@@ -1061,15 +1099,15 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
             	    						element = hu.modembed.model.modembed.core.instructionset.InstructionsetFactory.eINSTANCE.createInstruction();
             	    						startIncompleteElement(element);
             	    					}
-            	    					if (a2_0 != null) {
-            	    						if (a2_0 != null) {
-            	    							Object value = a2_0;
+            	    					if (a4_0 != null) {
+            	    						if (a4_0 != null) {
+            	    							Object value = a4_0;
             	    							addObjectToList(element, hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.INSTRUCTION__WORDS, value);
             	    							completedElement(value, true);
             	    						}
             	    						collectHiddenTokens(element);
-            	    						retrieveLayoutInformation(element, hu.modembed.model.textnotations.instructionset.grammar.InstructionsetGrammarInformationProvider.INSTRUCTIONSET_1_0_0_2_0_0_0, a2_0, true);
-            	    						copyLocalizationInfos(a2_0, element);
+            	    						retrieveLayoutInformation(element, hu.modembed.model.textnotations.instructionset.grammar.InstructionsetGrammarInformationProvider.INSTRUCTIONSET_1_0_0_4_0_0_0, a4_0, true);
+            	    						copyLocalizationInfos(a4_0, element);
             	    					}
             	    				}
 
@@ -1079,7 +1117,7 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
             	    if ( state.backtracking==0 ) {
             	    				// expected elements (follow set)
             	    				addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstruction(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[19]);
-            	    				addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionSet(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[20]);
+            	    				addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[20]);
             	    			}
 
             	    }
@@ -1097,7 +1135,24 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
             		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstruction(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[21]);
-            		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionSet(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[22]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[22]);
+            	}
+
+            a5=(Token)match(input,14,FOLLOW_14_in_parse_hu_modembed_model_modembed_core_instructionset_Instruction485); if (state.failed) return element;
+
+            if ( state.backtracking==0 ) {
+            		if (element == null) {
+            			element = hu.modembed.model.modembed.core.instructionset.InstructionsetFactory.eINSTANCE.createInstruction();
+            			startIncompleteElement(element);
+            		}
+            		collectHiddenTokens(element);
+            		retrieveLayoutInformation(element, hu.modembed.model.textnotations.instructionset.grammar.InstructionsetGrammarInformationProvider.INSTRUCTIONSET_1_0_0_5, null, true);
+            		copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken)a5, element);
+            	}
+
+            if ( state.backtracking==0 ) {
+            		// expected elements (follow set)
+            		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionSet(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[23]);
             	}
 
             }
@@ -1120,7 +1175,7 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
 
 
     // $ANTLR start "parse_hu_modembed_model_modembed_core_instructionset_InstructionParameter"
-    // Instructionset.g:819:1: parse_hu_modembed_model_modembed_core_instructionset_InstructionParameter returns [hu.modembed.model.modembed.core.instructionset.InstructionParameter element = null] : (a0= IDENTIFIER ) ( ( (a1= INT ) ) )? ;
+    // Instructionset.g:859:1: parse_hu_modembed_model_modembed_core_instructionset_InstructionParameter returns [hu.modembed.model.modembed.core.instructionset.InstructionParameter element = null] : (a0= IDENTIFIER ) ( (a1= '=' (a2= INT ) ) )? ;
     public final hu.modembed.model.modembed.core.instructionset.InstructionParameter parse_hu_modembed_model_modembed_core_instructionset_InstructionParameter() throws RecognitionException {
         hu.modembed.model.modembed.core.instructionset.InstructionParameter element =  null;
 
@@ -1128,19 +1183,20 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
 
         Token a0=null;
         Token a1=null;
+        Token a2=null;
 
 
 
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 4) ) { return element; }
 
-            // Instructionset.g:822:2: ( (a0= IDENTIFIER ) ( ( (a1= INT ) ) )? )
-            // Instructionset.g:823:2: (a0= IDENTIFIER ) ( ( (a1= INT ) ) )?
+            // Instructionset.g:862:2: ( (a0= IDENTIFIER ) ( (a1= '=' (a2= INT ) ) )? )
+            // Instructionset.g:863:2: (a0= IDENTIFIER ) ( (a1= '=' (a2= INT ) ) )?
             {
-            // Instructionset.g:823:2: (a0= IDENTIFIER )
-            // Instructionset.g:824:3: a0= IDENTIFIER
+            // Instructionset.g:863:2: (a0= IDENTIFIER )
+            // Instructionset.g:864:3: a0= IDENTIFIER
             {
-            a0=(Token)match(input,IDENTIFIER,FOLLOW_IDENTIFIER_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionParameter476); if (state.failed) return element;
+            a0=(Token)match(input,IDENTIFIER,FOLLOW_IDENTIFIER_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionParameter518); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             			if (terminateParsing) {
@@ -1154,15 +1210,15 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
             				hu.modembed.model.textnotations.instructionset.IInstructionsetTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("IDENTIFIER");
             				tokenResolver.setOptions(getOptions());
             				hu.modembed.model.textnotations.instructionset.IInstructionsetTokenResolveResult result = getFreshTokenResolveResult();
-            				tokenResolver.resolve(a0.getText(), element.eClass().getEStructuralFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.INSTRUCTION_PARAMETER__ID), result);
+            				tokenResolver.resolve(a0.getText(), element.eClass().getEStructuralFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.INSTRUCTION_PARAMETER__NAME), result);
             				Object resolvedObject = result.getResolvedToken();
             				if (resolvedObject == null) {
             					addErrorToResource(result.getErrorMessage(), ((org.antlr.runtime3_4_0.CommonToken) a0).getLine(), ((org.antlr.runtime3_4_0.CommonToken) a0).getCharPositionInLine(), ((org.antlr.runtime3_4_0.CommonToken) a0).getStartIndex(), ((org.antlr.runtime3_4_0.CommonToken) a0).getStopIndex());
             				}
-            				java.lang.Character resolved = (java.lang.Character) resolvedObject;
+            				java.lang.String resolved = (java.lang.String) resolvedObject;
             				if (resolved != null) {
             					Object value = resolved;
-            					element.eSet(element.eClass().getEStructuralFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.INSTRUCTION_PARAMETER__ID), value);
+            					element.eSet(element.eClass().getEStructuralFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.INSTRUCTION_PARAMETER__NAME), value);
             					completedElement(value, false);
             				}
             				collectHiddenTokens(element);
@@ -1176,30 +1232,46 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
 
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
-            		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[23]);
-            		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstruction(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[24]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[24]);
             		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstruction(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[25]);
-            		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionSet(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[26]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[26]);
             	}
 
-            // Instructionset.g:862:2: ( ( (a1= INT ) ) )?
+            // Instructionset.g:901:2: ( (a1= '=' (a2= INT ) ) )?
             int alt5=2;
             int LA5_0 = input.LA(1);
 
-            if ( (LA5_0==INT) ) {
+            if ( (LA5_0==16) ) {
                 alt5=1;
             }
             switch (alt5) {
                 case 1 :
-                    // Instructionset.g:863:3: ( (a1= INT ) )
+                    // Instructionset.g:902:3: (a1= '=' (a2= INT ) )
                     {
-                    // Instructionset.g:863:3: ( (a1= INT ) )
-                    // Instructionset.g:864:4: (a1= INT )
+                    // Instructionset.g:902:3: (a1= '=' (a2= INT ) )
+                    // Instructionset.g:903:4: a1= '=' (a2= INT )
                     {
-                    // Instructionset.g:864:4: (a1= INT )
-                    // Instructionset.g:865:5: a1= INT
+                    a1=(Token)match(input,16,FOLLOW_16_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionParameter548); if (state.failed) return element;
+
+                    if ( state.backtracking==0 ) {
+                    				if (element == null) {
+                    					element = hu.modembed.model.modembed.core.instructionset.InstructionsetFactory.eINSTANCE.createInstructionParameter();
+                    					startIncompleteElement(element);
+                    				}
+                    				collectHiddenTokens(element);
+                    				retrieveLayoutInformation(element, hu.modembed.model.textnotations.instructionset.grammar.InstructionsetGrammarInformationProvider.INSTRUCTIONSET_2_0_0_1_0_0_0, null, true);
+                    				copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken)a1, element);
+                    			}
+
+                    if ( state.backtracking==0 ) {
+                    				// expected elements (follow set)
+                    				addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[27]);
+                    			}
+
+                    // Instructionset.g:917:4: (a2= INT )
+                    // Instructionset.g:918:5: a2= INT
                     {
-                    a1=(Token)match(input,INT,FOLLOW_INT_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionParameter512); if (state.failed) return element;
+                    a2=(Token)match(input,INT,FOLLOW_INT_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionParameter574); if (state.failed) return element;
 
                     if ( state.backtracking==0 ) {
                     					if (terminateParsing) {
@@ -1209,14 +1281,14 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
                     						element = hu.modembed.model.modembed.core.instructionset.InstructionsetFactory.eINSTANCE.createInstructionParameter();
                     						startIncompleteElement(element);
                     					}
-                    					if (a1 != null) {
+                    					if (a2 != null) {
                     						hu.modembed.model.textnotations.instructionset.IInstructionsetTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("INT");
                     						tokenResolver.setOptions(getOptions());
                     						hu.modembed.model.textnotations.instructionset.IInstructionsetTokenResolveResult result = getFreshTokenResolveResult();
-                    						tokenResolver.resolve(a1.getText(), element.eClass().getEStructuralFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.INSTRUCTION_PARAMETER__DEFAULT_VALUE), result);
+                    						tokenResolver.resolve(a2.getText(), element.eClass().getEStructuralFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.INSTRUCTION_PARAMETER__DEFAULT_VALUE), result);
                     						Object resolvedObject = result.getResolvedToken();
                     						if (resolvedObject == null) {
-                    							addErrorToResource(result.getErrorMessage(), ((org.antlr.runtime3_4_0.CommonToken) a1).getLine(), ((org.antlr.runtime3_4_0.CommonToken) a1).getCharPositionInLine(), ((org.antlr.runtime3_4_0.CommonToken) a1).getStartIndex(), ((org.antlr.runtime3_4_0.CommonToken) a1).getStopIndex());
+                    							addErrorToResource(result.getErrorMessage(), ((org.antlr.runtime3_4_0.CommonToken) a2).getLine(), ((org.antlr.runtime3_4_0.CommonToken) a2).getCharPositionInLine(), ((org.antlr.runtime3_4_0.CommonToken) a2).getStartIndex(), ((org.antlr.runtime3_4_0.CommonToken) a2).getStopIndex());
                     						}
                     						java.lang.Integer resolved = (java.lang.Integer) resolvedObject;
                     						if (resolved != null) {
@@ -1225,8 +1297,8 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
                     							completedElement(value, false);
                     						}
                     						collectHiddenTokens(element);
-                    						retrieveLayoutInformation(element, hu.modembed.model.textnotations.instructionset.grammar.InstructionsetGrammarInformationProvider.INSTRUCTIONSET_2_0_0_1_0_0_0, resolved, true);
-                    						copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken) a1, element);
+                    						retrieveLayoutInformation(element, hu.modembed.model.textnotations.instructionset.grammar.InstructionsetGrammarInformationProvider.INSTRUCTIONSET_2_0_0_1_0_0_1, resolved, true);
+                    						copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken) a2, element);
                     					}
                     				}
 
@@ -1235,9 +1307,8 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
 
                     if ( state.backtracking==0 ) {
                     				// expected elements (follow set)
-                    				addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstruction(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[27]);
                     				addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstruction(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[28]);
-                    				addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionSet(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[29]);
+                    				addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[29]);
                     			}
 
                     }
@@ -1252,8 +1323,7 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
             		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstruction(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[30]);
-            		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstruction(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[31]);
-            		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionSet(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[32]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[31]);
             	}
 
             }
@@ -1276,7 +1346,7 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
 
 
     // $ANTLR start "parse_hu_modembed_model_modembed_core_instructionset_InstructionWord"
-    // Instructionset.g:913:1: parse_hu_modembed_model_modembed_core_instructionset_InstructionWord returns [hu.modembed.model.modembed.core.instructionset.InstructionWord element = null] : a0= '<' ( ( (a1_0= parse_hu_modembed_model_modembed_core_instructionset_ConstantSection |a1_1= parse_hu_modembed_model_modembed_core_instructionset_ParameterSection ) ) )* a2= '>' ;
+    // Instructionset.g:964:1: parse_hu_modembed_model_modembed_core_instructionset_InstructionWord returns [hu.modembed.model.modembed.core.instructionset.InstructionWord element = null] : a0= '<' (a1_0= parse_hu_modembed_model_modembed_core_instructionset_InstructionSection ) ( (a2= '|' (a3_0= parse_hu_modembed_model_modembed_core_instructionset_InstructionSection ) ) )* a4= '>' ;
     public final hu.modembed.model.modembed.core.instructionset.InstructionWord parse_hu_modembed_model_modembed_core_instructionset_InstructionWord() throws RecognitionException {
         hu.modembed.model.modembed.core.instructionset.InstructionWord element =  null;
 
@@ -1284,9 +1354,10 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
 
         Token a0=null;
         Token a2=null;
-        hu.modembed.model.modembed.core.instructionset.ConstantSection a1_0 =null;
+        Token a4=null;
+        hu.modembed.model.modembed.core.instructionset.InstructionSection a1_0 =null;
 
-        hu.modembed.model.modembed.core.instructionset.ParameterSection a1_1 =null;
+        hu.modembed.model.modembed.core.instructionset.InstructionSection a3_0 =null;
 
 
 
@@ -1294,10 +1365,10 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 5) ) { return element; }
 
-            // Instructionset.g:916:2: (a0= '<' ( ( (a1_0= parse_hu_modembed_model_modembed_core_instructionset_ConstantSection |a1_1= parse_hu_modembed_model_modembed_core_instructionset_ParameterSection ) ) )* a2= '>' )
-            // Instructionset.g:917:2: a0= '<' ( ( (a1_0= parse_hu_modembed_model_modembed_core_instructionset_ConstantSection |a1_1= parse_hu_modembed_model_modembed_core_instructionset_ParameterSection ) ) )* a2= '>'
+            // Instructionset.g:967:2: (a0= '<' (a1_0= parse_hu_modembed_model_modembed_core_instructionset_InstructionSection ) ( (a2= '|' (a3_0= parse_hu_modembed_model_modembed_core_instructionset_InstructionSection ) ) )* a4= '>' )
+            // Instructionset.g:968:2: a0= '<' (a1_0= parse_hu_modembed_model_modembed_core_instructionset_InstructionSection ) ( (a2= '|' (a3_0= parse_hu_modembed_model_modembed_core_instructionset_InstructionSection ) ) )* a4= '>'
             {
-            a0=(Token)match(input,14,FOLLOW_14_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionWord573); if (state.failed) return element;
+            a0=(Token)match(input,15,FOLLOW_15_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionWord635); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             		if (element == null) {
@@ -1311,119 +1382,120 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
 
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
+            		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionWord(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[32]);
             		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionWord(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[33]);
-            		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionWord(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[34]);
+            	}
+
+            // Instructionset.g:983:2: (a1_0= parse_hu_modembed_model_modembed_core_instructionset_InstructionSection )
+            // Instructionset.g:984:3: a1_0= parse_hu_modembed_model_modembed_core_instructionset_InstructionSection
+            {
+            pushFollow(FOLLOW_parse_hu_modembed_model_modembed_core_instructionset_InstructionSection_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionWord653);
+            a1_0=parse_hu_modembed_model_modembed_core_instructionset_InstructionSection();
+
+            state._fsp--;
+            if (state.failed) return element;
+
+            if ( state.backtracking==0 ) {
+            			if (terminateParsing) {
+            				throw new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetTerminateParsingException();
+            			}
+            			if (element == null) {
+            				element = hu.modembed.model.modembed.core.instructionset.InstructionsetFactory.eINSTANCE.createInstructionWord();
+            				startIncompleteElement(element);
+            			}
+            			if (a1_0 != null) {
+            				if (a1_0 != null) {
+            					Object value = a1_0;
+            					addObjectToList(element, hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.INSTRUCTION_WORD__SECTIONS, value);
+            					completedElement(value, true);
+            				}
+            				collectHiddenTokens(element);
+            				retrieveLayoutInformation(element, hu.modembed.model.textnotations.instructionset.grammar.InstructionsetGrammarInformationProvider.INSTRUCTIONSET_3_0_0_1, a1_0, true);
+            				copyLocalizationInfos(a1_0, element);
+            			}
+            		}
+
+            }
+
+
+            if ( state.backtracking==0 ) {
+            		// expected elements (follow set)
+            		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[34]);
             		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[35]);
             	}
 
-            // Instructionset.g:933:2: ( ( (a1_0= parse_hu_modembed_model_modembed_core_instructionset_ConstantSection |a1_1= parse_hu_modembed_model_modembed_core_instructionset_ParameterSection ) ) )*
-            loop7:
+            // Instructionset.g:1010:2: ( (a2= '|' (a3_0= parse_hu_modembed_model_modembed_core_instructionset_InstructionSection ) ) )*
+            loop6:
             do {
-                int alt7=2;
-                int LA7_0 = input.LA(1);
+                int alt6=2;
+                int LA6_0 = input.LA(1);
 
-                if ( (LA7_0==BINARY||LA7_0==IDENTIFIER) ) {
-                    alt7=1;
+                if ( (LA6_0==20) ) {
+                    alt6=1;
                 }
 
 
-                switch (alt7) {
+                switch (alt6) {
             	case 1 :
-            	    // Instructionset.g:934:3: ( (a1_0= parse_hu_modembed_model_modembed_core_instructionset_ConstantSection |a1_1= parse_hu_modembed_model_modembed_core_instructionset_ParameterSection ) )
+            	    // Instructionset.g:1011:3: (a2= '|' (a3_0= parse_hu_modembed_model_modembed_core_instructionset_InstructionSection ) )
             	    {
-            	    // Instructionset.g:934:3: ( (a1_0= parse_hu_modembed_model_modembed_core_instructionset_ConstantSection |a1_1= parse_hu_modembed_model_modembed_core_instructionset_ParameterSection ) )
-            	    // Instructionset.g:935:4: (a1_0= parse_hu_modembed_model_modembed_core_instructionset_ConstantSection |a1_1= parse_hu_modembed_model_modembed_core_instructionset_ParameterSection )
+            	    // Instructionset.g:1011:3: (a2= '|' (a3_0= parse_hu_modembed_model_modembed_core_instructionset_InstructionSection ) )
+            	    // Instructionset.g:1012:4: a2= '|' (a3_0= parse_hu_modembed_model_modembed_core_instructionset_InstructionSection )
             	    {
-            	    // Instructionset.g:935:4: (a1_0= parse_hu_modembed_model_modembed_core_instructionset_ConstantSection |a1_1= parse_hu_modembed_model_modembed_core_instructionset_ParameterSection )
-            	    int alt6=2;
-            	    int LA6_0 = input.LA(1);
+            	    a2=(Token)match(input,20,FOLLOW_20_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionWord680); if (state.failed) return element;
 
-            	    if ( (LA6_0==BINARY) ) {
-            	        alt6=1;
-            	    }
-            	    else if ( (LA6_0==IDENTIFIER) ) {
-            	        alt6=2;
-            	    }
-            	    else {
-            	        if (state.backtracking>0) {state.failed=true; return element;}
-            	        NoViableAltException nvae =
-            	            new NoViableAltException("", 6, 0, input);
+            	    if ( state.backtracking==0 ) {
+            	    				if (element == null) {
+            	    					element = hu.modembed.model.modembed.core.instructionset.InstructionsetFactory.eINSTANCE.createInstructionWord();
+            	    					startIncompleteElement(element);
+            	    				}
+            	    				collectHiddenTokens(element);
+            	    				retrieveLayoutInformation(element, hu.modembed.model.textnotations.instructionset.grammar.InstructionsetGrammarInformationProvider.INSTRUCTIONSET_3_0_0_2_0_0_0, null, true);
+            	    				copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken)a2, element);
+            	    			}
 
-            	        throw nvae;
+            	    if ( state.backtracking==0 ) {
+            	    				// expected elements (follow set)
+            	    				addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionWord(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[36]);
+            	    				addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionWord(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[37]);
+            	    			}
 
-            	    }
-            	    switch (alt6) {
-            	        case 1 :
-            	            // Instructionset.g:936:5: a1_0= parse_hu_modembed_model_modembed_core_instructionset_ConstantSection
-            	            {
-            	            pushFollow(FOLLOW_parse_hu_modembed_model_modembed_core_instructionset_ConstantSection_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionWord602);
-            	            a1_0=parse_hu_modembed_model_modembed_core_instructionset_ConstantSection();
+            	    // Instructionset.g:1027:4: (a3_0= parse_hu_modembed_model_modembed_core_instructionset_InstructionSection )
+            	    // Instructionset.g:1028:5: a3_0= parse_hu_modembed_model_modembed_core_instructionset_InstructionSection
+            	    {
+            	    pushFollow(FOLLOW_parse_hu_modembed_model_modembed_core_instructionset_InstructionSection_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionWord706);
+            	    a3_0=parse_hu_modembed_model_modembed_core_instructionset_InstructionSection();
 
-            	            state._fsp--;
-            	            if (state.failed) return element;
+            	    state._fsp--;
+            	    if (state.failed) return element;
 
-            	            if ( state.backtracking==0 ) {
-            	            					if (terminateParsing) {
-            	            						throw new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetTerminateParsingException();
-            	            					}
-            	            					if (element == null) {
-            	            						element = hu.modembed.model.modembed.core.instructionset.InstructionsetFactory.eINSTANCE.createInstructionWord();
-            	            						startIncompleteElement(element);
-            	            					}
-            	            					if (a1_0 != null) {
-            	            						if (a1_0 != null) {
-            	            							Object value = a1_0;
-            	            							addObjectToList(element, hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.INSTRUCTION_WORD__SECTIONS, value);
-            	            							completedElement(value, true);
-            	            						}
-            	            						collectHiddenTokens(element);
-            	            						retrieveLayoutInformation(element, hu.modembed.model.textnotations.instructionset.grammar.InstructionsetGrammarInformationProvider.INSTRUCTIONSET_3_0_0_1_0_0_0, a1_0, true);
-            	            						copyLocalizationInfos(a1_0, element);
-            	            					}
-            	            				}
-
-            	            }
-            	            break;
-            	        case 2 :
-            	            // Instructionset.g:955:10: a1_1= parse_hu_modembed_model_modembed_core_instructionset_ParameterSection
-            	            {
-            	            pushFollow(FOLLOW_parse_hu_modembed_model_modembed_core_instructionset_ParameterSection_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionWord622);
-            	            a1_1=parse_hu_modembed_model_modembed_core_instructionset_ParameterSection();
-
-            	            state._fsp--;
-            	            if (state.failed) return element;
-
-            	            if ( state.backtracking==0 ) {
-            	            					if (terminateParsing) {
-            	            						throw new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetTerminateParsingException();
-            	            					}
-            	            					if (element == null) {
-            	            						element = hu.modembed.model.modembed.core.instructionset.InstructionsetFactory.eINSTANCE.createInstructionWord();
-            	            						startIncompleteElement(element);
-            	            					}
-            	            					if (a1_1 != null) {
-            	            						if (a1_1 != null) {
-            	            							Object value = a1_1;
-            	            							addObjectToList(element, hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.INSTRUCTION_WORD__SECTIONS, value);
-            	            							completedElement(value, true);
-            	            						}
-            	            						collectHiddenTokens(element);
-            	            						retrieveLayoutInformation(element, hu.modembed.model.textnotations.instructionset.grammar.InstructionsetGrammarInformationProvider.INSTRUCTIONSET_3_0_0_1_0_0_0, a1_1, true);
-            	            						copyLocalizationInfos(a1_1, element);
-            	            					}
-            	            				}
-
-            	            }
-            	            break;
+            	    if ( state.backtracking==0 ) {
+            	    					if (terminateParsing) {
+            	    						throw new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetTerminateParsingException();
+            	    					}
+            	    					if (element == null) {
+            	    						element = hu.modembed.model.modembed.core.instructionset.InstructionsetFactory.eINSTANCE.createInstructionWord();
+            	    						startIncompleteElement(element);
+            	    					}
+            	    					if (a3_0 != null) {
+            	    						if (a3_0 != null) {
+            	    							Object value = a3_0;
+            	    							addObjectToList(element, hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.INSTRUCTION_WORD__SECTIONS, value);
+            	    							completedElement(value, true);
+            	    						}
+            	    						collectHiddenTokens(element);
+            	    						retrieveLayoutInformation(element, hu.modembed.model.textnotations.instructionset.grammar.InstructionsetGrammarInformationProvider.INSTRUCTIONSET_3_0_0_2_0_0_1, a3_0, true);
+            	    						copyLocalizationInfos(a3_0, element);
+            	    					}
+            	    				}
 
             	    }
 
 
             	    if ( state.backtracking==0 ) {
             	    				// expected elements (follow set)
-            	    				addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionWord(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[36]);
-            	    				addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionWord(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[37]);
             	    				addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[38]);
+            	    				addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[39]);
             	    			}
 
             	    }
@@ -1433,19 +1505,18 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
             	    break;
 
             	default :
-            	    break loop7;
+            	    break loop6;
                 }
             } while (true);
 
 
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
-            		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionWord(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[39]);
-            		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionWord(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[40]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[40]);
             		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[41]);
             	}
 
-            a2=(Token)match(input,15,FOLLOW_15_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionWord663); if (state.failed) return element;
+            a4=(Token)match(input,17,FOLLOW_17_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionWord747); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             		if (element == null) {
@@ -1453,14 +1524,14 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
             			startIncompleteElement(element);
             		}
             		collectHiddenTokens(element);
-            		retrieveLayoutInformation(element, hu.modembed.model.textnotations.instructionset.grammar.InstructionsetGrammarInformationProvider.INSTRUCTIONSET_3_0_0_2, null, true);
-            		copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken)a2, element);
+            		retrieveLayoutInformation(element, hu.modembed.model.textnotations.instructionset.grammar.InstructionsetGrammarInformationProvider.INSTRUCTIONSET_3_0_0_3, null, true);
+            		copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken)a4, element);
             	}
 
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
             		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstruction(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[42]);
-            		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionSet(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[43]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[43]);
             	}
 
             }
@@ -1483,7 +1554,7 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
 
 
     // $ANTLR start "parse_hu_modembed_model_modembed_core_instructionset_ConstantSection"
-    // Instructionset.g:1008:1: parse_hu_modembed_model_modembed_core_instructionset_ConstantSection returns [hu.modembed.model.modembed.core.instructionset.ConstantSection element = null] : (a0= BINARY ) a1= ':' (a2= BINARY ) ( (a3= ':' (a4= BINARY ) ) )? ;
+    // Instructionset.g:1079:1: parse_hu_modembed_model_modembed_core_instructionset_ConstantSection returns [hu.modembed.model.modembed.core.instructionset.ConstantSection element = null] : (a0= BINARY ) a1= ':' (a2= INT ) ( (a3= ':' (a4= INT ) ) )? ;
     public final hu.modembed.model.modembed.core.instructionset.ConstantSection parse_hu_modembed_model_modembed_core_instructionset_ConstantSection() throws RecognitionException {
         hu.modembed.model.modembed.core.instructionset.ConstantSection element =  null;
 
@@ -1500,13 +1571,13 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 6) ) { return element; }
 
-            // Instructionset.g:1011:2: ( (a0= BINARY ) a1= ':' (a2= BINARY ) ( (a3= ':' (a4= BINARY ) ) )? )
-            // Instructionset.g:1012:2: (a0= BINARY ) a1= ':' (a2= BINARY ) ( (a3= ':' (a4= BINARY ) ) )?
+            // Instructionset.g:1082:2: ( (a0= BINARY ) a1= ':' (a2= INT ) ( (a3= ':' (a4= INT ) ) )? )
+            // Instructionset.g:1083:2: (a0= BINARY ) a1= ':' (a2= INT ) ( (a3= ':' (a4= INT ) ) )?
             {
-            // Instructionset.g:1012:2: (a0= BINARY )
-            // Instructionset.g:1013:3: a0= BINARY
+            // Instructionset.g:1083:2: (a0= BINARY )
+            // Instructionset.g:1084:3: a0= BINARY
             {
-            a0=(Token)match(input,BINARY,FOLLOW_BINARY_in_parse_hu_modembed_model_modembed_core_instructionset_ConstantSection696); if (state.failed) return element;
+            a0=(Token)match(input,BINARY,FOLLOW_BINARY_in_parse_hu_modembed_model_modembed_core_instructionset_ConstantSection780); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             			if (terminateParsing) {
@@ -1545,7 +1616,7 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
             		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[44]);
             	}
 
-            a1=(Token)match(input,12,FOLLOW_12_in_parse_hu_modembed_model_modembed_core_instructionset_ConstantSection717); if (state.failed) return element;
+            a1=(Token)match(input,13,FOLLOW_13_in_parse_hu_modembed_model_modembed_core_instructionset_ConstantSection801); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             		if (element == null) {
@@ -1562,10 +1633,10 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
             		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[45]);
             	}
 
-            // Instructionset.g:1062:2: (a2= BINARY )
-            // Instructionset.g:1063:3: a2= BINARY
+            // Instructionset.g:1133:2: (a2= INT )
+            // Instructionset.g:1134:3: a2= INT
             {
-            a2=(Token)match(input,BINARY,FOLLOW_BINARY_in_parse_hu_modembed_model_modembed_core_instructionset_ConstantSection735); if (state.failed) return element;
+            a2=(Token)match(input,INT,FOLLOW_INT_in_parse_hu_modembed_model_modembed_core_instructionset_ConstantSection819); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             			if (terminateParsing) {
@@ -1576,7 +1647,7 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
             				startIncompleteElement(element);
             			}
             			if (a2 != null) {
-            				hu.modembed.model.textnotations.instructionset.IInstructionsetTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("BINARY");
+            				hu.modembed.model.textnotations.instructionset.IInstructionsetTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("INT");
             				tokenResolver.setOptions(getOptions());
             				hu.modembed.model.textnotations.instructionset.IInstructionsetTokenResolveResult result = getFreshTokenResolveResult();
             				tokenResolver.resolve(a2.getText(), element.eClass().getEStructuralFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.CONSTANT_SECTION__SIZE), result);
@@ -1602,26 +1673,25 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
             		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[46]);
-            		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionWord(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[47]);
-            		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionWord(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[48]);
-            		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[49]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[47]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[48]);
             	}
 
-            // Instructionset.g:1101:2: ( (a3= ':' (a4= BINARY ) ) )?
-            int alt8=2;
-            int LA8_0 = input.LA(1);
+            // Instructionset.g:1171:2: ( (a3= ':' (a4= INT ) ) )?
+            int alt7=2;
+            int LA7_0 = input.LA(1);
 
-            if ( (LA8_0==12) ) {
-                alt8=1;
+            if ( (LA7_0==13) ) {
+                alt7=1;
             }
-            switch (alt8) {
+            switch (alt7) {
                 case 1 :
-                    // Instructionset.g:1102:3: (a3= ':' (a4= BINARY ) )
+                    // Instructionset.g:1172:3: (a3= ':' (a4= INT ) )
                     {
-                    // Instructionset.g:1102:3: (a3= ':' (a4= BINARY ) )
-                    // Instructionset.g:1103:4: a3= ':' (a4= BINARY )
+                    // Instructionset.g:1172:3: (a3= ':' (a4= INT ) )
+                    // Instructionset.g:1173:4: a3= ':' (a4= INT )
                     {
-                    a3=(Token)match(input,12,FOLLOW_12_in_parse_hu_modembed_model_modembed_core_instructionset_ConstantSection765); if (state.failed) return element;
+                    a3=(Token)match(input,13,FOLLOW_13_in_parse_hu_modembed_model_modembed_core_instructionset_ConstantSection849); if (state.failed) return element;
 
                     if ( state.backtracking==0 ) {
                     				if (element == null) {
@@ -1635,13 +1705,13 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
 
                     if ( state.backtracking==0 ) {
                     				// expected elements (follow set)
-                    				addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[50]);
+                    				addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[49]);
                     			}
 
-                    // Instructionset.g:1117:4: (a4= BINARY )
-                    // Instructionset.g:1118:5: a4= BINARY
+                    // Instructionset.g:1187:4: (a4= INT )
+                    // Instructionset.g:1188:5: a4= INT
                     {
-                    a4=(Token)match(input,BINARY,FOLLOW_BINARY_in_parse_hu_modembed_model_modembed_core_instructionset_ConstantSection791); if (state.failed) return element;
+                    a4=(Token)match(input,INT,FOLLOW_INT_in_parse_hu_modembed_model_modembed_core_instructionset_ConstantSection875); if (state.failed) return element;
 
                     if ( state.backtracking==0 ) {
                     					if (terminateParsing) {
@@ -1652,7 +1722,7 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
                     						startIncompleteElement(element);
                     					}
                     					if (a4 != null) {
-                    						hu.modembed.model.textnotations.instructionset.IInstructionsetTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("BINARY");
+                    						hu.modembed.model.textnotations.instructionset.IInstructionsetTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("INT");
                     						tokenResolver.setOptions(getOptions());
                     						hu.modembed.model.textnotations.instructionset.IInstructionsetTokenResolveResult result = getFreshTokenResolveResult();
                     						tokenResolver.resolve(a4.getText(), element.eClass().getEStructuralFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.CONSTANT_SECTION__SHIFT), result);
@@ -1677,9 +1747,8 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
 
                     if ( state.backtracking==0 ) {
                     				// expected elements (follow set)
-                    				addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionWord(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[51]);
-                    				addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionWord(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[52]);
-                    				addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[53]);
+                    				addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[50]);
+                    				addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[51]);
                     			}
 
                     }
@@ -1693,9 +1762,8 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
 
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
-            		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionWord(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[54]);
-            		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionWord(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[55]);
-            		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[56]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[52]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[53]);
             	}
 
             }
@@ -1718,7 +1786,7 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
 
 
     // $ANTLR start "parse_hu_modembed_model_modembed_core_instructionset_ParameterSection"
-    // Instructionset.g:1166:1: parse_hu_modembed_model_modembed_core_instructionset_ParameterSection returns [hu.modembed.model.modembed.core.instructionset.ParameterSection element = null] : (a0= IDENTIFIER ) a1= ':' (a2= BINARY ) ( (a3= ':' (a4= BINARY ) ) )? ;
+    // Instructionset.g:1234:1: parse_hu_modembed_model_modembed_core_instructionset_ParameterSection returns [hu.modembed.model.modembed.core.instructionset.ParameterSection element = null] : (a0= IDENTIFIER ) a1= ':' (a2= INT ) ( (a3= ':' (a4= INT ) ) )? ;
     public final hu.modembed.model.modembed.core.instructionset.ParameterSection parse_hu_modembed_model_modembed_core_instructionset_ParameterSection() throws RecognitionException {
         hu.modembed.model.modembed.core.instructionset.ParameterSection element =  null;
 
@@ -1735,13 +1803,13 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 7) ) { return element; }
 
-            // Instructionset.g:1169:2: ( (a0= IDENTIFIER ) a1= ':' (a2= BINARY ) ( (a3= ':' (a4= BINARY ) ) )? )
-            // Instructionset.g:1170:2: (a0= IDENTIFIER ) a1= ':' (a2= BINARY ) ( (a3= ':' (a4= BINARY ) ) )?
+            // Instructionset.g:1237:2: ( (a0= IDENTIFIER ) a1= ':' (a2= INT ) ( (a3= ':' (a4= INT ) ) )? )
+            // Instructionset.g:1238:2: (a0= IDENTIFIER ) a1= ':' (a2= INT ) ( (a3= ':' (a4= INT ) ) )?
             {
-            // Instructionset.g:1170:2: (a0= IDENTIFIER )
-            // Instructionset.g:1171:3: a0= IDENTIFIER
+            // Instructionset.g:1238:2: (a0= IDENTIFIER )
+            // Instructionset.g:1239:3: a0= IDENTIFIER
             {
-            a0=(Token)match(input,IDENTIFIER,FOLLOW_IDENTIFIER_in_parse_hu_modembed_model_modembed_core_instructionset_ParameterSection856); if (state.failed) return element;
+            a0=(Token)match(input,IDENTIFIER,FOLLOW_IDENTIFIER_in_parse_hu_modembed_model_modembed_core_instructionset_ParameterSection940); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             			if (terminateParsing) {
@@ -1781,10 +1849,10 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
 
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
-            		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[57]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[54]);
             	}
 
-            a1=(Token)match(input,12,FOLLOW_12_in_parse_hu_modembed_model_modembed_core_instructionset_ParameterSection877); if (state.failed) return element;
+            a1=(Token)match(input,13,FOLLOW_13_in_parse_hu_modembed_model_modembed_core_instructionset_ParameterSection961); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             		if (element == null) {
@@ -1798,13 +1866,13 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
 
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
-            		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[58]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[55]);
             	}
 
-            // Instructionset.g:1224:2: (a2= BINARY )
-            // Instructionset.g:1225:3: a2= BINARY
+            // Instructionset.g:1292:2: (a2= INT )
+            // Instructionset.g:1293:3: a2= INT
             {
-            a2=(Token)match(input,BINARY,FOLLOW_BINARY_in_parse_hu_modembed_model_modembed_core_instructionset_ParameterSection895); if (state.failed) return element;
+            a2=(Token)match(input,INT,FOLLOW_INT_in_parse_hu_modembed_model_modembed_core_instructionset_ParameterSection979); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             			if (terminateParsing) {
@@ -1815,7 +1883,7 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
             				startIncompleteElement(element);
             			}
             			if (a2 != null) {
-            				hu.modembed.model.textnotations.instructionset.IInstructionsetTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("BINARY");
+            				hu.modembed.model.textnotations.instructionset.IInstructionsetTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("INT");
             				tokenResolver.setOptions(getOptions());
             				hu.modembed.model.textnotations.instructionset.IInstructionsetTokenResolveResult result = getFreshTokenResolveResult();
             				tokenResolver.resolve(a2.getText(), element.eClass().getEStructuralFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.PARAMETER_SECTION__SIZE), result);
@@ -1840,27 +1908,26 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
 
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
-            		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[59]);
-            		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionWord(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[60]);
-            		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionWord(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[61]);
-            		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[62]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[56]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[57]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[58]);
             	}
 
-            // Instructionset.g:1263:2: ( (a3= ':' (a4= BINARY ) ) )?
-            int alt9=2;
-            int LA9_0 = input.LA(1);
+            // Instructionset.g:1330:2: ( (a3= ':' (a4= INT ) ) )?
+            int alt8=2;
+            int LA8_0 = input.LA(1);
 
-            if ( (LA9_0==12) ) {
-                alt9=1;
+            if ( (LA8_0==13) ) {
+                alt8=1;
             }
-            switch (alt9) {
+            switch (alt8) {
                 case 1 :
-                    // Instructionset.g:1264:3: (a3= ':' (a4= BINARY ) )
+                    // Instructionset.g:1331:3: (a3= ':' (a4= INT ) )
                     {
-                    // Instructionset.g:1264:3: (a3= ':' (a4= BINARY ) )
-                    // Instructionset.g:1265:4: a3= ':' (a4= BINARY )
+                    // Instructionset.g:1331:3: (a3= ':' (a4= INT ) )
+                    // Instructionset.g:1332:4: a3= ':' (a4= INT )
                     {
-                    a3=(Token)match(input,12,FOLLOW_12_in_parse_hu_modembed_model_modembed_core_instructionset_ParameterSection925); if (state.failed) return element;
+                    a3=(Token)match(input,13,FOLLOW_13_in_parse_hu_modembed_model_modembed_core_instructionset_ParameterSection1009); if (state.failed) return element;
 
                     if ( state.backtracking==0 ) {
                     				if (element == null) {
@@ -1874,13 +1941,13 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
 
                     if ( state.backtracking==0 ) {
                     				// expected elements (follow set)
-                    				addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[63]);
+                    				addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[59]);
                     			}
 
-                    // Instructionset.g:1279:4: (a4= BINARY )
-                    // Instructionset.g:1280:5: a4= BINARY
+                    // Instructionset.g:1346:4: (a4= INT )
+                    // Instructionset.g:1347:5: a4= INT
                     {
-                    a4=(Token)match(input,BINARY,FOLLOW_BINARY_in_parse_hu_modembed_model_modembed_core_instructionset_ParameterSection951); if (state.failed) return element;
+                    a4=(Token)match(input,INT,FOLLOW_INT_in_parse_hu_modembed_model_modembed_core_instructionset_ParameterSection1035); if (state.failed) return element;
 
                     if ( state.backtracking==0 ) {
                     					if (terminateParsing) {
@@ -1891,7 +1958,7 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
                     						startIncompleteElement(element);
                     					}
                     					if (a4 != null) {
-                    						hu.modembed.model.textnotations.instructionset.IInstructionsetTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("BINARY");
+                    						hu.modembed.model.textnotations.instructionset.IInstructionsetTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("INT");
                     						tokenResolver.setOptions(getOptions());
                     						hu.modembed.model.textnotations.instructionset.IInstructionsetTokenResolveResult result = getFreshTokenResolveResult();
                     						tokenResolver.resolve(a4.getText(), element.eClass().getEStructuralFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.PARAMETER_SECTION__SHIFT), result);
@@ -1916,9 +1983,8 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
 
                     if ( state.backtracking==0 ) {
                     				// expected elements (follow set)
-                    				addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionWord(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[64]);
-                    				addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionWord(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[65]);
-                    				addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[66]);
+                    				addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[60]);
+                    				addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[61]);
                     			}
 
                     }
@@ -1932,9 +1998,8 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
 
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
-            		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionWord(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[67]);
-            		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionWord(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[68]);
-            		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[69]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[62]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[63]);
             	}
 
             }
@@ -1954,6 +2019,85 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
     }
     // $ANTLR end "parse_hu_modembed_model_modembed_core_instructionset_ParameterSection"
 
+
+
+    // $ANTLR start "parse_hu_modembed_model_modembed_core_instructionset_InstructionSection"
+    // Instructionset.g:1393:1: parse_hu_modembed_model_modembed_core_instructionset_InstructionSection returns [hu.modembed.model.modembed.core.instructionset.InstructionSection element = null] : (c0= parse_hu_modembed_model_modembed_core_instructionset_ConstantSection |c1= parse_hu_modembed_model_modembed_core_instructionset_ParameterSection );
+    public final hu.modembed.model.modembed.core.instructionset.InstructionSection parse_hu_modembed_model_modembed_core_instructionset_InstructionSection() throws RecognitionException {
+        hu.modembed.model.modembed.core.instructionset.InstructionSection element =  null;
+
+        int parse_hu_modembed_model_modembed_core_instructionset_InstructionSection_StartIndex = input.index();
+
+        hu.modembed.model.modembed.core.instructionset.ConstantSection c0 =null;
+
+        hu.modembed.model.modembed.core.instructionset.ParameterSection c1 =null;
+
+
+        try {
+            if ( state.backtracking>0 && alreadyParsedRule(input, 8) ) { return element; }
+
+            // Instructionset.g:1394:2: (c0= parse_hu_modembed_model_modembed_core_instructionset_ConstantSection |c1= parse_hu_modembed_model_modembed_core_instructionset_ParameterSection )
+            int alt9=2;
+            int LA9_0 = input.LA(1);
+
+            if ( (LA9_0==BINARY) ) {
+                alt9=1;
+            }
+            else if ( (LA9_0==IDENTIFIER) ) {
+                alt9=2;
+            }
+            else {
+                if (state.backtracking>0) {state.failed=true; return element;}
+                NoViableAltException nvae =
+                    new NoViableAltException("", 9, 0, input);
+
+                throw nvae;
+
+            }
+            switch (alt9) {
+                case 1 :
+                    // Instructionset.g:1395:2: c0= parse_hu_modembed_model_modembed_core_instructionset_ConstantSection
+                    {
+                    pushFollow(FOLLOW_parse_hu_modembed_model_modembed_core_instructionset_ConstantSection_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionSection1092);
+                    c0=parse_hu_modembed_model_modembed_core_instructionset_ConstantSection();
+
+                    state._fsp--;
+                    if (state.failed) return element;
+
+                    if ( state.backtracking==0 ) { element = c0; /* this is a subclass or primitive expression choice */ }
+
+                    }
+                    break;
+                case 2 :
+                    // Instructionset.g:1396:4: c1= parse_hu_modembed_model_modembed_core_instructionset_ParameterSection
+                    {
+                    pushFollow(FOLLOW_parse_hu_modembed_model_modembed_core_instructionset_ParameterSection_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionSection1102);
+                    c1=parse_hu_modembed_model_modembed_core_instructionset_ParameterSection();
+
+                    state._fsp--;
+                    if (state.failed) return element;
+
+                    if ( state.backtracking==0 ) { element = c1; /* this is a subclass or primitive expression choice */ }
+
+                    }
+                    break;
+
+            }
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+
+        finally {
+        	// do for sure before leaving
+            if ( state.backtracking>0 ) { memoize(input, 8, parse_hu_modembed_model_modembed_core_instructionset_InstructionSection_StartIndex); }
+
+        }
+        return element;
+    }
+    // $ANTLR end "parse_hu_modembed_model_modembed_core_instructionset_InstructionSection"
+
     // Delegated rules
 
 
@@ -1961,30 +2105,37 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
 
     public static final BitSet FOLLOW_parse_hu_modembed_model_modembed_core_instructionset_InstructionSet_in_start82 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_start89 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionSet115 = new BitSet(new long[]{0x0000000000000200L});
-    public static final BitSet FOLLOW_QUALIFIEDID_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionSet133 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_13_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionSet154 = new BitSet(new long[]{0x0000000000010402L});
-    public static final BitSet FOLLOW_16_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionSet177 = new BitSet(new long[]{0x0000000000000200L});
-    public static final BitSet FOLLOW_QUALIFIEDID_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionSet203 = new BitSet(new long[]{0x0000000000000402L});
-    public static final BitSet FOLLOW_parse_hu_modembed_model_modembed_core_instructionset_Instruction_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionSet264 = new BitSet(new long[]{0x0000000000000402L});
-    public static final BitSet FOLLOW_TEXT_in_parse_hu_modembed_model_modembed_core_instructionset_Instruction324 = new BitSet(new long[]{0x0000000000004042L});
-    public static final BitSet FOLLOW_parse_hu_modembed_model_modembed_core_instructionset_InstructionParameter_in_parse_hu_modembed_model_modembed_core_instructionset_Instruction360 = new BitSet(new long[]{0x0000000000004042L});
-    public static final BitSet FOLLOW_parse_hu_modembed_model_modembed_core_instructionset_InstructionWord_in_parse_hu_modembed_model_modembed_core_instructionset_Instruction416 = new BitSet(new long[]{0x0000000000004002L});
-    public static final BitSet FOLLOW_IDENTIFIER_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionParameter476 = new BitSet(new long[]{0x0000000000000082L});
-    public static final BitSet FOLLOW_INT_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionParameter512 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_14_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionWord573 = new BitSet(new long[]{0x0000000000008050L});
-    public static final BitSet FOLLOW_parse_hu_modembed_model_modembed_core_instructionset_ConstantSection_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionWord602 = new BitSet(new long[]{0x0000000000008050L});
-    public static final BitSet FOLLOW_parse_hu_modembed_model_modembed_core_instructionset_ParameterSection_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionWord622 = new BitSet(new long[]{0x0000000000008050L});
-    public static final BitSet FOLLOW_15_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionWord663 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_BINARY_in_parse_hu_modembed_model_modembed_core_instructionset_ConstantSection696 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_12_in_parse_hu_modembed_model_modembed_core_instructionset_ConstantSection717 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_BINARY_in_parse_hu_modembed_model_modembed_core_instructionset_ConstantSection735 = new BitSet(new long[]{0x0000000000001002L});
-    public static final BitSet FOLLOW_12_in_parse_hu_modembed_model_modembed_core_instructionset_ConstantSection765 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_BINARY_in_parse_hu_modembed_model_modembed_core_instructionset_ConstantSection791 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IDENTIFIER_in_parse_hu_modembed_model_modembed_core_instructionset_ParameterSection856 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_12_in_parse_hu_modembed_model_modembed_core_instructionset_ParameterSection877 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_BINARY_in_parse_hu_modembed_model_modembed_core_instructionset_ParameterSection895 = new BitSet(new long[]{0x0000000000001002L});
-    public static final BitSet FOLLOW_12_in_parse_hu_modembed_model_modembed_core_instructionset_ParameterSection925 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_BINARY_in_parse_hu_modembed_model_modembed_core_instructionset_ParameterSection951 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionSet115 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_QUALIFIEDID_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionSet133 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_14_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionSet154 = new BitSet(new long[]{0x0000000000040022L});
+    public static final BitSet FOLLOW_18_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionSet177 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_QUALIFIEDID_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionSet203 = new BitSet(new long[]{0x0000000000000022L});
+    public static final BitSet FOLLOW_parse_hu_modembed_model_modembed_core_instructionset_Instruction_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionSet264 = new BitSet(new long[]{0x0000000000000022L});
+    public static final BitSet FOLLOW_IDENTIFIER_in_parse_hu_modembed_model_modembed_core_instructionset_Instruction324 = new BitSet(new long[]{0x0000000000000800L});
+    public static final BitSet FOLLOW_11_in_parse_hu_modembed_model_modembed_core_instructionset_Instruction345 = new BitSet(new long[]{0x0000000000001020L});
+    public static final BitSet FOLLOW_parse_hu_modembed_model_modembed_core_instructionset_InstructionParameter_in_parse_hu_modembed_model_modembed_core_instructionset_Instruction374 = new BitSet(new long[]{0x0000000000001020L});
+    public static final BitSet FOLLOW_12_in_parse_hu_modembed_model_modembed_core_instructionset_Instruction415 = new BitSet(new long[]{0x000000000000C000L});
+    public static final BitSet FOLLOW_parse_hu_modembed_model_modembed_core_instructionset_InstructionWord_in_parse_hu_modembed_model_modembed_core_instructionset_Instruction444 = new BitSet(new long[]{0x000000000000C000L});
+    public static final BitSet FOLLOW_14_in_parse_hu_modembed_model_modembed_core_instructionset_Instruction485 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IDENTIFIER_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionParameter518 = new BitSet(new long[]{0x0000000000010002L});
+    public static final BitSet FOLLOW_16_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionParameter548 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_INT_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionParameter574 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_15_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionWord635 = new BitSet(new long[]{0x0000000000000030L});
+    public static final BitSet FOLLOW_parse_hu_modembed_model_modembed_core_instructionset_InstructionSection_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionWord653 = new BitSet(new long[]{0x0000000000120000L});
+    public static final BitSet FOLLOW_20_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionWord680 = new BitSet(new long[]{0x0000000000000030L});
+    public static final BitSet FOLLOW_parse_hu_modembed_model_modembed_core_instructionset_InstructionSection_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionWord706 = new BitSet(new long[]{0x0000000000120000L});
+    public static final BitSet FOLLOW_17_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionWord747 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_BINARY_in_parse_hu_modembed_model_modembed_core_instructionset_ConstantSection780 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_13_in_parse_hu_modembed_model_modembed_core_instructionset_ConstantSection801 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_INT_in_parse_hu_modembed_model_modembed_core_instructionset_ConstantSection819 = new BitSet(new long[]{0x0000000000002002L});
+    public static final BitSet FOLLOW_13_in_parse_hu_modembed_model_modembed_core_instructionset_ConstantSection849 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_INT_in_parse_hu_modembed_model_modembed_core_instructionset_ConstantSection875 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IDENTIFIER_in_parse_hu_modembed_model_modembed_core_instructionset_ParameterSection940 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_13_in_parse_hu_modembed_model_modembed_core_instructionset_ParameterSection961 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_INT_in_parse_hu_modembed_model_modembed_core_instructionset_ParameterSection979 = new BitSet(new long[]{0x0000000000002002L});
+    public static final BitSet FOLLOW_13_in_parse_hu_modembed_model_modembed_core_instructionset_ParameterSection1009 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_INT_in_parse_hu_modembed_model_modembed_core_instructionset_ParameterSection1035 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_parse_hu_modembed_model_modembed_core_instructionset_ConstantSection_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionSection1092 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_parse_hu_modembed_model_modembed_core_instructionset_ParameterSection_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionSection1102 = new BitSet(new long[]{0x0000000000000002L});
 
 }

@@ -8,21 +8,34 @@ package hu.modembed.model.textnotations.instructionset.analysis;
 
 public class InstructionsetINTTokenResolver implements hu.modembed.model.textnotations.instructionset.IInstructionsetTokenResolver {
 	
-	private hu.modembed.model.textnotations.instructionset.analysis.InstructionsetDefaultTokenResolver defaultTokenResolver = new hu.modembed.model.textnotations.instructionset.analysis.InstructionsetDefaultTokenResolver(true);
-	
 	public String deResolve(Object value, org.eclipse.emf.ecore.EStructuralFeature feature, org.eclipse.emf.ecore.EObject container) {
-		// By default token de-resolving is delegated to the DefaultTokenResolver.
-		String result = defaultTokenResolver.deResolve(value, feature, container, null, null, null);
-		return result;
+		if (value instanceof Number){
+			long v = ((Number) value).longValue();
+			return Long.toString(v);
+		}
+		return null;
 	}
 	
 	public void resolve(String lexem, org.eclipse.emf.ecore.EStructuralFeature feature, hu.modembed.model.textnotations.instructionset.IInstructionsetTokenResolveResult result) {
-		// By default token resolving is delegated to the DefaultTokenResolver.
-		defaultTokenResolver.resolve(lexem, feature, result, null, null, null);
+		Object value = null;
+
+		try{
+			long v = Long.parseLong(lexem);
+			Class<?> clazz = feature.getEType().getInstanceClass();
+			if (long.class.equals(clazz) || Long.class.equals(clazz)){
+				value = Long.valueOf(v);
+			}
+			if (int.class.equals(clazz) || Integer.class.equals(clazz)){
+				value = Integer.valueOf((int)v);
+			}
+		}catch(NumberFormatException e){
+			result.setErrorMessage(e.getLocalizedMessage());
+		}
+
+		result.setResolvedToken(value);
 	}
 	
 	public void setOptions(java.util.Map<?,?> options) {
-		defaultTokenResolver.setOptions(options);
 	}
 	
 }

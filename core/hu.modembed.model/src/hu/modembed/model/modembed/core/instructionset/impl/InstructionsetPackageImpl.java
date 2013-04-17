@@ -264,17 +264,8 @@ public class InstructionsetPackageImpl extends EPackageImpl implements Instructi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getInstructionParameter_Id() {
-		return (EAttribute)instructionParameterEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getInstructionParameter_DefaultValue() {
-		return (EAttribute)instructionParameterEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)instructionParameterEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -449,7 +440,6 @@ public class InstructionsetPackageImpl extends EPackageImpl implements Instructi
 		createEReference(instructionEClass, INSTRUCTION__WORDS);
 
 		instructionParameterEClass = createEClass(INSTRUCTION_PARAMETER);
-		createEAttribute(instructionParameterEClass, INSTRUCTION_PARAMETER__ID);
 		createEAttribute(instructionParameterEClass, INSTRUCTION_PARAMETER__DEFAULT_VALUE);
 
 		instructionSectionEClass = createEClass(INSTRUCTION_SECTION);
@@ -507,7 +497,7 @@ public class InstructionsetPackageImpl extends EPackageImpl implements Instructi
 		// Add supertypes to classes
 		instructionSetEClass.getESuperTypes().add(theInfrastructurePackage.getRootElement());
 		instructionEClass.getESuperTypes().add(theInfrastructurePackage.getNamedElement());
-		instructionParameterEClass.getESuperTypes().add(theInfrastructurePackage.getMODembedElement());
+		instructionParameterEClass.getESuperTypes().add(theInfrastructurePackage.getNamedElement());
 		instructionSectionEClass.getESuperTypes().add(theInfrastructurePackage.getMODembedElement());
 		constantSectionEClass.getESuperTypes().add(this.getInstructionSection());
 		parameterSectionEClass.getESuperTypes().add(this.getInstructionSection());
@@ -525,7 +515,6 @@ public class InstructionsetPackageImpl extends EPackageImpl implements Instructi
 		initEReference(getInstruction_Words(), this.getInstructionWord(), null, "words", null, 0, -1, Instruction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(instructionParameterEClass, InstructionParameter.class, "InstructionParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getInstructionParameter_Id(), ecorePackage.getEChar(), "id", null, 1, 1, InstructionParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getInstructionParameter_DefaultValue(), ecorePackage.getEInt(), "defaultValue", null, 0, 1, InstructionParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(instructionSectionEClass, InstructionSection.class, "InstructionSection", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

@@ -202,7 +202,7 @@ public interface InstructionsetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INSTRUCTION_PARAMETER__DESCRIPTION = InfrastructurePackage.MO_DEMBED_ELEMENT__DESCRIPTION;
+	int INSTRUCTION_PARAMETER__DESCRIPTION = InfrastructurePackage.NAMED_ELEMENT__DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
@@ -211,16 +211,16 @@ public interface InstructionsetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INSTRUCTION_PARAMETER__ORIGINS = InfrastructurePackage.MO_DEMBED_ELEMENT__ORIGINS;
+	int INSTRUCTION_PARAMETER__ORIGINS = InfrastructurePackage.NAMED_ELEMENT__ORIGINS;
 
 	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INSTRUCTION_PARAMETER__ID = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 0;
+	int INSTRUCTION_PARAMETER__NAME = InfrastructurePackage.NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Default Value</b></em>' attribute.
@@ -229,7 +229,7 @@ public interface InstructionsetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INSTRUCTION_PARAMETER__DEFAULT_VALUE = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 1;
+	int INSTRUCTION_PARAMETER__DEFAULT_VALUE = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Instruction Parameter</em>' class.
@@ -238,7 +238,7 @@ public interface InstructionsetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INSTRUCTION_PARAMETER_FEATURE_COUNT = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 2;
+	int INSTRUCTION_PARAMETER_FEATURE_COUNT = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link hu.modembed.model.modembed.core.instructionset.impl.InstructionSectionImpl <em>Instruction Section</em>}' class.
@@ -655,17 +655,6 @@ public interface InstructionsetPackage extends EPackage {
 	EClass getInstructionParameter();
 
 	/**
-	 * Returns the meta object for the attribute '{@link hu.modembed.model.modembed.core.instructionset.InstructionParameter#getId <em>Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Id</em>'.
-	 * @see hu.modembed.model.modembed.core.instructionset.InstructionParameter#getId()
-	 * @see #getInstructionParameter()
-	 * @generated
-	 */
-	EAttribute getInstructionParameter_Id();
-
-	/**
 	 * Returns the meta object for the attribute '{@link hu.modembed.model.modembed.core.instructionset.InstructionParameter#getDefaultValue <em>Default Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -918,14 +907,6 @@ public interface InstructionsetPackage extends EPackage {
 		 * @generated
 		 */
 		EClass INSTRUCTION_PARAMETER = eINSTANCE.getInstructionParameter();
-
-		/**
-		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute INSTRUCTION_PARAMETER__ID = eINSTANCE.getInstructionParameter_Id();
 
 		/**
 		 * The meta object literal for the '<em><b>Default Value</b></em>' attribute feature.

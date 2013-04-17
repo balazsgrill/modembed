@@ -723,9 +723,8 @@ public class InstructionsetResource extends org.eclipse.emf.ecore.resource.impl.
 		// checking constraints provided by EMF validator classes was disabled by option
 		// 'disableEValidators'.
 		
-		if (new hu.modembed.model.textnotations.instructionset.util.InstructionsetRuntimeUtil().isEclipsePlatformAvailable()) {
-			new hu.modembed.model.textnotations.instructionset.util.InstructionsetEclipseProxy().checkEMFValidationConstraints(this, root);
-		}
+		// checking EMF validation constraints was disabled either by option
+		// 'disableEMFValidationConstraints' or 'removeEclipseDependentCode'.
 	}
 	
 	public hu.modembed.model.textnotations.instructionset.IInstructionsetQuickFix getQuickFix(String quickFixContext) {

@@ -6,10 +6,7 @@
  */
 package hu.modembed.model.textnotations.instructionset.debug;
 
-public interface IInstructionsetDebugEventListener {
-	
-	/**
-	 * Notification that the given event occurred in the while debugging.
-	 */
-	public void handleMessage(hu.modembed.model.textnotations.instructionset.debug.InstructionsetDebugMessage message);
+public class IInstructionsetDebugEventListener {
+	// The generator for this class is currently disabled by option
+	// 'disableDebugSupport' in the .cs file.
 }

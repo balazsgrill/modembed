@@ -90,6 +90,7 @@ public class InstructionsetSwitch<T> extends Switch<T> {
 			case InstructionsetPackage.INSTRUCTION_PARAMETER: {
 				InstructionParameter instructionParameter = (InstructionParameter)theEObject;
 				T result = caseInstructionParameter(instructionParameter);
+				if (result == null) result = caseNamedElement(instructionParameter);
 				if (result == null) result = caseMODembedElement(instructionParameter);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
