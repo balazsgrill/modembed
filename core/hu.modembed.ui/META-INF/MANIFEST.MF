@@ -24,7 +24,6 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.emf.transaction;bundle-version="1.4.0",
  hu.modembed.model;bundle-version="0.7.0",
  org.eclipse.emf.databinding.edit;bundle-version="1.2.0",
- hu.e.compiler;bundle-version="0.7.0",
  org.eclipse.ui.console
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
