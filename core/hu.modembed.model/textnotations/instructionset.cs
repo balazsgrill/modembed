@@ -47,8 +47,8 @@ TOKENS {
 RULES{
 
 	InstructionSet ::= 
-			"instructionset" name[QUALIFIEDID] ";" 
-			("extends" extend[QUALIFIEDID])?  
+			"instructionset" name[QUALIFIEDID]
+			("extends" extend[QUALIFIEDID])?  ";" 
 			( instructions )*;
 
 	Instruction ::=

@@ -16,17 +16,17 @@ public class InstructionsetFollowSetProvider {
 	
 	public final static org.eclipse.emf.ecore.EStructuralFeature[] FEATURES = new org.eclipse.emf.ecore.EStructuralFeature[4];
 	
-	public final static hu.modembed.model.textnotations.instructionset.mopp.InstructionsetContainedFeature[] LINKS = new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetContainedFeature[20];
+	public final static hu.modembed.model.textnotations.instructionset.mopp.InstructionsetContainedFeature[] LINKS = new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetContainedFeature[18];
 	
 	public final static hu.modembed.model.textnotations.instructionset.mopp.InstructionsetContainedFeature[] EMPTY_LINK_ARRAY = new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetContainedFeature[0];
 	
 	public static void initializeTerminals0() {
 		TERMINALS[0] = new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectedCsString(hu.modembed.model.textnotations.instructionset.grammar.InstructionsetGrammarInformationProvider.INSTRUCTIONSET_0_0_0_0);
 		TERMINALS[1] = new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectedStructuralFeature(hu.modembed.model.textnotations.instructionset.grammar.InstructionsetGrammarInformationProvider.INSTRUCTIONSET_0_0_0_1);
-		TERMINALS[2] = new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectedCsString(hu.modembed.model.textnotations.instructionset.grammar.InstructionsetGrammarInformationProvider.INSTRUCTIONSET_0_0_0_2);
-		TERMINALS[3] = new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectedCsString(hu.modembed.model.textnotations.instructionset.grammar.InstructionsetGrammarInformationProvider.INSTRUCTIONSET_0_0_0_3_0_0_0);
-		TERMINALS[4] = new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectedStructuralFeature(hu.modembed.model.textnotations.instructionset.grammar.InstructionsetGrammarInformationProvider.INSTRUCTIONSET_1_0_0_0);
-		TERMINALS[5] = new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectedStructuralFeature(hu.modembed.model.textnotations.instructionset.grammar.InstructionsetGrammarInformationProvider.INSTRUCTIONSET_0_0_0_3_0_0_1);
+		TERMINALS[2] = new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectedCsString(hu.modembed.model.textnotations.instructionset.grammar.InstructionsetGrammarInformationProvider.INSTRUCTIONSET_0_0_0_2_0_0_0);
+		TERMINALS[3] = new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectedCsString(hu.modembed.model.textnotations.instructionset.grammar.InstructionsetGrammarInformationProvider.INSTRUCTIONSET_0_0_0_3);
+		TERMINALS[4] = new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectedStructuralFeature(hu.modembed.model.textnotations.instructionset.grammar.InstructionsetGrammarInformationProvider.INSTRUCTIONSET_0_0_0_2_0_0_1);
+		TERMINALS[5] = new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectedStructuralFeature(hu.modembed.model.textnotations.instructionset.grammar.InstructionsetGrammarInformationProvider.INSTRUCTIONSET_1_0_0_0);
 		TERMINALS[6] = new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectedCsString(hu.modembed.model.textnotations.instructionset.grammar.InstructionsetGrammarInformationProvider.INSTRUCTIONSET_1_0_0_1);
 		TERMINALS[7] = new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectedStructuralFeature(hu.modembed.model.textnotations.instructionset.grammar.InstructionsetGrammarInformationProvider.INSTRUCTIONSET_2_0_0_0);
 		TERMINALS[8] = new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectedCsString(hu.modembed.model.textnotations.instructionset.grammar.InstructionsetGrammarInformationProvider.INSTRUCTIONSET_1_0_0_3);
@@ -67,23 +67,21 @@ public class InstructionsetFollowSetProvider {
 		LINKS[0] = new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetContainedFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstruction(), FEATURES[0]);
 		LINKS[1] = new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetContainedFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstruction(), FEATURES[0]);
 		LINKS[2] = new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetContainedFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstruction(), FEATURES[0]);
-		LINKS[3] = new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetContainedFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstruction(), FEATURES[0]);
-		LINKS[4] = new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetContainedFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstruction(), FEATURES[0]);
+		LINKS[3] = new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetContainedFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionParameter(), FEATURES[1]);
+		LINKS[4] = new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetContainedFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionParameter(), FEATURES[1]);
 		LINKS[5] = new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetContainedFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionParameter(), FEATURES[1]);
-		LINKS[6] = new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetContainedFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionParameter(), FEATURES[1]);
-		LINKS[7] = new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetContainedFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionParameter(), FEATURES[1]);
+		LINKS[6] = new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetContainedFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionWord(), FEATURES[2]);
+		LINKS[7] = new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetContainedFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionWord(), FEATURES[2]);
 		LINKS[8] = new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetContainedFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionWord(), FEATURES[2]);
-		LINKS[9] = new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetContainedFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionWord(), FEATURES[2]);
-		LINKS[10] = new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetContainedFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionWord(), FEATURES[2]);
-		LINKS[11] = new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetContainedFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstruction(), FEATURES[0]);
+		LINKS[9] = new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetContainedFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstruction(), FEATURES[0]);
+		LINKS[10] = new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetContainedFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionParameter(), FEATURES[1]);
+		LINKS[11] = new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetContainedFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionParameter(), FEATURES[1]);
 		LINKS[12] = new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetContainedFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionParameter(), FEATURES[1]);
-		LINKS[13] = new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetContainedFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionParameter(), FEATURES[1]);
-		LINKS[14] = new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetContainedFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionParameter(), FEATURES[1]);
+		LINKS[13] = new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetContainedFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getConstantSection(), FEATURES[3]);
+		LINKS[14] = new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetContainedFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getParameterSection(), FEATURES[3]);
 		LINKS[15] = new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetContainedFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getConstantSection(), FEATURES[3]);
 		LINKS[16] = new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetContainedFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getParameterSection(), FEATURES[3]);
-		LINKS[17] = new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetContainedFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getConstantSection(), FEATURES[3]);
-		LINKS[18] = new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetContainedFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getParameterSection(), FEATURES[3]);
-		LINKS[19] = new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetContainedFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionWord(), FEATURES[2]);
+		LINKS[17] = new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetContainedFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionWord(), FEATURES[2]);
 	}
 	
 	public static void initializeLinks() {
@@ -93,16 +91,16 @@ public class InstructionsetFollowSetProvider {
 	public static void wire0() {
 		TERMINALS[0].addFollower(TERMINALS[1], EMPTY_LINK_ARRAY);
 		TERMINALS[1].addFollower(TERMINALS[2], EMPTY_LINK_ARRAY);
-		TERMINALS[2].addFollower(TERMINALS[3], EMPTY_LINK_ARRAY);
-		TERMINALS[2].addFollower(TERMINALS[4], new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetContainedFeature[] {new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetContainedFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstruction(), FEATURES[0]), });
-		TERMINALS[3].addFollower(TERMINALS[5], EMPTY_LINK_ARRAY);
-		TERMINALS[5].addFollower(TERMINALS[4], new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetContainedFeature[] {new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetContainedFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstruction(), FEATURES[0]), });
-		TERMINALS[4].addFollower(TERMINALS[6], EMPTY_LINK_ARRAY);
+		TERMINALS[1].addFollower(TERMINALS[3], EMPTY_LINK_ARRAY);
+		TERMINALS[2].addFollower(TERMINALS[4], EMPTY_LINK_ARRAY);
+		TERMINALS[4].addFollower(TERMINALS[3], EMPTY_LINK_ARRAY);
+		TERMINALS[3].addFollower(TERMINALS[5], new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetContainedFeature[] {new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetContainedFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstruction(), FEATURES[0]), });
+		TERMINALS[5].addFollower(TERMINALS[6], EMPTY_LINK_ARRAY);
 		TERMINALS[6].addFollower(TERMINALS[7], new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetContainedFeature[] {new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetContainedFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionParameter(), FEATURES[1]), });
 		TERMINALS[6].addFollower(TERMINALS[8], EMPTY_LINK_ARRAY);
 		TERMINALS[8].addFollower(TERMINALS[9], new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetContainedFeature[] {new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetContainedFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionWord(), FEATURES[2]), });
 		TERMINALS[8].addFollower(TERMINALS[10], EMPTY_LINK_ARRAY);
-		TERMINALS[10].addFollower(TERMINALS[4], new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetContainedFeature[] {new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetContainedFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstruction(), FEATURES[0]), });
+		TERMINALS[10].addFollower(TERMINALS[5], new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetContainedFeature[] {new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetContainedFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstruction(), FEATURES[0]), });
 		TERMINALS[7].addFollower(TERMINALS[11], EMPTY_LINK_ARRAY);
 		TERMINALS[7].addFollower(TERMINALS[7], new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetContainedFeature[] {new hu.modembed.model.textnotations.instructionset.mopp.InstructionsetContainedFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionParameter(), FEATURES[1]), });
 		TERMINALS[7].addFollower(TERMINALS[8], EMPTY_LINK_ARRAY);

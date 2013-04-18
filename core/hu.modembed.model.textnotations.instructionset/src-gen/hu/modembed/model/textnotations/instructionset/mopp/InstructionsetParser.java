@@ -607,7 +607,7 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
 
 
     // $ANTLR start "parse_hu_modembed_model_modembed_core_instructionset_InstructionSet"
-    // Instructionset.g:530:1: parse_hu_modembed_model_modembed_core_instructionset_InstructionSet returns [hu.modembed.model.modembed.core.instructionset.InstructionSet element = null] : a0= 'instructionset' (a1= QUALIFIEDID ) a2= ';' ( (a3= 'extends' (a4= QUALIFIEDID ) ) )? ( ( (a5_0= parse_hu_modembed_model_modembed_core_instructionset_Instruction ) ) )* ;
+    // Instructionset.g:530:1: parse_hu_modembed_model_modembed_core_instructionset_InstructionSet returns [hu.modembed.model.modembed.core.instructionset.InstructionSet element = null] : a0= 'instructionset' (a1= QUALIFIEDID ) ( (a2= 'extends' (a3= QUALIFIEDID ) ) )? a4= ';' ( ( (a5_0= parse_hu_modembed_model_modembed_core_instructionset_Instruction ) ) )* ;
     public final hu.modembed.model.modembed.core.instructionset.InstructionSet parse_hu_modembed_model_modembed_core_instructionset_InstructionSet() throws RecognitionException {
         hu.modembed.model.modembed.core.instructionset.InstructionSet element =  null;
 
@@ -626,8 +626,8 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 2) ) { return element; }
 
-            // Instructionset.g:533:2: (a0= 'instructionset' (a1= QUALIFIEDID ) a2= ';' ( (a3= 'extends' (a4= QUALIFIEDID ) ) )? ( ( (a5_0= parse_hu_modembed_model_modembed_core_instructionset_Instruction ) ) )* )
-            // Instructionset.g:534:2: a0= 'instructionset' (a1= QUALIFIEDID ) a2= ';' ( (a3= 'extends' (a4= QUALIFIEDID ) ) )? ( ( (a5_0= parse_hu_modembed_model_modembed_core_instructionset_Instruction ) ) )*
+            // Instructionset.g:533:2: (a0= 'instructionset' (a1= QUALIFIEDID ) ( (a2= 'extends' (a3= QUALIFIEDID ) ) )? a4= ';' ( ( (a5_0= parse_hu_modembed_model_modembed_core_instructionset_Instruction ) ) )* )
+            // Instructionset.g:534:2: a0= 'instructionset' (a1= QUALIFIEDID ) ( (a2= 'extends' (a3= QUALIFIEDID ) ) )? a4= ';' ( ( (a5_0= parse_hu_modembed_model_modembed_core_instructionset_Instruction ) ) )*
             {
             a0=(Token)match(input,19,FOLLOW_19_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionSet115); if (state.failed) return element;
 
@@ -686,27 +686,10 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
             		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[2]);
-            	}
-
-            a2=(Token)match(input,14,FOLLOW_14_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionSet154); if (state.failed) return element;
-
-            if ( state.backtracking==0 ) {
-            		if (element == null) {
-            			element = hu.modembed.model.modembed.core.instructionset.InstructionsetFactory.eINSTANCE.createInstructionSet();
-            			startIncompleteElement(element);
-            		}
-            		collectHiddenTokens(element);
-            		retrieveLayoutInformation(element, hu.modembed.model.textnotations.instructionset.grammar.InstructionsetGrammarInformationProvider.INSTRUCTIONSET_0_0_0_2, null, true);
-            		copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken)a2, element);
-            	}
-
-            if ( state.backtracking==0 ) {
-            		// expected elements (follow set)
             		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[3]);
-            		addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionSet(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[4]);
             	}
 
-            // Instructionset.g:599:2: ( (a3= 'extends' (a4= QUALIFIEDID ) ) )?
+            // Instructionset.g:585:2: ( (a2= 'extends' (a3= QUALIFIEDID ) ) )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -715,12 +698,12 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
             }
             switch (alt1) {
                 case 1 :
-                    // Instructionset.g:600:3: (a3= 'extends' (a4= QUALIFIEDID ) )
+                    // Instructionset.g:586:3: (a2= 'extends' (a3= QUALIFIEDID ) )
                     {
-                    // Instructionset.g:600:3: (a3= 'extends' (a4= QUALIFIEDID ) )
-                    // Instructionset.g:601:4: a3= 'extends' (a4= QUALIFIEDID )
+                    // Instructionset.g:586:3: (a2= 'extends' (a3= QUALIFIEDID ) )
+                    // Instructionset.g:587:4: a2= 'extends' (a3= QUALIFIEDID )
                     {
-                    a3=(Token)match(input,18,FOLLOW_18_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionSet177); if (state.failed) return element;
+                    a2=(Token)match(input,18,FOLLOW_18_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionSet163); if (state.failed) return element;
 
                     if ( state.backtracking==0 ) {
                     				if (element == null) {
@@ -728,19 +711,19 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
                     					startIncompleteElement(element);
                     				}
                     				collectHiddenTokens(element);
-                    				retrieveLayoutInformation(element, hu.modembed.model.textnotations.instructionset.grammar.InstructionsetGrammarInformationProvider.INSTRUCTIONSET_0_0_0_3_0_0_0, null, true);
-                    				copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken)a3, element);
+                    				retrieveLayoutInformation(element, hu.modembed.model.textnotations.instructionset.grammar.InstructionsetGrammarInformationProvider.INSTRUCTIONSET_0_0_0_2_0_0_0, null, true);
+                    				copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken)a2, element);
                     			}
 
                     if ( state.backtracking==0 ) {
                     				// expected elements (follow set)
-                    				addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[5]);
+                    				addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[4]);
                     			}
 
-                    // Instructionset.g:615:4: (a4= QUALIFIEDID )
-                    // Instructionset.g:616:5: a4= QUALIFIEDID
+                    // Instructionset.g:601:4: (a3= QUALIFIEDID )
+                    // Instructionset.g:602:5: a3= QUALIFIEDID
                     {
-                    a4=(Token)match(input,QUALIFIEDID,FOLLOW_QUALIFIEDID_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionSet203); if (state.failed) return element;
+                    a3=(Token)match(input,QUALIFIEDID,FOLLOW_QUALIFIEDID_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionSet189); if (state.failed) return element;
 
                     if ( state.backtracking==0 ) {
                     					if (terminateParsing) {
@@ -750,14 +733,14 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
                     						element = hu.modembed.model.modembed.core.instructionset.InstructionsetFactory.eINSTANCE.createInstructionSet();
                     						startIncompleteElement(element);
                     					}
-                    					if (a4 != null) {
+                    					if (a3 != null) {
                     						hu.modembed.model.textnotations.instructionset.IInstructionsetTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("QUALIFIEDID");
                     						tokenResolver.setOptions(getOptions());
                     						hu.modembed.model.textnotations.instructionset.IInstructionsetTokenResolveResult result = getFreshTokenResolveResult();
-                    						tokenResolver.resolve(a4.getText(), element.eClass().getEStructuralFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.INSTRUCTION_SET__EXTEND), result);
+                    						tokenResolver.resolve(a3.getText(), element.eClass().getEStructuralFeature(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.INSTRUCTION_SET__EXTEND), result);
                     						Object resolvedObject = result.getResolvedToken();
                     						if (resolvedObject == null) {
-                    							addErrorToResource(result.getErrorMessage(), ((org.antlr.runtime3_4_0.CommonToken) a4).getLine(), ((org.antlr.runtime3_4_0.CommonToken) a4).getCharPositionInLine(), ((org.antlr.runtime3_4_0.CommonToken) a4).getStartIndex(), ((org.antlr.runtime3_4_0.CommonToken) a4).getStopIndex());
+                    							addErrorToResource(result.getErrorMessage(), ((org.antlr.runtime3_4_0.CommonToken) a3).getLine(), ((org.antlr.runtime3_4_0.CommonToken) a3).getCharPositionInLine(), ((org.antlr.runtime3_4_0.CommonToken) a3).getStartIndex(), ((org.antlr.runtime3_4_0.CommonToken) a3).getStopIndex());
                     						}
                     						String resolved = (String) resolvedObject;
                     						hu.modembed.model.modembed.core.instructionset.InstructionSet proxy = hu.modembed.model.modembed.core.instructionset.InstructionsetFactory.eINSTANCE.createInstructionSet();
@@ -769,9 +752,9 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
                     							completedElement(value, false);
                     						}
                     						collectHiddenTokens(element);
-                    						retrieveLayoutInformation(element, hu.modembed.model.textnotations.instructionset.grammar.InstructionsetGrammarInformationProvider.INSTRUCTIONSET_0_0_0_3_0_0_1, proxy, true);
-                    						copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken) a4, element);
-                    						copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken) a4, proxy);
+                    						retrieveLayoutInformation(element, hu.modembed.model.textnotations.instructionset.grammar.InstructionsetGrammarInformationProvider.INSTRUCTIONSET_0_0_0_2_0_0_1, proxy, true);
+                    						copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken) a3, element);
+                    						copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken) a3, proxy);
                     					}
                     				}
 
@@ -780,7 +763,7 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
 
                     if ( state.backtracking==0 ) {
                     				// expected elements (follow set)
-                    				addExpectedElement(hu.modembed.model.modembed.core.instructionset.InstructionsetPackage.eINSTANCE.getInstructionSet(), hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[6]);
+                    				addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[5]);
                     			}
 
                     }
@@ -791,6 +774,23 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
 
             }
 
+
+            if ( state.backtracking==0 ) {
+            		// expected elements (follow set)
+            		addExpectedElement(null, hu.modembed.model.textnotations.instructionset.mopp.InstructionsetExpectationConstants.EXPECTATIONS[6]);
+            	}
+
+            a4=(Token)match(input,14,FOLLOW_14_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionSet235); if (state.failed) return element;
+
+            if ( state.backtracking==0 ) {
+            		if (element == null) {
+            			element = hu.modembed.model.modembed.core.instructionset.InstructionsetFactory.eINSTANCE.createInstructionSet();
+            			startIncompleteElement(element);
+            		}
+            		collectHiddenTokens(element);
+            		retrieveLayoutInformation(element, hu.modembed.model.textnotations.instructionset.grammar.InstructionsetGrammarInformationProvider.INSTRUCTIONSET_0_0_0_3, null, true);
+            		copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken)a4, element);
+            	}
 
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
@@ -2106,10 +2106,10 @@ public class InstructionsetParser extends InstructionsetANTLRParserBase {
     public static final BitSet FOLLOW_parse_hu_modembed_model_modembed_core_instructionset_InstructionSet_in_start82 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_start89 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_19_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionSet115 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_QUALIFIEDID_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionSet133 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionSet154 = new BitSet(new long[]{0x0000000000040022L});
-    public static final BitSet FOLLOW_18_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionSet177 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_QUALIFIEDID_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionSet203 = new BitSet(new long[]{0x0000000000000022L});
+    public static final BitSet FOLLOW_QUALIFIEDID_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionSet133 = new BitSet(new long[]{0x0000000000044000L});
+    public static final BitSet FOLLOW_18_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionSet163 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_QUALIFIEDID_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionSet189 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_14_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionSet235 = new BitSet(new long[]{0x0000000000000022L});
     public static final BitSet FOLLOW_parse_hu_modembed_model_modembed_core_instructionset_Instruction_in_parse_hu_modembed_model_modembed_core_instructionset_InstructionSet264 = new BitSet(new long[]{0x0000000000000022L});
     public static final BitSet FOLLOW_IDENTIFIER_in_parse_hu_modembed_model_modembed_core_instructionset_Instruction324 = new BitSet(new long[]{0x0000000000000800L});
     public static final BitSet FOLLOW_11_in_parse_hu_modembed_model_modembed_core_instructionset_Instruction345 = new BitSet(new long[]{0x0000000000001020L});

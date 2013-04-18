@@ -166,9 +166,6 @@ public class InstructionsetPrinter implements hu.modembed.model.textnotations.in
 			}
 			printCountingMap.put("name", count - 1);
 		}
-		// DEFINITION PART BEGINS (CsString)
-		out.print(";");
-		out.print(" ");
 		// DEFINITION PART BEGINS (CompoundDefinition)
 		sWriter = new java.io.StringWriter();
 		out1 = new java.io.PrintWriter(sWriter);
@@ -182,6 +179,9 @@ public class InstructionsetPrinter implements hu.modembed.model.textnotations.in
 			out.print(sWriter.toString());
 			printCountingMap.putAll(printCountingMap1);
 		}
+		// DEFINITION PART BEGINS (CsString)
+		out.print(";");
+		out.print(" ");
 		// DEFINITION PART BEGINS (CompoundDefinition)
 		iterate = true;
 		while (iterate) {
