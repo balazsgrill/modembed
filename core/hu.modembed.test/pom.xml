@@ -73,7 +73,7 @@
             			</dependency>
             			<dependency>
               				<type>eclipse-feature</type>
-              				<artifactId>org.eclipse.epsilon.core.dependencies</artifactId>
+              				<artifactId>org.eclipse.epsilon.core.dependencies.feature</artifactId>
               				<version>0.0.0</version>
             			</dependency>
             			<dependency>
@@ -88,7 +88,7 @@
             			</dependency>
             			<dependency>
               				<type>eclipse-feature</type>
-              				<artifactId>org.eclipse.epsilon.emf.dt.dependencies</artifactId>
+              				<artifactId>org.eclipse.epsilon.emf.dt.dependencies.feature</artifactId>
               				<version>0.0.0</version>
             			</dependency>
           			</dependencies>
