@@ -10,7 +10,7 @@
 		<relativePath>../hu.modembed.releng/pom.xml</relativePath>
 	</parent>
 	<groupId>hu.modembed</groupId>
-	<artifactId>hu.modembed.model</artifactId>
+	<artifactId>org.emftext.commons.antlr3_4_0</artifactId>
 	<version>1.0.0</version>
 	<packaging>eclipse-plugin</packaging>
 </project>
