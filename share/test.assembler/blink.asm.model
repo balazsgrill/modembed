@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="ASCII"?>
+<object:AssemblerObject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:object="http://modembed.hu/core/object">
+  <instructions description="3180">
+    <parameters>
+      <definition href="../microchip.pic16/microchip.pic16e.instructionset#//@instructions.6/@parameters.0"/>
+    </parameters>
+    <instruction href="../microchip.pic16/microchip.pic16e.instructionset#//@instructions.6"/>
+  </instructions>
+  <instructions description="2803">
+    <parameters value="3">
+      <definition href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.30/@parameters.0"/>
+    </parameters>
+    <instruction href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.30"/>
+  </instructions>
+  <instructions description="0">
+    <instruction href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.12"/>
+  </instructions>
+  <instructions description="23">
+    <parameters value="3">
+      <definition href="../microchip.pic16/microchip.pic16e.instructionset#//@instructions.5/@parameters.0"/>
+    </parameters>
+    <instruction href="../microchip.pic16/microchip.pic16e.instructionset#//@instructions.5"/>
+  </instructions>
+  <instructions description="18c">
+    <parameters value="12">
+      <definition href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.2/@parameters.0"/>
+    </parameters>
+    <instruction href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.2"/>
+  </instructions>
+  <instructions description="18e">
+    <parameters value="14">
+      <definition href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.2/@parameters.0"/>
+    </parameters>
+    <instruction href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.2"/>
+  </instructions>
+  <instructions description="21">
+    <parameters value="1">
+      <definition href="../microchip.pic16/microchip.pic16e.instructionset#//@instructions.5/@parameters.0"/>
+    </parameters>
+    <instruction href="../microchip.pic16/microchip.pic16e.instructionset#//@instructions.5"/>
+  </instructions>
+  <instructions description="19d">
+    <parameters value="29">
+      <definition href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.2/@parameters.0"/>
+    </parameters>
+    <instruction href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.2"/>
+  </instructions>
+  <instructions description="19e">
+    <parameters value="30">
+      <definition href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.2/@parameters.0"/>
+    </parameters>
+    <instruction href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.2"/>
+  </instructions>
+  <instructions description="22">
+    <parameters value="2">
+      <definition href="../microchip.pic16/microchip.pic16e.instructionset#//@instructions.5/@parameters.0"/>
+    </parameters>
+    <instruction href="../microchip.pic16/microchip.pic16e.instructionset#//@instructions.5"/>
+  </instructions>
+  <instructions description="191">
+    <parameters value="17">
+      <definition href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.2/@parameters.0"/>
+    </parameters>
+    <instruction href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.2"/>
+  </instructions>
+  <instructions description="192">
+    <parameters value="18">
+      <definition href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.2/@parameters.0"/>
+    </parameters>
+    <instruction href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.2"/>
+  </instructions>
+  <instructions description="193">
+    <parameters value="19">
+      <definition href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.2/@parameters.0"/>
+    </parameters>
+    <instruction href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.2"/>
+  </instructions>
+  <instructions description="194">
+    <parameters value="20">
+      <definition href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.2/@parameters.0"/>
+    </parameters>
+    <instruction href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.2"/>
+  </instructions>
+  <instructions description="21">
+    <parameters value="1">
+      <definition href="../microchip.pic16/microchip.pic16e.instructionset#//@instructions.5/@parameters.0"/>
+    </parameters>
+    <instruction href="../microchip.pic16/microchip.pic16e.instructionset#//@instructions.5"/>
+  </instructions>
+  <instructions description="100c">
+    <parameters value="12">
+      <definition href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.18/@parameters.0"/>
+    </parameters>
+    <parameters>
+      <definition href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.18/@parameters.1"/>
+    </parameters>
+    <instruction href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.18"/>
+  </instructions>
+  <instructions description="22">
+    <parameters value="2">
+      <definition href="../microchip.pic16/microchip.pic16e.instructionset#//@instructions.5/@parameters.0"/>
+    </parameters>
+    <instruction href="../microchip.pic16/microchip.pic16e.instructionset#//@instructions.5"/>
+  </instructions>
+  <instructions description="140c">
+    <parameters value="12">
+      <definition href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.19/@parameters.0"/>
+    </parameters>
+    <parameters>
+      <definition href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.19/@parameters.1"/>
+    </parameters>
+    <instruction href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.19"/>
+  </instructions>
+  <instructions description="20">
+    <parameters>
+      <definition href="../microchip.pic16/microchip.pic16e.instructionset#//@instructions.5/@parameters.0"/>
+    </parameters>
+    <instruction href="../microchip.pic16/microchip.pic16e.instructionset#//@instructions.5"/>
+  </instructions>
+  <instructions description="300f">
+    <parameters value="15">
+      <definition href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.25/@parameters.0"/>
+    </parameters>
+    <instruction href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.25"/>
+  </instructions>
+  <instructions description="a0">
+    <parameters value="32">
+      <definition href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.11/@parameters.0"/>
+    </parameters>
+    <instruction href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.11"/>
+  </instructions>
+  <instructions description="30f8">
+    <parameters value="248">
+      <definition href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.25/@parameters.0"/>
+    </parameters>
+    <instruction href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.25"/>
+  </instructions>
+  <instructions description="a1">
+    <parameters value="33">
+      <definition href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.11/@parameters.0"/>
+    </parameters>
+    <instruction href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.11"/>
+  </instructions>
+  <instructions description="306e">
+    <parameters value="110">
+      <definition href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.25/@parameters.0"/>
+    </parameters>
+    <instruction href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.25"/>
+  </instructions>
+  <instructions description="a2">
+    <parameters value="34">
+      <definition href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.11/@parameters.0"/>
+    </parameters>
+    <instruction href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.11"/>
+  </instructions>
+  <instructions description="3180">
+    <parameters>
+      <definition href="../microchip.pic16/microchip.pic16e.instructionset#//@instructions.6/@parameters.0"/>
+    </parameters>
+    <instruction href="../microchip.pic16/microchip.pic16e.instructionset#//@instructions.6"/>
+  </instructions>
+  <instructions description="ba2">
+    <parameters value="34">
+      <definition href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.6/@parameters.0"/>
+    </parameters>
+    <parameters value="1">
+      <definition href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.6/@parameters.1"/>
+    </parameters>
+    <instruction href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.6"/>
+  </instructions>
+  <instructions description="281a">
+    <parameters value="26">
+      <definition href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.30/@parameters.0"/>
+    </parameters>
+    <instruction href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.30"/>
+  </instructions>
+  <instructions description="3180">
+    <parameters>
+      <definition href="../microchip.pic16/microchip.pic16e.instructionset#//@instructions.6/@parameters.0"/>
+    </parameters>
+    <instruction href="../microchip.pic16/microchip.pic16e.instructionset#//@instructions.6"/>
+  </instructions>
+  <instructions description="ba1">
+    <parameters value="33">
+      <definition href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.6/@parameters.0"/>
+    </parameters>
+    <parameters value="1">
+      <definition href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.6/@parameters.1"/>
+    </parameters>
+    <instruction href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.6"/>
+  </instructions>
+  <instructions description="2817">
+    <parameters value="23">
+      <definition href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.30/@parameters.0"/>
+    </parameters>
+    <instruction href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.30"/>
+  </instructions>
+  <instructions description="3180">
+    <parameters>
+      <definition href="../microchip.pic16/microchip.pic16e.instructionset#//@instructions.6/@parameters.0"/>
+    </parameters>
+    <instruction href="../microchip.pic16/microchip.pic16e.instructionset#//@instructions.6"/>
+  </instructions>
+  <instructions description="ba0">
+    <parameters value="32">
+      <definition href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.6/@parameters.0"/>
+    </parameters>
+    <parameters value="1">
+      <definition href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.6/@parameters.1"/>
+    </parameters>
+    <instruction href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.6"/>
+  </instructions>
+  <instructions description="2815">
+    <parameters value="21">
+      <definition href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.30/@parameters.0"/>
+    </parameters>
+    <instruction href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.30"/>
+  </instructions>
+  <instructions description="0">
+    <instruction href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.12"/>
+  </instructions>
+  <instructions description="0">
+    <instruction href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.12"/>
+  </instructions>
+  <instructions description="0">
+    <instruction href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.12"/>
+  </instructions>
+  <instructions description="22">
+    <parameters value="2">
+      <definition href="../microchip.pic16/microchip.pic16e.instructionset#//@instructions.5/@parameters.0"/>
+    </parameters>
+    <instruction href="../microchip.pic16/microchip.pic16e.instructionset#//@instructions.5"/>
+  </instructions>
+  <instructions description="100c">
+    <parameters value="12">
+      <definition href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.18/@parameters.0"/>
+    </parameters>
+    <parameters>
+      <definition href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.18/@parameters.1"/>
+    </parameters>
+    <instruction href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.18"/>
+  </instructions>
+  <instructions description="20">
+    <parameters>
+      <definition href="../microchip.pic16/microchip.pic16e.instructionset#//@instructions.5/@parameters.0"/>
+    </parameters>
+    <instruction href="../microchip.pic16/microchip.pic16e.instructionset#//@instructions.5"/>
+  </instructions>
+  <instructions description="300f">
+    <parameters value="15">
+      <definition href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.25/@parameters.0"/>
+    </parameters>
+    <instruction href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.25"/>
+  </instructions>
+  <instructions description="a0">
+    <parameters value="32">
+      <definition href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.11/@parameters.0"/>
+    </parameters>
+    <instruction href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.11"/>
+  </instructions>
+  <instructions description="30f8">
+    <parameters value="248">
+      <definition href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.25/@parameters.0"/>
+    </parameters>
+    <instruction href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.25"/>
+  </instructions>
+  <instructions description="a1">
+    <parameters value="33">
+      <definition href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.11/@parameters.0"/>
+    </parameters>
+    <instruction href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.11"/>
+  </instructions>
+  <instructions description="306e">
+    <parameters value="110">
+      <definition href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.25/@parameters.0"/>
+    </parameters>
+    <instruction href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.25"/>
+  </instructions>
+  <instructions description="a2">
+    <parameters value="34">
+      <definition href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.11/@parameters.0"/>
+    </parameters>
+    <instruction href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.11"/>
+  </instructions>
+  <instructions description="3180">
+    <parameters>
+      <definition href="../microchip.pic16/microchip.pic16e.instructionset#//@instructions.6/@parameters.0"/>
+    </parameters>
+    <instruction href="../microchip.pic16/microchip.pic16e.instructionset#//@instructions.6"/>
+  </instructions>
+  <instructions description="ba2">
+    <parameters value="34">
+      <definition href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.6/@parameters.0"/>
+    </parameters>
+    <parameters value="1">
+      <definition href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.6/@parameters.1"/>
+    </parameters>
+    <instruction href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.6"/>
+  </instructions>
+  <instructions description="282f">
+    <parameters value="47">
+      <definition href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.30/@parameters.0"/>
+    </parameters>
+    <instruction href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.30"/>
+  </instructions>
+  <instructions description="3180">
+    <parameters>
+      <definition href="../microchip.pic16/microchip.pic16e.instructionset#//@instructions.6/@parameters.0"/>
+    </parameters>
+    <instruction href="../microchip.pic16/microchip.pic16e.instructionset#//@instructions.6"/>
+  </instructions>
+  <instructions description="ba1">
+    <parameters value="33">
+      <definition href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.6/@parameters.0"/>
+    </parameters>
+    <parameters value="1">
+      <definition href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.6/@parameters.1"/>
+    </parameters>
+    <instruction href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.6"/>
+  </instructions>
+  <instructions description="282c">
+    <parameters value="44">
+      <definition href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.30/@parameters.0"/>
+    </parameters>
+    <instruction href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.30"/>
+  </instructions>
+  <instructions description="3180">
+    <parameters>
+      <definition href="../microchip.pic16/microchip.pic16e.instructionset#//@instructions.6/@parameters.0"/>
+    </parameters>
+    <instruction href="../microchip.pic16/microchip.pic16e.instructionset#//@instructions.6"/>
+  </instructions>
+  <instructions description="ba0">
+    <parameters value="32">
+      <definition href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.6/@parameters.0"/>
+    </parameters>
+    <parameters value="1">
+      <definition href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.6/@parameters.1"/>
+    </parameters>
+    <instruction href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.6"/>
+  </instructions>
+  <instructions description="282a">
+    <parameters value="42">
+      <definition href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.30/@parameters.0"/>
+    </parameters>
+    <instruction href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.30"/>
+  </instructions>
+  <instructions description="0">
+    <instruction href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.12"/>
+  </instructions>
+  <instructions description="0">
+    <instruction href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.12"/>
+  </instructions>
+  <instructions description="0">
+    <instruction href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.12"/>
+  </instructions>
+  <instructions description="2810">
+    <parameters value="16">
+      <definition href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.30/@parameters.0"/>
+    </parameters>
+    <instruction href="../microchip.pic16/microchip.pic16.instructionset#//@instructions.30"/>
+  </instructions>
+</object:AssemblerObject>

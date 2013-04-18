@@ -33,7 +33,7 @@ rule assemble
 		
 			var wordvalue = 0;
 			var length = 0;
-			var sections = w.eGet(w.eClass.eStructuralFeatures[0]);//w.sections;
+			var sections = w.sections;
 			var k = sections.size();
 			while(k>0){
 				k = k-1;
@@ -44,8 +44,8 @@ rule assemble
 					//svalue = s.eGet(s.eClass.eStructuralFeatures[0]);
 				}
 				if (s.isTypeOf(asm!ParameterSection)){
-					//var iparameter = s.parameter;
-					var iparameter = s.eGet(s.eClass.eStructuralFeatures[0]);
+					var iparameter = s.parameter;
+					//var iparameter = s.eGet(s.eClass.eStructuralFeatures[0]);
 					if (paramvalues.containsKey(iparameter)){
 						//TODO error
 					}else{
@@ -53,24 +53,19 @@ rule assemble
 					}
 				}
 				svalue = svalue.shift(length);
-				//var sshift = s.shift;
-				var sshift = s.eGet(s.eClass.eSuperTypes[0].eStructuralFeatures[2]);
+				var sshift = s.shift;
+				//var sshift = s.eGet(s.eClass.eSuperTypes[0].eStructuralFeatures[2]);
 				svalue = svalue.shift(-sshift);
-				//var ssize = s.size;
-				var ssize = s.eGet(s.eClass.eSuperTypes[0].eStructuralFeatures[1]);
+				var ssize = s.size;
+				//var ssize = s.eGet(s.eClass.eSuperTypes[0].eStructuralFeatures[1]);
 				var mask = mask(ssize, length);
 				length = length + ssize;
 				wordvalue = math.bitwiseOr(wordvalue, math.bitwiseAnd(svalue,mask));
 			}
 				
-			("word: "+wordvalue).println();	
-			length.println();
-				
 			var bytenum = ((length-1)/8)+1;
-			bytenum.println();
 			var j = 0;
 			while(j<bytenum){
-				("byte "+j).println();
 				data.add(math.bitwiseAnd(wordvalue, 255));
 				wordvalue = wordvalue.shift(-8);
 				j = j + 1;
@@ -83,7 +78,6 @@ rule assemble
 	hexfile.entries.add(entry);
 	var mtool = new Native("hu.modembed.utils.MODembedTool");
 	entry.address = 0;
-	data.size().println();
 	var bytedata = mtool.numberListToByteArray(data); 
 	entry.data = bytedata;
 }

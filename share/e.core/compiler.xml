@@ -2,7 +2,35 @@
 <project name="compiler">
 	
 	<dirname property="included.basedir" file="${ant.file.compiler}"/>
-	<echo>${ant.file.compiler}</echo>
+	<property file="${included.basedir}/metamodels.properties"/>
+	
+	<macrodef name="inputmodel">
+		<attribute name="name"/>
+		<attribute name="resource"/>
+		<sequential>
+			<epsilon.emf.loadModel
+						name="@{name}"
+						modelfile="@{resource}"
+						read="true"
+						store="false"
+					/>
+		</sequential>
+	</macrodef>
+	
+	<macrodef name="outputmodel">
+		<attribute name="name"/>
+		<attribute name="resource"/>
+		<attribute name="mmuri"/>
+		<sequential>
+			<epsilon.emf.loadModel
+				name="@{name}"
+				modelfile="@{resource}"
+				metamodeluri="@{mmuri}"
+				read="false"
+				store="true"
+			/>
+		</sequential>
+	</macrodef>
 	
 	<!-- = = = = = = = = = = = = = = = = =
           macrodef: compiler.assemble          
@@ -23,7 +51,6 @@
 		<attribute name="input" />
 		<attribute name="output" />
 		<sequential>
-			<echo>${included.basedir}/</echo>
 			<epsilon.eol src="${included.basedir}/disassemble.eol">
 				<model ref="@{instructionSet}" as="instructionSet"/>
 				<model ref="@{input}" as="hexFile"/>

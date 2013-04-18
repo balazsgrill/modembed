@@ -4,29 +4,33 @@
 	<include file="../e.core/compiler.xml"/>
 
 	<target name="run">
-		<epsilon.emf.loadModel
+		<inputmodel
 			name="input_hex"
-			modelfile="16f1824_blink_wo_Config.hex"
-			read="true"
-			store="false"
+			resource="16f1824_blink_wo_Config.hex"
 		/>
-		<epsilon.emf.loadModel
+		<inputmodel
 			name="instructionSet"
-			modelfile="../microchip.pic16/microchip.pic16.instructionset"
-			read="true"
-			store="false"
+			resource="../microchip.pic16/microchip.pic16e.instructionset"
 		/>
-		<epsilon.emf.loadModel
+		<outputmodel
 			name="asm"
-			modelfile="blink.asm.model"
-			read="false"
-			store="true"
+			resource="blink.asm.model"
+			mmuri="${uri.modembed.core.object}"
+		/>
+		<outputmodel
+			name="output_hex"
+			resource="blink.hex"
+			mmuri="${uri.hexfile}"
 		/>
 		<compiler.disassemble 
 			input="input_hex"
 			instructionset="instructionSet"
 			output="asm"
 			/>
+		<compiler.assemble
+			input="asm"
+			output="output_hex"
+		/>
 	</target>
 	
 </project>
