@@ -277,27 +277,6 @@ litigation.
          unpack="false"/>
 
    <plugin
-         id="hu.e.compiler"
-         download-size="0"
-         install-size="0"
-         version="0.8.1.qualifier"
-         unpack="false"/>
-
-   <plugin
-         id="hu.e.parser"
-         download-size="0"
-         install-size="0"
-         version="0.8.1.qualifier"
-         unpack="false"/>
-
-   <plugin
-         id="hu.e.parser.ui"
-         download-size="0"
-         install-size="0"
-         version="0.8.1.qualifier"
-         unpack="false"/>
-
-   <plugin
          id="hu.modembed.help"
          download-size="0"
          install-size="0"
@@ -308,5 +287,19 @@ litigation.
          download-size="0"
          install-size="0"
          version="0.0.0"/>
+
+   <plugin
+         id="hu.modembed.model.textnotations.instructionset"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="hu.modembed.model.textnotations.instructionset.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
 </feature>

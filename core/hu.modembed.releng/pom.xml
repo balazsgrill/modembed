@@ -15,18 +15,14 @@
 		<module>../hu.modembed.model.editor</module>
 		<module>../hu.modembed.ui</module>
 		<module>../hu.modembed.ui.launch</module>
-		<module>../../e/hu.e.parser</module>
-		<module>../../e/hu.e.parser.ui</module>
-		<module>../../e/hu.e.compiler</module>
 		<module>../hu.modembed.core.feature</module>
 		<module>../hu.modembed.help</module>
 		<module>../hu.modembed.simulator</module>
 		
-		<module>../../pic/core/hu.modembed.pic.model</module>
-		<module>../../pic/core/hu.modembed.pic.ui</module>
-		<module>../../pic/core/hu.modembed.pic.midrange</module>
+		<module>../../pic/core/hu.modembed.pic</module>
+		<!-- module>../../pic/core/hu.modembed.pic.midrange</module>
 		<module>../../pic/core/hu.modembed.pic.pic18</module>
-		<module>../../pic/core/hu.modembed.pic.examples</module>
+		<module>../../pic/core/hu.modembed.pic.examples</module-->
 		<module>../../pic/core/hu.modembed.pic.simulator</module>
 		<module>../../pic/core/hu.modembed.pic.feature</module>
 		
@@ -50,6 +46,11 @@
 			<id>juno</id>
 			<layout>p2</layout>
 			<url>http://download.eclipse.org/releases/juno</url>
+		</repository>
+		<repository>
+			<id>epsilon</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/epsilon/updates/</url>
 		</repository>
 	</repositories>
 

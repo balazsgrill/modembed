@@ -7,10 +7,10 @@
 		<artifactId>hu.modembed-parent</artifactId>
 		<groupId>hu.modembed</groupId>
 		<version>0.8.0</version>
-		<relativePath>../hu.modembed.releng/pom.xml</relativePath>
+		<relativePath>../../../core/hu.modembed.releng/pom.xml</relativePath>
 	</parent>
 	<groupId>hu.modembed</groupId>
-	<artifactId>hu.modembed</artifactId>
+	<artifactId>hu.modembed.pic</artifactId>
 	<version>0.8.1-SNAPSHOT</version>
 	<packaging>eclipse-plugin</packaging>
 	

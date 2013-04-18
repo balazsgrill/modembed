@@ -3,7 +3,7 @@
       id="hu.modembed.pic.feature"
       label="Modembed PIC feature"
       version="0.8.1.qualifier"
-      plugin="hu.modembed.pic.ui">
+      plugin="hu.modembed.pic">
 
    <description url="http://gbalage.github.com/modembed">
       PIC device support for MODembed
@@ -209,7 +209,7 @@ litigation.
    </license>
 
    <url>
-      <update label="MODembed update site" url="http://gbalage.github.com/modembed/updatesite"/>
+      <update label="MODembed update site" url="http://modembed-updatesite.balazs-grill.cloudbees.net/"/>
    </url>
 
    <requires>
@@ -217,42 +217,16 @@ litigation.
    </requires>
 
    <plugin
-         id="hu.modembed.pic.ui"
-         download-size="0"
-         install-size="0"
-         version="0.8.1.qualifier"
-         unpack="false"/>
-
-   <plugin
-         id="hu.modembed.pic.midrange"
-         download-size="0"
-         install-size="0"
-         version="0.8.1.qualifier"/>
-
-   <plugin
-         id="hu.modembed.pic.examples"
-         download-size="0"
-         install-size="0"
-         version="0.8.1.qualifier"/>
-
-   <plugin
-         id="hu.modembed.pic.model"
-         download-size="0"
-         install-size="0"
-         version="0.8.1.qualifier"
-         unpack="false"/>
-
-   <plugin
-         id="hu.modembed.pic.pic18"
-         download-size="0"
-         install-size="0"
-         version="0.8.1.qualifier"/>
-
-   <plugin
          id="hu.modembed.pic.simulator"
          download-size="0"
          install-size="0"
          version="0.8.1.qualifier"
          unpack="false"/>
+
+   <plugin
+         id="hu.modembed.pic"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
 
 </feature>

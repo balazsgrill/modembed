@@ -2,8 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: EMFText Parser Plugin: instructionset
 Bundle-SymbolicName: hu.modembed.model.textnotations.instructionset;singleton:=true
-Bundle-Version: 1.0.0
-Bundle-Vendor: Software Technology Group - TU Dresden Germany
+Bundle-Version: 0.8.1.qualifier
 Require-Bundle: org.eclipse.core.runtime;resolution:=optional,
   org.eclipse.emf.ecore,
   org.eclipse.emf.ecore.change,
