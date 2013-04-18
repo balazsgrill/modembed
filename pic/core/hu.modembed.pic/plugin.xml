@@ -8,14 +8,22 @@
             name="PIC libraries">
       </category>
       <project
+            archive="shared/microchip.pic16.zip"
+            category="hu.modembed.pic.category"
             id="microchip.pic16"
             name="Microchip midrange (PIC16) and enchanced midrange (PIC16E) core libraries">
+         <dependency
+               project="e.core">
+         </dependency>
       </project>
       <project
             archive="shared/microchip.pic18.zip"
             category="hu.modembed.pic.category"
             id="microchip.pic18"
             name="Microchip high-end PIC18 core libraries">
+         <dependency
+               project="e.core">
+         </dependency>
       </project>
    </extension>
 

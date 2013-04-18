@@ -3,113 +3,21 @@
 <plugin>
    <extension
          point="hu.modembed.ui.includedCode">
-      <project
-            category="hu.modembed.test.category"
-            id="test0"
-            name="Test0 - Parsing">
-         <resource
-               path="/"
-               resource="tests/t0_parse/parseTest.e">
-         </resource>
-      </project>
-      <project
-            category="hu.modembed.test.category"
-            id="test1"
-            name="Test1 - Assembling">
-         <dependency
-               project="microchip.pic16">
-         </dependency>
-         <resource
-               path="/"
-               resource="tests/t1_assemble/16f1824_blink_wo_Config.hex">
-         </resource>
-         <resource
-               path="/"
-               resource="tests/t1_assemble/pic16f1824.arch.xmi">
-         </resource>
-         <resource
-               path="/"
-               resource="tests/t1_assemble/build.xmi">
-         </resource>
-      </project>
       <category
             id="hu.modembed.test.category"
             name="Test projects">
       </category>
       <project
+            archive="shared/test.assembler.zip"
             category="hu.modembed.test.category"
-            id="test4"
-            name="Test4 - PIC configuration">
+            id="test.assembler"
+            name="Assembler test">
          <dependency
                project="e.core">
          </dependency>
          <dependency
                project="microchip.pic16">
          </dependency>
-         <dependency
-               project="microchip.PIC16F1824">
-         </dependency>
-         <resource
-               path="/"
-               resource="tests/t4_picConfig/16f1824_blink.hex">
-         </resource>
-         <resource
-               path="/"
-               resource="tests/t4_picConfig/16f1824_blink_wo_Config.hex">
-         </resource>
-         <resource
-               path="/"
-               resource="tests/t4_picConfig/compile.e">
-         </resource>
-      </project>
-      <project
-            category="hu.modembed.test.category"
-            id="test5"
-            name="Test5 - PIC18 assembly and configuration test">
-         <dependency
-               project="e.core">
-         </dependency>
-         <dependency
-               project="microchip.pic18">
-         </dependency>
-         <dependency
-               project="microchip.PIC18F14K50">
-         </dependency>
-         <resource
-               path="/"
-               resource="tests/t5_pic18asm/fishlamp.hex">
-         </resource>
-         <resource
-               path="/"
-               resource="tests/t5_pic18asm/compile.e">
-         </resource>
-      </project>
-      <project
-            category="hu.modembed.test.category"
-            id="test.compileToDevice"
-            name="Compile to device-specific code">
-         <dependency
-               project="e.core">
-         </dependency>
-         <dependency
-               project="microchip.pic16">
-         </dependency>
-         <resource
-               path="/"
-               resource="tests/test.compileToDevice/main.xmi">
-         </resource>
-         <resource
-               path="/"
-               resource="tests/test.compileToDevice/pic16.platformDef.xmi">
-         </resource>
-         <resource
-               path="/"
-               resource="tests/test.compileToDevice/main.map.xmi">
-         </resource>
-         <resource
-               path="/"
-               resource="tests/test.compileToDevice/compile.e">
-         </resource>
       </project>
    </extension>
 

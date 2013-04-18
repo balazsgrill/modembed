@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
 
+import org.eclipse.ant.core.AntRunner;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IMarker;
 import org.eclipse.core.resources.IProject;
@@ -29,12 +30,14 @@ import org.eclipse.emf.compare.util.EclipseModelUtils;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.junit.Assert;
+import org.junit.runner.JUnitCore;
 import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
-@SuiteClasses({ ParsingTests.class, AssemblerTest.class, CompilerTests.class, SimulatorTests.class, ExampleTests.class })
+@SuiteClasses({ CompilerTests.class, SimulatorTests.class })
 public class ModembedTests {
 
 	public static final String TEST_CATEGORY = "hu.modembed.test.category"; 
@@ -60,13 +63,6 @@ public class ModembedTests {
 		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
 		root.refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
 		ResourcesPlugin.getWorkspace().build(IncrementalProjectBuilder.FULL_BUILD, new NullProgressMonitor());
-	}
-	
-	public static IStatus executeWorkflow(IProject project, String workflow){
-//		WorkflowLauncherRunnable launcher = WorkflowLauncherRunnable.create(project, workflow);
-//		launcher.addListener(new SysoutWorkflowLauncherListener());
-//		return launcher.execute(new SysoutProgressMonitor());
-		return null;
 	}
 	
 	public static void testSetUp() throws CoreException{
@@ -115,8 +111,14 @@ public class ModembedTests {
 		ModembedTests.build();
 		root.refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
 		
-		IStatus status = ModembedTests.executeWorkflow(project, "compile");
-		Assert.assertThat(status, StatusMatcher.instance);
+		IFile buildFile = project.getFile("build.xml");
+		if (buildFile.exists()){
+			AntRunner runner = new AntRunner();
+			runner.setBuildFileLocation(buildFile.getLocation().toPortableString());
+			runner.run();
+		}
+		
+		
 		
 		return project;
 	}

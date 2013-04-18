@@ -10,6 +10,7 @@
             name="Generic">
       </category>
       <project
+            archive="shared/e.core.zip"
             category="hu.modembed.category.core"
             id="e.core"
             name="Core resources">

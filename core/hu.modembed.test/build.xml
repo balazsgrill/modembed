@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="pack.shared.test" default="pack">
+
+	<include file="../hu.modembed/pack_shared.xml"/>
+	
+	<target name="pack">
+		<pack.shared name="test.assembler"/>
+	</target>
+	
+</project>
