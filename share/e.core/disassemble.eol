@@ -4,9 +4,13 @@
 /* var output : AssemblerObject is assumed */
 
 var mtool = new Native("hu.modembed.utils.MODembedTool");
-var disassembler = mtool.createDisassembler(instructionSet);
 
-var entry = heyFile.entries[0];
+var instructionSetModel = instructionSet.allInstances[0];
+var hexFileModel = hexFile.allInstances[0];
 
-output = new object!AssemblerObject;
-output.instructions = disassembler.disassemble(entry.data);
+var asm = new output!AssemblerObject;
+var disassembler = mtool.createDisassembler(instructionSetModel);
+
+var entry = hexFileModel.entries[0];
+
+asm.instructions = disassembler.disassemble(entry.data);

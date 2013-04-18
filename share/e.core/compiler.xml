@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project>
+<project name="compiler">
 	
-	<dirname property="included.basedir" file="${ant.file.included}"/>
+	<dirname property="included.basedir" file="${ant.file.compiler}"/>
+	<echo>${ant.file.compiler}</echo>
 	
 	<!-- = = = = = = = = = = = = = = = = =
           macrodef: compiler.assemble          
