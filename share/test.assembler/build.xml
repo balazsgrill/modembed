@@ -19,7 +19,7 @@
 		/>
 		<outputmodel
 			name="output_hex"
-			resource="blink.hex"
+			resource=".blink.hex"
 			mmuri="${uri.hexfile}"
 		/>
 		<compiler.disassemble 

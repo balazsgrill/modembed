@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="build.modembed.pic" default="share">
+
+	<include file="../../../core/hu.modembed/pack_shared.xml" />
+	
+	<target name="share">
+		<pack.shared name="microchip.pic16" />
+		<pack.shared name="microchip.pic18" />
+	</target>
+	
+	
+</project>

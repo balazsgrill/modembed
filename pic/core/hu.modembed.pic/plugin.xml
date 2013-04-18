@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="hu.modembed.ui.includedCode">
+      <category
+            id="hu.modembed.pic.category"
+            name="PIC libraries">
+      </category>
+      <project
+            id="microchip.pic16"
+            name="Microchip midrange (PIC16) and enchanced midrange (PIC16E) core libraries">
+      </project>
+      <project
+            archive="shared/microchip.pic18.zip"
+            category="hu.modembed.pic.category"
+            id="microchip.pic18"
+            name="Microchip high-end PIC18 core libraries">
+      </project>
+   </extension>
+
+</plugin>
