@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="hu.modembed_pack.shared" default="pack">
+
+	<include file="pack_shared.xml"/>
+	
+	<target name="pack">
+		<pack.shared name="e.core"/>
+	</target>
+	
+</project>

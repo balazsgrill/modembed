@@ -5,24 +5,15 @@
    <extension-point id="hu.modembed.ui.includedCode" name="Included Code" schema="schema/hu.modembed.ui.includedCode.exsd"/>
    <extension
          point="hu.modembed.ui.includedCode">
-      <project
-            category="hu.modembed.category.core"
-            icon="icons/e.core.png"
-            id="e.core"
-            name="Core platform">
-         <resource
-               path="/"
-               resource="core/platform.e">
-         </resource>
-         <resource
-               path="/"
-               resource="core/dio.e">
-         </resource>
-      </project>
       <category
             id="hu.modembed.category.core"
             name="Generic">
       </category>
+      <project
+            category="hu.modembed.category.core"
+            id="e.core"
+            name="Core resources">
+      </project>
    </extension>
    <extension
          point="org.eclipse.epsilon.common.dt.tool">

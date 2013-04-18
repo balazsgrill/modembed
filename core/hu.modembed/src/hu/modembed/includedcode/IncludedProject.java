@@ -37,10 +37,13 @@ public final class IncludedProject {
 	
 	private final String category;
 	
+	private final URL archiveURL;
+	
 	protected IncludedProject(IConfigurationElement ce) {
 		ID = ce.getAttribute("id");
 		name = ce.getAttribute("name");
 		String icon = ce.getAttribute("icon");
+		String archive = ce.getAttribute("archive");
 		category = ce.getAttribute("category");
 		Bundle bundle = Platform.getBundle(ce.getContributor().getName());
 		if (bundle != null){
@@ -51,8 +54,20 @@ public final class IncludedProject {
 				//
 			}
 			this.icon = iconurl;
+			
+			URL archiveURL = null;
+			try{
+				if (archive != null){
+					archiveURL = bundle.getEntry(archive);
+					archiveURL = FileLocator.toFileURL(archiveURL);
+				}	
+			}catch(Exception e){
+				//
+			}
+			this.archiveURL = archiveURL;
 		}else{
 			this.icon = null;
+			this.archiveURL = null;
 		}
 		for(IConfigurationElement c : ce.getChildren("dependency")){
 			deps.add(c.getAttribute("project"));
@@ -67,6 +82,10 @@ public final class IncludedProject {
 				MODembedCore.getDefault().getLog().log(new Status(IStatus.ERROR, c.getContributor().getName(), "Could not resolve Resource "+resource,e));
 			}
 		}
+	}
+	
+	public URL getArchiveURL() {
+		return archiveURL;
 	}
 	
 	public String getCategory() {
