@@ -210,6 +210,8 @@ litigation.
 
    <url>
       <update label="MODembed update site" url="http://modembed-updatesite.balazs-grill.cloudbees.net/"/>
+      <discovery label="EMFText update site" url="http://emftext.org/update"/>
+      <discovery label="Epsilon update site" url="http://download.eclipse.org/epsilon/updates/"/>
    </url>
 
    <requires>
@@ -222,6 +224,7 @@ litigation.
       <import feature="org.eclipse.emf.transaction" version="1.6.0" match="greaterOrEqual"/>
       <import feature="org.eclipse.jdt" version="3.8.1" match="greaterOrEqual"/>
       <import feature="org.eclipse.emf.validation" version="1.6.0" match="greaterOrEqual"/>
+      <import plugin="org.emftext.access"/>
    </requires>
 
    <plugin
