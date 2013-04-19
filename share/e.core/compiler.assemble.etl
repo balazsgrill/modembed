@@ -15,21 +15,14 @@ rule assemble
 		
 		var paramvalues = new Map;//(asm!InstructionParameter, Integer);
 		var i = call.instruction;
-		i.println();
 			
-		//The following line fails:
 		var i_parameters = i.parameters; 
-		//var i_parameters = i.eGet(i.eClass.eStructuralFeatures[0]); 
 			
 		/* Set default values */		
 		for (ip in i_parameters){
-			//var ip_defaultValue = ip.eGet(ip.eClass.eStructuralFeatures[1]);
 			paramvalues.put(ip, ip.defaultValue);
 		}
 		for(icp in call.parameters){
-			icp.definition.print();
-			" -> ".print();
-			icp.value.println();
 			paramvalues.put(icp.definition, icp.value);
 		}
 		
@@ -46,25 +39,21 @@ rule assemble
 				var svalue = 0;
 				if (s.isTypeOf(asm!ConstantSection)){
 					svalue = s.value;
-					//svalue = s.eGet(s.eClass.eStructuralFeatures[0]);
 				}
 				if (s.isTypeOf(asm!ParameterSection)){
 					var iparameter = s.parameter;
-					//var iparameter = s.eGet(s.eClass.eStructuralFeatures[0]);
 					if (paramvalues.containsKey(iparameter)){
 						svalue = paramvalues.get(iparameter).intValue();					
 					}else{
 						//TODO error
-						"No value is defined for parameter ".print();
-						iparameter.println();
+						"ERROR! No value is defined for parameter ".print();
+						iparameter.name.println();
 					}
 				}
 				svalue = svalue.shift(length);
 				var sshift = s.shift;
-				//var sshift = s.eGet(s.eClass.eSuperTypes[0].eStructuralFeatures[2]);
 				svalue = svalue.shift(-sshift);
 				var ssize = s.size;
-				//var ssize = s.eGet(s.eClass.eSuperTypes[0].eStructuralFeatures[1]);
 				var mask = mask(ssize, length);
 				length = length + ssize;
 				wordvalue = math.bitwiseOr(wordvalue, math.bitwiseAnd(svalue,mask));
