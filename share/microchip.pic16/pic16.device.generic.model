@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ASCII"?>
+<abstraction:DeviceAbstraction xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:abstraction="http://modembed.hu/abstraction" xmi:id="_PPVT0Kj5EeK8eJxa8Jcd4w" description="Generic PIC16 device description" name="pic16.device.generic">
+  <memoryTypes xmi:id="_U7j20Kj5EeK8eJxa8Jcd4w" description="Memory type defintion for program code memory" name="CodeMemorySectionType" accessCost="1" forProgram="true"/>
+  <memoryTypes xmi:id="_k63zMKj5EeK8eJxa8Jcd4w" description="Memory section type which need address extension with a bank selection register" name="BankedMemorySectionType" accessCost="2" contentVolatile="true" forData="true"/>
+  <memoryTypes xmi:id="_wHSoUKj5EeK8eJxa8Jcd4w" description="Memory section type which is accessible without address extension (mirrorred to all banks)" name="MirrorredMemorySectionType" accessCost="1" contentVolatile="true" forData="true"/>
+</abstraction:DeviceAbstraction>
