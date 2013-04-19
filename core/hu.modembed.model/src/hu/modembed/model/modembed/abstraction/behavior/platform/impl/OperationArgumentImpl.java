@@ -5,6 +5,7 @@ package hu.modembed.model.modembed.abstraction.behavior.platform.impl;
 import hu.modembed.model.modembed.abstraction.behavior.platform.OperationArgument;
 import hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage;
 
+import hu.modembed.model.modembed.abstraction.memorymodel.MemoryType;
 import hu.modembed.model.modembed.abstraction.types.TypeDefinition;
 
 import hu.modembed.model.modembed.infrastructure.impl.NamedElementImpl;
@@ -25,6 +26,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link hu.modembed.model.modembed.abstraction.behavior.platform.impl.OperationArgumentImpl#getType <em>Type</em>}</li>
+ *   <li>{@link hu.modembed.model.modembed.abstraction.behavior.platform.impl.OperationArgumentImpl#getMemtype <em>Memtype</em>}</li>
  *   <li>{@link hu.modembed.model.modembed.abstraction.behavior.platform.impl.OperationArgumentImpl#getIndirectionLevel <em>Indirection Level</em>}</li>
  * </ul>
  * </p>
@@ -41,6 +43,16 @@ public class OperationArgumentImpl extends NamedElementImpl implements Operation
 	 * @ordered
 	 */
 	protected TypeDefinition type;
+
+	/**
+	 * The cached value of the '{@link #getMemtype() <em>Memtype</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMemtype()
+	 * @generated
+	 * @ordered
+	 */
+	protected MemoryType memtype;
 
 	/**
 	 * The default value of the '{@link #getIndirectionLevel() <em>Indirection Level</em>}' attribute.
@@ -129,6 +141,44 @@ public class OperationArgumentImpl extends NamedElementImpl implements Operation
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public MemoryType getMemtype() {
+		if (memtype != null && memtype.eIsProxy()) {
+			InternalEObject oldMemtype = (InternalEObject)memtype;
+			memtype = (MemoryType)eResolveProxy(oldMemtype);
+			if (memtype != oldMemtype) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PlatformPackage.OPERATION_ARGUMENT__MEMTYPE, oldMemtype, memtype));
+			}
+		}
+		return memtype;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MemoryType basicGetMemtype() {
+		return memtype;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMemtype(MemoryType newMemtype) {
+		MemoryType oldMemtype = memtype;
+		memtype = newMemtype;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PlatformPackage.OPERATION_ARGUMENT__MEMTYPE, oldMemtype, memtype));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public int getIndirectionLevel() {
 		return indirectionLevel;
 	}
@@ -169,6 +219,9 @@ public class OperationArgumentImpl extends NamedElementImpl implements Operation
 		switch (featureID) {
 			case PlatformPackage.OPERATION_ARGUMENT__TYPE:
 				return getType();
+			case PlatformPackage.OPERATION_ARGUMENT__MEMTYPE:
+				if (resolve) return getMemtype();
+				return basicGetMemtype();
 			case PlatformPackage.OPERATION_ARGUMENT__INDIRECTION_LEVEL:
 				return getIndirectionLevel();
 		}
@@ -185,6 +238,9 @@ public class OperationArgumentImpl extends NamedElementImpl implements Operation
 		switch (featureID) {
 			case PlatformPackage.OPERATION_ARGUMENT__TYPE:
 				setType((TypeDefinition)newValue);
+				return;
+			case PlatformPackage.OPERATION_ARGUMENT__MEMTYPE:
+				setMemtype((MemoryType)newValue);
 				return;
 			case PlatformPackage.OPERATION_ARGUMENT__INDIRECTION_LEVEL:
 				setIndirectionLevel((Integer)newValue);
@@ -204,6 +260,9 @@ public class OperationArgumentImpl extends NamedElementImpl implements Operation
 			case PlatformPackage.OPERATION_ARGUMENT__TYPE:
 				setType((TypeDefinition)null);
 				return;
+			case PlatformPackage.OPERATION_ARGUMENT__MEMTYPE:
+				setMemtype((MemoryType)null);
+				return;
 			case PlatformPackage.OPERATION_ARGUMENT__INDIRECTION_LEVEL:
 				setIndirectionLevel(INDIRECTION_LEVEL_EDEFAULT);
 				return;
@@ -221,6 +280,8 @@ public class OperationArgumentImpl extends NamedElementImpl implements Operation
 		switch (featureID) {
 			case PlatformPackage.OPERATION_ARGUMENT__TYPE:
 				return type != null;
+			case PlatformPackage.OPERATION_ARGUMENT__MEMTYPE:
+				return memtype != null;
 			case PlatformPackage.OPERATION_ARGUMENT__INDIRECTION_LEVEL:
 				return indirectionLevel != INDIRECTION_LEVEL_EDEFAULT;
 		}

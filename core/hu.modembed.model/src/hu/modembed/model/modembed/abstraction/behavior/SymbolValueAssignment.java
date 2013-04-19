@@ -2,6 +2,7 @@
  */
 package hu.modembed.model.modembed.abstraction.behavior;
 
+import hu.modembed.model.modembed.abstraction.memorymodel.MemoryInstance;
 import hu.modembed.model.modembed.infrastructure.MODembedElement;
 
 /**
@@ -13,6 +14,7 @@ import hu.modembed.model.modembed.infrastructure.MODembedElement;
  * The following features are supported:
  * <ul>
  *   <li>{@link hu.modembed.model.modembed.abstraction.behavior.SymbolValueAssignment#getSymbol <em>Symbol</em>}</li>
+ *   <li>{@link hu.modembed.model.modembed.abstraction.behavior.SymbolValueAssignment#getMemory <em>Memory</em>}</li>
  *   <li>{@link hu.modembed.model.modembed.abstraction.behavior.SymbolValueAssignment#getValue <em>Value</em>}</li>
  *   <li>{@link hu.modembed.model.modembed.abstraction.behavior.SymbolValueAssignment#getIndirectionLevel <em>Indirection Level</em>}</li>
  * </ul>
@@ -48,6 +50,32 @@ public interface SymbolValueAssignment extends MODembedElement {
 	 * @generated
 	 */
 	void setSymbol(Symbol value);
+
+	/**
+	 * Returns the value of the '<em><b>Memory</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Memory</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Memory</em>' reference.
+	 * @see #setMemory(MemoryInstance)
+	 * @see hu.modembed.model.modembed.abstraction.behavior.BehaviorPackage#getSymbolValueAssignment_Memory()
+	 * @model
+	 * @generated
+	 */
+	MemoryInstance getMemory();
+
+	/**
+	 * Sets the value of the '{@link hu.modembed.model.modembed.abstraction.behavior.SymbolValueAssignment#getMemory <em>Memory</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Memory</em>' reference.
+	 * @see #getMemory()
+	 * @generated
+	 */
+	void setMemory(MemoryInstance value);
 
 	/**
 	 * Returns the value of the '<em><b>Value</b></em>' attribute.

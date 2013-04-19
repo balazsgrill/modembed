@@ -2,6 +2,7 @@
  */
 package hu.modembed.model.modembed.abstraction.behavior.impl;
 
+import hu.modembed.model.modembed.abstraction.AbstractionPackage;
 import hu.modembed.model.modembed.abstraction.behavior.AtomicOperationExecution;
 import hu.modembed.model.modembed.abstraction.behavior.BehaviorCall;
 import hu.modembed.model.modembed.abstraction.behavior.BehaviorFactory;
@@ -18,6 +19,9 @@ import hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage;
 
 import hu.modembed.model.modembed.abstraction.behavior.platform.impl.PlatformPackageImpl;
 
+import hu.modembed.model.modembed.abstraction.impl.AbstractionPackageImpl;
+import hu.modembed.model.modembed.abstraction.memorymodel.MemorymodelPackage;
+import hu.modembed.model.modembed.abstraction.memorymodel.impl.MemorymodelPackageImpl;
 import hu.modembed.model.modembed.abstraction.types.TypesPackage;
 
 import hu.modembed.model.modembed.abstraction.types.impl.TypesPackageImpl;
@@ -166,7 +170,9 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 		TraceabilityPackageImpl theTraceabilityPackage = (TraceabilityPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TraceabilityPackage.eNS_URI) instanceof TraceabilityPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TraceabilityPackage.eNS_URI) : TraceabilityPackage.eINSTANCE);
 		InstructionsetPackageImpl theInstructionsetPackage = (InstructionsetPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InstructionsetPackage.eNS_URI) instanceof InstructionsetPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InstructionsetPackage.eNS_URI) : InstructionsetPackage.eINSTANCE);
 		ObjectPackageImpl theObjectPackage = (ObjectPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ObjectPackage.eNS_URI) instanceof ObjectPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ObjectPackage.eNS_URI) : ObjectPackage.eINSTANCE);
+		AbstractionPackageImpl theAbstractionPackage = (AbstractionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AbstractionPackage.eNS_URI) instanceof AbstractionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AbstractionPackage.eNS_URI) : AbstractionPackage.eINSTANCE);
 		TypesPackageImpl theTypesPackage = (TypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) instanceof TypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) : TypesPackage.eINSTANCE);
+		MemorymodelPackageImpl theMemorymodelPackage = (MemorymodelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(MemorymodelPackage.eNS_URI) instanceof MemorymodelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(MemorymodelPackage.eNS_URI) : MemorymodelPackage.eINSTANCE);
 		PlatformPackageImpl thePlatformPackage = (PlatformPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PlatformPackage.eNS_URI) instanceof PlatformPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PlatformPackage.eNS_URI) : PlatformPackage.eINSTANCE);
 
 		// Create package meta-data objects
@@ -175,7 +181,9 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 		theTraceabilityPackage.createPackageContents();
 		theInstructionsetPackage.createPackageContents();
 		theObjectPackage.createPackageContents();
+		theAbstractionPackage.createPackageContents();
 		theTypesPackage.createPackageContents();
+		theMemorymodelPackage.createPackageContents();
 		thePlatformPackage.createPackageContents();
 
 		// Initialize created meta-data
@@ -184,7 +192,9 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 		theTraceabilityPackage.initializePackageContents();
 		theInstructionsetPackage.initializePackageContents();
 		theObjectPackage.initializePackageContents();
+		theAbstractionPackage.initializePackageContents();
 		theTypesPackage.initializePackageContents();
+		theMemorymodelPackage.initializePackageContents();
 		thePlatformPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
@@ -390,8 +400,17 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getSymbolValueAssignment_Memory() {
+		return (EReference)symbolValueAssignmentEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getSymbolValueAssignment_Value() {
-		return (EAttribute)symbolValueAssignmentEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)symbolValueAssignmentEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -400,7 +419,7 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 	 * @generated
 	 */
 	public EAttribute getSymbolValueAssignment_IndirectionLevel() {
-		return (EAttribute)symbolValueAssignmentEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)symbolValueAssignmentEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -460,6 +479,7 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 
 		symbolValueAssignmentEClass = createEClass(SYMBOL_VALUE_ASSIGNMENT);
 		createEReference(symbolValueAssignmentEClass, SYMBOL_VALUE_ASSIGNMENT__SYMBOL);
+		createEReference(symbolValueAssignmentEClass, SYMBOL_VALUE_ASSIGNMENT__MEMORY);
 		createEAttribute(symbolValueAssignmentEClass, SYMBOL_VALUE_ASSIGNMENT__VALUE);
 		createEAttribute(symbolValueAssignmentEClass, SYMBOL_VALUE_ASSIGNMENT__INDIRECTION_LEVEL);
 	}
@@ -491,6 +511,7 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 		PlatformPackage thePlatformPackage = (PlatformPackage)EPackage.Registry.INSTANCE.getEPackage(PlatformPackage.eNS_URI);
 		InfrastructurePackage theInfrastructurePackage = (InfrastructurePackage)EPackage.Registry.INSTANCE.getEPackage(InfrastructurePackage.eNS_URI);
 		TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
+		MemorymodelPackage theMemorymodelPackage = (MemorymodelPackage)EPackage.Registry.INSTANCE.getEPackage(MemorymodelPackage.eNS_URI);
 
 		// Add subpackages
 		getESubpackages().add(thePlatformPackage);
@@ -540,11 +561,9 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 
 		initEClass(symbolValueAssignmentEClass, SymbolValueAssignment.class, "SymbolValueAssignment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSymbolValueAssignment_Symbol(), this.getSymbol(), null, "symbol", null, 0, 1, SymbolValueAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSymbolValueAssignment_Memory(), theMemorymodelPackage.getMemoryInstance(), null, "memory", null, 0, 1, SymbolValueAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSymbolValueAssignment_Value(), ecorePackage.getELong(), "value", null, 0, 1, SymbolValueAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSymbolValueAssignment_IndirectionLevel(), ecorePackage.getEInt(), "indirectionLevel", null, 0, 1, SymbolValueAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		// Create resource
-		createResource(eNS_URI);
 	}
 
 } //BehaviorPackageImpl

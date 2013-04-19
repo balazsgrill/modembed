@@ -87,6 +87,39 @@ public class InfrastructureSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case InfrastructurePackage.ATTRIBUTE_CONTAINER_DEFINITION: {
+				AttributeContainerDefinition attributeContainerDefinition = (AttributeContainerDefinition)theEObject;
+				T result = caseAttributeContainerDefinition(attributeContainerDefinition);
+				if (result == null) result = caseRootElement(attributeContainerDefinition);
+				if (result == null) result = caseNamedElement(attributeContainerDefinition);
+				if (result == null) result = caseMODembedElement(attributeContainerDefinition);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case InfrastructurePackage.ATTRIBUTE_DEFINITION: {
+				AttributeDefinition attributeDefinition = (AttributeDefinition)theEObject;
+				T result = caseAttributeDefinition(attributeDefinition);
+				if (result == null) result = caseNamedElement(attributeDefinition);
+				if (result == null) result = caseMODembedElement(attributeDefinition);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case InfrastructurePackage.ATTRIBUTE_VALUE_CONTAINER: {
+				AttributeValueContainer attributeValueContainer = (AttributeValueContainer)theEObject;
+				T result = caseAttributeValueContainer(attributeValueContainer);
+				if (result == null) result = caseRootElement(attributeValueContainer);
+				if (result == null) result = caseNamedElement(attributeValueContainer);
+				if (result == null) result = caseMODembedElement(attributeValueContainer);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case InfrastructurePackage.ATTRIBUTE_VALUE: {
+				AttributeValue attributeValue = (AttributeValue)theEObject;
+				T result = caseAttributeValue(attributeValue);
+				if (result == null) result = caseMODembedElement(attributeValue);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -133,6 +166,66 @@ public class InfrastructureSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseRootElement(RootElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Attribute Container Definition</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Attribute Container Definition</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAttributeContainerDefinition(AttributeContainerDefinition object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Attribute Definition</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Attribute Definition</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAttributeDefinition(AttributeDefinition object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Attribute Value Container</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Attribute Value Container</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAttributeValueContainer(AttributeValueContainer object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Attribute Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Attribute Value</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAttributeValue(AttributeValue object) {
 		return null;
 	}
 

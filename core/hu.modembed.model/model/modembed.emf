@@ -39,6 +39,24 @@ package infrastructure{
 	abstract class RootElement extends NamedElement{
 		
 	}
+	
+	class AttributeContainerDefinition extends RootElement{
+		val AttributeDefinition[*] attributes;
+	}
+	
+	class AttributeDefinition extends NamedElement{
+		
+	}
+	
+	class AttributeValueContainer extends RootElement{
+		ref AttributeContainerDefinition[1] definition;
+		val AttributeValue[*] values;
+	}
+	
+	class AttributeValue extends MODembedElement{
+		ref AttributeDefinition[1] definition;
+		attr long value;
+	}
 }
 
 @namespace(uri="http://modembed.hu/core", prefix="core")
@@ -123,6 +141,14 @@ package core{
 
 @namespace(uri="http://modembed.hu/abstraction", prefix="abstraction")
 package abstraction {
+
+	class DeviceAbstraction extends infrastructure.RootElement{
+		val memorymodel.MemoryType[*] memoryTypes;
+		val memorymodel.MemoryInstance[*] memoryInstances;
+		
+	}
+
+
   @namespace(uri="http://modembed.hu/abstraction/types", prefix="types")
   package types {
     abstract class TypeDefinition extends infrastructure.MODembedElement {
@@ -166,6 +192,25 @@ package abstraction {
 
   }
 
+  @namespace(uri="http://modembed.hu/abstraction/memorymodel", prefix="memmodel")
+  package memorymodel{
+  	
+  		@GenModel(documentation="Define a type of memory model")
+  		class MemoryType extends infrastructure.NamedElement{
+  			val infrastructure.AttributeContainerDefinition attributes;
+  			attr int accessCost;
+  			attr boolean contentVolatile;
+  			attr boolean forData;
+  			attr boolean forProgram;
+  		}
+  	
+  		class MemoryInstance extends infrastructure.NamedElement{
+  			ref MemoryType[1] type;
+  			val infrastructure.AttributeValueContainer attributes;
+  		}
+  	
+  }
+
   @namespace(uri="http://modembed.hu/abstraction/behavior", prefix="behavior")
   package behavior {
     class SequentialBehavior extends infrastructure.RootElement {
@@ -205,6 +250,7 @@ package abstraction {
 
     class SymbolValueAssignment extends infrastructure.MODembedElement {
       ref Symbol symbol;
+      ref memorymodel.MemoryInstance memory;
       attr long value;
       attr int indirectionLevel;
     }
@@ -224,6 +270,7 @@ package abstraction {
 
       class OperationArgument extends infrastructure.NamedElement {
         val types.TypeDefinition type;
+        ref memorymodel.MemoryType memtype;
         attr int indirectionLevel;
       }
 

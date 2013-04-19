@@ -186,6 +186,227 @@ public interface InfrastructurePackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link hu.modembed.model.modembed.infrastructure.impl.AttributeContainerDefinitionImpl <em>Attribute Container Definition</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.modembed.model.modembed.infrastructure.impl.AttributeContainerDefinitionImpl
+	 * @see hu.modembed.model.modembed.infrastructure.impl.InfrastructurePackageImpl#getAttributeContainerDefinition()
+	 * @generated
+	 */
+	int ATTRIBUTE_CONTAINER_DEFINITION = 3;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_CONTAINER_DEFINITION__DESCRIPTION = ROOT_ELEMENT__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_CONTAINER_DEFINITION__ORIGINS = ROOT_ELEMENT__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_CONTAINER_DEFINITION__NAME = ROOT_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_CONTAINER_DEFINITION__ATTRIBUTES = ROOT_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Attribute Container Definition</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_CONTAINER_DEFINITION_FEATURE_COUNT = ROOT_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link hu.modembed.model.modembed.infrastructure.impl.AttributeDefinitionImpl <em>Attribute Definition</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.modembed.model.modembed.infrastructure.impl.AttributeDefinitionImpl
+	 * @see hu.modembed.model.modembed.infrastructure.impl.InfrastructurePackageImpl#getAttributeDefinition()
+	 * @generated
+	 */
+	int ATTRIBUTE_DEFINITION = 4;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_DEFINITION__DESCRIPTION = NAMED_ELEMENT__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_DEFINITION__ORIGINS = NAMED_ELEMENT__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_DEFINITION__NAME = NAMED_ELEMENT__NAME;
+
+	/**
+	 * The number of structural features of the '<em>Attribute Definition</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_DEFINITION_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link hu.modembed.model.modembed.infrastructure.impl.AttributeValueContainerImpl <em>Attribute Value Container</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.modembed.model.modembed.infrastructure.impl.AttributeValueContainerImpl
+	 * @see hu.modembed.model.modembed.infrastructure.impl.InfrastructurePackageImpl#getAttributeValueContainer()
+	 * @generated
+	 */
+	int ATTRIBUTE_VALUE_CONTAINER = 5;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_VALUE_CONTAINER__DESCRIPTION = ROOT_ELEMENT__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_VALUE_CONTAINER__ORIGINS = ROOT_ELEMENT__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_VALUE_CONTAINER__NAME = ROOT_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Definition</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_VALUE_CONTAINER__DEFINITION = ROOT_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Values</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_VALUE_CONTAINER__VALUES = ROOT_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Attribute Value Container</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_VALUE_CONTAINER_FEATURE_COUNT = ROOT_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link hu.modembed.model.modembed.infrastructure.impl.AttributeValueImpl <em>Attribute Value</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.modembed.model.modembed.infrastructure.impl.AttributeValueImpl
+	 * @see hu.modembed.model.modembed.infrastructure.impl.InfrastructurePackageImpl#getAttributeValue()
+	 * @generated
+	 */
+	int ATTRIBUTE_VALUE = 6;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_VALUE__DESCRIPTION = MO_DEMBED_ELEMENT__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_VALUE__ORIGINS = MO_DEMBED_ELEMENT__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Definition</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_VALUE__DEFINITION = MO_DEMBED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_VALUE__VALUE = MO_DEMBED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Attribute Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_VALUE_FEATURE_COUNT = MO_DEMBED_ELEMENT_FEATURE_COUNT + 2;
+
+
+	/**
 	 * Returns the meta object for class '{@link hu.modembed.model.modembed.infrastructure.MODembedElement <em>MO Dembed Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -247,6 +468,101 @@ public interface InfrastructurePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getRootElement();
+
+	/**
+	 * Returns the meta object for class '{@link hu.modembed.model.modembed.infrastructure.AttributeContainerDefinition <em>Attribute Container Definition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Attribute Container Definition</em>'.
+	 * @see hu.modembed.model.modembed.infrastructure.AttributeContainerDefinition
+	 * @generated
+	 */
+	EClass getAttributeContainerDefinition();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link hu.modembed.model.modembed.infrastructure.AttributeContainerDefinition#getAttributes <em>Attributes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Attributes</em>'.
+	 * @see hu.modembed.model.modembed.infrastructure.AttributeContainerDefinition#getAttributes()
+	 * @see #getAttributeContainerDefinition()
+	 * @generated
+	 */
+	EReference getAttributeContainerDefinition_Attributes();
+
+	/**
+	 * Returns the meta object for class '{@link hu.modembed.model.modembed.infrastructure.AttributeDefinition <em>Attribute Definition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Attribute Definition</em>'.
+	 * @see hu.modembed.model.modembed.infrastructure.AttributeDefinition
+	 * @generated
+	 */
+	EClass getAttributeDefinition();
+
+	/**
+	 * Returns the meta object for class '{@link hu.modembed.model.modembed.infrastructure.AttributeValueContainer <em>Attribute Value Container</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Attribute Value Container</em>'.
+	 * @see hu.modembed.model.modembed.infrastructure.AttributeValueContainer
+	 * @generated
+	 */
+	EClass getAttributeValueContainer();
+
+	/**
+	 * Returns the meta object for the reference '{@link hu.modembed.model.modembed.infrastructure.AttributeValueContainer#getDefinition <em>Definition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Definition</em>'.
+	 * @see hu.modembed.model.modembed.infrastructure.AttributeValueContainer#getDefinition()
+	 * @see #getAttributeValueContainer()
+	 * @generated
+	 */
+	EReference getAttributeValueContainer_Definition();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link hu.modembed.model.modembed.infrastructure.AttributeValueContainer#getValues <em>Values</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Values</em>'.
+	 * @see hu.modembed.model.modembed.infrastructure.AttributeValueContainer#getValues()
+	 * @see #getAttributeValueContainer()
+	 * @generated
+	 */
+	EReference getAttributeValueContainer_Values();
+
+	/**
+	 * Returns the meta object for class '{@link hu.modembed.model.modembed.infrastructure.AttributeValue <em>Attribute Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Attribute Value</em>'.
+	 * @see hu.modembed.model.modembed.infrastructure.AttributeValue
+	 * @generated
+	 */
+	EClass getAttributeValue();
+
+	/**
+	 * Returns the meta object for the reference '{@link hu.modembed.model.modembed.infrastructure.AttributeValue#getDefinition <em>Definition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Definition</em>'.
+	 * @see hu.modembed.model.modembed.infrastructure.AttributeValue#getDefinition()
+	 * @see #getAttributeValue()
+	 * @generated
+	 */
+	EReference getAttributeValue_Definition();
+
+	/**
+	 * Returns the meta object for the attribute '{@link hu.modembed.model.modembed.infrastructure.AttributeValue#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see hu.modembed.model.modembed.infrastructure.AttributeValue#getValue()
+	 * @see #getAttributeValue()
+	 * @generated
+	 */
+	EAttribute getAttributeValue_Value();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -323,6 +639,86 @@ public interface InfrastructurePackage extends EPackage {
 		 * @generated
 		 */
 		EClass ROOT_ELEMENT = eINSTANCE.getRootElement();
+
+		/**
+		 * The meta object literal for the '{@link hu.modembed.model.modembed.infrastructure.impl.AttributeContainerDefinitionImpl <em>Attribute Container Definition</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.modembed.model.modembed.infrastructure.impl.AttributeContainerDefinitionImpl
+		 * @see hu.modembed.model.modembed.infrastructure.impl.InfrastructurePackageImpl#getAttributeContainerDefinition()
+		 * @generated
+		 */
+		EClass ATTRIBUTE_CONTAINER_DEFINITION = eINSTANCE.getAttributeContainerDefinition();
+
+		/**
+		 * The meta object literal for the '<em><b>Attributes</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ATTRIBUTE_CONTAINER_DEFINITION__ATTRIBUTES = eINSTANCE.getAttributeContainerDefinition_Attributes();
+
+		/**
+		 * The meta object literal for the '{@link hu.modembed.model.modembed.infrastructure.impl.AttributeDefinitionImpl <em>Attribute Definition</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.modembed.model.modembed.infrastructure.impl.AttributeDefinitionImpl
+		 * @see hu.modembed.model.modembed.infrastructure.impl.InfrastructurePackageImpl#getAttributeDefinition()
+		 * @generated
+		 */
+		EClass ATTRIBUTE_DEFINITION = eINSTANCE.getAttributeDefinition();
+
+		/**
+		 * The meta object literal for the '{@link hu.modembed.model.modembed.infrastructure.impl.AttributeValueContainerImpl <em>Attribute Value Container</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.modembed.model.modembed.infrastructure.impl.AttributeValueContainerImpl
+		 * @see hu.modembed.model.modembed.infrastructure.impl.InfrastructurePackageImpl#getAttributeValueContainer()
+		 * @generated
+		 */
+		EClass ATTRIBUTE_VALUE_CONTAINER = eINSTANCE.getAttributeValueContainer();
+
+		/**
+		 * The meta object literal for the '<em><b>Definition</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ATTRIBUTE_VALUE_CONTAINER__DEFINITION = eINSTANCE.getAttributeValueContainer_Definition();
+
+		/**
+		 * The meta object literal for the '<em><b>Values</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ATTRIBUTE_VALUE_CONTAINER__VALUES = eINSTANCE.getAttributeValueContainer_Values();
+
+		/**
+		 * The meta object literal for the '{@link hu.modembed.model.modembed.infrastructure.impl.AttributeValueImpl <em>Attribute Value</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.modembed.model.modembed.infrastructure.impl.AttributeValueImpl
+		 * @see hu.modembed.model.modembed.infrastructure.impl.InfrastructurePackageImpl#getAttributeValue()
+		 * @generated
+		 */
+		EClass ATTRIBUTE_VALUE = eINSTANCE.getAttributeValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Definition</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ATTRIBUTE_VALUE__DEFINITION = eINSTANCE.getAttributeValue_Definition();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ATTRIBUTE_VALUE__VALUE = eINSTANCE.getAttributeValue_Value();
 
 	}
 

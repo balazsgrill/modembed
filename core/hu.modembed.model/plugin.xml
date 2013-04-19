@@ -36,8 +36,22 @@
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
+            uri="http://modembed.hu/abstraction"
+            class="hu.modembed.model.modembed.abstraction.AbstractionPackage"
+            genModel="model/modembed.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
             uri="http://modembed.hu/abstraction/types"
             class="hu.modembed.model.modembed.abstraction.types.TypesPackage"
+            genModel="model/modembed.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://modembed.hu/abstraction/memorymodel"
+            class="hu.modembed.model.modembed.abstraction.memorymodel.MemorymodelPackage"
             genModel="model/modembed.genmodel"/>
    </extension>
 

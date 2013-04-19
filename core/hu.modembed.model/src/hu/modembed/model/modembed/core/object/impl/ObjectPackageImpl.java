@@ -2,6 +2,7 @@
  */
 package hu.modembed.model.modembed.core.object.impl;
 
+import hu.modembed.model.modembed.abstraction.AbstractionPackage;
 import hu.modembed.model.modembed.abstraction.behavior.BehaviorPackage;
 
 import hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorPackageImpl;
@@ -10,6 +11,9 @@ import hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage;
 
 import hu.modembed.model.modembed.abstraction.behavior.platform.impl.PlatformPackageImpl;
 
+import hu.modembed.model.modembed.abstraction.impl.AbstractionPackageImpl;
+import hu.modembed.model.modembed.abstraction.memorymodel.MemorymodelPackage;
+import hu.modembed.model.modembed.abstraction.memorymodel.impl.MemorymodelPackageImpl;
 import hu.modembed.model.modembed.abstraction.types.TypesPackage;
 
 import hu.modembed.model.modembed.abstraction.types.impl.TypesPackageImpl;
@@ -133,7 +137,9 @@ public class ObjectPackageImpl extends EPackageImpl implements ObjectPackage {
 		InfrastructurePackageImpl theInfrastructurePackage = (InfrastructurePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InfrastructurePackage.eNS_URI) instanceof InfrastructurePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InfrastructurePackage.eNS_URI) : InfrastructurePackage.eINSTANCE);
 		TraceabilityPackageImpl theTraceabilityPackage = (TraceabilityPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TraceabilityPackage.eNS_URI) instanceof TraceabilityPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TraceabilityPackage.eNS_URI) : TraceabilityPackage.eINSTANCE);
 		InstructionsetPackageImpl theInstructionsetPackage = (InstructionsetPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InstructionsetPackage.eNS_URI) instanceof InstructionsetPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InstructionsetPackage.eNS_URI) : InstructionsetPackage.eINSTANCE);
+		AbstractionPackageImpl theAbstractionPackage = (AbstractionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AbstractionPackage.eNS_URI) instanceof AbstractionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AbstractionPackage.eNS_URI) : AbstractionPackage.eINSTANCE);
 		TypesPackageImpl theTypesPackage = (TypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) instanceof TypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) : TypesPackage.eINSTANCE);
+		MemorymodelPackageImpl theMemorymodelPackage = (MemorymodelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(MemorymodelPackage.eNS_URI) instanceof MemorymodelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(MemorymodelPackage.eNS_URI) : MemorymodelPackage.eINSTANCE);
 		BehaviorPackageImpl theBehaviorPackage = (BehaviorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) instanceof BehaviorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) : BehaviorPackage.eINSTANCE);
 		PlatformPackageImpl thePlatformPackage = (PlatformPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PlatformPackage.eNS_URI) instanceof PlatformPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PlatformPackage.eNS_URI) : PlatformPackage.eINSTANCE);
 
@@ -142,7 +148,9 @@ public class ObjectPackageImpl extends EPackageImpl implements ObjectPackage {
 		theInfrastructurePackage.createPackageContents();
 		theTraceabilityPackage.createPackageContents();
 		theInstructionsetPackage.createPackageContents();
+		theAbstractionPackage.createPackageContents();
 		theTypesPackage.createPackageContents();
+		theMemorymodelPackage.createPackageContents();
 		theBehaviorPackage.createPackageContents();
 		thePlatformPackage.createPackageContents();
 
@@ -151,7 +159,9 @@ public class ObjectPackageImpl extends EPackageImpl implements ObjectPackage {
 		theInfrastructurePackage.initializePackageContents();
 		theTraceabilityPackage.initializePackageContents();
 		theInstructionsetPackage.initializePackageContents();
+		theAbstractionPackage.initializePackageContents();
 		theTypesPackage.initializePackageContents();
+		theMemorymodelPackage.initializePackageContents();
 		theBehaviorPackage.initializePackageContents();
 		thePlatformPackage.initializePackageContents();
 

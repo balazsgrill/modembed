@@ -6,6 +6,7 @@ import hu.modembed.model.modembed.abstraction.behavior.BehaviorPackage;
 import hu.modembed.model.modembed.abstraction.behavior.Symbol;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolValueAssignment;
 
+import hu.modembed.model.modembed.abstraction.memorymodel.MemoryInstance;
 import hu.modembed.model.modembed.infrastructure.impl.MODembedElementImpl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -23,6 +24,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link hu.modembed.model.modembed.abstraction.behavior.impl.SymbolValueAssignmentImpl#getSymbol <em>Symbol</em>}</li>
+ *   <li>{@link hu.modembed.model.modembed.abstraction.behavior.impl.SymbolValueAssignmentImpl#getMemory <em>Memory</em>}</li>
  *   <li>{@link hu.modembed.model.modembed.abstraction.behavior.impl.SymbolValueAssignmentImpl#getValue <em>Value</em>}</li>
  *   <li>{@link hu.modembed.model.modembed.abstraction.behavior.impl.SymbolValueAssignmentImpl#getIndirectionLevel <em>Indirection Level</em>}</li>
  * </ul>
@@ -40,6 +42,16 @@ public class SymbolValueAssignmentImpl extends MODembedElementImpl implements Sy
 	 * @ordered
 	 */
 	protected Symbol symbol;
+
+	/**
+	 * The cached value of the '{@link #getMemory() <em>Memory</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMemory()
+	 * @generated
+	 * @ordered
+	 */
+	protected MemoryInstance memory;
 
 	/**
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -143,6 +155,44 @@ public class SymbolValueAssignmentImpl extends MODembedElementImpl implements Sy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public MemoryInstance getMemory() {
+		if (memory != null && memory.eIsProxy()) {
+			InternalEObject oldMemory = (InternalEObject)memory;
+			memory = (MemoryInstance)eResolveProxy(oldMemory);
+			if (memory != oldMemory) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviorPackage.SYMBOL_VALUE_ASSIGNMENT__MEMORY, oldMemory, memory));
+			}
+		}
+		return memory;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MemoryInstance basicGetMemory() {
+		return memory;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMemory(MemoryInstance newMemory) {
+		MemoryInstance oldMemory = memory;
+		memory = newMemory;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.SYMBOL_VALUE_ASSIGNMENT__MEMORY, oldMemory, memory));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public long getValue() {
 		return value;
 	}
@@ -191,6 +241,9 @@ public class SymbolValueAssignmentImpl extends MODembedElementImpl implements Sy
 			case BehaviorPackage.SYMBOL_VALUE_ASSIGNMENT__SYMBOL:
 				if (resolve) return getSymbol();
 				return basicGetSymbol();
+			case BehaviorPackage.SYMBOL_VALUE_ASSIGNMENT__MEMORY:
+				if (resolve) return getMemory();
+				return basicGetMemory();
 			case BehaviorPackage.SYMBOL_VALUE_ASSIGNMENT__VALUE:
 				return getValue();
 			case BehaviorPackage.SYMBOL_VALUE_ASSIGNMENT__INDIRECTION_LEVEL:
@@ -209,6 +262,9 @@ public class SymbolValueAssignmentImpl extends MODembedElementImpl implements Sy
 		switch (featureID) {
 			case BehaviorPackage.SYMBOL_VALUE_ASSIGNMENT__SYMBOL:
 				setSymbol((Symbol)newValue);
+				return;
+			case BehaviorPackage.SYMBOL_VALUE_ASSIGNMENT__MEMORY:
+				setMemory((MemoryInstance)newValue);
 				return;
 			case BehaviorPackage.SYMBOL_VALUE_ASSIGNMENT__VALUE:
 				setValue((Long)newValue);
@@ -231,6 +287,9 @@ public class SymbolValueAssignmentImpl extends MODembedElementImpl implements Sy
 			case BehaviorPackage.SYMBOL_VALUE_ASSIGNMENT__SYMBOL:
 				setSymbol((Symbol)null);
 				return;
+			case BehaviorPackage.SYMBOL_VALUE_ASSIGNMENT__MEMORY:
+				setMemory((MemoryInstance)null);
+				return;
 			case BehaviorPackage.SYMBOL_VALUE_ASSIGNMENT__VALUE:
 				setValue(VALUE_EDEFAULT);
 				return;
@@ -251,6 +310,8 @@ public class SymbolValueAssignmentImpl extends MODembedElementImpl implements Sy
 		switch (featureID) {
 			case BehaviorPackage.SYMBOL_VALUE_ASSIGNMENT__SYMBOL:
 				return symbol != null;
+			case BehaviorPackage.SYMBOL_VALUE_ASSIGNMENT__MEMORY:
+				return memory != null;
 			case BehaviorPackage.SYMBOL_VALUE_ASSIGNMENT__VALUE:
 				return value != VALUE_EDEFAULT;
 			case BehaviorPackage.SYMBOL_VALUE_ASSIGNMENT__INDIRECTION_LEVEL:

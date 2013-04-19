@@ -2,6 +2,7 @@
  */
 package hu.modembed.model.modembed.abstraction.types.impl;
 
+import hu.modembed.model.modembed.abstraction.AbstractionPackage;
 import hu.modembed.model.modembed.abstraction.behavior.BehaviorPackage;
 
 import hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorPackageImpl;
@@ -10,6 +11,9 @@ import hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage;
 
 import hu.modembed.model.modembed.abstraction.behavior.platform.impl.PlatformPackageImpl;
 
+import hu.modembed.model.modembed.abstraction.impl.AbstractionPackageImpl;
+import hu.modembed.model.modembed.abstraction.memorymodel.MemorymodelPackage;
+import hu.modembed.model.modembed.abstraction.memorymodel.impl.MemorymodelPackageImpl;
 import hu.modembed.model.modembed.abstraction.types.ArrayDefinition;
 import hu.modembed.model.modembed.abstraction.types.CodeLabelTypeDefinition;
 import hu.modembed.model.modembed.abstraction.types.CompositeTypeDefinition;
@@ -182,6 +186,8 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 		TraceabilityPackageImpl theTraceabilityPackage = (TraceabilityPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TraceabilityPackage.eNS_URI) instanceof TraceabilityPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TraceabilityPackage.eNS_URI) : TraceabilityPackage.eINSTANCE);
 		InstructionsetPackageImpl theInstructionsetPackage = (InstructionsetPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InstructionsetPackage.eNS_URI) instanceof InstructionsetPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InstructionsetPackage.eNS_URI) : InstructionsetPackage.eINSTANCE);
 		ObjectPackageImpl theObjectPackage = (ObjectPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ObjectPackage.eNS_URI) instanceof ObjectPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ObjectPackage.eNS_URI) : ObjectPackage.eINSTANCE);
+		AbstractionPackageImpl theAbstractionPackage = (AbstractionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AbstractionPackage.eNS_URI) instanceof AbstractionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AbstractionPackage.eNS_URI) : AbstractionPackage.eINSTANCE);
+		MemorymodelPackageImpl theMemorymodelPackage = (MemorymodelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(MemorymodelPackage.eNS_URI) instanceof MemorymodelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(MemorymodelPackage.eNS_URI) : MemorymodelPackage.eINSTANCE);
 		BehaviorPackageImpl theBehaviorPackage = (BehaviorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) instanceof BehaviorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) : BehaviorPackage.eINSTANCE);
 		PlatformPackageImpl thePlatformPackage = (PlatformPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PlatformPackage.eNS_URI) instanceof PlatformPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PlatformPackage.eNS_URI) : PlatformPackage.eINSTANCE);
 
@@ -191,6 +197,8 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 		theTraceabilityPackage.createPackageContents();
 		theInstructionsetPackage.createPackageContents();
 		theObjectPackage.createPackageContents();
+		theAbstractionPackage.createPackageContents();
+		theMemorymodelPackage.createPackageContents();
 		theBehaviorPackage.createPackageContents();
 		thePlatformPackage.createPackageContents();
 
@@ -200,6 +208,8 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 		theTraceabilityPackage.initializePackageContents();
 		theInstructionsetPackage.initializePackageContents();
 		theObjectPackage.initializePackageContents();
+		theAbstractionPackage.initializePackageContents();
+		theMemorymodelPackage.initializePackageContents();
 		theBehaviorPackage.initializePackageContents();
 		thePlatformPackage.initializePackageContents();
 
@@ -493,9 +503,6 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 
 		initEClass(typeEClass, Type.class, "Type", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getType_Definition(), this.getTypeDefinition(), null, "definition", null, 1, 1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		// Create resource
-		createResource(eNS_URI);
 	}
 
 } //TypesPackageImpl

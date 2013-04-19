@@ -56,9 +56,53 @@ public class InfrastructureFactoryImpl extends EFactoryImpl implements Infrastru
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case InfrastructurePackage.ATTRIBUTE_CONTAINER_DEFINITION: return createAttributeContainerDefinition();
+			case InfrastructurePackage.ATTRIBUTE_DEFINITION: return createAttributeDefinition();
+			case InfrastructurePackage.ATTRIBUTE_VALUE_CONTAINER: return createAttributeValueContainer();
+			case InfrastructurePackage.ATTRIBUTE_VALUE: return createAttributeValue();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AttributeContainerDefinition createAttributeContainerDefinition() {
+		AttributeContainerDefinitionImpl attributeContainerDefinition = new AttributeContainerDefinitionImpl();
+		return attributeContainerDefinition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AttributeDefinition createAttributeDefinition() {
+		AttributeDefinitionImpl attributeDefinition = new AttributeDefinitionImpl();
+		return attributeDefinition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AttributeValueContainer createAttributeValueContainer() {
+		AttributeValueContainerImpl attributeValueContainer = new AttributeValueContainerImpl();
+		return attributeValueContainer;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AttributeValue createAttributeValue() {
+		AttributeValueImpl attributeValue = new AttributeValueImpl();
+		return attributeValue;
 	}
 
 	/**

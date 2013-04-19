@@ -2,6 +2,7 @@
  */
 package hu.modembed.model.modembed.abstraction.behavior.platform.impl;
 
+import hu.modembed.model.modembed.abstraction.AbstractionPackage;
 import hu.modembed.model.modembed.abstraction.behavior.BehaviorPackage;
 
 import hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorPackageImpl;
@@ -15,6 +16,9 @@ import hu.modembed.model.modembed.abstraction.behavior.platform.PlatformDefiniti
 import hu.modembed.model.modembed.abstraction.behavior.platform.PlatformFactory;
 import hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage;
 
+import hu.modembed.model.modembed.abstraction.impl.AbstractionPackageImpl;
+import hu.modembed.model.modembed.abstraction.memorymodel.MemorymodelPackage;
+import hu.modembed.model.modembed.abstraction.memorymodel.impl.MemorymodelPackageImpl;
 import hu.modembed.model.modembed.abstraction.types.TypesPackage;
 
 import hu.modembed.model.modembed.abstraction.types.impl.TypesPackageImpl;
@@ -142,7 +146,9 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 		TraceabilityPackageImpl theTraceabilityPackage = (TraceabilityPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TraceabilityPackage.eNS_URI) instanceof TraceabilityPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TraceabilityPackage.eNS_URI) : TraceabilityPackage.eINSTANCE);
 		InstructionsetPackageImpl theInstructionsetPackage = (InstructionsetPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InstructionsetPackage.eNS_URI) instanceof InstructionsetPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InstructionsetPackage.eNS_URI) : InstructionsetPackage.eINSTANCE);
 		ObjectPackageImpl theObjectPackage = (ObjectPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ObjectPackage.eNS_URI) instanceof ObjectPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ObjectPackage.eNS_URI) : ObjectPackage.eINSTANCE);
+		AbstractionPackageImpl theAbstractionPackage = (AbstractionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AbstractionPackage.eNS_URI) instanceof AbstractionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AbstractionPackage.eNS_URI) : AbstractionPackage.eINSTANCE);
 		TypesPackageImpl theTypesPackage = (TypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) instanceof TypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) : TypesPackage.eINSTANCE);
+		MemorymodelPackageImpl theMemorymodelPackage = (MemorymodelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(MemorymodelPackage.eNS_URI) instanceof MemorymodelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(MemorymodelPackage.eNS_URI) : MemorymodelPackage.eINSTANCE);
 		BehaviorPackageImpl theBehaviorPackage = (BehaviorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) instanceof BehaviorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) : BehaviorPackage.eINSTANCE);
 
 		// Create package meta-data objects
@@ -151,7 +157,9 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 		theTraceabilityPackage.createPackageContents();
 		theInstructionsetPackage.createPackageContents();
 		theObjectPackage.createPackageContents();
+		theAbstractionPackage.createPackageContents();
 		theTypesPackage.createPackageContents();
+		theMemorymodelPackage.createPackageContents();
 		theBehaviorPackage.createPackageContents();
 
 		// Initialize created meta-data
@@ -160,7 +168,9 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 		theTraceabilityPackage.initializePackageContents();
 		theInstructionsetPackage.initializePackageContents();
 		theObjectPackage.initializePackageContents();
+		theAbstractionPackage.initializePackageContents();
 		theTypesPackage.initializePackageContents();
+		theMemorymodelPackage.initializePackageContents();
 		theBehaviorPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
@@ -258,8 +268,17 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getOperationArgument_Memtype() {
+		return (EReference)operationArgumentEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getOperationArgument_IndirectionLevel() {
-		return (EAttribute)operationArgumentEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)operationArgumentEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -364,6 +383,7 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 
 		operationArgumentEClass = createEClass(OPERATION_ARGUMENT);
 		createEReference(operationArgumentEClass, OPERATION_ARGUMENT__TYPE);
+		createEReference(operationArgumentEClass, OPERATION_ARGUMENT__MEMTYPE);
 		createEAttribute(operationArgumentEClass, OPERATION_ARGUMENT__INDIRECTION_LEVEL);
 
 		instructionCallOperationStepEClass = createEClass(INSTRUCTION_CALL_OPERATION_STEP);
@@ -403,6 +423,7 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 		// Obtain other dependent packages
 		InfrastructurePackage theInfrastructurePackage = (InfrastructurePackage)EPackage.Registry.INSTANCE.getEPackage(InfrastructurePackage.eNS_URI);
 		TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
+		MemorymodelPackage theMemorymodelPackage = (MemorymodelPackage)EPackage.Registry.INSTANCE.getEPackage(MemorymodelPackage.eNS_URI);
 		InstructionsetPackage theInstructionsetPackage = (InstructionsetPackage)EPackage.Registry.INSTANCE.getEPackage(InstructionsetPackage.eNS_URI);
 
 		// Create type parameters
@@ -429,6 +450,7 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 
 		initEClass(operationArgumentEClass, OperationArgument.class, "OperationArgument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getOperationArgument_Type(), theTypesPackage.getTypeDefinition(), null, "type", null, 0, 1, OperationArgument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOperationArgument_Memtype(), theMemorymodelPackage.getMemoryType(), null, "memtype", null, 0, 1, OperationArgument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getOperationArgument_IndirectionLevel(), ecorePackage.getEInt(), "indirectionLevel", null, 0, 1, OperationArgument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(instructionCallOperationStepEClass, InstructionCallOperationStep.class, "InstructionCallOperationStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

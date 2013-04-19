@@ -7,15 +7,21 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: hu.modembed.model.modembed.abstraction.behavior,
+Export-Package: hu.modembed.model.modembed.abstraction,
+ hu.modembed.model.modembed.abstraction.behavior,
  hu.modembed.model.modembed.abstraction.behavior.impl,
  hu.modembed.model.modembed.abstraction.behavior.platform,
  hu.modembed.model.modembed.abstraction.behavior.platform.impl,
  hu.modembed.model.modembed.abstraction.behavior.platform.util,
  hu.modembed.model.modembed.abstraction.behavior.util,
+ hu.modembed.model.modembed.abstraction.impl,
+ hu.modembed.model.modembed.abstraction.memorymodel,
+ hu.modembed.model.modembed.abstraction.memorymodel.impl,
+ hu.modembed.model.modembed.abstraction.memorymodel.util,
  hu.modembed.model.modembed.abstraction.types,
  hu.modembed.model.modembed.abstraction.types.impl,
  hu.modembed.model.modembed.abstraction.types.util,
+ hu.modembed.model.modembed.abstraction.util,
  hu.modembed.model.modembed.core.instructionset,
  hu.modembed.model.modembed.core.instructionset.impl,
  hu.modembed.model.modembed.core.instructionset.util,

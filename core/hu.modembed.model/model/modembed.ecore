@@ -12,6 +12,22 @@
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="RootElement" abstract="true" eSuperTypes="#//infrastructure/NamedElement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="AttributeContainerDefinition" eSuperTypes="#//infrastructure/RootElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
+          eType="#//infrastructure/AttributeDefinition" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AttributeDefinition" eSuperTypes="#//infrastructure/NamedElement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="AttributeValueContainer" eSuperTypes="#//infrastructure/RootElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="definition" lowerBound="1"
+          eType="#//infrastructure/AttributeContainerDefinition"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="values" upperBound="-1"
+          eType="#//infrastructure/AttributeValue" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AttributeValue" eSuperTypes="#//infrastructure/MODembedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="definition" lowerBound="1"
+          eType="#//infrastructure/AttributeDefinition"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+    </eClassifiers>
     <eSubpackages name="traceability" nsURI="http://modembed.hu/infrastructure/traceability"
         nsPrefix="traceability">
       <eClassifiers xsi:type="ecore:EClass" name="Origin" abstract="true">
@@ -103,6 +119,12 @@
     </eSubpackages>
   </eSubpackages>
   <eSubpackages name="abstraction" nsURI="http://modembed.hu/abstraction" nsPrefix="abstraction">
+    <eClassifiers xsi:type="ecore:EClass" name="DeviceAbstraction" eSuperTypes="#//infrastructure/RootElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="memoryTypes" upperBound="-1"
+          eType="#//abstraction/memorymodel/MemoryType" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="memoryInstances" upperBound="-1"
+          eType="#//abstraction/memorymodel/MemoryInstance" containment="true"/>
+    </eClassifiers>
     <eSubpackages name="types" nsURI="http://modembed.hu/abstraction/types" nsPrefix="types">
       <eClassifiers xsi:type="ecore:EClass" name="TypeDefinition" abstract="true"
           eSuperTypes="#//infrastructure/MODembedElement"/>
@@ -134,6 +156,26 @@
       <eClassifiers xsi:type="ecore:EClass" name="Type" eSuperTypes="#//infrastructure/RootElement">
         <eStructuralFeatures xsi:type="ecore:EReference" name="definition" lowerBound="1"
             eType="#//abstraction/types/TypeDefinition" containment="true"/>
+      </eClassifiers>
+    </eSubpackages>
+    <eSubpackages name="memorymodel" nsURI="http://modembed.hu/abstraction/memorymodel"
+        nsPrefix="memmodel">
+      <eClassifiers xsi:type="ecore:EClass" name="MemoryType" eSuperTypes="#//infrastructure/NamedElement">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Define a type of memory model"/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" eType="#//infrastructure/AttributeContainerDefinition"
+            containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="accessCost" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="contentVolatile" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="forData" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="forProgram" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="MemoryInstance" eSuperTypes="#//infrastructure/NamedElement">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"
+            eType="#//abstraction/memorymodel/MemoryType"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" eType="#//infrastructure/AttributeValueContainer"
+            containment="true"/>
       </eClassifiers>
     </eSubpackages>
     <eSubpackages name="behavior" nsURI="http://modembed.hu/abstraction/behavior"
@@ -174,6 +216,7 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="SymbolValueAssignment" eSuperTypes="#//infrastructure/MODembedElement">
         <eStructuralFeatures xsi:type="ecore:EReference" name="symbol" eType="#//abstraction/behavior/Symbol"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="memory" eType="#//abstraction/memorymodel/MemoryInstance"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="indirectionLevel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       </eClassifiers>
@@ -194,6 +237,7 @@
         <eClassifiers xsi:type="ecore:EClass" name="OperationArgument" eSuperTypes="#//infrastructure/NamedElement">
           <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//abstraction/types/TypeDefinition"
               containment="true"/>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="memtype" eType="#//abstraction/memorymodel/MemoryType"/>
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="indirectionLevel"
               eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
         </eClassifiers>

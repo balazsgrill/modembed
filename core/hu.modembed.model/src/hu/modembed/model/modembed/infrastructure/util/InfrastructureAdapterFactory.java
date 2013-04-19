@@ -80,6 +80,22 @@ public class InfrastructureAdapterFactory extends AdapterFactoryImpl {
 				return createRootElementAdapter();
 			}
 			@Override
+			public Adapter caseAttributeContainerDefinition(AttributeContainerDefinition object) {
+				return createAttributeContainerDefinitionAdapter();
+			}
+			@Override
+			public Adapter caseAttributeDefinition(AttributeDefinition object) {
+				return createAttributeDefinitionAdapter();
+			}
+			@Override
+			public Adapter caseAttributeValueContainer(AttributeValueContainer object) {
+				return createAttributeValueContainerAdapter();
+			}
+			@Override
+			public Adapter caseAttributeValue(AttributeValue object) {
+				return createAttributeValueAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -138,6 +154,62 @@ public class InfrastructureAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createRootElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.modembed.infrastructure.AttributeContainerDefinition <em>Attribute Container Definition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.modembed.model.modembed.infrastructure.AttributeContainerDefinition
+	 * @generated
+	 */
+	public Adapter createAttributeContainerDefinitionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.modembed.infrastructure.AttributeDefinition <em>Attribute Definition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.modembed.model.modembed.infrastructure.AttributeDefinition
+	 * @generated
+	 */
+	public Adapter createAttributeDefinitionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.modembed.infrastructure.AttributeValueContainer <em>Attribute Value Container</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.modembed.model.modembed.infrastructure.AttributeValueContainer
+	 * @generated
+	 */
+	public Adapter createAttributeValueContainerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.modembed.infrastructure.AttributeValue <em>Attribute Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.modembed.model.modembed.infrastructure.AttributeValue
+	 * @generated
+	 */
+	public Adapter createAttributeValueAdapter() {
 		return null;
 	}
 

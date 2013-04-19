@@ -232,13 +232,22 @@ public interface PlatformPackage extends EPackage {
 	int OPERATION_ARGUMENT__TYPE = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Memtype</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_ARGUMENT__MEMTYPE = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Indirection Level</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_ARGUMENT__INDIRECTION_LEVEL = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int OPERATION_ARGUMENT__INDIRECTION_LEVEL = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Operation Argument</em>' class.
@@ -247,7 +256,7 @@ public interface PlatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_ARGUMENT_FEATURE_COUNT = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int OPERATION_ARGUMENT_FEATURE_COUNT = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link hu.modembed.model.modembed.abstraction.behavior.platform.impl.OperationStepImpl <em>Operation Step</em>}' class.
@@ -494,6 +503,17 @@ public interface PlatformPackage extends EPackage {
 	EReference getOperationArgument_Type();
 
 	/**
+	 * Returns the meta object for the reference '{@link hu.modembed.model.modembed.abstraction.behavior.platform.OperationArgument#getMemtype <em>Memtype</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Memtype</em>'.
+	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.OperationArgument#getMemtype()
+	 * @see #getOperationArgument()
+	 * @generated
+	 */
+	EReference getOperationArgument_Memtype();
+
+	/**
 	 * Returns the meta object for the attribute '{@link hu.modembed.model.modembed.abstraction.behavior.platform.OperationArgument#getIndirectionLevel <em>Indirection Level</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -677,6 +697,14 @@ public interface PlatformPackage extends EPackage {
 		 * @generated
 		 */
 		EReference OPERATION_ARGUMENT__TYPE = eINSTANCE.getOperationArgument_Type();
+
+		/**
+		 * The meta object literal for the '<em><b>Memtype</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OPERATION_ARGUMENT__MEMTYPE = eINSTANCE.getOperationArgument_Memtype();
 
 		/**
 		 * The meta object literal for the '<em><b>Indirection Level</b></em>' attribute feature.

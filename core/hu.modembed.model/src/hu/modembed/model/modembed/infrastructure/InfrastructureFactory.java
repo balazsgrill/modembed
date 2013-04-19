@@ -22,6 +22,42 @@ public interface InfrastructureFactory extends EFactory {
 	InfrastructureFactory eINSTANCE = hu.modembed.model.modembed.infrastructure.impl.InfrastructureFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Attribute Container Definition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Attribute Container Definition</em>'.
+	 * @generated
+	 */
+	AttributeContainerDefinition createAttributeContainerDefinition();
+
+	/**
+	 * Returns a new object of class '<em>Attribute Definition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Attribute Definition</em>'.
+	 * @generated
+	 */
+	AttributeDefinition createAttributeDefinition();
+
+	/**
+	 * Returns a new object of class '<em>Attribute Value Container</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Attribute Value Container</em>'.
+	 * @generated
+	 */
+	AttributeValueContainer createAttributeValueContainer();
+
+	/**
+	 * Returns a new object of class '<em>Attribute Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Attribute Value</em>'.
+	 * @generated
+	 */
+	AttributeValue createAttributeValue();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

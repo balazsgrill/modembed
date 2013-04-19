@@ -517,13 +517,22 @@ public interface BehaviorPackage extends EPackage {
 	int SYMBOL_VALUE_ASSIGNMENT__SYMBOL = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Memory</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_VALUE_ASSIGNMENT__MEMORY = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SYMBOL_VALUE_ASSIGNMENT__VALUE = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 1;
+	int SYMBOL_VALUE_ASSIGNMENT__VALUE = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Indirection Level</b></em>' attribute.
@@ -532,7 +541,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYMBOL_VALUE_ASSIGNMENT__INDIRECTION_LEVEL = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 2;
+	int SYMBOL_VALUE_ASSIGNMENT__INDIRECTION_LEVEL = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Symbol Value Assignment</em>' class.
@@ -541,7 +550,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYMBOL_VALUE_ASSIGNMENT_FEATURE_COUNT = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 3;
+	int SYMBOL_VALUE_ASSIGNMENT_FEATURE_COUNT = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 4;
 
 
 	/**
@@ -765,6 +774,17 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSymbolValueAssignment_Symbol();
+
+	/**
+	 * Returns the meta object for the reference '{@link hu.modembed.model.modembed.abstraction.behavior.SymbolValueAssignment#getMemory <em>Memory</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Memory</em>'.
+	 * @see hu.modembed.model.modembed.abstraction.behavior.SymbolValueAssignment#getMemory()
+	 * @see #getSymbolValueAssignment()
+	 * @generated
+	 */
+	EReference getSymbolValueAssignment_Memory();
 
 	/**
 	 * Returns the meta object for the attribute '{@link hu.modembed.model.modembed.abstraction.behavior.SymbolValueAssignment#getValue <em>Value</em>}'.
@@ -995,6 +1015,14 @@ public interface BehaviorPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SYMBOL_VALUE_ASSIGNMENT__SYMBOL = eINSTANCE.getSymbolValueAssignment_Symbol();
+
+		/**
+		 * The meta object literal for the '<em><b>Memory</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SYMBOL_VALUE_ASSIGNMENT__MEMORY = eINSTANCE.getSymbolValueAssignment_Memory();
 
 		/**
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.

@@ -2,6 +2,7 @@
  */
 package hu.modembed.model.modembed.infrastructure.impl;
 
+import hu.modembed.model.modembed.abstraction.AbstractionPackage;
 import hu.modembed.model.modembed.abstraction.behavior.BehaviorPackage;
 
 import hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorPackageImpl;
@@ -10,6 +11,9 @@ import hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage;
 
 import hu.modembed.model.modembed.abstraction.behavior.platform.impl.PlatformPackageImpl;
 
+import hu.modembed.model.modembed.abstraction.impl.AbstractionPackageImpl;
+import hu.modembed.model.modembed.abstraction.memorymodel.MemorymodelPackage;
+import hu.modembed.model.modembed.abstraction.memorymodel.impl.MemorymodelPackageImpl;
 import hu.modembed.model.modembed.abstraction.types.TypesPackage;
 
 import hu.modembed.model.modembed.abstraction.types.impl.TypesPackageImpl;
@@ -22,6 +26,10 @@ import hu.modembed.model.modembed.core.object.ObjectPackage;
 
 import hu.modembed.model.modembed.core.object.impl.ObjectPackageImpl;
 
+import hu.modembed.model.modembed.infrastructure.AttributeContainerDefinition;
+import hu.modembed.model.modembed.infrastructure.AttributeDefinition;
+import hu.modembed.model.modembed.infrastructure.AttributeValue;
+import hu.modembed.model.modembed.infrastructure.AttributeValueContainer;
 import hu.modembed.model.modembed.infrastructure.InfrastructureFactory;
 import hu.modembed.model.modembed.infrastructure.InfrastructurePackage;
 import hu.modembed.model.modembed.infrastructure.MODembedElement;
@@ -66,6 +74,34 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	 * @generated
 	 */
 	private EClass rootElementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass attributeContainerDefinitionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass attributeDefinitionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass attributeValueContainerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass attributeValueEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -117,7 +153,9 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 		TraceabilityPackageImpl theTraceabilityPackage = (TraceabilityPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TraceabilityPackage.eNS_URI) instanceof TraceabilityPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TraceabilityPackage.eNS_URI) : TraceabilityPackage.eINSTANCE);
 		InstructionsetPackageImpl theInstructionsetPackage = (InstructionsetPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InstructionsetPackage.eNS_URI) instanceof InstructionsetPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InstructionsetPackage.eNS_URI) : InstructionsetPackage.eINSTANCE);
 		ObjectPackageImpl theObjectPackage = (ObjectPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ObjectPackage.eNS_URI) instanceof ObjectPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ObjectPackage.eNS_URI) : ObjectPackage.eINSTANCE);
+		AbstractionPackageImpl theAbstractionPackage = (AbstractionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AbstractionPackage.eNS_URI) instanceof AbstractionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AbstractionPackage.eNS_URI) : AbstractionPackage.eINSTANCE);
 		TypesPackageImpl theTypesPackage = (TypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) instanceof TypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) : TypesPackage.eINSTANCE);
+		MemorymodelPackageImpl theMemorymodelPackage = (MemorymodelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(MemorymodelPackage.eNS_URI) instanceof MemorymodelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(MemorymodelPackage.eNS_URI) : MemorymodelPackage.eINSTANCE);
 		BehaviorPackageImpl theBehaviorPackage = (BehaviorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) instanceof BehaviorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) : BehaviorPackage.eINSTANCE);
 		PlatformPackageImpl thePlatformPackage = (PlatformPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PlatformPackage.eNS_URI) instanceof PlatformPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PlatformPackage.eNS_URI) : PlatformPackage.eINSTANCE);
 
@@ -126,7 +164,9 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 		theTraceabilityPackage.createPackageContents();
 		theInstructionsetPackage.createPackageContents();
 		theObjectPackage.createPackageContents();
+		theAbstractionPackage.createPackageContents();
 		theTypesPackage.createPackageContents();
+		theMemorymodelPackage.createPackageContents();
 		theBehaviorPackage.createPackageContents();
 		thePlatformPackage.createPackageContents();
 
@@ -135,7 +175,9 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 		theTraceabilityPackage.initializePackageContents();
 		theInstructionsetPackage.initializePackageContents();
 		theObjectPackage.initializePackageContents();
+		theAbstractionPackage.initializePackageContents();
 		theTypesPackage.initializePackageContents();
+		theMemorymodelPackage.initializePackageContents();
 		theBehaviorPackage.initializePackageContents();
 		thePlatformPackage.initializePackageContents();
 
@@ -207,6 +249,87 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getAttributeContainerDefinition() {
+		return attributeContainerDefinitionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAttributeContainerDefinition_Attributes() {
+		return (EReference)attributeContainerDefinitionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAttributeDefinition() {
+		return attributeDefinitionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAttributeValueContainer() {
+		return attributeValueContainerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAttributeValueContainer_Definition() {
+		return (EReference)attributeValueContainerEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAttributeValueContainer_Values() {
+		return (EReference)attributeValueContainerEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAttributeValue() {
+		return attributeValueEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAttributeValue_Definition() {
+		return (EReference)attributeValueEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAttributeValue_Value() {
+		return (EAttribute)attributeValueEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public InfrastructureFactory getInfrastructureFactory() {
 		return (InfrastructureFactory)getEFactoryInstance();
 	}
@@ -238,6 +361,19 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 		createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
 
 		rootElementEClass = createEClass(ROOT_ELEMENT);
+
+		attributeContainerDefinitionEClass = createEClass(ATTRIBUTE_CONTAINER_DEFINITION);
+		createEReference(attributeContainerDefinitionEClass, ATTRIBUTE_CONTAINER_DEFINITION__ATTRIBUTES);
+
+		attributeDefinitionEClass = createEClass(ATTRIBUTE_DEFINITION);
+
+		attributeValueContainerEClass = createEClass(ATTRIBUTE_VALUE_CONTAINER);
+		createEReference(attributeValueContainerEClass, ATTRIBUTE_VALUE_CONTAINER__DEFINITION);
+		createEReference(attributeValueContainerEClass, ATTRIBUTE_VALUE_CONTAINER__VALUES);
+
+		attributeValueEClass = createEClass(ATTRIBUTE_VALUE);
+		createEReference(attributeValueEClass, ATTRIBUTE_VALUE__DEFINITION);
+		createEAttribute(attributeValueEClass, ATTRIBUTE_VALUE__VALUE);
 	}
 
 	/**
@@ -276,6 +412,10 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 		// Add supertypes to classes
 		namedElementEClass.getESuperTypes().add(this.getMODembedElement());
 		rootElementEClass.getESuperTypes().add(this.getNamedElement());
+		attributeContainerDefinitionEClass.getESuperTypes().add(this.getRootElement());
+		attributeDefinitionEClass.getESuperTypes().add(this.getNamedElement());
+		attributeValueContainerEClass.getESuperTypes().add(this.getRootElement());
+		attributeValueEClass.getESuperTypes().add(this.getMODembedElement());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(moDembedElementEClass, MODembedElement.class, "MODembedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -286,6 +426,19 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 		initEAttribute(getNamedElement_Name(), ecorePackage.getEString(), "name", null, 1, 1, NamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(rootElementEClass, RootElement.class, "RootElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(attributeContainerDefinitionEClass, AttributeContainerDefinition.class, "AttributeContainerDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAttributeContainerDefinition_Attributes(), this.getAttributeDefinition(), null, "attributes", null, 0, -1, AttributeContainerDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(attributeDefinitionEClass, AttributeDefinition.class, "AttributeDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(attributeValueContainerEClass, AttributeValueContainer.class, "AttributeValueContainer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAttributeValueContainer_Definition(), this.getAttributeContainerDefinition(), null, "definition", null, 1, 1, AttributeValueContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAttributeValueContainer_Values(), this.getAttributeValue(), null, "values", null, 0, -1, AttributeValueContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(attributeValueEClass, AttributeValue.class, "AttributeValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAttributeValue_Definition(), this.getAttributeDefinition(), null, "definition", null, 1, 1, AttributeValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAttributeValue_Value(), ecorePackage.getELong(), "value", null, 0, 1, AttributeValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
