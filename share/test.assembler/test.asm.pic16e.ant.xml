@@ -6,7 +6,7 @@
 	<target name="run">
 		<inputmodel
 			name="input_hex"
-			resource="16f1824_blink_wo_Config.hex"
+			resource="test.asm.pic16e.hex"
 		/>
 		<inputmodel
 			name="instructionSet"
@@ -14,12 +14,12 @@
 		/>
 		<outputmodel
 			name="asm"
-			resource="blink.asm.model"
+			resource=".test.asm.pic16e.model"
 			mmuri="${uri.modembed.core.object}"
 		/>
 		<outputmodel
 			name="output_hex"
-			resource=".blink.hex"
+			resource=".test.asm.pic16e.out.hex"
 			mmuri="${uri.hexfile}"
 		/>
 		<compiler.disassemble 
