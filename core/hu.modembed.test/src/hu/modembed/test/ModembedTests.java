@@ -30,9 +30,7 @@ import org.eclipse.emf.compare.util.EclipseModelUtils;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.junit.Assert;
-import org.junit.runner.JUnitCore;
 import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
@@ -41,6 +39,19 @@ import org.junit.runners.Suite.SuiteClasses;
 public class ModembedTests {
 
 	public static final String TEST_CATEGORY = "hu.modembed.test.category"; 
+	
+	public static void assertModelsAreEquivalent(IProject project, String file1, String file2){
+		IFile f1 = project.getFile(file1);
+		IFile f2 = project.getFile(file2);
+		Assert.assertTrue("File "+file1+" does not exists!", f1.exists());
+		Assert.assertTrue("File "+file2+" does not exists!", f2.exists());
+		
+		try {
+			Assert.assertTrue("Files are not equivalent!", modelsAreEquivalent(f1, f2));
+		} catch (Exception e) {
+			Assert.fail(e.getMessage());
+		}
+	}
 	
 	public static boolean modelsAreEquivalent(IFile file1, IFile file2) throws InterruptedException, IOException{
 		ResourceSet rs = MODembedCore.createResourceSet();
@@ -100,7 +111,17 @@ public class ModembedTests {
 		}
 	}
 	
-	public static IProject loadAndCompileProject(String testID) throws CoreException{
+	public static void runAntScript(IProject project, String antScript) throws CoreException{
+		IFile buildFile = project.getFile(antScript);
+		Assert.assertTrue("Ant file does not exist!", buildFile.exists());
+		System.out.println("Executing "+buildFile.toString());
+		AntRunner runner = new AntRunner();
+		runner.setBuildFileLocation(buildFile.getLocation().toPortableString());
+		runner.run();
+		project.refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
+	}
+	
+	public static IProject loadProject(String testID) throws CoreException{
 		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
 		root.refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
 		
@@ -110,15 +131,6 @@ public class ModembedTests {
 		
 		ModembedTests.build();
 		root.refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
-		
-		IFile buildFile = project.getFile("build.xml");
-		if (buildFile.exists()){
-			AntRunner runner = new AntRunner();
-			runner.setBuildFileLocation(buildFile.getLocation().toPortableString());
-			runner.run();
-		}
-		
-		
 		
 		return project;
 	}
