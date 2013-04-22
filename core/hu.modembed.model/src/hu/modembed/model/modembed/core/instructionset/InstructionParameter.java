@@ -3,7 +3,6 @@
 package hu.modembed.model.modembed.core.instructionset;
 
 import hu.modembed.model.modembed.infrastructure.NamedElement;
-import hu.modembed.model.modembed.infrastructure.MODembedElement;
 
 /**
  * <!-- begin-user-doc -->

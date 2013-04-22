@@ -10,6 +10,7 @@ import hu.modembed.model.modembed.infrastructure.impl.RootElementImpl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -17,6 +18,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -28,6 +30,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link hu.modembed.model.modembed.core.object.impl.AssemblerObjectImpl#getInstructions <em>Instructions</em>}</li>
+ *   <li>{@link hu.modembed.model.modembed.core.object.impl.AssemblerObjectImpl#getStartAddress <em>Start Address</em>}</li>
  * </ul>
  * </p>
  *
@@ -43,6 +46,25 @@ public class AssemblerObjectImpl extends RootElementImpl implements AssemblerObj
 	 * @ordered
 	 */
 	protected EList<InstructionCall> instructions;
+
+	/**
+	 * The default value of the '{@link #getStartAddress() <em>Start Address</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStartAddress()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final long START_ADDRESS_EDEFAULT = 0L;
+	/**
+	 * The cached value of the '{@link #getStartAddress() <em>Start Address</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStartAddress()
+	 * @generated
+	 * @ordered
+	 */
+	protected long startAddress = START_ADDRESS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -80,6 +102,27 @@ public class AssemblerObjectImpl extends RootElementImpl implements AssemblerObj
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public long getStartAddress() {
+		return startAddress;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setStartAddress(long newStartAddress) {
+		long oldStartAddress = startAddress;
+		startAddress = newStartAddress;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ObjectPackage.ASSEMBLER_OBJECT__START_ADDRESS, oldStartAddress, startAddress));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -99,6 +142,8 @@ public class AssemblerObjectImpl extends RootElementImpl implements AssemblerObj
 		switch (featureID) {
 			case ObjectPackage.ASSEMBLER_OBJECT__INSTRUCTIONS:
 				return getInstructions();
+			case ObjectPackage.ASSEMBLER_OBJECT__START_ADDRESS:
+				return getStartAddress();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -116,6 +161,9 @@ public class AssemblerObjectImpl extends RootElementImpl implements AssemblerObj
 				getInstructions().clear();
 				getInstructions().addAll((Collection<? extends InstructionCall>)newValue);
 				return;
+			case ObjectPackage.ASSEMBLER_OBJECT__START_ADDRESS:
+				setStartAddress((Long)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -131,6 +179,9 @@ public class AssemblerObjectImpl extends RootElementImpl implements AssemblerObj
 			case ObjectPackage.ASSEMBLER_OBJECT__INSTRUCTIONS:
 				getInstructions().clear();
 				return;
+			case ObjectPackage.ASSEMBLER_OBJECT__START_ADDRESS:
+				setStartAddress(START_ADDRESS_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -145,8 +196,26 @@ public class AssemblerObjectImpl extends RootElementImpl implements AssemblerObj
 		switch (featureID) {
 			case ObjectPackage.ASSEMBLER_OBJECT__INSTRUCTIONS:
 				return instructions != null && !instructions.isEmpty();
+			case ObjectPackage.ASSEMBLER_OBJECT__START_ADDRESS:
+				return startAddress != START_ADDRESS_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (startAddress: ");
+		result.append(startAddress);
+		result.append(')');
+		return result.toString();
 	}
 
 } //AssemblerObjectImpl

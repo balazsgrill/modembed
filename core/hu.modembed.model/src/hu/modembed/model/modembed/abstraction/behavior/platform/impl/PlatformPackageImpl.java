@@ -4,46 +4,32 @@ package hu.modembed.model.modembed.abstraction.behavior.platform.impl;
 
 import hu.modembed.model.modembed.abstraction.AbstractionPackage;
 import hu.modembed.model.modembed.abstraction.behavior.BehaviorPackage;
-
 import hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorPackageImpl;
-
 import hu.modembed.model.modembed.abstraction.behavior.platform.InstructionCallOperationStep;
 import hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterMapping;
 import hu.modembed.model.modembed.abstraction.behavior.platform.OperationArgument;
 import hu.modembed.model.modembed.abstraction.behavior.platform.OperationDefinition;
 import hu.modembed.model.modembed.abstraction.behavior.platform.OperationStep;
-import hu.modembed.model.modembed.abstraction.behavior.platform.PlatformDefinition;
 import hu.modembed.model.modembed.abstraction.behavior.platform.PlatformFactory;
 import hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage;
-
 import hu.modembed.model.modembed.abstraction.impl.AbstractionPackageImpl;
 import hu.modembed.model.modembed.abstraction.memorymodel.MemorymodelPackage;
 import hu.modembed.model.modembed.abstraction.memorymodel.impl.MemorymodelPackageImpl;
 import hu.modembed.model.modembed.abstraction.types.TypesPackage;
-
 import hu.modembed.model.modembed.abstraction.types.impl.TypesPackageImpl;
-
 import hu.modembed.model.modembed.core.instructionset.InstructionsetPackage;
-
 import hu.modembed.model.modembed.core.instructionset.impl.InstructionsetPackageImpl;
-
 import hu.modembed.model.modembed.core.object.ObjectPackage;
-
 import hu.modembed.model.modembed.core.object.impl.ObjectPackageImpl;
-
 import hu.modembed.model.modembed.infrastructure.InfrastructurePackage;
-
 import hu.modembed.model.modembed.infrastructure.impl.InfrastructurePackageImpl;
-
 import hu.modembed.model.modembed.infrastructure.traceability.TraceabilityPackage;
-
 import hu.modembed.model.modembed.infrastructure.traceability.impl.TraceabilityPackageImpl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -53,13 +39,6 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
  * @generated
  */
 public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass platformDefinitionEClass = null;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -180,33 +159,6 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(PlatformPackage.eNS_URI, thePlatformPackage);
 		return thePlatformPackage;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getPlatformDefinition() {
-		return platformDefinitionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getPlatformDefinition_Refine() {
-		return (EReference)platformDefinitionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getPlatformDefinition_Operations() {
-		return (EReference)platformDefinitionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -372,10 +324,6 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 		isCreated = true;
 
 		// Create classes and their features
-		platformDefinitionEClass = createEClass(PLATFORM_DEFINITION);
-		createEReference(platformDefinitionEClass, PLATFORM_DEFINITION__REFINE);
-		createEReference(platformDefinitionEClass, PLATFORM_DEFINITION__OPERATIONS);
-
 		operationDefinitionEClass = createEClass(OPERATION_DEFINITION);
 		createEReference(operationDefinitionEClass, OPERATION_DEFINITION__ARGUMENTS);
 		createEReference(operationDefinitionEClass, OPERATION_DEFINITION__STEPS);
@@ -431,7 +379,6 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		platformDefinitionEClass.getESuperTypes().add(theInfrastructurePackage.getRootElement());
 		operationDefinitionEClass.getESuperTypes().add(theInfrastructurePackage.getMODembedElement());
 		operationArgumentEClass.getESuperTypes().add(theInfrastructurePackage.getNamedElement());
 		instructionCallOperationStepEClass.getESuperTypes().add(this.getOperationStep());
@@ -439,10 +386,6 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 		instructionParameterMappingEClass.getESuperTypes().add(theInfrastructurePackage.getMODembedElement());
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(platformDefinitionEClass, PlatformDefinition.class, "PlatformDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPlatformDefinition_Refine(), this.getPlatformDefinition(), null, "refine", null, 0, 1, PlatformDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPlatformDefinition_Operations(), this.getOperationDefinition(), null, "operations", null, 0, -1, PlatformDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(operationDefinitionEClass, OperationDefinition.class, "OperationDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getOperationDefinition_Arguments(), this.getOperationArgument(), null, "arguments", null, 0, -1, OperationDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getOperationDefinition_Steps(), this.getOperationStep(), null, "steps", null, 0, -1, OperationDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

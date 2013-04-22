@@ -94,13 +94,31 @@ public interface AbstractionPackage extends EPackage {
 	int DEVICE_ABSTRACTION__NAME = InfrastructurePackage.ROOT_ELEMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Ancestor</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEVICE_ABSTRACTION__ANCESTOR = InfrastructurePackage.ROOT_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Instructionset</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEVICE_ABSTRACTION__INSTRUCTIONSET = InfrastructurePackage.ROOT_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Memory Types</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_ABSTRACTION__MEMORY_TYPES = InfrastructurePackage.ROOT_ELEMENT_FEATURE_COUNT + 0;
+	int DEVICE_ABSTRACTION__MEMORY_TYPES = InfrastructurePackage.ROOT_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Memory Instances</b></em>' containment reference list.
@@ -109,7 +127,16 @@ public interface AbstractionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_ABSTRACTION__MEMORY_INSTANCES = InfrastructurePackage.ROOT_ELEMENT_FEATURE_COUNT + 1;
+	int DEVICE_ABSTRACTION__MEMORY_INSTANCES = InfrastructurePackage.ROOT_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Operation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEVICE_ABSTRACTION__OPERATION = InfrastructurePackage.ROOT_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Device Abstraction</em>' class.
@@ -118,7 +145,7 @@ public interface AbstractionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_ABSTRACTION_FEATURE_COUNT = InfrastructurePackage.ROOT_ELEMENT_FEATURE_COUNT + 2;
+	int DEVICE_ABSTRACTION_FEATURE_COUNT = InfrastructurePackage.ROOT_ELEMENT_FEATURE_COUNT + 5;
 
 
 	/**
@@ -130,6 +157,28 @@ public interface AbstractionPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getDeviceAbstraction();
+
+	/**
+	 * Returns the meta object for the reference '{@link hu.modembed.model.modembed.abstraction.DeviceAbstraction#getAncestor <em>Ancestor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Ancestor</em>'.
+	 * @see hu.modembed.model.modembed.abstraction.DeviceAbstraction#getAncestor()
+	 * @see #getDeviceAbstraction()
+	 * @generated
+	 */
+	EReference getDeviceAbstraction_Ancestor();
+
+	/**
+	 * Returns the meta object for the reference '{@link hu.modembed.model.modembed.abstraction.DeviceAbstraction#getInstructionset <em>Instructionset</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Instructionset</em>'.
+	 * @see hu.modembed.model.modembed.abstraction.DeviceAbstraction#getInstructionset()
+	 * @see #getDeviceAbstraction()
+	 * @generated
+	 */
+	EReference getDeviceAbstraction_Instructionset();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link hu.modembed.model.modembed.abstraction.DeviceAbstraction#getMemoryTypes <em>Memory Types</em>}'.
@@ -152,6 +201,17 @@ public interface AbstractionPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDeviceAbstraction_MemoryInstances();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link hu.modembed.model.modembed.abstraction.DeviceAbstraction#getOperation <em>Operation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Operation</em>'.
+	 * @see hu.modembed.model.modembed.abstraction.DeviceAbstraction#getOperation()
+	 * @see #getDeviceAbstraction()
+	 * @generated
+	 */
+	EReference getDeviceAbstraction_Operation();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -186,6 +246,22 @@ public interface AbstractionPackage extends EPackage {
 		EClass DEVICE_ABSTRACTION = eINSTANCE.getDeviceAbstraction();
 
 		/**
+		 * The meta object literal for the '<em><b>Ancestor</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DEVICE_ABSTRACTION__ANCESTOR = eINSTANCE.getDeviceAbstraction_Ancestor();
+
+		/**
+		 * The meta object literal for the '<em><b>Instructionset</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DEVICE_ABSTRACTION__INSTRUCTIONSET = eINSTANCE.getDeviceAbstraction_Instructionset();
+
+		/**
 		 * The meta object literal for the '<em><b>Memory Types</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -200,6 +276,14 @@ public interface AbstractionPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DEVICE_ABSTRACTION__MEMORY_INSTANCES = eINSTANCE.getDeviceAbstraction_MemoryInstances();
+
+		/**
+		 * The meta object literal for the '<em><b>Operation</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DEVICE_ABSTRACTION__OPERATION = eINSTANCE.getDeviceAbstraction_Operation();
 
 	}
 

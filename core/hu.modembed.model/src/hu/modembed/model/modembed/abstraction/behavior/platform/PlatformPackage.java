@@ -58,70 +58,6 @@ public interface PlatformPackage extends EPackage {
 	PlatformPackage eINSTANCE = hu.modembed.model.modembed.abstraction.behavior.platform.impl.PlatformPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link hu.modembed.model.modembed.abstraction.behavior.platform.impl.PlatformDefinitionImpl <em>Definition</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.impl.PlatformDefinitionImpl
-	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.impl.PlatformPackageImpl#getPlatformDefinition()
-	 * @generated
-	 */
-	int PLATFORM_DEFINITION = 0;
-
-	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PLATFORM_DEFINITION__DESCRIPTION = InfrastructurePackage.ROOT_ELEMENT__DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PLATFORM_DEFINITION__ORIGINS = InfrastructurePackage.ROOT_ELEMENT__ORIGINS;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PLATFORM_DEFINITION__NAME = InfrastructurePackage.ROOT_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Refine</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PLATFORM_DEFINITION__REFINE = InfrastructurePackage.ROOT_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Operations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PLATFORM_DEFINITION__OPERATIONS = InfrastructurePackage.ROOT_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Definition</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PLATFORM_DEFINITION_FEATURE_COUNT = InfrastructurePackage.ROOT_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
 	 * The meta object id for the '{@link hu.modembed.model.modembed.abstraction.behavior.platform.impl.OperationDefinitionImpl <em>Operation Definition</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -129,7 +65,7 @@ public interface PlatformPackage extends EPackage {
 	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.impl.PlatformPackageImpl#getOperationDefinition()
 	 * @generated
 	 */
-	int OPERATION_DEFINITION = 1;
+	int OPERATION_DEFINITION = 0;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -193,7 +129,7 @@ public interface PlatformPackage extends EPackage {
 	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.impl.PlatformPackageImpl#getOperationArgument()
 	 * @generated
 	 */
-	int OPERATION_ARGUMENT = 2;
+	int OPERATION_ARGUMENT = 1;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -266,7 +202,7 @@ public interface PlatformPackage extends EPackage {
 	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.impl.PlatformPackageImpl#getOperationStep()
 	 * @generated
 	 */
-	int OPERATION_STEP = 4;
+	int OPERATION_STEP = 3;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -303,7 +239,7 @@ public interface PlatformPackage extends EPackage {
 	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.impl.PlatformPackageImpl#getInstructionCallOperationStep()
 	 * @generated
 	 */
-	int INSTRUCTION_CALL_OPERATION_STEP = 3;
+	int INSTRUCTION_CALL_OPERATION_STEP = 2;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -358,7 +294,7 @@ public interface PlatformPackage extends EPackage {
 	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.impl.PlatformPackageImpl#getInstructionParameterMapping()
 	 * @generated
 	 */
-	int INSTRUCTION_PARAMETER_MAPPING = 5;
+	int INSTRUCTION_PARAMETER_MAPPING = 4;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -405,38 +341,6 @@ public interface PlatformPackage extends EPackage {
 	 */
 	int INSTRUCTION_PARAMETER_MAPPING_FEATURE_COUNT = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 2;
 
-
-	/**
-	 * Returns the meta object for class '{@link hu.modembed.model.modembed.abstraction.behavior.platform.PlatformDefinition <em>Definition</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Definition</em>'.
-	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.PlatformDefinition
-	 * @generated
-	 */
-	EClass getPlatformDefinition();
-
-	/**
-	 * Returns the meta object for the reference '{@link hu.modembed.model.modembed.abstraction.behavior.platform.PlatformDefinition#getRefine <em>Refine</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Refine</em>'.
-	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.PlatformDefinition#getRefine()
-	 * @see #getPlatformDefinition()
-	 * @generated
-	 */
-	EReference getPlatformDefinition_Refine();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link hu.modembed.model.modembed.abstraction.behavior.platform.PlatformDefinition#getOperations <em>Operations</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Operations</em>'.
-	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.PlatformDefinition#getOperations()
-	 * @see #getPlatformDefinition()
-	 * @generated
-	 */
-	EReference getPlatformDefinition_Operations();
 
 	/**
 	 * Returns the meta object for class '{@link hu.modembed.model.modembed.abstraction.behavior.platform.OperationDefinition <em>Operation Definition</em>}'.
@@ -620,32 +524,6 @@ public interface PlatformPackage extends EPackage {
 	 * @generated
 	 */
 	interface Literals {
-		/**
-		 * The meta object literal for the '{@link hu.modembed.model.modembed.abstraction.behavior.platform.impl.PlatformDefinitionImpl <em>Definition</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see hu.modembed.model.modembed.abstraction.behavior.platform.impl.PlatformDefinitionImpl
-		 * @see hu.modembed.model.modembed.abstraction.behavior.platform.impl.PlatformPackageImpl#getPlatformDefinition()
-		 * @generated
-		 */
-		EClass PLATFORM_DEFINITION = eINSTANCE.getPlatformDefinition();
-
-		/**
-		 * The meta object literal for the '<em><b>Refine</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PLATFORM_DEFINITION__REFINE = eINSTANCE.getPlatformDefinition_Refine();
-
-		/**
-		 * The meta object literal for the '<em><b>Operations</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PLATFORM_DEFINITION__OPERATIONS = eINSTANCE.getPlatformDefinition_Operations();
-
 		/**
 		 * The meta object literal for the '{@link hu.modembed.model.modembed.abstraction.behavior.platform.impl.OperationDefinitionImpl <em>Operation Definition</em>}' class.
 		 * <!-- begin-user-doc -->

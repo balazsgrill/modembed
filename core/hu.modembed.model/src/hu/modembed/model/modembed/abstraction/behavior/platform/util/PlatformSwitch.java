@@ -2,15 +2,17 @@
  */
 package hu.modembed.model.modembed.abstraction.behavior.platform.util;
 
-import hu.modembed.model.modembed.abstraction.behavior.platform.*;
-
+import hu.modembed.model.modembed.abstraction.behavior.platform.InstructionCallOperationStep;
+import hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterMapping;
+import hu.modembed.model.modembed.abstraction.behavior.platform.OperationArgument;
+import hu.modembed.model.modembed.abstraction.behavior.platform.OperationDefinition;
+import hu.modembed.model.modembed.abstraction.behavior.platform.OperationStep;
+import hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage;
 import hu.modembed.model.modembed.infrastructure.MODembedElement;
 import hu.modembed.model.modembed.infrastructure.NamedElement;
-import hu.modembed.model.modembed.infrastructure.RootElement;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
 
 /**
@@ -70,15 +72,6 @@ public class PlatformSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case PlatformPackage.PLATFORM_DEFINITION: {
-				PlatformDefinition platformDefinition = (PlatformDefinition)theEObject;
-				T result = casePlatformDefinition(platformDefinition);
-				if (result == null) result = caseRootElement(platformDefinition);
-				if (result == null) result = caseNamedElement(platformDefinition);
-				if (result == null) result = caseMODembedElement(platformDefinition);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case PlatformPackage.OPERATION_DEFINITION: {
 				OperationDefinition operationDefinition = (OperationDefinition)theEObject;
 				T result = caseOperationDefinition(operationDefinition);
@@ -118,21 +111,6 @@ public class PlatformSwitch<T> extends Switch<T> {
 			}
 			default: return defaultCase(theEObject);
 		}
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Definition</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Definition</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T casePlatformDefinition(PlatformDefinition object) {
-		return null;
 	}
 
 	/**
@@ -237,21 +215,6 @@ public class PlatformSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseNamedElement(NamedElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Root Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Root Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseRootElement(RootElement object) {
 		return null;
 	}
 

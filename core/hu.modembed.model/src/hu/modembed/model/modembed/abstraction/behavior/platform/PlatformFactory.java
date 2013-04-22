@@ -22,15 +22,6 @@ public interface PlatformFactory extends EFactory {
 	PlatformFactory eINSTANCE = hu.modembed.model.modembed.abstraction.behavior.platform.impl.PlatformFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Definition</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Definition</em>'.
-	 * @generated
-	 */
-	PlatformDefinition createPlatformDefinition();
-
-	/**
 	 * Returns a new object of class '<em>Operation Definition</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

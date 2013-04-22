@@ -4,14 +4,10 @@ package hu.modembed.model.modembed.core.instructionset.impl;
 
 import hu.modembed.model.modembed.core.instructionset.InstructionParameter;
 import hu.modembed.model.modembed.core.instructionset.InstructionsetPackage;
-
 import hu.modembed.model.modembed.infrastructure.impl.NamedElementImpl;
-import hu.modembed.model.modembed.infrastructure.impl.MODembedElementImpl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**

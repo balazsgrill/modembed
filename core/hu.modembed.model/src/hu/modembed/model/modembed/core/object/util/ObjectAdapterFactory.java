@@ -84,14 +84,6 @@ public class ObjectAdapterFactory extends AdapterFactoryImpl {
 				return createInstructionCallParameterAdapter();
 			}
 			@Override
-			public Adapter caseProgramLinkMap(ProgramLinkMap object) {
-				return createProgramLinkMapAdapter();
-			}
-			@Override
-			public Adapter caseLinkMapping(LinkMapping object) {
-				return createLinkMappingAdapter();
-			}
-			@Override
 			public Adapter caseMODembedElement(MODembedElement object) {
 				return createMODembedElementAdapter();
 			}
@@ -162,34 +154,6 @@ public class ObjectAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createInstructionCallParameterAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link hu.modembed.model.modembed.core.object.ProgramLinkMap <em>Program Link Map</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see hu.modembed.model.modembed.core.object.ProgramLinkMap
-	 * @generated
-	 */
-	public Adapter createProgramLinkMapAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link hu.modembed.model.modembed.core.object.LinkMapping <em>Link Mapping</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see hu.modembed.model.modembed.core.object.LinkMapping
-	 * @generated
-	 */
-	public Adapter createLinkMappingAdapter() {
 		return null;
 	}
 

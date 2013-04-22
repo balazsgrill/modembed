@@ -56,7 +56,6 @@ public class PlatformFactoryImpl extends EFactoryImpl implements PlatformFactory
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case PlatformPackage.PLATFORM_DEFINITION: return createPlatformDefinition();
 			case PlatformPackage.OPERATION_DEFINITION: return createOperationDefinition();
 			case PlatformPackage.OPERATION_ARGUMENT: return createOperationArgument();
 			case PlatformPackage.INSTRUCTION_CALL_OPERATION_STEP: return createInstructionCallOperationStep();
@@ -64,16 +63,6 @@ public class PlatformFactoryImpl extends EFactoryImpl implements PlatformFactory
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public PlatformDefinition createPlatformDefinition() {
-		PlatformDefinitionImpl platformDefinition = new PlatformDefinitionImpl();
-		return platformDefinition;
 	}
 
 	/**

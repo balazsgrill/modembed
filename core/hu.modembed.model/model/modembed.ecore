@@ -98,6 +98,7 @@
       <eClassifiers xsi:type="ecore:EClass" name="AssemblerObject" eSuperTypes="#//infrastructure/RootElement">
         <eStructuralFeatures xsi:type="ecore:EReference" name="instructions" upperBound="-1"
             eType="#//core/object/InstructionCall" containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="startAddress" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="InstructionCall" eSuperTypes="#//infrastructure/MODembedElement">
         <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
@@ -108,22 +109,18 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="definition" eType="#//core/instructionset/InstructionParameter"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="ProgramLinkMap" eSuperTypes="#//infrastructure/RootElement">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="mapping" upperBound="-1"
-            eType="#//core/object/LinkMapping" containment="true"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="LinkMapping" eSuperTypes="#//infrastructure/MODembedElement">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="object" eType="#//core/object/AssemblerObject"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="startAddress" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
-      </eClassifiers>
     </eSubpackages>
   </eSubpackages>
   <eSubpackages name="abstraction" nsURI="http://modembed.hu/abstraction" nsPrefix="abstraction">
     <eClassifiers xsi:type="ecore:EClass" name="DeviceAbstraction" eSuperTypes="#//infrastructure/RootElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ancestor" eType="#//abstraction/DeviceAbstraction"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="instructionset" eType="#//core/instructionset/InstructionSet"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="memoryTypes" upperBound="-1"
           eType="#//abstraction/memorymodel/MemoryType" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="memoryInstances" upperBound="-1"
           eType="#//abstraction/memorymodel/MemoryInstance" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="operation" upperBound="-1"
+          eType="#//abstraction/behavior/platform/OperationDefinition" containment="true"/>
     </eClassifiers>
     <eSubpackages name="types" nsURI="http://modembed.hu/abstraction/types" nsPrefix="types">
       <eClassifiers xsi:type="ecore:EClass" name="TypeDefinition" abstract="true"
@@ -222,11 +219,6 @@
       </eClassifiers>
       <eSubpackages name="platform" nsURI="http://modembed.hu/abstraction/behavior/platform"
           nsPrefix="platform">
-        <eClassifiers xsi:type="ecore:EClass" name="PlatformDefinition" eSuperTypes="#//infrastructure/RootElement">
-          <eStructuralFeatures xsi:type="ecore:EReference" name="refine" eType="#//abstraction/behavior/platform/PlatformDefinition"/>
-          <eStructuralFeatures xsi:type="ecore:EReference" name="operations" upperBound="-1"
-              eType="#//abstraction/behavior/platform/OperationDefinition" containment="true"/>
-        </eClassifiers>
         <eClassifiers xsi:type="ecore:EClass" name="OperationDefinition" eSuperTypes="#//infrastructure/MODembedElement">
           <eStructuralFeatures xsi:type="ecore:EReference" name="arguments" upperBound="-1"
               eType="#//abstraction/behavior/platform/OperationArgument" containment="true"/>

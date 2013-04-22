@@ -86,6 +86,7 @@
           disposableProviderFactory="true" ecorePackage="modembed.ecore#//core/object">
         <genClasses ecoreClass="modembed.ecore#//core/object/AssemblerObject">
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//core/object/AssemblerObject/instructions"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.ecore#//core/object/AssemblerObject/startAddress"/>
         </genClasses>
         <genClasses ecoreClass="modembed.ecore#//core/object/InstructionCall">
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//core/object/InstructionCall/parameters"/>
@@ -97,21 +98,18 @@
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference modembed.ecore#//core/object/InstructionCallParameter/definition"/>
         </genClasses>
-        <genClasses ecoreClass="modembed.ecore#//core/object/ProgramLinkMap">
-          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//core/object/ProgramLinkMap/mapping"/>
-        </genClasses>
-        <genClasses ecoreClass="modembed.ecore#//core/object/LinkMapping">
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference modembed.ecore#//core/object/LinkMapping/object"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.ecore#//core/object/LinkMapping/startAddress"/>
-        </genClasses>
       </nestedGenPackages>
     </nestedGenPackages>
     <nestedGenPackages prefix="Abstraction" basePackage="hu.modembed.model.modembed"
         disposableProviderFactory="true" ecorePackage="modembed.ecore#//abstraction">
       <genClasses ecoreClass="modembed.ecore#//abstraction/DeviceAbstraction">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference modembed.ecore#//abstraction/DeviceAbstraction/ancestor"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference modembed.ecore#//abstraction/DeviceAbstraction/instructionset"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//abstraction/DeviceAbstraction/memoryTypes"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//abstraction/DeviceAbstraction/memoryInstances"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//abstraction/DeviceAbstraction/operation"/>
       </genClasses>
       <nestedGenPackages prefix="Types" basePackage="hu.modembed.model.modembed.abstraction"
           disposableProviderFactory="true" ecorePackage="modembed.ecore#//abstraction/types">
@@ -197,11 +195,6 @@
         </genClasses>
         <nestedGenPackages prefix="Platform" basePackage="hu.modembed.model.modembed.abstraction.behavior"
             disposableProviderFactory="true" ecorePackage="modembed.ecore#//abstraction/behavior/platform">
-          <genClasses ecoreClass="modembed.ecore#//abstraction/behavior/platform/PlatformDefinition">
-            <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                ecoreFeature="ecore:EReference modembed.ecore#//abstraction/behavior/platform/PlatformDefinition/refine"/>
-            <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//abstraction/behavior/platform/PlatformDefinition/operations"/>
-          </genClasses>
           <genClasses ecoreClass="modembed.ecore#//abstraction/behavior/platform/OperationDefinition">
             <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//abstraction/behavior/platform/OperationDefinition/arguments"/>
             <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//abstraction/behavior/platform/OperationDefinition/steps"/>

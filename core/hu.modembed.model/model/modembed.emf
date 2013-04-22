@@ -113,6 +113,7 @@ package core{
 		
 		class AssemblerObject extends infrastructure.RootElement {
         	val InstructionCall[*] instructions;
+        	attr long startAddress;
       	}
 
       	class InstructionCall extends infrastructure.MODembedElement {
@@ -125,16 +126,6 @@ package core{
         	ref instructionset.InstructionParameter definition;
       	}
 		
-		class ProgramLinkMap extends infrastructure.RootElement {
-			val LinkMapping[*] mapping;
-		}
-		
-		class LinkMapping extends infrastructure.MODembedElement {
-			
-			ref AssemblerObject object;
-			attr long startAddress;
-		}
-		
 	}
 	
 }
@@ -143,9 +134,13 @@ package core{
 package abstraction {
 
 	class DeviceAbstraction extends infrastructure.RootElement{
+		ref DeviceAbstraction ancestor;
+		ref core.instructionset.InstructionSet instructionset;
+	
 		val memorymodel.MemoryType[*] memoryTypes;
 		val memorymodel.MemoryInstance[*] memoryInstances;
 		
+		val behavior.platform.OperationDefinition[*] operation;
 	}
 
 
@@ -257,10 +252,6 @@ package abstraction {
 
     @namespace(uri="http://modembed.hu/abstraction/behavior/platform", prefix="platform")
     package platform {
-      class PlatformDefinition extends infrastructure.RootElement {
-        ref PlatformDefinition refine;
-        val OperationDefinition[*] operations;
-      }
 
       class OperationDefinition extends infrastructure.MODembedElement {
         val OperationArgument[*] arguments;

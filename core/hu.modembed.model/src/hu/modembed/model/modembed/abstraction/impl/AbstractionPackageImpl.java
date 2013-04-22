@@ -159,7 +159,7 @@ public class AbstractionPackageImpl extends EPackageImpl implements AbstractionP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDeviceAbstraction_MemoryTypes() {
+	public EReference getDeviceAbstraction_Ancestor() {
 		return (EReference)deviceAbstractionEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -168,8 +168,35 @@ public class AbstractionPackageImpl extends EPackageImpl implements AbstractionP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDeviceAbstraction_MemoryInstances() {
+	public EReference getDeviceAbstraction_Instructionset() {
 		return (EReference)deviceAbstractionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDeviceAbstraction_MemoryTypes() {
+		return (EReference)deviceAbstractionEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDeviceAbstraction_MemoryInstances() {
+		return (EReference)deviceAbstractionEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDeviceAbstraction_Operation() {
+		return (EReference)deviceAbstractionEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -201,8 +228,11 @@ public class AbstractionPackageImpl extends EPackageImpl implements AbstractionP
 
 		// Create classes and their features
 		deviceAbstractionEClass = createEClass(DEVICE_ABSTRACTION);
+		createEReference(deviceAbstractionEClass, DEVICE_ABSTRACTION__ANCESTOR);
+		createEReference(deviceAbstractionEClass, DEVICE_ABSTRACTION__INSTRUCTIONSET);
 		createEReference(deviceAbstractionEClass, DEVICE_ABSTRACTION__MEMORY_TYPES);
 		createEReference(deviceAbstractionEClass, DEVICE_ABSTRACTION__MEMORY_INSTANCES);
+		createEReference(deviceAbstractionEClass, DEVICE_ABSTRACTION__OPERATION);
 	}
 
 	/**
@@ -233,6 +263,8 @@ public class AbstractionPackageImpl extends EPackageImpl implements AbstractionP
 		MemorymodelPackage theMemorymodelPackage = (MemorymodelPackage)EPackage.Registry.INSTANCE.getEPackage(MemorymodelPackage.eNS_URI);
 		BehaviorPackage theBehaviorPackage = (BehaviorPackage)EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI);
 		InfrastructurePackage theInfrastructurePackage = (InfrastructurePackage)EPackage.Registry.INSTANCE.getEPackage(InfrastructurePackage.eNS_URI);
+		InstructionsetPackage theInstructionsetPackage = (InstructionsetPackage)EPackage.Registry.INSTANCE.getEPackage(InstructionsetPackage.eNS_URI);
+		PlatformPackage thePlatformPackage = (PlatformPackage)EPackage.Registry.INSTANCE.getEPackage(PlatformPackage.eNS_URI);
 
 		// Add subpackages
 		getESubpackages().add(theTypesPackage);
@@ -248,8 +280,11 @@ public class AbstractionPackageImpl extends EPackageImpl implements AbstractionP
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(deviceAbstractionEClass, DeviceAbstraction.class, "DeviceAbstraction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getDeviceAbstraction_Ancestor(), this.getDeviceAbstraction(), null, "ancestor", null, 0, 1, DeviceAbstraction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDeviceAbstraction_Instructionset(), theInstructionsetPackage.getInstructionSet(), null, "instructionset", null, 0, 1, DeviceAbstraction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDeviceAbstraction_MemoryTypes(), theMemorymodelPackage.getMemoryType(), null, "memoryTypes", null, 0, -1, DeviceAbstraction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDeviceAbstraction_MemoryInstances(), theMemorymodelPackage.getMemoryInstance(), null, "memoryInstances", null, 0, -1, DeviceAbstraction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDeviceAbstraction_Operation(), thePlatformPackage.getOperationDefinition(), null, "operation", null, 0, -1, DeviceAbstraction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
