@@ -324,13 +324,31 @@ public interface PlatformPackage extends EPackage {
 	int INSTRUCTION_PARAMETER_MAPPING__VALUE = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION_PARAMETER_MAPPING__ATTRIBUTE = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Bit Offset</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INSTRUCTION_PARAMETER_MAPPING__BIT_OFFSET = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 1;
+	int INSTRUCTION_PARAMETER_MAPPING__BIT_OFFSET = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Value Offset</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION_PARAMETER_MAPPING__VALUE_OFFSET = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Instruction Parameter Mapping</em>' class.
@@ -339,7 +357,7 @@ public interface PlatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INSTRUCTION_PARAMETER_MAPPING_FEATURE_COUNT = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 2;
+	int INSTRUCTION_PARAMETER_MAPPING_FEATURE_COUNT = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 4;
 
 
 	/**
@@ -492,6 +510,17 @@ public interface PlatformPackage extends EPackage {
 	EReference getInstructionParameterMapping_Value();
 
 	/**
+	 * Returns the meta object for the reference '{@link hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterMapping#getAttribute <em>Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Attribute</em>'.
+	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterMapping#getAttribute()
+	 * @see #getInstructionParameterMapping()
+	 * @generated
+	 */
+	EReference getInstructionParameterMapping_Attribute();
+
+	/**
 	 * Returns the meta object for the attribute '{@link hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterMapping#getBitOffset <em>Bit Offset</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -501,6 +530,17 @@ public interface PlatformPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getInstructionParameterMapping_BitOffset();
+
+	/**
+	 * Returns the meta object for the attribute '{@link hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterMapping#getValueOffset <em>Value Offset</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value Offset</em>'.
+	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterMapping#getValueOffset()
+	 * @see #getInstructionParameterMapping()
+	 * @generated
+	 */
+	EAttribute getInstructionParameterMapping_ValueOffset();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -647,12 +687,28 @@ public interface PlatformPackage extends EPackage {
 		EReference INSTRUCTION_PARAMETER_MAPPING__VALUE = eINSTANCE.getInstructionParameterMapping_Value();
 
 		/**
+		 * The meta object literal for the '<em><b>Attribute</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INSTRUCTION_PARAMETER_MAPPING__ATTRIBUTE = eINSTANCE.getInstructionParameterMapping_Attribute();
+
+		/**
 		 * The meta object literal for the '<em><b>Bit Offset</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute INSTRUCTION_PARAMETER_MAPPING__BIT_OFFSET = eINSTANCE.getInstructionParameterMapping_BitOffset();
+
+		/**
+		 * The meta object literal for the '<em><b>Value Offset</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INSTRUCTION_PARAMETER_MAPPING__VALUE_OFFSET = eINSTANCE.getInstructionParameterMapping_ValueOffset();
 
 	}
 

@@ -276,8 +276,10 @@ package abstraction {
       }
 
       class InstructionParameterMapping extends infrastructure.MODembedElement {
-        ref OperationArgument value;
+        ref OperationArgument[1] value;
+        ref infrastructure.AttributeDefinition attribute;
         attr int bitOffset;
+        attr int valueOffset;
       }
 
     }

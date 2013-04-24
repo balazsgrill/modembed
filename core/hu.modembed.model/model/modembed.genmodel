@@ -217,7 +217,10 @@
           <genClasses ecoreClass="modembed.ecore#//abstraction/behavior/platform/InstructionParameterMapping">
             <genFeatures notify="false" createChild="false" propertySortChoices="true"
                 ecoreFeature="ecore:EReference modembed.ecore#//abstraction/behavior/platform/InstructionParameterMapping/value"/>
+            <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                ecoreFeature="ecore:EReference modembed.ecore#//abstraction/behavior/platform/InstructionParameterMapping/attribute"/>
             <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.ecore#//abstraction/behavior/platform/InstructionParameterMapping/bitOffset"/>
+            <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.ecore#//abstraction/behavior/platform/InstructionParameterMapping/valueOffset"/>
           </genClasses>
         </nestedGenPackages>
       </nestedGenPackages>

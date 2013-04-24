@@ -292,8 +292,26 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getInstructionParameterMapping_Attribute() {
+		return (EReference)instructionParameterMappingEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getInstructionParameterMapping_BitOffset() {
-		return (EAttribute)instructionParameterMappingEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)instructionParameterMappingEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getInstructionParameterMapping_ValueOffset() {
+		return (EAttribute)instructionParameterMappingEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -342,7 +360,9 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 
 		instructionParameterMappingEClass = createEClass(INSTRUCTION_PARAMETER_MAPPING);
 		createEReference(instructionParameterMappingEClass, INSTRUCTION_PARAMETER_MAPPING__VALUE);
+		createEReference(instructionParameterMappingEClass, INSTRUCTION_PARAMETER_MAPPING__ATTRIBUTE);
 		createEAttribute(instructionParameterMappingEClass, INSTRUCTION_PARAMETER_MAPPING__BIT_OFFSET);
+		createEAttribute(instructionParameterMappingEClass, INSTRUCTION_PARAMETER_MAPPING__VALUE_OFFSET);
 	}
 
 	/**
@@ -403,8 +423,10 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 		initEClass(operationStepEClass, OperationStep.class, "OperationStep", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(instructionParameterMappingEClass, InstructionParameterMapping.class, "InstructionParameterMapping", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getInstructionParameterMapping_Value(), this.getOperationArgument(), null, "value", null, 0, 1, InstructionParameterMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInstructionParameterMapping_Value(), this.getOperationArgument(), null, "value", null, 1, 1, InstructionParameterMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInstructionParameterMapping_Attribute(), theInfrastructurePackage.getAttributeDefinition(), null, "attribute", null, 0, 1, InstructionParameterMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getInstructionParameterMapping_BitOffset(), ecorePackage.getEInt(), "bitOffset", null, 0, 1, InstructionParameterMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getInstructionParameterMapping_ValueOffset(), ecorePackage.getEInt(), "valueOffset", null, 0, 1, InstructionParameterMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 	}
 
 } //PlatformPackageImpl
