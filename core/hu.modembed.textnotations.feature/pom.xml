@@ -7,7 +7,7 @@
 		<artifactId>hu.modembed.releng.textnotations</artifactId>
 		<groupId>hu.modembed</groupId>
 		<version>0.8.0</version>
-		<relativePath>../hu.modembed.releng/pom.xml</relativePath>
+		<relativePath>../hu.modembed.releng.textnotations/pom.xml</relativePath>
 	</parent>
 	<groupId>hu.modembed</groupId>
 	<artifactId>hu.modembed.textnotations.feature</artifactId>
