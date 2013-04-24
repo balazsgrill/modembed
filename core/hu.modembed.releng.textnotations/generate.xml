@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="hu.modembed.textnotation.generate" default="generate">
+	
+	<!--taskdef name="emftext.GenerateTextResource" 
+		classpath="tools/ant-tasks.jar" 
+		classname="org.emftext.sdk.ant.GenerateTextResourceTask"></taskdef-->
+	
+	<target name="generate">
+		<emftext.GenerateTextResource 
+		    syntax="syntaxDefinitions/instructionset.cs" 
+		    rootFolder="." 
+		    syntaxProjectName="syntaxDefinitions" 
+			generateantlrplugin="true"
+			generatemodelcode="false"
+		/>
+	</target>
+	
+</project>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="launch.generate" default="launch">
+
+	<target name="launch">
+		<!--unzip dest="tools" src="tools/emftext-antrunner.zip"></unzip-->
+		
+		<!--classname="org.eclipse.equinox.launcher.Main"-->
+		<java fork="true"
+			jar="tools/emftext-antrunner/plugins/org.eclipse.equinox.launcher_1.3.0.v20120522-1813.jar"
+		>
+			<!--arg line="-debug"/-->
+			<arg line="-buildfile generate.xml"/>
+		</java>
+	</target>
+	
+</project>

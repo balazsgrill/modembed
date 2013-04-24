@@ -288,24 +288,4 @@ litigation.
          install-size="0"
          version="0.8.1.qualifier"/>
 
-   <plugin
-         id="hu.modembed.model.textnotations.instructionset"
-         download-size="0"
-         install-size="0"
-         version="0.8.1.qualifier"
-         unpack="false"/>
-
-   <plugin
-         id="hu.modembed.model.textnotations.instructionset.ui"
-         download-size="0"
-         install-size="0"
-         version="0.8.1.qualifier"
-         unpack="false"/>
-
-   <plugin
-         id="org.emftext.commons.antlr3_4_0"
-         download-size="0"
-         install-size="0"
-         version="1.0.0"/>
-
 </feature>
