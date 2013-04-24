@@ -37,4 +37,18 @@
          version="0.8.1.qualifier"
          unpack="false"/>
 
+   <plugin
+         id="hu.modembed.model.textnotations.type"
+         download-size="0"
+         install-size="0"
+         version="0.8.1.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="hu.modembed.model.textnotations.type.ui"
+         download-size="0"
+         install-size="0"
+         version="0.8.1.qualifier"
+         unpack="false"/>
+
 </feature>

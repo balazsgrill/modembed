@@ -18,6 +18,8 @@
 		<module>org.emftext.commons.antlr3_4_0</module>
 		<module>hu.modembed.model.textnotations.instructionset</module>
 		<module>hu.modembed.model.textnotations.instructionset.ui</module>
+		<module>hu.modembed.model.textnotations.type</module>
+		<module>hu.modembed.model.textnotations.type.ui</module>
 		
 		<module>../hu.modembed.textnotations.feature</module>
 	</modules>

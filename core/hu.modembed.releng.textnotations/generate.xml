@@ -28,9 +28,18 @@
 			generateantlrplugin="true"
 			generatemodelcode="false"
 		/>
+		<emftext.GenerateTextResource 
+			syntax="syntaxDefinitions/type.cs" 
+			rootFolder="." 
+			syntaxProjectName="syntaxDefinitions" 
+			generateantlrplugin="false"
+			generatemodelcode="false"
+		/>
 		<set-version plugin="org.emftext.commons.antlr3_4_0" version="${plugin.version}"/>
 		<set-version plugin="hu.modembed.model.textnotations.instructionset" version="${plugin.version}"/>
 		<set-version plugin="hu.modembed.model.textnotations.instructionset.ui" version="${plugin.version}"/>
+		<set-version plugin="hu.modembed.model.textnotations.type" version="${plugin.version}"/>
+		<set-version plugin="hu.modembed.model.textnotations.type.ui" version="${plugin.version}"/>
 	</target>
 	
 	

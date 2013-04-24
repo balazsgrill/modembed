@@ -1,6 +1,6 @@
 @SuppressWarnings(featureWithoutSyntax, tokenOverlapping, noRuleForMetaClass)
 SYNTAXDEF type
-FOR <http://modembed.hu/abstraction/types> <platform:/resource/hu.modembed.model/model/modembed.genmodel>
+FOR <http://modembed.hu/abstraction/types> <../../hu.modembed.model/model/modembed.genmodel>
 START Type
 
 OPTIONS { 
@@ -31,8 +31,8 @@ TOKENS {
     DEFINE FRAGMENT CHAR $('a'..'z'|'A'..'Z')$; 
     // helper token - not used on its own 
     DEFINE FRAGMENT DIGIT $('0'..'9')$; 
-    // composed token 
-    DEFINE IDENTIFIER CHAR + $($ + CHAR + $|$ + DIGIT + $)*$; 
+
+    DEFINE FRAGMENT IDENTIFIER CHAR + $($ + CHAR + $|$ + DIGIT + $)*$; 
     
     DEFINE QUALIFIEDID IDENTIFIER + $($ + $'\.'$ + IDENTIFIER + $)*$;
     
@@ -46,7 +46,11 @@ TOKENS {
 
 RULES{
 
-	Type ::= "type" name[QUALIFIEDID] "=" ;
+	Type ::= "type" name[QUALIFIEDID] "=" definition ";";
+	
+	UnsignedTypeDefinition ::= "unsigned" "(" bits[INT] ")";
+	
+	ReferenceTypeDefinition ::= type[QUALIFIEDID];
 	
 }
 

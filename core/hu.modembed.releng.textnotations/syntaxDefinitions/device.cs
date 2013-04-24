@@ -4,8 +4,10 @@ FOR <http://modembed.hu/abstraction> <platform:/resource/hu.modembed.model/model
 START DeviceAbstraction
 
 IMPORTS { 
+	infrastructure : <http://modembed.hu/infrastructure> <platform:/resource/hu.modembed.model/model/modembed.genmodel>
 	memmodel : <http://modembed.hu/abstraction/memorymodel> <platform:/resource/hu.modembed.model/model/modembed.genmodel>
 	platform : <http://modembed.hu/abstraction/behavior/platform> <platform:/resource/hu.modembed.model/model/modembed.genmodel>
+	type : <http://modembed.hu/abstraction/types> <../../hu.modembed.model/model/modembed.genmodel> WITH SYNTAX type <type.cs>
 }
 
 OPTIONS { 
@@ -55,12 +57,22 @@ RULES{
 		("extends" ancestor[QUALIFIEDID])?
 		("instructionset" instructionset[QUALIFIEDID])? ";"
 		
-		( memoryTypes | memoryInstances | operation )*
+		( (memoryTypes | memoryInstances | operation) ";" )*
 	;
 	
-	memmodel.MemoryType ::= "mtype";
+	memmodel.MemoryType ::= "mtype" contentVolatile["volatile":""] forData["data":""] forProgram["program":""] name[IDENTIFIER] "(" accessCost[INT] ")" attributes?;
 	
-	memmodel.MemoryInstance ::= "minstance";
+	memmodel.MemoryInstance ::= "minstance" name[IDENTIFIER] "[" startAddress[INT] "," size[INT] "]" ":" type[IDENTIFIER] attributes;
+	
+	infrastructure.AttributeContainerDefinition ::= "{"
+		attributes* 
+	 "}";
+	
+	infrastructure.AttributeDefinition ::= name[IDENTIFIER] ";";
+	
+	infrastructure.AttributeValueContainer ::= "{" values* "}";
+	
+	infrastructure.AttributeValue ::= definition[IDENTIFIER] "=" value[INT] ";";
 	
 	platform.OperationDefinition ::= "operation" ;
 	
