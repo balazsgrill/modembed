@@ -201,6 +201,8 @@ package abstraction {
   	
   		class MemoryInstance extends infrastructure.NamedElement{
   			ref MemoryType[1] type;
+  			attr long[1] startAddress;
+  			attr long[1] size;
   			val infrastructure.AttributeValueContainer attributes;
   		}
   	

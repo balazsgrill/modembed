@@ -150,6 +150,8 @@
         <genClasses ecoreClass="modembed.ecore#//abstraction/memorymodel/MemoryInstance">
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference modembed.ecore#//abstraction/memorymodel/MemoryInstance/type"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.ecore#//abstraction/memorymodel/MemoryInstance/startAddress"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.ecore#//abstraction/memorymodel/MemoryInstance/size"/>
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//abstraction/memorymodel/MemoryInstance/attributes"/>
         </genClasses>
       </nestedGenPackages>

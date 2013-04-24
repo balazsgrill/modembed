@@ -195,13 +195,31 @@ public interface MemorymodelPackage extends EPackage {
 	int MEMORY_INSTANCE__TYPE = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Start Address</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEMORY_INSTANCE__START_ADDRESS = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEMORY_INSTANCE__SIZE = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MEMORY_INSTANCE__ATTRIBUTES = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int MEMORY_INSTANCE__ATTRIBUTES = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Memory Instance</em>' class.
@@ -210,7 +228,7 @@ public interface MemorymodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEMORY_INSTANCE_FEATURE_COUNT = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int MEMORY_INSTANCE_FEATURE_COUNT = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 
 	/**
@@ -298,6 +316,28 @@ public interface MemorymodelPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getMemoryInstance_Type();
+
+	/**
+	 * Returns the meta object for the attribute '{@link hu.modembed.model.modembed.abstraction.memorymodel.MemoryInstance#getStartAddress <em>Start Address</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Start Address</em>'.
+	 * @see hu.modembed.model.modembed.abstraction.memorymodel.MemoryInstance#getStartAddress()
+	 * @see #getMemoryInstance()
+	 * @generated
+	 */
+	EAttribute getMemoryInstance_StartAddress();
+
+	/**
+	 * Returns the meta object for the attribute '{@link hu.modembed.model.modembed.abstraction.memorymodel.MemoryInstance#getSize <em>Size</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Size</em>'.
+	 * @see hu.modembed.model.modembed.abstraction.memorymodel.MemoryInstance#getSize()
+	 * @see #getMemoryInstance()
+	 * @generated
+	 */
+	EAttribute getMemoryInstance_Size();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link hu.modembed.model.modembed.abstraction.memorymodel.MemoryInstance#getAttributes <em>Attributes</em>}'.
@@ -399,6 +439,22 @@ public interface MemorymodelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference MEMORY_INSTANCE__TYPE = eINSTANCE.getMemoryInstance_Type();
+
+		/**
+		 * The meta object literal for the '<em><b>Start Address</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MEMORY_INSTANCE__START_ADDRESS = eINSTANCE.getMemoryInstance_StartAddress();
+
+		/**
+		 * The meta object literal for the '<em><b>Size</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MEMORY_INSTANCE__SIZE = eINSTANCE.getMemoryInstance_Size();
 
 		/**
 		 * The meta object literal for the '<em><b>Attributes</b></em>' containment reference feature.

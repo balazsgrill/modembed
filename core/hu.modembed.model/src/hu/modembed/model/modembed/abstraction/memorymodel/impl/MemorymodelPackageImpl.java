@@ -231,8 +231,26 @@ public class MemorymodelPackageImpl extends EPackageImpl implements MemorymodelP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getMemoryInstance_StartAddress() {
+		return (EAttribute)memoryInstanceEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getMemoryInstance_Size() {
+		return (EAttribute)memoryInstanceEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getMemoryInstance_Attributes() {
-		return (EReference)memoryInstanceEClass.getEStructuralFeatures().get(1);
+		return (EReference)memoryInstanceEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -272,6 +290,8 @@ public class MemorymodelPackageImpl extends EPackageImpl implements MemorymodelP
 
 		memoryInstanceEClass = createEClass(MEMORY_INSTANCE);
 		createEReference(memoryInstanceEClass, MEMORY_INSTANCE__TYPE);
+		createEAttribute(memoryInstanceEClass, MEMORY_INSTANCE__START_ADDRESS);
+		createEAttribute(memoryInstanceEClass, MEMORY_INSTANCE__SIZE);
 		createEReference(memoryInstanceEClass, MEMORY_INSTANCE__ATTRIBUTES);
 	}
 
@@ -319,6 +339,8 @@ public class MemorymodelPackageImpl extends EPackageImpl implements MemorymodelP
 
 		initEClass(memoryInstanceEClass, MemoryInstance.class, "MemoryInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMemoryInstance_Type(), this.getMemoryType(), null, "type", null, 1, 1, MemoryInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMemoryInstance_StartAddress(), ecorePackage.getELong(), "startAddress", null, 1, 1, MemoryInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMemoryInstance_Size(), ecorePackage.getELong(), "size", null, 1, 1, MemoryInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMemoryInstance_Attributes(), theInfrastructurePackage.getAttributeValueContainer(), null, "attributes", null, 0, 1, MemoryInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 	}
 

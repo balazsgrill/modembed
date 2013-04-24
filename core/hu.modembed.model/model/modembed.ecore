@@ -171,6 +171,10 @@
       <eClassifiers xsi:type="ecore:EClass" name="MemoryInstance" eSuperTypes="#//infrastructure/NamedElement">
         <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"
             eType="#//abstraction/memorymodel/MemoryType"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="startAddress" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" eType="#//infrastructure/AttributeValueContainer"
             containment="true"/>
       </eClassifiers>
