@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+	<extension point="org.emftext.access.syntax.ui">
+		<metaInformationProvider class="hu.modembed.model.textnotations.device.ui.DeviceUIMetaInformation" id="hu.modembed.model.textnotations.device.ui.DeviceUIMetaInformation">
+		</metaInformationProvider>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors">
+		<editor class="hu.modembed.model.textnotations.device.ui.DeviceEditor" contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor" extensions="device" icon="icons/editor_icon.gif" id="hu.modembed.model.textnotations.device.ui.DeviceEditor" name="EMFText device Editor">
+			<contentTypeBinding contentTypeId="hu.modembed.model.textnotations.device">
+			</contentTypeBinding>
+		</editor>
+	</extension>
+	
+	<extension point="org.eclipse.core.runtime.preferences">
+		<initializer class="hu.modembed.model.textnotations.device.ui.DevicePreferenceInitializer">
+		</initializer>
+	</extension>
+	
+	<extension point="org.eclipse.ui.preferencePages">
+		<page name="Device Text Editor" id="hu.modembed.model.textnotations.device.ui.DevicePreferencePage" class="hu.modembed.model.textnotations.device.ui.DevicePreferencePage" category="org.eclipse.ui.preferencePages.GeneralTextEditor">
+		</page>
+		<page name="Syntax Coloring" id="hu.modembed.model.textnotations.device.ui.DeviceSyntaxColoringPreferencePage" class="hu.modembed.model.textnotations.device.ui.DeviceSyntaxColoringPreferencePage" category="hu.modembed.model.textnotations.device.ui.DevicePreferencePage">
+		</page>
+		<page name="Brackets" id="hu.modembed.model.textnotations.device.ui.DeviceBracketPreferencePage" class="hu.modembed.model.textnotations.device.ui.DeviceBracketPreferencePage" category="hu.modembed.model.textnotations.device.ui.DevicePreferencePage">
+		</page>
+	</extension>
+	
+	<extension point="org.eclipse.ui.newWizards">
+		<category id="org.emftext.runtime.ui.EMFTextFileCategory" name="EMFText File">
+		</category>
+		<wizard category="org.emftext.runtime.ui.EMFTextFileCategory" icon="/icons/default_new_icon.gif" class="hu.modembed.model.textnotations.device.ui.DeviceNewFileWizard" id="hu.modembed.model.textnotations.device.ui.DeviceNewFileWizard" name="EMFText .device file">
+		</wizard>
+		<category id="org.emftext.runtime.ui.EMFTextProjectCategory" name="EMFText Project">
+		</category>
+		<wizard category="org.emftext.runtime.ui.EMFTextProjectCategory" icon="/icons/default_new_icon.gif" class="hu.modembed.model.textnotations.device.ui.DeviceNewProjectWizard" id="hu.modembed.model.textnotations.device.ui.DeviceNewProjectWizard" name="EMFText device project" project="true">
+		</wizard>
+	</extension>
+	
+	<extension point="org.eclipse.ui.ide.markerResolution">
+		<markerResolutionGenerator class="hu.modembed.model.textnotations.device.ui.DeviceMarkerResolutionGenerator" markerType="hu.modembed.model.textnotations.device.problem">
+		</markerResolutionGenerator>
+	</extension>
+	
+	<extension point="org.eclipse.core.filebuffers.annotationModelCreation">
+		<factory class="hu.modembed.model.textnotations.device.ui.DeviceAnnotationModelFactory" extensions="device">
+		</factory>
+	</extension>
+	
+	<extension point="org.eclipse.core.contenttype.contentTypes">
+		<content-type id="hu.modembed.model.textnotations.device" name=".device File" base-type="org.eclipse.core.runtime.text" file-extensions="device">
+		</content-type>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.documentProviders">
+		<provider class="org.eclipse.ui.editors.text.TextFileDocumentProvider" extensions="device" id="hu.modembed.model.textnotations.device.ui.provider">
+		</provider>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.annotationTypes">
+		<type name="hu.modembed.model.textnotations.device.ui.occurences">
+		</type>
+		<type name="hu.modembed.model.textnotations.device.ui.occurences.declaration" super="hu.modembed.model.textnotations.device.ui.occurences">
+		</type>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.markerAnnotationSpecification">
+		<specification annotationType="hu.modembed.model.textnotations.device.ui.occurences" label="Occurrences (in .device files)" icon="/icons/occurrence_icon.gif" textPreferenceKey="device.occurrenceIndication" textPreferenceValue="false" highlightPreferenceKey="device.occurrenceHighlighting" highlightPreferenceValue="true" contributesToHeader="false" overviewRulerPreferenceKey="device.occurrenceIndicationInOverviewRuler" overviewRulerPreferenceValue="true" verticalRulerPreferenceKey="device.occurrenceIndicationInVerticalRuler" verticalRulerPreferenceValue="false" colorPreferenceKey="device.occurrenceIndicationColor" colorPreferenceValue="212,212,212" presentationLayer="4" showInNextPrevDropdownToolbarActionKey="device.showOccurrenceInNextPrevDropdownToolbarAction" showInNextPrevDropdownToolbarAction="true" isGoToNextNavigationTargetKey="device.isOccurrenceGoToNextNavigationTarget" isGoToNextNavigationTarget="false" isGoToPreviousNavigationTargetKey="device.isOccurrenceGoToPreviousNavigationTarget" isGoToPreviousNavigationTarget="false" textStylePreferenceKey="device.occurrenceTextStyle" textStylePreferenceValue="NONE">
+		</specification>
+		<specification annotationType="hu.modembed.model.textnotations.device.ui.occurences.declaration" label="Declarations (in .device files)" textPreferenceKey="device.declarationIndication" textPreferenceValue="false" highlightPreferenceKey="device.declarationHighlighting" highlightPreferenceValue="true" overviewRulerPreferenceKey="device.declarationIndicationInOverviewRuler" overviewRulerPreferenceValue="true" verticalRulerPreferenceKey="device.declarationIndicationInVerticalRuler" verticalRulerPreferenceValue="false" colorPreferenceKey="device.declarationIndicationColor" colorPreferenceValue="240,216,168" presentationLayer="4" textStylePreferenceKey="device.declarationTextStyle" textStylePreferenceValue="NONE">
+		</specification>
+	</extension>
+	
+</plugin>

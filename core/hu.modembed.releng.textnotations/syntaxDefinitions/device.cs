@@ -1,12 +1,12 @@
 @SuppressWarnings(featureWithoutSyntax, tokenOverlapping, noRuleForMetaClass)
 SYNTAXDEF device
-FOR <http://modembed.hu/abstraction> <platform:/resource/hu.modembed.model/model/modembed.genmodel>
+FOR <http://modembed.hu/abstraction> <../../hu.modembed.model/model/modembed.genmodel>
 START DeviceAbstraction
 
 IMPORTS { 
-	infrastructure : <http://modembed.hu/infrastructure> <platform:/resource/hu.modembed.model/model/modembed.genmodel>
-	memmodel : <http://modembed.hu/abstraction/memorymodel> <platform:/resource/hu.modembed.model/model/modembed.genmodel>
-	platform : <http://modembed.hu/abstraction/behavior/platform> <platform:/resource/hu.modembed.model/model/modembed.genmodel>
+	infrastructure : <http://modembed.hu/infrastructure> <../../hu.modembed.model/model/modembed.genmodel>
+	memmodel : <http://modembed.hu/abstraction/memorymodel> <../../hu.modembed.model/model/modembed.genmodel>
+	platform : <http://modembed.hu/abstraction/behavior/platform> <../../hu.modembed.model/model/modembed.genmodel>
 	type : <http://modembed.hu/abstraction/types> <../../hu.modembed.model/model/modembed.genmodel> WITH SYNTAX type <type.cs>
 }
 
@@ -74,7 +74,16 @@ RULES{
 	
 	infrastructure.AttributeValue ::= definition[IDENTIFIER] "=" value[INT] ";";
 	
-	platform.OperationDefinition ::= "operation" ;
+	platform.OperationDefinition ::= "operation" operation[IDENTIFIER] 
+			"(" (arguments ("," arguments)*)? ")"
+			"{" steps* "}" ;
+	
+	platform.OperationArgument ::= type "@" memtype[IDENTIFIER] ":" indirectionLevel[INT] name[IDENTIFIER];
+	
+	platform.InstructionCallOperationStep ::= instruction[IDENTIFIER] 
+			"(" (arguments ("," arguments)*)? ")" ";" ;
+	
+	platform.InstructionParameterMapping ::= value[IDENTIFIER] ("->" attribute[IDENTIFIER])? (":" bitOffset[INT])? ("+" valueOffset[INT])? ;
 	
 }
 
