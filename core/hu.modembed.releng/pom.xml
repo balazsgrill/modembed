@@ -18,9 +18,6 @@
 		<module>../hu.modembed.core.feature</module>
 		<module>../hu.modembed.help</module>
 		<module>../hu.modembed.simulator</module>
-		<module>../org.emftext.commons.antlr3_4_0</module>
-		<module>../hu.modembed.model.textnotations.instructionset</module>
-		<module>../hu.modembed.model.textnotations.instructionset.ui</module>
 		
 		<module>../../pic/core/hu.modembed.pic</module>
 		<!-- module>../../pic/core/hu.modembed.pic.midrange</module>
@@ -37,6 +34,7 @@
 		 -->
 		
 		<module>../hu.modembed.test</module>
+		<module>../hu.modembed.releng.textnotations</module>
 		
 		<module>repository</module>
 	</modules>

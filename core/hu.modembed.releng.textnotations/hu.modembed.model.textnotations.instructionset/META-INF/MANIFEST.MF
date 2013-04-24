@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: EMFText Parser Plugin: instructionset
+Bundle-SymbolicName: hu.modembed.model.textnotations.instructionset;singleton:=true
+Bundle-Version: 0.8.1.qualifier
+Bundle-Vendor: Software Technology Group - TU Dresden Germany
+Require-Bundle: org.eclipse.core.runtime;resolution:=optional,
+  org.eclipse.core.resources;resolution:=optional,
+  org.eclipse.emf.ecore,
+  org.eclipse.emf.ecore.change,
+  org.eclipse.emf.validation;resolution:=optional,
+  org.emftext.access;resolution:=optional,
+  org.emftext.commons.antlr3_4_0,
+  hu.modembed.model
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: hu.modembed.model.textnotations.instructionset,
+  hu.modembed.model.textnotations.instructionset.analysis,
+  hu.modembed.model.textnotations.instructionset.mopp,
+  hu.modembed.model.textnotations.instructionset.debug,
+  hu.modembed.model.textnotations.instructionset.launch,
+  hu.modembed.model.textnotations.instructionset.grammar,
+  hu.modembed.model.textnotations.instructionset.util
+Bundle-Activator: hu.modembed.model.textnotations.instructionset.mopp.InstructionsetPlugin

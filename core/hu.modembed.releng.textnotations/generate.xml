@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="hu.modembed.textnotation.generate" default="generate">
 	
+	<property name="plugin.version" value="0.8.1.qualifier" />
+	
+	<macrodef name="set-version">
+		<attribute name="plugin"/>
+		<attribute name="version"/>
+		
+		<sequential>
+			<replace
+				file="@{plugin}/META-INF/MANIFEST.MF"
+				token="Bundle-Version: 1.0.0"
+				value="Bundle-Version: @{version}"
+				/>
+		</sequential>
+	</macrodef>
+	
 	<!--taskdef name="emftext.GenerateTextResource" 
 		classpath="tools/ant-tasks.jar" 
 		classname="org.emftext.sdk.ant.GenerateTextResourceTask"></taskdef-->
@@ -13,6 +28,10 @@
 			generateantlrplugin="true"
 			generatemodelcode="false"
 		/>
+		<set-version plugin="org.emftext.commons.antlr3_4_0" version="${plugin.version}"/>
+		<set-version plugin="hu.modembed.model.textnotations.instructionset" version="${plugin.version}"/>
+		<set-version plugin="hu.modembed.model.textnotations.instructionset.ui" version="${plugin.version}"/>
 	</target>
+	
 	
 </project>
