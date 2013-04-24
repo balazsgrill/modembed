@@ -1,0 +1,1 @@
+type uint24 = unsigned(24);
