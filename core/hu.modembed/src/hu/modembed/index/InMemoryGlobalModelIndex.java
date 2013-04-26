@@ -102,9 +102,10 @@ public class InMemoryGlobalModelIndex extends AbstractGlobalModelIndex implement
 					remove(uri);
 					break;
 				case IResourceDelta.CONTENT:
-				case IResourceDelta.CHANGED:	
+				//case IResourceDelta.CHANGED:	this is called when markers are changed
 				case IResourceDelta.REPLACED:
 				case IResourceDelta.ADDED:
+					System.out.println(uri+" changed: "+kind);
 					String name = getName(uri);
 					if (name != null){
 						put(uri, name);
