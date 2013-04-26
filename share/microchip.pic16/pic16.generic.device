@@ -1,0 +1,12 @@
+device pic16.generic instructionset microchip.pic16.instructionset;
+
+mtype program rom(8);
+
+mtype volatile data mirrorredRam(1);
+
+mtype volatile data bankedRam(2) { bank; };
+
+operation add(dest : uint8|1@mirrorredRam, value : uint8|0){
+	MOVLW(value);
+	MOVWF(dest);
+};
