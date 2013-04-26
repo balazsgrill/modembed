@@ -394,7 +394,7 @@ options {
 				break;
 			}
 		}
-		int followSetID = 94;
+		int followSetID = 96;
 		int i;
 		for (i = tokenIndexOfLastCompleteElement; i < tokenStream.size(); i++) {
 			org.antlr.runtime3_4_0.CommonToken nextToken = (org.antlr.runtime3_4_0.CommonToken) tokenStream.get(i);
@@ -972,7 +972,7 @@ parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryType returns [hu.
 	}
 	
 	(
-		a10 = IDENTIFIER		
+		a10 = QUALIFIEDID		
 		{
 			if (terminateParsing) {
 				throw new hu.modembed.model.textnotations.device.mopp.DeviceTerminateParsingException();
@@ -997,7 +997,7 @@ parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryType returns [hu.
 				}
 			}
 			if (a10 != null) {
-				hu.modembed.model.textnotations.device.IDeviceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("IDENTIFIER");
+				hu.modembed.model.textnotations.device.IDeviceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("QUALIFIEDID");
 				tokenResolver.setOptions(getOptions());
 				hu.modembed.model.textnotations.device.IDeviceTokenResolveResult result = getFreshTokenResolveResult();
 				tokenResolver.resolve(a10.getText(), element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.memorymodel.MemorymodelPackage.MEMORY_TYPE__NAME), result);
@@ -1196,7 +1196,7 @@ parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryInstance returns 
 	}
 	
 	(
-		a1 = IDENTIFIER		
+		a1 = QUALIFIEDID		
 		{
 			if (terminateParsing) {
 				throw new hu.modembed.model.textnotations.device.mopp.DeviceTerminateParsingException();
@@ -1206,7 +1206,7 @@ parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryInstance returns 
 				startIncompleteElement(element);
 			}
 			if (a1 != null) {
-				hu.modembed.model.textnotations.device.IDeviceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("IDENTIFIER");
+				hu.modembed.model.textnotations.device.IDeviceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("QUALIFIEDID");
 				tokenResolver.setOptions(getOptions());
 				hu.modembed.model.textnotations.device.IDeviceTokenResolveResult result = getFreshTokenResolveResult();
 				tokenResolver.resolve(a1.getText(), element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.memorymodel.MemorymodelPackage.MEMORY_INSTANCE__NAME), result);
@@ -1360,7 +1360,7 @@ parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryInstance returns 
 	}
 	
 	(
-		a8 = IDENTIFIER		
+		a8 = QUALIFIEDID		
 		{
 			if (terminateParsing) {
 				throw new hu.modembed.model.textnotations.device.mopp.DeviceTerminateParsingException();
@@ -1370,7 +1370,7 @@ parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryInstance returns 
 				startIncompleteElement(element);
 			}
 			if (a8 != null) {
-				hu.modembed.model.textnotations.device.IDeviceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("IDENTIFIER");
+				hu.modembed.model.textnotations.device.IDeviceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("QUALIFIEDID");
 				tokenResolver.setOptions(getOptions());
 				hu.modembed.model.textnotations.device.IDeviceTokenResolveResult result = getFreshTokenResolveResult();
 				tokenResolver.resolve(a8.getText(), element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.memorymodel.MemorymodelPackage.MEMORY_INSTANCE__TYPE), result);
@@ -1496,7 +1496,7 @@ parse_hu_modembed_model_modembed_infrastructure_AttributeDefinition returns [hu.
 }
 :
 	(
-		a0 = IDENTIFIER		
+		a0 = QUALIFIEDID		
 		{
 			if (terminateParsing) {
 				throw new hu.modembed.model.textnotations.device.mopp.DeviceTerminateParsingException();
@@ -1506,7 +1506,7 @@ parse_hu_modembed_model_modembed_infrastructure_AttributeDefinition returns [hu.
 				startIncompleteElement(element);
 			}
 			if (a0 != null) {
-				hu.modembed.model.textnotations.device.IDeviceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("IDENTIFIER");
+				hu.modembed.model.textnotations.device.IDeviceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("QUALIFIEDID");
 				tokenResolver.setOptions(getOptions());
 				hu.modembed.model.textnotations.device.IDeviceTokenResolveResult result = getFreshTokenResolveResult();
 				tokenResolver.resolve(a0.getText(), element.eClass().getEStructuralFeature(hu.modembed.model.modembed.infrastructure.InfrastructurePackage.ATTRIBUTE_DEFINITION__NAME), result);
@@ -1617,7 +1617,7 @@ parse_hu_modembed_model_modembed_infrastructure_AttributeValue returns [hu.modem
 }
 :
 	(
-		a0 = IDENTIFIER		
+		a0 = QUALIFIEDID		
 		{
 			if (terminateParsing) {
 				throw new hu.modembed.model.textnotations.device.mopp.DeviceTerminateParsingException();
@@ -1627,7 +1627,7 @@ parse_hu_modembed_model_modembed_infrastructure_AttributeValue returns [hu.modem
 				startIncompleteElement(element);
 			}
 			if (a0 != null) {
-				hu.modembed.model.textnotations.device.IDeviceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("IDENTIFIER");
+				hu.modembed.model.textnotations.device.IDeviceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("QUALIFIEDID");
 				tokenResolver.setOptions(getOptions());
 				hu.modembed.model.textnotations.device.IDeviceTokenResolveResult result = getFreshTokenResolveResult();
 				tokenResolver.resolve(a0.getText(), element.eClass().getEStructuralFeature(hu.modembed.model.modembed.infrastructure.InfrastructurePackage.ATTRIBUTE_VALUE__DEFINITION), result);
@@ -1742,7 +1742,7 @@ parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationDefiniti
 	}
 	
 	(
-		a1 = IDENTIFIER		
+		a1 = QUALIFIEDID		
 		{
 			if (terminateParsing) {
 				throw new hu.modembed.model.textnotations.device.mopp.DeviceTerminateParsingException();
@@ -1752,7 +1752,7 @@ parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationDefiniti
 				startIncompleteElement(element);
 			}
 			if (a1 != null) {
-				hu.modembed.model.textnotations.device.IDeviceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("IDENTIFIER");
+				hu.modembed.model.textnotations.device.IDeviceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("QUALIFIEDID");
 				tokenResolver.setOptions(getOptions());
 				hu.modembed.model.textnotations.device.IDeviceTokenResolveResult result = getFreshTokenResolveResult();
 				tokenResolver.resolve(a1.getText(), element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.OPERATION_DEFINITION__OPERATION), result);
@@ -1789,8 +1789,7 @@ parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationDefiniti
 	{
 		// expected elements (follow set)
 		addExpectedElement(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.eINSTANCE.getOperationDefinition(), hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[72]);
-		addExpectedElement(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.eINSTANCE.getOperationDefinition(), hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[73]);
-		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[74]);
+		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[73]);
 	}
 	
 	(
@@ -1818,8 +1817,8 @@ parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationDefiniti
 			)
 			{
 				// expected elements (follow set)
+				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[74]);
 				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[75]);
-				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[76]);
 			}
 			
 			(
@@ -1835,8 +1834,7 @@ parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationDefiniti
 					}
 					{
 						// expected elements (follow set)
-						addExpectedElement(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.eINSTANCE.getOperationDefinition(), hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[77]);
-						addExpectedElement(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.eINSTANCE.getOperationDefinition(), hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[78]);
+						addExpectedElement(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.eINSTANCE.getOperationDefinition(), hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[76]);
 					}
 					
 					(
@@ -1862,23 +1860,23 @@ parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationDefiniti
 					)
 					{
 						// expected elements (follow set)
-						addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[79]);
-						addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[80]);
+						addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[77]);
+						addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[78]);
 					}
 					
 				)
 				
 			)*			{
 				// expected elements (follow set)
-				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[81]);
-				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[82]);
+				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[79]);
+				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[80]);
 			}
 			
 		)
 		
 	)?	{
 		// expected elements (follow set)
-		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[83]);
+		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[81]);
 	}
 	
 	a6 = ')' {
@@ -1892,7 +1890,7 @@ parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationDefiniti
 	}
 	{
 		// expected elements (follow set)
-		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[84]);
+		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[82]);
 	}
 	
 	a7 = '{' {
@@ -1906,8 +1904,8 @@ parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationDefiniti
 	}
 	{
 		// expected elements (follow set)
-		addExpectedElement(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.eINSTANCE.getOperationDefinition(), hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[85]);
-		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[86]);
+		addExpectedElement(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.eINSTANCE.getOperationDefinition(), hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[83]);
+		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[84]);
 	}
 	
 	(
@@ -1935,8 +1933,8 @@ parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationDefiniti
 		
 	)*	{
 		// expected elements (follow set)
-		addExpectedElement(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.eINSTANCE.getOperationDefinition(), hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[87]);
-		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[88]);
+		addExpectedElement(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.eINSTANCE.getOperationDefinition(), hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[85]);
+		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[86]);
 	}
 	
 	a9 = '}' {
@@ -1950,7 +1948,7 @@ parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationDefiniti
 	}
 	{
 		// expected elements (follow set)
-		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[89]);
+		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[87]);
 	}
 	
 ;
@@ -1960,7 +1958,8 @@ parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument
 }
 :
 	(
-		a0_0 = parse_hu_modembed_model_modembed_abstraction_types_TypeDefinition		{
+		a0 = QUALIFIEDID		
+		{
 			if (terminateParsing) {
 				throw new hu.modembed.model.textnotations.device.mopp.DeviceTerminateParsingException();
 			}
@@ -1968,24 +1967,33 @@ parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument
 				element = hu.modembed.model.modembed.abstraction.behavior.platform.PlatformFactory.eINSTANCE.createOperationArgument();
 				startIncompleteElement(element);
 			}
-			if (a0_0 != null) {
-				if (a0_0 != null) {
-					Object value = a0_0;
-					element.eSet(element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.OPERATION_ARGUMENT__TYPE), value);
-					completedElement(value, true);
+			if (a0 != null) {
+				hu.modembed.model.textnotations.device.IDeviceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("QUALIFIEDID");
+				tokenResolver.setOptions(getOptions());
+				hu.modembed.model.textnotations.device.IDeviceTokenResolveResult result = getFreshTokenResolveResult();
+				tokenResolver.resolve(a0.getText(), element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.OPERATION_ARGUMENT__NAME), result);
+				Object resolvedObject = result.getResolvedToken();
+				if (resolvedObject == null) {
+					addErrorToResource(result.getErrorMessage(), ((org.antlr.runtime3_4_0.CommonToken) a0).getLine(), ((org.antlr.runtime3_4_0.CommonToken) a0).getCharPositionInLine(), ((org.antlr.runtime3_4_0.CommonToken) a0).getStartIndex(), ((org.antlr.runtime3_4_0.CommonToken) a0).getStopIndex());
+				}
+				java.lang.String resolved = (java.lang.String) resolvedObject;
+				if (resolved != null) {
+					Object value = resolved;
+					element.eSet(element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.OPERATION_ARGUMENT__NAME), value);
+					completedElement(value, false);
 				}
 				collectHiddenTokens(element);
-				retrieveLayoutInformation(element, hu.modembed.model.textnotations.device.grammar.DeviceGrammarInformationProvider.DEVICE_8_0_0_0, a0_0, true);
-				copyLocalizationInfos(a0_0, element);
+				retrieveLayoutInformation(element, hu.modembed.model.textnotations.device.grammar.DeviceGrammarInformationProvider.DEVICE_8_0_0_0, resolved, true);
+				copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken) a0, element);
 			}
 		}
 	)
 	{
 		// expected elements (follow set)
-		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[90]);
+		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[88]);
 	}
 	
-	a1 = '@' {
+	a1 = ':' {
 		if (element == null) {
 			element = hu.modembed.model.modembed.abstraction.behavior.platform.PlatformFactory.eINSTANCE.createOperationArgument();
 			startIncompleteElement(element);
@@ -1996,12 +2004,12 @@ parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument
 	}
 	{
 		// expected elements (follow set)
-		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[91]);
+		addExpectedElement(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.eINSTANCE.getOperationArgument(), hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[89]);
+		addExpectedElement(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.eINSTANCE.getOperationArgument(), hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[90]);
 	}
 	
 	(
-		a2 = IDENTIFIER		
-		{
+		a2_0 = parse_hu_modembed_model_modembed_abstraction_types_TypeDefinition		{
 			if (terminateParsing) {
 				throw new hu.modembed.model.textnotations.device.mopp.DeviceTerminateParsingException();
 			}
@@ -2009,37 +2017,24 @@ parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument
 				element = hu.modembed.model.modembed.abstraction.behavior.platform.PlatformFactory.eINSTANCE.createOperationArgument();
 				startIncompleteElement(element);
 			}
-			if (a2 != null) {
-				hu.modembed.model.textnotations.device.IDeviceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("IDENTIFIER");
-				tokenResolver.setOptions(getOptions());
-				hu.modembed.model.textnotations.device.IDeviceTokenResolveResult result = getFreshTokenResolveResult();
-				tokenResolver.resolve(a2.getText(), element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.OPERATION_ARGUMENT__MEMTYPE), result);
-				Object resolvedObject = result.getResolvedToken();
-				if (resolvedObject == null) {
-					addErrorToResource(result.getErrorMessage(), ((org.antlr.runtime3_4_0.CommonToken) a2).getLine(), ((org.antlr.runtime3_4_0.CommonToken) a2).getCharPositionInLine(), ((org.antlr.runtime3_4_0.CommonToken) a2).getStartIndex(), ((org.antlr.runtime3_4_0.CommonToken) a2).getStopIndex());
-				}
-				String resolved = (String) resolvedObject;
-				hu.modembed.model.modembed.abstraction.memorymodel.MemoryType proxy = hu.modembed.model.modembed.abstraction.memorymodel.MemorymodelFactory.eINSTANCE.createMemoryType();
-				collectHiddenTokens(element);
-				registerContextDependentProxy(new hu.modembed.model.textnotations.device.mopp.DeviceContextDependentURIFragmentFactory<hu.modembed.model.modembed.abstraction.behavior.platform.OperationArgument, hu.modembed.model.modembed.abstraction.memorymodel.MemoryType>(getReferenceResolverSwitch() == null ? null : getReferenceResolverSwitch().getOperationArgumentMemtypeReferenceResolver()), element, (org.eclipse.emf.ecore.EReference) element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.OPERATION_ARGUMENT__MEMTYPE), resolved, proxy);
-				if (proxy != null) {
-					Object value = proxy;
-					element.eSet(element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.OPERATION_ARGUMENT__MEMTYPE), value);
-					completedElement(value, false);
+			if (a2_0 != null) {
+				if (a2_0 != null) {
+					Object value = a2_0;
+					element.eSet(element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.OPERATION_ARGUMENT__TYPE), value);
+					completedElement(value, true);
 				}
 				collectHiddenTokens(element);
-				retrieveLayoutInformation(element, hu.modembed.model.textnotations.device.grammar.DeviceGrammarInformationProvider.DEVICE_8_0_0_2, proxy, true);
-				copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken) a2, element);
-				copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken) a2, proxy);
+				retrieveLayoutInformation(element, hu.modembed.model.textnotations.device.grammar.DeviceGrammarInformationProvider.DEVICE_8_0_0_2, a2_0, true);
+				copyLocalizationInfos(a2_0, element);
 			}
 		}
 	)
 	{
 		// expected elements (follow set)
-		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[92]);
+		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[91]);
 	}
 	
-	a3 = ':' {
+	a3 = '|' {
 		if (element == null) {
 			element = hu.modembed.model.modembed.abstraction.behavior.platform.PlatformFactory.eINSTANCE.createOperationArgument();
 			startIncompleteElement(element);
@@ -2050,7 +2045,7 @@ parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument
 	}
 	{
 		// expected elements (follow set)
-		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[93]);
+		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[92]);
 	}
 	
 	(
@@ -2086,44 +2081,74 @@ parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument
 	)
 	{
 		// expected elements (follow set)
+		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[93]);
 		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[94]);
+		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[95]);
 	}
 	
 	(
-		a5 = IDENTIFIER		
-		{
-			if (terminateParsing) {
-				throw new hu.modembed.model.textnotations.device.mopp.DeviceTerminateParsingException();
-			}
-			if (element == null) {
-				element = hu.modembed.model.modembed.abstraction.behavior.platform.PlatformFactory.eINSTANCE.createOperationArgument();
-				startIncompleteElement(element);
-			}
-			if (a5 != null) {
-				hu.modembed.model.textnotations.device.IDeviceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("IDENTIFIER");
-				tokenResolver.setOptions(getOptions());
-				hu.modembed.model.textnotations.device.IDeviceTokenResolveResult result = getFreshTokenResolveResult();
-				tokenResolver.resolve(a5.getText(), element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.OPERATION_ARGUMENT__NAME), result);
-				Object resolvedObject = result.getResolvedToken();
-				if (resolvedObject == null) {
-					addErrorToResource(result.getErrorMessage(), ((org.antlr.runtime3_4_0.CommonToken) a5).getLine(), ((org.antlr.runtime3_4_0.CommonToken) a5).getCharPositionInLine(), ((org.antlr.runtime3_4_0.CommonToken) a5).getStartIndex(), ((org.antlr.runtime3_4_0.CommonToken) a5).getStopIndex());
-				}
-				java.lang.String resolved = (java.lang.String) resolvedObject;
-				if (resolved != null) {
-					Object value = resolved;
-					element.eSet(element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.OPERATION_ARGUMENT__NAME), value);
-					completedElement(value, false);
+		(
+			a5 = '@' {
+				if (element == null) {
+					element = hu.modembed.model.modembed.abstraction.behavior.platform.PlatformFactory.eINSTANCE.createOperationArgument();
+					startIncompleteElement(element);
 				}
 				collectHiddenTokens(element);
-				retrieveLayoutInformation(element, hu.modembed.model.textnotations.device.grammar.DeviceGrammarInformationProvider.DEVICE_8_0_0_5, resolved, true);
-				copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken) a5, element);
+				retrieveLayoutInformation(element, hu.modembed.model.textnotations.device.grammar.DeviceGrammarInformationProvider.DEVICE_8_0_0_5_0_0_0, null, true);
+				copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken)a5, element);
 			}
-		}
-	)
-	{
+			{
+				// expected elements (follow set)
+				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[96]);
+			}
+			
+			(
+				a6 = QUALIFIEDID				
+				{
+					if (terminateParsing) {
+						throw new hu.modembed.model.textnotations.device.mopp.DeviceTerminateParsingException();
+					}
+					if (element == null) {
+						element = hu.modembed.model.modembed.abstraction.behavior.platform.PlatformFactory.eINSTANCE.createOperationArgument();
+						startIncompleteElement(element);
+					}
+					if (a6 != null) {
+						hu.modembed.model.textnotations.device.IDeviceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("QUALIFIEDID");
+						tokenResolver.setOptions(getOptions());
+						hu.modembed.model.textnotations.device.IDeviceTokenResolveResult result = getFreshTokenResolveResult();
+						tokenResolver.resolve(a6.getText(), element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.OPERATION_ARGUMENT__MEMTYPE), result);
+						Object resolvedObject = result.getResolvedToken();
+						if (resolvedObject == null) {
+							addErrorToResource(result.getErrorMessage(), ((org.antlr.runtime3_4_0.CommonToken) a6).getLine(), ((org.antlr.runtime3_4_0.CommonToken) a6).getCharPositionInLine(), ((org.antlr.runtime3_4_0.CommonToken) a6).getStartIndex(), ((org.antlr.runtime3_4_0.CommonToken) a6).getStopIndex());
+						}
+						String resolved = (String) resolvedObject;
+						hu.modembed.model.modembed.abstraction.memorymodel.MemoryType proxy = hu.modembed.model.modembed.abstraction.memorymodel.MemorymodelFactory.eINSTANCE.createMemoryType();
+						collectHiddenTokens(element);
+						registerContextDependentProxy(new hu.modembed.model.textnotations.device.mopp.DeviceContextDependentURIFragmentFactory<hu.modembed.model.modembed.abstraction.behavior.platform.OperationArgument, hu.modembed.model.modembed.abstraction.memorymodel.MemoryType>(getReferenceResolverSwitch() == null ? null : getReferenceResolverSwitch().getOperationArgumentMemtypeReferenceResolver()), element, (org.eclipse.emf.ecore.EReference) element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.OPERATION_ARGUMENT__MEMTYPE), resolved, proxy);
+						if (proxy != null) {
+							Object value = proxy;
+							element.eSet(element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.OPERATION_ARGUMENT__MEMTYPE), value);
+							completedElement(value, false);
+						}
+						collectHiddenTokens(element);
+						retrieveLayoutInformation(element, hu.modembed.model.textnotations.device.grammar.DeviceGrammarInformationProvider.DEVICE_8_0_0_5_0_0_1, proxy, true);
+						copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken) a6, element);
+						copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken) a6, proxy);
+					}
+				}
+			)
+			{
+				// expected elements (follow set)
+				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[97]);
+				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[98]);
+			}
+			
+		)
+		
+	)?	{
 		// expected elements (follow set)
-		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[95]);
-		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[96]);
+		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[99]);
+		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[100]);
 	}
 	
 ;
@@ -2133,7 +2158,7 @@ parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionCallOp
 }
 :
 	(
-		a0 = IDENTIFIER		
+		a0 = QUALIFIEDID		
 		{
 			if (terminateParsing) {
 				throw new hu.modembed.model.textnotations.device.mopp.DeviceTerminateParsingException();
@@ -2143,7 +2168,7 @@ parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionCallOp
 				startIncompleteElement(element);
 			}
 			if (a0 != null) {
-				hu.modembed.model.textnotations.device.IDeviceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("IDENTIFIER");
+				hu.modembed.model.textnotations.device.IDeviceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("QUALIFIEDID");
 				tokenResolver.setOptions(getOptions());
 				hu.modembed.model.textnotations.device.IDeviceTokenResolveResult result = getFreshTokenResolveResult();
 				tokenResolver.resolve(a0.getText(), element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.INSTRUCTION_CALL_OPERATION_STEP__INSTRUCTION), result);
@@ -2169,7 +2194,7 @@ parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionCallOp
 	)
 	{
 		// expected elements (follow set)
-		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[97]);
+		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[101]);
 	}
 	
 	a1 = '(' {
@@ -2183,8 +2208,8 @@ parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionCallOp
 	}
 	{
 		// expected elements (follow set)
-		addExpectedElement(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.eINSTANCE.getInstructionCallOperationStep(), hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[98]);
-		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[99]);
+		addExpectedElement(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.eINSTANCE.getInstructionCallOperationStep(), hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[102]);
+		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[103]);
 	}
 	
 	(
@@ -2212,8 +2237,8 @@ parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionCallOp
 			)
 			{
 				// expected elements (follow set)
-				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[100]);
-				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[101]);
+				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[104]);
+				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[105]);
 			}
 			
 			(
@@ -2229,7 +2254,7 @@ parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionCallOp
 					}
 					{
 						// expected elements (follow set)
-						addExpectedElement(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.eINSTANCE.getInstructionCallOperationStep(), hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[102]);
+						addExpectedElement(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.eINSTANCE.getInstructionCallOperationStep(), hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[106]);
 					}
 					
 					(
@@ -2255,23 +2280,23 @@ parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionCallOp
 					)
 					{
 						// expected elements (follow set)
-						addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[103]);
-						addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[104]);
+						addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[107]);
+						addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[108]);
 					}
 					
 				)
 				
 			)*			{
 				// expected elements (follow set)
-				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[105]);
-				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[106]);
+				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[109]);
+				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[110]);
 			}
 			
 		)
 		
 	)?	{
 		// expected elements (follow set)
-		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[107]);
+		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[111]);
 	}
 	
 	a5 = ')' {
@@ -2285,7 +2310,7 @@ parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionCallOp
 	}
 	{
 		// expected elements (follow set)
-		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[108]);
+		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[112]);
 	}
 	
 	a6 = ';' {
@@ -2299,8 +2324,8 @@ parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionCallOp
 	}
 	{
 		// expected elements (follow set)
-		addExpectedElement(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.eINSTANCE.getOperationDefinition(), hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[109]);
-		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[110]);
+		addExpectedElement(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.eINSTANCE.getOperationDefinition(), hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[113]);
+		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[114]);
 	}
 	
 ;
@@ -2310,7 +2335,7 @@ parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParame
 }
 :
 	(
-		a0 = IDENTIFIER		
+		a0 = QUALIFIEDID		
 		{
 			if (terminateParsing) {
 				throw new hu.modembed.model.textnotations.device.mopp.DeviceTerminateParsingException();
@@ -2320,7 +2345,7 @@ parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParame
 				startIncompleteElement(element);
 			}
 			if (a0 != null) {
-				hu.modembed.model.textnotations.device.IDeviceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("IDENTIFIER");
+				hu.modembed.model.textnotations.device.IDeviceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("QUALIFIEDID");
 				tokenResolver.setOptions(getOptions());
 				hu.modembed.model.textnotations.device.IDeviceTokenResolveResult result = getFreshTokenResolveResult();
 				tokenResolver.resolve(a0.getText(), element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.INSTRUCTION_PARAMETER_MAPPING__VALUE), result);
@@ -2346,11 +2371,11 @@ parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParame
 	)
 	{
 		// expected elements (follow set)
-		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[111]);
-		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[112]);
-		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[113]);
-		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[114]);
 		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[115]);
+		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[116]);
+		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[117]);
+		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[118]);
+		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[119]);
 	}
 	
 	(
@@ -2366,11 +2391,11 @@ parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParame
 			}
 			{
 				// expected elements (follow set)
-				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[116]);
+				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[120]);
 			}
 			
 			(
-				a2 = IDENTIFIER				
+				a2 = QUALIFIEDID				
 				{
 					if (terminateParsing) {
 						throw new hu.modembed.model.textnotations.device.mopp.DeviceTerminateParsingException();
@@ -2380,7 +2405,7 @@ parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParame
 						startIncompleteElement(element);
 					}
 					if (a2 != null) {
-						hu.modembed.model.textnotations.device.IDeviceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("IDENTIFIER");
+						hu.modembed.model.textnotations.device.IDeviceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("QUALIFIEDID");
 						tokenResolver.setOptions(getOptions());
 						hu.modembed.model.textnotations.device.IDeviceTokenResolveResult result = getFreshTokenResolveResult();
 						tokenResolver.resolve(a2.getText(), element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.INSTRUCTION_PARAMETER_MAPPING__ATTRIBUTE), result);
@@ -2406,20 +2431,20 @@ parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParame
 			)
 			{
 				// expected elements (follow set)
-				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[117]);
-				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[118]);
-				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[119]);
-				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[120]);
+				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[121]);
+				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[122]);
+				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[123]);
+				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[124]);
 			}
 			
 		)
 		
 	)?	{
 		// expected elements (follow set)
-		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[121]);
-		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[122]);
-		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[123]);
-		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[124]);
+		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[125]);
+		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[126]);
+		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[127]);
+		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[128]);
 	}
 	
 	(
@@ -2435,7 +2460,7 @@ parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParame
 			}
 			{
 				// expected elements (follow set)
-				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[125]);
+				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[129]);
 			}
 			
 			(
@@ -2471,18 +2496,18 @@ parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParame
 			)
 			{
 				// expected elements (follow set)
-				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[126]);
-				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[127]);
-				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[128]);
+				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[130]);
+				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[131]);
+				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[132]);
 			}
 			
 		)
 		
 	)?	{
 		// expected elements (follow set)
-		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[129]);
-		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[130]);
-		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[131]);
+		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[133]);
+		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[134]);
+		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[135]);
 	}
 	
 	(
@@ -2498,7 +2523,7 @@ parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParame
 			}
 			{
 				// expected elements (follow set)
-				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[132]);
+				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[136]);
 			}
 			
 			(
@@ -2534,16 +2559,16 @@ parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParame
 			)
 			{
 				// expected elements (follow set)
-				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[133]);
-				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[134]);
+				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[137]);
+				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[138]);
 			}
 			
 		)
 		
 	)?	{
 		// expected elements (follow set)
-		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[135]);
-		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[136]);
+		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[139]);
+		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[140]);
 	}
 	
 ;
@@ -2563,7 +2588,7 @@ parse_hu_modembed_model_modembed_abstraction_types_Type returns [hu.modembed.mod
 	}
 	{
 		// expected elements (follow set)
-		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[137]);
+		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[141]);
 	}
 	
 	(
@@ -2599,7 +2624,7 @@ parse_hu_modembed_model_modembed_abstraction_types_Type returns [hu.modembed.mod
 	)
 	{
 		// expected elements (follow set)
-		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[138]);
+		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[142]);
 	}
 	
 	a2 = '=' {
@@ -2613,8 +2638,8 @@ parse_hu_modembed_model_modembed_abstraction_types_Type returns [hu.modembed.mod
 	}
 	{
 		// expected elements (follow set)
-		addExpectedElement(hu.modembed.model.modembed.abstraction.types.TypesPackage.eINSTANCE.getType(), hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[139]);
-		addExpectedElement(hu.modembed.model.modembed.abstraction.types.TypesPackage.eINSTANCE.getType(), hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[140]);
+		addExpectedElement(hu.modembed.model.modembed.abstraction.types.TypesPackage.eINSTANCE.getType(), hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[143]);
+		addExpectedElement(hu.modembed.model.modembed.abstraction.types.TypesPackage.eINSTANCE.getType(), hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[144]);
 	}
 	
 	(
@@ -2640,7 +2665,7 @@ parse_hu_modembed_model_modembed_abstraction_types_Type returns [hu.modembed.mod
 	)
 	{
 		// expected elements (follow set)
-		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[141]);
+		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[145]);
 	}
 	
 	a4 = ';' {
@@ -2673,7 +2698,7 @@ parse_hu_modembed_model_modembed_abstraction_types_UnsignedTypeDefinition return
 	}
 	{
 		// expected elements (follow set)
-		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[142]);
+		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[146]);
 	}
 	
 	a1 = '(' {
@@ -2687,7 +2712,7 @@ parse_hu_modembed_model_modembed_abstraction_types_UnsignedTypeDefinition return
 	}
 	{
 		// expected elements (follow set)
-		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[143]);
+		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[147]);
 	}
 	
 	(
@@ -2723,7 +2748,7 @@ parse_hu_modembed_model_modembed_abstraction_types_UnsignedTypeDefinition return
 	)
 	{
 		// expected elements (follow set)
-		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[144]);
+		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[148]);
 	}
 	
 	a3 = ')' {
@@ -2737,8 +2762,8 @@ parse_hu_modembed_model_modembed_abstraction_types_UnsignedTypeDefinition return
 	}
 	{
 		// expected elements (follow set)
-		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[145]);
-		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[146]);
+		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[149]);
+		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[150]);
 	}
 	
 ;
@@ -2784,8 +2809,8 @@ parse_hu_modembed_model_modembed_abstraction_types_ReferenceTypeDefinition retur
 	)
 	{
 		// expected elements (follow set)
-		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[147]);
-		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[148]);
+		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[151]);
+		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[152]);
 	}
 	
 ;
@@ -2810,9 +2835,6 @@ SL_COMMENT:
 ML_COMMENT:
 	('/*'.*'*/')
 	{ _channel = 99; }
-;
-IDENTIFIER:
-	(('a'..'z'|'A'..'Z')(('a'..'z'|'A'..'Z')|('0'..'9'))*)
 ;
 QUALIFIEDID:
 	(('a'..'z'|'A'..'Z')(('a'..'z'|'A'..'Z')|('0'..'9'))*('\.'('a'..'z'|'A'..'Z')(('a'..'z'|'A'..'Z')|('0'..'9'))*)*)

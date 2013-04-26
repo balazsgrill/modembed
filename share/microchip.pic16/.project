@@ -16,10 +16,16 @@
 			<arguments>
 			</arguments>
 		</buildCommand>
+		<buildCommand>
+			<name>hu.modembed.model.textnotations.device.builder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
 	</buildSpec>
 	<natures>
 		<nature>hu.modembed.ui.nature</nature>
 		<nature>org.eclipse.xtext.ui.shared.xtextNature</nature>
 		<nature>hu.modembed.model.textnotations.instructionset.nature</nature>
+		<nature>hu.modembed.model.textnotations.device.nature</nature>
 	</natures>
 </projectDescription>

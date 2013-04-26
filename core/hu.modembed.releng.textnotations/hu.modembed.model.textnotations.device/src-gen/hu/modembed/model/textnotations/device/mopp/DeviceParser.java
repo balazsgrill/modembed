@@ -13,10 +13,11 @@ import java.util.HashMap;
 @SuppressWarnings({"all", "warnings", "unchecked"})
 public class DeviceParser extends DeviceANTLRParserBase {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "BINARY", "IDENTIFIER", "INT", "ML_COMMENT", "QUALIFIEDID", "SL_COMMENT", "WHITESPACE", "'('", "')'", "'+'", "','", "'->'", "':'", "';'", "'='", "'@'", "'['", "']'", "'data'", "'device'", "'extends'", "'instructionset'", "'minstance'", "'mtype'", "'operation'", "'program'", "'type'", "'unsigned'", "'volatile'", "'{'", "'}'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "BINARY", "INT", "ML_COMMENT", "QUALIFIEDID", "SL_COMMENT", "WHITESPACE", "'('", "')'", "'+'", "','", "'->'", "':'", "';'", "'='", "'@'", "'['", "']'", "'data'", "'device'", "'extends'", "'instructionset'", "'minstance'", "'mtype'", "'operation'", "'program'", "'type'", "'unsigned'", "'volatile'", "'{'", "'|'", "'}'"
     };
 
     public static final int EOF=-1;
+    public static final int T__10=10;
     public static final int T__11=11;
     public static final int T__12=12;
     public static final int T__13=13;
@@ -42,12 +43,11 @@ public class DeviceParser extends DeviceANTLRParserBase {
     public static final int T__33=33;
     public static final int T__34=34;
     public static final int BINARY=4;
-    public static final int IDENTIFIER=5;
-    public static final int INT=6;
-    public static final int ML_COMMENT=7;
-    public static final int QUALIFIEDID=8;
-    public static final int SL_COMMENT=9;
-    public static final int WHITESPACE=10;
+    public static final int INT=5;
+    public static final int ML_COMMENT=6;
+    public static final int QUALIFIEDID=7;
+    public static final int SL_COMMENT=8;
+    public static final int WHITESPACE=9;
 
     // delegates
     public DeviceANTLRParserBase[] getDelegates() {
@@ -62,7 +62,7 @@ public class DeviceParser extends DeviceANTLRParserBase {
     }
     public DeviceParser(TokenStream input, RecognizerSharedState state) {
         super(input, state);
-        this.state.initializeRuleMemo(37 + 1);
+        this.state.initializeRuleMemo(38 + 1);
          
 
     }
@@ -441,7 +441,7 @@ public class DeviceParser extends DeviceANTLRParserBase {
     				break;
     			}
     		}
-    		int followSetID = 94;
+    		int followSetID = 96;
     		int i;
     		for (i = tokenIndexOfLastCompleteElement; i < tokenStream.size(); i++) {
     			org.antlr.runtime3_4_0.CommonToken nextToken = (org.antlr.runtime3_4_0.CommonToken) tokenStream.get(i);
@@ -631,7 +631,7 @@ public class DeviceParser extends DeviceANTLRParserBase {
             // Device.g:514:2: (a0= 'device' (a1= QUALIFIEDID ) ( (a2= 'extends' (a3= QUALIFIEDID ) ) )? ( (a4= 'instructionset' (a5= QUALIFIEDID ) ) )? a6= ';' ( ( ( (a7_0= parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryType ) | (a8_0= parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryInstance ) | (a9_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationDefinition ) ) a10= ';' ) )* )
             // Device.g:515:2: a0= 'device' (a1= QUALIFIEDID ) ( (a2= 'extends' (a3= QUALIFIEDID ) ) )? ( (a4= 'instructionset' (a5= QUALIFIEDID ) ) )? a6= ';' ( ( ( (a7_0= parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryType ) | (a8_0= parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryInstance ) | (a9_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationDefinition ) ) a10= ';' ) )*
             {
-            a0=(Token)match(input,23,FOLLOW_23_in_parse_hu_modembed_model_modembed_abstraction_DeviceAbstraction115); if (state.failed) return element;
+            a0=(Token)match(input,22,FOLLOW_22_in_parse_hu_modembed_model_modembed_abstraction_DeviceAbstraction115); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             		if (element == null) {
@@ -696,7 +696,7 @@ public class DeviceParser extends DeviceANTLRParserBase {
             int alt1=2;
             int LA1_0 = input.LA(1);
 
-            if ( (LA1_0==24) ) {
+            if ( (LA1_0==23) ) {
                 alt1=1;
             }
             switch (alt1) {
@@ -706,7 +706,7 @@ public class DeviceParser extends DeviceANTLRParserBase {
                     // Device.g:568:3: (a2= 'extends' (a3= QUALIFIEDID ) )
                     // Device.g:569:4: a2= 'extends' (a3= QUALIFIEDID )
                     {
-                    a2=(Token)match(input,24,FOLLOW_24_in_parse_hu_modembed_model_modembed_abstraction_DeviceAbstraction163); if (state.failed) return element;
+                    a2=(Token)match(input,23,FOLLOW_23_in_parse_hu_modembed_model_modembed_abstraction_DeviceAbstraction163); if (state.failed) return element;
 
                     if ( state.backtracking==0 ) {
                     				if (element == null) {
@@ -789,7 +789,7 @@ public class DeviceParser extends DeviceANTLRParserBase {
             int alt2=2;
             int LA2_0 = input.LA(1);
 
-            if ( (LA2_0==25) ) {
+            if ( (LA2_0==24) ) {
                 alt2=1;
             }
             switch (alt2) {
@@ -799,7 +799,7 @@ public class DeviceParser extends DeviceANTLRParserBase {
                     // Device.g:633:3: (a4= 'instructionset' (a5= QUALIFIEDID ) )
                     // Device.g:634:4: a4= 'instructionset' (a5= QUALIFIEDID )
                     {
-                    a4=(Token)match(input,25,FOLLOW_25_in_parse_hu_modembed_model_modembed_abstraction_DeviceAbstraction244); if (state.failed) return element;
+                    a4=(Token)match(input,24,FOLLOW_24_in_parse_hu_modembed_model_modembed_abstraction_DeviceAbstraction244); if (state.failed) return element;
 
                     if ( state.backtracking==0 ) {
                     				if (element == null) {
@@ -876,7 +876,7 @@ public class DeviceParser extends DeviceANTLRParserBase {
             		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[12]);
             	}
 
-            a6=(Token)match(input,17,FOLLOW_17_in_parse_hu_modembed_model_modembed_abstraction_DeviceAbstraction316); if (state.failed) return element;
+            a6=(Token)match(input,16,FOLLOW_16_in_parse_hu_modembed_model_modembed_abstraction_DeviceAbstraction316); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             		if (element == null) {
@@ -901,7 +901,7 @@ public class DeviceParser extends DeviceANTLRParserBase {
                 int alt4=2;
                 int LA4_0 = input.LA(1);
 
-                if ( ((LA4_0 >= 26 && LA4_0 <= 28)) ) {
+                if ( ((LA4_0 >= 25 && LA4_0 <= 27)) ) {
                     alt4=1;
                 }
 
@@ -916,17 +916,17 @@ public class DeviceParser extends DeviceANTLRParserBase {
             	    // Device.g:713:4: ( (a7_0= parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryType ) | (a8_0= parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryInstance ) | (a9_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationDefinition ) )
             	    int alt3=3;
             	    switch ( input.LA(1) ) {
-            	    case 27:
+            	    case 26:
             	        {
             	        alt3=1;
             	        }
             	        break;
-            	    case 26:
+            	    case 25:
             	        {
             	        alt3=2;
             	        }
             	        break;
-            	    case 28:
+            	    case 27:
             	        {
             	        alt3=3;
             	        }
@@ -1076,7 +1076,7 @@ public class DeviceParser extends DeviceANTLRParserBase {
             	    				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[19]);
             	    			}
 
-            	    a10=(Token)match(input,17,FOLLOW_17_in_parse_hu_modembed_model_modembed_abstraction_DeviceAbstraction498); if (state.failed) return element;
+            	    a10=(Token)match(input,16,FOLLOW_16_in_parse_hu_modembed_model_modembed_abstraction_DeviceAbstraction498); if (state.failed) return element;
 
             	    if ( state.backtracking==0 ) {
             	    				if (element == null) {
@@ -1134,7 +1134,7 @@ public class DeviceParser extends DeviceANTLRParserBase {
 
 
     // $ANTLR start "parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryType"
-    // Device.g:827:1: parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryType returns [hu.modembed.model.modembed.abstraction.memorymodel.MemoryType element = null] : a0= 'mtype' ( (a1= 'volatile' )? ) ( (a4= 'data' )? ) ( (a7= 'program' )? ) (a10= IDENTIFIER ) a11= '(' (a12= INT ) a13= ')' ( (a14_0= parse_hu_modembed_model_modembed_infrastructure_AttributeContainerDefinition ) )? ;
+    // Device.g:827:1: parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryType returns [hu.modembed.model.modembed.abstraction.memorymodel.MemoryType element = null] : a0= 'mtype' ( (a1= 'volatile' )? ) ( (a4= 'data' )? ) ( (a7= 'program' )? ) (a10= QUALIFIEDID ) a11= '(' (a12= INT ) a13= ')' ( (a14_0= parse_hu_modembed_model_modembed_infrastructure_AttributeContainerDefinition ) )? ;
     public final hu.modembed.model.modembed.abstraction.memorymodel.MemoryType parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryType() throws RecognitionException {
         hu.modembed.model.modembed.abstraction.memorymodel.MemoryType element =  null;
 
@@ -1156,10 +1156,10 @@ public class DeviceParser extends DeviceANTLRParserBase {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 3) ) { return element; }
 
-            // Device.g:830:2: (a0= 'mtype' ( (a1= 'volatile' )? ) ( (a4= 'data' )? ) ( (a7= 'program' )? ) (a10= IDENTIFIER ) a11= '(' (a12= INT ) a13= ')' ( (a14_0= parse_hu_modembed_model_modembed_infrastructure_AttributeContainerDefinition ) )? )
-            // Device.g:831:2: a0= 'mtype' ( (a1= 'volatile' )? ) ( (a4= 'data' )? ) ( (a7= 'program' )? ) (a10= IDENTIFIER ) a11= '(' (a12= INT ) a13= ')' ( (a14_0= parse_hu_modembed_model_modembed_infrastructure_AttributeContainerDefinition ) )?
+            // Device.g:830:2: (a0= 'mtype' ( (a1= 'volatile' )? ) ( (a4= 'data' )? ) ( (a7= 'program' )? ) (a10= QUALIFIEDID ) a11= '(' (a12= INT ) a13= ')' ( (a14_0= parse_hu_modembed_model_modembed_infrastructure_AttributeContainerDefinition ) )? )
+            // Device.g:831:2: a0= 'mtype' ( (a1= 'volatile' )? ) ( (a4= 'data' )? ) ( (a7= 'program' )? ) (a10= QUALIFIEDID ) a11= '(' (a12= INT ) a13= ')' ( (a14_0= parse_hu_modembed_model_modembed_infrastructure_AttributeContainerDefinition ) )?
             {
-            a0=(Token)match(input,27,FOLLOW_27_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryType546); if (state.failed) return element;
+            a0=(Token)match(input,26,FOLLOW_26_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryType546); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             		if (element == null) {
@@ -1201,14 +1201,14 @@ public class DeviceParser extends DeviceANTLRParserBase {
             int alt5=2;
             int LA5_0 = input.LA(1);
 
-            if ( (LA5_0==32) ) {
+            if ( (LA5_0==31) ) {
                 alt5=1;
             }
             switch (alt5) {
                 case 1 :
                     // Device.g:865:4: a1= 'volatile'
                     {
-                    a1=(Token)match(input,32,FOLLOW_32_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryType569); if (state.failed) return element;
+                    a1=(Token)match(input,31,FOLLOW_31_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryType569); if (state.failed) return element;
 
                     if ( state.backtracking==0 ) {
                     				if (element == null) {
@@ -1262,14 +1262,14 @@ public class DeviceParser extends DeviceANTLRParserBase {
             int alt6=2;
             int LA6_0 = input.LA(1);
 
-            if ( (LA6_0==22) ) {
+            if ( (LA6_0==21) ) {
                 alt6=1;
             }
             switch (alt6) {
                 case 1 :
                     // Device.g:903:4: a4= 'data'
                     {
-                    a4=(Token)match(input,22,FOLLOW_22_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryType599); if (state.failed) return element;
+                    a4=(Token)match(input,21,FOLLOW_21_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryType599); if (state.failed) return element;
 
                     if ( state.backtracking==0 ) {
                     				if (element == null) {
@@ -1322,14 +1322,14 @@ public class DeviceParser extends DeviceANTLRParserBase {
             int alt7=2;
             int LA7_0 = input.LA(1);
 
-            if ( (LA7_0==29) ) {
+            if ( (LA7_0==28) ) {
                 alt7=1;
             }
             switch (alt7) {
                 case 1 :
                     // Device.g:940:4: a7= 'program'
                     {
-                    a7=(Token)match(input,29,FOLLOW_29_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryType629); if (state.failed) return element;
+                    a7=(Token)match(input,28,FOLLOW_28_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryType629); if (state.failed) return element;
 
                     if ( state.backtracking==0 ) {
                     				if (element == null) {
@@ -1374,10 +1374,10 @@ public class DeviceParser extends DeviceANTLRParserBase {
             		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[35]);
             	}
 
-            // Device.g:974:2: (a10= IDENTIFIER )
-            // Device.g:975:3: a10= IDENTIFIER
+            // Device.g:974:2: (a10= QUALIFIEDID )
+            // Device.g:975:3: a10= QUALIFIEDID
             {
-            a10=(Token)match(input,IDENTIFIER,FOLLOW_IDENTIFIER_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryType654); if (state.failed) return element;
+            a10=(Token)match(input,QUALIFIEDID,FOLLOW_QUALIFIEDID_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryType654); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             			if (terminateParsing) {
@@ -1403,7 +1403,7 @@ public class DeviceParser extends DeviceANTLRParserBase {
             				}
             			}
             			if (a10 != null) {
-            				hu.modembed.model.textnotations.device.IDeviceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("IDENTIFIER");
+            				hu.modembed.model.textnotations.device.IDeviceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("QUALIFIEDID");
             				tokenResolver.setOptions(getOptions());
             				hu.modembed.model.textnotations.device.IDeviceTokenResolveResult result = getFreshTokenResolveResult();
             				tokenResolver.resolve(a10.getText(), element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.memorymodel.MemorymodelPackage.MEMORY_TYPE__NAME), result);
@@ -1431,7 +1431,7 @@ public class DeviceParser extends DeviceANTLRParserBase {
             		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[36]);
             	}
 
-            a11=(Token)match(input,11,FOLLOW_11_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryType675); if (state.failed) return element;
+            a11=(Token)match(input,10,FOLLOW_10_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryType675); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             		if (element == null) {
@@ -1520,7 +1520,7 @@ public class DeviceParser extends DeviceANTLRParserBase {
             		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[38]);
             	}
 
-            a13=(Token)match(input,12,FOLLOW_12_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryType714); if (state.failed) return element;
+            a13=(Token)match(input,11,FOLLOW_11_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryType714); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             		if (element == null) {
@@ -1557,7 +1557,7 @@ public class DeviceParser extends DeviceANTLRParserBase {
             int alt8=2;
             int LA8_0 = input.LA(1);
 
-            if ( (LA8_0==33) ) {
+            if ( (LA8_0==32) ) {
                 alt8=1;
             }
             switch (alt8) {
@@ -1642,7 +1642,7 @@ public class DeviceParser extends DeviceANTLRParserBase {
 
 
     // $ANTLR start "parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryInstance"
-    // Device.g:1180:1: parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryInstance returns [hu.modembed.model.modembed.abstraction.memorymodel.MemoryInstance element = null] : a0= 'minstance' (a1= IDENTIFIER ) a2= '[' (a3= INT ) a4= ',' (a5= INT ) a6= ']' a7= ':' (a8= IDENTIFIER ) (a9_0= parse_hu_modembed_model_modembed_infrastructure_AttributeValueContainer ) ;
+    // Device.g:1180:1: parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryInstance returns [hu.modembed.model.modembed.abstraction.memorymodel.MemoryInstance element = null] : a0= 'minstance' (a1= QUALIFIEDID ) a2= '[' (a3= INT ) a4= ',' (a5= INT ) a6= ']' a7= ':' (a8= QUALIFIEDID ) (a9_0= parse_hu_modembed_model_modembed_infrastructure_AttributeValueContainer ) ;
     public final hu.modembed.model.modembed.abstraction.memorymodel.MemoryInstance parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryInstance() throws RecognitionException {
         hu.modembed.model.modembed.abstraction.memorymodel.MemoryInstance element =  null;
 
@@ -1665,10 +1665,10 @@ public class DeviceParser extends DeviceANTLRParserBase {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 4) ) { return element; }
 
-            // Device.g:1183:2: (a0= 'minstance' (a1= IDENTIFIER ) a2= '[' (a3= INT ) a4= ',' (a5= INT ) a6= ']' a7= ':' (a8= IDENTIFIER ) (a9_0= parse_hu_modembed_model_modembed_infrastructure_AttributeValueContainer ) )
-            // Device.g:1184:2: a0= 'minstance' (a1= IDENTIFIER ) a2= '[' (a3= INT ) a4= ',' (a5= INT ) a6= ']' a7= ':' (a8= IDENTIFIER ) (a9_0= parse_hu_modembed_model_modembed_infrastructure_AttributeValueContainer )
+            // Device.g:1183:2: (a0= 'minstance' (a1= QUALIFIEDID ) a2= '[' (a3= INT ) a4= ',' (a5= INT ) a6= ']' a7= ':' (a8= QUALIFIEDID ) (a9_0= parse_hu_modembed_model_modembed_infrastructure_AttributeValueContainer ) )
+            // Device.g:1184:2: a0= 'minstance' (a1= QUALIFIEDID ) a2= '[' (a3= INT ) a4= ',' (a5= INT ) a6= ']' a7= ':' (a8= QUALIFIEDID ) (a9_0= parse_hu_modembed_model_modembed_infrastructure_AttributeValueContainer )
             {
-            a0=(Token)match(input,26,FOLLOW_26_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryInstance778); if (state.failed) return element;
+            a0=(Token)match(input,25,FOLLOW_25_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryInstance778); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             		if (element == null) {
@@ -1685,10 +1685,10 @@ public class DeviceParser extends DeviceANTLRParserBase {
             		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[42]);
             	}
 
-            // Device.g:1198:2: (a1= IDENTIFIER )
-            // Device.g:1199:3: a1= IDENTIFIER
+            // Device.g:1198:2: (a1= QUALIFIEDID )
+            // Device.g:1199:3: a1= QUALIFIEDID
             {
-            a1=(Token)match(input,IDENTIFIER,FOLLOW_IDENTIFIER_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryInstance796); if (state.failed) return element;
+            a1=(Token)match(input,QUALIFIEDID,FOLLOW_QUALIFIEDID_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryInstance796); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             			if (terminateParsing) {
@@ -1699,7 +1699,7 @@ public class DeviceParser extends DeviceANTLRParserBase {
             				startIncompleteElement(element);
             			}
             			if (a1 != null) {
-            				hu.modembed.model.textnotations.device.IDeviceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("IDENTIFIER");
+            				hu.modembed.model.textnotations.device.IDeviceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("QUALIFIEDID");
             				tokenResolver.setOptions(getOptions());
             				hu.modembed.model.textnotations.device.IDeviceTokenResolveResult result = getFreshTokenResolveResult();
             				tokenResolver.resolve(a1.getText(), element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.memorymodel.MemorymodelPackage.MEMORY_INSTANCE__NAME), result);
@@ -1727,7 +1727,7 @@ public class DeviceParser extends DeviceANTLRParserBase {
             		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[43]);
             	}
 
-            a2=(Token)match(input,20,FOLLOW_20_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryInstance817); if (state.failed) return element;
+            a2=(Token)match(input,19,FOLLOW_19_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryInstance817); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             		if (element == null) {
@@ -1786,7 +1786,7 @@ public class DeviceParser extends DeviceANTLRParserBase {
             		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[45]);
             	}
 
-            a4=(Token)match(input,14,FOLLOW_14_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryInstance856); if (state.failed) return element;
+            a4=(Token)match(input,13,FOLLOW_13_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryInstance856); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             		if (element == null) {
@@ -1845,7 +1845,7 @@ public class DeviceParser extends DeviceANTLRParserBase {
             		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[47]);
             	}
 
-            a6=(Token)match(input,21,FOLLOW_21_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryInstance895); if (state.failed) return element;
+            a6=(Token)match(input,20,FOLLOW_20_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryInstance895); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             		if (element == null) {
@@ -1862,7 +1862,7 @@ public class DeviceParser extends DeviceANTLRParserBase {
             		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[48]);
             	}
 
-            a7=(Token)match(input,16,FOLLOW_16_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryInstance909); if (state.failed) return element;
+            a7=(Token)match(input,15,FOLLOW_15_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryInstance909); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             		if (element == null) {
@@ -1879,10 +1879,10 @@ public class DeviceParser extends DeviceANTLRParserBase {
             		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[49]);
             	}
 
-            // Device.g:1362:2: (a8= IDENTIFIER )
-            // Device.g:1363:3: a8= IDENTIFIER
+            // Device.g:1362:2: (a8= QUALIFIEDID )
+            // Device.g:1363:3: a8= QUALIFIEDID
             {
-            a8=(Token)match(input,IDENTIFIER,FOLLOW_IDENTIFIER_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryInstance927); if (state.failed) return element;
+            a8=(Token)match(input,QUALIFIEDID,FOLLOW_QUALIFIEDID_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryInstance927); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             			if (terminateParsing) {
@@ -1893,7 +1893,7 @@ public class DeviceParser extends DeviceANTLRParserBase {
             				startIncompleteElement(element);
             			}
             			if (a8 != null) {
-            				hu.modembed.model.textnotations.device.IDeviceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("IDENTIFIER");
+            				hu.modembed.model.textnotations.device.IDeviceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("QUALIFIEDID");
             				tokenResolver.setOptions(getOptions());
             				hu.modembed.model.textnotations.device.IDeviceTokenResolveResult result = getFreshTokenResolveResult();
             				tokenResolver.resolve(a8.getText(), element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.memorymodel.MemorymodelPackage.MEMORY_INSTANCE__TYPE), result);
@@ -2001,7 +2001,7 @@ public class DeviceParser extends DeviceANTLRParserBase {
             // Device.g:1433:2: (a0= '{' ( (a1_0= parse_hu_modembed_model_modembed_infrastructure_AttributeDefinition ) )* a2= '}' )
             // Device.g:1434:2: a0= '{' ( (a1_0= parse_hu_modembed_model_modembed_infrastructure_AttributeDefinition ) )* a2= '}'
             {
-            a0=(Token)match(input,33,FOLLOW_33_in_parse_hu_modembed_model_modembed_infrastructure_AttributeContainerDefinition985); if (state.failed) return element;
+            a0=(Token)match(input,32,FOLLOW_32_in_parse_hu_modembed_model_modembed_infrastructure_AttributeContainerDefinition985); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             		if (element == null) {
@@ -2025,7 +2025,7 @@ public class DeviceParser extends DeviceANTLRParserBase {
                 int alt9=2;
                 int LA9_0 = input.LA(1);
 
-                if ( (LA9_0==IDENTIFIER) ) {
+                if ( (LA9_0==QUALIFIEDID) ) {
                     alt9=1;
                 }
 
@@ -2118,7 +2118,7 @@ public class DeviceParser extends DeviceANTLRParserBase {
 
 
     // $ANTLR start "parse_hu_modembed_model_modembed_infrastructure_AttributeDefinition"
-    // Device.g:1494:1: parse_hu_modembed_model_modembed_infrastructure_AttributeDefinition returns [hu.modembed.model.modembed.infrastructure.AttributeDefinition element = null] : (a0= IDENTIFIER ) a1= ';' ;
+    // Device.g:1494:1: parse_hu_modembed_model_modembed_infrastructure_AttributeDefinition returns [hu.modembed.model.modembed.infrastructure.AttributeDefinition element = null] : (a0= QUALIFIEDID ) a1= ';' ;
     public final hu.modembed.model.modembed.infrastructure.AttributeDefinition parse_hu_modembed_model_modembed_infrastructure_AttributeDefinition() throws RecognitionException {
         hu.modembed.model.modembed.infrastructure.AttributeDefinition element =  null;
 
@@ -2132,13 +2132,13 @@ public class DeviceParser extends DeviceANTLRParserBase {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 6) ) { return element; }
 
-            // Device.g:1497:2: ( (a0= IDENTIFIER ) a1= ';' )
-            // Device.g:1498:2: (a0= IDENTIFIER ) a1= ';'
+            // Device.g:1497:2: ( (a0= QUALIFIEDID ) a1= ';' )
+            // Device.g:1498:2: (a0= QUALIFIEDID ) a1= ';'
             {
-            // Device.g:1498:2: (a0= IDENTIFIER )
-            // Device.g:1499:3: a0= IDENTIFIER
+            // Device.g:1498:2: (a0= QUALIFIEDID )
+            // Device.g:1499:3: a0= QUALIFIEDID
             {
-            a0=(Token)match(input,IDENTIFIER,FOLLOW_IDENTIFIER_in_parse_hu_modembed_model_modembed_infrastructure_AttributeDefinition1067); if (state.failed) return element;
+            a0=(Token)match(input,QUALIFIEDID,FOLLOW_QUALIFIEDID_in_parse_hu_modembed_model_modembed_infrastructure_AttributeDefinition1067); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             			if (terminateParsing) {
@@ -2149,7 +2149,7 @@ public class DeviceParser extends DeviceANTLRParserBase {
             				startIncompleteElement(element);
             			}
             			if (a0 != null) {
-            				hu.modembed.model.textnotations.device.IDeviceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("IDENTIFIER");
+            				hu.modembed.model.textnotations.device.IDeviceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("QUALIFIEDID");
             				tokenResolver.setOptions(getOptions());
             				hu.modembed.model.textnotations.device.IDeviceTokenResolveResult result = getFreshTokenResolveResult();
             				tokenResolver.resolve(a0.getText(), element.eClass().getEStructuralFeature(hu.modembed.model.modembed.infrastructure.InfrastructurePackage.ATTRIBUTE_DEFINITION__NAME), result);
@@ -2177,7 +2177,7 @@ public class DeviceParser extends DeviceANTLRParserBase {
             		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[57]);
             	}
 
-            a1=(Token)match(input,17,FOLLOW_17_in_parse_hu_modembed_model_modembed_infrastructure_AttributeDefinition1088); if (state.failed) return element;
+            a1=(Token)match(input,16,FOLLOW_16_in_parse_hu_modembed_model_modembed_infrastructure_AttributeDefinition1088); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             		if (element == null) {
@@ -2234,7 +2234,7 @@ public class DeviceParser extends DeviceANTLRParserBase {
             // Device.g:1554:2: (a0= '{' ( (a1_0= parse_hu_modembed_model_modembed_infrastructure_AttributeValue ) )* a2= '}' )
             // Device.g:1555:2: a0= '{' ( (a1_0= parse_hu_modembed_model_modembed_infrastructure_AttributeValue ) )* a2= '}'
             {
-            a0=(Token)match(input,33,FOLLOW_33_in_parse_hu_modembed_model_modembed_infrastructure_AttributeValueContainer1117); if (state.failed) return element;
+            a0=(Token)match(input,32,FOLLOW_32_in_parse_hu_modembed_model_modembed_infrastructure_AttributeValueContainer1117); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             		if (element == null) {
@@ -2258,7 +2258,7 @@ public class DeviceParser extends DeviceANTLRParserBase {
                 int alt10=2;
                 int LA10_0 = input.LA(1);
 
-                if ( (LA10_0==IDENTIFIER) ) {
+                if ( (LA10_0==QUALIFIEDID) ) {
                     alt10=1;
                 }
 
@@ -2351,7 +2351,7 @@ public class DeviceParser extends DeviceANTLRParserBase {
 
 
     // $ANTLR start "parse_hu_modembed_model_modembed_infrastructure_AttributeValue"
-    // Device.g:1615:1: parse_hu_modembed_model_modembed_infrastructure_AttributeValue returns [hu.modembed.model.modembed.infrastructure.AttributeValue element = null] : (a0= IDENTIFIER ) a1= '=' (a2= INT ) a3= ';' ;
+    // Device.g:1615:1: parse_hu_modembed_model_modembed_infrastructure_AttributeValue returns [hu.modembed.model.modembed.infrastructure.AttributeValue element = null] : (a0= QUALIFIEDID ) a1= '=' (a2= INT ) a3= ';' ;
     public final hu.modembed.model.modembed.infrastructure.AttributeValue parse_hu_modembed_model_modembed_infrastructure_AttributeValue() throws RecognitionException {
         hu.modembed.model.modembed.infrastructure.AttributeValue element =  null;
 
@@ -2367,13 +2367,13 @@ public class DeviceParser extends DeviceANTLRParserBase {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 8) ) { return element; }
 
-            // Device.g:1618:2: ( (a0= IDENTIFIER ) a1= '=' (a2= INT ) a3= ';' )
-            // Device.g:1619:2: (a0= IDENTIFIER ) a1= '=' (a2= INT ) a3= ';'
+            // Device.g:1618:2: ( (a0= QUALIFIEDID ) a1= '=' (a2= INT ) a3= ';' )
+            // Device.g:1619:2: (a0= QUALIFIEDID ) a1= '=' (a2= INT ) a3= ';'
             {
-            // Device.g:1619:2: (a0= IDENTIFIER )
-            // Device.g:1620:3: a0= IDENTIFIER
+            // Device.g:1619:2: (a0= QUALIFIEDID )
+            // Device.g:1620:3: a0= QUALIFIEDID
             {
-            a0=(Token)match(input,IDENTIFIER,FOLLOW_IDENTIFIER_in_parse_hu_modembed_model_modembed_infrastructure_AttributeValue1199); if (state.failed) return element;
+            a0=(Token)match(input,QUALIFIEDID,FOLLOW_QUALIFIEDID_in_parse_hu_modembed_model_modembed_infrastructure_AttributeValue1199); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             			if (terminateParsing) {
@@ -2384,7 +2384,7 @@ public class DeviceParser extends DeviceANTLRParserBase {
             				startIncompleteElement(element);
             			}
             			if (a0 != null) {
-            				hu.modembed.model.textnotations.device.IDeviceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("IDENTIFIER");
+            				hu.modembed.model.textnotations.device.IDeviceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("QUALIFIEDID");
             				tokenResolver.setOptions(getOptions());
             				hu.modembed.model.textnotations.device.IDeviceTokenResolveResult result = getFreshTokenResolveResult();
             				tokenResolver.resolve(a0.getText(), element.eClass().getEStructuralFeature(hu.modembed.model.modembed.infrastructure.InfrastructurePackage.ATTRIBUTE_VALUE__DEFINITION), result);
@@ -2416,7 +2416,7 @@ public class DeviceParser extends DeviceANTLRParserBase {
             		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[65]);
             	}
 
-            a1=(Token)match(input,18,FOLLOW_18_in_parse_hu_modembed_model_modembed_infrastructure_AttributeValue1220); if (state.failed) return element;
+            a1=(Token)match(input,17,FOLLOW_17_in_parse_hu_modembed_model_modembed_infrastructure_AttributeValue1220); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             		if (element == null) {
@@ -2475,7 +2475,7 @@ public class DeviceParser extends DeviceANTLRParserBase {
             		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[67]);
             	}
 
-            a3=(Token)match(input,17,FOLLOW_17_in_parse_hu_modembed_model_modembed_infrastructure_AttributeValue1259); if (state.failed) return element;
+            a3=(Token)match(input,16,FOLLOW_16_in_parse_hu_modembed_model_modembed_infrastructure_AttributeValue1259); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             		if (element == null) {
@@ -2513,7 +2513,7 @@ public class DeviceParser extends DeviceANTLRParserBase {
 
 
     // $ANTLR start "parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationDefinition"
-    // Device.g:1726:1: parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationDefinition returns [hu.modembed.model.modembed.abstraction.behavior.platform.OperationDefinition element = null] : a0= 'operation' (a1= IDENTIFIER ) a2= '(' ( ( (a3_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument ) ( (a4= ',' (a5_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument ) ) )* ) )? a6= ')' a7= '{' ( (a8_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationStep ) )* a9= '}' ;
+    // Device.g:1726:1: parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationDefinition returns [hu.modembed.model.modembed.abstraction.behavior.platform.OperationDefinition element = null] : a0= 'operation' (a1= QUALIFIEDID ) a2= '(' ( ( (a3_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument ) ( (a4= ',' (a5_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument ) ) )* ) )? a6= ')' a7= '{' ( (a8_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationStep ) )* a9= '}' ;
     public final hu.modembed.model.modembed.abstraction.behavior.platform.OperationDefinition parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationDefinition() throws RecognitionException {
         hu.modembed.model.modembed.abstraction.behavior.platform.OperationDefinition element =  null;
 
@@ -2538,10 +2538,10 @@ public class DeviceParser extends DeviceANTLRParserBase {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 9) ) { return element; }
 
-            // Device.g:1729:2: (a0= 'operation' (a1= IDENTIFIER ) a2= '(' ( ( (a3_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument ) ( (a4= ',' (a5_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument ) ) )* ) )? a6= ')' a7= '{' ( (a8_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationStep ) )* a9= '}' )
-            // Device.g:1730:2: a0= 'operation' (a1= IDENTIFIER ) a2= '(' ( ( (a3_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument ) ( (a4= ',' (a5_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument ) ) )* ) )? a6= ')' a7= '{' ( (a8_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationStep ) )* a9= '}'
+            // Device.g:1729:2: (a0= 'operation' (a1= QUALIFIEDID ) a2= '(' ( ( (a3_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument ) ( (a4= ',' (a5_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument ) ) )* ) )? a6= ')' a7= '{' ( (a8_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationStep ) )* a9= '}' )
+            // Device.g:1730:2: a0= 'operation' (a1= QUALIFIEDID ) a2= '(' ( ( (a3_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument ) ( (a4= ',' (a5_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument ) ) )* ) )? a6= ')' a7= '{' ( (a8_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationStep ) )* a9= '}'
             {
-            a0=(Token)match(input,28,FOLLOW_28_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationDefinition1288); if (state.failed) return element;
+            a0=(Token)match(input,27,FOLLOW_27_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationDefinition1288); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             		if (element == null) {
@@ -2558,10 +2558,10 @@ public class DeviceParser extends DeviceANTLRParserBase {
             		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[70]);
             	}
 
-            // Device.g:1744:2: (a1= IDENTIFIER )
-            // Device.g:1745:3: a1= IDENTIFIER
+            // Device.g:1744:2: (a1= QUALIFIEDID )
+            // Device.g:1745:3: a1= QUALIFIEDID
             {
-            a1=(Token)match(input,IDENTIFIER,FOLLOW_IDENTIFIER_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationDefinition1306); if (state.failed) return element;
+            a1=(Token)match(input,QUALIFIEDID,FOLLOW_QUALIFIEDID_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationDefinition1306); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             			if (terminateParsing) {
@@ -2572,7 +2572,7 @@ public class DeviceParser extends DeviceANTLRParserBase {
             				startIncompleteElement(element);
             			}
             			if (a1 != null) {
-            				hu.modembed.model.textnotations.device.IDeviceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("IDENTIFIER");
+            				hu.modembed.model.textnotations.device.IDeviceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("QUALIFIEDID");
             				tokenResolver.setOptions(getOptions());
             				hu.modembed.model.textnotations.device.IDeviceTokenResolveResult result = getFreshTokenResolveResult();
             				tokenResolver.resolve(a1.getText(), element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.OPERATION_DEFINITION__OPERATION), result);
@@ -2600,7 +2600,7 @@ public class DeviceParser extends DeviceANTLRParserBase {
             		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[71]);
             	}
 
-            a2=(Token)match(input,11,FOLLOW_11_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationDefinition1327); if (state.failed) return element;
+            a2=(Token)match(input,10,FOLLOW_10_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationDefinition1327); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             		if (element == null) {
@@ -2615,26 +2615,25 @@ public class DeviceParser extends DeviceANTLRParserBase {
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
             		addExpectedElement(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.eINSTANCE.getOperationDefinition(), hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[72]);
-            		addExpectedElement(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.eINSTANCE.getOperationDefinition(), hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[73]);
-            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[74]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[73]);
             	}
 
-            // Device.g:1796:2: ( ( (a3_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument ) ( (a4= ',' (a5_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument ) ) )* ) )?
+            // Device.g:1795:2: ( ( (a3_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument ) ( (a4= ',' (a5_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument ) ) )* ) )?
             int alt12=2;
             int LA12_0 = input.LA(1);
 
-            if ( (LA12_0==QUALIFIEDID||LA12_0==31) ) {
+            if ( (LA12_0==QUALIFIEDID) ) {
                 alt12=1;
             }
             switch (alt12) {
                 case 1 :
-                    // Device.g:1797:3: ( (a3_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument ) ( (a4= ',' (a5_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument ) ) )* )
+                    // Device.g:1796:3: ( (a3_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument ) ( (a4= ',' (a5_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument ) ) )* )
                     {
-                    // Device.g:1797:3: ( (a3_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument ) ( (a4= ',' (a5_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument ) ) )* )
-                    // Device.g:1798:4: (a3_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument ) ( (a4= ',' (a5_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument ) ) )*
+                    // Device.g:1796:3: ( (a3_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument ) ( (a4= ',' (a5_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument ) ) )* )
+                    // Device.g:1797:4: (a3_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument ) ( (a4= ',' (a5_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument ) ) )*
                     {
-                    // Device.g:1798:4: (a3_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument )
-                    // Device.g:1799:5: a3_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument
+                    // Device.g:1797:4: (a3_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument )
+                    // Device.g:1798:5: a3_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument
                     {
                     pushFollow(FOLLOW_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationDefinition1356);
                     a3_0=parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument();
@@ -2667,29 +2666,29 @@ public class DeviceParser extends DeviceANTLRParserBase {
 
                     if ( state.backtracking==0 ) {
                     				// expected elements (follow set)
+                    				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[74]);
                     				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[75]);
-                    				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[76]);
                     			}
 
-                    // Device.g:1825:4: ( (a4= ',' (a5_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument ) ) )*
+                    // Device.g:1824:4: ( (a4= ',' (a5_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument ) ) )*
                     loop11:
                     do {
                         int alt11=2;
                         int LA11_0 = input.LA(1);
 
-                        if ( (LA11_0==14) ) {
+                        if ( (LA11_0==13) ) {
                             alt11=1;
                         }
 
 
                         switch (alt11) {
                     	case 1 :
-                    	    // Device.g:1826:5: (a4= ',' (a5_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument ) )
+                    	    // Device.g:1825:5: (a4= ',' (a5_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument ) )
                     	    {
-                    	    // Device.g:1826:5: (a4= ',' (a5_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument ) )
-                    	    // Device.g:1827:6: a4= ',' (a5_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument )
+                    	    // Device.g:1825:5: (a4= ',' (a5_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument ) )
+                    	    // Device.g:1826:6: a4= ',' (a5_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument )
                     	    {
-                    	    a4=(Token)match(input,14,FOLLOW_14_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationDefinition1397); if (state.failed) return element;
+                    	    a4=(Token)match(input,13,FOLLOW_13_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationDefinition1397); if (state.failed) return element;
 
                     	    if ( state.backtracking==0 ) {
                     	    						if (element == null) {
@@ -2703,12 +2702,11 @@ public class DeviceParser extends DeviceANTLRParserBase {
 
                     	    if ( state.backtracking==0 ) {
                     	    						// expected elements (follow set)
-                    	    						addExpectedElement(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.eINSTANCE.getOperationDefinition(), hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[77]);
-                    	    						addExpectedElement(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.eINSTANCE.getOperationDefinition(), hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[78]);
+                    	    						addExpectedElement(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.eINSTANCE.getOperationDefinition(), hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[76]);
                     	    					}
 
-                    	    // Device.g:1842:6: (a5_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument )
-                    	    // Device.g:1843:7: a5_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument
+                    	    // Device.g:1840:6: (a5_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument )
+                    	    // Device.g:1841:7: a5_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument
                     	    {
                     	    pushFollow(FOLLOW_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationDefinition1431);
                     	    a5_0=parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument();
@@ -2741,8 +2739,8 @@ public class DeviceParser extends DeviceANTLRParserBase {
 
                     	    if ( state.backtracking==0 ) {
                     	    						// expected elements (follow set)
-                    	    						addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[79]);
-                    	    						addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[80]);
+                    	    						addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[77]);
+                    	    						addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[78]);
                     	    					}
 
                     	    }
@@ -2759,8 +2757,8 @@ public class DeviceParser extends DeviceANTLRParserBase {
 
                     if ( state.backtracking==0 ) {
                     				// expected elements (follow set)
-                    				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[81]);
-                    				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[82]);
+                    				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[79]);
+                    				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[80]);
                     			}
 
                     }
@@ -2774,10 +2772,10 @@ public class DeviceParser extends DeviceANTLRParserBase {
 
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
-            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[83]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[81]);
             	}
 
-            a6=(Token)match(input,12,FOLLOW_12_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationDefinition1505); if (state.failed) return element;
+            a6=(Token)match(input,11,FOLLOW_11_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationDefinition1505); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             		if (element == null) {
@@ -2791,10 +2789,10 @@ public class DeviceParser extends DeviceANTLRParserBase {
 
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
-            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[84]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[82]);
             	}
 
-            a7=(Token)match(input,33,FOLLOW_33_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationDefinition1519); if (state.failed) return element;
+            a7=(Token)match(input,32,FOLLOW_32_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationDefinition1519); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             		if (element == null) {
@@ -2808,27 +2806,27 @@ public class DeviceParser extends DeviceANTLRParserBase {
 
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
-            		addExpectedElement(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.eINSTANCE.getOperationDefinition(), hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[85]);
-            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[86]);
+            		addExpectedElement(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.eINSTANCE.getOperationDefinition(), hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[83]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[84]);
             	}
 
-            // Device.g:1913:2: ( (a8_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationStep ) )*
+            // Device.g:1911:2: ( (a8_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationStep ) )*
             loop13:
             do {
                 int alt13=2;
                 int LA13_0 = input.LA(1);
 
-                if ( (LA13_0==IDENTIFIER) ) {
+                if ( (LA13_0==QUALIFIEDID) ) {
                     alt13=1;
                 }
 
 
                 switch (alt13) {
             	case 1 :
-            	    // Device.g:1914:3: (a8_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationStep )
+            	    // Device.g:1912:3: (a8_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationStep )
             	    {
-            	    // Device.g:1914:3: (a8_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationStep )
-            	    // Device.g:1915:4: a8_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationStep
+            	    // Device.g:1912:3: (a8_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationStep )
+            	    // Device.g:1913:4: a8_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationStep
             	    {
             	    pushFollow(FOLLOW_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationStep_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationDefinition1542);
             	    a8_0=parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationStep();
@@ -2870,8 +2868,8 @@ public class DeviceParser extends DeviceANTLRParserBase {
 
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
-            		addExpectedElement(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.eINSTANCE.getOperationDefinition(), hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[87]);
-            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[88]);
+            		addExpectedElement(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.eINSTANCE.getOperationDefinition(), hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[85]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[86]);
             	}
 
             a9=(Token)match(input,34,FOLLOW_34_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationDefinition1568); if (state.failed) return element;
@@ -2888,7 +2886,7 @@ public class DeviceParser extends DeviceANTLRParserBase {
 
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
-            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[89]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[87]);
             	}
 
             }
@@ -2911,18 +2909,19 @@ public class DeviceParser extends DeviceANTLRParserBase {
 
 
     // $ANTLR start "parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument"
-    // Device.g:1958:1: parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument returns [hu.modembed.model.modembed.abstraction.behavior.platform.OperationArgument element = null] : (a0_0= parse_hu_modembed_model_modembed_abstraction_types_TypeDefinition ) a1= '@' (a2= IDENTIFIER ) a3= ':' (a4= INT ) (a5= IDENTIFIER ) ;
+    // Device.g:1956:1: parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument returns [hu.modembed.model.modembed.abstraction.behavior.platform.OperationArgument element = null] : (a0= QUALIFIEDID ) a1= ':' (a2_0= parse_hu_modembed_model_modembed_abstraction_types_TypeDefinition ) a3= '|' (a4= INT ) ( (a5= '@' (a6= QUALIFIEDID ) ) )? ;
     public final hu.modembed.model.modembed.abstraction.behavior.platform.OperationArgument parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument() throws RecognitionException {
         hu.modembed.model.modembed.abstraction.behavior.platform.OperationArgument element =  null;
 
         int parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument_StartIndex = input.index();
 
+        Token a0=null;
         Token a1=null;
-        Token a2=null;
         Token a3=null;
         Token a4=null;
         Token a5=null;
-        hu.modembed.model.modembed.abstraction.types.TypeDefinition a0_0 =null;
+        Token a6=null;
+        hu.modembed.model.modembed.abstraction.types.TypeDefinition a2_0 =null;
 
 
 
@@ -2930,17 +2929,13 @@ public class DeviceParser extends DeviceANTLRParserBase {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 10) ) { return element; }
 
-            // Device.g:1961:2: ( (a0_0= parse_hu_modembed_model_modembed_abstraction_types_TypeDefinition ) a1= '@' (a2= IDENTIFIER ) a3= ':' (a4= INT ) (a5= IDENTIFIER ) )
-            // Device.g:1962:2: (a0_0= parse_hu_modembed_model_modembed_abstraction_types_TypeDefinition ) a1= '@' (a2= IDENTIFIER ) a3= ':' (a4= INT ) (a5= IDENTIFIER )
+            // Device.g:1959:2: ( (a0= QUALIFIEDID ) a1= ':' (a2_0= parse_hu_modembed_model_modembed_abstraction_types_TypeDefinition ) a3= '|' (a4= INT ) ( (a5= '@' (a6= QUALIFIEDID ) ) )? )
+            // Device.g:1960:2: (a0= QUALIFIEDID ) a1= ':' (a2_0= parse_hu_modembed_model_modembed_abstraction_types_TypeDefinition ) a3= '|' (a4= INT ) ( (a5= '@' (a6= QUALIFIEDID ) ) )?
             {
-            // Device.g:1962:2: (a0_0= parse_hu_modembed_model_modembed_abstraction_types_TypeDefinition )
-            // Device.g:1963:3: a0_0= parse_hu_modembed_model_modembed_abstraction_types_TypeDefinition
+            // Device.g:1960:2: (a0= QUALIFIEDID )
+            // Device.g:1961:3: a0= QUALIFIEDID
             {
-            pushFollow(FOLLOW_parse_hu_modembed_model_modembed_abstraction_types_TypeDefinition_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument1601);
-            a0_0=parse_hu_modembed_model_modembed_abstraction_types_TypeDefinition();
-
-            state._fsp--;
-            if (state.failed) return element;
+            a0=(Token)match(input,QUALIFIEDID,FOLLOW_QUALIFIEDID_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument1601); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             			if (terminateParsing) {
@@ -2950,15 +2945,24 @@ public class DeviceParser extends DeviceANTLRParserBase {
             				element = hu.modembed.model.modembed.abstraction.behavior.platform.PlatformFactory.eINSTANCE.createOperationArgument();
             				startIncompleteElement(element);
             			}
-            			if (a0_0 != null) {
-            				if (a0_0 != null) {
-            					Object value = a0_0;
-            					element.eSet(element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.OPERATION_ARGUMENT__TYPE), value);
-            					completedElement(value, true);
+            			if (a0 != null) {
+            				hu.modembed.model.textnotations.device.IDeviceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("QUALIFIEDID");
+            				tokenResolver.setOptions(getOptions());
+            				hu.modembed.model.textnotations.device.IDeviceTokenResolveResult result = getFreshTokenResolveResult();
+            				tokenResolver.resolve(a0.getText(), element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.OPERATION_ARGUMENT__NAME), result);
+            				Object resolvedObject = result.getResolvedToken();
+            				if (resolvedObject == null) {
+            					addErrorToResource(result.getErrorMessage(), ((org.antlr.runtime3_4_0.CommonToken) a0).getLine(), ((org.antlr.runtime3_4_0.CommonToken) a0).getCharPositionInLine(), ((org.antlr.runtime3_4_0.CommonToken) a0).getStartIndex(), ((org.antlr.runtime3_4_0.CommonToken) a0).getStopIndex());
+            				}
+            				java.lang.String resolved = (java.lang.String) resolvedObject;
+            				if (resolved != null) {
+            					Object value = resolved;
+            					element.eSet(element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.OPERATION_ARGUMENT__NAME), value);
+            					completedElement(value, false);
             				}
             				collectHiddenTokens(element);
-            				retrieveLayoutInformation(element, hu.modembed.model.textnotations.device.grammar.DeviceGrammarInformationProvider.DEVICE_8_0_0_0, a0_0, true);
-            				copyLocalizationInfos(a0_0, element);
+            				retrieveLayoutInformation(element, hu.modembed.model.textnotations.device.grammar.DeviceGrammarInformationProvider.DEVICE_8_0_0_0, resolved, true);
+            				copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken) a0, element);
             			}
             		}
 
@@ -2967,10 +2971,10 @@ public class DeviceParser extends DeviceANTLRParserBase {
 
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
-            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[90]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[88]);
             	}
 
-            a1=(Token)match(input,19,FOLLOW_19_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument1619); if (state.failed) return element;
+            a1=(Token)match(input,15,FOLLOW_15_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument1622); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             		if (element == null) {
@@ -2984,13 +2988,18 @@ public class DeviceParser extends DeviceANTLRParserBase {
 
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
-            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[91]);
+            		addExpectedElement(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.eINSTANCE.getOperationArgument(), hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[89]);
+            		addExpectedElement(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.eINSTANCE.getOperationArgument(), hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[90]);
             	}
 
-            // Device.g:2002:2: (a2= IDENTIFIER )
-            // Device.g:2003:3: a2= IDENTIFIER
+            // Device.g:2011:2: (a2_0= parse_hu_modembed_model_modembed_abstraction_types_TypeDefinition )
+            // Device.g:2012:3: a2_0= parse_hu_modembed_model_modembed_abstraction_types_TypeDefinition
             {
-            a2=(Token)match(input,IDENTIFIER,FOLLOW_IDENTIFIER_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument1637); if (state.failed) return element;
+            pushFollow(FOLLOW_parse_hu_modembed_model_modembed_abstraction_types_TypeDefinition_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument1640);
+            a2_0=parse_hu_modembed_model_modembed_abstraction_types_TypeDefinition();
+
+            state._fsp--;
+            if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             			if (terminateParsing) {
@@ -3000,28 +3009,15 @@ public class DeviceParser extends DeviceANTLRParserBase {
             				element = hu.modembed.model.modembed.abstraction.behavior.platform.PlatformFactory.eINSTANCE.createOperationArgument();
             				startIncompleteElement(element);
             			}
-            			if (a2 != null) {
-            				hu.modembed.model.textnotations.device.IDeviceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("IDENTIFIER");
-            				tokenResolver.setOptions(getOptions());
-            				hu.modembed.model.textnotations.device.IDeviceTokenResolveResult result = getFreshTokenResolveResult();
-            				tokenResolver.resolve(a2.getText(), element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.OPERATION_ARGUMENT__MEMTYPE), result);
-            				Object resolvedObject = result.getResolvedToken();
-            				if (resolvedObject == null) {
-            					addErrorToResource(result.getErrorMessage(), ((org.antlr.runtime3_4_0.CommonToken) a2).getLine(), ((org.antlr.runtime3_4_0.CommonToken) a2).getCharPositionInLine(), ((org.antlr.runtime3_4_0.CommonToken) a2).getStartIndex(), ((org.antlr.runtime3_4_0.CommonToken) a2).getStopIndex());
-            				}
-            				String resolved = (String) resolvedObject;
-            				hu.modembed.model.modembed.abstraction.memorymodel.MemoryType proxy = hu.modembed.model.modembed.abstraction.memorymodel.MemorymodelFactory.eINSTANCE.createMemoryType();
-            				collectHiddenTokens(element);
-            				registerContextDependentProxy(new hu.modembed.model.textnotations.device.mopp.DeviceContextDependentURIFragmentFactory<hu.modembed.model.modembed.abstraction.behavior.platform.OperationArgument, hu.modembed.model.modembed.abstraction.memorymodel.MemoryType>(getReferenceResolverSwitch() == null ? null : getReferenceResolverSwitch().getOperationArgumentMemtypeReferenceResolver()), element, (org.eclipse.emf.ecore.EReference) element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.OPERATION_ARGUMENT__MEMTYPE), resolved, proxy);
-            				if (proxy != null) {
-            					Object value = proxy;
-            					element.eSet(element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.OPERATION_ARGUMENT__MEMTYPE), value);
-            					completedElement(value, false);
+            			if (a2_0 != null) {
+            				if (a2_0 != null) {
+            					Object value = a2_0;
+            					element.eSet(element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.OPERATION_ARGUMENT__TYPE), value);
+            					completedElement(value, true);
             				}
             				collectHiddenTokens(element);
-            				retrieveLayoutInformation(element, hu.modembed.model.textnotations.device.grammar.DeviceGrammarInformationProvider.DEVICE_8_0_0_2, proxy, true);
-            				copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken) a2, element);
-            				copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken) a2, proxy);
+            				retrieveLayoutInformation(element, hu.modembed.model.textnotations.device.grammar.DeviceGrammarInformationProvider.DEVICE_8_0_0_2, a2_0, true);
+            				copyLocalizationInfos(a2_0, element);
             			}
             		}
 
@@ -3030,10 +3026,10 @@ public class DeviceParser extends DeviceANTLRParserBase {
 
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
-            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[92]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[91]);
             	}
 
-            a3=(Token)match(input,16,FOLLOW_16_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument1658); if (state.failed) return element;
+            a3=(Token)match(input,33,FOLLOW_33_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument1658); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             		if (element == null) {
@@ -3047,11 +3043,11 @@ public class DeviceParser extends DeviceANTLRParserBase {
 
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
-            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[93]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[92]);
             	}
 
-            // Device.g:2056:2: (a4= INT )
-            // Device.g:2057:3: a4= INT
+            // Device.g:2051:2: (a4= INT )
+            // Device.g:2052:3: a4= INT
             {
             a4=(Token)match(input,INT,FOLLOW_INT_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument1676); if (state.failed) return element;
 
@@ -3089,50 +3085,102 @@ public class DeviceParser extends DeviceANTLRParserBase {
 
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
+            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[93]);
             		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[94]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[95]);
             	}
 
-            // Device.g:2092:2: (a5= IDENTIFIER )
-            // Device.g:2093:3: a5= IDENTIFIER
-            {
-            a5=(Token)match(input,IDENTIFIER,FOLLOW_IDENTIFIER_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument1701); if (state.failed) return element;
+            // Device.g:2089:2: ( (a5= '@' (a6= QUALIFIEDID ) ) )?
+            int alt14=2;
+            int LA14_0 = input.LA(1);
 
-            if ( state.backtracking==0 ) {
-            			if (terminateParsing) {
-            				throw new hu.modembed.model.textnotations.device.mopp.DeviceTerminateParsingException();
-            			}
-            			if (element == null) {
-            				element = hu.modembed.model.modembed.abstraction.behavior.platform.PlatformFactory.eINSTANCE.createOperationArgument();
-            				startIncompleteElement(element);
-            			}
-            			if (a5 != null) {
-            				hu.modembed.model.textnotations.device.IDeviceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("IDENTIFIER");
-            				tokenResolver.setOptions(getOptions());
-            				hu.modembed.model.textnotations.device.IDeviceTokenResolveResult result = getFreshTokenResolveResult();
-            				tokenResolver.resolve(a5.getText(), element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.OPERATION_ARGUMENT__NAME), result);
-            				Object resolvedObject = result.getResolvedToken();
-            				if (resolvedObject == null) {
-            					addErrorToResource(result.getErrorMessage(), ((org.antlr.runtime3_4_0.CommonToken) a5).getLine(), ((org.antlr.runtime3_4_0.CommonToken) a5).getCharPositionInLine(), ((org.antlr.runtime3_4_0.CommonToken) a5).getStartIndex(), ((org.antlr.runtime3_4_0.CommonToken) a5).getStopIndex());
-            				}
-            				java.lang.String resolved = (java.lang.String) resolvedObject;
-            				if (resolved != null) {
-            					Object value = resolved;
-            					element.eSet(element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.OPERATION_ARGUMENT__NAME), value);
-            					completedElement(value, false);
-            				}
-            				collectHiddenTokens(element);
-            				retrieveLayoutInformation(element, hu.modembed.model.textnotations.device.grammar.DeviceGrammarInformationProvider.DEVICE_8_0_0_5, resolved, true);
-            				copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken) a5, element);
-            			}
-            		}
+            if ( (LA14_0==18) ) {
+                alt14=1;
+            }
+            switch (alt14) {
+                case 1 :
+                    // Device.g:2090:3: (a5= '@' (a6= QUALIFIEDID ) )
+                    {
+                    // Device.g:2090:3: (a5= '@' (a6= QUALIFIEDID ) )
+                    // Device.g:2091:4: a5= '@' (a6= QUALIFIEDID )
+                    {
+                    a5=(Token)match(input,18,FOLLOW_18_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument1706); if (state.failed) return element;
+
+                    if ( state.backtracking==0 ) {
+                    				if (element == null) {
+                    					element = hu.modembed.model.modembed.abstraction.behavior.platform.PlatformFactory.eINSTANCE.createOperationArgument();
+                    					startIncompleteElement(element);
+                    				}
+                    				collectHiddenTokens(element);
+                    				retrieveLayoutInformation(element, hu.modembed.model.textnotations.device.grammar.DeviceGrammarInformationProvider.DEVICE_8_0_0_5_0_0_0, null, true);
+                    				copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken)a5, element);
+                    			}
+
+                    if ( state.backtracking==0 ) {
+                    				// expected elements (follow set)
+                    				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[96]);
+                    			}
+
+                    // Device.g:2105:4: (a6= QUALIFIEDID )
+                    // Device.g:2106:5: a6= QUALIFIEDID
+                    {
+                    a6=(Token)match(input,QUALIFIEDID,FOLLOW_QUALIFIEDID_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument1732); if (state.failed) return element;
+
+                    if ( state.backtracking==0 ) {
+                    					if (terminateParsing) {
+                    						throw new hu.modembed.model.textnotations.device.mopp.DeviceTerminateParsingException();
+                    					}
+                    					if (element == null) {
+                    						element = hu.modembed.model.modembed.abstraction.behavior.platform.PlatformFactory.eINSTANCE.createOperationArgument();
+                    						startIncompleteElement(element);
+                    					}
+                    					if (a6 != null) {
+                    						hu.modembed.model.textnotations.device.IDeviceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("QUALIFIEDID");
+                    						tokenResolver.setOptions(getOptions());
+                    						hu.modembed.model.textnotations.device.IDeviceTokenResolveResult result = getFreshTokenResolveResult();
+                    						tokenResolver.resolve(a6.getText(), element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.OPERATION_ARGUMENT__MEMTYPE), result);
+                    						Object resolvedObject = result.getResolvedToken();
+                    						if (resolvedObject == null) {
+                    							addErrorToResource(result.getErrorMessage(), ((org.antlr.runtime3_4_0.CommonToken) a6).getLine(), ((org.antlr.runtime3_4_0.CommonToken) a6).getCharPositionInLine(), ((org.antlr.runtime3_4_0.CommonToken) a6).getStartIndex(), ((org.antlr.runtime3_4_0.CommonToken) a6).getStopIndex());
+                    						}
+                    						String resolved = (String) resolvedObject;
+                    						hu.modembed.model.modembed.abstraction.memorymodel.MemoryType proxy = hu.modembed.model.modembed.abstraction.memorymodel.MemorymodelFactory.eINSTANCE.createMemoryType();
+                    						collectHiddenTokens(element);
+                    						registerContextDependentProxy(new hu.modembed.model.textnotations.device.mopp.DeviceContextDependentURIFragmentFactory<hu.modembed.model.modembed.abstraction.behavior.platform.OperationArgument, hu.modembed.model.modembed.abstraction.memorymodel.MemoryType>(getReferenceResolverSwitch() == null ? null : getReferenceResolverSwitch().getOperationArgumentMemtypeReferenceResolver()), element, (org.eclipse.emf.ecore.EReference) element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.OPERATION_ARGUMENT__MEMTYPE), resolved, proxy);
+                    						if (proxy != null) {
+                    							Object value = proxy;
+                    							element.eSet(element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.OPERATION_ARGUMENT__MEMTYPE), value);
+                    							completedElement(value, false);
+                    						}
+                    						collectHiddenTokens(element);
+                    						retrieveLayoutInformation(element, hu.modembed.model.textnotations.device.grammar.DeviceGrammarInformationProvider.DEVICE_8_0_0_5_0_0_1, proxy, true);
+                    						copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken) a6, element);
+                    						copyLocalizationInfos((org.antlr.runtime3_4_0.CommonToken) a6, proxy);
+                    					}
+                    				}
+
+                    }
+
+
+                    if ( state.backtracking==0 ) {
+                    				// expected elements (follow set)
+                    				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[97]);
+                    				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[98]);
+                    			}
+
+                    }
+
+
+                    }
+                    break;
 
             }
 
 
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
-            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[95]);
-            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[96]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[99]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[100]);
             	}
 
             }
@@ -3155,7 +3203,7 @@ public class DeviceParser extends DeviceANTLRParserBase {
 
 
     // $ANTLR start "parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionCallOperationStep"
-    // Device.g:2131:1: parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionCallOperationStep returns [hu.modembed.model.modembed.abstraction.behavior.platform.InstructionCallOperationStep element = null] : (a0= IDENTIFIER ) a1= '(' ( ( (a2_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping ) ( (a3= ',' (a4_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping ) ) )* ) )? a5= ')' a6= ';' ;
+    // Device.g:2156:1: parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionCallOperationStep returns [hu.modembed.model.modembed.abstraction.behavior.platform.InstructionCallOperationStep element = null] : (a0= QUALIFIEDID ) a1= '(' ( ( (a2_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping ) ( (a3= ',' (a4_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping ) ) )* ) )? a5= ')' a6= ';' ;
     public final hu.modembed.model.modembed.abstraction.behavior.platform.InstructionCallOperationStep parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionCallOperationStep() throws RecognitionException {
         hu.modembed.model.modembed.abstraction.behavior.platform.InstructionCallOperationStep element =  null;
 
@@ -3176,13 +3224,13 @@ public class DeviceParser extends DeviceANTLRParserBase {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 11) ) { return element; }
 
-            // Device.g:2134:2: ( (a0= IDENTIFIER ) a1= '(' ( ( (a2_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping ) ( (a3= ',' (a4_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping ) ) )* ) )? a5= ')' a6= ';' )
-            // Device.g:2135:2: (a0= IDENTIFIER ) a1= '(' ( ( (a2_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping ) ( (a3= ',' (a4_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping ) ) )* ) )? a5= ')' a6= ';'
+            // Device.g:2159:2: ( (a0= QUALIFIEDID ) a1= '(' ( ( (a2_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping ) ( (a3= ',' (a4_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping ) ) )* ) )? a5= ')' a6= ';' )
+            // Device.g:2160:2: (a0= QUALIFIEDID ) a1= '(' ( ( (a2_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping ) ( (a3= ',' (a4_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping ) ) )* ) )? a5= ')' a6= ';'
             {
-            // Device.g:2135:2: (a0= IDENTIFIER )
-            // Device.g:2136:3: a0= IDENTIFIER
+            // Device.g:2160:2: (a0= QUALIFIEDID )
+            // Device.g:2161:3: a0= QUALIFIEDID
             {
-            a0=(Token)match(input,IDENTIFIER,FOLLOW_IDENTIFIER_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionCallOperationStep1741); if (state.failed) return element;
+            a0=(Token)match(input,QUALIFIEDID,FOLLOW_QUALIFIEDID_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionCallOperationStep1797); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             			if (terminateParsing) {
@@ -3193,7 +3241,7 @@ public class DeviceParser extends DeviceANTLRParserBase {
             				startIncompleteElement(element);
             			}
             			if (a0 != null) {
-            				hu.modembed.model.textnotations.device.IDeviceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("IDENTIFIER");
+            				hu.modembed.model.textnotations.device.IDeviceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("QUALIFIEDID");
             				tokenResolver.setOptions(getOptions());
             				hu.modembed.model.textnotations.device.IDeviceTokenResolveResult result = getFreshTokenResolveResult();
             				tokenResolver.resolve(a0.getText(), element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.INSTRUCTION_CALL_OPERATION_STEP__INSTRUCTION), result);
@@ -3222,10 +3270,10 @@ public class DeviceParser extends DeviceANTLRParserBase {
 
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
-            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[97]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[101]);
             	}
 
-            a1=(Token)match(input,11,FOLLOW_11_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionCallOperationStep1762); if (state.failed) return element;
+            a1=(Token)match(input,10,FOLLOW_10_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionCallOperationStep1818); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             		if (element == null) {
@@ -3239,28 +3287,28 @@ public class DeviceParser extends DeviceANTLRParserBase {
 
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
-            		addExpectedElement(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.eINSTANCE.getInstructionCallOperationStep(), hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[98]);
-            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[99]);
+            		addExpectedElement(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.eINSTANCE.getInstructionCallOperationStep(), hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[102]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[103]);
             	}
 
-            // Device.g:2190:2: ( ( (a2_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping ) ( (a3= ',' (a4_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping ) ) )* ) )?
-            int alt15=2;
-            int LA15_0 = input.LA(1);
+            // Device.g:2215:2: ( ( (a2_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping ) ( (a3= ',' (a4_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping ) ) )* ) )?
+            int alt16=2;
+            int LA16_0 = input.LA(1);
 
-            if ( (LA15_0==IDENTIFIER) ) {
-                alt15=1;
+            if ( (LA16_0==QUALIFIEDID) ) {
+                alt16=1;
             }
-            switch (alt15) {
+            switch (alt16) {
                 case 1 :
-                    // Device.g:2191:3: ( (a2_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping ) ( (a3= ',' (a4_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping ) ) )* )
+                    // Device.g:2216:3: ( (a2_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping ) ( (a3= ',' (a4_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping ) ) )* )
                     {
-                    // Device.g:2191:3: ( (a2_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping ) ( (a3= ',' (a4_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping ) ) )* )
-                    // Device.g:2192:4: (a2_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping ) ( (a3= ',' (a4_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping ) ) )*
+                    // Device.g:2216:3: ( (a2_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping ) ( (a3= ',' (a4_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping ) ) )* )
+                    // Device.g:2217:4: (a2_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping ) ( (a3= ',' (a4_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping ) ) )*
                     {
-                    // Device.g:2192:4: (a2_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping )
-                    // Device.g:2193:5: a2_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping
+                    // Device.g:2217:4: (a2_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping )
+                    // Device.g:2218:5: a2_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping
                     {
-                    pushFollow(FOLLOW_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionCallOperationStep1791);
+                    pushFollow(FOLLOW_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionCallOperationStep1847);
                     a2_0=parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping();
 
                     state._fsp--;
@@ -3291,29 +3339,29 @@ public class DeviceParser extends DeviceANTLRParserBase {
 
                     if ( state.backtracking==0 ) {
                     				// expected elements (follow set)
-                    				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[100]);
-                    				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[101]);
+                    				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[104]);
+                    				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[105]);
                     			}
 
-                    // Device.g:2219:4: ( (a3= ',' (a4_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping ) ) )*
-                    loop14:
+                    // Device.g:2244:4: ( (a3= ',' (a4_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping ) ) )*
+                    loop15:
                     do {
-                        int alt14=2;
-                        int LA14_0 = input.LA(1);
+                        int alt15=2;
+                        int LA15_0 = input.LA(1);
 
-                        if ( (LA14_0==14) ) {
-                            alt14=1;
+                        if ( (LA15_0==13) ) {
+                            alt15=1;
                         }
 
 
-                        switch (alt14) {
+                        switch (alt15) {
                     	case 1 :
-                    	    // Device.g:2220:5: (a3= ',' (a4_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping ) )
+                    	    // Device.g:2245:5: (a3= ',' (a4_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping ) )
                     	    {
-                    	    // Device.g:2220:5: (a3= ',' (a4_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping ) )
-                    	    // Device.g:2221:6: a3= ',' (a4_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping )
+                    	    // Device.g:2245:5: (a3= ',' (a4_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping ) )
+                    	    // Device.g:2246:6: a3= ',' (a4_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping )
                     	    {
-                    	    a3=(Token)match(input,14,FOLLOW_14_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionCallOperationStep1832); if (state.failed) return element;
+                    	    a3=(Token)match(input,13,FOLLOW_13_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionCallOperationStep1888); if (state.failed) return element;
 
                     	    if ( state.backtracking==0 ) {
                     	    						if (element == null) {
@@ -3327,13 +3375,13 @@ public class DeviceParser extends DeviceANTLRParserBase {
 
                     	    if ( state.backtracking==0 ) {
                     	    						// expected elements (follow set)
-                    	    						addExpectedElement(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.eINSTANCE.getInstructionCallOperationStep(), hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[102]);
+                    	    						addExpectedElement(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.eINSTANCE.getInstructionCallOperationStep(), hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[106]);
                     	    					}
 
-                    	    // Device.g:2235:6: (a4_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping )
-                    	    // Device.g:2236:7: a4_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping
+                    	    // Device.g:2260:6: (a4_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping )
+                    	    // Device.g:2261:7: a4_0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping
                     	    {
-                    	    pushFollow(FOLLOW_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionCallOperationStep1866);
+                    	    pushFollow(FOLLOW_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionCallOperationStep1922);
                     	    a4_0=parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping();
 
                     	    state._fsp--;
@@ -3364,8 +3412,8 @@ public class DeviceParser extends DeviceANTLRParserBase {
 
                     	    if ( state.backtracking==0 ) {
                     	    						// expected elements (follow set)
-                    	    						addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[103]);
-                    	    						addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[104]);
+                    	    						addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[107]);
+                    	    						addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[108]);
                     	    					}
 
                     	    }
@@ -3375,15 +3423,15 @@ public class DeviceParser extends DeviceANTLRParserBase {
                     	    break;
 
                     	default :
-                    	    break loop14;
+                    	    break loop15;
                         }
                     } while (true);
 
 
                     if ( state.backtracking==0 ) {
                     				// expected elements (follow set)
-                    				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[105]);
-                    				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[106]);
+                    				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[109]);
+                    				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[110]);
                     			}
 
                     }
@@ -3397,10 +3445,10 @@ public class DeviceParser extends DeviceANTLRParserBase {
 
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
-            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[107]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[111]);
             	}
 
-            a5=(Token)match(input,12,FOLLOW_12_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionCallOperationStep1940); if (state.failed) return element;
+            a5=(Token)match(input,11,FOLLOW_11_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionCallOperationStep1996); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             		if (element == null) {
@@ -3414,10 +3462,10 @@ public class DeviceParser extends DeviceANTLRParserBase {
 
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
-            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[108]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[112]);
             	}
 
-            a6=(Token)match(input,17,FOLLOW_17_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionCallOperationStep1954); if (state.failed) return element;
+            a6=(Token)match(input,16,FOLLOW_16_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionCallOperationStep2010); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             		if (element == null) {
@@ -3431,8 +3479,8 @@ public class DeviceParser extends DeviceANTLRParserBase {
 
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
-            		addExpectedElement(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.eINSTANCE.getOperationDefinition(), hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[109]);
-            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[110]);
+            		addExpectedElement(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.eINSTANCE.getOperationDefinition(), hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[113]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[114]);
             	}
 
             }
@@ -3455,7 +3503,7 @@ public class DeviceParser extends DeviceANTLRParserBase {
 
 
     // $ANTLR start "parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping"
-    // Device.g:2308:1: parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping returns [hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterMapping element = null] : (a0= IDENTIFIER ) ( (a1= '->' (a2= IDENTIFIER ) ) )? ( (a3= ':' (a4= INT ) ) )? ( (a5= '+' (a6= INT ) ) )? ;
+    // Device.g:2333:1: parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping returns [hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterMapping element = null] : (a0= QUALIFIEDID ) ( (a1= '->' (a2= QUALIFIEDID ) ) )? ( (a3= ':' (a4= INT ) ) )? ( (a5= '+' (a6= INT ) ) )? ;
     public final hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterMapping parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping() throws RecognitionException {
         hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterMapping element =  null;
 
@@ -3474,13 +3522,13 @@ public class DeviceParser extends DeviceANTLRParserBase {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 12) ) { return element; }
 
-            // Device.g:2311:2: ( (a0= IDENTIFIER ) ( (a1= '->' (a2= IDENTIFIER ) ) )? ( (a3= ':' (a4= INT ) ) )? ( (a5= '+' (a6= INT ) ) )? )
-            // Device.g:2312:2: (a0= IDENTIFIER ) ( (a1= '->' (a2= IDENTIFIER ) ) )? ( (a3= ':' (a4= INT ) ) )? ( (a5= '+' (a6= INT ) ) )?
+            // Device.g:2336:2: ( (a0= QUALIFIEDID ) ( (a1= '->' (a2= QUALIFIEDID ) ) )? ( (a3= ':' (a4= INT ) ) )? ( (a5= '+' (a6= INT ) ) )? )
+            // Device.g:2337:2: (a0= QUALIFIEDID ) ( (a1= '->' (a2= QUALIFIEDID ) ) )? ( (a3= ':' (a4= INT ) ) )? ( (a5= '+' (a6= INT ) ) )?
             {
-            // Device.g:2312:2: (a0= IDENTIFIER )
-            // Device.g:2313:3: a0= IDENTIFIER
+            // Device.g:2337:2: (a0= QUALIFIEDID )
+            // Device.g:2338:3: a0= QUALIFIEDID
             {
-            a0=(Token)match(input,IDENTIFIER,FOLLOW_IDENTIFIER_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping1987); if (state.failed) return element;
+            a0=(Token)match(input,QUALIFIEDID,FOLLOW_QUALIFIEDID_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping2043); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             			if (terminateParsing) {
@@ -3491,7 +3539,7 @@ public class DeviceParser extends DeviceANTLRParserBase {
             				startIncompleteElement(element);
             			}
             			if (a0 != null) {
-            				hu.modembed.model.textnotations.device.IDeviceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("IDENTIFIER");
+            				hu.modembed.model.textnotations.device.IDeviceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("QUALIFIEDID");
             				tokenResolver.setOptions(getOptions());
             				hu.modembed.model.textnotations.device.IDeviceTokenResolveResult result = getFreshTokenResolveResult();
             				tokenResolver.resolve(a0.getText(), element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.INSTRUCTION_PARAMETER_MAPPING__VALUE), result);
@@ -3520,28 +3568,28 @@ public class DeviceParser extends DeviceANTLRParserBase {
 
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
-            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[111]);
-            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[112]);
-            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[113]);
-            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[114]);
             		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[115]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[116]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[117]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[118]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[119]);
             	}
 
-            // Device.g:2356:2: ( (a1= '->' (a2= IDENTIFIER ) ) )?
-            int alt16=2;
-            int LA16_0 = input.LA(1);
+            // Device.g:2381:2: ( (a1= '->' (a2= QUALIFIEDID ) ) )?
+            int alt17=2;
+            int LA17_0 = input.LA(1);
 
-            if ( (LA16_0==15) ) {
-                alt16=1;
+            if ( (LA17_0==14) ) {
+                alt17=1;
             }
-            switch (alt16) {
+            switch (alt17) {
                 case 1 :
-                    // Device.g:2357:3: (a1= '->' (a2= IDENTIFIER ) )
+                    // Device.g:2382:3: (a1= '->' (a2= QUALIFIEDID ) )
                     {
-                    // Device.g:2357:3: (a1= '->' (a2= IDENTIFIER ) )
-                    // Device.g:2358:4: a1= '->' (a2= IDENTIFIER )
+                    // Device.g:2382:3: (a1= '->' (a2= QUALIFIEDID ) )
+                    // Device.g:2383:4: a1= '->' (a2= QUALIFIEDID )
                     {
-                    a1=(Token)match(input,15,FOLLOW_15_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping2017); if (state.failed) return element;
+                    a1=(Token)match(input,14,FOLLOW_14_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping2073); if (state.failed) return element;
 
                     if ( state.backtracking==0 ) {
                     				if (element == null) {
@@ -3555,13 +3603,13 @@ public class DeviceParser extends DeviceANTLRParserBase {
 
                     if ( state.backtracking==0 ) {
                     				// expected elements (follow set)
-                    				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[116]);
+                    				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[120]);
                     			}
 
-                    // Device.g:2372:4: (a2= IDENTIFIER )
-                    // Device.g:2373:5: a2= IDENTIFIER
+                    // Device.g:2397:4: (a2= QUALIFIEDID )
+                    // Device.g:2398:5: a2= QUALIFIEDID
                     {
-                    a2=(Token)match(input,IDENTIFIER,FOLLOW_IDENTIFIER_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping2043); if (state.failed) return element;
+                    a2=(Token)match(input,QUALIFIEDID,FOLLOW_QUALIFIEDID_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping2099); if (state.failed) return element;
 
                     if ( state.backtracking==0 ) {
                     					if (terminateParsing) {
@@ -3572,7 +3620,7 @@ public class DeviceParser extends DeviceANTLRParserBase {
                     						startIncompleteElement(element);
                     					}
                     					if (a2 != null) {
-                    						hu.modembed.model.textnotations.device.IDeviceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("IDENTIFIER");
+                    						hu.modembed.model.textnotations.device.IDeviceTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("QUALIFIEDID");
                     						tokenResolver.setOptions(getOptions());
                     						hu.modembed.model.textnotations.device.IDeviceTokenResolveResult result = getFreshTokenResolveResult();
                     						tokenResolver.resolve(a2.getText(), element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.INSTRUCTION_PARAMETER_MAPPING__ATTRIBUTE), result);
@@ -3601,10 +3649,10 @@ public class DeviceParser extends DeviceANTLRParserBase {
 
                     if ( state.backtracking==0 ) {
                     				// expected elements (follow set)
-                    				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[117]);
-                    				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[118]);
-                    				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[119]);
-                    				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[120]);
+                    				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[121]);
+                    				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[122]);
+                    				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[123]);
+                    				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[124]);
                     			}
 
                     }
@@ -3618,27 +3666,27 @@ public class DeviceParser extends DeviceANTLRParserBase {
 
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
-            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[121]);
-            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[122]);
-            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[123]);
-            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[124]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[125]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[126]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[127]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[128]);
             	}
 
-            // Device.g:2425:2: ( (a3= ':' (a4= INT ) ) )?
-            int alt17=2;
-            int LA17_0 = input.LA(1);
+            // Device.g:2450:2: ( (a3= ':' (a4= INT ) ) )?
+            int alt18=2;
+            int LA18_0 = input.LA(1);
 
-            if ( (LA17_0==16) ) {
-                alt17=1;
+            if ( (LA18_0==15) ) {
+                alt18=1;
             }
-            switch (alt17) {
+            switch (alt18) {
                 case 1 :
-                    // Device.g:2426:3: (a3= ':' (a4= INT ) )
+                    // Device.g:2451:3: (a3= ':' (a4= INT ) )
                     {
-                    // Device.g:2426:3: (a3= ':' (a4= INT ) )
-                    // Device.g:2427:4: a3= ':' (a4= INT )
+                    // Device.g:2451:3: (a3= ':' (a4= INT ) )
+                    // Device.g:2452:4: a3= ':' (a4= INT )
                     {
-                    a3=(Token)match(input,16,FOLLOW_16_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping2098); if (state.failed) return element;
+                    a3=(Token)match(input,15,FOLLOW_15_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping2154); if (state.failed) return element;
 
                     if ( state.backtracking==0 ) {
                     				if (element == null) {
@@ -3652,13 +3700,13 @@ public class DeviceParser extends DeviceANTLRParserBase {
 
                     if ( state.backtracking==0 ) {
                     				// expected elements (follow set)
-                    				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[125]);
+                    				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[129]);
                     			}
 
-                    // Device.g:2441:4: (a4= INT )
-                    // Device.g:2442:5: a4= INT
+                    // Device.g:2466:4: (a4= INT )
+                    // Device.g:2467:5: a4= INT
                     {
-                    a4=(Token)match(input,INT,FOLLOW_INT_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping2124); if (state.failed) return element;
+                    a4=(Token)match(input,INT,FOLLOW_INT_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping2180); if (state.failed) return element;
 
                     if ( state.backtracking==0 ) {
                     					if (terminateParsing) {
@@ -3694,9 +3742,9 @@ public class DeviceParser extends DeviceANTLRParserBase {
 
                     if ( state.backtracking==0 ) {
                     				// expected elements (follow set)
-                    				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[126]);
-                    				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[127]);
-                    				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[128]);
+                    				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[130]);
+                    				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[131]);
+                    				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[132]);
                     			}
 
                     }
@@ -3710,26 +3758,26 @@ public class DeviceParser extends DeviceANTLRParserBase {
 
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
-            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[129]);
-            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[130]);
-            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[131]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[133]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[134]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[135]);
             	}
 
-            // Device.g:2488:2: ( (a5= '+' (a6= INT ) ) )?
-            int alt18=2;
-            int LA18_0 = input.LA(1);
+            // Device.g:2513:2: ( (a5= '+' (a6= INT ) ) )?
+            int alt19=2;
+            int LA19_0 = input.LA(1);
 
-            if ( (LA18_0==13) ) {
-                alt18=1;
+            if ( (LA19_0==12) ) {
+                alt19=1;
             }
-            switch (alt18) {
+            switch (alt19) {
                 case 1 :
-                    // Device.g:2489:3: (a5= '+' (a6= INT ) )
+                    // Device.g:2514:3: (a5= '+' (a6= INT ) )
                     {
-                    // Device.g:2489:3: (a5= '+' (a6= INT ) )
-                    // Device.g:2490:4: a5= '+' (a6= INT )
+                    // Device.g:2514:3: (a5= '+' (a6= INT ) )
+                    // Device.g:2515:4: a5= '+' (a6= INT )
                     {
-                    a5=(Token)match(input,13,FOLLOW_13_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping2179); if (state.failed) return element;
+                    a5=(Token)match(input,12,FOLLOW_12_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping2235); if (state.failed) return element;
 
                     if ( state.backtracking==0 ) {
                     				if (element == null) {
@@ -3743,13 +3791,13 @@ public class DeviceParser extends DeviceANTLRParserBase {
 
                     if ( state.backtracking==0 ) {
                     				// expected elements (follow set)
-                    				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[132]);
+                    				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[136]);
                     			}
 
-                    // Device.g:2504:4: (a6= INT )
-                    // Device.g:2505:5: a6= INT
+                    // Device.g:2529:4: (a6= INT )
+                    // Device.g:2530:5: a6= INT
                     {
-                    a6=(Token)match(input,INT,FOLLOW_INT_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping2205); if (state.failed) return element;
+                    a6=(Token)match(input,INT,FOLLOW_INT_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping2261); if (state.failed) return element;
 
                     if ( state.backtracking==0 ) {
                     					if (terminateParsing) {
@@ -3785,8 +3833,8 @@ public class DeviceParser extends DeviceANTLRParserBase {
 
                     if ( state.backtracking==0 ) {
                     				// expected elements (follow set)
-                    				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[133]);
-                    				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[134]);
+                    				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[137]);
+                    				addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[138]);
                     			}
 
                     }
@@ -3800,8 +3848,8 @@ public class DeviceParser extends DeviceANTLRParserBase {
 
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
-            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[135]);
-            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[136]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[139]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[140]);
             	}
 
             }
@@ -3824,7 +3872,7 @@ public class DeviceParser extends DeviceANTLRParserBase {
 
 
     // $ANTLR start "parse_hu_modembed_model_modembed_abstraction_types_Type"
-    // Device.g:2551:1: parse_hu_modembed_model_modembed_abstraction_types_Type returns [hu.modembed.model.modembed.abstraction.types.Type element = null] : a0= 'type' (a1= QUALIFIEDID ) a2= '=' (a3_0= parse_hu_modembed_model_modembed_abstraction_types_TypeDefinition ) a4= ';' ;
+    // Device.g:2576:1: parse_hu_modembed_model_modembed_abstraction_types_Type returns [hu.modembed.model.modembed.abstraction.types.Type element = null] : a0= 'type' (a1= QUALIFIEDID ) a2= '=' (a3_0= parse_hu_modembed_model_modembed_abstraction_types_TypeDefinition ) a4= ';' ;
     public final hu.modembed.model.modembed.abstraction.types.Type parse_hu_modembed_model_modembed_abstraction_types_Type() throws RecognitionException {
         hu.modembed.model.modembed.abstraction.types.Type element =  null;
 
@@ -3842,10 +3890,10 @@ public class DeviceParser extends DeviceANTLRParserBase {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 13) ) { return element; }
 
-            // Device.g:2554:2: (a0= 'type' (a1= QUALIFIEDID ) a2= '=' (a3_0= parse_hu_modembed_model_modembed_abstraction_types_TypeDefinition ) a4= ';' )
-            // Device.g:2555:2: a0= 'type' (a1= QUALIFIEDID ) a2= '=' (a3_0= parse_hu_modembed_model_modembed_abstraction_types_TypeDefinition ) a4= ';'
+            // Device.g:2579:2: (a0= 'type' (a1= QUALIFIEDID ) a2= '=' (a3_0= parse_hu_modembed_model_modembed_abstraction_types_TypeDefinition ) a4= ';' )
+            // Device.g:2580:2: a0= 'type' (a1= QUALIFIEDID ) a2= '=' (a3_0= parse_hu_modembed_model_modembed_abstraction_types_TypeDefinition ) a4= ';'
             {
-            a0=(Token)match(input,30,FOLLOW_30_in_parse_hu_modembed_model_modembed_abstraction_types_Type2266); if (state.failed) return element;
+            a0=(Token)match(input,29,FOLLOW_29_in_parse_hu_modembed_model_modembed_abstraction_types_Type2322); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             		if (element == null) {
@@ -3859,13 +3907,13 @@ public class DeviceParser extends DeviceANTLRParserBase {
 
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
-            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[137]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[141]);
             	}
 
-            // Device.g:2569:2: (a1= QUALIFIEDID )
-            // Device.g:2570:3: a1= QUALIFIEDID
+            // Device.g:2594:2: (a1= QUALIFIEDID )
+            // Device.g:2595:3: a1= QUALIFIEDID
             {
-            a1=(Token)match(input,QUALIFIEDID,FOLLOW_QUALIFIEDID_in_parse_hu_modembed_model_modembed_abstraction_types_Type2284); if (state.failed) return element;
+            a1=(Token)match(input,QUALIFIEDID,FOLLOW_QUALIFIEDID_in_parse_hu_modembed_model_modembed_abstraction_types_Type2340); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             			if (terminateParsing) {
@@ -3901,10 +3949,10 @@ public class DeviceParser extends DeviceANTLRParserBase {
 
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
-            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[138]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[142]);
             	}
 
-            a2=(Token)match(input,18,FOLLOW_18_in_parse_hu_modembed_model_modembed_abstraction_types_Type2305); if (state.failed) return element;
+            a2=(Token)match(input,17,FOLLOW_17_in_parse_hu_modembed_model_modembed_abstraction_types_Type2361); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             		if (element == null) {
@@ -3918,14 +3966,14 @@ public class DeviceParser extends DeviceANTLRParserBase {
 
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
-            		addExpectedElement(hu.modembed.model.modembed.abstraction.types.TypesPackage.eINSTANCE.getType(), hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[139]);
-            		addExpectedElement(hu.modembed.model.modembed.abstraction.types.TypesPackage.eINSTANCE.getType(), hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[140]);
+            		addExpectedElement(hu.modembed.model.modembed.abstraction.types.TypesPackage.eINSTANCE.getType(), hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[143]);
+            		addExpectedElement(hu.modembed.model.modembed.abstraction.types.TypesPackage.eINSTANCE.getType(), hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[144]);
             	}
 
-            // Device.g:2620:2: (a3_0= parse_hu_modembed_model_modembed_abstraction_types_TypeDefinition )
-            // Device.g:2621:3: a3_0= parse_hu_modembed_model_modembed_abstraction_types_TypeDefinition
+            // Device.g:2645:2: (a3_0= parse_hu_modembed_model_modembed_abstraction_types_TypeDefinition )
+            // Device.g:2646:3: a3_0= parse_hu_modembed_model_modembed_abstraction_types_TypeDefinition
             {
-            pushFollow(FOLLOW_parse_hu_modembed_model_modembed_abstraction_types_TypeDefinition_in_parse_hu_modembed_model_modembed_abstraction_types_Type2323);
+            pushFollow(FOLLOW_parse_hu_modembed_model_modembed_abstraction_types_TypeDefinition_in_parse_hu_modembed_model_modembed_abstraction_types_Type2379);
             a3_0=parse_hu_modembed_model_modembed_abstraction_types_TypeDefinition();
 
             state._fsp--;
@@ -3956,10 +4004,10 @@ public class DeviceParser extends DeviceANTLRParserBase {
 
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
-            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[141]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[145]);
             	}
 
-            a4=(Token)match(input,17,FOLLOW_17_in_parse_hu_modembed_model_modembed_abstraction_types_Type2341); if (state.failed) return element;
+            a4=(Token)match(input,16,FOLLOW_16_in_parse_hu_modembed_model_modembed_abstraction_types_Type2397); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             		if (element == null) {
@@ -3995,7 +4043,7 @@ public class DeviceParser extends DeviceANTLRParserBase {
 
 
     // $ANTLR start "parse_hu_modembed_model_modembed_abstraction_types_UnsignedTypeDefinition"
-    // Device.g:2661:1: parse_hu_modembed_model_modembed_abstraction_types_UnsignedTypeDefinition returns [hu.modembed.model.modembed.abstraction.types.UnsignedTypeDefinition element = null] : a0= 'unsigned' a1= '(' (a2= INT ) a3= ')' ;
+    // Device.g:2686:1: parse_hu_modembed_model_modembed_abstraction_types_UnsignedTypeDefinition returns [hu.modembed.model.modembed.abstraction.types.UnsignedTypeDefinition element = null] : a0= 'unsigned' a1= '(' (a2= INT ) a3= ')' ;
     public final hu.modembed.model.modembed.abstraction.types.UnsignedTypeDefinition parse_hu_modembed_model_modembed_abstraction_types_UnsignedTypeDefinition() throws RecognitionException {
         hu.modembed.model.modembed.abstraction.types.UnsignedTypeDefinition element =  null;
 
@@ -4011,10 +4059,10 @@ public class DeviceParser extends DeviceANTLRParserBase {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 14) ) { return element; }
 
-            // Device.g:2664:2: (a0= 'unsigned' a1= '(' (a2= INT ) a3= ')' )
-            // Device.g:2665:2: a0= 'unsigned' a1= '(' (a2= INT ) a3= ')'
+            // Device.g:2689:2: (a0= 'unsigned' a1= '(' (a2= INT ) a3= ')' )
+            // Device.g:2690:2: a0= 'unsigned' a1= '(' (a2= INT ) a3= ')'
             {
-            a0=(Token)match(input,31,FOLLOW_31_in_parse_hu_modembed_model_modembed_abstraction_types_UnsignedTypeDefinition2370); if (state.failed) return element;
+            a0=(Token)match(input,30,FOLLOW_30_in_parse_hu_modembed_model_modembed_abstraction_types_UnsignedTypeDefinition2426); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             		if (element == null) {
@@ -4028,10 +4076,10 @@ public class DeviceParser extends DeviceANTLRParserBase {
 
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
-            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[142]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[146]);
             	}
 
-            a1=(Token)match(input,11,FOLLOW_11_in_parse_hu_modembed_model_modembed_abstraction_types_UnsignedTypeDefinition2384); if (state.failed) return element;
+            a1=(Token)match(input,10,FOLLOW_10_in_parse_hu_modembed_model_modembed_abstraction_types_UnsignedTypeDefinition2440); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             		if (element == null) {
@@ -4045,13 +4093,13 @@ public class DeviceParser extends DeviceANTLRParserBase {
 
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
-            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[143]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[147]);
             	}
 
-            // Device.g:2693:2: (a2= INT )
-            // Device.g:2694:3: a2= INT
+            // Device.g:2718:2: (a2= INT )
+            // Device.g:2719:3: a2= INT
             {
-            a2=(Token)match(input,INT,FOLLOW_INT_in_parse_hu_modembed_model_modembed_abstraction_types_UnsignedTypeDefinition2402); if (state.failed) return element;
+            a2=(Token)match(input,INT,FOLLOW_INT_in_parse_hu_modembed_model_modembed_abstraction_types_UnsignedTypeDefinition2458); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             			if (terminateParsing) {
@@ -4087,10 +4135,10 @@ public class DeviceParser extends DeviceANTLRParserBase {
 
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
-            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[144]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[148]);
             	}
 
-            a3=(Token)match(input,12,FOLLOW_12_in_parse_hu_modembed_model_modembed_abstraction_types_UnsignedTypeDefinition2423); if (state.failed) return element;
+            a3=(Token)match(input,11,FOLLOW_11_in_parse_hu_modembed_model_modembed_abstraction_types_UnsignedTypeDefinition2479); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             		if (element == null) {
@@ -4104,8 +4152,8 @@ public class DeviceParser extends DeviceANTLRParserBase {
 
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
-            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[145]);
-            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[146]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[149]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[150]);
             	}
 
             }
@@ -4128,7 +4176,7 @@ public class DeviceParser extends DeviceANTLRParserBase {
 
 
     // $ANTLR start "parse_hu_modembed_model_modembed_abstraction_types_ReferenceTypeDefinition"
-    // Device.g:2746:1: parse_hu_modembed_model_modembed_abstraction_types_ReferenceTypeDefinition returns [hu.modembed.model.modembed.abstraction.types.ReferenceTypeDefinition element = null] : (a0= QUALIFIEDID ) ;
+    // Device.g:2771:1: parse_hu_modembed_model_modembed_abstraction_types_ReferenceTypeDefinition returns [hu.modembed.model.modembed.abstraction.types.ReferenceTypeDefinition element = null] : (a0= QUALIFIEDID ) ;
     public final hu.modembed.model.modembed.abstraction.types.ReferenceTypeDefinition parse_hu_modembed_model_modembed_abstraction_types_ReferenceTypeDefinition() throws RecognitionException {
         hu.modembed.model.modembed.abstraction.types.ReferenceTypeDefinition element =  null;
 
@@ -4141,13 +4189,13 @@ public class DeviceParser extends DeviceANTLRParserBase {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 15) ) { return element; }
 
-            // Device.g:2749:2: ( (a0= QUALIFIEDID ) )
-            // Device.g:2750:2: (a0= QUALIFIEDID )
+            // Device.g:2774:2: ( (a0= QUALIFIEDID ) )
+            // Device.g:2775:2: (a0= QUALIFIEDID )
             {
-            // Device.g:2750:2: (a0= QUALIFIEDID )
-            // Device.g:2751:3: a0= QUALIFIEDID
+            // Device.g:2775:2: (a0= QUALIFIEDID )
+            // Device.g:2776:3: a0= QUALIFIEDID
             {
-            a0=(Token)match(input,QUALIFIEDID,FOLLOW_QUALIFIEDID_in_parse_hu_modembed_model_modembed_abstraction_types_ReferenceTypeDefinition2456); if (state.failed) return element;
+            a0=(Token)match(input,QUALIFIEDID,FOLLOW_QUALIFIEDID_in_parse_hu_modembed_model_modembed_abstraction_types_ReferenceTypeDefinition2512); if (state.failed) return element;
 
             if ( state.backtracking==0 ) {
             			if (terminateParsing) {
@@ -4187,8 +4235,8 @@ public class DeviceParser extends DeviceANTLRParserBase {
 
             if ( state.backtracking==0 ) {
             		// expected elements (follow set)
-            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[147]);
-            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[148]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[151]);
+            		addExpectedElement(null, hu.modembed.model.textnotations.device.mopp.DeviceExpectationConstants.EXPECTATIONS[152]);
             	}
 
             }
@@ -4211,7 +4259,7 @@ public class DeviceParser extends DeviceANTLRParserBase {
 
 
     // $ANTLR start "parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationStep"
-    // Device.g:2793:1: parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationStep returns [hu.modembed.model.modembed.abstraction.behavior.platform.OperationStep element = null] : c0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionCallOperationStep ;
+    // Device.g:2818:1: parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationStep returns [hu.modembed.model.modembed.abstraction.behavior.platform.OperationStep element = null] : c0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionCallOperationStep ;
     public final hu.modembed.model.modembed.abstraction.behavior.platform.OperationStep parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationStep() throws RecognitionException {
         hu.modembed.model.modembed.abstraction.behavior.platform.OperationStep element =  null;
 
@@ -4223,10 +4271,10 @@ public class DeviceParser extends DeviceANTLRParserBase {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 16) ) { return element; }
 
-            // Device.g:2794:2: (c0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionCallOperationStep )
-            // Device.g:2795:2: c0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionCallOperationStep
+            // Device.g:2819:2: (c0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionCallOperationStep )
+            // Device.g:2820:2: c0= parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionCallOperationStep
             {
-            pushFollow(FOLLOW_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionCallOperationStep_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationStep2488);
+            pushFollow(FOLLOW_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionCallOperationStep_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationStep2544);
             c0=parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionCallOperationStep();
 
             state._fsp--;
@@ -4254,7 +4302,7 @@ public class DeviceParser extends DeviceANTLRParserBase {
 
 
     // $ANTLR start "parse_hu_modembed_model_modembed_abstraction_types_TypeDefinition"
-    // Device.g:2799:1: parse_hu_modembed_model_modembed_abstraction_types_TypeDefinition returns [hu.modembed.model.modembed.abstraction.types.TypeDefinition element = null] : (c0= parse_hu_modembed_model_modembed_abstraction_types_UnsignedTypeDefinition |c1= parse_hu_modembed_model_modembed_abstraction_types_ReferenceTypeDefinition );
+    // Device.g:2824:1: parse_hu_modembed_model_modembed_abstraction_types_TypeDefinition returns [hu.modembed.model.modembed.abstraction.types.TypeDefinition element = null] : (c0= parse_hu_modembed_model_modembed_abstraction_types_UnsignedTypeDefinition |c1= parse_hu_modembed_model_modembed_abstraction_types_ReferenceTypeDefinition );
     public final hu.modembed.model.modembed.abstraction.types.TypeDefinition parse_hu_modembed_model_modembed_abstraction_types_TypeDefinition() throws RecognitionException {
         hu.modembed.model.modembed.abstraction.types.TypeDefinition element =  null;
 
@@ -4268,29 +4316,29 @@ public class DeviceParser extends DeviceANTLRParserBase {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 17) ) { return element; }
 
-            // Device.g:2800:2: (c0= parse_hu_modembed_model_modembed_abstraction_types_UnsignedTypeDefinition |c1= parse_hu_modembed_model_modembed_abstraction_types_ReferenceTypeDefinition )
-            int alt19=2;
-            int LA19_0 = input.LA(1);
+            // Device.g:2825:2: (c0= parse_hu_modembed_model_modembed_abstraction_types_UnsignedTypeDefinition |c1= parse_hu_modembed_model_modembed_abstraction_types_ReferenceTypeDefinition )
+            int alt20=2;
+            int LA20_0 = input.LA(1);
 
-            if ( (LA19_0==31) ) {
-                alt19=1;
+            if ( (LA20_0==30) ) {
+                alt20=1;
             }
-            else if ( (LA19_0==QUALIFIEDID) ) {
-                alt19=2;
+            else if ( (LA20_0==QUALIFIEDID) ) {
+                alt20=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return element;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 19, 0, input);
+                    new NoViableAltException("", 20, 0, input);
 
                 throw nvae;
 
             }
-            switch (alt19) {
+            switch (alt20) {
                 case 1 :
-                    // Device.g:2801:2: c0= parse_hu_modembed_model_modembed_abstraction_types_UnsignedTypeDefinition
+                    // Device.g:2826:2: c0= parse_hu_modembed_model_modembed_abstraction_types_UnsignedTypeDefinition
                     {
-                    pushFollow(FOLLOW_parse_hu_modembed_model_modembed_abstraction_types_UnsignedTypeDefinition_in_parse_hu_modembed_model_modembed_abstraction_types_TypeDefinition2509);
+                    pushFollow(FOLLOW_parse_hu_modembed_model_modembed_abstraction_types_UnsignedTypeDefinition_in_parse_hu_modembed_model_modembed_abstraction_types_TypeDefinition2565);
                     c0=parse_hu_modembed_model_modembed_abstraction_types_UnsignedTypeDefinition();
 
                     state._fsp--;
@@ -4301,9 +4349,9 @@ public class DeviceParser extends DeviceANTLRParserBase {
                     }
                     break;
                 case 2 :
-                    // Device.g:2802:4: c1= parse_hu_modembed_model_modembed_abstraction_types_ReferenceTypeDefinition
+                    // Device.g:2827:4: c1= parse_hu_modembed_model_modembed_abstraction_types_ReferenceTypeDefinition
                     {
-                    pushFollow(FOLLOW_parse_hu_modembed_model_modembed_abstraction_types_ReferenceTypeDefinition_in_parse_hu_modembed_model_modembed_abstraction_types_TypeDefinition2519);
+                    pushFollow(FOLLOW_parse_hu_modembed_model_modembed_abstraction_types_ReferenceTypeDefinition_in_parse_hu_modembed_model_modembed_abstraction_types_TypeDefinition2575);
                     c1=parse_hu_modembed_model_modembed_abstraction_types_ReferenceTypeDefinition();
 
                     state._fsp--;
@@ -4337,90 +4385,91 @@ public class DeviceParser extends DeviceANTLRParserBase {
 
     public static final BitSet FOLLOW_parse_hu_modembed_model_modembed_abstraction_DeviceAbstraction_in_start82 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_start89 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_parse_hu_modembed_model_modembed_abstraction_DeviceAbstraction115 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_QUALIFIEDID_in_parse_hu_modembed_model_modembed_abstraction_DeviceAbstraction133 = new BitSet(new long[]{0x0000000003020000L});
-    public static final BitSet FOLLOW_24_in_parse_hu_modembed_model_modembed_abstraction_DeviceAbstraction163 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_QUALIFIEDID_in_parse_hu_modembed_model_modembed_abstraction_DeviceAbstraction189 = new BitSet(new long[]{0x0000000002020000L});
-    public static final BitSet FOLLOW_25_in_parse_hu_modembed_model_modembed_abstraction_DeviceAbstraction244 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_QUALIFIEDID_in_parse_hu_modembed_model_modembed_abstraction_DeviceAbstraction270 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_17_in_parse_hu_modembed_model_modembed_abstraction_DeviceAbstraction316 = new BitSet(new long[]{0x000000001C000002L});
-    public static final BitSet FOLLOW_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryType_in_parse_hu_modembed_model_modembed_abstraction_DeviceAbstraction352 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryInstance_in_parse_hu_modembed_model_modembed_abstraction_DeviceAbstraction402 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationDefinition_in_parse_hu_modembed_model_modembed_abstraction_DeviceAbstraction452 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_17_in_parse_hu_modembed_model_modembed_abstraction_DeviceAbstraction498 = new BitSet(new long[]{0x000000001C000002L});
-    public static final BitSet FOLLOW_27_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryType546 = new BitSet(new long[]{0x0000000120400020L});
-    public static final BitSet FOLLOW_32_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryType569 = new BitSet(new long[]{0x0000000020400020L});
-    public static final BitSet FOLLOW_22_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryType599 = new BitSet(new long[]{0x0000000020000020L});
-    public static final BitSet FOLLOW_29_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryType629 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_IDENTIFIER_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryType654 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_11_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryType675 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_INT_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryType693 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_12_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryType714 = new BitSet(new long[]{0x0000000200000002L});
+    public static final BitSet FOLLOW_22_in_parse_hu_modembed_model_modembed_abstraction_DeviceAbstraction115 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_QUALIFIEDID_in_parse_hu_modembed_model_modembed_abstraction_DeviceAbstraction133 = new BitSet(new long[]{0x0000000001810000L});
+    public static final BitSet FOLLOW_23_in_parse_hu_modembed_model_modembed_abstraction_DeviceAbstraction163 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_QUALIFIEDID_in_parse_hu_modembed_model_modembed_abstraction_DeviceAbstraction189 = new BitSet(new long[]{0x0000000001010000L});
+    public static final BitSet FOLLOW_24_in_parse_hu_modembed_model_modembed_abstraction_DeviceAbstraction244 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_QUALIFIEDID_in_parse_hu_modembed_model_modembed_abstraction_DeviceAbstraction270 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_16_in_parse_hu_modembed_model_modembed_abstraction_DeviceAbstraction316 = new BitSet(new long[]{0x000000000E000002L});
+    public static final BitSet FOLLOW_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryType_in_parse_hu_modembed_model_modembed_abstraction_DeviceAbstraction352 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryInstance_in_parse_hu_modembed_model_modembed_abstraction_DeviceAbstraction402 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationDefinition_in_parse_hu_modembed_model_modembed_abstraction_DeviceAbstraction452 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_16_in_parse_hu_modembed_model_modembed_abstraction_DeviceAbstraction498 = new BitSet(new long[]{0x000000000E000002L});
+    public static final BitSet FOLLOW_26_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryType546 = new BitSet(new long[]{0x0000000090200080L});
+    public static final BitSet FOLLOW_31_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryType569 = new BitSet(new long[]{0x0000000010200080L});
+    public static final BitSet FOLLOW_21_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryType599 = new BitSet(new long[]{0x0000000010000080L});
+    public static final BitSet FOLLOW_28_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryType629 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_QUALIFIEDID_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryType654 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_10_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryType675 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_INT_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryType693 = new BitSet(new long[]{0x0000000000000800L});
+    public static final BitSet FOLLOW_11_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryType714 = new BitSet(new long[]{0x0000000100000002L});
     public static final BitSet FOLLOW_parse_hu_modembed_model_modembed_infrastructure_AttributeContainerDefinition_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryType737 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryInstance778 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_IDENTIFIER_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryInstance796 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_20_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryInstance817 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_INT_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryInstance835 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryInstance856 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_INT_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryInstance874 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryInstance895 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_16_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryInstance909 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_IDENTIFIER_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryInstance927 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_25_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryInstance778 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_QUALIFIEDID_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryInstance796 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_19_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryInstance817 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_INT_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryInstance835 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_13_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryInstance856 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_INT_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryInstance874 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_20_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryInstance895 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_15_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryInstance909 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_QUALIFIEDID_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryInstance927 = new BitSet(new long[]{0x0000000100000000L});
     public static final BitSet FOLLOW_parse_hu_modembed_model_modembed_infrastructure_AttributeValueContainer_in_parse_hu_modembed_model_modembed_abstraction_memorymodel_MemoryInstance952 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_33_in_parse_hu_modembed_model_modembed_infrastructure_AttributeContainerDefinition985 = new BitSet(new long[]{0x0000000400000020L});
-    public static final BitSet FOLLOW_parse_hu_modembed_model_modembed_infrastructure_AttributeDefinition_in_parse_hu_modembed_model_modembed_infrastructure_AttributeContainerDefinition1008 = new BitSet(new long[]{0x0000000400000020L});
+    public static final BitSet FOLLOW_32_in_parse_hu_modembed_model_modembed_infrastructure_AttributeContainerDefinition985 = new BitSet(new long[]{0x0000000400000080L});
+    public static final BitSet FOLLOW_parse_hu_modembed_model_modembed_infrastructure_AttributeDefinition_in_parse_hu_modembed_model_modembed_infrastructure_AttributeContainerDefinition1008 = new BitSet(new long[]{0x0000000400000080L});
     public static final BitSet FOLLOW_34_in_parse_hu_modembed_model_modembed_infrastructure_AttributeContainerDefinition1034 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IDENTIFIER_in_parse_hu_modembed_model_modembed_infrastructure_AttributeDefinition1067 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_17_in_parse_hu_modembed_model_modembed_infrastructure_AttributeDefinition1088 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_33_in_parse_hu_modembed_model_modembed_infrastructure_AttributeValueContainer1117 = new BitSet(new long[]{0x0000000400000020L});
-    public static final BitSet FOLLOW_parse_hu_modembed_model_modembed_infrastructure_AttributeValue_in_parse_hu_modembed_model_modembed_infrastructure_AttributeValueContainer1140 = new BitSet(new long[]{0x0000000400000020L});
+    public static final BitSet FOLLOW_QUALIFIEDID_in_parse_hu_modembed_model_modembed_infrastructure_AttributeDefinition1067 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_16_in_parse_hu_modembed_model_modembed_infrastructure_AttributeDefinition1088 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_parse_hu_modembed_model_modembed_infrastructure_AttributeValueContainer1117 = new BitSet(new long[]{0x0000000400000080L});
+    public static final BitSet FOLLOW_parse_hu_modembed_model_modembed_infrastructure_AttributeValue_in_parse_hu_modembed_model_modembed_infrastructure_AttributeValueContainer1140 = new BitSet(new long[]{0x0000000400000080L});
     public static final BitSet FOLLOW_34_in_parse_hu_modembed_model_modembed_infrastructure_AttributeValueContainer1166 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IDENTIFIER_in_parse_hu_modembed_model_modembed_infrastructure_AttributeValue1199 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_18_in_parse_hu_modembed_model_modembed_infrastructure_AttributeValue1220 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_INT_in_parse_hu_modembed_model_modembed_infrastructure_AttributeValue1238 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_17_in_parse_hu_modembed_model_modembed_infrastructure_AttributeValue1259 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationDefinition1288 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_IDENTIFIER_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationDefinition1306 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_11_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationDefinition1327 = new BitSet(new long[]{0x0000000080001100L});
-    public static final BitSet FOLLOW_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationDefinition1356 = new BitSet(new long[]{0x0000000000005000L});
-    public static final BitSet FOLLOW_14_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationDefinition1397 = new BitSet(new long[]{0x0000000080000100L});
-    public static final BitSet FOLLOW_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationDefinition1431 = new BitSet(new long[]{0x0000000000005000L});
-    public static final BitSet FOLLOW_12_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationDefinition1505 = new BitSet(new long[]{0x0000000200000000L});
-    public static final BitSet FOLLOW_33_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationDefinition1519 = new BitSet(new long[]{0x0000000400000020L});
-    public static final BitSet FOLLOW_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationStep_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationDefinition1542 = new BitSet(new long[]{0x0000000400000020L});
+    public static final BitSet FOLLOW_QUALIFIEDID_in_parse_hu_modembed_model_modembed_infrastructure_AttributeValue1199 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_parse_hu_modembed_model_modembed_infrastructure_AttributeValue1220 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_INT_in_parse_hu_modembed_model_modembed_infrastructure_AttributeValue1238 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_16_in_parse_hu_modembed_model_modembed_infrastructure_AttributeValue1259 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationDefinition1288 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_QUALIFIEDID_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationDefinition1306 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_10_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationDefinition1327 = new BitSet(new long[]{0x0000000000000880L});
+    public static final BitSet FOLLOW_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationDefinition1356 = new BitSet(new long[]{0x0000000000002800L});
+    public static final BitSet FOLLOW_13_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationDefinition1397 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationDefinition1431 = new BitSet(new long[]{0x0000000000002800L});
+    public static final BitSet FOLLOW_11_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationDefinition1505 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_32_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationDefinition1519 = new BitSet(new long[]{0x0000000400000080L});
+    public static final BitSet FOLLOW_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationStep_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationDefinition1542 = new BitSet(new long[]{0x0000000400000080L});
     public static final BitSet FOLLOW_34_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationDefinition1568 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_parse_hu_modembed_model_modembed_abstraction_types_TypeDefinition_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument1601 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_19_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument1619 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_IDENTIFIER_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument1637 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_16_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument1658 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_INT_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument1676 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_IDENTIFIER_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument1701 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IDENTIFIER_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionCallOperationStep1741 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_11_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionCallOperationStep1762 = new BitSet(new long[]{0x0000000000001020L});
-    public static final BitSet FOLLOW_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionCallOperationStep1791 = new BitSet(new long[]{0x0000000000005000L});
-    public static final BitSet FOLLOW_14_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionCallOperationStep1832 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionCallOperationStep1866 = new BitSet(new long[]{0x0000000000005000L});
-    public static final BitSet FOLLOW_12_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionCallOperationStep1940 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_17_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionCallOperationStep1954 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IDENTIFIER_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping1987 = new BitSet(new long[]{0x000000000001A002L});
-    public static final BitSet FOLLOW_15_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping2017 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_IDENTIFIER_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping2043 = new BitSet(new long[]{0x0000000000012002L});
-    public static final BitSet FOLLOW_16_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping2098 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_INT_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping2124 = new BitSet(new long[]{0x0000000000002002L});
-    public static final BitSet FOLLOW_13_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping2179 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_INT_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping2205 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_30_in_parse_hu_modembed_model_modembed_abstraction_types_Type2266 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_QUALIFIEDID_in_parse_hu_modembed_model_modembed_abstraction_types_Type2284 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_18_in_parse_hu_modembed_model_modembed_abstraction_types_Type2305 = new BitSet(new long[]{0x0000000080000100L});
-    public static final BitSet FOLLOW_parse_hu_modembed_model_modembed_abstraction_types_TypeDefinition_in_parse_hu_modembed_model_modembed_abstraction_types_Type2323 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_17_in_parse_hu_modembed_model_modembed_abstraction_types_Type2341 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_31_in_parse_hu_modembed_model_modembed_abstraction_types_UnsignedTypeDefinition2370 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_11_in_parse_hu_modembed_model_modembed_abstraction_types_UnsignedTypeDefinition2384 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_INT_in_parse_hu_modembed_model_modembed_abstraction_types_UnsignedTypeDefinition2402 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_12_in_parse_hu_modembed_model_modembed_abstraction_types_UnsignedTypeDefinition2423 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_QUALIFIEDID_in_parse_hu_modembed_model_modembed_abstraction_types_ReferenceTypeDefinition2456 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionCallOperationStep_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationStep2488 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_parse_hu_modembed_model_modembed_abstraction_types_UnsignedTypeDefinition_in_parse_hu_modembed_model_modembed_abstraction_types_TypeDefinition2509 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_parse_hu_modembed_model_modembed_abstraction_types_ReferenceTypeDefinition_in_parse_hu_modembed_model_modembed_abstraction_types_TypeDefinition2519 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_QUALIFIEDID_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument1601 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_15_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument1622 = new BitSet(new long[]{0x0000000040000080L});
+    public static final BitSet FOLLOW_parse_hu_modembed_model_modembed_abstraction_types_TypeDefinition_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument1640 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_33_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument1658 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_INT_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument1676 = new BitSet(new long[]{0x0000000000040002L});
+    public static final BitSet FOLLOW_18_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument1706 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_QUALIFIEDID_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument1732 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_QUALIFIEDID_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionCallOperationStep1797 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_10_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionCallOperationStep1818 = new BitSet(new long[]{0x0000000000000880L});
+    public static final BitSet FOLLOW_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionCallOperationStep1847 = new BitSet(new long[]{0x0000000000002800L});
+    public static final BitSet FOLLOW_13_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionCallOperationStep1888 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionCallOperationStep1922 = new BitSet(new long[]{0x0000000000002800L});
+    public static final BitSet FOLLOW_11_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionCallOperationStep1996 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_16_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionCallOperationStep2010 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_QUALIFIEDID_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping2043 = new BitSet(new long[]{0x000000000000D002L});
+    public static final BitSet FOLLOW_14_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping2073 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_QUALIFIEDID_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping2099 = new BitSet(new long[]{0x0000000000009002L});
+    public static final BitSet FOLLOW_15_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping2154 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_INT_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping2180 = new BitSet(new long[]{0x0000000000001002L});
+    public static final BitSet FOLLOW_12_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping2235 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_INT_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionParameterMapping2261 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_29_in_parse_hu_modembed_model_modembed_abstraction_types_Type2322 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_QUALIFIEDID_in_parse_hu_modembed_model_modembed_abstraction_types_Type2340 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_parse_hu_modembed_model_modembed_abstraction_types_Type2361 = new BitSet(new long[]{0x0000000040000080L});
+    public static final BitSet FOLLOW_parse_hu_modembed_model_modembed_abstraction_types_TypeDefinition_in_parse_hu_modembed_model_modembed_abstraction_types_Type2379 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_16_in_parse_hu_modembed_model_modembed_abstraction_types_Type2397 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_30_in_parse_hu_modembed_model_modembed_abstraction_types_UnsignedTypeDefinition2426 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_10_in_parse_hu_modembed_model_modembed_abstraction_types_UnsignedTypeDefinition2440 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_INT_in_parse_hu_modembed_model_modembed_abstraction_types_UnsignedTypeDefinition2458 = new BitSet(new long[]{0x0000000000000800L});
+    public static final BitSet FOLLOW_11_in_parse_hu_modembed_model_modembed_abstraction_types_UnsignedTypeDefinition2479 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_QUALIFIEDID_in_parse_hu_modembed_model_modembed_abstraction_types_ReferenceTypeDefinition2512 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_parse_hu_modembed_model_modembed_abstraction_behavior_platform_InstructionCallOperationStep_in_parse_hu_modembed_model_modembed_abstraction_behavior_platform_OperationStep2544 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_parse_hu_modembed_model_modembed_abstraction_types_UnsignedTypeDefinition_in_parse_hu_modembed_model_modembed_abstraction_types_TypeDefinition2565 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_parse_hu_modembed_model_modembed_abstraction_types_ReferenceTypeDefinition_in_parse_hu_modembed_model_modembed_abstraction_types_TypeDefinition2575 = new BitSet(new long[]{0x0000000000000002L});
 
 }

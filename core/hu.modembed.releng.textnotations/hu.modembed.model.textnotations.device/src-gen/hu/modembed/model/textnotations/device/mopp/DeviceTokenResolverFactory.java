@@ -23,7 +23,6 @@ public class DeviceTokenResolverFactory implements hu.modembed.model.textnotatio
 	public DeviceTokenResolverFactory() {
 		tokenName2TokenResolver = new java.util.LinkedHashMap<String, hu.modembed.model.textnotations.device.IDeviceTokenResolver>();
 		featureName2CollectInTokenResolver = new java.util.LinkedHashMap<String, hu.modembed.model.textnotations.device.IDeviceTokenResolver>();
-		registerTokenResolver("IDENTIFIER", new hu.modembed.model.textnotations.device.analysis.DeviceIDENTIFIERTokenResolver());
 		registerTokenResolver("QUALIFIEDID", new hu.modembed.model.textnotations.device.analysis.DeviceQUALIFIEDIDTokenResolver());
 		registerTokenResolver("INT", new hu.modembed.model.textnotations.device.analysis.DeviceINTTokenResolver());
 	}

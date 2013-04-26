@@ -434,7 +434,7 @@ public class DevicePrinter implements hu.modembed.model.textnotations.device.IDe
 		if (count > 0) {
 			Object o = element.eGet(element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.memorymodel.MemorymodelPackage.MEMORY_TYPE__NAME));
 			if (o != null) {
-				hu.modembed.model.textnotations.device.IDeviceTokenResolver resolver = tokenResolverFactory.createTokenResolver("IDENTIFIER");
+				hu.modembed.model.textnotations.device.IDeviceTokenResolver resolver = tokenResolverFactory.createTokenResolver("QUALIFIEDID");
 				resolver.setOptions(getOptions());
 				out.print(resolver.deResolve((Object) o, element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.memorymodel.MemorymodelPackage.MEMORY_TYPE__NAME), element));
 				out.print(" ");
@@ -504,7 +504,7 @@ public class DevicePrinter implements hu.modembed.model.textnotations.device.IDe
 		if (count > 0) {
 			Object o = element.eGet(element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.memorymodel.MemorymodelPackage.MEMORY_INSTANCE__NAME));
 			if (o != null) {
-				hu.modembed.model.textnotations.device.IDeviceTokenResolver resolver = tokenResolverFactory.createTokenResolver("IDENTIFIER");
+				hu.modembed.model.textnotations.device.IDeviceTokenResolver resolver = tokenResolverFactory.createTokenResolver("QUALIFIEDID");
 				resolver.setOptions(getOptions());
 				out.print(resolver.deResolve((Object) o, element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.memorymodel.MemorymodelPackage.MEMORY_INSTANCE__NAME), element));
 				out.print(" ");
@@ -552,7 +552,7 @@ public class DevicePrinter implements hu.modembed.model.textnotations.device.IDe
 		if (count > 0) {
 			Object o = element.eGet(element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.memorymodel.MemorymodelPackage.MEMORY_INSTANCE__TYPE));
 			if (o != null) {
-				hu.modembed.model.textnotations.device.IDeviceTokenResolver resolver = tokenResolverFactory.createTokenResolver("IDENTIFIER");
+				hu.modembed.model.textnotations.device.IDeviceTokenResolver resolver = tokenResolverFactory.createTokenResolver("QUALIFIEDID");
 				resolver.setOptions(getOptions());
 				out.print(resolver.deResolve(getReferenceResolverSwitch() == null ? null : getReferenceResolverSwitch().getMemoryInstanceTypeReferenceResolver().deResolve((hu.modembed.model.modembed.abstraction.memorymodel.MemoryType) o, element, (org.eclipse.emf.ecore.EReference) element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.memorymodel.MemorymodelPackage.MEMORY_INSTANCE__TYPE)), element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.memorymodel.MemorymodelPackage.MEMORY_INSTANCE__TYPE), element));
 				out.print(" ");
@@ -635,7 +635,7 @@ public class DevicePrinter implements hu.modembed.model.textnotations.device.IDe
 		if (count > 0) {
 			Object o = element.eGet(element.eClass().getEStructuralFeature(hu.modembed.model.modembed.infrastructure.InfrastructurePackage.ATTRIBUTE_DEFINITION__NAME));
 			if (o != null) {
-				hu.modembed.model.textnotations.device.IDeviceTokenResolver resolver = tokenResolverFactory.createTokenResolver("IDENTIFIER");
+				hu.modembed.model.textnotations.device.IDeviceTokenResolver resolver = tokenResolverFactory.createTokenResolver("QUALIFIEDID");
 				resolver.setOptions(getOptions());
 				out.print(resolver.deResolve((Object) o, element.eClass().getEStructuralFeature(hu.modembed.model.modembed.infrastructure.InfrastructurePackage.ATTRIBUTE_DEFINITION__NAME), element));
 				out.print(" ");
@@ -716,7 +716,7 @@ public class DevicePrinter implements hu.modembed.model.textnotations.device.IDe
 		if (count > 0) {
 			Object o = element.eGet(element.eClass().getEStructuralFeature(hu.modembed.model.modembed.infrastructure.InfrastructurePackage.ATTRIBUTE_VALUE__DEFINITION));
 			if (o != null) {
-				hu.modembed.model.textnotations.device.IDeviceTokenResolver resolver = tokenResolverFactory.createTokenResolver("IDENTIFIER");
+				hu.modembed.model.textnotations.device.IDeviceTokenResolver resolver = tokenResolverFactory.createTokenResolver("QUALIFIEDID");
 				resolver.setOptions(getOptions());
 				out.print(resolver.deResolve(getReferenceResolverSwitch() == null ? null : getReferenceResolverSwitch().getAttributeValueDefinitionReferenceResolver().deResolve((hu.modembed.model.modembed.infrastructure.AttributeDefinition) o, element, (org.eclipse.emf.ecore.EReference) element.eClass().getEStructuralFeature(hu.modembed.model.modembed.infrastructure.InfrastructurePackage.ATTRIBUTE_VALUE__DEFINITION)), element.eClass().getEStructuralFeature(hu.modembed.model.modembed.infrastructure.InfrastructurePackage.ATTRIBUTE_VALUE__DEFINITION), element));
 				out.print(" ");
@@ -776,7 +776,7 @@ public class DevicePrinter implements hu.modembed.model.textnotations.device.IDe
 		if (count > 0) {
 			Object o = element.eGet(element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.OPERATION_DEFINITION__OPERATION));
 			if (o != null) {
-				hu.modembed.model.textnotations.device.IDeviceTokenResolver resolver = tokenResolverFactory.createTokenResolver("IDENTIFIER");
+				hu.modembed.model.textnotations.device.IDeviceTokenResolver resolver = tokenResolverFactory.createTokenResolver("QUALIFIEDID");
 				resolver.setOptions(getOptions());
 				out.print(resolver.deResolve((Object) o, element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.OPERATION_DEFINITION__OPERATION), element));
 				out.print(" ");
@@ -915,6 +915,24 @@ public class DevicePrinter implements hu.modembed.model.textnotations.device.IDe
 		printCountingMap.put("indirectionLevel", temp == null ? 0 : 1);
 		// print collected hidden tokens
 		int count;
+		java.io.StringWriter sWriter = null;
+		java.io.PrintWriter out1 = null;
+		java.util.Map<String, Integer> printCountingMap1 = null;
+		// DEFINITION PART BEGINS (PlaceholderUsingSpecifiedToken)
+		count = printCountingMap.get("name");
+		if (count > 0) {
+			Object o = element.eGet(element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.OPERATION_ARGUMENT__NAME));
+			if (o != null) {
+				hu.modembed.model.textnotations.device.IDeviceTokenResolver resolver = tokenResolverFactory.createTokenResolver("QUALIFIEDID");
+				resolver.setOptions(getOptions());
+				out.print(resolver.deResolve((Object) o, element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.OPERATION_ARGUMENT__NAME), element));
+				out.print(" ");
+			}
+			printCountingMap.put("name", count - 1);
+		}
+		// DEFINITION PART BEGINS (CsString)
+		out.print(":");
+		out.print(" ");
 		// DEFINITION PART BEGINS (Containment)
 		count = printCountingMap.get("type");
 		if (count > 0) {
@@ -925,22 +943,7 @@ public class DevicePrinter implements hu.modembed.model.textnotations.device.IDe
 			printCountingMap.put("type", count - 1);
 		}
 		// DEFINITION PART BEGINS (CsString)
-		out.print("@");
-		out.print(" ");
-		// DEFINITION PART BEGINS (PlaceholderUsingSpecifiedToken)
-		count = printCountingMap.get("memtype");
-		if (count > 0) {
-			Object o = element.eGet(element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.OPERATION_ARGUMENT__MEMTYPE));
-			if (o != null) {
-				hu.modembed.model.textnotations.device.IDeviceTokenResolver resolver = tokenResolverFactory.createTokenResolver("IDENTIFIER");
-				resolver.setOptions(getOptions());
-				out.print(resolver.deResolve(getReferenceResolverSwitch() == null ? null : getReferenceResolverSwitch().getOperationArgumentMemtypeReferenceResolver().deResolve((hu.modembed.model.modembed.abstraction.memorymodel.MemoryType) o, element, (org.eclipse.emf.ecore.EReference) element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.OPERATION_ARGUMENT__MEMTYPE)), element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.OPERATION_ARGUMENT__MEMTYPE), element));
-				out.print(" ");
-			}
-			printCountingMap.put("memtype", count - 1);
-		}
-		// DEFINITION PART BEGINS (CsString)
-		out.print(":");
+		out.print("|");
 		out.print(" ");
 		// DEFINITION PART BEGINS (PlaceholderUsingSpecifiedToken)
 		count = printCountingMap.get("indirectionLevel");
@@ -954,17 +957,37 @@ public class DevicePrinter implements hu.modembed.model.textnotations.device.IDe
 			}
 			printCountingMap.put("indirectionLevel", count - 1);
 		}
+		// DEFINITION PART BEGINS (CompoundDefinition)
+		sWriter = new java.io.StringWriter();
+		out1 = new java.io.PrintWriter(sWriter);
+		printCountingMap1 = new java.util.LinkedHashMap<String, Integer>(printCountingMap);
+		print_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument_0(element, localtab, out1, printCountingMap1);
+		if (printCountingMap.equals(printCountingMap1)) {
+			out1.close();
+		} else {
+			out1.flush();
+			out1.close();
+			out.print(sWriter.toString());
+			printCountingMap.putAll(printCountingMap1);
+		}
+	}
+	
+	public void print_hu_modembed_model_modembed_abstraction_behavior_platform_OperationArgument_0(hu.modembed.model.modembed.abstraction.behavior.platform.OperationArgument element, String outertab, java.io.PrintWriter out, java.util.Map<String, Integer> printCountingMap) {
+		int count;
+		// DEFINITION PART BEGINS (CsString)
+		out.print("@");
+		out.print(" ");
 		// DEFINITION PART BEGINS (PlaceholderUsingSpecifiedToken)
-		count = printCountingMap.get("name");
+		count = printCountingMap.get("memtype");
 		if (count > 0) {
-			Object o = element.eGet(element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.OPERATION_ARGUMENT__NAME));
+			Object o = element.eGet(element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.OPERATION_ARGUMENT__MEMTYPE));
 			if (o != null) {
-				hu.modembed.model.textnotations.device.IDeviceTokenResolver resolver = tokenResolverFactory.createTokenResolver("IDENTIFIER");
+				hu.modembed.model.textnotations.device.IDeviceTokenResolver resolver = tokenResolverFactory.createTokenResolver("QUALIFIEDID");
 				resolver.setOptions(getOptions());
-				out.print(resolver.deResolve((Object) o, element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.OPERATION_ARGUMENT__NAME), element));
+				out.print(resolver.deResolve(getReferenceResolverSwitch() == null ? null : getReferenceResolverSwitch().getOperationArgumentMemtypeReferenceResolver().deResolve((hu.modembed.model.modembed.abstraction.memorymodel.MemoryType) o, element, (org.eclipse.emf.ecore.EReference) element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.OPERATION_ARGUMENT__MEMTYPE)), element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.OPERATION_ARGUMENT__MEMTYPE), element));
 				out.print(" ");
 			}
-			printCountingMap.put("name", count - 1);
+			printCountingMap.put("memtype", count - 1);
 		}
 	}
 	
@@ -996,7 +1019,7 @@ public class DevicePrinter implements hu.modembed.model.textnotations.device.IDe
 		if (count > 0) {
 			Object o = element.eGet(element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.INSTRUCTION_CALL_OPERATION_STEP__INSTRUCTION));
 			if (o != null) {
-				hu.modembed.model.textnotations.device.IDeviceTokenResolver resolver = tokenResolverFactory.createTokenResolver("IDENTIFIER");
+				hu.modembed.model.textnotations.device.IDeviceTokenResolver resolver = tokenResolverFactory.createTokenResolver("QUALIFIEDID");
 				resolver.setOptions(getOptions());
 				out.print(resolver.deResolve(getReferenceResolverSwitch() == null ? null : getReferenceResolverSwitch().getInstructionCallOperationStepInstructionReferenceResolver().deResolve((hu.modembed.model.modembed.core.instructionset.Instruction) o, element, (org.eclipse.emf.ecore.EReference) element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.INSTRUCTION_CALL_OPERATION_STEP__INSTRUCTION)), element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.INSTRUCTION_CALL_OPERATION_STEP__INSTRUCTION), element));
 				out.print(" ");
@@ -1125,7 +1148,7 @@ public class DevicePrinter implements hu.modembed.model.textnotations.device.IDe
 		if (count > 0) {
 			Object o = element.eGet(element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.INSTRUCTION_PARAMETER_MAPPING__VALUE));
 			if (o != null) {
-				hu.modembed.model.textnotations.device.IDeviceTokenResolver resolver = tokenResolverFactory.createTokenResolver("IDENTIFIER");
+				hu.modembed.model.textnotations.device.IDeviceTokenResolver resolver = tokenResolverFactory.createTokenResolver("QUALIFIEDID");
 				resolver.setOptions(getOptions());
 				out.print(resolver.deResolve(getReferenceResolverSwitch() == null ? null : getReferenceResolverSwitch().getInstructionParameterMappingValueReferenceResolver().deResolve((hu.modembed.model.modembed.abstraction.behavior.platform.OperationArgument) o, element, (org.eclipse.emf.ecore.EReference) element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.INSTRUCTION_PARAMETER_MAPPING__VALUE)), element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.INSTRUCTION_PARAMETER_MAPPING__VALUE), element));
 				out.print(" ");
@@ -1183,7 +1206,7 @@ public class DevicePrinter implements hu.modembed.model.textnotations.device.IDe
 		if (count > 0) {
 			Object o = element.eGet(element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.INSTRUCTION_PARAMETER_MAPPING__ATTRIBUTE));
 			if (o != null) {
-				hu.modembed.model.textnotations.device.IDeviceTokenResolver resolver = tokenResolverFactory.createTokenResolver("IDENTIFIER");
+				hu.modembed.model.textnotations.device.IDeviceTokenResolver resolver = tokenResolverFactory.createTokenResolver("QUALIFIEDID");
 				resolver.setOptions(getOptions());
 				out.print(resolver.deResolve(getReferenceResolverSwitch() == null ? null : getReferenceResolverSwitch().getInstructionParameterMappingAttributeReferenceResolver().deResolve((hu.modembed.model.modembed.infrastructure.AttributeDefinition) o, element, (org.eclipse.emf.ecore.EReference) element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.INSTRUCTION_PARAMETER_MAPPING__ATTRIBUTE)), element.eClass().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.INSTRUCTION_PARAMETER_MAPPING__ATTRIBUTE), element));
 				out.print(" ");

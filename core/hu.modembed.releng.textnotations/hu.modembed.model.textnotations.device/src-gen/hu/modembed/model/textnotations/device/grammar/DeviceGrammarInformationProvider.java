@@ -147,7 +147,7 @@ public class DeviceGrammarInformationProvider {
 	}
 	public final static hu.modembed.model.textnotations.device.grammar.DevicePlaceholder DEVICE_1_0_0_4 = INSTANCE.getDEVICE_1_0_0_4();
 	private hu.modembed.model.textnotations.device.grammar.DevicePlaceholder getDEVICE_1_0_0_4() {
-		return new hu.modembed.model.textnotations.device.grammar.DevicePlaceholder(hu.modembed.model.modembed.abstraction.memorymodel.MemorymodelPackage.eINSTANCE.getMemoryType().getEStructuralFeature(hu.modembed.model.modembed.abstraction.memorymodel.MemorymodelPackage.MEMORY_TYPE__NAME), "IDENTIFIER", hu.modembed.model.textnotations.device.grammar.DeviceCardinality.ONE, 0);
+		return new hu.modembed.model.textnotations.device.grammar.DevicePlaceholder(hu.modembed.model.modembed.abstraction.memorymodel.MemorymodelPackage.eINSTANCE.getMemoryType().getEStructuralFeature(hu.modembed.model.modembed.abstraction.memorymodel.MemorymodelPackage.MEMORY_TYPE__NAME), "QUALIFIEDID", hu.modembed.model.textnotations.device.grammar.DeviceCardinality.ONE, 0);
 	}
 	public final static hu.modembed.model.textnotations.device.grammar.DeviceKeyword DEVICE_1_0_0_5 = INSTANCE.getDEVICE_1_0_0_5();
 	private hu.modembed.model.textnotations.device.grammar.DeviceKeyword getDEVICE_1_0_0_5() {
@@ -183,7 +183,7 @@ public class DeviceGrammarInformationProvider {
 	}
 	public final static hu.modembed.model.textnotations.device.grammar.DevicePlaceholder DEVICE_2_0_0_1 = INSTANCE.getDEVICE_2_0_0_1();
 	private hu.modembed.model.textnotations.device.grammar.DevicePlaceholder getDEVICE_2_0_0_1() {
-		return new hu.modembed.model.textnotations.device.grammar.DevicePlaceholder(hu.modembed.model.modembed.abstraction.memorymodel.MemorymodelPackage.eINSTANCE.getMemoryInstance().getEStructuralFeature(hu.modembed.model.modembed.abstraction.memorymodel.MemorymodelPackage.MEMORY_INSTANCE__NAME), "IDENTIFIER", hu.modembed.model.textnotations.device.grammar.DeviceCardinality.ONE, 0);
+		return new hu.modembed.model.textnotations.device.grammar.DevicePlaceholder(hu.modembed.model.modembed.abstraction.memorymodel.MemorymodelPackage.eINSTANCE.getMemoryInstance().getEStructuralFeature(hu.modembed.model.modembed.abstraction.memorymodel.MemorymodelPackage.MEMORY_INSTANCE__NAME), "QUALIFIEDID", hu.modembed.model.textnotations.device.grammar.DeviceCardinality.ONE, 0);
 	}
 	public final static hu.modembed.model.textnotations.device.grammar.DeviceKeyword DEVICE_2_0_0_2 = INSTANCE.getDEVICE_2_0_0_2();
 	private hu.modembed.model.textnotations.device.grammar.DeviceKeyword getDEVICE_2_0_0_2() {
@@ -211,7 +211,7 @@ public class DeviceGrammarInformationProvider {
 	}
 	public final static hu.modembed.model.textnotations.device.grammar.DevicePlaceholder DEVICE_2_0_0_8 = INSTANCE.getDEVICE_2_0_0_8();
 	private hu.modembed.model.textnotations.device.grammar.DevicePlaceholder getDEVICE_2_0_0_8() {
-		return new hu.modembed.model.textnotations.device.grammar.DevicePlaceholder(hu.modembed.model.modembed.abstraction.memorymodel.MemorymodelPackage.eINSTANCE.getMemoryInstance().getEStructuralFeature(hu.modembed.model.modembed.abstraction.memorymodel.MemorymodelPackage.MEMORY_INSTANCE__TYPE), "IDENTIFIER", hu.modembed.model.textnotations.device.grammar.DeviceCardinality.ONE, 0);
+		return new hu.modembed.model.textnotations.device.grammar.DevicePlaceholder(hu.modembed.model.modembed.abstraction.memorymodel.MemorymodelPackage.eINSTANCE.getMemoryInstance().getEStructuralFeature(hu.modembed.model.modembed.abstraction.memorymodel.MemorymodelPackage.MEMORY_INSTANCE__TYPE), "QUALIFIEDID", hu.modembed.model.textnotations.device.grammar.DeviceCardinality.ONE, 0);
 	}
 	public final static hu.modembed.model.textnotations.device.grammar.DeviceContainment DEVICE_2_0_0_9 = INSTANCE.getDEVICE_2_0_0_9();
 	private hu.modembed.model.textnotations.device.grammar.DeviceContainment getDEVICE_2_0_0_9() {
@@ -255,7 +255,7 @@ public class DeviceGrammarInformationProvider {
 	}
 	public final static hu.modembed.model.textnotations.device.grammar.DevicePlaceholder DEVICE_4_0_0_0 = INSTANCE.getDEVICE_4_0_0_0();
 	private hu.modembed.model.textnotations.device.grammar.DevicePlaceholder getDEVICE_4_0_0_0() {
-		return new hu.modembed.model.textnotations.device.grammar.DevicePlaceholder(hu.modembed.model.modembed.infrastructure.InfrastructurePackage.eINSTANCE.getAttributeDefinition().getEStructuralFeature(hu.modembed.model.modembed.infrastructure.InfrastructurePackage.ATTRIBUTE_DEFINITION__NAME), "IDENTIFIER", hu.modembed.model.textnotations.device.grammar.DeviceCardinality.ONE, 0);
+		return new hu.modembed.model.textnotations.device.grammar.DevicePlaceholder(hu.modembed.model.modembed.infrastructure.InfrastructurePackage.eINSTANCE.getAttributeDefinition().getEStructuralFeature(hu.modembed.model.modembed.infrastructure.InfrastructurePackage.ATTRIBUTE_DEFINITION__NAME), "QUALIFIEDID", hu.modembed.model.textnotations.device.grammar.DeviceCardinality.ONE, 0);
 	}
 	public final static hu.modembed.model.textnotations.device.grammar.DeviceKeyword DEVICE_4_0_0_1 = INSTANCE.getDEVICE_4_0_0_1();
 	private hu.modembed.model.textnotations.device.grammar.DeviceKeyword getDEVICE_4_0_0_1() {
@@ -299,7 +299,7 @@ public class DeviceGrammarInformationProvider {
 	}
 	public final static hu.modembed.model.textnotations.device.grammar.DevicePlaceholder DEVICE_6_0_0_0 = INSTANCE.getDEVICE_6_0_0_0();
 	private hu.modembed.model.textnotations.device.grammar.DevicePlaceholder getDEVICE_6_0_0_0() {
-		return new hu.modembed.model.textnotations.device.grammar.DevicePlaceholder(hu.modembed.model.modembed.infrastructure.InfrastructurePackage.eINSTANCE.getAttributeValue().getEStructuralFeature(hu.modembed.model.modembed.infrastructure.InfrastructurePackage.ATTRIBUTE_VALUE__DEFINITION), "IDENTIFIER", hu.modembed.model.textnotations.device.grammar.DeviceCardinality.ONE, 0);
+		return new hu.modembed.model.textnotations.device.grammar.DevicePlaceholder(hu.modembed.model.modembed.infrastructure.InfrastructurePackage.eINSTANCE.getAttributeValue().getEStructuralFeature(hu.modembed.model.modembed.infrastructure.InfrastructurePackage.ATTRIBUTE_VALUE__DEFINITION), "QUALIFIEDID", hu.modembed.model.textnotations.device.grammar.DeviceCardinality.ONE, 0);
 	}
 	public final static hu.modembed.model.textnotations.device.grammar.DeviceKeyword DEVICE_6_0_0_1 = INSTANCE.getDEVICE_6_0_0_1();
 	private hu.modembed.model.textnotations.device.grammar.DeviceKeyword getDEVICE_6_0_0_1() {
@@ -331,7 +331,7 @@ public class DeviceGrammarInformationProvider {
 	}
 	public final static hu.modembed.model.textnotations.device.grammar.DevicePlaceholder DEVICE_7_0_0_1 = INSTANCE.getDEVICE_7_0_0_1();
 	private hu.modembed.model.textnotations.device.grammar.DevicePlaceholder getDEVICE_7_0_0_1() {
-		return new hu.modembed.model.textnotations.device.grammar.DevicePlaceholder(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.eINSTANCE.getOperationDefinition().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.OPERATION_DEFINITION__OPERATION), "IDENTIFIER", hu.modembed.model.textnotations.device.grammar.DeviceCardinality.ONE, 0);
+		return new hu.modembed.model.textnotations.device.grammar.DevicePlaceholder(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.eINSTANCE.getOperationDefinition().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.OPERATION_DEFINITION__OPERATION), "QUALIFIEDID", hu.modembed.model.textnotations.device.grammar.DeviceCardinality.ONE, 0);
 	}
 	public final static hu.modembed.model.textnotations.device.grammar.DeviceKeyword DEVICE_7_0_0_2 = INSTANCE.getDEVICE_7_0_0_2();
 	private hu.modembed.model.textnotations.device.grammar.DeviceKeyword getDEVICE_7_0_0_2() {
@@ -401,29 +401,45 @@ public class DeviceGrammarInformationProvider {
 	private hu.modembed.model.textnotations.device.grammar.DeviceRule getDEVICE_7() {
 		return new hu.modembed.model.textnotations.device.grammar.DeviceRule(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.eINSTANCE.getOperationDefinition(), DEVICE_7_0, hu.modembed.model.textnotations.device.grammar.DeviceCardinality.ONE);
 	}
-	public final static hu.modembed.model.textnotations.device.grammar.DeviceContainment DEVICE_8_0_0_0 = INSTANCE.getDEVICE_8_0_0_0();
-	private hu.modembed.model.textnotations.device.grammar.DeviceContainment getDEVICE_8_0_0_0() {
-		return new hu.modembed.model.textnotations.device.grammar.DeviceContainment(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.eINSTANCE.getOperationArgument().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.OPERATION_ARGUMENT__TYPE), hu.modembed.model.textnotations.device.grammar.DeviceCardinality.ONE, new org.eclipse.emf.ecore.EClass[] {hu.modembed.model.modembed.abstraction.types.TypesPackage.eINSTANCE.getTypeDefinition(), }, 0);
+	public final static hu.modembed.model.textnotations.device.grammar.DevicePlaceholder DEVICE_8_0_0_0 = INSTANCE.getDEVICE_8_0_0_0();
+	private hu.modembed.model.textnotations.device.grammar.DevicePlaceholder getDEVICE_8_0_0_0() {
+		return new hu.modembed.model.textnotations.device.grammar.DevicePlaceholder(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.eINSTANCE.getOperationArgument().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.OPERATION_ARGUMENT__NAME), "QUALIFIEDID", hu.modembed.model.textnotations.device.grammar.DeviceCardinality.ONE, 0);
 	}
 	public final static hu.modembed.model.textnotations.device.grammar.DeviceKeyword DEVICE_8_0_0_1 = INSTANCE.getDEVICE_8_0_0_1();
 	private hu.modembed.model.textnotations.device.grammar.DeviceKeyword getDEVICE_8_0_0_1() {
-		return new hu.modembed.model.textnotations.device.grammar.DeviceKeyword("@", hu.modembed.model.textnotations.device.grammar.DeviceCardinality.ONE);
+		return new hu.modembed.model.textnotations.device.grammar.DeviceKeyword(":", hu.modembed.model.textnotations.device.grammar.DeviceCardinality.ONE);
 	}
-	public final static hu.modembed.model.textnotations.device.grammar.DevicePlaceholder DEVICE_8_0_0_2 = INSTANCE.getDEVICE_8_0_0_2();
-	private hu.modembed.model.textnotations.device.grammar.DevicePlaceholder getDEVICE_8_0_0_2() {
-		return new hu.modembed.model.textnotations.device.grammar.DevicePlaceholder(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.eINSTANCE.getOperationArgument().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.OPERATION_ARGUMENT__MEMTYPE), "IDENTIFIER", hu.modembed.model.textnotations.device.grammar.DeviceCardinality.ONE, 0);
+	public final static hu.modembed.model.textnotations.device.grammar.DeviceContainment DEVICE_8_0_0_2 = INSTANCE.getDEVICE_8_0_0_2();
+	private hu.modembed.model.textnotations.device.grammar.DeviceContainment getDEVICE_8_0_0_2() {
+		return new hu.modembed.model.textnotations.device.grammar.DeviceContainment(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.eINSTANCE.getOperationArgument().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.OPERATION_ARGUMENT__TYPE), hu.modembed.model.textnotations.device.grammar.DeviceCardinality.ONE, new org.eclipse.emf.ecore.EClass[] {hu.modembed.model.modembed.abstraction.types.TypesPackage.eINSTANCE.getTypeDefinition(), }, 0);
 	}
 	public final static hu.modembed.model.textnotations.device.grammar.DeviceKeyword DEVICE_8_0_0_3 = INSTANCE.getDEVICE_8_0_0_3();
 	private hu.modembed.model.textnotations.device.grammar.DeviceKeyword getDEVICE_8_0_0_3() {
-		return new hu.modembed.model.textnotations.device.grammar.DeviceKeyword(":", hu.modembed.model.textnotations.device.grammar.DeviceCardinality.ONE);
+		return new hu.modembed.model.textnotations.device.grammar.DeviceKeyword("|", hu.modembed.model.textnotations.device.grammar.DeviceCardinality.ONE);
 	}
 	public final static hu.modembed.model.textnotations.device.grammar.DevicePlaceholder DEVICE_8_0_0_4 = INSTANCE.getDEVICE_8_0_0_4();
 	private hu.modembed.model.textnotations.device.grammar.DevicePlaceholder getDEVICE_8_0_0_4() {
 		return new hu.modembed.model.textnotations.device.grammar.DevicePlaceholder(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.eINSTANCE.getOperationArgument().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.OPERATION_ARGUMENT__INDIRECTION_LEVEL), "INT", hu.modembed.model.textnotations.device.grammar.DeviceCardinality.ONE, 0);
 	}
-	public final static hu.modembed.model.textnotations.device.grammar.DevicePlaceholder DEVICE_8_0_0_5 = INSTANCE.getDEVICE_8_0_0_5();
-	private hu.modembed.model.textnotations.device.grammar.DevicePlaceholder getDEVICE_8_0_0_5() {
-		return new hu.modembed.model.textnotations.device.grammar.DevicePlaceholder(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.eINSTANCE.getOperationArgument().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.OPERATION_ARGUMENT__NAME), "IDENTIFIER", hu.modembed.model.textnotations.device.grammar.DeviceCardinality.ONE, 0);
+	public final static hu.modembed.model.textnotations.device.grammar.DeviceKeyword DEVICE_8_0_0_5_0_0_0 = INSTANCE.getDEVICE_8_0_0_5_0_0_0();
+	private hu.modembed.model.textnotations.device.grammar.DeviceKeyword getDEVICE_8_0_0_5_0_0_0() {
+		return new hu.modembed.model.textnotations.device.grammar.DeviceKeyword("@", hu.modembed.model.textnotations.device.grammar.DeviceCardinality.ONE);
+	}
+	public final static hu.modembed.model.textnotations.device.grammar.DevicePlaceholder DEVICE_8_0_0_5_0_0_1 = INSTANCE.getDEVICE_8_0_0_5_0_0_1();
+	private hu.modembed.model.textnotations.device.grammar.DevicePlaceholder getDEVICE_8_0_0_5_0_0_1() {
+		return new hu.modembed.model.textnotations.device.grammar.DevicePlaceholder(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.eINSTANCE.getOperationArgument().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.OPERATION_ARGUMENT__MEMTYPE), "QUALIFIEDID", hu.modembed.model.textnotations.device.grammar.DeviceCardinality.ONE, 0);
+	}
+	public final static hu.modembed.model.textnotations.device.grammar.DeviceSequence DEVICE_8_0_0_5_0_0 = INSTANCE.getDEVICE_8_0_0_5_0_0();
+	private hu.modembed.model.textnotations.device.grammar.DeviceSequence getDEVICE_8_0_0_5_0_0() {
+		return new hu.modembed.model.textnotations.device.grammar.DeviceSequence(hu.modembed.model.textnotations.device.grammar.DeviceCardinality.ONE, DEVICE_8_0_0_5_0_0_0, DEVICE_8_0_0_5_0_0_1);
+	}
+	public final static hu.modembed.model.textnotations.device.grammar.DeviceChoice DEVICE_8_0_0_5_0 = INSTANCE.getDEVICE_8_0_0_5_0();
+	private hu.modembed.model.textnotations.device.grammar.DeviceChoice getDEVICE_8_0_0_5_0() {
+		return new hu.modembed.model.textnotations.device.grammar.DeviceChoice(hu.modembed.model.textnotations.device.grammar.DeviceCardinality.ONE, DEVICE_8_0_0_5_0_0);
+	}
+	public final static hu.modembed.model.textnotations.device.grammar.DeviceCompound DEVICE_8_0_0_5 = INSTANCE.getDEVICE_8_0_0_5();
+	private hu.modembed.model.textnotations.device.grammar.DeviceCompound getDEVICE_8_0_0_5() {
+		return new hu.modembed.model.textnotations.device.grammar.DeviceCompound(DEVICE_8_0_0_5_0, hu.modembed.model.textnotations.device.grammar.DeviceCardinality.QUESTIONMARK);
 	}
 	public final static hu.modembed.model.textnotations.device.grammar.DeviceSequence DEVICE_8_0_0 = INSTANCE.getDEVICE_8_0_0();
 	private hu.modembed.model.textnotations.device.grammar.DeviceSequence getDEVICE_8_0_0() {
@@ -439,7 +455,7 @@ public class DeviceGrammarInformationProvider {
 	}
 	public final static hu.modembed.model.textnotations.device.grammar.DevicePlaceholder DEVICE_9_0_0_0 = INSTANCE.getDEVICE_9_0_0_0();
 	private hu.modembed.model.textnotations.device.grammar.DevicePlaceholder getDEVICE_9_0_0_0() {
-		return new hu.modembed.model.textnotations.device.grammar.DevicePlaceholder(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.eINSTANCE.getInstructionCallOperationStep().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.INSTRUCTION_CALL_OPERATION_STEP__INSTRUCTION), "IDENTIFIER", hu.modembed.model.textnotations.device.grammar.DeviceCardinality.ONE, 0);
+		return new hu.modembed.model.textnotations.device.grammar.DevicePlaceholder(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.eINSTANCE.getInstructionCallOperationStep().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.INSTRUCTION_CALL_OPERATION_STEP__INSTRUCTION), "QUALIFIEDID", hu.modembed.model.textnotations.device.grammar.DeviceCardinality.ONE, 0);
 	}
 	public final static hu.modembed.model.textnotations.device.grammar.DeviceKeyword DEVICE_9_0_0_1 = INSTANCE.getDEVICE_9_0_0_1();
 	private hu.modembed.model.textnotations.device.grammar.DeviceKeyword getDEVICE_9_0_0_1() {
@@ -503,7 +519,7 @@ public class DeviceGrammarInformationProvider {
 	}
 	public final static hu.modembed.model.textnotations.device.grammar.DevicePlaceholder DEVICE_10_0_0_0 = INSTANCE.getDEVICE_10_0_0_0();
 	private hu.modembed.model.textnotations.device.grammar.DevicePlaceholder getDEVICE_10_0_0_0() {
-		return new hu.modembed.model.textnotations.device.grammar.DevicePlaceholder(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.eINSTANCE.getInstructionParameterMapping().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.INSTRUCTION_PARAMETER_MAPPING__VALUE), "IDENTIFIER", hu.modembed.model.textnotations.device.grammar.DeviceCardinality.ONE, 0);
+		return new hu.modembed.model.textnotations.device.grammar.DevicePlaceholder(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.eINSTANCE.getInstructionParameterMapping().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.INSTRUCTION_PARAMETER_MAPPING__VALUE), "QUALIFIEDID", hu.modembed.model.textnotations.device.grammar.DeviceCardinality.ONE, 0);
 	}
 	public final static hu.modembed.model.textnotations.device.grammar.DeviceKeyword DEVICE_10_0_0_1_0_0_0 = INSTANCE.getDEVICE_10_0_0_1_0_0_0();
 	private hu.modembed.model.textnotations.device.grammar.DeviceKeyword getDEVICE_10_0_0_1_0_0_0() {
@@ -511,7 +527,7 @@ public class DeviceGrammarInformationProvider {
 	}
 	public final static hu.modembed.model.textnotations.device.grammar.DevicePlaceholder DEVICE_10_0_0_1_0_0_1 = INSTANCE.getDEVICE_10_0_0_1_0_0_1();
 	private hu.modembed.model.textnotations.device.grammar.DevicePlaceholder getDEVICE_10_0_0_1_0_0_1() {
-		return new hu.modembed.model.textnotations.device.grammar.DevicePlaceholder(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.eINSTANCE.getInstructionParameterMapping().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.INSTRUCTION_PARAMETER_MAPPING__ATTRIBUTE), "IDENTIFIER", hu.modembed.model.textnotations.device.grammar.DeviceCardinality.ONE, 0);
+		return new hu.modembed.model.textnotations.device.grammar.DevicePlaceholder(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.eINSTANCE.getInstructionParameterMapping().getEStructuralFeature(hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage.INSTRUCTION_PARAMETER_MAPPING__ATTRIBUTE), "QUALIFIEDID", hu.modembed.model.textnotations.device.grammar.DeviceCardinality.ONE, 0);
 	}
 	public final static hu.modembed.model.textnotations.device.grammar.DeviceSequence DEVICE_10_0_0_1_0_0 = INSTANCE.getDEVICE_10_0_0_1_0_0();
 	private hu.modembed.model.textnotations.device.grammar.DeviceSequence getDEVICE_10_0_0_1_0_0() {

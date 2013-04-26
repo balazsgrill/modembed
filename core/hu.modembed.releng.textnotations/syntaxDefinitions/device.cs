@@ -39,7 +39,7 @@ TOKENS {
     // helper token - not used on its own 
     DEFINE FRAGMENT DIGIT $('0'..'9')$; 
     // composed token 
-    DEFINE IDENTIFIER CHAR + $($ + CHAR + $|$ + DIGIT + $)*$; 
+    DEFINE FRAGMENT IDENTIFIER CHAR + $($ + CHAR + $|$ + DIGIT + $)*$; 
     
     DEFINE QUALIFIEDID IDENTIFIER + $($ + $'\.'$ + IDENTIFIER + $)*$;
     
@@ -60,30 +60,30 @@ RULES{
 		( (memoryTypes | memoryInstances | operation) ";" )*
 	;
 	
-	memmodel.MemoryType ::= "mtype" contentVolatile["volatile":""] forData["data":""] forProgram["program":""] name[IDENTIFIER] "(" accessCost[INT] ")" attributes?;
+	memmodel.MemoryType ::= "mtype" contentVolatile["volatile":""] forData["data":""] forProgram["program":""] name[QUALIFIEDID] "(" accessCost[INT] ")" attributes?;
 	
-	memmodel.MemoryInstance ::= "minstance" name[IDENTIFIER] "[" startAddress[INT] "," size[INT] "]" ":" type[IDENTIFIER] attributes;
+	memmodel.MemoryInstance ::= "minstance" name[QUALIFIEDID] "[" startAddress[INT] "," size[INT] "]" ":" type[QUALIFIEDID] attributes;
 	
 	infrastructure.AttributeContainerDefinition ::= "{"
 		attributes* 
 	 "}";
 	
-	infrastructure.AttributeDefinition ::= name[IDENTIFIER] ";";
+	infrastructure.AttributeDefinition ::= name[QUALIFIEDID] ";";
 	
 	infrastructure.AttributeValueContainer ::= "{" values* "}";
 	
-	infrastructure.AttributeValue ::= definition[IDENTIFIER] "=" value[INT] ";";
+	infrastructure.AttributeValue ::= definition[QUALIFIEDID] "=" value[INT] ";";
 	
-	platform.OperationDefinition ::= "operation" operation[IDENTIFIER] 
+	platform.OperationDefinition ::= "operation" operation[QUALIFIEDID] 
 			"(" (arguments ("," arguments)*)? ")"
 			"{" steps* "}" ;
 	
-	platform.OperationArgument ::= type "@" memtype[IDENTIFIER] ":" indirectionLevel[INT] name[IDENTIFIER];
+	platform.OperationArgument ::= name[QUALIFIEDID] ":" type "|" indirectionLevel[INT] ("@" memtype[QUALIFIEDID])? ;
 	
-	platform.InstructionCallOperationStep ::= instruction[IDENTIFIER] 
+	platform.InstructionCallOperationStep ::= instruction[QUALIFIEDID] 
 			"(" (arguments ("," arguments)*)? ")" ";" ;
 	
-	platform.InstructionParameterMapping ::= value[IDENTIFIER] ("->" attribute[IDENTIFIER])? (":" bitOffset[INT])? ("+" valueOffset[INT])? ;
+	platform.InstructionParameterMapping ::= value[QUALIFIEDID] ("->" attribute[QUALIFIEDID])? (":" bitOffset[INT])? ("+" valueOffset[INT])? ;
 	
 }
 
