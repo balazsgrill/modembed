@@ -6,16 +6,21 @@
  */
 package hu.modembed.model.textnotations.device.analysis;
 
+import hu.modembed.MODembedCore;
+import hu.modembed.model.modembed.core.instructionset.InstructionSet;
+import hu.modembed.model.modembed.infrastructure.RootElement;
+
 public class DeviceAbstractionInstructionsetReferenceResolver implements hu.modembed.model.textnotations.device.IDeviceReferenceResolver<hu.modembed.model.modembed.abstraction.DeviceAbstraction, hu.modembed.model.modembed.core.instructionset.InstructionSet> {
 	
-	private hu.modembed.model.textnotations.device.analysis.DeviceDefaultResolverDelegate<hu.modembed.model.modembed.abstraction.DeviceAbstraction, hu.modembed.model.modembed.core.instructionset.InstructionSet> delegate = new hu.modembed.model.textnotations.device.analysis.DeviceDefaultResolverDelegate<hu.modembed.model.modembed.abstraction.DeviceAbstraction, hu.modembed.model.modembed.core.instructionset.InstructionSet>();
-	
 	public void resolve(String identifier, hu.modembed.model.modembed.abstraction.DeviceAbstraction container, org.eclipse.emf.ecore.EReference reference, int position, boolean resolveFuzzy, final hu.modembed.model.textnotations.device.IDeviceReferenceResolveResult<hu.modembed.model.modembed.core.instructionset.InstructionSet> result) {
-		delegate.resolve(identifier, container, reference, position, resolveFuzzy, result);
+		RootElement re = MODembedCore.getDefault().getModelIndex().findRootElement(container.eResource(), identifier);
+		if (re instanceof InstructionSet){
+			result.addMapping(identifier, (InstructionSet)re);
+		}
 	}
 	
 	public String deResolve(hu.modembed.model.modembed.core.instructionset.InstructionSet element, hu.modembed.model.modembed.abstraction.DeviceAbstraction container, org.eclipse.emf.ecore.EReference reference) {
-		return delegate.deResolve(element, container, reference);
+		return element.getName();
 	}
 	
 	public void setOptions(java.util.Map<?,?> options) {
