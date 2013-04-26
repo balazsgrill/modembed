@@ -1,11 +1,17 @@
 package hu.modembed;
 
+import hu.modembed.impl.ReferencedResourceProvider;
+import hu.modembed.index.IGlobalModelIndex;
+import hu.modembed.index.InMemoryGlobalModelIndex;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import hu.modembed.impl.ReferencedResourceProvider;
-
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Plugin;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
@@ -24,6 +30,14 @@ public class MODembedCore extends Plugin {
 
 	private ProgrammerRegistry progreg = null;
 	
+	private IGlobalModelIndex modelIndex;
+	
+	public IGlobalModelIndex getModelIndex() {
+		if (modelIndex == null){
+			modelIndex = new InMemoryGlobalModelIndex();
+		}
+		return modelIndex;
+	}
 	
 	public ProgrammerRegistry getProgrammerRegistry() {
 		if (progreg == null){
@@ -53,6 +67,13 @@ public class MODembedCore extends Plugin {
 		super.stop(bundleContext);
 	}
 
+	public static IProject findProject(URI uri){
+		String path = uri.toPlatformString(false);
+		IFile f = ResourcesPlugin.getWorkspace().getRoot().getFile(Path.fromPortableString(path));
+		if (f != null) return f.getProject();
+		return null;
+	}
+	
 	public static URI resolveStringReference(URI current, String reference){
 		String[] sections = reference.split("/");
 		URI uri = current.trimSegments(1);

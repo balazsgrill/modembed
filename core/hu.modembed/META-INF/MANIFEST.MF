@@ -16,4 +16,5 @@ Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: hu.modembed,
  hu.modembed.includedcode,
+ hu.modembed.index,
  hu.modembed.utils.tree
