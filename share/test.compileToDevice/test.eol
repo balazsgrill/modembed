@@ -1,0 +1,18 @@
+
+var mtool = new Native("hu.modembed.utils.MODembedTool");
+
+var program = new program!SequentialBehavior;
+
+program.name = "test.program.sbm";
+
+var s1 = symbol(program, "uint8", "s1");
+
+operation symbol(prog : SequentialBehavior, type : String, name : String) : Symbol {
+	var sym = new program!Symbol;
+	sym.name = name;
+	sym.type = new program!ReferenceTypeDefinition;
+	sym.type.type = mtool.findGlobal(sym, type);
+	prog.symbols.add(sym);
+	
+	return sym;
+}

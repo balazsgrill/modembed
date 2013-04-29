@@ -68,9 +68,21 @@ public class MODembedCore extends Plugin {
 	}
 
 	public static IProject findProject(URI uri){
-		String path = uri.toPlatformString(false);
-		IFile f = ResourcesPlugin.getWorkspace().getRoot().getFile(Path.fromPortableString(path));
-		if (f != null) return f.getProject();
+		String path = null;
+		if (uri.isPlatform()){
+			path = uri.toPlatformString(false);
+			IFile f = ResourcesPlugin.getWorkspace().getRoot().getFile(Path.fromPortableString(path));
+			if (f != null) return f.getProject();
+		}else{
+			path = uri.toFileString();
+			for(IProject project : ResourcesPlugin.getWorkspace().getRoot().getProjects()){
+				String projectPath = project.getLocation().toOSString(); 
+				if (path.startsWith(projectPath)){
+					return project;
+				}
+			}
+		}
+		
 		return null;
 	}
 	

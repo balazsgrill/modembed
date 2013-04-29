@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>microchip.pic16</name>
+	<name>test.compileToDevice</name>
 	<comment></comment>
 	<projects>
 		<project>e.core</project>
+		<project>microchip.pic16</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
-			<name>hu.modembed.model.textnotations.instructionset.builder</name>
-			<arguments>
-			</arguments>
-		</buildCommand>
-		<buildCommand>
-			<name>hu.modembed.model.textnotations.device.builder</name>
+			<name>org.eclipse.xtext.ui.shared.xtextBuilder</name>
 			<arguments>
 			</arguments>
 		</buildCommand>
@@ -20,7 +16,5 @@
 	<natures>
 		<nature>hu.modembed.ui.nature</nature>
 		<nature>org.eclipse.xtext.ui.shared.xtextNature</nature>
-		<nature>hu.modembed.model.textnotations.instructionset.nature</nature>
-		<nature>hu.modembed.model.textnotations.device.nature</nature>
 	</natures>
 </projectDescription>
