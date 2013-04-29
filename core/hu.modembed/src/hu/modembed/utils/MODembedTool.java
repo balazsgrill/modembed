@@ -3,11 +3,16 @@
  */
 package hu.modembed.utils;
 
+import hu.modembed.MODembedCore;
 import hu.modembed.hexfile.persistence.HexFileResource;
+import hu.modembed.index.IGlobalModelIndex;
 import hu.modembed.model.modembed.core.instructionset.InstructionSet;
 import hu.modembed.utils.disassembler.Disassembler;
 
 import java.util.List;
+
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
 
 /**
  * @author balazs.grill
@@ -19,7 +24,14 @@ public class MODembedTool {
 		return new Disassembler(instructionSet);
 	}
 
-	
+	public Object findGlobal(Object context, String qualifiedID){
+		if (context instanceof EObject){
+			Resource resource = ((EObject) context).eResource();
+			IGlobalModelIndex index = MODembedCore.getDefault().getModelIndex();
+			return index.findRootElement(resource, qualifiedID);
+		}
+		return null;
+	}
 	
 	public byte[] numberListToByteArray(List<?> list){
 		byte[] data = new byte[list.size()];
