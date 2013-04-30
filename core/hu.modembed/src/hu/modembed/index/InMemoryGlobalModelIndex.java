@@ -102,6 +102,7 @@ public class InMemoryGlobalModelIndex extends AbstractGlobalModelIndex implement
 					remove(uri);
 					break;
 				case IResourceDelta.CONTENT:
+				case IResourceDelta.CHANGED:
 				//case IResourceDelta.CHANGED:	this is called when markers are changed
 				case IResourceDelta.REPLACED:
 				case IResourceDelta.ADDED:
