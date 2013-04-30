@@ -12,7 +12,7 @@ package hu.modembed.syntax;
  * The following features are supported:
  * <ul>
  *   <li>{@link hu.modembed.syntax.Push#getEclassURI <em>Eclass URI</em>}</li>
- *   <li>{@link hu.modembed.syntax.Push#getFeatue <em>Featue</em>}</li>
+ *   <li>{@link hu.modembed.syntax.Push#getFeatureName <em>Feature Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -48,29 +48,29 @@ public interface Push extends RuleItem {
 	void setEclassURI(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Featue</b></em>' attribute.
+	 * Returns the value of the '<em><b>Feature Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Featue</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Feature Name</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Featue</em>' attribute.
-	 * @see #setFeatue(String)
-	 * @see hu.modembed.syntax.SyntaxPackage#getPush_Featue()
+	 * @return the value of the '<em>Feature Name</em>' attribute.
+	 * @see #setFeatureName(String)
+	 * @see hu.modembed.syntax.SyntaxPackage#getPush_FeatureName()
 	 * @model
 	 * @generated
 	 */
-	String getFeatue();
+	String getFeatureName();
 
 	/**
-	 * Sets the value of the '{@link hu.modembed.syntax.Push#getFeatue <em>Featue</em>}' attribute.
+	 * Sets the value of the '{@link hu.modembed.syntax.Push#getFeatureName <em>Feature Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Featue</em>' attribute.
-	 * @see #getFeatue()
+	 * @param value the new value of the '<em>Feature Name</em>' attribute.
+	 * @see #getFeatureName()
 	 * @generated
 	 */
-	void setFeatue(String value);
+	void setFeatureName(String value);
 
 } // Push

@@ -39,7 +39,7 @@ class NonTerminalItem extends SyntaxItem{
 
 class Push extends RuleItem{
 	attr String[1] eclassURI;
-	attr String featue;
+	attr String featureName;
 }
 
 class Pop extends RuleItem{

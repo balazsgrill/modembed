@@ -365,7 +365,7 @@ public class SyntaxPackageImpl extends EPackageImpl implements SyntaxPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPush_Featue() {
+	public EAttribute getPush_FeatureName() {
 		return (EAttribute)pushEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -435,7 +435,7 @@ public class SyntaxPackageImpl extends EPackageImpl implements SyntaxPackage {
 
 		pushEClass = createEClass(PUSH);
 		createEAttribute(pushEClass, PUSH__ECLASS_URI);
-		createEAttribute(pushEClass, PUSH__FEATUE);
+		createEAttribute(pushEClass, PUSH__FEATURE_NAME);
 
 		popEClass = createEClass(POP);
 	}
@@ -511,7 +511,7 @@ public class SyntaxPackageImpl extends EPackageImpl implements SyntaxPackage {
 
 		initEClass(pushEClass, Push.class, "Push", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPush_EclassURI(), ecorePackage.getEString(), "eclassURI", null, 1, 1, Push.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPush_Featue(), ecorePackage.getEString(), "featue", null, 0, 1, Push.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPush_FeatureName(), ecorePackage.getEString(), "featureName", null, 0, 1, Push.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(popEClass, Pop.class, "Pop", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

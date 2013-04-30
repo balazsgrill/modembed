@@ -34,7 +34,7 @@
     </genClasses>
     <genClasses ecoreClass="syntax.model.ecore#//Push">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute syntax.model.ecore#//Push/eclassURI"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute syntax.model.ecore#//Push/featue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute syntax.model.ecore#//Push/featureName"/>
     </genClasses>
     <genClasses ecoreClass="syntax.model.ecore#//Pop"/>
   </genPackages>

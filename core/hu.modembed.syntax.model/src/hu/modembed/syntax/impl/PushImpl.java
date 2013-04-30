@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link hu.modembed.syntax.impl.PushImpl#getEclassURI <em>Eclass URI</em>}</li>
- *   <li>{@link hu.modembed.syntax.impl.PushImpl#getFeatue <em>Featue</em>}</li>
+ *   <li>{@link hu.modembed.syntax.impl.PushImpl#getFeatureName <em>Feature Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -47,24 +47,24 @@ public class PushImpl extends RuleItemImpl implements Push {
 	protected String eclassURI = ECLASS_URI_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getFeatue() <em>Featue</em>}' attribute.
+	 * The default value of the '{@link #getFeatureName() <em>Feature Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getFeatue()
+	 * @see #getFeatureName()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String FEATUE_EDEFAULT = null;
+	protected static final String FEATURE_NAME_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getFeatue() <em>Featue</em>}' attribute.
+	 * The cached value of the '{@link #getFeatureName() <em>Feature Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getFeatue()
+	 * @see #getFeatureName()
 	 * @generated
 	 * @ordered
 	 */
-	protected String featue = FEATUE_EDEFAULT;
+	protected String featureName = FEATURE_NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -111,8 +111,8 @@ public class PushImpl extends RuleItemImpl implements Push {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getFeatue() {
-		return featue;
+	public String getFeatureName() {
+		return featureName;
 	}
 
 	/**
@@ -120,11 +120,11 @@ public class PushImpl extends RuleItemImpl implements Push {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setFeatue(String newFeatue) {
-		String oldFeatue = featue;
-		featue = newFeatue;
+	public void setFeatureName(String newFeatureName) {
+		String oldFeatureName = featureName;
+		featureName = newFeatureName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SyntaxPackage.PUSH__FEATUE, oldFeatue, featue));
+			eNotify(new ENotificationImpl(this, Notification.SET, SyntaxPackage.PUSH__FEATURE_NAME, oldFeatureName, featureName));
 	}
 
 	/**
@@ -137,8 +137,8 @@ public class PushImpl extends RuleItemImpl implements Push {
 		switch (featureID) {
 			case SyntaxPackage.PUSH__ECLASS_URI:
 				return getEclassURI();
-			case SyntaxPackage.PUSH__FEATUE:
-				return getFeatue();
+			case SyntaxPackage.PUSH__FEATURE_NAME:
+				return getFeatureName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -154,8 +154,8 @@ public class PushImpl extends RuleItemImpl implements Push {
 			case SyntaxPackage.PUSH__ECLASS_URI:
 				setEclassURI((String)newValue);
 				return;
-			case SyntaxPackage.PUSH__FEATUE:
-				setFeatue((String)newValue);
+			case SyntaxPackage.PUSH__FEATURE_NAME:
+				setFeatureName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -172,8 +172,8 @@ public class PushImpl extends RuleItemImpl implements Push {
 			case SyntaxPackage.PUSH__ECLASS_URI:
 				setEclassURI(ECLASS_URI_EDEFAULT);
 				return;
-			case SyntaxPackage.PUSH__FEATUE:
-				setFeatue(FEATUE_EDEFAULT);
+			case SyntaxPackage.PUSH__FEATURE_NAME:
+				setFeatureName(FEATURE_NAME_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -189,8 +189,8 @@ public class PushImpl extends RuleItemImpl implements Push {
 		switch (featureID) {
 			case SyntaxPackage.PUSH__ECLASS_URI:
 				return ECLASS_URI_EDEFAULT == null ? eclassURI != null : !ECLASS_URI_EDEFAULT.equals(eclassURI);
-			case SyntaxPackage.PUSH__FEATUE:
-				return FEATUE_EDEFAULT == null ? featue != null : !FEATUE_EDEFAULT.equals(featue);
+			case SyntaxPackage.PUSH__FEATURE_NAME:
+				return FEATURE_NAME_EDEFAULT == null ? featureName != null : !FEATURE_NAME_EDEFAULT.equals(featureName);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -207,8 +207,8 @@ public class PushImpl extends RuleItemImpl implements Push {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (eclassURI: ");
 		result.append(eclassURI);
-		result.append(", featue: ");
-		result.append(featue);
+		result.append(", featureName: ");
+		result.append(featureName);
 		result.append(')');
 		return result.toString();
 	}

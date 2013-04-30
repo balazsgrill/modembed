@@ -169,7 +169,7 @@ public class ParserState {
 		if (grammarItem instanceof Push){
 			Push push = (Push)grammarItem;
 			//Push model
-			followups.add(removeFirst().addBuildStep(new CreateObjectBuildStep(push.getEclassURI(), push.getFeatue())));
+			followups.add(removeFirst().addBuildStep(new CreateObjectBuildStep(push.getEclassURI(), push.getFeatureName())));
 		}
 		if (grammarItem instanceof Pop){
 			//Pop model

@@ -524,13 +524,13 @@ public interface SyntaxPackage extends EPackage {
 	int PUSH__ECLASS_URI = RULE_ITEM_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Featue</b></em>' attribute.
+	 * The feature id for the '<em><b>Feature Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PUSH__FEATUE = RULE_ITEM_FEATURE_COUNT + 1;
+	int PUSH__FEATURE_NAME = RULE_ITEM_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Push</em>' class.
@@ -814,15 +814,15 @@ public interface SyntaxPackage extends EPackage {
 	EAttribute getPush_EclassURI();
 
 	/**
-	 * Returns the meta object for the attribute '{@link hu.modembed.syntax.Push#getFeatue <em>Featue</em>}'.
+	 * Returns the meta object for the attribute '{@link hu.modembed.syntax.Push#getFeatureName <em>Feature Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Featue</em>'.
-	 * @see hu.modembed.syntax.Push#getFeatue()
+	 * @return the meta object for the attribute '<em>Feature Name</em>'.
+	 * @see hu.modembed.syntax.Push#getFeatureName()
 	 * @see #getPush()
 	 * @generated
 	 */
-	EAttribute getPush_Featue();
+	EAttribute getPush_FeatureName();
 
 	/**
 	 * Returns the meta object for class '{@link hu.modembed.syntax.Pop <em>Pop</em>}'.
@@ -1049,12 +1049,12 @@ public interface SyntaxPackage extends EPackage {
 		EAttribute PUSH__ECLASS_URI = eINSTANCE.getPush_EclassURI();
 
 		/**
-		 * The meta object literal for the '<em><b>Featue</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Feature Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PUSH__FEATUE = eINSTANCE.getPush_Featue();
+		EAttribute PUSH__FEATURE_NAME = eINSTANCE.getPush_FeatureName();
 
 		/**
 		 * The meta object literal for the '{@link hu.modembed.syntax.impl.PopImpl <em>Pop</em>}' class.
