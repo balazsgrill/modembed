@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Generic Syntax Persistence
+Bundle-SymbolicName: hu.modembed.syntax.persistence;singleton:=true
+Bundle-Version: 0.8.1.qualifier
+Bundle-Activator: hu.modembed.syntax.persistence.Activator
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore,
+ hu.modembed.syntax.model,
+ hu.modembed;bundle-version="0.8.1",
+ hu.modembed.model;bundle-version="0.8.1"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
