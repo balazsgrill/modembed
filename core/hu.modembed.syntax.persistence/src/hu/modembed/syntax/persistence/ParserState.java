@@ -111,6 +111,7 @@ public class ParserState {
 	}
 	
 	public RuleItem nextGrammarItem(){
+		if (grammarStack.isEmpty()) return null;
 		return grammarStack.get(0);
 	}
 	

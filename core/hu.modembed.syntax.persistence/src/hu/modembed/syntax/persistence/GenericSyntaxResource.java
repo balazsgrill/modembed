@@ -66,11 +66,13 @@ public class GenericSyntaxResource extends ResourceImpl {
 		ParserState finishedState = null;
 		states.add(startState);
 		
+		System.out.println("------------------------------------------------------");
 		while(finishedState == null && !states.isEmpty()){
 			ParserState current = states.pollFirst();
 			
 			/* Remove whitespaces */
 			current = current.removeWhiteSpace();
+			System.out.println(current.toString());
 			if (current.done()){
 				finishedState = current;
 			}else{

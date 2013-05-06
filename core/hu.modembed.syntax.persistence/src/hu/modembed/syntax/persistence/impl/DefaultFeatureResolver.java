@@ -3,8 +3,14 @@
  */
 package hu.modembed.syntax.persistence.impl;
 
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Set;
+
 import hu.modembed.MODembedCore;
 import hu.modembed.model.modembed.infrastructure.InfrastructurePackage;
+import hu.modembed.model.modembed.infrastructure.NamedElement;
 import hu.modembed.syntax.persistence.IFeatureResolver;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -29,6 +35,38 @@ public class DefaultFeatureResolver implements IFeatureResolver{
 		return RootElementClass.isSuperTypeOf(eclass);
 	}
 	
+	private EObject findObjectByName(EObject context, String name){
+		Queue<NamedElement> queue = new LinkedList<>();
+		Set<Object> visited = new HashSet<>();
+		if (context instanceof NamedElement){
+			queue.add((NamedElement)context);
+		}
+		
+		while(!queue.isEmpty()){
+			
+			NamedElement ne = queue.poll();
+			if (name.equals(ne.getName())){
+				return ne;
+			}
+			
+			visited.add(ne);
+			
+			for(EObject eo : ne.eContents()){
+				if ((!visited.contains(eo)) && eo instanceof NamedElement){
+					queue.add((NamedElement)eo);
+				}
+			}
+			EObject container = ne.eContainer();
+			if (container instanceof NamedElement){
+				queue.add((NamedElement)container);
+			}
+			
+			
+		}
+		
+		return null;
+	}
+	
 	@Override
 	public Object resolve(EObject context, EStructuralFeature feature,
 			String terminalName, String value) {
@@ -37,7 +75,7 @@ public class DefaultFeatureResolver implements IFeatureResolver{
 			if (isGlobal(eclass)){
 				return MODembedCore.getDefault().getModelIndex().findRootElement(context.eResource(), value);
 			}else{
-				// TODO heuristic visit of contained model
+				return findObjectByName(context, value);
 			}
 		}
 		if (feature instanceof EAttribute){
