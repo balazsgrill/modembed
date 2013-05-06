@@ -10,12 +10,19 @@
   <terminals xmi:id="_274_wLGYEeK1ScU5DNcoWg" name="OPERATOR_EQUAL" regex="\="/>
   <terminals xmi:id="_15FpgLGZEeK1ScU5DNcoWg" name="OPERATOR_PUSH" regex="\{"/>
   <terminals xmi:id="_7BefoLGZEeK1ScU5DNcoWg" name="OPERATOR_POP" regex="\}"/>
+  <terminals xmi:id="_Zjqs4LZLEeKDArD2cbZQHA" name="OPERATOR_MULTI" regex="\*"/>
+  <terminals xmi:id="_eFcO8LZLEeKDArD2cbZQHA" name="OPERATOR_OPTIONAL" regex="\?"/>
   <rules xmi:id="_amuRELGEEeKaMu577qmfxA" description="Start" nonTerminal="Start">
     <body xsi:type="syntax:TerminalItem" xmi:id="_f1lioLGEEeKaMu577qmfxA" terminal="_pnRUkLGDEeKaMu577qmfxA"/>
     <body xsi:type="syntax:Push" xmi:id="_SSq6wLGFEeK-59W38_3F4g" eclassURI="http://modembed.hu/syntax#SyntaxModel"/>
     <body xsi:type="syntax:TerminalItem" xmi:id="_-dv3YLGHEeK-59W38_3F4g" featureName="name">
       <terminal href="core.syntax.model#_eJ7KsLGHEeK-59W38_3F4g"/>
     </body>
+    <body xsi:type="syntax:TerminalItem" xmi:id="_Np0mgLZKEeKDArD2cbZQHA" terminal="_ZYSNYLGXEeK1ScU5DNcoWg"/>
+    <body xsi:type="syntax:TerminalItem" xmi:id="_Np0mgbZKEeKDArD2cbZQHA" featureName="startItem">
+      <terminal href="core.syntax.model#_qOGHMLGHEeK-59W38_3F4g"/>
+    </body>
+    <body xsi:type="syntax:TerminalItem" xmi:id="_Np0mgrZKEeKDArD2cbZQHA" terminal="_fP3r0LGXEeK1ScU5DNcoWg"/>
     <body xsi:type="syntax:TerminalItem" xmi:id="_iAFEQLGEEeKaMu577qmfxA">
       <terminal href="core.syntax.model#_tb_jYLGDEeKaMu577qmfxA"/>
     </body>
@@ -67,6 +74,7 @@
     <body xsi:type="syntax:TerminalItem" xmi:id="_k82nULGYEeK1ScU5DNcoWg" featureName="terminal">
       <terminal href="core.syntax.model#_qOGHMLGHEeK-59W38_3F4g"/>
     </body>
+    <body xsi:type="syntax:NonTerminalItem" xmi:id="_xzd4wLZLEeKDArD2cbZQHA" nonTerminal="Multiplicitiy"/>
     <body xsi:type="syntax:Pop" xmi:id="_tfyRsLGYEeK1ScU5DNcoWg"/>
   </rules>
   <rules xmi:id="_xGQCELGYEeK1ScU5DNcoWg" description="TerminalItem optional featureName" nonTerminal="TerminalItemFeatureName">
@@ -82,6 +90,7 @@
       <terminal href="core.syntax.model#_qOGHMLGHEeK-59W38_3F4g"/>
     </body>
     <body xsi:type="syntax:TerminalItem" xmi:id="_jUEPILGZEeK1ScU5DNcoWg" terminal="_fP3r0LGXEeK1ScU5DNcoWg"/>
+    <body xsi:type="syntax:NonTerminalItem" xmi:id="_2IkQwLZLEeKDArD2cbZQHA" nonTerminal="Multiplicitiy"/>
     <body xsi:type="syntax:Pop" xmi:id="_aBaYALGZEeK1ScU5DNcoWg"/>
   </rules>
   <rules xmi:id="_tL0-cLGZEeK1ScU5DNcoWg" description="RuleItem - Push" nonTerminal="RuleItem">
@@ -97,6 +106,10 @@
     <body xsi:type="syntax:TerminalItem" xmi:id="_keJAILGaEeK1ScU5DNcoWg" terminal="_7BefoLGZEeK1ScU5DNcoWg"/>
     <body xsi:type="syntax:Push" xmi:id="_mUmygLGaEeK1ScU5DNcoWg" eclassURI="http://modembed.hu/syntax#Pop" featureName="body"/>
     <body xsi:type="syntax:Pop" xmi:id="_nSD5QLGaEeK1ScU5DNcoWg"/>
+  </rules>
+  <rules xmi:id="_me9eoLZLEeKDArD2cbZQHA" nonTerminal="Multiplicitiy">
+    <body xsi:type="syntax:TerminalItem" xmi:id="_o4m2kLZLEeKDArD2cbZQHA" optional="true" featureName="many" terminal="_Zjqs4LZLEeKDArD2cbZQHA"/>
+    <body xsi:type="syntax:TerminalItem" xmi:id="_stfdcLZLEeKDArD2cbZQHA" optional="true" featureName="optional" terminal="_eFcO8LZLEeKDArD2cbZQHA"/>
   </rules>
   <import href="core.syntax.model#_3yl34LGQEeK1ScU5DNcoWg"/>
 </syntax:SyntaxModel>
