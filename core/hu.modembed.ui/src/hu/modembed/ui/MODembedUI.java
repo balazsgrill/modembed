@@ -66,12 +66,14 @@ public class MODembedUI extends AbstractUIPlugin {
 	public EditingDomain createEditingDomain(IProject project){
 		ResourceSet rs = MODembedCore.createResourceSet();
 		
-		try {
-			for(EPackage pack : ecoreRegistry.getPackagesFor(project)){
-				rs.getPackageRegistry().put(pack.getNsURI(), pack);
+		if (project != null){
+			try {
+				for(EPackage pack : ecoreRegistry.getPackagesFor(project)){
+					rs.getPackageRegistry().put(pack.getNsURI(), pack);
+				}
+			} catch (CoreException e) {
+				getLog().log(e.getStatus());
 			}
-		} catch (CoreException e) {
-			getLog().log(e.getStatus());
 		}
 		
 		EditingDomain editingDomain = TransactionalEditingDomainImpl.FactoryImpl.INSTANCE.createEditingDomain(rs);
