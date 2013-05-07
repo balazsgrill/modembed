@@ -12,6 +12,8 @@ import java.io.InputStream;
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.impl.ResourceImpl;
@@ -36,6 +38,26 @@ public class GenericSyntaxResource extends ResourceImpl {
 		return new String(data);
 	}
 	
+	private void error(String message){
+		getErrors().add(new ParsingError(message, getURI().lastSegment()));
+	}
+	
+	private void error(String message, String data, int index){
+		int line = 0;
+		int last = 0;
+		Pattern p = Pattern.compile("\n");
+		Matcher m = p.matcher(data);
+		while(m.find()){
+			int pos = m.start();
+			if (pos <= index){
+				line++;
+				last = pos;
+			}
+		}
+		int column = index-last;
+		getErrors().add(new ParsingError(message, getURI().lastSegment(), line, column));
+	}
+	
 	@Override
 	protected void doLoad(InputStream inputStream, Map<?, ?> options)
 			throws IOException {
@@ -53,10 +75,12 @@ public class GenericSyntaxResource extends ResourceImpl {
 			if (re instanceof SyntaxModel){
 				syntax = (SyntaxModel)re;
 			}else{
-				throw new RuntimeException("Cannot find syntax: "+syntaxID);
+				error("Cannot find syntax: "+syntaxID);
+				return;
 			}
 		}else{
-			throw new RuntimeException("Missing syntax specification!");
+			error("Missing syntax specification!");
+			return;
 		}
 		
 		GenericParser parser = new GenericParser(syntax);
@@ -64,19 +88,22 @@ public class GenericSyntaxResource extends ResourceImpl {
 		ParserState startState = parser.getStartState(data, l+1);
 		Deque<ParserState> states = new LinkedList<>();
 		ParserState finishedState = null;
+		ParserState bestState = null;
 		states.add(startState);
 		
-		System.out.println("------------------------------------------------------");
 		while(finishedState == null && !states.isEmpty()){
 			ParserState current = states.pollFirst();
 			
 			/* Remove whitespaces */
 			current = current.removeWhiteSpace();
-			System.out.println(current.toString());
 			if (current.done()){
 				finishedState = current;
 			}else{
 
+				if (bestState == null || bestState.getIndex() <= current.getIndex()){
+					bestState = current;
+				}
+				
 				/* Step */
 				for(ParserState followup : current.getValidFollowingStates()){
 					/* Deep-first search */
@@ -86,7 +113,11 @@ public class GenericSyntaxResource extends ResourceImpl {
 		}
 		
 		if (finishedState == null){
-			throw new RuntimeException("Syntax error!");
+			if (bestState != null){
+				error("Syntax error: expected "+bestState.expectedItem()+" here: \""+bestState.followupText(20)+"...\"", data, bestState.getIndex());
+			}else{
+				error("Syntax error!");
+			}
 		}
 		
 		finishedState.buildModel(this);

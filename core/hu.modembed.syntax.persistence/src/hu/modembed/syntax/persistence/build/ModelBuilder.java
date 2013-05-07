@@ -3,6 +3,8 @@
  */
 package hu.modembed.syntax.persistence.build;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
@@ -10,8 +12,10 @@ import java.util.List;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.Resource.Diagnostic;
 
 import hu.modembed.syntax.persistence.IFeatureResolver;
+import hu.modembed.syntax.persistence.ParsingError;
 
 /**
  * @author balazs.grill
@@ -32,9 +36,9 @@ public class ModelBuilder {
 			this.value = value;
 		}
 		
-		public void resolve(){
+		public List<? extends Diagnostic> resolve(){
 			Object value = resolver.resolve(context, reference, null, this.value);
-			if (value == null) throw new RuntimeException("Could not resolve reference: "+this.value);
+			if (value == null) return Collections.singletonList(new ParsingError("Could not resolve reference: "+this.value,""));
 			if (reference.isMany()){
 				@SuppressWarnings("unchecked")
 				List<Object> list = (List<Object>)context.eGet(reference);
@@ -42,6 +46,7 @@ public class ModelBuilder {
 			}else{
 				context.eSet(reference, value);
 			}
+			return Collections.emptyList();
 		}
 		
 	}
@@ -57,17 +62,19 @@ public class ModelBuilder {
 		return resolver;
 	}
 	
-	public void buildModel(Resource container, List<IModelBuildStep> modelBuild){
+	public List<Diagnostic> buildModel(Resource container, List<IModelBuildStep> modelBuild){
+		List<Diagnostic> errors = new ArrayList<>();
 		references.clear();
 		Deque<EObject> modelStack = new LinkedList<>();
 		for(IModelBuildStep step : modelBuild){
-			step.apply(this, modelStack);
+			errors.addAll(step.apply(this, modelStack));
 		}
 		container.getContents().addAll(modelStack);
 		for(CrossReference r : references){
-			r.resolve();
+			errors.addAll(r.resolve());
 		}
 		references.clear();
+		return errors;
 	}
 	
 	void addCrossReference(EObject context, EReference reference, String value){

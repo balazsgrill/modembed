@@ -76,14 +76,14 @@ public class ParserState {
 		return new ParserState(parser, data, index, more, modelBuild);
 	}
 	
-	private ParserState match(TerminalItem terminal, String match){
+	private ParserState match(TerminalItem terminal, TerminalMatch match){
 		List<IModelBuildStep> steps = modelBuild;
 		if (terminal.getFeatureName() != null){
 			steps = new ArrayList<>(modelBuild.size()+1);
 			steps.addAll(modelBuild);
 			steps.add(new SetFeatureBuildStep(terminal.getFeatureName(), match));
 		}
-		int newindex = index+match.length();
+		int newindex = index+match.match.length();
 		return new ParserState(parser, data, newindex, grammarStack, steps);
 	}
 	
@@ -108,6 +108,23 @@ public class ParserState {
 	
 	public boolean done(){
 		return index == data.length() && grammarStack.isEmpty();
+	}
+	
+	public String expectedItem(){
+		RuleItem item = nextGrammarItem();
+		if (item instanceof NonTerminalItem){
+			return "<"+((NonTerminalItem) item).getNonTerminal()+">";
+		}
+		if (item instanceof TerminalItem){
+			Terminal term = ((TerminalItem) item).getTerminal();
+			if (term == null) return "[Unknown Terminal]";
+			return term.getName()+"[\""+term.getRegex()+"\"]";
+		}
+		return "EOF";
+	}
+	
+	public String followupText(int length){
+		return data.substring(index, Math.min(index+length, data.length()));
 	}
 	
 	public RuleItem nextGrammarItem(){
@@ -160,10 +177,10 @@ public class ParserState {
 			Terminal terminal = term.getTerminal();
 			TerminalMatch match = parser.matchTerminal(terminal, data, index);
 			if (match != null){
-				followups.add(removed.match(term, match.match));
+				followups.add(removed.match(term, match));
 				if (term.isMany()){
 					// if many: alternative 2 - apply rule, but don't remove non-terminal
-					followups.add(match(term, match.match));
+					followups.add(match(term, match));
 				}
 			}
 		}
@@ -183,6 +200,10 @@ public class ParserState {
 	public void buildModel(Resource container){
 		ModelBuilder builder = new ModelBuilder(parser.getFeatureResolver());
 		builder.buildModel(container, modelBuild);
+	}
+	
+	public int getIndex() {
+		return index;
 	}
 	
 	@Override

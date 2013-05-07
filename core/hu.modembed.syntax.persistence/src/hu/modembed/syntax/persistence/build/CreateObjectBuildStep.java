@@ -3,6 +3,9 @@
  */
 package hu.modembed.syntax.persistence.build;
 
+import hu.modembed.syntax.persistence.ParsingError;
+
+import java.util.Collections;
 import java.util.Deque;
 import java.util.List;
 
@@ -10,6 +13,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage.Registry;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.resource.Resource.Diagnostic;
 import org.eclipse.emf.ecore.util.BasicExtendedMetaData;
 import org.eclipse.emf.ecore.util.ExtendedMetaData;
 
@@ -31,7 +35,7 @@ public class CreateObjectBuildStep implements IModelBuildStep {
 	 * @see hu.modembed.syntax.persistence.build.IModelBuildStep#apply(java.util.Deque)
 	 */
 	@Override
-	public void apply(ModelBuilder builder, Deque<EObject> modelStack) {
+	public List<? extends Diagnostic> apply(ModelBuilder builder, Deque<EObject> modelStack) {
 		int i = EClassURI.indexOf('#');
 		String nsURI = EClassURI.substring(0, i);
 		String name = EClassURI.substring(i+1);
@@ -47,7 +51,9 @@ public class CreateObjectBuildStep implements IModelBuildStep {
 					reference = ref;
 				}
 			}
-			if (reference == null) throw new RuntimeException("Could not find feature : "+EClassURI+"/"+feature);
+			if (reference == null){
+				return Collections.singletonList(new ParsingError("Could not find feature : "+EClassURI+"/"+feature, ""));
+			}
 			if (reference.isMany()){
 				@SuppressWarnings("unchecked")
 				List<EObject> list = (List<EObject>)container.eGet(reference);
@@ -57,6 +63,7 @@ public class CreateObjectBuildStep implements IModelBuildStep {
 			}
 		}
 		modelStack.push(eobject);
+		return Collections.emptyList();
 	}
 
 }

@@ -43,7 +43,10 @@ public class EObjectContentListObservableFactory implements IObservableFactory {
 		}
 		
 		if (target instanceof Resource){
-			return EMFProperties.resource().observe(target);
+			IObservableList errors = Observables.staticObservableList(((Resource) target).getErrors());
+			return UtilObservables.append(
+					EMFProperties.resource().observe(target),
+					errors);
 		}
 		
 		if (target instanceof EObject){

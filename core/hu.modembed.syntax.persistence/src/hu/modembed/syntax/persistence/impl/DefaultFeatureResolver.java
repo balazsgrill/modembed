@@ -11,6 +11,7 @@ import java.util.Set;
 import hu.modembed.MODembedCore;
 import hu.modembed.model.modembed.infrastructure.InfrastructurePackage;
 import hu.modembed.model.modembed.infrastructure.NamedElement;
+import hu.modembed.syntax.Terminal;
 import hu.modembed.syntax.persistence.IFeatureResolver;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -36,29 +37,33 @@ public class DefaultFeatureResolver implements IFeatureResolver{
 	}
 	
 	private EObject findObjectByName(EObject context, String name){
-		Queue<NamedElement> queue = new LinkedList<>();
+		Queue<EObject> queue = new LinkedList<>();
 		Set<Object> visited = new HashSet<>();
-		if (context instanceof NamedElement){
-			queue.add((NamedElement)context);
-		}
+		
+		queue.add((EObject)context);
+		
 		
 		while(!queue.isEmpty()){
 			
-			NamedElement ne = queue.poll();
-			if (name.equals(ne.getName())){
-				return ne;
-			}
+			EObject element = queue.poll();
 			
-			visited.add(ne);
-			
-			for(EObject eo : ne.eContents()){
-				if ((!visited.contains(eo)) && eo instanceof NamedElement){
-					queue.add((NamedElement)eo);
+			if (element instanceof NamedElement){
+				NamedElement ne = (NamedElement)element;
+				if (name.equals(ne.getName())){
+					return ne;
+				}
+
+				visited.add(ne);
+
+				for(EObject eo : ne.eContents()){
+					if ((!visited.contains(eo)) && eo instanceof NamedElement){
+						queue.add((NamedElement)eo);
+					}
 				}
 			}
-			EObject container = ne.eContainer();
-			if (container instanceof NamedElement){
-				queue.add((NamedElement)container);
+			EObject container = element.eContainer();
+			if (container != null){
+				queue.add(container);
 			}
 			
 			
@@ -69,7 +74,7 @@ public class DefaultFeatureResolver implements IFeatureResolver{
 	
 	@Override
 	public Object resolve(EObject context, EStructuralFeature feature,
-			String terminalName, String value) {
+			Terminal terminal, String value) {
 		if (feature instanceof EReference){
 			EClass eclass = ((EReference) feature).getEReferenceType();
 			if (isGlobal(eclass)){
@@ -80,6 +85,7 @@ public class DefaultFeatureResolver implements IFeatureResolver{
 		}
 		if (feature instanceof EAttribute){
 			Class<?> type = feature.getEType().getInstanceClass();
+			
 			if (String.class.equals(type)) return value;
 			if (int.class.equals(type) || Integer.class.equals(type)) return Integer.valueOf((int)parseNumber(value));
 			if (long.class.equals(type) || Long.class.equals(type)) return Long.valueOf(parseNumber(value));
