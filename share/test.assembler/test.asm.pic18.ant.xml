@@ -10,7 +10,7 @@
 			/>
 			<inputmodel
 				name="instructionSet"
-				resource="../microchip.pic18/microchip.pic18.instructionset"
+				resource="../microchip.pic18/microchip.pic18.instructionset.m"
 			/>
 			<outputmodel
 				name="asm"
