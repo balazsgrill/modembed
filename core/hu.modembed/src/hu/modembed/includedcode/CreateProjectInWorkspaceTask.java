@@ -59,12 +59,16 @@ public class CreateProjectInWorkspaceTask {
 					f.create(true, true, new NullProgressMonitor());
 				}
 			}else{
-				IFile file = to.getFile(name);
 				InputStream is = zipfile.getInputStream(entry);
-				if (file.exists()){
-					file.setContents(is, true, true, new NullProgressMonitor());
-				}else{
-					file.create(is, true, new NullProgressMonitor());
+				try{
+					IFile file = to.getFile(name);
+					if (file.exists()){
+						file.setContents(is, true, true, new NullProgressMonitor());
+					}else{
+						file.create(is, true, new NullProgressMonitor());
+					}
+				}finally{
+					is.close();
 				}
 			}
 		}

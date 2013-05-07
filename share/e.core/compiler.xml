@@ -9,11 +9,8 @@
 		<attribute name="resource"/>
 		<sequential>
 			<epsilon.emf.loadModel
-						name="@{name}"
-						modelfile="@{resource}"
-						read="true"
-						store="false"
-					/>
+				name="@{name}" modelfile="@{resource}"
+				read="true" store="false"/>
 		</sequential>
 	</macrodef>
 	
