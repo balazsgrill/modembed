@@ -56,7 +56,7 @@ public class ParserState {
 	 * @return
 	 */
 	private ParserState removeFirst(){
-		List<RuleItem> less = new ArrayList<>(grammarStack.size()-1);
+		List<RuleItem> less = new ArrayList<RuleItem>(grammarStack.size()-1);
 		for(int i=1;i<grammarStack.size();i++){
 			less.add(grammarStack.get(i));
 		}
@@ -70,7 +70,7 @@ public class ParserState {
 	 */
 	private ParserState add(List<RuleItem> items){
 		if (items.isEmpty()) return this;
-		List<RuleItem> more = new ArrayList<>(grammarStack.size()+items.size());
+		List<RuleItem> more = new ArrayList<RuleItem>(grammarStack.size()+items.size());
 		more.addAll(items);
 		more.addAll(grammarStack);
 		return new ParserState(parser, data, index, more, modelBuild);
@@ -79,7 +79,7 @@ public class ParserState {
 	private ParserState match(TerminalItem terminal, TerminalMatch match){
 		List<IModelBuildStep> steps = modelBuild;
 		if (terminal.getFeatureName() != null){
-			steps = new ArrayList<>(modelBuild.size()+1);
+			steps = new ArrayList<IModelBuildStep>(modelBuild.size()+1);
 			steps.addAll(modelBuild);
 			steps.add(new SetFeatureBuildStep(terminal.getFeatureName(), match));
 		}
@@ -88,7 +88,7 @@ public class ParserState {
 	}
 	
 	private ParserState addBuildStep(IModelBuildStep step){
-		List<IModelBuildStep> steps = new ArrayList<>(modelBuild.size()+1);
+		List<IModelBuildStep> steps = new ArrayList<IModelBuildStep>(modelBuild.size()+1);
 		steps.addAll(modelBuild);
 		steps.add(step);
 		return new ParserState(parser, data, index, grammarStack, steps);
@@ -144,7 +144,7 @@ public class ParserState {
 	
 	public Collection<ParserState> getValidFollowingStates(){
 		RuleItem grammarItem = nextGrammarItem();
-		List<ParserState> followups = new LinkedList<>();
+		List<ParserState> followups = new LinkedList<ParserState>();
 		if(grammarItem instanceof NonTerminalItem){
 			// Non-terminal
 			/* Replace first item with body */

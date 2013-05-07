@@ -37,8 +37,8 @@ public class DefaultFeatureResolver implements IFeatureResolver{
 	}
 	
 	private EObject findObjectByName(EObject context, String name){
-		Queue<EObject> queue = new LinkedList<>();
-		Set<Object> visited = new HashSet<>();
+		Queue<EObject> queue = new LinkedList<EObject>();
+		Set<Object> visited = new HashSet<Object>();
 		
 		queue.add((EObject)context);
 		

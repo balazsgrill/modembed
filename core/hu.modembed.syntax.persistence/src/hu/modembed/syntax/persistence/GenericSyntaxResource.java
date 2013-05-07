@@ -86,7 +86,7 @@ public class GenericSyntaxResource extends ResourceImpl {
 		GenericParser parser = new GenericParser(syntax);
 		
 		ParserState startState = parser.getStartState(data, l+1);
-		Deque<ParserState> states = new LinkedList<>();
+		Deque<ParserState> states = new LinkedList<ParserState>();
 		ParserState finishedState = null;
 		ParserState bestState = null;
 		states.add(startState);

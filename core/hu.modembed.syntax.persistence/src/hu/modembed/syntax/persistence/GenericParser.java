@@ -25,8 +25,8 @@ import java.util.regex.Pattern;
  */
 public class GenericParser {
 	
-	private final Map<Terminal, Pattern> terminals = new LinkedHashMap<>();
-	private final Map<String, List<Rule>> rules = new LinkedHashMap<>();
+	private final Map<Terminal, Pattern> terminals = new LinkedHashMap<Terminal, Pattern>();
+	private final Map<String, List<Rule>> rules = new LinkedHashMap<String, List<Rule>>();
 	private final String start;
 
 	private final IFeatureResolver featureResolver = new DefaultFeatureResolver();
@@ -83,7 +83,7 @@ public class GenericParser {
 			String nonterm = rule.getNonTerminal();
 			List<Rule> ruleList = rules.get(nonterm);
 			if (ruleList == null){
-				ruleList = new ArrayList<>();
+				ruleList = new ArrayList<Rule>();
 				rules.put(nonterm, ruleList);
 			}
 			ruleList.add(rule);
@@ -94,7 +94,7 @@ public class GenericParser {
 	}
 	
 	public GenericParser(SyntaxModel syntaxModel) {
-		Set<SyntaxModel> visited = new HashSet<>();
+		Set<SyntaxModel> visited = new HashSet<SyntaxModel>();
 		process(visited, syntaxModel);
 		
 		start = syntaxModel.getStartItem();

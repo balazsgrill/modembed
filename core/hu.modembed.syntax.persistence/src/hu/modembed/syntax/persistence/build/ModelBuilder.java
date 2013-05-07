@@ -54,7 +54,7 @@ public class ModelBuilder {
 	}
 	
 	private final IFeatureResolver resolver;
-	private final List<CrossReference> references = new LinkedList<>();
+	private final List<CrossReference> references = new LinkedList<CrossReference>();
 	
 	public ModelBuilder(IFeatureResolver resolver) {
 		this.resolver = resolver;
@@ -65,9 +65,9 @@ public class ModelBuilder {
 	}
 	
 	public List<Diagnostic> buildModel(Resource container, List<IModelBuildStep> modelBuild){
-		List<Diagnostic> errors = new ArrayList<>();
+		List<Diagnostic> errors = new ArrayList<Diagnostic>();
 		references.clear();
-		Deque<EObject> modelStack = new LinkedList<>();
+		Deque<EObject> modelStack = new LinkedList<EObject>();
 		for(IModelBuildStep step : modelBuild){
 			errors.addAll(step.apply(this, modelStack));
 		}
