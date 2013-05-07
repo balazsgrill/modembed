@@ -79,6 +79,10 @@ public class SyntaxAdapterFactory extends AdapterFactoryImpl {
 				return createTerminalAdapter();
 			}
 			@Override
+			public Adapter caseReplace(Replace object) {
+				return createReplaceAdapter();
+			}
+			@Override
 			public Adapter caseRule(Rule object) {
 				return createRuleAdapter();
 			}
@@ -163,6 +167,20 @@ public class SyntaxAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTerminalAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.modembed.syntax.Replace <em>Replace</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.modembed.syntax.Replace
+	 * @generated
+	 */
+	public Adapter createReplaceAdapter() {
 		return null;
 	}
 

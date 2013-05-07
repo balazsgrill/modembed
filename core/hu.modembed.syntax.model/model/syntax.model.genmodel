@@ -15,6 +15,11 @@
     <genClasses ecoreClass="syntax.model.ecore#//Terminal">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute syntax.model.ecore#//Terminal/regex"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute syntax.model.ecore#//Terminal/hide"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference syntax.model.ecore#//Terminal/replace"/>
+    </genClasses>
+    <genClasses ecoreClass="syntax.model.ecore#//Replace">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute syntax.model.ecore#//Replace/search"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute syntax.model.ecore#//Replace/replace"/>
     </genClasses>
     <genClasses ecoreClass="syntax.model.ecore#//Rule">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute syntax.model.ecore#//Rule/nonTerminal"/>

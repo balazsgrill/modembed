@@ -9,6 +9,7 @@ import hu.modembed.model.modembed.infrastructure.InfrastructurePackage;
 import hu.modembed.syntax.NonTerminalItem;
 import hu.modembed.syntax.Pop;
 import hu.modembed.syntax.Push;
+import hu.modembed.syntax.Replace;
 import hu.modembed.syntax.Rule;
 import hu.modembed.syntax.RuleItem;
 import hu.modembed.syntax.SyntaxFactory;
@@ -45,6 +46,13 @@ public class SyntaxPackageImpl extends EPackageImpl implements SyntaxPackage {
 	 * @generated
 	 */
 	private EClass terminalEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass replaceEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -239,6 +247,42 @@ public class SyntaxPackageImpl extends EPackageImpl implements SyntaxPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getTerminal_Replace() {
+		return (EReference)terminalEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getReplace() {
+		return replaceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getReplace_Search() {
+		return (EAttribute)replaceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getReplace_Replace() {
+		return (EAttribute)replaceEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getRule() {
 		return ruleEClass;
 	}
@@ -415,6 +459,11 @@ public class SyntaxPackageImpl extends EPackageImpl implements SyntaxPackage {
 		terminalEClass = createEClass(TERMINAL);
 		createEAttribute(terminalEClass, TERMINAL__REGEX);
 		createEAttribute(terminalEClass, TERMINAL__HIDE);
+		createEReference(terminalEClass, TERMINAL__REPLACE);
+
+		replaceEClass = createEClass(REPLACE);
+		createEAttribute(replaceEClass, REPLACE__SEARCH);
+		createEAttribute(replaceEClass, REPLACE__REPLACE);
 
 		ruleEClass = createEClass(RULE);
 		createEAttribute(ruleEClass, RULE__NON_TERMINAL);
@@ -473,6 +522,7 @@ public class SyntaxPackageImpl extends EPackageImpl implements SyntaxPackage {
 		// Add supertypes to classes
 		syntaxModelEClass.getESuperTypes().add(theInfrastructurePackage.getRootElement());
 		terminalEClass.getESuperTypes().add(theInfrastructurePackage.getNamedElement());
+		replaceEClass.getESuperTypes().add(theInfrastructurePackage.getMODembedElement());
 		ruleEClass.getESuperTypes().add(theInfrastructurePackage.getMODembedElement());
 		ruleItemEClass.getESuperTypes().add(theInfrastructurePackage.getMODembedElement());
 		syntaxItemEClass.getESuperTypes().add(this.getRuleItem());
@@ -491,6 +541,11 @@ public class SyntaxPackageImpl extends EPackageImpl implements SyntaxPackage {
 		initEClass(terminalEClass, Terminal.class, "Terminal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTerminal_Regex(), ecorePackage.getEString(), "regex", null, 1, 1, Terminal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTerminal_Hide(), ecorePackage.getEBoolean(), "hide", null, 0, 1, Terminal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTerminal_Replace(), this.getReplace(), null, "replace", null, 0, -1, Terminal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(replaceEClass, Replace.class, "Replace", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getReplace_Search(), ecorePackage.getEString(), "search", null, 1, 1, Replace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getReplace_Replace(), ecorePackage.getEString(), "replace", null, 1, 1, Replace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(ruleEClass, Rule.class, "Rule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRule_NonTerminal(), ecorePackage.getEString(), "nonTerminal", null, 1, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

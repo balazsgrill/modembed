@@ -40,6 +40,15 @@ public interface SyntaxFactory extends EFactory {
 	Terminal createTerminal();
 
 	/**
+	 * Returns a new object of class '<em>Replace</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Replace</em>'.
+	 * @generated
+	 */
+	Replace createReplace();
+
+	/**
 	 * Returns a new object of class '<em>Rule</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -194,13 +194,77 @@ public interface SyntaxPackage extends EPackage {
 	int TERMINAL__HIDE = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Replace</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TERMINAL__REPLACE = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Terminal</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TERMINAL_FEATURE_COUNT = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int TERMINAL_FEATURE_COUNT = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The meta object id for the '{@link hu.modembed.syntax.impl.ReplaceImpl <em>Replace</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.modembed.syntax.impl.ReplaceImpl
+	 * @see hu.modembed.syntax.impl.SyntaxPackageImpl#getReplace()
+	 * @generated
+	 */
+	int REPLACE = 2;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REPLACE__DESCRIPTION = InfrastructurePackage.MO_DEMBED_ELEMENT__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REPLACE__ORIGINS = InfrastructurePackage.MO_DEMBED_ELEMENT__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Search</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REPLACE__SEARCH = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Replace</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REPLACE__REPLACE = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Replace</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REPLACE_FEATURE_COUNT = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link hu.modembed.syntax.impl.RuleImpl <em>Rule</em>}' class.
@@ -210,7 +274,7 @@ public interface SyntaxPackage extends EPackage {
 	 * @see hu.modembed.syntax.impl.SyntaxPackageImpl#getRule()
 	 * @generated
 	 */
-	int RULE = 2;
+	int RULE = 3;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -265,7 +329,7 @@ public interface SyntaxPackage extends EPackage {
 	 * @see hu.modembed.syntax.impl.SyntaxPackageImpl#getRuleItem()
 	 * @generated
 	 */
-	int RULE_ITEM = 3;
+	int RULE_ITEM = 4;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -302,7 +366,7 @@ public interface SyntaxPackage extends EPackage {
 	 * @see hu.modembed.syntax.impl.SyntaxPackageImpl#getSyntaxItem()
 	 * @generated
 	 */
-	int SYNTAX_ITEM = 4;
+	int SYNTAX_ITEM = 5;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -357,7 +421,7 @@ public interface SyntaxPackage extends EPackage {
 	 * @see hu.modembed.syntax.impl.SyntaxPackageImpl#getTerminalItem()
 	 * @generated
 	 */
-	int TERMINAL_ITEM = 5;
+	int TERMINAL_ITEM = 6;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -430,7 +494,7 @@ public interface SyntaxPackage extends EPackage {
 	 * @see hu.modembed.syntax.impl.SyntaxPackageImpl#getNonTerminalItem()
 	 * @generated
 	 */
-	int NON_TERMINAL_ITEM = 6;
+	int NON_TERMINAL_ITEM = 7;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -494,7 +558,7 @@ public interface SyntaxPackage extends EPackage {
 	 * @see hu.modembed.syntax.impl.SyntaxPackageImpl#getPush()
 	 * @generated
 	 */
-	int PUSH = 7;
+	int PUSH = 8;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -549,7 +613,7 @@ public interface SyntaxPackage extends EPackage {
 	 * @see hu.modembed.syntax.impl.SyntaxPackageImpl#getPop()
 	 * @generated
 	 */
-	int POP = 8;
+	int POP = 9;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -664,6 +728,49 @@ public interface SyntaxPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getTerminal_Hide();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link hu.modembed.syntax.Terminal#getReplace <em>Replace</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Replace</em>'.
+	 * @see hu.modembed.syntax.Terminal#getReplace()
+	 * @see #getTerminal()
+	 * @generated
+	 */
+	EReference getTerminal_Replace();
+
+	/**
+	 * Returns the meta object for class '{@link hu.modembed.syntax.Replace <em>Replace</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Replace</em>'.
+	 * @see hu.modembed.syntax.Replace
+	 * @generated
+	 */
+	EClass getReplace();
+
+	/**
+	 * Returns the meta object for the attribute '{@link hu.modembed.syntax.Replace#getSearch <em>Search</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Search</em>'.
+	 * @see hu.modembed.syntax.Replace#getSearch()
+	 * @see #getReplace()
+	 * @generated
+	 */
+	EAttribute getReplace_Search();
+
+	/**
+	 * Returns the meta object for the attribute '{@link hu.modembed.syntax.Replace#getReplace <em>Replace</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Replace</em>'.
+	 * @see hu.modembed.syntax.Replace#getReplace()
+	 * @see #getReplace()
+	 * @generated
+	 */
+	EAttribute getReplace_Replace();
 
 	/**
 	 * Returns the meta object for class '{@link hu.modembed.syntax.Rule <em>Rule</em>}'.
@@ -923,6 +1030,40 @@ public interface SyntaxPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TERMINAL__HIDE = eINSTANCE.getTerminal_Hide();
+
+		/**
+		 * The meta object literal for the '<em><b>Replace</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TERMINAL__REPLACE = eINSTANCE.getTerminal_Replace();
+
+		/**
+		 * The meta object literal for the '{@link hu.modembed.syntax.impl.ReplaceImpl <em>Replace</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.modembed.syntax.impl.ReplaceImpl
+		 * @see hu.modembed.syntax.impl.SyntaxPackageImpl#getReplace()
+		 * @generated
+		 */
+		EClass REPLACE = eINSTANCE.getReplace();
+
+		/**
+		 * The meta object literal for the '<em><b>Search</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute REPLACE__SEARCH = eINSTANCE.getReplace_Search();
+
+		/**
+		 * The meta object literal for the '<em><b>Replace</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute REPLACE__REPLACE = eINSTANCE.getReplace_Replace();
 
 		/**
 		 * The meta object literal for the '{@link hu.modembed.syntax.impl.RuleImpl <em>Rule</em>}' class.

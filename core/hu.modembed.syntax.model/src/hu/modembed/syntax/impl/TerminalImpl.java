@@ -3,12 +3,19 @@
 package hu.modembed.syntax.impl;
 
 import hu.modembed.model.modembed.infrastructure.impl.NamedElementImpl;
+import hu.modembed.syntax.Replace;
 import hu.modembed.syntax.SyntaxPackage;
 import hu.modembed.syntax.Terminal;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,6 +26,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link hu.modembed.syntax.impl.TerminalImpl#getRegex <em>Regex</em>}</li>
  *   <li>{@link hu.modembed.syntax.impl.TerminalImpl#isHide <em>Hide</em>}</li>
+ *   <li>{@link hu.modembed.syntax.impl.TerminalImpl#getReplace <em>Replace</em>}</li>
  * </ul>
  * </p>
  *
@@ -64,6 +72,16 @@ public class TerminalImpl extends NamedElementImpl implements Terminal {
 	 * @ordered
 	 */
 	protected boolean hide = HIDE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getReplace() <em>Replace</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReplace()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Replace> replace;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -131,6 +149,32 @@ public class TerminalImpl extends NamedElementImpl implements Terminal {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Replace> getReplace() {
+		if (replace == null) {
+			replace = new EObjectContainmentEList<Replace>(Replace.class, this, SyntaxPackage.TERMINAL__REPLACE);
+		}
+		return replace;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case SyntaxPackage.TERMINAL__REPLACE:
+				return ((InternalEList<?>)getReplace()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -138,6 +182,8 @@ public class TerminalImpl extends NamedElementImpl implements Terminal {
 				return getRegex();
 			case SyntaxPackage.TERMINAL__HIDE:
 				return isHide();
+			case SyntaxPackage.TERMINAL__REPLACE:
+				return getReplace();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -147,6 +193,7 @@ public class TerminalImpl extends NamedElementImpl implements Terminal {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -155,6 +202,10 @@ public class TerminalImpl extends NamedElementImpl implements Terminal {
 				return;
 			case SyntaxPackage.TERMINAL__HIDE:
 				setHide((Boolean)newValue);
+				return;
+			case SyntaxPackage.TERMINAL__REPLACE:
+				getReplace().clear();
+				getReplace().addAll((Collection<? extends Replace>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -174,6 +225,9 @@ public class TerminalImpl extends NamedElementImpl implements Terminal {
 			case SyntaxPackage.TERMINAL__HIDE:
 				setHide(HIDE_EDEFAULT);
 				return;
+			case SyntaxPackage.TERMINAL__REPLACE:
+				getReplace().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -190,6 +244,8 @@ public class TerminalImpl extends NamedElementImpl implements Terminal {
 				return REGEX_EDEFAULT == null ? regex != null : !REGEX_EDEFAULT.equals(regex);
 			case SyntaxPackage.TERMINAL__HIDE:
 				return hide != HIDE_EDEFAULT;
+			case SyntaxPackage.TERMINAL__REPLACE:
+				return replace != null && !replace.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

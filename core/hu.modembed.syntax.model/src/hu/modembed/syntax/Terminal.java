@@ -3,6 +3,7 @@
 package hu.modembed.syntax;
 
 import hu.modembed.model.modembed.infrastructure.NamedElement;
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,6 +15,7 @@ import hu.modembed.model.modembed.infrastructure.NamedElement;
  * <ul>
  *   <li>{@link hu.modembed.syntax.Terminal#getRegex <em>Regex</em>}</li>
  *   <li>{@link hu.modembed.syntax.Terminal#isHide <em>Hide</em>}</li>
+ *   <li>{@link hu.modembed.syntax.Terminal#getReplace <em>Replace</em>}</li>
  * </ul>
  * </p>
  *
@@ -73,5 +75,21 @@ public interface Terminal extends NamedElement {
 	 * @generated
 	 */
 	void setHide(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Replace</b></em>' containment reference list.
+	 * The list contents are of type {@link hu.modembed.syntax.Replace}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Replace</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Replace</em>' containment reference list.
+	 * @see hu.modembed.syntax.SyntaxPackage#getTerminal_Replace()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Replace> getReplace();
 
 } // Terminal

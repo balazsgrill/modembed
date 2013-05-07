@@ -14,6 +14,14 @@
   <eClassifiers xsi:type="ecore:EClass" name="Terminal" eSuperTypes="../../hu.modembed.model/model/modembed.ecore#//infrastructure/NamedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="regex" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="hide" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="replace" upperBound="-1"
+        eType="#//Replace" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Replace" eSuperTypes="../../hu.modembed.model/model/modembed.ecore#//infrastructure/MODembedElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="search" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="replace" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Rule" eSuperTypes="../../hu.modembed.model/model/modembed.ecore#//infrastructure/MODembedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nonTerminal" lowerBound="1"

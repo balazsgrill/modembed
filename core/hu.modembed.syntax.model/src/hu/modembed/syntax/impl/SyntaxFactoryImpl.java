@@ -58,6 +58,7 @@ public class SyntaxFactoryImpl extends EFactoryImpl implements SyntaxFactory {
 		switch (eClass.getClassifierID()) {
 			case SyntaxPackage.SYNTAX_MODEL: return createSyntaxModel();
 			case SyntaxPackage.TERMINAL: return createTerminal();
+			case SyntaxPackage.REPLACE: return createReplace();
 			case SyntaxPackage.RULE: return createRule();
 			case SyntaxPackage.TERMINAL_ITEM: return createTerminalItem();
 			case SyntaxPackage.NON_TERMINAL_ITEM: return createNonTerminalItem();
@@ -86,6 +87,16 @@ public class SyntaxFactoryImpl extends EFactoryImpl implements SyntaxFactory {
 	public Terminal createTerminal() {
 		TerminalImpl terminal = new TerminalImpl();
 		return terminal;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Replace createReplace() {
+		ReplaceImpl replace = new ReplaceImpl();
+		return replace;
 	}
 
 	/**
