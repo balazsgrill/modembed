@@ -13,11 +13,15 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.Resource.Diagnostic;
 
 /**
  * @author balazs.grill
@@ -28,6 +32,7 @@ public class GenericParser {
 	private final Map<Terminal, Pattern> terminals = new LinkedHashMap<Terminal, Pattern>();
 	private final Map<String, List<Rule>> rules = new LinkedHashMap<String, List<Rule>>();
 	private final String start;
+	final List<Diagnostic> errors = new LinkedList<Resource.Diagnostic>();
 
 	private final IFeatureResolver featureResolver = new DefaultFeatureResolver();
 	
@@ -75,9 +80,14 @@ public class GenericParser {
 	}
 	
 	private void process(Set<SyntaxModel> visited, SyntaxModel syntaxModel){
+		
 		if (visited.contains(syntaxModel)) return;
 		for(Terminal terminal : syntaxModel.getTerminals()){
-			terminals.put(terminal, Pattern.compile("^"+terminal.getRegex()));
+			try{
+				terminals.put(terminal, Pattern.compile("^"+terminal.getRegex()));
+			}catch(Exception e){
+				errors.add(new ParsingError(e.getMessage(), ""));
+			}
 		}
 		for(Rule rule : syntaxModel.getRules()){
 			String nonterm = rule.getNonTerminal();
