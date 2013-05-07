@@ -3,11 +3,12 @@
  */
 package hu.modembed.index;
 
+import hu.modembed.MODembedCore;
+import hu.modembed.model.modembed.infrastructure.RootElement;
+
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
-
-import hu.modembed.model.modembed.infrastructure.RootElement;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
@@ -16,7 +17,6 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 
 /**
  * @author balazs.grill
@@ -55,7 +55,7 @@ public abstract class AbstractGlobalModelIndex {
 	protected String getName(org.eclipse.emf.common.util.URI uri){
 		String name = null;
 		try{
-			ResourceSet rs = new ResourceSetImpl();
+			ResourceSet rs = MODembedCore.createResourceSet();
 			RootElement r = get(rs, uri);
 			if (r != null){
 				name = r.getName();

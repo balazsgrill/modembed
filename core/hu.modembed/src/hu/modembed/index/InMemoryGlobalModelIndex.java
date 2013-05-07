@@ -46,7 +46,7 @@ public class InMemoryGlobalModelIndex extends AbstractGlobalModelIndex implement
 		return part;
 	}
 	
-	private class ProjectModelIndexPart implements IResourceDeltaVisitor, IGlobalModelIndex, IResourceVisitor{
+	private class ProjectModelIndexPart implements IResourceDeltaVisitor, IGlobalModelIndex{
 
 		private final IProject project;
 		private final Map<String, URI> elementsToURI = new HashMap<String, URI>();
@@ -56,7 +56,7 @@ public class InMemoryGlobalModelIndex extends AbstractGlobalModelIndex implement
 			this.project = project;
 			parts.put(project, this);
 			try {
-				project.accept(this);
+				load(project);
 			} catch (CoreException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -127,19 +127,40 @@ public class InMemoryGlobalModelIndex extends AbstractGlobalModelIndex implement
 			return null;
 		}
 
-		@Override
-		public boolean visit(IResource resource) throws CoreException {
-			if (resource instanceof IContainer){
-				return true;
-			}
-			if (resource instanceof IFile){
-				URI uri = toURI((IFile)resource);
-				String name = getName(uri);
-				if (name != null){
-					put(uri, name);
+		private List<IFile> listAllFiles(IProject project) throws CoreException{
+			final List<IFile> result = new LinkedList<IFile>();
+			project.accept(new IResourceVisitor() {
+				
+				@Override
+				public boolean visit(IResource resource) throws CoreException {
+					if (resource instanceof IFile){
+						result.add((IFile)resource);
+						return false;
+					}
+					return true;
 				}
-			}
-			return false;
+			});
+			return result;
+		}
+		
+		private void load(IProject resource) throws CoreException {
+			List<IFile> files = listAllFiles(resource);
+			int last = -1;
+			
+			while(last != files.size()){
+				last = files.size();
+				List<IFile> fails = new LinkedList<IFile>();
+				for(IFile file : files){
+					URI uri = toURI(file);
+					String name = getName(uri);
+					if (name != null){
+						put(uri, name);
+					}else{
+						fails.add(file);
+					}
+				}
+				files = fails;
+			}	
 		}
 		
 	}
