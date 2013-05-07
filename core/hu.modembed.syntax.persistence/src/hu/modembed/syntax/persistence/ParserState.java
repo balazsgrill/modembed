@@ -175,12 +175,14 @@ public class ParserState {
 			}
 			
 			Terminal terminal = term.getTerminal();
-			TerminalMatch match = parser.matchTerminal(terminal, data, index);
-			if (match != null){
-				followups.add(removed.match(term, match));
-				if (term.isMany()){
-					// if many: alternative 2 - apply rule, but don't remove non-terminal
-					followups.add(match(term, match));
+			if (terminal != null){
+				TerminalMatch match = parser.matchTerminal(terminal, data, index);
+				if (match != null){
+					followups.add(removed.match(term, match));
+					if (term.isMany()){
+						// if many: alternative 2 - apply rule, but don't remove non-terminal
+						followups.add(match(term, match));
+					}
 				}
 			}
 		}

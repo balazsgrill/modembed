@@ -9,5 +9,7 @@
   <terminals xmi:id="_0qbswLGTEeK1ScU5DNcoWg" name="DECIMAL_NUMBER" regex="[0-9]+"/>
   <terminals xmi:id="_4LRWQLGTEeK1ScU5DNcoWg" name="BINARY_NUMBER" regex="0b(0|1)+"/>
   <terminals xmi:id="__7g_cLGTEeK1ScU5DNcoWg" name="HEXADECIMAL_NUMBER" regex="0x[a-fA-F0-9]+"/>
-  <terminals xmi:id="_uhiJ8LGVEeK1ScU5DNcoWg" description="Quoted string - regular expression copied from: http://blog.stevenlevithan.com/archives/match-quoted-string" name="STRING" regex="([&quot;'])(?:\\\1|.)*?\1"/>
+  <terminals xmi:id="_uhiJ8LGVEeK1ScU5DNcoWg" description="Quoted string - regular expression copied from: http://blog.stevenlevithan.com/archives/match-quoted-string" name="STRING" regex="([&quot;'])(?:\\\1|.)*?\1">
+    <replace xmi:id="_gzvykLbrEeKDrMolk4yK8Q" description="Replace quotes with empty string" search="\&quot;" replace=""/>
+  </terminals>
 </syntax:SyntaxModel>

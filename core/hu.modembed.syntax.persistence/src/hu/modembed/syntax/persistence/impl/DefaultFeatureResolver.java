@@ -46,6 +46,7 @@ public class DefaultFeatureResolver implements IFeatureResolver{
 		while(!queue.isEmpty()){
 			
 			EObject element = queue.poll();
+			visited.add(element);
 			
 			if (element instanceof NamedElement){
 				NamedElement ne = (NamedElement)element;
@@ -53,19 +54,22 @@ public class DefaultFeatureResolver implements IFeatureResolver{
 					return ne;
 				}
 
-				visited.add(ne);
-
 				for(EObject eo : ne.eContents()){
-					if ((!visited.contains(eo)) && eo instanceof NamedElement){
-						queue.add((NamedElement)eo);
+					if ((!visited.contains(eo))){
+						queue.add(eo);
 					}
 				}
+				
 			}
 			EObject container = element.eContainer();
 			if (container != null){
 				queue.add(container);
 			}
-			
+			for(EObject eo : element.eCrossReferences()){
+				if ((!visited.contains(eo))){
+					queue.add(eo);
+				}
+			}
 			
 		}
 		

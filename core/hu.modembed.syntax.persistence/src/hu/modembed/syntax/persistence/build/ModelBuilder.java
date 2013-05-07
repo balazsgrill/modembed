@@ -38,7 +38,9 @@ public class ModelBuilder {
 		
 		public List<? extends Diagnostic> resolve(){
 			Object value = resolver.resolve(context, reference, null, this.value);
-			if (value == null) return Collections.singletonList(new ParsingError("Could not resolve reference: "+this.value,""));
+			if (value == null) {
+				return Collections.singletonList(new ParsingError("Could not resolve reference: "+this.value,""));
+			}
 			if (reference.isMany()){
 				@SuppressWarnings("unchecked")
 				List<Object> list = (List<Object>)context.eGet(reference);

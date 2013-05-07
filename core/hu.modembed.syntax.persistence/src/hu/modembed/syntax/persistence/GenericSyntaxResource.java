@@ -118,6 +118,7 @@ public class GenericSyntaxResource extends ResourceImpl {
 			}else{
 				error("Syntax error!");
 			}
+			return;
 		}
 		
 		finishedState.buildModel(this);
