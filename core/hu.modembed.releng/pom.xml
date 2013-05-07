@@ -18,6 +18,8 @@
 		<module>../hu.modembed.core.feature</module>
 		<module>../hu.modembed.help</module>
 		<module>../hu.modembed.simulator</module>
+		<module>../hu.modembed.syntax.model</module>
+		<module>../hu.modembed.syntax.persistence</module>
 		
 		<module>../../pic/core/hu.modembed.pic</module>
 		<!-- module>../../pic/core/hu.modembed.pic.midrange</module>
@@ -34,7 +36,6 @@
 		 -->
 		
 		<module>../hu.modembed.test</module>
-		<module>../hu.modembed.releng.textnotations</module>
 		
 		<module>repository</module>
 	</modules>
