@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="ASCII"?>
-<behavior:SequentialBehavior xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:behavior="http://modembed.hu/abstraction/behavior" xmlns:types="http://modembed.hu/abstraction/types" name="test.program.sbm">
-  <symbols name="s1">
-    <type xsi:type="types:ReferenceTypeDefinition">
-      <type href="platform:/resource/e.core/types/uint8.type#/"/>
-    </type>
-  </symbols>
-</behavior:SequentialBehavior>
