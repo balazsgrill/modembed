@@ -85,6 +85,7 @@
   </rules>
   <rules xmi:id="_HWS8sLGZEeK1ScU5DNcoWg" description="RuleItem - NonTerminalItem" nonTerminal="RuleItem">
     <body xsi:type="syntax:Push" xmi:id="_LXSF4LGZEeK1ScU5DNcoWg" eclassURI="http://modembed.hu/syntax#NonTerminalItem" featureName="body"/>
+    <body xsi:type="syntax:NonTerminalItem" xmi:id="_Uao4ELfAEeKWpqZiG1Fi3Q" optional="true" nonTerminal="TerminalItemFeatureName"/>
     <body xsi:type="syntax:TerminalItem" xmi:id="_cEGBcLGZEeK1ScU5DNcoWg" terminal="_ZYSNYLGXEeK1ScU5DNcoWg"/>
     <body xsi:type="syntax:TerminalItem" xmi:id="_dSg8YLGZEeK1ScU5DNcoWg" featureName="nonTerminal">
       <terminal href="core.syntax.model#_qOGHMLGHEeK-59W38_3F4g"/>

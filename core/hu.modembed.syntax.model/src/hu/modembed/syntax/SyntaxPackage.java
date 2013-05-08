@@ -533,13 +533,22 @@ public interface SyntaxPackage extends EPackage {
 	int NON_TERMINAL_ITEM__MANY = SYNTAX_ITEM__MANY;
 
 	/**
+	 * The feature id for the '<em><b>Feature Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NON_TERMINAL_ITEM__FEATURE_NAME = SYNTAX_ITEM_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Non Terminal</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NON_TERMINAL_ITEM__NON_TERMINAL = SYNTAX_ITEM_FEATURE_COUNT + 0;
+	int NON_TERMINAL_ITEM__NON_TERMINAL = SYNTAX_ITEM_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Non Terminal Item</em>' class.
@@ -548,7 +557,7 @@ public interface SyntaxPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NON_TERMINAL_ITEM_FEATURE_COUNT = SYNTAX_ITEM_FEATURE_COUNT + 1;
+	int NON_TERMINAL_ITEM_FEATURE_COUNT = SYNTAX_ITEM_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link hu.modembed.syntax.impl.PushImpl <em>Push</em>}' class.
@@ -889,6 +898,17 @@ public interface SyntaxPackage extends EPackage {
 	EClass getNonTerminalItem();
 
 	/**
+	 * Returns the meta object for the attribute '{@link hu.modembed.syntax.NonTerminalItem#getFeatureName <em>Feature Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Feature Name</em>'.
+	 * @see hu.modembed.syntax.NonTerminalItem#getFeatureName()
+	 * @see #getNonTerminalItem()
+	 * @generated
+	 */
+	EAttribute getNonTerminalItem_FeatureName();
+
+	/**
 	 * Returns the meta object for the attribute '{@link hu.modembed.syntax.NonTerminalItem#getNonTerminal <em>Non Terminal</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1162,6 +1182,14 @@ public interface SyntaxPackage extends EPackage {
 		 * @generated
 		 */
 		EClass NON_TERMINAL_ITEM = eINSTANCE.getNonTerminalItem();
+
+		/**
+		 * The meta object literal for the '<em><b>Feature Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NON_TERMINAL_ITEM__FEATURE_NAME = eINSTANCE.getNonTerminalItem_FeatureName();
 
 		/**
 		 * The meta object literal for the '<em><b>Non Terminal</b></em>' attribute feature.

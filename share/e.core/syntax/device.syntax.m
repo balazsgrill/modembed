@@ -1,6 +1,7 @@
 #!syntax
 syntax device.syntax <Start>;
 import core.syntax;
+import type.syntax;
 
 terminal KW_DEVICE "device";
 terminal KW_INSTRUCTIONSET "instructionset";
@@ -48,14 +49,10 @@ terminal OP_ADD "\+";
 <OperationArguments2> :- OP_COMMA <OperationArgument> ;
 
 <OperationArgument> :- arguments={"http://modembed.hu/abstraction/behavior/platform#OperationArgument" name=IDENTIFIER 
-					OP_COLON <TypeDefinition> OP_BOPEN <MemTypeDefinition>? indirectionLevel=DECIMAL_NUMBER OP_BCLOSE
+					OP_COLON type=<TypeDefinition> OP_BOPEN <MemTypeDefinition>? indirectionLevel=DECIMAL_NUMBER OP_BCLOSE
 					};
 
 <MemTypeDefinition> :- memtype=IDENTIFIER OP_AT;
-					
-<TypeDefinition> :- KEYWORD_UNSIGNED type={"http://modembed.hu/abstraction/types#UnsignedTypeDefinition" BRACKET_OPEN bits=DECIMAL_NUMBER BRACKET_CLOSE };
-
-<TypeDefinition> :- type={"http://modembed.hu/abstraction/types#ReferenceTypeDefinition" type=QUALIFIEDID };
 
 <OperationStep> :- steps={"http://modembed.hu/abstraction/behavior/platform#InstructionCallOperationStep"
 						instruction=IDENTIFIER

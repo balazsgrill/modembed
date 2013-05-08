@@ -382,8 +382,17 @@ public class SyntaxPackageImpl extends EPackageImpl implements SyntaxPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getNonTerminalItem_NonTerminal() {
+	public EAttribute getNonTerminalItem_FeatureName() {
 		return (EAttribute)nonTerminalItemEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getNonTerminalItem_NonTerminal() {
+		return (EAttribute)nonTerminalItemEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -480,6 +489,7 @@ public class SyntaxPackageImpl extends EPackageImpl implements SyntaxPackage {
 		createEReference(terminalItemEClass, TERMINAL_ITEM__TERMINAL);
 
 		nonTerminalItemEClass = createEClass(NON_TERMINAL_ITEM);
+		createEAttribute(nonTerminalItemEClass, NON_TERMINAL_ITEM__FEATURE_NAME);
 		createEAttribute(nonTerminalItemEClass, NON_TERMINAL_ITEM__NON_TERMINAL);
 
 		pushEClass = createEClass(PUSH);
@@ -562,6 +572,7 @@ public class SyntaxPackageImpl extends EPackageImpl implements SyntaxPackage {
 		initEReference(getTerminalItem_Terminal(), this.getTerminal(), null, "terminal", null, 1, 1, TerminalItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(nonTerminalItemEClass, NonTerminalItem.class, "NonTerminalItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getNonTerminalItem_FeatureName(), ecorePackage.getEString(), "featureName", null, 0, 1, NonTerminalItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getNonTerminalItem_NonTerminal(), ecorePackage.getEString(), "nonTerminal", null, 1, 1, NonTerminalItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(pushEClass, Push.class, "Push", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

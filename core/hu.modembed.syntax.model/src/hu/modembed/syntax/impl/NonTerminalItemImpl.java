@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link hu.modembed.syntax.impl.NonTerminalItemImpl#getFeatureName <em>Feature Name</em>}</li>
  *   <li>{@link hu.modembed.syntax.impl.NonTerminalItemImpl#getNonTerminal <em>Non Terminal</em>}</li>
  * </ul>
  * </p>
@@ -25,6 +26,26 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class NonTerminalItemImpl extends SyntaxItemImpl implements NonTerminalItem {
+	/**
+	 * The default value of the '{@link #getFeatureName() <em>Feature Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFeatureName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String FEATURE_NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getFeatureName() <em>Feature Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFeatureName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String featureName = FEATURE_NAME_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getNonTerminal() <em>Non Terminal</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -69,6 +90,27 @@ public class NonTerminalItemImpl extends SyntaxItemImpl implements NonTerminalIt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getFeatureName() {
+		return featureName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setFeatureName(String newFeatureName) {
+		String oldFeatureName = featureName;
+		featureName = newFeatureName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SyntaxPackage.NON_TERMINAL_ITEM__FEATURE_NAME, oldFeatureName, featureName));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getNonTerminal() {
 		return nonTerminal;
 	}
@@ -93,6 +135,8 @@ public class NonTerminalItemImpl extends SyntaxItemImpl implements NonTerminalIt
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case SyntaxPackage.NON_TERMINAL_ITEM__FEATURE_NAME:
+				return getFeatureName();
 			case SyntaxPackage.NON_TERMINAL_ITEM__NON_TERMINAL:
 				return getNonTerminal();
 		}
@@ -107,6 +151,9 @@ public class NonTerminalItemImpl extends SyntaxItemImpl implements NonTerminalIt
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case SyntaxPackage.NON_TERMINAL_ITEM__FEATURE_NAME:
+				setFeatureName((String)newValue);
+				return;
 			case SyntaxPackage.NON_TERMINAL_ITEM__NON_TERMINAL:
 				setNonTerminal((String)newValue);
 				return;
@@ -122,6 +169,9 @@ public class NonTerminalItemImpl extends SyntaxItemImpl implements NonTerminalIt
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case SyntaxPackage.NON_TERMINAL_ITEM__FEATURE_NAME:
+				setFeatureName(FEATURE_NAME_EDEFAULT);
+				return;
 			case SyntaxPackage.NON_TERMINAL_ITEM__NON_TERMINAL:
 				setNonTerminal(NON_TERMINAL_EDEFAULT);
 				return;
@@ -137,6 +187,8 @@ public class NonTerminalItemImpl extends SyntaxItemImpl implements NonTerminalIt
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case SyntaxPackage.NON_TERMINAL_ITEM__FEATURE_NAME:
+				return FEATURE_NAME_EDEFAULT == null ? featureName != null : !FEATURE_NAME_EDEFAULT.equals(featureName);
 			case SyntaxPackage.NON_TERMINAL_ITEM__NON_TERMINAL:
 				return NON_TERMINAL_EDEFAULT == null ? nonTerminal != null : !NON_TERMINAL_EDEFAULT.equals(nonTerminal);
 		}
@@ -153,7 +205,9 @@ public class NonTerminalItemImpl extends SyntaxItemImpl implements NonTerminalIt
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (nonTerminal: ");
+		result.append(" (featureName: ");
+		result.append(featureName);
+		result.append(", nonTerminal: ");
 		result.append(nonTerminal);
 		result.append(')');
 		return result.toString();

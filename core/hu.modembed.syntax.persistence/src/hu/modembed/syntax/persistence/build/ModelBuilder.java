@@ -53,6 +53,7 @@ public class ModelBuilder {
 		
 	}
 	
+	private String nextFeature = null;
 	private final IFeatureResolver resolver;
 	private final List<CrossReference> references = new LinkedList<CrossReference>();
 	
@@ -81,6 +82,14 @@ public class ModelBuilder {
 	
 	void addCrossReference(EObject context, EReference reference, String value){
 		references.add(new CrossReference(context, reference, value));
+	}
+
+	public void setNextFeature(String feature) {
+		this.nextFeature = feature;
+	}
+	
+	public String getNextFeature() {
+		return nextFeature;
 	}
 	
 }

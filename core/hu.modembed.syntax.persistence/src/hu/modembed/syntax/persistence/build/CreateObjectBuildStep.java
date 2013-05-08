@@ -43,6 +43,12 @@ public class CreateObjectBuildStep implements IModelBuildStep {
 		EClass eclass = (EClass)metaData.getType(nsURI, name);
 		
 		EObject eobject = eclass.getEPackage().getEFactoryInstance().create(eclass);
+		String feature = this.feature;
+		if (feature == null){
+			feature = builder.getNextFeature();
+			builder.setNextFeature(null);
+		}
+		
 		if (feature != null){
 			EObject container = modelStack.peek();
 			EReference reference = null;

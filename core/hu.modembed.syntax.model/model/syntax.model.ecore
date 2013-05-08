@@ -40,6 +40,7 @@
         eType="#//Terminal"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NonTerminalItem" eSuperTypes="#//SyntaxItem">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="featureName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nonTerminal" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
