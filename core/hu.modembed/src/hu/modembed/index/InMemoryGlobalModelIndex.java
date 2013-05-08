@@ -198,6 +198,7 @@ public class InMemoryGlobalModelIndex extends AbstractGlobalModelIndex implement
 	
 	@Override
 	public RootElement findRootElement(Resource resource, String qualifiedID) {
+		if (resource == null) return null;
 		IProject project = MODembedCore.findProject(resource.getURI());
 		
 		List<RootElement> results = new ArrayList<RootElement>();
