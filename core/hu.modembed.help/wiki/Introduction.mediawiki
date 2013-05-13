@@ -8,10 +8,6 @@ What do I mean on modal-based approach? In software, everything can be viewed as
 
 The MODembed toolchain tries to remove this additional knowledge from the compiler and put it into a platform model. Using this concept, the input of the compilation would be not only the code, but also the architecture model. Moreover, this approach adds the possibility of using higher-level models which are transformed automatically into these lower level program models - similarly to C code generation from UML models.
 
-Some of the models have a textual notation (like the program model and the workflow), which is parsed and converted to XML format automatically. The workflow basically is a list of model transformation steps. Every step reads some input models and produces some output models. On the end of a compilation process there is a binary model of the compiled program, a HEX file. 
-
-[[file:introduction.png|border|Models and workflow]]
-
 == Links ==
 
 * [https://github.com/balazsgrill/modembed] - Project host page on GitHub  

@@ -7,6 +7,7 @@ terminal KW_DEVICE "device";
 terminal KW_INSTRUCTIONSET "instructionset";
 terminal KW_EXTENDS "extends";
 terminal KW_MTYPE "mtype";
+terminal KW_MEM "mem";
 terminal KW_OPERATION "operation";
 terminal KW_VOLATILE "volatile";
 terminal KW_PROGRAM "program";
@@ -39,6 +40,10 @@ terminal OP_ADD "\+";
 			
 <Attributes> :- OP_OPEN attributes={"http://modembed.hu/infrastructure#AttributeContainerDefinition" <Attribute>* } OP_CLOSE;
 <Attribute> :- attributes={"http://modembed.hu/infrastructure#AttributeDefinition" name=IDENTIFIER OPERATOR_SEMICOLON };
+
+<MemoryInstance> :-  KW_MEM memoryInstances={"http://modembed.hu/abstraction/memorymodel#MemoryInstance" type=IDENTIFIER name=IDENTIFIER startAddress=HEXADECIMAL_NUMBER size=HEXADECIMAL_NUMBER } ;
+<AttributeValues> :- OP_OPEN attributes={"http://modembed.hu/infrastructure#AttributeValueContainer" <AttributeValue>* } OP_CLOSE;
+<AttributeValue> :- values={"http://modembed.hu/infrastructure#AttributeValue" definition=IDENTIFIER OPERATOR_ASSIGN value=DECIMAL_NUMBER };
 
 <Operation> :- KW_OPERATION operation={"http://modembed.hu/abstraction/behavior/platform#OperationDefinition"
 				operation=IDENTIFIER 
