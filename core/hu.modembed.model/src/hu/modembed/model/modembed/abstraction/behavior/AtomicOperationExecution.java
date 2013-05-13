@@ -23,20 +23,20 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface AtomicOperationExecution extends SequentialAction {
 	/**
-	 * Returns the value of the '<em><b>Arguments</b></em>' reference list.
-	 * The list contents are of type {@link hu.modembed.model.modembed.abstraction.behavior.Symbol}.
+	 * Returns the value of the '<em><b>Arguments</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.String}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Arguments</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Arguments</em>' reference list.
+	 * @return the value of the '<em>Arguments</em>' attribute list.
 	 * @see hu.modembed.model.modembed.abstraction.behavior.BehaviorPackage#getAtomicOperationExecution_Arguments()
 	 * @model
 	 * @generated
 	 */
-	EList<Symbol> getArguments();
+	EList<String> getArguments();
 
 	/**
 	 * Returns the value of the '<em><b>Operation</b></em>' attribute.

@@ -22,6 +22,15 @@ public interface BehaviorFactory extends EFactory {
 	BehaviorFactory eINSTANCE = hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Sequential Behavior Module</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Sequential Behavior Module</em>'.
+	 * @generated
+	 */
+	SequentialBehaviorModule createSequentialBehaviorModule();
+
+	/**
 	 * Returns a new object of class '<em>Sequential Behavior</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -29,15 +38,6 @@ public interface BehaviorFactory extends EFactory {
 	 * @generated
 	 */
 	SequentialBehavior createSequentialBehavior();
-
-	/**
-	 * Returns a new object of class '<em>Symbol</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Symbol</em>'.
-	 * @generated
-	 */
-	Symbol createSymbol();
 
 	/**
 	 * Returns a new object of class '<em>Code Symbol Placement</em>'.
@@ -65,24 +65,6 @@ public interface BehaviorFactory extends EFactory {
 	 * @generated
 	 */
 	BehaviorCall createBehaviorCall();
-
-	/**
-	 * Returns a new object of class '<em>Symbol Mapping</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Symbol Mapping</em>'.
-	 * @generated
-	 */
-	SymbolMapping createSymbolMapping();
-
-	/**
-	 * Returns a new object of class '<em>Symbol Value Map</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Symbol Value Map</em>'.
-	 * @generated
-	 */
-	SymbolValueMap createSymbolValueMap();
 
 	/**
 	 * Returns a new object of class '<em>Symbol Value Assignment</em>'.

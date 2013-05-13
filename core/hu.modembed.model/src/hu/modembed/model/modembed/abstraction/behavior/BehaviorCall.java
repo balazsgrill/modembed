@@ -12,7 +12,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link hu.modembed.model.modembed.abstraction.behavior.BehaviorCall#getArgumentMappings <em>Argument Mappings</em>}</li>
+ *   <li>{@link hu.modembed.model.modembed.abstraction.behavior.BehaviorCall#getReference <em>Reference</em>}</li>
  * </ul>
  * </p>
  *
@@ -22,19 +22,29 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface BehaviorCall extends SequentialAction {
 	/**
-	 * Returns the value of the '<em><b>Argument Mappings</b></em>' containment reference list.
-	 * The list contents are of type {@link hu.modembed.model.modembed.abstraction.behavior.SymbolMapping}.
+	 * Returns the value of the '<em><b>Reference</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Argument Mappings</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Reference</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Argument Mappings</em>' containment reference list.
-	 * @see hu.modembed.model.modembed.abstraction.behavior.BehaviorPackage#getBehaviorCall_ArgumentMappings()
-	 * @model containment="true"
+	 * @return the value of the '<em>Reference</em>' attribute.
+	 * @see #setReference(String)
+	 * @see hu.modembed.model.modembed.abstraction.behavior.BehaviorPackage#getBehaviorCall_Reference()
+	 * @model required="true"
 	 * @generated
 	 */
-	EList<SymbolMapping> getArgumentMappings();
+	String getReference();
+
+	/**
+	 * Sets the value of the '{@link hu.modembed.model.modembed.abstraction.behavior.BehaviorCall#getReference <em>Reference</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Reference</em>' attribute.
+	 * @see #getReference()
+	 * @generated
+	 */
+	void setReference(String value);
 
 } // BehaviorCall

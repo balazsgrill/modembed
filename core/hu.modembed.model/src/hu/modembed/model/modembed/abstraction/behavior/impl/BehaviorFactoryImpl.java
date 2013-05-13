@@ -56,13 +56,11 @@ public class BehaviorFactoryImpl extends EFactoryImpl implements BehaviorFactory
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case BehaviorPackage.SEQUENTIAL_BEHAVIOR_MODULE: return createSequentialBehaviorModule();
 			case BehaviorPackage.SEQUENTIAL_BEHAVIOR: return createSequentialBehavior();
-			case BehaviorPackage.SYMBOL: return createSymbol();
 			case BehaviorPackage.CODE_SYMBOL_PLACEMENT: return createCodeSymbolPlacement();
 			case BehaviorPackage.ATOMIC_OPERATION_EXECUTION: return createAtomicOperationExecution();
 			case BehaviorPackage.BEHAVIOR_CALL: return createBehaviorCall();
-			case BehaviorPackage.SYMBOL_MAPPING: return createSymbolMapping();
-			case BehaviorPackage.SYMBOL_VALUE_MAP: return createSymbolValueMap();
 			case BehaviorPackage.SYMBOL_VALUE_ASSIGNMENT: return createSymbolValueAssignment();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -74,9 +72,9 @@ public class BehaviorFactoryImpl extends EFactoryImpl implements BehaviorFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SequentialBehavior createSequentialBehavior() {
-		SequentialBehaviorImpl sequentialBehavior = new SequentialBehaviorImpl();
-		return sequentialBehavior;
+	public SequentialBehaviorModule createSequentialBehaviorModule() {
+		SequentialBehaviorModuleImpl sequentialBehaviorModule = new SequentialBehaviorModuleImpl();
+		return sequentialBehaviorModule;
 	}
 
 	/**
@@ -84,9 +82,9 @@ public class BehaviorFactoryImpl extends EFactoryImpl implements BehaviorFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Symbol createSymbol() {
-		SymbolImpl symbol = new SymbolImpl();
-		return symbol;
+	public SequentialBehavior createSequentialBehavior() {
+		SequentialBehaviorImpl sequentialBehavior = new SequentialBehaviorImpl();
+		return sequentialBehavior;
 	}
 
 	/**
@@ -117,26 +115,6 @@ public class BehaviorFactoryImpl extends EFactoryImpl implements BehaviorFactory
 	public BehaviorCall createBehaviorCall() {
 		BehaviorCallImpl behaviorCall = new BehaviorCallImpl();
 		return behaviorCall;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public SymbolMapping createSymbolMapping() {
-		SymbolMappingImpl symbolMapping = new SymbolMappingImpl();
-		return symbolMapping;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public SymbolValueMap createSymbolValueMap() {
-		SymbolValueMapImpl symbolValueMap = new SymbolValueMapImpl();
-		return symbolValueMap;
 	}
 
 	/**

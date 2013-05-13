@@ -21,29 +21,29 @@ package hu.modembed.model.modembed.abstraction.behavior;
  */
 public interface CodeSymbolPlacement extends SequentialAction {
 	/**
-	 * Returns the value of the '<em><b>Symbol</b></em>' reference.
+	 * Returns the value of the '<em><b>Symbol</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Symbol</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Symbol</em>' reference.
-	 * @see #setSymbol(Symbol)
+	 * @return the value of the '<em>Symbol</em>' attribute.
+	 * @see #setSymbol(String)
 	 * @see hu.modembed.model.modembed.abstraction.behavior.BehaviorPackage#getCodeSymbolPlacement_Symbol()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
-	Symbol getSymbol();
+	String getSymbol();
 
 	/**
-	 * Sets the value of the '{@link hu.modembed.model.modembed.abstraction.behavior.CodeSymbolPlacement#getSymbol <em>Symbol</em>}' reference.
+	 * Sets the value of the '{@link hu.modembed.model.modembed.abstraction.behavior.CodeSymbolPlacement#getSymbol <em>Symbol</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Symbol</em>' reference.
+	 * @param value the new value of the '<em>Symbol</em>' attribute.
 	 * @see #getSymbol()
 	 * @generated
 	 */
-	void setSymbol(Symbol value);
+	void setSymbol(String value);
 
 } // CodeSymbolPlacement

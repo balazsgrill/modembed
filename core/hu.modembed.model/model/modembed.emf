@@ -210,46 +210,38 @@ package abstraction {
 
   @namespace(uri="http://modembed.hu/abstraction/behavior", prefix="behavior")
   package behavior {
-    class SequentialBehavior extends infrastructure.RootElement {
-      val Symbol[*] symbols;
+  
+  	class SequentialBehaviorModule extends infrastructure.RootElement {
+  		ref DeviceAbstraction device;
+  		val SymbolValueAssignment[*] symbolMappings;
+  		val SequentialBehavior[*] behaviorModels;
+  	}
+  
+    class SequentialBehavior extends infrastructure.NamedElement {
       val SequentialAction[*] actions;
-    }
-
-    class Symbol extends infrastructure.NamedElement {
-      val types.TypeDefinition type;
-      attr boolean external;
     }
 
     abstract class SequentialAction extends infrastructure.MODembedElement {
     }
 
     class CodeSymbolPlacement extends SequentialAction {
-      ref Symbol symbol;
+      attr String[1] symbol;
     }
 
     class AtomicOperationExecution extends SequentialAction {
-      ref Symbol[*] arguments;
+      attr String[*] arguments;
       attr String[1] operation;
     }
 
     class BehaviorCall extends SequentialAction {
-      val SymbolMapping[*] argumentMappings;
-    }
-
-    class SymbolMapping extends infrastructure.MODembedElement {
-      ref Symbol local;
-      ref Symbol remote;
-    }
-
-    class SymbolValueMap extends infrastructure.RootElement {
-      val SymbolValueAssignment[*] values;
+    	attr String[1] reference;
     }
 
     class SymbolValueAssignment extends infrastructure.MODembedElement {
-      ref Symbol symbol;
-      ref memorymodel.MemoryInstance memory;
+      attr String[1] symbol;
+      val types.TypeDefinition[1] type;
       attr long value;
-      attr int indirectionLevel;
+      ref memorymodel.MemoryInstance[*] indirection;
     }
 
     @namespace(uri="http://modembed.hu/abstraction/behavior/platform", prefix="platform")
@@ -263,8 +255,7 @@ package abstraction {
 
       class OperationArgument extends infrastructure.NamedElement {
         val types.TypeDefinition type;
-        ref memorymodel.MemoryType memtype;
-        attr int indirectionLevel;
+        ref memorymodel.MemoryType[*] indirection;
       }
 
       class InstructionCallOperationStep extends OperationStep {

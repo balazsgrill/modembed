@@ -4,19 +4,10 @@ package hu.modembed.model.modembed.abstraction.behavior.impl;
 
 import hu.modembed.model.modembed.abstraction.behavior.BehaviorCall;
 import hu.modembed.model.modembed.abstraction.behavior.BehaviorPackage;
-import hu.modembed.model.modembed.abstraction.behavior.SymbolMapping;
 
-import java.util.Collection;
-
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
-
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,7 +16,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorCallImpl#getArgumentMappings <em>Argument Mappings</em>}</li>
+ *   <li>{@link hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorCallImpl#getReference <em>Reference</em>}</li>
  * </ul>
  * </p>
  *
@@ -33,15 +24,23 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class BehaviorCallImpl extends SequentialActionImpl implements BehaviorCall {
 	/**
-	 * The cached value of the '{@link #getArgumentMappings() <em>Argument Mappings</em>}' containment reference list.
+	 * The default value of the '{@link #getReference() <em>Reference</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getArgumentMappings()
+	 * @see #getReference()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<SymbolMapping> argumentMappings;
-
+	protected static final String REFERENCE_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getReference() <em>Reference</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReference()
+	 * @generated
+	 * @ordered
+	 */
+	protected String reference = REFERENCE_EDEFAULT;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -66,11 +65,8 @@ public class BehaviorCallImpl extends SequentialActionImpl implements BehaviorCa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<SymbolMapping> getArgumentMappings() {
-		if (argumentMappings == null) {
-			argumentMappings = new EObjectContainmentEList<SymbolMapping>(SymbolMapping.class, this, BehaviorPackage.BEHAVIOR_CALL__ARGUMENT_MAPPINGS);
-		}
-		return argumentMappings;
+	public String getReference() {
+		return reference;
 	}
 
 	/**
@@ -78,13 +74,11 @@ public class BehaviorCallImpl extends SequentialActionImpl implements BehaviorCa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case BehaviorPackage.BEHAVIOR_CALL__ARGUMENT_MAPPINGS:
-				return ((InternalEList<?>)getArgumentMappings()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
+	public void setReference(String newReference) {
+		String oldReference = reference;
+		reference = newReference;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.BEHAVIOR_CALL__REFERENCE, oldReference, reference));
 	}
 
 	/**
@@ -95,8 +89,8 @@ public class BehaviorCallImpl extends SequentialActionImpl implements BehaviorCa
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case BehaviorPackage.BEHAVIOR_CALL__ARGUMENT_MAPPINGS:
-				return getArgumentMappings();
+			case BehaviorPackage.BEHAVIOR_CALL__REFERENCE:
+				return getReference();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -110,9 +104,8 @@ public class BehaviorCallImpl extends SequentialActionImpl implements BehaviorCa
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case BehaviorPackage.BEHAVIOR_CALL__ARGUMENT_MAPPINGS:
-				getArgumentMappings().clear();
-				getArgumentMappings().addAll((Collection<? extends SymbolMapping>)newValue);
+			case BehaviorPackage.BEHAVIOR_CALL__REFERENCE:
+				setReference((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -126,8 +119,8 @@ public class BehaviorCallImpl extends SequentialActionImpl implements BehaviorCa
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case BehaviorPackage.BEHAVIOR_CALL__ARGUMENT_MAPPINGS:
-				getArgumentMappings().clear();
+			case BehaviorPackage.BEHAVIOR_CALL__REFERENCE:
+				setReference(REFERENCE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -141,10 +134,26 @@ public class BehaviorCallImpl extends SequentialActionImpl implements BehaviorCa
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case BehaviorPackage.BEHAVIOR_CALL__ARGUMENT_MAPPINGS:
-				return argumentMappings != null && !argumentMappings.isEmpty();
+			case BehaviorPackage.BEHAVIOR_CALL__REFERENCE:
+				return REFERENCE_EDEFAULT == null ? reference != null : !REFERENCE_EDEFAULT.equals(reference);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (reference: ");
+		result.append(reference);
+		result.append(')');
+		return result.toString();
 	}
 
 } //BehaviorCallImpl

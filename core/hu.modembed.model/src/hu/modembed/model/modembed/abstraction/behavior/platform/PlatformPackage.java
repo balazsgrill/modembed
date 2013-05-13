@@ -168,22 +168,13 @@ public interface PlatformPackage extends EPackage {
 	int OPERATION_ARGUMENT__TYPE = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Memtype</b></em>' reference.
+	 * The feature id for the '<em><b>Indirection</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_ARGUMENT__MEMTYPE = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Indirection Level</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERATION_ARGUMENT__INDIRECTION_LEVEL = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int OPERATION_ARGUMENT__INDIRECTION = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Operation Argument</em>' class.
@@ -192,7 +183,7 @@ public interface PlatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_ARGUMENT_FEATURE_COUNT = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int OPERATION_ARGUMENT_FEATURE_COUNT = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link hu.modembed.model.modembed.abstraction.behavior.platform.impl.OperationStepImpl <em>Operation Step</em>}' class.
@@ -425,26 +416,15 @@ public interface PlatformPackage extends EPackage {
 	EReference getOperationArgument_Type();
 
 	/**
-	 * Returns the meta object for the reference '{@link hu.modembed.model.modembed.abstraction.behavior.platform.OperationArgument#getMemtype <em>Memtype</em>}'.
+	 * Returns the meta object for the reference list '{@link hu.modembed.model.modembed.abstraction.behavior.platform.OperationArgument#getIndirection <em>Indirection</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Memtype</em>'.
-	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.OperationArgument#getMemtype()
+	 * @return the meta object for the reference list '<em>Indirection</em>'.
+	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.OperationArgument#getIndirection()
 	 * @see #getOperationArgument()
 	 * @generated
 	 */
-	EReference getOperationArgument_Memtype();
-
-	/**
-	 * Returns the meta object for the attribute '{@link hu.modembed.model.modembed.abstraction.behavior.platform.OperationArgument#getIndirectionLevel <em>Indirection Level</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Indirection Level</em>'.
-	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.OperationArgument#getIndirectionLevel()
-	 * @see #getOperationArgument()
-	 * @generated
-	 */
-	EAttribute getOperationArgument_IndirectionLevel();
+	EReference getOperationArgument_Indirection();
 
 	/**
 	 * Returns the meta object for class '{@link hu.modembed.model.modembed.abstraction.behavior.platform.InstructionCallOperationStep <em>Instruction Call Operation Step</em>}'.
@@ -617,20 +597,12 @@ public interface PlatformPackage extends EPackage {
 		EReference OPERATION_ARGUMENT__TYPE = eINSTANCE.getOperationArgument_Type();
 
 		/**
-		 * The meta object literal for the '<em><b>Memtype</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Indirection</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference OPERATION_ARGUMENT__MEMTYPE = eINSTANCE.getOperationArgument_Memtype();
-
-		/**
-		 * The meta object literal for the '<em><b>Indirection Level</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute OPERATION_ARGUMENT__INDIRECTION_LEVEL = eINSTANCE.getOperationArgument_IndirectionLevel();
+		EReference OPERATION_ARGUMENT__INDIRECTION = eINSTANCE.getOperationArgument_Indirection();
 
 		/**
 		 * The meta object literal for the '{@link hu.modembed.model.modembed.abstraction.behavior.platform.impl.InstructionCallOperationStepImpl <em>Instruction Call Operation Step</em>}' class.

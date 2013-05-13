@@ -181,45 +181,41 @@
     </eSubpackages>
     <eSubpackages name="behavior" nsURI="http://modembed.hu/abstraction/behavior"
         nsPrefix="behavior">
-      <eClassifiers xsi:type="ecore:EClass" name="SequentialBehavior" eSuperTypes="#//infrastructure/RootElement">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="symbols" upperBound="-1"
-            eType="#//abstraction/behavior/Symbol" containment="true"/>
+      <eClassifiers xsi:type="ecore:EClass" name="SequentialBehaviorModule" eSuperTypes="#//infrastructure/RootElement">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="device" eType="#//abstraction/DeviceAbstraction"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="symbolMappings" upperBound="-1"
+            eType="#//abstraction/behavior/SymbolValueAssignment" containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="behaviorModels" upperBound="-1"
+            eType="#//abstraction/behavior/SequentialBehavior" containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="SequentialBehavior" eSuperTypes="#//infrastructure/NamedElement">
         <eStructuralFeatures xsi:type="ecore:EReference" name="actions" upperBound="-1"
             eType="#//abstraction/behavior/SequentialAction" containment="true"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Symbol" eSuperTypes="#//infrastructure/NamedElement">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//abstraction/types/TypeDefinition"
-            containment="true"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="external" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="SequentialAction" abstract="true"
           eSuperTypes="#//infrastructure/MODembedElement"/>
       <eClassifiers xsi:type="ecore:EClass" name="CodeSymbolPlacement" eSuperTypes="#//abstraction/behavior/SequentialAction">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="symbol" eType="#//abstraction/behavior/Symbol"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="symbol" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="AtomicOperationExecution" eSuperTypes="#//abstraction/behavior/SequentialAction">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="arguments" upperBound="-1"
-            eType="#//abstraction/behavior/Symbol"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="arguments" upperBound="-1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="operation" lowerBound="1"
             eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="BehaviorCall" eSuperTypes="#//abstraction/behavior/SequentialAction">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="argumentMappings" upperBound="-1"
-            eType="#//abstraction/behavior/SymbolMapping" containment="true"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="SymbolMapping" eSuperTypes="#//infrastructure/MODembedElement">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="local" eType="#//abstraction/behavior/Symbol"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="remote" eType="#//abstraction/behavior/Symbol"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="SymbolValueMap" eSuperTypes="#//infrastructure/RootElement">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="values" upperBound="-1"
-            eType="#//abstraction/behavior/SymbolValueAssignment" containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="reference" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="SymbolValueAssignment" eSuperTypes="#//infrastructure/MODembedElement">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="symbol" eType="#//abstraction/behavior/Symbol"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="memory" eType="#//abstraction/memorymodel/MemoryInstance"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="symbol" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"
+            eType="#//abstraction/types/TypeDefinition" containment="true"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="indirectionLevel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="indirection" upperBound="-1"
+            eType="#//abstraction/memorymodel/MemoryInstance"/>
       </eClassifiers>
       <eSubpackages name="platform" nsURI="http://modembed.hu/abstraction/behavior/platform"
           nsPrefix="platform">
@@ -233,9 +229,8 @@
         <eClassifiers xsi:type="ecore:EClass" name="OperationArgument" eSuperTypes="#//infrastructure/NamedElement">
           <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//abstraction/types/TypeDefinition"
               containment="true"/>
-          <eStructuralFeatures xsi:type="ecore:EReference" name="memtype" eType="#//abstraction/memorymodel/MemoryType"/>
-          <eStructuralFeatures xsi:type="ecore:EAttribute" name="indirectionLevel"
-              eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="indirection" upperBound="-1"
+              eType="#//abstraction/memorymodel/MemoryType"/>
         </eClassifiers>
         <eClassifiers xsi:type="ecore:EClass" name="InstructionCallOperationStep"
             eSuperTypes="#//abstraction/behavior/platform/OperationStep">

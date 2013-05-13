@@ -3,18 +3,20 @@
 package hu.modembed.model.modembed.abstraction.behavior.impl;
 
 import hu.modembed.model.modembed.abstraction.behavior.BehaviorPackage;
-import hu.modembed.model.modembed.abstraction.behavior.Symbol;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolValueAssignment;
-
 import hu.modembed.model.modembed.abstraction.memorymodel.MemoryInstance;
+import hu.modembed.model.modembed.abstraction.types.TypeDefinition;
 import hu.modembed.model.modembed.infrastructure.impl.MODembedElementImpl;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,9 +26,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link hu.modembed.model.modembed.abstraction.behavior.impl.SymbolValueAssignmentImpl#getSymbol <em>Symbol</em>}</li>
- *   <li>{@link hu.modembed.model.modembed.abstraction.behavior.impl.SymbolValueAssignmentImpl#getMemory <em>Memory</em>}</li>
+ *   <li>{@link hu.modembed.model.modembed.abstraction.behavior.impl.SymbolValueAssignmentImpl#getType <em>Type</em>}</li>
  *   <li>{@link hu.modembed.model.modembed.abstraction.behavior.impl.SymbolValueAssignmentImpl#getValue <em>Value</em>}</li>
- *   <li>{@link hu.modembed.model.modembed.abstraction.behavior.impl.SymbolValueAssignmentImpl#getIndirectionLevel <em>Indirection Level</em>}</li>
+ *   <li>{@link hu.modembed.model.modembed.abstraction.behavior.impl.SymbolValueAssignmentImpl#getIndirection <em>Indirection</em>}</li>
  * </ul>
  * </p>
  *
@@ -34,24 +36,34 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class SymbolValueAssignmentImpl extends MODembedElementImpl implements SymbolValueAssignment {
 	/**
-	 * The cached value of the '{@link #getSymbol() <em>Symbol</em>}' reference.
+	 * The default value of the '{@link #getSymbol() <em>Symbol</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSymbol()
 	 * @generated
 	 * @ordered
 	 */
-	protected Symbol symbol;
+	protected static final String SYMBOL_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getMemory() <em>Memory</em>}' reference.
+	 * The cached value of the '{@link #getSymbol() <em>Symbol</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMemory()
+	 * @see #getSymbol()
 	 * @generated
 	 * @ordered
 	 */
-	protected MemoryInstance memory;
+	protected String symbol = SYMBOL_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getType()
+	 * @generated
+	 * @ordered
+	 */
+	protected TypeDefinition type;
 
 	/**
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -74,24 +86,14 @@ public class SymbolValueAssignmentImpl extends MODembedElementImpl implements Sy
 	protected long value = VALUE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getIndirectionLevel() <em>Indirection Level</em>}' attribute.
+	 * The cached value of the '{@link #getIndirection() <em>Indirection</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getIndirectionLevel()
+	 * @see #getIndirection()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int INDIRECTION_LEVEL_EDEFAULT = 0;
-
-	/**
-	 * The cached value of the '{@link #getIndirectionLevel() <em>Indirection Level</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getIndirectionLevel()
-	 * @generated
-	 * @ordered
-	 */
-	protected int indirectionLevel = INDIRECTION_LEVEL_EDEFAULT;
+	protected EList<MemoryInstance> indirection;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -117,15 +119,7 @@ public class SymbolValueAssignmentImpl extends MODembedElementImpl implements Sy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Symbol getSymbol() {
-		if (symbol != null && symbol.eIsProxy()) {
-			InternalEObject oldSymbol = (InternalEObject)symbol;
-			symbol = (Symbol)eResolveProxy(oldSymbol);
-			if (symbol != oldSymbol) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviorPackage.SYMBOL_VALUE_ASSIGNMENT__SYMBOL, oldSymbol, symbol));
-			}
-		}
+	public String getSymbol() {
 		return symbol;
 	}
 
@@ -134,17 +128,8 @@ public class SymbolValueAssignmentImpl extends MODembedElementImpl implements Sy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Symbol basicGetSymbol() {
-		return symbol;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSymbol(Symbol newSymbol) {
-		Symbol oldSymbol = symbol;
+	public void setSymbol(String newSymbol) {
+		String oldSymbol = symbol;
 		symbol = newSymbol;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.SYMBOL_VALUE_ASSIGNMENT__SYMBOL, oldSymbol, symbol));
@@ -155,16 +140,23 @@ public class SymbolValueAssignmentImpl extends MODembedElementImpl implements Sy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MemoryInstance getMemory() {
-		if (memory != null && memory.eIsProxy()) {
-			InternalEObject oldMemory = (InternalEObject)memory;
-			memory = (MemoryInstance)eResolveProxy(oldMemory);
-			if (memory != oldMemory) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviorPackage.SYMBOL_VALUE_ASSIGNMENT__MEMORY, oldMemory, memory));
-			}
+	public TypeDefinition getType() {
+		return type;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetType(TypeDefinition newType, NotificationChain msgs) {
+		TypeDefinition oldType = type;
+		type = newType;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BehaviorPackage.SYMBOL_VALUE_ASSIGNMENT__TYPE, oldType, newType);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
-		return memory;
+		return msgs;
 	}
 
 	/**
@@ -172,20 +164,18 @@ public class SymbolValueAssignmentImpl extends MODembedElementImpl implements Sy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MemoryInstance basicGetMemory() {
-		return memory;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setMemory(MemoryInstance newMemory) {
-		MemoryInstance oldMemory = memory;
-		memory = newMemory;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.SYMBOL_VALUE_ASSIGNMENT__MEMORY, oldMemory, memory));
+	public void setType(TypeDefinition newType) {
+		if (newType != type) {
+			NotificationChain msgs = null;
+			if (type != null)
+				msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BehaviorPackage.SYMBOL_VALUE_ASSIGNMENT__TYPE, null, msgs);
+			if (newType != null)
+				msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BehaviorPackage.SYMBOL_VALUE_ASSIGNMENT__TYPE, null, msgs);
+			msgs = basicSetType(newType, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.SYMBOL_VALUE_ASSIGNMENT__TYPE, newType, newType));
 	}
 
 	/**
@@ -214,8 +204,11 @@ public class SymbolValueAssignmentImpl extends MODembedElementImpl implements Sy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getIndirectionLevel() {
-		return indirectionLevel;
+	public EList<MemoryInstance> getIndirection() {
+		if (indirection == null) {
+			indirection = new EObjectResolvingEList<MemoryInstance>(MemoryInstance.class, this, BehaviorPackage.SYMBOL_VALUE_ASSIGNMENT__INDIRECTION);
+		}
+		return indirection;
 	}
 
 	/**
@@ -223,11 +216,13 @@ public class SymbolValueAssignmentImpl extends MODembedElementImpl implements Sy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setIndirectionLevel(int newIndirectionLevel) {
-		int oldIndirectionLevel = indirectionLevel;
-		indirectionLevel = newIndirectionLevel;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.SYMBOL_VALUE_ASSIGNMENT__INDIRECTION_LEVEL, oldIndirectionLevel, indirectionLevel));
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case BehaviorPackage.SYMBOL_VALUE_ASSIGNMENT__TYPE:
+				return basicSetType(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -239,15 +234,13 @@ public class SymbolValueAssignmentImpl extends MODembedElementImpl implements Sy
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case BehaviorPackage.SYMBOL_VALUE_ASSIGNMENT__SYMBOL:
-				if (resolve) return getSymbol();
-				return basicGetSymbol();
-			case BehaviorPackage.SYMBOL_VALUE_ASSIGNMENT__MEMORY:
-				if (resolve) return getMemory();
-				return basicGetMemory();
+				return getSymbol();
+			case BehaviorPackage.SYMBOL_VALUE_ASSIGNMENT__TYPE:
+				return getType();
 			case BehaviorPackage.SYMBOL_VALUE_ASSIGNMENT__VALUE:
 				return getValue();
-			case BehaviorPackage.SYMBOL_VALUE_ASSIGNMENT__INDIRECTION_LEVEL:
-				return getIndirectionLevel();
+			case BehaviorPackage.SYMBOL_VALUE_ASSIGNMENT__INDIRECTION:
+				return getIndirection();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -257,20 +250,22 @@ public class SymbolValueAssignmentImpl extends MODembedElementImpl implements Sy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case BehaviorPackage.SYMBOL_VALUE_ASSIGNMENT__SYMBOL:
-				setSymbol((Symbol)newValue);
+				setSymbol((String)newValue);
 				return;
-			case BehaviorPackage.SYMBOL_VALUE_ASSIGNMENT__MEMORY:
-				setMemory((MemoryInstance)newValue);
+			case BehaviorPackage.SYMBOL_VALUE_ASSIGNMENT__TYPE:
+				setType((TypeDefinition)newValue);
 				return;
 			case BehaviorPackage.SYMBOL_VALUE_ASSIGNMENT__VALUE:
 				setValue((Long)newValue);
 				return;
-			case BehaviorPackage.SYMBOL_VALUE_ASSIGNMENT__INDIRECTION_LEVEL:
-				setIndirectionLevel((Integer)newValue);
+			case BehaviorPackage.SYMBOL_VALUE_ASSIGNMENT__INDIRECTION:
+				getIndirection().clear();
+				getIndirection().addAll((Collection<? extends MemoryInstance>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -285,16 +280,16 @@ public class SymbolValueAssignmentImpl extends MODembedElementImpl implements Sy
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case BehaviorPackage.SYMBOL_VALUE_ASSIGNMENT__SYMBOL:
-				setSymbol((Symbol)null);
+				setSymbol(SYMBOL_EDEFAULT);
 				return;
-			case BehaviorPackage.SYMBOL_VALUE_ASSIGNMENT__MEMORY:
-				setMemory((MemoryInstance)null);
+			case BehaviorPackage.SYMBOL_VALUE_ASSIGNMENT__TYPE:
+				setType((TypeDefinition)null);
 				return;
 			case BehaviorPackage.SYMBOL_VALUE_ASSIGNMENT__VALUE:
 				setValue(VALUE_EDEFAULT);
 				return;
-			case BehaviorPackage.SYMBOL_VALUE_ASSIGNMENT__INDIRECTION_LEVEL:
-				setIndirectionLevel(INDIRECTION_LEVEL_EDEFAULT);
+			case BehaviorPackage.SYMBOL_VALUE_ASSIGNMENT__INDIRECTION:
+				getIndirection().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -309,13 +304,13 @@ public class SymbolValueAssignmentImpl extends MODembedElementImpl implements Sy
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case BehaviorPackage.SYMBOL_VALUE_ASSIGNMENT__SYMBOL:
-				return symbol != null;
-			case BehaviorPackage.SYMBOL_VALUE_ASSIGNMENT__MEMORY:
-				return memory != null;
+				return SYMBOL_EDEFAULT == null ? symbol != null : !SYMBOL_EDEFAULT.equals(symbol);
+			case BehaviorPackage.SYMBOL_VALUE_ASSIGNMENT__TYPE:
+				return type != null;
 			case BehaviorPackage.SYMBOL_VALUE_ASSIGNMENT__VALUE:
 				return value != VALUE_EDEFAULT;
-			case BehaviorPackage.SYMBOL_VALUE_ASSIGNMENT__INDIRECTION_LEVEL:
-				return indirectionLevel != INDIRECTION_LEVEL_EDEFAULT;
+			case BehaviorPackage.SYMBOL_VALUE_ASSIGNMENT__INDIRECTION:
+				return indirection != null && !indirection.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -330,10 +325,10 @@ public class SymbolValueAssignmentImpl extends MODembedElementImpl implements Sy
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (value: ");
+		result.append(" (symbol: ");
+		result.append(symbol);
+		result.append(", value: ");
 		result.append(value);
-		result.append(", indirectionLevel: ");
-		result.append(indirectionLevel);
 		result.append(')');
 		return result.toString();
 	}

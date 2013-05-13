@@ -4,19 +4,14 @@ package hu.modembed.model.modembed.abstraction.behavior.impl;
 
 import hu.modembed.model.modembed.abstraction.behavior.AtomicOperationExecution;
 import hu.modembed.model.modembed.abstraction.behavior.BehaviorPackage;
-import hu.modembed.model.modembed.abstraction.behavior.Symbol;
 
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,14 +29,14 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  */
 public class AtomicOperationExecutionImpl extends SequentialActionImpl implements AtomicOperationExecution {
 	/**
-	 * The cached value of the '{@link #getArguments() <em>Arguments</em>}' reference list.
+	 * The cached value of the '{@link #getArguments() <em>Arguments</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getArguments()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Symbol> arguments;
+	protected EList<String> arguments;
 
 	/**
 	 * The default value of the '{@link #getOperation() <em>Operation</em>}' attribute.
@@ -87,9 +82,9 @@ public class AtomicOperationExecutionImpl extends SequentialActionImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Symbol> getArguments() {
+	public EList<String> getArguments() {
 		if (arguments == null) {
-			arguments = new EObjectResolvingEList<Symbol>(Symbol.class, this, BehaviorPackage.ATOMIC_OPERATION_EXECUTION__ARGUMENTS);
+			arguments = new EDataTypeUniqueEList<String>(String.class, this, BehaviorPackage.ATOMIC_OPERATION_EXECUTION__ARGUMENTS);
 		}
 		return arguments;
 	}
@@ -142,7 +137,7 @@ public class AtomicOperationExecutionImpl extends SequentialActionImpl implement
 		switch (featureID) {
 			case BehaviorPackage.ATOMIC_OPERATION_EXECUTION__ARGUMENTS:
 				getArguments().clear();
-				getArguments().addAll((Collection<? extends Symbol>)newValue);
+				getArguments().addAll((Collection<? extends String>)newValue);
 				return;
 			case BehaviorPackage.ATOMIC_OPERATION_EXECUTION__OPERATION:
 				setOperation((String)newValue);
@@ -195,7 +190,9 @@ public class AtomicOperationExecutionImpl extends SequentialActionImpl implement
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (operation: ");
+		result.append(" (arguments: ");
+		result.append(arguments);
+		result.append(", operation: ");
 		result.append(operation);
 		result.append(')');
 		return result.toString();

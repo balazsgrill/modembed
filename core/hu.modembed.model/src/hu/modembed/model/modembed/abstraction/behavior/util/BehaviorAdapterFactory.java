@@ -72,12 +72,12 @@ public class BehaviorAdapterFactory extends AdapterFactoryImpl {
 	protected BehaviorSwitch<Adapter> modelSwitch =
 		new BehaviorSwitch<Adapter>() {
 			@Override
-			public Adapter caseSequentialBehavior(SequentialBehavior object) {
-				return createSequentialBehaviorAdapter();
+			public Adapter caseSequentialBehaviorModule(SequentialBehaviorModule object) {
+				return createSequentialBehaviorModuleAdapter();
 			}
 			@Override
-			public Adapter caseSymbol(Symbol object) {
-				return createSymbolAdapter();
+			public Adapter caseSequentialBehavior(SequentialBehavior object) {
+				return createSequentialBehaviorAdapter();
 			}
 			@Override
 			public Adapter caseSequentialAction(SequentialAction object) {
@@ -94,14 +94,6 @@ public class BehaviorAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseBehaviorCall(BehaviorCall object) {
 				return createBehaviorCallAdapter();
-			}
-			@Override
-			public Adapter caseSymbolMapping(SymbolMapping object) {
-				return createSymbolMappingAdapter();
-			}
-			@Override
-			public Adapter caseSymbolValueMap(SymbolValueMap object) {
-				return createSymbolValueMapAdapter();
 			}
 			@Override
 			public Adapter caseSymbolValueAssignment(SymbolValueAssignment object) {
@@ -140,6 +132,20 @@ public class BehaviorAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.modembed.abstraction.behavior.SequentialBehaviorModule <em>Sequential Behavior Module</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.modembed.model.modembed.abstraction.behavior.SequentialBehaviorModule
+	 * @generated
+	 */
+	public Adapter createSequentialBehaviorModuleAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link hu.modembed.model.modembed.abstraction.behavior.SequentialBehavior <em>Sequential Behavior</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -150,20 +156,6 @@ public class BehaviorAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSequentialBehaviorAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link hu.modembed.model.modembed.abstraction.behavior.Symbol <em>Symbol</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see hu.modembed.model.modembed.abstraction.behavior.Symbol
-	 * @generated
-	 */
-	public Adapter createSymbolAdapter() {
 		return null;
 	}
 
@@ -220,34 +212,6 @@ public class BehaviorAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createBehaviorCallAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link hu.modembed.model.modembed.abstraction.behavior.SymbolMapping <em>Symbol Mapping</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see hu.modembed.model.modembed.abstraction.behavior.SymbolMapping
-	 * @generated
-	 */
-	public Adapter createSymbolMappingAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link hu.modembed.model.modembed.abstraction.behavior.SymbolValueMap <em>Symbol Value Map</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see hu.modembed.model.modembed.abstraction.behavior.SymbolValueMap
-	 * @generated
-	 */
-	public Adapter createSymbolValueMapAdapter() {
 		return null;
 	}
 
