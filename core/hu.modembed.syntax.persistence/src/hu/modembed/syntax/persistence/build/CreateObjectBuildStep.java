@@ -26,6 +26,18 @@ public class CreateObjectBuildStep implements IModelBuildStep {
 	private final String EClassURI;
 	private final String feature;
 	
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		if (feature != null){
+			sb.append(feature);
+			sb.append("=");
+		}
+		sb.append("{");
+		sb.append(EClassURI);
+		return sb.toString();
+	}
+	
 	public CreateObjectBuildStep(String EClassURI, String feature) {
 		this.EClassURI = EClassURI;
 		this.feature = feature;
@@ -42,6 +54,10 @@ public class CreateObjectBuildStep implements IModelBuildStep {
 		ExtendedMetaData metaData = new BasicExtendedMetaData(Registry.INSTANCE);
 		EClass eclass = (EClass)metaData.getType(nsURI, name);
 		
+		if (eclass == null){
+			return Collections.singletonList(new ParsingError("Could not resolve class: "+EClassURI,""));
+		}
+		
 		EObject eobject = eclass.getEPackage().getEFactoryInstance().create(eclass);
 		String feature = this.feature;
 		if (feature == null){
@@ -51,6 +67,9 @@ public class CreateObjectBuildStep implements IModelBuildStep {
 		
 		if (feature != null){
 			EObject container = modelStack.peek();
+			if (container == null){
+				return Collections.singletonList(new ParsingError("Container is not available for: "+feature,""));
+			}
 			EReference reference = null;
 			for(EReference ref : container.eClass().getEAllContainments()){
 				if (feature.equals(ref.getName())){

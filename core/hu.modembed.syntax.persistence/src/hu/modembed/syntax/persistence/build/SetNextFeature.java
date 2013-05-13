@@ -18,6 +18,11 @@ public class SetNextFeature implements IModelBuildStep {
 
 	private final String feature;
 	
+	@Override
+	public String toString() {
+		return feature+"=>";
+	}
+	
 	public SetNextFeature(String feature) {
 		this.feature = feature;
 	}

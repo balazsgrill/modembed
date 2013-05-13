@@ -24,6 +24,11 @@ public class SetFeatureBuildStep implements IModelBuildStep {
 	private final String feature;
 	private final TerminalMatch match;
 	
+	@Override
+	public String toString() {
+		return feature+"=["+match.match+"]";
+	}
+	
 	public SetFeatureBuildStep(String feature, TerminalMatch match) {
 		this.feature = feature;
 		this.match = match;
@@ -35,10 +40,15 @@ public class SetFeatureBuildStep implements IModelBuildStep {
 	@Override
 	public List<? extends Diagnostic> apply(ModelBuilder builder, Deque<EObject> modelStack) {
 		EObject container = modelStack.peek();
+		if (container == null){
+			return Collections.singletonList(new ParsingError("There is no container for feature: "+feature,""));
+		}
 		EStructuralFeature efeature = null;
-		for(EStructuralFeature ref : container.eClass().getEAllStructuralFeatures()){
-			if (feature.equals(ref.getName())){
-				efeature = ref;
+		if (feature != null){
+			for(EStructuralFeature ref : container.eClass().getEAllStructuralFeatures()){
+				if (feature.equals(ref.getName())){
+					efeature = ref;
+				}
 			}
 		}
 		if (efeature == null) {
