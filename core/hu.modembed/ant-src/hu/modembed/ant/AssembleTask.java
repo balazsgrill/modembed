@@ -8,9 +8,9 @@ import hu.modembed.model.modembed.core.object.AssemblerObject;
 import hu.modembed.utils.assembler.Assembler;
 
 import java.io.File;
-import java.io.IOException;
 
 import org.apache.tools.ant.BuildException;
+import org.apache.tools.ant.Task;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  * @author balazs.grill
  *
  */
-public class AssembleTask extends ModelingTask {
+public class AssembleTask extends Task {
 
 	private File input;
 	private File output;
@@ -39,8 +39,8 @@ public class AssembleTask extends ModelingTask {
 		
 		ResourceSet rs = MODembedCore.createResourceSet();
 		try {
-			Object in = loadInput(rs, input);
-			Resource out = getOutput(rs, output);
+			Object in = TaskUtils.loadInput(rs, input);
+			Resource out = TaskUtils.getOutput(rs, output);
 			if (in instanceof AssemblerObject){
 				Assembler assembler = new Assembler();
 				out.getContents().add(assembler.execute((AssemblerObject)in, 0, new NullProgressMonitor()));
@@ -49,7 +49,7 @@ public class AssembleTask extends ModelingTask {
 				throw new BuildException("Invalid input");
 			}
 			
-		} catch (IOException e) {
+		} catch (Exception e) {
 			throw new BuildException(e);
 		}
 		

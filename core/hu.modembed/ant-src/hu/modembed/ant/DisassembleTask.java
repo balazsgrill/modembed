@@ -12,10 +12,10 @@ import hu.modembed.model.modembed.core.object.ObjectFactory;
 import hu.modembed.utils.disassembler.Disassembler;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.List;
 
 import org.apache.tools.ant.BuildException;
+import org.apache.tools.ant.Task;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 
@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  * @author balazs.grill
  *
  */
-public class DisassembleTask extends ModelingTask {
+public class DisassembleTask extends Task {
 
 	private File input;
 	private File output;
@@ -50,8 +50,8 @@ public class DisassembleTask extends ModelingTask {
 		
 		ResourceSet rs = MODembedCore.createResourceSet();
 		try {
-			HexFile hexfile = loadInput(rs, input, HexFile.class);
-			InstructionSet iset = loadInput(rs, instructionSet, InstructionSet.class);
+			HexFile hexfile = TaskUtils.loadInput(rs, input, HexFile.class);
+			InstructionSet iset = TaskUtils.loadInput(rs, instructionSet, InstructionSet.class);
 			
 			Disassembler disassembler = new Disassembler(iset);
 			List<InstructionCall> calls = disassembler.disassemble(hexfile.getEntries().get(0).getData());
@@ -60,11 +60,11 @@ public class DisassembleTask extends ModelingTask {
 			asm.setStartAddress(0); //TODO
 			asm.getInstructions().addAll(calls);
 			
-			Resource outres = getOutput(rs, output);
+			Resource outres = TaskUtils.getOutput(rs, output);
 			outres.getContents().add(asm);
 			outres.save(null);
 			
-		} catch (IOException e) {
+		} catch (Exception e) {
 			throw new BuildException(e);
 		}
 		

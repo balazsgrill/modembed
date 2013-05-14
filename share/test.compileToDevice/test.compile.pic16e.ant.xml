@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="test.assembler" default="run">
 
-	<include file="../e.core/compiler.xml"/>
-
 	<target name="run">
-		<inputmodel
-			name="mod" resource="test.main.module.m"
-		/>	
-		<outputmodel
-			name="asm"
-			resource=".test.compile.pic16e.model"
-			mmuri="${uri.modembed.core.object}"
-		/>
-		<compiler.compile.module input="mod" output="asm" />
+		<modembed.compile device="pic16e.test.device.m" 
+			output=".test.main.asm.xmi" entry="main">
+			<filelist dir="${basedir}">
+				<file  name="test.main.module.m"/>
+			</filelist>
+		</modembed.compile>
 	</target>
 	
 </project>
