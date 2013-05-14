@@ -54,10 +54,10 @@ terminal OP_ADD "\+";
 <OperationArguments2> :- OP_COMMA <OperationArgument> ;
 
 <OperationArgument> :- arguments={"http://modembed.hu/abstraction/behavior/platform#OperationArgument" name=IDENTIFIER 
-					OP_COLON type=<TypeDefinition> OP_BOPEN <MemTypeDefinition>? indirectionLevel=DECIMAL_NUMBER OP_BCLOSE
+					OP_COLON type=<TypeDefinition> <MemTypeDefinition>*? 
 					};
 
-<MemTypeDefinition> :- memtype=IDENTIFIER OP_AT;
+<MemTypeDefinition> :- OP_AT indirection=IDENTIFIER ;
 
 <OperationStep> :- steps={"http://modembed.hu/abstraction/behavior/platform#InstructionCallOperationStep"
 						instruction=IDENTIFIER

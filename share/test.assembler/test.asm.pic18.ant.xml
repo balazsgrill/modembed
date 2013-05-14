@@ -1,36 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="test.assembler" default="run">
 
-	<include file="../e.core/compiler.xml"/>
-
 	<target name="run">
-			<inputmodel
-				name="input_hex"
-				resource="test.asm.pic18.hex"
-			/>
-			<inputmodel
-				name="instructionSet"
-				resource="../microchip.pic18/microchip.pic18.instructionset.m"
-			/>
-			<outputmodel
-				name="asm"
-				resource=".test.asm.pic18.model"
-				mmuri="${uri.modembed.core.object}"
-			/>
-			<outputmodel
-				name="output_hex"
-				resource=".test.asm.pic18.out.hex"
-				mmuri="${uri.hexfile}"
-			/>
-			<compiler.disassemble 
-				input="input_hex"
-				instructionset="instructionSet"
-				output="asm"
-				/>
-			<compiler.assemble
-				input="asm"
-				output="output_hex"
-			/>
-		</target>
+		<modembed.disassemble 
+			input="test.asm.pic16e.hex"
+			instructionSet="../microchip.pic18/microchip.pic18.instructionset.m"
+			output=".test.asm.pic18.model"
+		/>
+		<modembed.assemble
+			input=".test.asm.pic18.model"
+			output=".test.asm.pic18.out.hex"
+		/>
+	</target>
 	
 </project>

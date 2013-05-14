@@ -1,5 +1,5 @@
 #!sequential.syntax
-module test;
+module test device pic16e.test.device;
 
 const0 : uint8 = 0;
 v1 : uint8@mainram = 0;
