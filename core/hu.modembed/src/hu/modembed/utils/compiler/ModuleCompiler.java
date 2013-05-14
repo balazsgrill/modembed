@@ -4,13 +4,17 @@
 package hu.modembed.utils.compiler;
 
 import java.util.LinkedHashMap;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 
 import hu.modembed.model.modembed.abstraction.DeviceAbstraction;
 import hu.modembed.model.modembed.abstraction.behavior.SequentialBehavior;
 import hu.modembed.model.modembed.abstraction.behavior.SequentialBehaviorModule;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolValueAssignment;
+import hu.modembed.model.modembed.abstraction.behavior.platform.OperationDefinition;
 import hu.modembed.model.modembed.core.object.AssemblerObject;
+import hu.modembed.model.modembed.core.object.InstructionCall;
 import hu.modembed.model.modembed.core.object.ObjectFactory;
 
 /**
@@ -21,7 +25,31 @@ public class ModuleCompiler {
 
 	private final DeviceAbstraction device;
 	private final Map<String, SequentialBehavior> sequences = new LinkedHashMap<String, SequentialBehavior>();
-	private final Map<String, SymbolValueAssignment> symbols = new LinkedHashMap<String, SymbolValueAssignment>();
+	final Map<String, SymbolValueAssignment> symbols = new LinkedHashMap<String, SymbolValueAssignment>();
+	
+	private OperationDefinition findOperation(DeviceAbstraction device, String operation, TypeSignature[] signature) throws Exception{
+		for(OperationDefinition opdef : device.getOperation()){
+			if (operation.equals(opdef.getOperation())){
+				if (opdef.getArguments().size() == signature.length){
+					boolean ok = true;
+					for(int i=0;i<signature.length;i++) if(ok){
+						ok = TypeSignature.create(opdef.getArguments().get(i)).isCompatible(signature[i]);
+					}
+					if (ok) return opdef;
+				}
+			}
+		}
+		if (device.getAncestor() != null){
+			return findOperation(device.getAncestor(), operation, signature);
+		}
+		return null;
+	}
+	
+	public OperationDefinition findOperation(String operation, TypeSignature[] signature) throws Exception{
+		OperationDefinition opdef = findOperation(device, operation, signature);
+		if (opdef != null) return opdef;
+		throw new Exception("Could not find operation: "+operation);
+	}
 	
 	public ModuleCompiler(DeviceAbstraction device) {
 		this.device = device;
@@ -52,7 +80,9 @@ public class ModuleCompiler {
 			throw new Exception("Could not find entry point: "+entry);
 		}
 		
-		
+		List<InstructionCall> list = new LinkedList<InstructionCall>();
+		new SequenceCompiler(this, null, sequence).compile(list);
+		asm.getInstructions().addAll(list);
 		
 		return asm;
 	}
