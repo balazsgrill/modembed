@@ -17,11 +17,27 @@
       </project>
    </extension>
    <extension
-         point="org.eclipse.epsilon.common.dt.tool">
-      <tool
-            class="hu.modembed.utils.MODembedTool"
-            defaultName="modembedTool">
-      </tool>
+         point="org.eclipse.ant.core.antTasks">
+      <antTask
+            class="hu.modembed.ant.AssembleTask"
+            headless="true"
+            library="ant_tasks/modembed.ant.tasks.jar"
+            name="modembed.assemble">
+      </antTask>
+      <antTask
+            class="hu.modembed.ant.DisassembleTask"
+            headless="true"
+            library="ant_tasks/modembed.ant.tasks.jar"
+            name="modembed.disassemble">
+      </antTask>
+   </extension>
+   <extension
+         point="org.eclipse.ant.core.extraClasspathEntries">
+      <extraClasspathEntry
+            eclipseRuntime="true"
+            headless="true"
+            library="ant_tasks/modembed.ant.tasks.jar">
+      </extraClasspathEntry>
    </extension>
 
 </plugin>
