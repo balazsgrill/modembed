@@ -12,8 +12,8 @@ terminal OP_START "\{";
 terminal OP_END "\}";
 
 
-<Module> :- KW_MODULE {"http://modembed.hu/abstraction/behavior#SequentialBehaviorModule" name=QUALIFIEDID OPERATOR_SEMICOLON 
-					<DeviceSelection>? <Item>*?;
+<Module> :- KW_MODULE {"http://modembed.hu/abstraction/behavior#SequentialBehaviorModule" name=QUALIFIEDID 
+					<DeviceSelection>? OPERATOR_SEMICOLON <Item>*?;
 
 <DeviceSelection> :- KW_DEVICE device=QUALIFIEDID ;
 
