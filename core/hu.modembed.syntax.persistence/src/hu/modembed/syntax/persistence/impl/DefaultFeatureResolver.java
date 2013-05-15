@@ -53,13 +53,11 @@ public class DefaultFeatureResolver implements IFeatureResolver{
 				if (name.equals(ne.getName())){
 					return ne;
 				}
-
-				for(EObject eo : ne.eContents()){
-					if ((!visited.contains(eo))){
-						queue.add(eo);
-					}
+			}
+			for(EObject eo : element.eContents()){
+				if ((!visited.contains(eo))){
+					queue.add(eo);
 				}
-				
 			}
 			EObject container = element.eContainer();
 			if (container != null){

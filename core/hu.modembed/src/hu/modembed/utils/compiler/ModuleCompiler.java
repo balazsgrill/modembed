@@ -48,7 +48,17 @@ public class ModuleCompiler {
 	public OperationDefinition findOperation(String operation, TypeSignature[] signature) throws Exception{
 		OperationDefinition opdef = findOperation(device, operation, signature);
 		if (opdef != null) return opdef;
-		throw new Exception("Could not find operation: "+operation);
+		StringBuilder sb = new StringBuilder();
+		sb.append(operation);
+		sb.append("(");
+		boolean first = true;
+		for(TypeSignature ts : signature){
+			if (first) first = false;
+			else sb.append(", ");
+			sb.append(ts);
+		}
+		sb.append(")");
+		throw new Exception("Could not find operation: "+sb.toString());
 	}
 	
 	public ModuleCompiler(DeviceAbstraction device) {

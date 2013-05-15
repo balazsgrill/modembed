@@ -79,6 +79,25 @@ public class TypeSignature {
 		return new TypeSignature(typedef, mts);
 	}
 	
-	
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		if(type instanceof UnsignedTypeDefinition){
+			sb.append("unsigned(");
+			sb.append(((UnsignedTypeDefinition) type).getBits());
+			sb.append(")");
+		}
+		if (type instanceof ReferenceTypeDefinition){
+			sb.append(((ReferenceTypeDefinition) type).getType().getName());
+		}
+		if (type instanceof CodeLabelTypeDefinition){
+			sb.append("label");
+		}
+		for(MemoryType mt : indirections){
+			sb.append("@");
+			sb.append(mt.getName());
+		}
+		return sb.toString();
+	}
 	
 }

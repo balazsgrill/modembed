@@ -42,7 +42,9 @@ public class OperationCompiler {
 		if (args.size() != argValues.size()) throw new Exception();
 		
 		for(int i=0;i<args.size();i++){
-			arguments.put(args.get(i), sequenceCompiler.getSymbolValue(argValues.get(i)));
+			OperationArgument a = args.get(i);
+			SymbolValueAssignment sva = sequenceCompiler.getSymbolValue(argValues.get(i)); 
+			arguments.put(a, sva);
 		}
 	}
 	
