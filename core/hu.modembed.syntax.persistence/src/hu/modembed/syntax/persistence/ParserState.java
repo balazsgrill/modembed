@@ -17,6 +17,7 @@ import hu.modembed.syntax.persistence.build.IModelBuildStep;
 import hu.modembed.syntax.persistence.build.ModelBuilder;
 import hu.modembed.syntax.persistence.build.PopBuildStep;
 import hu.modembed.syntax.persistence.build.SetFeatureBuildStep;
+import hu.modembed.syntax.persistence.build.SetNextFeature;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -88,6 +89,7 @@ public class ParserState {
 	}
 	
 	private ParserState addBuildStep(IModelBuildStep step){
+		if (step == null) return this;
 		List<IModelBuildStep> steps = new ArrayList<IModelBuildStep>(modelBuild.size()+1);
 		steps.addAll(modelBuild);
 		steps.add(step);
@@ -155,11 +157,15 @@ public class ParserState {
 				// if optional: alternative 0 - just remove non-terminal
 			}
 			
+			IModelBuildStep setNextFeature = null;
+			if (nonterm.getFeatureName() != null){
+				setNextFeature = new SetNextFeature(nonterm.getFeatureName());
+			}
 			for(Rule rule : parser.findRules(nonterm.getNonTerminal())){
 				List<RuleItem> body = rule.getBody();
-				followups.add(removed.add(body));
+				followups.add(removed.addBuildStep(setNextFeature).add(body));
 				if (nonterm.isMany()){
-					followups.add(add(body));
+					followups.add(addBuildStep(setNextFeature).add(body));
 					// if many: alternative 2 - apply rule, but don't remove non-terminal
 				}
 			}

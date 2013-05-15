@@ -1,5 +1,5 @@
 #!syntax
-syntax type.syntax <T>;
+syntax type.syntax <Type>;
 import core.syntax;
 
 terminal KEYWORD_TYPE "type";
@@ -9,7 +9,7 @@ terminal BRACKET_OPEN "\(";
 terminal BRACKET_CLOSE "\)";
 terminal KEYWORD_LABEL "label";
 
-<Type> :- KEYWORD_TYPE {"http://modembed.hu/abstraction/types#Type" name=QUALIFIEDID OPERATOR_ASSIGN definition=<Definition> OPERATOR_SEMICOLON;
+<Type> :- KEYWORD_TYPE {"http://modembed.hu/abstraction/types#Type" name=QUALIFIEDID OPERATOR_ASSIGN definition=<TypeDefinition> OPERATOR_SEMICOLON;
 
 <TypeDefinition> :- KEYWORD_UNSIGNED {"http://modembed.hu/abstraction/types#UnsignedTypeDefinition" BRACKET_OPEN bits=DECIMAL_NUMBER BRACKET_CLOSE };
 
