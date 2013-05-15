@@ -85,6 +85,7 @@ public class ModuleCompilerTask extends Task{
 			while(iterator.hasNext()){
 				Object o = iterator.next();
 				if (o instanceof FileResource){
+					//((FileResource) o).setBaseDir(getProject().getBaseDir());
 					File file = ((FileResource) o).getFile();
 					SequentialBehaviorModule module = TaskUtils.loadInput(rs, file, SequentialBehaviorModule.class);
 					compiler.addModule(module);

@@ -37,6 +37,18 @@
             library="ant_tasks/modembed.ant.tasks.jar"
             name="modembed.compile">
       </antTask>
+      <antTask
+            class="hu.modembed.ant.hex.MergeHexFilesTask"
+            headless="true"
+            library="ant_tasks/modembed.ant.tasks.jar"
+            name="modembed.hex.merge">
+      </antTask>
+      <antTask
+            class="hu.modembed.ant.hex.ExtractHexFileTask"
+            headless="true"
+            library="ant_tasks/modembed.ant.tasks.jar"
+            name="modembed.hex.extract">
+      </antTask>
    </extension>
    <extension
          point="org.eclipse.ant.core.extraClasspathEntries">
