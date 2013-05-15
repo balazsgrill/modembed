@@ -112,11 +112,18 @@ public class ModembedTests {
 	}
 	
 	public static void runAntScript(IProject project, String antScript) throws CoreException{
+		runAntScript(project, antScript, null);
+	}
+	
+	public static void runAntScript(IProject project, String antScript, String target) throws CoreException{
 		IFile buildFile = project.getFile(antScript);
 		Assert.assertTrue("Ant file does not exist!", buildFile.exists());
 		System.out.println("Executing "+buildFile.toString());
 		AntRunner runner = new AntRunner();
 		runner.setBuildFileLocation(buildFile.getLocation().toPortableString());
+		if (target != null){
+			runner.setExecutionTargets(new String[]{target});
+		}
 		runner.run();
 		project.refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
 	}

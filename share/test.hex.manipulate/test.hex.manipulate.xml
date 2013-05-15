@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+
+	<target name="merge">
+		<modembed.hex.merge output=".test.blink_release.hex">
+			<filelist dir="${basedir}">
+				<file name="blink.hex"/>
+				<file name="config.hex"/>
+			</filelist>
+		</modembed.hex.merge>
+	</target>
+	
+	<target name="extract">
+		<modembed.hex.extract 
+			input="blink_release.hex" output=".test.blink.hex"
+			start="0" end="65549"
+		/>
+		<modembed.hex.extract
+			input="blink_release.hex" output=".test.config.hex"
+			start="65550" end="65554"
+		/>
+	</target>
+	
+</project>

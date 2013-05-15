@@ -37,6 +37,12 @@
                project="microchip.pic18">
          </dependency>
       </project>
+      <project
+            archive="shared/test.hex.manipulate.zip"
+            category="hu.modembed.test.category"
+            id="test.hex.manipulate"
+            name="Hex file manipulation tests">
+      </project>
    </extension>
 
 </plugin>
