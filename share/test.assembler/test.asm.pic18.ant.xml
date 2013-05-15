@@ -3,7 +3,7 @@
 
 	<target name="run">
 		<modembed.disassemble 
-			input="test.asm.pic16e.hex"
+			input="test.asm.pic18.hex"
 			instructionSet="../microchip.pic18/microchip.pic18.instructionset.m"
 			output=".test.asm.pic18.model"
 		/>
