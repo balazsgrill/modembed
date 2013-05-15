@@ -22,6 +22,21 @@
                project="microchip.pic18">
          </dependency>
       </project>
+      <project
+            archive="shared/test.compileToDevice.zip"
+            category="hu.modembed.test.category"
+            id="test.compileToDevice"
+            name="Module compilation tests">
+         <dependency
+               project="e.core">
+         </dependency>
+         <dependency
+               project="microchip.pic16">
+         </dependency>
+         <dependency
+               project="microchip.pic18">
+         </dependency>
+      </project>
    </extension>
 
 </plugin>

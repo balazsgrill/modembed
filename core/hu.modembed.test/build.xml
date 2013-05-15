@@ -5,6 +5,7 @@
 	
 	<target name="pack">
 		<pack.shared name="test.assembler"/>
+		<pack.shared name="test.compileToDevice"/>
 	</target>
 	
 </project>

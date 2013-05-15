@@ -26,6 +26,10 @@ public class DeviceSimulator {
 	private boolean running = false;
 	private InstructionCall[] code = null;
 	
+	public boolean isRunning() {
+		return running;
+	}
+	
 	public void setCore(ICore core) {
 		this.core = core;
 	}
