@@ -26,7 +26,8 @@ public class HexFileUtils {
 		output.setAddressType(AddressType.EXTENDED_LINEAR);
 		
 		for(Entry e : source.getEntries()){
-			if (e.getAddress() >= from && e.getAddress()+e.getData().length < to){
+			long endAddress = e.getAddress()+e.getData().length;
+			if (e.getAddress() >= from && endAddress <= to){
 				output.getEntries().add(EcoreUtil.copy(e));
 			}
 		}
