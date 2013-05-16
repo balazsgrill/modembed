@@ -1,11 +1,8 @@
 /**
  */
-package hu.modembed.model.pic.configValue;
+package hu.modembed.model.pic;
 
-import hu.modembed.model.core.MODembedElement;
-
-import hu.modembed.model.pic.ConfigField;
-import hu.modembed.model.pic.ConfigLiteral;
+import hu.modembed.model.modembed.infrastructure.MODembedElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -15,12 +12,12 @@ import hu.modembed.model.pic.ConfigLiteral;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link hu.modembed.model.pic.configValue.ConfigurationSelection#getField <em>Field</em>}</li>
- *   <li>{@link hu.modembed.model.pic.configValue.ConfigurationSelection#getSelection <em>Selection</em>}</li>
+ *   <li>{@link hu.modembed.model.pic.ConfigurationSelection#getField <em>Field</em>}</li>
+ *   <li>{@link hu.modembed.model.pic.ConfigurationSelection#getSelection <em>Selection</em>}</li>
  * </ul>
  * </p>
  *
- * @see hu.modembed.model.pic.configValue.ConfigValuePackage#getConfigurationSelection()
+ * @see hu.modembed.model.pic.PicPackage#getConfigurationSelection()
  * @model
  * @generated
  */
@@ -35,14 +32,14 @@ public interface ConfigurationSelection extends MODembedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Field</em>' reference.
 	 * @see #setField(ConfigField)
-	 * @see hu.modembed.model.pic.configValue.ConfigValuePackage#getConfigurationSelection_Field()
+	 * @see hu.modembed.model.pic.PicPackage#getConfigurationSelection_Field()
 	 * @model required="true"
 	 * @generated
 	 */
 	ConfigField getField();
 
 	/**
-	 * Sets the value of the '{@link hu.modembed.model.pic.configValue.ConfigurationSelection#getField <em>Field</em>}' reference.
+	 * Sets the value of the '{@link hu.modembed.model.pic.ConfigurationSelection#getField <em>Field</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Field</em>' reference.
@@ -61,14 +58,14 @@ public interface ConfigurationSelection extends MODembedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Selection</em>' reference.
 	 * @see #setSelection(ConfigLiteral)
-	 * @see hu.modembed.model.pic.configValue.ConfigValuePackage#getConfigurationSelection_Selection()
+	 * @see hu.modembed.model.pic.PicPackage#getConfigurationSelection_Selection()
 	 * @model
 	 * @generated
 	 */
 	ConfigLiteral getSelection();
 
 	/**
-	 * Sets the value of the '{@link hu.modembed.model.pic.configValue.ConfigurationSelection#getSelection <em>Selection</em>}' reference.
+	 * Sets the value of the '{@link hu.modembed.model.pic.ConfigurationSelection#getSelection <em>Selection</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Selection</em>' reference.

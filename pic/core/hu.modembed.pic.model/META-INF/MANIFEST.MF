@@ -8,9 +8,6 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: hu.modembed.model.pic,
- hu.modembed.model.pic.configValue,
- hu.modembed.model.pic.configValue.impl,
- hu.modembed.model.pic.configValue.util,
  hu.modembed.model.pic.impl,
  hu.modembed.model.pic.util
 Require-Bundle: org.eclipse.core.runtime,

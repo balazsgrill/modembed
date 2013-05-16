@@ -22,13 +22,13 @@ public interface PicFactory extends EFactory {
 	PicFactory eINSTANCE = hu.modembed.model.pic.impl.PicFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>PIC Architecture</em>'.
+	 * Returns a new object of class '<em>PIC Configuration Model</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>PIC Architecture</em>'.
+	 * @return a new object of class '<em>PIC Configuration Model</em>'.
 	 * @generated
 	 */
-	PICArchitecture createPICArchitecture();
+	PICConfigurationModel createPICConfigurationModel();
 
 	/**
 	 * Returns a new object of class '<em>Config Word</em>'.
@@ -56,6 +56,24 @@ public interface PicFactory extends EFactory {
 	 * @generated
 	 */
 	ConfigLiteral createConfigLiteral();
+
+	/**
+	 * Returns a new object of class '<em>PIC Configuration Value Model</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>PIC Configuration Value Model</em>'.
+	 * @generated
+	 */
+	PICConfigurationValueModel createPICConfigurationValueModel();
+
+	/**
+	 * Returns a new object of class '<em>Configuration Selection</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Configuration Selection</em>'.
+	 * @generated
+	 */
+	ConfigurationSelection createConfigurationSelection();
 
 	/**
 	 * Returns the package supported by this factory.

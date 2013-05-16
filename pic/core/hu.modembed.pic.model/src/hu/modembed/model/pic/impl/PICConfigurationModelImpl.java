@@ -2,10 +2,10 @@
  */
 package hu.modembed.model.pic.impl;
 
-import hu.modembed.model.architecture.impl.ArchitectureImpl;
+import hu.modembed.model.modembed.infrastructure.impl.RootElementImpl;
 
 import hu.modembed.model.pic.ConfigWord;
-import hu.modembed.model.pic.PICArchitecture;
+import hu.modembed.model.pic.PICConfigurationModel;
 import hu.modembed.model.pic.PicPackage;
 
 import java.util.Collection;
@@ -22,18 +22,18 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>PIC Architecture</b></em>'.
+ * An implementation of the model object '<em><b>PIC Configuration Model</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.modembed.model.pic.impl.PICArchitectureImpl#getConfigWords <em>Config Words</em>}</li>
+ *   <li>{@link hu.modembed.model.pic.impl.PICConfigurationModelImpl#getConfigWords <em>Config Words</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class PICArchitectureImpl extends ArchitectureImpl implements PICArchitecture {
+public class PICConfigurationModelImpl extends RootElementImpl implements PICConfigurationModel {
 	/**
 	 * The cached value of the '{@link #getConfigWords() <em>Config Words</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -49,7 +49,7 @@ public class PICArchitectureImpl extends ArchitectureImpl implements PICArchitec
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PICArchitectureImpl() {
+	protected PICConfigurationModelImpl() {
 		super();
 	}
 
@@ -60,7 +60,7 @@ public class PICArchitectureImpl extends ArchitectureImpl implements PICArchitec
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PicPackage.Literals.PIC_ARCHITECTURE;
+		return PicPackage.Literals.PIC_CONFIGURATION_MODEL;
 	}
 
 	/**
@@ -70,7 +70,7 @@ public class PICArchitectureImpl extends ArchitectureImpl implements PICArchitec
 	 */
 	public EList<ConfigWord> getConfigWords() {
 		if (configWords == null) {
-			configWords = new EObjectContainmentEList<ConfigWord>(ConfigWord.class, this, PicPackage.PIC_ARCHITECTURE__CONFIG_WORDS);
+			configWords = new EObjectContainmentEList<ConfigWord>(ConfigWord.class, this, PicPackage.PIC_CONFIGURATION_MODEL__CONFIG_WORDS);
 		}
 		return configWords;
 	}
@@ -83,7 +83,7 @@ public class PICArchitectureImpl extends ArchitectureImpl implements PICArchitec
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PicPackage.PIC_ARCHITECTURE__CONFIG_WORDS:
+			case PicPackage.PIC_CONFIGURATION_MODEL__CONFIG_WORDS:
 				return ((InternalEList<?>)getConfigWords()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -97,7 +97,7 @@ public class PICArchitectureImpl extends ArchitectureImpl implements PICArchitec
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PicPackage.PIC_ARCHITECTURE__CONFIG_WORDS:
+			case PicPackage.PIC_CONFIGURATION_MODEL__CONFIG_WORDS:
 				return getConfigWords();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -112,7 +112,7 @@ public class PICArchitectureImpl extends ArchitectureImpl implements PICArchitec
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PicPackage.PIC_ARCHITECTURE__CONFIG_WORDS:
+			case PicPackage.PIC_CONFIGURATION_MODEL__CONFIG_WORDS:
 				getConfigWords().clear();
 				getConfigWords().addAll((Collection<? extends ConfigWord>)newValue);
 				return;
@@ -128,7 +128,7 @@ public class PICArchitectureImpl extends ArchitectureImpl implements PICArchitec
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PicPackage.PIC_ARCHITECTURE__CONFIG_WORDS:
+			case PicPackage.PIC_CONFIGURATION_MODEL__CONFIG_WORDS:
 				getConfigWords().clear();
 				return;
 		}
@@ -143,10 +143,10 @@ public class PICArchitectureImpl extends ArchitectureImpl implements PICArchitec
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PicPackage.PIC_ARCHITECTURE__CONFIG_WORDS:
+			case PicPackage.PIC_CONFIGURATION_MODEL__CONFIG_WORDS:
 				return configWords != null && !configWords.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //PICArchitectureImpl
+} //PICConfigurationModelImpl

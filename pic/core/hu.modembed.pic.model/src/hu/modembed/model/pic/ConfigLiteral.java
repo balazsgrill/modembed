@@ -2,7 +2,7 @@
  */
 package hu.modembed.model.pic;
 
-import hu.modembed.model.core.NamedElement;
+import hu.modembed.model.modembed.infrastructure.NamedElement;
 
 /**
  * <!-- begin-user-doc -->

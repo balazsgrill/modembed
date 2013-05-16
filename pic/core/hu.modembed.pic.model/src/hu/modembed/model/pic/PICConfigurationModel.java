@@ -2,27 +2,27 @@
  */
 package hu.modembed.model.pic;
 
-import hu.modembed.model.architecture.Architecture;
+import hu.modembed.model.modembed.infrastructure.RootElement;
 
 import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>PIC Architecture</b></em>'.
+ * A representation of the model object '<em><b>PIC Configuration Model</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link hu.modembed.model.pic.PICArchitecture#getConfigWords <em>Config Words</em>}</li>
+ *   <li>{@link hu.modembed.model.pic.PICConfigurationModel#getConfigWords <em>Config Words</em>}</li>
  * </ul>
  * </p>
  *
- * @see hu.modembed.model.pic.PicPackage#getPICArchitecture()
+ * @see hu.modembed.model.pic.PicPackage#getPICConfigurationModel()
  * @model
  * @generated
  */
-public interface PICArchitecture extends Architecture {
+public interface PICConfigurationModel extends RootElement {
 	/**
 	 * Returns the value of the '<em><b>Config Words</b></em>' containment reference list.
 	 * The list contents are of type {@link hu.modembed.model.pic.ConfigWord}.
@@ -33,10 +33,10 @@ public interface PICArchitecture extends Architecture {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Config Words</em>' containment reference list.
-	 * @see hu.modembed.model.pic.PicPackage#getPICArchitecture_ConfigWords()
+	 * @see hu.modembed.model.pic.PicPackage#getPICConfigurationModel_ConfigWords()
 	 * @model containment="true"
 	 * @generated
 	 */
 	EList<ConfigWord> getConfigWords();
 
-} // PICArchitecture
+} // PICConfigurationModel

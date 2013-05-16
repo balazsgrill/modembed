@@ -1,14 +1,13 @@
 /**
  */
-package hu.modembed.model.pic.configValue.impl;
+package hu.modembed.model.pic.impl;
 
-import hu.modembed.model.core.impl.RootElementImpl;
+import hu.modembed.model.modembed.infrastructure.impl.RootElementImpl;
 
-import hu.modembed.model.pic.PICArchitecture;
-
-import hu.modembed.model.pic.configValue.ConfigValuePackage;
-import hu.modembed.model.pic.configValue.ConfigurationSelection;
-import hu.modembed.model.pic.configValue.PICConfigurationValue;
+import hu.modembed.model.pic.ConfigurationSelection;
+import hu.modembed.model.pic.PICConfigurationModel;
+import hu.modembed.model.pic.PICConfigurationValueModel;
+import hu.modembed.model.pic.PicPackage;
 
 import java.util.Collection;
 
@@ -27,19 +26,19 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>PIC Configuration Value</b></em>'.
+ * An implementation of the model object '<em><b>PIC Configuration Value Model</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.modembed.model.pic.configValue.impl.PICConfigurationValueImpl#getValues <em>Values</em>}</li>
- *   <li>{@link hu.modembed.model.pic.configValue.impl.PICConfigurationValueImpl#getDefinition <em>Definition</em>}</li>
+ *   <li>{@link hu.modembed.model.pic.impl.PICConfigurationValueModelImpl#getValues <em>Values</em>}</li>
+ *   <li>{@link hu.modembed.model.pic.impl.PICConfigurationValueModelImpl#getDefinition <em>Definition</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class PICConfigurationValueImpl extends RootElementImpl implements PICConfigurationValue {
+public class PICConfigurationValueModelImpl extends RootElementImpl implements PICConfigurationValueModel {
 	/**
 	 * The cached value of the '{@link #getValues() <em>Values</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -58,14 +57,14 @@ public class PICConfigurationValueImpl extends RootElementImpl implements PICCon
 	 * @generated
 	 * @ordered
 	 */
-	protected PICArchitecture definition;
+	protected PICConfigurationModel definition;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PICConfigurationValueImpl() {
+	protected PICConfigurationValueModelImpl() {
 		super();
 	}
 
@@ -76,7 +75,7 @@ public class PICConfigurationValueImpl extends RootElementImpl implements PICCon
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ConfigValuePackage.Literals.PIC_CONFIGURATION_VALUE;
+		return PicPackage.Literals.PIC_CONFIGURATION_VALUE_MODEL;
 	}
 
 	/**
@@ -86,7 +85,7 @@ public class PICConfigurationValueImpl extends RootElementImpl implements PICCon
 	 */
 	public EList<ConfigurationSelection> getValues() {
 		if (values == null) {
-			values = new EObjectContainmentEList<ConfigurationSelection>(ConfigurationSelection.class, this, ConfigValuePackage.PIC_CONFIGURATION_VALUE__VALUES);
+			values = new EObjectContainmentEList<ConfigurationSelection>(ConfigurationSelection.class, this, PicPackage.PIC_CONFIGURATION_VALUE_MODEL__VALUES);
 		}
 		return values;
 	}
@@ -96,13 +95,13 @@ public class PICConfigurationValueImpl extends RootElementImpl implements PICCon
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PICArchitecture getDefinition() {
+	public PICConfigurationModel getDefinition() {
 		if (definition != null && definition.eIsProxy()) {
 			InternalEObject oldDefinition = (InternalEObject)definition;
-			definition = (PICArchitecture)eResolveProxy(oldDefinition);
+			definition = (PICConfigurationModel)eResolveProxy(oldDefinition);
 			if (definition != oldDefinition) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ConfigValuePackage.PIC_CONFIGURATION_VALUE__DEFINITION, oldDefinition, definition));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PicPackage.PIC_CONFIGURATION_VALUE_MODEL__DEFINITION, oldDefinition, definition));
 			}
 		}
 		return definition;
@@ -113,7 +112,7 @@ public class PICConfigurationValueImpl extends RootElementImpl implements PICCon
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PICArchitecture basicGetDefinition() {
+	public PICConfigurationModel basicGetDefinition() {
 		return definition;
 	}
 
@@ -122,11 +121,11 @@ public class PICConfigurationValueImpl extends RootElementImpl implements PICCon
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setDefinition(PICArchitecture newDefinition) {
-		PICArchitecture oldDefinition = definition;
+	public void setDefinition(PICConfigurationModel newDefinition) {
+		PICConfigurationModel oldDefinition = definition;
 		definition = newDefinition;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ConfigValuePackage.PIC_CONFIGURATION_VALUE__DEFINITION, oldDefinition, definition));
+			eNotify(new ENotificationImpl(this, Notification.SET, PicPackage.PIC_CONFIGURATION_VALUE_MODEL__DEFINITION, oldDefinition, definition));
 	}
 
 	/**
@@ -137,7 +136,7 @@ public class PICConfigurationValueImpl extends RootElementImpl implements PICCon
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ConfigValuePackage.PIC_CONFIGURATION_VALUE__VALUES:
+			case PicPackage.PIC_CONFIGURATION_VALUE_MODEL__VALUES:
 				return ((InternalEList<?>)getValues()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -151,9 +150,9 @@ public class PICConfigurationValueImpl extends RootElementImpl implements PICCon
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ConfigValuePackage.PIC_CONFIGURATION_VALUE__VALUES:
+			case PicPackage.PIC_CONFIGURATION_VALUE_MODEL__VALUES:
 				return getValues();
-			case ConfigValuePackage.PIC_CONFIGURATION_VALUE__DEFINITION:
+			case PicPackage.PIC_CONFIGURATION_VALUE_MODEL__DEFINITION:
 				if (resolve) return getDefinition();
 				return basicGetDefinition();
 		}
@@ -169,12 +168,12 @@ public class PICConfigurationValueImpl extends RootElementImpl implements PICCon
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ConfigValuePackage.PIC_CONFIGURATION_VALUE__VALUES:
+			case PicPackage.PIC_CONFIGURATION_VALUE_MODEL__VALUES:
 				getValues().clear();
 				getValues().addAll((Collection<? extends ConfigurationSelection>)newValue);
 				return;
-			case ConfigValuePackage.PIC_CONFIGURATION_VALUE__DEFINITION:
-				setDefinition((PICArchitecture)newValue);
+			case PicPackage.PIC_CONFIGURATION_VALUE_MODEL__DEFINITION:
+				setDefinition((PICConfigurationModel)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -188,11 +187,11 @@ public class PICConfigurationValueImpl extends RootElementImpl implements PICCon
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ConfigValuePackage.PIC_CONFIGURATION_VALUE__VALUES:
+			case PicPackage.PIC_CONFIGURATION_VALUE_MODEL__VALUES:
 				getValues().clear();
 				return;
-			case ConfigValuePackage.PIC_CONFIGURATION_VALUE__DEFINITION:
-				setDefinition((PICArchitecture)null);
+			case PicPackage.PIC_CONFIGURATION_VALUE_MODEL__DEFINITION:
+				setDefinition((PICConfigurationModel)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -206,12 +205,12 @@ public class PICConfigurationValueImpl extends RootElementImpl implements PICCon
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ConfigValuePackage.PIC_CONFIGURATION_VALUE__VALUES:
+			case PicPackage.PIC_CONFIGURATION_VALUE_MODEL__VALUES:
 				return values != null && !values.isEmpty();
-			case ConfigValuePackage.PIC_CONFIGURATION_VALUE__DEFINITION:
+			case PicPackage.PIC_CONFIGURATION_VALUE_MODEL__DEFINITION:
 				return definition != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //PICConfigurationValueImpl
+} //PICConfigurationValueModelImpl

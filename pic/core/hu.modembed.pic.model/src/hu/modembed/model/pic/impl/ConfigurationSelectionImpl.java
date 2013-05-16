@@ -1,14 +1,13 @@
 /**
  */
-package hu.modembed.model.pic.configValue.impl;
+package hu.modembed.model.pic.impl;
 
-import hu.modembed.model.core.impl.MODembedElementImpl;
+import hu.modembed.model.modembed.infrastructure.impl.MODembedElementImpl;
 
 import hu.modembed.model.pic.ConfigField;
 import hu.modembed.model.pic.ConfigLiteral;
-
-import hu.modembed.model.pic.configValue.ConfigValuePackage;
-import hu.modembed.model.pic.configValue.ConfigurationSelection;
+import hu.modembed.model.pic.ConfigurationSelection;
+import hu.modembed.model.pic.PicPackage;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -24,8 +23,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.modembed.model.pic.configValue.impl.ConfigurationSelectionImpl#getField <em>Field</em>}</li>
- *   <li>{@link hu.modembed.model.pic.configValue.impl.ConfigurationSelectionImpl#getSelection <em>Selection</em>}</li>
+ *   <li>{@link hu.modembed.model.pic.impl.ConfigurationSelectionImpl#getField <em>Field</em>}</li>
+ *   <li>{@link hu.modembed.model.pic.impl.ConfigurationSelectionImpl#getSelection <em>Selection</em>}</li>
  * </ul>
  * </p>
  *
@@ -68,7 +67,7 @@ public class ConfigurationSelectionImpl extends MODembedElementImpl implements C
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ConfigValuePackage.Literals.CONFIGURATION_SELECTION;
+		return PicPackage.Literals.CONFIGURATION_SELECTION;
 	}
 
 	/**
@@ -82,7 +81,7 @@ public class ConfigurationSelectionImpl extends MODembedElementImpl implements C
 			field = (ConfigField)eResolveProxy(oldField);
 			if (field != oldField) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ConfigValuePackage.CONFIGURATION_SELECTION__FIELD, oldField, field));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PicPackage.CONFIGURATION_SELECTION__FIELD, oldField, field));
 			}
 		}
 		return field;
@@ -106,7 +105,7 @@ public class ConfigurationSelectionImpl extends MODembedElementImpl implements C
 		ConfigField oldField = field;
 		field = newField;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ConfigValuePackage.CONFIGURATION_SELECTION__FIELD, oldField, field));
+			eNotify(new ENotificationImpl(this, Notification.SET, PicPackage.CONFIGURATION_SELECTION__FIELD, oldField, field));
 	}
 
 	/**
@@ -120,7 +119,7 @@ public class ConfigurationSelectionImpl extends MODembedElementImpl implements C
 			selection = (ConfigLiteral)eResolveProxy(oldSelection);
 			if (selection != oldSelection) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ConfigValuePackage.CONFIGURATION_SELECTION__SELECTION, oldSelection, selection));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PicPackage.CONFIGURATION_SELECTION__SELECTION, oldSelection, selection));
 			}
 		}
 		return selection;
@@ -144,7 +143,7 @@ public class ConfigurationSelectionImpl extends MODembedElementImpl implements C
 		ConfigLiteral oldSelection = selection;
 		selection = newSelection;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ConfigValuePackage.CONFIGURATION_SELECTION__SELECTION, oldSelection, selection));
+			eNotify(new ENotificationImpl(this, Notification.SET, PicPackage.CONFIGURATION_SELECTION__SELECTION, oldSelection, selection));
 	}
 
 	/**
@@ -155,10 +154,10 @@ public class ConfigurationSelectionImpl extends MODembedElementImpl implements C
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ConfigValuePackage.CONFIGURATION_SELECTION__FIELD:
+			case PicPackage.CONFIGURATION_SELECTION__FIELD:
 				if (resolve) return getField();
 				return basicGetField();
-			case ConfigValuePackage.CONFIGURATION_SELECTION__SELECTION:
+			case PicPackage.CONFIGURATION_SELECTION__SELECTION:
 				if (resolve) return getSelection();
 				return basicGetSelection();
 		}
@@ -173,10 +172,10 @@ public class ConfigurationSelectionImpl extends MODembedElementImpl implements C
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ConfigValuePackage.CONFIGURATION_SELECTION__FIELD:
+			case PicPackage.CONFIGURATION_SELECTION__FIELD:
 				setField((ConfigField)newValue);
 				return;
-			case ConfigValuePackage.CONFIGURATION_SELECTION__SELECTION:
+			case PicPackage.CONFIGURATION_SELECTION__SELECTION:
 				setSelection((ConfigLiteral)newValue);
 				return;
 		}
@@ -191,10 +190,10 @@ public class ConfigurationSelectionImpl extends MODembedElementImpl implements C
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ConfigValuePackage.CONFIGURATION_SELECTION__FIELD:
+			case PicPackage.CONFIGURATION_SELECTION__FIELD:
 				setField((ConfigField)null);
 				return;
-			case ConfigValuePackage.CONFIGURATION_SELECTION__SELECTION:
+			case PicPackage.CONFIGURATION_SELECTION__SELECTION:
 				setSelection((ConfigLiteral)null);
 				return;
 		}
@@ -209,9 +208,9 @@ public class ConfigurationSelectionImpl extends MODembedElementImpl implements C
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ConfigValuePackage.CONFIGURATION_SELECTION__FIELD:
+			case PicPackage.CONFIGURATION_SELECTION__FIELD:
 				return field != null;
-			case ConfigValuePackage.CONFIGURATION_SELECTION__SELECTION:
+			case PicPackage.CONFIGURATION_SELECTION__SELECTION:
 				return selection != null;
 		}
 		return super.eIsSet(featureID);

@@ -2,9 +2,7 @@
  */
 package hu.modembed.model.pic;
 
-import hu.modembed.model.architecture.ArchitecturePackage;
-
-import hu.modembed.model.core.CorePackage;
+import hu.modembed.model.modembed.infrastructure.InfrastructurePackage;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -60,23 +58,14 @@ public interface PicPackage extends EPackage {
 	PicPackage eINSTANCE = hu.modembed.model.pic.impl.PicPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link hu.modembed.model.pic.impl.PICArchitectureImpl <em>PIC Architecture</em>}' class.
+	 * The meta object id for the '{@link hu.modembed.model.pic.impl.PICConfigurationModelImpl <em>PIC Configuration Model</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see hu.modembed.model.pic.impl.PICArchitectureImpl
-	 * @see hu.modembed.model.pic.impl.PicPackageImpl#getPICArchitecture()
+	 * @see hu.modembed.model.pic.impl.PICConfigurationModelImpl
+	 * @see hu.modembed.model.pic.impl.PicPackageImpl#getPICConfigurationModel()
 	 * @generated
 	 */
-	int PIC_ARCHITECTURE = 0;
-
-	/**
-	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PIC_ARCHITECTURE__ORIGINS = ArchitecturePackage.ARCHITECTURE__ORIGINS;
+	int PIC_CONFIGURATION_MODEL = 0;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -85,7 +74,16 @@ public interface PicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PIC_ARCHITECTURE__DESCRIPTION = ArchitecturePackage.ARCHITECTURE__DESCRIPTION;
+	int PIC_CONFIGURATION_MODEL__DESCRIPTION = InfrastructurePackage.ROOT_ELEMENT__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIC_CONFIGURATION_MODEL__ORIGINS = InfrastructurePackage.ROOT_ELEMENT__ORIGINS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -94,43 +92,7 @@ public interface PicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PIC_ARCHITECTURE__NAME = ArchitecturePackage.ARCHITECTURE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Heap Pointer Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PIC_ARCHITECTURE__HEAP_POINTER_TYPE = ArchitecturePackage.ARCHITECTURE__HEAP_POINTER_TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Code Pointer Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PIC_ARCHITECTURE__CODE_POINTER_TYPE = ArchitecturePackage.ARCHITECTURE__CODE_POINTER_TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Instruction Set</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PIC_ARCHITECTURE__INSTRUCTION_SET = ArchitecturePackage.ARCHITECTURE__INSTRUCTION_SET;
-
-	/**
-	 * The feature id for the '<em><b>Memory</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PIC_ARCHITECTURE__MEMORY = ArchitecturePackage.ARCHITECTURE__MEMORY;
+	int PIC_CONFIGURATION_MODEL__NAME = InfrastructurePackage.ROOT_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Config Words</b></em>' containment reference list.
@@ -139,16 +101,16 @@ public interface PicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PIC_ARCHITECTURE__CONFIG_WORDS = ArchitecturePackage.ARCHITECTURE_FEATURE_COUNT + 0;
+	int PIC_CONFIGURATION_MODEL__CONFIG_WORDS = InfrastructurePackage.ROOT_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>PIC Architecture</em>' class.
+	 * The number of structural features of the '<em>PIC Configuration Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PIC_ARCHITECTURE_FEATURE_COUNT = ArchitecturePackage.ARCHITECTURE_FEATURE_COUNT + 1;
+	int PIC_CONFIGURATION_MODEL_FEATURE_COUNT = InfrastructurePackage.ROOT_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link hu.modembed.model.pic.impl.ConfigWordImpl <em>Config Word</em>}' class.
@@ -161,22 +123,22 @@ public interface PicPackage extends EPackage {
 	int CONFIG_WORD = 1;
 
 	/**
-	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIG_WORD__ORIGINS = CorePackage.NAMED_ELEMENT__ORIGINS;
-
-	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONFIG_WORD__DESCRIPTION = CorePackage.NAMED_ELEMENT__DESCRIPTION;
+	int CONFIG_WORD__DESCRIPTION = InfrastructurePackage.NAMED_ELEMENT__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFIG_WORD__ORIGINS = InfrastructurePackage.NAMED_ELEMENT__ORIGINS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -185,7 +147,7 @@ public interface PicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFIG_WORD__NAME = CorePackage.NAMED_ELEMENT__NAME;
+	int CONFIG_WORD__NAME = InfrastructurePackage.NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Address</b></em>' attribute.
@@ -194,7 +156,7 @@ public interface PicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFIG_WORD__ADDRESS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int CONFIG_WORD__ADDRESS = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Size</b></em>' attribute.
@@ -203,7 +165,7 @@ public interface PicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFIG_WORD__SIZE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int CONFIG_WORD__SIZE = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Default Value</b></em>' attribute.
@@ -212,7 +174,7 @@ public interface PicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFIG_WORD__DEFAULT_VALUE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int CONFIG_WORD__DEFAULT_VALUE = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Fields</b></em>' containment reference list.
@@ -221,7 +183,7 @@ public interface PicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFIG_WORD__FIELDS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int CONFIG_WORD__FIELDS = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Impl Mask</b></em>' attribute.
@@ -230,7 +192,7 @@ public interface PicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFIG_WORD__IMPL_MASK = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int CONFIG_WORD__IMPL_MASK = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Config Word</em>' class.
@@ -239,7 +201,7 @@ public interface PicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFIG_WORD_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int CONFIG_WORD_FEATURE_COUNT = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link hu.modembed.model.pic.impl.ConfigFieldImpl <em>Config Field</em>}' class.
@@ -252,22 +214,22 @@ public interface PicPackage extends EPackage {
 	int CONFIG_FIELD = 2;
 
 	/**
-	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIG_FIELD__ORIGINS = CorePackage.NAMED_ELEMENT__ORIGINS;
-
-	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONFIG_FIELD__DESCRIPTION = CorePackage.NAMED_ELEMENT__DESCRIPTION;
+	int CONFIG_FIELD__DESCRIPTION = InfrastructurePackage.NAMED_ELEMENT__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFIG_FIELD__ORIGINS = InfrastructurePackage.NAMED_ELEMENT__ORIGINS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -276,7 +238,7 @@ public interface PicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFIG_FIELD__NAME = CorePackage.NAMED_ELEMENT__NAME;
+	int CONFIG_FIELD__NAME = InfrastructurePackage.NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Literals</b></em>' containment reference list.
@@ -285,7 +247,7 @@ public interface PicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFIG_FIELD__LITERALS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int CONFIG_FIELD__LITERALS = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Size</b></em>' attribute.
@@ -294,7 +256,7 @@ public interface PicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFIG_FIELD__SIZE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int CONFIG_FIELD__SIZE = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Start</b></em>' attribute.
@@ -303,7 +265,7 @@ public interface PicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFIG_FIELD__START = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int CONFIG_FIELD__START = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Config Field</em>' class.
@@ -312,7 +274,7 @@ public interface PicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFIG_FIELD_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int CONFIG_FIELD_FEATURE_COUNT = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link hu.modembed.model.pic.impl.ConfigLiteralImpl <em>Config Literal</em>}' class.
@@ -325,22 +287,22 @@ public interface PicPackage extends EPackage {
 	int CONFIG_LITERAL = 3;
 
 	/**
-	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIG_LITERAL__ORIGINS = CorePackage.NAMED_ELEMENT__ORIGINS;
-
-	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONFIG_LITERAL__DESCRIPTION = CorePackage.NAMED_ELEMENT__DESCRIPTION;
+	int CONFIG_LITERAL__DESCRIPTION = InfrastructurePackage.NAMED_ELEMENT__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFIG_LITERAL__ORIGINS = InfrastructurePackage.NAMED_ELEMENT__ORIGINS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -349,7 +311,7 @@ public interface PicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFIG_LITERAL__NAME = CorePackage.NAMED_ELEMENT__NAME;
+	int CONFIG_LITERAL__NAME = InfrastructurePackage.NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -358,7 +320,7 @@ public interface PicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFIG_LITERAL__VALUE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int CONFIG_LITERAL__VALUE = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Config Literal</em>' class.
@@ -367,29 +329,149 @@ public interface PicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFIG_LITERAL_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int CONFIG_LITERAL_FEATURE_COUNT = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 
 	/**
-	 * Returns the meta object for class '{@link hu.modembed.model.pic.PICArchitecture <em>PIC Architecture</em>}'.
+	 * The meta object id for the '{@link hu.modembed.model.pic.impl.PICConfigurationValueModelImpl <em>PIC Configuration Value Model</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>PIC Architecture</em>'.
-	 * @see hu.modembed.model.pic.PICArchitecture
+	 * @see hu.modembed.model.pic.impl.PICConfigurationValueModelImpl
+	 * @see hu.modembed.model.pic.impl.PicPackageImpl#getPICConfigurationValueModel()
 	 * @generated
 	 */
-	EClass getPICArchitecture();
+	int PIC_CONFIGURATION_VALUE_MODEL = 4;
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link hu.modembed.model.pic.PICArchitecture#getConfigWords <em>Config Words</em>}'.
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIC_CONFIGURATION_VALUE_MODEL__DESCRIPTION = InfrastructurePackage.ROOT_ELEMENT__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIC_CONFIGURATION_VALUE_MODEL__ORIGINS = InfrastructurePackage.ROOT_ELEMENT__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIC_CONFIGURATION_VALUE_MODEL__NAME = InfrastructurePackage.ROOT_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Values</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIC_CONFIGURATION_VALUE_MODEL__VALUES = InfrastructurePackage.ROOT_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Definition</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIC_CONFIGURATION_VALUE_MODEL__DEFINITION = InfrastructurePackage.ROOT_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>PIC Configuration Value Model</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIC_CONFIGURATION_VALUE_MODEL_FEATURE_COUNT = InfrastructurePackage.ROOT_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link hu.modembed.model.pic.impl.ConfigurationSelectionImpl <em>Configuration Selection</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.modembed.model.pic.impl.ConfigurationSelectionImpl
+	 * @see hu.modembed.model.pic.impl.PicPackageImpl#getConfigurationSelection()
+	 * @generated
+	 */
+	int CONFIGURATION_SELECTION = 5;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFIGURATION_SELECTION__DESCRIPTION = InfrastructurePackage.MO_DEMBED_ELEMENT__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFIGURATION_SELECTION__ORIGINS = InfrastructurePackage.MO_DEMBED_ELEMENT__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Field</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFIGURATION_SELECTION__FIELD = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Selection</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFIGURATION_SELECTION__SELECTION = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Configuration Selection</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFIGURATION_SELECTION_FEATURE_COUNT = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 2;
+
+
+	/**
+	 * Returns the meta object for class '{@link hu.modembed.model.pic.PICConfigurationModel <em>PIC Configuration Model</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>PIC Configuration Model</em>'.
+	 * @see hu.modembed.model.pic.PICConfigurationModel
+	 * @generated
+	 */
+	EClass getPICConfigurationModel();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link hu.modembed.model.pic.PICConfigurationModel#getConfigWords <em>Config Words</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Config Words</em>'.
-	 * @see hu.modembed.model.pic.PICArchitecture#getConfigWords()
-	 * @see #getPICArchitecture()
+	 * @see hu.modembed.model.pic.PICConfigurationModel#getConfigWords()
+	 * @see #getPICConfigurationModel()
 	 * @generated
 	 */
-	EReference getPICArchitecture_ConfigWords();
+	EReference getPICConfigurationModel_ConfigWords();
 
 	/**
 	 * Returns the meta object for class '{@link hu.modembed.model.pic.ConfigWord <em>Config Word</em>}'.
@@ -521,6 +603,70 @@ public interface PicPackage extends EPackage {
 	EAttribute getConfigLiteral_Value();
 
 	/**
+	 * Returns the meta object for class '{@link hu.modembed.model.pic.PICConfigurationValueModel <em>PIC Configuration Value Model</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>PIC Configuration Value Model</em>'.
+	 * @see hu.modembed.model.pic.PICConfigurationValueModel
+	 * @generated
+	 */
+	EClass getPICConfigurationValueModel();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link hu.modembed.model.pic.PICConfigurationValueModel#getValues <em>Values</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Values</em>'.
+	 * @see hu.modembed.model.pic.PICConfigurationValueModel#getValues()
+	 * @see #getPICConfigurationValueModel()
+	 * @generated
+	 */
+	EReference getPICConfigurationValueModel_Values();
+
+	/**
+	 * Returns the meta object for the reference '{@link hu.modembed.model.pic.PICConfigurationValueModel#getDefinition <em>Definition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Definition</em>'.
+	 * @see hu.modembed.model.pic.PICConfigurationValueModel#getDefinition()
+	 * @see #getPICConfigurationValueModel()
+	 * @generated
+	 */
+	EReference getPICConfigurationValueModel_Definition();
+
+	/**
+	 * Returns the meta object for class '{@link hu.modembed.model.pic.ConfigurationSelection <em>Configuration Selection</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Configuration Selection</em>'.
+	 * @see hu.modembed.model.pic.ConfigurationSelection
+	 * @generated
+	 */
+	EClass getConfigurationSelection();
+
+	/**
+	 * Returns the meta object for the reference '{@link hu.modembed.model.pic.ConfigurationSelection#getField <em>Field</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Field</em>'.
+	 * @see hu.modembed.model.pic.ConfigurationSelection#getField()
+	 * @see #getConfigurationSelection()
+	 * @generated
+	 */
+	EReference getConfigurationSelection_Field();
+
+	/**
+	 * Returns the meta object for the reference '{@link hu.modembed.model.pic.ConfigurationSelection#getSelection <em>Selection</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Selection</em>'.
+	 * @see hu.modembed.model.pic.ConfigurationSelection#getSelection()
+	 * @see #getConfigurationSelection()
+	 * @generated
+	 */
+	EReference getConfigurationSelection_Selection();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -543,14 +689,14 @@ public interface PicPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link hu.modembed.model.pic.impl.PICArchitectureImpl <em>PIC Architecture</em>}' class.
+		 * The meta object literal for the '{@link hu.modembed.model.pic.impl.PICConfigurationModelImpl <em>PIC Configuration Model</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see hu.modembed.model.pic.impl.PICArchitectureImpl
-		 * @see hu.modembed.model.pic.impl.PicPackageImpl#getPICArchitecture()
+		 * @see hu.modembed.model.pic.impl.PICConfigurationModelImpl
+		 * @see hu.modembed.model.pic.impl.PicPackageImpl#getPICConfigurationModel()
 		 * @generated
 		 */
-		EClass PIC_ARCHITECTURE = eINSTANCE.getPICArchitecture();
+		EClass PIC_CONFIGURATION_MODEL = eINSTANCE.getPICConfigurationModel();
 
 		/**
 		 * The meta object literal for the '<em><b>Config Words</b></em>' containment reference list feature.
@@ -558,7 +704,7 @@ public interface PicPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PIC_ARCHITECTURE__CONFIG_WORDS = eINSTANCE.getPICArchitecture_ConfigWords();
+		EReference PIC_CONFIGURATION_MODEL__CONFIG_WORDS = eINSTANCE.getPICConfigurationModel_ConfigWords();
 
 		/**
 		 * The meta object literal for the '{@link hu.modembed.model.pic.impl.ConfigWordImpl <em>Config Word</em>}' class.
@@ -661,6 +807,58 @@ public interface PicPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CONFIG_LITERAL__VALUE = eINSTANCE.getConfigLiteral_Value();
+
+		/**
+		 * The meta object literal for the '{@link hu.modembed.model.pic.impl.PICConfigurationValueModelImpl <em>PIC Configuration Value Model</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.modembed.model.pic.impl.PICConfigurationValueModelImpl
+		 * @see hu.modembed.model.pic.impl.PicPackageImpl#getPICConfigurationValueModel()
+		 * @generated
+		 */
+		EClass PIC_CONFIGURATION_VALUE_MODEL = eINSTANCE.getPICConfigurationValueModel();
+
+		/**
+		 * The meta object literal for the '<em><b>Values</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PIC_CONFIGURATION_VALUE_MODEL__VALUES = eINSTANCE.getPICConfigurationValueModel_Values();
+
+		/**
+		 * The meta object literal for the '<em><b>Definition</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PIC_CONFIGURATION_VALUE_MODEL__DEFINITION = eINSTANCE.getPICConfigurationValueModel_Definition();
+
+		/**
+		 * The meta object literal for the '{@link hu.modembed.model.pic.impl.ConfigurationSelectionImpl <em>Configuration Selection</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.modembed.model.pic.impl.ConfigurationSelectionImpl
+		 * @see hu.modembed.model.pic.impl.PicPackageImpl#getConfigurationSelection()
+		 * @generated
+		 */
+		EClass CONFIGURATION_SELECTION = eINSTANCE.getConfigurationSelection();
+
+		/**
+		 * The meta object literal for the '<em><b>Field</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONFIGURATION_SELECTION__FIELD = eINSTANCE.getConfigurationSelection_Field();
+
+		/**
+		 * The meta object literal for the '<em><b>Selection</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONFIGURATION_SELECTION__SELECTION = eINSTANCE.getConfigurationSelection_Selection();
 
 	}
 
