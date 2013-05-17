@@ -6,6 +6,11 @@
 	<target name="share">
 		<pack.shared name="microchip.pic16" />
 		<pack.shared name="microchip.pic18" />
+		<jar destfile="ant_tasks/modembed.pic.ant.tasks.jar">
+			<fileset dir="ant-bin">
+				<include name="**/*.class"/>
+			</fileset>
+		</jar>
 	</target>
 	
 	

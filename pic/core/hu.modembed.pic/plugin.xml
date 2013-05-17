@@ -26,5 +26,30 @@
          </dependency>
       </project>
    </extension>
+   <extension
+         point="org.eclipse.ant.core.extraClasspathEntries">
+      <extraClasspathEntry
+            eclipseRuntime="true"
+            headless="true"
+            library="ant_tasks/modembed.pic.ant.tasks.jar">
+      </extraClasspathEntry>
+   </extension>
+   <extension
+         point="org.eclipse.ant.core.antTasks">
+      <antTask
+            class="hu.modembed.pic.ant.CompileConfigTask"
+            eclipseRuntime="true"
+            headless="true"
+            library="ant_tasks/modembed.pic.ant.tasks.jar"
+            name="modembed.pic.config">
+      </antTask>
+      <antTask
+            class="hu.modembed.pic.ant.ExtractConfigTask"
+            eclipseRuntime="true"
+            headless="true"
+            library="ant_tasks/modembed.pic.ant.tasks.jar"
+            name="modembed.pic.config.extract">
+      </antTask>
+   </extension>
 
 </plugin>
