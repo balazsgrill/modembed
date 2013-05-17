@@ -41,7 +41,7 @@
 	</modules>
 
 	<properties>
-		<tycho-version>0.16.0</tycho-version>
+		<tycho-version>0.17.0</tycho-version>
 	</properties>
 	<repositories>
 		<repository>
@@ -49,6 +49,7 @@
 			<layout>p2</layout>
 			<url>http://download.eclipse.org/releases/juno</url>
 		</repository>
+<!--	
 		<repository>
 			<id>epsilon</id>
 			<layout>p2</layout>
@@ -59,6 +60,7 @@
 			<layout>p2</layout>
 			<url>http://emftext.org/update</url>
 		</repository>
+-->
 	</repositories>
 
 	<build>
