@@ -3,6 +3,7 @@
 	<name>test.hex.manipulate</name>
 	<comment></comment>
 	<projects>
+		<project>microchip.PIC16F1824</project>
 	</projects>
 	<buildSpec>
 	</buildSpec>

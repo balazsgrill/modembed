@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
 
+	<eclipse.convertPath resourcePath="microchip.PIC16F1824/PIC16F1824.config.xmi" property="configDef"/>
+	
 	<target name="merge">
 		<modembed.hex.merge output=".test.blink_release.hex">
 			<filelist dir="${basedir}">
@@ -18,6 +20,18 @@
 		<modembed.hex.extract
 			input="blink_release.hex" output=".test.config.hex"
 			start="65550" end="65554"
+		/>
+	</target>
+	
+	<target name="pic_config">
+		<modembed.pic.config.extract
+			input="config.hex"
+			output=".test.config.values.xmi"
+			configModel="${configDef}"
+		/>
+		<modembed.pic.config
+			input=".test.config.values.xmi"
+			output=".test.config.values.hex"
 		/>
 	</target>
 	

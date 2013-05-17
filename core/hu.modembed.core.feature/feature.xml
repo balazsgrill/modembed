@@ -224,7 +224,6 @@ litigation.
       <import feature="org.eclipse.emf.transaction" version="1.6.0" match="greaterOrEqual"/>
       <import feature="org.eclipse.jdt" version="3.8.1" match="greaterOrEqual"/>
       <import feature="org.eclipse.emf.validation" version="1.6.0" match="greaterOrEqual"/>
-      <import plugin="org.emftext.access"/>
    </requires>
 
    <plugin

@@ -42,6 +42,9 @@
             category="hu.modembed.test.category"
             id="test.hex.manipulate"
             name="Hex file manipulation tests">
+         <dependency
+               project="microchip.PIC16F1824">
+         </dependency>
       </project>
    </extension>
 

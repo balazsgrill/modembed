@@ -25,6 +25,11 @@
                project="e.core">
          </dependency>
       </project>
+      <category
+            id="hu.modembed.pic.midrange.category"
+            name="PIC16 midrange and enchanced midrange libraries"
+            parent="hu.modembed.pic.category">
+      </category>
    </extension>
    <extension
          point="org.eclipse.ant.core.extraClasspathEntries">

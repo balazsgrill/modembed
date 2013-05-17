@@ -7,7 +7,6 @@ import hexfile.HexFile;
 import hu.modembed.MODembedCore;
 import hu.modembed.ant.TaskUtils;
 import hu.modembed.model.pic.PICConfigurationModel;
-import hu.modembed.model.pic.PICConfigurationValueModel;
 import hu.modembed.pic.ConfigurationUtils;
 
 import java.io.File;

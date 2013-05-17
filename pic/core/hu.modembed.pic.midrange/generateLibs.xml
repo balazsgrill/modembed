@@ -21,14 +21,12 @@
     <target name="default" description="description">
     	<echo>Generating PIC Libraries..</echo>
         <mkdir dir="gen-lib"/>
-    	<xslt basedir="../hu.modembed.pic.ui/device-descriptors/16xxxx" destdir="gen-lib" 
-    		extension=".e" style="../hu.modembed.pic.ui/device-descriptors/piclibgenerator.xsl">
-    	</xslt>
-    	<xslt basedir="../hu.modembed.pic.ui/device-descriptors/16xxxx" destdir="gen-lib" 
-    	    extension=".arch.xmi" style="../hu.modembed.pic.ui/device-descriptors/picarchgenerator.xsl">
+    	
+    	<xslt basedir="../hu.modembed.pic/device-descriptors/16xxxx" destdir="gen-lib" 
+    	    extension=".config.xmi" style="../hu.modembed.pic/device-descriptors/configgen.xsl">
     	</xslt>
     	
-    	<fileset dir="../hu.modembed.pic.ui/device-descriptors/16xxxx" id="devicefiles">
+    	<fileset dir="../hu.modembed.pic/device-descriptors/16xxxx" id="devicefiles">
     	    <include name="*.PIC"/>
     	</fileset>
     	<pathconvert pathsep="&lt;/file&gt;${line.separator}&lt;file&gt;" property="devices" refid="devicefiles"/>

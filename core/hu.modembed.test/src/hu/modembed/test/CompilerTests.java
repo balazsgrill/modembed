@@ -53,6 +53,13 @@ public class CompilerTests {
 	}
 	
 	@Test
+	public void test_pic_config_compilation() throws Exception{
+		IProject project = ModembedTests.loadProject("test.hex.manipulate");
+		ModembedTests.runAntScript(project, "test.hex.manipulate.xml", "pic_config");
+		ModembedTests.assertModelsAreEquivalent(project, "config.hex", ".test.config.values.hex");
+	}
+	
+	@Test
 	public void test_compiler_pic16e() throws Exception{
 		IProject project = ModembedTests.loadProject("test.compileToDevice");
 		ModembedTests.runAntScript(project, "test.compile.pic16e.ant.xml");

@@ -7,6 +7,6 @@ Require-Bundle: hu.modembed;bundle-version="0.8.1",
  hu.modembed.hexfile.model;bundle-version="0.8.1",
  hu.modembed.pic.model;bundle-version="0.8.1",
  hu.modembed.hexfile.persistence;bundle-version="0.8.1",
- org.apache.ant;bundle-version="1.8.3",
- org.eclipse.ant.core;bundle-version="3.2.400"
+ org.apache.ant,
+ org.eclipse.ant.core
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
