@@ -230,6 +230,13 @@ litigation.
          version="0.8.1.qualifier"/>
 
    <plugin
+         id="hu.modembed.pic.model"
+         download-size="0"
+         install-size="0"
+         version="0.8.1.qualifier"/>
+
+
+   <plugin
          id="hu.modembed.pic.midrange"
          download-size="0"
          install-size="0"
