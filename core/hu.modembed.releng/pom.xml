@@ -54,7 +54,7 @@
 		<repository>
 			<id>EMF</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/modeling/emf/emf/updates/</url>
+			<url>http://download.eclipse.org/modeling/emf/emf/updates/releases/</url>
 		</repository>
 		<!-- repository>
 			<id>EMFT</id>
