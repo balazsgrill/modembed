@@ -51,6 +51,21 @@
 			<!--  <url>http://download.eclipse.org/releases/juno</url> -->
 			<url>http://download.eclipse.org/eclipse/updates/4.2</url>
 		</repository>
+		<repository>
+			<id>EMF</id>
+			<layout>p2</layout>
+			<url>http://www.eclipse.org/modeling/emf/updates/</url>
+		</repository>
+		<repository>
+			<id>EMFT</id>
+			<layout>p2</layout>
+			<url>http://www.eclipse.org/modeling/emft/updates/</url>
+		</repository>
+		<repository>
+			<id>MDT</id>
+			<layout>p2</layout>
+			<url>http://www.eclipse.org/modeling/mdt/updates/</url>
+		</repository>
 <!--	
 		<repository>
 			<id>epsilon</id>
