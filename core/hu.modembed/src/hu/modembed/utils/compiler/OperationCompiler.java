@@ -3,11 +3,7 @@
  */
 package hu.modembed.utils.compiler;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import hu.modembed.model.modembed.abstraction.behavior.AtomicOperationExecution;
+import hu.modembed.model.modembed.abstraction.behavior.OperationExecution;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolValueAssignment;
 import hu.modembed.model.modembed.abstraction.behavior.platform.InstructionCallOperationStep;
 import hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterMapping;
@@ -18,6 +14,10 @@ import hu.modembed.model.modembed.core.instructionset.InstructionParameter;
 import hu.modembed.model.modembed.core.object.InstructionCall;
 import hu.modembed.model.modembed.core.object.InstructionCallParameter;
 import hu.modembed.model.modembed.core.object.ObjectFactory;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @author balazs.grill
@@ -33,7 +33,7 @@ public class OperationCompiler {
 	 * @throws Exception 
 	 * 
 	 */
-	public OperationCompiler(SequenceCompiler sequenceCompiler, OperationDefinition opdef, AtomicOperationExecution operationCall) throws Exception {
+	public OperationCompiler(SequenceCompiler sequenceCompiler, OperationDefinition opdef, OperationExecution operationCall) throws Exception {
 		this.opdef = opdef;
 		//this.operationCall = operationCall;
 		
@@ -43,8 +43,8 @@ public class OperationCompiler {
 		
 		for(int i=0;i<args.size();i++){
 			OperationArgument a = args.get(i);
-			SymbolValueAssignment sva = sequenceCompiler.getSymbolValue(argValues.get(i)); 
-			arguments.put(a, sva);
+//			SymbolValueAssignment sva = sequenceCompiler.getSymbolValue(argValues.get(i)); 
+//			arguments.put(a, sva);
 		}
 	}
 	

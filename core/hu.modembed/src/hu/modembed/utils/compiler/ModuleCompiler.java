@@ -3,19 +3,19 @@
  */
 package hu.modembed.utils.compiler;
 
-import java.util.LinkedHashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-
 import hu.modembed.model.modembed.abstraction.DeviceAbstraction;
 import hu.modembed.model.modembed.abstraction.behavior.SequentialBehavior;
 import hu.modembed.model.modembed.abstraction.behavior.SequentialBehaviorModule;
-import hu.modembed.model.modembed.abstraction.behavior.SymbolValueAssignment;
+import hu.modembed.model.modembed.abstraction.behavior.SymbolAssignment;
 import hu.modembed.model.modembed.abstraction.behavior.platform.OperationDefinition;
 import hu.modembed.model.modembed.core.object.AssemblerObject;
 import hu.modembed.model.modembed.core.object.InstructionCall;
 import hu.modembed.model.modembed.core.object.ObjectFactory;
+
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @author balazs.grill
@@ -25,7 +25,7 @@ public class ModuleCompiler {
 
 	private final DeviceAbstraction device;
 	private final Map<String, SequentialBehavior> sequences = new LinkedHashMap<String, SequentialBehavior>();
-	final Map<String, SymbolValueAssignment> symbols = new LinkedHashMap<String, SymbolValueAssignment>();
+	final Map<String, SymbolAssignment> symbols = new LinkedHashMap<String, SymbolAssignment>();
 	
 	private OperationDefinition findOperation(DeviceAbstraction device, String operation, TypeSignature[] signature) throws Exception{
 		for(OperationDefinition opdef : device.getOperation()){
@@ -74,7 +74,7 @@ public class ModuleCompiler {
 			}
 			sequences.put(sb.getName(), sb);
 		}
-		for(SymbolValueAssignment sv : module.getSymbolMappings()){
+		for(SymbolAssignment sv : module.getSymbolMappings()){
 			if (symbols.containsKey(sv.getSymbol())){
 				throw new Exception("Duplicate definition of '"+sv.getSymbol()+"'");
 			}

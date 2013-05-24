@@ -3,12 +3,7 @@
  */
 package hu.modembed.utils.compiler;
 
-import java.util.Arrays;
-import java.util.List;
-
-import hu.modembed.model.modembed.abstraction.behavior.SymbolValueAssignment;
 import hu.modembed.model.modembed.abstraction.behavior.platform.OperationArgument;
-import hu.modembed.model.modembed.abstraction.memorymodel.MemoryInstance;
 import hu.modembed.model.modembed.abstraction.memorymodel.MemoryType;
 import hu.modembed.model.modembed.abstraction.types.CodeLabelTypeDefinition;
 import hu.modembed.model.modembed.abstraction.types.ReferenceTypeDefinition;
@@ -22,28 +17,31 @@ import hu.modembed.model.modembed.abstraction.types.UnsignedTypeDefinition;
 public class TypeSignature {
 
 	private final TypeDefinition type;
-	private final MemoryType[] indirections;
+	private final MemoryType memoryType;
 	
 	/**
 	 * 
 	 */
-	public TypeSignature(TypeDefinition type, MemoryType[] indirections) {
+	public TypeSignature(TypeDefinition type, MemoryType memoryType) {
 		this.type = type;
-		this.indirections = indirections;
+		this.memoryType = memoryType;
 	}
 
 	public TypeDefinition getType() {
 		return type;
 	}
 	
-	public MemoryType[] getIndirections() {
-		return indirections;
+	public MemoryType getMemoryType() {
+		return memoryType;
 	}
 	
 	public boolean isCompatible(TypeSignature other){
 		if (!isCompatible(type, other.type)) return false;
 		
-		return Arrays.equals(indirections, other.indirections);
+		if (memoryType == null)
+			return other.memoryType == null;
+		else
+			return memoryType.equals(other.memoryType);
 	}
 	
 	public static boolean isCompatible(TypeDefinition td1, TypeDefinition td2){
@@ -65,20 +63,19 @@ public class TypeSignature {
 	}
 	
 	public static TypeSignature create(OperationArgument arg){
-		List<MemoryType> indirection = arg.getIndirection();
-		return new TypeSignature(arg.getType(), indirection.toArray(new MemoryType[indirection.size()]));
+		return new TypeSignature(arg.getType(), arg.getMemType());
 	}
 	
-	public static TypeSignature create(SymbolValueAssignment sv){
-		TypeDefinition typedef = sv.getType();
-		List<MemoryInstance> mems = sv.getIndirection();
-		MemoryType[] mts = new MemoryType[mems.size()];
-		for(int i=0;i<mts.length;i++){
-			mts[i] = mems.get(i).getType();
-		}
-		return new TypeSignature(typedef, mts);
-	}
-	
+//	public static TypeSignature create(SymbolValueAssignment sv){
+//		TypeDefinition typedef = sv.getType();
+//		List<MemoryInstance> mems = sv.get;
+//		MemoryType[] mts = new MemoryType[mems.size()];
+//		for(int i=0;i<mts.length;i++){
+//			mts[i] = mems.get(i).getType();
+//		}
+//		return new TypeSignature(typedef, mts);
+//	}
+//	
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
@@ -93,9 +90,9 @@ public class TypeSignature {
 		if (type instanceof CodeLabelTypeDefinition){
 			sb.append("label");
 		}
-		for(MemoryType mt : indirections){
+		if(memoryType != null){
 			sb.append("@");
-			sb.append(mt.getName());
+			sb.append(memoryType.getName());
 		}
 		return sb.toString();
 	}
