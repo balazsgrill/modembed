@@ -6,20 +6,16 @@ import hu.modembed.model.modembed.abstraction.DeviceAbstraction;
 import hu.modembed.model.modembed.abstraction.behavior.BehaviorPackage;
 import hu.modembed.model.modembed.abstraction.behavior.SequentialBehavior;
 import hu.modembed.model.modembed.abstraction.behavior.SequentialBehaviorModule;
-import hu.modembed.model.modembed.abstraction.behavior.SymbolValueAssignment;
-
+import hu.modembed.model.modembed.abstraction.behavior.SymbolAssignment;
 import hu.modembed.model.modembed.infrastructure.impl.RootElementImpl;
 
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -58,7 +54,7 @@ public class SequentialBehaviorModuleImpl extends RootElementImpl implements Seq
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<SymbolValueAssignment> symbolMappings;
+	protected EList<SymbolAssignment> symbolMappings;
 
 	/**
 	 * The cached value of the '{@link #getBehaviorModels() <em>Behavior Models</em>}' containment reference list.
@@ -132,9 +128,9 @@ public class SequentialBehaviorModuleImpl extends RootElementImpl implements Seq
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<SymbolValueAssignment> getSymbolMappings() {
+	public EList<SymbolAssignment> getSymbolMappings() {
 		if (symbolMappings == null) {
-			symbolMappings = new EObjectContainmentEList<SymbolValueAssignment>(SymbolValueAssignment.class, this, BehaviorPackage.SEQUENTIAL_BEHAVIOR_MODULE__SYMBOL_MAPPINGS);
+			symbolMappings = new EObjectContainmentEList<SymbolAssignment>(SymbolAssignment.class, this, BehaviorPackage.SEQUENTIAL_BEHAVIOR_MODULE__SYMBOL_MAPPINGS);
 		}
 		return symbolMappings;
 	}
@@ -200,7 +196,7 @@ public class SequentialBehaviorModuleImpl extends RootElementImpl implements Seq
 				return;
 			case BehaviorPackage.SEQUENTIAL_BEHAVIOR_MODULE__SYMBOL_MAPPINGS:
 				getSymbolMappings().clear();
-				getSymbolMappings().addAll((Collection<? extends SymbolValueAssignment>)newValue);
+				getSymbolMappings().addAll((Collection<? extends SymbolAssignment>)newValue);
 				return;
 			case BehaviorPackage.SEQUENTIAL_BEHAVIOR_MODULE__BEHAVIOR_MODELS:
 				getBehaviorModels().clear();

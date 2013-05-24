@@ -102,25 +102,41 @@ public class BehaviorSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case BehaviorPackage.ATOMIC_OPERATION_EXECUTION: {
-				AtomicOperationExecution atomicOperationExecution = (AtomicOperationExecution)theEObject;
-				T result = caseAtomicOperationExecution(atomicOperationExecution);
-				if (result == null) result = caseSequentialAction(atomicOperationExecution);
-				if (result == null) result = caseMODembedElement(atomicOperationExecution);
+			case BehaviorPackage.OPERATION_EXECUTION: {
+				OperationExecution operationExecution = (OperationExecution)theEObject;
+				T result = caseOperationExecution(operationExecution);
+				if (result == null) result = caseSequentialAction(operationExecution);
+				if (result == null) result = caseMODembedElement(operationExecution);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case BehaviorPackage.BEHAVIOR_CALL: {
-				BehaviorCall behaviorCall = (BehaviorCall)theEObject;
-				T result = caseBehaviorCall(behaviorCall);
-				if (result == null) result = caseSequentialAction(behaviorCall);
-				if (result == null) result = caseMODembedElement(behaviorCall);
+			case BehaviorPackage.SYMBOL_ASSIGNMENT: {
+				SymbolAssignment symbolAssignment = (SymbolAssignment)theEObject;
+				T result = caseSymbolAssignment(symbolAssignment);
+				if (result == null) result = caseMODembedElement(symbolAssignment);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case BehaviorPackage.SYMBOL_ALLOCATION: {
+				SymbolAllocation symbolAllocation = (SymbolAllocation)theEObject;
+				T result = caseSymbolAllocation(symbolAllocation);
+				if (result == null) result = caseSymbolAssignment(symbolAllocation);
+				if (result == null) result = caseMODembedElement(symbolAllocation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case BehaviorPackage.SYMBOL_ADDRESS_ASSIGNMENT: {
+				SymbolAddressAssignment symbolAddressAssignment = (SymbolAddressAssignment)theEObject;
+				T result = caseSymbolAddressAssignment(symbolAddressAssignment);
+				if (result == null) result = caseSymbolAssignment(symbolAddressAssignment);
+				if (result == null) result = caseMODembedElement(symbolAddressAssignment);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case BehaviorPackage.SYMBOL_VALUE_ASSIGNMENT: {
 				SymbolValueAssignment symbolValueAssignment = (SymbolValueAssignment)theEObject;
 				T result = caseSymbolValueAssignment(symbolValueAssignment);
+				if (result == null) result = caseSymbolAssignment(symbolValueAssignment);
 				if (result == null) result = caseMODembedElement(symbolValueAssignment);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -190,32 +206,62 @@ public class BehaviorSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Atomic Operation Execution</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Operation Execution</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Atomic Operation Execution</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Operation Execution</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseAtomicOperationExecution(AtomicOperationExecution object) {
+	public T caseOperationExecution(OperationExecution object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Call</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Symbol Assignment</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Call</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Symbol Assignment</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseBehaviorCall(BehaviorCall object) {
+	public T caseSymbolAssignment(SymbolAssignment object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Symbol Allocation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Symbol Allocation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSymbolAllocation(SymbolAllocation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Symbol Address Assignment</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Symbol Address Assignment</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSymbolAddressAssignment(SymbolAddressAssignment object) {
 		return null;
 	}
 

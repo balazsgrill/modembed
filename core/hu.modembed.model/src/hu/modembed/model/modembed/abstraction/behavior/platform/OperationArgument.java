@@ -4,9 +4,7 @@ package hu.modembed.model.modembed.abstraction.behavior.platform;
 
 import hu.modembed.model.modembed.abstraction.memorymodel.MemoryType;
 import hu.modembed.model.modembed.abstraction.types.TypeDefinition;
-
 import hu.modembed.model.modembed.infrastructure.NamedElement;
-import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -17,7 +15,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  *   <li>{@link hu.modembed.model.modembed.abstraction.behavior.platform.OperationArgument#getType <em>Type</em>}</li>
- *   <li>{@link hu.modembed.model.modembed.abstraction.behavior.platform.OperationArgument#getIndirection <em>Indirection</em>}</li>
+ *   <li>{@link hu.modembed.model.modembed.abstraction.behavior.platform.OperationArgument#getMemType <em>Mem Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -53,19 +51,29 @@ public interface OperationArgument extends NamedElement {
 	void setType(TypeDefinition value);
 
 	/**
-	 * Returns the value of the '<em><b>Indirection</b></em>' reference list.
-	 * The list contents are of type {@link hu.modembed.model.modembed.abstraction.memorymodel.MemoryType}.
+	 * Returns the value of the '<em><b>Mem Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Indirection</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Mem Type</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Indirection</em>' reference list.
-	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage#getOperationArgument_Indirection()
+	 * @return the value of the '<em>Mem Type</em>' reference.
+	 * @see #setMemType(MemoryType)
+	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage#getOperationArgument_MemType()
 	 * @model
 	 * @generated
 	 */
-	EList<MemoryType> getIndirection();
+	MemoryType getMemType();
+
+	/**
+	 * Sets the value of the '{@link hu.modembed.model.modembed.abstraction.behavior.platform.OperationArgument#getMemType <em>Mem Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Mem Type</em>' reference.
+	 * @see #getMemType()
+	 * @generated
+	 */
+	void setMemType(MemoryType value);
 
 } // OperationArgument

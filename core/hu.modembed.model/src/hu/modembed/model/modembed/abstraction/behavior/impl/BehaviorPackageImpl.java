@@ -3,14 +3,16 @@
 package hu.modembed.model.modembed.abstraction.behavior.impl;
 
 import hu.modembed.model.modembed.abstraction.AbstractionPackage;
-import hu.modembed.model.modembed.abstraction.behavior.AtomicOperationExecution;
-import hu.modembed.model.modembed.abstraction.behavior.BehaviorCall;
 import hu.modembed.model.modembed.abstraction.behavior.BehaviorFactory;
 import hu.modembed.model.modembed.abstraction.behavior.BehaviorPackage;
 import hu.modembed.model.modembed.abstraction.behavior.CodeSymbolPlacement;
+import hu.modembed.model.modembed.abstraction.behavior.OperationExecution;
 import hu.modembed.model.modembed.abstraction.behavior.SequentialAction;
 import hu.modembed.model.modembed.abstraction.behavior.SequentialBehavior;
 import hu.modembed.model.modembed.abstraction.behavior.SequentialBehaviorModule;
+import hu.modembed.model.modembed.abstraction.behavior.SymbolAddressAssignment;
+import hu.modembed.model.modembed.abstraction.behavior.SymbolAllocation;
+import hu.modembed.model.modembed.abstraction.behavior.SymbolAssignment;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolValueAssignment;
 import hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage;
 import hu.modembed.model.modembed.abstraction.behavior.platform.impl.PlatformPackageImpl;
@@ -74,14 +76,28 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass atomicOperationExecutionEClass = null;
+	private EClass operationExecutionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass behaviorCallEClass = null;
+	private EClass symbolAssignmentEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass symbolAllocationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass symbolAddressAssignmentEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -236,6 +252,24 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getSequentialBehavior_Parameters() {
+		return (EAttribute)sequentialBehaviorEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSequentialBehavior_LocalSymbols() {
+		return (EReference)sequentialBehaviorEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getSequentialAction() {
 		return sequentialActionEClass;
 	}
@@ -263,8 +297,8 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getAtomicOperationExecution() {
-		return atomicOperationExecutionEClass;
+	public EClass getOperationExecution() {
+		return operationExecutionEClass;
 	}
 
 	/**
@@ -272,8 +306,8 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAtomicOperationExecution_Arguments() {
-		return (EAttribute)atomicOperationExecutionEClass.getEStructuralFeatures().get(0);
+	public EAttribute getOperationExecution_Arguments() {
+		return (EAttribute)operationExecutionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -281,8 +315,8 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAtomicOperationExecution_Operation() {
-		return (EAttribute)atomicOperationExecutionEClass.getEStructuralFeatures().get(1);
+	public EAttribute getOperationExecution_Operation() {
+		return (EAttribute)operationExecutionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -290,8 +324,8 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getBehaviorCall() {
-		return behaviorCallEClass;
+	public EClass getSymbolAssignment() {
+		return symbolAssignmentEClass;
 	}
 
 	/**
@@ -299,8 +333,53 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getBehaviorCall_Reference() {
-		return (EAttribute)behaviorCallEClass.getEStructuralFeatures().get(0);
+	public EAttribute getSymbolAssignment_Symbol() {
+		return (EAttribute)symbolAssignmentEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSymbolAssignment_Type() {
+		return (EReference)symbolAssignmentEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getSymbolAllocation() {
+		return symbolAllocationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getSymbolAddressAssignment() {
+		return symbolAddressAssignmentEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSymbolAddressAssignment_MemoryInstance() {
+		return (EReference)symbolAddressAssignmentEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSymbolAddressAssignment_Address() {
+		return (EAttribute)symbolAddressAssignmentEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -317,35 +396,8 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSymbolValueAssignment_Symbol() {
-		return (EAttribute)symbolValueAssignmentEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getSymbolValueAssignment_Type() {
-		return (EReference)symbolValueAssignmentEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getSymbolValueAssignment_Value() {
-		return (EAttribute)symbolValueAssignmentEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getSymbolValueAssignment_Indirection() {
-		return (EReference)symbolValueAssignmentEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)symbolValueAssignmentEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -383,24 +435,30 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 
 		sequentialBehaviorEClass = createEClass(SEQUENTIAL_BEHAVIOR);
 		createEReference(sequentialBehaviorEClass, SEQUENTIAL_BEHAVIOR__ACTIONS);
+		createEAttribute(sequentialBehaviorEClass, SEQUENTIAL_BEHAVIOR__PARAMETERS);
+		createEReference(sequentialBehaviorEClass, SEQUENTIAL_BEHAVIOR__LOCAL_SYMBOLS);
 
 		sequentialActionEClass = createEClass(SEQUENTIAL_ACTION);
 
 		codeSymbolPlacementEClass = createEClass(CODE_SYMBOL_PLACEMENT);
 		createEAttribute(codeSymbolPlacementEClass, CODE_SYMBOL_PLACEMENT__SYMBOL);
 
-		atomicOperationExecutionEClass = createEClass(ATOMIC_OPERATION_EXECUTION);
-		createEAttribute(atomicOperationExecutionEClass, ATOMIC_OPERATION_EXECUTION__ARGUMENTS);
-		createEAttribute(atomicOperationExecutionEClass, ATOMIC_OPERATION_EXECUTION__OPERATION);
+		operationExecutionEClass = createEClass(OPERATION_EXECUTION);
+		createEAttribute(operationExecutionEClass, OPERATION_EXECUTION__ARGUMENTS);
+		createEAttribute(operationExecutionEClass, OPERATION_EXECUTION__OPERATION);
 
-		behaviorCallEClass = createEClass(BEHAVIOR_CALL);
-		createEAttribute(behaviorCallEClass, BEHAVIOR_CALL__REFERENCE);
+		symbolAssignmentEClass = createEClass(SYMBOL_ASSIGNMENT);
+		createEAttribute(symbolAssignmentEClass, SYMBOL_ASSIGNMENT__SYMBOL);
+		createEReference(symbolAssignmentEClass, SYMBOL_ASSIGNMENT__TYPE);
+
+		symbolAllocationEClass = createEClass(SYMBOL_ALLOCATION);
+
+		symbolAddressAssignmentEClass = createEClass(SYMBOL_ADDRESS_ASSIGNMENT);
+		createEReference(symbolAddressAssignmentEClass, SYMBOL_ADDRESS_ASSIGNMENT__MEMORY_INSTANCE);
+		createEAttribute(symbolAddressAssignmentEClass, SYMBOL_ADDRESS_ASSIGNMENT__ADDRESS);
 
 		symbolValueAssignmentEClass = createEClass(SYMBOL_VALUE_ASSIGNMENT);
-		createEAttribute(symbolValueAssignmentEClass, SYMBOL_VALUE_ASSIGNMENT__SYMBOL);
-		createEReference(symbolValueAssignmentEClass, SYMBOL_VALUE_ASSIGNMENT__TYPE);
 		createEAttribute(symbolValueAssignmentEClass, SYMBOL_VALUE_ASSIGNMENT__VALUE);
-		createEReference(symbolValueAssignmentEClass, SYMBOL_VALUE_ASSIGNMENT__INDIRECTION);
 	}
 
 	/**
@@ -445,36 +503,44 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 		sequentialBehaviorEClass.getESuperTypes().add(theInfrastructurePackage.getNamedElement());
 		sequentialActionEClass.getESuperTypes().add(theInfrastructurePackage.getMODembedElement());
 		codeSymbolPlacementEClass.getESuperTypes().add(this.getSequentialAction());
-		atomicOperationExecutionEClass.getESuperTypes().add(this.getSequentialAction());
-		behaviorCallEClass.getESuperTypes().add(this.getSequentialAction());
-		symbolValueAssignmentEClass.getESuperTypes().add(theInfrastructurePackage.getMODembedElement());
+		operationExecutionEClass.getESuperTypes().add(this.getSequentialAction());
+		symbolAssignmentEClass.getESuperTypes().add(theInfrastructurePackage.getMODembedElement());
+		symbolAllocationEClass.getESuperTypes().add(this.getSymbolAssignment());
+		symbolAddressAssignmentEClass.getESuperTypes().add(this.getSymbolAssignment());
+		symbolValueAssignmentEClass.getESuperTypes().add(this.getSymbolAssignment());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(sequentialBehaviorModuleEClass, SequentialBehaviorModule.class, "SequentialBehaviorModule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSequentialBehaviorModule_Device(), theAbstractionPackage.getDeviceAbstraction(), null, "device", null, 0, 1, SequentialBehaviorModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSequentialBehaviorModule_SymbolMappings(), this.getSymbolValueAssignment(), null, "symbolMappings", null, 0, -1, SequentialBehaviorModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSequentialBehaviorModule_SymbolMappings(), this.getSymbolAssignment(), null, "symbolMappings", null, 0, -1, SequentialBehaviorModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSequentialBehaviorModule_BehaviorModels(), this.getSequentialBehavior(), null, "behaviorModels", null, 0, -1, SequentialBehaviorModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sequentialBehaviorEClass, SequentialBehavior.class, "SequentialBehavior", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSequentialBehavior_Actions(), this.getSequentialAction(), null, "actions", null, 0, -1, SequentialBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSequentialBehavior_Parameters(), ecorePackage.getEString(), "parameters", null, 0, -1, SequentialBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSequentialBehavior_LocalSymbols(), this.getSymbolAssignment(), null, "localSymbols", null, 0, -1, SequentialBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sequentialActionEClass, SequentialAction.class, "SequentialAction", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(codeSymbolPlacementEClass, CodeSymbolPlacement.class, "CodeSymbolPlacement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCodeSymbolPlacement_Symbol(), ecorePackage.getEString(), "symbol", null, 1, 1, CodeSymbolPlacement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(atomicOperationExecutionEClass, AtomicOperationExecution.class, "AtomicOperationExecution", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAtomicOperationExecution_Arguments(), ecorePackage.getEString(), "arguments", null, 0, -1, AtomicOperationExecution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAtomicOperationExecution_Operation(), ecorePackage.getEString(), "operation", null, 1, 1, AtomicOperationExecution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(operationExecutionEClass, OperationExecution.class, "OperationExecution", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getOperationExecution_Arguments(), ecorePackage.getEString(), "arguments", null, 0, -1, OperationExecution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getOperationExecution_Operation(), ecorePackage.getEString(), "operation", null, 1, 1, OperationExecution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(behaviorCallEClass, BehaviorCall.class, "BehaviorCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getBehaviorCall_Reference(), ecorePackage.getEString(), "reference", null, 1, 1, BehaviorCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(symbolAssignmentEClass, SymbolAssignment.class, "SymbolAssignment", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSymbolAssignment_Symbol(), ecorePackage.getEString(), "symbol", null, 1, 1, SymbolAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSymbolAssignment_Type(), theTypesPackage.getTypeDefinition(), null, "type", null, 1, 1, SymbolAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(symbolAllocationEClass, SymbolAllocation.class, "SymbolAllocation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(symbolAddressAssignmentEClass, SymbolAddressAssignment.class, "SymbolAddressAssignment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSymbolAddressAssignment_MemoryInstance(), theMemorymodelPackage.getMemoryInstance(), null, "memoryInstance", null, 1, 1, SymbolAddressAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSymbolAddressAssignment_Address(), ecorePackage.getELong(), "address", null, 1, 1, SymbolAddressAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(symbolValueAssignmentEClass, SymbolValueAssignment.class, "SymbolValueAssignment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSymbolValueAssignment_Symbol(), ecorePackage.getEString(), "symbol", null, 1, 1, SymbolValueAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSymbolValueAssignment_Type(), theTypesPackage.getTypeDefinition(), null, "type", null, 1, 1, SymbolValueAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSymbolValueAssignment_Value(), ecorePackage.getELong(), "value", null, 0, 1, SymbolValueAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSymbolValueAssignment_Indirection(), theMemorymodelPackage.getMemoryInstance(), null, "indirection", null, 0, -1, SymbolValueAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSymbolValueAssignment_Value(), ecorePackage.getELong(), "value", null, 1, 1, SymbolValueAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 	}
 
 } //BehaviorPackageImpl

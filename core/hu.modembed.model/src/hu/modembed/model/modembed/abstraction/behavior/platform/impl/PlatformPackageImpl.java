@@ -220,7 +220,7 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getOperationArgument_Indirection() {
+	public EReference getOperationArgument_MemType() {
 		return (EReference)operationArgumentEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -340,7 +340,7 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 
 		operationArgumentEClass = createEClass(OPERATION_ARGUMENT);
 		createEReference(operationArgumentEClass, OPERATION_ARGUMENT__TYPE);
-		createEReference(operationArgumentEClass, OPERATION_ARGUMENT__INDIRECTION);
+		createEReference(operationArgumentEClass, OPERATION_ARGUMENT__MEM_TYPE);
 
 		instructionCallOperationStepEClass = createEClass(INSTRUCTION_CALL_OPERATION_STEP);
 		createEReference(instructionCallOperationStepEClass, INSTRUCTION_CALL_OPERATION_STEP__INSTRUCTION);
@@ -403,7 +403,7 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 
 		initEClass(operationArgumentEClass, OperationArgument.class, "OperationArgument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getOperationArgument_Type(), theTypesPackage.getTypeDefinition(), null, "type", null, 0, 1, OperationArgument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getOperationArgument_Indirection(), theMemorymodelPackage.getMemoryType(), null, "indirection", null, 0, -1, OperationArgument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOperationArgument_MemType(), theMemorymodelPackage.getMemoryType(), null, "memType", null, 0, 1, OperationArgument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(instructionCallOperationStepEClass, InstructionCallOperationStep.class, "InstructionCallOperationStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getInstructionCallOperationStep_Instruction(), theInstructionsetPackage.getInstruction(), null, "instruction", null, 0, 1, InstructionCallOperationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -4,22 +4,15 @@ package hu.modembed.model.modembed.abstraction.behavior.platform.impl;
 
 import hu.modembed.model.modembed.abstraction.behavior.platform.OperationArgument;
 import hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage;
-
 import hu.modembed.model.modembed.abstraction.memorymodel.MemoryType;
 import hu.modembed.model.modembed.abstraction.types.TypeDefinition;
-
 import hu.modembed.model.modembed.infrastructure.impl.NamedElementImpl;
 
-import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,7 +22,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link hu.modembed.model.modembed.abstraction.behavior.platform.impl.OperationArgumentImpl#getType <em>Type</em>}</li>
- *   <li>{@link hu.modembed.model.modembed.abstraction.behavior.platform.impl.OperationArgumentImpl#getIndirection <em>Indirection</em>}</li>
+ *   <li>{@link hu.modembed.model.modembed.abstraction.behavior.platform.impl.OperationArgumentImpl#getMemType <em>Mem Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -47,14 +40,14 @@ public class OperationArgumentImpl extends NamedElementImpl implements Operation
 	protected TypeDefinition type;
 
 	/**
-	 * The cached value of the '{@link #getIndirection() <em>Indirection</em>}' reference list.
+	 * The cached value of the '{@link #getMemType() <em>Mem Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getIndirection()
+	 * @see #getMemType()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<MemoryType> indirection;
+	protected MemoryType memType;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -123,11 +116,37 @@ public class OperationArgumentImpl extends NamedElementImpl implements Operation
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<MemoryType> getIndirection() {
-		if (indirection == null) {
-			indirection = new EObjectResolvingEList<MemoryType>(MemoryType.class, this, PlatformPackage.OPERATION_ARGUMENT__INDIRECTION);
+	public MemoryType getMemType() {
+		if (memType != null && memType.eIsProxy()) {
+			InternalEObject oldMemType = (InternalEObject)memType;
+			memType = (MemoryType)eResolveProxy(oldMemType);
+			if (memType != oldMemType) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PlatformPackage.OPERATION_ARGUMENT__MEM_TYPE, oldMemType, memType));
+			}
 		}
-		return indirection;
+		return memType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MemoryType basicGetMemType() {
+		return memType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMemType(MemoryType newMemType) {
+		MemoryType oldMemType = memType;
+		memType = newMemType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PlatformPackage.OPERATION_ARGUMENT__MEM_TYPE, oldMemType, memType));
 	}
 
 	/**
@@ -154,8 +173,9 @@ public class OperationArgumentImpl extends NamedElementImpl implements Operation
 		switch (featureID) {
 			case PlatformPackage.OPERATION_ARGUMENT__TYPE:
 				return getType();
-			case PlatformPackage.OPERATION_ARGUMENT__INDIRECTION:
-				return getIndirection();
+			case PlatformPackage.OPERATION_ARGUMENT__MEM_TYPE:
+				if (resolve) return getMemType();
+				return basicGetMemType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -165,16 +185,14 @@ public class OperationArgumentImpl extends NamedElementImpl implements Operation
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case PlatformPackage.OPERATION_ARGUMENT__TYPE:
 				setType((TypeDefinition)newValue);
 				return;
-			case PlatformPackage.OPERATION_ARGUMENT__INDIRECTION:
-				getIndirection().clear();
-				getIndirection().addAll((Collection<? extends MemoryType>)newValue);
+			case PlatformPackage.OPERATION_ARGUMENT__MEM_TYPE:
+				setMemType((MemoryType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -191,8 +209,8 @@ public class OperationArgumentImpl extends NamedElementImpl implements Operation
 			case PlatformPackage.OPERATION_ARGUMENT__TYPE:
 				setType((TypeDefinition)null);
 				return;
-			case PlatformPackage.OPERATION_ARGUMENT__INDIRECTION:
-				getIndirection().clear();
+			case PlatformPackage.OPERATION_ARGUMENT__MEM_TYPE:
+				setMemType((MemoryType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -208,8 +226,8 @@ public class OperationArgumentImpl extends NamedElementImpl implements Operation
 		switch (featureID) {
 			case PlatformPackage.OPERATION_ARGUMENT__TYPE:
 				return type != null;
-			case PlatformPackage.OPERATION_ARGUMENT__INDIRECTION:
-				return indirection != null && !indirection.isEmpty();
+			case PlatformPackage.OPERATION_ARGUMENT__MEM_TYPE:
+				return memType != null;
 		}
 		return super.eIsSet(featureID);
 	}

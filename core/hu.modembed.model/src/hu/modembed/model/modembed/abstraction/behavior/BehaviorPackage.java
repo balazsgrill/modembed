@@ -177,13 +177,31 @@ public interface BehaviorPackage extends EPackage {
 	int SEQUENTIAL_BEHAVIOR__ACTIONS = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Parameters</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEQUENTIAL_BEHAVIOR__PARAMETERS = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Local Symbols</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEQUENTIAL_BEHAVIOR__LOCAL_SYMBOLS = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Sequential Behavior</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SEQUENTIAL_BEHAVIOR_FEATURE_COUNT = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int SEQUENTIAL_BEHAVIOR_FEATURE_COUNT = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link hu.modembed.model.modembed.abstraction.behavior.impl.SequentialActionImpl <em>Sequential Action</em>}' class.
@@ -269,14 +287,14 @@ public interface BehaviorPackage extends EPackage {
 	int CODE_SYMBOL_PLACEMENT_FEATURE_COUNT = SEQUENTIAL_ACTION_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link hu.modembed.model.modembed.abstraction.behavior.impl.AtomicOperationExecutionImpl <em>Atomic Operation Execution</em>}' class.
+	 * The meta object id for the '{@link hu.modembed.model.modembed.abstraction.behavior.impl.OperationExecutionImpl <em>Operation Execution</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see hu.modembed.model.modembed.abstraction.behavior.impl.AtomicOperationExecutionImpl
-	 * @see hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorPackageImpl#getAtomicOperationExecution()
+	 * @see hu.modembed.model.modembed.abstraction.behavior.impl.OperationExecutionImpl
+	 * @see hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorPackageImpl#getOperationExecution()
 	 * @generated
 	 */
-	int ATOMIC_OPERATION_EXECUTION = 4;
+	int OPERATION_EXECUTION = 4;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -285,7 +303,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATOMIC_OPERATION_EXECUTION__DESCRIPTION = SEQUENTIAL_ACTION__DESCRIPTION;
+	int OPERATION_EXECUTION__DESCRIPTION = SEQUENTIAL_ACTION__DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
@@ -294,7 +312,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATOMIC_OPERATION_EXECUTION__ORIGINS = SEQUENTIAL_ACTION__ORIGINS;
+	int OPERATION_EXECUTION__ORIGINS = SEQUENTIAL_ACTION__ORIGINS;
 
 	/**
 	 * The feature id for the '<em><b>Arguments</b></em>' attribute list.
@@ -303,7 +321,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATOMIC_OPERATION_EXECUTION__ARGUMENTS = SEQUENTIAL_ACTION_FEATURE_COUNT + 0;
+	int OPERATION_EXECUTION__ARGUMENTS = SEQUENTIAL_ACTION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Operation</b></em>' attribute.
@@ -312,26 +330,26 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATOMIC_OPERATION_EXECUTION__OPERATION = SEQUENTIAL_ACTION_FEATURE_COUNT + 1;
+	int OPERATION_EXECUTION__OPERATION = SEQUENTIAL_ACTION_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Atomic Operation Execution</em>' class.
+	 * The number of structural features of the '<em>Operation Execution</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATOMIC_OPERATION_EXECUTION_FEATURE_COUNT = SEQUENTIAL_ACTION_FEATURE_COUNT + 2;
+	int OPERATION_EXECUTION_FEATURE_COUNT = SEQUENTIAL_ACTION_FEATURE_COUNT + 2;
 
 	/**
-	 * The meta object id for the '{@link hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorCallImpl <em>Call</em>}' class.
+	 * The meta object id for the '{@link hu.modembed.model.modembed.abstraction.behavior.impl.SymbolAssignmentImpl <em>Symbol Assignment</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorCallImpl
-	 * @see hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorPackageImpl#getBehaviorCall()
+	 * @see hu.modembed.model.modembed.abstraction.behavior.impl.SymbolAssignmentImpl
+	 * @see hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorPackageImpl#getSymbolAssignment()
 	 * @generated
 	 */
-	int BEHAVIOR_CALL = 5;
+	int SYMBOL_ASSIGNMENT = 5;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -340,7 +358,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BEHAVIOR_CALL__DESCRIPTION = SEQUENTIAL_ACTION__DESCRIPTION;
+	int SYMBOL_ASSIGNMENT__DESCRIPTION = InfrastructurePackage.MO_DEMBED_ELEMENT__DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
@@ -349,25 +367,162 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BEHAVIOR_CALL__ORIGINS = SEQUENTIAL_ACTION__ORIGINS;
+	int SYMBOL_ASSIGNMENT__ORIGINS = InfrastructurePackage.MO_DEMBED_ELEMENT__ORIGINS;
 
 	/**
-	 * The feature id for the '<em><b>Reference</b></em>' attribute.
+	 * The feature id for the '<em><b>Symbol</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BEHAVIOR_CALL__REFERENCE = SEQUENTIAL_ACTION_FEATURE_COUNT + 0;
+	int SYMBOL_ASSIGNMENT__SYMBOL = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Call</em>' class.
+	 * The feature id for the '<em><b>Type</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BEHAVIOR_CALL_FEATURE_COUNT = SEQUENTIAL_ACTION_FEATURE_COUNT + 1;
+	int SYMBOL_ASSIGNMENT__TYPE = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Symbol Assignment</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_ASSIGNMENT_FEATURE_COUNT = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link hu.modembed.model.modembed.abstraction.behavior.impl.SymbolAllocationImpl <em>Symbol Allocation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.modembed.model.modembed.abstraction.behavior.impl.SymbolAllocationImpl
+	 * @see hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorPackageImpl#getSymbolAllocation()
+	 * @generated
+	 */
+	int SYMBOL_ALLOCATION = 6;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_ALLOCATION__DESCRIPTION = SYMBOL_ASSIGNMENT__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_ALLOCATION__ORIGINS = SYMBOL_ASSIGNMENT__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Symbol</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_ALLOCATION__SYMBOL = SYMBOL_ASSIGNMENT__SYMBOL;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_ALLOCATION__TYPE = SYMBOL_ASSIGNMENT__TYPE;
+
+	/**
+	 * The number of structural features of the '<em>Symbol Allocation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_ALLOCATION_FEATURE_COUNT = SYMBOL_ASSIGNMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link hu.modembed.model.modembed.abstraction.behavior.impl.SymbolAddressAssignmentImpl <em>Symbol Address Assignment</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.modembed.model.modembed.abstraction.behavior.impl.SymbolAddressAssignmentImpl
+	 * @see hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorPackageImpl#getSymbolAddressAssignment()
+	 * @generated
+	 */
+	int SYMBOL_ADDRESS_ASSIGNMENT = 7;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_ADDRESS_ASSIGNMENT__DESCRIPTION = SYMBOL_ASSIGNMENT__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_ADDRESS_ASSIGNMENT__ORIGINS = SYMBOL_ASSIGNMENT__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Symbol</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_ADDRESS_ASSIGNMENT__SYMBOL = SYMBOL_ASSIGNMENT__SYMBOL;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_ADDRESS_ASSIGNMENT__TYPE = SYMBOL_ASSIGNMENT__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Memory Instance</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_ADDRESS_ASSIGNMENT__MEMORY_INSTANCE = SYMBOL_ASSIGNMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Address</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_ADDRESS_ASSIGNMENT__ADDRESS = SYMBOL_ASSIGNMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Symbol Address Assignment</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_ADDRESS_ASSIGNMENT_FEATURE_COUNT = SYMBOL_ASSIGNMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link hu.modembed.model.modembed.abstraction.behavior.impl.SymbolValueAssignmentImpl <em>Symbol Value Assignment</em>}' class.
@@ -377,7 +532,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @see hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorPackageImpl#getSymbolValueAssignment()
 	 * @generated
 	 */
-	int SYMBOL_VALUE_ASSIGNMENT = 6;
+	int SYMBOL_VALUE_ASSIGNMENT = 8;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -386,7 +541,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYMBOL_VALUE_ASSIGNMENT__DESCRIPTION = InfrastructurePackage.MO_DEMBED_ELEMENT__DESCRIPTION;
+	int SYMBOL_VALUE_ASSIGNMENT__DESCRIPTION = SYMBOL_ASSIGNMENT__DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
@@ -395,7 +550,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYMBOL_VALUE_ASSIGNMENT__ORIGINS = InfrastructurePackage.MO_DEMBED_ELEMENT__ORIGINS;
+	int SYMBOL_VALUE_ASSIGNMENT__ORIGINS = SYMBOL_ASSIGNMENT__ORIGINS;
 
 	/**
 	 * The feature id for the '<em><b>Symbol</b></em>' attribute.
@@ -404,7 +559,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYMBOL_VALUE_ASSIGNMENT__SYMBOL = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 0;
+	int SYMBOL_VALUE_ASSIGNMENT__SYMBOL = SYMBOL_ASSIGNMENT__SYMBOL;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -413,7 +568,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYMBOL_VALUE_ASSIGNMENT__TYPE = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 1;
+	int SYMBOL_VALUE_ASSIGNMENT__TYPE = SYMBOL_ASSIGNMENT__TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -422,16 +577,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYMBOL_VALUE_ASSIGNMENT__VALUE = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Indirection</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYMBOL_VALUE_ASSIGNMENT__INDIRECTION = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 3;
+	int SYMBOL_VALUE_ASSIGNMENT__VALUE = SYMBOL_ASSIGNMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Symbol Value Assignment</em>' class.
@@ -440,7 +586,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYMBOL_VALUE_ASSIGNMENT_FEATURE_COUNT = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 4;
+	int SYMBOL_VALUE_ASSIGNMENT_FEATURE_COUNT = SYMBOL_ASSIGNMENT_FEATURE_COUNT + 1;
 
 
 	/**
@@ -508,6 +654,28 @@ public interface BehaviorPackage extends EPackage {
 	EReference getSequentialBehavior_Actions();
 
 	/**
+	 * Returns the meta object for the attribute list '{@link hu.modembed.model.modembed.abstraction.behavior.SequentialBehavior#getParameters <em>Parameters</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Parameters</em>'.
+	 * @see hu.modembed.model.modembed.abstraction.behavior.SequentialBehavior#getParameters()
+	 * @see #getSequentialBehavior()
+	 * @generated
+	 */
+	EAttribute getSequentialBehavior_Parameters();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link hu.modembed.model.modembed.abstraction.behavior.SequentialBehavior#getLocalSymbols <em>Local Symbols</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Local Symbols</em>'.
+	 * @see hu.modembed.model.modembed.abstraction.behavior.SequentialBehavior#getLocalSymbols()
+	 * @see #getSequentialBehavior()
+	 * @generated
+	 */
+	EReference getSequentialBehavior_LocalSymbols();
+
+	/**
 	 * Returns the meta object for class '{@link hu.modembed.model.modembed.abstraction.behavior.SequentialAction <em>Sequential Action</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -539,57 +707,110 @@ public interface BehaviorPackage extends EPackage {
 	EAttribute getCodeSymbolPlacement_Symbol();
 
 	/**
-	 * Returns the meta object for class '{@link hu.modembed.model.modembed.abstraction.behavior.AtomicOperationExecution <em>Atomic Operation Execution</em>}'.
+	 * Returns the meta object for class '{@link hu.modembed.model.modembed.abstraction.behavior.OperationExecution <em>Operation Execution</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Atomic Operation Execution</em>'.
-	 * @see hu.modembed.model.modembed.abstraction.behavior.AtomicOperationExecution
+	 * @return the meta object for class '<em>Operation Execution</em>'.
+	 * @see hu.modembed.model.modembed.abstraction.behavior.OperationExecution
 	 * @generated
 	 */
-	EClass getAtomicOperationExecution();
+	EClass getOperationExecution();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link hu.modembed.model.modembed.abstraction.behavior.AtomicOperationExecution#getArguments <em>Arguments</em>}'.
+	 * Returns the meta object for the attribute list '{@link hu.modembed.model.modembed.abstraction.behavior.OperationExecution#getArguments <em>Arguments</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute list '<em>Arguments</em>'.
-	 * @see hu.modembed.model.modembed.abstraction.behavior.AtomicOperationExecution#getArguments()
-	 * @see #getAtomicOperationExecution()
+	 * @see hu.modembed.model.modembed.abstraction.behavior.OperationExecution#getArguments()
+	 * @see #getOperationExecution()
 	 * @generated
 	 */
-	EAttribute getAtomicOperationExecution_Arguments();
+	EAttribute getOperationExecution_Arguments();
 
 	/**
-	 * Returns the meta object for the attribute '{@link hu.modembed.model.modembed.abstraction.behavior.AtomicOperationExecution#getOperation <em>Operation</em>}'.
+	 * Returns the meta object for the attribute '{@link hu.modembed.model.modembed.abstraction.behavior.OperationExecution#getOperation <em>Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Operation</em>'.
-	 * @see hu.modembed.model.modembed.abstraction.behavior.AtomicOperationExecution#getOperation()
-	 * @see #getAtomicOperationExecution()
+	 * @see hu.modembed.model.modembed.abstraction.behavior.OperationExecution#getOperation()
+	 * @see #getOperationExecution()
 	 * @generated
 	 */
-	EAttribute getAtomicOperationExecution_Operation();
+	EAttribute getOperationExecution_Operation();
 
 	/**
-	 * Returns the meta object for class '{@link hu.modembed.model.modembed.abstraction.behavior.BehaviorCall <em>Call</em>}'.
+	 * Returns the meta object for class '{@link hu.modembed.model.modembed.abstraction.behavior.SymbolAssignment <em>Symbol Assignment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Call</em>'.
-	 * @see hu.modembed.model.modembed.abstraction.behavior.BehaviorCall
+	 * @return the meta object for class '<em>Symbol Assignment</em>'.
+	 * @see hu.modembed.model.modembed.abstraction.behavior.SymbolAssignment
 	 * @generated
 	 */
-	EClass getBehaviorCall();
+	EClass getSymbolAssignment();
 
 	/**
-	 * Returns the meta object for the attribute '{@link hu.modembed.model.modembed.abstraction.behavior.BehaviorCall#getReference <em>Reference</em>}'.
+	 * Returns the meta object for the attribute '{@link hu.modembed.model.modembed.abstraction.behavior.SymbolAssignment#getSymbol <em>Symbol</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Reference</em>'.
-	 * @see hu.modembed.model.modembed.abstraction.behavior.BehaviorCall#getReference()
-	 * @see #getBehaviorCall()
+	 * @return the meta object for the attribute '<em>Symbol</em>'.
+	 * @see hu.modembed.model.modembed.abstraction.behavior.SymbolAssignment#getSymbol()
+	 * @see #getSymbolAssignment()
 	 * @generated
 	 */
-	EAttribute getBehaviorCall_Reference();
+	EAttribute getSymbolAssignment_Symbol();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link hu.modembed.model.modembed.abstraction.behavior.SymbolAssignment#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Type</em>'.
+	 * @see hu.modembed.model.modembed.abstraction.behavior.SymbolAssignment#getType()
+	 * @see #getSymbolAssignment()
+	 * @generated
+	 */
+	EReference getSymbolAssignment_Type();
+
+	/**
+	 * Returns the meta object for class '{@link hu.modembed.model.modembed.abstraction.behavior.SymbolAllocation <em>Symbol Allocation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Symbol Allocation</em>'.
+	 * @see hu.modembed.model.modembed.abstraction.behavior.SymbolAllocation
+	 * @generated
+	 */
+	EClass getSymbolAllocation();
+
+	/**
+	 * Returns the meta object for class '{@link hu.modembed.model.modembed.abstraction.behavior.SymbolAddressAssignment <em>Symbol Address Assignment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Symbol Address Assignment</em>'.
+	 * @see hu.modembed.model.modembed.abstraction.behavior.SymbolAddressAssignment
+	 * @generated
+	 */
+	EClass getSymbolAddressAssignment();
+
+	/**
+	 * Returns the meta object for the reference '{@link hu.modembed.model.modembed.abstraction.behavior.SymbolAddressAssignment#getMemoryInstance <em>Memory Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Memory Instance</em>'.
+	 * @see hu.modembed.model.modembed.abstraction.behavior.SymbolAddressAssignment#getMemoryInstance()
+	 * @see #getSymbolAddressAssignment()
+	 * @generated
+	 */
+	EReference getSymbolAddressAssignment_MemoryInstance();
+
+	/**
+	 * Returns the meta object for the attribute '{@link hu.modembed.model.modembed.abstraction.behavior.SymbolAddressAssignment#getAddress <em>Address</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Address</em>'.
+	 * @see hu.modembed.model.modembed.abstraction.behavior.SymbolAddressAssignment#getAddress()
+	 * @see #getSymbolAddressAssignment()
+	 * @generated
+	 */
+	EAttribute getSymbolAddressAssignment_Address();
 
 	/**
 	 * Returns the meta object for class '{@link hu.modembed.model.modembed.abstraction.behavior.SymbolValueAssignment <em>Symbol Value Assignment</em>}'.
@@ -602,28 +823,6 @@ public interface BehaviorPackage extends EPackage {
 	EClass getSymbolValueAssignment();
 
 	/**
-	 * Returns the meta object for the attribute '{@link hu.modembed.model.modembed.abstraction.behavior.SymbolValueAssignment#getSymbol <em>Symbol</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Symbol</em>'.
-	 * @see hu.modembed.model.modembed.abstraction.behavior.SymbolValueAssignment#getSymbol()
-	 * @see #getSymbolValueAssignment()
-	 * @generated
-	 */
-	EAttribute getSymbolValueAssignment_Symbol();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link hu.modembed.model.modembed.abstraction.behavior.SymbolValueAssignment#getType <em>Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Type</em>'.
-	 * @see hu.modembed.model.modembed.abstraction.behavior.SymbolValueAssignment#getType()
-	 * @see #getSymbolValueAssignment()
-	 * @generated
-	 */
-	EReference getSymbolValueAssignment_Type();
-
-	/**
 	 * Returns the meta object for the attribute '{@link hu.modembed.model.modembed.abstraction.behavior.SymbolValueAssignment#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -633,17 +832,6 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getSymbolValueAssignment_Value();
-
-	/**
-	 * Returns the meta object for the reference list '{@link hu.modembed.model.modembed.abstraction.behavior.SymbolValueAssignment#getIndirection <em>Indirection</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Indirection</em>'.
-	 * @see hu.modembed.model.modembed.abstraction.behavior.SymbolValueAssignment#getIndirection()
-	 * @see #getSymbolValueAssignment()
-	 * @generated
-	 */
-	EReference getSymbolValueAssignment_Indirection();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -720,6 +908,22 @@ public interface BehaviorPackage extends EPackage {
 		EReference SEQUENTIAL_BEHAVIOR__ACTIONS = eINSTANCE.getSequentialBehavior_Actions();
 
 		/**
+		 * The meta object literal for the '<em><b>Parameters</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SEQUENTIAL_BEHAVIOR__PARAMETERS = eINSTANCE.getSequentialBehavior_Parameters();
+
+		/**
+		 * The meta object literal for the '<em><b>Local Symbols</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SEQUENTIAL_BEHAVIOR__LOCAL_SYMBOLS = eINSTANCE.getSequentialBehavior_LocalSymbols();
+
+		/**
 		 * The meta object literal for the '{@link hu.modembed.model.modembed.abstraction.behavior.impl.SequentialActionImpl <em>Sequential Action</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -748,14 +952,14 @@ public interface BehaviorPackage extends EPackage {
 		EAttribute CODE_SYMBOL_PLACEMENT__SYMBOL = eINSTANCE.getCodeSymbolPlacement_Symbol();
 
 		/**
-		 * The meta object literal for the '{@link hu.modembed.model.modembed.abstraction.behavior.impl.AtomicOperationExecutionImpl <em>Atomic Operation Execution</em>}' class.
+		 * The meta object literal for the '{@link hu.modembed.model.modembed.abstraction.behavior.impl.OperationExecutionImpl <em>Operation Execution</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see hu.modembed.model.modembed.abstraction.behavior.impl.AtomicOperationExecutionImpl
-		 * @see hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorPackageImpl#getAtomicOperationExecution()
+		 * @see hu.modembed.model.modembed.abstraction.behavior.impl.OperationExecutionImpl
+		 * @see hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorPackageImpl#getOperationExecution()
 		 * @generated
 		 */
-		EClass ATOMIC_OPERATION_EXECUTION = eINSTANCE.getAtomicOperationExecution();
+		EClass OPERATION_EXECUTION = eINSTANCE.getOperationExecution();
 
 		/**
 		 * The meta object literal for the '<em><b>Arguments</b></em>' attribute list feature.
@@ -763,7 +967,7 @@ public interface BehaviorPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ATOMIC_OPERATION_EXECUTION__ARGUMENTS = eINSTANCE.getAtomicOperationExecution_Arguments();
+		EAttribute OPERATION_EXECUTION__ARGUMENTS = eINSTANCE.getOperationExecution_Arguments();
 
 		/**
 		 * The meta object literal for the '<em><b>Operation</b></em>' attribute feature.
@@ -771,25 +975,69 @@ public interface BehaviorPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ATOMIC_OPERATION_EXECUTION__OPERATION = eINSTANCE.getAtomicOperationExecution_Operation();
+		EAttribute OPERATION_EXECUTION__OPERATION = eINSTANCE.getOperationExecution_Operation();
 
 		/**
-		 * The meta object literal for the '{@link hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorCallImpl <em>Call</em>}' class.
+		 * The meta object literal for the '{@link hu.modembed.model.modembed.abstraction.behavior.impl.SymbolAssignmentImpl <em>Symbol Assignment</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorCallImpl
-		 * @see hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorPackageImpl#getBehaviorCall()
+		 * @see hu.modembed.model.modembed.abstraction.behavior.impl.SymbolAssignmentImpl
+		 * @see hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorPackageImpl#getSymbolAssignment()
 		 * @generated
 		 */
-		EClass BEHAVIOR_CALL = eINSTANCE.getBehaviorCall();
+		EClass SYMBOL_ASSIGNMENT = eINSTANCE.getSymbolAssignment();
 
 		/**
-		 * The meta object literal for the '<em><b>Reference</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Symbol</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute BEHAVIOR_CALL__REFERENCE = eINSTANCE.getBehaviorCall_Reference();
+		EAttribute SYMBOL_ASSIGNMENT__SYMBOL = eINSTANCE.getSymbolAssignment_Symbol();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SYMBOL_ASSIGNMENT__TYPE = eINSTANCE.getSymbolAssignment_Type();
+
+		/**
+		 * The meta object literal for the '{@link hu.modembed.model.modembed.abstraction.behavior.impl.SymbolAllocationImpl <em>Symbol Allocation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.modembed.model.modembed.abstraction.behavior.impl.SymbolAllocationImpl
+		 * @see hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorPackageImpl#getSymbolAllocation()
+		 * @generated
+		 */
+		EClass SYMBOL_ALLOCATION = eINSTANCE.getSymbolAllocation();
+
+		/**
+		 * The meta object literal for the '{@link hu.modembed.model.modembed.abstraction.behavior.impl.SymbolAddressAssignmentImpl <em>Symbol Address Assignment</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.modembed.model.modembed.abstraction.behavior.impl.SymbolAddressAssignmentImpl
+		 * @see hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorPackageImpl#getSymbolAddressAssignment()
+		 * @generated
+		 */
+		EClass SYMBOL_ADDRESS_ASSIGNMENT = eINSTANCE.getSymbolAddressAssignment();
+
+		/**
+		 * The meta object literal for the '<em><b>Memory Instance</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SYMBOL_ADDRESS_ASSIGNMENT__MEMORY_INSTANCE = eINSTANCE.getSymbolAddressAssignment_MemoryInstance();
+
+		/**
+		 * The meta object literal for the '<em><b>Address</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SYMBOL_ADDRESS_ASSIGNMENT__ADDRESS = eINSTANCE.getSymbolAddressAssignment_Address();
 
 		/**
 		 * The meta object literal for the '{@link hu.modembed.model.modembed.abstraction.behavior.impl.SymbolValueAssignmentImpl <em>Symbol Value Assignment</em>}' class.
@@ -802,36 +1050,12 @@ public interface BehaviorPackage extends EPackage {
 		EClass SYMBOL_VALUE_ASSIGNMENT = eINSTANCE.getSymbolValueAssignment();
 
 		/**
-		 * The meta object literal for the '<em><b>Symbol</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SYMBOL_VALUE_ASSIGNMENT__SYMBOL = eINSTANCE.getSymbolValueAssignment_Symbol();
-
-		/**
-		 * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SYMBOL_VALUE_ASSIGNMENT__TYPE = eINSTANCE.getSymbolValueAssignment_Type();
-
-		/**
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute SYMBOL_VALUE_ASSIGNMENT__VALUE = eINSTANCE.getSymbolValueAssignment_Value();
-
-		/**
-		 * The meta object literal for the '<em><b>Indirection</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SYMBOL_VALUE_ASSIGNMENT__INDIRECTION = eINSTANCE.getSymbolValueAssignment_Indirection();
 
 	}
 

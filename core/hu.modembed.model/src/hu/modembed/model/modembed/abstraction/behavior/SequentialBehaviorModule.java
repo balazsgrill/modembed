@@ -54,7 +54,7 @@ public interface SequentialBehaviorModule extends RootElement {
 
 	/**
 	 * Returns the value of the '<em><b>Symbol Mappings</b></em>' containment reference list.
-	 * The list contents are of type {@link hu.modembed.model.modembed.abstraction.behavior.SymbolValueAssignment}.
+	 * The list contents are of type {@link hu.modembed.model.modembed.abstraction.behavior.SymbolAssignment}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Symbol Mappings</em>' containment reference list isn't clear,
@@ -66,7 +66,7 @@ public interface SequentialBehaviorModule extends RootElement {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<SymbolValueAssignment> getSymbolMappings();
+	EList<SymbolAssignment> getSymbolMappings();
 
 	/**
 	 * Returns the value of the '<em><b>Behavior Models</b></em>' containment reference list.

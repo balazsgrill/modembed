@@ -6,33 +6,33 @@ import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Atomic Operation Execution</b></em>'.
+ * A representation of the model object '<em><b>Operation Execution</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link hu.modembed.model.modembed.abstraction.behavior.AtomicOperationExecution#getArguments <em>Arguments</em>}</li>
- *   <li>{@link hu.modembed.model.modembed.abstraction.behavior.AtomicOperationExecution#getOperation <em>Operation</em>}</li>
+ *   <li>{@link hu.modembed.model.modembed.abstraction.behavior.OperationExecution#getArguments <em>Arguments</em>}</li>
+ *   <li>{@link hu.modembed.model.modembed.abstraction.behavior.OperationExecution#getOperation <em>Operation</em>}</li>
  * </ul>
  * </p>
  *
- * @see hu.modembed.model.modembed.abstraction.behavior.BehaviorPackage#getAtomicOperationExecution()
+ * @see hu.modembed.model.modembed.abstraction.behavior.BehaviorPackage#getOperationExecution()
  * @model
  * @generated
  */
-public interface AtomicOperationExecution extends SequentialAction {
+public interface OperationExecution extends SequentialAction {
 	/**
 	 * Returns the value of the '<em><b>Arguments</b></em>' attribute list.
 	 * The list contents are of type {@link java.lang.String}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Arguments</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Arguments</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Arguments</em>' attribute list.
-	 * @see hu.modembed.model.modembed.abstraction.behavior.BehaviorPackage#getAtomicOperationExecution_Arguments()
+	 * @see hu.modembed.model.modembed.abstraction.behavior.BehaviorPackage#getOperationExecution_Arguments()
 	 * @model
 	 * @generated
 	 */
@@ -48,14 +48,14 @@ public interface AtomicOperationExecution extends SequentialAction {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Operation</em>' attribute.
 	 * @see #setOperation(String)
-	 * @see hu.modembed.model.modembed.abstraction.behavior.BehaviorPackage#getAtomicOperationExecution_Operation()
+	 * @see hu.modembed.model.modembed.abstraction.behavior.BehaviorPackage#getOperationExecution_Operation()
 	 * @model required="true"
 	 * @generated
 	 */
 	String getOperation();
 
 	/**
-	 * Sets the value of the '{@link hu.modembed.model.modembed.abstraction.behavior.AtomicOperationExecution#getOperation <em>Operation</em>}' attribute.
+	 * Sets the value of the '{@link hu.modembed.model.modembed.abstraction.behavior.OperationExecution#getOperation <em>Operation</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Operation</em>' attribute.
@@ -64,4 +64,4 @@ public interface AtomicOperationExecution extends SequentialAction {
 	 */
 	void setOperation(String value);
 
-} // AtomicOperationExecution
+} // OperationExecution

@@ -168,13 +168,13 @@ public interface PlatformPackage extends EPackage {
 	int OPERATION_ARGUMENT__TYPE = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Indirection</b></em>' reference list.
+	 * The feature id for the '<em><b>Mem Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_ARGUMENT__INDIRECTION = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int OPERATION_ARGUMENT__MEM_TYPE = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Operation Argument</em>' class.
@@ -416,15 +416,15 @@ public interface PlatformPackage extends EPackage {
 	EReference getOperationArgument_Type();
 
 	/**
-	 * Returns the meta object for the reference list '{@link hu.modembed.model.modembed.abstraction.behavior.platform.OperationArgument#getIndirection <em>Indirection</em>}'.
+	 * Returns the meta object for the reference '{@link hu.modembed.model.modembed.abstraction.behavior.platform.OperationArgument#getMemType <em>Mem Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Indirection</em>'.
-	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.OperationArgument#getIndirection()
+	 * @return the meta object for the reference '<em>Mem Type</em>'.
+	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.OperationArgument#getMemType()
 	 * @see #getOperationArgument()
 	 * @generated
 	 */
-	EReference getOperationArgument_Indirection();
+	EReference getOperationArgument_MemType();
 
 	/**
 	 * Returns the meta object for class '{@link hu.modembed.model.modembed.abstraction.behavior.platform.InstructionCallOperationStep <em>Instruction Call Operation Step</em>}'.
@@ -597,12 +597,12 @@ public interface PlatformPackage extends EPackage {
 		EReference OPERATION_ARGUMENT__TYPE = eINSTANCE.getOperationArgument_Type();
 
 		/**
-		 * The meta object literal for the '<em><b>Indirection</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Mem Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference OPERATION_ARGUMENT__INDIRECTION = eINSTANCE.getOperationArgument_Indirection();
+		EReference OPERATION_ARGUMENT__MEM_TYPE = eINSTANCE.getOperationArgument_MemType();
 
 		/**
 		 * The meta object literal for the '{@link hu.modembed.model.modembed.abstraction.behavior.platform.impl.InstructionCallOperationStepImpl <em>Instruction Call Operation Step</em>}' class.

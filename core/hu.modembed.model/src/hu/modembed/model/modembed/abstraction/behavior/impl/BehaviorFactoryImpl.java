@@ -59,8 +59,9 @@ public class BehaviorFactoryImpl extends EFactoryImpl implements BehaviorFactory
 			case BehaviorPackage.SEQUENTIAL_BEHAVIOR_MODULE: return createSequentialBehaviorModule();
 			case BehaviorPackage.SEQUENTIAL_BEHAVIOR: return createSequentialBehavior();
 			case BehaviorPackage.CODE_SYMBOL_PLACEMENT: return createCodeSymbolPlacement();
-			case BehaviorPackage.ATOMIC_OPERATION_EXECUTION: return createAtomicOperationExecution();
-			case BehaviorPackage.BEHAVIOR_CALL: return createBehaviorCall();
+			case BehaviorPackage.OPERATION_EXECUTION: return createOperationExecution();
+			case BehaviorPackage.SYMBOL_ALLOCATION: return createSymbolAllocation();
+			case BehaviorPackage.SYMBOL_ADDRESS_ASSIGNMENT: return createSymbolAddressAssignment();
 			case BehaviorPackage.SYMBOL_VALUE_ASSIGNMENT: return createSymbolValueAssignment();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -102,9 +103,9 @@ public class BehaviorFactoryImpl extends EFactoryImpl implements BehaviorFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AtomicOperationExecution createAtomicOperationExecution() {
-		AtomicOperationExecutionImpl atomicOperationExecution = new AtomicOperationExecutionImpl();
-		return atomicOperationExecution;
+	public OperationExecution createOperationExecution() {
+		OperationExecutionImpl operationExecution = new OperationExecutionImpl();
+		return operationExecution;
 	}
 
 	/**
@@ -112,9 +113,19 @@ public class BehaviorFactoryImpl extends EFactoryImpl implements BehaviorFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public BehaviorCall createBehaviorCall() {
-		BehaviorCallImpl behaviorCall = new BehaviorCallImpl();
-		return behaviorCall;
+	public SymbolAllocation createSymbolAllocation() {
+		SymbolAllocationImpl symbolAllocation = new SymbolAllocationImpl();
+		return symbolAllocation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SymbolAddressAssignment createSymbolAddressAssignment() {
+		SymbolAddressAssignmentImpl symbolAddressAssignment = new SymbolAddressAssignmentImpl();
+		return symbolAddressAssignment;
 	}
 
 	/**

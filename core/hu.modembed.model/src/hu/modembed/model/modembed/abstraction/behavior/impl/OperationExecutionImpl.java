@@ -2,32 +2,36 @@
  */
 package hu.modembed.model.modembed.abstraction.behavior.impl;
 
-import hu.modembed.model.modembed.abstraction.behavior.AtomicOperationExecution;
 import hu.modembed.model.modembed.abstraction.behavior.BehaviorPackage;
+import hu.modembed.model.modembed.abstraction.behavior.OperationExecution;
 
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Atomic Operation Execution</b></em>'.
+ * An implementation of the model object '<em><b>Operation Execution</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.modembed.model.modembed.abstraction.behavior.impl.AtomicOperationExecutionImpl#getArguments <em>Arguments</em>}</li>
- *   <li>{@link hu.modembed.model.modembed.abstraction.behavior.impl.AtomicOperationExecutionImpl#getOperation <em>Operation</em>}</li>
+ *   <li>{@link hu.modembed.model.modembed.abstraction.behavior.impl.OperationExecutionImpl#getArguments <em>Arguments</em>}</li>
+ *   <li>{@link hu.modembed.model.modembed.abstraction.behavior.impl.OperationExecutionImpl#getOperation <em>Operation</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class AtomicOperationExecutionImpl extends SequentialActionImpl implements AtomicOperationExecution {
+public class OperationExecutionImpl extends SequentialActionImpl implements OperationExecution {
 	/**
 	 * The cached value of the '{@link #getArguments() <em>Arguments</em>}' attribute list.
 	 * <!-- begin-user-doc -->
@@ -63,7 +67,7 @@ public class AtomicOperationExecutionImpl extends SequentialActionImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AtomicOperationExecutionImpl() {
+	protected OperationExecutionImpl() {
 		super();
 	}
 
@@ -74,7 +78,7 @@ public class AtomicOperationExecutionImpl extends SequentialActionImpl implement
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return BehaviorPackage.Literals.ATOMIC_OPERATION_EXECUTION;
+		return BehaviorPackage.Literals.OPERATION_EXECUTION;
 	}
 
 	/**
@@ -84,7 +88,7 @@ public class AtomicOperationExecutionImpl extends SequentialActionImpl implement
 	 */
 	public EList<String> getArguments() {
 		if (arguments == null) {
-			arguments = new EDataTypeUniqueEList<String>(String.class, this, BehaviorPackage.ATOMIC_OPERATION_EXECUTION__ARGUMENTS);
+			arguments = new EDataTypeUniqueEList<String>(String.class, this, BehaviorPackage.OPERATION_EXECUTION__ARGUMENTS);
 		}
 		return arguments;
 	}
@@ -107,7 +111,7 @@ public class AtomicOperationExecutionImpl extends SequentialActionImpl implement
 		String oldOperation = operation;
 		operation = newOperation;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.ATOMIC_OPERATION_EXECUTION__OPERATION, oldOperation, operation));
+			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.OPERATION_EXECUTION__OPERATION, oldOperation, operation));
 	}
 
 	/**
@@ -118,9 +122,9 @@ public class AtomicOperationExecutionImpl extends SequentialActionImpl implement
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case BehaviorPackage.ATOMIC_OPERATION_EXECUTION__ARGUMENTS:
+			case BehaviorPackage.OPERATION_EXECUTION__ARGUMENTS:
 				return getArguments();
-			case BehaviorPackage.ATOMIC_OPERATION_EXECUTION__OPERATION:
+			case BehaviorPackage.OPERATION_EXECUTION__OPERATION:
 				return getOperation();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -135,11 +139,11 @@ public class AtomicOperationExecutionImpl extends SequentialActionImpl implement
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case BehaviorPackage.ATOMIC_OPERATION_EXECUTION__ARGUMENTS:
+			case BehaviorPackage.OPERATION_EXECUTION__ARGUMENTS:
 				getArguments().clear();
 				getArguments().addAll((Collection<? extends String>)newValue);
 				return;
-			case BehaviorPackage.ATOMIC_OPERATION_EXECUTION__OPERATION:
+			case BehaviorPackage.OPERATION_EXECUTION__OPERATION:
 				setOperation((String)newValue);
 				return;
 		}
@@ -154,10 +158,10 @@ public class AtomicOperationExecutionImpl extends SequentialActionImpl implement
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case BehaviorPackage.ATOMIC_OPERATION_EXECUTION__ARGUMENTS:
+			case BehaviorPackage.OPERATION_EXECUTION__ARGUMENTS:
 				getArguments().clear();
 				return;
-			case BehaviorPackage.ATOMIC_OPERATION_EXECUTION__OPERATION:
+			case BehaviorPackage.OPERATION_EXECUTION__OPERATION:
 				setOperation(OPERATION_EDEFAULT);
 				return;
 		}
@@ -172,9 +176,9 @@ public class AtomicOperationExecutionImpl extends SequentialActionImpl implement
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case BehaviorPackage.ATOMIC_OPERATION_EXECUTION__ARGUMENTS:
+			case BehaviorPackage.OPERATION_EXECUTION__ARGUMENTS:
 				return arguments != null && !arguments.isEmpty();
-			case BehaviorPackage.ATOMIC_OPERATION_EXECUTION__OPERATION:
+			case BehaviorPackage.OPERATION_EXECUTION__OPERATION:
 				return OPERATION_EDEFAULT == null ? operation != null : !OPERATION_EDEFAULT.equals(operation);
 		}
 		return super.eIsSet(featureID);
@@ -198,4 +202,4 @@ public class AtomicOperationExecutionImpl extends SequentialActionImpl implement
 		return result.toString();
 	}
 
-} //AtomicOperationExecutionImpl
+} //OperationExecutionImpl

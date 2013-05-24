@@ -88,12 +88,20 @@ public class BehaviorAdapterFactory extends AdapterFactoryImpl {
 				return createCodeSymbolPlacementAdapter();
 			}
 			@Override
-			public Adapter caseAtomicOperationExecution(AtomicOperationExecution object) {
-				return createAtomicOperationExecutionAdapter();
+			public Adapter caseOperationExecution(OperationExecution object) {
+				return createOperationExecutionAdapter();
 			}
 			@Override
-			public Adapter caseBehaviorCall(BehaviorCall object) {
-				return createBehaviorCallAdapter();
+			public Adapter caseSymbolAssignment(SymbolAssignment object) {
+				return createSymbolAssignmentAdapter();
+			}
+			@Override
+			public Adapter caseSymbolAllocation(SymbolAllocation object) {
+				return createSymbolAllocationAdapter();
+			}
+			@Override
+			public Adapter caseSymbolAddressAssignment(SymbolAddressAssignment object) {
+				return createSymbolAddressAssignmentAdapter();
 			}
 			@Override
 			public Adapter caseSymbolValueAssignment(SymbolValueAssignment object) {
@@ -188,30 +196,58 @@ public class BehaviorAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link hu.modembed.model.modembed.abstraction.behavior.AtomicOperationExecution <em>Atomic Operation Execution</em>}'.
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.modembed.abstraction.behavior.OperationExecution <em>Operation Execution</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see hu.modembed.model.modembed.abstraction.behavior.AtomicOperationExecution
+	 * @see hu.modembed.model.modembed.abstraction.behavior.OperationExecution
 	 * @generated
 	 */
-	public Adapter createAtomicOperationExecutionAdapter() {
+	public Adapter createOperationExecutionAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link hu.modembed.model.modembed.abstraction.behavior.BehaviorCall <em>Call</em>}'.
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.modembed.abstraction.behavior.SymbolAssignment <em>Symbol Assignment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see hu.modembed.model.modembed.abstraction.behavior.BehaviorCall
+	 * @see hu.modembed.model.modembed.abstraction.behavior.SymbolAssignment
 	 * @generated
 	 */
-	public Adapter createBehaviorCallAdapter() {
+	public Adapter createSymbolAssignmentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.modembed.abstraction.behavior.SymbolAllocation <em>Symbol Allocation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.modembed.model.modembed.abstraction.behavior.SymbolAllocation
+	 * @generated
+	 */
+	public Adapter createSymbolAllocationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.modembed.abstraction.behavior.SymbolAddressAssignment <em>Symbol Address Assignment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.modembed.model.modembed.abstraction.behavior.SymbolAddressAssignment
+	 * @generated
+	 */
+	public Adapter createSymbolAddressAssignmentAdapter() {
 		return null;
 	}
 

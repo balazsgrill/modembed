@@ -49,22 +49,31 @@ public interface BehaviorFactory extends EFactory {
 	CodeSymbolPlacement createCodeSymbolPlacement();
 
 	/**
-	 * Returns a new object of class '<em>Atomic Operation Execution</em>'.
+	 * Returns a new object of class '<em>Operation Execution</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Atomic Operation Execution</em>'.
+	 * @return a new object of class '<em>Operation Execution</em>'.
 	 * @generated
 	 */
-	AtomicOperationExecution createAtomicOperationExecution();
+	OperationExecution createOperationExecution();
 
 	/**
-	 * Returns a new object of class '<em>Call</em>'.
+	 * Returns a new object of class '<em>Symbol Allocation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Call</em>'.
+	 * @return a new object of class '<em>Symbol Allocation</em>'.
 	 * @generated
 	 */
-	BehaviorCall createBehaviorCall();
+	SymbolAllocation createSymbolAllocation();
+
+	/**
+	 * Returns a new object of class '<em>Symbol Address Assignment</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Symbol Address Assignment</em>'.
+	 * @generated
+	 */
+	SymbolAddressAssignment createSymbolAddressAssignment();
 
 	/**
 	 * Returns a new object of class '<em>Symbol Value Assignment</em>'.
