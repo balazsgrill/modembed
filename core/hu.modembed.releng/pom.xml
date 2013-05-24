@@ -54,17 +54,12 @@
 		<repository>
 			<id>EMF</id>
 			<layout>p2</layout>
-			<url>http://www.eclipse.org/modeling/emf/updates/</url>
+			<url>http://download.eclipse.org/modeling/emf/emf/updates/releases/</url>
 		</repository>
 		<repository>
 			<id>EMFT</id>
 			<layout>p2</layout>
-			<url>http://www.eclipse.org/modeling/emft/updates/</url>
-		</repository>
-		<repository>
-			<id>MDT</id>
-			<layout>p2</layout>
-			<url>http://www.eclipse.org/modeling/mdt/updates/</url>
+			<url>http://download.eclipse.org/modeling/emft/emf/updates/releases/</url>
 		</repository>
 <!--	
 		<repository>
