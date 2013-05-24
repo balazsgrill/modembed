@@ -56,11 +56,11 @@
 			<layout>p2</layout>
 			<url>http://download.eclipse.org/modeling/emf/emf/updates/releases/</url>
 		</repository>
-		<repository>
+		<!-- repository>
 			<id>EMFT</id>
 			<layout>p2</layout>
 			<url>http://download.eclipse.org/modeling/emft/emf/updates/releases/</url>
-		</repository>
+		</repository-->
 <!--	
 		<repository>
 			<id>epsilon</id>
