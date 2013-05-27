@@ -7,9 +7,11 @@ import hu.modembed.model.modembed.abstraction.behavior.BehaviorFactory;
 import hu.modembed.model.modembed.abstraction.behavior.BehaviorPackage;
 import hu.modembed.model.modembed.abstraction.behavior.CodeSymbolPlacement;
 import hu.modembed.model.modembed.abstraction.behavior.OperationExecution;
+import hu.modembed.model.modembed.abstraction.behavior.RootSequentialBehavior;
 import hu.modembed.model.modembed.abstraction.behavior.SequentialAction;
 import hu.modembed.model.modembed.abstraction.behavior.SequentialBehavior;
 import hu.modembed.model.modembed.abstraction.behavior.SequentialBehaviorModule;
+import hu.modembed.model.modembed.abstraction.behavior.SequentialBehaviorPart;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolAddressAssignment;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolAllocation;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolAssignment;
@@ -56,6 +58,20 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 	 * @generated
 	 */
 	private EClass sequentialBehaviorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass rootSequentialBehaviorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass sequentialBehaviorPartEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -252,8 +268,8 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSequentialBehavior_Parameters() {
-		return (EAttribute)sequentialBehaviorEClass.getEStructuralFeatures().get(1);
+	public EReference getSequentialBehavior_LocalSymbols() {
+		return (EReference)sequentialBehaviorEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -261,8 +277,35 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSequentialBehavior_LocalSymbols() {
-		return (EReference)sequentialBehaviorEClass.getEStructuralFeatures().get(2);
+	public EClass getRootSequentialBehavior() {
+		return rootSequentialBehaviorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRootSequentialBehavior_Device() {
+		return (EReference)rootSequentialBehaviorEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getSequentialBehaviorPart() {
+		return sequentialBehaviorPartEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSequentialBehaviorPart_Parameters() {
+		return (EAttribute)sequentialBehaviorPartEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -435,8 +478,13 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 
 		sequentialBehaviorEClass = createEClass(SEQUENTIAL_BEHAVIOR);
 		createEReference(sequentialBehaviorEClass, SEQUENTIAL_BEHAVIOR__ACTIONS);
-		createEAttribute(sequentialBehaviorEClass, SEQUENTIAL_BEHAVIOR__PARAMETERS);
 		createEReference(sequentialBehaviorEClass, SEQUENTIAL_BEHAVIOR__LOCAL_SYMBOLS);
+
+		rootSequentialBehaviorEClass = createEClass(ROOT_SEQUENTIAL_BEHAVIOR);
+		createEReference(rootSequentialBehaviorEClass, ROOT_SEQUENTIAL_BEHAVIOR__DEVICE);
+
+		sequentialBehaviorPartEClass = createEClass(SEQUENTIAL_BEHAVIOR_PART);
+		createEAttribute(sequentialBehaviorPartEClass, SEQUENTIAL_BEHAVIOR_PART__PARAMETERS);
 
 		sequentialActionEClass = createEClass(SEQUENTIAL_ACTION);
 
@@ -500,7 +548,10 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 
 		// Add supertypes to classes
 		sequentialBehaviorModuleEClass.getESuperTypes().add(theInfrastructurePackage.getRootElement());
-		sequentialBehaviorEClass.getESuperTypes().add(theInfrastructurePackage.getNamedElement());
+		rootSequentialBehaviorEClass.getESuperTypes().add(theInfrastructurePackage.getRootElement());
+		rootSequentialBehaviorEClass.getESuperTypes().add(this.getSequentialBehavior());
+		sequentialBehaviorPartEClass.getESuperTypes().add(theInfrastructurePackage.getNamedElement());
+		sequentialBehaviorPartEClass.getESuperTypes().add(this.getSequentialBehavior());
 		sequentialActionEClass.getESuperTypes().add(theInfrastructurePackage.getMODembedElement());
 		codeSymbolPlacementEClass.getESuperTypes().add(this.getSequentialAction());
 		operationExecutionEClass.getESuperTypes().add(this.getSequentialAction());
@@ -513,12 +564,17 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 		initEClass(sequentialBehaviorModuleEClass, SequentialBehaviorModule.class, "SequentialBehaviorModule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSequentialBehaviorModule_Device(), theAbstractionPackage.getDeviceAbstraction(), null, "device", null, 0, 1, SequentialBehaviorModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSequentialBehaviorModule_SymbolMappings(), this.getSymbolAssignment(), null, "symbolMappings", null, 0, -1, SequentialBehaviorModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSequentialBehaviorModule_BehaviorModels(), this.getSequentialBehavior(), null, "behaviorModels", null, 0, -1, SequentialBehaviorModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSequentialBehaviorModule_BehaviorModels(), this.getSequentialBehaviorPart(), null, "behaviorModels", null, 0, -1, SequentialBehaviorModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(sequentialBehaviorEClass, SequentialBehavior.class, "SequentialBehavior", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(sequentialBehaviorEClass, SequentialBehavior.class, "SequentialBehavior", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSequentialBehavior_Actions(), this.getSequentialAction(), null, "actions", null, 0, -1, SequentialBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSequentialBehavior_Parameters(), ecorePackage.getEString(), "parameters", null, 0, -1, SequentialBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSequentialBehavior_LocalSymbols(), this.getSymbolAssignment(), null, "localSymbols", null, 0, -1, SequentialBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(rootSequentialBehaviorEClass, RootSequentialBehavior.class, "RootSequentialBehavior", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRootSequentialBehavior_Device(), theAbstractionPackage.getDeviceAbstraction(), null, "device", null, 0, 1, RootSequentialBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(sequentialBehaviorPartEClass, SequentialBehaviorPart.class, "SequentialBehaviorPart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSequentialBehaviorPart_Parameters(), ecorePackage.getEString(), "parameters", null, 0, -1, SequentialBehaviorPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sequentialActionEClass, SequentialAction.class, "SequentialAction", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

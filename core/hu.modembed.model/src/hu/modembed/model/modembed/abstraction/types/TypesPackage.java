@@ -86,6 +86,15 @@ public interface TypesPackage extends EPackage {
 	int TYPE_DEFINITION__ORIGINS = InfrastructurePackage.MO_DEMBED_ELEMENT__ORIGINS;
 
 	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE_DEFINITION__ANNOTATIONS = InfrastructurePackage.MO_DEMBED_ELEMENT__ANNOTATIONS;
+
+	/**
 	 * The number of structural features of the '<em>Type Definition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -121,6 +130,15 @@ public interface TypesPackage extends EPackage {
 	 * @ordered
 	 */
 	int PRIMITIVE_TYPE_DEFINITION__ORIGINS = TYPE_DEFINITION__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRIMITIVE_TYPE_DEFINITION__ANNOTATIONS = TYPE_DEFINITION__ANNOTATIONS;
 
 	/**
 	 * The number of structural features of the '<em>Primitive Type Definition</em>' class.
@@ -160,6 +178,15 @@ public interface TypesPackage extends EPackage {
 	int COMPOSITE_TYPE_DEFINITION__ORIGINS = TYPE_DEFINITION__ORIGINS;
 
 	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_TYPE_DEFINITION__ANNOTATIONS = TYPE_DEFINITION__ANNOTATIONS;
+
+	/**
 	 * The number of structural features of the '<em>Composite Type Definition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -195,6 +222,15 @@ public interface TypesPackage extends EPackage {
 	 * @ordered
 	 */
 	int UNSIGNED_TYPE_DEFINITION__ORIGINS = PRIMITIVE_TYPE_DEFINITION__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNSIGNED_TYPE_DEFINITION__ANNOTATIONS = PRIMITIVE_TYPE_DEFINITION__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Bits</b></em>' attribute.
@@ -243,6 +279,15 @@ public interface TypesPackage extends EPackage {
 	int REFERENCE_TYPE_DEFINITION__ORIGINS = COMPOSITE_TYPE_DEFINITION__ORIGINS;
 
 	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFERENCE_TYPE_DEFINITION__ANNOTATIONS = COMPOSITE_TYPE_DEFINITION__ANNOTATIONS;
+
+	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -287,6 +332,15 @@ public interface TypesPackage extends EPackage {
 	 * @ordered
 	 */
 	int POINTER_TYPE_DEFINITION__ORIGINS = COMPOSITE_TYPE_DEFINITION__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POINTER_TYPE_DEFINITION__ANNOTATIONS = COMPOSITE_TYPE_DEFINITION__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Pointer Type</b></em>' containment reference.
@@ -335,6 +389,15 @@ public interface TypesPackage extends EPackage {
 	int ARRAY_DEFINITION__ORIGINS = POINTER_TYPE_DEFINITION__ORIGINS;
 
 	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARRAY_DEFINITION__ANNOTATIONS = POINTER_TYPE_DEFINITION__ANNOTATIONS;
+
+	/**
 	 * The feature id for the '<em><b>Pointer Type</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -381,6 +444,15 @@ public interface TypesPackage extends EPackage {
 	int STRUCTURE_TYPE_DEFINITION__ORIGINS = COMPOSITE_TYPE_DEFINITION__ORIGINS;
 
 	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURE_TYPE_DEFINITION__ANNOTATIONS = COMPOSITE_TYPE_DEFINITION__ANNOTATIONS;
+
+	/**
 	 * The feature id for the '<em><b>Elements</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -425,6 +497,15 @@ public interface TypesPackage extends EPackage {
 	 * @ordered
 	 */
 	int STRUCTURE_TYPE_ELEMENT__ORIGINS = InfrastructurePackage.NAMED_ELEMENT__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURE_TYPE_ELEMENT__ANNOTATIONS = InfrastructurePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -482,6 +563,15 @@ public interface TypesPackage extends EPackage {
 	int CODE_LABEL_TYPE_DEFINITION__ORIGINS = PRIMITIVE_TYPE_DEFINITION__ORIGINS;
 
 	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CODE_LABEL_TYPE_DEFINITION__ANNOTATIONS = PRIMITIVE_TYPE_DEFINITION__ANNOTATIONS;
+
+	/**
 	 * The number of structural features of the '<em>Code Label Type Definition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -517,6 +607,15 @@ public interface TypesPackage extends EPackage {
 	 * @ordered
 	 */
 	int TYPE__ORIGINS = InfrastructurePackage.ROOT_ELEMENT__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE__ANNOTATIONS = InfrastructurePackage.ROOT_ELEMENT__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.

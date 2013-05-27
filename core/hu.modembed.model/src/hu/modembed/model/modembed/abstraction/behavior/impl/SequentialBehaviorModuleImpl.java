@@ -4,8 +4,8 @@ package hu.modembed.model.modembed.abstraction.behavior.impl;
 
 import hu.modembed.model.modembed.abstraction.DeviceAbstraction;
 import hu.modembed.model.modembed.abstraction.behavior.BehaviorPackage;
-import hu.modembed.model.modembed.abstraction.behavior.SequentialBehavior;
 import hu.modembed.model.modembed.abstraction.behavior.SequentialBehaviorModule;
+import hu.modembed.model.modembed.abstraction.behavior.SequentialBehaviorPart;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolAssignment;
 import hu.modembed.model.modembed.infrastructure.impl.RootElementImpl;
 
@@ -64,7 +64,7 @@ public class SequentialBehaviorModuleImpl extends RootElementImpl implements Seq
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<SequentialBehavior> behaviorModels;
+	protected EList<SequentialBehaviorPart> behaviorModels;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -140,9 +140,9 @@ public class SequentialBehaviorModuleImpl extends RootElementImpl implements Seq
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<SequentialBehavior> getBehaviorModels() {
+	public EList<SequentialBehaviorPart> getBehaviorModels() {
 		if (behaviorModels == null) {
-			behaviorModels = new EObjectContainmentEList<SequentialBehavior>(SequentialBehavior.class, this, BehaviorPackage.SEQUENTIAL_BEHAVIOR_MODULE__BEHAVIOR_MODELS);
+			behaviorModels = new EObjectContainmentEList<SequentialBehaviorPart>(SequentialBehaviorPart.class, this, BehaviorPackage.SEQUENTIAL_BEHAVIOR_MODULE__BEHAVIOR_MODELS);
 		}
 		return behaviorModels;
 	}
@@ -200,7 +200,7 @@ public class SequentialBehaviorModuleImpl extends RootElementImpl implements Seq
 				return;
 			case BehaviorPackage.SEQUENTIAL_BEHAVIOR_MODULE__BEHAVIOR_MODELS:
 				getBehaviorModels().clear();
-				getBehaviorModels().addAll((Collection<? extends SequentialBehavior>)newValue);
+				getBehaviorModels().addAll((Collection<? extends SequentialBehaviorPart>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

@@ -80,6 +80,14 @@ public class BehaviorAdapterFactory extends AdapterFactoryImpl {
 				return createSequentialBehaviorAdapter();
 			}
 			@Override
+			public Adapter caseRootSequentialBehavior(RootSequentialBehavior object) {
+				return createRootSequentialBehaviorAdapter();
+			}
+			@Override
+			public Adapter caseSequentialBehaviorPart(SequentialBehaviorPart object) {
+				return createSequentialBehaviorPartAdapter();
+			}
+			@Override
 			public Adapter caseSequentialAction(SequentialAction object) {
 				return createSequentialActionAdapter();
 			}
@@ -164,6 +172,34 @@ public class BehaviorAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSequentialBehaviorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.modembed.abstraction.behavior.RootSequentialBehavior <em>Root Sequential Behavior</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.modembed.model.modembed.abstraction.behavior.RootSequentialBehavior
+	 * @generated
+	 */
+	public Adapter createRootSequentialBehaviorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.modembed.abstraction.behavior.SequentialBehaviorPart <em>Sequential Behavior Part</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.modembed.model.modembed.abstraction.behavior.SequentialBehaviorPart
+	 * @generated
+	 */
+	public Adapter createSequentialBehaviorPartAdapter() {
 		return null;
 	}
 

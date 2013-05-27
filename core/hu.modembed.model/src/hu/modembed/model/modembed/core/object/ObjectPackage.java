@@ -86,6 +86,15 @@ public interface ObjectPackage extends EPackage {
 	int ASSEMBLER_OBJECT__ORIGINS = InfrastructurePackage.ROOT_ELEMENT__ORIGINS;
 
 	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLER_OBJECT__ANNOTATIONS = InfrastructurePackage.ROOT_ELEMENT__ANNOTATIONS;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -150,6 +159,15 @@ public interface ObjectPackage extends EPackage {
 	int INSTRUCTION_CALL__ORIGINS = InfrastructurePackage.MO_DEMBED_ELEMENT__ORIGINS;
 
 	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION_CALL__ANNOTATIONS = InfrastructurePackage.MO_DEMBED_ELEMENT__ANNOTATIONS;
+
+	/**
 	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -203,6 +221,15 @@ public interface ObjectPackage extends EPackage {
 	 * @ordered
 	 */
 	int INSTRUCTION_CALL_PARAMETER__ORIGINS = InfrastructurePackage.MO_DEMBED_ELEMENT__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION_CALL_PARAMETER__ANNOTATIONS = InfrastructurePackage.MO_DEMBED_ELEMENT__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.

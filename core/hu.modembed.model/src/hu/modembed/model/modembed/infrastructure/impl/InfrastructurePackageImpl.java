@@ -26,6 +26,7 @@ import hu.modembed.model.modembed.core.object.ObjectPackage;
 
 import hu.modembed.model.modembed.core.object.impl.ObjectPackageImpl;
 
+import hu.modembed.model.modembed.infrastructure.Annotation;
 import hu.modembed.model.modembed.infrastructure.AttributeContainerDefinition;
 import hu.modembed.model.modembed.infrastructure.AttributeDefinition;
 import hu.modembed.model.modembed.infrastructure.AttributeValue;
@@ -60,6 +61,13 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	 * @generated
 	 */
 	private EClass moDembedElementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass annotationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -222,6 +230,42 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getMODembedElement_Annotations() {
+		return (EReference)moDembedElementEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAnnotation() {
+		return annotationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAnnotation_Key() {
+		return (EAttribute)annotationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAnnotation_Value() {
+		return (EAttribute)annotationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getNamedElement() {
 		return namedElementEClass;
 	}
@@ -356,6 +400,11 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 		moDembedElementEClass = createEClass(MO_DEMBED_ELEMENT);
 		createEAttribute(moDembedElementEClass, MO_DEMBED_ELEMENT__DESCRIPTION);
 		createEReference(moDembedElementEClass, MO_DEMBED_ELEMENT__ORIGINS);
+		createEReference(moDembedElementEClass, MO_DEMBED_ELEMENT__ANNOTATIONS);
+
+		annotationEClass = createEClass(ANNOTATION);
+		createEAttribute(annotationEClass, ANNOTATION__KEY);
+		createEAttribute(annotationEClass, ANNOTATION__VALUE);
 
 		namedElementEClass = createEClass(NAMED_ELEMENT);
 		createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
@@ -421,6 +470,11 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 		initEClass(moDembedElementEClass, MODembedElement.class, "MODembedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMODembedElement_Description(), ecorePackage.getEString(), "description", null, 0, 1, MODembedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMODembedElement_Origins(), theTraceabilityPackage.getOrigin(), null, "origins", null, 0, -1, MODembedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMODembedElement_Annotations(), this.getAnnotation(), null, "annotations", null, 0, -1, MODembedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(annotationEClass, Annotation.class, "Annotation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getAnnotation_Key(), ecorePackage.getEString(), "key", null, 1, 1, Annotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAnnotation_Value(), ecorePackage.getEString(), "value", null, 0, 1, Annotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(namedElementEClass, NamedElement.class, "NamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNamedElement_Name(), ecorePackage.getEString(), "name", null, 1, 1, NamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -2,6 +2,7 @@
  */
 package hu.modembed.model.modembed.infrastructure.impl;
 
+import hu.modembed.model.modembed.infrastructure.Annotation;
 import hu.modembed.model.modembed.infrastructure.InfrastructurePackage;
 import hu.modembed.model.modembed.infrastructure.MODembedElement;
 
@@ -32,6 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link hu.modembed.model.modembed.infrastructure.impl.MODembedElementImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link hu.modembed.model.modembed.infrastructure.impl.MODembedElementImpl#getOrigins <em>Origins</em>}</li>
+ *   <li>{@link hu.modembed.model.modembed.infrastructure.impl.MODembedElementImpl#getAnnotations <em>Annotations</em>}</li>
  * </ul>
  * </p>
  *
@@ -67,6 +69,16 @@ public abstract class MODembedElementImpl extends EObjectImpl implements MODembe
 	 * @ordered
 	 */
 	protected EList<Origin> origins;
+
+	/**
+	 * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAnnotations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Annotation> annotations;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -125,11 +137,25 @@ public abstract class MODembedElementImpl extends EObjectImpl implements MODembe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Annotation> getAnnotations() {
+		if (annotations == null) {
+			annotations = new EObjectContainmentEList<Annotation>(Annotation.class, this, InfrastructurePackage.MO_DEMBED_ELEMENT__ANNOTATIONS);
+		}
+		return annotations;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case InfrastructurePackage.MO_DEMBED_ELEMENT__ORIGINS:
 				return ((InternalEList<?>)getOrigins()).basicRemove(otherEnd, msgs);
+			case InfrastructurePackage.MO_DEMBED_ELEMENT__ANNOTATIONS:
+				return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -146,6 +172,8 @@ public abstract class MODembedElementImpl extends EObjectImpl implements MODembe
 				return getDescription();
 			case InfrastructurePackage.MO_DEMBED_ELEMENT__ORIGINS:
 				return getOrigins();
+			case InfrastructurePackage.MO_DEMBED_ELEMENT__ANNOTATIONS:
+				return getAnnotations();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -166,6 +194,10 @@ public abstract class MODembedElementImpl extends EObjectImpl implements MODembe
 				getOrigins().clear();
 				getOrigins().addAll((Collection<? extends Origin>)newValue);
 				return;
+			case InfrastructurePackage.MO_DEMBED_ELEMENT__ANNOTATIONS:
+				getAnnotations().clear();
+				getAnnotations().addAll((Collection<? extends Annotation>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -184,6 +216,9 @@ public abstract class MODembedElementImpl extends EObjectImpl implements MODembe
 			case InfrastructurePackage.MO_DEMBED_ELEMENT__ORIGINS:
 				getOrigins().clear();
 				return;
+			case InfrastructurePackage.MO_DEMBED_ELEMENT__ANNOTATIONS:
+				getAnnotations().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -200,6 +235,8 @@ public abstract class MODembedElementImpl extends EObjectImpl implements MODembe
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case InfrastructurePackage.MO_DEMBED_ELEMENT__ORIGINS:
 				return origins != null && !origins.isEmpty();
+			case InfrastructurePackage.MO_DEMBED_ELEMENT__ANNOTATIONS:
+				return annotations != null && !annotations.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

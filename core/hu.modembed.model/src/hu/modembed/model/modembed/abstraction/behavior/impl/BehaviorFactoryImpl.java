@@ -57,7 +57,8 @@ public class BehaviorFactoryImpl extends EFactoryImpl implements BehaviorFactory
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case BehaviorPackage.SEQUENTIAL_BEHAVIOR_MODULE: return createSequentialBehaviorModule();
-			case BehaviorPackage.SEQUENTIAL_BEHAVIOR: return createSequentialBehavior();
+			case BehaviorPackage.ROOT_SEQUENTIAL_BEHAVIOR: return createRootSequentialBehavior();
+			case BehaviorPackage.SEQUENTIAL_BEHAVIOR_PART: return createSequentialBehaviorPart();
 			case BehaviorPackage.CODE_SYMBOL_PLACEMENT: return createCodeSymbolPlacement();
 			case BehaviorPackage.OPERATION_EXECUTION: return createOperationExecution();
 			case BehaviorPackage.SYMBOL_ALLOCATION: return createSymbolAllocation();
@@ -83,9 +84,19 @@ public class BehaviorFactoryImpl extends EFactoryImpl implements BehaviorFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SequentialBehavior createSequentialBehavior() {
-		SequentialBehaviorImpl sequentialBehavior = new SequentialBehaviorImpl();
-		return sequentialBehavior;
+	public RootSequentialBehavior createRootSequentialBehavior() {
+		RootSequentialBehaviorImpl rootSequentialBehavior = new RootSequentialBehaviorImpl();
+		return rootSequentialBehavior;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SequentialBehaviorPart createSequentialBehaviorPart() {
+		SequentialBehaviorPartImpl sequentialBehaviorPart = new SequentialBehaviorPartImpl();
+		return sequentialBehaviorPart;
 	}
 
 	/**

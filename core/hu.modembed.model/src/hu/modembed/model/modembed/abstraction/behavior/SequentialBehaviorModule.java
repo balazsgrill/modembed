@@ -70,7 +70,7 @@ public interface SequentialBehaviorModule extends RootElement {
 
 	/**
 	 * Returns the value of the '<em><b>Behavior Models</b></em>' containment reference list.
-	 * The list contents are of type {@link hu.modembed.model.modembed.abstraction.behavior.SequentialBehavior}.
+	 * The list contents are of type {@link hu.modembed.model.modembed.abstraction.behavior.SequentialBehaviorPart}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Behavior Models</em>' containment reference list isn't clear,
@@ -82,6 +82,6 @@ public interface SequentialBehaviorModule extends RootElement {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<SequentialBehavior> getBehaviorModels();
+	EList<SequentialBehaviorPart> getBehaviorModels();
 
 } // SequentialBehaviorModule

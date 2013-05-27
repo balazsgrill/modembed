@@ -72,6 +72,10 @@ public class InfrastructureAdapterFactory extends AdapterFactoryImpl {
 				return createMODembedElementAdapter();
 			}
 			@Override
+			public Adapter caseAnnotation(Annotation object) {
+				return createAnnotationAdapter();
+			}
+			@Override
 			public Adapter caseNamedElement(NamedElement object) {
 				return createNamedElementAdapter();
 			}
@@ -126,6 +130,20 @@ public class InfrastructureAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createMODembedElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.modembed.infrastructure.Annotation <em>Annotation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.modembed.model.modembed.infrastructure.Annotation
+	 * @generated
+	 */
+	public Adapter createAnnotationAdapter() {
 		return null;
 	}
 

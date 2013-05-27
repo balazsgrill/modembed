@@ -11,6 +11,11 @@
       <genClasses image="false" ecoreClass="modembed.ecore#//infrastructure/MODembedElement">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.ecore#//infrastructure/MODembedElement/description"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//infrastructure/MODembedElement/origins"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//infrastructure/MODembedElement/annotations"/>
+      </genClasses>
+      <genClasses ecoreClass="modembed.ecore#//infrastructure/Annotation">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.ecore#//infrastructure/Annotation/key"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.ecore#//infrastructure/Annotation/value"/>
       </genClasses>
       <genClasses image="false" ecoreClass="modembed.ecore#//infrastructure/NamedElement">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.ecore#//infrastructure/NamedElement/name"/>
@@ -165,8 +170,14 @@
         </genClasses>
         <genClasses ecoreClass="modembed.ecore#//abstraction/behavior/SequentialBehavior">
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//abstraction/behavior/SequentialBehavior/actions"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.ecore#//abstraction/behavior/SequentialBehavior/parameters"/>
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//abstraction/behavior/SequentialBehavior/localSymbols"/>
+        </genClasses>
+        <genClasses ecoreClass="modembed.ecore#//abstraction/behavior/RootSequentialBehavior">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference modembed.ecore#//abstraction/behavior/RootSequentialBehavior/device"/>
+        </genClasses>
+        <genClasses ecoreClass="modembed.ecore#//abstraction/behavior/SequentialBehaviorPart">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.ecore#//abstraction/behavior/SequentialBehaviorPart/parameters"/>
         </genClasses>
         <genClasses image="false" ecoreClass="modembed.ecore#//abstraction/behavior/SequentialAction"/>
         <genClasses ecoreClass="modembed.ecore#//abstraction/behavior/CodeSymbolPlacement">
@@ -200,7 +211,7 @@
           <genClasses ecoreClass="modembed.ecore#//abstraction/behavior/platform/OperationArgument">
             <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//abstraction/behavior/platform/OperationArgument/type"/>
             <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                ecoreFeature="ecore:EReference modembed.ecore#//abstraction/behavior/platform/OperationArgument/indirection"/>
+                ecoreFeature="ecore:EReference modembed.ecore#//abstraction/behavior/platform/OperationArgument/memType"/>
           </genClasses>
           <genClasses ecoreClass="modembed.ecore#//abstraction/behavior/platform/InstructionCallOperationStep">
             <genFeatures notify="false" createChild="false" propertySortChoices="true"

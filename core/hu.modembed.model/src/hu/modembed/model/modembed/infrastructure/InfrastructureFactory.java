@@ -22,6 +22,15 @@ public interface InfrastructureFactory extends EFactory {
 	InfrastructureFactory eINSTANCE = hu.modembed.model.modembed.infrastructure.impl.InfrastructureFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Annotation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Annotation</em>'.
+	 * @generated
+	 */
+	Annotation createAnnotation();
+
+	/**
 	 * Returns a new object of class '<em>Attribute Container Definition</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

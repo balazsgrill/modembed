@@ -86,6 +86,15 @@ public interface PlatformPackage extends EPackage {
 	int OPERATION_DEFINITION__ORIGINS = InfrastructurePackage.MO_DEMBED_ELEMENT__ORIGINS;
 
 	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_DEFINITION__ANNOTATIONS = InfrastructurePackage.MO_DEMBED_ELEMENT__ANNOTATIONS;
+
+	/**
 	 * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -148,6 +157,15 @@ public interface PlatformPackage extends EPackage {
 	 * @ordered
 	 */
 	int OPERATION_ARGUMENT__ORIGINS = InfrastructurePackage.NAMED_ELEMENT__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_ARGUMENT__ANNOTATIONS = InfrastructurePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -214,6 +232,15 @@ public interface PlatformPackage extends EPackage {
 	int OPERATION_STEP__ORIGINS = InfrastructurePackage.MO_DEMBED_ELEMENT__ORIGINS;
 
 	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_STEP__ANNOTATIONS = InfrastructurePackage.MO_DEMBED_ELEMENT__ANNOTATIONS;
+
+	/**
 	 * The number of structural features of the '<em>Operation Step</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -249,6 +276,15 @@ public interface PlatformPackage extends EPackage {
 	 * @ordered
 	 */
 	int INSTRUCTION_CALL_OPERATION_STEP__ORIGINS = OPERATION_STEP__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION_CALL_OPERATION_STEP__ANNOTATIONS = OPERATION_STEP__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Instruction</b></em>' reference.
@@ -304,6 +340,15 @@ public interface PlatformPackage extends EPackage {
 	 * @ordered
 	 */
 	int INSTRUCTION_PARAMETER_MAPPING__ORIGINS = InfrastructurePackage.MO_DEMBED_ELEMENT__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION_PARAMETER_MAPPING__ANNOTATIONS = InfrastructurePackage.MO_DEMBED_ELEMENT__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' reference.

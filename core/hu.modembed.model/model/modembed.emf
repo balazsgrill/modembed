@@ -5,10 +5,15 @@ package modembed;
 package infrastructure{
 	
 	abstract class MODembedElement{
-		
 		attr String[0..1] description;
-		
 		val traceability.Origin[*] origins;
+		val Annotation[*] annotations;
+	}
+	
+	class Annotation{
+		
+		attr String[1] key;
+		attr String value;
 	}
 	
 	@namespace(uri="http://modembed.hu/infrastructure/traceability", prefix="traceability")
@@ -214,13 +219,20 @@ package abstraction {
   	class SequentialBehaviorModule extends infrastructure.RootElement {
   		ref DeviceAbstraction device;
   		val SymbolAssignment[*] symbolMappings;
-  		val SequentialBehavior[*] behaviorModels;
+  		val SequentialBehaviorPart[*] behaviorModels;
   	}
   
-    class SequentialBehavior extends infrastructure.NamedElement {
-    	val SequentialAction[*] actions;
+  	abstract interface SequentialBehavior{
+  		val SequentialAction[*] actions;
+  		val SymbolAssignment[*] localSymbols;
+  	}
+  
+  	class RootSequentialBehavior extends infrastructure.RootElement, SequentialBehavior{
+  		ref DeviceAbstraction device;
+  	}
+  
+    class SequentialBehaviorPart extends infrastructure.NamedElement, SequentialBehavior  {
     	attr String[*] parameters;
-    	val SymbolAssignment[*] localSymbols;
     }
 
     abstract class SequentialAction extends infrastructure.MODembedElement {

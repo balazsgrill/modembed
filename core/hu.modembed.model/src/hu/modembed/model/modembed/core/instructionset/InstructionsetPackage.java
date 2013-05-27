@@ -86,6 +86,15 @@ public interface InstructionsetPackage extends EPackage {
 	int INSTRUCTION_SET__ORIGINS = InfrastructurePackage.ROOT_ELEMENT__ORIGINS;
 
 	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION_SET__ANNOTATIONS = InfrastructurePackage.ROOT_ELEMENT__ANNOTATIONS;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -148,6 +157,15 @@ public interface InstructionsetPackage extends EPackage {
 	 * @ordered
 	 */
 	int INSTRUCTION__ORIGINS = InfrastructurePackage.NAMED_ELEMENT__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION__ANNOTATIONS = InfrastructurePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -214,6 +232,15 @@ public interface InstructionsetPackage extends EPackage {
 	int INSTRUCTION_PARAMETER__ORIGINS = InfrastructurePackage.NAMED_ELEMENT__ORIGINS;
 
 	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION_PARAMETER__ANNOTATIONS = InfrastructurePackage.NAMED_ELEMENT__ANNOTATIONS;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -269,6 +296,15 @@ public interface InstructionsetPackage extends EPackage {
 	int INSTRUCTION_SECTION__ORIGINS = InfrastructurePackage.MO_DEMBED_ELEMENT__ORIGINS;
 
 	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION_SECTION__ANNOTATIONS = InfrastructurePackage.MO_DEMBED_ELEMENT__ANNOTATIONS;
+
+	/**
 	 * The feature id for the '<em><b>Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -322,6 +358,15 @@ public interface InstructionsetPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONSTANT_SECTION__ORIGINS = INSTRUCTION_SECTION__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTANT_SECTION__ANNOTATIONS = INSTRUCTION_SECTION__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Size</b></em>' attribute.
@@ -388,6 +433,15 @@ public interface InstructionsetPackage extends EPackage {
 	int PARAMETER_SECTION__ORIGINS = INSTRUCTION_SECTION__ORIGINS;
 
 	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_SECTION__ANNOTATIONS = INSTRUCTION_SECTION__ANNOTATIONS;
+
+	/**
 	 * The feature id for the '<em><b>Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -452,6 +506,15 @@ public interface InstructionsetPackage extends EPackage {
 	int INSTRUCTION_WORD__ORIGINS = InfrastructurePackage.MO_DEMBED_ELEMENT__ORIGINS;
 
 	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION_WORD__ANNOTATIONS = InfrastructurePackage.MO_DEMBED_ELEMENT__ANNOTATIONS;
+
+	/**
 	 * The feature id for the '<em><b>Sections</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -507,6 +570,15 @@ public interface InstructionsetPackage extends EPackage {
 	int INSTRUCTION_WORD_CONDITION__ORIGINS = InfrastructurePackage.MO_DEMBED_ELEMENT__ORIGINS;
 
 	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION_WORD_CONDITION__ANNOTATIONS = InfrastructurePackage.MO_DEMBED_ELEMENT__ANNOTATIONS;
+
+	/**
 	 * The number of structural features of the '<em>Instruction Word Condition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -542,6 +614,15 @@ public interface InstructionsetPackage extends EPackage {
 	 * @ordered
 	 */
 	int INSTRUCTION_WORD_MASKED_VALUE_CONDITION__ORIGINS = INSTRUCTION_WORD_CONDITION__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION_WORD_MASKED_VALUE_CONDITION__ANNOTATIONS = INSTRUCTION_WORD_CONDITION__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Mask</b></em>' attribute.

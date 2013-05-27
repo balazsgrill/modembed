@@ -84,13 +84,59 @@ public interface InfrastructurePackage extends EPackage {
 	int MO_DEMBED_ELEMENT__ORIGINS = 1;
 
 	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MO_DEMBED_ELEMENT__ANNOTATIONS = 2;
+
+	/**
 	 * The number of structural features of the '<em>MO Dembed Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MO_DEMBED_ELEMENT_FEATURE_COUNT = 2;
+	int MO_DEMBED_ELEMENT_FEATURE_COUNT = 3;
+
+	/**
+	 * The meta object id for the '{@link hu.modembed.model.modembed.infrastructure.impl.AnnotationImpl <em>Annotation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.modembed.model.modembed.infrastructure.impl.AnnotationImpl
+	 * @see hu.modembed.model.modembed.infrastructure.impl.InfrastructurePackageImpl#getAnnotation()
+	 * @generated
+	 */
+	int ANNOTATION = 1;
+
+	/**
+	 * The feature id for the '<em><b>Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANNOTATION__KEY = 0;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANNOTATION__VALUE = 1;
+
+	/**
+	 * The number of structural features of the '<em>Annotation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANNOTATION_FEATURE_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link hu.modembed.model.modembed.infrastructure.impl.NamedElementImpl <em>Named Element</em>}' class.
@@ -100,7 +146,7 @@ public interface InfrastructurePackage extends EPackage {
 	 * @see hu.modembed.model.modembed.infrastructure.impl.InfrastructurePackageImpl#getNamedElement()
 	 * @generated
 	 */
-	int NAMED_ELEMENT = 1;
+	int NAMED_ELEMENT = 2;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -119,6 +165,15 @@ public interface InfrastructurePackage extends EPackage {
 	 * @ordered
 	 */
 	int NAMED_ELEMENT__ORIGINS = MO_DEMBED_ELEMENT__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMED_ELEMENT__ANNOTATIONS = MO_DEMBED_ELEMENT__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -146,7 +201,7 @@ public interface InfrastructurePackage extends EPackage {
 	 * @see hu.modembed.model.modembed.infrastructure.impl.InfrastructurePackageImpl#getRootElement()
 	 * @generated
 	 */
-	int ROOT_ELEMENT = 2;
+	int ROOT_ELEMENT = 3;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -165,6 +220,15 @@ public interface InfrastructurePackage extends EPackage {
 	 * @ordered
 	 */
 	int ROOT_ELEMENT__ORIGINS = NAMED_ELEMENT__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOT_ELEMENT__ANNOTATIONS = NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -193,7 +257,7 @@ public interface InfrastructurePackage extends EPackage {
 	 * @see hu.modembed.model.modembed.infrastructure.impl.InfrastructurePackageImpl#getAttributeContainerDefinition()
 	 * @generated
 	 */
-	int ATTRIBUTE_CONTAINER_DEFINITION = 3;
+	int ATTRIBUTE_CONTAINER_DEFINITION = 4;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -212,6 +276,15 @@ public interface InfrastructurePackage extends EPackage {
 	 * @ordered
 	 */
 	int ATTRIBUTE_CONTAINER_DEFINITION__ORIGINS = ROOT_ELEMENT__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_CONTAINER_DEFINITION__ANNOTATIONS = ROOT_ELEMENT__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -248,7 +321,7 @@ public interface InfrastructurePackage extends EPackage {
 	 * @see hu.modembed.model.modembed.infrastructure.impl.InfrastructurePackageImpl#getAttributeDefinition()
 	 * @generated
 	 */
-	int ATTRIBUTE_DEFINITION = 4;
+	int ATTRIBUTE_DEFINITION = 5;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -267,6 +340,15 @@ public interface InfrastructurePackage extends EPackage {
 	 * @ordered
 	 */
 	int ATTRIBUTE_DEFINITION__ORIGINS = NAMED_ELEMENT__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_DEFINITION__ANNOTATIONS = NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -294,7 +376,7 @@ public interface InfrastructurePackage extends EPackage {
 	 * @see hu.modembed.model.modembed.infrastructure.impl.InfrastructurePackageImpl#getAttributeValueContainer()
 	 * @generated
 	 */
-	int ATTRIBUTE_VALUE_CONTAINER = 5;
+	int ATTRIBUTE_VALUE_CONTAINER = 6;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -313,6 +395,15 @@ public interface InfrastructurePackage extends EPackage {
 	 * @ordered
 	 */
 	int ATTRIBUTE_VALUE_CONTAINER__ORIGINS = ROOT_ELEMENT__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_VALUE_CONTAINER__ANNOTATIONS = ROOT_ELEMENT__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -358,7 +449,7 @@ public interface InfrastructurePackage extends EPackage {
 	 * @see hu.modembed.model.modembed.infrastructure.impl.InfrastructurePackageImpl#getAttributeValue()
 	 * @generated
 	 */
-	int ATTRIBUTE_VALUE = 6;
+	int ATTRIBUTE_VALUE = 7;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -377,6 +468,15 @@ public interface InfrastructurePackage extends EPackage {
 	 * @ordered
 	 */
 	int ATTRIBUTE_VALUE__ORIGINS = MO_DEMBED_ELEMENT__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_VALUE__ANNOTATIONS = MO_DEMBED_ELEMENT__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Definition</b></em>' reference.
@@ -437,6 +537,49 @@ public interface InfrastructurePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getMODembedElement_Origins();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link hu.modembed.model.modembed.infrastructure.MODembedElement#getAnnotations <em>Annotations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Annotations</em>'.
+	 * @see hu.modembed.model.modembed.infrastructure.MODembedElement#getAnnotations()
+	 * @see #getMODembedElement()
+	 * @generated
+	 */
+	EReference getMODembedElement_Annotations();
+
+	/**
+	 * Returns the meta object for class '{@link hu.modembed.model.modembed.infrastructure.Annotation <em>Annotation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Annotation</em>'.
+	 * @see hu.modembed.model.modembed.infrastructure.Annotation
+	 * @generated
+	 */
+	EClass getAnnotation();
+
+	/**
+	 * Returns the meta object for the attribute '{@link hu.modembed.model.modembed.infrastructure.Annotation#getKey <em>Key</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Key</em>'.
+	 * @see hu.modembed.model.modembed.infrastructure.Annotation#getKey()
+	 * @see #getAnnotation()
+	 * @generated
+	 */
+	EAttribute getAnnotation_Key();
+
+	/**
+	 * Returns the meta object for the attribute '{@link hu.modembed.model.modembed.infrastructure.Annotation#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see hu.modembed.model.modembed.infrastructure.Annotation#getValue()
+	 * @see #getAnnotation()
+	 * @generated
+	 */
+	EAttribute getAnnotation_Value();
 
 	/**
 	 * Returns the meta object for class '{@link hu.modembed.model.modembed.infrastructure.NamedElement <em>Named Element</em>}'.
@@ -611,6 +754,40 @@ public interface InfrastructurePackage extends EPackage {
 		 * @generated
 		 */
 		EReference MO_DEMBED_ELEMENT__ORIGINS = eINSTANCE.getMODembedElement_Origins();
+
+		/**
+		 * The meta object literal for the '<em><b>Annotations</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MO_DEMBED_ELEMENT__ANNOTATIONS = eINSTANCE.getMODembedElement_Annotations();
+
+		/**
+		 * The meta object literal for the '{@link hu.modembed.model.modembed.infrastructure.impl.AnnotationImpl <em>Annotation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.modembed.model.modembed.infrastructure.impl.AnnotationImpl
+		 * @see hu.modembed.model.modembed.infrastructure.impl.InfrastructurePackageImpl#getAnnotation()
+		 * @generated
+		 */
+		EClass ANNOTATION = eINSTANCE.getAnnotation();
+
+		/**
+		 * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ANNOTATION__KEY = eINSTANCE.getAnnotation_Key();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ANNOTATION__VALUE = eINSTANCE.getAnnotation_Value();
 
 		/**
 		 * The meta object literal for the '{@link hu.modembed.model.modembed.infrastructure.impl.NamedElementImpl <em>Named Element</em>}' class.

@@ -86,6 +86,15 @@ public interface BehaviorPackage extends EPackage {
 	int SEQUENTIAL_BEHAVIOR_MODULE__ORIGINS = InfrastructurePackage.ROOT_ELEMENT__ORIGINS;
 
 	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEQUENTIAL_BEHAVIOR_MODULE__ANNOTATIONS = InfrastructurePackage.ROOT_ELEMENT__ANNOTATIONS;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -131,41 +140,14 @@ public interface BehaviorPackage extends EPackage {
 	int SEQUENTIAL_BEHAVIOR_MODULE_FEATURE_COUNT = InfrastructurePackage.ROOT_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
-	 * The meta object id for the '{@link hu.modembed.model.modembed.abstraction.behavior.impl.SequentialBehaviorImpl <em>Sequential Behavior</em>}' class.
+	 * The meta object id for the '{@link hu.modembed.model.modembed.abstraction.behavior.SequentialBehavior <em>Sequential Behavior</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see hu.modembed.model.modembed.abstraction.behavior.impl.SequentialBehaviorImpl
+	 * @see hu.modembed.model.modembed.abstraction.behavior.SequentialBehavior
 	 * @see hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorPackageImpl#getSequentialBehavior()
 	 * @generated
 	 */
 	int SEQUENTIAL_BEHAVIOR = 1;
-
-	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SEQUENTIAL_BEHAVIOR__DESCRIPTION = InfrastructurePackage.NAMED_ELEMENT__DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SEQUENTIAL_BEHAVIOR__ORIGINS = InfrastructurePackage.NAMED_ELEMENT__ORIGINS;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SEQUENTIAL_BEHAVIOR__NAME = InfrastructurePackage.NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
@@ -174,16 +156,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SEQUENTIAL_BEHAVIOR__ACTIONS = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Parameters</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SEQUENTIAL_BEHAVIOR__PARAMETERS = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int SEQUENTIAL_BEHAVIOR__ACTIONS = 0;
 
 	/**
 	 * The feature id for the '<em><b>Local Symbols</b></em>' containment reference list.
@@ -192,7 +165,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SEQUENTIAL_BEHAVIOR__LOCAL_SYMBOLS = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int SEQUENTIAL_BEHAVIOR__LOCAL_SYMBOLS = 1;
 
 	/**
 	 * The number of structural features of the '<em>Sequential Behavior</em>' class.
@@ -201,7 +174,171 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SEQUENTIAL_BEHAVIOR_FEATURE_COUNT = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int SEQUENTIAL_BEHAVIOR_FEATURE_COUNT = 2;
+
+	/**
+	 * The meta object id for the '{@link hu.modembed.model.modembed.abstraction.behavior.impl.RootSequentialBehaviorImpl <em>Root Sequential Behavior</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.modembed.model.modembed.abstraction.behavior.impl.RootSequentialBehaviorImpl
+	 * @see hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorPackageImpl#getRootSequentialBehavior()
+	 * @generated
+	 */
+	int ROOT_SEQUENTIAL_BEHAVIOR = 2;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOT_SEQUENTIAL_BEHAVIOR__DESCRIPTION = InfrastructurePackage.ROOT_ELEMENT__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOT_SEQUENTIAL_BEHAVIOR__ORIGINS = InfrastructurePackage.ROOT_ELEMENT__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOT_SEQUENTIAL_BEHAVIOR__ANNOTATIONS = InfrastructurePackage.ROOT_ELEMENT__ANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOT_SEQUENTIAL_BEHAVIOR__NAME = InfrastructurePackage.ROOT_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOT_SEQUENTIAL_BEHAVIOR__ACTIONS = InfrastructurePackage.ROOT_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Local Symbols</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOT_SEQUENTIAL_BEHAVIOR__LOCAL_SYMBOLS = InfrastructurePackage.ROOT_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Device</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOT_SEQUENTIAL_BEHAVIOR__DEVICE = InfrastructurePackage.ROOT_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Root Sequential Behavior</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOT_SEQUENTIAL_BEHAVIOR_FEATURE_COUNT = InfrastructurePackage.ROOT_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The meta object id for the '{@link hu.modembed.model.modembed.abstraction.behavior.impl.SequentialBehaviorPartImpl <em>Sequential Behavior Part</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.modembed.model.modembed.abstraction.behavior.impl.SequentialBehaviorPartImpl
+	 * @see hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorPackageImpl#getSequentialBehaviorPart()
+	 * @generated
+	 */
+	int SEQUENTIAL_BEHAVIOR_PART = 3;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEQUENTIAL_BEHAVIOR_PART__DESCRIPTION = InfrastructurePackage.NAMED_ELEMENT__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEQUENTIAL_BEHAVIOR_PART__ORIGINS = InfrastructurePackage.NAMED_ELEMENT__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEQUENTIAL_BEHAVIOR_PART__ANNOTATIONS = InfrastructurePackage.NAMED_ELEMENT__ANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEQUENTIAL_BEHAVIOR_PART__NAME = InfrastructurePackage.NAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEQUENTIAL_BEHAVIOR_PART__ACTIONS = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Local Symbols</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEQUENTIAL_BEHAVIOR_PART__LOCAL_SYMBOLS = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Parameters</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEQUENTIAL_BEHAVIOR_PART__PARAMETERS = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Sequential Behavior Part</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEQUENTIAL_BEHAVIOR_PART_FEATURE_COUNT = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link hu.modembed.model.modembed.abstraction.behavior.impl.SequentialActionImpl <em>Sequential Action</em>}' class.
@@ -211,7 +348,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @see hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorPackageImpl#getSequentialAction()
 	 * @generated
 	 */
-	int SEQUENTIAL_ACTION = 2;
+	int SEQUENTIAL_ACTION = 4;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -232,6 +369,15 @@ public interface BehaviorPackage extends EPackage {
 	int SEQUENTIAL_ACTION__ORIGINS = InfrastructurePackage.MO_DEMBED_ELEMENT__ORIGINS;
 
 	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEQUENTIAL_ACTION__ANNOTATIONS = InfrastructurePackage.MO_DEMBED_ELEMENT__ANNOTATIONS;
+
+	/**
 	 * The number of structural features of the '<em>Sequential Action</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -248,7 +394,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @see hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorPackageImpl#getCodeSymbolPlacement()
 	 * @generated
 	 */
-	int CODE_SYMBOL_PLACEMENT = 3;
+	int CODE_SYMBOL_PLACEMENT = 5;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -267,6 +413,15 @@ public interface BehaviorPackage extends EPackage {
 	 * @ordered
 	 */
 	int CODE_SYMBOL_PLACEMENT__ORIGINS = SEQUENTIAL_ACTION__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CODE_SYMBOL_PLACEMENT__ANNOTATIONS = SEQUENTIAL_ACTION__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Symbol</b></em>' attribute.
@@ -294,7 +449,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @see hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorPackageImpl#getOperationExecution()
 	 * @generated
 	 */
-	int OPERATION_EXECUTION = 4;
+	int OPERATION_EXECUTION = 6;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -313,6 +468,15 @@ public interface BehaviorPackage extends EPackage {
 	 * @ordered
 	 */
 	int OPERATION_EXECUTION__ORIGINS = SEQUENTIAL_ACTION__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_EXECUTION__ANNOTATIONS = SEQUENTIAL_ACTION__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Arguments</b></em>' attribute list.
@@ -349,7 +513,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @see hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorPackageImpl#getSymbolAssignment()
 	 * @generated
 	 */
-	int SYMBOL_ASSIGNMENT = 5;
+	int SYMBOL_ASSIGNMENT = 7;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -368,6 +532,15 @@ public interface BehaviorPackage extends EPackage {
 	 * @ordered
 	 */
 	int SYMBOL_ASSIGNMENT__ORIGINS = InfrastructurePackage.MO_DEMBED_ELEMENT__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_ASSIGNMENT__ANNOTATIONS = InfrastructurePackage.MO_DEMBED_ELEMENT__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Symbol</b></em>' attribute.
@@ -404,7 +577,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @see hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorPackageImpl#getSymbolAllocation()
 	 * @generated
 	 */
-	int SYMBOL_ALLOCATION = 6;
+	int SYMBOL_ALLOCATION = 8;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -423,6 +596,15 @@ public interface BehaviorPackage extends EPackage {
 	 * @ordered
 	 */
 	int SYMBOL_ALLOCATION__ORIGINS = SYMBOL_ASSIGNMENT__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_ALLOCATION__ANNOTATIONS = SYMBOL_ASSIGNMENT__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Symbol</b></em>' attribute.
@@ -459,7 +641,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @see hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorPackageImpl#getSymbolAddressAssignment()
 	 * @generated
 	 */
-	int SYMBOL_ADDRESS_ASSIGNMENT = 7;
+	int SYMBOL_ADDRESS_ASSIGNMENT = 9;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -478,6 +660,15 @@ public interface BehaviorPackage extends EPackage {
 	 * @ordered
 	 */
 	int SYMBOL_ADDRESS_ASSIGNMENT__ORIGINS = SYMBOL_ASSIGNMENT__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_ADDRESS_ASSIGNMENT__ANNOTATIONS = SYMBOL_ASSIGNMENT__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Symbol</b></em>' attribute.
@@ -532,7 +723,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @see hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorPackageImpl#getSymbolValueAssignment()
 	 * @generated
 	 */
-	int SYMBOL_VALUE_ASSIGNMENT = 8;
+	int SYMBOL_VALUE_ASSIGNMENT = 10;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -551,6 +742,15 @@ public interface BehaviorPackage extends EPackage {
 	 * @ordered
 	 */
 	int SYMBOL_VALUE_ASSIGNMENT__ORIGINS = SYMBOL_ASSIGNMENT__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_VALUE_ASSIGNMENT__ANNOTATIONS = SYMBOL_ASSIGNMENT__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Symbol</b></em>' attribute.
@@ -654,17 +854,6 @@ public interface BehaviorPackage extends EPackage {
 	EReference getSequentialBehavior_Actions();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link hu.modembed.model.modembed.abstraction.behavior.SequentialBehavior#getParameters <em>Parameters</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Parameters</em>'.
-	 * @see hu.modembed.model.modembed.abstraction.behavior.SequentialBehavior#getParameters()
-	 * @see #getSequentialBehavior()
-	 * @generated
-	 */
-	EAttribute getSequentialBehavior_Parameters();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link hu.modembed.model.modembed.abstraction.behavior.SequentialBehavior#getLocalSymbols <em>Local Symbols</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -674,6 +863,48 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSequentialBehavior_LocalSymbols();
+
+	/**
+	 * Returns the meta object for class '{@link hu.modembed.model.modembed.abstraction.behavior.RootSequentialBehavior <em>Root Sequential Behavior</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Root Sequential Behavior</em>'.
+	 * @see hu.modembed.model.modembed.abstraction.behavior.RootSequentialBehavior
+	 * @generated
+	 */
+	EClass getRootSequentialBehavior();
+
+	/**
+	 * Returns the meta object for the reference '{@link hu.modembed.model.modembed.abstraction.behavior.RootSequentialBehavior#getDevice <em>Device</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Device</em>'.
+	 * @see hu.modembed.model.modembed.abstraction.behavior.RootSequentialBehavior#getDevice()
+	 * @see #getRootSequentialBehavior()
+	 * @generated
+	 */
+	EReference getRootSequentialBehavior_Device();
+
+	/**
+	 * Returns the meta object for class '{@link hu.modembed.model.modembed.abstraction.behavior.SequentialBehaviorPart <em>Sequential Behavior Part</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Sequential Behavior Part</em>'.
+	 * @see hu.modembed.model.modembed.abstraction.behavior.SequentialBehaviorPart
+	 * @generated
+	 */
+	EClass getSequentialBehaviorPart();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link hu.modembed.model.modembed.abstraction.behavior.SequentialBehaviorPart#getParameters <em>Parameters</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Parameters</em>'.
+	 * @see hu.modembed.model.modembed.abstraction.behavior.SequentialBehaviorPart#getParameters()
+	 * @see #getSequentialBehaviorPart()
+	 * @generated
+	 */
+	EAttribute getSequentialBehaviorPart_Parameters();
 
 	/**
 	 * Returns the meta object for class '{@link hu.modembed.model.modembed.abstraction.behavior.SequentialAction <em>Sequential Action</em>}'.
@@ -890,10 +1121,10 @@ public interface BehaviorPackage extends EPackage {
 		EReference SEQUENTIAL_BEHAVIOR_MODULE__BEHAVIOR_MODELS = eINSTANCE.getSequentialBehaviorModule_BehaviorModels();
 
 		/**
-		 * The meta object literal for the '{@link hu.modembed.model.modembed.abstraction.behavior.impl.SequentialBehaviorImpl <em>Sequential Behavior</em>}' class.
+		 * The meta object literal for the '{@link hu.modembed.model.modembed.abstraction.behavior.SequentialBehavior <em>Sequential Behavior</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see hu.modembed.model.modembed.abstraction.behavior.impl.SequentialBehaviorImpl
+		 * @see hu.modembed.model.modembed.abstraction.behavior.SequentialBehavior
 		 * @see hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorPackageImpl#getSequentialBehavior()
 		 * @generated
 		 */
@@ -908,20 +1139,48 @@ public interface BehaviorPackage extends EPackage {
 		EReference SEQUENTIAL_BEHAVIOR__ACTIONS = eINSTANCE.getSequentialBehavior_Actions();
 
 		/**
-		 * The meta object literal for the '<em><b>Parameters</b></em>' attribute list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SEQUENTIAL_BEHAVIOR__PARAMETERS = eINSTANCE.getSequentialBehavior_Parameters();
-
-		/**
 		 * The meta object literal for the '<em><b>Local Symbols</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference SEQUENTIAL_BEHAVIOR__LOCAL_SYMBOLS = eINSTANCE.getSequentialBehavior_LocalSymbols();
+
+		/**
+		 * The meta object literal for the '{@link hu.modembed.model.modembed.abstraction.behavior.impl.RootSequentialBehaviorImpl <em>Root Sequential Behavior</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.modembed.model.modembed.abstraction.behavior.impl.RootSequentialBehaviorImpl
+		 * @see hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorPackageImpl#getRootSequentialBehavior()
+		 * @generated
+		 */
+		EClass ROOT_SEQUENTIAL_BEHAVIOR = eINSTANCE.getRootSequentialBehavior();
+
+		/**
+		 * The meta object literal for the '<em><b>Device</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROOT_SEQUENTIAL_BEHAVIOR__DEVICE = eINSTANCE.getRootSequentialBehavior_Device();
+
+		/**
+		 * The meta object literal for the '{@link hu.modembed.model.modembed.abstraction.behavior.impl.SequentialBehaviorPartImpl <em>Sequential Behavior Part</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.modembed.model.modembed.abstraction.behavior.impl.SequentialBehaviorPartImpl
+		 * @see hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorPackageImpl#getSequentialBehaviorPart()
+		 * @generated
+		 */
+		EClass SEQUENTIAL_BEHAVIOR_PART = eINSTANCE.getSequentialBehaviorPart();
+
+		/**
+		 * The meta object literal for the '<em><b>Parameters</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SEQUENTIAL_BEHAVIOR_PART__PARAMETERS = eINSTANCE.getSequentialBehaviorPart_Parameters();
 
 		/**
 		 * The meta object literal for the '{@link hu.modembed.model.modembed.abstraction.behavior.impl.SequentialActionImpl <em>Sequential Action</em>}' class.

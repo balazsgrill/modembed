@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link hu.modembed.model.modembed.infrastructure.MODembedElement#getDescription <em>Description</em>}</li>
  *   <li>{@link hu.modembed.model.modembed.infrastructure.MODembedElement#getOrigins <em>Origins</em>}</li>
+ *   <li>{@link hu.modembed.model.modembed.infrastructure.MODembedElement#getAnnotations <em>Annotations</em>}</li>
  * </ul>
  * </p>
  *
@@ -67,5 +68,21 @@ public interface MODembedElement extends EObject {
 	 * @generated
 	 */
 	EList<Origin> getOrigins();
+
+	/**
+	 * Returns the value of the '<em><b>Annotations</b></em>' containment reference list.
+	 * The list contents are of type {@link hu.modembed.model.modembed.infrastructure.Annotation}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Annotations</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Annotations</em>' containment reference list.
+	 * @see hu.modembed.model.modembed.infrastructure.InfrastructurePackage#getMODembedElement_Annotations()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Annotation> getAnnotations();
 
 } // MODembedElement

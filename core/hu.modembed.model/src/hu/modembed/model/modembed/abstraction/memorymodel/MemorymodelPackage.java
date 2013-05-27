@@ -86,6 +86,15 @@ public interface MemorymodelPackage extends EPackage {
 	int MEMORY_TYPE__ORIGINS = InfrastructurePackage.NAMED_ELEMENT__ORIGINS;
 
 	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEMORY_TYPE__ANNOTATIONS = InfrastructurePackage.NAMED_ELEMENT__ANNOTATIONS;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -175,6 +184,15 @@ public interface MemorymodelPackage extends EPackage {
 	 * @ordered
 	 */
 	int MEMORY_INSTANCE__ORIGINS = InfrastructurePackage.NAMED_ELEMENT__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEMORY_INSTANCE__ANNOTATIONS = InfrastructurePackage.NAMED_ELEMENT__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.

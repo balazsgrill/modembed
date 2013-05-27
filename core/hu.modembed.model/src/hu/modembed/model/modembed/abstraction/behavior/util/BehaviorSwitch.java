@@ -82,8 +82,25 @@ public class BehaviorSwitch<T> extends Switch<T> {
 			case BehaviorPackage.SEQUENTIAL_BEHAVIOR: {
 				SequentialBehavior sequentialBehavior = (SequentialBehavior)theEObject;
 				T result = caseSequentialBehavior(sequentialBehavior);
-				if (result == null) result = caseNamedElement(sequentialBehavior);
-				if (result == null) result = caseMODembedElement(sequentialBehavior);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case BehaviorPackage.ROOT_SEQUENTIAL_BEHAVIOR: {
+				RootSequentialBehavior rootSequentialBehavior = (RootSequentialBehavior)theEObject;
+				T result = caseRootSequentialBehavior(rootSequentialBehavior);
+				if (result == null) result = caseRootElement(rootSequentialBehavior);
+				if (result == null) result = caseSequentialBehavior(rootSequentialBehavior);
+				if (result == null) result = caseNamedElement(rootSequentialBehavior);
+				if (result == null) result = caseMODembedElement(rootSequentialBehavior);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case BehaviorPackage.SEQUENTIAL_BEHAVIOR_PART: {
+				SequentialBehaviorPart sequentialBehaviorPart = (SequentialBehaviorPart)theEObject;
+				T result = caseSequentialBehaviorPart(sequentialBehaviorPart);
+				if (result == null) result = caseNamedElement(sequentialBehaviorPart);
+				if (result == null) result = caseSequentialBehavior(sequentialBehaviorPart);
+				if (result == null) result = caseMODembedElement(sequentialBehaviorPart);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -172,6 +189,36 @@ public class BehaviorSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSequentialBehavior(SequentialBehavior object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Root Sequential Behavior</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Root Sequential Behavior</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRootSequentialBehavior(RootSequentialBehavior object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Sequential Behavior Part</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Sequential Behavior Part</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSequentialBehaviorPart(SequentialBehaviorPart object) {
 		return null;
 	}
 

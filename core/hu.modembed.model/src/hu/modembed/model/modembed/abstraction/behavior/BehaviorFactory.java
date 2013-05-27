@@ -31,13 +31,22 @@ public interface BehaviorFactory extends EFactory {
 	SequentialBehaviorModule createSequentialBehaviorModule();
 
 	/**
-	 * Returns a new object of class '<em>Sequential Behavior</em>'.
+	 * Returns a new object of class '<em>Root Sequential Behavior</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Sequential Behavior</em>'.
+	 * @return a new object of class '<em>Root Sequential Behavior</em>'.
 	 * @generated
 	 */
-	SequentialBehavior createSequentialBehavior();
+	RootSequentialBehavior createRootSequentialBehavior();
+
+	/**
+	 * Returns a new object of class '<em>Sequential Behavior Part</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Sequential Behavior Part</em>'.
+	 * @generated
+	 */
+	SequentialBehaviorPart createSequentialBehaviorPart();
 
 	/**
 	 * Returns a new object of class '<em>Code Symbol Placement</em>'.

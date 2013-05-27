@@ -85,6 +85,15 @@ public interface AbstractionPackage extends EPackage {
 	int DEVICE_ABSTRACTION__ORIGINS = InfrastructurePackage.ROOT_ELEMENT__ORIGINS;
 
 	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEVICE_ABSTRACTION__ANNOTATIONS = InfrastructurePackage.ROOT_ELEMENT__ANNOTATIONS;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
