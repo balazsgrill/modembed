@@ -49,6 +49,13 @@
             library="ant_tasks/modembed.ant.tasks.jar"
             name="modembed.hex.extract">
       </antTask>
+      <antTask
+            class="hu.modembed.ant.TranslateTask"
+            eclipseRuntime="true"
+            headless="true"
+            library="ant_tasks/modembed.ant.tasks.jar"
+            name="modembed.translate">
+      </antTask>
    </extension>
    <extension
          point="org.eclipse.ant.core.extraClasspathEntries">

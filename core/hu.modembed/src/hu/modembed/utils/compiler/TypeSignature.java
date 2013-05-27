@@ -3,6 +3,10 @@
  */
 package hu.modembed.utils.compiler;
 
+import hu.modembed.model.modembed.abstraction.behavior.SymbolAddressAssignment;
+import hu.modembed.model.modembed.abstraction.behavior.SymbolAllocation;
+import hu.modembed.model.modembed.abstraction.behavior.SymbolAssignment;
+import hu.modembed.model.modembed.abstraction.behavior.SymbolValueAssignment;
 import hu.modembed.model.modembed.abstraction.behavior.platform.OperationArgument;
 import hu.modembed.model.modembed.abstraction.memorymodel.MemoryType;
 import hu.modembed.model.modembed.abstraction.types.CodeLabelTypeDefinition;
@@ -62,20 +66,23 @@ public class TypeSignature {
 		return false;
 	}
 	
+	public static TypeSignature create(SymbolAssignment sa){
+		if (sa instanceof SymbolValueAssignment){
+			return new TypeSignature(sa.getType(), null);
+		}
+		if (sa instanceof SymbolAddressAssignment){
+			return new TypeSignature(sa.getType(), ((SymbolAddressAssignment) sa).getMemoryInstance().getType());
+		}
+		if (sa instanceof SymbolAllocation){
+			return new TypeSignature(sa.getType(), null);
+		}
+		return null;
+	}
+	
 	public static TypeSignature create(OperationArgument arg){
 		return new TypeSignature(arg.getType(), arg.getMemType());
 	}
 	
-//	public static TypeSignature create(SymbolValueAssignment sv){
-//		TypeDefinition typedef = sv.getType();
-//		List<MemoryInstance> mems = sv.get;
-//		MemoryType[] mts = new MemoryType[mems.size()];
-//		for(int i=0;i<mts.length;i++){
-//			mts[i] = mems.get(i).getType();
-//		}
-//		return new TypeSignature(typedef, mts);
-//	}
-//	
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
