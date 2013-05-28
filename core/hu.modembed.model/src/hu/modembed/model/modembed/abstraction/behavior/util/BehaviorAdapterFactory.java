@@ -76,6 +76,18 @@ public class BehaviorAdapterFactory extends AdapterFactoryImpl {
 				return createSequentialBehaviorModuleAdapter();
 			}
 			@Override
+			public Adapter caseSymbolMap(SymbolMap object) {
+				return createSymbolMapAdapter();
+			}
+			@Override
+			public Adapter caseSymbolMappingRules(SymbolMappingRules object) {
+				return createSymbolMappingRulesAdapter();
+			}
+			@Override
+			public Adapter caseSymbolMappingRule(SymbolMappingRule object) {
+				return createSymbolMappingRuleAdapter();
+			}
+			@Override
 			public Adapter caseSequentialBehavior(SequentialBehavior object) {
 				return createSequentialBehaviorAdapter();
 			}
@@ -158,6 +170,48 @@ public class BehaviorAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSequentialBehaviorModuleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.modembed.abstraction.behavior.SymbolMap <em>Symbol Map</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.modembed.model.modembed.abstraction.behavior.SymbolMap
+	 * @generated
+	 */
+	public Adapter createSymbolMapAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.modembed.abstraction.behavior.SymbolMappingRules <em>Symbol Mapping Rules</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.modembed.model.modembed.abstraction.behavior.SymbolMappingRules
+	 * @generated
+	 */
+	public Adapter createSymbolMappingRulesAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.modembed.abstraction.behavior.SymbolMappingRule <em>Symbol Mapping Rule</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.modembed.model.modembed.abstraction.behavior.SymbolMappingRule
+	 * @generated
+	 */
+	public Adapter createSymbolMappingRuleAdapter() {
 		return null;
 	}
 

@@ -2,12 +2,8 @@
 <project name="test.assembler" default="run">
 
 	<target name="run">
-		<modembed.compile device="pic16e.test.device.m" 
-			output=".test.main.asm.xmi" entry="main">
-			<filelist dir="${basedir}">
-				<file  name="test.main.module.m"/>
-			</filelist>
-		</modembed.compile>
+		<modembed.translate
+			output=".test.main.asm.xmi" input="test.main.sequence.m"/>
 	</target>
 	
 </project>

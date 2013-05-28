@@ -194,6 +194,23 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="behaviorModels" upperBound="-1"
             eType="#//abstraction/behavior/SequentialBehaviorPart" containment="true"/>
       </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="SymbolMap" eSuperTypes="#//infrastructure/RootElement">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="device" eType="#//abstraction/DeviceAbstraction"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="symbolMappings" upperBound="-1"
+            eType="#//abstraction/behavior/SymbolAddressAssignment" containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="SymbolMappingRules" eSuperTypes="#//infrastructure/RootElement">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="device" eType="#//abstraction/DeviceAbstraction"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="rules" upperBound="-1"
+            eType="#//abstraction/behavior/SymbolMappingRule" containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="SymbolMappingRule" eSuperTypes="#//infrastructure/MODembedElement">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="memInstance" eType="#//abstraction/memorymodel/MemoryInstance"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="startAddress" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="endAddress" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="classes" upperBound="-1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="SequentialBehavior" abstract="true"
           interface="true">
         <eStructuralFeatures xsi:type="ecore:EReference" name="actions" upperBound="-1"

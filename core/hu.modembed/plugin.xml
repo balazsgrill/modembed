@@ -56,6 +56,13 @@
             library="ant_tasks/modembed.ant.tasks.jar"
             name="modembed.translate">
       </antTask>
+      <antTask
+            class="hu.modembed.ant.MapTask"
+            eclipseRuntime="true"
+            headless="true"
+            library="ant_tasks/modembed.ant.tasks.jar"
+            name="modembed.map">
+      </antTask>
    </extension>
    <extension
          point="org.eclipse.ant.core.extraClasspathEntries">

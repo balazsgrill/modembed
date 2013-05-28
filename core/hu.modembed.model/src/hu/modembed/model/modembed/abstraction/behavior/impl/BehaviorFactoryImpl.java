@@ -57,6 +57,9 @@ public class BehaviorFactoryImpl extends EFactoryImpl implements BehaviorFactory
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case BehaviorPackage.SEQUENTIAL_BEHAVIOR_MODULE: return createSequentialBehaviorModule();
+			case BehaviorPackage.SYMBOL_MAP: return createSymbolMap();
+			case BehaviorPackage.SYMBOL_MAPPING_RULES: return createSymbolMappingRules();
+			case BehaviorPackage.SYMBOL_MAPPING_RULE: return createSymbolMappingRule();
 			case BehaviorPackage.ROOT_SEQUENTIAL_BEHAVIOR: return createRootSequentialBehavior();
 			case BehaviorPackage.SEQUENTIAL_BEHAVIOR_PART: return createSequentialBehaviorPart();
 			case BehaviorPackage.CODE_SYMBOL_PLACEMENT: return createCodeSymbolPlacement();
@@ -77,6 +80,36 @@ public class BehaviorFactoryImpl extends EFactoryImpl implements BehaviorFactory
 	public SequentialBehaviorModule createSequentialBehaviorModule() {
 		SequentialBehaviorModuleImpl sequentialBehaviorModule = new SequentialBehaviorModuleImpl();
 		return sequentialBehaviorModule;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SymbolMap createSymbolMap() {
+		SymbolMapImpl symbolMap = new SymbolMapImpl();
+		return symbolMap;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SymbolMappingRules createSymbolMappingRules() {
+		SymbolMappingRulesImpl symbolMappingRules = new SymbolMappingRulesImpl();
+		return symbolMappingRules;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SymbolMappingRule createSymbolMappingRule() {
+		SymbolMappingRuleImpl symbolMappingRule = new SymbolMappingRuleImpl();
+		return symbolMappingRule;
 	}
 
 	/**

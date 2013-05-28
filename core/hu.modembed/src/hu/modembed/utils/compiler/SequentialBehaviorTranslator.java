@@ -10,6 +10,7 @@ import hu.modembed.model.modembed.abstraction.behavior.RootSequentialBehavior;
 import hu.modembed.model.modembed.abstraction.behavior.SequentialAction;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolAddressAssignment;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolAssignment;
+import hu.modembed.model.modembed.abstraction.behavior.SymbolMap;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolValueAssignment;
 import hu.modembed.model.modembed.abstraction.behavior.platform.InstructionCallOperationStep;
 import hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterMapping;
@@ -79,7 +80,7 @@ public class SequentialBehaviorTranslator {
 	}
 	
 	
-	public AssemblerObject translate(RootSequentialBehavior sequentialBehavior, long startAddress){
+	public AssemblerObject translate(RootSequentialBehavior sequentialBehavior, SymbolMap map, long startAddress){
 		Assert.isNotNull(sequentialBehavior.getDevice());
 		OperationRegistry registry = new OperationRegistry(sequentialBehavior.getDevice());
 		
@@ -87,9 +88,13 @@ public class SequentialBehaviorTranslator {
 		Map<String, Long> labels = new HashMap<String, Long>(); 
 		Map<InstructionCallParameter, SymbolValue> instructionCallParameterValues = new LinkedHashMap<InstructionCallParameter, SequentialBehaviorTranslator.SymbolValue>();
 		
-		
 		for(SymbolAssignment sa : sequentialBehavior.getLocalSymbols()){
 			values.put(sa.getSymbol(), sa);
+		}
+		if (map != null){
+			for(SymbolAddressAssignment saa : map.getSymbolMappings()){
+				values.put(saa.getSymbol(), saa);
+			}
 		}
 		
 		AssemblerObject asm = ObjectFactory.eINSTANCE.createAssemblerObject();
@@ -110,8 +115,9 @@ public class SequentialBehaviorTranslator {
 				}
 				
 				/* Find operation */
-				OperationDefinition opdef = registry.find(new OperationSignature(operation, arguments));
-				Assert.isNotNull(opdef);
+				OperationSignature signature = new OperationSignature(operation, arguments);
+				OperationDefinition opdef = registry.find(signature);
+				Assert.isNotNull(opdef, "Could not find operation implementation for: "+signature);
 				
 				/* Calculate argument values */
 				Map<OperationArgument, String> argumentSymbols = new HashMap<OperationArgument, String>();

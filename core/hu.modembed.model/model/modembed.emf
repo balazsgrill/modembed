@@ -222,6 +222,23 @@ package abstraction {
   		val SequentialBehaviorPart[*] behaviorModels;
   	}
   
+  	class SymbolMap extends infrastructure.RootElement{
+  		ref DeviceAbstraction device;
+  		val SymbolAddressAssignment[*] symbolMappings;
+  	}
+  
+  	class SymbolMappingRules extends infrastructure.RootElement {
+  		ref DeviceAbstraction device;
+  		val SymbolMappingRule[*] rules;
+  	}
+  	
+  	class SymbolMappingRule extends infrastructure.MODembedElement{
+  		ref memorymodel.MemoryInstance memInstance;
+  		attr long startAddress;
+  		attr long endAddress;
+  		attr String[*] classes;
+  	}
+  
   	abstract interface SequentialBehavior{
   		val SequentialAction[*] actions;
   		val SymbolAssignment[*] localSymbols;

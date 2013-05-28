@@ -31,6 +31,33 @@ public interface BehaviorFactory extends EFactory {
 	SequentialBehaviorModule createSequentialBehaviorModule();
 
 	/**
+	 * Returns a new object of class '<em>Symbol Map</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Symbol Map</em>'.
+	 * @generated
+	 */
+	SymbolMap createSymbolMap();
+
+	/**
+	 * Returns a new object of class '<em>Symbol Mapping Rules</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Symbol Mapping Rules</em>'.
+	 * @generated
+	 */
+	SymbolMappingRules createSymbolMappingRules();
+
+	/**
+	 * Returns a new object of class '<em>Symbol Mapping Rule</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Symbol Mapping Rule</em>'.
+	 * @generated
+	 */
+	SymbolMappingRule createSymbolMappingRule();
+
+	/**
 	 * Returns a new object of class '<em>Root Sequential Behavior</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
