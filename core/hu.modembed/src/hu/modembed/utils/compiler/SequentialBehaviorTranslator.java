@@ -110,8 +110,9 @@ public class SequentialBehaviorTranslator {
 				}
 				
 				/* Find operation */
-				OperationDefinition opdef = registry.find(new OperationSignature(operation, arguments));
-				Assert.isNotNull(opdef);
+				OperationSignature signature = new OperationSignature(operation, arguments);
+				OperationDefinition opdef = registry.find(signature);
+				Assert.isNotNull(opdef, "Could not find operation implementation for: "+signature);
 				
 				/* Calculate argument values */
 				Map<OperationArgument, String> argumentSymbols = new HashMap<OperationArgument, String>();
