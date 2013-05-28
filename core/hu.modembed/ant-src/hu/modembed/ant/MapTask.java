@@ -5,8 +5,8 @@ package hu.modembed.ant;
 
 import hu.modembed.MODembedCore;
 import hu.modembed.model.modembed.abstraction.behavior.RootSequentialBehavior;
-import hu.modembed.model.modembed.abstraction.behavior.SymbolMap;
-import hu.modembed.utils.compiler.SequentialBehaviorTranslator;
+import hu.modembed.model.modembed.abstraction.behavior.SymbolMappingRules;
+import hu.modembed.utils.compiler.SimpleVariableMapper;
 
 import java.io.File;
 
@@ -19,14 +19,14 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  * @author balazs.grill
  *
  */
-public class TranslateTask extends Task {
-	
+public class MapTask extends Task {
+
 	private File input;
 	private File output;
-	private File map;
+	private File rules;
 	
-	public void setMap(File map) {
-		this.map = map;
+	public void setRules(File rules) {
+		this.rules = rules;
 	}
 	
 	public void setInput(File file){
@@ -41,23 +41,22 @@ public class TranslateTask extends Task {
 	public void execute() throws BuildException {
 		if (input == null) throw new BuildException("input is a required attribute");
 		if (output == null) throw new BuildException("output is a required attribute");
+		if (rules == null) throw new BuildException("rules is a required attribute");
 		
 		ResourceSet rs = MODembedCore.createResourceSet();
 		try {
 			RootSequentialBehavior in = TaskUtils.loadInput(rs, input, RootSequentialBehavior.class);
+			SymbolMappingRules rules = TaskUtils.loadInput(rs, this.rules, SymbolMappingRules.class);
 			Resource out = TaskUtils.getOutput(rs, output);
-			SequentialBehaviorTranslator translator = new SequentialBehaviorTranslator();
 			
-			SymbolMap map = null;
-			if (this.map != null){
-				map = TaskUtils.loadInput(rs, this.map, SymbolMap.class);
-			}
+			SimpleVariableMapper mapper = new SimpleVariableMapper();
 			
-			out.getContents().add(translator.translate(in, map, 0));
+			out.getContents().add(mapper.mapVariables(in, rules));
 			out.save(null);
 		} catch (Exception e) {
 			throw new BuildException(e);
 		}
 		
 	}
+	
 }
