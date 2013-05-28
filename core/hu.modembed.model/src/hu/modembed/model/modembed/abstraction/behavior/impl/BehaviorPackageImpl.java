@@ -15,6 +15,9 @@ import hu.modembed.model.modembed.abstraction.behavior.SequentialBehaviorPart;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolAddressAssignment;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolAllocation;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolAssignment;
+import hu.modembed.model.modembed.abstraction.behavior.SymbolMap;
+import hu.modembed.model.modembed.abstraction.behavior.SymbolMappingRule;
+import hu.modembed.model.modembed.abstraction.behavior.SymbolMappingRules;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolValueAssignment;
 import hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage;
 import hu.modembed.model.modembed.abstraction.behavior.platform.impl.PlatformPackageImpl;
@@ -51,6 +54,27 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 	 * @generated
 	 */
 	private EClass sequentialBehaviorModuleEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass symbolMapEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass symbolMappingRulesEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass symbolMappingRuleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -243,6 +267,105 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 	 */
 	public EReference getSequentialBehaviorModule_BehaviorModels() {
 		return (EReference)sequentialBehaviorModuleEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getSymbolMap() {
+		return symbolMapEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSymbolMap_Device() {
+		return (EReference)symbolMapEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSymbolMap_SymbolMappings() {
+		return (EReference)symbolMapEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getSymbolMappingRules() {
+		return symbolMappingRulesEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSymbolMappingRules_Device() {
+		return (EReference)symbolMappingRulesEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSymbolMappingRules_Rules() {
+		return (EReference)symbolMappingRulesEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getSymbolMappingRule() {
+		return symbolMappingRuleEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSymbolMappingRule_MemInstance() {
+		return (EReference)symbolMappingRuleEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSymbolMappingRule_StartAddress() {
+		return (EAttribute)symbolMappingRuleEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSymbolMappingRule_EndAddress() {
+		return (EAttribute)symbolMappingRuleEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSymbolMappingRule_Classes() {
+		return (EAttribute)symbolMappingRuleEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -476,6 +599,20 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 		createEReference(sequentialBehaviorModuleEClass, SEQUENTIAL_BEHAVIOR_MODULE__SYMBOL_MAPPINGS);
 		createEReference(sequentialBehaviorModuleEClass, SEQUENTIAL_BEHAVIOR_MODULE__BEHAVIOR_MODELS);
 
+		symbolMapEClass = createEClass(SYMBOL_MAP);
+		createEReference(symbolMapEClass, SYMBOL_MAP__DEVICE);
+		createEReference(symbolMapEClass, SYMBOL_MAP__SYMBOL_MAPPINGS);
+
+		symbolMappingRulesEClass = createEClass(SYMBOL_MAPPING_RULES);
+		createEReference(symbolMappingRulesEClass, SYMBOL_MAPPING_RULES__DEVICE);
+		createEReference(symbolMappingRulesEClass, SYMBOL_MAPPING_RULES__RULES);
+
+		symbolMappingRuleEClass = createEClass(SYMBOL_MAPPING_RULE);
+		createEReference(symbolMappingRuleEClass, SYMBOL_MAPPING_RULE__MEM_INSTANCE);
+		createEAttribute(symbolMappingRuleEClass, SYMBOL_MAPPING_RULE__START_ADDRESS);
+		createEAttribute(symbolMappingRuleEClass, SYMBOL_MAPPING_RULE__END_ADDRESS);
+		createEAttribute(symbolMappingRuleEClass, SYMBOL_MAPPING_RULE__CLASSES);
+
 		sequentialBehaviorEClass = createEClass(SEQUENTIAL_BEHAVIOR);
 		createEReference(sequentialBehaviorEClass, SEQUENTIAL_BEHAVIOR__ACTIONS);
 		createEReference(sequentialBehaviorEClass, SEQUENTIAL_BEHAVIOR__LOCAL_SYMBOLS);
@@ -536,8 +673,8 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 		PlatformPackage thePlatformPackage = (PlatformPackage)EPackage.Registry.INSTANCE.getEPackage(PlatformPackage.eNS_URI);
 		InfrastructurePackage theInfrastructurePackage = (InfrastructurePackage)EPackage.Registry.INSTANCE.getEPackage(InfrastructurePackage.eNS_URI);
 		AbstractionPackage theAbstractionPackage = (AbstractionPackage)EPackage.Registry.INSTANCE.getEPackage(AbstractionPackage.eNS_URI);
-		TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
 		MemorymodelPackage theMemorymodelPackage = (MemorymodelPackage)EPackage.Registry.INSTANCE.getEPackage(MemorymodelPackage.eNS_URI);
+		TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
 
 		// Add subpackages
 		getESubpackages().add(thePlatformPackage);
@@ -548,6 +685,9 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 
 		// Add supertypes to classes
 		sequentialBehaviorModuleEClass.getESuperTypes().add(theInfrastructurePackage.getRootElement());
+		symbolMapEClass.getESuperTypes().add(theInfrastructurePackage.getRootElement());
+		symbolMappingRulesEClass.getESuperTypes().add(theInfrastructurePackage.getRootElement());
+		symbolMappingRuleEClass.getESuperTypes().add(theInfrastructurePackage.getMODembedElement());
 		rootSequentialBehaviorEClass.getESuperTypes().add(theInfrastructurePackage.getRootElement());
 		rootSequentialBehaviorEClass.getESuperTypes().add(this.getSequentialBehavior());
 		sequentialBehaviorPartEClass.getESuperTypes().add(theInfrastructurePackage.getNamedElement());
@@ -565,6 +705,20 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 		initEReference(getSequentialBehaviorModule_Device(), theAbstractionPackage.getDeviceAbstraction(), null, "device", null, 0, 1, SequentialBehaviorModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSequentialBehaviorModule_SymbolMappings(), this.getSymbolAssignment(), null, "symbolMappings", null, 0, -1, SequentialBehaviorModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSequentialBehaviorModule_BehaviorModels(), this.getSequentialBehaviorPart(), null, "behaviorModels", null, 0, -1, SequentialBehaviorModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(symbolMapEClass, SymbolMap.class, "SymbolMap", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSymbolMap_Device(), theAbstractionPackage.getDeviceAbstraction(), null, "device", null, 0, 1, SymbolMap.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSymbolMap_SymbolMappings(), this.getSymbolAddressAssignment(), null, "symbolMappings", null, 0, -1, SymbolMap.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(symbolMappingRulesEClass, SymbolMappingRules.class, "SymbolMappingRules", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSymbolMappingRules_Device(), theAbstractionPackage.getDeviceAbstraction(), null, "device", null, 0, 1, SymbolMappingRules.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSymbolMappingRules_Rules(), this.getSymbolMappingRule(), null, "rules", null, 0, -1, SymbolMappingRules.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(symbolMappingRuleEClass, SymbolMappingRule.class, "SymbolMappingRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSymbolMappingRule_MemInstance(), theMemorymodelPackage.getMemoryInstance(), null, "memInstance", null, 0, 1, SymbolMappingRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSymbolMappingRule_StartAddress(), ecorePackage.getELong(), "startAddress", null, 0, 1, SymbolMappingRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSymbolMappingRule_EndAddress(), ecorePackage.getELong(), "endAddress", null, 0, 1, SymbolMappingRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSymbolMappingRule_Classes(), ecorePackage.getEString(), "classes", null, 0, -1, SymbolMappingRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sequentialBehaviorEClass, SequentialBehavior.class, "SequentialBehavior", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSequentialBehavior_Actions(), this.getSequentialAction(), null, "actions", null, 0, -1, SequentialBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

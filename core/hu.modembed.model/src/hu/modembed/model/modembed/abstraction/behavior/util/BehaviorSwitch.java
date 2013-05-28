@@ -79,6 +79,31 @@ public class BehaviorSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case BehaviorPackage.SYMBOL_MAP: {
+				SymbolMap symbolMap = (SymbolMap)theEObject;
+				T result = caseSymbolMap(symbolMap);
+				if (result == null) result = caseRootElement(symbolMap);
+				if (result == null) result = caseNamedElement(symbolMap);
+				if (result == null) result = caseMODembedElement(symbolMap);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case BehaviorPackage.SYMBOL_MAPPING_RULES: {
+				SymbolMappingRules symbolMappingRules = (SymbolMappingRules)theEObject;
+				T result = caseSymbolMappingRules(symbolMappingRules);
+				if (result == null) result = caseRootElement(symbolMappingRules);
+				if (result == null) result = caseNamedElement(symbolMappingRules);
+				if (result == null) result = caseMODembedElement(symbolMappingRules);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case BehaviorPackage.SYMBOL_MAPPING_RULE: {
+				SymbolMappingRule symbolMappingRule = (SymbolMappingRule)theEObject;
+				T result = caseSymbolMappingRule(symbolMappingRule);
+				if (result == null) result = caseMODembedElement(symbolMappingRule);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case BehaviorPackage.SEQUENTIAL_BEHAVIOR: {
 				SequentialBehavior sequentialBehavior = (SequentialBehavior)theEObject;
 				T result = caseSequentialBehavior(sequentialBehavior);
@@ -174,6 +199,51 @@ public class BehaviorSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSequentialBehaviorModule(SequentialBehaviorModule object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Symbol Map</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Symbol Map</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSymbolMap(SymbolMap object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Symbol Mapping Rules</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Symbol Mapping Rules</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSymbolMappingRules(SymbolMappingRules object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Symbol Mapping Rule</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Symbol Mapping Rule</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSymbolMappingRule(SymbolMappingRule object) {
 		return null;
 	}
 

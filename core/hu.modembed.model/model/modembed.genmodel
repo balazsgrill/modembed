@@ -168,6 +168,23 @@
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//abstraction/behavior/SequentialBehaviorModule/symbolMappings"/>
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//abstraction/behavior/SequentialBehaviorModule/behaviorModels"/>
         </genClasses>
+        <genClasses ecoreClass="modembed.ecore#//abstraction/behavior/SymbolMap">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference modembed.ecore#//abstraction/behavior/SymbolMap/device"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//abstraction/behavior/SymbolMap/symbolMappings"/>
+        </genClasses>
+        <genClasses ecoreClass="modembed.ecore#//abstraction/behavior/SymbolMappingRules">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference modembed.ecore#//abstraction/behavior/SymbolMappingRules/device"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//abstraction/behavior/SymbolMappingRules/rules"/>
+        </genClasses>
+        <genClasses ecoreClass="modembed.ecore#//abstraction/behavior/SymbolMappingRule">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference modembed.ecore#//abstraction/behavior/SymbolMappingRule/memInstance"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.ecore#//abstraction/behavior/SymbolMappingRule/startAddress"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.ecore#//abstraction/behavior/SymbolMappingRule/endAddress"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.ecore#//abstraction/behavior/SymbolMappingRule/classes"/>
+        </genClasses>
         <genClasses ecoreClass="modembed.ecore#//abstraction/behavior/SequentialBehavior">
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//abstraction/behavior/SequentialBehavior/actions"/>
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//abstraction/behavior/SequentialBehavior/localSymbols"/>

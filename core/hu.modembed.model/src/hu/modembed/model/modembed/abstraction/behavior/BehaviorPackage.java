@@ -140,6 +140,234 @@ public interface BehaviorPackage extends EPackage {
 	int SEQUENTIAL_BEHAVIOR_MODULE_FEATURE_COUNT = InfrastructurePackage.ROOT_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
+	 * The meta object id for the '{@link hu.modembed.model.modembed.abstraction.behavior.impl.SymbolMapImpl <em>Symbol Map</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.modembed.model.modembed.abstraction.behavior.impl.SymbolMapImpl
+	 * @see hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorPackageImpl#getSymbolMap()
+	 * @generated
+	 */
+	int SYMBOL_MAP = 1;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_MAP__DESCRIPTION = InfrastructurePackage.ROOT_ELEMENT__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_MAP__ORIGINS = InfrastructurePackage.ROOT_ELEMENT__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_MAP__ANNOTATIONS = InfrastructurePackage.ROOT_ELEMENT__ANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_MAP__NAME = InfrastructurePackage.ROOT_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Device</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_MAP__DEVICE = InfrastructurePackage.ROOT_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Symbol Mappings</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_MAP__SYMBOL_MAPPINGS = InfrastructurePackage.ROOT_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Symbol Map</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_MAP_FEATURE_COUNT = InfrastructurePackage.ROOT_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link hu.modembed.model.modembed.abstraction.behavior.impl.SymbolMappingRulesImpl <em>Symbol Mapping Rules</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.modembed.model.modembed.abstraction.behavior.impl.SymbolMappingRulesImpl
+	 * @see hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorPackageImpl#getSymbolMappingRules()
+	 * @generated
+	 */
+	int SYMBOL_MAPPING_RULES = 2;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_MAPPING_RULES__DESCRIPTION = InfrastructurePackage.ROOT_ELEMENT__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_MAPPING_RULES__ORIGINS = InfrastructurePackage.ROOT_ELEMENT__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_MAPPING_RULES__ANNOTATIONS = InfrastructurePackage.ROOT_ELEMENT__ANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_MAPPING_RULES__NAME = InfrastructurePackage.ROOT_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Device</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_MAPPING_RULES__DEVICE = InfrastructurePackage.ROOT_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Rules</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_MAPPING_RULES__RULES = InfrastructurePackage.ROOT_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Symbol Mapping Rules</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_MAPPING_RULES_FEATURE_COUNT = InfrastructurePackage.ROOT_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link hu.modembed.model.modembed.abstraction.behavior.impl.SymbolMappingRuleImpl <em>Symbol Mapping Rule</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.modembed.model.modembed.abstraction.behavior.impl.SymbolMappingRuleImpl
+	 * @see hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorPackageImpl#getSymbolMappingRule()
+	 * @generated
+	 */
+	int SYMBOL_MAPPING_RULE = 3;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_MAPPING_RULE__DESCRIPTION = InfrastructurePackage.MO_DEMBED_ELEMENT__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_MAPPING_RULE__ORIGINS = InfrastructurePackage.MO_DEMBED_ELEMENT__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_MAPPING_RULE__ANNOTATIONS = InfrastructurePackage.MO_DEMBED_ELEMENT__ANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Mem Instance</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_MAPPING_RULE__MEM_INSTANCE = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Start Address</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_MAPPING_RULE__START_ADDRESS = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>End Address</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_MAPPING_RULE__END_ADDRESS = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Classes</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_MAPPING_RULE__CLASSES = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of structural features of the '<em>Symbol Mapping Rule</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYMBOL_MAPPING_RULE_FEATURE_COUNT = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
 	 * The meta object id for the '{@link hu.modembed.model.modembed.abstraction.behavior.SequentialBehavior <em>Sequential Behavior</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -147,7 +375,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @see hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorPackageImpl#getSequentialBehavior()
 	 * @generated
 	 */
-	int SEQUENTIAL_BEHAVIOR = 1;
+	int SEQUENTIAL_BEHAVIOR = 4;
 
 	/**
 	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
@@ -184,7 +412,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @see hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorPackageImpl#getRootSequentialBehavior()
 	 * @generated
 	 */
-	int ROOT_SEQUENTIAL_BEHAVIOR = 2;
+	int ROOT_SEQUENTIAL_BEHAVIOR = 5;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -266,7 +494,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @see hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorPackageImpl#getSequentialBehaviorPart()
 	 * @generated
 	 */
-	int SEQUENTIAL_BEHAVIOR_PART = 3;
+	int SEQUENTIAL_BEHAVIOR_PART = 6;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -348,7 +576,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @see hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorPackageImpl#getSequentialAction()
 	 * @generated
 	 */
-	int SEQUENTIAL_ACTION = 4;
+	int SEQUENTIAL_ACTION = 7;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -394,7 +622,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @see hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorPackageImpl#getCodeSymbolPlacement()
 	 * @generated
 	 */
-	int CODE_SYMBOL_PLACEMENT = 5;
+	int CODE_SYMBOL_PLACEMENT = 8;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -449,7 +677,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @see hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorPackageImpl#getOperationExecution()
 	 * @generated
 	 */
-	int OPERATION_EXECUTION = 6;
+	int OPERATION_EXECUTION = 9;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -513,7 +741,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @see hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorPackageImpl#getSymbolAssignment()
 	 * @generated
 	 */
-	int SYMBOL_ASSIGNMENT = 7;
+	int SYMBOL_ASSIGNMENT = 10;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -577,7 +805,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @see hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorPackageImpl#getSymbolAllocation()
 	 * @generated
 	 */
-	int SYMBOL_ALLOCATION = 8;
+	int SYMBOL_ALLOCATION = 11;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -641,7 +869,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @see hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorPackageImpl#getSymbolAddressAssignment()
 	 * @generated
 	 */
-	int SYMBOL_ADDRESS_ASSIGNMENT = 9;
+	int SYMBOL_ADDRESS_ASSIGNMENT = 12;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -723,7 +951,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @see hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorPackageImpl#getSymbolValueAssignment()
 	 * @generated
 	 */
-	int SYMBOL_VALUE_ASSIGNMENT = 10;
+	int SYMBOL_VALUE_ASSIGNMENT = 13;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -831,6 +1059,124 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSequentialBehaviorModule_BehaviorModels();
+
+	/**
+	 * Returns the meta object for class '{@link hu.modembed.model.modembed.abstraction.behavior.SymbolMap <em>Symbol Map</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Symbol Map</em>'.
+	 * @see hu.modembed.model.modembed.abstraction.behavior.SymbolMap
+	 * @generated
+	 */
+	EClass getSymbolMap();
+
+	/**
+	 * Returns the meta object for the reference '{@link hu.modembed.model.modembed.abstraction.behavior.SymbolMap#getDevice <em>Device</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Device</em>'.
+	 * @see hu.modembed.model.modembed.abstraction.behavior.SymbolMap#getDevice()
+	 * @see #getSymbolMap()
+	 * @generated
+	 */
+	EReference getSymbolMap_Device();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link hu.modembed.model.modembed.abstraction.behavior.SymbolMap#getSymbolMappings <em>Symbol Mappings</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Symbol Mappings</em>'.
+	 * @see hu.modembed.model.modembed.abstraction.behavior.SymbolMap#getSymbolMappings()
+	 * @see #getSymbolMap()
+	 * @generated
+	 */
+	EReference getSymbolMap_SymbolMappings();
+
+	/**
+	 * Returns the meta object for class '{@link hu.modembed.model.modembed.abstraction.behavior.SymbolMappingRules <em>Symbol Mapping Rules</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Symbol Mapping Rules</em>'.
+	 * @see hu.modembed.model.modembed.abstraction.behavior.SymbolMappingRules
+	 * @generated
+	 */
+	EClass getSymbolMappingRules();
+
+	/**
+	 * Returns the meta object for the reference '{@link hu.modembed.model.modembed.abstraction.behavior.SymbolMappingRules#getDevice <em>Device</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Device</em>'.
+	 * @see hu.modembed.model.modembed.abstraction.behavior.SymbolMappingRules#getDevice()
+	 * @see #getSymbolMappingRules()
+	 * @generated
+	 */
+	EReference getSymbolMappingRules_Device();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link hu.modembed.model.modembed.abstraction.behavior.SymbolMappingRules#getRules <em>Rules</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Rules</em>'.
+	 * @see hu.modembed.model.modembed.abstraction.behavior.SymbolMappingRules#getRules()
+	 * @see #getSymbolMappingRules()
+	 * @generated
+	 */
+	EReference getSymbolMappingRules_Rules();
+
+	/**
+	 * Returns the meta object for class '{@link hu.modembed.model.modembed.abstraction.behavior.SymbolMappingRule <em>Symbol Mapping Rule</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Symbol Mapping Rule</em>'.
+	 * @see hu.modembed.model.modembed.abstraction.behavior.SymbolMappingRule
+	 * @generated
+	 */
+	EClass getSymbolMappingRule();
+
+	/**
+	 * Returns the meta object for the reference '{@link hu.modembed.model.modembed.abstraction.behavior.SymbolMappingRule#getMemInstance <em>Mem Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Mem Instance</em>'.
+	 * @see hu.modembed.model.modembed.abstraction.behavior.SymbolMappingRule#getMemInstance()
+	 * @see #getSymbolMappingRule()
+	 * @generated
+	 */
+	EReference getSymbolMappingRule_MemInstance();
+
+	/**
+	 * Returns the meta object for the attribute '{@link hu.modembed.model.modembed.abstraction.behavior.SymbolMappingRule#getStartAddress <em>Start Address</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Start Address</em>'.
+	 * @see hu.modembed.model.modembed.abstraction.behavior.SymbolMappingRule#getStartAddress()
+	 * @see #getSymbolMappingRule()
+	 * @generated
+	 */
+	EAttribute getSymbolMappingRule_StartAddress();
+
+	/**
+	 * Returns the meta object for the attribute '{@link hu.modembed.model.modembed.abstraction.behavior.SymbolMappingRule#getEndAddress <em>End Address</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>End Address</em>'.
+	 * @see hu.modembed.model.modembed.abstraction.behavior.SymbolMappingRule#getEndAddress()
+	 * @see #getSymbolMappingRule()
+	 * @generated
+	 */
+	EAttribute getSymbolMappingRule_EndAddress();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link hu.modembed.model.modembed.abstraction.behavior.SymbolMappingRule#getClasses <em>Classes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Classes</em>'.
+	 * @see hu.modembed.model.modembed.abstraction.behavior.SymbolMappingRule#getClasses()
+	 * @see #getSymbolMappingRule()
+	 * @generated
+	 */
+	EAttribute getSymbolMappingRule_Classes();
 
 	/**
 	 * Returns the meta object for class '{@link hu.modembed.model.modembed.abstraction.behavior.SequentialBehavior <em>Sequential Behavior</em>}'.
@@ -1119,6 +1465,100 @@ public interface BehaviorPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SEQUENTIAL_BEHAVIOR_MODULE__BEHAVIOR_MODELS = eINSTANCE.getSequentialBehaviorModule_BehaviorModels();
+
+		/**
+		 * The meta object literal for the '{@link hu.modembed.model.modembed.abstraction.behavior.impl.SymbolMapImpl <em>Symbol Map</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.modembed.model.modembed.abstraction.behavior.impl.SymbolMapImpl
+		 * @see hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorPackageImpl#getSymbolMap()
+		 * @generated
+		 */
+		EClass SYMBOL_MAP = eINSTANCE.getSymbolMap();
+
+		/**
+		 * The meta object literal for the '<em><b>Device</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SYMBOL_MAP__DEVICE = eINSTANCE.getSymbolMap_Device();
+
+		/**
+		 * The meta object literal for the '<em><b>Symbol Mappings</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SYMBOL_MAP__SYMBOL_MAPPINGS = eINSTANCE.getSymbolMap_SymbolMappings();
+
+		/**
+		 * The meta object literal for the '{@link hu.modembed.model.modembed.abstraction.behavior.impl.SymbolMappingRulesImpl <em>Symbol Mapping Rules</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.modembed.model.modembed.abstraction.behavior.impl.SymbolMappingRulesImpl
+		 * @see hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorPackageImpl#getSymbolMappingRules()
+		 * @generated
+		 */
+		EClass SYMBOL_MAPPING_RULES = eINSTANCE.getSymbolMappingRules();
+
+		/**
+		 * The meta object literal for the '<em><b>Device</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SYMBOL_MAPPING_RULES__DEVICE = eINSTANCE.getSymbolMappingRules_Device();
+
+		/**
+		 * The meta object literal for the '<em><b>Rules</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SYMBOL_MAPPING_RULES__RULES = eINSTANCE.getSymbolMappingRules_Rules();
+
+		/**
+		 * The meta object literal for the '{@link hu.modembed.model.modembed.abstraction.behavior.impl.SymbolMappingRuleImpl <em>Symbol Mapping Rule</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.modembed.model.modembed.abstraction.behavior.impl.SymbolMappingRuleImpl
+		 * @see hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorPackageImpl#getSymbolMappingRule()
+		 * @generated
+		 */
+		EClass SYMBOL_MAPPING_RULE = eINSTANCE.getSymbolMappingRule();
+
+		/**
+		 * The meta object literal for the '<em><b>Mem Instance</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SYMBOL_MAPPING_RULE__MEM_INSTANCE = eINSTANCE.getSymbolMappingRule_MemInstance();
+
+		/**
+		 * The meta object literal for the '<em><b>Start Address</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SYMBOL_MAPPING_RULE__START_ADDRESS = eINSTANCE.getSymbolMappingRule_StartAddress();
+
+		/**
+		 * The meta object literal for the '<em><b>End Address</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SYMBOL_MAPPING_RULE__END_ADDRESS = eINSTANCE.getSymbolMappingRule_EndAddress();
+
+		/**
+		 * The meta object literal for the '<em><b>Classes</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SYMBOL_MAPPING_RULE__CLASSES = eINSTANCE.getSymbolMappingRule_Classes();
 
 		/**
 		 * The meta object literal for the '{@link hu.modembed.model.modembed.abstraction.behavior.SequentialBehavior <em>Sequential Behavior</em>}' class.
