@@ -22,15 +22,15 @@
         <version>1.6</version>
         <executions>
           <execution>
-            <id>generate-sources</id>
-            <phase>generate-sources</phase>
+            <id>prepare-package</id>
+            <phase>prepare-package</phase>
             <configuration>
               <target>
                 <ant antfile="build.xml" inheritRefs="true" />
               </target>
             </configuration>
             <goals>
-              <goal>prepare-package</goal>
+              <goal>run</goal>
             </goals>
           </execution>
         </executions>
