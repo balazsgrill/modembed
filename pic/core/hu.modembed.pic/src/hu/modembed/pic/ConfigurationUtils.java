@@ -3,6 +3,7 @@
  */
 package hu.modembed.pic;
 
+import hexfile.AddressType;
 import hexfile.Entry;
 import hexfile.HexFile;
 import hexfile.HexfileFactory;
@@ -66,6 +67,7 @@ public class ConfigurationUtils {
 	public static HexFile toBinary(PICConfigurationValueModel config){
 
 		HexFile hexFile = HexfileFactory.eINSTANCE.createHexFile();
+		hexFile.setAddressType(AddressType.EXTENDED_LINEAR);
 		Entry entry = HexfileFactory.eINSTANCE.createEntry();
 		hexFile.getEntries().add(entry);
 
