@@ -30,7 +30,7 @@
               </target>
             </configuration>
             <goals>
-              <goal>run</goal>
+              <goal>prepare-package</goal>
             </goals>
           </execution>
         </executions>
