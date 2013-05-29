@@ -1,38 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
 
-	<eclipse.convertPath resourcePath="microchip.PIC16F1824/PIC16F1824.config.xmi" property="configDef"/>
+	<eclipse.convertPath resourcePath="microchip.PIC16F1824/PIC16F1824.config.xmi" property="pic16_configDef"/>
+	<eclipse.convertPath resourcePath="microchip.PIC18F14K50/PIC18F14K50.config.xmi" property="pic18_configDef"/>
 	
-	<target name="merge">
-		<modembed.hex.merge output=".test.blink_release.hex">
-			<filelist dir="${basedir}">
+	<target name="pic16_merge">
+		<modembed.hex.merge output="pic16/.test.blink_release.hex">
+			<filelist dir="${basedir}/pic16">
 				<file name="blink.hex"/>
 				<file name="config.hex"/>
 			</filelist>
 		</modembed.hex.merge>
 	</target>
 	
-	<target name="extract">
+	<target name="pic18_merge">
+		<modembed.hex.merge output="pic18/.test.hex">
+			<filelist dir="${basedir}/pic18">
+				<file name="test_code.hex"/>
+				<file name="test_config.hex"/>
+			</filelist>
+		</modembed.hex.merge>
+	</target>
+	
+	<target name="pic16_extract">
 		<modembed.hex.extract 
-			input="blink_release.hex" output=".test.blink.hex"
+			input="pic16/blink_release.hex" output="pic16/.test.blink.hex"
 			start="0" end="65549"
 		/>
 		<modembed.hex.extract
-			input="blink_release.hex" output=".test.config.hex"
+			input="pic16/blink_release.hex" output="pic16/.test.config.hex"
 			start="65550" end="65554"
 		/>
 	</target>
+
+	<target name="pic18_extract">
+		<modembed.hex.extract 
+			input="pic18/test.hex" output="pic18/.test_code.hex"
+			start="0" end="3145727"
+		/>
+		<modembed.hex.extract
+			input="pic18/test.hex" output="pic18/.test_config.hex"
+			start="3145728" end="3145742"
+		/>
+	</target>	
 	
-	<target name="pic_config">
+	<target name="pic16_pic_config">
 		<modembed.pic.config.extract
-			input="config.hex"
-			output=".test.config.values.xmi"
-			configModel="${configDef}"
+			input="pic16/config.hex"
+			output="pic16/.test.config.values.xmi"
+			configModel="${pic16_configDef}"
 		/>
 		<modembed.pic.config
-			input=".test.config.values.xmi"
-			output=".test.config.values.hex"
+			input="pic16/.test.config.values.xmi"
+			output="pic16/.test.config.values.hex"
 		/>
 	</target>
+
+	<target name="pic18_pic_config">
+		<modembed.pic.config.extract
+			input="pic18/test_config.hex"
+			output="pic18/.test.config.values.xmi"
+			configModel="${pic18_configDef}"
+		/>
+		<modembed.pic.config
+			input="pic18/.test.config.values.xmi"
+			output="pic18/.test.config.values.hex"
+		/>
+	</target>	
 	
 </project>
