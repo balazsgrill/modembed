@@ -30,6 +30,11 @@
             name="PIC16 midrange and enchanced midrange libraries"
             parent="hu.modembed.pic.category">
       </category>
+      <category
+            id="hu.modembed.pic.pic18.category"
+            name="PIC18 high-end libraries"
+            parent="hu.modembed.pic.category">
+      </category>
    </extension>
    <extension
          point="org.eclipse.ant.core.extraClasspathEntries">
