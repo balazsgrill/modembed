@@ -24,8 +24,8 @@
 		<module>../../pic/core/hu.modembed.pic</module>
 		<module>../../pic/core/hu.modembed.pic.model</module>
 		<module>../../pic/core/hu.modembed.pic.midrange</module>
-		<!--module>../../pic/core/hu.modembed.pic.pic18</module>
-		<module>../../pic/core/hu.modembed.pic.examples</module-->
+		<module>../../pic/core/hu.modembed.pic.pic18</module>
+		<!--module>../../pic/core/hu.modembed.pic.examples</module-->
 		<module>../../pic/core/hu.modembed.pic.simulator</module>
 		<module>../../pic/core/hu.modembed.pic.feature</module>
 		
