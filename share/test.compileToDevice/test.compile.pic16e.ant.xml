@@ -2,7 +2,9 @@
 <project name="test.assembler" default="run">
 
 	<target name="run">
-		<modembed.translate
+		<modembed.map input="test.main.sequence.m" rules="test.mapping.m"
+			output=".test.map.xmi" />
+		<modembed.translate map=".test.map.xmi"
 			output=".test.main.asm.xmi" input="test.main.sequence.m"/>
 	</target>
 	
