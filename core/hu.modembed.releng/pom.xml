@@ -23,8 +23,8 @@
 		
 		<module>../../pic/core/hu.modembed.pic</module>
 		<module>../../pic/core/hu.modembed.pic.model</module>
-		<!-- module>../../pic/core/hu.modembed.pic.midrange</module>
-		<module>../../pic/core/hu.modembed.pic.pic18</module>
+		<module>../../pic/core/hu.modembed.pic.midrange</module>
+		<!--module>../../pic/core/hu.modembed.pic.pic18</module>
 		<module>../../pic/core/hu.modembed.pic.examples</module-->
 		<module>../../pic/core/hu.modembed.pic.simulator</module>
 		<module>../../pic/core/hu.modembed.pic.feature</module>
@@ -48,19 +48,20 @@
 		<repository>
 			<id>juno</id>
 			<layout>p2</layout>
-			<!--  <url>http://download.eclipse.org/releases/juno</url> -->
-			<url>http://download.eclipse.org/eclipse/updates/4.2</url>
+			<url>http://download.eclipse.org/releases/juno</url>
+			<!---<url>http://download.eclipse.org/eclipse/updates/4.2</url>-->
 		</repository>
-		<repository>
+<!--		<repository>
 			<id>EMF</id>
 			<layout>p2</layout>
 			<url>http://download.eclipse.org/modeling/emf/emf/updates/releases/</url>
 		</repository>
-		<!-- repository>
-			<id>EMFT</id>
+		<repository>
+			<id>EMF-modeltransaction</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/modeling/emft/emf/updates/releases/</url>
-		</repository-->
+			<url>http://download.eclipse.org/modeling/emf/updates/</url>
+		</repository>
+-->
 <!--	
 		<repository>
 			<id>epsilon</id>

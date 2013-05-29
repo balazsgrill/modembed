@@ -55,6 +55,9 @@ public class ModembedTests {
 	
 	public static boolean modelsAreEquivalent(IFile file1, IFile file2) throws InterruptedException, IOException{
 		ResourceSet rs = MODembedCore.createResourceSet();
+		
+		
+		
 		EObject e1 = EclipseModelUtils.load(file1, rs);
 		EObject e2 = EclipseModelUtils.load(file2, rs);
 		
