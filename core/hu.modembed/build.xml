@@ -11,12 +11,19 @@
 	
 	<property name="jar.name" value="modembed.ant.tasks"/>
 	<target name="build.jars">
+		<available file="ant-bin" property="ant-bin" 
+				value="ant-bin" />
+		<available file="ant_tasks/modembed.ant.tasks.jar-classes" property="ant-bin" 
+				value="ant_tasks/modembed.ant.tasks.jar-classes"/>
+		
+		<echo>Ant task binary directory: ${ant-bin}</echo>
 		<jar destfile="ant_tasks/${jar.name}.jar">
-			<fileset dir="ant-bin">
+			<fileset dir="${ant-bin}">
 				<include name="**/*.class"/>
 			</fileset>
 		</jar>
 	</target>
+	
 	<target name="clean.jars">
 		<delete file="ant_tasks/${jar.name}.jar" failonerror="false"/>
 	</target>

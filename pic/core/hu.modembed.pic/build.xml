@@ -6,8 +6,15 @@
 	<target name="share">
 		<pack.shared name="microchip.pic16" />
 		<pack.shared name="microchip.pic18" />
+		
+		<available file="ant-bin" property="ant-bin" 
+					value="ant-bin" />
+		<available file="ant_tasks/modembed.pic.ant.tasks.jar-classes" property="ant-bin" 
+					value="ant_tasks/modembed.pic.ant.tasks.jar-classes"/>
+				
+		<echo>Ant task binary directory: ${ant-bin}</echo>
 		<jar destfile="ant_tasks/modembed.pic.ant.tasks.jar">
-			<fileset dir="ant-bin">
+			<fileset dir="${ant-bin}">
 				<include name="**/*.class"/>
 			</fileset>
 		</jar>
