@@ -9,10 +9,11 @@
 		
 		<available file="ant-bin" property="ant-bin" 
 					value="ant-bin" />
-		<available file="ant_tasks/modembed.pic.ant.tasks.jar-classes" property="ant-bin" 
-					value="ant_tasks/modembed.pic.ant.tasks.jar-classes"/>
+		<available file="target/ant_tasks/modembed.pic.ant.tasks.jar-classes" property="ant-bin" 
+					value="target/ant_tasks/modembed.pic.ant.tasks.jar-classes"/>
 				
 		<echo>Ant task binary directory: ${ant-bin}</echo>
+		<fail unless="ant-bin" message="Could not find compiled ant task classes!"/>
 		<jar destfile="ant_tasks/modembed.pic.ant.tasks.jar">
 			<fileset dir="${ant-bin}">
 				<include name="**/*.class"/>
