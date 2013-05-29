@@ -61,36 +61,6 @@
               				<artifactId>org.eclipse.emf</artifactId>
               				<version>0.0.0</version>
             			</dependency>
-           				<dependency>
-              				<type>eclipse-feature</type>
-              				<artifactId>org.eclipse.epsilon.core.feature</artifactId>
-              				<version>0.0.0</version>
-            			</dependency>
-            			<dependency>
-              				<type>eclipse-feature</type>
-              				<artifactId>org.eclipse.epsilon.core.dt.feature</artifactId>
-              				<version>0.0.0</version>
-            			</dependency>
-            			<dependency>
-              				<type>eclipse-feature</type>
-              				<artifactId>org.eclipse.epsilon.core.dependencies.feature</artifactId>
-              				<version>0.0.0</version>
-            			</dependency>
-            			<dependency>
-              				<type>eclipse-feature</type>
-              				<artifactId>org.eclipse.epsilon.emf.feature</artifactId>
-              				<version>0.0.0</version>
-            			</dependency>
-            			<dependency>
-              				<type>eclipse-feature</type>
-              				<artifactId>org.eclipse.epsilon.emf.dt.feature</artifactId>
-              				<version>0.0.0</version>
-            			</dependency>
-            			<dependency>
-              				<type>eclipse-feature</type>
-              				<artifactId>org.eclipse.epsilon.emf.dt.dependencies.feature</artifactId>
-              				<version>0.0.0</version>
-            			</dependency>
           			</dependencies>
 					<bundleStartLevel>
 						<bundle>
