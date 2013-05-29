@@ -5,7 +5,9 @@ package hu.modembed.ant;
 
 import hu.modembed.MODembedCore;
 import hu.modembed.model.modembed.abstraction.DeviceAbstraction;
+import hu.modembed.model.modembed.abstraction.behavior.RootSequentialBehavior;
 import hu.modembed.model.modembed.abstraction.behavior.SequentialBehaviorModule;
+import hu.modembed.utils.compiler.linker.SequentialBehaviorLinker;
 
 import java.io.File;
 import java.util.Iterator;
@@ -23,7 +25,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  * @author balazs.grill
  *
  */
-public class ModuleCompilerTask extends Task{
+public class ModuleLinkerTask extends Task{
 
 	private File output;
 	private File device;
@@ -78,7 +80,7 @@ public class ModuleCompilerTask extends Task{
     	ResourceSet rs = MODembedCore.createResourceSet();
     	try {
 			DeviceAbstraction device = TaskUtils.loadInput(rs, this.device, DeviceAbstraction.class);
-			//ModuleCompiler compiler = new ModuleCompiler(device);
+			SequentialBehaviorLinker linker = new SequentialBehaviorLinker(device);
 			Iterator<?> iterator = resources.iterator();
 			while(iterator.hasNext()){
 				Object o = iterator.next();
@@ -86,13 +88,13 @@ public class ModuleCompilerTask extends Task{
 					//((FileResource) o).setBaseDir(getProject().getBaseDir());
 					File file = ((FileResource) o).getFile();
 					SequentialBehaviorModule module = TaskUtils.loadInput(rs, file, SequentialBehaviorModule.class);
-					//compiler.addModule(module);
+					linker.addModule(module);
 				}
 			}
 			
-//			AssemblerObject asm = compiler.compile(entry);
+			RootSequentialBehavior sb = linker.link(entry);
 			org.eclipse.emf.ecore.resource.Resource out = TaskUtils.getOutput(rs, output);
-//			out.getContents().add(asm);
+			out.getContents().add(sb);
 			out.save(null);
 		} catch (Exception e) {
 			throw new BuildException(e);

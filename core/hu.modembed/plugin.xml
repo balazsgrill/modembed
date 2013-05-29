@@ -31,7 +31,7 @@
             name="modembed.disassemble">
       </antTask>
       <antTask
-            class="hu.modembed.ant.ModuleCompilerTask"
+            class="hu.modembed.ant.ModuleLinkerTask"
             eclipseRuntime="true"
             headless="true"
             library="ant_tasks/modembed.ant.tasks.jar"
