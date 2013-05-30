@@ -1,191 +1,98 @@
 = Workflow task reference =
 
-== Program model constraints ==
-
-A Program model library (Library) is a very generic language to describe any program. The majority of the compilation is the decrementing of this generality into more and more specific description of the program, but in the same language. This requires to present levels of constraints to the models. The task steps assume a constraint level on their input, and ensures another constraint level on their output (in case no error were reported during the task execution). A constrained model will be denoted like the following: Library{Ln}, whener Ln denotes the assumed constraint level, as defined by the following list:
-
-; L4 : No constraints, every feature is allowed
-; L3 : Self-contained - no reference to another Library model (except Origin definition)
-; L2 : All constraints of L3 
-: No abstract function calls - every function call is assumed to refer to the final function definition, it cannot be overridden
-: Function calls must be type-safe - function parameters cannot be in '''void''' type and function argument type must be compatible with parameter type.
-; L1 : All constraints of L2
-: Flat function structure - Cannot contain calls to other functions (all function is inlined), only instruction calls, variable definitions and blocks are acceptable inside a function definition.
-; L0 : All constraints of L1
-: Variables are mapped - No variable declaration (except for labels)
-
 == Generic compiler tasks ==
 
-=== Integrate program model ===
+=== Link modules - modembed.link ===
 
-Takes a set of program models and creates a self-contained equivalent model.
+IN PROGRESS
 
-; Identifier : compiler.integrate
-; Inputs : input = Library{L4}*
-; Outputs : output = Library{L3}
+=== Map heap allocation - modembed.map ===
 
-Example:
+Maps every variable allocation in the given sequential behavior model to the device memory and generates a memory map model. Mapping is controlled by the given memory mapping rules model. 
 
- compiler.integrate{
- 	input = blink.main
- 	input = e.platform
- 	input = microchip.PIC16F1824
- 	input = pic16.platform
- 	output = blink.l3
- }
+Format:
 
-=== Resolve function calls ===
+ 	<modembed.map 
+ 		input="${sequence.file}" 
+ 		rules="${rules.file}"
+ 		output="${map.file}" />
 
-Resolves all abstract function calls in a Library to an appropriate function implementation.
+; Inputs : input = RootSequentialBehavior
+: rules = SymbolMappingRules
+; Outputs : output = SymbolMap
 
-; Identifier : compiler.resolve
-; Inputs : input = Library{L3}
-; Outputs : output = Library{L2}
+=== Produce instruction list - modembed.translate ===
 
-Example:
+Translates the given sequential behavior model to device-specific instruction lists.
 
- compiler.resolve{
- 	input = blink.l3
- 	output = blink.l2
- }
- 
-=== Flatten function structure ===
- 
-Takes the given entry function from the input model and generates a flat structure by including the implementation of every called function. Every other function definition are removed from the model.
+Format:
+	
+ 	<modembed.translate 
+ 		input="${sequence.file}"
+ 		map="${map.file}"
+ 		output="${asm.file}" />
 
-; Identifier : compiler.flatten
-; Inputs : input = Library{L2}
-: entry = "Function name"
-; Outputs : output = Library{L1}
-
-Example:
-
- compiler.flatten{
- 	input = blink.l2
- 	output = blink.l1
- 	entry = "main"
- }
- 
-=== Map heap allocation ===
-
-Maps every variable allocation in the given model to the device memory and exchanges all variable reference to the appropriate address literal, generating a memory map model. Memory structure is defined by the given architecture model.
-
-; Identifier : compiler.map
-; Inputs : input = Library{L1}
-: entry = "Function name"
-: architecture = Architecture
-; Outputs : output = MemoryMap
-
-Example:
-
- compiler.map{
- 	input = blink.l1
- 	output = blink.map
- 	entry = "main"
- 	architecture = pic16f1824.arch
- }
-
-=== Produce instruction list ===
-
-Produces a list of instruction calls from the given program model. Library{L0} can be produced by optimize.constants with a memory map.
-
-; Identifier : compiler.toasm
-; Inputs : input = Library{L0}
-: entry = "Function name"
-; Output : AssemblerObject
-
-Example:
-
- compiler.toasm{
- 	input = blink.l0
- 	entry = "main"
- 	output = blink.asm
- } 
+; Inputs : input = RootSequentialBehavior
+: map = SymbolMap?
+; Output : output = AssemblerObject 
  
 == HEX file manipulation tasks ==
 
-=== Assemble HEX file ===
+=== Assemble HEX file - modembed.assemble ===
 
 Convert a list of instruction calls into a HEX file
 
-; Identifier : hex.assemble
+Format:
+	
+ 	<modembed.assemble
+ 		input="${asm.file}"
+ 		output="${hex.file}" />
+
 ; Inputs : input = AssemblerObject
-: architecture = Architecture
-; Outputs : output = "file.hex"
+; Outputs : output = HexFile
 
-Example:
-
- hex.assemble{
- 	input = blink.asm
- 	output = "blink.hex"
- 	architecture = pic16f1824.arch
- }
-
-=== Disassemble HEX file ===
+=== Disassemble HEX file - modembed.disassemble ===
 
 Parse a HEX file and produce a list of instruction calls
 
-; Identifier : hex.disassemble
-; Inputs : input = "file.hex"
-: arch = Architecture
+Format:
+
+ 	<modembed.disassemble 
+ 		input="${hex.file}"
+ 		instructionSet="${instructionSet.file}"
+ 		output="${asm.file}" />
+
+; Inputs : input = HexFile
+: instructionSet = InstructionSet
 ; Outputs : output = AssemblerObject
 
-Example:
-
- hex.disassemble{
- 	input = "blink.hex"
- 	output = blink.asm
- 	architecture = pic16f1824.arch
- }
-
-=== Merge HEX files ===
+=== Merge HEX files - modembed.hex.merge ===
 
 Merge contents of a list of HEX file to a single HEX file
 
-; Identifier : hex.merge
-; Inputs : input = "file.hex"*
-; Outputs : output = "merged.hex"
+Format:
 
-Example:
+ 	<modembed.hex.merge output="${out.hex}">
+ 		<filelist dir="${basedir}">
+ 			<file name="${input1.hex}"/>
+ 			<file name="${input2.hex}"/>
+ 		</filelist>
+ 	</modembed.hex.merge>
 
- hex.merge{
- 	input = "blink.hex"
- 	input = "pic-config.hex"
- 	output = "blink-full.hex"
- }
- 
-== Optimization tasks ==
- 
-=== Compile-time execution of constant expressions ===
- 
-Compute and resolve all constant-only expressions. It can optionally resolve variable reference expressions to their mapped address. It does not affect the constraint level of the Library it processes, with the exception that it will produce an L0 model from an L1 if there is a proper MemoryMap is given to it.
+; Inputs : fileset = HexFile*
+; Outputs : output = HexFile
 
-; Identifier : optimize.constants
-; Inputs : input = Library{Ln}
-: map = MemoryMap?
-; Outputs : output = Library{Ln}
+=== Extract part of a HEX file - modembed.hex.extract ===
 
-Example:
+Extracts entries from a HEX file which falls in the given interval
 
- optimize.constants{
- 	input = blink.l1
- 	map = blink.map
- 	output = blink.l0
- }
+Format:
 
-=== Strip unused elements from model ===
-
-Produce a copy of the input model, but without all elements which are not used by the given entry point.
-
-; Identifier : optimize.strip
-; Inputs : input = Library{Ln}
-: entry = "main"
-; Outputs : output = Library{Ln}
-
-Example:
-
- optimize.strip{
- 	input = blink.l0
- 	entry = "main"
- 	output = blink.l0.strip
- }
+ 	<modembed.hex.extract 
+ 		input="${input.hex}" output="${output.hex}"
+ 		start="${start.addr}" end="${end.addr}" />
+ 		
+; Inputs : input = HexFile
+: start : integer
+: end : integer
+; Outputs : output = HexFile
