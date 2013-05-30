@@ -4,9 +4,13 @@ MODembed is an experimental IDE aiming to provide a more advanced toolchain for 
 
 == Model-based approach ==
 
-What do I mean on modal-based approach? In software, everything can be viewed as a model. For example a C file (or set of files) is an abstract behavioral model of a program that can be executed on a specific platform. However, the model is not complete, you cannot execute a C file by itself. The missing part is the model of the platform, the environment the code will be compiled to. This model is only known by the C compiler.
+What do I mean on model-based approach? In software, everything can be viewed as a model. For example a C file (or set of files) is an abstract behavioral model of a program that can be executed on a specific platform. However, the model is not complete, you cannot execute a C file by itself. The missing part is the model of the platform, the environment the code will be compiled to. This model is only known by the C compiler.
 
 The MODembed toolchain tries to remove this additional knowledge from the compiler and put it into a platform model. Using this concept, the input of the compilation would be not only the code, but also the architecture model. Moreover, this approach adds the possibility of using higher-level models which are transformed automatically into these lower level program models - similarly to C code generation from UML models.
+
+== Modeling workflow ==
+
+Considering the upper concepts, the compilation is a series of model transformations. In MODembed, these transformations are defined as ANT tasks. Integrating ANT provides flexibility and gives the user control upon the compilation process.
 
 == Links ==
 
