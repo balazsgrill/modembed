@@ -8,6 +8,10 @@
      balazs.grill                                                                
      ====================================================================== -->
 <project name="generateLibs" default="default">
+	
+	<include file="../../../res/build-tools/ant-contrib.xml"/>
+	<include file="../../../res/build-tools/epsilon.xml"/>
+	
     <description>
             This build script generates PIC libraries based on the device descriptor XMLs
     </description>
@@ -29,6 +33,17 @@
     	<fileset dir="../hu.modembed.pic/device-descriptors/16xxxx" id="devicefiles">
     	    <include name="*.PIC"/>
     	</fileset>
+    	
+    	<for param="file">
+    		<fileset refid="devicefiles" />
+    		<sequence>
+    			<epsilon.egl
+    				
+    			/>
+    			
+    		</sequence>
+    	</for>
+    	
     	<pathconvert pathsep="&lt;/file&gt;${line.separator}&lt;file&gt;" property="devices" refid="devicefiles"/>
     	
     	<echo file="${picxml}">&lt;?xml version="1.0" encoding="UTF-8"?&gt;${line.separator}&lt;list&gt;${line.separator}</echo>

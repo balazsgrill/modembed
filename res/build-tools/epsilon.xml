@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="buildtools-epsilon" default="test">
+	
+	<dirname property="epsilon.basedir" file="${ant.file.buildtools-epsilon}"/>
+	<path id="epsilon.classpath">
+		<fileset dir="${epsilon.basedir}/epsilon">
+			<include name="*.jar"/>
+		</fileset>
+	</path>	
+
+	<taskdef
+		name="epsilon.loadmodel" classpathref="epsilon.classpath"
+	    classname="org.eclipse.epsilon.workflow.tasks.LoadModelTask"
+	 />
+
+	     <taskdef
+	     	name="epsilon.startTransaction" classpathref="epsilon.classpath"
+	        classname="org.eclipse.epsilon.workflow.tasks.transactions.StartTransactionTask"
+	      />
+
+	     <taskdef
+	     	name="epsilon.commitTransaction" classpathref="epsilon.classpath"
+	        classname="org.eclipse.epsilon.workflow.tasks.transactions.CommitTransactionTask"
+	      />
+
+	     <taskdef
+	     	name="epsilon.rollbackTransaction" classpathref="epsilon.classpath"
+	        classname="org.eclipse.epsilon.workflow.tasks.transactions.RollbackTransactionTask"
+	      />
+
+	     <taskdef
+	     	name="epsilon.storemodel" classpathref="epsilon.classpath"
+	        classname="org.eclipse.epsilon.workflow.tasks.StoreModelTask"
+	      />
+
+	     <taskdef
+	     	name="epsilon.disposeModels" classpathref="epsilon.classpath"
+	        classname="org.eclipse.epsilon.workflow.tasks.DisposeModelsTask"
+	      />
+
+	     <taskdef
+	     	name="epsilon.eol" classpathref="epsilon.classpath"
+	        classname="org.eclipse.epsilon.workflow.tasks.EolTask"
+	      />
+	     
+	     <taskdef
+	     	name="epsilon.eunit" classpathref="epsilon.classpath"
+	        classname="org.eclipse.epsilon.workflow.tasks.EUnitTask"
+	      />
+	            
+	     <!--taskdef
+	     	name="epsilon.etl" classpathref="epsilon.classpath"
+	        classname="org.eclipse.epsilon.workflow.tasks.EtlTask"
+	      /-->
+
+	     <taskdef
+	     	name="epsilon.ecl" classpathref="epsilon.classpath"
+	        classname="org.eclipse.epsilon.workflow.tasks.EclTask"
+	      />
+
+	     <taskdef
+	     	name="epsilon.eml" classpathref="epsilon.classpath"
+	        classname="org.eclipse.epsilon.workflow.tasks.EmlTask"
+	      />
+	      
+	     <taskdef
+	     	name="epsilon.evl" classpathref="epsilon.classpath"
+	        classname="org.eclipse.epsilon.workflow.tasks.EvlTask"
+	      />
+
+	     <taskdef
+	     	name="epsilon.loadCompositeModel" classpathref="epsilon.classpath"
+	        classname="org.eclipse.epsilon.workflow.tasks.LoadCompositeModelTask"
+	      />
+
+	     <taskdef
+	     	name="epsilon.egl" classpathref="epsilon.classpath"
+	        classname="org.eclipse.epsilon.workflow.tasks.EglTask"
+	      />
+
+	     <!--taskdef
+	     	name="epsilon.epl" classpathref="epsilon.classpath"
+	        classname="org.eclipse.epsilon.workflow.tasks.EplTask"
+	      /-->
+
+		  <!--taskdef
+		 	name="epsilon.flock" classpathref="epsilon.classpath"
+		    classname="org.eclipse.epsilon.workflow.tasks.FlockTask"
+		  /-->
+
+	     <taskdef
+	     	name="epsilon.xml.loadModel" classpathref="epsilon.classpath"
+	        classname="org.eclipse.epsilon.workflow.tasks.xml.LoadXmlModel"
+	      />
+
+	<target name="test">
+		<epsilon.eol>
+			"hello".println();
+		</epsilon.eol>	
+	</target>
+	
+</project>
