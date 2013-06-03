@@ -12,6 +12,8 @@
 	<include file="../../../res/build-tools/ant-contrib.xml"/>
 	<include file="../../../res/build-tools/epsilon.xml"/>
 	
+	<property name="module.template" value="../hu.modembed.pic/templates/module.egl"></property>
+	
     <description>
             This build script generates PIC libraries based on the device descriptor XMLs
     </description>
@@ -36,12 +38,13 @@
     	
     	<for param="file">
     		<fileset refid="devicefiles" />
-    		<sequence>
-    			<epsilon.egl
+    		<sequential>
+    			<echo message="Generating libraries for @{file}"></echo>
+    			<epsilon.egl src="${module.template}" 
     				
     			/>
     			
-    		</sequence>
+    		</sequential>
     	</for>
     	
     	<pathconvert pathsep="&lt;/file&gt;${line.separator}&lt;file&gt;" property="devices" refid="devicefiles"/>
