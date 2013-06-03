@@ -3,14 +3,14 @@
 var pic = PIC.root;
 var arch = pic.getAttribute("edc:arch");
 var dev = "";
-arch.println();
 if (arch == "16xxxx") {
 	dev = "pic16.generic";
-	"normal".println();
 }
 if (arch == "16Exxx") {
 	dev = "pic16e.generic";
-	"enchanced".println();
+}
+if (arch == "18xxxx") {
+	dev = "pic18.generic";
 }
 var dataspace = pic.getElementsByTagName("edc:DataSpace").item(0);
 var regardlessofMode = dataspace.getElementsByTagName("edc:RegardlessOfMode").item(0);
