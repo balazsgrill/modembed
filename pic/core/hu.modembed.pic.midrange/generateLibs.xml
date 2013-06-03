@@ -13,6 +13,7 @@
 	<include file="../../../res/build-tools/epsilon.xml"/>
 	
 	<property name="module.template" value="../hu.modembed.pic/templates/module.egl"></property>
+	<property name="device.template" value="../hu.modembed.pic/templates/device.egl"></property>
 	
     <description>
             This build script generates PIC libraries based on the device descriptor XMLs
@@ -37,13 +38,27 @@
     	</fileset>
     	
     	<for param="file">
-    		<fileset refid="devicefiles" />
+    		<path>
+    			<fileset refid="devicefiles" />
+    		</path>
     		<sequential>
-    			<echo message="Generating libraries for @{file}"></echo>
-    			<epsilon.egl src="${module.template}" 
-    				
+    			<echo message="@{file}"></echo>
+    			<local name="picname" />
+    			<basename file="@{file}" property="picname" suffix=".PIC"/>
+    			<echo message="Generating libraries for ${picname}"></echo>
+    			<epsilon.xml.loadModel
+    				file="@{file}"
+    				read="true"
+    				store="false"
+    				name="PIC"
     			/>
-    			
+    			<epsilon.egl src="${module.template}" target="gen-lib/${picname}.module.m" debug="true">
+    				<model ref="PIC" as="PIC" alias="PIC"/>
+    			</epsilon.egl>
+    			<epsilon.egl src="${device.template}" target="gen-lib/${picname}.device.m" debug="true">
+    			    <model ref="PIC" as="PIC" alias="PIC"/>
+    			 </epsilon.egl>
+    			<epsilon.disposeModel model="PIC"/>
     		</sequential>
     	</for>
     	

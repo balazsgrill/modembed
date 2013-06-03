@@ -1,0 +1,38 @@
+#!device.syntax
+[%
+var pic = PIC.root;
+var arch = pic.getAttribute("edc:arch");
+var dev = "";
+arch.println();
+if (arch == "16xxxx") {
+	dev = "pic16.generic";
+	"normal".println();
+}
+if (arch == "16Exxx") {
+	dev = "pic16e.generic";
+	"enchanced".println();
+}
+var dataspace = pic.getElementsByTagName("edc:DataSpace").item(0);
+var regardlessofMode = dataspace.getElementsByTagName("edc:RegardlessOfMode").item(0);
+%]
+device [%=pic.getAttribute("edc:name")%].device extends [%=dev%];
+[%
+var datasectors = regardlessofMode.getElementsByTagName("edc:SFRDataSector");
+var i=0;
+while(i<datasectors.getLength()){
+	var datasector = datasectors.item(i);
+	var bank = datasector.getAttribute("edc:bank");
+	var start = datasector.getAttribute("edc:beginaddr");
+	
+	var startAddr = 0.parseInt(start.substring(2),16);
+	var end = datasector.getAttribute("edc:endaddr");
+	var endAddr = 0.parseInt(end.substring(2),16);
+	var size = endAddr-startAddr;
+%]
+mem BRAM bank[%=i%]	[%=bank%] 0x[%=0.toHexString(startAddr)%] 0x[%=0.toHexString(size)%] {bank = [%=bank%]};
+[%
+	
+	i=i+1;
+}
+%]
+

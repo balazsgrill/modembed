@@ -24,6 +24,12 @@
          	<resource path="/">
          		<xsl:attribute name="resource">gen-lib/<xsl:value-of select="@edc:name"/>.config.xmi</xsl:attribute>
          	</resource>
+         	<resource path="/">
+         		<xsl:attribute name="resource">gen-lib/<xsl:value-of select="@edc:name"/>.module.m</xsl:attribute>
+         	</resource>
+         	<resource path="/">
+         		<xsl:attribute name="resource">gen-lib/<xsl:value-of select="@edc:name"/>.device.m</xsl:attribute>
+         	</resource>
  		</project>
  	</xsl:template>
  	

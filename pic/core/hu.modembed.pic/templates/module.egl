@@ -1,1 +1,6 @@
-module [%=a_name%]
+#!sequential.syntax
+[%
+var PICelement = PIC.root;
+PICelement.getAttribute("edc:name").println();
+%]
+module [%=PICelement.getAttribute("edc:name")%]
