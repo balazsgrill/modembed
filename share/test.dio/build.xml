@@ -4,7 +4,13 @@
 	<target name="pic16f1824">
 		<eclipse.convertPath resourcePath="microchip.PIC16F1824/PIC16F1824.module.m" property="pic16_module"/>
 		
-		
+		<modembed.link entry="main" output="pic16/.main.sequence.xmi">
+			<filelist dir="${basedir}">
+				<file name="main.m"/>
+				<file name="pic16/dio.driver.pic16f1824.m"/>
+				<file name="${pic16_module}"/>
+			</filelist>
+		</modembed.link>
 		
 	</target>
 	
