@@ -14,6 +14,7 @@
 	
 	<property name="module.template" value="../hu.modembed.pic/templates/module.egl"></property>
 	<property name="device.template" value="../hu.modembed.pic/templates/device.egl"></property>
+	<property name="rules.template" value="../hu.modembed.pic/templates/rules.egl"></property>
 	
     <description>
             This build script generates PIC libraries based on the device descriptor XMLs
@@ -58,6 +59,9 @@
     			<epsilon.egl src="${device.template}" target="gen-lib/${picname}.device.m" debug="true">
     			    <model ref="PIC" as="PIC" alias="PIC"/>
     			 </epsilon.egl>
+    			<epsilon.egl src="${rules.template}" target="gen-lib/${picname}.mappingrules.m" debug="true">
+    			    <model ref="PIC" as="PIC" alias="PIC"/>
+    			</epsilon.egl>
     			<epsilon.disposeModel model="PIC"/>
     		</sequential>
     	</for>

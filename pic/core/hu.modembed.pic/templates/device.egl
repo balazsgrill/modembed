@@ -29,7 +29,7 @@ while(i<datasectors.getLength()){
 	var endAddr = 0.parseInt(end.substring(2),16);
 	var size = endAddr-startAddr;
 %]
-mem BRAM bank[%=i%]	[%=bank%] 0x[%=0.toHexString(startAddr)%] 0x[%=0.toHexString(size)%] {bank = [%=bank%]};
+mem BRAM bank[%=bank%] 0x[%=0.toHexString(startAddr)%] 0x[%=0.toHexString(size)%] {bank = [%=bank%]};
 [%
 	
 	i=i+1;

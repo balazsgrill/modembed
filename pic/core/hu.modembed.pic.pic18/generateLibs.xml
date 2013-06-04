@@ -17,6 +17,7 @@
 	
 	<property name="module.template" value="../hu.modembed.pic/templates/module.egl"></property>
 	<property name="device.template" value="../hu.modembed.pic/templates/device.egl"></property>
+	<property name="rules.template" value="../hu.modembed.pic/templates/rules.egl"></property>
 	
 	<property name="picxml">PICs.xml</property>
 	
@@ -57,6 +58,9 @@
     			<epsilon.egl src="${device.template}" target="gen-lib/${picname}.device.m" debug="true">
     			    <model ref="PIC" as="PIC" alias="PIC"/>
     			 </epsilon.egl>
+    			<epsilon.egl src="${rules.template}" target="gen-lib/${picname}.mappingrules.m" debug="true">
+    			    <model ref="PIC" as="PIC" alias="PIC"/>
+    			</epsilon.egl>
     			<epsilon.disposeModel model="PIC"/>
     		</sequential>
     	</for>
