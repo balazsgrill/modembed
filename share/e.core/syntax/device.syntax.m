@@ -41,7 +41,7 @@ terminal OP_ADD "\+";
 <Attributes> :- OP_OPEN attributes={"http://modembed.hu/infrastructure#AttributeContainerDefinition" <Attribute>* } OP_CLOSE;
 <Attribute> :- attributes={"http://modembed.hu/infrastructure#AttributeDefinition" name=IDENTIFIER OPERATOR_SEMICOLON };
 
-<MemoryInstance> :-  KW_MEM memoryInstances={"http://modembed.hu/abstraction/memorymodel#MemoryInstance" type=IDENTIFIER name=IDENTIFIER startAddress=HEXADECIMAL_NUMBER size=HEXADECIMAL_NUMBER } ;
+<MemoryInstance> :-  KW_MEM memoryInstances={"http://modembed.hu/abstraction/memorymodel#MemoryInstance" type=IDENTIFIER name=IDENTIFIER startAddress=HEXADECIMAL_NUMBER size=HEXADECIMAL_NUMBER <AttributeValues>? } ;
 <AttributeValues> :- OP_OPEN attributes={"http://modembed.hu/infrastructure#AttributeValueContainer" <AttributeValue>* } OP_CLOSE;
 <AttributeValue> :- values={"http://modembed.hu/infrastructure#AttributeValue" definition=IDENTIFIER OPERATOR_ASSIGN value=DECIMAL_NUMBER };
 

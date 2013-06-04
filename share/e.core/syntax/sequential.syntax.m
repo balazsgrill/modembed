@@ -39,7 +39,12 @@ terminal OP_END "\}";
 <SymbolValue> :- value=BINARY_NUMBER;
 <SymbolValue> :- value=HEXADECIMAL_NUMBER;
 
-<SequentialBehavior> :- behaviorModels={"http://modembed.hu/abstraction/behavior#SequentialBehavior" name=IDENTIFIER OP_START <LocalItem>*? OP_END};
+<SequentialBehavior> :- behaviorModels={"http://modembed.hu/abstraction/behavior#SequentialBehaviorPart" name=IDENTIFIER 
+						BRACKET_OPEN <Parameters>? BRACKET_CLOSE OP_START <LocalItem>*? OP_END};
+
+<Parameters> :- <Parameter> <Parameters2>*?;
+<Parameters2> :- OP_COMMA <Parameter>;
+<Parameter> :- parameters=IDENTIFIER;
 
 <Action> :- actions=<CodeSymbolPlacement>;
 <Action> :- actions=<AtomicOperation>;
