@@ -12,10 +12,13 @@ import hu.modembed.model.modembed.abstraction.behavior.SymbolAssignment;
  */
 public interface ISymbolContext {
 
-	public SymbolAssignment getSymbol(String symbol);
+	public String getSymbol(String symbol);
 	
 	public SequentialBehaviorPart getCallee(String name);
 
 	public void registerSymbol(SymbolAssignment sa);
 	
+	public String basePrefix();
+	
+	public int countCalls(String callee);
 }

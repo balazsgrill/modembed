@@ -4,7 +4,6 @@
 package hu.modembed.ant;
 
 import hu.modembed.MODembedCore;
-import hu.modembed.model.modembed.abstraction.DeviceAbstraction;
 import hu.modembed.model.modembed.abstraction.behavior.RootSequentialBehavior;
 import hu.modembed.model.modembed.abstraction.behavior.SequentialBehaviorModule;
 import hu.modembed.utils.compiler.linker.SequentialBehaviorLinker;
@@ -28,16 +27,11 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 public class ModuleLinkerTask extends Task{
 
 	private File output;
-	private File device;
 	private Union resources;
 	private String entry;
 	
 	public void setEntry(String entry) {
 		this.entry = entry;
-	}
-	
-	public void setDevice(File device) {
-		this.device = device;
 	}
 	
 	public void setOutput(File output) {
@@ -73,19 +67,16 @@ public class ModuleLinkerTask extends Task{
     @Override
     public void execute() throws BuildException {
     	if (output == null) throw new BuildException("output is a required attribute");
-    	if (device == null) throw new BuildException("device is a required attribute");
     	if (resources == null) throw new BuildException("No input is defined");
     	if (entry == null) throw new BuildException("entry is a required attribute");
     	
     	ResourceSet rs = MODembedCore.createResourceSet();
     	try {
-			DeviceAbstraction device = TaskUtils.loadInput(rs, this.device, DeviceAbstraction.class);
-			SequentialBehaviorLinker linker = new SequentialBehaviorLinker(device);
+			SequentialBehaviorLinker linker = new SequentialBehaviorLinker();
 			Iterator<?> iterator = resources.iterator();
 			while(iterator.hasNext()){
 				Object o = iterator.next();
 				if (o instanceof FileResource){
-					//((FileResource) o).setBaseDir(getProject().getBaseDir());
 					File file = ((FileResource) o).getFile();
 					SequentialBehaviorModule module = TaskUtils.loadInput(rs, file, SequentialBehaviorModule.class);
 					linker.addModule(module);
