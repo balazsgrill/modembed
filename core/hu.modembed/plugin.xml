@@ -35,7 +35,7 @@
             eclipseRuntime="true"
             headless="true"
             library="ant_tasks/modembed.ant.tasks.jar"
-            name="modembed.compile">
+            name="modembed.link">
       </antTask>
       <antTask
             class="hu.modembed.ant.hex.MergeHexFilesTask"
