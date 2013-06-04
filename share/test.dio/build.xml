@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	
+	<target name="pic16f1824">
+		<eclipse.convertPath resourcePath="microchip.PIC16F1824/PIC16F1824.module.m" property="pic16_module"/>
+		
+		
+		
+	</target>
+	
+</project>
+
