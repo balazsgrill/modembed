@@ -35,7 +35,7 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
-@SuiteClasses({ CompilerTests.class, HexTests.class })
+@SuiteClasses({ CompilerTests.class, HexTests.class, SimulatorTests.class })
 public class ModembedTests {
 
 	public static final String TEST_CATEGORY = "hu.modembed.test.category"; 

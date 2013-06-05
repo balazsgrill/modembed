@@ -7,6 +7,7 @@
 		<pack.shared name="test.assembler"/>
 		<pack.shared name="test.compileToDevice"/>
 		<pack.shared name="test.hex.manipulate"/>
+		<pack.shared name="test.dio"/>
 	</target>
 	
 </project>

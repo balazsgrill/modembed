@@ -49,6 +49,16 @@
                project="microchip.PIC18F14K50">
          </dependency>
       </project>
+      <project
+            id="test.dio"
+            name="DIO operations test">
+         <dependency
+               project="microchip.PIC16F1824">
+         </dependency>
+         <dependency
+               project="microchip.PIC18F14K50">
+         </dependency>
+      </project>
    </extension>
 
 </plugin>
