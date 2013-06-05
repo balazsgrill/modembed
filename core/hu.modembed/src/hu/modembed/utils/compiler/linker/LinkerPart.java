@@ -41,6 +41,7 @@ public class LinkerPart implements ISymbolContext {
 			SymbolAssignment la = EcoreUtil.copy(sa);
 			la.setSymbol(prefix+sa.getSymbol());
 			localSymbols.put(sa.getSymbol(), la.getSymbol());
+			registerSymbol(la);
 		}
 		
 		for(SequentialAction sa : part.getActions()){
