@@ -5,27 +5,23 @@
 
   <title>{{ page.title }}</title>
 
-  <link rel="stylesheet" type="text/css" href="http://balazsgrill.github.com/modembed/index.css" />
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.1.0/pure-min.css">
 </head>
 
 <body>
 
-	<div id="header" class="container">
-		<h1><a href="http://balazsgrill.github.com/modembed/"><img src="http://balazsgrill.github.com/modembed/modembedlogo.png" /></a></h1>
-		<div id="headerbuttons">
-			<a class="abutton" href="https://github.com/balazsgrill/modembed">GitHub</a>
-			<a class="abutton" href="https://github.com/balazsgrill/modembed/wiki">Wiki</a>
-			<a class="abutton" href="https://github.com/balazsgrill/modembed/issues">Issues</a>
-			<a class="abutton" href="http://marketplace.eclipse.org/content/modembed">Eclipse marketplace</a>
-		</div>
+	<div class="pure-menu pure-menu-open pure-menu-horizontal">
+    <a href="http://balazsgrill.github.com/modembed/" class="pure-menu-heading">MODembed</a>
+
+    <ul>
+        <li class="pure-menu-selected"><a href="https://github.com/balazsgrill/modembed">GitHub</a></li>
+        <li><a href="https://github.com/balazsgrill/modembed/wiki">Wiki</a></li>
+        <li><a href="https://github.com/balazsgrill/modembed/issues">Issues</a></li>
+        <li><a href="http://marketplace.eclipse.org/content/modembeds">Eclipse marketplace</a></li>
+    </ul>
 	</div>
 
-  <div class="container content">
-
 {{ content }}
-
-  </div>
-
   
 </body>
 </html>
