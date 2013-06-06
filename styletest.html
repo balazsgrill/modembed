@@ -5,111 +5,91 @@
 
   <title>{{ page.title }}</title>
 
-  <link rel="stylesheet" type="text/css" href="index.css" />
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.1.0/pure-min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-	<div id="header" class="container">
-		<h1><a href="http://gbalage.github.com/modembed/"><img src="modembedlogo.png" /></a></h1>
-		<div id="headerbuttons">
-			<a class="abutton" href="http://gbalage.github.com/modembed/gettingstarted/">Getting started</a>
-			<a class="abutton" href="https://github.com/gbalage/modembed">GitHub</a>
-			<a class="abutton" href="https://github.com/gbalage/modembed/wiki">Wiki</a>
-			<a class="abutton" href="https://github.com/gbalage/modembed/issues">Issues</a>
-			<a class="abutton" href="http://marketplace.eclipse.org/content/modembed">Eclipse marketplace</a>
-		</div>
+	<div class="pure-menu pure-menu-open pure-menu-horizontal pure-menu-fixed">
+    <a href="http://balazsgrill.github.com/modembed/" class="pure-menu-heading">MODembed</a>
+
+    <ul>
+        <li class="pure-menu-selected"><a href="https://github.com/balazsgrill/modembed">GitHub</a></li>
+        <li><a href="https://github.com/balazsgrill/modembed/wiki">Wiki</a></li>
+        <li><a href="https://github.com/balazsgrill/modembed/issues">Issues</a></li>
+        <li><a href="http://marketplace.eclipse.org/content/modembeds">Eclipse marketplace</a></li>
+    </ul>
 	</div>
 
-  <div class="container content">
+<div class="content">
 
+	<div class="splash">
+		<h1 class="splash-head">MODembed</h1>
 
-<h1>Microchip 8-bit PIC development guide</h1>
-
-<h2>1. Concepts</h2>
-
-<p>Every PIC architecture libraries follows the same concept:</p>
-
-<img src="gettingstarted/pic8/platform.png" />
-
-<p>This way you can choose the abstraction level of your application. You can use plain assembly
-or you can write your application in a platform independent manner allowing your program to
-compile on different platform. You can even use different techniques in different parts. It's
-up to you to choose the most efficient way to solve you problem!</p>
-
-<p>Let's see an example</p>
-
-<span class="prefile">example1.e</span>
-<pre>
-library example1;
-
-/*
- * Using assembly
- */
-use microchip.pic18;
-
-/*
- * Defining a type to notate a byte
- */
-type uint8 = unsigned 8 bits;
-
-main(){
-	/*
-	 * Variable definition will allocate the memory space during linking
-	 */
-	uint8 d1;
-	
-	// Set d1 to zero
-	CLRF(&d1);
-	/*
-	 * &d1 denotes the memory address of d1, as the operation needs the address
-	 * not the variable itself 
-	 */
-	// Set 5 to d1
-	MOWLW(5);
-	MOVWF(&d1);
-}
-</pre>
-
-<span class="prefile">example2.e</span>
-<pre>
-library example2;
-
-/*
- * Using a platform definition. The actual platform implementation
- * will be decided during linking.
- */
-use e.platform;
-
-/*
- * The type uint8 is defined in e.platform
- */
-
-main(){
-	/*
-	 * Variable definition will allocate the memory space during linking
-	 */
-	uint8 d1;
-	
-	// Set d1 to zero
-	d1 = 0;
-	/*
-	 * The actual implementation of the assignment operator is selected during linking
-	 */
-	// Set 5 to d1
-	d1 = 5;
-}
-</pre>
-
-<h2>2. Linking</h2>
-
-<p>Unlike other toolchains, the language e contains its own linker scripting notation as 
-built-in structures. Linking cannot be platform-independent.</p>
-
-
-
-  </div>
-
+   		<p class="splash-subhead">
+      		MODembed is an experimental IDE aiming to provide a more advanced toolchain for embedded software development. It provides a model-based approach for defining the whole compilation process.
+    		The project aims to create a full-featured IDE which can support every aspect
+    		of an embedded system design using a model-based approach. 
+    	</p>
+    
+    </div>
+    <h2>Features</h2>
+    
+    <div class="pure-g-r">
+    	<div class="pure-u-1-3">
+    		<div class="l-box">
+    		<h3>Model-based approach</h3>
+        	<p>Everything is a model: program, device and architecture</p>
+        	</div>
+    	</div>
+    	<div class="pure-u-1-3">
+    		<div class="l-box">
+    		<h3>Modeling workflow</h3>
+        	<p>User gets full control over compilation process</p>
+        	</div>        	
+    	</div>
+    	<div class="pure-u-1-3">
+    		<div class="l-box">
+    		<h3>Architecture-independent toolchain</h3>
+        	<p>The target architecture is described by a model, all tools are designed to be fully independent of the target</p>
+        	</div>
+    	</div>
+    	<div class="pure-u-1-3">
+    		<div class="l-box">
+    		<h3>Reverse engineering</h3>
+        	<p>Tools to support disassembling programes are included</p>
+        	</div>
+    	</div>
+    	<div class="pure-u-1-3">
+    		<div class="l-box">
+    		<h3>Included libraries</h3>
+        	<p>Architecture models and libraries are available for Microchip's PIC midrange (PIC16), enchanced midrange (PIC16e) and high-end (PIC18) microcontrollers.</p>
+        	</div>
+    	</div>
+	</div>
+    
+    <h2>Current versions</h2>
+    
+    <h3>Master branch (0.8.0)</h3>
+    
+    <ul>
+    	<li>On Github: <a href="https://github.com/balazsgrill/modembed">https://github.com/balazsgrill/modembed</a></li>
+    	<li>Install from eclipse marketplace: <a href="https://marketplace.eclipse.org/content/modembed">https://marketplace.eclipse.org/content/modembed</a> <a href='http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=39590' title='Drag and drop into a running Eclipse Indigo workspace to install MODembed'> 
+			<img src='http://marketplace.eclipse.org/misc/installbutton.png'/></a>
+		</li>
+		<li>Online help: <a href="http://modembed-onlinehelp.balazs-grill.cloudbees.net/index.jsp">http://modembed-onlinehelp.balazs-grill.cloudbees.net/index.jsp</a></li>
+    	<li>Nightly build update site: <a href="http://modembed-updatesite.balazs-grill.cloudbees.net/">http://modembed-updatesite.balazs-grill.cloudbees.net</a></li>
+    </ul>
+    
+    <h3>Development branch</h3>
+    
+    <ul>
+    	<li>On GitHub: <a href="https://github.com/balazsgrill/modembed/tree/development">https://github.com/balazsgrill/modembed/tree/development</a></li>
+    	<li>Online help: <a href="http://modembed-ci-onlinehelp.balazs-grill.cloudbees.net/index.jsp">http://modembed-ci-onlinehelp.balazs-grill.cloudbees.net/index.jsp</a></li>
+    	<li>Nightly build update site: <a href="http://modembed-ci-updatesite.balazs-grill.cloudbees.net/">http://modembed-ci-updatesite.balazs-grill.cloudbees.net</a></li>
+	</ul>
   
+  </div>
 </body>
 </html>
