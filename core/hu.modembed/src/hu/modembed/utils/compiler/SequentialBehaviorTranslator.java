@@ -13,7 +13,9 @@ import hu.modembed.model.modembed.abstraction.behavior.SymbolAssignment;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolMap;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolValueAssignment;
 import hu.modembed.model.modembed.abstraction.behavior.platform.InstructionCallOperationStep;
+import hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterConstantValue;
 import hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterMapping;
+import hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterValue;
 import hu.modembed.model.modembed.abstraction.behavior.platform.OperationArgument;
 import hu.modembed.model.modembed.abstraction.behavior.platform.OperationDefinition;
 import hu.modembed.model.modembed.abstraction.behavior.platform.OperationStep;
@@ -135,14 +137,19 @@ public class SequentialBehaviorTranslator {
 						ic.setInstruction(icstep.getInstruction());
 						asm.getInstructions().add(ic);
 						int i=0;
-						for(InstructionParameterMapping ipm : ((InstructionCallOperationStep) step).getArguments()){
-							String symbol = argumentSymbols.get(ipm.getValue());
+						for(InstructionParameterValue ipv : ((InstructionCallOperationStep) step).getArguments()){
 							InstructionCallParameter icp = ObjectFactory.eINSTANCE.createInstructionCallParameter();
 							icp.setDefinition(ic.getInstruction().getParameters().get(i));
 							i++;
 							ic.getParameters().add(icp);
-							
-							instructionCallParameterValues.put(icp, new SymbolValue(symbol, ipm));
+							if (ipv instanceof InstructionParameterMapping){
+								InstructionParameterMapping ipm = (InstructionParameterMapping)ipv;
+								String symbol = argumentSymbols.get(ipm.getValue());
+								instructionCallParameterValues.put(icp, new SymbolValue(symbol, ipm));
+							}
+							if (ipv instanceof InstructionParameterConstantValue){
+								icp.setValue(((InstructionParameterConstantValue) ipv).getValue());
+							}
 						}
 					}
 				}
