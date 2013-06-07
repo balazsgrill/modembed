@@ -297,13 +297,21 @@ package abstraction {
 
       class InstructionCallOperationStep extends OperationStep {
         ref core.instructionset.Instruction instruction;
-        val InstructionParameterMapping[*] arguments;
+        val InstructionParameterValue[*] arguments;
       }
 
       abstract class OperationStep extends infrastructure.MODembedElement {
       }
 
-      class InstructionParameterMapping extends infrastructure.MODembedElement {
+	  abstract class InstructionParameterValue extends infrastructure.MODembedElement {
+	  	
+	  }
+
+	  class InstructionParameterConstantValue extends InstructionParameterValue{
+	  	attr int[1] value;
+	  }
+
+      class InstructionParameterMapping extends InstructionParameterValue {
         ref OperationArgument[1] value;
         ref infrastructure.AttributeDefinition attribute;
         attr int bitOffset;

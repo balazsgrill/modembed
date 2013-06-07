@@ -90,6 +90,14 @@ public class PlatformAdapterFactory extends AdapterFactoryImpl {
 				return createOperationStepAdapter();
 			}
 			@Override
+			public Adapter caseInstructionParameterValue(InstructionParameterValue object) {
+				return createInstructionParameterValueAdapter();
+			}
+			@Override
+			public Adapter caseInstructionParameterConstantValue(InstructionParameterConstantValue object) {
+				return createInstructionParameterConstantValueAdapter();
+			}
+			@Override
 			public Adapter caseInstructionParameterMapping(InstructionParameterMapping object) {
 				return createInstructionParameterMappingAdapter();
 			}
@@ -174,6 +182,34 @@ public class PlatformAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createOperationStepAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterValue <em>Instruction Parameter Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterValue
+	 * @generated
+	 */
+	public Adapter createInstructionParameterValueAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterConstantValue <em>Instruction Parameter Constant Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterConstantValue
+	 * @generated
+	 */
+	public Adapter createInstructionParameterConstantValueAdapter() {
 		return null;
 	}
 

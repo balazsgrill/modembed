@@ -6,7 +6,9 @@ import hu.modembed.model.modembed.abstraction.AbstractionPackage;
 import hu.modembed.model.modembed.abstraction.behavior.BehaviorPackage;
 import hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorPackageImpl;
 import hu.modembed.model.modembed.abstraction.behavior.platform.InstructionCallOperationStep;
+import hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterConstantValue;
 import hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterMapping;
+import hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterValue;
 import hu.modembed.model.modembed.abstraction.behavior.platform.OperationArgument;
 import hu.modembed.model.modembed.abstraction.behavior.platform.OperationDefinition;
 import hu.modembed.model.modembed.abstraction.behavior.platform.OperationStep;
@@ -66,6 +68,20 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 	 * @generated
 	 */
 	private EClass operationStepEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass instructionParameterValueEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass instructionParameterConstantValueEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -265,6 +281,33 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getInstructionParameterValue() {
+		return instructionParameterValueEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getInstructionParameterConstantValue() {
+		return instructionParameterConstantValueEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getInstructionParameterConstantValue_Value() {
+		return (EAttribute)instructionParameterConstantValueEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getInstructionParameterMapping() {
 		return instructionParameterMappingEClass;
 	}
@@ -348,6 +391,11 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 
 		operationStepEClass = createEClass(OPERATION_STEP);
 
+		instructionParameterValueEClass = createEClass(INSTRUCTION_PARAMETER_VALUE);
+
+		instructionParameterConstantValueEClass = createEClass(INSTRUCTION_PARAMETER_CONSTANT_VALUE);
+		createEAttribute(instructionParameterConstantValueEClass, INSTRUCTION_PARAMETER_CONSTANT_VALUE__VALUE);
+
 		instructionParameterMappingEClass = createEClass(INSTRUCTION_PARAMETER_MAPPING);
 		createEReference(instructionParameterMappingEClass, INSTRUCTION_PARAMETER_MAPPING__VALUE);
 		createEReference(instructionParameterMappingEClass, INSTRUCTION_PARAMETER_MAPPING__ATTRIBUTE);
@@ -393,7 +441,9 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 		operationArgumentEClass.getESuperTypes().add(theInfrastructurePackage.getNamedElement());
 		instructionCallOperationStepEClass.getESuperTypes().add(this.getOperationStep());
 		operationStepEClass.getESuperTypes().add(theInfrastructurePackage.getMODembedElement());
-		instructionParameterMappingEClass.getESuperTypes().add(theInfrastructurePackage.getMODembedElement());
+		instructionParameterValueEClass.getESuperTypes().add(theInfrastructurePackage.getMODembedElement());
+		instructionParameterConstantValueEClass.getESuperTypes().add(this.getInstructionParameterValue());
+		instructionParameterMappingEClass.getESuperTypes().add(this.getInstructionParameterValue());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(operationDefinitionEClass, OperationDefinition.class, "OperationDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -407,9 +457,14 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 
 		initEClass(instructionCallOperationStepEClass, InstructionCallOperationStep.class, "InstructionCallOperationStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getInstructionCallOperationStep_Instruction(), theInstructionsetPackage.getInstruction(), null, "instruction", null, 0, 1, InstructionCallOperationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getInstructionCallOperationStep_Arguments(), this.getInstructionParameterMapping(), null, "arguments", null, 0, -1, InstructionCallOperationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInstructionCallOperationStep_Arguments(), this.getInstructionParameterValue(), null, "arguments", null, 0, -1, InstructionCallOperationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(operationStepEClass, OperationStep.class, "OperationStep", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(instructionParameterValueEClass, InstructionParameterValue.class, "InstructionParameterValue", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(instructionParameterConstantValueEClass, InstructionParameterConstantValue.class, "InstructionParameterConstantValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getInstructionParameterConstantValue_Value(), ecorePackage.getEInt(), "value", null, 1, 1, InstructionParameterConstantValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(instructionParameterMappingEClass, InstructionParameterMapping.class, "InstructionParameterMapping", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getInstructionParameterMapping_Value(), this.getOperationArgument(), null, "value", null, 1, 1, InstructionParameterMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

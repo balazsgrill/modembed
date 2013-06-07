@@ -52,7 +52,7 @@ public interface InstructionCallOperationStep extends OperationStep {
 
 	/**
 	 * Returns the value of the '<em><b>Arguments</b></em>' containment reference list.
-	 * The list contents are of type {@link hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterMapping}.
+	 * The list contents are of type {@link hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterValue}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Arguments</em>' containment reference list isn't clear,
@@ -64,6 +64,6 @@ public interface InstructionCallOperationStep extends OperationStep {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<InstructionParameterMapping> getArguments();
+	EList<InstructionParameterValue> getArguments();
 
 } // InstructionCallOperationStep

@@ -273,12 +273,18 @@
             eSuperTypes="#//abstraction/behavior/platform/OperationStep">
           <eStructuralFeatures xsi:type="ecore:EReference" name="instruction" eType="#//core/instructionset/Instruction"/>
           <eStructuralFeatures xsi:type="ecore:EReference" name="arguments" upperBound="-1"
-              eType="#//abstraction/behavior/platform/InstructionParameterMapping"
-              containment="true"/>
+              eType="#//abstraction/behavior/platform/InstructionParameterValue" containment="true"/>
         </eClassifiers>
         <eClassifiers xsi:type="ecore:EClass" name="OperationStep" abstract="true"
             eSuperTypes="#//infrastructure/MODembedElement"/>
-        <eClassifiers xsi:type="ecore:EClass" name="InstructionParameterMapping" eSuperTypes="#//infrastructure/MODembedElement">
+        <eClassifiers xsi:type="ecore:EClass" name="InstructionParameterValue" abstract="true"
+            eSuperTypes="#//infrastructure/MODembedElement"/>
+        <eClassifiers xsi:type="ecore:EClass" name="InstructionParameterConstantValue"
+            eSuperTypes="#//abstraction/behavior/platform/InstructionParameterValue">
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1"
+              eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="InstructionParameterMapping" eSuperTypes="#//abstraction/behavior/platform/InstructionParameterValue">
           <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1"
               eType="#//abstraction/behavior/platform/OperationArgument"/>
           <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" eType="#//infrastructure/AttributeDefinition"/>

@@ -59,6 +59,7 @@ public class PlatformFactoryImpl extends EFactoryImpl implements PlatformFactory
 			case PlatformPackage.OPERATION_DEFINITION: return createOperationDefinition();
 			case PlatformPackage.OPERATION_ARGUMENT: return createOperationArgument();
 			case PlatformPackage.INSTRUCTION_CALL_OPERATION_STEP: return createInstructionCallOperationStep();
+			case PlatformPackage.INSTRUCTION_PARAMETER_CONSTANT_VALUE: return createInstructionParameterConstantValue();
 			case PlatformPackage.INSTRUCTION_PARAMETER_MAPPING: return createInstructionParameterMapping();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -93,6 +94,16 @@ public class PlatformFactoryImpl extends EFactoryImpl implements PlatformFactory
 	public InstructionCallOperationStep createInstructionCallOperationStep() {
 		InstructionCallOperationStepImpl instructionCallOperationStep = new InstructionCallOperationStepImpl();
 		return instructionCallOperationStep;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InstructionParameterConstantValue createInstructionParameterConstantValue() {
+		InstructionParameterConstantValueImpl instructionParameterConstantValue = new InstructionParameterConstantValueImpl();
+		return instructionParameterConstantValue;
 	}
 
 	/**

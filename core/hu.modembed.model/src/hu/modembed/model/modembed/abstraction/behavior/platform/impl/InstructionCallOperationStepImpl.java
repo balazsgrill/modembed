@@ -3,6 +3,7 @@
 package hu.modembed.model.modembed.abstraction.behavior.platform.impl;
 
 import hu.modembed.model.modembed.abstraction.behavior.platform.InstructionCallOperationStep;
+import hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterValue;
 import hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterMapping;
 import hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage;
 
@@ -56,7 +57,7 @@ public class InstructionCallOperationStepImpl extends OperationStepImpl implemen
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<InstructionParameterMapping> arguments;
+	protected EList<InstructionParameterValue> arguments;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -120,9 +121,9 @@ public class InstructionCallOperationStepImpl extends OperationStepImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<InstructionParameterMapping> getArguments() {
+	public EList<InstructionParameterValue> getArguments() {
 		if (arguments == null) {
-			arguments = new EObjectContainmentEList<InstructionParameterMapping>(InstructionParameterMapping.class, this, PlatformPackage.INSTRUCTION_CALL_OPERATION_STEP__ARGUMENTS);
+			arguments = new EObjectContainmentEList<InstructionParameterValue>(InstructionParameterValue.class, this, PlatformPackage.INSTRUCTION_CALL_OPERATION_STEP__ARGUMENTS);
 		}
 		return arguments;
 	}
@@ -172,7 +173,7 @@ public class InstructionCallOperationStepImpl extends OperationStepImpl implemen
 				return;
 			case PlatformPackage.INSTRUCTION_CALL_OPERATION_STEP__ARGUMENTS:
 				getArguments().clear();
-				getArguments().addAll((Collection<? extends InstructionParameterMapping>)newValue);
+				getArguments().addAll((Collection<? extends InstructionParameterValue>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

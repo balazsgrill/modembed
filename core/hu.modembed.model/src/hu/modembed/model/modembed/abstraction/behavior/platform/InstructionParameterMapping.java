@@ -24,7 +24,7 @@ import hu.modembed.model.modembed.infrastructure.MODembedElement;
  * @model
  * @generated
  */
-public interface InstructionParameterMapping extends MODembedElement {
+public interface InstructionParameterMapping extends InstructionParameterValue {
 	/**
 	 * Returns the value of the '<em><b>Value</b></em>' reference.
 	 * <!-- begin-user-doc -->

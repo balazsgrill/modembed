@@ -32,7 +32,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class InstructionParameterMappingImpl extends MODembedElementImpl implements InstructionParameterMapping {
+public class InstructionParameterMappingImpl extends InstructionParameterValueImpl implements InstructionParameterMapping {
 	/**
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' reference.
 	 * <!-- begin-user-doc -->

@@ -314,14 +314,14 @@ public interface PlatformPackage extends EPackage {
 	int INSTRUCTION_CALL_OPERATION_STEP_FEATURE_COUNT = OPERATION_STEP_FEATURE_COUNT + 2;
 
 	/**
-	 * The meta object id for the '{@link hu.modembed.model.modembed.abstraction.behavior.platform.impl.InstructionParameterMappingImpl <em>Instruction Parameter Mapping</em>}' class.
+	 * The meta object id for the '{@link hu.modembed.model.modembed.abstraction.behavior.platform.impl.InstructionParameterValueImpl <em>Instruction Parameter Value</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.impl.InstructionParameterMappingImpl
-	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.impl.PlatformPackageImpl#getInstructionParameterMapping()
+	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.impl.InstructionParameterValueImpl
+	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.impl.PlatformPackageImpl#getInstructionParameterValue()
 	 * @generated
 	 */
-	int INSTRUCTION_PARAMETER_MAPPING = 4;
+	int INSTRUCTION_PARAMETER_VALUE = 4;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -330,7 +330,7 @@ public interface PlatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INSTRUCTION_PARAMETER_MAPPING__DESCRIPTION = InfrastructurePackage.MO_DEMBED_ELEMENT__DESCRIPTION;
+	int INSTRUCTION_PARAMETER_VALUE__DESCRIPTION = InfrastructurePackage.MO_DEMBED_ELEMENT__DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
@@ -339,7 +339,7 @@ public interface PlatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INSTRUCTION_PARAMETER_MAPPING__ORIGINS = InfrastructurePackage.MO_DEMBED_ELEMENT__ORIGINS;
+	int INSTRUCTION_PARAMETER_VALUE__ORIGINS = InfrastructurePackage.MO_DEMBED_ELEMENT__ORIGINS;
 
 	/**
 	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -348,7 +348,108 @@ public interface PlatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INSTRUCTION_PARAMETER_MAPPING__ANNOTATIONS = InfrastructurePackage.MO_DEMBED_ELEMENT__ANNOTATIONS;
+	int INSTRUCTION_PARAMETER_VALUE__ANNOTATIONS = InfrastructurePackage.MO_DEMBED_ELEMENT__ANNOTATIONS;
+
+	/**
+	 * The number of structural features of the '<em>Instruction Parameter Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION_PARAMETER_VALUE_FEATURE_COUNT = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link hu.modembed.model.modembed.abstraction.behavior.platform.impl.InstructionParameterConstantValueImpl <em>Instruction Parameter Constant Value</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.impl.InstructionParameterConstantValueImpl
+	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.impl.PlatformPackageImpl#getInstructionParameterConstantValue()
+	 * @generated
+	 */
+	int INSTRUCTION_PARAMETER_CONSTANT_VALUE = 5;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION_PARAMETER_CONSTANT_VALUE__DESCRIPTION = INSTRUCTION_PARAMETER_VALUE__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION_PARAMETER_CONSTANT_VALUE__ORIGINS = INSTRUCTION_PARAMETER_VALUE__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION_PARAMETER_CONSTANT_VALUE__ANNOTATIONS = INSTRUCTION_PARAMETER_VALUE__ANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION_PARAMETER_CONSTANT_VALUE__VALUE = INSTRUCTION_PARAMETER_VALUE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Instruction Parameter Constant Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION_PARAMETER_CONSTANT_VALUE_FEATURE_COUNT = INSTRUCTION_PARAMETER_VALUE_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link hu.modembed.model.modembed.abstraction.behavior.platform.impl.InstructionParameterMappingImpl <em>Instruction Parameter Mapping</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.impl.InstructionParameterMappingImpl
+	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.impl.PlatformPackageImpl#getInstructionParameterMapping()
+	 * @generated
+	 */
+	int INSTRUCTION_PARAMETER_MAPPING = 6;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION_PARAMETER_MAPPING__DESCRIPTION = INSTRUCTION_PARAMETER_VALUE__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION_PARAMETER_MAPPING__ORIGINS = INSTRUCTION_PARAMETER_VALUE__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION_PARAMETER_MAPPING__ANNOTATIONS = INSTRUCTION_PARAMETER_VALUE__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' reference.
@@ -357,7 +458,7 @@ public interface PlatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INSTRUCTION_PARAMETER_MAPPING__VALUE = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 0;
+	int INSTRUCTION_PARAMETER_MAPPING__VALUE = INSTRUCTION_PARAMETER_VALUE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Attribute</b></em>' reference.
@@ -366,7 +467,7 @@ public interface PlatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INSTRUCTION_PARAMETER_MAPPING__ATTRIBUTE = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 1;
+	int INSTRUCTION_PARAMETER_MAPPING__ATTRIBUTE = INSTRUCTION_PARAMETER_VALUE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Bit Offset</b></em>' attribute.
@@ -375,7 +476,7 @@ public interface PlatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INSTRUCTION_PARAMETER_MAPPING__BIT_OFFSET = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 2;
+	int INSTRUCTION_PARAMETER_MAPPING__BIT_OFFSET = INSTRUCTION_PARAMETER_VALUE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Value Offset</b></em>' attribute.
@@ -384,7 +485,7 @@ public interface PlatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INSTRUCTION_PARAMETER_MAPPING__VALUE_OFFSET = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 3;
+	int INSTRUCTION_PARAMETER_MAPPING__VALUE_OFFSET = INSTRUCTION_PARAMETER_VALUE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Instruction Parameter Mapping</em>' class.
@@ -393,7 +494,7 @@ public interface PlatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INSTRUCTION_PARAMETER_MAPPING_FEATURE_COUNT = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 4;
+	int INSTRUCTION_PARAMETER_MAPPING_FEATURE_COUNT = INSTRUCTION_PARAMETER_VALUE_FEATURE_COUNT + 4;
 
 
 	/**
@@ -512,6 +613,37 @@ public interface PlatformPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getOperationStep();
+
+	/**
+	 * Returns the meta object for class '{@link hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterValue <em>Instruction Parameter Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Instruction Parameter Value</em>'.
+	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterValue
+	 * @generated
+	 */
+	EClass getInstructionParameterValue();
+
+	/**
+	 * Returns the meta object for class '{@link hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterConstantValue <em>Instruction Parameter Constant Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Instruction Parameter Constant Value</em>'.
+	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterConstantValue
+	 * @generated
+	 */
+	EClass getInstructionParameterConstantValue();
+
+	/**
+	 * Returns the meta object for the attribute '{@link hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterConstantValue#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterConstantValue#getValue()
+	 * @see #getInstructionParameterConstantValue()
+	 * @generated
+	 */
+	EAttribute getInstructionParameterConstantValue_Value();
 
 	/**
 	 * Returns the meta object for class '{@link hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterMapping <em>Instruction Parameter Mapping</em>}'.
@@ -684,6 +816,34 @@ public interface PlatformPackage extends EPackage {
 		 * @generated
 		 */
 		EClass OPERATION_STEP = eINSTANCE.getOperationStep();
+
+		/**
+		 * The meta object literal for the '{@link hu.modembed.model.modembed.abstraction.behavior.platform.impl.InstructionParameterValueImpl <em>Instruction Parameter Value</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.modembed.model.modembed.abstraction.behavior.platform.impl.InstructionParameterValueImpl
+		 * @see hu.modembed.model.modembed.abstraction.behavior.platform.impl.PlatformPackageImpl#getInstructionParameterValue()
+		 * @generated
+		 */
+		EClass INSTRUCTION_PARAMETER_VALUE = eINSTANCE.getInstructionParameterValue();
+
+		/**
+		 * The meta object literal for the '{@link hu.modembed.model.modembed.abstraction.behavior.platform.impl.InstructionParameterConstantValueImpl <em>Instruction Parameter Constant Value</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.modembed.model.modembed.abstraction.behavior.platform.impl.InstructionParameterConstantValueImpl
+		 * @see hu.modembed.model.modembed.abstraction.behavior.platform.impl.PlatformPackageImpl#getInstructionParameterConstantValue()
+		 * @generated
+		 */
+		EClass INSTRUCTION_PARAMETER_CONSTANT_VALUE = eINSTANCE.getInstructionParameterConstantValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INSTRUCTION_PARAMETER_CONSTANT_VALUE__VALUE = eINSTANCE.getInstructionParameterConstantValue_Value();
 
 		/**
 		 * The meta object literal for the '{@link hu.modembed.model.modembed.abstraction.behavior.platform.impl.InstructionParameterMappingImpl <em>Instruction Parameter Mapping</em>}' class.

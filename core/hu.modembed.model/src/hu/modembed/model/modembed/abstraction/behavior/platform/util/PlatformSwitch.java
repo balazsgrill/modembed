@@ -103,9 +103,25 @@ public class PlatformSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case PlatformPackage.INSTRUCTION_PARAMETER_VALUE: {
+				InstructionParameterValue instructionParameterValue = (InstructionParameterValue)theEObject;
+				T result = caseInstructionParameterValue(instructionParameterValue);
+				if (result == null) result = caseMODembedElement(instructionParameterValue);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PlatformPackage.INSTRUCTION_PARAMETER_CONSTANT_VALUE: {
+				InstructionParameterConstantValue instructionParameterConstantValue = (InstructionParameterConstantValue)theEObject;
+				T result = caseInstructionParameterConstantValue(instructionParameterConstantValue);
+				if (result == null) result = caseInstructionParameterValue(instructionParameterConstantValue);
+				if (result == null) result = caseMODembedElement(instructionParameterConstantValue);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case PlatformPackage.INSTRUCTION_PARAMETER_MAPPING: {
 				InstructionParameterMapping instructionParameterMapping = (InstructionParameterMapping)theEObject;
 				T result = caseInstructionParameterMapping(instructionParameterMapping);
+				if (result == null) result = caseInstructionParameterValue(instructionParameterMapping);
 				if (result == null) result = caseMODembedElement(instructionParameterMapping);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -171,6 +187,36 @@ public class PlatformSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseOperationStep(OperationStep object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Instruction Parameter Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Instruction Parameter Value</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseInstructionParameterValue(InstructionParameterValue object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Instruction Parameter Constant Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Instruction Parameter Constant Value</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseInstructionParameterConstantValue(InstructionParameterConstantValue object) {
 		return null;
 	}
 
