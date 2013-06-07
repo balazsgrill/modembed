@@ -17,7 +17,7 @@ var regardlessofMode = dataspace.getElementsByTagName("edc:RegardlessOfMode").it
 %]
 device [%=pic.getAttribute("edc:name")%].device extends [%=dev%];
 [%
-var datasectors = regardlessofMode.getElementsByTagName("edc:SFRDataSector");
+var datasectors = regardlessofMode.getElementsByTagName("edc:GPRDataSector");
 var i=0;
 while(i<datasectors.getLength()){
 	var datasector = datasectors.item(i);
