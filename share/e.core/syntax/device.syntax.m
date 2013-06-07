@@ -43,7 +43,10 @@ terminal OP_ADD "\+";
 
 <MemoryInstance> :-  KW_MEM memoryInstances={"http://modembed.hu/abstraction/memorymodel#MemoryInstance" type=IDENTIFIER name=IDENTIFIER startAddress=HEXADECIMAL_NUMBER size=HEXADECIMAL_NUMBER <AttributeValues>? } ;
 <AttributeValues> :- OP_OPEN attributes={"http://modembed.hu/infrastructure#AttributeValueContainer" <AttributeValue>* } OP_CLOSE;
-<AttributeValue> :- values={"http://modembed.hu/infrastructure#AttributeValue" definition=IDENTIFIER OPERATOR_ASSIGN value=DECIMAL_NUMBER };
+<AttributeValue> :- values={"http://modembed.hu/infrastructure#AttributeValue" definition=IDENTIFIER OPERATOR_ASSIGN <AValue> };
+
+<AValue> :- value=DECIMAL_NUMBER;
+<AValue> :- value=HEXADECIMAL_NUMBER;
 
 <Operation> :- KW_OPERATION operation={"http://modembed.hu/abstraction/behavior/platform#OperationDefinition"
 				operation=IDENTIFIER 
