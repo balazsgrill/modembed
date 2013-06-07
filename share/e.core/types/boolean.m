@@ -1,2 +1,2 @@
 #!type.syntax
-type uint8 = unsigned(1);
+type boolean = unsigned(1);

@@ -50,6 +50,8 @@
          </dependency>
       </project>
       <project
+            archive="shared/test.dio.zip"
+            category="hu.modembed.test.category"
             id="test.dio"
             name="DIO operations test">
          <dependency
