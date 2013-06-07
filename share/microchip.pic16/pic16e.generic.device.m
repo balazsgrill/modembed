@@ -15,3 +15,25 @@ operation getbit(value: uint8@BRAM, bit: uint8, dest: boolean@BRAM){
 	MOVLB(dest->bank);
 	MOVWF(dest);
 }
+
+operation goto(label : label){
+	GOTO(label);
+}
+
+operation setbit(value: uint8@BRAM, bit: uint8, bvalue: boolean){
+	MOVLB(value->bank);
+	MOVLW(bvalue);
+	BRW(); // Skip if set
+	BCF(value, bit);
+	XORLW(1); // Toggle W
+	BRW();
+	BSF(value, bit);
+}
+
+operation branch(condition: boolean@BRAM, true: label, false: label){
+	MOVLB(condition->bank);
+	BTFSC(condition);
+	GOTO(true);
+	GOTO(false);
+}
+

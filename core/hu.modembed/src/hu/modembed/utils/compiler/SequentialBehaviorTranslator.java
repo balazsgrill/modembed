@@ -4,11 +4,13 @@
 package hu.modembed.utils.compiler;
 
 import hu.modembed.model.modembed.abstraction.DeviceAbstraction;
+import hu.modembed.model.modembed.abstraction.behavior.BehaviorFactory;
 import hu.modembed.model.modembed.abstraction.behavior.CodeSymbolPlacement;
 import hu.modembed.model.modembed.abstraction.behavior.OperationExecution;
 import hu.modembed.model.modembed.abstraction.behavior.RootSequentialBehavior;
 import hu.modembed.model.modembed.abstraction.behavior.SequentialAction;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolAddressAssignment;
+import hu.modembed.model.modembed.abstraction.behavior.SymbolAllocation;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolAssignment;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolMap;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolValueAssignment;
@@ -20,6 +22,7 @@ import hu.modembed.model.modembed.abstraction.behavior.platform.OperationArgumen
 import hu.modembed.model.modembed.abstraction.behavior.platform.OperationDefinition;
 import hu.modembed.model.modembed.abstraction.behavior.platform.OperationStep;
 import hu.modembed.model.modembed.abstraction.memorymodel.MemoryInstance;
+import hu.modembed.model.modembed.abstraction.types.TypesFactory;
 import hu.modembed.model.modembed.core.object.AssemblerObject;
 import hu.modembed.model.modembed.core.object.InstructionCall;
 import hu.modembed.model.modembed.core.object.InstructionCallParameter;
@@ -99,6 +102,14 @@ public class SequentialBehaviorTranslator {
 			}
 		}
 		
+		for(SequentialAction action : sequentialBehavior.getActions()){
+			if (action instanceof CodeSymbolPlacement){
+				SymbolAllocation labelAlloc = BehaviorFactory.eINSTANCE.createSymbolAllocation();
+				labelAlloc.setType(TypesFactory.eINSTANCE.createCodeLabelTypeDefinition());
+				values.put(((CodeSymbolPlacement) action).getSymbol(), labelAlloc);
+			}
+		}
+		
 		AssemblerObject asm = ObjectFactory.eINSTANCE.createAssemblerObject();
 		asm.setStartAddress(startAddress); 
 		
@@ -113,7 +124,8 @@ public class SequentialBehaviorTranslator {
 				String operation = op.getOperation();
 				TypeSignature[] arguments = new TypeSignature[op.getArguments().size()];
 				for(int i=0;i<arguments.length;i++){
-					arguments[i] = TypeSignature.create(values.get(op.getArguments().get(i)));
+					SymbolAssignment argSymbol = values.get(op.getArguments().get(i));
+					arguments[i] = TypeSignature.create(argSymbol);
 				}
 				
 				/* Find operation */

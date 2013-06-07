@@ -33,7 +33,12 @@ terminal OP_END "\}";
 <SymbolAssignment> :- {"http://modembed.hu/abstraction/behavior#SymbolValueAssignment" type=<TypeDefinition> symbol=IDENTIFIER 
 							OPERATOR_ASSIGN <SymbolValue> } ;
 <SymbolAssignment> :- {"http://modembed.hu/abstraction/behavior#SymbolAddressAssignment" type=<TypeDefinition> symbol=IDENTIFIER 
-							OPERATOR_ASSIGN <SymbolValue> OP_AT memoryInstance=IDENTIFIER } ;
+							OPERATOR_ASSIGN <SymbolAddress> OP_AT memoryInstance=IDENTIFIER } ;
+
+<SymbolAddress> :- address=DECIMAL_NUMBER;
+<SymbolAddress> :- address=BINARY_NUMBER;
+<SymbolAddress> :- address=HEXADECIMAL_NUMBER;
+
 
 <SymbolValue> :- value=DECIMAL_NUMBER;
 <SymbolValue> :- value=BINARY_NUMBER;
