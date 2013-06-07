@@ -5,7 +5,7 @@ operation add(dest : uint8@BRAM, value : uint8){
 	MOVLW(value);
 	MOVLB(dest->bank);
 	MOVWF(dest);
-};
+}
 
 operation getbit(value: uint8@BRAM, bit: uint8, dest: boolean@BRAM){
 	CLRW();

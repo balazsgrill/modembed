@@ -28,7 +28,7 @@ terminal OP_ADD "\+";
 
 <Item> :- <MemoryType> OPERATOR_SEMICOLON ;
 <Item> :- <MemoryInstance> OPERATOR_SEMICOLON ;
-<Item> :- <Operation> OPERATOR_SEMICOLON ;
+<Item> :- <Operation> ;
 
 <Extends> :- KW_EXTENDS ancestor=QUALIFIEDID ;
 
@@ -64,9 +64,11 @@ terminal OP_ADD "\+";
 					 OP_BOPEN <InstructionParameterMappings>? OP_BCLOSE
 					} OPERATOR_SEMICOLON;
 					
-<InstructionParameterMappings> :- <InstructionParameterMapping> <InstructionParameterMappings2>*? ;
-<InstructionParameterMappings2> :- OP_COMMA <InstructionParameterMapping>;
+<InstructionParameterMappings> :- <InstructionParameterValue> <InstructionParameterMappings2>*? ;
+<InstructionParameterMappings2> :- OP_COMMA <InstructionParameterValue>;
 
+<InstructionParameterValue> :- <InstructionParameterMapping>;
+<InstructionParameterValue> :- arguments={"http://modembed.hu/abstraction/behavior/platform#InstructionParameterConstantValue" value=DECIMAL_NUMBER };
 <InstructionParameterMapping> :- arguments={"http://modembed.hu/abstraction/behavior/platform#InstructionParameterMapping"
 								value=IDENTIFIER 
 								<InstructionParameterMapping_Attribute>?
