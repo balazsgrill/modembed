@@ -14,13 +14,19 @@ while(i<datasectors.getLength()){
 	i=i+1;
 	if (not datasector.hasAttribute("edc:shadowidref")){
 		var bank = datasector.getAttribute("edc:bank");
+		var bankId = -1;
+		if (bank.startsWith("0x")){
+			bankId = 0.parseInt(bank.substring(2),16);
+		}else{
+			bankId = 0.parseInt(bank);
+		}
 		var start = datasector.getAttribute("edc:beginaddr");
 	
 		var startAddr = 0.parseInt(start.substring(2),16);
 		var end = datasector.getAttribute("edc:endaddr");
 		var endAddr = 0.parseInt(end.substring(2),16);
 %]
-bank[%=bank%] 0x[%=0.toHexString(startAddr)%] 0x[%=0.toHexString(endAddr)%];
+bank[%=bankId%] 0x[%=0.toHexString(startAddr)%] 0x[%=0.toHexString(endAddr)%];
 [%
 	}
 }

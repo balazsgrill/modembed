@@ -12,6 +12,12 @@ var i=0;
 while(i<datasectors.getLength()){
 	var datasector = datasectors.item(i);
 	var bank = datasector.getAttribute("edc:bank");
+	var bankId = -1;
+	if (bank.startsWith("0x")){
+		bankId = 0.parseInt(bank.substring(2),16);
+	}else{
+		bankId = 0.parseInt(bank);
+	}
 	var start = datasector.getAttribute("edc:beginaddr");
 	
 	var startAddr = 0.parseInt(start.substring(2),16);
@@ -37,7 +43,7 @@ while(i<datasectors.getLength()){
 					width = 0.parseInt(nzwidth);
 				}
 %]
-uint[%=width%] [%=sfr.getAttribute("edc:cname")%] =		0x[%=0.toHexString(currentAddr)%]@bank[%=bank%];
+uint[%=width%] [%=sfr.getAttribute("edc:cname")%] =		0x[%=0.toHexString(currentAddr)%]@bank[%=bankId%];
 [%
 				currentAddr = currentAddr+(width/8);
 			}

@@ -3,33 +3,34 @@
 var pic = PIC.root;
 var arch = pic.getAttribute("edc:arch");
 var dev = "";
+var bankSize = 0;
 if (arch == "16xxxx") {
 	dev = "pic16.generic";
+	bankSize = 128;
 }
 if (arch == "16Exxx") {
 	dev = "pic16e.generic";
+	bankSize = 128;
 }
 if (arch == "18xxxx") {
 	dev = "pic18.generic";
+	bankSize = 256;
 }
-var dataspace = pic.getElementsByTagName("edc:DataSpace").item(0);
-var regardlessofMode = dataspace.getElementsByTagName("edc:RegardlessOfMode").item(0);
+var arch = pic.getElementsByTagName("edc:ArchDef").item(0);
+var memtraits = pic.getElementsByTagName("edc:MemTraits").item(0);
+
+var banks = memtraits.getAttribute("edc:bankcount");
+var bankCount = 4;
+if (banks <> ""){
+	bankCount = 0.parseInt(banks);
+}
 %]
 device [%=pic.getAttribute("edc:name")%].device extends [%=dev%];
 [%
-var datasectors = regardlessofMode.getElementsByTagName("edc:GPRDataSector");
 var i=0;
-while(i<datasectors.getLength()){
-	var datasector = datasectors.item(i);
-	var bank = datasector.getAttribute("edc:bank");
-	var start = datasector.getAttribute("edc:beginaddr");
-	
-	var startAddr = 0.parseInt(start.substring(2),16);
-	var end = datasector.getAttribute("edc:endaddr");
-	var endAddr = 0.parseInt(end.substring(2),16);
-	var size = endAddr-startAddr;
+while(i<bankCount){
 %]
-mem BRAM bank[%=bank%] 0x[%=0.toHexString(startAddr)%] 0x[%=0.toHexString(size)%] {bank = [%=bank%]};
+mem BRAM bank[%=i%] 0x0 0x[%=0.toHexString(bankSize)%] {bank = [%=i%]};
 [%
 	
 	i=i+1;
