@@ -1,0 +1,95 @@
+#!instructionSet.syntax
+/*
+ * MSP430 instruction set 
+ */
+instructionset ti.msp430.instructionset;
+[%
+// one-operand operations
+var ops = Map{
+	"RRC" 	= Sequence{0, true,  "9-bit rotate right through carry. C->msbit->...->lsbit->C. Clear the carry bit beforehand to do a logical right shift. "},
+	"SWPB" 	= Sequence{1, false, "Swap 8-bit register halves. No byte form."},
+	"RRA" 	= Sequence{2, true,  "Badly named, this is an 8-bit arithmetic right shift."},
+	"SXT"	= Sequence{3, false, "Sign extend 8 bits to 16. No byte form."},
+	"PUSH"	= Sequence{4, true,  "Push operand on stack. Push byte decrements SP by 2. CPU BUG: PUSH #4 and PUSH #8 do not work when the short encoding using @r2 and @r2+ is used. The workaround, to use a 16-bit immediate, is trivial, so TI do not plan to fix this bug."},
+	"CALL"	= Sequence{5, false, "Fetch operand, push PC, then assign operand value to PC. Note the immediate form is the most commonly used. There is no easy way to perform a PC-relative call; the PC-relative addressing mode fetches a word and uses it as an absolute address. This has no byte form."},
+	"RETI"	= Sequence{6, false, "Pop SP, then pop PC. Note that because flags like CPUOFF are in the stored status register, the CPU will normally return to the low-power mode it was previously in. This can be changed by adjusting the SR value stored on the stack before invoking RETI (see below). The operand field is unused."}
+};
+%]
+[%for(op in ops.keySet()){
+	var data = ops.get(op);
+	var opcode = "0b"+0.toBinaryString(data[0]);
+%]
+/*
+ * [%=data[2]%]
+ * Register addressing
+ */
+[%=op%] (r) <0b000100:6 [%=opcode%]:3 0b0:1 0b00:2 r:4>;
+
+/*
+ * [%=data[2]%]
+ * Indexed addressing
+ */
+[%=op%]x (r, x) <0b000100:6 [%=opcode%]:3 0b0:1 0b01:2 r:4> <x:16>;
+
+/*
+ * [%=data[2]%]
+ * Indirect addressing
+ */
+[%=op%]i (r) <0b000100:6 [%=opcode%]:3 0b0:1 0b10:2 r:4>;
+
+/*
+ * [%=data[2]%]
+ * Indirect-autoincrement addressing
+ */
+[%=op%]ii (r) <0b000100:6 [%=opcode%]:3 0b0:1 0b11:2 r:4>;
+[%
+if (data[1]){
+%]
+/*
+ * [%=data[2]%]
+ * Register addressing, byte-form
+ */
+[%=op%]b (r) <0b000100:6 [%=opcode%]:3 0b1:1 0b00:2 r:4>;
+
+/*
+ * [%=data[2]%]
+ * Indexed addressing, byte-form
+ */
+[%=op%]bx (r, x) <0b000100:6 [%=opcode%]:3 0b1:1 0b01:2 r:4> <x:16>;
+
+/*
+ * [%=data[2]%]
+ * Indirect addressing, byte-form
+ */
+[%=op%]bi (r) <0b000100:6 [%=opcode%]:3 0b1:1 0b10:2 r:4>;
+
+/*
+ * [%=data[2]%]
+ * Indirect-autoincrement addressing, byte-form
+ */
+[%=op%]bii (r) <0b000100:6 [%=opcode%]:3 0b1:1 0b11:2 r:4>;
+[%
+}
+}%]
+
+[%
+ops = Map{
+	"JNZ"	= Sequence{0, "Jump if Z==0 (if !=)"},
+	"JZ"	= Sequence{1, "Jump if Z==1 (if ==)"},
+	"JNC"	= Sequence{2, "Jump if C==0 (if unsigned <)"},
+	"JC"	= Sequence{3, "Jump if C==1 (if unsigned >=)"},
+	"JN"	= Sequence{4, "Jump if N==1 Note there is no \"JP\" if N==0!"},
+	"JGE"	= Sequence{5, "Jump if N==V (if signed >=)"},
+	"JL"	= Sequence{6, "Jump if N!=V (if signed <)"},
+	"JMP"	= Sequence{7, "Jump unconditionally"}
+};
+%]
+[%for(op in ops.keySet()){
+	var data = ops.get(op);
+	var opcode = "0b"+0.toBinaryString(data[0]);
+%]
+/*
+ * [%=data[1]%]
+ */
+[%=op%] (o) <0b001:3 [%=opcode%]:3 o:10>;
+[%}%]
