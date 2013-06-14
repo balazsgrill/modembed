@@ -22,6 +22,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.compare.diff;bundle-version="1.2.0",
  org.eclipse.emf.compare.match;bundle-version="1.2.0",
  hu.modembed.pic.midrange;bundle-version="0.8.1",
- hu.modembed.pic.pic18;bundle-version="0.8.1"
+ hu.modembed.pic.pic18;bundle-version="0.8.1",
+ hu.modembed.msp430;bundle-version="0.8.1"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

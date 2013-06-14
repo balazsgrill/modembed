@@ -12,11 +12,7 @@
          </dependency>
          <resource
                path="/"
-               resource="ti.msp430/msp430.iset.e">
-         </resource>
-         <resource
-               path="/"
-               resource="ti.msp430/msp430.e">
+               resource="ti.msp430/ti.msp430.instructionset.m">
          </resource>
       </project>
       <category

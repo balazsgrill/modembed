@@ -21,6 +21,9 @@
          <dependency
                project="microchip.pic18">
          </dependency>
+         <dependency
+               project="ti.msp430">
+         </dependency>
       </project>
       <project
             archive="shared/test.compileToDevice.zip"

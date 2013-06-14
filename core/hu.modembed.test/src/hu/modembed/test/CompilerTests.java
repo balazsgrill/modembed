@@ -4,6 +4,7 @@ import hu.modembed.MODembedCore;
 import hu.modembed.model.modembed.core.object.AssemblerObject;
 import hu.modembed.simulator.DeviceSimulator;
 
+import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.core.resources.IFile;
@@ -35,6 +36,24 @@ public class CompilerTests {
 		IProject project = ModembedTests.loadProject("test.assembler");
 		ModembedTests.runAntScript(project, "test.asm.pic18.ant.xml");
 		ModembedTests.assertModelsAreEquivalent(project, "test.asm.pic18.hex", ".test.asm.pic18.out.hex");
+	}
+	
+	@Test
+	public void test_assembler_msp430() throws InvocationTargetException, InterruptedException, CoreException, IOException {
+		IProject project = ModembedTests.loadProject("test.assembler");
+		ModembedTests.runAntScript(project, "msp430/test.asm.msp430.xml");
+		
+		ResourceSet rs = MODembedCore.createResourceSet();
+		EObject[] elements = new EObject[2];
+		elements[0] = EclipseModelUtils.load(project.getFile("msp430/.test.asm1.msp430.model"), rs);
+		elements[1] = EclipseModelUtils.load(project.getFile("msp430/.test.asm2.msp430.model"), rs);
+		
+		for(int i=0;i<elements.length;i++){
+			Assert.assertTrue("Element "+i+" is not an AssemblerObject", elements[i] instanceof AssemblerObject);
+			AssemblerObject aso = (AssemblerObject)elements[i];
+			Assert.assertTrue("Element "+i+" is invalid", aso.getInstructions().size() > 2);
+		}
+		
 	}
 	
 	@Test
