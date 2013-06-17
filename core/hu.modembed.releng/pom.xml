@@ -36,8 +36,8 @@
 		<module>../../pic/pickit2/hu.modembed.pic.pk2cmd.feature</module>
 		 -->
 		
-		<module>../msp430/hu.modembed.msp430</module>
-		<module>../msp430/hu.modembed.msp430.feature</module>
+		<module>../../msp430/hu.modembed.msp430</module>
+		<module>../../msp430/hu.modembed.msp430.feature</module>
 		
 		<module>../hu.modembed.test</module>
 		
