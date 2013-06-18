@@ -12,6 +12,7 @@ import hu.modembed.syntax.Push;
 import hu.modembed.syntax.Replace;
 import hu.modembed.syntax.Rule;
 import hu.modembed.syntax.RuleItem;
+import hu.modembed.syntax.SetValue;
 import hu.modembed.syntax.SyntaxFactory;
 import hu.modembed.syntax.SyntaxItem;
 import hu.modembed.syntax.SyntaxModel;
@@ -88,6 +89,13 @@ public class SyntaxPackageImpl extends EPackageImpl implements SyntaxPackage {
 	 * @generated
 	 */
 	private EClass nonTerminalItemEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass setValueEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -400,6 +408,33 @@ public class SyntaxPackageImpl extends EPackageImpl implements SyntaxPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getSetValue() {
+		return setValueEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSetValue_FeatureName() {
+		return (EAttribute)setValueEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSetValue_Value() {
+		return (EAttribute)setValueEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getPush() {
 		return pushEClass;
 	}
@@ -492,6 +527,10 @@ public class SyntaxPackageImpl extends EPackageImpl implements SyntaxPackage {
 		createEAttribute(nonTerminalItemEClass, NON_TERMINAL_ITEM__FEATURE_NAME);
 		createEAttribute(nonTerminalItemEClass, NON_TERMINAL_ITEM__NON_TERMINAL);
 
+		setValueEClass = createEClass(SET_VALUE);
+		createEAttribute(setValueEClass, SET_VALUE__FEATURE_NAME);
+		createEAttribute(setValueEClass, SET_VALUE__VALUE);
+
 		pushEClass = createEClass(PUSH);
 		createEAttribute(pushEClass, PUSH__ECLASS_URI);
 		createEAttribute(pushEClass, PUSH__FEATURE_NAME);
@@ -538,6 +577,7 @@ public class SyntaxPackageImpl extends EPackageImpl implements SyntaxPackage {
 		syntaxItemEClass.getESuperTypes().add(this.getRuleItem());
 		terminalItemEClass.getESuperTypes().add(this.getSyntaxItem());
 		nonTerminalItemEClass.getESuperTypes().add(this.getSyntaxItem());
+		setValueEClass.getESuperTypes().add(this.getRuleItem());
 		pushEClass.getESuperTypes().add(this.getRuleItem());
 		popEClass.getESuperTypes().add(this.getRuleItem());
 
@@ -574,6 +614,10 @@ public class SyntaxPackageImpl extends EPackageImpl implements SyntaxPackage {
 		initEClass(nonTerminalItemEClass, NonTerminalItem.class, "NonTerminalItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNonTerminalItem_FeatureName(), ecorePackage.getEString(), "featureName", null, 0, 1, NonTerminalItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getNonTerminalItem_NonTerminal(), ecorePackage.getEString(), "nonTerminal", null, 1, 1, NonTerminalItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(setValueEClass, SetValue.class, "SetValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSetValue_FeatureName(), ecorePackage.getEString(), "featureName", null, 1, 1, SetValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSetValue_Value(), ecorePackage.getEString(), "value", null, 1, 1, SetValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(pushEClass, Push.class, "Push", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPush_EclassURI(), ecorePackage.getEString(), "eclassURI", null, 1, 1, Push.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

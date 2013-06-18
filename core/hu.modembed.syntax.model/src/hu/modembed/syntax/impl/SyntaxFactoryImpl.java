@@ -62,6 +62,7 @@ public class SyntaxFactoryImpl extends EFactoryImpl implements SyntaxFactory {
 			case SyntaxPackage.RULE: return createRule();
 			case SyntaxPackage.TERMINAL_ITEM: return createTerminalItem();
 			case SyntaxPackage.NON_TERMINAL_ITEM: return createNonTerminalItem();
+			case SyntaxPackage.SET_VALUE: return createSetValue();
 			case SyntaxPackage.PUSH: return createPush();
 			case SyntaxPackage.POP: return createPop();
 			default:
@@ -127,6 +128,16 @@ public class SyntaxFactoryImpl extends EFactoryImpl implements SyntaxFactory {
 	public NonTerminalItem createNonTerminalItem() {
 		NonTerminalItemImpl nonTerminalItem = new NonTerminalItemImpl();
 		return nonTerminalItem;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SetValue createSetValue() {
+		SetValueImpl setValue = new SetValueImpl();
+		return setValue;
 	}
 
 	/**

@@ -103,6 +103,10 @@ public class SyntaxAdapterFactory extends AdapterFactoryImpl {
 				return createNonTerminalItemAdapter();
 			}
 			@Override
+			public Adapter caseSetValue(SetValue object) {
+				return createSetValueAdapter();
+			}
+			@Override
 			public Adapter casePush(Push object) {
 				return createPushAdapter();
 			}
@@ -251,6 +255,20 @@ public class SyntaxAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createNonTerminalItemAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.modembed.syntax.SetValue <em>Set Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.modembed.syntax.SetValue
+	 * @generated
+	 */
+	public Adapter createSetValueAdapter() {
 		return null;
 	}
 

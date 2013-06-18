@@ -10,7 +10,7 @@ import hu.modembed.syntax.Terminal;
  * @author balazs.grill
  *
  */
-public class TerminalMatch {
+public class TerminalMatch implements IStringValue{
 
 	public final Terminal terminal;
 	public final String match;
@@ -20,6 +20,7 @@ public class TerminalMatch {
 		this.match = match;
 	}
 	
+	@Override
 	public String getProcessedValue(){
 		String value = match;
 		for(Replace r : terminal.getReplace()){
@@ -29,6 +30,11 @@ public class TerminalMatch {
 			value = value.replaceAll(regex, replacement);
 		}
 		return value;
+	}
+
+	@Override
+	public String getOriginalValue() {
+		return match;
 	}
 	
 }

@@ -76,6 +76,15 @@ public interface SyntaxFactory extends EFactory {
 	NonTerminalItem createNonTerminalItem();
 
 	/**
+	 * Returns a new object of class '<em>Set Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Set Value</em>'.
+	 * @generated
+	 */
+	SetValue createSetValue();
+
+	/**
 	 * Returns a new object of class '<em>Push</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -8,6 +8,7 @@ import hu.modembed.syntax.Pop;
 import hu.modembed.syntax.Push;
 import hu.modembed.syntax.Rule;
 import hu.modembed.syntax.RuleItem;
+import hu.modembed.syntax.SetValue;
 import hu.modembed.syntax.SyntaxFactory;
 import hu.modembed.syntax.SyntaxItem;
 import hu.modembed.syntax.Terminal;
@@ -200,6 +201,10 @@ public class ParserState {
 		if (grammarItem instanceof Pop){
 			//Pop model
 			followups.add(removeFirst().addBuildStep(new PopBuildStep()));
+		}
+		if (grammarItem instanceof SetValue){
+			//Set value to constant
+			followups.add(removeFirst().addBuildStep(new SetFeatureBuildStep(((SetValue) grammarItem).getFeatureName(), new StringValue(((SetValue) grammarItem).getValue()))));
 		}
 		
 		return followups;

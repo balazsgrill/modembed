@@ -44,6 +44,11 @@ class NonTerminalItem extends SyntaxItem{
 	attr String[1] nonTerminal;
 }
 
+class SetValue extends RuleItem{
+	attr String[1] featureName;
+	attr String[1] value;
+}
+
 class Push extends RuleItem{
 	attr String[1] eclassURI;
 	attr String featureName;

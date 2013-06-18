@@ -3,8 +3,8 @@
  */
 package hu.modembed.syntax.persistence.build;
 
+import hu.modembed.syntax.persistence.IStringValue;
 import hu.modembed.syntax.persistence.ParsingError;
-import hu.modembed.syntax.persistence.TerminalMatch;
 
 import java.util.Collections;
 import java.util.Deque;
@@ -22,14 +22,14 @@ import org.eclipse.emf.ecore.resource.Resource.Diagnostic;
 public class SetFeatureBuildStep implements IModelBuildStep {
 
 	private final String feature;
-	private final TerminalMatch match;
+	private final IStringValue match;
 	
 	@Override
 	public String toString() {
-		return feature+"=["+match.match+"]";
+		return feature+"=["+match.getOriginalValue()+"]";
 	}
 	
-	public SetFeatureBuildStep(String feature, TerminalMatch match) {
+	public SetFeatureBuildStep(String feature, IStringValue match) {
 		this.feature = feature;
 		this.match = match;
 	}

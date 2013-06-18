@@ -85,6 +85,15 @@ public interface SyntaxPackage extends EPackage {
 	int SYNTAX_MODEL__ORIGINS = InfrastructurePackage.ROOT_ELEMENT__ORIGINS;
 
 	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNTAX_MODEL__ANNOTATIONS = InfrastructurePackage.ROOT_ELEMENT__ANNOTATIONS;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -167,6 +176,15 @@ public interface SyntaxPackage extends EPackage {
 	int TERMINAL__ORIGINS = InfrastructurePackage.NAMED_ELEMENT__ORIGINS;
 
 	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TERMINAL__ANNOTATIONS = InfrastructurePackage.NAMED_ELEMENT__ANNOTATIONS;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -240,6 +258,15 @@ public interface SyntaxPackage extends EPackage {
 	int REPLACE__ORIGINS = InfrastructurePackage.MO_DEMBED_ELEMENT__ORIGINS;
 
 	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REPLACE__ANNOTATIONS = InfrastructurePackage.MO_DEMBED_ELEMENT__ANNOTATIONS;
+
+	/**
 	 * The feature id for the '<em><b>Search</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -293,6 +320,15 @@ public interface SyntaxPackage extends EPackage {
 	 * @ordered
 	 */
 	int RULE__ORIGINS = InfrastructurePackage.MO_DEMBED_ELEMENT__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RULE__ANNOTATIONS = InfrastructurePackage.MO_DEMBED_ELEMENT__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Non Terminal</b></em>' attribute.
@@ -350,6 +386,15 @@ public interface SyntaxPackage extends EPackage {
 	int RULE_ITEM__ORIGINS = InfrastructurePackage.MO_DEMBED_ELEMENT__ORIGINS;
 
 	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RULE_ITEM__ANNOTATIONS = InfrastructurePackage.MO_DEMBED_ELEMENT__ANNOTATIONS;
+
+	/**
 	 * The number of structural features of the '<em>Rule Item</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -385,6 +430,15 @@ public interface SyntaxPackage extends EPackage {
 	 * @ordered
 	 */
 	int SYNTAX_ITEM__ORIGINS = RULE_ITEM__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNTAX_ITEM__ANNOTATIONS = RULE_ITEM__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Optional</b></em>' attribute.
@@ -440,6 +494,15 @@ public interface SyntaxPackage extends EPackage {
 	 * @ordered
 	 */
 	int TERMINAL_ITEM__ORIGINS = SYNTAX_ITEM__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TERMINAL_ITEM__ANNOTATIONS = SYNTAX_ITEM__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Optional</b></em>' attribute.
@@ -515,6 +578,15 @@ public interface SyntaxPackage extends EPackage {
 	int NON_TERMINAL_ITEM__ORIGINS = SYNTAX_ITEM__ORIGINS;
 
 	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NON_TERMINAL_ITEM__ANNOTATIONS = SYNTAX_ITEM__ANNOTATIONS;
+
+	/**
 	 * The feature id for the '<em><b>Optional</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -560,6 +632,70 @@ public interface SyntaxPackage extends EPackage {
 	int NON_TERMINAL_ITEM_FEATURE_COUNT = SYNTAX_ITEM_FEATURE_COUNT + 2;
 
 	/**
+	 * The meta object id for the '{@link hu.modembed.syntax.impl.SetValueImpl <em>Set Value</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.modembed.syntax.impl.SetValueImpl
+	 * @see hu.modembed.syntax.impl.SyntaxPackageImpl#getSetValue()
+	 * @generated
+	 */
+	int SET_VALUE = 8;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SET_VALUE__DESCRIPTION = RULE_ITEM__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SET_VALUE__ORIGINS = RULE_ITEM__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SET_VALUE__ANNOTATIONS = RULE_ITEM__ANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Feature Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SET_VALUE__FEATURE_NAME = RULE_ITEM_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SET_VALUE__VALUE = RULE_ITEM_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Set Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SET_VALUE_FEATURE_COUNT = RULE_ITEM_FEATURE_COUNT + 2;
+
+	/**
 	 * The meta object id for the '{@link hu.modembed.syntax.impl.PushImpl <em>Push</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -567,7 +703,7 @@ public interface SyntaxPackage extends EPackage {
 	 * @see hu.modembed.syntax.impl.SyntaxPackageImpl#getPush()
 	 * @generated
 	 */
-	int PUSH = 8;
+	int PUSH = 9;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -586,6 +722,15 @@ public interface SyntaxPackage extends EPackage {
 	 * @ordered
 	 */
 	int PUSH__ORIGINS = RULE_ITEM__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PUSH__ANNOTATIONS = RULE_ITEM__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Eclass URI</b></em>' attribute.
@@ -622,7 +767,7 @@ public interface SyntaxPackage extends EPackage {
 	 * @see hu.modembed.syntax.impl.SyntaxPackageImpl#getPop()
 	 * @generated
 	 */
-	int POP = 9;
+	int POP = 10;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -641,6 +786,15 @@ public interface SyntaxPackage extends EPackage {
 	 * @ordered
 	 */
 	int POP__ORIGINS = RULE_ITEM__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POP__ANNOTATIONS = RULE_ITEM__ANNOTATIONS;
 
 	/**
 	 * The number of structural features of the '<em>Pop</em>' class.
@@ -918,6 +1072,38 @@ public interface SyntaxPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getNonTerminalItem_NonTerminal();
+
+	/**
+	 * Returns the meta object for class '{@link hu.modembed.syntax.SetValue <em>Set Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Set Value</em>'.
+	 * @see hu.modembed.syntax.SetValue
+	 * @generated
+	 */
+	EClass getSetValue();
+
+	/**
+	 * Returns the meta object for the attribute '{@link hu.modembed.syntax.SetValue#getFeatureName <em>Feature Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Feature Name</em>'.
+	 * @see hu.modembed.syntax.SetValue#getFeatureName()
+	 * @see #getSetValue()
+	 * @generated
+	 */
+	EAttribute getSetValue_FeatureName();
+
+	/**
+	 * Returns the meta object for the attribute '{@link hu.modembed.syntax.SetValue#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see hu.modembed.syntax.SetValue#getValue()
+	 * @see #getSetValue()
+	 * @generated
+	 */
+	EAttribute getSetValue_Value();
 
 	/**
 	 * Returns the meta object for class '{@link hu.modembed.syntax.Push <em>Push</em>}'.
@@ -1198,6 +1384,32 @@ public interface SyntaxPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute NON_TERMINAL_ITEM__NON_TERMINAL = eINSTANCE.getNonTerminalItem_NonTerminal();
+
+		/**
+		 * The meta object literal for the '{@link hu.modembed.syntax.impl.SetValueImpl <em>Set Value</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.modembed.syntax.impl.SetValueImpl
+		 * @see hu.modembed.syntax.impl.SyntaxPackageImpl#getSetValue()
+		 * @generated
+		 */
+		EClass SET_VALUE = eINSTANCE.getSetValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Feature Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SET_VALUE__FEATURE_NAME = eINSTANCE.getSetValue_FeatureName();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SET_VALUE__VALUE = eINSTANCE.getSetValue_Value();
 
 		/**
 		 * The meta object literal for the '{@link hu.modembed.syntax.impl.PushImpl <em>Push</em>}' class.

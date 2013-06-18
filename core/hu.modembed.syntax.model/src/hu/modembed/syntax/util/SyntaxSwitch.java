@@ -133,6 +133,14 @@ public class SyntaxSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case SyntaxPackage.SET_VALUE: {
+				SetValue setValue = (SetValue)theEObject;
+				T result = caseSetValue(setValue);
+				if (result == null) result = caseRuleItem(setValue);
+				if (result == null) result = caseMODembedElement(setValue);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case SyntaxPackage.PUSH: {
 				Push push = (Push)theEObject;
 				T result = casePush(push);
@@ -270,6 +278,21 @@ public class SyntaxSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseNonTerminalItem(NonTerminalItem object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Set Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Set Value</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSetValue(SetValue object) {
 		return null;
 	}
 
