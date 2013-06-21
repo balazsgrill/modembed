@@ -323,3 +323,22 @@ package abstraction {
   }
 
 }
+
+@namespace(uri="http://modembed.hu/structured", prefix="structured")
+package structured{
+	
+	class StructuredModule extends infrastructure.RootElement{
+		val StructuredFunction[*] functions;
+		
+	}
+	
+	class StructuredFunction extends infrastructure.NamedElement{
+		
+	}
+
+	
+	abstract class Expression extends infrastructure.MODembedElement{
+		
+	}
+	
+}
