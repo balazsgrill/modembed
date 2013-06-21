@@ -329,16 +329,54 @@ package structured{
 	
 	class StructuredModule extends infrastructure.RootElement{
 		val StructuredFunction[*] functions;
-		
+		val VariableDeclaration[*] variables;
+		ref StructuredModule[*] uses;
+	}
+	
+	class VariableDeclaration extends infrastructure.NamedElement{
+		attr boolean[1] const;
+		val abstraction.types.TypeDefinition[1] type;
+		val Expression initValue;
 	}
 	
 	class StructuredFunction extends infrastructure.NamedElement{
-		
-	}
-
-	
-	abstract class Expression extends infrastructure.MODembedElement{
-		
+		val abstraction.types.TypeDefinition[1] resultType; 
+		val VariableDeclaration[*] parameters;
+		val Operation implementation;
 	}
 	
+	abstract class Expression extends infrastructure.MODembedElement{}
+	
+	class IntegerConstExpression extends Expression{
+		attr long[1] value;
+	}
+	
+	class VariableReferenceExpression extends Expression{
+		ref VariableDeclaration[1] variable;
+	}
+	
+	class OperationExpression extends Expression{
+		attr String operation;
+		val Expression[*] arguments;
+	}
+	
+	class FunctionCallExpression extends Expression{
+		ref StructuredFunction function;
+		val Expression[*] arguments;
+	}
+	
+	abstract class Operation extends infrastructure.MODembedElement{}
+	
+	class ReturnOperation extends Operation{
+		val Expression result;
+	}
+	
+	class ExpressionOperation extends Operation{
+		val Expression expression;
+	}
+	
+	class OperationBlock extends Operation{
+		val VariableDeclaration[*] variables;
+		val Operation[*] steps;
+	}
 }
