@@ -379,4 +379,16 @@ package structured{
 		val VariableDeclaration[*] variables;
 		val Operation[*] steps;
 	}
+	
+	class ConditionalOperation extends Operation{
+		val Expression[1] condition;
+		val Operation trueBranch;
+		val Operation falseBranch;
+	}
+	
+	class LoopOperation extends Operation{
+		val Expression entryCondition;
+		val Expression exitCondition;
+		val Operation[1] body;
+	}
 }
