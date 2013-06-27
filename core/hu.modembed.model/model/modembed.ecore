@@ -294,4 +294,80 @@
       </eSubpackages>
     </eSubpackages>
   </eSubpackages>
+  <eSubpackages name="structured" nsURI="http://modembed.hu/structured" nsPrefix="structured">
+    <eClassifiers xsi:type="ecore:EClass" name="StructuredModule" eSuperTypes="#//infrastructure/RootElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="functions" upperBound="-1"
+          eType="#//structured/StructuredFunction" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="variables" upperBound="-1"
+          eType="#//structured/VariableDeclaration" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="uses" upperBound="-1"
+          eType="#//structured/StructuredModule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="VariableDeclaration" eSuperTypes="#//infrastructure/NamedElement">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="const" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"
+          eType="#//abstraction/types/TypeDefinition" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="initValue" eType="#//structured/Expression"
+          containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="StructuredFunction" eSuperTypes="#//infrastructure/NamedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="resultType" lowerBound="1"
+          eType="#//abstraction/types/TypeDefinition" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+          eType="#//structured/VariableDeclaration" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="implementation" eType="#//structured/Operation"
+          containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Expression" abstract="true" eSuperTypes="#//infrastructure/MODembedElement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="IntegerConstExpression" eSuperTypes="#//structured/Expression">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="VariableReferenceExpression" eSuperTypes="#//structured/Expression">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="variable" lowerBound="1"
+          eType="#//structured/VariableDeclaration"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OperationExpression" eSuperTypes="#//structured/Expression">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="operation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="arguments" upperBound="-1"
+          eType="#//structured/Expression" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="FunctionCallExpression" eSuperTypes="#//structured/Expression">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="function" eType="#//structured/StructuredFunction"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="arguments" upperBound="-1"
+          eType="#//structured/Expression" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Operation" abstract="true" eSuperTypes="#//infrastructure/MODembedElement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ReturnOperation" eSuperTypes="#//structured/Operation">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="result" eType="#//structured/Expression"
+          containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ExpressionOperation" eSuperTypes="#//structured/Operation">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//structured/Expression"
+          containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OperationBlock" eSuperTypes="#//structured/Operation">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="variables" upperBound="-1"
+          eType="#//structured/VariableDeclaration" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="steps" upperBound="-1"
+          eType="#//structured/Operation" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ConditionalOperation" eSuperTypes="#//structured/Operation">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="condition" lowerBound="1"
+          eType="#//structured/Expression" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="trueBranch" eType="#//structured/Operation"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="falseBranch" eType="#//structured/Operation"
+          containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="LoopOperation" eSuperTypes="#//structured/Operation">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="entryCondition" eType="#//structured/Expression"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="exitCondition" eType="#//structured/Expression"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="body" lowerBound="1"
+          eType="#//structured/Operation" containment="true"/>
+    </eClassifiers>
+  </eSubpackages>
 </ecore:EPackage>

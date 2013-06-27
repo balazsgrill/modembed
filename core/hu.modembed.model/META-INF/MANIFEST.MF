@@ -33,7 +33,10 @@ Export-Package: hu.modembed.model.modembed.abstraction,
  hu.modembed.model.modembed.infrastructure.traceability,
  hu.modembed.model.modembed.infrastructure.traceability.impl,
  hu.modembed.model.modembed.infrastructure.traceability.util,
- hu.modembed.model.modembed.infrastructure.util
+ hu.modembed.model.modembed.infrastructure.util,
+ hu.modembed.model.modembed.structured,
+ hu.modembed.model.modembed.structured.impl,
+ hu.modembed.model.modembed.structured.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport
 Bundle-ActivationPolicy: lazy

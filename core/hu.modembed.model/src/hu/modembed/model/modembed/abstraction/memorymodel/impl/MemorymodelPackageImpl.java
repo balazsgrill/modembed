@@ -39,6 +39,8 @@ import hu.modembed.model.modembed.infrastructure.traceability.TraceabilityPackag
 
 import hu.modembed.model.modembed.infrastructure.traceability.impl.TraceabilityPackageImpl;
 
+import hu.modembed.model.modembed.structured.StructuredPackage;
+import hu.modembed.model.modembed.structured.impl.StructuredPackageImpl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -122,6 +124,7 @@ public class MemorymodelPackageImpl extends EPackageImpl implements MemorymodelP
 		TypesPackageImpl theTypesPackage = (TypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) instanceof TypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) : TypesPackage.eINSTANCE);
 		BehaviorPackageImpl theBehaviorPackage = (BehaviorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) instanceof BehaviorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) : BehaviorPackage.eINSTANCE);
 		PlatformPackageImpl thePlatformPackage = (PlatformPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PlatformPackage.eNS_URI) instanceof PlatformPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PlatformPackage.eNS_URI) : PlatformPackage.eINSTANCE);
+		StructuredPackageImpl theStructuredPackage = (StructuredPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(StructuredPackage.eNS_URI) instanceof StructuredPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(StructuredPackage.eNS_URI) : StructuredPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theMemorymodelPackage.createPackageContents();
@@ -133,6 +136,7 @@ public class MemorymodelPackageImpl extends EPackageImpl implements MemorymodelP
 		theTypesPackage.createPackageContents();
 		theBehaviorPackage.createPackageContents();
 		thePlatformPackage.createPackageContents();
+		theStructuredPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theMemorymodelPackage.initializePackageContents();
@@ -144,6 +148,7 @@ public class MemorymodelPackageImpl extends EPackageImpl implements MemorymodelP
 		theTypesPackage.initializePackageContents();
 		theBehaviorPackage.initializePackageContents();
 		thePlatformPackage.initializePackageContents();
+		theStructuredPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theMemorymodelPackage.freeze();

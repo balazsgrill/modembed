@@ -69,4 +69,11 @@
             genModel="model/modembed.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://modembed.hu/structured"
+            class="hu.modembed.model.modembed.structured.StructuredPackage"
+            genModel="model/modembed.genmodel"/>
+   </extension>
+
 </plugin>

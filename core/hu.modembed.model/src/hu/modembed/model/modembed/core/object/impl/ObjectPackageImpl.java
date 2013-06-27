@@ -24,6 +24,8 @@ import hu.modembed.model.modembed.infrastructure.impl.InfrastructurePackageImpl;
 import hu.modembed.model.modembed.infrastructure.traceability.TraceabilityPackage;
 import hu.modembed.model.modembed.infrastructure.traceability.impl.TraceabilityPackageImpl;
 
+import hu.modembed.model.modembed.structured.StructuredPackage;
+import hu.modembed.model.modembed.structured.impl.StructuredPackageImpl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -113,6 +115,7 @@ public class ObjectPackageImpl extends EPackageImpl implements ObjectPackage {
 		MemorymodelPackageImpl theMemorymodelPackage = (MemorymodelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(MemorymodelPackage.eNS_URI) instanceof MemorymodelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(MemorymodelPackage.eNS_URI) : MemorymodelPackage.eINSTANCE);
 		BehaviorPackageImpl theBehaviorPackage = (BehaviorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) instanceof BehaviorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) : BehaviorPackage.eINSTANCE);
 		PlatformPackageImpl thePlatformPackage = (PlatformPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PlatformPackage.eNS_URI) instanceof PlatformPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PlatformPackage.eNS_URI) : PlatformPackage.eINSTANCE);
+		StructuredPackageImpl theStructuredPackage = (StructuredPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(StructuredPackage.eNS_URI) instanceof StructuredPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(StructuredPackage.eNS_URI) : StructuredPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theObjectPackage.createPackageContents();
@@ -124,6 +127,7 @@ public class ObjectPackageImpl extends EPackageImpl implements ObjectPackage {
 		theMemorymodelPackage.createPackageContents();
 		theBehaviorPackage.createPackageContents();
 		thePlatformPackage.createPackageContents();
+		theStructuredPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theObjectPackage.initializePackageContents();
@@ -135,6 +139,7 @@ public class ObjectPackageImpl extends EPackageImpl implements ObjectPackage {
 		theMemorymodelPackage.initializePackageContents();
 		theBehaviorPackage.initializePackageContents();
 		thePlatformPackage.initializePackageContents();
+		theStructuredPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theObjectPackage.freeze();
