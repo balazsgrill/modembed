@@ -15,6 +15,8 @@ terminal KW_RETURN "return";
 terminal KW_IF "if";
 terminal KW_ELSE "else";
 terminal OP_ADD "\+";
+terminal OP_MULTIPLY "\*";
+terminal OP_MINUS "-";
 terminal OP_BEGIN "\{";
 terminal OP_END "\}";
 
@@ -58,25 +60,47 @@ terminal OP_END "\}";
 /*
  * EXPRESSIONS
  */
-<Expression> :- BRACKET_OPEN <Expression> BRACKET_CLOSE;
+<Expression0> :- BRACKET_OPEN <Expression> BRACKET_CLOSE;
  
-<Expression> :- <IntegerConstExpression>; 
+<Expression0> :- <IntegerConstExpression>; 
 <IntegerConstExpression> :- {"http://modembed.hu/structured#IntegerConstExpression" <IntegerConstExpression_value> };
 <IntegerConstExpression_value> :- value=DECIMAL_NUMBER;
 <IntegerConstExpression_value> :- value=BINARY_NUMBER;
 <IntegerConstExpression_value> :- value=HEXADECIMAL_NUMBER;
 
-<Expression> :- <VariableReferenceExpression>;
+<Expression0> :- <VariableReferenceExpression>;
 <VariableReferenceExpression> :- {"http://modembed.hu/structured#VariableReferenceExpression" variable=IDENTIFIER };
 
-<Expression> :- <FunctionCallExpression>;
+<Expression0> :- <FunctionCallExpression>;
 <FunctionCallExpression> :- {"http://modembed.hu/structured#FunctionCallExpression" function=IDENTIFIER 
 					BRACKET_OPEN <FunctionCallExpression_arguments>? BRACKET_CLOSE };
 <FunctionCallExpression_arguments> :- arguments=<Expression> ;
 <FunctionCallExpression_arguments> :- arguments=<Expression> OP_COMMA <FunctionCallExpression_arguments>;
 
-/*
-<Expression> :- {"http://modembed.hu/structured#OperationExpression" <InfixExpression> }; 
-<InfixExpression> :- operation="assign" arguments=<Expression> OPERATOR_ASSIGN arguments=<Expression>;
-<InfixExpression> :- operation="add" arguments=<Expression> OPERATOR_ADD arguments=<Expression>;
-*/  
+<Expression> :- <Expression6>;
+
+/* Assign expressions */
+<Expression6> :- <Expression5>;
+<Expression6> :- {"http://modembed.hu/structured#OperationExpression" arguments=<Expression5> <E6> arguments=<Expression6> };
+<E6> :- OPERATOR_ASSIGN operation="assign";
+
+/* Additive expressions */
+<Expression5> :- <Expression4>;
+<Expression5> :- {"http://modembed.hu/structured#OperationExpression" arguments=<Expression4> <E5> arguments=<Expression5> };
+<E5> :- OP_ADD operation="add";
+<E6> :- OP_MINUS operation="subtract";
+
+/* Multiplicative expressions */
+<Expression4> :- <Expression3>;
+<Expression4> :- {"http://modembed.hu/structured#OperationExpression" arguments=<Expression3> <E4> arguments=<Expression4> };
+<E4> :- OP_MULTIPLY operation="multiply";
+
+/* Shift expressions */
+<Expression3> :- <Expression2>;
+
+<Expression2> :- <Expression1>;
+
+/* Unary expressions */
+<Expression1> :- <Expression0>;
+<Expression1> :- {"http://modembed.hu/structured#OperationExpression" <E1> arguments=<Expression1> };
+<E1> :- OP_MINUS operation="minus";
