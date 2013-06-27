@@ -112,5 +112,13 @@
     <body xsi:type="syntax:TerminalItem" xmi:id="_o4m2kLZLEeKDArD2cbZQHA" optional="true" featureName="many" terminal="_Zjqs4LZLEeKDArD2cbZQHA"/>
     <body xsi:type="syntax:TerminalItem" xmi:id="_stfdcLZLEeKDArD2cbZQHA" optional="true" featureName="optional" terminal="_eFcO8LZLEeKDArD2cbZQHA"/>
   </rules>
+  <rules xmi:id="_BwNPEN8ZEeKzJqytnsiUUA" description="RuleItem - SetValue" nonTerminal="RuleItem">
+    <body xsi:type="syntax:Push" xmi:id="_BwNPEd8ZEeKzJqytnsiUUA" eclassURI="http://modembed.hu/syntax#SetValue" featureName="body"/>
+    <body xsi:type="syntax:NonTerminalItem" xmi:id="_BwNPEt8ZEeKzJqytnsiUUA" nonTerminal="TerminalItemFeatureName"/>
+    <body xsi:type="syntax:TerminalItem" xmi:id="_BwNPFN8ZEeKzJqytnsiUUA" featureName="value">
+      <terminal href="core.syntax.model#_uhiJ8LGVEeK1ScU5DNcoWg"/>
+    </body>
+    <body xsi:type="syntax:Pop" xmi:id="_BwNPFd8ZEeKzJqytnsiUUA"/>
+  </rules>
   <import href="core.syntax.model#_3yl34LGQEeK1ScU5DNcoWg"/>
 </syntax:SyntaxModel>

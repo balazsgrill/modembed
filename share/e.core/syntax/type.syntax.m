@@ -2,6 +2,7 @@
 syntax type.syntax <Type>;
 import core.syntax;
 
+terminal KEYWORD_VOID "void";
 terminal KEYWORD_TYPE "type";
 terminal KEYWORD_UNSIGNED "unsigned";
 terminal OPERATOR_ASSIGN "=";
@@ -16,3 +17,5 @@ terminal KEYWORD_LABEL "label";
 <TypeDefinition> :- {"http://modembed.hu/abstraction/types#ReferenceTypeDefinition" type=QUALIFIEDID };
 
 <TypeDefinition> :- KEYWORD_LABEL {"http://modembed.hu/abstraction/types#CodeLabelTypeDefinition" };
+
+<TypeDefinition> :- KEYWORD_VOID;

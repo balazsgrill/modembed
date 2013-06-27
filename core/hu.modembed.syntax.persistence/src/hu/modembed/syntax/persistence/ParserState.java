@@ -65,6 +65,11 @@ public class ParserState {
 		return new ParserState(parser, data, index, less, modelBuild);
 	}
 	
+	public boolean shouldBeCut(){
+		if (modelBuild.size() > index) return true;
+		return false;
+	}
+	
 	/**
 	 * Add grammar items to the beginning of the grammar stack
 	 * @param items
@@ -204,7 +209,9 @@ public class ParserState {
 		}
 		if (grammarItem instanceof SetValue){
 			//Set value to constant
-			followups.add(removeFirst().addBuildStep(new SetFeatureBuildStep(((SetValue) grammarItem).getFeatureName(), new StringValue(((SetValue) grammarItem).getValue()))));
+			String featureName = ((SetValue) grammarItem).getFeatureName();
+			String value = ((SetValue) grammarItem).getValue();
+			followups.add(removeFirst().addBuildStep(new SetFeatureBuildStep(featureName, new StringValue(value))));
 		}
 		
 		return followups;

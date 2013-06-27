@@ -9,7 +9,6 @@ import hu.modembed.syntax.SyntaxModel;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Deque;
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.regex.Matcher;
@@ -87,7 +86,7 @@ public class GenericSyntaxResource extends ResourceImpl {
 		getErrors().addAll(parser.errors);
 		
 		ParserState startState = parser.getStartState(data, l+1);
-		Deque<ParserState> states = new LinkedList<ParserState>();
+		LinkedList<ParserState> states = new LinkedList<ParserState>();
 		ParserState finishedState = null;
 		ParserState bestState = null;
 		states.add(startState);
@@ -108,7 +107,9 @@ public class GenericSyntaxResource extends ResourceImpl {
 				/* Step */
 				for(ParserState followup : current.getValidFollowingStates()){
 					/* Deep-first search */
-					states.addFirst(followup);
+					if (!followup.shouldBeCut()){
+						states.addFirst(followup);
+					}
 				}
 			}
 		}
