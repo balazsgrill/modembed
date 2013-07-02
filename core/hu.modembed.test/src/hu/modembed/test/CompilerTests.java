@@ -10,7 +10,6 @@ import java.lang.reflect.InvocationTargetException;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
-import org.eclipse.emf.compare.util.EclipseModelUtils;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.junit.Assert;
@@ -45,8 +44,8 @@ public class CompilerTests {
 		
 		ResourceSet rs = MODembedCore.createResourceSet();
 		EObject[] elements = new EObject[2];
-		elements[0] = EclipseModelUtils.load(project.getFile("msp430/.test.asm1.msp430.model"), rs);
-		elements[1] = EclipseModelUtils.load(project.getFile("msp430/.test.asm2.msp430.model"), rs);
+		elements[0] = ModembedTests.load(project.getFile("msp430/.test.asm1.msp430.model"), rs);
+		elements[1] = ModembedTests.load(project.getFile("msp430/.test.asm2.msp430.model"), rs);
 		
 		for(int i=0;i<elements.length;i++){
 			Assert.assertTrue("Element "+i+" is not an AssemblerObject", elements[i] instanceof AssemblerObject);
@@ -64,7 +63,7 @@ public class CompilerTests {
 		IFile asmfile = project.getFile(".test.main.asm.xmi");
 		Assert.assertTrue("AssemblerObject model does not exist!", asmfile.exists());
 		ResourceSet rs = MODembedCore.createResourceSet();
-		EObject asm = EclipseModelUtils.load(asmfile, rs);
+		EObject asm = ModembedTests.load(asmfile, rs);
 		Assert.assertTrue("Invalid AssemblerObject", asm instanceof AssemblerObject);
 		
 		DeviceSimulator simulator = new DeviceSimulator();

@@ -7,7 +7,6 @@ import hu.modembed.includedcode.IncludedProject;
 import hu.modembed.includedcode.IncludedProjectsRegistry;
 
 import java.io.IOException;
-import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.ant.core.AntRunner;
@@ -21,13 +20,16 @@ import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
-import org.eclipse.emf.compare.diff.metamodel.DiffElement;
-import org.eclipse.emf.compare.diff.metamodel.DiffModel;
-import org.eclipse.emf.compare.diff.service.DiffService;
-import org.eclipse.emf.compare.match.metamodel.MatchModel;
-import org.eclipse.emf.compare.match.service.MatchService;
-import org.eclipse.emf.compare.util.EclipseModelUtils;
+import org.eclipse.emf.common.util.BasicMonitor.Printing;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.compare.Comparison;
+import org.eclipse.emf.compare.Diff;
+import org.eclipse.emf.compare.match.DefaultMatchEngine;
+import org.eclipse.emf.compare.match.IMatchEngine;
+import org.eclipse.emf.compare.scope.DefaultComparisonScope;
+import org.eclipse.emf.compare.utils.UseIdentifiers;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.junit.Assert;
 import org.junit.runner.RunWith;
@@ -53,24 +55,32 @@ public class ModembedTests {
 		}
 	}
 	
+	public static EObject load(IFile file, ResourceSet resourceSet){
+		URI uri = URI.createPlatformResourceURI(file.getFullPath().toString(), false);
+		Resource res = resourceSet.getResource(uri, true);
+		return res.getContents().get(0);
+	}
+	
 	public static boolean modelsAreEquivalent(IFile file1, IFile file2) throws InterruptedException, IOException{
 		ResourceSet rs = MODembedCore.createResourceSet();
 		
+		EObject e1 = load(file1, rs);
+		EObject e2 = load(file2, rs);
+		
+		IMatchEngine matchEngine = DefaultMatchEngine.create(UseIdentifiers.NEVER);
 		
 		
-		EObject e1 = EclipseModelUtils.load(file1, rs);
-		EObject e2 = EclipseModelUtils.load(file2, rs);
 		
-		MatchModel mm = MatchService.doMatch(e1, e2, Collections.<String,Object>emptyMap());
-		DiffModel diff = DiffService.doDiff(mm);
 		
-		if (!diff.getDifferences().isEmpty()){
-			for(DiffElement de : diff.getDifferences()){
+		Comparison mm = matchEngine.match(new DefaultComparisonScope(e1, e2, e1), Printing.toMonitor(new NullProgressMonitor()));
+		
+		if (!mm.getDifferences().isEmpty()){
+			for(Diff de : mm.getDifferences()){
 				System.out.println(de);
 			}
 		}
 		
-		return diff.getDifferences().isEmpty();
+		return mm.getDifferences().isEmpty();
 	}
 	
 	public static void build() throws CoreException{
