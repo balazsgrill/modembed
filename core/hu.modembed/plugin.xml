@@ -63,6 +63,13 @@
             library="ant_tasks/modembed.ant.tasks.jar"
             name="modembed.map">
       </antTask>
+      <antTask
+            class="hu.modembed.ant.ModuleCompilerTask"
+            eclipseRuntime="true"
+            headless="true"
+            library="ant_tasks/modembed.ant.tasks.jar"
+            name="modembed.compile">
+      </antTask>
    </extension>
    <extension
          point="org.eclipse.ant.core.extraClasspathEntries">
