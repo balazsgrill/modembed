@@ -130,7 +130,7 @@ public class ModuleCompiler {
 		if ("assign".equals(operation)){
 			result.getActions().add(op("set", arguments.get(0), arguments.get(1)));
 		}
-		return null;
+		throw new RuntimeException("Unsupported operation: "+operation);
 	}
 	
 	private String compile(SequentialBehaviorPart result, Expression expression){

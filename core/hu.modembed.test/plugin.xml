@@ -64,6 +64,15 @@
                project="microchip.PIC18F14K50">
          </dependency>
       </project>
+      <project
+            archive="shared/test.module.compile.zip"
+            category="hu.modembed.test.category"
+            id="test.module.compile"
+            name="Structural module compilation tests">
+         <dependency
+               project="e.core">
+         </dependency>
+      </project>
    </extension>
 
 </plugin>

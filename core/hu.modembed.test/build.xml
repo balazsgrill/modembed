@@ -8,6 +8,7 @@
 		<pack.shared name="test.compileToDevice"/>
 		<pack.shared name="test.hex.manipulate"/>
 		<pack.shared name="test.dio"/>
+		<pack.shared name="test.module.compile" />
 	</target>
 	
 </project>

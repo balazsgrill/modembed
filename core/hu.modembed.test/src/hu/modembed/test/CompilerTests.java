@@ -85,4 +85,10 @@ public class CompilerTests {
 		Assert.assertTrue(device.memory().getValue(0) == 5);
 	}
 	
+	@Test
+	public void test_compile_structuralModule() throws Exception{
+		IProject project = ModembedTests.loadProject("test.module.compile");
+		ModembedTests.runAntScript(project, "build.xml");
+	}
+	
 }
