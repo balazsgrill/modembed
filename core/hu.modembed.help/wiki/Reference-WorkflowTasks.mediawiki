@@ -2,9 +2,25 @@
 
 == Generic compiler tasks ==
 
-=== Link modules - modembed.link ===
+=== Compile module - modembed.compile ===
 
 IN PROGRESS
+
+=== Link modules - modembed.link ===
+
+Links a set of Sequential behavior module models to a single sequential behavior model.
+
+ 	<modembed.link entry="${main}" output="${sequence}">
+ 			<filelist dir="${basedir}">
+ 				<file name="${file_1}"/>
+ 				..
+ 				<file name="${file_n}"/>
+ 			</filelist>
+ 		</modembed.link>
+
+; Inputs : filelist = SequentialBehaviorModule*
+: entry = String (Name of the entry point SequentialBehaviorPart)
+; Outputs : RootSequentialBehavior
 
 === Map heap allocation - modembed.map ===
 
@@ -96,3 +112,35 @@ Format:
 : start : integer
 : end : integer
 ; Outputs : output = HexFile
+
+== Tasks specific for PIC targets ==
+
+=== Produce configuration bits - modembed.pic.config ===
+
+Creates a HEX file which contains the appropriate configuration bits based on the given configuration model. 
+
+Format:
+
+ 	<modembed.pic.config
+ 			input="${pic.config.model}"
+ 			output="${pic.config.hex}"
+ 		/>
+
+; Inputs : input = PICConfigurationValueModel
+; Outputs : output = HexFile
+
+=== Extract configuration values - modembed.pic.config.extract ===
+
+Extracts the configuration bits from a HEX file and produces a configuration model.
+
+Format:
+
+ <modembed.pic.config.extract
+ 			input="${pic.config.hex}"
+ 			output="${pic.config.model}"
+ 			configModel="${pic.config.definition.model}"
+ 		/>
+ 
+; Inputs : input = Hexfile
+: configModel = PICConfigurationModel
+; Outputs : output = PICConfigurationValueModel
