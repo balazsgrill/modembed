@@ -15,6 +15,7 @@ import hu.modembed.model.modembed.infrastructure.NamedElement;
  * The following features are supported:
  * <ul>
  *   <li>{@link hu.modembed.model.modembed.structured.VariableDeclaration#isConst <em>Const</em>}</li>
+ *   <li>{@link hu.modembed.model.modembed.structured.VariableDeclaration#isGlobal <em>Global</em>}</li>
  *   <li>{@link hu.modembed.model.modembed.structured.VariableDeclaration#getType <em>Type</em>}</li>
  *   <li>{@link hu.modembed.model.modembed.structured.VariableDeclaration#getInitValue <em>Init Value</em>}</li>
  * </ul>
@@ -50,6 +51,32 @@ public interface VariableDeclaration extends NamedElement {
 	 * @generated
 	 */
 	void setConst(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Global</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Global</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Global</em>' attribute.
+	 * @see #setGlobal(boolean)
+	 * @see hu.modembed.model.modembed.structured.StructuredPackage#getVariableDeclaration_Global()
+	 * @model required="true"
+	 * @generated
+	 */
+	boolean isGlobal();
+
+	/**
+	 * Sets the value of the '{@link hu.modembed.model.modembed.structured.VariableDeclaration#isGlobal <em>Global</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Global</em>' attribute.
+	 * @see #isGlobal()
+	 * @generated
+	 */
+	void setGlobal(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' containment reference.

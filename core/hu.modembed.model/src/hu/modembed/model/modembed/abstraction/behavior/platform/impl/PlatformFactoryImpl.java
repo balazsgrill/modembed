@@ -27,7 +27,7 @@ public class PlatformFactoryImpl extends EFactoryImpl implements PlatformFactory
 	 */
 	public static PlatformFactory init() {
 		try {
-			PlatformFactory thePlatformFactory = (PlatformFactory)EPackage.Registry.INSTANCE.getEFactory("http://modembed.hu/abstraction/behavior/platform"); 
+			PlatformFactory thePlatformFactory = (PlatformFactory)EPackage.Registry.INSTANCE.getEFactory(PlatformPackage.eNS_URI);
 			if (thePlatformFactory != null) {
 				return thePlatformFactory;
 			}

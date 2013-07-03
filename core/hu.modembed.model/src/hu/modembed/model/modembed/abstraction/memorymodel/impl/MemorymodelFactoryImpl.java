@@ -27,7 +27,7 @@ public class MemorymodelFactoryImpl extends EFactoryImpl implements MemorymodelF
 	 */
 	public static MemorymodelFactory init() {
 		try {
-			MemorymodelFactory theMemorymodelFactory = (MemorymodelFactory)EPackage.Registry.INSTANCE.getEFactory("http://modembed.hu/abstraction/memorymodel"); 
+			MemorymodelFactory theMemorymodelFactory = (MemorymodelFactory)EPackage.Registry.INSTANCE.getEFactory(MemorymodelPackage.eNS_URI);
 			if (theMemorymodelFactory != null) {
 				return theMemorymodelFactory;
 			}

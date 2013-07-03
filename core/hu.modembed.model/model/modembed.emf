@@ -335,6 +335,7 @@ package structured{
 	
 	class VariableDeclaration extends infrastructure.NamedElement{
 		attr boolean[1] const;
+		attr boolean[1] global;
 		val abstraction.types.TypeDefinition[1] type;
 		val Expression initValue;
 	}

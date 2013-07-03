@@ -316,8 +316,17 @@ public class StructuredPackageImpl extends EPackageImpl implements StructuredPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getVariableDeclaration_Global() {
+		return (EAttribute)variableDeclarationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getVariableDeclaration_Type() {
-		return (EReference)variableDeclarationEClass.getEStructuralFeatures().get(1);
+		return (EReference)variableDeclarationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -326,7 +335,7 @@ public class StructuredPackageImpl extends EPackageImpl implements StructuredPac
 	 * @generated
 	 */
 	public EReference getVariableDeclaration_InitValue() {
-		return (EReference)variableDeclarationEClass.getEStructuralFeatures().get(2);
+		return (EReference)variableDeclarationEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -643,6 +652,7 @@ public class StructuredPackageImpl extends EPackageImpl implements StructuredPac
 
 		variableDeclarationEClass = createEClass(VARIABLE_DECLARATION);
 		createEAttribute(variableDeclarationEClass, VARIABLE_DECLARATION__CONST);
+		createEAttribute(variableDeclarationEClass, VARIABLE_DECLARATION__GLOBAL);
 		createEReference(variableDeclarationEClass, VARIABLE_DECLARATION__TYPE);
 		createEReference(variableDeclarationEClass, VARIABLE_DECLARATION__INIT_VALUE);
 
@@ -745,6 +755,7 @@ public class StructuredPackageImpl extends EPackageImpl implements StructuredPac
 
 		initEClass(variableDeclarationEClass, VariableDeclaration.class, "VariableDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getVariableDeclaration_Const(), ecorePackage.getEBoolean(), "const", null, 1, 1, VariableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getVariableDeclaration_Global(), ecorePackage.getEBoolean(), "global", null, 1, 1, VariableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getVariableDeclaration_Type(), theTypesPackage.getTypeDefinition(), null, "type", null, 1, 1, VariableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getVariableDeclaration_InitValue(), this.getExpression(), null, "initValue", null, 0, 1, VariableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

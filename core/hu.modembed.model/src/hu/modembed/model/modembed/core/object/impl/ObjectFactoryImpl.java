@@ -27,7 +27,7 @@ public class ObjectFactoryImpl extends EFactoryImpl implements ObjectFactory {
 	 */
 	public static ObjectFactory init() {
 		try {
-			ObjectFactory theObjectFactory = (ObjectFactory)EPackage.Registry.INSTANCE.getEFactory("http://modembed.hu/core/object"); 
+			ObjectFactory theObjectFactory = (ObjectFactory)EPackage.Registry.INSTANCE.getEFactory(ObjectPackage.eNS_URI);
 			if (theObjectFactory != null) {
 				return theObjectFactory;
 			}

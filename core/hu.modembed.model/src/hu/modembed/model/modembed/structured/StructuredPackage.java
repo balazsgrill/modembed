@@ -195,13 +195,22 @@ public interface StructuredPackage extends EPackage {
 	int VARIABLE_DECLARATION__CONST = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Global</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIABLE_DECLARATION__GLOBAL = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Type</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE_DECLARATION__TYPE = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int VARIABLE_DECLARATION__TYPE = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Init Value</b></em>' containment reference.
@@ -210,7 +219,7 @@ public interface StructuredPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE_DECLARATION__INIT_VALUE = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int VARIABLE_DECLARATION__INIT_VALUE = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Variable Declaration</em>' class.
@@ -219,7 +228,7 @@ public interface StructuredPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE_DECLARATION_FEATURE_COUNT = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int VARIABLE_DECLARATION_FEATURE_COUNT = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link hu.modembed.model.modembed.structured.impl.StructuredFunctionImpl <em>Function</em>}' class.
@@ -1019,6 +1028,17 @@ public interface StructuredPackage extends EPackage {
 	EAttribute getVariableDeclaration_Const();
 
 	/**
+	 * Returns the meta object for the attribute '{@link hu.modembed.model.modembed.structured.VariableDeclaration#isGlobal <em>Global</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Global</em>'.
+	 * @see hu.modembed.model.modembed.structured.VariableDeclaration#isGlobal()
+	 * @see #getVariableDeclaration()
+	 * @generated
+	 */
+	EAttribute getVariableDeclaration_Global();
+
+	/**
 	 * Returns the meta object for the containment reference '{@link hu.modembed.model.modembed.structured.VariableDeclaration#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1442,6 +1462,14 @@ public interface StructuredPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute VARIABLE_DECLARATION__CONST = eINSTANCE.getVariableDeclaration_Const();
+
+		/**
+		 * The meta object literal for the '<em><b>Global</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VARIABLE_DECLARATION__GLOBAL = eINSTANCE.getVariableDeclaration_Global();
 
 		/**
 		 * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.

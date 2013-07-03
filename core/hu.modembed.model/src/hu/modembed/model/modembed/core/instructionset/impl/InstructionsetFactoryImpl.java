@@ -27,7 +27,7 @@ public class InstructionsetFactoryImpl extends EFactoryImpl implements Instructi
 	 */
 	public static InstructionsetFactory init() {
 		try {
-			InstructionsetFactory theInstructionsetFactory = (InstructionsetFactory)EPackage.Registry.INSTANCE.getEFactory("http://modembed.hu/core/instructionset"); 
+			InstructionsetFactory theInstructionsetFactory = (InstructionsetFactory)EPackage.Registry.INSTANCE.getEFactory(InstructionsetPackage.eNS_URI);
 			if (theInstructionsetFactory != null) {
 				return theInstructionsetFactory;
 			}

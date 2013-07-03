@@ -27,7 +27,7 @@ public class AbstractionFactoryImpl extends EFactoryImpl implements AbstractionF
 	 */
 	public static AbstractionFactory init() {
 		try {
-			AbstractionFactory theAbstractionFactory = (AbstractionFactory)EPackage.Registry.INSTANCE.getEFactory("http://modembed.hu/abstraction"); 
+			AbstractionFactory theAbstractionFactory = (AbstractionFactory)EPackage.Registry.INSTANCE.getEFactory(AbstractionPackage.eNS_URI);
 			if (theAbstractionFactory != null) {
 				return theAbstractionFactory;
 			}

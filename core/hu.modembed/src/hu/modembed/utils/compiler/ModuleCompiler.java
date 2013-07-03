@@ -49,6 +49,9 @@ public class ModuleCompiler {
 	private static final String BUFFER = "__BUFFER__";
 	
 	private static TypedSymbol getSymbol(VariableDeclaration vd){
+		if (vd.isGlobal()){
+			return new TypedSymbol(vd.getName(), vd.getType());
+		}
 		EObject eo = vd.eContainer();
 		if (eo instanceof StructuredModule){
 			String qid = ((StructuredModule) eo).getName()+".."+vd.getName();

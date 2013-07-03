@@ -27,7 +27,7 @@ public class InfrastructureFactoryImpl extends EFactoryImpl implements Infrastru
 	 */
 	public static InfrastructureFactory init() {
 		try {
-			InfrastructureFactory theInfrastructureFactory = (InfrastructureFactory)EPackage.Registry.INSTANCE.getEFactory("http://modembed.hu/infrastructure"); 
+			InfrastructureFactory theInfrastructureFactory = (InfrastructureFactory)EPackage.Registry.INSTANCE.getEFactory(InfrastructurePackage.eNS_URI);
 			if (theInfrastructureFactory != null) {
 				return theInfrastructureFactory;
 			}

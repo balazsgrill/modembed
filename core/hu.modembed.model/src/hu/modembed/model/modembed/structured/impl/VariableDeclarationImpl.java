@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link hu.modembed.model.modembed.structured.impl.VariableDeclarationImpl#isConst <em>Const</em>}</li>
+ *   <li>{@link hu.modembed.model.modembed.structured.impl.VariableDeclarationImpl#isGlobal <em>Global</em>}</li>
  *   <li>{@link hu.modembed.model.modembed.structured.impl.VariableDeclarationImpl#getType <em>Type</em>}</li>
  *   <li>{@link hu.modembed.model.modembed.structured.impl.VariableDeclarationImpl#getInitValue <em>Init Value</em>}</li>
  * </ul>
@@ -53,6 +54,26 @@ public class VariableDeclarationImpl extends NamedElementImpl implements Variabl
 	 * @ordered
 	 */
 	protected boolean const_ = CONST_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isGlobal() <em>Global</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isGlobal()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean GLOBAL_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isGlobal() <em>Global</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isGlobal()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean global = GLOBAL_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
@@ -112,6 +133,27 @@ public class VariableDeclarationImpl extends NamedElementImpl implements Variabl
 		const_ = newConst;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, StructuredPackage.VARIABLE_DECLARATION__CONST, oldConst, const_));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isGlobal() {
+		return global;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setGlobal(boolean newGlobal) {
+		boolean oldGlobal = global;
+		global = newGlobal;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StructuredPackage.VARIABLE_DECLARATION__GLOBAL, oldGlobal, global));
 	}
 
 	/**
@@ -226,6 +268,8 @@ public class VariableDeclarationImpl extends NamedElementImpl implements Variabl
 		switch (featureID) {
 			case StructuredPackage.VARIABLE_DECLARATION__CONST:
 				return isConst();
+			case StructuredPackage.VARIABLE_DECLARATION__GLOBAL:
+				return isGlobal();
 			case StructuredPackage.VARIABLE_DECLARATION__TYPE:
 				return getType();
 			case StructuredPackage.VARIABLE_DECLARATION__INIT_VALUE:
@@ -244,6 +288,9 @@ public class VariableDeclarationImpl extends NamedElementImpl implements Variabl
 		switch (featureID) {
 			case StructuredPackage.VARIABLE_DECLARATION__CONST:
 				setConst((Boolean)newValue);
+				return;
+			case StructuredPackage.VARIABLE_DECLARATION__GLOBAL:
+				setGlobal((Boolean)newValue);
 				return;
 			case StructuredPackage.VARIABLE_DECLARATION__TYPE:
 				setType((TypeDefinition)newValue);
@@ -266,6 +313,9 @@ public class VariableDeclarationImpl extends NamedElementImpl implements Variabl
 			case StructuredPackage.VARIABLE_DECLARATION__CONST:
 				setConst(CONST_EDEFAULT);
 				return;
+			case StructuredPackage.VARIABLE_DECLARATION__GLOBAL:
+				setGlobal(GLOBAL_EDEFAULT);
+				return;
 			case StructuredPackage.VARIABLE_DECLARATION__TYPE:
 				setType((TypeDefinition)null);
 				return;
@@ -286,6 +336,8 @@ public class VariableDeclarationImpl extends NamedElementImpl implements Variabl
 		switch (featureID) {
 			case StructuredPackage.VARIABLE_DECLARATION__CONST:
 				return const_ != CONST_EDEFAULT;
+			case StructuredPackage.VARIABLE_DECLARATION__GLOBAL:
+				return global != GLOBAL_EDEFAULT;
 			case StructuredPackage.VARIABLE_DECLARATION__TYPE:
 				return type != null;
 			case StructuredPackage.VARIABLE_DECLARATION__INIT_VALUE:
@@ -306,6 +358,8 @@ public class VariableDeclarationImpl extends NamedElementImpl implements Variabl
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (const: ");
 		result.append(const_);
+		result.append(", global: ");
+		result.append(global);
 		result.append(')');
 		return result.toString();
 	}

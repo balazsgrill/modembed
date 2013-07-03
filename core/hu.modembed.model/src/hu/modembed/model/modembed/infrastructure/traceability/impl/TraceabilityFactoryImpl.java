@@ -27,7 +27,7 @@ public class TraceabilityFactoryImpl extends EFactoryImpl implements Traceabilit
 	 */
 	public static TraceabilityFactory init() {
 		try {
-			TraceabilityFactory theTraceabilityFactory = (TraceabilityFactory)EPackage.Registry.INSTANCE.getEFactory("http://modembed.hu/infrastructure/traceability"); 
+			TraceabilityFactory theTraceabilityFactory = (TraceabilityFactory)EPackage.Registry.INSTANCE.getEFactory(TraceabilityPackage.eNS_URI);
 			if (theTraceabilityFactory != null) {
 				return theTraceabilityFactory;
 			}

@@ -27,7 +27,7 @@ public class StructuredFactoryImpl extends EFactoryImpl implements StructuredFac
 	 */
 	public static StructuredFactory init() {
 		try {
-			StructuredFactory theStructuredFactory = (StructuredFactory)EPackage.Registry.INSTANCE.getEFactory("http://modembed.hu/structured"); 
+			StructuredFactory theStructuredFactory = (StructuredFactory)EPackage.Registry.INSTANCE.getEFactory(StructuredPackage.eNS_URI);
 			if (theStructuredFactory != null) {
 				return theStructuredFactory;
 			}

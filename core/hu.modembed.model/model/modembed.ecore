@@ -306,6 +306,8 @@
     <eClassifiers xsi:type="ecore:EClass" name="VariableDeclaration" eSuperTypes="#//infrastructure/NamedElement">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="const" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="global" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"
           eType="#//abstraction/types/TypeDefinition" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="initValue" eType="#//structured/Expression"
