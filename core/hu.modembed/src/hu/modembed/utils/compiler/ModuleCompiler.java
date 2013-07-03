@@ -30,6 +30,7 @@ import hu.modembed.model.modembed.structured.VariableDeclaration;
 import hu.modembed.model.modembed.structured.VariableReferenceExpression;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
@@ -226,10 +227,13 @@ public class ModuleCompiler {
 				if (vd.isConst()){
 					SymbolValueAssignment sva = BehaviorFactory.eINSTANCE.createSymbolValueAssignment();
 					sa = sva;
-					//TODO compute value
+					sva.setValue(computeConstant(vd.getInitValue()));
 				}else{
 					sa = BehaviorFactory.eINSTANCE.createSymbolAllocation();
-					//TODO add init value
+					if (vd.getInitValue() != null){
+						TypedSymbol initValue = compile(result, vd.getInitValue());
+						compile(result, "assign", Arrays.asList(getSymbol(vd), initValue));
+					}
 				}
 				
 				sa.setType(EcoreUtil.copy(vd.getType()));
@@ -254,19 +258,43 @@ public class ModuleCompiler {
 		return allocateSymbol(result, TypesFactory.eINSTANCE.createCodeLabelTypeDefinition(), LABEL);
 	}
 
+	private long computeConstant(Expression expression){
+		if (expression instanceof IntegerConstExpression){
+			return ((IntegerConstExpression) expression).getValue();
+		}
+		if (expression instanceof VariableReferenceExpression){
+			VariableDeclaration vd = ((VariableReferenceExpression) expression).getVariable();
+			if (vd.isConst()){
+				return computeConstant(vd.getInitValue());
+			}
+		}
+		if (expression instanceof OperationExpression){
+			String operation = ((OperationExpression) expression).getOperation();
+			//TODO execute operation compile-time
+		}
+		throw new RuntimeException(expression+" is not constant!");
+	}
+	
 	public SequentialBehaviorModule compile(StructuredModule module){
 		SequentialBehaviorModule result = BehaviorFactory.eINSTANCE.createSequentialBehaviorModule();
 		result.setName(module.getName()+".sb");
+		
+		SequentialBehaviorPart initFunction = BehaviorFactory.eINSTANCE.createSequentialBehaviorPart();
+		initFunction.setName("__INIT__"+module.getName().replace('.', '_'));
+		result.getBehaviorModels().add(initFunction);
 		
 		for(VariableDeclaration vd : module.getVariables()){
 			SymbolAssignment sa = null;
 			if (vd.isConst()){
 				SymbolValueAssignment sva = BehaviorFactory.eINSTANCE.createSymbolValueAssignment();
+				sva.setValue(computeConstant(vd.getInitValue()));
 				sa = sva;
-				//TODO compute value
 			}else{
 				sa = BehaviorFactory.eINSTANCE.createSymbolAllocation();
-				//TODO add init value
+				if (vd.getInitValue() != null){
+					TypedSymbol initValue = compile(initFunction, vd.getInitValue());
+					compile(initFunction, "assign", Arrays.asList(getSymbol(vd), initValue));
+				}
 			}
 			
 			sa.setType(EcoreUtil.copy(vd.getType()));
