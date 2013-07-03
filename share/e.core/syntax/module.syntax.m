@@ -21,11 +21,19 @@ terminal OP_MINUS "-";
 terminal OP_BEGIN "\{";
 terminal OP_END "\}";
 
+terminal OP_CMP_EQ "==";
+terminal OP_CMP_NEQ "!=";
+terminal OP_CMP_GT ">";
+terminal OP_CMP_GTE ">=";
+terminal OP_CMP_LT "<";
+terminal OP_CMP_LTE "<=";
+
 <Module> :- KW_MODULE {"http://modembed.hu/structured#StructuredModule" name=QUALIFIEDID OPERATOR_SEMICOLON <ModuleItem>*? ;
 
-<ModuleItem> :- <UsesDeclaration>;
+
 <ModuleItem> :- variables=<VariableDeclaration> OPERATOR_SEMICOLON;
 <ModuleItem> :- functions=<Function>;
+<ModuleItem> :- <UsesDeclaration>;
 
 <UsesDeclaration> :- KW_USE uses=QUALIFIEDID OPERATOR_SEMICOLON;
 <VariableDeclaration> :- {"http://modembed.hu/structured#VariableDeclaration" 
@@ -85,20 +93,28 @@ terminal OP_END "\}";
 <Expression6> :- {"http://modembed.hu/structured#OperationExpression" arguments=<Expression5> <E6> arguments=<Expression6> };
 <E6> :- OPERATOR_ASSIGN operation="assign";
 
-/* Additive expressions */
+/* Comparison expressions */
 <Expression5> :- <Expression4>;
 <Expression5> :- {"http://modembed.hu/structured#OperationExpression" arguments=<Expression4> <E5> arguments=<Expression5> };
-<E5> :- OP_ADD operation="add";
-<E6> :- OP_MINUS operation="subtract";
+<E5> :- OP_CMP_EQ operation="equals";
+<E5> :- OP_CMP_NEQ operation="notEquals";
+<E5> :- OP_CMP_GT operation="greater";
+<E5> :- OP_CMP_GTE operation="greaterEquals";
+<E5> :- OP_CMP_LT operation="lower";
+<E5> :- OP_CMP_LTE operation="lowerEquals";
 
-/* Multiplicative expressions */
+/* Additive expressions */
 <Expression4> :- <Expression3>;
 <Expression4> :- {"http://modembed.hu/structured#OperationExpression" arguments=<Expression3> <E4> arguments=<Expression4> };
-<E4> :- OP_MULTIPLY operation="multiply";
+<E4> :- OP_ADD operation="add";
+<E4> :- OP_MINUS operation="subtract";
+
+/* Multiplicative expressions */
+<Expression3> :- <Expression2>;
+<Expression3> :- {"http://modembed.hu/structured#OperationExpression" arguments=<Expression2> <E3> arguments=<Expression3> };
+<E3> :- OP_MULTIPLY operation="multiply";
 
 /* Shift expressions */
-<Expression3> :- <Expression2>;
-
 <Expression2> :- <Expression1>;
 
 /* Unary expressions */
