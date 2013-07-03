@@ -167,6 +167,7 @@
               ecoreFeature="ecore:EReference modembed.ecore#//abstraction/behavior/SequentialBehaviorModule/device"/>
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//abstraction/behavior/SequentialBehaviorModule/symbolMappings"/>
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//abstraction/behavior/SequentialBehaviorModule/behaviorModels"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//abstraction/behavior/SequentialBehaviorModule/initSequence"/>
         </genClasses>
         <genClasses ecoreClass="modembed.ecore#//abstraction/behavior/SymbolMap">
           <genFeatures notify="false" createChild="false" propertySortChoices="true"

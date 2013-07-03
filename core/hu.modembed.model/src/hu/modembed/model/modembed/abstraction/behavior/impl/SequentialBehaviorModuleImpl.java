@@ -30,6 +30,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link hu.modembed.model.modembed.abstraction.behavior.impl.SequentialBehaviorModuleImpl#getDevice <em>Device</em>}</li>
  *   <li>{@link hu.modembed.model.modembed.abstraction.behavior.impl.SequentialBehaviorModuleImpl#getSymbolMappings <em>Symbol Mappings</em>}</li>
  *   <li>{@link hu.modembed.model.modembed.abstraction.behavior.impl.SequentialBehaviorModuleImpl#getBehaviorModels <em>Behavior Models</em>}</li>
+ *   <li>{@link hu.modembed.model.modembed.abstraction.behavior.impl.SequentialBehaviorModuleImpl#getInitSequence <em>Init Sequence</em>}</li>
  * </ul>
  * </p>
  *
@@ -65,6 +66,16 @@ public class SequentialBehaviorModuleImpl extends RootElementImpl implements Seq
 	 * @ordered
 	 */
 	protected EList<SequentialBehaviorPart> behaviorModels;
+
+	/**
+	 * The cached value of the '{@link #getInitSequence() <em>Init Sequence</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInitSequence()
+	 * @generated
+	 * @ordered
+	 */
+	protected SequentialBehaviorPart initSequence;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -152,6 +163,49 @@ public class SequentialBehaviorModuleImpl extends RootElementImpl implements Seq
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public SequentialBehaviorPart getInitSequence() {
+		return initSequence;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetInitSequence(SequentialBehaviorPart newInitSequence, NotificationChain msgs) {
+		SequentialBehaviorPart oldInitSequence = initSequence;
+		initSequence = newInitSequence;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BehaviorPackage.SEQUENTIAL_BEHAVIOR_MODULE__INIT_SEQUENCE, oldInitSequence, newInitSequence);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setInitSequence(SequentialBehaviorPart newInitSequence) {
+		if (newInitSequence != initSequence) {
+			NotificationChain msgs = null;
+			if (initSequence != null)
+				msgs = ((InternalEObject)initSequence).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BehaviorPackage.SEQUENTIAL_BEHAVIOR_MODULE__INIT_SEQUENCE, null, msgs);
+			if (newInitSequence != null)
+				msgs = ((InternalEObject)newInitSequence).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BehaviorPackage.SEQUENTIAL_BEHAVIOR_MODULE__INIT_SEQUENCE, null, msgs);
+			msgs = basicSetInitSequence(newInitSequence, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.SEQUENTIAL_BEHAVIOR_MODULE__INIT_SEQUENCE, newInitSequence, newInitSequence));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -159,6 +213,8 @@ public class SequentialBehaviorModuleImpl extends RootElementImpl implements Seq
 				return ((InternalEList<?>)getSymbolMappings()).basicRemove(otherEnd, msgs);
 			case BehaviorPackage.SEQUENTIAL_BEHAVIOR_MODULE__BEHAVIOR_MODELS:
 				return ((InternalEList<?>)getBehaviorModels()).basicRemove(otherEnd, msgs);
+			case BehaviorPackage.SEQUENTIAL_BEHAVIOR_MODULE__INIT_SEQUENCE:
+				return basicSetInitSequence(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -178,6 +234,8 @@ public class SequentialBehaviorModuleImpl extends RootElementImpl implements Seq
 				return getSymbolMappings();
 			case BehaviorPackage.SEQUENTIAL_BEHAVIOR_MODULE__BEHAVIOR_MODELS:
 				return getBehaviorModels();
+			case BehaviorPackage.SEQUENTIAL_BEHAVIOR_MODULE__INIT_SEQUENCE:
+				return getInitSequence();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -202,6 +260,9 @@ public class SequentialBehaviorModuleImpl extends RootElementImpl implements Seq
 				getBehaviorModels().clear();
 				getBehaviorModels().addAll((Collection<? extends SequentialBehaviorPart>)newValue);
 				return;
+			case BehaviorPackage.SEQUENTIAL_BEHAVIOR_MODULE__INIT_SEQUENCE:
+				setInitSequence((SequentialBehaviorPart)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -223,6 +284,9 @@ public class SequentialBehaviorModuleImpl extends RootElementImpl implements Seq
 			case BehaviorPackage.SEQUENTIAL_BEHAVIOR_MODULE__BEHAVIOR_MODELS:
 				getBehaviorModels().clear();
 				return;
+			case BehaviorPackage.SEQUENTIAL_BEHAVIOR_MODULE__INIT_SEQUENCE:
+				setInitSequence((SequentialBehaviorPart)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -241,6 +305,8 @@ public class SequentialBehaviorModuleImpl extends RootElementImpl implements Seq
 				return symbolMappings != null && !symbolMappings.isEmpty();
 			case BehaviorPackage.SEQUENTIAL_BEHAVIOR_MODULE__BEHAVIOR_MODELS:
 				return behaviorModels != null && !behaviorModels.isEmpty();
+			case BehaviorPackage.SEQUENTIAL_BEHAVIOR_MODULE__INIT_SEQUENCE:
+				return initSequence != null;
 		}
 		return super.eIsSet(featureID);
 	}

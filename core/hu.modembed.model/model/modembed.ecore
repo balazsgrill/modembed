@@ -193,6 +193,8 @@
             eType="#//abstraction/behavior/SymbolAssignment" containment="true"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="behaviorModels" upperBound="-1"
             eType="#//abstraction/behavior/SequentialBehaviorPart" containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="initSequence" eType="#//abstraction/behavior/SequentialBehaviorPart"
+            containment="true"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="SymbolMap" eSuperTypes="#//infrastructure/RootElement">
         <eStructuralFeatures xsi:type="ecore:EReference" name="device" eType="#//abstraction/DeviceAbstraction"/>

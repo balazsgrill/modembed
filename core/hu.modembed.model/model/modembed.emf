@@ -220,6 +220,7 @@ package abstraction {
   		ref DeviceAbstraction device;
   		val SymbolAssignment[*] symbolMappings;
   		val SequentialBehaviorPart[*] behaviorModels;
+  		val SequentialBehaviorPart initSequence;
   	}
   
   	class SymbolMap extends infrastructure.RootElement{

@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -39,6 +40,7 @@ public class SequentialBehaviorLinker implements ISymbolContext{
 
 	private final Set<String> globalSymbols = new HashSet<String>();
 	private final Map<String, SequentialBehaviorPart> functions = new HashMap<String, SequentialBehaviorPart>();
+	private final List<SequentialBehaviorPart> initFunctions = new LinkedList<SequentialBehaviorPart>();
 
 	private final Map<String, Integer> callCounts = new HashMap<String, Integer>(); 
 	
@@ -79,6 +81,10 @@ public class SequentialBehaviorLinker implements ISymbolContext{
 			}
 		}
 		
+		if (module.getInitSequence() != null){
+			initFunctions.add(module.getInitSequence());
+		}
+		
 		for(SymbolAssignment sa : module.getSymbolMappings()){
 			globalSymbols.add(sa.getSymbol());
 			registerSymbol(EcoreUtil.copy(sa));
@@ -89,6 +95,10 @@ public class SequentialBehaviorLinker implements ISymbolContext{
 	}
 
 	public RootSequentialBehavior link(String entry) {
+		for(SequentialBehaviorPart initSequence : initFunctions){
+			LinkerPart initpart = new LinkerPart(this, initSequence, Collections.<String>emptyList());
+			result.getActions().addAll(initpart.link());
+		}
 		LinkerPart part = new LinkerPart(this, getCallee(entry), Collections.<String>emptyList());
 		result.getActions().addAll(part.link());
 		return result;

@@ -284,7 +284,7 @@ public class ModuleCompiler {
 		
 		SequentialBehaviorPart initFunction = BehaviorFactory.eINSTANCE.createSequentialBehaviorPart();
 		initFunction.setName("__INIT__"+module.getName().replace('.', '_'));
-		result.getBehaviorModels().add(initFunction);
+		result.setInitSequence(initFunction);
 		
 		for(VariableDeclaration vd : module.getVariables()){
 			SymbolAssignment sa = null;

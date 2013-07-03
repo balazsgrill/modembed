@@ -131,13 +131,22 @@ public interface BehaviorPackage extends EPackage {
 	int SEQUENTIAL_BEHAVIOR_MODULE__BEHAVIOR_MODELS = InfrastructurePackage.ROOT_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Init Sequence</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEQUENTIAL_BEHAVIOR_MODULE__INIT_SEQUENCE = InfrastructurePackage.ROOT_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Sequential Behavior Module</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SEQUENTIAL_BEHAVIOR_MODULE_FEATURE_COUNT = InfrastructurePackage.ROOT_ELEMENT_FEATURE_COUNT + 3;
+	int SEQUENTIAL_BEHAVIOR_MODULE_FEATURE_COUNT = InfrastructurePackage.ROOT_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link hu.modembed.model.modembed.abstraction.behavior.impl.SymbolMapImpl <em>Symbol Map</em>}' class.
@@ -1061,6 +1070,17 @@ public interface BehaviorPackage extends EPackage {
 	EReference getSequentialBehaviorModule_BehaviorModels();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link hu.modembed.model.modembed.abstraction.behavior.SequentialBehaviorModule#getInitSequence <em>Init Sequence</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Init Sequence</em>'.
+	 * @see hu.modembed.model.modembed.abstraction.behavior.SequentialBehaviorModule#getInitSequence()
+	 * @see #getSequentialBehaviorModule()
+	 * @generated
+	 */
+	EReference getSequentialBehaviorModule_InitSequence();
+
+	/**
 	 * Returns the meta object for class '{@link hu.modembed.model.modembed.abstraction.behavior.SymbolMap <em>Symbol Map</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1465,6 +1485,14 @@ public interface BehaviorPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SEQUENTIAL_BEHAVIOR_MODULE__BEHAVIOR_MODELS = eINSTANCE.getSequentialBehaviorModule_BehaviorModels();
+
+		/**
+		 * The meta object literal for the '<em><b>Init Sequence</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SEQUENTIAL_BEHAVIOR_MODULE__INIT_SEQUENCE = eINSTANCE.getSequentialBehaviorModule_InitSequence();
 
 		/**
 		 * The meta object literal for the '{@link hu.modembed.model.modembed.abstraction.behavior.impl.SymbolMapImpl <em>Symbol Map</em>}' class.
