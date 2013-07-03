@@ -6,6 +6,7 @@ import type.syntax;
 terminal KW_MODULE "module";
 terminal KW_USE "use";
 terminal KW_CONST "const";
+terminal KW_GLOBAL "global";
 terminal OP_COMMA ",";
 
 terminal KW_LOOP "loop";
@@ -28,7 +29,7 @@ terminal OP_END "\}";
 
 <UsesDeclaration> :- KW_USE uses=QUALIFIEDID OPERATOR_SEMICOLON;
 <VariableDeclaration> :- {"http://modembed.hu/structured#VariableDeclaration" 
-						const=KW_CONST? type=<TypeDefinition> name=IDENTIFIER <VariableInitValue>? };
+						global=KW_GLOBAL? const=KW_CONST? type=<TypeDefinition> name=IDENTIFIER <VariableInitValue>? };
 <VariableInitValue> :- OPERATOR_ASSIGN initValue=<Expression> ;
 
 <Function> :- {"http://modembed.hu/structured#StructuredFunction" resultType=<TypeDefinition> name=IDENTIFIER 

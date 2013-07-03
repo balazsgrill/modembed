@@ -16,6 +16,7 @@
 	<include file="../../../res/build-tools/epsilon.xml"/>
 	
 	<property name="module.template" value="../hu.modembed.pic/templates/module.egl"></property>
+	<property name="module.interface.template" value="../hu.modembed.pic/templates/module_interface.egl"></property>
 	<property name="device.template" value="../hu.modembed.pic/templates/device.egl"></property>
 	<property name="rules.template" value="../hu.modembed.pic/templates/rules.egl"></property>
 	
@@ -54,6 +55,9 @@
     			/>
     			<epsilon.egl src="${module.template}" target="gen-lib/${picname}.module.m" debug="true">
     				<model ref="PIC" as="PIC" alias="PIC"/>
+    			</epsilon.egl>
+    			<epsilon.egl src="${module.interface.template}" target="gen-lib/${picname}.interface.m" debug="true">
+    			    <model ref="PIC" as="PIC" alias="PIC"/>
     			</epsilon.egl>
     			<epsilon.egl src="${device.template}" target="gen-lib/${picname}.device.m" debug="true">
     			    <model ref="PIC" as="PIC" alias="PIC"/>
