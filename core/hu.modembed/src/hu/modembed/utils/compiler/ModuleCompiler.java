@@ -47,14 +47,14 @@ public class ModuleCompiler {
 	private static final String LABEL = "__LABEL__";
 	private static final String BUFFER = "__BUFFER__";
 	
-	private static String getSymbol(VariableDeclaration vd){
+	private static TypedSymbol getSymbol(VariableDeclaration vd){
 		EObject eo = vd.eContainer();
 		if (eo instanceof StructuredModule){
 			String qid = ((StructuredModule) eo).getName()+".."+vd.getName();
-			return qid.replace('.', '_');
+			return new TypedSymbol(qid.replace('.', '_'), vd.getType());
 		}
 		//Parameter or local symbol
-		return vd.getName();
+		return new TypedSymbol(vd.getName(), vd.getType());
 	}
 	
 	private static String getSymbol(StructuredFunction function){
@@ -88,16 +88,16 @@ public class ModuleCompiler {
 		return op;
 	}
 	
-	private String getConstantSymbol(SequentialBehaviorPart result, long constant){
+	private TypedSymbol getConstantSymbol(SequentialBehaviorPart result, long constant){
 		String symbol = CONSTANT+constant;
 		for(SymbolAssignment sa : result.getLocalSymbols()){
-			if (symbol.equals(sa.getSymbol())) return symbol;
+			if (symbol.equals(sa.getSymbol())) return new TypedSymbol(symbol, null);
 		}
 		SymbolValueAssignment sva = BehaviorFactory.eINSTANCE.createSymbolValueAssignment();
 		sva.setSymbol(symbol);
 		sva.setValue(constant);
 		result.getLocalSymbols().add(sva);
-		return symbol;
+		return new TypedSymbol(symbol, null);
 	}
 	
 	private String getUniqueSymbol(List<SymbolAssignment> assignments, String prefix){
@@ -116,37 +116,31 @@ public class ModuleCompiler {
 		return prefix+i;
 	}
 	
-	private String allocateSymbol(SequentialBehaviorPart result, TypeDefinition type, String prefix){
+	private TypedSymbol allocateSymbol(SequentialBehaviorPart result, TypeDefinition type, String prefix){
 		String symbol = getUniqueSymbol(result.getLocalSymbols(), prefix);
 		
 		SymbolAllocation sa = BehaviorFactory.eINSTANCE.createSymbolAllocation();
 		sa.setType(type);
 		sa.setSymbol(symbol);
 		result.getLocalSymbols().add(sa);
-		return symbol;
-	}
-
-	private String compile(SequentialBehaviorPart result, String operation, List<String> arguments){
-		if ("assign".equals(operation)){
-			result.getActions().add(op("set", arguments.get(0), arguments.get(1)));
-		}
-		throw new RuntimeException("Unsupported operation: "+operation);
+		return new TypedSymbol(symbol, type);
 	}
 	
-	private String compile(SequentialBehaviorPart result, Expression expression){
+	private TypedSymbol compile(SequentialBehaviorPart result, Expression expression){
 		if (expression instanceof FunctionCallExpression){
 			StructuredFunction sf = ((FunctionCallExpression) expression).getFunction();
-			String resultSymbol = null;
+			TypedSymbol resultSymbol = null;
 			OperationExecution call = BehaviorFactory.eINSTANCE.createOperationExecution();
 			call.setOperation(getSymbol(sf));
 			
 			if (sf.getResultType() != null){
-				resultSymbol = allocateSymbol(result, EcoreUtil.copy(sf.getResultType()), BUFFER);
-				call.getArguments().add(resultSymbol);
+				TypeDefinition td = EcoreUtil.copy(sf.getResultType());
+				resultSymbol = allocateSymbol(result, td, BUFFER);
+				call.getArguments().add(resultSymbol.getSymbol());
 			}
 	
 			for(Expression e : ((FunctionCallExpression) expression).getArguments()){
-				call.getArguments().add(compile(result, e));
+				call.getArguments().add(compile(result, e).getSymbol());
 			}
 			result.getActions().add(call);
 			return resultSymbol;
@@ -155,7 +149,7 @@ public class ModuleCompiler {
 			return getConstantSymbol(result, ((IntegerConstExpression) expression).getValue());
 		}
 		if (expression instanceof OperationExpression){
-			List<String> arguments = new ArrayList<String>(((OperationExpression) expression).getArguments().size());
+			List<TypedSymbol> arguments = new ArrayList<TypedSymbol>(((OperationExpression) expression).getArguments().size());
 			for(Expression e : ((OperationExpression) expression).getArguments()){
 				arguments.add(compile(result, e));
 			}
@@ -171,30 +165,30 @@ public class ModuleCompiler {
 	private void compile(SequentialBehaviorPart result, Operation implementation){
 		if (implementation instanceof ConditionalOperation){
 			Expression condition = ((ConditionalOperation) implementation).getCondition();
-			String conditionSymbol = compile(result, condition);
+			TypedSymbol conditionSymbol = compile(result, condition);
 			
 			Operation trueBranch = ((ConditionalOperation) implementation).getTrueBranch();
 			Operation falseBranch = ((ConditionalOperation) implementation).getFalseBranch();
 			
-			String trueLabel = createLabelSymbol(result);
-			String falseLabel = createLabelSymbol(result);
-			String endLabel = createLabelSymbol(result);
+			TypedSymbol trueLabel = createLabelSymbol(result);
+			TypedSymbol falseLabel = createLabelSymbol(result);
+			TypedSymbol endLabel = createLabelSymbol(result);
 			
-			result.getActions().add(op("branch", conditionSymbol, trueLabel, falseLabel));
-			result.getActions().add(label(trueLabel));
+			result.getActions().add(op("branch", conditionSymbol.getSymbol(), trueLabel.getSymbol(), falseLabel.getSymbol()));
+			result.getActions().add(label(trueLabel.getSymbol()));
 			
 			if (trueBranch != null){
 				compile(result, trueBranch);
 			}
 			
-			if (falseBranch != null) result.getActions().add(op("goto", endLabel));
-			result.getActions().add(label(falseLabel));
+			if (falseBranch != null) result.getActions().add(op("goto", endLabel.getSymbol()));
+			result.getActions().add(label(falseLabel.getSymbol()));
 
 			if (falseBranch != null){
 				compile(result, falseBranch);
 			}
 			
-			result.getActions().add(label(endLabel));
+			result.getActions().add(label(endLabel.getSymbol()));
 		}
 		if (implementation instanceof ExpressionOperation){
 			compile(result, ((ExpressionOperation) implementation).getExpression());
@@ -204,27 +198,27 @@ public class ModuleCompiler {
 			Expression exit = ((LoopOperation) implementation).getExitCondition();
 			Operation body = ((LoopOperation) implementation).getBody();
 			
-			String startLabel = createLabelSymbol(result);
-			String endLabel = createLabelSymbol(result);
+			TypedSymbol startLabel = createLabelSymbol(result);
+			TypedSymbol endLabel = createLabelSymbol(result);
 			
-			result.getActions().add(label(startLabel));
+			result.getActions().add(label(startLabel.getSymbol()));
 			if (entry != null){
-				String entryLabel = createLabelSymbol(result);
-				String entryExpr = compile(result, entry);
-				result.getActions().add(op("branch", entryExpr, entryLabel, endLabel));
+				String entryLabel = createLabelSymbol(result).getSymbol();
+				TypedSymbol entryExpr = compile(result, entry);
+				result.getActions().add(op("branch", entryExpr.getSymbol(), entryLabel, endLabel.getSymbol()));
 				result.getActions().add(label(entryLabel));
 			}
 			
 			compile(result, body);
 			
 			if (exit != null){
-				String exitExpr = compile(result, exit);
-				result.getActions().add(op("branch", exitExpr, endLabel, startLabel));
+				TypedSymbol exitExpr = compile(result, exit);
+				result.getActions().add(op("branch", exitExpr.getSymbol(), endLabel.getSymbol(), startLabel.getSymbol()));
 			}else{
-				result.getActions().add(op("goto", startLabel));
+				result.getActions().add(op("goto", startLabel.getSymbol()));
 			}
 			
-			result.getActions().add(label(endLabel));
+			result.getActions().add(label(endLabel.getSymbol()));
 		}
 		if (implementation instanceof OperationBlock){
 			for(VariableDeclaration vd : ((OperationBlock) implementation).getVariables()){
@@ -239,7 +233,7 @@ public class ModuleCompiler {
 				}
 				
 				sa.setType(EcoreUtil.copy(vd.getType()));
-				sa.setSymbol(getSymbol(vd));
+				sa.setSymbol(getSymbol(vd).getSymbol());
 				result.getLocalSymbols().add(sa);
 			}
 			
@@ -250,13 +244,13 @@ public class ModuleCompiler {
 		if (implementation instanceof ReturnOperation){
 			Expression e = ((ReturnOperation) implementation).getResult();
 			if (e != null){
-				result.getActions().add(op("set", RESULT, compile(result, e)));
+				result.getActions().add(op("set", RESULT, compile(result, e).getSymbol()));
 			}
 			result.getActions().add(op("goto", FUNCTION_END_LABEL));
 		}
 	}
 	
-	private String createLabelSymbol(SequentialBehaviorPart result) {
+	private TypedSymbol createLabelSymbol(SequentialBehaviorPart result) {
 		return allocateSymbol(result, TypesFactory.eINSTANCE.createCodeLabelTypeDefinition(), LABEL);
 	}
 
@@ -276,7 +270,7 @@ public class ModuleCompiler {
 			}
 			
 			sa.setType(EcoreUtil.copy(vd.getType()));
-			sa.setSymbol(getSymbol(vd));
+			sa.setSymbol(getSymbol(vd).getSymbol());
 			result.getSymbolMappings().add(sa);
 		}
 		
@@ -290,7 +284,7 @@ public class ModuleCompiler {
 				}
 				
 				for(VariableDeclaration param : func.getParameters()){
-					sbp.getParameters().add(getSymbol(param));
+					sbp.getParameters().add(getSymbol(param).getSymbol());
 				}
 				
 				SymbolAllocation function_end = BehaviorFactory.eINSTANCE.createSymbolAllocation();
@@ -307,6 +301,34 @@ public class ModuleCompiler {
 		}
 		
 		return result;
+	}
+	
+	/**
+	 * Compile a high-level operation to low-level operations 
+	 * 
+	 * @param result
+	 * @param operation
+	 * @param arguments
+	 * @return
+	 */
+	private TypedSymbol compile(SequentialBehaviorPart result, String operation, List<TypedSymbol> arguments){
+		if ("assign".equals(operation)){
+			result.getActions().add(op("set", arguments.get(0).getSymbol(), arguments.get(1).getSymbol()));
+			return arguments.get(0);
+		}
+		if ("add".equals(operation)){
+			TypedSymbol a0 = arguments.get(0);
+			TypedSymbol a1 = arguments.get(1);
+			TypeDefinition td = a0.getType();
+			if (td == null){
+				td = a1.getType();
+			}
+			TypedSymbol buffer = allocateSymbol(result, td, "buffer");
+			result.getActions().add(op("set", buffer.getSymbol(), a0.getSymbol()));
+			result.getActions().add(op("add", buffer.getSymbol(), a1.getSymbol()));
+			return buffer;
+		}
+		throw new RuntimeException("Unsupported operation: "+operation);
 	}
 	
 }
