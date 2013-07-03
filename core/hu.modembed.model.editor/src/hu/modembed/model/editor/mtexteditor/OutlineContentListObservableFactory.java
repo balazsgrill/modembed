@@ -1,8 +1,10 @@
 /**
  * 
  */
-package hu.modembed.ui.databinding;
+package hu.modembed.model.editor.mtexteditor;
 
+
+import hu.modembed.ui.databinding.UtilObservables;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +13,6 @@ import org.eclipse.core.databinding.observable.IObservable;
 import org.eclipse.core.databinding.observable.Observables;
 import org.eclipse.core.databinding.observable.list.IObservableList;
 import org.eclipse.core.databinding.observable.masterdetail.IObservableFactory;
-import org.eclipse.emf.databinding.EMFObservables;
 import org.eclipse.emf.databinding.EMFProperties;
 import org.eclipse.emf.databinding.edit.EMFEditProperties;
 import org.eclipse.emf.ecore.EObject;
@@ -24,12 +25,22 @@ import org.eclipse.emf.edit.domain.EditingDomain;
  * @author balazs.grill
  *
  */
-public class EObjectContentListObservableFactory implements IObservableFactory {
+public class OutlineContentListObservableFactory implements IObservableFactory {
 
 	private final EditingDomain edomain;
 	
-	public EObjectContentListObservableFactory(EditingDomain edomain) {
+	public OutlineContentListObservableFactory(EditingDomain edomain) {
 		this.edomain = edomain;
+	}
+	
+	private final List<UpdatingList> updatingLists = new ArrayList<UpdatingList>();
+	
+	public void update(){
+		for(UpdatingList list : updatingLists){
+			if (!list.isDisposed()){
+				list.update();
+			}
+		}
 	}
 	
 	/* (non-Javadoc)
@@ -44,7 +55,7 @@ public class EObjectContentListObservableFactory implements IObservableFactory {
 		}
 		
 		if (target instanceof Resource){
-			IObservableList errors = Observables.staticObservableList(((Resource) target).getErrors());
+			UpdatingList errors = new ResourceDiagnosticsList((Resource)target);
 			return UtilObservables.append(
 					EMFProperties.resource().observe(target),
 					errors);

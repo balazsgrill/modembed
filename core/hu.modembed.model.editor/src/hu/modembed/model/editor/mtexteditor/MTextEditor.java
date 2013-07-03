@@ -9,6 +9,8 @@ import org.eclipse.core.resources.IFile;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.domain.EditingDomain;
+import org.eclipse.jface.text.ITextListener;
+import org.eclipse.jface.text.TextEvent;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IFileEditorInput;
 import org.eclipse.ui.editors.text.TextEditor;
@@ -45,6 +47,15 @@ public class MTextEditor extends TextEditor {
 					e.printStackTrace();
 				}
 			}
+			getSourceViewer().addTextListener(new ITextListener() {
+				
+				@Override
+				public void textChanged(TextEvent event) {
+					if (contentOutlinePage != null){
+						contentOutlinePage.update();
+					}
+				}
+			});
 		}
 		super.updatePartControl(input);
 	}

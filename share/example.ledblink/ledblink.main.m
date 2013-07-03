@@ -2,6 +2,7 @@
 module ledblink.main;
 
 use utils;
+use led;
 
 void main(){
 	initLED();

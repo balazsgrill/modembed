@@ -219,7 +219,7 @@ public class ParserState {
 	
 	public void buildModel(Resource container){
 		ModelBuilder builder = new ModelBuilder(parser.getFeatureResolver());
-		builder.buildModel(container, modelBuild);
+		container.getErrors().addAll(builder.buildModel(container, modelBuild));
 	}
 	
 	public int getIndex() {

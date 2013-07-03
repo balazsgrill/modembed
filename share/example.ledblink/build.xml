@@ -14,13 +14,13 @@
     <target name="compile.generic">
     	<mkdir dir="${out}"/>
         <modembed.compile input="ledblink.main.m" output="${out}/ledblink.main.xmi"/>
-    	<modembed.compile input="generic/libs/generic/led.m" output="${out}/led.xmi"/>
-    	<modembed.compile input="generic/libs/generic/utils.m" output="${out}/utils.xmi"/>
+    	<modembed.compile input="libs/generic/led.m" output="${out}/led.xmi"/>
+    	<modembed.compile input="libs/generic/utils.m" output="${out}/utils.xmi"/>
     </target>
 
 	<target name="compile.pic16f1824" depends="compile.generic">
 		<mkdir dir="${out}/pic16f1824" />
-		<modembed.compile input="generic/libs/pic16e/led.pic16f1824.m" output="${out}/pic16f1824/led.xmi"/>
+		<modembed.compile input="libs/pic16e/led.pic16f1824.m" output="${out}/pic16f1824/led.xmi"/>
 	</target>
 	
 	
