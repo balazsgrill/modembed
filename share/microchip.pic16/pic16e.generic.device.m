@@ -37,3 +37,8 @@ operation branch(condition: boolean@BRAM, true: label, false: label){
 	GOTO(false);
 }
 
+operation set(dest : uint8@BRAM, value : uint8){
+	MOVLW(value);
+	MOVLB(dest->bank);
+	MOVWF(dest);
+}

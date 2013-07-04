@@ -40,12 +40,34 @@ public class TypeSignature {
 	}
 	
 	public boolean isCompatible(TypeSignature other){
+		if (memoryType == null && other.memoryType == null){
+			return isConstCompatible(type, other.type);
+		}
+		
 		if (!isCompatible(type, other.type)) return false;
 		
 		if (memoryType == null)
 			return other.memoryType == null;
 		else
 			return memoryType.equals(other.memoryType);
+	}
+	
+	public static boolean isConstCompatible(TypeDefinition td1, TypeDefinition td2){
+		if (td1 instanceof ReferenceTypeDefinition) 
+			return isConstCompatible(((ReferenceTypeDefinition) td1).getType().getDefinition(), td2);
+		if (td2 instanceof ReferenceTypeDefinition)
+			return isConstCompatible(td1, ((ReferenceTypeDefinition) td2).getType().getDefinition());
+		
+		if (td1 instanceof CodeLabelTypeDefinition)
+			return td2 instanceof CodeLabelTypeDefinition;
+		
+		if (td1 instanceof UnsignedTypeDefinition && td2 instanceof UnsignedTypeDefinition){
+			UnsignedTypeDefinition utd1 = (UnsignedTypeDefinition)td1;
+			UnsignedTypeDefinition utd2 = (UnsignedTypeDefinition)td2;
+			return utd1.getBits() <= utd2.getBits();
+		}
+		
+		return false;
 	}
 	
 	public static boolean isCompatible(TypeDefinition td1, TypeDefinition td2){

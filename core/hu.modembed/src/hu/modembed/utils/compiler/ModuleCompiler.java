@@ -14,6 +14,7 @@ import hu.modembed.model.modembed.abstraction.behavior.SymbolAssignment;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolValueAssignment;
 import hu.modembed.model.modembed.abstraction.types.TypeDefinition;
 import hu.modembed.model.modembed.abstraction.types.TypesFactory;
+import hu.modembed.model.modembed.abstraction.types.UnsignedTypeDefinition;
 import hu.modembed.model.modembed.structured.ConditionalOperation;
 import hu.modembed.model.modembed.structured.Expression;
 import hu.modembed.model.modembed.structured.ExpressionOperation;
@@ -94,14 +95,26 @@ public class ModuleCompiler {
 	
 	private TypedSymbol getConstantSymbol(SequentialBehaviorPart result, long constant){
 		String symbol = CONSTANT+constant;
+		TypeDefinition type = createTypeForConstant(constant);
 		for(SymbolAssignment sa : result.getLocalSymbols()){
-			if (symbol.equals(sa.getSymbol())) return new TypedSymbol(symbol, null);
+			if (symbol.equals(sa.getSymbol())) return new TypedSymbol(symbol, type);
 		}
 		SymbolValueAssignment sva = BehaviorFactory.eINSTANCE.createSymbolValueAssignment();
 		sva.setSymbol(symbol);
 		sva.setValue(constant);
+		sva.setType(type);
 		result.getLocalSymbols().add(sva);
-		return new TypedSymbol(symbol, null);
+		return new TypedSymbol(symbol, type);
+	}
+	
+	private TypeDefinition createTypeForConstant(long constant){
+		int bits = 1;
+		int maxv = 1;
+		while(constant > maxv){
+			bits++;
+			maxv *= 2;
+		}
+		return createUnsignedTypeDef(bits);
 	}
 	
 	private String getUniqueSymbol(List<SymbolAssignment> assignments, String prefix){
@@ -231,6 +244,7 @@ public class ModuleCompiler {
 					SymbolValueAssignment sva = BehaviorFactory.eINSTANCE.createSymbolValueAssignment();
 					sa = sva;
 					sva.setValue(computeConstant(vd.getInitValue()));
+					sva.setType(createTypeForConstant(sva.getValue()));
 				}else{
 					sa = BehaviorFactory.eINSTANCE.createSymbolAllocation();
 					if (vd.getInitValue() != null){
@@ -292,6 +306,7 @@ public class ModuleCompiler {
 				SymbolValueAssignment sva = BehaviorFactory.eINSTANCE.createSymbolValueAssignment();
 				sva.setValue(computeConstant(vd.getInitValue()));
 				sa = sva;
+				sva.setType(createTypeForConstant(sva.getValue()));
 			}else{
 				sa = BehaviorFactory.eINSTANCE.createSymbolAllocation();
 				if (vd.getInitValue() != null){
@@ -334,6 +349,12 @@ public class ModuleCompiler {
 		return result;
 	}
 	
+	private TypeDefinition createUnsignedTypeDef(int bits){
+		UnsignedTypeDefinition utd = TypesFactory.eINSTANCE.createUnsignedTypeDefinition();
+		utd.setBits(bits);
+		return utd;
+	}
+	
 	/**
 	 * Compile a high-level operation to low-level operations 
 	 * 
@@ -359,7 +380,28 @@ public class ModuleCompiler {
 			result.getActions().add(op("add", buffer.getSymbol(), a1.getSymbol()));
 			return buffer;
 		}
+		if ("subtract".equals(operation)){
+			TypedSymbol a0 = arguments.get(0);
+			TypedSymbol a1 = arguments.get(1);
+			TypeDefinition td = a0.getType();
+			if (td == null){
+				td = a1.getType();
+			}
+			TypedSymbol buffer = allocateSymbol(result, td, "buffer");
+			result.getActions().add(op("set", buffer.getSymbol(), a0.getSymbol()));
+			result.getActions().add(op("subtract", buffer.getSymbol(), a1.getSymbol()));
+			return buffer;
+		}
+		if ("greater".equals(operation)){
+			TypedSymbol a0 = arguments.get(0);
+			TypedSymbol a1 = arguments.get(1);
+			TypedSymbol buffer = allocateSymbol(result, createUnsignedTypeDef(1), "buffer");
+			result.getActions().add(op("greater", buffer.getSymbol(), a0.getSymbol(), a1.getSymbol()));
+			return buffer;
+		}
 		throw new RuntimeException("Unsupported operation: "+operation);
 	}
+	
+	
 	
 }

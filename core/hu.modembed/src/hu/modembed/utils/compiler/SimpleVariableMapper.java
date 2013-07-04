@@ -15,6 +15,7 @@ import hu.modembed.model.modembed.abstraction.behavior.SymbolAssignment;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolMap;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolMappingRule;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolMappingRules;
+import hu.modembed.model.modembed.abstraction.types.CodeLabelTypeDefinition;
 import hu.modembed.model.modembed.abstraction.types.ReferenceTypeDefinition;
 import hu.modembed.model.modembed.abstraction.types.TypeDefinition;
 import hu.modembed.model.modembed.abstraction.types.UnsignedTypeDefinition;
@@ -47,25 +48,28 @@ public class SimpleVariableMapper {
 		for(SymbolAssignment sa : sequence.getLocalSymbols()){
 			if (sa instanceof SymbolAllocation){
 				TypeDefinition td = sa.getType();
-				long size = getSize(td);
 				
-				if (currentAddress + size > currentEnd){
-					currentRule++;
-					if (ruleList.size() > currentRule){
-						throw new RuntimeException("Symbols do not fit in memory!");
-					}else{
-						currentAddress = ruleList.get(currentRule).getStartAddress();
-						currentEnd = ruleList.get(currentRule).getEndAddress();
+				if (!(td instanceof CodeLabelTypeDefinition)){
+					long size = getSize(td);
+
+					if (currentAddress + size > currentEnd){
+						currentRule++;
+						if (ruleList.size() > currentRule){
+							throw new RuntimeException("Symbols do not fit in memory!");
+						}else{
+							currentAddress = ruleList.get(currentRule).getStartAddress();
+							currentEnd = ruleList.get(currentRule).getEndAddress();
+						}
 					}
+
+					SymbolAddressAssignment saa = BehaviorFactory.eINSTANCE.createSymbolAddressAssignment();
+					saa.setAddress(currentAddress);
+					currentAddress += size;
+					saa.setSymbol(sa.getSymbol());
+					saa.setType(EcoreUtil.copy(td));
+					saa.setMemoryInstance(ruleList.get(currentRule).getMemInstance());
+					result.getSymbolMappings().add(saa);
 				}
-				
-				SymbolAddressAssignment saa = BehaviorFactory.eINSTANCE.createSymbolAddressAssignment();
-				saa.setAddress(currentAddress);
-				currentAddress += size;
-				saa.setSymbol(sa.getSymbol());
-				saa.setType(EcoreUtil.copy(td));
-				saa.setMemoryInstance(ruleList.get(currentRule).getMemInstance());
-				result.getSymbolMappings().add(saa);
 			}
 		}
 		

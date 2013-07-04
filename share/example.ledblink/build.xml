@@ -10,7 +10,8 @@
 <project name="LED Blinking example" default="compile.pic16f1824" >
 
 	<property name="out" value="${basedir}/out" />
-	
+	<eclipse.convertPath resourcepath="microchip.PIC16F1824" property="pic16f1824"/>
+	 
     <target name="compile.generic">
     	<mkdir dir="${out}"/>
         <modembed.compile input="ledblink.main.m" output="${out}/ledblink.main.xmi"/>
@@ -21,6 +22,17 @@
 	<target name="compile.pic16f1824" depends="compile.generic">
 		<mkdir dir="${out}/pic16f1824" />
 		<modembed.compile input="libs/pic16e/led.pic16f1824.m" output="${out}/pic16f1824/led.xmi"/>
+		<modembed.link output="${out}/pic16f1824/ledblink.xmi" entry="ledblink_main__main">
+			<filelist dir="${basedir}">
+				<file name="${out}/ledblink.main.xmi"/>
+				<file name="${out}/led.xmi"/>
+				<file name="${out}/utils.xmi"/>
+				<file name="${out}/pic16f1824/led.xmi"/>
+				<file name="${pic16f1824}/PIC16F1824.module.m"/>	
+			</filelist>
+		</modembed.link>
+		<modembed.map rules="${pic16f1824}/PIC16F1824.mappingrules.m" input="${out}/pic16f1824/ledblink.xmi" output="${out}/pic16f1824/ledblink.map.xmi"/>
+		<modembed.translate input="${out}/pic16f1824/ledblink.xmi" map="${out}/pic16f1824/ledblink.map.xmi" output="${out}/pic16f1824/ledblink.asm.xmi"/>
 	</target>
 	
 	
