@@ -16,6 +16,7 @@ import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.views.contentoutline.ContentOutlinePage;
 
 /**
@@ -49,7 +50,12 @@ public class MContentOutlinePage extends ContentOutlinePage implements ITreeCont
 	}
 	
 	public void update(){
-		this.getTreeViewer().refresh();
+		Display.getDefault().asyncExec(new Runnable(){
+			@Override
+			public void run() {
+				MContentOutlinePage.this.getTreeViewer().refresh();
+			}
+		});
 	}
 	
 	@Override
