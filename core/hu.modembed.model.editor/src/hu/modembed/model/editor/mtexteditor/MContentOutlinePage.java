@@ -3,16 +3,18 @@
  */
 package hu.modembed.model.editor.mtexteditor;
 
-import hu.modembed.ui.databinding.ElementLabelValueFactory;
+import java.util.LinkedList;
+import java.util.List;
 
-import org.eclipse.core.databinding.observable.IObservable;
-import org.eclipse.core.databinding.observable.map.IObservableMap;
-import org.eclipse.core.databinding.observable.masterdetail.IObservableFactory;
-import org.eclipse.core.databinding.observable.masterdetail.MasterDetailObservables;
-import org.eclipse.core.databinding.observable.set.IObservableSet;
-import org.eclipse.emf.edit.domain.EditingDomain;
-import org.eclipse.jface.databinding.viewers.ObservableListTreeContentProvider;
-import org.eclipse.jface.databinding.viewers.ObservableMapLabelProvider;
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.Resource.Diagnostic;
+import org.eclipse.jface.viewers.ITreeContentProvider;
+import org.eclipse.jface.viewers.LabelProvider;
+import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.views.contentoutline.ContentOutlinePage;
 
@@ -20,40 +22,108 @@ import org.eclipse.ui.views.contentoutline.ContentOutlinePage;
  * @author balazs.grill
  *
  */
-public class MContentOutlinePage extends ContentOutlinePage {
+public class MContentOutlinePage extends ContentOutlinePage implements ITreeContentProvider{
 
-	private final EditingDomain edomain;
-	private final OutlineContentListObservableFactory contentFactory;
-	private final IObservableFactory labelFactory;
+	private final Resource resource;
 	
-	
-	public MContentOutlinePage(EditingDomain edomain) {
-		this.edomain = edomain;
-		this.contentFactory = new OutlineContentListObservableFactory(edomain);
-		this.labelFactory = new ElementLabelValueFactory(edomain){
-			@Override
-			public IObservable createObservable(Object target) {
-				//if (target instanceof )
-				return super.createObservable(target);
+	private final LabelProvider labelProvider = new LabelProvider(){
+		@Override
+		public String getText(Object element) {
+			if (element instanceof Diagnostic){
+				Diagnostic d = (Diagnostic)element;
+				return d.getMessage() +" ("+d.getLine()+":"+d.getColumn()+")";
 			}
-		};
+			if (element instanceof EObject){
+				if (((EObject) element).eContainmentFeature() != null){
+					String cont = ((EObject) element).eContainmentFeature().getName();
+					return cont+": "+((EObject) element).eClass().getName();
+				}
+				return ((EObject) element).eClass().getName();
+			}
+			return super.getText(element);
+		}
+	};
+	
+	public MContentOutlinePage(Resource resource) {
+		this.resource = resource;
 	}
 	
 	public void update(){
-		this.contentFactory.update();
+		this.getTreeViewer().refresh();
 	}
 	
 	@Override
 	public void createControl(Composite parent) {
 		super.createControl(parent);
-		ObservableListTreeContentProvider contentProvider = new ObservableListTreeContentProvider(contentFactory, null);
-		IObservableSet knownelements = contentProvider.getKnownElements();
-		IObservableMap labels = MasterDetailObservables.detailValues(
-				knownelements, labelFactory, String.class);
 		
-		getTreeViewer().setContentProvider(contentProvider);
-		getTreeViewer().setLabelProvider(new ObservableMapLabelProvider(labels));
-		getTreeViewer().setInput(edomain.getResourceSet());
+		getTreeViewer().setContentProvider(this);
+		getTreeViewer().setLabelProvider(labelProvider);
+		getTreeViewer().setInput(resource);
+	}
+
+	@Override
+	public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Object[] getElements(Object inputElement) {
+		if (inputElement instanceof Resource){
+			List<Object> result = new LinkedList<Object>();
+			result.addAll(((Resource) inputElement).getErrors());
+			result.addAll(((Resource) inputElement).getContents());
+			return result.toArray();
+		}
+		return new Object[0];
+	}
+
+	private String toText(EStructuralFeature f, Object o){
+		if (f instanceof EAttribute){
+			return f.getName()+" = \""+o+"\""; 
+		}
+		if (f instanceof EReference){
+			return f.getName()+" -> "+labelProvider.getText(o);
+		}
+		return "<>";
+	}
+	
+	private boolean showAsChild(EStructuralFeature sf){
+		return (sf instanceof EAttribute) || !((EReference)sf).isContainment();
+	}
+	
+	@Override
+	public Object[] getChildren(Object parentElement) {
+		if (parentElement instanceof EObject){
+			List<Object> result = new LinkedList<Object>();
+			for(EStructuralFeature sf : ((EObject) parentElement).eClass().getEAllStructuralFeatures()) 
+				if (showAsChild(sf)){
+				Object v = ((EObject) parentElement).eGet(sf);
+				if (v != null){
+					if (v instanceof List<?>){
+						for(Object o : ((List<?>) v).toArray()){
+							result.add(toText(sf, o));
+						}
+					}else{
+						result.add(toText(sf, v));
+					}
+				}
+			}
+			result.addAll(((EObject) parentElement).eContents());
+			return result.toArray();
+		}
+		return new Object[0];
+	}
+
+	@Override
+	public Object getParent(Object element) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean hasChildren(Object element) {
+		return getChildren(element).length > 0;
 	}
 	
 }

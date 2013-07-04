@@ -129,17 +129,19 @@ public class InMemoryGlobalModelIndex extends AbstractGlobalModelIndex implement
 
 		private List<IFile> listAllFiles(IProject project) throws CoreException{
 			final List<IFile> result = new LinkedList<IFile>();
-			project.accept(new IResourceVisitor() {
-				
-				@Override
-				public boolean visit(IResource resource) throws CoreException {
-					if (resource instanceof IFile){
-						result.add((IFile)resource);
-						return false;
+			if (project.exists()){
+				project.accept(new IResourceVisitor() {
+
+					@Override
+					public boolean visit(IResource resource) throws CoreException {
+						if (resource instanceof IFile){
+							result.add((IFile)resource);
+							return false;
+						}
+						return true;
 					}
-					return true;
-				}
-			});
+				});
+			}
 			return result;
 		}
 		
