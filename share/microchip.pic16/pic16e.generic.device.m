@@ -42,3 +42,17 @@ operation set(dest : uint8@BRAM, value : uint8){
 	MOVLB(dest->bank);
 	MOVWF(dest);
 }
+
+operation set(dest : uint16@BRAM, value : uint8){
+	MOVLW(value);
+	MOVLB(dest->bank);
+	MOVWF(dest);
+	CLRF(dest+1);
+}
+
+operation set(dest : uint16@BRAM, value : uint16){
+	MOVLW(value);
+	MOVLB(dest->bank);
+	MOVWF(dest);
+	MOVLW(dest<<-8);
+}

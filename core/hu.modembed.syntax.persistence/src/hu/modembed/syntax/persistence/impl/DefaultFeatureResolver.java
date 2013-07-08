@@ -98,6 +98,11 @@ public class DefaultFeatureResolver implements IFeatureResolver{
 
 	private static long parseNumber(String value){
 		value = value.toLowerCase();
+		long m = 1;
+		if (value.startsWith("-")){
+			value = value.substring(1);
+			m = -1;
+		}
 		if (value.startsWith("0x")){
 			//Hexadecimal
 			return Long.parseLong(value.substring(2), 16);
@@ -106,7 +111,7 @@ public class DefaultFeatureResolver implements IFeatureResolver{
 			//Binary
 			return Long.parseLong(value.substring(2), 2);
 		}
-		return Long.parseLong(value);
+		return Long.parseLong(value)*m;
 	}
 	
 }

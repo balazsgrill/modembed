@@ -52,6 +52,8 @@ public class MTextEditor extends TextEditor {
 		}
 	};
 	
+	private String oldText = "";
+	
 	private void reload(){
 		final String[] text = new String[1];
 		Display.getDefault().syncExec(new Runnable() {
@@ -61,6 +63,9 @@ public class MTextEditor extends TextEditor {
 				text[0] = getSourceViewer().getTextWidget().getText();
 			}
 		});
+		
+		if (oldText.equals(text[0])) return;
+		
 		final InputStream is = new ByteArrayInputStream(text[0].getBytes());
 		
 		try {
@@ -86,12 +91,11 @@ public class MTextEditor extends TextEditor {
 			}
 			if (resource == null){
 				resource = edomain.getResourceSet().createResource(uri);
-				reload();
 				getSourceViewer().addTextListener(new ITextListener() {
 					
 					@Override
 					public void textChanged(TextEvent event) {
-						reloader.trigger();
+						//reloader.trigger();
 					}
 				});
 			}

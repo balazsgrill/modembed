@@ -9,6 +9,7 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.Resource.Diagnostic;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 
 public final class TaskUtils {
@@ -36,6 +37,9 @@ public final class TaskUtils {
 	public static Object loadInput(ResourceSet resourceSet, File file) throws Exception{
 		URI uri = pathToUri(file.getCanonicalPath());
 		Resource resource = resourceSet.getResource(uri, true);
+		for(Diagnostic d : resource.getErrors()){
+			System.err.println(d.getMessage());
+		}
 		if (resource.getContents().isEmpty()) throw new Exception("Could not load file: "+file.getCanonicalPath()+" (using "+resource.getClass()+")");
 		return resource.getContents().get(0);
 	}
@@ -43,6 +47,9 @@ public final class TaskUtils {
 	public static Resource getOutput(ResourceSet resourceSet, File file) throws IOException{
 		URI uri = pathToUri(file.getCanonicalPath());
 		Resource resource = resourceSet.createResource(uri);
+		for(Diagnostic d : resource.getErrors()){
+			System.err.println(d.getMessage());
+		}
 		return resource;
 	}
 	

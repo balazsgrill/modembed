@@ -38,6 +38,7 @@ public class GenericSyntaxResource extends ResourceImpl {
 	}
 	
 	private void error(String message){
+		System.err.println(message);
 		getErrors().add(new ParsingError(message, getURI().lastSegment()));
 	}
 	

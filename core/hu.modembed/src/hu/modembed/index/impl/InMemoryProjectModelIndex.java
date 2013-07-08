@@ -12,7 +12,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
@@ -45,11 +44,14 @@ public class InMemoryProjectModelIndex extends AbstractModelIndex implements IPr
 	
 	@Override
 	public EObject find(Resource resource, String qualifiedID) {
+		System.out.println("Query "+qualifiedID+" in "+project.getName());
 		for(IIndexedModel im : models.values()){
 			if (qualifiedID.equals(im.getQualifiedName())){
+				System.out.println("OK");
 				return im.load(resource.getResourceSet());
 			}
 		}
+		System.out.println("FAIL");
 		return null;
 	}
 
@@ -88,27 +90,28 @@ public class InMemoryProjectModelIndex extends AbstractModelIndex implements IPr
 				return true;
 			}
 		}
-		if (resource instanceof IContainer) return true;
-		if (resource instanceof IFile){
-			URI uri = toURI((IFile)resource);
-			switch(kind){
-			case IResourceDelta.REMOVED:
-				remove(uri);
-				break;
-			case IResourceDelta.CONTENT:
-			case IResourceDelta.CHANGED:
-			//case IResourceDelta.CHANGED:	this is called when markers are changed
-			case IResourceDelta.REPLACED:
-			case IResourceDelta.ADDED:
-				System.out.println(uri+" changed: "+kind);
-				IIndexedModel desc = getDescriptor(uri);
-				if (desc != null){
-					put(desc);
-				}
-				break;
-				
-			}
-		}
+		load(getProject());
+//		if (resource instanceof IContainer) return true;
+//		if (resource instanceof IFile){
+//			URI uri = toURI((IFile)resource);
+//			switch(kind){
+//			case IResourceDelta.REMOVED:
+//				remove(uri);
+//				break;
+//			case IResourceDelta.CONTENT:
+//			case IResourceDelta.CHANGED:
+//			//case IResourceDelta.CHANGED:	this is called when markers are changed
+//			case IResourceDelta.REPLACED:
+//			case IResourceDelta.ADDED:
+//				System.out.println(uri+" changed: "+kind);
+//				IIndexedModel desc = getDescriptor(uri);
+//				if (desc != null){
+//					put(desc);
+//				}
+//				break;
+//				
+//			}
+//		}
 		return false;
 	}
 
@@ -131,6 +134,7 @@ public class InMemoryProjectModelIndex extends AbstractModelIndex implements IPr
 	}
 	
 	private void load(IProject resource) throws CoreException {
+		if (!resource.isOpen()) return;
 		List<IFile> files = listAllFiles(resource);
 		int last = -1;
 		

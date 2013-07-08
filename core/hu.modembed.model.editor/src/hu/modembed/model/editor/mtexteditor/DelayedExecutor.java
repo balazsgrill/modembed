@@ -25,23 +25,41 @@ public abstract class DelayedExecutor{
 		@Override
 		public void run() {
 			synchronized (DelayedExecutor.this) {
-				if (this.time == triggerTime){
+				if (this.time == triggerTime) if (tryStart()){
 					new Job(DelayedExecutor.this.toString()) {
-						
+
 						@Override
 						protected IStatus run(IProgressMonitor monitor) {
-							return doExecute(monitor);
+							IStatus status = null;
+							try{
+								status = doExecute(monitor);
+							}finally{
+								finish();
+							}
+							return status; 
 						}
 					}.schedule();
 				}
+
 			}
 		}
 		
 	}
 	
+	private synchronized boolean tryStart(){
+		if (running) return false;
+		running = true;
+		return true;
+	}
+	
+	private synchronized void finish(){
+		running = false;
+	}
+	
 	protected abstract IStatus doExecute(IProgressMonitor monitor);
 	
 	private volatile long triggerTime = System.currentTimeMillis();
+	private volatile boolean running = false;
 	
 	public synchronized void trigger(){
 		triggerTime = System.currentTimeMillis();

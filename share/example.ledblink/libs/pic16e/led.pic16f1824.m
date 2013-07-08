@@ -6,9 +6,13 @@ use PIC16F1824.interface;
 
 void initLED(){
 	PORTA = 0;
-	
+	LATA = 0;
 }
 
-void turnOffLED();
+void turnOffLED(){
+	LATA = 0;
+}
 
-void turnOnLED();
+void turnOnLED(){
+	LATA = 1;
+}
