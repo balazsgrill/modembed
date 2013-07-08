@@ -5,6 +5,7 @@ package hu.modembed.model.pic.util;
 import hu.modembed.model.modembed.infrastructure.MODembedElement;
 import hu.modembed.model.modembed.infrastructure.NamedElement;
 import hu.modembed.model.modembed.infrastructure.RootElement;
+import hu.modembed.model.pic.*;
 import hu.modembed.model.pic.ConfigField;
 import hu.modembed.model.pic.ConfigLiteral;
 import hu.modembed.model.pic.ConfigWord;

@@ -7,7 +7,7 @@
                    
      balazs.grill                                                                
      ====================================================================== -->
-<project name="LED Blinking example" default="compile.pic16f1824" >
+<project name="LED Blinking example" default="release.all" >
 
 	<property name="out" value="${basedir}/out" />
 	<eclipse.convertPath resourcepath="microchip.PIC16F1824" property="pic16f1824"/>
@@ -19,6 +19,15 @@
     	<modembed.compile input="libs/generic/utils.m" output="${out}/utils.xmi"/>
     </target>
 
+    <target name="release.all" depends="release.pic16f1824">
+        
+    </target>
+
+	
+	<target name="configure.pic16f1824">
+		<modembed.pic.config input="ledblink.pic16f1824.config.xmi" output="${out}/pic16f1824/config.hex"/>
+	</target>
+	
 	<target name="compile.pic16f1824" depends="compile.generic">
 		<mkdir dir="${out}/pic16f1824" />
 		<modembed.compile input="libs/pic16e/led.pic16f1824.m" output="${out}/pic16f1824/led.xmi"/>
@@ -33,7 +42,16 @@
 		</modembed.link>
 		<modembed.map rules="${pic16f1824}/PIC16F1824.mappingrules.m" input="${out}/pic16f1824/ledblink.xmi" output="${out}/pic16f1824/ledblink.map.xmi"/>
 		<modembed.translate input="${out}/pic16f1824/ledblink.xmi" map="${out}/pic16f1824/ledblink.map.xmi" output="${out}/pic16f1824/ledblink.asm.xmi"/>
+		<modembed.assemble input="${out}/pic16f1824/ledblink.asm.xmi" output="${out}/pic16f1824/code.hex"/>
 	</target>
 	
+	<target name="release.pic16f1824" depends="configure.pic16f1824, compile.pic16f1824">
+		<modembed.hex.merge output="${out}/pic16f1824/release.hex">
+			<filelist dir="${out}/pic16f1824">
+				<file name="code.hex"/>
+				<file name="config.hex"/>
+			</filelist>
+		</modembed.hex.merge>
+	</target>
 	
 </project>

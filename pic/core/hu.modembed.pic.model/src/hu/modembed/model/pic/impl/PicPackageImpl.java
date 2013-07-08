@@ -6,6 +6,7 @@ import hu.modembed.model.modembed.abstraction.AbstractionPackage;
 import hu.modembed.model.modembed.core.instructionset.InstructionsetPackage;
 import hu.modembed.model.modembed.core.object.ObjectPackage;
 import hu.modembed.model.modembed.infrastructure.InfrastructurePackage;
+import hu.modembed.model.modembed.structured.StructuredPackage;
 import hu.modembed.model.pic.ConfigField;
 import hu.modembed.model.pic.ConfigLiteral;
 import hu.modembed.model.pic.ConfigWord;
@@ -121,6 +122,7 @@ public class PicPackageImpl extends EPackageImpl implements PicPackage {
 		InstructionsetPackage.eINSTANCE.eClass();
 		ObjectPackage.eINSTANCE.eClass();
 		AbstractionPackage.eINSTANCE.eClass();
+		StructuredPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		thePicPackage.createPackageContents();
@@ -439,6 +441,32 @@ public class PicPackageImpl extends EPackageImpl implements PicPackage {
 
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// reference
+		createReferenceAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>reference</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createReferenceAnnotations() {
+		String source = "reference";		
+		addAnnotation
+		  (getConfigurationSelection_Field(), 
+		   source, 
+		   new String[] {
+			 "scope", "../definition/configWords/fields"
+		   });		
+		addAnnotation
+		  (getConfigurationSelection_Selection(), 
+		   source, 
+		   new String[] {
+			 "scope", "field/literals"
+		   });
 	}
 
 } //PicPackageImpl

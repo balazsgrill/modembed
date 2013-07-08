@@ -34,6 +34,7 @@ public interface ConfigurationSelection extends MODembedElement {
 	 * @see #setField(ConfigField)
 	 * @see hu.modembed.model.pic.PicPackage#getConfigurationSelection_Field()
 	 * @model required="true"
+	 *        annotation="reference scope='../definition/configWords/fields'"
 	 * @generated
 	 */
 	ConfigField getField();
@@ -59,7 +60,7 @@ public interface ConfigurationSelection extends MODembedElement {
 	 * @return the value of the '<em>Selection</em>' reference.
 	 * @see #setSelection(ConfigLiteral)
 	 * @see hu.modembed.model.pic.PicPackage#getConfigurationSelection_Selection()
-	 * @model
+	 * @model annotation="reference scope='field/literals'"
 	 * @generated
 	 */
 	ConfigLiteral getSelection();

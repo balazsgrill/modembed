@@ -28,7 +28,15 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="definition" eType="#//PICConfigurationModel"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConfigurationSelection" eSuperTypes="../../hu.modembed.model/model/modembed.ecore#//infrastructure/MODembedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="field" lowerBound="1" eType="#//ConfigField"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="selection" eType="#//ConfigLiteral"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="field" lowerBound="1" eType="#//ConfigField">
+      <eAnnotations source="reference">
+        <details key="scope" value="../definition/configWords/fields"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="selection" eType="#//ConfigLiteral">
+      <eAnnotations source="reference">
+        <details key="scope" value="field/literals"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
 </ecore:EPackage>

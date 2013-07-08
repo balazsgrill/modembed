@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="pack.shared.test" default="pack">
+
+	<include file="../../../core/hu.modembed/pack_shared.xml" />
+	
+	<target name="pack">
+		<pack.shared name="example.ledblink"/>
+	</target>
+	
+</project>

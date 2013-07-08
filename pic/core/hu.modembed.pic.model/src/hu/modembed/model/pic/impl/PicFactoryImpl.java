@@ -27,7 +27,7 @@ public class PicFactoryImpl extends EFactoryImpl implements PicFactory {
 	 */
 	public static PicFactory init() {
 		try {
-			PicFactory thePicFactory = (PicFactory)EPackage.Registry.INSTANCE.getEFactory("http://hu.modembed/pic"); 
+			PicFactory thePicFactory = (PicFactory)EPackage.Registry.INSTANCE.getEFactory(PicPackage.eNS_URI);
 			if (thePicFactory != null) {
 				return thePicFactory;
 			}
