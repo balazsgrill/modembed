@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="ASCII"?>
+<pic:PICConfigurationValueModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:pic="http://hu.modembed/pic" name="ledblink.pic16f1824.config">
+  <values/>
+  <definition href="../microchip.PIC16F1824/PIC16F1824.config.xmi#/"/>
+</pic:PICConfigurationValueModel>

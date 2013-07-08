@@ -114,15 +114,21 @@ public class MODembedCore extends Plugin {
 		List<EClass> subs = new ArrayList<EClass>();
 		subs.add(base);
 
-		Registry reg = null;//Registry.INSTANCE;
+		Registry reg = Registry.INSTANCE;
 //		if (resourceSet != null){
 //			reg = resourceSet.getPackageRegistry();
 //		}else{
-			reg = Registry.INSTANCE;
+//			reg = Registry.INSTANCE;
 //		}
 		
-		for (Object oo : reg.values()) {
+		
+		
+		for (Object oo : reg.values().toArray()) {
 
+			if (oo instanceof EPackage.Descriptor){
+				oo = ((EPackage.Descriptor) oo).getEPackage();
+			}
+			
 			if (oo instanceof EPackage) {
 				Iterator<EObject> iter = ((EPackage) oo).eContents().iterator();
 				while (iter.hasNext()) {

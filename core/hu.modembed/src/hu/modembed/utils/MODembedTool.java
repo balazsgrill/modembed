@@ -28,7 +28,7 @@ public class MODembedTool {
 		if (context instanceof EObject){
 			Resource resource = ((EObject) context).eResource();
 			IGlobalModelIndex index = MODembedCore.getDefault().getModelIndex();
-			return index.findRootElement(resource, qualifiedID);
+			return index.find(resource, qualifiedID);
 		}
 		return null;
 	}

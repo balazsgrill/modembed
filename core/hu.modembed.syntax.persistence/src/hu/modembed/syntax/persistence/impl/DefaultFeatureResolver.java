@@ -80,7 +80,7 @@ public class DefaultFeatureResolver implements IFeatureResolver{
 		if (feature instanceof EReference){
 			EClass eclass = ((EReference) feature).getEReferenceType();
 			if (isGlobal(eclass)){
-				return MODembedCore.getDefault().getModelIndex().findRootElement(context.eResource(), value);
+				return MODembedCore.getDefault().getModelIndex().find(context.eResource(), value);
 			}else{
 				return findObjectByName(context, value);
 			}

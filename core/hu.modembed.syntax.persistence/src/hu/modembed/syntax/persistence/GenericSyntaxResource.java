@@ -4,7 +4,6 @@
 package hu.modembed.syntax.persistence;
 
 import hu.modembed.MODembedCore;
-import hu.modembed.model.modembed.infrastructure.RootElement;
 import hu.modembed.syntax.SyntaxModel;
 
 import java.io.IOException;
@@ -15,6 +14,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.impl.ResourceImpl;
 
 /**
@@ -70,7 +70,7 @@ public class GenericSyntaxResource extends ResourceImpl {
 		
 		if (firstLine.startsWith("#!")){
 			String syntaxID = firstLine.substring(2);
-			RootElement re = MODembedCore.getDefault().getModelIndex().findRootElement(this, syntaxID);
+			EObject re = MODembedCore.getDefault().getModelIndex().find(this, syntaxID);
 			if (re instanceof SyntaxModel){
 				syntax = (SyntaxModel)re;
 			}else{

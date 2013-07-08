@@ -4,6 +4,7 @@
 package hu.modembed.index;
 
 import hu.modembed.MODembedCore;
+import hu.modembed.index.impl.SimpleIndexedModel;
 import hu.modembed.model.modembed.infrastructure.RootElement;
 
 import java.util.Arrays;
@@ -22,9 +23,9 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
  * @author balazs.grill
  *
  */
-public abstract class AbstractGlobalModelIndex {
+public abstract class AbstractModelIndex implements IModelIndex{
 
-	protected Collection<IProject> getDependencies(IProject p){
+	protected static Collection<IProject> getDependencies(IProject p){
 		IProjectDescription pd;
 		try {
 			pd = p.getDescription();
@@ -34,7 +35,7 @@ public abstract class AbstractGlobalModelIndex {
 		return Collections.emptySet();
 	}
 	
-	protected org.eclipse.emf.common.util.URI toURI(IFile file){
+	protected static org.eclipse.emf.common.util.URI toURI(IFile file){
 		return org.eclipse.emf.common.util.URI.createPlatformResourceURI(file.getFullPath().toString(), false);
 	}
 	
@@ -52,21 +53,19 @@ public abstract class AbstractGlobalModelIndex {
 		}
 	}
 	
-	protected String getName(org.eclipse.emf.common.util.URI uri){
-		String name = null;
+	protected IIndexedModel getDescriptor(org.eclipse.emf.common.util.URI uri){
 		try{
 			ResourceSet rs = MODembedCore.createResourceSet();
 			RootElement r = get(rs, uri);
-			if (r != null){
-				name = r.getName();
-			}
+			IIndexedModel descriptor = new SimpleIndexedModel(r.getName(), uri, r.eClass());
 			for(Resource res : rs.getResources()){
 				res.unload();
 			}
+			return descriptor;
 		}catch(Exception e){
 			// Don't fail if one file is failed to load
 		}
-		return name;
+		return null;
 	}
 	
 }
