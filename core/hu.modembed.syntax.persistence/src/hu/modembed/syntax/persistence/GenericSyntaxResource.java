@@ -3,7 +3,6 @@
  */
 package hu.modembed.syntax.persistence;
 
-import hu.modembed.MODembedCore;
 import hu.modembed.syntax.SyntaxModel;
 
 import java.io.IOException;
@@ -15,6 +14,7 @@ import java.util.regex.Pattern;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceImpl;
 
 /**
@@ -38,7 +38,6 @@ public class GenericSyntaxResource extends ResourceImpl {
 	}
 	
 	private void error(String message){
-		System.err.println(message);
 		getErrors().add(new ParsingError(message, getURI().lastSegment()));
 	}
 	
@@ -58,6 +57,21 @@ public class GenericSyntaxResource extends ResourceImpl {
 		getErrors().add(new ParsingError(message, getURI().lastSegment(), line, column));
 	}
 	
+	private SyntaxModel loadSyntax(String syntaxID){
+		URI uri = URI.createURI(syntaxID);
+		try{
+			Resource syntaxRes = getResourceSet().getResource(uri, true);
+			EObject re = null;
+			if (syntaxRes != null && !syntaxRes.getContents().isEmpty()){
+				re = syntaxRes.getContents().get(0);
+			}
+			return (re instanceof SyntaxModel) ? (SyntaxModel)re : null;
+		}catch(Exception e){
+			error(e.getMessage());
+			return null;
+		}
+	}
+	
 	@Override
 	protected void doLoad(InputStream inputStream, Map<?, ?> options)
 			throws IOException {
@@ -71,10 +85,9 @@ public class GenericSyntaxResource extends ResourceImpl {
 		
 		if (firstLine.startsWith("#!")){
 			String syntaxID = firstLine.substring(2);
-			EObject re = MODembedCore.getDefault().getModelIndex().find(this, syntaxID);
-			if (re instanceof SyntaxModel){
-				syntax = (SyntaxModel)re;
-			}else{
+			syntax = loadSyntax(syntaxID);
+		
+			if (syntax == null){
 				error("Cannot find syntax: "+syntaxID);
 				return;
 			}

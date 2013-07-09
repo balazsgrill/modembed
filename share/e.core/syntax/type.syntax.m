@@ -1,4 +1,4 @@
-#!syntax
+#!platform:/resource/e.core/syntax/syntax.model
 syntax type.syntax <Type>;
 import core.syntax;
 

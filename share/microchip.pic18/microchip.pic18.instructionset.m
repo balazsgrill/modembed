@@ -1,4 +1,4 @@
-#!instructionSet.syntax
+#!platform:/resource/e.core/syntax/instructionSet.syntax.m
 /*
  * PIC18 instruction set 
  */

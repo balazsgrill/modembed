@@ -1,4 +1,4 @@
-#!sequential.syntax
+#!platform:/resource/e.core/syntax/sequential.syntax.m
 sequence test.main.sequence device pic16e.test.device;
 
 uint8 const0 = 5;

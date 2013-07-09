@@ -1,4 +1,4 @@
-#!instructionSet.syntax
+#!platform:/resource/e.core/syntax/sequential.syntax.m
 /*
  * MSP430 instruction set 
  */

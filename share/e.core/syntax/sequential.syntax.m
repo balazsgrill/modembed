@@ -1,4 +1,4 @@
-#!syntax
+#!platform:/resource/e.core/syntax/syntax.model
 syntax sequential.syntax <Root>;
 import core.syntax;
 import type.syntax;

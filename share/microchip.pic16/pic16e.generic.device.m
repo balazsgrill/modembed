@@ -1,4 +1,4 @@
-#!device.syntax
+#!platform:/resource/e.core/syntax/device.syntax.m
 device pic16e.generic extends pic16.generic instructionset microchip.pic16e.instructionset;
 
 operation add(dest : uint8@BRAM, value : uint8){

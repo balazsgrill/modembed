@@ -91,11 +91,12 @@ public class MTextEditor extends TextEditor {
 			}
 			if (resource == null){
 				resource = edomain.getResourceSet().createResource(uri);
+				reload();
 				getSourceViewer().addTextListener(new ITextListener() {
 					
 					@Override
 					public void textChanged(TextEvent event) {
-						//reloader.trigger();
+						reloader.trigger();
 					}
 				});
 			}

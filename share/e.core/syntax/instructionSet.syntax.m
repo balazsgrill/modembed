@@ -1,4 +1,4 @@
-#!syntax
+#!platform:/resource/e.core/syntax/syntax.model
 syntax instructionSet.syntax <Start>;
 import core.syntax;
 

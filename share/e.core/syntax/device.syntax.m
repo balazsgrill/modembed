@@ -1,4 +1,4 @@
-#!syntax
+#!platform:/resource/e.core/syntax/syntax.model
 syntax device.syntax <Start>;
 import core.syntax;
 import type.syntax;

@@ -1,4 +1,4 @@
-#!instructionSet.syntax
+#!platform:/resource/e.core/syntax/instructionSet.syntax.m
 instructionset microchip.pic16e.instructionset extends microchip.pic16.instructionset;
 
 /* Add with carry W and f */

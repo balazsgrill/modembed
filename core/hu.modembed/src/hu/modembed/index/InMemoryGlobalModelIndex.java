@@ -41,7 +41,7 @@ public class InMemoryGlobalModelIndex extends AbstractModelIndex implements IGlo
 			try {
 				part = new InMemoryProjectModelIndex(project);
 				parts.put(project, part);
-				part.initialize();
+				//part.initialize();
 			} catch (CoreException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

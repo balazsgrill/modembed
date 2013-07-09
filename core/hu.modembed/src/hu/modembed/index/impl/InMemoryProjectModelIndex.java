@@ -44,14 +44,14 @@ public class InMemoryProjectModelIndex extends AbstractModelIndex implements IPr
 	
 	@Override
 	public EObject find(Resource resource, String qualifiedID) {
-		System.out.println("Query "+qualifiedID+" in "+project.getName());
-		for(IIndexedModel im : models.values()){
-			if (qualifiedID.equals(im.getQualifiedName())){
-				System.out.println("OK");
-				return im.load(resource.getResourceSet());
-			}
-		}
-		System.out.println("FAIL");
+//		System.out.println("Query "+qualifiedID+" in "+project.getName());
+//		for(IIndexedModel im : models.values()){
+//			if (qualifiedID.equals(im.getQualifiedName())){
+//				System.out.println("OK");
+//				return im.load(resource.getResourceSet());
+//			}
+//		}
+//		System.out.println("FAIL");
 		return null;
 	}
 
@@ -67,11 +67,11 @@ public class InMemoryProjectModelIndex extends AbstractModelIndex implements IPr
 	}
 
 	private void put(IIndexedModel descriptor){
-		models.put(descriptor.getResourceURI(), descriptor);
+	//	models.put(descriptor.getResourceURI(), descriptor);
 	}
 	
 	private void remove(URI uri){
-		models.remove(uri);
+		//models.remove(uri);
 	}
 	
 	private void dispose(){
