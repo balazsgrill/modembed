@@ -4,23 +4,25 @@ var pic = PIC.root;
 var arch = pic.getAttribute("edc:arch");
 var dev = "";
 var bankSize = 0;
+var bankCount = 4;
 if (arch == "16xxxx") {
-	dev = "pic16.generic";
+	dev = "pic16.generic.device";
 	bankSize = 128;
 }
 if (arch == "16Exxx") {
-	dev = "pic16e.generic";
+	dev = "pic16e.generic.device";
 	bankSize = 128;
+	bankCount = 32;
 }
 if (arch == "18xxxx") {
-	dev = "pic18.generic";
+	dev = "pic18.generic.device";
 	bankSize = 256;
 }
 var arch = pic.getElementsByTagName("edc:ArchDef").item(0);
 var memtraits = pic.getElementsByTagName("edc:MemTraits").item(0);
 
 var banks = memtraits.getAttribute("edc:bankcount");
-var bankCount = 4;
+
 if (banks <> ""){
 	bankCount = 0.parseInt(banks);
 }

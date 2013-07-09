@@ -1,5 +1,5 @@
 #!platform:/resource/e.core/syntax/device.syntax.m
-device pic16e.generic extends pic16.generic instructionset microchip.pic16e.instructionset;
+device pic16e.generic.device extends pic16.generic.device instructionset microchip.pic16e.instructionset;
 
 operation add(dest : uint8@BRAM, value : uint8){
 	MOVLW(value);
@@ -54,5 +54,5 @@ operation set(dest : uint16@BRAM, value : uint16){
 	MOVLW(value);
 	MOVLB(dest->bank);
 	MOVWF(dest);
-	MOVLW(dest<<-8);
+	MOVLW(dest<-8);
 }
