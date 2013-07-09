@@ -3,6 +3,7 @@
  */
 package hu.modembed.syntax.persistence;
 
+import hu.modembed.MODembedCore;
 import hu.modembed.syntax.SyntaxModel;
 
 import java.io.IOException;
@@ -58,16 +59,26 @@ public class GenericSyntaxResource extends ResourceImpl {
 	}
 	
 	private SyntaxModel loadSyntax(String syntaxID){
-		URI uri = URI.createURI(syntaxID);
-		try{
-			Resource syntaxRes = getResourceSet().getResource(uri, true);
-			EObject re = null;
-			if (syntaxRes != null && !syntaxRes.getContents().isEmpty()){
-				re = syntaxRes.getContents().get(0);
+		
+		if (syntaxID.startsWith("platform:")){
+
+			URI uri = URI.createURI(syntaxID);
+			try{
+				Resource syntaxRes = getResourceSet().getResource(uri, true);
+				EObject re = null;
+				if (syntaxRes != null && !syntaxRes.getContents().isEmpty()){
+					re = syntaxRes.getContents().get(0);
+				}
+				return (re instanceof SyntaxModel) ? (SyntaxModel)re : null;
+			}catch(Exception e){
+				error(e.getMessage());
+				return null;
 			}
-			return (re instanceof SyntaxModel) ? (SyntaxModel)re : null;
-		}catch(Exception e){
-			error(e.getMessage());
+		}else{
+			EObject eo = MODembedCore.getDefault().getModelIndex().find(this, syntaxID);
+			if (eo instanceof SyntaxModel){
+				return (SyntaxModel)eo;
+			}
 			return null;
 		}
 	}

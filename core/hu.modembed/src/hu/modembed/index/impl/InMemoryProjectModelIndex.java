@@ -12,6 +12,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
@@ -43,7 +44,35 @@ public class InMemoryProjectModelIndex extends AbstractModelIndex implements IPr
 	}
 	
 	@Override
-	public EObject find(Resource resource, String qualifiedID) {
+	public EObject find(Resource resource, final String qualifiedID) {
+		final IFile[] file = new IFile[1]; 
+		try {
+			project.accept(new IResourceVisitor() {
+				
+				@Override
+				public boolean visit(IResource resource) throws CoreException {
+					if (resource instanceof IContainer) return true;
+					if (resource instanceof IFile){
+						String name = resource.getName();
+						if (name.contains(".")){
+							name = name.substring(0, name.lastIndexOf('.'));
+						}
+						if (name.equals(qualifiedID)){
+							file[0] = (IFile)resource;
+						}
+					}
+					return false;
+				}
+			});
+		} catch (CoreException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		if (file[0] != null){
+			return get(resource.getResourceSet(), toURI(file[0]));
+		}
+		
 //		System.out.println("Query "+qualifiedID+" in "+project.getName());
 //		for(IIndexedModel im : models.values()){
 //			if (qualifiedID.equals(im.getQualifiedName())){

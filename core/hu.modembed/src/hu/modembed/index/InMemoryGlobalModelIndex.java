@@ -96,10 +96,12 @@ public class InMemoryGlobalModelIndex extends AbstractModelIndex implements IGlo
 			IProject pro = queue.poll();
 			if (!visited.contains(pro)){
 				visited.add(pro);
-				queue.addAll(getDependencies(pro));
-				IProjectModelIndex part = getPart(pro, true);
-				EObject pr = part.find(resource, qualifiedID);
-				if (pr != null) results.add(pr);
+				if (pro.exists() && pro.isOpen()){
+					queue.addAll(getDependencies(pro));
+					IProjectModelIndex part = getPart(pro, true);
+					EObject pr = part.find(resource, qualifiedID);
+					if (pr != null) results.add(pr);
+				}
 			}
 		}
 		
