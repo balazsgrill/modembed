@@ -37,10 +37,9 @@ public class SimulatorTests {
 		ModembedTests.runAntScript(project, "build.xml", "pic18f14k50");
 	}
 	
-	@Test
-	public void pic16e_uint8_greater() throws Exception{
+	private DeviceSimulator test_operation(String test) throws Exception{
 		IProject project = ModembedTests.loadProject("test.operations");
-		ModembedTests.runAntScript(project, "build.xml", "test1");
+		ModembedTests.runAntScript(project, "build.xml", test);
 		ResourceSet resourceSet = MODembedCore.createResourceSet();
 		
 		AssemblerObject asm = ModembedTests.load(project.getFile(".test.asm.xmi"), resourceSet, AssemblerObject.class);
@@ -48,9 +47,23 @@ public class SimulatorTests {
 		DeviceSimulator simulator = new DeviceSimulator(new TestPic16Core(), asm, map);
 		
 		simulator.execute(1000);
+		return simulator;
+	}
+	
+	@Test
+	public void pic16e_uint8_greater_test1() throws Exception{
+		DeviceSimulator simulator = test_operation("test1");
 		
 		long r = simulator.getSymbolValue("r");
 		Assert.assertEquals(1, r);
+	}
+	
+	@Test
+	public void pic16e_uint8_greater_test2() throws Exception{
+		DeviceSimulator simulator = test_operation("test2");
+		
+		long r = simulator.getSymbolValue("r");
+		Assert.assertEquals(0, r);
 	}
 	
 }

@@ -14,3 +14,9 @@ test1(){
 	set(v2, const0)
 	greater(r, v1, v2)
 }
+
+test2(){
+	set(v1, const0)
+	set(v2, const5)
+	greater(r, v1, v2)
+}

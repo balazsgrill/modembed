@@ -1,16 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="test.assembler">
 	
+	<!-- = = = = = = = = = = = = = = = = =
+          macrodef: name          
+         = = = = = = = = = = = = = = = = = -->
+    <macrodef name="produce">
+        <attribute name="test" />
+    	<attribute name="file"/>
+        <sequential>
+        	<modembed.link entry="@{test}" output=".test.xmi">
+        		<filelist dir="${basedir}">
+        			<file name="@{file}"/>
+        		</filelist>
+        	</modembed.link>
+        	<modembed.map input=".test.xmi" rules="pic16e/pic16e.test.mappingrules.m"
+        		output=".test.map.xmi" />
+        	<modembed.translate map=".test.map.xmi"
+        		output=".test.asm.xmi" input=".test.xmi"/>
+        </sequential>
+    </macrodef>
+
+	
 	<target name="test1">
-		<modembed.link entry="test1" output=".test.xmi">
-			<filelist dir="${basedir}/pic16e">
-				<file name="test.uint8.greater.m"/>
-			</filelist>
-		</modembed.link>
-		<modembed.map input=".test.xmi" rules="pic16e/pic16e.test.mappingrules.m"
-			output=".test.map.xmi" />
-		<modembed.translate map=".test.map.xmi"
-			output=".test.asm.xmi" input=".test.xmi"/>
+		<produce file="pic16e/test.uint8.greater.m" test="test1"/>
+	</target>
+	
+	<target name="test2">
+		<produce file="pic16e/test.uint8.greater.m" test="test2"/>
 	</target>
 	
 </project>
