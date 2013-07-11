@@ -1,4 +1,8 @@
 #!platform:/resource/e.core/syntax/device.syntax.m
+/*
+ * Implementations of basic operations on enchanced PIC16 core.
+ * Multi-byte numbers are big-endians. (Lower byte on lower address)  
+ */
 device pic16e.generic.device extends pic16.generic.device instructionset microchip.pic16e.instructionset;
 
 operation add(dest : uint8@BRAM, value : uint8){
@@ -54,5 +58,29 @@ operation set(dest : uint16@BRAM, value : uint16){
 	MOVLW(value);
 	MOVLB(dest->bank);
 	MOVWF(dest);
-	MOVLW(dest<-8);
+	MOVLW(value<-8);
+	MOVWF(dest+1);
+}
+
+/* dest = v1>v2 */
+operation greater(dest: boolean@BRAM, v1:uint8@BRAM, v2:uint8@BRAM){
+	MOVLB(dest->bank);
+	CLRF(dest);
+	
+	MOVLB(v1->bank);
+	MOVF(v1, 0);
+	MOVLB(v2->bank);
+	SUBWF(v2, 0);
+	// IF v1>v2 -> C becomes 1
+	MOVLB(dest->bank);
+	MOVLW(1);
+	BTFSC(3, 0); //Test STATUS:C. If not set, skip setting result
+	MOVWF(dest);
+}
+
+operation greater(dest: boolean@BRAM, v1:uint16@BRAM, v2:uint16@BRAM){
+	MOVLB(dest->bank);
+	CLRF(dest);
+	
+	
 }
