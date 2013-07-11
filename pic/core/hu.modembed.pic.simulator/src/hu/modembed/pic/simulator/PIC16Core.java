@@ -7,12 +7,17 @@ import hu.modembed.simulator.IByte;
 import hu.modembed.simulator.ICore;
 import hu.modembed.simulator.IMemory;
 import hu.modembed.simulator.IWord;
+import hu.modembed.simulator.impl.WritableMemory;
 
 /**
  * @author balazs.grill
  *
  */
 public abstract class PIC16Core implements ICore{
+	
+	protected final IMemory memory = new WritableMemory(memorySize());
+	
+	protected abstract int memorySize();
 	
 	/**
 	 * Extend address with the currently selected bank.

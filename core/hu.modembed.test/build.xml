@@ -9,6 +9,7 @@
 		<pack.shared name="test.hex.manipulate"/>
 		<pack.shared name="test.dio"/>
 		<pack.shared name="test.module.compile" />
+		<pack.shared name="test.operations"/>
 	</target>
 	
 </project>

@@ -203,6 +203,7 @@ public class SequentialBehaviorTranslator {
 	}
 	
 	private Long getAttributeValue(AttributeValueContainer value, AttributeDefinition adef){
+		if (value == null) return null;
 		for(AttributeValue v : value.getValues()){
 			if (v.getDefinition().equals(adef)) return v.getValue();
 		}

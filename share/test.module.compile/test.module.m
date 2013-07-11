@@ -1,4 +1,4 @@
-#!platform:/resource/e.core/syntax/sequential.syntax.m
+#!platform:/resource/e.core/syntax/module.syntax.m
 module test.module;
 
 const uint8 one = 1;

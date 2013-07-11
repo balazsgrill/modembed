@@ -2,7 +2,7 @@ package hu.modembed.test;
 
 import hu.modembed.MODembedCore;
 import hu.modembed.model.modembed.core.object.AssemblerObject;
-import hu.modembed.simulator.DeviceSimulator;
+import hu.modembed.simulator.SimulatorCore;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
@@ -66,7 +66,7 @@ public class CompilerTests {
 		EObject asm = ModembedTests.load(asmfile, rs);
 		Assert.assertTrue("Invalid AssemblerObject", asm instanceof AssemblerObject);
 		
-		DeviceSimulator simulator = new DeviceSimulator();
+		SimulatorCore simulator = new SimulatorCore();
 		TestPic16Core device = new TestPic16Core();
 		simulator.setCore(device);
 		simulator.setCode((AssemblerObject)asm);

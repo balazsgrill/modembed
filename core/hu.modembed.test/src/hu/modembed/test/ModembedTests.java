@@ -61,6 +61,12 @@ public class ModembedTests {
 		return res.getContents().get(0);
 	}
 	
+	public static <T extends EObject> T load(IFile file, ResourceSet resourceSet, Class<T> clazz){
+		EObject eo = load(file, resourceSet);
+		Assert.assertTrue(clazz.isInstance(eo));
+		return clazz.cast(eo);
+	}
+	
 	public static boolean modelsAreEquivalent(IFile file1, IFile file2) throws InterruptedException, IOException{
 		ResourceSet rs = MODembedCore.createResourceSet();
 		

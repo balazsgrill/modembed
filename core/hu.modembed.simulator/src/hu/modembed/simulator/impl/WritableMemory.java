@@ -1,7 +1,9 @@
 /**
  * 
  */
-package hu.modembed.simulator;
+package hu.modembed.simulator.impl;
+
+import hu.modembed.simulator.IMemory;
 
 /**
  * @author balazs.grill

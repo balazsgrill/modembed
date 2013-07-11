@@ -73,6 +73,18 @@
                project="e.core">
          </dependency>
       </project>
+      <project
+            archive="shared/test.operations.zip"
+            category="hu.modembed.test.category"
+            id="test.operations"
+            name="Test project for basic operations">
+         <dependency
+               project="e.core">
+         </dependency>
+         <dependency
+               project="microchip.pic16">
+         </dependency>
+      </project>
    </extension>
 
 </plugin>
