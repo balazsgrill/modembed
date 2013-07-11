@@ -34,6 +34,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.eclipse.core.runtime.Assert;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
@@ -134,10 +135,11 @@ public class ModuleCompiler {
 	}
 	
 	private TypedSymbol allocateSymbol(SequentialBehaviorPart result, TypeDefinition type, String prefix){
+		Assert.isNotNull(type);
 		String symbol = getUniqueSymbol(result.getLocalSymbols(), prefix);
 		
 		SymbolAllocation sa = BehaviorFactory.eINSTANCE.createSymbolAllocation();
-		sa.setType(type);
+		sa.setType(EcoreUtil.copy(type));
 		sa.setSymbol(symbol);
 		result.getLocalSymbols().add(sa);
 		return new TypedSymbol(symbol, type);
@@ -355,6 +357,35 @@ public class ModuleCompiler {
 		return utd;
 	}
 	
+	private TypeDefinition extend(TypeDefinition td1, TypeDefinition td2){
+		td1 = EcoreUtil.copy(td1);
+		td2 = EcoreUtil.copy(td2);
+		TypeDefinition rd1 = TypeSignature.raw(td1);
+		TypeDefinition rd2 = TypeSignature.raw(td2);
+		
+		if (rd1 instanceof UnsignedTypeDefinition && rd2 instanceof UnsignedTypeDefinition){
+			if (((UnsignedTypeDefinition)rd1).getBits() >= ((UnsignedTypeDefinition)rd2).getBits()){
+				return td1;
+			}else{
+				return td2;
+			}
+		}
+		
+		if (td1 == null) return td2;
+		
+		return td1;
+	}
+	
+	private TypedSymbol extendSymbol(SequentialBehaviorPart result, TypedSymbol symbol, TypeDefinition to){
+		TypeDefinition td = extend(symbol.getType(), to);
+		if (TypeSignature.isCompatible(td, symbol.getType())){
+			return symbol;
+		}
+		TypedSymbol buffer = allocateSymbol(result, td, "buffer");
+		result.getActions().add(op("set", buffer.getSymbol(), symbol.getSymbol()));
+		return buffer;
+	}
+	
 	/**
 	 * Compile a high-level operation to low-level operations 
 	 * 
@@ -371,32 +402,36 @@ public class ModuleCompiler {
 		if ("add".equals(operation)){
 			TypedSymbol a0 = arguments.get(0);
 			TypedSymbol a1 = arguments.get(1);
-			TypeDefinition td = a0.getType();
-			if (td == null){
-				td = a1.getType();
-			}
-			TypedSymbol buffer = allocateSymbol(result, td, "buffer");
-			result.getActions().add(op("set", buffer.getSymbol(), a0.getSymbol()));
-			result.getActions().add(op("add", buffer.getSymbol(), a1.getSymbol()));
+			
+			TypedSymbol v0 = extendSymbol(result, a0, a1.getType());
+			TypedSymbol v1 = extendSymbol(result, a1, a0.getType());
+			
+			TypedSymbol buffer = allocateSymbol(result, v0.getType(), "buffer");
+			result.getActions().add(op("set", buffer.getSymbol(), v0.getSymbol()));
+			result.getActions().add(op("add", buffer.getSymbol(), v1.getSymbol()));
 			return buffer;
 		}
 		if ("subtract".equals(operation)){
 			TypedSymbol a0 = arguments.get(0);
 			TypedSymbol a1 = arguments.get(1);
-			TypeDefinition td = a0.getType();
-			if (td == null){
-				td = a1.getType();
-			}
-			TypedSymbol buffer = allocateSymbol(result, td, "buffer");
-			result.getActions().add(op("set", buffer.getSymbol(), a0.getSymbol()));
-			result.getActions().add(op("subtract", buffer.getSymbol(), a1.getSymbol()));
+			
+			TypedSymbol v0 = extendSymbol(result, a0, a1.getType());
+			TypedSymbol v1 = extendSymbol(result, a1, a0.getType());
+			
+			TypedSymbol buffer = allocateSymbol(result, v0.getType(), "buffer");
+			result.getActions().add(op("set", buffer.getSymbol(), v0.getSymbol()));
+			result.getActions().add(op("subtract", buffer.getSymbol(), v1.getSymbol()));
 			return buffer;
 		}
 		if ("greater".equals(operation)){
 			TypedSymbol a0 = arguments.get(0);
 			TypedSymbol a1 = arguments.get(1);
+			
+			TypedSymbol v0 = extendSymbol(result, a0, a1.getType());
+			TypedSymbol v1 = extendSymbol(result, a1, a0.getType());
+			
 			TypedSymbol buffer = allocateSymbol(result, createUnsignedTypeDef(1), "buffer");
-			result.getActions().add(op("greater", buffer.getSymbol(), a0.getSymbol(), a1.getSymbol()));
+			result.getActions().add(op("greater", buffer.getSymbol(), v0.getSymbol(), v1.getSymbol()));
 			return buffer;
 		}
 		throw new RuntimeException("Unsupported operation: "+operation);

@@ -3,6 +3,8 @@
  */
 package hu.modembed.utils.compiler;
 
+import org.eclipse.emf.ecore.util.EcoreUtil;
+
 import hu.modembed.model.modembed.abstraction.behavior.SymbolAddressAssignment;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolAllocation;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolAssignment;
@@ -50,6 +52,13 @@ public class TypeSignature {
 			return other.memoryType == null;
 		else
 			return memoryType.equals(other.memoryType);
+	}
+	
+	public static TypeDefinition raw(TypeDefinition td){
+		if (td instanceof ReferenceTypeDefinition){
+			return raw(EcoreUtil.copy(((ReferenceTypeDefinition) td).getType().getDefinition()));
+		}
+		return td;
 	}
 	
 	public static boolean isConstCompatible(TypeDefinition td1, TypeDefinition td2){

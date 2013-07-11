@@ -37,9 +37,9 @@ public class MContentOutlinePage extends ContentOutlinePage implements ITreeCont
 			if (element instanceof EObject){
 				if (((EObject) element).eContainmentFeature() != null){
 					String cont = ((EObject) element).eContainmentFeature().getName();
-					return cont+": "+((EObject) element).eClass().getName();
+					return cont+": "+((EObject) element).eClass().getName()+" (hash: "+element.hashCode()+")";
 				}
-				return ((EObject) element).eClass().getName();
+				return ((EObject) element).eClass().getName()+" (hash: "+element.hashCode()+")";
 			}
 			return super.getText(element);
 		}

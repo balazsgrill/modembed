@@ -3,6 +3,8 @@
  */
 package hu.modembed.utils.compiler;
 
+import org.eclipse.core.runtime.Assert;
+
 import hu.modembed.model.modembed.abstraction.types.TypeDefinition;
 
 /**
@@ -16,6 +18,7 @@ public class TypedSymbol {
 	
 	public TypedSymbol(String symbol, TypeDefinition type) {
 		super();
+		Assert.isNotNull(type, "Symbol '"+symbol+"' does not have a type definition!");
 		this.symbol = symbol;
 		this.type = type;
 	}
