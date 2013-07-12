@@ -172,9 +172,11 @@ public class SequentialBehaviorTranslator {
 		/* Resolve instruction parameter values */
 		for(Entry<InstructionCallParameter, SymbolValue> entry : instructionCallParameterValues.entrySet()){
 			SymbolValue value = entry.getValue();
+			boolean islabel = false;
 			long raw = -1;
 			if (labels.containsKey(value.symbol)){
 				raw = labels.get(value.symbol);
+				islabel = true;
 			}
 			if (values.containsKey(value.symbol)){
 				SymbolAssignment sa = values.get(value.symbol);
@@ -197,6 +199,7 @@ public class SequentialBehaviorTranslator {
 			raw += value.param.getValueOffset();
 			
 			entry.getKey().setValue(raw);
+			entry.getKey().setLabel(islabel);
 		}
 		
 		return asm;

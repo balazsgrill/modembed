@@ -15,6 +15,7 @@ import hu.modembed.model.modembed.infrastructure.MODembedElement;
  * The following features are supported:
  * <ul>
  *   <li>{@link hu.modembed.model.modembed.core.object.InstructionCallParameter#getValue <em>Value</em>}</li>
+ *   <li>{@link hu.modembed.model.modembed.core.object.InstructionCallParameter#isLabel <em>Label</em>}</li>
  *   <li>{@link hu.modembed.model.modembed.core.object.InstructionCallParameter#getDefinition <em>Definition</em>}</li>
  * </ul>
  * </p>
@@ -49,6 +50,31 @@ public interface InstructionCallParameter extends MODembedElement {
 	 * @generated
 	 */
 	void setValue(long value);
+
+	/**
+	 * Returns the value of the '<em><b>Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * If set to true, the given value is parsed as a pointer to another instruction call by its index.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Label</em>' attribute.
+	 * @see #setLabel(boolean)
+	 * @see hu.modembed.model.modembed.core.object.ObjectPackage#getInstructionCallParameter_Label()
+	 * @model
+	 * @generated
+	 */
+	boolean isLabel();
+
+	/**
+	 * Sets the value of the '{@link hu.modembed.model.modembed.core.object.InstructionCallParameter#isLabel <em>Label</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Label</em>' attribute.
+	 * @see #isLabel()
+	 * @generated
+	 */
+	void setLabel(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Definition</b></em>' reference.

@@ -113,6 +113,11 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="InstructionCallParameter" eSuperTypes="#//infrastructure/MODembedElement">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="If set to true, the given value is parsed as a pointer to another instruction call by its index."/>
+          </eAnnotations>
+        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="definition" eType="#//core/instructionset/InstructionParameter"/>
       </eClassifiers>
     </eSubpackages>

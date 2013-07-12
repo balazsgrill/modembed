@@ -241,13 +241,22 @@ public interface ObjectPackage extends EPackage {
 	int INSTRUCTION_CALL_PARAMETER__VALUE = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION_CALL_PARAMETER__LABEL = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Definition</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INSTRUCTION_CALL_PARAMETER__DEFINITION = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 1;
+	int INSTRUCTION_CALL_PARAMETER__DEFINITION = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Instruction Call Parameter</em>' class.
@@ -256,7 +265,7 @@ public interface ObjectPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INSTRUCTION_CALL_PARAMETER_FEATURE_COUNT = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 2;
+	int INSTRUCTION_CALL_PARAMETER_FEATURE_COUNT = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 3;
 
 
 	/**
@@ -343,6 +352,17 @@ public interface ObjectPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getInstructionCallParameter_Value();
+
+	/**
+	 * Returns the meta object for the attribute '{@link hu.modembed.model.modembed.core.object.InstructionCallParameter#isLabel <em>Label</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Label</em>'.
+	 * @see hu.modembed.model.modembed.core.object.InstructionCallParameter#isLabel()
+	 * @see #getInstructionCallParameter()
+	 * @generated
+	 */
+	EAttribute getInstructionCallParameter_Label();
 
 	/**
 	 * Returns the meta object for the reference '{@link hu.modembed.model.modembed.core.object.InstructionCallParameter#getDefinition <em>Definition</em>}'.
@@ -446,6 +466,14 @@ public interface ObjectPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute INSTRUCTION_CALL_PARAMETER__VALUE = eINSTANCE.getInstructionCallParameter_Value();
+
+		/**
+		 * The meta object literal for the '<em><b>Label</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INSTRUCTION_CALL_PARAMETER__LABEL = eINSTANCE.getInstructionCallParameter_Label();
 
 		/**
 		 * The meta object literal for the '<em><b>Definition</b></em>' reference feature.

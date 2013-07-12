@@ -128,6 +128,9 @@ package core{
 
       	class InstructionCallParameter extends infrastructure.MODembedElement {
         	attr long value;
+        	
+        	@GenModel(documentation="If set to true, the given value is parsed as a pointer to another instruction call by its index.")
+        	attr boolean label;
         	ref instructionset.InstructionParameter definition;
       	}
 		

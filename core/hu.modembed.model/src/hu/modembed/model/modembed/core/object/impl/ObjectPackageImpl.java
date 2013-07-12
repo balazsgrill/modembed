@@ -227,8 +227,17 @@ public class ObjectPackageImpl extends EPackageImpl implements ObjectPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getInstructionCallParameter_Label() {
+		return (EAttribute)instructionCallParameterEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getInstructionCallParameter_Definition() {
-		return (EReference)instructionCallParameterEClass.getEStructuralFeatures().get(1);
+		return (EReference)instructionCallParameterEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -269,6 +278,7 @@ public class ObjectPackageImpl extends EPackageImpl implements ObjectPackage {
 
 		instructionCallParameterEClass = createEClass(INSTRUCTION_CALL_PARAMETER);
 		createEAttribute(instructionCallParameterEClass, INSTRUCTION_CALL_PARAMETER__VALUE);
+		createEAttribute(instructionCallParameterEClass, INSTRUCTION_CALL_PARAMETER__LABEL);
 		createEReference(instructionCallParameterEClass, INSTRUCTION_CALL_PARAMETER__DEFINITION);
 	}
 
@@ -319,6 +329,7 @@ public class ObjectPackageImpl extends EPackageImpl implements ObjectPackage {
 
 		initEClass(instructionCallParameterEClass, InstructionCallParameter.class, "InstructionCallParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getInstructionCallParameter_Value(), ecorePackage.getELong(), "value", null, 0, 1, InstructionCallParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getInstructionCallParameter_Label(), ecorePackage.getEBoolean(), "label", null, 0, 1, InstructionCallParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getInstructionCallParameter_Definition(), theInstructionsetPackage.getInstructionParameter(), null, "definition", null, 0, 1, InstructionCallParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
