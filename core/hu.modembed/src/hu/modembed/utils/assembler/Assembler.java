@@ -37,19 +37,38 @@ public class Assembler {
 		HexFile hexfile = HexfileFactory.eINSTANCE.createHexFile();
 		hexfile.setAddressType(AddressType.EXTENDED_LINEAR);
 
-	
 		List<InstructionCall> calls = assem.getInstructions();
 
+		/*
+		 * Pre-calculate addresses of instructionCalls
+		 */
+		long[] addresses = new long[calls.size()];
+		{
+			long currentAddress = startAddress;
+			for(int i=0;i<addresses.length;i++){
+				addresses[i] = currentAddress;
+				currentAddress += calls.get(i).getInstruction().getWords().size();
+			}
+		}
+		
+		
 		List<Integer> bytes = new ArrayList<Integer>();
+		
 		for(InstructionCall call : calls){
 			Map<InstructionParameter, Long> paramvalues = new HashMap<InstructionParameter, Long>();
+			
 
 			Instruction i = call.getInstruction();
 			for(InstructionParameter ip : i.getParameters()){
 				paramvalues.put(ip, Long.valueOf(ip.getDefaultValue()));
 			}
 			for(InstructionCallParameter icp : call.getParameters()){
-				paramvalues.put(icp.getDefinition(), icp.getValue());
+				long value = icp.getValue();
+				if (icp.isLabel()){
+					value = addresses[(int)value];
+				}else{
+					paramvalues.put(icp.getDefinition(), value);
+				}
 			}
 
 			List<InstructionWord> words = i.getWords();
@@ -78,6 +97,7 @@ public class Assembler {
 					long mask = Disassembler.mask(s.getSize(), length);
 					length += s.getSize();
 					wordvalue |= (svalue & mask);
+					
 				}
 
 				int bytenum = ((length-1)/8)+1;
@@ -91,7 +111,6 @@ public class Assembler {
 
 		Entry entry = HexfileFactory.eINSTANCE.createEntry();
 		hexfile.getEntries().add(entry);
-		//entry.setAddress((int)programSections.get(0).getStartAddress());
 		entry.setAddress(startAddress);
 
 		byte[] data = new byte[bytes.size()];
