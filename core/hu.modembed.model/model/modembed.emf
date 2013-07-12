@@ -307,8 +307,28 @@ package abstraction {
       abstract class OperationStep extends infrastructure.MODembedElement {
       }
 
+	  class OperationLocalLabel extends OperationStep, infrastructure.NamedElement{
+	  }
+	  
+	  class ConditionalOperation extends OperationStep{
+	  		ref OperationArgument[1] value;
+	  		attr int bitOffset;
+        	attr int valueOffset;
+        	attr boolean equals;
+        	attr boolean greater;
+        	attr boolean lower;
+        	attr int checkValue;
+        	attr int mask;
+        	
+        	val OperationStep[*] steps;
+	  }
+
 	  abstract class InstructionParameterValue extends infrastructure.MODembedElement {
 	  	
+	  }
+
+	  class LabelParameterValue extends InstructionParameterValue{
+	  		ref OperationLocalLabel[1] label;
 	  }
 
 	  class InstructionParameterConstantValue extends InstructionParameterValue{

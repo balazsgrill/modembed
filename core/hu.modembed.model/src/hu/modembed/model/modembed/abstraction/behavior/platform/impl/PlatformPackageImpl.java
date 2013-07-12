@@ -5,12 +5,15 @@ package hu.modembed.model.modembed.abstraction.behavior.platform.impl;
 import hu.modembed.model.modembed.abstraction.AbstractionPackage;
 import hu.modembed.model.modembed.abstraction.behavior.BehaviorPackage;
 import hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorPackageImpl;
+import hu.modembed.model.modembed.abstraction.behavior.platform.ConditionalOperation;
 import hu.modembed.model.modembed.abstraction.behavior.platform.InstructionCallOperationStep;
 import hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterConstantValue;
 import hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterMapping;
 import hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterValue;
+import hu.modembed.model.modembed.abstraction.behavior.platform.LabelParameterValue;
 import hu.modembed.model.modembed.abstraction.behavior.platform.OperationArgument;
 import hu.modembed.model.modembed.abstraction.behavior.platform.OperationDefinition;
+import hu.modembed.model.modembed.abstraction.behavior.platform.OperationLocalLabel;
 import hu.modembed.model.modembed.abstraction.behavior.platform.OperationStep;
 import hu.modembed.model.modembed.abstraction.behavior.platform.PlatformFactory;
 import hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage;
@@ -76,7 +79,28 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass operationLocalLabelEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass conditionalOperationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass instructionParameterValueEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass labelParameterValueEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -286,8 +310,125 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getOperationLocalLabel() {
+		return operationLocalLabelEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getConditionalOperation() {
+		return conditionalOperationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getConditionalOperation_Value() {
+		return (EReference)conditionalOperationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getConditionalOperation_BitOffset() {
+		return (EAttribute)conditionalOperationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getConditionalOperation_ValueOffset() {
+		return (EAttribute)conditionalOperationEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getConditionalOperation_Equals() {
+		return (EAttribute)conditionalOperationEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getConditionalOperation_Greater() {
+		return (EAttribute)conditionalOperationEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getConditionalOperation_Lower() {
+		return (EAttribute)conditionalOperationEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getConditionalOperation_CheckValue() {
+		return (EAttribute)conditionalOperationEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getConditionalOperation_Mask() {
+		return (EAttribute)conditionalOperationEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getConditionalOperation_Steps() {
+		return (EReference)conditionalOperationEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getInstructionParameterValue() {
 		return instructionParameterValueEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getLabelParameterValue() {
+		return labelParameterValueEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getLabelParameterValue_Label() {
+		return (EReference)labelParameterValueEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -396,7 +537,23 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 
 		operationStepEClass = createEClass(OPERATION_STEP);
 
+		operationLocalLabelEClass = createEClass(OPERATION_LOCAL_LABEL);
+
+		conditionalOperationEClass = createEClass(CONDITIONAL_OPERATION);
+		createEReference(conditionalOperationEClass, CONDITIONAL_OPERATION__VALUE);
+		createEAttribute(conditionalOperationEClass, CONDITIONAL_OPERATION__BIT_OFFSET);
+		createEAttribute(conditionalOperationEClass, CONDITIONAL_OPERATION__VALUE_OFFSET);
+		createEAttribute(conditionalOperationEClass, CONDITIONAL_OPERATION__EQUALS);
+		createEAttribute(conditionalOperationEClass, CONDITIONAL_OPERATION__GREATER);
+		createEAttribute(conditionalOperationEClass, CONDITIONAL_OPERATION__LOWER);
+		createEAttribute(conditionalOperationEClass, CONDITIONAL_OPERATION__CHECK_VALUE);
+		createEAttribute(conditionalOperationEClass, CONDITIONAL_OPERATION__MASK);
+		createEReference(conditionalOperationEClass, CONDITIONAL_OPERATION__STEPS);
+
 		instructionParameterValueEClass = createEClass(INSTRUCTION_PARAMETER_VALUE);
+
+		labelParameterValueEClass = createEClass(LABEL_PARAMETER_VALUE);
+		createEReference(labelParameterValueEClass, LABEL_PARAMETER_VALUE__LABEL);
 
 		instructionParameterConstantValueEClass = createEClass(INSTRUCTION_PARAMETER_CONSTANT_VALUE);
 		createEAttribute(instructionParameterConstantValueEClass, INSTRUCTION_PARAMETER_CONSTANT_VALUE__VALUE);
@@ -446,7 +603,11 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 		operationArgumentEClass.getESuperTypes().add(theInfrastructurePackage.getNamedElement());
 		instructionCallOperationStepEClass.getESuperTypes().add(this.getOperationStep());
 		operationStepEClass.getESuperTypes().add(theInfrastructurePackage.getMODembedElement());
+		operationLocalLabelEClass.getESuperTypes().add(this.getOperationStep());
+		operationLocalLabelEClass.getESuperTypes().add(theInfrastructurePackage.getNamedElement());
+		conditionalOperationEClass.getESuperTypes().add(this.getOperationStep());
 		instructionParameterValueEClass.getESuperTypes().add(theInfrastructurePackage.getMODembedElement());
+		labelParameterValueEClass.getESuperTypes().add(this.getInstructionParameterValue());
 		instructionParameterConstantValueEClass.getESuperTypes().add(this.getInstructionParameterValue());
 		instructionParameterMappingEClass.getESuperTypes().add(this.getInstructionParameterValue());
 
@@ -466,7 +627,23 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 
 		initEClass(operationStepEClass, OperationStep.class, "OperationStep", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		initEClass(operationLocalLabelEClass, OperationLocalLabel.class, "OperationLocalLabel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(conditionalOperationEClass, ConditionalOperation.class, "ConditionalOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getConditionalOperation_Value(), this.getOperationArgument(), null, "value", null, 1, 1, ConditionalOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getConditionalOperation_BitOffset(), ecorePackage.getEInt(), "bitOffset", null, 0, 1, ConditionalOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getConditionalOperation_ValueOffset(), ecorePackage.getEInt(), "valueOffset", null, 0, 1, ConditionalOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getConditionalOperation_Equals(), ecorePackage.getEBoolean(), "equals", null, 0, 1, ConditionalOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getConditionalOperation_Greater(), ecorePackage.getEBoolean(), "greater", null, 0, 1, ConditionalOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getConditionalOperation_Lower(), ecorePackage.getEBoolean(), "lower", null, 0, 1, ConditionalOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getConditionalOperation_CheckValue(), ecorePackage.getEInt(), "checkValue", null, 0, 1, ConditionalOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getConditionalOperation_Mask(), ecorePackage.getEInt(), "mask", null, 0, 1, ConditionalOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConditionalOperation_Steps(), this.getOperationStep(), null, "steps", null, 0, -1, ConditionalOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(instructionParameterValueEClass, InstructionParameterValue.class, "InstructionParameterValue", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(labelParameterValueEClass, LabelParameterValue.class, "LabelParameterValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getLabelParameterValue_Label(), this.getOperationLocalLabel(), null, "label", null, 1, 1, LabelParameterValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(instructionParameterConstantValueEClass, InstructionParameterConstantValue.class, "InstructionParameterConstantValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getInstructionParameterConstantValue_Value(), ecorePackage.getEInt(), "value", null, 1, 1, InstructionParameterConstantValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

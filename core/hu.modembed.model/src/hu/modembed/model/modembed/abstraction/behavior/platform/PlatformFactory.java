@@ -49,6 +49,33 @@ public interface PlatformFactory extends EFactory {
 	InstructionCallOperationStep createInstructionCallOperationStep();
 
 	/**
+	 * Returns a new object of class '<em>Operation Local Label</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Operation Local Label</em>'.
+	 * @generated
+	 */
+	OperationLocalLabel createOperationLocalLabel();
+
+	/**
+	 * Returns a new object of class '<em>Conditional Operation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Conditional Operation</em>'.
+	 * @generated
+	 */
+	ConditionalOperation createConditionalOperation();
+
+	/**
+	 * Returns a new object of class '<em>Label Parameter Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Label Parameter Value</em>'.
+	 * @generated
+	 */
+	LabelParameterValue createLabelParameterValue();
+
+	/**
 	 * Returns a new object of class '<em>Instruction Parameter Constant Value</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

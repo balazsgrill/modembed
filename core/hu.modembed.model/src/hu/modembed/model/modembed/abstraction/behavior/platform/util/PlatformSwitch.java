@@ -103,10 +103,35 @@ public class PlatformSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case PlatformPackage.OPERATION_LOCAL_LABEL: {
+				OperationLocalLabel operationLocalLabel = (OperationLocalLabel)theEObject;
+				T result = caseOperationLocalLabel(operationLocalLabel);
+				if (result == null) result = caseOperationStep(operationLocalLabel);
+				if (result == null) result = caseNamedElement(operationLocalLabel);
+				if (result == null) result = caseMODembedElement(operationLocalLabel);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PlatformPackage.CONDITIONAL_OPERATION: {
+				ConditionalOperation conditionalOperation = (ConditionalOperation)theEObject;
+				T result = caseConditionalOperation(conditionalOperation);
+				if (result == null) result = caseOperationStep(conditionalOperation);
+				if (result == null) result = caseMODembedElement(conditionalOperation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case PlatformPackage.INSTRUCTION_PARAMETER_VALUE: {
 				InstructionParameterValue instructionParameterValue = (InstructionParameterValue)theEObject;
 				T result = caseInstructionParameterValue(instructionParameterValue);
 				if (result == null) result = caseMODembedElement(instructionParameterValue);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PlatformPackage.LABEL_PARAMETER_VALUE: {
+				LabelParameterValue labelParameterValue = (LabelParameterValue)theEObject;
+				T result = caseLabelParameterValue(labelParameterValue);
+				if (result == null) result = caseInstructionParameterValue(labelParameterValue);
+				if (result == null) result = caseMODembedElement(labelParameterValue);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -191,6 +216,36 @@ public class PlatformSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Operation Local Label</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Operation Local Label</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOperationLocalLabel(OperationLocalLabel object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Conditional Operation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Conditional Operation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseConditionalOperation(ConditionalOperation object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Instruction Parameter Value</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -202,6 +257,21 @@ public class PlatformSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseInstructionParameterValue(InstructionParameterValue object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Label Parameter Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Label Parameter Value</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLabelParameterValue(LabelParameterValue object) {
 		return null;
 	}
 

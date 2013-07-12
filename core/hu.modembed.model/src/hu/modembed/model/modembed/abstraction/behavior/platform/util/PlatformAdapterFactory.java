@@ -90,8 +90,20 @@ public class PlatformAdapterFactory extends AdapterFactoryImpl {
 				return createOperationStepAdapter();
 			}
 			@Override
+			public Adapter caseOperationLocalLabel(OperationLocalLabel object) {
+				return createOperationLocalLabelAdapter();
+			}
+			@Override
+			public Adapter caseConditionalOperation(ConditionalOperation object) {
+				return createConditionalOperationAdapter();
+			}
+			@Override
 			public Adapter caseInstructionParameterValue(InstructionParameterValue object) {
 				return createInstructionParameterValueAdapter();
+			}
+			@Override
+			public Adapter caseLabelParameterValue(LabelParameterValue object) {
+				return createLabelParameterValueAdapter();
 			}
 			@Override
 			public Adapter caseInstructionParameterConstantValue(InstructionParameterConstantValue object) {
@@ -186,6 +198,34 @@ public class PlatformAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.modembed.abstraction.behavior.platform.OperationLocalLabel <em>Operation Local Label</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.OperationLocalLabel
+	 * @generated
+	 */
+	public Adapter createOperationLocalLabelAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.modembed.abstraction.behavior.platform.ConditionalOperation <em>Conditional Operation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.ConditionalOperation
+	 * @generated
+	 */
+	public Adapter createConditionalOperationAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterValue <em>Instruction Parameter Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -196,6 +236,20 @@ public class PlatformAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createInstructionParameterValueAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.modembed.abstraction.behavior.platform.LabelParameterValue <em>Label Parameter Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.LabelParameterValue
+	 * @generated
+	 */
+	public Adapter createLabelParameterValueAdapter() {
 		return null;
 	}
 

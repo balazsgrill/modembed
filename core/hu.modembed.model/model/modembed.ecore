@@ -284,8 +284,26 @@
         </eClassifiers>
         <eClassifiers xsi:type="ecore:EClass" name="OperationStep" abstract="true"
             eSuperTypes="#//infrastructure/MODembedElement"/>
+        <eClassifiers xsi:type="ecore:EClass" name="OperationLocalLabel" eSuperTypes="#//abstraction/behavior/platform/OperationStep #//infrastructure/NamedElement"/>
+        <eClassifiers xsi:type="ecore:EClass" name="ConditionalOperation" eSuperTypes="#//abstraction/behavior/platform/OperationStep">
+          <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1"
+              eType="#//abstraction/behavior/platform/OperationArgument"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="bitOffset" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="valueOffset" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="equals" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="greater" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="lower" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="checkValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="mask" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="steps" upperBound="-1"
+              eType="#//abstraction/behavior/platform/OperationStep" containment="true"/>
+        </eClassifiers>
         <eClassifiers xsi:type="ecore:EClass" name="InstructionParameterValue" abstract="true"
             eSuperTypes="#//infrastructure/MODembedElement"/>
+        <eClassifiers xsi:type="ecore:EClass" name="LabelParameterValue" eSuperTypes="#//abstraction/behavior/platform/InstructionParameterValue">
+          <eStructuralFeatures xsi:type="ecore:EReference" name="label" lowerBound="1"
+              eType="#//abstraction/behavior/platform/OperationLocalLabel"/>
+        </eClassifiers>
         <eClassifiers xsi:type="ecore:EClass" name="InstructionParameterConstantValue"
             eSuperTypes="#//abstraction/behavior/platform/InstructionParameterValue">
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1"

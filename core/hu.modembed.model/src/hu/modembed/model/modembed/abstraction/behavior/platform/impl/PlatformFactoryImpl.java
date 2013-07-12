@@ -59,6 +59,9 @@ public class PlatformFactoryImpl extends EFactoryImpl implements PlatformFactory
 			case PlatformPackage.OPERATION_DEFINITION: return createOperationDefinition();
 			case PlatformPackage.OPERATION_ARGUMENT: return createOperationArgument();
 			case PlatformPackage.INSTRUCTION_CALL_OPERATION_STEP: return createInstructionCallOperationStep();
+			case PlatformPackage.OPERATION_LOCAL_LABEL: return createOperationLocalLabel();
+			case PlatformPackage.CONDITIONAL_OPERATION: return createConditionalOperation();
+			case PlatformPackage.LABEL_PARAMETER_VALUE: return createLabelParameterValue();
 			case PlatformPackage.INSTRUCTION_PARAMETER_CONSTANT_VALUE: return createInstructionParameterConstantValue();
 			case PlatformPackage.INSTRUCTION_PARAMETER_MAPPING: return createInstructionParameterMapping();
 			default:
@@ -94,6 +97,36 @@ public class PlatformFactoryImpl extends EFactoryImpl implements PlatformFactory
 	public InstructionCallOperationStep createInstructionCallOperationStep() {
 		InstructionCallOperationStepImpl instructionCallOperationStep = new InstructionCallOperationStepImpl();
 		return instructionCallOperationStep;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OperationLocalLabel createOperationLocalLabel() {
+		OperationLocalLabelImpl operationLocalLabel = new OperationLocalLabelImpl();
+		return operationLocalLabel;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ConditionalOperation createConditionalOperation() {
+		ConditionalOperationImpl conditionalOperation = new ConditionalOperationImpl();
+		return conditionalOperation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public LabelParameterValue createLabelParameterValue() {
+		LabelParameterValueImpl labelParameterValue = new LabelParameterValueImpl();
+		return labelParameterValue;
 	}
 
 	/**
