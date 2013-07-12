@@ -34,6 +34,23 @@ package infrastructure{
 		}
 	}
 	
+	@namespace(uri="http://modembed.hu/infrastructure/expressions", prefix="expressions")
+	package expressions{
+		
+		abstract class Expression{
+			
+		}
+		
+		class IntegerConstantExpression extends Expression{
+			attr long[1] value;
+		}
+		
+		class OperationExpression extends Expression{
+			attr String[1] operation;
+			val Expression[*] arguments;
+		}
+		
+	}
 	
 	abstract class NamedElement extends MODembedElement{
 		
