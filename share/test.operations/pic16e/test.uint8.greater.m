@@ -20,3 +20,9 @@ test2(){
 	set(v2, const5)
 	greater(r, v1, v2)
 }
+
+test3(){
+	set(v1, const5)
+	set(v2, const5)
+	greater(r, v1, v2)
+}

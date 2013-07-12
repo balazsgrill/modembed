@@ -66,4 +66,12 @@ public class SimulatorTests {
 		Assert.assertEquals(0, r);
 	}
 	
+	@Test
+	public void pic16e_uint8_greater_test3() throws Exception{
+		DeviceSimulator simulator = test_operation("test3");
+		
+		long r = simulator.getSymbolValue("r");
+		Assert.assertEquals(0, r);
+	}
+	
 }

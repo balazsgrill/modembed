@@ -10,7 +10,7 @@
       <project
             archive="shared/example.ledblink.zip"
             category="hu.modembed.pic.examples.category"
-            id="e.examples.blink"
+            id="example.ledblink"
             name="LED blinker example">
          <dependency
                project="e.core">

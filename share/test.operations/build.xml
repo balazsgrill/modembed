@@ -29,4 +29,8 @@
 		<produce file="pic16e/test.uint8.greater.m" test="test2"/>
 	</target>
 	
+	<target name="test3">
+		<produce file="pic16e/test.uint8.greater.m" test="test3"/>
+	</target>
+	
 </project>
