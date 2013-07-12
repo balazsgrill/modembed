@@ -122,7 +122,7 @@ public abstract class PIC16Core implements ICore{
 	
 	public void BTFSC(long f, long b){
 		int v = memory().getValue(bank(f));
-		int bit = (int)(2^b);
+		int bit = (int)(1<<b);
 		boolean set = (v & bit) != 0;
 		
 		if (!set){
