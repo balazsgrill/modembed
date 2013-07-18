@@ -145,4 +145,18 @@ public abstract class PIC16Core implements ICore{
 	public void MOVWF(long f){
 		memory().setValue(bank(f), W().get());
 	}
+	
+	public void BCF(long f, long b){
+		long v = memory().getValue(bank(f));
+		long mask = (~(1<<b)) & 0xFF;
+		v = v & mask;
+		memory().setValue(bank(f), (int) v);
+	}
+	
+	public void BSF(long f, long b){
+		long v = memory().getValue(bank(f));
+		long mask = (1<<b);
+		v = (v | mask) & 0xFF;
+		memory().setValue(bank(f), (int) v);
+	}
 }

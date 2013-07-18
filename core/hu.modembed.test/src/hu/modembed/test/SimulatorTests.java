@@ -78,40 +78,40 @@ public class SimulatorTests {
 	public void test4() throws Exception{
 		DeviceSimulator simulator = test_operation("test4");
 		
-		long r = simulator.getSymbolValue("r");
-		Assert.assertEquals(0, r);
 		long v = simulator.getSymbolValue("v");
 		Assert.assertEquals(254, v);
+		long r = simulator.getSymbolValue("r");
+		Assert.assertEquals(0, r);
 	}
 	
 	@Test
 	public void test5() throws Exception{
 		DeviceSimulator simulator = test_operation("test5");
 		
-		long r = simulator.getSymbolValue("r");
-		Assert.assertEquals(1, r);
 		long v = simulator.getSymbolValue("v");
 		Assert.assertEquals(247, v);
+		long r = simulator.getSymbolValue("r");
+		Assert.assertEquals(1, r);
 	}
 	
 	@Test
 	public void test6() throws Exception{
 		DeviceSimulator simulator = test_operation("test6");
 		
-		long r = simulator.getSymbolValue("r");
-		Assert.assertEquals(1, r);
 		long v = simulator.getSymbolValue("v");
 		Assert.assertEquals(1, v);
+		long r = simulator.getSymbolValue("r");
+		Assert.assertEquals(1, r);
 	}
 	
 	@Test
 	public void test7() throws Exception{
 		DeviceSimulator simulator = test_operation("test7");
 		
-		long r = simulator.getSymbolValue("r");
-		Assert.assertEquals(0, r);
 		long v = simulator.getSymbolValue("v");
 		Assert.assertEquals(8, v);
+		long r = simulator.getSymbolValue("r");
+		Assert.assertEquals(0, r);
 	}
 	
 }
