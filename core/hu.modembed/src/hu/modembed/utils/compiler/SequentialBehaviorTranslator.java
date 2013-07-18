@@ -32,8 +32,11 @@ import hu.modembed.model.modembed.infrastructure.expressions.Expression;
 import hu.modembed.utils.expressions.ExpressionResolveException;
 import hu.modembed.utils.expressions.ExpressionResolver;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -47,21 +50,52 @@ public class SequentialBehaviorTranslator {
 
 	protected class SymbolAddressExpressionResolver extends ExpressionResolver{
 	
-		private final SymbolAddressAssignment addressAssignment;
+		public final Map<String, SymbolAssignment> values = new HashMap<String, SymbolAssignment>();
+		public final Map<String, Long> labels = new HashMap<String, Long>(); 
 		
-		public SymbolAddressExpressionResolver(SymbolAddressAssignment addressAssignment) {
-			this.addressAssignment = addressAssignment;
+		private Map<OperationArgument, String> context = Collections.emptyMap();
+		public boolean isLabel = false;
+		
+		public void setContext(Map<OperationArgument, String> context) {
+			this.context = context;
 		}
 		
-		public Object compute(InstructionParameterMapping ipm){
-			AttributeDefinition attr = ipm.getAttribute(); 
-			if (attr != null){
-				MemoryInstance memi = addressAssignment.getMemoryInstance();
-				Assert.isNotNull(memi);
-				return getAttributeValue(memi.getAttributes(), attr);
-			}else{
-				return addressAssignment.getAddress();
+		
+		public SymbolAddressExpressionResolver() {
+			
+		}
+		
+//		public Object compute(LabelParameterValue lbl){
+//			//TODO: OperationLocalLabels
+//			return null;
+//		}
+		
+		public Object compute(InstructionParameterMapping ipm) throws ExpressionResolveException{
+			String symbol = context.get(ipm.getValue());
+			
+			if (labels.containsKey(symbol)){
+				isLabel = true;
+				return labels.get(symbol);
 			}
+			if (values.containsKey(symbol)){
+				SymbolAssignment sa = values.get(symbol);
+				if (sa instanceof SymbolValueAssignment){
+					return ((SymbolValueAssignment) sa).getValue();
+				}
+				if (sa instanceof SymbolAddressAssignment){
+					AttributeDefinition attr = ipm.getAttribute(); 
+					if (attr != null){
+						MemoryInstance memi = ((SymbolAddressAssignment)sa).getMemoryInstance();
+						Assert.isNotNull(memi);
+						return getAttributeValue(memi.getAttributes(), attr);
+					}else{
+						return ((SymbolAddressAssignment)sa).getAddress();
+					}
+				}
+			}
+			
+			throw new ExpressionResolveException("Could not resolve "+symbol+" ("+ipm+")");
+			
 		}
 		
 	}
@@ -95,33 +129,40 @@ public class SequentialBehaviorTranslator {
 		
 	}
 	
-	private class SymbolValue{
-		public final String symbol;
-		public final Expression param;
+	class ValueInContext{
 		
-		public SymbolValue(String symbol, Expression param) {
-			this.symbol = symbol;
-			this.param = param;
+		public final Expression value;
+		public final InstructionCallParameter holder;
+		public final Map<OperationArgument, String> context;
+		
+		public ValueInContext(Expression value,
+				InstructionCallParameter holder,
+				Map<OperationArgument, String> context) {
+			super();
+			this.value = value;
+			this.holder = holder;
+			this.context = context;
 		}
+		
 		
 	}
 	
-	
 	public AssemblerObject translate(RootSequentialBehavior sequentialBehavior, SymbolMap map, long startAddress) throws ExpressionResolveException{
+		
+		SymbolAddressExpressionResolver resolver = new SymbolAddressExpressionResolver();
 		
 		Assert.isNotNull(sequentialBehavior.getDevice());
 		OperationRegistry registry = new OperationRegistry(sequentialBehavior.getDevice());
 		
-		Map<String, SymbolAssignment> values = new HashMap<String, SymbolAssignment>();
-		Map<String, Long> labels = new HashMap<String, Long>(); 
-		Map<InstructionCallParameter, SymbolValue> instructionCallParameterValues = new LinkedHashMap<InstructionCallParameter, SequentialBehaviorTranslator.SymbolValue>();
+		
+		List<ValueInContext> instructionCallParameterValues = new LinkedList<SequentialBehaviorTranslator.ValueInContext>();
 		
 		for(SymbolAssignment sa : sequentialBehavior.getLocalSymbols()){
-			values.put(sa.getSymbol(), sa);
+			resolver.values.put(sa.getSymbol(), sa);
 		}
 		if (map != null){
 			for(SymbolAddressAssignment saa : map.getSymbolMappings()){
-				values.put(saa.getSymbol(), saa);
+				resolver.values.put(saa.getSymbol(), saa);
 			}
 		}
 		
@@ -129,7 +170,7 @@ public class SequentialBehaviorTranslator {
 			if (action instanceof CodeSymbolPlacement){
 				SymbolAllocation labelAlloc = BehaviorFactory.eINSTANCE.createSymbolAllocation();
 				labelAlloc.setType(TypesFactory.eINSTANCE.createCodeLabelTypeDefinition());
-				values.put(((CodeSymbolPlacement) action).getSymbol(), labelAlloc);
+				resolver.values.put(((CodeSymbolPlacement) action).getSymbol(), labelAlloc);
 			}
 		}
 		
@@ -139,7 +180,7 @@ public class SequentialBehaviorTranslator {
 		for(SequentialAction action : sequentialBehavior.getActions()){
 			if (action instanceof CodeSymbolPlacement){
 				String symbol = ((CodeSymbolPlacement) action).getSymbol();
-				labels.put(symbol, startAddress + asm.getInstructions().size());
+				resolver.labels.put(symbol, startAddress + asm.getInstructions().size());
 			}
 			if (action instanceof OperationExecution){
 				/* Calculate operatin signature */
@@ -147,7 +188,7 @@ public class SequentialBehaviorTranslator {
 				String operation = op.getOperation();
 				TypeSignature[] arguments = new TypeSignature[op.getArguments().size()];
 				for(int i=0;i<arguments.length;i++){
-					SymbolAssignment argSymbol = values.get(op.getArguments().get(i));
+					SymbolAssignment argSymbol = resolver.values.get(op.getArguments().get(i));
 					arguments[i] = TypeSignature.create(argSymbol);
 				}
 				
@@ -177,14 +218,8 @@ public class SequentialBehaviorTranslator {
 							icp.setDefinition(ic.getInstruction().getParameters().get(i));
 							i++;
 							ic.getParameters().add(icp);
-							//if (ipv instanceof InstructionParameterMapping){
-								InstructionParameterMapping ipm = (InstructionParameterMapping)ipv;
-								String symbol = argumentSymbols.get(ipm.getValue());
-								instructionCallParameterValues.put(icp, new SymbolValue(symbol, ipv));
-							//}
-//							if (ipv instanceof InstructionParameterConstantValue){
-//								icp.setValue(((InstructionParameterConstantValue) ipv).getValue());
-//							}
+						
+							instructionCallParameterValues.add(new ValueInContext(ipv, icp, argumentSymbols));
 						}
 					}
 				}
@@ -193,27 +228,20 @@ public class SequentialBehaviorTranslator {
 		}
 		
 		/* Resolve instruction parameter values */
-		for(Entry<InstructionCallParameter, SymbolValue> entry : instructionCallParameterValues.entrySet()){
-			SymbolValue value = entry.getValue();
-			boolean islabel = false;
+		for(ValueInContext value : instructionCallParameterValues){
+			
+			resolver.setContext(value.context);
+			resolver.isLabel = false;
+			
+			Object o = resolver.computeValue(value.value);
 			long raw = -1;
-			if (labels.containsKey(value.symbol)){
-				raw = labels.get(value.symbol);
-				islabel = true;
-			}
-			if (values.containsKey(value.symbol)){
-				SymbolAssignment sa = values.get(value.symbol);
-				if (sa instanceof SymbolValueAssignment){
-					raw = ((SymbolValueAssignment) sa).getValue();
-				}
-				if (sa instanceof SymbolAddressAssignment){
-					ExpressionResolver resolver = new SymbolAddressExpressionResolver((SymbolAddressAssignment)sa);
-					raw = (Long)resolver.computeValue(value.param);
-				}
+			if (o instanceof Number){
+				raw = ((Number) o).longValue();
 			}
 			
-			entry.getKey().setValue(raw);
-			entry.getKey().setLabel(islabel);
+			
+			value.holder.setValue(raw);
+			value.holder.setLabel(resolver.isLabel);
 		}
 		
 		return asm;

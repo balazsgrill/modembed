@@ -7,6 +7,7 @@ import hu.modembed.includedcode.IncludedProject;
 import hu.modembed.includedcode.IncludedProjectsRegistry;
 
 import java.io.IOException;
+import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.ant.core.AntRunner;
@@ -106,15 +107,15 @@ public class ModembedTests {
 		}
 		root.refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
 
-		List<IncludedProject> projects = IncludedProjectsRegistry.getInstance().getAllProjectsByCategory(TEST_CATEGORY);
-		projects = IncludedProjectsRegistry.getInstance().resolveDependencies(projects);
-		
-		//Import projects
-		for(IncludedProject ip : projects){
-			System.out.println("Importing "+ip.getName());
-			CreateProjectInWorkspaceTask task = new CreateProjectInWorkspaceTask(ip);
-			task.run(new NullProgressMonitor());
-		}
+//		List<IncludedProject> projects = IncludedProjectsRegistry.getInstance().getAllProjectsByCategory(TEST_CATEGORY);
+//		projects = IncludedProjectsRegistry.getInstance().resolveDependencies(projects);
+//		
+//		//Import projects
+//		for(IncludedProject ip : projects){
+//			System.out.println("Importing "+ip.getName());
+//			CreateProjectInWorkspaceTask task = new CreateProjectInWorkspaceTask(ip);
+//			task.run(new NullProgressMonitor());
+//		}
 		
 		build();
 	}
@@ -148,6 +149,17 @@ public class ModembedTests {
 	}
 	
 	public static IProject loadProject(String testID) throws CoreException{
+		IncludedProject testp = IncludedProjectsRegistry.getInstance().getProject(testID);
+		List<IncludedProject> projects = IncludedProjectsRegistry.getInstance().resolveDependencies(Collections.singleton(testp));
+		//Import projects
+		for(IncludedProject ip : projects){
+			System.out.println("Importing "+ip.getName());
+			CreateProjectInWorkspaceTask task = new CreateProjectInWorkspaceTask(ip);
+			task.run(new NullProgressMonitor());
+		}
+
+		
+		
 		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
 		root.refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
 		
