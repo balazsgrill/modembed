@@ -51,7 +51,7 @@ public class SimulatorTests {
 	}
 	
 	@Test
-	public void pic16e_uint8_greater_test1() throws Exception{
+	public void test1() throws Exception{
 		DeviceSimulator simulator = test_operation("test1");
 		
 		long r = simulator.getSymbolValue("r");
@@ -59,7 +59,7 @@ public class SimulatorTests {
 	}
 	
 	@Test
-	public void pic16e_uint8_greater_test2() throws Exception{
+	public void test2() throws Exception{
 		DeviceSimulator simulator = test_operation("test2");
 		
 		long r = simulator.getSymbolValue("r");
@@ -67,11 +67,51 @@ public class SimulatorTests {
 	}
 	
 	@Test
-	public void pic16e_uint8_greater_test3() throws Exception{
+	public void test3() throws Exception{
 		DeviceSimulator simulator = test_operation("test3");
 		
 		long r = simulator.getSymbolValue("r");
 		Assert.assertEquals(0, r);
+	}
+	
+	@Test
+	public void test4() throws Exception{
+		DeviceSimulator simulator = test_operation("test4");
+		
+		long r = simulator.getSymbolValue("r");
+		Assert.assertEquals(0, r);
+		long v = simulator.getSymbolValue("v");
+		Assert.assertEquals(254, v);
+	}
+	
+	@Test
+	public void test5() throws Exception{
+		DeviceSimulator simulator = test_operation("test5");
+		
+		long r = simulator.getSymbolValue("r");
+		Assert.assertEquals(1, r);
+		long v = simulator.getSymbolValue("v");
+		Assert.assertEquals(247, v);
+	}
+	
+	@Test
+	public void test6() throws Exception{
+		DeviceSimulator simulator = test_operation("test6");
+		
+		long r = simulator.getSymbolValue("r");
+		Assert.assertEquals(1, r);
+		long v = simulator.getSymbolValue("v");
+		Assert.assertEquals(1, v);
+	}
+	
+	@Test
+	public void test7() throws Exception{
+		DeviceSimulator simulator = test_operation("test7");
+		
+		long r = simulator.getSymbolValue("r");
+		Assert.assertEquals(0, r);
+		long v = simulator.getSymbolValue("v");
+		Assert.assertEquals(8, v);
 	}
 	
 }

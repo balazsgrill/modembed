@@ -14,10 +14,12 @@ import hu.modembed.model.modembed.abstraction.behavior.SymbolAllocation;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolAssignment;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolMap;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolValueAssignment;
+import hu.modembed.model.modembed.abstraction.behavior.platform.ConditionalOperation;
 import hu.modembed.model.modembed.abstraction.behavior.platform.InstructionCallOperationStep;
 import hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterMapping;
 import hu.modembed.model.modembed.abstraction.behavior.platform.OperationArgument;
 import hu.modembed.model.modembed.abstraction.behavior.platform.OperationDefinition;
+import hu.modembed.model.modembed.abstraction.behavior.platform.OperationLocalLabel;
 import hu.modembed.model.modembed.abstraction.behavior.platform.OperationStep;
 import hu.modembed.model.modembed.abstraction.memorymodel.MemoryInstance;
 import hu.modembed.model.modembed.abstraction.types.TypesFactory;
@@ -206,23 +208,7 @@ public class SequentialBehaviorTranslator {
 				}
 				
 				/* Insert operation implementation into code */
-				for(OperationStep step : opdef.getSteps()){
-					if (step instanceof InstructionCallOperationStep){
-						InstructionCallOperationStep icstep = (InstructionCallOperationStep)step;
-						InstructionCall ic = ObjectFactory.eINSTANCE.createInstructionCall();
-						ic.setInstruction(icstep.getInstruction());
-						asm.getInstructions().add(ic);
-						int i=0;
-						for(Expression ipv : ((InstructionCallOperationStep) step).getArguments()){
-							InstructionCallParameter icp = ObjectFactory.eINSTANCE.createInstructionCallParameter();
-							icp.setDefinition(ic.getInstruction().getParameters().get(i));
-							i++;
-							ic.getParameters().add(icp);
-						
-							instructionCallParameterValues.add(new ValueInContext(ipv, icp, argumentSymbols));
-						}
-					}
-				}
+				putOperations(asm, resolver, opdef.getSteps(), startAddress, instructionCallParameterValues, argumentSymbols);
 				
 			}
 		}
@@ -245,6 +231,40 @@ public class SequentialBehaviorTranslator {
 		}
 		
 		return asm;
+	}
+	
+	private void putOperations(AssemblerObject asm, SymbolAddressExpressionResolver resolver, 
+			List<OperationStep> steps, long startAddress, List<ValueInContext> instructionCallParameterValues, 
+			Map<OperationArgument, String> argumentSymbols) throws ExpressionResolveException{
+		for(OperationStep step : steps){
+			if (step instanceof OperationLocalLabel){
+				String symbol = ((OperationLocalLabel) step).getName();
+				resolver.labels.put(symbol, startAddress + asm.getInstructions().size());
+			}
+			if (step instanceof InstructionCallOperationStep){
+				InstructionCallOperationStep icstep = (InstructionCallOperationStep)step;
+				InstructionCall ic = ObjectFactory.eINSTANCE.createInstructionCall();
+				ic.setInstruction(icstep.getInstruction());
+				asm.getInstructions().add(ic);
+				int i=0;
+				for(Expression ipv : ((InstructionCallOperationStep) step).getArguments()){
+					InstructionCallParameter icp = ObjectFactory.eINSTANCE.createInstructionCallParameter();
+					icp.setDefinition(ic.getInstruction().getParameters().get(i));
+					i++;
+					ic.getParameters().add(icp);
+				
+					instructionCallParameterValues.add(new ValueInContext(ipv, icp, argumentSymbols));
+				}
+			}
+			if (step instanceof ConditionalOperation){
+				Expression e = ((ConditionalOperation) step).getCondition();
+				resolver.setContext(argumentSymbols);
+				long v = (Long) resolver.computeValue(e);
+				if (v > 0){
+					putOperations(asm, resolver, ((ConditionalOperation) step).getSteps(), startAddress, instructionCallParameterValues, argumentSymbols);
+				}
+			}
+		}
 	}
 	
 	private Long getAttributeValue(AttributeValueContainer value, AttributeDefinition adef){

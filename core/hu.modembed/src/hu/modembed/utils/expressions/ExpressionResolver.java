@@ -58,5 +58,8 @@ public class ExpressionResolver {
 		return v1+v2;
 	}
 	
+	public long equals(Long v1, Long v2){
+		return v1==v2 ? 1 : 0;
+	}
 	
 }

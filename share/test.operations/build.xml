@@ -33,4 +33,20 @@
 		<produce file="pic16e/test.uint8.greater.m" test="test3"/>
 	</target>
 	
+	<target name="test4">
+		<produce file="pic16e/test.bitops.m" test="test1"/>
+	</target>
+	
+	<target name="test5">
+		<produce file="pic16e/test.bitops.m" test="test2"/>
+	</target>
+	
+	<target name="test6">
+		<produce file="pic16e/test.bitops.m" test="test3"/>
+	</target>
+	
+	<target name="test7">
+		<produce file="pic16e/test.bitops.m" test="test4"/>
+	</target>
+	
 </project>
