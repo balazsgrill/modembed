@@ -69,9 +69,9 @@ terminal OP_ATTR "->";
 					
 <OperationStep> :- steps={"http://modembed.hu/abstraction/behavior/platform#OperationLocalLabel" name=IDENTIFIER OP_COLON };					
 					
-<OperatonStep> :- KW_IF steps={"http://modembed.hu/abstraction/behavior/platform#ConditionalOperation" condition=<Expression> OP_OPEN <OperationStep>*? OP_CLOSE };
+<OperationStep> :- KW_IF steps={"http://modembed.hu/abstraction/behavior/platform#ConditionalOperation" condition=<Expression> OP_OPEN <OperationStep>*? OP_CLOSE };
 
-<InstructionParameterMappings> :- <Expression> <InstructionParameterMappings2>*? ;
+<InstructionParameterMappings> :- arguments=<Expression> <InstructionParameterMappings2>*? ;
 <InstructionParameterMappings2> :- OP_COMMA arguments=<Expression>;
 
 <Expression0> :- OP_AT {"http://modembed.hu/abstraction/behavior/platform#LabelParameterValue" label=IDENTIFIER };
