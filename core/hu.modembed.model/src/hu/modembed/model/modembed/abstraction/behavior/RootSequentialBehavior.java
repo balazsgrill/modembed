@@ -3,6 +3,7 @@
 package hu.modembed.model.modembed.abstraction.behavior;
 
 import hu.modembed.model.modembed.abstraction.DeviceAbstraction;
+
 import hu.modembed.model.modembed.infrastructure.RootElement;
 
 /**
@@ -22,7 +23,6 @@ import hu.modembed.model.modembed.infrastructure.RootElement;
  * @generated
  */
 public interface RootSequentialBehavior extends RootElement, SequentialBehavior {
-
 	/**
 	 * Returns the value of the '<em><b>Device</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -48,4 +48,5 @@ public interface RootSequentialBehavior extends RootElement, SequentialBehavior 
 	 * @generated
 	 */
 	void setDevice(DeviceAbstraction value);
+
 } // RootSequentialBehavior

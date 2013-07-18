@@ -3,6 +3,7 @@
 package hu.modembed.model.modembed.infrastructure.impl;
 
 import hu.modembed.model.modembed.abstraction.AbstractionPackage;
+
 import hu.modembed.model.modembed.abstraction.behavior.BehaviorPackage;
 
 import hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorPackageImpl;
@@ -12,8 +13,11 @@ import hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage;
 import hu.modembed.model.modembed.abstraction.behavior.platform.impl.PlatformPackageImpl;
 
 import hu.modembed.model.modembed.abstraction.impl.AbstractionPackageImpl;
+
 import hu.modembed.model.modembed.abstraction.memorymodel.MemorymodelPackage;
+
 import hu.modembed.model.modembed.abstraction.memorymodel.impl.MemorymodelPackageImpl;
+
 import hu.modembed.model.modembed.abstraction.types.TypesPackage;
 
 import hu.modembed.model.modembed.abstraction.types.impl.TypesPackageImpl;
@@ -37,12 +41,18 @@ import hu.modembed.model.modembed.infrastructure.MODembedElement;
 import hu.modembed.model.modembed.infrastructure.NamedElement;
 import hu.modembed.model.modembed.infrastructure.RootElement;
 
+import hu.modembed.model.modembed.infrastructure.expressions.ExpressionsPackage;
+
+import hu.modembed.model.modembed.infrastructure.expressions.impl.ExpressionsPackageImpl;
+
 import hu.modembed.model.modembed.infrastructure.traceability.TraceabilityPackage;
 
 import hu.modembed.model.modembed.infrastructure.traceability.impl.TraceabilityPackageImpl;
 
 import hu.modembed.model.modembed.structured.StructuredPackage;
+
 import hu.modembed.model.modembed.structured.impl.StructuredPackageImpl;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -161,6 +171,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 
 		// Obtain or create and register interdependencies
 		TraceabilityPackageImpl theTraceabilityPackage = (TraceabilityPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TraceabilityPackage.eNS_URI) instanceof TraceabilityPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TraceabilityPackage.eNS_URI) : TraceabilityPackage.eINSTANCE);
+		ExpressionsPackageImpl theExpressionsPackage = (ExpressionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI) instanceof ExpressionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI) : ExpressionsPackage.eINSTANCE);
 		InstructionsetPackageImpl theInstructionsetPackage = (InstructionsetPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InstructionsetPackage.eNS_URI) instanceof InstructionsetPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InstructionsetPackage.eNS_URI) : InstructionsetPackage.eINSTANCE);
 		ObjectPackageImpl theObjectPackage = (ObjectPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ObjectPackage.eNS_URI) instanceof ObjectPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ObjectPackage.eNS_URI) : ObjectPackage.eINSTANCE);
 		AbstractionPackageImpl theAbstractionPackage = (AbstractionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AbstractionPackage.eNS_URI) instanceof AbstractionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AbstractionPackage.eNS_URI) : AbstractionPackage.eINSTANCE);
@@ -173,6 +184,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 		// Create package meta-data objects
 		theInfrastructurePackage.createPackageContents();
 		theTraceabilityPackage.createPackageContents();
+		theExpressionsPackage.createPackageContents();
 		theInstructionsetPackage.createPackageContents();
 		theObjectPackage.createPackageContents();
 		theAbstractionPackage.createPackageContents();
@@ -185,6 +197,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 		// Initialize created meta-data
 		theInfrastructurePackage.initializePackageContents();
 		theTraceabilityPackage.initializePackageContents();
+		theExpressionsPackage.initializePackageContents();
 		theInstructionsetPackage.initializePackageContents();
 		theObjectPackage.initializePackageContents();
 		theAbstractionPackage.initializePackageContents();
@@ -455,9 +468,11 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 
 		// Obtain other dependent packages
 		TraceabilityPackage theTraceabilityPackage = (TraceabilityPackage)EPackage.Registry.INSTANCE.getEPackage(TraceabilityPackage.eNS_URI);
+		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);
 
 		// Add subpackages
 		getESubpackages().add(theTraceabilityPackage);
+		getESubpackages().add(theExpressionsPackage);
 
 		// Create type parameters
 

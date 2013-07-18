@@ -1,6 +1,6 @@
 /**
  */
-package hu.modembed.model.modembed.infrastructure.traceability.impl;
+package hu.modembed.model.modembed.infrastructure.expressions.impl;
 
 import hu.modembed.model.modembed.abstraction.AbstractionPackage;
 
@@ -32,17 +32,17 @@ import hu.modembed.model.modembed.core.object.impl.ObjectPackageImpl;
 
 import hu.modembed.model.modembed.infrastructure.InfrastructurePackage;
 
+import hu.modembed.model.modembed.infrastructure.expressions.Expression;
+import hu.modembed.model.modembed.infrastructure.expressions.ExpressionsFactory;
 import hu.modembed.model.modembed.infrastructure.expressions.ExpressionsPackage;
-
-import hu.modembed.model.modembed.infrastructure.expressions.impl.ExpressionsPackageImpl;
+import hu.modembed.model.modembed.infrastructure.expressions.IntegerConstantExpression;
+import hu.modembed.model.modembed.infrastructure.expressions.OperationExpression;
 
 import hu.modembed.model.modembed.infrastructure.impl.InfrastructurePackageImpl;
 
-import hu.modembed.model.modembed.infrastructure.traceability.ModelOrigin;
-import hu.modembed.model.modembed.infrastructure.traceability.Origin;
-import hu.modembed.model.modembed.infrastructure.traceability.TextOrigin;
-import hu.modembed.model.modembed.infrastructure.traceability.TraceabilityFactory;
 import hu.modembed.model.modembed.infrastructure.traceability.TraceabilityPackage;
+
+import hu.modembed.model.modembed.infrastructure.traceability.impl.TraceabilityPackageImpl;
 
 import hu.modembed.model.modembed.structured.StructuredPackage;
 
@@ -61,27 +61,27 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
  * <!-- end-user-doc -->
  * @generated
  */
-public class TraceabilityPackageImpl extends EPackageImpl implements TraceabilityPackage {
+public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass originEClass = null;
+	private EClass expressionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass textOriginEClass = null;
+	private EClass integerConstantExpressionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass modelOriginEClass = null;
+	private EClass operationExpressionEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -94,12 +94,12 @@ public class TraceabilityPackageImpl extends EPackageImpl implements Traceabilit
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
-	 * @see hu.modembed.model.modembed.infrastructure.traceability.TraceabilityPackage#eNS_URI
+	 * @see hu.modembed.model.modembed.infrastructure.expressions.ExpressionsPackage#eNS_URI
 	 * @see #init()
 	 * @generated
 	 */
-	private TraceabilityPackageImpl() {
-		super(eNS_URI, TraceabilityFactory.eINSTANCE);
+	private ExpressionsPackageImpl() {
+		super(eNS_URI, ExpressionsFactory.eINSTANCE);
 	}
 
 	/**
@@ -112,7 +112,7 @@ public class TraceabilityPackageImpl extends EPackageImpl implements Traceabilit
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
 	 * 
-	 * <p>This method is used to initialize {@link TraceabilityPackage#eINSTANCE} when that field is accessed.
+	 * <p>This method is used to initialize {@link ExpressionsPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -121,17 +121,17 @@ public class TraceabilityPackageImpl extends EPackageImpl implements Traceabilit
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
-	public static TraceabilityPackage init() {
-		if (isInited) return (TraceabilityPackage)EPackage.Registry.INSTANCE.getEPackage(TraceabilityPackage.eNS_URI);
+	public static ExpressionsPackage init() {
+		if (isInited) return (ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);
 
 		// Obtain or create and register package
-		TraceabilityPackageImpl theTraceabilityPackage = (TraceabilityPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof TraceabilityPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new TraceabilityPackageImpl());
+		ExpressionsPackageImpl theExpressionsPackage = (ExpressionsPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ExpressionsPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ExpressionsPackageImpl());
 
 		isInited = true;
 
 		// Obtain or create and register interdependencies
 		InfrastructurePackageImpl theInfrastructurePackage = (InfrastructurePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InfrastructurePackage.eNS_URI) instanceof InfrastructurePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InfrastructurePackage.eNS_URI) : InfrastructurePackage.eINSTANCE);
-		ExpressionsPackageImpl theExpressionsPackage = (ExpressionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI) instanceof ExpressionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI) : ExpressionsPackage.eINSTANCE);
+		TraceabilityPackageImpl theTraceabilityPackage = (TraceabilityPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TraceabilityPackage.eNS_URI) instanceof TraceabilityPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TraceabilityPackage.eNS_URI) : TraceabilityPackage.eINSTANCE);
 		InstructionsetPackageImpl theInstructionsetPackage = (InstructionsetPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InstructionsetPackage.eNS_URI) instanceof InstructionsetPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InstructionsetPackage.eNS_URI) : InstructionsetPackage.eINSTANCE);
 		ObjectPackageImpl theObjectPackage = (ObjectPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ObjectPackage.eNS_URI) instanceof ObjectPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ObjectPackage.eNS_URI) : ObjectPackage.eINSTANCE);
 		AbstractionPackageImpl theAbstractionPackage = (AbstractionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AbstractionPackage.eNS_URI) instanceof AbstractionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AbstractionPackage.eNS_URI) : AbstractionPackage.eINSTANCE);
@@ -142,9 +142,9 @@ public class TraceabilityPackageImpl extends EPackageImpl implements Traceabilit
 		StructuredPackageImpl theStructuredPackage = (StructuredPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(StructuredPackage.eNS_URI) instanceof StructuredPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(StructuredPackage.eNS_URI) : StructuredPackage.eINSTANCE);
 
 		// Create package meta-data objects
-		theTraceabilityPackage.createPackageContents();
-		theInfrastructurePackage.createPackageContents();
 		theExpressionsPackage.createPackageContents();
+		theInfrastructurePackage.createPackageContents();
+		theTraceabilityPackage.createPackageContents();
 		theInstructionsetPackage.createPackageContents();
 		theObjectPackage.createPackageContents();
 		theAbstractionPackage.createPackageContents();
@@ -155,9 +155,9 @@ public class TraceabilityPackageImpl extends EPackageImpl implements Traceabilit
 		theStructuredPackage.createPackageContents();
 
 		// Initialize created meta-data
-		theTraceabilityPackage.initializePackageContents();
-		theInfrastructurePackage.initializePackageContents();
 		theExpressionsPackage.initializePackageContents();
+		theInfrastructurePackage.initializePackageContents();
+		theTraceabilityPackage.initializePackageContents();
 		theInstructionsetPackage.initializePackageContents();
 		theObjectPackage.initializePackageContents();
 		theAbstractionPackage.initializePackageContents();
@@ -168,12 +168,12 @@ public class TraceabilityPackageImpl extends EPackageImpl implements Traceabilit
 		theStructuredPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
-		theTraceabilityPackage.freeze();
+		theExpressionsPackage.freeze();
 
   
 		// Update the registry and return the package
-		EPackage.Registry.INSTANCE.put(TraceabilityPackage.eNS_URI, theTraceabilityPackage);
-		return theTraceabilityPackage;
+		EPackage.Registry.INSTANCE.put(ExpressionsPackage.eNS_URI, theExpressionsPackage);
+		return theExpressionsPackage;
 	}
 
 	/**
@@ -181,8 +181,8 @@ public class TraceabilityPackageImpl extends EPackageImpl implements Traceabilit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getOrigin() {
-		return originEClass;
+	public EClass getExpression() {
+		return expressionEClass;
 	}
 
 	/**
@@ -190,8 +190,8 @@ public class TraceabilityPackageImpl extends EPackageImpl implements Traceabilit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getTextOrigin() {
-		return textOriginEClass;
+	public EClass getIntegerConstantExpression() {
+		return integerConstantExpressionEClass;
 	}
 
 	/**
@@ -199,8 +199,8 @@ public class TraceabilityPackageImpl extends EPackageImpl implements Traceabilit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTextOrigin_FileName() {
-		return (EAttribute)textOriginEClass.getEStructuralFeatures().get(0);
+	public EAttribute getIntegerConstantExpression_Value() {
+		return (EAttribute)integerConstantExpressionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -208,8 +208,8 @@ public class TraceabilityPackageImpl extends EPackageImpl implements Traceabilit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTextOrigin_Line() {
-		return (EAttribute)textOriginEClass.getEStructuralFeatures().get(1);
+	public EClass getOperationExpression() {
+		return operationExpressionEClass;
 	}
 
 	/**
@@ -217,8 +217,8 @@ public class TraceabilityPackageImpl extends EPackageImpl implements Traceabilit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getModelOrigin() {
-		return modelOriginEClass;
+	public EAttribute getOperationExpression_Operation() {
+		return (EAttribute)operationExpressionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -226,8 +226,8 @@ public class TraceabilityPackageImpl extends EPackageImpl implements Traceabilit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getModelOrigin_Element() {
-		return (EReference)modelOriginEClass.getEStructuralFeatures().get(0);
+	public EReference getOperationExpression_Arguments() {
+		return (EReference)operationExpressionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -235,8 +235,8 @@ public class TraceabilityPackageImpl extends EPackageImpl implements Traceabilit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TraceabilityFactory getTraceabilityFactory() {
-		return (TraceabilityFactory)getEFactoryInstance();
+	public ExpressionsFactory getExpressionsFactory() {
+		return (ExpressionsFactory)getEFactoryInstance();
 	}
 
 	/**
@@ -258,14 +258,14 @@ public class TraceabilityPackageImpl extends EPackageImpl implements Traceabilit
 		isCreated = true;
 
 		// Create classes and their features
-		originEClass = createEClass(ORIGIN);
+		expressionEClass = createEClass(EXPRESSION);
 
-		textOriginEClass = createEClass(TEXT_ORIGIN);
-		createEAttribute(textOriginEClass, TEXT_ORIGIN__FILE_NAME);
-		createEAttribute(textOriginEClass, TEXT_ORIGIN__LINE);
+		integerConstantExpressionEClass = createEClass(INTEGER_CONSTANT_EXPRESSION);
+		createEAttribute(integerConstantExpressionEClass, INTEGER_CONSTANT_EXPRESSION__VALUE);
 
-		modelOriginEClass = createEClass(MODEL_ORIGIN);
-		createEReference(modelOriginEClass, MODEL_ORIGIN__ELEMENT);
+		operationExpressionEClass = createEClass(OPERATION_EXPRESSION);
+		createEAttribute(operationExpressionEClass, OPERATION_EXPRESSION__OPERATION);
+		createEReference(operationExpressionEClass, OPERATION_EXPRESSION__ARGUMENTS);
 	}
 
 	/**
@@ -291,26 +291,23 @@ public class TraceabilityPackageImpl extends EPackageImpl implements Traceabilit
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
-		// Obtain other dependent packages
-		InfrastructurePackage theInfrastructurePackage = (InfrastructurePackage)EPackage.Registry.INSTANCE.getEPackage(InfrastructurePackage.eNS_URI);
-
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		textOriginEClass.getESuperTypes().add(this.getOrigin());
-		modelOriginEClass.getESuperTypes().add(this.getOrigin());
+		integerConstantExpressionEClass.getESuperTypes().add(this.getExpression());
+		operationExpressionEClass.getESuperTypes().add(this.getExpression());
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(originEClass, Origin.class, "Origin", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(expressionEClass, Expression.class, "Expression", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(textOriginEClass, TextOrigin.class, "TextOrigin", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTextOrigin_FileName(), ecorePackage.getEString(), "fileName", null, 1, 1, TextOrigin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTextOrigin_Line(), ecorePackage.getEInt(), "line", null, 1, 1, TextOrigin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(integerConstantExpressionEClass, IntegerConstantExpression.class, "IntegerConstantExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getIntegerConstantExpression_Value(), ecorePackage.getELong(), "value", null, 1, 1, IntegerConstantExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(modelOriginEClass, ModelOrigin.class, "ModelOrigin", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getModelOrigin_Element(), theInfrastructurePackage.getMODembedElement(), null, "element", null, 1, 1, ModelOrigin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(operationExpressionEClass, OperationExpression.class, "OperationExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getOperationExpression_Operation(), ecorePackage.getEString(), "operation", null, 1, 1, OperationExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOperationExpression_Arguments(), this.getExpression(), null, "arguments", null, 0, -1, OperationExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 	}
 
-} //TraceabilityPackageImpl
+} //ExpressionsPackageImpl

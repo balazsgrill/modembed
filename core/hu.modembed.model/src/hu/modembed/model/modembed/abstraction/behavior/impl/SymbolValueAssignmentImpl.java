@@ -6,7 +6,9 @@ import hu.modembed.model.modembed.abstraction.behavior.BehaviorPackage;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolValueAssignment;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**

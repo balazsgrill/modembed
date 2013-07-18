@@ -1,9 +1,9 @@
 /**
  */
-package hu.modembed.model.modembed.abstraction.behavior.platform.impl;
+package hu.modembed.model.modembed.infrastructure.expressions.impl;
 
-import hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterConstantValue;
-import hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage;
+import hu.modembed.model.modembed.infrastructure.expressions.ExpressionsPackage;
+import hu.modembed.model.modembed.infrastructure.expressions.IntegerConstantExpression;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -13,18 +13,18 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Instruction Parameter Constant Value</b></em>'.
+ * An implementation of the model object '<em><b>Integer Constant Expression</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.modembed.model.modembed.abstraction.behavior.platform.impl.InstructionParameterConstantValueImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link hu.modembed.model.modembed.infrastructure.expressions.impl.IntegerConstantExpressionImpl#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class InstructionParameterConstantValueImpl extends InstructionParameterValueImpl implements InstructionParameterConstantValue {
+public class IntegerConstantExpressionImpl extends ExpressionImpl implements IntegerConstantExpression {
 	/**
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -33,7 +33,7 @@ public class InstructionParameterConstantValueImpl extends InstructionParameterV
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int VALUE_EDEFAULT = 0;
+	protected static final long VALUE_EDEFAULT = 0L;
 
 	/**
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -43,14 +43,14 @@ public class InstructionParameterConstantValueImpl extends InstructionParameterV
 	 * @generated
 	 * @ordered
 	 */
-	protected int value = VALUE_EDEFAULT;
+	protected long value = VALUE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected InstructionParameterConstantValueImpl() {
+	protected IntegerConstantExpressionImpl() {
 		super();
 	}
 
@@ -61,7 +61,7 @@ public class InstructionParameterConstantValueImpl extends InstructionParameterV
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PlatformPackage.Literals.INSTRUCTION_PARAMETER_CONSTANT_VALUE;
+		return ExpressionsPackage.Literals.INTEGER_CONSTANT_EXPRESSION;
 	}
 
 	/**
@@ -69,7 +69,7 @@ public class InstructionParameterConstantValueImpl extends InstructionParameterV
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getValue() {
+	public long getValue() {
 		return value;
 	}
 
@@ -78,11 +78,11 @@ public class InstructionParameterConstantValueImpl extends InstructionParameterV
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setValue(int newValue) {
-		int oldValue = value;
+	public void setValue(long newValue) {
+		long oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PlatformPackage.INSTRUCTION_PARAMETER_CONSTANT_VALUE__VALUE, oldValue, value));
+			eNotify(new ENotificationImpl(this, Notification.SET, ExpressionsPackage.INTEGER_CONSTANT_EXPRESSION__VALUE, oldValue, value));
 	}
 
 	/**
@@ -93,7 +93,7 @@ public class InstructionParameterConstantValueImpl extends InstructionParameterV
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PlatformPackage.INSTRUCTION_PARAMETER_CONSTANT_VALUE__VALUE:
+			case ExpressionsPackage.INTEGER_CONSTANT_EXPRESSION__VALUE:
 				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -107,8 +107,8 @@ public class InstructionParameterConstantValueImpl extends InstructionParameterV
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PlatformPackage.INSTRUCTION_PARAMETER_CONSTANT_VALUE__VALUE:
-				setValue((Integer)newValue);
+			case ExpressionsPackage.INTEGER_CONSTANT_EXPRESSION__VALUE:
+				setValue((Long)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -122,7 +122,7 @@ public class InstructionParameterConstantValueImpl extends InstructionParameterV
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PlatformPackage.INSTRUCTION_PARAMETER_CONSTANT_VALUE__VALUE:
+			case ExpressionsPackage.INTEGER_CONSTANT_EXPRESSION__VALUE:
 				setValue(VALUE_EDEFAULT);
 				return;
 		}
@@ -137,7 +137,7 @@ public class InstructionParameterConstantValueImpl extends InstructionParameterV
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PlatformPackage.INSTRUCTION_PARAMETER_CONSTANT_VALUE__VALUE:
+			case ExpressionsPackage.INTEGER_CONSTANT_EXPRESSION__VALUE:
 				return value != VALUE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
@@ -159,4 +159,4 @@ public class InstructionParameterConstantValueImpl extends InstructionParameterV
 		return result.toString();
 	}
 
-} //InstructionParameterConstantValueImpl
+} //IntegerConstantExpressionImpl

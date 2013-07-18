@@ -3,7 +3,8 @@
 package hu.modembed.model.modembed.abstraction.behavior.platform;
 
 import hu.modembed.model.modembed.infrastructure.AttributeDefinition;
-import hu.modembed.model.modembed.infrastructure.MODembedElement;
+
+import hu.modembed.model.modembed.infrastructure.expressions.Expression;
 
 /**
  * <!-- begin-user-doc -->
@@ -15,8 +16,6 @@ import hu.modembed.model.modembed.infrastructure.MODembedElement;
  * <ul>
  *   <li>{@link hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterMapping#getValue <em>Value</em>}</li>
  *   <li>{@link hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterMapping#getAttribute <em>Attribute</em>}</li>
- *   <li>{@link hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterMapping#getBitOffset <em>Bit Offset</em>}</li>
- *   <li>{@link hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterMapping#getValueOffset <em>Value Offset</em>}</li>
  * </ul>
  * </p>
  *
@@ -24,7 +23,7 @@ import hu.modembed.model.modembed.infrastructure.MODembedElement;
  * @model
  * @generated
  */
-public interface InstructionParameterMapping extends InstructionParameterValue {
+public interface InstructionParameterMapping extends Expression {
 	/**
 	 * Returns the value of the '<em><b>Value</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -76,57 +75,5 @@ public interface InstructionParameterMapping extends InstructionParameterValue {
 	 * @generated
 	 */
 	void setAttribute(AttributeDefinition value);
-
-	/**
-	 * Returns the value of the '<em><b>Bit Offset</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Bit Offset</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Bit Offset</em>' attribute.
-	 * @see #setBitOffset(int)
-	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage#getInstructionParameterMapping_BitOffset()
-	 * @model
-	 * @generated
-	 */
-	int getBitOffset();
-
-	/**
-	 * Sets the value of the '{@link hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterMapping#getBitOffset <em>Bit Offset</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Bit Offset</em>' attribute.
-	 * @see #getBitOffset()
-	 * @generated
-	 */
-	void setBitOffset(int value);
-
-	/**
-	 * Returns the value of the '<em><b>Value Offset</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Value Offset</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Value Offset</em>' attribute.
-	 * @see #setValueOffset(int)
-	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage#getInstructionParameterMapping_ValueOffset()
-	 * @model
-	 * @generated
-	 */
-	int getValueOffset();
-
-	/**
-	 * Sets the value of the '{@link hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterMapping#getValueOffset <em>Value Offset</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Value Offset</em>' attribute.
-	 * @see #getValueOffset()
-	 * @generated
-	 */
-	void setValueOffset(int value);
 
 } // InstructionParameterMapping

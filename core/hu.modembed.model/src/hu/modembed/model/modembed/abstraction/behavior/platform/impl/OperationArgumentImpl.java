@@ -4,14 +4,19 @@ package hu.modembed.model.modembed.abstraction.behavior.platform.impl;
 
 import hu.modembed.model.modembed.abstraction.behavior.platform.OperationArgument;
 import hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage;
+
 import hu.modembed.model.modembed.abstraction.memorymodel.MemoryType;
+
 import hu.modembed.model.modembed.abstraction.types.TypeDefinition;
+
 import hu.modembed.model.modembed.infrastructure.impl.NamedElementImpl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**

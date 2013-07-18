@@ -15,9 +15,7 @@ import hu.modembed.model.modembed.abstraction.behavior.SymbolAssignment;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolMap;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolValueAssignment;
 import hu.modembed.model.modembed.abstraction.behavior.platform.InstructionCallOperationStep;
-import hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterConstantValue;
 import hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterMapping;
-import hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterValue;
 import hu.modembed.model.modembed.abstraction.behavior.platform.OperationArgument;
 import hu.modembed.model.modembed.abstraction.behavior.platform.OperationDefinition;
 import hu.modembed.model.modembed.abstraction.behavior.platform.OperationStep;
@@ -30,6 +28,9 @@ import hu.modembed.model.modembed.core.object.ObjectFactory;
 import hu.modembed.model.modembed.infrastructure.AttributeDefinition;
 import hu.modembed.model.modembed.infrastructure.AttributeValue;
 import hu.modembed.model.modembed.infrastructure.AttributeValueContainer;
+import hu.modembed.model.modembed.infrastructure.expressions.Expression;
+import hu.modembed.utils.expressions.ExpressionResolveException;
+import hu.modembed.utils.expressions.ExpressionResolver;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -44,6 +45,27 @@ import org.eclipse.core.runtime.Assert;
  */
 public class SequentialBehaviorTranslator {
 
+	protected class SymbolAddressExpressionResolver extends ExpressionResolver{
+	
+		private final SymbolAddressAssignment addressAssignment;
+		
+		public SymbolAddressExpressionResolver(SymbolAddressAssignment addressAssignment) {
+			this.addressAssignment = addressAssignment;
+		}
+		
+		public Object compute(InstructionParameterMapping ipm){
+			AttributeDefinition attr = ipm.getAttribute(); 
+			if (attr != null){
+				MemoryInstance memi = addressAssignment.getMemoryInstance();
+				Assert.isNotNull(memi);
+				return getAttributeValue(memi.getAttributes(), attr);
+			}else{
+				return addressAssignment.getAddress();
+			}
+		}
+		
+	}
+	
 	private class OperationRegistry{
 		
 		private final Map<OperationDefinition, OperationSignature> operations = new LinkedHashMap<OperationDefinition, OperationSignature>();
@@ -75,9 +97,9 @@ public class SequentialBehaviorTranslator {
 	
 	private class SymbolValue{
 		public final String symbol;
-		public final InstructionParameterMapping param;
+		public final Expression param;
 		
-		public SymbolValue(String symbol, InstructionParameterMapping param) {
+		public SymbolValue(String symbol, Expression param) {
 			this.symbol = symbol;
 			this.param = param;
 		}
@@ -85,7 +107,8 @@ public class SequentialBehaviorTranslator {
 	}
 	
 	
-	public AssemblerObject translate(RootSequentialBehavior sequentialBehavior, SymbolMap map, long startAddress){
+	public AssemblerObject translate(RootSequentialBehavior sequentialBehavior, SymbolMap map, long startAddress) throws ExpressionResolveException{
+		
 		Assert.isNotNull(sequentialBehavior.getDevice());
 		OperationRegistry registry = new OperationRegistry(sequentialBehavior.getDevice());
 		
@@ -149,19 +172,19 @@ public class SequentialBehaviorTranslator {
 						ic.setInstruction(icstep.getInstruction());
 						asm.getInstructions().add(ic);
 						int i=0;
-						for(InstructionParameterValue ipv : ((InstructionCallOperationStep) step).getArguments()){
+						for(Expression ipv : ((InstructionCallOperationStep) step).getArguments()){
 							InstructionCallParameter icp = ObjectFactory.eINSTANCE.createInstructionCallParameter();
 							icp.setDefinition(ic.getInstruction().getParameters().get(i));
 							i++;
 							ic.getParameters().add(icp);
-							if (ipv instanceof InstructionParameterMapping){
+							//if (ipv instanceof InstructionParameterMapping){
 								InstructionParameterMapping ipm = (InstructionParameterMapping)ipv;
 								String symbol = argumentSymbols.get(ipm.getValue());
-								instructionCallParameterValues.put(icp, new SymbolValue(symbol, ipm));
-							}
-							if (ipv instanceof InstructionParameterConstantValue){
-								icp.setValue(((InstructionParameterConstantValue) ipv).getValue());
-							}
+								instructionCallParameterValues.put(icp, new SymbolValue(symbol, ipv));
+							//}
+//							if (ipv instanceof InstructionParameterConstantValue){
+//								icp.setValue(((InstructionParameterConstantValue) ipv).getValue());
+//							}
 						}
 					}
 				}
@@ -184,19 +207,10 @@ public class SequentialBehaviorTranslator {
 					raw = ((SymbolValueAssignment) sa).getValue();
 				}
 				if (sa instanceof SymbolAddressAssignment){
-					AttributeDefinition attr = value.param.getAttribute(); 
-					if (attr != null){
-						MemoryInstance memi = ((SymbolAddressAssignment) sa).getMemoryInstance();
-						Assert.isNotNull(memi);
-						raw = getAttributeValue(memi.getAttributes(), attr);
-					}else{
-						raw = ((SymbolAddressAssignment) sa).getAddress();
-					}
+					ExpressionResolver resolver = new SymbolAddressExpressionResolver((SymbolAddressAssignment)sa);
+					raw = (Long)resolver.computeValue(value.param);
 				}
 			}
-			
-			raw = raw << value.param.getBitOffset();
-			raw += value.param.getValueOffset();
 			
 			entry.getKey().setValue(raw);
 			entry.getKey().setLabel(islabel);

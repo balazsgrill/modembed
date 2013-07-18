@@ -2,6 +2,7 @@
 syntax device.syntax <Start>;
 import core.syntax;
 import type.syntax;
+import expressions.syntax;
 
 terminal KW_DEVICE "device";
 terminal KW_INSTRUCTIONSET "instructionset";
@@ -12,6 +13,7 @@ terminal KW_OPERATION "operation";
 terminal KW_VOLATILE "volatile";
 terminal KW_PROGRAM "program";
 terminal KW_DATA "data";
+terminal KW_IF "if";
 terminal OP_OPEN "\{";
 terminal OP_CLOSE "\}";
 terminal OP_BOPEN "\(";
@@ -20,8 +22,6 @@ terminal OP_COMMA "\,";
 terminal OP_COLON "\:";
 terminal OP_AT "\@";
 terminal OP_ATTR "->";
-terminal OP_SHIFT "<";
-terminal OP_ADD "\+";
 
 <Start> :- KW_DEVICE {"http://modembed.hu/abstraction#DeviceAbstraction" name=QUALIFIEDID <Extends>? <InstructionSetDefinition>? OPERATOR_SEMICOLON 
 	<Item>*?	;
@@ -67,18 +67,14 @@ terminal OP_ADD "\+";
 					 OP_BOPEN <InstructionParameterMappings>? OP_BCLOSE
 					} OPERATOR_SEMICOLON;
 					
-<InstructionParameterMappings> :- <InstructionParameterValue> <InstructionParameterMappings2>*? ;
-<InstructionParameterMappings2> :- OP_COMMA <InstructionParameterValue>;
+<OperationStep> :- steps={"http://modembed.hu/abstraction/behavior/platform#OperationLocalLabel" name=IDENTIFIER OP_COLON };					
+					
+<OperatonStep> :- KW_IF steps={"http://modembed.hu/abstraction/behavior/platform#ConditionalOperation" condition=<Expression> OP_OPEN <OperationStep>*? OP_CLOSE };
 
-<InstructionParameterValue> :- <InstructionParameterMapping>;
-<InstructionParameterValue> :- arguments={"http://modembed.hu/abstraction/behavior/platform#InstructionParameterConstantValue" value=DECIMAL_NUMBER };
-<InstructionParameterMapping> :- arguments={"http://modembed.hu/abstraction/behavior/platform#InstructionParameterMapping"
-								value=IDENTIFIER 
-								<InstructionParameterMapping_Attribute>?
-								<InstructionParameterMapping_Shift>?
-								<InstructionParameterMapping_Add>?
-								};
-								
-<InstructionParameterMapping_Attribute> :- OP_ATTR attribute=IDENTIFIER ;
-<InstructionParameterMapping_Shift> :- OP_SHIFT bitOffset=DECIMAL_NUMBER; 
-<InstructionParameterMapping_Add> :- OP_ADD valueOffset=DECIMAL_NUMBER;
+<InstructionParameterMappings> :- <Expression> <InstructionParameterMappings2>*? ;
+<InstructionParameterMappings2> :- OP_COMMA arguments=<Expression>;
+
+<Expression0> :- OP_AT {"http://modembed.hu/abstraction/behavior/platform#LabelParameterValue" label=IDENTIFIER };
+
+<Expression0> :- {"http://modembed.hu/abstraction/behavior/platform#InstructionParameterMapping" value=IDENTIFIER <ParameterAttribute>? };
+<ParameterAttribute> :- OP_ATTR attribute=IDENTIFIER ;

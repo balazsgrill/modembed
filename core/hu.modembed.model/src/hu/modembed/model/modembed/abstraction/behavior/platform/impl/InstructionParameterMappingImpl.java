@@ -7,7 +7,8 @@ import hu.modembed.model.modembed.abstraction.behavior.platform.OperationArgumen
 import hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage;
 
 import hu.modembed.model.modembed.infrastructure.AttributeDefinition;
-import hu.modembed.model.modembed.infrastructure.impl.MODembedElementImpl;
+
+import hu.modembed.model.modembed.infrastructure.expressions.impl.ExpressionImpl;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -25,14 +26,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link hu.modembed.model.modembed.abstraction.behavior.platform.impl.InstructionParameterMappingImpl#getValue <em>Value</em>}</li>
  *   <li>{@link hu.modembed.model.modembed.abstraction.behavior.platform.impl.InstructionParameterMappingImpl#getAttribute <em>Attribute</em>}</li>
- *   <li>{@link hu.modembed.model.modembed.abstraction.behavior.platform.impl.InstructionParameterMappingImpl#getBitOffset <em>Bit Offset</em>}</li>
- *   <li>{@link hu.modembed.model.modembed.abstraction.behavior.platform.impl.InstructionParameterMappingImpl#getValueOffset <em>Value Offset</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class InstructionParameterMappingImpl extends InstructionParameterValueImpl implements InstructionParameterMapping {
+public class InstructionParameterMappingImpl extends ExpressionImpl implements InstructionParameterMapping {
 	/**
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -52,46 +51,6 @@ public class InstructionParameterMappingImpl extends InstructionParameterValueIm
 	 * @ordered
 	 */
 	protected AttributeDefinition attribute;
-
-	/**
-	 * The default value of the '{@link #getBitOffset() <em>Bit Offset</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBitOffset()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int BIT_OFFSET_EDEFAULT = 0;
-
-	/**
-	 * The cached value of the '{@link #getBitOffset() <em>Bit Offset</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBitOffset()
-	 * @generated
-	 * @ordered
-	 */
-	protected int bitOffset = BIT_OFFSET_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getValueOffset() <em>Value Offset</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getValueOffset()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int VALUE_OFFSET_EDEFAULT = 0;
-
-	/**
-	 * The cached value of the '{@link #getValueOffset() <em>Value Offset</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getValueOffset()
-	 * @generated
-	 * @ordered
-	 */
-	protected int valueOffset = VALUE_OFFSET_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -193,48 +152,6 @@ public class InstructionParameterMappingImpl extends InstructionParameterValueIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getBitOffset() {
-		return bitOffset;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setBitOffset(int newBitOffset) {
-		int oldBitOffset = bitOffset;
-		bitOffset = newBitOffset;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PlatformPackage.INSTRUCTION_PARAMETER_MAPPING__BIT_OFFSET, oldBitOffset, bitOffset));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public int getValueOffset() {
-		return valueOffset;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setValueOffset(int newValueOffset) {
-		int oldValueOffset = valueOffset;
-		valueOffset = newValueOffset;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PlatformPackage.INSTRUCTION_PARAMETER_MAPPING__VALUE_OFFSET, oldValueOffset, valueOffset));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -244,10 +161,6 @@ public class InstructionParameterMappingImpl extends InstructionParameterValueIm
 			case PlatformPackage.INSTRUCTION_PARAMETER_MAPPING__ATTRIBUTE:
 				if (resolve) return getAttribute();
 				return basicGetAttribute();
-			case PlatformPackage.INSTRUCTION_PARAMETER_MAPPING__BIT_OFFSET:
-				return getBitOffset();
-			case PlatformPackage.INSTRUCTION_PARAMETER_MAPPING__VALUE_OFFSET:
-				return getValueOffset();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -265,12 +178,6 @@ public class InstructionParameterMappingImpl extends InstructionParameterValueIm
 				return;
 			case PlatformPackage.INSTRUCTION_PARAMETER_MAPPING__ATTRIBUTE:
 				setAttribute((AttributeDefinition)newValue);
-				return;
-			case PlatformPackage.INSTRUCTION_PARAMETER_MAPPING__BIT_OFFSET:
-				setBitOffset((Integer)newValue);
-				return;
-			case PlatformPackage.INSTRUCTION_PARAMETER_MAPPING__VALUE_OFFSET:
-				setValueOffset((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -290,12 +197,6 @@ public class InstructionParameterMappingImpl extends InstructionParameterValueIm
 			case PlatformPackage.INSTRUCTION_PARAMETER_MAPPING__ATTRIBUTE:
 				setAttribute((AttributeDefinition)null);
 				return;
-			case PlatformPackage.INSTRUCTION_PARAMETER_MAPPING__BIT_OFFSET:
-				setBitOffset(BIT_OFFSET_EDEFAULT);
-				return;
-			case PlatformPackage.INSTRUCTION_PARAMETER_MAPPING__VALUE_OFFSET:
-				setValueOffset(VALUE_OFFSET_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -312,30 +213,8 @@ public class InstructionParameterMappingImpl extends InstructionParameterValueIm
 				return value != null;
 			case PlatformPackage.INSTRUCTION_PARAMETER_MAPPING__ATTRIBUTE:
 				return attribute != null;
-			case PlatformPackage.INSTRUCTION_PARAMETER_MAPPING__BIT_OFFSET:
-				return bitOffset != BIT_OFFSET_EDEFAULT;
-			case PlatformPackage.INSTRUCTION_PARAMETER_MAPPING__VALUE_OFFSET:
-				return valueOffset != VALUE_OFFSET_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (bitOffset: ");
-		result.append(bitOffset);
-		result.append(", valueOffset: ");
-		result.append(valueOffset);
-		result.append(')');
-		return result.toString();
 	}
 
 } //InstructionParameterMappingImpl

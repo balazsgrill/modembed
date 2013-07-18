@@ -3,6 +3,7 @@
 package hu.modembed.model.modembed.abstraction.behavior;
 
 import hu.modembed.model.modembed.abstraction.DeviceAbstraction;
+
 import hu.modembed.model.modembed.infrastructure.RootElement;
 
 import org.eclipse.emf.common.util.EList;

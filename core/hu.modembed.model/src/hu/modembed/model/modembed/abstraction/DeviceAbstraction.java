@@ -3,10 +3,12 @@
 package hu.modembed.model.modembed.abstraction;
 
 import hu.modembed.model.modembed.abstraction.behavior.platform.OperationDefinition;
+
 import hu.modembed.model.modembed.abstraction.memorymodel.MemoryInstance;
 import hu.modembed.model.modembed.abstraction.memorymodel.MemoryType;
 
 import hu.modembed.model.modembed.core.instructionset.InstructionSet;
+
 import hu.modembed.model.modembed.infrastructure.RootElement;
 
 import org.eclipse.emf.common.util.EList;

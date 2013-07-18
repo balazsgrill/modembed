@@ -248,7 +248,6 @@ public interface InfrastructurePackage extends EPackage {
 	 */
 	int ROOT_ELEMENT_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
-
 	/**
 	 * The meta object id for the '{@link hu.modembed.model.modembed.infrastructure.impl.AttributeContainerDefinitionImpl <em>Attribute Container Definition</em>}' class.
 	 * <!-- begin-user-doc -->

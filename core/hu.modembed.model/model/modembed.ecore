@@ -52,6 +52,20 @@
             eType="#//infrastructure/MODembedElement"/>
       </eClassifiers>
     </eSubpackages>
+    <eSubpackages name="expressions" nsURI="http://modembed.hu/infrastructure/expressions"
+        nsPrefix="expressions">
+      <eClassifiers xsi:type="ecore:EClass" name="Expression" abstract="true"/>
+      <eClassifiers xsi:type="ecore:EClass" name="IntegerConstantExpression" eSuperTypes="#//infrastructure/expressions/Expression">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="OperationExpression" eSuperTypes="#//infrastructure/expressions/Expression">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="operation" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="arguments" upperBound="-1"
+            eType="#//infrastructure/expressions/Expression" containment="true"/>
+      </eClassifiers>
+    </eSubpackages>
   </eSubpackages>
   <eSubpackages name="core" nsURI="http://modembed.hu/core" nsPrefix="core">
     <eSubpackages name="instructionset" nsURI="http://modembed.hu/core/instructionset"
@@ -280,41 +294,25 @@
             eSuperTypes="#//abstraction/behavior/platform/OperationStep">
           <eStructuralFeatures xsi:type="ecore:EReference" name="instruction" eType="#//core/instructionset/Instruction"/>
           <eStructuralFeatures xsi:type="ecore:EReference" name="arguments" upperBound="-1"
-              eType="#//abstraction/behavior/platform/InstructionParameterValue" containment="true"/>
+              eType="#//infrastructure/expressions/Expression" containment="true"/>
         </eClassifiers>
         <eClassifiers xsi:type="ecore:EClass" name="OperationStep" abstract="true"
             eSuperTypes="#//infrastructure/MODembedElement"/>
         <eClassifiers xsi:type="ecore:EClass" name="OperationLocalLabel" eSuperTypes="#//abstraction/behavior/platform/OperationStep #//infrastructure/NamedElement"/>
         <eClassifiers xsi:type="ecore:EClass" name="ConditionalOperation" eSuperTypes="#//abstraction/behavior/platform/OperationStep">
-          <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1"
-              eType="#//abstraction/behavior/platform/OperationArgument"/>
-          <eStructuralFeatures xsi:type="ecore:EAttribute" name="bitOffset" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-          <eStructuralFeatures xsi:type="ecore:EAttribute" name="valueOffset" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-          <eStructuralFeatures xsi:type="ecore:EAttribute" name="equals" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-          <eStructuralFeatures xsi:type="ecore:EAttribute" name="greater" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-          <eStructuralFeatures xsi:type="ecore:EAttribute" name="lower" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-          <eStructuralFeatures xsi:type="ecore:EAttribute" name="checkValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-          <eStructuralFeatures xsi:type="ecore:EAttribute" name="mask" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="condition" lowerBound="1"
+              eType="#//infrastructure/expressions/Expression" containment="true"/>
           <eStructuralFeatures xsi:type="ecore:EReference" name="steps" upperBound="-1"
               eType="#//abstraction/behavior/platform/OperationStep" containment="true"/>
         </eClassifiers>
-        <eClassifiers xsi:type="ecore:EClass" name="InstructionParameterValue" abstract="true"
-            eSuperTypes="#//infrastructure/MODembedElement"/>
-        <eClassifiers xsi:type="ecore:EClass" name="LabelParameterValue" eSuperTypes="#//abstraction/behavior/platform/InstructionParameterValue">
+        <eClassifiers xsi:type="ecore:EClass" name="LabelParameterValue" eSuperTypes="#//infrastructure/expressions/Expression">
           <eStructuralFeatures xsi:type="ecore:EReference" name="label" lowerBound="1"
               eType="#//abstraction/behavior/platform/OperationLocalLabel"/>
         </eClassifiers>
-        <eClassifiers xsi:type="ecore:EClass" name="InstructionParameterConstantValue"
-            eSuperTypes="#//abstraction/behavior/platform/InstructionParameterValue">
-          <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1"
-              eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-        </eClassifiers>
-        <eClassifiers xsi:type="ecore:EClass" name="InstructionParameterMapping" eSuperTypes="#//abstraction/behavior/platform/InstructionParameterValue">
+        <eClassifiers xsi:type="ecore:EClass" name="InstructionParameterMapping" eSuperTypes="#//infrastructure/expressions/Expression">
           <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1"
               eType="#//abstraction/behavior/platform/OperationArgument"/>
           <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" eType="#//infrastructure/AttributeDefinition"/>
-          <eStructuralFeatures xsi:type="ecore:EAttribute" name="bitOffset" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-          <eStructuralFeatures xsi:type="ecore:EAttribute" name="valueOffset" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
         </eClassifiers>
       </eSubpackages>
     </eSubpackages>

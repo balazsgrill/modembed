@@ -3,7 +3,9 @@
 package hu.modembed.model.modembed.abstraction.behavior.platform;
 
 import hu.modembed.model.modembed.abstraction.memorymodel.MemoryType;
+
 import hu.modembed.model.modembed.abstraction.types.TypeDefinition;
+
 import hu.modembed.model.modembed.infrastructure.NamedElement;
 
 /**

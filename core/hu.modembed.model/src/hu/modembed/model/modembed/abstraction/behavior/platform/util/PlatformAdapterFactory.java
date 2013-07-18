@@ -3,18 +3,17 @@
 package hu.modembed.model.modembed.abstraction.behavior.platform.util;
 
 import hu.modembed.model.modembed.abstraction.behavior.platform.*;
-import hu.modembed.model.modembed.abstraction.behavior.platform.InstructionCallOperationStep;
-import hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterMapping;
-import hu.modembed.model.modembed.abstraction.behavior.platform.OperationArgument;
-import hu.modembed.model.modembed.abstraction.behavior.platform.OperationDefinition;
-import hu.modembed.model.modembed.abstraction.behavior.platform.OperationStep;
-import hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage;
+
 import hu.modembed.model.modembed.infrastructure.MODembedElement;
 import hu.modembed.model.modembed.infrastructure.NamedElement;
 
+import hu.modembed.model.modembed.infrastructure.expressions.Expression;
+
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
+
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -98,16 +97,8 @@ public class PlatformAdapterFactory extends AdapterFactoryImpl {
 				return createConditionalOperationAdapter();
 			}
 			@Override
-			public Adapter caseInstructionParameterValue(InstructionParameterValue object) {
-				return createInstructionParameterValueAdapter();
-			}
-			@Override
 			public Adapter caseLabelParameterValue(LabelParameterValue object) {
 				return createLabelParameterValueAdapter();
-			}
-			@Override
-			public Adapter caseInstructionParameterConstantValue(InstructionParameterConstantValue object) {
-				return createInstructionParameterConstantValueAdapter();
 			}
 			@Override
 			public Adapter caseInstructionParameterMapping(InstructionParameterMapping object) {
@@ -120,6 +111,10 @@ public class PlatformAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseNamedElement(NamedElement object) {
 				return createNamedElementAdapter();
+			}
+			@Override
+			public Adapter caseExpression(Expression object) {
+				return createExpressionAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -226,20 +221,6 @@ public class PlatformAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterValue <em>Instruction Parameter Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterValue
-	 * @generated
-	 */
-	public Adapter createInstructionParameterValueAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link hu.modembed.model.modembed.abstraction.behavior.platform.LabelParameterValue <em>Label Parameter Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -250,20 +231,6 @@ public class PlatformAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createLabelParameterValueAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterConstantValue <em>Instruction Parameter Constant Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterConstantValue
-	 * @generated
-	 */
-	public Adapter createInstructionParameterConstantValueAdapter() {
 		return null;
 	}
 
@@ -306,6 +273,20 @@ public class PlatformAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createNamedElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.modembed.infrastructure.expressions.Expression <em>Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.modembed.model.modembed.infrastructure.expressions.Expression
+	 * @generated
+	 */
+	public Adapter createExpressionAdapter() {
 		return null;
 	}
 

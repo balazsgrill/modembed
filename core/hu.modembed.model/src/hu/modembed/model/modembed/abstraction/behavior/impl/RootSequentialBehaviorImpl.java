@@ -3,6 +3,7 @@
 package hu.modembed.model.modembed.abstraction.behavior.impl;
 
 import hu.modembed.model.modembed.abstraction.DeviceAbstraction;
+
 import hu.modembed.model.modembed.abstraction.behavior.BehaviorPackage;
 import hu.modembed.model.modembed.abstraction.behavior.RootSequentialBehavior;
 import hu.modembed.model.modembed.abstraction.behavior.SequentialAction;
@@ -22,6 +23,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 

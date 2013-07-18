@@ -76,15 +76,6 @@ public interface PlatformFactory extends EFactory {
 	LabelParameterValue createLabelParameterValue();
 
 	/**
-	 * Returns a new object of class '<em>Instruction Parameter Constant Value</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Instruction Parameter Constant Value</em>'.
-	 * @generated
-	 */
-	InstructionParameterConstantValue createInstructionParameterConstantValue();
-
-	/**
 	 * Returns a new object of class '<em>Instruction Parameter Mapping</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

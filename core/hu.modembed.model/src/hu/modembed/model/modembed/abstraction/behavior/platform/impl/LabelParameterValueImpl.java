@@ -6,6 +6,8 @@ import hu.modembed.model.modembed.abstraction.behavior.platform.LabelParameterVa
 import hu.modembed.model.modembed.abstraction.behavior.platform.OperationLocalLabel;
 import hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage;
 
+import hu.modembed.model.modembed.infrastructure.expressions.impl.ExpressionImpl;
+
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -26,7 +28,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class LabelParameterValueImpl extends InstructionParameterValueImpl implements LabelParameterValue {
+public class LabelParameterValueImpl extends ExpressionImpl implements LabelParameterValue {
 	/**
 	 * The cached value of the '{@link #getLabel() <em>Label</em>}' reference.
 	 * <!-- begin-user-doc -->

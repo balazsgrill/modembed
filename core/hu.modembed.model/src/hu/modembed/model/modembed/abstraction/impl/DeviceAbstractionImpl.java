@@ -6,10 +6,12 @@ import hu.modembed.model.modembed.abstraction.AbstractionPackage;
 import hu.modembed.model.modembed.abstraction.DeviceAbstraction;
 
 import hu.modembed.model.modembed.abstraction.behavior.platform.OperationDefinition;
+
 import hu.modembed.model.modembed.abstraction.memorymodel.MemoryInstance;
 import hu.modembed.model.modembed.abstraction.memorymodel.MemoryType;
 
 import hu.modembed.model.modembed.core.instructionset.InstructionSet;
+
 import hu.modembed.model.modembed.infrastructure.impl.RootElementImpl;
 
 import java.util.Collection;
@@ -23,6 +25,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 

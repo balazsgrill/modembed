@@ -318,7 +318,7 @@ package abstraction {
 
       class InstructionCallOperationStep extends OperationStep {
         ref core.instructionset.Instruction instruction;
-        val InstructionParameterValue[*] arguments;
+        val infrastructure.expressions.Expression[*] arguments;
       }
 
       abstract class OperationStep extends infrastructure.MODembedElement {
@@ -328,35 +328,18 @@ package abstraction {
 	  }
 	  
 	  class ConditionalOperation extends OperationStep{
-	  		ref OperationArgument[1] value;
-	  		attr int bitOffset;
-        	attr int valueOffset;
-        	attr boolean equals;
-        	attr boolean greater;
-        	attr boolean lower;
-        	attr int checkValue;
-        	attr int mask;
-        	
+	  		val infrastructure.expressions.Expression[1] condition;
         	val OperationStep[*] steps;
 	  }
 
-	  abstract class InstructionParameterValue extends infrastructure.MODembedElement {
-	  	
-	  }
 
-	  class LabelParameterValue extends InstructionParameterValue{
+	  class LabelParameterValue extends infrastructure.expressions.Expression{
 	  		ref OperationLocalLabel[1] label;
 	  }
 
-	  class InstructionParameterConstantValue extends InstructionParameterValue{
-	  	attr int[1] value;
-	  }
-
-      class InstructionParameterMapping extends InstructionParameterValue {
-        ref OperationArgument[1] value;
-        ref infrastructure.AttributeDefinition attribute;
-        attr int bitOffset;
-        attr int valueOffset;
+      class InstructionParameterMapping extends infrastructure.expressions.Expression {
+      		ref OperationArgument[1] value;
+      		ref infrastructure.AttributeDefinition attribute;
       }
 
     }

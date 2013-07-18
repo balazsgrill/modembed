@@ -3,20 +3,26 @@
 package hu.modembed.model.modembed.abstraction.behavior.impl;
 
 import hu.modembed.model.modembed.abstraction.DeviceAbstraction;
+
 import hu.modembed.model.modembed.abstraction.behavior.BehaviorPackage;
 import hu.modembed.model.modembed.abstraction.behavior.SequentialBehaviorModule;
 import hu.modembed.model.modembed.abstraction.behavior.SequentialBehaviorPart;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolAssignment;
+
 import hu.modembed.model.modembed.infrastructure.impl.RootElementImpl;
 
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 

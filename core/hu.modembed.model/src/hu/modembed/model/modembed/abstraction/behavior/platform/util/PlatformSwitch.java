@@ -3,17 +3,15 @@
 package hu.modembed.model.modembed.abstraction.behavior.platform.util;
 
 import hu.modembed.model.modembed.abstraction.behavior.platform.*;
-import hu.modembed.model.modembed.abstraction.behavior.platform.InstructionCallOperationStep;
-import hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterMapping;
-import hu.modembed.model.modembed.abstraction.behavior.platform.OperationArgument;
-import hu.modembed.model.modembed.abstraction.behavior.platform.OperationDefinition;
-import hu.modembed.model.modembed.abstraction.behavior.platform.OperationStep;
-import hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage;
+
 import hu.modembed.model.modembed.infrastructure.MODembedElement;
 import hu.modembed.model.modembed.infrastructure.NamedElement;
 
+import hu.modembed.model.modembed.infrastructure.expressions.Expression;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.util.Switch;
 
 /**
@@ -120,34 +118,17 @@ public class PlatformSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PlatformPackage.INSTRUCTION_PARAMETER_VALUE: {
-				InstructionParameterValue instructionParameterValue = (InstructionParameterValue)theEObject;
-				T result = caseInstructionParameterValue(instructionParameterValue);
-				if (result == null) result = caseMODembedElement(instructionParameterValue);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case PlatformPackage.LABEL_PARAMETER_VALUE: {
 				LabelParameterValue labelParameterValue = (LabelParameterValue)theEObject;
 				T result = caseLabelParameterValue(labelParameterValue);
-				if (result == null) result = caseInstructionParameterValue(labelParameterValue);
-				if (result == null) result = caseMODembedElement(labelParameterValue);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PlatformPackage.INSTRUCTION_PARAMETER_CONSTANT_VALUE: {
-				InstructionParameterConstantValue instructionParameterConstantValue = (InstructionParameterConstantValue)theEObject;
-				T result = caseInstructionParameterConstantValue(instructionParameterConstantValue);
-				if (result == null) result = caseInstructionParameterValue(instructionParameterConstantValue);
-				if (result == null) result = caseMODembedElement(instructionParameterConstantValue);
+				if (result == null) result = caseExpression(labelParameterValue);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case PlatformPackage.INSTRUCTION_PARAMETER_MAPPING: {
 				InstructionParameterMapping instructionParameterMapping = (InstructionParameterMapping)theEObject;
 				T result = caseInstructionParameterMapping(instructionParameterMapping);
-				if (result == null) result = caseInstructionParameterValue(instructionParameterMapping);
-				if (result == null) result = caseMODembedElement(instructionParameterMapping);
+				if (result == null) result = caseExpression(instructionParameterMapping);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -246,21 +227,6 @@ public class PlatformSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Instruction Parameter Value</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Instruction Parameter Value</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseInstructionParameterValue(InstructionParameterValue object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Label Parameter Value</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -272,21 +238,6 @@ public class PlatformSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseLabelParameterValue(LabelParameterValue object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Instruction Parameter Constant Value</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Instruction Parameter Constant Value</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseInstructionParameterConstantValue(InstructionParameterConstantValue object) {
 		return null;
 	}
 
@@ -332,6 +283,21 @@ public class PlatformSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseNamedElement(NamedElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Expression</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseExpression(Expression object) {
 		return null;
 	}
 

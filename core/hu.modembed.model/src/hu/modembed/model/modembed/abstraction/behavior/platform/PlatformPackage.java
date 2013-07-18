@@ -4,6 +4,8 @@ package hu.modembed.model.modembed.abstraction.behavior.platform;
 
 import hu.modembed.model.modembed.infrastructure.InfrastructurePackage;
 
+import hu.modembed.model.modembed.infrastructure.expressions.ExpressionsPackage;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -406,76 +408,13 @@ public interface PlatformPackage extends EPackage {
 	int CONDITIONAL_OPERATION__ANNOTATIONS = OPERATION_STEP__ANNOTATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' reference.
+	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITIONAL_OPERATION__VALUE = OPERATION_STEP_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Bit Offset</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITIONAL_OPERATION__BIT_OFFSET = OPERATION_STEP_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Value Offset</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITIONAL_OPERATION__VALUE_OFFSET = OPERATION_STEP_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Equals</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITIONAL_OPERATION__EQUALS = OPERATION_STEP_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Greater</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITIONAL_OPERATION__GREATER = OPERATION_STEP_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Lower</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITIONAL_OPERATION__LOWER = OPERATION_STEP_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Check Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITIONAL_OPERATION__CHECK_VALUE = OPERATION_STEP_FEATURE_COUNT + 6;
-
-	/**
-	 * The feature id for the '<em><b>Mask</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITIONAL_OPERATION__MASK = OPERATION_STEP_FEATURE_COUNT + 7;
+	int CONDITIONAL_OPERATION__CONDITION = OPERATION_STEP_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Steps</b></em>' containment reference list.
@@ -484,7 +423,7 @@ public interface PlatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITIONAL_OPERATION__STEPS = OPERATION_STEP_FEATURE_COUNT + 8;
+	int CONDITIONAL_OPERATION__STEPS = OPERATION_STEP_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Conditional Operation</em>' class.
@@ -493,53 +432,7 @@ public interface PlatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITIONAL_OPERATION_FEATURE_COUNT = OPERATION_STEP_FEATURE_COUNT + 9;
-
-	/**
-	 * The meta object id for the '{@link hu.modembed.model.modembed.abstraction.behavior.platform.impl.InstructionParameterValueImpl <em>Instruction Parameter Value</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.impl.InstructionParameterValueImpl
-	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.impl.PlatformPackageImpl#getInstructionParameterValue()
-	 * @generated
-	 */
-	int INSTRUCTION_PARAMETER_VALUE = 6;
-
-	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INSTRUCTION_PARAMETER_VALUE__DESCRIPTION = InfrastructurePackage.MO_DEMBED_ELEMENT__DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INSTRUCTION_PARAMETER_VALUE__ORIGINS = InfrastructurePackage.MO_DEMBED_ELEMENT__ORIGINS;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INSTRUCTION_PARAMETER_VALUE__ANNOTATIONS = InfrastructurePackage.MO_DEMBED_ELEMENT__ANNOTATIONS;
-
-	/**
-	 * The number of structural features of the '<em>Instruction Parameter Value</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INSTRUCTION_PARAMETER_VALUE_FEATURE_COUNT = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 0;
+	int CONDITIONAL_OPERATION_FEATURE_COUNT = OPERATION_STEP_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link hu.modembed.model.modembed.abstraction.behavior.platform.impl.LabelParameterValueImpl <em>Label Parameter Value</em>}' class.
@@ -549,34 +442,7 @@ public interface PlatformPackage extends EPackage {
 	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.impl.PlatformPackageImpl#getLabelParameterValue()
 	 * @generated
 	 */
-	int LABEL_PARAMETER_VALUE = 7;
-
-	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LABEL_PARAMETER_VALUE__DESCRIPTION = INSTRUCTION_PARAMETER_VALUE__DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LABEL_PARAMETER_VALUE__ORIGINS = INSTRUCTION_PARAMETER_VALUE__ORIGINS;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LABEL_PARAMETER_VALUE__ANNOTATIONS = INSTRUCTION_PARAMETER_VALUE__ANNOTATIONS;
+	int LABEL_PARAMETER_VALUE = 6;
 
 	/**
 	 * The feature id for the '<em><b>Label</b></em>' reference.
@@ -585,7 +451,7 @@ public interface PlatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LABEL_PARAMETER_VALUE__LABEL = INSTRUCTION_PARAMETER_VALUE_FEATURE_COUNT + 0;
+	int LABEL_PARAMETER_VALUE__LABEL = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Label Parameter Value</em>' class.
@@ -594,62 +460,7 @@ public interface PlatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LABEL_PARAMETER_VALUE_FEATURE_COUNT = INSTRUCTION_PARAMETER_VALUE_FEATURE_COUNT + 1;
-
-	/**
-	 * The meta object id for the '{@link hu.modembed.model.modembed.abstraction.behavior.platform.impl.InstructionParameterConstantValueImpl <em>Instruction Parameter Constant Value</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.impl.InstructionParameterConstantValueImpl
-	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.impl.PlatformPackageImpl#getInstructionParameterConstantValue()
-	 * @generated
-	 */
-	int INSTRUCTION_PARAMETER_CONSTANT_VALUE = 8;
-
-	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INSTRUCTION_PARAMETER_CONSTANT_VALUE__DESCRIPTION = INSTRUCTION_PARAMETER_VALUE__DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INSTRUCTION_PARAMETER_CONSTANT_VALUE__ORIGINS = INSTRUCTION_PARAMETER_VALUE__ORIGINS;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INSTRUCTION_PARAMETER_CONSTANT_VALUE__ANNOTATIONS = INSTRUCTION_PARAMETER_VALUE__ANNOTATIONS;
-
-	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INSTRUCTION_PARAMETER_CONSTANT_VALUE__VALUE = INSTRUCTION_PARAMETER_VALUE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Instruction Parameter Constant Value</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INSTRUCTION_PARAMETER_CONSTANT_VALUE_FEATURE_COUNT = INSTRUCTION_PARAMETER_VALUE_FEATURE_COUNT + 1;
+	int LABEL_PARAMETER_VALUE_FEATURE_COUNT = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link hu.modembed.model.modembed.abstraction.behavior.platform.impl.InstructionParameterMappingImpl <em>Instruction Parameter Mapping</em>}' class.
@@ -659,34 +470,7 @@ public interface PlatformPackage extends EPackage {
 	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.impl.PlatformPackageImpl#getInstructionParameterMapping()
 	 * @generated
 	 */
-	int INSTRUCTION_PARAMETER_MAPPING = 9;
-
-	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INSTRUCTION_PARAMETER_MAPPING__DESCRIPTION = INSTRUCTION_PARAMETER_VALUE__DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INSTRUCTION_PARAMETER_MAPPING__ORIGINS = INSTRUCTION_PARAMETER_VALUE__ORIGINS;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INSTRUCTION_PARAMETER_MAPPING__ANNOTATIONS = INSTRUCTION_PARAMETER_VALUE__ANNOTATIONS;
+	int INSTRUCTION_PARAMETER_MAPPING = 7;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' reference.
@@ -695,7 +479,7 @@ public interface PlatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INSTRUCTION_PARAMETER_MAPPING__VALUE = INSTRUCTION_PARAMETER_VALUE_FEATURE_COUNT + 0;
+	int INSTRUCTION_PARAMETER_MAPPING__VALUE = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Attribute</b></em>' reference.
@@ -704,25 +488,7 @@ public interface PlatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INSTRUCTION_PARAMETER_MAPPING__ATTRIBUTE = INSTRUCTION_PARAMETER_VALUE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Bit Offset</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INSTRUCTION_PARAMETER_MAPPING__BIT_OFFSET = INSTRUCTION_PARAMETER_VALUE_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Value Offset</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INSTRUCTION_PARAMETER_MAPPING__VALUE_OFFSET = INSTRUCTION_PARAMETER_VALUE_FEATURE_COUNT + 3;
+	int INSTRUCTION_PARAMETER_MAPPING__ATTRIBUTE = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Instruction Parameter Mapping</em>' class.
@@ -731,7 +497,7 @@ public interface PlatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INSTRUCTION_PARAMETER_MAPPING_FEATURE_COUNT = INSTRUCTION_PARAMETER_VALUE_FEATURE_COUNT + 4;
+	int INSTRUCTION_PARAMETER_MAPPING_FEATURE_COUNT = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 2;
 
 
 	/**
@@ -872,92 +638,15 @@ public interface PlatformPackage extends EPackage {
 	EClass getConditionalOperation();
 
 	/**
-	 * Returns the meta object for the reference '{@link hu.modembed.model.modembed.abstraction.behavior.platform.ConditionalOperation#getValue <em>Value</em>}'.
+	 * Returns the meta object for the containment reference '{@link hu.modembed.model.modembed.abstraction.behavior.platform.ConditionalOperation#getCondition <em>Condition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Value</em>'.
-	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.ConditionalOperation#getValue()
+	 * @return the meta object for the containment reference '<em>Condition</em>'.
+	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.ConditionalOperation#getCondition()
 	 * @see #getConditionalOperation()
 	 * @generated
 	 */
-	EReference getConditionalOperation_Value();
-
-	/**
-	 * Returns the meta object for the attribute '{@link hu.modembed.model.modembed.abstraction.behavior.platform.ConditionalOperation#getBitOffset <em>Bit Offset</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Bit Offset</em>'.
-	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.ConditionalOperation#getBitOffset()
-	 * @see #getConditionalOperation()
-	 * @generated
-	 */
-	EAttribute getConditionalOperation_BitOffset();
-
-	/**
-	 * Returns the meta object for the attribute '{@link hu.modembed.model.modembed.abstraction.behavior.platform.ConditionalOperation#getValueOffset <em>Value Offset</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value Offset</em>'.
-	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.ConditionalOperation#getValueOffset()
-	 * @see #getConditionalOperation()
-	 * @generated
-	 */
-	EAttribute getConditionalOperation_ValueOffset();
-
-	/**
-	 * Returns the meta object for the attribute '{@link hu.modembed.model.modembed.abstraction.behavior.platform.ConditionalOperation#isEquals <em>Equals</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Equals</em>'.
-	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.ConditionalOperation#isEquals()
-	 * @see #getConditionalOperation()
-	 * @generated
-	 */
-	EAttribute getConditionalOperation_Equals();
-
-	/**
-	 * Returns the meta object for the attribute '{@link hu.modembed.model.modembed.abstraction.behavior.platform.ConditionalOperation#isGreater <em>Greater</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Greater</em>'.
-	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.ConditionalOperation#isGreater()
-	 * @see #getConditionalOperation()
-	 * @generated
-	 */
-	EAttribute getConditionalOperation_Greater();
-
-	/**
-	 * Returns the meta object for the attribute '{@link hu.modembed.model.modembed.abstraction.behavior.platform.ConditionalOperation#isLower <em>Lower</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Lower</em>'.
-	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.ConditionalOperation#isLower()
-	 * @see #getConditionalOperation()
-	 * @generated
-	 */
-	EAttribute getConditionalOperation_Lower();
-
-	/**
-	 * Returns the meta object for the attribute '{@link hu.modembed.model.modembed.abstraction.behavior.platform.ConditionalOperation#getCheckValue <em>Check Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Check Value</em>'.
-	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.ConditionalOperation#getCheckValue()
-	 * @see #getConditionalOperation()
-	 * @generated
-	 */
-	EAttribute getConditionalOperation_CheckValue();
-
-	/**
-	 * Returns the meta object for the attribute '{@link hu.modembed.model.modembed.abstraction.behavior.platform.ConditionalOperation#getMask <em>Mask</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Mask</em>'.
-	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.ConditionalOperation#getMask()
-	 * @see #getConditionalOperation()
-	 * @generated
-	 */
-	EAttribute getConditionalOperation_Mask();
+	EReference getConditionalOperation_Condition();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link hu.modembed.model.modembed.abstraction.behavior.platform.ConditionalOperation#getSteps <em>Steps</em>}'.
@@ -969,16 +658,6 @@ public interface PlatformPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getConditionalOperation_Steps();
-
-	/**
-	 * Returns the meta object for class '{@link hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterValue <em>Instruction Parameter Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Instruction Parameter Value</em>'.
-	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterValue
-	 * @generated
-	 */
-	EClass getInstructionParameterValue();
 
 	/**
 	 * Returns the meta object for class '{@link hu.modembed.model.modembed.abstraction.behavior.platform.LabelParameterValue <em>Label Parameter Value</em>}'.
@@ -1000,27 +679,6 @@ public interface PlatformPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getLabelParameterValue_Label();
-
-	/**
-	 * Returns the meta object for class '{@link hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterConstantValue <em>Instruction Parameter Constant Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Instruction Parameter Constant Value</em>'.
-	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterConstantValue
-	 * @generated
-	 */
-	EClass getInstructionParameterConstantValue();
-
-	/**
-	 * Returns the meta object for the attribute '{@link hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterConstantValue#getValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterConstantValue#getValue()
-	 * @see #getInstructionParameterConstantValue()
-	 * @generated
-	 */
-	EAttribute getInstructionParameterConstantValue_Value();
 
 	/**
 	 * Returns the meta object for class '{@link hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterMapping <em>Instruction Parameter Mapping</em>}'.
@@ -1053,28 +711,6 @@ public interface PlatformPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getInstructionParameterMapping_Attribute();
-
-	/**
-	 * Returns the meta object for the attribute '{@link hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterMapping#getBitOffset <em>Bit Offset</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Bit Offset</em>'.
-	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterMapping#getBitOffset()
-	 * @see #getInstructionParameterMapping()
-	 * @generated
-	 */
-	EAttribute getInstructionParameterMapping_BitOffset();
-
-	/**
-	 * Returns the meta object for the attribute '{@link hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterMapping#getValueOffset <em>Value Offset</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value Offset</em>'.
-	 * @see hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterMapping#getValueOffset()
-	 * @see #getInstructionParameterMapping()
-	 * @generated
-	 */
-	EAttribute getInstructionParameterMapping_ValueOffset();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1215,68 +851,12 @@ public interface PlatformPackage extends EPackage {
 		EClass CONDITIONAL_OPERATION = eINSTANCE.getConditionalOperation();
 
 		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Condition</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONDITIONAL_OPERATION__VALUE = eINSTANCE.getConditionalOperation_Value();
-
-		/**
-		 * The meta object literal for the '<em><b>Bit Offset</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CONDITIONAL_OPERATION__BIT_OFFSET = eINSTANCE.getConditionalOperation_BitOffset();
-
-		/**
-		 * The meta object literal for the '<em><b>Value Offset</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CONDITIONAL_OPERATION__VALUE_OFFSET = eINSTANCE.getConditionalOperation_ValueOffset();
-
-		/**
-		 * The meta object literal for the '<em><b>Equals</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CONDITIONAL_OPERATION__EQUALS = eINSTANCE.getConditionalOperation_Equals();
-
-		/**
-		 * The meta object literal for the '<em><b>Greater</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CONDITIONAL_OPERATION__GREATER = eINSTANCE.getConditionalOperation_Greater();
-
-		/**
-		 * The meta object literal for the '<em><b>Lower</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CONDITIONAL_OPERATION__LOWER = eINSTANCE.getConditionalOperation_Lower();
-
-		/**
-		 * The meta object literal for the '<em><b>Check Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CONDITIONAL_OPERATION__CHECK_VALUE = eINSTANCE.getConditionalOperation_CheckValue();
-
-		/**
-		 * The meta object literal for the '<em><b>Mask</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CONDITIONAL_OPERATION__MASK = eINSTANCE.getConditionalOperation_Mask();
+		EReference CONDITIONAL_OPERATION__CONDITION = eINSTANCE.getConditionalOperation_Condition();
 
 		/**
 		 * The meta object literal for the '<em><b>Steps</b></em>' containment reference list feature.
@@ -1285,16 +865,6 @@ public interface PlatformPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CONDITIONAL_OPERATION__STEPS = eINSTANCE.getConditionalOperation_Steps();
-
-		/**
-		 * The meta object literal for the '{@link hu.modembed.model.modembed.abstraction.behavior.platform.impl.InstructionParameterValueImpl <em>Instruction Parameter Value</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see hu.modembed.model.modembed.abstraction.behavior.platform.impl.InstructionParameterValueImpl
-		 * @see hu.modembed.model.modembed.abstraction.behavior.platform.impl.PlatformPackageImpl#getInstructionParameterValue()
-		 * @generated
-		 */
-		EClass INSTRUCTION_PARAMETER_VALUE = eINSTANCE.getInstructionParameterValue();
 
 		/**
 		 * The meta object literal for the '{@link hu.modembed.model.modembed.abstraction.behavior.platform.impl.LabelParameterValueImpl <em>Label Parameter Value</em>}' class.
@@ -1313,24 +883,6 @@ public interface PlatformPackage extends EPackage {
 		 * @generated
 		 */
 		EReference LABEL_PARAMETER_VALUE__LABEL = eINSTANCE.getLabelParameterValue_Label();
-
-		/**
-		 * The meta object literal for the '{@link hu.modembed.model.modembed.abstraction.behavior.platform.impl.InstructionParameterConstantValueImpl <em>Instruction Parameter Constant Value</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see hu.modembed.model.modembed.abstraction.behavior.platform.impl.InstructionParameterConstantValueImpl
-		 * @see hu.modembed.model.modembed.abstraction.behavior.platform.impl.PlatformPackageImpl#getInstructionParameterConstantValue()
-		 * @generated
-		 */
-		EClass INSTRUCTION_PARAMETER_CONSTANT_VALUE = eINSTANCE.getInstructionParameterConstantValue();
-
-		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute INSTRUCTION_PARAMETER_CONSTANT_VALUE__VALUE = eINSTANCE.getInstructionParameterConstantValue_Value();
 
 		/**
 		 * The meta object literal for the '{@link hu.modembed.model.modembed.abstraction.behavior.platform.impl.InstructionParameterMappingImpl <em>Instruction Parameter Mapping</em>}' class.
@@ -1357,22 +909,6 @@ public interface PlatformPackage extends EPackage {
 		 * @generated
 		 */
 		EReference INSTRUCTION_PARAMETER_MAPPING__ATTRIBUTE = eINSTANCE.getInstructionParameterMapping_Attribute();
-
-		/**
-		 * The meta object literal for the '<em><b>Bit Offset</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute INSTRUCTION_PARAMETER_MAPPING__BIT_OFFSET = eINSTANCE.getInstructionParameterMapping_BitOffset();
-
-		/**
-		 * The meta object literal for the '<em><b>Value Offset</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute INSTRUCTION_PARAMETER_MAPPING__VALUE_OFFSET = eINSTANCE.getInstructionParameterMapping_ValueOffset();
 
 	}
 

@@ -32,6 +32,10 @@ import hu.modembed.model.modembed.core.object.impl.ObjectPackageImpl;
 
 import hu.modembed.model.modembed.infrastructure.InfrastructurePackage;
 
+import hu.modembed.model.modembed.infrastructure.expressions.ExpressionsPackage;
+
+import hu.modembed.model.modembed.infrastructure.expressions.impl.ExpressionsPackageImpl;
+
 import hu.modembed.model.modembed.infrastructure.impl.InfrastructurePackageImpl;
 
 import hu.modembed.model.modembed.infrastructure.traceability.TraceabilityPackage;
@@ -216,6 +220,7 @@ public class StructuredPackageImpl extends EPackageImpl implements StructuredPac
 		// Obtain or create and register interdependencies
 		InfrastructurePackageImpl theInfrastructurePackage = (InfrastructurePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InfrastructurePackage.eNS_URI) instanceof InfrastructurePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InfrastructurePackage.eNS_URI) : InfrastructurePackage.eINSTANCE);
 		TraceabilityPackageImpl theTraceabilityPackage = (TraceabilityPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TraceabilityPackage.eNS_URI) instanceof TraceabilityPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TraceabilityPackage.eNS_URI) : TraceabilityPackage.eINSTANCE);
+		ExpressionsPackageImpl theExpressionsPackage = (ExpressionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI) instanceof ExpressionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI) : ExpressionsPackage.eINSTANCE);
 		InstructionsetPackageImpl theInstructionsetPackage = (InstructionsetPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InstructionsetPackage.eNS_URI) instanceof InstructionsetPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InstructionsetPackage.eNS_URI) : InstructionsetPackage.eINSTANCE);
 		ObjectPackageImpl theObjectPackage = (ObjectPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ObjectPackage.eNS_URI) instanceof ObjectPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ObjectPackage.eNS_URI) : ObjectPackage.eINSTANCE);
 		AbstractionPackageImpl theAbstractionPackage = (AbstractionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AbstractionPackage.eNS_URI) instanceof AbstractionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AbstractionPackage.eNS_URI) : AbstractionPackage.eINSTANCE);
@@ -228,6 +233,7 @@ public class StructuredPackageImpl extends EPackageImpl implements StructuredPac
 		theStructuredPackage.createPackageContents();
 		theInfrastructurePackage.createPackageContents();
 		theTraceabilityPackage.createPackageContents();
+		theExpressionsPackage.createPackageContents();
 		theInstructionsetPackage.createPackageContents();
 		theObjectPackage.createPackageContents();
 		theAbstractionPackage.createPackageContents();
@@ -240,6 +246,7 @@ public class StructuredPackageImpl extends EPackageImpl implements StructuredPac
 		theStructuredPackage.initializePackageContents();
 		theInfrastructurePackage.initializePackageContents();
 		theTraceabilityPackage.initializePackageContents();
+		theExpressionsPackage.initializePackageContents();
 		theInstructionsetPackage.initializePackageContents();
 		theObjectPackage.initializePackageContents();
 		theAbstractionPackage.initializePackageContents();

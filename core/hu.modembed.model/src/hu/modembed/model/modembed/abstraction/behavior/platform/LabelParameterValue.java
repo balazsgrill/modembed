@@ -2,6 +2,7 @@
  */
 package hu.modembed.model.modembed.abstraction.behavior.platform;
 
+import hu.modembed.model.modembed.infrastructure.expressions.Expression;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,7 +20,7 @@ package hu.modembed.model.modembed.abstraction.behavior.platform;
  * @model
  * @generated
  */
-public interface LabelParameterValue extends InstructionParameterValue {
+public interface LabelParameterValue extends Expression {
 	/**
 	 * Returns the value of the '<em><b>Label</b></em>' reference.
 	 * <!-- begin-user-doc -->

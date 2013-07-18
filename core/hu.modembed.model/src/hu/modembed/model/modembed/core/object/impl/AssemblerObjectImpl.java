@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -56,6 +57,7 @@ public class AssemblerObjectImpl extends RootElementImpl implements AssemblerObj
 	 * @ordered
 	 */
 	protected static final long START_ADDRESS_EDEFAULT = 0L;
+
 	/**
 	 * The cached value of the '{@link #getStartAddress() <em>Start Address</em>}' attribute.
 	 * <!-- begin-user-doc -->

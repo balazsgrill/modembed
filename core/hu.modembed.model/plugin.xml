@@ -7,6 +7,7 @@
 <plugin>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated modembed -->
       <package
             uri="http://modembed.hu/infrastructure"
             class="hu.modembed.model.modembed.infrastructure.InfrastructurePackage"
@@ -14,6 +15,7 @@
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated modembed -->
       <package
             uri="http://modembed.hu/infrastructure/traceability"
             class="hu.modembed.model.modembed.infrastructure.traceability.TraceabilityPackage"
@@ -21,6 +23,15 @@
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated modembed -->
+      <package
+            uri="http://modembed.hu/infrastructure/expressions"
+            class="hu.modembed.model.modembed.infrastructure.expressions.ExpressionsPackage"
+            genModel="model/modembed.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated modembed -->
       <package
             uri="http://modembed.hu/core/instructionset"
             class="hu.modembed.model.modembed.core.instructionset.InstructionsetPackage"
@@ -28,6 +39,7 @@
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated modembed -->
       <package
             uri="http://modembed.hu/core/object"
             class="hu.modembed.model.modembed.core.object.ObjectPackage"
@@ -35,6 +47,7 @@
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated modembed -->
       <package
             uri="http://modembed.hu/abstraction"
             class="hu.modembed.model.modembed.abstraction.AbstractionPackage"
@@ -42,6 +55,7 @@
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated modembed -->
       <package
             uri="http://modembed.hu/abstraction/types"
             class="hu.modembed.model.modembed.abstraction.types.TypesPackage"
@@ -49,6 +63,7 @@
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated modembed -->
       <package
             uri="http://modembed.hu/abstraction/memorymodel"
             class="hu.modembed.model.modembed.abstraction.memorymodel.MemorymodelPackage"
@@ -56,6 +71,7 @@
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated modembed -->
       <package
             uri="http://modembed.hu/abstraction/behavior"
             class="hu.modembed.model.modembed.abstraction.behavior.BehaviorPackage"
@@ -63,6 +79,7 @@
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated modembed -->
       <package
             uri="http://modembed.hu/abstraction/behavior/platform"
             class="hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage"
@@ -70,6 +87,7 @@
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated modembed -->
       <package
             uri="http://modembed.hu/structured"
             class="hu.modembed.model.modembed.structured.StructuredPackage"

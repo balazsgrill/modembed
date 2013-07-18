@@ -6,7 +6,9 @@ import hu.modembed.model.modembed.abstraction.behavior.BehaviorPackage;
 import hu.modembed.model.modembed.abstraction.behavior.CodeSymbolPlacement;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -32,6 +34,7 @@ public class CodeSymbolPlacementImpl extends SequentialActionImpl implements Cod
 	 * @ordered
 	 */
 	protected static final String SYMBOL_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getSymbol() <em>Symbol</em>}' attribute.
 	 * <!-- begin-user-doc -->

@@ -4,6 +4,8 @@ package hu.modembed.model.modembed.abstraction.behavior.platform;
 
 import hu.modembed.model.modembed.core.instructionset.Instruction;
 
+import hu.modembed.model.modembed.infrastructure.expressions.Expression;
+
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -52,7 +54,7 @@ public interface InstructionCallOperationStep extends OperationStep {
 
 	/**
 	 * Returns the value of the '<em><b>Arguments</b></em>' containment reference list.
-	 * The list contents are of type {@link hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterValue}.
+	 * The list contents are of type {@link hu.modembed.model.modembed.infrastructure.expressions.Expression}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Arguments</em>' containment reference list isn't clear,
@@ -64,6 +66,6 @@ public interface InstructionCallOperationStep extends OperationStep {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<InstructionParameterValue> getArguments();
+	EList<Expression> getArguments();
 
 } // InstructionCallOperationStep
