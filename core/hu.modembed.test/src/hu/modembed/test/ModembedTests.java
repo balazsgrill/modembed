@@ -9,6 +9,7 @@ import hu.modembed.includedcode.IncludedProjectsRegistry;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
 import org.eclipse.ant.core.AntRunner;
 import org.eclipse.core.resources.IFile;
@@ -136,10 +137,15 @@ public class ModembedTests {
 	}
 	
 	public static void runAntScript(IProject project, String antScript, String target) throws CoreException{
+		runAntScript(project, antScript, target, Collections.<String,String>emptyMap());
+	}
+	
+	public static void runAntScript(IProject project, String antScript, String target, Map<String, String> properties) throws CoreException{
 		IFile buildFile = project.getFile(antScript);
 		Assert.assertTrue("Ant file does not exist!", buildFile.exists());
 		System.out.println("Executing "+buildFile.toString());
 		AntRunner runner = new AntRunner();
+		runner.addUserProperties(properties);
 		runner.setBuildFileLocation(buildFile.getLocation().toPortableString());
 		if (target != null){
 			runner.setExecutionTargets(new String[]{target});
