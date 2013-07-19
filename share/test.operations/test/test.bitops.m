@@ -1,5 +1,5 @@
 #!platform:/resource/e.core/syntax/sequential.syntax.m
-module test.bitops device pic16e.test.device;
+module test.bitops;
 
 boolean false = 0;
 boolean true = 1;
