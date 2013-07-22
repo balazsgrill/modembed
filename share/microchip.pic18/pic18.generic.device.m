@@ -23,12 +23,12 @@ operation branch(condition: boolean@BRAM, true: label, false: label){
 
 operation setbit(value: uint8@BRAM, bit: uint8, bvalue: boolean){
 	MOVLB(value->bank);
-	MOVLW(bvalue);
-	BRW(); // Skip if set
-	BCF(value, bit);
-	XORLW(1); // Toggle W
-	BRW();
-	BSF(value, bit);
+	if (bvalue==1){
+		BSF(value, bit);
+	}
+	if (bvalue==0){
+		BCF(value, bit);
+	}
 }
 
 operation goto(label : label){
