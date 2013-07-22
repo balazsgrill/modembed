@@ -145,5 +145,57 @@ public class SimulatorTests {
 		long r = simulator.getSymbolValue("r");
 		Assert.assertEquals(0, r);
 	}
+
+/*
+ * UINT16 tests	
+ */
+	
+	@Test
+	public void test2_1() throws Exception{
+		DeviceSimulator simulator = test_operation("test2_1");
+		
+		long r = simulator.getSymbolValue("r");
+		Assert.assertEquals(1, r);
+	}
+	
+	@Test
+	public void test2_2() throws Exception{
+		DeviceSimulator simulator = test_operation("test2_2");
+		
+		long r = simulator.getSymbolValue("r");
+		Assert.assertEquals(0, r);
+	}
+	
+	@Test
+	public void test2_3() throws Exception{
+		DeviceSimulator simulator = test_operation("test2_3");
+		
+		long r = simulator.getSymbolValue("r");
+		Assert.assertEquals(0, r);
+	}
+
+	@Test
+	public void test2_4() throws Exception{
+		DeviceSimulator simulator = test_operation("test2_4");
+		
+		long r = simulator.getSymbolValue("r");
+		Assert.assertEquals(1, r);
+	}
+	
+	@Test
+	public void test2_5() throws Exception{
+		DeviceSimulator simulator = test_operation("test2_5");
+		
+		long r = simulator.getSymbolValue("r");
+		Assert.assertEquals(0, r);
+	}
+	
+	@Test
+	public void test2_6() throws Exception{
+		DeviceSimulator simulator = test_operation("test2_6");
+		
+		long r = simulator.getSymbolValue("r");
+		Assert.assertEquals(0, r);
+	}	
 	
 }

@@ -17,6 +17,7 @@ import hu.modembed.model.modembed.abstraction.behavior.SymbolValueAssignment;
 import hu.modembed.model.modembed.abstraction.behavior.platform.ConditionalOperation;
 import hu.modembed.model.modembed.abstraction.behavior.platform.InstructionCallOperationStep;
 import hu.modembed.model.modembed.abstraction.behavior.platform.InstructionParameterMapping;
+import hu.modembed.model.modembed.abstraction.behavior.platform.LabelParameterValue;
 import hu.modembed.model.modembed.abstraction.behavior.platform.OperationArgument;
 import hu.modembed.model.modembed.abstraction.behavior.platform.OperationDefinition;
 import hu.modembed.model.modembed.abstraction.behavior.platform.OperationLocalLabel;
@@ -67,10 +68,14 @@ public class SequentialBehaviorTranslator {
 			
 		}
 		
-//		public Object compute(LabelParameterValue lbl){
-//			//TODO: OperationLocalLabels
-//			return null;
-//		}
+		public Object compute(LabelParameterValue lbl) throws ExpressionResolveException{
+			String symbol = lbl.getLabel().getName();
+			isLabel = true;
+			if (labels.containsKey(symbol)){
+				return labels.get(symbol);
+			}
+			throw new ExpressionResolveException("Could not find local label: "+symbol);
+		}
 		
 		public Object compute(InstructionParameterMapping ipm) throws ExpressionResolveException{
 			String symbol = context.get(ipm.getValue());

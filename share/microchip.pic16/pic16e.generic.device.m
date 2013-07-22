@@ -62,6 +62,20 @@ operation set(dest : uint16@BRAM, value : uint16){
 	MOVWF(dest+1);
 }
 
+operation set(dest : uint16@BRAM, value : uint16@BRAM){
+	/* Low byte */
+	MOVLB(value->bank);
+	MOVF(value, 0);
+	MOVLB(dest->bank);
+	MOVWF(dest);
+	
+	/* High byte */
+	MOVLB(value->bank);
+	MOVF(value+1, 0);
+	MOVLB(dest->bank);
+	MOVWF(dest+1);
+}
+
 /* dest = v1>v2 */
 operation greater(dest: boolean@BRAM, v1:uint8@BRAM, v2:uint8@BRAM){
 	MOVLB(dest->bank);
@@ -79,8 +93,39 @@ operation greater(dest: boolean@BRAM, v1:uint8@BRAM, v2:uint8@BRAM){
 }
 
 operation greater(dest: boolean@BRAM, v1:uint16@BRAM, v2:uint16@BRAM){
-	MOVLB(dest->bank);
-	CLRF(dest);
+	/* Method:
+	 * Check high byte first
+	 * Low byte only needs to be checked if high byte equals
+	 */
 	
+	MOVLB(v1->bank);
+	MOVF(v1+1, 0);
+	MOVLB(v2->bank);
+	SUBWF(v2+1, 0);
+	// IF v1>v2 -> C becomes 1
+	BTFSC(3, 0); //Test STATUS:C. If not set, skip jumping to true (if set, jump to true)
+	GOTO(@true);
 	
+	// IF v1==v0 -> Z becomes 1 
+	BTFSS(3,2); //Test STATUS:Z if not set, jump to false
+	GOTO(@false);
+	
+	MOVLB(v1->bank);
+	MOVF(v1, 0);
+	MOVLB(v2->bank);
+	SUBWF(v2, 0);
+	
+	// IF v1>v2 -> C becomes 1
+	BTFSC(3, 0); //Test STATUS:C. If not set, skip jumping to true (if set, jump to true)
+	GOTO(@true);
+	
+	false:
+		MOVLB(dest->bank);
+		CLRF(dest);	
+		GOTO(@end);
+	true:
+		MOVLW(1);
+		MOVLB(dest->bank);
+		MOVWF(dest);
+	end:
 }

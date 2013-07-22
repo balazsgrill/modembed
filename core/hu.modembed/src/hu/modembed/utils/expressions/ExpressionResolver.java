@@ -62,4 +62,12 @@ public class ExpressionResolver {
 		return v1==v2 ? 1 : 0;
 	}
 	
+	public long rshift(Long v1, Long v2){
+		return v1>>v2;
+	}
+	
+	public long lshift(Long v1, Long v2){
+		return v1<<v2;
+	}
+	
 }

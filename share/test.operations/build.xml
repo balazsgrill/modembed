@@ -69,5 +69,29 @@
 	<target name="test7">
 		<produce file="test/test.bitops.m" test="test4"/>
 	</target>
+
+	<target name="test2_1">
+		<produce file="test/test.uint16.greater.m" test="test1"/>
+	</target>
+	
+	<target name="test2_2">
+		<produce file="test/test.uint16.greater.m" test="test2"/>
+	</target>
+	
+	<target name="test2_3">
+		<produce file="test/test.uint16.greater.m" test="test3"/>
+	</target>	
+	
+	<target name="test2_4">
+		<produce file="test/test.uint16.greater.m" test="test4"/>
+	</target>
+	
+	<target name="test2_5">
+		<produce file="test/test.uint16.greater.m" test="test5"/>
+	</target>
+	
+	<target name="test2_6">
+		<produce file="test/test.uint16.greater.m" test="test6"/>
+	</target>	
 	
 </project>

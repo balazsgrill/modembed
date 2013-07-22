@@ -130,6 +130,16 @@ public abstract class PIC16Core implements ICore{
 		}
 	}
 	
+	public void BTFSS(long f, long b){
+		int v = memory().getValue(bank(f));
+		int bit = (int)(1<<b);
+		boolean set = (v & bit) != 0;
+		
+		if (set){
+			PC().set(PC().get()+1);
+		}
+	}
+	
 	public void CLRW(){
 		W().set(0);
 	}

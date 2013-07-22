@@ -9,4 +9,4 @@ void waitCycle(uint16 cycles){
 	}
 }
 
-void doNothing();
+void doNothing(){}
