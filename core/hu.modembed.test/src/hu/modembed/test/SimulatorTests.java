@@ -187,7 +187,7 @@ public class SimulatorTests {
 		DeviceSimulator simulator = test_operation("test2_5");
 		
 		long r = simulator.getSymbolValue("r");
-		Assert.assertEquals(0, r);
+		Assert.assertEquals(1, r);
 	}
 	
 	@Test
