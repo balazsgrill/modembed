@@ -129,3 +129,18 @@ operation greater(dest: boolean@BRAM, v1:uint16@BRAM, v2:uint16@BRAM){
 		MOVWF(dest);
 	end:
 }
+
+operation subtract(dest: uint16@BRAM, value:uint16@BRAM){
+	/* 1 : Subtract low byte 
+	 * 2 : Subtract high byte with carry */
+	
+	MOVLB(value->bank);
+	MOVF(value);
+	MOVLB(dest->bank);
+	SUBWF(dest);
+	
+	MOVLB(value->bank);
+	MOVF(value+1);
+	MOVLB(dest->bank);
+	SUBWFB(dest+1);
+}
