@@ -9,16 +9,17 @@ import hu.modembed.simulator.ICore;
 import hu.modembed.simulator.IDevice;
 import hu.modembed.simulator.IMemory;
 import hu.modembed.simulator.IWord;
+import hu.modembed.simulator.impl.WritableMemory;
 
 /**
  * @author balazs.grill
  *
  */
-public class TestPic16Core extends PIC16eCore implements IDevice{
+public class TestPic16Device extends PIC16eCore implements IDevice{
 
 	@Override
-	protected int memorySize() {
-		return 128;
+	protected IMemory createCoreMemory() {
+		return new WritableMemory(128);
 	}
 	
 	private final IByte w = new IByte() {
@@ -52,14 +53,6 @@ public class TestPic16Core extends PIC16eCore implements IDevice{
 	};
 
 	/* (non-Javadoc)
-	 * @see hu.modembed.pic.simulator.PIC16Core#memory()
-	 */
-	@Override
-	protected IMemory memory() {
-		return memory;
-	}
-
-	/* (non-Javadoc)
 	 * @see hu.modembed.pic.simulator.PIC16Core#W()
 	 */
 	@Override
@@ -87,7 +80,7 @@ public class TestPic16Core extends PIC16eCore implements IDevice{
 
 	@Override
 	public IMemory getMemory() {
-		return memory;
+		return memory();
 	}
 
 }

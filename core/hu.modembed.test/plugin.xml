@@ -84,6 +84,9 @@
          <dependency
                project="microchip.pic16">
          </dependency>
+         <dependency
+               project="microchip.pic18">
+         </dependency>
       </project>
    </extension>
 

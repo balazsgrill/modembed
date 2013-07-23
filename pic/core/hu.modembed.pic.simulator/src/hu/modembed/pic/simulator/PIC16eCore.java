@@ -12,7 +12,7 @@ import hu.modembed.simulator.impl.ByteInMemory;
  */
 public abstract class PIC16eCore extends PIC16Core {
 
-	private final IByte BSR = new ByteInMemory(memory, 8);
+	private final IByte BSR = new ByteInMemory(memory(), 8);
 	
 	@Override
 	protected long bank(long address) {

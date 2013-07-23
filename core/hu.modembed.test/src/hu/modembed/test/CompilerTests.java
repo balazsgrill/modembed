@@ -67,7 +67,7 @@ public class CompilerTests {
 		Assert.assertTrue("Invalid AssemblerObject", asm instanceof AssemblerObject);
 		
 		SimulatorCore simulator = new SimulatorCore();
-		TestPic16Core device = new TestPic16Core();
+		TestPic16Device device = new TestPic16Device();
 		simulator.setCore(device);
 		simulator.setCode((AssemblerObject)asm);
 		simulator.setProgramCounter(device.PC());

@@ -4,21 +4,15 @@
 package hu.modembed.pic.simulator;
 
 import hu.modembed.simulator.IByte;
-import hu.modembed.simulator.ICore;
-import hu.modembed.simulator.IMemory;
 import hu.modembed.simulator.IWord;
+import hu.modembed.simulator.impl.AbstractCore;
 import hu.modembed.simulator.impl.ByteInMemory;
-import hu.modembed.simulator.impl.WritableMemory;
 
 /**
  * @author balazs.grill
  *
  */
-public abstract class PIC16Core implements ICore{
-	
-	protected final IMemory memory = new WritableMemory(memorySize());
-	
-	protected abstract int memorySize();
+public abstract class PIC16Core extends AbstractCore{
 	
 	/**
 	 * Extend address with the currently selected bank.
@@ -27,8 +21,6 @@ public abstract class PIC16Core implements ICore{
 	 * @return
 	 */
 	protected abstract long bank(long address);
-	
-	protected abstract IMemory memory();
 	
 	/**
 	 * Working register
@@ -47,7 +39,7 @@ public abstract class PIC16Core implements ICore{
 	 * 1: DC
 	 * 2: Z
 	 */
-	protected final IByte STATUS = new ByteInMemory(memory, 3);
+	protected final IByte STATUS = new ByteInMemory(memory(), 3);
 	
 	protected void setZ(boolean b){
 		if (b){

@@ -37,15 +37,14 @@ public class SimulatorTests {
 				
 				@Override
 				public IDevice createDevice() {
-					return new TestPic16Core();
+					return new TestPic16Device();
 				}
 			} }, { 
 			"pic18", new IDeviceFactory() {
 				
 				@Override
 				public IDevice createDevice() {
-					// TODO Auto-generated method stub
-					return null;
+					return new TestPic18Device();
 				}
 			} } };
 		return Arrays.asList(data);
