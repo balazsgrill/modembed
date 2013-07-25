@@ -44,5 +44,10 @@ public class BitInByte implements IBit {
 	public boolean get() {
 		return (b.get() & (1<<idx)) != 0;
 	}
+	
+	@Override
+	public String toString() {
+		return Boolean.toString(get());
+	}
 
 }

@@ -28,5 +28,10 @@ public class WritableWord implements IWord {
 	public long get() {
 		return this.value;
 	}
+	
+	@Override
+	public String toString() {
+		return Long.toHexString(value)+"("+Long.toString(value)+")";
+	}
 
 }

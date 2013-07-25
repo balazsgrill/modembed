@@ -35,5 +35,10 @@ public class ByteInMemory implements IByte {
 	public void set(int value) {
 		memory.setValue(address, value);
 	}
+	
+	@Override
+	public String toString() {
+		return get()+":0x"+Long.toHexString(address).toUpperCase();
+	}
 
 }

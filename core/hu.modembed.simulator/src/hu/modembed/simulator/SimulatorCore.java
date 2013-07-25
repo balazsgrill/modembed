@@ -25,6 +25,7 @@ public class SimulatorCore {
 	private IWord programCounter;
 	private boolean running = false;
 	private InstructionCall[] code = null;
+	private long[] labelToAddress = null;
 	
 	public boolean isRunning() {
 		return running;
@@ -44,16 +45,20 @@ public class SimulatorCore {
 		 * Any other words is considered as NOP.
 		 */
 		int wordnum = 0;
+		labelToAddress = new long[code.getInstructions().size()];
 		for(InstructionCall call : code.getInstructions()){
 			Instruction i = call.getInstruction();
 			wordnum += i.getWords().size();
 		}
 		this.code = new InstructionCall[wordnum];
 		wordnum = 0;
+		int j = 0;
 		for(InstructionCall call : code.getInstructions()){
 			this.code[wordnum] = call;
+			labelToAddress[j] = wordnum;
 			Instruction i = call.getInstruction();
 			wordnum += i.getWords().size();
+			j++;
 		}
 	}
 	
@@ -67,7 +72,17 @@ public class SimulatorCore {
 		List<Object> arguments = new LinkedList<Object>();
 		Map<InstructionParameter, Long> values = new HashMap<InstructionParameter, Long>();
 		for(InstructionCallParameter icp : call.getParameters()){
-			values.put(icp.getDefinition(), icp.getValue());
+			long value = icp.getValue();
+			if (icp.isLabel()){
+				/* Resolve labels */
+				if (value >= labelToAddress.length){
+					/* Addressed out of code space */
+					value = code.length;
+				}else{
+					value = labelToAddress[(int) value];
+				}
+			}
+			values.put(icp.getDefinition(), value);
 		}
 		for(InstructionParameter ip : instruction.getParameters()){
 			long value = ip.getDefaultValue();
@@ -76,6 +91,9 @@ public class SimulatorCore {
 			}
 			argumentTypes.add(long.class);
 			arguments.add(value);
+		}
+		if (SimulatorPlugin.debug){
+			System.out.println(instruction.getName()+" "+arguments);
 		}
 		try {
 			Method method = core.getClass().getMethod(instruction.getName(), argumentTypes.toArray(new Class<?>[argumentTypes.size()]));
@@ -105,6 +123,10 @@ public class SimulatorCore {
 				programCounter.set(pc+1);
 				if (instructioncall != null){
 					execute(instructioncall);
+				}else{
+					if (SimulatorPlugin.debug){
+						System.out.println("NULL instruction at "+pc);
+					}
 				}
 			}
 		}

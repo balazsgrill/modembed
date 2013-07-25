@@ -38,9 +38,19 @@ public class DeviceSimulator {
 				return 1;
 			}
 			simulator.step();
+			if (SimulatorPlugin.debug) printState();
 			counter++;
 		}
 		return 0;
+	}
+	
+	protected void printState(){
+		System.out.println(device.getProgramCounter()+"{");
+		for(SymbolAddressAssignment saa : symbolMap.getSymbolMappings()){
+			String symbol = saa.getSymbol();
+			System.out.println("\t"+symbol+" = "+getSymbolValue(symbol));
+		}
+		System.out.println("}");
 	}
 	
 	public long getSymbolValue(String symbol) throws IllegalArgumentException{
