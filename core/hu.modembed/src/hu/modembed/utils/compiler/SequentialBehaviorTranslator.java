@@ -101,7 +101,7 @@ public class SequentialBehaviorTranslator {
 				}
 			}
 			
-			throw new ExpressionResolveException("Could not resolve "+symbol+" ("+ipm+")");
+			throw new ExpressionResolveException("Could not resolve "+symbol+" ("+ipm.getValue().getName()+")");
 			
 		}
 		

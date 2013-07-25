@@ -112,6 +112,16 @@ public abstract class PIC18Core extends AbstractCore {
 		}
 	}
 	
+	public void BTFSS(long f, long b, long a){
+		int v = memory().getValue(bank(f, a));
+		int bit = (int)(1<<b);
+		boolean set = (v & bit) != 0;
+		
+		if (set){
+			PC.set(PC.get()+1);
+		}
+	}
+	
 	public void BCF(long f, long b, long a){
 		long v = memory().getValue(bank(f, 1));
 		long mask = (~(1<<b)) & 0xFF;
@@ -124,5 +134,9 @@ public abstract class PIC18Core extends AbstractCore {
 		long mask = (1<<b);
 		v = (v | mask) & 0xFF;
 		memory().setValue(bank(f, a), (int) v);
+	}
+	
+	public void GOTO(long k){
+		PC.set(k);
 	}
 }
