@@ -17,4 +17,5 @@ public interface IProjectModelIndex extends IModelIndex, IResourceDeltaVisitor{
 	
 	public void initialize() throws CoreException;
 	
+	public boolean isDisposed();
 }

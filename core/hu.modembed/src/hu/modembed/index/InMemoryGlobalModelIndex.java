@@ -65,7 +65,10 @@ public class InMemoryGlobalModelIndex extends AbstractModelIndex implements IGlo
 							if (delta.getResource() instanceof IWorkspaceRoot) return true;
 							if (delta.getResource() instanceof IProject){
 								IProjectModelIndex part = getPart((IProject)delta.getResource(), false);
-								if (part != null) delta.accept(part);
+								if (part != null) {
+									delta.accept(part);
+									if (part.isDisposed()) parts.remove(delta.getResource());
+								}
 							}
 							return false;
 						}
@@ -105,7 +108,9 @@ public class InMemoryGlobalModelIndex extends AbstractModelIndex implements IGlo
 			}
 		}
 		
-		if (results.isEmpty()) return null;
+		if (results.isEmpty()) {
+			return null;
+		}
 		
 		return results.get(0);
 	}

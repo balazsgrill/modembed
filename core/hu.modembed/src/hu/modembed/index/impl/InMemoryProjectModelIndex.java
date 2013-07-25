@@ -7,6 +7,7 @@ import hu.modembed.index.AbstractModelIndex;
 import hu.modembed.index.IIndexedModel;
 import hu.modembed.index.IProjectModelIndex;
 
+import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -34,17 +35,23 @@ public class InMemoryProjectModelIndex extends AbstractModelIndex implements IPr
 	
 	private final Map<URI, IIndexedModel> models = new LinkedHashMap<URI, IIndexedModel>();
 	
+	private boolean dirty;
+	private boolean disposed;
+	
 	public InMemoryProjectModelIndex(IProject project) throws CoreException {
 		this.project = project;
+		dirty = true;
+		disposed = false;
 	}
 	
 	@Override
 	public void initialize() throws CoreException {
-		load(project);
+		dirty = true;
 	}
 	
 	@Override
 	public EObject find(Resource resource, final String qualifiedID) {
+		if (disposed) return null;
 		final IFile[] file = new IFile[1]; 
 		try {
 			project.accept(new IResourceVisitor() {
@@ -86,6 +93,13 @@ public class InMemoryProjectModelIndex extends AbstractModelIndex implements IPr
 
 	@Override
 	public List<EObject> find(Resource resource, EClass eclass) {
+		if (disposed) return Collections.emptyList();
+		try {
+			loadIfDiry();
+		} catch (CoreException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		List<EObject> result = new LinkedList<EObject>();
 		for(IIndexedModel im : models.values()){
 			if (eclass.isSuperTypeOf(im.getEClass())){
@@ -96,19 +110,17 @@ public class InMemoryProjectModelIndex extends AbstractModelIndex implements IPr
 	}
 
 	private void put(IIndexedModel descriptor){
-	//	models.put(descriptor.getResourceURI(), descriptor);
-	}
-	
-	private void remove(URI uri){
-		//models.remove(uri);
+		models.put(descriptor.getResourceURI(), descriptor);
 	}
 	
 	private void dispose(){
+		disposed = true;
 		models.clear();
 	}
 	
 	@Override
 	public boolean visit(IResourceDelta delta) throws CoreException {
+		if (disposed) return false;
 		IResource resource = delta.getResource();
 		int kind = delta.getKind();
 		if (resource instanceof IProject){
@@ -119,31 +131,15 @@ public class InMemoryProjectModelIndex extends AbstractModelIndex implements IPr
 				return true;
 			}
 		}
-		load(getProject());
-//		if (resource instanceof IContainer) return true;
-//		if (resource instanceof IFile){
-//			URI uri = toURI((IFile)resource);
-//			switch(kind){
-//			case IResourceDelta.REMOVED:
-//				remove(uri);
-//				break;
-//			case IResourceDelta.CONTENT:
-//			case IResourceDelta.CHANGED:
-//			//case IResourceDelta.CHANGED:	this is called when markers are changed
-//			case IResourceDelta.REPLACED:
-//			case IResourceDelta.ADDED:
-//				System.out.println(uri+" changed: "+kind);
-//				IIndexedModel desc = getDescriptor(uri);
-//				if (desc != null){
-//					put(desc);
-//				}
-//				break;
-//				
-//			}
-//		}
+		dirty = true;
 		return false;
 	}
 
+	@Override
+	public boolean isDisposed() {
+		return disposed;
+	}
+	
 	private List<IFile> listAllFiles(IProject project) throws CoreException{
 		final List<IFile> result = new LinkedList<IFile>();
 		if (project.exists()){
@@ -162,7 +158,13 @@ public class InMemoryProjectModelIndex extends AbstractModelIndex implements IPr
 		return result;
 	}
 	
+	private void loadIfDiry() throws CoreException{
+		if (dirty) load(project);
+		dirty = false;
+	}
+	
 	private void load(IProject resource) throws CoreException {
+		if (disposed) return;
 		if (!resource.isOpen()) return;
 		List<IFile> files = listAllFiles(resource);
 		int last = -1;
