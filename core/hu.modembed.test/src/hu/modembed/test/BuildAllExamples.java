@@ -15,9 +15,15 @@ public class BuildAllExamples {
 	}
 
 	@Test
-	public void example_ledblink() throws InvocationTargetException, InterruptedException, CoreException {
+	public void example_ledblink_pic16f1824() throws InvocationTargetException, InterruptedException, CoreException {
 		IProject project = ModembedTests.loadProject("example.ledblink");
-		ModembedTests.runAntScript(project, "build.xml");
+		ModembedTests.runAntScript(project, "build.xml", "release.pic16f1824");
+	}
+	
+	@Test
+	public void example_ledblink_pic18f14k50() throws InvocationTargetException, InterruptedException, CoreException {
+		IProject project = ModembedTests.loadProject("example.ledblink");
+		ModembedTests.runAntScript(project, "build.xml", "release.pic18f14k50");
 	}
 	
 }

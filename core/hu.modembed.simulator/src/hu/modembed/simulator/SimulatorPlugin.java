@@ -5,7 +5,7 @@ import org.osgi.framework.BundleContext;
 
 public class SimulatorPlugin implements BundleActivator {
 
-	public static final boolean debug = true;
+	public static final boolean debug = false;
 	
 	private static BundleContext context;
 
