@@ -2,6 +2,7 @@
 syntax module.syntax <Module>;
 import core.syntax;
 import type.syntax;
+import expressions.syntax;
 
 terminal KW_MODULE "module";
 terminal KW_USE "use";
@@ -62,21 +63,13 @@ terminal OP_CMP_LTE "<=";
 
 <Operation> :- KW_LOOP {"http://modembed.hu/structured#LoopOperation" <LoopEntry>? body=<Operation> <LoopExit>? };
 <LoopEntry> :- KW_WHILE entryCondition=<Expression>;
-<LoopExit> :- KW_UNTI exitCondition=<Expression>;
+<LoopExit> :- KW_UNTIL exitCondition=<Expression>;
 
 <Operation> :- {"http://modembed.hu/structured#ExpressionOperation" expression=<Expression> } OPERATOR_SEMICOLON;
 
 /*
  * EXPRESSIONS
  */
-<Expression0> :- BRACKET_OPEN <Expression> BRACKET_CLOSE;
- 
-<Expression0> :- <IntegerConstExpression>; 
-<IntegerConstExpression> :- {"http://modembed.hu/structured#IntegerConstExpression" <IntegerConstExpression_value> };
-<IntegerConstExpression_value> :- value=DECIMAL_NUMBER;
-<IntegerConstExpression_value> :- value=BINARY_NUMBER;
-<IntegerConstExpression_value> :- value=HEXADECIMAL_NUMBER;
-
 <Expression0> :- <VariableReferenceExpression>;
 <VariableReferenceExpression> :- {"http://modembed.hu/structured#VariableReferenceExpression" variable=IDENTIFIER };
 
@@ -85,39 +78,3 @@ terminal OP_CMP_LTE "<=";
 					BRACKET_OPEN <FunctionCallExpression_arguments>? BRACKET_CLOSE };
 <FunctionCallExpression_arguments> :- arguments=<Expression> ;
 <FunctionCallExpression_arguments> :- arguments=<Expression> OP_COMMA <FunctionCallExpression_arguments>;
-
-<Expression> :- <Expression6>;
-
-/* Assign expressions */
-<Expression6> :- <Expression5>;
-<Expression6> :- {"http://modembed.hu/structured#OperationExpression" arguments=<Expression5> <E6> arguments=<Expression6> };
-<E6> :- OPERATOR_ASSIGN operation="assign";
-
-/* Comparison expressions */
-<Expression5> :- <Expression4>;
-<Expression5> :- {"http://modembed.hu/structured#OperationExpression" arguments=<Expression4> <E5> arguments=<Expression5> };
-<E5> :- OP_CMP_EQ operation="equals";
-<E5> :- OP_CMP_NEQ operation="notEquals";
-<E5> :- OP_CMP_GT operation="greater";
-<E5> :- OP_CMP_GTE operation="greaterEquals";
-<E5> :- OP_CMP_LT operation="lower";
-<E5> :- OP_CMP_LTE operation="lowerEquals";
-
-/* Additive expressions */
-<Expression4> :- <Expression3>;
-<Expression4> :- {"http://modembed.hu/structured#OperationExpression" arguments=<Expression3> <E4> arguments=<Expression4> };
-<E4> :- OP_ADD operation="add";
-<E4> :- OP_MINUS operation="subtract";
-
-/* Multiplicative expressions */
-<Expression3> :- <Expression2>;
-<Expression3> :- {"http://modembed.hu/structured#OperationExpression" arguments=<Expression2> <E3> arguments=<Expression3> };
-<E3> :- OP_MULTIPLY operation="multiply";
-
-/* Shift expressions */
-<Expression2> :- <Expression1>;
-
-/* Unary expressions */
-<Expression1> :- <Expression0>;
-<Expression1> :- {"http://modembed.hu/structured#OperationExpression" <E1> arguments=<Expression1> };
-<E1> :- OP_MINUS operation="minus";
