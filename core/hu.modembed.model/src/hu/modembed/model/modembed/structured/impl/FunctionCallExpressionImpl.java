@@ -2,7 +2,7 @@
  */
 package hu.modembed.model.modembed.structured.impl;
 
-import hu.modembed.model.modembed.structured.Expression;
+import hu.modembed.model.modembed.infrastructure.expressions.impl.ExpressionImpl;
 import hu.modembed.model.modembed.structured.FunctionCallExpression;
 import hu.modembed.model.modembed.structured.StructuredFunction;
 import hu.modembed.model.modembed.structured.StructuredPackage;
@@ -11,14 +11,10 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -55,7 +51,7 @@ public class FunctionCallExpressionImpl extends ExpressionImpl implements Functi
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Expression> arguments;
+	protected EList<hu.modembed.model.modembed.infrastructure.expressions.Expression> arguments;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -119,9 +115,9 @@ public class FunctionCallExpressionImpl extends ExpressionImpl implements Functi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Expression> getArguments() {
+	public EList<hu.modembed.model.modembed.infrastructure.expressions.Expression> getArguments() {
 		if (arguments == null) {
-			arguments = new EObjectContainmentEList<Expression>(Expression.class, this, StructuredPackage.FUNCTION_CALL_EXPRESSION__ARGUMENTS);
+			arguments = new EObjectContainmentEList<hu.modembed.model.modembed.infrastructure.expressions.Expression>(hu.modembed.model.modembed.infrastructure.expressions.Expression.class, this, StructuredPackage.FUNCTION_CALL_EXPRESSION__ARGUMENTS);
 		}
 		return arguments;
 	}
@@ -171,7 +167,7 @@ public class FunctionCallExpressionImpl extends ExpressionImpl implements Functi
 				return;
 			case StructuredPackage.FUNCTION_CALL_EXPRESSION__ARGUMENTS:
 				getArguments().clear();
-				getArguments().addAll((Collection<? extends Expression>)newValue);
+				getArguments().addAll((Collection<? extends hu.modembed.model.modembed.infrastructure.expressions.Expression>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

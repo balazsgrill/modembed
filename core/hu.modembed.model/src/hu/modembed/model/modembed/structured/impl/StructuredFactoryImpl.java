@@ -59,9 +59,7 @@ public class StructuredFactoryImpl extends EFactoryImpl implements StructuredFac
 			case StructuredPackage.STRUCTURED_MODULE: return createStructuredModule();
 			case StructuredPackage.VARIABLE_DECLARATION: return createVariableDeclaration();
 			case StructuredPackage.STRUCTURED_FUNCTION: return createStructuredFunction();
-			case StructuredPackage.INTEGER_CONST_EXPRESSION: return createIntegerConstExpression();
 			case StructuredPackage.VARIABLE_REFERENCE_EXPRESSION: return createVariableReferenceExpression();
-			case StructuredPackage.OPERATION_EXPRESSION: return createOperationExpression();
 			case StructuredPackage.FUNCTION_CALL_EXPRESSION: return createFunctionCallExpression();
 			case StructuredPackage.RETURN_OPERATION: return createReturnOperation();
 			case StructuredPackage.EXPRESSION_OPERATION: return createExpressionOperation();
@@ -108,29 +106,9 @@ public class StructuredFactoryImpl extends EFactoryImpl implements StructuredFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public IntegerConstExpression createIntegerConstExpression() {
-		IntegerConstExpressionImpl integerConstExpression = new IntegerConstExpressionImpl();
-		return integerConstExpression;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public VariableReferenceExpression createVariableReferenceExpression() {
 		VariableReferenceExpressionImpl variableReferenceExpression = new VariableReferenceExpressionImpl();
 		return variableReferenceExpression;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OperationExpression createOperationExpression() {
-		OperationExpressionImpl operationExpression = new OperationExpressionImpl();
-		return operationExpression;
 	}
 
 	/**

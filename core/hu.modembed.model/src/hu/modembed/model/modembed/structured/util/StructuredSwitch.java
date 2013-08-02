@@ -6,6 +6,7 @@ import hu.modembed.model.modembed.infrastructure.MODembedElement;
 import hu.modembed.model.modembed.infrastructure.NamedElement;
 import hu.modembed.model.modembed.infrastructure.RootElement;
 
+import hu.modembed.model.modembed.infrastructure.expressions.Expression;
 import hu.modembed.model.modembed.structured.*;
 
 import org.eclipse.emf.ecore.EObject;
@@ -95,34 +96,10 @@ public class StructuredSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case StructuredPackage.EXPRESSION: {
-				Expression expression = (Expression)theEObject;
-				T result = caseExpression(expression);
-				if (result == null) result = caseMODembedElement(expression);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case StructuredPackage.INTEGER_CONST_EXPRESSION: {
-				IntegerConstExpression integerConstExpression = (IntegerConstExpression)theEObject;
-				T result = caseIntegerConstExpression(integerConstExpression);
-				if (result == null) result = caseExpression(integerConstExpression);
-				if (result == null) result = caseMODembedElement(integerConstExpression);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case StructuredPackage.VARIABLE_REFERENCE_EXPRESSION: {
 				VariableReferenceExpression variableReferenceExpression = (VariableReferenceExpression)theEObject;
 				T result = caseVariableReferenceExpression(variableReferenceExpression);
 				if (result == null) result = caseExpression(variableReferenceExpression);
-				if (result == null) result = caseMODembedElement(variableReferenceExpression);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case StructuredPackage.OPERATION_EXPRESSION: {
-				OperationExpression operationExpression = (OperationExpression)theEObject;
-				T result = caseOperationExpression(operationExpression);
-				if (result == null) result = caseExpression(operationExpression);
-				if (result == null) result = caseMODembedElement(operationExpression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -130,7 +107,6 @@ public class StructuredSwitch<T> extends Switch<T> {
 				FunctionCallExpression functionCallExpression = (FunctionCallExpression)theEObject;
 				T result = caseFunctionCallExpression(functionCallExpression);
 				if (result == null) result = caseExpression(functionCallExpression);
-				if (result == null) result = caseMODembedElement(functionCallExpression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -246,21 +222,6 @@ public class StructuredSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Integer Const Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Integer Const Expression</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseIntegerConstExpression(IntegerConstExpression object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Variable Reference Expression</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -272,21 +233,6 @@ public class StructuredSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseVariableReferenceExpression(VariableReferenceExpression object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Operation Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Operation Expression</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseOperationExpression(OperationExpression object) {
 		return null;
 	}
 

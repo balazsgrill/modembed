@@ -2,16 +2,13 @@
  */
 package hu.modembed.model.modembed.structured.impl;
 
-import hu.modembed.model.modembed.structured.Expression;
 import hu.modembed.model.modembed.structured.ExpressionOperation;
 import hu.modembed.model.modembed.structured.StructuredPackage;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -36,7 +33,7 @@ public class ExpressionOperationImpl extends OperationImpl implements Expression
 	 * @generated
 	 * @ordered
 	 */
-	protected Expression expression;
+	protected hu.modembed.model.modembed.infrastructure.expressions.Expression expression;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -62,7 +59,7 @@ public class ExpressionOperationImpl extends OperationImpl implements Expression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Expression getExpression() {
+	public hu.modembed.model.modembed.infrastructure.expressions.Expression getExpression() {
 		return expression;
 	}
 
@@ -71,8 +68,8 @@ public class ExpressionOperationImpl extends OperationImpl implements Expression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetExpression(Expression newExpression, NotificationChain msgs) {
-		Expression oldExpression = expression;
+	public NotificationChain basicSetExpression(hu.modembed.model.modembed.infrastructure.expressions.Expression newExpression, NotificationChain msgs) {
+		hu.modembed.model.modembed.infrastructure.expressions.Expression oldExpression = expression;
 		expression = newExpression;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, StructuredPackage.EXPRESSION_OPERATION__EXPRESSION, oldExpression, newExpression);
@@ -86,7 +83,7 @@ public class ExpressionOperationImpl extends OperationImpl implements Expression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setExpression(Expression newExpression) {
+	public void setExpression(hu.modembed.model.modembed.infrastructure.expressions.Expression newExpression) {
 		if (newExpression != expression) {
 			NotificationChain msgs = null;
 			if (expression != null)
@@ -137,7 +134,7 @@ public class ExpressionOperationImpl extends OperationImpl implements Expression
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case StructuredPackage.EXPRESSION_OPERATION__EXPRESSION:
-				setExpression((Expression)newValue);
+				setExpression((hu.modembed.model.modembed.infrastructure.expressions.Expression)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -152,7 +149,7 @@ public class ExpressionOperationImpl extends OperationImpl implements Expression
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case StructuredPackage.EXPRESSION_OPERATION__EXPRESSION:
-				setExpression((Expression)null);
+				setExpression((hu.modembed.model.modembed.infrastructure.expressions.Expression)null);
 				return;
 		}
 		super.eUnset(featureID);

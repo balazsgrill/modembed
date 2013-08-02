@@ -4,6 +4,7 @@ package hu.modembed.model.modembed.structured;
 
 import hu.modembed.model.modembed.infrastructure.InfrastructurePackage;
 
+import hu.modembed.model.modembed.infrastructure.expressions.ExpressionsPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -313,107 +314,6 @@ public interface StructuredPackage extends EPackage {
 	int STRUCTURED_FUNCTION_FEATURE_COUNT = InfrastructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
-	 * The meta object id for the '{@link hu.modembed.model.modembed.structured.impl.ExpressionImpl <em>Expression</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see hu.modembed.model.modembed.structured.impl.ExpressionImpl
-	 * @see hu.modembed.model.modembed.structured.impl.StructuredPackageImpl#getExpression()
-	 * @generated
-	 */
-	int EXPRESSION = 3;
-
-	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXPRESSION__DESCRIPTION = InfrastructurePackage.MO_DEMBED_ELEMENT__DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXPRESSION__ORIGINS = InfrastructurePackage.MO_DEMBED_ELEMENT__ORIGINS;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXPRESSION__ANNOTATIONS = InfrastructurePackage.MO_DEMBED_ELEMENT__ANNOTATIONS;
-
-	/**
-	 * The number of structural features of the '<em>Expression</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXPRESSION_FEATURE_COUNT = InfrastructurePackage.MO_DEMBED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link hu.modembed.model.modembed.structured.impl.IntegerConstExpressionImpl <em>Integer Const Expression</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see hu.modembed.model.modembed.structured.impl.IntegerConstExpressionImpl
-	 * @see hu.modembed.model.modembed.structured.impl.StructuredPackageImpl#getIntegerConstExpression()
-	 * @generated
-	 */
-	int INTEGER_CONST_EXPRESSION = 4;
-
-	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTEGER_CONST_EXPRESSION__DESCRIPTION = EXPRESSION__DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTEGER_CONST_EXPRESSION__ORIGINS = EXPRESSION__ORIGINS;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTEGER_CONST_EXPRESSION__ANNOTATIONS = EXPRESSION__ANNOTATIONS;
-
-	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTEGER_CONST_EXPRESSION__VALUE = EXPRESSION_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Integer Const Expression</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTEGER_CONST_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
-
-	/**
 	 * The meta object id for the '{@link hu.modembed.model.modembed.structured.impl.VariableReferenceExpressionImpl <em>Variable Reference Expression</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -421,34 +321,7 @@ public interface StructuredPackage extends EPackage {
 	 * @see hu.modembed.model.modembed.structured.impl.StructuredPackageImpl#getVariableReferenceExpression()
 	 * @generated
 	 */
-	int VARIABLE_REFERENCE_EXPRESSION = 5;
-
-	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VARIABLE_REFERENCE_EXPRESSION__DESCRIPTION = EXPRESSION__DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VARIABLE_REFERENCE_EXPRESSION__ORIGINS = EXPRESSION__ORIGINS;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VARIABLE_REFERENCE_EXPRESSION__ANNOTATIONS = EXPRESSION__ANNOTATIONS;
+	int VARIABLE_REFERENCE_EXPRESSION = 3;
 
 	/**
 	 * The feature id for the '<em><b>Variable</b></em>' reference.
@@ -457,7 +330,7 @@ public interface StructuredPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE_REFERENCE_EXPRESSION__VARIABLE = EXPRESSION_FEATURE_COUNT + 0;
+	int VARIABLE_REFERENCE_EXPRESSION__VARIABLE = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Variable Reference Expression</em>' class.
@@ -466,71 +339,7 @@ public interface StructuredPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE_REFERENCE_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
-
-	/**
-	 * The meta object id for the '{@link hu.modembed.model.modembed.structured.impl.OperationExpressionImpl <em>Operation Expression</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see hu.modembed.model.modembed.structured.impl.OperationExpressionImpl
-	 * @see hu.modembed.model.modembed.structured.impl.StructuredPackageImpl#getOperationExpression()
-	 * @generated
-	 */
-	int OPERATION_EXPRESSION = 6;
-
-	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERATION_EXPRESSION__DESCRIPTION = EXPRESSION__DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERATION_EXPRESSION__ORIGINS = EXPRESSION__ORIGINS;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERATION_EXPRESSION__ANNOTATIONS = EXPRESSION__ANNOTATIONS;
-
-	/**
-	 * The feature id for the '<em><b>Operation</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERATION_EXPRESSION__OPERATION = EXPRESSION_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERATION_EXPRESSION__ARGUMENTS = EXPRESSION_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Operation Expression</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERATION_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
+	int VARIABLE_REFERENCE_EXPRESSION_FEATURE_COUNT = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link hu.modembed.model.modembed.structured.impl.FunctionCallExpressionImpl <em>Function Call Expression</em>}' class.
@@ -540,34 +349,7 @@ public interface StructuredPackage extends EPackage {
 	 * @see hu.modembed.model.modembed.structured.impl.StructuredPackageImpl#getFunctionCallExpression()
 	 * @generated
 	 */
-	int FUNCTION_CALL_EXPRESSION = 7;
-
-	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FUNCTION_CALL_EXPRESSION__DESCRIPTION = EXPRESSION__DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FUNCTION_CALL_EXPRESSION__ORIGINS = EXPRESSION__ORIGINS;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FUNCTION_CALL_EXPRESSION__ANNOTATIONS = EXPRESSION__ANNOTATIONS;
+	int FUNCTION_CALL_EXPRESSION = 4;
 
 	/**
 	 * The feature id for the '<em><b>Function</b></em>' reference.
@@ -576,7 +358,7 @@ public interface StructuredPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION_CALL_EXPRESSION__FUNCTION = EXPRESSION_FEATURE_COUNT + 0;
+	int FUNCTION_CALL_EXPRESSION__FUNCTION = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
@@ -585,7 +367,7 @@ public interface StructuredPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION_CALL_EXPRESSION__ARGUMENTS = EXPRESSION_FEATURE_COUNT + 1;
+	int FUNCTION_CALL_EXPRESSION__ARGUMENTS = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Function Call Expression</em>' class.
@@ -594,7 +376,7 @@ public interface StructuredPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION_CALL_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
+	int FUNCTION_CALL_EXPRESSION_FEATURE_COUNT = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link hu.modembed.model.modembed.structured.impl.OperationImpl <em>Operation</em>}' class.
@@ -604,7 +386,7 @@ public interface StructuredPackage extends EPackage {
 	 * @see hu.modembed.model.modembed.structured.impl.StructuredPackageImpl#getOperation()
 	 * @generated
 	 */
-	int OPERATION = 8;
+	int OPERATION = 5;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -650,7 +432,7 @@ public interface StructuredPackage extends EPackage {
 	 * @see hu.modembed.model.modembed.structured.impl.StructuredPackageImpl#getReturnOperation()
 	 * @generated
 	 */
-	int RETURN_OPERATION = 9;
+	int RETURN_OPERATION = 6;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -705,7 +487,7 @@ public interface StructuredPackage extends EPackage {
 	 * @see hu.modembed.model.modembed.structured.impl.StructuredPackageImpl#getExpressionOperation()
 	 * @generated
 	 */
-	int EXPRESSION_OPERATION = 10;
+	int EXPRESSION_OPERATION = 7;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -760,7 +542,7 @@ public interface StructuredPackage extends EPackage {
 	 * @see hu.modembed.model.modembed.structured.impl.StructuredPackageImpl#getOperationBlock()
 	 * @generated
 	 */
-	int OPERATION_BLOCK = 11;
+	int OPERATION_BLOCK = 8;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -824,7 +606,7 @@ public interface StructuredPackage extends EPackage {
 	 * @see hu.modembed.model.modembed.structured.impl.StructuredPackageImpl#getConditionalOperation()
 	 * @generated
 	 */
-	int CONDITIONAL_OPERATION = 12;
+	int CONDITIONAL_OPERATION = 9;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -897,7 +679,7 @@ public interface StructuredPackage extends EPackage {
 	 * @see hu.modembed.model.modembed.structured.impl.StructuredPackageImpl#getLoopOperation()
 	 * @generated
 	 */
-	int LOOP_OPERATION = 13;
+	int LOOP_OPERATION = 10;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1104,37 +886,6 @@ public interface StructuredPackage extends EPackage {
 	EReference getStructuredFunction_Implementation();
 
 	/**
-	 * Returns the meta object for class '{@link hu.modembed.model.modembed.structured.Expression <em>Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Expression</em>'.
-	 * @see hu.modembed.model.modembed.structured.Expression
-	 * @generated
-	 */
-	EClass getExpression();
-
-	/**
-	 * Returns the meta object for class '{@link hu.modembed.model.modembed.structured.IntegerConstExpression <em>Integer Const Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Integer Const Expression</em>'.
-	 * @see hu.modembed.model.modembed.structured.IntegerConstExpression
-	 * @generated
-	 */
-	EClass getIntegerConstExpression();
-
-	/**
-	 * Returns the meta object for the attribute '{@link hu.modembed.model.modembed.structured.IntegerConstExpression#getValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see hu.modembed.model.modembed.structured.IntegerConstExpression#getValue()
-	 * @see #getIntegerConstExpression()
-	 * @generated
-	 */
-	EAttribute getIntegerConstExpression_Value();
-
-	/**
 	 * Returns the meta object for class '{@link hu.modembed.model.modembed.structured.VariableReferenceExpression <em>Variable Reference Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1154,38 +905,6 @@ public interface StructuredPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getVariableReferenceExpression_Variable();
-
-	/**
-	 * Returns the meta object for class '{@link hu.modembed.model.modembed.structured.OperationExpression <em>Operation Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Operation Expression</em>'.
-	 * @see hu.modembed.model.modembed.structured.OperationExpression
-	 * @generated
-	 */
-	EClass getOperationExpression();
-
-	/**
-	 * Returns the meta object for the attribute '{@link hu.modembed.model.modembed.structured.OperationExpression#getOperation <em>Operation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Operation</em>'.
-	 * @see hu.modembed.model.modembed.structured.OperationExpression#getOperation()
-	 * @see #getOperationExpression()
-	 * @generated
-	 */
-	EAttribute getOperationExpression_Operation();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link hu.modembed.model.modembed.structured.OperationExpression#getArguments <em>Arguments</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Arguments</em>'.
-	 * @see hu.modembed.model.modembed.structured.OperationExpression#getArguments()
-	 * @see #getOperationExpression()
-	 * @generated
-	 */
-	EReference getOperationExpression_Arguments();
 
 	/**
 	 * Returns the meta object for class '{@link hu.modembed.model.modembed.structured.FunctionCallExpression <em>Function Call Expression</em>}'.
@@ -1522,34 +1241,6 @@ public interface StructuredPackage extends EPackage {
 		EReference STRUCTURED_FUNCTION__IMPLEMENTATION = eINSTANCE.getStructuredFunction_Implementation();
 
 		/**
-		 * The meta object literal for the '{@link hu.modembed.model.modembed.structured.impl.ExpressionImpl <em>Expression</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see hu.modembed.model.modembed.structured.impl.ExpressionImpl
-		 * @see hu.modembed.model.modembed.structured.impl.StructuredPackageImpl#getExpression()
-		 * @generated
-		 */
-		EClass EXPRESSION = eINSTANCE.getExpression();
-
-		/**
-		 * The meta object literal for the '{@link hu.modembed.model.modembed.structured.impl.IntegerConstExpressionImpl <em>Integer Const Expression</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see hu.modembed.model.modembed.structured.impl.IntegerConstExpressionImpl
-		 * @see hu.modembed.model.modembed.structured.impl.StructuredPackageImpl#getIntegerConstExpression()
-		 * @generated
-		 */
-		EClass INTEGER_CONST_EXPRESSION = eINSTANCE.getIntegerConstExpression();
-
-		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute INTEGER_CONST_EXPRESSION__VALUE = eINSTANCE.getIntegerConstExpression_Value();
-
-		/**
 		 * The meta object literal for the '{@link hu.modembed.model.modembed.structured.impl.VariableReferenceExpressionImpl <em>Variable Reference Expression</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1566,32 +1257,6 @@ public interface StructuredPackage extends EPackage {
 		 * @generated
 		 */
 		EReference VARIABLE_REFERENCE_EXPRESSION__VARIABLE = eINSTANCE.getVariableReferenceExpression_Variable();
-
-		/**
-		 * The meta object literal for the '{@link hu.modembed.model.modembed.structured.impl.OperationExpressionImpl <em>Operation Expression</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see hu.modembed.model.modembed.structured.impl.OperationExpressionImpl
-		 * @see hu.modembed.model.modembed.structured.impl.StructuredPackageImpl#getOperationExpression()
-		 * @generated
-		 */
-		EClass OPERATION_EXPRESSION = eINSTANCE.getOperationExpression();
-
-		/**
-		 * The meta object literal for the '<em><b>Operation</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute OPERATION_EXPRESSION__OPERATION = eINSTANCE.getOperationExpression_Operation();
-
-		/**
-		 * The meta object literal for the '<em><b>Arguments</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference OPERATION_EXPRESSION__ARGUMENTS = eINSTANCE.getOperationExpression_Arguments();
 
 		/**
 		 * The meta object literal for the '{@link hu.modembed.model.modembed.structured.impl.FunctionCallExpressionImpl <em>Function Call Expression</em>}' class.

@@ -3,54 +3,31 @@
 package hu.modembed.model.modembed.structured.impl;
 
 import hu.modembed.model.modembed.abstraction.AbstractionPackage;
-
 import hu.modembed.model.modembed.abstraction.behavior.BehaviorPackage;
-
 import hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorPackageImpl;
-
 import hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage;
-
 import hu.modembed.model.modembed.abstraction.behavior.platform.impl.PlatformPackageImpl;
-
 import hu.modembed.model.modembed.abstraction.impl.AbstractionPackageImpl;
-
 import hu.modembed.model.modembed.abstraction.memorymodel.MemorymodelPackage;
-
 import hu.modembed.model.modembed.abstraction.memorymodel.impl.MemorymodelPackageImpl;
-
 import hu.modembed.model.modembed.abstraction.types.TypesPackage;
-
 import hu.modembed.model.modembed.abstraction.types.impl.TypesPackageImpl;
-
 import hu.modembed.model.modembed.core.instructionset.InstructionsetPackage;
-
 import hu.modembed.model.modembed.core.instructionset.impl.InstructionsetPackageImpl;
-
 import hu.modembed.model.modembed.core.object.ObjectPackage;
-
 import hu.modembed.model.modembed.core.object.impl.ObjectPackageImpl;
-
 import hu.modembed.model.modembed.infrastructure.InfrastructurePackage;
-
 import hu.modembed.model.modembed.infrastructure.expressions.ExpressionsPackage;
-
 import hu.modembed.model.modembed.infrastructure.expressions.impl.ExpressionsPackageImpl;
-
 import hu.modembed.model.modembed.infrastructure.impl.InfrastructurePackageImpl;
-
 import hu.modembed.model.modembed.infrastructure.traceability.TraceabilityPackage;
-
 import hu.modembed.model.modembed.infrastructure.traceability.impl.TraceabilityPackageImpl;
-
 import hu.modembed.model.modembed.structured.ConditionalOperation;
-import hu.modembed.model.modembed.structured.Expression;
 import hu.modembed.model.modembed.structured.ExpressionOperation;
 import hu.modembed.model.modembed.structured.FunctionCallExpression;
-import hu.modembed.model.modembed.structured.IntegerConstExpression;
 import hu.modembed.model.modembed.structured.LoopOperation;
 import hu.modembed.model.modembed.structured.Operation;
 import hu.modembed.model.modembed.structured.OperationBlock;
-import hu.modembed.model.modembed.structured.OperationExpression;
 import hu.modembed.model.modembed.structured.ReturnOperation;
 import hu.modembed.model.modembed.structured.StructuredFactory;
 import hu.modembed.model.modembed.structured.StructuredFunction;
@@ -63,7 +40,6 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -99,28 +75,7 @@ public class StructuredPackageImpl extends EPackageImpl implements StructuredPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass expressionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass integerConstExpressionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass variableReferenceExpressionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass operationExpressionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -386,33 +341,6 @@ public class StructuredPackageImpl extends EPackageImpl implements StructuredPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getExpression() {
-		return expressionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getIntegerConstExpression() {
-		return integerConstExpressionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getIntegerConstExpression_Value() {
-		return (EAttribute)integerConstExpressionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getVariableReferenceExpression() {
 		return variableReferenceExpressionEClass;
 	}
@@ -424,33 +352,6 @@ public class StructuredPackageImpl extends EPackageImpl implements StructuredPac
 	 */
 	public EReference getVariableReferenceExpression_Variable() {
 		return (EReference)variableReferenceExpressionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getOperationExpression() {
-		return operationExpressionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getOperationExpression_Operation() {
-		return (EAttribute)operationExpressionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getOperationExpression_Arguments() {
-		return (EReference)operationExpressionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -668,17 +569,8 @@ public class StructuredPackageImpl extends EPackageImpl implements StructuredPac
 		createEReference(structuredFunctionEClass, STRUCTURED_FUNCTION__PARAMETERS);
 		createEReference(structuredFunctionEClass, STRUCTURED_FUNCTION__IMPLEMENTATION);
 
-		expressionEClass = createEClass(EXPRESSION);
-
-		integerConstExpressionEClass = createEClass(INTEGER_CONST_EXPRESSION);
-		createEAttribute(integerConstExpressionEClass, INTEGER_CONST_EXPRESSION__VALUE);
-
 		variableReferenceExpressionEClass = createEClass(VARIABLE_REFERENCE_EXPRESSION);
 		createEReference(variableReferenceExpressionEClass, VARIABLE_REFERENCE_EXPRESSION__VARIABLE);
-
-		operationExpressionEClass = createEClass(OPERATION_EXPRESSION);
-		createEAttribute(operationExpressionEClass, OPERATION_EXPRESSION__OPERATION);
-		createEReference(operationExpressionEClass, OPERATION_EXPRESSION__ARGUMENTS);
 
 		functionCallExpressionEClass = createEClass(FUNCTION_CALL_EXPRESSION);
 		createEReference(functionCallExpressionEClass, FUNCTION_CALL_EXPRESSION__FUNCTION);
@@ -733,6 +625,7 @@ public class StructuredPackageImpl extends EPackageImpl implements StructuredPac
 		// Obtain other dependent packages
 		InfrastructurePackage theInfrastructurePackage = (InfrastructurePackage)EPackage.Registry.INSTANCE.getEPackage(InfrastructurePackage.eNS_URI);
 		TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
+		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -742,11 +635,8 @@ public class StructuredPackageImpl extends EPackageImpl implements StructuredPac
 		structuredModuleEClass.getESuperTypes().add(theInfrastructurePackage.getRootElement());
 		variableDeclarationEClass.getESuperTypes().add(theInfrastructurePackage.getNamedElement());
 		structuredFunctionEClass.getESuperTypes().add(theInfrastructurePackage.getNamedElement());
-		expressionEClass.getESuperTypes().add(theInfrastructurePackage.getMODembedElement());
-		integerConstExpressionEClass.getESuperTypes().add(this.getExpression());
-		variableReferenceExpressionEClass.getESuperTypes().add(this.getExpression());
-		operationExpressionEClass.getESuperTypes().add(this.getExpression());
-		functionCallExpressionEClass.getESuperTypes().add(this.getExpression());
+		variableReferenceExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
+		functionCallExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 		operationEClass.getESuperTypes().add(theInfrastructurePackage.getMODembedElement());
 		returnOperationEClass.getESuperTypes().add(this.getOperation());
 		expressionOperationEClass.getESuperTypes().add(this.getOperation());
@@ -764,49 +654,40 @@ public class StructuredPackageImpl extends EPackageImpl implements StructuredPac
 		initEAttribute(getVariableDeclaration_Const(), ecorePackage.getEBoolean(), "const", null, 1, 1, VariableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getVariableDeclaration_Global(), ecorePackage.getEBoolean(), "global", null, 1, 1, VariableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getVariableDeclaration_Type(), theTypesPackage.getTypeDefinition(), null, "type", null, 1, 1, VariableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getVariableDeclaration_InitValue(), this.getExpression(), null, "initValue", null, 0, 1, VariableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getVariableDeclaration_InitValue(), theExpressionsPackage.getExpression(), null, "initValue", null, 0, 1, VariableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(structuredFunctionEClass, StructuredFunction.class, "StructuredFunction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getStructuredFunction_ResultType(), theTypesPackage.getTypeDefinition(), null, "resultType", null, 1, 1, StructuredFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStructuredFunction_Parameters(), this.getVariableDeclaration(), null, "parameters", null, 0, -1, StructuredFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStructuredFunction_Implementation(), this.getOperation(), null, "implementation", null, 0, 1, StructuredFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(expressionEClass, Expression.class, "Expression", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(integerConstExpressionEClass, IntegerConstExpression.class, "IntegerConstExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getIntegerConstExpression_Value(), ecorePackage.getELong(), "value", null, 1, 1, IntegerConstExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(variableReferenceExpressionEClass, VariableReferenceExpression.class, "VariableReferenceExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getVariableReferenceExpression_Variable(), this.getVariableDeclaration(), null, "variable", null, 1, 1, VariableReferenceExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(operationExpressionEClass, OperationExpression.class, "OperationExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getOperationExpression_Operation(), ecorePackage.getEString(), "operation", null, 0, 1, OperationExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getOperationExpression_Arguments(), this.getExpression(), null, "arguments", null, 0, -1, OperationExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(functionCallExpressionEClass, FunctionCallExpression.class, "FunctionCallExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getFunctionCallExpression_Function(), this.getStructuredFunction(), null, "function", null, 0, 1, FunctionCallExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFunctionCallExpression_Arguments(), this.getExpression(), null, "arguments", null, 0, -1, FunctionCallExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFunctionCallExpression_Arguments(), theExpressionsPackage.getExpression(), null, "arguments", null, 0, -1, FunctionCallExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(operationEClass, Operation.class, "Operation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(returnOperationEClass, ReturnOperation.class, "ReturnOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getReturnOperation_Result(), this.getExpression(), null, "result", null, 0, 1, ReturnOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getReturnOperation_Result(), theExpressionsPackage.getExpression(), null, "result", null, 0, 1, ReturnOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(expressionOperationEClass, ExpressionOperation.class, "ExpressionOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getExpressionOperation_Expression(), this.getExpression(), null, "expression", null, 0, 1, ExpressionOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getExpressionOperation_Expression(), theExpressionsPackage.getExpression(), null, "expression", null, 0, 1, ExpressionOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(operationBlockEClass, OperationBlock.class, "OperationBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getOperationBlock_Variables(), this.getVariableDeclaration(), null, "variables", null, 0, -1, OperationBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getOperationBlock_Steps(), this.getOperation(), null, "steps", null, 0, -1, OperationBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(conditionalOperationEClass, ConditionalOperation.class, "ConditionalOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getConditionalOperation_Condition(), this.getExpression(), null, "condition", null, 1, 1, ConditionalOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConditionalOperation_Condition(), theExpressionsPackage.getExpression(), null, "condition", null, 1, 1, ConditionalOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getConditionalOperation_TrueBranch(), this.getOperation(), null, "trueBranch", null, 0, 1, ConditionalOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getConditionalOperation_FalseBranch(), this.getOperation(), null, "falseBranch", null, 0, 1, ConditionalOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(loopOperationEClass, LoopOperation.class, "LoopOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getLoopOperation_EntryCondition(), this.getExpression(), null, "entryCondition", null, 0, 1, LoopOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getLoopOperation_ExitCondition(), this.getExpression(), null, "exitCondition", null, 0, 1, LoopOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLoopOperation_EntryCondition(), theExpressionsPackage.getExpression(), null, "entryCondition", null, 0, 1, LoopOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLoopOperation_ExitCondition(), theExpressionsPackage.getExpression(), null, "exitCondition", null, 0, 1, LoopOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLoopOperation_Body(), this.getOperation(), null, "body", null, 1, 1, LoopOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource

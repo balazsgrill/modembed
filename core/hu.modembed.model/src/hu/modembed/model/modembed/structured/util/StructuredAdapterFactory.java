@@ -6,6 +6,7 @@ import hu.modembed.model.modembed.infrastructure.MODembedElement;
 import hu.modembed.model.modembed.infrastructure.NamedElement;
 import hu.modembed.model.modembed.infrastructure.RootElement;
 
+import hu.modembed.model.modembed.infrastructure.expressions.Expression;
 import hu.modembed.model.modembed.structured.*;
 
 import org.eclipse.emf.common.notify.Adapter;
@@ -84,20 +85,8 @@ public class StructuredAdapterFactory extends AdapterFactoryImpl {
 				return createStructuredFunctionAdapter();
 			}
 			@Override
-			public Adapter caseExpression(Expression object) {
-				return createExpressionAdapter();
-			}
-			@Override
-			public Adapter caseIntegerConstExpression(IntegerConstExpression object) {
-				return createIntegerConstExpressionAdapter();
-			}
-			@Override
 			public Adapter caseVariableReferenceExpression(VariableReferenceExpression object) {
 				return createVariableReferenceExpressionAdapter();
-			}
-			@Override
-			public Adapter caseOperationExpression(OperationExpression object) {
-				return createOperationExpressionAdapter();
 			}
 			@Override
 			public Adapter caseFunctionCallExpression(FunctionCallExpression object) {
@@ -138,6 +127,10 @@ public class StructuredAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseRootElement(RootElement object) {
 				return createRootElementAdapter();
+			}
+			@Override
+			public Adapter caseExpression(Expression object) {
+				return createExpressionAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -202,30 +195,16 @@ public class StructuredAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link hu.modembed.model.modembed.structured.Expression <em>Expression</em>}'.
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.modembed.infrastructure.expressions.Expression <em>Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see hu.modembed.model.modembed.structured.Expression
+	 * @see hu.modembed.model.modembed.infrastructure.expressions.Expression
 	 * @generated
 	 */
 	public Adapter createExpressionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link hu.modembed.model.modembed.structured.IntegerConstExpression <em>Integer Const Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see hu.modembed.model.modembed.structured.IntegerConstExpression
-	 * @generated
-	 */
-	public Adapter createIntegerConstExpressionAdapter() {
 		return null;
 	}
 
@@ -240,20 +219,6 @@ public class StructuredAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createVariableReferenceExpressionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link hu.modembed.model.modembed.structured.OperationExpression <em>Operation Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see hu.modembed.model.modembed.structured.OperationExpression
-	 * @generated
-	 */
-	public Adapter createOperationExpressionAdapter() {
 		return null;
 	}
 

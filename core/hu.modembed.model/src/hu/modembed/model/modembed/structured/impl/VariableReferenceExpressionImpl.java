@@ -2,6 +2,7 @@
  */
 package hu.modembed.model.modembed.structured.impl;
 
+import hu.modembed.model.modembed.infrastructure.expressions.impl.ExpressionImpl;
 import hu.modembed.model.modembed.structured.StructuredPackage;
 import hu.modembed.model.modembed.structured.VariableDeclaration;
 import hu.modembed.model.modembed.structured.VariableReferenceExpression;

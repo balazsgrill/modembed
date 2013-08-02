@@ -5,6 +5,7 @@ package hu.modembed.model.modembed.structured;
 import hu.modembed.model.modembed.abstraction.types.TypeDefinition;
 
 import hu.modembed.model.modembed.infrastructure.NamedElement;
+import hu.modembed.model.modembed.infrastructure.expressions.Expression;
 
 /**
  * <!-- begin-user-doc -->

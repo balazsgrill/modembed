@@ -15,15 +15,15 @@ import hu.modembed.model.modembed.abstraction.behavior.SymbolValueAssignment;
 import hu.modembed.model.modembed.abstraction.types.TypeDefinition;
 import hu.modembed.model.modembed.abstraction.types.TypesFactory;
 import hu.modembed.model.modembed.abstraction.types.UnsignedTypeDefinition;
+import hu.modembed.model.modembed.infrastructure.expressions.Expression;
+import hu.modembed.model.modembed.infrastructure.expressions.IntegerConstantExpression;
+import hu.modembed.model.modembed.infrastructure.expressions.OperationExpression;
 import hu.modembed.model.modembed.structured.ConditionalOperation;
-import hu.modembed.model.modembed.structured.Expression;
 import hu.modembed.model.modembed.structured.ExpressionOperation;
 import hu.modembed.model.modembed.structured.FunctionCallExpression;
-import hu.modembed.model.modembed.structured.IntegerConstExpression;
 import hu.modembed.model.modembed.structured.LoopOperation;
 import hu.modembed.model.modembed.structured.Operation;
 import hu.modembed.model.modembed.structured.OperationBlock;
-import hu.modembed.model.modembed.structured.OperationExpression;
 import hu.modembed.model.modembed.structured.ReturnOperation;
 import hu.modembed.model.modembed.structured.StructuredFunction;
 import hu.modembed.model.modembed.structured.StructuredModule;
@@ -164,8 +164,8 @@ public class ModuleCompiler {
 			result.getActions().add(call);
 			return resultSymbol;
 		}
-		if (expression instanceof IntegerConstExpression){
-			return getConstantSymbol(result, ((IntegerConstExpression) expression).getValue());
+		if (expression instanceof IntegerConstantExpression){
+			return getConstantSymbol(result, ((IntegerConstantExpression) expression).getValue());
 		}
 		if (expression instanceof OperationExpression){
 			List<TypedSymbol> arguments = new ArrayList<TypedSymbol>(((OperationExpression) expression).getArguments().size());
@@ -278,8 +278,8 @@ public class ModuleCompiler {
 	}
 
 	private long computeConstant(Expression expression){
-		if (expression instanceof IntegerConstExpression){
-			return ((IntegerConstExpression) expression).getValue();
+		if (expression instanceof IntegerConstantExpression){
+			return ((IntegerConstantExpression) expression).getValue();
 		}
 		if (expression instanceof VariableReferenceExpression){
 			VariableDeclaration vd = ((VariableReferenceExpression) expression).getVariable();

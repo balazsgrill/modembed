@@ -3,16 +3,13 @@
 package hu.modembed.model.modembed.structured.impl;
 
 import hu.modembed.model.modembed.structured.ConditionalOperation;
-import hu.modembed.model.modembed.structured.Expression;
 import hu.modembed.model.modembed.structured.Operation;
 import hu.modembed.model.modembed.structured.StructuredPackage;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -39,7 +36,7 @@ public class ConditionalOperationImpl extends OperationImpl implements Condition
 	 * @generated
 	 * @ordered
 	 */
-	protected Expression condition;
+	protected hu.modembed.model.modembed.infrastructure.expressions.Expression condition;
 
 	/**
 	 * The cached value of the '{@link #getTrueBranch() <em>True Branch</em>}' containment reference.
@@ -85,7 +82,7 @@ public class ConditionalOperationImpl extends OperationImpl implements Condition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Expression getCondition() {
+	public hu.modembed.model.modembed.infrastructure.expressions.Expression getCondition() {
 		return condition;
 	}
 
@@ -94,8 +91,8 @@ public class ConditionalOperationImpl extends OperationImpl implements Condition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetCondition(Expression newCondition, NotificationChain msgs) {
-		Expression oldCondition = condition;
+	public NotificationChain basicSetCondition(hu.modembed.model.modembed.infrastructure.expressions.Expression newCondition, NotificationChain msgs) {
+		hu.modembed.model.modembed.infrastructure.expressions.Expression oldCondition = condition;
 		condition = newCondition;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, StructuredPackage.CONDITIONAL_OPERATION__CONDITION, oldCondition, newCondition);
@@ -109,7 +106,7 @@ public class ConditionalOperationImpl extends OperationImpl implements Condition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCondition(Expression newCondition) {
+	public void setCondition(hu.modembed.model.modembed.infrastructure.expressions.Expression newCondition) {
 		if (newCondition != condition) {
 			NotificationChain msgs = null;
 			if (condition != null)
@@ -254,7 +251,7 @@ public class ConditionalOperationImpl extends OperationImpl implements Condition
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case StructuredPackage.CONDITIONAL_OPERATION__CONDITION:
-				setCondition((Expression)newValue);
+				setCondition((hu.modembed.model.modembed.infrastructure.expressions.Expression)newValue);
 				return;
 			case StructuredPackage.CONDITIONAL_OPERATION__TRUE_BRANCH:
 				setTrueBranch((Operation)newValue);
@@ -275,7 +272,7 @@ public class ConditionalOperationImpl extends OperationImpl implements Condition
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case StructuredPackage.CONDITIONAL_OPERATION__CONDITION:
-				setCondition((Expression)null);
+				setCondition((hu.modembed.model.modembed.infrastructure.expressions.Expression)null);
 				return;
 			case StructuredPackage.CONDITIONAL_OPERATION__TRUE_BRANCH:
 				setTrueBranch((Operation)null);

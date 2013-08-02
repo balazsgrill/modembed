@@ -3,19 +3,14 @@
 package hu.modembed.model.modembed.structured.impl;
 
 import hu.modembed.model.modembed.abstraction.types.TypeDefinition;
-
 import hu.modembed.model.modembed.infrastructure.impl.NamedElementImpl;
-
-import hu.modembed.model.modembed.structured.Expression;
 import hu.modembed.model.modembed.structured.StructuredPackage;
 import hu.modembed.model.modembed.structured.VariableDeclaration;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -93,7 +88,7 @@ public class VariableDeclarationImpl extends NamedElementImpl implements Variabl
 	 * @generated
 	 * @ordered
 	 */
-	protected Expression initValue;
+	protected hu.modembed.model.modembed.infrastructure.expressions.Expression initValue;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -204,7 +199,7 @@ public class VariableDeclarationImpl extends NamedElementImpl implements Variabl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Expression getInitValue() {
+	public hu.modembed.model.modembed.infrastructure.expressions.Expression getInitValue() {
 		return initValue;
 	}
 
@@ -213,8 +208,8 @@ public class VariableDeclarationImpl extends NamedElementImpl implements Variabl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetInitValue(Expression newInitValue, NotificationChain msgs) {
-		Expression oldInitValue = initValue;
+	public NotificationChain basicSetInitValue(hu.modembed.model.modembed.infrastructure.expressions.Expression newInitValue, NotificationChain msgs) {
+		hu.modembed.model.modembed.infrastructure.expressions.Expression oldInitValue = initValue;
 		initValue = newInitValue;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, StructuredPackage.VARIABLE_DECLARATION__INIT_VALUE, oldInitValue, newInitValue);
@@ -228,7 +223,7 @@ public class VariableDeclarationImpl extends NamedElementImpl implements Variabl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setInitValue(Expression newInitValue) {
+	public void setInitValue(hu.modembed.model.modembed.infrastructure.expressions.Expression newInitValue) {
 		if (newInitValue != initValue) {
 			NotificationChain msgs = null;
 			if (initValue != null)
@@ -296,7 +291,7 @@ public class VariableDeclarationImpl extends NamedElementImpl implements Variabl
 				setType((TypeDefinition)newValue);
 				return;
 			case StructuredPackage.VARIABLE_DECLARATION__INIT_VALUE:
-				setInitValue((Expression)newValue);
+				setInitValue((hu.modembed.model.modembed.infrastructure.expressions.Expression)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -320,7 +315,7 @@ public class VariableDeclarationImpl extends NamedElementImpl implements Variabl
 				setType((TypeDefinition)null);
 				return;
 			case StructuredPackage.VARIABLE_DECLARATION__INIT_VALUE:
-				setInitValue((Expression)null);
+				setInitValue((hu.modembed.model.modembed.infrastructure.expressions.Expression)null);
 				return;
 		}
 		super.eUnset(featureID);

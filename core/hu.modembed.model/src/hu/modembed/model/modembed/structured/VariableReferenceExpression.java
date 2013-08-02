@@ -2,6 +2,8 @@
  */
 package hu.modembed.model.modembed.structured;
 
+import hu.modembed.model.modembed.infrastructure.expressions.Expression;
+
 
 /**
  * <!-- begin-user-doc -->

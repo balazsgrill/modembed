@@ -49,15 +49,6 @@ public interface StructuredFactory extends EFactory {
 	StructuredFunction createStructuredFunction();
 
 	/**
-	 * Returns a new object of class '<em>Integer Const Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Integer Const Expression</em>'.
-	 * @generated
-	 */
-	IntegerConstExpression createIntegerConstExpression();
-
-	/**
 	 * Returns a new object of class '<em>Variable Reference Expression</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -65,15 +56,6 @@ public interface StructuredFactory extends EFactory {
 	 * @generated
 	 */
 	VariableReferenceExpression createVariableReferenceExpression();
-
-	/**
-	 * Returns a new object of class '<em>Operation Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Operation Expression</em>'.
-	 * @generated
-	 */
-	OperationExpression createOperationExpression();
 
 	/**
 	 * Returns a new object of class '<em>Function Call Expression</em>'.

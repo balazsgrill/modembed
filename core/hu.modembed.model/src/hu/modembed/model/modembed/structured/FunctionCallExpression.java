@@ -2,6 +2,7 @@
  */
 package hu.modembed.model.modembed.structured;
 
+import hu.modembed.model.modembed.infrastructure.expressions.Expression;
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -50,7 +51,7 @@ public interface FunctionCallExpression extends Expression {
 
 	/**
 	 * Returns the value of the '<em><b>Arguments</b></em>' containment reference list.
-	 * The list contents are of type {@link hu.modembed.model.modembed.structured.Expression}.
+	 * The list contents are of type {@link hu.modembed.model.modembed.infrastructure.expressions.Expression}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Arguments</em>' containment reference list isn't clear,
