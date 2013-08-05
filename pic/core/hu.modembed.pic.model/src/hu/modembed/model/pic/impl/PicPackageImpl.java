@@ -2,32 +2,24 @@
  */
 package hu.modembed.model.pic.impl;
 
-import hu.modembed.model.application.ApplicationPackage;
-
-import hu.modembed.model.architecture.ArchitecturePackage;
-
-import hu.modembed.model.comm.CommPackage;
-
-import hu.modembed.model.core.CorePackage;
-
-import hu.modembed.model.emodel.EmodelPackage;
-
-import hu.modembed.model.network.NetworkPackage;
-
+import hu.modembed.model.modembed.abstraction.AbstractionPackage;
+import hu.modembed.model.modembed.core.instructionset.InstructionsetPackage;
+import hu.modembed.model.modembed.core.object.ObjectPackage;
+import hu.modembed.model.modembed.infrastructure.InfrastructurePackage;
+import hu.modembed.model.modembed.structured.StructuredPackage;
 import hu.modembed.model.pic.ConfigField;
 import hu.modembed.model.pic.ConfigLiteral;
 import hu.modembed.model.pic.ConfigWord;
-import hu.modembed.model.pic.PICArchitecture;
+import hu.modembed.model.pic.ConfigurationSelection;
+import hu.modembed.model.pic.PICConfigurationModel;
+import hu.modembed.model.pic.PICConfigurationValueModel;
 import hu.modembed.model.pic.PicFactory;
 import hu.modembed.model.pic.PicPackage;
 
-import hu.modembed.model.pic.configValue.ConfigValuePackage;
-import hu.modembed.model.pic.configValue.impl.ConfigValuePackageImpl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -42,7 +34,7 @@ public class PicPackageImpl extends EPackageImpl implements PicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass picArchitectureEClass = null;
+	private EClass picConfigurationModelEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -64,6 +56,20 @@ public class PicPackageImpl extends EPackageImpl implements PicPackage {
 	 * @generated
 	 */
 	private EClass configLiteralEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass picConfigurationValueModelEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass configurationSelectionEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -112,23 +118,17 @@ public class PicPackageImpl extends EPackageImpl implements PicPackage {
 		isInited = true;
 
 		// Initialize simple dependencies
-		CorePackage.eINSTANCE.eClass();
-		NetworkPackage.eINSTANCE.eClass();
-		CommPackage.eINSTANCE.eClass();
-		ApplicationPackage.eINSTANCE.eClass();
-		EmodelPackage.eINSTANCE.eClass();
-		ArchitecturePackage.eINSTANCE.eClass();
-
-		// Obtain or create and register interdependencies
-		ConfigValuePackageImpl theConfigValuePackage = (ConfigValuePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ConfigValuePackage.eNS_URI) instanceof ConfigValuePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ConfigValuePackage.eNS_URI) : ConfigValuePackage.eINSTANCE);
+		InfrastructurePackage.eINSTANCE.eClass();
+		InstructionsetPackage.eINSTANCE.eClass();
+		ObjectPackage.eINSTANCE.eClass();
+		AbstractionPackage.eINSTANCE.eClass();
+		StructuredPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		thePicPackage.createPackageContents();
-		theConfigValuePackage.createPackageContents();
 
 		// Initialize created meta-data
 		thePicPackage.initializePackageContents();
-		theConfigValuePackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		thePicPackage.freeze();
@@ -144,8 +144,8 @@ public class PicPackageImpl extends EPackageImpl implements PicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getPICArchitecture() {
-		return picArchitectureEClass;
+	public EClass getPICConfigurationModel() {
+		return picConfigurationModelEClass;
 	}
 
 	/**
@@ -153,8 +153,8 @@ public class PicPackageImpl extends EPackageImpl implements PicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPICArchitecture_ConfigWords() {
-		return (EReference)picArchitectureEClass.getEStructuralFeatures().get(0);
+	public EReference getPICConfigurationModel_ConfigWords() {
+		return (EReference)picConfigurationModelEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -270,6 +270,60 @@ public class PicPackageImpl extends EPackageImpl implements PicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getPICConfigurationValueModel() {
+		return picConfigurationValueModelEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPICConfigurationValueModel_Values() {
+		return (EReference)picConfigurationValueModelEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPICConfigurationValueModel_Definition() {
+		return (EReference)picConfigurationValueModelEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getConfigurationSelection() {
+		return configurationSelectionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getConfigurationSelection_Field() {
+		return (EReference)configurationSelectionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getConfigurationSelection_Selection() {
+		return (EReference)configurationSelectionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public PicFactory getPicFactory() {
 		return (PicFactory)getEFactoryInstance();
 	}
@@ -293,8 +347,8 @@ public class PicPackageImpl extends EPackageImpl implements PicPackage {
 		isCreated = true;
 
 		// Create classes and their features
-		picArchitectureEClass = createEClass(PIC_ARCHITECTURE);
-		createEReference(picArchitectureEClass, PIC_ARCHITECTURE__CONFIG_WORDS);
+		picConfigurationModelEClass = createEClass(PIC_CONFIGURATION_MODEL);
+		createEReference(picConfigurationModelEClass, PIC_CONFIGURATION_MODEL__CONFIG_WORDS);
 
 		configWordEClass = createEClass(CONFIG_WORD);
 		createEAttribute(configWordEClass, CONFIG_WORD__ADDRESS);
@@ -310,6 +364,14 @@ public class PicPackageImpl extends EPackageImpl implements PicPackage {
 
 		configLiteralEClass = createEClass(CONFIG_LITERAL);
 		createEAttribute(configLiteralEClass, CONFIG_LITERAL__VALUE);
+
+		picConfigurationValueModelEClass = createEClass(PIC_CONFIGURATION_VALUE_MODEL);
+		createEReference(picConfigurationValueModelEClass, PIC_CONFIGURATION_VALUE_MODEL__VALUES);
+		createEReference(picConfigurationValueModelEClass, PIC_CONFIGURATION_VALUE_MODEL__DEFINITION);
+
+		configurationSelectionEClass = createEClass(CONFIGURATION_SELECTION);
+		createEReference(configurationSelectionEClass, CONFIGURATION_SELECTION__FIELD);
+		createEReference(configurationSelectionEClass, CONFIGURATION_SELECTION__SELECTION);
 	}
 
 	/**
@@ -336,26 +398,23 @@ public class PicPackageImpl extends EPackageImpl implements PicPackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		ConfigValuePackage theConfigValuePackage = (ConfigValuePackage)EPackage.Registry.INSTANCE.getEPackage(ConfigValuePackage.eNS_URI);
-		ArchitecturePackage theArchitecturePackage = (ArchitecturePackage)EPackage.Registry.INSTANCE.getEPackage(ArchitecturePackage.eNS_URI);
-		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
-
-		// Add subpackages
-		getESubpackages().add(theConfigValuePackage);
+		InfrastructurePackage theInfrastructurePackage = (InfrastructurePackage)EPackage.Registry.INSTANCE.getEPackage(InfrastructurePackage.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		picArchitectureEClass.getESuperTypes().add(theArchitecturePackage.getArchitecture());
-		configWordEClass.getESuperTypes().add(theCorePackage.getNamedElement());
-		configFieldEClass.getESuperTypes().add(theCorePackage.getNamedElement());
-		configLiteralEClass.getESuperTypes().add(theCorePackage.getNamedElement());
+		picConfigurationModelEClass.getESuperTypes().add(theInfrastructurePackage.getRootElement());
+		configWordEClass.getESuperTypes().add(theInfrastructurePackage.getNamedElement());
+		configFieldEClass.getESuperTypes().add(theInfrastructurePackage.getNamedElement());
+		configLiteralEClass.getESuperTypes().add(theInfrastructurePackage.getNamedElement());
+		picConfigurationValueModelEClass.getESuperTypes().add(theInfrastructurePackage.getRootElement());
+		configurationSelectionEClass.getESuperTypes().add(theInfrastructurePackage.getMODembedElement());
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(picArchitectureEClass, PICArchitecture.class, "PICArchitecture", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPICArchitecture_ConfigWords(), this.getConfigWord(), null, "configWords", null, 0, -1, PICArchitecture.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(picConfigurationModelEClass, PICConfigurationModel.class, "PICConfigurationModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getPICConfigurationModel_ConfigWords(), this.getConfigWord(), null, "configWords", null, 0, -1, PICConfigurationModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(configWordEClass, ConfigWord.class, "ConfigWord", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getConfigWord_Address(), ecorePackage.getELong(), "address", null, 0, 1, ConfigWord.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -372,8 +431,42 @@ public class PicPackageImpl extends EPackageImpl implements PicPackage {
 		initEClass(configLiteralEClass, ConfigLiteral.class, "ConfigLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getConfigLiteral_Value(), ecorePackage.getELong(), "value", null, 0, 1, ConfigLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(picConfigurationValueModelEClass, PICConfigurationValueModel.class, "PICConfigurationValueModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getPICConfigurationValueModel_Values(), this.getConfigurationSelection(), null, "values", null, 0, -1, PICConfigurationValueModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPICConfigurationValueModel_Definition(), this.getPICConfigurationModel(), null, "definition", null, 0, 1, PICConfigurationValueModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(configurationSelectionEClass, ConfigurationSelection.class, "ConfigurationSelection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getConfigurationSelection_Field(), this.getConfigField(), null, "field", null, 1, 1, ConfigurationSelection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConfigurationSelection_Selection(), this.getConfigLiteral(), null, "selection", null, 0, 1, ConfigurationSelection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// reference
+		createReferenceAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>reference</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createReferenceAnnotations() {
+		String source = "reference";		
+		addAnnotation
+		  (getConfigurationSelection_Field(), 
+		   source, 
+		   new String[] {
+			 "scope", "../definition/configWords/fields"
+		   });		
+		addAnnotation
+		  (getConfigurationSelection_Selection(), 
+		   source, 
+		   new String[] {
+			 "scope", "field/literals"
+		   });
 	}
 
 } //PicPackageImpl

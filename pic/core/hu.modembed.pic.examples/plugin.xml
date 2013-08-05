@@ -5,13 +5,13 @@
          point="hu.modembed.ui.includedCode">
       <category
             id="hu.modembed.pic.examples.category"
-            name="Examples"
-            parent="hu.modembed.pic.ui.category">
+            name="Examples">
       </category>
       <project
+            archive="shared/example.ledblink.zip"
             category="hu.modembed.pic.examples.category"
-            id="e.examples.blink.pic16f1824"
-            name="PIC16F1824 blinker example">
+            id="example.ledblink"
+            name="LED blinker example">
          <dependency
                project="e.core">
          </dependency>
@@ -21,18 +21,12 @@
          <dependency
                project="microchip.PIC16F1824">
          </dependency>
-         <resource
-               path="/"
-               resource="examples/blink.pic16f1824/blink.main.e">
-         </resource>
-         <resource
-               path="/"
-               resource="examples/blink.pic16f1824/compile.e">
-         </resource>
-         <resource
-               path="/"
-               resource="examples/blink.pic16f1824/blink.config.xmi">
-         </resource>
+         <dependency
+               project="microchip.pic18">
+         </dependency>
+         <dependency
+               project="microchip.PIC18F14K50">
+         </dependency>
       </project>
    </extension>
 

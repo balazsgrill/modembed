@@ -18,7 +18,6 @@ import org.eclipse.core.databinding.observable.IObservable;
 import org.eclipse.core.databinding.observable.Observables;
 import org.eclipse.core.databinding.observable.masterdetail.IObservableFactory;
 import org.eclipse.core.resources.IProject;
-import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
@@ -112,9 +111,7 @@ private final EClass type;
 			if (!allrefs.isEmpty()){
 				return getRefElements((EObject)inputElement).toArray();
 			}else{
-				URI uri = ((EObject) inputElement).eResource().getURI();
-				String projectname = uri.segment(1);
-				return getElements(ResourcesPlugin.getWorkspace().getRoot().getProject(projectname));
+				return MODembedCore.getDefault().getModelIndex().find(((EObject) inputElement).eResource(), this.type).toArray();
 			}
 		}
 		if (inputElement instanceof IProject){

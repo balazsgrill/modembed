@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="buildtools-epsilon" default="test">
+	
+	<dirname property="epsilon.basedir" file="${ant.file.buildtools-epsilon}"/>
+	
+	<path id="epsilon.classpath">
+		<filelist dir="${epsilon.basedir}/epsilon">
+			<!--file name="epsilon-standalone.jar"/-->
+			<file name="epsilon-ant-standalone.jar" />
+		</filelist>
+		<!--fileset dir="${epsilon.basedir}/epsilon">	
+			<include name="*.jar"/>
+			<exclude name="*emf*.jar"/>
+		</fileset-->
+	</path>	
+
+	<taskdef
+		classpathref="epsilon.classpath"
+	    file="${epsilon.basedir}/epsilontasks.xml"
+	 />
+
+
+	<target name="test">
+		<epsilon.eol>
+			"hello".println();
+		</epsilon.eol>	
+	</target>
+	
+</project>

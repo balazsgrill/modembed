@@ -1,70 +1,106 @@
 package hu.modembed.test;
 
-import static org.junit.Assert.assertTrue;
+import hu.modembed.MODembedCore;
+import hu.modembed.model.modembed.core.object.AssemblerObject;
+import hu.modembed.simulator.SimulatorCore;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
-import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
-import org.eclipse.core.runtime.IStatus;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 public class CompilerTests {
-
+	
 	@Before
 	public void setUp() throws Exception {
 		ModembedTests.testSetUp();
 	}
 
 	@Test
-	public void test() throws InvocationTargetException, InterruptedException, CoreException {
-		IProject testproject = ResourcesPlugin.getWorkspace().getRoot().getProject("test3");
-		assertTrue(testproject.exists());
-		
-		ModembedTests.build();
-		ModembedTests.checkMarkers(testproject);
-		
-		IStatus status = ModembedTests.executeWorkflow(testproject, "compile");
-		Assert.assertThat(status, StatusMatcher.instance);
+	public void test_assembler_pic16e() throws InvocationTargetException, InterruptedException, CoreException {
+		IProject project = ModembedTests.loadProject("test.assembler");
+		ModembedTests.runAntScript(project, "test.asm.pic16e.ant.xml");
+		ModembedTests.assertModelsAreEquivalent(project, "test.asm.pic16e.hex", ".test.asm.pic16e.out.hex");
 	}
 
 	@Test
-	public void test4_picConfig() throws CoreException, InterruptedException, IOException{
-		IProject testproject = ResourcesPlugin.getWorkspace().getRoot().getProject("test4");
-		assertTrue(testproject.exists());
-		
-		IFile input = testproject.getFile("16f1824_blink.hex");
-		
-		ModembedTests.build();
-		ModembedTests.checkMarkers(testproject);
-		
-		IStatus status = ModembedTests.executeWorkflow(testproject, "compile");
-		Assert.assertThat(status, StatusMatcher.instance);
-		
-		IFile output = testproject.getFile("blink_w_config.hex");
-		assertTrue("output does not match input!", ModembedTests.modelsAreEquivalent(input, output));
+	public void test_assembler_pic18() throws InvocationTargetException, InterruptedException, CoreException {
+		IProject project = ModembedTests.loadProject("test.assembler");
+		ModembedTests.runAntScript(project, "test.asm.pic18.ant.xml");
+		ModembedTests.assertModelsAreEquivalent(project, "test.asm.pic18.hex", ".test.asm.pic18.out.hex");
 	}
 	
 	@Test
-	public void test5_pic18_asmAndConfig() throws InterruptedException, IOException, CoreException{
-		IProject testproject = ResourcesPlugin.getWorkspace().getRoot().getProject("test5");
-		assertTrue(testproject.exists());
+	public void test_assembler_msp430() throws InvocationTargetException, InterruptedException, CoreException, IOException {
+		IProject project = ModembedTests.loadProject("test.assembler");
+		ModembedTests.runAntScript(project, "msp430/test.asm.msp430.xml");
 		
-		IFile input = testproject.getFile("fishlamp.hex");
+		ResourceSet rs = MODembedCore.createResourceSet();
+		EObject[] elements = new EObject[2];
+		elements[0] = ModembedTests.load(project.getFile("msp430/.test.asm1.msp430.model"), rs);
+		elements[1] = ModembedTests.load(project.getFile("msp430/.test.asm2.msp430.model"), rs);
 		
-		ModembedTests.build();
-		ModembedTests.checkMarkers(testproject);
+		for(int i=0;i<elements.length;i++){
+			Assert.assertTrue("Element "+i+" is not an AssemblerObject", elements[i] instanceof AssemblerObject);
+			AssemblerObject aso = (AssemblerObject)elements[i];
+			Assert.assertTrue("Element "+i+" is invalid", aso.getInstructions().size() > 2);
+		}
 		
-		IStatus status = ModembedTests.executeWorkflow(testproject, "compile");
-		Assert.assertThat(status, StatusMatcher.instance);
+	}
+	
+	@Test
+	public void test_compiler_pic16e() throws Exception{
+		IProject project = ModembedTests.loadProject("test.compileToDevice");
+		ModembedTests.runAntScript(project, "test.compile.pic16e.ant.xml");
 		
-		IFile output = testproject.getFile("fishlamp_2.hex");
-		assertTrue("output does not match input!", ModembedTests.modelsAreEquivalent(input, output));
+		IFile asmfile = project.getFile(".test.main.asm.xmi");
+		Assert.assertTrue("AssemblerObject model does not exist!", asmfile.exists());
+		ResourceSet rs = MODembedCore.createResourceSet();
+		EObject asm = ModembedTests.load(asmfile, rs);
+		Assert.assertTrue("Invalid AssemblerObject", asm instanceof AssemblerObject);
+		
+		SimulatorCore simulator = new SimulatorCore();
+		TestPic16Device device = new TestPic16Device();
+		simulator.setCore(device);
+		simulator.setCode((AssemblerObject)asm);
+		simulator.setProgramCounter(device.PC());
+		
+		simulator.start();
+		long counter = 0;
+		while(simulator.isRunning()){
+			if (counter >= 100){
+				Assert.fail("Simulation did not end!");
+			}
+			simulator.step();
+			counter++;
+		}
+		
+		Assert.assertTrue(device.memory().getValue(0) == 5);
+	}
+	
+	@Test
+	public void test_compile_structuralModule() throws Exception{
+		IProject project = ModembedTests.loadProject("test.module.compile");
+		ModembedTests.runAntScript(project, "build.xml");
+	}
+	
+	@Test
+	public void pic16_dio() throws Exception{
+		IProject project = ModembedTests.loadProject("test.dio");
+		ModembedTests.runAntScript(project, "build.xml", "pic16f1824");
+	}
+	
+	@Test
+	public void pic18_dio() throws Exception{
+		IProject project = ModembedTests.loadProject("test.dio");
+		ModembedTests.runAntScript(project, "build.xml", "pic18f14k50");
 	}
 	
 }

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ASCII"?>
+<pic:PICConfigurationValueModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:pic="http://hu.modembed/pic" name="ldeblink.pic16f1824.config">
+  <values>
+    <field href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.0/@fields.0"/>
+    <selection href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.0/@fields.0/@literals.3"/>
+  </values>
+  <values>
+    <field href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.0/@fields.1"/>
+    <selection href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.0/@fields.1/@literals.1"/>
+  </values>
+  <values>
+    <field href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.1/@fields.0"/>
+    <selection href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.1/@fields.0/@literals.5"/>
+  </values>
+  <values>
+    <field href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.1/@fields.1"/>
+    <selection href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.1/@fields.1/@literals.1"/>
+  </values>
+  <definition href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#/"/>
+</pic:PICConfigurationValueModel>

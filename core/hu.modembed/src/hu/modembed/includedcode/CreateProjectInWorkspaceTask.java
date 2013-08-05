@@ -5,11 +5,16 @@ package hu.modembed.includedcode;
 
 import hu.modembed.MODembedCore;
 
+import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.util.Arrays;
+import java.util.Enumeration;
 import java.util.List;
 import java.util.Map;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipFile;
 
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
@@ -42,6 +47,31 @@ public class CreateProjectInWorkspaceTask {
 	
 	public IncludedProject getProject() {
 		return project;
+	}
+	
+	public void extract(ZipFile zipfile, IProject to) throws Exception{
+		for (Enumeration<? extends ZipEntry> e = zipfile.entries(); e.hasMoreElements();){
+			ZipEntry entry = e.nextElement();
+			String name = entry.getName();
+			if (entry.isDirectory()){
+				IFolder f = to.getFolder(name);
+				if (!f.exists()){
+					f.create(true, true, new NullProgressMonitor());
+				}
+			}else{
+				InputStream is = zipfile.getInputStream(entry);
+				try{
+					IFile file = to.getFile(name);
+					if (file.exists()){
+						file.setContents(is, true, true, new NullProgressMonitor());
+					}else{
+						file.create(is, true, new NullProgressMonitor());
+					}
+				}finally{
+					is.close();
+				}
+			}
+		}
 	}
 	
 	public void run(IProgressMonitor monitor) throws CoreException{
@@ -77,6 +107,19 @@ public class CreateProjectInWorkspaceTask {
 			}
 			pd.setReferencedProjects(dependencies);
 			pro.setDescription(pd, new NullProgressMonitor());
+			
+			/*
+			 * Extract Archive if available 
+			 */
+			if (project.getArchiveURL() != null){
+				
+				try {
+					ZipFile zipfile = new ZipFile(new File(project.getArchiveURL().toURI()));
+					extract(zipfile, pro);
+				} catch (Exception e) {
+					throw new CoreException(new Status(IStatus.ERROR, MODembedCore.PLUGIN_ID, "Couldn't extract archive: "+project.getArchiveURL(),e));
+				} 				
+			}
 			
 			/*
 			 * Add files

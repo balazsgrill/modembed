@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/hu.modembed.model/src" modelPluginID="hu.modembed.model"
+    modelName="Modembed" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    copyrightFields="false">
+  <foreignModel>modembed.ecore</foreignModel>
+  <genPackages prefix="Modembed" basePackage="hu.modembed.model" disposableProviderFactory="true"
+      ecorePackage="modembed.ecore#/">
+    <nestedGenPackages prefix="Infrastructure" basePackage="hu.modembed.model.modembed"
+        disposableProviderFactory="true" ecorePackage="modembed.ecore#//infrastructure">
+      <genClasses image="false" ecoreClass="modembed.ecore#//infrastructure/MODembedElement">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.ecore#//infrastructure/MODembedElement/description"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//infrastructure/MODembedElement/origins"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//infrastructure/MODembedElement/annotations"/>
+      </genClasses>
+      <genClasses ecoreClass="modembed.ecore#//infrastructure/Annotation">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.ecore#//infrastructure/Annotation/key"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.ecore#//infrastructure/Annotation/value"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="modembed.ecore#//infrastructure/NamedElement">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.ecore#//infrastructure/NamedElement/name"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="modembed.ecore#//infrastructure/RootElement"/>
+      <genClasses ecoreClass="modembed.ecore#//infrastructure/AttributeContainerDefinition">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//infrastructure/AttributeContainerDefinition/attributes"/>
+      </genClasses>
+      <genClasses ecoreClass="modembed.ecore#//infrastructure/AttributeDefinition"/>
+      <genClasses ecoreClass="modembed.ecore#//infrastructure/AttributeValueContainer">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference modembed.ecore#//infrastructure/AttributeValueContainer/definition"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//infrastructure/AttributeValueContainer/values"/>
+      </genClasses>
+      <genClasses ecoreClass="modembed.ecore#//infrastructure/AttributeValue">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference modembed.ecore#//infrastructure/AttributeValue/definition"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.ecore#//infrastructure/AttributeValue/value"/>
+      </genClasses>
+      <nestedGenPackages prefix="Traceability" basePackage="hu.modembed.model.modembed.infrastructure"
+          disposableProviderFactory="true" ecorePackage="modembed.ecore#//infrastructure/traceability">
+        <genClasses image="false" ecoreClass="modembed.ecore#//infrastructure/traceability/Origin"/>
+        <genClasses ecoreClass="modembed.ecore#//infrastructure/traceability/TextOrigin">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.ecore#//infrastructure/traceability/TextOrigin/fileName"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.ecore#//infrastructure/traceability/TextOrigin/line"/>
+        </genClasses>
+        <genClasses ecoreClass="modembed.ecore#//infrastructure/traceability/ModelOrigin">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference modembed.ecore#//infrastructure/traceability/ModelOrigin/element"/>
+        </genClasses>
+      </nestedGenPackages>
+      <nestedGenPackages prefix="Expressions" basePackage="hu.modembed.model.modembed.infrastructure"
+          disposableProviderFactory="true" ecorePackage="modembed.ecore#//infrastructure/expressions">
+        <genClasses image="false" ecoreClass="modembed.ecore#//infrastructure/expressions/Expression"/>
+        <genClasses ecoreClass="modembed.ecore#//infrastructure/expressions/IntegerConstantExpression">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.ecore#//infrastructure/expressions/IntegerConstantExpression/value"/>
+        </genClasses>
+        <genClasses ecoreClass="modembed.ecore#//infrastructure/expressions/OperationExpression">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.ecore#//infrastructure/expressions/OperationExpression/operation"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//infrastructure/expressions/OperationExpression/arguments"/>
+        </genClasses>
+      </nestedGenPackages>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Core" basePackage="hu.modembed.model.modembed" disposableProviderFactory="true"
+        ecorePackage="modembed.ecore#//core">
+      <nestedGenPackages prefix="Instructionset" basePackage="hu.modembed.model.modembed.core"
+          disposableProviderFactory="true" ecorePackage="modembed.ecore#//core/instructionset">
+        <genClasses ecoreClass="modembed.ecore#//core/instructionset/InstructionSet">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//core/instructionset/InstructionSet/instructions"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference modembed.ecore#//core/instructionset/InstructionSet/extend"/>
+        </genClasses>
+        <genClasses ecoreClass="modembed.ecore#//core/instructionset/Instruction">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//core/instructionset/Instruction/parameters"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//core/instructionset/Instruction/words"/>
+        </genClasses>
+        <genClasses ecoreClass="modembed.ecore#//core/instructionset/InstructionParameter">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.ecore#//core/instructionset/InstructionParameter/defaultValue"/>
+        </genClasses>
+        <genClasses image="false" ecoreClass="modembed.ecore#//core/instructionset/InstructionSection">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.ecore#//core/instructionset/InstructionSection/size"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.ecore#//core/instructionset/InstructionSection/shift"/>
+        </genClasses>
+        <genClasses ecoreClass="modembed.ecore#//core/instructionset/ConstantSection">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.ecore#//core/instructionset/ConstantSection/value"/>
+        </genClasses>
+        <genClasses ecoreClass="modembed.ecore#//core/instructionset/ParameterSection">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference modembed.ecore#//core/instructionset/ParameterSection/parameter"/>
+        </genClasses>
+        <genClasses ecoreClass="modembed.ecore#//core/instructionset/InstructionWord">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//core/instructionset/InstructionWord/sections"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//core/instructionset/InstructionWord/condition"/>
+        </genClasses>
+        <genClasses image="false" ecoreClass="modembed.ecore#//core/instructionset/InstructionWordCondition"/>
+        <genClasses ecoreClass="modembed.ecore#//core/instructionset/InstructionWordMaskedValueCondition">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.ecore#//core/instructionset/InstructionWordMaskedValueCondition/mask"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.ecore#//core/instructionset/InstructionWordMaskedValueCondition/value"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference modembed.ecore#//core/instructionset/InstructionWordMaskedValueCondition/argument"/>
+        </genClasses>
+      </nestedGenPackages>
+      <nestedGenPackages prefix="Object" basePackage="hu.modembed.model.modembed.core"
+          disposableProviderFactory="true" ecorePackage="modembed.ecore#//core/object">
+        <genClasses ecoreClass="modembed.ecore#//core/object/AssemblerObject">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//core/object/AssemblerObject/instructions"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.ecore#//core/object/AssemblerObject/startAddress"/>
+        </genClasses>
+        <genClasses ecoreClass="modembed.ecore#//core/object/InstructionCall">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//core/object/InstructionCall/parameters"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference modembed.ecore#//core/object/InstructionCall/instruction"/>
+        </genClasses>
+        <genClasses ecoreClass="modembed.ecore#//core/object/InstructionCallParameter">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.ecore#//core/object/InstructionCallParameter/value"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.ecore#//core/object/InstructionCallParameter/label"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference modembed.ecore#//core/object/InstructionCallParameter/definition"/>
+        </genClasses>
+      </nestedGenPackages>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Abstraction" basePackage="hu.modembed.model.modembed"
+        disposableProviderFactory="true" ecorePackage="modembed.ecore#//abstraction">
+      <genClasses ecoreClass="modembed.ecore#//abstraction/DeviceAbstraction">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference modembed.ecore#//abstraction/DeviceAbstraction/ancestor"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference modembed.ecore#//abstraction/DeviceAbstraction/instructionset"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//abstraction/DeviceAbstraction/memoryTypes"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//abstraction/DeviceAbstraction/memoryInstances"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//abstraction/DeviceAbstraction/operation"/>
+      </genClasses>
+      <nestedGenPackages prefix="Types" basePackage="hu.modembed.model.modembed.abstraction"
+          disposableProviderFactory="true" ecorePackage="modembed.ecore#//abstraction/types">
+        <genClasses image="false" ecoreClass="modembed.ecore#//abstraction/types/TypeDefinition"/>
+        <genClasses image="false" ecoreClass="modembed.ecore#//abstraction/types/PrimitiveTypeDefinition"/>
+        <genClasses image="false" ecoreClass="modembed.ecore#//abstraction/types/CompositeTypeDefinition"/>
+        <genClasses ecoreClass="modembed.ecore#//abstraction/types/UnsignedTypeDefinition">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.ecore#//abstraction/types/UnsignedTypeDefinition/bits"/>
+        </genClasses>
+        <genClasses ecoreClass="modembed.ecore#//abstraction/types/ReferenceTypeDefinition">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference modembed.ecore#//abstraction/types/ReferenceTypeDefinition/type"/>
+        </genClasses>
+        <genClasses ecoreClass="modembed.ecore#//abstraction/types/PointerTypeDefinition">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//abstraction/types/PointerTypeDefinition/pointerType"/>
+        </genClasses>
+        <genClasses ecoreClass="modembed.ecore#//abstraction/types/ArrayDefinition"/>
+        <genClasses ecoreClass="modembed.ecore#//abstraction/types/StructureTypeDefinition">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//abstraction/types/StructureTypeDefinition/elements"/>
+        </genClasses>
+        <genClasses ecoreClass="modembed.ecore#//abstraction/types/StructureTypeElement">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//abstraction/types/StructureTypeElement/type"/>
+        </genClasses>
+        <genClasses ecoreClass="modembed.ecore#//abstraction/types/CodeLabelTypeDefinition"/>
+        <genClasses ecoreClass="modembed.ecore#//abstraction/types/Type">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//abstraction/types/Type/definition"/>
+        </genClasses>
+      </nestedGenPackages>
+      <nestedGenPackages prefix="Memorymodel" basePackage="hu.modembed.model.modembed.abstraction"
+          disposableProviderFactory="true" ecorePackage="modembed.ecore#//abstraction/memorymodel">
+        <genClasses ecoreClass="modembed.ecore#//abstraction/memorymodel/MemoryType">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//abstraction/memorymodel/MemoryType/attributes"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.ecore#//abstraction/memorymodel/MemoryType/accessCost"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.ecore#//abstraction/memorymodel/MemoryType/contentVolatile"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.ecore#//abstraction/memorymodel/MemoryType/forData"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.ecore#//abstraction/memorymodel/MemoryType/forProgram"/>
+        </genClasses>
+        <genClasses ecoreClass="modembed.ecore#//abstraction/memorymodel/MemoryInstance">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference modembed.ecore#//abstraction/memorymodel/MemoryInstance/type"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.ecore#//abstraction/memorymodel/MemoryInstance/startAddress"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.ecore#//abstraction/memorymodel/MemoryInstance/size"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//abstraction/memorymodel/MemoryInstance/attributes"/>
+        </genClasses>
+      </nestedGenPackages>
+      <nestedGenPackages prefix="Behavior" basePackage="hu.modembed.model.modembed.abstraction"
+          disposableProviderFactory="true" ecorePackage="modembed.ecore#//abstraction/behavior">
+        <genClasses ecoreClass="modembed.ecore#//abstraction/behavior/SequentialBehaviorModule">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference modembed.ecore#//abstraction/behavior/SequentialBehaviorModule/device"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//abstraction/behavior/SequentialBehaviorModule/symbolMappings"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//abstraction/behavior/SequentialBehaviorModule/behaviorModels"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//abstraction/behavior/SequentialBehaviorModule/initSequence"/>
+        </genClasses>
+        <genClasses ecoreClass="modembed.ecore#//abstraction/behavior/SymbolMap">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference modembed.ecore#//abstraction/behavior/SymbolMap/device"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//abstraction/behavior/SymbolMap/symbolMappings"/>
+        </genClasses>
+        <genClasses ecoreClass="modembed.ecore#//abstraction/behavior/SymbolMappingRules">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference modembed.ecore#//abstraction/behavior/SymbolMappingRules/device"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//abstraction/behavior/SymbolMappingRules/rules"/>
+        </genClasses>
+        <genClasses ecoreClass="modembed.ecore#//abstraction/behavior/SymbolMappingRule">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference modembed.ecore#//abstraction/behavior/SymbolMappingRule/memInstance"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.ecore#//abstraction/behavior/SymbolMappingRule/startAddress"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.ecore#//abstraction/behavior/SymbolMappingRule/endAddress"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.ecore#//abstraction/behavior/SymbolMappingRule/classes"/>
+        </genClasses>
+        <genClasses ecoreClass="modembed.ecore#//abstraction/behavior/SequentialBehavior">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//abstraction/behavior/SequentialBehavior/actions"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//abstraction/behavior/SequentialBehavior/localSymbols"/>
+        </genClasses>
+        <genClasses ecoreClass="modembed.ecore#//abstraction/behavior/RootSequentialBehavior">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference modembed.ecore#//abstraction/behavior/RootSequentialBehavior/device"/>
+        </genClasses>
+        <genClasses ecoreClass="modembed.ecore#//abstraction/behavior/SequentialBehaviorPart">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.ecore#//abstraction/behavior/SequentialBehaviorPart/parameters"/>
+        </genClasses>
+        <genClasses image="false" ecoreClass="modembed.ecore#//abstraction/behavior/SequentialAction"/>
+        <genClasses ecoreClass="modembed.ecore#//abstraction/behavior/CodeSymbolPlacement">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EAttribute modembed.ecore#//abstraction/behavior/CodeSymbolPlacement/symbol"/>
+        </genClasses>
+        <genClasses ecoreClass="modembed.ecore#//abstraction/behavior/OperationExecution">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.ecore#//abstraction/behavior/OperationExecution/arguments"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.ecore#//abstraction/behavior/OperationExecution/operation"/>
+        </genClasses>
+        <genClasses image="false" ecoreClass="modembed.ecore#//abstraction/behavior/SymbolAssignment">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.ecore#//abstraction/behavior/SymbolAssignment/symbol"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//abstraction/behavior/SymbolAssignment/type"/>
+        </genClasses>
+        <genClasses ecoreClass="modembed.ecore#//abstraction/behavior/SymbolAllocation"/>
+        <genClasses ecoreClass="modembed.ecore#//abstraction/behavior/SymbolAddressAssignment">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference modembed.ecore#//abstraction/behavior/SymbolAddressAssignment/memoryInstance"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.ecore#//abstraction/behavior/SymbolAddressAssignment/address"/>
+        </genClasses>
+        <genClasses ecoreClass="modembed.ecore#//abstraction/behavior/SymbolValueAssignment">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.ecore#//abstraction/behavior/SymbolValueAssignment/value"/>
+        </genClasses>
+        <nestedGenPackages prefix="Platform" basePackage="hu.modembed.model.modembed.abstraction.behavior"
+            disposableProviderFactory="true" ecorePackage="modembed.ecore#//abstraction/behavior/platform">
+          <genClasses ecoreClass="modembed.ecore#//abstraction/behavior/platform/OperationDefinition">
+            <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//abstraction/behavior/platform/OperationDefinition/arguments"/>
+            <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//abstraction/behavior/platform/OperationDefinition/steps"/>
+            <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.ecore#//abstraction/behavior/platform/OperationDefinition/operation"/>
+          </genClasses>
+          <genClasses ecoreClass="modembed.ecore#//abstraction/behavior/platform/OperationArgument">
+            <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//abstraction/behavior/platform/OperationArgument/type"/>
+            <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                ecoreFeature="ecore:EReference modembed.ecore#//abstraction/behavior/platform/OperationArgument/memType"/>
+          </genClasses>
+          <genClasses ecoreClass="modembed.ecore#//abstraction/behavior/platform/InstructionCallOperationStep">
+            <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                ecoreFeature="ecore:EReference modembed.ecore#//abstraction/behavior/platform/InstructionCallOperationStep/instruction"/>
+            <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//abstraction/behavior/platform/InstructionCallOperationStep/arguments"/>
+          </genClasses>
+          <genClasses image="false" ecoreClass="modembed.ecore#//abstraction/behavior/platform/OperationStep"/>
+          <genClasses ecoreClass="modembed.ecore#//abstraction/behavior/platform/OperationLocalLabel"/>
+          <genClasses ecoreClass="modembed.ecore#//abstraction/behavior/platform/ConditionalOperation">
+            <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//abstraction/behavior/platform/ConditionalOperation/condition"/>
+            <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//abstraction/behavior/platform/ConditionalOperation/steps"/>
+          </genClasses>
+          <genClasses ecoreClass="modembed.ecore#//abstraction/behavior/platform/LabelParameterValue">
+            <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                ecoreFeature="ecore:EReference modembed.ecore#//abstraction/behavior/platform/LabelParameterValue/label"/>
+          </genClasses>
+          <genClasses ecoreClass="modembed.ecore#//abstraction/behavior/platform/InstructionParameterMapping">
+            <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                ecoreFeature="ecore:EReference modembed.ecore#//abstraction/behavior/platform/InstructionParameterMapping/value"/>
+            <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                ecoreFeature="ecore:EReference modembed.ecore#//abstraction/behavior/platform/InstructionParameterMapping/attribute"/>
+          </genClasses>
+        </nestedGenPackages>
+      </nestedGenPackages>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Structured" basePackage="hu.modembed.model.modembed"
+        disposableProviderFactory="true" ecorePackage="modembed.ecore#//structured">
+      <genClasses ecoreClass="modembed.ecore#//structured/StructuredModule">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//structured/StructuredModule/functions"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//structured/StructuredModule/variables"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference modembed.ecore#//structured/StructuredModule/uses"/>
+      </genClasses>
+      <genClasses ecoreClass="modembed.ecore#//structured/VariableDeclaration">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.ecore#//structured/VariableDeclaration/const"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.ecore#//structured/VariableDeclaration/global"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//structured/VariableDeclaration/type"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//structured/VariableDeclaration/initValue"/>
+      </genClasses>
+      <genClasses ecoreClass="modembed.ecore#//structured/StructuredFunction">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//structured/StructuredFunction/resultType"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//structured/StructuredFunction/parameters"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//structured/StructuredFunction/implementation"/>
+      </genClasses>
+      <genClasses ecoreClass="modembed.ecore#//structured/VariableReferenceExpression">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference modembed.ecore#//structured/VariableReferenceExpression/variable"/>
+      </genClasses>
+      <genClasses ecoreClass="modembed.ecore#//structured/FunctionCallExpression">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference modembed.ecore#//structured/FunctionCallExpression/function"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//structured/FunctionCallExpression/arguments"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="modembed.ecore#//structured/Operation"/>
+      <genClasses ecoreClass="modembed.ecore#//structured/ReturnOperation">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//structured/ReturnOperation/result"/>
+      </genClasses>
+      <genClasses ecoreClass="modembed.ecore#//structured/ExpressionOperation">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//structured/ExpressionOperation/expression"/>
+      </genClasses>
+      <genClasses ecoreClass="modembed.ecore#//structured/OperationBlock">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//structured/OperationBlock/variables"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//structured/OperationBlock/steps"/>
+      </genClasses>
+      <genClasses ecoreClass="modembed.ecore#//structured/ConditionalOperation">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//structured/ConditionalOperation/condition"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//structured/ConditionalOperation/trueBranch"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//structured/ConditionalOperation/falseBranch"/>
+      </genClasses>
+      <genClasses ecoreClass="modembed.ecore#//structured/LoopOperation">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//structured/LoopOperation/entryCondition"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//structured/LoopOperation/exitCondition"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//structured/LoopOperation/body"/>
+      </genClasses>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

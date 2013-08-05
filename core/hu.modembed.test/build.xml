@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="pack.shared.test" default="pack">
+
+	<include file="../hu.modembed/pack_shared.xml"/>
+	
+	<target name="pack">
+		<pack.shared name="test.assembler"/>
+		<pack.shared name="test.compileToDevice"/>
+		<pack.shared name="test.hex.manipulate"/>
+		<pack.shared name="test.dio"/>
+		<pack.shared name="test.module.compile" />
+		<pack.shared name="test.operations"/>
+	</target>
+	
+</project>

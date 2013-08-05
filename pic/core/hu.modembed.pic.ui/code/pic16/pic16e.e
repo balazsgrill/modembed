@@ -17,8 +17,6 @@ SUBWFB f d=1	<b111011:6 $d:1 $f:7>
 
 /* Move literal to BSR */
 MOVLB k			<b000000001:9 $k:5>
-/* Alias instruction to MOVLB - SELECTB, which accepts full memory address */
-SELECTB f		<b000000001:9 $f:5:7>
 
 /* Move literal to PCLATH */
 MOVLP k			<b1100011:7 $k:7>

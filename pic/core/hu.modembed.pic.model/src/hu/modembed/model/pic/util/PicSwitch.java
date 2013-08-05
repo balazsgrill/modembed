@@ -2,17 +2,20 @@
  */
 package hu.modembed.model.pic.util;
 
-import hu.modembed.model.architecture.Architecture;
-
-import hu.modembed.model.core.MODembedElement;
-import hu.modembed.model.core.NamedElement;
-import hu.modembed.model.core.RootElement;
-
+import hu.modembed.model.modembed.infrastructure.MODembedElement;
+import hu.modembed.model.modembed.infrastructure.NamedElement;
+import hu.modembed.model.modembed.infrastructure.RootElement;
 import hu.modembed.model.pic.*;
+import hu.modembed.model.pic.ConfigField;
+import hu.modembed.model.pic.ConfigLiteral;
+import hu.modembed.model.pic.ConfigWord;
+import hu.modembed.model.pic.ConfigurationSelection;
+import hu.modembed.model.pic.PICConfigurationModel;
+import hu.modembed.model.pic.PICConfigurationValueModel;
+import hu.modembed.model.pic.PicPackage;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
 
 /**
@@ -72,13 +75,12 @@ public class PicSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case PicPackage.PIC_ARCHITECTURE: {
-				PICArchitecture picArchitecture = (PICArchitecture)theEObject;
-				T result = casePICArchitecture(picArchitecture);
-				if (result == null) result = caseArchitecture(picArchitecture);
-				if (result == null) result = caseRootElement(picArchitecture);
-				if (result == null) result = caseNamedElement(picArchitecture);
-				if (result == null) result = caseMODembedElement(picArchitecture);
+			case PicPackage.PIC_CONFIGURATION_MODEL: {
+				PICConfigurationModel picConfigurationModel = (PICConfigurationModel)theEObject;
+				T result = casePICConfigurationModel(picConfigurationModel);
+				if (result == null) result = caseRootElement(picConfigurationModel);
+				if (result == null) result = caseNamedElement(picConfigurationModel);
+				if (result == null) result = caseMODembedElement(picConfigurationModel);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -106,22 +108,38 @@ public class PicSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case PicPackage.PIC_CONFIGURATION_VALUE_MODEL: {
+				PICConfigurationValueModel picConfigurationValueModel = (PICConfigurationValueModel)theEObject;
+				T result = casePICConfigurationValueModel(picConfigurationValueModel);
+				if (result == null) result = caseRootElement(picConfigurationValueModel);
+				if (result == null) result = caseNamedElement(picConfigurationValueModel);
+				if (result == null) result = caseMODembedElement(picConfigurationValueModel);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PicPackage.CONFIGURATION_SELECTION: {
+				ConfigurationSelection configurationSelection = (ConfigurationSelection)theEObject;
+				T result = caseConfigurationSelection(configurationSelection);
+				if (result == null) result = caseMODembedElement(configurationSelection);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>PIC Architecture</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>PIC Configuration Model</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>PIC Architecture</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>PIC Configuration Model</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePICArchitecture(PICArchitecture object) {
+	public T casePICConfigurationModel(PICConfigurationModel object) {
 		return null;
 	}
 
@@ -171,6 +189,36 @@ public class PicSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>PIC Configuration Value Model</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>PIC Configuration Value Model</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePICConfigurationValueModel(PICConfigurationValueModel object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Configuration Selection</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Configuration Selection</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseConfigurationSelection(ConfigurationSelection object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>MO Dembed Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -212,21 +260,6 @@ public class PicSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseRootElement(RootElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Architecture</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Architecture</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseArchitecture(Architecture object) {
 		return null;
 	}
 

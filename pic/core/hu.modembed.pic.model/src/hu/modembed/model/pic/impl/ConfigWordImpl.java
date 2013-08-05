@@ -2,8 +2,7 @@
  */
 package hu.modembed.model.pic.impl;
 
-import hu.modembed.model.core.impl.NamedElementImpl;
-
+import hu.modembed.model.modembed.infrastructure.impl.NamedElementImpl;
 import hu.modembed.model.pic.ConfigField;
 import hu.modembed.model.pic.ConfigWord;
 import hu.modembed.model.pic.PicPackage;
@@ -12,14 +11,10 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 

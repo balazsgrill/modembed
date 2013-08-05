@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="buildtools-ant-contrib">
+	
+	<dirname property="tools.basedir" file="${ant.file.buildtools-ant-contrib}"/>
+	<path id="antcontrib.classpath">
+		<fileset dir="${tools.basedir}/ant-contrib">
+			<include name="*.jar"/>
+		</fileset>
+	</path>	
+	<taskdef classpathref="antcontrib.classpath" resource="net/sf/antcontrib/antlib.xml" /> 
+	<echo message="${tools.basedir}" />
+	
+</project>

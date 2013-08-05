@@ -4,7 +4,7 @@ The following step-by-step guide will introduce you to the tool&apos;s features,
 
 == Setting up the workspace ==
 
-First of all, you should import some provided libraries to the workspace. These libraries define some platform to build your program upon:
+First of all, you should import some provided models to the workspace. These libraries define some platform to build your program upon:
 
 [[File:tutorial/tutorial-01.png|border|Open the import wizard]]
 [[File:tutorial/tutorial-02.png|border|Select "Import common code Project"]]
@@ -43,13 +43,4 @@ Now, it is time to start the real work by creating a source file to contain your
 
 This file will be a library, which defines your main function:
 
-
- library main;
- 
- use e.platform;
- use microchip.PIC16F1824;
- 
- main(){
- 
- }
 

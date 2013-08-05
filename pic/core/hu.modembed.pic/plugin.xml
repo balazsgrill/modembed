@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="hu.modembed.ui.includedCode">
+      <category
+            id="hu.modembed.pic.category"
+            name="PIC libraries">
+      </category>
+      <project
+            archive="shared/microchip.pic16.zip"
+            category="hu.modembed.pic.category"
+            id="microchip.pic16"
+            name="Microchip midrange (PIC16) and enchanced midrange (PIC16E) core libraries">
+         <dependency
+               project="e.core">
+         </dependency>
+      </project>
+      <project
+            archive="shared/microchip.pic18.zip"
+            category="hu.modembed.pic.category"
+            id="microchip.pic18"
+            name="Microchip high-end PIC18 core libraries">
+         <dependency
+               project="e.core">
+         </dependency>
+      </project>
+      <category
+            id="hu.modembed.pic.midrange.category"
+            name="PIC16 midrange and enchanced midrange libraries"
+            parent="hu.modembed.pic.category">
+      </category>
+      <category
+            id="hu.modembed.pic.pic18.category"
+            name="PIC18 high-end libraries"
+            parent="hu.modembed.pic.category">
+      </category>
+   </extension>
+   <extension
+         point="org.eclipse.ant.core.extraClasspathEntries">
+      <extraClasspathEntry
+            eclipseRuntime="true"
+            headless="true"
+            library="ant_tasks/modembed.pic.ant.tasks.jar">
+      </extraClasspathEntry>
+   </extension>
+   <extension
+         point="org.eclipse.ant.core.antTasks">
+      <antTask
+            class="hu.modembed.pic.ant.CompileConfigTask"
+            eclipseRuntime="true"
+            headless="true"
+            library="ant_tasks/modembed.pic.ant.tasks.jar"
+            name="modembed.pic.config">
+      </antTask>
+      <antTask
+            class="hu.modembed.pic.ant.ExtractConfigTask"
+            eclipseRuntime="true"
+            headless="true"
+            library="ant_tasks/modembed.pic.ant.tasks.jar"
+            name="modembed.pic.config.extract">
+      </antTask>
+   </extension>
+
+</plugin>

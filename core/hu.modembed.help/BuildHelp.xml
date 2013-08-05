@@ -8,21 +8,11 @@
      balazs.grill                                                                
      ====================================================================== -->
 <project name="MODembed-wikiHelp" default="generate-help">
-    <description>
-            description
-    </description>
-
-	<property name="wikitext.standalone" value="wikitext/libs"/><!-- path to wikitext standalone package -->
-
-	<path id="wikitext.classpath">
-		<fileset dir="${wikitext.standalone}">
-			<include name="org.eclipse.mylyn.wikitext.*core*.jar"/>
-		</fileset>
-	</path>
-	
-	<taskdef classpathref="wikitext.classpath" resource="org/eclipse/mylyn/wikitext/core/util/anttask/tasks.properties" />
+    
+	<include file="../../res/build-tools/wikitext.xml" />
 	
 	<target name="generate-help" description="Generate Eclipse help from textile source">
+		<xslt style="ecore2html.xsl" in="../hu.modembed.model/model/modembed.ecore" out="help/Reference-Model.html"></xslt>
 		<wikitext-to-eclipse-help markupLanguage="MediaWiki" 
 			multipleOutputFiles="false"
 			navigationImages="true"

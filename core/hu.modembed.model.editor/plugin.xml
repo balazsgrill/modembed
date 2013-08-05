@@ -20,6 +20,13 @@
             id="hu.modembed.model.editor"
             name="Model Editor">
       </editor>
+      <editor
+            class="hu.modembed.model.editor.mtexteditor.MTextEditor"
+            default="true"
+            extensions="m"
+            id="hu.modembed.model.m.editor"
+            name="MODembed textual model editor">
+      </editor>
    </extension>
    <extension
          point="org.eclipse.ui.handlers">

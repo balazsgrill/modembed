@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	
+	<target name="pic16f1824">
+		<eclipse.convertPath resourcePath="microchip.PIC16F1824/PIC16F1824.module.m" property="pic16_module"/>
+		<eclipse.convertPath resourcePath="microchip.PIC16F1824/PIC16F1824.mappingrules.m" property="pic16_rules"/>
+		<property name="targetdir" value="pic16" />
+		<property name="sequence" value="${targetdir}/.main.sequence.xmi" />
+		<property name="map" value="${targetdir}/.main.map.xmi" />
+		<property name="asm" value="${targetdir}/.main.asm.xmi" />
+		
+		<modembed.link entry="main" output="${sequence}">
+			<filelist dir="${basedir}">
+				<file name="main.m"/>
+				<file name="pic16/dio.driver.pic16f1824.m"/>
+				<file name="${pic16_module}"/>
+			</filelist>
+		</modembed.link>
+		<modembed.map input="${sequence}" output="${map}" rules="${pic16_rules}"/>
+		<modembed.translate input="${sequence}" map="${map}" output="${asm}"/>
+	</target>
+	
+	<target name="pic18f14k50">
+		<eclipse.convertPath resourcePath="microchip.PIC18F14K50/PIC18F14K50.module.m" property="pic18_module"/>
+		<eclipse.convertPath resourcePath="microchip.PIC18F14K50/PIC18F14K50.mappingrules.m" property="pic18_rules"/>
+		<property name="targetdir" value="pic18" />
+		<property name="sequence" value="${targetdir}/.main.sequence.xmi" />
+		<property name="map" value="${targetdir}/.main.map.xmi" />
+		<property name="asm" value="${targetdir}/.main.asm.xmi" />
+			
+		<modembed.link entry="main" output="${sequence}">
+			<filelist dir="${basedir}">
+				<file name="main.m"/>
+				<file name="pic18/dio.driver.pic18f14k50.m"/>
+				<file name="${pic18_module}"/>
+			</filelist>
+		</modembed.link>
+		<modembed.map input="${sequence}" output="${map}" rules="${pic18_rules}"/>
+		<modembed.translate input="${sequence}" map="${map}" output="${asm}"/>
+	</target>
+	
+</project>
+

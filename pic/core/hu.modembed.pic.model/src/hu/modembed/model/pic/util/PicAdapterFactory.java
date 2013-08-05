@@ -2,19 +2,21 @@
  */
 package hu.modembed.model.pic.util;
 
-import hu.modembed.model.architecture.Architecture;
-
-import hu.modembed.model.core.MODembedElement;
-import hu.modembed.model.core.NamedElement;
-import hu.modembed.model.core.RootElement;
-
+import hu.modembed.model.modembed.infrastructure.MODembedElement;
+import hu.modembed.model.modembed.infrastructure.NamedElement;
+import hu.modembed.model.modembed.infrastructure.RootElement;
 import hu.modembed.model.pic.*;
+import hu.modembed.model.pic.ConfigField;
+import hu.modembed.model.pic.ConfigLiteral;
+import hu.modembed.model.pic.ConfigWord;
+import hu.modembed.model.pic.ConfigurationSelection;
+import hu.modembed.model.pic.PICConfigurationModel;
+import hu.modembed.model.pic.PICConfigurationValueModel;
+import hu.modembed.model.pic.PicPackage;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -74,8 +76,8 @@ public class PicAdapterFactory extends AdapterFactoryImpl {
 	protected PicSwitch<Adapter> modelSwitch =
 		new PicSwitch<Adapter>() {
 			@Override
-			public Adapter casePICArchitecture(PICArchitecture object) {
-				return createPICArchitectureAdapter();
+			public Adapter casePICConfigurationModel(PICConfigurationModel object) {
+				return createPICConfigurationModelAdapter();
 			}
 			@Override
 			public Adapter caseConfigWord(ConfigWord object) {
@@ -90,6 +92,14 @@ public class PicAdapterFactory extends AdapterFactoryImpl {
 				return createConfigLiteralAdapter();
 			}
 			@Override
+			public Adapter casePICConfigurationValueModel(PICConfigurationValueModel object) {
+				return createPICConfigurationValueModelAdapter();
+			}
+			@Override
+			public Adapter caseConfigurationSelection(ConfigurationSelection object) {
+				return createConfigurationSelectionAdapter();
+			}
+			@Override
 			public Adapter caseMODembedElement(MODembedElement object) {
 				return createMODembedElementAdapter();
 			}
@@ -100,10 +110,6 @@ public class PicAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseRootElement(RootElement object) {
 				return createRootElementAdapter();
-			}
-			@Override
-			public Adapter caseArchitecture(Architecture object) {
-				return createArchitectureAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -126,16 +132,16 @@ public class PicAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link hu.modembed.model.pic.PICArchitecture <em>PIC Architecture</em>}'.
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.pic.PICConfigurationModel <em>PIC Configuration Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see hu.modembed.model.pic.PICArchitecture
+	 * @see hu.modembed.model.pic.PICConfigurationModel
 	 * @generated
 	 */
-	public Adapter createPICArchitectureAdapter() {
+	public Adapter createPICConfigurationModelAdapter() {
 		return null;
 	}
 
@@ -182,13 +188,41 @@ public class PicAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link hu.modembed.model.core.MODembedElement <em>MO Dembed Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.pic.PICConfigurationValueModel <em>PIC Configuration Value Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see hu.modembed.model.core.MODembedElement
+	 * @see hu.modembed.model.pic.PICConfigurationValueModel
+	 * @generated
+	 */
+	public Adapter createPICConfigurationValueModelAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.pic.ConfigurationSelection <em>Configuration Selection</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.modembed.model.pic.ConfigurationSelection
+	 * @generated
+	 */
+	public Adapter createConfigurationSelectionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.modembed.infrastructure.MODembedElement <em>MO Dembed Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.modembed.model.modembed.infrastructure.MODembedElement
 	 * @generated
 	 */
 	public Adapter createMODembedElementAdapter() {
@@ -196,13 +230,13 @@ public class PicAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link hu.modembed.model.core.NamedElement <em>Named Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.modembed.infrastructure.NamedElement <em>Named Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see hu.modembed.model.core.NamedElement
+	 * @see hu.modembed.model.modembed.infrastructure.NamedElement
 	 * @generated
 	 */
 	public Adapter createNamedElementAdapter() {
@@ -210,30 +244,16 @@ public class PicAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link hu.modembed.model.core.RootElement <em>Root Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.modembed.infrastructure.RootElement <em>Root Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see hu.modembed.model.core.RootElement
+	 * @see hu.modembed.model.modembed.infrastructure.RootElement
 	 * @generated
 	 */
 	public Adapter createRootElementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link hu.modembed.model.architecture.Architecture <em>Architecture</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see hu.modembed.model.architecture.Architecture
-	 * @generated
-	 */
-	public Adapter createArchitectureAdapter() {
 		return null;
 	}
 

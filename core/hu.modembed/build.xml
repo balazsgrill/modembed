@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="hu.modembed_pack.shared" default="build">
+
+	<include file="pack_shared.xml"/>
+	
+	<target name="build" depends="pack, build.jars" />
+	
+	<target name="pack">
+		<pack.shared name="e.core"/>
+	</target>
+	
+	<property name="jar.name" value="modembed.ant.tasks"/>
+	<target name="build.jars">
+		<available file="ant-bin" property="ant-bin" 
+				value="ant-bin" />
+		<available file="target/ant_tasks/modembed.ant.tasks.jar-classes" property="ant-bin" 
+				value="target/ant_tasks/modembed.ant.tasks.jar-classes"/>
+		
+		<echo>Ant task binary directory: ${ant-bin}</echo>
+		<fail unless="ant-bin" message="Could not find compiled ant task classes!"/>
+		<jar destfile="ant_tasks/${jar.name}.jar">
+			<fileset dir="${ant-bin}">
+				<include name="**/*.class"/>
+			</fileset>
+		</jar>
+	</target>
+	
+	<target name="clean.jars">
+		<delete file="ant_tasks/${jar.name}.jar" failonerror="false"/>
+	</target>
+	
+</project>

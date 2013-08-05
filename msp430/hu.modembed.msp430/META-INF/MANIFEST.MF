@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: MSP430 support
+Bundle-SymbolicName: hu.modembed.msp430;singleton:=true
+Bundle-Version: 0.8.1.qualifier
+Require-Bundle: hu.modembed;bundle-version="0.8.1"

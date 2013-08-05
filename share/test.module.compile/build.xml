@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module.compile" default="run">
+
+	<target name="run">
+		<modembed.compile input="test.module.m"
+			output=".test.module.xmi" />
+	</target>
+	
+</project>

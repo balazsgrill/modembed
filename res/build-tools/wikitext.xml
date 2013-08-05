@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="buildtools-wikitext">
+	
+	<dirname property="wikitext.basedir" file="${ant.file.buildtools-wikitext}"/>
+	<path id="wikitext.classpath">
+		<fileset dir="${wikitext.basedir}/wikitext">
+			<include name="*.jar"/>
+		</fileset>
+	</path>	
+	
+	<taskdef classpathref="wikitext.classpath" resource="org/eclipse/mylyn/wikitext/core/util/anttask/tasks.properties" />
+	
+</project>

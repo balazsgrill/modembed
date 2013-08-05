@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Simulator
+Bundle-SymbolicName: hu.modembed.simulator
+Bundle-Version: 0.8.1.qualifier
+Bundle-Activator: hu.modembed.simulator.SimulatorPlugin
+Require-Bundle: org.eclipse.core.runtime,
+ hu.modembed.model;bundle-version="0.8.1"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: hu.modembed.simulator,
+ hu.modembed.simulator.impl
