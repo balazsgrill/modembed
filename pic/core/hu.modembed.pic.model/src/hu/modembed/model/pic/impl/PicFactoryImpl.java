@@ -27,7 +27,7 @@ public class PicFactoryImpl extends EFactoryImpl implements PicFactory {
 	 */
 	public static PicFactory init() {
 		try {
-			PicFactory thePicFactory = (PicFactory)EPackage.Registry.INSTANCE.getEFactory("http://hu.modembed/pic"); 
+			PicFactory thePicFactory = (PicFactory)EPackage.Registry.INSTANCE.getEFactory(PicPackage.eNS_URI);
 			if (thePicFactory != null) {
 				return thePicFactory;
 			}
@@ -56,10 +56,12 @@ public class PicFactoryImpl extends EFactoryImpl implements PicFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case PicPackage.PIC_ARCHITECTURE: return createPICArchitecture();
+			case PicPackage.PIC_CONFIGURATION_MODEL: return createPICConfigurationModel();
 			case PicPackage.CONFIG_WORD: return createConfigWord();
 			case PicPackage.CONFIG_FIELD: return createConfigField();
 			case PicPackage.CONFIG_LITERAL: return createConfigLiteral();
+			case PicPackage.PIC_CONFIGURATION_VALUE_MODEL: return createPICConfigurationValueModel();
+			case PicPackage.CONFIGURATION_SELECTION: return createConfigurationSelection();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -70,9 +72,9 @@ public class PicFactoryImpl extends EFactoryImpl implements PicFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PICArchitecture createPICArchitecture() {
-		PICArchitectureImpl picArchitecture = new PICArchitectureImpl();
-		return picArchitecture;
+	public PICConfigurationModel createPICConfigurationModel() {
+		PICConfigurationModelImpl picConfigurationModel = new PICConfigurationModelImpl();
+		return picConfigurationModel;
 	}
 
 	/**
@@ -103,6 +105,26 @@ public class PicFactoryImpl extends EFactoryImpl implements PicFactory {
 	public ConfigLiteral createConfigLiteral() {
 		ConfigLiteralImpl configLiteral = new ConfigLiteralImpl();
 		return configLiteral;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PICConfigurationValueModel createPICConfigurationValueModel() {
+		PICConfigurationValueModelImpl picConfigurationValueModel = new PICConfigurationValueModelImpl();
+		return picConfigurationValueModel;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ConfigurationSelection createConfigurationSelection() {
+		ConfigurationSelectionImpl configurationSelection = new ConfigurationSelectionImpl();
+		return configurationSelection;
 	}
 
 	/**

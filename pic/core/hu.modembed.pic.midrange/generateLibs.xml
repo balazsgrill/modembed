@@ -8,6 +8,15 @@
      balazs.grill                                                                
      ====================================================================== -->
 <project name="generateLibs" default="default">
+	
+	<include file="../../../res/build-tools/ant-contrib.xml"/>
+	<include file="../../../res/build-tools/epsilon.xml"/>
+	
+	<property name="module.template" value="../hu.modembed.pic/templates/module.egl"></property>
+	<property name="module.interface.template" value="../hu.modembed.pic/templates/module_interface.egl"></property>
+	<property name="device.template" value="../hu.modembed.pic/templates/device.egl"></property>
+	<property name="rules.template" value="../hu.modembed.pic/templates/rules.egl"></property>
+	
     <description>
             This build script generates PIC libraries based on the device descriptor XMLs
     </description>
@@ -21,16 +30,46 @@
     <target name="default" description="description">
     	<echo>Generating PIC Libraries..</echo>
         <mkdir dir="gen-lib"/>
-    	<xslt basedir="../hu.modembed.pic.ui/device-descriptors/16xxxx" destdir="gen-lib" 
-    		extension=".e" style="../hu.modembed.pic.ui/device-descriptors/piclibgenerator.xsl">
-    	</xslt>
-    	<xslt basedir="../hu.modembed.pic.ui/device-descriptors/16xxxx" destdir="gen-lib" 
-    	    extension=".arch.xmi" style="../hu.modembed.pic.ui/device-descriptors/picarchgenerator.xsl">
+    	
+    	<xslt basedir="../hu.modembed.pic/device-descriptors/16xxxx" destdir="gen-lib" 
+    	    extension=".config.xmi" style="../hu.modembed.pic/device-descriptors/configgen.xsl">
     	</xslt>
     	
-    	<fileset dir="../hu.modembed.pic.ui/device-descriptors/16xxxx" id="devicefiles">
+    	<fileset dir="../hu.modembed.pic/device-descriptors/16xxxx" id="devicefiles">
     	    <include name="*.PIC"/>
     	</fileset>
+    	
+    	<for param="file">
+    		<path>
+    			<fileset refid="devicefiles" />
+    		</path>
+    		<sequential>
+    			<echo message="@{file}"></echo>
+    			<local name="picname" />
+    			<basename file="@{file}" property="picname" suffix=".PIC"/>
+    			<echo message="Generating libraries for ${picname}"></echo>
+    			<epsilon.xml.loadModel
+    				file="@{file}"
+    				read="true"
+    				store="false"
+    				name="PIC"
+    			/>
+    			<epsilon.egl src="${module.template}" target="gen-lib/${picname}.module.m" debug="true">
+    				<model ref="PIC" as="PIC" alias="PIC"/>
+    			</epsilon.egl>
+    			<epsilon.egl src="${module.interface.template}" target="gen-lib/${picname}.interface.m" debug="true">
+    			    <model ref="PIC" as="PIC" alias="PIC"/>
+    			</epsilon.egl>
+    			<epsilon.egl src="${device.template}" target="gen-lib/${picname}.device.m" debug="true">
+    			    <model ref="PIC" as="PIC" alias="PIC"/>
+    			 </epsilon.egl>
+    			<epsilon.egl src="${rules.template}" target="gen-lib/${picname}.mappingrules.m" debug="true">
+    			    <model ref="PIC" as="PIC" alias="PIC"/>
+    			</epsilon.egl>
+    			<epsilon.disposeModel model="PIC"/>
+    		</sequential>
+    	</for>
+    	
     	<pathconvert pathsep="&lt;/file&gt;${line.separator}&lt;file&gt;" property="devices" refid="devicefiles"/>
     	
     	<echo file="${picxml}">&lt;?xml version="1.0" encoding="UTF-8"?&gt;${line.separator}&lt;list&gt;${line.separator}</echo>

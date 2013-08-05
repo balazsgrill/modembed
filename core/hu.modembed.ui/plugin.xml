@@ -109,41 +109,5 @@
             name="Import common code Project">
       </wizard>
    </extension>
-   <extension
-         point="org.eclipse.debug.core.launchConfigurationTypes">
-      <launchConfigurationType
-            delegate="hu.modembed.ui.disassemble.DisassembleLaunchDelegate"
-            delegateDescription="Creates a text file containing the list of the instructions"
-            delegateName="Disassemble a compiled hex file"
-            id="hu.modembed.ui.disassemble.launchConfigutation"
-            modes="run"
-            name="Disassemble HEX file"
-            public="true">
-      </launchConfigurationType>
-      <launchConfigurationType
-            delegate="hu.modembed.ui.workflow.WorkflowLaunchDelegate"
-            delegateName="Execute a workflow model"
-            id="hu.modembed.ui.launchWorkflow"
-            modes="run"
-            name="Execute workflow"
-            public="true">
-      </launchConfigurationType>
-   </extension>
-   <extension
-         point="org.eclipse.debug.ui.launchConfigurationTabGroups">
-      <launchConfigurationTabGroup
-            class="hu.modembed.ui.disassemble.DisassembleTabGroup"
-            id="hu.modembed.ui.disassemble.launchConfigutation.tab"
-            type="hu.modembed.ui.disassemble.launchConfigutation">
-         <launchMode
-               mode="run">
-         </launchMode>
-      </launchConfigurationTabGroup>
-      <launchConfigurationTabGroup
-            class="hu.modembed.ui.workflow.WorkflowLaunchConfigurationTabGroup"
-            id="hu.modembed.ui.launchWorkflowTabGroup"
-            type="hu.modembed.ui.launchWorkflow">
-      </launchConfigurationTabGroup>
-   </extension>
 
 </plugin>

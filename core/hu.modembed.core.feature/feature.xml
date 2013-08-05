@@ -2,10 +2,10 @@
 <feature
       id="hu.modembed.core.feature"
       label="MODembed Core"
-      version="0.8.0.qualifier"
+      version="0.8.1.qualifier"
       plugin="hu.modembed.ui">
 
-   <description url="http://gbalage.github.com/modembed">
+   <description url="http://balazsgrill.github.com/modembed">
       Model-based development environment for embedded systems.
    </description>
 
@@ -209,91 +209,92 @@ litigation.
    </license>
 
    <url>
-      <update label="MODembed update site" url="http://gbalage.github.com/modembed/updatesite"/>
+      <update label="MODembed update site" url="http://modembed-updatesite.balazs-grill.cloudbees.net/"/>
+      <discovery label="EMFText update site" url="http://emftext.org/update"/>
+      <discovery label="Epsilon update site" url="http://download.eclipse.org/epsilon/updates/"/>
    </url>
 
    <requires>
-      <import feature="org.eclipse.emf" version="2.6.0" match="greaterOrEqual"/>
-      <import feature="org.eclipse.emf.common" version="2.6.0" match="greaterOrEqual"/>
-      <import feature="org.eclipse.emf.ecore" version="2.6.0" match="greaterOrEqual"/>
       <import feature="org.eclipse.emf.edit" version="2.6.0" match="greaterOrEqual"/>
+      <import feature="org.eclipse.emf.ecore" version="2.6.0" match="greaterOrEqual"/>
+      <import feature="org.eclipse.emf.common" version="2.6.0" match="greaterOrEqual"/>
+      <import feature="org.eclipse.emf" version="2.6.0" match="greaterOrEqual"/>
       <import feature="org.eclipse.platform" version="3.6.0" match="greaterOrEqual"/>
-      <import feature="org.eclipse.xtext.runtime" version="2.0.0" match="greaterOrEqual"/>
-      <import feature="org.eclipse.xtext.ui" version="2.0.0" match="greaterOrEqual"/>
+      <import feature="org.eclipse.emf.databinding" version="1.2.0" match="greaterOrEqual"/>
+      <import feature="org.eclipse.emf.transaction" version="1.4.0" match="greaterOrEqual"/>
+      <import feature="org.eclipse.emf.validation" version="1.4.0" match="greaterOrEqual"/>
    </requires>
 
    <plugin
          id="hu.modembed"
          download-size="0"
          install-size="0"
-         version="0.8.0.qualifier"
+         version="0.8.1.qualifier"
          unpack="false"/>
 
    <plugin
          id="hu.modembed.hexfile.model"
          download-size="0"
          install-size="0"
-         version="0.8.0.qualifier"
+         version="0.8.1.qualifier"
          unpack="false"/>
 
    <plugin
          id="hu.modembed.hexfile.persistence"
          download-size="0"
          install-size="0"
-         version="0.8.0.qualifier"
+         version="0.8.1.qualifier"
          unpack="false"/>
 
    <plugin
          id="hu.modembed.model"
          download-size="0"
          install-size="0"
-         version="0.8.0.qualifier"
+         version="0.8.1.qualifier"
          unpack="false"/>
 
    <plugin
          id="hu.modembed.model.editor"
          download-size="0"
          install-size="0"
-         version="0.8.0.qualifier"
+         version="0.8.1.qualifier"
          unpack="false"/>
 
    <plugin
          id="hu.modembed.ui"
          download-size="0"
          install-size="0"
-         version="0.8.0.qualifier"
+         version="0.8.1.qualifier"
          unpack="false"/>
 
    <plugin
          id="hu.modembed.ui.launch"
          download-size="0"
          install-size="0"
-         version="0.8.0.qualifier"
-         unpack="false"/>
-
-   <plugin
-         id="hu.e.compiler"
-         download-size="0"
-         install-size="0"
-         version="0.8.0.qualifier"
-         unpack="false"/>
-
-   <plugin
-         id="hu.e.parser"
-         download-size="0"
-         install-size="0"
-         version="0.8.0.qualifier"
-         unpack="false"/>
-
-   <plugin
-         id="hu.e.parser.ui"
-         download-size="0"
-         install-size="0"
-         version="0.8.0.qualifier"
+         version="0.8.1.qualifier"
          unpack="false"/>
 
    <plugin
          id="hu.modembed.help"
+         download-size="0"
+         install-size="0"
+         version="0.8.1.qualifier"/>
+
+   <plugin
+         id="hu.modembed.simulator"
+         download-size="0"
+         install-size="0"
+         version="0.8.1.qualifier"/>
+
+   <plugin
+         id="hu.modembed.syntax.model"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="hu.modembed.syntax.persistence"
          download-size="0"
          install-size="0"
          version="0.0.0"/>

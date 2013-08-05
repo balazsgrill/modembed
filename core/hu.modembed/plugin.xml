@@ -5,24 +5,79 @@
    <extension-point id="hu.modembed.ui.includedCode" name="Included Code" schema="schema/hu.modembed.ui.includedCode.exsd"/>
    <extension
          point="hu.modembed.ui.includedCode">
-      <project
-            category="hu.modembed.category.core"
-            icon="icons/e.core.png"
-            id="e.core"
-            name="Core platform">
-         <resource
-               path="/"
-               resource="core/platform.e">
-         </resource>
-         <resource
-               path="/"
-               resource="core/dio.e">
-         </resource>
-      </project>
       <category
             id="hu.modembed.category.core"
             name="Generic">
       </category>
+      <project
+            archive="shared/e.core.zip"
+            category="hu.modembed.category.core"
+            id="e.core"
+            name="Core resources">
+      </project>
+   </extension>
+   <extension
+         point="org.eclipse.ant.core.antTasks">
+      <antTask
+            class="hu.modembed.ant.AssembleTask"
+            headless="true"
+            library="ant_tasks/modembed.ant.tasks.jar"
+            name="modembed.assemble">
+      </antTask>
+      <antTask
+            class="hu.modembed.ant.DisassembleTask"
+            headless="true"
+            library="ant_tasks/modembed.ant.tasks.jar"
+            name="modembed.disassemble">
+      </antTask>
+      <antTask
+            class="hu.modembed.ant.ModuleLinkerTask"
+            eclipseRuntime="true"
+            headless="true"
+            library="ant_tasks/modembed.ant.tasks.jar"
+            name="modembed.link">
+      </antTask>
+      <antTask
+            class="hu.modembed.ant.hex.MergeHexFilesTask"
+            headless="true"
+            library="ant_tasks/modembed.ant.tasks.jar"
+            name="modembed.hex.merge">
+      </antTask>
+      <antTask
+            class="hu.modembed.ant.hex.ExtractHexFileTask"
+            headless="true"
+            library="ant_tasks/modembed.ant.tasks.jar"
+            name="modembed.hex.extract">
+      </antTask>
+      <antTask
+            class="hu.modembed.ant.TranslateTask"
+            eclipseRuntime="true"
+            headless="true"
+            library="ant_tasks/modembed.ant.tasks.jar"
+            name="modembed.translate">
+      </antTask>
+      <antTask
+            class="hu.modembed.ant.MapTask"
+            eclipseRuntime="true"
+            headless="true"
+            library="ant_tasks/modembed.ant.tasks.jar"
+            name="modembed.map">
+      </antTask>
+      <antTask
+            class="hu.modembed.ant.ModuleCompilerTask"
+            eclipseRuntime="true"
+            headless="true"
+            library="ant_tasks/modembed.ant.tasks.jar"
+            name="modembed.compile">
+      </antTask>
+   </extension>
+   <extension
+         point="org.eclipse.ant.core.extraClasspathEntries">
+      <extraClasspathEntry
+            eclipseRuntime="true"
+            headless="true"
+            library="ant_tasks/modembed.ant.tasks.jar">
+      </extraClasspathEntry>
    </extension>
 
 </plugin>

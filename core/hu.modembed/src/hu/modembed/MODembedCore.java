@@ -1,11 +1,17 @@
 package hu.modembed;
 
+import hu.modembed.impl.ReferencedResourceProvider;
+import hu.modembed.index.IGlobalModelIndex;
+import hu.modembed.index.InMemoryGlobalModelIndex;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import hu.modembed.impl.ReferencedResourceProvider;
-
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Plugin;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
@@ -24,6 +30,14 @@ public class MODembedCore extends Plugin {
 
 	private ProgrammerRegistry progreg = null;
 	
+	private IGlobalModelIndex modelIndex;
+	
+	public IGlobalModelIndex getModelIndex() {
+		if (modelIndex == null){
+			modelIndex = new InMemoryGlobalModelIndex();
+		}
+		return modelIndex;
+	}
 	
 	public ProgrammerRegistry getProgrammerRegistry() {
 		if (progreg == null){
@@ -53,6 +67,25 @@ public class MODembedCore extends Plugin {
 		super.stop(bundleContext);
 	}
 
+	public static IProject findProject(URI uri){
+		String path = null;
+		if (uri.isPlatform()){
+			path = uri.toPlatformString(false);
+			IFile f = ResourcesPlugin.getWorkspace().getRoot().getFile(Path.fromPortableString(path));
+			if (f != null) return f.getProject();
+		}else{
+			path = uri.toFileString();
+			for(IProject project : ResourcesPlugin.getWorkspace().getRoot().getProjects()){
+				String projectPath = project.getLocation().toOSString(); 
+				if (path.startsWith(projectPath)){
+					return project;
+				}
+			}
+		}
+		
+		return null;
+	}
+	
 	public static URI resolveStringReference(URI current, String reference){
 		String[] sections = reference.split("/");
 		URI uri = current.trimSegments(1);
@@ -81,15 +114,21 @@ public class MODembedCore extends Plugin {
 		List<EClass> subs = new ArrayList<EClass>();
 		subs.add(base);
 
-		Registry reg = null;//Registry.INSTANCE;
+		Registry reg = Registry.INSTANCE;
 //		if (resourceSet != null){
 //			reg = resourceSet.getPackageRegistry();
 //		}else{
-			reg = Registry.INSTANCE;
+//			reg = Registry.INSTANCE;
 //		}
 		
-		for (Object oo : reg.values()) {
+		
+		
+		for (Object oo : reg.values().toArray()) {
 
+			if (oo instanceof EPackage.Descriptor){
+				oo = ((EPackage.Descriptor) oo).getEPackage();
+			}
+			
 			if (oo instanceof EPackage) {
 				Iterator<EObject> iter = ((EPackage) oo).eContents().iterator();
 				while (iter.hasNext()) {

@@ -3,7 +3,7 @@
  */
 package hu.modembed.ui;
 
-import hu.modembed.model.core.NamedElement;
+import hu.modembed.model.modembed.infrastructure.NamedElement;
 
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.swt.graphics.Image;

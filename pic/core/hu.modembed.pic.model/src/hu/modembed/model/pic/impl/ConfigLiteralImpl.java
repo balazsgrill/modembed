@@ -2,16 +2,13 @@
  */
 package hu.modembed.model.pic.impl;
 
-import hu.modembed.model.core.impl.NamedElementImpl;
+import hu.modembed.model.modembed.infrastructure.impl.NamedElementImpl;
 import hu.modembed.model.pic.ConfigLiteral;
 import hu.modembed.model.pic.PicPackage;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 /**
  * <!-- begin-user-doc -->

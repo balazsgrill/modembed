@@ -4,7 +4,7 @@
 package hu.modembed.ui.wizards;
 
 import hu.modembed.MODembedCore;
-import hu.modembed.model.core.RootElement;
+import hu.modembed.model.modembed.infrastructure.RootElement;
 
 import java.io.IOException;
 

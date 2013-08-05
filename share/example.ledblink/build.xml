@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ====================================================================== 
+     Jul 3, 2013 1:45:43 PM                                                        
+
+     LED Blinking example    
+     description
+                   
+     balazs.grill                                                                
+     ====================================================================== -->
+<project name="LED Blinking example" default="release.all" >
+
+	<property name="out" value="${basedir}/out" />
+	<eclipse.convertPath resourcepath="microchip.PIC16F1824" property="pic16f1824"/>
+	<eclipse.convertPath resourcepath="microchip.PIC18F14K50" property="pic18f14k50"/>
+	 
+    <target name="compile.generic">
+    	<mkdir dir="${out}"/>
+        <modembed.compile input="ledblink.main.m" output="${out}/ledblink.main.xmi"/>
+    	<modembed.compile input="libs/generic/led.m" output="${out}/led.xmi"/>
+    	<modembed.compile input="libs/generic/utils.m" output="${out}/utils.xmi"/>
+    </target>
+
+    <target name="release.all" depends="release.pic16f1824, release.pic18f14k50">
+        
+    </target>
+
+	
+	<target name="configure.pic16f1824">
+		<modembed.pic.config input="ledblink.pic16f1824.config.xmi" output="${out}/pic16f1824/config.hex"/>
+	</target>
+	
+	<target name="configure.pic18f14k50">
+		<modembed.pic.config input="ledblink.pic18f14k50.config.xmi" output="${out}/pic18f14k50/config.hex"/>
+	</target>
+	
+	<target name="compile.pic16f1824" depends="compile.generic">
+		<mkdir dir="${out}/pic16f1824" />
+		<modembed.compile input="libs/pic16e/led.pic16f1824.m" output="${out}/pic16f1824/led.xmi"/>
+		<modembed.link output="${out}/pic16f1824/ledblink.xmi" entry="ledblink_main__main">
+			<filelist dir="${basedir}">
+				<file name="${out}/ledblink.main.xmi"/>
+				<file name="${out}/led.xmi"/>
+				<file name="${out}/utils.xmi"/>
+				<file name="${out}/pic16f1824/led.xmi"/>
+				<file name="${pic16f1824}/PIC16F1824.module.m"/>	
+			</filelist>
+		</modembed.link>
+		<modembed.map rules="${pic16f1824}/PIC16F1824.mappingrules.m" input="${out}/pic16f1824/ledblink.xmi" output="${out}/pic16f1824/ledblink.map.xmi"/>
+		<modembed.translate input="${out}/pic16f1824/ledblink.xmi" map="${out}/pic16f1824/ledblink.map.xmi" output="${out}/pic16f1824/ledblink.asm.xmi"/>
+		<modembed.assemble input="${out}/pic16f1824/ledblink.asm.xmi" output="${out}/pic16f1824/code.hex"/>
+	</target>
+	
+	<target name="compile.pic18f14k50" depends="compile.generic">
+		<mkdir dir="${out}/pic18f14k50" />
+		<modembed.compile input="libs/pic18/led.pic18f14k50.m" output="${out}/pic18f14k50/led.xmi"/>
+		<modembed.link output="${out}/pic18f14k50/ledblink.xmi" entry="ledblink_main__main">
+			<filelist dir="${basedir}">
+				<file name="${out}/ledblink.main.xmi"/>
+				<file name="${out}/led.xmi"/>
+				<file name="${out}/utils.xmi"/>
+				<file name="${out}/pic18f14k50/led.xmi"/>
+				<file name="${pic18f14k50}/PIC18F14K50.module.m"/>	
+			</filelist>
+		</modembed.link>
+		<modembed.map rules="${pic18f14k50}/PIC18F14K50.mappingrules.m" input="${out}/pic18f14k50/ledblink.xmi" output="${out}/pic18f14k50/ledblink.map.xmi"/>
+		<modembed.translate input="${out}/pic18f14k50/ledblink.xmi" map="${out}/pic18f14k50/ledblink.map.xmi" output="${out}/pic18f14k50/ledblink.asm.xmi"/>
+		<modembed.assemble input="${out}/pic18f14k50/ledblink.asm.xmi" output="${out}/pic18f14k50/code.hex"/>
+	</target>
+	
+	<target name="release.pic18f14k50" depends="configure.pic18f14k50, compile.pic18f14k50">
+		<modembed.hex.merge output="${out}/pic18f14k50/release.hex">
+			<filelist dir="${out}/pic18f14k50">
+				<file name="code.hex"/>
+				<file name="config.hex"/>
+			</filelist>
+		</modembed.hex.merge>
+	</target>
+	
+	<target name="release.pic16f1824" depends="configure.pic16f1824, compile.pic16f1824">
+		<modembed.hex.merge output="${out}/pic16f1824/release.hex">
+			<filelist dir="${out}/pic16f1824">
+				<file name="code.hex"/>
+				<file name="config.hex"/>
+			</filelist>
+		</modembed.hex.merge>
+	</target>
+	
+</project>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="hu.modembed.ui.includedCode">
+      <project
+            category="hu.modembed.msp430.category"
+            id="ti.msp430"
+            name="MSP430 Libraries">
+         <dependency
+               project="e.core">
+         </dependency>
+         <resource
+               path="/"
+               resource="ti.msp430/ti.msp430.instructionset.m">
+         </resource>
+      </project>
+      <category
+            id="hu.modembed.msp430.category"
+            name="Texas Instruments MSP430">
+      </category>
+   </extension>
+
+</plugin>

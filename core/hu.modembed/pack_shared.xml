@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="pack_shared">
+	
+	<dirname property="included.basedir" file="${ant.file.pack_shared}"/>
+	<property name="shared.root" location="${included.basedir}/../../share"/>
+	
+	<macrodef name="pack.shared">
+		<attribute name="name"/>
+		<sequential>
+			<mkdir dir="shared"/>
+			<zip destfile="shared/@{name}.zip" basedir="${shared.root}/@{name}/" excludes=".*">	
+			</zip>
+		</sequential>
+	</macrodef>
+	
+</project>

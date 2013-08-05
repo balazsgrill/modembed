@@ -2,8 +2,7 @@
  */
 package hu.modembed.model.pic;
 
-import hu.modembed.model.core.NamedElement;
-import org.eclipse.emf.ecore.EObject;
+import hu.modembed.model.modembed.infrastructure.NamedElement;
 
 /**
  * <!-- begin-user-doc -->

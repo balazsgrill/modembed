@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Parameter: ${device}
+ -->
+<project name="test.assembler">
+	
+	<!-- PIC16e -->
+	<condition property="device.module" value="pic16e/pic16e.module.m">
+		<equals arg1="${device}" arg2="pic16e"/>
+	</condition>
+	
+	<condition property="mappingrules" value="pic16e/pic16e.test.mappingrules.m">
+		<equals arg1="${device}" arg2="pic16e"/>
+	</condition>
+	
+	<!-- PIC18 -->
+	<condition property="device.module" value="pic18/pic18.module.m">
+		<equals arg1="${device}" arg2="pic18"/>
+	</condition>
+		
+	<condition property="mappingrules" value="pic18/pic18.test.mappingrules.m">
+		<equals arg1="${device}" arg2="pic18"/>
+	</condition>
+	
+	<!-- = = = = = = = = = = = = = = = = =
+          macrodef: name          
+         = = = = = = = = = = = = = = = = = -->
+    <macrodef name="produce">
+        <attribute name="test" />
+    	<attribute name="file"/>
+        <sequential>
+        	<modembed.link entry="@{test}" output=".test.xmi">
+        		<filelist dir="${basedir}">
+        			<file name="${device.module}"/>
+        			<file name="@{file}"/>
+        		</filelist>
+        	</modembed.link>
+        	<modembed.map input=".test.xmi" rules="${mappingrules}"
+        		output=".test.map.xmi" />
+        	<modembed.translate map=".test.map.xmi"
+        		output=".test.asm.xmi" input=".test.xmi"/>
+        </sequential>
+    </macrodef>
+	
+	<target name="test1">
+		<produce file="test/test.uint8.greater.m" test="test1"/>
+	</target>
+	
+	<target name="test2">
+		<produce file="test/test.uint8.greater.m" test="test2"/>
+	</target>
+	
+	<target name="test3">
+		<produce file="test/test.uint8.greater.m" test="test3"/>
+	</target>
+	
+	<target name="test4">
+		<produce file="test/test.bitops.m" test="test1"/>
+	</target>
+	
+	<target name="test5">
+		<produce file="test/test.bitops.m" test="test2"/>
+	</target>
+	
+	<target name="test6">
+		<produce file="test/test.bitops.m" test="test3"/>
+	</target>
+	
+	<target name="test7">
+		<produce file="test/test.bitops.m" test="test4"/>
+	</target>
+
+	<target name="test2_1">
+		<produce file="test/test.uint16.greater.m" test="test1"/>
+	</target>
+	
+	<target name="test2_2">
+		<produce file="test/test.uint16.greater.m" test="test2"/>
+	</target>
+	
+	<target name="test2_3">
+		<produce file="test/test.uint16.greater.m" test="test3"/>
+	</target>	
+	
+	<target name="test2_4">
+		<produce file="test/test.uint16.greater.m" test="test4"/>
+	</target>
+	
+	<target name="test2_5">
+		<produce file="test/test.uint16.greater.m" test="test5"/>
+	</target>
+	
+	<target name="test2_6">
+		<produce file="test/test.uint16.greater.m" test="test6"/>
+	</target>	
+	
+</project>

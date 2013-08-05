@@ -1,35 +1,27 @@
-library pic18.platform overrides e.platform;
+library pic18.platform;
 
-use pic18.platform.u16;
-use pic18.platform.u8;
-use microchip.pic18.assisted;
+use microchip.pic18.instructions;
+use e.platform;
 
-operator ADD{
-	add_u8,
-	add_u16_u8,
-	add_u16_u16
+function uint8_ADD_l void(var uint8 dest, const uint8 v) overrides ADD{
+	MOVLW(v);
+	SELECTB(&dest);
+	ADDWF(&dest);
 }
 
-operator SUBTRACT{
-	subtract_u8
+function uint8_ADD_v void(var uint8 dest, var uint8 v) overrides ADD{
+	SELECTB(&v);
+	MOVF(&v,0);
+	SELECTB(&dest);
+	ADDWF(&dest);
 }
 
-operator BRANCH{
-	branch_u8,
-	branch_bool
+function uint8_ASSIGN_l void(var uint8 dest, const uint8 v) overrides ASSIGN{
+	MOVLW(v);
+	SELECTB(&dest);
+	MOVWF(&dest);
 }
 
-operator UC_GOTO{
-	aGOTO
-}
-
-operator SET{
-	set_bool,
-	set_u8,
-	set_u16_u8,
-	set_u16_u16
-}
-
-operator EQUALS{
-	isequal_u8
+function uint8_ASSIGN_v void(var uint8 dest, var uint8 v) overrides ASSIGN{
+	MOVFF(&v, &dest);
 }

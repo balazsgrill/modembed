@@ -1,0 +1,408 @@
+@namespace(uri="http://modembed.hu/", prefix="modembed")
+package modembed;
+
+@namespace(uri="http://modembed.hu/infrastructure", prefix="infrastructure")
+package infrastructure{
+	
+	abstract class MODembedElement{
+		attr String[0..1] description;
+		val traceability.Origin[*] origins;
+		val Annotation[*] annotations;
+	}
+	
+	class Annotation{
+		
+		attr String[1] key;
+		attr String value;
+	}
+	
+	@namespace(uri="http://modembed.hu/infrastructure/traceability", prefix="traceability")
+	package traceability{
+	
+		@GenModel(documentation="This is the base class of every element in a MODembed model. It specifies some basic concepts that is general in every domain, like a descritpion or traceability.")
+		abstract class Origin{
+		
+		}
+		
+		class TextOrigin extends Origin{
+			attr String[1] fileName;
+			attr int[1] line;
+		}
+		
+		class ModelOrigin extends Origin{
+			ref MODembedElement[1] element;
+		}
+	}
+	
+	@namespace(uri="http://modembed.hu/infrastructure/expressions", prefix="expressions")
+	package expressions{
+		
+		abstract class Expression{
+			
+		}
+		
+		class IntegerConstantExpression extends Expression{
+			attr long[1] value;
+		}
+		
+		class OperationExpression extends Expression{
+			attr String[1] operation;
+			val Expression[*] arguments;
+		}
+		
+	}
+	
+	abstract class NamedElement extends MODembedElement{
+		
+		attr String[1] name;
+		
+	}
+	
+	abstract class RootElement extends NamedElement{
+		
+	}
+	
+	class AttributeContainerDefinition extends RootElement{
+		val AttributeDefinition[*] attributes;
+	}
+	
+	class AttributeDefinition extends NamedElement{
+		
+	}
+	
+	class AttributeValueContainer extends RootElement{
+		ref AttributeContainerDefinition[1] definition;
+		val AttributeValue[*] values;
+	}
+	
+	class AttributeValue extends MODembedElement{
+		ref AttributeDefinition[1] definition;
+		attr long value;
+	}
+}
+
+@namespace(uri="http://modembed.hu/core", prefix="core")
+package core{
+
+	@namespace(uri="http://modembed.hu/core/instructionset", prefix="instructionset")	
+	package instructionset{
+		
+		class InstructionSet extends infrastructure.RootElement {
+      		val Instruction[*] instructions;
+      		ref InstructionSet extend;
+    	}
+
+    	class Instruction extends infrastructure.NamedElement {
+      		val InstructionParameter[*] parameters;
+      		val InstructionWord[*] words;
+    	}
+
+    	class InstructionParameter extends infrastructure.NamedElement {
+      		attr int defaultValue;
+    	}
+
+    	abstract class InstructionSection extends infrastructure.MODembedElement {
+      		attr int[1] size;
+      		attr int shift;
+    	}
+
+    	class ConstantSection extends InstructionSection {
+      		attr int[1] value;
+    	}
+
+    	class ParameterSection extends InstructionSection {
+      		ref InstructionParameter[1] parameter;
+    	}
+
+    	class InstructionWord extends infrastructure.MODembedElement {
+      		val InstructionSection[*] sections;
+      		val InstructionWordCondition[*] condition;
+    	}
+
+    	abstract class InstructionWordCondition extends infrastructure.MODembedElement {
+    	}
+
+    	class InstructionWordMaskedValueCondition extends InstructionWordCondition {
+    		attr long mask;
+      		attr long value;
+      		ref InstructionParameter[1] argument;
+    	}
+		
+	}
+
+	@namespace(uri="http://modembed.hu/core/object", prefix="object")
+	package object{
+		
+		class AssemblerObject extends infrastructure.RootElement {
+        	val InstructionCall[*] instructions;
+        	attr long startAddress;
+      	}
+
+      	class InstructionCall extends infrastructure.MODembedElement {
+        	val InstructionCallParameter[*] parameters;
+        	ref instructionset.Instruction instruction;
+      	}
+
+      	class InstructionCallParameter extends infrastructure.MODembedElement {
+        	attr long value;
+        	
+        	@GenModel(documentation="If set to true, the given value is parsed as a pointer to another instruction call by its index.")
+        	attr boolean label;
+        	ref instructionset.InstructionParameter definition;
+      	}
+		
+	}
+	
+}
+
+@namespace(uri="http://modembed.hu/abstraction", prefix="abstraction")
+package abstraction {
+
+	class DeviceAbstraction extends infrastructure.RootElement{
+		ref DeviceAbstraction ancestor;
+		ref core.instructionset.InstructionSet instructionset;
+	
+		val memorymodel.MemoryType[*] memoryTypes;
+		val memorymodel.MemoryInstance[*] memoryInstances;
+		
+		val behavior.platform.OperationDefinition[*] operation;
+	}
+
+
+  @namespace(uri="http://modembed.hu/abstraction/types", prefix="types")
+  package types {
+    abstract class TypeDefinition extends infrastructure.MODembedElement {
+    }
+
+    abstract class PrimitiveTypeDefinition extends TypeDefinition {
+    }
+
+    abstract class CompositeTypeDefinition extends TypeDefinition {
+    }
+
+    class UnsignedTypeDefinition extends PrimitiveTypeDefinition {
+      attr int bits;
+    }
+
+    class ReferenceTypeDefinition extends CompositeTypeDefinition {
+      ref Type[1] type;
+    }
+
+    class PointerTypeDefinition extends CompositeTypeDefinition {
+      val TypeDefinition[1] pointerType;
+    }
+
+    class ArrayDefinition extends PointerTypeDefinition {
+    }
+
+    class StructureTypeDefinition extends CompositeTypeDefinition {
+      val StructureTypeElement[*] elements;
+    }
+
+    class StructureTypeElement extends infrastructure.NamedElement {
+      val TypeDefinition[1] type;
+    }
+
+    class CodeLabelTypeDefinition extends PrimitiveTypeDefinition {
+    }
+
+    class Type extends infrastructure.RootElement {
+      val TypeDefinition[1] definition;
+    }
+
+  }
+
+  @namespace(uri="http://modembed.hu/abstraction/memorymodel", prefix="memmodel")
+  package memorymodel{
+  	
+  		@GenModel(documentation="Define a type of memory model")
+  		class MemoryType extends infrastructure.NamedElement{
+  			val infrastructure.AttributeContainerDefinition attributes;
+  			attr int accessCost;
+  			attr boolean contentVolatile;
+  			attr boolean forData;
+  			attr boolean forProgram;
+  		}
+  	
+  		class MemoryInstance extends infrastructure.NamedElement{
+  			ref MemoryType[1] type;
+  			attr long[1] startAddress;
+  			attr long[1] size;
+  			val infrastructure.AttributeValueContainer attributes;
+  		}
+  	
+  }
+
+  @namespace(uri="http://modembed.hu/abstraction/behavior", prefix="behavior")
+  package behavior {
+  
+  	class SequentialBehaviorModule extends infrastructure.RootElement {
+  		ref DeviceAbstraction device;
+  		val SymbolAssignment[*] symbolMappings;
+  		val SequentialBehaviorPart[*] behaviorModels;
+  		val SequentialBehaviorPart initSequence;
+  	}
+  
+  	class SymbolMap extends infrastructure.RootElement{
+  		ref DeviceAbstraction device;
+  		val SymbolAddressAssignment[*] symbolMappings;
+  	}
+  
+  	class SymbolMappingRules extends infrastructure.RootElement {
+  		ref DeviceAbstraction device;
+  		val SymbolMappingRule[*] rules;
+  	}
+  	
+  	class SymbolMappingRule extends infrastructure.MODembedElement{
+  		ref memorymodel.MemoryInstance memInstance;
+  		attr long startAddress;
+  		attr long endAddress;
+  		attr String[*] classes;
+  	}
+  
+  	abstract interface SequentialBehavior{
+  		val SequentialAction[*] actions;
+  		val SymbolAssignment[*] localSymbols;
+  	}
+  
+  	class RootSequentialBehavior extends infrastructure.RootElement, SequentialBehavior{
+  		ref DeviceAbstraction device;
+  	}
+  
+    class SequentialBehaviorPart extends infrastructure.NamedElement, SequentialBehavior  {
+    	attr String[*] parameters;
+    }
+
+    abstract class SequentialAction extends infrastructure.MODembedElement {
+    }
+
+    class CodeSymbolPlacement extends SequentialAction {
+    	attr String[1] symbol;
+    }
+
+    class OperationExecution extends SequentialAction {
+    	attr String[*] arguments;
+    	attr String[1] operation;
+    }
+
+	abstract class SymbolAssignment extends infrastructure.MODembedElement{
+		attr String[1] symbol;
+      	val types.TypeDefinition[1] type;
+	}
+
+	class SymbolAllocation extends SymbolAssignment{
+	}
+
+	class SymbolAddressAssignment extends SymbolAssignment{
+		ref memorymodel.MemoryInstance[1] memoryInstance;
+		attr long[1] address;
+	}
+
+    class SymbolValueAssignment extends SymbolAssignment {      
+      	attr long[1] value;      
+    }
+
+    @namespace(uri="http://modembed.hu/abstraction/behavior/platform", prefix="platform")
+    package platform {
+
+      class OperationDefinition extends infrastructure.MODembedElement {
+        val OperationArgument[*] arguments;
+        val OperationStep[*] steps;
+        attr String operation;
+      }
+
+      class OperationArgument extends infrastructure.NamedElement {
+        val types.TypeDefinition type;
+        ref memorymodel.MemoryType memType;
+      }
+
+      class InstructionCallOperationStep extends OperationStep {
+        ref core.instructionset.Instruction instruction;
+        val infrastructure.expressions.Expression[*] arguments;
+      }
+
+      abstract class OperationStep extends infrastructure.MODembedElement {
+      }
+
+	  class OperationLocalLabel extends OperationStep, infrastructure.NamedElement{
+	  }
+	  
+	  class ConditionalOperation extends OperationStep{
+	  		val infrastructure.expressions.Expression[1] condition;
+        	val OperationStep[*] steps;
+	  }
+
+
+	  class LabelParameterValue extends infrastructure.expressions.Expression{
+	  		ref OperationLocalLabel[1] label;
+	  }
+
+      class InstructionParameterMapping extends infrastructure.expressions.Expression {
+      		ref OperationArgument[1] value;
+      		ref infrastructure.AttributeDefinition attribute;
+      }
+
+    }
+
+  }
+
+}
+
+@namespace(uri="http://modembed.hu/structured", prefix="structured")
+package structured{
+	
+	class StructuredModule extends infrastructure.RootElement{
+		val StructuredFunction[*] functions;
+		val VariableDeclaration[*] variables;
+		ref StructuredModule[*] uses;
+	}
+	
+	class VariableDeclaration extends infrastructure.NamedElement{
+		attr boolean[1] const;
+		attr boolean[1] global;
+		val abstraction.types.TypeDefinition[1] type;
+		val infrastructure.expressions.Expression initValue;
+	}
+	
+	class StructuredFunction extends infrastructure.NamedElement{
+		val abstraction.types.TypeDefinition[1] resultType; 
+		val VariableDeclaration[*] parameters;
+		val Operation implementation;
+	}
+	
+	class VariableReferenceExpression extends infrastructure.expressions.Expression{
+		ref VariableDeclaration[1] variable;
+	}
+	
+	class FunctionCallExpression extends infrastructure.expressions.Expression{
+		ref StructuredFunction function;
+		val infrastructure.expressions.Expression[*] arguments;
+	}
+	
+	abstract class Operation extends infrastructure.MODembedElement{}
+	
+	class ReturnOperation extends Operation{
+		val infrastructure.expressions.Expression result;
+	}
+	
+	class ExpressionOperation extends Operation{
+		val infrastructure.expressions.Expression expression;
+	}
+	
+	class OperationBlock extends Operation{
+		val VariableDeclaration[*] variables;
+		val Operation[*] steps;
+	}
+	
+	class ConditionalOperation extends Operation{
+		val infrastructure.expressions.Expression[1] condition;
+		val Operation trueBranch;
+		val Operation falseBranch;
+	}
+	
+	class LoopOperation extends Operation{
+		val infrastructure.expressions.Expression entryCondition;
+		val infrastructure.expressions.Expression exitCondition;
+		val Operation[1] body;
+	}
+}

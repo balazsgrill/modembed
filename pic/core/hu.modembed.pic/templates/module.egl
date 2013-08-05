@@ -1,0 +1,56 @@
+#!sequential.syntax
+[%
+var pic = PIC.root;
+var name = pic.getAttribute("edc:name");
+var dataspace = pic.getElementsByTagName("edc:DataSpace").item(0);
+var regardlessofMode = dataspace.getElementsByTagName("edc:RegardlessOfMode").item(0);
+%]
+module [%=name%] device [%=name%].device;
+[%
+var datasectors = regardlessofMode.getElementsByTagName("edc:SFRDataSector");
+var i=0;
+while(i<datasectors.getLength()){
+	var datasector = datasectors.item(i);
+	var bank = datasector.getAttribute("edc:bank");
+	var bankId = 0;
+	if (bank.startsWith("0x")){
+		bankId = 0.parseInt(bank.substring(2),16);
+	}else{
+		if (not bank.isEmpty()){
+			bankId = 0.parseInt(bank);
+		}
+	}
+	var start = datasector.getAttribute("edc:beginaddr");
+	
+	var startAddr = 0.parseInt(start.substring(2),16);
+	var j=0;
+	var sfrs = datasector.getChildNodes();
+	var currentAddr = 0;
+	while(j<sfrs.getLength()){
+		var sfr = sfrs.item(j);
+		j=j+1;
+		if (sfr.getNodeType() == 1){
+			var tagname = sfr.getTagName();
+		
+			if (tagname == "edc:AdjustPoint"){
+				var offset = sfr.getAttribute("edc:offset");
+				currentAddr = currentAddr + 0.parseInt(offset);
+			}
+			if (tagname == "edc:SFRDef" or tagname == "edc:JoinedSFRDef"){
+				var nzwidth = sfr.getAttribute("edc:nzwidth");
+				var width = 0;
+				if (nzwidth.startsWith("0x")){
+					width = 0.parseInt(nzwidth.substring(2),16);
+				}else{
+					width = 0.parseInt(nzwidth);
+				}
+%]
+uint[%=width%] [%=sfr.getAttribute("edc:cname")%] =		0x[%=0.toHexString(currentAddr)%]@bank[%=bankId%];
+[%
+				currentAddr = currentAddr+(width/8);
+			}
+		}
+	}
+	i=i+1;
+}
+%]

@@ -4,5 +4,7 @@
     <link toc="help/Example-toc.xml"/>
     <topic label="Reference information">
        <link toc="help/Reference-WorkflowTasks-toc.xml"/>
+       <topic href="help/Reference-Model.html" label="Model reference">
+       </topic>
     </topic>
 </toc>

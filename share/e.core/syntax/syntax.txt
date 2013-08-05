@@ -1,0 +1,5 @@
+Start :- "syntax" {SyntaxModel} name=QUALIFIEDID ";" Import* Terminal* Rule*;
+Import :- "import" import=QUALIFIEDID ";";
+Terminal :- "terminal" terminals={Terminal} hide="hidden"? name=IDENTIFIER regexp=STRING ";" {} ;
+
+Rule :- "<" rules={Rule} nonTerminal=IDENTIFIER ">" ":-" RuleItem* ";" {} ;

@@ -39,7 +39,9 @@ public class ElementLabelValueFactory implements IObservableFactory {
 			items.add(((EObject) target).eClass().getName());
 			
 			for(EAttribute eattr : ((EObject) target).eClass().getEAllAttributes()){
-				if (!eattr.isMany()){
+				if (eattr.isMany()){
+					
+				}else{
 					items.add(" ");
 					items.add(EMFEditProperties.value(edomain, eattr).observe(target));
 				}

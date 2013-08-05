@@ -1,8 +1,0 @@
-Manifest-Version: 1.0
-Bundle-ManifestVersion: 2
-Bundle-Name: Pic Device descriptor Persistence
-Bundle-SymbolicName: hu.modembed.pic.device.persistence;singleton:=true
-Bundle-Version: 0.1.1
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Require-Bundle: hu.modembed.pic.device.model;bundle-version="0.1.0",
- org.eclipse.emf.ecore

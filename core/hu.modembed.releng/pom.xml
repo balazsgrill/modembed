@@ -15,23 +15,29 @@
 		<module>../hu.modembed.model.editor</module>
 		<module>../hu.modembed.ui</module>
 		<module>../hu.modembed.ui.launch</module>
-		<module>../../e/hu.e.parser</module>
-		<module>../../e/hu.e.parser.ui</module>
-		<module>../../e/hu.e.compiler</module>
 		<module>../hu.modembed.core.feature</module>
 		<module>../hu.modembed.help</module>
+		<module>../hu.modembed.simulator</module>
+		<module>../hu.modembed.syntax.model</module>
+		<module>../hu.modembed.syntax.persistence</module>
 		
+		<module>../../pic/core/hu.modembed.pic</module>
 		<module>../../pic/core/hu.modembed.pic.model</module>
-		<module>../../pic/core/hu.modembed.pic.ui</module>
 		<module>../../pic/core/hu.modembed.pic.midrange</module>
 		<module>../../pic/core/hu.modembed.pic.pic18</module>
-		<module>../../pic/core/hu.modembed.pic.examples</module>
+		<!--module>../../pic/core/hu.modembed.pic.examples</module-->
+		<module>../../pic/core/hu.modembed.pic.simulator</module>
 		<module>../../pic/core/hu.modembed.pic.feature</module>
 		
+		<!-- 
 		<module>../../pic/pickit2/hu.modembed.pic.pk2cmd</module>
 		<module>../../pic/pickit2/hu.modembed.pic.pk2cmd.win32</module>
 		<module>../../pic/pickit2/hu.modembed.pic.pk2cmd.linux.x86</module>
 		<module>../../pic/pickit2/hu.modembed.pic.pk2cmd.feature</module>
+		 -->
+		
+		<module>../../msp430/hu.modembed.msp430</module>
+		<module>../../msp430/hu.modembed.msp430.feature</module>
 		
 		<module>../hu.modembed.test</module>
 		
@@ -39,14 +45,38 @@
 	</modules>
 
 	<properties>
-		<tycho-version>0.16.0</tycho-version>
+		<tycho-version>0.17.0</tycho-version>
 	</properties>
 	<repositories>
 		<repository>
 			<id>juno</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/releases/juno</url>
+			<url>http://download.eclipse.org/releases/kepler</url>
+			<!---<url>http://download.eclipse.org/eclipse/updates/4.2</url>-->
 		</repository>
+<!--		<repository>
+			<id>EMF</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/modeling/emf/emf/updates/releases/</url>
+		</repository>
+		<repository>
+			<id>EMF-modeltransaction</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/modeling/emf/updates/</url>
+		</repository>
+-->
+<!--	
+		<repository>
+			<id>epsilon</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/epsilon/updates/</url>
+		</repository>
+		<repository>
+			<id>EMFText</id>
+			<layout>p2</layout>
+			<url>http://emftext.org/update</url>
+		</repository>
+-->
 	</repositories>
 
 	<build>

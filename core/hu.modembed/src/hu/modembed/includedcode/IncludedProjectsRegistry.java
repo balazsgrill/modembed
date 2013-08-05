@@ -49,6 +49,10 @@ public final class IncludedProjectsRegistry {
 	private final Map<IncludedProject, Integer> chronoLevel = new HashMap<IncludedProject, Integer>();
 	private final Map<String, IncludedProject> projectById = new HashMap<String, IncludedProject>();
 	
+	public IncludedProject getProject(String ID){
+		return projectById.get(ID);
+	}
+	
 	public List<IncludedProject> getProjects() {
 		return Collections.unmodifiableList(projects);
 	}

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="run">
+	
+	<target name="run">
+		<!-- FR5739 Code memory: 0xC200 - 0xFF7F (49664 - 65407) -->
+		<modembed.hex.extract
+			input="MSP-EXP430FR5739UserExperience.hex"
+			output="msp430.code.hex"
+			start="49664"
+			end="65407"
+		/>
+		<!-- FR5739 interrupt vector: 0xFF80 - 0xFFFF (65408 - 65535) -->
+		<modembed.hex.extract
+			input="MSP-EXP430FR5739UserExperience.hex"
+			output="msp430.ivs.hex"
+			start="65408"
+			end="65535"
+		/>
+		
+		<modembed.disassemble 
+			input="msp430.code1.hex"
+			instructionSet="../../ti.msp430/ti.msp430.instructionset.m"
+			output=".test.asm1.msp430.model"
+		/>
+		<modembed.disassemble 
+			input="msp430.code2.hex"
+			instructionSet="../../ti.msp430/ti.msp430.instructionset.m"
+			output=".test.asm2.msp430.model"
+		/>
+	</target>
+	
+	
+</project>

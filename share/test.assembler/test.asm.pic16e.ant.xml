@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="test.assembler" default="run">
+
+	<target name="run">
+		<modembed.disassemble 
+			input="test.asm.pic16e.hex"
+			instructionSet="../microchip.pic16/microchip.pic16e.instructionset.m"
+			output=".test.asm.pic16e.model"
+			/>
+		<modembed.assemble
+			input=".test.asm.pic16e.model"
+			output=".test.asm.pic16e.out.hex"
+		/>
+	</target>
+	
+</project>

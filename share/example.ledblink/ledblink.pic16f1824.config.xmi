@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="ASCII"?>
+<pic:PICConfigurationValueModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:pic="http://hu.modembed/pic" name="ledblink.pic16f1824.config">
+  <values>
+    <field href="../microchip.PIC16F1824/PIC16F1824.config.xmi#//@configWords.0/@fields.0"/>
+    <selection href="../microchip.PIC16F1824/PIC16F1824.config.xmi#//@configWords.0/@fields.0/@literals.3"/>
+  </values>
+  <values>
+    <field href="../microchip.PIC16F1824/PIC16F1824.config.xmi#//@configWords.0/@fields.1"/>
+    <selection href="../microchip.PIC16F1824/PIC16F1824.config.xmi#//@configWords.0/@fields.1/@literals.3"/>
+  </values>
+  <values>
+    <field href="../microchip.PIC16F1824/PIC16F1824.config.xmi#//@configWords.0/@fields.2"/>
+    <selection href="../microchip.PIC16F1824/PIC16F1824.config.xmi#//@configWords.0/@fields.2/@literals.0"/>
+  </values>
+  <values>
+    <field href="../microchip.PIC16F1824/PIC16F1824.config.xmi#//@configWords.0/@fields.3"/>
+    <selection href="../microchip.PIC16F1824/PIC16F1824.config.xmi#//@configWords.0/@fields.3/@literals.1"/>
+  </values>
+  <values>
+    <field href="../microchip.PIC16F1824/PIC16F1824.config.xmi#//@configWords.0/@fields.4"/>
+    <selection href="../microchip.PIC16F1824/PIC16F1824.config.xmi#//@configWords.0/@fields.4/@literals.0"/>
+  </values>
+  <values>
+    <field href="../microchip.PIC16F1824/PIC16F1824.config.xmi#//@configWords.0/@fields.5"/>
+    <selection href="../microchip.PIC16F1824/PIC16F1824.config.xmi#//@configWords.0/@fields.5/@literals.0"/>
+  </values>
+  <values>
+    <field href="../microchip.PIC16F1824/PIC16F1824.config.xmi#//@configWords.0/@fields.6"/>
+    <selection href="../microchip.PIC16F1824/PIC16F1824.config.xmi#//@configWords.0/@fields.6/@literals.3"/>
+  </values>
+  <values>
+    <field href="../microchip.PIC16F1824/PIC16F1824.config.xmi#//@configWords.0/@fields.7"/>
+    <selection href="../microchip.PIC16F1824/PIC16F1824.config.xmi#//@configWords.0/@fields.7/@literals.1"/>
+  </values>
+  <values>
+    <field href="../microchip.PIC16F1824/PIC16F1824.config.xmi#//@configWords.0/@fields.8"/>
+    <selection href="../microchip.PIC16F1824/PIC16F1824.config.xmi#//@configWords.0/@fields.8/@literals.1"/>
+  </values>
+  <values>
+    <field href="../microchip.PIC16F1824/PIC16F1824.config.xmi#//@configWords.0/@fields.9"/>
+    <selection href="../microchip.PIC16F1824/PIC16F1824.config.xmi#//@configWords.0/@fields.9/@literals.1"/>
+  </values>
+  <values>
+    <field href="../microchip.PIC16F1824/PIC16F1824.config.xmi#//@configWords.1/@fields.0"/>
+    <selection href="../microchip.PIC16F1824/PIC16F1824.config.xmi#//@configWords.1/@fields.0/@literals.0"/>
+  </values>
+  <values>
+    <field href="../microchip.PIC16F1824/PIC16F1824.config.xmi#//@configWords.1/@fields.1"/>
+    <selection href="../microchip.PIC16F1824/PIC16F1824.config.xmi#//@configWords.1/@fields.1/@literals.0"/>
+  </values>
+  <values>
+    <field href="../microchip.PIC16F1824/PIC16F1824.config.xmi#//@configWords.1/@fields.2"/>
+    <selection href="../microchip.PIC16F1824/PIC16F1824.config.xmi#//@configWords.1/@fields.2/@literals.1"/>
+  </values>
+  <values>
+    <field href="../microchip.PIC16F1824/PIC16F1824.config.xmi#//@configWords.1/@fields.3"/>
+    <selection href="../microchip.PIC16F1824/PIC16F1824.config.xmi#//@configWords.1/@fields.3/@literals.0"/>
+  </values>
+  <values>
+    <field href="../microchip.PIC16F1824/PIC16F1824.config.xmi#//@configWords.1/@fields.4"/>
+    <selection href="../microchip.PIC16F1824/PIC16F1824.config.xmi#//@configWords.1/@fields.4/@literals.0"/>
+  </values>
+  <values>
+    <field href="../microchip.PIC16F1824/PIC16F1824.config.xmi#//@configWords.1/@fields.5"/>
+    <selection href="../microchip.PIC16F1824/PIC16F1824.config.xmi#//@configWords.1/@fields.5/@literals.0"/>
+  </values>
+  <values>
+    <field href="../microchip.PIC16F1824/PIC16F1824.config.xmi#//@configWords.1/@fields.6"/>
+    <selection href="../microchip.PIC16F1824/PIC16F1824.config.xmi#//@configWords.1/@fields.6/@literals.0"/>
+  </values>
+  <definition href="../microchip.PIC16F1824/PIC16F1824.config.xmi#/"/>
+</pic:PICConfigurationValueModel>

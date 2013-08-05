@@ -4,7 +4,7 @@
 package hu.modembed.ui.wizards;
 
 import hu.modembed.MODembedCore;
-import hu.modembed.model.core.CorePackage;
+import hu.modembed.model.modembed.infrastructure.InfrastructurePackage;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.jface.viewers.ArrayContentProvider;
@@ -73,7 +73,7 @@ public class RootTypeSelectorPage extends WizardPage {
 			}
 		});
 		cv.setContentProvider(new ArrayContentProvider());
-		cv.setInput(MODembedCore.getAllSubTypes(null, CorePackage.eINSTANCE.getRootElement()));
+		cv.setInput(MODembedCore.getAllSubTypes(null, InfrastructurePackage.eINSTANCE.getRootElement()));
 		cv.addFilter(new ViewerFilter() {
 			
 			@Override
