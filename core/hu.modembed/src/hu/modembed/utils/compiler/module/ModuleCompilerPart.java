@@ -8,6 +8,8 @@ import hu.modembed.model.modembed.abstraction.behavior.CodeSymbolPlacement;
 import hu.modembed.model.modembed.abstraction.behavior.OperationExecution;
 import hu.modembed.model.modembed.abstraction.behavior.SequentialAction;
 import hu.modembed.model.modembed.abstraction.behavior.SequentialBehaviorPart;
+import hu.modembed.model.modembed.infrastructure.expressions.Expression;
+import hu.modembed.model.modembed.structured.Operation;
 
 /**
  * @author balazs.grill
@@ -39,4 +41,16 @@ public class ModuleCompilerPart {
 		this.part = part;
 	}
 
+	public ISymbol compile(Expression expression){
+		throw new IllegalArgumentException("Expression is not supported: "+expression);
+	}
+	
+	public ISymbol compile(String operation, ISymbol...arguments){
+		throw new IllegalArgumentException("Operation is not supported: "+operation);
+	}
+	
+	public void compile(Operation operation){
+		throw new IllegalArgumentException("Operation is not supported: "+operation);
+	}
+	
 }
