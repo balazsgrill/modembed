@@ -156,6 +156,7 @@ public class ModembedTests {
 	
 	public static IProject loadProject(String testID) throws CoreException{
 		IncludedProject testp = IncludedProjectsRegistry.getInstance().getProject(testID);
+		Assert.assertNotNull("Included project "+testID+" does not exists!", testp);
 		List<IncludedProject> projects = IncludedProjectsRegistry.getInstance().resolveDependencies(Collections.singleton(testp));
 		//Import projects
 		for(IncludedProject ip : projects){

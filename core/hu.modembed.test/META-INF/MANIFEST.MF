@@ -21,6 +21,7 @@ Require-Bundle: org.eclipse.core.runtime,
  hu.modembed.syntax.persistence;bundle-version="0.8.1",
  hu.modembed.pic.midrange;bundle-version="0.8.1",
  hu.modembed.pic.pic18;bundle-version="0.8.1",
- hu.modembed.msp430;bundle-version="0.8.1"
+ hu.modembed.msp430;bundle-version="0.8.1",
+ hu.modembed.pic.examples;bundle-version="0.8.1"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
