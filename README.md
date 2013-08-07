@@ -21,5 +21,5 @@ You can find information about the installation, usage and available features at
 Contribute
 ----------
 
-MODembed is free, and open source. You are free to fork, modify and event reuse it for your own needs. If you 
+MODembed is free, and open source. You are free to fork, modify and even reuse it for your own needs. If you 
 can provide any value to the project, I will be more than happy to accept contributions.
