@@ -13,8 +13,8 @@ public interface ISymbol {
 
 	public TypeDefinition getType();
 	
-	public IBasicSymbol get(ModuleCompilerPart part);
+	public IBasicSymbol get(AbstractModuleCompilerPart part);
 	
-	public void set(ModuleCompilerPart part, IBasicSymbol value); 
+	public void set(AbstractModuleCompilerPart part, IBasicSymbol value); 
 	
 }

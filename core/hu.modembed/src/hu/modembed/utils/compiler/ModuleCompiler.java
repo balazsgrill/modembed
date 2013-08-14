@@ -29,6 +29,7 @@ import hu.modembed.model.modembed.structured.StructuredFunction;
 import hu.modembed.model.modembed.structured.StructuredModule;
 import hu.modembed.model.modembed.structured.VariableDeclaration;
 import hu.modembed.model.modembed.structured.VariableReferenceExpression;
+import hu.modembed.utils.compiler.module.ModuleCompiler2;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -41,7 +42,9 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 /**
  * @author balazs.grill
  *
+ * @Deprecated use {@link ModuleCompiler2} instead.
  */
+@Deprecated
 public class ModuleCompiler {
 
 	private static final String RESULT = "__RESULT__";

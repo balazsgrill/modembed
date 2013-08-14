@@ -4,13 +4,10 @@
 package hu.modembed.utils.compiler.module;
 
 import hu.modembed.model.modembed.abstraction.behavior.BehaviorFactory;
-import hu.modembed.model.modembed.abstraction.behavior.CodeSymbolPlacement;
 import hu.modembed.model.modembed.abstraction.behavior.SequentialBehaviorModule;
 import hu.modembed.model.modembed.abstraction.behavior.SequentialBehaviorPart;
-import hu.modembed.model.modembed.abstraction.behavior.SymbolAllocation;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolAssignment;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolValueAssignment;
-import hu.modembed.model.modembed.abstraction.types.TypesFactory;
 import hu.modembed.model.modembed.structured.StructuredFunction;
 import hu.modembed.model.modembed.structured.StructuredModule;
 import hu.modembed.model.modembed.structured.VariableDeclaration;
@@ -31,7 +28,7 @@ public class ModuleCompiler2 extends ExpressionResolver{
 		result.setName(module.getName()+".sb");
 		
 		SequentialBehaviorPart initFunction = BehaviorFactory.eINSTANCE.createSequentialBehaviorPart();
-		ModuleCompilerPart initPart = new ModuleCompilerPart(initFunction);
+		ModuleCompilerPart initPart = new ModuleCompilerPart(this, initFunction);
 		initFunction.setName("__INIT__"+module.getName().replace('.', '_'));
 		result.setInitSequence(initFunction);
 		
@@ -60,25 +57,8 @@ public class ModuleCompiler2 extends ExpressionResolver{
 				SequentialBehaviorPart sbp = BehaviorFactory.eINSTANCE.createSequentialBehaviorPart();
 				sbp.setName(getSymbol(func));
 				
-				ModuleCompilerPart part = new ModuleCompilerPart(sbp);
-				
-//				if (func.getResultType() != null){
-//					sbp.getParameters().add(RESULT);
-//				}
-//				
-//				for(VariableDeclaration param : func.getParameters()){
-//					sbp.getParameters().add(getSymbol(param).getSymbol());
-//				}
-//				
-//				SymbolAllocation function_end = BehaviorFactory.eINSTANCE.createSymbolAllocation();
-//				function_end.setType(TypesFactory.eINSTANCE.createCodeLabelTypeDefinition());
-//				function_end.setSymbol(FUNCTION_END_LABEL);
-//				
-//				compile(sbp, func.getImplementation());
-//				
-//				CodeSymbolPlacement functionEnd = BehaviorFactory.eINSTANCE.createCodeSymbolPlacement();
-//				functionEnd.setSymbol(FUNCTION_END_LABEL);
-//				sbp.getActions().add(functionEnd);
+				ModuleCompilerPart part = new ModuleCompilerPart(this, sbp);
+				part.compile(func);
 				result.getBehaviorModels().add(sbp);
 			}
 		}
@@ -86,7 +66,7 @@ public class ModuleCompiler2 extends ExpressionResolver{
 		return result;
 	}
 	
-	private static String getSymbol(StructuredFunction function){
+	public static String getSymbol(StructuredFunction function){
 		StructuredModule module = (StructuredModule)function.eContainer();
 		String name = function.getName();
 		for(StructuredModule sm : module.getUses()){

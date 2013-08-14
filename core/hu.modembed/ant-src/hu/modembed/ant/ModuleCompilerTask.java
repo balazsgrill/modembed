@@ -5,7 +5,7 @@ package hu.modembed.ant;
 
 import hu.modembed.MODembedCore;
 import hu.modembed.model.modembed.structured.StructuredModule;
-import hu.modembed.utils.compiler.ModuleCompiler;
+import hu.modembed.utils.compiler.module.ModuleCompiler2;
 
 import java.io.File;
 
@@ -40,7 +40,7 @@ public class ModuleCompilerTask extends Task {
 		try{
 			StructuredModule in = TaskUtils.loadInput(rs, input, StructuredModule.class);
 			Resource out = TaskUtils.getOutput(rs, output);
-			ModuleCompiler compiler = new ModuleCompiler();
+			ModuleCompiler2 compiler = new ModuleCompiler2();
 			out.getContents().add(compiler.compile(in));
 			out.save(null);
 		}catch(Exception e){
