@@ -2,6 +2,8 @@ package hu.modembed.utils.compiler.module;
 
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
+import hu.modembed.model.modembed.abstraction.types.PrimitiveTypeDefinition;
+import hu.modembed.model.modembed.abstraction.types.ReferenceTypeDefinition;
 import hu.modembed.model.modembed.abstraction.types.TypeDefinition;
 import hu.modembed.model.modembed.abstraction.types.TypesFactory;
 import hu.modembed.model.modembed.abstraction.types.UnsignedTypeDefinition;
@@ -44,6 +46,14 @@ public final class TypeUtils {
 		if (td1 == null) return td2;
 		
 		return td1;
+	}
+	
+	public static TypeDefinition getBaseType(TypeDefinition td){
+		if (td instanceof PrimitiveTypeDefinition) return td;
+		if (td instanceof ReferenceTypeDefinition) return ((ReferenceTypeDefinition) td).getType().getDefinition();
+		
+		// TODD
+		return td;
 	}
 	
 }

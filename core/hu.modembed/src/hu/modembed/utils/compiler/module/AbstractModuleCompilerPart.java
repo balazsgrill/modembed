@@ -45,7 +45,7 @@ public abstract class AbstractModuleCompilerPart {
 		return allocateSymbol(TypesFactory.eINSTANCE.createCodeLabelTypeDefinition(), LABEL);
 	}
 	
-	protected void add(SequentialAction action){
+	public void add(SequentialAction action){
 		part.getActions().add(action);
 	}
 	
@@ -101,7 +101,7 @@ public abstract class AbstractModuleCompilerPart {
 		return prefix+i;
 	}
 	
-	protected IBasicSymbol allocateSymbol(TypeDefinition type, String prefix){
+	public IBasicSymbol allocateSymbol(TypeDefinition type, String prefix){
 		Assert.isNotNull(type);
 		String symbol = getUniqueSymbol(part.getLocalSymbols(), prefix);
 		

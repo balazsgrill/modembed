@@ -26,6 +26,7 @@ import hu.modembed.model.modembed.structured.StructuredFunction;
 import hu.modembed.model.modembed.structured.VariableDeclaration;
 import hu.modembed.model.modembed.structured.VariableReferenceExpression;
 import hu.modembed.utils.compiler.module.impl.BasicSymbol;
+import hu.modembed.utils.compiler.module.impl.IndexedSymbol;
 import hu.modembed.utils.expressions.ExpressionResolveException;
 import hu.modembed.utils.expressions.ExpressionResolver;
 
@@ -148,6 +149,11 @@ public class ModuleCompilerPart extends AbstractModuleCompilerPart{
 			arguments[0].set(this, arguments[1].get(this));
 			return arguments[0];
 		}
+		
+		if ("access_indexed".equals(operation)){
+			return IndexedSymbol.create(arguments[0], arguments[1]);
+		}
+		
 		if (dualArgOps.contains(operation)){
 			return compileDualArgumentOperation(operation, arguments[0], arguments[1]);
 		}
@@ -184,9 +190,11 @@ public class ModuleCompilerPart extends AbstractModuleCompilerPart{
 			}
 			
 			add(label(endLabel.getSymbolIdentifier()));
+			return;
 		}
 		if (implementation instanceof ExpressionOperation){
 			compile(((ExpressionOperation) implementation).getExpression());
+			return;
 		}
 		if (implementation instanceof LoopOperation){
 			Expression entry = ((LoopOperation) implementation).getEntryCondition();
@@ -214,6 +222,7 @@ public class ModuleCompilerPart extends AbstractModuleCompilerPart{
 			}
 			
 			add(label(endLabel.getSymbolIdentifier()));
+			return;
 		}
 		if (implementation instanceof OperationBlock){
 			for(VariableDeclaration vd : ((OperationBlock) implementation).getVariables()){
@@ -239,6 +248,7 @@ public class ModuleCompilerPart extends AbstractModuleCompilerPart{
 			for(Operation step : ((OperationBlock) implementation).getSteps()){
 				compile(step);
 			}
+			return;
 		}
 		if (implementation instanceof ReturnOperation){
 			Expression e = ((ReturnOperation) implementation).getResult();
@@ -246,6 +256,7 @@ public class ModuleCompilerPart extends AbstractModuleCompilerPart{
 				add(op("set", RESULT, compile(e).get(this).getSymbolIdentifier()));
 			}
 			add(op("goto", FUNCTION_END_LABEL));
+			return;
 		}
 		throw new IllegalArgumentException("Operation is not supported: "+implementation);
 	}
