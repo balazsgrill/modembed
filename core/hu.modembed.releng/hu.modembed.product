@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="MODembed" uid="hu.modembed.product" id="hu.modembed.ui.product" application="org.eclipse.ui.ide.workbench" version="0.8.1.qualifier" useFeatures="true" includeLaunchers="true">
+<product name="MODembed" uid="hu.modembed.ui.product" id="hu.modembed.ui.product" application="org.eclipse.ui.ide.workbench" version="0.8.2.qualifier" useFeatures="true" includeLaunchers="true">
 
    <aboutInfo>
       <image path="icons/window/cpu_50.png"/>
@@ -10,7 +10,7 @@
 
 Model-based embedded development environment
 
-web page: http://modembed.sourceforge.net
+web page: http://balazsgrill.github.io/modembed/
       </text>
    </aboutInfo>
 
@@ -35,8 +35,13 @@ web page: http://modembed.sourceforge.net
       </win>
    </launcher>
 
+
    <vm>
    </vm>
+
+   <license>
+        <url>http://www.eclipse.org/legal/epl-v10.html‎</url>
+   </license>
 
    <plugins>
       <plugin id="com.google.guava"/>
@@ -153,8 +158,9 @@ web page: http://modembed.sourceforge.net
    </plugins>
 
    <features>
-      <feature id="hu.modembed.core.feature" version="0.8.1.qualifier"/>
+      <feature id="hu.modembed.core.feature" version="0.8.2.qualifier"/>
       <feature id="hu.modembed.pic.feature" version="0.8.1.qualifier"/>
+      <feature id="hu.modembed.msp430.feature" version="0.8.1.qualifier"/>
       <feature id="org.eclipse.emf.mapping"/>
       <feature id="org.eclipse.emf.codegen.ecore.ui"/>
       <feature id="org.eclipse.equinox.p2.core.feature"/>
@@ -172,10 +178,7 @@ web page: http://modembed.sourceforge.net
       <feature id="org.eclipse.emf"/>
       <feature id="org.eclipse.emf.edit"/>
       <feature id="org.eclipse.emf.converter"/>
-      <feature id="org.eclipse.xtext.ui"/>
       <feature id="org.eclipse.rcp"/>
-      <feature id="org.eclipse.jdt"/>
-      <feature id="org.eclipse.xtext.xbase"/>
       <feature id="org.eclipse.emf.edit.ui"/>
       <feature id="org.eclipse.emf.mapping.ecore"/>
       <feature id="org.eclipse.e4.rcp"/>
@@ -183,14 +186,9 @@ web page: http://modembed.sourceforge.net
       <feature id="org.eclipse.emf.databinding.edit"/>
       <feature id="org.eclipse.emf.common"/>
       <feature id="org.eclipse.emf.mapping.ui"/>
-      <feature id="org.eclipse.xtext.runtime"/>
       <feature id="org.eclipse.emf.codegen"/>
       <feature id="org.eclipse.equinox.p2.extras.feature"/>
       <feature id="org.eclipse.emf.common.ui"/>
-      <feature id="org.eclipse.emf.mwe.core"/>
-      <feature id="org.eclipse.emf.mwe2.runtime.sdk"/>
-      <feature id="org.eclipse.xtend.sdk"/>
-      <feature id="org.eclipse.emf.mwe2.runtime.sdk.source"/>
       <feature id="org.eclipse.emf.ecore.edit"/>
    </features>
 

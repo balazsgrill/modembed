@@ -72,7 +72,7 @@
          </property>
          <property
                name="aboutText"
-               value="MODembed {0} ({1}/{2})&#x0A;&#x0A;Model-based embedded development environment&#x0A;&#x0A;web page: http://modembed.sourceforge.net">
+               value="MODembed {0} ({1}/{2})&#x0D;&#x0A;&#x0D;&#x0A;Model-based embedded development environment&#x0D;&#x0A;&#x0D;&#x0A;web page: http://balazsgrill.github.io/modembed/">
          </property>
          <property
                name="windowImages"
