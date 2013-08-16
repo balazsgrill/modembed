@@ -10,9 +10,9 @@ void initLED(){
 }
 
 void turnOffLED(){
-	LATC = 0;
+	LATC[0] = 0;
 }
 
 void turnOnLED(){
-	LATC = 1;
+	LATC[0] = 1;
 }

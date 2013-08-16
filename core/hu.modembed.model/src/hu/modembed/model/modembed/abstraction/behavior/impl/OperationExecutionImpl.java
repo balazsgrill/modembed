@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
@@ -88,7 +89,7 @@ public class OperationExecutionImpl extends SequentialActionImpl implements Oper
 	 */
 	public EList<String> getArguments() {
 		if (arguments == null) {
-			arguments = new EDataTypeUniqueEList<String>(String.class, this, BehaviorPackage.OPERATION_EXECUTION__ARGUMENTS);
+			arguments = new EDataTypeEList<String>(String.class, this, BehaviorPackage.OPERATION_EXECUTION__ARGUMENTS);
 		}
 		return arguments;
 	}

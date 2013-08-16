@@ -2,6 +2,7 @@
  */
 package hu.modembed.model.modembed.structured.impl;
 
+import hu.modembed.model.modembed.infrastructure.expressions.Expression;
 import hu.modembed.model.modembed.structured.LoopOperation;
 import hu.modembed.model.modembed.structured.Operation;
 import hu.modembed.model.modembed.structured.StructuredPackage;
@@ -36,7 +37,7 @@ public class LoopOperationImpl extends OperationImpl implements LoopOperation {
 	 * @generated
 	 * @ordered
 	 */
-	protected hu.modembed.model.modembed.infrastructure.expressions.Expression entryCondition;
+	protected Expression entryCondition;
 
 	/**
 	 * The cached value of the '{@link #getExitCondition() <em>Exit Condition</em>}' containment reference.
@@ -46,7 +47,7 @@ public class LoopOperationImpl extends OperationImpl implements LoopOperation {
 	 * @generated
 	 * @ordered
 	 */
-	protected hu.modembed.model.modembed.infrastructure.expressions.Expression exitCondition;
+	protected Expression exitCondition;
 
 	/**
 	 * The cached value of the '{@link #getBody() <em>Body</em>}' containment reference.
@@ -82,7 +83,7 @@ public class LoopOperationImpl extends OperationImpl implements LoopOperation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public hu.modembed.model.modembed.infrastructure.expressions.Expression getEntryCondition() {
+	public Expression getEntryCondition() {
 		return entryCondition;
 	}
 
@@ -91,8 +92,8 @@ public class LoopOperationImpl extends OperationImpl implements LoopOperation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetEntryCondition(hu.modembed.model.modembed.infrastructure.expressions.Expression newEntryCondition, NotificationChain msgs) {
-		hu.modembed.model.modembed.infrastructure.expressions.Expression oldEntryCondition = entryCondition;
+	public NotificationChain basicSetEntryCondition(Expression newEntryCondition, NotificationChain msgs) {
+		Expression oldEntryCondition = entryCondition;
 		entryCondition = newEntryCondition;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, StructuredPackage.LOOP_OPERATION__ENTRY_CONDITION, oldEntryCondition, newEntryCondition);
@@ -106,7 +107,7 @@ public class LoopOperationImpl extends OperationImpl implements LoopOperation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEntryCondition(hu.modembed.model.modembed.infrastructure.expressions.Expression newEntryCondition) {
+	public void setEntryCondition(Expression newEntryCondition) {
 		if (newEntryCondition != entryCondition) {
 			NotificationChain msgs = null;
 			if (entryCondition != null)
@@ -125,7 +126,7 @@ public class LoopOperationImpl extends OperationImpl implements LoopOperation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public hu.modembed.model.modembed.infrastructure.expressions.Expression getExitCondition() {
+	public Expression getExitCondition() {
 		return exitCondition;
 	}
 
@@ -134,8 +135,8 @@ public class LoopOperationImpl extends OperationImpl implements LoopOperation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetExitCondition(hu.modembed.model.modembed.infrastructure.expressions.Expression newExitCondition, NotificationChain msgs) {
-		hu.modembed.model.modembed.infrastructure.expressions.Expression oldExitCondition = exitCondition;
+	public NotificationChain basicSetExitCondition(Expression newExitCondition, NotificationChain msgs) {
+		Expression oldExitCondition = exitCondition;
 		exitCondition = newExitCondition;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, StructuredPackage.LOOP_OPERATION__EXIT_CONDITION, oldExitCondition, newExitCondition);
@@ -149,7 +150,7 @@ public class LoopOperationImpl extends OperationImpl implements LoopOperation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setExitCondition(hu.modembed.model.modembed.infrastructure.expressions.Expression newExitCondition) {
+	public void setExitCondition(Expression newExitCondition) {
 		if (newExitCondition != exitCondition) {
 			NotificationChain msgs = null;
 			if (exitCondition != null)
@@ -251,10 +252,10 @@ public class LoopOperationImpl extends OperationImpl implements LoopOperation {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case StructuredPackage.LOOP_OPERATION__ENTRY_CONDITION:
-				setEntryCondition((hu.modembed.model.modembed.infrastructure.expressions.Expression)newValue);
+				setEntryCondition((Expression)newValue);
 				return;
 			case StructuredPackage.LOOP_OPERATION__EXIT_CONDITION:
-				setExitCondition((hu.modembed.model.modembed.infrastructure.expressions.Expression)newValue);
+				setExitCondition((Expression)newValue);
 				return;
 			case StructuredPackage.LOOP_OPERATION__BODY:
 				setBody((Operation)newValue);
@@ -272,10 +273,10 @@ public class LoopOperationImpl extends OperationImpl implements LoopOperation {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case StructuredPackage.LOOP_OPERATION__ENTRY_CONDITION:
-				setEntryCondition((hu.modembed.model.modembed.infrastructure.expressions.Expression)null);
+				setEntryCondition((Expression)null);
 				return;
 			case StructuredPackage.LOOP_OPERATION__EXIT_CONDITION:
-				setExitCondition((hu.modembed.model.modembed.infrastructure.expressions.Expression)null);
+				setExitCondition((Expression)null);
 				return;
 			case StructuredPackage.LOOP_OPERATION__BODY:
 				setBody((Operation)null);

@@ -2,6 +2,7 @@
  */
 package hu.modembed.model.modembed.structured.impl;
 
+import hu.modembed.model.modembed.infrastructure.expressions.Expression;
 import hu.modembed.model.modembed.structured.ReturnOperation;
 import hu.modembed.model.modembed.structured.StructuredPackage;
 
@@ -33,7 +34,7 @@ public class ReturnOperationImpl extends OperationImpl implements ReturnOperatio
 	 * @generated
 	 * @ordered
 	 */
-	protected hu.modembed.model.modembed.infrastructure.expressions.Expression result;
+	protected Expression result;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -59,7 +60,7 @@ public class ReturnOperationImpl extends OperationImpl implements ReturnOperatio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public hu.modembed.model.modembed.infrastructure.expressions.Expression getResult() {
+	public Expression getResult() {
 		return result;
 	}
 
@@ -68,8 +69,8 @@ public class ReturnOperationImpl extends OperationImpl implements ReturnOperatio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetResult(hu.modembed.model.modembed.infrastructure.expressions.Expression newResult, NotificationChain msgs) {
-		hu.modembed.model.modembed.infrastructure.expressions.Expression oldResult = result;
+	public NotificationChain basicSetResult(Expression newResult, NotificationChain msgs) {
+		Expression oldResult = result;
 		result = newResult;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, StructuredPackage.RETURN_OPERATION__RESULT, oldResult, newResult);
@@ -83,7 +84,7 @@ public class ReturnOperationImpl extends OperationImpl implements ReturnOperatio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setResult(hu.modembed.model.modembed.infrastructure.expressions.Expression newResult) {
+	public void setResult(Expression newResult) {
 		if (newResult != result) {
 			NotificationChain msgs = null;
 			if (result != null)
@@ -134,7 +135,7 @@ public class ReturnOperationImpl extends OperationImpl implements ReturnOperatio
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case StructuredPackage.RETURN_OPERATION__RESULT:
-				setResult((hu.modembed.model.modembed.infrastructure.expressions.Expression)newValue);
+				setResult((Expression)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -149,7 +150,7 @@ public class ReturnOperationImpl extends OperationImpl implements ReturnOperatio
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case StructuredPackage.RETURN_OPERATION__RESULT:
-				setResult((hu.modembed.model.modembed.infrastructure.expressions.Expression)null);
+				setResult((Expression)null);
 				return;
 		}
 		super.eUnset(featureID);

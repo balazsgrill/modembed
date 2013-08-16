@@ -270,7 +270,7 @@ package abstraction {
   	}
   
     class SequentialBehaviorPart extends infrastructure.NamedElement, SequentialBehavior  {
-    	attr String[*] parameters;
+    	ordered unique attr String[*] parameters;
     }
 
     abstract class SequentialAction extends infrastructure.MODembedElement {
@@ -281,7 +281,7 @@ package abstraction {
     }
 
     class OperationExecution extends SequentialAction {
-    	attr String[*] arguments;
+    	ordered !unique attr String[*] arguments;
     	attr String[1] operation;
     }
 

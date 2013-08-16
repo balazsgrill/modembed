@@ -2,6 +2,7 @@
  */
 package hu.modembed.model.modembed.structured.impl;
 
+import hu.modembed.model.modembed.infrastructure.expressions.Expression;
 import hu.modembed.model.modembed.infrastructure.expressions.impl.ExpressionImpl;
 import hu.modembed.model.modembed.structured.FunctionCallExpression;
 import hu.modembed.model.modembed.structured.StructuredFunction;
@@ -51,7 +52,7 @@ public class FunctionCallExpressionImpl extends ExpressionImpl implements Functi
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<hu.modembed.model.modembed.infrastructure.expressions.Expression> arguments;
+	protected EList<Expression> arguments;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -115,9 +116,9 @@ public class FunctionCallExpressionImpl extends ExpressionImpl implements Functi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<hu.modembed.model.modembed.infrastructure.expressions.Expression> getArguments() {
+	public EList<Expression> getArguments() {
 		if (arguments == null) {
-			arguments = new EObjectContainmentEList<hu.modembed.model.modembed.infrastructure.expressions.Expression>(hu.modembed.model.modembed.infrastructure.expressions.Expression.class, this, StructuredPackage.FUNCTION_CALL_EXPRESSION__ARGUMENTS);
+			arguments = new EObjectContainmentEList<Expression>(Expression.class, this, StructuredPackage.FUNCTION_CALL_EXPRESSION__ARGUMENTS);
 		}
 		return arguments;
 	}
@@ -167,7 +168,7 @@ public class FunctionCallExpressionImpl extends ExpressionImpl implements Functi
 				return;
 			case StructuredPackage.FUNCTION_CALL_EXPRESSION__ARGUMENTS:
 				getArguments().clear();
-				getArguments().addAll((Collection<? extends hu.modembed.model.modembed.infrastructure.expressions.Expression>)newValue);
+				getArguments().addAll((Collection<? extends Expression>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
