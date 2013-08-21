@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
+   <feature url="features/hu.modembed.sdk.featre_0.8.2.qualifier.jar" id="hu.modembed.sdk.featre" version="0.8.2.qualifier">
+      <category name="hu.modembed.repository"/>
+   </feature>
    <feature url="features/hu.modembed.core.feature_0.8.2.qualifier.jar" id="hu.modembed.core.feature" version="0.8.2.qualifier">
       <category name="hu.modembed.repository"/>
    </feature>
-   <feature url="features/hu.modembed.pic.feature_0.8.1.qualifier.jar" id="hu.modembed.pic.feature" version="0.8.1.qualifier">
+   <feature url="features/hu.modembed.msp430.feature_0.8.1.qualifier.jar" id="hu.modembed.msp430.feature" version="0.8.1.qualifier">
       <category name="hu.modembed.repository"/>
    </feature>
-   <feature url="features/hu.modembed.msp430.feature_0.8.1.qualifier.jar" id="hu.modembed.msp430.feature" version="0.8.1.qualifier">
+   <feature url="features/hu.modembed.pic.feature_0.8.1.qualifier.jar" id="hu.modembed.pic.feature" version="0.8.1.qualifier">
       <category name="hu.modembed.repository"/>
    </feature>
    <category-def name="hu.modembed.repository" label="MODembed">

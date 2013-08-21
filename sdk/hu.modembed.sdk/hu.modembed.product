@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="MODembed" uid="hu.modembed.ui.product" id="hu.modembed.ui.product" application="org.eclipse.ui.ide.workbench" version="0.8.2.qualifier" useFeatures="true" includeLaunchers="true">
+<product name="MODembed" uid="hu.modembed.ui.product" id="hu.modembed.sdk.MODembed" application="org.eclipse.ui.ide.workbench" version="0.8.2.qualifier" useFeatures="true" includeLaunchers="true">
 
    <aboutInfo>
       <image path="icons/window/cpu_50.png"/>
@@ -24,7 +24,7 @@ web page: http://balazsgrill.github.io/modembed/
    <windowImages i16="icons/window/cpu_16.png" i48="icons/window/cpu_48.png"/>
 
    <splash
-      location="hu.modembed.ui"
+      location="hu.modembed.sdk"
       startupProgressRect="0,240,450,15"
       startupMessageRect="4,222,440,18"
       startupForegroundColor="FFFFFF" />
@@ -34,7 +34,6 @@ web page: http://balazsgrill.github.io/modembed/
          <bmp/>
       </win>
    </launcher>
-
 
    <vm>
    </vm>
@@ -158,13 +157,12 @@ web page: http://balazsgrill.github.io/modembed/
    </plugins>
 
    <features>
-      <feature id="hu.modembed.core.feature" version="0.8.2.qualifier"/>
-      <feature id="hu.modembed.pic.feature" version="0.8.1.qualifier"/>
-      <feature id="hu.modembed.msp430.feature" version="0.8.1.qualifier"/>
+      <feature id="hu.modembed.sdk.featre" version="0.8.2.qualifier"/>
       <feature id="org.eclipse.emf.mapping"/>
       <feature id="org.eclipse.emf.codegen.ecore.ui"/>
       <feature id="org.eclipse.equinox.p2.core.feature"/>
       <feature id="org.eclipse.emf.mapping.ecore.editor"/>
+      <feature id="hu.modembed.pic.feature"/>
       <feature id="org.eclipse.emf.ecore.editor"/>
       <feature id="org.eclipse.platform"/>
       <feature id="org.eclipse.help"/>
@@ -175,8 +173,10 @@ web page: http://balazsgrill.github.io/modembed/
       <feature id="org.eclipse.emf.transaction"/>
       <feature id="org.eclipse.equinox.p2.rcp.feature"/>
       <feature id="org.eclipse.equinox.p2.user.ui"/>
+      <feature id="hu.modembed.msp430.feature"/>
       <feature id="org.eclipse.emf"/>
       <feature id="org.eclipse.emf.edit"/>
+      <feature id="hu.modembed.core.feature"/>
       <feature id="org.eclipse.emf.converter"/>
       <feature id="org.eclipse.rcp"/>
       <feature id="org.eclipse.emf.edit.ui"/>
@@ -190,6 +190,7 @@ web page: http://balazsgrill.github.io/modembed/
       <feature id="org.eclipse.equinox.p2.extras.feature"/>
       <feature id="org.eclipse.emf.common.ui"/>
       <feature id="org.eclipse.emf.ecore.edit"/>
+      <feature id="org.eclipse.gmf.runtime.thirdparty" version="1.7.0.201306111432"/>
    </features>
 
 

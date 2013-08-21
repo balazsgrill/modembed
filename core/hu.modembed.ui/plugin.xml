@@ -41,46 +41,6 @@
       </wizard>
    </extension>
    <extension
-         id="product"
-         point="org.eclipse.core.runtime.products">
-      <product
-            application="org.eclipse.ui.ide.workbench"
-            name="MODembed">
-         <property
-               name="appName"
-               value="MODembed">
-         </property>
-         <property
-               name="startupForegroundColor"
-               value="FFFFFF">
-         </property>
-         <property
-               name="startupMessageRect"
-               value="4,222,440,18">
-         </property>
-         <property
-               name="startupProgressRect"
-               value="0,240,450,15">
-         </property>
-         <property
-               name="preferenceCustomization"
-               value="plugin_customization.ini">
-         </property>
-         <property
-               name="aboutImage"
-               value="icons/window/cpu_50.png">
-         </property>
-         <property
-               name="aboutText"
-               value="MODembed {0} ({1}/{2})&#x0D;&#x0A;&#x0D;&#x0A;Model-based embedded development environment&#x0D;&#x0A;&#x0D;&#x0A;web page: http://balazsgrill.github.io/modembed/">
-         </property>
-         <property
-               name="windowImages"
-               value="icons/window/cpu_16.png,icons/window/cpu_48.png">
-         </property>
-      </product>
-   </extension>
-   <extension
          point="org.eclipse.ui.startup">
       <startup
             class="hu.modembed.ui.Startup">
