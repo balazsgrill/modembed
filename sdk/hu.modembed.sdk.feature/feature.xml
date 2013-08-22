@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="hu.modembed.sdk.featre"
+      id="hu.modembed.sdk.feature"
       label="MODembed SDK"
       version="0.8.2.qualifier"
       plugin="hu.modembed.sdk">

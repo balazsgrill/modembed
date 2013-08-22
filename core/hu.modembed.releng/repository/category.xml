@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/hu.modembed.sdk.featre_0.8.2.qualifier.jar" id="hu.modembed.sdk.featre" version="0.8.2.qualifier">
+   <feature url="features/hu.modembed.sdk.feature_0.8.2.qualifier.jar" id="hu.modembed.sdk.feature" version="0.8.2.qualifier">
       <category name="hu.modembed.repository"/>
    </feature>
    <feature url="features/hu.modembed.core.feature_0.8.2.qualifier.jar" id="hu.modembed.core.feature" version="0.8.2.qualifier">
