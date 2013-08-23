@@ -157,7 +157,7 @@ web page: http://balazsgrill.github.io/modembed/
    </plugins>
 
    <features>
-      <feature id="hu.modembed.sdk.feature" version="0.8.2.qualifier"/>
+      <feature id="hu.modembed.sdk.feature"/>
       <feature id="org.eclipse.emf.mapping"/>
       <feature id="org.eclipse.emf.codegen.ecore.ui"/>
       <feature id="org.eclipse.equinox.p2.core.feature"/>
@@ -190,7 +190,7 @@ web page: http://balazsgrill.github.io/modembed/
       <feature id="org.eclipse.equinox.p2.extras.feature"/>
       <feature id="org.eclipse.emf.common.ui"/>
       <feature id="org.eclipse.emf.ecore.edit"/>
-      <feature id="org.eclipse.gmf.runtime.thirdparty" version="1.7.0.201306111432"/>
+      <feature id="org.eclipse.gmf.runtime.thirdparty"/>
    </features>
 
 
