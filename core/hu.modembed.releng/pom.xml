@@ -45,6 +45,7 @@
 		<module>../hu.modembed.test</module>
 		
 		<module>repository</module>
+		<module>sdk.product</module>
 	</modules>
 
 	<properties>
