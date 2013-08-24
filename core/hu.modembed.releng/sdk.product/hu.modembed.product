@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="MODembed" uid="hu.modembed.ui.product" id="hu.modembed.sdk.MODembed" application="org.eclipse.ui.ide.workbench" version="0.8.2.qualifier" useFeatures="true" includeLaunchers="true">
+<product name="MODembed" uid="modembed-sdk" id="hu.modembed.sdk.MODembed" application="org.eclipse.ui.ide.workbench" version="0.8.2.qualifier" useFeatures="true" includeLaunchers="true">
 
    <aboutInfo>
       <image path="icons/window/cpu_50.png"/>
@@ -191,7 +191,14 @@ web page: http://balazsgrill.github.io/modembed/
       <feature id="org.eclipse.emf.common.ui"/>
       <feature id="org.eclipse.emf.ecore.edit"/>
       <feature id="org.eclipse.gmf.runtime.thirdparty"/>
+      <feature id="org.eclipse.egit"/>
    </features>
 
+   <configurations>
+      <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="4" />
+      <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.ds" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.update.configurator" autoStart="true" startLevel="4" />
+   </configurations>
 
 </product>
