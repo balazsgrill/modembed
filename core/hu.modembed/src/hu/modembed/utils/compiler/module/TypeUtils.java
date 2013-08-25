@@ -15,7 +15,7 @@ public final class TypeUtils {
 
 	public static TypeDefinition createTypeForConstant(long constant){
 		int bits = 1;
-		int maxv = 1;
+		int maxv = 2;
 		while(constant > maxv){
 			bits++;
 			maxv *= 2;
