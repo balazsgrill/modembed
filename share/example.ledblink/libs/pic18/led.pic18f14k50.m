@@ -5,6 +5,7 @@ use led;
 use PIC18F14K50.interface;
 
 void initLED(){
+	TRISC = 0;
 	PORTC = 0;
 	LATC = 0;
 }

@@ -45,16 +45,19 @@ public class TranslateTask extends Task {
 		ResourceSet rs = MODembedCore.createResourceSet();
 		try {
 			RootSequentialBehavior in = TaskUtils.loadInput(rs, input, RootSequentialBehavior.class);
-			Resource out = TaskUtils.getOutput(rs, output);
-			SequentialBehaviorTranslator translator = new SequentialBehaviorTranslator();
-			
-			SymbolMap map = null;
-			if (this.map != null){
-				map = TaskUtils.loadInput(rs, this.map, SymbolMap.class);
+			if (TaskUtils.checkModificationTime("Translating "+input+" to "+output, rs, output)){
+
+				Resource out = TaskUtils.getOutput(rs, output);
+				SequentialBehaviorTranslator translator = new SequentialBehaviorTranslator();
+
+				SymbolMap map = null;
+				if (this.map != null){
+					map = TaskUtils.loadInput(rs, this.map, SymbolMap.class);
+				}
+
+				out.getContents().add(translator.translate(in, map, 0));
+				out.save(null);
 			}
-			
-			out.getContents().add(translator.translate(in, map, 0));
-			out.save(null);
 		} catch (Exception e) {
 			throw new BuildException(e);
 		}

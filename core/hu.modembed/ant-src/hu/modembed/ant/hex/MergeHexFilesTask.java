@@ -80,10 +80,13 @@ public class MergeHexFilesTask extends Task {
     			}
     		}
     		
-    		HexFile result = HexFileUtils.merge(hexFiles.toArray(new HexFile[hexFiles.size()]));
-    		Resource resultres = TaskUtils.getOutput(rs, output);
-    		resultres.getContents().add(result);
-    		resultres.save(null);
+    		if (TaskUtils.checkModificationTime("Merging hex files", rs, output)){
+
+    			HexFile result = HexFileUtils.merge(hexFiles.toArray(new HexFile[hexFiles.size()]));
+    			Resource resultres = TaskUtils.getOutput(rs, output);
+    			resultres.getContents().add(result);
+    			resultres.save(null);
+    		}
     	}catch(Exception e){
     		throw new BuildException(e);
     	}

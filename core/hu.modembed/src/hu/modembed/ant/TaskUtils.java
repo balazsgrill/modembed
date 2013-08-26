@@ -7,6 +7,9 @@ import org.apache.tools.ant.BuildException;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.FileLocator;
+import org.eclipse.core.runtime.Path;
+import org.eclipse.core.runtime.URIUtil;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.Resource.Diagnostic;
@@ -51,6 +54,42 @@ public final class TaskUtils {
 			System.err.println(d.getMessage());
 		}
 		return resource;
+	}
+	
+	public static long getModificationTime(File file){
+		if (file == null) return 0l;
+		return file.lastModified();
+	}
+	
+	public static long getModificationTime(URI uri){
+		File file = null;
+		if (uri.isFile()){
+			file = new File(java.net.URI.create(uri.toString()));
+		}else if (uri.isPlatformResource()){
+			String path = uri.path();
+			if (path.startsWith("/resource")) path = path.substring("/resource".length());
+			IFile f = ResourcesPlugin.getWorkspace().getRoot().getFile(Path.fromPortableString(path));
+			file = new File(f.getLocationURI());
+		}
+		return getModificationTime(file);
+	}
+	
+	public static long getModificationTime(ResourceSet rs){
+		long max = 0l;
+		for(Resource r : rs.getResources()){
+			max = Math.max(max, getModificationTime(r.getURI()));
+		}
+		return max;
+	}
+	
+	public static boolean checkModificationTime(String message, ResourceSet input, File output){
+		long in = getModificationTime(input);
+		long out = getModificationTime(output);
+		if (in > out){
+			System.out.println(message);
+			return true;
+		}
+		return false;
 	}
 	
 }

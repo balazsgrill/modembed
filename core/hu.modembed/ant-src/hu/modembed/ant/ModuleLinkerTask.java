@@ -83,10 +83,12 @@ public class ModuleLinkerTask extends Task{
 				}
 			}
 			
-			RootSequentialBehavior sb = linker.link(entry);
-			org.eclipse.emf.ecore.resource.Resource out = TaskUtils.getOutput(rs, output);
-			out.getContents().add(sb);
-			out.save(null);
+			if (TaskUtils.checkModificationTime("Linking "+output, rs, output)){
+				RootSequentialBehavior sb = linker.link(entry);
+				org.eclipse.emf.ecore.resource.Resource out = TaskUtils.getOutput(rs, output);
+				out.getContents().add(sb);
+				out.save(null);
+			}
 		} catch (Exception e) {
 			throw new BuildException(e);
 		}
