@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="ASCII"?>
+<pic:PICConfigurationValueModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:pic="http://hu.modembed/pic" name="pic16f1824.config">
+  <values>
+    <field href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.0/@fields.0"/>
+    <selection href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.0/@fields.0/@literals.3"/>
+  </values>
+  <values>
+    <field href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.0/@fields.1"/>
+    <selection href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.0/@fields.1/@literals.1"/>
+  </values>
+  <values>
+    <field href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.1/@fields.0"/>
+    <selection href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.1/@fields.0/@literals.6"/>
+  </values>
+  <values>
+    <field href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.1/@fields.1"/>
+    <selection href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.1/@fields.1/@literals.1"/>
+  </values>
+  <values>
+    <field href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.1/@fields.2"/>
+    <selection href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.1/@fields.2/@literals.1"/>
+  </values>
+  <values>
+    <field href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.1/@fields.3"/>
+    <selection href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.1/@fields.3/@literals.1"/>
+  </values>
+  <values>
+    <field href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.1/@fields.4"/>
+    <selection href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.1/@fields.4/@literals.0"/>
+  </values>
+  <values>
+    <field href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.2/@fields.0"/>
+    <selection href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.2/@fields.0/@literals.0"/>
+  </values>
+  <values>
+    <field href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.2/@fields.1"/>
+    <selection href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.2/@fields.1/@literals.3"/>
+  </values>
+  <values>
+    <field href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.2/@fields.2"/>
+    <selection href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.2/@fields.2/@literals.0"/>
+  </values>
+  <values>
+    <field href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.3/@fields.0"/>
+    <selection href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.3/@fields.0/@literals.1"/>
+  </values>
+  <values>
+    <field href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.3/@fields.1"/>
+    <selection href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.3/@fields.1/@literals.2"/>
+  </values>
+  <values>
+    <field href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.4/@fields.0"/>
+    <selection href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.4/@fields.0/@literals.1"/>
+  </values>
+  <values>
+    <field href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.4/@fields.1"/>
+    <selection href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.4/@fields.1/@literals.1"/>
+  </values>
+  <values>
+    <field href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.5/@fields.0"/>
+    <selection href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.5/@fields.0/@literals.1"/>
+  </values>
+  <values>
+    <field href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.5/@fields.1"/>
+    <selection href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.5/@fields.1/@literals.1"/>
+  </values>
+  <values>
+    <field href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.5/@fields.2"/>
+    <selection href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.5/@fields.2/@literals.1"/>
+  </values>
+  <values>
+    <field href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.5/@fields.3"/>
+    <selection href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.5/@fields.3/@literals.1"/>
+  </values>
+  <values>
+    <field href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.5/@fields.4"/>
+    <selection href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.5/@fields.4/@literals.0"/>
+  </values>
+  <values>
+    <field href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.6/@fields.0"/>
+    <selection href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.6/@fields.0/@literals.0"/>
+  </values>
+  <values>
+    <field href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.6/@fields.1"/>
+    <selection href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.6/@fields.1/@literals.0"/>
+  </values>
+  <values>
+    <field href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.7/@fields.0"/>
+    <selection href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.7/@fields.0/@literals.0"/>
+  </values>
+  <values>
+    <field href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.7/@fields.1"/>
+    <selection href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.7/@fields.1/@literals.0"/>
+  </values>
+  <values>
+    <field href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.8/@fields.0"/>
+    <selection href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.8/@fields.0/@literals.0"/>
+  </values>
+  <values>
+    <field href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.8/@fields.1"/>
+    <selection href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.8/@fields.1/@literals.0"/>
+  </values>
+  <values>
+    <field href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.9/@fields.0"/>
+    <selection href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.9/@fields.0/@literals.0"/>
+  </values>
+  <values>
+    <field href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.9/@fields.1"/>
+    <selection href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.9/@fields.1/@literals.0"/>
+  </values>
+  <values>
+    <field href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.9/@fields.2"/>
+    <selection href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.9/@fields.2/@literals.0"/>
+  </values>
+  <values>
+    <field href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.10/@fields.0"/>
+    <selection href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.10/@fields.0/@literals.0"/>
+  </values>
+  <values>
+    <field href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.10/@fields.1"/>
+    <selection href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.10/@fields.1/@literals.0"/>
+  </values>
+  <values>
+    <field href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.11/@fields.0"/>
+    <selection href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#//@configWords.11/@fields.0/@literals.0"/>
+  </values>
+  <definition href="../microchip.PIC18F14K50/PIC18F14K50.config.xmi#/"/>
+</pic:PICConfigurationValueModel>

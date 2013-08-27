@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ====================================================================== 
+     Jul 3, 2013 1:45:43 PM                                                        
+
+     LED Blinking example    
+     description
+                   
+     balazs.grill                                                                
+     ====================================================================== -->
+<project name="LED Blinking example" default="release.all" >
+
+	<property name="out" value="${basedir}/out" />
+	<eclipse.convertPath resourcepath="microchip.PIC16F1824" property="pic16f1824"/>
+	<eclipse.convertPath resourcepath="microchip.PIC18F14K50" property="pic18f14k50"/>
+
+    <target name="release.all" depends="release.pic16f1824, release.pic18f14k50">
+        
+    </target>
+
+	
+	<target name="configure.pic16f1824">
+		<modembed.pic.config input="pic16f1824.config.xmi" output="${out}/config.pic16f1824.hex"/>
+	</target>
+	
+	<target name="configure.pic18f14k50">
+		<modembed.pic.config input="pic18f14k50.config.xmi" output="${out}/config.pic18f14k50.hex"/>
+	</target>
+	
+	<target name="compile.pic16f1824">
+		<modembed.compile input="main.pic16f1824.m" output="${out}/main.pic16f1824.xmi"/>
+		<modembed.link output="${out}/program.pic16f1824.xmi" entry="main_pic16f1824__main">
+			<filelist dir="${basedir}">
+				<file name="${out}/main.pic16f1824.xmi"/>
+				<file name="${pic16f1824}/PIC16F1824.module.m"/>	
+			</filelist>
+		</modembed.link>
+		<modembed.map rules="${pic16f1824}/PIC16F1824.mappingrules.m" input="${out}/program.pic16f1824.xmi" output="${out}/map.pic16f1824.xmi"/>
+		<modembed.translate input="${out}/program.pic16f1824.xmi" map="${out}/map.pic16f1824.xmi" output="${out}/asm.pic16f1824.xmi"/>
+		<modembed.assemble input="${out}/asm.pic16f1824.xmi" output="${out}/code.pic16f1824.hex"/>
+	</target>
+	
+	<target name="compile.pic18f14k50">
+		<modembed.compile input="main.pic18f14k50.m" output="${out}/main.pic18f14k50.xmi"/>
+		<modembed.link output="${out}/program.pic18f14k50.xmi" entry="main_pic18f14k50__main">
+			<filelist dir="${basedir}">
+				<file name="${out}/main.pic18f14k50.xmi"/>
+				<file name="${pic18f14k50}/PIC18F14K50.module.m"/>
+			</filelist>
+		</modembed.link>
+		<modembed.map rules="${pic18f14k50}/PIC18F14K50.mappingrules.m" input="${out}/program.pic18f14k50.xmi" output="${out}/map.pic18f14k50.xmi"/>
+		<modembed.translate input="${out}/program.pic18f14k50.xmi" map="${out}/map.pic18f14k50.xmi" output="${out}/asm.pic18f14k50.xmi"/>
+		<modembed.assemble input="${out}/asm.pic18f14k50.xmi" output="${out}/code.pic18f14k50.hex"/>
+	</target>
+	
+	<target name="release.pic18f14k50" depends="configure.pic18f14k50, compile.pic18f14k50">
+		<modembed.hex.merge output="${out}/release.pic18f14k50.hex">
+			<filelist dir="${out}">
+				<file name="code.pic18f14k50.hex"/>
+				<file name="config.pic18f14k50.hex"/>
+			</filelist>
+		</modembed.hex.merge>
+	</target>
+	
+	<target name="release.pic16f1824" depends="configure.pic16f1824, compile.pic16f1824">
+		<modembed.hex.merge output="${out}/release.pic16f1824.hex">
+			<filelist dir="${out}">
+				<file name="code.pic16f1824.hex"/>
+				<file name="config.pic16f1824.hex"/>
+			</filelist>
+		</modembed.hex.merge>
+	</target>
+	
+</project>
