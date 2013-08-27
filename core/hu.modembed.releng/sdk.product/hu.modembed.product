@@ -28,12 +28,13 @@ web page: http://balazsgrill.github.io/modembed/
       startupProgressRect="0,240,450,15"
       startupMessageRect="4,222,440,18"
       startupForegroundColor="FFFFFF" />
-   <launcher>
+   <launcher name="modembed">
       <solaris/>
       <win useIco="false">
          <bmp/>
       </win>
    </launcher>
+
 
    <vm>
    </vm>
@@ -201,6 +202,7 @@ web page: http://balazsgrill.github.io/modembed/
       <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
       <plugin id="org.eclipse.equinox.ds" autoStart="true" startLevel="2" />
       <plugin id="org.eclipse.update.configurator" autoStart="true" startLevel="4" />
+      <property name="osgi.splashPath" value="platform:/base/plugins/hu.modembed.sdk" />
    </configurations>
 
 </product>
