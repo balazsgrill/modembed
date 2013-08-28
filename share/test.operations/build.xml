@@ -39,8 +39,14 @@
         		output=".test.map.xmi" />
         	<modembed.translate map=".test.map.xmi"
         		output=".test.asm.xmi" input=".test.xmi"/>
+        	<antcall target="optimize"></antcall>
         </sequential>
     </macrodef>
+	
+	<target name="optimize" if="${opt.pic.banksel}">
+		<copy file=".test.asm.xmi" tofile=".test.asm.orig.xmi" />
+		<modembed.pic.opt.bankSelect input=".test.asm.orig.xmi" output=".test.asm.xmi"/>
+	</target>
 	
 	<target name="test1">
 		<produce file="test/test.uint8.greater.m" test="test1"/>

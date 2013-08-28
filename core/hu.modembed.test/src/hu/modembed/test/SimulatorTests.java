@@ -30,32 +30,44 @@ import org.junit.runners.Parameterized.Parameters;
 @RunWith(value = Parameterized.class)
 public class SimulatorTests {
 	
+	private static final int OPT_BANKSEL = 1;
+	
+	private static final IDeviceFactory pic16Device = new IDeviceFactory() {
+		
+		@Override
+		public IDevice createDevice() {
+			return new TestPic16Device();
+		}
+	};
+	
+	private static final IDeviceFactory pic18Device = new IDeviceFactory() {
+		
+		@Override
+		public IDevice createDevice() {
+			return new TestPic18Device();
+		}
+	};
+	
 	@Parameters
 	public static Collection<Object[]> data() {
-		Object[][] data = new Object[][] { { 
-			"pic16e", new IDeviceFactory() {
-				
-				@Override
-				public IDevice createDevice() {
-					return new TestPic16Device();
-				}
-			} }, { 
-			"pic18", new IDeviceFactory() {
-				
-				@Override
-				public IDevice createDevice() {
-					return new TestPic18Device();
-				}
-			} } };
+		
+		Object[][] data = new Object[][] { 
+				{"pic16e", pic16Device, 0 },
+				{"pic16e", pic16Device, OPT_BANKSEL },
+				{"pic18", pic18Device, 0 },
+				{"pic18", pic18Device, OPT_BANKSEL },
+				};
 		return Arrays.asList(data);
 	}
 	
 	private final String device;
 	private final IDeviceFactory deviceFactory;
+	private final int optimizations;
 	
-	public SimulatorTests(String device, IDeviceFactory deviceFactory) {
+	public SimulatorTests(String device, IDeviceFactory deviceFactory, int optimizations) {
 		this.device = device;
 		this.deviceFactory = deviceFactory;
+		this.optimizations = optimizations;
 	}
 	
 	@Before
@@ -67,6 +79,9 @@ public class SimulatorTests {
 		IProject project = ModembedTests.loadProject("test.operations");
 		Map<String, String> properties = new HashMap<String, String>();
 		properties.put("device", device);
+		if ((optimizations & OPT_BANKSEL) != 0){
+			properties.put("opt.pic.banksel", "true");
+		}
 		ModembedTests.runAntScript(project, "build.xml", test, properties);
 		ResourceSet resourceSet = MODembedCore.createResourceSet();
 		
