@@ -60,6 +60,13 @@
             library="ant_tasks/modembed.pic.ant.tasks.jar"
             name="modembed.pic.config.extract">
       </antTask>
+      <antTask
+            class="hu.modembed.pic.ant.OptimizeBankSelectTask"
+            eclipseRuntime="true"
+            headless="true"
+            library="ant_tasks/modembed.pic.ant.tasks.jar"
+            name="modembed.pic.opt.bankSelect">
+      </antTask>
    </extension>
 
 </plugin>
