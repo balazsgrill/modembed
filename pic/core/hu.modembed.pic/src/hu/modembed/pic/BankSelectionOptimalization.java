@@ -14,6 +14,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -107,7 +108,20 @@ public class BankSelectionOptimalization {
 		}
 		
 		for(InstructionCallParameter icp : labelParams){
-			icp.setValue(labelValues.get(icp.getValue()));
+			long key = icp.getValue();
+			Long value = labelValues.get(key);
+			if (value == null){
+				long basekey = 0;
+				long basevalue = 0;
+				for(Entry<Long, Long> entry : labelValues.entrySet()){
+					if (entry.getKey() < key && entry.getKey() > basekey){
+						basekey = entry.getKey();
+						basevalue = entry.getValue();
+					}
+				}
+				value = basevalue + (key-basekey);
+			}
+			icp.setValue(value);
 		}
 		
 		return output;

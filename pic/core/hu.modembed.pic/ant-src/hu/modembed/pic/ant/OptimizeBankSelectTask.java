@@ -55,9 +55,10 @@ public class OptimizeBankSelectTask extends Task {
 			}
 		}
 		
-		if (isets.size() == 0) return isets.iterator().next();
+		int size = isets.size();
+		if (size == 1) return isets.iterator().next();
 		
-		if (isets.size() > 1) throw new Exception("Instruction set used in AssemblerObject is ambigous!");
+		if (size > 1) throw new Exception("Instruction set used in AssemblerObject is ambigous!");
 		
 		throw new Exception("Could not determine instruction set!");
 	}
