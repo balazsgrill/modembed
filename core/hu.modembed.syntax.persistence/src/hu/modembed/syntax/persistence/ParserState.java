@@ -19,6 +19,7 @@ import hu.modembed.syntax.persistence.build.ModelBuilder;
 import hu.modembed.syntax.persistence.build.PopBuildStep;
 import hu.modembed.syntax.persistence.build.SetFeatureBuildStep;
 import hu.modembed.syntax.persistence.build.SetNextFeature;
+import hu.modembed.syntax.persistence.impl.AppendedList;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -86,9 +87,8 @@ public class ParserState {
 	private ParserState match(TerminalItem terminal, TerminalMatch match){
 		List<IModelBuildStep> steps = modelBuild;
 		if (terminal.getFeatureName() != null){
-			steps = new ArrayList<IModelBuildStep>(modelBuild.size()+1);
-			steps.addAll(modelBuild);
-			steps.add(new SetFeatureBuildStep(terminal.getFeatureName(), match));
+			steps = new AppendedList<IModelBuildStep>(
+					steps, new SetFeatureBuildStep(terminal.getFeatureName(), match));
 		}
 		int newindex = index+match.match.length();
 		return new ParserState(parser, data, newindex, grammarStack, steps);
@@ -96,9 +96,7 @@ public class ParserState {
 	
 	private ParserState addBuildStep(IModelBuildStep step){
 		if (step == null) return this;
-		List<IModelBuildStep> steps = new ArrayList<IModelBuildStep>(modelBuild.size()+1);
-		steps.addAll(modelBuild);
-		steps.add(step);
+		List<IModelBuildStep> steps = new AppendedList<IModelBuildStep>(modelBuild, step);
 		return new ParserState(parser, data, index, grammarStack, steps);
 	}
 	
