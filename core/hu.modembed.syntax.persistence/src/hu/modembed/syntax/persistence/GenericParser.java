@@ -55,13 +55,13 @@ public class GenericParser {
 	
 	public TerminalMatch matchTerminal(Terminal terminal, String data, int index){
 		Pattern pattern = terminals.get(terminal);
-		String input = data.substring(index);
-		Matcher matcher = pattern.matcher(input);
-		if (matcher.find()){
+		Matcher matcher = pattern.matcher(data);
+		matcher.region(index, data.length());
+		if (matcher.lookingAt()){
 			int start = matcher.start();
 			int end = matcher.end();
-			if (start == 0){
-				return new TerminalMatch(terminal, input.substring(start, end));
+			if (start == index){
+				return new TerminalMatch(terminal, data.substring(start, end));
 			}
 		}
 		return null;
@@ -84,7 +84,7 @@ public class GenericParser {
 		if (visited.contains(syntaxModel)) return;
 		for(Terminal terminal : syntaxModel.getTerminals()){
 			try{
-				terminals.put(terminal, Pattern.compile("^"+terminal.getRegex()));
+				terminals.put(terminal, Pattern.compile(terminal.getRegex()));
 			}catch(Exception e){
 				errors.add(new ParsingError(e.getMessage(), ""));
 			}
