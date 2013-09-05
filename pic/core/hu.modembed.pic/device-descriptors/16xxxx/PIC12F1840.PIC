@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:PIC xmlns:edc="http://crownking/edc" edc:arch="16Exxx" edc:desc="" edc:informedby="DOS PS DS" edc:isextended="false" edc:name="PIC12F1840" edc:procid="0x1840" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:PIC xmlns:edc="http://crownking/edc" edc:arch="16Exxx" edc:desc="" edc:dosid="01220" edc:dsid="41441" edc:informedby="DOS PS DS" edc:isextended="false" edc:masksetid="LEBS" edc:name="PIC12F1840" edc:psid="41439" edc:procid="0x1840" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
   <edc:Power>
     <edc:VPP edc:defaultvoltage="9.000" edc:maxvoltage="9.000" edc:minvoltage="8.000"/>
-    <edc:VDD edc:maxdefaultvoltage="5.500" edc:maxvoltage="5.500" edc:mindefaultvoltage="1.800" edc:minvoltage="1.800" edc:nominalvoltage="5.000"/>
+    <edc:VDD edc:maxdefaultvoltage="5.500" edc:maxvoltage="5.500" edc:mindefaultvoltage="2.300" edc:minvoltage="2.300" edc:nominalvoltage="5.000"/>
   </edc:Power>
   <edc:Programming edc:boundary="4" edc:erasealgo="1" edc:haschecksum="true" edc:hasvppfirst="true" edc:lvpthresh="2.700" edc:memtech="ee" edc:tries="1">
     <edc:Wait edc:cfg="5000" edc:eedata="8000" edc:erase="6000" edc:lvpgm="2500" edc:pgm="2500" edc:userid="2500"/>
@@ -780,12 +780,13 @@
             </edc:SFRMode>
           </edc:SFRModeList>
         </edc:SFRDef>
-        <edc:SFRDef edc:access="n------r" edc:cname="BORCON" edc:desc="Brown-out Reset Control Register" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="u------u" edc:name="BORCON" edc:nzwidth="8" edc:por="1------q">
+        <edc:SFRDef edc:access="nn-----r" edc:cname="BORCON" edc:desc="Brown-out Reset Control Register" edc:impl="0x40" edc:isindirect="false" edc:isvolatile="true" edc:mclr="uu-----u" edc:name="BORCON" edc:nzwidth="8" edc:por="10-----q">
           <edc:AliasList/>
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0">
               <edc:SFRFieldDef edc:cname="BORRDY" edc:desc="Brown-out Reset Circuit Ready Status bit" edc:mask="0x1" edc:name="BORRDY" edc:nzwidth="1"/>
-              <edc:AdjustPoint edc:offset="6"/>
+              <edc:AdjustPoint edc:offset="5"/>
+              <edc:SFRFieldDef edc:cname="BORFS" edc:desc="Brown Out Reset Fast Start bit" edc:mask="0x1" edc:name="BORFS" edc:nzwidth="1"/>
               <edc:SFRFieldDef edc:cname="SBOREN" edc:desc="Software Brown Out Reset Enable bit" edc:mask="0x1" edc:name="SBOREN" edc:nzwidth="1"/>
             </edc:SFRMode>
           </edc:SFRModeList>

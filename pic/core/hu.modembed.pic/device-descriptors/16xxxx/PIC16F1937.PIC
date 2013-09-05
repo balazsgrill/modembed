@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><edc:PIC edc:arch="16Exxx" edc:desc="" edc:informedby="DOS PS DS" edc:isextended="false" edc:name="PIC16F1937" edc:procid="0x1937" xmlns:edc="http://crownking/edc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:PIC xmlns:edc="http://crownking/edc" edc:arch="16Exxx" edc:desc="" edc:dosid="01010" edc:dsid="41364" edc:informedby="DOS PS DS" edc:isextended="false" edc:masksetid="LEAL" edc:name="PIC16F1937" edc:procid="0x1937" edc:psid="41397" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
   <edc:Power>
     <edc:VPP edc:defaultvoltage="9.000" edc:maxvoltage="9.000" edc:minvoltage="8.000"/>
     <edc:VDD edc:maxdefaultvoltage="5.500" edc:maxvoltage="5.500" edc:mindefaultvoltage="1.800" edc:minvoltage="1.800" edc:nominalvoltage="5.000"/>
@@ -23,6 +23,9 @@
   <edc:WatchdogTimer edc:min="1"/>
   <edc:Breakpoints edc:hasdatacapture="false" edc:hwbpcount="1" edc:idbyte="x"/>
   <edc:LCD edc:segcount="0x60"/>
+  <edc:Freeze edc:addr="0xf8e">
+    <edc:FreezeBit edc:freezeval="1" edc:name="FREEZE_ALL_OTHER_PERIPHERALS" edc:pos="6"/>
+  </edc:Freeze>
   <edc:ProgramSpace>
     <edc:CodeSector edc:beginaddr="0x0" edc:endaddr="0x800" edc:issection="true" edc:regionid="page0" edc:sectiondesc="ROM code space - page0" edc:sectionname="PROG0"/>
     <edc:CodeSector edc:beginaddr="0x800" edc:endaddr="0x1000" edc:issection="true" edc:regionid="page1" edc:sectiondesc="ROM code space - page1" edc:sectionname="PROG1"/>
@@ -1755,10 +1758,15 @@
           </edc:SFRModeList>
           <edc:StimInfo edc:stimpcfiles="" edc:stimregfiles="w" edc:stimscl="rwb" edc:stimtype="Integer"/>
         </edc:SFRDef>
-        <edc:SFRDef edc:access="nnnnnnnn" edc:cname="CCP3CON" edc:desc="" edc:impl="0x3f" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="CCP3CON" edc:nzwidth="0x8" edc:por="00000000">
+        <edc:SFRDef edc:access="nnnnnnnn" edc:cname="CCP3CON" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="CCP3CON" edc:nzwidth="0x8" edc:por="00000000">
           <edc:AliasList/>
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0">
+              <edc:SFRFieldDef edc:cname="CCP3M" edc:desc="" edc:mask="0xf" edc:name="CCP3M" edc:nzwidth="4"/>
+              <edc:SFRFieldDef edc:cname="DC3B" edc:desc="" edc:mask="0x3" edc:name="DC3B" edc:nzwidth="2"/>
+              <edc:SFRFieldDef edc:cname="P3M" edc:desc="" edc:mask="0x3" edc:name="P3M" edc:nzwidth="2"/>
+            </edc:SFRMode>
+            <edc:SFRMode edc:id="LT.0">
               <edc:SFRFieldDef edc:cname="CCP3M0" edc:desc="" edc:mask="0x1" edc:name="CCP3M0" edc:nzwidth="1"/>
               <edc:SFRFieldDef edc:cname="CCP3M1" edc:desc="" edc:mask="0x1" edc:name="CCP3M1" edc:nzwidth="1"/>
               <edc:SFRFieldDef edc:cname="CCP3M2" edc:desc="" edc:mask="0x1" edc:name="CCP3M2" edc:nzwidth="1"/>
@@ -1838,13 +1846,17 @@
           <edc:AliasList/>
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0">
+              <edc:SFRFieldDef edc:cname="CCP4M" edc:desc="" edc:mask="0xf" edc:name="CCP4M" edc:nzwidth="4"/>
+              <edc:SFRFieldDef edc:cname="DC4B" edc:desc="" edc:mask="0x3" edc:name="DC4B" edc:nzwidth="2"/>
+              <edc:AdjustPoint edc:offset="2"/>
+            </edc:SFRMode>
+            <edc:SFRMode edc:id="LT.0">
               <edc:SFRFieldDef edc:cname="CCP4M0" edc:desc="" edc:mask="0x1" edc:name="CCP4M0" edc:nzwidth="1"/>
               <edc:SFRFieldDef edc:cname="CCP4M1" edc:desc="" edc:mask="0x1" edc:name="CCP4M1" edc:nzwidth="1"/>
               <edc:SFRFieldDef edc:cname="CCP4M2" edc:desc="" edc:mask="0x1" edc:name="CCP4M2" edc:nzwidth="1"/>
               <edc:SFRFieldDef edc:cname="CCP4M3" edc:desc="" edc:mask="0x1" edc:name="CCP4M3" edc:nzwidth="1"/>
               <edc:SFRFieldDef edc:cname="DC4B0" edc:desc="" edc:mask="0x1" edc:name="DC4B0" edc:nzwidth="1"/>
               <edc:SFRFieldDef edc:cname="DC4B1" edc:desc="" edc:mask="0x1" edc:name="DC4B1" edc:nzwidth="1"/>
-              <edc:AdjustPoint edc:offset="2"/>
             </edc:SFRMode>
           </edc:SFRModeList>
           <edc:StimInfo edc:stimpcfiles="" edc:stimregfiles="w" edc:stimscl="rwb" edc:stimtype="Record"/>
@@ -1872,13 +1884,17 @@
           <edc:AliasList/>
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0">
+              <edc:SFRFieldDef edc:cname="CCP5M" edc:desc="" edc:mask="0xf" edc:name="CCP5M" edc:nzwidth="4"/>
+              <edc:SFRFieldDef edc:cname="DC5B" edc:desc="" edc:mask="0x3" edc:name="DC5B" edc:nzwidth="2"/>
+              <edc:AdjustPoint edc:offset="2"/>
+            </edc:SFRMode>
+            <edc:SFRMode edc:id="LT.0">
               <edc:SFRFieldDef edc:cname="CCP5M0" edc:desc="" edc:mask="0x1" edc:name="CCP5M0" edc:nzwidth="1"/>
               <edc:SFRFieldDef edc:cname="CCP5M1" edc:desc="" edc:mask="0x1" edc:name="CCP5M1" edc:nzwidth="1"/>
               <edc:SFRFieldDef edc:cname="CCP5M2" edc:desc="" edc:mask="0x1" edc:name="CCP5M2" edc:nzwidth="1"/>
               <edc:SFRFieldDef edc:cname="CCP5M3" edc:desc="" edc:mask="0x1" edc:name="CCP5M3" edc:nzwidth="1"/>
               <edc:SFRFieldDef edc:cname="DC5B0" edc:desc="" edc:mask="0x1" edc:name="DC5B0" edc:nzwidth="1"/>
               <edc:SFRFieldDef edc:cname="DC5B1" edc:desc="" edc:mask="0x1" edc:name="DC5B1" edc:nzwidth="1"/>
-              <edc:AdjustPoint edc:offset="2"/>
             </edc:SFRMode>
           </edc:SFRModeList>
           <edc:StimInfo edc:stimpcfiles="" edc:stimregfiles="w" edc:stimscl="rwb" edc:stimtype="Record"/>

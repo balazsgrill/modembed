@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:PIC xmlns:edc="http://crownking/edc" edc:arch="16Exxx" edc:desc="" edc:informedby="" edc:isextended="false" edc:name="PIC16F1513" edc:procid="0x0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:PIC xmlns:edc="http://crownking/edc" edc:arch="16Exxx" edc:desc="" edc:dosid="01402" edc:dsid="41624" edc:informedby="DOS" edc:isextended="false" edc:masksetid="LECK" edc:name="PIC16F1513" edc:psid="41442" edc:procid="0x1513" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
   <edc:Power>
     <edc:VPP edc:defaultvoltage="9.000" edc:maxvoltage="9.000" edc:minvoltage="8.000"/>
     <edc:VDD edc:maxdefaultvoltage="5.500" edc:maxvoltage="5.500" edc:mindefaultvoltage="2.300" edc:minvoltage="2.300" edc:nominalvoltage="5.000"/>
@@ -25,12 +25,10 @@
   <edc:ProgramSpace>
     <edc:CodeSector edc:beginaddr="0x0" edc:endaddr="0x800" edc:issection="true" edc:regionid="page0" edc:sectiondesc="ROM code space - page0" edc:sectionname="PROG0"/>
     <edc:CodeSector edc:beginaddr="0x800" edc:endaddr="0x1000" edc:issection="true" edc:regionid="page1" edc:sectiondesc="ROM code space - page1" edc:sectionname="PROG1"/>
-    <edc:CodeSector edc:beginaddr="0x1000" edc:endaddr="0x1800" edc:issection="true" edc:regionid="page2" edc:sectiondesc="ROM code space - page2" edc:sectionname="PROG2"/>
-    <edc:CodeSector edc:beginaddr="0x1800" edc:endaddr="0x2000" edc:issection="true" edc:regionid="page3" edc:sectiondesc="ROM code space - page3" edc:sectionname="PROG3"/>
     <edc:TestZone edc:beginaddr="0x8000" edc:endaddr="0x8200" edc:regionid="testmem"/>
     <edc:UserIDSector edc:beginaddr="0x8000" edc:endaddr="0x8004" edc:issection="true" edc:regionid=".idlocs" edc:sectiondesc="ID locations" edc:sectionname="IDLOCS"/>
-    <edc:DeviceIDSector edc:beginaddr="0x8006" edc:endaddr="0x8007" edc:mask="0x3fe0" edc:regionid=".devid" edc:value="0x1680">
-      <edc:DEVIDToRev edc:revlist="a0" edc:value="0x16E0"/>
+    <edc:DeviceIDSector edc:beginaddr="0x8006" edc:endaddr="0x8007" edc:mask="0x3fe0" edc:regionid=".devid" edc:value="0x1640">
+      <edc:DEVIDToRev edc:revlist="a0" edc:value="0x1640"/>
     </edc:DeviceIDSector>
     <edc:ConfigFuseSector edc:beginaddr="0x8007" edc:endaddr="0x8009" edc:regionid=".config">
       <edc:DCRDef edc:access="--nnnnn-nnnnnnnn" edc:cname="CONFIG1" edc:default="0xffff" edc:desc="" edc:impl="0x3eff" edc:name="CONFIG1" edc:nzwidth="0x10" edc:unimplval="1" edc:unused="0x0" edc:useinchecksum="0x3eff">
@@ -66,7 +64,7 @@
                 <edc:Checksum edc:beginaddr="0x0" edc:checksumalgo="0x0" edc:endaddr="0x0"/>
               </edc:DCRFieldSemantic>
               <edc:DCRFieldSemantic edc:cname="ON" edc:desc="Program memory code protection is enabled" edc:when="(field &amp; 0x1) == 0x0">
-                <edc:Checksum edc:beginaddr="0x0" edc:checksumalgo="0x20" edc:endaddr="0x2000"/>
+                <edc:Checksum edc:beginaddr="0x0" edc:checksumalgo="0x20" edc:endaddr="0x1000"/>
               </edc:DCRFieldSemantic>
             </edc:DCRFieldDef>
             <edc:AdjustPoint edc:offset="1"/>
@@ -135,7 +133,7 @@
         </edc:DCRModeList>
       </edc:DCRDef>
     </edc:ConfigFuseSector>
-    <edc:BACKBUGVectorSector edc:beginaddr="0x8004" edc:endaddr="0x8005" edc:regionid="debug"/>
+    <edc:BACKBUGVectorSector edc:beginaddr="0x8004" edc:endaddr="0x8006" edc:regionid="debug"/>
   </edc:ProgramSpace>
   <edc:DataSpace edc:endaddr="0x1000">
     <edc:RegardlessOfMode>
@@ -988,8 +986,8 @@
           <edc:AliasList/>
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0">
-              <edc:SFRFieldDef edc:cname="VREGPM0" edc:desc="" edc:mask="0x1" edc:name="VREGPM0" edc:nzwidth="1"/>
-              <edc:SFRFieldDef edc:cname="VREGPM1" edc:desc="" edc:mask="0x1" edc:name="VREGPM1" edc:nzwidth="1"/>
+              <edc:SFRFieldDef edc:cname="Reserved" edc:desc="" edc:mask="0x1" edc:name="Reserved" edc:nzwidth="1"/>
+              <edc:SFRFieldDef edc:cname="VREGPM" edc:desc="" edc:mask="0x1" edc:name="VREGPM" edc:nzwidth="1"/>
             </edc:SFRMode>
           </edc:SFRModeList>
         </edc:SFRDef>
@@ -1503,52 +1501,58 @@
             </edc:SFRMode>
           </edc:SFRModeList>
         </edc:SFRDef>
-        <edc:SFRDef edc:access="nnnnnnnn" edc:cname="AADRES0L" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="xxxxxxxx" edc:name="AADRES0L" edc:nzwidth="8" edc:por="xxxxxxxx">
-          <edc:AliasList/>
-          <edc:SFRModeList>
-            <edc:SFRMode edc:id="DS.0">
-              <edc:SFRFieldDef edc:cname="ADRES0L" edc:desc="" edc:mask="0xff" edc:name="ADRES0L" edc:nzwidth="8"/>
-            </edc:SFRMode>
-          </edc:SFRModeList>
-        </edc:SFRDef>
-        <edc:SFRDef edc:access="nnnnnnnn" edc:cname="AADRES0H" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="xxxxxxxx" edc:name="AADRES0H" edc:nzwidth="8" edc:por="xxxxxxxx">
-          <edc:AliasList/>
-          <edc:SFRModeList>
-            <edc:SFRMode edc:id="DS.0">
-              <edc:SFRFieldDef edc:cname="ADRES0H" edc:desc="" edc:mask="0xff" edc:name="ADRES0H" edc:nzwidth="8"/>
-            </edc:SFRMode>
-          </edc:SFRModeList>
-        </edc:SFRDef>
-        <edc:SFRDef edc:access="nnnnnnnn" edc:cname="AADRES1L" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="xxxxxxxx" edc:name="AADRES1L" edc:nzwidth="8" edc:por="xxxxxxxx">
-          <edc:AliasList/>
-          <edc:SFRModeList>
-            <edc:SFRMode edc:id="DS.0">
-              <edc:SFRFieldDef edc:cname="ADRES1L" edc:desc="" edc:mask="0xff" edc:name="ADRES1L" edc:nzwidth="8"/>
-            </edc:SFRMode>
-          </edc:SFRModeList>
-        </edc:SFRDef>
-        <edc:SFRDef edc:access="nnnnnnnn" edc:cname="AADRES1H" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="xxxxxxxx" edc:name="AADRES1H" edc:nzwidth="8" edc:por="xxxxxxxx">
-          <edc:AliasList/>
-          <edc:SFRModeList>
-            <edc:SFRMode edc:id="DS.0">
-              <edc:SFRFieldDef edc:cname="ADRES1H" edc:desc="" edc:mask="0xff" edc:name="ADRES1H" edc:nzwidth="8"/>
-            </edc:SFRMode>
-          </edc:SFRModeList>
-        </edc:SFRDef>
+        <edc:JoinedSFRDef edc:cname="AADRES0" edc:desc="" edc:name="AADRES0" edc:nzwidth="0x10">
+          <edc:SFRModeList/>
+          <edc:SFRDef edc:access="nnnnnnnn" edc:cname="AADRES0L" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="xxxxxxxx" edc:name="AADRES0L" edc:nzwidth="8" edc:por="xxxxxxxx">
+            <edc:AliasList/>
+            <edc:SFRModeList>
+              <edc:SFRMode edc:id="DS.0">
+                <edc:SFRFieldDef edc:cname="ADRES0L" edc:desc="" edc:mask="0xff" edc:name="ADRES0L" edc:nzwidth="8"/>
+              </edc:SFRMode>
+            </edc:SFRModeList>
+          </edc:SFRDef>
+          <edc:SFRDef edc:access="nnnnnnnn" edc:cname="AADRES0H" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="xxxxxxxx" edc:name="AADRES0H" edc:nzwidth="8" edc:por="xxxxxxxx">
+            <edc:AliasList/>
+            <edc:SFRModeList>
+              <edc:SFRMode edc:id="DS.0">
+                <edc:SFRFieldDef edc:cname="ADRES0H" edc:desc="" edc:mask="0xff" edc:name="ADRES0H" edc:nzwidth="8"/>
+              </edc:SFRMode>
+            </edc:SFRModeList>
+          </edc:SFRDef>
+        </edc:JoinedSFRDef>
+        <edc:JoinedSFRDef edc:cname="AADRES1" edc:desc="" edc:name="AADRES1" edc:nzwidth="0x10">
+          <edc:SFRModeList/>
+          <edc:SFRDef edc:access="nnnnnnnn" edc:cname="AADRES1L" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="xxxxxxxx" edc:name="AADRES1L" edc:nzwidth="8" edc:por="xxxxxxxx">
+            <edc:AliasList/>
+            <edc:SFRModeList>
+              <edc:SFRMode edc:id="DS.0">
+                <edc:SFRFieldDef edc:cname="ADRES1L" edc:desc="" edc:mask="0xff" edc:name="ADRES1L" edc:nzwidth="8"/>
+              </edc:SFRMode>
+            </edc:SFRModeList>
+          </edc:SFRDef>
+          <edc:SFRDef edc:access="nnnnnnnn" edc:cname="AADRES1H" edc:desc="" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="xxxxxxxx" edc:name="AADRES1H" edc:nzwidth="8" edc:por="xxxxxxxx">
+            <edc:AliasList/>
+            <edc:SFRModeList>
+              <edc:SFRMode edc:id="DS.0">
+                <edc:SFRFieldDef edc:cname="ADRES1H" edc:desc="" edc:mask="0xff" edc:name="ADRES1H" edc:nzwidth="8"/>
+              </edc:SFRMode>
+            </edc:SFRModeList>
+          </edc:SFRDef>
+        </edc:JoinedSFRDef>
       </edc:SFRDataSector>
-      <edc:SFRDataSector edc:bank="15" edc:beginaddr="0x780" edc:endaddr="0x7F0" edc:regionid="sfr15">
+      <edc:SFRDataSector edc:bank="15" edc:beginaddr="0x780" edc:endaddr="0x7A0" edc:regionid="sfr15">
         <edc:Mirror edc:nzsize="12" edc:regionidref="sfr0"/>
       </edc:SFRDataSector>
       <edc:SFRDataSector edc:bank="16" edc:beginaddr="0x800" edc:endaddr="0x820" edc:regionid="sfr16">
         <edc:Mirror edc:nzsize="12" edc:regionidref="sfr0"/>
       </edc:SFRDataSector>
-      <edc:SFRDataSector edc:bank="17" edc:beginaddr="0x880" edc:endaddr="0x8a0" edc:regionid="sfr17">
+      <edc:SFRDataSector edc:bank="17" edc:beginaddr="0x880" edc:endaddr="0x8A0" edc:regionid="sfr17">
         <edc:Mirror edc:nzsize="12" edc:regionidref="sfr0"/>
       </edc:SFRDataSector>
       <edc:SFRDataSector edc:bank="18" edc:beginaddr="0x900" edc:endaddr="0x920" edc:regionid="sfr18">
         <edc:Mirror edc:nzsize="12" edc:regionidref="sfr0"/>
       </edc:SFRDataSector>
-      <edc:SFRDataSector edc:bank="19" edc:beginaddr="0x980" edc:endaddr="0x9a0" edc:regionid="sfr19">
+      <edc:SFRDataSector edc:bank="19" edc:beginaddr="0x980" edc:endaddr="0x9A0" edc:regionid="sfr19">
         <edc:Mirror edc:nzsize="12" edc:regionidref="sfr0"/>
       </edc:SFRDataSector>
       <edc:SFRDataSector edc:bank="20" edc:beginaddr="0xa00" edc:endaddr="0xa20" edc:regionid="sfr20">
@@ -1682,12 +1686,8 @@
       <edc:GPRDataSector edc:bank="0" edc:beginaddr="0x20" edc:endaddr="0x70" edc:regionid="gpr0"/>
       <edc:GPRDataSector edc:bank="0" edc:beginaddr="0x70" edc:endaddr="0x80" edc:regionid="gprnobank"/>
       <edc:GPRDataSector edc:bank="1" edc:beginaddr="0xA0" edc:endaddr="0xF0" edc:regionid="gpr1"/>
-      <edc:GPRDataSector edc:bank="2" edc:beginaddr="0x120" edc:endaddr="0x170" edc:regionid="gpr2"/>
-      <edc:GPRDataSector edc:bank="3" edc:beginaddr="0x1A0" edc:endaddr="0x1F0" edc:regionid="gpr3"/>
-      <edc:GPRDataSector edc:bank="4" edc:beginaddr="0x220" edc:endaddr="0x270" edc:regionid="gpr4"/>
-      <edc:GPRDataSector edc:bank="5" edc:beginaddr="0x2A0" edc:endaddr="0x2F0" edc:regionid="gpr5"/>
-      <edc:GPRDataSector edc:bank="6" edc:beginaddr="0x320" edc:endaddr="0x330" edc:regionid="gpr6"/>
       <edc:GPRDataSector edc:bank="1" edc:beginaddr="0xF0" edc:endaddr="0x100" edc:regionid="gpr1s" edc:shadowidref="gprnobank" edc:shadowoffset="0"/>
+      <edc:GPRDataSector edc:bank="2" edc:beginaddr="0x120" edc:endaddr="0x170" edc:regionid="gpr2"/>
       <edc:GPRDataSector edc:bank="2" edc:beginaddr="0x170" edc:endaddr="0x180" edc:regionid="gpr2s" edc:shadowidref="gprnobank" edc:shadowoffset="0"/>
       <edc:GPRDataSector edc:bank="3" edc:beginaddr="0x1F0" edc:endaddr="0x200" edc:regionid="gpr3s" edc:shadowidref="gprnobank" edc:shadowoffset="0"/>
       <edc:GPRDataSector edc:bank="4" edc:beginaddr="0x270" edc:endaddr="0x280" edc:regionid="gpr4s" edc:shadowidref="gprnobank" edc:shadowoffset="0"/>

@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><edc:PIC edc:arch="16xxxx" edc:desc="" edc:dsid="41291" edc:informedby="DOS PS DS" edc:isextended="false" edc:name="PIC16F887" edc:procid="0x887f" xmlns:edc="http://crownking/edc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
+<?xml version="1.0" ?><edc:PIC edc:arch="16xxxx" edc:desc="" edc:dosid="00723" edc:dsid="41291" edc:informedby="DOS PS DS" edc:isextended="false" edc:masksetid="" edc:name="PIC16F887" edc:procid="0x887f" edc:psid="41390" xmlns:edc="http://crownking/edc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
   <edc:Import>
     <edc:Module_import edc:modsrc="16xxxx-NMMR.Module"/>
   </edc:Import>
@@ -6,7 +6,7 @@
     <edc:VPP edc:defaultvoltage="11.000" edc:maxvoltage="12.000" edc:minvoltage="10.000"/>
     <edc:VDD edc:maxdefaultvoltage="5.500" edc:maxvoltage="5.500" edc:mindefaultvoltage="4.500" edc:minvoltage="2.000" edc:nominalvoltage="5.000"/>
   </edc:Power>
-  <edc:Programming edc:boundary="8" edc:erasealgo="1" edc:hasvppfirst="true" edc:lvpthresh="4.500" edc:memtech="ee" edc:tries="1" edc:hasrowerasecmd="true">
+  <edc:Programming edc:boundary="8" edc:erasealgo="1" edc:hasrowerasecmd="true" edc:hasvppfirst="true" edc:lvpthresh="4.500" edc:memtech="ee" edc:tries="1">
     <edc:Wait edc:cfg="2500" edc:eedata="8000" edc:erase="6000" edc:lvpgm="2500" edc:pgm="2500" edc:userid="2500"/>
     <edc:Latches edc:cfg="1" edc:eedata="1" edc:pgm="8" edc:rowerase="16" edc:userid="1"/>
   </edc:Programming>
@@ -411,7 +411,7 @@
           </edc:SFRModeList>
           <edc:StimInfo edc:stimpcfiles="rw" edc:stimregfiles="w" edc:stimscl="rwb" edc:stimtype="Record"/>
         </edc:SFRDef>
-        <edc:JoinedSFRDef edc:cname="TMR1" edc:desc="" edc:islanghidden="true" edc:name="TMR1" edc:nzwidth="0x10">
+        <edc:JoinedSFRDef edc:cname="TMR1" edc:desc="" edc:name="TMR1" edc:nzwidth="0x10">
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0">
               <edc:SFRFieldDef edc:cname="TMR1" edc:desc="" edc:mask="0xffff" edc:name="TMR1" edc:nzwidth="0x10"/>
@@ -522,7 +522,7 @@
           </edc:SFRModeList>
           <edc:StimInfo edc:stimpcfiles="rw" edc:stimregfiles="w" edc:stimscl="rwb" edc:stimtype="Record"/>
         </edc:SFRDef>
-        <edc:JoinedSFRDef edc:cname="CCPR1" edc:desc="" edc:islanghidden="true" edc:name="CCPR1" edc:nzwidth="0x10">
+        <edc:JoinedSFRDef edc:cname="CCPR1" edc:desc="" edc:name="CCPR1" edc:nzwidth="0x10">
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0">
               <edc:SFRFieldDef edc:cname="CCPR1" edc:desc="" edc:mask="0xffff" edc:name="CCPR1" edc:nzwidth="0x10"/>
@@ -621,7 +621,7 @@
           </edc:SFRModeList>
           <edc:StimInfo edc:stimpcfiles="" edc:stimregfiles="rp" edc:stimscl="rb" edc:stimtype="Record"/>
         </edc:SFRDef>
-        <edc:JoinedSFRDef edc:cname="CCPR2" edc:desc="" edc:islanghidden="true" edc:name="CCPR2" edc:nzwidth="0x10">
+        <edc:JoinedSFRDef edc:cname="CCPR2" edc:desc="" edc:name="CCPR2" edc:nzwidth="0x10">
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0">
               <edc:SFRFieldDef edc:cname="CCPR2" edc:desc="" edc:mask="0xffff" edc:name="CCPR2" edc:nzwidth="0x10"/>
@@ -944,8 +944,8 @@
               <edc:StimInfo edc:stimpcfiles="rw" edc:stimregfiles="w" edc:stimscl="rwb" edc:stimtype="Integer"/>
             </edc:SFRDef>
           </edc:SelectSFR>
-          <edc:SelectSFR>
-            <edc:SFRDef edc:access="nnnnnnnn" edc:cname="SSPMSK" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="11111111" edc:name="SSPMSK" edc:nzwidth="8" edc:por="11111111">
+          <edc:SelectSFR edc:when="($0x14 &amp; 0xf) == 0x9">
+            <edc:SFRDef edc:access="nnnnnnnn" edc:cname="SSPMSK" edc:desc="" edc:impl="0x0" edc:isindirect="false" edc:isvolatile="true" edc:mclr="11111111" edc:name="SSPMSK" edc:nmmrid="0x2" edc:nzwidth="8" edc:por="11111111">
               <edc:AliasList>
                 <edc:LegacyAlias edc:cname="MSK"/>
               </edc:AliasList>
@@ -1440,220 +1440,220 @@
   <edc:PinList>
     <edc:Pin>
       <!-- Pin 01 -->
-      <edc:VirtualPin edc:name="RC7" />
-      <edc:VirtualPin edc:name="RX" />
-      <edc:VirtualPin edc:name="DT" />
+      <edc:VirtualPin edc:name="RC7"/>
+      <edc:VirtualPin edc:name="RX"/>
+      <edc:VirtualPin edc:name="DT"/>
     </edc:Pin>
     <edc:Pin>
       <!-- Pin 02 -->
-      <edc:VirtualPin edc:name="RD4" />
+      <edc:VirtualPin edc:name="RD4"/>
     </edc:Pin>
     <edc:Pin>
       <!-- Pin 03 -->
-      <edc:VirtualPin edc:name="RD5" />
-      <edc:VirtualPin edc:name="P1B" />
+      <edc:VirtualPin edc:name="RD5"/>
+      <edc:VirtualPin edc:name="P1B"/>
     </edc:Pin>
     <edc:Pin>
       <!-- Pin 04 -->
-      <edc:VirtualPin edc:name="RD6" />
-      <edc:VirtualPin edc:name="P1C" />
+      <edc:VirtualPin edc:name="RD6"/>
+      <edc:VirtualPin edc:name="P1C"/>
     </edc:Pin>
     <edc:Pin>
       <!-- Pin 05 -->
-      <edc:VirtualPin edc:name="RD7" />
-      <edc:VirtualPin edc:name="P1D" />
+      <edc:VirtualPin edc:name="RD7"/>
+      <edc:VirtualPin edc:name="P1D"/>
     </edc:Pin>
     <edc:Pin>
       <!-- Pin 06 -->
-      <edc:VirtualPin edc:name="VSS" />
+      <edc:VirtualPin edc:name="VSS"/>
     </edc:Pin>
     <edc:Pin>
       <!-- Pin 07 -->
-      <edc:VirtualPin edc:name="VDD" />
+      <edc:VirtualPin edc:name="VDD"/>
     </edc:Pin>
     <edc:Pin>
       <!-- Pin 08 -->
-      <edc:VirtualPin edc:name="RB0" />
-      <edc:VirtualPin edc:name="AN12" />
-      <edc:VirtualPin edc:name="INT" />
+      <edc:VirtualPin edc:name="RB0"/>
+      <edc:VirtualPin edc:name="AN12"/>
+      <edc:VirtualPin edc:name="INT"/>
     </edc:Pin>
     <edc:Pin>
       <!-- Pin 09 -->
-      <edc:VirtualPin edc:name="RB1" />
-      <edc:VirtualPin edc:name="AN10" />
-      <edc:VirtualPin edc:name="C12IN3-" />
+      <edc:VirtualPin edc:name="RB1"/>
+      <edc:VirtualPin edc:name="AN10"/>
+      <edc:VirtualPin edc:name="C12IN3-"/>
     </edc:Pin>
     <edc:Pin>
       <!-- Pin 10 -->
-      <edc:VirtualPin edc:name="RB2" />
-      <edc:VirtualPin edc:name="AN8" />
+      <edc:VirtualPin edc:name="RB2"/>
+      <edc:VirtualPin edc:name="AN8"/>
       </edc:Pin>
     <edc:Pin>
       <!-- Pin 11 -->
-      <edc:VirtualPin edc:name="RB3" />
-      <edc:VirtualPin edc:name="AN9" />
-      <edc:VirtualPin edc:name="PGM" />
-      <edc:VirtualPin edc:name="C12IN2-" />
+      <edc:VirtualPin edc:name="RB3"/>
+      <edc:VirtualPin edc:name="AN9"/>
+      <edc:VirtualPin edc:name="PGM"/>
+      <edc:VirtualPin edc:name="C12IN2-"/>
     </edc:Pin>
     <edc:Pin>
       <!-- Pin 14 -->
-      <edc:VirtualPin edc:name="RB4" />
-      <edc:VirtualPin edc:name="AN11" />
+      <edc:VirtualPin edc:name="RB4"/>
+      <edc:VirtualPin edc:name="AN11"/>
     </edc:Pin>
     <edc:Pin>
       <!-- Pin 15 -->
-      <edc:VirtualPin edc:name="RB5" />
-      <edc:VirtualPin edc:name="AN13" />
-      <edc:VirtualPin edc:name="T1G" />
+      <edc:VirtualPin edc:name="RB5"/>
+      <edc:VirtualPin edc:name="AN13"/>
+      <edc:VirtualPin edc:name="T1G"/>
     </edc:Pin>
     <edc:Pin>
       <!-- Pin 16 -->
-      <edc:VirtualPin edc:name="RB6" />
-      <edc:VirtualPin edc:name="ICSPCLK" />
+      <edc:VirtualPin edc:name="RB6"/>
+      <edc:VirtualPin edc:name="ICSPCLK"/>
     </edc:Pin>
     <edc:Pin>
       <!-- Pin 17 -->
-      <edc:VirtualPin edc:name="RB7" />
-      <edc:VirtualPin edc:name="ICSPDAT" />
+      <edc:VirtualPin edc:name="RB7"/>
+      <edc:VirtualPin edc:name="ICSPDAT"/>
     </edc:Pin>
     <edc:Pin>
       <!-- Pin 18 -->
-      <edc:VirtualPin edc:name="RE3" />
-      <edc:VirtualPin edc:name="nMCLR" />
-      <edc:VirtualPin edc:name="VPP" />
+      <edc:VirtualPin edc:name="RE3"/>
+      <edc:VirtualPin edc:name="nMCLR"/>
+      <edc:VirtualPin edc:name="VPP"/>
     </edc:Pin>
     <edc:Pin>
       <!-- Pin 19 -->
-      <edc:VirtualPin edc:name="RA0" />
-      <edc:VirtualPin edc:name="AN0" />
-      <edc:VirtualPin edc:name="ULPWU" />
-      <edc:VirtualPin edc:name="C12IN0-" />
+      <edc:VirtualPin edc:name="RA0"/>
+      <edc:VirtualPin edc:name="AN0"/>
+      <edc:VirtualPin edc:name="ULPWU"/>
+      <edc:VirtualPin edc:name="C12IN0-"/>
     </edc:Pin>
     <edc:Pin>
       <!-- Pin 20 -->
-      <edc:VirtualPin edc:name="RA1" />
-      <edc:VirtualPin edc:name="AN1" />
-      <edc:VirtualPin edc:name="C12IN1-" />
+      <edc:VirtualPin edc:name="RA1"/>
+      <edc:VirtualPin edc:name="AN1"/>
+      <edc:VirtualPin edc:name="C12IN1-"/>
     </edc:Pin>
     <edc:Pin>
       <!-- Pin 21 -->
-      <edc:VirtualPin edc:name="RA2" />
-      <edc:VirtualPin edc:name="AN2" />
-      <edc:VirtualPin edc:name="VREF-" />
-      <edc:VirtualPin edc:name="CVREF" />
-      <edc:VirtualPin edc:name="C2IN+" />
+      <edc:VirtualPin edc:name="RA2"/>
+      <edc:VirtualPin edc:name="AN2"/>
+      <edc:VirtualPin edc:name="VREF-"/>
+      <edc:VirtualPin edc:name="CVREF"/>
+      <edc:VirtualPin edc:name="C2IN+"/>
     </edc:Pin>
     <edc:Pin>
       <!-- Pin 22 -->
-      <edc:VirtualPin edc:name="RA3" />
-      <edc:VirtualPin edc:name="AN3" />
-      <edc:VirtualPin edc:name="VREF+" />
-      <edc:VirtualPin edc:name="C1IN+" />
+      <edc:VirtualPin edc:name="RA3"/>
+      <edc:VirtualPin edc:name="AN3"/>
+      <edc:VirtualPin edc:name="VREF+"/>
+      <edc:VirtualPin edc:name="C1IN+"/>
     </edc:Pin>
     <edc:Pin>
       <!-- Pin 23 -->
-      <edc:VirtualPin edc:name="RA4" />
-      <edc:VirtualPin edc:name="T0CKI" />
-      <edc:VirtualPin edc:name="C1OUT" />
+      <edc:VirtualPin edc:name="RA4"/>
+      <edc:VirtualPin edc:name="T0CKI"/>
+      <edc:VirtualPin edc:name="C1OUT"/>
     </edc:Pin>
     <edc:Pin>
       <!-- Pin 24 -->
-      <edc:VirtualPin edc:name="RA5" />
-      <edc:VirtualPin edc:name="AN4" />
-      <edc:VirtualPin edc:name="nSS" />
-      <edc:VirtualPin edc:name="C2OUT" />
+      <edc:VirtualPin edc:name="RA5"/>
+      <edc:VirtualPin edc:name="AN4"/>
+      <edc:VirtualPin edc:name="nSS"/>
+      <edc:VirtualPin edc:name="C2OUT"/>
     </edc:Pin>
     <edc:Pin>
       <!-- Pin 25 -->
-      <edc:VirtualPin edc:name="RE0" />
-      <edc:VirtualPin edc:name="AN5" />
+      <edc:VirtualPin edc:name="RE0"/>
+      <edc:VirtualPin edc:name="AN5"/>
     </edc:Pin>
     <edc:Pin>
       <!-- Pin 26 -->
-      <edc:VirtualPin edc:name="RE1" />
-      <edc:VirtualPin edc:name="AN6" />
+      <edc:VirtualPin edc:name="RE1"/>
+      <edc:VirtualPin edc:name="AN6"/>
     </edc:Pin>
     <edc:Pin>
       <!-- Pin 27 -->
-      <edc:VirtualPin edc:name="RE2" />
-      <edc:VirtualPin edc:name="AN7" />
+      <edc:VirtualPin edc:name="RE2"/>
+      <edc:VirtualPin edc:name="AN7"/>
     </edc:Pin>
     <edc:Pin>
       <!-- Pin 28 -->
-      <edc:VirtualPin edc:name="VDD" />
+      <edc:VirtualPin edc:name="VDD"/>
     </edc:Pin>
     <edc:Pin>
       <!-- Pin 29 -->
-      <edc:VirtualPin edc:name="VSS" />
+      <edc:VirtualPin edc:name="VSS"/>
     </edc:Pin>
     <edc:Pin>
       <!-- Pin 30 -->
-      <edc:VirtualPin edc:name="RA7" />
-      <edc:VirtualPin edc:name="OSC1" />
-      <edc:VirtualPin edc:name="CLKIN" />
+      <edc:VirtualPin edc:name="RA7"/>
+      <edc:VirtualPin edc:name="OSC1"/>
+      <edc:VirtualPin edc:name="CLKIN"/>
     </edc:Pin>
     <edc:Pin>
       <!-- Pin 31 -->
-      <edc:VirtualPin edc:name="RA6" />
-      <edc:VirtualPin edc:name="OSC2" />
-      <edc:VirtualPin edc:name="CLKOUT" />
+      <edc:VirtualPin edc:name="RA6"/>
+      <edc:VirtualPin edc:name="OSC2"/>
+      <edc:VirtualPin edc:name="CLKOUT"/>
     </edc:Pin>
     <edc:Pin>
       <!-- Pin 32 -->
-      <edc:VirtualPin edc:name="RC0" />
-      <edc:VirtualPin edc:name="T1OSO" />
-      <edc:VirtualPin edc:name="T1CKI" />
+      <edc:VirtualPin edc:name="RC0"/>
+      <edc:VirtualPin edc:name="T1OSO"/>
+      <edc:VirtualPin edc:name="T1CKI"/>
     </edc:Pin>
     <edc:Pin>
       <!-- Pin 35 -->
-      <edc:VirtualPin edc:name="RC1" />
-      <edc:VirtualPin edc:name="T1OSCI" />
-      <edc:VirtualPin edc:name="CCP2" />
+      <edc:VirtualPin edc:name="RC1"/>
+      <edc:VirtualPin edc:name="T1OSCI"/>
+      <edc:VirtualPin edc:name="CCP2"/>
     </edc:Pin>
     <edc:Pin>
       <!-- Pin 36 -->
-      <edc:VirtualPin edc:name="RC2" />
-      <edc:VirtualPin edc:name="P1A" />
-      <edc:VirtualPin edc:name="CCP1" />
+      <edc:VirtualPin edc:name="RC2"/>
+      <edc:VirtualPin edc:name="P1A"/>
+      <edc:VirtualPin edc:name="CCP1"/>
     </edc:Pin>
     <edc:Pin>
       <!-- Pin 37 -->
-      <edc:VirtualPin edc:name="RC3" />
-      <edc:VirtualPin edc:name="SCK" />
-      <edc:VirtualPin edc:name="SCL" />
+      <edc:VirtualPin edc:name="RC3"/>
+      <edc:VirtualPin edc:name="SCK"/>
+      <edc:VirtualPin edc:name="SCL"/>
     </edc:Pin>
     <edc:Pin>
       <!-- Pin 38 -->
-      <edc:VirtualPin edc:name="RD0" />
+      <edc:VirtualPin edc:name="RD0"/>
     </edc:Pin>
     <edc:Pin>
       <!-- Pin 39 -->
-      <edc:VirtualPin edc:name="RD1" />
+      <edc:VirtualPin edc:name="RD1"/>
     </edc:Pin>
     <edc:Pin>
       <!-- Pin 40 -->
-      <edc:VirtualPin edc:name="RD2" />
+      <edc:VirtualPin edc:name="RD2"/>
     </edc:Pin>
     <edc:Pin>
       <!-- Pin 41 -->
-      <edc:VirtualPin edc:name="RD3" />
+      <edc:VirtualPin edc:name="RD3"/>
     </edc:Pin>
     <edc:Pin>
       <!-- Pin 42 -->
-      <edc:VirtualPin edc:name="RC4" />
-      <edc:VirtualPin edc:name="SDI" />
-      <edc:VirtualPin edc:name="SDA" />
+      <edc:VirtualPin edc:name="RC4"/>
+      <edc:VirtualPin edc:name="SDI"/>
+      <edc:VirtualPin edc:name="SDA"/>
     </edc:Pin>
     <edc:Pin>
       <!-- Pin 43 -->
-      <edc:VirtualPin edc:name="RC5" />
-      <edc:VirtualPin edc:name="SDO" />
+      <edc:VirtualPin edc:name="RC5"/>
+      <edc:VirtualPin edc:name="SDO"/>
     </edc:Pin>
     <edc:Pin>
       <!-- Pin 44 -->
-      <edc:VirtualPin edc:name="RC6" />
-      <edc:VirtualPin edc:name="TX" />
-      <edc:VirtualPin edc:name="CK" />
+      <edc:VirtualPin edc:name="RC6"/>
+      <edc:VirtualPin edc:name="TX"/>
+      <edc:VirtualPin edc:name="CK"/>
     </edc:Pin>
   </edc:PinList>
 </edc:PIC>

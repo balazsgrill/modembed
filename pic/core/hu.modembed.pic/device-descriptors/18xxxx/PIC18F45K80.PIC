@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:PIC xmlns:edc="http://crownking/edc" edc:arch="18xxxx" edc:desc="" edc:informedby="DOS PS DS" edc:isextended="true" edc:name="PIC18F45K80" edc:procid="0xB580" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:PIC xmlns:edc="http://crownking/edc" edc:arch="18xxxx" edc:desc="" edc:dosid="01282" edc:dsid="39977" edc:informedby="DOS PS DS" edc:isextended="true" edc:masksetid="LEBC" edc:name="PIC18F45K80" edc:psid="39972" edc:procid="0xB580" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
   <edc:Power>
     <edc:VPP edc:defaultvoltage="9.000" edc:maxvoltage="9.000" edc:minvoltage="5.750"/>
     <edc:VDD edc:maxdefaultvoltage="5.500" edc:maxvoltage="5.500" edc:mindefaultvoltage="1.800" edc:minvoltage="1.800" edc:nominalvoltage="5.000"/>
@@ -76,8 +76,8 @@
               <edc:DCRFieldSemantic edc:cname="RC" edc:desc="External RC oscillator, CLKOUT function on OSC2" edc:when="(field &amp; 0x7) == 0x6"/>
               <edc:DCRFieldSemantic edc:cname="EC1" edc:desc="EC oscillator (Low power, DC - 160 kHz)" edc:when="(field &amp; 0xf) == 0xd"/>
               <edc:DCRFieldSemantic edc:cname="EC1IO" edc:desc="EC oscillator, CLKOUT function on OSC2 (Low power, DC - 160 kHz)" edc:when="(field &amp; 0xf) == 0xc"/>
-              <edc:DCRFieldSemantic edc:cname="EC2" edc:desc="EC oscillator (Medium power, 160 kHz - 4 MHz)" edc:when="(field &amp; 0xf) == 0xb"/>
-              <edc:DCRFieldSemantic edc:cname="EC2IO" edc:desc="EC oscillator, CLKOUT function on OSC2 (Medium power, 160 kHz - 4 MHz)" edc:when="(field &amp; 0xf) == 0xa"/>
+              <edc:DCRFieldSemantic edc:cname="EC2" edc:desc="EC oscillator (Medium power, 160 kHz - 16 MHz)" edc:when="(field &amp; 0xf) == 0xb"/>
+              <edc:DCRFieldSemantic edc:cname="EC2IO" edc:desc="EC oscillator, CLKOUT function on OSC2 (Medium power, 160 kHz - 16 MHz)" edc:when="(field &amp; 0xf) == 0xa"/>
               <edc:DCRFieldSemantic edc:cname="INTIO1" edc:desc="Internal RC oscillator, CLKOUT function on OSC2" edc:when="(field &amp; 0xf) == 0x9"/>
               <edc:DCRFieldSemantic edc:cname="INTIO2" edc:desc="Internal RC oscillator" edc:when="(field &amp; 0xf) == 0x8"/>
               <edc:DCRFieldSemantic edc:cname="EC3" edc:desc="EC oscillator (High power, 16 MHz - 64 MHz)" edc:when="(field &amp; 0xf) == 0x5"/>
@@ -188,7 +188,7 @@
             <edc:AdjustPoint edc:offset="2"/>
             <edc:AdjustPoint edc:offset="1"/>
             <edc:DCRFieldDef edc:cname="MCLRE" edc:desc="Master Clear Enable" edc:mask="0x1" edc:name="MCLRE" edc:nzwidth="1">
-              <edc:DCRFieldSemantic edc:_defeatcoercion="" edc:cname="ON" edc:desc="MCLR Enabled, RG5 Disabled" edc:when="(field &amp; 0x1) == 0x1"/>
+              <edc:DCRFieldSemantic edc:_defeatcoercion="" edc:cname="ON" edc:desc="MCLR Enabled, RE3 Disabled" edc:when="(field &amp; 0x1) == 0x1"/>
               <edc:DCRFieldSemantic edc:_defeatcoercion="" edc:cname="OFF" edc:desc="MCLR Disabled, RG5 Enabled" edc:when="(field &amp; 0x1) == 0x0"/>
             </edc:DCRFieldDef>
           </edc:DCRMode>

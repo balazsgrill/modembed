@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><edc:PIC edc:arch="18xxxx" edc:desc="" edc:informedby="DOS PS DS" edc:isextended="false" edc:name="PIC18F248" edc:procid="0x8248" xmlns:edc="http://crownking/edc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:PIC xmlns:edc="http://crownking/edc" edc:arch="18xxxx" edc:desc="" edc:dosid="" edc:dsid="41159" edc:informedby="DOS PS DS" edc:isextended="false" edc:masksetid="" edc:name="PIC18F248" edc:psid="39576" edc:procid="0x8248" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
   <edc:Power>
     <edc:VPP edc:defaultvoltage="13.000" edc:maxvoltage="13.250" edc:minvoltage="9.000"/>
     <edc:VDD edc:maxdefaultvoltage="5.500" edc:maxvoltage="5.500" edc:mindefaultvoltage="4.250" edc:minvoltage="2.125" edc:nominalvoltage="5.000"/>
@@ -2542,7 +2542,7 @@
           </edc:SFRModeList>
           <edc:StimInfo edc:stimpcfiles="rw" edc:stimregfiles="w" edc:stimscl="rwb" edc:stimtype="Record"/>
         </edc:SFRDef>
-        <edc:SFRDef edc:access="-n-nnnnn" edc:cname="PIE2" edc:desc="" edc:impl="0x5f" edc:isindirect="false" edc:isvolatile="true" edc:mclr="-0-00000" edc:name="PIE2" edc:nzwidth="0x8" edc:por="-0-00000">
+        <edc:SFRDef edc:access="---nnnnn" edc:cname="PIE2" edc:desc="" edc:impl="0x1f" edc:isindirect="false" edc:isvolatile="true" edc:mclr="---00000" edc:name="PIE2" edc:nzwidth="0x8" edc:por="---00000">
           <edc:AliasList/>
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0">
@@ -2552,12 +2552,12 @@
               <edc:SFRFieldDef edc:cname="BCLIE" edc:desc="" edc:mask="0x1" edc:name="BCLIE" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="EEIE" edc:desc="" edc:mask="0x1" edc:name="EEIE" edc:nzwidth="0x1"/>
               <edc:AdjustPoint edc:offset="1"/>
-              <edc:SFRFieldDef edc:cname="CMIE" edc:desc="" edc:mask="0x1" edc:name="CMIE" edc:nzwidth="0x1"/>
+              <edc:AdjustPoint edc:offset="1"/>
             </edc:SFRMode>
           </edc:SFRModeList>
           <edc:StimInfo edc:stimpcfiles="rw" edc:stimregfiles="w" edc:stimscl="rwb" edc:stimtype="Record"/>
         </edc:SFRDef>
-        <edc:SFRDef edc:access="-n-nnnnn" edc:cname="PIR2" edc:desc="" edc:impl="0x5f" edc:isindirect="false" edc:isvolatile="true" edc:mclr="-0-00000" edc:name="PIR2" edc:nzwidth="0x8" edc:por="-0-00000">
+        <edc:SFRDef edc:access="---nnnnn" edc:cname="PIR2" edc:desc="" edc:impl="0x1f" edc:isindirect="false" edc:isvolatile="true" edc:mclr="---00000" edc:name="PIR2" edc:nzwidth="0x8" edc:por="---00000">
           <edc:AliasList/>
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0">
@@ -2567,12 +2567,12 @@
               <edc:SFRFieldDef edc:cname="BCLIF" edc:desc="" edc:mask="0x1" edc:name="BCLIF" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="EEIF" edc:desc="" edc:mask="0x1" edc:name="EEIF" edc:nzwidth="0x1"/>
               <edc:AdjustPoint edc:offset="1"/>
-              <edc:SFRFieldDef edc:cname="CMIF" edc:desc="" edc:mask="0x1" edc:name="CMIF" edc:nzwidth="0x1"/>
+              <edc:AdjustPoint edc:offset="1"/>
             </edc:SFRMode>
           </edc:SFRModeList>
           <edc:StimInfo edc:stimpcfiles="rw" edc:stimregfiles="w" edc:stimscl="rwb" edc:stimtype="Record"/>
         </edc:SFRDef>
-        <edc:SFRDef edc:access="-n-nnnnn" edc:cname="IPR2" edc:desc="" edc:impl="0x5f" edc:isindirect="false" edc:isvolatile="true" edc:mclr="-1-11111" edc:name="IPR2" edc:nzwidth="0x8" edc:por="-1-11111">
+        <edc:SFRDef edc:access="---nnnnn" edc:cname="IPR2" edc:desc="" edc:impl="0x1f" edc:isindirect="false" edc:isvolatile="true" edc:mclr="---11111" edc:name="IPR2" edc:nzwidth="0x8" edc:por="---11111">
           <edc:AliasList/>
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0">
@@ -2582,7 +2582,7 @@
               <edc:SFRFieldDef edc:cname="BCLIP" edc:desc="" edc:mask="0x1" edc:name="BCLIP" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="EEIP" edc:desc="" edc:mask="0x1" edc:name="EEIP" edc:nzwidth="0x1"/>
               <edc:AdjustPoint edc:offset="1"/>
-              <edc:SFRFieldDef edc:cname="CMIP" edc:desc="" edc:mask="0x1" edc:name="CMIP" edc:nzwidth="0x1"/>
+              <edc:AdjustPoint edc:offset="1"/>
             </edc:SFRMode>
           </edc:SFRModeList>
           <edc:StimInfo edc:stimpcfiles="rw" edc:stimregfiles="w" edc:stimscl="rwb" edc:stimtype="Record"/>

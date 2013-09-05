@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><edc:PIC edc:arch="16xxxx" edc:desc="" edc:dsid="21664" edc:isextended="false" edc:name="MCP25050" edc:procid="0xa002" xmlns:edc="http://crownking/edc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:PIC xmlns:edc="http://crownking/edc" edc:arch="16xxxx" edc:desc="" edc:dosid="" edc:dsid="21664" edc:informedby="DOS" edc:isextended="false" edc:masksetid="" edc:name="MCP25050" edc:psid="" edc:procid="0xa002" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
   <edc:Import>
     <edc:Module_import edc:modsrc="16xxxx-NMMR.Module"/>
   </edc:Import>
@@ -31,14 +31,14 @@
         <edc:DCRModeList>
           <edc:DCRMode edc:id="DS.0">
             <edc:DCRFieldDef edc:cname="OSC" edc:desc="Oscillator" edc:mask="0x3" edc:name="OSC" edc:nzwidth="0x2">
-              <edc:DCRFieldSemantic edc:desc="HS" edc:when="(field &amp; 0x3) == 0x3"/>
-              <edc:DCRFieldSemantic edc:desc="Reserved" edc:when="(field &amp; 0x3) == 0x2"/>
-              <edc:DCRFieldSemantic edc:desc="XT" edc:when="(field &amp; 0x3) == 0x1"/>
-              <edc:DCRFieldSemantic edc:desc="LP" edc:when="(field &amp; 0x3) == 0x0"/>
+              <edc:DCRFieldSemantic edc:cname="HS" edc:desc="HS" edc:when="(field &amp; 0x3) == 0x3"/>
+              <edc:DCRFieldSemantic edc:cname="RES" edc:desc="Reserved" edc:islanghidden="true" edc:when="(field &amp; 0x3) == 0x2"/>
+              <edc:DCRFieldSemantic edc:cname="XT" edc:desc="XT" edc:when="(field &amp; 0x3) == 0x1"/>
+              <edc:DCRFieldSemantic edc:cname="LP" edc:desc="LP" edc:when="(field &amp; 0x3) == 0x0"/>
             </edc:DCRFieldDef>
             <edc:DCRFieldDef edc:cname="RSTEN" edc:desc="Reset on GP7 Enable Bit" edc:mask="0x1" edc:name="RSTEN" edc:nzwidth="0x1">
-              <edc:DCRFieldSemantic edc:desc="Reset enabled on GP7 I/O pin" edc:when="(field &amp; 0x1) == 0x1"/>
-              <edc:DCRFieldSemantic edc:desc="GP7 is general I/O" edc:when="(field &amp; 0x1) == 0x0"/>
+              <edc:DCRFieldSemantic edc:cname="ON" edc:desc="Reset enabled on GP7 I/O pin" edc:when="(field &amp; 0x1) == 0x1"/>
+              <edc:DCRFieldSemantic edc:cname="OFF" edc:desc="GP7 is general I/O" edc:when="(field &amp; 0x1) == 0x0"/>
             </edc:DCRFieldDef>
           </edc:DCRMode>
         </edc:DCRModeList>

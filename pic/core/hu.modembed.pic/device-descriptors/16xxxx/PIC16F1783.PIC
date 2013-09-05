@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:PIC xmlns:edc="http://crownking/edc" edc:arch="16Exxx" edc:desc="" edc:informedby="DOS" edc:isextended="false" edc:name="PIC16F1783" edc:procid="0x1783" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:PIC xmlns:edc="http://crownking/edc" edc:arch="16Exxx" edc:desc="" edc:dosid="01397" edc:dsid="41579" edc:informedby="DOS" edc:isextended="false" edc:masksetid="LECH" edc:name="PIC16F1783" edc:psid="41457" edc:procid="0x1783" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
   <edc:Import>
     <edc:Module_import edc:modsrc="DOS-01499.Module"/>
     <edc:Module_import edc:modsrc="DOS-01401.Module"/>
@@ -7,8 +7,8 @@
     <edc:VPP edc:defaultvoltage="9.000" edc:maxvoltage="9.000" edc:minvoltage="8.000"/>
     <edc:VDD edc:maxdefaultvoltage="5.500" edc:maxvoltage="5.500" edc:mindefaultvoltage="2.300" edc:minvoltage="2.300" edc:nominalvoltage="5.000"/>
   </edc:Power>
-  <edc:Programming edc:boundary="4" edc:erasealgo="1" edc:haschecksum="true" edc:lvpthresh="2.700" edc:memtech="ee" edc:tries="1">
-    <edc:Wait edc:cfg="5000" edc:eedata="8000" edc:erase="6000" edc:lvpgm="2500" edc:pgm="2500" edc:userid="2500"/>
+  <edc:Programming edc:boundary="4" edc:erasealgo="1" edc:haschecksum="true" edc:hasrowerasecmd="true" edc:hasvppfirst="true" edc:lvpthresh="2.700" edc:memtech="ee" edc:tries="1">
+    <edc:Wait edc:cfg="5000" edc:eedata="5000" edc:erase="5000" edc:lvpgm="2500" edc:pgm="2500" edc:userid="2500"/>
     <edc:Latches edc:cfg="1" edc:eedata="1" edc:pgm="32" edc:rowerase="32" edc:userid="1"/>
   </edc:Programming>
   <edc:ArchDef edc:desc="16xxxx" edc:name="16xxxx">
@@ -96,7 +96,7 @@
           </edc:DCRMode>
         </edc:DCRModeList>
       </edc:DCRDef>
-      <edc:DCRDef edc:access="--nnnnnn--nn--nn" edc:cname="CONFIG2" edc:default="0xffff" edc:desc="" edc:impl="0x3f33" edc:name="CONFIG2" edc:nzwidth="0x10" edc:unimplval="1" edc:unused="0" edc:useinchecksum="0x3f33">
+      <edc:DCRDef edc:access="--nnnnnn--n---nn" edc:cname="CONFIG2" edc:default="0xffff" edc:desc="" edc:impl="0x3f23" edc:name="CONFIG2" edc:nzwidth="0x10" edc:unimplval="1" edc:unused="0" edc:useinchecksum="0x3f23">
         <edc:AliasList/>
         <edc:DCRModeList>
           <edc:DCRMode edc:id="DS.0">
@@ -104,15 +104,11 @@
               <edc:DCRFieldSemantic edc:cname="OFF" edc:desc="Write protection off" edc:when="(field &amp; 0x3) == 0x3"/>
               <edc:DCRFieldSemantic edc:cname="BOOT" edc:desc="000h to 1FFh write protected, 200h to FFFh may be modified by EECON control" edc:when="(field &amp; 0x3) == 0x2"/>
               <edc:DCRFieldSemantic edc:cname="HALF" edc:desc="000h to 7FFh write protected, 800h to FFFh may be modified by EECON control" edc:when="(field &amp; 0x3) == 0x1"/>
-              <edc:DCRFieldSemantic edc:cname="ALL" edc:desc="000h to FFFh write protected, no addresses may be modified by EECON control" edc:when="(field &amp; 0x3) == 0x0"/>
+              <edc:DCRFieldSemantic edc:cname="ALL" edc:desc="000h to 7FFh write protected, no addresses may be modified by EECON control" edc:when="(field &amp; 0x3) == 0x0"/>
             </edc:DCRFieldDef>
-            <edc:AdjustPoint edc:offset="2"/>
-            <edc:DCRFieldDef edc:cname="VCAPEN0" edc:desc="" edc:mask="0x1" edc:name="VCAPEN0" edc:nzwidth="1">
-              <edc:DCRFieldSemantic edc:cname="OFF" edc:desc="Vcap functionality is disabled on RA0." edc:when="(field &amp; 0x1) == 0x1"/>
-              <edc:DCRFieldSemantic edc:cname="ON" edc:desc="Vcap functionality is enabled on RA0 (Vddcore is connected to the pad)" edc:when="(field &amp; 0x1) == 0x0"/>
-            </edc:DCRFieldDef>
-            <edc:DCRFieldDef edc:cname="VCAPEN1" edc:desc="" edc:mask="0x1" edc:name="VCAPEN1" edc:nzwidth="1">
-              <edc:DCRFieldSemantic edc:cname="OFF" edc:desc="Vcap finctionality is disabled on RA6" edc:when="(field &amp; 0x1) == 0x1"/>
+            <edc:AdjustPoint edc:offset="3"/>
+            <edc:DCRFieldDef edc:cname="VCAPEN" edc:desc="Voltage Regulator Capacitor Enable bit" edc:mask="0x1" edc:name="VCAPEN" edc:nzwidth="1">
+              <edc:DCRFieldSemantic edc:cname="OFF" edc:desc="Vcap functionality is disabled on RA6." edc:when="(field &amp; 0x1) == 0x1"/>
               <edc:DCRFieldSemantic edc:cname="ON" edc:desc="Vcap functionality is enabled on RA6 (Vddcore is connected to the pad)" edc:when="(field &amp; 0x1) == 0x0"/>
             </edc:DCRFieldDef>
             <edc:AdjustPoint edc:offset="2"/>
@@ -764,7 +760,7 @@
             <edc:StimInfo edc:stimpcfiles="" edc:stimregfiles="" edc:stimscl="rwb" edc:stimtype="Integer"/>
           </edc:SFRDef>
         </edc:JoinedSFRDef>
-        <edc:SFRDef edc:access="-nnnnnnn" edc:cname="ADCON0" edc:desc="Analog-to-Digital Control Register 0" edc:impl="0x7f" edc:isindirect="false" edc:isvolatile="true" edc:mclr="-0000000" edc:name="ADCON0" edc:nzwidth="0x8" edc:por="-0000000">
+        <edc:SFRDef edc:access="nnnnnnnn" edc:cname="ADCON0" edc:desc="Analog-to-Digital Control Register 0" edc:impl="0xff" edc:isindirect="false" edc:isvolatile="true" edc:mclr="00000000" edc:name="ADCON0" edc:nzwidth="0x8" edc:por="00000000">
           <edc:AliasList/>
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0">
@@ -775,7 +771,7 @@
               <edc:SFRFieldDef edc:cname="CHS2" edc:desc="Analog Channel Select bits" edc:mask="0x1" edc:name="CHS2" edc:nzwidth="1"/>
               <edc:SFRFieldDef edc:cname="CHS3" edc:desc="Analog Channel Select bits" edc:mask="0x1" edc:name="CHS3" edc:nzwidth="1"/>
               <edc:SFRFieldDef edc:cname="CHS4" edc:desc="Analog Channel Select bits" edc:mask="0x1" edc:name="CHS4" edc:nzwidth="1"/>
-              <edc:AdjustPoint edc:offset="1"/>
+              <edc:SFRFieldDef edc:cname="ADRMD" edc:desc="" edc:mask="0x1" edc:name="ADRMD" edc:nzwidth="1"/>
             </edc:SFRMode>
             <edc:SFRMode edc:id="LT.0">
               <edc:AdjustPoint edc:offset="1"/>
@@ -905,7 +901,7 @@
               <edc:SFRFieldDef edc:cname="C1SYNC" edc:desc="Comparator Output Synchronous Mode bit" edc:mask="0x1" edc:name="C1SYNC" edc:nzwidth="1"/>
               <edc:SFRFieldDef edc:cname="C1HYS" edc:desc="Comparator Hysteresis Enable bit" edc:mask="0x1" edc:name="C1HYS" edc:nzwidth="1"/>
               <edc:SFRFieldDef edc:cname="C1SP" edc:desc="Comparator Speed/Power Select bit" edc:mask="0x1" edc:name="C1SP" edc:nzwidth="1"/>
-              <edc:SFRFieldDef edc:cname="C1ZLT" edc:desc="" edc:mask="0x1" edc:name="C1ZLT" edc:nzwidth="1"/>
+              <edc:SFRFieldDef edc:cname="C1ZLF" edc:desc="" edc:mask="0x1" edc:name="C1ZLF" edc:nzwidth="1"/>
               <edc:SFRFieldDef edc:cname="C1POL" edc:desc="Comparator Output Polarity Select bit" edc:mask="0x1" edc:name="C1POL" edc:nzwidth="1"/>
               <edc:SFRFieldDef edc:cname="C1OE" edc:desc="Comparator Output Enable bit" edc:mask="0x1" edc:name="C1OE" edc:nzwidth="1"/>
               <edc:SFRFieldDef edc:cname="C1OUT" edc:desc="Comparator Output bit" edc:mask="0x1" edc:name="C1OUT" edc:nzwidth="0x1"/>
@@ -941,7 +937,7 @@
               <edc:SFRFieldDef edc:cname="C2SYNC" edc:desc="" edc:mask="0x1" edc:name="C2SYNC" edc:nzwidth="1"/>
               <edc:SFRFieldDef edc:cname="C2HYS" edc:desc="" edc:mask="0x1" edc:name="C2HYS" edc:nzwidth="1"/>
               <edc:SFRFieldDef edc:cname="C2SP" edc:desc="" edc:mask="0x1" edc:name="C2SP" edc:nzwidth="1"/>
-              <edc:SFRFieldDef edc:cname="C2ZLT" edc:desc="" edc:mask="0x1" edc:name="C2ZLT" edc:nzwidth="1"/>
+              <edc:SFRFieldDef edc:cname="C2ZLF" edc:desc="" edc:mask="0x1" edc:name="C2ZLF" edc:nzwidth="1"/>
               <edc:SFRFieldDef edc:cname="C2POL" edc:desc="" edc:mask="0x1" edc:name="C2POL" edc:nzwidth="1"/>
               <edc:SFRFieldDef edc:cname="C2OE" edc:desc="" edc:mask="0x1" edc:name="C2OE" edc:nzwidth="1"/>
               <edc:SFRFieldDef edc:cname="C2OUT" edc:desc="" edc:mask="0x1" edc:name="C2OUT" edc:nzwidth="0x1"/>
@@ -1072,7 +1068,7 @@
               <edc:SFRFieldDef edc:cname="C3SYNC" edc:desc="" edc:mask="0x1" edc:name="C3SYNC" edc:nzwidth="1"/>
               <edc:SFRFieldDef edc:cname="C3HYS" edc:desc="" edc:mask="0x1" edc:name="C3HYS" edc:nzwidth="1"/>
               <edc:SFRFieldDef edc:cname="C3SP" edc:desc="" edc:mask="0x1" edc:name="C3SP" edc:nzwidth="1"/>
-              <edc:SFRFieldDef edc:cname="C3ZLT" edc:desc="" edc:mask="0x1" edc:name="C3ZLT" edc:nzwidth="1"/>
+              <edc:SFRFieldDef edc:cname="C3ZLF" edc:desc="" edc:mask="0x1" edc:name="C3ZLF" edc:nzwidth="1"/>
               <edc:SFRFieldDef edc:cname="C3POL" edc:desc="" edc:mask="0x1" edc:name="C3POL" edc:nzwidth="1"/>
               <edc:SFRFieldDef edc:cname="C3OE" edc:desc="" edc:mask="0x1" edc:name="C3OE" edc:nzwidth="1"/>
               <edc:SFRFieldDef edc:cname="C3OUT" edc:desc="" edc:mask="0x1" edc:name="C3OUT" edc:nzwidth="1"/>
@@ -1207,12 +1203,12 @@
             </edc:SFRMode>
           </edc:SFRModeList>
         </edc:SFRDef>
-        <edc:SFRDef edc:access="------nn" edc:cname="VREGCON" edc:desc="" edc:impl="0x3" edc:isindirect="false" edc:isvolatile="true" edc:mclr="------00" edc:name="VREGCON" edc:nzwidth="8" edc:por="------00">
+        <edc:SFRDef edc:access="------nn" edc:cname="VREGCON" edc:desc="" edc:impl="0x3" edc:isindirect="false" edc:isvolatile="true" edc:mclr="------01" edc:name="VREGCON" edc:nzwidth="8" edc:por="------01">
           <edc:AliasList/>
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0">
-              <edc:SFRFieldDef edc:cname="VREGPM0" edc:desc="" edc:mask="0x1" edc:name="VREGPM0" edc:nzwidth="1"/>
-              <edc:SFRFieldDef edc:cname="VREGPM1" edc:desc="" edc:mask="0x1" edc:name="VREGPM1" edc:nzwidth="1"/>
+              <edc:SFRFieldDef edc:cname="VREGPM0" edc:desc="Reserved. Maintain as 1." edc:ishidden="true" edc:islanghidden="true" edc:mask="0x1" edc:name="VREGPM0" edc:nzwidth="1"/>
+              <edc:SFRFieldDef edc:cname="VREGPM" edc:desc="" edc:mask="0x1" edc:name="VREGPM" edc:nzwidth="1"/>
             </edc:SFRMode>
           </edc:SFRModeList>
         </edc:SFRDef>
@@ -1951,7 +1947,7 @@
           <edc:ModuleExclude edc:impl="0x8f" edc:offset="0xb"/>
           <edc:ModuleExclude edc:impl="0x8f" edc:offset="0xe"/>
           <edc:ModuleMacro edc:replace="%src0%" edc:with="T"/>
-          <edc:ModuleExclude edc:impl="0x7f" edc:offset="0x2"/>
+          <edc:ModuleExclude edc:impl="0x1b" edc:offset="0x2"/>
         </edc:Module_ref>
         <edc:AdjustPoint edc:offset="1"/>
         <edc:Module_ref edc:begin="0x0" edc:end="0x1f" edc:modsrc="DOS-01401.Module">
@@ -1971,6 +1967,7 @@
           <edc:ModuleExclude edc:impl="0xc3" edc:offset="0xd"/>
           <edc:ModuleExclude edc:impl="0xc3" edc:offset="0x1d"/>
           <edc:ModuleMacro edc:replace="%src0%" edc:with="T"/>
+          <edc:ModuleExclude edc:impl="0x1b" edc:offset="0x2"/>
         </edc:Module_ref>
       </edc:SFRDataSector>
       <edc:SFRDataSector edc:bank="17" edc:beginaddr="0x880" edc:endaddr="0x8a0" edc:regionid="sfr17">
@@ -2149,7 +2146,7 @@
       <edc:GPRDataSector edc:bank="29" edc:beginaddr="0xEF0" edc:endaddr="0xF00" edc:regionid="gpr29s" edc:shadowidref="gprnobank" edc:shadowoffset="0"/>
       <edc:GPRDataSector edc:bank="30" edc:beginaddr="0xF70" edc:endaddr="0xF80" edc:regionid="gpr30s" edc:shadowidref="gprnobank" edc:shadowoffset="0"/>
       <edc:GPRDataSector edc:bank="31" edc:beginaddr="0xFF0" edc:endaddr="0x1000" edc:regionid="gpr31s" edc:shadowidref="gprnobank" edc:shadowoffset="0"/>
-      <edc:EmulatorZone edc:beginaddr="0xf8c" edc:endaddr="0xf9e" edc:regionid="emulatorzone"/>
+      <edc:EmulatorZone edc:beginaddr="0xf8c" edc:endaddr="0xf9f" edc:regionid="emulatorzone"/>
     </edc:RegardlessOfMode>
     <edc:TraditionalModeOnly/>
     <edc:ExtendedModeOnly/>

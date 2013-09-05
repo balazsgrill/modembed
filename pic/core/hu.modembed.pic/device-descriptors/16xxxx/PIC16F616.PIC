@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:PIC xmlns:edc="http://crownking/edc" edc:arch="16xxxx" edc:desc="" edc:dsid="41288" edc:hasfreeze="false" edc:informedby="DOS PS DS" edc:isextended="false" edc:name="PIC16F616" edc:procid="0xf616" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
+<?xml version="1.0" ?><edc:PIC edc:arch="16xxxx" edc:desc="" edc:dosid="00714" edc:dsid="41288" edc:hasfreeze="false" edc:informedby="DOS PS DS" edc:isextended="false" edc:masksetid="" edc:name="PIC16F616" edc:procid="0xf616" edc:psid="41284" xmlns:edc="http://crownking/edc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
   <edc:Import>
     <edc:Module_import edc:modsrc="16xxxx-NMMR.Module"/>
   </edc:Import>
@@ -24,6 +24,9 @@
     </edc:MemTraits>
   </edc:ArchDef>
   <edc:Breakpoints edc:hasdatacapture="false" edc:hwbpcount="1" edc:idbyte="x"/>
+  <edc:Freeze edc:addr="0x97">
+    <edc:FreezeBit edc:freezeval="1" edc:name="FREEZE_ALL_OTHER_PERIPHERALS" edc:pos="6"/>
+  </edc:Freeze>
   <edc:ProgramSpace>
     <edc:CodeSector edc:beginaddr="0x0" edc:endaddr="0x800" edc:issection="true" edc:regionid="page" edc:sectiondesc="ROM code space" edc:sectionname="PROG"/>
     <edc:CalDataZone edc:beginaddr="0x2008" edc:endaddr="0x2009" edc:regionid="cal"/>
@@ -300,7 +303,7 @@
           <edc:StimInfo edc:stimpcfiles="rw" edc:stimregfiles="w" edc:stimscl="rwb" edc:stimtype="Record"/>
         </edc:SFRDef>
         <edc:AdjustPoint edc:offset="1"/>
-        <edc:JoinedSFRDef edc:cname="TMR1" edc:desc="" edc:islanghidden="true" edc:name="TMR1" edc:nzwidth="0x10">
+        <edc:JoinedSFRDef edc:cname="TMR1" edc:desc="" edc:name="TMR1" edc:nzwidth="0x10">
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0">
               <edc:SFRFieldDef edc:cname="TMR1" edc:desc="" edc:mask="0xffff" edc:name="TMR1" edc:nzwidth="0x10"/>
@@ -838,7 +841,7 @@
       <edc:GPRDataSector edc:bank="0" edc:beginaddr="0x70" edc:endaddr="0x80" edc:regionid="gprnobnk"/>
       <edc:GPRDataSector edc:bank="1" edc:beginaddr="0xa0" edc:endaddr="0xc0" edc:regionid="gpr1"/>
       <edc:GPRDataSector edc:bank="1" edc:beginaddr="0xf0" edc:endaddr="0x100" edc:regionid="gpr1s" edc:shadowidref="gprnobnk"/>
-      <edc:EmulatorZone edc:beginaddr="0x97" edc:endaddr="0x98" edc:regionid="emulatorzone"/>
+      <edc:EmulatorZone edc:beginaddr="0x97" edc:endaddr="0x99" edc:regionid="emulatorzone"/>
     </edc:RegardlessOfMode>
     <edc:TraditionalModeOnly/>
     <edc:ExtendedModeOnly/>

@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><edc:PIC edc:arch="16xxxx" edc:desc="" edc:informedby="DOS PS DS" edc:isextended="false" edc:name="PS200" edc:procid="0x200" xmlns:edc="http://crownking/edc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
+<?xml version="1.0" ?><edc:PIC edc:arch="16xxxx" edc:desc="" edc:dosid="" edc:dsid="" edc:informedby="DOS PS DS" edc:isextended="false" edc:masksetid="" edc:name="PS200" edc:psid="" edc:procid="0x200" xmlns:edc="http://crownking/edc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
   <edc:Import>
     <edc:Module_import edc:modsrc="16xxxx-NMMR.Module"/>
   </edc:Import>
@@ -801,5 +801,67 @@
     </edc:RegardlessOfMode>
     <edc:TraditionalModeOnly/>
     <edc:ExtendedModeOnly/>
-  </edc:DataSpace>
+    </edc:DataSpace>
+    <edc:PinList>
+        <edc:Pin><!--  Pin 1  -->
+            <edc:VirtualPin edc:name="VDD"/>
+        </edc:Pin>
+        <edc:Pin><!--  Pin 2  -->
+            <edc:VirtualPin edc:name="LED2"/>
+        </edc:Pin>
+        <edc:Pin><!--  Pin 3  -->
+            <edc:VirtualPin edc:name="VIN"/>
+        </edc:Pin>
+        <edc:Pin><!--  Pin 4  -->
+            <edc:VirtualPin edc:name="RESET"/>
+        </edc:Pin>
+        <edc:Pin><!--  Pin 5  -->
+            <edc:VirtualPin edc:name="CTRLOUT"/>
+        </edc:Pin>
+        <edc:Pin><!--  Pin 6  -->
+            <edc:VirtualPin edc:name="CHGOUT"/>
+        </edc:Pin>
+        <edc:Pin><!--  Pin 7  -->
+            <edc:VirtualPin edc:name="LOOPFBK"/>
+        </edc:Pin>
+        <edc:Pin><!--  Pin 8  -->
+            <edc:VirtualPin edc:name="LOOPIN"/>
+        </edc:Pin>
+        <edc:Pin><!--  Pin 9  -->
+            <edc:VirtualPin edc:name="CTRLIN"/>
+        </edc:Pin>
+        <edc:Pin><!--  Pin 10  -->
+            <edc:VirtualPin edc:name="LED1"/>
+        </edc:Pin>
+        <edc:Pin><!--  Pin 11  -->
+            <edc:VirtualPin edc:name="HVOUT"/>
+        </edc:Pin>
+        <edc:Pin><!--  Pin 12  -->
+            <edc:VirtualPin edc:name="IFBINB"/>
+        </edc:Pin>
+        <edc:Pin><!--  Pin 13  -->
+            <edc:VirtualPin edc:name="IFBINA"/>
+        </edc:Pin>
+        <edc:Pin><!--  Pin 14  -->
+            <edc:VirtualPin edc:name="IFBOUT"/>
+        </edc:Pin>
+        <edc:Pin><!--  Pin 15  -->
+            <edc:VirtualPin edc:name="BATID"/>
+        </edc:Pin>
+        <edc:Pin><!--  Pin 16  -->
+            <edc:VirtualPin edc:name="CHGFBK"/>
+        </edc:Pin>
+        <edc:Pin><!--  Pin 17  -->
+            <edc:VirtualPin edc:name="SHDN"/>
+        </edc:Pin>
+        <edc:Pin><!--  Pin 18  -->
+            <edc:VirtualPin edc:name="VOVP"/>
+        </edc:Pin>
+        <edc:Pin><!--  Pin 19  -->
+            <edc:VirtualPin edc:name="TEMP"/>
+        </edc:Pin>
+        <edc:Pin><!--  Pin 20  -->
+            <edc:VirtualPin edc:name="VSS"/>
+        </edc:Pin>
+    </edc:PinList>
 </edc:PIC>

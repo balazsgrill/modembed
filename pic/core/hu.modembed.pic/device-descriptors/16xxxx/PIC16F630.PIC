@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:PIC xmlns:edc="http://crownking/edc" edc:arch="16xxxx" edc:desc="" edc:dsid="40039" edc:informedby="DOS PS DS" edc:isextended="false" edc:name="PIC16F630" edc:procid="0x6630" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:PIC xmlns:edc="http://crownking/edc" edc:arch="16xxxx" edc:desc="" edc:dosid="00350" edc:dsid="40039" edc:informedby="DOS PS DS" edc:isextended="false" edc:masksetid="" edc:name="PIC16F630" edc:psid="41191" edc:procid="0x6630" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
   <edc:Import>
     <edc:Module_import edc:modsrc="16xxxx-NMMR.Module"/>
   </edc:Import>
@@ -6,7 +6,7 @@
     <edc:VPP edc:defaultvoltage="13.000" edc:maxvoltage="13.250" edc:minvoltage="12.750"/>
     <edc:VDD edc:maxdefaultvoltage="5.500" edc:maxvoltage="5.500" edc:mindefaultvoltage="3.000" edc:minvoltage="2.500" edc:nominalvoltage="5.000"/>
   </edc:Power>
-  <edc:Programming edc:erasealgo="4" edc:hasrowerasecmd="false" edc:lvpthresh="4.500" edc:memtech="ee" edc:tries="1">
+  <edc:Programming edc:erasealgo="4" edc:hasrowerasecmd="false" edc:hasvppfirst="true" edc:lvpthresh="4.500" edc:memtech="ee" edc:tries="1">
     <edc:Wait edc:cfg="2500" edc:eedata="6000" edc:erase="6000" edc:lvpgm="2500" edc:pgm="2000" edc:userid="2500"/>
     <edc:Latches edc:cfg="1" edc:eedata="1" edc:pgm="1" edc:userid="1"/>
   </edc:Programming>
@@ -288,7 +288,7 @@
           <edc:StimInfo edc:stimpcfiles="rw" edc:stimregfiles="w" edc:stimscl="rwb" edc:stimtype="Record"/>
         </edc:SFRDef>
         <edc:AdjustPoint edc:offset="1"/>
-        <edc:JoinedSFRDef edc:cname="TMR1" edc:desc="" edc:islanghidden="true" edc:name="TMR1" edc:nzwidth="0x10">
+        <edc:JoinedSFRDef edc:cname="TMR1" edc:desc="" edc:name="TMR1" edc:nzwidth="0x10">
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0">
               <edc:SFRFieldDef edc:cname="TMR1" edc:desc="" edc:mask="0xffff" edc:name="TMR1" edc:nzwidth="0x10"/>

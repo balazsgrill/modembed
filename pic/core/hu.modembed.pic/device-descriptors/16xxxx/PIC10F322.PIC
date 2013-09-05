@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:PIC xmlns:edc="http://crownking/edc" edc:arch="16xxxx" edc:desc="" edc:informedby="DOS" edc:isextended="false" edc:name="PIC10F322" edc:procid="0xf322" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><edc:PIC xmlns:edc="http://crownking/edc" edc:arch="16xxxx" edc:desc="" edc:dosid="01391" edc:dsid="41585" edc:informedby="DOS" edc:isextended="false" edc:masksetid="LEBZ" edc:name="PIC10F322" edc:psid="41572" edc:procid="0xf322" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
   <edc:Import>
     <edc:Module_import edc:modsrc="16xxxx-NMMR.Module"/>
     <edc:Module_import edc:modsrc="DOS-01435.Module"/>
@@ -28,7 +28,7 @@
     </edc:MemTraits>
   </edc:ArchDef>
   <edc:WatchdogTimer edc:min="1"/>
-  <edc:Breakpoints edc:hasdatacapture="false" edc:hwbpcount="1" edc:idbyte="x"/>
+  <edc:Breakpoints edc:hasdatacapture="false" edc:hwbpcount="3" edc:idbyte="x"/>
   <edc:ProgramSpace>
     <edc:CodeSector edc:beginaddr="0x0" edc:endaddr="0x200" edc:issection="true" edc:regionid="page0" edc:sectiondesc="ROM code space" edc:sectionname="PROG0"/>
     <edc:ConfigFuseSector edc:beginaddr="0x2007" edc:endaddr="0x2008" edc:regionid=".config">
@@ -166,10 +166,10 @@
           <edc:AliasList/>
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0">
-              <edc:SFRFieldDef edc:cname="PORTA0" edc:desc="" edc:mask="0x1" edc:name="PORTA0" edc:nzwidth="0x1"/>
-              <edc:SFRFieldDef edc:cname="PORTA1" edc:desc="" edc:mask="0x1" edc:name="PORTA1" edc:nzwidth="0x1"/>
-              <edc:SFRFieldDef edc:cname="PORTA2" edc:desc="" edc:mask="0x1" edc:name="PORTA2" edc:nzwidth="0x1"/>
-              <edc:SFRFieldDef edc:cname="PORTA3" edc:desc="" edc:mask="0x1" edc:name="PORTA3" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="RA0" edc:desc="" edc:mask="0x1" edc:name="RA0" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="RA1" edc:desc="" edc:mask="0x1" edc:name="RA1" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="RA2" edc:desc="" edc:mask="0x1" edc:name="RA2" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="RA3" edc:desc="" edc:mask="0x1" edc:name="RA3" edc:nzwidth="0x1"/>
               <edc:AdjustPoint edc:offset="1"/>
               <edc:AdjustPoint edc:offset="1"/>
             </edc:SFRMode>
@@ -183,9 +183,9 @@
           <edc:AliasList/>
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0">
-              <edc:SFRFieldDef edc:cname="TRISA0" edc:desc="" edc:islanghidden="true" edc:mask="0x1" edc:name="TRISA0" edc:nzwidth="0x1"/>
-              <edc:SFRFieldDef edc:cname="TRISA1" edc:desc="" edc:islanghidden="true" edc:mask="0x1" edc:name="TRISA1" edc:nzwidth="0x1"/>
-              <edc:SFRFieldDef edc:cname="TRISA2" edc:desc="" edc:islanghidden="true" edc:mask="0x1" edc:name="TRISA2" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="TRISA0" edc:desc="" edc:mask="0x1" edc:name="TRISA0" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="TRISA1" edc:desc="" edc:mask="0x1" edc:name="TRISA1" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="TRISA2" edc:desc="" edc:mask="0x1" edc:name="TRISA2" edc:nzwidth="0x1"/>
               <edc:AdjustPoint edc:offset="1"/>
               <edc:AdjustPoint edc:offset="1"/>
             </edc:SFRMode>
@@ -315,6 +315,10 @@
               <edc:SFRFieldDef edc:cname="LFIOFR" edc:desc="" edc:mask="0x1" edc:name="LFIOFR" edc:nzwidth="1"/>
               <edc:AdjustPoint edc:offset="1"/>
               <edc:SFRFieldDef edc:cname="HFIOFR" edc:desc="" edc:mask="0x1" edc:name="HFIOFR" edc:nzwidth="1"/>
+              <edc:SFRFieldDef edc:cname="IRCF" edc:desc="" edc:mask="0x7" edc:name="IRCF" edc:nzwidth="3"/>
+            </edc:SFRMode>
+            <edc:SFRMode edc:id="LT.0">
+              <edc:AdjustPoint edc:offset="4"/>
               <edc:SFRFieldDef edc:cname="IRCF0" edc:desc="" edc:mask="0x1" edc:name="IRCF0" edc:nzwidth="1"/>
               <edc:SFRFieldDef edc:cname="IRCF1" edc:desc="" edc:mask="0x1" edc:name="IRCF1" edc:nzwidth="1"/>
               <edc:SFRFieldDef edc:cname="IRCF2" edc:desc="" edc:mask="0x1" edc:name="IRCF2" edc:nzwidth="1"/>
@@ -603,9 +607,50 @@
         </edc:SFRDef>
       </edc:SFRDataSector>
       <edc:GPRDataSector edc:bank="0" edc:beginaddr="0x40" edc:endaddr="0x80" edc:regionid="gpr0"/>
-      <edc:EmulatorZone edc:beginaddr="0x18e" edc:endaddr="0x190" edc:regionid="emulatorzone"/>
+      <edc:EmulatorZone edc:beginaddr="0x90" edc:endaddr="0xb7" edc:regionid="emulatorzone"/>
     </edc:RegardlessOfMode>
     <edc:TraditionalModeOnly/>
     <edc:ExtendedModeOnly/>
   </edc:DataSpace>
+  <edc:PinList>
+    <edc:Pin>
+      <edc:VirtualPin edc:name="RA0"/>
+      <edc:VirtualPin edc:name="PWM1"/>
+      <edc:VirtualPin edc:name="CLC1IN1"/>
+      <edc:VirtualPin edc:name="CWG1A"/>
+      <edc:VirtualPin edc:name="AN0"/>
+      <edc:VirtualPin edc:name="ICSPDAT"/>
+    </edc:Pin>
+    <edc:Pin>
+      <edc:VirtualPin edc:name="RA1"/>
+      <edc:VirtualPin edc:name="PWM2"/>
+      <edc:VirtualPin edc:name="CLC1"/>
+      <edc:VirtualPin edc:name="CWG1B"/>
+      <edc:VirtualPin edc:name="AN1"/>
+      <edc:VirtualPin edc:name="CLKIN"/>
+      <edc:VirtualPin edc:name="ICSPCLK"/>
+      <edc:VirtualPin edc:name="NCO1CLK"/>
+    </edc:Pin>
+    <edc:Pin>
+      <edc:VirtualPin edc:name="RA2"/>
+      <edc:VirtualPin edc:name="INT"/>
+      <edc:VirtualPin edc:name="T0CKI"/>
+      <edc:VirtualPin edc:name="NCO1"/>
+      <edc:VirtualPin edc:name="CLC1IN2"/>
+      <edc:VirtualPin edc:name="CLKR"/>
+      <edc:VirtualPin edc:name="AN2"/>
+      <edc:VirtualPin edc:name="CWG1FLT"/>
+    </edc:Pin>
+    <edc:Pin>
+      <edc:VirtualPin edc:name="RA3"/>
+      <edc:VirtualPin edc:name="MCLR"/>
+      <edc:VirtualPin edc:name="VPP"/>
+    </edc:Pin>
+    <edc:Pin>
+      <edc:VirtualPin edc:name="VDD"/>
+    </edc:Pin>
+    <edc:Pin>
+      <edc:VirtualPin edc:name="VSS"/>
+    </edc:Pin>
+  </edc:PinList>
 </edc:PIC>
