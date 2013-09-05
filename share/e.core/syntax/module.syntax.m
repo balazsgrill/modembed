@@ -42,7 +42,7 @@ terminal OP_CMP_LTE "<=";
 						global=KW_GLOBAL? const=KW_CONST? type=<TypeDefinition> name=IDENTIFIER <VariableInitValue>? };
 <VariableInitValue> :- OPERATOR_ASSIGN initValue=<Expression> ;
 
-<Function> :- {"http://modembed.hu/structured#StructuredFunction" resultType=<TypeDefinition> name=IDENTIFIER 
+<Function> :- {"http://modembed.hu/structured#StructuredFunction" global=KW_GLOBAL? resultType=<TypeDefinition> name=IDENTIFIER 
 	BRACKET_OPEN <FunctionParameters>? BRACKET_CLOSE <FunctionImplementation> };						
 						
 <FunctionParameters> :- <FunctionParameter>;

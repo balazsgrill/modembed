@@ -69,6 +69,7 @@ public class ModuleCompiler2 extends ExpressionResolver{
 	public static String getSymbol(StructuredFunction function){
 		StructuredModule module = (StructuredModule)function.eContainer();
 		String name = function.getName();
+		if (function.isGlobal()) return name;
 		for(StructuredModule sm : module.getUses()){
 			for(StructuredFunction sf : sm.getFunctions()){
 				if (name.equals(sf.getName())){
