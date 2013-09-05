@@ -15,9 +15,13 @@
 	 
     <target name="compile.generic">
     	<mkdir dir="${out}"/>
-        <modembed.compile input="ledblink.main.m" output="${out}/ledblink.main.xmi"/>
-    	<modembed.compile input="libs/generic/led.m" output="${out}/led.xmi"/>
-    	<modembed.compile input="libs/generic/utils.m" output="${out}/utils.xmi"/>
+    	<modembed.compile targetdir="${out}">
+    		<filelist dir="${basedir}">
+    			<file name="ledblink.main.m"/>
+    			<file name="libs/generic/led.m"/>
+    			<file name="libs/generic/utils.m"/>
+    		</filelist>
+    	</modembed.compile>
     </target>
 
     <target name="release.all" depends="release.pic16f1824, release.pic18f14k50">

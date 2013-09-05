@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	
+	<macrodef name="modembed.build">
+		<element name="inputs" implicit="true"/>
+		<sequential>
+			<globmapper from="*.m" to="*.xmi"/>
+		</sequential>
+	</macrodef>
+	
+</project>
