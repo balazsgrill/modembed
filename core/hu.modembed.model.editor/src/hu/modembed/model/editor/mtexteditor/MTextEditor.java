@@ -91,7 +91,7 @@ public class MTextEditor extends TextEditor {
 			}
 			if (resource == null){
 				resource = edomain.getResourceSet().createResource(uri);
-				reload();
+				reloader.trigger();
 				getSourceViewer().addTextListener(new ITextListener() {
 					
 					@Override

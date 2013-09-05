@@ -1,10 +1,8 @@
 /**
  */
-package hu.modembed.model.modembed.abstraction.impl;
+package hu.modembed.model.modembed.application.impl;
 
-import hu.modembed.model.modembed.abstraction.AbstractionFactory;
 import hu.modembed.model.modembed.abstraction.AbstractionPackage;
-import hu.modembed.model.modembed.abstraction.DeviceAbstraction;
 
 import hu.modembed.model.modembed.abstraction.behavior.BehaviorPackage;
 
@@ -14,6 +12,8 @@ import hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage;
 
 import hu.modembed.model.modembed.abstraction.behavior.platform.impl.PlatformPackageImpl;
 
+import hu.modembed.model.modembed.abstraction.impl.AbstractionPackageImpl;
+
 import hu.modembed.model.modembed.abstraction.memorymodel.MemorymodelPackage;
 
 import hu.modembed.model.modembed.abstraction.memorymodel.impl.MemorymodelPackageImpl;
@@ -22,8 +22,10 @@ import hu.modembed.model.modembed.abstraction.types.TypesPackage;
 
 import hu.modembed.model.modembed.abstraction.types.impl.TypesPackageImpl;
 
+import hu.modembed.model.modembed.application.ApplicationFactory;
 import hu.modembed.model.modembed.application.ApplicationPackage;
-import hu.modembed.model.modembed.application.impl.ApplicationPackageImpl;
+import hu.modembed.model.modembed.application.ComponentRole;
+
 import hu.modembed.model.modembed.core.instructionset.InstructionsetPackage;
 
 import hu.modembed.model.modembed.core.instructionset.impl.InstructionsetPackageImpl;
@@ -50,7 +52,6 @@ import hu.modembed.model.modembed.structured.impl.StructuredPackageImpl;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
@@ -60,13 +61,13 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
  * <!-- end-user-doc -->
  * @generated
  */
-public class AbstractionPackageImpl extends EPackageImpl implements AbstractionPackage {
+public class ApplicationPackageImpl extends EPackageImpl implements ApplicationPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass deviceAbstractionEClass = null;
+	private EClass componentRoleEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -79,12 +80,12 @@ public class AbstractionPackageImpl extends EPackageImpl implements AbstractionP
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
-	 * @see hu.modembed.model.modembed.abstraction.AbstractionPackage#eNS_URI
+	 * @see hu.modembed.model.modembed.application.ApplicationPackage#eNS_URI
 	 * @see #init()
 	 * @generated
 	 */
-	private AbstractionPackageImpl() {
-		super(eNS_URI, AbstractionFactory.eINSTANCE);
+	private ApplicationPackageImpl() {
+		super(eNS_URI, ApplicationFactory.eINSTANCE);
 	}
 
 	/**
@@ -97,7 +98,7 @@ public class AbstractionPackageImpl extends EPackageImpl implements AbstractionP
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
 	 * 
-	 * <p>This method is used to initialize {@link AbstractionPackage#eINSTANCE} when that field is accessed.
+	 * <p>This method is used to initialize {@link ApplicationPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -106,11 +107,11 @@ public class AbstractionPackageImpl extends EPackageImpl implements AbstractionP
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
-	public static AbstractionPackage init() {
-		if (isInited) return (AbstractionPackage)EPackage.Registry.INSTANCE.getEPackage(AbstractionPackage.eNS_URI);
+	public static ApplicationPackage init() {
+		if (isInited) return (ApplicationPackage)EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI);
 
 		// Obtain or create and register package
-		AbstractionPackageImpl theAbstractionPackage = (AbstractionPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof AbstractionPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new AbstractionPackageImpl());
+		ApplicationPackageImpl theApplicationPackage = (ApplicationPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ApplicationPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ApplicationPackageImpl());
 
 		isInited = true;
 
@@ -120,48 +121,48 @@ public class AbstractionPackageImpl extends EPackageImpl implements AbstractionP
 		ExpressionsPackageImpl theExpressionsPackage = (ExpressionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI) instanceof ExpressionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI) : ExpressionsPackage.eINSTANCE);
 		InstructionsetPackageImpl theInstructionsetPackage = (InstructionsetPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InstructionsetPackage.eNS_URI) instanceof InstructionsetPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InstructionsetPackage.eNS_URI) : InstructionsetPackage.eINSTANCE);
 		ObjectPackageImpl theObjectPackage = (ObjectPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ObjectPackage.eNS_URI) instanceof ObjectPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ObjectPackage.eNS_URI) : ObjectPackage.eINSTANCE);
+		AbstractionPackageImpl theAbstractionPackage = (AbstractionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AbstractionPackage.eNS_URI) instanceof AbstractionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AbstractionPackage.eNS_URI) : AbstractionPackage.eINSTANCE);
 		TypesPackageImpl theTypesPackage = (TypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) instanceof TypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) : TypesPackage.eINSTANCE);
 		MemorymodelPackageImpl theMemorymodelPackage = (MemorymodelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(MemorymodelPackage.eNS_URI) instanceof MemorymodelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(MemorymodelPackage.eNS_URI) : MemorymodelPackage.eINSTANCE);
 		BehaviorPackageImpl theBehaviorPackage = (BehaviorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) instanceof BehaviorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) : BehaviorPackage.eINSTANCE);
 		PlatformPackageImpl thePlatformPackage = (PlatformPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PlatformPackage.eNS_URI) instanceof PlatformPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PlatformPackage.eNS_URI) : PlatformPackage.eINSTANCE);
 		StructuredPackageImpl theStructuredPackage = (StructuredPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(StructuredPackage.eNS_URI) instanceof StructuredPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(StructuredPackage.eNS_URI) : StructuredPackage.eINSTANCE);
-		ApplicationPackageImpl theApplicationPackage = (ApplicationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI) instanceof ApplicationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI) : ApplicationPackage.eINSTANCE);
 
 		// Create package meta-data objects
-		theAbstractionPackage.createPackageContents();
+		theApplicationPackage.createPackageContents();
 		theInfrastructurePackage.createPackageContents();
 		theTraceabilityPackage.createPackageContents();
 		theExpressionsPackage.createPackageContents();
 		theInstructionsetPackage.createPackageContents();
 		theObjectPackage.createPackageContents();
+		theAbstractionPackage.createPackageContents();
 		theTypesPackage.createPackageContents();
 		theMemorymodelPackage.createPackageContents();
 		theBehaviorPackage.createPackageContents();
 		thePlatformPackage.createPackageContents();
 		theStructuredPackage.createPackageContents();
-		theApplicationPackage.createPackageContents();
 
 		// Initialize created meta-data
-		theAbstractionPackage.initializePackageContents();
+		theApplicationPackage.initializePackageContents();
 		theInfrastructurePackage.initializePackageContents();
 		theTraceabilityPackage.initializePackageContents();
 		theExpressionsPackage.initializePackageContents();
 		theInstructionsetPackage.initializePackageContents();
 		theObjectPackage.initializePackageContents();
+		theAbstractionPackage.initializePackageContents();
 		theTypesPackage.initializePackageContents();
 		theMemorymodelPackage.initializePackageContents();
 		theBehaviorPackage.initializePackageContents();
 		thePlatformPackage.initializePackageContents();
 		theStructuredPackage.initializePackageContents();
-		theApplicationPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
-		theAbstractionPackage.freeze();
+		theApplicationPackage.freeze();
 
   
 		// Update the registry and return the package
-		EPackage.Registry.INSTANCE.put(AbstractionPackage.eNS_URI, theAbstractionPackage);
-		return theAbstractionPackage;
+		EPackage.Registry.INSTANCE.put(ApplicationPackage.eNS_URI, theApplicationPackage);
+		return theApplicationPackage;
 	}
 
 	/**
@@ -169,8 +170,8 @@ public class AbstractionPackageImpl extends EPackageImpl implements AbstractionP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getDeviceAbstraction() {
-		return deviceAbstractionEClass;
+	public EClass getComponentRole() {
+		return componentRoleEClass;
 	}
 
 	/**
@@ -178,53 +179,8 @@ public class AbstractionPackageImpl extends EPackageImpl implements AbstractionP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDeviceAbstraction_Ancestor() {
-		return (EReference)deviceAbstractionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getDeviceAbstraction_Instructionset() {
-		return (EReference)deviceAbstractionEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getDeviceAbstraction_MemoryTypes() {
-		return (EReference)deviceAbstractionEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getDeviceAbstraction_MemoryInstances() {
-		return (EReference)deviceAbstractionEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getDeviceAbstraction_Operation() {
-		return (EReference)deviceAbstractionEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public AbstractionFactory getAbstractionFactory() {
-		return (AbstractionFactory)getEFactoryInstance();
+	public ApplicationFactory getApplicationFactory() {
+		return (ApplicationFactory)getEFactoryInstance();
 	}
 
 	/**
@@ -246,12 +202,7 @@ public class AbstractionPackageImpl extends EPackageImpl implements AbstractionP
 		isCreated = true;
 
 		// Create classes and their features
-		deviceAbstractionEClass = createEClass(DEVICE_ABSTRACTION);
-		createEReference(deviceAbstractionEClass, DEVICE_ABSTRACTION__ANCESTOR);
-		createEReference(deviceAbstractionEClass, DEVICE_ABSTRACTION__INSTRUCTIONSET);
-		createEReference(deviceAbstractionEClass, DEVICE_ABSTRACTION__MEMORY_TYPES);
-		createEReference(deviceAbstractionEClass, DEVICE_ABSTRACTION__MEMORY_INSTANCES);
-		createEReference(deviceAbstractionEClass, DEVICE_ABSTRACTION__OPERATION);
+		componentRoleEClass = createEClass(COMPONENT_ROLE);
 	}
 
 	/**
@@ -278,35 +229,20 @@ public class AbstractionPackageImpl extends EPackageImpl implements AbstractionP
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
-		MemorymodelPackage theMemorymodelPackage = (MemorymodelPackage)EPackage.Registry.INSTANCE.getEPackage(MemorymodelPackage.eNS_URI);
-		BehaviorPackage theBehaviorPackage = (BehaviorPackage)EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI);
 		InfrastructurePackage theInfrastructurePackage = (InfrastructurePackage)EPackage.Registry.INSTANCE.getEPackage(InfrastructurePackage.eNS_URI);
-		InstructionsetPackage theInstructionsetPackage = (InstructionsetPackage)EPackage.Registry.INSTANCE.getEPackage(InstructionsetPackage.eNS_URI);
-		PlatformPackage thePlatformPackage = (PlatformPackage)EPackage.Registry.INSTANCE.getEPackage(PlatformPackage.eNS_URI);
-
-		// Add subpackages
-		getESubpackages().add(theTypesPackage);
-		getESubpackages().add(theMemorymodelPackage);
-		getESubpackages().add(theBehaviorPackage);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		deviceAbstractionEClass.getESuperTypes().add(theInfrastructurePackage.getRootElement());
+		componentRoleEClass.getESuperTypes().add(theInfrastructurePackage.getRootElement());
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(deviceAbstractionEClass, DeviceAbstraction.class, "DeviceAbstraction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDeviceAbstraction_Ancestor(), this.getDeviceAbstraction(), null, "ancestor", null, 0, 1, DeviceAbstraction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDeviceAbstraction_Instructionset(), theInstructionsetPackage.getInstructionSet(), null, "instructionset", null, 0, 1, DeviceAbstraction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDeviceAbstraction_MemoryTypes(), theMemorymodelPackage.getMemoryType(), null, "memoryTypes", null, 0, -1, DeviceAbstraction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDeviceAbstraction_MemoryInstances(), theMemorymodelPackage.getMemoryInstance(), null, "memoryInstances", null, 0, -1, DeviceAbstraction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDeviceAbstraction_Operation(), thePlatformPackage.getOperationDefinition(), null, "operation", null, 0, -1, DeviceAbstraction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(componentRoleEClass, ComponentRole.class, "ComponentRole", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);
 	}
 
-} //AbstractionPackageImpl
+} //ApplicationPackageImpl

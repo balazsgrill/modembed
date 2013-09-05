@@ -337,6 +337,8 @@
           containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="StructuredFunction" eSuperTypes="#//infrastructure/NamedElement">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="global" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="resultType" lowerBound="1"
           eType="#//abstraction/types/TypeDefinition" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
@@ -384,5 +386,8 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="body" lowerBound="1"
           eType="#//structured/Operation" containment="true"/>
     </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="application" nsURI="http://modembed.hu/application" nsPrefix="application">
+    <eClassifiers xsi:type="ecore:EClass" name="ComponentRole" eSuperTypes="#//infrastructure/RootElement"/>
   </eSubpackages>
 </ecore:EPackage>

@@ -29,6 +29,8 @@ import hu.modembed.model.modembed.abstraction.types.TypesPackage;
 
 import hu.modembed.model.modembed.abstraction.types.impl.TypesPackageImpl;
 
+import hu.modembed.model.modembed.application.ApplicationPackage;
+import hu.modembed.model.modembed.application.impl.ApplicationPackageImpl;
 import hu.modembed.model.modembed.core.instructionset.InstructionsetPackage;
 
 import hu.modembed.model.modembed.core.instructionset.impl.InstructionsetPackageImpl;
@@ -180,6 +182,7 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 		MemorymodelPackageImpl theMemorymodelPackage = (MemorymodelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(MemorymodelPackage.eNS_URI) instanceof MemorymodelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(MemorymodelPackage.eNS_URI) : MemorymodelPackage.eINSTANCE);
 		BehaviorPackageImpl theBehaviorPackage = (BehaviorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) instanceof BehaviorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) : BehaviorPackage.eINSTANCE);
 		StructuredPackageImpl theStructuredPackage = (StructuredPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(StructuredPackage.eNS_URI) instanceof StructuredPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(StructuredPackage.eNS_URI) : StructuredPackage.eINSTANCE);
+		ApplicationPackageImpl theApplicationPackage = (ApplicationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI) instanceof ApplicationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI) : ApplicationPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		thePlatformPackage.createPackageContents();
@@ -193,6 +196,7 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 		theMemorymodelPackage.createPackageContents();
 		theBehaviorPackage.createPackageContents();
 		theStructuredPackage.createPackageContents();
+		theApplicationPackage.createPackageContents();
 
 		// Initialize created meta-data
 		thePlatformPackage.initializePackageContents();
@@ -206,6 +210,7 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 		theMemorymodelPackage.initializePackageContents();
 		theBehaviorPackage.initializePackageContents();
 		theStructuredPackage.initializePackageContents();
+		theApplicationPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		thePlatformPackage.freeze();

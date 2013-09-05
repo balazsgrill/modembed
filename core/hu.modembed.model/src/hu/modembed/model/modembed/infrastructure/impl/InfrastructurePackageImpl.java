@@ -22,6 +22,8 @@ import hu.modembed.model.modembed.abstraction.types.TypesPackage;
 
 import hu.modembed.model.modembed.abstraction.types.impl.TypesPackageImpl;
 
+import hu.modembed.model.modembed.application.ApplicationPackage;
+import hu.modembed.model.modembed.application.impl.ApplicationPackageImpl;
 import hu.modembed.model.modembed.core.instructionset.InstructionsetPackage;
 
 import hu.modembed.model.modembed.core.instructionset.impl.InstructionsetPackageImpl;
@@ -180,6 +182,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 		BehaviorPackageImpl theBehaviorPackage = (BehaviorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) instanceof BehaviorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) : BehaviorPackage.eINSTANCE);
 		PlatformPackageImpl thePlatformPackage = (PlatformPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PlatformPackage.eNS_URI) instanceof PlatformPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PlatformPackage.eNS_URI) : PlatformPackage.eINSTANCE);
 		StructuredPackageImpl theStructuredPackage = (StructuredPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(StructuredPackage.eNS_URI) instanceof StructuredPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(StructuredPackage.eNS_URI) : StructuredPackage.eINSTANCE);
+		ApplicationPackageImpl theApplicationPackage = (ApplicationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI) instanceof ApplicationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ApplicationPackage.eNS_URI) : ApplicationPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theInfrastructurePackage.createPackageContents();
@@ -193,6 +196,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 		theBehaviorPackage.createPackageContents();
 		thePlatformPackage.createPackageContents();
 		theStructuredPackage.createPackageContents();
+		theApplicationPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theInfrastructurePackage.initializePackageContents();
@@ -206,6 +210,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 		theBehaviorPackage.initializePackageContents();
 		thePlatformPackage.initializePackageContents();
 		theStructuredPackage.initializePackageContents();
+		theApplicationPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theInfrastructurePackage.freeze();

@@ -107,7 +107,7 @@ public class GenericSyntaxResource extends ResourceImpl {
 			return;
 		}
 		
-		if (!Activator.getCache().load(this)){
+		//if (!Activator.getCache().load(this)){
 			
 			GenericParser parser = new GenericParser(syntax);
 			getErrors().addAll(parser.errors);
@@ -151,8 +151,8 @@ public class GenericSyntaxResource extends ResourceImpl {
 			}
 
 			finishedState.buildModel(this);
-			Activator.getCache().save(this);
-		}
+			//Activator.getCache().save(this);
+		//}
 	}
 	
 	

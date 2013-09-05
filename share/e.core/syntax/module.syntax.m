@@ -4,6 +4,7 @@ import core.syntax;
 import type.syntax;
 import expressions.syntax;
 
+terminal KW_VAR "var";
 terminal KW_MODULE "module";
 terminal KW_USE "use";
 terminal KW_CONST "const";
@@ -57,8 +58,8 @@ terminal OP_CMP_LTE "<=";
 <Operation> :- KW_RETURN {"http://modembed.hu/structured#ReturnOperation" result=<Expression> } OPERATOR_SEMICOLON; 
 <Operation> :- OP_BEGIN {"http://modembed.hu/structured#OperationBlock" <OperationBlock_item>*? } OP_END;
 <OperationBlock_item> :- steps=<Operation> ;
-<OperationBlock_item> :- variables=<VariableDeclaration> OPERATOR_SEMICOLON;
-<Operation> :- KW_IF condition=<Expression> {"http://modembed.hu/structured#ConditionalOperation" trueBranch=<Operation> <ElseBranch>? };
+<OperationBlock_item> :- KW_VAR variables=<VariableDeclaration> OPERATOR_SEMICOLON;
+<Operation> :- KW_IF {"http://modembed.hu/structured#ConditionalOperation" condition=<Expression> trueBranch=<Operation> <ElseBranch>? };
 <ElseBranch> :- KW_ELSE falseBranch=<Operation> ;
 
 <Operation> :- KW_LOOP {"http://modembed.hu/structured#LoopOperation" <LoopEntry>? body=<Operation> <LoopExit>? };

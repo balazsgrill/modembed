@@ -365,6 +365,7 @@ package structured{
 	}
 	
 	class StructuredFunction extends infrastructure.NamedElement{
+		attr boolean[1] global;
 		val abstraction.types.TypeDefinition[1] resultType; 
 		val VariableDeclaration[*] parameters;
 		val Operation implementation;
@@ -404,5 +405,14 @@ package structured{
 		val infrastructure.expressions.Expression entryCondition;
 		val infrastructure.expressions.Expression exitCondition;
 		val Operation[1] body;
+	}}
+	
+
+@namespace(uri="http://modembed.hu/application", prefix="application")
+package application{
+	
+	class ComponentRole extends infrastructure.RootElement{
+	
 	}
+	
 }
