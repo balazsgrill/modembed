@@ -1,7 +1,7 @@
 /**
  * 
  */
-package hu.modembed.syntax.persistence;
+package hu.modembed.syntax.persistence.naive;
 
 import hu.modembed.syntax.NonTerminalItem;
 import hu.modembed.syntax.Pop;
@@ -13,9 +13,11 @@ import hu.modembed.syntax.SyntaxFactory;
 import hu.modembed.syntax.SyntaxItem;
 import hu.modembed.syntax.Terminal;
 import hu.modembed.syntax.TerminalItem;
+import hu.modembed.syntax.persistence.IParserInput;
+import hu.modembed.syntax.persistence.StringValue;
+import hu.modembed.syntax.persistence.TerminalMatch;
 import hu.modembed.syntax.persistence.build.CreateObjectBuildStep;
 import hu.modembed.syntax.persistence.build.IModelBuildStep;
-import hu.modembed.syntax.persistence.build.ModelBuilder;
 import hu.modembed.syntax.persistence.build.PopBuildStep;
 import hu.modembed.syntax.persistence.build.SetFeatureBuildStep;
 import hu.modembed.syntax.persistence.build.SetNextFeature;
@@ -27,8 +29,6 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.eclipse.emf.ecore.resource.Resource;
-
 /**
  * @author balazs.grill
  *
@@ -36,7 +36,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 public class ParserState {
 	
 	private final GenericParser parser;
-	private final String data;
+	private final IParserInput data;
 	private final int index;
 	private final List<RuleItem> grammarStack;
 	private final List<IModelBuildStep> modelBuild;
@@ -46,12 +46,16 @@ public class ParserState {
 	 * @param parent
 	 * @param rule
 	 */
-	private ParserState(GenericParser parser, String data, int index, List<RuleItem> grammarStack, List<IModelBuildStep> modelBuild){
+	private ParserState(GenericParser parser, IParserInput data, int index, List<RuleItem> grammarStack, List<IModelBuildStep> modelBuild){
 		this.parser = parser;
 		this.data = data;
-		this.index = index;
+		this.index = data.bypassHidden(index);
 		this.grammarStack = grammarStack;
 		this.modelBuild = modelBuild;
+	}
+	
+	public List<IModelBuildStep> getModelBuild() {
+		return modelBuild;
 	}
 	
 	/**
@@ -90,7 +94,7 @@ public class ParserState {
 			steps = new AppendedList<IModelBuildStep>(
 					steps, new SetFeatureBuildStep(terminal.getFeatureName(), match));
 		}
-		int newindex = index+match.match.length();
+		int newindex = index+match.size;
 		return new ParserState(parser, data, newindex, grammarStack, steps);
 	}
 	
@@ -100,7 +104,7 @@ public class ParserState {
 		return new ParserState(parser, data, index, grammarStack, steps);
 	}
 	
-	public ParserState(GenericParser parser, String start, String data, int index) {
+	public ParserState(GenericParser parser, String start, IParserInput data, int index) {
 		this.parser = parser;
 		NonTerminalItem startItem = SyntaxFactory.eINSTANCE.createNonTerminalItem();
 		startItem.setNonTerminal(start);
@@ -136,16 +140,6 @@ public class ParserState {
 	public RuleItem nextGrammarItem(){
 		if (grammarStack.isEmpty()) return null;
 		return grammarStack.get(0);
-	}
-	
-	public ParserState removeWhiteSpace(){
-		ParserState current = this;
-		TerminalMatch match = null;
-		while((match = parser.matchHiddenTerminals(current.data, current.index)) != null){
-			int newindex = current.index + match.match.length();
-			current = new ParserState(parser, data, newindex, grammarStack, modelBuild);
-		}
-		return current;
 	}
 	
 	public Collection<ParserState> getValidFollowingStates(){
@@ -186,7 +180,7 @@ public class ParserState {
 			
 			Terminal terminal = term.getTerminal();
 			if (terminal != null){
-				TerminalMatch match = parser.matchTerminal(terminal, data, index);
+				TerminalMatch match = data.match(terminal, index);
 				if (match != null){
 					followups.add(removed.match(term, match));
 					if (term.isMany()){
@@ -213,11 +207,6 @@ public class ParserState {
 		}
 		
 		return followups;
-	}
-	
-	public void buildModel(Resource container){
-		ModelBuilder builder = new ModelBuilder(parser.getFeatureResolver());
-		container.getErrors().addAll(builder.buildModel(container, modelBuild));
 	}
 	
 	public int getIndex() {

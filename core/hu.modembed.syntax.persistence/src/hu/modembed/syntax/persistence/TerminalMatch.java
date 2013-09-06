@@ -13,11 +13,15 @@ import hu.modembed.syntax.Terminal;
 public class TerminalMatch implements IStringValue{
 
 	public final Terminal terminal;
-	public final String match;
+	private final String match;
+	public final int position;
+	public final int size;
 	
-	public TerminalMatch(Terminal terminal, String match) {
+	public TerminalMatch(Terminal terminal, String match, int position, int size) {
 		this.terminal = terminal;
 		this.match = match;
+		this.position = position;
+		this.size = size;
 	}
 	
 	@Override
@@ -32,6 +36,10 @@ public class TerminalMatch implements IStringValue{
 		return value;
 	}
 
+	public String getMatch() {
+		return match;
+	}
+	
 	@Override
 	public String getOriginalValue() {
 		return match;

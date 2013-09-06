@@ -30,5 +30,25 @@ public class EarleyState {
 		this.steps = steps;
 		this.origin = origin;
 	}
+	
+	public Rule getCurrentRule() {
+		return currentRule;
+	}
+	
+	public int getIndex() {
+		return index;
+	}
+	
+	public int getPosition() {
+		return position;
+	}
+	
+	public List<IModelBuildStep> getSteps() {
+		return steps;
+	}
+	
+	public EarleyState getOrigin() {
+		return origin;
+	}
 
 }

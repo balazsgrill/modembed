@@ -5,14 +5,19 @@ package hu.modembed.syntax.persistence;
 
 import hu.modembed.MODembedCore;
 import hu.modembed.syntax.SyntaxModel;
+import hu.modembed.syntax.persistence.build.IModelBuildStep;
+import hu.modembed.syntax.persistence.build.ModelBuilder;
+import hu.modembed.syntax.persistence.impl.DefaultFeatureResolver;
+import hu.modembed.syntax.persistence.impl.StringInput;
+import hu.modembed.syntax.persistence.naive.GenericParser;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -40,22 +45,6 @@ public class GenericSyntaxResource extends ResourceImpl {
 	
 	private void error(String message){
 		getErrors().add(new ParsingError(message, getURI().lastSegment()));
-	}
-	
-	private void error(String message, String data, int index){
-		int line = 0;
-		int last = 0;
-		Pattern p = Pattern.compile("\n");
-		Matcher m = p.matcher(data);
-		while(m.find()){
-			int pos = m.start();
-			if (pos <= index){
-				line++;
-				last = pos;
-			}
-		}
-		int column = index-last;
-		getErrors().add(new ParsingError(message, getURI().lastSegment(), line, column));
 	}
 	
 	private SyntaxModel loadSyntax(String syntaxID){
@@ -109,50 +98,31 @@ public class GenericSyntaxResource extends ResourceImpl {
 		
 		//if (!Activator.getCache().load(this)){
 			
-			GenericParser parser = new GenericParser(syntax);
-			getErrors().addAll(parser.errors);
-
-			ParserState startState = parser.getStartState(data, l+1);
-			LinkedList<ParserState> states = new LinkedList<ParserState>();
-			ParserState finishedState = null;
-			ParserState bestState = null;
-			states.add(startState);
-
-			while(finishedState == null && !states.isEmpty()){
-				ParserState current = states.pollFirst();
-
-				/* Remove whitespaces */
-				current = current.removeWhiteSpace();
-				if (current.done()){
-					finishedState = current;
-				}else{
-
-					if (bestState == null || bestState.getIndex() <= current.getIndex()){
-						bestState = current;
-					}
-
-					/* Step */
-					for(ParserState followup : current.getValidFollowingStates()){
-						/* Deep-first search */
-						if (!followup.shouldBeCut()){
-							states.addFirst(followup);
-						}
-					}
-				}
+		IParserContext context = new IParserContext() {
+			
+			@Override
+			public void logError(Diagnostic diagnostic) {
+				getErrors().add(diagnostic);
 			}
-
-			if (finishedState == null){
-				if (bestState != null){
-					error("Syntax error: expected "+bestState.expectedItem()+" here: \""+bestState.followupText(20)+"...\"", data, bestState.getIndex());
-				}else{
-					error("Syntax error!");
-				}
-				return;
+			
+			@Override
+			public void logError(Exception e) {
+				getErrors().add(new ParsingError(e.getMessage(), ""));
 			}
+			
+			@Override
+			public IProgressMonitor getMonitor() {
+				return new NullProgressMonitor();
+			}
+		};
+		
+		IParser parser = new GenericParser(syntax);
+		IParserInput input = new StringInput(data, parser.getGrammar().terminals(), context);
 
-			finishedState.buildModel(this);
-			//Activator.getCache().save(this);
-		//}
+		List<IModelBuildStep> modelbuild = parser.parse(input, context, l+1);
+		
+		ModelBuilder builder = new ModelBuilder(new DefaultFeatureResolver());
+		builder.buildModel(this, modelbuild);
 	}
 	
 	
