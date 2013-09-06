@@ -15,6 +15,7 @@ import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.Task;
 import org.apache.tools.ant.types.FileList;
 import org.apache.tools.ant.types.FileSet;
+import org.apache.tools.ant.types.Resource;
 import org.apache.tools.ant.types.ResourceCollection;
 import org.apache.tools.ant.types.resources.FileResource;
 import org.apache.tools.ant.types.resources.Union;
@@ -63,7 +64,17 @@ public class ModuleLinkerTask extends Task{
         resources = resources == null ? new Union() : resources;
         resources.add(rc);
     }
-
+    
+    private File toFile(Object resource){
+    	if (resource instanceof FileResource){
+    		return ((FileResource) resource).getFile();
+    	}
+    	if (resource instanceof Resource){
+    		return new File(((Resource) resource).getName());
+    	}
+    	return null;
+    }
+    
     @Override
     public void execute() throws BuildException {
     	if (output == null) throw new BuildException("output is a required attribute");
@@ -74,14 +85,18 @@ public class ModuleLinkerTask extends Task{
     	try {
 			SequentialBehaviorLinker linker = new SequentialBehaviorLinker();
 			Iterator<?> iterator = resources.iterator();
+			int count = 0;
 			while(iterator.hasNext()){
+				count++;
 				Object o = iterator.next();
-				if (o instanceof FileResource){
-					File file = ((FileResource) o).getFile();
+				File file = toFile(o);
+				if (file != null){
 					SequentialBehaviorModule module = TaskUtils.loadInput(rs, file, SequentialBehaviorModule.class);
 					linker.addModule(module);
 				}
 			}
+			
+			if (count == 0) throw new BuildException("Linker input is empty!");
 			
 			if (TaskUtils.checkModificationTime("Linking "+output, rs, output)){
 				RootSequentialBehavior sb = linker.link(entry);

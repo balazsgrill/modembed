@@ -58,6 +58,10 @@ operation set(dest: uint8@BRAM, v: uint8@BRAM){
 	MOVFF(v, dest);
 }
 
+operation set(dest: boolean@BRAM, v: boolean@BRAM){
+	MOVFF(v, dest);
+}
+
 operation equals(dest: boolean@BRAM, v1: uint8@BRAM, v2: uint8){
 	MOVLB(v1->bank);
 	MOVF(v1, 0, 0);

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>example.uart.loopback</name>
+	<comment></comment>
+	<projects>
+		<project>e.core</project>
+		<project>microchip.pic18</project>
+		<project>microchip.PIC18F14K50</project>
+	</projects>
+	<buildSpec>
+	</buildSpec>
+	<natures>
+		<nature>hu.modembed.ui.nature</nature>
+	</natures>
+</projectDescription>

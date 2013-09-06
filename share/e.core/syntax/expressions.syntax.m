@@ -6,6 +6,7 @@ import type.syntax;
 terminal OP_ADD "\+";
 terminal OP_MULTIPLY "\*";
 terminal OP_MINUS "-";
+terminal OP_NOT "!";
 
 terminal OP_LSHIFT "<<";
 terminal OP_RSHIFT ">>";
@@ -66,6 +67,7 @@ terminal OP_INDEX_CLOSE "\]";
 <Expression2> :- <Expression1>;
 <Expression2> :- {"http://modembed.hu/infrastructure/expressions#OperationExpression" <E2> arguments=<Expression2> };
 <E2> :- OP_MINUS operation="minus";
+<E2> :- OP_NOT operation="not";
 
 /* Postfix expressions */
 <Expression1> :- <Expression0>;

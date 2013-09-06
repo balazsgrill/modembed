@@ -84,6 +84,16 @@ public class ModuleCompilerTask extends Task {
 		}
     }
     
+    private File toFile(Object resource){
+    	if (resource instanceof FileResource){
+    		return ((FileResource) resource).getFile();
+    	}
+    	if (resource instanceof org.apache.tools.ant.types.Resource){
+    		return new File(((org.apache.tools.ant.types.Resource) resource).getName());
+    	}
+    	return null;
+    }
+    
 	@Override
 	public void execute() throws BuildException {
 		boolean isSingle = (input != null) && (output != null);
@@ -105,8 +115,8 @@ public class ModuleCompilerTask extends Task {
 			Iterator<?> iterator = resources.iterator();
 			while(iterator.hasNext()){
 				Object o = iterator.next();
-				if (o instanceof FileResource){
-					File file = ((FileResource) o).getFile();
+				File file = toFile(o);
+				if (file != null){
 					String fn = file.getName();
 					int i = fn.lastIndexOf('.');
 					if (i != -1){

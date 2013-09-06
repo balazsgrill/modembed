@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="microchip.pic18" default="default">
+
+	<scriptdef language="javascript" name="upper">
+	    <attribute name="string" /> 
+	    <attribute name="to" />
+
+	    project.setProperty( attributes.get( "to" ),
+	                         attributes.get( "string" ).toUpperCase() );
+	</scriptdef>
+	<scriptdef language="javascript" name="lower">
+		<attribute name="string" /> 
+		<attribute name="to" />
+
+		project.setProperty( attributes.get( "to" ),
+		                     attributes.get( "string" ).toLowerCase() );
+	</scriptdef>
+	
+	<macrodef name="modembed.pic18.compile">
+		<attribute name="target"/>
+		<attribute name="config"/>
+		<attribute name="output"/>
+		<element name="modules" implicit="true"/>
+		<sequential>
+			<upper string="@{target}" to="target.upper" />
+			<lower string="@{target}" to="target.lower" />
+			<echo message="Compiling for ${target.upper}" />
+			<eclipse.convertPath resourcepath="microchip.${target.upper}" property="targetProject"/>
+			<mkdir dir="@{output}"/>
+			<union id="moduleFiles">
+				<modules/>
+			</union>
+			<modembed.compile targetdir="@{output}">
+				<resources refid="moduleFiles"/>
+			</modembed.compile>
+			<modembed.link output="@{output}/@{target}.program.xmi" entry="main">
+				<union>
+					<mappedresources>
+						<resources refid="moduleFiles"/>
+						<chainedmapper>
+							<flattenmapper />
+							<globmapper from="*.m" to="${basedir}/@{output}/*.xmi" />
+						</chainedmapper>
+					</mappedresources>
+					<filelist dir="${targetProject}">
+						<file name="${target.upper}.module.m"/>
+					</filelist>
+				</union>
+			</modembed.link>
+			<modembed.map 
+				rules="${targetProject}/${target.upper}.mappingrules.m" 
+				input="@{output}/@{target}.program.xmi" 
+				output="@{output}/@{target}.map.xmi"/>
+			<modembed.translate 
+				input="@{output}/@{target}.program.xmi" 
+				map="@{output}/@{target}.map.xmi" 
+				output="@{output}/@{target}.asm.xmi"/>
+			<modembed.assemble 
+				input="@{output}/@{target}.asm.xmi" 
+				output="@{output}/@{target}.code.hex"/>
+			<modembed.pic.config input="@{config}" output="@{output}/@{target}.config.hex"/>
+			<modembed.hex.merge output="@{output}/@{target}.release.hex">
+				<filelist dir="@{output}">
+					<file name="@{target}.code.hex"/>
+					<file name="@{target}.config.hex"/>
+				</filelist>
+			</modembed.hex.merge>
+		</sequential>
+	</macrodef>
+
+	<target name="default">
+		<fail message="This file shall not be used by itself!"/>
+	</target>
+	
+</project>

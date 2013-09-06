@@ -64,7 +64,7 @@ terminal OP_CMP_LTE "<=";
 
 <Operation> :- KW_LOOP {"http://modembed.hu/structured#LoopOperation" <LoopEntry>? body=<Operation> <LoopExit>? };
 <LoopEntry> :- KW_WHILE entryCondition=<Expression>;
-<LoopExit> :- KW_UNTIL exitCondition=<Expression>;
+<LoopExit> :- KW_UNTIL exitCondition=<Expression> OPERATOR_SEMICOLON ;
 
 <Operation> :- {"http://modembed.hu/structured#ExpressionOperation" expression=<Expression> } OPERATOR_SEMICOLON;
 
