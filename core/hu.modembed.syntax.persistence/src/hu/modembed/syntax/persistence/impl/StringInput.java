@@ -66,6 +66,7 @@ public class StringInput implements IParserInput {
 
 	@Override
 	public String substring(int begin, int end) {
+		end = Math.min(end, data.length());
 		return data.substring(begin, end);
 	}
 	

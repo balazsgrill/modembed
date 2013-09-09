@@ -116,6 +116,7 @@ public class GenericSyntaxResource extends ResourceImpl {
 			}
 		};
 		
+		//IParser parser = new EarleyParser(syntax);
 		IParser parser = new GenericParser(syntax);
 		IParserInput input = new StringInput(data, parser.getGrammar().terminals(), context);
 

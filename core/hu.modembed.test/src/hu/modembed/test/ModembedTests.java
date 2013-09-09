@@ -150,6 +150,7 @@ public class ModembedTests {
 		if (target != null){
 			runner.setExecutionTargets(new String[]{target});
 		}
+		runner.addBuildLogger("org.apache.tools.ant.DefaultLogger");
 		runner.run();
 		project.refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
 	}
