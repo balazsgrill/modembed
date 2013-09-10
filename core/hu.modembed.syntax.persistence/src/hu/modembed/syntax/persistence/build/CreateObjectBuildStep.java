@@ -78,8 +78,10 @@ public class CreateObjectBuildStep implements IModelBuildStep {
 		
 		if (eobject instanceof MODembedElement){
 			TextOrigin origin = TraceabilityFactory.eINSTANCE.createTextOrigin();
-			origin.setLine(builder.getInput().getLineAndColumn(position)[0]);
+			int[] lc = builder.getInput().getLineAndColumn(position);
+			origin.setLine(lc[0]);
 			((MODembedElement) eobject).getOrigins().add(origin);
+			origin.setFileName("position: "+lc[0]+":"+lc[1]);
 		}
 		
 		if (feature != null){

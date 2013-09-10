@@ -23,7 +23,7 @@ import hu.modembed.syntax.persistence.build.SetFeatureBuildStep;
 import hu.modembed.syntax.persistence.build.SetNextFeature;
 import hu.modembed.syntax.persistence.impl.AppendedList;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedList;
@@ -101,9 +101,20 @@ public class EarleyState {
 	private EarleyState(Rule currentRule, int index, int position, List<IModelBuildStep> steps, int origin) {
 		this.currentRule = currentRule;
 		
-		/* Process any silent rule items */
-		while(isSilent(nextItem(currentRule, index))){
-			RuleItem item = nextItem(currentRule, index);
+		this.index = index;
+		this.position = position;
+		this.steps = steps;
+		this.origin = origin;
+	}
+	
+	public boolean silent(){
+		return isSilent(nextItem(currentRule, index));
+	}
+	
+	public EarleyState consumeSilent(){
+		if (silent()){
+			RuleItem item = getNextItem();
+			List<IModelBuildStep> steps = this.steps;
 			if (item instanceof Pop){
 				steps = new AppendedList<IModelBuildStep>(steps, new PopBuildStep(position));
 			}else
@@ -117,14 +128,9 @@ public class EarleyState {
 			}else{
 				throw new RuntimeException("Unexpected silent element: "+item);
 			}
-			
-			index++;
+			return new EarleyState(currentRule, index+1, position, steps, origin);
 		}
-		
-		this.index = index;
-		this.position = position;
-		this.steps = steps;
-		this.origin = origin;
+		return null;
 	}
 	
 	private static boolean isSilent(RuleItem item){
@@ -182,13 +188,14 @@ public class EarleyState {
 			
 			List<EarleyState> predicted = new LinkedList<EarleyState>();
 			
+			List<IModelBuildStep> steps = Collections.emptyList();
+			
 			if (nonterm.isOptional()){
 				predicted.add(new EarleyState(currentRule, index+1, position, steps, level));
 			}
 			
 			String featurename = nonterm.getFeatureName();
 			
-			List<IModelBuildStep> steps = this.steps;
 			if (featurename != null){
 				steps = new AppendedList<IModelBuildStep>(steps, new SetNextFeature(featurename));
 			}
@@ -211,6 +218,12 @@ public class EarleyState {
 				if (p.prediction()){
 					NonTerminalItem nonterm = ((NonTerminalItem)p.getNextItem());
 					if ((nonterm.getNonTerminal().equals(currentRule.getNonTerminal()))){
+						List<IModelBuildStep> parentSteps = p.steps;
+						List<IModelBuildStep> childSteps = steps;
+						List<IModelBuildStep> steps = new ArrayList<IModelBuildStep>(parentSteps.size()+childSteps.size());
+						steps.addAll(parentSteps);
+						steps.addAll(childSteps);
+						//TODO: lazy-concatenate lists to preserve memory and speed
 						completions.add(new EarleyState(p.getCurrentRule(), p.index+1, position, steps, p.origin));
 						if (nonterm.isMany()){
 							completions.add(new EarleyState(p.getCurrentRule(), p.index, position, steps, p.origin));
@@ -236,8 +249,8 @@ public class EarleyState {
 			if (item instanceof TerminalItem){
 				TerminalItem terminal = (TerminalItem)item;
 				int position = input.bypassHidden(this.position);
+				List<EarleyState> states = new LinkedList<EarleyState>();
 				
-//				System.out.println("Scanning "+terminal.getTerminal().getName()+" here: '"+input.substring(position, position+20)+"..");
 				TerminalMatch match = input.match(terminal.getTerminal(), position);
 				if (match != null){
 				
@@ -248,18 +261,17 @@ public class EarleyState {
 					}
 					
 					int length = match.size;
-					EarleyState nextState = new EarleyState(currentRule, index+1, position+length, steps, origin);
+					states.add(new EarleyState(currentRule, index+1, position+length, steps, origin));
 					if (terminal.isMany()){
-						return Arrays.asList(nextState,
-								new EarleyState(currentRule, index, position+length, steps, origin)
-								);
-					}else{
-						return Collections.singletonList(nextState);
+						states.add(new EarleyState(currentRule, index, position+length, steps, origin));
 					}
 					
-				}else if (terminal.isOptional()){
-					return Collections.singletonList(new EarleyState(currentRule, index+1, position, steps, origin));
 				}
+				if (terminal.isOptional()){
+					states.add(new EarleyState(currentRule, index+1, position, steps, origin));
+				}
+				
+				return states;
 			}
 		}
 		return Collections.emptyList();

@@ -96,6 +96,10 @@ public class EarleyParser implements IParser {
 					for(EarleyState s : state.complete(table)){
 						table.get(currentLevel).add(s);
 					}
+				}else
+				if (state.silent()){
+					EarleyState s = state.consumeSilent();
+					if (s != null) table.get(currentLevel).add(s);
 				}
 				
 			}

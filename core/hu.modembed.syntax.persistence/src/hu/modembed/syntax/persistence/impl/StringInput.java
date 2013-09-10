@@ -98,12 +98,12 @@ public class StringInput implements IParserInput {
 	
 	@Override
 	public int[] getLineAndColumn(int index) {
-		int line = 0;
+		int line = 1;
 		int last = 0;
 		Pattern p = Pattern.compile("\n");
 		Matcher m = p.matcher(data);
 		while(m.find()){
-			int pos = m.start();
+			int pos = m.end();
 			if (pos <= index){
 				line++;
 				last = pos;
