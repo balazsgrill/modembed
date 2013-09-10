@@ -14,12 +14,9 @@ import hu.modembed.syntax.persistence.IParserInput;
 import hu.modembed.syntax.persistence.build.IModelBuildStep;
 import hu.modembed.syntax.persistence.impl.Grammar;
 
-import java.util.Collection;
-import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
-import java.util.Set;
 
 /**
  * @author balazs.grill
@@ -56,98 +53,59 @@ public class EarleyParser implements IParser {
 	public List<IModelBuildStep> parse(IParserInput input,
 			IParserContext context, int start) {
 
-		Set<EarleyState> currentSet = new HashSet<EarleyState>();
-		Queue<EarleyState> current = new LinkedList<EarleyState>();  
-		current.add(EarleyState.create(startRule, start));
-		Queue<EarleyState> next = new LinkedList<EarleyState>();
-		Set<EarleyState> nextSet = new HashSet<EarleyState>();
-
-		EarleyState finished = null;
+		ParserTable table = new ParserTable();
+		int currentLevel = 0;
+		table.get(currentLevel).add(EarleyState.create(startRule, start));
 		
-		while(finished == null && !current.isEmpty()){
+		boolean done = false;
+		List<EarleyState> finished = new LinkedList<EarleyState>();
+		
+		while(!done){
 			
-			EarleyState state = current.poll();
+			Queue<EarleyState> queue = table.get(currentLevel).getQueue();
+			done = queue.isEmpty();
+			System.out.println("---StartLevel "+currentLevel +" ("+input.length()+")");
 			
-			if (state.isCompleted()){
-				int consumed = state.getPosition();
-				consumed = input.bypassHidden(consumed);
-				if (consumed == input.length()){
-					finished = state; //Parser consumed whole input
-				}else{
-					//Finished early, drop
-				}
-			}else if (state.prediction()){
-				for(EarleyState s : state.predict(grammar)){
-					if (!currentSet.contains(s)){
-						current.add(s);
-						currentSet.add(s);
+			while(!queue.isEmpty()){
+				
+				EarleyState state = queue.poll();
+				System.out.println("Considering: "+ state);
+				
+				if (state.isCompleted()){
+					int consumed = state.getPosition();
+					consumed = input.bypassHidden(consumed);
+					if (consumed == input.length()){
+						finished.add(state);
+					}
+				}else
+				if (state.prediction()){
+					for(EarleyState s : state.predict(currentLevel, grammar)){
+						table.get(currentLevel).add(s);
+					}
+				}else
+				if (state.scanning()){
+					int scan =0;
+					for(EarleyState s : state.scan(input, grammar)){
+						int level = (s.getPosition() > state.getPosition()) ? 1 : 0;
+						table.get(currentLevel+level).add(s);
+						scan++;
+					}
+					System.out.println("Scanned: "+scan+" {"+input.substring(state.getPosition(), state.getPosition()+20));
+				}else
+				if (state.completion()){
+					for(EarleyState s : state.complete(table)){
+						table.get(currentLevel).add(s);
 					}
 				}
-			}else if (state.scanning()){
-				for(EarleyState s : state.scan(input, grammar)){
-					if (!nextSet.contains(s)){
-						next.add(s);
-						nextSet.add(s);
-					}
-				}
-			}else if (state.completion()){
-				for(EarleyState s : state.complete()){
-					if (!currentSet.contains(s)){
-						current.add(s);
-						currentSet.add(s);
-					}
-				}
+				
 			}
+			table.get(currentLevel).queueFinished();
+			currentLevel++;
 			
-			if (current.isEmpty()){
-				current = next;
-				next = new LinkedList<EarleyState>();
-				currentSet = nextSet;
-				nextSet = new HashSet<EarleyState>();
-			}
-			
-		}		
-		return finished == null ? null : finished.getSteps();
-	}
-	
-	private Collection<EarleyState> predict(Collection<EarleyState> states){
-		Collection<EarleyState> newStates = createCollection();
-		for(EarleyState s : states){
-			if (s.prediction()){
-				newStates.addAll(s.predict(grammar));
-			}else{
-				newStates.add(s);
-			}
 		}
-		return newStates;
+		
+		
+		return finished.isEmpty() ? null : finished.get(0).getSteps();
 	}
-	
-	private Collection<EarleyState> scan(Collection<EarleyState> states, IParserInput input){
-		Collection<EarleyState> newStates = createCollection();
-		for(EarleyState s : states){
-			if (s.scanning()){
-				newStates.addAll(s.scan(input, grammar));
-			}else{
-				newStates.add(s);
-			}
-		}
-		return newStates;
-	}
-	
-	private Collection<EarleyState> complete(Collection<EarleyState> states){
-		Collection<EarleyState> newStates = createCollection();
-		for(EarleyState s : states){
-			if (s.completion()){
-				newStates.addAll(s.complete());
-			}else{
-				newStates.add(s);
-			}
-		}
-		return newStates;
-	}
-	
-	private static Collection<EarleyState> createCollection(){
-		return new HashSet<EarleyState>();
-	}
-	
+
 }

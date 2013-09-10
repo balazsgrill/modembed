@@ -3,6 +3,9 @@
  */
 package hu.modembed.syntax.persistence.build;
 
+import hu.modembed.model.modembed.infrastructure.MODembedElement;
+import hu.modembed.model.modembed.infrastructure.traceability.TextOrigin;
+import hu.modembed.model.modembed.infrastructure.traceability.TraceabilityFactory;
 import hu.modembed.syntax.persistence.ParsingError;
 
 import java.util.Collections;
@@ -25,10 +28,12 @@ public class CreateObjectBuildStep implements IModelBuildStep {
 
 	private final String EClassURI;
 	private final String feature;
+	private final int position;
 	
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
+		sb.append("[");sb.append(position);sb.append("]");
 		if (feature != null){
 			sb.append(feature);
 			sb.append("=");
@@ -38,9 +43,15 @@ public class CreateObjectBuildStep implements IModelBuildStep {
 		return sb.toString();
 	}
 	
-	public CreateObjectBuildStep(String EClassURI, String feature) {
+	@Override
+	public int position() {
+		return position;
+	}
+	
+	public CreateObjectBuildStep(String EClassURI, String feature, int position) {
 		this.EClassURI = EClassURI;
 		this.feature = feature;
+		this.position = position;
 	}
 	
 	/* (non-Javadoc)
@@ -63,6 +74,12 @@ public class CreateObjectBuildStep implements IModelBuildStep {
 		if (feature == null){
 			feature = builder.getNextFeature();
 			builder.setNextFeature(null);
+		}
+		
+		if (eobject instanceof MODembedElement){
+			TextOrigin origin = TraceabilityFactory.eINSTANCE.createTextOrigin();
+			origin.setLine(builder.getInput().getLineAndColumn(position)[0]);
+			((MODembedElement) eobject).getOrigins().add(origin);
 		}
 		
 		if (feature != null){

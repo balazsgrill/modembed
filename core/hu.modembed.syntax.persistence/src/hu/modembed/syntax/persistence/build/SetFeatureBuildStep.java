@@ -23,15 +23,22 @@ public class SetFeatureBuildStep implements IModelBuildStep {
 
 	private final String feature;
 	private final IStringValue match;
+	private final int position;
 	
 	@Override
 	public String toString() {
 		return feature+"=["+match.getOriginalValue()+"]";
 	}
 	
-	public SetFeatureBuildStep(String feature, IStringValue match) {
+	public SetFeatureBuildStep(String feature, IStringValue match, int position) {
 		this.feature = feature;
 		this.match = match;
+		this.position = position;
+	}
+	
+	@Override
+	public int position() {
+		return position;
 	}
 	
 	/* (non-Javadoc)

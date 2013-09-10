@@ -9,7 +9,7 @@ import hu.modembed.syntax.persistence.build.IModelBuildStep;
 import hu.modembed.syntax.persistence.build.ModelBuilder;
 import hu.modembed.syntax.persistence.impl.DefaultFeatureResolver;
 import hu.modembed.syntax.persistence.impl.StringInput;
-import hu.modembed.syntax.persistence.naive.GenericParser;
+import hu.modembed.syntax.persistence.impl.earley.EarleyParser;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -116,13 +116,17 @@ public class GenericSyntaxResource extends ResourceImpl {
 			}
 		};
 		
-		//IParser parser = new EarleyParser(syntax);
-		IParser parser = new GenericParser(syntax);
+		IParser parser = new EarleyParser(syntax);
+		//IParser parser = new GenericParser(syntax);
 		IParserInput input = new StringInput(data, parser.getGrammar().terminals(), context);
 
 		List<IModelBuildStep> modelbuild = parser.parse(input, context, l+1);
 		
-		ModelBuilder builder = new ModelBuilder(new DefaultFeatureResolver());
+		for(IModelBuildStep step : modelbuild){
+			System.out.println(step);
+		}
+		
+		ModelBuilder builder = new ModelBuilder(new DefaultFeatureResolver(), input);
 		builder.buildModel(this, modelbuild);
 	}
 	

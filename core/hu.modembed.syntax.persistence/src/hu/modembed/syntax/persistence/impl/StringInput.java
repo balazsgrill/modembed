@@ -15,6 +15,8 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.eclipse.core.runtime.Assert;
+
 /**
  * @author balazs.grill
  *
@@ -52,6 +54,7 @@ public class StringInput implements IParserInput {
 	@Override
 	public TerminalMatch match(Terminal terminal, int index) {
 		Pattern pattern = terminals.get(terminal);
+		Assert.isNotNull(pattern, "Terminal is unknown: "+terminal);
 		Matcher matcher = pattern.matcher(data);
 		matcher.region(index, data.length());
 		if (matcher.lookingAt()){

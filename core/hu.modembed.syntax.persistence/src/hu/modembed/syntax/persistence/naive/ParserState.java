@@ -92,7 +92,7 @@ public class ParserState {
 		List<IModelBuildStep> steps = modelBuild;
 		if (terminal.getFeatureName() != null){
 			steps = new AppendedList<IModelBuildStep>(
-					steps, new SetFeatureBuildStep(terminal.getFeatureName(), match));
+					steps, new SetFeatureBuildStep(terminal.getFeatureName(), match, match.position));
 		}
 		int newindex = index+match.size;
 		return new ParserState(parser, data, newindex, grammarStack, steps);
@@ -193,17 +193,17 @@ public class ParserState {
 		if (grammarItem instanceof Push){
 			Push push = (Push)grammarItem;
 			//Push model
-			followups.add(removeFirst().addBuildStep(new CreateObjectBuildStep(push.getEclassURI(), push.getFeatureName())));
+			followups.add(removeFirst().addBuildStep(new CreateObjectBuildStep(push.getEclassURI(), push.getFeatureName(), index)));
 		}
 		if (grammarItem instanceof Pop){
 			//Pop model
-			followups.add(removeFirst().addBuildStep(new PopBuildStep()));
+			followups.add(removeFirst().addBuildStep(new PopBuildStep(index)));
 		}
 		if (grammarItem instanceof SetValue){
 			//Set value to constant
 			String featureName = ((SetValue) grammarItem).getFeatureName();
 			String value = ((SetValue) grammarItem).getValue();
-			followups.add(removeFirst().addBuildStep(new SetFeatureBuildStep(featureName, new StringValue(value))));
+			followups.add(removeFirst().addBuildStep(new SetFeatureBuildStep(featureName, new StringValue(value), index)));
 		}
 		
 		return followups;

@@ -18,9 +18,20 @@ import org.eclipse.emf.ecore.resource.Resource.Diagnostic;
  */
 public class PopBuildStep implements IModelBuildStep{
 
+	private final int position;
+	
+	public PopBuildStep(int position) {
+		this.position = position;
+	}
+	
+	@Override
+	public int position() {
+		return position;
+	}
+	
 	@Override
 	public String toString() {
-		return "}";
+		return "["+position+"]}";
 	}
 	
 	@Override

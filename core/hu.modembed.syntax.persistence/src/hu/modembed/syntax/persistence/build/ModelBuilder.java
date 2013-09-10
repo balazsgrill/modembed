@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.Resource.Diagnostic;
 
 import hu.modembed.syntax.persistence.IFeatureResolver;
+import hu.modembed.syntax.persistence.IParserInput;
 import hu.modembed.syntax.persistence.ParsingError;
 
 /**
@@ -56,9 +57,15 @@ public class ModelBuilder {
 	private String nextFeature = null;
 	private final IFeatureResolver resolver;
 	private final List<CrossReference> references = new LinkedList<CrossReference>();
+	private final IParserInput input;
 	
-	public ModelBuilder(IFeatureResolver resolver) {
+	public ModelBuilder(IFeatureResolver resolver, IParserInput input) {
 		this.resolver = resolver;
+		this.input = input;
+	}
+	
+	public IParserInput getInput() {
+		return input;
 	}
 	
 	public IFeatureResolver getResolver() {

@@ -10,6 +10,7 @@ import hu.modembed.syntax.Rule;
 import hu.modembed.syntax.RuleItem;
 import hu.modembed.syntax.SetValue;
 import hu.modembed.syntax.SyntaxItem;
+import hu.modembed.syntax.Terminal;
 import hu.modembed.syntax.TerminalItem;
 import hu.modembed.syntax.persistence.IGrammar;
 import hu.modembed.syntax.persistence.IParserInput;
@@ -43,10 +44,10 @@ public class EarleyState {
 	/* Current position in input */
 	private final int position;
 	private final List<IModelBuildStep> steps;
-	private final EarleyState origin;
+	private final int origin;
 	
 	public static EarleyState create(Rule startRule, int startPosition){
-		return new EarleyState(startRule, 0, startPosition, Collections.<IModelBuildStep>emptyList(), null);
+		return new EarleyState(startRule, 0, startPosition, Collections.<IModelBuildStep>emptyList(), -1);
 	}
 	
 	@Override
@@ -61,9 +62,7 @@ public class EarleyState {
 			if (other.position != position) return false;
 			if (other.index != index) return false;
 			if (!currentRule.equals(other.currentRule)) return false;
-			//return true;
-			if (origin == null) return other.origin == null;
-			return origin.equals(other.origin);
+			return other.origin == origin;
 		}
 		return super.equals(obj);
 	}
@@ -83,7 +82,12 @@ public class EarleyState {
 				sb.append("<");sb.append(((NonTerminalItem) item).getNonTerminal());sb.append("> ");
 			}
 			if (item instanceof TerminalItem){
-				sb.append(((TerminalItem) item).getTerminal().getName());
+				Terminal term = ((TerminalItem) item).getTerminal();
+				if (term == null){
+					sb.append("[UNKNOWN TERMINAL]");
+				}else{
+					sb.append(term.getName());
+				}
 				sb.append(" ");
 			}
 			index++;
@@ -94,22 +98,22 @@ public class EarleyState {
 	/**
 	 * 
 	 */
-	private EarleyState(Rule currentRule, int index, int position, List<IModelBuildStep> steps, EarleyState origin) {
+	private EarleyState(Rule currentRule, int index, int position, List<IModelBuildStep> steps, int origin) {
 		this.currentRule = currentRule;
 		
 		/* Process any silent rule items */
 		while(isSilent(nextItem(currentRule, index))){
 			RuleItem item = nextItem(currentRule, index);
 			if (item instanceof Pop){
-				steps = new AppendedList<IModelBuildStep>(steps, new PopBuildStep());
+				steps = new AppendedList<IModelBuildStep>(steps, new PopBuildStep(position));
 			}else
 			if (item instanceof Push){
 				Push push = (Push)item;
-				steps = new AppendedList<IModelBuildStep>(steps, new CreateObjectBuildStep(push.getEclassURI(), push.getFeatureName()));
+				steps = new AppendedList<IModelBuildStep>(steps, new CreateObjectBuildStep(push.getEclassURI(), push.getFeatureName(), position));
 			}else
 			if (item instanceof SetValue){
 				SetValue setValue = (SetValue)item;
-				steps = new AppendedList<IModelBuildStep>(steps, new SetFeatureBuildStep(setValue.getFeatureName(), new StringValue(setValue.getValue())));
+				steps = new AppendedList<IModelBuildStep>(steps, new SetFeatureBuildStep(setValue.getFeatureName(), new StringValue(setValue.getValue()), position));
 			}else{
 				throw new RuntimeException("Unexpected silent element: "+item);
 			}
@@ -143,7 +147,7 @@ public class EarleyState {
 		return steps;
 	}
 	
-	public EarleyState getOrigin() {
+	public int getOrigin() {
 		return origin;
 	}
 
@@ -171,7 +175,7 @@ public class EarleyState {
 		return !completion() && !prediction();
 	}
 	
-	public List<EarleyState> predict(IGrammar grammar){
+	public List<EarleyState> predict(int level, IGrammar grammar){
 		RuleItem next = getNextItem();
 		if (next instanceof NonTerminalItem){
 			NonTerminalItem nonterm = (NonTerminalItem)next;
@@ -179,7 +183,7 @@ public class EarleyState {
 			List<EarleyState> predicted = new LinkedList<EarleyState>();
 			
 			if (nonterm.isOptional()){
-				predicted.add(new EarleyState(currentRule, index+1, position, steps, origin));
+				predicted.add(new EarleyState(currentRule, index+1, position, steps, level));
 			}
 			
 			String featurename = nonterm.getFeatureName();
@@ -191,32 +195,38 @@ public class EarleyState {
 			Collection<Rule> rules = grammar.getRule(((NonTerminalItem) next).getNonTerminal());
 			
 			for(Rule rule : rules){
-				predicted.add(new EarleyState(rule, 0, position, steps, this));
+				predicted.add(new EarleyState(rule, 0, position, steps, level));
 			}
 			return predicted;
 		}
 		return Collections.emptyList();
 	}
 	
-	public List<EarleyState> complete(){
-		if (completion() && origin != null){
-			EarleyState completed = new EarleyState(origin.currentRule, origin.index+1, position, steps, origin.origin);
-			RuleItem ri = origin.getNextItem();
-			if (ri instanceof NonTerminalItem){
-				if (((NonTerminalItem) ri).isMany()){
-					return Arrays.asList(completed,
-							new EarleyState(origin.currentRule, origin.index, position, steps, origin.origin)
-							);
+	public List<EarleyState> complete(ParserTable table){
+		if (completion() && origin != -1){
+			List<EarleyState> completions = new LinkedList<EarleyState>();
+			ParserLevel originLevel = table.get(origin);
+			
+			for(EarleyState p : originLevel.getStates()){
+				if (p.prediction()){
+					NonTerminalItem nonterm = ((NonTerminalItem)p.getNextItem());
+					if ((nonterm.getNonTerminal().equals(currentRule.getNonTerminal()))){
+						completions.add(new EarleyState(p.getCurrentRule(), p.index+1, position, steps, p.origin));
+						if (nonterm.isMany()){
+							completions.add(new EarleyState(p.getCurrentRule(), p.index, position, steps, p.origin));
+						}
+					}
 				}
+				
 			}
 			
-			return Collections.singletonList(completed);
+			return completions;
 		}
 		return Collections.emptyList();
 	}
 	
 	public boolean isCompleted(){
-		return completion() && origin == null;
+		return completion() && origin == -1;
 	}
 	
 	public List<EarleyState> scan(IParserInput input, IGrammar grammar){
@@ -234,7 +244,7 @@ public class EarleyState {
 					List<IModelBuildStep> steps = this.steps;
 					String feature = terminal.getFeatureName();
 					if (feature != null){
-						steps = new AppendedList<IModelBuildStep>(steps, new SetFeatureBuildStep(feature, match));
+						steps = new AppendedList<IModelBuildStep>(steps, new SetFeatureBuildStep(feature, match, match.position));
 					}
 					
 					int length = match.size;
