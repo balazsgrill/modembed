@@ -17,13 +17,15 @@ public class ParserLevel {
 	private final Set<EarleyState> states = new LinkedHashSet<EarleyState>();
 	private Queue<EarleyState> queue = null;
 	
-	public void add(EarleyState state){
+	public boolean add(EarleyState state){
 		if (!states.contains(state)){
 			states.add(state);
 			if (queue != null){
 				queue.add(state);
 			}
+			return true;
 		}
+		return false;
 	}
 
 	public Queue<EarleyState> getQueue(){

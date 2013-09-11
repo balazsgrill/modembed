@@ -22,8 +22,8 @@ import hu.modembed.syntax.persistence.build.PopBuildStep;
 import hu.modembed.syntax.persistence.build.SetFeatureBuildStep;
 import hu.modembed.syntax.persistence.build.SetNextFeature;
 import hu.modembed.syntax.persistence.impl.AppendedList;
+import hu.modembed.syntax.persistence.impl.ConcatenatedList;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedList;
@@ -89,6 +89,15 @@ public class EarleyState {
 					sb.append(term.getName());
 				}
 				sb.append(" ");
+			}
+			if (item instanceof Push){
+				sb.append("{ ");
+			}
+			if (item instanceof Pop){
+				sb.append("} ");
+			}
+			if (item instanceof SetValue){
+				sb.append("#SETVALUE# ");
 			}
 			index++;
 		}
@@ -178,7 +187,7 @@ public class EarleyState {
 	}
 	
 	public boolean scanning(){
-		return !completion() && !prediction();
+		return getNextItem() instanceof TerminalItem;
 	}
 	
 	public List<EarleyState> predict(int level, IGrammar grammar){
@@ -188,11 +197,10 @@ public class EarleyState {
 			
 			List<EarleyState> predicted = new LinkedList<EarleyState>();
 			
-			List<IModelBuildStep> steps = Collections.emptyList();
-			
 			if (nonterm.isOptional()){
 				predicted.add(new EarleyState(currentRule, index+1, position, steps, level));
 			}
+			List<IModelBuildStep> steps = Collections.emptyList();
 			
 			String featurename = nonterm.getFeatureName();
 			
@@ -220,10 +228,7 @@ public class EarleyState {
 					if ((nonterm.getNonTerminal().equals(currentRule.getNonTerminal()))){
 						List<IModelBuildStep> parentSteps = p.steps;
 						List<IModelBuildStep> childSteps = steps;
-						List<IModelBuildStep> steps = new ArrayList<IModelBuildStep>(parentSteps.size()+childSteps.size());
-						steps.addAll(parentSteps);
-						steps.addAll(childSteps);
-						//TODO: lazy-concatenate lists to preserve memory and speed
+						List<IModelBuildStep> steps = new ConcatenatedList<IModelBuildStep>(parentSteps, childSteps);
 						completions.add(new EarleyState(p.getCurrentRule(), p.index+1, position, steps, p.origin));
 						if (nonterm.isMany()){
 							completions.add(new EarleyState(p.getCurrentRule(), p.index, position, steps, p.origin));

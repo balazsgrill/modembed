@@ -31,6 +31,7 @@ public class EarleyParser implements IParser {
 	 * 
 	 */
 	public EarleyParser(SyntaxModel syntax) {
+		//this.grammar = new FlattenedGrammar(syntax);
 		this.grammar = new Grammar(syntax);
 		startRule = SyntaxFactory.eINSTANCE.createRule();
 		NonTerminalItem nonterm = SyntaxFactory.eINSTANCE.createNonTerminalItem();
@@ -64,18 +65,20 @@ public class EarleyParser implements IParser {
 			
 			Queue<EarleyState> queue = table.get(currentLevel).getQueue();
 			done = queue.isEmpty();
-			System.out.println("---StartLevel "+currentLevel +" ("+input.length()+")");
+//			System.out.println("---StartLevel "+currentLevel +" ("+input.length()+")");
 			
 			while(!queue.isEmpty()){
 				
 				EarleyState state = queue.poll();
-				System.out.println("Considering: "+ state);
+//				System.out.println("Considering: "+ state);
 				
 				if (state.isCompleted()){
 					int consumed = state.getPosition();
 					consumed = input.bypassHidden(consumed);
 					if (consumed == input.length()){
 						finished.add(state);
+					}else{
+//						System.out.println("Early finish, dropped: "+consumed);
 					}
 				}else
 				if (state.prediction()){
@@ -84,22 +87,26 @@ public class EarleyParser implements IParser {
 					}
 				}else
 				if (state.scanning()){
-					int scan =0;
+//					int scan =0;
 					for(EarleyState s : state.scan(input, grammar)){
 						int level = (s.getPosition() > state.getPosition()) ? 1 : 0;
 						table.get(currentLevel+level).add(s);
-						scan++;
+//						scan++;
 					}
-					System.out.println("Scanned: "+scan+" {"+input.substring(state.getPosition(), state.getPosition()+20));
+//					System.out.println("Scanned: "+scan+" {"+input.substring(state.getPosition(), state.getPosition()+20));
 				}else
 				if (state.completion()){
 					for(EarleyState s : state.complete(table)){
-						table.get(currentLevel).add(s);
+						if (!table.get(currentLevel).add(s)){
+							System.out.println("Dropped completed state: "+s);
+						}
 					}
 				}else
 				if (state.silent()){
 					EarleyState s = state.consumeSilent();
-					if (s != null) table.get(currentLevel).add(s);
+					if (s != null) {
+						table.get(currentLevel).add(s);
+					}
 				}
 				
 			}
@@ -108,6 +115,11 @@ public class EarleyParser implements IParser {
 			
 		}
 		
+		if (finished.isEmpty()){
+			System.out.println("Syntax error");
+		}else{
+			System.out.println("Success!");
+		}
 		
 		return finished.isEmpty() ? null : finished.get(0).getSteps();
 	}
