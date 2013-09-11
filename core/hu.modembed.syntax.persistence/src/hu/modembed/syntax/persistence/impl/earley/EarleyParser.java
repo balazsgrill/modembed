@@ -7,10 +7,12 @@ import hu.modembed.syntax.NonTerminalItem;
 import hu.modembed.syntax.Rule;
 import hu.modembed.syntax.SyntaxFactory;
 import hu.modembed.syntax.SyntaxModel;
+import hu.modembed.syntax.TerminalItem;
 import hu.modembed.syntax.persistence.IGrammar;
 import hu.modembed.syntax.persistence.IParser;
 import hu.modembed.syntax.persistence.IParserContext;
 import hu.modembed.syntax.persistence.IParserInput;
+import hu.modembed.syntax.persistence.ParsingError;
 import hu.modembed.syntax.persistence.build.IModelBuildStep;
 import hu.modembed.syntax.persistence.impl.Grammar;
 
@@ -60,6 +62,7 @@ public class EarleyParser implements IParser {
 		
 		boolean done = false;
 		List<EarleyState> finished = new LinkedList<EarleyState>();
+		EarleyState best = null;
 		
 		while(!done){
 			
@@ -87,6 +90,14 @@ public class EarleyParser implements IParser {
 					}
 				}else
 				if (state.scanning()){
+					if (best == null){
+						best = state;
+					}else{
+						if (best.getPosition() < state.getPosition()){
+							best = state;
+						}
+					}
+					
 //					int scan =0;
 					for(EarleyState s : state.scan(input, grammar)){
 						int level = (s.getPosition() > state.getPosition()) ? 1 : 0;
@@ -117,11 +128,16 @@ public class EarleyParser implements IParser {
 		
 		if (finished.isEmpty()){
 			System.out.println("Syntax error");
+			if (best != null){
+				int[] lc = input.getLineAndColumn(best.getPosition());
+				TerminalItem ti = (TerminalItem)best.getNextItem();
+				context.logError(new ParsingError(ti.getTerminal().getName()+" is expected at "+lc[0]+":"+lc[1], "", lc[0], lc[1]));
+				return best.getSteps();
+			}
+			return null;
 		}else{
-			System.out.println("Success!");
+			return finished.get(0).getSteps();
 		}
-		
-		return finished.isEmpty() ? null : finished.get(0).getSteps();
 	}
 
 }

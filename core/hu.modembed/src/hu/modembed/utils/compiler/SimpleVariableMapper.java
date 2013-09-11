@@ -54,7 +54,7 @@ public class SimpleVariableMapper {
 
 					if (currentAddress + size > currentEnd){
 						currentRule++;
-						if (ruleList.size() > currentRule){
+						if (ruleList.size() >= currentRule){
 							throw new RuntimeException("Symbols do not fit in memory!");
 						}else{
 							currentAddress = ruleList.get(currentRule).getStartAddress();

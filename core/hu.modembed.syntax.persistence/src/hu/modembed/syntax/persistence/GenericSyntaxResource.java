@@ -122,8 +122,10 @@ public class GenericSyntaxResource extends ResourceImpl {
 
 		List<IModelBuildStep> modelbuild = parser.parse(input, context, l+1);
 		
-		ModelBuilder builder = new ModelBuilder(new DefaultFeatureResolver(), input);
-		builder.buildModel(this, modelbuild);
+		if (modelbuild != null){
+			ModelBuilder builder = new ModelBuilder(new DefaultFeatureResolver(), input);
+			builder.buildModel(this, modelbuild);
+		}
 	}
 	
 	
