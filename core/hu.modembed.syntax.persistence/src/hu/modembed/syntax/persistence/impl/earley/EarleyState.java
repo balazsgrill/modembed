@@ -29,6 +29,7 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.eclipse.core.runtime.Assert;
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -72,6 +73,8 @@ public class EarleyState {
 		StringBuilder sb = new StringBuilder();
 		sb.append("[");
 		sb.append(position);
+		sb.append(":");
+		sb.append(origin);
 		sb.append("] ");
 		int index = 0;
 		for(RuleItem item : currentRule.getBody()){
@@ -101,6 +104,9 @@ public class EarleyState {
 			}
 			index++;
 		}
+		if (this.index == currentRule.getBody().size()){
+			sb.append("@");
+		}
 		return sb.toString();
 	}
 	
@@ -108,6 +114,7 @@ public class EarleyState {
 	 * 
 	 */
 	private EarleyState(Rule currentRule, int index, int position, List<IModelBuildStep> steps, int origin) {
+		Assert.isNotNull(steps);
 		this.currentRule = currentRule;
 		
 		this.index = index;
@@ -198,15 +205,16 @@ public class EarleyState {
 			List<EarleyState> predicted = new LinkedList<EarleyState>();
 			
 			if (nonterm.isOptional()){
-				predicted.add(new EarleyState(currentRule, index+1, position, steps, level));
+				/* Skip prediction */
+				predicted.add(new EarleyState(currentRule, index+1, position, steps, origin));
 			}
 			List<IModelBuildStep> steps = Collections.emptyList();
 			
-			String featurename = nonterm.getFeatureName();
+//			String featurename = nonterm.getFeatureName();
 			
-			if (featurename != null){
-				steps = new AppendedList<IModelBuildStep>(steps, new SetNextFeature(featurename));
-			}
+//			if (featurename != null){
+//				steps = Collections.<IModelBuildStep>singletonList(new SetNextFeature(featurename));
+//			}
 			Collection<Rule> rules = grammar.getRule(((NonTerminalItem) next).getNonTerminal());
 			
 			for(Rule rule : rules){
@@ -228,7 +236,29 @@ public class EarleyState {
 					if ((nonterm.getNonTerminal().equals(currentRule.getNonTerminal()))){
 						List<IModelBuildStep> parentSteps = p.steps;
 						List<IModelBuildStep> childSteps = steps;
-						List<IModelBuildStep> steps = new ConcatenatedList<IModelBuildStep>(parentSteps, childSteps);
+						
+						if (nonterm.getFeatureName() != null){
+							List<IModelBuildStep> setNextFeature = Collections.<IModelBuildStep>singletonList(new SetNextFeature(nonterm.getFeatureName())); 
+							if (childSteps.isEmpty()){
+								childSteps = setNextFeature;
+							}else{
+								childSteps = new ConcatenatedList<IModelBuildStep>(
+									setNextFeature, 
+									childSteps);
+							}
+						}
+						
+						List<IModelBuildStep> steps = null;
+						if (parentSteps.isEmpty()){
+							steps = childSteps;
+						}else if (childSteps.isEmpty()){
+							steps = parentSteps;
+						}else{
+							steps = new ConcatenatedList<IModelBuildStep>(parentSteps, childSteps);
+						}
+						
+						
+						
 						completions.add(new EarleyState(p.getCurrentRule(), p.index+1, position, steps, p.origin));
 						if (nonterm.isMany()){
 							completions.add(new EarleyState(p.getCurrentRule(), p.index, position, steps, p.origin));

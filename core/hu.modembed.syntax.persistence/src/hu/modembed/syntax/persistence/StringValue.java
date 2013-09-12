@@ -31,4 +31,9 @@ public class StringValue implements IStringValue {
 		return value;
 	}
 
+	@Override
+	public int[] getLineAndColumn() {
+		return new int[]{-1,-1};
+	}
+
 }

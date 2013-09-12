@@ -84,6 +84,7 @@ public class CreateObjectBuildStep implements IModelBuildStep {
 			origin.setFileName("position: "+lc[0]+":"+lc[1]);
 		}
 		
+		
 		if (feature != null){
 			EObject container = modelStack.peek();
 			if (container == null){
@@ -104,6 +105,11 @@ public class CreateObjectBuildStep implements IModelBuildStep {
 				list.add(eobject);
 			}else{
 				container.eSet(reference, eobject);
+			}
+		}else{
+			if (!modelStack.isEmpty()){
+				modelStack.push(eobject);
+				return Collections.singletonList(new ParsingError("Grammar error - container is not available for: "+eobject,""));
 			}
 		}
 		modelStack.push(eobject);

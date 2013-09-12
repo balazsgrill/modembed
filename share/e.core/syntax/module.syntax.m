@@ -17,18 +17,9 @@ terminal KW_UNTIL "until";
 terminal KW_RETURN "return";
 terminal KW_IF "if";
 terminal KW_ELSE "else";
-terminal OP_ADD "\+";
-terminal OP_MULTIPLY "\*";
-terminal OP_MINUS "-";
+
 terminal OP_BEGIN "\{";
 terminal OP_END "\}";
-
-terminal OP_CMP_EQ "==";
-terminal OP_CMP_NEQ "!=";
-terminal OP_CMP_GT ">";
-terminal OP_CMP_GTE ">=";
-terminal OP_CMP_LT "<";
-terminal OP_CMP_LTE "<=";
 
 <Module> :- KW_MODULE {"http://modembed.hu/structured#StructuredModule" name=QUALIFIEDID OPERATOR_SEMICOLON <ModuleItem>*? ;
 

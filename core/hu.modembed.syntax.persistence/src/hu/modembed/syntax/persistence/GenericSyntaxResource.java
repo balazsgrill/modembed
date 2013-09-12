@@ -119,12 +119,13 @@ public class GenericSyntaxResource extends ResourceImpl {
 		IParser parser = new EarleyParser(syntax);
 		//IParser parser = new GenericParser(syntax);
 		IParserInput input = new StringInput(data, parser.getGrammar().terminals(), context);
+		//IParserInput input = new TokenizedInput(data, parser.getGrammar().terminals(), context);
 
 		List<IModelBuildStep> modelbuild = parser.parse(input, context, l+1);
 		
 		if (modelbuild != null){
 			ModelBuilder builder = new ModelBuilder(new DefaultFeatureResolver(), input);
-			builder.buildModel(this, modelbuild);
+			getErrors().addAll(builder.buildModel(this, modelbuild));
 		}
 	}
 	

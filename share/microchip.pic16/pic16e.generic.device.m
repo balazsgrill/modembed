@@ -20,8 +20,8 @@ operation getbit(value: uint8@BRAM, bit: uint8, dest: boolean@BRAM){
 	MOVWF(dest);
 }
 
-operation goto(label : label){
-	GOTO(label);
+operation goto(l : label){
+	GOTO(l);
 }
 
 operation setbit(value: uint8@BRAM, bit: uint8, bvalue: boolean){

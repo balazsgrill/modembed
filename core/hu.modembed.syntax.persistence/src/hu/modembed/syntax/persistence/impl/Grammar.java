@@ -13,8 +13,10 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Queue;
 import java.util.Set;
 
 /**
@@ -26,9 +28,7 @@ public class Grammar implements IGrammar {
 	private final List<Terminal> terminals = new ArrayList<Terminal>();
 	private final Map<String, List<Rule>> rules = new LinkedHashMap<String, List<Rule>>();
 	
-	private void process(Set<SyntaxModel> visited, SyntaxModel syntaxModel){
-
-		if (visited.contains(syntaxModel)) return;
+	private void process(SyntaxModel syntaxModel){
 		for(Terminal terminal : syntaxModel.getTerminals()){
 			terminals.add(terminal);
 		}
@@ -41,14 +41,26 @@ public class Grammar implements IGrammar {
 			}
 			ruleList.add(rule);
 		}
-		for(SyntaxModel sm : syntaxModel.getImport()){
-			process(visited, sm);
-		}
 	}
 
 	public Grammar(SyntaxModel syntaxModel) {
 		Set<SyntaxModel> visited = new HashSet<SyntaxModel>();
-		process(visited, syntaxModel);
+		
+		Queue<SyntaxModel> queue = new LinkedList<SyntaxModel>();
+		queue.add(syntaxModel);
+		while(!queue.isEmpty()){
+			
+			SyntaxModel sm = queue.poll();
+			if (!visited.contains(sm)){
+				visited.add(sm);
+				process(sm);
+				
+				queue.addAll(sm.getImport());
+			}
+			
+		}
+		
+		
 	}
 
 	@Override

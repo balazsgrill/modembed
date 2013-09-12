@@ -16,12 +16,14 @@ public class TerminalMatch implements IStringValue{
 	private final String match;
 	public final int position;
 	public final int size;
+	public final IParserInput input;
 	
-	public TerminalMatch(Terminal terminal, String match, int position, int size) {
+	public TerminalMatch(Terminal terminal, IParserInput input, int position, int size) {
 		this.terminal = terminal;
-		this.match = match;
+		this.match = input.substring(position, position+size);
 		this.position = position;
 		this.size = size;
+		this.input = input;
 	}
 	
 	@Override
@@ -43,6 +45,11 @@ public class TerminalMatch implements IStringValue{
 	@Override
 	public String getOriginalValue() {
 		return match;
+	}
+
+	@Override
+	public int[] getLineAndColumn() {
+		return input.getLineAndColumn(position);
 	}
 	
 }

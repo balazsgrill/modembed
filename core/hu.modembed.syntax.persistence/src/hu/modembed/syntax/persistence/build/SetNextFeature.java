@@ -3,6 +3,8 @@
  */
 package hu.modembed.syntax.persistence.build;
 
+import hu.modembed.syntax.persistence.ParsingError;
+
 import java.util.Collections;
 import java.util.Deque;
 import java.util.List;
@@ -38,7 +40,11 @@ public class SetNextFeature implements IModelBuildStep {
 	@Override
 	public List<? extends Diagnostic> apply(ModelBuilder builder,
 			Deque<EObject> modelStack) {
+		String prev = builder.getNextFeature(); 
 		builder.setNextFeature(feature);
+		if (prev != null){
+			return Collections.singletonList(new ParsingError("Feature is overridden from "+prev+" to "+feature, ""));
+		}
 		return Collections.emptyList();
 	}
 

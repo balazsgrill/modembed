@@ -10,12 +10,13 @@ import hu.modembed.syntax.persistence.ParsingError;
 import hu.modembed.syntax.persistence.TerminalMatch;
 
 import java.util.Collection;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import org.eclipse.core.runtime.Assert;
 
 /**
  * @author balazs.grill
@@ -24,6 +25,7 @@ import org.eclipse.core.runtime.Assert;
 public class StringInput implements IParserInput {
 
 	private final Map<Terminal, Pattern> terminals = new LinkedHashMap<Terminal, Pattern>();
+	private final Map<Terminal, Set<Terminal>> overrides = new HashMap<Terminal, Set<Terminal>>();
 	private final String data;
 	
 	/**
@@ -38,6 +40,34 @@ public class StringInput implements IParserInput {
 				context.logError(new ParsingError(e.getMessage(), ""));
 			}
 		}
+		for(Terminal terminal : terminals){
+			Pattern p = this.terminals.get(terminal);
+			Set<Terminal> list = new HashSet<Terminal>();
+			if (p != null){
+				for(Terminal t : terminals) if (!t.equals(terminal)){
+					Matcher m = p.matcher(t.getRegex());
+					if (m.lookingAt() && (m.end()-m.start()) == t.getRegex().length()){
+						//t is a constant instance of terminal
+						list.add(t);
+					}
+				}
+			}
+			if (!list.isEmpty()){
+				overrides.put(terminal, list);
+			}
+		}
+//		System.out.println("-------------------------");
+//		for(Entry<Terminal, Set<Terminal>> o : overrides.entrySet()){
+//			StringBuilder sb = new StringBuilder();
+//			sb.append(o.getKey().getName());
+//			sb.append(" -> ");
+//			for(Terminal t : o.getValue()){
+//				sb.append(t.getName());
+//				sb.append(" ");
+//			}
+//			System.out.println(sb.toString());
+//		}
+//		System.out.println();
 	}
 
 	/* (non-Javadoc)
@@ -48,23 +78,46 @@ public class StringInput implements IParserInput {
 		return data.length();
 	}
 
-	/* (non-Javadoc)
-	 * @see hu.modembed.syntax.persistence.IParserInput#match(hu.modembed.syntax.Terminal, int)
-	 */
-	@Override
-	public TerminalMatch match(Terminal terminal, int index) {
+	private TerminalMatch doMatch(Terminal terminal, int index){
 		Pattern pattern = terminals.get(terminal);
-		Assert.isNotNull(pattern, "Terminal is unknown: "+terminal);
+		if (pattern == null){
+			throw new IllegalArgumentException("Terminal is unknown: "+terminal);
+		}
 		Matcher matcher = pattern.matcher(data);
 		matcher.region(index, data.length());
 		if (matcher.lookingAt()){
 			int start = matcher.start();
 			int end = matcher.end();
 			if (start == index){
-				return new TerminalMatch(terminal, data.substring(start, end), start, end-start);
+				return new TerminalMatch(terminal, this, start, end-start);
 			}
 		}
 		return null;
+	}
+	
+	/* (non-Javadoc)
+	 * @see hu.modembed.syntax.persistence.IParserInput#match(hu.modembed.syntax.Terminal, int)
+	 */
+	@Override
+	public TerminalMatch match(Terminal terminal, int index) {
+		TerminalMatch match = doMatch(terminal, index);
+		//Only allow match, if there is no other pattern can match a longer string
+		if (match != null){
+			Set<Terminal> overrides = this.overrides.get(terminal);
+			int length = match.size;
+			for(Terminal t : terminals.keySet()) if (!t.isHide() && !terminal.equals(t)){
+				TerminalMatch other = doMatch(t, index);
+				if (other != null){
+					if (other.size > length) {
+						return null;
+					}
+					if (other.size == length && overrides != null && overrides.contains(t)){
+						return null;
+					}
+				}
+			}
+		}
+		return match;
 	}
 
 	@Override
@@ -76,7 +129,7 @@ public class StringInput implements IParserInput {
 	private TerminalMatch matchHiddenTerminals(int index){
 		TerminalMatch result = null;
 		for(Terminal term : terminals.keySet()) if (term.isHide()){
-			TerminalMatch match = match(term, index);
+			TerminalMatch match = doMatch(term, index);
 			if (match != null){
 				if (result == null || result.size < match.size){
 					result = match;

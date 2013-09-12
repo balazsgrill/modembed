@@ -60,7 +60,7 @@ public class ModembedTests {
 	public static EObject load(IFile file, ResourceSet resourceSet){
 		URI uri = URI.createPlatformResourceURI(file.getFullPath().toString(), false);
 		Resource res = resourceSet.getResource(uri, true);
-		if (res.getErrors() != null){
+		if (!res.getErrors().isEmpty()){
 			throw new RuntimeException(res.getErrors().toString());
 		}
 		return res.getContents().get(0);

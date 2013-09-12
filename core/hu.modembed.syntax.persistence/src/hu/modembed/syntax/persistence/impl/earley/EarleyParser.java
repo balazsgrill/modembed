@@ -109,7 +109,8 @@ public class EarleyParser implements IParser {
 				if (state.completion()){
 					for(EarleyState s : state.complete(table)){
 						if (!table.get(currentLevel).add(s)){
-							System.out.println("Dropped completed state: "+s);
+							int[] lc = input.getLineAndColumn(state.getPosition());
+							context.logError(new ParsingError("Ambigous syntax path detected: "+state+" -> "+s, "", lc[0], lc[1]));
 						}
 					}
 				}else
