@@ -55,8 +55,11 @@
 				input="@{output}/@{target}.program.xmi" 
 				map="@{output}/@{target}.map.xmi" 
 				output="@{output}/@{target}.asm.xmi"/>
+			<modembed.pic.opt.bankSelect
+				input="@{output}/@{target}.asm.xmi"
+				output="@{output}/@{target}.asm.opt.xmi"/>
 			<modembed.assemble 
-				input="@{output}/@{target}.asm.xmi" 
+				input="@{output}/@{target}.asm.opt.xmi" 
 				output="@{output}/@{target}.code.hex"/>
 			<modembed.pic.config input="@{config}" output="@{output}/@{target}.config.hex"/>
 			<modembed.hex.merge output="@{output}/@{target}.release.hex">
