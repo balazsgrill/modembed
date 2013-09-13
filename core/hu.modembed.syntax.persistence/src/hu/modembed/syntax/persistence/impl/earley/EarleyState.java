@@ -301,9 +301,10 @@ public class EarleyState {
 						states.add(new EarleyState(currentRule, index, position+length, steps, origin));
 					}
 					
-				}
-				if (terminal.isOptional()){
-					states.add(new EarleyState(currentRule, index+1, position, steps, origin));
+				}else{
+					if (terminal.isOptional()){
+						states.add(new EarleyState(currentRule, index+1, position, steps, origin));
+					}
 				}
 				
 				return states;

@@ -5,8 +5,8 @@ import type.syntax;
 
 terminal OP_ADD "\+";
 terminal OP_MULTIPLY "\*";
-terminal OP_MINUS "-";
-terminal OP_NOT "!";
+terminal OP_MINUS "\-";
+terminal OP_NOT "\!";
 
 terminal OP_LSHIFT "<<";
 terminal OP_RSHIFT ">>";

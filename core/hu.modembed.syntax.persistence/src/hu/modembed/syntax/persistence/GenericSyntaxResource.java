@@ -102,6 +102,7 @@ public class GenericSyntaxResource extends ResourceImpl {
 			
 			@Override
 			public void logError(Diagnostic diagnostic) {
+				System.out.println(diagnostic);
 				getErrors().add(diagnostic);
 			}
 			
