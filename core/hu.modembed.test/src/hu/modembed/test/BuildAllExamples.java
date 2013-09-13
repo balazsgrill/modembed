@@ -38,4 +38,9 @@ public class BuildAllExamples {
 		ModembedTests.runAntScript(project, "build.xml", "release.pic18f14k50");
 	}
 	
+	public void example_uart_loopback()throws InvocationTargetException, InterruptedException, CoreException {
+		IProject project = ModembedTests.loadProject("example.uart.loopback");
+		ModembedTests.runAntScript(project, "build.xml", "release");
+	}
+	
 }
