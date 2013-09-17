@@ -5,7 +5,7 @@
 	<include file="${pic18Project}/compile.xml" />
 	
 	<target name="loopback">
-		<modembed.pic18.compile target="pic18f14k50" output="out" config="example.pic18f14k50.config.xmi">
+		<modembed.pic18.compile name="loopback" target="pic18f14k50" output="out" config="example.pic18f14k50.config.xmi">
 			<union>
 				<fileset dir="lib">
     				<include name="**/*.m"/>
@@ -18,7 +18,7 @@
 	</target>
 	
 	<target name="send">
-		<modembed.pic18.compile target="pic18f14k50" output="out" config="example.pic18f14k50.config.xmi">
+		<modembed.pic18.compile name="send" target="pic18f14k50" output="out" config="example.pic18f14k50.config.xmi">
 			<union>
 				<fileset dir="lib">
 	    			<include name="**/*.m"/>

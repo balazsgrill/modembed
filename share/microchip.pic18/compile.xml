@@ -20,6 +20,7 @@
 		<attribute name="target"/>
 		<attribute name="config"/>
 		<attribute name="output"/>
+		<attribute name="name"/>
 		<element name="modules" implicit="true"/>
 		<sequential>
 			<upper string="@{target}" to="target.upper" />
@@ -33,7 +34,7 @@
 			<modembed.compile targetdir="@{output}">
 				<resources refid="moduleFiles"/>
 			</modembed.compile>
-			<modembed.link output="@{output}/@{target}.program.xmi" entry="main">
+			<modembed.link output="@{output}/@{name}.@{target}.program.xmi" entry="main">
 				<union>
 					<mappedresources>
 						<resources refid="moduleFiles"/>
@@ -49,23 +50,23 @@
 			</modembed.link>
 			<modembed.map 
 				rules="${targetProject}/${target.upper}.mappingrules.m" 
-				input="@{output}/@{target}.program.xmi" 
-				output="@{output}/@{target}.map.xmi"/>
+				input="@{output}/@{name}.@{target}.program.xmi" 
+				output="@{output}/@{name}.@{target}.map.xmi"/>
 			<modembed.translate 
-				input="@{output}/@{target}.program.xmi" 
-				map="@{output}/@{target}.map.xmi" 
-				output="@{output}/@{target}.asm.xmi"/>
+				input="@{output}/@{name}.@{target}.program.xmi" 
+				map="@{output}/@{name}.@{target}.map.xmi" 
+				output="@{output}/@{name}.@{target}.asm.xmi"/>
 			<modembed.pic.opt.bankSelect
-				input="@{output}/@{target}.asm.xmi"
-				output="@{output}/@{target}.asm.opt.xmi"/>
+				input="@{output}/@{name}.@{target}.asm.xmi"
+				output="@{output}/@{name}.@{target}.asm.opt.xmi"/>
 			<modembed.assemble 
-				input="@{output}/@{target}.asm.opt.xmi" 
-				output="@{output}/@{target}.code.hex"/>
-			<modembed.pic.config input="@{config}" output="@{output}/@{target}.config.hex"/>
-			<modembed.hex.merge output="@{output}/@{target}.release.hex">
+				input="@{output}/@{name}.@{target}.asm.opt.xmi" 
+				output="@{output}/@{name}.@{target}.code.hex"/>
+			<modembed.pic.config input="@{config}" output="@{output}/@{name}.@{target}.config.hex"/>
+			<modembed.hex.merge output="@{output}/@{name}.@{target}.release.hex">
 				<filelist dir="@{output}">
-					<file name="@{target}.code.hex"/>
-					<file name="@{target}.config.hex"/>
+					<file name="@{name}.@{target}.code.hex"/>
+					<file name="@{name}.@{target}.config.hex"/>
 				</filelist>
 			</modembed.hex.merge>
 		</sequential>

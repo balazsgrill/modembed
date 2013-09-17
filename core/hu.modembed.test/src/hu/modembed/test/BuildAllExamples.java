@@ -39,8 +39,13 @@ public class BuildAllExamples {
 	}
 	
 	public void example_uart_loopback()throws InvocationTargetException, InterruptedException, CoreException {
-		IProject project = ModembedTests.loadProject("example.uart.loopback");
-		ModembedTests.runAntScript(project, "build.xml", "release");
+		IProject project = ModembedTests.loadProject("example.uart");
+		ModembedTests.runAntScript(project, "build.xml", "loopback");
+	}
+	
+	public void example_uart_send()throws InvocationTargetException, InterruptedException, CoreException {
+		IProject project = ModembedTests.loadProject("example.uart");
+		ModembedTests.runAntScript(project, "build.xml", "send");
 	}
 	
 }
