@@ -21,18 +21,6 @@
                value="icons/window/cpu_50.png">
          </property>
          <property
-               name="startupForegroundColor"
-               value="FFFFFF">
-         </property>
-         <property
-               name="startupProgressRect"
-               value="0,240,450,15">
-         </property>
-         <property
-               name="startupMessageRect"
-               value="4,222,440,18">
-         </property>
-         <property
                name="appName"
                value="MODembed">
          </property>

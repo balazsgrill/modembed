@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="MODembed" uid="modembed-sdk" id="hu.modembed.sdk.MODembed" application="org.eclipse.ui.ide.workbench" version="0.8.2.qualifier" useFeatures="true" includeLaunchers="true">
+<product name="MODembed" uid="MODembed" id="hu.modembed.sdk.MODembed" application="org.eclipse.ui.ide.workbench" version="0.8.2.qualifier" useFeatures="true" includeLaunchers="true">
 
    <aboutInfo>
       <image path="icons/window/cpu_50.png"/>
@@ -24,10 +24,7 @@ web page: http://balazsgrill.github.io/modembed/
    <windowImages i16="icons/window/cpu_16.png" i48="icons/window/cpu_48.png"/>
 
    <splash
-      location="hu.modembed.sdk"
-      startupProgressRect="0,240,450,15"
-      startupMessageRect="4,222,440,18"
-      startupForegroundColor="FFFFFF" />
+      location="hu.modembed.sdk" />
    <launcher name="modembed">
       <solaris/>
       <win useIco="false">
