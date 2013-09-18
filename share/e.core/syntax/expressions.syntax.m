@@ -1,6 +1,7 @@
 #!platform:/resource/e.core/syntax/syntax.model
 syntax expressions.syntax <Expression>;
 import core.syntax;
+import basic.operators;
 import type.syntax;
 
 terminal OP_ADD "\+";
@@ -17,9 +18,6 @@ terminal OP_CMP_GT ">";
 terminal OP_CMP_GTE ">=";
 terminal OP_CMP_LT "<";
 terminal OP_CMP_LTE "<=";
-
-terminal OP_INDEX_OPEN "\[";
-terminal OP_INDEX_CLOSE "\]";
 
 <Expression0> :- BRACKET_OPEN <Expression> BRACKET_CLOSE;
  

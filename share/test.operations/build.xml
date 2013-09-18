@@ -48,6 +48,11 @@
 		<modembed.pic.opt.bankSelect input=".test.asm.orig.xmi" output=".test.asm.xmi"/>
 	</target>
 	
+	<target name="arrays.test1">
+		<modembed.compile input="test/test.arrays.m" output=".test.module.xmi"/>
+		<produce file=".test.module.xmi" test="test1"/>
+	</target>
+	
 	<target name="test1">
 		<produce file="test/test.uint8.greater.m" test="test1"/>
 	</target>

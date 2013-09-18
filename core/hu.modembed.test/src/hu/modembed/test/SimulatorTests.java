@@ -212,4 +212,14 @@ public class SimulatorTests {
 		Assert.assertEquals(0, r);
 	}	
 	
+	@Test
+	public void arrays_test1() throws Exception{
+		DeviceSimulator simulator = test_operation("arrays.test1");
+		
+		long r = simulator.getSymbolAddress("buffer");
+		for(int i=0;i<16;i++){
+			long v = simulator.getValueByAddress(r+i);
+			Assert.assertEquals((long)i, v);
+		}
+	}
 }

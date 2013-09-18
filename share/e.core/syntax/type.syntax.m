@@ -1,6 +1,8 @@
 #!platform:/resource/e.core/syntax/syntax.model
 syntax type.syntax <Type>;
 import core.syntax;
+import basic.operators;
+import expressions.syntax;
 
 terminal KEYWORD_VOID "void";
 terminal KEYWORD_TYPE "type";
@@ -19,3 +21,7 @@ terminal KEYWORD_LABEL "label";
 <TypeDefinition> :- KEYWORD_LABEL {"http://modembed.hu/abstraction/types#CodeLabelTypeDefinition" };
 
 <TypeDefinition> :- KEYWORD_VOID;
+
+<TypeDefinition> :- {"http://modembed.hu/abstraction/types#ArrayTypeDefinition" elementType=<TypeDefinition> OP_INDEX_OPEN OP_INDEX_CLOSE } ;
+
+<TypeDefinition> :- {"http://modembed.hu/abstraction/types#ArrayDefinition" elementType=<TypeDefinition> OP_INDEX_OPEN size=<Expression> OP_INDEX_CLOSE } ;
