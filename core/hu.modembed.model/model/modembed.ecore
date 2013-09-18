@@ -161,11 +161,14 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"
             eType="#//abstraction/types/Type"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="PointerTypeDefinition" eSuperTypes="#//abstraction/types/CompositeTypeDefinition">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="pointerType" lowerBound="1"
+      <eClassifiers xsi:type="ecore:EClass" name="ArrayTypeDefinition" eSuperTypes="#//abstraction/types/CompositeTypeDefinition">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="elementType" lowerBound="1"
             eType="#//abstraction/types/TypeDefinition" containment="true"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="ArrayDefinition" eSuperTypes="#//abstraction/types/PointerTypeDefinition"/>
+      <eClassifiers xsi:type="ecore:EClass" name="ArrayDefinition" eSuperTypes="#//abstraction/types/ArrayTypeDefinition">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="size" lowerBound="1"
+            eType="#//infrastructure/expressions/Expression" containment="true"/>
+      </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="StructureTypeDefinition" eSuperTypes="#//abstraction/types/CompositeTypeDefinition">
         <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
             eType="#//abstraction/types/StructureTypeElement" containment="true"/>

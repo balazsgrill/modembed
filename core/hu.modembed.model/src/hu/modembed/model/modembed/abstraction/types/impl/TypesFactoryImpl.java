@@ -58,7 +58,7 @@ public class TypesFactoryImpl extends EFactoryImpl implements TypesFactory {
 		switch (eClass.getClassifierID()) {
 			case TypesPackage.UNSIGNED_TYPE_DEFINITION: return createUnsignedTypeDefinition();
 			case TypesPackage.REFERENCE_TYPE_DEFINITION: return createReferenceTypeDefinition();
-			case TypesPackage.POINTER_TYPE_DEFINITION: return createPointerTypeDefinition();
+			case TypesPackage.ARRAY_TYPE_DEFINITION: return createArrayTypeDefinition();
 			case TypesPackage.ARRAY_DEFINITION: return createArrayDefinition();
 			case TypesPackage.STRUCTURE_TYPE_DEFINITION: return createStructureTypeDefinition();
 			case TypesPackage.STRUCTURE_TYPE_ELEMENT: return createStructureTypeElement();
@@ -94,9 +94,9 @@ public class TypesFactoryImpl extends EFactoryImpl implements TypesFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PointerTypeDefinition createPointerTypeDefinition() {
-		PointerTypeDefinitionImpl pointerTypeDefinition = new PointerTypeDefinitionImpl();
-		return pointerTypeDefinition;
+	public ArrayTypeDefinition createArrayTypeDefinition() {
+		ArrayTypeDefinitionImpl arrayTypeDefinition = new ArrayTypeDefinitionImpl();
+		return arrayTypeDefinition;
 	}
 
 	/**

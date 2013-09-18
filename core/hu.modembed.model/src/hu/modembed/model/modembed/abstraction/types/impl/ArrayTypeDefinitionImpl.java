@@ -2,7 +2,7 @@
  */
 package hu.modembed.model.modembed.abstraction.types.impl;
 
-import hu.modembed.model.modembed.abstraction.types.PointerTypeDefinition;
+import hu.modembed.model.modembed.abstraction.types.ArrayTypeDefinition;
 import hu.modembed.model.modembed.abstraction.types.TypeDefinition;
 import hu.modembed.model.modembed.abstraction.types.TypesPackage;
 
@@ -16,34 +16,34 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Pointer Type Definition</b></em>'.
+ * An implementation of the model object '<em><b>Array Type Definition</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link hu.modembed.model.modembed.abstraction.types.impl.PointerTypeDefinitionImpl#getPointerType <em>Pointer Type</em>}</li>
+ *   <li>{@link hu.modembed.model.modembed.abstraction.types.impl.ArrayTypeDefinitionImpl#getElementType <em>Element Type</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class PointerTypeDefinitionImpl extends CompositeTypeDefinitionImpl implements PointerTypeDefinition {
+public class ArrayTypeDefinitionImpl extends CompositeTypeDefinitionImpl implements ArrayTypeDefinition {
 	/**
-	 * The cached value of the '{@link #getPointerType() <em>Pointer Type</em>}' containment reference.
+	 * The cached value of the '{@link #getElementType() <em>Element Type</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPointerType()
+	 * @see #getElementType()
 	 * @generated
 	 * @ordered
 	 */
-	protected TypeDefinition pointerType;
+	protected TypeDefinition elementType;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PointerTypeDefinitionImpl() {
+	protected ArrayTypeDefinitionImpl() {
 		super();
 	}
 
@@ -54,7 +54,7 @@ public class PointerTypeDefinitionImpl extends CompositeTypeDefinitionImpl imple
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return TypesPackage.Literals.POINTER_TYPE_DEFINITION;
+		return TypesPackage.Literals.ARRAY_TYPE_DEFINITION;
 	}
 
 	/**
@@ -62,8 +62,8 @@ public class PointerTypeDefinitionImpl extends CompositeTypeDefinitionImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TypeDefinition getPointerType() {
-		return pointerType;
+	public TypeDefinition getElementType() {
+		return elementType;
 	}
 
 	/**
@@ -71,11 +71,11 @@ public class PointerTypeDefinitionImpl extends CompositeTypeDefinitionImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetPointerType(TypeDefinition newPointerType, NotificationChain msgs) {
-		TypeDefinition oldPointerType = pointerType;
-		pointerType = newPointerType;
+	public NotificationChain basicSetElementType(TypeDefinition newElementType, NotificationChain msgs) {
+		TypeDefinition oldElementType = elementType;
+		elementType = newElementType;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TypesPackage.POINTER_TYPE_DEFINITION__POINTER_TYPE, oldPointerType, newPointerType);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TypesPackage.ARRAY_TYPE_DEFINITION__ELEMENT_TYPE, oldElementType, newElementType);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -86,18 +86,18 @@ public class PointerTypeDefinitionImpl extends CompositeTypeDefinitionImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPointerType(TypeDefinition newPointerType) {
-		if (newPointerType != pointerType) {
+	public void setElementType(TypeDefinition newElementType) {
+		if (newElementType != elementType) {
 			NotificationChain msgs = null;
-			if (pointerType != null)
-				msgs = ((InternalEObject)pointerType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TypesPackage.POINTER_TYPE_DEFINITION__POINTER_TYPE, null, msgs);
-			if (newPointerType != null)
-				msgs = ((InternalEObject)newPointerType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TypesPackage.POINTER_TYPE_DEFINITION__POINTER_TYPE, null, msgs);
-			msgs = basicSetPointerType(newPointerType, msgs);
+			if (elementType != null)
+				msgs = ((InternalEObject)elementType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TypesPackage.ARRAY_TYPE_DEFINITION__ELEMENT_TYPE, null, msgs);
+			if (newElementType != null)
+				msgs = ((InternalEObject)newElementType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TypesPackage.ARRAY_TYPE_DEFINITION__ELEMENT_TYPE, null, msgs);
+			msgs = basicSetElementType(newElementType, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TypesPackage.POINTER_TYPE_DEFINITION__POINTER_TYPE, newPointerType, newPointerType));
+			eNotify(new ENotificationImpl(this, Notification.SET, TypesPackage.ARRAY_TYPE_DEFINITION__ELEMENT_TYPE, newElementType, newElementType));
 	}
 
 	/**
@@ -108,8 +108,8 @@ public class PointerTypeDefinitionImpl extends CompositeTypeDefinitionImpl imple
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case TypesPackage.POINTER_TYPE_DEFINITION__POINTER_TYPE:
-				return basicSetPointerType(null, msgs);
+			case TypesPackage.ARRAY_TYPE_DEFINITION__ELEMENT_TYPE:
+				return basicSetElementType(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -122,8 +122,8 @@ public class PointerTypeDefinitionImpl extends CompositeTypeDefinitionImpl imple
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TypesPackage.POINTER_TYPE_DEFINITION__POINTER_TYPE:
-				return getPointerType();
+			case TypesPackage.ARRAY_TYPE_DEFINITION__ELEMENT_TYPE:
+				return getElementType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -136,8 +136,8 @@ public class PointerTypeDefinitionImpl extends CompositeTypeDefinitionImpl imple
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TypesPackage.POINTER_TYPE_DEFINITION__POINTER_TYPE:
-				setPointerType((TypeDefinition)newValue);
+			case TypesPackage.ARRAY_TYPE_DEFINITION__ELEMENT_TYPE:
+				setElementType((TypeDefinition)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -151,8 +151,8 @@ public class PointerTypeDefinitionImpl extends CompositeTypeDefinitionImpl imple
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TypesPackage.POINTER_TYPE_DEFINITION__POINTER_TYPE:
-				setPointerType((TypeDefinition)null);
+			case TypesPackage.ARRAY_TYPE_DEFINITION__ELEMENT_TYPE:
+				setElementType((TypeDefinition)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -166,10 +166,10 @@ public class PointerTypeDefinitionImpl extends CompositeTypeDefinitionImpl imple
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TypesPackage.POINTER_TYPE_DEFINITION__POINTER_TYPE:
-				return pointerType != null;
+			case TypesPackage.ARRAY_TYPE_DEFINITION__ELEMENT_TYPE:
+				return elementType != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //PointerTypeDefinitionImpl
+} //ArrayTypeDefinitionImpl

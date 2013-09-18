@@ -111,19 +111,19 @@ public class TypesSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case TypesPackage.POINTER_TYPE_DEFINITION: {
-				PointerTypeDefinition pointerTypeDefinition = (PointerTypeDefinition)theEObject;
-				T result = casePointerTypeDefinition(pointerTypeDefinition);
-				if (result == null) result = caseCompositeTypeDefinition(pointerTypeDefinition);
-				if (result == null) result = caseTypeDefinition(pointerTypeDefinition);
-				if (result == null) result = caseMODembedElement(pointerTypeDefinition);
+			case TypesPackage.ARRAY_TYPE_DEFINITION: {
+				ArrayTypeDefinition arrayTypeDefinition = (ArrayTypeDefinition)theEObject;
+				T result = caseArrayTypeDefinition(arrayTypeDefinition);
+				if (result == null) result = caseCompositeTypeDefinition(arrayTypeDefinition);
+				if (result == null) result = caseTypeDefinition(arrayTypeDefinition);
+				if (result == null) result = caseMODembedElement(arrayTypeDefinition);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case TypesPackage.ARRAY_DEFINITION: {
 				ArrayDefinition arrayDefinition = (ArrayDefinition)theEObject;
 				T result = caseArrayDefinition(arrayDefinition);
-				if (result == null) result = casePointerTypeDefinition(arrayDefinition);
+				if (result == null) result = caseArrayTypeDefinition(arrayDefinition);
 				if (result == null) result = caseCompositeTypeDefinition(arrayDefinition);
 				if (result == null) result = caseTypeDefinition(arrayDefinition);
 				if (result == null) result = caseMODembedElement(arrayDefinition);
@@ -245,17 +245,17 @@ public class TypesSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Pointer Type Definition</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Array Type Definition</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Pointer Type Definition</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Array Type Definition</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePointerTypeDefinition(PointerTypeDefinition object) {
+	public T caseArrayTypeDefinition(ArrayTypeDefinition object) {
 		return null;
 	}
 

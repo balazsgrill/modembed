@@ -140,10 +140,12 @@
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference modembed.ecore#//abstraction/types/ReferenceTypeDefinition/type"/>
         </genClasses>
-        <genClasses ecoreClass="modembed.ecore#//abstraction/types/PointerTypeDefinition">
-          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//abstraction/types/PointerTypeDefinition/pointerType"/>
+        <genClasses ecoreClass="modembed.ecore#//abstraction/types/ArrayTypeDefinition">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//abstraction/types/ArrayTypeDefinition/elementType"/>
         </genClasses>
-        <genClasses ecoreClass="modembed.ecore#//abstraction/types/ArrayDefinition"/>
+        <genClasses ecoreClass="modembed.ecore#//abstraction/types/ArrayDefinition">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//abstraction/types/ArrayDefinition/size"/>
+        </genClasses>
         <genClasses ecoreClass="modembed.ecore#//abstraction/types/StructureTypeDefinition">
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//abstraction/types/StructureTypeDefinition/elements"/>
         </genClasses>
@@ -282,6 +284,7 @@
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//structured/VariableDeclaration/initValue"/>
       </genClasses>
       <genClasses ecoreClass="modembed.ecore#//structured/StructuredFunction">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.ecore#//structured/StructuredFunction/global"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//structured/StructuredFunction/resultType"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//structured/StructuredFunction/parameters"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//structured/StructuredFunction/implementation"/>
@@ -316,6 +319,10 @@
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//structured/LoopOperation/exitCondition"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//structured/LoopOperation/body"/>
       </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Application" basePackage="hu.modembed.model.modembed"
+        disposableProviderFactory="true" ecorePackage="modembed.ecore#//application">
+      <genClasses ecoreClass="modembed.ecore#//application/ComponentRole"/>
     </nestedGenPackages>
   </genPackages>
 </genmodel:GenModel>

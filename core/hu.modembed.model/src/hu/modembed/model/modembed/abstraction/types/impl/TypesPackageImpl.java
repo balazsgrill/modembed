@@ -3,25 +3,17 @@
 package hu.modembed.model.modembed.abstraction.types.impl;
 
 import hu.modembed.model.modembed.abstraction.AbstractionPackage;
-
 import hu.modembed.model.modembed.abstraction.behavior.BehaviorPackage;
-
 import hu.modembed.model.modembed.abstraction.behavior.impl.BehaviorPackageImpl;
-
 import hu.modembed.model.modembed.abstraction.behavior.platform.PlatformPackage;
-
 import hu.modembed.model.modembed.abstraction.behavior.platform.impl.PlatformPackageImpl;
-
 import hu.modembed.model.modembed.abstraction.impl.AbstractionPackageImpl;
-
 import hu.modembed.model.modembed.abstraction.memorymodel.MemorymodelPackage;
-
 import hu.modembed.model.modembed.abstraction.memorymodel.impl.MemorymodelPackageImpl;
-
 import hu.modembed.model.modembed.abstraction.types.ArrayDefinition;
+import hu.modembed.model.modembed.abstraction.types.ArrayTypeDefinition;
 import hu.modembed.model.modembed.abstraction.types.CodeLabelTypeDefinition;
 import hu.modembed.model.modembed.abstraction.types.CompositeTypeDefinition;
-import hu.modembed.model.modembed.abstraction.types.PointerTypeDefinition;
 import hu.modembed.model.modembed.abstraction.types.PrimitiveTypeDefinition;
 import hu.modembed.model.modembed.abstraction.types.ReferenceTypeDefinition;
 import hu.modembed.model.modembed.abstraction.types.StructureTypeDefinition;
@@ -31,38 +23,25 @@ import hu.modembed.model.modembed.abstraction.types.TypeDefinition;
 import hu.modembed.model.modembed.abstraction.types.TypesFactory;
 import hu.modembed.model.modembed.abstraction.types.TypesPackage;
 import hu.modembed.model.modembed.abstraction.types.UnsignedTypeDefinition;
-
 import hu.modembed.model.modembed.application.ApplicationPackage;
 import hu.modembed.model.modembed.application.impl.ApplicationPackageImpl;
 import hu.modembed.model.modembed.core.instructionset.InstructionsetPackage;
-
 import hu.modembed.model.modembed.core.instructionset.impl.InstructionsetPackageImpl;
-
 import hu.modembed.model.modembed.core.object.ObjectPackage;
-
 import hu.modembed.model.modembed.core.object.impl.ObjectPackageImpl;
-
 import hu.modembed.model.modembed.infrastructure.InfrastructurePackage;
-
 import hu.modembed.model.modembed.infrastructure.expressions.ExpressionsPackage;
-
 import hu.modembed.model.modembed.infrastructure.expressions.impl.ExpressionsPackageImpl;
-
 import hu.modembed.model.modembed.infrastructure.impl.InfrastructurePackageImpl;
-
 import hu.modembed.model.modembed.infrastructure.traceability.TraceabilityPackage;
-
 import hu.modembed.model.modembed.infrastructure.traceability.impl.TraceabilityPackageImpl;
-
 import hu.modembed.model.modembed.structured.StructuredPackage;
-
 import hu.modembed.model.modembed.structured.impl.StructuredPackageImpl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -112,7 +91,7 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass pointerTypeDefinitionEClass = null;
+	private EClass arrayTypeDefinitionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -313,8 +292,8 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getPointerTypeDefinition() {
-		return pointerTypeDefinitionEClass;
+	public EClass getArrayTypeDefinition() {
+		return arrayTypeDefinitionEClass;
 	}
 
 	/**
@@ -322,8 +301,8 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPointerTypeDefinition_PointerType() {
-		return (EReference)pointerTypeDefinitionEClass.getEStructuralFeatures().get(0);
+	public EReference getArrayTypeDefinition_ElementType() {
+		return (EReference)arrayTypeDefinitionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -333,6 +312,15 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 	 */
 	public EClass getArrayDefinition() {
 		return arrayDefinitionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getArrayDefinition_Size() {
+		return (EReference)arrayDefinitionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -438,10 +426,11 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 		referenceTypeDefinitionEClass = createEClass(REFERENCE_TYPE_DEFINITION);
 		createEReference(referenceTypeDefinitionEClass, REFERENCE_TYPE_DEFINITION__TYPE);
 
-		pointerTypeDefinitionEClass = createEClass(POINTER_TYPE_DEFINITION);
-		createEReference(pointerTypeDefinitionEClass, POINTER_TYPE_DEFINITION__POINTER_TYPE);
+		arrayTypeDefinitionEClass = createEClass(ARRAY_TYPE_DEFINITION);
+		createEReference(arrayTypeDefinitionEClass, ARRAY_TYPE_DEFINITION__ELEMENT_TYPE);
 
 		arrayDefinitionEClass = createEClass(ARRAY_DEFINITION);
+		createEReference(arrayDefinitionEClass, ARRAY_DEFINITION__SIZE);
 
 		structureTypeDefinitionEClass = createEClass(STRUCTURE_TYPE_DEFINITION);
 		createEReference(structureTypeDefinitionEClass, STRUCTURE_TYPE_DEFINITION__ELEMENTS);
@@ -480,6 +469,7 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 
 		// Obtain other dependent packages
 		InfrastructurePackage theInfrastructurePackage = (InfrastructurePackage)EPackage.Registry.INSTANCE.getEPackage(InfrastructurePackage.eNS_URI);
+		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -491,8 +481,8 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 		compositeTypeDefinitionEClass.getESuperTypes().add(this.getTypeDefinition());
 		unsignedTypeDefinitionEClass.getESuperTypes().add(this.getPrimitiveTypeDefinition());
 		referenceTypeDefinitionEClass.getESuperTypes().add(this.getCompositeTypeDefinition());
-		pointerTypeDefinitionEClass.getESuperTypes().add(this.getCompositeTypeDefinition());
-		arrayDefinitionEClass.getESuperTypes().add(this.getPointerTypeDefinition());
+		arrayTypeDefinitionEClass.getESuperTypes().add(this.getCompositeTypeDefinition());
+		arrayDefinitionEClass.getESuperTypes().add(this.getArrayTypeDefinition());
 		structureTypeDefinitionEClass.getESuperTypes().add(this.getCompositeTypeDefinition());
 		structureTypeElementEClass.getESuperTypes().add(theInfrastructurePackage.getNamedElement());
 		codeLabelTypeDefinitionEClass.getESuperTypes().add(this.getPrimitiveTypeDefinition());
@@ -511,10 +501,11 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 		initEClass(referenceTypeDefinitionEClass, ReferenceTypeDefinition.class, "ReferenceTypeDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getReferenceTypeDefinition_Type(), this.getType(), null, "type", null, 1, 1, ReferenceTypeDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(pointerTypeDefinitionEClass, PointerTypeDefinition.class, "PointerTypeDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPointerTypeDefinition_PointerType(), this.getTypeDefinition(), null, "pointerType", null, 1, 1, PointerTypeDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(arrayTypeDefinitionEClass, ArrayTypeDefinition.class, "ArrayTypeDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getArrayTypeDefinition_ElementType(), this.getTypeDefinition(), null, "elementType", null, 1, 1, ArrayTypeDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(arrayDefinitionEClass, ArrayDefinition.class, "ArrayDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getArrayDefinition_Size(), theExpressionsPackage.getExpression(), null, "size", null, 1, 1, ArrayDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(structureTypeDefinitionEClass, StructureTypeDefinition.class, "StructureTypeDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getStructureTypeDefinition_Elements(), this.getStructureTypeElement(), null, "elements", null, 0, -1, StructureTypeDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

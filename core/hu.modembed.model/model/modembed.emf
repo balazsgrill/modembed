@@ -188,11 +188,12 @@ package abstraction {
       ref Type[1] type;
     }
 
-    class PointerTypeDefinition extends CompositeTypeDefinition {
-      val TypeDefinition[1] pointerType;
+    class ArrayTypeDefinition extends CompositeTypeDefinition {
+      val TypeDefinition[1] elementType;
     }
 
-    class ArrayDefinition extends PointerTypeDefinition {
+    class ArrayDefinition extends ArrayTypeDefinition {
+    	val infrastructure.expressions.Expression[1] size;
     }
 
     class StructureTypeDefinition extends CompositeTypeDefinition {
