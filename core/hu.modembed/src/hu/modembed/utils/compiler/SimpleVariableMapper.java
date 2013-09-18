@@ -15,18 +15,21 @@ import hu.modembed.model.modembed.abstraction.behavior.SymbolAssignment;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolMap;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolMappingRule;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolMappingRules;
+import hu.modembed.model.modembed.abstraction.types.ArrayDefinition;
 import hu.modembed.model.modembed.abstraction.types.CodeLabelTypeDefinition;
 import hu.modembed.model.modembed.abstraction.types.ReferenceTypeDefinition;
 import hu.modembed.model.modembed.abstraction.types.TypeDefinition;
 import hu.modembed.model.modembed.abstraction.types.UnsignedTypeDefinition;
+import hu.modembed.utils.expressions.ExpressionResolveException;
+import hu.modembed.utils.expressions.ExpressionResolver;
 
 /**
  * @author balazs.grill
  *
  */
-public class SimpleVariableMapper {
+public class SimpleVariableMapper extends ExpressionResolver{
 
-	private long getSize(TypeDefinition type){
+	private long getSize(TypeDefinition type) throws ExpressionResolveException{
 		if (type instanceof ReferenceTypeDefinition){
 			return getSize(((ReferenceTypeDefinition) type).getType().getDefinition());
 		}
@@ -34,10 +37,20 @@ public class SimpleVariableMapper {
 			int bits = ((UnsignedTypeDefinition) type).getBits(); 
 			return ((bits-1)/8)+1;
 		}
+		if (type instanceof ArrayDefinition){
+			Object o = computeValue(((ArrayDefinition) type).getSize());
+			if (o instanceof Number){
+				long size = ((Number) o).longValue();
+				long baseSize = getSize(((ArrayDefinition) type).getElementType());
+				return size*baseSize;
+			}else{
+				throw new IllegalArgumentException("Invalid size: "+o);
+			}
+		}
 		throw new IllegalArgumentException("Cannot calculate the size of "+type);
 	}
 	
-	public SymbolMap mapVariables(RootSequentialBehavior sequence, SymbolMappingRules rules){
+	public SymbolMap mapVariables(RootSequentialBehavior sequence, SymbolMappingRules rules) throws ExpressionResolveException{
 		SymbolMap result = BehaviorFactory.eINSTANCE.createSymbolMap();
 		
 		List<SymbolMappingRule> ruleList = rules.getRules();
