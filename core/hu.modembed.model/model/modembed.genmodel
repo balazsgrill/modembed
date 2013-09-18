@@ -153,6 +153,7 @@
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//abstraction/types/StructureTypeElement/type"/>
         </genClasses>
         <genClasses ecoreClass="modembed.ecore#//abstraction/types/CodeLabelTypeDefinition"/>
+        <genClasses ecoreClass="modembed.ecore#//abstraction/types/PointerTypeDefinition"/>
         <genClasses ecoreClass="modembed.ecore#//abstraction/types/Type">
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//abstraction/types/Type/definition"/>
         </genClasses>

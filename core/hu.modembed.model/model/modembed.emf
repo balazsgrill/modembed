@@ -207,6 +207,9 @@ package abstraction {
     class CodeLabelTypeDefinition extends PrimitiveTypeDefinition {
     }
 
+	class PointerTypeDefinition extends PrimitiveTypeDefinition{
+	}
+
     class Type extends infrastructure.RootElement {
       val TypeDefinition[1] definition;
     }

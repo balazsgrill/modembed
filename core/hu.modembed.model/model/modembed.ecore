@@ -178,6 +178,7 @@
             eType="#//abstraction/types/TypeDefinition" containment="true"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="CodeLabelTypeDefinition" eSuperTypes="#//abstraction/types/PrimitiveTypeDefinition"/>
+      <eClassifiers xsi:type="ecore:EClass" name="PointerTypeDefinition" eSuperTypes="#//abstraction/types/PrimitiveTypeDefinition"/>
       <eClassifiers xsi:type="ecore:EClass" name="Type" eSuperTypes="#//infrastructure/RootElement">
         <eStructuralFeatures xsi:type="ecore:EReference" name="definition" lowerBound="1"
             eType="#//abstraction/types/TypeDefinition" containment="true"/>

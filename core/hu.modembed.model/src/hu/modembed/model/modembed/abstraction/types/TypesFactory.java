@@ -85,6 +85,15 @@ public interface TypesFactory extends EFactory {
 	CodeLabelTypeDefinition createCodeLabelTypeDefinition();
 
 	/**
+	 * Returns a new object of class '<em>Pointer Type Definition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Pointer Type Definition</em>'.
+	 * @generated
+	 */
+	PointerTypeDefinition createPointerTypeDefinition();
+
+	/**
 	 * Returns a new object of class '<em>Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

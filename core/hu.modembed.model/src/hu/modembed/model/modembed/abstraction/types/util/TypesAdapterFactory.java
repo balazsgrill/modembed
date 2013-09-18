@@ -112,6 +112,10 @@ public class TypesAdapterFactory extends AdapterFactoryImpl {
 				return createCodeLabelTypeDefinitionAdapter();
 			}
 			@Override
+			public Adapter casePointerTypeDefinition(PointerTypeDefinition object) {
+				return createPointerTypeDefinitionAdapter();
+			}
+			@Override
 			public Adapter caseType(Type object) {
 				return createTypeAdapter();
 			}
@@ -284,6 +288,20 @@ public class TypesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCodeLabelTypeDefinitionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.modembed.abstraction.types.PointerTypeDefinition <em>Pointer Type Definition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.modembed.model.modembed.abstraction.types.PointerTypeDefinition
+	 * @generated
+	 */
+	public Adapter createPointerTypeDefinitionAdapter() {
 		return null;
 	}
 

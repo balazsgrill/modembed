@@ -590,6 +590,52 @@ public interface TypesPackage extends EPackage {
 	int CODE_LABEL_TYPE_DEFINITION_FEATURE_COUNT = PRIMITIVE_TYPE_DEFINITION_FEATURE_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link hu.modembed.model.modembed.abstraction.types.impl.PointerTypeDefinitionImpl <em>Pointer Type Definition</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.modembed.model.modembed.abstraction.types.impl.PointerTypeDefinitionImpl
+	 * @see hu.modembed.model.modembed.abstraction.types.impl.TypesPackageImpl#getPointerTypeDefinition()
+	 * @generated
+	 */
+	int POINTER_TYPE_DEFINITION = 10;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POINTER_TYPE_DEFINITION__DESCRIPTION = PRIMITIVE_TYPE_DEFINITION__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Origins</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POINTER_TYPE_DEFINITION__ORIGINS = PRIMITIVE_TYPE_DEFINITION__ORIGINS;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POINTER_TYPE_DEFINITION__ANNOTATIONS = PRIMITIVE_TYPE_DEFINITION__ANNOTATIONS;
+
+	/**
+	 * The number of structural features of the '<em>Pointer Type Definition</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POINTER_TYPE_DEFINITION_FEATURE_COUNT = PRIMITIVE_TYPE_DEFINITION_FEATURE_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link hu.modembed.model.modembed.abstraction.types.impl.TypeImpl <em>Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -597,7 +643,7 @@ public interface TypesPackage extends EPackage {
 	 * @see hu.modembed.model.modembed.abstraction.types.impl.TypesPackageImpl#getType()
 	 * @generated
 	 */
-	int TYPE = 10;
+	int TYPE = 11;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -821,6 +867,16 @@ public interface TypesPackage extends EPackage {
 	EClass getCodeLabelTypeDefinition();
 
 	/**
+	 * Returns the meta object for class '{@link hu.modembed.model.modembed.abstraction.types.PointerTypeDefinition <em>Pointer Type Definition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Pointer Type Definition</em>'.
+	 * @see hu.modembed.model.modembed.abstraction.types.PointerTypeDefinition
+	 * @generated
+	 */
+	EClass getPointerTypeDefinition();
+
+	/**
 	 * Returns the meta object for class '{@link hu.modembed.model.modembed.abstraction.types.Type <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1010,6 +1066,16 @@ public interface TypesPackage extends EPackage {
 		 * @generated
 		 */
 		EClass CODE_LABEL_TYPE_DEFINITION = eINSTANCE.getCodeLabelTypeDefinition();
+
+		/**
+		 * The meta object literal for the '{@link hu.modembed.model.modembed.abstraction.types.impl.PointerTypeDefinitionImpl <em>Pointer Type Definition</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.modembed.model.modembed.abstraction.types.impl.PointerTypeDefinitionImpl
+		 * @see hu.modembed.model.modembed.abstraction.types.impl.TypesPackageImpl#getPointerTypeDefinition()
+		 * @generated
+		 */
+		EClass POINTER_TYPE_DEFINITION = eINSTANCE.getPointerTypeDefinition();
 
 		/**
 		 * The meta object literal for the '{@link hu.modembed.model.modembed.abstraction.types.impl.TypeImpl <em>Type</em>}' class.
