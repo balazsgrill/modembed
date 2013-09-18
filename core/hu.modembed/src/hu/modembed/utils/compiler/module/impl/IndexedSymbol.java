@@ -6,6 +6,7 @@ package hu.modembed.utils.compiler.module.impl;
 import hu.modembed.model.modembed.abstraction.types.ArrayTypeDefinition;
 import hu.modembed.model.modembed.abstraction.types.PrimitiveTypeDefinition;
 import hu.modembed.model.modembed.abstraction.types.TypeDefinition;
+import hu.modembed.model.modembed.abstraction.types.TypesFactory;
 import hu.modembed.utils.compiler.module.AbstractModuleCompilerPart;
 import hu.modembed.utils.compiler.module.IBasicSymbol;
 import hu.modembed.utils.compiler.module.ISymbol;
@@ -70,7 +71,12 @@ public class IndexedSymbol implements ISymbol {
 			part.add(AbstractModuleCompilerPart.op("getbit", data.get(part).getSymbolIdentifier(), index.get(part).getSymbolIdentifier(), value.getSymbolIdentifier()));
 			return value;
 		}else{
-			throw new UnsupportedOperationException("Array element get is not yet implemented");
+			IBasicSymbol address = part.allocateSymbol(TypesFactory.eINSTANCE.createPointerTypeDefinition(), "ARRAY_POINTER");
+			part.add(AbstractModuleCompilerPart.op("getaddress", data.get(part).getSymbolIdentifier(), address.getSymbolIdentifier()));
+			part.add(AbstractModuleCompilerPart.op("add", address.getSymbolIdentifier(), index.get(part).getSymbolIdentifier()));
+			IBasicSymbol value = part.allocateSymbol(getType(), "ARRAY_ELEMENT");
+			part.add(AbstractModuleCompilerPart.op("getIndirect", address.getSymbolIdentifier(), value.getSymbolIdentifier()));
+			return value;
 		}
 	}
 
@@ -81,8 +87,11 @@ public class IndexedSymbol implements ISymbol {
 	public void set(AbstractModuleCompilerPart part, IBasicSymbol value) {
 		if (bit){
 			part.add(AbstractModuleCompilerPart.op("setbit", data.get(part).getSymbolIdentifier(), index.get(part).getSymbolIdentifier(), value.getSymbolIdentifier()));
-		}else{
-			throw new UnsupportedOperationException("Array element set is not yet implemented");
+		}else{			
+			IBasicSymbol address = part.allocateSymbol(TypesFactory.eINSTANCE.createPointerTypeDefinition(), "ARRAY_POINTER");
+			part.add(AbstractModuleCompilerPart.op("getaddress", data.get(part).getSymbolIdentifier(), address.getSymbolIdentifier()));
+			part.add(AbstractModuleCompilerPart.op("add", address.getSymbolIdentifier(), index.get(part).getSymbolIdentifier()));
+			part.add(AbstractModuleCompilerPart.op("setIndirect", address.getSymbolIdentifier(), value.getSymbolIdentifier()));
 		}
 
 	}

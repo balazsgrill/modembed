@@ -165,6 +165,9 @@ package abstraction {
 		val memorymodel.MemoryType[*] memoryTypes;
 		val memorymodel.MemoryInstance[*] memoryInstances;
 		
+		@GenModel(documentation="Size of memory pointer in bytes")
+		attr int sizeOfPointer;
+		
 		val behavior.platform.OperationDefinition[*] operation;
 	}
 

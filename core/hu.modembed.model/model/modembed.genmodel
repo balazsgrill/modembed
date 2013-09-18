@@ -126,6 +126,7 @@
             ecoreFeature="ecore:EReference modembed.ecore#//abstraction/DeviceAbstraction/instructionset"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//abstraction/DeviceAbstraction/memoryTypes"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//abstraction/DeviceAbstraction/memoryInstances"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.ecore#//abstraction/DeviceAbstraction/sizeOfPointer"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//abstraction/DeviceAbstraction/operation"/>
       </genClasses>
       <nestedGenPackages prefix="Types" basePackage="hu.modembed.model.modembed.abstraction"

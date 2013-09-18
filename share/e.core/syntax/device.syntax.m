@@ -21,12 +21,15 @@ terminal OP_COLON "\:";
 terminal OP_AT "\@";
 terminal OP_ATTR "->";
 
+terminal OP_POINTERSIZE "pointerSize";
+
 <Start> :- KW_DEVICE {"http://modembed.hu/abstraction#DeviceAbstraction" name=QUALIFIEDID <Extends>? <InstructionSetDefinition>? OPERATOR_SEMICOLON 
 	<Item>*?	;
 
 <Item> :- <MemoryType> OPERATOR_SEMICOLON ;
 <Item> :- <MemoryInstance> OPERATOR_SEMICOLON ;
 <Item> :- <Operation> ;
+<Item> :- OP_POINTERSIZE sizeOfPointer=DECIMAL_NUMBER OPERATOR_SEMICOLON;
 
 <Extends> :- KW_EXTENDS ancestor=QUALIFIEDID ;
 

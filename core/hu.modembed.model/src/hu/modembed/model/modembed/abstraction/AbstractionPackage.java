@@ -4,6 +4,7 @@ package hu.modembed.model.modembed.abstraction;
 
 import hu.modembed.model.modembed.infrastructure.InfrastructurePackage;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -139,13 +140,22 @@ public interface AbstractionPackage extends EPackage {
 	int DEVICE_ABSTRACTION__MEMORY_INSTANCES = InfrastructurePackage.ROOT_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Size Of Pointer</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEVICE_ABSTRACTION__SIZE_OF_POINTER = InfrastructurePackage.ROOT_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
 	 * The feature id for the '<em><b>Operation</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_ABSTRACTION__OPERATION = InfrastructurePackage.ROOT_ELEMENT_FEATURE_COUNT + 4;
+	int DEVICE_ABSTRACTION__OPERATION = InfrastructurePackage.ROOT_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Device Abstraction</em>' class.
@@ -154,7 +164,7 @@ public interface AbstractionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_ABSTRACTION_FEATURE_COUNT = InfrastructurePackage.ROOT_ELEMENT_FEATURE_COUNT + 5;
+	int DEVICE_ABSTRACTION_FEATURE_COUNT = InfrastructurePackage.ROOT_ELEMENT_FEATURE_COUNT + 6;
 
 
 	/**
@@ -210,6 +220,17 @@ public interface AbstractionPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDeviceAbstraction_MemoryInstances();
+
+	/**
+	 * Returns the meta object for the attribute '{@link hu.modembed.model.modembed.abstraction.DeviceAbstraction#getSizeOfPointer <em>Size Of Pointer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Size Of Pointer</em>'.
+	 * @see hu.modembed.model.modembed.abstraction.DeviceAbstraction#getSizeOfPointer()
+	 * @see #getDeviceAbstraction()
+	 * @generated
+	 */
+	EAttribute getDeviceAbstraction_SizeOfPointer();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link hu.modembed.model.modembed.abstraction.DeviceAbstraction#getOperation <em>Operation</em>}'.
@@ -285,6 +306,14 @@ public interface AbstractionPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DEVICE_ABSTRACTION__MEMORY_INSTANCES = eINSTANCE.getDeviceAbstraction_MemoryInstances();
+
+		/**
+		 * The meta object literal for the '<em><b>Size Of Pointer</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DEVICE_ABSTRACTION__SIZE_OF_POINTER = eINSTANCE.getDeviceAbstraction_SizeOfPointer();
 
 		/**
 		 * The meta object literal for the '<em><b>Operation</b></em>' containment reference list feature.

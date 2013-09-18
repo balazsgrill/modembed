@@ -144,6 +144,11 @@
           eType="#//abstraction/memorymodel/MemoryType" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="memoryInstances" upperBound="-1"
           eType="#//abstraction/memorymodel/MemoryInstance" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="sizeOfPointer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Size of memory pointer in bytes"/>
+        </eAnnotations>
+      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="operation" upperBound="-1"
           eType="#//abstraction/behavior/platform/OperationDefinition" containment="true"/>
     </eClassifiers>

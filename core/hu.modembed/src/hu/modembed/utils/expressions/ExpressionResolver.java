@@ -6,6 +6,8 @@ package hu.modembed.utils.expressions;
 import hu.modembed.model.modembed.infrastructure.expressions.Expression;
 import hu.modembed.model.modembed.infrastructure.expressions.IntegerConstantExpression;
 import hu.modembed.model.modembed.infrastructure.expressions.OperationExpression;
+import hu.modembed.model.modembed.structured.VariableDeclaration;
+import hu.modembed.model.modembed.structured.VariableReferenceExpression;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -18,6 +20,18 @@ import java.util.List;
 public class ExpressionResolver {
 
 	public Object computeValue(Expression e) throws ExpressionResolveException{
+		if (e instanceof VariableReferenceExpression){
+			VariableDeclaration vd = ((VariableReferenceExpression) e).getVariable();
+			if (vd == null){
+				throw new ExpressionResolveException("Referenced variable was not resolved! ("+e+")");
+			}
+			if (vd.isConst()){
+				return computeValue(vd.getInitValue());
+			}else{
+				throw new ExpressionResolveException("Cannot resolve value of "+vd.getName()+" at compile-time!");
+			}
+		}
+		
 		if (e instanceof IntegerConstantExpression){
 			return ((IntegerConstantExpression) e).getValue();
 		}
