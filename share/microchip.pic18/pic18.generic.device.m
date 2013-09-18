@@ -84,6 +84,37 @@ operation set(dest: uint16@BRAM, value: uint16@BRAM){
 	MOVFF(value+1, dest+1);
 }
 
+/* dest = v1<v2 */
+operation lower(dest: boolean@BRAM, v1:uint8@BRAM, v2:uint8){
+	MOVLB(dest->bank);
+	CLRF(dest, 0);
+	
+	MOVLW(v2);
+	MOVLB(v1->bank);
+	SUBWF(v1, 0, 0); //v2-v1
+	// IF v2>v1 -> C becomes 1
+	MOVLB(dest->bank);
+	MOVLW(1);
+	BTFSC(0xD8, 0, 1); //Test STATUS:C. If not set, skip setting result
+	MOVWF(dest, 0);
+}
+
+/* dest = v1<v2 */
+operation lower(dest: boolean@BRAM, v1:uint8@BRAM, v2:uint8@BRAM){
+	MOVLB(dest->bank);
+	CLRF(dest, 0);
+	
+	MOVLB(v2->bank);
+	MOVF(v2, 0, 0);
+	MOVLB(v1->bank);
+	SUBWF(v1, 0, 0); //v2-v1
+	// IF v2>v1 -> C becomes 1
+	MOVLB(dest->bank);
+	MOVLW(1);
+	BTFSC(0xD8, 0, 1); //Test STATUS:C. If not set, skip setting result
+	MOVWF(dest, 0);
+}
+
 /* dest = v1>v2 */
 operation greater(dest: boolean@BRAM, v1:uint8@BRAM, v2:uint8@BRAM){
 	MOVLB(dest->bank);
@@ -92,7 +123,7 @@ operation greater(dest: boolean@BRAM, v1:uint8@BRAM, v2:uint8@BRAM){
 	MOVLB(v1->bank);
 	MOVF(v1, 0, 0);
 	MOVLB(v2->bank);
-	SUBWF(v2, 0, 0);
+	SUBWF(v2, 0, 0); //v1-v2
 	// IF v1>v2 -> C becomes 1
 	MOVLB(dest->bank);
 	MOVLW(1);

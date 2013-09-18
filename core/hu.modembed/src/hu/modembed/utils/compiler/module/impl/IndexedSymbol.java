@@ -72,7 +72,7 @@ public class IndexedSymbol implements ISymbol {
 			return value;
 		}else{
 			IBasicSymbol address = part.allocateSymbol(TypesFactory.eINSTANCE.createPointerTypeDefinition(), "ARRAY_POINTER");
-			part.add(AbstractModuleCompilerPart.op("getaddress", data.get(part).getSymbolIdentifier(), address.getSymbolIdentifier()));
+			part.add(AbstractModuleCompilerPart.op("set", address.getSymbolIdentifier(), "&"+data.get(part).getSymbolIdentifier()));
 			part.add(AbstractModuleCompilerPart.op("add", address.getSymbolIdentifier(), index.get(part).getSymbolIdentifier()));
 			IBasicSymbol value = part.allocateSymbol(getType(), "ARRAY_ELEMENT");
 			part.add(AbstractModuleCompilerPart.op("getIndirect", address.getSymbolIdentifier(), value.getSymbolIdentifier()));
@@ -89,7 +89,7 @@ public class IndexedSymbol implements ISymbol {
 			part.add(AbstractModuleCompilerPart.op("setbit", data.get(part).getSymbolIdentifier(), index.get(part).getSymbolIdentifier(), value.getSymbolIdentifier()));
 		}else{			
 			IBasicSymbol address = part.allocateSymbol(TypesFactory.eINSTANCE.createPointerTypeDefinition(), "ARRAY_POINTER");
-			part.add(AbstractModuleCompilerPart.op("getaddress", data.get(part).getSymbolIdentifier(), address.getSymbolIdentifier()));
+			part.add(AbstractModuleCompilerPart.op("set", address.getSymbolIdentifier(), "&"+data.get(part).getSymbolIdentifier()));
 			part.add(AbstractModuleCompilerPart.op("add", address.getSymbolIdentifier(), index.get(part).getSymbolIdentifier()));
 			part.add(AbstractModuleCompilerPart.op("setIndirect", address.getSymbolIdentifier(), value.getSymbolIdentifier()));
 		}

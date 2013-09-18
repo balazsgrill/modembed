@@ -11,7 +11,9 @@ import hu.modembed.model.modembed.abstraction.behavior.SymbolAssignment;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolValueAssignment;
 import hu.modembed.model.modembed.abstraction.behavior.platform.OperationArgument;
 import hu.modembed.model.modembed.abstraction.memorymodel.MemoryType;
+import hu.modembed.model.modembed.abstraction.types.ArrayTypeDefinition;
 import hu.modembed.model.modembed.abstraction.types.CodeLabelTypeDefinition;
+import hu.modembed.model.modembed.abstraction.types.PointerTypeDefinition;
 import hu.modembed.model.modembed.abstraction.types.ReferenceTypeDefinition;
 import hu.modembed.model.modembed.abstraction.types.TypeDefinition;
 import hu.modembed.model.modembed.abstraction.types.UnsignedTypeDefinition;
@@ -127,6 +129,12 @@ public class TypeSignature {
 		}
 		if (type instanceof CodeLabelTypeDefinition){
 			sb.append("label");
+		}
+		if (type instanceof PointerTypeDefinition){
+			sb.append("pointer");
+		}
+		if (type instanceof ArrayTypeDefinition){
+			sb.append("array");
 		}
 		if(memoryType != null){
 			sb.append("@");
