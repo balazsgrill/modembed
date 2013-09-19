@@ -275,6 +275,9 @@
             eType="#//abstraction/types/TypeDefinition" containment="true"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="SymbolAllocation" eSuperTypes="#//abstraction/behavior/SymbolAssignment"/>
+      <eClassifiers xsi:type="ecore:EClass" name="SymbolIndirection" eSuperTypes="#//abstraction/behavior/SymbolAssignment">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="reference" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="SymbolAddressAssignment" eSuperTypes="#//abstraction/behavior/SymbolAssignment">
         <eStructuralFeatures xsi:type="ecore:EReference" name="memoryInstance" lowerBound="1"
             eType="#//abstraction/memorymodel/MemoryInstance"/>

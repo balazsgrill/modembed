@@ -300,6 +300,10 @@ package abstraction {
 	class SymbolAllocation extends SymbolAssignment{
 	}
 
+	class SymbolIndirection extends SymbolAssignment{
+		attr String reference;
+	}
+
 	class SymbolAddressAssignment extends SymbolAssignment{
 		ref memorymodel.MemoryInstance[1] memoryInstance;
 		attr long[1] address;

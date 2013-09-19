@@ -10,7 +10,6 @@ import hu.modembed.model.modembed.structured.StructuredModule;
 import hu.modembed.model.modembed.structured.VariableDeclaration;
 import hu.modembed.utils.compiler.module.AbstractModuleCompilerPart;
 import hu.modembed.utils.compiler.module.IBasicSymbol;
-import hu.modembed.utils.compiler.module.ISymbol;
 
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.emf.ecore.EObject;
@@ -41,7 +40,7 @@ public class BasicSymbol implements IBasicSymbol {
 		return new BasicSymbol(sa.getSymbol(), sa.getType());
 	}
 	
-	public static ISymbol getSymbol(SymbolAssignment sa) {
+	public static IBasicSymbol getSymbol(SymbolAssignment sa) {
 		return new BasicSymbol(sa.getSymbol(), sa.getType());
 	}
 	

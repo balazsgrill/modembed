@@ -103,6 +103,15 @@ public interface BehaviorFactory extends EFactory {
 	SymbolAllocation createSymbolAllocation();
 
 	/**
+	 * Returns a new object of class '<em>Symbol Indirection</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Symbol Indirection</em>'.
+	 * @generated
+	 */
+	SymbolIndirection createSymbolIndirection();
+
+	/**
 	 * Returns a new object of class '<em>Symbol Address Assignment</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

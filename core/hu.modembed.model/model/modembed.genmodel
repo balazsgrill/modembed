@@ -227,6 +227,9 @@
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modembed.ecore#//abstraction/behavior/SymbolAssignment/type"/>
         </genClasses>
         <genClasses ecoreClass="modembed.ecore#//abstraction/behavior/SymbolAllocation"/>
+        <genClasses ecoreClass="modembed.ecore#//abstraction/behavior/SymbolIndirection">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modembed.ecore#//abstraction/behavior/SymbolIndirection/reference"/>
+        </genClasses>
         <genClasses ecoreClass="modembed.ecore#//abstraction/behavior/SymbolAddressAssignment">
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference modembed.ecore#//abstraction/behavior/SymbolAddressAssignment/memoryInstance"/>

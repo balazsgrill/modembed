@@ -7,6 +7,7 @@ import hu.modembed.model.modembed.abstraction.behavior.SequentialAction;
 import hu.modembed.model.modembed.abstraction.behavior.SequentialBehaviorPart;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolAllocation;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolAssignment;
+import hu.modembed.model.modembed.abstraction.behavior.SymbolIndirection;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolValueAssignment;
 import hu.modembed.model.modembed.abstraction.types.TypeDefinition;
 import hu.modembed.model.modembed.abstraction.types.TypesFactory;
@@ -60,6 +61,7 @@ public abstract class AbstractModuleCompilerPart {
 	protected static final String CONSTANT = "__CONSTANT__";
 	protected static final String LABEL = "__LABEL__";
 	protected static final String BUFFER = "__BUFFER__";
+	protected static final String POINTER = "__POINTER__";
 	
 	protected ISymbol getConstantSymbol(long constant){
 		String symbol = CONSTANT+constant;
@@ -73,6 +75,20 @@ public abstract class AbstractModuleCompilerPart {
 		sva.setType(type);
 		part.getLocalSymbols().add(sva);
 		return BasicSymbol.getSymbol(sva);
+	}
+	
+	public IBasicSymbol getPointerSymbol(String reference){
+		String symbol = POINTER+reference;
+		TypeDefinition type = TypesFactory.eINSTANCE.createPointerTypeDefinition();
+		for(SymbolAssignment sa : part.getLocalSymbols()){
+			if (symbol.equals(sa.getSymbol())) return BasicSymbol.getSymbol(sa);
+		}
+		SymbolIndirection si = BehaviorFactory.eINSTANCE.createSymbolIndirection();
+		si.setSymbol(symbol);
+		si.setType(type);
+		si.setReference(reference);
+		part.getLocalSymbols().add(si);
+		return BasicSymbol.getSymbol(si);
 	}
 
 	protected ISymbol extendSymbol(ISymbol symbol, TypeDefinition to){

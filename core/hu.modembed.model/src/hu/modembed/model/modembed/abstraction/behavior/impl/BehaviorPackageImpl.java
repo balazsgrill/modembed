@@ -16,6 +16,7 @@ import hu.modembed.model.modembed.abstraction.behavior.SequentialBehaviorPart;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolAddressAssignment;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolAllocation;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolAssignment;
+import hu.modembed.model.modembed.abstraction.behavior.SymbolIndirection;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolMap;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolMappingRule;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolMappingRules;
@@ -158,6 +159,13 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 	 * @generated
 	 */
 	private EClass symbolAllocationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass symbolIndirectionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -571,6 +579,24 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getSymbolIndirection() {
+		return symbolIndirectionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSymbolIndirection_Reference() {
+		return (EAttribute)symbolIndirectionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getSymbolAddressAssignment() {
 		return symbolAddressAssignmentEClass;
 	}
@@ -684,6 +710,9 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 
 		symbolAllocationEClass = createEClass(SYMBOL_ALLOCATION);
 
+		symbolIndirectionEClass = createEClass(SYMBOL_INDIRECTION);
+		createEAttribute(symbolIndirectionEClass, SYMBOL_INDIRECTION__REFERENCE);
+
 		symbolAddressAssignmentEClass = createEClass(SYMBOL_ADDRESS_ASSIGNMENT);
 		createEReference(symbolAddressAssignmentEClass, SYMBOL_ADDRESS_ASSIGNMENT__MEMORY_INSTANCE);
 		createEAttribute(symbolAddressAssignmentEClass, SYMBOL_ADDRESS_ASSIGNMENT__ADDRESS);
@@ -743,6 +772,7 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 		operationExecutionEClass.getESuperTypes().add(this.getSequentialAction());
 		symbolAssignmentEClass.getESuperTypes().add(theInfrastructurePackage.getMODembedElement());
 		symbolAllocationEClass.getESuperTypes().add(this.getSymbolAssignment());
+		symbolIndirectionEClass.getESuperTypes().add(this.getSymbolAssignment());
 		symbolAddressAssignmentEClass.getESuperTypes().add(this.getSymbolAssignment());
 		symbolValueAssignmentEClass.getESuperTypes().add(this.getSymbolAssignment());
 
@@ -791,6 +821,9 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 		initEReference(getSymbolAssignment_Type(), theTypesPackage.getTypeDefinition(), null, "type", null, 1, 1, SymbolAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(symbolAllocationEClass, SymbolAllocation.class, "SymbolAllocation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(symbolIndirectionEClass, SymbolIndirection.class, "SymbolIndirection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSymbolIndirection_Reference(), ecorePackage.getEString(), "reference", null, 0, 1, SymbolIndirection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(symbolAddressAssignmentEClass, SymbolAddressAssignment.class, "SymbolAddressAssignment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSymbolAddressAssignment_MemoryInstance(), theMemorymodelPackage.getMemoryInstance(), null, "memoryInstance", null, 1, 1, SymbolAddressAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -120,6 +120,10 @@ public class BehaviorAdapterFactory extends AdapterFactoryImpl {
 				return createSymbolAllocationAdapter();
 			}
 			@Override
+			public Adapter caseSymbolIndirection(SymbolIndirection object) {
+				return createSymbolIndirectionAdapter();
+			}
+			@Override
 			public Adapter caseSymbolAddressAssignment(SymbolAddressAssignment object) {
 				return createSymbolAddressAssignmentAdapter();
 			}
@@ -324,6 +328,20 @@ public class BehaviorAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSymbolAllocationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.modembed.model.modembed.abstraction.behavior.SymbolIndirection <em>Symbol Indirection</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.modembed.model.modembed.abstraction.behavior.SymbolIndirection
+	 * @generated
+	 */
+	public Adapter createSymbolIndirectionAdapter() {
 		return null;
 	}
 

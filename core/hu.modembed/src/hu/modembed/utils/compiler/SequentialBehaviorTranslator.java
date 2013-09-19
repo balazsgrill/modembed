@@ -12,6 +12,7 @@ import hu.modembed.model.modembed.abstraction.behavior.SequentialAction;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolAddressAssignment;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolAllocation;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolAssignment;
+import hu.modembed.model.modembed.abstraction.behavior.SymbolIndirection;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolMap;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolValueAssignment;
 import hu.modembed.model.modembed.abstraction.behavior.platform.ConditionalOperation;
@@ -88,6 +89,22 @@ public class SequentialBehaviorTranslator {
 				SymbolAssignment sa = values.get(symbol);
 				if (sa instanceof SymbolValueAssignment){
 					return ((SymbolValueAssignment) sa).getValue();
+				}
+				if (sa instanceof SymbolIndirection){
+					String s = ((SymbolIndirection) sa).getReference();
+					SymbolAssignment r = values.get(s);
+					if (r instanceof SymbolAddressAssignment){
+						AttributeDefinition attr = ipm.getAttribute(); 
+						if (attr != null){
+							MemoryInstance memi = ((SymbolAddressAssignment)r).getMemoryInstance();
+							Assert.isNotNull(memi);
+							return getAttributeValue(memi.getAttributes(), attr);
+						}else{
+							return ((SymbolAddressAssignment) r).getAddress();
+						}
+					}else{
+						throw new ExpressionResolveException("Symbol "+s+" cannot be referenced by address!");
+					}
 				}
 				if (sa instanceof SymbolAddressAssignment){
 					AttributeDefinition attr = ipm.getAttribute(); 
@@ -190,7 +207,7 @@ public class SequentialBehaviorTranslator {
 				resolver.labels.put(symbol, startAddress + asm.getInstructions().size());
 			}
 			if (action instanceof OperationExecution){
-				/* Calculate operatin signature */
+				/* Calculate operation signature */
 				OperationExecution op = (OperationExecution)action;
 				String operation = op.getOperation();
 				TypeSignature[] arguments = new TypeSignature[op.getArguments().size()];
