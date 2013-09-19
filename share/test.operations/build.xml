@@ -53,6 +53,11 @@
 		<produce file=".test.module.xmi" test="test1"/>
 	</target>
 	
+	<target name="arrays.test2">
+		<modembed.compile input="test/test.arrays.m" output=".test.module.xmi"/>
+		<produce file=".test.module.xmi" test="test2"/>
+	</target>
+	
 	<target name="cycle.test1">
 		<modembed.compile input="test/test.cycle.m" output=".test.module.xmi"/>
 		<produce file=".test.module.xmi" test="test1"/>

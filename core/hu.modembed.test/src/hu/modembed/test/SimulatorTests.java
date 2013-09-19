@@ -281,6 +281,14 @@ public class SimulatorTests {
 	}
 	
 	@Test
+	public void arrays_test2() throws Exception{
+		DeviceSimulator simulator = test_operation("arrays.test2");
+		
+		long r = simulator.getSymbolValue("sum");
+		Assert.assertEquals(136, r);
+	}
+	
+	@Test
 	public void add_test1() throws Exception{
 		DeviceSimulator simulator = test_operation("add.test1");
 		
