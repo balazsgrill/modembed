@@ -24,13 +24,15 @@ public class TypeSignature {
 
 	private final TypeDefinition type;
 	private final MemoryType memoryType;
+	private final DeviceSpecificTypeAdvisor advisor;
 	
 	/**
 	 * 
 	 */
-	public TypeSignature(TypeDefinition type, MemoryType memoryType) {
+	public TypeSignature(TypeDefinition type, MemoryType memoryType, DeviceSpecificTypeAdvisor advisor) {
 		this.type = type;
 		this.memoryType = memoryType;
+		this.advisor = advisor;
 	}
 
 	public TypeDefinition getType() {
@@ -41,12 +43,19 @@ public class TypeSignature {
 		return memoryType;
 	}
 	
+	public TypeDefinition getRawType(){
+		return advisor.transform(raw(type));
+	}
+	
 	public boolean isCompatible(TypeSignature other){
+		TypeDefinition td1 = getRawType();
+		TypeDefinition td2 = other.getRawType();
+		
 		if (memoryType == null && other.memoryType == null){
-			return isConstCompatible(type, other.type);
+			return isConstCompatible(td1, td2);
 		}
 		
-		if (!isCompatible(type, other.type)) return false;
+		if (!isCompatible(td1, td2)) return false;
 		
 		if (memoryType == null)
 			return other.memoryType == null;
@@ -97,15 +106,15 @@ public class TypeSignature {
 		return false;
 	}
 	
-	public static TypeSignature create(SymbolAssignment sa){
+	public static TypeSignature create(SymbolAssignment sa, DeviceSpecificTypeAdvisor advisor){
 		if (sa instanceof SymbolAddressAssignment){
-			return new TypeSignature(sa.getType(), ((SymbolAddressAssignment) sa).getMemoryInstance().getType());
+			return new TypeSignature(sa.getType(), ((SymbolAddressAssignment) sa).getMemoryInstance().getType(), advisor);
 		}
-		return new TypeSignature(sa.getType(), null);
+		return new TypeSignature(sa.getType(), null, advisor);
 	}
 	
-	public static TypeSignature create(OperationArgument arg){
-		return new TypeSignature(arg.getType(), arg.getMemType());
+	public static TypeSignature create(OperationArgument arg, DeviceSpecificTypeAdvisor advisor){
+		return new TypeSignature(arg.getType(), arg.getMemType(), advisor);
 	}
 	
 	@Override

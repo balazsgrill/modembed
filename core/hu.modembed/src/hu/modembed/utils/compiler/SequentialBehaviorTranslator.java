@@ -128,17 +128,17 @@ public class SequentialBehaviorTranslator {
 		
 		private final Map<OperationDefinition, OperationSignature> operations = new LinkedHashMap<OperationDefinition, OperationSignature>();
 		
-		private void add(DeviceAbstraction device) {
+		private void add(DeviceAbstraction device, DeviceSpecificTypeAdvisor advisor) {
 			if (device.getAncestor() != null){
-				add(device.getAncestor());
+				add(device.getAncestor(), advisor);
 			}
 			for(OperationDefinition od : device.getOperation()){
-				operations.put(od, OperationSignature.create(od));
+				operations.put(od, OperationSignature.create(od, advisor));
 			}
 		}
 		
-		public OperationRegistry(DeviceAbstraction device) {
-			add(device);
+		public OperationRegistry(DeviceAbstraction device, DeviceSpecificTypeAdvisor advisor) {
+			add(device, advisor);
 		}
 		
 		public OperationDefinition find(OperationSignature osign){
@@ -176,7 +176,8 @@ public class SequentialBehaviorTranslator {
 		SymbolAddressExpressionResolver resolver = new SymbolAddressExpressionResolver();
 		
 		Assert.isNotNull(sequentialBehavior.getDevice());
-		OperationRegistry registry = new OperationRegistry(sequentialBehavior.getDevice());
+		DeviceSpecificTypeAdvisor advisor = new DeviceSpecificTypeAdvisor(sequentialBehavior.getDevice());
+		OperationRegistry registry = new OperationRegistry(sequentialBehavior.getDevice(), advisor);
 		
 		
 		List<ValueInContext> instructionCallParameterValues = new LinkedList<SequentialBehaviorTranslator.ValueInContext>();
@@ -213,7 +214,7 @@ public class SequentialBehaviorTranslator {
 				TypeSignature[] arguments = new TypeSignature[op.getArguments().size()];
 				for(int i=0;i<arguments.length;i++){
 					SymbolAssignment argSymbol = resolver.values.get(op.getArguments().get(i));
-					arguments[i] = TypeSignature.create(argSymbol);
+					arguments[i] = TypeSignature.create(argSymbol, advisor);
 				}
 				
 				/* Find operation */

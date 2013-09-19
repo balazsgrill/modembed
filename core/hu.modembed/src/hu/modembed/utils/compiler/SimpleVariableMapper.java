@@ -3,11 +3,6 @@
  */
 package hu.modembed.utils.compiler;
 
-import java.util.List;
-
-import org.eclipse.emf.ecore.util.EcoreUtil;
-
-import hu.modembed.model.modembed.abstraction.DeviceAbstraction;
 import hu.modembed.model.modembed.abstraction.behavior.BehaviorFactory;
 import hu.modembed.model.modembed.abstraction.behavior.RootSequentialBehavior;
 import hu.modembed.model.modembed.abstraction.behavior.SymbolAddressAssignment;
@@ -25,15 +20,21 @@ import hu.modembed.model.modembed.abstraction.types.UnsignedTypeDefinition;
 import hu.modembed.utils.expressions.ExpressionResolveException;
 import hu.modembed.utils.expressions.ExpressionResolver;
 
+import java.util.List;
+
+import org.eclipse.emf.ecore.util.EcoreUtil;
+
 /**
  * @author balazs.grill
  *
  */
 public class SimpleVariableMapper extends ExpressionResolver{
 
-	private long getSize(DeviceAbstraction device, TypeDefinition type) throws ExpressionResolveException{
+	private DeviceSpecificTypeAdvisor typeAdvisor;
+	
+	private long getSize(TypeDefinition type) throws ExpressionResolveException{
 		if (type instanceof ReferenceTypeDefinition){
-			return getSize(device, ((ReferenceTypeDefinition) type).getType().getDefinition());
+			return getSize(((ReferenceTypeDefinition) type).getType().getDefinition());
 		}
 		if (type instanceof UnsignedTypeDefinition){
 			int bits = ((UnsignedTypeDefinition) type).getBits(); 
@@ -43,7 +44,7 @@ public class SimpleVariableMapper extends ExpressionResolver{
 			Object o = computeValue(((ArrayDefinition) type).getSize());
 			if (o instanceof Number){
 				long size = ((Number) o).longValue();
-				long baseSize = getSize(device, ((ArrayDefinition) type).getElementType());
+				long baseSize = getSize(((ArrayDefinition) type).getElementType());
 				return size*baseSize;
 			}else{
 				throw new IllegalArgumentException("Invalid size: "+o);
@@ -51,29 +52,16 @@ public class SimpleVariableMapper extends ExpressionResolver{
 		}
 		
 		if (type instanceof PointerTypeDefinition){
-			return getPointerSize(device);
+			return getSize(typeAdvisor.transform(type));
 		}
 		
 		throw new IllegalArgumentException("Cannot calculate the size of "+type);
 	}
 	
-	private long getPointerSize(DeviceAbstraction device){
-		if (device.getSizeOfPointer() == 0){
-			if (device.getAncestor() != null){
-				try{
-					return getPointerSize(device.getAncestor());
-				}catch(Exception e){
-					/* Swallow exception, exception on top-level device will not be caught */
-				}
-			}
-		}else{
-			return device.getSizeOfPointer();
-		}
-		throw new IllegalArgumentException("Could not resolve size of pointer in "+device.getName());
-	}
-	
 	public SymbolMap mapVariables(RootSequentialBehavior sequence, SymbolMappingRules rules) throws ExpressionResolveException{
 		SymbolMap result = BehaviorFactory.eINSTANCE.createSymbolMap();
+		
+		typeAdvisor = new DeviceSpecificTypeAdvisor(sequence.getDevice());
 		
 		List<SymbolMappingRule> ruleList = rules.getRules();
 		int currentRule = 0;
@@ -85,7 +73,7 @@ public class SimpleVariableMapper extends ExpressionResolver{
 				TypeDefinition td = sa.getType();
 				
 				if (!(td instanceof CodeLabelTypeDefinition)){
-					long size = getSize(sequence.getDevice(), td);
+					long size = getSize(td);
 
 					if (currentAddress + size > currentEnd){
 						currentRule++;
