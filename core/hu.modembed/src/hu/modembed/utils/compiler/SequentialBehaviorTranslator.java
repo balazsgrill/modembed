@@ -272,6 +272,9 @@ public class SequentialBehaviorTranslator {
 				int i=0;
 				for(Expression ipv : ((InstructionCallOperationStep) step).getArguments()){
 					InstructionCallParameter icp = ObjectFactory.eINSTANCE.createInstructionCallParameter();
+					if (ic.getInstruction().getParameters().size() <= i){
+						throw new ExpressionResolveException("Too many arguments for "+ic.getInstruction().getName());
+					}
 					icp.setDefinition(ic.getInstruction().getParameters().get(i));
 					i++;
 					ic.getParameters().add(icp);

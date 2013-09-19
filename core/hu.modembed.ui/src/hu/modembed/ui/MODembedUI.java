@@ -102,7 +102,6 @@ public class MODembedUI extends AbstractUIPlugin {
 		super.start(context);
 		plugin = this;
 		ecoreRegistry = new DynamicECoreRegistry();
-		System.out.println(System.getProperty("osgi.splashLocation"));
 	}
 
 	/*

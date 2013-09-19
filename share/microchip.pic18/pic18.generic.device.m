@@ -70,7 +70,7 @@ operation add(dest: uint16@BRAM, v: uint8@BRAM){
 operation set(dest: uint8@BRAM, v: uint8){
 	MOVLW(v);
 	MOVLB(dest->bank);
-	MOVWF(dest);
+	MOVWF(dest, 0);
 }
 
 operation set(dest: uint8@BRAM, v: uint8@BRAM){

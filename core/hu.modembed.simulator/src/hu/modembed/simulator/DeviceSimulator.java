@@ -34,7 +34,9 @@ public class DeviceSimulator {
 		simulator.start();
 		long counter = 0;
 		while(simulator.isRunning()){
-			if (counter >= 100){
+//			System.out.println("->"+counter);
+//			printState();
+			if (counter >= maxCycles){
 				return 1;
 			}
 			simulator.step();

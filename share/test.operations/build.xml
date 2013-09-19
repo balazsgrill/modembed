@@ -65,6 +65,30 @@
 		<produce file="test/test.uint8.greater.m" test="test3"/>
 	</target>
 	
+	<target name="lower.test1">
+		<produce file="test/test.uint8.lower.m" test="test1"/>
+	</target>
+		
+	<target name="lower.test2">
+		<produce file="test/test.uint8.lower.m" test="test2"/>
+	</target>
+		
+	<target name="lower.test3">
+		<produce file="test/test.uint8.lower.m" test="test3"/>
+	</target>
+	
+	<target name="lower.test1c">
+		<produce file="test/test.uint8.lower.m" test="test1c"/>
+	</target>
+			
+	<target name="lower.test2c">
+		<produce file="test/test.uint8.lower.m" test="test2c"/>
+	</target>
+		
+	<target name="lower.test3c">
+		<produce file="test/test.uint8.lower.m" test="test3c"/>
+	</target>
+	
 	<target name="test4">
 		<produce file="test/test.bitops.m" test="test1"/>
 	</target>

@@ -92,7 +92,8 @@ public class SimulatorTests {
 		Assert.assertNotNull(device);
 		DeviceSimulator simulator = new DeviceSimulator(device, asm, map);
 		
-		simulator.execute(1000);
+		int rcode = simulator.execute(1000);
+		Assert.assertEquals("Simulation ran too long!", 0, rcode);
 		return simulator;
 	}
 	
@@ -115,6 +116,54 @@ public class SimulatorTests {
 	@Test
 	public void test3() throws Exception{
 		DeviceSimulator simulator = test_operation("test3");
+		
+		long r = simulator.getSymbolValue("r");
+		Assert.assertEquals(0, r);
+	}
+	
+	@Test
+	public void lower_test1() throws Exception{
+		DeviceSimulator simulator = test_operation("lower.test1");
+		
+		long r = simulator.getSymbolValue("r");
+		Assert.assertEquals(0, r);
+	}
+	
+	@Test
+	public void lower_test2() throws Exception{
+		DeviceSimulator simulator = test_operation("lower.test2");
+		
+		long r = simulator.getSymbolValue("r");
+		Assert.assertEquals(1, r);
+	}
+	
+	@Test
+	public void lower_test3() throws Exception{
+		DeviceSimulator simulator = test_operation("lower.test3");
+		
+		long r = simulator.getSymbolValue("r");
+		Assert.assertEquals(0, r);
+	}
+	
+	@Test
+	public void lower_test1c() throws Exception{
+		DeviceSimulator simulator = test_operation("lower.test1c");
+		
+		long r = simulator.getSymbolValue("r");
+		Assert.assertEquals(0, r);
+	}
+	
+	@Test
+	public void lower_test2c() throws Exception{
+		DeviceSimulator simulator = test_operation("lower.test2c");
+		
+		long r = simulator.getSymbolValue("r");
+		Assert.assertEquals(1, r);
+	}
+	
+	@Test
+	public void lower_test3c() throws Exception{
+		DeviceSimulator simulator = test_operation("lower.test3c");
 		
 		long r = simulator.getSymbolValue("r");
 		Assert.assertEquals(0, r);
