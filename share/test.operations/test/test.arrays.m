@@ -3,7 +3,7 @@ module test.arrays;
 
 const uint8 bufferSize = 16;
 
-uint8[bufferSize] buffer;
+global uint8[bufferSize] buffer;
 
 global void test1(){
 	var uint8 i = 0;

@@ -12,7 +12,7 @@ import hu.modembed.simulator.IMemory;
  */
 public abstract class AbstractCore implements ICore{
 
-	private IMemory coreMemory;
+	private IMemory memory;
 	
 	protected abstract IMemory createCoreMemory();
 
@@ -21,10 +21,21 @@ public abstract class AbstractCore implements ICore{
 	 */
 	@Override
 	public IMemory memory() {
-		if (coreMemory == null){
-			coreMemory = createCoreMemory();
+		if (memory == null){
+			
+			MappedMemory mem = new MappedMemory();
+			this.memory = mem;
+			
+			installPeripherals(mem);
+			
+			IMemory coreMemory = createCoreMemory();
+			mem.addSegment(0, coreMemory);
 		}
-		return coreMemory;
+		return memory;
 	}
 
+	protected void installPeripherals(MappedMemory memory){
+		
+	}
+	
 }
