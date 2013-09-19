@@ -50,6 +50,23 @@ operation add(dest: uint8@BRAM, v: uint8@BRAM){
 	ADDWF(dest, 0);
 }
 
+operation add(dest: uint16@BRAM, v: uint8){
+	MOVLW(v);
+	MOVLB(dest->bank);
+	ADDWF(dest, 0);
+	MOVLW(0);
+	ADDWFC(dest, 0);
+}
+
+operation add(dest: uint16@BRAM, v: uint8@BRAM){
+	MOVLB(v->bank);
+	MOVF(v,0);
+	MOVLB(dest->bank);
+	ADDWF(dest, 0);
+	MOVLW(0);
+	ADDWFC(dest, 0);
+}
+
 operation set(dest: uint8@BRAM, v: uint8){
 	MOVLW(v);
 	MOVLB(dest->bank);
@@ -182,4 +199,17 @@ operation subtract(dest: uint16@BRAM, value:uint16@BRAM){
 	MOVF(value+1, 0);
 	MOVLB(dest->bank);
 	SUBWFB(dest+1, 0);
+}
+
+/*
+ * INDF0 = 0xFEF
+ * FSRL = 0xFE9
+ * FSRH = 0xFEA
+ */
+operation setIndirect(dest: uint16@BRAM, v: uint8@BRAM){
+	MOVFF(dest, 0xFE9);
+	MOVFF(dest+1, 0xFEA);
+	MOVLB(v->bank);
+	MOVF(v, 0);
+	MOVWF(0xFEF, 1);
 }
