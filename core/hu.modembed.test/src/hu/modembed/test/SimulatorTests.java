@@ -262,6 +262,14 @@ public class SimulatorTests {
 	}	
 	
 	@Test
+	public void cycle_test1() throws Exception{
+		DeviceSimulator simulator = test_operation("cycle.test1");
+		
+		long r = simulator.getSymbolValue("i");
+		Assert.assertEquals(16, r);
+	}
+	
+	@Test
 	public void arrays_test1() throws Exception{
 		DeviceSimulator simulator = test_operation("arrays.test1");
 		
@@ -270,5 +278,37 @@ public class SimulatorTests {
 			long v = simulator.getValueByAddress(r+i);
 			Assert.assertEquals((long)i, v);
 		}
+	}
+	
+	@Test
+	public void add_test1() throws Exception{
+		DeviceSimulator simulator = test_operation("add.test1");
+		
+		long r = simulator.getSymbolValue("v1");
+		Assert.assertEquals(5, r);
+	}
+	
+	@Test
+	public void add_test2() throws Exception{
+		DeviceSimulator simulator = test_operation("add.test2");
+		
+		long r = simulator.getSymbolValue("v1");
+		Assert.assertEquals(10, r);
+	}
+	
+	@Test
+	public void add_test1c() throws Exception{
+		DeviceSimulator simulator = test_operation("add.test1c");
+		
+		long r = simulator.getSymbolValue("v1");
+		Assert.assertEquals(5, r);
+	}
+	
+	@Test
+	public void add_test2c() throws Exception{
+		DeviceSimulator simulator = test_operation("add.test2c");
+		
+		long r = simulator.getSymbolValue("v1");
+		Assert.assertEquals(10, r);
 	}
 }

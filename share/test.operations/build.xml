@@ -2,7 +2,7 @@
 <!--
  Parameter: ${device}
  -->
-<project name="test.assembler">
+<project name="test.operations">
 	
 	<!-- PIC16e -->
 	<condition property="device.module" value="pic16e/pic16e.module.m">
@@ -50,6 +50,11 @@
 	
 	<target name="arrays.test1">
 		<modembed.compile input="test/test.arrays.m" output=".test.module.xmi"/>
+		<produce file=".test.module.xmi" test="test1"/>
+	</target>
+	
+	<target name="cycle.test1">
+		<modembed.compile input="test/test.cycle.m" output=".test.module.xmi"/>
 		<produce file=".test.module.xmi" test="test1"/>
 	</target>
 	
@@ -128,5 +133,21 @@
 	<target name="test2_6">
 		<produce file="test/test.uint16.greater.m" test="test6"/>
 	</target>	
+	
+	<target name="add.test1">
+		<produce file="test/test.math.m" test="add_test1"/>
+	</target>
+	
+	<target name="add.test2">
+		<produce file="test/test.math.m" test="add_test2"/>
+	</target>
+
+	<target name="add.test1c">
+		<produce file="test/test.math.m" test="add_test1c"/>
+	</target>
+		
+	<target name="add.test2c">
+		<produce file="test/test.math.m" test="add_test2c"/>
+	</target>
 	
 </project>

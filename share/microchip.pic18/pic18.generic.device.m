@@ -40,31 +40,31 @@ operation goto(l : label){
 operation add(dest: uint8@BRAM, v: uint8){
 	MOVLW(v);
 	MOVLB(dest->bank);
-	ADDWF(dest, 0);
+	ADDWF(dest, 1, 0);
 }
 
 operation add(dest: uint8@BRAM, v: uint8@BRAM){
 	MOVLB(v->bank);
 	MOVF(v,0);
 	MOVLB(dest->bank);
-	ADDWF(dest, 0);
+	ADDWF(dest, 1, 0);
 }
 
 operation add(dest: uint16@BRAM, v: uint8){
 	MOVLW(v);
 	MOVLB(dest->bank);
-	ADDWF(dest, 0);
+	ADDWF(dest, 1, 0);
 	MOVLW(0);
-	ADDWFC(dest, 0);
+	ADDWFC(dest, 1, 0);
 }
 
 operation add(dest: uint16@BRAM, v: uint8@BRAM){
 	MOVLB(v->bank);
 	MOVF(v,0);
 	MOVLB(dest->bank);
-	ADDWF(dest, 0);
+	ADDWF(dest, 1, 0);
 	MOVLW(0);
-	ADDWFC(dest, 0);
+	ADDWFC(dest, 1, 0);
 }
 
 operation set(dest: uint8@BRAM, v: uint8){
@@ -193,12 +193,12 @@ operation subtract(dest: uint16@BRAM, value:uint16@BRAM){
 	MOVLB(value->bank);
 	MOVF(value, 0);
 	MOVLB(dest->bank);
-	SUBWF(dest, 0);
+	SUBWF(dest, 1, 0);
 	
 	MOVLB(value->bank);
 	MOVF(value+1, 0);
 	MOVLB(dest->bank);
-	SUBWFB(dest+1, 0);
+	SUBWFB(dest+1, 1, 0);
 }
 
 /*
