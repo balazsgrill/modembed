@@ -53,7 +53,7 @@ public class TestPic18Device extends PIC18Core implements IDevice {
 
 	@Override
 	protected void installPeripherals(MappedMemory memory) {
-		new IndirectAddressingPeripheral(0xFEF, new WordInMemory(memory, 0xFE9, 2));
+		new IndirectAddressingPeripheral(0xFEF, new WordInMemory(memory, 0xFE9, 2)).install(memory);
 	}
 	
 }
