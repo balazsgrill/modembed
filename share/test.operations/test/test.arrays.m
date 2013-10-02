@@ -15,6 +15,7 @@ global void test1(){
 }
 
 global void test2(){
+	var uint8 i = 0;
 	test1();
 	sum = 0;
 	loop while (i<bufferSize){
