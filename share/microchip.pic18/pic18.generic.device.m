@@ -209,7 +209,16 @@ operation subtract(dest: uint16@BRAM, value:uint16@BRAM){
 operation setIndirect(dest: uint16@BRAM, v: uint8@BRAM){
 	MOVFF(dest, 0xFE9);
 	MOVFF(dest+1, 0xFEA);
-	MOVLB(v->bank);
-	MOVF(v, 0);
-	MOVWF(0xFEF, 1);
+	MOVFF(v, 0xFEF);
+}
+
+/*
+ * INDF0 = 0xFEF
+ * FSRL = 0xFE9
+ * FSRH = 0xFEA
+ */
+operation getIndirect(dest: uint16@BRAM, v: uint8@BRAM){
+	MOVFF(dest, 0xFE9);
+	MOVFF(dest+1, 0xFEA);
+	MOVFF(0xFEF, v);
 }

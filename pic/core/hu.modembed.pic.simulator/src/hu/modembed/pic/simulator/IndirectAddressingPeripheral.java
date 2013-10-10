@@ -25,12 +25,14 @@ public class IndirectAddressingPeripheral implements IPeripheral {
 		@Override
 		public void setValue(long address, int value) {
 			long a = fsr.get();
+			if (indfAddr == a) return;
 			parent.setValue(a, value);
 		}
 
 		@Override
 		public int getValue(long address) {
 			long a = fsr.get();
+			if (indfAddr == a) return 0;
 			return parent.getValue(a);
 		}
 

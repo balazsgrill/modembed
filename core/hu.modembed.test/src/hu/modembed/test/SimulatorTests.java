@@ -92,7 +92,7 @@ public class SimulatorTests {
 		Assert.assertNotNull(device);
 		DeviceSimulator simulator = new DeviceSimulator(device, asm, map);
 		
-		int rcode = simulator.execute(1000);
+		int rcode = simulator.execute(10000);
 		Assert.assertEquals("Simulation ran too long!", 0, rcode);
 		return simulator;
 	}
