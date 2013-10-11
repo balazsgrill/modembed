@@ -245,7 +245,7 @@ operation getIndirect(dest: uint16@BRAM, v: uint8@BRAM){
 	MOVLB(0);
 	MOVWF(5);//FSRH
 	
-	MOVF(0);//INDF0
+	MOVF(0, 0);//INDF0
 	MOVLB(v->bank);
 	MOVWF(v);
 }

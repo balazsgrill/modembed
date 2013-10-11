@@ -285,7 +285,7 @@ public class SimulatorTests {
 		DeviceSimulator simulator = test_operation("arrays.test2");
 		
 		long r = simulator.getSymbolValue("sum");
-		Assert.assertEquals(136, r);
+		Assert.assertEquals(120, r);
 	}
 	
 	@Test
